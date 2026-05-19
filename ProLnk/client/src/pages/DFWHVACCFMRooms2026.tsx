@@ -50,17 +50,17 @@ export default function DFWHVACCFMRooms2026() {
             <label style={{ display: 'block', fontSize: '0.85rem', color: '#94a3b8', marginBottom: '0.4rem' }}>Room Type</label>
             <div style={{ display: 'grid', gap: '0.5rem' }}>
               {roomTypes.map(r => (
-                <button key={r.id} onClick={() => setRoomType(r.id)} style={{ padding: '0.65rem 1rem', borderRadius: '8px', border: '1px solid', borderColor: roomType === r.id ? '#F5E642′ : '#1e3a5f', background: roomType === r.id ? '#1a2f4a' : '#0A1628', color: '#fff', textAlign: ’left', cursor: 'pointer', fontSize: '0.9rem' }}>{r.label}</button>
+                <button key={r.id} onClick={() => setRoomType(r.id)} style={{ padding: '0.65rem 1rem', borderRadius: '8px', border: '1px solid', borderColor: roomType === r.id ? '#F5E642' : '#1e3a5f', background: roomType === r.id ? '#1a2f4a' : '#0A1628', color: '#fff', textAlign: 'left', cursor: 'pointer', fontSize: '0.9rem' }}>{r.label}</button>
               ))}
             </div>
           </div>
           <div style={{ marginBottom: '1rem' }}>
             <label style={{ display: 'block', fontSize: '0.85rem', color: '#94a3b8', marginBottom: '0.4rem' }}>Room Size (sq ft)</label>
-            <input type="number" value={sqft} onChange={e => setSqft(e.target.value)} min="50″ max="2000" style={{ width: '100%', padding: '0.65rem', borderRadius: '8px', border: '1px solid #1e3a5f', background: '#0A1628', color: '#fff', fontSize: '0.95rem' }} />
+            <input type="number" value={sqft} onChange={e => setSqft(e.target.value)} min="50" max="2000" style={{ width: '100%', padding: '0.65rem', borderRadius: '8px', border: '1px solid #1e3a5f', background: '#0A1628', color: '#fff', fontSize: '0.95rem' }} />
           </div>
           <button onClick={handleCalculate} style={{ background: '#F5E642', color: '#0A1628', border: 'none', borderRadius: '8px', padding: '0.75rem 1.5rem', fontWeight: 700, cursor: 'pointer', fontSize: '0.95rem' }}>Calculate CFM</button>
           {result && (
-            <div style={{ marginTop: '1.25rem', padding: '1rem', borderRadius: '8px', borderLeft: '4px solid #F5E642', background: '#0A1628′ }}>
+            <div style={{ marginTop: '1.25rem', padding: '1rem', borderRadius: '8px', borderLeft: '4px solid #F5E642', background: '#0A1628' }}>
               <div style={{ color: '#F5E642', fontWeight: 700, fontSize: '1.4rem', marginBottom: '0.4rem' }}>{result.cfm} CFM Required</div>
               <div style={{ color: '#94a3b8', fontSize: '0.9rem' }}>{result.notes}</div>
             </div>

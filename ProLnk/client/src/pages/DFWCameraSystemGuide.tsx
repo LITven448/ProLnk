@@ -104,7 +104,7 @@ export default function DFWCameraSystemGuide() {
             <div style={{ color: '#94a3b8', fontSize: '0.85rem', fontWeight: 600, marginBottom: '0.5rem' }}>PROPERTY SIZE</div>
             <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5rem' }}>
               {PROPERTY_SIZES.map(s => (
-                <button key={s} onClick={() => { setSize(s); setResult(null); }} style={{ padding: '0.45rem 1rem', borderRadius: '20px', border: '1.5px solid', borderColor: size === s ? '#F5E642′ : '#1e3a5f', backgroundColor: size === s ? '#F5E642' : ’transparent', color: size === s ? '#0A1628′ : '#94a3b8', fontWeight: 600, fontSize: '0.82rem', cursor: ’pointer' }}>{s}</button>
+                <button key={s} onClick={() => { setSize(s); setResult(null); }} style={{ padding: '0.45rem 1rem', borderRadius: '20px', border: '1.5px solid', borderColor: size === s ? '#F5E642' : '#1e3a5f', backgroundColor: size === s ? '#F5E642' : 'transparent', color: size === s ? '#0A1628' : '#94a3b8', fontWeight: 600, fontSize: '0.82rem', cursor: 'pointer' }}>{s}</button>
               ))}
             </div>
           </div>
@@ -113,7 +113,7 @@ export default function DFWCameraSystemGuide() {
             <div style={{ color: '#94a3b8', fontSize: '0.85rem', fontWeight: 600, marginBottom: '0.5rem' }}>PRIMARY CONCERNS (select all that apply)</div>
             <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5rem' }}>
               {CONCERNS.map(c => (
-                <button key={c} onClick={() => toggleConcern(c)} style={{ padding: '0.45rem 1rem', borderRadius: '20px', border: '1.5px solid', borderColor: concerns.includes(c) ? '#F5E642′ : '#1e3a5f', backgroundColor: concerns.includes(c) ? '#F5E642' : ’transparent', color: concerns.includes(c) ? '#0A1628′ : '#94a3b8', fontWeight: 600, fontSize: '0.85rem', cursor: ’pointer' }}>{c}</button>
+                <button key={c} onClick={() => toggleConcern(c)} style={{ padding: '0.45rem 1rem', borderRadius: '20px', border: '1.5px solid', borderColor: concerns.includes(c) ? '#F5E642' : '#1e3a5f', backgroundColor: concerns.includes(c) ? '#F5E642' : 'transparent', color: concerns.includes(c) ? '#0A1628' : '#94a3b8', fontWeight: 600, fontSize: '0.85rem', cursor: 'pointer' }}>{c}</button>
               ))}
             </div>
           </div>
@@ -134,7 +134,7 @@ export default function DFWCameraSystemGuide() {
               {[['System Type', result.systemType], ['Storage', result.storage], ['Resolution', result.resolution], ['Est. Installed Cost', result.cost]].map(([label, val]) => (
                 <div key={label as string} style={{ display: 'flex', gap: '0.75rem', marginBottom: '0.5rem', fontSize: '0.88rem' }}>
                   <span style={{ color: '#94a3b8', minWidth: '160px' }}>{label}</span>
-                  <span style={{ color: '#e2e8f0′ }}>{val}</span>
+                  <span style={{ color: '#e2e8f0' }}>{val}</span>
                 </div>
               ))}
               <div style={{ color: '#94a3b8', fontSize: '0.85rem', fontWeight: 600, margin: '0.75rem 0 0.4rem' }}>CAMERA PLACEMENTS:</div>

@@ -13,7 +13,7 @@ const facts = [
   { icon: '🎨', title: 'Repaint Every 12-15 Yrs', desc: 'DFW UV degrades paint faster — budget $4,000-10,000 for full repaint on average home' },
   { icon: '🔩', title: 'Caulk Joints Critical', desc: 'Butt joints must be caulked and maintained — uncaulked joints cause moisture and rot issues' },
   { icon: '🐦', title: 'No Woodpeckers', desc: 'Unlike real wood, fiber cement is impervious to woodpecker damage — a plus in wooded DFW areas' },
-  { icon: '📏', title: 'Clearance Required', desc: 'Must maintain 6″ clearance from soil, 1″ from roofing — violations void warranty' },
+  { icon: '📏', title: 'Clearance Required', desc: 'Must maintain 6" clearance from soil, 1" from roofing — violations void warranty' },
 ];
 
 export default function DFWHardieBoardHomeGuide2026() {
@@ -25,7 +25,7 @@ export default function DFWHardieBoardHomeGuide2026() {
         <div style={{ textAlign: 'center', marginBottom: 40 }}>
           <div style={{ fontSize: 48, marginBottom: 12 }}>🏗️</div>
           <h1 style={{ fontSize: 28, fontWeight: 800, color: '#F5E642', margin: '0 0 8px' }}>DFW Hardie Board Home Guide 2026</h1>
-          <p style={{ color: '#94a3b8', fontSize: 15, margin: 0 }}>Fiber cement is DFW's fastest-growing siding choice — here’s how to maintain it</p>
+          <p style={{ color: '#94a3b8', fontSize: 15, margin: 0 }}>Fiber cement is DFW's fastest-growing siding choice — here's how to maintain it</p>
         </div>
 
         <div style={{ background: '#0f2040', borderRadius: 10, padding: 16, border: '1px solid #F5E642', marginBottom: 32, display: 'flex', gap: 12, alignItems: 'center' }}>
@@ -50,20 +50,20 @@ export default function DFWHardieBoardHomeGuide2026() {
           <h2 style={{ color: '#F5E642', fontSize: 18, fontWeight: 700, margin: '0 0 16px' }}>🔍 Hardie Condition → Maintenance Guide</h2>
           <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap', marginBottom: 20 }}>
             {conditions.map((c, i) => (
-              <button key={i} onClick={() => setSelected(i)} style={{ padding: '8px 16px', borderRadius: 8, border: 'none', cursor: 'pointer', fontWeight: 700, fontSize: 13, background: selected === i ? '#F5E642′ : '#1e3a5f', color: selected === i ? '#0A1628' : '#fff' }}>{c.label}</button>
+              <button key={i} onClick={() => setSelected(i)} style={{ padding: '8px 16px', borderRadius: 8, border: 'none', cursor: 'pointer', fontWeight: 700, fontSize: 13, background: selected === i ? '#F5E642' : '#1e3a5f', color: selected === i ? '#0A1628' : '#fff' }}>{c.label}</button>
             ))}
           </div>
           <div style={{ display: 'grid', gap: 10 }}>
             {conditions[selected].tasks.map((t, i) => (
               <div key={i} style={{ background: '#0A1628', borderRadius: 8, padding: '12px 16px', display: 'flex', alignItems: 'center', gap: 10 }}>
-                <span style={{ color: '#F5E642′ }}>✓</span>
+                <span style={{ color: '#F5E642' }}>✓</span>
                 <span style={{ color: '#e2e8f0', fontSize: 14 }}>{t}</span>
               </div>
             ))}
           </div>
         </div>
 
-        <div style={{ textAlign: 'center', padding: 20, background: '#0f2040', borderRadius: 12, border: '1px solid #F5E642′ }}>
+        <div style={{ textAlign: 'center', padding: 20, background: '#0f2040', borderRadius: 12, border: '1px solid #F5E642' }}>
           <div style={{ color: '#F5E642', fontWeight: 700, marginBottom: 6 }}>Find Hardie Installers in DFW</div>
           <div style={{ color: '#94a3b8', fontSize: 14 }}>ProLnk connects you with certified fiber cement contractors across the Metroplex</div>
         </div>

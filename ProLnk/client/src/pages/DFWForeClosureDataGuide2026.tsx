@@ -69,7 +69,7 @@ export default function DFWForeClosureDataGuide2026() {
             { label: 'Monthly Filings', value: '~820', icon: '📋' },
             { label: 'Avg Discount vs Market', value: '8–14%', icon: '💰' },
           ].map(s => (
-            <div key={s.label} style={{ background: '#132040', borderRadius: 12, padding: 20, border: '1px solid #1E3060′ }}>
+            <div key={s.label} style={{ background: '#132040', borderRadius: 12, padding: 20, border: '1px solid #1E3060' }}>
               <div style={{ fontSize: 28 }}>{s.icon}</div>
               <div style={{ fontSize: 24, fontWeight: 800, color: '#F5E642', margin: '8px 0 4px' }}>{s.value}</div>
               <div style={{ color: '#8899BB', fontSize: 13 }}>{s.label}</div>
@@ -77,9 +77,9 @@ export default function DFWForeClosureDataGuide2026() {
           ))}
         </div>
 
-        <div style={{ background: '#132040', borderRadius: 12, padding: 24, marginBottom: 24, border: '1px solid #1E3060′ }}>
+        <div style={{ background: '#132040', borderRadius: 12, padding: 24, marginBottom: 24, border: '1px solid #1E3060' }}>
           <h2 style={{ fontSize: 18, fontWeight: 700, marginBottom: 8 }}>📍 Texas Foreclosure Process (Non-Judicial)</h2>
-          <div style={{ display: 'flex', justifyContent: 'space-between', padding: '8px 0′ }}>
+          <div style={{ display: 'flex', justifyContent: 'space-between', padding: '8px 0' }}>
             {['Default Notice', '20-Day Cure', 'Posting (21 days)', 'Auction (1st Tue)', 'REO/Bank Owned'].map((step, i) => (
               <div key={step} style={{ textAlign: 'center', flex: 1 }}>
                 <div style={{ width: 32, height: 32, borderRadius: '50%', background: '#F5E642', color: '#0A1628', display: 'flex', alignItems: 'center', justifyContent: 'center', fontWeight: 800, margin: '0 auto 6px' }}>{i+1}</div>
@@ -89,12 +89,12 @@ export default function DFWForeClosureDataGuide2026() {
           </div>
         </div>
 
-        <div style={{ background: '#132040', borderRadius: 12, padding: 24, border: '1px solid #F5E642′ }}>
+        <div style={{ background: '#132040', borderRadius: 12, padding: 24, border: '1px solid #F5E642' }}>
           <h2 style={{ fontSize: 20, fontWeight: 700, marginBottom: 16 }}>🔍 Strategy by Investor Type</h2>
           <div style={{ display: 'flex', gap: 8, marginBottom: 20, flexWrap: 'wrap' }}>
             {([['firstTimer','First Timer'],['experienced','Experienced'],['flipper','Flipper'],['landlord','Landlord']] as const).map(([k,label]) => (
               <button key={k} onClick={()=>setInvestorType(k)}
-                style={{ padding: '8px 16px', borderRadius: 8, border: 'none', cursor: 'pointer', background: investorType===k ? '#F5E642′ : '#1E3060', color: investorType===k ? '#0A1628' : '#fff', fontWeight: 700 }}>{label}</button>
+                style={{ padding: '8px 16px', borderRadius: 8, border: 'none', cursor: 'pointer', background: investorType===k ? '#F5E642' : '#1E3060', color: investorType===k ? '#0A1628' : '#fff', fontWeight: 700 }}>{label}</button>
             ))}
           </div>
           <div style={{ background: '#0A1628', borderRadius: 8, padding: 20 }}>

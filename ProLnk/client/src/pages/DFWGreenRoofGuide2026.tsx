@@ -54,9 +54,9 @@ export default function DFWGreenRoofGuide2026() {
               <div style={{ fontSize: 28 }}>{s.icon}</div>
               <div style={{ color: '#F5E642', fontWeight: 700, fontSize: 15, marginTop: 6 }}>{s.name} System</div>
               <div style={{ fontSize: 12, color: '#94a3b8', marginTop: 6 }}>⚖️ {s.weight}</div>
-              <div style={{ fontSize: 12, color: '#94a3b8′ }}>📏 Depth: {s.depth}</div>
-              <div style={{ fontSize: 12, color: '#4ade80′ }}>💰 {s.cost}</div>
-              <div style={{ fontSize: 12, color: '#94a3b8′ }}>🌿 {s.plants}</div>
+              <div style={{ fontSize: 12, color: '#94a3b8' }}>📏 Depth: {s.depth}</div>
+              <div style={{ fontSize: 12, color: '#4ade80' }}>💰 {s.cost}</div>
+              <div style={{ fontSize: 12, color: '#94a3b8' }}>🌿 {s.plants}</div>
               <div style={{ fontSize: 11, color: '#f97316', marginTop: 6, background: '#0A1628', borderRadius: 6, padding: '4px 8px' }}>☀️ {s.dfwNote}</div>
             </div>
           ))}
@@ -64,7 +64,7 @@ export default function DFWGreenRoofGuide2026() {
 
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2,1fr)', gap: 10, marginBottom: 24 }}>
           {benefits.map(b => (
-            <div key={b.text} style={{ background: '#1e2d45', borderRadius: 8, padding: 12, fontSize: 12, color: '#94a3b8′ }}>
+            <div key={b.text} style={{ background: '#1e2d45', borderRadius: 8, padding: 12, fontSize: 12, color: '#94a3b8' }}>
               <span style={{ fontSize: 16, marginRight: 6 }}>{b.icon}</span>{b.text}
             </div>
           ))}
@@ -76,7 +76,7 @@ export default function DFWGreenRoofGuide2026() {
             <div style={{ fontSize: 13, color: '#94a3b8', marginBottom: 8 }}>Structure type:</div>
             <div style={{ display: 'flex', flexDirection: 'column', gap: 6 }}>
               {structTypes.map(s => (
-                <button key={s} onClick={() => setStructType(s)} style={{ padding: '8px 14px', borderRadius: 8, border: 'none', cursor: 'pointer', background: structType === s ? '#F5E642′ : '#0A1628', color: structType === s ? '#0A1628' : '#fff', fontSize: 13, textAlign: ’left' }}>{s}</button>
+                <button key={s} onClick={() => setStructType(s)} style={{ padding: '8px 14px', borderRadius: 8, border: 'none', cursor: 'pointer', background: structType === s ? '#F5E642' : '#0A1628', color: structType === s ? '#0A1628' : '#fff', fontSize: 13, textAlign: 'left' }}>{s}</button>
               ))}
             </div>
           </div>

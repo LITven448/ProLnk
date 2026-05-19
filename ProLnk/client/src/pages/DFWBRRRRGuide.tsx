@@ -20,7 +20,7 @@ export default function DFWBRRRRGuide() {
   return (
     <div style={{ background: '#0A1628', minHeight: '100vh', color: '#E8EDF5', fontFamily: 'system-ui, sans-serif', padding: '40px 20px' }}>
       <div style={{ maxWidth: 860, margin: '0 auto' }}>
-        <div style={{ marginBottom: 12, fontSize: 13, color: '#F5E642′ }}>🔁 DFW REAL ESTATE INVESTOR SERIES</div>
+        <div style={{ marginBottom: 12, fontSize: 13, color: '#F5E642' }}>🔁 DFW REAL ESTATE INVESTOR SERIES</div>
         <h1 style={{ fontSize: 38, fontWeight: 800, marginBottom: 8, lineHeight: 1.2 }}>
           DFW BRRRR Strategy Guide
         </h1>
@@ -29,7 +29,7 @@ export default function DFWBRRRRGuide() {
         </p>
 
         <div style={{ background: '#111E35', borderRadius: 16, padding: 32, marginBottom: 32 }}>
-          <h2 style={{ fontSize: 22, fontWeight: 700, marginBottom: 20, color: '#F5E642′ }}>⚙️ How BRRRR Works in DFW</h2>
+          <h2 style={{ fontSize: 22, fontWeight: 700, marginBottom: 20, color: '#F5E642' }}>⚙️ How BRRRR Works in DFW</h2>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(140px, 1fr))', gap: 12, marginBottom: 20 }}>
             {[
               { step: 'B', label: 'Buy', desc: 'Distressed property below market' },
@@ -39,9 +39,9 @@ export default function DFWBRRRRGuide() {
               { step: 'R', label: 'Repeat', desc: 'Use cash for next deal' },
             ].map((item, i) => (
               <div key={i} style={{ background: '#0A1628', borderRadius: 12, padding: 16, textAlign: 'center' }}>
-                <div style={{ fontSize: 28, fontWeight: 900, color: '#F5E642′ }}>{item.step}</div>
+                <div style={{ fontSize: 28, fontWeight: 900, color: '#F5E642' }}>{item.step}</div>
                 <div style={{ fontWeight: 700, marginBottom: 4 }}>{item.label}</div>
-                <div style={{ fontSize: 12, color: '#8A9BB5′ }}>{item.desc}</div>
+                <div style={{ fontSize: 12, color: '#8A9BB5' }}>{item.desc}</div>
               </div>
             ))}
           </div>
@@ -52,7 +52,7 @@ export default function DFWBRRRRGuide() {
         </div>
 
         <div style={{ background: '#111E35', borderRadius: 16, padding: 32, marginBottom: 32 }}>
-          <h2 style={{ fontSize: 22, fontWeight: 700, marginBottom: 20, color: '#F5E642′ }}>📍 Best DFW Neighborhoods for BRRRR</h2>
+          <h2 style={{ fontSize: 22, fontWeight: 700, marginBottom: 20, color: '#F5E642' }}>📍 Best DFW Neighborhoods for BRRRR</h2>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: 16 }}>
             {[
               { area: 'East Dallas', why: 'Strong ARV growth, walkable, gentrifying corridors' },
@@ -62,35 +62,35 @@ export default function DFWBRRRRGuide() {
               { area: 'West Dallas', why: 'Near Design District, rapid appreciation' },
               { area: 'Haltom City', why: 'Low prices, remodel potential, stable tenants' },
             ].map((item, i) => (
-              <div key={i} style={{ background: '#0A1628', borderRadius: 12, padding: 16, borderLeft: '3px solid #F5E642′ }}>
+              <div key={i} style={{ background: '#0A1628', borderRadius: 12, padding: 16, borderLeft: '3px solid #F5E642' }}>
                 <div style={{ fontWeight: 700, marginBottom: 4 }}>{item.area}</div>
-                <div style={{ fontSize: 13, color: '#8A9BB5′ }}>{item.why}</div>
+                <div style={{ fontSize: 13, color: '#8A9BB5' }}>{item.why}</div>
               </div>
             ))}
           </div>
         </div>
 
         <div style={{ background: '#111E35', borderRadius: 16, padding: 32, marginBottom: 32 }}>
-          <h2 style={{ fontSize: 22, fontWeight: 700, marginBottom: 16, color: '#F5E642′ }}>📋 Typical DFW BRRRR Deal</h2>
+          <h2 style={{ fontSize: 22, fontWeight: 700, marginBottom: 16, color: '#F5E642' }}>📋 Typical DFW BRRRR Deal</h2>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(160px, 1fr))', gap: 12 }}>
             {[
-              { label: 'Purchase Price', value: '$120,000′ },
-              { label: 'Rehab Cost', value: '$30,000′ },
-              { label: 'After Repair Value', value: '$180,000′ },
-              { label: 'Monthly Rent', value: '$1,400′ },
-              { label: 'Cash-Out Refi (75%)', value: '$135,000′ },
+              { label: 'Purchase Price', value: '$120,000' },
+              { label: 'Rehab Cost', value: '$30,000' },
+              { label: 'After Repair Value', value: '$180,000' },
+              { label: 'Monthly Rent', value: '$1,400' },
+              { label: 'Cash-Out Refi (75%)', value: '$135,000' },
               { label: 'Capital Recovered', value: '$135K – $120K = $15K' },
             ].map((item, i) => (
               <div key={i} style={{ background: '#0A1628', borderRadius: 12, padding: 14 }}>
-                <div style={{ fontSize: 15, fontWeight: 700, color: '#F5E642′ }}>{item.value}</div>
-                <div style={{ fontSize: 12, color: '#8A9BB5′ }}>{item.label}</div>
+                <div style={{ fontSize: 15, fontWeight: 700, color: '#F5E642' }}>{item.value}</div>
+                <div style={{ fontSize: 12, color: '#8A9BB5' }}>{item.label}</div>
               </div>
             ))}
           </div>
         </div>
 
         <div style={{ background: '#111E35', borderRadius: 16, padding: 32 }}>
-          <h2 style={{ fontSize: 22, fontWeight: 700, marginBottom: 24, color: '#F5E642′ }}>🧮 BRRRR Deal Analyzer</h2>
+          <h2 style={{ fontSize: 22, fontWeight: 700, marginBottom: 24, color: '#F5E642' }}>🧮 BRRRR Deal Analyzer</h2>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: 20, marginBottom: 32 }}>
             {[
               { label: 'Purchase Price', value: purchasePrice, min: 50000, max: 400000, step: 5000, set: setPurchasePrice, fmt: (v: number) => `$${v.toLocaleString()}` },
@@ -99,10 +99,10 @@ export default function DFWBRRRRGuide() {
               { label: 'Monthly Rent', value: monthlyRent, min: 700, max: 3000, step: 50, set: setMonthlyRent, fmt: (v: number) => `$${v.toLocaleString()}/mo` },
             ].map((item, i) => (
               <div key={i}>
-                <label style={{ display: 'block', marginBottom: 8, fontSize: 14, color: '#8A9BB5′ }}>{item.label}</label>
+                <label style={{ display: 'block', marginBottom: 8, fontSize: 14, color: '#8A9BB5' }}>{item.label}</label>
                 <input type="range" min={item.min} max={item.max} step={item.step} value={item.value}
                   onChange={e => item.set(Number(e.target.value))}
-                  style={{ width: '100%', accentColor: '#F5E642′ }} />
+                  style={{ width: '100%', accentColor: '#F5E642' }} />
                 <div style={{ color: '#F5E642', fontWeight: 700 }}>{item.fmt(item.value)}</div>
               </div>
             ))}
@@ -116,9 +116,9 @@ export default function DFWBRRRRGuide() {
               { label: 'Capital Left In Deal', value: `$${Math.round(leftIn).toLocaleString()}`, highlight: true },
               { label: 'Months to Next Deal', value: leftIn === 0 ? 'Ready Now' : `~${monthsToNextDeal} mos`, highlight: true },
             ].map((item, i) => (
-              <div key={i} style={{ background: item.highlight ? '#1A2E4A' : '#0A1628', borderRadius: 12, padding: 16, border: item.highlight ? '2px solid #F5E642′ : ’none' }}>
-                <div style={{ fontSize: 20, fontWeight: 800, color: item.highlight ? '#F5E642′ : '#E8EDF5', marginBottom: 4 }}>{item.value}</div>
-                <div style={{ fontSize: 12, color: '#8A9BB5′ }}>{item.label}</div>
+              <div key={i} style={{ background: item.highlight ? '#1A2E4A' : '#0A1628', borderRadius: 12, padding: 16, border: item.highlight ? '2px solid #F5E642' : 'none' }}>
+                <div style={{ fontSize: 20, fontWeight: 800, color: item.highlight ? '#F5E642' : '#E8EDF5', marginBottom: 4 }}>{item.value}</div>
+                <div style={{ fontSize: 12, color: '#8A9BB5' }}>{item.label}</div>
               </div>
             ))}
           </div>

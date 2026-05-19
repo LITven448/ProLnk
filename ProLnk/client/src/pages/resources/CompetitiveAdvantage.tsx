@@ -71,13 +71,13 @@ export default function CompetitiveAdvantage() {
   const lifetimeSavings5yr = annualSavings * 5;
 
   return (
-    <div style={{ minHeight: "100vh", background: "#0f1117″, color: "#e5e7eb", fontFamily: "sans-serif", padding: "32px 24px" }}>
+    <div style={{ minHeight: "100vh", background: "#0f1117", color: "#e5e7eb", fontFamily: "sans-serif", padding: "32px 24px" }}>
       <div style={{ maxWidth: 1060, margin: "0 auto" }}>
 
         {/* Breadcrumb */}
         <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 8 }}>
-          <Link href="/resources" style={{ color: "#6b7280″, fontSize: 13, textDecoration: "none" }}>Resources</Link>
-          <ChevronRight size={14} color="#6b7280″ />
+          <Link href="/resources" style={{ color: "#6b7280", fontSize: 13, textDecoration: "none" }}>Resources</Link>
+          <ChevronRight size={14} color="#6b7280" />
           <span style={{ color: "#e5e7eb", fontSize: 13 }}>Why ProLnk Wins</span>
         </div>
 
@@ -103,21 +103,21 @@ export default function CompetitiveAdvantage() {
         {/* ── Comparison Table ─────────────────────────────────────────────── */}
         <section style={{ marginBottom: 48 }}>
           <h2 style={{ fontSize: 18, fontWeight: 700, color: "#fff", marginBottom: 18 }}>Feature Comparison</h2>
-          <div style={{ background: "#1a1d27″, borderRadius: 16, border: "1px solid #1e2330", overflow: "hidden" }}>
+          <div style={{ background: "#1a1d27", borderRadius: 16, border: "1px solid #1e2330", overflow: "hidden" }}>
             {/* Header row */}
             <div style={{
               display: "grid",
               gridTemplateColumns: "1fr 110px 110px 110px 110px",
               padding: "14px 20px",
-              background: "#141720″,
-              borderBottom: "1px solid #1e2330″,
+              background: "#141720",
+              borderBottom: "1px solid #1e2330",
             }}>
-              <span style={{ color: "#6b7280″, fontSize: 12, fontWeight: 600, textTransform: "uppercase", letterSpacing: "0.05em" }}>Feature</span>
+              <span style={{ color: "#6b7280", fontSize: 12, fontWeight: 600, textTransform: "uppercase", letterSpacing: "0.05em" }}>Feature</span>
               {(["ProLnk", "Angi", "HomeAdvisor", "Thumbtack"] as const).map((p, i) => (
                 <span key={i} style={{
                   textAlign: "center",
                   fontSize: 12, fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.04em",
-                  color: i === 0 ? "#22c55e" : "#6b7280″,
+                  color: i === 0 ? "#22c55e" : "#6b7280",
                 }}>
                   {p}
                 </span>
@@ -129,13 +129,13 @@ export default function CompetitiveAdvantage() {
                 display: "grid",
                 gridTemplateColumns: "1fr 110px 110px 110px 110px",
                 padding: "13px 20px",
-                borderBottom: i < FEATURES.length - 1 ? "1px solid #1e2330″ : "none",
+                borderBottom: i < FEATURES.length - 1 ? "1px solid #1e2330" : "none",
                 background: i % 2 === 0 ? "transparent" : "rgba(255,255,255,0.015)",
                 alignItems: "center",
               }}>
                 <div>
                   <div style={{ color: "#e5e7eb", fontSize: 14 }}>{row.feature}</div>
-                  <div style={{ color: "#4b5563″, fontSize: 11, marginTop: 2 }}>{row.note}</div>
+                  <div style={{ color: "#4b5563", fontSize: 11, marginTop: 2 }}>{row.note}</div>
                 </div>
                 {[row.prolnk, row.angi, row.ha, row.thumbtack].map((val, ci) => (
                   <div key={ci} style={{ textAlign: "center" }}>
@@ -143,7 +143,7 @@ export default function CompetitiveAdvantage() {
                       ? <Check size={18} color={ci === 0 ? "#22c55e" : "#22c55e"} />
                       : val === "partial"
                       ? <span style={{ color: "#f59e0b", fontSize: 12, fontWeight: 600 }}>Partial</span>
-                      : <X size={18} color="#ef4444″ />}
+                      : <X size={18} color="#ef4444" />}
                   </div>
                 ))}
               </div>
@@ -162,9 +162,9 @@ export default function CompetitiveAdvantage() {
               body="Angi charges $15–$85 per lead, sent to up to 5 pros simultaneously. You pay whether you win or lose. ProLnk is $149/month flat — no surprise charges."
             />
             <DiffCard
-              icon={<TrendingUp size={20} color="#3b82f6″ />}
+              icon={<TrendingUp size={20} color="#3b82f6" />}
               title="4-Level Network Income"
-              accent="#3b82f6″
+              accent="#3b82f6"
               body="Refer a plumber, earn 1% of every job they do — forever. Their referrals earn you 0.5%. No other platform in the industry offers this. Angi keeps 100% of network growth."
             />
             <DiffCard
@@ -174,9 +174,9 @@ export default function CompetitiveAdvantage() {
               body="Keep 72% of every job matched through ProLnk. HomeAdvisor's annual membership alone can cost $300–$3,000+, before you buy a single lead."
             />
             <DiffCard
-              icon={<Zap size={20} color="#8b5cf6″ />}
+              icon={<Zap size={20} color="#8b5cf6" />}
               title="AI Match — Not Bid Wars"
-              accent="#8b5cf6″
+              accent="#8b5cf6"
               body="ProLnk's AI routes leads to the best-fit pro based on trade, area, and rating — not whoever undercuts the most. No more race to the bottom on price."
             />
           </div>
@@ -188,7 +188,7 @@ export default function CompetitiveAdvantage() {
             <Calculator size={18} color="#22c55e" />
             <h2 style={{ fontSize: 18, fontWeight: 700, color: "#fff", margin: 0 }}>Calculate Your Savings vs Angi</h2>
           </div>
-          <div style={{ background: "#1a1d27″, borderRadius: 16, border: "1px solid #1e2330", padding: 28 }}>
+          <div style={{ background: "#1a1d27", borderRadius: 16, border: "1px solid #1e2330", padding: 28 }}>
             <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit,minmax(200px,1fr))", gap: 20, marginBottom: 28 }}>
               <SliderInput
                 label="Jobs per month"
@@ -222,8 +222,8 @@ export default function CompetitiveAdvantage() {
 
             {/* Results */}
             <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit,minmax(180px,1fr))", gap: 16 }}>
-              <CalcCard label="Angi cost / month" value={`$${angiMonthly.toLocaleString()}`} accent="#ef4444″ sub={`${Math.round(leadsNeededForJobs)} leads × $${angiLeadCost}`} />
-              <CalcCard label="ProLnk cost / month" value="$149″ accent="#22c55e" sub="Flat subscription, no surprise fees" />
+              <CalcCard label="Angi cost / month" value={`$${angiMonthly.toLocaleString()}`} accent="#ef4444" sub={`${Math.round(leadsNeededForJobs)} leads × $${angiLeadCost}`} />
+              <CalcCard label="ProLnk cost / month" value="$149" accent="#22c55e" sub="Flat subscription, no surprise fees" />
               <CalcCard label="Monthly savings" value={`$${Math.max(0, angiMonthly - 149).toLocaleString()}`} accent="#22c55e" sub="Straight to your bottom line" />
               <CalcCard label="5-year savings" value={`$${Math.max(0, lifetimeSavings5yr).toLocaleString()}`} accent="#f59e0b" sub="vs. staying on Angi forever" />
             </div>
@@ -236,9 +236,9 @@ export default function CompetitiveAdvantage() {
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit,minmax(460px,1fr))", gap: 16 }}>
             {TESTIMONIALS.map((t, i) => (
               <div key={i} style={{
-                background: "#1a1d27″,
+                background: "#1a1d27",
                 borderRadius: 14,
-                border: "1px solid #1e2330″,
+                border: "1px solid #1e2330",
                 padding: 24,
               }}>
                 <div style={{ display: "flex", gap: 2, marginBottom: 12 }}>
@@ -252,7 +252,7 @@ export default function CompetitiveAdvantage() {
                 <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between" }}>
                   <div>
                     <div style={{ color: "#fff", fontSize: 14, fontWeight: 600 }}>{t.name}</div>
-                    <div style={{ color: "#6b7280″, fontSize: 12 }}>{t.trade}</div>
+                    <div style={{ color: "#6b7280", fontSize: 12 }}>{t.trade}</div>
                   </div>
                   <div style={{
                     background: "rgba(34,197,94,0.1)", border: "1px solid rgba(34,197,94,0.25)",
@@ -296,7 +296,7 @@ export default function CompetitiveAdvantage() {
             <Link href="/dashboard/market">
               <button style={{
                 background: "transparent", color: "#9ca3af",
-                border: "1px solid #374151″, borderRadius: 10,
+                border: "1px solid #374151", borderRadius: 10,
                 padding: "13px 28px", fontSize: 15, fontWeight: 600,
                 cursor: "pointer",
               }}>
@@ -316,9 +316,9 @@ export default function CompetitiveAdvantage() {
 function DiffCard({ icon, title, accent, body }: { icon: React.ReactNode; title: string; accent: string; body: string }) {
   return (
     <div style={{
-      background: "#1a1d27″,
+      background: "#1a1d27",
       borderRadius: 14,
-      border: "1px solid #1e2330″,
+      border: "1px solid #1e2330",
       padding: 22,
     }}>
       <div style={{
@@ -338,14 +338,14 @@ function DiffCard({ icon, title, accent, body }: { icon: React.ReactNode; title:
 function CalcCard({ label, value, accent, sub }: { label: string; value: string; accent: string; sub: string }) {
   return (
     <div style={{
-      background: "#141720″,
+      background: "#141720",
       borderRadius: 12,
-      border: "1px solid #1e2330″,
+      border: "1px solid #1e2330",
       padding: "18px 20px",
     }}>
-      <div style={{ color: "#6b7280″, fontSize: 12, fontWeight: 500, marginBottom: 8 }}>{label}</div>
+      <div style={{ color: "#6b7280", fontSize: 12, fontWeight: 500, marginBottom: 8 }}>{label}</div>
       <div style={{ fontSize: 26, fontWeight: 800, color: accent, lineHeight: 1 }}>{value}</div>
-      <div style={{ color: "#4b5563″, fontSize: 11, marginTop: 6 }}>{sub}</div>
+      <div style={{ color: "#4b5563", fontSize: 11, marginTop: 6 }}>{sub}</div>
     </div>
   );
 }

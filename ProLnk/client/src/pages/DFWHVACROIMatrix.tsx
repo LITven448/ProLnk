@@ -33,9 +33,9 @@ export default function DFWHVACROIMatrix() {
     <div style={{ background: '#0A1628', minHeight: '100vh', padding: '2rem', fontFamily: 'sans-serif', color: '#fff' }}>
       <h1 style={{ color: '#F5E642', fontSize: '1.6rem', marginBottom: '0.25rem' }}>📊 DFW HVAC Upgrade ROI Matrix</h1>
       <p style={{ color: '#94a3b8', marginBottom: '1rem' }}>Compare ROI of DFW HVAC investments. Select upgrades to see combined payback and 5-year return.</p>
-      <label style={{ color: '#F5E642′ }}>Your Annual HVAC Bill: ${annualBill.toLocaleString()}
+      <label style={{ color: '#F5E642' }}>Your Annual HVAC Bill: ${annualBill.toLocaleString()}
         <input type="range" min={800} max={8000} step={100} value={annualBill} onChange={e => setAnnualBill(+e.target.value)}
-          style={{ display: 'block', width: '100%', maxWidth: 560, marginTop: 4, accentColor: '#F5E642′ }} />
+          style={{ display: 'block', width: '100%', maxWidth: 560, marginTop: 4, accentColor: '#F5E642' }} />
       </label>
       <div style={{ display: 'grid', gap: '0.6rem', maxWidth: 560, marginTop: '1rem' }}>
         {sorted.map(inv => {
@@ -44,9 +44,9 @@ export default function DFWHVACROIMatrix() {
           const isOn = selected.has(inv.id);
           return (
             <div key={inv.id} onClick={() => toggle(inv.id)}
-              style={{ background: isOn ? '#1e3a5f' : '#1e2d45', border: isOn ? '2px solid #F5E642′ : '2px solid #2d4a6e', borderRadius: 8, padding: '0.75rem 1rem', cursor: ’pointer' }}>
+              style={{ background: isOn ? '#1e3a5f' : '#1e2d45', border: isOn ? '2px solid #F5E642' : '2px solid #2d4a6e', borderRadius: 8, padding: '0.75rem 1rem', cursor: 'pointer' }}>
               <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                <span style={{ fontWeight: 600, color: isOn ? '#F5E642′ : '#e2e8f0' }}>{inv.label}</span>
+                <span style={{ fontWeight: 600, color: isOn ? '#F5E642' : '#e2e8f0' }}>{inv.label}</span>
                 <span style={{ color: '#F5E642', fontWeight: 700, fontSize: '0.85rem' }}>{roi}% annual ROI</span>
               </div>
               <div style={{ color: '#94a3b8', fontSize: '0.8rem', marginTop: '0.25rem' }}>{inv.desc}</div>
@@ -77,7 +77,7 @@ export default function DFWHVACROIMatrix() {
             </div>
             <div style={{ background: '#0A1628', borderRadius: 6, padding: '0.75rem', textAlign: 'center' }}>
               <div style={{ color: '#94a3b8', fontSize: '0.8rem' }}>5-Year Net ROI</div>
-              <div style={{ color: roi5yr >= 0 ? '#4ade80′ : '#f87171', fontWeight: 800, fontSize: '1.4rem' }}>{roi5yr}%</div>
+              <div style={{ color: roi5yr >= 0 ? '#4ade80' : '#f87171', fontWeight: 800, fontSize: '1.4rem' }}>{roi5yr}%</div>
             </div>
           </div>
         </div>

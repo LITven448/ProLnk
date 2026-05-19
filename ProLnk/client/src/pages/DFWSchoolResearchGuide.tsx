@@ -64,8 +64,8 @@ export default function DFWSchoolResearchGuide() {
             {familyPriorities.map(p => (
               <button key={p.key} onClick={() => setSelected(p.key)}
                 style={{ textAlign: 'left', padding: '14px 20px', borderRadius: 10, border: '2px solid', cursor: 'pointer',
-                  borderColor: selected === p.key ? '#F5E642′ : '#E2E8F0',
-                  backgroundColor: selected === p.key ? '#FEFCE8′ : '#F9FAFB',
+                  borderColor: selected === p.key ? '#F5E642' : '#E2E8F0',
+                  backgroundColor: selected === p.key ? '#FEFCE8' : '#F9FAFB',
                   color: '#0A1628', fontWeight: 600, fontSize: 15 }}>
                 {p.label}
               </button>
@@ -84,7 +84,7 @@ export default function DFWSchoolResearchGuide() {
         <div style={{ backgroundColor: '#fff', borderRadius: 12, padding: 28, marginBottom: 24, boxShadow: '0 2px 8px rgba(0,0,0,0.06)' }}>
           <h2 style={{ color: '#0A1628', fontSize: 20, fontWeight: 700, marginBottom: 20 }}>Understanding the rating platforms</h2>
           {ratingPlatforms.map(r => (
-            <div key={r.name} style={{ marginBottom: 20, paddingBottom: 20, borderBottom: '1px solid #F1F5F9′ }}>
+            <div key={r.name} style={{ marginBottom: 20, paddingBottom: 20, borderBottom: '1px solid #F1F5F9' }}>
               <div style={{ fontSize: 18, fontWeight: 700, color: '#0A1628', marginBottom: 6 }}>{r.emoji} {r.name}</div>
               <p style={{ color: '#334155', margin: '0 0 6px' }}>{r.what}</p>
               <p style={{ color: '#16A34A', margin: '0 0 4px', fontSize: 14 }}>✅ <strong>Best for:</strong> {r.strengths}</p>

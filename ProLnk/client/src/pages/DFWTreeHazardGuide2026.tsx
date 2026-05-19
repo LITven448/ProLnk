@@ -22,8 +22,8 @@ export default function DFWTreeHazardGuide2026() {
       actions.push('📋 Horizontal cracks or bark separation indicate structural failure — consider removal');
     }
     if (situation === 'heritage') {
-      actions.push('🌳 Heritage Tree Permit required in Dallas for removal of trees over 24″ DBH — apply through Dallas Urban Forestry');
-      actions.push('📋 Fort Worth: protected trees over 8″ DBH require city approval for removal or significant pruning');
+      actions.push('🌳 Heritage Tree Permit required in Dallas for removal of trees over 24" DBH — apply through Dallas Urban Forestry');
+      actions.push('📋 Fort Worth: protected trees over 8" DBH require city approval for removal or significant pruning');
       actions.push('⚠️ Unpermitted removal of a Heritage Tree can result in fines up to $2,000 per inch of diameter');
       actions.push('📞 Dallas Urban Forestry: 214-671-8ority — get written approval before any work begins');
     }
@@ -48,7 +48,7 @@ export default function DFWTreeHazardGuide2026() {
           {[
             { icon: '💀', title: 'Dead Limbs Over Structures', desc: 'Dead limbs over your home, fence, or power lines are the #1 tree hazard. DFW storms can drop these without warning. Remove proactively — do not wait for the next storm.' },
             { icon: '🏠', title: 'Root Damage to Foundation', desc: 'DFW clay soil means tree roots AND soil movement both affect foundations. Large trees within 1.5x their mature height from the house warrant professional evaluation.' },
-            { icon: '🌀', title: 'Heritage Tree Permits in Dallas', desc: 'Dallas requires permits to remove trees over 24″ DBH. Fort Worth protects trees over 8″ DBH. Unpermitted removal risks fines up to $2,000 per diameter inch.' },
+            { icon: '🌀', title: 'Heritage Tree Permits in Dallas', desc: 'Dallas requires permits to remove trees over 24" DBH. Fort Worth protects trees over 8" DBH. Unpermitted removal risks fines up to $2,000 per diameter inch.' },
             { icon: '🌪️', title: 'Post-Storm Inspection', desc: 'After every DFW severe storm, walk your property looking for hanging limbs (widow makers), new trunk lean, or visible root ball heaving — all require urgent attention.' },
           ].map((item, i) => (
             <div key={i} style={{ background: '#132040', borderRadius: 10, padding: 18, display: 'flex', gap: 14, alignItems: 'flex-start' }}>
@@ -77,7 +77,7 @@ export default function DFWTreeHazardGuide2026() {
           <button onClick={assess} style={{ background: '#F5E642', color: '#0A1628', border: 'none', borderRadius: 8, padding: '12px 28px', fontWeight: 700, fontSize: 15, cursor: 'pointer', width: '100%' }}>Get Risk Assessment</button>
           {result.length > 0 && (
             <div style={{ marginTop: 20 }}>
-              {result.map((r, i) => <div key={i} style={{ background: '#0A1628', borderRadius: 8, padding: '10px 14px', marginBottom: 8, fontSize: 14, color: '#CBD5E1′ }}>{r}</div>)}
+              {result.map((r, i) => <div key={i} style={{ background: '#0A1628', borderRadius: 8, padding: '10px 14px', marginBottom: 8, fontSize: 14, color: '#CBD5E1' }}>{r}</div>)}
             </div>
           )}
         </div>

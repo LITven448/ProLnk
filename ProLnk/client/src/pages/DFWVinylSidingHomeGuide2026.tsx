@@ -58,13 +58,13 @@ export default function DFWVinylSidingHomeGuide2026() {
             <>
               <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap', marginBottom: 20 }}>
                 {sidingAges.map((a, i) => (
-                  <button key={i} onClick={() => setSelectedAge(i)} style={{ padding: '8px 14px', borderRadius: 8, border: 'none', cursor: 'pointer', fontWeight: 700, fontSize: 13, background: selectedAge === i ? '#F5E642′ : '#1e3a5f', color: selectedAge === i ? '#0A1628' : '#fff' }}>{a.range}</button>
+                  <button key={i} onClick={() => setSelectedAge(i)} style={{ padding: '8px 14px', borderRadius: 8, border: 'none', cursor: 'pointer', fontWeight: 700, fontSize: 13, background: selectedAge === i ? '#F5E642' : '#1e3a5f', color: selectedAge === i ? '#0A1628' : '#fff' }}>{a.range}</button>
                 ))}
               </div>
               <div style={{ display: 'grid', gap: 10 }}>
                 {sidingAges[selectedAge].tasks.map((t, i) => (
                   <div key={i} style={{ background: '#0A1628', borderRadius: 8, padding: '12px 16px', display: 'flex', alignItems: 'center', gap: 10 }}>
-                    <span style={{ color: '#F5E642′ }}>✓</span>
+                    <span style={{ color: '#F5E642' }}>✓</span>
                     <span style={{ color: '#e2e8f0', fontSize: 14 }}>{t}</span>
                   </div>
                 ))}
@@ -80,9 +80,9 @@ export default function DFWVinylSidingHomeGuide2026() {
                 </tr></thead>
                 <tbody>{comparison.map((r, i) => (
                   <tr key={i} style={{ borderTop: '1px solid #1e3a5f' }}>
-                    <td style={{ padding: '10px 8px', color: '#94a3b8′ }}>{r.item}</td>
-                    <td style={{ padding: '10px 8px', textAlign: 'center', color: '#e2e8f0′ }}>{r.vinyl}</td>
-                    <td style={{ padding: '10px 8px', textAlign: 'center', color: '#e2e8f0′ }}>{r.hardie}</td>
+                    <td style={{ padding: '10px 8px', color: '#94a3b8' }}>{r.item}</td>
+                    <td style={{ padding: '10px 8px', textAlign: 'center', color: '#e2e8f0' }}>{r.vinyl}</td>
+                    <td style={{ padding: '10px 8px', textAlign: 'center', color: '#e2e8f0' }}>{r.hardie}</td>
                   </tr>
                 ))}</tbody>
               </table>
@@ -90,7 +90,7 @@ export default function DFWVinylSidingHomeGuide2026() {
           )}
         </div>
 
-        <div style={{ textAlign: 'center', padding: 20, background: '#0f2040', borderRadius: 12, border: '1px solid #F5E642′ }}>
+        <div style={{ textAlign: 'center', padding: 20, background: '#0f2040', borderRadius: 12, border: '1px solid #F5E642' }}>
           <div style={{ color: '#F5E642', fontWeight: 700, marginBottom: 6 }}>Get Siding Quotes in DFW</div>
           <div style={{ color: '#94a3b8', fontSize: 14 }}>ProLnk matches you with top-rated siding contractors across the Metroplex</div>
         </div>

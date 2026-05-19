@@ -60,8 +60,8 @@ export default function DFWElectricalPanelLifespan() {
                 <div style={{ color: '#8A9BB5', fontSize: 13 }}>{b.note}</div>
               </div>
               <div style={{ textAlign: 'right' }}>
-                <div style={{ color: b.risk === 'High' ? '#FF4444′ : '#F5E642', fontWeight: 700 }}>{b.life}</div>
-                <div style={{ color: b.risk === 'High' ? '#FF4444′ : '#8A9BB5', fontSize: 12 }}>Risk: {b.risk}</div>
+                <div style={{ color: b.risk === 'High' ? '#FF4444' : '#F5E642', fontWeight: 700 }}>{b.life}</div>
+                <div style={{ color: b.risk === 'High' ? '#FF4444' : '#8A9BB5', fontSize: 12 }}>Risk: {b.risk}</div>
               </div>
             </div>
           ))}
@@ -77,7 +77,7 @@ export default function DFWElectricalPanelLifespan() {
             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 14 }}>
               <div>
                 <label style={{ display: 'block', color: '#8A9BB5', fontSize: 13, marginBottom: 6 }}>Panel Age (years)</label>
-                <input value={age} onChange={e => setAge(e.target.value)} placeholder="e.g. 28″ style={{ width: '100%', padding: '10px 14px', background: '#0A1628', border: '1px solid #1E3A5F', borderRadius: 6, color: '#E8EDF5', fontSize: 15, boxSizing: 'border-box' }} />
+                <input value={age} onChange={e => setAge(e.target.value)} placeholder="e.g. 28" style={{ width: '100%', padding: '10px 14px', background: '#0A1628', border: '1px solid #1E3A5F', borderRadius: 6, color: '#E8EDF5', fontSize: 15, boxSizing: 'border-box' }} />
               </div>
               <div>
                 <label style={{ display: 'block', color: '#8A9BB5', fontSize: 13, marginBottom: 6 }}>Heavy DFW AC Use?</label>

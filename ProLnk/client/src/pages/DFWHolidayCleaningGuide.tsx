@@ -50,7 +50,7 @@ export default function DFWHolidayCleaningGuide() {
     <div style={{ background: '#0F1F3D', borderRadius: 12, padding: 20, border: '1px solid #1E3A5F', marginBottom: 14 }}>
       <div style={{ color: '#F5E642', fontWeight: 700, marginBottom: 10 }}>{title}</div>
       <ul style={{ margin: 0, padding: 0, listStyle: 'none', display: 'grid', gap: 8 }}>
-        {items.map(item => <li key={item} style={{ color: '#CBD5E1′ }}>{item}</li>)}
+        {items.map(item => <li key={item} style={{ color: '#CBD5E1' }}>{item}</li>)}
       </ul>
     </div>
   );
@@ -72,7 +72,7 @@ export default function DFWHolidayCleaningGuide() {
             <div key={s.label} style={{ background: '#0F1F3D', borderRadius: 10, padding: 14, border: '1px solid #1E3A5F', textAlign: 'center' }}>
               <div style={{ fontSize: 22 }}>{s.icon}</div>
               <div style={{ color: '#94A3B8', fontSize: 12, marginTop: 4 }}>{s.label}</div>
-              <div style={{ fontWeight: 700, color: '#F5E642′ }}>{s.value}</div>
+              <div style={{ fontWeight: 700, color: '#F5E642' }}>{s.value}</div>
             </div>
           ))}
         </div>

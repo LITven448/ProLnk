@@ -25,7 +25,7 @@ export default function DFWHomebuyerCertificationGuide() {
           <div style={{ color: '#374151', lineHeight: 1.7 }}>A HUD-approved course covering budgeting, credit, loan types, closing costs, and home maintenance. Courses run 6–8 hours and cost $15–$100. Some are free through HUD-approved nonprofit agencies.</div>
         </div>
 
-        <h2 style={{ fontSize: 16, fontWeight: 600, marginBottom: 14, color: '#1A2332′ }}>📌 Select Your Assistance Program</h2>
+        <h2 style={{ fontSize: 16, fontWeight: 600, marginBottom: 14, color: '#1A2332' }}>📌 Select Your Assistance Program</h2>
         <div style={{ display: 'flex', flexDirection: 'column', gap: 10, marginBottom: 32 }}>
           {programs.map(p => (
             <div key={p.id} onClick={() => setSel(p.id)} style={{ background: sel === p.id ? '#EFF6FF' : '#FFFFFF', border: `1px solid ${sel === p.id ? '#2563EB' : '#E2E8F0'}`, borderRadius: 10, padding: '14px 16px', cursor: 'pointer', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
@@ -40,7 +40,7 @@ export default function DFWHomebuyerCertificationGuide() {
 
         {chosen && chosen.education && (
           <div style={{ background: '#FFFFFF', border: '1px solid #E2E8F0', borderRadius: 12, padding: 24, marginBottom: 24, boxShadow: '0 1px 4px rgba(0,0,0,0.06)' }}>
-            <h3 style={{ fontSize: 16, fontWeight: 600, marginBottom: 16, color: '#1A2332′ }}>📚 Education Requirements for {chosen.label}</h3>
+            <h3 style={{ fontSize: 16, fontWeight: 600, marginBottom: 16, color: '#1A2332' }}>📚 Education Requirements for {chosen.label}</h3>
             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16, marginBottom: 16 }}>
               {[{label:'Completion Method',val:chosen.method},{label:'Course Duration',val:`${chosen.hours} hours`},{label:'Typical Cost',val:`$${chosen.cost}`},{label:'Certificate Validity',val:chosen.validity}].map(row => (
                 <div key={row.label} style={{ background: '#F8FAFC', borderRadius: 8, padding: '12px 14px' }}>
@@ -51,7 +51,7 @@ export default function DFWHomebuyerCertificationGuide() {
             </div>
             <div style={{ fontSize: 14, fontWeight: 600, marginBottom: 8 }}>Recommended Providers:</div>
             {chosen.providers.map(prov => (
-              <div key={prov} style={{ display: 'flex', gap: 8, marginBottom: 6, fontSize: 14, color: '#374151′ }}>
+              <div key={prov} style={{ display: 'flex', gap: 8, marginBottom: 6, fontSize: 14, color: '#374151' }}>
                 <span style={{ color: '#2563EB' }}>→</span>{prov}
               </div>
             ))}

@@ -28,7 +28,7 @@ export default function DFWVideoDoorBellGuide2026() {
           <p style={{ color: '#94a3b8', fontSize: 14 }}>DFW heat performance · HOA rules · porch pirate protection</p>
         </div>
 
-        <div style={{ backgroundColor: '#7f1d1d', borderRadius: 12, padding: 16, marginBottom: 24, borderLeft: '4px solid #ef4444′ }}>
+        <div style={{ backgroundColor: '#7f1d1d', borderRadius: 12, padding: 16, marginBottom: 24, borderLeft: '4px solid #ef4444' }}>
           <div style={{ fontWeight: 700, marginBottom: 4 }}>⚠️ DFW Heat Warning</div>
           <p style={{ color: '#fca5a5', fontSize: 13, margin: 0 }}>DFW regularly hits 105°F+ in July–August. Battery-powered doorbells drain 3x faster above 90°F. Some models (especially Arlo) can shut down entirely. Always check the max operating temp before buying.</p>
         </div>
@@ -76,7 +76,7 @@ export default function DFWVideoDoorBellGuide2026() {
               </select>
             </div>
           </div>
-          {rec && <div style={{ backgroundColor: '#0A1628', padding: 16, borderRadius: 8, fontSize: 14, borderLeft: '3px solid #F5E642′ }}>{rec}</div>}
+          {rec && <div style={{ backgroundColor: '#0A1628', padding: 16, borderRadius: 8, fontSize: 14, borderLeft: '3px solid #F5E642' }}>{rec}</div>}
         </div>
 
         <div style={{ textAlign: 'center', padding: 16, backgroundColor: '#112240', borderRadius: 12 }}>

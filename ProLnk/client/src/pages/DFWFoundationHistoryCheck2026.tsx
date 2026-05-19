@@ -76,8 +76,8 @@ export default function DFWFoundationHistoryCheck2026() {
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: 10, marginBottom: 20 }}>
             {scenarios.map((s, i) => (
               <button key={i} onClick={() => setSelected(i)}
-                style={{ padding: '12px', borderRadius: 8, border: selected === i ? '2px solid #F5E642′ : '2px solid #334155',
-                  backgroundColor: selected === i ? '#0A1628′ : '#0F2340', color: selected === i ? '#F5E642' : '#CBD5E1',
+                style={{ padding: '12px', borderRadius: 8, border: selected === i ? '2px solid #F5E642' : '2px solid #334155',
+                  backgroundColor: selected === i ? '#0A1628' : '#0F2340', color: selected === i ? '#F5E642' : '#CBD5E1',
                   cursor: 'pointer', fontSize: 12, fontWeight: 600, textAlign: 'left' }}>
                 {s.icon} {s.scenario}
               </button>

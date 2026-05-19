@@ -86,7 +86,7 @@ function DashTabBar({ basePath, activeTab, color }: { basePath: string; activeTa
               textDecoration: "none",
             }}
           >
-            <Icon className="w-3.5 h-3.5″ />
+            <Icon className="w-3.5 h-3.5" />
             {TAB_LABELS[tab]}
           </a>
         );
@@ -109,15 +109,15 @@ export default function CompanyDashboard({ config }: { config: CompanyDashboardC
 
         {/* ── Pre-Launch Banner ── */}
         <div className="flex items-center gap-3 px-4 py-3 rounded-xl" style={{ background: `${color}15`, border: `1px solid ${color}33` }}>
-          <AlertTriangle className="w-4 h-4 flex-shrink-0″ style={{ color }} />
+          <AlertTriangle className="w-4 h-4 flex-shrink-0" style={{ color }} />
           <div>
             <span className="text-xs font-bold" style={{ color }}>Pre-Launch Mode</span>
-            <span className="text-xs ml-2″ style={{ color: D.muted }}>Data shown represents projections and targets. Live metrics will populate after launch.</span>
+            <span className="text-xs ml-2" style={{ color: D.muted }}>Data shown represents projections and targets. Live metrics will populate after launch.</span>
           </div>
         </div>
 
         {/* ── KPIs ── */}
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4″>
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
           {metrics.primary.map((m, i) => (
             <MetricCard
               key={m.label}
@@ -127,15 +127,15 @@ export default function CompanyDashboard({ config }: { config: CompanyDashboardC
               trend={m.trend}
               color={[color, accentColor, D.amber, D.purple][i % 4]}
               sparkline={i === 0 ? metrics.revenueData : undefined}
-              icon={[<TrendingUp className="w-4 h-4″ />, <Users className="w-4 h-4" />, <DollarSign className="w-4 h-4" />, <Zap className="w-4 h-4" />][i % 4]}
+              icon={[<TrendingUp className="w-4 h-4" />, <Users className="w-4 h-4" />, <DollarSign className="w-4 h-4" />, <Zap className="w-4 h-4" />][i % 4]}
             />
           ))}
         </div>
 
         {/* ── Main Charts Row ── */}
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-4″>
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
           {/* Bar Chart */}
-          <DCard className="lg:col-span-2″>
+          <DCard className="lg:col-span-2">
             <SectionHeader
               title={`${TAB_LABELS[tab]} Trend`}
               subtitle={`${name} — last 12 months`}
@@ -155,9 +155,9 @@ export default function CompanyDashboard({ config }: { config: CompanyDashboardC
             <DCard>
               <SectionHeader title="Breakdown" subtitle="By category" />
               <DonutChart size={110} segments={metrics.donut} />
-              <div className="mt-4 space-y-2″>
+              <div className="mt-4 space-y-2">
                 {metrics.topItems.slice(0, 4).map(s => (
-                  <div key={s.label} className="flex items-center justify-between py-1″ style={{ borderBottom: `1px solid ${D.border}` }}>
+                  <div key={s.label} className="flex items-center justify-between py-1" style={{ borderBottom: `1px solid ${D.border}` }}>
                     <span className="text-xs" style={{ color: D.muted }}>{s.label}</span>
                     <span className="text-xs font-bold" style={{ color: s.color }}>{s.value}</span>
                   </div>
@@ -168,19 +168,19 @@ export default function CompanyDashboard({ config }: { config: CompanyDashboardC
         </div>
 
         {/* ── Goals + Activity ── */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-4″>
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
           {/* Goals / Progress */}
           {metrics.goals && (
             <DCard>
               <SectionHeader title="Goals & Progress" subtitle="Current period targets" />
-              <div className="space-y-4 mt-2″>
+              <div className="space-y-4 mt-2">
                 {metrics.goals.map(g => (
                   <ProgressBar key={g.label} label={g.label} value={g.value} max={g.max} color={g.color} />
                 ))}
               </div>
-              <div className="mt-4 space-y-2″>
+              <div className="mt-4 space-y-2">
                 {metrics.topItems.slice(4).map(s => (
-                  <div key={s.label} className="flex items-center justify-between py-1.5″ style={{ borderBottom: `1px solid ${D.border}` }}>
+                  <div key={s.label} className="flex items-center justify-between py-1.5" style={{ borderBottom: `1px solid ${D.border}` }}>
                     <span className="text-sm" style={{ color: D.muted }}>{s.label}</span>
                     <span className="text-sm font-bold" style={{ color: s.color }}>{s.value}</span>
                   </div>
@@ -199,7 +199,7 @@ export default function CompanyDashboard({ config }: { config: CompanyDashboardC
                   time={a.time}
                   type={a.type}
                   message={a.message}
-                  icon={<Activity className="w-3.5 h-3.5″ />}
+                  icon={<Activity className="w-3.5 h-3.5" />}
                 />
               ))}
             </div>

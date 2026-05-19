@@ -27,21 +27,21 @@ export default function DFWTrimPaintGuide2026() {
           <h2 style={{ color: '#F5E642', fontSize: 18, marginBottom: 16 }}>⚙️ Get Your Trim Paint Guide</h2>
           <div style={{ display: 'flex', gap: 16, flexWrap: 'wrap', marginBottom: 16 }}>
             <div style={{ flex: 1, minWidth: 200 }}>
-              <label style={{ display: 'block', marginBottom: 6, fontSize: 13, color: '#94a3b8′ }}>Trim Condition</label>
+              <label style={{ display: 'block', marginBottom: 6, fontSize: 13, color: '#94a3b8' }}>Trim Condition</label>
               <select value={condition} onChange={e => setCondition(e.target.value)} style={{ width: '100%', padding: '10px 12px', backgroundColor: '#0A1628', border: '1px solid #1e3a5f', borderRadius: 8, color: '#fff', fontSize: 14 }}>
                 <option value="good">Good — minor wear</option>
                 <option value="rough">Rough — chipped or cracked</option>
               </select>
             </div>
             <div style={{ flex: 1, minWidth: 200 }}>
-              <label style={{ display: 'block', marginBottom: 6, fontSize: 13, color: '#94a3b8′ }}>Home Style</label>
+              <label style={{ display: 'block', marginBottom: 6, fontSize: 13, color: '#94a3b8' }}>Home Style</label>
               <select value={style} onChange={e => setStyle(e.target.value)} style={{ width: '100%', padding: '10px 12px', backgroundColor: '#0A1628', border: '1px solid #1e3a5f', borderRadius: 8, color: '#fff', fontSize: 14 }}>
                 <option value="modern">Modern / Contemporary</option>
                 <option value="traditional">Traditional / Craftsman</option>
               </select>
             </div>
           </div>
-          <div style={{ backgroundColor: '#0A1628', borderRadius: 10, padding: 20, borderLeft: '4px solid #F5E642′ }}>
+          <div style={{ backgroundColor: '#0A1628', borderRadius: 10, padding: 20, borderLeft: '4px solid #F5E642' }}>
             <div style={{ fontSize: 13, color: '#F5E642', fontWeight: 700, marginBottom: 8 }}>✅ RECOMMENDED: {guide.finish} Finish</div>
             <div style={{ marginBottom: 6 }}><strong>Paint:</strong> {guide.paint}</div>
             <div style={{ marginBottom: 6 }}><strong>Primer:</strong> {guide.primer}</div>

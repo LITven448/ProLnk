@@ -92,13 +92,13 @@ export default function DFWSmartGarageGuide() {
             DFW Smart Garage Guide: myQ vs Chamberlain vs Tailwind
           </h1>
           <p style={{ color: '#94A3B8', fontSize: 16, lineHeight: 1.6 }}>
-            In DFW, a forgotten open garage door isn't just a security risk — it’s a $40–80 spike in your monthly AC bill. Smart garage controllers pay for themselves in the first summer.
+            In DFW, a forgotten open garage door isn't just a security risk — it's a $40–80 spike in your monthly AC bill. Smart garage controllers pay for themselves in the first summer.
           </p>
         </div>
 
-        <div style={{ background: '#F59E0B', borderRadius: 12, padding: 20, marginBottom: 24, border: '1px solid #D97706′ }}>
+        <div style={{ background: '#F59E0B', borderRadius: 12, padding: 20, marginBottom: 24, border: '1px solid #D97706' }}>
           <div style={{ fontWeight: 700, fontSize: 16, color: '#0A1628', marginBottom: 8 }}>⚠️ The DFW Garage AC Leak Problem</div>
-          <p style={{ fontSize: 14, lineHeight: 1.6, margin: 0, color: '#1C1917′ }}>
+          <p style={{ fontSize: 14, lineHeight: 1.6, margin: 0, color: '#1C1917' }}>
             An attached garage with a closed insulated door still lets in heat — but an open garage door creates a direct hot-air pathway into your home. In July and August, leaving the garage open for 4+ hours can add $40–80 to your monthly Oncor bill. Smart garage controllers with auto-close on departure solve this automatically.
           </p>
         </div>
@@ -138,14 +138,14 @@ export default function DFWSmartGarageGuide() {
               </div>
               <div style={{ background: '#0A1628', borderRadius: 6, padding: '8px 12px', fontSize: 13, display: 'flex', justifyContent: 'space-between' }}>
                 <span style={{ color: '#64748B' }}>Vehicle Delivery:</span>
-                <span style={{ color: sys.vehicleDelivery !== 'No' ? '#34D399′ : '#64748B', fontWeight: 600 }}>{sys.vehicleDelivery}</span>
+                <span style={{ color: sys.vehicleDelivery !== 'No' ? '#34D399' : '#64748B', fontWeight: 600 }}>{sys.vehicleDelivery}</span>
               </div>
             </div>
           ))}
         </div>
 
         <div style={{ background: '#0F2140', borderRadius: 12, padding: 24, marginBottom: 24, border: '1px solid #1E3A5F' }}>
-          <h2 style={{ fontSize: 20, fontWeight: 700, marginBottom: 16, color: '#F5E642′ }}>🌡️ DFW Heat & Garage Door Opener Longevity</h2>
+          <h2 style={{ fontSize: 20, fontWeight: 700, marginBottom: 16, color: '#F5E642' }}>🌡️ DFW Heat & Garage Door Opener Longevity</h2>
           <p style={{ color: '#94A3B8', fontSize: 14, lineHeight: 1.6, marginBottom: 16 }}>
             DFW summer heat is brutal on garage door opener motors. The average national opener lifespan is 10–15 years, but DFW homeowners report replacing openers every 5–7 years due to motor and circuit board damage from 110°F+ garage temperatures.
           </p>
@@ -158,14 +158,14 @@ export default function DFWSmartGarageGuide() {
             ].map(t => (
               <div key={t.tip} style={{ background: '#0A1628', borderRadius: 8, padding: 16 }}>
                 <div style={{ fontWeight: 600, marginBottom: 4 }}>{t.tip}</div>
-                <div style={{ fontSize: 13, color: '#94A3B8′ }}>{t.desc}</div>
+                <div style={{ fontSize: 13, color: '#94A3B8' }}>{t.desc}</div>
               </div>
             ))}
           </div>
         </div>
 
-        <div style={{ background: '#0F2140', borderRadius: 12, padding: 24, border: '2px solid #F5E642′ }}>
-          <h2 style={{ fontSize: 20, fontWeight: 700, marginBottom: 20, color: '#F5E642′ }}>🔍 Find Your Smart Garage Solution</h2>
+        <div style={{ background: '#0F2140', borderRadius: 12, padding: 24, border: '2px solid #F5E642' }}>
+          <h2 style={{ fontSize: 20, fontWeight: 700, marginBottom: 20, color: '#F5E642' }}>🔍 Find Your Smart Garage Solution</h2>
           <div style={{ marginBottom: 20 }}>
             <div style={{ fontSize: 14, fontWeight: 600, marginBottom: 10 }}>Your existing opener brand:</div>
             <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8 }}>
@@ -178,7 +178,7 @@ export default function DFWSmartGarageGuide() {
                 { v: 'other', l: 'Other / Unknown' },
               ].map(opt => (
                 <button key={opt.v} onClick={() => { setBrand(opt.v as OpenerBrand); setShowResult(false); }}
-                  style={{ padding: '8px 14px', borderRadius: 20, border: `2px solid ${brand === opt.v ? '#F5E642' : '#1E3A5F'}`, background: brand === opt.v ? '#F5E642′ : ’transparent', color: brand === opt.v ? '#0A1628′ : '#E8EDF5', cursor: ’pointer', fontSize: 13, fontWeight: 600 }}>
+                  style={{ padding: '8px 14px', borderRadius: 20, border: `2px solid ${brand === opt.v ? '#F5E642' : '#1E3A5F'}`, background: brand === opt.v ? '#F5E642' : 'transparent', color: brand === opt.v ? '#0A1628' : '#E8EDF5', cursor: 'pointer', fontSize: 13, fontWeight: 600 }}>
                   {opt.l}
                 </button>
               ))}
@@ -194,25 +194,25 @@ export default function DFWSmartGarageGuide() {
                 { v: 'budget', l: '💰 Lowest cost option' },
               ].map(opt => (
                 <button key={opt.v} onClick={() => { setFeatures(opt.v as FeatureSet); setShowResult(false); }}
-                  style={{ padding: '8px 14px', borderRadius: 20, border: `2px solid ${features === opt.v ? '#F5E642' : '#1E3A5F'}`, background: features === opt.v ? '#F5E642′ : ’transparent', color: features === opt.v ? '#0A1628′ : '#E8EDF5', cursor: ’pointer', fontSize: 13, fontWeight: 600 }}>
+                  style={{ padding: '8px 14px', borderRadius: 20, border: `2px solid ${features === opt.v ? '#F5E642' : '#1E3A5F'}`, background: features === opt.v ? '#F5E642' : 'transparent', color: features === opt.v ? '#0A1628' : '#E8EDF5', cursor: 'pointer', fontSize: 13, fontWeight: 600 }}>
                   {opt.l}
                 </button>
               ))}
             </div>
           </div>
           <button onClick={() => setShowResult(true)} disabled={!canGenerate}
-            style={{ background: canGenerate ? '#F5E642′ : '#1E3A5F', color: canGenerate ? '#0A1628' : '#64748B', border: ’none', padding: '12px 32px', borderRadius: 8, fontWeight: 700, fontSize: 16, cursor: canGenerate ? 'pointer' : 'not-allowed', width: '100%' }}>
+            style={{ background: canGenerate ? '#F5E642' : '#1E3A5F', color: canGenerate ? '#0A1628' : '#64748B', border: 'none', padding: '12px 32px', borderRadius: 8, fontWeight: 700, fontSize: 16, cursor: canGenerate ? 'pointer' : 'not-allowed', width: '100%' }}>
             Get My Garage Recommendation →
           </button>
           {showResult && (
             <div style={{ marginTop: 20, background: '#0A1628', borderRadius: 8, padding: 20 }}>
-              <div style={{ fontWeight: 700, fontSize: 18, marginBottom: 8, color: '#F5E642′ }}>✅ Recommended: {rec.name}</div>
+              <div style={{ fontWeight: 700, fontSize: 18, marginBottom: 8, color: '#F5E642' }}>✅ Recommended: {rec.name}</div>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: 12 }}>
-                <div><div style={{ fontSize: 12, color: '#64748B' }}>COST</div><div style={{ fontWeight: 700, fontSize: 18, color: '#F5E642′ }}>${rec.price}</div></div>
+                <div><div style={{ fontSize: 12, color: '#64748B' }}>COST</div><div style={{ fontWeight: 700, fontSize: 18, color: '#F5E642' }}>${rec.price}</div></div>
                 <div><div style={{ fontSize: 12, color: '#64748B' }}>TYPE</div><div style={{ fontWeight: 600, fontSize: 14 }}>{rec.type}</div></div>
-                <div><div style={{ fontSize: 12, color: '#64748B' }}>VEHICLE DELIVERY</div><div style={{ fontWeight: 600, fontSize: 14, color: rec.vehicleDelivery !== 'No' ? '#34D399′ : '#64748B' }}>{rec.vehicleDelivery}</div></div>
+                <div><div style={{ fontSize: 12, color: '#64748B' }}>VEHICLE DELIVERY</div><div style={{ fontWeight: 600, fontSize: 14, color: rec.vehicleDelivery !== 'No' ? '#34D399' : '#64748B' }}>{rec.vehicleDelivery}</div></div>
               </div>
-              <div style={{ marginTop: 12, fontSize: 13, color: '#94A3B8′ }}>Compatible with: {rec.compatibility}</div>
+              <div style={{ marginTop: 12, fontSize: 13, color: '#94A3B8' }}>Compatible with: {rec.compatibility}</div>
             </div>
           )}
         </div>

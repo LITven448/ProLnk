@@ -52,24 +52,24 @@ export default function DFWVsHoustonHousingGuide() {
               <h2 style={{ color: '#F5E642', marginBottom: '1rem' }}>📍 {city}</h2>
               <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
                 <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-                  <span style={{ color: '#94a3b8′ }}>Median Home Price</span>
+                  <span style={{ color: '#94a3b8' }}>Median Home Price</span>
                   <span style={{ color: '#F5E642', fontWeight: 700 }}>${d.medianPrice.toLocaleString()}</span>
                 </div>
                 <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-                  <span style={{ color: '#94a3b8′ }}>Flood Risk</span>
-                  <span style={{ color: d.floodRisk === 'High' ? '#f87171′ : '#4ade80' }}>{d.floodRisk}</span>
+                  <span style={{ color: '#94a3b8' }}>Flood Risk</span>
+                  <span style={{ color: d.floodRisk === 'High' ? '#f87171' : '#4ade80' }}>{d.floodRisk}</span>
                 </div>
                 <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-                  <span style={{ color: '#94a3b8′ }}>Annual Rainfall</span>
-                  <span style={{ color: '#e2e8f0′ }}>{d.avgRain}" / year</span>
+                  <span style={{ color: '#94a3b8' }}>Annual Rainfall</span>
+                  <span style={{ color: '#e2e8f0' }}>{d.avgRain}" / year</span>
                 </div>
                 <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-                  <span style={{ color: '#94a3b8′ }}>Avg Commute</span>
-                  <span style={{ color: '#e2e8f0′ }}>{d.commute} min</span>
+                  <span style={{ color: '#94a3b8' }}>Avg Commute</span>
+                  <span style={{ color: '#e2e8f0' }}>{d.commute} min</span>
                 </div>
                 <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-                  <span style={{ color: '#94a3b8′ }}>Tech Jobs</span>
-                  <span style={{ color: '#e2e8f0′ }}>{d.techJobs.toLocaleString()}+</span>
+                  <span style={{ color: '#94a3b8' }}>Tech Jobs</span>
+                  <span style={{ color: '#e2e8f0' }}>{d.techJobs.toLocaleString()}+</span>
                 </div>
               </div>
             </div>
@@ -126,7 +126,7 @@ export default function DFWVsHoustonHousingGuide() {
         </div>
 
         {result && (
-          <div style={{ background: '#111f3d', borderRadius: 12, padding: '1.5rem', border: '2px solid #F5E642′ }}>
+          <div style={{ background: '#111f3d', borderRadius: 12, padding: '1.5rem', border: '2px solid #F5E642' }}>
             <h3 style={{ color: '#F5E642', marginBottom: '1rem' }}>✅ Best Match: {result.city}</h3>
             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
               <div>

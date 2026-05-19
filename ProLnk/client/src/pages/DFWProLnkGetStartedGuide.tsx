@@ -52,7 +52,7 @@ export default function DFWProLnkGetStartedGuide() {
             {([['homeowner', '🏠', 'DFW Homeowner', 'I own my home and need services'], ['renter', '🏢', 'DFW Renter/Tenant', 'I rent and need to coordinate with my landlord'], ['investor', '💼', 'DFW Property Investor', 'I own investment properties or multiple homes']] as const).map(([type, emoji, label, sub]) => (
               <button key={type} onClick={() => { setUserType(type); setActiveStep(null); }} style={{ flex: '1 1 200px', padding: '16px 20px', borderRadius: 12, border: `2px solid ${userType === type ? '#F5E642' : '#1E3A5F'}`, background: userType === type ? 'rgba(245,230,66,0.08)' : '#0D2137', cursor: 'pointer', textAlign: 'left' }}>
                 <div style={{ fontSize: 24, marginBottom: 6 }}>{emoji}</div>
-                <div style={{ fontWeight: 700, color: userType === type ? '#F5E642′ : '#CBD5E1', fontSize: 15 }}>{label}</div>
+                <div style={{ fontWeight: 700, color: userType === type ? '#F5E642' : '#CBD5E1', fontSize: 15 }}>{label}</div>
                 <div style={{ color: '#64748B', fontSize: 12, marginTop: 4 }}>{sub}</div>
               </button>
             ))}
@@ -63,7 +63,7 @@ export default function DFWProLnkGetStartedGuide() {
           <>
             <div style={{ display: 'flex', gap: 8, marginBottom: 8, overflowX: 'auto', paddingBottom: 4 }}>
               {steps.map((_, i) => (
-                <div key={i} style={{ flexShrink: 0, width: 32, height: 4, borderRadius: 4, background: i <= (activeStep ?? -1) ? '#F5E642′ : '#1E3A5F', transition: ’background 0.3s' }} />
+                <div key={i} style={{ flexShrink: 0, width: 32, height: 4, borderRadius: 4, background: i <= (activeStep ?? -1) ? '#F5E642' : '#1E3A5F', transition: 'background 0.3s' }} />
               ))}
             </div>
             <div style={{ color: '#64748B', fontSize: 12, marginBottom: 20 }}>Click a step to expand • {steps.length} steps total</div>

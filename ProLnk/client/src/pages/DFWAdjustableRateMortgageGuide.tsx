@@ -38,11 +38,11 @@ export default function DFWAdjustableRateMortgageGuide() {
           <p style={{ color: '#CBD5E1', fontSize: 15, margin: 0 }}>ARM vs Fixed — making the right call in the Dallas-Fort Worth market.</p>
         </div>
 
-        <div style={{ background: '#fff', borderRadius: 12, padding: 24, marginBottom: 24, border: '1px solid #E2E8F0′ }}>
+        <div style={{ background: '#fff', borderRadius: 12, padding: 24, marginBottom: 24, border: '1px solid #E2E8F0' }}>
           <h2 style={{ color: '#0A1628', fontSize: 18, fontWeight: 700, marginBottom: 16 }}>🏠 ARM Types Available in DFW</h2>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))', gap: 12 }}>
             {armTypes.map(arm => (
-              <div key={arm.label} style={{ background: '#F9FAFB', borderRadius: 8, padding: 16, border: '1px solid #E2E8F0′ }}>
+              <div key={arm.label} style={{ background: '#F9FAFB', borderRadius: 8, padding: 16, border: '1px solid #E2E8F0' }}>
                 <div style={{ color: '#F5E642', background: '#0A1628', borderRadius: 6, padding: '4px 10px', display: 'inline-block', fontSize: 13, fontWeight: 700, marginBottom: 8 }}>{arm.label}</div>
                 <div style={{ color: '#0A1628', fontSize: 13 }}>Fixed period: <strong>{arm.fixed} yrs</strong></div>
                 <div style={{ color: '#0A1628', fontSize: 13 }}>Avg rate: <strong>{arm.typical}%</strong></div>
@@ -52,7 +52,7 @@ export default function DFWAdjustableRateMortgageGuide() {
           </div>
         </div>
 
-        <div style={{ background: '#fff', borderRadius: 12, padding: 24, marginBottom: 24, border: '1px solid #E2E8F0′ }}>
+        <div style={{ background: '#fff', borderRadius: 12, padding: 24, marginBottom: 24, border: '1px solid #E2E8F0' }}>
           <h2 style={{ color: '#0A1628', fontSize: 18, fontWeight: 700, marginBottom: 12 }}>✅ Who ARMs Make Sense For in DFW</h2>
           {['Planning to sell or move within 5–7 years', 'Expecting income growth that allows refinancing', 'Buying in a high-appreciation DFW corridor (Frisco, McKinney, Prosper)', 'Investors using short-term hold strategies'].map(pt => (
             <div key={pt} style={{ display: 'flex', gap: 10, marginBottom: 8, alignItems: 'flex-start' }}>
@@ -62,7 +62,7 @@ export default function DFWAdjustableRateMortgageGuide() {
           ))}
         </div>
 
-        <div style={{ background: '#fff', borderRadius: 12, padding: 24, marginBottom: 24, border: '1px solid #E2E8F0′ }}>
+        <div style={{ background: '#fff', borderRadius: 12, padding: 24, marginBottom: 24, border: '1px solid #E2E8F0' }}>
           <h2 style={{ color: '#0A1628', fontSize: 18, fontWeight: 700, marginBottom: 8 }}>⚠️ Rate Adjustment Risk</h2>
           <p style={{ color: '#374151', fontSize: 14, lineHeight: 1.6 }}>After the fixed period, your rate adjusts annually based on the SOFR index plus a margin (typically 2.5–3%). DFW appreciation may support refinancing before adjustments hit, but rates are never guaranteed. Caps: typically 2% per adjustment, 6% lifetime max.</p>
         </div>
@@ -72,7 +72,7 @@ export default function DFWAdjustableRateMortgageGuide() {
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12, marginBottom: 12 }}>
             <div>
               <label style={{ color: '#CBD5E1', fontSize: 13, display: 'block', marginBottom: 4 }}>Planned years in home</label>
-              <input type="number" value={timeline} onChange={e => setTimeline(e.target.value)} placeholder="e.g. 6″ style={{ width: '100%', padding: '10px', borderRadius: 8, border: 'none', fontSize: 14, boxSizing: 'border-box' }} />
+              <input type="number" value={timeline} onChange={e => setTimeline(e.target.value)} placeholder="e.g. 6" style={{ width: '100%', padding: '10px', borderRadius: 8, border: 'none', fontSize: 14, boxSizing: 'border-box' }} />
             </div>
             <div>
               <label style={{ color: '#CBD5E1', fontSize: 13, display: 'block', marginBottom: 4 }}>Loan amount ($)</label>

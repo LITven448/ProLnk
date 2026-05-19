@@ -70,7 +70,7 @@ export default function DFWSeniorScamProtectionGuide2026() {
         </div>
 
         <div style={{ background: '#ef444420', border: '1px solid #ef4444', borderRadius: 8, padding: '1rem', marginBottom: '2rem' }}>
-          <p style={{ margin: 0, fontSize: '0.9rem', color: '#fca5a5′ }}>
+          <p style={{ margin: 0, fontSize: '0.9rem', color: '#fca5a5' }}>
             ⚠️ <strong>DFW Fact:</strong> The Texas Attorney General office receives more contractor fraud complaints from seniors than any other consumer group. The average senior loses $3,000-$15,000 per scam incident. Most are preventable.
           </p>
         </div>
@@ -85,8 +85,8 @@ export default function DFWSeniorScamProtectionGuide2026() {
               key={s.id}
               onClick={() => setSelected(selected === s.id ? null : s.id)}
               style={{
-                background: selected === s.id ? '#F5E642′ : '#1e2d45',
-                color: selected === s.id ? '#0A1628′ : '#fff',
+                background: selected === s.id ? '#F5E642' : '#1e2d45',
+                color: selected === s.id ? '#0A1628' : '#fff',
                 border: '1px solid #334155',
                 borderRadius: 8,
                 padding: '0.9rem 1.2rem',

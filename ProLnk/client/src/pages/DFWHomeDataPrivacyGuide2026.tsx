@@ -71,14 +71,14 @@ export default function DFWHomeDataPrivacyGuide2026() {
         <p style={{ color: '#94a3b8', fontSize: 15, marginBottom: 32 }}>Multiple parties hold data about your DFW home. Know who has what — and how to control it. ProLnk Home Health Vault puts data ownership back in your hands.</p>
 
         <div style={{ background: '#0f2040', borderRadius: 12, padding: 24, marginBottom: 24 }}>
-          <h2 style={{ fontSize: 17, fontWeight: 700, marginBottom: 16, color: '#F5E642′ }}>🗂️ Select a data type to see who has it</h2>
+          <h2 style={{ fontSize: 17, fontWeight: 700, marginBottom: 16, color: '#F5E642' }}>🗂️ Select a data type to see who has it</h2>
           <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
             {DATA_TYPES.map((d, i) => (
               <button key={i} onClick={() => setSelected(i)}
                 style={{ display: 'flex', alignItems: 'center', gap: 12, padding: '12px 16px', borderRadius: 8, border: `2px solid ${selected === i ? '#F5E642' : '#1e3a5f'}`, background: '#0A1628', cursor: 'pointer', textAlign: 'left' }}>
                 <span style={{ fontSize: 18, flexShrink: 0 }}>{d.type.split(' ')[0]}</span>
-                <span style={{ fontSize: 14, color: selected === i ? '#F5E642′ : '#e2e8f0', fontWeight: selected === i ? 700 : 400 }}>{d.type.slice(3)}</span>
-                <span style={{ marginLeft: 'auto', fontSize: 11, padding: '3px 8px', borderRadius: 99, background: d.public ? '#7c2d12′ : '#14532d', color: d.public ? '#fca5a5' : '#86efac', flexShrink: 0 }}>{d.public ? ’PUBLIC' : 'PRIVATE'}</span>
+                <span style={{ fontSize: 14, color: selected === i ? '#F5E642' : '#e2e8f0', fontWeight: selected === i ? 700 : 400 }}>{d.type.slice(3)}</span>
+                <span style={{ marginLeft: 'auto', fontSize: 11, padding: '3px 8px', borderRadius: 99, background: d.public ? '#7c2d12' : '#14532d', color: d.public ? '#fca5a5' : '#86efac', flexShrink: 0 }}>{d.public ? 'PUBLIC' : 'PRIVATE'}</span>
               </button>
             ))}
           </div>
@@ -88,9 +88,9 @@ export default function DFWHomeDataPrivacyGuide2026() {
           <div style={{ background: '#0f2040', borderRadius: 12, padding: 24, marginBottom: 24 }}>
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: 16 }}>
               <h3 style={{ fontSize: 16, fontWeight: 700, color: '#F5E642', margin: 0 }}>{result.type}</h3>
-              <span style={{ fontSize: 12, padding: '4px 10px', borderRadius: 99, background: result.public ? '#7c2d12′ : '#14532d', color: result.public ? '#fca5a5' : '#86efac' }}>{result.public ? ’PUBLIC RECORD' : 'PRIVATE DATA'}</span>
+              <span style={{ fontSize: 12, padding: '4px 10px', borderRadius: 99, background: result.public ? '#7c2d12' : '#14532d', color: result.public ? '#fca5a5' : '#86efac' }}>{result.public ? 'PUBLIC RECORD' : 'PRIVATE DATA'}</span>
             </div>
-            <div style={{ fontSize: 13, color: '#64748b', marginBottom: 12 }}>Held by: <span style={{ color: '#94a3b8′ }}>{result.who}</span></div>
+            <div style={{ fontSize: 13, color: '#64748b', marginBottom: 12 }}>Held by: <span style={{ color: '#94a3b8' }}>{result.who}</span></div>
             <div style={{ background: '#0A1628', borderRadius: 8, padding: 14, marginBottom: 12 }}>
               <div style={{ fontSize: 12, color: '#F5E642', fontWeight: 700, marginBottom: 6 }}>WHAT DATA THEY HAVE</div>
               <div style={{ fontSize: 13, color: '#cbd5e1', lineHeight: 1.6 }}>{result.data}</div>
@@ -99,7 +99,7 @@ export default function DFWHomeDataPrivacyGuide2026() {
               <div style={{ fontSize: 12, color: '#F5E642', fontWeight: 700, marginBottom: 6 }}>HOW TO PROTECT IT</div>
               <div style={{ fontSize: 13, color: '#cbd5e1', lineHeight: 1.6 }}>{result.protect}</div>
             </div>
-            <div style={{ fontSize: 12, color: '#475569′ }}>Access: {result.link}</div>
+            <div style={{ fontSize: 12, color: '#475569' }}>Access: {result.link}</div>
           </div>
         )}
 

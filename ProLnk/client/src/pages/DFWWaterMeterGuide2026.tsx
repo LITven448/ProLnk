@@ -34,21 +34,21 @@ export default function DFWWaterMeterGuide2026() {
           <h2 style={{ color: '#F5E642', marginBottom: '1rem' }}>🔍 Water Main Risk Assessment</h2>
           <select value={homeAge} onChange={e=>setHomeAge(e.target.value)} style={{ background: '#0A1628', color: '#fff', border: '1px solid #334155', borderRadius: '6px', padding: '0.6rem', width: '100%', marginBottom: '1rem' }}>
             <option value="">Select home age...</option>
-            <option value="10″>Built after 2010 (under 15 years)</option>
-            <option value="20″>Built 1995–2010 (15–30 years)</option>
-            <option value="38″>Built 1980–1995 (30–45 years)</option>
-            <option value="50″>Built before 1980 (45+ years)</option>
+            <option value="10">Built after 2010 (under 15 years)</option>
+            <option value="20">Built 1995–2010 (15–30 years)</option>
+            <option value="38">Built 1980–1995 (30–45 years)</option>
+            <option value="50">Built before 1980 (45+ years)</option>
           </select>
           <button onClick={assess} style={{ background: '#F5E642', color: '#0A1628', border: 'none', borderRadius: '6px', padding: '0.7rem 1.5rem', fontWeight: 700, cursor: 'pointer' }}>Assess My Risk</button>
-          {result && <div style={{ marginTop: '1rem', background: '#0A1628', borderRadius: '6px', padding: '1rem', color: '#e2e8f0′ }}>{result}</div>}
+          {result && <div style={{ marginTop: '1rem', background: '#0A1628', borderRadius: '6px', padding: '1rem', color: '#e2e8f0' }}>{result}</div>}
         </div>
 
         <div style={{ background: '#1e293b', borderRadius: '10px', padding: '1.5rem' }}>
           <h3 style={{ color: '#F5E642', marginBottom: '1rem' }}>📋 What to Know About Your Main Line</h3>
           {['Main shutoff should be a ball valve inside the home — locate it before an emergency','City of Dallas replaces the main up to the meter at no cost in some cases — ask','Polybutylene (gray plastic, 1985–1995) is under class-action recall — replace it','Smart meters let cities detect leaks before your bill spikes — many DFW cities upgrading now','Underground main line leak signs: wet spots in yard, high water bills, low pressure'].map((s,i)=>(
             <div key={i} style={{ display: 'flex', gap: '0.7rem', marginBottom: '0.5rem' }}>
-              <span style={{ color: '#F5E642′ }}>›</span>
-              <span style={{ color: '#cbd5e1′ }}>{s}</span>
+              <span style={{ color: '#F5E642' }}>›</span>
+              <span style={{ color: '#cbd5e1' }}>{s}</span>
             </div>
           ))}
         </div>

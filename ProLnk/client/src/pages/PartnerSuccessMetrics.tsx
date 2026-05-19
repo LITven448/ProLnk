@@ -116,9 +116,9 @@ export default function PartnerSuccessMetrics() {
                     <p style={{ fontSize: 14, color: '#64748b', margin: 0 }}>{m.description}</p>
                   </div>
                   <div style={{ textAlign: 'right', flexShrink: 0, marginLeft: 16 }}>
-                    <div style={{ fontSize: 12, color: '#94a3b8′ }}>Target</div>
-                    <div style={{ fontSize: 20, fontWeight: 800, color: '#3b82f6′ }}>{m.target}{m.unit}</div>
-                    <div style={{ fontSize: 11, color: '#94a3b8′ }}>Avg: {m.avg}{m.unit}</div>
+                    <div style={{ fontSize: 12, color: '#94a3b8' }}>Target</div>
+                    <div style={{ fontSize: 20, fontWeight: 800, color: '#3b82f6' }}>{m.target}{m.unit}</div>
+                    <div style={{ fontSize: 11, color: '#94a3b8' }}>Avg: {m.avg}{m.unit}</div>
                   </div>
                 </div>
                 <div style={{ marginBottom: 10 }}>
@@ -130,9 +130,9 @@ export default function PartnerSuccessMetrics() {
                   <label style={{ fontSize: 13, color: '#475569', whiteSpace: 'nowrap' }}>Your value: <strong>{current}{m.unit}</strong></label>
                   <input type="range" min={m.lowerIsBetter ? 1 : 0} max={m.lowerIsBetter ? 30 : m.id === 'network' ? 10 : 100} step={m.lowerIsBetter || m.id === 'network' ? 1 : 1} value={current}
                     onChange={e => updateVal(m.id, Number(e.target.value))}
-                    style={{ flex: 1, accentColor: onTarget ? '#22c55e' : '#f97316′ }} />
+                    style={{ flex: 1, accentColor: onTarget ? '#22c55e' : '#f97316' }} />
                 </div>
-                <div style={{ background: onTarget ? '#f0fdf4′ : '#fff7ed', borderRadius: 8, padding: '10px 14px', fontSize: 14, color: onTarget ? '#166534' : '#9a3412' }}>
+                <div style={{ background: onTarget ? '#f0fdf4' : '#fff7ed', borderRadius: 8, padding: '10px 14px', fontSize: 14, color: onTarget ? '#166534' : '#9a3412' }}>
                   {m.lowerIsBetter ? m.action(current) : m.action(current)}
                 </div>
               </div>
@@ -147,29 +147,29 @@ export default function PartnerSuccessMetrics() {
             <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: 14 }}>
               <thead>
                 <tr style={{ background: '#f8fafc' }}>
-                  <th style={{ padding: '10px 14px', textAlign: 'left', color: '#475569', fontWeight: 600, borderBottom: '1px solid #e2e8f0′ }}>Month</th>
-                  <th style={{ padding: '10px 14px', textAlign: 'center', color: '#475569', fontWeight: 600, borderBottom: '1px solid #e2e8f0′ }}>📸 Photo Det.</th>
-                  <th style={{ padding: '10px 14px', textAlign: 'center', color: '#475569', fontWeight: 600, borderBottom: '1px solid #e2e8f0′ }}>✅ Acceptance</th>
-                  <th style={{ padding: '10px 14px', textAlign: 'center', color: '#475569', fontWeight: 600, borderBottom: '1px solid #e2e8f0′ }}>🤝 Close Rate</th>
-                  <th style={{ padding: '10px 14px', textAlign: 'center', color: '#475569', fontWeight: 600, borderBottom: '1px solid #e2e8f0′ }}>🌐 Network</th>
-                  <th style={{ padding: '10px 14px', textAlign: 'center', color: '#475569', fontWeight: 600, borderBottom: '1px solid #e2e8f0′ }}>⚡ Velocity</th>
+                  <th style={{ padding: '10px 14px', textAlign: 'left', color: '#475569', fontWeight: 600, borderBottom: '1px solid #e2e8f0' }}>Month</th>
+                  <th style={{ padding: '10px 14px', textAlign: 'center', color: '#475569', fontWeight: 600, borderBottom: '1px solid #e2e8f0' }}>📸 Photo Det.</th>
+                  <th style={{ padding: '10px 14px', textAlign: 'center', color: '#475569', fontWeight: 600, borderBottom: '1px solid #e2e8f0' }}>✅ Acceptance</th>
+                  <th style={{ padding: '10px 14px', textAlign: 'center', color: '#475569', fontWeight: 600, borderBottom: '1px solid #e2e8f0' }}>🤝 Close Rate</th>
+                  <th style={{ padding: '10px 14px', textAlign: 'center', color: '#475569', fontWeight: 600, borderBottom: '1px solid #e2e8f0' }}>🌐 Network</th>
+                  <th style={{ padding: '10px 14px', textAlign: 'center', color: '#475569', fontWeight: 600, borderBottom: '1px solid #e2e8f0' }}>⚡ Velocity</th>
                 </tr>
               </thead>
               <tbody>
                 {monthlyData.map((row, i) => (
                   <tr key={row.month} style={{ background: i % 2 === 0 ? '#fff' : '#f8fafc' }}>
-                    <td style={{ padding: '10px 14px', fontWeight: 600, color: '#0f172a', borderBottom: '1px solid #f1f5f9′ }}>{row.month}</td>
-                    <td style={{ padding: '10px 14px', textAlign: 'center', color: row.photo >= 15 ? '#16a34a' : '#ea580c', borderBottom: '1px solid #f1f5f9′ }}>{row.photo}%</td>
-                    <td style={{ padding: '10px 14px', textAlign: 'center', color: row.acceptance >= 85 ? '#16a34a' : '#ea580c', borderBottom: '1px solid #f1f5f9′ }}>{row.acceptance}%</td>
-                    <td style={{ padding: '10px 14px', textAlign: 'center', color: row.close >= 65 ? '#16a34a' : '#ea580c', borderBottom: '1px solid #f1f5f9′ }}>{row.close}%</td>
-                    <td style={{ padding: '10px 14px', textAlign: 'center', color: row.network >= 2 ? '#16a34a' : '#ea580c', borderBottom: '1px solid #f1f5f9′ }}>{row.network}/mo</td>
-                    <td style={{ padding: '10px 14px', textAlign: 'center', color: row.velocity <= 7 ? '#16a34a' : '#ea580c', borderBottom: '1px solid #f1f5f9′ }}>{row.velocity}d</td>
+                    <td style={{ padding: '10px 14px', fontWeight: 600, color: '#0f172a', borderBottom: '1px solid #f1f5f9' }}>{row.month}</td>
+                    <td style={{ padding: '10px 14px', textAlign: 'center', color: row.photo >= 15 ? '#16a34a' : '#ea580c', borderBottom: '1px solid #f1f5f9' }}>{row.photo}%</td>
+                    <td style={{ padding: '10px 14px', textAlign: 'center', color: row.acceptance >= 85 ? '#16a34a' : '#ea580c', borderBottom: '1px solid #f1f5f9' }}>{row.acceptance}%</td>
+                    <td style={{ padding: '10px 14px', textAlign: 'center', color: row.close >= 65 ? '#16a34a' : '#ea580c', borderBottom: '1px solid #f1f5f9' }}>{row.close}%</td>
+                    <td style={{ padding: '10px 14px', textAlign: 'center', color: row.network >= 2 ? '#16a34a' : '#ea580c', borderBottom: '1px solid #f1f5f9' }}>{row.network}/mo</td>
+                    <td style={{ padding: '10px 14px', textAlign: 'center', color: row.velocity <= 7 ? '#16a34a' : '#ea580c', borderBottom: '1px solid #f1f5f9' }}>{row.velocity}d</td>
                   </tr>
                 ))}
               </tbody>
             </table>
           </div>
-          <p style={{ fontSize: 12, color: '#94a3b8', margin: '12px 0 0′ }}>Sample data shown. Your live metrics appear in your partner dashboard after activation.</p>
+          <p style={{ fontSize: 12, color: '#94a3b8', margin: '12px 0 0' }}>Sample data shown. Your live metrics appear in your partner dashboard after activation.</p>
         </div>
 
         {/* CTA */}

@@ -16,10 +16,10 @@ import {
 } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
-const TEAL = "#00B5B8″;
-const TEAL_LIGHT = "#E0F7F7″;
+const TEAL = "#00B5B8";
+const TEAL_LIGHT = "#E0F7F7";
 const NAVY = "#1e3a5f";
-const CYAN = "#0891b2″;
+const CYAN = "#0891b2";
 const BG = "#F7FFFE";
 
 const STEPS = [
@@ -76,14 +76,14 @@ interface Systems {
 
 function StepIndicator({ current }: { current: number }) {
   return (
-    <div className="flex items-center justify-center gap-1.5 mb-8″>
+    <div className="flex items-center justify-center gap-1.5 mb-8">
       {STEPS.map((step, i) => {
         const done = current > step.id;
         const active = current === step.id;
         return (
-          <div key={step.id} className="flex items-center gap-1.5″>
+          <div key={step.id} className="flex items-center gap-1.5">
             <div
-              className="flex items-center justify-center rounded-full transition-all duration-300″
+              className="flex items-center justify-center rounded-full transition-all duration-300"
               style={{
                 width: active ? 32 : 24,
                 height: active ? 32 : 24,
@@ -103,7 +103,7 @@ function StepIndicator({ current }: { current: number }) {
             </div>
             {i < STEPS.length - 1 && (
               <div
-                className="h-0.5 w-6 rounded-full transition-colors duration-300″
+                className="h-0.5 w-6 rounded-full transition-colors duration-300"
                 style={{ backgroundColor: done ? TEAL : "#E5E7EB" }}
               />
             )}
@@ -116,7 +116,7 @@ function StepIndicator({ current }: { current: number }) {
 
 function FieldLabel({ children }: { children: React.ReactNode }) {
   return (
-    <label className="block text-sm font-semibold text-gray-700 mb-1.5″>
+    <label className="block text-sm font-semibold text-gray-700 mb-1.5">
       {children}
     </label>
   );
@@ -271,17 +271,17 @@ export default function PropertySetup() {
         </div>
       </nav>
 
-      <div className="max-w-2xl mx-auto px-6 py-10″>
-        <div className="text-center mb-6″>
-          <p className="text-xs font-bold uppercase tracking-widest mb-1″ style={{ color: TEAL }}>
+      <div className="max-w-2xl mx-auto px-6 py-10">
+        <div className="text-center mb-6">
+          <p className="text-xs font-bold uppercase tracking-widest mb-1" style={{ color: TEAL }}>
             Step {step} of {STEPS.length}
           </p>
-          <h1 className="text-2xl font-black text-gray-900″>{STEPS[step - 1].label}</h1>
+          <h1 className="text-2xl font-black text-gray-900">{STEPS[step - 1].label}</h1>
         </div>
 
         <StepIndicator current={step} />
 
-        <div className="bg-white rounded-2xl border shadow-sm p-8″ style={{ borderColor: "#E5E7EB" }}>
+        <div className="bg-white rounded-2xl border shadow-sm p-8" style={{ borderColor: "#E5E7EB" }}>
           <AnimatePresence mode="wait" custom={1}>
             <motion.div
               key={step}
@@ -293,12 +293,12 @@ export default function PropertySetup() {
               transition={{ duration: 0.22 }}
             >
               {step === 1 && (
-                <div className="space-y-5″>
+                <div className="space-y-5">
                   <div>
                     <FieldLabel>Street Address *</FieldLabel>
                     <Input value={basicInfo.address} onChange={updateBasic("address")} placeholder="4821 Maple Ridge Dr" />
                   </div>
-                  <div className="grid grid-cols-2 gap-4″>
+                  <div className="grid grid-cols-2 gap-4">
                     <div>
                       <FieldLabel>City *</FieldLabel>
                       <Input value={basicInfo.city} onChange={updateBasic("city")} placeholder="Frisco" />
@@ -308,49 +308,49 @@ export default function PropertySetup() {
                       <Input value={basicInfo.state} onChange={updateBasic("state")} placeholder="TX" />
                     </div>
                   </div>
-                  <div className="grid grid-cols-2 gap-4″>
+                  <div className="grid grid-cols-2 gap-4">
                     <div>
                       <FieldLabel>ZIP Code *</FieldLabel>
-                      <Input value={basicInfo.zip} onChange={updateBasic("zip")} placeholder="75034″ type="text" />
+                      <Input value={basicInfo.zip} onChange={updateBasic("zip")} placeholder="75034" type="text" />
                     </div>
                     <div>
                       <FieldLabel>Year Built</FieldLabel>
-                      <Input value={basicInfo.yearBuilt} onChange={updateBasic("yearBuilt")} placeholder="2004″ type="text" />
+                      <Input value={basicInfo.yearBuilt} onChange={updateBasic("yearBuilt")} placeholder="2004" type="text" />
                     </div>
                   </div>
-                  <div className="grid grid-cols-2 gap-4″>
+                  <div className="grid grid-cols-2 gap-4">
                     <div>
                       <FieldLabel>Square Footage</FieldLabel>
-                      <Input value={basicInfo.sqft} onChange={updateBasic("sqft")} placeholder="2,400″ type="text" />
+                      <Input value={basicInfo.sqft} onChange={updateBasic("sqft")} placeholder="2,400" type="text" />
                     </div>
                     <div>
                       <FieldLabel>Bedrooms</FieldLabel>
-                      <Select value={basicInfo.bedrooms} onChange={updateBasic("bedrooms")} options={["1″, "2", "3", "4", "5", "6+"]} placeholder="Select" />
+                      <Select value={basicInfo.bedrooms} onChange={updateBasic("bedrooms")} options={["1", "2", "3", "4", "5", "6+"]} placeholder="Select" />
                     </div>
                   </div>
                   <div>
                     <FieldLabel>Bathrooms</FieldLabel>
-                    <Select value={basicInfo.bathrooms} onChange={updateBasic("bathrooms")} options={["1″, "1.5", "2", "2.5", "3", "3.5", "4+"]} placeholder="Select" />
+                    <Select value={basicInfo.bathrooms} onChange={updateBasic("bathrooms")} options={["1", "1.5", "2", "2.5", "3", "3.5", "4+"]} placeholder="Select" />
                   </div>
                 </div>
               )}
 
               {step === 2 && (
-                <div className="space-y-3″>
-                  <p className="text-sm text-gray-500 mb-4″>Choose the type that best describes your home.</p>
+                <div className="space-y-3">
+                  <p className="text-sm text-gray-500 mb-4">Choose the type that best describes your home.</p>
                   {PROPERTY_TYPES.map((pt) => (
                     <button
                       key={pt.value}
                       onClick={() => setPropertyType(pt.value)}
-                      className="w-full text-left rounded-xl border-2 px-5 py-4 flex items-center justify-between transition-all duration-200″
+                      className="w-full text-left rounded-xl border-2 px-5 py-4 flex items-center justify-between transition-all duration-200"
                       style={{
                         borderColor: propertyType === pt.value ? TEAL : "#E5E7EB",
                         backgroundColor: propertyType === pt.value ? TEAL_LIGHT : "white",
                       }}
                     >
                       <div>
-                        <p className="text-sm font-bold text-gray-900″>{pt.label}</p>
-                        <p className="text-xs text-gray-500 mt-0.5″>{pt.desc}</p>
+                        <p className="text-sm font-bold text-gray-900">{pt.label}</p>
+                        <p className="text-xs text-gray-500 mt-0.5">{pt.desc}</p>
                       </div>
                       <div
                         className="w-5 h-5 rounded-full border-2 flex items-center justify-center flex-shrink-0 ml-4 transition-colors"
@@ -367,8 +367,8 @@ export default function PropertySetup() {
               )}
 
               {step === 3 && (
-                <div className="space-y-5″>
-                  <p className="text-sm text-gray-500 mb-2″>
+                <div className="space-y-5">
+                  <p className="text-sm text-gray-500 mb-2">
                     Knowing your system ages helps us flag upcoming maintenance before it becomes expensive.
                   </p>
                   <div>
@@ -391,7 +391,7 @@ export default function PropertySetup() {
               )}
 
               {step === 4 && (
-                <div className="flex flex-col items-center gap-6 py-2″>
+                <div className="flex flex-col items-center gap-6 py-2">
                   <div
                     className="w-16 h-16 rounded-2xl flex items-center justify-center"
                     style={{ background: `linear-gradient(135deg, ${NAVY} 0%, ${CYAN} 100%)` }}
@@ -399,7 +399,7 @@ export default function PropertySetup() {
                     <Camera className="w-8 h-8 text-white" />
                   </div>
                   <div className="text-center">
-                    <h3 className="text-lg font-black text-gray-900″>Upload a Home Photo</h3>
+                    <h3 className="text-lg font-black text-gray-900">Upload a Home Photo</h3>
                     <p className="text-sm text-gray-500 mt-1 leading-relaxed max-w-xs mx-auto">
                       Our AI analyzes your photo to detect visible maintenance needs and generate your first health score.
                     </p>
@@ -407,10 +407,10 @@ export default function PropertySetup() {
 
                   {photoPreview ? (
                     <div className="w-full">
-                      <div className="relative rounded-xl overflow-hidden aspect-video border-2″ style={{ borderColor: TEAL }}>
+                      <div className="relative rounded-xl overflow-hidden aspect-video border-2" style={{ borderColor: TEAL }}>
                         <img src={photoPreview} alt="Home photo" className="w-full h-full object-cover" />
-                        <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent flex items-end p-3″>
-                          <div className="flex items-center gap-1.5″>
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent flex items-end p-3">
+                          <div className="flex items-center gap-1.5">
                             <CheckCircle className="w-4 h-4 text-white" />
                             <span className="text-xs font-semibold text-white">{photoFile?.name}</span>
                           </div>
@@ -432,11 +432,11 @@ export default function PropertySetup() {
                         className="w-12 h-12 rounded-full flex items-center justify-center"
                         style={{ backgroundColor: TEAL_LIGHT }}
                       >
-                        <Upload className="w-5 h-5″ style={{ color: TEAL }} />
+                        <Upload className="w-5 h-5" style={{ color: TEAL }} />
                       </div>
                       <div className="text-center">
-                        <p className="text-sm font-bold text-gray-700″>Click to upload</p>
-                        <p className="text-xs text-gray-400 mt-0.5″>JPG, PNG or HEIC up to 20 MB</p>
+                        <p className="text-sm font-bold text-gray-700">Click to upload</p>
+                        <p className="text-xs text-gray-400 mt-0.5">JPG, PNG or HEIC up to 20 MB</p>
                       </div>
                       <input
                         type="file"
@@ -460,27 +460,27 @@ export default function PropertySetup() {
                     animate={{ scale: 1 }}
                     transition={{ type: "spring", stiffness: 280, damping: 18, delay: 0.1 }}
                     className="w-20 h-20 rounded-full flex items-center justify-center"
-                    style={{ backgroundColor: "#10B981″ }}
+                    style={{ backgroundColor: "#10B981" }}
                   >
                     <ShieldCheck className="w-10 h-10 text-white" />
                   </motion.div>
 
                   <div>
-                    <h2 className="text-2xl font-black text-gray-900″>Your home is protected.</h2>
+                    <h2 className="text-2xl font-black text-gray-900">Your home is protected.</h2>
                     <p className="text-sm text-gray-500 mt-2 max-w-xs mx-auto leading-relaxed">
-                      {basicInfo.address ? `${basicInfo.address}, ${basicInfo.city} ${basicInfo.state}` : "Your home"} is now in the TrustyPro network. We'll monitor maintenance needs, alert you early, and connect you to verified pros when you’re ready.
+                      {basicInfo.address ? `${basicInfo.address}, ${basicInfo.city} ${basicInfo.state}` : "Your home"} is now in the TrustyPro network. We'll monitor maintenance needs, alert you early, and connect you to verified pros when you're ready.
                     </p>
                   </div>
 
-                  <div className="w-full bg-gray-50 rounded-2xl p-5 text-left space-y-3″>
+                  <div className="w-full bg-gray-50 rounded-2xl p-5 text-left space-y-3">
                     {[
                       { label: "AI Health Score", value: "Generating…", color: TEAL },
-                      { label: "Maintenance Alerts", value: "Active", color: "#10B981″ },
-                      { label: "Pro Network", value: "Connected", color: "#10B981″ },
-                      { label: "Home Vault", value: "Ready", color: "#10B981″ },
+                      { label: "Maintenance Alerts", value: "Active", color: "#10B981" },
+                      { label: "Pro Network", value: "Connected", color: "#10B981" },
+                      { label: "Home Vault", value: "Ready", color: "#10B981" },
                     ].map((item) => (
                       <div key={item.label} className="flex items-center justify-between">
-                        <span className="text-sm text-gray-600″>{item.label}</span>
+                        <span className="text-sm text-gray-600">{item.label}</span>
                         <span className="text-sm font-bold" style={{ color: item.color }}>{item.value}</span>
                       </div>
                     ))}
@@ -492,14 +492,14 @@ export default function PropertySetup() {
                       className="flex-1 flex items-center justify-center gap-2 px-5 py-3 rounded-full text-sm font-bold text-white hover:opacity-90 transition-opacity"
                       style={{ backgroundColor: TEAL }}
                     >
-                      <Camera className="w-4 h-4″ /> Take First Scan
+                      <Camera className="w-4 h-4" /> Take First Scan
                     </button>
                     <button
                       onClick={() => navigate("/trustypro/dashboard")}
                       className="flex-1 flex items-center justify-center gap-2 px-5 py-3 rounded-full text-sm font-bold border-2 hover:bg-gray-50 transition-colors"
                       style={{ borderColor: NAVY, color: NAVY }}
                     >
-                      Go to Dashboard <ChevronRight className="w-4 h-4″ />
+                      Go to Dashboard <ChevronRight className="w-4 h-4" />
                     </button>
                   </div>
                 </div>
@@ -509,13 +509,13 @@ export default function PropertySetup() {
         </div>
 
         {step < 5 && (
-          <div className="flex items-center justify-between mt-6″>
+          <div className="flex items-center justify-between mt-6">
             <button
               onClick={handleBack}
               disabled={step === 1}
               className="flex items-center gap-2 px-5 py-2.5 rounded-full text-sm font-semibold border border-gray-200 text-gray-600 hover:bg-gray-50 disabled:opacity-30 disabled:cursor-not-allowed transition-colors"
             >
-              <ChevronLeft className="w-4 h-4″ /> Back
+              <ChevronLeft className="w-4 h-4" /> Back
             </button>
 
             <button
@@ -526,23 +526,23 @@ export default function PropertySetup() {
             >
               {saving ? (
                 <>
-                  <svg className="animate-spin w-4 h-4″ fill="none" viewBox="0 0 24 24">
-                    <circle className="opacity-25″ cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" />
-                    <path className="opacity-75″ fill="currentColor" d="M4 12a8 8 0 018-8v8H4z" />
+                  <svg className="animate-spin w-4 h-4" fill="none" viewBox="0 0 24 24">
+                    <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" />
+                    <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v8H4z" />
                   </svg>
                   Saving…
                 </>
               ) : step === 4 ? (
-                <>Save & Finish <ChevronRight className="w-4 h-4″ /></>
+                <>Save & Finish <ChevronRight className="w-4 h-4" /></>
               ) : (
-                <>Continue <ChevronRight className="w-4 h-4″ /></>
+                <>Continue <ChevronRight className="w-4 h-4" /></>
               )}
             </button>
           </div>
         )}
 
         {step === 4 && !saving && (
-          <p className="text-center text-xs text-gray-400 mt-3″>
+          <p className="text-center text-xs text-gray-400 mt-3">
             Photo is optional —{" "}
             <button
               onClick={handleNext}

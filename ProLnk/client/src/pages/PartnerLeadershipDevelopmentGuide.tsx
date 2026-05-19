@@ -47,7 +47,7 @@ export default function PartnerLeadershipDevelopmentGuide() {
             { icon: '🌐', persona: 'Network Builder', range: '$3,000–$8,000/mo', desc: 'Actively recruits and coaches downline. Building passive income streams from L1 and L2 overrides. The effort compounds.' },
             { icon: '🏆', persona: 'Network Leader', range: '$8,000–$20,000+/mo', desc: 'Runs a team, recruits leaders, manages at scale. Mentors others. L2 and L3 income is the majority of earnings.' },
           ].map(p => (
-            <div key={p.persona} style={{ background: '#fff', borderRadius: 14, padding: 24, boxShadow: '0 1px 3px rgba(0,0,0,0.08)', border: '1px solid #e2e8f0′ }}>
+            <div key={p.persona} style={{ background: '#fff', borderRadius: 14, padding: 24, boxShadow: '0 1px 3px rgba(0,0,0,0.08)', border: '1px solid #e2e8f0' }}>
               <div style={{ fontSize: 32, marginBottom: 10 }}>{p.icon}</div>
               <h3 style={{ fontWeight: 800, color: '#0f172a', marginBottom: 4 }}>{p.persona}</h3>
               <div style={{ fontSize: 14, fontWeight: 700, color: '#3b82f6', marginBottom: 10 }}>{p.range}</div>
@@ -57,7 +57,7 @@ export default function PartnerLeadershipDevelopmentGuide() {
         </div>
 
         {/* What Leaders Do Differently */}
-        <div style={{ background: '#fff', borderRadius: 14, padding: 32, marginBottom: 40, boxShadow: '0 1px 3px rgba(0,0,0,0.08)', border: '1px solid #e2e8f0′ }}>
+        <div style={{ background: '#fff', borderRadius: 14, padding: 32, marginBottom: 40, boxShadow: '0 1px 3px rgba(0,0,0,0.08)', border: '1px solid #e2e8f0' }}>
           <h2 style={{ fontSize: 22, fontWeight: 700, color: '#0f172a', marginBottom: 24 }}>🔑 What Network Leaders Do Differently</h2>
           <div style={{ display: 'grid', gap: 14 }}>
             {[
@@ -91,7 +91,7 @@ export default function PartnerLeadershipDevelopmentGuide() {
               <div key={i} style={{ display: 'flex', gap: 20, marginBottom: 12, alignItems: 'flex-start' }}>
                 <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', minWidth: 20 }}>
                   <div style={{ width: 20, height: 20, borderRadius: '50%', background: '#3b82f6', flexShrink: 0 }} />
-                  {i < 3 && <div style={{ width: 2, height: 40, background: '#e2e8f0′ }} />}
+                  {i < 3 && <div style={{ width: 2, height: 40, background: '#e2e8f0' }} />}
                 </div>
                 <div style={{ background: '#fff', borderRadius: 10, padding: '16px 20px', flex: 1, border: '1px solid #e2e8f0', marginBottom: 8 }}>
                   <div style={{ fontWeight: 700, color: '#3b82f6', fontSize: 13, marginBottom: 4 }}>{rung.period}</div>
@@ -108,7 +108,7 @@ export default function PartnerLeadershipDevelopmentGuide() {
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: 14 }}>
             {[
               { icon: '📹', name: 'Weekly Training Calls', desc: 'Live — Tuesdays 7PM CT' },
-              { icon: '📖', name: 'Partner Playbook PDF', desc: 'Full process from day 1′ },
+              { icon: '📖', name: 'Partner Playbook PDF', desc: 'Full process from day 1' },
               { icon: '📈', name: 'Income Tracking Dashboard', desc: 'Real-time earnings view' },
               { icon: '🤝', name: 'Partner Community', desc: 'Private Slack group' },
             ].map(r => (
@@ -137,7 +137,7 @@ export default function PartnerLeadershipDevelopmentGuide() {
                     const sel = answers[qi] === q.scores[oi];
                     return (
                       <button key={oi} onClick={() => { setAnswers(a => ({ ...a, [qi]: q.scores[oi] })); setShowResult(false); }}
-                        style={{ background: sel ? '#eff6ff' : '#f8fafc', border: `1px solid ${sel ? '#3b82f6' : '#e2e8f0'}`, borderRadius: 8, padding: '12px 16px', cursor: 'pointer', color: sel ? '#1d4ed8′ : '#475569', textAlign: ’left', fontSize: 14, fontWeight: sel ? 700 : 400 }}>
+                        style={{ background: sel ? '#eff6ff' : '#f8fafc', border: `1px solid ${sel ? '#3b82f6' : '#e2e8f0'}`, borderRadius: 8, padding: '12px 16px', cursor: 'pointer', color: sel ? '#1d4ed8' : '#475569', textAlign: 'left', fontSize: 14, fontWeight: sel ? 700 : 400 }}>
                         {opt}
                       </button>
                     );
@@ -159,7 +159,7 @@ export default function PartnerLeadershipDevelopmentGuide() {
               <div style={{ fontSize: 13, color: '#64748b', marginBottom: 6 }}>Your current stage</div>
               <div style={{ fontSize: 26, fontWeight: 800, color: stage.color, marginBottom: 16 }}>{stage.label}</div>
               <div style={{ fontWeight: 700, color: '#1e293b', marginBottom: 12, fontSize: 16 }}>Your next 3 actions:</div>
-              <ol style={{ margin: 0, padding: '0 0 0 20px', lineHeight: 2, color: '#475569′ }}>
+              <ol style={{ margin: 0, padding: '0 0 0 20px', lineHeight: 2, color: '#475569' }}>
                 {stage.next.map((n, i) => <li key={i} style={{ marginBottom: 4 }}>{n}</li>)}
               </ol>
             </div>

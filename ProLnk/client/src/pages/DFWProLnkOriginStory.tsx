@@ -50,13 +50,13 @@ export default function DFWProLnkOriginStory() {
           {(['homeowner', 'contractor', 'partner'] as Perspective[]).map(p => (
             <button key={p} onClick={() => setPerspective(p)}
               style={{ padding: '10px 22px', borderRadius: 8, border: 'none', cursor: 'pointer', fontWeight: 700, fontSize: 14,
-                background: perspective === p ? '#F5E642′ : '#1e3a5f', color: perspective === p ? '#0A1628' : '#94a3b8' }}>
+                background: perspective === p ? '#F5E642' : '#1e3a5f', color: perspective === p ? '#0A1628' : '#94a3b8' }}>
               {labels[p]}
             </button>
           ))}
         </div>
 
-        <div style={{ background: '#112240', borderRadius: 12, padding: 28, borderLeft: '4px solid #F5E642′ }}>
+        <div style={{ background: '#112240', borderRadius: 12, padding: 28, borderLeft: '4px solid #F5E642' }}>
           <h2 style={{ fontSize: 22, fontWeight: 800, color: '#F5E642', margin: '0 0 24px' }}>{STORY[perspective].title}</h2>
           <div style={{ display: 'flex', flexDirection: 'column', gap: 18 }}>
             {STORY[perspective].paragraphs.map((p, i) => (

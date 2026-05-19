@@ -112,7 +112,7 @@ export default function RoofingMaterialsGuide() {
           <p style={{ fontSize: 18, color: '#94a3b8', margin: 0 }}>
             What Works in Texas Heat and Hail
           </p>
-          <div style={{ marginTop: 20, padding: '16px 20px', background: '#1e1b4b', borderRadius: 10, borderLeft: '4px solid #6366f1′ }}>
+          <div style={{ marginTop: 20, padding: '16px 20px', background: '#1e1b4b', borderRadius: 10, borderLeft: '4px solid #6366f1' }}>
             <strong style={{ color: '#a5b4fc' }}>The DFW Challenge:</strong>
             <span style={{ color: '#c7d2fe', marginLeft: 8 }}>
               100°F+ summers · 1.5"+ hail events · intense UV — your material choice matters more here than almost anywhere in the country.
@@ -130,7 +130,7 @@ export default function RoofingMaterialsGuide() {
                 onClick={() => setActive(m.id)}
                 style={{
                   padding: '8px 16px', borderRadius: 8, border: 'none', cursor: 'pointer', fontSize: 14, fontWeight: 600,
-                  background: active === m.id ? '#6366f1′ : '#1e293b',
+                  background: active === m.id ? '#6366f1' : '#1e293b',
                   color: active === m.id ? '#fff' : '#94a3b8',
                 }}
               >
@@ -198,7 +198,7 @@ export default function RoofingMaterialsGuide() {
                 {budgets.map((b) => (
                   <button key={b} onClick={() => setBudget(b)} style={{
                     padding: '10px 14px', borderRadius: 8, border: '1px solid', cursor: 'pointer', textAlign: 'left', fontSize: 14,
-                    borderColor: budget === b ? '#6366f1′ : '#1e293b',
+                    borderColor: budget === b ? '#6366f1' : '#1e293b',
                     background: budget === b ? '#1e1b4b' : '#0a0a0f',
                     color: budget === b ? '#a5b4fc' : '#64748b',
                   }}>{b}</button>
@@ -211,7 +211,7 @@ export default function RoofingMaterialsGuide() {
                 {priorities.map((p) => (
                   <button key={p} onClick={() => setPriority(p)} style={{
                     padding: '10px 14px', borderRadius: 8, border: '1px solid', cursor: 'pointer', textAlign: 'left', fontSize: 14,
-                    borderColor: priority === p ? '#6366f1′ : '#1e293b',
+                    borderColor: priority === p ? '#6366f1' : '#1e293b',
                     background: priority === p ? '#1e1b4b' : '#0a0a0f',
                     color: priority === p ? '#a5b4fc' : '#64748b',
                   }}>{p}</button>

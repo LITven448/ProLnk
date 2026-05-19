@@ -47,8 +47,8 @@ export default function DFWProLnk5200Pages2026() {
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: 10 }}>
             {categories.map(c => (
               <button key={c.id} onClick={() => setSelected(c.id)} style={{
-                background: selected === c.id ? '#F5E642′ : '#111D2E',
-                color: selected === c.id ? '#0A1628′ : '#fff',
+                background: selected === c.id ? '#F5E642' : '#111D2E',
+                color: selected === c.id ? '#0A1628' : '#fff',
                 border: '1px solid #F5E642', borderRadius: 8, padding: '10px 16px',
                 cursor: 'pointer', fontWeight: 600, fontSize: 13,
               }}>{c.label}</button>

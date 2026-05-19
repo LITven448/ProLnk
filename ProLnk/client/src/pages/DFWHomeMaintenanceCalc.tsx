@@ -60,7 +60,7 @@ export default function DFWHomeMaintenanceCalc() {
               <label style={{ color: '#8B9BB4', fontSize: 13 }}>Home Age</label>
               <span style={{ color: '#F5E642', fontWeight: 700 }}>{homeAge} years</span>
             </div>
-            <input type="range" min={1} max={60} value={homeAge} onChange={e => setHomeAge(+e.target.value)} style={{ width: '100%', accentColor: '#F5E642′ }} />
+            <input type="range" min={1} max={60} value={homeAge} onChange={e => setHomeAge(+e.target.value)} style={{ width: '100%', accentColor: '#F5E642' }} />
             <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: 11, color: '#4A5568', marginTop: 4 }}>
               <span>New</span><span>60 yrs</span>
             </div>
@@ -71,7 +71,7 @@ export default function DFWHomeMaintenanceCalc() {
               <label style={{ color: '#8B9BB4', fontSize: 13 }}>Square Footage</label>
               <span style={{ color: '#F5E642', fontWeight: 700 }}>{sqft.toLocaleString()} sq ft</span>
             </div>
-            <input type="range" min={800} max={6000} step={100} value={sqft} onChange={e => setSqft(+e.target.value)} style={{ width: '100%', accentColor: '#F5E642′ }} />
+            <input type="range" min={800} max={6000} step={100} value={sqft} onChange={e => setSqft(+e.target.value)} style={{ width: '100%', accentColor: '#F5E642' }} />
             <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: 11, color: '#4A5568', marginTop: 4 }}>
               <span>800</span><span>6,000</span>
             </div>
@@ -82,7 +82,7 @@ export default function DFWHomeMaintenanceCalc() {
               <label style={{ color: '#8B9BB4', fontSize: 13 }}>Roof Age</label>
               <span style={{ color: '#F5E642', fontWeight: 700 }}>{roofAge} years</span>
             </div>
-            <input type="range" min={0} max={25} value={roofAge} onChange={e => setRoofAge(+e.target.value)} style={{ width: '100%', accentColor: '#F5E642′ }} />
+            <input type="range" min={0} max={25} value={roofAge} onChange={e => setRoofAge(+e.target.value)} style={{ width: '100%', accentColor: '#F5E642' }} />
             <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: 11, color: '#4A5568', marginTop: 4 }}>
               <span>New</span><span>25 yrs</span>
             </div>
@@ -95,13 +95,13 @@ export default function DFWHomeMaintenanceCalc() {
             </div>
             <div style={{ display: 'flex', gap: 8 }}>
               {[1, 2, 3, 4].map(n => (
-                <button key={n} onClick={() => setHvacCount(n)} style={{ flex: 1, padding: '8px 0', borderRadius: 8, border: 'none', cursor: 'pointer', fontWeight: 700, background: hvacCount === n ? '#F5E642′ : '#1A2E4A', color: hvacCount === n ? '#0A1628' : '#8B9BB4' }}>{n}</button>
+                <button key={n} onClick={() => setHvacCount(n)} style={{ flex: 1, padding: '8px 0', borderRadius: 8, border: 'none', cursor: 'pointer', fontWeight: 700, background: hvacCount === n ? '#F5E642' : '#1A2E4A', color: hvacCount === n ? '#0A1628' : '#8B9BB4' }}>{n}</button>
               ))}
             </div>
           </div>
 
           <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
-            <div onClick={() => setHasPool(p => !p)} style={{ width: 44, height: 24, borderRadius: 12, background: hasPool ? '#F5E642′ : '#1A2E4A', cursor: ’pointer', position: 'relative', transition: 'background 0.2s' }}>
+            <div onClick={() => setHasPool(p => !p)} style={{ width: 44, height: 24, borderRadius: 12, background: hasPool ? '#F5E642' : '#1A2E4A', cursor: 'pointer', position: 'relative', transition: 'background 0.2s' }}>
               <div style={{ width: 18, height: 18, borderRadius: 9, background: '#fff', position: 'absolute', top: 3, left: hasPool ? 23 : 3, transition: 'left 0.2s' }} />
             </div>
             <label style={{ color: '#8B9BB4', fontSize: 13, cursor: 'pointer' }} onClick={() => setHasPool(p => !p)}>Has Pool</label>
@@ -118,8 +118,8 @@ export default function DFWHomeMaintenanceCalc() {
           <h2 style={{ color: '#F5E642', fontSize: 15, fontWeight: 700, marginBottom: 16 }}>Cost Breakdown</h2>
           {categories.map(cat => (
             <div key={cat.label} style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '10px 0', borderBottom: '1px solid #1A2E4A' }}>
-              <span style={{ fontSize: 14, color: '#8B9BB4′ }}>{cat.label}</span>
-              <span style={{ fontSize: 14, fontWeight: 700, color: '#E8EAF0′ }}>${cat.value.toLocaleString()}</span>
+              <span style={{ fontSize: 14, color: '#8B9BB4' }}>{cat.label}</span>
+              <span style={{ fontSize: 14, fontWeight: 700, color: '#E8EAF0' }}>${cat.value.toLocaleString()}</span>
             </div>
           ))}
         </div>

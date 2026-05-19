@@ -32,12 +32,12 @@ export default function DFWEscrowShortageGuide2026() {
 
         <div style={{ background: '#1e2d47', borderRadius: 12, padding: 24, marginBottom: 32 }}>
           <div style={{ fontSize: 14, color: '#F5E642', fontWeight: 700, marginBottom: 12 }}>📊 Escrow Shortage Calculator</div>
-          <label style={{ fontSize: 12, color: '#94a3b8′ }}>My escrow shortage amount ($)</label>
+          <label style={{ fontSize: 12, color: '#94a3b8' }}>My escrow shortage amount ($)</label>
           <input
             type="number"
             value={shortage}
             onChange={e => setShortage(e.target.value)}
-            placeholder="e.g. 500″
+            placeholder="e.g. 500"
             style={{ display: 'block', marginTop: 8, width: '100%', background: '#0A1628', color: '#fff', border: '1px solid #334155', borderRadius: 8, padding: '12px', fontSize: 16 }}
           />
           {amount > 0 && (
@@ -62,7 +62,7 @@ export default function DFWEscrowShortageGuide2026() {
             <span style={{ fontSize: 24 }}>{s.icon}</span>
             <div>
               <div style={{ fontWeight: 700, marginBottom: 4 }}>{s.title}</div>
-              <div style={{ fontSize: 13, color: '#94a3b8′ }}>{s.desc}</div>
+              <div style={{ fontSize: 13, color: '#94a3b8' }}>{s.desc}</div>
             </div>
           </div>
         ))}

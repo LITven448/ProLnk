@@ -21,7 +21,7 @@ export default function DFWRoofingHardwareStore2026() {
         <div style={{ fontSize: 13, color: '#F5E642', marginBottom: 8, letterSpacing: 1 }}>DFW HOME SERVICES · 2026 GUIDE</div>
         <h1 style={{ fontSize: 28, fontWeight: 800, marginBottom: 6 }}>🔨 DFW Roofing from the Hardware Store Guide 2026</h1>
         <p style={{ color: '#94a3b8', marginBottom: 28, lineHeight: 1.7 }}>
-          DFW homeowners can legally do <strong style={{ color: '#F5E642′ }}>small repairs themselves</strong> — but full tear-offs and
+          DFW homeowners can legally do <strong style={{ color: '#F5E642' }}>small repairs themselves</strong> — but full tear-offs and
           replacement require a licensed contractor and city permit. Know the line before you start.
         </p>
 
@@ -35,12 +35,12 @@ export default function DFWRoofingHardwareStore2026() {
             <div key={s.label} style={{ background: '#112240', borderRadius: 10, padding: 16 }}>
               <div style={{ fontSize: 22, marginBottom: 4 }}>{s.icon}</div>
               <div style={{ fontSize: 11, color: '#94a3b8', marginBottom: 2 }}>{s.label}</div>
-              <div style={{ fontSize: 15, fontWeight: 700, color: '#F5E642′ }}>{s.value}</div>
+              <div style={{ fontSize: 15, fontWeight: 700, color: '#F5E642' }}>{s.value}</div>
             </div>
           ))}
         </div>
 
-        <div style={{ background: '#112240', borderRadius: 10, padding: 16, marginBottom: 24, borderLeft: '4px solid #F5E642′ }}>
+        <div style={{ background: '#112240', borderRadius: 10, padding: 16, marginBottom: 24, borderLeft: '4px solid #F5E642' }}>
           <div style={{ fontWeight: 700, marginBottom: 8 }}>🏪 DFW Hardware Store Roofing Essentials</div>
           <div style={{ color: '#94a3b8', fontSize: 14, lineHeight: 1.8 }}>
             <div>🧴 <strong style={{ color: '#fff' }}>Henry 208R or 209:</strong> wet-patch in a can, $15–25</div>
@@ -57,7 +57,7 @@ export default function DFWRoofingHardwareStore2026() {
               style={{ background: selected === i ? '#1e3a5f' : '#112240', border: `1px solid ${selected === i ? '#F5E642' : '#1e3a5f'}`, borderRadius: 10, padding: '12px 16px', color: '#fff', textAlign: 'left', cursor: 'pointer' }}>
               <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
                 <div style={{ fontWeight: 600 }}>{r.label}</div>
-                <div style={{ fontSize: 12, color: r.verdict.startsWith('✅') ? '#4ade80′ : '#f87171', whiteSpace: ’nowrap', marginLeft: 8 }}>{r.verdict}</div>
+                <div style={{ fontSize: 12, color: r.verdict.startsWith('✅') ? '#4ade80' : '#f87171', whiteSpace: 'nowrap', marginLeft: 8 }}>{r.verdict}</div>
               </div>
               {selected === i && (
                 <div style={{ marginTop: 10, color: '#94a3b8', lineHeight: 1.7, fontSize: 14 }}>💡 {r.guide}</div>

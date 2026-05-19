@@ -7,27 +7,27 @@ import {
 } from "recharts";
 
 const D = {
-  bg: "#0A1628″,
-  surface: "#0F1E36″,
-  card: "#152540″,
+  bg: "#0A1628",
+  surface: "#0F1E36",
+  card: "#152540",
   border: "#1E3A5F",
   text: "#F0F4FF",
   muted: "#7B96BB",
-  dim: "#3A5478″,
-  teal: "#14B8A6″,
-  green: "#00E676″,
-  amber: "#FFB300″,
-  red: "#FF5555″,
+  dim: "#3A5478",
+  teal: "#14B8A6",
+  green: "#00E676",
+  amber: "#FFB300",
+  red: "#FF5555",
   cyan: "#00D4FF",
 };
 
-type Period = "thisMonth" | "lastMonth" | "ytd" | "full2025″;
+type Period = "thisMonth" | "lastMonth" | "ytd" | "full2025";
 
 const PERIOD_LABELS: Record<Period, string> = {
   thisMonth: "This Month",
   lastMonth: "Last Month",
-  ytd: "YTD 2026″,
-  full2025: "Full 2025″,
+  ytd: "YTD 2026",
+  full2025: "Full 2025",
 };
 
 interface IncomeData {
@@ -87,7 +87,7 @@ function LineItem({
   return (
     <div style={{
       display: "flex", justifyContent: "space-between", alignItems: "center",
-      padding: sub ? "7px 0 7px 16px" : "9px 0″,
+      padding: sub ? "7px 0 7px 16px" : "9px 0",
       borderBottom: `1px solid ${D.border}`,
     }}>
       <span style={{ color: sub ? D.muted : D.text, fontSize: sub ? 13 : 14 }}>{label}</span>
@@ -177,7 +177,7 @@ export default function IncomeStatement() {
           <button
             onClick={copyForCPA}
             style={{
-              background: copied ? D.green + "22″ : D.surface,
+              background: copied ? D.green + "22" : D.surface,
               border: `1px solid ${copied ? D.green : D.border}`,
               borderRadius: 8, padding: "8px 14px",
               color: copied ? D.green : D.muted,
@@ -202,7 +202,7 @@ export default function IncomeStatement() {
             style={{
               flex: 1, padding: "8px 4px", borderRadius: 7, border: "none", cursor: "pointer",
               background: period === key ? D.teal : "transparent",
-              color: period === key ? "#000″ : D.muted,
+              color: period === key ? "#000" : D.muted,
               fontWeight: period === key ? 700 : 400, fontSize: 13, transition: "all 0.15s",
             }}
           >
@@ -219,7 +219,7 @@ export default function IncomeStatement() {
         <LineItem label="Network overrides (L2)" value={d.networkL2} color={D.text} sub />
         <LineItem label="Subscription overrides" value={d.subscriptionOverrides} color={D.text} sub />
         <LineItem label="Bonuses" value={d.bonuses} color={D.text} sub />
-        <div style={{ display: "flex", justifyContent: "space-between", padding: "12px 0 0″ }}>
+        <div style={{ display: "flex", justifyContent: "space-between", padding: "12px 0 0" }}>
           <span style={{ color: D.text, fontWeight: 700, fontSize: 15 }}>Total Revenue</span>
           <span style={{ color: D.green, fontWeight: 700, fontSize: 15 }}>{fmt(totalRevenue)}</span>
         </div>
@@ -232,7 +232,7 @@ export default function IncomeStatement() {
         <LineItem label="Vehicle mileage (est.)" value={-d.mileage} color={D.text} sub />
         <LineItem label="Tools / equipment" value={-d.tools} color={D.text} sub />
         <LineItem label="Phone (business %)" value={-d.phone} color={D.text} sub />
-        <div style={{ display: "flex", justifyContent: "space-between", padding: "12px 0 0″ }}>
+        <div style={{ display: "flex", justifyContent: "space-between", padding: "12px 0 0" }}>
           <span style={{ color: D.text, fontWeight: 700, fontSize: 15 }}>Total Expenses</span>
           <span style={{ color: D.amber, fontWeight: 700, fontSize: 15 }}>-{fmt(totalExpenses)}</span>
         </div>
@@ -246,14 +246,14 @@ export default function IncomeStatement() {
       }}>
         <div>
           <p style={{ color: D.muted, fontSize: 13, margin: 0 }}>Net Income</p>
-          <p style={{ color: D.dim, fontSize: 12, margin: "4px 0 0″ }}>{PERIOD_LABELS[period]}</p>
+          <p style={{ color: D.dim, fontSize: 12, margin: "4px 0 0" }}>{PERIOD_LABELS[period]}</p>
         </div>
         <div style={{ color: D.teal, fontSize: 36, fontWeight: 800 }}>{fmt(netIncome)}</div>
       </div>
 
       {/* Tax estimate */}
       <div style={{
-        background: "#1C1200″, border: `1px solid ${D.amber}33`, borderRadius: 10,
+        background: "#1C1200", border: `1px solid ${D.amber}33`, borderRadius: 10,
         padding: "14px 18px", display: "flex", gap: 10, marginBottom: 28,
       }}>
         <Info size={17} color={D.amber} style={{ flexShrink: 0, marginTop: 1 }} />
@@ -261,7 +261,7 @@ export default function IncomeStatement() {
           <p style={{ color: D.amber, fontWeight: 600, fontSize: 13, margin: 0 }}>
             Estimated self-employment tax: {fmt(selfEmploymentTax)} (15.3%)
           </p>
-          <p style={{ color: D.muted, fontSize: 13, margin: "4px 0 0″ }}>
+          <p style={{ color: D.muted, fontSize: 13, margin: "4px 0 0" }}>
             Set aside 22% = {fmt(setAside)} to cover federal income + SE tax.
           </p>
         </div>
@@ -274,7 +274,7 @@ export default function IncomeStatement() {
         </h2>
         <ResponsiveContainer width="100%" height={180}>
           <BarChart data={YTD_MONTHLY} margin={{ top: 0, right: 8, left: -20, bottom: 0 }}>
-            <CartesianGrid strokeDasharray="3 3″ stroke={D.dim} />
+            <CartesianGrid strokeDasharray="3 3" stroke={D.dim} />
             <XAxis dataKey="month" tick={{ fill: D.muted, fontSize: 12 }} />
             <YAxis tick={{ fill: D.muted, fontSize: 11 }} />
             <Tooltip
@@ -292,7 +292,7 @@ export default function IncomeStatement() {
         <button
           onClick={downloadPDF}
           style={{
-            flex: 1, background: D.teal, color: "#000″, fontWeight: 700, fontSize: 14,
+            flex: 1, background: D.teal, color: "#000", fontWeight: 700, fontSize: 14,
             padding: "13px", borderRadius: 10, border: "none", cursor: "pointer",
             display: "flex", alignItems: "center", justifyContent: "center", gap: 8,
           }}
@@ -302,7 +302,7 @@ export default function IncomeStatement() {
         <button
           onClick={copyForCPA}
           style={{
-            flex: 1, background: copied ? D.green + "22″ : D.surface,
+            flex: 1, background: copied ? D.green + "22" : D.surface,
             color: copied ? D.green : D.muted,
             border: `1px solid ${copied ? D.green : D.border}`,
             fontWeight: 600, fontSize: 14, padding: "13px", borderRadius: 10, cursor: "pointer",

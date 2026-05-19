@@ -53,7 +53,7 @@ export default function OutdoorKitchenGuide() {
           </p>
         </div>
 
-        <div style={{ background: '#1E2D45', borderRadius: 12, padding: 20, marginBottom: 32, borderLeft: '4px solid #F5E642′ }}>
+        <div style={{ background: '#1E2D45', borderRadius: 12, padding: 20, marginBottom: 32, borderLeft: '4px solid #F5E642' }}>
           <h2 style={{ color: '#F5E642', marginBottom: 12, fontSize: 18 }}>🌟 The DFW Outdoor Living Culture</h2>
           <p style={{ color: '#CBD5E1', lineHeight: 1.7, marginBottom: 10 }}>
             DFW homeowners spend more on outdoor living than almost any other metro in the US. With 230+ sunny days per year 
@@ -79,12 +79,12 @@ export default function OutdoorKitchenGuide() {
               </thead>
               <tbody>
                 {materials.map((m, i) => (
-                  <tr key={i} style={{ borderBottom: '1px solid #0A1628′ }}>
+                  <tr key={i} style={{ borderBottom: '1px solid #0A1628' }}>
                     <td style={{ padding: '10px 12px', color: '#E8EDF5', fontWeight: 600 }}>{m.material}</td>
-                    <td style={{ padding: '10px 12px', color: '#F5E642′ }}>{m.cost}</td>
-                    <td style={{ padding: '10px 12px', color: '#4ADE80′ }}>{m.durability}</td>
+                    <td style={{ padding: '10px 12px', color: '#F5E642' }}>{m.cost}</td>
+                    <td style={{ padding: '10px 12px', color: '#4ADE80' }}>{m.durability}</td>
                     <td style={{ padding: '10px 12px', color: '#60A5FA' }}>{m.heat}</td>
-                    <td style={{ padding: '10px 12px', color: '#94A3B8′ }}>{m.look}</td>
+                    <td style={{ padding: '10px 12px', color: '#94A3B8' }}>{m.look}</td>
                     <td style={{ padding: '10px 12px', color: '#64748B', fontSize: 13 }}>{m.note}</td>
                   </tr>
                 ))}
@@ -98,10 +98,10 @@ export default function OutdoorKitchenGuide() {
           <div style={{ display: 'grid', gap: 10 }}>
             {permits.map((p, i) => (
               <div key={i} style={{ background: '#0A1628', borderRadius: 8, padding: 14, display: 'grid', gridTemplateColumns: '100px 1fr 1fr 1fr', gap: 8, alignItems: 'center' }}>
-                <div style={{ fontWeight: 700, color: '#F5E642′ }}>{p.city}</div>
-                <div style={{ fontSize: 13, color: '#94A3B8′ }}><span style={{ color: '#64748B' }}>Build: </span>{p.permit}</div>
-                <div style={{ fontSize: 13, color: '#94A3B8′ }}><span style={{ color: '#64748B' }}>Plumbing: </span>{p.plumbing}</div>
-                <div style={{ fontSize: 13, color: '#94A3B8′ }}><span style={{ color: '#64748B' }}>Electric: </span>{p.electrical}</div>
+                <div style={{ fontWeight: 700, color: '#F5E642' }}>{p.city}</div>
+                <div style={{ fontSize: 13, color: '#94A3B8' }}><span style={{ color: '#64748B' }}>Build: </span>{p.permit}</div>
+                <div style={{ fontSize: 13, color: '#94A3B8' }}><span style={{ color: '#64748B' }}>Plumbing: </span>{p.plumbing}</div>
+                <div style={{ fontSize: 13, color: '#94A3B8' }}><span style={{ color: '#64748B' }}>Electric: </span>{p.electrical}</div>
               </div>
             ))}
           </div>
@@ -117,7 +117,7 @@ export default function OutdoorKitchenGuide() {
             {(['basic', 'mid', 'luxury'] as const).map(t => (
               <button key={t} onClick={() => setTier(t)}
                 style={{ padding: '8px 20px', borderRadius: 8, border: 'none', cursor: 'pointer', fontWeight: 600, fontSize: 14,
-                  background: tier === t ? '#F5E642′ : '#0A1628', color: tier === t ? '#0A1628' : '#94A3B8' }}>
+                  background: tier === t ? '#F5E642' : '#0A1628', color: tier === t ? '#0A1628' : '#94A3B8' }}>
                 {t === 'basic' ? '🔨 Basic' : t === 'mid' ? '⭐ Mid-Range' : '💎 Luxury'}
               </button>
             ))}
@@ -129,12 +129,12 @@ export default function OutdoorKitchenGuide() {
               const price = f[tier];
               return (
                 <div key={f.id} onClick={() => toggleFeature(f.id)}
-                  style={{ background: isSelected ? '#1A3050′ : '#0A1628', borderRadius: 10, padding: 16, cursor: ’pointer',
+                  style={{ background: isSelected ? '#1A3050' : '#0A1628', borderRadius: 10, padding: 16, cursor: 'pointer',
                     border: `2px solid ${isSelected ? '#F5E642' : '#1E2D45'}`, transition: 'all 0.15s' }}>
                   <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: 8 }}>
                     <div style={{ display: 'flex', gap: 8, alignItems: 'center' }}>
                       <span style={{ fontSize: 20 }}>{f.icon}</span>
-                      <span style={{ fontWeight: 600, color: isSelected ? '#F5E642′ : '#E8EDF5', fontSize: 14 }}>{f.label}</span>
+                      <span style={{ fontWeight: 600, color: isSelected ? '#F5E642' : '#E8EDF5', fontSize: 14 }}>{f.label}</span>
                     </div>
                     <span style={{ color: '#4ADE80', fontWeight: 700, fontSize: 14 }}>{price > 0 ? `$${price.toLocaleString()}` : 'N/A'}</span>
                   </div>
@@ -145,8 +145,8 @@ export default function OutdoorKitchenGuide() {
           </div>
           <div style={{ background: '#0A1628', borderRadius: 12, padding: 20 }}>
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 12 }}>
-              <span style={{ fontSize: 18, fontWeight: 700, color: '#E8EDF5′ }}>Estimated Total</span>
-              <span style={{ fontSize: 28, fontWeight: 800, color: '#F5E642′ }}>${total.toLocaleString()}</span>
+              <span style={{ fontSize: 18, fontWeight: 700, color: '#E8EDF5' }}>Estimated Total</span>
+              <span style={{ fontSize: 28, fontWeight: 800, color: '#F5E642' }}>${total.toLocaleString()}</span>
             </div>
             {addOns.length > 0 && (
               <div>

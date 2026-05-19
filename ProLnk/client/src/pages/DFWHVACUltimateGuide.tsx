@@ -98,11 +98,11 @@ export default function DFWHVACUltimateGuide() {
         {guide && (
           <div>
             <div style={{ background: '#F5E642', borderRadius: 12, padding: '14px 20px', marginBottom: 20 }}>
-              <div style={{ fontSize: 18, fontWeight: 800, color: '#0A1628′ }}>{guide.title}</div>
+              <div style={{ fontSize: 18, fontWeight: 800, color: '#0A1628' }}>{guide.title}</div>
             </div>
             {guide.sections.map(sec => (
               <div key={sec.heading} style={{ background: '#111c35', borderRadius: 12, padding: 20, marginBottom: 14 }}>
-                <div style={{ fontWeight: 700, fontSize: 15, marginBottom: 12, color: '#F5E642′ }}>{sec.heading}</div>
+                <div style={{ fontWeight: 700, fontSize: 15, marginBottom: 12, color: '#F5E642' }}>{sec.heading}</div>
                 {sec.points.map(p => (
                   <div key={p} style={{ display: 'flex', gap: 10, marginBottom: 8, fontSize: 14 }}>
                     <span style={{ color: '#F5E642', marginTop: 2 }}>▸</span>

@@ -49,10 +49,10 @@ export default function DFWHomeNetWorthTracker() {
           <h2 style={{ color: '#F5E642', fontSize: 16, marginBottom: 16 }}>🏡 Your Home Details</h2>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12, marginBottom: 12 }}>
             {[
-              { label: 'PURCHASE PRICE ($)', val: purchasePrice, set: setPurchasePrice, ph: '380000′ },
-              { label: 'YEARS OWNED', val: yearsOwned, set: setYearsOwned, ph: '5′ },
-              { label: 'CURRENT MORTGAGE BALANCE ($)', val: mortgageBalance, set: setMortgageBalance, ph: '285000′ },
-              { label: 'IMPROVEMENTS INVESTED ($)', val: improvements, set: setImprovements, ph: '22000′ },
+              { label: 'PURCHASE PRICE ($)', val: purchasePrice, set: setPurchasePrice, ph: '380000' },
+              { label: 'YEARS OWNED', val: yearsOwned, set: setYearsOwned, ph: '5' },
+              { label: 'CURRENT MORTGAGE BALANCE ($)', val: mortgageBalance, set: setMortgageBalance, ph: '285000' },
+              { label: 'IMPROVEMENTS INVESTED ($)', val: improvements, set: setImprovements, ph: '22000' },
             ].map(({ label, val, set, ph }) => (
               <div key={label}>
                 <label style={{ color: '#94a3b8', fontSize: 12, display: 'block', marginBottom: 4 }}>{label}</label>

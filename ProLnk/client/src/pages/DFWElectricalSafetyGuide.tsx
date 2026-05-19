@@ -39,7 +39,7 @@ export default function DFWElectricalSafetyGuide() {
   return (
     <div style={{ minHeight: '100vh', background: '#0A1628', color: '#E8EAF0', fontFamily: 'system-ui, sans-serif', padding: '2rem' }}>
       <div style={{ maxWidth: 720, margin: '0 auto' }}>
-        <div style={{ marginBottom: '0.5rem', fontSize: '0.85rem', color: '#F5E642′ }}>⚡ DFW HOME SAFETY GUIDES</div>
+        <div style={{ marginBottom: '0.5rem', fontSize: '0.85rem', color: '#F5E642' }}>⚡ DFW HOME SAFETY GUIDES</div>
         <h1 style={{ fontSize: '2rem', fontWeight: 800, color: '#FFFFFF', marginBottom: '0.5rem' }}>Electrical Safety Guide</h1>
         <p style={{ color: '#9AA3B2', marginBottom: '2rem' }}>GFCI and AFCI protection requirements change with each NEC update. Older DFW homes often have significant gaps — and DFW's cold snaps make space heater fires a top hazard. Find your gaps below.</p>
 
@@ -96,13 +96,13 @@ export default function DFWElectricalSafetyGuide() {
             {result.gfciGaps.length > 0 && (
               <div style={{ marginBottom: '1rem' }}>
                 <div style={{ color: '#E67E22', fontWeight: 600, marginBottom: '0.4rem' }}>GFCI Gaps Found:</div>
-                {result.gfciGaps.map((g, i) => <div key={i} style={{ color: '#C8D0DC', padding: '0.25rem 0′ }}>🔌 {g}</div>)}
+                {result.gfciGaps.map((g, i) => <div key={i} style={{ color: '#C8D0DC', padding: '0.25rem 0' }}>🔌 {g}</div>)}
               </div>
             )}
             {result.afciGaps.length > 0 && (
               <div style={{ marginBottom: '1rem' }}>
                 <div style={{ color: '#E67E22', fontWeight: 600, marginBottom: '0.4rem' }}>AFCI Gaps Found:</div>
-                {result.afciGaps.map((g, i) => <div key={i} style={{ color: '#C8D0DC', padding: '0.25rem 0′ }}>🔁 {g}</div>)}
+                {result.afciGaps.map((g, i) => <div key={i} style={{ color: '#C8D0DC', padding: '0.25rem 0' }}>🔁 {g}</div>)}
               </div>
             )}
             {result.gfciGaps.length === 0 && result.afciGaps.length === 0 && (

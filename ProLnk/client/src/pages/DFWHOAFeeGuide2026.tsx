@@ -89,7 +89,7 @@ export default function DFWHOAFeeGuide2026() {
               {selected.covers.map((item) => (
                 <div key={item} style={{ display: 'flex', alignItems: 'center', gap: 8, fontSize: 14 }}>
                   <span style={{ color: '#22C55E' }}>✓</span>
-                  <span style={{ color: '#CBD5E1′ }}>{item}</span>
+                  <span style={{ color: '#CBD5E1' }}>{item}</span>
                 </div>
               ))}
             </div>

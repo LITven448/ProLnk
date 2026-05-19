@@ -69,7 +69,7 @@ export default function TrustyProRichardson() {
           Richardson TX: Telecom Corridor Headquarters, But <span style={{ color: INDIGO }}>Your Home Isn't Smart Yet</span>
         </h1>
         <p style={{ fontSize: 18, color: '#4b5563', maxWidth: 640, margin: '0 auto 40px', lineHeight: 1.7 }}>
-          Home to AT&T and Ericsson, Richardson's neighborhoods average 42 years old — among DFW’s oldest suburban housing stock. Foundation issues from decades of clay movement, galvanized pipes past their service life, and historic flooding zones make Richardson homes complex to maintain. TrustyPro gives you the intelligence your home has been missing.
+          Home to AT&T and Ericsson, Richardson's neighborhoods average 42 years old — among DFW's oldest suburban housing stock. Foundation issues from decades of clay movement, galvanized pipes past their service life, and historic flooding zones make Richardson homes complex to maintain. TrustyPro gives you the intelligence your home has been missing.
         </p>
         <a href="/waitlist/homeowner" style={{ display: 'inline-block', background: AMBER, color: '#fff', padding: '16px 40px', borderRadius: 12, fontWeight: 800, fontSize: 18, textDecoration: 'none', boxShadow: '0 4px 20px rgba(245,158,11,0.35)' }}>
           Get Your Free Home Health Score →

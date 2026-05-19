@@ -106,7 +106,7 @@ export default function DFWHomeNetworkSecurityGuide() {
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16, marginBottom: 16 }}>
             <div>
               <label style={{ display: 'block', color: '#8A9BBE', fontSize: 13, marginBottom: 6 }}>Connected Device Count</label>
-              <input value={deviceCount} onChange={e => setDeviceCount(e.target.value)} placeholder="e.g. 25″ style={{ width: '100%', background: '#0A1628', border: '1px solid #1E3A5F', borderRadius: 8, padding: '10px 12px', color: '#E8EDF5', fontSize: 15, boxSizing: 'border-box' }} />
+              <input value={deviceCount} onChange={e => setDeviceCount(e.target.value)} placeholder="e.g. 25" style={{ width: '100%', background: '#0A1628', border: '1px solid #1E3A5F', borderRadius: 8, padding: '10px 12px', color: '#E8EDF5', fontSize: 15, boxSizing: 'border-box' }} />
             </div>
             <div>
               <label style={{ display: 'block', color: '#8A9BBE', fontSize: 13, marginBottom: 6 }}>Work From Home</label>
@@ -127,7 +127,7 @@ export default function DFWHomeNetworkSecurityGuide() {
           </div>
           <button onClick={calculate} style={{ background: '#F5E642', color: '#0A1628', border: 'none', borderRadius: 10, padding: '12px 28px', fontWeight: 800, fontSize: 15, cursor: 'pointer' }}>Build My Security Config</button>
           {result && (
-            <div style={{ marginTop: 20, background: '#0A1628', borderRadius: 10, padding: 20, border: '1px solid #F5E642′ }}>
+            <div style={{ marginTop: 20, background: '#0A1628', borderRadius: 10, padding: 20, border: '1px solid #F5E642' }}>
               <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: 12 }}>
                 <span style={{ color: '#F5E642', fontWeight: 700 }}>Priority: {result.priority}</span>
                 <span style={{ color: '#8A9BBE', fontSize: 13 }}>Setup time: {result.time} | Cost: {result.cost}</span>

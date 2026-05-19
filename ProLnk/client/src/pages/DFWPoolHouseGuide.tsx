@@ -49,19 +49,19 @@ export default function DFWPoolHouseGuide() {
         </p>
 
         <div style={{ background: '#111E35', borderRadius: 12, padding: 24, marginBottom: 24 }}>
-          <h2 style={{ fontSize: 16, fontWeight: 700, marginBottom: 16, color: '#F5E642′ }}>🏊 Pool House Scope Options</h2>
+          <h2 style={{ fontSize: 16, fontWeight: 700, marginBottom: 16, color: '#F5E642' }}>🏊 Pool House Scope Options</h2>
           {SCOPES.map((s) => (
             <div key={s.label} style={{ borderBottom: '1px solid #1E2F4A', paddingBottom: 16, marginBottom: 16 }}>
               <div style={{ fontWeight: 700, fontSize: 15, marginBottom: 4 }}>{s.label}</div>
               <div style={{ fontSize: 13, color: '#8A9BC0', marginBottom: 4 }}>📐 {s.sqft} &nbsp;|&nbsp; 💰 {s.cost}</div>
               <div style={{ fontSize: 13, color: '#6B7FA0', marginBottom: 4 }}>📋 {s.permits}</div>
-              <div style={{ fontSize: 13, color: '#4ADE80′ }}>✅ {s.features}</div>
+              <div style={{ fontSize: 13, color: '#4ADE80' }}>✅ {s.features}</div>
             </div>
           ))}
         </div>
 
         <div style={{ background: '#111E35', borderRadius: 12, padding: 24, marginBottom: 24 }}>
-          <h2 style={{ fontSize: 16, fontWeight: 700, marginBottom: 8, color: '#F5E642′ }}>📋 DFW Permit & HOA Notes</h2>
+          <h2 style={{ fontSize: 16, fontWeight: 700, marginBottom: 8, color: '#F5E642' }}>📋 DFW Permit & HOA Notes</h2>
           <ul style={{ fontSize: 13, color: '#8A9BC0', paddingLeft: 18, margin: 0 }}>
             <li style={{ marginBottom: 8 }}>Most DFW cities require a building permit for any structure over 120 sq ft</li>
             <li style={{ marginBottom: 8 }}>Plumbing and electrical permits are separate from the building permit</li>
@@ -72,7 +72,7 @@ export default function DFWPoolHouseGuide() {
         </div>
 
         <div style={{ background: '#111E35', borderRadius: 12, padding: 24, marginBottom: 24 }}>
-          <h2 style={{ fontSize: 16, fontWeight: 700, marginBottom: 16, color: '#F5E642′ }}>🔧 Get Your Pool House Plan</h2>
+          <h2 style={{ fontSize: 16, fontWeight: 700, marginBottom: 16, color: '#F5E642' }}>🔧 Get Your Pool House Plan</h2>
           <div style={{ display: 'flex', flexDirection: 'column', gap: 14 }}>
             {[
               { label: 'Pool Type', val: poolType, set: setPoolType, opts: POOL_TYPES },
@@ -94,7 +94,7 @@ export default function DFWPoolHouseGuide() {
             </button>
           </div>
           {result && (
-            <div style={{ marginTop: 20, background: '#0A1628', borderRadius: 10, padding: 20, borderLeft: '4px solid #F5E642′ }}>
+            <div style={{ marginTop: 20, background: '#0A1628', borderRadius: 10, padding: 20, borderLeft: '4px solid #F5E642' }}>
               <div style={{ fontWeight: 700, fontSize: 16, marginBottom: 8 }}>🏊 {result.label}</div>
               <div style={{ fontSize: 13, color: '#F5E642', marginBottom: 4 }}>💰 {result.cost} &nbsp;|&nbsp; 📐 {result.sqft}</div>
               <div style={{ fontSize: 13, color: '#8A9BC0', marginBottom: 8 }}>📋 {result.permits}</div>

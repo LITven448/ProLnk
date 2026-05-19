@@ -104,7 +104,7 @@ export default function DFWCountertopInstallGuide2026() {
             ))}
           </select>
           {material && (
-            <div style={{ background: '#0A1628', borderRadius: 8, padding: '1rem', borderLeft: '4px solid #F5E642′ }}>
+            <div style={{ background: '#0A1628', borderRadius: 8, padding: '1rem', borderLeft: '4px solid #F5E642' }}>
               <div style={{ color: '#F5E642', fontWeight: 700, marginBottom: '0.5rem' }}>Prep Checklist for {material} Install:</div>
               {installGuide[material].steps.map((s, i) => (
                 <div key={i} style={{ color: '#94a3b8', fontSize: '0.9rem', marginBottom: '0.4rem' }}>☑️ {s}</div>
@@ -117,7 +117,7 @@ export default function DFWCountertopInstallGuide2026() {
           )}
         </div>
 
-        <div style={{ marginTop: '2rem', background: '#1a2744', borderRadius: 10, padding: '1.25rem', borderLeft: '4px solid #F5E642′ }}>
+        <div style={{ marginTop: '2rem', background: '#1a2744', borderRadius: 10, padding: '1.25rem', borderLeft: '4px solid #F5E642' }}>
           <div style={{ fontWeight: 600, marginBottom: '0.4rem' }}>🔑 DFW Pro Tip: Grout Sealing on Tile Counters</div>
           <div style={{ color: '#94a3b8', fontSize: '0.9rem' }}>
             Tile countertops require grout sealing along all exposed edges after installation. In DFW hard water conditions, unsealed grout lines trap mineral deposits and discolor within weeks. Apply penetrating grout sealer within 48 hours of install completion.

@@ -51,7 +51,7 @@ export default function DFWProLnkImpactPage() {
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12, marginBottom: 20 }}>
             {Object.keys(stakeholderImpact).map(s => (
               <button key={s} onClick={() => setSelectedStakeholder(selectedStakeholder === s ? null : s)}
-                style={{ background: selectedStakeholder === s ? '#F5E642′ : '#0A1628', color: selectedStakeholder === s ? '#0A1628' : '#fff', border: '1px solid #F5E642', borderRadius: 10, padding: '14px 12px', cursor: ’pointer', fontWeight: 600, fontSize: 14, textAlign: 'left' }}>
+                style={{ background: selectedStakeholder === s ? '#F5E642' : '#0A1628', color: selectedStakeholder === s ? '#0A1628' : '#fff', border: '1px solid #F5E642', borderRadius: 10, padding: '14px 12px', cursor: 'pointer', fontWeight: 600, fontSize: 14, textAlign: 'left' }}>
                 {s === 'Homeowner' ? '🏠' : s === 'Contractor' ? '🔧' : s === 'Referrer' ? '🤝' : '🏘️'} {s}
               </button>
             ))}
@@ -66,7 +66,7 @@ export default function DFWProLnkImpactPage() {
         <div style={{ background: '#132040', borderRadius: 16, padding: 28, marginBottom: 32 }}>
           <h2 style={{ fontSize: 18, fontWeight: 700, color: '#F5E642', marginBottom: 12 }}>📈 How Individual Actions Compound</h2>
           <p style={{ color: '#CBD5E1', lineHeight: 1.7 }}>
-            One homeowner adds their home → their contractor reviews improve the network → better contractors join → neighboring homeowners get better service. ProLnk's impact isn’t linear — it compounds. Every action you take creates ripple effects across DFW.
+            One homeowner adds their home → their contractor reviews improve the network → better contractors join → neighboring homeowners get better service. ProLnk's impact isn't linear — it compounds. Every action you take creates ripple effects across DFW.
           </p>
         </div>
 

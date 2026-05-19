@@ -71,8 +71,8 @@ const stageContent: Record<string, { headline: string; items: [string, string][]
     headline: '🔧 DFW Annual HVAC Maintenance Checklist',
     items: [
       ['Spring (March-April)', 'AC tune-up: coil cleaning, refrigerant check, capacitor test, drain line flush, blower cleaning.'],
-      ['Filter check schedule', 'Replace 1-2″ filters every 45-60 days in DFW. 4-5″ media filters every 6-9 months.'],
-      ['Outdoor unit clearance', 'Keep 18″ clearance around condenser. Trim back plants — they reduce airflow significantly.'],
+      ['Filter check schedule', 'Replace 1-2" filters every 45-60 days in DFW. 4-5" media filters every 6-9 months.'],
+      ['Outdoor unit clearance', 'Keep 18" clearance around condenser. Trim back plants — they reduce airflow significantly.'],
       ['Drain line maintenance', 'Pour 1 cup bleach into condensate drain monthly during cooling season to prevent algae clogs.'],
       ['Fall (October)', 'Furnace tune-up before DFW heating season: heat exchanger inspection, combustion analysis, ignitor check.'],
       ['Annual CO detector test', 'Replace batteries, test all CO alarms. DFW winter fires up furnaces dormant for 6+ months.'],
@@ -150,7 +150,7 @@ export default function DFWHVACFinalCompleteGuide() {
           <h2 style={{ color: '#F5E642', fontSize: 16, marginBottom: 12 }}>📚 More DFW HVAC Guides</h2>
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8 }}>
             {['Compressor Types', 'Refrigerant Types', 'Fan Motors (PSC vs ECM)', 'Heat Exchangers', 'HRV vs ERV'].map(g => (
-              <div key={g} style={{ background: '#0A1628', borderRadius: 6, padding: '6px 12px', fontSize: 13, color: '#94a3b8′ }}>🔗 {g}</div>
+              <div key={g} style={{ background: '#0A1628', borderRadius: 6, padding: '6px 12px', fontSize: 13, color: '#94a3b8' }}>🔗 {g}</div>
             ))}
           </div>
         </div>

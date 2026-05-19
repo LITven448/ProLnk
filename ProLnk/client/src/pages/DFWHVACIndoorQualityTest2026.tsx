@@ -17,7 +17,7 @@ export default function DFWHVACIndoorQualityTest2026() {
         <div style={{ fontSize: 13, color: '#F5E642', marginBottom: 8, letterSpacing: 1 }}>DFW HOME SERVICES · 2026 GUIDE</div>
         <h1 style={{ fontSize: 28, fontWeight: 800, marginBottom: 6 }}>🌬️ DFW HVAC & Indoor Air Quality Testing Guide 2026</h1>
         <p style={{ color: '#94a3b8', marginBottom: 28, lineHeight: 1.7 }}>
-          Your HVAC system is the <strong style={{ color: '#F5E642′ }}>lungs of your DFW home</strong> — it distributes whatever is in the air to every room.
+          Your HVAC system is the <strong style={{ color: '#F5E642' }}>lungs of your DFW home</strong> — it distributes whatever is in the air to every room.
           Testing at the HVAC return gives a whole-home air quality snapshot without installing sensors in every room.
         </p>
 
@@ -31,12 +31,12 @@ export default function DFWHVACIndoorQualityTest2026() {
             <div key={s.label} style={{ background: '#112240', borderRadius: 10, padding: 16 }}>
               <div style={{ fontSize: 22, marginBottom: 4 }}>{s.icon}</div>
               <div style={{ fontSize: 11, color: '#94a3b8', marginBottom: 2 }}>{s.label}</div>
-              <div style={{ fontSize: 15, fontWeight: 700, color: '#F5E642′ }}>{s.value}</div>
+              <div style={{ fontSize: 15, fontWeight: 700, color: '#F5E642' }}>{s.value}</div>
             </div>
           ))}
         </div>
 
-        <div style={{ background: '#112240', borderRadius: 10, padding: 16, marginBottom: 24, borderLeft: '4px solid #F5E642′ }}>
+        <div style={{ background: '#112240', borderRadius: 10, padding: 16, marginBottom: 24, borderLeft: '4px solid #F5E642' }}>
           <div style={{ fontWeight: 700, marginBottom: 8 }}>🧪 Testing Toolkit for DFW Homeowners</div>
           <div style={{ color: '#94a3b8', fontSize: 14, lineHeight: 1.8 }}>
             <div>🔬 <strong style={{ color: '#fff' }}>Air sampling cassette</strong> — lab sends spore/VOC report ($40–80)</div>

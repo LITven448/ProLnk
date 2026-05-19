@@ -30,7 +30,7 @@ interface PromptGroup {
 const PROMPT_GROUPS: PromptGroup[] = [
   {
     label: "Income",
-    icon: <DollarSign className="w-4 h-4″ />,
+    icon: <DollarSign className="w-4 h-4" />,
     prompts: [
       "Calculate my override income",
       "How much can I earn at Tier 3?",
@@ -41,7 +41,7 @@ const PROMPT_GROUPS: PromptGroup[] = [
   },
   {
     label: "Leads",
-    icon: <TrendingUp className="w-4 h-4″ />,
+    icon: <TrendingUp className="w-4 h-4" />,
     prompts: [
       "Show me my best leads",
       "How do I get more inbound leads?",
@@ -52,7 +52,7 @@ const PROMPT_GROUPS: PromptGroup[] = [
   },
   {
     label: "Network",
-    icon: <Network className="w-4 h-4″ />,
+    icon: <Network className="w-4 h-4" />,
     prompts: [
       "How do I increase my tier?",
       "How do I recruit new partners?",
@@ -63,7 +63,7 @@ const PROMPT_GROUPS: PromptGroup[] = [
   },
   {
     label: "Platform",
-    icon: <HelpCircle className="w-4 h-4″ />,
+    icon: <HelpCircle className="w-4 h-4" />,
     prompts: [
       "How does photo scanning work?",
       "What is the Home Health Vault?",
@@ -108,12 +108,12 @@ function MessageBubble({ msg }: { msg: Message }) {
   const isUser = msg.role === "user";
   const lines = msg.content.split("\n");
   return (
-    <div className={cn("flex gap-3″, isUser && "flex-row-reverse")}>
+    <div className={cn("flex gap-3", isUser && "flex-row-reverse")}>
       <div
         className="w-9 h-9 rounded-full flex items-center justify-center flex-shrink-0 text-white shadow-sm"
-        style={{ backgroundColor: isUser ? "#0A1628″ : "#6366F1" }}
+        style={{ backgroundColor: isUser ? "#0A1628" : "#6366F1" }}
       >
-        {isUser ? <User className="w-4 h-4″ /> : <Bot className="w-4 h-4" />}
+        {isUser ? <User className="w-4 h-4" /> : <Bot className="w-4 h-4" />}
       </div>
       <div
         className={cn(
@@ -122,7 +122,7 @@ function MessageBubble({ msg }: { msg: Message }) {
             ? "text-white rounded-tr-sm shadow-sm"
             : "bg-white border border-gray-100 text-gray-800 rounded-tl-sm shadow-sm",
         )}
-        style={isUser ? { backgroundColor: "#0A1628″ } : {}}
+        style={isUser ? { backgroundColor: "#0A1628" } : {}}
       >
         {lines.map((line, i) => (
           <span key={i}>
@@ -130,7 +130,7 @@ function MessageBubble({ msg }: { msg: Message }) {
             {i < lines.length - 1 && <br />}
           </span>
         ))}
-        <p className={cn("text-xs mt-1.5″, isUser ? "text-blue-200" : "text-gray-400")}>
+        <p className={cn("text-xs mt-1.5", isUser ? "text-blue-200" : "text-gray-400")}>
           {new Date(msg.timestamp).toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" })}
         </p>
       </div>
@@ -242,17 +242,17 @@ export default function AIChat() {
     <PartnerLayout>
       <div className="flex" style={{ height: "calc(100vh - 9rem)" }}>
         {/* Sidebar */}
-        <aside className="w-56 border-r border-gray-100 bg-white flex flex-col flex-shrink-0″>
-          <div className="p-4 border-b border-gray-100″>
-            <div className="flex items-center gap-2″>
+        <aside className="w-56 border-r border-gray-100 bg-white flex flex-col flex-shrink-0">
+          <div className="p-4 border-b border-gray-100">
+            <div className="flex items-center gap-2">
               <div
                 className="w-8 h-8 rounded-lg flex items-center justify-center text-white"
-                style={{ backgroundColor: "#6366F1″ }}
+                style={{ backgroundColor: "#6366F1" }}
               >
-                <Sparkles className="w-4 h-4″ />
+                <Sparkles className="w-4 h-4" />
               </div>
               <div>
-                <p className="text-sm font-bold text-gray-900″>ProLnk AI</p>
+                <p className="text-sm font-bold text-gray-900">ProLnk AI</p>
                 {tierBadge && (
                   <p className="text-xs text-emerald-600 font-medium capitalize">{tierBadge} tier</p>
                 )}
@@ -261,33 +261,33 @@ export default function AIChat() {
           </div>
 
           <div className="p-3 flex-1 overflow-y-auto">
-            <p className="text-xs font-semibold text-gray-400 uppercase tracking-wider mb-2 px-1″>Topics</p>
+            <p className="text-xs font-semibold text-gray-400 uppercase tracking-wider mb-2 px-1">Topics</p>
             {PROMPT_GROUPS.map((group) => (
               <div key={group.label}>
                 <button
                   onClick={() => setActiveGroup(group.label)}
                   className={cn(
-                    "w-full flex items-center gap-2 px-3 py-2 rounded-lg text-sm font-medium transition-all mb-0.5″,
+                    "w-full flex items-center gap-2 px-3 py-2 rounded-lg text-sm font-medium transition-all mb-0.5",
                     activeGroup === group.label
-                      ? "bg-indigo-50 text-indigo-700″
-                      : "text-gray-600 hover:bg-gray-50″,
+                      ? "bg-indigo-50 text-indigo-700"
+                      : "text-gray-600 hover:bg-gray-50",
                   )}
                 >
-                  <span className={activeGroup === group.label ? "text-indigo-500″ : "text-gray-400"}>
+                  <span className={activeGroup === group.label ? "text-indigo-500" : "text-gray-400"}>
                     {group.icon}
                   </span>
                   {group.label}
                 </button>
                 {activeGroup === group.label && (
-                  <div className="ml-3 mb-2 space-y-0.5 border-l-2 border-indigo-100 pl-2″>
+                  <div className="ml-3 mb-2 space-y-0.5 border-l-2 border-indigo-100 pl-2">
                     {activePrompts.map((p) => (
                       <button
                         key={p}
                         onClick={() => sendMessage(p)}
                         className="w-full text-left text-xs text-gray-500 hover:text-indigo-600 py-1 px-2 rounded hover:bg-indigo-50 transition-colors flex items-center gap-1 group"
                       >
-                        <ChevronRight className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity flex-shrink-0″ />
-                        <span className="line-clamp-2″>{p}</span>
+                        <ChevronRight className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity flex-shrink-0" />
+                        <span className="line-clamp-2">{p}</span>
                       </button>
                     ))}
                   </div>
@@ -296,31 +296,31 @@ export default function AIChat() {
             ))}
           </div>
 
-          <div className="p-3 border-t border-gray-100 flex flex-col gap-1.5″>
+          <div className="p-3 border-t border-gray-100 flex flex-col gap-1.5">
             <button
               onClick={exportConversation}
               className="w-full flex items-center gap-2 px-3 py-2 rounded-lg text-xs text-gray-500 hover:bg-gray-50 transition-colors"
             >
-              <Download className="w-3.5 h-3.5″ /> Export chat
+              <Download className="w-3.5 h-3.5" /> Export chat
             </button>
             <button
               onClick={clearHistory}
               className="w-full flex items-center gap-2 px-3 py-2 rounded-lg text-xs text-gray-500 hover:bg-gray-50 transition-colors"
             >
-              <RefreshCw className="w-3.5 h-3.5″ /> New conversation
+              <RefreshCw className="w-3.5 h-3.5" /> New conversation
             </button>
           </div>
         </aside>
 
         {/* Main chat area */}
-        <div className="flex flex-col flex-1 min-w-0″>
+        <div className="flex flex-col flex-1 min-w-0">
           {/* Header bar */}
-          <div className="px-6 py-3 border-b border-gray-100 bg-white flex items-center gap-3″>
+          <div className="px-6 py-3 border-b border-gray-100 bg-white flex items-center gap-3">
             <div>
               <h1 className="font-bold text-gray-900 text-base">
                 {partnerName ? `${partnerName}'s AI Assistant` : "AI Assistant"}
               </h1>
-              <p className="text-xs text-gray-500″>
+              <p className="text-xs text-gray-500">
                 Helping service professionals maximize income and network
               </p>
             </div>
@@ -329,22 +329,22 @@ export default function AIChat() {
 
           {/* Messages */}
           <div
-            className="flex-1 overflow-y-auto px-6 py-6 space-y-5″
+            className="flex-1 overflow-y-auto px-6 py-6 space-y-5"
             style={{ backgroundColor: "#F8FAFF" }}
           >
             {messages.map((msg) => (
               <MessageBubble key={msg.id} msg={msg} />
             ))}
             {isLoading && (
-              <div className="flex gap-3″>
+              <div className="flex gap-3">
                 <div
                   className="w-9 h-9 rounded-full flex items-center justify-center text-white flex-shrink-0 shadow-sm"
-                  style={{ backgroundColor: "#6366F1″ }}
+                  style={{ backgroundColor: "#6366F1" }}
                 >
-                  <Bot className="w-4 h-4″ />
+                  <Bot className="w-4 h-4" />
                 </div>
                 <div className="bg-white border border-gray-100 rounded-2xl rounded-tl-sm px-4 py-3 shadow-sm">
-                  <div className="flex gap-1.5 items-center h-5″>
+                  <div className="flex gap-1.5 items-center h-5">
                     <span className="w-2 h-2 rounded-full bg-indigo-300 animate-bounce" style={{ animationDelay: "0ms" }} />
                     <span className="w-2 h-2 rounded-full bg-indigo-300 animate-bounce" style={{ animationDelay: "150ms" }} />
                     <span className="w-2 h-2 rounded-full bg-indigo-300 animate-bounce" style={{ animationDelay: "300ms" }} />
@@ -357,8 +357,8 @@ export default function AIChat() {
 
           {/* Pro tip strip — only when fresh */}
           {messages.length <= 1 && (
-            <div className="mx-6 mb-3 px-4 py-2.5 rounded-xl bg-amber-50 border border-amber-100 flex items-start gap-2 text-xs text-amber-800″>
-              <Lightbulb className="w-3.5 h-3.5 mt-0.5 flex-shrink-0 text-amber-500″ />
+            <div className="mx-6 mb-3 px-4 py-2.5 rounded-xl bg-amber-50 border border-amber-100 flex items-start gap-2 text-xs text-amber-800">
+              <Lightbulb className="w-3.5 h-3.5 mt-0.5 flex-shrink-0 text-amber-500" />
               <span>
                 <span className="font-semibold">Pro tip:</span> Ask about your earnings, leads, or how to grow your network — I have full context on the ProLnk commission system and platform.
               </span>
@@ -366,10 +366,10 @@ export default function AIChat() {
           )}
 
           {/* Input area */}
-          <div className="px-6 py-4 bg-white border-t border-gray-100″>
+          <div className="px-6 py-4 bg-white border-t border-gray-100">
             <form
               onSubmit={(e) => { e.preventDefault(); sendMessage(); }}
-              className="flex gap-3″
+              className="flex gap-3"
             >
               <Input
                 ref={inputRef}
@@ -383,10 +383,10 @@ export default function AIChat() {
               <Button
                 type="submit"
                 disabled={!input.trim() || isLoading}
-                className="text-white px-5″
-                style={{ backgroundColor: "#6366F1″ }}
+                className="text-white px-5"
+                style={{ backgroundColor: "#6366F1" }}
               >
-                <Send className="w-4 h-4″ />
+                <Send className="w-4 h-4" />
               </Button>
             </form>
             <p className="text-xs text-gray-400 mt-2 text-center">

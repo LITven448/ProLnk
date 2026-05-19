@@ -24,7 +24,7 @@ export default function DFWMotionSensorGuide() {
 
   function getRecommendation() {
     let rec = '';
-    const budget = layout === 'single' ? '$80–$150′ : layout === ’medium' ? '$200–$400′ : '$400–$800';
+    const budget = layout === 'single' ? '$80–$150' : layout === 'medium' ? '$200–$400' : '$400–$800';
     if (purpose === 'security' && hasPets) {
       rec = `Recommended: Outdoor Pet-Immune sensors for yard + Indoor PIR (pet-immune, 40 lb+) for interior. Budget: ${budget}. DFW tip: mount outdoor sensors under eaves — direct summer sun degrades plastic housings fast.`;
     } else if (purpose === 'security') {
@@ -64,20 +64,20 @@ export default function DFWMotionSensorGuide() {
             </thead>
             <tbody>
               {sensorTypes.map(s => (
-                <tr key={s.type} style={{ borderBottom: '1px solid #0D1F35′ }}>
-                  <td style={{ padding: '10px 12px', color: '#E8EDF5′ }}>{s.emoji} {s.type}</td>
-                  <td style={{ padding: '10px 12px', color: '#94A3B8′ }}>{s.use}</td>
-                  <td style={{ padding: '10px 12px', color: s.petImmune ? '#4ADE80′ : '#F87171' }}>{s.petImmune ? '✅ Yes' : '❌ No'}</td>
-                  <td style={{ padding: '10px 12px', color: '#94A3B8′ }}>{s.battery}</td>
-                  <td style={{ padding: '10px 12px', color: '#94A3B8′ }}>{s.range}</td>
-                  <td style={{ padding: '10px 12px', color: '#F5E642′ }}>{s.cost}</td>
+                <tr key={s.type} style={{ borderBottom: '1px solid #0D1F35' }}>
+                  <td style={{ padding: '10px 12px', color: '#E8EDF5' }}>{s.emoji} {s.type}</td>
+                  <td style={{ padding: '10px 12px', color: '#94A3B8' }}>{s.use}</td>
+                  <td style={{ padding: '10px 12px', color: s.petImmune ? '#4ADE80' : '#F87171' }}>{s.petImmune ? '✅ Yes' : '❌ No'}</td>
+                  <td style={{ padding: '10px 12px', color: '#94A3B8' }}>{s.battery}</td>
+                  <td style={{ padding: '10px 12px', color: '#94A3B8' }}>{s.range}</td>
+                  <td style={{ padding: '10px 12px', color: '#F5E642' }}>{s.cost}</td>
                 </tr>
               ))}
             </tbody>
           </table>
         </div>
 
-        <h2 style={{ fontSize: 18, fontWeight: 700, marginBottom: 16, color: '#F5E642′ }}>📍 Recommended Placement Map</h2>
+        <h2 style={{ fontSize: 18, fontWeight: 700, marginBottom: 16, color: '#F5E642' }}>📍 Recommended Placement Map</h2>
         <div style={{ display: 'grid', gap: 10, marginBottom: 40 }}>
           {placements.map(p => (
             <div key={p.location} style={{ background: '#0D1F35', borderRadius: 8, padding: '14px 18px', border: '1px solid #1E3A5F', display: 'flex', gap: 16, alignItems: 'flex-start' }}>
@@ -91,10 +91,10 @@ export default function DFWMotionSensorGuide() {
         </div>
 
         <div style={{ background: '#0D1F35', borderRadius: 12, padding: '28px', border: '1px solid #1E3A5F', marginBottom: 32 }}>
-          <h2 style={{ fontSize: 20, fontWeight: 700, marginBottom: 20, color: '#F5E642′ }}>🔧 Get Your Sensor Recommendation</h2>
+          <h2 style={{ fontSize: 20, fontWeight: 700, marginBottom: 20, color: '#F5E642' }}>🔧 Get Your Sensor Recommendation</h2>
           <div style={{ display: 'flex', gap: 12, marginBottom: 16, flexWrap: 'wrap' }}>
             {['security', 'automation', 'both'].map(p => (
-              <button key={p} onClick={() => setPurpose(p)} style={{ padding: '8px 18px', borderRadius: 8, border: `2px solid ${purpose === p ? '#F5E642' : '#1E3A5F'}`, background: purpose === p ? '#F5E64220′ : ’transparent', color: purpose === p ? '#F5E642′ : '#94A3B8', cursor: ’pointer', fontWeight: 600, fontSize: 13, textTransform: 'capitalize' }}>
+              <button key={p} onClick={() => setPurpose(p)} style={{ padding: '8px 18px', borderRadius: 8, border: `2px solid ${purpose === p ? '#F5E642' : '#1E3A5F'}`, background: purpose === p ? '#F5E64220' : 'transparent', color: purpose === p ? '#F5E642' : '#94A3B8', cursor: 'pointer', fontWeight: 600, fontSize: 13, textTransform: 'capitalize' }}>
                 {p === 'security' ? '🔒 Security' : p === 'automation' ? '💡 Automation' : '🔒💡 Both'}
               </button>
             ))}
@@ -105,7 +105,7 @@ export default function DFWMotionSensorGuide() {
           </div>
           <div style={{ display: 'flex', gap: 10, marginBottom: 20, flexWrap: 'wrap' }}>
             {[['single', 'Single Story'], ['medium', '2-Story / 2000 sq ft'], ['large', 'Large / 3000+ sq ft']].map(([v, l]) => (
-              <button key={v} onClick={() => setLayout(v)} style={{ padding: '8px 18px', borderRadius: 8, border: `2px solid ${layout === v ? '#F5E642' : '#1E3A5F'}`, background: layout === v ? '#F5E64220′ : ’transparent', color: layout === v ? '#F5E642′ : '#94A3B8', cursor: ’pointer', fontWeight: 600, fontSize: 13 }}>
+              <button key={v} onClick={() => setLayout(v)} style={{ padding: '8px 18px', borderRadius: 8, border: `2px solid ${layout === v ? '#F5E642' : '#1E3A5F'}`, background: layout === v ? '#F5E64220' : 'transparent', color: layout === v ? '#F5E642' : '#94A3B8', cursor: 'pointer', fontWeight: 600, fontSize: 13 }}>
                 {l}
               </button>
             ))}

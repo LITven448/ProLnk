@@ -79,7 +79,7 @@ export default function DFWEnvironmentalComplianceGuide() {
   const [project, setProject] = useState('');
   const [homeAge, setHomeAge] = useState('');
 
-  const ageKey = homeAge === 'pre1978′ || homeAge === ’pre1980′ ? ’pre1980′ : homeAge === ’post1980′ ? ’post1980′ : '';
+  const ageKey = homeAge === 'pre1978' || homeAge === 'pre1980' ? 'pre1980' : homeAge === 'post1980' ? 'post1980' : '';
   const result: ComplianceResult | null = project && ageKey && complianceData[project] ? (complianceData[project][ageKey] || null) : null;
 
   return (
@@ -114,8 +114,8 @@ export default function DFWEnvironmentalComplianceGuide() {
         {result && (
           <div style={{ display: 'grid', gap: 16, marginBottom: 20 }}>
             <div style={{ backgroundColor: '#162033', borderRadius: 10, padding: 16, border: '1px solid #2D3E55', display: 'flex', justifyContent: 'space-between', flexWrap: 'wrap', gap: 12 }}>
-              <div><span style={{ fontSize: 14, fontWeight: 700, color: '#94A3B8′ }}>Urgency: </span><span style={{ fontSize: 14, fontWeight: 600 }}>{result.urgency}</span></div>
-              <div><span style={{ fontSize: 14, fontWeight: 700, color: '#94A3B8′ }}>Est. Compliance Cost: </span><span style={{ fontSize: 14, fontWeight: 600, color: '#F5E642' }}>{result.costRange}</span></div>
+              <div><span style={{ fontSize: 14, fontWeight: 700, color: '#94A3B8' }}>Urgency: </span><span style={{ fontSize: 14, fontWeight: 600 }}>{result.urgency}</span></div>
+              <div><span style={{ fontSize: 14, fontWeight: 700, color: '#94A3B8' }}>Est. Compliance Cost: </span><span style={{ fontSize: 14, fontWeight: 600, color: '#F5E642' }}>{result.costRange}</span></div>
             </div>
             <div style={{ backgroundColor: '#1a0a0a', borderRadius: 12, padding: 20, border: '1px solid #7f1d1d' }}>
               <div style={{ fontSize: 15, fontWeight: 700, color: '#FCA5A5', marginBottom: 10 }}>📋 Environmental Compliance Requirements</div>
@@ -123,7 +123,7 @@ export default function DFWEnvironmentalComplianceGuide() {
                 {result.requirements.map(r => <li key={r}>{r}</li>)}
               </ul>
             </div>
-            <div style={{ backgroundColor: '#162033', borderRadius: 12, padding: 20, border: '1px solid #2D3E55′ }}>
+            <div style={{ backgroundColor: '#162033', borderRadius: 12, padding: 20, border: '1px solid #2D3E55' }}>
               <div style={{ fontSize: 15, fontWeight: 700, color: '#F5E642', marginBottom: 10 }}>👥 Who Needs to Be Involved</div>
               <ul style={{ paddingLeft: 18, margin: 0, color: '#94A3B8', fontSize: 14, lineHeight: 1.9 }}>
                 {result.parties.map(p => <li key={p}>{p}</li>)}
@@ -144,7 +144,7 @@ export default function DFWEnvironmentalComplianceGuide() {
               ['TDLR', 'Texas Dept. of Licensing — asbestos abatement contractor licensing'],
               ['City Building Dept', 'Permits, inspections, demolition notification requirements'],
             ].map(([name, desc]) => (
-              <div key={name} style={{ display: 'flex', gap: 12, padding: '8px 0', borderBottom: '1px solid #2D3E55′ }}>
+              <div key={name} style={{ display: 'flex', gap: 12, padding: '8px 0', borderBottom: '1px solid #2D3E55' }}>
                 <span style={{ color: '#F5E642', fontWeight: 700, minWidth: 120, fontSize: 13 }}>{name}</span>
                 <span style={{ color: '#94A3B8', fontSize: 13 }}>{desc}</span>
               </div>

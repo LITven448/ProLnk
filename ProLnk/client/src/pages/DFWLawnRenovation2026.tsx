@@ -42,7 +42,7 @@ const approaches = [
       'Edge and maintain boundaries to contain healthy grass',
     ],
     cost: '$500–$1,500 depending on coverage',
-    best: 'Bermuda plugs at 12″ spacing work for smaller areas',
+    best: 'Bermuda plugs at 12" spacing work for smaller areas',
     timing: 'April–August',
   },
   {
@@ -86,7 +86,7 @@ export default function DFWLawnRenovation2026() {
           <p style={{ color: '#94a3b8', fontSize: 15 }}>Know when to start over — and how to do it right in Dallas-Fort Worth.'s extreme clay soil and summer heat.</p>
         </div>
 
-        <div style={{ background: '#0f2040', borderRadius: 12, padding: 20, marginBottom: 20, borderLeft: '4px solid #f87171′ }}>
+        <div style={{ background: '#0f2040', borderRadius: 12, padding: 20, marginBottom: 20, borderLeft: '4px solid #f87171' }}>
           <span style={{ color: '#f87171', fontWeight: 700 }}>⚠️ DFW Rule of Thumb:</span>
           <span style={{ color: '#94a3b8', fontSize: 14, marginLeft: 8 }}>If your lawn is more than 50% weeds or bare, renovation beats rehabilitation every time. Trying to save a failed lawn costs more long-term.</span>
         </div>
@@ -97,9 +97,9 @@ export default function DFWLawnRenovation2026() {
             {conditions.map(c => (
               <button key={c.id} onClick={() => toggle(c.id)}
                 style={{ padding: '8px 16px', borderRadius: 20, border: '2px solid', cursor: 'pointer', fontSize: 13, fontWeight: 600,
-                  borderColor: selected.includes(c.id) ? '#F5E642′ : '#1e3a5f',
-                  background: selected.includes(c.id) ? '#F5E642′ : '#0A1628',
-                  color: selected.includes(c.id) ? '#0A1628′ : '#94a3b8' }}>
+                  borderColor: selected.includes(c.id) ? '#F5E642' : '#1e3a5f',
+                  background: selected.includes(c.id) ? '#F5E642' : '#0A1628',
+                  color: selected.includes(c.id) ? '#0A1628' : '#94a3b8' }}>
                 {c.icon} {c.label}
               </button>
             ))}
@@ -107,7 +107,7 @@ export default function DFWLawnRenovation2026() {
           {selected.length > 0 && (
             <div style={{ background: '#0A1628', borderRadius: 8, padding: 12, display: 'flex', alignItems: 'center', gap: 12 }}>
               <div style={{ color: '#94a3b8', fontSize: 13 }}>Lawn condition score:</div>
-              <div style={{ background: score >= 4 ? '#f87171′ : score >= 2 ? '#fbbf24' : '#4ade80',
+              <div style={{ background: score >= 4 ? '#f87171' : score >= 2 ? '#fbbf24' : '#4ade80',
                 color: '#0A1628', fontWeight: 800, fontSize: 16, padding: '4px 12px', borderRadius: 20 }}>{score}</div>
               <div style={{ color: '#F5E642', fontWeight: 700, fontSize: 14 }}>→ {recommended.title} Recommended</div>
             </div>
@@ -119,7 +119,7 @@ export default function DFWLawnRenovation2026() {
             <div key={a.id} onClick={() => setActiveApproach(activeApproach === a.id ? null : a.id)}
               style={{ background: a.id === recommended.id && selected.length > 0 ? '#1a3a6a' : '#0f2040',
                 borderRadius: 12, padding: 20, cursor: 'pointer', border: '2px solid',
-                borderColor: a.id === recommended.id && selected.length > 0 ? '#F5E642′ : '#1e3a5f' }}>
+                borderColor: a.id === recommended.id && selected.length > 0 ? '#F5E642' : '#1e3a5f' }}>
               <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
                 <div>
                   <span style={{ fontSize: 24, marginRight: 10 }}>{a.icon}</span>
@@ -130,7 +130,7 @@ export default function DFWLawnRenovation2026() {
                 </div>
                 <span style={{ color: '#4ade80', fontSize: 13, fontWeight: 600 }}>{a.cost}</span>
               </div>
-              <p style={{ color: '#94a3b8', fontSize: 13, margin: '6px 0 0′ }}>🗓️ {a.timing}</p>
+              <p style={{ color: '#94a3b8', fontSize: 13, margin: '6px 0 0' }}>🗓️ {a.timing}</p>
               {activeApproach === a.id && (
                 <div style={{ marginTop: 14 }}>
                   {a.steps.map((step, i) => (

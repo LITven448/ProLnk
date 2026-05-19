@@ -2,7 +2,7 @@ import { useState } from 'react';
 
 type DFWCity = 'dallas' | 'plano' | 'frisco' | 'arlington' | 'mckinney' | 'denton';
 type GarageUse = 'parking' | 'workshop' | 'storage' | 'studio';
-type GarageSize = '20x20′ | '24x24' | '24x30' | '30x30' | '30x40';
+type GarageSize = '20x20' | '24x24' | '24x30' | '30x30' | '30x40';
 
 const citySetbacks: Record<DFWCity, { rear: number; side: number; notes: string }> = {
   dallas: { rear: 5, side: 3, notes: 'Max 15 ft height; must match home exterior materials' },
@@ -14,9 +14,9 @@ const citySetbacks: Record<DFWCity, { rear: number; side: number; notes: string 
 };
 
 const sizeCosts: Record<GarageSize, { sqft: number; cost: string; foundation: string }> = {
-  '20x20': { sqft: 400, cost: '$20,000–$28,000', foundation: 'Monolithic slab, 4″ min' },
-  '24x24': { sqft: 576, cost: '$28,000–$38,000', foundation: 'Monolithic slab, 4″ min' },
-  '24x30': { sqft: 720, cost: '$35,000–$46,000', foundation: 'Thickened edge slab, 6″ perimeter' },
+  '20x20': { sqft: 400, cost: '$20,000–$28,000', foundation: 'Monolithic slab, 4" min' },
+  '24x24': { sqft: 576, cost: '$28,000–$38,000', foundation: 'Monolithic slab, 4" min' },
+  '24x30': { sqft: 720, cost: '$35,000–$46,000', foundation: 'Thickened edge slab, 6" perimeter' },
   '30x30': { sqft: 900, cost: '$44,000–$58,000', foundation: 'Thickened edge slab, pier-and-beam option' },
   '30x40': { sqft: 1200, cost: '$55,000–$75,000', foundation: 'Engineered slab required on DFW clay' },
 };
@@ -46,14 +46,14 @@ export default function DFWDetachedGarageGuide() {
       </div>
 
       <div style={{ maxWidth: 860, margin: '0 auto', padding: '0 24px' }}>
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: 20, margin: '40px 0′ }}>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: 20, margin: '40px 0' }}>
           {[
             { icon: '📐', title: '24×24 Minimum', desc: 'Industry standard for 2-car. Anything smaller limits usability and resale.' },
             { icon: '🏗️', title: 'Clay Soil Matters', desc: 'DFW expansive clay requires engineered slabs on larger structures.' },
             { icon: '💰', title: '$20K–$75K Range', desc: 'Cost varies by size, finishes, and electrical scope.' },
             { icon: '📋', title: 'Always Permit', desc: 'Every DFW city requires permits. Unpermitted structures cause title issues.' },
           ].map(card => (
-            <div key={card.title} style={{ background: '#112240', borderRadius: 12, padding: 22, borderLeft: '4px solid #F5E642′ }}>
+            <div key={card.title} style={{ background: '#112240', borderRadius: 12, padding: 22, borderLeft: '4px solid #F5E642' }}>
               <div style={{ fontSize: 30, marginBottom: 8 }}>{card.icon}</div>
               <h3 style={{ color: '#F5E642', margin: '0 0 6px', fontSize: 15 }}>{card.title}</h3>
               <p style={{ color: '#94A3B8', margin: 0, fontSize: 13, lineHeight: 1.5 }}>{card.desc}</p>
@@ -66,11 +66,11 @@ export default function DFWDetachedGarageGuide() {
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 20 }}>
             <div style={{ background: '#0A1628', borderRadius: 10, padding: 20 }}>
               <h4 style={{ color: '#F5E642', margin: '0 0 10px' }}>Adding Detached</h4>
-              {['Flexible placement on lot', 'Requires setback compliance', 'Full permit + foundation', 'No connection to home HVAC', 'Better resale than nothing'].map(i => <div key={i} style={{ color: '#94A3B8', fontSize: 13, padding: '3px 0′ }}>• {i}</div>)}
+              {['Flexible placement on lot', 'Requires setback compliance', 'Full permit + foundation', 'No connection to home HVAC', 'Better resale than nothing'].map(i => <div key={i} style={{ color: '#94A3B8', fontSize: 13, padding: '3px 0' }}>• {i}</div>)}
             </div>
             <div style={{ background: '#0A1628', borderRadius: 10, padding: 20 }}>
               <h4 style={{ color: '#F5E642', margin: '0 0 10px' }}>Converting Attached</h4>
-              {['Simpler permit in most cities', 'Shares home electrical', 'Climate control easier', 'May affect home insurance', 'Loses curb appeal if door removed'].map(i => <div key={i} style={{ color: '#94A3B8', fontSize: 13, padding: '3px 0′ }}>• {i}</div>)}
+              {['Simpler permit in most cities', 'Shares home electrical', 'Climate control easier', 'May affect home insurance', 'Loses curb appeal if door removed'].map(i => <div key={i} style={{ color: '#94A3B8', fontSize: 13, padding: '3px 0' }}>• {i}</div>)}
             </div>
           </div>
         </div>
@@ -133,8 +133,8 @@ export default function DFWDetachedGarageGuide() {
                 <div style={{ background: '#F5E642', borderRadius: 10, padding: 16 }}><div style={{ color: '#0A1628', fontSize: 12, fontWeight: 600 }}>Foundation Type</div><div style={{ color: '#0A1628', fontSize: 13, fontWeight: 700 }}>{sizeInfo.foundation}</div></div>
               </div>
               <div style={{ background: '#0A1628', borderRadius: 10, padding: 18 }}>
-                <p style={{ color: '#94A3B8', margin: '0 0 8px', fontSize: 13 }}><strong style={{ color: '#F5E642′ }}>Electrical for {use}:</strong> {useElectrical[use]}</p>
-                <p style={{ color: '#94A3B8', margin: 0, fontSize: 13 }}><strong style={{ color: '#F5E642′ }}>{city.charAt(0).toUpperCase() + city.slice(1)} Notes:</strong> {setback.notes}</p>
+                <p style={{ color: '#94A3B8', margin: '0 0 8px', fontSize: 13 }}><strong style={{ color: '#F5E642' }}>Electrical for {use}:</strong> {useElectrical[use]}</p>
+                <p style={{ color: '#94A3B8', margin: 0, fontSize: 13 }}><strong style={{ color: '#F5E642' }}>{city.charAt(0).toUpperCase() + city.slice(1)} Notes:</strong> {setback.notes}</p>
               </div>
             </div>
           )}

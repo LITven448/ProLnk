@@ -78,7 +78,7 @@ export default function DFWSolarPanelDFWCostGuide() {
               </select>
             </div>
           </div>
-          <button onClick={() => setShowResults(true)} disabled={!bill || !roof} style={{ backgroundColor: bill && roof ? '#F5E642′ : '#1E3A5F', color: bill && roof ? '#0A1628' : '#4A5568', padding: '12px 28px', borderRadius: 8, border: ’none', fontWeight: 700, fontSize: 15, cursor: bill && roof ? 'pointer' : 'default' }}>
+          <button onClick={() => setShowResults(true)} disabled={!bill || !roof} style={{ backgroundColor: bill && roof ? '#F5E642' : '#1E3A5F', color: bill && roof ? '#0A1628' : '#4A5568', padding: '12px 28px', borderRadius: 8, border: 'none', fontWeight: 700, fontSize: 15, cursor: bill && roof ? 'pointer' : 'default' }}>
             Calculate My System →
           </button>
         </div>
@@ -88,12 +88,12 @@ export default function DFWSolarPanelDFWCostGuide() {
             <h2 style={{ color: '#F5E642', fontSize: 18, fontWeight: 700, marginBottom: 16 }}>📊 Your Estimated System</h2>
             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: 12 }}>
               {[
-                { label: 'Recommended System', value: result.systemSize, color: '#F5E642′ },
-                { label: 'Gross Installation Cost', value: result.grossCost, color: '#CBD5E1′ },
-                { label: 'After 30% Federal ITC', value: result.netCost, color: '#10B981′ },
+                { label: 'Recommended System', value: result.systemSize, color: '#F5E642' },
+                { label: 'Gross Installation Cost', value: result.grossCost, color: '#CBD5E1' },
+                { label: 'After 30% Federal ITC', value: result.netCost, color: '#10B981' },
                 { label: 'Estimated Payback', value: result.payback, color: '#F59E0B' },
-                { label: 'Annual Bill Savings', value: result.annualSavings, color: '#10B981′ },
-                { label: 'Monthly Bill Offset', value: result.monthlyOffset, color: '#8B5CF6′ },
+                { label: 'Annual Bill Savings', value: result.annualSavings, color: '#10B981' },
+                { label: 'Monthly Bill Offset', value: result.monthlyOffset, color: '#8B5CF6' },
               ].map(item => (
                 <div key={item.label} style={{ backgroundColor: '#0A1628', borderRadius: 8, padding: 16 }}>
                   <div style={{ color: item.color, fontSize: 20, fontWeight: 800 }}>{item.value}</div>
@@ -101,7 +101,7 @@ export default function DFWSolarPanelDFWCostGuide() {
                 </div>
               ))}
             </div>
-            <div style={{ marginTop: 16, padding: 16, backgroundColor: '#0A1628', borderRadius: 8, borderLeft: '3px solid #F5E642′ }}>
+            <div style={{ marginTop: 16, padding: 16, backgroundColor: '#0A1628', borderRadius: 8, borderLeft: '3px solid #F5E642' }}>
               <p style={{ color: '#CBD5E1', fontSize: 14, margin: 0 }}>💡 Oncor offers net metering — excess power sells back to the grid. DFW solar installers typically provide 25-year panel warranties and 10-year workmanship warranties.</p>
             </div>
           </div>

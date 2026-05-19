@@ -25,9 +25,9 @@ export default function DFWOutdoorKitchenGasGuide() {
 
   function calculate() {
     const totalBtu = appliances.filter(a => a.included).reduce((sum, a) => sum + a.btu, 0);
-    let lineSize = '1/2″ CSST';
-    if (totalBtu > 100000) lineSize = '3/4″ Black Iron Pipe';
-    if (totalBtu > 200000) lineSize = '1″ Black Iron Pipe';
+    let lineSize = '1/2" CSST';
+    if (totalBtu > 100000) lineSize = '3/4" Black Iron Pipe';
+    if (totalBtu > 200000) lineSize = '1" Black Iron Pipe';
     const permit = totalBtu > 50000 || fuelType === 'natural';
     const base = fuelType === 'natural' ? 800 : 600;
     const perAppOn = appliances.filter(a => a.included).length;
@@ -91,7 +91,7 @@ export default function DFWOutdoorKitchenGasGuide() {
             <div style={{ display: 'flex', gap: '10px' }}>
               {(['natural', 'propane'] as const).map(f => (
                 <button key={f} onClick={() => setFuelType(f)}
-                  style={{ flex: 1, padding: '10px', borderRadius: '8px', border: 'none', cursor: 'pointer', fontWeight: 700, fontSize: '14px', background: fuelType === f ? '#F5E642′ : '#1A2F50', color: fuelType === f ? '#0A1628' : '#CBD5E0' }}>
+                  style={{ flex: 1, padding: '10px', borderRadius: '8px', border: 'none', cursor: 'pointer', fontWeight: 700, fontSize: '14px', background: fuelType === f ? '#F5E642' : '#1A2F50', color: fuelType === f ? '#0A1628' : '#CBD5E0' }}>
                   {f === 'natural' ? '⛽ Natural Gas' : '🟡 Propane'}
                 </button>
               ))}
@@ -99,9 +99,9 @@ export default function DFWOutdoorKitchenGasGuide() {
           </div>
           <div style={{ color: '#A0AEC0', fontSize: '13px', marginBottom: '10px' }}>Select Outdoor Appliances</div>
           {appliances.map((a, i) => (
-            <label key={a.name} style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '10px 12px', background: a.included ? '#1A3A20′ : '#1A2F50', borderRadius: '8px', marginBottom: '8px', cursor: ’pointer', border: a.included ? '1px solid #48BB78′ : '1px solid transparent' }}>
+            <label key={a.name} style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '10px 12px', background: a.included ? '#1A3A20' : '#1A2F50', borderRadius: '8px', marginBottom: '8px', cursor: 'pointer', border: a.included ? '1px solid #48BB78' : '1px solid transparent' }}>
               <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
-                <input type="checkbox" checked={a.included} onChange={() => toggle(i)} style={{ accentColor: '#F5E642′ }} />
+                <input type="checkbox" checked={a.included} onChange={() => toggle(i)} style={{ accentColor: '#F5E642' }} />
                 <span style={{ color: '#CBD5E0', fontSize: '14px' }}>{a.name}</span>
               </div>
               <span style={{ color: '#718096', fontSize: '12px' }}>{a.btu.toLocaleString()} BTU</span>
@@ -127,7 +127,7 @@ export default function DFWOutdoorKitchenGasGuide() {
                   </div>
                 ))}
               </div>
-              <div style={{ background: '#1A2F50', borderRadius: '8px', padding: '12px', fontSize: '13px', color: '#CBD5E0′ }}>{result.note}</div>
+              <div style={{ background: '#1A2F50', borderRadius: '8px', padding: '12px', fontSize: '13px', color: '#CBD5E0' }}>{result.note}</div>
             </div>
           )}
         </div>

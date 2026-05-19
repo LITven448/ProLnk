@@ -30,7 +30,7 @@ export default function DFWHipVsGableRoof2026() {
           <h1 style={{ fontSize: 28, fontWeight: 700, color: '#F5E642', margin: 0 }}>DFW Hip vs Gable Roof Guide 2026</h1>
           <p style={{ color: '#94a3b8', marginTop: 8 }}>Roof style comparison for North Texas storm alley conditions</p>
         </div>
-        <div style={{ background: '#1a2744', borderRadius: 12, padding: 16, marginBottom: 24, border: '1px solid #F5E642′ }}>
+        <div style={{ background: '#1a2744', borderRadius: 12, padding: 16, marginBottom: 24, border: '1px solid #F5E642' }}>
           <p style={{ margin: 0, color: '#F5E642', fontWeight: 600 }}>🌪️ DFW Storm Reality: The Dallas-Fort Worth metro is in one of the most active severe weather corridors in the US. Roof style directly impacts how your home survives 70–100+ mph straight-line winds and tornadic events common in North Texas.</p>
         </div>
         <div style={{ display: 'grid', gap: 16, marginBottom: 32 }}>
@@ -40,7 +40,7 @@ export default function DFWHipVsGableRoof2026() {
                 <span style={{ fontSize: 36 }}>{r.icon}</span>
                 <div style={{ flex: 1 }}>
                   <div style={{ display: 'flex', alignItems: 'center', gap: 8, flexWrap: 'wrap', marginBottom: 4 }}>
-                    <h3 style={{ margin: 0, color: '#F5E642′ }}>{r.name}</h3>
+                    <h3 style={{ margin: 0, color: '#F5E642' }}>{r.name}</h3>
                     {r.tag && <span style={{ fontSize: 11, background: r.color, color: '#0A1628', padding: '2px 8px', borderRadius: 20, fontWeight: 700 }}>{r.tag}</span>}
                   </div>
                   <p style={{ margin: 0, color: '#94a3b8', fontSize: 14 }}>{r.desc}</p>
@@ -49,8 +49,8 @@ export default function DFWHipVsGableRoof2026() {
               <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 8 }}>
                 {[['🌪️ Wind', r.windRating], ['🔢 Slopes', String(r.slopes)], ['💰 Cost', r.cost], ['🔧 Complexity', r.complexity]].map(([label, val]) => (
                   <div key={String(label)} style={{ background: '#0A1628', padding: '8px', borderRadius: 8, textAlign: 'center' }}>
-                    <p style={{ margin: 0, fontSize: 10, color: '#94a3b8′ }}>{label}</p>
-                    <p style={{ margin: '2px 0 0', fontSize: 12, color: val === 'Excellent' ? '#22c55e' : val === 'Poor' ? '#ef4444′ : '#cbd5e1', fontWeight: 600 }}>{val}</p>
+                    <p style={{ margin: 0, fontSize: 10, color: '#94a3b8' }}>{label}</p>
+                    <p style={{ margin: '2px 0 0', fontSize: 12, color: val === 'Excellent' ? '#22c55e' : val === 'Poor' ? '#ef4444' : '#cbd5e1', fontWeight: 600 }}>{val}</p>
                   </div>
                 ))}
               </div>

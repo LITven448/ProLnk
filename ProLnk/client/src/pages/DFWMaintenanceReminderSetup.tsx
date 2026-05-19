@@ -65,7 +65,7 @@ export default function DFWMaintenanceReminderSetup() {
     <div style={{ background: '#F8F9FB', minHeight: '100vh', color: '#0A1628', fontFamily: 'sans-serif', padding: '32px 24px' }}>
       <div style={{ maxWidth: 820, margin: '0 auto' }}>
         <div style={{ marginBottom: 8, fontSize: 13, color: '#1D4ED8', letterSpacing: 1, fontWeight: 700 }}>DFW HOMEOWNER TOOLS</div>
-        <h1 style={{ fontSize: 28, fontWeight: 800, marginBottom: 6, color: '#0A1628′ }}>⏰ Maintenance Reminder Setup</h1>
+        <h1 style={{ fontSize: 28, fontWeight: 800, marginBottom: 6, color: '#0A1628' }}>⏰ Maintenance Reminder Setup</h1>
         <p style={{ color: '#5A7A9A', marginBottom: 28 }}>Build your DFW-specific annual maintenance calendar in minutes.</p>
 
         <div style={{ background: '#fff', borderRadius: 14, padding: 24, boxShadow: '0 2px 12px rgba(10,22,40,0.07)', marginBottom: 24 }}>
@@ -74,9 +74,9 @@ export default function DFWMaintenanceReminderSetup() {
             {HOME_FEATURES.map(f => (
               <button key={f} onClick={() => toggle(f)}
                 style={{ padding: '8px 16px', borderRadius: 20, border: '2px solid', cursor: 'pointer', fontWeight: 700, fontSize: 13,
-                  borderColor: selected.includes(f) ? '#0A1628′ : '#D1D9E6',
-                  background: selected.includes(f) ? '#0A1628′ : '#fff',
-                  color: selected.includes(f) ? '#F5E642′ : '#5A7A9A' }}>
+                  borderColor: selected.includes(f) ? '#0A1628' : '#D1D9E6',
+                  background: selected.includes(f) ? '#0A1628' : '#fff',
+                  color: selected.includes(f) ? '#F5E642' : '#5A7A9A' }}>
                 {selected.includes(f) ? '✓ ' : ''}{f}
               </button>
             ))}
@@ -89,9 +89,9 @@ export default function DFWMaintenanceReminderSetup() {
             {(['phone', 'smarthome', 'prolnk'] as const).map(m => (
               <button key={m} onClick={() => setMethod(m)}
                 style={{ flex: 1, padding: '12px 8px', borderRadius: 10, border: '2px solid', cursor: 'pointer', fontWeight: 700, fontSize: 13, textAlign: 'center',
-                  borderColor: method === m ? '#0A1628′ : '#D1D9E6',
-                  background: method === m ? '#0A1628′ : '#F8F9FB',
-                  color: method === m ? '#F5E642′ : '#5A7A9A' }}>
+                  borderColor: method === m ? '#0A1628' : '#D1D9E6',
+                  background: method === m ? '#0A1628' : '#F8F9FB',
+                  color: method === m ? '#F5E642' : '#5A7A9A' }}>
                 {m === 'phone' ? '📱 Phone Calendar' : m === 'smarthome' ? '🏠 Smart Home' : '⚡ ProLnk'}
               </button>
             ))}

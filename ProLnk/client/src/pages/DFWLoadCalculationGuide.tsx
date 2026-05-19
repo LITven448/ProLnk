@@ -56,7 +56,7 @@ export default function DFWLoadCalculationGuide() {
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16, marginBottom: 20 }}>
             <div>
               <label style={{ display: 'block', marginBottom: 6, color: '#94A3B8', fontSize: 13 }}>Home size (sq ft)</label>
-              <input type="number" value={sqft} onChange={e => setSqft(e.target.value)} placeholder="e.g. 2400″
+              <input type="number" value={sqft} onChange={e => setSqft(e.target.value)} placeholder="e.g. 2400"
                 style={{ width: '100%', padding: '10px 14px', background: '#162035', border: '1px solid #2D3F5E', borderRadius: 8, color: '#E8F0FE', fontSize: 15, boxSizing: 'border-box' }} />
             </div>
             <div>
@@ -64,19 +64,19 @@ export default function DFWLoadCalculationGuide() {
               <select value={service} onChange={e => setService(e.target.value)}
                 style={{ width: '100%', padding: '10px 14px', background: '#162035', border: '1px solid #2D3F5E', borderRadius: 8, color: '#E8F0FE', fontSize: 15 }}>
                 <option value="">— select —</option>
-                <option value="100″>100A</option>
-                <option value="150″>150A</option>
-                <option value="200″>200A</option>
-                <option value="400″>400A</option>
+                <option value="100">100A</option>
+                <option value="150">150A</option>
+                <option value="200">200A</option>
+                <option value="400">400A</option>
               </select>
             </div>
           </div>
           <label style={{ display: 'block', marginBottom: 10, color: '#94A3B8', fontSize: 13 }}>Select your major loads</label>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 8 }}>
             {loads.filter(l => l.key !== 'lighting').map(l => (
-              <label key={l.key} style={{ display: 'flex', alignItems: 'center', gap: 10, background: selected[l.key] ? '#1a2f50′ : '#162035', borderRadius: 8, padding: '10px 14px', cursor: ’pointer', border: selected[l.key] ? '1px solid #F5E642′ : '1px solid #2D3F5E' }}>
-                <input type="checkbox" checked={!!selected[l.key]} onChange={() => toggleLoad(l.key)} style={{ accentColor: '#F5E642′ }} />
-                <span style={{ flex: 1, fontSize: 13, color: '#CBD5E1′ }}>{l.label}</span>
+              <label key={l.key} style={{ display: 'flex', alignItems: 'center', gap: 10, background: selected[l.key] ? '#1a2f50' : '#162035', borderRadius: 8, padding: '10px 14px', cursor: 'pointer', border: selected[l.key] ? '1px solid #F5E642' : '1px solid #2D3F5E' }}>
+                <input type="checkbox" checked={!!selected[l.key]} onChange={() => toggleLoad(l.key)} style={{ accentColor: '#F5E642' }} />
+                <span style={{ flex: 1, fontSize: 13, color: '#CBD5E1' }}>{l.label}</span>
                 <span style={{ color: '#F5E642', fontSize: 13, fontWeight: 700 }}>{l.amps}A</span>
               </label>
             ))}
@@ -86,11 +86,11 @@ export default function DFWLoadCalculationGuide() {
         {(totalAmps > 0 || lightingAmps > 0) && (
           <div style={{ background: '#0F1F3D', borderRadius: 12, padding: 24, marginBottom: 16 }}>
             <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: 12 }}>
-              <span style={{ color: '#94A3B8′ }}>Lighting & Outlets ({sqft || 0} sq ft)</span>
+              <span style={{ color: '#94A3B8' }}>Lighting & Outlets ({sqft || 0} sq ft)</span>
               <span style={{ color: '#F5E642', fontWeight: 700 }}>{lightingAmps}A</span>
             </div>
             <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: 12 }}>
-              <span style={{ color: '#94A3B8′ }}>Major Appliances & Loads</span>
+              <span style={{ color: '#94A3B8' }}>Major Appliances & Loads</span>
               <span style={{ color: '#F5E642', fontWeight: 700 }}>{applianceAmps}A</span>
             </div>
             <div style={{ borderTop: '1px solid #2D3F5E', paddingTop: 12, display: 'flex', justifyContent: 'space-between' }}>

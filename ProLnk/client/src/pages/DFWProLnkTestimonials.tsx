@@ -34,7 +34,7 @@ export default function DFWProLnkTestimonials() {
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: 16, textAlign: 'center' }}>
             {[['4.9★','Average Rating'],['1,200+','DFW Reviews'],['94%','Would Recommend']].map(([num, label]) => (
               <div key={label}>
-                <div style={{ fontSize: 24, fontWeight: 800, color: '#DC2626′ }}>{num}</div>
+                <div style={{ fontSize: 24, fontWeight: 800, color: '#DC2626' }}>{num}</div>
                 <div style={{ fontSize: 12, color: '#64748B' }}>{label}</div>
               </div>
             ))}
@@ -45,7 +45,7 @@ export default function DFWProLnkTestimonials() {
           <h2 style={{ fontSize: 16, fontWeight: 700, marginBottom: 14 }}>Filter by situation like yours:</h2>
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8 }}>
             {Object.entries(typeLabels).map(([key, label]) => (
-              <button key={key} onClick={() => setFilter(key)} style={{ padding: '8px 16px', borderRadius: 8, border: '2px solid', cursor: 'pointer', fontSize: 13, fontWeight: 600, borderColor: filter === key ? '#DC2626′ : '#E2E8F0', background: filter === key ? '#FFF1F2' : '#FFFFFF', color: filter === key ? '#DC2626' : '#64748B' }}>{label}</button>
+              <button key={key} onClick={() => setFilter(key)} style={{ padding: '8px 16px', borderRadius: 8, border: '2px solid', cursor: 'pointer', fontSize: 13, fontWeight: 600, borderColor: filter === key ? '#DC2626' : '#E2E8F0', background: filter === key ? '#FFF1F2' : '#FFFFFF', color: filter === key ? '#DC2626' : '#64748B' }}>{label}</button>
             ))}
           </div>
         </div>

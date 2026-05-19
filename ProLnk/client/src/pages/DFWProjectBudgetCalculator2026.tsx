@@ -68,8 +68,8 @@ export default function DFWProjectBudgetCalculator2026() {
             <label style={{ display: 'block', color: '#F5E642', marginBottom: 8, fontWeight: 700 }}>Project Size</label>
             {['small', 'medium', 'large'].map(s => (
               <button key={s} onClick={() => setSize(s)}
-                style={{ display: 'block', width: '100%', margin: '4px 0', padding: '8px', background: size === s ? '#F5E642′ : '#1A2A45',
-                  color: size === s ? '#0A1628′ : '#fff', border: ’none', borderRadius: 6, cursor: 'pointer', fontWeight: 700, textTransform: 'capitalize' }}>
+                style={{ display: 'block', width: '100%', margin: '4px 0', padding: '8px', background: size === s ? '#F5E642' : '#1A2A45',
+                  color: size === s ? '#0A1628' : '#fff', border: 'none', borderRadius: 6, cursor: 'pointer', fontWeight: 700, textTransform: 'capitalize' }}>
                 {s}
               </button>
             ))}
@@ -78,8 +78,8 @@ export default function DFWProjectBudgetCalculator2026() {
             <label style={{ display: 'block', color: '#F5E642', marginBottom: 8, fontWeight: 700 }}>Quality Level</label>
             {['budget', 'standard', 'premium'].map(q => (
               <button key={q} onClick={() => setQuality(q)}
-                style={{ display: 'block', width: '100%', margin: '4px 0', padding: '8px', background: quality === q ? '#F5E642′ : '#1A2A45',
-                  color: quality === q ? '#0A1628′ : '#fff', border: ’none', borderRadius: 6, cursor: 'pointer', fontWeight: 700, textTransform: 'capitalize' }}>
+                style={{ display: 'block', width: '100%', margin: '4px 0', padding: '8px', background: quality === q ? '#F5E642' : '#1A2A45',
+                  color: quality === q ? '#0A1628' : '#fff', border: 'none', borderRadius: 6, cursor: 'pointer', fontWeight: 700, textTransform: 'capitalize' }}>
                 {q}
               </button>
             ))}
@@ -88,14 +88,14 @@ export default function DFWProjectBudgetCalculator2026() {
 
         <div style={{ background: '#0D1F3C', border: '2px solid #F5E642', borderRadius: 12, padding: 24, textAlign: 'center' }}>
           <div style={{ color: '#8899BB', fontSize: 13, marginBottom: 8 }}>DFW MARKET ESTIMATE</div>
-          <div style={{ fontSize: 36, fontWeight: 900, color: '#F5E642′ }}>${fmt(low)} – ${fmt(high)}</div>
+          <div style={{ fontSize: 36, fontWeight: 900, color: '#F5E642' }}>${fmt(low)} – ${fmt(high)}</div>
           <div style={{ color: '#8899BB', marginTop: 4 }}>Average: ${fmt(avg)}</div>
           <div style={{ marginTop: 16, padding: '12px', background: '#1A2A45', borderRadius: 8 }}>
             <div style={{ color: '#F5E642', fontWeight: 700, marginBottom: 4 }}>⚠️ DFW Contingency (15–20%)</div>
             <div style={{ color: '#ccc' }}>Add ${fmt(contingencyLow)} – ${fmt(contingencyHigh)} for surprises</div>
           </div>
           <div style={{ marginTop: 16, color: '#8899BB', fontSize: 13 }}>
-            Get 3 verified DFW contractor quotes through <span style={{ color: '#F5E642′ }}>ProLnk</span> — free, no commitment
+            Get 3 verified DFW contractor quotes through <span style={{ color: '#F5E642' }}>ProLnk</span> — free, no commitment
           </div>
         </div>
       </div>

@@ -33,7 +33,7 @@ export default function DFWDTIGuide() {
   ];
 
   return (
-    <div style={{ background: '#F9FAFB', minHeight: '100vh', fontFamily: 'system-ui, sans-serif', color: '#0A1628′ }}>
+    <div style={{ background: '#F9FAFB', minHeight: '100vh', fontFamily: 'system-ui, sans-serif', color: '#0A1628' }}>
       <div style={{ maxWidth: 780, margin: '0 auto', padding: '40px 20px' }}>
         <div style={{ background: '#0A1628', borderRadius: 12, padding: '32px', marginBottom: 32 }}>
           <div style={{ fontSize: 13, color: '#F5E642', fontWeight: 700, letterSpacing: 1, marginBottom: 8 }}>DFW BUYER EDUCATION</div>
@@ -46,7 +46,7 @@ export default function DFWDTIGuide() {
             { label: 'What is DTI?', icon: '📊', body: 'DTI = your monthly debt payments ÷ gross monthly income. Lenders use it to assess how much of your income goes to debt repayment.' },
             { label: 'Why DFW Is Different', icon: '🏛️', body: 'Texas property taxes (avg 2.0–2.5%) are included in your housing payment. On a $390K home, that\’s $650–$813/mo extra — dramatically affecting your front-end DTI.' },
           ].map(c => (
-            <div key={c.label} style={{ background: '#fff', borderRadius: 12, padding: 22, border: '1px solid #e2e8f0′ }}>
+            <div key={c.label} style={{ background: '#fff', borderRadius: 12, padding: 22, border: '1px solid #e2e8f0' }}>
               <div style={{ fontSize: 28, marginBottom: 10 }}>{c.icon}</div>
               <h3 style={{ fontSize: 15, fontWeight: 700, margin: '0 0 8px' }}>{c.label}</h3>
               <p style={{ color: '#475569', fontSize: 14, lineHeight: 1.6, margin: 0 }}>{c.body}</p>
@@ -54,22 +54,22 @@ export default function DFWDTIGuide() {
           ))}
         </div>
 
-        <div style={{ background: '#fff', borderRadius: 12, padding: 24, marginBottom: 24, border: '1px solid #e2e8f0′ }}>
+        <div style={{ background: '#fff', borderRadius: 12, padding: 24, marginBottom: 24, border: '1px solid #e2e8f0' }}>
           <h2 style={{ fontSize: 18, fontWeight: 700, marginBottom: 16 }}>📋 DTI Limits by Loan Type</h2>
           <div style={{ overflowX: 'auto' }}>
             <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: 14 }}>
               <thead>
                 <tr style={{ background: '#f8fafc' }}>
                   {['Ratio', 'Conventional Max', 'FHA Max', 'What It Covers'].map(h => (
-                    <th key={h} style={{ padding: '10px 14px', textAlign: 'left', fontWeight: 700, borderBottom: '2px solid #e2e8f0′ }}>{h}</th>
+                    <th key={h} style={{ padding: '10px 14px', textAlign: 'left', fontWeight: 700, borderBottom: '2px solid #e2e8f0' }}>{h}</th>
                   ))}
                 </tr>
               </thead>
               <tbody>
                 {tiers.map(t => (
-                  <tr key={t.label} style={{ borderBottom: '1px solid #f1f5f9′ }}>
+                  <tr key={t.label} style={{ borderBottom: '1px solid #f1f5f9' }}>
                     <td style={{ padding: '12px 14px', fontWeight: 600 }}>{t.label}</td>
-                    <td style={{ padding: '12px 14px', color: '#0369a1′ }}>{t.limit}%</td>
+                    <td style={{ padding: '12px 14px', color: '#0369a1' }}>{t.limit}%</td>
                     <td style={{ padding: '12px 14px', color: '#7c3aed' }}>{t.fha}%</td>
                     <td style={{ padding: '12px 14px', color: '#64748b' }}>{t.desc}</td>
                   </tr>
@@ -79,17 +79,17 @@ export default function DFWDTIGuide() {
           </div>
         </div>
 
-        <div style={{ background: '#fff', borderRadius: 12, padding: 28, marginBottom: 24, border: '1px solid #e2e8f0′ }}>
+        <div style={{ background: '#fff', borderRadius: 12, padding: 28, marginBottom: 24, border: '1px solid #e2e8f0' }}>
           <h2 style={{ fontSize: 18, fontWeight: 700, marginBottom: 6 }}>🧮 Calculate Your DTI</h2>
           <p style={{ color: '#64748b', fontSize: 14, marginBottom: 20 }}>Enter your financials to see your DTI and whether you qualify.</p>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16, marginBottom: 20 }}>
             {[
-              { label: 'Gross Monthly Income ($)', val: income, set: setIncome, ph: '8000′ },
-              { label: 'Target Home Price ($)', val: homePrice, set: setHomePrice, ph: '390000′ },
-              { label: 'Car Payment(s) ($)', val: carPayment, set: setCarPayment, ph: '450′ },
-              { label: 'Student Loans ($)', val: studentLoan, set: setStudentLoan, ph: '350′ },
-              { label: 'Credit Card Minimums ($)', val: creditCards, set: setCreditCards, ph: '150′ },
-              { label: 'Other Monthly Debts ($)', val: otherDebts, set: setOtherDebts, ph: '0′ },
+              { label: 'Gross Monthly Income ($)', val: income, set: setIncome, ph: '8000' },
+              { label: 'Target Home Price ($)', val: homePrice, set: setHomePrice, ph: '390000' },
+              { label: 'Car Payment(s) ($)', val: carPayment, set: setCarPayment, ph: '450' },
+              { label: 'Student Loans ($)', val: studentLoan, set: setStudentLoan, ph: '350' },
+              { label: 'Credit Card Minimums ($)', val: creditCards, set: setCreditCards, ph: '150' },
+              { label: 'Other Monthly Debts ($)', val: otherDebts, set: setOtherDebts, ph: '0' },
             ].map(f => (
               <div key={f.label}>
                 <label style={{ fontSize: 13, fontWeight: 600, display: 'block', marginBottom: 6 }}>{f.label}</label>
@@ -103,24 +103,24 @@ export default function DFWDTIGuide() {
             <div style={{ marginTop: 24, background: '#f8fafc', borderRadius: 10, padding: 22 }}>
               <h3 style={{ fontSize: 16, fontWeight: 700, marginBottom: 16 }}>Your Results</h3>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: 12, marginBottom: 16 }}>
-                <div style={{ background: '#fff', borderRadius: 8, padding: 14, textAlign: 'center', border: '1px solid #e2e8f0′ }}>
+                <div style={{ background: '#fff', borderRadius: 8, padding: 14, textAlign: 'center', border: '1px solid #e2e8f0' }}>
                   <div style={{ fontSize: 11, color: '#64748b', marginBottom: 4 }}>HOUSING PAYMENT</div>
-                  <div style={{ fontSize: 22, fontWeight: 800, color: '#0A1628′ }}>${result.housing.toLocaleString()}/mo</div>
-                  <div style={{ fontSize: 11, color: '#94a3b8′ }}>P&I ${result.pi} + Tax ${result.taxes} + Ins ${result.insurance}</div>
+                  <div style={{ fontSize: 22, fontWeight: 800, color: '#0A1628' }}>${result.housing.toLocaleString()}/mo</div>
+                  <div style={{ fontSize: 11, color: '#94a3b8' }}>P&I ${result.pi} + Tax ${result.taxes} + Ins ${result.insurance}</div>
                 </div>
-                <div style={{ background: '#fff', borderRadius: 8, padding: 14, textAlign: 'center', border: parseFloat(result.frontEnd) > 28 ? '2px solid #fca5a5′ : '2px solid #86efac' }}>
+                <div style={{ background: '#fff', borderRadius: 8, padding: 14, textAlign: 'center', border: parseFloat(result.frontEnd) > 28 ? '2px solid #fca5a5' : '2px solid #86efac' }}>
                   <div style={{ fontSize: 11, color: '#64748b', marginBottom: 4 }}>FRONT-END DTI</div>
-                  <div style={{ fontSize: 22, fontWeight: 800, color: parseFloat(result.frontEnd) > 28 ? '#dc2626′ : '#16a34a' }}>{result.frontEnd}%</div>
-                  <div style={{ fontSize: 11, color: '#94a3b8′ }}>Limit: 28% conv / 31% FHA</div>
+                  <div style={{ fontSize: 22, fontWeight: 800, color: parseFloat(result.frontEnd) > 28 ? '#dc2626' : '#16a34a' }}>{result.frontEnd}%</div>
+                  <div style={{ fontSize: 11, color: '#94a3b8' }}>Limit: 28% conv / 31% FHA</div>
                 </div>
-                <div style={{ background: '#fff', borderRadius: 8, padding: 14, textAlign: 'center', border: parseFloat(result.backEnd) > 43 ? '2px solid #fca5a5′ : '2px solid #86efac' }}>
+                <div style={{ background: '#fff', borderRadius: 8, padding: 14, textAlign: 'center', border: parseFloat(result.backEnd) > 43 ? '2px solid #fca5a5' : '2px solid #86efac' }}>
                   <div style={{ fontSize: 11, color: '#64748b', marginBottom: 4 }}>BACK-END DTI</div>
-                  <div style={{ fontSize: 22, fontWeight: 800, color: parseFloat(result.backEnd) > 43 ? '#dc2626′ : '#16a34a' }}>{result.backEnd}%</div>
-                  <div style={{ fontSize: 11, color: '#94a3b8′ }}>Limit: 43% conv / 50% FHA</div>
+                  <div style={{ fontSize: 22, fontWeight: 800, color: parseFloat(result.backEnd) > 43 ? '#dc2626' : '#16a34a' }}>{result.backEnd}%</div>
+                  <div style={{ fontSize: 11, color: '#94a3b8' }}>Limit: 43% conv / 50% FHA</div>
                 </div>
               </div>
               {(parseFloat(result.backEnd) > 43) && (
-                <div style={{ background: '#fef2f2', borderRadius: 8, padding: 16, border: '1px solid #fca5a5′ }}>
+                <div style={{ background: '#fef2f2', borderRadius: 8, padding: 16, border: '1px solid #fca5a5' }}>
                   <div style={{ fontWeight: 700, color: '#991b1b', marginBottom: 8 }}>⚠️ Over the limit — here's how to fix it:</div>
                   <ul style={{ margin: 0, paddingLeft: 20, color: '#7f1d1d', fontSize: 14, lineHeight: 1.8 }}>
                     <li>Pay down high-balance credit cards before applying</li>

@@ -23,7 +23,7 @@ export default function DFWHomeOwnerCelebration() {
         <div style={{ display: 'grid', gap: 12, marginBottom: 32 }}>
           {milestones.map(m => (
             <button key={m.id} onClick={() => setSelected(m.id)}
-              style={{ padding: '16px 20px', background: selected === m.id ? '#0A1628′ : '#fff', color: selected === m.id ? '#F5E642' : '#1e293b', border: selected === m.id ? '2px solid #F5E642' : '2px solid #e2e8f0', borderRadius: 14, fontWeight: 700, fontSize: 16, cursor: ’pointer', textAlign: 'left', transition: 'all 0.2s' }}>
+              style={{ padding: '16px 20px', background: selected === m.id ? '#0A1628' : '#fff', color: selected === m.id ? '#F5E642' : '#1e293b', border: selected === m.id ? '2px solid #F5E642' : '2px solid #e2e8f0', borderRadius: 14, fontWeight: 700, fontSize: 16, cursor: 'pointer', textAlign: 'left', transition: 'all 0.2s' }}>
               {m.label}
             </button>
           ))}
@@ -35,16 +35,16 @@ export default function DFWHomeOwnerCelebration() {
               { icon: '❤️', title: 'What It Means', body: milestone.meaning },
               { icon: '🚀', title: 'Your Next Move', body: milestone.next },
             ].map(s => (
-              <div key={s.title} style={{ background: '#fff', borderRadius: 16, padding: 24, marginBottom: 16, boxShadow: '0 2px 12px rgba(0,0,0,0.06)', borderLeft: '4px solid #F5E642′ }}>
+              <div key={s.title} style={{ background: '#fff', borderRadius: 16, padding: 24, marginBottom: 16, boxShadow: '0 2px 12px rgba(0,0,0,0.06)', borderLeft: '4px solid #F5E642' }}>
                 <div style={{ fontWeight: 700, fontSize: 16, marginBottom: 8 }}>{s.icon} {s.title}</div>
                 <div style={{ color: '#475569', fontSize: 15, lineHeight: 1.6 }}>{s.body}</div>
               </div>
             ))}
             <div style={{ background: '#0A1628', borderRadius: 16, padding: 24, marginBottom: 16 }}>
-              <div style={{ fontWeight: 700, fontSize: 16, marginBottom: 12, color: '#F5E642′ }}>🎊 How to Celebrate</div>
+              <div style={{ fontWeight: 700, fontSize: 16, marginBottom: 12, color: '#F5E642' }}>🎊 How to Celebrate</div>
               {milestone.celebration.map((c, i) => (
                 <div key={i} style={{ display: 'flex', alignItems: 'center', gap: 10, padding: '8px 0', color: '#cbd5e1', fontSize: 15 }}>
-                  <span style={{ color: '#F5E642′ }}>✓</span> {c}
+                  <span style={{ color: '#F5E642' }}>✓</span> {c}
                 </div>
               ))}
             </div>

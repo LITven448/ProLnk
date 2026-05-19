@@ -28,19 +28,19 @@ export default function DFWWaterQuality2026() {
 
         <div style={{ display: 'flex', gap: 10, marginBottom: 24, flexWrap: 'wrap' }}>
           {concerns.map(c => (
-            <button key={c.id} onClick={() => setSelected(c.id)} style={{ background: selected === c.id ? '#F5E642′ : '#0F2040', color: selected === c.id ? '#0A1628' : '#fff', border: ’none', borderRadius: 8, padding: '0.6rem 1.2rem', cursor: 'pointer', fontWeight: 700, fontSize: 14, transition: 'all 0.2s' }}>
+            <button key={c.id} onClick={() => setSelected(c.id)} style={{ background: selected === c.id ? '#F5E642' : '#0F2040', color: selected === c.id ? '#0A1628' : '#fff', border: 'none', borderRadius: 8, padding: '0.6rem 1.2rem', cursor: 'pointer', fontWeight: 700, fontSize: 14, transition: 'all 0.2s' }}>
               {c.label}
             </button>
           ))}
         </div>
 
         <div style={{ background: '#0F2040', borderRadius: 14, padding: '1.5rem' }}>
-          <h2 style={{ fontWeight: 800, marginBottom: 6, color: '#F5E642′ }}>{item.label}</h2>
+          <h2 style={{ fontWeight: 800, marginBottom: 6, color: '#F5E642' }}>{item.label}</h2>
           <div style={{ color: '#64748b', fontSize: 13, marginBottom: 14 }}>📍 {item.city}</div>
           {item.solutions.map((s, i) => (
             <div key={i} style={{ display: 'flex', gap: 12, marginBottom: 12, alignItems: 'flex-start' }}>
               <span style={{ color: '#F5E642', fontWeight: 800, fontSize: 18, lineHeight: 1 }}>→</span>
-              <span style={{ fontSize: 15, color: '#e2e8f0′ }}>{s}</span>
+              <span style={{ fontSize: 15, color: '#e2e8f0' }}>{s}</span>
             </div>
           ))}
         </div>

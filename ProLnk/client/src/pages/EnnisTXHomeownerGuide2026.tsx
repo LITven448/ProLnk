@@ -72,7 +72,7 @@ export default function EnnisTXHomeownerGuide2026() {
 
         <div style={{ background: '#0f2044', borderRadius: 12, padding: 24, marginBottom: 28 }}>
           <h2 style={{ color: '#F5E642', fontSize: 16, marginBottom: 16 }}>📍 Ennis Snapshot</h2>
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12, fontSize: 14, color: '#cbd5e1′ }}>
+          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12, fontSize: 14, color: '#cbd5e1' }}>
             <div>🌸 National Bluebonnet Festival city</div>
             <div>⛽ Propane: primary heat source outside city limits</div>
             <div>🚽 Septic: aerobic systems required in Ellis County</div>
@@ -89,8 +89,8 @@ export default function EnnisTXHomeownerGuide2026() {
               key={s.id}
               onClick={() => setSelected(s.id)}
               style={{
-                background: selected === s.id ? '#F5E642′ : '#1e3a5f',
-                color: selected === s.id ? '#0A1628′ : '#fff',
+                background: selected === s.id ? '#F5E642' : '#1e3a5f',
+                color: selected === s.id ? '#0A1628' : '#fff',
                 border: 'none', borderRadius: 10, padding: '14px 12px',
                 cursor: 'pointer', fontWeight: 600, fontSize: 14,
               }}
@@ -105,7 +105,7 @@ export default function EnnisTXHomeownerGuide2026() {
             <h3 style={{ color: '#F5E642', marginBottom: 16 }}>{guides[selected].title}</h3>
             <ul style={{ listStyle: 'none', padding: 0, margin: 0 }}>
               {guides[selected].items.map((item, i) => (
-                <li key={i} style={{ padding: '10px 0', borderBottom: '1px solid #1e3a5f', fontSize: 14, color: '#e2e8f0′ }}>
+                <li key={i} style={{ padding: '10px 0', borderBottom: '1px solid #1e3a5f', fontSize: 14, color: '#e2e8f0' }}>
                   {item}
                 </li>
               ))}

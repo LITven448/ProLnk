@@ -20,22 +20,22 @@ export default function DFWHomeValuationTools2026() {
           <p style={{ color: '#94a3b8', fontSize: 15 }}>Choosing the right home value estimate for your specific DFW situation</p>
         </div>
 
-        <div style={{ background: '#0F2140', borderRadius: 12, padding: 24, marginBottom: 28, borderLeft: '4px solid #F5E642′ }}>
+        <div style={{ background: '#0F2140', borderRadius: 12, padding: 24, marginBottom: 28, borderLeft: '4px solid #F5E642' }}>
           <h2 style={{ color: '#F5E642', fontSize: 17, marginBottom: 12 }}>⚠️ Why Zillow is Often Wrong in DFW</h2>
           <p style={{ color: '#cbd5e1', fontSize: 14, lineHeight: 1.7 }}>
-            DFW's market moves fast. Frisco, McKinney, and Prosper regularly see homes sell 5-12% above Zillow’s Zestimate — while some Garland and Irving zip codes run 8% below. Zillow’s model lags the market by 30-45 days and doesn’t account for DFW’s hyper-local sub-market dynamics. Always cross-check.
+            DFW's market moves fast. Frisco, McKinney, and Prosper regularly see homes sell 5-12% above Zillow's Zestimate — while some Garland and Irving zip codes run 8% below. Zillow's model lags the market by 30-45 days and doesn't account for DFW's hyper-local sub-market dynamics. Always cross-check.
           </p>
         </div>
 
         <div style={{ background: '#0F2140', borderRadius: 12, padding: 24, marginBottom: 28 }}>
           <h2 style={{ color: '#F5E642', fontSize: 17, marginBottom: 12 }}>🗺️ DFW Valuation Tool Comparison</h2>
           <div style={{ overflowX: 'auto' }}>
-            <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: 13, color: '#cbd5e1′ }}>
+            <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: 13, color: '#cbd5e1' }}>
               <thead>
                 <tr style={{ borderBottom: '1px solid #1e3a5f' }}>
-                  <th style={{ textAlign: 'left', padding: '8px', color: '#F5E642′ }}>Tool</th>
-                  <th style={{ textAlign: 'left', padding: '8px', color: '#F5E642′ }}>Cost</th>
-                  <th style={{ textAlign: 'left', padding: '8px', color: '#F5E642′ }}>DFW Accuracy</th>
+                  <th style={{ textAlign: 'left', padding: '8px', color: '#F5E642' }}>Tool</th>
+                  <th style={{ textAlign: 'left', padding: '8px', color: '#F5E642' }}>Cost</th>
+                  <th style={{ textAlign: 'left', padding: '8px', color: '#F5E642' }}>DFW Accuracy</th>
                 </tr>
               </thead>
               <tbody>
@@ -56,17 +56,17 @@ export default function DFWHomeValuationTools2026() {
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: 10, marginBottom: 20 }}>
             {valuationPurposes.map((v, i) => (
               <button key={i} onClick={() => setSelected(i === selected ? null : i)}
-                style={{ background: selected === i ? '#F5E642′ : '#1e3a5f', color: selected === i ? '#0A1628' : '#fff', border: ’none', borderRadius: 8, padding: '10px 16px', fontSize: 13, fontWeight: 600, cursor: 'pointer' }}>
+                style={{ background: selected === i ? '#F5E642' : '#1e3a5f', color: selected === i ? '#0A1628' : '#fff', border: 'none', borderRadius: 8, padding: '10px 16px', fontSize: 13, fontWeight: 600, cursor: 'pointer' }}>
                 {v.icon} {v.label}
               </button>
             ))}
           </div>
           {selected !== null && (
-            <div style={{ background: '#0F2140', borderRadius: 12, padding: 20, borderLeft: '4px solid #F5E642′ }}>
+            <div style={{ background: '#0F2140', borderRadius: 12, padding: 20, borderLeft: '4px solid #F5E642' }}>
               <h3 style={{ color: '#F5E642', marginBottom: 8 }}>{valuationPurposes[selected].icon} Best Tool: {valuationPurposes[selected].rec}</h3>
               <div style={{ display: 'flex', gap: 16, marginBottom: 12 }}>
-                <span style={{ background: '#1e3a5f', borderRadius: 6, padding: '4px 10px', fontSize: 12, color: '#94a3b8′ }}>Cost: {valuationPurposes[selected].cost}</span>
-                <span style={{ background: '#1e3a5f', borderRadius: 6, padding: '4px 10px', fontSize: 12, color: '#94a3b8′ }}>Accuracy: {valuationPurposes[selected].accuracy}</span>
+                <span style={{ background: '#1e3a5f', borderRadius: 6, padding: '4px 10px', fontSize: 12, color: '#94a3b8' }}>Cost: {valuationPurposes[selected].cost}</span>
+                <span style={{ background: '#1e3a5f', borderRadius: 6, padding: '4px 10px', fontSize: 12, color: '#94a3b8' }}>Accuracy: {valuationPurposes[selected].accuracy}</span>
               </div>
               <p style={{ color: '#cbd5e1', fontSize: 14, lineHeight: 1.7 }}>{valuationPurposes[selected].detail}</p>
             </div>

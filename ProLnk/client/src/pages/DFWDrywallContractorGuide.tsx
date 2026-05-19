@@ -38,18 +38,18 @@ export default function DFWDrywallContractorGuide() {
             { label: '🪨 Knockdown', desc: 'Heavier splatter then flattened — common in older DFW custom homes.' },
             { label: '⬜ Level 5 Smooth', desc: 'Growing DFW trend — shows all imperfections, demands a true finish expert.' },
           ].map(c => (
-            <div key={c.label} style={{ background: '#111E35', borderRadius: 10, padding: '1.25rem', border: '1px solid #1E3050′ }}>
+            <div key={c.label} style={{ background: '#111E35', borderRadius: 10, padding: '1.25rem', border: '1px solid #1E3050' }}>
               <div style={{ fontWeight: 700, marginBottom: 6 }}>{c.label}</div>
               <div style={{ color: '#9BA3B5', fontSize: '0.9rem', lineHeight: 1.5 }}>{c.desc}</div>
             </div>
           ))}
         </div>
 
-        <div style={{ background: '#111E35', borderRadius: 12, padding: '1.75rem', marginBottom: '2rem', border: '1px solid #1E3050′ }}>
+        <div style={{ background: '#111E35', borderRadius: 12, padding: '1.75rem', marginBottom: '2rem', border: '1px solid #1E3050' }}>
           <h2 style={{ color: '#F5E642', fontSize: '1.15rem', fontWeight: 700, marginBottom: '1rem' }}>⚠️ DFW-Specific Considerations</h2>
           <div style={{ display: 'grid', gap: '1rem' }}>
             {[{ title: 'Moisture-Resistant Drywall', body: 'Required in DFW bathrooms and kitchens — standard greenboard or cement board depending on tile application. Never use standard gypsum in wet areas.' },
-              { title: 'Garage Fire Rating', body: 'DFW code: 5/8″ Type X drywall required on garage-to-living-space walls and ceilings. Most contractors know this — still verify it’s in the scope before signing.' },
+              { title: 'Garage Fire Rating', body: 'DFW code: 5/8" Type X drywall required on garage-to-living-space walls and ceilings. Most contractors know this — still verify it’s in the scope before signing.' },
               { title: 'Foundation Crack Repairs', body: 'DFW’s expansive clay soil causes drywall cracks yearly. Address the foundation cause first — drywall repairs without fixing the root issue will repeat within 12 months.' },
             ].map(item => (
               <div key={item.title} style={{ borderLeft: '3px solid #F5E642', paddingLeft: '1rem' }}>
@@ -60,7 +60,7 @@ export default function DFWDrywallContractorGuide() {
           </div>
         </div>
 
-        <div style={{ background: '#111E35', borderRadius: 12, padding: '1.75rem', marginBottom: '2rem', border: '1px solid #1E3050′ }}>
+        <div style={{ background: '#111E35', borderRadius: 12, padding: '1.75rem', marginBottom: '2rem', border: '1px solid #1E3050' }}>
           <h2 style={{ color: '#F5E642', fontSize: '1.15rem', fontWeight: 700, marginBottom: '1.25rem' }}>🔍 Project Cost Estimator</h2>
           <div style={{ display: 'grid', gap: '1rem', marginBottom: '1.25rem' }}>
             {[['Project Size', PROJECT_SIZES, size, setSize], ['Texture Type', TEXTURE_TYPES, texture, setTexture], ['Hiring Approach', HIRE_MODES, mode, setMode]].map(([label, opts, val, setter]: any) => (
@@ -74,7 +74,7 @@ export default function DFWDrywallContractorGuide() {
             ))}
           </div>
           {rec && (
-            <div style={{ background: '#0A1628', borderRadius: 10, padding: '1.25rem', border: '1px solid #F5E642′ }}>
+            <div style={{ background: '#0A1628', borderRadius: 10, padding: '1.25rem', border: '1px solid #F5E642' }}>
               <div style={{ color: '#F5E642', fontWeight: 700, marginBottom: 8 }}>✅ Estimated Cost: {rec.cost}</div>
               <div style={{ color: '#9BA3B5', fontSize: '0.9rem', marginBottom: 8 }}>Recommended Approach: {rec.mode}</div>
               <div style={{ color: '#E8EAF0', fontSize: '0.9rem', lineHeight: 1.6 }}>{rec.note}</div>
@@ -82,7 +82,7 @@ export default function DFWDrywallContractorGuide() {
           )}
         </div>
 
-        <div style={{ background: '#111E35', borderRadius: 12, padding: '1.75rem', border: '1px solid #1E3050′ }}>
+        <div style={{ background: '#111E35', borderRadius: 12, padding: '1.75rem', border: '1px solid #1E3050' }}>
           <h2 style={{ color: '#F5E642', fontSize: '1.1rem', fontWeight: 700, marginBottom: '1rem' }}>📋 Vetting a DFW Drywall Contractor</h2>
           {['Ask to see texture match samples on your specific wall before signing — not photos, actual samples',
             'Verify dust containment plan — drywall sanding without containment coats HVAC filters and vents',

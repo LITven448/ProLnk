@@ -6,17 +6,17 @@ export default function DFWInsulationBattVsSpray2026() {
 
   const recommendations: Record<string, Record<string, { type: string; emoji: string; why: string; cost: string; rValue: string }>> = {
     attic: {
-      low: { type: 'Blown-In Fiberglass', emoji: '🪨', why: 'Cost-effective for open attic floors. Add air sealing first for best results in DFW heat.', cost: '$1.50-2.50/sqft', rValue: 'R-38 to R-60′ },
+      low: { type: 'Blown-In Fiberglass', emoji: '🪨', why: 'Cost-effective for open attic floors. Add air sealing first for best results in DFW heat.', cost: '$1.50-2.50/sqft', rValue: 'R-38 to R-60' },
       mid: { type: 'Open-Cell Spray Foam', emoji: '🫧', why: 'Air seals AND insulates. Excellent for DFW mixed climate — eliminates attic bypass leakage.', cost: '$1.50-2.00/sqft', rValue: 'R-13 per inch' },
       high: { type: 'Closed-Cell Spray Foam', emoji: '🧊', why: 'Highest performance, vapor barrier built-in. Best for unvented attic conversion in DFW.', cost: '$3.00-5.00/sqft', rValue: 'R-6 to R-7 per inch' },
     },
     walls: {
-      low: { type: 'Fiberglass Batt', emoji: '🪨', why: 'Standard choice for new construction wall cavities. Requires air barrier (house wrap) to perform in DFW.', cost: '$0.50-1.00/sqft', rValue: 'R-13 to R-21′ },
+      low: { type: 'Fiberglass Batt', emoji: '🪨', why: 'Standard choice for new construction wall cavities. Requires air barrier (house wrap) to perform in DFW.', cost: '$0.50-1.00/sqft', rValue: 'R-13 to R-21' },
       mid: { type: 'Open-Cell Spray Foam', emoji: '🫧', why: 'Fills irregular cavities completely. Good vapor management for DFW mixed-humid climate.', cost: '$1.50-2.00/sqft', rValue: 'R-3.5 per inch' },
       high: { type: 'Closed-Cell Spray Foam', emoji: '🧊', why: 'Best wall performance. Adds structural strength, acts as vapor retarder — ideal for DFW exterior walls.', cost: '$3.00-5.00/sqft', rValue: 'R-6 to R-7 per inch' },
     },
     crawlspace: {
-      low: { type: 'Fiberglass Batt Between Joists', emoji: '🪨', why: 'Low cost but prone to sag and moisture issues. Add vapor barrier on ground for DFW humidity.', cost: '$0.75-1.25/sqft', rValue: 'R-19 to R-30′ },
+      low: { type: 'Fiberglass Batt Between Joists', emoji: '🪨', why: 'Low cost but prone to sag and moisture issues. Add vapor barrier on ground for DFW humidity.', cost: '$0.75-1.25/sqft', rValue: 'R-19 to R-30' },
       mid: { type: 'Open-Cell Spray Foam on Walls', emoji: '🫧', why: 'Encapsulate crawlspace walls instead of floor joists — better DFW strategy for moisture control.', cost: '$1.75-2.50/sqft', rValue: 'R-13 per inch' },
       high: { type: 'Closed-Cell Spray Foam Encapsulation', emoji: '🧊', why: 'Full crawlspace encapsulation — premium DFW solution for moisture, pests, and energy all-in-one.', cost: '$3.50-5.50/sqft', rValue: 'R-6 to R-7 per inch' },
     },
@@ -55,7 +55,7 @@ export default function DFWInsulationBattVsSpray2026() {
             <label style={{ color: '#94a3b8', fontSize: '14px', display: 'block', marginBottom: '6px' }}>Where are you insulating?</label>
             <div style={{ display: 'flex', gap: '10px', flexWrap: 'wrap' }}>
               {['attic', 'walls', 'crawlspace'].map(l => (
-                <button key={l} onClick={() => setLocation(l)} style={{ backgroundColor: location === l ? '#F5E642′ : '#0A1628', color: location === l ? '#0A1628' : '#fff', border: '2px solid #F5E642', borderRadius: '8px', padding: '8px 18px', cursor: ’pointer', fontWeight: 600, textTransform: 'capitalize' }}>{l}</button>
+                <button key={l} onClick={() => setLocation(l)} style={{ backgroundColor: location === l ? '#F5E642' : '#0A1628', color: location === l ? '#0A1628' : '#fff', border: '2px solid #F5E642', borderRadius: '8px', padding: '8px 18px', cursor: 'pointer', fontWeight: 600, textTransform: 'capitalize' }}>{l}</button>
               ))}
             </div>
           </div>
@@ -63,14 +63,14 @@ export default function DFWInsulationBattVsSpray2026() {
             <label style={{ color: '#94a3b8', fontSize: '14px', display: 'block', marginBottom: '6px' }}>Budget level?</label>
             <div style={{ display: 'flex', gap: '10px', flexWrap: 'wrap' }}>
               {[{ id: 'low', label: '💰 Budget' }, { id: 'mid', label: '💰💰 Mid' }, { id: 'high', label: '💰💰💰 Premium' }].map(b => (
-                <button key={b.id} onClick={() => setBudget(b.id)} style={{ backgroundColor: budget === b.id ? '#F5E642′ : '#0A1628', color: budget === b.id ? '#0A1628' : '#fff', border: '2px solid #F5E642', borderRadius: '8px', padding: '8px 18px', cursor: ’pointer', fontWeight: 600 }}>{b.label}</button>
+                <button key={b.id} onClick={() => setBudget(b.id)} style={{ backgroundColor: budget === b.id ? '#F5E642' : '#0A1628', color: budget === b.id ? '#0A1628' : '#fff', border: '2px solid #F5E642', borderRadius: '8px', padding: '8px 18px', cursor: 'pointer', fontWeight: 600 }}>{b.label}</button>
               ))}
             </div>
           </div>
         </div>
 
         {result && (
-          <div style={{ backgroundColor: '#0f2540', borderRadius: '12px', padding: '24px', border: '2px solid #F5E642′ }}>
+          <div style={{ backgroundColor: '#0f2540', borderRadius: '12px', padding: '24px', border: '2px solid #F5E642' }}>
             <div style={{ fontSize: '40px', textAlign: 'center', marginBottom: '8px' }}>{result.emoji}</div>
             <h3 style={{ color: '#F5E642', fontSize: '22px', textAlign: 'center', marginBottom: '16px' }}>Recommended: {result.type}</h3>
             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '14px', marginBottom: '16px' }}>
@@ -83,7 +83,7 @@ export default function DFWInsulationBattVsSpray2026() {
                 <div style={{ color: '#F5E642', fontWeight: 700, fontSize: '16px' }}>{result.rValue}</div>
               </div>
             </div>
-            <p style={{ color: '#cbd5e1', lineHeight: '1.6′ }}>{result.why}</p>
+            <p style={{ color: '#cbd5e1', lineHeight: '1.6' }}>{result.why}</p>
           </div>
         )}
       </div>

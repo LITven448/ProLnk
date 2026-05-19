@@ -86,8 +86,8 @@ export default function DFWDayTripHomeGuide() {
             { state: hasSmartHome, setter: setHasSmartHome, label: '📱 I have smart home devices' },
           ].map(({ state, setter, label }) => (
             <div key={label} onClick={() => setter(!state)} style={{ display: 'flex', alignItems: 'center', gap: 12, cursor: 'pointer', marginBottom: 12, padding: 12, background: state ? '#1a3a5c' : '#0A1628', borderRadius: 8, border: `1px solid ${state ? '#F5E642' : '#1e3a5f'}` }}>
-              <div style={{ width: 20, height: 20, borderRadius: 4, background: state ? '#F5E642′ : ’transparent', border: `2px solid ${state ? '#F5E642' : '#475569'}`, display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#0A1628', fontWeight: 700, fontSize: 14 }}>{state ? '✓' : ''}</div>
-              <span style={{ color: '#cbd5e1′ }}>{label}</span>
+              <div style={{ width: 20, height: 20, borderRadius: 4, background: state ? '#F5E642' : 'transparent', border: `2px solid ${state ? '#F5E642' : '#475569'}`, display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#0A1628', fontWeight: 700, fontSize: 14 }}>{state ? '✓' : ''}</div>
+              <span style={{ color: '#cbd5e1' }}>{label}</span>
             </div>
           ))}
           <button onClick={generate} style={{ background: '#F5E642', color: '#0A1628', border: 'none', borderRadius: 8, padding: '12px 24px', fontWeight: 700, cursor: 'pointer', width: '100%', marginTop: 8 }}>Generate My Checklist</button>
@@ -97,7 +97,7 @@ export default function DFWDayTripHomeGuide() {
           <>
             <div style={{ background: '#112240', borderRadius: 12, padding: 24, marginBottom: 24 }}>
               <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: 16 }}>
-                <h3 style={{ color: '#F5E642′ }}>Pre-Departure Checklist</h3>
+                <h3 style={{ color: '#F5E642' }}>Pre-Departure Checklist</h3>
                 <span style={{ color: '#94a3b8', fontSize: 14 }}>{checklist.length}/{allItems.length} done</span>
               </div>
               {allItems.map(item => (

@@ -22,7 +22,7 @@ const deadlines: Record<string, { item: string; deadline: string; link: string }
     { item: 'USPS Mail Forward', deadline: 'Before move date', link: 'usps.com' },
     { item: 'Health Insurance / PCP', deadline: 'Within 30 days', link: 'HR or insurance portal' },
     { item: 'Bank / All Accounts', deadline: 'Immediately', link: 'Online or branch' },
-    { item: 'IRS for all filers', deadline: '60 days post-move', link: 'irs.gov Form 8822′ },
+    { item: 'IRS for all filers', deadline: '60 days post-move', link: 'irs.gov Form 8822' },
     { item: 'Pediatrician / Specialists', deadline: 'Within 2 weeks', link: 'Call directly' },
   ],
   Business: [
@@ -37,7 +37,7 @@ const deadlines: Record<string, { item: string; deadline: string; link: string }
   ],
   Senior: [
     { item: "TX Driver's License or ID", deadline: '30 days', link: 'DPS office' },
-    { item: 'Social Security Administration', deadline: 'Promptly', link: '1-800-772-1213′ },
+    { item: 'Social Security Administration', deadline: 'Promptly', link: '1-800-772-1213' },
     { item: 'Medicare', deadline: 'Before next benefits period', link: 'medicare.gov' },
     { item: 'Medicare Supplement / Advantage', deadline: 'Promptly', link: 'Your plan' },
     { item: 'USPS Mail Forward', deadline: 'Before move', link: 'usps.com' },
@@ -83,10 +83,10 @@ export default function DFWAddressChangeGuide() {
           <div style={{ color: '#F5E642', fontWeight: 600, marginBottom: '1rem' }}>🏠 Generate My Checklist</div>
           <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap', marginBottom: '1rem' }}>
             {(['Single', 'Family', 'Business', 'Senior'] as HouseholdType[]).map(t => (
-              <button key={t} onClick={() => setHouseholdType(t)} style={{ padding: '0.5rem 1.2rem', borderRadius: 8, border: '2px solid', borderColor: householdType === t ? '#F5E642′ : '#1e3a5f', background: householdType === t ? '#F5E642' : ’transparent', color: householdType === t ? '#0A1628′ : '#94a3b8', fontWeight: 600, cursor: ’pointer' }}>{t}</button>
+              <button key={t} onClick={() => setHouseholdType(t)} style={{ padding: '0.5rem 1.2rem', borderRadius: 8, border: '2px solid', borderColor: householdType === t ? '#F5E642' : '#1e3a5f', background: householdType === t ? '#F5E642' : 'transparent', color: householdType === t ? '#0A1628' : '#94a3b8', fontWeight: 600, cursor: 'pointer' }}>{t}</button>
             ))}
           </div>
-          <button onClick={generate} disabled={!householdType} style={{ background: householdType ? '#F5E642′ : '#1e3a5f', color: '#0A1628', border: ’none', borderRadius: 8, padding: '0.7rem 1.5rem', fontWeight: 700, cursor: householdType ? 'pointer' : 'default' }}>Generate Checklist</button>
+          <button onClick={generate} disabled={!householdType} style={{ background: householdType ? '#F5E642' : '#1e3a5f', color: '#0A1628', border: 'none', borderRadius: 8, padding: '0.7rem 1.5rem', fontWeight: 700, cursor: householdType ? 'pointer' : 'default' }}>Generate Checklist</button>
         </div>
 
         {checklist && (
@@ -96,7 +96,7 @@ export default function DFWAddressChangeGuide() {
               <div style={{ color: '#94a3b8', fontSize: '0.85rem' }}>{done} / {checklist.length} complete</div>
             </div>
             {checklist.map((item, i) => (
-              <div key={i} onClick={() => toggleCheck(i)} style={{ display: 'flex', alignItems: 'flex-start', gap: '0.75rem', padding: '0.75rem', marginBottom: '0.5rem', background: checked[i] ? '#0A1628′ : '#162840', borderRadius: 8, cursor: ’pointer', opacity: checked[i] ? 0.6 : 1 }}>
+              <div key={i} onClick={() => toggleCheck(i)} style={{ display: 'flex', alignItems: 'flex-start', gap: '0.75rem', padding: '0.75rem', marginBottom: '0.5rem', background: checked[i] ? '#0A1628' : '#162840', borderRadius: 8, cursor: 'pointer', opacity: checked[i] ? 0.6 : 1 }}>
                 <span style={{ fontSize: '1.2rem', flexShrink: 0 }}>{checked[i] ? '✅' : '⬜'}</span>
                 <div>
                   <div style={{ color: '#e2e8f0', fontWeight: 600, textDecoration: checked[i] ? 'line-through' : 'none' }}>{item.item}</div>

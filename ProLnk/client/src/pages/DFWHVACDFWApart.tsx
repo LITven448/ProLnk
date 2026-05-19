@@ -35,26 +35,26 @@ export default function DFWHVACDFWApart() {
   const [selected, setSelected] = useState<number | null>(null);
 
   return (
-    <div style={{ backgroundColor: "#0A1628″, minHeight: "100vh", color: "#fff", fontFamily: "system-ui, sans-serif", padding: "40px 20px" }}>
+    <div style={{ backgroundColor: "#0A1628", minHeight: "100vh", color: "#fff", fontFamily: "system-ui, sans-serif", padding: "40px 20px" }}>
       <div style={{ maxWidth: "820px", margin: "0 auto" }}>
         <div style={{ textAlign: "center", marginBottom: "48px" }}>
           <div style={{ fontSize: "48px", marginBottom: "12px" }}>🌡️</div>
-          <h1 style={{ fontSize: "2.4rem", fontWeight: "800″, color: "#F5E642", marginBottom: "16px", lineHeight: 1.2 }}>
+          <h1 style={{ fontSize: "2.4rem", fontWeight: "800", color: "#F5E642", marginBottom: "16px", lineHeight: 1.2 }}>
             Why DFW HVAC Is Unlike Any Other US Market
           </h1>
-          <p style={{ fontSize: "1.1rem", color: "#94a3b8″, maxWidth: "620px", margin: "0 auto", lineHeight: 1.7 }}>
+          <p style={{ fontSize: "1.1rem", color: "#94a3b8", maxWidth: "620px", margin: "0 auto", lineHeight: 1.7 }}>
             Seven factors combine in DFW that exist nowhere else in the country simultaneously. Understanding them is the difference between reactive emergency repairs and proactive home stewardship.
           </p>
         </div>
 
-        <div style={{ backgroundColor: "#0F2040″, borderRadius: "16px", padding: "28px", marginBottom: "32px", border: "1px solid #1e3a5f" }}>
-          <h2 style={{ fontSize: "1.3rem", fontWeight: "700″, color: "#F5E642", marginBottom: "12px" }}>🗺️ The 7 DFW Factors</h2>
-          <p style={{ color: "#94a3b8″, lineHeight: 1.7, margin: 0 }}>
+        <div style={{ backgroundColor: "#0F2040", borderRadius: "16px", padding: "28px", marginBottom: "32px", border: "1px solid #1e3a5f" }}>
+          <h2 style={{ fontSize: "1.3rem", fontWeight: "700", color: "#F5E642", marginBottom: "12px" }}>🗺️ The 7 DFW Factors</h2>
+          <p style={{ color: "#94a3b8", lineHeight: 1.7, margin: 0 }}>
             Phoenix has heat but not humidity. Houston has humidity but not clay soil. Chicago has freeze cycles but not 110F summers. Only DFW combines all seven factors — which is why DFW HVAC requires specialized knowledge that general HVAC guides simply do not cover.
           </p>
         </div>
 
-        <h2 style={{ fontSize: "1.4rem", fontWeight: "700″, color: "#fff", marginBottom: "20px", textAlign: "center" }}>
+        <h2 style={{ fontSize: "1.4rem", fontWeight: "700", color: "#fff", marginBottom: "20px", textAlign: "center" }}>
           Select a DFW factor to see how it affects homeowners specifically
         </h2>
 
@@ -64,22 +64,22 @@ export default function DFWHVACDFWApart() {
               key={i}
               onClick={() => setSelected(selected === i ? null : i)}
               style={{
-                backgroundColor: selected === i ? "#F5E642″ : "#0F2040",
-                color: selected === i ? "#0A1628″ : "#fff",
-                border: "1px solid " + (selected === i ? "#F5E642″ : "#1e3a5f"),
+                backgroundColor: selected === i ? "#F5E642" : "#0F2040",
+                color: selected === i ? "#0A1628" : "#fff",
+                border: "1px solid " + (selected === i ? "#F5E642" : "#1e3a5f"),
                 borderRadius: "10px",
                 padding: "16px 20px",
                 textAlign: "left",
                 cursor: "pointer",
                 fontSize: "1rem",
-                fontWeight: "600″,
+                fontWeight: "600",
                 transition: "all 0.2s",
                 width: "100%",
               }}
             >
               {selected === i ? "✅" : "⚠️"} {item.factor}
               {selected === i && (
-                <div style={{ marginTop: "10px", fontSize: "0.92rem", fontWeight: "400″, color: "#0A1628", lineHeight: 1.6 }}>
+                <div style={{ marginTop: "10px", fontSize: "0.92rem", fontWeight: "400", color: "#0A1628", lineHeight: 1.6 }}>
                   📍 {item.impact}
                 </div>
               )}
@@ -87,9 +87,9 @@ export default function DFWHVACDFWApart() {
           ))}
         </div>
 
-        <div style={{ backgroundColor: "#0F2040″, borderRadius: "16px", padding: "28px", border: "1px solid #F5E642" }}>
-          <h3 style={{ fontSize: "1.2rem", fontWeight: "700″, color: "#F5E642", marginBottom: "10px" }}>🎯 Built for DFW Specifically</h3>
-          <p style={{ color: "#94a3b8″, lineHeight: 1.7, margin: 0 }}>
+        <div style={{ backgroundColor: "#0F2040", borderRadius: "16px", padding: "28px", border: "1px solid #F5E642" }}>
+          <h3 style={{ fontSize: "1.2rem", fontWeight: "700", color: "#F5E642", marginBottom: "10px" }}>🎯 Built for DFW Specifically</h3>
+          <p style={{ color: "#94a3b8", lineHeight: 1.7, margin: 0 }}>
             ProLnk was built for the DFW market from the ground up — not adapted from a generic home services platform. Every matching algorithm, every contractor requirement, and every piece of content in our 3,200+ page library is DFW-specific by design.
           </p>
         </div>

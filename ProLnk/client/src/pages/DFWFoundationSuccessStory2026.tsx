@@ -97,7 +97,7 @@ export default function DFWFoundationSuccessStory2026() {
             <p style={{ color: '#cbd5e1', lineHeight: 1.7, marginBottom: 16 }}>{situations[selected].story}</p>
             <div style={{ background: '#0A1628', borderRadius: 8, padding: 14 }}>
               <span style={{ color: '#F5E642', fontWeight: 700 }}>Result: </span>
-              <span style={{ color: '#94a3b8′ }}>{situations[selected].outcome}</span>
+              <span style={{ color: '#94a3b8' }}>{situations[selected].outcome}</span>
             </div>
           </div>
         )}

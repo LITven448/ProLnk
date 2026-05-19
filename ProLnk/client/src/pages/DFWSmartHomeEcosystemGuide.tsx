@@ -80,7 +80,7 @@ export default function DFWSmartHomeEcosystemGuide() {
         </div>
 
         <div style={{ background: '#0F2140', borderRadius: 12, padding: 24, marginBottom: 24, border: '1px solid #1E3A5F' }}>
-          <h2 style={{ fontSize: 20, fontWeight: 700, marginBottom: 8, color: '#F5E642′ }}>🌡️ Start Here: Smart Thermostat (Highest DFW ROI)</h2>
+          <h2 style={{ fontSize: 20, fontWeight: 700, marginBottom: 8, color: '#F5E642' }}>🌡️ Start Here: Smart Thermostat (Highest DFW ROI)</h2>
           <p style={{ color: '#94A3B8', fontSize: 14, lineHeight: 1.6, marginBottom: 16 }}>
             DFW summers push HVAC systems to 12–16 hours of runtime per day. A smart thermostat learns your schedule, optimizes pre-cooling before peak TOU rates, and can save $200–$500/year on Oncor bills. This is your best first investment regardless of ecosystem.
           </p>
@@ -93,7 +93,7 @@ export default function DFWSmartHomeEcosystemGuide() {
               <div key={t.name} style={{ background: '#0A1628', borderRadius: 8, padding: 16 }}>
                 <div style={{ fontWeight: 600, fontSize: 14, marginBottom: 4 }}>{t.name}</div>
                 <div style={{ color: '#F5E642', fontWeight: 700, marginBottom: 4 }}>{t.price}</div>
-                <div style={{ fontSize: 12, color: '#94A3B8′ }}>{t.ecosystem}</div>
+                <div style={{ fontSize: 12, color: '#94A3B8' }}>{t.ecosystem}</div>
                 <div style={{ fontSize: 12, color: '#34D399', marginTop: 4 }}>Saves {t.saving}</div>
               </div>
             ))}
@@ -106,7 +106,7 @@ export default function DFWSmartHomeEcosystemGuide() {
               <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: 16 }}>
                 <div>
                   <div style={{ fontSize: 24, marginBottom: 4 }}>{eco.icon} {eco.name}</div>
-                  <div style={{ fontSize: 13, color: '#94A3B8′ }}>{eco.bestFor}</div>
+                  <div style={{ fontSize: 13, color: '#94A3B8' }}>{eco.bestFor}</div>
                 </div>
                 <div style={{ textAlign: 'right' }}>
                   <div style={{ fontSize: 12, color: '#64748B' }}>Starter Kit</div>
@@ -122,7 +122,7 @@ export default function DFWSmartHomeEcosystemGuide() {
         </div>
 
         <div style={{ background: '#0F2140', borderRadius: 12, padding: 24, marginBottom: 24, border: '1px solid #1E3A5F' }}>
-          <h2 style={{ fontSize: 20, fontWeight: 700, marginBottom: 16, color: '#F5E642′ }}>📅 DFW Smart Home 3-Year Upgrade Path</h2>
+          <h2 style={{ fontSize: 20, fontWeight: 700, marginBottom: 16, color: '#F5E642' }}>📅 DFW Smart Home 3-Year Upgrade Path</h2>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: 16 }}>
             {UPGRADE_PATH.map(phase => (
               <div key={phase.year} style={{ background: '#0A1628', borderRadius: 8, padding: 16 }}>
@@ -134,14 +134,14 @@ export default function DFWSmartHomeEcosystemGuide() {
           </div>
         </div>
 
-        <div style={{ background: '#0F2140', borderRadius: 12, padding: 24, border: '2px solid #F5E642′ }}>
-          <h2 style={{ fontSize: 20, fontWeight: 700, marginBottom: 20, color: '#F5E642′ }}>🔍 Find Your Ecosystem</h2>
+        <div style={{ background: '#0F2140', borderRadius: 12, padding: 24, border: '2px solid #F5E642' }}>
+          <h2 style={{ fontSize: 20, fontWeight: 700, marginBottom: 20, color: '#F5E642' }}>🔍 Find Your Ecosystem</h2>
           <div style={{ marginBottom: 20 }}>
             <div style={{ fontSize: 14, fontWeight: 600, marginBottom: 10 }}>Current devices in your home:</div>
             <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8 }}>
               {deviceOptions.map(d => (
                 <button key={d} onClick={() => toggleDevice(d)}
-                  style={{ padding: '8px 14px', borderRadius: 20, border: `2px solid ${devices.includes(d) ? '#F5E642' : '#1E3A5F'}`, background: devices.includes(d) ? '#F5E642′ : ’transparent', color: devices.includes(d) ? '#0A1628′ : '#E8EDF5', cursor: ’pointer', fontSize: 13, fontWeight: 600 }}>
+                  style={{ padding: '8px 14px', borderRadius: 20, border: `2px solid ${devices.includes(d) ? '#F5E642' : '#1E3A5F'}`, background: devices.includes(d) ? '#F5E642' : 'transparent', color: devices.includes(d) ? '#0A1628' : '#E8EDF5', cursor: 'pointer', fontSize: 13, fontWeight: 600 }}>
                   {d}
                 </button>
               ))}
@@ -152,7 +152,7 @@ export default function DFWSmartHomeEcosystemGuide() {
             <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap' }}>
               {priorityOptions.map(p => (
                 <button key={p.value} onClick={() => { setPriority(p.value); setShowResult(false); }}
-                  style={{ padding: '8px 14px', borderRadius: 20, border: `2px solid ${priority === p.value ? '#F5E642' : '#1E3A5F'}`, background: priority === p.value ? '#F5E642′ : ’transparent', color: priority === p.value ? '#0A1628′ : '#E8EDF5', cursor: ’pointer', fontSize: 13, fontWeight: 600 }}>
+                  style={{ padding: '8px 14px', borderRadius: 20, border: `2px solid ${priority === p.value ? '#F5E642' : '#1E3A5F'}`, background: priority === p.value ? '#F5E642' : 'transparent', color: priority === p.value ? '#0A1628' : '#E8EDF5', cursor: 'pointer', fontSize: 13, fontWeight: 600 }}>
                   {p.label}
                 </button>
               ))}
@@ -164,7 +164,7 @@ export default function DFWSmartHomeEcosystemGuide() {
           </button>
           {showResult && (
             <div style={{ marginTop: 20, background: '#0A1628', borderRadius: 8, padding: 20 }}>
-              <div style={{ fontWeight: 700, fontSize: 18, marginBottom: 8, color: '#F5E642′ }}>{rec.icon} Recommended: {rec.name}</div>
+              <div style={{ fontWeight: 700, fontSize: 18, marginBottom: 8, color: '#F5E642' }}>{rec.icon} Recommended: {rec.name}</div>
               <div style={{ fontSize: 14, color: '#94A3B8', marginBottom: 12 }}>{rec.bestFor}</div>
               <div style={{ fontSize: 13, fontWeight: 600 }}>Starter Kit: {rec.starterKit} — ${rec.starterCost}</div>
             </div>

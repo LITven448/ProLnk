@@ -35,7 +35,7 @@ export default function DFWHVACRichardson() {
       </div>
 
       <div style={{ maxWidth: '720px', margin: '0 auto', padding: '32px 24px' }}>
-        <div style={{ background: '#0F2040', borderRadius: '12px', padding: '24px', marginBottom: '24px', border: '1px solid #1A3060′ }}>
+        <div style={{ background: '#0F2040', borderRadius: '12px', padding: '24px', marginBottom: '24px', border: '1px solid #1A3060' }}>
           <h2 style={{ color: '#F5E642', fontSize: '18px', margin: '0 0 16px' }}>🏙️ Richardson's HVAC Landscape</h2>
           <div style={{ display: 'grid', gap: '12px' }}>
             {[
@@ -54,7 +54,7 @@ export default function DFWHVACRichardson() {
           </div>
         </div>
 
-        <div style={{ background: '#0F2040', borderRadius: '12px', padding: '24px', marginBottom: '24px', border: '1px solid #1A3060′ }}>
+        <div style={{ background: '#0F2040', borderRadius: '12px', padding: '24px', marginBottom: '24px', border: '1px solid #1A3060' }}>
           <h2 style={{ color: '#F5E642', fontSize: '18px', margin: '0 0 16px' }}>🔧 System Age + Replacement Readiness Check</h2>
           <div style={{ display: 'grid', gap: '16px', marginBottom: '16px' }}>
             <div>
@@ -65,9 +65,9 @@ export default function DFWHVACRichardson() {
                 style={{ width: '100%', background: '#0A1628', border: '1px solid #2A4080', borderRadius: '8px', padding: '10px 12px', color: '#E8EDF5', fontSize: '14px' }}
               >
                 <option value="">Select era...</option>
-                <option value="pre1980″>Before 1980 (likely original ductwork)</option>
-                <option value="1980to2000″>1980–2000 (2nd or 3rd system)</option>
-                <option value="post2000″>After 2000 (modern construction)</option>
+                <option value="pre1980">Before 1980 (likely original ductwork)</option>
+                <option value="1980to2000">1980–2000 (2nd or 3rd system)</option>
+                <option value="post2000">After 2000 (modern construction)</option>
               </select>
             </div>
             <div>
@@ -86,15 +86,15 @@ export default function DFWHVACRichardson() {
           <button
             onClick={assess}
             disabled={!homeEra || !isTechEmployee}
-            style={{ width: '100%', background: homeEra && isTechEmployee ? '#F5E642′ : '#2A4080', color: homeEra && isTechEmployee ? '#0A1628' : '#4A6080', border: ’none', borderRadius: '8px', padding: '12px', fontSize: '15px', fontWeight: '700', cursor: homeEra && isTechEmployee ? 'pointer' : 'not-allowed' }}
+            style={{ width: '100%', background: homeEra && isTechEmployee ? '#F5E642' : '#2A4080', color: homeEra && isTechEmployee ? '#0A1628' : '#4A6080', border: 'none', borderRadius: '8px', padding: '12px', fontSize: '15px', fontWeight: '700', cursor: homeEra && isTechEmployee ? 'pointer' : 'not-allowed' }}
           >
             Check My System Readiness
           </button>
           {result && (
-            <div style={{ marginTop: '16px', background: '#0A1628', borderRadius: '8px', padding: '16px', border: '1px solid #F5E642′ }}>
+            <div style={{ marginTop: '16px', background: '#0A1628', borderRadius: '8px', padding: '16px', border: '1px solid #F5E642' }}>
               <div style={{ fontWeight: '800', fontSize: '16px', color: '#F5E642', marginBottom: '6px' }}>{result.status}</div>
               <div style={{ color: '#E8EDF5', fontSize: '13px', marginBottom: '10px' }}>{result.recommendation}</div>
-              <div style={{ background: '#0F2040', borderRadius: '6px', padding: '10px', color: '#A8B8D0', fontSize: '12px', borderLeft: '3px solid #F5E642′ }}>
+              <div style={{ background: '#0F2040', borderRadius: '6px', padding: '10px', color: '#A8B8D0', fontSize: '12px', borderLeft: '3px solid #F5E642' }}>
                 💰 {result.discount}
               </div>
             </div>

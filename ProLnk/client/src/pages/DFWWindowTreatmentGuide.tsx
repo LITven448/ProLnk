@@ -52,11 +52,11 @@ export default function DFWWindowTreatmentGuide() {
           {ORIENTATIONS.map(o => (
             <div key={o.id}
               onClick={() => setOrientation(o.id)}
-              style={{ background: orientation === o.id ? '#1A2A45′ : '#1E2D45', border: `2px solid ${orientation === o.id ? '#F5E642' : '#2D3F57'}`, borderRadius: 10, padding: 16, cursor: ’pointer' }}>
+              style={{ background: orientation === o.id ? '#1A2A45' : '#1E2D45', border: `2px solid ${orientation === o.id ? '#F5E642' : '#2D3F57'}`, borderRadius: 10, padding: 16, cursor: 'pointer' }}>
               <div style={{ fontWeight: 700, color: '#E8EDF4', fontSize: 14, marginBottom: 6 }}>{o.label}</div>
               <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 6 }}>
                 <div style={{ height: 8, background: '#1E2D45', borderRadius: 4, flex: 1 }}>
-                  <div style={{ height: 8, background: o.heatMultiplier >= 0.9 ? '#EF4444′ : o.heatMultiplier >= 0.7 ? '#F59E0B' : '#22C55E', borderRadius: 4, width: `${o.heatMultiplier * 100}%` }} />
+                  <div style={{ height: 8, background: o.heatMultiplier >= 0.9 ? '#EF4444' : o.heatMultiplier >= 0.7 ? '#F59E0B' : '#22C55E', borderRadius: 4, width: `${o.heatMultiplier * 100}%` }} />
                 </div>
                 <span style={{ color: '#94A3B8', fontSize: 11 }}>{Math.round(o.heatMultiplier * 100)}%</span>
               </div>
@@ -70,7 +70,7 @@ export default function DFWWindowTreatmentGuide() {
           <div style={{ overflowX: 'auto' }}>
             <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: 14 }}>
               <thead>
-                <tr style={{ color: '#94A3B8', borderBottom: '1px solid #2D3F57′ }}>
+                <tr style={{ color: '#94A3B8', borderBottom: '1px solid #2D3F57' }}>
                   {['Type', 'Heat Rejection', 'View', 'Maintenance', 'Cost / Window'].map(h => (
                     <th key={h} style={{ textAlign: 'left', paddingBottom: 10, paddingRight: 16 }}>{h}</th>
                   ))}
@@ -86,7 +86,7 @@ export default function DFWWindowTreatmentGuide() {
                 ].map(row => (
                   <tr key={row[0]} style={{ borderBottom: '1px solid #16213A' }}>
                     {row.map((cell, i) => (
-                      <td key={i} style={{ padding: '10px 16px 10px 0', color: i === 0 ? '#E8EDF4′ : '#94A3B8' }}>{cell}</td>
+                      <td key={i} style={{ padding: '10px 16px 10px 0', color: i === 0 ? '#E8EDF4' : '#94A3B8' }}>{cell}</td>
                     ))}
                   </tr>
                 ))}

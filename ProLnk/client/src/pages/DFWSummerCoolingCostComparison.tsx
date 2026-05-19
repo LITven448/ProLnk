@@ -62,7 +62,7 @@ export default function DFWSummerCoolingCostComparison() {
           <h1 style={{ fontSize: 28, fontWeight: 700, color: '#F5E642', margin: 0 }}>DFW Summer Cooling Cost Comparison</h1>
         </div>
         <p style={{ color: '#9BAEC8', marginBottom: 28 }}>At 100°F+, system efficiency differences cost thousands per year. Know what you're actually paying.</p>
-        <div style={{ background: '#1A0820', borderRadius: 10, padding: 16, marginBottom: 24, borderLeft: '3px solid #F5A642′ }}>
+        <div style={{ background: '#1A0820', borderRadius: 10, padding: 16, marginBottom: 24, borderLeft: '3px solid #F5A642' }}>
           <span style={{ color: '#F5A642', fontWeight: 700 }}>⚡ DFW Fact: </span>
           <span style={{ color: '#E8EDF5', fontSize: 14 }}>DFW homes run AC 1,700–2,000 hours/year — nearly double the national average. At 100°F+, a 10 SEER unit uses 60% more electricity than a 16 SEER2 system.</span>
         </div>
@@ -71,19 +71,19 @@ export default function DFWSummerCoolingCostComparison() {
           <p style={{ color: '#9BAEC8', fontSize: 13, marginBottom: 16 }}>Based on DFW avg $0.134/kWh, June–September peak cooling season</p>
           <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: 13 }}>
             <thead>
-              <tr style={{ borderBottom: '1px solid #1A3055′ }}>
+              <tr style={{ borderBottom: '1px solid #1A3055' }}>
                 {['System', '2,000 sq ft', '3,000 sq ft', 'DFW Note'].map(h => (
-                  <th key={h} style={{ textAlign: 'left', padding: '8px 10px', color: '#F5E642′ }}>{h}</th>
+                  <th key={h} style={{ textAlign: 'left', padding: '8px 10px', color: '#F5E642' }}>{h}</th>
                 ))}
               </tr>
             </thead>
             <tbody>
               {compare.map(row => (
-                <tr key={row.system} style={{ borderBottom: '1px solid #0A1628′ }}>
+                <tr key={row.system} style={{ borderBottom: '1px solid #0A1628' }}>
                   <td style={{ padding: '9px 10px', color: '#E8EDF5', fontWeight: 600 }}>{row.system}</td>
-                  <td style={{ padding: '9px 10px', color: '#9BAEC8′ }}>{row.monthly2k}</td>
-                  <td style={{ padding: '9px 10px', color: '#9BAEC8′ }}>{row.monthly3k}</td>
-                  <td style={{ padding: '9px 10px', color: row.note.includes('Best') ? '#4ADE80′ : row.note.includes(’Replace') ? '#F87171′ : '#9BAEC8', fontSize: 12 }}>{row.note}</td>
+                  <td style={{ padding: '9px 10px', color: '#9BAEC8' }}>{row.monthly2k}</td>
+                  <td style={{ padding: '9px 10px', color: '#9BAEC8' }}>{row.monthly3k}</td>
+                  <td style={{ padding: '9px 10px', color: row.note.includes('Best') ? '#4ADE80' : row.note.includes('Replace') ? '#F87171' : '#9BAEC8', fontSize: 12 }}>{row.note}</td>
                 </tr>
               ))}
             </tbody>
@@ -94,7 +94,7 @@ export default function DFWSummerCoolingCostComparison() {
           <div style={{ display: 'grid', gap: 14 }}>
             <div>
               <label style={{ display: 'block', color: '#9BAEC8', marginBottom: 8, fontSize: 14 }}>Home Size (sq ft)</label>
-              <input type="number" placeholder="e.g. 2400″ value={homeSize} onChange={e => setHomeSize(e.target.value)}
+              <input type="number" placeholder="e.g. 2400" value={homeSize} onChange={e => setHomeSize(e.target.value)}
                 style={{ width: '100%', padding: '12px 16px', background: '#0A1628', border: '1px solid #1A3055', borderRadius: 8, color: '#E8EDF5', fontSize: 15, boxSizing: 'border-box' }} />
             </div>
             <div>
@@ -115,7 +115,7 @@ export default function DFWSummerCoolingCostComparison() {
             </button>
           </div>
           {result && (
-            <div style={{ marginTop: 24, background: '#0A1628', borderRadius: 10, padding: 20, borderLeft: '3px solid #F5E642′ }}>
+            <div style={{ marginTop: 24, background: '#0A1628', borderRadius: 10, padding: 20, borderLeft: '3px solid #F5E642' }}>
               <div style={{ display: 'grid', gap: 10 }}>
                 <div><span style={{ color: '#9BAEC8', fontSize: 13 }}>Your Estimated Monthly Cost</span><div style={{ color: '#F5E642', fontWeight: 700, fontSize: 18, marginTop: 2 }}>{result.monthly}</div></div>
                 <div><span style={{ color: '#9BAEC8', fontSize: 13 }}>Annual Cooling Estimate</span><div style={{ color: '#F5E642', fontWeight: 700, marginTop: 2 }}>{result.annual}</div></div>

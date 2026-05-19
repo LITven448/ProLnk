@@ -57,13 +57,13 @@ export default function DFWStoneVeneerGuide() {
             </thead>
             <tbody>
               {STONE_COMPARISON.map((s, i) => (
-                <tr key={s.type} style={{ background: i % 2 === 0 ? '#111E35′ : '#0D1929', borderBottom: '1px solid #1E3A5F' }}>
-                  <td style={{ padding: '0.7rem 0.75rem', fontWeight: 600, color: '#E8EDF5′ }}>{s.type}</td>
-                  <td style={{ padding: '0.7rem 0.75rem', color: '#C5D3E0′ }}>{s.heat}</td>
-                  <td style={{ padding: '0.7rem 0.75rem', color: '#C5D3E0′ }}>{s.hail}</td>
-                  <td style={{ padding: '0.7rem 0.75rem', color: '#C5D3E0′ }}>{s.moisture}</td>
-                  <td style={{ padding: '0.7rem 0.75rem', color: '#C5D3E0′ }}>{s.maintenance}</td>
-                  <td style={{ padding: '0.7rem 0.75rem', color: '#C5D3E0′ }}>{s.hoa}</td>
+                <tr key={s.type} style={{ background: i % 2 === 0 ? '#111E35' : '#0D1929', borderBottom: '1px solid #1E3A5F' }}>
+                  <td style={{ padding: '0.7rem 0.75rem', fontWeight: 600, color: '#E8EDF5' }}>{s.type}</td>
+                  <td style={{ padding: '0.7rem 0.75rem', color: '#C5D3E0' }}>{s.heat}</td>
+                  <td style={{ padding: '0.7rem 0.75rem', color: '#C5D3E0' }}>{s.hail}</td>
+                  <td style={{ padding: '0.7rem 0.75rem', color: '#C5D3E0' }}>{s.moisture}</td>
+                  <td style={{ padding: '0.7rem 0.75rem', color: '#C5D3E0' }}>{s.maintenance}</td>
+                  <td style={{ padding: '0.7rem 0.75rem', color: '#C5D3E0' }}>{s.hoa}</td>
                 </tr>
               ))}
             </tbody>

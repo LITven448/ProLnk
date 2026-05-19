@@ -28,7 +28,7 @@ export default function ReferralProgram() {
     onError: (e) => toast.error(e.message),
   });
 
-  const referralCode = balance?.referralCode ?? (user ? `HO-${String(user.id).padStart(6, "0")}` : "HO-000001″);
+  const referralCode = balance?.referralCode ?? (user ? `HO-${String(user.id).padStart(6, "0")}` : "HO-000001");
   const referralLink = `${window.location.origin}/trustypro?ref=${referralCode}`;
 
   const copyLink = () => {
@@ -45,23 +45,23 @@ export default function ReferralProgram() {
 
   return (
     <HomeownerLayout>
-    <div className="max-w-2xl mx-auto space-y-6 p-4″>
+    <div className="max-w-2xl mx-auto space-y-6 p-4">
       <div>
         <h1 className="text-2xl font-bold">Refer a Neighbor</h1>
-        <p className="text-muted-foreground mt-1″>Earn credits for every neighbor you bring to TrustyPro.</p>
+        <p className="text-muted-foreground mt-1">Earn credits for every neighbor you bring to TrustyPro.</p>
       </div>
 
-      <div className="grid grid-cols-2 gap-4″>
-        <Card className="bg-gradient-to-br from-primary/10 to-primary/5″>
+      <div className="grid grid-cols-2 gap-4">
+        <Card className="bg-gradient-to-br from-primary/10 to-primary/5">
           <CardContent className="pt-4 text-center">
-            <DollarSign className="h-8 w-8 mx-auto text-primary mb-1″ />
+            <DollarSign className="h-8 w-8 mx-auto text-primary mb-1" />
             <p className="text-2xl font-bold">${(balance?.creditBalance ?? 0).toLocaleString()}</p>
             <p className="text-xs text-muted-foreground">Credit Balance</p>
           </CardContent>
         </Card>
         <Card>
           <CardContent className="pt-4 text-center">
-            <Users className="h-8 w-8 mx-auto text-muted-foreground mb-1″ />
+            <Users className="h-8 w-8 mx-auto text-muted-foreground mb-1" />
             <p className="text-2xl font-bold">{balance?.referralCount ?? 0}</p>
             <p className="text-xs text-muted-foreground">Referrals Made</p>
           </CardContent>
@@ -69,17 +69,17 @@ export default function ReferralProgram() {
       </div>
 
       <Card>
-        <CardHeader className="pb-2″><CardTitle className="text-base">Your Referral Link</CardTitle></CardHeader>
-        <CardContent className="space-y-3″>
-          <div className="flex gap-2″>
+        <CardHeader className="pb-2"><CardTitle className="text-base">Your Referral Link</CardTitle></CardHeader>
+        <CardContent className="space-y-3">
+          <div className="flex gap-2">
             <Input value={referralLink} readOnly className="text-xs" />
-            <Button variant="outline" onClick={copyLink} className="shrink-0″>
-              {copied ? <CheckCircle className="h-4 w-4 text-green-500″ /> : <Copy className="h-4 w-4" />}
+            <Button variant="outline" onClick={copyLink} className="shrink-0">
+              {copied ? <CheckCircle className="h-4 w-4 text-green-500" /> : <Copy className="h-4 w-4" />}
             </Button>
           </div>
-          <div className="flex gap-2″>
+          <div className="flex gap-2">
             <Input placeholder="Friend's email address" value={email} onChange={e => setEmail(e.target.value)} />
-            <Button onClick={sendInvite} disabled={submitMutation.isPending} className="shrink-0″>
+            <Button onClick={sendInvite} disabled={submitMutation.isPending} className="shrink-0">
               {submitMutation.isPending ? <Loader2 className="h-4 w-4 animate-spin" /> : "Invite"}
             </Button>
           </div>
@@ -87,15 +87,15 @@ export default function ReferralProgram() {
       </Card>
 
       <Card>
-        <CardHeader className="pb-2″><CardTitle className="text-base">Reward Tiers</CardTitle></CardHeader>
-        <CardContent className="space-y-2″>
+        <CardHeader className="pb-2"><CardTitle className="text-base">Reward Tiers</CardTitle></CardHeader>
+        <CardContent className="space-y-2">
           {TIERS.map(tier => {
             const count = balance?.referralCount ?? 0;
             const achieved = count >= tier.referrals;
             return (
               <div key={tier.referrals} className={`flex items-center justify-between p-3 rounded-lg border ${achieved ? "border-green-300 bg-green-50 dark:bg-green-950/20" : ""}`}>
-                <div className="flex items-center gap-3″>
-                  {achieved ? <CheckCircle className="h-4 w-4 text-green-500″ /> : <Gift className="h-4 w-4 text-muted-foreground" />}
+                <div className="flex items-center gap-3">
+                  {achieved ? <CheckCircle className="h-4 w-4 text-green-500" /> : <Gift className="h-4 w-4 text-muted-foreground" />}
                   <div>
                     <p className="text-sm font-medium">{tier.badge}</p>
                     <p className="text-xs text-muted-foreground">{tier.referrals} referral{tier.referrals > 1 ? "s" : ""} needed</p>
@@ -110,8 +110,8 @@ export default function ReferralProgram() {
 
       {isLoading ? null : (referrals ?? []).length > 0 && (
         <Card>
-          <CardHeader className="pb-2″><CardTitle className="text-base">Your Referrals</CardTitle></CardHeader>
-          <CardContent className="space-y-2″>
+          <CardHeader className="pb-2"><CardTitle className="text-base">Your Referrals</CardTitle></CardHeader>
+          <CardContent className="space-y-2">
             {(referrals ?? []).map((r: any, i: number) => (
               <div key={i} className="flex items-center justify-between text-sm p-2 rounded border">
                 <span className="text-muted-foreground">{r.referredEmail ?? "Referred user"}</span>

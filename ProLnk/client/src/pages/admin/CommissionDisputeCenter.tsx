@@ -15,11 +15,11 @@ import { toast } from "sonner";
 import { AlertTriangle, CheckCircle, XCircle, Clock, DollarSign, MessageSquare } from "lucide-react";
 
 const DISPUTE_STATUS_CONFIG: Record<string, { color: string; label: string; icon: React.ReactNode }> = {
-  none: { color: "bg-gray-700 text-gray-400″, label: "No Dispute", icon: null },
-  open: { color: "bg-yellow-500/10 text-yellow-400 border-yellow-500/20″, label: "Open", icon: <AlertTriangle className="w-3 h-3" /> },
-  under_review: { color: "bg-blue-500/10 text-blue-400 border-blue-500/20″, label: "Under Review", icon: <Clock className="w-3 h-3" /> },
-  resolved_approved: { color: "bg-green-500/10 text-green-400 border-green-500/20″, label: "Approved", icon: <CheckCircle className="w-3 h-3" /> },
-  resolved_denied: { color: "bg-red-500/10 text-red-400 border-red-500/20″, label: "Denied", icon: <XCircle className="w-3 h-3" /> },
+  none: { color: "bg-gray-700 text-gray-400", label: "No Dispute", icon: null },
+  open: { color: "bg-yellow-500/10 text-yellow-400 border-yellow-500/20", label: "Open", icon: <AlertTriangle className="w-3 h-3" /> },
+  under_review: { color: "bg-blue-500/10 text-blue-400 border-blue-500/20", label: "Under Review", icon: <Clock className="w-3 h-3" /> },
+  resolved_approved: { color: "bg-green-500/10 text-green-400 border-green-500/20", label: "Approved", icon: <CheckCircle className="w-3 h-3" /> },
+  resolved_denied: { color: "bg-red-500/10 text-red-400 border-red-500/20", label: "Denied", icon: <XCircle className="w-3 h-3" /> },
 };
 
 export default function CommissionDisputeCenter() {
@@ -40,24 +40,24 @@ export default function CommissionDisputeCenter() {
 
   return (
     <AdminLayout>
-      <div className="space-y-6″>
+      <div className="space-y-6">
         <div>
-          <h1 className="text-2xl font-black text-white flex items-center gap-2″>
-            <MessageSquare className="w-6 h-6 text-orange-400″ />
+          <h1 className="text-2xl font-black text-white flex items-center gap-2">
+            <MessageSquare className="w-6 h-6 text-orange-400" />
             Commission Disputes
           </h1>
-          <p className="text-gray-400 text-sm mt-1″>Review and resolve partner commission disputes</p>
+          <p className="text-gray-400 text-sm mt-1">Review and resolve partner commission disputes</p>
         </div>
 
-        <div className="grid lg:grid-cols-3 gap-6″>
+        <div className="grid lg:grid-cols-3 gap-6">
           {/* Dispute list */}
-          <div className="lg:col-span-2 space-y-3″>
+          <div className="lg:col-span-2 space-y-3">
             {disputes.isLoading ? (
-              <div className="text-center py-12 text-gray-500″>Loading disputes...</div>
+              <div className="text-center py-12 text-gray-500">Loading disputes...</div>
             ) : !disputes.data?.length ? (
-              <div className="text-center py-16″>
-                <CheckCircle className="w-12 h-12 text-green-500 mx-auto mb-3″ />
-                <p className="text-gray-400″>No open disputes</p>
+              <div className="text-center py-16">
+                <CheckCircle className="w-12 h-12 text-green-500 mx-auto mb-3" />
+                <p className="text-gray-400">No open disputes</p>
               </div>
             ) : (
               disputes.data.map((dispute: any) => {
@@ -68,10 +68,10 @@ export default function CommissionDisputeCenter() {
                     onClick={() => setSelectedDispute(dispute)}
                     className={`bg-gray-800 rounded-xl p-4 border cursor-pointer transition-all hover:border-gray-600 ${selectedDispute?.id === dispute.id ? "border-teal-500/50" : "border-gray-700"}`}
                   >
-                    <div className="flex items-start gap-3″>
-                      <DollarSign className="w-5 h-5 text-teal-400 shrink-0 mt-0.5″ />
-                      <div className="flex-1 min-w-0″>
-                        <div className="flex items-center gap-2 flex-wrap mb-1″>
+                    <div className="flex items-start gap-3">
+                      <DollarSign className="w-5 h-5 text-teal-400 shrink-0 mt-0.5" />
+                      <div className="flex-1 min-w-0">
+                        <div className="flex items-center gap-2 flex-wrap mb-1">
                           <span className="font-semibold text-white text-sm">Commission #{dispute.id}</span>
                           <Badge className={`text-xs border ${statusConf.color} gap-1`}>
                             {statusConf.icon}
@@ -79,8 +79,8 @@ export default function CommissionDisputeCenter() {
                           </Badge>
                           <span className="text-teal-400 font-bold text-sm ml-auto">${parseFloat(dispute.amount).toLocaleString()}</span>
                         </div>
-                        <p className="text-gray-400 text-xs leading-relaxed line-clamp-2″>{dispute.disputeReason}</p>
-                        <div className="flex items-center gap-3 mt-2 text-xs text-gray-600″>
+                        <p className="text-gray-400 text-xs leading-relaxed line-clamp-2">{dispute.disputeReason}</p>
+                        <div className="flex items-center gap-3 mt-2 text-xs text-gray-600">
                           <span>{new Date(dispute.disputeOpenedAt).toLocaleDateString()}</span>
                           {dispute.payingPartnerName && <span>From: {dispute.payingPartnerName}</span>}
                           {dispute.receivingPartnerName && <span>To: {dispute.receivingPartnerName}</span>}
@@ -95,22 +95,22 @@ export default function CommissionDisputeCenter() {
 
           {/* Dispute detail */}
           {selectedDispute ? (
-            <Card className="bg-gray-800 border-gray-700″>
-              <CardHeader className="border-b border-gray-700″>
+            <Card className="bg-gray-800 border-gray-700">
+              <CardHeader className="border-b border-gray-700">
                 <CardTitle className="text-white text-sm font-bold">Dispute #{selectedDispute.id}</CardTitle>
               </CardHeader>
-              <CardContent className="p-4 space-y-4″>
+              <CardContent className="p-4 space-y-4">
                 <div>
-                  <div className="text-gray-400 text-xs mb-1″>Amount Disputed</div>
+                  <div className="text-gray-400 text-xs mb-1">Amount Disputed</div>
                   <div className="text-teal-400 text-2xl font-black">${parseFloat(selectedDispute.amount).toLocaleString()}</div>
                 </div>
                 <div>
-                  <div className="text-gray-400 text-xs mb-1″>Dispute Reason</div>
-                  <div className="text-gray-300 text-sm bg-gray-700 rounded-lg p-3″>{selectedDispute.disputeReason}</div>
+                  <div className="text-gray-400 text-xs mb-1">Dispute Reason</div>
+                  <div className="text-gray-300 text-sm bg-gray-700 rounded-lg p-3">{selectedDispute.disputeReason}</div>
                 </div>
                 <div>
-                  <div className="text-gray-400 text-xs mb-2″>Resolution</div>
-                  <div className="flex gap-2 mb-2″>
+                  <div className="text-gray-400 text-xs mb-2">Resolution</div>
+                  <div className="flex gap-2 mb-2">
                     <button
                       onClick={() => setResolveStatus("resolved_approved")}
                       className={`flex-1 py-2 rounded-lg text-xs font-semibold transition-all ${resolveStatus === "resolved_approved" ? "bg-green-500 text-white" : "bg-gray-700 text-gray-400"}`}
@@ -132,7 +132,7 @@ export default function CommissionDisputeCenter() {
                     rows={3}
                   />
                 </div>
-                <div className="flex gap-2″>
+                <div className="flex gap-2">
                   <Button
                     className="flex-1 bg-teal-500 hover:bg-teal-400 text-white text-xs"
                     disabled={!resolution.trim() || resolveDispute.isPending}
@@ -151,9 +151,9 @@ export default function CommissionDisputeCenter() {
               </CardContent>
             </Card>
           ) : (
-            <Card className="bg-gray-800 border-gray-700″>
-              <CardContent className="p-6 text-center text-gray-500″>
-                <MessageSquare className="w-10 h-10 mx-auto mb-2 opacity-30″ />
+            <Card className="bg-gray-800 border-gray-700">
+              <CardContent className="p-6 text-center text-gray-500">
+                <MessageSquare className="w-10 h-10 mx-auto mb-2 opacity-30" />
                 <p className="text-sm">Select a dispute to review</p>
               </CardContent>
             </Card>

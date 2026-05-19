@@ -87,7 +87,7 @@ export default function DFWTCCDTradeGuide() {
             Show My Program →
           </button>
           {result && (
-            <div style={{ marginTop: 24, background: '#0A1628', borderRadius: 12, padding: 20, border: '1px solid #F5E642′ }}>
+            <div style={{ marginTop: 24, background: '#0A1628', borderRadius: 12, padding: 20, border: '1px solid #F5E642' }}>
               <div style={{ fontWeight: 700, color: '#F5E642', fontSize: 18, marginBottom: 12 }}>
                 ✅ TCCD {result.trade} — {result.level} Track
               </div>

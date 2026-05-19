@@ -63,7 +63,7 @@ export default function DFWFoundationTreeDistance2026() {
             <div key={f.label} style={{ background: '#0A1628', borderRadius: 8, padding: '12px 16px', marginBottom: 8 }}>
               <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: 4 }}>
                 <span style={{ fontWeight: 600 }}>{f.label}</span>
-                <span style={{ color: f.risk === 'high' ? '#EF4444′ : f.risk === ’medium' ? '#F59E0B' : '#22C55E', fontWeight: 700, textTransform: 'uppercase', fontSize: 12 }}>{f.risk}</span>
+                <span style={{ color: f.risk === 'high' ? '#EF4444' : f.risk === 'medium' ? '#F59E0B' : '#22C55E', fontWeight: 700, textTransform: 'uppercase', fontSize: 12 }}>{f.risk}</span>
               </div>
               <div style={{ color: '#94A3B8', fontSize: 13 }}>{f.note}</div>
             </div>
@@ -99,7 +99,7 @@ export default function DFWFoundationTreeDistance2026() {
                 <div style={{ color: '#94A3B8', fontSize: 13, marginBottom: 6 }}>Recommended Minimum Distance</div>
                 <div style={{ color: '#F5E642', fontSize: 40, fontWeight: 700 }}>{result.dist} ft</div>
               </div>
-              <div style={{ background: result.safe ? '#14532D22′ : '#7F1D1D22', border: `1px solid ${result.safe ? '#22C55E' : '#EF4444'}`, borderRadius: 8, padding: 14, color: '#E8EDF5' }}>
+              <div style={{ background: result.safe ? '#14532D22' : '#7F1D1D22', border: `1px solid ${result.safe ? '#22C55E' : '#EF4444'}`, borderRadius: 8, padding: 14, color: '#E8EDF5' }}>
                 {result.safe ? '✅' : '⚠️'} {result.note}
               </div>
             </div>

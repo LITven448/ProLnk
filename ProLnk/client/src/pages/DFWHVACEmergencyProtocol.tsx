@@ -119,7 +119,7 @@ export default function DFWHVACEmergencyProtocol() {
         <h1 style={{ fontSize: 32, fontWeight: 800, color: '#FFFFFF', marginBottom: 8 }}>Emergency Protocol Guide</h1>
         <p style={{ color: '#94A3B8', marginBottom: 36 }}>When AC fails in 100°F+ DFW heat, every minute matters. Follow this protocol before you call — it can save hours of wait time and hundreds of dollars.</p>
 
-        <div style={{ background: '#1A1010', borderRadius: 12, padding: 20, marginBottom: 32, borderLeft: '4px solid #EF4444′ }}>
+        <div style={{ background: '#1A1010', borderRadius: 12, padding: 20, marginBottom: 32, borderLeft: '4px solid #EF4444' }}>
           <div style={{ fontWeight: 700, color: '#FCA5A5', marginBottom: 8 }}>🌡️ DFW Summer Reality Check</div>
           <div style={{ fontSize: 14, color: '#94A3B8', lineHeight: 1.6 }}>DFW averages 15-20 days above 105°F annually. At 110°F outdoor temps, an uninsulated home becomes unsafe in 2-4 hours without AC. Heat exhaustion risk begins at indoor temps above 90°F. Know your protocol before it happens.</div>
         </div>
@@ -127,7 +127,7 @@ export default function DFWHVACEmergencyProtocol() {
         <h2 style={{ color: '#F5E642', fontSize: 18, marginBottom: 16 }}>🔍 What's Your Problem?</h2>
         <div style={{ display: 'grid', gap: 10, marginBottom: 24 }}>
           {problems.map(p => (
-            <button key={p} onClick={() => { setProblem(p); setShowProtocol(false); }} style={{ textAlign: 'left', padding: '14px 18px', borderRadius: 10, border: '1px solid', borderColor: problem === p ? '#F5E642′ : '#1E3A5F', background: problem === p ? '#1A2A10' : '#111D35', color: problem === p ? '#F5E642' : '#CBD5E1', fontSize: 15, cursor: ’pointer' }}>
+            <button key={p} onClick={() => { setProblem(p); setShowProtocol(false); }} style={{ textAlign: 'left', padding: '14px 18px', borderRadius: 10, border: '1px solid', borderColor: problem === p ? '#F5E642' : '#1E3A5F', background: problem === p ? '#1A2A10' : '#111D35', color: problem === p ? '#F5E642' : '#CBD5E1', fontSize: 15, cursor: 'pointer' }}>
               {problem === p ? '● ' : '○ '}{p}
             </button>
           ))}
@@ -148,7 +148,7 @@ export default function DFWHVACEmergencyProtocol() {
 
             <h3 style={{ color: '#F5E642', fontSize: 16, marginBottom: 16 }}>Step-by-Step Protocol:</h3>
             {protocol.steps.map((step) => (
-              <div key={step.step} style={{ background: '#111D35', borderRadius: 10, padding: '16px 18px', marginBottom: 12, borderLeft: step.diy ? '4px solid #22C55E' : '4px solid #F5E642′ }}>
+              <div key={step.step} style={{ background: '#111D35', borderRadius: 10, padding: '16px 18px', marginBottom: 12, borderLeft: step.diy ? '4px solid #22C55E' : '4px solid #F5E642' }}>
                 <div style={{ display: 'flex', alignItems: 'flex-start', gap: 14 }}>
                   <div style={{ width: 32, height: 32, borderRadius: '50%', background: step.diy ? '#22C55E' : '#F5E642', color: '#0A1628', display: 'flex', alignItems: 'center', justifyContent: 'center', fontWeight: 800, fontSize: 14, flexShrink: 0 }}>{step.step}</div>
                   <div>
@@ -163,7 +163,7 @@ export default function DFWHVACEmergencyProtocol() {
         )}
 
         <div style={{ marginTop: 32, padding: '20px 24px', background: '#0F1E38', borderRadius: 12 }}>
-          <div style={{ fontWeight: 700, marginBottom: 10, color: '#F5E642′ }}>📋 When to Go to a Cooling Center Instead</div>
+          <div style={{ fontWeight: 700, marginBottom: 10, color: '#F5E642' }}>📋 When to Go to a Cooling Center Instead</div>
           <div style={{ fontSize: 14, color: '#94A3B8', lineHeight: 1.7 }}>
             If indoor temps exceed 90°F and you have: elderly residents (65+), infants under 1 year, serious medical conditions, or pets — do not wait for HVAC repair. DFW cooling centers are available at most libraries and recreation centers during heat emergencies. Your life is not worth the wait.
           </div>

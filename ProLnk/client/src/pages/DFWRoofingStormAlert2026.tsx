@@ -13,7 +13,7 @@ export default function DFWRoofingStormAlert2026() {
     const guides: Record<StormType, Record<RoofAge, string>> = {
       hail: {
         new: 'Roof under 5 years: walk the perimeter post-storm — check gutters for granule accumulation (looks like coarse sand). New shingles can still be bruised by large hail. File an insurance claim within 1 year of hail event; adjusters look for bruise marks on shingles.',
-        mid: 'Roof 5–15 years: high probability of impact damage with any hail over 1″. Schedule professional inspection within 48 hours — do not wait for leaks. Bruised shingles allow moisture intrusion that shows up 6–18 months later as interior water damage.',
+        mid: 'Roof 5–15 years: high probability of impact damage with any hail over 1". Schedule professional inspection within 48 hours — do not wait for leaks. Bruised shingles allow moisture intrusion that shows up 6–18 months later as interior water damage.',
         old: 'Roof 15+ years in DFW: assume significant damage from any hail event. Age + hail = compromised granule protection across most of the roof surface. Get competing estimates for full replacement and file insurance claim immediately.',
       },
       wind: {
@@ -55,7 +55,7 @@ export default function DFWRoofingStormAlert2026() {
               <div style={{ fontSize: '1.5rem', marginBottom: '0.4rem' }}>{p.icon}</div>
               <div style={{ fontWeight: '700', color: '#F5E642', fontSize: '0.9rem', marginBottom: '0.5rem' }}>{p.phase}</div>
               <ul style={{ margin: 0, paddingLeft: '1rem', display: 'flex', flexDirection: 'column', gap: '0.3rem' }}>
-                {p.steps.map(s => <li key={s} style={{ fontSize: '0.8rem', color: '#cbd5e1′ }}>{s}</li>)}
+                {p.steps.map(s => <li key={s} style={{ fontSize: '0.8rem', color: '#cbd5e1' }}>{s}</li>)}
               </ul>
             </div>
           ))}
@@ -67,7 +67,7 @@ export default function DFWRoofingStormAlert2026() {
             <p style={{ fontSize: '0.85rem', color: '#94a3b8', marginBottom: '0.5rem' }}>Storm type:</p>
             <div style={{ display: 'flex', gap: '0.5rem', flexWrap: 'wrap' }}>
               {(['hail', 'wind', 'tornado'] as StormType[]).map(t => (
-                <button key={t!} onClick={() => setStormType(t)} style={{ backgroundColor: stormType === t ? '#F5E642′ : '#0A1628', color: stormType === t ? '#0A1628' : '#fff', border: '1px solid #334155', borderRadius: '8px', padding: '0.5rem 1rem', cursor: ’pointer', fontWeight: '600', textTransform: 'capitalize' }}>{t}</button>
+                <button key={t!} onClick={() => setStormType(t)} style={{ backgroundColor: stormType === t ? '#F5E642' : '#0A1628', color: stormType === t ? '#0A1628' : '#fff', border: '1px solid #334155', borderRadius: '8px', padding: '0.5rem 1rem', cursor: 'pointer', fontWeight: '600', textTransform: 'capitalize' }}>{t}</button>
               ))}
             </div>
           </div>
@@ -75,12 +75,12 @@ export default function DFWRoofingStormAlert2026() {
             <p style={{ fontSize: '0.85rem', color: '#94a3b8', marginBottom: '0.5rem' }}>Roof age:</p>
             <div style={{ display: 'flex', gap: '0.5rem', flexWrap: 'wrap' }}>
               {([{ id: 'new' as RoofAge, label: 'Under 5 yrs' }, { id: 'mid' as RoofAge, label: '5–15 yrs' }, { id: 'old' as RoofAge, label: '15+ yrs' }]).map(r => (
-                <button key={r.id!} onClick={() => setRoofAge(r.id)} style={{ backgroundColor: roofAge === r.id ? '#F5E642′ : '#0A1628', color: roofAge === r.id ? '#0A1628' : '#fff', border: '1px solid #334155', borderRadius: '8px', padding: '0.5rem 1rem', cursor: ’pointer', fontWeight: '600′ }}>{r.label}</button>
+                <button key={r.id!} onClick={() => setRoofAge(r.id)} style={{ backgroundColor: roofAge === r.id ? '#F5E642' : '#0A1628', color: roofAge === r.id ? '#0A1628' : '#fff', border: '1px solid #334155', borderRadius: '8px', padding: '0.5rem 1rem', cursor: 'pointer', fontWeight: '600' }}>{r.label}</button>
               ))}
             </div>
           </div>
           {guide && (
-            <div style={{ backgroundColor: '#0f172a', borderRadius: '8px', padding: '1rem', borderLeft: '4px solid #F5E642′ }}>
+            <div style={{ backgroundColor: '#0f172a', borderRadius: '8px', padding: '1rem', borderLeft: '4px solid #F5E642' }}>
               <p style={{ margin: 0, lineHeight: '1.6', fontSize: '0.95rem' }}>{guide}</p>
             </div>
           )}

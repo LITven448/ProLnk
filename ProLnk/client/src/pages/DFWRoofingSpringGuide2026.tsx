@@ -10,7 +10,7 @@ const situations = [
 export default function DFWRoofingSpringGuide2026() {
   const [selected, setSelected] = useState<string | null>(null);
   const result = situations.find(s => s.id === selected);
-  const pColor = (p: string) => ({ Urgent: '#e74c3c', Weekly: '#F5E642', Moderate: '#3498db', Seasonal: '#27ae60′ }[p] || '#fff');
+  const pColor = (p: string) => ({ Urgent: '#e74c3c', Weekly: '#F5E642', Moderate: '#3498db', Seasonal: '#27ae60' }[p] || '#fff');
 
   return (
     <div style={{ background: '#0A1628', minHeight: '100vh', color: '#fff', fontFamily: 'sans-serif', padding: '2rem' }}>
@@ -20,7 +20,7 @@ export default function DFWRoofingSpringGuide2026() {
         </div>
         <h1 style={{ fontSize: 32, fontWeight: 800, marginBottom: 8 }}>DFW Spring Roofing Priorities</h1>
         <p style={{ color: '#94a3b8', marginBottom: 28 }}>
-          April–June is DFW's peak hail season. Cottonwood clogs gutters weekly in May. Spring rains stress every flashing and seam. Here’s your seasonal playbook.
+          April–June is DFW's peak hail season. Cottonwood clogs gutters weekly in May. Spring rains stress every flashing and seam. Here's your seasonal playbook.
         </p>
 
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16, marginBottom: 28 }}>
@@ -39,11 +39,11 @@ export default function DFWRoofingSpringGuide2026() {
         </div>
 
         <div style={{ background: '#112240', borderRadius: 12, padding: 24, marginBottom: 24 }}>
-          <div style={{ fontWeight: 700, marginBottom: 14, color: '#F5E642′ }}>🔎 Select Your Spring Situation</div>
+          <div style={{ fontWeight: 700, marginBottom: 14, color: '#F5E642' }}>🔎 Select Your Spring Situation</div>
           <div style={{ display: 'flex', flexDirection: 'column', gap: 10, marginBottom: 20 }}>
             {situations.map(s => (
               <button key={s.id} onClick={() => setSelected(s.id)}
-                style={{ background: selected === s.id ? '#F5E642′ : '#1e3a5f', color: selected === s.id ? '#0A1628' : '#fff', border: ’none', borderRadius: 8, padding: '12px 16px', cursor: 'pointer', fontWeight: 600, textAlign: 'left', fontSize: 15 }}>
+                style={{ background: selected === s.id ? '#F5E642' : '#1e3a5f', color: selected === s.id ? '#0A1628' : '#fff', border: 'none', borderRadius: 8, padding: '12px 16px', cursor: 'pointer', fontWeight: 600, textAlign: 'left', fontSize: 15 }}>
                 {s.label}
               </button>
             ))}
@@ -52,7 +52,7 @@ export default function DFWRoofingSpringGuide2026() {
             <div style={{ background: '#0A1628', borderRadius: 8, padding: 16, borderLeft: `4px solid ${pColor(result.priority)}` }}>
               <div style={{ fontWeight: 700, color: pColor(result.priority), marginBottom: 10 }}>Priority: {result.priority}</div>
               {result.steps.map(step => (
-                <div key={step} style={{ display: 'flex', gap: 10, marginBottom: 8, color: '#cbd5e1′ }}>
+                <div key={step} style={{ display: 'flex', gap: 10, marginBottom: 8, color: '#cbd5e1' }}>
                   <span>→</span><span>{step}</span>
                 </div>
               ))}
@@ -60,7 +60,7 @@ export default function DFWRoofingSpringGuide2026() {
           )}
         </div>
 
-        <div style={{ background: '#F5E642', borderRadius: 10, padding: 20, color: '#0A1628′ }}>
+        <div style={{ background: '#F5E642', borderRadius: 10, padding: 20, color: '#0A1628' }}>
           <div style={{ fontWeight: 800, fontSize: 16 }}>🏠 Document Every Roof Inspection in Your Home Health Vault</div>
           <div style={{ fontSize: 14, marginTop: 6 }}>ProLnk logs hail events, contractor visits, and inspection dates — making your insurance claims and future home sales dramatically easier.</div>
         </div>

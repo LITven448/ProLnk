@@ -24,12 +24,12 @@ export default function PartnerForgotPassword() {
       display: "flex",
       alignItems: "center",
       justifyContent: "center",
-      background: "#0A1628″,
+      background: "#0A1628",
       fontFamily: "'Inter', system-ui, sans-serif",
       padding: "24px",
     }}>
       <div style={{
-        background: "#111d35″,
+        background: "#111d35",
         border: "1px solid #1e2f4a",
         borderRadius: "20px",
         padding: "48px 40px",
@@ -45,7 +45,7 @@ export default function PartnerForgotPassword() {
             marginBottom: "8px",
           }}>
             <div style={{
-              background: "#F5E642″,
+              background: "#F5E642",
               borderRadius: "8px",
               width: "32px",
               height: "32px",
@@ -54,14 +54,14 @@ export default function PartnerForgotPassword() {
               justifyContent: "center",
               fontWeight: 900,
               fontSize: "16px",
-              color: "#0A1628″,
+              color: "#0A1628",
             }}>P</div>
             <span style={{ color: "#fff", fontWeight: 700, fontSize: "20px", letterSpacing: "-0.3px" }}>ProLnk</span>
           </div>
           <h1 style={{ color: "#fff", fontSize: "26px", fontWeight: 700, margin: "0 0 6px", letterSpacing: "-0.5px" }}>
             Reset Password
           </h1>
-          <p style={{ color: "#7a8ba8″, fontSize: "14px", margin: 0 }}>
+          <p style={{ color: "#7a8ba8", fontSize: "14px", margin: 0 }}>
             Enter your email and we'll send reset instructions
           </p>
         </div>
@@ -77,11 +77,11 @@ export default function PartnerForgotPassword() {
               marginBottom: "28px",
             }}>
               <div style={{ fontSize: "32px", marginBottom: "12px" }}>✉️</div>
-              <p style={{ color: "#4ade80″, fontWeight: 600, fontSize: "15px", margin: "0 0 6px" }}>
+              <p style={{ color: "#4ade80", fontWeight: 600, fontSize: "15px", margin: "0 0 6px" }}>
                 Check your email
               </p>
-              <p style={{ color: "#7a8ba8″, fontSize: "13px", margin: 0, lineHeight: "1.5" }}>
-                If an account exists for <strong style={{ color: "#a0b0c8″ }}>{email}</strong>, we've sent password reset instructions.
+              <p style={{ color: "#7a8ba8", fontSize: "13px", margin: 0, lineHeight: "1.5" }}>
+                If an account exists for <strong style={{ color: "#a0b0c8" }}>{email}</strong>, we've sent password reset instructions.
               </p>
             </div>
             <a
@@ -89,7 +89,7 @@ export default function PartnerForgotPassword() {
               style={{
                 display: "block",
                 textAlign: "center",
-                color: "#F5E642″,
+                color: "#F5E642",
                 fontSize: "14px",
                 fontWeight: 600,
                 textDecoration: "none",
@@ -101,7 +101,7 @@ export default function PartnerForgotPassword() {
         ) : (
           <form onSubmit={handleSubmit} style={{ display: "flex", flexDirection: "column", gap: "16px" }}>
             <div>
-              <label style={{ display: "block", fontSize: "12px", fontWeight: 600, color: "#a0b0c8″, marginBottom: "6px", textTransform: "uppercase", letterSpacing: "0.5px" }}>
+              <label style={{ display: "block", fontSize: "12px", fontWeight: 600, color: "#a0b0c8", marginBottom: "6px", textTransform: "uppercase", letterSpacing: "0.5px" }}>
                 Email Address
               </label>
               <input
@@ -122,7 +122,7 @@ export default function PartnerForgotPassword() {
                   outline: "none",
                   transition: "border-color 0.2s",
                 }}
-                onFocus={(e) => (e.target.style.borderColor = "#F5E642″)}
+                onFocus={(e) => (e.target.style.borderColor = "#F5E642")}
                 onBlur={(e) => (e.target.style.borderColor = "#1e2f4a")}
               />
             </div>
@@ -133,9 +133,9 @@ export default function PartnerForgotPassword() {
                 border: "1px solid rgba(239,68,68,0.3)",
                 borderRadius: "10px",
                 padding: "12px 14px",
-                color: "#f87171″,
+                color: "#f87171",
                 fontSize: "13px",
-                lineHeight: "1.4″,
+                lineHeight: "1.4",
               }}>
                 {error}
               </div>
@@ -145,8 +145,8 @@ export default function PartnerForgotPassword() {
               type="submit"
               disabled={resetMutation.isPending}
               style={{
-                background: resetMutation.isPending ? "#c9bc2a" : "#F5E642″,
-                color: "#0A1628″,
+                background: resetMutation.isPending ? "#c9bc2a" : "#F5E642",
+                color: "#0A1628",
                 border: "none",
                 padding: "14px",
                 borderRadius: "10px",
@@ -164,7 +164,7 @@ export default function PartnerForgotPassword() {
             </button>
 
             <div style={{ textAlign: "center", marginTop: "8px" }}>
-              <a href="/partner-login" style={{ color: "#7a8ba8″, fontSize: "13px", textDecoration: "none" }}>
+              <a href="/partner-login" style={{ color: "#7a8ba8", fontSize: "13px", textDecoration: "none" }}>
                 ← Back to Sign In
               </a>
             </div>

@@ -53,24 +53,24 @@ export default function DFWSaleLeasebackGuide() {
   return (
     <div style={{ minHeight: '100vh', backgroundColor: '#0A1628', color: '#e5e7eb', fontFamily: 'system-ui, sans-serif', padding: '2rem' }}>
       <div style={{ maxWidth: '800px', margin: '0 auto' }}>
-        <h1 style={{ fontSize: '2rem', fontWeight: 800, marginBottom: '0.5rem', color: '#F5E642′ }}>Sale-Leaseback Guide — DFW</h1>
+        <h1 style={{ fontSize: '2rem', fontWeight: 800, marginBottom: '0.5rem', color: '#F5E642' }}>Sale-Leaseback Guide — DFW</h1>
         <p style={{ fontSize: '1.1rem', color: '#9ca3af', marginBottom: '2rem' }}>Sell your home and stay as a tenant while you find your next place in Dallas-Fort Worth</p>
         {sections.map((s, i) => (
           <div key={i} style={{ backgroundColor: '#0f2137', borderRadius: '12px', padding: '1.5rem', marginBottom: '1rem', border: '1px solid #1e3a5f' }}>
-            <h2 style={{ fontSize: '1.1rem', fontWeight: 700, marginBottom: '0.5rem', color: '#F5E642′ }}>{s.icon} {s.heading}</h2>
+            <h2 style={{ fontSize: '1.1rem', fontWeight: 700, marginBottom: '0.5rem', color: '#F5E642' }}>{s.icon} {s.heading}</h2>
             <p style={{ color: '#d1d5db', lineHeight: 1.7, whiteSpace: 'pre-line' }}>{s.body}</p>
           </div>
         ))}
         <div style={{ backgroundColor: '#0f2137', borderRadius: '12px', padding: '1.5rem', border: '1px solid #1e3a5f' }}>
-          <h2 style={{ fontSize: '1.2rem', fontWeight: 700, marginBottom: '1rem', color: '#F5E642′ }}>🧮 Sale-Leaseback Feasibility Calculator</h2>
+          <h2 style={{ fontSize: '1.2rem', fontWeight: 700, marginBottom: '1rem', color: '#F5E642' }}>🧮 Sale-Leaseback Feasibility Calculator</h2>
           <div style={{ display: 'grid', gap: '0.75rem', marginBottom: '1rem' }}>
             <div>
               <label style={{ display: 'block', fontSize: '0.9rem', fontWeight: 600, marginBottom: '0.25rem', color: '#9ca3af' }}>Home Value ($)</label>
-              <input type="number" value={homeValue} onChange={e => setHomeValue(e.target.value)} style={{ width: '100%', padding: '0.6rem', borderRadius: '8px', border: '1px solid #374151', backgroundColor: '#1a2e4a', color: '#e5e7eb', fontSize: '1rem', boxSizing: 'border-box' }} placeholder="0″ />
+              <input type="number" value={homeValue} onChange={e => setHomeValue(e.target.value)} style={{ width: '100%', padding: '0.6rem', borderRadius: '8px', border: '1px solid #374151', backgroundColor: '#1a2e4a', color: '#e5e7eb', fontSize: '1rem', boxSizing: 'border-box' }} placeholder="0" />
             </div>
             <div>
               <label style={{ display: 'block', fontSize: '0.9rem', fontWeight: 600, marginBottom: '0.25rem', color: '#9ca3af' }}>Months Needed</label>
-              <input type="number" value={months} onChange={e => setMonths(e.target.value)} style={{ width: '100%', padding: '0.6rem', borderRadius: '8px', border: '1px solid #374151', backgroundColor: '#1a2e4a', color: '#e5e7eb', fontSize: '1rem', boxSizing: 'border-box' }} placeholder="1–6″ />
+              <input type="number" value={months} onChange={e => setMonths(e.target.value)} style={{ width: '100%', padding: '0.6rem', borderRadius: '8px', border: '1px solid #374151', backgroundColor: '#1a2e4a', color: '#e5e7eb', fontSize: '1rem', boxSizing: 'border-box' }} placeholder="1–6" />
             </div>
             <div>
               <label style={{ display: 'block', fontSize: '0.9rem', fontWeight: 600, marginBottom: '0.25rem', color: '#9ca3af' }}>Current Market</label>
@@ -84,8 +84,8 @@ export default function DFWSaleLeasebackGuide() {
           </div>
           <button onClick={calculate} style={{ backgroundColor: '#F5E642', color: '#0A1628', border: 'none', padding: '0.75rem 1.5rem', borderRadius: '8px', fontWeight: 700, fontSize: '1rem', cursor: 'pointer' }}>Assess Feasibility</button>
           {result && (
-            <div style={{ marginTop: '1rem', padding: '1rem', backgroundColor: result.feasible ? '#052e16′ : '#3b0000', borderRadius: '8px', border: `1px solid ${result.feasible ? '#16a34a' : '#dc2626'}` }}>
-              <p style={{ fontWeight: 700, color: result.feasible ? '#4ade80′ : '#f87171' }}>{result.feasible ? '✅ Sale-Leaseback Is Viable' : '⚠️ Challenging Situation'}</p>
+            <div style={{ marginTop: '1rem', padding: '1rem', backgroundColor: result.feasible ? '#052e16' : '#3b0000', borderRadius: '8px', border: `1px solid ${result.feasible ? '#16a34a' : '#dc2626'}` }}>
+              <p style={{ fontWeight: 700, color: result.feasible ? '#4ade80' : '#f87171' }}>{result.feasible ? '✅ Sale-Leaseback Is Viable' : '⚠️ Challenging Situation'}</p>
               <p>Est. Monthly Rent: <strong>${(result.rentEst).toLocaleString('en-US', { maximumFractionDigits: 0 })}/mo</strong></p>
               <p>Alt. Rental Cost (apt + moving): <strong>${result.altCost.toLocaleString()}</strong></p>
               <p style={{ marginTop: '0.5rem', color: '#d1d5db' }}>{result.verdict}</p>

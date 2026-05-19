@@ -38,7 +38,7 @@ export default function DFWVirtualPowerPlantGuide() {
 
         <div style={{ background: '#111D35', borderRadius: 12, padding: 24, marginBottom: 24, border: '1px solid #1E3A5F' }}>
           <h2 style={{ color: '#F5E642', fontSize: 18, marginBottom: 16 }}>⚡ What Is a Virtual Power Plant?</h2>
-          <p style={{ color: '#94A3B8', lineHeight: 1.7, marginBottom: 16 }}>A Virtual Power Plant (VPP) aggregates thousands of home solar+battery systems across DFW into a single dispatchable resource. During ERCOT demand peaks — usually summer afternoons and winter cold snaps — the VPP operator exports your stored energy to the grid. <strong style={{ color: '#F5E642′ }}>You get paid at premium rates</strong>, the grid stays stable.</p>
+          <p style={{ color: '#94A3B8', lineHeight: 1.7, marginBottom: 16 }}>A Virtual Power Plant (VPP) aggregates thousands of home solar+battery systems across DFW into a single dispatchable resource. During ERCOT demand peaks — usually summer afternoons and winter cold snaps — the VPP operator exports your stored energy to the grid. <strong style={{ color: '#F5E642' }}>You get paid at premium rates</strong>, the grid stays stable.</p>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12 }}>
             {[
               ['📅', 'ERCOT Peak Events', '8–20 events/year, mostly June–Sept + winter cold snaps'],
@@ -83,13 +83,13 @@ export default function DFWVirtualPowerPlantGuide() {
             </div>
           ))}
           <button onClick={() => setShowResult(true)} disabled={!systemSize || !zone}
-            style={{ width: '100%', background: systemSize && zone ? '#F5E642′ : '#1E3A5F', color: systemSize && zone ? '#0A1628' : '#4A6FA5', border: ’none', borderRadius: 8, padding: '12px 0', fontSize: 16, fontWeight: 700, cursor: systemSize && zone ? 'pointer' : 'default' }}>
+            style={{ width: '100%', background: systemSize && zone ? '#F5E642' : '#1E3A5F', color: systemSize && zone ? '#0A1628' : '#4A6FA5', border: 'none', borderRadius: 8, padding: '12px 0', fontSize: 16, fontWeight: 700, cursor: systemSize && zone ? 'pointer' : 'default' }}>
             Check My VPP Eligibility + Earnings →
           </button>
         </div>
 
         {showResult && result && (
-          <div style={{ background: '#111D35', borderRadius: 12, padding: 24, border: '2px solid #F5E642′ }}>
+          <div style={{ background: '#111D35', borderRadius: 12, padding: 24, border: '2px solid #F5E642' }}>
             <h3 style={{ color: '#F5E642', fontSize: 20, marginBottom: 20 }}>💰 Your DFW VPP Opportunity</h3>
             {[
               ['✅', 'VPP Eligible', result.eligible],

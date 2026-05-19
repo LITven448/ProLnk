@@ -179,7 +179,7 @@ export default function DFWClimateZoneHVACGuide() {
                   borderRadius: '8px',
                   border: '1px solid',
                   borderColor: selectedCity === city.name ? '#22c55e' : '#374151',
-                  background: selectedCity === city.name ? '#052e16′ : '#111827',
+                  background: selectedCity === city.name ? '#052e16' : '#111827',
                   color: selectedCity === city.name ? '#22c55e' : '#9ca3af',
                   cursor: 'pointer',
                   fontSize: '14px',

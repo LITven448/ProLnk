@@ -48,58 +48,58 @@ const TYPE_CONFIG: Record<NotifType, {
   actionIcon: React.ReactNode;
 }> = {
   leads: {
-    icon: <Zap className="w-4 h-4″ />,
+    icon: <Zap className="w-4 h-4" />,
     iconBg: "rgba(34,197,94,0.15)", iconColor: "#22c55e",
     badgeBg: "rgba(34,197,94,0.1)", badgeText: "#22c55e",
-    label: "New Lead", actionIcon: <Eye className="w-3 h-3″ />,
+    label: "New Lead", actionIcon: <Eye className="w-3 h-3" />,
   },
   commission: {
-    icon: <DollarSign className="w-4 h-4″ />,
-    iconBg: "rgba(245,230,66,0.15)", iconColor: "#F5E642″,
-    badgeBg: "rgba(245,230,66,0.1)", badgeText: "#F5E642″,
-    label: "Commission", actionIcon: <ArrowRight className="w-3 h-3″ />,
+    icon: <DollarSign className="w-4 h-4" />,
+    iconBg: "rgba(245,230,66,0.15)", iconColor: "#F5E642",
+    badgeBg: "rgba(245,230,66,0.1)", badgeText: "#F5E642",
+    label: "Commission", actionIcon: <ArrowRight className="w-3 h-3" />,
   },
   review: {
-    icon: <Star className="w-4 h-4″ />,
-    iconBg: "rgba(251,191,36,0.15)", iconColor: "#fbbf24″,
-    badgeBg: "rgba(251,191,36,0.1)", badgeText: "#fbbf24″,
-    label: "Review", actionIcon: <Eye className="w-3 h-3″ />,
+    icon: <Star className="w-4 h-4" />,
+    iconBg: "rgba(251,191,36,0.15)", iconColor: "#fbbf24",
+    badgeBg: "rgba(251,191,36,0.1)", badgeText: "#fbbf24",
+    label: "Review", actionIcon: <Eye className="w-3 h-3" />,
   },
   tier: {
-    icon: <Trophy className="w-4 h-4″ />,
-    iconBg: "rgba(139,92,246,0.15)", iconColor: "#8b5cf6″,
-    badgeBg: "rgba(139,92,246,0.1)", badgeText: "#8b5cf6″,
-    label: "Tier Upgrade", actionIcon: <ArrowRight className="w-3 h-3″ />,
+    icon: <Trophy className="w-4 h-4" />,
+    iconBg: "rgba(139,92,246,0.15)", iconColor: "#8b5cf6",
+    badgeBg: "rgba(139,92,246,0.1)", badgeText: "#8b5cf6",
+    label: "Tier Upgrade", actionIcon: <ArrowRight className="w-3 h-3" />,
   },
   storm: {
-    icon: <CloudLightning className="w-4 h-4″ />,
+    icon: <CloudLightning className="w-4 h-4" />,
     iconBg: "rgba(245,158,11,0.15)", iconColor: "#f59e0b",
     badgeBg: "rgba(245,158,11,0.1)", badgeText: "#f59e0b",
-    label: "Storm Alert", actionIcon: <ExternalLink className="w-3 h-3″ />,
+    label: "Storm Alert", actionIcon: <ExternalLink className="w-3 h-3" />,
   },
   job: {
-    icon: <Briefcase className="w-4 h-4″ />,
-    iconBg: "rgba(16,185,129,0.15)", iconColor: "#10b981″,
-    badgeBg: "rgba(16,185,129,0.1)", badgeText: "#10b981″,
-    label: "Job", actionIcon: <Eye className="w-3 h-3″ />,
+    icon: <Briefcase className="w-4 h-4" />,
+    iconBg: "rgba(16,185,129,0.15)", iconColor: "#10b981",
+    badgeBg: "rgba(16,185,129,0.1)", badgeText: "#10b981",
+    label: "Job", actionIcon: <Eye className="w-3 h-3" />,
   },
   network: {
-    icon: <Network className="w-4 h-4″ />,
-    iconBg: "rgba(59,130,246,0.15)", iconColor: "#3b82f6″,
-    badgeBg: "rgba(59,130,246,0.1)", badgeText: "#3b82f6″,
-    label: "Network", actionIcon: <UserPlus className="w-3 h-3″ />,
+    icon: <Network className="w-4 h-4" />,
+    iconBg: "rgba(59,130,246,0.15)", iconColor: "#3b82f6",
+    badgeBg: "rgba(59,130,246,0.1)", badgeText: "#3b82f6",
+    label: "Network", actionIcon: <UserPlus className="w-3 h-3" />,
   },
   system: {
-    icon: <Info className="w-4 h-4″ />,
+    icon: <Info className="w-4 h-4" />,
     iconBg: "rgba(107,114,128,0.15)", iconColor: "#9ca3af",
     badgeBg: "rgba(107,114,128,0.1)", badgeText: "#9ca3af",
-    label: "System", actionIcon: <ExternalLink className="w-3 h-3″ />,
+    label: "System", actionIcon: <ExternalLink className="w-3 h-3" />,
   },
   tips: {
-    icon: <Lightbulb className="w-4 h-4″ />,
+    icon: <Lightbulb className="w-4 h-4" />,
     iconBg: "rgba(245,158,11,0.15)", iconColor: "#f59e0b",
     badgeBg: "rgba(245,158,11,0.1)", badgeText: "#f59e0b",
-    label: "Tip", actionIcon: <ArrowRight className="w-3 h-3″ />,
+    label: "Tip", actionIcon: <ArrowRight className="w-3 h-3" />,
   },
 };
 
@@ -124,7 +124,7 @@ const STATIC_NOTIFICATIONS: Notification[] = [
     id: "static-storm",
     numId: -10,
     type: "storm",
-    title: "Storm Alert — Severe weather near Austin 78701″,
+    title: "Storm Alert — Severe weather near Austin 78701",
     body: "Hail expected tonight. 12 leads auto-queued in your service area. Respond within 2 hours to lock jobs before redistribution.",
     timestamp: new Date(Date.now() - 4 * 60000),
     read: false,
@@ -149,7 +149,7 @@ const STATIC_NOTIFICATIONS: Notification[] = [
     id: "static-commission",
     numId: -7,
     type: "commission",
-    title: "Commission paid — $147.00″,
+    title: "Commission paid — $147.00",
     body: "Your L1 override from Jason K.'s completed roofing job has been credited. Payout processes June 1.",
     timestamp: new Date(Date.now() - 2 * 3600000),
     read: false,
@@ -243,13 +243,13 @@ const STATIC_NOTIFICATIONS: Notification[] = [
 const FILTER_TABS: { key: FilterKey; label: string; icon?: React.ReactNode }[] = [
   { key: "all",        label: "All" },
   { key: "unread",     label: "Unread" },
-  { key: "leads",      label: "Leads",     icon: <Zap className="w-3 h-3″ /> },
-  { key: "storm",      label: "Storm",     icon: <CloudLightning className="w-3 h-3″ /> },
-  { key: "commission", label: "Payments",  icon: <DollarSign className="w-3 h-3″ /> },
-  { key: "review",     label: "Reviews",   icon: <Star className="w-3 h-3″ /> },
-  { key: "tier",       label: "Tier",      icon: <Trophy className="w-3 h-3″ /> },
-  { key: "job",        label: "Jobs",      icon: <Briefcase className="w-3 h-3″ /> },
-  { key: "network",    label: "Network",   icon: <Network className="w-3 h-3″ /> },
+  { key: "leads",      label: "Leads",     icon: <Zap className="w-3 h-3" /> },
+  { key: "storm",      label: "Storm",     icon: <CloudLightning className="w-3 h-3" /> },
+  { key: "commission", label: "Payments",  icon: <DollarSign className="w-3 h-3" /> },
+  { key: "review",     label: "Reviews",   icon: <Star className="w-3 h-3" /> },
+  { key: "tier",       label: "Tier",      icon: <Trophy className="w-3 h-3" /> },
+  { key: "job",        label: "Jobs",      icon: <Briefcase className="w-3 h-3" /> },
+  { key: "network",    label: "Network",   icon: <Network className="w-3 h-3" /> },
   { key: "system",     label: "System" },
 ];
 
@@ -327,12 +327,12 @@ export default function Notifications() {
 
         {/* Header */}
         <div className="flex items-center justify-between gap-3 flex-wrap">
-          <div className="flex items-center gap-3″>
+          <div className="flex items-center gap-3">
             <div
               className="w-10 h-10 rounded-xl flex items-center justify-center relative"
               style={{ background: "rgba(45,212,191,0.1)", border: "1px solid rgba(45,212,191,0.2)" }}
             >
-              <Bell className="w-5 h-5″ style={{ color: "#2dd4bf" }} />
+              <Bell className="w-5 h-5" style={{ color: "#2dd4bf" }} />
               {unreadCount > 0 && (
                 <span className="absolute -top-1 -right-1 w-4 h-4 rounded-full bg-red-500 text-white text-[10px] font-bold flex items-center justify-center">
                   {unreadCount > 9 ? "9+" : unreadCount}
@@ -341,7 +341,7 @@ export default function Notifications() {
             </div>
             <div>
               <h1 className="text-2xl font-bold text-white">Notifications</h1>
-              <p className="text-sm text-gray-400″>
+              <p className="text-sm text-gray-400">
                 {unreadCount > 0 ? `${unreadCount} unread${urgentCount > 0 ? ` · ${urgentCount} urgent` : ""}` : "All caught up"}
               </p>
             </div>
@@ -353,13 +353,13 @@ export default function Notifications() {
               style={{ background: "rgba(255,255,255,0.06)", color: soundEnabled ? "#2dd4bf" : "#9ca3af", border: "1px solid rgba(255,255,255,0.1)" }}
               title={soundEnabled ? "Mute notification sounds" : "Enable notification sounds"}
             >
-              {soundEnabled ? <Volume2 className="w-3.5 h-3.5″ /> : <VolumeX className="w-3.5 h-3.5" />}
+              {soundEnabled ? <Volume2 className="w-3.5 h-3.5" /> : <VolumeX className="w-3.5 h-3.5" />}
               Sound
             </button>
             <Link href="/notification-preferences">
               <span className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-medium transition-all cursor-pointer"
                 style={{ background: "rgba(255,255,255,0.06)", color: "#9ca3af", border: "1px solid rgba(255,255,255,0.1)" }}>
-                <Settings className="w-3.5 h-3.5″ /> Settings
+                <Settings className="w-3.5 h-3.5" /> Settings
               </span>
             </Link>
             <button
@@ -367,7 +367,7 @@ export default function Notifications() {
               className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-medium transition-all"
               style={{ background: "rgba(255,255,255,0.06)", color: "#9ca3af", border: "1px solid rgba(255,255,255,0.1)" }}
             >
-              <RefreshCw className="w-3.5 h-3.5″ />
+              <RefreshCw className="w-3.5 h-3.5" />
             </button>
             <button
               onClick={markAllRead}
@@ -376,17 +376,17 @@ export default function Notifications() {
               style={
                 unreadCount > 0
                   ? { background: "rgba(45,212,191,0.1)", color: "#2dd4bf", border: "1px solid rgba(45,212,191,0.25)" }
-                  : { background: "rgba(255,255,255,0.03)", color: "#4b5563″, border: "1px solid rgba(255,255,255,0.06)", cursor: "default" }
+                  : { background: "rgba(255,255,255,0.03)", color: "#4b5563", border: "1px solid rgba(255,255,255,0.06)", cursor: "default" }
               }
             >
-              <CheckCheck className="w-3.5 h-3.5″ /> Mark all read
+              <CheckCheck className="w-3.5 h-3.5" /> Mark all read
             </button>
             <button
               onClick={clearAll}
               className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-medium transition-all"
-              style={{ background: "rgba(239,68,68,0.08)", color: "#ef4444″, border: "1px solid rgba(239,68,68,0.2)" }}
+              style={{ background: "rgba(239,68,68,0.08)", color: "#ef4444", border: "1px solid rgba(239,68,68,0.2)" }}
             >
-              <X className="w-3.5 h-3.5″ /> Clear all
+              <X className="w-3.5 h-3.5" /> Clear all
             </button>
           </div>
         </div>
@@ -397,7 +397,7 @@ export default function Notifications() {
             className="flex items-center gap-3 px-4 py-3 rounded-xl"
             style={{ background: "rgba(245,158,11,0.08)", border: "1px solid rgba(245,158,11,0.3)" }}
           >
-            <CloudLightning size={18} style={{ color: "#f59e0b" }} className="flex-shrink-0″ />
+            <CloudLightning size={18} style={{ color: "#f59e0b" }} className="flex-shrink-0" />
             <p className="text-sm font-semibold" style={{ color: "#f59e0b" }}>
               {urgentCount} urgent notification{urgentCount !== 1 ? "s" : ""} require your attention
             </p>
@@ -420,7 +420,7 @@ export default function Notifications() {
                 className="flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-semibold transition-all"
                 style={
                   active
-                    ? { background: "#2dd4bf", color: "#0A1628″ }
+                    ? { background: "#2dd4bf", color: "#0A1628" }
                     : { background: "rgba(255,255,255,0.06)", color: "#9ca3af", border: "1px solid rgba(255,255,255,0.1)" }
                 }
               >
@@ -429,7 +429,7 @@ export default function Notifications() {
                 {count > 0 && (
                   <span
                     className="w-4 h-4 rounded-full text-[10px] font-bold flex items-center justify-center"
-                    style={active ? { background: "#0A1628″, color: "#2dd4bf" } : { background: "#ef4444", color: "#fff" }}
+                    style={active ? { background: "#0A1628", color: "#2dd4bf" } : { background: "#ef4444", color: "#fff" }}
                   >
                     {count > 9 ? "9+" : count}
                   </span>
@@ -441,22 +441,22 @@ export default function Notifications() {
 
         {/* Unread section */}
         {filter === "all" && unreadCount > 0 && (
-          <p className="text-xs font-semibold text-gray-500 uppercase tracking-widest px-1″>
+          <p className="text-xs font-semibold text-gray-500 uppercase tracking-widest px-1">
             Unread — {unreadCount}
           </p>
         )}
 
         {/* Notification list */}
         {isLoading ? (
-          <div className="space-y-2″>
+          <div className="space-y-2">
             {[...Array(4)].map((_, i) => (
               <div key={i} className="rounded-xl p-4 animate-pulse"
                 style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.06)" }}>
-                <div className="flex gap-3″>
-                  <div className="w-9 h-9 rounded-xl flex-shrink-0″ style={{ background: "rgba(255,255,255,0.08)" }} />
-                  <div className="flex-1 space-y-2″>
-                    <div className="h-4 rounded w-1/3″ style={{ background: "rgba(255,255,255,0.08)" }} />
-                    <div className="h-3 rounded w-2/3″ style={{ background: "rgba(255,255,255,0.05)" }} />
+                <div className="flex gap-3">
+                  <div className="w-9 h-9 rounded-xl flex-shrink-0" style={{ background: "rgba(255,255,255,0.08)" }} />
+                  <div className="flex-1 space-y-2">
+                    <div className="h-4 rounded w-1/3" style={{ background: "rgba(255,255,255,0.08)" }} />
+                    <div className="h-3 rounded w-2/3" style={{ background: "rgba(255,255,255,0.05)" }} />
                   </div>
                 </div>
               </div>
@@ -465,12 +465,12 @@ export default function Notifications() {
         ) : displayed.length === 0 ? (
           <div className="rounded-2xl p-12 text-center"
             style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)" }}>
-            <Bell className="w-10 h-10 mx-auto mb-3″ style={{ color: "rgba(255,255,255,0.12)" }} />
-            <p className="text-gray-400 font-medium text-sm mb-1″>No notifications</p>
-            <p className="text-xs text-gray-600″>Activity will appear here as you use the platform.</p>
+            <Bell className="w-10 h-10 mx-auto mb-3" style={{ color: "rgba(255,255,255,0.12)" }} />
+            <p className="text-gray-400 font-medium text-sm mb-1">No notifications</p>
+            <p className="text-xs text-gray-600">Activity will appear here as you use the platform.</p>
           </div>
         ) : (
-          <div className="space-y-2″>
+          <div className="space-y-2">
             {displayed.map((n) => {
               const cfg = TYPE_CONFIG[n.type] ?? TYPE_CONFIG.system;
               const isUnread = !n.read;
@@ -499,39 +499,39 @@ export default function Notifications() {
                   )}
 
                   <div
-                    className="w-9 h-9 rounded-xl flex items-center justify-center flex-shrink-0 mt-0.5″
+                    className="w-9 h-9 rounded-xl flex items-center justify-center flex-shrink-0 mt-0.5"
                     style={{ background: cfg.iconBg, color: cfg.iconColor }}
                   >
                     {cfg.icon}
                   </div>
 
-                  <div className="flex-1 min-w-0″>
-                    <div className="flex items-start justify-between gap-2 mb-1″>
-                      <div className="flex items-center gap-2 flex-wrap min-w-0″>
+                  <div className="flex-1 min-w-0">
+                    <div className="flex items-start justify-between gap-2 mb-1">
+                      <div className="flex items-center gap-2 flex-wrap min-w-0">
                         <p className={`text-sm font-semibold ${isUnread ? "text-white" : "text-gray-400"}`}>
                           {n.title}
                         </p>
                         <span
-                          className="text-[10px] font-semibold px-2 py-0.5 rounded-full flex-shrink-0″
+                          className="text-[10px] font-semibold px-2 py-0.5 rounded-full flex-shrink-0"
                           style={{ background: cfg.badgeBg, color: cfg.badgeText }}
                         >
                           {cfg.label}
                         </span>
                         {n.urgent && isUnread && (
-                          <span className="text-[10px] font-bold px-2 py-0.5 rounded-full flex-shrink-0″
+                          <span className="text-[10px] font-bold px-2 py-0.5 rounded-full flex-shrink-0"
                             style={{ background: "rgba(245,158,11,0.15)", color: "#f59e0b", border: "1px solid rgba(245,158,11,0.3)" }}>
                             Urgent
                           </span>
                         )}
                         {n.pinned && (
-                          <span className="text-[10px] font-semibold px-2 py-0.5 rounded-full flex-shrink-0″
+                          <span className="text-[10px] font-semibold px-2 py-0.5 rounded-full flex-shrink-0"
                             style={{ background: "rgba(45,212,191,0.1)", color: "#2dd4bf" }}>
                             Pinned
                           </span>
                         )}
                       </div>
-                      <span className="flex items-center gap-1 text-xs text-gray-500 flex-shrink-0″>
-                        <Clock className="w-3 h-3″ />
+                      <span className="flex items-center gap-1 text-xs text-gray-500 flex-shrink-0">
+                        <Clock className="w-3 h-3" />
                         {timeAgo(n.timestamp)}
                       </span>
                     </div>
@@ -550,7 +550,7 @@ export default function Notifications() {
                           <Link href={n.actionHref}>
                             <span
                               onClick={(e) => e.stopPropagation()}
-                              className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold transition-all hover:opacity-90″
+                              className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold transition-all hover:opacity-90"
                               style={{ background: cfg.iconBg, color: cfg.iconColor, border: `1px solid ${cfg.iconColor}33` }}
                             >
                               {cfg.actionIcon}
@@ -563,14 +563,14 @@ export default function Notifications() {
                   </div>
 
                   {/* Per-item actions (revealed on hover) */}
-                  <div className="flex flex-col gap-1 opacity-0 group-hover:opacity-100 transition-opacity flex-shrink-0″>
+                  <div className="flex flex-col gap-1 opacity-0 group-hover:opacity-100 transition-opacity flex-shrink-0">
                     {isUnread ? (
                       <button
                         onClick={(e) => { e.stopPropagation(); markRead(n.id); }}
                         className="p-1.5 rounded-lg hover:bg-white/10 transition-colors"
                         title="Mark as read"
                       >
-                        <CheckCircle className="w-3.5 h-3.5 text-gray-400″ />
+                        <CheckCircle className="w-3.5 h-3.5 text-gray-400" />
                       </button>
                     ) : (
                       <button
@@ -578,7 +578,7 @@ export default function Notifications() {
                         className="p-1.5 rounded-lg hover:bg-white/10 transition-colors"
                         title="Mark as unread"
                       >
-                        <Bell className="w-3.5 h-3.5 text-gray-400″ />
+                        <Bell className="w-3.5 h-3.5 text-gray-400" />
                       </button>
                     )}
                     <button
@@ -586,7 +586,7 @@ export default function Notifications() {
                       className="p-1.5 rounded-lg hover:bg-white/10 transition-colors"
                       title="Dismiss"
                     >
-                      <X className="w-3.5 h-3.5 text-gray-500″ />
+                      <X className="w-3.5 h-3.5 text-gray-500" />
                     </button>
                   </div>
                 </div>
@@ -597,7 +597,7 @@ export default function Notifications() {
 
         {/* Read section divider */}
         {filter === "all" && displayed.some((n) => n.read) && displayed.some((n) => !n.read) && (
-          <div className="flex items-center gap-3 pt-2″>
+          <div className="flex items-center gap-3 pt-2">
             <div className="flex-1 h-px" style={{ background: "rgba(255,255,255,0.07)" }} />
             <span className="text-[10px] font-semibold text-gray-600 uppercase tracking-widest">Read</span>
             <div className="flex-1 h-px" style={{ background: "rgba(255,255,255,0.07)" }} />

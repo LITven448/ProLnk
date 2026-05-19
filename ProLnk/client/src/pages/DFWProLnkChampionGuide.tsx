@@ -37,7 +37,7 @@ export default function DFWProLnkChampionGuide() {
     <div style={{ background: '#0A1628', minHeight: '100vh', padding: '2rem', fontFamily: 'sans-serif', color: '#fff' }}>
       <h1 style={{ color: '#F5E642', fontSize: '1.6rem', marginBottom: '0.25rem' }}>🏆 ProLnk Champion Partner Guide</h1>
       <p style={{ color: '#94a3b8', marginBottom: '1.5rem' }}>See what top DFW ProLnk Champions do differently — and your gap to Champion income.</p>
-      <label style={{ color: '#F5E642′ }}>Your Current Level
+      <label style={{ color: '#F5E642' }}>Your Current Level
         <select value={currentLevel} onChange={e => setCurrentLevel(+e.target.value)} style={{ display: 'block', width: '100%', maxWidth: 560, marginTop: 4, background: '#1e2d45', color: '#fff', border: '1px solid #2d4a6e', borderRadius: 6, padding: '0.5rem' }}>
           {LEVELS.map((l, i) => <option key={i} value={i}>{l}</option>)}
         </select>

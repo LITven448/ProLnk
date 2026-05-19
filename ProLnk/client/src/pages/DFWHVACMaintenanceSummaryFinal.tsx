@@ -33,7 +33,7 @@ export default function DFWHVACMaintenanceSummaryFinal() {
       <div style={{ maxWidth: 900, margin: '0 auto' }}>
         <div style={{ textAlign: 'center', marginBottom: '2rem' }}>
           <div style={{ fontSize: '2.5rem' }}>🛠️</div>
-          <h1 style={{ color: '#F5E642', fontSize: '2rem', fontWeight: 700, margin: '0.5rem 0′ }}>DFW HVAC Maintenance Calendar</h1>
+          <h1 style={{ color: '#F5E642', fontSize: '2rem', fontWeight: 700, margin: '0.5rem 0' }}>DFW HVAC Maintenance Calendar</h1>
           <p style={{ color: '#8899AA', fontSize: '1rem' }}>Complete DFW maintenance schedule — monthly, quarterly, biannual, and annual tasks with DFW timing</p>
         </div>
 
@@ -50,7 +50,7 @@ export default function DFWHVACMaintenanceSummaryFinal() {
           <p style={{ color: '#8899AA', fontSize: '0.85rem', margin: '0 0 0.75rem' }}>Filter by month (click to see what's due):</p>
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.4rem' }}>
             {monthNames.map((m, i) => (
-              <button key={m} onClick={() => setActiveMonth(activeMonth === i + 1 ? null : i + 1)} style={{ padding: '0.3rem 0.7rem', borderRadius: 20, border: `2px solid ${activeMonth === i + 1 ? '#F5E642' : '#1E3A5F'}`, background: activeMonth === i + 1 ? '#F5E642′ : ’transparent', color: activeMonth === i + 1 ? '#0A1628′ : '#fff', fontWeight: activeMonth === i + 1 ? 700 : 400, cursor: ’pointer', fontSize: '0.8rem' }}>
+              <button key={m} onClick={() => setActiveMonth(activeMonth === i + 1 ? null : i + 1)} style={{ padding: '0.3rem 0.7rem', borderRadius: 20, border: `2px solid ${activeMonth === i + 1 ? '#F5E642' : '#1E3A5F'}`, background: activeMonth === i + 1 ? '#F5E642' : 'transparent', color: activeMonth === i + 1 ? '#0A1628' : '#fff', fontWeight: activeMonth === i + 1 ? 700 : 400, cursor: 'pointer', fontSize: '0.8rem' }}>
                 {m}
               </button>
             ))}
@@ -65,11 +65,11 @@ export default function DFWHVACMaintenanceSummaryFinal() {
               <div style={{ flex: 1 }}>
                 <div style={{ display: 'flex', gap: '0.5rem', alignItems: 'center', flexWrap: 'wrap' }}>
                   <h3 style={{ color: '#fff', margin: 0, fontSize: '1rem' }}>{task.title}</h3>
-                  <span style={{ background: task.critical ? '#F5E642′ : '#1E3A5F', color: task.critical ? '#0A1628' : '#8899AA', fontSize: '0.7rem', fontWeight: 700, padding: '2px 8px', borderRadius: 20 }}>{task.freq}</span>
+                  <span style={{ background: task.critical ? '#F5E642' : '#1E3A5F', color: task.critical ? '#0A1628' : '#8899AA', fontSize: '0.7rem', fontWeight: 700, padding: '2px 8px', borderRadius: 20 }}>{task.freq}</span>
                 </div>
-                <p style={{ color: '#8899AA', fontSize: '0.85rem', margin: '0.4rem 0 0′ }}>{task.dfwNote}</p>
+                <p style={{ color: '#8899AA', fontSize: '0.85rem', margin: '0.4rem 0 0' }}>{task.dfwNote}</p>
                 <div style={{ display: 'flex', gap: '0.3rem', marginTop: '0.4rem', flexWrap: 'wrap' }}>
-                  {task.months.map(m => <span key={m} style={{ fontSize: '0.7rem', padding: '1px 6px', background: '#0A1628', borderRadius: 10, color: '#F5E642′ }}>{monthNames[m-1]}</span>)}
+                  {task.months.map(m => <span key={m} style={{ fontSize: '0.7rem', padding: '1px 6px', background: '#0A1628', borderRadius: 10, color: '#F5E642' }}>{monthNames[m-1]}</span>)}
                 </div>
               </div>
             </div>

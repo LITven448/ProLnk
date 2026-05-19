@@ -67,15 +67,15 @@ export default function DFWRoofingBookNow2026() {
           <p style={{ color: '#94a3b8', fontSize: 14 }}>Select your urgency to see your exact ProLnk booking process</p>
         </div>
 
-        <div style={{ background: '#132039', border: '1px solid #F5E64244', borderRadius: 10, padding: '12px 16px', marginBottom: 24, fontSize: 13, color: '#94a3b8′ }}>
-          🏆 <strong style={{ color: '#F5E642′ }}>All ProLnk roofing matches</strong> are HAAG-certified Charter roofers — the gold standard for DFW hail and storm documentation.
+        <div style={{ background: '#132039', border: '1px solid #F5E64244', borderRadius: 10, padding: '12px 16px', marginBottom: 24, fontSize: 13, color: '#94a3b8' }}>
+          🏆 <strong style={{ color: '#F5E642' }}>All ProLnk roofing matches</strong> are HAAG-certified Charter roofers — the gold standard for DFW hail and storm documentation.
         </div>
 
         <div style={{ display: 'grid', gap: 12, marginBottom: 28 }}>
           {urgencyLevels.map(u => (
             <button key={u.id} onClick={() => setSelected(u.id)}
-              style={{ background: selected === u.id ? '#F5E642′ : '#132039', color: selected === u.id ? '#0A1628' : '#fff',
-                border: '2px solid ' + (selected === u.id ? '#F5E642′ : '#1e3a5f'), borderRadius: 10,
+              style={{ background: selected === u.id ? '#F5E642' : '#132039', color: selected === u.id ? '#0A1628' : '#fff',
+                border: '2px solid ' + (selected === u.id ? '#F5E642' : '#1e3a5f'), borderRadius: 10,
                 padding: '14px 18px', textAlign: 'left', fontSize: 15, fontWeight: 600, cursor: 'pointer' }}>
               {u.label}
             </button>

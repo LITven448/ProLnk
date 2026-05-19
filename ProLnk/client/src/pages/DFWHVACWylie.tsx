@@ -13,10 +13,10 @@ function getSystemEstimate(age: string, sqft: string) {
   const ageScore = ageRanges.indexOf(age);
   const sqftScore = sqftRanges.indexOf(sqft);
   const combined = ageScore + sqftScore;
-  if (ageScore === 0) return { years: '15–25 yrs', score: 90, action: 'Replace Now', color: '#ff4444′ };
-  if (ageScore === 1) return { years: '10–18 yrs', score: 65, action: 'Inspect This Season', color: '#F5E642′ };
-  if (ageScore === 2) return { years: '5–12 yrs', score: 35, action: 'Tune-Up Recommended', color: '#44cc44′ };
-  return { years: '0–5 yrs', score: combined > 5 ? 20 : 10, action: 'New — Just Monitor', color: '#44cc44′ };
+  if (ageScore === 0) return { years: '15–25 yrs', score: 90, action: 'Replace Now', color: '#ff4444' };
+  if (ageScore === 1) return { years: '10–18 yrs', score: 65, action: 'Inspect This Season', color: '#F5E642' };
+  if (ageScore === 2) return { years: '5–12 yrs', score: 35, action: 'Tune-Up Recommended', color: '#44cc44' };
+  return { years: '0–5 yrs', score: combined > 5 ? 20 : 10, action: 'New — Just Monitor', color: '#44cc44' };
 }
 
 export default function DFWHVACWylie() {
@@ -41,8 +41,8 @@ export default function DFWHVACWylie() {
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3,1fr)', gap: 16, marginBottom: 40 }}>
           {suburbs.map(s => (
             <div key={s.name} style={{ background: '#112240', borderRadius: 10, padding: 20, textAlign: 'center' }}>
-              <div style={{ fontSize: 22, fontWeight: 700, color: '#F5E642′ }}>{s.name}</div>
-              <div style={{ color: '#aaa', fontSize: 13, margin: '4px 0′ }}>Pop. {s.pop}</div>
+              <div style={{ fontSize: 22, fontWeight: 700, color: '#F5E642' }}>{s.name}</div>
+              <div style={{ color: '#aaa', fontSize: 13, margin: '4px 0' }}>Pop. {s.pop}</div>
               <div style={{ fontSize: 12, color: '#66aaff' }}>Growth: {s.growth}</div>
             </div>
           ))}
@@ -109,14 +109,14 @@ export default function DFWHVACWylie() {
             {['✅ Heat pump installation & conversion', '✅ R-410A & R-32 refrigerant service',
               '✅ Collin County permit-ready installs', '✅ Zoned system design for large homes',
               '✅ Pre-season tune-ups (spring & fall)', '✅ Emergency same-day service'].map(s => (
-              <div key={s} style={{ color: '#ccc', fontSize: 14, padding: '8px 0′ }}>{s}</div>
+              <div key={s} style={{ color: '#ccc', fontSize: 14, padding: '8px 0' }}>{s}</div>
             ))}
           </div>
         </div>
 
         <div style={{ textAlign: 'center', background: '#F5E642', borderRadius: 12, padding: 32 }}>
           <div style={{ fontSize: 28 }}>📞</div>
-          <h2 style={{ color: '#0A1628', fontSize: 22, fontWeight: 700, margin: '8px 0′ }}>Get a Free HVAC Quote in Wylie</h2>
+          <h2 style={{ color: '#0A1628', fontSize: 22, fontWeight: 700, margin: '8px 0' }}>Get a Free HVAC Quote in Wylie</h2>
           <p style={{ color: '#333', marginBottom: 16 }}>Vetted local pros, transparent pricing, same-week availability</p>
           <button style={{ background: '#0A1628', color: '#F5E642', border: 'none', borderRadius: 8, padding: '14px 32px', fontSize: 16, fontWeight: 700, cursor: 'pointer' }}>
             Request Free Quote →

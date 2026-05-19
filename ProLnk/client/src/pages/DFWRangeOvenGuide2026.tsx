@@ -31,7 +31,7 @@ export default function DFWRangeOvenGuide2026() {
 
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2,1fr)', gap: 12, marginBottom: 28 }}>
           {types.map(t => (
-            <div key={t.name} style={{ background: '#13223a', borderRadius: 10, padding: '16px 12px', borderLeft: '4px solid #F5E642′ }}>
+            <div key={t.name} style={{ background: '#13223a', borderRadius: 10, padding: '16px 12px', borderLeft: '4px solid #F5E642' }}>
               <div style={{ fontSize: 24 }}>{t.icon}</div>
               <div style={{ fontWeight: 700, margin: '8px 0 4px' }}>{t.name}</div>
               <div style={{ color: '#a0b0c8', fontSize: 12 }}>{t.note}</div>
@@ -56,11 +56,11 @@ export default function DFWRangeOvenGuide2026() {
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8, marginBottom: 14 }}>
             {['Gas', 'Electric', 'Induction', 'Dual Fuel', 'Not sure'].map(s => (
               <button key={s} onClick={() => setRangeType(s)}
-                style={{ background: rangeType === s ? '#F5E642′ : '#0A1628', color: rangeType === s ? '#0A1628' : '#fff', border: '1px solid #2a3a54', borderRadius: 20, padding: '6px 14px', fontSize: 12, cursor: ’pointer' }}>{s}</button>
+                style={{ background: rangeType === s ? '#F5E642' : '#0A1628', color: rangeType === s ? '#0A1628' : '#fff', border: '1px solid #2a3a54', borderRadius: 20, padding: '6px 14px', fontSize: 12, cursor: 'pointer' }}>{s}</button>
             ))}
           </div>
-          <label style={{ fontSize: 13, color: '#a0b0c8′ }}>Total budget (range + install)</label>
-          <input value={budget} onChange={e => setBudget(e.target.value)} type="number" placeholder="e.g. 1200″
+          <label style={{ fontSize: 13, color: '#a0b0c8' }}>Total budget (range + install)</label>
+          <input value={budget} onChange={e => setBudget(e.target.value)} type="number" placeholder="e.g. 1200"
             style={{ display: 'block', width: '100%', background: '#0A1628', border: '1px solid #2a3a54', borderRadius: 8, color: '#fff', padding: '10px 12px', marginTop: 6, marginBottom: 16, fontSize: 14, boxSizing: 'border-box' }} />
           <button onClick={recommend} style={{ background: '#F5E642', color: '#0A1628', fontWeight: 800, border: 'none', borderRadius: 8, padding: '12px 24px', cursor: 'pointer', fontSize: 15 }}>Get Recommendation</button>
           {result && <div style={{ marginTop: 16, background: '#0A1628', borderRadius: 8, padding: 14, fontSize: 14, lineHeight: 1.6 }}>{result}</div>}

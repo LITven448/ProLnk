@@ -31,7 +31,7 @@ export default function DFWHVACCompleteSystem() {
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(160px, 1fr))', gap: '1rem', marginBottom: '2rem' }}>
           {components.map(c => (
             <button key={c.id} onClick={() => setActive(active === c.id ? null : c.id)}
-              style={{ background: active === c.id ? '#F5E642′ : '#0F2140', border: `2px solid ${active === c.id ? '#F5E642' : '#1E3A5F'}`, borderRadius: 12, padding: '1.25rem 1rem', cursor: ’pointer', textAlign: 'left', color: active === c.id ? '#0A1628′ : '#E8EDF5', transition: ’all 0.2s' }}>
+              style={{ background: active === c.id ? '#F5E642' : '#0F2140', border: `2px solid ${active === c.id ? '#F5E642' : '#1E3A5F'}`, borderRadius: 12, padding: '1.25rem 1rem', cursor: 'pointer', textAlign: 'left', color: active === c.id ? '#0A1628' : '#E8EDF5', transition: 'all 0.2s' }}>
               <div style={{ fontSize: '2rem', marginBottom: '0.5rem' }}>{c.icon}</div>
               <div style={{ fontWeight: 700, fontSize: '0.85rem', marginBottom: '0.25rem' }}>{c.name}</div>
               <div style={{ fontSize: '0.75rem', opacity: 0.7 }}>{c.location}</div>
@@ -40,7 +40,7 @@ export default function DFWHVACCompleteSystem() {
         </div>
 
         {selected ? (
-          <div style={{ background: '#0F2140', borderRadius: 12, padding: '1.5rem', marginBottom: '2rem', border: '1px solid #F5E642′ }}>
+          <div style={{ background: '#0F2140', borderRadius: 12, padding: '1.5rem', marginBottom: '2rem', border: '1px solid #F5E642' }}>
             <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', marginBottom: '1rem' }}>
               <span style={{ fontSize: '2rem' }}>{selected.icon}</span>
               <div>

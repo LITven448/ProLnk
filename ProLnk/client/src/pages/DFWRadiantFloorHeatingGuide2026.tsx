@@ -31,8 +31,8 @@ export default function DFWRadiantFloorHeatingGuide2026() {
       <div style={{ maxWidth: 800, margin: '0 auto' }}>
         <div style={{ textAlign: 'center', marginBottom: '2rem' }}>
           <div style={{ fontSize: '3rem' }}>🌡️</div>
-          <h1 style={{ color: '#F5E642', fontSize: '2rem', margin: '0.5rem 0′ }}>DFW Radiant Floor Heating Guide 2026</h1>
-          <p style={{ color: '#a0aec0′ }}>Is radiant floor heating worth it in DFW? The honest answer.</p>
+          <h1 style={{ color: '#F5E642', fontSize: '2rem', margin: '0.5rem 0' }}>DFW Radiant Floor Heating Guide 2026</h1>
+          <p style={{ color: '#a0aec0' }}>Is radiant floor heating worth it in DFW? The honest answer.</p>
         </div>
 
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1.5rem' }}>

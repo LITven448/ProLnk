@@ -64,8 +64,8 @@ export default function ProLnkVisionPage() {
               key={i}
               onClick={() => setSelectedMilestone(i)}
               style={{
-                background: selectedMilestone === i ? '#F5E642′ : '#111e35',
-                color: selectedMilestone === i ? '#0A1628′ : '#ccc',
+                background: selectedMilestone === i ? '#F5E642' : '#111e35',
+                color: selectedMilestone === i ? '#0A1628' : '#ccc',
                 border: '1px solid #1e3a5f',
                 borderRadius: 8,
                 padding: '10px 16px',
@@ -93,8 +93,8 @@ export default function ProLnkVisionPage() {
               key={i}
               onClick={() => setSelectedVision(i)}
               style={{
-                background: selectedVision === i ? '#F5E642′ : '#111e35',
-                color: selectedVision === i ? '#0A1628′ : '#ccc',
+                background: selectedVision === i ? '#F5E642' : '#111e35',
+                color: selectedVision === i ? '#0A1628' : '#ccc',
                 border: '1px solid #1e3a5f',
                 borderRadius: 8,
                 padding: '12px 22px',

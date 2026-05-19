@@ -60,8 +60,8 @@ export default function DFWCityServicesGuide() {
                 key={c}
                 onClick={() => setSelectedCity(c)}
                 style={{
-                  backgroundColor: selectedCity === c ? '#F5E642′ : '#1e2d4a',
-                  color: selectedCity === c ? '#0A1628′ : '#fff',
+                  backgroundColor: selectedCity === c ? '#F5E642' : '#1e2d4a',
+                  color: selectedCity === c ? '#0A1628' : '#fff',
                   border: '1px solid #F5E642',
                   borderRadius: '8px',
                   padding: '10px 18px',
@@ -88,12 +88,12 @@ export default function DFWCityServicesGuide() {
                   borderRadius: '12px',
                   padding: '20px',
                   cursor: 'pointer',
-                  border: selectedService === idx ? '2px solid #F5E642′ : '2px solid transparent',
+                  border: selectedService === idx ? '2px solid #F5E642' : '2px solid transparent',
                 }}
               >
                 <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                  <h3 style={{ fontSize: '16px', fontWeight: '700', color: '#F5E642′ }}>{s.service}</h3>
-                  <span style={{ color: '#F5E642′ }}>{selectedService === idx ? '▲' : '▼'}</span>
+                  <h3 style={{ fontSize: '16px', fontWeight: '700', color: '#F5E642' }}>{s.service}</h3>
+                  <span style={{ color: '#F5E642' }}>{selectedService === idx ? '▲' : '▼'}</span>
                 </div>
                 {info && selectedService === idx && (
                   <div style={{ marginTop: '16px', backgroundColor: '#0A1628', borderRadius: '8px', padding: '16px' }}>

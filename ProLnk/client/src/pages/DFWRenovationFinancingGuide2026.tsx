@@ -32,7 +32,7 @@ export default function DFWRenovationFinancingGuide2026() {
   const best = available.find(o => o.canFund);
 
   return (
-    <div style={{ background: '#F9FAFB', minHeight: '100vh', fontFamily: 'system-ui, sans-serif', color: '#0A1628′ }}>
+    <div style={{ background: '#F9FAFB', minHeight: '100vh', fontFamily: 'system-ui, sans-serif', color: '#0A1628' }}>
       <div style={{ background: '#0A1628', color: '#fff', padding: '40px 24px', textAlign: 'center' }}>
         <div style={{ fontSize: 36, marginBottom: 8 }}>🔨</div>
         <h1 style={{ margin: 0, fontSize: 28, fontWeight: 700 }}>DFW Renovation Financing Guide 2026</h1>
@@ -42,7 +42,7 @@ export default function DFWRenovationFinancingGuide2026() {
       </div>
 
       <div style={{ maxWidth: 800, margin: '0 auto', padding: '32px 16px' }}>
-        <div style={{ background: '#F5E642', borderRadius: 12, padding: '16px 20px', marginBottom: 24, fontSize: 14, color: '#0A1628′ }}>
+        <div style={{ background: '#F5E642', borderRadius: 12, padding: '16px 20px', marginBottom: 24, fontSize: 14, color: '#0A1628' }}>
           <strong>📈 DFW Equity Opportunity:</strong> {DFW_EQUITY_NOTE}
         </div>
 
@@ -61,7 +61,7 @@ export default function DFWRenovationFinancingGuide2026() {
                 </div>
                 <input type="range" min={f.min} max={f.max} step={f.step} value={f.value}
                   onChange={e => f.set(Number(e.target.value))}
-                  style={{ width: '100%', accentColor: '#F5E642′ }} />
+                  style={{ width: '100%', accentColor: '#F5E642' }} />
               </div>
             ))}
           </div>
@@ -82,9 +82,9 @@ export default function DFWRenovationFinancingGuide2026() {
           {best && (
             <div style={{ background: '#0A1628', borderRadius: 10, padding: '16px 20px', marginTop: 20, color: '#fff' }}>
               <div style={{ fontSize: 13, color: '#94A3B8', marginBottom: 4 }}>RECOMMENDED FOR YOUR SITUATION</div>
-              <div style={{ fontSize: 20, fontWeight: 700, color: '#F5E642′ }}>{best.name}</div>
+              <div style={{ fontSize: 20, fontWeight: 700, color: '#F5E642' }}>{best.name}</div>
               <div style={{ fontSize: 14, color: '#CBD5E1', marginTop: 4 }}>Rate: {best.rate}% · {best.term}-year · ${best.monthlyPayment.toFixed(0)}/mo estimated payment</div>
-              <div style={{ fontSize: 13, marginTop: 6, color: '#94A3B8′ }}>✅ {best.pros}</div>
+              <div style={{ fontSize: 13, marginTop: 6, color: '#94A3B8' }}>✅ {best.pros}</div>
             </div>
           )}
         </div>
@@ -105,7 +105,7 @@ export default function DFWRenovationFinancingGuide2026() {
               </div>
               <div style={{ display: 'flex', gap: 16, marginTop: 10, fontSize: 13 }}>
                 <span style={{ color: '#16A34A' }}>✅ {opt.pros}</span>
-                <span style={{ color: '#DC2626′ }}>❌ {opt.cons}</span>
+                <span style={{ color: '#DC2626' }}>❌ {opt.cons}</span>
               </div>
             </div>
           ))}

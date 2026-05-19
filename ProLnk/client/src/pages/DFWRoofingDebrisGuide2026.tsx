@@ -53,7 +53,7 @@ export default function DFWRoofingDebrisGuide2026() {
           🍂 Roof Debris Management Guide
         </h1>
         <p style={{ color: '#9BAEC8', marginBottom: '28px', lineHeight: 1.6 }}>
-          DFW has <strong style={{ color: '#F5E642′ }}>three distinct debris seasons</strong>: November oak leaf drop, May cottonwood seed blizzard, and year-round pine needle accumulation. Each type damages shingles differently — management strategy depends on debris type AND volume.
+          DFW has <strong style={{ color: '#F5E642' }}>three distinct debris seasons</strong>: November oak leaf drop, May cottonwood seed blizzard, and year-round pine needle accumulation. Each type damages shingles differently — management strategy depends on debris type AND volume.
         </p>
 
         {[
@@ -62,14 +62,14 @@ export default function DFWRoofingDebrisGuide2026() {
           { icon: '❄️', title: 'Cottonwood Seeds (May)', desc: 'Unique to DFW’s creek corridors. Seeds look like snow but compact into moisture-holding mats when wet. Most time-sensitive of all DFW roof debris — act within days, not weeks.' },
           { icon: '⚠️', title: 'Granule Loss Warning', desc: 'Debris-induced granule loss voids most DFW shingle warranties. Document roof condition annually. Granule loss in gutters = sign debris has been sitting too long on your roof.' },
         ].map((item) => (
-          <div key={item.title} style={{ backgroundColor: '#111D35', borderRadius: '10px', padding: '16px', marginBottom: '12px', borderLeft: '3px solid #F5E642′ }}>
+          <div key={item.title} style={{ backgroundColor: '#111D35', borderRadius: '10px', padding: '16px', marginBottom: '12px', borderLeft: '3px solid #F5E642' }}>
             <div style={{ fontWeight: 700, marginBottom: '4px' }}>{item.icon} {item.title}</div>
             <div style={{ color: '#9BAEC8', fontSize: '14px' }}>{item.desc}</div>
           </div>
         ))}
 
         <div style={{ backgroundColor: '#111D35', borderRadius: '12px', padding: '24px', marginTop: '28px' }}>
-          <div style={{ fontWeight: 700, marginBottom: '16px', color: '#F5E642′ }}>🍂 Debris Type + Amount → Management Guide</div>
+          <div style={{ fontWeight: 700, marginBottom: '16px', color: '#F5E642' }}>🍂 Debris Type + Amount → Management Guide</div>
           <select
             value={debrisType}
             onChange={(e) => { setDebrisType(e.target.value); setResult(''); }}

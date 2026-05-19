@@ -51,17 +51,17 @@ export default function ProLnkReferralPage() {
           </div>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '16px', marginBottom: '16px' }}>
             <div style={{ background: '#fffbeb', border: '1px solid #fde68a', borderRadius: '10px', padding: '20px', textAlign: 'center' }}>
-              <div style={{ fontSize: '32px', fontWeight: 900, color: '#d97706′ }}>${totalCredit}</div>
+              <div style={{ fontSize: '32px', fontWeight: 900, color: '#d97706' }}>${totalCredit}</div>
               <div style={{ fontSize: '13px', color: '#92400e' }}>ProLnk Credit Earned</div>
               <div style={{ fontSize: '11px', color: '#b45309', marginTop: '4px' }}>${creditPerHomeowner} per homeowner referred</div>
             </div>
             <div style={{ background: '#f0fdf4', border: '1px solid #bbf7d0', borderRadius: '10px', padding: '20px', textAlign: 'center' }}>
-              <div style={{ fontSize: '32px', fontWeight: 900, color: '#166534′ }}>${annualOrigRights.toFixed(0)}/yr</div>
+              <div style={{ fontSize: '32px', fontWeight: 900, color: '#166534' }}>${annualOrigRights.toFixed(0)}/yr</div>
               <div style={{ fontSize: '13px', color: '#14532d' }}>Origination Rights Revenue</div>
               <div style={{ fontSize: '11px', color: '#166534', marginTop: '4px' }}>1.5% of platform fees · permanent</div>
             </div>
           </div>
-          <div style={{ background: '#f1f5f9', borderRadius: '10px', padding: '14px', textAlign: 'center', fontSize: '13px', color: '#475569′ }}>
+          <div style={{ background: '#f1f5f9', borderRadius: '10px', padding: '14px', textAlign: 'center', fontSize: '13px', color: '#475569' }}>
             💡 Origination rights are permanent — you keep earning as long as those homes are on ProLnk
           </div>
         </div>

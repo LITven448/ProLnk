@@ -17,7 +17,7 @@ function RatingBar({ value, max = 10 }: { value: number; max?: number }) {
             width: 10,
             height: 10,
             borderRadius: 2,
-            background: i < value ? '#F5E642′ : '#1E2D45',
+            background: i < value ? '#F5E642' : '#1E2D45',
           }}
         />
       ))}
@@ -36,7 +36,7 @@ export default function SidingReplacementGuide() {
   const roiEst = material === 'Fiber Cement' ? 76 : material === 'Brick' ? 85 : material === 'Stucco' ? 70 : 68;
 
   return (
-    <div style={{ minHeight: '100vh', background: '#0A1628', color: '#fff', fontFamily: 'system-ui, sans-serif', padding: '0 0 60px 0′ }}>
+    <div style={{ minHeight: '100vh', background: '#0A1628', color: '#fff', fontFamily: 'system-ui, sans-serif', padding: '0 0 60px 0' }}>
       <div style={{ background: 'linear-gradient(135deg, #0A1628 0%, #1a2a45 100%)', borderBottom: '2px solid #F5E642', padding: '48px 24px 36px' }}>
         <div style={{ maxWidth: 860, margin: '0 auto' }}>
           <div style={{ color: '#F5E642', fontSize: 13, fontWeight: 700, letterSpacing: 2, textTransform: 'uppercase', marginBottom: 12 }}>🏠 DFW Homeowner Guide</div>
@@ -47,7 +47,7 @@ export default function SidingReplacementGuide() {
         </div>
       </div>
 
-      <div style={{ maxWidth: 860, margin: '0 auto', padding: '40px 24px 0′ }}>
+      <div style={{ maxWidth: 860, margin: '0 auto', padding: '40px 24px 0' }}>
         <div style={{ background: '#0f1e35', border: '1px solid #1E2D45', borderRadius: 12, padding: 28, marginBottom: 32 }}>
           <h2 style={{ color: '#F5E642', fontSize: 18, fontWeight: 700, margin: '0 0 8px' }}>⚡ Why Siding Choice Matters More in DFW</h2>
           <p style={{ color: '#94a3b8', lineHeight: 1.7, margin: 0 }}>
@@ -59,7 +59,7 @@ export default function SidingReplacementGuide() {
         <div style={{ overflowX: 'auto', marginBottom: 40 }}>
           <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: 14 }}>
             <thead>
-              <tr style={{ background: '#0f1e35′ }}>
+              <tr style={{ background: '#0f1e35' }}>
                 {['Material', 'Cost / Sq Ft', 'Hail Resistance', 'Energy Impact', 'HOA Acceptance', 'Lifespan'].map(h => (
                   <th key={h} style={{ padding: '12px 14px', textAlign: 'left', color: '#F5E642', fontWeight: 700, borderBottom: '1px solid #1E2D45', whiteSpace: 'nowrap' }}>{h}</th>
                 ))}
@@ -67,13 +67,13 @@ export default function SidingReplacementGuide() {
             </thead>
             <tbody>
               {materials.map((m, i) => (
-                <tr key={m.name} style={{ background: i % 2 === 0 ? '#0A1628′ : '#0d1a2e' }}>
+                <tr key={m.name} style={{ background: i % 2 === 0 ? '#0A1628' : '#0d1a2e' }}>
                   <td style={{ padding: '12px 14px', fontWeight: 700 }}>{m.name}</td>
-                  <td style={{ padding: '12px 14px', color: '#94a3b8′ }}>${m.costLow}–${m.costHigh}</td>
+                  <td style={{ padding: '12px 14px', color: '#94a3b8' }}>${m.costLow}–${m.costHigh}</td>
                   <td style={{ padding: '12px 14px' }}><RatingBar value={m.hail} /></td>
                   <td style={{ padding: '12px 14px' }}><RatingBar value={m.energy} /></td>
                   <td style={{ padding: '12px 14px' }}><RatingBar value={m.hoa} /></td>
-                  <td style={{ padding: '12px 14px', color: '#94a3b8′ }}>{m.lifespan} yrs</td>
+                  <td style={{ padding: '12px 14px', color: '#94a3b8' }}>{m.lifespan} yrs</td>
                 </tr>
               ))}
             </tbody>
@@ -100,7 +100,7 @@ export default function SidingReplacementGuide() {
                 type="number"
                 value={sqft}
                 onChange={e => setSqft(e.target.value)}
-                placeholder="e.g. 2400″
+                placeholder="e.g. 2400"
                 style={{ width: '100%', background: '#0A1628', border: '1px solid #1E2D45', borderRadius: 8, padding: '10px 14px', color: '#fff', fontSize: 15, boxSizing: 'border-box' }}
               />
             </div>

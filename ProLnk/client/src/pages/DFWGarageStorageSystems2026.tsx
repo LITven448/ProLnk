@@ -50,20 +50,20 @@ export default function DFWGarageStorageSystems2026() {
         </div>
 
         <div style={{ background: '#112240', borderRadius: 12, padding: 24 }}>
-          <h2 style={{ fontSize: 18, fontWeight: 700, marginBottom: 16, color: '#F5E642′ }}>🔍 Find Your System</h2>
+          <h2 style={{ fontSize: 18, fontWeight: 700, marginBottom: 16, color: '#F5E642' }}>🔍 Find Your System</h2>
           <div style={{ marginBottom: 14 }}>
-            <div style={{ fontSize: 13, marginBottom: 8, color: '#94a3b8′ }}>What you need to store:</div>
+            <div style={{ fontSize: 13, marginBottom: 8, color: '#94a3b8' }}>What you need to store:</div>
             <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8 }}>
               {needs.map(n => (
-                <button key={n} onClick={() => setNeed(n)} style={{ padding: '8px 14px', borderRadius: 8, border: 'none', cursor: 'pointer', background: need === n ? '#F5E642′ : '#1e3a5f', color: need === n ? '#0A1628' : '#fff', fontWeight: 600, fontSize: 13 }}>{n}</button>
+                <button key={n} onClick={() => setNeed(n)} style={{ padding: '8px 14px', borderRadius: 8, border: 'none', cursor: 'pointer', background: need === n ? '#F5E642' : '#1e3a5f', color: need === n ? '#0A1628' : '#fff', fontWeight: 600, fontSize: 13 }}>{n}</button>
               ))}
             </div>
           </div>
           <div style={{ marginBottom: 14 }}>
-            <div style={{ fontSize: 13, marginBottom: 8, color: '#94a3b8′ }}>Budget:</div>
+            <div style={{ fontSize: 13, marginBottom: 8, color: '#94a3b8' }}>Budget:</div>
             <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8 }}>
               {budgets.map(b => (
-                <button key={b} onClick={() => setBud(b)} style={{ padding: '8px 14px', borderRadius: 8, border: 'none', cursor: 'pointer', background: bud === b ? '#F5E642′ : '#1e3a5f', color: bud === b ? '#0A1628' : '#fff', fontWeight: 600, fontSize: 13 }}>{b}</button>
+                <button key={b} onClick={() => setBud(b)} style={{ padding: '8px 14px', borderRadius: 8, border: 'none', cursor: 'pointer', background: bud === b ? '#F5E642' : '#1e3a5f', color: bud === b ? '#0A1628' : '#fff', fontWeight: 600, fontSize: 13 }}>{b}</button>
               ))}
             </div>
           </div>

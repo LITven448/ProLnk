@@ -25,7 +25,7 @@ export default function DFWACMakingNoiseGuide2026() {
           <div style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
             {noises.map(n => (
               <button key={n.id} onClick={() => setSelected(n.id === selected ? null : n.id)}
-                style={{ background: selected === n.id ? '#F5E642′ : '#1e3a5f', color: selected === n.id ? '#0A1628' : '#fff', border: ’none', borderRadius: 8, padding: '14px 18px', fontSize: 15, fontWeight: 700, cursor: 'pointer', textAlign: 'left' }}>
+                style={{ background: selected === n.id ? '#F5E642' : '#1e3a5f', color: selected === n.id ? '#0A1628' : '#fff', border: 'none', borderRadius: 8, padding: '14px 18px', fontSize: 15, fontWeight: 700, cursor: 'pointer', textAlign: 'left' }}>
                 {n.label}
               </button>
             ))}
@@ -34,7 +34,7 @@ export default function DFWACMakingNoiseGuide2026() {
             <div style={{ marginTop: 20, background: '#0d1f3c', borderRadius: 8, padding: 20 }}>
               <div style={{ marginBottom: 16 }}>
                 <div style={{ color: '#F5E642', fontWeight: 700, marginBottom: 6 }}>🔧 Likely Cause</div>
-                <div style={{ color: '#cdd9e5′ }}>{active.cause}</div>
+                <div style={{ color: '#cdd9e5' }}>{active.cause}</div>
               </div>
               <div style={{ background: '#112240', borderRadius: 8, padding: 16 }}>
                 <div style={{ color: '#F5E642', fontWeight: 700, marginBottom: 6 }}>⏱️ Urgency</div>

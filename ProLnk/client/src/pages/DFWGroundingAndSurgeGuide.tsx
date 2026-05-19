@@ -26,7 +26,7 @@ function getRiskScore(homeAge: string, protection: string) {
   else risk = Math.max(0, risk - 1);
 
   const label = risk >= 7 ? 'CRITICAL' : risk >= 5 ? 'HIGH' : risk >= 3 ? 'MODERATE' : 'LOW';
-  const color = risk >= 7 ? '#FF4444′ : risk >= 5 ? '#FF8C00' : risk >= 3 ? '#FFB347' : '#4ECDC4';
+  const color = risk >= 7 ? '#FF4444' : risk >= 5 ? '#FF8C00' : risk >= 3 ? '#FFB347' : '#4ECDC4';
 
   const upgrades: string[] = [];
   if (homeAge !== 'Built after 2000') upgrades.push('Inspect and update grounding — older DFW homes often have ungrounded outlets');
@@ -120,7 +120,7 @@ export default function DFWGroundingAndSurgeGuide() {
               <div key={e.era} style={{ background: '#0A1628', borderRadius: 8, padding: 14, border: '1px solid #1E2D4A' }}>
                 <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: 6 }}>
                   <span style={{ color: '#F5E642', fontWeight: 700, fontSize: 14 }}>{e.era}</span>
-                  <span style={{ color: e.urgency === 'CRITICAL' ? '#FF4444′ : e.urgency === ’HIGH' ? '#FF8C00′ : e.urgency === ’MODERATE' ? '#FFB347′ : '#4ECDC4', fontSize: 12, fontWeight: 700 }}>{e.urgency}</span>
+                  <span style={{ color: e.urgency === 'CRITICAL' ? '#FF4444' : e.urgency === 'HIGH' ? '#FF8C00' : e.urgency === 'MODERATE' ? '#FFB347' : '#4ECDC4', fontSize: 12, fontWeight: 700 }}>{e.urgency}</span>
                 </div>
                 <p style={{ color: '#8A9AB5', fontSize: 12, margin: '0 0 6px', lineHeight: 1.5 }}>{e.issue}</p>
                 <div style={{ color: '#4ECDC4', fontSize: 12, fontWeight: 600 }}>→ {e.action}</div>
@@ -129,7 +129,7 @@ export default function DFWGroundingAndSurgeGuide() {
           </div>
         </div>
 
-        <div style={{ background: '#111E35', borderRadius: 12, padding: 28, border: '1px solid #F5E642′ }}>
+        <div style={{ background: '#111E35', borderRadius: 12, padding: 28, border: '1px solid #F5E642' }}>
           <h2 style={{ color: '#F5E642', fontSize: 20, fontWeight: 700, margin: '0 0 20px' }}>🔍 Your Home Risk Assessment</h2>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16, marginBottom: 20 }}>
             <div>

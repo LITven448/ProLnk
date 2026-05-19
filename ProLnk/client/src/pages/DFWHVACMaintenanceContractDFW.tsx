@@ -40,7 +40,7 @@ export default function DFWHVACMaintenanceContractDFW() {
     setResult(evaluateContract(Number(price), visits, drain, coil));
   }
 
-  const verdictColor = result?.verdict === 'SOLID CONTRACT' ? '#22C55E' : result?.verdict === 'NEGOTIATE THESE ITEMS' ? '#F5E642′ : '#FF6B6B';
+  const verdictColor = result?.verdict === 'SOLID CONTRACT' ? '#22C55E' : result?.verdict === 'NEGOTIATE THESE ITEMS' ? '#F5E642' : '#FF6B6B';
 
   return (
     <div style={{ background: '#0A1628', minHeight: '100vh', color: '#E8EDF5', fontFamily: 'system-ui, sans-serif', padding: '2rem' }}>
@@ -49,7 +49,7 @@ export default function DFWHVACMaintenanceContractDFW() {
         <h1 style={{ fontSize: '2rem', fontWeight: 800, marginBottom: '0.5rem', lineHeight: 1.2 }}>HVAC Maintenance Contract Comparison</h1>
         <p style={{ color: '#9AA5B8', marginBottom: '2rem', fontSize: '1rem' }}>What DFW homeowners must require — and what to negotiate out of every contract.</p>
 
-        <h2 style={{ fontSize: '1.2rem', fontWeight: 700, marginBottom: '1rem', color: '#F5E642′ }}>📋 What DFW Contracts Must Include</h2>
+        <h2 style={{ fontSize: '1.2rem', fontWeight: 700, marginBottom: '1rem', color: '#F5E642' }}>📋 What DFW Contracts Must Include</h2>
         <div style={{ display: 'grid', gap: '0.85rem', marginBottom: '2.5rem' }}>
           {contractItems.map((item, i) => (
             <div key={i} style={{ background: '#0F2040', borderRadius: '10px', padding: '1rem 1.25rem', border: '1px solid #1E3A5F' }}>
@@ -58,27 +58,27 @@ export default function DFWHVACMaintenanceContractDFW() {
                 <div style={{ fontSize: '0.85rem' }}><span style={{ color: '#22C55E' }}>✅ Good: </span>{item.good}</div>
                 <div style={{ fontSize: '0.85rem' }}><span style={{ color: '#FF6B6B' }}>❌ Bad: </span>{item.bad}</div>
               </div>
-              <div style={{ fontSize: '0.82rem', color: '#9AA5B8′ }}>🌡️ DFW: {item.dfwRequirement}</div>
+              <div style={{ fontSize: '0.82rem', color: '#9AA5B8' }}>🌡️ DFW: {item.dfwRequirement}</div>
             </div>
           ))}
         </div>
 
-        <h2 style={{ fontSize: '1.2rem', fontWeight: 700, marginBottom: '1rem', color: '#F5E642′ }}>🚩 DFW Contract Red Flags</h2>
+        <h2 style={{ fontSize: '1.2rem', fontWeight: 700, marginBottom: '1rem', color: '#F5E642' }}>🚩 DFW Contract Red Flags</h2>
         <div style={{ background: '#FF6B6B15', border: '1px solid #FF6B6B50', borderRadius: '10px', padding: '1rem 1.25rem', marginBottom: '2.5rem' }}>
           {redFlags.map((f, i) => <div key={i} style={{ fontSize: '0.9rem', marginBottom: '0.4rem' }}>🚩 {f}</div>)}
         </div>
 
-        <h2 style={{ fontSize: '1.2rem', fontWeight: 700, marginBottom: '1rem', color: '#F5E642′ }}>🧮 Evaluate Your Contract Offer</h2>
+        <h2 style={{ fontSize: '1.2rem', fontWeight: 700, marginBottom: '1rem', color: '#F5E642' }}>🧮 Evaluate Your Contract Offer</h2>
         <div style={{ background: '#0F2040', borderRadius: '12px', padding: '1.5rem', border: '1px solid #1E3A5F', marginBottom: '2rem' }}>
           <div style={{ marginBottom: '1rem' }}>
             <label style={{ fontSize: '0.9rem', color: '#9AA5B8', display: 'block', marginBottom: '0.4rem' }}>Annual Contract Price ($)</label>
-            <input value={price} onChange={e => setPrice(e.target.value)} type="number" placeholder="e.g. 299″ style={{ background: '#0A1628', border: '1px solid #1E3A5F', borderRadius: '8px', padding: '0.6rem 1rem', color: '#E8EDF5', fontSize: '0.95rem', width: '160px' }} />
+            <input value={price} onChange={e => setPrice(e.target.value)} type="number" placeholder="e.g. 299" style={{ background: '#0A1628', border: '1px solid #1E3A5F', borderRadius: '8px', padding: '0.6rem 1rem', color: '#E8EDF5', fontSize: '0.95rem', width: '160px' }} />
           </div>
           <div style={{ marginBottom: '1rem' }}>
             <label style={{ fontSize: '0.9rem', color: '#9AA5B8', display: 'block', marginBottom: '0.4rem' }}>Visits per Year</label>
             <div style={{ display: 'flex', gap: '0.75rem' }}>
               {[['1','1 visit'],['2','2 visits'],['3+','3+ visits']].map(([v,l]) => (
-                <button key={v} onClick={() => setVisits(v)} style={{ padding: '0.5rem 1rem', borderRadius: '8px', border: visits === v ? '2px solid #F5E642′ : '1px solid #1E3A5F', background: visits === v ? '#F5E64220' : '#0A1628', color: visits === v ? '#F5E642' : '#E8EDF5', cursor: ’pointer', fontSize: '0.9rem' }}>{l}</button>
+                <button key={v} onClick={() => setVisits(v)} style={{ padding: '0.5rem 1rem', borderRadius: '8px', border: visits === v ? '2px solid #F5E642' : '1px solid #1E3A5F', background: visits === v ? '#F5E64220' : '#0A1628', color: visits === v ? '#F5E642' : '#E8EDF5', cursor: 'pointer', fontSize: '0.9rem' }}>{l}</button>
               ))}
             </div>
           </div>
@@ -86,7 +86,7 @@ export default function DFWHVACMaintenanceContractDFW() {
             <label style={{ fontSize: '0.9rem', color: '#9AA5B8', display: 'block', marginBottom: '0.4rem' }}>Drain Line Service</label>
             <div style={{ display: 'flex', gap: '0.75rem' }}>
               {[['flush','Flush included'],['inspect','Inspect only']].map(([v,l]) => (
-                <button key={v} onClick={() => setDrain(v)} style={{ padding: '0.5rem 1rem', borderRadius: '8px', border: drain === v ? '2px solid #F5E642′ : '1px solid #1E3A5F', background: drain === v ? '#F5E64220' : '#0A1628', color: drain === v ? '#F5E642' : '#E8EDF5', cursor: ’pointer', fontSize: '0.9rem' }}>{l}</button>
+                <button key={v} onClick={() => setDrain(v)} style={{ padding: '0.5rem 1rem', borderRadius: '8px', border: drain === v ? '2px solid #F5E642' : '1px solid #1E3A5F', background: drain === v ? '#F5E64220' : '#0A1628', color: drain === v ? '#F5E642' : '#E8EDF5', cursor: 'pointer', fontSize: '0.9rem' }}>{l}</button>
               ))}
             </div>
           </div>
@@ -94,7 +94,7 @@ export default function DFWHVACMaintenanceContractDFW() {
             <label style={{ fontSize: '0.9rem', color: '#9AA5B8', display: 'block', marginBottom: '0.4rem' }}>Coil Cleaning Included?</label>
             <div style={{ display: 'flex', gap: '0.75rem' }}>
               {[['yes','Yes'],['no','No']].map(([v,l]) => (
-                <button key={v} onClick={() => setCoil(v)} style={{ padding: '0.5rem 1rem', borderRadius: '8px', border: coil === v ? '2px solid #F5E642′ : '1px solid #1E3A5F', background: coil === v ? '#F5E64220' : '#0A1628', color: coil === v ? '#F5E642' : '#E8EDF5', cursor: ’pointer', fontSize: '0.9rem' }}>{l}</button>
+                <button key={v} onClick={() => setCoil(v)} style={{ padding: '0.5rem 1rem', borderRadius: '8px', border: coil === v ? '2px solid #F5E642' : '1px solid #1E3A5F', background: coil === v ? '#F5E64220' : '#0A1628', color: coil === v ? '#F5E642' : '#E8EDF5', cursor: 'pointer', fontSize: '0.9rem' }}>{l}</button>
               ))}
             </div>
           </div>

@@ -6,7 +6,7 @@ const lifestyles = ['Pets + Kids', 'High foot traffic', 'Allergies/clean conscio
 function getMaintenancePlan(floor: string, lifestyle: string) {
   const base: Record<string, { sweep: string; mop: string; seasonal: string; products: string; grout: string }> = {
     'Ceramic/Porcelain Tile': { sweep: 'Daily or every 2 days', mop: 'Weekly with pH-neutral cleaner', seasonal: 'Seal grout every 12–18 months in DFW humidity; check for loose tiles after foundation movement', products: 'Rejuvenate Floor Cleaner, Aqua Mix Sealer', grout: 'Every 12–18 months' },
-    'Luxury Vinyl Plank (LVP)': { sweep: 'Daily', mop: 'Weekly with LVP-safe cleaner (no steam!)', seasonal: 'Check expansion gaps in winter; DFW temp swings cause contraction — maintain 1/4″ perimeter gap', products: 'Bona Hard-Surface Floor Cleaner, Swiffer WetJet (LVP setting)', grout: 'N/A' },
+    'Luxury Vinyl Plank (LVP)': { sweep: 'Daily', mop: 'Weekly with LVP-safe cleaner (no steam!)', seasonal: 'Check expansion gaps in winter; DFW temp swings cause contraction — maintain 1/4" perimeter gap', products: 'Bona Hard-Surface Floor Cleaner, Swiffer WetJet (LVP setting)', grout: 'N/A' },
     'Solid Hardwood': { sweep: 'Daily with soft brush', mop: 'Monthly — barely damp only', seasonal: 'Summer: maintain 45–55% humidity to prevent gapping. Winter: use humidifier. DFW dry winters are brutal on solid wood.', products: 'Bona Hardwood Floor Cleaner, Howard Feed-N-Wax', grout: 'N/A' },
     'Engineered Hardwood': { sweep: 'Every 1–2 days', mop: 'Bi-weekly, damp mop only', seasonal: 'More stable than solid but still check for cupping in summer. DFW humidity swings from 20–80% — dramatic for wood floors.', products: 'Bona Hardwood Cleaner, manufacturer-specific options', grout: 'N/A' },
   };
@@ -34,7 +34,7 @@ export default function DFWHardFloorMaintenanceGuide() {
       <div style={{ maxWidth: 720, margin: '0 auto' }}>
         <div style={{ color: '#F5E642', fontSize: 13, fontWeight: 700, letterSpacing: 2, marginBottom: 8 }}>DFW HOME MAINTENANCE</div>
         <h1 style={{ fontSize: 30, fontWeight: 800, marginBottom: 8 }}>Hard Floor Maintenance Guide for DFW</h1>
-        <p style={{ color: '#94a3b8', marginBottom: 32, lineHeight: 1.7 }}>DFW's clay soil, humidity swings, and foundation movement create unique challenges for tile, LVP, and hardwood floors. Here’s how to protect your investment.</p>
+        <p style={{ color: '#94a3b8', marginBottom: 32, lineHeight: 1.7 }}>DFW's clay soil, humidity swings, and foundation movement create unique challenges for tile, LVP, and hardwood floors. Here's how to protect your investment.</p>
 
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12, marginBottom: 32 }}>
           {dfwSpecific.map(f => (
@@ -76,7 +76,7 @@ export default function DFWHardFloorMaintenanceGuide() {
                   { label: '🧴 Recommended Products', value: result.products },
                   ...(result.grout !== 'N/A' ? [{ label: '🔲 Grout Sealing', value: result.grout }] : []),
                 ].map(({ label, value }) => (
-                  <div key={label} style={{ padding: 12, background: '#0A1628', borderRadius: 8, borderTop: '2px solid #F5E642′ }}>
+                  <div key={label} style={{ padding: 12, background: '#0A1628', borderRadius: 8, borderTop: '2px solid #F5E642' }}>
                     <div style={{ fontSize: 12, color: '#F5E642', marginBottom: 4 }}>{label}</div>
                     <div style={{ fontSize: 13 }}>{value}</div>
                   </div>
@@ -95,9 +95,9 @@ export default function DFWHardFloorMaintenanceGuide() {
         </div>
 
         <div style={{ background: '#112240', borderRadius: 12, padding: 20 }}>
-          <div style={{ fontWeight: 700, marginBottom: 12, color: '#F5E642′ }}>📅 Annual DFW Floor Checklist</div>
+          <div style={{ fontWeight: 700, marginBottom: 12, color: '#F5E642' }}>📅 Annual DFW Floor Checklist</div>
           {['Spring: inspect grout lines after winter temp swings; seal if needed', 'Summer: check for LVP buckling or hardwood gapping from humidity', 'Fall: deep clean before holiday traffic; apply any protective treatments', 'Year-round: watch for tile cracking at walls — may indicate foundation movement'].map(f => (
-            <div key={f} style={{ fontSize: 13, marginBottom: 8, color: '#cbd5e1′ }}>• {f}</div>
+            <div key={f} style={{ fontSize: 13, marginBottom: 8, color: '#cbd5e1' }}>• {f}</div>
           ))}
         </div>
       </div>

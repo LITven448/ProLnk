@@ -29,7 +29,7 @@ export default function DFWRoofingPipeBoot2026() {
         <div style={{ background: '#112240', borderRadius: 12, padding: 20, marginBottom: 16 }}>
           <h2 style={{ color: '#F5E642', fontSize: 16, marginBottom: 12 }}>🏠 DFW Pipe Boot Fast Facts</h2>
           {['#1 single-point leak source on DFW roofs — more common than missing shingles or flashing','Rubber pipe boots fail in 10–15 years from DFW UV exposure — shorter than shingle lifespan','Typical DFW home has 5–8 roof penetrations (plumbing vents, HVAC flues, bath fans)','Three-piece metal flashing lasts 30+ years — the correct long-term solution for DFW sun','Cost: $75–100 (rubber) or $100–150 (metal) per penetration fully installed','Ask for metal flashing during any DFW re-roofing project — most roofers default to rubber'].map((f, i) => (
-            <div key={i} style={{ display: 'flex', gap: 10, marginBottom: 8, color: '#c8d8ec', fontSize: 14 }}><span style={{ color: '#F5E642′ }}>🔩</span>{f}</div>
+            <div key={i} style={{ display: 'flex', gap: 10, marginBottom: 8, color: '#c8d8ec', fontSize: 14 }}><span style={{ color: '#F5E642' }}>🔩</span>{f}</div>
           ))}
         </div>
 
@@ -49,7 +49,7 @@ export default function DFWRoofingPipeBoot2026() {
             {[3,4,5,6,7,8,9,10].map(n => <option key={n} value={n}>{n} penetrations</option>)}
           </select>
           <button onClick={getGuide} style={{ background: '#F5E642', color: '#0A1628', fontWeight: 700, border: 'none', borderRadius: 8, padding: '11px 24px', cursor: 'pointer', fontSize: 15 }}>Get Replacement Guide 🔧</button>
-          {guide && <div style={{ marginTop: 16, background: '#0A1628', borderRadius: 8, padding: 16, color: '#c8d8ec', fontSize: 14, lineHeight: 1.6, borderLeft: '3px solid #F5E642′ }}>{guide}</div>}
+          {guide && <div style={{ marginTop: 16, background: '#0A1628', borderRadius: 8, padding: 16, color: '#c8d8ec', fontSize: 14, lineHeight: 1.6, borderLeft: '3px solid #F5E642' }}>{guide}</div>}
         </div>
 
         <div style={{ textAlign: 'center', color: '#4a6080', fontSize: 12, marginTop: 24 }}>ProLnk DFW Home Intelligence · Pipe Boot Replacement Guide 2026</div>

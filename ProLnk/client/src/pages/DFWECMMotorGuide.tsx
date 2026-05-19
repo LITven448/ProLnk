@@ -46,7 +46,7 @@ export default function DFWECMMotorGuide() {
         <p style={{ color: '#F5E642', fontWeight: 700, letterSpacing: 1, marginBottom: 8 }}>⚡ DFW HVAC GUIDE</p>
         <h1 style={{ fontSize: 28, fontWeight: 800, marginBottom: 8 }}>ECM Motor Guide for DFW Homeowners</h1>
         <p style={{ color: '#94a3b8', marginBottom: 32, lineHeight: 1.7 }}>
-          Your HVAC blower motor is running thousands of hours per year in DFW's climate. If it’s a PSC motor, you’re leaving hundreds of dollars on the table — and fighting a losing battle against DFW humidity.
+          Your HVAC blower motor is running thousands of hours per year in DFW's climate. If it's a PSC motor, you're leaving hundreds of dollars on the table — and fighting a losing battle against DFW humidity.
         </p>
 
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16, marginBottom: 28 }}>
@@ -65,28 +65,28 @@ export default function DFWECMMotorGuide() {
         </div>
 
         <div style={{ background: '#0f2240', borderRadius: 12, padding: 20, marginBottom: 28 }}>
-          <h2 style={{ fontSize: 18, fontWeight: 700, marginBottom: 12, color: '#F5E642′ }}>🔧 How to Know What Motor You Have</h2>
+          <h2 style={{ fontSize: 18, fontWeight: 700, marginBottom: 12, color: '#F5E642' }}>🔧 How to Know What Motor You Have</h2>
           <p style={{ color: '#94a3b8', lineHeight: 1.7 }}>
-            Check your air handler's data plate (usually on the inside of the cabinet door). Look for "Variable Speed" or "ECM" in the blower description. Alternatively, check your system’s SEER rating — 16+ SEER systems almost always include ECM. Below 14 SEER? Almost certainly PSC.
+            Check your air handler's data plate (usually on the inside of the cabinet door). Look for "Variable Speed" or "ECM" in the blower description. Alternatively, check your system's SEER rating — 16+ SEER systems almost always include ECM. Below 14 SEER? Almost certainly PSC.
           </p>
         </div>
 
         <div style={{ background: '#0f2240', borderRadius: 12, padding: 20, marginBottom: 28 }}>
-          <h2 style={{ fontSize: 18, fontWeight: 700, marginBottom: 16, color: '#F5E642′ }}>🔍 Calculate Your DFW ECM Upgrade Value</h2>
+          <h2 style={{ fontSize: 18, fontWeight: 700, marginBottom: 16, color: '#F5E642' }}>🔍 Calculate Your DFW ECM Upgrade Value</h2>
           <p style={{ color: '#94a3b8', marginBottom: 12 }}>Your current motor type:</p>
           <div style={{ display: 'flex', flexDirection: 'column', gap: 8, marginBottom: 16 }}>
             {motorTypes.map(m => (
-              <button key={m.id} onClick={() => setMotor(m.id)} style={{ background: motor === m.id ? '#F5E642′ : '#1e3a5f', color: motor === m.id ? '#0A1628' : '#fff', border: ’none', borderRadius: 8, padding: '10px 14px', textAlign: 'left', cursor: 'pointer', fontWeight: 600 }}>{m.label}</button>
+              <button key={m.id} onClick={() => setMotor(m.id)} style={{ background: motor === m.id ? '#F5E642' : '#1e3a5f', color: motor === m.id ? '#0A1628' : '#fff', border: 'none', borderRadius: 8, padding: '10px 14px', textAlign: 'left', cursor: 'pointer', fontWeight: 600 }}>{m.label}</button>
             ))}
           </div>
           <p style={{ color: '#94a3b8', marginBottom: 12 }}>Your DFW usage profile:</p>
           <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
             {usageProfiles.map(u => (
-              <button key={u.id} onClick={() => setUsage(u.id)} style={{ background: usage === u.id ? '#F5E642′ : '#1e3a5f', color: usage === u.id ? '#0A1628' : '#fff', border: ’none', borderRadius: 8, padding: '10px 14px', textAlign: 'left', cursor: 'pointer', fontWeight: 600 }}>{u.label}</button>
+              <button key={u.id} onClick={() => setUsage(u.id)} style={{ background: usage === u.id ? '#F5E642' : '#1e3a5f', color: usage === u.id ? '#0A1628' : '#fff', border: 'none', borderRadius: 8, padding: '10px 14px', textAlign: 'left', cursor: 'pointer', fontWeight: 600 }}>{u.label}</button>
             ))}
           </div>
           {result && (
-            <div style={{ marginTop: 20, background: '#1a2e4a', borderRadius: 10, padding: 18, borderLeft: '4px solid #F5E642′ }}>
+            <div style={{ marginTop: 20, background: '#1a2e4a', borderRadius: 10, padding: 18, borderLeft: '4px solid #F5E642' }}>
               <p style={{ color: '#F5E642', fontWeight: 700, fontSize: 17, marginBottom: 8 }}>Path Forward: {result.upgrade}</p>
               {result.cost !== 'N/A' && <p style={{ color: '#e2e8f0', marginBottom: 4 }}>💰 DFW upgrade cost: <strong>{result.cost}</strong></p>}
               {result.savings !== 'N/A' && <p style={{ color: '#e2e8f0', marginBottom: 4 }}>📉 Annual savings: <strong>{result.savings}</strong></p>}

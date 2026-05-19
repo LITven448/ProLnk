@@ -72,7 +72,7 @@ export default function DFWFlooringRemovalGuide() {
               <input
                 type="range" min={100} max={4000} step={50} value={sqft}
                 onChange={e => setSqft(Number(e.target.value))}
-                style={{ width: '100%', accentColor: '#F5E642′ }}
+                style={{ width: '100%', accentColor: '#F5E642' }}
               />
               <div style={{ color: '#FFFFFF', fontWeight: 700, marginTop: 4 }}>{sqft.toLocaleString()} sqft</div>
             </div>
@@ -85,11 +85,11 @@ export default function DFWFlooringRemovalGuide() {
           </div>
 
           <div style={{ backgroundColor: floor.canRefinish && shouldRefinish ? '#0D2D1A' : '#2D1010', borderRadius: 10, padding: 16, marginBottom: 20, border: `1px solid ${floor.canRefinish && shouldRefinish ? '#166534' : '#991B1B'}` }}>
-            <div style={{ fontWeight: 700, fontSize: 15, color: floor.canRefinish && shouldRefinish ? '#4ADE80′ : '#F87171', marginBottom: 4 }}>
+            <div style={{ fontWeight: 700, fontSize: 15, color: floor.canRefinish && shouldRefinish ? '#4ADE80' : '#F87171', marginBottom: 4 }}>
               {floor.canRefinish ? (shouldRefinish ? '✅ Recommendation: Refinish — better ROI than replacement' : '⚠️ Recommendation: Remove and replace — condition too poor to refinish') : '🗑️ Removal required — this material cannot be refinished'}
             </div>
             {floor.canRefinish && shouldRefinish && (
-              <div style={{ color: '#8A9BBE', fontSize: 13 }}>Refinish cost: <strong style={{ color: '#F5E642′ }}>${refinishCost.toLocaleString()}</strong> vs full replacement at significantly higher cost</div>
+              <div style={{ color: '#8A9BBE', fontSize: 13 }}>Refinish cost: <strong style={{ color: '#F5E642' }}>${refinishCost.toLocaleString()}</strong> vs full replacement at significantly higher cost</div>
             )}
           </div>
 
@@ -100,10 +100,10 @@ export default function DFWFlooringRemovalGuide() {
               { label: 'Total Removal', value: `$${Math.round(totalRemove).toLocaleString()}`, sub: 'demo + disposal', highlight: true },
               ...(floor.canRefinish ? [{ label: 'Refinish Option', value: `$${refinishCost.toLocaleString()}`, sub: 'sand + stain + finish' }] : []),
             ].map(stat => (
-              <div key={stat.label} style={{ backgroundColor: stat.highlight ? '#F5E642′ : '#0A1628', borderRadius: 10, padding: 16, textAlign: ’center' }}>
-                <div style={{ color: stat.highlight ? '#0A1628′ : '#8A9BBE', fontSize: 12, marginBottom: 4 }}>{stat.label}</div>
-                <div style={{ color: stat.highlight ? '#0A1628′ : '#FFFFFF', fontSize: 20, fontWeight: 800 }}>{stat.value}</div>
-                <div style={{ color: stat.highlight ? '#0A162880′ : '#4A5B7A', fontSize: 11 }}>{stat.sub}</div>
+              <div key={stat.label} style={{ backgroundColor: stat.highlight ? '#F5E642' : '#0A1628', borderRadius: 10, padding: 16, textAlign: 'center' }}>
+                <div style={{ color: stat.highlight ? '#0A1628' : '#8A9BBE', fontSize: 12, marginBottom: 4 }}>{stat.label}</div>
+                <div style={{ color: stat.highlight ? '#0A1628' : '#FFFFFF', fontSize: 20, fontWeight: 800 }}>{stat.value}</div>
+                <div style={{ color: stat.highlight ? '#0A162880' : '#4A5B7A', fontSize: 11 }}>{stat.sub}</div>
               </div>
             ))}
           </div>

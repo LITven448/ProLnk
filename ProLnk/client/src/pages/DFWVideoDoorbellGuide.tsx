@@ -107,7 +107,7 @@ export default function DFWVideoDoorbellGuide() {
           </p>
         </div>
 
-        <div style={{ background: '#F87171', borderRadius: 12, padding: 20, marginBottom: 24, border: '1px solid #EF4444′ }}>
+        <div style={{ background: '#F87171', borderRadius: 12, padding: 20, marginBottom: 24, border: '1px solid #EF4444' }}>
           <div style={{ fontWeight: 700, fontSize: 16, marginBottom: 8 }}>🌡️ DFW Heat Warning: Battery Doorbells</div>
           <p style={{ fontSize: 14, lineHeight: 1.6, margin: 0, color: '#FFF' }}>
             Battery-powered doorbells are rated to operate at 95°F–105°F. DFW summer temps regularly exceed 105°F on west-facing doors in afternoon sun — and your doorbell surface can reach 130°F+. This degrades battery chemistry and cuts runtime from "6 months" to 2–3 weeks. <strong>If your door gets direct afternoon sun, choose wired or plan to charge frequently.</strong>
@@ -115,7 +115,7 @@ export default function DFWVideoDoorbellGuide() {
         </div>
 
         <div style={{ background: '#0F2140', borderRadius: 12, padding: 24, marginBottom: 24, border: '1px solid #1E3A5F' }}>
-          <h2 style={{ fontSize: 20, fontWeight: 700, marginBottom: 16, color: '#F5E642′ }}>📦 DFW Porch Theft by Suburb</h2>
+          <h2 style={{ fontSize: 20, fontWeight: 700, marginBottom: 16, color: '#F5E642' }}>📦 DFW Porch Theft by Suburb</h2>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12 }}>
             {PACKAGE_STATS.map(s => (
               <div key={s.area} style={{ background: '#0A1628', borderRadius: 8, padding: 16 }}>
@@ -134,7 +134,7 @@ export default function DFWVideoDoorbellGuide() {
                 <div>
                   <div style={{ fontWeight: 700, fontSize: 16, marginBottom: 4 }}>{db.name}</div>
                   <div style={{ display: 'flex', gap: 8 }}>
-                    <span style={{ background: db.power === 'Wired' ? '#34D399′ : '#F59E0B', color: '#0A1628', padding: '2px 8px', borderRadius: 4, fontSize: 11, fontWeight: 700 }}>{db.power}</span>
+                    <span style={{ background: db.power === 'Wired' ? '#34D399' : '#F59E0B', color: '#0A1628', padding: '2px 8px', borderRadius: 4, fontSize: 11, fontWeight: 700 }}>{db.power}</span>
                     <span style={{ background: '#1E3A5F', color: '#94A3B8', padding: '2px 8px', borderRadius: 4, fontSize: 11 }}>{db.resolution}</span>
                   </div>
                 </div>
@@ -149,14 +149,14 @@ export default function DFWVideoDoorbellGuide() {
               </div>
               <div style={{ display: 'flex', justifyContent: 'space-between', background: '#0A1628', borderRadius: 6, padding: '8px 12px', fontSize: 13 }}>
                 <span style={{ color: '#64748B' }}>DFW Battery Life:</span>
-                <span style={{ color: db.dfwBattery.includes('N/A') ? '#34D399′ : '#F59E0B', fontWeight: 600 }}>{db.dfwBattery}</span>
+                <span style={{ color: db.dfwBattery.includes('N/A') ? '#34D399' : '#F59E0B', fontWeight: 600 }}>{db.dfwBattery}</span>
               </div>
             </div>
           ))}
         </div>
 
-        <div style={{ background: '#0F2140', borderRadius: 12, padding: 24, border: '2px solid #F5E642′ }}>
-          <h2 style={{ fontSize: 20, fontWeight: 700, marginBottom: 20, color: '#F5E642′ }}>🔍 Find Your Best DFW Doorbell</h2>
+        <div style={{ background: '#0F2140', borderRadius: 12, padding: 24, border: '2px solid #F5E642' }}>
+          <h2 style={{ fontSize: 20, fontWeight: 700, marginBottom: 20, color: '#F5E642' }}>🔍 Find Your Best DFW Doorbell</h2>
           {[
             { label: 'Your door wiring situation:', options: [{ v: 'wired', l: '🔌 Have existing doorbell wiring' }, { v: 'no-wiring', l: '🔋 No wiring (battery needed)' }, { v: 'solar', l: '☀️ Want solar option' }], state: wiring, set: (v: string) => { setWiring(v as WiringSituation); setShowResult(false); } },
             { label: 'Power preference:', options: [{ v: 'always-on', l: '📹 24/7 always-on recording' }, { v: 'no-subscription', l: '🆓 Avoid monthly fees' }, { v: 'battery-ok', l: '🔋 Battery fine, easy install priority' }], state: power, set: (v: string) => { setPower(v as PowerPref); setShowResult(false); } },
@@ -167,7 +167,7 @@ export default function DFWVideoDoorbellGuide() {
               <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap' }}>
                 {group.options.map(opt => (
                   <button key={opt.v} onClick={() => group.set(opt.v)}
-                    style={{ padding: '10px 16px', borderRadius: 20, border: `2px solid ${group.state === opt.v ? '#F5E642' : '#1E3A5F'}`, background: group.state === opt.v ? '#F5E642′ : ’transparent', color: group.state === opt.v ? '#0A1628′ : '#E8EDF5', cursor: ’pointer', fontSize: 13, fontWeight: 600 }}>
+                    style={{ padding: '10px 16px', borderRadius: 20, border: `2px solid ${group.state === opt.v ? '#F5E642' : '#1E3A5F'}`, background: group.state === opt.v ? '#F5E642' : 'transparent', color: group.state === opt.v ? '#0A1628' : '#E8EDF5', cursor: 'pointer', fontSize: 13, fontWeight: 600 }}>
                     {opt.l}
                   </button>
                 ))}
@@ -175,17 +175,17 @@ export default function DFWVideoDoorbellGuide() {
             </div>
           ))}
           <button onClick={() => setShowResult(true)} disabled={!canGenerate}
-            style={{ background: canGenerate ? '#F5E642′ : '#1E3A5F', color: canGenerate ? '#0A1628' : '#64748B', border: ’none', padding: '12px 32px', borderRadius: 8, fontWeight: 700, fontSize: 16, cursor: canGenerate ? 'pointer' : 'not-allowed', width: '100%' }}>
+            style={{ background: canGenerate ? '#F5E642' : '#1E3A5F', color: canGenerate ? '#0A1628' : '#64748B', border: 'none', padding: '12px 32px', borderRadius: 8, fontWeight: 700, fontSize: 16, cursor: canGenerate ? 'pointer' : 'not-allowed', width: '100%' }}>
             Get My Doorbell Recommendation →
           </button>
           {showResult && (
             <div style={{ marginTop: 20, background: '#0A1628', borderRadius: 8, padding: 20 }}>
-              <div style={{ fontWeight: 700, fontSize: 18, marginBottom: 8, color: '#F5E642′ }}>✅ Best for You: {rec.name}</div>
+              <div style={{ fontWeight: 700, fontSize: 18, marginBottom: 8, color: '#F5E642' }}>✅ Best for You: {rec.name}</div>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12, marginBottom: 12 }}>
-                <div><div style={{ fontSize: 12, color: '#64748B' }}>PRICE</div><div style={{ fontWeight: 700, fontSize: 18, color: '#F5E642′ }}>${rec.price}</div></div>
+                <div><div style={{ fontSize: 12, color: '#64748B' }}>PRICE</div><div style={{ fontWeight: 700, fontSize: 18, color: '#F5E642' }}>${rec.price}</div></div>
                 <div><div style={{ fontSize: 12, color: '#64748B' }}>MONITORING</div><div style={{ fontWeight: 600, fontSize: 14 }}>{rec.monitoring}</div></div>
               </div>
-              <div style={{ fontSize: 13, color: '#94A3B8′ }}>DFW Heat Performance: {rec.heatRating}</div>
+              <div style={{ fontSize: 13, color: '#94A3B8' }}>DFW Heat Performance: {rec.heatRating}</div>
             </div>
           )}
         </div>

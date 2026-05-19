@@ -40,7 +40,7 @@ export default function DFWHVACGoodBetterBest2026() {
         <div style={{ display: 'grid', gap: 16, marginBottom: 32 }}>
           {Object.entries(tiers).map(([key, t]) => (
             <div key={key} style={{ background: tier === key ? '#1e3a5f' : '#0f1f38', border: `2px solid ${tier === key ? '#F5E642' : '#1e3a5f'}`, borderRadius: 12, padding: 20 }}>
-              <div style={{ fontWeight: 800, fontSize: 16, marginBottom: 10, color: tier === key ? '#F5E642′ : '#fff' }}>{t.label}</div>
+              <div style={{ fontWeight: 800, fontSize: 16, marginBottom: 10, color: tier === key ? '#F5E642' : '#fff' }}>{t.label}</div>
               <ul style={{ margin: 0, paddingLeft: 18, color: '#cbd5e1', lineHeight: 1.8 }}>
                 {t.points.map((p, i) => <li key={i}>{p}</li>)}
               </ul>
@@ -49,11 +49,11 @@ export default function DFWHVACGoodBetterBest2026() {
           ))}
         </div>
         <div style={{ background: '#0f1f38', borderRadius: 12, padding: 24, border: '1px solid #1e3a5f' }}>
-          <div style={{ fontWeight: 700, marginBottom: 16, color: '#F5E642′ }}>🎯 Find Your Tier</div>
+          <div style={{ fontWeight: 700, marginBottom: 16, color: '#F5E642' }}>🎯 Find Your Tier</div>
           <div style={{ marginBottom: 12 }}>
             <div style={{ fontSize: 13, color: '#94a3b8', marginBottom: 6 }}>Top priority</div>
             {['comfort', 'savings', 'reliability'].map(p => (
-              <button key={p} onClick={() => setPriority(p)} style={{ marginRight: 8, marginBottom: 8, padding: '6px 14px', borderRadius: 20, border: '1px solid #1e3a5f', background: priority === p ? '#F5E642′ : '#0A1628', color: priority === p ? '#0A1628' : '#fff', cursor: ’pointer', fontWeight: 600, fontSize: 13 }}>
+              <button key={p} onClick={() => setPriority(p)} style={{ marginRight: 8, marginBottom: 8, padding: '6px 14px', borderRadius: 20, border: '1px solid #1e3a5f', background: priority === p ? '#F5E642' : '#0A1628', color: priority === p ? '#0A1628' : '#fff', cursor: 'pointer', fontWeight: 600, fontSize: 13 }}>
                 {p.charAt(0).toUpperCase() + p.slice(1)}
               </button>
             ))}
@@ -61,7 +61,7 @@ export default function DFWHVACGoodBetterBest2026() {
           <div>
             <div style={{ fontSize: 13, color: '#94a3b8', marginBottom: 6 }}>Budget range</div>
             {([['tight', 'Under $7K'], ['moderate', '$7K–$11K'], ['premium', '$11K+']] as [string,string][]).map(([v, l]) => (
-              <button key={v} onClick={() => setBudget(v)} style={{ marginRight: 8, marginBottom: 8, padding: '6px 14px', borderRadius: 20, border: '1px solid #1e3a5f', background: budget === v ? '#F5E642′ : '#0A1628', color: budget === v ? '#0A1628' : '#fff', cursor: ’pointer', fontWeight: 600, fontSize: 13 }}>
+              <button key={v} onClick={() => setBudget(v)} style={{ marginRight: 8, marginBottom: 8, padding: '6px 14px', borderRadius: 20, border: '1px solid #1e3a5f', background: budget === v ? '#F5E642' : '#0A1628', color: budget === v ? '#0A1628' : '#fff', cursor: 'pointer', fontWeight: 600, fontSize: 13 }}>
                 {l}
               </button>
             ))}

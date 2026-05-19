@@ -23,8 +23,8 @@ export default function DFWGutterDownspoutGuide() {
       <div style={{ maxWidth: 760, margin: '0 auto' }}>
         <div style={{ marginBottom: '2rem' }}>
           <span style={{ color: '#F5E642', fontSize: '2rem' }}>🏠💧</span>
-          <h1 style={{ color: '#F5E642', fontSize: '1.8rem', margin: '0.5rem 0′ }}>DFW Gutter Downspout Guide</h1>
-          <p style={{ color: '#94a3b8′ }}>DFW clay soil means water must flow away from your foundation — downspout placement is critical.</p>
+          <h1 style={{ color: '#F5E642', fontSize: '1.8rem', margin: '0.5rem 0' }}>DFW Gutter Downspout Guide</h1>
+          <p style={{ color: '#94a3b8' }}>DFW clay soil means water must flow away from your foundation — downspout placement is critical.</p>
         </div>
 
         <div style={{ backgroundColor: '#0f2040', borderRadius: 10, padding: '1.5rem', marginBottom: '1.5rem' }}>
@@ -32,10 +32,10 @@ export default function DFWGutterDownspoutGuide() {
           {[['Clay soil expands when wet', 'DFW expansive clay shifts slabs when moisture is uneven — downspouts control where water goes.'],
             ['Foundation damage starts at the downspout', 'Gutters that discharge within 2 ft of a slab accelerate differential settlement.'],
             ['Extensions are non-optional here', 'Standard 1–2 ft elbow is not enough in DFW. Minimum 4 ft, often 6–10 ft required.'],
-            ['Underground drainage = best solution', 'In severe cases, bury a 4″ PVC pipe from downspout to street or dry well.'],
+            ['Underground drainage = best solution', 'In severe cases, bury a 4" PVC pipe from downspout to street or dry well.'],
           ].map(([title, desc]) => (
-            <div key={title} style={{ marginBottom: '1rem', paddingLeft: '1rem', borderLeft: '3px solid #F5E642′ }}>
-              <div style={{ fontWeight: 'bold', color: '#e2e8f0′ }}>{title}</div>
+            <div key={title} style={{ marginBottom: '1rem', paddingLeft: '1rem', borderLeft: '3px solid #F5E642' }}>
+              <div style={{ fontWeight: 'bold', color: '#e2e8f0' }}>{title}</div>
               <div style={{ color: '#94a3b8', fontSize: '0.9rem' }}>{desc}</div>
             </div>
           ))}
@@ -49,7 +49,7 @@ export default function DFWGutterDownspoutGuide() {
             ['Low spot in yard collects water', 'Underground pipe to drain point'],
           ].map(([condition, rec]) => (
             <div key={condition} style={{ display: 'flex', justifyContent: 'space-between', padding: '0.6rem 0', borderBottom: '1px solid #1e3a5f' }}>
-              <span style={{ color: '#94a3b8′ }}>{condition}</span>
+              <span style={{ color: '#94a3b8' }}>{condition}</span>
               <span style={{ color: '#F5E642', fontWeight: 'bold' }}>{rec}</span>
             </div>
           ))}
@@ -58,26 +58,26 @@ export default function DFWGutterDownspoutGuide() {
         <div style={{ backgroundColor: '#0f2040', borderRadius: 10, padding: '1.5rem', marginBottom: '1.5rem' }}>
           <h2 style={{ color: '#F5E642', marginBottom: '1rem' }}>🔧 Get Your Recommendation</h2>
           <div style={{ marginBottom: '1rem' }}>
-            <label style={{ display: 'block', marginBottom: '0.5rem', color: '#94a3b8′ }}>Your yard type:</label>
+            <label style={{ display: 'block', marginBottom: '0.5rem', color: '#94a3b8' }}>Your yard type:</label>
             <select value={yard} onChange={e => setYard(e.target.value)} style={{ width: '100%', padding: '0.6rem', backgroundColor: '#0A1628', color: '#e2e8f0', border: '1px solid #1e3a5f', borderRadius: 6 }}>
               <option value="">Select yard type...</option>
               {yardTypes.map(y => <option key={y} value={y}>{y}</option>)}
             </select>
           </div>
           <div style={{ marginBottom: '1.5rem' }}>
-            <label style={{ display: 'block', marginBottom: '0.5rem', color: '#94a3b8′ }}>Current drainage issue:</label>
+            <label style={{ display: 'block', marginBottom: '0.5rem', color: '#94a3b8' }}>Current drainage issue:</label>
             <select value={issue} onChange={e => setIssue(e.target.value)} style={{ width: '100%', padding: '0.6rem', backgroundColor: '#0A1628', color: '#e2e8f0', border: '1px solid #1e3a5f', borderRadius: 6 }}>
               <option value="">Select issue...</option>
               {drainageIssues.map(i => <option key={i} value={i}>{i}</option>)}
             </select>
           </div>
           {sol && (
-            <div style={{ backgroundColor: '#162d4a', borderRadius: 8, padding: '1.2rem', border: '1px solid #F5E642′ }}>
+            <div style={{ backgroundColor: '#162d4a', borderRadius: 8, padding: '1.2rem', border: '1px solid #F5E642' }}>
               <div style={{ fontSize: '1.1rem', fontWeight: 'bold', color: '#F5E642', marginBottom: '0.8rem' }}>{sol.urgency}</div>
               {[['Extension needed', sol.extension], ['Solution type', sol.type], ['Estimated cost', sol.cost]].map(([label, val]) => (
                 <div key={label} style={{ display: 'flex', gap: '1rem', marginBottom: '0.5rem' }}>
                   <span style={{ color: '#94a3b8', minWidth: 140 }}>{label}:</span>
-                  <span style={{ color: '#e2e8f0′ }}>{val}</span>
+                  <span style={{ color: '#e2e8f0' }}>{val}</span>
                 </div>
               ))}
               <div style={{ marginTop: '0.8rem', padding: '0.8rem', backgroundColor: '#0A1628', borderRadius: 6, color: '#94a3b8', fontSize: '0.9rem' }}>💡 {sol.note}</div>
@@ -87,10 +87,10 @@ export default function DFWGutterDownspoutGuide() {
 
         <div style={{ backgroundColor: '#0f2040', borderRadius: 10, padding: '1.5rem' }}>
           <h2 style={{ color: '#F5E642', marginBottom: '1rem' }}>💰 Cost Reference (DFW 2024)</h2>
-          {[['Splash block only', '$15–$40 DIY'], ['Flex aluminum extension', '$20–$60 DIY'], ['Buried 4″ PVC to street', '$300–$800 installed'], ['Dry well installation', '$500–$1,500 installed']].map(([item, cost]) => (
+          {[['Splash block only', '$15–$40 DIY'], ['Flex aluminum extension', '$20–$60 DIY'], ['Buried 4" PVC to street', '$300–$800 installed'], ['Dry well installation', '$500–$1,500 installed']].map(([item, cost]) => (
             <div key={item} style={{ display: 'flex', justifyContent: 'space-between', padding: '0.5rem 0', borderBottom: '1px solid #1e3a5f' }}>
-              <span style={{ color: '#94a3b8′ }}>{item}</span>
-              <span style={{ color: '#F5E642′ }}>{cost}</span>
+              <span style={{ color: '#94a3b8' }}>{item}</span>
+              <span style={{ color: '#F5E642' }}>{cost}</span>
             </div>
           ))}
         </div>

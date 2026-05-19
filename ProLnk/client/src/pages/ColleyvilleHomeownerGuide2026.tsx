@@ -26,24 +26,24 @@ export default function ColleyvilleHomeownerGuide2026() {
   const sizes = Object.keys(propertyScopes);
 
   return (
-    <div style={{ backgroundColor: "#0A1628″, minHeight: "100vh", padding: "40px 20px", fontFamily: "sans-serif", color: "#fff" }}>
+    <div style={{ backgroundColor: "#0A1628", minHeight: "100vh", padding: "40px 20px", fontFamily: "sans-serif", color: "#fff" }}>
       <div style={{ maxWidth: 760, margin: "0 auto" }}>
         <div style={{ textAlign: "center", marginBottom: 36 }}>
           <div style={{ fontSize: 48 }}>🌟</div>
-          <h1 style={{ fontSize: 28, fontWeight: 800, color: "#F5E642″, margin: "12px 0 4px" }}>Colleyville TX Homeowner Guide 2026</h1>
-          <p style={{ color: "#94a3b8″, fontSize: 15 }}>Affluent Tarrant suburb · Custom homes 1990s-2010s · Large lots · Specialty contractors required</p>
+          <h1 style={{ fontSize: 28, fontWeight: 800, color: "#F5E642", margin: "12px 0 4px" }}>Colleyville TX Homeowner Guide 2026</h1>
+          <p style={{ color: "#94a3b8", fontSize: 15 }}>Affluent Tarrant suburb · Custom homes 1990s-2010s · Large lots · Specialty contractors required</p>
         </div>
 
-        <div style={{ backgroundColor: "#111f3a", borderRadius: 12, padding: "20px 24px", marginBottom: 28, borderLeft: "4px solid #F5E642″ }}>
-          <p style={{ margin: 0, fontSize: 14, color: "#cbd5e1″, lineHeight: 1.6 }}>
-            🌳 <strong style={{ color: "#F5E642″ }}>Tree Coverage & Root Risk:</strong> Colleyville has more mature tree coverage than any other Tarrant County city. Beautiful for curb appeal — but post oak, cedar elm, and live oak roots actively seek sewer lines. Items marked 🔬 require specialty contractors with luxury home experience.
+        <div style={{ backgroundColor: "#111f3a", borderRadius: 12, padding: "20px 24px", marginBottom: 28, borderLeft: "4px solid #F5E642" }}>
+          <p style={{ margin: 0, fontSize: 14, color: "#cbd5e1", lineHeight: 1.6 }}>
+            🌳 <strong style={{ color: "#F5E642" }}>Tree Coverage & Root Risk:</strong> Colleyville has more mature tree coverage than any other Tarrant County city. Beautiful for curb appeal — but post oak, cedar elm, and live oak roots actively seek sewer lines. Items marked 🔬 require specialty contractors with luxury home experience.
           </p>
         </div>
 
-        <h2 style={{ fontSize: 17, color: "#F5E642″, marginBottom: 14 }}>Select Your Property Size</h2>
+        <h2 style={{ fontSize: 17, color: "#F5E642", marginBottom: 14 }}>Select Your Property Size</h2>
         <div style={{ display: "flex", gap: 10, marginBottom: 28, flexWrap: "wrap" }}>
           {sizes.map(s => (
-            <button key={s} onClick={() => setSelected(s)} style={{ padding: "10px 20px", borderRadius: 8, border: "2px solid", borderColor: selected === s ? "#F5E642″ : "#1e3a5f", backgroundColor: selected === s ? "#F5E642" : "transparent", color: selected === s ? "#0A1628" : "#94a3b8", fontWeight: 700, cursor: "pointer", fontSize: 14 }}>
+            <button key={s} onClick={() => setSelected(s)} style={{ padding: "10px 20px", borderRadius: 8, border: "2px solid", borderColor: selected === s ? "#F5E642" : "#1e3a5f", backgroundColor: selected === s ? "#F5E642" : "transparent", color: selected === s ? "#0A1628" : "#94a3b8", fontWeight: 700, cursor: "pointer", fontSize: 14 }}>
               {s}
             </button>
           ))}
@@ -56,19 +56,19 @@ export default function ColleyvilleHomeownerGuide2026() {
               <div style={{ flex: 1 }}>
                 <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 6 }}>
                   <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
-                    <span style={{ fontWeight: 700, fontSize: 15, color: "#f1f5f9″ }}>{item.title}</span>
-                    {item.specialty && <span style={{ fontSize: 11, backgroundColor: "#2d1b69″, padding: "2px 6px", borderRadius: 4, color: "#c4b5fd" }}>🔬 Specialty</span>}
+                    <span style={{ fontWeight: 700, fontSize: 15, color: "#f1f5f9" }}>{item.title}</span>
+                    {item.specialty && <span style={{ fontSize: 11, backgroundColor: "#2d1b69", padding: "2px 6px", borderRadius: 4, color: "#c4b5fd" }}>🔬 Specialty</span>}
                   </div>
-                  <span style={{ fontSize: 12, padding: "3px 10px", borderRadius: 20, backgroundColor: item.urgency === "High" ? "#7f1d1d" : item.urgency === "Medium" ? "#78350f" : "#14532d", color: item.urgency === "High" ? "#fca5a5″ : item.urgency === "Medium" ? "#fcd34d" : "#86efac" }}>{item.urgency}</span>
+                  <span style={{ fontSize: 12, padding: "3px 10px", borderRadius: 20, backgroundColor: item.urgency === "High" ? "#7f1d1d" : item.urgency === "Medium" ? "#78350f" : "#14532d", color: item.urgency === "High" ? "#fca5a5" : item.urgency === "Medium" ? "#fcd34d" : "#86efac" }}>{item.urgency}</span>
                 </div>
-                <p style={{ margin: 0, fontSize: 13, color: "#94a3b8″, lineHeight: 1.6 }}>{item.detail}</p>
+                <p style={{ margin: 0, fontSize: 13, color: "#94a3b8", lineHeight: 1.6 }}>{item.detail}</p>
               </div>
             </div>
           ))}
         </div>
 
         <div style={{ marginTop: 32, textAlign: "center", backgroundColor: "#111f3a", borderRadius: 12, padding: 24 }}>
-          <p style={{ color: "#F5E642″, fontWeight: 700, marginBottom: 8 }}>🔗 Find specialty Colleyville contractors</p>
+          <p style={{ color: "#F5E642", fontWeight: 700, marginBottom: 8 }}>🔗 Find specialty Colleyville contractors</p>
           <p style={{ color: "#64748b", fontSize: 13, margin: 0 }}>ProLnk pre-screens for luxury and specialty experience — the right contractor for your Colleyville estate.</p>
         </div>
       </div>

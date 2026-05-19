@@ -87,7 +87,7 @@ export default function DFWHVACLongTermPlan() {
               key={s.label}
               onClick={() => setSelected(selected === s.label ? null : s.label)}
               style={{
-                background: selected === s.label ? '#132040′ : '#0F1E35',
+                background: selected === s.label ? '#132040' : '#0F1E35',
                 border: `1.5px solid ${selected === s.label ? '#F5E642' : '#1E2D45'}`,
                 borderRadius: 10,
                 padding: '14px 20px',
@@ -134,7 +134,7 @@ export default function DFWHVACLongTermPlan() {
               </ol>
             </div>
 
-            <div style={{ background: '#0F1E35', borderRadius: 8, padding: '14px 18px', borderLeft: '3px solid #F5E642′ }}>
+            <div style={{ background: '#0F1E35', borderRadius: 8, padding: '14px 18px', borderLeft: '3px solid #F5E642' }}>
               <div style={{ color: '#F5E642', fontWeight: 700, marginBottom: 4 }}>🛡️ Future-Proof Strategy</div>
               <div style={{ color: '#9AA3B2', fontSize: 13, lineHeight: 1.6 }}>{active.plan.futureProof}</div>
             </div>

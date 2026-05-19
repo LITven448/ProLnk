@@ -68,7 +68,7 @@ function Steps({ current }: { current: 1 | 2 | 3 }) {
           </div>
           {i < steps.length - 1 && (
             <div
-              className="w-7 h-px mx-2″
+              className="w-7 h-px mx-2"
               style={{ background: s.n < current ? `${FOS.green}60` : FOS.ghost }}
             />
           )}
@@ -131,7 +131,7 @@ function AIResultsScreen({
   const totalCommission = (opportunities ?? []).reduce((s, o) => s + o.commission, 0);
 
   return (
-    <div className="flex flex-col min-h-full px-5 pt-8 pb-6 gap-6″ style={{ background: FOS.bg }}>
+    <div className="flex flex-col min-h-full px-5 pt-8 pb-6 gap-6" style={{ background: FOS.bg }}>
 
       {/* Success header */}
       <div className="flex flex-col items-center gap-3 text-center">
@@ -139,11 +139,11 @@ function AIResultsScreen({
           className="w-16 h-16 rounded-full flex items-center justify-center"
           style={{ background: `${FOS.green}15`, border: `1px solid ${FOS.green}30` }}
         >
-          <CheckCircle className="w-8 h-8″ style={{ color: FOS.green }} />
+          <CheckCircle className="w-8 h-8" style={{ color: FOS.green }} />
         </div>
         <div>
           <h2 className="text-white text-2xl font-black">Job Logged!</h2>
-          <p className="text-sm mt-1″ style={{ color: FOS.muted }}>
+          <p className="text-sm mt-1" style={{ color: FOS.muted }}>
             AI scanning {photoCount} photo{photoCount !== 1 ? "s" : ""}  {address.split(",")[0]}
           </p>
         </div>
@@ -152,16 +152,16 @@ function AIResultsScreen({
       {/* Processing */}
       {status === "processing" && (
         <div
-          className="rounded-2xl p-5 flex flex-col items-center gap-3″
+          className="rounded-2xl p-5 flex flex-col items-center gap-3"
           style={{ background: FOS.surface, border: `1px solid ${FOS.teal}25` }}
         >
-          <div className="flex items-center gap-3″>
+          <div className="flex items-center gap-3">
             <Loader2 className="w-5 h-5 animate-spin" style={{ color: FOS.teal }} />
             <p className="font-bold text-sm" style={{ color: FOS.teal }}>AI Analysis Running...</p>
           </div>
           <div className="w-full rounded-full h-1.5 overflow-hidden" style={{ background: FOS.ghost }}>
             <div
-              className="h-full rounded-full transition-all duration-1000″
+              className="h-full rounded-full transition-all duration-1000"
               style={{
                 width: `${Math.min(95, (pollCount / 15) * 100)}%`,
                 background: `linear-gradient(90deg, ${FOS.teal}, ${FOS.lime})`,
@@ -184,10 +184,10 @@ function AIResultsScreen({
               >
                 <div>
                   <p className="text-xs font-semibold uppercase tracking-widest" style={{ color: FOS.lime }}>Potential Commission</p>
-                  <p className="text-white text-3xl font-black mt-0.5″>${totalCommission}</p>
+                  <p className="text-white text-3xl font-black mt-0.5">${totalCommission}</p>
                 </div>
-                <div className="flex items-center gap-1.5″>
-                  <TrendingUp className="w-4 h-4″ style={{ color: FOS.lime }} />
+                <div className="flex items-center gap-1.5">
+                  <TrendingUp className="w-4 h-4" style={{ color: FOS.lime }} />
                   <span className="text-sm font-bold" style={{ color: FOS.lime }}>
                     {opportunities.length} lead{opportunities.length !== 1 ? "s" : ""}
                   </span>
@@ -195,9 +195,9 @@ function AIResultsScreen({
               </div>
 
               {/* Opportunity cards */}
-              <div className="flex flex-col gap-3″>
-                <div className="flex items-center gap-2″>
-                  <Zap className="w-4 h-4″ style={{ color: FOS.teal }} />
+              <div className="flex flex-col gap-3">
+                <div className="flex items-center gap-2">
+                  <Zap className="w-4 h-4" style={{ color: FOS.teal }} />
                   <p className="text-sm font-bold" style={{ color: FOS.teal }}>
                     {opportunities.length} Opportunit{opportunities.length !== 1 ? "ies" : "y"} Detected
                   </p>
@@ -205,13 +205,13 @@ function AIResultsScreen({
                 {opportunities.map((opp, i) => (
                   <div
                     key={i}
-                    className="rounded-2xl p-4″
+                    className="rounded-2xl p-4"
                     style={{ background: FOS.surface, border: `1px solid ${FOS.teal}20` }}
                   >
-                    <div className="flex items-start justify-between mb-2″>
+                    <div className="flex items-start justify-between mb-2">
                       <div>
                         <p className="text-white font-bold text-sm">{opp.type}</p>
-                        <p className="text-xs mt-0.5″ style={{ color: FOS.muted }}>{opp.category}</p>
+                        <p className="text-xs mt-0.5" style={{ color: FOS.muted }}>{opp.category}</p>
                       </div>
                       <div className="text-right">
                         <p className="font-black text-base" style={{ color: FOS.lime }}>${opp.commission}</p>
@@ -221,7 +221,7 @@ function AIResultsScreen({
                     {opp.description && (
                       <p className="text-xs mb-3 leading-relaxed" style={{ color: FOS.muted }}>{opp.description}</p>
                     )}
-                    <div className="flex items-center gap-2″>
+                    <div className="flex items-center gap-2">
                       <div className="flex-1 rounded-full h-1 overflow-hidden" style={{ background: FOS.ghost }}>
                         <div
                           className="h-full rounded-full"
@@ -241,7 +241,7 @@ function AIResultsScreen({
                 className="w-full py-4 rounded-2xl text-base font-black flex items-center justify-center gap-2 active:scale-95 transition-transform"
                 style={{ background: FOS.teal, color: FOS.bg }}
               >
-                <Zap className="w-5 h-5″ /> View in AI Feed
+                <Zap className="w-5 h-5" /> View in AI Feed
               </button>
             </>
           ) : (
@@ -249,10 +249,10 @@ function AIResultsScreen({
               className="rounded-2xl p-5 flex flex-col items-center gap-3 text-center"
               style={{ background: FOS.surface, border: `1px solid ${FOS.border}` }}
             >
-              <AlertCircle className="w-8 h-8″ style={{ color: FOS.faint }} />
+              <AlertCircle className="w-8 h-8" style={{ color: FOS.faint }} />
               <div>
                 <p className="text-white font-bold">No Opportunities Found</p>
-                <p className="text-sm mt-1″ style={{ color: FOS.muted }}>
+                <p className="text-sm mt-1" style={{ color: FOS.muted }}>
                   No cross-trade opportunities detected. Try capturing more detail next time.
                 </p>
               </div>
@@ -267,10 +267,10 @@ function AIResultsScreen({
           className="rounded-2xl p-5 flex flex-col items-center gap-3 text-center"
           style={{ background: FOS.surface, border: "1px solid rgba(249,115,22,0.25)" }}
         >
-          <Clock className="w-8 h-8 text-orange-400″ />
+          <Clock className="w-8 h-8 text-orange-400" />
           <div>
             <p className="text-white font-bold">Analysis Taking Longer Than Expected</p>
-            <p className="text-sm mt-1″ style={{ color: FOS.muted }}>
+            <p className="text-sm mt-1" style={{ color: FOS.muted }}>
               Your job was logged. AI analysis will complete in the background -- check the AI Feed shortly.
             </p>
           </div>
@@ -279,17 +279,17 @@ function AIResultsScreen({
             className="flex items-center gap-2 text-sm font-bold"
             style={{ color: FOS.teal }}
           >
-            <RefreshCw className="w-4 h-4″ /> Check AI Feed
+            <RefreshCw className="w-4 h-4" /> Check AI Feed
           </button>
         </div>
       )}
 
       <button
         onClick={onReset}
-        className="w-full py-3.5 rounded-2xl text-sm font-bold flex items-center justify-center gap-2″
+        className="w-full py-3.5 rounded-2xl text-sm font-bold flex items-center justify-center gap-2"
         style={{ background: FOS.surface, border: `1px solid ${FOS.border}`, color: FOS.muted }}
       >
-        <Camera className="w-4 h-4″ /> Log Another Job
+        <Camera className="w-4 h-4" /> Log Another Job
       </button>
     </div>
   );
@@ -304,19 +304,19 @@ function JobDetailDrawer({ job, onClose }: { job: any; onClose: () => void }) {
   return (
     <div className="fixed inset-0 z-50 flex flex-col" style={{ background: FOS.bg }}>
       {/* Header */}
-      <div className="flex items-center justify-between px-5 pt-6 pb-4 flex-shrink-0″ style={{ borderBottom: `1px solid ${FOS.border}` }}>
+      <div className="flex items-center justify-between px-5 pt-6 pb-4 flex-shrink-0" style={{ borderBottom: `1px solid ${FOS.border}` }}>
         <div>
           <h3 className="text-white font-black text-lg">Job Detail</h3>
           <p className="text-xs mt-0.5 truncate max-w-[220px]" style={{ color: FOS.muted }}>{job.serviceAddress}</p>
         </div>
         <button onClick={onClose} className="w-9 h-9 rounded-xl flex items-center justify-center" style={{ background: FOS.surface }}>
-          <X className="w-5 h-5″ style={{ color: FOS.muted }} />
+          <X className="w-5 h-5" style={{ color: FOS.muted }} />
         </button>
       </div>
       {/* Scrollable content */}
-      <div className="flex-1 overflow-y-auto px-5 py-4 space-y-5″>
+      <div className="flex-1 overflow-y-auto px-5 py-4 space-y-5">
         {/* Meta */}
-        <div className="rounded-2xl p-4 space-y-2″ style={{ background: FOS.surface, border: `1px solid ${FOS.border}` }}>
+        <div className="rounded-2xl p-4 space-y-2" style={{ background: FOS.surface, border: `1px solid ${FOS.border}` }}>
           <div className="flex items-center justify-between">
             <span className="text-xs" style={{ color: FOS.muted }}>Service Type</span>
             <span className="text-white text-xs font-bold">{job.serviceType ?? "General"}</span>
@@ -334,7 +334,7 @@ function JobDetailDrawer({ job, onClose }: { job: any; onClose: () => void }) {
           </div>
           {job.notes && (
             <div>
-              <span className="text-xs block mb-1″ style={{ color: FOS.muted }}>Notes</span>
+              <span className="text-xs block mb-1" style={{ color: FOS.muted }}>Notes</span>
               <p className="text-white text-xs leading-relaxed">{job.notes}</p>
             </div>
           )}
@@ -342,8 +342,8 @@ function JobDetailDrawer({ job, onClose }: { job: any; onClose: () => void }) {
         {/* Photos */}
         {photos.length > 0 && (
           <div>
-            <p className="text-[10px] uppercase tracking-widest font-semibold mb-2″ style={{ color: FOS.muted }}>Photos ({photos.length})</p>
-            <div className="grid grid-cols-3 gap-2″>
+            <p className="text-[10px] uppercase tracking-widest font-semibold mb-2" style={{ color: FOS.muted }}>Photos ({photos.length})</p>
+            <div className="grid grid-cols-3 gap-2">
               {photos.map((url: string, i: number) => (
                 <div key={i} className="aspect-square rounded-xl overflow-hidden" style={{ background: FOS.surface }}>
                   <img src={url} alt={`Photo ${i+1}`} className="w-full h-full object-cover" />
@@ -355,18 +355,18 @@ function JobDetailDrawer({ job, onClose }: { job: any; onClose: () => void }) {
         {/* AI Opportunities */}
         {opps.length > 0 && (
           <div>
-            <p className="text-[10px] uppercase tracking-widest font-semibold mb-2″ style={{ color: FOS.muted }}>AI Detected ({opps.length})</p>
-            <div className="space-y-2″>
+            <p className="text-[10px] uppercase tracking-widest font-semibold mb-2" style={{ color: FOS.muted }}>AI Detected ({opps.length})</p>
+            <div className="space-y-2">
               {opps.map((opp: any, i: number) => (
-                <div key={i} className="rounded-2xl px-4 py-3 flex items-start gap-3″ style={{ background: FOS.surface, border: `1px solid ${FOS.border}` }}>
-                  <div className="w-7 h-7 rounded-xl flex items-center justify-center flex-shrink-0 mt-0.5″ style={{ background: FOS.limeDim }}>
-                    <Zap className="w-3.5 h-3.5″ style={{ color: FOS.lime }} />
+                <div key={i} className="rounded-2xl px-4 py-3 flex items-start gap-3" style={{ background: FOS.surface, border: `1px solid ${FOS.border}` }}>
+                  <div className="w-7 h-7 rounded-xl flex items-center justify-center flex-shrink-0 mt-0.5" style={{ background: FOS.limeDim }}>
+                    <Zap className="w-3.5 h-3.5" style={{ color: FOS.lime }} />
                   </div>
-                  <div className="flex-1 min-w-0″>
+                  <div className="flex-1 min-w-0">
                     <p className="text-white text-xs font-bold">{opp.type ?? opp.opportunityType ?? "Opportunity"}</p>
-                    <p className="text-[10px] mt-0.5″ style={{ color: FOS.muted }}>{opp.description ?? opp.category ?? ""}</p>
+                    <p className="text-[10px] mt-0.5" style={{ color: FOS.muted }}>{opp.description ?? opp.category ?? ""}</p>
                   </div>
-                  <div className="text-right flex-shrink-0″>
+                  <div className="text-right flex-shrink-0">
                     <p className="text-xs font-black" style={{ color: FOS.lime }}>${Number(opp.commission ?? opp.referralCommissionAmount ?? 0).toFixed(0)}</p>
                     <p className="text-[9px]" style={{ color: FOS.faint }}>{Math.round((opp.confidence ?? 0.8) * 100)}% conf.</p>
                   </div>
@@ -377,9 +377,9 @@ function JobDetailDrawer({ job, onClose }: { job: any; onClose: () => void }) {
         )}
         {job.aiAnalysisStatus === "complete" && opps.length === 0 && (
           <div className="rounded-2xl px-4 py-5 text-center" style={{ background: FOS.surface, border: `1px solid ${FOS.border}` }}>
-            <CheckCircle className="w-6 h-6 mx-auto mb-2″ style={{ color: FOS.green }} />
+            <CheckCircle className="w-6 h-6 mx-auto mb-2" style={{ color: FOS.green }} />
             <p className="text-white text-sm font-bold">No Issues Detected</p>
-            <p className="text-xs mt-1″ style={{ color: FOS.muted }}>AI scanned the photos — property looks good!</p>
+            <p className="text-xs mt-1" style={{ color: FOS.muted }}>AI scanned the photos — property looks good!</p>
           </div>
         )}
       </div>
@@ -522,19 +522,19 @@ export default function FieldJobLog({ onSubmitSuccess, onQueueUpdate }: FieldJob
 
   return (
     <>
-    <div className="flex flex-col min-h-full px-5 pt-6 pb-6 gap-5″ style={{ background: FOS.bg }}>
+    <div className="flex flex-col min-h-full px-5 pt-6 pb-6 gap-5" style={{ background: FOS.bg }}>
 
       {/* Header */}
       <div className="flex items-center justify-between">
         <div>
           <h2 className="text-white text-xl font-black">Log a Job</h2>
-          <p className="text-xs mt-0.5″ style={{ color: FOS.faint }}>AI scans photos for referral opportunities</p>
+          <p className="text-xs mt-0.5" style={{ color: FOS.faint }}>AI scans photos for referral opportunities</p>
         </div>
         <Steps current={step} />
       </div>
 
       {/* Address */}
-      <div className="flex flex-col gap-2″>
+      <div className="flex flex-col gap-2">
         <label className="text-[10px] uppercase tracking-widest font-semibold" style={{ color: FOS.muted }}>
           Job Address
         </label>
@@ -550,22 +550,22 @@ export default function FieldJobLog({ onSubmitSuccess, onQueueUpdate }: FieldJob
           <button
             onClick={getGPS}
             disabled={gpsLoading}
-            className="absolute right-2 top-1/2 -translate-y-1/2 flex items-center gap-1.5 rounded-lg px-2.5 py-1.5 text-[10px] font-bold disabled:opacity-50″
+            className="absolute right-2 top-1/2 -translate-y-1/2 flex items-center gap-1.5 rounded-lg px-2.5 py-1.5 text-[10px] font-bold disabled:opacity-50"
             style={{ background: FOS.tealDim, border: `1px solid ${FOS.teal}30`, color: FOS.teal }}
           >
-            {gpsLoading ? <Loader2 className="w-3 h-3 animate-spin" /> : <MapPin className="w-3 h-3″ />}
+            {gpsLoading ? <Loader2 className="w-3 h-3 animate-spin" /> : <MapPin className="w-3 h-3" />}
             {gpsLoading ? "Locating..." : "GPS"}
           </button>
         </div>
         {gpsError && (
-          <p className="text-orange-400 text-xs flex items-center gap-1.5″>
-            <AlertCircle className="w-3 h-3 shrink-0″ /> {gpsError}
+          <p className="text-orange-400 text-xs flex items-center gap-1.5">
+            <AlertCircle className="w-3 h-3 shrink-0" /> {gpsError}
           </p>
         )}
       </div>
 
       {/* Job Type */}
-      <div className="flex flex-col gap-2″>
+      <div className="flex flex-col gap-2">
         <label className="text-[10px] uppercase tracking-widest font-semibold" style={{ color: FOS.muted }}>Job Type</label>
         <div className="relative">
           <select
@@ -581,7 +581,7 @@ export default function FieldJobLog({ onSubmitSuccess, onQueueUpdate }: FieldJob
       </div>
 
       {/* Photos */}
-      <div className="flex flex-col gap-2″>
+      <div className="flex flex-col gap-2">
         <div className="flex items-center justify-between">
           <label className="text-[10px] uppercase tracking-widest font-semibold" style={{ color: FOS.muted }}>
             Photos <span style={{ color: FOS.faint }}>({photos.length}/5)</span>
@@ -597,12 +597,12 @@ export default function FieldJobLog({ onSubmitSuccess, onQueueUpdate }: FieldJob
             className="w-full border-2 border-dashed rounded-2xl py-10 flex flex-col items-center gap-2 active:scale-95 transition-transform"
             style={{ background: FOS.tealDim, borderColor: `${FOS.teal}40` }}
           >
-            <Camera className="w-10 h-10″ style={{ color: FOS.teal }} />
+            <Camera className="w-10 h-10" style={{ color: FOS.teal }} />
             <p className="font-black text-sm" style={{ color: FOS.teal }}>Take Photos</p>
             <p className="text-xs" style={{ color: FOS.faint }}>Up to 5 photos  Auto-compressed to 800KB</p>
           </button>
         ) : (
-          <div className="grid grid-cols-3 gap-2″>
+          <div className="grid grid-cols-3 gap-2">
             {photos.map((photo) => (
               <div key={photo.dataUrl} className="relative aspect-square rounded-xl overflow-hidden">
                 <img src={photo.dataUrl} alt="" className="w-full h-full object-cover" />
@@ -625,7 +625,7 @@ export default function FieldJobLog({ onSubmitSuccess, onQueueUpdate }: FieldJob
                     const next = cycle[(cycle.indexOf(photo.tag) + 1) % cycle.length];
                     setPhotos(prev => prev.map(p => p.dataUrl === photo.dataUrl ? { ...p, tag: next } : p));
                   }}
-                  className="absolute bottom-1.5 left-1.5 rounded-full px-1.5 py-0.5 text-[9px] font-black transition-all active:scale-90″
+                  className="absolute bottom-1.5 left-1.5 rounded-full px-1.5 py-0.5 text-[9px] font-black transition-all active:scale-90"
                   style={{
                     background: photo.tag === "before" ? "rgba(59,130,246,0.92)" :
                                 photo.tag === "during" ? "rgba(234,179,8,0.92)" :
@@ -651,7 +651,7 @@ export default function FieldJobLog({ onSubmitSuccess, onQueueUpdate }: FieldJob
                 className="aspect-square rounded-xl flex flex-col items-center justify-center gap-1 active:scale-95 transition-transform"
                 style={{ background: FOS.surface, border: `2px dashed ${FOS.border}` }}
               >
-                <Plus className="w-5 h-5″ style={{ color: FOS.faint }} />
+                <Plus className="w-5 h-5" style={{ color: FOS.faint }} />
                 <span className="text-[10px]" style={{ color: FOS.faint }}>Add</span>
               </button>
             )}
@@ -669,7 +669,7 @@ export default function FieldJobLog({ onSubmitSuccess, onQueueUpdate }: FieldJob
       </div>
 
       {/* Notes */}
-      <div className="flex flex-col gap-2″>
+      <div className="flex flex-col gap-2">
         <label className="text-[10px] uppercase tracking-widest font-semibold" style={{ color: FOS.muted }}>
           Notes (optional)
         </label>
@@ -685,8 +685,8 @@ export default function FieldJobLog({ onSubmitSuccess, onQueueUpdate }: FieldJob
 
       {/* Error */}
       {submitError && (
-        <div className="flex items-start gap-2 rounded-xl px-4 py-3″ style={{ background: "rgba(239,68,68,0.1)", border: "1px solid rgba(239,68,68,0.25)" }}>
-          <AlertCircle className="w-4 h-4 text-red-400 shrink-0 mt-0.5″ />
+        <div className="flex items-start gap-2 rounded-xl px-4 py-3" style={{ background: "rgba(239,68,68,0.1)", border: "1px solid rgba(239,68,68,0.25)" }}>
+          <AlertCircle className="w-4 h-4 text-red-400 shrink-0 mt-0.5" />
           <p className="text-red-400 text-xs">{submitError}</p>
         </div>
       )}
@@ -695,18 +695,18 @@ export default function FieldJobLog({ onSubmitSuccess, onQueueUpdate }: FieldJob
       <button
         onClick={handleSubmit}
         disabled={!address.trim() || photos.length === 0 || submitting || photos.some(p => p.quality === "checking")}
-        className="w-full py-4 rounded-2xl text-base font-black active:scale-95 transition-all flex items-center justify-center gap-2 disabled:opacity-30″
+        className="w-full py-4 rounded-2xl text-base font-black active:scale-95 transition-all flex items-center justify-center gap-2 disabled:opacity-30"
         style={{ background: FOS.lime, color: FOS.bg }}
       >
         {submitting
           ? <><Loader2 className="w-5 h-5 animate-spin" /> Uploading &amp; Scanning...</>
-          : <><Zap className="w-5 h-5″ /> Submit &amp; Scan with AI</>
+          : <><Zap className="w-5 h-5" /> Submit &amp; Scan with AI</>
         }
       </button>
 
       {!navigator.onLine && (
-        <div className="flex items-center gap-2 text-xs justify-center text-orange-400″>
-          <WifiOff className="w-3 h-3″ /> Offline -- will sync when connected
+        <div className="flex items-center gap-2 text-xs justify-center text-orange-400">
+          <WifiOff className="w-3 h-3" /> Offline -- will sync when connected
         </div>
       )}
 
@@ -719,11 +719,11 @@ export default function FieldJobLog({ onSubmitSuccess, onQueueUpdate }: FieldJob
       {/* -- Job History -- */}
       {(myJobs ?? []).length > 0 && (
         <div>
-          <div className="flex items-center justify-between mb-3″>
+          <div className="flex items-center justify-between mb-3">
             <p className="text-[10px] uppercase tracking-widest font-semibold" style={{ color: FOS.muted }}>Recent Jobs</p>
             <span className="text-[10px]" style={{ color: FOS.faint }}>{(myJobs ?? []).length} total</span>
           </div>
-          <div className="space-y-2″>
+          <div className="space-y-2">
             {(myJobs ?? []).slice(0, 5).map((job: any) => (
               <button
                 key={job.id}
@@ -731,21 +731,21 @@ export default function FieldJobLog({ onSubmitSuccess, onQueueUpdate }: FieldJob
                 className="w-full rounded-2xl px-4 py-3 flex items-center gap-3 active:scale-95 transition-transform text-left"
                 style={{ background: FOS.surface, border: `1px solid ${FOS.border}` }}
               >
-                <div className="w-8 h-8 rounded-xl flex items-center justify-center flex-shrink-0″ style={{
+                <div className="w-8 h-8 rounded-xl flex items-center justify-center flex-shrink-0" style={{
                   background: job.aiAnalysisStatus === "complete" ? "rgba(16,185,129,0.15)" : "rgba(245,158,11,0.15)"
                 }}>
                   {job.aiAnalysisStatus === "complete"
-                    ? <CheckCircle className="w-4 h-4″ style={{ color: FOS.green }} />
-                    : <Clock className="w-4 h-4″ style={{ color: FOS.amber }} />
+                    ? <CheckCircle className="w-4 h-4" style={{ color: FOS.green }} />
+                    : <Clock className="w-4 h-4" style={{ color: FOS.amber }} />
                   }
                 </div>
-                <div className="flex-1 min-w-0″>
+                <div className="flex-1 min-w-0">
                   <p className="text-white text-xs font-bold truncate">{job.serviceAddress}</p>
-                  <p className="text-[10px] mt-0.5″ style={{ color: FOS.muted }}>
+                  <p className="text-[10px] mt-0.5" style={{ color: FOS.muted }}>
                     {job.serviceType ?? "General"} · {new Date(job.createdAt).toLocaleDateString("en-US", { month: "short", day: "numeric" })}
                   </p>
                 </div>
-                <TrendingUp className="w-3.5 h-3.5 flex-shrink-0″ style={{ color: FOS.faint }} />
+                <TrendingUp className="w-3.5 h-3.5 flex-shrink-0" style={{ color: FOS.faint }} />
               </button>
             ))}
           </div>

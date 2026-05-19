@@ -10,7 +10,7 @@ function getPlan(office: string, ac: string): Plan {
   const isSunroom = office.includes('Sunroom');
   const isHighEff = ac.includes('high-efficiency');
   const isMiniSplit = ac.includes('Mini-split');
-  const baseCost = isGarage ? '$280–$380′ : isSunroom ? '$220–$320' : '$140–$220';
+  const baseCost = isGarage ? '$280–$380' : isSunroom ? '$220–$320' : '$140–$220';
   const adjustedCost = isHighEff || isMiniSplit ? baseCost.replace(/\d+/g, n => String(Math.round(Number(n) * 0.72))) : baseCost;
   return {
     optimization: [
@@ -42,22 +42,22 @@ export default function DFWHVACProductivityGuide() {
       <div style={{ background: 'linear-gradient(135deg, #0D1F3C 0%, #0A1628 100%)', borderBottom: '1px solid #1E3A5F', padding: '48px 24px 40px' }}>
         <div style={{ maxWidth: 760, margin: '0 auto' }}>
           <div style={{ fontSize: 13, color: '#F5E642', fontWeight: 700, letterSpacing: 2, textTransform: 'uppercase', marginBottom: 12 }}>DFW HVAC GUIDE</div>
-          <h1 style={{ fontSize: 36, fontWeight: 800, margin: '0 0 16px', lineHeight: 1.2 }}>Work From Home Productivity<br /><span style={{ color: '#F5E642′ }}>in DFW’s Extreme Climate</span></h1>
+          <h1 style={{ fontSize: 36, fontWeight: 800, margin: '0 0 16px', lineHeight: 1.2 }}>Work From Home Productivity<br /><span style={{ color: '#F5E642' }}>in DFW's Extreme Climate</span></h1>
           <p style={{ fontSize: 17, color: '#A8B4C8', lineHeight: 1.7, margin: 0 }}>Maintaining 68–72°F when outside temps hit 100°F+ demands smart HVAC strategy. Here's how DFW homeowners optimize their home offices without destroying their energy bills.</p>
         </div>
       </div>
-      <div style={{ maxWidth: 760, margin: '0 auto', padding: '40px 24px 0′ }}>
+      <div style={{ maxWidth: 760, margin: '0 auto', padding: '40px 24px 0' }}>
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 16, marginBottom: 40 }}>
           {[['🌡️', '108°F', 'DFW peak summer temp'], ['💸', '+$780/yr', 'WFH energy premium'], ['🧠', '8%', 'Productivity loss above 75°F']].map(([icon, stat, label]) => (
             <div key={label} style={card}>
               <div style={{ fontSize: 24, marginBottom: 6 }}>{icon}</div>
-              <div style={{ fontSize: 26, fontWeight: 800, color: '#F5E642′ }}>{stat}</div>
+              <div style={{ fontSize: 26, fontWeight: 800, color: '#F5E642' }}>{stat}</div>
               <div style={{ fontSize: 12, color: '#6B7A99', marginTop: 4 }}>{label}</div>
             </div>
           ))}
         </div>
         <div style={{ background: '#0D1F3C', borderRadius: 16, padding: 28, border: '1px solid #1E3A5F', marginBottom: 32 }}>
-          <h2 style={{ fontSize: 20, fontWeight: 700, margin: '0 0 20px', color: '#F5E642′ }}>🔧 Get Your WFH Optimization Plan</h2>
+          <h2 style={{ fontSize: 20, fontWeight: 700, margin: '0 0 20px', color: '#F5E642' }}>🔧 Get Your WFH Optimization Plan</h2>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16, marginBottom: 20 }}>
             <div>
               <label style={{ display: 'block', fontSize: 13, color: '#A8B4C8', marginBottom: 8, fontWeight: 600 }}>HOME OFFICE TYPE</label>
@@ -74,11 +74,11 @@ export default function DFWHVACProductivityGuide() {
               </select>
             </div>
           </div>
-          <button onClick={generate} disabled={!office || !ac} style={{ background: office && ac ? '#F5E642′ : '#1E3A5F', color: office && ac ? '#0A1628' : '#4A5568', border: ’none', borderRadius: 8, padding: '12px 28px', fontWeight: 700, fontSize: 15, cursor: office && ac ? 'pointer' : 'not-allowed' }}>Generate My Plan →</button>
+          <button onClick={generate} disabled={!office || !ac} style={{ background: office && ac ? '#F5E642' : '#1E3A5F', color: office && ac ? '#0A1628' : '#4A5568', border: 'none', borderRadius: 8, padding: '12px 28px', fontWeight: 700, fontSize: 15, cursor: office && ac ? 'pointer' : 'not-allowed' }}>Generate My Plan →</button>
         </div>
         {plan && (
-          <div style={{ background: '#0D1F3C', borderRadius: 16, padding: 28, border: '1px solid #F5E642′ }}>
-            <h3 style={{ fontSize: 18, fontWeight: 700, margin: '0 0 6px', color: '#F5E642′ }}>Your WFH HVAC Plan</h3>
+          <div style={{ background: '#0D1F3C', borderRadius: 16, padding: 28, border: '1px solid #F5E642' }}>
+            <h3 style={{ fontSize: 18, fontWeight: 700, margin: '0 0 6px', color: '#F5E642' }}>Your WFH HVAC Plan</h3>
             <div style={{ fontSize: 14, color: '#A8B4C8', marginBottom: 20 }}>Estimated cooling cost: <span style={{ color: '#F5E642', fontWeight: 700 }}>{plan.energyCost}</span></div>
             <div style={{ marginBottom: 20 }}>
               {plan.optimization.map((item, i) => <div key={i} style={{ padding: '8px 0', borderBottom: '1px solid #1E3A5F', fontSize: 14, lineHeight: 1.6 }}>{item}</div>)}

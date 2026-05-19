@@ -33,7 +33,7 @@ export default function DFWPetDoorGuide() {
   }
 
   const comparisons = [
-    { type: 'Sliding Door Panel Insert', pros: 'No cutting, removable, affordable', cons: 'Limits door use, panel can warp in DFW heat', cost: '$80-$350′ },
+    { type: 'Sliding Door Panel Insert', pros: 'No cutting, removable, affordable', cons: 'Limits door use, panel can warp in DFW heat', cost: '$80-$350' },
     { type: 'In-Door Installation', pros: 'Door still fully functional, clean look', cons: 'Permanent modification, reduces door insulation', cost: '$200-$600 installed' },
     { type: 'Through-Wall Installation', pros: 'Best location flexibility, permanent', cons: 'Most expensive, requires permit, structural work', cost: '$600-$2,500 installed' },
     { type: 'Electronic/Microchip Door', pros: 'Wildlife-proof, only your pet enters', cons: 'Higher cost, battery dependency', cost: '$200-$800 for unit alone' },
@@ -92,7 +92,7 @@ export default function DFWPetDoorGuide() {
               { label: '📋 HOA & Permits', value: result.hoa },
               { label: '💰 Installed Cost', value: result.cost },
             ].map(item => (
-              <div key={item.label} style={{ marginBottom: 16, paddingBottom: 16, borderBottom: '1px solid #1E3050′ }}>
+              <div key={item.label} style={{ marginBottom: 16, paddingBottom: 16, borderBottom: '1px solid #1E3050' }}>
                 <div style={{ color: '#F5E642', fontWeight: 700, marginBottom: 4 }}>{item.label}</div>
                 <div style={{ color: '#CCD6E0', lineHeight: 1.6 }}>{item.value}</div>
               </div>

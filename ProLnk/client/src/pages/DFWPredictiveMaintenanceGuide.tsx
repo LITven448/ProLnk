@@ -25,13 +25,13 @@ export default function DFWPredictiveMaintenanceGuide() {
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16 }}>
             <div style={{ background: '#3d0000', borderRadius: 12, padding: 20, textAlign: 'center' }}>
               <div style={{ fontSize: 36 }}>🚨</div>
-              <div style={{ color: '#f87171', fontWeight: 800, fontSize: 18, margin: '8px 0′ }}>Reactive</div>
+              <div style={{ color: '#f87171', fontWeight: 800, fontSize: 18, margin: '8px 0' }}>Reactive</div>
               <div style={{ color: '#94a3b8', fontSize: 13 }}>Fix it when it breaks. Emergency premiums. Collateral damage. Missed work. Stress.</div>
               <div style={{ color: '#f87171', fontWeight: 800, fontSize: 22, marginTop: 12 }}>Avg $6,400/event</div>
             </div>
             <div style={{ background: '#003d1a', borderRadius: 12, padding: 20, textAlign: 'center' }}>
               <div style={{ fontSize: 36 }}>🎯</div>
-              <div style={{ color: '#22c55e', fontWeight: 800, fontSize: 18, margin: '8px 0′ }}>Predictive</div>
+              <div style={{ color: '#22c55e', fontWeight: 800, fontSize: 18, margin: '8px 0' }}>Predictive</div>
               <div style={{ color: '#94a3b8', fontSize: 13 }}>Sensors catch problems early. Scheduled fix. No emergency markup. No collateral damage.</div>
               <div style={{ color: '#22c55e', fontWeight: 800, fontSize: 22, marginTop: 12 }}>Avg $520/event</div>
             </div>
@@ -43,11 +43,11 @@ export default function DFWPredictiveMaintenanceGuide() {
           <p style={{ color: '#94a3b8', fontSize: 14, marginBottom: 20 }}>Select a home system to compare reactive vs. predictive costs and see what sensors are available now:</p>
           <div style={{ display: 'flex', gap: 10, marginBottom: 24 }}>
             {systems.map(s => (
-              <button key={s.id} onClick={() => setSelected(s.id)} style={{ flex: 1, padding: '10px 8px', borderRadius: 8, border: '2px solid', borderColor: selected === s.id ? '#F5E642′ : '#1e3a5f', background: selected === s.id ? '#F5E642' : ’transparent', color: selected === s.id ? '#0A1628′ : '#94a3b8', fontWeight: 700, cursor: ’pointer', fontSize: 13 }}>{s.label}</button>
+              <button key={s.id} onClick={() => setSelected(s.id)} style={{ flex: 1, padding: '10px 8px', borderRadius: 8, border: '2px solid', borderColor: selected === s.id ? '#F5E642' : '#1e3a5f', background: selected === s.id ? '#F5E642' : 'transparent', color: selected === s.id ? '#0A1628' : '#94a3b8', fontWeight: 700, cursor: 'pointer', fontSize: 13 }}>{s.label}</button>
             ))}
           </div>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16, marginBottom: 16 }}>
-            <div style={{ background: '#1a0000', borderRadius: 12, padding: 16, border: '1px solid #3d0000′ }}>
+            <div style={{ background: '#1a0000', borderRadius: 12, padding: 16, border: '1px solid #3d0000' }}>
               <div style={{ color: '#f87171', fontWeight: 700, marginBottom: 8 }}>🚨 Reactive Scenario</div>
               <div style={{ color: '#94a3b8', fontSize: 13, lineHeight: 1.6 }}>{sys.reactive}</div>
             </div>
@@ -62,7 +62,7 @@ export default function DFWPredictiveMaintenanceGuide() {
               <div style={{ background: sys.availability === 'Available Now' ? '#003d1a' : '#1e3a5f', color: sys.availability === 'Available Now' ? '#22c55e' : '#F5E642', padding: '4px 12px', borderRadius: 20, fontSize: 12, fontWeight: 700 }}>{sys.availability}</div>
             </div>
             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 8 }}>
-              {sys.sensors.map(sensor => <div key={sensor} style={{ color: '#94a3b8', fontSize: 13, paddingLeft: 8, borderLeft: '2px solid #F5E642′ }}>{sensor}</div>)}
+              {sys.sensors.map(sensor => <div key={sensor} style={{ color: '#94a3b8', fontSize: 13, paddingLeft: 8, borderLeft: '2px solid #F5E642' }}>{sensor}</div>)}
             </div>
           </div>
         </div>

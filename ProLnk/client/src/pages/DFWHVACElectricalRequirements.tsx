@@ -1,10 +1,10 @@
 import { useState } from 'react';
 
 const systems = [
-  { size: '2 ton', home: 'Small DFW home (under 1,200 sq ft)', circuit: '30A / 240V dedicated', wireGauge: '10 AWG', disconnect: '30A non-fused', airHandlerAmp: '15A / 120V', permit: 'Required', cost: '$400–$800′ },
-  { size: '3 ton', home: 'Mid DFW home (1,200–2,000 sq ft)', circuit: '40A / 240V dedicated', wireGauge: '8 AWG', disconnect: '40A', airHandlerAmp: '20A / 120V', permit: 'Required', cost: '$600–$1,200′ },
-  { size: '4 ton', home: 'Large DFW home (2,000–3,000 sq ft)', circuit: '50A / 240V dedicated', wireGauge: '6 AWG', disconnect: '60A non-fused', airHandlerAmp: '20A / 120V', permit: 'Required', cost: '$800–$1,600′ },
-  { size: '5 ton', home: 'XL DFW home (3,000–4,500 sq ft)', circuit: '60A / 240V dedicated', wireGauge: '6 AWG', disconnect: '60A non-fused', airHandlerAmp: '20A / 120V', permit: 'Required', cost: '$1,000–$2,200′ },
+  { size: '2 ton', home: 'Small DFW home (under 1,200 sq ft)', circuit: '30A / 240V dedicated', wireGauge: '10 AWG', disconnect: '30A non-fused', airHandlerAmp: '15A / 120V', permit: 'Required', cost: '$400–$800' },
+  { size: '3 ton', home: 'Mid DFW home (1,200–2,000 sq ft)', circuit: '40A / 240V dedicated', wireGauge: '8 AWG', disconnect: '40A', airHandlerAmp: '20A / 120V', permit: 'Required', cost: '$600–$1,200' },
+  { size: '4 ton', home: 'Large DFW home (2,000–3,000 sq ft)', circuit: '50A / 240V dedicated', wireGauge: '6 AWG', disconnect: '60A non-fused', airHandlerAmp: '20A / 120V', permit: 'Required', cost: '$800–$1,600' },
+  { size: '5 ton', home: 'XL DFW home (3,000–4,500 sq ft)', circuit: '60A / 240V dedicated', wireGauge: '6 AWG', disconnect: '60A non-fused', airHandlerAmp: '20A / 120V', permit: 'Required', cost: '$1,000–$2,200' },
 ];
 
 export default function DFWHVACElectricalRequirements() {
@@ -48,7 +48,7 @@ export default function DFWHVACElectricalRequirements() {
                 onClick={() => setSelected(selected === i ? null : i)}
                 style={{
                   background: selected === i ? '#1A3A6B' : '#0F2040',
-                  border: selected === i ? '2px solid #F5E642′ : '2px solid #1E3A5F',
+                  border: selected === i ? '2px solid #F5E642' : '2px solid #1E3A5F',
                   borderRadius: 12,
                   padding: '18px 24px',
                   color: '#E8EDF5',

@@ -57,7 +57,7 @@ export default function DFWGarageHeatGuide() {
           <p style={{ color: '#94a3b8', fontSize: 15 }}>DFW garages hit 140–150°F in summer — here's how to fight back</p>
         </div>
 
-        <div style={{ background: '#7c1d1d', borderRadius: 12, padding: 20, marginBottom: 24, borderLeft: '4px solid #ef4444′ }}>
+        <div style={{ background: '#7c1d1d', borderRadius: 12, padding: 20, marginBottom: 24, borderLeft: '4px solid #ef4444' }}>
           <h2 style={{ color: '#fca5a5', fontSize: 16, marginBottom: 10 }}>🔥 The DFW Garage Heat Problem</h2>
           <ul style={{ color: '#fecaca', lineHeight: 1.9, paddingLeft: 20, margin: 0 }}>
             <li>Interior garage temps reach 140–150°F on peak DFW summer days</li>

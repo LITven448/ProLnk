@@ -134,15 +134,15 @@ export default function BasementWaterproofingGuide() {
           <div style={{ background: '#111a11', border: '1px solid #1a2a1a', borderRadius: 12, padding: 28 }}>
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 16, marginBottom: 20 }}>
               <div style={{ textAlign: 'center', padding: 16, background: '#0a0f0a', borderRadius: 8 }}>
-                <div style={{ fontSize: 20, fontWeight: 800, color: '#4ade80′ }}>$300–$800</div>
+                <div style={{ fontSize: 20, fontWeight: 800, color: '#4ade80' }}>$300–$800</div>
                 <div style={{ color: '#64748b', fontSize: 12, marginTop: 4 }}>Installed Cost</div>
               </div>
               <div style={{ textAlign: 'center', padding: 16, background: '#0a0f0a', borderRadius: 8 }}>
-                <div style={{ fontSize: 20, fontWeight: 800, color: '#4ade80′ }}>Quarterly</div>
+                <div style={{ fontSize: 20, fontWeight: 800, color: '#4ade80' }}>Quarterly</div>
                 <div style={{ color: '#64748b', fontSize: 12, marginTop: 4 }}>Test Frequency</div>
               </div>
               <div style={{ textAlign: 'center', padding: 16, background: '#0a0f0a', borderRadius: 8 }}>
-                <div style={{ fontSize: 20, fontWeight: 800, color: '#f97316′ }}>Battery Backup</div>
+                <div style={{ fontSize: 20, fontWeight: 800, color: '#f97316' }}>Battery Backup</div>
                 <div style={{ color: '#64748b', fontSize: 12, marginTop: 4 }}>Essential for DFW</div>
               </div>
             </div>

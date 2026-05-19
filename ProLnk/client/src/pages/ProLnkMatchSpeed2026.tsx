@@ -49,7 +49,7 @@ export default function ProLnkMatchSpeed2026() {
         <div style={{ textAlign: 'center', marginBottom: 40 }}>
           <div style={{ fontSize: 48 }}>⚡</div>
           <h1 style={{ fontSize: 28, fontWeight: 700, color: '#F5E642', margin: '12px 0 8px' }}>Match Speed Guide 2026</h1>
-          <p style={{ color: '#94a3b8′ }}>How fast ProLnk connects you with a Charter pro in DFW</p>
+          <p style={{ color: '#94a3b8' }}>How fast ProLnk connects you with a Charter pro in DFW</p>
         </div>
 
         <div style={{ marginBottom: 32 }}>
@@ -57,7 +57,7 @@ export default function ProLnkMatchSpeed2026() {
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: 12 }}>
             {urgencies.map(u => (
               <button key={u.id} onClick={() => setUrgency(u.id)}
-                style={{ background: urgency === u.id ? '#F5E642′ : '#1e3a5f', border: '2px solid #F5E642', borderRadius: 12, padding: '16px 10px', color: urgency === u.id ? '#0A1628' : '#fff', cursor: ’pointer', textAlign: 'center' }}>
+                style={{ background: urgency === u.id ? '#F5E642' : '#1e3a5f', border: '2px solid #F5E642', borderRadius: 12, padding: '16px 10px', color: urgency === u.id ? '#0A1628' : '#fff', cursor: 'pointer', textAlign: 'center' }}>
                 <div style={{ fontSize: 24, marginBottom: 6 }}>{u.label.split(' ')[0]}</div>
                 <div style={{ fontWeight: 700, fontSize: 14 }}>{u.label.split(' ').slice(1).join(' ')}</div>
                 <div style={{ fontSize: 11, marginTop: 4, opacity: 0.8 }}>{u.desc}</div>
@@ -71,7 +71,7 @@ export default function ProLnkMatchSpeed2026() {
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: 10 }}>
             {trades.map(t => (
               <button key={t} onClick={() => setTrade(t)}
-                style={{ background: trade === t ? '#F5E642′ : '#1e3a5f', border: '2px solid #F5E642', borderRadius: 8, padding: '10px 18px', color: trade === t ? '#0A1628' : '#fff', cursor: ’pointer', fontWeight: 600, fontSize: 14 }}>
+                style={{ background: trade === t ? '#F5E642' : '#1e3a5f', border: '2px solid #F5E642', borderRadius: 8, padding: '10px 18px', color: trade === t ? '#0A1628' : '#fff', cursor: 'pointer', fontWeight: 600, fontSize: 14 }}>
                 {t}
               </button>
             ))}
@@ -88,7 +88,7 @@ export default function ProLnkMatchSpeed2026() {
         )}
 
         {!result && urgency && trade && (
-          <p style={{ textAlign: 'center', color: '#fbbf24′ }}>No match data for this combination yet — contact support.</p>
+          <p style={{ textAlign: 'center', color: '#fbbf24' }}>No match data for this combination yet — contact support.</p>
         )}
       </div>
     </div>

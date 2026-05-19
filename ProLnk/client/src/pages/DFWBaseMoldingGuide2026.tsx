@@ -9,17 +9,17 @@ const homeStyles = [
 
 const recs = {
   builder: { size: '3.5 inch', profile: 'Colonial or Clamshell', material: 'MDF', note: 'Standard DFW production builder spec. Affordable and paintable. Common in homes built 1990–2015 throughout Garland, Mesquite, Rowlett, and Grand Prairie.' },
-  mid: { size: '4.25 inch', profile: 'Colonial with slight bead', material: 'MDF Primed', note: 'Step up common in DFW homes priced $300K–$450K. Adds visual weight without custom price. Pairs well with 3.5″ door casing.' },
+  mid: { size: '4.25 inch', profile: 'Colonial with slight bead', material: 'MDF Primed', note: 'Step up common in DFW homes priced $300K–$450K. Adds visual weight without custom price. Pairs well with 3.5" door casing.' },
   updated: { size: '5.25 inch', profile: 'Flat or Craftsman', material: 'MDF Primed', note: 'Popular DFW remodel upgrade. Craftsman-style flat baseboard with a small cap adds modern-traditional look. Common in Frisco and McKinney remodels 2020+.' },
   luxury: { size: '7.25 inch+', profile: 'Multi-piece or Built-Up', material: 'MDF or Paint-Grade Poplar', note: 'DFW luxury standard in Southlake, Westlake, Trophy Club. Often a 3-piece built-up profile: base cap + baseboard + plinth blocks at door casings.' },
 };
 
 const facts = [
   { icon: '💧', label: 'MDF vs Wood in DFW', text: 'MDF expands and contracts significantly less than wood in DFW humidity cycles. For painted baseboard, MDF is the clear choice recommended by most DFW finish carpenters.' },
-  { icon: '🪵', label: 'LVP Installation Sequence', text: 'With LVP (luxury vinyl plank) — now the dominant DFW floor choice — baseboard installs AFTER flooring. LVP floats, so baseboard must not pin it down. Leave 1/4″ gap at wall before baseboard.' },
+  { icon: '🪵', label: 'LVP Installation Sequence', text: 'With LVP (luxury vinyl plank) — now the dominant DFW floor choice — baseboard installs AFTER flooring. LVP floats, so baseboard must not pin it down. Leave 1/4" gap at wall before baseboard.' },
   { icon: '🎨', label: 'Caulk and Paint', text: 'DFW pros caulk all baseboard joints and top edges before painting. Sherwin-Williams Extra White or Alabaster are the two most common DFW baseboard paint colors.' },
   { icon: '📐', label: 'Outside Corners', text: '45° miter at outside corners. Inside corners: coped joint (not mitered) for durability as DFW seasonal movement causes miter gaps over time.' },
-  { icon: '💰', label: 'Upgrade ROI', text: 'Upgrading from 3.5″ to 5.25″ baseboard throughout a DFW home typically costs $800–$2,500 in materials. Perceived value add: $3,000–$8,000 in buyer perception at resale.' },
+  { icon: '💰', label: 'Upgrade ROI', text: 'Upgrading from 3.5" to 5.25" baseboard throughout a DFW home typically costs $800–$2,500 in materials. Perceived value add: $3,000–$8,000 in buyer perception at resale.' },
 ];
 
 export default function DFWBaseMoldingGuide2026() {
@@ -40,7 +40,7 @@ export default function DFWBaseMoldingGuide2026() {
           <div style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
             {homeStyles.map((s) => (
               <button key={s.value} onClick={() => setSelected(s.value)}
-                style={{ background: selected === s.value ? '#F5E642′ : '#162035', color: selected === s.value ? '#0A1628' : '#fff', border: '1px solid #F5E642', borderRadius: 8, padding: '14px 20px', cursor: ’pointer', fontWeight: 600, textAlign: 'left', fontSize: 15 }}>
+                style={{ background: selected === s.value ? '#F5E642' : '#162035', color: selected === s.value ? '#0A1628' : '#fff', border: '1px solid #F5E642', borderRadius: 8, padding: '14px 20px', cursor: 'pointer', fontWeight: 600, textAlign: 'left', fontSize: 15 }}>
                 {s.label}
               </button>
             ))}

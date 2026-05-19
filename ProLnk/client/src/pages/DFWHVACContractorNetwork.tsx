@@ -63,7 +63,7 @@ export default function DFWHVACContractorNetwork() {
         </p>
 
         <div style={{ background: '#0F2040', borderRadius: 12, padding: 24, marginBottom: 24 }}>
-          <h2 style={{ fontSize: 18, fontWeight: 700, marginBottom: 16, color: '#F5E642′ }}>
+          <h2 style={{ fontSize: 18, fontWeight: 700, marginBottom: 16, color: '#F5E642' }}>
             🏗️ The Three-Layer Contractor Network
           </h2>
           {[
@@ -92,14 +92,14 @@ export default function DFWHVACContractorNetwork() {
           <h2 style={{ fontSize: 18, fontWeight: 700, marginBottom: 20 }}>📍 Your Situation → Network Building Plan</h2>
           <div style={{ display: 'flex', flexDirection: 'column', gap: 10, marginBottom: 20 }}>
             {SITUATIONS.map(s => (
-              <button key={s} onClick={() => setSelected(s)} style={{ background: selected === s ? '#F5E642′ : '#162030', color: selected === s ? '#0A1628' : '#fff', border: ’none', borderRadius: 8, padding: '12px 16px', textAlign: 'left', cursor: 'pointer', fontWeight: selected === s ? 700 : 400, fontSize: 14 }}>
+              <button key={s} onClick={() => setSelected(s)} style={{ background: selected === s ? '#F5E642' : '#162030', color: selected === s ? '#0A1628' : '#fff', border: 'none', borderRadius: 8, padding: '12px 16px', textAlign: 'left', cursor: 'pointer', fontWeight: selected === s ? 700 : 400, fontSize: 14 }}>
                 {s}
               </button>
             ))}
           </div>
           {selected && (
             <div style={{ background: '#162030', borderRadius: 10, padding: 20 }}>
-              <div style={{ fontWeight: 700, marginBottom: 12, color: '#F5E642′ }}>Your Plan:</div>
+              <div style={{ fontWeight: 700, marginBottom: 12, color: '#F5E642' }}>Your Plan:</div>
               {PLANS[selected].map(step => (
                 <div key={step} style={{ marginBottom: 10, fontSize: 14, lineHeight: 1.6, color: '#ddd' }}>{step}</div>
               ))}

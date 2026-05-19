@@ -30,7 +30,7 @@ export default function DFWElectricProviderGuide() {
         </div>
         <div style={{ background: '#0f2040', borderRadius: 12, padding: '1.5rem', marginBottom: '1.5rem', border: '1px solid #1e3a5f' }}>
           <h2 style={{ color: '#F5E642', fontSize: '1.1rem', marginTop: 0 }}>📋 How Texas Electricity Works</h2>
-          <p style={{ color: '#cbd5e1', lineHeight: 1.7, margin: 0 }}>Texas has a <strong style={{ color: '#F5E642′ }}>deregulated electricity market</strong> — you choose your Retail Electric Provider (REP) but Oncor delivers the power. Shop at <strong style={{ color: '#F5E642' }}>PowerToChoose.org</strong> (the official state comparison tool). Look past the headline rate: compare <em>price per kWh at your actual usage level</em>, monthly base fees, and minimum usage penalties (common gotcha: a plan that’s cheap at 2000 kWh but expensive at 1000).</p>
+          <p style={{ color: '#cbd5e1', lineHeight: 1.7, margin: 0 }}>Texas has a <strong style={{ color: '#F5E642' }}>deregulated electricity market</strong> — you choose your Retail Electric Provider (REP) but Oncor delivers the power. Shop at <strong style={{ color: '#F5E642' }}>PowerToChoose.org</strong> (the official state comparison tool). Look past the headline rate: compare <em>price per kWh at your actual usage level</em>, monthly base fees, and minimum usage penalties (common gotcha: a plan that's cheap at 2000 kWh but expensive at 1000).</p>
         </div>
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1.5rem' }}>
           {[
@@ -48,9 +48,9 @@ export default function DFWElectricProviderGuide() {
         </div>
         <div style={{ background: '#0f2040', borderRadius: 12, padding: '1.5rem', marginBottom: '1.5rem', border: '1px solid #1e3a5f' }}>
           <h2 style={{ color: '#F5E642', fontSize: '1.1rem', marginTop: 0 }}>🌡️ DFW Summer Reality</h2>
-          <p style={{ color: '#cbd5e1', lineHeight: 1.7, margin: '0 0 0.75rem' }}>DFW summers run 95–105°F for weeks. July–August bills are 2–3× winter bills. A 2,000 sq ft home averages <strong style={{ color: '#F5E642′ }}>1,800–2,500 kWh/month</strong> in summer. Always compare plan prices at <em>your summer usage level</em>, not the lowest usage tier shown.</p>
+          <p style={{ color: '#cbd5e1', lineHeight: 1.7, margin: '0 0 0.75rem' }}>DFW summers run 95–105°F for weeks. July–August bills are 2–3× winter bills. A 2,000 sq ft home averages <strong style={{ color: '#F5E642' }}>1,800–2,500 kWh/month</strong> in summer. Always compare plan prices at <em>your summer usage level</em>, not the lowest usage tier shown.</p>
         </div>
-        <div style={{ background: '#0f2040', borderRadius: 12, padding: '1.5rem', border: '1px solid #F5E642′ }}>
+        <div style={{ background: '#0f2040', borderRadius: 12, padding: '1.5rem', border: '1px solid #F5E642' }}>
           <h2 style={{ color: '#F5E642', fontSize: '1.1rem', marginTop: 0 }}>🔍 Find Your Best Plan</h2>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: '0.75rem', marginBottom: '1rem' }}>
             <div>
@@ -76,11 +76,11 @@ export default function DFWElectricProviderGuide() {
             </div>
           </div>
           {rec && (
-            <div style={{ background: '#0A1628', borderRadius: 10, padding: '1rem', border: '1px solid #F5E642′ }}>
+            <div style={{ background: '#0A1628', borderRadius: 10, padding: '1rem', border: '1px solid #F5E642' }}>
               <div style={{ color: '#F5E642', fontWeight: 700, fontSize: '1.1rem', marginBottom: '0.5rem' }}>✅ Recommended: {rec.type}</div>
               <div style={{ color: '#cbd5e1', marginBottom: '0.5rem' }}>{rec.tip}</div>
-              <div style={{ color: '#94a3b8', fontSize: '0.9rem' }}>Typical rate: <strong style={{ color: '#F5E642′ }}>{rec.rate}</strong></div>
-              <div style={{ color: '#94a3b8', fontSize: '0.85rem', marginTop: '0.5rem' }}>→ Search on <strong style={{ color: '#F5E642′ }}>PowerToChoose.org</strong> filtering by {city} zip code at your usage level.</div>
+              <div style={{ color: '#94a3b8', fontSize: '0.9rem' }}>Typical rate: <strong style={{ color: '#F5E642' }}>{rec.rate}</strong></div>
+              <div style={{ color: '#94a3b8', fontSize: '0.85rem', marginTop: '0.5rem' }}>→ Search on <strong style={{ color: '#F5E642' }}>PowerToChoose.org</strong> filtering by {city} zip code at your usage level.</div>
             </div>
           )}
         </div>

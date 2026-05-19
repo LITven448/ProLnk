@@ -22,7 +22,7 @@ export default function ProLnkVsNextdoor() {
   const [selectedScenario, setSelectedScenario] = useState(0);
 
   const rec = SCENARIOS[selectedScenario].rec;
-  const recColor = rec === 'prolnk' ? '#F5E642′ : rec === ’nextdoor' ? '#6EE7B7′ : '#93C5FD';
+  const recColor = rec === 'prolnk' ? '#F5E642' : rec === 'nextdoor' ? '#6EE7B7' : '#93C5FD';
   const recLabel = rec === 'prolnk' ? '⚡ Use ProLnk' : rec === 'nextdoor' ? '🏘️ Nextdoor works here' : '✅ Either works';
 
   return (
@@ -31,7 +31,7 @@ export default function ProLnkVsNextdoor() {
         <div style={{ textAlign: 'center', marginBottom: 44 }}>
           <div style={{ fontSize: 38, marginBottom: 12 }}>🏘️ ⚡</div>
           <h1 style={{ fontSize: 32, fontWeight: 800, marginBottom: 10 }}>ProLnk vs Nextdoor</h1>
-          <p style={{ fontSize: 16, color: '#6B7280′ }}>Neighbor recommendations vs professional marketplace — when to use each</p>
+          <p style={{ fontSize: 16, color: '#6B7280' }}>Neighbor recommendations vs professional marketplace — when to use each</p>
         </div>
 
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 20, marginBottom: 40 }}>
@@ -50,7 +50,7 @@ export default function ProLnkVsNextdoor() {
         <div style={{ backgroundColor: '#fff', borderRadius: 14, overflow: 'hidden', boxShadow: '0 2px 8px rgba(0,0,0,0.08)', marginBottom: 40 }}>
           {COMPARISONS.map((c, i) => (
             <div key={i} style={{ display: 'grid', gridTemplateColumns: '140px 1fr 1fr', padding: '16px 20px', borderBottom: '1px solid #F3F4F6', backgroundColor: i % 2 === 0 ? '#fff' : '#FAFAFA' }}>
-              <div style={{ fontSize: 13, fontWeight: 700, color: '#0A1628′ }}>{c.label}</div>
+              <div style={{ fontSize: 13, fontWeight: 700, color: '#0A1628' }}>{c.label}</div>
               <div style={{ fontSize: 12, color: '#9CA3AF', paddingRight: 12 }}>{c.nextdoor}</div>
               <div style={{ fontSize: 12, color: '#059669', paddingRight: 12 }}>{c.prolnk}</div>
             </div>
@@ -63,8 +63,8 @@ export default function ProLnkVsNextdoor() {
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: 10, marginBottom: 24 }}>
             {SCENARIOS.map((s, i) => (
               <button key={i} onClick={() => setSelectedScenario(i)}
-                style={{ padding: '8px 16px', borderRadius: 8, border: '2px solid', borderColor: selectedScenario === i ? '#F5E642′ : '#E5E7EB',
-                  backgroundColor: selectedScenario === i ? '#F5E642′ : '#fff', color: '#0A1628', fontWeight: 600, fontSize: 12, cursor: ’pointer' }}>
+                style={{ padding: '8px 16px', borderRadius: 8, border: '2px solid', borderColor: selectedScenario === i ? '#F5E642' : '#E5E7EB',
+                  backgroundColor: selectedScenario === i ? '#F5E642' : '#fff', color: '#0A1628', fontWeight: 600, fontSize: 12, cursor: 'pointer' }}>
                 {s.job}
               </button>
             ))}

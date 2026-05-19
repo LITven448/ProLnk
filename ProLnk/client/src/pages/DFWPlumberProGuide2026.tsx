@@ -25,7 +25,7 @@ export default function DFWPlumberProGuide2026() {
         <h1 style={{ fontSize: 32, fontWeight: 800, marginBottom: 8 }}>🔧 DFW Plumber Pro Guide 2026</h1>
         <p style={{ color: '#a0aec0', fontSize: 16, marginBottom: 32 }}>
           Licensed plumbers in the Dallas-Fort Worth metro are sitting on one of the hottest service markets in the country.
-          Average job ticket: <strong style={{ color: '#F5E642′ }}>$450</strong>. ProLnk connects you to verified homeowners across all 7 DFW counties.
+          Average job ticket: <strong style={{ color: '#F5E642' }}>$450</strong>. ProLnk connects you to verified homeowners across all 7 DFW counties.
         </p>
 
         <div style={{ background: '#111d30', borderRadius: 12, padding: 20, marginBottom: 24 }}>
@@ -62,24 +62,24 @@ export default function DFWPlumberProGuide2026() {
 
         <div style={{ background: '#111d30', borderRadius: 12, padding: 20, marginBottom: 32 }}>
           <div style={{ color: '#F5E642', fontWeight: 700, marginBottom: 16 }}>💰 Income Projection Calculator</div>
-          <label style={{ fontSize: 14, color: '#a0aec0′ }}>Years of Experience: <strong style={{ color: '#fff' }}>{years}</strong></label>
+          <label style={{ fontSize: 14, color: '#a0aec0' }}>Years of Experience: <strong style={{ color: '#fff' }}>{years}</strong></label>
           <input type="range" min={1} max={15} value={years} onChange={e => setYears(+e.target.value)}
-            style={{ width: '100%', margin: '12px 0', accentColor: '#F5E642′ }} />
+            style={{ width: '100%', margin: '12px 0', accentColor: '#F5E642' }} />
           <div style={{ background: '#0A1628', borderRadius: 8, padding: 16, marginTop: 8 }}>
             <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: 8 }}>
-              <span style={{ color: '#a0aec0′ }}>Estimated jobs/month</span>
+              <span style={{ color: '#a0aec0' }}>Estimated jobs/month</span>
               <span style={{ fontWeight: 700 }}>{jobsPerMonth}</span>
             </div>
             <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: 8 }}>
-              <span style={{ color: '#a0aec0′ }}>Your tier</span>
+              <span style={{ color: '#a0aec0' }}>Your tier</span>
               <span style={{ color: '#F5E642', fontWeight: 700 }}>{tier.label}</span>
             </div>
             <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: 8 }}>
-              <span style={{ color: '#a0aec0′ }}>Monthly ProLnk earnings</span>
-              <span style={{ fontWeight: 700, color: '#F5E642′ }}>${monthly.toLocaleString(undefined,{maximumFractionDigits:0})}</span>
+              <span style={{ color: '#a0aec0' }}>Monthly ProLnk earnings</span>
+              <span style={{ fontWeight: 700, color: '#F5E642' }}>${monthly.toLocaleString(undefined,{maximumFractionDigits:0})}</span>
             </div>
             <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-              <span style={{ color: '#a0aec0′ }}>Annual ProLnk earnings</span>
+              <span style={{ color: '#a0aec0' }}>Annual ProLnk earnings</span>
               <span style={{ fontWeight: 700, color: '#F5E642', fontSize: 20 }}>${annual.toLocaleString(undefined,{maximumFractionDigits:0})}</span>
             </div>
           </div>

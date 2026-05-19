@@ -9,14 +9,14 @@ const NAV = [
 ];
 
 const COLORS = {
-  bg: "#0A1628″,
-  card: "#152035″,
-  border: "#1E2E45″,
+  bg: "#0A1628",
+  card: "#152035",
+  border: "#1E2E45",
   text: "#F0F4FF",
-  muted: "#7A8BA8″,
-  yellow: "#F5E642″,
-  green: "#10B981″,
-  red: "#EF4444″,
+  muted: "#7A8BA8",
+  yellow: "#F5E642",
+  green: "#10B981",
+  red: "#EF4444",
 };
 
 export default function LeadDetailScreen() {
@@ -58,11 +58,11 @@ export default function LeadDetailScreen() {
         <div style={{ background: COLORS.card, borderRadius: 16, padding: 18, border: `1px solid ${COLORS.border}`, marginBottom: 12 }}>
           <div style={{ fontSize: 12, color: COLORS.muted, textTransform: "uppercase", letterSpacing: 1, marginBottom: 12 }}>Lead Details</div>
           {[
-            { icon: "📍", label: "Property", value: "1234 Oak Creek Dr, Frisco TX 75034″ },
+            { icon: "📍", label: "Property", value: "1234 Oak Creek Dr, Frisco TX 75034" },
             { icon: "🔧", label: "Service", value: "HVAC emergency — AC not cooling" },
             { icon: "👤", label: "Homeowner", value: "Sarah M." },
             { icon: "📏", label: "Distance", value: "2.3 miles away" },
-            { icon: "💵", label: "Job Estimate", value: "$800 – $1,500″ },
+            { icon: "💵", label: "Job Estimate", value: "$800 – $1,500" },
           ].map((row) => (
             <div key={row.label} style={{ display: "flex", gap: 10, marginBottom: 10, alignItems: "flex-start" }}>
               <span style={{ fontSize: 16, marginTop: 1 }}>{row.icon}</span>
@@ -80,7 +80,7 @@ export default function LeadDetailScreen() {
             <div style={{ fontSize: 13, fontWeight: 700, color: COLORS.yellow }}>Your Estimated Commission</div>
             <div style={{ fontSize: 24, fontWeight: 800, color: COLORS.yellow }}>$312</div>
           </div>
-          <div style={{ background: "#0A162880″, borderRadius: 8, padding: "10px 12px" }}>
+          <div style={{ background: "#0A162880", borderRadius: 8, padding: "10px 12px" }}>
             <div style={{ fontSize: 12, color: COLORS.muted, marginBottom: 4 }}>Breakdown</div>
             <div style={{ fontSize: 12, color: COLORS.text }}>$1,100 avg job × 28.4% commission tier = <span style={{ color: COLORS.yellow, fontWeight: 700 }}>$312</span></div>
           </div>
@@ -93,7 +93,7 @@ export default function LeadDetailScreen() {
         <div style={{ background: COLORS.card, borderRadius: 16, padding: 18, border: `1px solid ${isUrgent ? COLORS.red : COLORS.border}`, marginBottom: 16, textAlign: "center" }}>
           <div style={{ fontSize: 11, color: COLORS.muted, marginBottom: 6, textTransform: "uppercase", letterSpacing: 1 }}>Expires In</div>
           <div style={{ fontSize: 36, fontWeight: 800, color: isUrgent ? COLORS.red : COLORS.text, letterSpacing: 2, fontVariantNumeric: "tabular-nums" }}>
-            ⏱ {h}:{m.toString().padStart(2, "0″)}:{s.toString().padStart(2, "0")}
+            ⏱ {h}:{m.toString().padStart(2, "0")}:{s.toString().padStart(2, "0")}
           </div>
           <div style={{ fontSize: 11, color: COLORS.muted, marginTop: 6 }}>2 other pros are viewing this lead</div>
         </div>

@@ -66,7 +66,7 @@ export default function TrustyProLaunchTimeline() {
   const phase = phases[selectedPhase];
   const userKey = userTypes[userType].toLowerCase() as 'homeowner' | 'pro' | 'investor';
   const userContent = phase[`for${userTypes[userType]}` as keyof typeof phase] as string;
-  const statusColor = phase.status === 'active' ? '#22c55e' : phase.status === 'upcoming' ? '#FACC15′ : '#64748b';
+  const statusColor = phase.status === 'active' ? '#22c55e' : phase.status === 'upcoming' ? '#FACC15' : '#64748b';
 
   return (
     <div style={{ minHeight: '100vh', backgroundColor: '#050d1a', color: '#fff', fontFamily: 'system-ui, sans-serif', padding: '48px 24px' }}>
@@ -81,7 +81,7 @@ export default function TrustyProLaunchTimeline() {
         <div style={{ display: 'flex', gap: '10px', marginBottom: '32px', justifyContent: 'center' }}>
           {userTypes.map((type, i) => (
             <button key={i} onClick={() => setUserType(i)}
-              style={{ padding: '10px 20px', borderRadius: '20px', border: `2px solid ${userType === i ? '#4F46E5' : '#1e2d45'}`, backgroundColor: userType === i ? '#4F46E5′ : '#0d1f35', color: '#fff', cursor: ’pointer', fontSize: '0.9rem', fontWeight: 600 }}>
+              style={{ padding: '10px 20px', borderRadius: '20px', border: `2px solid ${userType === i ? '#4F46E5' : '#1e2d45'}`, backgroundColor: userType === i ? '#4F46E5' : '#0d1f35', color: '#fff', cursor: 'pointer', fontSize: '0.9rem', fontWeight: 600 }}>
               {type}
             </button>
           ))}
@@ -89,7 +89,7 @@ export default function TrustyProLaunchTimeline() {
         <div style={{ display: 'flex', gap: '10px', flexWrap: 'wrap', marginBottom: '32px' }}>
           {phases.map((p, i) => (
             <button key={i} onClick={() => setSelectedPhase(i)}
-              style={{ flex: 1, minWidth: '120px', padding: '12px 8px', borderRadius: '10px', border: `2px solid ${selectedPhase === i ? '#4F46E5' : '#1e2d45'}`, backgroundColor: selectedPhase === i ? '#4F46E5′ : '#0d1f35', color: '#fff', cursor: ’pointer', fontSize: '0.8rem', fontWeight: 600, textAlign: 'center' }}>
+              style={{ flex: 1, minWidth: '120px', padding: '12px 8px', borderRadius: '10px', border: `2px solid ${selectedPhase === i ? '#4F46E5' : '#1e2d45'}`, backgroundColor: selectedPhase === i ? '#4F46E5' : '#0d1f35', color: '#fff', cursor: 'pointer', fontSize: '0.8rem', fontWeight: 600, textAlign: 'center' }}>
               {p.icon}<br /><span style={{ fontSize: '0.7rem', color: selectedPhase === i ? '#c7d2fe' : '#64748b' }}>{p.phase}</span><br />{p.timing}
             </button>
           ))}
@@ -105,14 +105,14 @@ export default function TrustyProLaunchTimeline() {
             </span>
           </div>
           <p style={{ color: '#94a3b8', lineHeight: 1.7, marginBottom: '24px' }}>{phase.description}</p>
-          <div style={{ backgroundColor: '#4F46E522', borderRadius: '12px', padding: '20px', border: '1px solid #4F46E5′ }}>
+          <div style={{ backgroundColor: '#4F46E522', borderRadius: '12px', padding: '20px', border: '1px solid #4F46E5' }}>
             <div style={{ color: '#818cf8', fontWeight: 700, fontSize: '0.85rem', marginBottom: '10px' }}>
               WHAT THIS MEANS FOR YOU — {userTypes[userType].toUpperCase()}
             </div>
             <p style={{ color: '#c7d2fe', lineHeight: 1.7, margin: 0 }}>{userContent}</p>
           </div>
         </div>
-        <div style={{ textAlign: 'center', backgroundColor: '#0d1f35', borderRadius: '12px', padding: '24px', border: '1px solid #1e2d45′ }}>
+        <div style={{ textAlign: 'center', backgroundColor: '#0d1f35', borderRadius: '12px', padding: '24px', border: '1px solid #1e2d45' }}>
           <p style={{ color: '#64748b', fontSize: '0.9rem', marginBottom: '12px' }}>Phase 1 waitlist is open now. Your position determines your beta access timing.</p>
           <span style={{ backgroundColor: '#4F46E5', color: '#fff', padding: '10px 28px', borderRadius: '8px', fontWeight: 700, fontSize: '0.95rem' }}>
             Join the DFW Waitlist

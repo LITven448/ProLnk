@@ -13,8 +13,8 @@ const CRITERIA = [
 
 function getRecommendation(score: number) {
   if (score >= 85) return { text: '✅ Strong Hire — meets DFW standards across the board', color: '#22C55E' };
-  if (score >= 65) return { text: '⚠️ Conditional Hire — address gaps before proceeding', color: '#F5E642′ };
-  return { text: '❌ Do Not Hire — too many unverified criteria', color: '#EF4444′ };
+  if (score >= 65) return { text: '⚠️ Conditional Hire — address gaps before proceeding', color: '#F5E642' };
+  return { text: '❌ Do Not Hire — too many unverified criteria', color: '#EF4444' };
 }
 
 export default function DFWContractorVettingScore() {
@@ -29,7 +29,7 @@ export default function DFWContractorVettingScore() {
     <div style={{ background: '#0A1628', minHeight: '100vh', color: '#E8EDF5', fontFamily: 'system-ui, sans-serif', padding: '40px 20px' }}>
       <div style={{ maxWidth: 760, margin: '0 auto' }}>
         <div style={{ color: '#F5E642', fontSize: 13, fontWeight: 700, letterSpacing: 2, textTransform: 'uppercase', marginBottom: 12 }}>DFW CONTRACTOR VETTING</div>
-        <h1 style={{ fontSize: 34, fontWeight: 800, margin: '0 0 14px' }}>The 8-Point DFW Contractor <span style={{ color: '#F5E642′ }}>Vetting Scorecard</span></h1>
+        <h1 style={{ fontSize: 34, fontWeight: 800, margin: '0 0 14px' }}>The 8-Point DFW Contractor <span style={{ color: '#F5E642' }}>Vetting Scorecard</span></h1>
         <p style={{ color: '#8FA3BF', fontSize: 15, lineHeight: 1.7, marginBottom: 36 }}>Before you hire any contractor in the Dallas-Fort Worth area, run them through this scorecard. Score each criterion and get an instant hire recommendation.</p>
 
         <div style={{ background: '#111E35', borderRadius: 16, padding: 28, marginBottom: 28 }}>
@@ -44,9 +44,9 @@ export default function DFWContractorVettingScore() {
                 type="range" min={0} max={c.max}
                 value={scores[c.label] || 0}
                 onChange={e => setScores(s => ({ ...s, [c.label]: parseInt(e.target.value) }))}
-                style={{ width: '100%', accentColor: '#F5E642′ }}
+                style={{ width: '100%', accentColor: '#F5E642' }}
               />
-              <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: 11, color: '#4A6280′ }}>
+              <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: 11, color: '#4A6280' }}>
                 <span>0</span><span>{c.max}</span>
               </div>
             </div>

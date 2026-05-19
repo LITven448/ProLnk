@@ -56,7 +56,7 @@ export default function PartnerEventGuide() {
           <h2 style={{ color: '#0A1628', fontSize: 16, fontWeight: 700, marginTop: 0, marginBottom: 16 }}>🗓️ Select Event Type</h2>
           <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
             {events.map(e => (
-              <button key={e.id} onClick={() => setSelected(e.id)} style={{ padding: '12px 16px', borderRadius: 8, border: '2px solid', borderColor: selected === e.id ? '#F5E642′ : '#E5E7EB', background: selected === e.id ? '#FEFCE8' : '#fff', color: '#0A1628', fontWeight: selected === e.id ? 700 : 500, cursor: ’pointer', textAlign: 'left', fontSize: 14 }}>{e.label}</button>
+              <button key={e.id} onClick={() => setSelected(e.id)} style={{ padding: '12px 16px', borderRadius: 8, border: '2px solid', borderColor: selected === e.id ? '#F5E642' : '#E5E7EB', background: selected === e.id ? '#FEFCE8' : '#fff', color: '#0A1628', fontWeight: selected === e.id ? 700 : 500, cursor: 'pointer', textAlign: 'left', fontSize: 14 }}>{e.label}</button>
             ))}
           </div>
         </div>
@@ -80,7 +80,7 @@ export default function PartnerEventGuide() {
           <div style={{ background: '#fff', borderRadius: 12, padding: '18px 20px', border: '1px solid #E5E7EB' }}>
             <div style={{ fontWeight: 700, color: '#0A1628', fontSize: 13, marginBottom: 10 }}>🗣️ Conversation Starters</div>
             {item.starters.map((s, i) => (
-              <div key={i} style={{ padding: '8px 0', borderBottom: i < item.starters.length - 1 ? '1px solid #F3F4F6′ : ’none', color: '#374151', fontSize: 14 }}>"{s}"</div>
+              <div key={i} style={{ padding: '8px 0', borderBottom: i < item.starters.length - 1 ? '1px solid #F3F4F6' : 'none', color: '#374151', fontSize: 14 }}>"{s}"</div>
             ))}
           </div>
 

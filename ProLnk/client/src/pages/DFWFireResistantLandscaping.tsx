@@ -54,7 +54,7 @@ export default function DFWFireResistantLandscaping() {
           {plants.map(p => (
             <div key={p.name} style={{ display: 'flex', gap: '1rem', padding: '0.4rem 0', borderBottom: '1px solid #1A2F4F' }}>
               <div style={{ color: '#F5E642', minWidth: 200 }}>{p.name}</div>
-              <div style={{ color: '#9BACC8′ }}>{p.why}</div>
+              <div style={{ color: '#9BACC8' }}>{p.why}</div>
             </div>
           ))}
         </div>
@@ -72,7 +72,7 @@ export default function DFWFireResistantLandscaping() {
             {riskLevels.map(r => <option key={r} value={r}>{r}</option>)}
           </select>
           <button onClick={analyze} style={{ background: '#F5E642', color: '#0A1628', border: 'none', padding: '0.7rem 2rem', borderRadius: 8, fontWeight: 700, cursor: 'pointer' }}>Generate Landscape Plan</button>
-          {result && <div style={{ marginTop: '1rem', background: '#162035', borderRadius: 8, padding: '1rem', color: '#CBD5E8', lineHeight: 1.7, borderLeft: '3px solid #F5E642′ }}>{result}</div>}
+          {result && <div style={{ marginTop: '1rem', background: '#162035', borderRadius: 8, padding: '1rem', color: '#CBD5E8', lineHeight: 1.7, borderLeft: '3px solid #F5E642' }}>{result}</div>}
         </div>
 
         <p style={{ color: '#6B7FA3', fontSize: '0.8rem', textAlign: 'center' }}>

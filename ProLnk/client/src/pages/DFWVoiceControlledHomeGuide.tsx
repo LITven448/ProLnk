@@ -3,7 +3,7 @@ import { useState } from 'react';
 const ecosystems = [
   { id: 'alexa', label: 'Amazon Alexa', commands: [
     { cmd: '"Alexa, what\’s the temp outside?"', benefit: 'Check DFW heat index before opening up the house or turning off AC' },
-    { cmd: '"Alexa, set the thermostat to 74″', benefit: 'Instant HVAC adjustment without walking to the panel' },
+    { cmd: '"Alexa, set the thermostat to 74"', benefit: 'Instant HVAC adjustment without walking to the panel' },
     { cmd: '"Alexa, turn off all downstairs lights"', benefit: 'Energy savings during DFW peak rate hours (3–7pm)' },
     { cmd: '"Alexa, lock the front door"', benefit: 'Security check when leaving for weekend travel' },
     { cmd: '"Alexa, run the sprinklers for 10 minutes"', benefit: 'Precise lawn care during DFW watering restrictions' },
@@ -57,7 +57,7 @@ export default function DFWVoiceControlledHomeGuide() {
           <p style={{ color: '#94a3b8', fontSize: 14, marginBottom: 20 }}>Select your smart home platform to see the most valuable voice commands for DFW homeownership:</p>
           <div style={{ display: 'flex', gap: 10, marginBottom: 24 }}>
             {ecosystems.map(e => (
-              <button key={e.id} onClick={() => setSelected(e.id)} style={{ flex: 1, padding: '10px 8px', borderRadius: 8, border: '2px solid', borderColor: selected === e.id ? '#F5E642′ : '#1e3a5f', background: selected === e.id ? '#F5E642' : ’transparent', color: selected === e.id ? '#0A1628′ : '#94a3b8', fontWeight: 700, cursor: ’pointer', fontSize: 13 }}>{e.label}</button>
+              <button key={e.id} onClick={() => setSelected(e.id)} style={{ flex: 1, padding: '10px 8px', borderRadius: 8, border: '2px solid', borderColor: selected === e.id ? '#F5E642' : '#1e3a5f', background: selected === e.id ? '#F5E642' : 'transparent', color: selected === e.id ? '#0A1628' : '#94a3b8', fontWeight: 700, cursor: 'pointer', fontSize: 13 }}>{e.label}</button>
             ))}
           </div>
           <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>

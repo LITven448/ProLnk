@@ -24,8 +24,8 @@ export default function DFWShowersystemGuide2026() {
         <h1 style={{ fontSize: '2rem', marginBottom: '0.5rem' }}>Shower System Upgrade Guide for DFW 2026</h1>
         <p style={{ color: '#94a3b8', marginBottom: '2rem' }}>DFW hard water is shower equipments worst enemy. Every upgrade guide below factors in filtration — the step most contractors skip.</p>
 
-        <div style={{ background: '#1e3a5f', borderRadius: '8px', padding: '1rem', marginBottom: '2rem', borderLeft: '4px solid #F5E642′ }}>
-          <strong style={{ color: '#F5E642′ }}>🏜️ DFW Hard Water Warning:</strong>
+        <div style={{ background: '#1e3a5f', borderRadius: '8px', padding: '1rem', marginBottom: '2rem', borderLeft: '4px solid #F5E642' }}>
+          <strong style={{ color: '#F5E642' }}>🏜️ DFW Hard Water Warning:</strong>
           <span style={{ color: '#bfdbfe' }}> Dallas water averages 250–350 mg/L hardness — among the hardest in Texas. Thermostatic valves, rain heads, and body sprays all require filtration to avoid $1,000+ replacement costs every 3–4 years.</span>
         </div>
 
@@ -41,21 +41,21 @@ export default function DFWShowersystemGuide2026() {
             </select>
             <select value={budget} onChange={e=>setBudget(e.target.value)} style={{ background: '#0A1628', color: '#fff', border: '1px solid #334155', borderRadius: '6px', padding: '0.6rem' }}>
               <option value="">Budget range...</option>
-              <option value="500″>Under $1,500</option>
-              <option value="2000″>$1,500–$3,000</option>
-              <option value="5000″>$3,000+</option>
+              <option value="500">Under $1,500</option>
+              <option value="2000">$1,500–$3,000</option>
+              <option value="5000">$3,000+</option>
             </select>
           </div>
           <button onClick={getGuide} style={{ background: '#F5E642', color: '#0A1628', border: 'none', borderRadius: '6px', padding: '0.7rem 1.5rem', fontWeight: 700, cursor: 'pointer' }}>Get My Upgrade Guide</button>
-          {result && <div style={{ marginTop: '1rem', background: '#0A1628', borderRadius: '6px', padding: '1rem', color: '#e2e8f0′ }}>{result}</div>}
+          {result && <div style={{ marginTop: '1rem', background: '#0A1628', borderRadius: '6px', padding: '1rem', color: '#e2e8f0' }}>{result}</div>}
         </div>
 
         <div style={{ background: '#1e293b', borderRadius: '10px', padding: '1.5rem' }}>
           <h3 style={{ color: '#F5E642', marginBottom: '1rem' }}>💡 DFW Shower Pro Tips</h3>
           {['Install a shower filter before any premium valve — saves $800+ in valve replacements','Thermostatic valves maintain temperature during DFW city pressure swings','Body sprays need 3/4-inch supply — most DFW homes have 1/2-inch to shower','Steam showers require sealed glass doors — not just a curtain'].map((s,i)=>(
             <div key={i} style={{ display: 'flex', gap: '0.7rem', marginBottom: '0.5rem' }}>
-              <span style={{ color: '#F5E642′ }}>✓</span>
-              <span style={{ color: '#cbd5e1′ }}>{s}</span>
+              <span style={{ color: '#F5E642' }}>✓</span>
+              <span style={{ color: '#cbd5e1' }}>{s}</span>
             </div>
           ))}
         </div>

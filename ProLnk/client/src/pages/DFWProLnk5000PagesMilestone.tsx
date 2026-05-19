@@ -24,7 +24,7 @@ export default function DFWProLnk5000PagesMilestone() {
           <h2 style={{ color: '#F5E642', fontSize: '1.1rem', marginBottom: '1rem' }}>📚 What's Been Built</h2>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0.75rem' }}>
             {[['Foundation', '400+ pages', '🏠'], ['HVAC', '350+ pages', '🌡️'], ['Roofing', '300+ pages', '⛈️'], ['Plumbing', '280+ pages', '💧'], ['Electrical', '250+ pages', '⚡'], ['City Guides', '200+ pages', '📍'], ['Trade Directories', '180+ pages', '🔧'], ['Seasonal Guides', '500+ pages', '📅']].map(([topic, count, icon]) => (
-              <div key={topic} style={{ background: '#0A1628', borderRadius: 8, padding: '0.75rem', borderLeft: '3px solid #F5E642′ }}>
+              <div key={topic} style={{ background: '#0A1628', borderRadius: 8, padding: '0.75rem', borderLeft: '3px solid #F5E642' }}>
                 <div style={{ fontSize: '1.1rem' }}>{icon} <span style={{ fontWeight: 700 }}>{topic}</span></div>
                 <div style={{ color: '#F5E642', fontWeight: 800, fontSize: '1rem', marginTop: '0.25rem' }}>{count}</div>
               </div>
@@ -34,7 +34,7 @@ export default function DFWProLnk5000PagesMilestone() {
 
         <div style={{ background: '#111E35', borderRadius: 12, padding: '1.5rem', marginBottom: '1.5rem' }}>
           <h2 style={{ color: '#F5E642', fontSize: '1.1rem', marginBottom: '0.75rem' }}>🎯 Why DFW Depth Matters</h2>
-          <ul style={{ margin: 0, paddingLeft: '1.2rem', lineHeight: 2, color: '#C5CAD8′ }}>
+          <ul style={{ margin: 0, paddingLeft: '1.2rem', lineHeight: 2, color: '#C5CAD8' }}>
             <li>DFW has unique soil, climate, and code requirements — generic advice fails here</li>
             <li>Each page is built specifically for DFW conditions, zip codes, and seasonal patterns</li>
             <li>Homeowners get hyper-local answers, not national generics</li>
@@ -47,7 +47,7 @@ export default function DFWProLnk5000PagesMilestone() {
           <h2 style={{ color: '#F5E642', fontSize: '1.1rem', marginBottom: '1rem' }}>🗺️ Your Situation → Best Entry Point</h2>
           <div style={{ display: 'flex', flexDirection: 'column', gap: '0.6rem', marginBottom: '1rem' }}>
             {situations.map(s => (
-              <button key={s.id} onClick={() => setSelected(s.id)} style={{ background: selected === s.id ? '#F5E642′ : '#0A1628', color: selected === s.id ? '#0A1628' : '#E8EAF0', border: '1px solid #F5E642', borderRadius: 8, padding: '0.75rem 1rem', textAlign: ’left', cursor: 'pointer', fontWeight: 600, fontSize: '0.9rem' }}>{s.label}</button>
+              <button key={s.id} onClick={() => setSelected(s.id)} style={{ background: selected === s.id ? '#F5E642' : '#0A1628', color: selected === s.id ? '#0A1628' : '#E8EAF0', border: '1px solid #F5E642', borderRadius: 8, padding: '0.75rem 1rem', textAlign: 'left', cursor: 'pointer', fontWeight: 600, fontSize: '0.9rem' }}>{s.label}</button>
             ))}
           </div>
           {result && <div style={{ background: '#0A1628', borderRadius: 8, padding: '1rem', borderLeft: '4px solid #F5E642', color: '#E8EAF0', lineHeight: 1.7 }}>{result.entry}</div>}
@@ -55,7 +55,7 @@ export default function DFWProLnk5000PagesMilestone() {
 
         <div style={{ background: '#111E35', borderRadius: 12, padding: '1.5rem', marginBottom: '1.5rem' }}>
           <h2 style={{ color: '#F5E642', fontSize: '1.1rem', marginBottom: '0.75rem' }}>🚀 What's Still Being Built</h2>
-          <ul style={{ margin: 0, paddingLeft: '1.2rem', lineHeight: 2, color: '#C5CAD8′ }}>
+          <ul style={{ margin: 0, paddingLeft: '1.2rem', lineHeight: 2, color: '#C5CAD8' }}>
             <li>DFW neighborhood-level guides (Frisco, McKinney, Southlake, Plano deep dives)</li>
             <li>Interactive cost calculators for every major trade</li>
             <li>Pro reviews and reputation profiles by service area</li>

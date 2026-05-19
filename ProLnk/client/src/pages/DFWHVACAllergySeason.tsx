@@ -87,7 +87,7 @@ export default function DFWHVACAllergySeason() {
           <h2 style={{ color: '#F5E642', marginBottom: '1rem', fontSize: '1rem', fontWeight: 600 }}>🗓️ Select Allergy Season</h2>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))', gap: '0.75rem' }}>
             {allergySeasons.map((s, i) => (
-              <button key={i} onClick={() => setSelected(i)} style={{ backgroundColor: selected === i ? '#F5E642′ : '#1A2E4A', color: selected === i ? '#0A1628' : '#E8EDF2', border: ’none', borderRadius: '8px', padding: '0.75rem 1rem', cursor: 'pointer', fontWeight: 600, fontSize: '0.85rem', textAlign: 'left', transition: 'all 0.2s' }}>
+              <button key={i} onClick={() => setSelected(i)} style={{ backgroundColor: selected === i ? '#F5E642' : '#1A2E4A', color: selected === i ? '#0A1628' : '#E8EDF2', border: 'none', borderRadius: '8px', padding: '0.75rem 1rem', cursor: 'pointer', fontWeight: 600, fontSize: '0.85rem', textAlign: 'left', transition: 'all 0.2s' }}>
                 <div>{s.name}</div>
                 <div style={{ fontSize: '0.75rem', opacity: 0.75, marginTop: '0.2rem' }}>{s.months}</div>
               </button>
@@ -95,7 +95,7 @@ export default function DFWHVACAllergySeason() {
           </div>
         </div>
 
-        <div style={{ backgroundColor: '#1A2E4A', borderRadius: '12px', padding: '1.75rem', marginBottom: '1.5rem', border: '1px solid #F5E642′ }}>
+        <div style={{ backgroundColor: '#1A2E4A', borderRadius: '12px', padding: '1.75rem', marginBottom: '1.5rem', border: '1px solid #F5E642' }}>
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '1rem', flexWrap: 'wrap', gap: '0.5rem' }}>
             <div>
               <h2 style={{ color: '#F5E642', fontSize: '1.4rem', fontWeight: 700, marginBottom: '0.25rem' }}>{season.name}</h2>
@@ -104,7 +104,7 @@ export default function DFWHVACAllergySeason() {
             <span style={{ backgroundColor: severityColor[season.severity], color: '#fff', borderRadius: '6px', padding: '0.3rem 0.75rem', fontWeight: 700, fontSize: '0.85rem' }}>{season.severity}</span>
           </div>
           <div style={{ backgroundColor: '#0A1628', borderRadius: '8px', padding: '0.75rem 1rem', marginBottom: '1rem', fontSize: '0.9rem' }}>
-            <span style={{ color: '#94A3B8′ }}>Primary allergen: </span><span style={{ color: '#F5E642', fontWeight: 600 }}>{season.allergen}</span>
+            <span style={{ color: '#94A3B8' }}>Primary allergen: </span><span style={{ color: '#F5E642', fontWeight: 600 }}>{season.allergen}</span>
           </div>
           <h3 style={{ color: '#E8EDF2', fontSize: '1rem', fontWeight: 600, marginBottom: '0.75rem' }}>HVAC Actions to Take</h3>
           <ul style={{ margin: 0, padding: 0, listStyle: 'none', marginBottom: '1rem' }}>

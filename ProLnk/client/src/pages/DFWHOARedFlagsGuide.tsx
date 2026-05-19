@@ -63,10 +63,10 @@ export default function DFWHOARedFlagsGuide() {
         <div style={{ display: 'grid', gap: 10, marginBottom: 28 }}>
           {findings.map(f => (
             <button key={f.id} onClick={() => toggle(f.id)}
-              style={{ background: selected.includes(f.id) ? '#0A1628′ : '#FFF', border: `2px solid ${selected.includes(f.id) ? '#F5E642' : '#E2E8F0'}`, borderRadius: 8, padding: '12px 16px', color: selected.includes(f.id) ? '#F5E642' : '#334155', cursor: ’pointer', textAlign: 'left' }}>
+              style={{ background: selected.includes(f.id) ? '#0A1628' : '#FFF', border: `2px solid ${selected.includes(f.id) ? '#F5E642' : '#E2E8F0'}`, borderRadius: 8, padding: '12px 16px', color: selected.includes(f.id) ? '#F5E642' : '#334155', cursor: 'pointer', textAlign: 'left' }}>
               <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
                 <span style={{ fontSize: 13, flex: 1 }}>{f.label}</span>
-                <span style={{ fontSize: 11, background: f.weight >= 5 ? '#FEE2E2′ : f.weight >= 3 ? '#FEF9C3' : '#F0FDF4', color: f.weight >= 5 ? '#DC2626' : f.weight >= 3 ? '#92400E' : '#15803D', padding: '2px 8px', borderRadius: 10, marginLeft: 12, whiteSpace: ’nowrap' }}>
+                <span style={{ fontSize: 11, background: f.weight >= 5 ? '#FEE2E2' : f.weight >= 3 ? '#FEF9C3' : '#F0FDF4', color: f.weight >= 5 ? '#DC2626' : f.weight >= 3 ? '#92400E' : '#15803D', padding: '2px 8px', borderRadius: 10, marginLeft: 12, whiteSpace: 'nowrap' }}>
                   Weight {f.weight}
                 </span>
               </div>
@@ -89,7 +89,7 @@ export default function DFWHOARedFlagsGuide() {
                   <div style={{ fontSize: 13, fontWeight: 700, color: '#92400E', marginBottom: 10 }}>📄 Additional Documents to Request:</div>
                   {result.additionalDocs.map((doc, i) => (
                     <div key={i} style={{ display: 'flex', gap: 8, marginBottom: 6 }}>
-                      <span style={{ color: '#CA8A04′ }}>→</span>
+                      <span style={{ color: '#CA8A04' }}>→</span>
                       <span style={{ fontSize: 13, color: '#78350F' }}>{doc}</span>
                     </div>
                   ))}
@@ -110,7 +110,7 @@ export default function DFWHOARedFlagsGuide() {
               {docs.map((doc, i) => (
                 <div key={i} style={{ display: 'flex', gap: 10, marginBottom: 10, alignItems: 'flex-start' }}>
                   <span style={{ background: '#0A1628', color: '#F5E642', fontSize: 11, padding: '2px 7px', borderRadius: 10, minWidth: 24, textAlign: 'center' }}>{i + 1}</span>
-                  <span style={{ fontSize: 13, color: '#334155′ }}>{doc}</span>
+                  <span style={{ fontSize: 13, color: '#334155' }}>{doc}</span>
                 </div>
               ))}
             </div>

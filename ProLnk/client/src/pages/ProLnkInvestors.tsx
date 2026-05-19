@@ -5,14 +5,14 @@ const traction = [
   { icon: '👷', label: 'Pros Enrolled', value: '500+' },
   { icon: '💰', label: 'Projected Match Value', value: '$2.1M' },
   { icon: '🏙️', label: 'Markets Targeted', value: '3 DFW Cities' },
-  { icon: '⭐', label: 'Avg Pro Rating (Beta)', value: '4.8 / 5′ },
+  { icon: '⭐', label: 'Avg Pro Rating (Beta)', value: '4.8 / 5' },
   { icon: '⚡', label: 'Avg Match Time', value: '< 4 Hours' },
 ];
 
 const useOfFunds = [
   { label: 'Product & Engineering', pct: 55, color: '#2563eb' },
   { label: 'Market Validation & GTM', pct: 25, color: '#7c3aed' },
-  { label: 'Legal & Compliance', pct: 10, color: '#065f46′ },
+  { label: 'Legal & Compliance', pct: 10, color: '#065f46' },
   { label: 'Operations & Team', pct: 10, color: '#c2410c' },
 ];
 
@@ -27,7 +27,7 @@ export default function ProLnkInvestors() {
   const [tab, setTab] = useState<'preseed' | 'seriesA'>('preseed');
 
   return (
-    <div style={{ background: '#0f172a', minHeight: '100vh', fontFamily: 'system-ui, sans-serif', color: '#f1f5f9′ }}>
+    <div style={{ background: '#0f172a', minHeight: '100vh', fontFamily: 'system-ui, sans-serif', color: '#f1f5f9' }}>
       <div style={{ maxWidth: 960, margin: '0 auto', padding: '60px 24px' }}>
 
         <div style={{ textAlign: 'center', marginBottom: 64 }}>
@@ -70,8 +70,8 @@ export default function ProLnkInvestors() {
               {useOfFunds.map(f => (
                 <div key={f.label} style={{ marginBottom: 20 }}>
                   <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: 8 }}>
-                    <span style={{ fontSize: 15, color: '#cbd5e1′ }}>{f.label}</span>
-                    <span style={{ fontSize: 15, fontWeight: 700, color: '#f1f5f9′ }}>{f.pct}%</span>
+                    <span style={{ fontSize: 15, color: '#cbd5e1' }}>{f.label}</span>
+                    <span style={{ fontSize: 15, fontWeight: 700, color: '#f1f5f9' }}>{f.pct}%</span>
                   </div>
                   <div style={{ background: '#0f172a', borderRadius: 6, height: 10, overflow: 'hidden' }}>
                     <div style={{ width: f.pct + '%', height: '100%', background: f.color, borderRadius: 6 }} />
@@ -111,7 +111,7 @@ export default function ProLnkInvestors() {
             <div key={t.label} style={{ background: '#1e293b', borderRadius: 14, padding: 24, textAlign: 'center' }}>
               <div style={{ fontSize: 30, marginBottom: 8 }}>{t.icon}</div>
               <div style={{ fontSize: 26, fontWeight: 800, color: '#60a5fa', marginBottom: 4 }}>{t.value}</div>
-              <div style={{ fontSize: 13, color: '#94a3b8′ }}>{t.label}</div>
+              <div style={{ fontSize: 13, color: '#94a3b8' }}>{t.label}</div>
             </div>
           ))}
         </div>

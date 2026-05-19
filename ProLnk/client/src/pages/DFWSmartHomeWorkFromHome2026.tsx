@@ -5,9 +5,9 @@ const needs = [
     label: 'Basic WFH Setup',
     icon: '💻',
     priorities: [
-      { item: 'Wi-Fi Mesh System (Eero Pro 6E / Orbi)', reason: 'DFW large homes kill Wi-Fi dead zones', cost: '$300–600′ },
-      { item: 'UPS Battery Backup', reason: 'ERCOT grid events can crash unprotected computers', cost: '$80–200′ },
-      { item: 'Smart Lighting (Philips Hue)', reason: 'Color-tuned light improves video call quality and focus', cost: '$150–300′ },
+      { item: 'Wi-Fi Mesh System (Eero Pro 6E / Orbi)', reason: 'DFW large homes kill Wi-Fi dead zones', cost: '$300–600' },
+      { item: 'UPS Battery Backup', reason: 'ERCOT grid events can crash unprotected computers', cost: '$80–200' },
+      { item: 'Smart Lighting (Philips Hue)', reason: 'Color-tuned light improves video call quality and focus', cost: '$150–300' },
     ],
   },
   {
@@ -15,7 +15,7 @@ const needs = [
     icon: '🎥',
     priorities: [
       { item: 'Wired Ethernet to Desk', reason: 'Eliminates Wi-Fi drops during video calls', cost: '$50–200 install' },
-      { item: 'Smart Dimmer + Bias Lighting', reason: 'Controls background appearance on camera', cost: '$100–200′ },
+      { item: 'Smart Dimmer + Bias Lighting', reason: 'Controls background appearance on camera', cost: '$100–200' },
       { item: 'GFCI Protected Office Circuit', reason: 'Protects expensive AV gear from surges', cost: '$200–400 install' },
     ],
   },
@@ -25,7 +25,7 @@ const needs = [
     priorities: [
       { item: 'Dedicated 20A Circuit', reason: 'Prevents tripping from high-wattage gear', cost: '$300–600 install' },
       { item: 'Whole-Home UPS / Generator', reason: 'ERCOT outages can last hours — keep working', cost: '$500–5K' },
-      { item: 'Smart Thermostat (Ecobee/Nest)', reason: 'Auto-adjust office temp during work hours, save on WFH energy bill', cost: '$200–300′ },
+      { item: 'Smart Thermostat (Ecobee/Nest)', reason: 'Auto-adjust office temp during work hours, save on WFH energy bill', cost: '$200–300' },
     ],
   },
 ];
@@ -59,7 +59,7 @@ export default function DFWSmartHomeWorkFromHome2026() {
             {needs.map((n, i) => (
               <button key={n.label} onClick={() => setIdx(i)}
                 style={{ padding: '8px 14px', borderRadius: 8, border: 'none', cursor: 'pointer', fontSize: 12, flex: 1,
-                  background: idx === i ? '#F5E642′ : '#1e3a5f', color: idx === i ? '#0A1628' : '#fff', fontWeight: idx === i ? 700 : 400 }}>
+                  background: idx === i ? '#F5E642' : '#1e3a5f', color: idx === i ? '#0A1628' : '#fff', fontWeight: idx === i ? 700 : 400 }}>
                 {n.icon} {n.label}
               </button>
             ))}

@@ -33,7 +33,7 @@ export default function DFWSummerReadinessScore2026() {
     (questions.reduce((s, q) => s + (answers[q.id] === true ? q.weight : 0), 0) / totalWeight) * 100
   );
 
-  const scoreColor = score >= 80 ? '#22c55e' : score >= 55 ? '#F5E642′ : '#ef4444';
+  const scoreColor = score >= 80 ? '#22c55e' : score >= 55 ? '#F5E642' : '#ef4444';
   const label = score >= 80 ? 'Summer Ready ☀️' : score >= 55 ? 'Needs Attention ⚠️' : 'At Risk 🔴';
 
   const priorities = questions

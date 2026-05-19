@@ -22,7 +22,7 @@ export default function ProLnkForMilitary() {
           </div>
           <h1 style={{ fontSize: 36, fontWeight: 800, color: '#f1f5f9', lineHeight: 1.15, marginBottom: 16 }}>
             ProLnk for Military Families<br />
-            <span style={{ color: '#38bdf8′ }}>VA Benefits + Home Income Opportunities</span>
+            <span style={{ color: '#38bdf8' }}>VA Benefits + Home Income Opportunities</span>
           </h1>
           <p style={{ color: '#94a3b8', fontSize: 16, maxWidth: 600, margin: 0 }}>
             DFW has 400,000+ veterans and proximity to Fort Hood (3 hrs), Naval Air Station Fort Worth JRB, and major veteran communities across the suburbs.
@@ -71,7 +71,7 @@ export default function ProLnkForMilitary() {
               { point: 'Strong candidate for Charter or Founding membership before waitlist fills', icon: '🏅' },
               { point: 'Military discipline translates directly to lead follow-up and job completion rates', icon: '📈' },
             ].map(p => (
-              <div key={p.point} style={{ display: 'flex', gap: 12, alignItems: 'flex-start', padding: '10px 0', borderBottom: '1px solid #f1f5f9′ }}>
+              <div key={p.point} style={{ display: 'flex', gap: 12, alignItems: 'flex-start', padding: '10px 0', borderBottom: '1px solid #f1f5f9' }}>
                 <span style={{ fontSize: 18 }}>{p.icon}</span>
                 <span style={{ color: '#334155', fontSize: 15 }}>{p.point}</span>
               </div>
@@ -106,7 +106,7 @@ export default function ProLnkForMilitary() {
 
         <div style={{ background: 'linear-gradient(135deg, #1e3a5f, #1d4ed8)', borderRadius: 16, padding: 32, textAlign: 'center' }}>
           <div style={{ fontSize: 28 }}>🎖️</div>
-          <h3 style={{ fontSize: 22, fontWeight: 700, margin: '12px 0 8px', color: '#f1f5f9′ }}>Apply for Charter Membership</h3>
+          <h3 style={{ fontSize: 22, fontWeight: 700, margin: '12px 0 8px', color: '#f1f5f9' }}>Apply for Charter Membership</h3>
           <p style={{ color: '#93c5fd', marginBottom: 8 }}>Charter membership closes at 25 partners. Veterans are strong candidates — apply before the waitlist fills.</p>
           <p style={{ color: '#64748b', fontSize: 13, marginBottom: 24 }}>Lock in $149/mo rate before Charter closes and launch date pricing applies.</p>
           <a href="/apply" style={{ display: 'inline-block', background: '#fff', color: '#1d4ed8', padding: '14px 32px', borderRadius: 8, fontWeight: 700, fontSize: 16, textDecoration: 'none' }}>

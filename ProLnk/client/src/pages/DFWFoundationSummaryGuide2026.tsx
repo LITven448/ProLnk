@@ -1,9 +1,9 @@
 import { useState } from 'react';
 
 const concerns = [
-  { id: 'cracks', label: '🔍 Seeing Cracks', actions: ['Photograph every crack with a ruler for scale — document today', 'Hairline cracks in drywall near doors: likely seasonal movement, monitor 90 days', 'Cracks wider than 1/4″ or horizontal: call a structural engineer, not a repair company', 'Check if doors stick — sticking doors = differential settlement signal', 'Do not pour any concrete work until foundation is assessed' ] },
-  { id: 'water', label: '💧 Drainage Issues', actions: ['Grade soil away from foundation — minimum 6″ drop in 10 ft', 'Extend downspouts 6 ft minimum from foundation', 'French drain may be needed if water pools within 10 ft of slab', 'Avoid over-mulching against foundation — traps moisture against concrete', 'Check gutters twice a year — clogged = water dumps at foundation' ] },
-  { id: 'summer', label: '☀️ Summer Drought', actions: ['Water foundation within 18″ of slab daily during July–August', 'Soaker hose on timer is the most consistent solution', 'Check soil moisture 6″ deep — should feel like a wrung sponge', 'Trees within 30 ft: roots pull moisture, may need supplemental watering', 'Do not let soil pull away from foundation edge — fill gaps immediately' ] },
+  { id: 'cracks', label: '🔍 Seeing Cracks', actions: ['Photograph every crack with a ruler for scale — document today', 'Hairline cracks in drywall near doors: likely seasonal movement, monitor 90 days', 'Cracks wider than 1/4" or horizontal: call a structural engineer, not a repair company', 'Check if doors stick — sticking doors = differential settlement signal', 'Do not pour any concrete work until foundation is assessed' ] },
+  { id: 'water', label: '💧 Drainage Issues', actions: ['Grade soil away from foundation — minimum 6" drop in 10 ft', 'Extend downspouts 6 ft minimum from foundation', 'French drain may be needed if water pools within 10 ft of slab', 'Avoid over-mulching against foundation — traps moisture against concrete', 'Check gutters twice a year — clogged = water dumps at foundation' ] },
+  { id: 'summer', label: '☀️ Summer Drought', actions: ['Water foundation within 18" of slab daily during July–August', 'Soaker hose on timer is the most consistent solution', 'Check soil moisture 6" deep — should feel like a wrung sponge', 'Trees within 30 ft: roots pull moisture, may need supplemental watering', 'Do not let soil pull away from foundation edge — fill gaps immediately' ] },
   { id: 'buying', label: '🏠 Buying a Home', actions: ['Always hire a separate structural engineer — not just a general inspector', 'Get repair history from seller — ask specifically about piers and leveling', 'Ask for a transferable warranty if foundation work was done', 'Inspect doors and windows for sticking before and after rain', 'Check Home Health Vault for documented foundation history' ] },
 ];
 
@@ -46,7 +46,7 @@ export default function DFWFoundationSummaryGuide2026() {
           <div style={{ display: 'flex', gap: 10, marginBottom: 24, flexWrap: 'wrap' }}>
             {concerns.map(c => (
               <button key={c.id} onClick={() => setSelected(c.id === selected ? null : c.id)}
-                style={{ background: selected === c.id ? '#F5E642′ : '#111D35', color: selected === c.id ? '#0A1628' : '#E8F0FF', border: '1px solid #1E3A5F', borderRadius: 8, padding: '10px 18px', cursor: ’pointer', fontWeight: 600, fontSize: 14 }}>
+                style={{ background: selected === c.id ? '#F5E642' : '#111D35', color: selected === c.id ? '#0A1628' : '#E8F0FF', border: '1px solid #1E3A5F', borderRadius: 8, padding: '10px 18px', cursor: 'pointer', fontWeight: 600, fontSize: 14 }}>
                 {c.label}
               </button>
             ))}

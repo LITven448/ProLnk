@@ -22,10 +22,10 @@ const SUBMARKET_ORDER = [
 ];
 
 function densityColor(count: number): string {
-  if (count === 0) return "bg-red-100 border-red-300 text-red-700″;
-  if (count === 1) return "bg-amber-100 border-amber-300 text-amber-700″;
-  if (count <= 3) return "bg-green-100 border-green-300 text-green-700″;
-  return "bg-blue-100 border-blue-300 text-blue-700″;
+  if (count === 0) return "bg-red-100 border-red-300 text-red-700";
+  if (count === 1) return "bg-amber-100 border-amber-300 text-amber-700";
+  if (count <= 3) return "bg-green-100 border-green-300 text-green-700";
+  return "bg-blue-100 border-blue-300 text-blue-700";
 }
 
 function densityLabel(count: number): string {
@@ -99,69 +99,69 @@ export default function AdminCoverageMap() {
 
   return (
     <AdminLayout>
-      <div className="p-6 space-y-6″>
+      <div className="p-6 space-y-6">
         {/* Header */}
-        <div className="flex items-center justify-between flex-wrap gap-4″>
+        <div className="flex items-center justify-between flex-wrap gap-4">
           <div>
-            <h1 className="text-2xl font-bold text-gray-900″>DFW Coverage Map</h1>
-            <p className="text-sm text-gray-500 mt-0.5″>Partner service area density by zip code across the DFW metro</p>
+            <h1 className="text-2xl font-bold text-gray-900">DFW Coverage Map</h1>
+            <p className="text-sm text-gray-500 mt-0.5">Partner service area density by zip code across the DFW metro</p>
           </div>
-          <Button variant="outline" size="sm" onClick={() => refetch()} disabled={isFetching} className="gap-2″>
+          <Button variant="outline" size="sm" onClick={() => refetch()} disabled={isFetching} className="gap-2">
             <RefreshCw size={14} className={isFetching ? "animate-spin" : ""} />
             Refresh
           </Button>
         </div>
 
         {/* Summary Stats */}
-        <div className="grid grid-cols-2 md:grid-cols-5 gap-3″>
+        <div className="grid grid-cols-2 md:grid-cols-5 gap-3">
           <Card>
-            <CardContent className="p-4″>
-              <div className="flex items-center gap-2 mb-1″>
-                <TrendingUp size={14} className="text-blue-500″ />
+            <CardContent className="p-4">
+              <div className="flex items-center gap-2 mb-1">
+                <TrendingUp size={14} className="text-blue-500" />
                 <p className="text-xs text-gray-500 font-medium">Coverage</p>
               </div>
-              <p className="text-xl font-bold text-gray-900″>{coveragePct}%</p>
-              <p className="text-xs text-gray-400″>{totalCovered}/{totalDFW} zips</p>
+              <p className="text-xl font-bold text-gray-900">{coveragePct}%</p>
+              <p className="text-xs text-gray-400">{totalCovered}/{totalDFW} zips</p>
             </CardContent>
           </Card>
-          <Card className="border-red-200″>
-            <CardContent className="p-4″>
-              <div className="flex items-center gap-2 mb-1″>
-                <AlertTriangle size={14} className="text-red-500″ />
+          <Card className="border-red-200">
+            <CardContent className="p-4">
+              <div className="flex items-center gap-2 mb-1">
+                <AlertTriangle size={14} className="text-red-500" />
                 <p className="text-xs text-gray-500 font-medium">Gaps</p>
               </div>
-              <p className="text-xl font-bold text-red-600″>{gapCount}</p>
-              <p className="text-xs text-gray-400″>no partners</p>
+              <p className="text-xl font-bold text-red-600">{gapCount}</p>
+              <p className="text-xs text-gray-400">no partners</p>
             </CardContent>
           </Card>
-          <Card className="border-amber-200″>
-            <CardContent className="p-4″>
-              <div className="flex items-center gap-2 mb-1″>
-                <MapPin size={14} className="text-amber-500″ />
+          <Card className="border-amber-200">
+            <CardContent className="p-4">
+              <div className="flex items-center gap-2 mb-1">
+                <MapPin size={14} className="text-amber-500" />
                 <p className="text-xs text-gray-500 font-medium">Thin</p>
               </div>
-              <p className="text-xl font-bold text-amber-600″>{thinCount}</p>
-              <p className="text-xs text-gray-400″>1 partner</p>
+              <p className="text-xl font-bold text-amber-600">{thinCount}</p>
+              <p className="text-xs text-gray-400">1 partner</p>
             </CardContent>
           </Card>
-          <Card className="border-green-200″>
-            <CardContent className="p-4″>
-              <div className="flex items-center gap-2 mb-1″>
-                <CheckCircle size={14} className="text-green-500″ />
+          <Card className="border-green-200">
+            <CardContent className="p-4">
+              <div className="flex items-center gap-2 mb-1">
+                <CheckCircle size={14} className="text-green-500" />
                 <p className="text-xs text-gray-500 font-medium">Good</p>
               </div>
-              <p className="text-xl font-bold text-green-600″>{goodCount}</p>
-              <p className="text-xs text-gray-400″>2–3 partners</p>
+              <p className="text-xl font-bold text-green-600">{goodCount}</p>
+              <p className="text-xs text-gray-400">2–3 partners</p>
             </CardContent>
           </Card>
-          <Card className="border-blue-200″>
-            <CardContent className="p-4″>
-              <div className="flex items-center gap-2 mb-1″>
-                <Users size={14} className="text-blue-500″ />
+          <Card className="border-blue-200">
+            <CardContent className="p-4">
+              <div className="flex items-center gap-2 mb-1">
+                <Users size={14} className="text-blue-500" />
                 <p className="text-xs text-gray-500 font-medium">Dense</p>
               </div>
-              <p className="text-xl font-bold text-blue-600″>{denseCount}</p>
-              <p className="text-xs text-gray-400″>4+ partners</p>
+              <p className="text-xl font-bold text-blue-600">{denseCount}</p>
+              <p className="text-xs text-gray-400">4+ partners</p>
             </CardContent>
           </Card>
         </div>
@@ -169,7 +169,7 @@ export default function AdminCoverageMap() {
         {/* Filters */}
         <div className="flex flex-wrap gap-3 items-center">
           <div className="relative flex-1 min-w-[200px] max-w-xs">
-            <Search size={14} className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400″ />
+            <Search size={14} className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400" />
             <Input
               placeholder="Search zip or city..."
               value={search}
@@ -191,7 +191,7 @@ export default function AdminCoverageMap() {
             variant={showGapsOnly ? "default" : "outline"}
             size="sm"
             onClick={() => setShowGapsOnly(g => !g)}
-            className="gap-2″
+            className="gap-2"
           >
             <AlertTriangle size={13} />
             Gaps Only
@@ -200,11 +200,11 @@ export default function AdminCoverageMap() {
 
         {/* Coverage Grid by Submarket */}
         {isLoading ? (
-          <div className="flex items-center justify-center py-16″>
-            <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-blue-500″ />
+          <div className="flex items-center justify-center py-16">
+            <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-blue-500" />
           </div>
         ) : (
-          <div className="space-y-4″>
+          <div className="space-y-4">
             {filteredSubmarkets.map(submarket => {
               const zips = filterZips(bySubmarket[submarket] ?? []);
               if (zips.length === 0) return null;
@@ -224,19 +224,19 @@ export default function AdminCoverageMap() {
                     }}
                   >
                     <div className="flex items-center justify-between">
-                      <div className="flex items-center gap-3″>
-                        <CardTitle className="text-sm font-semibold text-gray-900″>{submarket}</CardTitle>
-                        <Badge className="text-xs bg-gray-100 text-gray-600″>{zips.length} zips</Badge>
+                      <div className="flex items-center gap-3">
+                        <CardTitle className="text-sm font-semibold text-gray-900">{submarket}</CardTitle>
+                        <Badge className="text-xs bg-gray-100 text-gray-600">{zips.length} zips</Badge>
                         {smGaps > 0 && (
-                          <Badge className="text-xs bg-red-100 text-red-600″>{smGaps} gaps</Badge>
+                          <Badge className="text-xs bg-red-100 text-red-600">{smGaps} gaps</Badge>
                         )}
                       </div>
-                      {isExpanded ? <ChevronUp size={16} className="text-gray-400″ /> : <ChevronDown size={16} className="text-gray-400" />}
+                      {isExpanded ? <ChevronUp size={16} className="text-gray-400" /> : <ChevronDown size={16} className="text-gray-400" />}
                     </div>
                   </CardHeader>
                   {isExpanded && (
-                    <CardContent className="px-4 pb-4″>
-                      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-2″>
+                    <CardContent className="px-4 pb-4">
+                      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-2">
                         {zips.map(z => (
                           <div
                             key={z.zip}
@@ -245,10 +245,10 @@ export default function AdminCoverageMap() {
                           >
                             <div className="font-bold text-sm">{z.zip}</div>
                             <div className="text-[10px] opacity-75 truncate">{z.city || "—"}</div>
-                            <div className="flex items-center justify-between mt-1″>
+                            <div className="flex items-center justify-between mt-1">
                               <span className="font-semibold">{densityLabel(z.count)}</span>
                               {z.count > 0 && (
-                                <span className="flex items-center gap-0.5″>
+                                <span className="flex items-center gap-0.5">
                                   <Users size={9} />
                                   {z.count}
                                 </span>
@@ -273,9 +273,9 @@ export default function AdminCoverageMap() {
 
         {/* Top Gap Opportunities */}
         {gaps.length > 0 && !showGapsOnly && (
-          <Card className="border-red-200″>
-            <CardHeader className="pb-3″>
-              <CardTitle className="text-base flex items-center gap-2 text-red-700″>
+          <Card className="border-red-200">
+            <CardHeader className="pb-3">
+              <CardTitle className="text-base flex items-center gap-2 text-red-700">
                 <AlertTriangle size={16} />
                 Top Coverage Gaps (High-Value Zip Codes)
               </CardTitle>
@@ -284,25 +284,25 @@ export default function AdminCoverageMap() {
               <div className="overflow-x-auto">
                 <table className="w-full text-sm">
                   <thead>
-                    <tr className="border-b border-gray-100″>
+                    <tr className="border-b border-gray-100">
                       <th className="text-left py-2 px-3 text-xs font-semibold text-gray-500 uppercase">Zip</th>
                       <th className="text-left py-2 px-3 text-xs font-semibold text-gray-500 uppercase">City</th>
                       <th className="text-left py-2 px-3 text-xs font-semibold text-gray-500 uppercase">Submarket</th>
                       <th className="text-right py-2 px-3 text-xs font-semibold text-gray-500 uppercase">Median Home Value</th>
                     </tr>
                   </thead>
-                  <tbody className="divide-y divide-gray-50″>
+                  <tbody className="divide-y divide-gray-50">
                     {gaps
                       .sort((a, b) => (b.medianHomeValue ?? 0) - (a.medianHomeValue ?? 0))
                       .slice(0, 15)
                       .map(g => (
                         <tr key={g.zip} className="hover:bg-red-50 transition-colors">
-                          <td className="py-2.5 px-3 font-mono font-bold text-red-700″>{g.zip}</td>
-                          <td className="py-2.5 px-3 text-gray-700″>{g.city}</td>
-                          <td className="py-2.5 px-3″>
-                            <Badge className="text-xs bg-gray-100 text-gray-600″>{g.submarket}</Badge>
+                          <td className="py-2.5 px-3 font-mono font-bold text-red-700">{g.zip}</td>
+                          <td className="py-2.5 px-3 text-gray-700">{g.city}</td>
+                          <td className="py-2.5 px-3">
+                            <Badge className="text-xs bg-gray-100 text-gray-600">{g.submarket}</Badge>
                           </td>
-                          <td className="py-2.5 px-3 text-right font-semibold text-gray-900″>
+                          <td className="py-2.5 px-3 text-right font-semibold text-gray-900">
                             ${((g.medianHomeValue ?? 0) / 1000).toFixed(0)}k
                           </td>
                         </tr>

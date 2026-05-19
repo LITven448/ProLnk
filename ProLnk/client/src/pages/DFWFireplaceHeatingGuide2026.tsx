@@ -42,8 +42,8 @@ export default function DFWFireplaceHeatingGuide2026() {
       <div style={{ maxWidth: 800, margin: '0 auto' }}>
         <div style={{ textAlign: 'center', marginBottom: '2rem' }}>
           <div style={{ fontSize: '3rem' }}>🔥</div>
-          <h1 style={{ color: '#F5E642', fontSize: '2rem', margin: '0.5rem 0′ }}>DFW Fireplace as Heat Source Guide 2026</h1>
-          <p style={{ color: '#a0aec0′ }}>Not all fireplaces heat your home — here’s the real story</p>
+          <h1 style={{ color: '#F5E642', fontSize: '2rem', margin: '0.5rem 0' }}>DFW Fireplace as Heat Source Guide 2026</h1>
+          <p style={{ color: '#a0aec0' }}>Not all fireplaces heat your home — here's the real story</p>
         </div>
 
         <div style={{ background: '#112240', borderRadius: 12, padding: '1.5rem', marginBottom: '1.5rem', border: '1px solid #1e3a5f', overflowX: 'auto' }}>
@@ -59,10 +59,10 @@ export default function DFWFireplaceHeatingGuide2026() {
             <tbody>
               {types.map((t, i) => (
                 <tr key={i} style={{ borderBottom: '1px solid #1e3a5f' }}>
-                  <td style={{ padding: '0.5rem', color: '#e2e8f0′ }}>{t.icon} {t.name}</td>
+                  <td style={{ padding: '0.5rem', color: '#e2e8f0' }}>{t.icon} {t.name}</td>
                   <td style={{ padding: '0.5rem', color: '#F5E642', fontWeight: 700 }}>{t.eff}</td>
-                  <td style={{ padding: '0.5rem', color: '#a0aec0′ }}>{t.heat}</td>
-                  <td style={{ padding: '0.5rem', color: '#a0aec0′ }}>{t.note}</td>
+                  <td style={{ padding: '0.5rem', color: '#a0aec0' }}>{t.heat}</td>
+                  <td style={{ padding: '0.5rem', color: '#a0aec0' }}>{t.note}</td>
                 </tr>
               ))}
             </tbody>
@@ -82,7 +82,7 @@ export default function DFWFireplaceHeatingGuide2026() {
           ))}
         </div>
 
-        <div style={{ background: '#112240', borderRadius: 12, padding: '1.5rem', border: '1px solid #F5E642′ }}>
+        <div style={{ background: '#112240', borderRadius: 12, padding: '1.5rem', border: '1px solid #F5E642' }}>
           <h2 style={{ color: '#F5E642', marginTop: 0 }}>🔥 Fireplace Efficiency Tool</h2>
           <div style={{ marginBottom: '1rem' }}>
             <label style={{ color: '#a0aec0', fontSize: '0.875rem' }}>Your Fireplace Type</label>

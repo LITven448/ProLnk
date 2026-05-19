@@ -47,7 +47,7 @@ export default function DFWMortgageGuide2026() {
           <h2 style={{ color: '#F5E642', fontSize: 18, marginTop: 0 }}>📊 2026 DFW Average Rates</h2>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2,1fr)', gap: 12 }}>
             {['6.2–6.8% 30yr Fixed','5.8–6.4% 15yr Fixed','6.0–6.6% FHA','5.9–6.3% VA'].map((r,i) => (
-              <div key={i} style={{ background: '#0A1628', borderRadius: 8, padding: '12px 16px', fontSize: 14, color: '#cbd5e1′ }}>📈 {r}</div>
+              <div key={i} style={{ background: '#0A1628', borderRadius: 8, padding: '12px 16px', fontSize: 14, color: '#cbd5e1' }}>📈 {r}</div>
             ))}
           </div>
         </div>
@@ -56,18 +56,18 @@ export default function DFWMortgageGuide2026() {
           <h2 style={{ color: '#F5E642', fontSize: 18, marginTop: 0 }}>💡 Payment Estimator</h2>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2,1fr)', gap: 12, marginBottom: 20 }}>
             {loanTypes.map(lt => (
-              <button key={lt.id} onClick={() => setLoanType(lt.id)} style={{ background: loanType === lt.id ? '#F5E642′ : '#0A1628', color: loanType === lt.id ? '#0A1628' : '#fff', border: ’none', borderRadius: 8, padding: 14, cursor: 'pointer', textAlign: 'left' }}>
+              <button key={lt.id} onClick={() => setLoanType(lt.id)} style={{ background: loanType === lt.id ? '#F5E642' : '#0A1628', color: loanType === lt.id ? '#0A1628' : '#fff', border: 'none', borderRadius: 8, padding: 14, cursor: 'pointer', textAlign: 'left' }}>
                 <div style={{ fontSize: 20 }}>{lt.icon}</div>
                 <div style={{ fontWeight: 700, marginTop: 4 }}>{lt.label}</div>
                 <div style={{ fontSize: 12, opacity: 0.8 }}>Min {lt.minDown} — {lt.note}</div>
               </button>
             ))}
           </div>
-          <label style={{ display: 'block', marginBottom: 8, color: '#94a3b8′ }}>Down Payment: <strong style={{ color: '#F5E642' }}>{effectiveDown}%</strong></label>
-          <input type="range" min={minDown[loanType]} max={30} value={Math.max(downPct, minDown[loanType])} onChange={e => setDownPct(Number(e.target.value))} style={{ width: '100%', accentColor: '#F5E642′ }} />
+          <label style={{ display: 'block', marginBottom: 8, color: '#94a3b8' }}>Down Payment: <strong style={{ color: '#F5E642' }}>{effectiveDown}%</strong></label>
+          <input type="range" min={minDown[loanType]} max={30} value={Math.max(downPct, minDown[loanType])} onChange={e => setDownPct(Number(e.target.value))} style={{ width: '100%', accentColor: '#F5E642' }} />
           <div style={{ background: '#0A1628', borderRadius: 10, padding: 20, marginTop: 16, textAlign: 'center' }}>
-            <div style={{ fontSize: 13, color: '#94a3b8′ }}>Est. Monthly Payment on $385K Home</div>
-            <div style={{ fontSize: 40, fontWeight: 800, color: '#F5E642′ }}>${total.toLocaleString()}</div>
+            <div style={{ fontSize: 13, color: '#94a3b8' }}>Est. Monthly Payment on $385K Home</div>
+            <div style={{ fontSize: 40, fontWeight: 800, color: '#F5E642' }}>${total.toLocaleString()}</div>
             <div style={{ fontSize: 12, color: '#64748b' }}>P&I ${Math.round(monthly).toLocaleString()} {pmi > 0 ? `+ PMI $${pmi}` : '(no PMI)'} at {rates[loanType]}%</div>
           </div>
         </div>
@@ -76,7 +76,7 @@ export default function DFWMortgageGuide2026() {
           <h2 style={{ color: '#F5E642', fontSize: 18, marginTop: 0 }}>📋 DTI Requirements</h2>
           {[{t:'Conventional',v:'Max 45% DTI (some lenders 50%)'},{t:'FHA',v:'Max 57% DTI with compensating factors'},{t:'VA',v:'No hard cap — residual income focus'},{t:'USDA',v:'Max 41% back-end DTI'}].map((item,i) => (
             <div key={i} style={{ display: 'flex', justifyContent: 'space-between', padding: '10px 0', borderBottom: i<3?'1px solid #0A1628':'none' }}>
-              <span style={{ color: '#cbd5e1′ }}>{item.t}</span><span style={{ color: '#F5E642', fontSize: 13 }}>{item.v}</span>
+              <span style={{ color: '#cbd5e1' }}>{item.t}</span><span style={{ color: '#F5E642', fontSize: 13 }}>{item.v}</span>
             </div>
           ))}
         </div>

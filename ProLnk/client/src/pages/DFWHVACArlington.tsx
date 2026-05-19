@@ -44,7 +44,7 @@ export default function DFWHVACArlington() {
         <div style={{ backgroundColor: '#1E2D45', borderRadius: 12, padding: 24, marginBottom: 32 }}>
           <h2 style={{ color: '#F5E642', fontSize: 20, marginBottom: 16 }}>Arlington's HVAC Reality: Extreme Demand All Year</h2>
           <p style={{ color: '#CBD5E1', lineHeight: 1.7, margin: '0 0 16px' }}>
-            As DFW's third-largest city, Arlington’s HVAC market is among the most competitive in Texas — and
+            As DFW's third-largest city, Arlington's HVAC market is among the most competitive in Texas — and
             the most stressed. Summer temperatures routinely exceed 100°F for weeks at a time, pushing AC systems
             to run 14+ hours daily from June through September. A single failed capacitor in July means
             same-day emergency calls at premium rates.
@@ -60,7 +60,7 @@ export default function DFWHVACArlington() {
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))', gap: 16, marginBottom: 32 }}>
           {arlingtonStats.map(s => (
             <div key={s.label} style={{ backgroundColor: '#1E2D45', borderRadius: 10, padding: 20, textAlign: 'center' }}>
-              <div style={{ fontSize: 28, fontWeight: 800, color: '#F5E642′ }}>{s.value}</div>
+              <div style={{ fontSize: 28, fontWeight: 800, color: '#F5E642' }}>{s.value}</div>
               <div style={{ fontSize: 13, color: '#94A3B8', marginTop: 6 }}>{s.label}</div>
             </div>
           ))}
@@ -79,8 +79,8 @@ export default function DFWHVACArlington() {
                 onClick={() => setSelectedMonth(month)}
                 style={{
                   padding: '10px 4px',
-                  backgroundColor: selectedMonth === month ? '#F5E642′ : '#0A1628',
-                  color: selectedMonth === month ? '#0A1628′ : '#CBD5E1',
+                  backgroundColor: selectedMonth === month ? '#F5E642' : '#0A1628',
+                  color: selectedMonth === month ? '#0A1628' : '#CBD5E1',
                   border: '1px solid #334155',
                   borderRadius: 8,
                   cursor: 'pointer',

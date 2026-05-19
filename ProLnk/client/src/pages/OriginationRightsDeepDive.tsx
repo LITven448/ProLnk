@@ -20,7 +20,7 @@ export default function OriginationRightsDeepDive() {
 
   return (
     <div style={{ background: '#f8fafc', minHeight: '100vh', color: '#1e293b', fontFamily: 'system-ui, sans-serif', padding: '0 0 80px' }}>
-      <div style={{ maxWidth: 860, margin: '0 auto', padding: '60px 24px 0′ }}>
+      <div style={{ maxWidth: 860, margin: '0 auto', padding: '60px 24px 0' }}>
         <div style={{ textAlign: 'center', marginBottom: 52 }}>
           <div style={{ fontSize: 36, marginBottom: 16 }}>🏛️</div>
           <h1 style={{ fontSize: 'clamp(24px,4vw,40px)', fontWeight: 800, color: '#0f172a', margin: '0 0 16px', lineHeight: 1.15 }}>
@@ -46,7 +46,7 @@ export default function OriginationRightsDeepDive() {
               </div>
             ))}
           </div>
-          <div style={{ background: '#eff6ff', borderRadius: 12, padding: 20, borderLeft: '4px solid #3b82f6′ }}>
+          <div style={{ background: '#eff6ff', borderRadius: 12, padding: 20, borderLeft: '4px solid #3b82f6' }}>
             <div style={{ color: '#1e40af', fontWeight: 700, fontSize: 14, marginBottom: 8 }}>Example — Charter Tier:</div>
             <div style={{ color: '#1e293b', fontSize: 14, lineHeight: 1.8 }}>
               You originate a home in 2026. That home has 2 HVAC jobs/year ($800 each in ProLnk commission).<br />
@@ -76,7 +76,7 @@ export default function OriginationRightsDeepDive() {
           </p>
         </div>
 
-        <div style={{ background: '#fef2f2', borderRadius: 16, padding: 28, marginBottom: 40, border: '2px solid #fca5a5′ }}>
+        <div style={{ background: '#fef2f2', borderRadius: 16, padding: 28, marginBottom: 40, border: '2px solid #fca5a5' }}>
           <h3 style={{ color: '#dc2626', fontWeight: 800, fontSize: 16, margin: '0 0 8px' }}>⏳ Scarcity — This Stream Closes</h3>
           <p style={{ color: '#7f1d1d', fontSize: 15, margin: 0, lineHeight: 1.7 }}>
             Only Charter (25 spots) and Founding (100 spots) tiers earn origination rights. After founding closes at 500 total applications, this income stream is permanently unavailable to new members.
@@ -93,7 +93,7 @@ export default function OriginationRightsDeepDive() {
                   key={t}
                   onClick={() => setTier(t)}
                   style={{
-                    background: tier === t ? '#1d4ed8′ : '#f1f5f9',
+                    background: tier === t ? '#1d4ed8' : '#f1f5f9',
                     color: tier === t ? '#fff' : '#475569',
                     border: 'none', borderRadius: 8, padding: '8px 20px',
                     fontWeight: 700, fontSize: 14, cursor: 'pointer',
@@ -104,7 +104,7 @@ export default function OriginationRightsDeepDive() {
               ))}
             </div>
           </div>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 20, margin: '24px 0′ }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 20, margin: '24px 0' }}>
             {[
               { label: 'Homes Originated', value: homes, setter: setHomes, min: 1, max: 1000, step: 5 },
               { label: 'Avg Jobs/Year per Home', value: jobsPerYear, setter: setJobsPerYear, min: 1, max: 12, step: 1 },

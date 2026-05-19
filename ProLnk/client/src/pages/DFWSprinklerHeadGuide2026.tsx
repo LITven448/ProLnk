@@ -77,7 +77,7 @@ export default function DFWSprinklerHeadGuide2026() {
           <p style={{ color: '#94a3b8', fontSize: 15 }}>Choose the right irrigation head for DFW water restrictions, clay soil, and Bermuda grass demands.</p>
         </div>
 
-        <div style={{ background: '#0f2040', borderRadius: 12, padding: 20, marginBottom: 20, borderLeft: '4px solid #F5E642′ }}>
+        <div style={{ background: '#0f2040', borderRadius: 12, padding: 20, marginBottom: 20, borderLeft: '4px solid #F5E642' }}>
           <span style={{ color: '#F5E642', fontWeight: 700 }}>⚠️ DFW Water Restrictions:</span>
           <span style={{ color: '#94a3b8', fontSize: 14, marginLeft: 8 }}>Most DFW cities allow 2 irrigation days/week. Wrong head types cause overwatering violations. Check your city's current stage.</span>
         </div>
@@ -88,9 +88,9 @@ export default function DFWSprinklerHeadGuide2026() {
             {zones.map(z => (
               <button key={z.id} onClick={() => toggle(z.id)}
                 style={{ padding: '8px 16px', borderRadius: 20, border: '2px solid', cursor: 'pointer', fontSize: 13, fontWeight: 600,
-                  borderColor: selected.includes(z.id) ? '#F5E642′ : '#1e3a5f',
-                  background: selected.includes(z.id) ? '#F5E642′ : '#0A1628',
-                  color: selected.includes(z.id) ? '#0A1628′ : '#94a3b8' }}>
+                  borderColor: selected.includes(z.id) ? '#F5E642' : '#1e3a5f',
+                  background: selected.includes(z.id) ? '#F5E642' : '#0A1628',
+                  color: selected.includes(z.id) ? '#0A1628' : '#94a3b8' }}>
                 {z.icon} {z.label}
               </button>
             ))}
@@ -101,7 +101,7 @@ export default function DFWSprinklerHeadGuide2026() {
           {recommended.map(h => (
             <div key={h.id} onClick={() => setActiveCard(activeCard === h.id ? null : h.id)}
               style={{ background: '#0f2040', borderRadius: 12, padding: 20, cursor: 'pointer', border: '2px solid',
-                borderColor: activeCard === h.id ? '#F5E642′ : '#1e3a5f' }}>
+                borderColor: activeCard === h.id ? '#F5E642' : '#1e3a5f' }}>
               <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
                 <div>
                   <span style={{ fontSize: 24, marginRight: 10 }}>{h.icon}</span>

@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-type SeerTier = '14′ | '16' | '18' | '20+';
+type SeerTier = '14' | '16' | '18' | '20+';
 type SizeTier = 'small' | 'medium' | 'large';
 
 const EQUIPMENT_COST: Record<SeerTier, Record<SizeTier, number>> = {
@@ -57,9 +57,9 @@ export default function DFWHVACBudgetCalculator2026() {
             <span style={{ color: '#F5E642', fontSize: 13 }}>⚡ Target SEER2 Rating</span>
             <select value={seerTier} onChange={e => setSeerTier(e.target.value as SeerTier)}
               style={{ display: 'block', width: '100%', marginTop: 6, padding: '10px 14px', borderRadius: 8, border: '1px solid #1e3a5f', background: '#0A1628', color: '#fff', fontSize: 15 }}>
-              <option value="14″>14 SEER2 (Minimum Code)</option>
-              <option value="16″>16 SEER2 (Standard Efficient)</option>
-              <option value="18″>18 SEER2 (High Efficiency)</option>
+              <option value="14">14 SEER2 (Minimum Code)</option>
+              <option value="16">16 SEER2 (Standard Efficient)</option>
+              <option value="18">18 SEER2 (High Efficiency)</option>
               <option value="20+">20+ SEER2 (Premium / Tax Credit Max)</option>
             </select>
           </label>
@@ -93,7 +93,7 @@ export default function DFWHVACBudgetCalculator2026() {
             ].map(([label, value]) => (
               <div key={label as string} style={{ display: 'flex', justifyContent: 'space-between', padding: '9px 0', borderBottom: '1px solid #1e3a5f' }}>
                 <span style={{ color: '#94a3b8', fontSize: 14 }}>{label}</span>
-                <span style={{ color: label?.toString().includes('Net') || label?.toString().includes('Subtotal') ? '#F5E642′ : '#fff', fontWeight: 600, fontSize: 14 }}>{value}</span>
+                <span style={{ color: label?.toString().includes('Net') || label?.toString().includes('Subtotal') ? '#F5E642' : '#fff', fontWeight: 600, fontSize: 14 }}>{value}</span>
               </div>
             ))}
             <p style={{ color: '#64748b', fontSize: 12, marginTop: 16 }}>All figures are DFW market estimates. Actual quotes may vary. Tax credit subject to IRS eligibility.</p>

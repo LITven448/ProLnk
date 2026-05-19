@@ -122,7 +122,7 @@ export default function DFWHomeInspectionChecklist() {
           return (
             <div key={room.name} style={{ background: '#112240', borderRadius: 12, padding: 20, marginBottom: 16 }}>
               <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 14 }}>
-                <h2 style={{ margin: 0, fontSize: 16, fontWeight: 700, color: '#F5E642′ }}>
+                <h2 style={{ margin: 0, fontSize: 16, fontWeight: 700, color: '#F5E642' }}>
                   {room.emoji} {room.name}
                 </h2>
                 <span style={{ fontSize: 12, color: '#8899aa' }}>{roomChecked}/{room.items.length}</span>
@@ -137,12 +137,12 @@ export default function DFWHomeInspectionChecklist() {
                   >
                     <div style={{
                       width: 20, height: 20, borderRadius: 4, border: `2px solid ${checked[key] ? '#F5E642' : '#334466'}`,
-                      background: checked[key] ? '#F5E642′ : ’transparent', flexShrink: 0, marginTop: 2,
+                      background: checked[key] ? '#F5E642' : 'transparent', flexShrink: 0, marginTop: 2,
                       display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 12, color: '#0A1628', fontWeight: 900,
                     }}>
                       {checked[key] ? '✓' : ''}
                     </div>
-                    <span style={{ fontSize: 14, color: checked[key] ? '#556677′ : '#cdd9e5', textDecoration: checked[key] ? ’line-through' : 'none', lineHeight: 1.5 }}>
+                    <span style={{ fontSize: 14, color: checked[key] ? '#556677' : '#cdd9e5', textDecoration: checked[key] ? 'line-through' : 'none', lineHeight: 1.5 }}>
                       {item}
                     </span>
                   </div>
@@ -166,7 +166,7 @@ export default function DFWHomeInspectionChecklist() {
               <p style={{ color: '#4ade80', fontWeight: 700 }}>All items checked — great job!</p>
             ) : (
               findings.map((f, i) => (
-                <div key={i} style={{ padding: '8px 0', borderBottom: '1px solid #1a3050', fontSize: 13, color: '#cdd9e5′ }}>
+                <div key={i} style={{ padding: '8px 0', borderBottom: '1px solid #1a3050', fontSize: 13, color: '#cdd9e5' }}>
                   <span style={{ color: '#F5E642', fontWeight: 600 }}>{f.room}: </span>{f.item}
                 </div>
               ))

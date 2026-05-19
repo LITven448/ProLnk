@@ -89,7 +89,7 @@ export default function CondensationMoistureGuide() {
                 onClick={() => setSelected(loc.id)}
                 style={{
                   background: selected === loc.id ? '#1e3a5f' : '#1a1d27',
-                  border: selected === loc.id ? '1px solid #3b82f6′ : '1px solid #2a2d3a',
+                  border: selected === loc.id ? '1px solid #3b82f6' : '1px solid #2a2d3a',
                   borderRadius: 10,
                   padding: '14px 18px',
                   color: selected === loc.id ? '#93c5fd' : '#d1d5db',
@@ -149,7 +149,7 @@ export default function CondensationMoistureGuide() {
         </section>
 
         <section>
-          <div style={{ background: 'linear-gradient(135deg, #1e3a5f, #0f2544)', borderRadius: 16, padding: 36, textAlign: 'center', border: '1px solid #3b82f6′ }}>
+          <div style={{ background: 'linear-gradient(135deg, #1e3a5f, #0f2544)', borderRadius: 16, padding: 36, textAlign: 'center', border: '1px solid #3b82f6' }}>
             <span style={{ fontSize: 36 }}>🤖</span>
             <h2 style={{ fontSize: 24, fontWeight: 700, color: '#ffffff', margin: '16px 0 12px' }}>TrustyPro AI Detects Moisture Staining</h2>
             <p style={{ color: '#93c5fd', lineHeight: 1.7, marginBottom: 24, maxWidth: 540, margin: '0 auto 24px' }}>

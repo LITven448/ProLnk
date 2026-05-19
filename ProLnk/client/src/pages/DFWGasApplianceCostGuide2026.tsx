@@ -53,7 +53,7 @@ export default function DFWGasApplianceCostGuide2026() {
           <p style={{ color: '#94a3b8', fontSize: 15 }}>Which fuel source is actually cheaper for DFW homeowners?</p>
         </div>
 
-        <div style={{ background: '#1e2d45', borderRadius: 10, padding: 16, marginBottom: 32, borderLeft: '4px solid #F5E642′ }}>
+        <div style={{ background: '#1e2d45', borderRadius: 10, padding: 16, marginBottom: 32, borderLeft: '4px solid #F5E642' }}>
           <p style={{ color: '#cbd5e1', margin: 0, fontSize: 14 }}>
             📊 Calculated using Oncor average residential rate ($0.12/kWh) and Atmos Energy DFW rate ($1.10/therm). Updated Q1 2026.
           </p>
@@ -63,13 +63,13 @@ export default function DFWGasApplianceCostGuide2026() {
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12, marginBottom: 32 }}>
           {comparisons.map(c => (
             <button key={c.id} onClick={() => setSelected(c.id === selected ? null : c.id)}
-              style={{ background: selected === c.id ? '#F5E642′ : '#1e2d45', border: '2px solid',
-                borderColor: selected === c.id ? '#F5E642′ : '#2d3f5a', borderRadius: 10,
+              style={{ background: selected === c.id ? '#F5E642' : '#1e2d45', border: '2px solid',
+                borderColor: selected === c.id ? '#F5E642' : '#2d3f5a', borderRadius: 10,
                 padding: 16, cursor: 'pointer', textAlign: 'left',
-                color: selected === c.id ? '#0A1628′ : '#fff' }}>
+                color: selected === c.id ? '#0A1628' : '#fff' }}>
               <div style={{ fontSize: 28 }}>{c.icon}</div>
               <div style={{ fontWeight: 700, fontSize: 14 }}>{c.appliance}</div>
-              <div style={{ fontSize: 12, marginTop: 4, color: selected === c.id ? '#0A1628′ : '#22c55e' }}>Winner: {c.winner === ’electric' ? 'Electric ⚡' : 'Gas 🔥'}</div>
+              <div style={{ fontSize: 12, marginTop: 4, color: selected === c.id ? '#0A1628' : '#22c55e' }}>Winner: {c.winner === 'electric' ? 'Electric ⚡' : 'Gas 🔥'}</div>
             </button>
           ))}
         </div>
@@ -78,14 +78,14 @@ export default function DFWGasApplianceCostGuide2026() {
           <div style={{ background: '#1e2d45', borderRadius: 12, padding: 24, marginBottom: 32 }}>
             <h3 style={{ color: '#F5E642', marginTop: 0 }}>{item.icon} {item.appliance}</h3>
             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16, marginBottom: 16 }}>
-              <div style={{ background: '#0A1628', borderRadius: 10, padding: 16, borderTop: '3px solid #ef4444′ }}>
+              <div style={{ background: '#0A1628', borderRadius: 10, padding: 16, borderTop: '3px solid #ef4444' }}>
                 <div style={{ color: '#ef4444', fontWeight: 700, marginBottom: 8 }}>🔥 {item.gas.label}</div>
                 <div style={{ fontSize: 28, fontWeight: 800, color: '#fff' }}>{item.gas.annual}</div>
                 <div style={{ color: '#64748b', fontSize: 12 }}>per year · {item.gas.unit}</div>
               </div>
               <div style={{ background: '#0A1628', borderRadius: 10, padding: 16, borderTop: '3px solid #22c55e' }}>
                 <div style={{ color: '#22c55e', fontWeight: 700, marginBottom: 8 }}>⚡ {item.electric.label}</div>
-                <div style={{ fontSize: 28, fontWeight: 800, color: '#F5E642′ }}>{item.electric.annual}</div>
+                <div style={{ fontSize: 28, fontWeight: 800, color: '#F5E642' }}>{item.electric.annual}</div>
                 <div style={{ color: '#64748b', fontSize: 12 }}>per year · {item.electric.unit}</div>
               </div>
             </div>

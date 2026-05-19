@@ -84,7 +84,7 @@ export default function DFWProLnkHVACComplete() {
 
         <div style={{ background: '#0d2137', borderRadius: 10, padding: '14px 16px', marginBottom: 28, border: '1px solid #1e3a5f' }}>
           <p style={{ color: '#94a3b8', fontSize: 13, margin: 0, lineHeight: 1.7 }}>
-            ProLnk covers every stage of the DFW HVAC journey. Select your current situation to get your personalized resource guide — and see how ProLnk connects you with the right contractor and the <span style={{ color: '#F5E642′ }}>Home Health Vault</span>.
+            ProLnk covers every stage of the DFW HVAC journey. Select your current situation to get your personalized resource guide — and see how ProLnk connects you with the right contractor and the <span style={{ color: '#F5E642' }}>Home Health Vault</span>.
           </p>
         </div>
 
@@ -93,23 +93,23 @@ export default function DFWProLnkHVACComplete() {
           {stages.map((s, i) => (
             <button key={i} onClick={() => setStageIdx(i)}
               style={{ padding: '14px 16px', borderRadius: 10, border: '2px solid', cursor: 'pointer', textAlign: 'left',
-                borderColor: stageIdx === i ? '#F5E642′ : '#1e3a5f',
-                background: stageIdx === i ? '#F5E64222′ : '#0d2137',
-                color: stageIdx === i ? '#F5E642′ : '#94a3b8', fontSize: 15, fontWeight: stageIdx === i ? 700 : 400 }}>
+                borderColor: stageIdx === i ? '#F5E642' : '#1e3a5f',
+                background: stageIdx === i ? '#F5E64222' : '#0d2137',
+                color: stageIdx === i ? '#F5E642' : '#94a3b8', fontSize: 15, fontWeight: stageIdx === i ? 700 : 400 }}>
               {s.label}
             </button>
           ))}
         </div>
 
         {stage && (
-          <div style={{ background: '#0d2137', borderRadius: 14, padding: 24, border: '2px solid #F5E642′ }}>
+          <div style={{ background: '#0d2137', borderRadius: 14, padding: 24, border: '2px solid #F5E642' }}>
             <div style={{ color: '#F5E642', fontSize: 17, fontWeight: 700, marginBottom: 16 }}>📖 {stage.headline}</div>
 
             <div style={{ marginBottom: 20 }}>
               <div style={{ color: '#94a3b8', fontSize: 12, marginBottom: 10, textTransform: 'uppercase', letterSpacing: 1 }}>Top Resources From the 3,100+ Page Library</div>
               {stage.resources.map((r, i) => (
                 <div key={i} style={{ padding: '10px 12px', background: '#0A1628', borderRadius: 8, marginBottom: 6, color: '#cbd5e1', fontSize: 13, display: 'flex', gap: 8 }}>
-                  <span style={{ color: '#F5E642′ }}>→</span> {r}
+                  <span style={{ color: '#F5E642' }}>→</span> {r}
                 </div>
               ))}
             </div>

@@ -64,7 +64,7 @@ export default function DFWHomeMaintenanceRecordKeeping() {
           <div style={{ fontWeight: 600, marginBottom: '0.75rem' }}>🏠 Select your home's features to see what records to keep:</div>
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5rem' }}>
             {featureOptions.map(f => (
-              <button key={f.key} onClick={() => toggle(f.key)} style={{ padding: '0.5rem 1rem', borderRadius: 8, border: '2px solid', borderColor: selected.includes(f.key) ? '#F5E642′ : '#1e3a5f', background: selected.includes(f.key) ? '#F5E642' : '#0f2040', color: selected.includes(f.key) ? '#0A1628' : '#fff', fontWeight: 600, cursor: ’pointer' }}>
+              <button key={f.key} onClick={() => toggle(f.key)} style={{ padding: '0.5rem 1rem', borderRadius: 8, border: '2px solid', borderColor: selected.includes(f.key) ? '#F5E642' : '#1e3a5f', background: selected.includes(f.key) ? '#F5E642' : '#0f2040', color: selected.includes(f.key) ? '#0A1628' : '#fff', fontWeight: 600, cursor: 'pointer' }}>
                 {f.label}
               </button>
             ))}

@@ -14,10 +14,10 @@ const plants = [
 ];
 
 const costData = [
-  { item: 'Installation (per sq ft)', xeriscape: '$3–6', traditional: '$2–4′ },
-  { item: 'Annual water cost (per sq ft)', xeriscape: '$0.05–0.10', traditional: '$0.40–0.80′ },
-  { item: 'Annual maintenance', xeriscape: '$200–400', traditional: '$800–1,800′ },
-  { item: '5-year total cost (1,000 sq ft)', xeriscape: '$5,250–8,500', traditional: '$22,000–38,000′ },
+  { item: 'Installation (per sq ft)', xeriscape: '$3–6', traditional: '$2–4' },
+  { item: 'Annual water cost (per sq ft)', xeriscape: '$0.05–0.10', traditional: '$0.40–0.80' },
+  { item: 'Annual maintenance', xeriscape: '$200–400', traditional: '$800–1,800' },
+  { item: '5-year total cost (1,000 sq ft)', xeriscape: '$5,250–8,500', traditional: '$22,000–38,000' },
 ];
 
 const stages = [
@@ -51,7 +51,7 @@ export default function DFWXeriscapeGuide() {
           </p>
         </div>
 
-        <div style={{ background: '#1E2D45', borderRadius: 12, padding: 24, marginBottom: 32, borderLeft: '4px solid #F5E642′ }}>
+        <div style={{ background: '#1E2D45', borderRadius: 12, padding: 24, marginBottom: 32, borderLeft: '4px solid #F5E642' }}>
           <h2 style={{ color: '#F5E642', marginBottom: 16, fontSize: 20 }}>⚠️ DFW Drought Reality Check</h2>
           <p style={{ color: '#CBD5E1', lineHeight: 1.7, marginBottom: 12 }}>
             The Dallas-Fort Worth Metroplex sits in one of the most water-stressed regions of Texas. With clay-heavy soils, 
@@ -71,8 +71,8 @@ export default function DFWXeriscapeGuide() {
               onClick={() => setActiveTab(tab)}
               style={{
                 padding: '10px 20px', borderRadius: 8, border: 'none', cursor: 'pointer', fontWeight: 600,
-                background: activeTab === tab ? '#F5E642′ : '#1E2D45',
-                color: activeTab === tab ? '#0A1628′ : '#94A3B8',
+                background: activeTab === tab ? '#F5E642' : '#1E2D45',
+                color: activeTab === tab ? '#0A1628' : '#94A3B8',
                 transition: 'all 0.2s',
               }}
             >
@@ -92,11 +92,11 @@ export default function DFWXeriscapeGuide() {
                     <div style={{ fontSize: 13, color: '#64748B' }}>{p.note}</div>
                   </div>
                   <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap' }}>
-                    <span style={{ background: '#1E2D45', padding: '4px 10px', borderRadius: 20, fontSize: 12, color: '#94A3B8′ }}>{p.type}</span>
-                    <span style={{ background: p.water === 'Very Low' ? '#14532D' : '#1C3D2F', padding: '4px 10px', borderRadius: 20, fontSize: 12, color: '#4ADE80′ }}>
+                    <span style={{ background: '#1E2D45', padding: '4px 10px', borderRadius: 20, fontSize: 12, color: '#94A3B8' }}>{p.type}</span>
+                    <span style={{ background: p.water === 'Very Low' ? '#14532D' : '#1C3D2F', padding: '4px 10px', borderRadius: 20, fontSize: 12, color: '#4ADE80' }}>
                       💧 {p.water}
                     </span>
-                    <span style={{ background: '#1E2D45', padding: '4px 10px', borderRadius: 20, fontSize: 12, color: '#F5E642′ }}>🌸 {p.bloom}</span>
+                    <span style={{ background: '#1E2D45', padding: '4px 10px', borderRadius: 20, fontSize: 12, color: '#F5E642' }}>🌸 {p.bloom}</span>
                   </div>
                 </div>
               ))}
@@ -111,15 +111,15 @@ export default function DFWXeriscapeGuide() {
               <table style={{ width: '100%', borderCollapse: 'collapse' }}>
                 <thead>
                   <tr>
-                    <th style={{ textAlign: 'left', padding: '12px 16px', color: '#94A3B8', borderBottom: '2px solid #0A1628′ }}>Cost Item</th>
-                    <th style={{ textAlign: 'right', padding: '12px 16px', color: '#4ADE80', borderBottom: '2px solid #0A1628′ }}>🌵 Xeriscape</th>
-                    <th style={{ textAlign: 'right', padding: '12px 16px', color: '#F87171', borderBottom: '2px solid #0A1628′ }}>🌱 Traditional</th>
+                    <th style={{ textAlign: 'left', padding: '12px 16px', color: '#94A3B8', borderBottom: '2px solid #0A1628' }}>Cost Item</th>
+                    <th style={{ textAlign: 'right', padding: '12px 16px', color: '#4ADE80', borderBottom: '2px solid #0A1628' }}>🌵 Xeriscape</th>
+                    <th style={{ textAlign: 'right', padding: '12px 16px', color: '#F87171', borderBottom: '2px solid #0A1628' }}>🌱 Traditional</th>
                   </tr>
                 </thead>
                 <tbody>
                   {costData.map((row, i) => (
-                    <tr key={i} style={{ borderBottom: '1px solid #0A1628′ }}>
-                      <td style={{ padding: '12px 16px', color: '#CBD5E1′ }}>{row.item}</td>
+                    <tr key={i} style={{ borderBottom: '1px solid #0A1628' }}>
+                      <td style={{ padding: '12px 16px', color: '#CBD5E1' }}>{row.item}</td>
                       <td style={{ padding: '12px 16px', textAlign: 'right', color: '#4ADE80', fontWeight: 600 }}>{row.xeriscape}</td>
                       <td style={{ padding: '12px 16px', textAlign: 'right', color: '#F87171', fontWeight: 600 }}>{row.traditional}</td>
                     </tr>
@@ -138,9 +138,9 @@ export default function DFWXeriscapeGuide() {
                 <div key={i} style={{ background: '#0A1628', borderRadius: 8, padding: 16, display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: 8 }}>
                   <div>
                     <div style={{ fontWeight: 700, color: '#F5E642', marginBottom: 4 }}>{s.stage}</div>
-                    <div style={{ color: '#CBD5E1′ }}>{s.restriction}</div>
+                    <div style={{ color: '#CBD5E1' }}>{s.restriction}</div>
                   </div>
-                  <span style={{ background: '#1E2D45', padding: '6px 14px', borderRadius: 20, fontSize: 13, color: '#94A3B8′ }}>{s.trigger}</span>
+                  <span style={{ background: '#1E2D45', padding: '6px 14px', borderRadius: 20, fontSize: 13, color: '#94A3B8' }}>{s.trigger}</span>
                 </div>
               ))}
             </div>
@@ -158,7 +158,7 @@ export default function DFWXeriscapeGuide() {
               <input
                 type="range" min={500} max={10000} step={100} value={sqft}
                 onChange={e => setSqft(Number(e.target.value))}
-                style={{ width: '100%', accentColor: '#F5E642′ }}
+                style={{ width: '100%', accentColor: '#F5E642' }}
               />
               <div style={{ color: '#F5E642', fontWeight: 700, marginTop: 4 }}>{sqft.toLocaleString()} sq ft</div>
             </div>
@@ -167,7 +167,7 @@ export default function DFWXeriscapeGuide() {
               <input
                 type="range" min={0.003} max={0.015} step={0.001} value={waterCost}
                 onChange={e => setWaterCost(Number(e.target.value))}
-                style={{ width: '100%', accentColor: '#F5E642′ }}
+                style={{ width: '100%', accentColor: '#F5E642' }}
               />
               <div style={{ color: '#F5E642', fontWeight: 700, marginTop: 4 }}>${waterCost.toFixed(3)}/gallon</div>
             </div>
@@ -179,7 +179,7 @@ export default function DFWXeriscapeGuide() {
               { label: '5-Year Savings', value: `$${fiveYearSavings.toFixed(0)}`, unit: '5 years' },
             ].map((stat, i) => (
               <div key={i} style={{ background: '#0A1628', borderRadius: 10, padding: 16, textAlign: 'center' }}>
-                <div style={{ fontSize: 22, fontWeight: 800, color: '#4ADE80′ }}>{stat.value}</div>
+                <div style={{ fontSize: 22, fontWeight: 800, color: '#4ADE80' }}>{stat.value}</div>
                 <div style={{ fontSize: 12, color: '#64748B', marginTop: 4 }}>{stat.unit}</div>
                 <div style={{ fontSize: 13, color: '#94A3B8', marginTop: 2 }}>{stat.label}</div>
               </div>

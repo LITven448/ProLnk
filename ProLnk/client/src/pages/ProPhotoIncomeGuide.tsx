@@ -58,7 +58,7 @@ export default function ProPhotoIncomeGuide() {
               { step: 5, text: 'They request a quote', sub: 'Routed back to you or your network' },
               { step: 6, text: 'When they book → you earn commission', sub: 'On top of what you already made on the first job' },
             ].map((item, i) => (
-              <div key={item.step} style={{ display: 'flex', gap: 20, alignItems: 'flex-start', padding: '20px 0', borderBottom: i < 5 ? '1px solid #E2E8F0′ : ’none' }}>
+              <div key={item.step} style={{ display: 'flex', gap: 20, alignItems: 'flex-start', padding: '20px 0', borderBottom: i < 5 ? '1px solid #E2E8F0' : 'none' }}>
                 <div style={{ minWidth: 44, height: 44, borderRadius: '50%', background: '#1D6FE8', display: 'flex', alignItems: 'center', justifyContent: 'center', fontWeight: 800, fontSize: 18, color: '#FFFFFF' }}>{item.step}</div>
                 <div>
                   <div style={{ fontWeight: 700, color: '#0A1628', fontSize: 16 }}>{item.text}</div>
@@ -78,11 +78,11 @@ export default function ProPhotoIncomeGuide() {
               <div style={{ color: '#94A3B8', fontSize: 14, marginTop: 4 }}>photos generates a lead</div>
             </div>
             <div>
-              <div style={{ fontSize: 36, fontWeight: 800, color: '#4ADE80′ }}>$312</div>
+              <div style={{ fontSize: 36, fontWeight: 800, color: '#4ADE80' }}>$312</div>
               <div style={{ color: '#94A3B8', fontSize: 14, marginTop: 4 }}>avg commission per lead</div>
             </div>
             <div>
-              <div style={{ fontSize: 36, fontWeight: 800, color: '#64B5F6′ }}>∞</div>
+              <div style={{ fontSize: 36, fontWeight: 800, color: '#64B5F6' }}>∞</div>
               <div style={{ color: '#94A3B8', fontSize: 14, marginTop: 4 }}>ROI — photos cost $0</div>
             </div>
           </div>
@@ -122,20 +122,20 @@ export default function ProPhotoIncomeGuide() {
               <div>
                 <label style={{ display: 'block', fontSize: 13, color: '#475569', marginBottom: 6 }}>Jobs per week</label>
                 <input
-                  type="number" min="1″ max="50"
+                  type="number" min="1" max="50"
                   value={jobsPerWeek}
                   onChange={e => setJobsPerWeek(e.target.value)}
-                  placeholder="e.g. 8″
+                  placeholder="e.g. 8"
                   style={{ width: '100%', background: '#F8FAFC', border: '1px solid #CBD5E1', borderRadius: 8, padding: '10px 14px', color: '#0A1628', fontSize: 15, boxSizing: 'border-box' }}
                 />
               </div>
               <div>
                 <label style={{ display: 'block', fontSize: 13, color: '#475569', marginBottom: 6 }}>Photos per job</label>
                 <input
-                  type="number" min="1″ max="30"
+                  type="number" min="1" max="30"
                   value={photosPerJob}
                   onChange={e => setPhotosPerJob(e.target.value)}
-                  placeholder="e.g. 5″
+                  placeholder="e.g. 5"
                   style={{ width: '100%', background: '#F8FAFC', border: '1px solid #CBD5E1', borderRadius: 8, padding: '10px 14px', color: '#0A1628', fontSize: 15, boxSizing: 'border-box' }}
                 />
               </div>

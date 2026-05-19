@@ -35,11 +35,11 @@ export default function DFWElectricHeatStripGuide() {
         <h1 style={{ fontSize: 32, fontWeight: 800, marginBottom: 8 }}>DFW Electric Heat Strip Guide</h1>
         <p style={{ color: '#94a3b8', marginBottom: 32, lineHeight: 1.6 }}>
           Electric heat strips are resistance heaters built into your air handler — essentially a giant toaster inside your duct system.
-          They're found in all-electric DFW homes and as backup heat in heat pump systems. They’re expensive to run but rarely used in DFW’s mild winters.
+          They're found in all-electric DFW homes and as backup heat in heat pump systems. They're expensive to run but rarely used in DFW's mild winters.
         </p>
 
         <div style={{ background: '#0f2035', borderRadius: 12, padding: 24, marginBottom: 24 }}>
-          <h2 style={{ fontSize: 20, fontWeight: 700, marginBottom: 16, color: '#F5E642′ }}>⚡ Heat Strip Basics for DFW</h2>
+          <h2 style={{ fontSize: 20, fontWeight: 700, marginBottom: 16, color: '#F5E642' }}>⚡ Heat Strip Basics for DFW</h2>
           {[
             ['How heat strips work', 'Electric resistance coils heat air directly as it passes through — 100% of electrical input becomes heat. No refrigerant cycle, no moving parts, instant heat. The tradeoff: no efficiency multiplier like a heat pump.'],
             ['kW sizing', 'Typical DFW homes use 10–20 kW of heat strip capacity. Undersized strips mean cold air in rare hard freezes. Oversized strips cycle too fast and wear the system.'],
@@ -54,20 +54,20 @@ export default function DFWElectricHeatStripGuide() {
 
         <div style={{ background: '#0f2035', borderRadius: 12, padding: 24, marginBottom: 24 }}>
           <h2 style={{ fontSize: 20, fontWeight: 700, marginBottom: 16 }}>🔍 Heat Strip Cost Calculator</h2>
-          <label style={{ display: 'block', marginBottom: 6, fontSize: 14, color: '#94a3b8′ }}>System Type</label>
+          <label style={{ display: 'block', marginBottom: 6, fontSize: 14, color: '#94a3b8' }}>System Type</label>
           <div style={{ display: 'grid', gap: 10, marginBottom: 16 }}>
             {[['primary', '🔌 All-Electric (heat strips are primary heat)'], ['backup', '♨️ Heat Pump with Strip Backup']].map(([v, l]) => (
               <button key={v} onClick={() => setSystemType(v)}
-                style={{ background: systemType === v ? '#F5E642′ : '#1a2f4a', color: systemType === v ? '#0A1628' : '#fff', border: ’none', borderRadius: 8, padding: '12px 16px', cursor: 'pointer', textAlign: 'left', fontSize: 14, fontWeight: 600 }}>
+                style={{ background: systemType === v ? '#F5E642' : '#1a2f4a', color: systemType === v ? '#0A1628' : '#fff', border: 'none', borderRadius: 8, padding: '12px 16px', cursor: 'pointer', textAlign: 'left', fontSize: 14, fontWeight: 600 }}>
                 {l}
               </button>
             ))}
           </div>
-          <label style={{ display: 'block', marginBottom: 6, fontSize: 14, color: '#94a3b8′ }}>Heat Strip Size (kW)</label>
-          <input type="number" value={kw} onChange={e => setKw(e.target.value)} placeholder="e.g. 10″
+          <label style={{ display: 'block', marginBottom: 6, fontSize: 14, color: '#94a3b8' }}>Heat Strip Size (kW)</label>
+          <input type="number" value={kw} onChange={e => setKw(e.target.value)} placeholder="e.g. 10"
             style={{ background: '#1a2f4a', border: '1px solid #2a4060', borderRadius: 8, color: '#fff', padding: '10px 14px', width: '100%', marginBottom: 16, fontSize: 15, boxSizing: 'border-box' }} />
-          <label style={{ display: 'block', marginBottom: 6, fontSize: 14, color: '#94a3b8′ }}>Estimated DFW Heating Days Per Year</label>
-          <input type="number" value={coldDays} onChange={e => setColdDays(e.target.value)} placeholder="e.g. 40″
+          <label style={{ display: 'block', marginBottom: 6, fontSize: 14, color: '#94a3b8' }}>Estimated DFW Heating Days Per Year</label>
+          <input type="number" value={coldDays} onChange={e => setColdDays(e.target.value)} placeholder="e.g. 40"
             style={{ background: '#1a2f4a', border: '1px solid #2a4060', borderRadius: 8, color: '#fff', padding: '10px 14px', width: '100%', marginBottom: 20, fontSize: 15, boxSizing: 'border-box' }} />
           <button onClick={calculate}
             style={{ background: '#F5E642', color: '#0A1628', border: 'none', borderRadius: 8, padding: '12px 28px', fontWeight: 800, fontSize: 16, cursor: 'pointer', width: '100%' }}>
@@ -76,7 +76,7 @@ export default function DFWElectricHeatStripGuide() {
         </div>
 
         {result && (
-          <div style={{ background: '#0f2035', borderRadius: 12, padding: 24, borderLeft: '4px solid #F5E642′ }}>
+          <div style={{ background: '#0f2035', borderRadius: 12, padding: 24, borderLeft: '4px solid #F5E642' }}>
             <div style={{ fontWeight: 800, fontSize: 16, marginBottom: 8 }}>📐 Sizing: {result.sizing}</div>
             <div style={{ color: '#F5E642', fontWeight: 700, marginBottom: 4 }}>Estimated Annual Heat Strip Cost: {result.annualCost}</div>
             <div style={{ color: '#4ade80', fontSize: 14, marginBottom: 12 }}>♨️ {result.hpComparison}</div>

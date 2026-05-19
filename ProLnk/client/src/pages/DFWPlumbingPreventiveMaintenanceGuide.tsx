@@ -92,10 +92,10 @@ export default function DFWPlumbingPreventiveMaintenanceGuide() {
         <div style={{ background: '#0F2040', borderRadius: 12, padding: 20 }}>
           <div style={{ fontWeight: 700, color: '#F5E642', marginBottom: 10 }}>📅 DFW Seasonal Timing</div>
           <div style={{ color: '#94A3B8', fontSize: 14, lineHeight: 1.8 }}>
-            • <strong style={{ color: '#E8EDF5′ }}>Spring (March–April):</strong> Test irrigation, inspect after winter freeze events, flush water heater<br/>
-            • <strong style={{ color: '#E8EDF5′ }}>Summer (June–Aug):</strong> Monitor pressure (DFW drought causes soil contraction, stress on pipes)<br/>
-            • <strong style={{ color: '#E8EDF5′ }}>Fall (Oct–Nov):</strong> Inspect supply lines, test shut-offs before freeze season<br/>
-            • <strong style={{ color: '#E8EDF5′ }}>Winter (Dec–Feb):</strong> Shut off irrigation, insulate exposed pipes, know your emergency numbers
+            • <strong style={{ color: '#E8EDF5' }}>Spring (March–April):</strong> Test irrigation, inspect after winter freeze events, flush water heater<br/>
+            • <strong style={{ color: '#E8EDF5' }}>Summer (June–Aug):</strong> Monitor pressure (DFW drought causes soil contraction, stress on pipes)<br/>
+            • <strong style={{ color: '#E8EDF5' }}>Fall (Oct–Nov):</strong> Inspect supply lines, test shut-offs before freeze season<br/>
+            • <strong style={{ color: '#E8EDF5' }}>Winter (Dec–Feb):</strong> Shut off irrigation, insulate exposed pipes, know your emergency numbers
           </div>
         </div>
       </div>

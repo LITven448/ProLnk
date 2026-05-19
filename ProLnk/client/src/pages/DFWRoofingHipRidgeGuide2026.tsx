@@ -39,13 +39,13 @@ export default function DFWRoofingHipRidgeGuide2026() {
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 10, marginBottom: 16 }}>
             {hipRidgeConcerns.map(c => (
               <button key={c.id} onClick={() => setSelected(c.id)}
-                style={{ background: selected === c.id ? '#F5E642′ : '#1a3a5c', color: selected === c.id ? '#0A1628' : '#fff', border: ’none', borderRadius: 8, padding: '12px 10px', cursor: 'pointer', fontWeight: 600, fontSize: 13, textAlign: 'left' }}>
+                style={{ background: selected === c.id ? '#F5E642' : '#1a3a5c', color: selected === c.id ? '#0A1628' : '#fff', border: 'none', borderRadius: 8, padding: '12px 10px', cursor: 'pointer', fontWeight: 600, fontSize: 13, textAlign: 'left' }}>
                 {c.label}
               </button>
             ))}
           </div>
           {match && (
-            <div style={{ background: '#0A1628', borderRadius: 8, padding: 16, borderLeft: '4px solid #F5E642′ }}>
+            <div style={{ background: '#0A1628', borderRadius: 8, padding: 16, borderLeft: '4px solid #F5E642' }}>
               <p style={{ color: '#F5E642', fontWeight: 700, marginBottom: 6 }}>Hip/Ridge Guide:</p>
               <p style={{ color: '#cbd5e0', lineHeight: 1.7 }}>{match.guide}</p>
             </div>

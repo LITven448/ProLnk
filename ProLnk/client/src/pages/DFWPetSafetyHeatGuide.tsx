@@ -54,7 +54,7 @@ export default function DFWPetSafetyHeatGuide() {
           <p style={{ color: '#94a3b8', fontSize: 15 }}>Protect your pets from DFW's deadly summer heat — pavement, timing, and heat stroke prevention</p>
         </div>
 
-        <div style={{ background: '#7c1d1d', borderRadius: 12, padding: 16, marginBottom: 24, borderLeft: '4px solid #ef4444′ }}>
+        <div style={{ background: '#7c1d1d', borderRadius: 12, padding: 16, marginBottom: 24, borderLeft: '4px solid #ef4444' }}>
           <h2 style={{ color: '#fca5a5', fontSize: 15, marginBottom: 8 }}>🔥 The Pavement Test — Do This Every Time</h2>
           <p style={{ color: '#fecaca', fontSize: 14, margin: 0, lineHeight: 1.7 }}>
             Place the back of your hand on the pavement. If you cannot hold it there for <strong>5 seconds</strong>, it is too hot for your pet's paws. DFW black asphalt reaches <strong>160°F</strong> on peak summer days — paw burns occur in 60 seconds.

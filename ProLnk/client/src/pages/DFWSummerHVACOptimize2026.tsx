@@ -24,7 +24,7 @@ export default function DFWSummerHVACOptimize2026() {
         <h2 style={{ color: '#F5E642', fontSize: 18, marginBottom: 12 }}>Select Your Home Type</h2>
         <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap', marginBottom: 20 }}>
           {tips.map((t, i) => (
-            <button key={i} onClick={() => setSelected(i)} style={{ padding: '8px 16px', borderRadius: 8, border: 'none', cursor: 'pointer', background: selected === i ? '#F5E642′ : '#1e3a5f', color: selected === i ? '#0A1628' : '#e2e8f0', fontWeight: 600, fontSize: 14 }}>{t.type}</button>
+            <button key={i} onClick={() => setSelected(i)} style={{ padding: '8px 16px', borderRadius: 8, border: 'none', cursor: 'pointer', background: selected === i ? '#F5E642' : '#1e3a5f', color: selected === i ? '#0A1628' : '#e2e8f0', fontWeight: 600, fontSize: 14 }}>{t.type}</button>
           ))}
         </div>
         <div style={{ background: '#0f2040', borderRadius: 12, padding: 20 }}>

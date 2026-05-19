@@ -14,10 +14,10 @@ const budgets = [
 ];
 
 const recs = {
-  trad: { diy: '3.5″ MDF Colonial Crown — paintable, DFW humidity-stable, easiest DIY profile', mid: '4.5″ MDF Cove Crown + rosette corners — professional look without coffers', high: '5.5″ Wood Crown with coped inside corners + coffered ceilings in great room' },
-  trans: { diy: '3.5″ MDF Flat Crown — clean lines, easy to paint white or match wall trim', mid: '4.5″ MDF with beaded edge — adds detail without full traditional ornamentation', high: '6″ MDF Stepped Crown with shadow box wainscot — complete molding package' },
-  modern: { diy: 'Skip crown — use reveals or shadow gap at ceiling instead. Clean and intentional.', mid: '1.5″ square MDF reveal only — minimalist, modern, DFW interior designer approved', high: 'Integrated LED cove lighting slot — modern DFW alternative to traditional crown' },
-  luxury: { diy: 'Not applicable — luxury crown requires professional miter and cope work', mid: '5.5″ Wood Crown + coffered ceiling in entry and dining. Hire DFW finish carpenter.', high: 'Custom coffered great room, beam ceilings, multi-piece crown 7″+ total profile' },
+  trad: { diy: '3.5" MDF Colonial Crown — paintable, DFW humidity-stable, easiest DIY profile', mid: '4.5" MDF Cove Crown + rosette corners — professional look without coffers', high: '5.5" Wood Crown with coped inside corners + coffered ceilings in great room' },
+  trans: { diy: '3.5" MDF Flat Crown — clean lines, easy to paint white or match wall trim', mid: '4.5" MDF with beaded edge — adds detail without full traditional ornamentation', high: '6" MDF Stepped Crown with shadow box wainscot — complete molding package' },
+  modern: { diy: 'Skip crown — use reveals or shadow gap at ceiling instead. Clean and intentional.', mid: '1.5" square MDF reveal only — minimalist, modern, DFW interior designer approved', high: 'Integrated LED cove lighting slot — modern DFW alternative to traditional crown' },
+  luxury: { diy: 'Not applicable — luxury crown requires professional miter and cope work', mid: '5.5" Wood Crown + coffered ceiling in entry and dining. Hire DFW finish carpenter.', high: 'Custom coffered great room, beam ceilings, multi-piece crown 7"+ total profile' },
 };
 
 const facts = [
@@ -48,7 +48,7 @@ export default function DFWCrownMoldingGuide2026() {
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: 10 }}>
             {styles.map((s) => (
               <button key={s.value} onClick={() => setStyle(s.value)}
-                style={{ background: style === s.value ? '#F5E642′ : '#162035', color: style === s.value ? '#0A1628' : '#fff', border: '1px solid #F5E642', borderRadius: 8, padding: '10px 16px', cursor: ’pointer', fontWeight: 600 }}>
+                style={{ background: style === s.value ? '#F5E642' : '#162035', color: style === s.value ? '#0A1628' : '#fff', border: '1px solid #F5E642', borderRadius: 8, padding: '10px 16px', cursor: 'pointer', fontWeight: 600 }}>
                 {s.label}
               </button>
             ))}
@@ -60,7 +60,7 @@ export default function DFWCrownMoldingGuide2026() {
           <div style={{ display: 'flex', gap: 10, flexWrap: 'wrap' }}>
             {budgets.map((b) => (
               <button key={b.value} onClick={() => setBudget(b.value)}
-                style={{ background: budget === b.value ? '#F5E642′ : '#162035', color: budget === b.value ? '#0A1628' : '#fff', border: '1px solid #F5E642', borderRadius: 8, padding: '10px 18px', cursor: ’pointer', fontWeight: 600 }}>
+                style={{ background: budget === b.value ? '#F5E642' : '#162035', color: budget === b.value ? '#0A1628' : '#fff', border: '1px solid #F5E642', borderRadius: 8, padding: '10px 18px', cursor: 'pointer', fontWeight: 600 }}>
                 {b.label}
               </button>
             ))}

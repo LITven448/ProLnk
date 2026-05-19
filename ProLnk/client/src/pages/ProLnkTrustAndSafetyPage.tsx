@@ -66,8 +66,8 @@ export default function ProLnkTrustAndSafetyPage() {
               key={i}
               onClick={() => setSelected(i)}
               style={{
-                background: selected === i ? '#0A1628′ : '#fff',
-                color: selected === i ? '#F5E642′ : '#0A1628',
+                background: selected === i ? '#0A1628' : '#fff',
+                color: selected === i ? '#F5E642' : '#0A1628',
                 border: '1px solid #d1dde8',
                 borderRadius: 8,
                 padding: '12px 10px',
@@ -94,7 +94,7 @@ export default function ProLnkTrustAndSafetyPage() {
             <div style={{ fontSize: 12, color: '#4a5568', letterSpacing: 2, marginBottom: 10 }}>HOW IT WORKS</div>
             <p style={{ color: '#2d3748', lineHeight: 1.7, margin: 0 }}>{item.detail}</p>
           </div>
-          <div style={{ background: '#f4f7fb', borderRadius: 10, padding: 18, borderLeft: '4px solid #0A1628′ }}>
+          <div style={{ background: '#f4f7fb', borderRadius: 10, padding: 18, borderLeft: '4px solid #0A1628' }}>
             <div style={{ fontSize: 12, color: '#1a56db', letterSpacing: 2, marginBottom: 8 }}>🔄 ONGOING ENFORCEMENT</div>
             <p style={{ color: '#2d3748', margin: 0, fontSize: 14, lineHeight: 1.6 }}>{item.ongoing}</p>
           </div>

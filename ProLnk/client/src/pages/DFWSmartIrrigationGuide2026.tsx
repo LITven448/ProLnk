@@ -50,17 +50,17 @@ export default function DFWSmartIrrigationGuide2026() {
           <h2 style={{ color: '#F5E642', fontSize: 16, marginBottom: 12 }}>🏡 What's your lot size?</h2>
           <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
             {profiles.map((p, i) => (
-              <button key={i} onClick={() => setSelected(i)} style={{ background: selected === i ? '#F5E642′ : '#1e3a5f', color: selected === i ? '#0A1628' : '#e2e8f0', border: ’none', borderRadius: 8, padding: '10px 14px', textAlign: 'left', cursor: 'pointer', fontWeight: 600, fontSize: 14 }}>
+              <button key={i} onClick={() => setSelected(i)} style={{ background: selected === i ? '#F5E642' : '#1e3a5f', color: selected === i ? '#0A1628' : '#e2e8f0', border: 'none', borderRadius: 8, padding: '10px 14px', textAlign: 'left', cursor: 'pointer', fontWeight: 600, fontSize: 14 }}>
                 {p.lot} ({p.system})
               </button>
             ))}
           </div>
           {rec && (
-            <div style={{ marginTop: 14, background: '#0A1628', borderRadius: 10, padding: 16, borderLeft: '4px solid #F5E642′ }}>
+            <div style={{ marginTop: 14, background: '#0A1628', borderRadius: 10, padding: 16, borderLeft: '4px solid #F5E642' }}>
               <div style={{ color: '#F5E642', fontWeight: 700, marginBottom: 6 }}>Recommended: {rec.controller} — {rec.cost}</div>
               <div style={{ fontSize: 13, color: '#cbd5e1', marginBottom: 4 }}>Expected savings: {rec.savings}</div>
               <div style={{ fontSize: 13, color: '#22c55e', marginBottom: 4 }}>🏷️ Rebate: {rec.rebate}</div>
-              <div style={{ fontSize: 12, color: '#94a3b8′ }}>💡 {rec.note}</div>
+              <div style={{ fontSize: 12, color: '#94a3b8' }}>💡 {rec.note}</div>
             </div>
           )}
         </div>

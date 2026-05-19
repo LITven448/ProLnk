@@ -47,7 +47,7 @@ export default function DFWLiabilityInsuranceGuide() {
     setResult({ level, recommended, umbrella, costEst, notes });
   }
 
-  const riskColor = (l: string) => l === 'CRITICAL' ? '#EF4444′ : l === ’HIGH' ? '#F97316′ : l === ’MEDIUM' ? '#F59E0B' : '#10B981';
+  const riskColor = (l: string) => l === 'CRITICAL' ? '#EF4444' : l === 'HIGH' ? '#F97316' : l === 'MEDIUM' ? '#F59E0B' : '#10B981';
 
   return (
     <div style={{ background: '#0A1628', minHeight: '100vh', color: '#E8EDF5', fontFamily: 'system-ui, sans-serif', padding: '40px 20px' }}>
@@ -59,7 +59,7 @@ export default function DFWLiabilityInsuranceGuide() {
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12, marginBottom: 32 }}>
           {[['$100K', 'Standard liability limit — covers ~5 weeks of a serious injury lawsuit'],['$300K', 'Extended — covers most single-incident claims'],['$1M+', 'Umbrella — the minimum for pool, dog, or rental owners'],['$200–400', 'Annual cost of $1M umbrella in DFW — less than a car payment']].map(([num, desc]) => (
             <div key={num} style={{ background: '#132035', borderRadius: 10, padding: '16px', textAlign: 'center' }}>
-              <div style={{ fontSize: 24, fontWeight: 800, color: '#F5E642′ }}>{num}</div>
+              <div style={{ fontSize: 24, fontWeight: 800, color: '#F5E642' }}>{num}</div>
               <div style={{ fontSize: 12, color: '#94A3B8', marginTop: 4 }}>{desc}</div>
             </div>
           ))}
@@ -80,7 +80,7 @@ export default function DFWLiabilityInsuranceGuide() {
             <label style={{ fontSize: 13, color: '#94A3B8', display: 'block', marginBottom: 8 }}>Property features (select all that apply)</label>
             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 8 }}>
               {features.map(f => (
-                <button key={f.value} onClick={() => toggleFeature(f.value)} style={{ background: selectedFeatures.includes(f.value) ? '#F5E642′ : '#0A1628', color: selectedFeatures.includes(f.value) ? '#0A1628' : '#E8EDF5', border: '1px solid #2A3F5F', borderRadius: 6, padding: '10px 12px', cursor: ’pointer', fontSize: 13, textAlign: 'left', fontWeight: selectedFeatures.includes(f.value) ? 700 : 400 }}>{f.label}</button>
+                <button key={f.value} onClick={() => toggleFeature(f.value)} style={{ background: selectedFeatures.includes(f.value) ? '#F5E642' : '#0A1628', color: selectedFeatures.includes(f.value) ? '#0A1628' : '#E8EDF5', border: '1px solid #2A3F5F', borderRadius: 6, padding: '10px 12px', cursor: 'pointer', fontSize: 13, textAlign: 'left', fontWeight: selectedFeatures.includes(f.value) ? 700 : 400 }}>{f.label}</button>
               ))}
             </div>
           </div>

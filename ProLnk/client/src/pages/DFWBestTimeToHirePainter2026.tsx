@@ -17,7 +17,7 @@ const exteriorMonths = [
   { name: 'Dec', rating: 'poor', lead: 'N/A', note: 'Too cold again — risk of freeze before cure' },
 ];
 
-const colors: Record<string, string> = { ideal: '#22c55e', good: '#F5E642', poor: '#ef4444′ };
+const colors: Record<string, string> = { ideal: '#22c55e', good: '#F5E642', poor: '#ef4444' };
 const labels: Record<string, string> = { ideal: '✅ Ideal', good: '⚠️ Good', poor: '🔴 Avoid' };
 
 export default function DFWBestTimeToHirePainter2026() {
@@ -40,7 +40,7 @@ export default function DFWBestTimeToHirePainter2026() {
         <div style={{ display: 'flex', gap: 12, marginBottom: 24 }}>
           {(['exterior', 'interior'] as ProjectType[]).map((t) => (
             <button key={t} onClick={() => { setType(t); setSelMonth(null); }} style={{
-              background: type === t ? '#F5E642′ : '#1e2d45', color: type === t ? '#0A1628' : '#fff',
+              background: type === t ? '#F5E642' : '#1e2d45', color: type === t ? '#0A1628' : '#fff',
               border: 'none', borderRadius: 8, padding: '10px 24px', cursor: 'pointer', fontWeight: 700, textTransform: 'capitalize',
             }}>{t}</button>
           ))}
@@ -61,8 +61,8 @@ export default function DFWBestTimeToHirePainter2026() {
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 8, marginBottom: 28 }}>
               {exteriorMonths.map((m, i) => (
                 <button key={m.name} onClick={() => setSelMonth(i)} style={{
-                  background: selMonth === i ? '#F5E642′ : '#1e2d45',
-                  color: selMonth === i ? '#0A1628′ : colors[m.rating],
+                  background: selMonth === i ? '#F5E642' : '#1e2d45',
+                  color: selMonth === i ? '#0A1628' : colors[m.rating],
                   border: `2px solid ${selMonth === i ? '#F5E642' : colors[m.rating]}`,
                   borderRadius: 8, padding: '10px 4px', cursor: 'pointer', fontWeight: 700, fontSize: 14,
                 }}>{m.name}</button>
@@ -70,7 +70,7 @@ export default function DFWBestTimeToHirePainter2026() {
             </div>
             {month && (
               <div style={{ background: '#1e2d45', borderRadius: 12, padding: 24, marginBottom: 24 }}>
-                <div style={{ fontSize: 22, fontWeight: 700, color: '#F5E642′ }}>{month.name} — Exterior</div>
+                <div style={{ fontSize: 22, fontWeight: 700, color: '#F5E642' }}>{month.name} — Exterior</div>
                 <div style={{ fontSize: 26, fontWeight: 800, color: colors[month.rating], marginBottom: 8 }}>{labels[month.rating]}</div>
                 {month.lead !== 'N/A' && <div style={{ marginBottom: 8 }}><span style={{ color: '#64748b', fontSize: 12 }}>Lead Time: </span><span style={{ fontWeight: 700 }}>{month.lead}</span></div>}
                 <div style={{ background: '#0A1628', borderRadius: 8, padding: 14, color: '#cbd5e1', fontSize: 14 }}>{month.note}</div>

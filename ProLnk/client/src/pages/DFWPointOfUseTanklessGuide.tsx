@@ -76,9 +76,9 @@ export default function DFWPointOfUseTanklessGuide() {
 
         <div style={{ background: '#132240', borderRadius: 12, padding: '1.5rem', marginBottom: '1.5rem' }}>
           <h2 style={{ color: '#F5E642', fontSize: '1.1rem' }}>The DFW "Wait Problem"</h2>
-          <p style={{ lineHeight: 1.7, color: '#c8d8f0′ }}>
+          <p style={{ lineHeight: 1.7, color: '#c8d8f0' }}>
             DFW homes — especially the large 3,000–5,000+ sq ft homes common in Frisco, Allen, McKinney, and Prosper —
-            often have a <strong style={{ color: '#F5E642′ }}>master bathroom that’s 80–120 feet of pipe away from the water heater</strong>.
+            often have a <strong style={{ color: '#F5E642' }}>master bathroom that's 80–120 feet of pipe away from the water heater</strong>.
             That means 3–5 minutes of cold water before hot arrives. A small electric point-of-use (POU) tankless unit
             installed under the vanity solves this instantly.
           </p>
@@ -118,7 +118,7 @@ export default function DFWPointOfUseTanklessGuide() {
             <div>
               <label style={{ color: '#c8d8f0', display: 'block', marginBottom: '0.4rem' }}>Home Size</label>
               <select value={size} onChange={e => setSize(e.target.value)}
-                style={{ width: '100%', padding: '0.6rem', borderRadius: 8, background: '#0d1e38', color: '#fff', border: '1px solid #F5E642′ }}>
+                style={{ width: '100%', padding: '0.6rem', borderRadius: 8, background: '#0d1e38', color: '#fff', border: '1px solid #F5E642' }}>
                 <option value=''>Select size...</option>
                 {homeSizes.map(s => <option key={s} value={s}>{s}</option>)}
               </select>
@@ -126,7 +126,7 @@ export default function DFWPointOfUseTanklessGuide() {
             <div>
               <label style={{ color: '#c8d8f0', display: 'block', marginBottom: '0.4rem' }}>How Long to Get Hot Water at Farthest Fixture?</label>
               <select value={wait} onChange={e => setWait(e.target.value)}
-                style={{ width: '100%', padding: '0.6rem', borderRadius: 8, background: '#0d1e38', color: '#fff', border: '1px solid #F5E642′ }}>
+                style={{ width: '100%', padding: '0.6rem', borderRadius: 8, background: '#0d1e38', color: '#fff', border: '1px solid #F5E642' }}>
                 <option value=''>Select wait time...</option>
                 {waitTimes.map(w => <option key={w} value={w}>{w}</option>)}
               </select>
@@ -137,7 +137,7 @@ export default function DFWPointOfUseTanklessGuide() {
             </button>
           </div>
           {result && (
-            <div style={{ marginTop: '1.25rem', background: '#0d1e38', borderRadius: 10, padding: '1.25rem', borderLeft: '4px solid #F5E642′ }}>
+            <div style={{ marginTop: '1.25rem', background: '#0d1e38', borderRadius: 10, padding: '1.25rem', borderLeft: '4px solid #F5E642' }}>
               <div style={{ fontSize: '1.3rem', fontWeight: 700, color: '#F5E642', marginBottom: '0.5rem' }}>
                 {result.feasibility} — {result.score}% Recommended
               </div>
@@ -145,7 +145,7 @@ export default function DFWPointOfUseTanklessGuide() {
                 <div>⚡ Unit Size: <strong style={{ color: '#fff' }}>{result.kw}</strong></div>
                 <div>💰 Cost Per Fixture: <strong style={{ color: '#fff' }}>{result.cost}</strong></div>
                 <div>🚿 Fixtures: <strong style={{ color: '#fff' }}>{result.fixtures}</strong></div>
-                <div style={{ marginTop: '0.75rem', color: '#F5E642′ }}>{result.note}</div>
+                <div style={{ marginTop: '0.75rem', color: '#F5E642' }}>{result.note}</div>
               </div>
             </div>
           )}

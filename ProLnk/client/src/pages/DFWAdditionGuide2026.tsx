@@ -19,7 +19,7 @@ export default function DFWAdditionGuide2026() {
 
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: 16, marginBottom: 32 }}>
           {[
-            { icon: '💰', label: 'Cost Per Sqft', value: '$150 - $200′ },
+            { icon: '💰', label: 'Cost Per Sqft', value: '$150 - $200' },
             { icon: '🏠', label: 'Biggest Cost Driver', value: 'Foundation' },
             { icon: '📋', label: 'Permit Timeline', value: '4 - 8 Weeks' },
             { icon: '📏', label: 'Setbacks Vary', value: 'By City/Lot' },
@@ -41,7 +41,7 @@ export default function DFWAdditionGuide2026() {
             'Fort Worth: Varies by zoning district — verify with city planning',
             'HOA restrictions often stricter than city code — check CC&Rs',
           ].map((r) => (
-            <div key={r} style={{ color: '#fff', fontSize: 14, marginBottom: 8, paddingLeft: 12, borderLeft: '3px solid #F5E642′ }}>{r}</div>
+            <div key={r} style={{ color: '#fff', fontSize: 14, marginBottom: 8, paddingLeft: 12, borderLeft: '3px solid #F5E642' }}>{r}</div>
           ))}
         </div>
 
@@ -50,13 +50,13 @@ export default function DFWAdditionGuide2026() {
           <div style={{ display: 'flex', flexDirection: 'column', gap: 10, marginTop: 12 }}>
             {additionTypes.map((item, i) => (
               <button key={i} onClick={() => setSelected(i === selected ? null : i)}
-                style={{ background: selected === i ? '#F5E642′ : '#0A1628', color: selected === i ? '#0A1628' : '#fff', border: '1px solid #F5E642', borderRadius: 8, padding: '12px 16px', textAlign: ’left', cursor: 'pointer', fontWeight: 600 }}>
+                style={{ background: selected === i ? '#F5E642' : '#0A1628', color: selected === i ? '#0A1628' : '#fff', border: '1px solid #F5E642', borderRadius: 8, padding: '12px 16px', textAlign: 'left', cursor: 'pointer', fontWeight: 600 }}>
                 {item.type} — {item.cost}
               </button>
             ))}
           </div>
           {selected !== null && (
-            <div style={{ marginTop: 16, background: '#0A1628', borderRadius: 8, padding: 16, border: '1px solid #F5E642′ }}>
+            <div style={{ marginTop: 16, background: '#0A1628', borderRadius: 8, padding: 16, border: '1px solid #F5E642' }}>
               <div style={{ color: '#F5E642', fontWeight: 700, marginBottom: 6 }}>{additionTypes[selected].type}</div>
               <div style={{ color: '#94a3b8', fontSize: 13, marginBottom: 4 }}>{additionTypes[selected].sqft} · {additionTypes[selected].timeline}</div>
               <div style={{ color: '#fff', fontSize: 14 }}>{additionTypes[selected].note}</div>

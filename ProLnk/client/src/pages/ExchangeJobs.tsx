@@ -52,8 +52,8 @@ const SEED_JOBS = [
     title: "HVAC System Overhaul — 50-Unit Apartment Complex",
     posterType: "Synergy Property Group",
     location: "Plano, TX",
-    budget: "$45,000–$65,000″,
-    deadline: "Bid by May 25, 2026″,
+    budget: "$45,000–$65,000",
+    deadline: "Bid by May 25, 2026",
     trade: "HVAC",
     size: "$25K–$100K",
     description:
@@ -69,8 +69,8 @@ const SEED_JOBS = [
     title: "Strip Mall Roof Replacement — 14,000 sq ft",
     posterType: "Pinnacle Commercial Real Estate",
     location: "Garland, TX",
-    budget: "$95,000–$130,000″,
-    deadline: "Bid by Jun 1, 2026″,
+    budget: "$95,000–$130,000",
+    deadline: "Bid by Jun 1, 2026",
     trade: "Roofing",
     size: "$100K+",
     description:
@@ -86,8 +86,8 @@ const SEED_JOBS = [
     title: "Electrical Panel Upgrade — Industrial Warehouse",
     posterType: "DFW Logistics Partners",
     location: "Irving, TX",
-    budget: "$28,000–$42,000″,
-    deadline: "Bid by May 31, 2026″,
+    budget: "$28,000–$42,000",
+    deadline: "Bid by May 31, 2026",
     trade: "Electrical",
     size: "$25K–$100K",
     description:
@@ -104,7 +104,7 @@ const SEED_JOBS = [
     posterType: "Frontier Eats Group",
     location: "DFW Metro",
     budget: "$6,500–$9,000 per location",
-    deadline: "Bid by Jun 10, 2026″,
+    deadline: "Bid by Jun 10, 2026",
     trade: "Plumbing",
     size: "$5K–$25K",
     description:
@@ -120,8 +120,8 @@ const SEED_JOBS = [
     title: "Commercial Exterior Painting — Office Park",
     posterType: "Riverview Holdings LLC",
     location: "Allen, TX",
-    budget: "$38,000–$52,000″,
-    deadline: "Bid by Jun 20, 2026″,
+    budget: "$38,000–$52,000",
+    deadline: "Bid by Jun 20, 2026",
     trade: "Painting",
     size: "$25K–$100K",
     description:
@@ -154,8 +154,8 @@ const SEED_JOBS = [
     title: "Commercial Roof Replacement — 8,000 sq ft Clubhouse",
     posterType: "Lakewood HOA Board",
     location: "McKinney, TX",
-    budget: "$85,000–$120,000″,
-    deadline: "Bid by Jun 15, 2026″,
+    budget: "$85,000–$120,000",
+    deadline: "Bid by Jun 15, 2026",
     trade: "Roofing",
     size: "$100K+",
     description:
@@ -171,8 +171,8 @@ const SEED_JOBS = [
     title: "Flooring Replacement — Corporate HQ, 3 Floors",
     posterType: "Meridian Capital Group",
     location: "Richardson, TX",
-    budget: "$55,000–$72,000″,
-    deadline: "Bid by Jun 5, 2026″,
+    budget: "$55,000–$72,000",
+    deadline: "Bid by Jun 5, 2026",
     trade: "Flooring",
     size: "$25K–$100K",
     description:
@@ -213,10 +213,10 @@ function hoursUntilDeadline(deadlineStr: string): number | null {
 
 const LOGO_COLORS = [
   { bg: "rgba(245,158,11,0.18)", color: "#F59E0B" },
-  { bg: "rgba(99,102,241,0.18)", color: "#818cf8″ },
-  { bg: "rgba(34,197,94,0.18)", color: "#4ade80″ },
-  { bg: "rgba(239,68,68,0.18)", color: "#f87171″ },
-  { bg: "rgba(14,165,233,0.18)", color: "#38bdf8″ },
+  { bg: "rgba(99,102,241,0.18)", color: "#818cf8" },
+  { bg: "rgba(34,197,94,0.18)", color: "#4ade80" },
+  { bg: "rgba(239,68,68,0.18)", color: "#f87171" },
+  { bg: "rgba(14,165,233,0.18)", color: "#38bdf8" },
   { bg: "rgba(168,85,247,0.18)", color: "#c084fc" },
   { bg: "rgba(251,146,60,0.18)", color: "#fb923c" },
 ];
@@ -295,9 +295,9 @@ function FilterDropdown({
 }
 
 const URGENCY_STYLES: Record<string, { bg: string; color: string; icon?: boolean }> = {
-  Urgent: { bg: "rgba(239,68,68,0.12)", color: "#f87171″, icon: true },
-  Active: { bg: "rgba(34,197,94,0.12)", color: "#4ade80″ },
-  Ongoing: { bg: "rgba(99,102,241,0.15)", color: "#818cf8″ },
+  Urgent: { bg: "rgba(239,68,68,0.12)", color: "#f87171", icon: true },
+  Active: { bg: "rgba(34,197,94,0.12)", color: "#4ade80" },
+  Ongoing: { bg: "rgba(99,102,241,0.15)", color: "#818cf8" },
 };
 
 const inputStyle: React.CSSProperties = {
@@ -342,7 +342,7 @@ function BidModal({
 
   return (
     <div
-      className="fixed inset-0 z-50 flex items-center justify-center p-4″
+      className="fixed inset-0 z-50 flex items-center justify-center p-4"
       style={{ backgroundColor: "rgba(0,0,0,0.75)", backdropFilter: "blur(4px)" }}
       onClick={(e) => { if (e.target === e.currentTarget) onClose(); }}
     >
@@ -356,26 +356,26 @@ function BidModal({
           style={{ borderColor: "rgba(255,255,255,0.08)" }}
         >
           <CompanyLogo name={job.posterType} size={36} />
-          <div className="flex-1 min-w-0″>
+          <div className="flex-1 min-w-0">
             <h3 className="text-white font-bold text-sm leading-tight truncate">
               {job.title}
             </h3>
-            <p className="text-xs mt-0.5″ style={{ color: "rgba(255,255,255,0.4)" }}>
+            <p className="text-xs mt-0.5" style={{ color: "rgba(255,255,255,0.4)" }}>
               {job.posterType} &middot; {job.location}
             </p>
           </div>
           <button
             onClick={onClose}
-            className="flex-shrink-0 rounded-lg p-1 transition-colors hover:bg-white/10″
+            className="flex-shrink-0 rounded-lg p-1 transition-colors hover:bg-white/10"
             style={{ color: "rgba(255,255,255,0.4)" }}
           >
-            <X className="w-5 h-5″ />
+            <X className="w-5 h-5" />
           </button>
         </div>
 
-        <form onSubmit={handleSubmit} className="p-6 space-y-4″>
+        <form onSubmit={handleSubmit} className="p-6 space-y-4">
           {/* Name + Email row */}
-          <div className="grid grid-cols-2 gap-3″>
+          <div className="grid grid-cols-2 gap-3">
             <div>
               <label className="block text-xs font-semibold mb-1.5 uppercase tracking-wider" style={{ color: "rgba(255,255,255,0.5)" }}>
                 Your Name
@@ -405,21 +405,21 @@ function BidModal({
           </div>
 
           {/* Price + Timeline row */}
-          <div className="grid grid-cols-2 gap-3″>
+          <div className="grid grid-cols-2 gap-3">
             <div>
               <label className="block text-xs font-semibold mb-1.5 uppercase tracking-wider" style={{ color: "rgba(255,255,255,0.5)" }}>
                 Your Proposed Price ($)
               </label>
               <div className="relative">
                 <DollarSign
-                  className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4″
+                  className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4"
                   style={{ color: "rgba(255,255,255,0.35)" }}
                 />
                 <input
                   type="number"
                   required
                   min={0}
-                  placeholder="0″
+                  placeholder="0"
                   value={price}
                   onChange={(e) => setPrice(e.target.value)}
                   style={{ ...inputStyle, paddingLeft: "34px" }}
@@ -472,19 +472,19 @@ function BidModal({
           </div>
 
           {submitBid.error && (
-            <p className="text-xs text-red-400″>{submitBid.error.message || "Submission failed. Please try again."}</p>
+            <p className="text-xs text-red-400">{submitBid.error.message || "Submission failed. Please try again."}</p>
           )}
 
           <button
             type="submit"
             disabled={submitBid.isPending}
-            className="w-full py-3 rounded-xl text-sm font-bold text-[#0A1628] transition-all hover:opacity-90 disabled:opacity-60″
+            className="w-full py-3 rounded-xl text-sm font-bold text-[#0A1628] transition-all hover:opacity-90 disabled:opacity-60"
             style={{ backgroundColor: "#F59E0B" }}
           >
             {submitBid.isPending ? "Submitting..." : "Submit Bid"}
           </button>
           <p className="text-xs text-center" style={{ color: "rgba(255,255,255,0.25)" }}>
-            Bidding opens Q3 2026 — we'll follow up when it’s live.
+            Bidding opens Q3 2026 — we'll follow up when it's live.
           </p>
         </form>
       </div>
@@ -496,12 +496,12 @@ function Toast({ message, onDone }: { message: string; onDone: () => void }) {
   return (
     <div
       className="fixed bottom-6 left-1/2 -translate-x-1/2 z-50 flex items-center gap-2.5 px-5 py-3.5 rounded-xl shadow-2xl"
-      style={{ backgroundColor: "#10b981″, color: "#fff", fontWeight: 600, fontSize: "14px", minWidth: "280px" }}
+      style={{ backgroundColor: "#10b981", color: "#fff", fontWeight: 600, fontSize: "14px", minWidth: "280px" }}
     >
-      <CheckCircle className="w-5 h-5 flex-shrink-0″ />
+      <CheckCircle className="w-5 h-5 flex-shrink-0" />
       <span>{message}</span>
-      <button onClick={onDone} className="ml-auto opacity-70 hover:opacity-100″>
-        <X className="w-4 h-4″ />
+      <button onClick={onDone} className="ml-auto opacity-70 hover:opacity-100">
+        <X className="w-4 h-4" />
       </button>
     </div>
   );
@@ -567,24 +567,24 @@ function JobCard({
           className="absolute left-0 top-0 bottom-0 w-1 rounded-l-2xl"
           style={{
             backgroundColor: isNewLead
-              ? "#4ade80″
+              ? "#4ade80"
               : job.urgency === "Urgent"
-              ? "#ef4444″
+              ? "#ef4444"
               : job.urgency === "Active"
               ? "#f59e0b"
-              : "#6366f1″,
+              : "#6366f1",
           }}
         />
 
         {/* Top row: logo + title + badges */}
-        <div className="flex items-start gap-3 mb-3″>
+        <div className="flex items-start gap-3 mb-3">
           <CompanyLogo name={job.posterType} size={42} />
-          <div className="flex-1 min-w-0″>
+          <div className="flex-1 min-w-0">
             <div className="flex items-center gap-2 mb-1.5 flex-wrap">
               {isNewLead && (
                 <span
                   className="inline-flex items-center gap-1 text-xs font-bold px-2.5 py-0.5 rounded-full animate-pulse"
-                  style={{ backgroundColor: "rgba(34,197,94,0.2)", color: "#4ade80″ }}
+                  style={{ backgroundColor: "rgba(34,197,94,0.2)", color: "#4ade80" }}
                 >
                   ● New Lead
                 </span>
@@ -593,7 +593,7 @@ function JobCard({
                 className="inline-flex items-center gap-1 text-xs font-semibold px-2 py-0.5 rounded-full"
                 style={{ backgroundColor: urgencyStyle.bg, color: urgencyStyle.color }}
               >
-                {urgencyStyle.icon && <Zap className="w-3 h-3″ />}
+                {urgencyStyle.icon && <Zap className="w-3 h-3" />}
                 {job.urgency}
               </span>
               <span
@@ -622,13 +622,13 @@ function JobCard({
           </div>
 
           {/* Right side: countdown + stats */}
-          <div className="flex-shrink-0 text-right hidden sm:flex flex-col items-end gap-1.5″>
+          <div className="flex-shrink-0 text-right hidden sm:flex flex-col items-end gap-1.5">
             {hoursLeft !== null && hoursLeft <= 168 && (
               <span
                 className="inline-flex items-center gap-1 text-xs font-bold px-2.5 py-1 rounded-full"
-                style={{ backgroundColor: "rgba(239,68,68,0.15)", color: "#f87171″ }}
+                style={{ backgroundColor: "rgba(239,68,68,0.15)", color: "#f87171" }}
               >
-                <Clock className="w-3 h-3″ />
+                <Clock className="w-3 h-3" />
                 {hoursLeft < 1 ? "Closing now" : `${hoursLeft}h left`}
               </span>
             )}
@@ -636,14 +636,14 @@ function JobCard({
               className="inline-flex items-center gap-1 text-xs font-semibold px-2.5 py-1 rounded-full"
               style={{ backgroundColor: "rgba(255,255,255,0.07)", color: "rgba(255,255,255,0.7)" }}
             >
-              <Users className="w-3.5 h-3.5″ />
+              <Users className="w-3.5 h-3.5" />
               {job.applicants} applicant{job.applicants !== 1 ? "s" : ""}
             </div>
             <div
               className="inline-flex items-center gap-1 text-xs px-2.5 py-1 rounded-full"
               style={{ backgroundColor: "rgba(255,255,255,0.05)", color: "rgba(255,255,255,0.4)" }}
             >
-              <Eye className="w-3 h-3″ />
+              <Eye className="w-3 h-3" />
               {job.views} viewed
             </div>
             <span className="text-xs" style={{ color: "rgba(255,255,255,0.3)" }}>
@@ -653,25 +653,25 @@ function JobCard({
         </div>
 
         <p
-          className="text-sm leading-relaxed mb-4″
+          className="text-sm leading-relaxed mb-4"
           style={{ color: "rgba(255,255,255,0.5)" }}
         >
           {job.description}
         </p>
 
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-3 mb-5″>
-          <div className="flex items-center gap-1.5″>
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-3 mb-5">
+          <div className="flex items-center gap-1.5">
             <Building2
-              className="w-3.5 h-3.5 flex-shrink-0″
+              className="w-3.5 h-3.5 flex-shrink-0"
               style={{ color: "rgba(255,255,255,0.35)" }}
             />
             <span className="text-xs truncate" style={{ color: "rgba(255,255,255,0.5)" }}>
               {job.posterType}
             </span>
           </div>
-          <div className="flex items-center gap-1.5″>
+          <div className="flex items-center gap-1.5">
             <MapPin
-              className="w-3.5 h-3.5 flex-shrink-0″
+              className="w-3.5 h-3.5 flex-shrink-0"
               style={{ color: "rgba(255,255,255,0.35)" }}
             />
             <span className="text-xs" style={{ color: "rgba(255,255,255,0.5)" }}>
@@ -683,16 +683,16 @@ function JobCard({
               )}
             </span>
           </div>
-          <div className="flex items-center gap-1.5″>
+          <div className="flex items-center gap-1.5">
             <DollarSign
-              className="w-3.5 h-3.5 flex-shrink-0″
+              className="w-3.5 h-3.5 flex-shrink-0"
               style={{ color: "rgba(255,255,255,0.35)" }}
             />
             <span className="text-xs font-semibold text-white">{job.budget}</span>
           </div>
-          <div className="flex items-center gap-1.5″>
+          <div className="flex items-center gap-1.5">
             <Clock
-              className="w-3.5 h-3.5 flex-shrink-0″
+              className="w-3.5 h-3.5 flex-shrink-0"
               style={{ color: "rgba(255,255,255,0.35)" }}
             />
             <span className="text-xs" style={{ color: "rgba(255,255,255,0.5)" }}>
@@ -707,14 +707,14 @@ function JobCard({
             className="inline-flex items-center gap-1 text-xs font-semibold px-2.5 py-1 rounded-full"
             style={{ backgroundColor: "rgba(255,255,255,0.07)", color: "rgba(255,255,255,0.6)" }}
           >
-            <Users className="w-3.5 h-3.5″ />
+            <Users className="w-3.5 h-3.5" />
             {job.applicants} applicant{job.applicants !== 1 ? "s" : ""}
           </span>
           <span
             className="inline-flex items-center gap-1 text-xs px-2.5 py-1 rounded-full"
             style={{ backgroundColor: "rgba(255,255,255,0.05)", color: "rgba(255,255,255,0.4)" }}
           >
-            <Eye className="w-3 h-3″ />
+            <Eye className="w-3 h-3" />
             {job.views} viewed
           </span>
           <span className="text-xs" style={{ color: "rgba(255,255,255,0.3)" }}>
@@ -722,23 +722,23 @@ function JobCard({
           </span>
         </div>
 
-        <div className="flex items-center gap-3″>
+        <div className="flex items-center gap-3">
           <button
             onClick={() => !expressed && setShowModal(true)}
             disabled={expressed}
-            className="flex-1 py-2.5 rounded-xl text-sm font-bold transition-all inline-flex items-center justify-center gap-2″
+            className="flex-1 py-2.5 rounded-xl text-sm font-bold transition-all inline-flex items-center justify-center gap-2"
             style={{
               backgroundColor: expressed
                 ? "rgba(34,197,94,0.12)"
                 : "rgba(245,158,11,0.15)",
-              color: expressed ? "#4ade80″ : "#F59E0B",
+              color: expressed ? "#4ade80" : "#F59E0B",
               border: `1px solid ${expressed ? "rgba(34,197,94,0.25)" : "rgba(245,158,11,0.3)"}`,
               cursor: expressed ? "default" : "pointer",
             }}
           >
             {expressed ? (
               <>
-                <CheckCircle className="w-4 h-4″ />
+                <CheckCircle className="w-4 h-4" />
                 Bid Submitted — We'll Follow Up
               </>
             ) : (
@@ -748,14 +748,14 @@ function JobCard({
           <button
             onClick={onToggleSave}
             title={saved ? "Remove from saved" : "Save job"}
-            className="flex-shrink-0 w-10 h-10 rounded-xl flex items-center justify-center transition-all hover:scale-110″
+            className="flex-shrink-0 w-10 h-10 rounded-xl flex items-center justify-center transition-all hover:scale-110"
             style={{
               backgroundColor: saved ? "rgba(245,158,11,0.15)" : "rgba(255,255,255,0.06)",
               border: `1px solid ${saved ? "rgba(245,158,11,0.35)" : "rgba(255,255,255,0.12)"}`,
               color: saved ? "#F59E0B" : "rgba(255,255,255,0.4)",
             }}
           >
-            {saved ? <BookmarkCheck className="w-4 h-4″ /> : <Bookmark className="w-4 h-4" />}
+            {saved ? <BookmarkCheck className="w-4 h-4" /> : <Bookmark className="w-4 h-4" />}
           </button>
         </div>
       </div>
@@ -766,7 +766,7 @@ function JobCard({
 function MyBidsBar({ activeBids, awaitingResponse }: { activeBids: number; awaitingResponse: number }) {
   return (
     <div
-      className="max-w-6xl mx-auto px-6 mb-6″
+      className="max-w-6xl mx-auto px-6 mb-6"
     >
       <div
         className="flex flex-wrap items-center gap-4 px-5 py-4 rounded-2xl border"
@@ -775,12 +775,12 @@ function MyBidsBar({ activeBids, awaitingResponse }: { activeBids: number; await
           borderColor: "rgba(245,158,11,0.2)",
         }}
       >
-        <div className="flex items-center gap-2″>
-          <TrendingUp className="w-4 h-4 text-amber-400″ />
+        <div className="flex items-center gap-2">
+          <TrendingUp className="w-4 h-4 text-amber-400" />
           <span className="text-sm font-bold text-white">Your Active Bids</span>
         </div>
         <div className="flex items-center gap-4 flex-wrap">
-          <div className="flex items-center gap-2″>
+          <div className="flex items-center gap-2">
             <span
               className="text-lg font-bold"
               style={{ color: "#F59E0B" }}
@@ -795,10 +795,10 @@ function MyBidsBar({ activeBids, awaitingResponse }: { activeBids: number; await
             className="w-px h-4 hidden sm:block"
             style={{ backgroundColor: "rgba(255,255,255,0.12)" }}
           />
-          <div className="flex items-center gap-2″>
+          <div className="flex items-center gap-2">
             <span
               className="text-lg font-bold"
-              style={{ color: "#818cf8″ }}
+              style={{ color: "#818cf8" }}
             >
               {awaitingResponse}
             </span>
@@ -816,7 +816,7 @@ function MyBidsBar({ activeBids, awaitingResponse }: { activeBids: number; await
               border: "1px solid rgba(245,158,11,0.2)",
             }}
           >
-            <Eye className="w-3.5 h-3.5″ />
+            <Eye className="w-3.5 h-3.5" />
             Manage Bids
           </button>
         </Link>
@@ -874,7 +874,7 @@ export default function ExchangeJobs() {
     <div
       className="min-h-screen"
       style={{
-        backgroundColor: "#0A1628″,
+        backgroundColor: "#0A1628",
         fontFamily: "'Inter', system-ui, sans-serif",
       }}
     >
@@ -885,7 +885,7 @@ export default function ExchangeJobs() {
             ProLnk
           </span>
         </Link>
-        <div className="flex items-center gap-4″>
+        <div className="flex items-center gap-4">
           <Link href="/exchange">
             <span
               className="text-sm cursor-pointer transition-colors"
@@ -896,7 +896,7 @@ export default function ExchangeJobs() {
           </Link>
           <Link href="/exchange/post">
             <button
-              className="px-4 py-2 rounded-xl text-sm font-semibold text-[#0A1628] transition-all hover:opacity-90″
+              className="px-4 py-2 rounded-xl text-sm font-semibold text-[#0A1628] transition-all hover:opacity-90"
               style={{ backgroundColor: "#F59E0B" }}
             >
               Post a Job
@@ -908,13 +908,13 @@ export default function ExchangeJobs() {
       {/* Coming Soon Banner */}
       <div
         className="text-center py-2.5 text-xs font-semibold tracking-wider"
-        style={{ backgroundColor: "#F59E0B", color: "#0A1628″ }}
+        style={{ backgroundColor: "#F59E0B", color: "#0A1628" }}
       >
         COMING Q3 2026 &nbsp;·&nbsp; JOIN THE WAITLIST TO BE FIRST &nbsp;·&nbsp; PREVIEW LISTINGS BELOW
       </div>
 
       {/* Header */}
-      <section className="max-w-6xl mx-auto px-6 pt-12 pb-8″>
+      <section className="max-w-6xl mx-auto px-6 pt-12 pb-8">
         <div className="flex items-start justify-between gap-6 flex-wrap">
           <div>
             <div
@@ -925,10 +925,10 @@ export default function ExchangeJobs() {
                 borderColor: "rgba(245,158,11,0.3)",
               }}
             >
-              <Briefcase className="w-3.5 h-3.5″ />
+              <Briefcase className="w-3.5 h-3.5" />
               ProLnk Exchange — Commercial Work Network
             </div>
-            <div className="flex items-center gap-3 mb-2″>
+            <div className="flex items-center gap-3 mb-2">
               <h1 className="text-3xl md:text-4xl font-bold text-white">
                 Commercial Job Board
               </h1>
@@ -941,24 +941,24 @@ export default function ExchangeJobs() {
             </div>
             <p style={{ color: "rgba(255,255,255,0.5)" }} className="text-sm">
               High-value contracts from property managers, HOAs, and GCs across DFW.
-              <span className="ml-1″ style={{ color: "#F59E0B" }}>
+              <span className="ml-1" style={{ color: "#F59E0B" }}>
                 Bidding opens Q3 2026.
               </span>
             </p>
-            <div className="flex items-center gap-4 mt-4″>
-              <div className="flex items-center gap-1.5″>
+            <div className="flex items-center gap-4 mt-4">
+              <div className="flex items-center gap-1.5">
                 <span
                   className="inline-flex items-center gap-1 text-xs font-semibold px-2.5 py-1 rounded-full"
-                  style={{ backgroundColor: "rgba(239,68,68,0.12)", color: "#f87171″ }}
+                  style={{ backgroundColor: "rgba(239,68,68,0.12)", color: "#f87171" }}
                 >
-                  <Zap className="w-3 h-3″ /> Urgent
+                  <Zap className="w-3 h-3" /> Urgent
                 </span>
                 <span className="text-xs" style={{ color: "rgba(255,255,255,0.35)" }}>— deadline within 2 weeks</span>
               </div>
-              <div className="flex items-center gap-1.5″>
+              <div className="flex items-center gap-1.5">
                 <span
                   className="inline-flex items-center gap-1 text-xs font-semibold px-2.5 py-1 rounded-full"
-                  style={{ backgroundColor: "rgba(99,102,241,0.15)", color: "#818cf8″ }}
+                  style={{ backgroundColor: "rgba(99,102,241,0.15)", color: "#818cf8" }}
                 >
                   Ongoing
                 </span>
@@ -968,13 +968,13 @@ export default function ExchangeJobs() {
           </div>
           <Link href="/exchange/post">
             <button
-              className="flex items-center gap-2 px-6 py-3 rounded-xl text-sm font-bold text-[#0A1628] transition-all hover:scale-105″
+              className="flex items-center gap-2 px-6 py-3 rounded-xl text-sm font-bold text-[#0A1628] transition-all hover:scale-105"
               style={{
                 backgroundColor: "#F59E0B",
                 boxShadow: "0 4px 20px rgba(245,158,11,0.3)",
               }}
             >
-              Post a Job <ArrowRight className="w-4 h-4″ />
+              Post a Job <ArrowRight className="w-4 h-4" />
             </button>
           </Link>
         </div>
@@ -986,7 +986,7 @@ export default function ExchangeJobs() {
       )}
 
       {/* Filters */}
-      <section className="max-w-6xl mx-auto px-6 pb-6″>
+      <section className="max-w-6xl mx-auto px-6 pb-6">
         <div
           className="flex flex-wrap gap-3 items-center p-4 rounded-2xl border"
           style={{
@@ -995,10 +995,10 @@ export default function ExchangeJobs() {
           }}
         >
           <div
-            className="flex items-center gap-2 mr-1″
+            className="flex items-center gap-2 mr-1"
             style={{ color: "rgba(255,255,255,0.4)" }}
           >
-            <Filter className="w-4 h-4″ />
+            <Filter className="w-4 h-4" />
             <span className="text-xs font-medium">Filter</span>
           </div>
           <FilterDropdown
@@ -1049,8 +1049,8 @@ export default function ExchangeJobs() {
               Clear
             </button>
           )}
-          <div className="ml-auto flex items-center gap-2″>
-            <ArrowUpDown className="w-3.5 h-3.5″ style={{ color: "rgba(255,255,255,0.4)" }} />
+          <div className="ml-auto flex items-center gap-2">
+            <ArrowUpDown className="w-3.5 h-3.5" style={{ color: "rgba(255,255,255,0.4)" }} />
             <div className="relative">
               <select
                 value={sortBy}
@@ -1079,7 +1079,7 @@ export default function ExchangeJobs() {
       </section>
 
       {/* Job Cards */}
-      <section className="max-w-6xl mx-auto px-6 pb-12″>
+      <section className="max-w-6xl mx-auto px-6 pb-12">
         {filtered.length === 0 ? (
           <div
             className="text-center py-16 rounded-2xl border"
@@ -1101,7 +1101,7 @@ export default function ExchangeJobs() {
             </button>
           </div>
         ) : (
-          <div className="flex flex-col gap-4″>
+          <div className="flex flex-col gap-4">
             {filtered.map((job) => (
               <JobCard
                 key={job.id}
@@ -1125,16 +1125,16 @@ export default function ExchangeJobs() {
           }}
         >
           <div
-            className="w-12 h-12 rounded-xl flex items-center justify-center mx-auto mb-4″
+            className="w-12 h-12 rounded-xl flex items-center justify-center mx-auto mb-4"
             style={{ backgroundColor: "rgba(245,158,11,0.12)" }}
           >
-            <Bell className="w-6 h-6 text-amber-400″ />
+            <Bell className="w-6 h-6 text-amber-400" />
           </div>
-          <h2 className="text-white font-bold text-xl mb-2″>
+          <h2 className="text-white font-bold text-xl mb-2">
             Bidding opens Q3 2026
           </h2>
           <p
-            className="text-sm mb-5″
+            className="text-sm mb-5"
             style={{ color: "rgba(255,255,255,0.5)" }}
           >
             Get early access to submit bids before the platform opens to the
@@ -1142,10 +1142,10 @@ export default function ExchangeJobs() {
           </p>
           <Link href="/exchange">
             <button
-              className="inline-flex items-center gap-2 px-6 py-3 rounded-xl text-sm font-bold text-[#0A1628] transition-all hover:opacity-90″
+              className="inline-flex items-center gap-2 px-6 py-3 rounded-xl text-sm font-bold text-[#0A1628] transition-all hover:opacity-90"
               style={{ backgroundColor: "#F59E0B" }}
             >
-              Join the Waitlist <ArrowRight className="w-4 h-4″ />
+              Join the Waitlist <ArrowRight className="w-4 h-4" />
             </button>
           </Link>
         </div>
@@ -1166,13 +1166,13 @@ export default function ExchangeJobs() {
       {/* Floating Post a Job FAB */}
       <Link href="/exchange/post-job">
         <button
-          className="fixed bottom-7 right-7 z-50 flex items-center gap-2.5 px-5 py-3.5 rounded-2xl text-sm font-bold text-[#0A1628] shadow-2xl transition-all hover:scale-105 active:scale-95″
+          className="fixed bottom-7 right-7 z-50 flex items-center gap-2.5 px-5 py-3.5 rounded-2xl text-sm font-bold text-[#0A1628] shadow-2xl transition-all hover:scale-105 active:scale-95"
           style={{
             backgroundColor: "#F59E0B",
             boxShadow: "0 8px 32px rgba(245,158,11,0.45)",
           }}
         >
-          <Briefcase className="w-4 h-4″ />
+          <Briefcase className="w-4 h-4" />
           Post a Job
         </button>
       </Link>

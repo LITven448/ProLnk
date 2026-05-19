@@ -74,7 +74,7 @@ export default function DFWSinglePersonHomeGuide() {
       <div style={{ maxWidth: 820, margin: '0 auto' }}>
         <div style={{ textAlign: 'center', marginBottom: '2.5rem' }}>
           <div style={{ fontSize: '3rem' }}>🙋</div>
-          <h1 style={{ fontSize: '2.2rem', color: '#F5E642', margin: '0.5rem 0′ }}>DFW Single Person Home Buyer Guide</h1>
+          <h1 style={{ fontSize: '2.2rem', color: '#F5E642', margin: '0.5rem 0' }}>DFW Single Person Home Buyer Guide</h1>
           <p style={{ color: '#8A9BB5', fontSize: '1.05rem' }}>Buying alone in DFW — safety, budget, right-sizing, and the real numbers for one income</p>
         </div>
 
@@ -82,7 +82,7 @@ export default function DFWSinglePersonHomeGuide() {
           {situations.map(s => (
             <button key={s.id} onClick={() => setSelected(s.id)} style={{ background: selected === s.id ? '#1A3A6F' : '#0F2040', border: `2px solid ${selected === s.id ? '#F5E642' : '#1E3A5F'}`, borderRadius: 12, padding: '1.2rem', cursor: 'pointer', textAlign: 'left', transition: 'all 0.2s' }}>
               <div style={{ fontSize: '2rem' }}>{s.icon}</div>
-              <div style={{ color: selected === s.id ? '#F5E642′ : '#E8EDF5', fontWeight: 600, marginTop: 6 }}>{s.label}</div>
+              <div style={{ color: selected === s.id ? '#F5E642' : '#E8EDF5', fontWeight: 600, marginTop: 6 }}>{s.label}</div>
             </button>
           ))}
         </div>
@@ -118,7 +118,7 @@ export default function DFWSinglePersonHomeGuide() {
           <h2 style={{ color: '#F5E642', marginTop: 0, fontSize: '1.1rem' }}>📊 Single Buyer Reality Check</h2>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0.7rem' }}>
             {['Property tax on $350K DFW home = $7,000–9,800/yr ($583–816/mo)', 'Single buyer FHA: 3.5% down on $350K = $12,250 needed', 'Budget for 1–2% of home value/yr in maintenance ($3,500–7,000)', 'DFW HVAC runs April–October — central air is not optional', 'Lock-and-leave lifestyle: townhomes with HOA covering exterior', 'Security system priority: $25/mo monitored = best ROI safety spend'].map(f => (
-              <div key={f} style={{ background: '#0A1628', borderRadius: 8, padding: '0.7rem', fontSize: '0.82rem', color: '#8A9BB5′ }}>⚡ {f}</div>
+              <div key={f} style={{ background: '#0A1628', borderRadius: 8, padding: '0.7rem', fontSize: '0.82rem', color: '#8A9BB5' }}>⚡ {f}</div>
             ))}
           </div>
         </div>

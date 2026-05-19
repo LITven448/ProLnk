@@ -8,8 +8,8 @@ const MATERIALS = [
 ];
 
 const ELEVATIONS = [
-  { id: 'ground', label: 'Ground Level (0–18″)', laborMult: 1.0, permitRequired: false },
-  { id: 'mid', label: 'Mid-Elevation (18″–5ft)', laborMult: 1.3, permitRequired: true },
+  { id: 'ground', label: 'Ground Level (0–18")', laborMult: 1.0, permitRequired: false },
+  { id: 'mid', label: 'Mid-Elevation (18"–5ft)', laborMult: 1.3, permitRequired: true },
   { id: 'elevated', label: 'Elevated (5ft+)', laborMult: 1.65, permitRequired: true },
 ];
 
@@ -46,7 +46,7 @@ export default function DFWDeckBuildingGuide() {
           {[
             { icon: '☀️', title: 'DFW Heat Destroys Wood', body: 'DFW averages 60+ days above 100°F. Untreated wood decks cup, crack, and splinter within 3–5 years. Composite expands uniformly and won\’t splinter bare feet in summer.' },
             { icon: '🐜', title: 'Termite Risk Is Real', body: 'DFW has one of Texas\’s highest subterranean termite pressures. Pressure-treated pine resists termites, but composite eliminates the risk entirely — no wood = no termite food source.' },
-            { icon: '📋', title: 'Permit Requirements', body: 'Any deck over 30″ from grade in most DFW cities requires a building permit. Frisco, McKinney, Plano, and Dallas all require stamped structural plans for elevated decks.' },
+            { icon: '📋', title: 'Permit Requirements', body: 'Any deck over 30" from grade in most DFW cities requires a building permit. Frisco, McKinney, Plano, and Dallas all require stamped structural plans for elevated decks.' },
           ].map(card => (
             <div key={card.title} style={{ background: '#0D1F3C', borderRadius: 12, padding: 20, border: '1px solid #1E3A5F' }}>
               <div style={{ fontSize: 28 }}>{card.icon}</div>
@@ -62,7 +62,7 @@ export default function DFWDeckBuildingGuide() {
             <div>
               <label style={{ color: '#94A3B8', fontSize: 13, display: 'block', marginBottom: 6 }}>Deck Size (sq ft)</label>
               <input type="range" min={100} max={1000} step={25} value={sqft} onChange={e => setSqft(+e.target.value)}
-                style={{ width: '100%', accentColor: '#F5E642′ }} />
+                style={{ width: '100%', accentColor: '#F5E642' }} />
               <span style={{ color: '#F5E642', fontSize: 15, fontWeight: 700 }}>{sqft} sq ft</span>
             </div>
             <div>

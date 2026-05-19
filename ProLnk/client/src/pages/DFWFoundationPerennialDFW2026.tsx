@@ -8,7 +8,7 @@ export default function DFWFoundationPerennialDFW2026() {
       id: 'seasonal',
       label: '📅 Seasonal Crack Opening/Closing',
       title: 'Normal Clay Movement — Monitor Annually',
-      body: 'DFW expansive clay shrinks in summer (cracks open 1/8–1/4″) and swells in winter (cracks close). Horizontal cracks are fine. Stair-step cracks at corners need assessment. ProLnk Vault tracks crack width over time — critical for distinguishing normal vs progressive movement.',
+      body: 'DFW expansive clay shrinks in summer (cracks open 1/8–1/4") and swells in winter (cracks close). Horizontal cracks are fine. Stair-step cracks at corners need assessment. ProLnk Vault tracks crack width over time — critical for distinguishing normal vs progressive movement.',
     },
     {
       id: 'releveling',
@@ -47,7 +47,7 @@ export default function DFWFoundationPerennialDFW2026() {
 
         <div style={{ backgroundColor: '#0f2240', borderRadius: 8, padding: 20, marginBottom: 28 }}>
           <div style={{ color: '#F5E642', fontWeight: 700, marginBottom: 12 }}>🔴 DFW Foundation Warning Signs</div>
-          {['Doors/windows sticking in summer but fine in winter = clay movement', 'Cracks returning within 2 years of repair = too few piers', 'New cracks after storm or drought = drainage change', 'Sloping floors >1″ per 10 ft = active settlement'].map((f, i) => (
+          {['Doors/windows sticking in summer but fine in winter = clay movement', 'Cracks returning within 2 years of repair = too few piers', 'New cracks after storm or drought = drainage change', 'Sloping floors >1" per 10 ft = active settlement'].map((f, i) => (
             <div key={i} style={{ color: '#cbd5e1', fontSize: 14, padding: '6px 0', borderBottom: '1px solid #1e3a5f' }}>{f}</div>
           ))}
         </div>
@@ -56,7 +56,7 @@ export default function DFWFoundationPerennialDFW2026() {
         <div style={{ display: 'flex', flexWrap: 'wrap', gap: 10, marginBottom: 24 }}>
           {issues.map(s => (
             <button key={s.id} onClick={() => setSelected(s.id === selected ? null : s.id)}
-              style={{ backgroundColor: selected === s.id ? '#F5E642′ : '#1e3a5f', color: selected === s.id ? '#0A1628' : '#fff', border: ’none', borderRadius: 6, padding: '10px 16px', cursor: 'pointer', fontSize: 14 }}>
+              style={{ backgroundColor: selected === s.id ? '#F5E642' : '#1e3a5f', color: selected === s.id ? '#0A1628' : '#fff', border: 'none', borderRadius: 6, padding: '10px 16px', cursor: 'pointer', fontSize: 14 }}>
               {s.label}
             </button>
           ))}

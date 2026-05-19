@@ -8,7 +8,7 @@ const terms = [
   { letter: 'B', term: 'Blower Motor', def: 'Fan motor that pushes air through your ducts. DFW systems with variable-speed blower motors run longer at lower speeds — better dehumidification in DFW\’s humid spring.' },
   { letter: 'C', term: 'CFM', def: 'Cubic Feet per Minute — airflow measurement. DFW standard: 400 CFM per ton of cooling. Low CFM (restricted airflow) is a top cause of DFW system failures.' },
   { letter: 'C', term: 'COP', def: 'Coefficient of Performance — heat pump efficiency ratio. DFW heat pumps deliver COP of 3-4 in mild weather (65°F), dropping to 1.5-2 during rare hard freezes.' },
-  { letter: 'C', term: 'Condenser', def: 'Outdoor unit that releases heat. DFW condensers face brutal conditions — 100°F ambient air, hail, UV radiation. Keep 18″ clearance, clean fins annually, never cover.' },
+  { letter: 'C', term: 'Condenser', def: 'Outdoor unit that releases heat. DFW condensers face brutal conditions — 100°F ambient air, hail, UV radiation. Keep 18" clearance, clean fins annually, never cover.' },
   { letter: 'C', term: 'Compressor', def: 'Heart of the AC system — compresses refrigerant. The most expensive component ($800-2,500). DFW\’s 3,000+ annual runtime hours stress compressors; proper charge is critical.' },
   { letter: 'D', term: 'Duct Leakage', def: 'Air escaping from unsealed ducts. DFW attic ducts in 140°F heat with gaps waste 20-30% of conditioned air. Duct sealing/Aeroseal is high-ROI in DFW.' },
   { letter: 'D', term: 'Dual Fuel', def: 'System combining a heat pump with a gas furnace backup. Ideal for DFW: heat pump handles 95% of heating; gas activates below 30-35°F during ice storms.' },
@@ -63,13 +63,13 @@ export default function DFWHVACGlossaryFinal() {
         <div style={{ display: 'flex', gap: 6, flexWrap: 'wrap', justifyContent: 'center', marginBottom: 32 }}>
           <button onClick={() => setActiveLetter('All')}
             style={{ padding: '7px 14px', borderRadius: 8, border: 'none', cursor: 'pointer', fontWeight: 700, fontSize: 13,
-              background: activeLetter === 'All' ? '#F5E642′ : '#1e2d45', color: activeLetter === ’All' ? '#0A1628′ : '#94a3b8' }}>
+              background: activeLetter === 'All' ? '#F5E642' : '#1e2d45', color: activeLetter === 'All' ? '#0A1628' : '#94a3b8' }}>
             All
           </button>
           {letters.map(l => (
             <button key={l} onClick={() => setActiveLetter(l)}
               style={{ width: 38, height: 38, borderRadius: 8, border: 'none', cursor: 'pointer', fontWeight: 700, fontSize: 14,
-                background: activeLetter === l ? '#F5E642′ : '#1e2d45', color: activeLetter === l ? '#0A1628' : '#94a3b8' }}>
+                background: activeLetter === l ? '#F5E642' : '#1e2d45', color: activeLetter === l ? '#0A1628' : '#94a3b8' }}>
               {l}
             </button>
           ))}

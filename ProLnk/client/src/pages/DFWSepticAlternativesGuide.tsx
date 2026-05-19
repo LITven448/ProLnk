@@ -69,7 +69,7 @@ export default function DFWSepticAlternativesGuide() {
           </div>
 
           {result && (
-            <div style={{ backgroundColor: '#0A1628', borderRadius: 10, padding: 20, borderLeft: '4px solid #F5E642′ }}>
+            <div style={{ backgroundColor: '#0A1628', borderRadius: 10, padding: 20, borderLeft: '4px solid #F5E642' }}>
               <div style={{ marginBottom: 14 }}>
                 <div style={{ color: '#F5E642', fontSize: 13, fontWeight: 700, marginBottom: 4 }}>REQUIRED SYSTEM</div>
                 <div style={{ color: '#E8EAF0', fontSize: 15 }}>{result.system}</div>

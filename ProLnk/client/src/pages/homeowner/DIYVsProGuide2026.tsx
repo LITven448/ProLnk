@@ -88,7 +88,7 @@ export default function DIYVsProGuide2026() {
               key={i}
               onClick={() => setSelected(selected === i ? null : i)}
               style={{
-                background: selected === i ? '#3B82F6′ : '#0F2A4A',
+                background: selected === i ? '#3B82F6' : '#0F2A4A',
                 border: `1px solid ${selected === i ? '#3B82F6' : '#1E3A5F'}`,
                 color: selected === i ? '#FFFFFF' : '#93C5FD',
                 padding: '10px 18px',
@@ -120,8 +120,8 @@ export default function DIYVsProGuide2026() {
               ))}
             </div>
             <div style={{ background: '#163455', borderRadius: 8, padding: '16px 20px', marginBottom: 16 }}>
-              <span style={{ fontWeight: 700, color: '#34D399′ }}>Recommendation: </span>
-              <span style={{ color: '#D1FAE5′ }}>{projects[selected].recommendation}</span>
+              <span style={{ fontWeight: 700, color: '#34D399' }}>Recommendation: </span>
+              <span style={{ color: '#D1FAE5' }}>{projects[selected].recommendation}</span>
             </div>
             <p style={{ color: '#93C5FD', fontSize: 14, lineHeight: 1.7, margin: 0 }}>{projects[selected].note}</p>
           </div>

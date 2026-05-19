@@ -63,7 +63,7 @@ export default function DFWMoveUpTimingGuide() {
   const rec = showResults ? getRecommendation() : null;
 
   return (
-    <div style={{ background: '#F9FAFB', minHeight: '100vh', fontFamily: 'system-ui, sans-serif', color: '#0A1628′ }}>
+    <div style={{ background: '#F9FAFB', minHeight: '100vh', fontFamily: 'system-ui, sans-serif', color: '#0A1628' }}>
       <div style={{ background: '#0A1628', padding: '40px 24px', textAlign: 'center' }}>
         <div style={{ fontSize: 48 }}>🏡⬆️</div>
         <h1 style={{ color: '#F5E642', fontSize: 28, fontWeight: 700, margin: '12px 0 8px' }}>DFW Move-Up Timing Guide 2026</h1>
@@ -83,7 +83,7 @@ export default function DFWMoveUpTimingGuide() {
         <h2 style={{ fontSize: 20, fontWeight: 700, marginBottom: 16 }}>🔍 Compare Your Options</h2>
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16, marginBottom: 32 }}>
           {strategies.map(s => (
-            <div key={s.key} style={{ background: rec === s.key ? '#0A1628′ : '#fff', color: rec === s.key ? '#fff' : '#0A1628', borderRadius: 12, padding: 20, border: `2px solid ${rec === s.key ? '#F5E642' : '#E2E8F0'}` }}>
+            <div key={s.key} style={{ background: rec === s.key ? '#0A1628' : '#fff', color: rec === s.key ? '#fff' : '#0A1628', borderRadius: 12, padding: 20, border: `2px solid ${rec === s.key ? '#F5E642' : '#E2E8F0'}` }}>
               <div style={{ fontSize: 24, marginBottom: 8 }}>{s.emoji}</div>
               <h3 style={{ fontSize: 15, fontWeight: 700, margin: '0 0 12px' }}>{s.label} {rec === s.key && '⭐ RECOMMENDED'}</h3>
               <div style={{ fontSize: 12, marginBottom: 8 }}>
@@ -91,27 +91,27 @@ export default function DFWMoveUpTimingGuide() {
                 {s.pros.map((p, i) => <div key={i} style={{ paddingLeft: 12 }}>• {p}</div>)}
               </div>
               <div style={{ fontSize: 12, marginBottom: 8 }}>
-                <strong style={{ color: rec === s.key ? '#FCA5A5′ : '#DC2626' }}>❌ Cons:</strong>
+                <strong style={{ color: rec === s.key ? '#FCA5A5' : '#DC2626' }}>❌ Cons:</strong>
                 {s.cons.map((c, i) => <div key={i} style={{ paddingLeft: 12 }}>• {c}</div>)}
               </div>
               <div style={{ background: rec === s.key ? 'rgba(245,230,66,0.15)' : '#FEF9C3', borderRadius: 6, padding: 8, fontSize: 12 }}>
                 <strong>🤠 DFW Tip:</strong> {s.dfwTip}
               </div>
-              <div style={{ marginTop: 8, fontSize: 11, color: rec === s.key ? '#CBD5E1′ : '#64748B' }}>⏱ {s.timeline} • 🎯 {s.bestFor}</div>
+              <div style={{ marginTop: 8, fontSize: 11, color: rec === s.key ? '#CBD5E1' : '#64748B' }}>⏱ {s.timeline} • 🎯 {s.bestFor}</div>
             </div>
           ))}
         </div>
 
         <h2 style={{ fontSize: 20, fontWeight: 700, marginBottom: 16 }}>🎯 Get Your DFW Move-Up Strategy</h2>
-        <div style={{ background: '#fff', borderRadius: 12, padding: 24, border: '1px solid #E2E8F0′ }}>
+        <div style={{ background: '#fff', borderRadius: 12, padding: 24, border: '1px solid #E2E8F0' }}>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: 16, marginBottom: 20 }}>
             <div>
               <label style={{ fontSize: 13, fontWeight: 600, display: 'block', marginBottom: 6 }}>Estimated Home Equity</label>
-              <input value={equity} onChange={e => setEquity(e.target.value)} placeholder="e.g. $150,000″ style={{ width: '100%', padding: '10px 12px', borderRadius: 8, border: '1px solid #CBD5E1', fontSize: 14, boxSizing: 'border-box' }} />
+              <input value={equity} onChange={e => setEquity(e.target.value)} placeholder="e.g. $150,000" style={{ width: '100%', padding: '10px 12px', borderRadius: 8, border: '1px solid #CBD5E1', fontSize: 14, boxSizing: 'border-box' }} />
             </div>
             <div>
               <label style={{ fontSize: 13, fontWeight: 600, display: 'block', marginBottom: 6 }}>Target Home Price</label>
-              <input value={targetPrice} onChange={e => setTargetPrice(e.target.value)} placeholder="e.g. $550,000″ style={{ width: '100%', padding: '10px 12px', borderRadius: 8, border: '1px solid #CBD5E1', fontSize: 14, boxSizing: 'border-box' }} />
+              <input value={targetPrice} onChange={e => setTargetPrice(e.target.value)} placeholder="e.g. $550,000" style={{ width: '100%', padding: '10px 12px', borderRadius: 8, border: '1px solid #CBD5E1', fontSize: 14, boxSizing: 'border-box' }} />
             </div>
             <div>
               <label style={{ fontSize: 13, fontWeight: 600, display: 'block', marginBottom: 6 }}>Timeline Flexibility</label>
@@ -127,7 +127,7 @@ export default function DFWMoveUpTimingGuide() {
           {rec && (
             <div style={{ marginTop: 16, background: '#DCFCE7', border: '2px solid #16A34A', borderRadius: 10, padding: 16 }}>
               <p style={{ margin: 0, fontWeight: 700 }}>✅ Recommended: {strategies.find(s => s.key === rec)?.label}</p>
-              <p style={{ margin: '4px 0 0', fontSize: 13, color: '#166534′ }}>{strategies.find(s => s.key === rec)?.dfwTip}</p>
+              <p style={{ margin: '4px 0 0', fontSize: 13, color: '#166534' }}>{strategies.find(s => s.key === rec)?.dfwTip}</p>
             </div>
           )}
         </div>

@@ -10,12 +10,12 @@ function getSpec(stairType: string, width: string, location: string) {
   const needsBothSides = w >= 44;
   const material = isOutdoor ? 'Aluminum or galvanized steel (weather-rated)' : 'Wood, wrought iron, or aluminum';
   const cost = isOutdoor
-    ? needsBothSides ? '$1,200–$2,800′ : '$600–$1,400'
-    : needsBothSides ? '$800–$2,000′ : '$400–$1,000';
+    ? needsBothSides ? '$1,200–$2,800' : '$600–$1,400'
+    : needsBothSides ? '$800–$2,000' : '$400–$1,000';
   return {
-    height: '34″–38″ per DFW/IRC code',
-    sides: needsBothSides ? 'Both sides required (≥44″ wide)' : 'One side minimum',
-    grip: 'Graspable Type I profile required (1.25″–2″ diameter round or equivalent)',
+    height: '34"–38" per DFW/IRC code',
+    sides: needsBothSides ? 'Both sides required (≥44" wide)' : 'One side minimum',
+    grip: 'Graspable Type I profile required (1.25"–2" diameter round or equivalent)',
     material,
     cost,
     permit: 'Permit required for new handrail installation in most DFW municipalities',
@@ -37,20 +37,20 @@ export default function DFWHandrailInstallGuide() {
       <div style={{ maxWidth: 760, margin: '0 auto' }}>
         <div style={{ marginBottom: '2rem' }}>
           <span style={{ background: '#F5E642', color: '#0A1628', padding: '4px 12px', borderRadius: 4, fontSize: 12, fontWeight: 700 }}>DFW ACCESSIBILITY</span>
-          <h1 style={{ fontSize: '2rem', fontWeight: 800, margin: '1rem 0 0.5rem', color: '#F5E642′ }}>🪜 Handrail Installation Guide — DFW</h1>
-          <p style={{ color: '#8A9BB5', lineHeight: 1.6 }}>Code-compliant handrail specs for DFW stairs, pools, and entries. IRC height 34–38", graspable profile required, both sides mandatory for stairs 44″ or wider.</p>
+          <h1 style={{ fontSize: '2rem', fontWeight: 800, margin: '1rem 0 0.5rem', color: '#F5E642' }}>🪜 Handrail Installation Guide — DFW</h1>
+          <p style={{ color: '#8A9BB5', lineHeight: 1.6 }}>Code-compliant handrail specs for DFW stairs, pools, and entries. IRC height 34–38", graspable profile required, both sides mandatory for stairs 44" or wider.</p>
         </div>
 
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1.5rem' }}>
           {[
-            { label: '📏 Height Requirement', val: '34″–38″ above stair nosing' },
-            { label: '✋ Profile Type', val: 'Graspable Type I (1.25″–2″ round)' },
+            { label: '📏 Height Requirement', val: '34"–38" above stair nosing' },
+            { label: '✋ Profile Type', val: 'Graspable Type I (1.25"–2" round)' },
             { label: '🌧️ Outdoor Materials', val: 'Aluminum, galvanized, or powder-coated iron' },
             { label: '📋 Permit Required', val: 'Yes — most DFW cities require permit' },
           ].map(card => (
             <div key={card.label} style={{ background: '#0F2035', borderRadius: 8, padding: '1rem', border: '1px solid #1E3A5F' }}>
               <div style={{ fontSize: 13, color: '#8A9BB5', marginBottom: 4 }}>{card.label}</div>
-              <div style={{ fontWeight: 600, color: '#E8EDF5′ }}>{card.val}</div>
+              <div style={{ fontWeight: 600, color: '#E8EDF5' }}>{card.val}</div>
             </div>
           ))}
         </div>
@@ -97,7 +97,7 @@ export default function DFWHandrailInstallGuide() {
               <span style={{ fontSize: 18 }}>{m === 'Aluminum' ? '🥈' : m === 'Wrought Iron' ? '⚫' : m === 'Wood' ? '🪵' : '✨'}</span>
               <div>
                 <div style={{ fontWeight: 600, fontSize: 14 }}>{m}</div>
-                <div style={{ fontSize: 12, color: '#8A9BB5′ }}>{m === ’Aluminum' ? 'Lightweight, rust-proof, ideal for DFW outdoor use, $15–30/ft' : m === 'Wrought Iron' ? 'Classic look, heavy, needs powder coating for DFW humidity, $25–50/ft' : m === 'Wood' ? 'Warm aesthetic, needs sealing for DFW weather, $10–20/ft' : 'Modern, low-maintenance, pool-friendly, $30–60/ft'}</div>
+                <div style={{ fontSize: 12, color: '#8A9BB5' }}>{m === 'Aluminum' ? 'Lightweight, rust-proof, ideal for DFW outdoor use, $15–30/ft' : m === 'Wrought Iron' ? 'Classic look, heavy, needs powder coating for DFW humidity, $25–50/ft' : m === 'Wood' ? 'Warm aesthetic, needs sealing for DFW weather, $10–20/ft' : 'Modern, low-maintenance, pool-friendly, $30–60/ft'}</div>
               </div>
             </div>
           ))}

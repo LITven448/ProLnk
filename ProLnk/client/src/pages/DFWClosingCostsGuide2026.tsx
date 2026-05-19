@@ -40,7 +40,7 @@ export default function DFWClosingCostsGuide2026() {
 
         <div style={{ background: '#1e2d45', borderRadius: 12, padding: 24, marginBottom: 24 }}>
           <h2 style={{ color: '#F5E642', fontSize: 18, marginTop: 0 }}>💡 Closing Cost Estimator</h2>
-          <label style={{ display: 'block', color: '#94a3b8', marginBottom: 8 }}>Home Price: <strong style={{ color: '#F5E642′ }}>${homePrice.toLocaleString()}</strong></label>
+          <label style={{ display: 'block', color: '#94a3b8', marginBottom: 8 }}>Home Price: <strong style={{ color: '#F5E642' }}>${homePrice.toLocaleString()}</strong></label>
           <input type="range" min={200000} max={800000} step={5000} value={homePrice} onChange={e => setHomePrice(Number(e.target.value))} style={{ width: '100%', accentColor: '#F5E642', marginBottom: 20 }} />
           <label style={{ display: 'block', color: '#94a3b8', marginBottom: 10 }}>Loan Type</label>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4,1fr)', gap: 10, marginBottom: 20 }}>
@@ -53,24 +53,24 @@ export default function DFWClosingCostsGuide2026() {
 
           <div style={{ background: '#0A1628', borderRadius: 10, overflow: 'hidden' }}>
             {lineItems.map((item, i) => (
-              <div key={i} style={{ display: 'flex', justifyContent: 'space-between', padding: '12px 16px', borderBottom: i < lineItems.length-1 ? '1px solid #1e2d45′ : ’none' }}>
+              <div key={i} style={{ display: 'flex', justifyContent: 'space-between', padding: '12px 16px', borderBottom: i < lineItems.length-1 ? '1px solid #1e2d45' : 'none' }}>
                 <span style={{ color: '#cbd5e1', fontSize: 14 }}>{item.label}</span>
                 <span style={{ color: '#F5E642', fontWeight: 600 }}>${item.amount.toLocaleString()}</span>
               </div>
             ))}
-            <div style={{ display: 'flex', justifyContent: 'space-between', padding: '14px 16px', background: '#132034', borderTop: '2px solid #F5E642′ }}>
+            <div style={{ display: 'flex', justifyContent: 'space-between', padding: '14px 16px', background: '#132034', borderTop: '2px solid #F5E642' }}>
               <span style={{ fontWeight: 700, fontSize: 16 }}>Total Estimated Closing Costs</span>
               <span style={{ color: '#F5E642', fontWeight: 800, fontSize: 20 }}>${costs.total.toLocaleString()}</span>
             </div>
           </div>
-          <p style={{ color: '#475569', fontSize: 12, margin: '8px 0 0′ }}>Estimate only. Actual costs vary by lender, title company, and property. Does not include down payment.</p>
+          <p style={{ color: '#475569', fontSize: 12, margin: '8px 0 0' }}>Estimate only. Actual costs vary by lender, title company, and property. Does not include down payment.</p>
         </div>
 
         <div style={{ background: '#1e2d45', borderRadius: 12, padding: 24, marginBottom: 24 }}>
           <h2 style={{ color: '#F5E642', fontSize: 18, marginTop: 0 }}>💡 How to Reduce Closing Costs</h2>
           {['Request seller concessions (2-6% in buyers market — DFW softened in 2026)','Shop title companies — in TX, buyer often chooses, prices vary 20-30%','Negotiate lender credits (accept slightly higher rate for credits)','Roll closing costs into loan (available on some programs)','Close at end of month to reduce prepaid interest charges','Ask lender for No-Cost refi option if planning to refinance in 2 years'].map((t,i) => (
             <div key={i} style={{ display:'flex', gap:10, padding:'9px 0', borderBottom:i<5?'1px solid #0A1628':'none' }}>
-              <span style={{ color:'#F5E642′ }}>→</span>
+              <span style={{ color:'#F5E642' }}>→</span>
               <span style={{ color:'#cbd5e1', fontSize:14 }}>{t}</span>
             </div>
           ))}

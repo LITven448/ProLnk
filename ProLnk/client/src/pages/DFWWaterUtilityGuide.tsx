@@ -87,7 +87,7 @@ export default function DFWWaterUtilityGuide() {
   const city = cityData[selectedCity];
 
   const hardnessColor =
-    city.hardness < 150 ? '#4ade80′ : city.hardness < 220 ? '#facc15' : '#f87171';
+    city.hardness < 150 ? '#4ade80' : city.hardness < 220 ? '#facc15' : '#f87171';
 
   return (
     <div style={{ background: '#0A1628', minHeight: '100vh', color: '#E8EDF5', fontFamily: 'system-ui, sans-serif', padding: '32px 20px' }}>
@@ -123,19 +123,19 @@ export default function DFWWaterUtilityGuide() {
           </div>
 
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))', gap: 16, marginBottom: 24 }}>
-            <div style={{ background: '#0A1628', borderRadius: 12, padding: 20, borderLeft: '4px solid #F5E642′ }}>
+            <div style={{ background: '#0A1628', borderRadius: 12, padding: 20, borderLeft: '4px solid #F5E642' }}>
               <div style={{ fontSize: 11, color: '#8A9BB5', marginBottom: 6, fontWeight: 700 }}>🏛️ WATER PROVIDER</div>
               <div style={{ fontSize: 14, fontWeight: 700, color: '#FFFFFF', lineHeight: 1.4 }}>{city.provider}</div>
             </div>
             <div style={{ background: '#0A1628', borderRadius: 12, padding: 20, borderLeft: `4px solid ${hardnessColor}` }}>
               <div style={{ fontSize: 11, color: '#8A9BB5', marginBottom: 6, fontWeight: 700 }}>💎 WATER HARDNESS</div>
               <div style={{ fontSize: 22, fontWeight: 800, color: hardnessColor }}>{city.hardness} ppm</div>
-              <div style={{ fontSize: 13, color: '#8A9BB5′ }}>{city.hardnessLabel}</div>
+              <div style={{ fontSize: 13, color: '#8A9BB5' }}>{city.hardnessLabel}</div>
             </div>
             <div style={{ background: '#0A1628', borderRadius: 12, padding: 20, borderLeft: '4px solid #60a5fa' }}>
               <div style={{ fontSize: 11, color: '#8A9BB5', marginBottom: 6, fontWeight: 700 }}>💵 EST. MONTHLY BILL</div>
               <div style={{ fontSize: 22, fontWeight: 800, color: '#60a5fa' }}>${city.avgBill[usage]}</div>
-              <div style={{ fontSize: 13, color: '#8A9BB5′ }}>at {usageLevels.find(u => u.value === usage)?.label.split('(')[0].trim().toLowerCase()} usage</div>
+              <div style={{ fontSize: 13, color: '#8A9BB5' }}>at {usageLevels.find(u => u.value === usage)?.label.split('(')[0].trim().toLowerCase()} usage</div>
             </div>
           </div>
 

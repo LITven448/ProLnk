@@ -45,7 +45,7 @@ export default function DFWProLnkJoinReasons2026() {
             {concerns.map(([val, label]) => (
               <button key={val} onClick={() => setConcern(val)}
                 style={{ padding: '8px 14px', borderRadius: 8, border: 'none', cursor: 'pointer', fontSize: 13, fontWeight: 600,
-                  backgroundColor: concern === val ? '#F5E642′ : '#1a2d50', color: concern === val ? '#0A1628' : '#94a3b8' }}>
+                  backgroundColor: concern === val ? '#F5E642' : '#1a2d50', color: concern === val ? '#0A1628' : '#94a3b8' }}>
                 {label}
               </button>
             ))}
@@ -66,7 +66,7 @@ export default function DFWProLnkJoinReasons2026() {
           ))}
         </div>
 
-        <div style={{ backgroundColor: '#1a2d50', borderRadius: 12, padding: 24, textAlign: 'center', border: '2px solid #F5E642′ }}>
+        <div style={{ backgroundColor: '#1a2d50', borderRadius: 12, padding: 24, textAlign: 'center', border: '2px solid #F5E642' }}>
           <p style={{ fontSize: 17, fontWeight: 700, marginBottom: 8 }}>Ready to Join DFW's Most Trusted Pro Network?</p>
           <p style={{ color: '#94a3b8', fontSize: 14, marginBottom: 16 }}>Charter waitlist is open — limited spots for DFW pros and homeowners.</p>
           <a href='https://prolnk.io' style={{ display: 'inline-block', backgroundColor: '#F5E642', color: '#0A1628', padding: '12px 28px', borderRadius: 8, fontWeight: 700, textDecoration: 'none', fontSize: 15 }}>

@@ -58,7 +58,7 @@ export default function DFWOrchidCareGuide() {
               <div key={f.label} style={{ background: '#0A1628', borderRadius: 8, padding: 12 }}>
                 <div style={{ fontSize: 22 }}>{f.icon}</div>
                 <div style={{ fontSize: 13, color: '#F5E642', fontWeight: 600 }}>{f.label}</div>
-                <div style={{ fontSize: 12, color: '#94a3b8′ }}>{f.val}</div>
+                <div style={{ fontSize: 12, color: '#94a3b8' }}>{f.val}</div>
               </div>
             ))}
           </div>
@@ -66,12 +66,12 @@ export default function DFWOrchidCareGuide() {
 
         <div style={{ background: '#0F2040', borderRadius: 12, padding: 24, marginBottom: 24 }}>
           <h2 style={{ fontSize: 17, color: '#F5E642', marginBottom: 16 }}>🔍 Find Your Orchid Care Plan</h2>
-          <label style={{ display: 'block', marginBottom: 8, fontSize: 14, color: '#94a3b8′ }}>Select your orchid type and home situation:</label>
+          <label style={{ display: 'block', marginBottom: 8, fontSize: 14, color: '#94a3b8' }}>Select your orchid type and home situation:</label>
           <select value={orchidType} onChange={(e) => { setOrchidType(e.target.value); setSubmitted(false); }} style={{ width: '100%', padding: '10px 12px', borderRadius: 8, border: '1px solid #1e3a5f', background: '#0A1628', color: '#fff', fontSize: 14, marginBottom: 16 }}>
             <option value=>-- Choose your orchid situation --</option>
             {typeOptions.map((o) => <option key={o} value={o}>{typeLabels[o]}</option>)}
           </select>
-          <button onClick={() => setSubmitted(true)} disabled={!orchidType} style={{ width: '100%', padding: '12px', background: orchidType ? '#F5E642′ : '#1e3a5f', color: orchidType ? '#0A1628' : '#4a6080', borderRadius: 8, border: ’none', fontWeight: 700, fontSize: 15, cursor: orchidType ? 'pointer' : 'not-allowed' }}>
+          <button onClick={() => setSubmitted(true)} disabled={!orchidType} style={{ width: '100%', padding: '12px', background: orchidType ? '#F5E642' : '#1e3a5f', color: orchidType ? '#0A1628' : '#4a6080', borderRadius: 8, border: 'none', fontWeight: 700, fontSize: 15, cursor: orchidType ? 'pointer' : 'not-allowed' }}>
             Show My Orchid Care Plan 🌸
           </button>
         </div>
@@ -81,15 +81,15 @@ export default function DFWOrchidCareGuide() {
             <h2 style={{ fontSize: 17, color: '#F5E642', marginBottom: 16 }}>✅ Your DFW Orchid Care Plan</h2>
             <div style={{ background: '#0A1628', borderRadius: 8, padding: 14, marginBottom: 12 }}>
               <div style={{ color: '#F5E642', fontWeight: 600, marginBottom: 6 }}>🌸 Care Requirements</div>
-              <div style={{ fontSize: 13, color: '#94a3b8′ }}>{result.careReqs}</div>
+              <div style={{ fontSize: 13, color: '#94a3b8' }}>{result.careReqs}</div>
             </div>
             <div style={{ background: '#0A1628', borderRadius: 8, padding: 14, marginBottom: 12 }}>
               <div style={{ color: '#F5E642', fontWeight: 600, marginBottom: 6 }}>💧 Humidity Solution</div>
-              <div style={{ fontSize: 13, color: '#94a3b8′ }}>{result.humiditySolution}</div>
+              <div style={{ fontSize: 13, color: '#94a3b8' }}>{result.humiditySolution}</div>
             </div>
             <div style={{ background: '#0A1628', borderRadius: 8, padding: 14 }}>
               <div style={{ color: '#F5E642', fontWeight: 600, marginBottom: 6 }}>🗓️ Watering Schedule</div>
-              <div style={{ fontSize: 13, color: '#94a3b8′ }}>{result.wateringSchedule}</div>
+              <div style={{ fontSize: 13, color: '#94a3b8' }}>{result.wateringSchedule}</div>
             </div>
           </div>
         )}

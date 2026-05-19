@@ -44,10 +44,10 @@ export default function DFWHVACDrainlineSolutions() {
         <div style={{ background: '#0F2038', borderRadius: 12, padding: 24, marginBottom: 28 }}>
           <h2 style={{ fontSize: 18, color: '#F5E642', marginBottom: 8 }}>🛡️ Preventive Solutions</h2>
           <ul style={{ color: '#94A3B8', lineHeight: 1.9, paddingLeft: 20 }}>
-            <li><strong style={{ color: '#E8EDF5′ }}>Quarterly vinegar flush</strong> — Pour 1 cup distilled white vinegar into the access port every 3 months</li>
-            <li><strong style={{ color: '#E8EDF5′ }}>Float switch</strong> — Shuts off the system before the drain pan overflows; essential in DFW</li>
-            <li><strong style={{ color: '#E8EDF5′ }}>UV tablets</strong> — Slow-dissolve algae inhibitor tablets placed in the drain pan monthly</li>
-            <li><strong style={{ color: '#E8EDF5′ }}>Annual wet-vac service</strong> — Tech suctions the full drain line from exterior termination point</li>
+            <li><strong style={{ color: '#E8EDF5' }}>Quarterly vinegar flush</strong> — Pour 1 cup distilled white vinegar into the access port every 3 months</li>
+            <li><strong style={{ color: '#E8EDF5' }}>Float switch</strong> — Shuts off the system before the drain pan overflows; essential in DFW</li>
+            <li><strong style={{ color: '#E8EDF5' }}>UV tablets</strong> — Slow-dissolve algae inhibitor tablets placed in the drain pan monthly</li>
+            <li><strong style={{ color: '#E8EDF5' }}>Annual wet-vac service</strong> — Tech suctions the full drain line from exterior termination point</li>
           </ul>
         </div>
 
@@ -70,10 +70,10 @@ export default function DFWHVACDrainlineSolutions() {
             ))}
           </div>
           {match && (
-            <div style={{ background: '#0A1628', borderRadius: 10, padding: 20, borderLeft: '4px solid #F5E642′ }}>
+            <div style={{ background: '#0A1628', borderRadius: 10, padding: 20, borderLeft: '4px solid #F5E642' }}>
               <div style={{ fontWeight: 700, color: '#F5E642', marginBottom: 8 }}>Recommended Solution</div>
               <div style={{ marginBottom: 8 }}>{match.solution}</div>
-              <div style={{ color: '#94A3B8', fontSize: 14 }}>Estimated cost: <strong style={{ color: '#F5E642′ }}>{match.cost}</strong> &nbsp;|&nbsp; Urgency: <strong style={{ color: '#F5E642' }}>{match.urgency}</strong></div>
+              <div style={{ color: '#94A3B8', fontSize: 14 }}>Estimated cost: <strong style={{ color: '#F5E642' }}>{match.cost}</strong> &nbsp;|&nbsp; Urgency: <strong style={{ color: '#F5E642' }}>{match.urgency}</strong></div>
             </div>
           )}
         </div>

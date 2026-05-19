@@ -28,7 +28,7 @@ const components: Record<string, { name: string; icon: string; priority: string;
     name: 'Condensate Drain Line',
     icon: '💧',
     priority: '🟡 Critical for DFW Humidity Seasons',
-    why: 'DFW springs and early summers bring high humidity. Your AC removes 20-30 gallons of water per day from the air — all draining through a 3/4″ PVC line. Algae clogs are common and cause overflow shutoffs or, worse, water damage to ceilings and walls.',
+    why: 'DFW springs and early summers bring high humidity. Your AC removes 20-30 gallons of water per day from the air — all draining through a 3/4" PVC line. Algae clogs are common and cause overflow shutoffs or, worse, water damage to ceilings and walls.',
     maintenance: ['Flush drain line with diluted bleach quarterly', 'Ensure float switch is functional (shuts off if clogged)', 'Check condensate pan monthly during high-humidity months', 'Cost: $75-150 for professional clearing'],
   },
 };
@@ -63,7 +63,7 @@ export default function DFWHVACCriticalSystems() {
         <div style={{ display: 'grid', gap: 10, marginBottom: 24 }}>
           {concerns.map(c => (
             <button key={c.id} onClick={() => setSelected(c.id)}
-              style={{ background: selected === c.id ? '#F5E642′ : '#112240', color: selected === c.id ? '#0A1628' : '#fff', border: '2px solid ' + (selected === c.id ? '#F5E642' : '#1e3a5f'), borderRadius: 8, padding: '12px 16px', cursor: ’pointer', textAlign: 'left', fontWeight: 600, fontSize: 15 }}>
+              style={{ background: selected === c.id ? '#F5E642' : '#112240', color: selected === c.id ? '#0A1628' : '#fff', border: '2px solid ' + (selected === c.id ? '#F5E642' : '#1e3a5f'), borderRadius: 8, padding: '12px 16px', cursor: 'pointer', textAlign: 'left', fontWeight: 600, fontSize: 15 }}>
               {c.label}
             </button>
           ))}

@@ -29,25 +29,25 @@ export default function DFWHomeTestimonialsGuide2026() {
           ].map(card => (
             <div key={card.label} style={{ backgroundColor: '#1e2d45', borderRadius: 8, padding: '1.25rem', border: '1px solid #2d3f5a', textAlign: 'center' }}>
               <div style={{ fontSize: '1.5rem', marginBottom: '0.5rem' }}>{card.icon}</div>
-              <div style={{ fontSize: '1.1rem', fontWeight: 700, color: '#F5E642′ }}>{card.label}</div>
-              <div style={{ fontSize: '0.8rem', color: '#94a3b8′ }}>{card.sub}</div>
+              <div style={{ fontSize: '1.1rem', fontWeight: 700, color: '#F5E642' }}>{card.label}</div>
+              <div style={{ fontSize: '0.8rem', color: '#94a3b8' }}>{card.sub}</div>
             </div>
           ))}
         </div>
 
         <div style={{ backgroundColor: '#1e2d45', borderRadius: 8, padding: '1.5rem', marginBottom: '2rem', border: '1px solid #2d3f5a' }}>
-          <h2 style={{ fontSize: '1.2rem', fontWeight: 700, marginBottom: '0.5rem', color: '#F5E642′ }}>🔍 Service Concern → How ProLnk Protects You</h2>
+          <h2 style={{ fontSize: '1.2rem', fontWeight: 700, marginBottom: '0.5rem', color: '#F5E642' }}>🔍 Service Concern → How ProLnk Protects You</h2>
           <p style={{ color: '#94a3b8', fontSize: '0.9rem', marginBottom: '1rem' }}>Select a service area to see a real DFW homeowner story:</p>
           <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
             {concerns.map(s => (
               <button key={s.id} onClick={() => setSelected(selected === s.id ? null : s.id)}
-                style={{ textAlign: 'left', background: selected === s.id ? '#F5E642′ : '#0A1628', color: selected === s.id ? '#0A1628' : '#fff', border: '1px solid #F5E642', borderRadius: 6, padding: '0.75rem 1rem', cursor: ’pointer', fontWeight: 600, fontSize: '0.9rem' }}>
+                style={{ textAlign: 'left', background: selected === s.id ? '#F5E642' : '#0A1628', color: selected === s.id ? '#0A1628' : '#fff', border: '1px solid #F5E642', borderRadius: 6, padding: '0.75rem 1rem', cursor: 'pointer', fontWeight: 600, fontSize: '0.9rem' }}>
                 {s.label}
               </button>
             ))}
           </div>
           {found && (
-            <div style={{ marginTop: '1rem', backgroundColor: '#0A1628', borderRadius: 6, padding: '1rem', borderLeft: '4px solid #F5E642′ }}>
+            <div style={{ marginTop: '1rem', backgroundColor: '#0A1628', borderRadius: 6, padding: '1rem', borderLeft: '4px solid #F5E642' }}>
               <p style={{ color: '#e2e8f0', fontSize: '0.9rem', lineHeight: 1.6, margin: 0 }}>{found.story}</p>
             </div>
           )}

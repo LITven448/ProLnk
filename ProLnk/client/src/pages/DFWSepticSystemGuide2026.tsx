@@ -39,7 +39,7 @@ export default function DFWSepticSystemGuide2026() {
           <h2 style={{ fontSize: 18, fontWeight: 700, marginBottom: 16 }}>📍 Your County</h2>
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: 10 }}>
             {COUNTIES.map(c => (
-              <button key={c} onClick={() => setCounty(c)} style={{ padding: '8px 16px', borderRadius: 8, border: 'none', cursor: 'pointer', fontWeight: 700, backgroundColor: county === c ? '#F5E642′ : '#1e2d4a', color: county === c ? '#0A1628' : '#fff' }}>{c} County</button>
+              <button key={c} onClick={() => setCounty(c)} style={{ padding: '8px 16px', borderRadius: 8, border: 'none', cursor: 'pointer', fontWeight: 700, backgroundColor: county === c ? '#F5E642' : '#1e2d4a', color: county === c ? '#0A1628' : '#fff' }}>{c} County</button>
             ))}
           </div>
           {county && <p style={{ marginTop: 12, color: '#F5E642', fontSize: 14 }}>✅ {county} County: TCEQ OSSF regulations apply. Permits required for new installs and major repairs.</p>}
@@ -49,7 +49,7 @@ export default function DFWSepticSystemGuide2026() {
           <h2 style={{ fontSize: 18, fontWeight: 700, marginBottom: 16 }}>⚙️ Select Your System Type</h2>
           <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap', marginBottom: 20 }}>
             {SYSTEM_TYPES.map(s => (
-              <button key={s.id} onClick={() => setSelectedType(s.id)} style={{ padding: '10px 20px', borderRadius: 8, border: 'none', cursor: 'pointer', fontWeight: 700, backgroundColor: selectedType === s.id ? '#F5E642′ : '#1e2d4a', color: selectedType === s.id ? '#0A1628' : '#fff' }}>{s.label}</button>
+              <button key={s.id} onClick={() => setSelectedType(s.id)} style={{ padding: '10px 20px', borderRadius: 8, border: 'none', cursor: 'pointer', fontWeight: 700, backgroundColor: selectedType === s.id ? '#F5E642' : '#1e2d4a', color: selectedType === s.id ? '#0A1628' : '#fff' }}>{s.label}</button>
             ))}
           </div>
           {selectedType && (
@@ -67,7 +67,7 @@ export default function DFWSepticSystemGuide2026() {
         <div style={{ backgroundColor: '#111d35', borderRadius: 12, padding: 24, marginBottom: 24 }}>
           <h2 style={{ fontSize: 18, fontWeight: 700, marginBottom: 16 }}>🚨 Signs of Septic Failure</h2>
           {FAILURE_SIGNS.map((sign, i) => (
-            <div key={i} style={{ padding: '8px 0', borderBottom: '1px solid #1e2d4a', fontSize: 14, color: '#f87171′ }}>{sign}</div>
+            <div key={i} style={{ padding: '8px 0', borderBottom: '1px solid #1e2d4a', fontSize: 14, color: '#f87171' }}>{sign}</div>
           ))}
         </div>
 

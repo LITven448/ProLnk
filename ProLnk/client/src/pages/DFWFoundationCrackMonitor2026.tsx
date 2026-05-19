@@ -70,7 +70,7 @@ export default function DFWFoundationCrackMonitor2026() {
             <option value="growing">Actively Growing or New</option>
           </select>
           <button onClick={getProtocol} style={{ background: '#F5E642', color: '#0A1628', fontWeight: 700, border: 'none', borderRadius: 8, padding: '11px 24px', cursor: 'pointer', fontSize: 15 }}>Get Monitoring Protocol 🔍</button>
-          {protocol && <div style={{ marginTop: 16, background: '#0A1628', borderRadius: 8, padding: 16, color: '#c8d8ec', fontSize: 14, lineHeight: 1.6, borderLeft: '3px solid #F5E642′ }}>{protocol}</div>}
+          {protocol && <div style={{ marginTop: 16, background: '#0A1628', borderRadius: 8, padding: 16, color: '#c8d8ec', fontSize: 14, lineHeight: 1.6, borderLeft: '3px solid #F5E642' }}>{protocol}</div>}
         </div>
 
         <div style={{ textAlign: 'center', color: '#4a6080', fontSize: 12, marginTop: 24 }}>ProLnk DFW Home Intelligence · Foundation Crack Monitor Guide 2026</div>

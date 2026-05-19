@@ -25,7 +25,7 @@ export default function TrustyProForHOAs() {
           <span style={{ color: '#7c3aed', fontWeight: 600, fontSize: 14 }}>TrustyPro for Communities</span>
         </div>
 
-        <h1 style={{ fontSize: 40, fontWeight: 800, lineHeight: 1.1, marginBottom: 16, color: '#111827′ }}>
+        <h1 style={{ fontSize: 40, fontWeight: 800, lineHeight: 1.1, marginBottom: 16, color: '#111827' }}>
           TrustyPro for HOA Communities
           <span style={{ display: 'block', color: '#7c3aed' }}>Manage Your Neighborhood's Home Health</span>
         </h1>
@@ -35,11 +35,11 @@ export default function TrustyProForHOAs() {
         </p>
 
         <div style={{ background: '#fef9c3', border: '1px solid #fde047', borderRadius: 12, padding: 20, marginBottom: 50 }}>
-          <strong>The blind spot:</strong> You enforce the paint color and landscaping. But the roof that's 18 years past replacement? The HVAC systems on 40 homes that haven’t been serviced in 5 years? You have no visibility — until there’s a problem.
+          <strong>The blind spot:</strong> You enforce the paint color and landscaping. But the roof that's 18 years past replacement? The HVAC systems on 40 homes that haven't been serviced in 5 years? You have no visibility — until there's a problem.
         </div>
 
         {/* Benefits */}
-        <h2 style={{ fontSize: 28, fontWeight: 700, marginBottom: 28, color: '#111827′ }}>How TrustyPro Helps HOAs</h2>
+        <h2 style={{ fontSize: 28, fontWeight: 700, marginBottom: 28, color: '#111827' }}>How TrustyPro Helps HOAs</h2>
         <div style={{ display: 'grid', gap: 20, marginBottom: 60 }}>
           {benefits.map(b => (
             <div key={b.title} style={{ background: '#fff', border: '1px solid #e5e7eb', borderRadius: 12, padding: 28, display: 'flex', gap: 20 }}>
@@ -61,7 +61,7 @@ export default function TrustyProForHOAs() {
         </div>
 
         {/* Pricing */}
-        <h2 style={{ fontSize: 28, fontWeight: 700, marginBottom: 24, color: '#111827′ }}>Community Dashboard Pricing</h2>
+        <h2 style={{ fontSize: 28, fontWeight: 700, marginBottom: 24, color: '#111827' }}>Community Dashboard Pricing</h2>
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: 20, marginBottom: 16 }}>
           {tiers.map((tier, i) => (
             <div
@@ -91,7 +91,7 @@ export default function TrustyProForHOAs() {
           <div style={{ fontSize: 32, marginBottom: 16 }}>📬</div>
           <h3 style={{ fontSize: 24, fontWeight: 700, marginBottom: 12 }}>Start an HOA Partnership</h3>
           <p style={{ color: '#ede9fe', marginBottom: 28, maxWidth: 480, margin: '0 auto 28px' }}>
-            Contact us directly to discuss your community's needs. We’ll set up a pilot at no cost for the first 30 days.
+            Contact us directly to discuss your community's needs. We'll set up a pilot at no cost for the first 30 days.
           </p>
           <a href="mailto:andrew@lit-ventures.com?subject=HOA Partnership Inquiry" style={{ display: 'inline-block', background: '#fff', color: '#7c3aed', fontWeight: 700, padding: '14px 36px', borderRadius: 8, textDecoration: 'none', fontSize: 16 }}>
             Email Us to Get Started →

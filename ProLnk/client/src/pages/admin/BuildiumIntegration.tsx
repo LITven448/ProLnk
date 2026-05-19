@@ -63,17 +63,17 @@ export default function BuildiumIntegration() {
 
   if (statusQuery.isLoading) {
     return (
-      <div className="flex items-center justify-center min-h-96″>
-        <Loader2 className="h-8 w-8 animate-spin text-teal-500″ />
+      <div className="flex items-center justify-center min-h-96">
+        <Loader2 className="h-8 w-8 animate-spin text-teal-500" />
       </div>
     );
   }
 
   if (!statusQuery.data?.configured) {
     return (
-      <div className="max-w-4xl mx-auto px-4 py-12″>
+      <div className="max-w-4xl mx-auto px-4 py-12">
         <Alert>
-          <Building2 className="h-5 w-5″ />
+          <Building2 className="h-5 w-5" />
           <AlertDescription>
             <strong>Buildium integration not configured.</strong> Add <code>BUILDIUM_CLIENT_ID</code> and{" "}
             <code>BUILDIUM_CLIENT_SECRET</code> in Settings → Secrets to enable work order sync.
@@ -88,11 +88,11 @@ export default function BuildiumIntegration() {
 
   return (
     <AdminLayout>
-    <div className="max-w-7xl mx-auto px-4 py-8 space-y-8″>
+    <div className="max-w-7xl mx-auto px-4 py-8 space-y-8">
       <div className="flex items-center justify-between">
         <div>
-          <h1 className="text-3xl font-bold text-gray-900″>Buildium Integration</h1>
-          <p className="text-gray-600 mt-1″>Sync work orders and assign vendors</p>
+          <h1 className="text-3xl font-bold text-gray-900">Buildium Integration</h1>
+          <p className="text-gray-600 mt-1">Sync work orders and assign vendors</p>
         </div>
         <Button
           variant="outline"
@@ -103,35 +103,35 @@ export default function BuildiumIntegration() {
           }}
           disabled={workOrdersQuery.isLoading || vendorsQuery.isLoading}
         >
-          <RefreshCw className="h-4 w-4 mr-2″ />
+          <RefreshCw className="h-4 w-4 mr-2" />
           Refresh
         </Button>
       </div>
 
-      <div className="grid md:grid-cols-3 gap-4″>
+      <div className="grid md:grid-cols-3 gap-4">
         <Card>
-          <CardHeader className="pb-3″>
-            <CardTitle className="text-sm font-medium text-gray-600″>Open Work Orders</CardTitle>
+          <CardHeader className="pb-3">
+            <CardTitle className="text-sm font-medium text-gray-600">Open Work Orders</CardTitle>
           </CardHeader>
           <CardContent>
-            <div className="text-3xl font-bold text-gray-900″>{workOrders.length}</div>
+            <div className="text-3xl font-bold text-gray-900">{workOrders.length}</div>
           </CardContent>
         </Card>
         <Card>
-          <CardHeader className="pb-3″>
-            <CardTitle className="text-sm font-medium text-gray-600″>Registered Vendors</CardTitle>
+          <CardHeader className="pb-3">
+            <CardTitle className="text-sm font-medium text-gray-600">Registered Vendors</CardTitle>
           </CardHeader>
           <CardContent>
-            <div className="text-3xl font-bold text-gray-900″>{vendors.length}</div>
+            <div className="text-3xl font-bold text-gray-900">{vendors.length}</div>
           </CardContent>
         </Card>
         <Card>
-          <CardHeader className="pb-3″>
-            <CardTitle className="text-sm font-medium text-gray-600″>Integration Status</CardTitle>
+          <CardHeader className="pb-3">
+            <CardTitle className="text-sm font-medium text-gray-600">Integration Status</CardTitle>
           </CardHeader>
           <CardContent>
-            <Badge variant="default" className="bg-green-500″>
-              <CheckCircle className="h-3 w-3 mr-1″ />
+            <Badge variant="default" className="bg-green-500">
+              <CheckCircle className="h-3 w-3 mr-1" />
               Connected
             </Badge>
           </CardContent>
@@ -145,49 +145,49 @@ export default function BuildiumIntegration() {
         </CardHeader>
         <CardContent>
           {workOrdersQuery.isLoading ? (
-            <div className="flex items-center justify-center py-12″>
-              <Loader2 className="h-6 w-6 animate-spin text-teal-500″ />
+            <div className="flex items-center justify-center py-12">
+              <Loader2 className="h-6 w-6 animate-spin text-teal-500" />
             </div>
           ) : workOrders.length === 0 ? (
-            <div className="text-center py-12 text-gray-500″>No open work orders found</div>
+            <div className="text-center py-12 text-gray-500">No open work orders found</div>
           ) : (
-            <div className="space-y-4″>
+            <div className="space-y-4">
               {workOrders.map((wo: any) => (
-                <div key={wo.buildiumId} className="border rounded-lg p-4 space-y-3″>
+                <div key={wo.buildiumId} className="border rounded-lg p-4 space-y-3">
                   <div className="flex items-start justify-between">
-                    <div className="flex-1″>
-                      <div className="flex items-center gap-3″>
-                        <h3 className="font-semibold text-gray-900″>{wo.title}</h3>
+                    <div className="flex-1">
+                      <div className="flex items-center gap-3">
+                        <h3 className="font-semibold text-gray-900">{wo.title}</h3>
                         <Badge variant={wo.status === "New" ? "default" : "secondary"}>{wo.status}</Badge>
                         <Badge variant="outline">{wo.priority}</Badge>
                       </div>
-                      <p className="text-sm text-gray-600 mt-1″>{wo.description || "No description"}</p>
-                      <div className="flex items-center gap-4 mt-2 text-sm text-gray-500″>
+                      <p className="text-sm text-gray-600 mt-1">{wo.description || "No description"}</p>
+                      <div className="flex items-center gap-4 mt-2 text-sm text-gray-500">
                         <span>📍 {wo.propertyAddress}, {wo.propertyCity}, {wo.propertyState} {wo.propertyZip}</span>
                         <span>📅 {new Date(wo.createdAt).toLocaleDateString()}</span>
                       </div>
                       {wo.requestedByName && (
-                        <div className="text-sm text-gray-500 mt-1″>
+                        <div className="text-sm text-gray-500 mt-1">
                           Requested by: {wo.requestedByName} {wo.requestedByEmail && `(${wo.requestedByEmail})`}
                         </div>
                       )}
                     </div>
-                    <div className="flex gap-2″>
+                    <div className="flex gap-2">
                       <Button
                         size="sm"
                         variant="outline"
                         onClick={() => setAssignDialog({ workOrderId: wo.buildiumId, title: wo.title })}
                       >
-                        <Wrench className="h-4 w-4 mr-1″ />
+                        <Wrench className="h-4 w-4 mr-1" />
                         Assign Vendor
                       </Button>
                       <Button
                         size="sm"
                         variant="default"
-                        className="bg-teal-500 hover:bg-teal-600″
+                        className="bg-teal-500 hover:bg-teal-600"
                         onClick={() => setCompleteDialog({ workOrderId: wo.buildiumId, title: wo.title })}
                       >
-                        <CheckCircle className="h-4 w-4 mr-1″ />
+                        <CheckCircle className="h-4 w-4 mr-1" />
                         Mark Complete
                       </Button>
                     </div>
@@ -206,20 +206,20 @@ export default function BuildiumIntegration() {
         </CardHeader>
         <CardContent>
           {vendorsQuery.isLoading ? (
-            <div className="flex items-center justify-center py-12″>
-              <Loader2 className="h-6 w-6 animate-spin text-teal-500″ />
+            <div className="flex items-center justify-center py-12">
+              <Loader2 className="h-6 w-6 animate-spin text-teal-500" />
             </div>
           ) : vendors.length === 0 ? (
-            <div className="text-center py-12 text-gray-500″>No vendors found</div>
+            <div className="text-center py-12 text-gray-500">No vendors found</div>
           ) : (
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4″>
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
               {vendors.map((v: any) => (
-                <div key={v.buildiumVendorId} className="border rounded-lg p-4″>
-                  <h3 className="font-semibold text-gray-900″>{v.name}</h3>
-                  <div className="text-sm text-gray-600 mt-2 space-y-1″>
+                <div key={v.buildiumVendorId} className="border rounded-lg p-4">
+                  <h3 className="font-semibold text-gray-900">{v.name}</h3>
+                  <div className="text-sm text-gray-600 mt-2 space-y-1">
                     {v.email && <div>📧 {v.email}</div>}
                     {v.phone && <div>📞 {v.phone}</div>}
-                    {v.category && <Badge variant="outline" className="mt-2″>{v.category}</Badge>}
+                    {v.category && <Badge variant="outline" className="mt-2">{v.category}</Badge>}
                   </div>
                 </div>
               ))}
@@ -235,7 +235,7 @@ export default function BuildiumIntegration() {
             <DialogTitle>Assign Vendor</DialogTitle>
             <DialogDescription>Select a vendor to assign to work order: {assignDialog?.title}</DialogDescription>
           </DialogHeader>
-          <div className="space-y-4 py-4″>
+          <div className="space-y-4 py-4">
             <Select value={selectedVendor} onValueChange={setSelectedVendor}>
               <SelectTrigger>
                 <SelectValue placeholder="Select vendor..." />
@@ -256,9 +256,9 @@ export default function BuildiumIntegration() {
             <Button
               onClick={handleAssign}
               disabled={!selectedVendor || assignMutation.isPending}
-              className="bg-teal-500 hover:bg-teal-600″
+              className="bg-teal-500 hover:bg-teal-600"
             >
-              {assignMutation.isPending ? <Loader2 className="h-4 w-4 animate-spin mr-2″ /> : null}
+              {assignMutation.isPending ? <Loader2 className="h-4 w-4 animate-spin mr-2" /> : null}
               Assign
             </Button>
           </DialogFooter>
@@ -272,7 +272,7 @@ export default function BuildiumIntegration() {
             <DialogTitle>Mark Work Order Complete</DialogTitle>
             <DialogDescription>Work order: {completeDialog?.title}</DialogDescription>
           </DialogHeader>
-          <div className="space-y-4 py-4″>
+          <div className="space-y-4 py-4">
             <Textarea
               placeholder="Enter completion notes..."
               value={completionNotes}
@@ -287,9 +287,9 @@ export default function BuildiumIntegration() {
             <Button
               onClick={handleComplete}
               disabled={!completionNotes.trim() || completeMutation.isPending}
-              className="bg-teal-500 hover:bg-teal-600″
+              className="bg-teal-500 hover:bg-teal-600"
             >
-              {completeMutation.isPending ? <Loader2 className="h-4 w-4 animate-spin mr-2″ /> : null}
+              {completeMutation.isPending ? <Loader2 className="h-4 w-4 animate-spin mr-2" /> : null}
               Mark Complete
             </Button>
           </DialogFooter>

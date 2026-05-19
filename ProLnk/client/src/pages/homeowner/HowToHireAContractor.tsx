@@ -87,13 +87,13 @@ function SectionCard({ id, title, icon: Icon, color, children }: {
   children: React.ReactNode;
 }) {
   return (
-    <div id={id} className="rounded-2xl p-6 space-y-5″ style={{ background: D.card, border: `1px solid ${D.border}` }}>
-      <div className="flex items-center gap-3″>
+    <div id={id} className="rounded-2xl p-6 space-y-5" style={{ background: D.card, border: `1px solid ${D.border}` }}>
+      <div className="flex items-center gap-3">
         <div
           className="w-10 h-10 rounded-xl flex items-center justify-center"
           style={{ background: `${color}20`, border: `1px solid ${color}30` }}
         >
-          <Icon className="w-5 h-5″ style={{ color }} />
+          <Icon className="w-5 h-5" style={{ color }} />
         </div>
         <h2 className="text-lg font-bold" style={{ color: D.text }}>{title}</h2>
       </div>
@@ -105,12 +105,12 @@ function SectionCard({ id, title, icon: Icon, color, children }: {
 export default function HowToHireAContractor() {
   return (
     <HomeownerLayout>
-      <div className="min-h-screen p-6 max-w-3xl mx-auto space-y-8″ style={{ background: D.bg, fontFamily: "'Inter', sans-serif" }}>
+      <div className="min-h-screen p-6 max-w-3xl mx-auto space-y-8" style={{ background: D.bg, fontFamily: "'Inter', sans-serif" }}>
 
         {/* Header */}
-        <div className="space-y-2 pt-2″>
+        <div className="space-y-2 pt-2">
           <div className="flex items-center gap-2 text-xs font-semibold uppercase tracking-widest" style={{ color: D.cyan }}>
-            <Home className="w-3.5 h-3.5″ />
+            <Home className="w-3.5 h-3.5" />
             Homeowner Guide
           </div>
           <h1 className="text-3xl font-black tracking-tight" style={{ color: D.text }}>How to Hire a Contractor</h1>
@@ -119,11 +119,11 @@ export default function HowToHireAContractor() {
 
         {/* Quick nav */}
         <div
-          className="rounded-2xl p-4″
+          className="rounded-2xl p-4"
           style={{ background: D.card, border: `1px solid ${D.border}` }}
         >
-          <p className="text-xs font-bold uppercase tracking-widest mb-3″ style={{ color: D.muted }}>Jump to section</p>
-          <div className="flex flex-wrap gap-2″>
+          <p className="text-xs font-bold uppercase tracking-widest mb-3" style={{ color: D.muted }}>Jump to section</p>
+          <div className="flex flex-wrap gap-2">
             {NAV_LINKS.map(link => (
               <a
                 key={link.id}
@@ -132,7 +132,7 @@ export default function HowToHireAContractor() {
                 style={{ background: D.surface, color: D.text, border: `1px solid ${D.border}` }}
               >
                 {link.label}
-                <ChevronRight className="w-3 h-3″ style={{ color: D.muted }} />
+                <ChevronRight className="w-3 h-3" style={{ color: D.muted }} />
               </a>
             ))}
           </div>
@@ -143,10 +143,10 @@ export default function HowToHireAContractor() {
           <p className="text-sm" style={{ color: D.muted }}>
             Verification is non-negotiable. A licensed, insured contractor protects you from liability if a worker is injured on your property or if work doesn&apos;t meet code.
           </p>
-          <div className="space-y-2.5″>
+          <div className="space-y-2.5">
             {CREDENTIAL_CHECKS.map((item, i) => (
               <div key={i} className="flex items-start gap-3 p-3 rounded-xl" style={{ background: D.surface }}>
-                <CheckCircle className="w-4 h-4 mt-0.5 flex-shrink-0″ style={{ color: D.cyan }} />
+                <CheckCircle className="w-4 h-4 mt-0.5 flex-shrink-0" style={{ color: D.cyan }} />
                 <span className="text-sm" style={{ color: D.text }}>{item.label}</span>
               </div>
             ))}
@@ -161,9 +161,9 @@ export default function HowToHireAContractor() {
           <p className="text-sm" style={{ color: D.muted }}>
             Never hire the first contractor you talk to without comparing. Getting multiple quotes is the single best way to ensure fair pricing.
           </p>
-          <div className="grid grid-cols-2 gap-3″>
+          <div className="grid grid-cols-2 gap-3">
             {QUOTE_TIPS.map((tip, i) => (
-              <div key={i} className="p-4 rounded-xl space-y-1″ style={{ background: D.surface, border: `1px solid ${D.border}` }}>
+              <div key={i} className="p-4 rounded-xl space-y-1" style={{ background: D.surface, border: `1px solid ${D.border}` }}>
                 <p className="text-sm font-bold" style={{ color: D.text }}>{tip.title}</p>
                 <p className="text-xs" style={{ color: D.muted }}>{tip.desc}</p>
               </div>
@@ -176,14 +176,14 @@ export default function HowToHireAContractor() {
           <p className="text-sm" style={{ color: D.muted }}>
             Walk away immediately from contractors who exhibit any of these warning signs. They are predictors of scams, shoddy work, or disputes.
           </p>
-          <div className="grid grid-cols-2 gap-3″>
+          <div className="grid grid-cols-2 gap-3">
             {RED_FLAGS.map((flag, i) => (
               <div
                 key={i}
                 className="flex items-center gap-3 p-4 rounded-xl"
                 style={{ background: `${flag.color}10`, border: `1px solid ${flag.color}30` }}
               >
-                <XCircle className="w-4 h-4 flex-shrink-0″ style={{ color: flag.color }} />
+                <XCircle className="w-4 h-4 flex-shrink-0" style={{ color: flag.color }} />
                 <span className="text-sm font-medium" style={{ color: D.text }}>{flag.label}</span>
               </div>
             ))}
@@ -195,11 +195,11 @@ export default function HowToHireAContractor() {
           <p className="text-sm" style={{ color: D.muted }}>
             How you structure payments determines your leverage throughout the project. Never pay in full until the job is done to your satisfaction.
           </p>
-          <div className="space-y-3″>
+          <div className="space-y-3">
             {PAYMENT_TERMS.map((term, i) => (
               <div
                 key={i}
-                className="p-4 rounded-xl flex items-start gap-4″
+                className="p-4 rounded-xl flex items-start gap-4"
                 style={{ background: D.surface, border: `1px solid ${term.color}30` }}
               >
                 <div
@@ -209,7 +209,7 @@ export default function HowToHireAContractor() {
                   {i + 1}
                 </div>
                 <div>
-                  <p className="text-sm font-bold mb-1″ style={{ color: term.color }}>{term.label}</p>
+                  <p className="text-sm font-bold mb-1" style={{ color: term.color }}>{term.label}</p>
                   <p className="text-xs" style={{ color: D.muted }}>{term.desc}</p>
                 </div>
               </div>
@@ -222,10 +222,10 @@ export default function HowToHireAContractor() {
           <p className="text-sm" style={{ color: D.muted }}>
             A handshake is not a contract. Every job, no matter how small, should have a written agreement signed before any work or money changes hands.
           </p>
-          <div className="space-y-2″>
+          <div className="space-y-2">
             {CONTRACT_ITEMS.map((item, i) => (
               <div key={i} className="flex items-start gap-3 p-2.5 rounded-lg" style={{ background: i % 2 === 0 ? D.surface : "transparent" }}>
-                <CheckCircle className="w-4 h-4 mt-0.5 flex-shrink-0″ style={{ color: D.amber }} />
+                <CheckCircle className="w-4 h-4 mt-0.5 flex-shrink-0" style={{ color: D.amber }} />
                 <span className="text-sm" style={{ color: D.text }}>{item}</span>
               </div>
             ))}
@@ -237,9 +237,9 @@ export default function HowToHireAContractor() {
           <p className="text-sm" style={{ color: D.muted }}>
             Online reviews give you signal, but direct references give you certainty. Always ask for and actually call references before hiring.
           </p>
-          <div className="grid grid-cols-2 gap-3″>
+          <div className="grid grid-cols-2 gap-3">
             {REVIEW_TIPS.map((tip, i) => (
-              <div key={i} className="p-4 rounded-xl space-y-1″ style={{ background: D.surface, border: `1px solid ${D.border}` }}>
+              <div key={i} className="p-4 rounded-xl space-y-1" style={{ background: D.surface, border: `1px solid ${D.border}` }}>
                 <p className="text-sm font-bold" style={{ color: D.text }}>{tip.label}</p>
                 <p className="text-xs" style={{ color: D.muted }}>{tip.desc}</p>
               </div>
@@ -249,18 +249,18 @@ export default function HowToHireAContractor() {
 
         {/* TrustyPro advantage CTA */}
         <div
-          className="rounded-2xl p-6 space-y-4″
+          className="rounded-2xl p-6 space-y-4"
           style={{
             background: `linear-gradient(135deg, ${D.cyan}12, ${D.purple}12)`,
             border: `1px solid ${D.cyan}30`,
           }}
         >
-          <div className="flex items-center gap-3″>
+          <div className="flex items-center gap-3">
             <div
               className="w-10 h-10 rounded-xl flex items-center justify-center"
               style={{ background: `${D.cyan}20` }}
             >
-              <Award className="w-5 h-5″ style={{ color: D.cyan }} />
+              <Award className="w-5 h-5" style={{ color: D.cyan }} />
             </div>
             <div>
               <p className="font-bold text-base" style={{ color: D.text }}>Skip the verification work</p>
@@ -272,13 +272,13 @@ export default function HowToHireAContractor() {
             <span style={{ color: D.cyan }}>pre-vetted, background checked, licensed, and insured</span>
             {" "}before they ever appear in your results. We handle verification so you don&apos;t have to worry about who shows up at your door.
           </p>
-          <div className="flex items-center gap-3″>
+          <div className="flex items-center gap-3">
             <button
               className="flex items-center gap-2 px-5 py-2.5 rounded-xl text-sm font-bold transition-all"
               style={{ background: `linear-gradient(135deg, ${D.cyan}cc, ${D.purple}cc)`, color: "#fff" }}
             >
               Find a Verified Pro
-              <ChevronRight className="w-4 h-4″ />
+              <ChevronRight className="w-4 h-4" />
             </button>
             <button
               className="px-5 py-2.5 rounded-xl text-sm font-semibold"

@@ -39,8 +39,8 @@ export default function MoldPreventionGuide() {
   const maxRisk = riskFactors.reduce((sum, f) => sum + f.weight, 0);
   const riskPct = Math.round((riskScore / maxRisk) * 100);
 
-  const riskLevel = riskPct < 25 ? { label: 'Low Risk', color: '#16a34a', bg: '#0d2818′ }
-    : riskPct < 55 ? { label: 'Moderate Risk', color: '#f59e0b', bg: '#2d1f06′ }
+  const riskLevel = riskPct < 25 ? { label: 'Low Risk', color: '#16a34a', bg: '#0d2818' }
+    : riskPct < 55 ? { label: 'Moderate Risk', color: '#f59e0b', bg: '#2d1f06' }
     : { label: 'High Risk', color: '#ef4444', bg: '#2d0a0a' };
 
   return (
@@ -95,9 +95,9 @@ export default function MoldPreventionGuide() {
               <div
                 key={item.id}
                 onClick={() => toggleCheck(item.id)}
-                style={{ display: 'flex', gap: 14, alignItems: 'flex-start', cursor: 'pointer', padding: 14, borderRadius: 8, background: checked[item.id] ? '#0d2818′ : '#0d1117', border: `1px solid ${checked[item.id] ? '#238636' : '#30363d'}`, transition: ’all 0.2s' }}
+                style={{ display: 'flex', gap: 14, alignItems: 'flex-start', cursor: 'pointer', padding: 14, borderRadius: 8, background: checked[item.id] ? '#0d2818' : '#0d1117', border: `1px solid ${checked[item.id] ? '#238636' : '#30363d'}`, transition: 'all 0.2s' }}
               >
-                <div style={{ width: 22, height: 22, borderRadius: 6, border: `2px solid ${checked[item.id] ? '#3fb950' : '#30363d'}`, background: checked[item.id] ? '#238636′ : ’transparent', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0, marginTop: 1 }}>
+                <div style={{ width: 22, height: 22, borderRadius: 6, border: `2px solid ${checked[item.id] ? '#3fb950' : '#30363d'}`, background: checked[item.id] ? '#238636' : 'transparent', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0, marginTop: 1 }}>
                   {checked[item.id] && <span style={{ fontSize: 12, color: '#fff' }}>✓</span>}
                 </div>
                 <div>

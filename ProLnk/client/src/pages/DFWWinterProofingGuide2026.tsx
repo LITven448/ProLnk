@@ -54,7 +54,7 @@ export default function DFWWinterProofingGuide2026() {
         <div style={{ background: '#132035', borderRadius: 10, padding: 24 }}>
           <div style={{ color: '#F5E642', fontWeight: 700, marginBottom: 12 }}>🔑 DFW Winter Key Facts</div>
           {['Foam pipe insulation: $1–3/ft at any hardware store','Service your furnace in October — not December when techs are booked','Pier & beam homes freeze 3× faster than slab — act first','7 gallons of stored water per person covers 3 days','ProLnk connects you to vetted winterization pros across DFW'].map((f,i) => (
-            <div key={i} style={{ display: 'flex', gap: 10, marginBottom: 8 }}><span style={{ color: '#F5E642′ }}>▸</span><span style={{ color: '#cbd5e1', fontSize: 14 }}>{f}</span></div>
+            <div key={i} style={{ display: 'flex', gap: 10, marginBottom: 8 }}><span style={{ color: '#F5E642' }}>▸</span><span style={{ color: '#cbd5e1', fontSize: 14 }}>{f}</span></div>
           ))}
         </div>
       </div>

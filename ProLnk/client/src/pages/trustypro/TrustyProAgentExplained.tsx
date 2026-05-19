@@ -90,18 +90,18 @@ export default function TrustyProAgentExplained() {
           <h2 style={{ fontSize: 22, fontWeight: 700, marginBottom: 20 }}>Select a Home Zone</h2>
           <div style={{ display: 'flex', gap: 10, flexWrap: 'wrap', marginBottom: 28 }}>
             {zones.map(z => (
-              <button key={z.id} onClick={() => setSelected(z)} style={{ padding: '10px 18px', borderRadius: 8, border: 'none', cursor: 'pointer', fontSize: 14, fontWeight: 600, background: selected.id === z.id ? '#4F46E5′ : '#1e3a5f', color: '#fff' }}>
+              <button key={z.id} onClick={() => setSelected(z)} style={{ padding: '10px 18px', borderRadius: 8, border: 'none', cursor: 'pointer', fontSize: 14, fontWeight: 600, background: selected.id === z.id ? '#4F46E5' : '#1e3a5f', color: '#fff' }}>
                 {z.emoji} {z.label}
               </button>
             ))}
           </div>
-          <h3 style={{ fontSize: 18, fontWeight: 700, marginBottom: 12, color: '#FACC15′ }}>What AI Detects — {selected.label}</h3>
+          <h3 style={{ fontSize: 18, fontWeight: 700, marginBottom: 12, color: '#FACC15' }}>What AI Detects — {selected.label}</h3>
           <ul style={{ marginBottom: 20, paddingLeft: 20 }}>
             {selected.detects.map(d => <li key={d} style={{ color: '#e2e8f0', fontSize: 15, marginBottom: 6 }}>{d}</li>)}
           </ul>
           <div style={{ background: '#050d1a', borderRadius: 10, padding: 16, marginBottom: 16 }}>
             <span style={{ color: '#4F46E5', fontWeight: 700 }}>Accuracy Range: </span>
-            <span style={{ color: '#e2e8f0′ }}>{selected.accuracy}</span>
+            <span style={{ color: '#e2e8f0' }}>{selected.accuracy}</span>
           </div>
           <div>
             <div style={{ color: '#94a3b8', fontWeight: 600, marginBottom: 8 }}>⚠️ What It Can't See</div>

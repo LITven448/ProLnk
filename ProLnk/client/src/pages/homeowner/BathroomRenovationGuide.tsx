@@ -82,9 +82,9 @@ export default function BathroomRenovationGuide() {
               style={{
                 padding: '10px 22px',
                 borderRadius: 8,
-                border: scope === key ? '2px solid #FACC15′ : '2px solid #2A3A52',
-                background: scope === key ? '#FACC15′ : ’transparent',
-                color: scope === key ? '#0A1628′ : '#CBD5E1',
+                border: scope === key ? '2px solid #FACC15' : '2px solid #2A3A52',
+                background: scope === key ? '#FACC15' : 'transparent',
+                color: scope === key ? '#0A1628' : '#CBD5E1',
                 fontWeight: 700,
                 fontSize: 14,
                 cursor: 'pointer',
@@ -99,18 +99,18 @@ export default function BathroomRenovationGuide() {
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 20, flexWrap: 'wrap', gap: 12 }}>
             <div>
               <p style={{ color: '#94A3B8', fontSize: 13, marginBottom: 2 }}>Typical Cost Range</p>
-              <p style={{ fontSize: 24, fontWeight: 800, color: '#FACC15′ }}>{selected.range}</p>
+              <p style={{ fontSize: 24, fontWeight: 800, color: '#FACC15' }}>{selected.range}</p>
             </div>
             <div style={{ textAlign: 'right' }}>
               <p style={{ color: '#94A3B8', fontSize: 13, marginBottom: 2 }}>Expected ROI at Resale</p>
-              <p style={{ fontSize: 24, fontWeight: 800, color: '#34D399′ }}>{selected.roi}</p>
+              <p style={{ fontSize: 24, fontWeight: 800, color: '#34D399' }}>{selected.roi}</p>
             </div>
           </div>
-          <h3 style={{ fontSize: 15, fontWeight: 700, marginBottom: 12, color: '#E2E8F0′ }}>What’s Included:</h3>
+          <h3 style={{ fontSize: 15, fontWeight: 700, marginBottom: 12, color: '#E2E8F0' }}>What's Included:</h3>
           <ul style={{ listStyle: 'none', padding: 0, margin: 0 }}>
             {selected.items.map((item, i) => (
               <li key={i} style={{ display: 'flex', alignItems: 'center', gap: 10, padding: '8px 0', borderBottom: '1px solid #1E3050', color: '#CBD5E1', fontSize: 15 }}>
-                <span style={{ color: '#FACC15′ }}>✓</span> {item}
+                <span style={{ color: '#FACC15' }}>✓</span> {item}
               </li>
             ))}
           </ul>

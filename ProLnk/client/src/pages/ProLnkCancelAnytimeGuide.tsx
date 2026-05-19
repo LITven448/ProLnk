@@ -86,8 +86,8 @@ export default function ProLnkCancelAnytimeGuide() {
         <div style={{ display: 'flex', gap: 12, marginBottom: 24 }}>
           {scenarios.map(s => (
             <button key={s.id} onClick={() => setSelected(s.id)} style={{
-              flex: 1, background: selected === s.id ? '#F5E642′ : '#0d1f3c',
-              color: selected === s.id ? '#0A1628′ : '#fff',
+              flex: 1, background: selected === s.id ? '#F5E642' : '#0d1f3c',
+              color: selected === s.id ? '#0A1628' : '#fff',
               border: `1px solid ${selected === s.id ? '#F5E642' : '#1e3a5f'}`,
               borderRadius: 10, padding: '14px 8px', cursor: 'pointer', fontWeight: selected === s.id ? 700 : 400, fontSize: 13,
             }}>{s.icon}<br />{s.label}</button>
@@ -109,7 +109,7 @@ export default function ProLnkCancelAnytimeGuide() {
           </div>
         </div>
 
-        <div style={{ background: '#1a2f0a', border: '1px solid #F5E642', borderRadius: 12, padding: 20, fontSize: 14, color: '#F5E642′ }}>
+        <div style={{ background: '#1a2f0a', border: '1px solid #F5E642', borderRadius: 12, padding: 20, fontSize: 14, color: '#F5E642' }}>
           {outcome.note}
         </div>
       </div>

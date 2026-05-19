@@ -79,8 +79,8 @@ export default function DFWHVACTwoStoryGuide() {
               onClick={() => { setSelected(s); setShowAll(false); }}
               style={{
                 padding: '10px 16px', borderRadius: 8, border: `2px solid ${selected.symptom === s.symptom ? '#F5E642' : '#1e3a5f'}`,
-                background: selected.symptom === s.symptom ? '#F5E642′ : '#0d2137',
-                color: selected.symptom === s.symptom ? '#0A1628′ : '#94a3b8',
+                background: selected.symptom === s.symptom ? '#F5E642' : '#0d2137',
+                color: selected.symptom === s.symptom ? '#0A1628' : '#94a3b8',
                 fontWeight: 600, cursor: 'pointer', fontSize: 13,
               }}
             >

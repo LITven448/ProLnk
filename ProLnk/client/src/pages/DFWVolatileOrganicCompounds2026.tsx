@@ -48,7 +48,7 @@ export default function DFWVolatileOrganicCompounds2026() {
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12 }}>
             {sources.map(s => (
               <button key={s.id} onClick={() => setSource(s.id === source ? null : s.id)}
-                style={{ background: source === s.id ? '#F5E642′ : '#1e3a5f', color: source === s.id ? '#0A1628' : '#fff', border: ’none', borderRadius: 10, padding: '14px 16px', cursor: 'pointer', fontWeight: 600, fontSize: 14, textAlign: 'left' }}>
+                style={{ background: source === s.id ? '#F5E642' : '#1e3a5f', color: source === s.id ? '#0A1628' : '#fff', border: 'none', borderRadius: 10, padding: '14px 16px', cursor: 'pointer', fontWeight: 600, fontSize: 14, textAlign: 'left' }}>
                 {s.label}
               </button>
             ))}
@@ -74,7 +74,7 @@ export default function DFWVolatileOrganicCompounds2026() {
           <h2 style={{ fontSize: 18, fontWeight: 700, color: '#F5E642', marginBottom: 16 }}>⚠️ DFW-Specific VOC Risks</h2>
           {['DFW summer heat (100°F+) dramatically accelerates off-gassing rates from all sources','High humidity causes pressed wood to absorb moisture and release formaldehyde faster','Renovating in summer? Do major work in fall when cooler temps slow off-gassing','New construction homes in DFW suburbs often have all sources simultaneously — ventilate heavily for 6 months'].map(item => (
             <div key={item} style={{ display: 'flex', gap: 10, marginBottom: 10 }}>
-              <span style={{ color: '#F5E642′ }}>→</span>
+              <span style={{ color: '#F5E642' }}>→</span>
               <span style={{ color: '#cbd5e1', fontSize: 14 }}>{item}</span>
             </div>
           ))}

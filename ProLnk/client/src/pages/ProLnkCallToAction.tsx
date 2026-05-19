@@ -112,9 +112,9 @@ export default function ProLnkCallToAction() {
             {prospects.map(p => (
               <button key={p} onClick={() => setProspect(p)} style={{
                 padding: '8px 18px', borderRadius: 24, border: '2px solid',
-                borderColor: prospect === p ? '#F5E642′ : '#334155',
-                background: prospect === p ? '#F5E642′ : ’transparent',
-                color: prospect === p ? '#0A1628′ : '#94A3B8',
+                borderColor: prospect === p ? '#F5E642' : '#334155',
+                background: prospect === p ? '#F5E642' : 'transparent',
+                color: prospect === p ? '#0A1628' : '#94A3B8',
                 fontWeight: 700, cursor: 'pointer', fontSize: 13, textTransform: 'capitalize',
               }}>{p}</button>
             ))}
@@ -127,9 +127,9 @@ export default function ProLnkCallToAction() {
             {situations.map(s => (
               <button key={s} onClick={() => setSituation(s)} style={{
                 padding: '8px 18px', borderRadius: 24, border: '2px solid',
-                borderColor: situation === s ? '#F5E642′ : '#334155',
-                background: situation === s ? '#F5E642′ : ’transparent',
-                color: situation === s ? '#0A1628′ : '#94A3B8',
+                borderColor: situation === s ? '#F5E642' : '#334155',
+                background: situation === s ? '#F5E642' : 'transparent',
+                color: situation === s ? '#0A1628' : '#94A3B8',
                 fontWeight: 700, cursor: 'pointer', fontSize: 13, textTransform: 'capitalize',
               }}>{s}</button>
             ))}

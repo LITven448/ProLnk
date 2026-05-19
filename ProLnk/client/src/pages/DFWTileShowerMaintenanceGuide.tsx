@@ -61,7 +61,7 @@ export default function DFWTileShowerMaintenanceGuide() {
               </select>
             </div>
           </div>
-          <button onClick={() => setShowResults(true)} disabled={!showerType || !hardness} style={{ backgroundColor: showerType && hardness ? '#F5E642′ : '#1E3A5F', color: showerType && hardness ? '#0A1628' : '#4A5568', padding: '12px 28px', borderRadius: 8, border: ’none', fontWeight: 700, fontSize: 15, cursor: showerType && hardness ? 'pointer' : 'default' }}>
+          <button onClick={() => setShowResults(true)} disabled={!showerType || !hardness} style={{ backgroundColor: showerType && hardness ? '#F5E642' : '#1E3A5F', color: showerType && hardness ? '#0A1628' : '#4A5568', padding: '12px 28px', borderRadius: 8, border: 'none', fontWeight: 700, fontSize: 15, cursor: showerType && hardness ? 'pointer' : 'default' }}>
             Generate My Schedule →
           </button>
         </div>
@@ -69,10 +69,10 @@ export default function DFWTileShowerMaintenanceGuide() {
         {showResults && result && (
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16 }}>
             {[
-              { label: '📅 Weekly Tasks', items: result.weekly, color: '#10B981′ },
+              { label: '📅 Weekly Tasks', items: result.weekly, color: '#10B981' },
               { label: '🗓️ Monthly Tasks', items: result.monthly, color: '#F59E0B' },
-              { label: '🔩 Annual Deep Clean', items: result.annual, color: '#EF4444′ },
-              { label: '🛒 Recommended Products', items: result.products, color: '#8B5CF6′ },
+              { label: '🔩 Annual Deep Clean', items: result.annual, color: '#EF4444' },
+              { label: '🛒 Recommended Products', items: result.products, color: '#8B5CF6' },
             ].map(section => (
               <div key={section.label} style={{ backgroundColor: '#112240', borderRadius: 12, padding: 20 }}>
                 <h3 style={{ color: section.color, fontSize: 15, fontWeight: 700, marginBottom: 12 }}>{section.label}</h3>

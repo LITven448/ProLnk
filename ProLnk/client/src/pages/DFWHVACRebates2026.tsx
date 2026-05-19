@@ -19,7 +19,7 @@ export default function DFWHVACRebates2026() {
   const result = key && rebateResults[key] ? rebateResults[key] : null;
 
   return (
-    <div style={{ background: '#0A1628', minHeight: '100vh', padding: '2rem', fontFamily: 'system-ui, sans-serif', color: '#e2e8f0′ }}>
+    <div style={{ background: '#0A1628', minHeight: '100vh', padding: '2rem', fontFamily: 'system-ui, sans-serif', color: '#e2e8f0' }}>
       <div style={{ maxWidth: '820px', margin: '0 auto' }}>
         <div style={{ marginBottom: '2rem' }}>
           <span style={{ background: '#F5E642', color: '#0A1628', padding: '0.25rem 0.75rem', borderRadius: '999px', fontSize: '0.75rem', fontWeight: 700 }}>DFW HVAC GUIDE</span>
@@ -75,7 +75,7 @@ export default function DFWHVACRebates2026() {
             </div>
           </div>
           {result && (
-            <div style={{ background: '#0A1628', borderRadius: '12px', padding: '1.25rem', border: '2px solid #F5E642′ }}>
+            <div style={{ background: '#0A1628', borderRadius: '12px', padding: '1.25rem', border: '2px solid #F5E642' }}>
               <div style={{ color: '#F5E642', fontWeight: 800, fontSize: '1.4rem', marginBottom: '1rem' }}>Total Available: {result.total}</div>
               <div style={{ marginBottom: '1rem' }}>
                 {result.breakdown.map((b, i) => (
@@ -93,7 +93,7 @@ export default function DFWHVACRebates2026() {
                 <ol style={{ margin: 0, padding: '0 0 0 1.2rem' }}>{result.howTo.map((h, i) => <li key={i} style={{ color: '#cbd5e1', fontSize: '0.84rem', marginBottom: '0.3rem' }}>{h}</li>)}</ol>
               </div>
               <div style={{ padding: '0.75rem', background: '#0f1e35', borderRadius: '8px', color: '#94a3b8', fontSize: '0.82rem' }}>
-                ⚠️ <strong style={{ color: '#F5E642′ }}>Important:</strong> {result.notes}
+                ⚠️ <strong style={{ color: '#F5E642' }}>Important:</strong> {result.notes}
               </div>
             </div>
           )}

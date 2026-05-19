@@ -100,7 +100,7 @@ export default function DFWUltimateHomeGuide() {
         <p style={{ color: '#F5E642', fontWeight: 600, marginBottom: 12 }}>Where are you right now?</p>
         <div style={{ display: 'flex', gap: 10, flexWrap: 'wrap' }}>
           {SECTIONS.map(s => (
-            <button key={s.id} onClick={() => setSituation(situation === s.id ? null : s.id)} style={{ padding: '8px 18px', borderRadius: 20, border: 'none', cursor: 'pointer', background: situation === s.id ? s.color : '#1C2E45', color: situation === s.id ? '#0A1628′ : '#aaa', fontWeight: 600, fontSize: '0.85rem' }}>
+            <button key={s.id} onClick={() => setSituation(situation === s.id ? null : s.id)} style={{ padding: '8px 18px', borderRadius: 20, border: 'none', cursor: 'pointer', background: situation === s.id ? s.color : '#1C2E45', color: situation === s.id ? '#0A1628' : '#aaa', fontWeight: 600, fontSize: '0.85rem' }}>
               {s.emoji} {s.label}
             </button>
           ))}

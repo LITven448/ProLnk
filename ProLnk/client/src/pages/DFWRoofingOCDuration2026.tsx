@@ -18,7 +18,7 @@ export default function DFWRoofingOCDuration2026() {
         <h1 style={{ fontSize: 28, fontWeight: 800, marginBottom: 6 }}>🏠 DFW Owens Corning Duration Series Guide 2026</h1>
         <p style={{ color: '#94a3b8', marginBottom: 28, lineHeight: 1.7 }}>
           Owens Corning Duration shingles are among the most-installed products in DFW due to their wind and hail ratings.
-          DFW sits in <strong style={{ color: '#F5E642′ }}>Hail Alley</strong> — Class 4 impact resistance can save 20–30% on homeowner’s insurance premiums.
+          DFW sits in <strong style={{ color: '#F5E642' }}>Hail Alley</strong> — Class 4 impact resistance can save 20–30% on homeowner's insurance premiums.
         </p>
 
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16, marginBottom: 28 }}>
@@ -31,12 +31,12 @@ export default function DFWRoofingOCDuration2026() {
             <div key={s.label} style={{ background: '#112240', borderRadius: 10, padding: 16 }}>
               <div style={{ fontSize: 22, marginBottom: 4 }}>{s.icon}</div>
               <div style={{ fontSize: 11, color: '#94a3b8', marginBottom: 2 }}>{s.label}</div>
-              <div style={{ fontSize: 15, fontWeight: 700, color: '#F5E642′ }}>{s.value}</div>
+              <div style={{ fontSize: 15, fontWeight: 700, color: '#F5E642' }}>{s.value}</div>
             </div>
           ))}
         </div>
 
-        <div style={{ background: '#112240', borderRadius: 10, padding: 16, marginBottom: 24, borderLeft: '4px solid #F5E642′ }}>
+        <div style={{ background: '#112240', borderRadius: 10, padding: 16, marginBottom: 24, borderLeft: '4px solid #F5E642' }}>
           <div style={{ fontWeight: 700, marginBottom: 8 }}>🧊 DFW Hail Alley Context</div>
           <div style={{ color: '#94a3b8', fontSize: 14, lineHeight: 1.8 }}>
             <div>⚡ DFW averages <strong style={{ color: '#fff' }}>5–8 significant hail events per year</strong></div>
@@ -55,7 +55,7 @@ export default function DFWRoofingOCDuration2026() {
               {selected === i && (
                 <div style={{ marginTop: 10, fontSize: 14, lineHeight: 1.7 }}>
                   <div style={{ color: '#F5E642', fontWeight: 700, marginBottom: 4 }}>✅ Recommended: {p.product}</div>
-                  <div style={{ color: '#94a3b8′ }}>💡 {p.why}</div>
+                  <div style={{ color: '#94a3b8' }}>💡 {p.why}</div>
                 </div>
               )}
             </button>

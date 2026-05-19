@@ -65,7 +65,7 @@ export default function DFWProductionBuilderGuide() {
   const RatingBar = ({ val }: { val: number }) => (
     <div style={{ display: 'flex', gap: 3, marginTop: 4 }}>
       {[1,2,3,4,5].map(i => (
-        <div key={i} style={{ width: 20, height: 6, borderRadius: 3, background: i <= val ? '#F5E642′ : '#1e3a5f' }} />
+        <div key={i} style={{ width: 20, height: 6, borderRadius: 3, background: i <= val ? '#F5E642' : '#1e3a5f' }} />
       ))}
     </div>
   );
@@ -82,7 +82,7 @@ export default function DFWProductionBuilderGuide() {
         </p>
 
         <div style={{ background: '#0d1f38', borderRadius: 16, padding: 28, marginBottom: 32, border: '1px solid #1e3a5f' }}>
-          <h2 style={{ fontSize: 18, fontWeight: 700, marginBottom: 20, color: '#F5E642′ }}>🏆 Find Your Best Match</h2>
+          <h2 style={{ fontSize: 18, fontWeight: 700, marginBottom: 20, color: '#F5E642' }}>🏆 Find Your Best Match</h2>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 24, marginBottom: 24 }}>
             <div>
               <label style={{ color: '#94a3b8', fontSize: 13, fontWeight: 600 }}>Your Budget</label>
@@ -118,7 +118,7 @@ export default function DFWProductionBuilderGuide() {
                 <h3 style={{ fontSize: 22, fontWeight: 800, marginBottom: 2 }}>{b.name}</h3>
                 <div style={{ color: '#F5E642', fontWeight: 700 }}>{b.tier} &bull; {b.priceRange}</div>
               </div>
-              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '4px 20px', fontSize: 13, color: '#94a3b8′ }}>
+              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '4px 20px', fontSize: 13, color: '#94a3b8' }}>
                 {[['Quality', b.quality], ['Warranty', b.warranty], ['Upgrades', b.upgrades], ['Speed', b.speed]].map(([label, val]) => (
                   <div key={label as string}><span>{label as string}</span><RatingBar val={val as number} /></div>
                 ))}

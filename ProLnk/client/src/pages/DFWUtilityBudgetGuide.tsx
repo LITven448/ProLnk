@@ -32,7 +32,7 @@ export default function DFWUtilityBudgetGuide() {
   }
 
   return (
-    <div style={{ background: '#F9FAFB', minHeight: '100vh', padding: '32px 16px', fontFamily: 'system-ui, sans-serif', color: '#0A1628′ }}>
+    <div style={{ background: '#F9FAFB', minHeight: '100vh', padding: '32px 16px', fontFamily: 'system-ui, sans-serif', color: '#0A1628' }}>
       <div style={{ maxWidth: 720, margin: '0 auto' }}>
         <div style={{ background: '#0A1628', borderRadius: 12, padding: '28px 32px', marginBottom: 28 }}>
           <div style={{ fontSize: 32 }}>⚡💧🔥</div>
@@ -45,7 +45,7 @@ export default function DFWUtilityBudgetGuide() {
             <label style={{ display: 'flex', flexDirection: 'column', gap: 6, fontSize: 14 }}>
               Home size (sq ft)
               <input type="number" value={sqft} onChange={e => setSqft(e.target.value)}
-                style={{ padding: '10px 14px', borderRadius: 8, border: '1.5px solid #E2E8F0', fontSize: 15 }} placeholder="e.g. 2400″ />
+                style={{ padding: '10px 14px', borderRadius: 8, border: '1.5px solid #E2E8F0', fontSize: 15 }} placeholder="e.g. 2400" />
             </label>
             <label style={{ display: 'flex', flexDirection: 'column', gap: 6, fontSize: 14 }}>
               DFW Area / Suburb
@@ -74,7 +74,7 @@ export default function DFWUtilityBudgetGuide() {
               <div style={{ overflowX: 'auto' }}>
                 <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: 13 }}>
                   <thead>
-                    <tr style={{ background: '#0A1628', color: '#F5E642′ }}>
+                    <tr style={{ background: '#0A1628', color: '#F5E642' }}>
                       {['Month','⚡ Elec','🔥 Gas','💧 Water','Other','Total'].map(h => (
                         <th key={h} style={{ padding: '8px 10px', textAlign: 'right', fontWeight: 700 }}>{h}</th>
                       ))}
@@ -84,8 +84,8 @@ export default function DFWUtilityBudgetGuide() {
                     {result.breakdown.map((row, i) => (
                       <tr key={i} style={{ background: i % 2 === 0 ? '#F8FAFC' : '#fff' }}>
                         <td style={{ padding: '7px 10px', fontWeight: 600 }}>{row.month}</td>
-                        <td style={{ padding: '7px 10px', textAlign: 'right', color: row.elec > 300 ? '#DC2626′ : '#0A1628' }}>${row.elec}</td>
-                        <td style={{ padding: '7px 10px', textAlign: 'right', color: row.gas > 100 ? '#1D4ED8′ : '#0A1628' }}>${row.gas}</td>
+                        <td style={{ padding: '7px 10px', textAlign: 'right', color: row.elec > 300 ? '#DC2626' : '#0A1628' }}>${row.elec}</td>
+                        <td style={{ padding: '7px 10px', textAlign: 'right', color: row.gas > 100 ? '#1D4ED8' : '#0A1628' }}>${row.gas}</td>
                         <td style={{ padding: '7px 10px', textAlign: 'right' }}>${row.water}</td>
                         <td style={{ padding: '7px 10px', textAlign: 'right', color: '#64748B' }}>$80</td>
                         <td style={{ padding: '7px 10px', textAlign: 'right', fontWeight: 700 }}>${row.total}</td>

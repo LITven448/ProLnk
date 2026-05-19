@@ -24,14 +24,14 @@ export default function DFWOutdoorFireplaceGuide2026() {
         </div>
 
         <div style={{ background: '#2a1a10', border: '2px solid #F5E642', borderRadius: 10, padding: '14px 20px', marginBottom: 28 }}>
-          <strong style={{ color: '#F5E642′ }}>⚠️ DFW Burn Ban Alert:</strong>
-          <span style={{ color: '#dde', marginLeft: 8 }}>Always check <span style={{ color: '#F5E642′ }}>airnorthTexas.com</span> or your city’s website before burning wood. Violations carry fines up to $500 in most DFW cities.</span>
+          <strong style={{ color: '#F5E642' }}>⚠️ DFW Burn Ban Alert:</strong>
+          <span style={{ color: '#dde', marginLeft: 8 }}>Always check <span style={{ color: '#F5E642' }}>airnorthTexas.com</span> or your city's website before burning wood. Violations carry fines up to $500 in most DFW cities.</span>
         </div>
 
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(160px, 1fr))', gap: 14, marginBottom: 32 }}>
           {features.map(f => (
             <button key={f.type} onClick={() => setSelected(f.type === selected ? null : f.type)}
-              style={{ background: selected === f.type ? '#F5E642′ : '#1a2a42', border: '2px solid', borderColor: selected === f.type ? '#F5E642' : '#2a3a55', borderRadius: 10, padding: '18px 10px', cursor: ’pointer', color: selected === f.type ? '#0A1628′ : '#fff', fontWeight: 700, fontSize: 14, transition: ’all .2s' }}>
+              style={{ background: selected === f.type ? '#F5E642' : '#1a2a42', border: '2px solid', borderColor: selected === f.type ? '#F5E642' : '#2a3a55', borderRadius: 10, padding: '18px 10px', cursor: 'pointer', color: selected === f.type ? '#0A1628' : '#fff', fontWeight: 700, fontSize: 14, transition: 'all .2s' }}>
               <div style={{ fontSize: 28, marginBottom: 6 }}>{f.icon}</div>
               {f.type}
             </button>
@@ -39,7 +39,7 @@ export default function DFWOutdoorFireplaceGuide2026() {
         </div>
 
         {active && (
-          <div style={{ background: '#1a2a42', borderRadius: 12, padding: 28, borderLeft: '4px solid #F5E642′ }}>
+          <div style={{ background: '#1a2a42', borderRadius: 12, padding: 28, borderLeft: '4px solid #F5E642' }}>
             <h2 style={{ color: '#F5E642', marginTop: 0 }}>{active.icon} {active.type} — DFW Guide</h2>
             <ul style={{ paddingLeft: 20, lineHeight: 2 }}>
               {active.tips.map((t, i) => <li key={i} style={{ color: '#dde' }}>{t}</li>)}

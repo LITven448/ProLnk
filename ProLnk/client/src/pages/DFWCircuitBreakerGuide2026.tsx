@@ -37,7 +37,7 @@ export default function DFWCircuitBreakerGuide2026() {
             {breakerTypes.map((b, i) => (
               <div key={i} style={{ background: '#1a3a5c', borderRadius: '8px', padding: '0.75rem', display: 'flex', gap: '0.75rem', alignItems: 'flex-start' }}>
                 <span style={{ background: b.color, color: '#fff', borderRadius: '4px', padding: '2px 8px', fontWeight: '800', fontSize: '0.9rem', whiteSpace: 'nowrap' }}>{b.amps}</span>
-                <span style={{ fontSize: '0.9rem', lineHeight: '1.5′ }}>{b.uses}</span>
+                <span style={{ fontSize: '0.9rem', lineHeight: '1.5' }}>{b.uses}</span>
               </div>
             ))}
           </div>
@@ -48,7 +48,7 @@ export default function DFWCircuitBreakerGuide2026() {
           <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
             {scenarios.map(s => (
               <button key={s.id} onClick={() => setSelected(s.id === selected ? null : s.id)}
-                style={{ background: selected === s.id ? '#F5E642′ : '#1a3a5c', color: selected === s.id ? '#0A1628' : '#e2e8f0', border: ’none', borderRadius: '8px', padding: '0.75rem 1.25rem', cursor: 'pointer', fontWeight: '700', fontSize: '0.95rem' }}>
+                style={{ background: selected === s.id ? '#F5E642' : '#1a3a5c', color: selected === s.id ? '#0A1628' : '#e2e8f0', border: 'none', borderRadius: '8px', padding: '0.75rem 1.25rem', cursor: 'pointer', fontWeight: '700', fontSize: '0.95rem' }}>
                 {s.label}
               </button>
             ))}
@@ -57,10 +57,10 @@ export default function DFWCircuitBreakerGuide2026() {
 
         {match && (
           <div style={{ background: '#0f2040', borderRadius: '12px', padding: '1.5rem', marginBottom: '1.5rem' }}>
-            <h3 style={{ color: '#F5E642', marginTop: '0′ }}>Guide: {match.label}</h3>
+            <h3 style={{ color: '#F5E642', marginTop: '0' }}>Guide: {match.label}</h3>
             <ol style={{ margin: '0', paddingLeft: '1.25rem' }}>
               {match.steps.map((step, i) => (
-                <li key={i} style={{ marginBottom: '0.6rem', lineHeight: '1.6′ }}>{step}</li>
+                <li key={i} style={{ marginBottom: '0.6rem', lineHeight: '1.6' }}>{step}</li>
               ))}
             </ol>
           </div>

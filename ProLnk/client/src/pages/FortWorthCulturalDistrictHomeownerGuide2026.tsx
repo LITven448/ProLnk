@@ -11,19 +11,19 @@ export default function FortWorthCulturalDistrictHomeownerGuide2026() {
   const [selected, setSelected] = useState<number | null>(null);
 
   return (
-    <div style={{ minHeight: "100vh", background: "#0A1628″, color: "#fff", fontFamily: "sans-serif", padding: "2rem" }}>
+    <div style={{ minHeight: "100vh", background: "#0A1628", color: "#fff", fontFamily: "sans-serif", padding: "2rem" }}>
       <div style={{ maxWidth: 800, margin: "0 auto" }}>
         <div style={{ textAlign: "center", marginBottom: "2rem" }}>
           <div style={{ fontSize: "3rem" }}>🎨</div>
-          <h1 style={{ color: "#F5E642″, fontSize: "2rem", margin: "0.5rem 0" }}>Fort Worth Cultural District Homeowner Guide 2026</h1>
-          <p style={{ color: "#94a3b8″, fontSize: "1rem" }}>
+          <h1 style={{ color: "#F5E642", fontSize: "2rem", margin: "0.5rem 0" }}>Fort Worth Cultural District Homeowner Guide 2026</h1>
+          <p style={{ color: "#94a3b8", fontSize: "1rem" }}>
             Near the Kimbell, Modern Art Museum, and TCU — walkable character with older home challenges.
           </p>
         </div>
 
-        <div style={{ background: "#0f2040″, borderRadius: 12, padding: "1.5rem", marginBottom: "1.5rem" }}>
-          <h2 style={{ color: "#F5E642″, fontSize: "1.1rem", marginBottom: "0.75rem" }}>🏛️ Neighborhood Character</h2>
-          <p style={{ color: "#94a3b8″, lineHeight: 1.7, margin: 0 }}>
+        <div style={{ background: "#0f2040", borderRadius: 12, padding: "1.5rem", marginBottom: "1.5rem" }}>
+          <h2 style={{ color: "#F5E642", fontSize: "1.1rem", marginBottom: "0.75rem" }}>🏛️ Neighborhood Character</h2>
+          <p style={{ color: "#94a3b8", lineHeight: 1.7, margin: 0 }}>
             The Cultural District sits west of downtown, adjacent to the Kimbell, Amon Carter, and Modern Art museums,
             with TCU just blocks south. Homes are predominantly 1950s–1970s brick ranches, many with original systems
             still in service. The walkable, arts-forward character drives demand — but buyers often discover hidden
@@ -31,17 +31,17 @@ export default function FortWorthCulturalDistrictHomeownerGuide2026() {
           </p>
         </div>
 
-        <h2 style={{ color: "#F5E642″, fontSize: "1.1rem", marginBottom: "1rem" }}>🏠 Select Your Home Decade</h2>
+        <h2 style={{ color: "#F5E642", fontSize: "1.1rem", marginBottom: "1rem" }}>🏠 Select Your Home Decade</h2>
         <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "0.75rem", marginBottom: "1.5rem" }}>
           {decades.map((d, i) => (
             <button
               key={i}
               onClick={() => setSelected(selected === i ? null : i)}
               style={{
-                background: selected === i ? "#F5E642″ : "#0f2040",
-                color: selected === i ? "#0A1628″ : "#fff",
+                background: selected === i ? "#F5E642" : "#0f2040",
+                color: selected === i ? "#0A1628" : "#fff",
                 border: "2px solid",
-                borderColor: selected === i ? "#F5E642″ : "#1e3a5f",
+                borderColor: selected === i ? "#F5E642" : "#1e3a5f",
                 borderRadius: 8,
                 padding: "0.75rem",
                 cursor: "pointer",
@@ -57,15 +57,15 @@ export default function FortWorthCulturalDistrictHomeownerGuide2026() {
         </div>
 
         {selected !== null && (
-          <div style={{ background: "#0f2040″, border: "2px solid #F5E642", borderRadius: 12, padding: "1.5rem", marginBottom: "1.5rem" }}>
-            <h3 style={{ color: "#F5E642″, margin: "0 0 0.75rem" }}>🔧 {decades[selected].label} Maintenance Guide</h3>
-            <p style={{ color: "#e2e8f0″, lineHeight: 1.7, margin: 0 }}>{decades[selected].guide}</p>
+          <div style={{ background: "#0f2040", border: "2px solid #F5E642", borderRadius: 12, padding: "1.5rem", marginBottom: "1.5rem" }}>
+            <h3 style={{ color: "#F5E642", margin: "0 0 0.75rem" }}>🔧 {decades[selected].label} Maintenance Guide</h3>
+            <p style={{ color: "#e2e8f0", lineHeight: 1.7, margin: 0 }}>{decades[selected].guide}</p>
           </div>
         )}
 
-        <div style={{ background: "#0f2040″, borderRadius: 12, padding: "1.5rem" }}>
-          <h2 style={{ color: "#F5E642″, fontSize: "1.1rem", marginBottom: "0.75rem" }}>📋 Cultural District Universal Watch List</h2>
-          <ul style={{ color: "#94a3b8″, lineHeight: 2, margin: 0, paddingLeft: "1.25rem" }}>
+        <div style={{ background: "#0f2040", borderRadius: 12, padding: "1.5rem" }}>
+          <h2 style={{ color: "#F5E642", fontSize: "1.1rem", marginBottom: "0.75rem" }}>📋 Cultural District Universal Watch List</h2>
+          <ul style={{ color: "#94a3b8", lineHeight: 2, margin: 0, paddingLeft: "1.25rem" }}>
             <li>🔌 Electrical panel age — 60-amp panels need immediate upgrade for modern loads</li>
             <li>🚿 Cast iron drain lines — camera scope before any major renovation</li>
             <li>🌡️ Original window unit HVAC — central air conversion ROI is very high here</li>
@@ -74,7 +74,7 @@ export default function FortWorthCulturalDistrictHomeownerGuide2026() {
           </ul>
         </div>
 
-        <p style={{ color: "#475569″, fontSize: "0.75rem", textAlign: "center", marginTop: "2rem" }}>
+        <p style={{ color: "#475569", fontSize: "0.75rem", textAlign: "center", marginTop: "2rem" }}>
           ProLnk connects Cultural District homeowners with verified local pros. © 2026 ProLnk
         </p>
       </div>

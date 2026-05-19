@@ -28,11 +28,11 @@ export default function DFWDualFuelSystemGuide2026() {
       <div style={{ maxWidth: 800, margin: '0 auto' }}>
         <div style={{ textAlign: 'center', marginBottom: '2rem' }}>
           <div style={{ fontSize: '3rem' }}>⚡🔥</div>
-          <h1 style={{ color: '#F5E642', fontSize: '2rem', margin: '0.5rem 0′ }}>DFW Dual Fuel Heat System Guide 2026</h1>
-          <p style={{ color: '#a0aec0′ }}>Heat pump efficiency + gas backup reliability — the DFW sweet spot</p>
+          <h1 style={{ color: '#F5E642', fontSize: '2rem', margin: '0.5rem 0' }}>DFW Dual Fuel Heat System Guide 2026</h1>
+          <p style={{ color: '#a0aec0' }}>Heat pump efficiency + gas backup reliability — the DFW sweet spot</p>
         </div>
 
-        <div style={{ background: '#112240', borderRadius: 12, padding: '1.5rem', marginBottom: '1.5rem', border: '1px solid #F5E642′ }}>
+        <div style={{ background: '#112240', borderRadius: 12, padding: '1.5rem', marginBottom: '1.5rem', border: '1px solid #F5E642' }}>
           <h2 style={{ color: '#F5E642', marginTop: 0 }}>How Dual Fuel Works in DFW</h2>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: '1rem' }}>
             {[
@@ -64,12 +64,12 @@ export default function DFWDualFuelSystemGuide2026() {
           ))}
         </div>
 
-        <div style={{ background: '#112240', borderRadius: 12, padding: '1.5rem', border: '1px solid #F5E642′ }}>
+        <div style={{ background: '#112240', borderRadius: 12, padding: '1.5rem', border: '1px solid #F5E642' }}>
           <h2 style={{ color: '#F5E642', marginTop: 0 }}>🏠 Dual Fuel Feasibility Tool</h2>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
             <div>
               <label style={{ color: '#a0aec0', fontSize: '0.875rem' }}>Home Size (sqft)</label>
-              <input type="number" value={size} onChange={e => setSize(e.target.value)} placeholder="e.g. 2200″
+              <input type="number" value={size} onChange={e => setSize(e.target.value)} placeholder="e.g. 2200"
                 style={{ display: 'block', width: '100%', marginTop: 4, padding: '0.5rem', borderRadius: 6, border: '1px solid #1e3a5f', background: '#0A1628', color: '#fff' }} />
             </div>
             <div>

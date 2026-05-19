@@ -61,7 +61,7 @@ export default function DFWLaundryRoomGuide() {
         <div style={{ background: '#0a1a0a', border: '1px solid #14532d', borderRadius: 12, padding: 20, marginBottom: 40 }}>
           <div style={{ color: '#22c55e', fontWeight: 700, marginBottom: 10 }}>💧 DFW Hard Water Warning Signs</div>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: 6 }}>
-            {hardWaterSigns.map(s => <div key={s} style={{ color: '#94a3b8', fontSize: 13, padding: '4px 0′ }}>• {s}</div>)}
+            {hardWaterSigns.map(s => <div key={s} style={{ color: '#94a3b8', fontSize: 13, padding: '4px 0' }}>• {s}</div>)}
           </div>
           <div style={{ marginTop: 12, color: '#22c55e', fontSize: 13 }}>DFW water averages 300–400 ppm hardness (very hard). A water softener pays for itself in extended appliance life and detergent savings within 3–4 years.</div>
         </div>
@@ -84,7 +84,7 @@ export default function DFWLaundryRoomGuide() {
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: 16, marginBottom: 20 }}>
             <div>
               <label style={{ display: 'block', color: '#94a3b8', fontSize: 13, marginBottom: 6 }}>Laundry room sq footage</label>
-              <input value={roomSize} onChange={e => setRoomSize(e.target.value)} type="number" placeholder="e.g. 60″ style={{ width: '100%', background: '#0A1628', border: '1px solid #1e3a5f', borderRadius: 8, padding: '10px 14px', color: '#fff', fontSize: 15, boxSizing: 'border-box' }} />
+              <input value={roomSize} onChange={e => setRoomSize(e.target.value)} type="number" placeholder="e.g. 60" style={{ width: '100%', background: '#0A1628', border: '1px solid #1e3a5f', borderRadius: 8, padding: '10px 14px', color: '#fff', fontSize: 15, boxSizing: 'border-box' }} />
             </div>
             <div style={{ display: 'flex', alignItems: 'center', gap: 10, paddingTop: 22 }}>
               <input type="checkbox" checked={hasGas} onChange={e => setHasGas(e.target.checked)} id="gas" />
@@ -95,13 +95,13 @@ export default function DFWLaundryRoomGuide() {
             <label style={{ display: 'block', color: '#94a3b8', fontSize: 13, marginBottom: 10 }}>Upgrade goals (select all that apply)</label>
             <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8 }}>
               {goalOptions.map(g => (
-                <button key={g} onClick={() => toggleGoal(g)} style={{ background: goals.includes(g) ? '#F5E642′ : '#0A1628', color: goals.includes(g) ? '#0A1628' : '#94a3b8', border: '1px solid #1e3a5f', borderRadius: 6, padding: '6px 14px', fontSize: 13, cursor: ’pointer' }}>{g}</button>
+                <button key={g} onClick={() => toggleGoal(g)} style={{ background: goals.includes(g) ? '#F5E642' : '#0A1628', color: goals.includes(g) ? '#0A1628' : '#94a3b8', border: '1px solid #1e3a5f', borderRadius: 6, padding: '6px 14px', fontSize: 13, cursor: 'pointer' }}>{g}</button>
               ))}
             </div>
           </div>
           <button onClick={plan} style={{ background: '#F5E642', color: '#0A1628', border: 'none', borderRadius: 8, padding: '12px 28px', fontSize: 15, fontWeight: 700, cursor: 'pointer' }}>Build Priority List →</button>
           {result && (
-            <div style={{ marginTop: 24, background: '#0A1628', borderRadius: 12, padding: 20, border: '1px solid #F5E642′ }}>
+            <div style={{ marginTop: 24, background: '#0A1628', borderRadius: 12, padding: 20, border: '1px solid #F5E642' }}>
               <div style={{ color: '#F5E642', fontWeight: 700, fontSize: 16, marginBottom: 12 }}>Your Prioritized Upgrade List — Est. {result.total}</div>
               {result.priorities.map((u, i) => (
                 <div key={u.name} style={{ display: 'flex', gap: 12, marginBottom: 10 }}>

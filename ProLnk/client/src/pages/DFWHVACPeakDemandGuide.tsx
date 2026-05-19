@@ -47,7 +47,7 @@ export default function DFWHVACPeakDemandGuide() {
             { label: 'Demand Charge Premium', value: '2–3x', sub: 'vs off-peak rate' },
           ].map(s => (
             <div key={s.label} style={{ background: '#0F2240', borderRadius: 10, padding: 16, border: '1px solid #1E3A5F', textAlign: 'center' }}>
-              <div style={{ fontSize: 22, fontWeight: 800, color: '#F5E642′ }}>{s.value}</div>
+              <div style={{ fontSize: 22, fontWeight: 800, color: '#F5E642' }}>{s.value}</div>
               <div style={{ fontSize: 12, color: '#94A3B8', marginTop: 4 }}>{s.label}</div>
               <div style={{ fontSize: 11, color: '#64748B' }}>{s.sub}</div>
             </div>
@@ -55,13 +55,13 @@ export default function DFWHVACPeakDemandGuide() {
         </div>
 
         <div style={{ background: '#0F2240', borderRadius: 12, padding: 20, marginBottom: 24, border: '1px solid #1E3A5F' }}>
-          <h2 style={{ fontSize: 16, fontWeight: 700, marginBottom: 16, color: '#F5E642′ }}>🛡️ Peak Demand Reduction Tactics</h2>
+          <h2 style={{ fontSize: 16, fontWeight: 700, marginBottom: 16, color: '#F5E642' }}>🛡️ Peak Demand Reduction Tactics</h2>
           <div style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
             {peakTips.map(t => (
               <div key={t.tip} style={{ display: 'flex', gap: 12, alignItems: 'center', background: '#0A1628', borderRadius: 8, padding: 12 }}>
                 <span style={{ fontSize: 20 }}>{t.icon}</span>
                 <div style={{ flex: 1 }}>
-                  <div style={{ fontSize: 14, color: '#CBD5E1′ }}>{t.tip}</div>
+                  <div style={{ fontSize: 14, color: '#CBD5E1' }}>{t.tip}</div>
                   <div style={{ fontSize: 12, color: '#64748B', marginTop: 2 }}>Effort: {t.effort}</div>
                 </div>
                 <div style={{ minWidth: 70, fontSize: 13, fontWeight: 700, color: '#10B981', textAlign: 'right' }}>{t.savings}</div>
@@ -71,7 +71,7 @@ export default function DFWHVACPeakDemandGuide() {
         </div>
 
         <div style={{ background: '#0F2240', borderRadius: 12, padding: 20, border: '1px solid #1E3A5F' }}>
-          <h2 style={{ fontSize: 16, fontWeight: 700, marginBottom: 12, color: '#F5E642′ }}>🏠 My Peak Demand Plan</h2>
+          <h2 style={{ fontSize: 16, fontWeight: 700, marginBottom: 12, color: '#F5E642' }}>🏠 My Peak Demand Plan</h2>
           <select value={situation} onChange={e => setSituation(e.target.value)}
             style={{ width: '100%', padding: '10px 14px', background: '#0A1628', color: '#E8EDF5', border: '1px solid #1E3A5F', borderRadius: 8, fontSize: 14, marginBottom: 16 }}>
             <option value=>Select your situation...</option>
@@ -80,7 +80,7 @@ export default function DFWHVACPeakDemandGuide() {
           {situation && situationPlans[situation] && (
             <div style={{ background: '#0A1628', borderRadius: 8, padding: 16 }}>
               <div style={{ fontSize: 14, color: '#CBD5E1', lineHeight: 1.7, marginBottom: 12 }}>{situationPlans[situation].plan}</div>
-              <div style={{ fontSize: 14, fontWeight: 700, color: '#10B981′ }}>Expected savings: {situationPlans[situation].savings}</div>
+              <div style={{ fontSize: 14, fontWeight: 700, color: '#10B981' }}>Expected savings: {situationPlans[situation].savings}</div>
             </div>
           )}
         </div>

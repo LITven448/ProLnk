@@ -44,7 +44,7 @@ export default function DFWBoilerHeatingGuide() {
           <ul style={{ color: '#ccc', lineHeight: 1.8, paddingLeft: '1.2rem' }}>
             <li>Boilers heat water (or create steam) and distribute it through pipes to radiators or baseboard units</li>
             <li>No ductwork required — great for homes without attic space for ducts</li>
-            <li>Two main types in DFW: <strong style={{ color: '#F5E642′ }}>hot water (hydronic)</strong> and <strong style={{ color: '#F5E642' }}>steam</strong></li>
+            <li>Two main types in DFW: <strong style={{ color: '#F5E642' }}>hot water (hydronic)</strong> and <strong style={{ color: '#F5E642' }}>steam</strong></li>
             <li>DFW boilers typically heat with natural gas from Atmos Energy</li>
             <li>Boilers are 85–95% efficient (AFUE) when modern; older units may be 60–70%</li>
           </ul>
@@ -72,7 +72,7 @@ export default function DFWBoilerHeatingGuide() {
           <div style={{ display: 'grid', gap: '1rem', marginBottom: '1rem' }}>
             <div>
               <label style={{ color: '#aaa', fontSize: '0.9rem' }}>Boiler Age (years)</label>
-              <input type="number" value={age} onChange={e => setAge(e.target.value)} placeholder="e.g. 25″
+              <input type="number" value={age} onChange={e => setAge(e.target.value)} placeholder="e.g. 25"
                 style={{ width: '100%', marginTop: 6, padding: '0.6rem', borderRadius: 6, border: '1px solid #334', background: '#0A1628', color: '#fff', boxSizing: 'border-box' }} />
             </div>
             <div>

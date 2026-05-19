@@ -187,9 +187,9 @@ export default function DFWPoolChemistryCalc() {
           <h2 style={{ fontSize: 16, fontWeight: 700, margin: '0 0 16px' }}>🌡️ Current Readings</h2>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: 10, marginBottom: 10 }}>
             {[
-              { label: 'CHLORINE (ppm)', val: cl, set: setCl, placeholder: 'e.g. 2.0′ },
-              { label: 'pH', val: ph, set: setPh, placeholder: 'e.g. 7.4′ },
-              { label: 'ALKALINITY (ppm)', val: alk, set: setAlk, placeholder: 'e.g. 100′ },
+              { label: 'CHLORINE (ppm)', val: cl, set: setCl, placeholder: 'e.g. 2.0' },
+              { label: 'pH', val: ph, set: setPh, placeholder: 'e.g. 7.4' },
+              { label: 'ALKALINITY (ppm)', val: alk, set: setAlk, placeholder: 'e.g. 100' },
             ].map(f => (
               <div key={f.label}>
                 <label style={{ display: 'block', fontSize: 11, color: '#94A3B8', marginBottom: 5 }}>{f.label}</label>
@@ -204,7 +204,7 @@ export default function DFWPoolChemistryCalc() {
             </div>
             <div>
               <label style={{ display: 'block', fontSize: 11, color: '#94A3B8', marginBottom: 5 }}>CYA / STABILIZER (ppm)</label>
-              <input type="number" value={cya} onChange={e => setCya(e.target.value)} placeholder="e.g. 50″ style={{ width: '100%', padding: '9px', background: '#0A1628', border: '1px solid #2D4060', borderRadius: 7, color: '#E8EDF5', fontSize: 13, boxSizing: 'border-box' }} />
+              <input type="number" value={cya} onChange={e => setCya(e.target.value)} placeholder="e.g. 50" style={{ width: '100%', padding: '9px', background: '#0A1628', border: '1px solid #2D4060', borderRadius: 7, color: '#E8EDF5', fontSize: 13, boxSizing: 'border-box' }} />
             </div>
           </div>
         </div>
@@ -217,7 +217,7 @@ export default function DFWPoolChemistryCalc() {
           <div style={{ marginBottom: 28 }}>
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 16 }}>
               <h2 style={{ fontSize: 18, fontWeight: 700, margin: 0 }}>🧪 Your DFW Chemical Plan</h2>
-              <div style={{ background: '#1E2D45', borderRadius: 8, padding: '6px 14px', fontSize: 13 }}>Pool: <strong style={{ color: '#F5E642′ }}>{gallons.toLocaleString()} gallons</strong></div>
+              <div style={{ background: '#1E2D45', borderRadius: 8, padding: '6px 14px', fontSize: 13 }}>Pool: <strong style={{ color: '#F5E642' }}>{gallons.toLocaleString()} gallons</strong></div>
             </div>
             <div style={{ display: 'grid', gap: 12 }}>
               {results.map((r, i) => (
@@ -232,7 +232,7 @@ export default function DFWPoolChemistryCalc() {
               ))}
             </div>
             <div style={{ background: '#1E2D45', borderRadius: 10, padding: '14px 18px', marginTop: 16, fontSize: 13, color: '#94A3B8', lineHeight: 1.6 }}>
-              💡 <strong style={{ color: '#E8EDF5′ }}>DFW Tip:</strong> Always add chemicals with pump running. Add chemicals separately — wait 15 mins between additions. DFW summer rule: recheck chlorine every 2–3 days when water temp exceeds 86°F.
+              💡 <strong style={{ color: '#E8EDF5' }}>DFW Tip:</strong> Always add chemicals with pump running. Add chemicals separately — wait 15 mins between additions. DFW summer rule: recheck chlorine every 2–3 days when water temp exceeds 86°F.
             </div>
           </div>
         )}

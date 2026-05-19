@@ -36,7 +36,7 @@ export default function DFWRoofingContractorPaySchedule2026() {
             ].map(([flag, text]) => (
               <div key={text} style={{ display: 'flex', gap: '0.75rem', alignItems: 'flex-start', background: '#1a3058', borderRadius: 6, padding: '0.75rem' }}>
                 <span style={{ fontSize: '1.2rem', flexShrink: 0 }}>{flag}</span>
-                <span style={{ color: '#cbd5e1′ }}>{text}</span>
+                <span style={{ color: '#cbd5e1' }}>{text}</span>
               </div>
             ))}
           </div>

@@ -87,7 +87,7 @@ export default function DFWHVACCompleteKnowledgeFinal() {
           <div style={{ display: 'grid', gap: 10 }}>
             {knowledgeLevels.map(l => (
               <button key={l.id} onClick={() => setLevel(l.id)}
-                style={{ background: level === l.id ? '#F5E642′ : '#1A2D4A', color: level === l.id ? '#0A1628' : '#fff', border: ’none', borderRadius: 8, padding: '14px 16px', cursor: 'pointer', textAlign: 'left', fontWeight: 600 }}>
+                style={{ background: level === l.id ? '#F5E642' : '#1A2D4A', color: level === l.id ? '#0A1628' : '#fff', border: 'none', borderRadius: 8, padding: '14px 16px', cursor: 'pointer', textAlign: 'left', fontWeight: 600 }}>
                 {l.label}
                 <span style={{ display: 'block', fontWeight: 400, fontSize: 12, marginTop: 3, opacity: 0.85 }}>{l.desc}</span>
               </button>

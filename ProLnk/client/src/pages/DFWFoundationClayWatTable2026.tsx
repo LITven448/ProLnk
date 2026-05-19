@@ -45,20 +45,20 @@ export default function DFWFoundationClayWatTable2026() {
     if (!loc) setResult(null);
   }
 
-  const riskColor = (r: string) => r.includes("Very")?"#ef4444″:r.includes("High")?"#f97316":r.includes("Medium")?"#fbbf24":"#4ade80";
+  const riskColor = (r: string) => r.includes("Very")?"#ef4444":r.includes("High")?"#f97316":r.includes("Medium")?"#fbbf24":"#4ade80";
 
   return (
-    <div style={{ background: "#0A1628″, minHeight: "100vh", color: "#e2e8f0", fontFamily: "system-ui, sans-serif", padding: "2rem" }}>
+    <div style={{ background: "#0A1628", minHeight: "100vh", color: "#e2e8f0", fontFamily: "system-ui, sans-serif", padding: "2rem" }}>
       <div style={{ maxWidth: 860, margin: "0 auto" }}>
         <div style={{ textAlign: "center", marginBottom: "2rem" }}>
           <div style={{ fontSize: "3rem" }}>🌊</div>
-          <h1 style={{ color: "#F5E642″, fontSize: "2rem", fontWeight: 800, margin: "0.5rem 0" }}>DFW Water Table and Foundation Guide 2026</h1>
-          <p style={{ color: "#94a3b8″, fontSize: "1rem" }}>How DFW water table depth affects your foundation — by location type</p>
+          <h1 style={{ color: "#F5E642", fontSize: "2rem", fontWeight: 800, margin: "0.5rem 0" }}>DFW Water Table and Foundation Guide 2026</h1>
+          <p style={{ color: "#94a3b8", fontSize: "1rem" }}>How DFW water table depth affects your foundation — by location type</p>
         </div>
 
-        <div style={{ background: "#0F2040″, borderRadius: 12, padding: "1.5rem", marginBottom: "1.5rem" }}>
-          <h2 style={{ color: "#F5E642″, fontSize: "1.2rem", marginBottom: "0.75rem" }}>🧱 DFW Expansive Clay + Water = Movement</h2>
-          <p style={{ color: "#cbd5e1″, lineHeight: 1.7 }}>DFW sits on the Austin Chalk and Eagle Ford Shale formations covered by Blackland Prairie clay — the most expansive soil type in North America. Clay shrinks 3-5% in volume during drought and swells 8-12% when saturated. Water table proximity controls how extreme these swings are. Homes near the water table experience constant pressure and movement; upland homes face the worst drought-induced settlement.</p>
+        <div style={{ background: "#0F2040", borderRadius: 12, padding: "1.5rem", marginBottom: "1.5rem" }}>
+          <h2 style={{ color: "#F5E642", fontSize: "1.2rem", marginBottom: "0.75rem" }}>🧱 DFW Expansive Clay + Water = Movement</h2>
+          <p style={{ color: "#cbd5e1", lineHeight: 1.7 }}>DFW sits on the Austin Chalk and Eagle Ford Shale formations covered by Blackland Prairie clay — the most expansive soil type in North America. Clay shrinks 3-5% in volume during drought and swells 8-12% when saturated. Water table proximity controls how extreme these swings are. Homes near the water table experience constant pressure and movement; upland homes face the worst drought-induced settlement.</p>
         </div>
 
         <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(190px, 1fr))", gap: "0.75rem", marginBottom: "1.5rem" }}>
@@ -68,40 +68,40 @@ export default function DFWFoundationClayWatTable2026() {
             { icon: "🏠", label: "DFW homes on expansive clay", value: "~85%" },
             { icon: "💧", label: "Capillary rise through concrete", value: "Up to 4 ft" },
           ].map((s, i) => (
-            <div key={i} style={{ background: "#0F2040″, borderRadius: 10, padding: "1rem", textAlign: "center" }}>
+            <div key={i} style={{ background: "#0F2040", borderRadius: 10, padding: "1rem", textAlign: "center" }}>
               <div style={{ fontSize: "1.8rem" }}>{s.icon}</div>
-              <div style={{ color: "#F5E642″, fontSize: "1.3rem", fontWeight: 800 }}>{s.value}</div>
+              <div style={{ color: "#F5E642", fontSize: "1.3rem", fontWeight: 800 }}>{s.value}</div>
               <div style={{ color: "#64748b", fontSize: "0.8rem" }}>{s.label}</div>
             </div>
           ))}
         </div>
 
-        <div style={{ background: "#0F2040″, borderRadius: 12, padding: "1.5rem", marginBottom: "1.5rem" }}>
-          <h2 style={{ color: "#F5E642″, fontSize: "1.2rem", marginBottom: "1rem" }}>🧮 My Location → Water Table + Foundation Guide</h2>
-          <select value={location} onChange={e=>setLocation(e.target.value)} style={{ background: "#0A1628″, color: "#e2e8f0", border: "1px solid #1e3a5f", borderRadius: 8, padding: "0.6rem 1rem", width: "100%", marginBottom: "0.75rem" }}>
+        <div style={{ background: "#0F2040", borderRadius: 12, padding: "1.5rem", marginBottom: "1.5rem" }}>
+          <h2 style={{ color: "#F5E642", fontSize: "1.2rem", marginBottom: "1rem" }}>🧮 My Location → Water Table + Foundation Guide</h2>
+          <select value={location} onChange={e=>setLocation(e.target.value)} style={{ background: "#0A1628", color: "#e2e8f0", border: "1px solid #1e3a5f", borderRadius: 8, padding: "0.6rem 1rem", width: "100%", marginBottom: "0.75rem" }}>
             <option value="">Select your DFW location type</option>
             {locations.map(l=><option key={l.id} value={l.id}>{l.label}</option>)}
           </select>
-          <button onClick={showGuide} style={{ background: "#F5E642″, color: "#0A1628", border: "none", borderRadius: 8, padding: "0.7rem 2rem", fontWeight: 700, cursor: "pointer", width: "100%" }}>Show My Foundation Water Guide →</button>
+          <button onClick={showGuide} style={{ background: "#F5E642", color: "#0A1628", border: "none", borderRadius: 8, padding: "0.7rem 2rem", fontWeight: 700, cursor: "pointer", width: "100%" }}>Show My Foundation Water Guide →</button>
           {result && (
-            <div style={{ marginTop: "1rem", background: "#0A1628″, borderRadius: 8, padding: "1rem" }}>
+            <div style={{ marginTop: "1rem", background: "#0A1628", borderRadius: 8, padding: "1rem" }}>
               <div style={{ display: "flex", justifyContent: "space-between", marginBottom: "0.5rem", flexWrap: "wrap", gap: "0.5rem" }}>
-                <span style={{ color: "#F5E642″, fontWeight: 700 }}>Water Table: {result.waterTable}</span>
+                <span style={{ color: "#F5E642", fontWeight: 700 }}>Water Table: {result.waterTable}</span>
                 <span style={{ color: riskColor(result.risk), fontWeight: 700 }}>Risk: {result.risk}</span>
               </div>
-              <p style={{ color: "#cbd5e1″, lineHeight: 1.6, marginBottom: "0.75rem" }}>{result.detail}</p>
+              <p style={{ color: "#cbd5e1", lineHeight: 1.6, marginBottom: "0.75rem" }}>{result.detail}</p>
               <div>
-                <div style={{ color: "#4ade80″, fontWeight: 600, marginBottom: "0.4rem" }}>✅ Action Items:</div>
-                {result.tips.map((t, i) => <div key={i} style={{ color: "#94a3b8″, fontSize: "0.85rem", padding: "0.25rem 0" }}>• {t}</div>)}
+                <div style={{ color: "#4ade80", fontWeight: 600, marginBottom: "0.4rem" }}>✅ Action Items:</div>
+                {result.tips.map((t, i) => <div key={i} style={{ color: "#94a3b8", fontSize: "0.85rem", padding: "0.25rem 0" }}>• {t}</div>)}
               </div>
             </div>
           )}
         </div>
 
-        <div style={{ background: "#F5E642″, borderRadius: 12, padding: "1.5rem", textAlign: "center" }}>
+        <div style={{ background: "#F5E642", borderRadius: 12, padding: "1.5rem", textAlign: "center" }}>
           <div style={{ fontSize: "1.5rem" }}>🔗</div>
-          <p style={{ color: "#0A1628″, fontWeight: 600, margin: "0.5rem 0" }}>Get a DFW foundation assessment from verified local pros</p>
-          <div style={{ color: "#0A1628″, fontWeight: 800 }}>prolnk.io — Verified DFW Foundation Specialists</div>
+          <p style={{ color: "#0A1628", fontWeight: 600, margin: "0.5rem 0" }}>Get a DFW foundation assessment from verified local pros</p>
+          <div style={{ color: "#0A1628", fontWeight: 800 }}>prolnk.io — Verified DFW Foundation Specialists</div>
         </div>
       </div>
     </div>

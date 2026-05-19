@@ -57,7 +57,7 @@ export default function DFWHVACWinterCoverGuide() {
   return (
     <div style={{ background: '#0A1628', minHeight: '100vh', color: '#E8EAF0', fontFamily: 'sans-serif', padding: '2rem' }}>
       <div style={{ maxWidth: 760, margin: '0 auto' }}>
-        <div style={{ marginBottom: '0.5rem', fontSize: '0.85rem', color: '#F5E642′ }}>❄️ DFW HVAC Guide</div>
+        <div style={{ marginBottom: '0.5rem', fontSize: '0.85rem', color: '#F5E642' }}>❄️ DFW HVAC Guide</div>
         <h1 style={{ fontSize: '1.9rem', fontWeight: 800, marginBottom: '0.5rem', color: '#FFFFFF' }}>
           AC Condenser Winter Cover Guide for DFW
         </h1>
@@ -65,7 +65,7 @@ export default function DFWHVACWinterCoverGuide() {
           Should you cover your outdoor AC unit for DFW winter? The answer depends on your system type and location. Getting it wrong causes damage either way.
         </p>
 
-        <div style={{ background: '#111E35', borderRadius: 10, padding: '1rem 1.25rem', marginBottom: '2rem', borderLeft: '4px solid #F5E642′ }}>
+        <div style={{ background: '#111E35', borderRadius: 10, padding: '1rem 1.25rem', marginBottom: '2rem', borderLeft: '4px solid #F5E642' }}>
           <div style={{ fontWeight: 700, color: '#F5E642', marginBottom: '0.25rem' }}>The Core Rule</div>
           <div style={{ color: '#9CA3B0', fontSize: '0.9rem', lineHeight: 1.5 }}>
             Heat pump = never cover. Standard AC = maybe partial. Full covers on either system trap moisture, block emergency defrost, and become nesting habitat for rodents.
@@ -80,8 +80,8 @@ export default function DFWHVACWinterCoverGuide() {
               onClick={() => handleSystemSelect(sys)}
               style={{
                 padding: '0.6rem 1.25rem', borderRadius: 20, border: 'none', cursor: 'pointer',
-                background: selectedSystem === sys ? '#F5E642′ : '#111E35',
-                color: selectedSystem === sys ? '#0A1628′ : '#E8EAF0',
+                background: selectedSystem === sys ? '#F5E642' : '#111E35',
+                color: selectedSystem === sys ? '#0A1628' : '#E8EAF0',
                 fontWeight: selectedSystem === sys ? 700 : 400, fontSize: '0.9rem',
               }}
             >{sys}</button>
@@ -100,7 +100,7 @@ export default function DFWHVACWinterCoverGuide() {
                     onClick={() => setResult(entry || null)}
                     style={{
                       background: result?.location === loc ? '#1E3A5F' : '#111E35',
-                      border: result?.location === loc ? '1.5px solid #F5E642′ : '1.5px solid #1A2540',
+                      border: result?.location === loc ? '1.5px solid #F5E642' : '1.5px solid #1A2540',
                       borderRadius: 10, padding: '0.85rem 1.25rem', textAlign: 'left', cursor: 'pointer', color: '#E8EAF0',
                     }}
                   >
@@ -113,10 +113,10 @@ export default function DFWHVACWinterCoverGuide() {
         )}
 
         {result && (
-          <div style={{ background: '#111E35', borderRadius: 12, padding: '1.5rem', border: '1.5px solid #F5E642′ }}>
+          <div style={{ background: '#111E35', borderRadius: 12, padding: '1.5rem', border: '1.5px solid #F5E642' }}>
             <div style={{
               display: 'inline-block', padding: '0.35rem 1rem', borderRadius: 20, fontWeight: 800, marginBottom: '1rem',
-              background: result.recommendation === 'Never Cover' ? '#7C2D12′ : result.recommendation === ’Cover Not Needed' ? '#14532D' : '#92400E',
+              background: result.recommendation === 'Never Cover' ? '#7C2D12' : result.recommendation === 'Cover Not Needed' ? '#14532D' : '#92400E',
               color: '#FFFFFF', fontSize: '0.85rem',
             }}>
               {result.recommendation === 'Never Cover' ? '🚫 Never Cover' : result.recommendation === 'Cover Not Needed' ? '✅ No Cover Needed' : '⚠️ ' + result.recommendation}
@@ -133,14 +133,14 @@ export default function DFWHVACWinterCoverGuide() {
               <div style={{ background: '#1A2540', borderRadius: 8, padding: '0.5rem 1rem', fontSize: '0.85rem', display: 'inline-block' }}>
                 💵 {result.cost}
               </div>
-              <div style={{ background: '#0A1628', borderRadius: 8, padding: '0.75rem', borderLeft: '3px solid #F5E642', fontSize: '0.85rem', color: '#9CA3B0′ }}>
+              <div style={{ background: '#0A1628', borderRadius: 8, padding: '0.75rem', borderLeft: '3px solid #F5E642', fontSize: '0.85rem', color: '#9CA3B0' }}>
                 🌆 {result.dfwNote}
               </div>
             </div>
           </div>
         )}
 
-        <div style={{ marginTop: '2rem', background: '#111E35', borderRadius: 10, padding: '1rem 1.25rem', fontSize: '0.85rem', color: '#9CA3B0′ }}>
+        <div style={{ marginTop: '2rem', background: '#111E35', borderRadius: 10, padding: '1rem 1.25rem', fontSize: '0.85rem', color: '#9CA3B0' }}>
           💡 Not sure if you have a heat pump? Check your thermostat — if it has an "EM Heat" or "Emergency Heat" setting, you have a heat pump. Never cover it.
         </div>
       </div>

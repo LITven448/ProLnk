@@ -65,7 +65,7 @@ export default function DFWHomeWishListGuide() {
           ].map(b => (
             <div key={b.label} style={{ background: '#0D1F3A', border: `1px solid ${b.color}`, borderRadius: 8, padding: '1rem', textAlign: 'center' }}>
               <div style={{ fontSize: '1.5rem', fontWeight: 800, color: b.color }}>{b.pct}</div>
-              <div style={{ fontWeight: 700, fontSize: 13, margin: '4px 0′ }}>{b.label}</div>
+              <div style={{ fontWeight: 700, fontSize: 13, margin: '4px 0' }}>{b.label}</div>
               <div style={{ fontSize: 12, color: '#8FA3BF' }}>{b.desc}</div>
             </div>
           ))}
@@ -95,7 +95,7 @@ export default function DFWHomeWishListGuide() {
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(220px, 1fr))', gap: 8, marginBottom: '1rem' }}>
             {WISH_ITEMS.map(i => (
               <button key={i.label} onClick={() => toggle(i.label)}
-                style={{ background: selectedItems.includes(i.label) ? '#F5E642′ : ’rgba(255,255,255,0.05)', color: selectedItems.includes(i.label) ? '#0A1628′ : '#E8EDF5', border: '1px solid #1E3A5F', borderRadius: 6, padding: '8px 12px', fontSize: 12, cursor: ’pointer', textAlign: 'left' }}>
+                style={{ background: selectedItems.includes(i.label) ? '#F5E642' : 'rgba(255,255,255,0.05)', color: selectedItems.includes(i.label) ? '#0A1628' : '#E8EDF5', border: '1px solid #1E3A5F', borderRadius: 6, padding: '8px 12px', fontSize: 12, cursor: 'pointer', textAlign: 'left' }}>
                 <div style={{ fontWeight: 600 }}>{i.label}</div>
                 <div style={{ fontSize: 11, opacity: 0.7, marginTop: 2 }}>${i.cost.toLocaleString()} · {i.roi}% ROI {i.buyerValue ? '⭐' : ''}</div>
               </button>
@@ -103,7 +103,7 @@ export default function DFWHomeWishListGuide() {
           </div>
 
           <button onClick={() => setShowPlan(true)} disabled={selectedItems.length === 0}
-            style={{ background: selectedItems.length > 0 ? '#F5E642′ : '#1E3A5F', color: selectedItems.length > 0 ? '#0A1628' : '#8FA3BF', border: ’none', borderRadius: 6, padding: '10px 24px', fontWeight: 700, fontSize: 14, cursor: selectedItems.length > 0 ? 'pointer' : 'not-allowed' }}>
+            style={{ background: selectedItems.length > 0 ? '#F5E642' : '#1E3A5F', color: selectedItems.length > 0 ? '#0A1628' : '#8FA3BF', border: 'none', borderRadius: 6, padding: '10px 24px', fontWeight: 700, fontSize: 14, cursor: selectedItems.length > 0 ? 'pointer' : 'not-allowed' }}>
             Rank My Wish List →
           </button>
 
@@ -119,7 +119,7 @@ export default function DFWHomeWishListGuide() {
                     </div>
                     <div style={{ textAlign: 'right' }}>
                       <div style={{ fontWeight: 700 }}>${item.cost.toLocaleString()}</div>
-                      <div style={{ fontSize: 11, color: item.inBudget ? '#22C55E' : '#EF4444′ }}>{item.inBudget ? '✓ In budget' : '✗ Over budget'}</div>
+                      <div style={{ fontSize: 11, color: item.inBudget ? '#22C55E' : '#EF4444' }}>{item.inBudget ? '✓ In budget' : '✗ Over budget'}</div>
                     </div>
                   </div>
                 </div>

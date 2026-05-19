@@ -85,7 +85,7 @@ export default function DFWFireSprinklerMaintenance() {
               <div style={{ color: '#0A1628', fontWeight: 800, fontSize: 16, marginBottom: 4 }}>Inspection Schedule: {result.frequency}</div>
               <div style={{ color: '#374151', fontSize: 15, marginBottom: 16 }}>Estimated Cost: <strong>{result.cost}</strong></div>
               <div style={{ color: '#374151', fontWeight: 700, marginBottom: 8 }}>❓ Questions to Ask the Inspector:</div>
-              {result.questions.map((q, i) => <div key={i} style={{ color: '#374151', fontSize: 13, padding: '4px 0', borderBottom: i < result.questions.length - 1 ? '1px solid #F1F5F9′ : ’none' }}>• {q}</div>)}
+              {result.questions.map((q, i) => <div key={i} style={{ color: '#374151', fontSize: 13, padding: '4px 0', borderBottom: i < result.questions.length - 1 ? '1px solid #F1F5F9' : 'none' }}>• {q}</div>)}
             </div>
           )}
         </div>

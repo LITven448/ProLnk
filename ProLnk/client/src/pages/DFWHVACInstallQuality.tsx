@@ -58,7 +58,7 @@ export default function DFWHVACInstallQuality() {
               key={c.concern}
               onClick={() => setSelected(selected === c.concern ? null : c.concern)}
               style={{
-                background: selected === c.concern ? '#132040′ : '#0F1E35',
+                background: selected === c.concern ? '#132040' : '#0F1E35',
                 border: `1.5px solid ${selected === c.concern ? '#F5E642' : '#1E2D45'}`,
                 borderRadius: 10,
                 padding: '14px 20px',
@@ -90,7 +90,7 @@ export default function DFWHVACInstallQuality() {
               <p style={{ color: '#C8CDD8', lineHeight: 1.7, margin: 0 }}>{active.redFlag}</p>
             </div>
 
-            <div style={{ background: '#0F1E35', borderRadius: 8, padding: '14px 18px', borderLeft: '3px solid #F5E642′ }}>
+            <div style={{ background: '#0F1E35', borderRadius: 8, padding: '14px 18px', borderLeft: '3px solid #F5E642' }}>
               <div style={{ color: '#F5E642', fontWeight: 700, marginBottom: 4 }}>💬 What to Demand</div>
               <div style={{ color: '#9AA3B2', fontSize: 13, lineHeight: 1.6 }}>{active.demand}</div>
             </div>

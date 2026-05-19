@@ -66,7 +66,7 @@ export default function DFWHVACDFWUtility2026() {
           Understanding DFW utility rates helps you estimate HVAC operating costs and make smarter equipment and rate-plan decisions. Texas is deregulated — your electricity provider choice matters.
         </p>
 
-        <div style={{ background: '#1e293b', borderRadius: 12, padding: '16px 20px', marginBottom: 24, border: '1px solid #334155′ }}>
+        <div style={{ background: '#1e293b', borderRadius: 12, padding: '16px 20px', marginBottom: 24, border: '1px solid #334155' }}>
           <div style={{ color: '#F5E642', fontWeight: 700, marginBottom: 8 }}>How Texas Electricity Rates Work</div>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12 }}>
             {[
@@ -88,7 +88,7 @@ export default function DFWHVACDFWUtility2026() {
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(220px, 1fr))', gap: 10 }}>
             {areas.map((a, i) => (
               <button key={i} onClick={() => setSelected(i === selected ? null : i)}
-                style={{ background: selected === i ? '#F5E642′ : '#1e293b', color: selected === i ? '#0A1628' : '#cbd5e1', border: '1px solid ' + (selected === i ? '#F5E642' : '#334155'), borderRadius: 8, padding: '12px 14px', cursor: ’pointer', textAlign: 'left', fontSize: 13, fontWeight: 600 }}>
+                style={{ background: selected === i ? '#F5E642' : '#1e293b', color: selected === i ? '#0A1628' : '#cbd5e1', border: '1px solid ' + (selected === i ? '#F5E642' : '#334155'), borderRadius: 8, padding: '12px 14px', cursor: 'pointer', textAlign: 'left', fontSize: 13, fontWeight: 600 }}>
                 {a.name}
               </button>
             ))}
@@ -117,7 +117,7 @@ export default function DFWHVACDFWUtility2026() {
           </div>
         )}
 
-        <div style={{ background: '#1e293b', borderRadius: 12, padding: 20, border: '1px solid #334155′ }}>
+        <div style={{ background: '#1e293b', borderRadius: 12, padding: 20, border: '1px solid #334155' }}>
           <div style={{ color: '#fff', fontWeight: 700, marginBottom: 8 }}>Reduce HVAC Energy Costs in DFW</div>
           <p style={{ color: '#94a3b8', fontSize: 14, margin: 0, lineHeight: 1.6 }}>
             ProLnk HVAC pros can assess your home efficiency and recommend insulation, equipment upgrades, and smart thermostat strategies specific to your DFW neighborhood and utility plan.

@@ -50,7 +50,7 @@ export default function DFWHVACTechSelectDFW2026() {
           <div style={{ color: '#F5E642', fontWeight: 700, marginBottom: '1rem' }}>🎯 My Hiring Scenario</div>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0.75rem', marginBottom: '1rem' }}>
             {scenarios.map((s) => (
-              <button key={s.id} onClick={() => handleScenario(s.id)} style={{ backgroundColor: scenario === s.id ? '#F5E642′ : '#1a2f50', color: scenario === s.id ? '#0A1628' : '#fff', border: ’none', borderRadius: '8px', padding: '0.75rem', cursor: 'pointer', fontWeight: 600 }}>{s.label}</button>
+              <button key={s.id} onClick={() => handleScenario(s.id)} style={{ backgroundColor: scenario === s.id ? '#F5E642' : '#1a2f50', color: scenario === s.id ? '#0A1628' : '#fff', border: 'none', borderRadius: '8px', padding: '0.75rem', cursor: 'pointer', fontWeight: 600 }}>{s.label}</button>
             ))}
           </div>
           {result && (

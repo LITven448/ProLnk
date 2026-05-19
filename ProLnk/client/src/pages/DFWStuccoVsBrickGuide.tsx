@@ -16,7 +16,7 @@ const hailData: Record<string, { zone: string; avgClaims: string; recommendation
 const materialComparison = [
   { category: 'Hail Resistance', brick: '⭐⭐⭐⭐⭐ Excellent', stucco: '⭐⭐ Poor (EIFS) / ⭐⭐⭐ Moderate (hard coat)' },
   { category: 'DFW Resale Preference', brick: '⭐⭐⭐⭐⭐ Strong buyer preference', stucco: '⭐⭐⭐ Neutral to slight negative' },
-  { category: 'Maintenance (20 yr)', brick: '$500–$2,000', stucco: '$3,000–$12,000′ },
+  { category: 'Maintenance (20 yr)', brick: '$500–$2,000', stucco: '$3,000–$12,000' },
   { category: 'Insurance Premium', brick: 'Standard rates', stucco: '+10–25% in high-hail zones' },
   { category: 'Install Cost', brick: '$15–$30/sq ft', stucco: '$8–$20/sq ft' },
   { category: 'Heat Performance', brick: 'Excellent thermal mass', stucco: 'Good with proper insulation' },
@@ -42,9 +42,9 @@ export default function DFWStuccoVsBrickGuide() {
   return (
     <div style={{ backgroundColor: '#0A1628', minHeight: '100vh', color: '#E2E8F0', fontFamily: 'system-ui, sans-serif', padding: '32px 20px' }}>
       <div style={{ maxWidth: '760px', margin: '0 auto' }}>
-        <div style={{ marginBottom: '8px', fontSize: '14px', color: '#F5E642′ }}>🧱 DFW Exterior Guides</div>
+        <div style={{ marginBottom: '8px', fontSize: '14px', color: '#F5E642' }}>🧱 DFW Exterior Guides</div>
         <h1 style={{ fontSize: '28px', fontWeight: '700', color: '#FFFFFF', marginBottom: '8px' }}>Stucco vs Brick — DFW Exterior Guide</h1>
-        <p style={{ color: '#94A3B8', marginBottom: '32px', lineHeight: '1.6′ }}>In a region that takes a direct hailstorm hit every 2–3 years, exterior material choice is one of the most consequential decisions a DFW homeowner makes.</p>
+        <p style={{ color: '#94A3B8', marginBottom: '32px', lineHeight: '1.6' }}>In a region that takes a direct hailstorm hit every 2–3 years, exterior material choice is one of the most consequential decisions a DFW homeowner makes.</p>
 
         <div style={{ backgroundColor: '#0F2040', borderRadius: '12px', padding: '24px', marginBottom: '24px' }}>
           <h2 style={{ color: '#F5E642', fontSize: '18px', marginBottom: '16px' }}>📊 Side-by-Side Comparison</h2>
@@ -53,8 +53,8 @@ export default function DFWStuccoVsBrickGuide() {
               <div key={row.category} style={{ backgroundColor: '#1E3A5F', borderRadius: '8px', padding: '14px' }}>
                 <div style={{ color: '#94A3B8', fontSize: '12px', marginBottom: '6px', textTransform: 'uppercase', letterSpacing: '0.05em' }}>{row.category}</div>
                 <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '8px' }}>
-                  <div><span style={{ color: '#F5E642', fontSize: '11px', fontWeight: '600′ }}>BRICK: </span><span style={{ color: '#CBD5E1', fontSize: '13px' }}>{row.brick}</span></div>
-                  <div><span style={{ color: '#94A3B8', fontSize: '11px', fontWeight: '600′ }}>STUCCO: </span><span style={{ color: '#CBD5E1', fontSize: '13px' }}>{row.stucco}</span></div>
+                  <div><span style={{ color: '#F5E642', fontSize: '11px', fontWeight: '600' }}>BRICK: </span><span style={{ color: '#CBD5E1', fontSize: '13px' }}>{row.brick}</span></div>
+                  <div><span style={{ color: '#94A3B8', fontSize: '11px', fontWeight: '600' }}>STUCCO: </span><span style={{ color: '#CBD5E1', fontSize: '13px' }}>{row.stucco}</span></div>
                 </div>
               </div>
             ))}

@@ -1,9 +1,9 @@
 import { useState } from 'react';
 
 const volumeTiers = [
-  { label: '1-5 closings/mo', income: '$1,200 – $3,000′ },
-  { label: '6-15 closings/mo', income: '$3,600 – $9,000′ },
-  { label: '16-30 closings/mo', income: '$9,600 – $18,000′ },
+  { label: '1-5 closings/mo', income: '$1,200 – $3,000' },
+  { label: '6-15 closings/mo', income: '$3,600 – $9,000' },
+  { label: '16-30 closings/mo', income: '$9,600 – $18,000' },
   { label: '30+ closings/mo', income: '$18,000+' },
 ];
 
@@ -30,7 +30,7 @@ export default function ProLnkForRealEstateAgents() {
         <h2 style={{ fontSize: 20, fontWeight: 700, color: '#F5E642', marginBottom: 16 }}>How agents use ProLnk</h2>
         <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap', marginBottom: 28 }}>
           {useCases.map((u, i) => (
-            <button key={i} onClick={() => setActiveCase(activeCase === i ? null : i)} style={{ background: activeCase === i ? '#F5E642′ : '#132040', color: activeCase === i ? '#0A1628' : '#fff', border: '1px solid #F5E642', borderRadius: 8, padding: '10px 16px', cursor: ’pointer', fontWeight: 600, fontSize: 13 }}>
+            <button key={i} onClick={() => setActiveCase(activeCase === i ? null : i)} style={{ background: activeCase === i ? '#F5E642' : '#132040', color: activeCase === i ? '#0A1628' : '#fff', border: '1px solid #F5E642', borderRadius: 8, padding: '10px 16px', cursor: 'pointer', fontWeight: 600, fontSize: 13 }}>
               {u.label}
             </button>
           ))}
@@ -47,7 +47,7 @@ export default function ProLnkForRealEstateAgents() {
           <p style={{ color: '#94a3b8', fontSize: 14, marginBottom: 16 }}>Select your typical monthly closing volume:</p>
           <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap', marginBottom: 24 }}>
             {volumeTiers.map((v, i) => (
-              <button key={i} onClick={() => setVolIdx(i)} style={{ background: volIdx === i ? '#F5E642′ : '#0A1628', color: volIdx === i ? '#0A1628' : '#fff', border: '1px solid #F5E642', borderRadius: 8, padding: '10px 16px', cursor: ’pointer', fontWeight: 600, fontSize: 13 }}>
+              <button key={i} onClick={() => setVolIdx(i)} style={{ background: volIdx === i ? '#F5E642' : '#0A1628', color: volIdx === i ? '#0A1628' : '#fff', border: '1px solid #F5E642', borderRadius: 8, padding: '10px 16px', cursor: 'pointer', fontWeight: 600, fontSize: 13 }}>
                 {v.label}
               </button>
             ))}
@@ -55,7 +55,7 @@ export default function ProLnkForRealEstateAgents() {
           {volIdx !== null && (
             <div style={{ background: '#0A1628', borderRadius: 12, padding: 24, textAlign: 'center' }}>
               <div style={{ color: '#94a3b8', fontSize: 14, marginBottom: 8 }}>Estimated Monthly ProLnk Referral Income</div>
-              <div style={{ fontSize: 40, fontWeight: 700, color: '#F5E642′ }}>{volumeTiers[volIdx].income}</div>
+              <div style={{ fontSize: 40, fontWeight: 700, color: '#F5E642' }}>{volumeTiers[volIdx].income}</div>
               <div style={{ color: '#64748b', fontSize: 13, marginTop: 8 }}>Based on average DFW match fees per transaction</div>
             </div>
           )}

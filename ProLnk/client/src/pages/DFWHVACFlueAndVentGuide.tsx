@@ -11,21 +11,21 @@ const flueTypes = [
   {
     label: 'Single-wall metal flue',
     efficiencies: [
-      { range: '80% AFUE', compatible: false, note: 'Single-wall not allowed indoors per DFW code. Upgrade to B-vent required', cost: '$400–$900′ },
-      { range: '90%+ AFUE', compatible: false, note: 'Replace entirely with two-pipe PVC venting', cost: '$700–$2,000′ },
+      { range: '80% AFUE', compatible: false, note: 'Single-wall not allowed indoors per DFW code. Upgrade to B-vent required', cost: '$400–$900' },
+      { range: '90%+ AFUE', compatible: false, note: 'Replace entirely with two-pipe PVC venting', cost: '$700–$2,000' },
     ],
   },
   {
     label: 'Masonry chimney flue',
     efficiencies: [
       { range: '80% AFUE', compatible: true, note: 'Can re-line with flexible aluminum liner — required in DFW for modern 80% units', cost: '$500–$1,200 for liner' },
-      { range: '90%+ AFUE', compatible: false, note: 'Do not use chimney for condensing furnace — condensate damages masonry. Run PVC through wall or roof', cost: '$800–$2,200′ },
+      { range: '90%+ AFUE', compatible: false, note: 'Do not use chimney for condensing furnace — condensate damages masonry. Run PVC through wall or roof', cost: '$800–$2,200' },
     ],
   },
   {
     label: 'PVC two-pipe (existing)',
     efficiencies: [
-      { range: '80% AFUE', compatible: false, note: 'PVC was installed for a 90%+ furnace — replacing with 80% means flue rework', cost: '$400–$800′ },
+      { range: '80% AFUE', compatible: false, note: 'PVC was installed for a 90%+ furnace — replacing with 80% means flue rework', cost: '$400–$800' },
       { range: '90%+ AFUE', compatible: true, note: 'Reuse existing PVC if diameter and termination meet new equipment specs', cost: '$0–$200 inspection' },
     ],
   },
@@ -67,7 +67,7 @@ export default function DFWHVACFlueAndVentGuide() {
                   onClick={() => { setFlueIdx(i); setEffIdx(null); }}
                   style={{
                     background: flueIdx === i ? '#1A3A6B' : '#0A1628',
-                    border: '2px solid ' + (flueIdx === i ? '#F5E642′ : '#1E3A5F'),
+                    border: '2px solid ' + (flueIdx === i ? '#F5E642' : '#1E3A5F'),
                     borderRadius: 8,
                     padding: '12px 16px',
                     color: '#E8EDF5',
@@ -93,7 +93,7 @@ export default function DFWHVACFlueAndVentGuide() {
                     onClick={() => setEffIdx(i)}
                     style={{
                       background: effIdx === i ? '#1A3A6B' : '#0A1628',
-                      border: '2px solid ' + (effIdx === i ? '#F5E642′ : '#1E3A5F'),
+                      border: '2px solid ' + (effIdx === i ? '#F5E642' : '#1E3A5F'),
                       borderRadius: 8,
                       padding: '12px 16px',
                       color: '#E8EDF5',

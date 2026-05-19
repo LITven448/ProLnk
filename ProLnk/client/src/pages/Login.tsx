@@ -57,7 +57,7 @@ export default function Login() {
       <div className={`w-full max-w-md rounded-2xl overflow-hidden shadow-2xl ${isTrustyPro ? "bg-white border border-gray-100" : "bg-gray-900 border border-gray-800"}`}>
         {/* Header */}
         <div className={`p-8 text-center ${isTrustyPro ? "bg-indigo-600" : "bg-gray-800"}`}>
-          <div className="flex items-center justify-center gap-2 mb-2″>
+          <div className="flex items-center justify-center gap-2 mb-2">
             {isTrustyPro
               ? <Home className="w-8 h-8 text-white" />
               : <ProLnkLogo height={32} />
@@ -67,7 +67,7 @@ export default function Login() {
           <p className="text-white/70 text-sm">{brand.tagline}</p>
         </div>
 
-        <div className="p-8″>
+        <div className="p-8">
           <h2 className={`text-xl font-bold mb-6 ${isTrustyPro ? "text-gray-900" : "text-white"}`}>Sign in to your account</h2>
 
           {/* Google OAuth */}
@@ -75,21 +75,21 @@ export default function Login() {
             onClick={handleGoogleLogin}
             className={`w-full flex items-center justify-center gap-3 py-3 px-4 rounded-xl border font-semibold text-sm transition-colors mb-6 ${
               isTrustyPro
-                ? "border-gray-200 text-gray-700 hover:bg-gray-50″
-                : "border-gray-700 text-gray-300 hover:bg-gray-800″
+                ? "border-gray-200 text-gray-700 hover:bg-gray-50"
+                : "border-gray-700 text-gray-300 hover:bg-gray-800"
             }`}
           >
-            <Chrome className="w-5 h-5″ />
+            <Chrome className="w-5 h-5" />
             Continue with Google
           </button>
 
-          <div className="flex items-center gap-3 mb-6″>
+          <div className="flex items-center gap-3 mb-6">
             <div className={`flex-1 h-px ${isTrustyPro ? "bg-gray-200" : "bg-gray-800"}`} />
             <span className={`text-xs ${isTrustyPro ? "text-gray-400" : "text-gray-600"}`}>or sign in with email</span>
             <div className={`flex-1 h-px ${isTrustyPro ? "bg-gray-200" : "bg-gray-800"}`} />
           </div>
 
-          <form onSubmit={handleLogin} className="space-y-4″>
+          <form onSubmit={handleLogin} className="space-y-4">
             <div className="relative">
               <Mail className={`absolute left-3 top-3 w-4 h-4 ${isTrustyPro ? "text-gray-400" : "text-gray-600"}`} />
               <Input
@@ -111,12 +111,12 @@ export default function Login() {
                 required
                 className={`pl-10 pr-10 ${isTrustyPro ? "" : "bg-gray-800 border-gray-700 text-white placeholder:text-gray-600"}`}
               />
-              <button type="button" onClick={() => setShowPw(p => !p)} className="absolute right-3 top-3 text-gray-400″>
-                {showPw ? <EyeOff className="w-4 h-4″ /> : <Eye className="w-4 h-4" />}
+              <button type="button" onClick={() => setShowPw(p => !p)} className="absolute right-3 top-3 text-gray-400">
+                {showPw ? <EyeOff className="w-4 h-4" /> : <Eye className="w-4 h-4" />}
               </button>
             </div>
             {error && (
-              <div className="bg-red-500/10 border border-red-500/20 text-red-400 text-sm rounded-lg px-4 py-3″>
+              <div className="bg-red-500/10 border border-red-500/20 text-red-400 text-sm rounded-lg px-4 py-3">
                 {error}
               </div>
             )}
@@ -135,7 +135,7 @@ export default function Login() {
           </div>
 
           {!isTrustyPro && (
-            <p className="text-center text-gray-600 text-xs mt-6″>
+            <p className="text-center text-gray-600 text-xs mt-6">
               Service professional?{" "}
               <button onClick={() => navigate("/apply")} className="text-teal-400 hover:underline">Apply to join ProLnk</button>
             </p>

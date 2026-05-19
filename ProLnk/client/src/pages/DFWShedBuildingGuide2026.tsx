@@ -5,10 +5,10 @@ export default function DFWShedBuildingGuide2026() {
   const [size, setSize] = useState<'small' | 'medium' | 'large'>('medium');
 
   const costs: Record<string, Record<string, string>> = {
-    wood: { small: '$2,500–$4,000', medium: '$4,000–$7,000', large: '$7,000–$12,000′ },
-    metal: { small: '$800–$2,000', medium: '$2,000–$4,000', large: '$4,000–$7,000′ },
-    vinyl: { small: '$1,500–$3,000', medium: '$3,000–$5,500', large: '$5,500–$9,000′ },
-    tuffshed: { small: '$3,500–$5,500', medium: '$5,500–$9,000', large: '$9,000–$15,000′ },
+    wood: { small: '$2,500–$4,000', medium: '$4,000–$7,000', large: '$7,000–$12,000' },
+    metal: { small: '$800–$2,000', medium: '$2,000–$4,000', large: '$4,000–$7,000' },
+    vinyl: { small: '$1,500–$3,000', medium: '$3,000–$5,500', large: '$5,500–$9,000' },
+    tuffshed: { small: '$3,500–$5,500', medium: '$5,500–$9,000', large: '$9,000–$15,000' },
   };
 
   const notes: Record<string, string> = {
@@ -31,7 +31,7 @@ export default function DFWShedBuildingGuide2026() {
             <div style={{ fontSize: 13, color: '#94a3b8', marginBottom: 8 }}>Shed Material</div>
             <div style={{ display: 'flex', gap: 10, flexWrap: 'wrap' }}>
               {(['tuffshed', 'wood', 'vinyl', 'metal'] as const).map(m => (
-                <button key={m} onClick={() => setMaterial(m)} style={{ padding: '8px 16px', borderRadius: 8, border: 'none', cursor: 'pointer', background: material === m ? '#F5E642′ : '#1e2d45', color: material === m ? '#0A1628' : '#fff', fontWeight: 600, textTransform: ’capitalize' }}>
+                <button key={m} onClick={() => setMaterial(m)} style={{ padding: '8px 16px', borderRadius: 8, border: 'none', cursor: 'pointer', background: material === m ? '#F5E642' : '#1e2d45', color: material === m ? '#0A1628' : '#fff', fontWeight: 600, textTransform: 'capitalize' }}>
                   {m === 'tuffshed' ? 'Tuff Shed' : m}
                 </button>
               ))}
@@ -41,15 +41,15 @@ export default function DFWShedBuildingGuide2026() {
             <div style={{ fontSize: 13, color: '#94a3b8', marginBottom: 8 }}>Size</div>
             <div style={{ display: 'flex', gap: 10 }}>
               {(['small', 'medium', 'large'] as const).map(s => (
-                <button key={s} onClick={() => setSize(s)} style={{ padding: '8px 18px', borderRadius: 8, border: 'none', cursor: 'pointer', background: size === s ? '#F5E642′ : '#1e2d45', color: size === s ? '#0A1628' : '#fff', fontWeight: 600 }}>
-                  {s === 'small' ? '8×10′ : s === ’medium' ? '10×12′ : '12×16'}
+                <button key={s} onClick={() => setSize(s)} style={{ padding: '8px 18px', borderRadius: 8, border: 'none', cursor: 'pointer', background: size === s ? '#F5E642' : '#1e2d45', color: size === s ? '#0A1628' : '#fff', fontWeight: 600 }}>
+                  {s === 'small' ? '8×10' : s === 'medium' ? '10×12' : '12×16'}
                 </button>
               ))}
             </div>
           </div>
           <div style={{ background: '#0A1628', borderRadius: 10, padding: 20, textAlign: 'center' }}>
             <div style={{ fontSize: 13, color: '#94a3b8', marginBottom: 4 }}>Estimated DFW Cost</div>
-            <div style={{ fontSize: 36, fontWeight: 700, color: '#F5E642′ }}>{costs[material][size]}</div>
+            <div style={{ fontSize: 36, fontWeight: 700, color: '#F5E642' }}>{costs[material][size]}</div>
             <div style={{ fontSize: 13, color: '#94a3b8', marginTop: 8, textAlign: 'left', background: '#111e33', borderRadius: 8, padding: '12px 16px' }}>{notes[material]}</div>
           </div>
         </div>
@@ -64,7 +64,7 @@ export default function DFWShedBuildingGuide2026() {
             <div key={c.title} style={{ background: '#111e33', borderRadius: 10, padding: 18 }}>
               <div style={{ fontSize: 22, marginBottom: 8 }}>{c.icon}</div>
               <div style={{ fontWeight: 600, marginBottom: 6 }}>{c.title}</div>
-              <div style={{ fontSize: 13, color: '#94a3b8′ }}>{c.desc}</div>
+              <div style={{ fontSize: 13, color: '#94a3b8' }}>{c.desc}</div>
             </div>
           ))}
         </div>

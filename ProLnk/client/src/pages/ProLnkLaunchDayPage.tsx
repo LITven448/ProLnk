@@ -5,10 +5,10 @@ const DFW_AREAS = [
   { name: 'Plano', phase: 1, status: 'First' },
   { name: 'McKinney', phase: 1, status: 'First' },
   { name: 'Allen', phase: 1, status: 'First' },
-  { name: 'Prosper', phase: 2, status: 'Phase 2′ },
-  { name: 'Celina', phase: 2, status: 'Phase 2′ },
-  { name: 'Little Elm', phase: 2, status: 'Phase 2′ },
-  { name: 'Wylie', phase: 2, status: 'Phase 2′ },
+  { name: 'Prosper', phase: 2, status: 'Phase 2' },
+  { name: 'Celina', phase: 2, status: 'Phase 2' },
+  { name: 'Little Elm', phase: 2, status: 'Phase 2' },
+  { name: 'Wylie', phase: 2, status: 'Phase 2' },
 ];
 
 const CONTENT: Record<string, { headline: string; points: string[] }> = {
@@ -73,7 +73,7 @@ export default function ProLnkLaunchDayPage() {
             {DFW_AREAS.map((area, i) => (
               <div key={i} style={{ background: '#111827', border: `2px solid ${area.phase === 1 ? '#f59e0b' : '#1e3a5f'}`, borderRadius: '10px', padding: '16px', textAlign: 'center' }}>
                 <div style={{ fontSize: '20px', marginBottom: '6px' }}>{area.phase === 1 ? '🟡' : '🔵'}</div>
-                <div style={{ fontWeight: 700, fontSize: '14px', color: '#e2e8f0′ }}>{area.name}</div>
+                <div style={{ fontWeight: 700, fontSize: '14px', color: '#e2e8f0' }}>{area.name}</div>
                 <div style={{ fontSize: '11px', color: area.phase === 1 ? '#f59e0b' : '#64748b', marginTop: '4px' }}>{area.status}</div>
               </div>
             ))}

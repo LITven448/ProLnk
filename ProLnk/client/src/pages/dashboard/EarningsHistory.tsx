@@ -15,9 +15,9 @@ import {
 } from "lucide-react";
 
 const STREAM_COLORS = {
-  stream1: "#0A1628″,
-  stream2: "#00B5B8″,
-  stream3: "#8B5CF6″,
+  stream1: "#0A1628",
+  stream2: "#00B5B8",
+  stream3: "#8B5CF6",
   stream4: "#F59E0B",
 };
 
@@ -38,10 +38,10 @@ type CommissionRecord = {
 
 function classifyStream(type: string | null | undefined): keyof typeof STREAM_COLORS {
   const t = (type ?? "").toLowerCase();
-  if (t.includes("network") || t.includes("override") || t.includes("cascade")) return "stream2″;
-  if (t.includes("subscription") || t.includes("recurring")) return "stream3″;
-  if (t.includes("homeowner") || t.includes("origination")) return "stream4″;
-  return "stream1″;
+  if (t.includes("network") || t.includes("override") || t.includes("cascade")) return "stream2";
+  if (t.includes("subscription") || t.includes("recurring")) return "stream3";
+  if (t.includes("homeowner") || t.includes("origination")) return "stream4";
+  return "stream1";
 }
 
 function buildMonthlyData(commissions: CommissionRecord[], year: number) {
@@ -155,8 +155,8 @@ export default function EarningsHistory() {
   if (authLoading || isLoading) {
     return (
       <PartnerLayout>
-        <div className="flex items-center justify-center py-24″>
-          <Loader2 className="w-8 h-8 animate-spin text-gray-300″ />
+        <div className="flex items-center justify-center py-24">
+          <Loader2 className="w-8 h-8 animate-spin text-gray-300" />
         </div>
       </PartnerLayout>
     );
@@ -174,11 +174,11 @@ export default function EarningsHistory() {
 
   return (
     <PartnerLayout>
-      <div className="max-w-5xl mx-auto px-4 py-10″>
+      <div className="max-w-5xl mx-auto px-4 py-10">
         {/* Back nav */}
         <Link href="/dashboard">
           <button className="flex items-center gap-1.5 text-gray-400 hover:text-gray-700 text-sm mb-8 transition-colors">
-            <ArrowLeft className="w-4 h-4″ />
+            <ArrowLeft className="w-4 h-4" />
             Dashboard
           </button>
         </Link>
@@ -186,41 +186,41 @@ export default function EarningsHistory() {
         {/* Header */}
         <div className="flex items-start justify-between gap-4 mb-8 flex-wrap">
           <div>
-            <h1 className="text-3xl font-bold text-gray-900″>Earnings History</h1>
-            <p className="text-gray-500 text-sm mt-1″>Monthly breakdown across all 4 income streams.</p>
+            <h1 className="text-3xl font-bold text-gray-900">Earnings History</h1>
+            <p className="text-gray-500 text-sm mt-1">Monthly breakdown across all 4 income streams.</p>
           </div>
           <Button
             onClick={handleDownloadTaxSummary}
             variant="outline"
             className="gap-2 text-sm"
           >
-            <Download className="w-4 h-4″ /> Download Tax Summary (CSV)
+            <Download className="w-4 h-4" /> Download Tax Summary (CSV)
           </Button>
         </div>
 
         {/* YTD Summary + Next Payout */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6″>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
           {/* YTD Summary */}
           <div className="bg-gradient-to-br from-[#0A1628] to-[#1B4FD8] rounded-2xl p-6 text-white">
-            <div className="flex items-center gap-2 mb-4″>
-              <DollarSign className="w-4 h-4 text-blue-300″ />
+            <div className="flex items-center gap-2 mb-4">
+              <DollarSign className="w-4 h-4 text-blue-300" />
               <span className="text-xs font-semibold text-blue-300 uppercase tracking-wider">Year-to-Date Summary</span>
             </div>
-            <p className="text-4xl font-black mb-1″>${currentYearTotal.toLocaleString(undefined, { maximumFractionDigits: 0 })}</p>
-            <p className="text-sm text-blue-300 mb-4″>
+            <p className="text-4xl font-black mb-1">${currentYearTotal.toLocaleString(undefined, { maximumFractionDigits: 0 })}</p>
+            <p className="text-sm text-blue-300 mb-4">
               On pace for ${projectedAnnual.toLocaleString(undefined, { maximumFractionDigits: 0 })} this year
             </p>
-            <div className="space-y-2″>
+            <div className="space-y-2">
               {(Object.keys(STREAM_LABELS) as (keyof typeof STREAM_COLORS)[]).map((s) => (
                 <div key={s} className="flex items-center justify-between text-sm">
-                  <div className="flex items-center gap-2″>
-                    <div className="w-2.5 h-2.5 rounded-full" style={{ backgroundColor: STREAM_COLORS[s] === "#0A1628″ ? "#93c5fd" : STREAM_COLORS[s] }} />
+                  <div className="flex items-center gap-2">
+                    <div className="w-2.5 h-2.5 rounded-full" style={{ backgroundColor: STREAM_COLORS[s] === "#0A1628" ? "#93c5fd" : STREAM_COLORS[s] }} />
                     <span className="text-blue-200 text-xs">{STREAM_LABELS[s]}</span>
                   </div>
                   <span className="font-semibold text-white text-xs">
                     ${streamTotals[s].toLocaleString(undefined, { maximumFractionDigits: 0 })}
                     {currentYearTotal > 0 && (
-                      <span className="text-blue-300 font-normal ml-1″>
+                      <span className="text-blue-300 font-normal ml-1">
                         ({((streamTotals[s] / currentYearTotal) * 100).toFixed(0)}%)
                       </span>
                     )}
@@ -233,18 +233,18 @@ export default function EarningsHistory() {
           {/* Next Payout */}
           <div className="bg-white rounded-2xl border border-gray-100 shadow-sm p-6 flex flex-col justify-between">
             <div>
-              <div className="flex items-center gap-2 mb-4″>
-                <CalendarClock className="w-4 h-4 text-emerald-500″ />
+              <div className="flex items-center gap-2 mb-4">
+                <CalendarClock className="w-4 h-4 text-emerald-500" />
                 <span className="text-xs font-semibold text-gray-400 uppercase tracking-wider">Next Payout</span>
               </div>
-              <p className="text-4xl font-black text-gray-900 mb-1″>
+              <p className="text-4xl font-black text-gray-900 mb-1">
                 ${earnedThisMonth.toLocaleString(undefined, { maximumFractionDigits: 0 })}
               </p>
-              <p className="text-sm text-gray-400 mb-4″>Est. payout on {nextPayoutDate}</p>
+              <p className="text-sm text-gray-400 mb-4">Est. payout on {nextPayoutDate}</p>
             </div>
-            <div className="space-y-2″>
-              <div className="flex items-start gap-2 bg-emerald-50 rounded-xl p-3″>
-                <Zap className="w-3.5 h-3.5 text-emerald-600 mt-0.5 shrink-0″ />
+            <div className="space-y-2">
+              <div className="flex items-start gap-2 bg-emerald-50 rounded-xl p-3">
+                <Zap className="w-3.5 h-3.5 text-emerald-600 mt-0.5 shrink-0" />
                 <p className="text-xs text-emerald-700 leading-relaxed">
                   <span className="font-semibold">Increase this amount:</span> Add 1 more recruit to unlock $149/mo in subscription overrides. Each job logged adds to your direct commission stack.
                 </p>
@@ -259,50 +259,50 @@ export default function EarningsHistory() {
         </div>
 
         {/* Year totals */}
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-8″>
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-8">
           <div className="bg-white rounded-2xl border border-gray-100 p-5 shadow-sm">
-            <p className="text-xs font-semibold text-gray-400 uppercase tracking-wider mb-1″>
+            <p className="text-xs font-semibold text-gray-400 uppercase tracking-wider mb-1">
               {currentYear} Total
             </p>
-            <p className="text-3xl font-black text-gray-900″>${currentYearTotal.toLocaleString(undefined, { maximumFractionDigits: 0 })}</p>
+            <p className="text-3xl font-black text-gray-900">${currentYearTotal.toLocaleString(undefined, { maximumFractionDigits: 0 })}</p>
           </div>
           <div className="bg-white rounded-2xl border border-gray-100 p-5 shadow-sm">
-            <p className="text-xs font-semibold text-gray-400 uppercase tracking-wider mb-1″>
+            <p className="text-xs font-semibold text-gray-400 uppercase tracking-wider mb-1">
               {priorYear} Total
             </p>
-            <p className="text-3xl font-black text-gray-500″>${priorYearTotal.toLocaleString(undefined, { maximumFractionDigits: 0 })}</p>
+            <p className="text-3xl font-black text-gray-500">${priorYearTotal.toLocaleString(undefined, { maximumFractionDigits: 0 })}</p>
           </div>
           <div className="bg-white rounded-2xl border border-gray-100 p-5 shadow-sm">
-            <p className="text-xs font-semibold text-gray-400 uppercase tracking-wider mb-1″>Year-over-Year</p>
+            <p className="text-xs font-semibold text-gray-400 uppercase tracking-wider mb-1">Year-over-Year</p>
             {yearOverYearPct !== null ? (
-              <div className="flex items-center gap-2″>
+              <div className="flex items-center gap-2">
                 {yearOverYearPct >= 0
-                  ? <TrendingUp className="w-5 h-5 text-emerald-500″ />
-                  : <TrendingDown className="w-5 h-5 text-red-400″ />}
+                  ? <TrendingUp className="w-5 h-5 text-emerald-500" />
+                  : <TrendingDown className="w-5 h-5 text-red-400" />}
                 <p className={`text-3xl font-black ${yearOverYearPct >= 0 ? "text-emerald-600" : "text-red-500"}`}>
                   {yearOverYearPct >= 0 ? "+" : ""}{yearOverYearPct.toFixed(1)}%
                 </p>
               </div>
             ) : (
-              <p className="text-xl font-bold text-gray-400″>No prior year data</p>
+              <p className="text-xl font-bold text-gray-400">No prior year data</p>
             )}
           </div>
         </div>
 
         {/* Monthly bar chart — last 12 months stacked by stream */}
-        <div className="bg-white rounded-2xl border border-gray-100 shadow-sm p-6 mb-8″>
-          <div className="flex items-center gap-3 mb-6″>
+        <div className="bg-white rounded-2xl border border-gray-100 shadow-sm p-6 mb-8">
+          <div className="flex items-center gap-3 mb-6">
             <div className="w-9 h-9 rounded-xl flex items-center justify-center" style={{ background: "linear-gradient(135deg, #0A1628, #1B4FD8)" }}>
               <BarChart3 className="w-4.5 h-4.5 text-white" style={{ width: "1.125rem", height: "1.125rem" }} />
             </div>
             <div>
               <h2 className="font-bold text-gray-900 text-sm">{currentYear} Monthly Earnings</h2>
-              <p className="text-xs text-gray-400″>Stacked by income stream</p>
+              <p className="text-xs text-gray-400">Stacked by income stream</p>
             </div>
           </div>
           <ResponsiveContainer width="100%" height={280}>
             <BarChart data={currentYearData} margin={{ top: 4, right: 4, left: 0, bottom: 0 }}>
-              <CartesianGrid strokeDasharray="3 3″ stroke="#F3F4F6" />
+              <CartesianGrid strokeDasharray="3 3" stroke="#F3F4F6" />
               <XAxis dataKey="month" tick={{ fontSize: 11, fill: "#9CA3AF" }} axisLine={false} tickLine={false} />
               <YAxis tick={{ fontSize: 11, fill: "#9CA3AF" }} axisLine={false} tickLine={false}
                 tickFormatter={(v) => `$${v >= 1000 ? `${(v / 1000).toFixed(0)}k` : v}`} />
@@ -319,28 +319,28 @@ export default function EarningsHistory() {
                 formatter={(value) => STREAM_LABELS[value] ?? value}
                 wrapperStyle={{ fontSize: 11, paddingTop: 12 }}
               />
-              <Bar dataKey="stream1″ stackId="a" fill={STREAM_COLORS.stream1} radius={[0, 0, 0, 0]} />
-              <Bar dataKey="stream2″ stackId="a" fill={STREAM_COLORS.stream2} />
-              <Bar dataKey="stream3″ stackId="a" fill={STREAM_COLORS.stream3} />
-              <Bar dataKey="stream4″ stackId="a" fill={STREAM_COLORS.stream4} radius={[4, 4, 0, 0]} />
+              <Bar dataKey="stream1" stackId="a" fill={STREAM_COLORS.stream1} radius={[0, 0, 0, 0]} />
+              <Bar dataKey="stream2" stackId="a" fill={STREAM_COLORS.stream2} />
+              <Bar dataKey="stream3" stackId="a" fill={STREAM_COLORS.stream3} />
+              <Bar dataKey="stream4" stackId="a" fill={STREAM_COLORS.stream4} radius={[4, 4, 0, 0]} />
             </BarChart>
           </ResponsiveContainer>
         </div>
 
         {/* Year-over-year comparison line chart */}
-        <div className="bg-white rounded-2xl border border-gray-100 shadow-sm p-6 mb-8″>
-          <div className="flex items-center gap-3 mb-6″>
-            <div className="w-9 h-9 rounded-xl flex items-center justify-center bg-purple-50″>
-              <TrendingUp className="w-4.5 h-4.5 text-purple-600″ style={{ width: "1.125rem", height: "1.125rem" }} />
+        <div className="bg-white rounded-2xl border border-gray-100 shadow-sm p-6 mb-8">
+          <div className="flex items-center gap-3 mb-6">
+            <div className="w-9 h-9 rounded-xl flex items-center justify-center bg-purple-50">
+              <TrendingUp className="w-4.5 h-4.5 text-purple-600" style={{ width: "1.125rem", height: "1.125rem" }} />
             </div>
             <div>
               <h2 className="font-bold text-gray-900 text-sm">Year-over-Year Comparison</h2>
-              <p className="text-xs text-gray-400″>{currentYear} vs {priorYear}</p>
+              <p className="text-xs text-gray-400">{currentYear} vs {priorYear}</p>
             </div>
           </div>
           <ResponsiveContainer width="100%" height={220}>
             <LineChart data={yoyComparisonData} margin={{ top: 4, right: 4, left: 0, bottom: 0 }}>
-              <CartesianGrid strokeDasharray="3 3″ stroke="#F3F4F6" />
+              <CartesianGrid strokeDasharray="3 3" stroke="#F3F4F6" />
               <XAxis dataKey="month" tick={{ fontSize: 11, fill: "#9CA3AF" }} axisLine={false} tickLine={false} />
               <YAxis tick={{ fontSize: 11, fill: "#9CA3AF" }} axisLine={false} tickLine={false}
                 tickFormatter={(v) => `$${v >= 1000 ? `${(v / 1000).toFixed(0)}k` : v}`} />
@@ -349,22 +349,22 @@ export default function EarningsHistory() {
                 formatter={(v: number) => [`$${v.toFixed(0)}`]}
               />
               <Legend wrapperStyle={{ fontSize: 11, paddingTop: 12 }} />
-              <Line type="monotone" dataKey={String(currentYear)} stroke="#0A1628″ strokeWidth={2.5} dot={{ r: 3 }} activeDot={{ r: 5 }} />
-              <Line type="monotone" dataKey={String(priorYear)} stroke="#D1D5DB" strokeWidth={1.5} strokeDasharray="5 4″ dot={false} />
+              <Line type="monotone" dataKey={String(currentYear)} stroke="#0A1628" strokeWidth={2.5} dot={{ r: 3 }} activeDot={{ r: 5 }} />
+              <Line type="monotone" dataKey={String(priorYear)} stroke="#D1D5DB" strokeWidth={1.5} strokeDasharray="5 4" dot={false} />
             </LineChart>
           </ResponsiveContainer>
         </div>
 
         {/* Stream breakdown table */}
-        <div className="bg-white rounded-2xl border border-gray-100 shadow-sm overflow-hidden mb-8″>
-          <div className="px-5 py-4 border-b border-gray-50 flex items-center gap-3″>
-            <DollarSign className="w-4 h-4 text-gray-400″ />
+        <div className="bg-white rounded-2xl border border-gray-100 shadow-sm overflow-hidden mb-8">
+          <div className="px-5 py-4 border-b border-gray-50 flex items-center gap-3">
+            <DollarSign className="w-4 h-4 text-gray-400" />
             <h2 className="font-bold text-gray-900 text-sm">{currentYear} Stream Breakdown</h2>
           </div>
           <div className="overflow-x-auto">
             <table className="w-full text-sm">
               <thead>
-                <tr className="border-b border-gray-50 bg-gray-50/50″>
+                <tr className="border-b border-gray-50 bg-gray-50/50">
                   <th className="text-left px-5 py-3 text-xs font-semibold text-gray-400 uppercase tracking-wider">Month</th>
                   {(Object.keys(STREAM_LABELS) as (keyof typeof STREAM_LABELS)[]).map((s) => (
                     <th key={s} className="text-right px-4 py-3 text-xs font-semibold uppercase tracking-wider"
@@ -375,19 +375,19 @@ export default function EarningsHistory() {
                   <th className="text-right px-5 py-3 text-xs font-semibold text-gray-600 uppercase tracking-wider">Total</th>
                 </tr>
               </thead>
-              <tbody className="divide-y divide-gray-50″>
+              <tbody className="divide-y divide-gray-50">
                 {currentYearData.map((row) => (
                   <tr key={row.month} className="hover:bg-gray-50/50 transition-colors">
-                    <td className="px-5 py-3 font-medium text-gray-700″>{row.month}</td>
-                    <td className="px-4 py-3 text-right text-gray-600″>{row.stream1 > 0 ? `$${row.stream1.toFixed(0)}` : "—"}</td>
-                    <td className="px-4 py-3 text-right text-gray-600″>{row.stream2 > 0 ? `$${row.stream2.toFixed(0)}` : "—"}</td>
-                    <td className="px-4 py-3 text-right text-gray-600″>{row.stream3 > 0 ? `$${row.stream3.toFixed(0)}` : "—"}</td>
-                    <td className="px-4 py-3 text-right text-gray-600″>{row.stream4 > 0 ? `$${row.stream4.toFixed(0)}` : "—"}</td>
-                    <td className="px-5 py-3 text-right font-bold text-gray-900″>{row.total > 0 ? `$${row.total.toFixed(0)}` : "—"}</td>
+                    <td className="px-5 py-3 font-medium text-gray-700">{row.month}</td>
+                    <td className="px-4 py-3 text-right text-gray-600">{row.stream1 > 0 ? `$${row.stream1.toFixed(0)}` : "—"}</td>
+                    <td className="px-4 py-3 text-right text-gray-600">{row.stream2 > 0 ? `$${row.stream2.toFixed(0)}` : "—"}</td>
+                    <td className="px-4 py-3 text-right text-gray-600">{row.stream3 > 0 ? `$${row.stream3.toFixed(0)}` : "—"}</td>
+                    <td className="px-4 py-3 text-right text-gray-600">{row.stream4 > 0 ? `$${row.stream4.toFixed(0)}` : "—"}</td>
+                    <td className="px-5 py-3 text-right font-bold text-gray-900">{row.total > 0 ? `$${row.total.toFixed(0)}` : "—"}</td>
                   </tr>
                 ))}
-                <tr className="border-t-2 border-gray-200 bg-gray-50″>
-                  <td className="px-5 py-3 font-bold text-gray-900″>Total</td>
+                <tr className="border-t-2 border-gray-200 bg-gray-50">
+                  <td className="px-5 py-3 font-bold text-gray-900">Total</td>
                   <td className="px-4 py-3 text-right font-bold" style={{ color: STREAM_COLORS.stream1 }}>
                     ${streamTotals.stream1.toFixed(0)}
                   </td>
@@ -410,16 +410,16 @@ export default function EarningsHistory() {
         </div>
 
         {/* Tax summary CTA */}
-        <div className="rounded-2xl border border-gray-100 bg-gradient-to-br from-slate-50 to-gray-50 p-6 flex flex-wrap items-center justify-between gap-4″>
+        <div className="rounded-2xl border border-gray-100 bg-gradient-to-br from-slate-50 to-gray-50 p-6 flex flex-wrap items-center justify-between gap-4">
           <div>
-            <h3 className="font-bold text-gray-900 text-sm mb-1″>Tax Season Ready</h3>
+            <h3 className="font-bold text-gray-900 text-sm mb-1">Tax Season Ready</h3>
             <p className="text-xs text-gray-500 max-w-sm">
               Download a complete CSV of your earnings by month and income stream for {currentYear} and {priorYear}.
               Share with your accountant for Schedule C or 1099 filings.
             </p>
           </div>
-          <Button onClick={handleDownloadTaxSummary} className="gap-2 text-white" style={{ backgroundColor: "#0A1628″ }}>
-            <Download className="w-4 h-4″ /> Download Tax Summary
+          <Button onClick={handleDownloadTaxSummary} className="gap-2 text-white" style={{ backgroundColor: "#0A1628" }}>
+            <Download className="w-4 h-4" /> Download Tax Summary
           </Button>
         </div>
       </div>

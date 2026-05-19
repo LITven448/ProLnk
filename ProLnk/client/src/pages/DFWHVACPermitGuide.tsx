@@ -46,14 +46,14 @@ const projectTypes = [
 ];
 
 const dfwCities = [
-  { label: 'Dallas', portal: 'dallas.gov/permits', processingDays: '5-10 business days', fee: '$75-$150′ },
-  { label: 'Fort Worth', portal: 'fortworthtexas.gov/permits', processingDays: '3-7 business days', fee: '$65-$125′ },
-  { label: 'Plano', portal: 'plano.gov/permits', processingDays: '2-5 business days', fee: '$70-$140′ },
-  { label: 'Frisco', portal: 'friscotexas.gov/permits', processingDays: '3-7 business days', fee: '$80-$160′ },
-  { label: 'McKinney', portal: 'mckinneytexas.org/permits', processingDays: '4-8 business days', fee: '$70-$130′ },
-  { label: 'Arlington', portal: 'arlingtontx.gov/permits', processingDays: '5-10 business days', fee: '$75-$145′ },
-  { label: 'Irving', portal: 'cityofirving.org/permits', processingDays: '4-8 business days', fee: '$65-$125′ },
-  { label: 'Other DFW city', portal: 'your city building department website', processingDays: '3-10 business days', fee: '$60-$160′ },
+  { label: 'Dallas', portal: 'dallas.gov/permits', processingDays: '5-10 business days', fee: '$75-$150' },
+  { label: 'Fort Worth', portal: 'fortworthtexas.gov/permits', processingDays: '3-7 business days', fee: '$65-$125' },
+  { label: 'Plano', portal: 'plano.gov/permits', processingDays: '2-5 business days', fee: '$70-$140' },
+  { label: 'Frisco', portal: 'friscotexas.gov/permits', processingDays: '3-7 business days', fee: '$80-$160' },
+  { label: 'McKinney', portal: 'mckinneytexas.org/permits', processingDays: '4-8 business days', fee: '$70-$130' },
+  { label: 'Arlington', portal: 'arlingtontx.gov/permits', processingDays: '5-10 business days', fee: '$75-$145' },
+  { label: 'Irving', portal: 'cityofirving.org/permits', processingDays: '4-8 business days', fee: '$65-$125' },
+  { label: 'Other DFW city', portal: 'your city building department website', processingDays: '3-10 business days', fee: '$60-$160' },
 ];
 
 export default function DFWHVACPermitGuide() {
@@ -112,7 +112,7 @@ export default function DFWHVACPermitGuide() {
           </button>
           {showResult && (
             <div style={{ marginTop: 20, background: '#0A1628', borderRadius: 10, padding: 20, borderLeft: `4px solid ${project.requiresPermit ? '#EF4444' : '#22C55E'}` }}>
-              <div style={{ fontWeight: 700, color: project.requiresPermit ? '#EF4444′ : '#22C55E', marginBottom: 12, fontSize: 18 }}>
+              <div style={{ fontWeight: 700, color: project.requiresPermit ? '#EF4444' : '#22C55E', marginBottom: 12, fontSize: 18 }}>
                 {project.requiresPermit ? 'Permit Required' : 'No Permit Required'}
                 {project.requiresInspection ? ' + Inspection Required' : ''}
               </div>
@@ -125,7 +125,7 @@ export default function DFWHVACPermitGuide() {
                   <div style={{ color: '#CBD2E0', fontSize: 14 }}>Typical fee: {city.fee}</div>
                 </div>
               )}
-              <div style={{ background: '#1A0A0A', borderRadius: 8, padding: 14, borderLeft: '3px solid #EF4444′ }}>
+              <div style={{ background: '#1A0A0A', borderRadius: 8, padding: 14, borderLeft: '3px solid #EF4444' }}>
                 <div style={{ color: '#EF4444', fontWeight: 700, marginBottom: 4, fontSize: 13 }}>Risk if ignored:</div>
                 <div style={{ color: '#9BA4B4', fontSize: 13, lineHeight: 1.5 }}>{project.risk}</div>
               </div>

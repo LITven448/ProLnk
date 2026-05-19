@@ -39,7 +39,7 @@ const COURSES = [
     rating: 4.8,
     free: false,
     completed: false,
-    price: "$49″,
+    price: "$49",
   },
   {
     id: 3,
@@ -70,7 +70,7 @@ const COURSES = [
     rating: 4.7,
     free: false,
     completed: false,
-    price: "$39″,
+    price: "$39",
   },
   {
     id: 5,
@@ -86,7 +86,7 @@ const COURSES = [
     rating: 5.0,
     free: false,
     completed: false,
-    price: "$99″,
+    price: "$99",
     platinumOnly: false,
   },
   {
@@ -103,22 +103,22 @@ const COURSES = [
     rating: 4.6,
     free: false,
     completed: false,
-    price: "$29″,
+    price: "$29",
   },
 ];
 
 const CATEGORY_COLORS: Record<string, string> = {
-  Core: "bg-indigo-100 text-indigo-700″,
-  Specialty: "bg-violet-100 text-violet-700″,
-  Sales: "bg-green-100 text-green-700″,
-  Growth: "bg-amber-100 text-amber-700″,
-  Marketing: "bg-blue-100 text-blue-700″,
+  Core: "bg-indigo-100 text-indigo-700",
+  Specialty: "bg-violet-100 text-violet-700",
+  Sales: "bg-green-100 text-green-700",
+  Growth: "bg-amber-100 text-amber-700",
+  Marketing: "bg-blue-100 text-blue-700",
 };
 
 const LEVEL_COLORS: Record<string, string> = {
-  Beginner: "bg-green-50 text-green-600″,
-  Intermediate: "bg-amber-50 text-amber-600″,
-  Advanced: "bg-red-50 text-red-600″,
+  Beginner: "bg-green-50 text-green-600",
+  Intermediate: "bg-amber-50 text-amber-600",
+  Advanced: "bg-red-50 text-red-600",
 };
 
 export default function SkillsMarketplace() {
@@ -158,18 +158,18 @@ export default function SkillsMarketplace() {
 
     <PartnerLayout>
 
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 to-slate-100 p-6″>
+    <div className="min-h-screen bg-gradient-to-br from-slate-50 to-slate-100 p-6">
       <div className="max-w-5xl mx-auto">
         {/* Header */}
-        <div className="mb-6″>
-          <h1 className="text-3xl font-bold text-slate-900″>ProLnk Academy</h1>
-          <p className="text-slate-500 mt-1″>Earn certifications that unlock higher tiers, better leads, and more commissions</p>
+        <div className="mb-6">
+          <h1 className="text-3xl font-bold text-slate-900">ProLnk Academy</h1>
+          <p className="text-slate-500 mt-1">Earn certifications that unlock higher tiers, better leads, and more commissions</p>
         </div>
 
         {/* Progress Bar */}
-        <Card className="mb-6 bg-gradient-to-r from-indigo-600 to-violet-600 border-0″>
-          <CardContent className="pt-4 pb-4″>
-            <div className="flex items-center justify-between mb-2″>
+        <Card className="mb-6 bg-gradient-to-r from-indigo-600 to-violet-600 border-0">
+          <CardContent className="pt-4 pb-4">
+            <div className="flex items-center justify-between mb-2">
               <div>
                 <div className="text-white font-bold text-lg">{completedCount} of {COURSES.length} courses completed</div>
                 <div className="text-indigo-200 text-sm">Complete 3 more to unlock Gold tier benefits</div>
@@ -190,9 +190,9 @@ export default function SkillsMarketplace() {
 
         {/* Filters */}
         <div className="flex gap-3 mb-6 flex-wrap">
-          <div className="relative flex-1 min-w-48″>
-            <BookOpen className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400″ />
-            <Input placeholder="Search courses..." value={search} onChange={e => setSearch(e.target.value)} className="pl-9″ />
+          <div className="relative flex-1 min-w-48">
+            <BookOpen className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400" />
+            <Input placeholder="Search courses..." value={search} onChange={e => setSearch(e.target.value)} className="pl-9" />
           </div>
           <div className="flex gap-2 flex-wrap">
             {categories.map(cat => (
@@ -200,7 +200,7 @@ export default function SkillsMarketplace() {
                 key={cat}
                 onClick={() => setCategory(cat)}
                 className={`px-3 py-1.5 rounded-lg text-sm font-medium transition-all ${
-                  category === cat ? "bg-indigo-600 text-white" : "bg-white text-slate-600 border hover:border-indigo-300″
+                  category === cat ? "bg-indigo-600 text-white" : "bg-white text-slate-600 border hover:border-indigo-300"
                 }`}
               >
                 {cat}
@@ -210,42 +210,42 @@ export default function SkillsMarketplace() {
         </div>
 
         {/* Course Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4″>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           {filtered.map(course => (
             <Card key={course.id} className={`relative ${enrolledIds.has(course.id) ? "border-green-200 bg-green-50/30" : ""}`}>
               {enrolledIds.has(course.id) && (
-                <div className="absolute top-3 right-3″>
-                  <CheckCircle className="w-5 h-5 text-green-500″ />
+                <div className="absolute top-3 right-3">
+                  <CheckCircle className="w-5 h-5 text-green-500" />
                 </div>
               )}
-              <CardContent className="pt-4″>
-                <div className="flex items-start gap-3 mb-3″>
+              <CardContent className="pt-4">
+                <div className="flex items-start gap-3 mb-3">
                   <div className="text-3xl">{course.badge}</div>
-                  <div className="flex-1 min-w-0″>
+                  <div className="flex-1 min-w-0">
                     <h3 className="font-bold text-slate-900 text-sm leading-tight">{course.title}</h3>
                     <div className="flex items-center gap-1.5 mt-1 flex-wrap">
                       <Badge className={`text-xs ${CATEGORY_COLORS[course.category]}`}>{course.category}</Badge>
                       <Badge className={`text-xs ${LEVEL_COLORS[course.level]}`}>{course.level}</Badge>
-                      {course.free && <Badge className="text-xs bg-green-100 text-green-700″>Free</Badge>}
+                      {course.free && <Badge className="text-xs bg-green-100 text-green-700">Free</Badge>}
                     </div>
                   </div>
                 </div>
 
                 <p className="text-xs text-slate-500 mb-3 leading-relaxed">{course.description}</p>
 
-                <div className="space-y-1 mb-3″>
+                <div className="space-y-1 mb-3">
                   {course.outcomes.slice(0, 3).map(o => (
-                    <div key={o} className="flex items-center gap-1.5 text-xs text-slate-600″>
-                      <CheckCircle className="w-3 h-3 text-green-500 flex-shrink-0″ />
+                    <div key={o} className="flex items-center gap-1.5 text-xs text-slate-600">
+                      <CheckCircle className="w-3 h-3 text-green-500 flex-shrink-0" />
                       {o}
                     </div>
                   ))}
                 </div>
 
                 <div className="flex items-center justify-between pt-3 border-t">
-                  <div className="flex items-center gap-3 text-xs text-slate-400″>
-                    <span className="flex items-center gap-1″><Clock className="w-3 h-3" />{course.duration}</span>
-                    <span className="flex items-center gap-1″><Star className="w-3 h-3 text-amber-400 fill-amber-400" />{course.rating}</span>
+                  <div className="flex items-center gap-3 text-xs text-slate-400">
+                    <span className="flex items-center gap-1"><Clock className="w-3 h-3" />{course.duration}</span>
+                    <span className="flex items-center gap-1"><Star className="w-3 h-3 text-amber-400 fill-amber-400" />{course.rating}</span>
                     <span>{course.enrolled} enrolled</span>
                   </div>
                   <Button

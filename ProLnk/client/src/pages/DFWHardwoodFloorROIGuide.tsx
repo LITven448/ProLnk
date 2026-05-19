@@ -92,7 +92,7 @@ export default function DFWHardwoodFloorROIGuide() {
           <div style={styles.row}>
             <div>
               <label style={styles.label}>Area to Floor (sq ft)</label>
-              <input style={styles.input} type="number" value={sqFt} onChange={e => setSqFt(e.target.value)} placeholder="e.g. 800″ />
+              <input style={styles.input} type="number" value={sqFt} onChange={e => setSqFt(e.target.value)} placeholder="e.g. 800" />
             </div>
             <div>
               <label style={styles.label}>Wood Type</label>

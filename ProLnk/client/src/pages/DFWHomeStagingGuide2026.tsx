@@ -33,7 +33,7 @@ export default function DFWHomeStagingGuide2026() {
       <div style={{ maxWidth: 760, margin: '0 auto' }}>
         <div style={{ textAlign: 'center', marginBottom: '2rem' }}>
           <div style={{ fontSize: '2.5rem' }}>🛋️</div>
-          <h1 style={{ fontSize: '1.8rem', color: '#F5E642', margin: '0.5rem 0′ }}>DFW Home Staging Guide 2026</h1>
+          <h1 style={{ fontSize: '1.8rem', color: '#F5E642', margin: '0.5rem 0' }}>DFW Home Staging Guide 2026</h1>
           <p style={{ color: '#94a3b8', fontSize: '0.9rem' }}>Staged DFW homes sell 73% faster at 6% higher price</p>
         </div>
 
@@ -56,7 +56,7 @@ export default function DFWHomeStagingGuide2026() {
           <p style={{ color: '#94a3b8', fontSize: '0.8rem', marginBottom: '1rem' }}>Select your home style:</p>
           <div style={{ display: 'flex', gap: '0.5rem', flexWrap: 'wrap', marginBottom: '1.25rem' }}>
             {['traditional', 'modern', 'ranch', 'luxury'].map((s) => (
-              <button key={s} onClick={() => setStyle(s)} style={{ padding: '0.4rem 1rem', borderRadius: 8, border: 'none', cursor: 'pointer', fontWeight: 600, fontSize: '0.8rem', background: style === s ? '#F5E642′ : '#1e3a5f', color: style === s ? '#0A1628' : '#fff' }}>
+              <button key={s} onClick={() => setStyle(s)} style={{ padding: '0.4rem 1rem', borderRadius: 8, border: 'none', cursor: 'pointer', fontWeight: 600, fontSize: '0.8rem', background: style === s ? '#F5E642' : '#1e3a5f', color: style === s ? '#0A1628' : '#fff' }}>
                 {s.charAt(0).toUpperCase() + s.slice(1)}
               </button>
             ))}

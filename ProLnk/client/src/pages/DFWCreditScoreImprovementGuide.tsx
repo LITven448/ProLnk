@@ -19,12 +19,12 @@ export default function DFWCreditScoreImprovementGuide() {
   const projected = Math.min(850, score + totalPoints);
 
   const tier = projected >= 740 ? { label: 'Excellent', color: '#22c55e' }
-    : projected >= 700 ? { label: 'Good', color: '#84cc16′ }
-    : projected >= 660 ? { label: 'Fair', color: '#eab308′ }
-    : { label: 'Needs Work', color: '#ef4444′ };
+    : projected >= 700 ? { label: 'Good', color: '#84cc16' }
+    : projected >= 660 ? { label: 'Fair', color: '#eab308' }
+    : { label: 'Needs Work', color: '#ef4444' };
 
   return (
-    <div style={{ background: '#F9FAFB', minHeight: '100vh', padding: '2rem', fontFamily: 'sans-serif', color: '#0A1628′ }}>
+    <div style={{ background: '#F9FAFB', minHeight: '100vh', padding: '2rem', fontFamily: 'sans-serif', color: '#0A1628' }}>
       <div style={{ maxWidth: 720, margin: '0 auto' }}>
         <div style={{ background: '#0A1628', borderRadius: 12, padding: '2rem', marginBottom: '2rem', color: '#fff' }}>
           <div style={{ fontSize: 32, marginBottom: 8 }}>📊 DFW Credit Score Improvement Guide</div>
@@ -33,7 +33,7 @@ export default function DFWCreditScoreImprovementGuide() {
         <div style={{ background: '#fff', borderRadius: 12, padding: '1.5rem', marginBottom: '1.5rem', boxShadow: '0 1px 4px rgba(0,0,0,0.08)' }}>
           <h2 style={{ marginTop: 0 }}>🎯 Your Starting Point</h2>
           <label style={{ fontWeight: 600 }}>Current Credit Score: <span style={{ color: '#F5E642', background: '#0A1628', padding: '2px 10px', borderRadius: 6 }}>{score}</span></label>
-          <input type="range" min={500} max={800} value={score} onChange={e => setScore(+e.target.value)} style={{ width: '100%', margin: '1rem 0', accentColor: '#F5E642′ }} />
+          <input type="range" min={500} max={800} value={score} onChange={e => setScore(+e.target.value)} style={{ width: '100%', margin: '1rem 0', accentColor: '#F5E642' }} />
           <div style={{ display: 'flex', justifyContent: 'space-between', color: '#64748b', fontSize: 13 }}>
             <span>500 (Poor)</span><span>620 (Fair)</span><span>700 (Good)</span><span>800 (Excellent)</span>
           </div>
@@ -44,7 +44,7 @@ export default function DFWCreditScoreImprovementGuide() {
             <div key={i} onClick={() => toggle(i)} style={{
               border: `2px solid ${selected.includes(i) ? '#F5E642' : '#e2e8f0'}`,
               borderRadius: 10, padding: '1rem', marginBottom: 10, cursor: 'pointer',
-              background: selected.includes(i) ? '#fefce8′ : '#fff', transition: ’all 0.2s'
+              background: selected.includes(i) ? '#fefce8' : '#fff', transition: 'all 0.2s'
             }}>
               <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
                 <span style={{ fontWeight: 600 }}>{a.label}</span>
@@ -55,7 +55,7 @@ export default function DFWCreditScoreImprovementGuide() {
           ))}
         </div>
         <div style={{ background: '#0A1628', borderRadius: 12, padding: '1.5rem', color: '#fff' }}>
-          <h2 style={{ marginTop: 0, color: '#F5E642′ }}>📈 Your Projected Score</h2>
+          <h2 style={{ marginTop: 0, color: '#F5E642' }}>📈 Your Projected Score</h2>
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 16 }}>
             <div>
               <div style={{ fontSize: 48, fontWeight: 800 }}>{projected}</div>
@@ -63,11 +63,11 @@ export default function DFWCreditScoreImprovementGuide() {
             </div>
             <div style={{ textAlign: 'right' }}>
               <div style={{ fontSize: 22, color: '#F5E642', fontWeight: 700 }}>+{totalPoints} points</div>
-              <div style={{ color: '#94a3b8′ }}>from {selected.length} action{selected.length !== 1 ? ’s' : ''}</div>
+              <div style={{ color: '#94a3b8' }}>from {selected.length} action{selected.length !== 1 ? 's' : ''}</div>
             </div>
           </div>
           {projected >= 700
-            ? <div style={{ background: '#166534', borderRadius: 8, padding: '1rem', color: '#bbf7d0′ }}>✅ At 700+ you qualify for conventional loans with competitive DFW rates.</div>
+            ? <div style={{ background: '#166534', borderRadius: 8, padding: '1rem', color: '#bbf7d0' }}>✅ At 700+ you qualify for conventional loans with competitive DFW rates.</div>
             : <div style={{ background: '#7c2d12', borderRadius: 8, padding: '1rem', color: '#fed7aa' }}>📌 Select more actions above to reach 700+. Focus on utilization first.</div>
           }
         </div>

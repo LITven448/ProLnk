@@ -65,8 +65,8 @@ export default function DFWHVACDFWUntilNext() {
                 onClick={() => setActive(active === i ? null : i)}
                 style={{
                   width: '100%', textAlign: 'left',
-                  background: active === i ? '#F5E642′ : '#1e3a5f',
-                  color: active === i ? '#0A1628′ : '#fff',
+                  background: active === i ? '#F5E642' : '#1e3a5f',
+                  color: active === i ? '#0A1628' : '#fff',
                   border: 'none', borderRadius: 12, padding: '16px 20px',
                   cursor: 'pointer', fontSize: 16, fontWeight: 600,
                   display: 'flex', alignItems: 'center', gap: 12,

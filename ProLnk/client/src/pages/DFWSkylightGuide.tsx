@@ -62,7 +62,7 @@ export default function DFWSkylightGuide() {
           DFW skylights bring incredible natural light — but also enormous heat gain. A south-facing skylight without proper Low-E glazing can
           add 400+ BTUs per hour to your cooling load. Get it right the first time.
         </p>
-        <div style={{ background: '#111c30', borderRadius: 8, padding: '1rem', marginBottom: '2rem', borderLeft: '3px solid #F5E642′ }}>
+        <div style={{ background: '#111c30', borderRadius: 8, padding: '1rem', marginBottom: '2rem', borderLeft: '3px solid #F5E642' }}>
           <span style={{ color: '#F5E642', fontWeight: 700 }}>VELUX Solar Rain Sensor: </span>
           <span style={{ color: '#94a3b8', fontSize: '0.9rem' }}>DFW summer storms pop up in minutes. VELUX solar-powered venting skylights auto-close when rain is detected — no electrical wiring needed.</span>
         </div>
@@ -79,8 +79,8 @@ export default function DFWSkylightGuide() {
                 {options.map(o => (
                   <button key={o} onClick={() => setter(o)}
                     style={{ padding: '0.4rem 0.9rem', borderRadius: 6, border: '1.5px solid', cursor: 'pointer', fontSize: '0.85rem',
-                      borderColor: value === o ? '#F5E642′ : '#1e3a5f', background: value === o ? '#F5E642' : '#111c30',
-                      color: value === o ? '#0A1628′ : '#cbd5e1', fontWeight: value === o ? 700 : 400 }}>
+                      borderColor: value === o ? '#F5E642' : '#1e3a5f', background: value === o ? '#F5E642' : '#111c30',
+                      color: value === o ? '#0A1628' : '#cbd5e1', fontWeight: value === o ? 700 : 400 }}>
                     {o}
                   </button>
                 ))}
@@ -90,7 +90,7 @@ export default function DFWSkylightGuide() {
         </div>
 
         <button onClick={handleAnalyze} disabled={!exposure}
-          style={{ background: exposure ? '#F5E642′ : '#1e3a5f', color: exposure ? '#0A1628' : '#475569',
+          style={{ background: exposure ? '#F5E642' : '#1e3a5f', color: exposure ? '#0A1628' : '#475569',
             border: 'none', borderRadius: 8, padding: '0.75rem 2rem', fontWeight: 800, fontSize: '1rem', cursor: exposure ? 'pointer' : 'default', marginBottom: '2rem' }}>
           Get Skylight Recommendation →
         </button>
@@ -111,17 +111,17 @@ export default function DFWSkylightGuide() {
             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
               <div style={{ background: '#0A1628', borderRadius: 8, padding: '1rem' }}>
                 <div style={{ color: '#94a3b8', fontSize: '0.8rem', marginBottom: '0.25rem' }}>💰 ESTIMATED COST</div>
-                <div style={{ fontWeight: 700, color: '#F5E642′ }}>{result.cost}</div>
+                <div style={{ fontWeight: 700, color: '#F5E642' }}>{result.cost}</div>
               </div>
               <div style={{ background: '#0A1628', borderRadius: 8, padding: '1rem' }}>
                 <div style={{ color: '#94a3b8', fontSize: '0.8rem', marginBottom: '0.25rem' }}>🌧️ VELUX RAIN NOTE</div>
-                <div style={{ fontSize: '0.85rem', color: '#cbd5e1′ }}>{result.veluxNote}</div>
+                <div style={{ fontSize: '0.85rem', color: '#cbd5e1' }}>{result.veluxNote}</div>
               </div>
             </div>
           </div>
         )}
 
-        <div style={{ marginTop: '2.5rem', padding: '1.25rem', background: '#111c30', borderRadius: 10, borderLeft: '4px solid #F5E642′ }}>
+        <div style={{ marginTop: '2.5rem', padding: '1.25rem', background: '#111c30', borderRadius: 10, borderLeft: '4px solid #F5E642' }}>
           <div style={{ fontWeight: 700, marginBottom: '0.4rem' }}>⚡ DFW Energy Code Note</div>
           <div style={{ color: '#94a3b8', fontSize: '0.9rem', lineHeight: 1.6 }}>
             Texas energy code (IECC 2021) requires skylights to meet U-factor 0.55 and SHGC 0.25 max in climate zone 2 (most of DFW).

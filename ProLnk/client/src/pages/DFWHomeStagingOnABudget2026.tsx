@@ -55,8 +55,8 @@ export default function DFWHomeStagingOnABudget2026() {
                 padding: '0.4rem 1rem',
                 borderRadius: 20,
                 border: `1px solid ${budget === t.id ? '#F5E642' : '#1E3050'}`,
-                background: budget === t.id ? '#F5E642′ : '#0F1E35',
-                color: budget === t.id ? '#0A1628′ : '#8B9AB5',
+                background: budget === t.id ? '#F5E642' : '#0F1E35',
+                color: budget === t.id ? '#0A1628' : '#8B9AB5',
                 fontWeight: 600,
                 cursor: 'pointer',
                 fontSize: '0.85rem',
@@ -75,7 +75,7 @@ export default function DFWHomeStagingOnABudget2026() {
                 <div style={{ flex: 1 }}>
                   <div style={{ display: 'flex', justifyContent: 'space-between' }}>
                     <span style={{ fontWeight: 600 }}>{s.item}</span>
-                    <span style={{ color: s.cost === 0 ? '#4ADE80′ : '#F5E642', fontWeight: 700 }}>{s.cost === 0 ? ’Free' : `$${s.cost}`}</span>
+                    <span style={{ color: s.cost === 0 ? '#4ADE80' : '#F5E642', fontWeight: 700 }}>{s.cost === 0 ? 'Free' : `$${s.cost}`}</span>
                   </div>
                   <p style={{ color: '#8B9AB5', margin: '0.4rem 0 0', fontSize: '0.85rem', lineHeight: 1.5 }}>{s.note}</p>
                 </div>

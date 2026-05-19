@@ -3,12 +3,12 @@ import { Helmet } from "react-helmet-async";
 import { Link } from "wouter";
 import { ChevronDown, ChevronUp, Users, Home, Building2, ArrowRight } from "lucide-react";
 
-const NAVY = "#0A1628″;
-const NAVY2 = "#0f1e35″;
-const TEAL = "#14b8a6″;
+const NAVY = "#0A1628";
+const NAVY2 = "#0f1e35";
+const TEAL = "#14b8a6";
 const TEAL_DIM = "rgba(20,184,166,0.12)";
-const TEXT = "#e2e8f0″;
-const MUTED = "#94a3b8″;
+const TEXT = "#e2e8f0";
+const MUTED = "#94a3b8";
 const BORDER = "rgba(255,255,255,0.08)";
 
 interface FAQItem {
@@ -155,7 +155,7 @@ export default function FAQ() {
             <Link href="/how-it-works"><span style={{ color: MUTED, fontSize: 14, cursor: "pointer" }}>How It Works</span></Link>
             <Link href="/commission-calculator"><span style={{ color: MUTED, fontSize: 14, cursor: "pointer" }}>Calculator</span></Link>
             <Link href="/join">
-              <span style={{ background: TEAL, color: "#000″, fontWeight: 700, fontSize: 13, padding: "8px 18px", borderRadius: 8, cursor: "pointer" }}>
+              <span style={{ background: TEAL, color: "#000", fontWeight: 700, fontSize: 13, padding: "8px 18px", borderRadius: 8, cursor: "pointer" }}>
                 Join Network
               </span>
             </Link>
@@ -236,7 +236,7 @@ export default function FAQ() {
               <Link href="/join">
                 <span style={{
                   display: "inline-flex", alignItems: "center", gap: 8,
-                  background: TEAL, color: "#000″, fontWeight: 700, fontSize: 14,
+                  background: TEAL, color: "#000", fontWeight: 700, fontSize: 14,
                   padding: "12px 28px", borderRadius: 10, cursor: "pointer",
                 }}>
                   Join the Network <ArrowRight size={16} />

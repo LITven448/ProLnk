@@ -53,7 +53,7 @@ export default function DFWProactiveHomeMaintenanceGuide() {
           <div style={{ marginBottom: 16 }}>
             <label style={{ fontSize: 13, color: '#94a3b8', display: 'block', marginBottom: 6 }}>Home Age (years)</label>
             <input type="range" min={1} max={50} value={homeAge} onChange={e => setHomeAge(Number(e.target.value))}
-              style={{ width: '100%', accentColor: '#F5E642′ }} />
+              style={{ width: '100%', accentColor: '#F5E642' }} />
             <div style={{ color: '#F5E642', fontWeight: 700 }}>{homeAge} years old</div>
           </div>
           <div style={{ marginBottom: 16 }}>
@@ -61,7 +61,7 @@ export default function DFWProactiveHomeMaintenanceGuide() {
             <div style={{ display: 'grid', gap: 8 }}>
               {(['reactive', 'mixed', 'proactive'] as const).map(a => (
                 <label key={a} style={{ display: 'flex', alignItems: 'center', gap: 12, cursor: 'pointer', padding: '0.75rem 1rem', borderRadius: 8, background: approach === a ? '#1e3a5f' : '#162035', border: `2px solid ${approach === a ? '#F5E642' : '#334155'}` }}>
-                  <input type="radio" name="approach" value={a} checked={approach === a} onChange={() => setApproach(a)} style={{ accentColor: '#F5E642′ }} />
+                  <input type="radio" name="approach" value={a} checked={approach === a} onChange={() => setApproach(a)} style={{ accentColor: '#F5E642' }} />
                   <span style={{ fontWeight: approach === a ? 700 : 400, fontSize: 14 }}>{APPROACH_DATA[a].label}</span>
                 </label>
               ))}
@@ -78,20 +78,20 @@ export default function DFWProactiveHomeMaintenanceGuide() {
             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12, marginBottom: 20 }}>
               <div style={{ background: '#0f2044', borderRadius: 12, padding: '1.25rem', textAlign: 'center' }}>
                 <div style={{ fontSize: 12, color: '#94a3b8', marginBottom: 4 }}>Your Current Approach</div>
-                <div style={{ fontSize: 32, fontWeight: 800, color: '#ef4444′ }}>${current.annualCost(homeAge).toLocaleString()}</div>
-                <div style={{ fontSize: 11, color: '#94a3b8′ }}>estimated/year</div>
+                <div style={{ fontSize: 32, fontWeight: 800, color: '#ef4444' }}>${current.annualCost(homeAge).toLocaleString()}</div>
+                <div style={{ fontSize: 11, color: '#94a3b8' }}>estimated/year</div>
               </div>
               <div style={{ background: '#0f2044', borderRadius: 12, padding: '1.25rem', textAlign: 'center' }}>
                 <div style={{ fontSize: 12, color: '#94a3b8', marginBottom: 4 }}>Fully Proactive</div>
-                <div style={{ fontSize: 32, fontWeight: 800, color: '#4ade80′ }}>${proactive.annualCost(homeAge).toLocaleString()}</div>
-                <div style={{ fontSize: 11, color: '#94a3b8′ }}>estimated/year</div>
+                <div style={{ fontSize: 32, fontWeight: 800, color: '#4ade80' }}>${proactive.annualCost(homeAge).toLocaleString()}</div>
+                <div style={{ fontSize: 11, color: '#94a3b8' }}>estimated/year</div>
               </div>
             </div>
 
             {savings > 0 && (
               <div style={{ background: '#14532d', borderRadius: 12, padding: '1rem', marginBottom: 20, textAlign: 'center' }}>
                 <div style={{ fontSize: 13, color: '#86efac' }}>Potential Annual Savings</div>
-                <div style={{ fontSize: 36, fontWeight: 800, color: '#4ade80′ }}>${savings.toLocaleString()}</div>
+                <div style={{ fontSize: 36, fontWeight: 800, color: '#4ade80' }}>${savings.toLocaleString()}</div>
                 <div style={{ fontSize: 13, color: '#86efac' }}>by shifting to a proactive approach</div>
               </div>
             )}
@@ -101,7 +101,7 @@ export default function DFWProactiveHomeMaintenanceGuide() {
             <h2 style={{ fontSize: 18, fontWeight: 700, marginBottom: 12, marginTop: 20 }}>🗓️ DFW Proactive Maintenance Schedule</h2>
             {Object.entries(PROACTIVE_SCHEDULE).map(([q, tasks]) => (
               <div key={q} style={{ background: '#0f2044', borderRadius: 10, padding: '1rem 1.25rem', marginBottom: 10 }}>
-                <div style={{ color: '#F5E642', fontWeight: 700, marginBottom: 8 }}>Q{q} {q === '1′ ? '(Jan–Mar)' : q === '2' ? '(Apr–Jun)' : q === '3' ? '(Jul–Sep)' : '(Oct–Dec)'}</div>
+                <div style={{ color: '#F5E642', fontWeight: 700, marginBottom: 8 }}>Q{q} {q === '1' ? '(Jan–Mar)' : q === '2' ? '(Apr–Jun)' : q === '3' ? '(Jul–Sep)' : '(Oct–Dec)'}</div>
                 {tasks.map((t, i) => <div key={i} style={{ fontSize: 13, color: '#94a3b8', marginBottom: 4 }}>• {t}</div>)}
               </div>
             ))}

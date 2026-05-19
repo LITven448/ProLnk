@@ -54,8 +54,8 @@ export default function DFWProLnkNow() {
                 key={s.id}
                 onClick={() => setSelected(s.id)}
                 style={{
-                  background: selected === s.id ? '#F5E642′ : '#1a3050',
-                  color: selected === s.id ? '#0A1628′ : '#fff',
+                  background: selected === s.id ? '#F5E642' : '#1a3050',
+                  color: selected === s.id ? '#0A1628' : '#fff',
                   border: 'none', borderRadius: 10, padding: '14px 18px',
                   textAlign: 'left', cursor: 'pointer', fontSize: 14, fontWeight: 500,
                   transition: 'all 0.15s',
@@ -66,7 +66,7 @@ export default function DFWProLnkNow() {
             ))}
           </div>
           {result && (
-            <div style={{ background: '#0A1628', borderRadius: 12, padding: '20px 24px', borderLeft: '4px solid #F5E642′ }}>
+            <div style={{ background: '#0A1628', borderRadius: 12, padding: '20px 24px', borderLeft: '4px solid #F5E642' }}>
               <div style={{ color: '#F5E642', fontWeight: 700, fontSize: 13, marginBottom: 8 }}>YOUR ACTION RIGHT NOW</div>
               <div style={{ color: '#e2e8f0', fontSize: 15, lineHeight: 1.7 }}>{result.action}</div>
             </div>

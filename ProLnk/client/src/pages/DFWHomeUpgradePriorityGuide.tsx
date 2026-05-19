@@ -47,13 +47,13 @@ export default function DFWHomeUpgradePriorityGuide() {
             <div>
               <label style={{ fontSize: 13, color: '#94a3b8', display: 'block', marginBottom: 6 }}>Available Budget</label>
               <input type="range" min={1000} max={20000} step={500} value={budget} onChange={e => setBudget(Number(e.target.value))}
-                style={{ width: '100%', accentColor: '#F5E642′ }} />
+                style={{ width: '100%', accentColor: '#F5E642' }} />
               <div style={{ color: '#F5E642', fontWeight: 700, fontSize: 18 }}>${budget.toLocaleString()}</div>
             </div>
             <div>
               <label style={{ fontSize: 13, color: '#94a3b8', display: 'block', marginBottom: 6 }}>Home Age (years)</label>
               <input type="range" min={1} max={60} value={homeAge} onChange={e => setHomeAge(Number(e.target.value))}
-                style={{ width: '100%', accentColor: '#F5E642′ }} />
+                style={{ width: '100%', accentColor: '#F5E642' }} />
               <div style={{ color: '#F5E642', fontWeight: 700 }}>{homeAge} years old</div>
             </div>
             <div>
@@ -88,13 +88,13 @@ export default function DFWHomeUpgradePriorityGuide() {
             )}
             <h2 style={{ fontSize: 18, fontWeight: 700, marginBottom: 12 }}>Your Prioritized Upgrade List</h2>
             {getFilteredUpgrades().map((u, i) => (
-              <div key={i} style={{ background: u.affordable ? '#0f2044′ : '#1a1a2e', borderRadius: 10, padding: '1rem 1.25rem', marginBottom: 12, opacity: u.affordable ? 1 : 0.5, borderLeft: `4px solid ${u.affordable ? '#F5E642' : '#334155'}` }}>
+              <div key={i} style={{ background: u.affordable ? '#0f2044' : '#1a1a2e', borderRadius: 10, padding: '1rem 1.25rem', marginBottom: 12, opacity: u.affordable ? 1 : 0.5, borderLeft: `4px solid ${u.affordable ? '#F5E642' : '#334155'}` }}>
                 <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: 6 }}>
                   <span style={{ fontWeight: 700 }}>{i + 1}. {u.category}</span>
                   <span style={{ color: '#F5E642', fontSize: 13 }}>{u.urgency}</span>
                 </div>
                 <div style={{ fontSize: 13, color: '#94a3b8', marginBottom: 4 }}>{u.items.join(' · ')}</div>
-                <div style={{ fontSize: 13, color: u.affordable ? '#4ade80′ : '#f87171' }}>
+                <div style={{ fontSize: 13, color: u.affordable ? '#4ade80' : '#f87171' }}>
                   {u.affordable ? `✅ Est. $${u.cost.toLocaleString()}` : `⏳ Beyond current budget — plan for next cycle`}
                 </div>
               </div>

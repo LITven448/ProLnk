@@ -16,16 +16,16 @@ const NPS_TREND = [
 ];
 
 const RESPONSES = [
-  { score: 10, name: "James Holbrook",   partner: "Smith Home Services", date: "May 13″, comment: "ProLnk has completely changed how I find clients. Match quality is outstanding." },
-  { score: 9,  name: "Linda Parrish",    partner: "Homeowner",           date: "May 12″, comment: "Found a great plumber within hours. The process was seamless and professional." },
-  { score: 9,  name: "Carlos Medina",    partner: "ProFix Dallas",       date: "May 12″, comment: "Commission payouts are always on time. Best platform I\'ve used in 10 years." },
-  { score: 8,  name: "Stacy Wu",         partner: "Homeowner",           date: "May 11″, comment: "Easy to use, great selection of contractors. Would recommend to friends." },
-  { score: 7,  name: "Tom Ashford",      partner: "Reliable Pro Group",  date: "May 11″, comment: "Good platform overall but onboarding steps could be clearer." },
-  { score: 7,  name: "Rachel Kim",       partner: "Homeowner",           date: "May 10″, comment: "Service was okay. Expected faster initial response times from contractors." },
-  { score: 5,  name: "Marcus Bell",      partner: "TrustHome FW",        date: "May 10″, comment: "Lead volume is lower than expected this month. Hope it picks up." },
-  { score: 4,  name: "Donna Fletcher",   partner: "Homeowner",           date: "May 9″,  comment: "Had trouble finding a licensed electrician in my area. Limited availability." },
-  { score: 3,  name: "Neil Patel",       partner: "ProLnk FW West",      date: "May 9″,  comment: "Lead quality dropped this month — too many homeowners not responding." },
-  { score: 2,  name: "Cynthia Brooks",   partner: "Homeowner",           date: "May 8″,  comment: "No contractor responded within 48h. Very frustrating experience." },
+  { score: 10, name: "James Holbrook",   partner: "Smith Home Services", date: "May 13", comment: "ProLnk has completely changed how I find clients. Match quality is outstanding." },
+  { score: 9,  name: "Linda Parrish",    partner: "Homeowner",           date: "May 12", comment: "Found a great plumber within hours. The process was seamless and professional." },
+  { score: 9,  name: "Carlos Medina",    partner: "ProFix Dallas",       date: "May 12", comment: "Commission payouts are always on time. Best platform I\'ve used in 10 years." },
+  { score: 8,  name: "Stacy Wu",         partner: "Homeowner",           date: "May 11", comment: "Easy to use, great selection of contractors. Would recommend to friends." },
+  { score: 7,  name: "Tom Ashford",      partner: "Reliable Pro Group",  date: "May 11", comment: "Good platform overall but onboarding steps could be clearer." },
+  { score: 7,  name: "Rachel Kim",       partner: "Homeowner",           date: "May 10", comment: "Service was okay. Expected faster initial response times from contractors." },
+  { score: 5,  name: "Marcus Bell",      partner: "TrustHome FW",        date: "May 10", comment: "Lead volume is lower than expected this month. Hope it picks up." },
+  { score: 4,  name: "Donna Fletcher",   partner: "Homeowner",           date: "May 9",  comment: "Had trouble finding a licensed electrician in my area. Limited availability." },
+  { score: 3,  name: "Neil Patel",       partner: "ProLnk FW West",      date: "May 9",  comment: "Lead quality dropped this month — too many homeowners not responding." },
+  { score: 2,  name: "Cynthia Brooks",   partner: "Homeowner",           date: "May 8",  comment: "No contractor responded within 48h. Very frustrating experience." },
 ];
 
 const SURVEY_SETTINGS = [
@@ -64,7 +64,7 @@ function NPSGauge({ score }: { score: number }) {
     return (
       <path
         d={`M ${s.x} ${s.y} A ${r} ${r} 0 ${large} 1 ${e.x} ${e.y}`}
-        fill="none" stroke={color} strokeWidth="14″ strokeLinecap="round"
+        fill="none" stroke={color} strokeWidth="14" strokeLinecap="round"
       />
     );
   }
@@ -74,17 +74,17 @@ function NPSGauge({ score }: { score: number }) {
 
   return (
     <div className="flex flex-col items-center">
-      <svg width="200″ height="120" viewBox="0 70 200 100">
+      <svg width="200" height="120" viewBox="0 70 200 100">
         {arcPath(-180, -120, D.red)}
         {arcPath(-120, -60, D.amber)}
         {arcPath(-60, 0, D.green)}
-        <line x1={cx} y1={cy} x2={needleTip.x} y2={needleTip.y} stroke={D.text} strokeWidth="3″ strokeLinecap="round" />
-        <circle cx={cx} cy={cy} r="5″ fill={D.text} />
-        <text x={cx} y={cy + 28} textAnchor="middle" fontSize="22″ fontWeight="900" fill={gaugeColor}>{score}</text>
-        <text x={cx} y={cy + 44} textAnchor="middle" fontSize="9″ fill={D.muted}>NPS SCORE</text>
-        <text x="28″ y={cy + 16} fontSize="8" fill={D.red} textAnchor="middle">-100</text>
-        <text x="100″ y="78" fontSize="8" fill={D.amber} textAnchor="middle">0</text>
-        <text x="172″ y={cy + 16} fontSize="8" fill={D.green} textAnchor="middle">+100</text>
+        <line x1={cx} y1={cy} x2={needleTip.x} y2={needleTip.y} stroke={D.text} strokeWidth="3" strokeLinecap="round" />
+        <circle cx={cx} cy={cy} r="5" fill={D.text} />
+        <text x={cx} y={cy + 28} textAnchor="middle" fontSize="22" fontWeight="900" fill={gaugeColor}>{score}</text>
+        <text x={cx} y={cy + 44} textAnchor="middle" fontSize="9" fill={D.muted}>NPS SCORE</text>
+        <text x="28" y={cy + 16} fontSize="8" fill={D.red} textAnchor="middle">-100</text>
+        <text x="100" y="78" fontSize="8" fill={D.amber} textAnchor="middle">0</text>
+        <text x="172" y={cy + 16} fontSize="8" fill={D.green} textAnchor="middle">+100</text>
       </svg>
     </div>
   );
@@ -99,11 +99,11 @@ export default function NPSSurveyManager() {
 
   return (
     <AdminLayout>
-      <div className="p-6 space-y-6″ style={{ backgroundColor: D.bg, minHeight: "100vh" }}>
+      <div className="p-6 space-y-6" style={{ backgroundColor: D.bg, minHeight: "100vh" }}>
         <div className="flex items-start justify-between">
           <div>
             <h1 className="text-2xl font-black" style={{ color: D.text }}>NPS Survey Manager</h1>
-            <p className="text-sm mt-1″ style={{ color: D.muted }}>Net Promoter Score tracking, verbatim responses, and automated survey settings</p>
+            <p className="text-sm mt-1" style={{ color: D.muted }}>Net Promoter Score tracking, verbatim responses, and automated survey settings</p>
           </div>
           <button
             onClick={() => setBulkSent(true)}
@@ -114,22 +114,22 @@ export default function NPSSurveyManager() {
               border: bulkSent ? `1px solid ${D.green}40` : "none",
             }}
           >
-            <Send className="w-4 h-4″ />
+            <Send className="w-4 h-4" />
             {bulkSent ? "Surveys Sent!" : "Send to All Active Partners"}
           </button>
         </div>
 
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4″>
-          <MetricCard label="NPS Score"       value="72″    sub="Excellent — top 15%"   trend={4}  color={D.green}  />
-          <MetricCard label="Responses / Mo"  value="147″   sub="Up from 118 last mo"   trend={12} color={D.cyan}   />
-          <MetricCard label="Promoters"        value="68%"   sub="Score 9-10″            trend={3}  color={D.purple} />
-          <MetricCard label="Detractors"       value="8%"    sub="Score 0-6″             trend={-2} color={D.red}    />
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
+          <MetricCard label="NPS Score"       value="72"    sub="Excellent — top 15%"   trend={4}  color={D.green}  />
+          <MetricCard label="Responses / Mo"  value="147"   sub="Up from 118 last mo"   trend={12} color={D.cyan}   />
+          <MetricCard label="Promoters"        value="68%"   sub="Score 9-10"            trend={3}  color={D.purple} />
+          <MetricCard label="Detractors"       value="8%"    sub="Score 0-6"             trend={-2} color={D.red}    />
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6″>
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
           <DCard>
             <SectionHeader title="Score Overview" subtitle="Current NPS gauge and segment breakdown" />
-            <div className="flex flex-col sm:flex-row items-center gap-6″>
+            <div className="flex flex-col sm:flex-row items-center gap-6">
               <NPSGauge score={72} />
               <DonutChart
                 size={130}
@@ -143,14 +143,14 @@ export default function NPSSurveyManager() {
           </DCard>
 
           <DCard>
-            <div className="flex items-center gap-2 mb-1″>
-              <TrendingUp className="w-4 h-4″ style={{ color: D.cyan }} />
+            <div className="flex items-center gap-2 mb-1">
+              <TrendingUp className="w-4 h-4" style={{ color: D.cyan }} />
               <span className="font-bold text-sm" style={{ color: D.text }}>NPS Trend — Last 6 Months</span>
             </div>
-            <p className="text-xs mb-4″ style={{ color: D.muted }}>Monthly NPS score trajectory</p>
+            <p className="text-xs mb-4" style={{ color: D.muted }}>Monthly NPS score trajectory</p>
             <ResponsiveContainer width="100%" height={160}>
               <LineChart data={NPS_TREND}>
-                <CartesianGrid strokeDasharray="3 3″ stroke={D.border} vertical={false} />
+                <CartesianGrid strokeDasharray="3 3" stroke={D.border} vertical={false} />
                 <XAxis dataKey="month" tick={{ fill: D.muted, fontSize: 11 }} axisLine={false} tickLine={false} />
                 <YAxis
                   domain={[40, 80]}
@@ -221,10 +221,10 @@ export default function NPSSurveyManager() {
           </div>
         </DCard>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6″>
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
           <DCard>
             <SectionHeader title="Automated Triggers" subtitle="Toggle which events fire a survey" />
-            <div className="space-y-3″>
+            <div className="space-y-3">
               {SURVEY_SETTINGS.map(s => {
                 const on = settings[s.key];
                 return (
@@ -237,16 +237,16 @@ export default function NPSSurveyManager() {
                     }}
                     onClick={() => setSettings(prev => ({ ...prev, [s.key]: !prev[s.key] }))}
                   >
-                    <div className="flex items-center gap-2″>
-                      <MessageSquare className="w-4 h-4 flex-shrink-0″ style={{ color: on ? D.cyan : D.dim }} />
+                    <div className="flex items-center gap-2">
+                      <MessageSquare className="w-4 h-4 flex-shrink-0" style={{ color: on ? D.cyan : D.dim }} />
                       <div>
                         <p className="text-sm font-semibold" style={{ color: D.text }}>{s.label}</p>
-                        <p className="text-xs mt-0.5″ style={{ color: D.muted }}>{s.desc}</p>
+                        <p className="text-xs mt-0.5" style={{ color: D.muted }}>{s.desc}</p>
                       </div>
                     </div>
                     {on
-                      ? <ToggleRight className="w-6 h-6 flex-shrink-0″ style={{ color: D.cyan }} />
-                      : <ToggleLeft  className="w-6 h-6 flex-shrink-0″ style={{ color: D.dim }} />
+                      ? <ToggleRight className="w-6 h-6 flex-shrink-0" style={{ color: D.cyan }} />
+                      : <ToggleLeft  className="w-6 h-6 flex-shrink-0" style={{ color: D.dim }} />
                     }
                   </div>
                 );
@@ -256,7 +256,7 @@ export default function NPSSurveyManager() {
 
           <DCard>
             <SectionHeader title="Send Delay" subtitle="Days after job completion before survey fires" />
-            <div className="flex gap-3 mt-2″>
+            <div className="flex gap-3 mt-2">
               {DELAYS.map(d => (
                 <button
                   key={d}
@@ -272,7 +272,7 @@ export default function NPSSurveyManager() {
                 </button>
               ))}
             </div>
-            <p className="text-xs mt-3″ style={{ color: D.muted }}>
+            <p className="text-xs mt-3" style={{ color: D.muted }}>
               Currently set to <strong style={{ color: D.cyan }}>{delay} days</strong> post job-close. Applies to all auto-trigger surveys.
             </p>
           </DCard>

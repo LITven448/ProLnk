@@ -90,54 +90,54 @@ export default function DFWHVACDFWComplete2026() {
   const result = situation && priority ? COMPLETE_GUIDANCE[situation]?.[priority] : null;
 
   return (
-    <div style={{ background: "#0A1628″, minHeight: "100vh", color: "#fff", fontFamily: "sans-serif", padding: "32px 16px" }}>
+    <div style={{ background: "#0A1628", minHeight: "100vh", color: "#fff", fontFamily: "sans-serif", padding: "32px 16px" }}>
       <div style={{ maxWidth: 720, margin: "0 auto" }}>
-        <div style={{ color: "#F5E642″, fontSize: 13, fontWeight: 700, letterSpacing: 2, marginBottom: 8 }}>PROLNK · DFW HVAC RESOURCE</div>
+        <div style={{ color: "#F5E642", fontSize: 13, fontWeight: 700, letterSpacing: 2, marginBottom: 8 }}>PROLNK · DFW HVAC RESOURCE</div>
         <h1 style={{ fontSize: 28, fontWeight: 800, marginBottom: 8 }}>DFW HVAC Complete 2026 Guide 🏆</h1>
-        <p style={{ color: "#94a3b8″, fontSize: 15, marginBottom: 32 }}>
+        <p style={{ color: "#94a3b8", fontSize: 15, marginBottom: 32 }}>
           The complete 2026 DFW HVAC guide — all systems, all suburbs, all concerns, all solutions — in one final reference page for every DFW homeowner.
         </p>
 
-        <div style={{ background: "#0f2040″, borderRadius: 12, padding: 24, marginBottom: 24 }}>
-          <h2 style={{ color: "#F5E642″, fontSize: 16, fontWeight: 700, marginBottom: 16 }}>🎯 Your 2026 DFW HVAC Guidance</h2>
+        <div style={{ background: "#0f2040", borderRadius: 12, padding: 24, marginBottom: 24 }}>
+          <h2 style={{ color: "#F5E642", fontSize: 16, fontWeight: 700, marginBottom: 16 }}>🎯 Your 2026 DFW HVAC Guidance</h2>
           <div style={{ marginBottom: 16 }}>
-            <label style={{ color: "#94a3b8″, fontSize: 13, display: "block", marginBottom: 6 }}>Your DFW Situation</label>
-            <select value={situation} onChange={e => setSituation(e.target.value)} style={{ width: "100%", padding: "10px 12px", borderRadius: 8, background: "#0A1628″, color: "#fff", border: "1px solid #1e3a5f", fontSize: 14 }}>
+            <label style={{ color: "#94a3b8", fontSize: 13, display: "block", marginBottom: 6 }}>Your DFW Situation</label>
+            <select value={situation} onChange={e => setSituation(e.target.value)} style={{ width: "100%", padding: "10px 12px", borderRadius: 8, background: "#0A1628", color: "#fff", border: "1px solid #1e3a5f", fontSize: 14 }}>
               <option value="">Select your situation...</option>
               {DFW_SITUATIONS.map(s => <option key={s} value={s}>{s}</option>)}
             </select>
           </div>
           <div style={{ marginBottom: 16 }}>
-            <label style={{ color: "#94a3b8″, fontSize: 13, display: "block", marginBottom: 6 }}>Your Priority</label>
-            <select value={priority} onChange={e => setPriority(e.target.value)} style={{ width: "100%", padding: "10px 12px", borderRadius: 8, background: "#0A1628″, color: "#fff", border: "1px solid #1e3a5f", fontSize: 14 }}>
+            <label style={{ color: "#94a3b8", fontSize: 13, display: "block", marginBottom: 6 }}>Your Priority</label>
+            <select value={priority} onChange={e => setPriority(e.target.value)} style={{ width: "100%", padding: "10px 12px", borderRadius: 8, background: "#0A1628", color: "#fff", border: "1px solid #1e3a5f", fontSize: 14 }}>
               <option value="">Select your priority...</option>
               {PRIORITIES.map(p => <option key={p} value={p}>{p}</option>)}
             </select>
           </div>
           {result && (
-            <div style={{ background: "#0A1628″, borderRadius: 8, padding: 20, borderLeft: "4px solid #F5E642" }}>
-              <p style={{ color: "#94a3b8″, fontSize: 13, marginBottom: 16, fontStyle: "italic" }}>{result.overview}</p>
+            <div style={{ background: "#0A1628", borderRadius: 8, padding: 20, borderLeft: "4px solid #F5E642" }}>
+              <p style={{ color: "#94a3b8", fontSize: 13, marginBottom: 16, fontStyle: "italic" }}>{result.overview}</p>
               {[["🏗️ System Insight", result.system], ["📍 DFW Suburb Context", result.suburbs], ["✅ Solution Steps", result.solution], ["📅 Timeline", result.timeline]].map(([label, text]) => (
                 <div key={label} style={{ marginBottom: 14 }}>
-                  <div style={{ color: "#F5E642″, fontWeight: 700, fontSize: 14, marginBottom: 6 }}>{label}</div>
-                  <p style={{ color: "#e2e8f0″, fontSize: 14 }}>{text}</p>
+                  <div style={{ color: "#F5E642", fontWeight: 700, fontSize: 14, marginBottom: 6 }}>{label}</div>
+                  <p style={{ color: "#e2e8f0", fontSize: 14 }}>{text}</p>
                 </div>
               ))}
             </div>
           )}
         </div>
 
-        <div style={{ background: "#0f2040″, borderRadius: 12, padding: 20, marginBottom: 16 }}>
-          <div style={{ color: "#F5E642″, fontWeight: 700, fontSize: 14, marginBottom: 14 }}>📍 DFW Suburb HVAC Overview</div>
+        <div style={{ background: "#0f2040", borderRadius: 12, padding: 20, marginBottom: 16 }}>
+          <div style={{ color: "#F5E642", fontWeight: 700, fontSize: 14, marginBottom: 14 }}>📍 DFW Suburb HVAC Overview</div>
           {GENERAL_SUBURBS.map(s => (
-            <div key={s.name} style={{ padding: "10px 0″, borderBottom: "1px solid #1e3a5f" }}>
+            <div key={s.name} style={{ padding: "10px 0", borderBottom: "1px solid #1e3a5f" }}>
               <div style={{ fontWeight: 700, fontSize: 13, marginBottom: 4 }}>{s.name}</div>
-              <div style={{ color: "#94a3b8″, fontSize: 13 }}>{s.note}</div>
+              <div style={{ color: "#94a3b8", fontSize: 13 }}>{s.note}</div>
             </div>
           ))}
         </div>
 
-        <div style={{ marginTop: 32, textAlign: "center", color: "#475569″, fontSize: 12 }}>
+        <div style={{ marginTop: 32, textAlign: "center", color: "#475569", fontSize: 12 }}>
           ProLnk — connecting every DFW homeowner with the right HVAC pro. © 2026 ProLnk
         </div>
       </div>

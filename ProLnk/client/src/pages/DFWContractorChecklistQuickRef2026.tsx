@@ -31,8 +31,8 @@ export default function DFWContractorChecklistQuickRef2026() {
           {points.map((p, i) => (
             <div key={i} style={{ backgroundColor: '#0f2035', borderRadius: '10px', padding: '12px 8px', textAlign: 'center', border: '1px solid #1e3a5f' }}>
               <div style={{ fontSize: '22px', marginBottom: '4px' }}>{p.icon}</div>
-              <div style={{ color: '#F5E642', fontSize: '11px', fontWeight: '700′ }}>{p.label}</div>
-              <div style={{ color: '#64748b', fontSize: '10px', marginTop: '4px', lineHeight: '1.3′ }}>{p.desc}</div>
+              <div style={{ color: '#F5E642', fontSize: '11px', fontWeight: '700' }}>{p.label}</div>
+              <div style={{ color: '#64748b', fontSize: '10px', marginTop: '4px', lineHeight: '1.3' }}>{p.desc}</div>
             </div>
           ))}
         </div>
@@ -40,7 +40,7 @@ export default function DFWContractorChecklistQuickRef2026() {
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '10px', marginBottom: '24px' }}>
           {trades.map((t, i) => (
             <button key={i} onClick={() => setSelected(selected === i ? null : i)}
-              style={{ backgroundColor: selected === i ? '#1a2f4a' : '#0f2035', border: selected === i ? '2px solid #F5E642′ : '2px solid #1e3a5f', borderRadius: '10px', padding: '16px', cursor: ’pointer', textAlign: 'left' }}>
+              style={{ backgroundColor: selected === i ? '#1a2f4a' : '#0f2035', border: selected === i ? '2px solid #F5E642' : '2px solid #1e3a5f', borderRadius: '10px', padding: '16px', cursor: 'pointer', textAlign: 'left' }}>
               <div style={{ fontSize: '24px', marginBottom: '6px' }}>{t.icon}</div>
               <div style={{ color: '#F5E642', fontWeight: '700', fontSize: '14px' }}>{t.name}</div>
             </button>
@@ -55,7 +55,7 @@ export default function DFWContractorChecklistQuickRef2026() {
             {trades[selected].checks.map((c, j) => (
               <div key={j} style={{ display: 'flex', gap: '10px', marginBottom: '10px', alignItems: 'flex-start' }}>
                 <span style={{ color: '#F5E642', fontSize: '16px', flexShrink: 0 }}>☐</span>
-                <span style={{ color: '#cbd5e1', fontSize: '14px', lineHeight: '1.5′ }}>{c}</span>
+                <span style={{ color: '#cbd5e1', fontSize: '14px', lineHeight: '1.5' }}>{c}</span>
               </div>
             ))}
           </div>

@@ -69,14 +69,14 @@ export default function DFWHVACFutureClimate() {
           ].map(s => (
             <div key={s.label} style={{ background: '#0f2040', borderRadius: 10, padding: 16, textAlign: 'center' }}>
               <div style={{ fontSize: 11, color: '#94a3b8', fontWeight: 700 }}>{s.label}</div>
-              <div style={{ fontSize: 20, fontWeight: 800, color: '#F5E642′ }}>{s.value}</div>
+              <div style={{ fontSize: 20, fontWeight: 800, color: '#F5E642' }}>{s.value}</div>
               <div style={{ fontSize: 11, color: '#64748b' }}>{s.sub}</div>
             </div>
           ))}
         </div>
 
         <div style={{ background: '#0f2040', borderRadius: 12, padding: 24, marginBottom: 24 }}>
-          <div style={{ fontWeight: 700, marginBottom: 16, color: '#F5E642′ }}>🔮 Get Your Climate-Smart HVAC Decision</div>
+          <div style={{ fontWeight: 700, marginBottom: 16, color: '#F5E642' }}>🔮 Get Your Climate-Smart HVAC Decision</div>
 
           <div style={{ marginBottom: 16 }}>
             <div style={{ fontSize: 13, color: '#94a3b8', marginBottom: 8 }}>Your Situation</div>
@@ -84,7 +84,7 @@ export default function DFWHVACFutureClimate() {
               {situations.map(s => (
                 <button key={s} onClick={() => setSituation(s)}
                   style={{ padding: '7px 12px', borderRadius: 6, border: 'none', cursor: 'pointer',
-                    background: situation === s ? '#F5E642′ : '#162035', color: situation === s ? '#0A1628' : '#fff', fontWeight: 600, fontSize: 12 }}>
+                    background: situation === s ? '#F5E642' : '#162035', color: situation === s ? '#0A1628' : '#fff', fontWeight: 600, fontSize: 12 }}>
                   {s}
                 </button>
               ))}
@@ -97,14 +97,14 @@ export default function DFWHVACFutureClimate() {
               {timelines.map(t => (
                 <button key={t} onClick={() => setTimeline(t)}
                   style={{ padding: '7px 14px', borderRadius: 6, border: 'none', cursor: 'pointer',
-                    background: timeline === t ? '#F5E642′ : '#162035', color: timeline === t ? '#0A1628' : '#fff', fontWeight: 600, fontSize: 12 }}>
+                    background: timeline === t ? '#F5E642' : '#162035', color: timeline === t ? '#0A1628' : '#fff', fontWeight: 600, fontSize: 12 }}>
                   {t}
                 </button>
               ))}
             </div>
           </div>
 
-          <div style={{ background: '#1a2a4a', borderRadius: 10, padding: 20, borderLeft: '4px solid #F5E642′ }}>
+          <div style={{ background: '#1a2a4a', borderRadius: 10, padding: 20, borderLeft: '4px solid #F5E642' }}>
             <div style={{ fontSize: 12, color: '#F5E642', marginBottom: 8, fontWeight: 700 }}>CLIMATE-SMART RECOMMENDATION</div>
             <div style={{ color: '#e2e8f0', lineHeight: 1.8, fontSize: 15 }}>
               {decisions[situation]?.[timeline] ?? 'Select a situation and timeline to see your personalized HVAC decision.'}

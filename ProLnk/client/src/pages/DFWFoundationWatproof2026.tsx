@@ -16,15 +16,15 @@ export default function DFWFoundationWatproof2026() {
     crack: '🔧 Polyurethane or epoxy crack injection seals active water entry. Polyurethane expands to fill voids; epoxy restores structural strength. Address exterior drainage first — injection alone fails if hydrostatic pressure continues.',
     wick: '💧 Capillary action through concrete is common in DFW areas with high seasonal water tables. Interior vapor barrier or crystalline waterproofing additive in an overlay can help. Exterior drainage improvement is the root fix.',
     joint: '⚠️ Slab-to-wall joints are common entry points. Hydraulic cement as emergency stop, then polyurethane sealant injection. Exterior French drain to relieve hydrostatic pressure is the permanent solution.',
-    standing: '🌧️ Standing water against the foundation is the #1 cause of DFW water intrusion. Regrade soil away from foundation (min. 6″ drop in 10 feet). Extend downspouts 6+ feet. French drain if regrading is insufficient.',
+    standing: '🌧️ Standing water against the foundation is the #1 cause of DFW water intrusion. Regrade soil away from foundation (min. 6" drop in 10 feet). Extend downspouts 6+ feet. French drain if regrading is insufficient.',
     below: '🏗️ Below-grade spaces in DFW are rare but exist. Interior drainage channel (trench drain + sump pump) is last resort. Exterior dimple mat waterproofing + drain tile is preferred. Budget $8,000–$25,000 for comprehensive solution.',
   };
 
   const methods = [
-    { icon: '💉', name: 'Crack Injection', type: 'Polyurethane / Epoxy', best: 'Active water cracks', cost: '$300–$1,500′ },
-    { icon: '🚰', name: 'French Drain', type: 'Exterior drain system', best: 'Hydrostatic pressure', cost: '$3,000–$8,000′ },
-    { icon: '🪨', name: 'Crystalline WP', type: 'Penetrating sealant', best: 'Capillary moisture', cost: '$2,000–$6,000′ },
-    { icon: '🏗️', name: 'Interior Drain', type: 'Trench + sump pump', best: 'Last resort only', cost: '$8,000–$20,000′ },
+    { icon: '💉', name: 'Crack Injection', type: 'Polyurethane / Epoxy', best: 'Active water cracks', cost: '$300–$1,500' },
+    { icon: '🚰', name: 'French Drain', type: 'Exterior drain system', best: 'Hydrostatic pressure', cost: '$3,000–$8,000' },
+    { icon: '🪨', name: 'Crystalline WP', type: 'Penetrating sealant', best: 'Capillary moisture', cost: '$2,000–$6,000' },
+    { icon: '🏗️', name: 'Interior Drain', type: 'Trench + sump pump', best: 'Last resort only', cost: '$8,000–$20,000' },
   ];
 
   return (
@@ -38,7 +38,7 @@ export default function DFWFoundationWatproof2026() {
 
         <div style={{ background: '#1E3A5F', borderRadius: '12px', padding: '16px 20px', marginBottom: '28px', display: 'flex', gap: '12px', alignItems: 'flex-start' }}>
           <span style={{ fontSize: '22px' }}>ℹ️</span>
-          <p style={{ color: '#94A3B8', fontSize: '14px', margin: 0, lineHeight: '1.6′ }}>Most DFW slab-on-grade foundations have no traditional waterproofing membrane. A vapor barrier under the slab is common but not waterproofing. Water entry is addressed through drainage, crack sealing, and moisture management.</p>
+          <p style={{ color: '#94A3B8', fontSize: '14px', margin: 0, lineHeight: '1.6' }}>Most DFW slab-on-grade foundations have no traditional waterproofing membrane. A vapor barrier under the slab is common but not waterproofing. Water entry is addressed through drainage, crack sealing, and moisture management.</p>
         </div>
 
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '12px', marginBottom: '28px' }}>
@@ -48,7 +48,7 @@ export default function DFWFoundationWatproof2026() {
               <div style={{ color: '#F5E642', fontWeight: '700', fontSize: '15px', marginBottom: '4px' }}>{m.name}</div>
               <div style={{ color: '#64748B', fontSize: '12px', marginBottom: '8px' }}>{m.type}</div>
               <div style={{ color: '#22C55E', fontSize: '12px', marginBottom: '4px' }}>Best for: {m.best}</div>
-              <div style={{ color: '#F5E642', fontSize: '13px', fontWeight: '700′ }}>{m.cost}</div>
+              <div style={{ color: '#F5E642', fontSize: '13px', fontWeight: '700' }}>{m.cost}</div>
             </div>
           ))}
         </div>
@@ -58,7 +58,7 @@ export default function DFWFoundationWatproof2026() {
           <div style={{ display: 'flex', flexDirection: 'column', gap: '8px', marginBottom: '16px' }}>
             {situations.map(s => (
               <button key={s.key} onClick={() => { setSituation(s.key); setApproach(approaches[s.key]); }}
-                style={{ background: situation === s.key ? '#F5E642′ : '#1E3A5F', color: situation === s.key ? '#0A1628' : '#E8EAF0', border: ’none', borderRadius: '8px', padding: '12px 16px', cursor: 'pointer', textAlign: 'left', fontSize: '14px', fontWeight: '600′ }}>
+                style={{ background: situation === s.key ? '#F5E642' : '#1E3A5F', color: situation === s.key ? '#0A1628' : '#E8EAF0', border: 'none', borderRadius: '8px', padding: '12px 16px', cursor: 'pointer', textAlign: 'left', fontSize: '14px', fontWeight: '600' }}>
                 {s.label}
               </button>
             ))}
@@ -79,7 +79,7 @@ export default function DFWFoundationWatproof2026() {
               '🏜️ Upland areas (Frisco, McKinney, north Collin County) rarely have water table issues — drainage is usually sufficient',
               '🔍 Expansive clay controls most moisture movement at DFW slab level — drainage management is the primary defense',
             ].map((item, i) => (
-              <div key={i} style={{ background: '#0A1628', borderRadius: '8px', padding: '12px', color: '#94A3B8', fontSize: '14px', lineHeight: '1.5′ }}>{item}</div>
+              <div key={i} style={{ background: '#0A1628', borderRadius: '8px', padding: '12px', color: '#94A3B8', fontSize: '14px', lineHeight: '1.5' }}>{item}</div>
             ))}
           </div>
         </div>

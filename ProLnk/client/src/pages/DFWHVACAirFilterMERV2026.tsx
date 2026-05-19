@@ -25,7 +25,7 @@ export default function DFWHVACAirFilterMERV2026() {
       <div style={{ maxWidth: 800, margin: '0 auto' }}>
         <div style={{ textAlign: 'center', marginBottom: '2rem' }}>
           <div style={{ fontSize: '3rem' }}>🌬️</div>
-          <h1 style={{ color: '#F5E642', fontSize: '1.8rem', margin: '0.5rem 0′ }}>DFW HVAC MERV Rating Deep Dive 2026</h1>
+          <h1 style={{ color: '#F5E642', fontSize: '1.8rem', margin: '0.5rem 0' }}>DFW HVAC MERV Rating Deep Dive 2026</h1>
           <p style={{ color: '#94a3b8', fontSize: '1rem' }}>Complete MERV guide for North Texas homes — cedar fever, allergies & system protection</p>
         </div>
 
@@ -51,9 +51,9 @@ export default function DFWHVACAirFilterMERV2026() {
               </select>
             </div>
           </div>
-          <div style={{ marginTop: '1rem', padding: '1rem', background: '#1a3a6e', borderRadius: 8, borderLeft: '4px solid #F5E642′ }}>
-            <div style={{ fontSize: '1.5rem' }}>{recommended.icon} <strong style={{ color: '#F5E642′ }}>MERV {recommended.merv} — {recommended.label}</strong></div>
-            <p style={{ margin: '0.5rem 0 0', color: '#cbd5e1′ }}>{recommended.desc}</p>
+          <div style={{ marginTop: '1rem', padding: '1rem', background: '#1a3a6e', borderRadius: 8, borderLeft: '4px solid #F5E642' }}>
+            <div style={{ fontSize: '1.5rem' }}>{recommended.icon} <strong style={{ color: '#F5E642' }}>MERV {recommended.merv} — {recommended.label}</strong></div>
+            <p style={{ margin: '0.5rem 0 0', color: '#cbd5e1' }}>{recommended.desc}</p>
           </div>
         </div>
 

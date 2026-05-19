@@ -50,7 +50,7 @@ export default function DFWSmartHomeMay2026() {
         <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap', marginBottom: 24 }}>
           {goals.map(g => (
             <button key={g.goal} onClick={() => setActive(g)}
-              style={{ background: active.goal === g.goal ? '#F5E642′ : '#111c35', color: active.goal === g.goal ? '#0A1628' : '#fff', border: `1px solid ${active.goal === g.goal ? '#F5E642' : '#1e3a5f'}`, borderRadius: 8, padding: '10px 16px', cursor: ’pointer', fontWeight: 700, fontSize: 13 }}>
+              style={{ background: active.goal === g.goal ? '#F5E642' : '#111c35', color: active.goal === g.goal ? '#0A1628' : '#fff', border: `1px solid ${active.goal === g.goal ? '#F5E642' : '#1e3a5f'}`, borderRadius: 8, padding: '10px 16px', cursor: 'pointer', fontWeight: 700, fontSize: 13 }}>
               {g.icon} {g.goal}
             </button>
           ))}

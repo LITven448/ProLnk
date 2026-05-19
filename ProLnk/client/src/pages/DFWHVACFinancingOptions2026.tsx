@@ -49,7 +49,7 @@ export default function DFWHVACFinancingOptions2026() {
         <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap', marginBottom: 24 }}>
           {financing.map(f => (
             <button key={f.id} onClick={() => setActiveTab(f.id)}
-              style={{ background: activeTab === f.id ? '#F5E642′ : '#132035', color: activeTab === f.id ? '#0A1628' : '#fff', border: ’none', borderRadius: 8, padding: '8px 16px', cursor: 'pointer', fontWeight: 600, fontSize: 14 }}>
+              style={{ background: activeTab === f.id ? '#F5E642' : '#132035', color: activeTab === f.id ? '#0A1628' : '#fff', border: 'none', borderRadius: 8, padding: '8px 16px', cursor: 'pointer', fontWeight: 600, fontSize: 14 }}>
               {f.icon} {f.label}
             </button>
           ))}

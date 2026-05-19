@@ -64,7 +64,7 @@ export default function DFWBuyingVsRenovatingGuide() {
             <h2 style={{ fontSize: 20, color: '#F5E642', marginBottom: 16 }}>🏡 Buy New When...</h2>
             {data.buyCases.map((c, i) => (
               <div key={i} style={{ marginBottom: 14 }}>
-                <div style={{ fontWeight: 700, fontSize: 15, color: '#F5E642′ }}>{c.label}</div>
+                <div style={{ fontWeight: 700, fontSize: 15, color: '#F5E642' }}>{c.label}</div>
                 <div style={{ color: '#aaa', fontSize: 14 }}>{c.detail}</div>
               </div>
             ))}
@@ -91,7 +91,7 @@ export default function DFWBuyingVsRenovatingGuide() {
             {[{ label: 'Current Home Value ($)', val: homeValue, set: setHomeValue }, { label: 'Renovation Budget ($)', val: renovationCost, set: setRenovationCost }, { label: 'Target Home Price ($)', val: targetPrice, set: setTargetPrice }].map((f, i) => (
               <div key={i}>
                 <label style={{ fontSize: 13, color: '#555', display: 'block', marginBottom: 6 }}>{f.label}</label>
-                <input value={f.val} onChange={e => f.set(e.target.value)} placeholder="e.g. 450000″ style={{ width: '100%', padding: '10px 12px', border: '1px solid #ccc', borderRadius: 6, fontSize: 15, boxSizing: 'border-box' }} />
+                <input value={f.val} onChange={e => f.set(e.target.value)} placeholder="e.g. 450000" style={{ width: '100%', padding: '10px 12px', border: '1px solid #ccc', borderRadius: 6, fontSize: 15, boxSizing: 'border-box' }} />
               </div>
             ))}
           </div>

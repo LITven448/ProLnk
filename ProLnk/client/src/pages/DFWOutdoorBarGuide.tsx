@@ -1,11 +1,11 @@
 import { useState } from 'react';
 
 const barConfigs = [
-  { space: 'compact', budget: 'low', style: 'casual', config: 'Freestanding bar cart with marine-grade stainless top', material: 'Powder-coated steel frame, concrete countertop', cost: '$800–$2,000′ },
-  { space: 'compact', budget: 'mid', style: 'casual', config: 'Built-in mini bar with under-counter fridge', material: 'Concrete block base, stone veneer, granite top', cost: '$3,000–$6,000′ },
-  { space: 'medium', budget: 'mid', style: 'entertainer', config: 'L-shaped outdoor bar with kegerator + dual-zone wine fridge', material: 'Concrete masonry, stucco finish, quartzite countertop', cost: '$8,000–$18,000′ },
-  { space: 'medium', budget: 'high', style: 'entertainer', config: 'Full outdoor kitchen bar with tap system + beverage drawers', material: 'Natural stone, marine-grade stainless appliances, concrete cap', cost: '$18,000–$35,000′ },
-  { space: 'large', budget: 'high', style: 'resort', config: 'Custom island bar with kegerator, wine fridge, ice maker, sink', material: 'Travertine, ledger stone, quartzite bar top, stainless appliances', cost: '$35,000–$75,000′ },
+  { space: 'compact', budget: 'low', style: 'casual', config: 'Freestanding bar cart with marine-grade stainless top', material: 'Powder-coated steel frame, concrete countertop', cost: '$800–$2,000' },
+  { space: 'compact', budget: 'mid', style: 'casual', config: 'Built-in mini bar with under-counter fridge', material: 'Concrete block base, stone veneer, granite top', cost: '$3,000–$6,000' },
+  { space: 'medium', budget: 'mid', style: 'entertainer', config: 'L-shaped outdoor bar with kegerator + dual-zone wine fridge', material: 'Concrete masonry, stucco finish, quartzite countertop', cost: '$8,000–$18,000' },
+  { space: 'medium', budget: 'high', style: 'entertainer', config: 'Full outdoor kitchen bar with tap system + beverage drawers', material: 'Natural stone, marine-grade stainless appliances, concrete cap', cost: '$18,000–$35,000' },
+  { space: 'large', budget: 'high', style: 'resort', config: 'Custom island bar with kegerator, wine fridge, ice maker, sink', material: 'Travertine, ledger stone, quartzite bar top, stainless appliances', cost: '$35,000–$75,000' },
 ];
 
 export default function DFWOutdoorBarGuide() {
@@ -76,7 +76,7 @@ export default function DFWOutdoorBarGuide() {
               <label style={{ color: '#94a3b8', fontSize: 13, display: 'block', marginBottom: 8 }}>{label}</label>
               <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap' }}>
                 {options.map(([val, text]) => (
-                  <button key={val} onClick={() => setter(val)} style={{ padding: '8px 14px', borderRadius: 8, border: '1px solid', borderColor: value === val ? '#F5E642′ : '#1e3a5f', background: value === val ? '#F5E642' : ’transparent', color: value === val ? '#0A1628′ : '#94a3b8', cursor: ’pointer', fontSize: 13, fontWeight: value === val ? 700 : 400 }}>{text}</button>
+                  <button key={val} onClick={() => setter(val)} style={{ padding: '8px 14px', borderRadius: 8, border: '1px solid', borderColor: value === val ? '#F5E642' : '#1e3a5f', background: value === val ? '#F5E642' : 'transparent', color: value === val ? '#0A1628' : '#94a3b8', cursor: 'pointer', fontSize: 13, fontWeight: value === val ? 700 : 400 }}>{text}</button>
                 ))}
               </div>
             </div>

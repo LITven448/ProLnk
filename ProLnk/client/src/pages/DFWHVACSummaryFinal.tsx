@@ -35,7 +35,7 @@ export default function DFWHVACSummaryFinal() {
             { icon: '🌡️', title: 'Refrigerant Transition 2026', body: 'R-410A production ending. R-454B (Puron Advance) is new standard. If your system uses R-22 (pre-2010), replacement parts are scarce. R-410A systems: service available but new equipment is R-454B. Plan accordingly.' },
             { icon: '📋', title: 'Warranty Registration', body: 'Register within 60 days or lose extended warranty. Carrier: 10-year parts if registered. Trane: 12-year compressor warranty if registered. Keep all documentation — unregistered warranties drop to 5-year limited. Critical before any sale.' },
           ].map(c => (
-            <div key={c.title} style={{ background: '#111d35', borderRadius: 12, padding: 20, borderLeft: '3px solid #F5E642′ }}>
+            <div key={c.title} style={{ background: '#111d35', borderRadius: 12, padding: 20, borderLeft: '3px solid #F5E642' }}>
               <div style={{ fontSize: 24, marginBottom: 8 }}>{c.icon}</div>
               <div style={{ fontWeight: 700, marginBottom: 6 }}>{c.title}</div>
               <div style={{ color: '#94a3b8', fontSize: 14, lineHeight: 1.6 }}>{c.body}</div>
@@ -48,7 +48,7 @@ export default function DFWHVACSummaryFinal() {
           <p style={{ color: '#94a3b8', marginBottom: 20, fontSize: 14 }}>Select your home profile for a complete action plan:</p>
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: 10, marginBottom: 24 }}>
             {profiles.map(p => (
-              <button key={p.id} onClick={() => setSelected(p.id)} style={{ padding: '10px 18px', borderRadius: 8, border: `2px solid ${selected === p.id ? '#F5E642' : '#1e3a5f'}`, background: selected === p.id ? '#F5E642′ : ’transparent', color: selected === p.id ? '#0A1628′ : '#fff', cursor: ’pointer', fontWeight: 600, fontSize: 14 }}>{p.label}</button>
+              <button key={p.id} onClick={() => setSelected(p.id)} style={{ padding: '10px 18px', borderRadius: 8, border: `2px solid ${selected === p.id ? '#F5E642' : '#1e3a5f'}`, background: selected === p.id ? '#F5E642' : 'transparent', color: selected === p.id ? '#0A1628' : '#fff', cursor: 'pointer', fontWeight: 600, fontSize: 14 }}>{p.label}</button>
             ))}
           </div>
           {selected && (

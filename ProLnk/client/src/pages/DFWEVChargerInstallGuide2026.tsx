@@ -21,13 +21,13 @@ export default function DFWEVChargerInstallGuide2026() {
 
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3,1fr)', gap: 16, marginBottom: 32 }}>
           {[
-            { icon: '🔌', label: 'Level 2 Install Cost', value: '$800–1,500′ },
+            { icon: '🔌', label: 'Level 2 Install Cost', value: '$800–1,500' },
             { icon: '⏰', label: 'Best Charge Window', value: '9pm–6am' },
-            { icon: '🏠', label: 'Panel Upgrade (older homes)', value: '+$2,500′ },
+            { icon: '🏠', label: 'Panel Upgrade (older homes)', value: '+$2,500' },
           ].map(card => (
             <div key={card.label} style={{ background: '#132040', borderRadius: 12, padding: 20, textAlign: 'center' }}>
               <div style={{ fontSize: 28 }}>{card.icon}</div>
-              <div style={{ fontSize: 20, fontWeight: 700, color: '#F5E642′ }}>{card.value}</div>
+              <div style={{ fontSize: 20, fontWeight: 700, color: '#F5E642' }}>{card.value}</div>
               <div style={{ fontSize: 12, color: '#94a3b8', marginTop: 4 }}>{card.label}</div>
             </div>
           ))}
@@ -59,7 +59,7 @@ export default function DFWEVChargerInstallGuide2026() {
               <label style={{ color: '#94a3b8', fontSize: 13 }}>Home Year Built</label>
               <input type="range" min={1950} max={2024} step={1} value={homeAge}
                 onChange={e => setHomeAge(Number(e.target.value))}
-                style={{ width: '100%', accentColor: '#F5E642′ }} />
+                style={{ width: '100%', accentColor: '#F5E642' }} />
               <div style={{ color: '#F5E642', fontWeight: 700 }}>{homeAge}</div>
             </div>
           </div>
@@ -70,7 +70,7 @@ export default function DFWEVChargerInstallGuide2026() {
               { label: 'Est. Total', value: `$${total.toLocaleString()}` },
             ].map(r => (
               <div key={r.label} style={{ background: '#0A1628', borderRadius: 8, padding: 12, textAlign: 'center' }}>
-                <div style={{ fontSize: 18, fontWeight: 700, color: '#F5E642′ }}>{r.value}</div>
+                <div style={{ fontSize: 18, fontWeight: 700, color: '#F5E642' }}>{r.value}</div>
                 <div style={{ fontSize: 11, color: '#94a3b8', marginTop: 4 }}>{r.label}</div>
               </div>
             ))}

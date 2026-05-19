@@ -52,7 +52,7 @@ export default function DFWProjectManagementGuide2026() {
         <div style={{ display: 'flex', gap: 8, marginBottom: 24 }}>
           {levels.map(l => (
             <button key={l.id} onClick={() => setLevel(l.id)}
-              style={{ flex: 1, padding: '12px 8px', borderRadius: 10, border: '2px solid', borderColor: level === l.id ? '#F5E642′ : '#1e3a5f', background: level === l.id ? '#F5E642' : '#0f2340', color: level === l.id ? '#0A1628' : '#fff', fontWeight: 700, cursor: ’pointer', fontSize: 12 }}>
+              style={{ flex: 1, padding: '12px 8px', borderRadius: 10, border: '2px solid', borderColor: level === l.id ? '#F5E642' : '#1e3a5f', background: level === l.id ? '#F5E642' : '#0f2340', color: level === l.id ? '#0A1628' : '#fff', fontWeight: 700, cursor: 'pointer', fontSize: 12 }}>
               <div>{l.label}</div>
               <div style={{ fontWeight: 400, marginTop: 2, fontSize: 11 }}>{l.sub}</div>
             </button>
@@ -72,7 +72,7 @@ export default function DFWProjectManagementGuide2026() {
         </div>
 
         <div style={{ background: '#0f2340', border: '1px solid #1e3a5f', borderRadius: 16, padding: 20, marginTop: 24 }}>
-          <p style={{ margin: '0 0 8px', fontWeight: 700, color: '#F5E642′ }}>🔒 ProLnk Health Vault</p>
+          <p style={{ margin: '0 0 8px', fontWeight: 700, color: '#F5E642' }}>🔒 ProLnk Health Vault</p>
           <p style={{ margin: 0, color: '#94a3b8', fontSize: 14, lineHeight: 1.6 }}>Every photo, CO, lien waiver, inspection report, and payment record from your ProLnk project is automatically stored in your Home Health Vault — permanently attached to your property address and available at resale.</p>
         </div>
       </div>

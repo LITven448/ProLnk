@@ -44,7 +44,7 @@ export default function DFWAluminumWiringGuide2026() {
             {vintages.map(v => (
               <button key={v.id} onClick={() => setVintage(v.id === vintage ? '' : v.id)}
                 style={{ padding: '14px', borderRadius: '8px', border: '2px solid', cursor: 'pointer', fontSize: '13px', fontWeight: '600', transition: 'all 0.2s', textAlign: 'center',
-                  borderColor: vintage === v.id ? '#F5E642′ : '#1e3a5f', backgroundColor: vintage === v.id ? '#1a2e4a' : '#0d1f35', color: vintage === v.id ? '#F5E642' : '#cbd5e1' }}>
+                  borderColor: vintage === v.id ? '#F5E642' : '#1e3a5f', backgroundColor: vintage === v.id ? '#1a2e4a' : '#0d1f35', color: vintage === v.id ? '#F5E642' : '#cbd5e1' }}>
                 {v.label}
               </button>
             ))}
@@ -55,7 +55,7 @@ export default function DFWAluminumWiringGuide2026() {
                 <h3 style={{ color: '#F5E642', margin: 0, fontSize: '18px' }}>{selected.label}</h3>
                 <span style={{ padding: '4px 14px', borderRadius: '20px', backgroundColor: '#1e2e40', color: selected.color, fontWeight: '700', fontSize: '13px' }}>Risk: {selected.risk}</span>
               </div>
-              <p style={{ color: '#cbd5e1', margin: 0, lineHeight: '1.6′ }}>{selected.note}</p>
+              <p style={{ color: '#cbd5e1', margin: 0, lineHeight: '1.6' }}>{selected.note}</p>
             </div>
           )}
         </div>
@@ -73,7 +73,7 @@ export default function DFWAluminumWiringGuide2026() {
                 <span style={{ color: '#F5E642', fontWeight: '700', fontSize: '15px' }}>{item.method}</span>
                 <span style={{ color: '#4ade80', fontWeight: '700', fontSize: '14px' }}>{item.cost}</span>
               </div>
-              <p style={{ color: '#94a3b8', margin: 0, fontSize: '13px', lineHeight: '1.5′ }}>{item.note}</p>
+              <p style={{ color: '#94a3b8', margin: 0, fontSize: '13px', lineHeight: '1.5' }}>{item.note}</p>
             </div>
           ))}
         </div>

@@ -39,7 +39,7 @@ export default function DFWBestSuburbsGuide() {
         <div style={{ overflowX: 'auto', marginBottom: 40 }}>
           <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: 14 }}>
             <thead>
-              <tr style={{ background: '#F5E642', color: '#0A1628′ }}>
+              <tr style={{ background: '#F5E642', color: '#0A1628' }}>
                 {['#', 'Suburb', '🛡️ Safety', '🎓 Schools', '💰 Median Price', '🚗 To Dallas', '📈 Growth', '🎉 Amenities'].map(h => (
                   <th key={h} style={{ padding: '10px 12px', textAlign: 'left', fontWeight: 700 }}>{h}</th>
                 ))}
@@ -50,11 +50,11 @@ export default function DFWBestSuburbsGuide() {
                 <tr key={s.name} style={{ background: i % 2 === 0 ? 'rgba(255,255,255,0.04)' : 'transparent', borderBottom: '1px solid rgba(255,255,255,0.08)' }}>
                   <td style={{ padding: '10px 12px', color: '#F5E642', fontWeight: 700 }}>{s.rank}</td>
                   <td style={{ padding: '10px 12px', fontWeight: 600 }}>{s.name}</td>
-                  <td style={{ padding: '10px 12px', color: s.safety >= 95 ? '#22c55e' : '#94a3b8′ }}>{s.safety}/100</td>
-                  <td style={{ padding: '10px 12px', color: s.schools >= 95 ? '#22c55e' : '#94a3b8′ }}>{s.schools}/100</td>
+                  <td style={{ padding: '10px 12px', color: s.safety >= 95 ? '#22c55e' : '#94a3b8' }}>{s.safety}/100</td>
+                  <td style={{ padding: '10px 12px', color: s.schools >= 95 ? '#22c55e' : '#94a3b8' }}>{s.schools}/100</td>
                   <td style={{ padding: '10px 12px' }}>${s.medianPrice.toLocaleString()}</td>
                   <td style={{ padding: '10px 12px' }}>{s.commuteDallas} min</td>
-                  <td style={{ padding: '10px 12px', color: s.growth >= 90 ? '#f59e0b' : '#94a3b8′ }}>{s.growth}/100</td>
+                  <td style={{ padding: '10px 12px', color: s.growth >= 90 ? '#f59e0b' : '#94a3b8' }}>{s.growth}/100</td>
                   <td style={{ padding: '10px 12px' }}>{s.amenities}/100</td>
                 </tr>
               ))}
@@ -68,7 +68,7 @@ export default function DFWBestSuburbsGuide() {
             <div>
               <label style={{ display: 'block', marginBottom: 8, color: '#94a3b8', fontSize: 13 }}>Budget (max home price)</label>
               <input type="range" min={380000} max={900000} step={10000} value={budget} onChange={e => setBudget(Number(e.target.value))}
-                style={{ width: '100%', accentColor: '#F5E642′ }} />
+                style={{ width: '100%', accentColor: '#F5E642' }} />
               <div style={{ color: '#F5E642', fontWeight: 700, marginTop: 4 }}>${budget.toLocaleString()}</div>
             </div>
             <div>
@@ -85,9 +85,9 @@ export default function DFWBestSuburbsGuide() {
           {scored.length > 0 ? (
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 16 }}>
               {scored.map((s, i) => (
-                <div key={s.name} style={{ background: i === 0 ? 'rgba(245,230,66,0.15)' : 'rgba(255,255,255,0.05)', borderRadius: 12, padding: 16, border: i === 0 ? '1px solid #F5E642′ : '1px solid rgba(255,255,255,0.1)' }}>
+                <div key={s.name} style={{ background: i === 0 ? 'rgba(245,230,66,0.15)' : 'rgba(255,255,255,0.05)', borderRadius: 12, padding: 16, border: i === 0 ? '1px solid #F5E642' : '1px solid rgba(255,255,255,0.1)' }}>
                   <div style={{ fontSize: 24, marginBottom: 4 }}>{i === 0 ? '🥇' : i === 1 ? '🥈' : '🥉'}</div>
-                  <div style={{ fontWeight: 700, fontSize: 18, color: i === 0 ? '#F5E642′ : '#fff' }}>{s.name}</div>
+                  <div style={{ fontWeight: 700, fontSize: 18, color: i === 0 ? '#F5E642' : '#fff' }}>{s.name}</div>
                   <div style={{ color: '#94a3b8', fontSize: 13, marginTop: 4 }}>${s.medianPrice.toLocaleString()} median</div>
                   <div style={{ color: '#22c55e', fontSize: 13 }}>Score: {Math.round(s.score)}/100</div>
                 </div>

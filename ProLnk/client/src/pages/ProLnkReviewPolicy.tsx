@@ -1,12 +1,12 @@
 import { useState } from 'react';
 
 const STAR_IMPACTS = [
-  { stars: 5, label: '⭐⭐⭐⭐⭐', priority: 'Highest Priority', matchBoost: '+40% match frequency', color: '#15803d', bg: '#f0fdf4', border: '#bbf7d0′ },
+  { stars: 5, label: '⭐⭐⭐⭐⭐', priority: 'Highest Priority', matchBoost: '+40% match frequency', color: '#15803d', bg: '#f0fdf4', border: '#bbf7d0' },
   { stars: 4.5, label: '⭐⭐⭐⭐½', priority: 'High Priority', matchBoost: '+20% match frequency', color: '#0369a1', bg: '#eff6ff', border: '#bfdbfe' },
   { stars: 4.0, label: '⭐⭐⭐⭐', priority: 'Standard Priority', matchBoost: 'Baseline', color: '#78350f', bg: '#fefce8', border: '#fde68a' },
   { stars: 3.5, label: '⭐⭐⭐½', priority: 'Reduced Priority', matchBoost: '−15% match frequency', color: '#c2410c', bg: '#fff7ed', border: '#fed7aa' },
   { stars: 3.0, label: '⭐⭐⭐', priority: 'Low Priority', matchBoost: '−30% match frequency', color: '#b91c1c', bg: '#fef2f2', border: '#fecaca' },
-  { stars: 2.5, label: '⭐⭐½ and below', priority: 'Suspension Review', matchBoost: 'Account reviewed for removal', color: '#7f1d1d', bg: '#fef2f2', border: '#fca5a5′ },
+  { stars: 2.5, label: '⭐⭐½ and below', priority: 'Suspension Review', matchBoost: 'Account reviewed for removal', color: '#7f1d1d', bg: '#fef2f2', border: '#fca5a5' },
 ];
 
 const DISPUTE_STEPS = [
@@ -22,7 +22,7 @@ export default function ProLnkReviewPolicy() {
   const selectedImpact = selectedStars !== null ? STAR_IMPACTS.find(s => s.stars === selectedStars) : null;
 
   return (
-    <div style={{ minHeight: '100vh', background: '#f9fafb', fontFamily: 'system-ui, sans-serif', color: '#111827′ }}>
+    <div style={{ minHeight: '100vh', background: '#f9fafb', fontFamily: 'system-ui, sans-serif', color: '#111827' }}>
       <div style={{ maxWidth: 860, margin: '0 auto', padding: '48px 24px' }}>
         <div style={{ marginBottom: 12 }}>
           <span style={{ background: '#fef9c3', color: '#854d0e', padding: '4px 12px', borderRadius: 20, fontSize: 13, fontWeight: 600 }}>
@@ -125,7 +125,7 @@ export default function ProLnkReviewPolicy() {
             ].map((item, i) => (
               <div key={i} style={{ display: 'flex', gap: 12, alignItems: 'flex-start', padding: 14, background: '#fef2f2', border: '1px solid #fecaca', borderRadius: 8 }}>
                 <span style={{ color: '#dc2626', flexShrink: 0 }}>🚫</span>
-                <span style={{ fontSize: 14, color: '#374151′ }}>{item}</span>
+                <span style={{ fontSize: 14, color: '#374151' }}>{item}</span>
               </div>
             ))}
           </div>

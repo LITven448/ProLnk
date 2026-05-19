@@ -1,8 +1,8 @@
 import { useState } from 'react';
 
-type PanelSize = '' | '60′ | '100' | '150' | '200' | '400';
+type PanelSize = '' | '60' | '100' | '150' | '200' | '400';
 type GarageLocation = '' | 'attached' | 'detached-near' | 'detached-far';
-type EVType = '' | 'level1′ | ’level2-32′ | ’level2-48′ | ’dcfc';
+type EVType = '' | 'level1' | 'level2-32' | 'level2-48' | 'dcfc';
 
 export default function DFWEVPanelGuide() {
   const [panel, setPanel] = useState<PanelSize>('');
@@ -100,7 +100,7 @@ export default function DFWEVPanelGuide() {
         <h1 style={{ fontSize: 28, fontWeight: 800, marginBottom: 8, color: '#fff' }}>EV Panel & Circuit Guide</h1>
         <p style={{ color: '#94A3B8', marginBottom: 32, lineHeight: 1.6 }}>
           Adding an EV charger to your DFW home requires the right panel, the right circuit, and a permit.
-          Tell us your setup and we'll show you exactly what’s needed.
+          Tell us your setup and we'll show you exactly what's needed.
         </p>
 
         <div style={{ background: '#0F1F3D', borderRadius: 12, padding: 24, marginBottom: 20 }}>
@@ -110,11 +110,11 @@ export default function DFWEVPanelGuide() {
               <select value={panel} onChange={e => setPanel(e.target.value as PanelSize)}
                 style={{ width: '100%', padding: '10px 14px', background: '#162035', border: '1px solid #2D3F5E', borderRadius: 8, color: '#E8F0FE', fontSize: 15 }}>
                 <option value="">— select —</option>
-                <option value="60″>60A (very old DFW home)</option>
-                <option value="100″>100A (older DFW home)</option>
-                <option value="150″>150A</option>
-                <option value="200″>200A (modern DFW standard)</option>
-                <option value="400″>400A (large home / dual meter)</option>
+                <option value="60">60A (very old DFW home)</option>
+                <option value="100">100A (older DFW home)</option>
+                <option value="150">150A</option>
+                <option value="200">200A (modern DFW standard)</option>
+                <option value="400">400A (large home / dual meter)</option>
               </select>
             </div>
             <div>
@@ -132,9 +132,9 @@ export default function DFWEVPanelGuide() {
               <select value={ev} onChange={e => setEV(e.target.value as EVType)}
                 style={{ width: '100%', padding: '10px 14px', background: '#162035', border: '1px solid #2D3F5E', borderRadius: 8, color: '#E8F0FE', fontSize: 15 }}>
                 <option value="">— select —</option>
-                <option value="level1″>Level 1 — 120V standard outlet (slow)</option>
-                <option value="level2-32″>Level 2 — 32A charger (most EVs)</option>
-                <option value="level2-48″>Level 2 — 48A charger (fastest home)</option>
+                <option value="level1">Level 1 — 120V standard outlet (slow)</option>
+                <option value="level2-32">Level 2 — 32A charger (most EVs)</option>
+                <option value="level2-48">Level 2 — 48A charger (fastest home)</option>
                 <option value="dcfc">DC Fast Charge (Level 3)</option>
               </select>
             </div>

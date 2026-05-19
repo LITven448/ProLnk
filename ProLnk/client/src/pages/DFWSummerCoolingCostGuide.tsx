@@ -43,7 +43,7 @@ export default function DFWSummerCoolingCostGuide() {
             DFW Summer Cooling Cost Guide
           </h1>
           <p style={{ color: '#94A3B8', margin: 0 }}>
-            DFW AC runs <strong style={{ color: '#F5E642′ }}>5–7 months per year</strong>. Know your cooling costs and where to cut them.
+            DFW AC runs <strong style={{ color: '#F5E642' }}>5–7 months per year</strong>. Know your cooling costs and where to cut them.
           </p>
         </div>
 
@@ -82,10 +82,10 @@ export default function DFWSummerCoolingCostGuide() {
 
           <div style={{ marginBottom: '1.25rem' }}>
             <label style={{ display: 'block', color: '#94A3B8', fontSize: '0.85rem', marginBottom: 4 }}>
-              Typical Thermostat Set Point: <strong style={{ color: '#F5E642′ }}>{thermostat}°F</strong>
+              Typical Thermostat Set Point: <strong style={{ color: '#F5E642' }}>{thermostat}°F</strong>
             </label>
-            <input type="range" min="68″ max="80" value={thermostat} onChange={e => setThermostat(e.target.value)}
-              style={{ width: '100%', accentColor: '#F5E642′ }} />
+            <input type="range" min="68" max="80" value={thermostat} onChange={e => setThermostat(e.target.value)}
+              style={{ width: '100%', accentColor: '#F5E642' }} />
             <div style={{ display: 'flex', justifyContent: 'space-between', color: '#94A3B8', fontSize: '0.75rem' }}>
               <span>68°F (cool)</span><span>80°F (warm)</span>
             </div>
@@ -101,11 +101,11 @@ export default function DFWSummerCoolingCostGuide() {
             <h2 style={{ color: '#F5E642', fontSize: '1.1rem', fontWeight: 700, marginTop: 0 }}>📊 Your Cooling Cost Estimate</h2>
             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
               <div style={{ textAlign: 'center', padding: '1rem', background: '#0A1628', borderRadius: 10 }}>
-                <div style={{ fontSize: '2rem', fontWeight: 700, color: '#F5E642′ }}>${result.monthly}</div>
+                <div style={{ fontSize: '2rem', fontWeight: 700, color: '#F5E642' }}>${result.monthly}</div>
                 <div style={{ color: '#94A3B8', fontSize: '0.85rem' }}>Est. monthly cooling cost</div>
               </div>
               <div style={{ textAlign: 'center', padding: '1rem', background: '#0A1628', borderRadius: 10 }}>
-                <div style={{ fontSize: '2rem', fontWeight: 700, color: '#34D399′ }}>${result.annualOpp}</div>
+                <div style={{ fontSize: '2rem', fontWeight: 700, color: '#34D399' }}>${result.annualOpp}</div>
                 <div style={{ color: '#94A3B8', fontSize: '0.85rem' }}>Annual savings opportunity</div>
               </div>
             </div>
@@ -113,7 +113,7 @@ export default function DFWSummerCoolingCostGuide() {
         )}
 
         <div style={{ padding: '1rem', background: '#111D35', borderRadius: 10, border: '1px solid #1E3A5F', color: '#94A3B8', fontSize: '0.85rem' }}>
-          💡 Attic insulation upgrade (R-30 → R-49) can reduce cooling costs by <strong style={{ color: '#F5E642′ }}>15–20%</strong> in DFW homes with inadequate insulation.
+          💡 Attic insulation upgrade (R-30 → R-49) can reduce cooling costs by <strong style={{ color: '#F5E642' }}>15–20%</strong> in DFW homes with inadequate insulation.
         </div>
       </div>
     </div>

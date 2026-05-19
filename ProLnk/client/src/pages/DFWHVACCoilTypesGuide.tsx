@@ -1,10 +1,10 @@
 import { useState } from 'react';
 
 const coilScenarios = [
-  { coil: 'A-coil in DFW attic — dirty, reduced cooling', cleaning: 'Coil cleaner spray (Nu-Calgon Evap-Fresh) + rinse. DFW pollen clogs in 1–2 seasons.', replacement: 'If more than 30% surface blocked and cleaning fails: $800–1,400 replacement.', cost: 'Cleaning: $150–250 | Replacement: $800–1,400′ },
-  { coil: 'Slant coil — low airflow across coil', cleaning: 'Slant coils harder to access in attic. May need pull-out service. Annual cleaning critical in DFW.', replacement: 'Higher labor due to access. Budget extra $100–200 for attic slant coil work.', cost: 'Cleaning: $200–350 | Replacement: $900–1,600′ },
-  { coil: 'Vertical coil — freezing up in DFW summer', cleaning: 'First check filter and airflow before cleaning. Freeze = restricted airflow or undercharge.', replacement: 'If coil leaking: dye test to confirm, then replace. R-410A coil: $900–1,800 installed.', cost: 'Diagnosis: $75–150 | Coil: $900–1,800′ },
-  { coil: 'Spine fin coil — concerned about DFW pollen clogging', cleaning: 'Spine fin (Lennox/Carrier specific) self-sheds some debris. Gentle rinse only — no stiff brush.', replacement: 'Spine fin is efficient but proprietary. Match OEM spec exactly for replacement.', cost: 'Cleaning: $150–200 | Replacement: $1,000–2,000′ },
+  { coil: 'A-coil in DFW attic — dirty, reduced cooling', cleaning: 'Coil cleaner spray (Nu-Calgon Evap-Fresh) + rinse. DFW pollen clogs in 1–2 seasons.', replacement: 'If more than 30% surface blocked and cleaning fails: $800–1,400 replacement.', cost: 'Cleaning: $150–250 | Replacement: $800–1,400' },
+  { coil: 'Slant coil — low airflow across coil', cleaning: 'Slant coils harder to access in attic. May need pull-out service. Annual cleaning critical in DFW.', replacement: 'Higher labor due to access. Budget extra $100–200 for attic slant coil work.', cost: 'Cleaning: $200–350 | Replacement: $900–1,600' },
+  { coil: 'Vertical coil — freezing up in DFW summer', cleaning: 'First check filter and airflow before cleaning. Freeze = restricted airflow or undercharge.', replacement: 'If coil leaking: dye test to confirm, then replace. R-410A coil: $900–1,800 installed.', cost: 'Diagnosis: $75–150 | Coil: $900–1,800' },
+  { coil: 'Spine fin coil — concerned about DFW pollen clogging', cleaning: 'Spine fin (Lennox/Carrier specific) self-sheds some debris. Gentle rinse only — no stiff brush.', replacement: 'Spine fin is efficient but proprietary. Match OEM spec exactly for replacement.', cost: 'Cleaning: $150–200 | Replacement: $1,000–2,000' },
 ];
 
 export default function DFWHVACCoilTypesGuide() {
@@ -40,7 +40,7 @@ export default function DFWHVACCoilTypesGuide() {
           <p style={{ color: '#CBD5E1', fontSize: 14, lineHeight: 1.6, margin: '0 0 10px' }}>
             DFW ranks among the worst pollen regions in the US — cedar fever (mountain cedar), oak, and cottonwood create heavy coil fouling. A 1mm layer of debris on evaporator fins reduces heat transfer by 20–30%. Most DFW systems need coil cleaning every 1–2 seasons, not just filter changes.
           </p>
-          <div style={{ background: '#0A1628', borderRadius: 8, padding: 12, fontSize: 14, color: '#94A3B8′ }}>
+          <div style={{ background: '#0A1628', borderRadius: 8, padding: 12, fontSize: 14, color: '#94A3B8' }}>
             Corrugated aluminum (standard) clogs faster than spine fin in DFW. Consider coil coating (Hy-Per lube or similar) after professional cleaning to slow debris adhesion.
           </div>
         </div>
@@ -50,13 +50,13 @@ export default function DFWHVACCoilTypesGuide() {
           <div style={{ display: 'flex', flexDirection: 'column', gap: 8, marginBottom: 16 }}>
             {coilScenarios.map((s, i) => (
               <button key={i} onClick={() => setSelected(i)}
-                style={{ background: selected === i ? '#F5E642′ : '#0A1628', color: selected === i ? '#0A1628' : '#E8EDF5', border: '1px solid #1E3A5F', borderRadius: 8, padding: '10px 14px', textAlign: ’left', cursor: 'pointer', fontSize: 14, fontWeight: selected === i ? 700 : 400 }}>
+                style={{ background: selected === i ? '#F5E642' : '#0A1628', color: selected === i ? '#0A1628' : '#E8EDF5', border: '1px solid #1E3A5F', borderRadius: 8, padding: '10px 14px', textAlign: 'left', cursor: 'pointer', fontSize: 14, fontWeight: selected === i ? 700 : 400 }}>
                 {s.coil}
               </button>
             ))}
           </div>
           {result && (
-            <div style={{ background: '#1A2030', borderRadius: 8, padding: 16, borderLeft: '4px solid #F5E642′ }}>
+            <div style={{ background: '#1A2030', borderRadius: 8, padding: 16, borderLeft: '4px solid #F5E642' }}>
               <div style={{ fontWeight: 700, marginBottom: 6 }}>Cleaning Approach</div>
               <div style={{ color: '#CBD5E1', fontSize: 14, marginBottom: 10 }}>{result.cleaning}</div>
               <div style={{ fontWeight: 700, marginBottom: 6 }}>Replacement Consideration</div>

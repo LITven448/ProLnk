@@ -33,21 +33,21 @@ export default function DFWProLnkGrowthCalculator() {
       <h1 style={{ color: '#F5E642', fontSize: '1.6rem', marginBottom: '0.25rem' }}>📈 ProLnk Partner Growth Calculator</h1>
       <p style={{ color: '#94a3b8', marginBottom: '1.5rem' }}>Project your ProLnk DFW partner network growth and income over 12 months.</p>
       <div style={{ display: 'grid', gap: '1rem', maxWidth: 560 }}>
-        <label style={{ color: '#F5E642′ }}>Starting Partners: {startPartners}
+        <label style={{ color: '#F5E642' }}>Starting Partners: {startPartners}
           <input type="range" min={1} max={50} value={startPartners} onChange={e => setStartPartners(+e.target.value)}
-            style={{ display: 'block', width: '100%', marginTop: 4, accentColor: '#F5E642′ }} />
+            style={{ display: 'block', width: '100%', marginTop: 4, accentColor: '#F5E642' }} />
         </label>
-        <label style={{ color: '#F5E642′ }}>New Partners/Month: {monthlyRecruit}
+        <label style={{ color: '#F5E642' }}>New Partners/Month: {monthlyRecruit}
           <input type="range" min={1} max={20} value={monthlyRecruit} onChange={e => setMonthlyRecruit(+e.target.value)}
-            style={{ display: 'block', width: '100%', marginTop: 4, accentColor: '#F5E642′ }} />
+            style={{ display: 'block', width: '100%', marginTop: 4, accentColor: '#F5E642' }} />
         </label>
-        <label style={{ color: '#F5E642′ }}>Monthly Attrition: {attrition}%
+        <label style={{ color: '#F5E642' }}>Monthly Attrition: {attrition}%
           <input type="range" min={0} max={20} value={attrition} onChange={e => setAttrition(+e.target.value)}
-            style={{ display: 'block', width: '100%', marginTop: 4, accentColor: '#F5E642′ }} />
+            style={{ display: 'block', width: '100%', marginTop: 4, accentColor: '#F5E642' }} />
         </label>
-        <label style={{ color: '#F5E642′ }}>Avg Matches Per Partner/Month: {matchesPerPartner}
+        <label style={{ color: '#F5E642' }}>Avg Matches Per Partner/Month: {matchesPerPartner}
           <input type="range" min={2} max={30} value={matchesPerPartner} onChange={e => setMatchesPerPartner(+e.target.value)}
-            style={{ display: 'block', width: '100%', marginTop: 4, accentColor: '#F5E642′ }} />
+            style={{ display: 'block', width: '100%', marginTop: 4, accentColor: '#F5E642' }} />
         </label>
         <button onClick={calculate} style={{ background: '#F5E642', color: '#0A1628', border: 'none', borderRadius: 8, padding: '0.75rem 1.5rem', fontWeight: 700, fontSize: '1rem', cursor: 'pointer' }}>Project 12-Month Growth</button>
       </div>
@@ -75,12 +75,12 @@ export default function DFWProLnkGrowthCalculator() {
               </thead>
               <tbody>
                 {result.map((r, i) => (
-                  <tr key={i} style={{ borderBottom: '1px solid #1e2d45', background: i % 2 === 0 ? '#0d1e33′ : ’transparent' }}>
+                  <tr key={i} style={{ borderBottom: '1px solid #1e2d45', background: i % 2 === 0 ? '#0d1e33' : 'transparent' }}>
                     <td style={{ padding: '0.35rem 0.5rem', color: '#94a3b8', textAlign: 'right' }}>{i + 1}</td>
-                    <td style={{ padding: '0.35rem 0.5rem', textAlign: 'right', color: '#e2e8f0′ }}>{r.partners}</td>
-                    <td style={{ padding: '0.35rem 0.5rem', textAlign: 'right', color: '#e2e8f0′ }}>{r.matches}</td>
-                    <td style={{ padding: '0.35rem 0.5rem', textAlign: 'right', color: '#e2e8f0′ }}>${r.networkIncome.toLocaleString()}</td>
-                    <td style={{ padding: '0.35rem 0.5rem', textAlign: 'right', color: '#e2e8f0′ }}>${r.subIncome.toLocaleString()}</td>
+                    <td style={{ padding: '0.35rem 0.5rem', textAlign: 'right', color: '#e2e8f0' }}>{r.partners}</td>
+                    <td style={{ padding: '0.35rem 0.5rem', textAlign: 'right', color: '#e2e8f0' }}>{r.matches}</td>
+                    <td style={{ padding: '0.35rem 0.5rem', textAlign: 'right', color: '#e2e8f0' }}>${r.networkIncome.toLocaleString()}</td>
+                    <td style={{ padding: '0.35rem 0.5rem', textAlign: 'right', color: '#e2e8f0' }}>${r.subIncome.toLocaleString()}</td>
                     <td style={{ padding: '0.35rem 0.5rem', textAlign: 'right', color: '#F5E642', fontWeight: 700 }}>${r.total.toLocaleString()}</td>
                   </tr>
                 ))}

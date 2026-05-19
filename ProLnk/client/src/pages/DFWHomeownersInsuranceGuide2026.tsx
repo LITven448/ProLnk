@@ -23,11 +23,11 @@ export default function DFWHomeownersInsuranceGuide2026() {
         <div style={{ marginBottom: 8, color: '#F5E642', fontSize: 13 }}>🏠 DFW HOME INSURANCE GUIDE</div>
         <h1 style={{ fontSize: 28, fontWeight: 800, marginBottom: 8 }}>DFW Homeowners Insurance Guide 2026</h1>
         <p style={{ color: '#94a3b8', marginBottom: 32 }}>
-          DFW avg premium: <strong style={{ color: '#F5E642′ }}>$3,200/yr</strong> — up 28% since 2023. Here’s what you need to know.
+          DFW avg premium: <strong style={{ color: '#F5E642' }}>$3,200/yr</strong> — up 28% since 2023. Here's what you need to know.
         </p>
 
         <div style={{ background: '#0f1f3d', borderRadius: 12, padding: 20, marginBottom: 24 }}>
-          <h2 style={{ fontSize: 16, fontWeight: 700, marginBottom: 16, color: '#F5E642′ }}>📋 HO-3 Policy Coverage Types</h2>
+          <h2 style={{ fontSize: 16, fontWeight: 700, marginBottom: 16, color: '#F5E642' }}>📋 HO-3 Policy Coverage Types</h2>
           {[
             { icon: '🏗️', label: 'Dwelling', desc: 'Structure of your home + attached structures' },
             { icon: '📦', label: 'Personal Property', desc: 'Furniture, clothes, electronics (50% of dwelling)' },
@@ -45,9 +45,9 @@ export default function DFWHomeownersInsuranceGuide2026() {
         </div>
 
         <div style={{ background: '#0f1f3d', borderRadius: 12, padding: 20, marginBottom: 24 }}>
-          <h2 style={{ fontSize: 16, fontWeight: 700, marginBottom: 16, color: '#F5E642′ }}>🧮 Coverage Needs Assessment</h2>
+          <h2 style={{ fontSize: 16, fontWeight: 700, marginBottom: 16, color: '#F5E642' }}>🧮 Coverage Needs Assessment</h2>
           <div style={{ marginBottom: 12 }}>
-            <label style={{ fontSize: 13, color: '#94a3b8′ }}>Home Value: ${homeValue.toLocaleString()}</label>
+            <label style={{ fontSize: 13, color: '#94a3b8' }}>Home Value: ${homeValue.toLocaleString()}</label>
             <input type="range" min={150000} max={800000} step={5000} value={homeValue}
               onChange={e => setHomeValue(+e.target.value)}
               style={{ width: '100%', accentColor: '#F5E642', marginTop: 6 }} />
@@ -58,7 +58,7 @@ export default function DFWHomeownersInsuranceGuide2026() {
             { label: 'Security / alarm system', val: hasSecurity, set: setHasSecurity },
           ].map(f => (
             <label key={f.label} style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 10, cursor: 'pointer' }}>
-              <input type="checkbox" checked={f.val} onChange={e => f.set(e.target.checked)} style={{ accentColor: '#F5E642′ }} />
+              <input type="checkbox" checked={f.val} onChange={e => f.set(e.target.checked)} style={{ accentColor: '#F5E642' }} />
               <span style={{ fontSize: 13 }}>{f.label}</span>
             </label>
           ))}
@@ -71,18 +71,18 @@ export default function DFWHomeownersInsuranceGuide2026() {
               { label: 'Est. Annual Premium', val: `$${estPremium.toLocaleString()}/yr`, highlight: true },
             ].map(r => (
               <div key={r.label} style={{ display: 'flex', justifyContent: 'space-between', marginBottom: 8, fontSize: 14 }}>
-                <span style={{ color: '#94a3b8′ }}>{r.label}</span>
-                <span style={{ color: r.highlight ? '#F5E642′ : '#fff', fontWeight: r.highlight ? 700 : 400 }}>{r.val}</span>
+                <span style={{ color: '#94a3b8' }}>{r.label}</span>
+                <span style={{ color: r.highlight ? '#F5E642' : '#fff', fontWeight: r.highlight ? 700 : 400 }}>{r.val}</span>
               </div>
             ))}
           </div>
         </div>
 
         <div style={{ background: '#0f1f3d', borderRadius: 12, padding: 20 }}>
-          <h2 style={{ fontSize: 16, fontWeight: 700, marginBottom: 12, color: '#F5E642′ }}>💡 DFW Shopping Tips</h2>
+          <h2 style={{ fontSize: 16, fontWeight: 700, marginBottom: 12, color: '#F5E642' }}>💡 DFW Shopping Tips</h2>
           {['Get 3+ quotes — premiums vary 40%+ for same coverage','Ask specifically about wind/hail deductible (separate from main deductible)','Check AM Best rating — stick to A or better','Replacement cost vs. actual cash value: always choose replacement cost'].map(t => (
             <div key={t} style={{ display: 'flex', gap: 10, marginBottom: 10, fontSize: 13 }}>
-              <span>✅</span><span style={{ color: '#94a3b8′ }}>{t}</span>
+              <span>✅</span><span style={{ color: '#94a3b8' }}>{t}</span>
             </div>
           ))}
         </div>

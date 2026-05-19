@@ -103,7 +103,7 @@ export default function DFWHVACFinalMorningPage() {
       <div style={{ maxWidth: 760, margin: '0 auto' }}>
         <div style={{ textAlign: 'center', marginBottom: '2rem' }}>
           <div style={{ fontSize: '2.5rem' }}>🌅</div>
-          <h1 style={{ color: '#F5E642', fontSize: '1.8rem', margin: '0.5rem 0′ }}>DFW HVAC Morning Page</h1>
+          <h1 style={{ color: '#F5E642', fontSize: '1.8rem', margin: '0.5rem 0' }}>DFW HVAC Morning Page</h1>
           <p style={{ color: '#9BB0CC', margin: 0 }}>As the DFW sun rises — here's your HVAC action for today</p>
         </div>
 

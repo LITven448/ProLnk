@@ -95,7 +95,7 @@ export default function DFWStagingLightingGuide() {
           <p style={{ color: '#CBD5E1', fontSize: 15, margin: 0 }}>DFW sunshine is your greatest staging asset — but most homes show poorly at night or on cloudy days. Fix the lighting, sell faster.</p>
         </div>
 
-        <div style={{ backgroundColor: '#fff', borderRadius: 12, padding: 24, marginBottom: 20, border: '1px solid #E2E8F0′ }}>
+        <div style={{ backgroundColor: '#fff', borderRadius: 12, padding: 24, marginBottom: 20, border: '1px solid #E2E8F0' }}>
           <h2 style={{ color: '#0A1628', fontSize: 18, fontWeight: 700, marginBottom: 16 }}>☀️ DFW Lighting Reality</h2>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12 }}>
             {[
@@ -104,15 +104,15 @@ export default function DFWStagingLightingGuide() {
               ['Schedule showings 10am–2pm to leverage DFW\’s signature sunshine', '🌞'],
               ['Under-cabinet kitchen lighting is the highest ROI lighting upgrade in DFW listings', '🏆'],
             ].map(([tip, icon], i) => (
-              <div key={i} style={{ backgroundColor: '#F8FAFC', borderRadius: 8, padding: 12, border: '1px solid #E2E8F0′ }}>
+              <div key={i} style={{ backgroundColor: '#F8FAFC', borderRadius: 8, padding: 12, border: '1px solid #E2E8F0' }}>
                 <span style={{ fontSize: 20 }}>{icon}</span>
-                <p style={{ color: '#475569', fontSize: 13, margin: '6px 0 0′ }}>{tip}</p>
+                <p style={{ color: '#475569', fontSize: 13, margin: '6px 0 0' }}>{tip}</p>
               </div>
             ))}
           </div>
         </div>
 
-        <div style={{ backgroundColor: '#fff', borderRadius: 12, padding: 24, marginBottom: 20, border: '1px solid #E2E8F0′ }}>
+        <div style={{ backgroundColor: '#fff', borderRadius: 12, padding: 24, marginBottom: 20, border: '1px solid #E2E8F0' }}>
           <h2 style={{ color: '#0A1628', fontSize: 18, fontWeight: 700, marginBottom: 16 }}>🔍 Get Your Lighting Plan</h2>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16, marginBottom: 20 }}>
             <div>
@@ -138,7 +138,7 @@ export default function DFWStagingLightingGuide() {
 
           {result && (
             <div style={{ display: 'grid', gridTemplateColumns: '1fr', gap: 12 }}>
-              <div style={{ backgroundColor: '#FEFCE8', borderRadius: 8, padding: 16, border: '1px solid #FDE047′ }}>
+              <div style={{ backgroundColor: '#FEFCE8', borderRadius: 8, padding: 16, border: '1px solid #FDE047' }}>
                 <div style={{ color: '#713F12', fontWeight: 700, fontSize: 14, marginBottom: 10 }}>📋 Lighting Action Plan</div>
                 {result.plan.map((item, i) => (
                   <div key={i} style={{ color: '#374151', fontSize: 13, marginBottom: 8, display: 'flex', gap: 8 }}>
@@ -151,7 +151,7 @@ export default function DFWStagingLightingGuide() {
                   <div style={{ color: '#1D4ED8', fontWeight: 700, fontSize: 14, marginBottom: 10 }}>💡 Recommended Bulbs</div>
                   {result.bulbs.map((b, i) => <div key={i} style={{ color: '#374151', fontSize: 13, marginBottom: 6 }}>• {b}</div>)}
                 </div>
-                <div style={{ backgroundColor: '#F0FDF4', borderRadius: 8, padding: 16, border: '1px solid #BBF7D0′ }}>
+                <div style={{ backgroundColor: '#F0FDF4', borderRadius: 8, padding: 16, border: '1px solid #BBF7D0' }}>
                   <div style={{ color: '#15803D', fontWeight: 700, fontSize: 14, marginBottom: 10 }}>💰 Estimated Cost</div>
                   <div style={{ color: '#374151', fontSize: 15, fontWeight: 600 }}>{result.cost}</div>
                 </div>

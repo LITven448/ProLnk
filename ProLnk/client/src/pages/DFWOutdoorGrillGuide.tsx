@@ -19,22 +19,22 @@ export default function DFWOutdoorGrillGuide() {
       grill = hasOK ? 'Built-in offset smoker with firebox' : 'Offset smoker (Yoder YS640 or Lone Star Grillz)';
       fuel = 'Post oak or pecan wood — classic DFW';
       accessories = 'Wireless meat thermometer, welding gloves, wood splitter';
-      cost = isHighBudget ? '$2,500-$8,000′ : '$800-$2,500';
+      cost = isHighBudget ? '$2,500-$8,000' : '$800-$2,500';
     } else if (cookingStyle === 'pellet') {
       grill = hasOK ? 'Built-in pellet grill insert' : 'Traeger Timberline or Weber SmokeFire';
       fuel = 'Pellets — store in sealed bin, DFW heat degrades pellets fast';
       accessories = 'Pellet storage bin, cover, WiFi controller';
-      cost = isHighBudget ? '$1,800-$3,500′ : '$600-$1,800';
+      cost = isHighBudget ? '$1,800-$3,500' : '$600-$1,800';
     } else if (cookingStyle === 'charcoal') {
       grill = hasOK ? 'Built-in charcoal grill (Bull or Summerset)' : 'Weber Kettle Premium or Big Green Egg';
       fuel = 'Lump charcoal — better in DFW heat than briquettes';
       accessories = 'Chimney starter, heat-resistant cover, ash tool';
-      cost = isHighBudget ? '$800-$4,000′ : '$150-$800';
+      cost = isHighBudget ? '$800-$4,000' : '$150-$800';
     } else {
       grill = hasOK ? 'Built-in gas grill (Wolf or Blaze)' : 'Weber Genesis or Napoleon Prestige';
       fuel = 'Natural gas (preferred) — propane loses 2-3 PSI in DFW summer heat';
       accessories = 'Rotisserie kit, sear burner, cover, side burner';
-      cost = isHighBudget ? '$1,500-$6,000′ : '$400-$1,500';
+      cost = isHighBudget ? '$1,500-$6,000' : '$400-$1,500';
     }
     const counterNote = hasOK ? 'Use concrete countertops — DFW heat cracks granite over time' : '';
     setRecommendation({ grill, fuel, accessories, cost, counterNote });
@@ -135,12 +135,12 @@ export default function DFWOutdoorGrillGuide() {
             Get Grill Recommendation
           </button>
           {recommendation && (
-            <div style={{ marginTop: '24px', background: '#0f1e38', borderRadius: '10px', padding: '20px', borderLeft: '4px solid #F5E642′ }}>
+            <div style={{ marginTop: '24px', background: '#0f1e38', borderRadius: '10px', padding: '20px', borderLeft: '4px solid #F5E642' }}>
               <h3 style={{ color: '#F5E642', marginTop: 0 }}>Your Recommendation</h3>
-              <p style={{ margin: '4px 0′ }}><strong>Grill:</strong> {recommendation.grill}</p>
-              <p style={{ margin: '4px 0′ }}><strong>Fuel Source:</strong> {recommendation.fuel}</p>
-              <p style={{ margin: '4px 0′ }}><strong>Key Accessories:</strong> {recommendation.accessories}</p>
-              <p style={{ margin: '4px 0′ }}><strong>Estimated Cost:</strong> {recommendation.cost}</p>
+              <p style={{ margin: '4px 0' }}><strong>Grill:</strong> {recommendation.grill}</p>
+              <p style={{ margin: '4px 0' }}><strong>Fuel Source:</strong> {recommendation.fuel}</p>
+              <p style={{ margin: '4px 0' }}><strong>Key Accessories:</strong> {recommendation.accessories}</p>
+              <p style={{ margin: '4px 0' }}><strong>Estimated Cost:</strong> {recommendation.cost}</p>
               {recommendation.counterNote && <p style={{ margin: '8px 0 0', color: '#F5E642', fontSize: '13px' }}>🏗️ {recommendation.counterNote}</p>}
             </div>
           )}

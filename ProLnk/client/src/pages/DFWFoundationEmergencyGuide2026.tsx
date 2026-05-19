@@ -61,15 +61,15 @@ export default function DFWFoundationEmergencyGuide2026() {
         </p>
 
         <div style={{ background: '#111e35', borderRadius: 12, padding: 24, marginBottom: 24 }}>
-          <h2 style={{ fontSize: 18, fontWeight: 700, marginBottom: 16, color: '#F5E642′ }}>🩺 Symptom Severity Checker</h2>
+          <h2 style={{ fontSize: 18, fontWeight: 700, marginBottom: 16, color: '#F5E642' }}>🩺 Symptom Severity Checker</h2>
           <div style={{ display: 'flex', flexDirection: 'column', gap: 10, marginBottom: 16 }}>
             {symptoms.map(s => (
               <button
                 key={s.id}
                 onClick={() => setSelected(s.id === selected ? null : s.id)}
                 style={{
-                  background: selected === s.id ? '#F5E642′ : '#0A1628',
-                  color: selected === s.id ? '#0A1628′ : '#fff',
+                  background: selected === s.id ? '#F5E642' : '#0A1628',
+                  color: selected === s.id ? '#0A1628' : '#fff',
                   border: `1px solid ${selected === s.id ? '#F5E642' : verdictColors[s.verdict]}`,
                   borderRadius: 8,
                   padding: '12px 16px',
@@ -94,7 +94,7 @@ export default function DFWFoundationEmergencyGuide2026() {
         </div>
 
         <div style={{ background: '#111e35', borderRadius: 12, padding: 20, marginBottom: 24 }}>
-          <h2 style={{ fontSize: 16, fontWeight: 700, marginBottom: 10, color: '#F5E642′ }}>🌧️ DFW Soil Context</h2>
+          <h2 style={{ fontSize: 16, fontWeight: 700, marginBottom: 10, color: '#F5E642' }}>🌧️ DFW Soil Context</h2>
           <div style={{ color: '#94a3b8', fontSize: 14, lineHeight: 1.7 }}>
             DFW's Blackland Prairie clay (Expansive Category III) shrinks during drought and expands aggressively when it rains. This causes more foundation movement than almost any other metro in the US. Seasonal monitoring — especially after a drought breaks — is essential for DFW homeowners.
           </div>

@@ -31,7 +31,7 @@ export default function DFWHVACZoningGuide2026() {
           {sizeOptions.map(opt => (
             <button key={opt.id} onClick={() => setSelected(opt.id)}
               style={{ padding: '9px 18px', borderRadius: 8, border: 'none', cursor: 'pointer', fontSize: 14, fontWeight: 600,
-                background: selected === opt.id ? '#F5E642′ : '#1e3a5f', color: selected === opt.id ? '#0A1628' : '#94a3b8' }}>
+                background: selected === opt.id ? '#F5E642' : '#1e3a5f', color: selected === opt.id ? '#0A1628' : '#94a3b8' }}>
               {opt.label}
             </button>
           ))}

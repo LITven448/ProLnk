@@ -59,12 +59,12 @@ export default function DFWHVACFinalChecklist() {
 
         <div style={{ background: '#0F2040', borderRadius: 12, padding: 20, marginBottom: 28, display: 'flex', alignItems: 'center', gap: 24 }}>
           <div style={{ position: 'relative', width: 80, height: 80 }}>
-            <svg viewBox="0 0 36 36″ style={{ width: 80, height: 80, transform: 'rotate(-90deg)' }}>
-              <circle cx="18″ cy="18" r="15.9" fill="none" stroke="#1E3A5F" strokeWidth="3" />
-              <circle cx="18″ cy="18" r="15.9" fill="none" stroke="#F5E642" strokeWidth="3"
+            <svg viewBox="0 0 36 36" style={{ width: 80, height: 80, transform: 'rotate(-90deg)' }}>
+              <circle cx="18" cy="18" r="15.9" fill="none" stroke="#1E3A5F" strokeWidth="3" />
+              <circle cx="18" cy="18" r="15.9" fill="none" stroke="#F5E642" strokeWidth="3"
                 strokeDasharray={`${pct} 100`} strokeLinecap="round" />
             </svg>
-            <div style={{ position: 'absolute', inset: 0, display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 18, fontWeight: 800, color: '#F5E642′ }}>{pct}%</div>
+            <div style={{ position: 'absolute', inset: 0, display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 18, fontWeight: 800, color: '#F5E642' }}>{pct}%</div>
           </div>
           <div>
             <div style={{ fontSize: 20, fontWeight: 700 }}>{checked.size} of {ITEMS.length} complete</div>
@@ -78,13 +78,13 @@ export default function DFWHVACFinalChecklist() {
             {ITEMS.filter(i => i.freq === freq).map(item => (
               <div key={item.id} onClick={() => toggle(item.id)}
                 style={{ display: 'flex', alignItems: 'flex-start', gap: 12, padding: '12px 14px', borderRadius: 8, marginBottom: 8, cursor: 'pointer',
-                  background: checked.has(item.id) ? '#0F2040′ : '#111E35', border: `1px solid ${checked.has(item.id) ? '#1E3A5F' : '#1A2F4A'}`,
+                  background: checked.has(item.id) ? '#0F2040' : '#111E35', border: `1px solid ${checked.has(item.id) ? '#1E3A5F' : '#1A2F4A'}`,
                   opacity: checked.has(item.id) ? 0.6 : 1 }}>
                 <div style={{ width: 22, height: 22, borderRadius: 6, border: `2px solid ${checked.has(item.id) ? '#F5E642' : '#2A4060'}`,
-                  background: checked.has(item.id) ? '#F5E642′ : ’transparent', flexShrink: 0, display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 13 }}>
+                  background: checked.has(item.id) ? '#F5E642' : 'transparent', flexShrink: 0, display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 13 }}>
                   {checked.has(item.id) ? '✓' : ''}
                 </div>
-                <span style={{ fontSize: 14, lineHeight: 1.5, textDecoration: checked.has(item.id) ? 'line-through' : 'none', color: checked.has(item.id) ? '#5A7A9A' : '#D4E4F4′ }}>
+                <span style={{ fontSize: 14, lineHeight: 1.5, textDecoration: checked.has(item.id) ? 'line-through' : 'none', color: checked.has(item.id) ? '#5A7A9A' : '#D4E4F4' }}>
                   {item.text}
                 </span>
               </div>

@@ -175,9 +175,9 @@ export default function DFWHomeActionPlan() {
   ];
 
   const budgets: { value: Budget; label: string }[] = [
-    { value: "under_5k", label: "Under $5,000″ },
-    { value: "5k_20k", label: "$5,000 – $20,000″ },
-    { value: "over_20k", label: "Over $20,000″ },
+    { value: "under_5k", label: "Under $5,000" },
+    { value: "5k_20k", label: "$5,000 – $20,000" },
+    { value: "over_20k", label: "Over $20,000" },
   ];
 
   const handleGenerate = () => {
@@ -188,19 +188,19 @@ export default function DFWHomeActionPlan() {
   };
 
   return (
-    <div style={{ background: "#0A1628″, minHeight: "100vh", color: "#fff", fontFamily: "sans-serif", padding: "40px 20px" }}>
+    <div style={{ background: "#0A1628", minHeight: "100vh", color: "#fff", fontFamily: "sans-serif", padding: "40px 20px" }}>
       <div style={{ maxWidth: 860, margin: "0 auto" }}>
-        <div style={{ marginBottom: 8, color: "#F5E642″, fontSize: 13, fontWeight: 700, letterSpacing: 2 }}>PROLNK ACTION PLANNER — DFW</div>
+        <div style={{ marginBottom: 8, color: "#F5E642", fontSize: 13, fontWeight: 700, letterSpacing: 2 }}>PROLNK ACTION PLANNER — DFW</div>
         <h1 style={{ fontSize: 36, fontWeight: 800, marginBottom: 8 }}>Your 90-Day DFW Home Action Plan 📋</h1>
         <p style={{ color: "#8899AA", fontSize: 16, marginBottom: 40 }}>Answer 3 questions and get a personalized week-by-week action plan for your DFW homeowner situation.</p>
 
         {step >= 1 && (
           <div style={{ background: "#111D2E", borderRadius: 12, padding: 28, marginBottom: 24 }}>
-            <h2 style={{ color: "#F5E642″, fontSize: 18, fontWeight: 700, marginBottom: 16 }}>Step 1: What is your current situation?</h2>
+            <h2 style={{ color: "#F5E642", fontSize: 18, fontWeight: 700, marginBottom: 16 }}>Step 1: What is your current situation?</h2>
             <div style={{ display: "flex", gap: 12, flexWrap: "wrap" }}>
               {situations.map((s) => (
                 <button key={s.value} onClick={() => { setSituation(s.value); setStep(Math.max(step, 2)); }}
-                  style={{ background: situation === s.value ? "#F5E642″ : "#1E2D42", color: situation === s.value ? "#0A1628" : "#fff", border: "none", borderRadius: 8, padding: "12px 20px", cursor: "pointer", fontWeight: 600, fontSize: 14 }}>
+                  style={{ background: situation === s.value ? "#F5E642" : "#1E2D42", color: situation === s.value ? "#0A1628" : "#fff", border: "none", borderRadius: 8, padding: "12px 20px", cursor: "pointer", fontWeight: 600, fontSize: 14 }}>
                   {s.label}
                 </button>
               ))}
@@ -210,11 +210,11 @@ export default function DFWHomeActionPlan() {
 
         {step >= 2 && (
           <div style={{ background: "#111D2E", borderRadius: 12, padding: 28, marginBottom: 24 }}>
-            <h2 style={{ color: "#F5E642″, fontSize: 18, fontWeight: 700, marginBottom: 16 }}>Step 2: What is your primary goal? (optional — personalizes your plan)</h2>
+            <h2 style={{ color: "#F5E642", fontSize: 18, fontWeight: 700, marginBottom: 16 }}>Step 2: What is your primary goal? (optional — personalizes your plan)</h2>
             <input value={goals} onChange={(e) => setGoals(e.target.value)}
               placeholder="e.g. build equity, maximize sale price, generate rental income, reduce monthly costs..."
-              style={{ width: "100%", background: "#0A1628″, border: "1px solid #2D3748", borderRadius: 8, padding: "12px 16px", color: "#fff", fontSize: 14, boxSizing: "border-box" }} />
-            <button onClick={() => setStep(Math.max(step, 3))} style={{ marginTop: 12, background: "#F5E642″, color: "#0A1628", border: "none", borderRadius: 8, padding: "10px 20px", cursor: "pointer", fontWeight: 700 }}>
+              style={{ width: "100%", background: "#0A1628", border: "1px solid #2D3748", borderRadius: 8, padding: "12px 16px", color: "#fff", fontSize: 14, boxSizing: "border-box" }} />
+            <button onClick={() => setStep(Math.max(step, 3))} style={{ marginTop: 12, background: "#F5E642", color: "#0A1628", border: "none", borderRadius: 8, padding: "10px 20px", cursor: "pointer", fontWeight: 700 }}>
               Continue →
             </button>
           </div>
@@ -222,17 +222,17 @@ export default function DFWHomeActionPlan() {
 
         {step >= 3 && (
           <div style={{ background: "#111D2E", borderRadius: 12, padding: 28, marginBottom: 24 }}>
-            <h2 style={{ color: "#F5E642″, fontSize: 18, fontWeight: 700, marginBottom: 16 }}>Step 3: What is your available budget for this plan?</h2>
+            <h2 style={{ color: "#F5E642", fontSize: 18, fontWeight: 700, marginBottom: 16 }}>Step 3: What is your available budget for this plan?</h2>
             <div style={{ display: "flex", gap: 12, flexWrap: "wrap", marginBottom: 20 }}>
               {budgets.map((b) => (
                 <button key={b.value} onClick={() => setBudget(b.value)}
-                  style={{ background: budget === b.value ? "#F5E642″ : "#1E2D42", color: budget === b.value ? "#0A1628" : "#fff", border: "none", borderRadius: 8, padding: "12px 20px", cursor: "pointer", fontWeight: 600, fontSize: 14 }}>
+                  style={{ background: budget === b.value ? "#F5E642" : "#1E2D42", color: budget === b.value ? "#0A1628" : "#fff", border: "none", borderRadius: 8, padding: "12px 20px", cursor: "pointer", fontWeight: 600, fontSize: 14 }}>
                   {b.label}
                 </button>
               ))}
             </div>
             {budget && (
-              <button onClick={handleGenerate} style={{ background: "#F5E642″, color: "#0A1628", border: "none", borderRadius: 8, padding: "14px 28px", cursor: "pointer", fontWeight: 800, fontSize: 16 }}>
+              <button onClick={handleGenerate} style={{ background: "#F5E642", color: "#0A1628", border: "none", borderRadius: 8, padding: "14px 28px", cursor: "pointer", fontWeight: 800, fontSize: 16 }}>
                 🚀 Generate My 90-Day Action Plan
               </button>
             )}
@@ -241,23 +241,23 @@ export default function DFWHomeActionPlan() {
 
         {step === 4 && plan && (
           <div>
-            <div style={{ background: "#F5E642″, borderRadius: 12, padding: 20, marginBottom: 28, textAlign: "center" }}>
-              <div style={{ color: "#0A1628″, fontWeight: 800, fontSize: 20 }}>Your Personalized 90-Day DFW Action Plan ✅</div>
-              <div style={{ color: "#0A1628″, fontSize: 14, marginTop: 4 }}>Based on your situation and budget — updated for DFW 2026 market conditions</div>
+            <div style={{ background: "#F5E642", borderRadius: 12, padding: 20, marginBottom: 28, textAlign: "center" }}>
+              <div style={{ color: "#0A1628", fontWeight: 800, fontSize: 20 }}>Your Personalized 90-Day DFW Action Plan ✅</div>
+              <div style={{ color: "#0A1628", fontSize: 14, marginTop: 4 }}>Based on your situation and budget — updated for DFW 2026 market conditions</div>
             </div>
             {plan.weeks.map((w, wi) => (
               <div key={wi} style={{ background: "#111D2E", borderRadius: 12, padding: 24, marginBottom: 16 }}>
-                <div style={{ color: "#F5E642″, fontWeight: 700, fontSize: 16, marginBottom: 14 }}>{w.period}</div>
+                <div style={{ color: "#F5E642", fontWeight: 700, fontSize: 16, marginBottom: 14 }}>{w.period}</div>
                 {w.tasks.map((task, ti) => (
-                  <div key={ti} style={{ color: "#CBD5E1″, fontSize: 14, marginBottom: 10, display: "flex", gap: 10 }}>
-                    <span style={{ color: "#F5E642″, minWidth: 20 }}>✓</span>
+                  <div key={ti} style={{ color: "#CBD5E1", fontSize: 14, marginBottom: 10, display: "flex", gap: 10 }}>
+                    <span style={{ color: "#F5E642", minWidth: 20 }}>✓</span>
                     <span>{task}</span>
                   </div>
                 ))}
               </div>
             ))}
             <div style={{ background: "#111D2E", borderRadius: 12, padding: 24, marginTop: 8, textAlign: "center" }}>
-              <div style={{ color: "#F5E642″, fontWeight: 700, fontSize: 16, marginBottom: 8 }}>🏠 Need a DFW Home Services Pro?</div>
+              <div style={{ color: "#F5E642", fontWeight: 700, fontSize: 16, marginBottom: 8 }}>🏠 Need a DFW Home Services Pro?</div>
               <div style={{ color: "#8899AA", fontSize: 14 }}>ProLnk connects you with vetted local contractors for every item on your action plan. Join the waitlist to get matched first.</div>
             </div>
           </div>

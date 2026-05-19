@@ -45,7 +45,7 @@ export default function DFWLienGuide() {
         </div>
       </div>
 
-      <div style={{ maxWidth: 760, margin: '0 auto', padding: '32px 24px 0′ }}>
+      <div style={{ maxWidth: 760, margin: '0 auto', padding: '32px 24px 0' }}>
         <div style={{ background: '#FFF7ED', border: '2px solid #FCD34D', borderRadius: 10, padding: 16, marginBottom: 28 }}>
           <strong style={{ color: '#92400E' }}>🔍 Check for Liens Free:</strong>
           <span style={{ color: '#78350F', fontSize: 14 }}> Dallas County Clerk: dallascountytx.gov | Tarrant County: tarrantcounty.com | Collin County: collincountytx.gov — search by property address or owner name.</span>
@@ -55,9 +55,9 @@ export default function DFWLienGuide() {
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: 12, marginBottom: 32 }}>
           {SITUATIONS.map((s, i) => (
             <button key={i} onClick={() => setSelected(selected === i ? null : i)}
-              style={{ background: selected === i ? '#0A1628′ : '#FFFFFF', border: `2px solid ${selected === i ? '#F5E642' : '#E5E7EB'}`, borderRadius: 10, padding: '16px', cursor: ’pointer', textAlign: 'left', boxShadow: '0 1px 4px rgba(0,0,0,0.06)' }}>
+              style={{ background: selected === i ? '#0A1628' : '#FFFFFF', border: `2px solid ${selected === i ? '#F5E642' : '#E5E7EB'}`, borderRadius: 10, padding: '16px', cursor: 'pointer', textAlign: 'left', boxShadow: '0 1px 4px rgba(0,0,0,0.06)' }}>
               <div style={{ fontSize: 24, marginBottom: 6 }}>{s.icon}</div>
-              <div style={{ fontSize: 13, fontWeight: 700, color: selected === i ? '#F5E642′ : '#1A2B3C' }}>{s.type}</div>
+              <div style={{ fontSize: 13, fontWeight: 700, color: selected === i ? '#F5E642' : '#1A2B3C' }}>{s.type}</div>
             </button>
           ))}
         </div>

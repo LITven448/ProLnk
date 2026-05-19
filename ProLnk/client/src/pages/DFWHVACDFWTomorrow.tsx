@@ -31,37 +31,37 @@ export default function DFWHVACDFWTomorrow() {
   const [selected, setSelected] = useState<number | null>(null);
 
   return (
-    <div style={{ backgroundColor: "#0A1628″, minHeight: "100vh", color: "#fff", fontFamily: "system-ui, sans-serif", padding: "40px 20px" }}>
+    <div style={{ backgroundColor: "#0A1628", minHeight: "100vh", color: "#fff", fontFamily: "system-ui, sans-serif", padding: "40px 20px" }}>
       <div style={{ maxWidth: "820px", margin: "0 auto" }}>
         <div style={{ textAlign: "center", marginBottom: "48px" }}>
           <div style={{ fontSize: "48px", marginBottom: "12px" }}>🔭</div>
-          <h1 style={{ fontSize: "2.4rem", fontWeight: "800″, color: "#F5E642", marginBottom: "16px", lineHeight: 1.2 }}>
+          <h1 style={{ fontSize: "2.4rem", fontWeight: "800", color: "#F5E642", marginBottom: "16px", lineHeight: 1.2 }}>
             What Is Coming for DFW HVAC
           </h1>
-          <p style={{ fontSize: "1.1rem", color: "#94a3b8″, maxWidth: "620px", margin: "0 auto", lineHeight: 1.7 }}>
+          <p style={{ fontSize: "1.1rem", color: "#94a3b8", maxWidth: "620px", margin: "0 auto", lineHeight: 1.7 }}>
             Summer 2026, heat pump adoption, ProLnk full launch, Home Health Vault for every DFW home, AI maintenance alerts — here is ProLnk's vision for the next 2 years and how it connects to your tomorrow.
           </p>
         </div>
 
-        <div style={{ backgroundColor: "#0F2040″, borderRadius: "16px", padding: "28px", marginBottom: "32px", border: "1px solid #1e3a5f" }}>
-          <h2 style={{ fontSize: "1.3rem", fontWeight: "700″, color: "#F5E642", marginBottom: "12px" }}>🗓️ The ProLnk Timeline</h2>
+        <div style={{ backgroundColor: "#0F2040", borderRadius: "16px", padding: "28px", marginBottom: "32px", border: "1px solid #1e3a5f" }}>
+          <h2 style={{ fontSize: "1.3rem", fontWeight: "700", color: "#F5E642", marginBottom: "12px" }}>🗓️ The ProLnk Timeline</h2>
           <div style={{ display: "grid", gap: "12px" }}>
             {[
-              { when: "May 2026″, what: "Charter waitlist closes at 500 — founding pricing locks forever" },
-              { when: "Summer 2026″, what: "ProLnk goes live — full matching, Home Health Vault, verified contractor network" },
-              { when: "Fall 2026″, what: "AI maintenance alerts launch — predictive failure warnings for every enrolled home" },
-              { when: "2027″, what: "Heat pump installer network completes — largest certified HP network in DFW" },
-              { when: "2028″, what: "Home Health Vault for all DFW — standard in real estate transactions" },
+              { when: "May 2026", what: "Charter waitlist closes at 500 — founding pricing locks forever" },
+              { when: "Summer 2026", what: "ProLnk goes live — full matching, Home Health Vault, verified contractor network" },
+              { when: "Fall 2026", what: "AI maintenance alerts launch — predictive failure warnings for every enrolled home" },
+              { when: "2027", what: "Heat pump installer network completes — largest certified HP network in DFW" },
+              { when: "2028", what: "Home Health Vault for all DFW — standard in real estate transactions" },
             ].map((item, i) => (
               <div key={i} style={{ display: "flex", gap: "16px", alignItems: "flex-start" }}>
-                <div style={{ backgroundColor: "#F5E642″, color: "#0A1628", borderRadius: "6px", padding: "4px 10px", fontSize: "0.8rem", fontWeight: "700", whiteSpace: "nowrap", flexShrink: 0 }}>{item.when}</div>
-                <div style={{ color: "#94a3b8″, fontSize: "0.92rem", lineHeight: 1.5 }}>{item.what}</div>
+                <div style={{ backgroundColor: "#F5E642", color: "#0A1628", borderRadius: "6px", padding: "4px 10px", fontSize: "0.8rem", fontWeight: "700", whiteSpace: "nowrap", flexShrink: 0 }}>{item.when}</div>
+                <div style={{ color: "#94a3b8", fontSize: "0.92rem", lineHeight: 1.5 }}>{item.what}</div>
               </div>
             ))}
           </div>
         </div>
 
-        <h2 style={{ fontSize: "1.4rem", fontWeight: "700″, color: "#fff", marginBottom: "20px", textAlign: "center" }}>
+        <h2 style={{ fontSize: "1.4rem", fontWeight: "700", color: "#fff", marginBottom: "20px", textAlign: "center" }}>
           Select your tomorrow to see ProLnk's vision for your DFW HVAC
         </h2>
 
@@ -71,22 +71,22 @@ export default function DFWHVACDFWTomorrow() {
               key={i}
               onClick={() => setSelected(selected === i ? null : i)}
               style={{
-                backgroundColor: selected === i ? "#F5E642″ : "#0F2040",
-                color: selected === i ? "#0A1628″ : "#fff",
-                border: "1px solid " + (selected === i ? "#F5E642″ : "#1e3a5f"),
+                backgroundColor: selected === i ? "#F5E642" : "#0F2040",
+                color: selected === i ? "#0A1628" : "#fff",
+                border: "1px solid " + (selected === i ? "#F5E642" : "#1e3a5f"),
                 borderRadius: "10px",
                 padding: "16px 20px",
                 textAlign: "left",
                 cursor: "pointer",
                 fontSize: "1rem",
-                fontWeight: "600″,
+                fontWeight: "600",
                 transition: "all 0.2s",
                 width: "100%",
               }}
             >
               {selected === i ? "✅" : "🔮"} {item.yours}
               {selected === i && (
-                <div style={{ marginTop: "10px", fontSize: "0.92rem", fontWeight: "400″, color: "#0A1628", lineHeight: 1.6 }}>
+                <div style={{ marginTop: "10px", fontSize: "0.92rem", fontWeight: "400", color: "#0A1628", lineHeight: 1.6 }}>
                   🚀 {item.vision}
                 </div>
               )}
@@ -94,9 +94,9 @@ export default function DFWHVACDFWTomorrow() {
           ))}
         </div>
 
-        <div style={{ backgroundColor: "#0F2040″, borderRadius: "16px", padding: "28px", border: "1px solid #F5E642" }}>
-          <h3 style={{ fontSize: "1.2rem", fontWeight: "700″, color: "#F5E642", marginBottom: "10px" }}>🏁 The Charter Advantage Compounds</h3>
-          <p style={{ color: "#94a3b8″, lineHeight: 1.7, margin: 0 }}>
+        <div style={{ backgroundColor: "#0F2040", borderRadius: "16px", padding: "28px", border: "1px solid #F5E642" }}>
+          <h3 style={{ fontSize: "1.2rem", fontWeight: "700", color: "#F5E642", marginBottom: "10px" }}>🏁 The Charter Advantage Compounds</h3>
+          <p style={{ color: "#94a3b8", lineHeight: 1.7, margin: 0 }}>
             Every improvement ProLnk ships — AI alerts, heat pump network, Vault expansion, real estate integration — is available to Charter members first and at founding pricing permanently. Being early is not just symbolic. In a compounding platform, it is a measurable financial advantage that grows every year.
           </p>
         </div>

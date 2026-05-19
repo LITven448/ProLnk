@@ -30,7 +30,7 @@ export default function DFWWellWaterGuide2026() {
           <h2 style={{ fontSize: 18, fontWeight: 700, marginBottom: 16 }}>📍 Select Your County</h2>
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: 10 }}>
             {COUNTIES.map(c => (
-              <button key={c} onClick={() => setCounty(c)} style={{ padding: '8px 16px', borderRadius: 8, border: 'none', cursor: 'pointer', fontWeight: 700, backgroundColor: county === c ? '#F5E642′ : '#1e2d4a', color: county === c ? '#0A1628' : '#fff' }}>{c} County</button>
+              <button key={c} onClick={() => setCounty(c)} style={{ padding: '8px 16px', borderRadius: 8, border: 'none', cursor: 'pointer', fontWeight: 700, backgroundColor: county === c ? '#F5E642' : '#1e2d4a', color: county === c ? '#0A1628' : '#fff' }}>{c} County</button>
             ))}
           </div>
           {county && <p style={{ marginTop: 12, color: '#F5E642', fontSize: 14 }}>✅ {county} County: Texas Commission on Environmental Quality (TCEQ) licensed well drillers required.</p>}
@@ -39,7 +39,7 @@ export default function DFWWellWaterGuide2026() {
         <div style={{ backgroundColor: '#111d35', borderRadius: 12, padding: 24, marginBottom: 24 }}>
           <h2 style={{ fontSize: 18, fontWeight: 700, marginBottom: 12 }}>🔬 When to Test Your Well</h2>
           {TEST_FREQ.map((t, i) => (
-            <div key={i} style={{ padding: '8px 0', borderBottom: '1px solid #1e2d4a', fontSize: 14, color: '#cbd5e1′ }}>✅ {t}</div>
+            <div key={i} style={{ padding: '8px 0', borderBottom: '1px solid #1e2d4a', fontSize: 14, color: '#cbd5e1' }}>✅ {t}</div>
           ))}
         </div>
 
@@ -48,11 +48,11 @@ export default function DFWWellWaterGuide2026() {
           <p style={{ color: '#94a3b8', fontSize: 14, marginBottom: 16 }}>Select your contaminant finding to see the recommended treatment:</p>
           <div style={{ display: 'flex', flexDirection: 'column', gap: 10, marginBottom: 20 }}>
             {CONTAMINANTS.map(c => (
-              <button key={c.id} onClick={() => setSelectedContaminant(c.id)} style={{ padding: '12px 16px', borderRadius: 8, border: 'none', cursor: 'pointer', fontWeight: 600, textAlign: 'left', backgroundColor: selectedContaminant === c.id ? '#F5E642′ : '#1e2d4a', color: selectedContaminant === c.id ? '#0A1628' : '#fff' }}>{c.label}</button>
+              <button key={c.id} onClick={() => setSelectedContaminant(c.id)} style={{ padding: '12px 16px', borderRadius: 8, border: 'none', cursor: 'pointer', fontWeight: 600, textAlign: 'left', backgroundColor: selectedContaminant === c.id ? '#F5E642' : '#1e2d4a', color: selectedContaminant === c.id ? '#0A1628' : '#fff' }}>{c.label}</button>
             ))}
           </div>
           {found && (
-            <div style={{ backgroundColor: '#0A1628', borderRadius: 8, padding: 16, borderLeft: '4px solid #F5E642′ }}>
+            <div style={{ backgroundColor: '#0A1628', borderRadius: 8, padding: 16, borderLeft: '4px solid #F5E642' }}>
               <div style={{ color: '#F5E642', fontWeight: 700, marginBottom: 6, fontSize: 14 }}>Recommended Treatment:</div>
               <div style={{ color: '#e2e8f0', fontSize: 15 }}>🛠️ {found.treatment}</div>
             </div>

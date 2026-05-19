@@ -96,7 +96,7 @@ export default function DFWHVACHeatPumpInstall() {
             </div>
           </div>
           <button onClick={() => setShowReqs(true)} disabled={!system || !climateZone}
-            style={{ background: system && climateZone ? '#F5E642′ : '#1e3a5f', color: system && climateZone ? '#0A1628' : '#4a6080', border: ’none', borderRadius: 8, padding: '12px 28px', fontWeight: 700, fontSize: 15, cursor: system && climateZone ? 'pointer' : 'not-allowed' }}>
+            style={{ background: system && climateZone ? '#F5E642' : '#1e3a5f', color: system && climateZone ? '#0A1628' : '#4a6080', border: 'none', borderRadius: 8, padding: '12px 28px', fontWeight: 700, fontSize: 15, cursor: system && climateZone ? 'pointer' : 'not-allowed' }}>
             Show Installation Requirements →
           </button>
         </div>
@@ -108,11 +108,11 @@ export default function DFWHVACHeatPumpInstall() {
               {reqs.items.map((item, i) => (
                 <div key={i} style={{ display: 'flex', gap: 12, marginBottom: 10, padding: 12, background: '#152238', borderRadius: 8 }}>
                   <span style={{ color: '#F5E642', fontWeight: 700, flexShrink: 0 }}>{i + 1}.</span>
-                  <span style={{ fontSize: 13, color: '#ccd9e8′ }}>{item}</span>
+                  <span style={{ fontSize: 13, color: '#ccd9e8' }}>{item}</span>
                 </div>
               ))}
             </div>
-            <div style={{ background: '#0d1f3c', borderRadius: 12, padding: 20, borderLeft: '4px solid #a0d4a0′ }}>
+            <div style={{ background: '#0d1f3c', borderRadius: 12, padding: 20, borderLeft: '4px solid #a0d4a0' }}>
               <div style={{ color: '#a0d4a0', fontWeight: 700, fontSize: 14, marginBottom: 12 }}>🔬 Tech Notes for DFW Climate</div>
               {reqs.techNotes.map((note, i) => (
                 <div key={i} style={{ display: 'flex', gap: 8, marginBottom: 8, fontSize: 13, color: '#8899aa' }}>

@@ -32,7 +32,7 @@ export default function DFWHVACCoolantCycle2026() {
         <p style={{ color: '#8899AA', fontSize: '16px', marginBottom: '32px' }}>Understanding how refrigerant moves through your DFW AC system helps you diagnose problems faster and communicate with HVAC techs more effectively.</p>
 
         <div style={{ marginBottom: '32px' }}>
-          <h2 style={{ fontSize: '18px', fontWeight: 700, marginBottom: '16px', color: '#F5E642′ }}>🔄 The 4-Stage Refrigerant Cycle</h2>
+          <h2 style={{ fontSize: '18px', fontWeight: 700, marginBottom: '16px', color: '#F5E642' }}>🔄 The 4-Stage Refrigerant Cycle</h2>
           <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
             {stages.map((stage, i) => (
               <div key={i} style={{ backgroundColor: '#0D1F38', border: '1px solid #1a3050', borderRadius: '10px', padding: '18px', display: 'flex', gap: '16px', alignItems: 'flex-start' }}>
@@ -49,7 +49,7 @@ export default function DFWHVACCoolantCycle2026() {
         </div>
 
         <div style={{ backgroundColor: '#0D1F38', border: '1px solid #1a3050', borderRadius: '12px', padding: '28px', marginBottom: '28px' }}>
-          <h2 style={{ fontSize: '20px', fontWeight: 700, marginBottom: '20px', color: '#F5E642′ }}>🔧 Diagnose My System Behavior</h2>
+          <h2 style={{ fontSize: '20px', fontWeight: 700, marginBottom: '20px', color: '#F5E642' }}>🔧 Diagnose My System Behavior</h2>
           <div style={{ marginBottom: '20px' }}>
             <label style={{ display: 'block', fontSize: '14px', color: '#8899AA', marginBottom: '8px' }}>What Is My DFW System Doing?</label>
             <select value={behavior} onChange={e => setBehavior(e.target.value)} style={{ width: '100%', padding: '12px', backgroundColor: '#0A1628', border: '1px solid #1a3050', borderRadius: '8px', color: '#fff', fontSize: '15px' }}>
@@ -67,7 +67,7 @@ export default function DFWHVACCoolantCycle2026() {
         </div>
 
         <div style={{ backgroundColor: '#0D1F38', border: '1px solid #1a3050', borderRadius: '12px', padding: '24px' }}>
-          <h3 style={{ fontSize: '17px', fontWeight: 700, marginBottom: '12px', color: '#F5E642′ }}>🌡️ Why DFW Heat Is Uniquely Brutal on AC</h3>
+          <h3 style={{ fontSize: '17px', fontWeight: 700, marginBottom: '12px', color: '#F5E642' }}>🌡️ Why DFW Heat Is Uniquely Brutal on AC</h3>
           <p style={{ color: '#CBD5E0', fontSize: '14px', lineHeight: 1.7 }}>When outdoor air reaches 105°F, your condenser must reject heat to air that is already extremely hot. This forces the refrigerant to reach higher pressures and temperatures to release heat — compressors work 30-40% harder than rated. This is why DFW systems need annual service, clean condenser coils, and correct refrigerant charge maintained to spec — even small deficiencies become major performance problems above 95°F.</p>
         </div>
       </div>

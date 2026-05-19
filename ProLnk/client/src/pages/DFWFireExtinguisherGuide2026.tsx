@@ -27,7 +27,7 @@ export default function DFWFireExtinguisherGuide2026() {
         </div>
 
         <div style={{ background: '#1A2840', borderRadius: 10, padding: '14px 18px', marginBottom: 24, fontSize: 14, lineHeight: 1.6 }}>
-          <strong style={{ color: '#F5E642′ }}>DFW Fire Fact:</strong> Texas structure fires peak Jan–Feb (heating) and Jun–Jul (fireworks, AC overload). 
+          <strong style={{ color: '#F5E642' }}>DFW Fire Fact:</strong> Texas structure fires peak Jan–Feb (heating) and Jun–Jul (fireworks, AC overload). 
           PASS technique: Pull pin → Aim low → Squeeze handle → Sweep side to side.
         </div>
 
@@ -68,16 +68,16 @@ export default function DFWFireExtinguisherGuide2026() {
           <div style={{ background: '#0F2040', borderRadius: 10, padding: '16px 20px', border: '1px solid #1E3A5F', marginBottom: 24 }}>
             {inspectionItems.map((item, i) => (
               <div key={i} style={{ display: 'flex', alignItems: 'center', gap: 10, padding: '6px 0', borderBottom: i < inspectionItems.length - 1 ? '1px solid #1E3A5F' : 'none' }}>
-                <span style={{ color: '#F5E642′ }}>☐</span>
+                <span style={{ color: '#F5E642' }}>☐</span>
                 <span style={{ fontSize: 14, color: '#B8D4EA' }}>{item}</span>
               </div>
             ))}
-            <p style={{ color: '#8BA5C4', fontSize: 12, margin: '12px 0 0′ }}>Replace 12 years after manufacture date (stamped on cylinder). Always replace after any use.</p>
+            <p style={{ color: '#8BA5C4', fontSize: 12, margin: '12px 0 0' }}>Replace 12 years after manufacture date (stamped on cylinder). Always replace after any use.</p>
           </div>
         )}
 
         <div style={{ textAlign: 'center', padding: 16, background: '#0F2040', borderRadius: 10, border: '1px solid #1E3A5F' }}>
-          <p style={{ color: '#8BA5C4', fontSize: 13, margin: 0 }}>Only fight a fire if: it's small, you have an exit behind you, and you’ve already called 911. When in doubt — get out.</p>
+          <p style={{ color: '#8BA5C4', fontSize: 13, margin: 0 }}>Only fight a fire if: it's small, you have an exit behind you, and you've already called 911. When in doubt — get out.</p>
         </div>
       </div>
     </div>

@@ -42,11 +42,11 @@ const NATIONAL_MARKETS = [
 ];
 
 const STATUS_COLORS: Record<string, string> = {
-  active: "bg-teal-500″,
-  recruiting: "bg-yellow-500″,
-  planned: "bg-blue-500″,
-  future: "bg-gray-400″,
-  next: "bg-orange-500″,
+  active: "bg-teal-500",
+  recruiting: "bg-yellow-500",
+  planned: "bg-blue-500",
+  future: "bg-gray-400",
+  next: "bg-orange-500",
 };
 
 const STATUS_LABELS: Record<string, string> = {
@@ -110,10 +110,10 @@ export default function MarketExpansion() {
       // Add DFW zone circles
       DFW_ZONES.forEach(zone => {
         const circle = new google.maps.Circle({
-          strokeColor: zone.status === "active" ? "#00B5B8″ : zone.status === "recruiting" ? "#F59E0B" : "#6366F1",
+          strokeColor: zone.status === "active" ? "#00B5B8" : zone.status === "recruiting" ? "#F59E0B" : "#6366F1",
           strokeOpacity: 0.8,
           strokeWeight: 2,
-          fillColor: zone.status === "active" ? "#00B5B8″ : zone.status === "recruiting" ? "#F59E0B" : "#6366F1",
+          fillColor: zone.status === "active" ? "#00B5B8" : zone.status === "recruiting" ? "#F59E0B" : "#6366F1",
           fillOpacity: 0.15,
           map,
           center: { lat: zone.lat, lng: zone.lng },
@@ -127,7 +127,7 @@ export default function MarketExpansion() {
           icon: {
             path: google.maps.SymbolPath.CIRCLE,
             scale: 10,
-            fillColor: zone.status === "active" ? "#00B5B8″ : zone.status === "recruiting" ? "#F59E0B" : "#6366F1",
+            fillColor: zone.status === "active" ? "#00B5B8" : zone.status === "recruiting" ? "#F59E0B" : "#6366F1",
             fillOpacity: 1,
             strokeColor: "#ffffff",
             strokeWeight: 2,
@@ -161,7 +161,7 @@ export default function MarketExpansion() {
             icon: {
               path: google.maps.SymbolPath.CIRCLE,
               scale: 7,
-              fillColor: "#00B5B8″,
+              fillColor: "#00B5B8",
               fillOpacity: 1,
               strokeColor: "#ffffff",
               strokeWeight: 2,
@@ -176,7 +176,7 @@ export default function MarketExpansion() {
       map.setZoom(5);
 
       NATIONAL_MARKETS.forEach(market => {
-        const color = market.status === "next" ? "#F97316″ : market.status === "planned" ? "#6366F1" : "#9CA3AF";
+        const color = market.status === "next" ? "#F97316" : market.status === "planned" ? "#6366F1" : "#9CA3AF";
 
         const marker = new google.maps.Marker({
           position: { lat: market.lat, lng: market.lng },
@@ -198,7 +198,7 @@ export default function MarketExpansion() {
               <div style="font-weight: bold; font-size: 14px; margin-bottom: 4px;">${market.city}</div>
               <div style="color: #666; font-size: 12px;">Homeowners: ${market.homeowners.toLocaleString()}</div>
               <div style="color: #666; font-size: 12px;">Market Score: <strong>${market.score}/100</strong></div>
-              <div style="color: #666; font-size: 12px;">Tier: ${market.tier === 1 ? " Priority 1″ : market.tier === 2 ? " Priority 2" : " Priority 3"}</div>
+              <div style="color: #666; font-size: 12px;">Tier: ${market.tier === 1 ? " Priority 1" : market.tier === 2 ? " Priority 2" : " Priority 3"}</div>
               <div style="color: #666; font-size: 12px; margin-top: 4px;">Status: <span style="color: ${color}; font-weight: 600;">${STATUS_LABELS[market.status]}</span></div>
             </div>
           `,
@@ -218,7 +218,7 @@ export default function MarketExpansion() {
         icon: {
           path: google.maps.SymbolPath.CIRCLE,
           scale: 14,
-          fillColor: "#00B5B8″,
+          fillColor: "#00B5B8",
           fillOpacity: 1,
           strokeColor: "#ffffff",
           strokeWeight: 3,
@@ -229,48 +229,48 @@ export default function MarketExpansion() {
 
   return (
     <AdminLayout title="Market Expansion" subtitle="DFW launch command + national growth roadmap">
-      <div className="p-6 space-y-6″>
+      <div className="p-6 space-y-6">
         {/* Header */}
         <div className="flex items-center justify-between">
           <div>
             <h1 className="text-2xl font-bold text-white font-heading">
               Market Expansion
             </h1>
-            <p className="text-slate-400 text-sm mt-1″>
+            <p className="text-slate-400 text-sm mt-1">
               DFW launch command + national growth roadmap
             </p>
           </div>
-          <div className="flex gap-2″>
+          <div className="flex gap-2">
             <Button
               variant={mapView === "dfw" ? "default" : "outline"}
               size="sm"
               onClick={() => setMapView("dfw")}
-              className={mapView === "dfw" ? "bg-teal-500 hover:bg-teal-600 text-white" : "border-slate-600 text-slate-300 hover:bg-slate-700″}
+              className={mapView === "dfw" ? "bg-teal-500 hover:bg-teal-600 text-white" : "border-slate-600 text-slate-300 hover:bg-slate-700"}
             >
-              <MapPin className="w-4 h-4 mr-1″ /> DFW View
+              <MapPin className="w-4 h-4 mr-1" /> DFW View
             </Button>
             <Button
               variant={mapView === "national" ? "default" : "outline"}
               size="sm"
               onClick={() => setMapView("national")}
-              className={mapView === "national" ? "bg-teal-500 hover:bg-teal-600 text-white" : "border-slate-600 text-slate-300 hover:bg-slate-700″}
+              className={mapView === "national" ? "bg-teal-500 hover:bg-teal-600 text-white" : "border-slate-600 text-slate-300 hover:bg-slate-700"}
             >
-              <Globe className="w-4 h-4 mr-1″ /> National View
+              <Globe className="w-4 h-4 mr-1" /> National View
             </Button>
           </div>
         </div>
 
         {/* Stats Row */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4″>
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
           {[
-            { label: "Active Markets", value: "1″, sub: "DFW Launch", icon: MapPin, color: "text-teal-400" },
-            { label: "Planned Markets", value: "12″, sub: "Next 24 months", icon: Globe, color: "text-blue-400" },
-            { label: "Total Addressable", value: "4.2M", sub: "Homeowners", icon: Building2, color: "text-purple-400″ },
-            { label: "Revenue Potential", value: "$84M", sub: "At full scale", icon: DollarSign, color: "text-yellow-400″ },
+            { label: "Active Markets", value: "1", sub: "DFW Launch", icon: MapPin, color: "text-teal-400" },
+            { label: "Planned Markets", value: "12", sub: "Next 24 months", icon: Globe, color: "text-blue-400" },
+            { label: "Total Addressable", value: "4.2M", sub: "Homeowners", icon: Building2, color: "text-purple-400" },
+            { label: "Revenue Potential", value: "$84M", sub: "At full scale", icon: DollarSign, color: "text-yellow-400" },
           ].map(stat => (
-            <Card key={stat.label} className="bg-slate-800/60 border-slate-700″>
-              <CardContent className="p-4″>
-                <div className="flex items-center gap-2 mb-1″>
+            <Card key={stat.label} className="bg-slate-800/60 border-slate-700">
+              <CardContent className="p-4">
+                <div className="flex items-center gap-2 mb-1">
                   <stat.icon className={`w-4 h-4 ${stat.color}`} />
                   <span className="text-slate-400 text-xs">{stat.label}</span>
                 </div>
@@ -284,17 +284,17 @@ export default function MarketExpansion() {
         </div>
 
         {/* Map + Side Panel */}
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6″>
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
           {/* Map */}
-          <div className="lg:col-span-2″>
+          <div className="lg:col-span-2">
             <Card className="bg-slate-800/60 border-slate-700 overflow-hidden">
-              <CardHeader className="pb-2 pt-4 px-4″>
-                <CardTitle className="text-white text-sm font-medium flex items-center gap-2″>
-                  <MapPin className="w-4 h-4 text-teal-400″ />
+              <CardHeader className="pb-2 pt-4 px-4">
+                <CardTitle className="text-white text-sm font-medium flex items-center gap-2">
+                  <MapPin className="w-4 h-4 text-teal-400" />
                   {mapView === "dfw" ? "DFW Coverage Zones" : "National Expansion Roadmap"}
                 </CardTitle>
               </CardHeader>
-              <CardContent className="p-0″>
+              <CardContent className="p-0">
                 <div className="h-[420px]">
                   <MapView
                     key={mapView}
@@ -303,31 +303,31 @@ export default function MarketExpansion() {
                   />
                 </div>
                 {/* Legend */}
-                <div className="px-4 py-3 border-t border-slate-700 flex flex-wrap gap-4″>
+                <div className="px-4 py-3 border-t border-slate-700 flex flex-wrap gap-4">
                   {mapView === "dfw" ? (
                     <>
-                      <div className="flex items-center gap-1.5 text-xs text-slate-400″>
+                      <div className="flex items-center gap-1.5 text-xs text-slate-400">
                         <span className="w-3 h-3 rounded-full bg-teal-500 inline-block" /> Active
                       </div>
-                      <div className="flex items-center gap-1.5 text-xs text-slate-400″>
+                      <div className="flex items-center gap-1.5 text-xs text-slate-400">
                         <span className="w-3 h-3 rounded-full bg-yellow-500 inline-block" /> Recruiting
                       </div>
-                      <div className="flex items-center gap-1.5 text-xs text-slate-400″>
+                      <div className="flex items-center gap-1.5 text-xs text-slate-400">
                         <span className="w-3 h-3 rounded-full bg-indigo-500 inline-block" /> Planned
                       </div>
                     </>
                   ) : (
                     <>
-                      <div className="flex items-center gap-1.5 text-xs text-slate-400″>
+                      <div className="flex items-center gap-1.5 text-xs text-slate-400">
                         <span className="w-3 h-3 rounded-full bg-teal-500 inline-block" /> Live (DFW)
                       </div>
-                      <div className="flex items-center gap-1.5 text-xs text-slate-400″>
+                      <div className="flex items-center gap-1.5 text-xs text-slate-400">
                         <span className="w-3 h-3 rounded-full bg-orange-500 inline-block" /> Next Launch
                       </div>
-                      <div className="flex items-center gap-1.5 text-xs text-slate-400″>
+                      <div className="flex items-center gap-1.5 text-xs text-slate-400">
                         <span className="w-3 h-3 rounded-full bg-indigo-500 inline-block" /> Planned
                       </div>
-                      <div className="flex items-center gap-1.5 text-xs text-slate-400″>
+                      <div className="flex items-center gap-1.5 text-xs text-slate-400">
                         <span className="w-3 h-3 rounded-full bg-gray-500 inline-block" /> Future
                       </div>
                     </>
@@ -338,16 +338,16 @@ export default function MarketExpansion() {
           </div>
 
           {/* Side Panel */}
-          <div className="space-y-4″>
+          <div className="space-y-4">
             {mapView === "dfw" ? (
               <>
-                <Card className="bg-slate-800/60 border-slate-700″>
-                  <CardHeader className="pb-2 pt-4 px-4″>
+                <Card className="bg-slate-800/60 border-slate-700">
+                  <CardHeader className="pb-2 pt-4 px-4">
                     <CardTitle className="text-white text-sm">DFW Zone Status</CardTitle>
                   </CardHeader>
-                  <CardContent className="px-4 pb-4 space-y-3″>
+                  <CardContent className="px-4 pb-4 space-y-3">
                     {DFW_ZONES.map(zone => (
-                      <div key={zone.name} className="space-y-1″>
+                      <div key={zone.name} className="space-y-1">
                         <div className="flex items-center justify-between">
                           <span className="text-slate-300 text-xs font-medium">{zone.name}</span>
                           <Badge className={`${STATUS_COLORS[zone.status]} text-white text-[10px] px-1.5 py-0`}>
@@ -356,7 +356,7 @@ export default function MarketExpansion() {
                         </div>
                         <Progress
                           value={(zone.partners / zone.target) * 100}
-                          className="h-1.5 bg-slate-700″
+                          className="h-1.5 bg-slate-700"
                         />
                         <div className="text-slate-500 text-[10px]">
                           {zone.partners}/{zone.target} partners
@@ -367,11 +367,11 @@ export default function MarketExpansion() {
                 </Card>
               </>
             ) : (
-              <Card className="bg-slate-800/60 border-slate-700″>
-                <CardHeader className="pb-2 pt-4 px-4″>
+              <Card className="bg-slate-800/60 border-slate-700">
+                <CardHeader className="pb-2 pt-4 px-4">
                   <CardTitle className="text-white text-sm">Top Priority Markets</CardTitle>
                 </CardHeader>
-                <CardContent className="px-4 pb-4 space-y-2″>
+                <CardContent className="px-4 pb-4 space-y-2">
                   {NATIONAL_MARKETS.filter(m => m.tier <= 2).map(market => (
                     <div
                       key={market.city}
@@ -382,7 +382,7 @@ export default function MarketExpansion() {
                         <div className="text-slate-200 text-xs font-medium">{market.city}</div>
                         <div className="text-slate-500 text-[10px]">{market.homeowners.toLocaleString()} homeowners</div>
                       </div>
-                      <div className="flex items-center gap-2″>
+                      <div className="flex items-center gap-2">
                         <div className="text-right">
                           <div className="text-teal-400 text-xs font-bold">{market.score}</div>
                           <div className="text-slate-500 text-[10px]">score</div>
@@ -400,36 +400,36 @@ export default function MarketExpansion() {
         </div>
 
         {/* Bottom Tabs */}
-        <Tabs defaultValue="categories" className="space-y-4″>
-          <TabsList className="bg-slate-800 border border-slate-700″>
-            <TabsTrigger value="categories" className="data-[state=active]:bg-teal-500 data-[state=active]:text-white text-slate-400″>
+        <Tabs defaultValue="categories" className="space-y-4">
+          <TabsList className="bg-slate-800 border border-slate-700">
+            <TabsTrigger value="categories" className="data-[state=active]:bg-teal-500 data-[state=active]:text-white text-slate-400">
               Service Categories
             </TabsTrigger>
-            <TabsTrigger value="recruitment" className="data-[state=active]:bg-teal-500 data-[state=active]:text-white text-slate-400″>
+            <TabsTrigger value="recruitment" className="data-[state=active]:bg-teal-500 data-[state=active]:text-white text-slate-400">
               Partner Recruitment
             </TabsTrigger>
-            <TabsTrigger value="marketing" className="data-[state=active]:bg-teal-500 data-[state=active]:text-white text-slate-400″>
+            <TabsTrigger value="marketing" className="data-[state=active]:bg-teal-500 data-[state=active]:text-white text-slate-400">
               Market Marketing
             </TabsTrigger>
           </TabsList>
 
           {/* Service Categories */}
           <TabsContent value="categories">
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4″>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
               {SERVICE_GROUPS.map(group => {
                 const cats = SERVICE_CATEGORIES.filter(c => c.group === group);
                 return (
-                  <Card key={group} className="bg-slate-800/60 border-slate-700″>
-                    <CardHeader className="pb-2 pt-4 px-4″>
+                  <Card key={group} className="bg-slate-800/60 border-slate-700">
+                    <CardHeader className="pb-2 pt-4 px-4">
                       <CardTitle className="text-teal-400 text-sm">{group}</CardTitle>
                     </CardHeader>
-                    <CardContent className="px-4 pb-4 space-y-1″>
+                    <CardContent className="px-4 pb-4 space-y-1">
                       {cats.map(cat => (
-                        <div key={cat.id} className="flex items-center justify-between py-1 border-b border-slate-700/50 last:border-0″>
+                        <div key={cat.id} className="flex items-center justify-between py-1 border-b border-slate-700/50 last:border-0">
                           <span className="text-slate-300 text-xs">{cat.name}</span>
-                          <div className="flex items-center gap-2″>
+                          <div className="flex items-center gap-2">
                             <span className="text-slate-500 text-[10px]">${cat.avgJobValue.toLocaleString()} avg</span>
-                            <Badge variant="outline" className="border-teal-700 text-teal-400 text-[10px] px-1 py-0″>
+                            <Badge variant="outline" className="border-teal-700 text-teal-400 text-[10px] px-1 py-0">
                               {Math.round(cat.platformFeeRate * 100)}%
                             </Badge>
                           </div>
@@ -444,23 +444,23 @@ export default function MarketExpansion() {
 
           {/* Partner Recruitment */}
           <TabsContent value="recruitment">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4″>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               {RECRUITMENT_TEMPLATES.map(template => (
                 <Card key={template.title} className="bg-slate-800/60 border-slate-700 hover:border-teal-700 transition-colors cursor-pointer">
-                  <CardContent className="p-4″>
-                    <div className="flex items-start justify-between mb-2″>
+                  <CardContent className="p-4">
+                    <div className="flex items-start justify-between mb-2">
                       <div>
                         <div className="text-white text-sm font-semibold">{template.title}</div>
-                        <div className="text-slate-400 text-xs mt-0.5″>{template.category}</div>
+                        <div className="text-slate-400 text-xs mt-0.5">{template.category}</div>
                       </div>
                       <Badge className="bg-teal-500/20 text-teal-400 border-teal-700 text-xs">
                         {template.conversionRate} CVR
                       </Badge>
                     </div>
-                    <div className="text-slate-500 text-xs mb-1″>Subject: {template.subject}</div>
+                    <div className="text-slate-500 text-xs mb-1">Subject: {template.subject}</div>
                     <div className="text-slate-400 text-xs italic">"{template.preview}"</div>
                     <Button size="sm" variant="outline" className="mt-3 border-slate-600 text-slate-300 hover:bg-slate-700 text-xs w-full">
-                      Use Template <ChevronRight className="w-3 h-3 ml-1″ />
+                      Use Template <ChevronRight className="w-3 h-3 ml-1" />
                     </Button>
                   </CardContent>
                 </Card>
@@ -470,23 +470,23 @@ export default function MarketExpansion() {
 
           {/* Market Marketing */}
           <TabsContent value="marketing">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6″>
-              <Card className="bg-slate-800/60 border-slate-700″>
-                <CardHeader className="pb-2 pt-4 px-4″>
-                  <CardTitle className="text-white text-sm flex items-center gap-2″>
-                    <BarChart3 className="w-4 h-4 text-teal-400″ /> DFW Launch Marketing Plan
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <Card className="bg-slate-800/60 border-slate-700">
+                <CardHeader className="pb-2 pt-4 px-4">
+                  <CardTitle className="text-white text-sm flex items-center gap-2">
+                    <BarChart3 className="w-4 h-4 text-teal-400" /> DFW Launch Marketing Plan
                   </CardTitle>
                 </CardHeader>
-                <CardContent className="px-4 pb-4 space-y-3″>
+                <CardContent className="px-4 pb-4 space-y-3">
                   {[
-                    { channel: "Facebook / Instagram Ads", budget: "$1,500/mo", target: "Homeowners 30-65″, status: "planned" },
+                    { channel: "Facebook / Instagram Ads", budget: "$1,500/mo", target: "Homeowners 30-65", status: "planned" },
                     { channel: "Google Local Service Ads", budget: "$800/mo", target: "High-intent searches", status: "planned" },
                     { channel: "Nextdoor Advertising", budget: "$400/mo", target: "Neighborhood targeting", status: "planned" },
                     { channel: "Direct Mail (EDDM)", budget: "$600/mo", target: "Zip code targeting", status: "planned" },
                     { channel: "Partner Co-Marketing", budget: "$0 (shared)", target: "Partner customer lists", status: "active" },
                     { channel: "Yard Signs / Door Hangers", budget: "$300/mo", target: "Post-job visibility", status: "active" },
                   ].map(item => (
-                    <div key={item.channel} className="flex items-center justify-between p-2 rounded-lg bg-slate-700/40″>
+                    <div key={item.channel} className="flex items-center justify-between p-2 rounded-lg bg-slate-700/40">
                       <div>
                         <div className="text-slate-200 text-xs font-medium">{item.channel}</div>
                         <div className="text-slate-500 text-[10px]">{item.target}</div>
@@ -502,13 +502,13 @@ export default function MarketExpansion() {
                 </CardContent>
               </Card>
 
-              <Card className="bg-slate-800/60 border-slate-700″>
-                <CardHeader className="pb-2 pt-4 px-4″>
-                  <CardTitle className="text-white text-sm flex items-center gap-2″>
-                    <Target className="w-4 h-4 text-teal-400″ /> Market Launch Checklist
+              <Card className="bg-slate-800/60 border-slate-700">
+                <CardHeader className="pb-2 pt-4 px-4">
+                  <CardTitle className="text-white text-sm flex items-center gap-2">
+                    <Target className="w-4 h-4 text-teal-400" /> Market Launch Checklist
                   </CardTitle>
                 </CardHeader>
-                <CardContent className="px-4 pb-4 space-y-2″>
+                <CardContent className="px-4 pb-4 space-y-2">
                   {[
                     { task: "Recruit 5 anchor partners (lawn, pest, pool, HVAC, handyman)", done: false },
                     { task: "Set up Google Business Profile for ProLnk DFW", done: false },

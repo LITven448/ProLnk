@@ -8,9 +8,9 @@ const components = [
 
 const symptoms = [
   { symptom: 'Doors slam or pop open on their own', diagnosis: 'Positive pressure in rooms — insufficient return air creating pressure imbalance.', options: ['Add transfer grilles between rooms', 'Install additional return grille in affected area', 'Undercut interior doors 3/4 inch'], cost: '$150–$800 depending on solution' },
-  { symptom: 'System runs constantly but can’t keep up', diagnosis: 'Return air starvation — blower is pulling harder than the return can supply, reducing effective airflow.', options: ['Add dedicated return duct to each zone', 'Upgrade central return to proper CFM size', 'Install return air pathway via attic bypass'], cost: '$400–$1,800′ },
-  { symptom: 'Filter gets dirty in 2–3 weeks', diagnosis: 'Return air is pulling dust from attic or wall cavities — duct leaks in return system.', options: ['Seal all return duct joints with mastic', 'Inspect filter rack for air bypass gaps', 'Install high-efficiency media filter cabinet'], cost: '$200–$600′ },
-  { symptom: 'High humidity even when AC runs all day', diagnosis: 'Leaky return plenum pulling humid attic air into system — common in DFW’s 70%+ summer humidity.', options: ['Seal return plenum with mastic and foil tape', 'Add dehumidification to system', 'Evaluate for proper duct design'], cost: '$250–$1,500′ },
+  { symptom: 'System runs constantly but can’t keep up', diagnosis: 'Return air starvation — blower is pulling harder than the return can supply, reducing effective airflow.', options: ['Add dedicated return duct to each zone', 'Upgrade central return to proper CFM size', 'Install return air pathway via attic bypass'], cost: '$400–$1,800' },
+  { symptom: 'Filter gets dirty in 2–3 weeks', diagnosis: 'Return air is pulling dust from attic or wall cavities — duct leaks in return system.', options: ['Seal all return duct joints with mastic', 'Inspect filter rack for air bypass gaps', 'Install high-efficiency media filter cabinet'], cost: '$200–$600' },
+  { symptom: 'High humidity even when AC runs all day', diagnosis: 'Leaky return plenum pulling humid attic air into system — common in DFW’s 70%+ summer humidity.', options: ['Seal return plenum with mastic and foil tape', 'Add dehumidification to system', 'Evaluate for proper duct design'], cost: '$250–$1,500' },
 ];
 
 export default function DFWHVACReturnAirSystem() {
@@ -36,7 +36,7 @@ export default function DFWHVACReturnAirSystem() {
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '1rem', marginBottom: '2rem' }}>
           {components.map(c => (
             <button key={c.id} onClick={() => setActive(active === c.id ? null : c.id)}
-              style={{ background: active === c.id ? '#F5E642′ : '#0F2140', border: `2px solid ${active === c.id ? '#F5E642' : '#1E3A5F'}`, borderRadius: 12, padding: '1.25rem 1rem', cursor: ’pointer', textAlign: 'left', color: active === c.id ? '#0A1628′ : '#E8EDF5' }}>
+              style={{ background: active === c.id ? '#F5E642' : '#0F2140', border: `2px solid ${active === c.id ? '#F5E642' : '#1E3A5F'}`, borderRadius: 12, padding: '1.25rem 1rem', cursor: 'pointer', textAlign: 'left', color: active === c.id ? '#0A1628' : '#E8EDF5' }}>
               <div style={{ fontSize: '2rem', marginBottom: '0.5rem' }}>{c.icon}</div>
               <div style={{ fontWeight: 700, fontSize: '0.95rem' }}>{c.name}</div>
             </button>
@@ -59,12 +59,12 @@ export default function DFWHVACReturnAirSystem() {
           {symptoms.map((s, i) => (
             <div key={i} onClick={() => setSymptomIdx(symptomIdx === i ? null : i)}
               style={{ background: '#0F2140', border: `1px solid ${symptomIdx === i ? '#F5E642' : '#1E3A5F'}`, borderRadius: 10, padding: '1rem 1.25rem', cursor: 'pointer' }}>
-              <div style={{ fontWeight: 600, color: symptomIdx === i ? '#F5E642′ : '#E8EDF5' }}>"{s.symptom}"</div>
+              <div style={{ fontWeight: 600, color: symptomIdx === i ? '#F5E642' : '#E8EDF5' }}>"{s.symptom}"</div>
               {symptomIdx === i && (
                 <div style={{ marginTop: '0.75rem', fontSize: '0.9rem', lineHeight: 1.6 }}>
                   <div style={{ color: '#CBD5E1', marginBottom: '0.5rem' }}><span style={{ color: '#F5E642', fontWeight: 700 }}>Assessment: </span>{s.diagnosis}</div>
                   <div style={{ marginBottom: '0.5rem' }}><span style={{ color: '#F5E642', fontWeight: 700 }}>Options: </span>{s.options.map((o, j) => <div key={j} style={{ color: '#94A3B8', paddingLeft: '1rem' }}>• {o}</div>)}</div>
-                  <div style={{ color: '#F5E642', fontWeight: 600 }}>Estimated Cost: <span style={{ color: '#E8EDF5′ }}>{s.cost}</span></div>
+                  <div style={{ color: '#F5E642', fontWeight: 600 }}>Estimated Cost: <span style={{ color: '#E8EDF5' }}>{s.cost}</span></div>
                 </div>
               )}
             </div>

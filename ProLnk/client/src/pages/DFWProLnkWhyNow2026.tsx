@@ -57,39 +57,39 @@ export default function DFWProLnkWhyNow2026() {
   const stats = [
     { icon: "📉", stat: "30%", label: "DFW trade jobs unfilled" },
     { icon: "🏠", stat: "2.8M", label: "DFW homes to service" },
-    { icon: "⏳", stat: "500″, label: "Charter slots total" },
+    { icon: "⏳", stat: "500", label: "Charter slots total" },
     { icon: "📈", stat: "12%", label: "Annual market growth" },
   ];
 
   return (
-    <div style={{ background: "#0A1628″, minHeight: "100vh", color: "#fff", fontFamily: "system-ui, sans-serif", padding: "24px" }}>
+    <div style={{ background: "#0A1628", minHeight: "100vh", color: "#fff", fontFamily: "system-ui, sans-serif", padding: "24px" }}>
       <div style={{ maxWidth: 720, margin: "0 auto" }}>
         <div style={{ textAlign: "center", marginBottom: 32 }}>
           <div style={{ fontSize: 48 }}>⚡</div>
-          <h1 style={{ color: "#F5E642″, fontSize: 28, fontWeight: 800, margin: "8px 0 4px" }}>
+          <h1 style={{ color: "#F5E642", fontSize: 28, fontWeight: 800, margin: "8px 0 4px" }}>
             ProLnk Why Now Guide 2026
           </h1>
-          <p style={{ color: "#94A3B8″, fontSize: 15 }}>2026 is the only moment this opportunity exists. Here is why.</p>
+          <p style={{ color: "#94A3B8", fontSize: 15 }}>2026 is the only moment this opportunity exists. Here is why.</p>
         </div>
 
         <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 12, marginBottom: 28 }}>
           {stats.map((s) => (
-            <div key={s.label} style={{ background: "#1E2D45″, borderRadius: 10, padding: "14px 16px", textAlign: "center" }}>
+            <div key={s.label} style={{ background: "#1E2D45", borderRadius: 10, padding: "14px 16px", textAlign: "center" }}>
               <div style={{ fontSize: 24 }}>{s.icon}</div>
-              <div style={{ color: "#F5E642″, fontWeight: 900, fontSize: 24, marginTop: 4 }}>{s.stat}</div>
-              <div style={{ color: "#94A3B8″, fontSize: 12 }}>{s.label}</div>
+              <div style={{ color: "#F5E642", fontWeight: 900, fontSize: 24, marginTop: 4 }}>{s.stat}</div>
+              <div style={{ color: "#94A3B8", fontSize: 12 }}>{s.label}</div>
             </div>
           ))}
         </div>
 
-        <div style={{ background: "#1E2D45″, borderRadius: 12, padding: 20, marginBottom: 24 }}>
-          <div style={{ color: "#F5E642″, fontWeight: 700, marginBottom: 12 }}>👤 Who are you?</div>
+        <div style={{ background: "#1E2D45", borderRadius: 12, padding: 20, marginBottom: 24 }}>
+          <div style={{ color: "#F5E642", fontWeight: 700, marginBottom: 12 }}>👤 Who are you?</div>
           <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 10 }}>
             {[["pro", "🔧 Service Pro"], ["homeowner", "🏠 Homeowner"], ["investor", "💼 Investor"], ["scout", "🌟 Scout/Referrer"]].map(([val, label]) => (
               <button key={val} onClick={() => setUserType(val)} style={{
-                padding: "10px 0″, borderRadius: 8, border: "none", cursor: "pointer",
-                background: userType === val ? "#F5E642″ : "#0A1628",
-                color: userType === val ? "#0A1628″ : "#94A3B8",
+                padding: "10px 0", borderRadius: 8, border: "none", cursor: "pointer",
+                background: userType === val ? "#F5E642" : "#0A1628",
+                color: userType === val ? "#0A1628" : "#94A3B8",
                 fontWeight: 700, fontSize: 13,
               }}>{label}</button>
             ))}
@@ -97,23 +97,23 @@ export default function DFWProLnkWhyNow2026() {
         </div>
 
         {userType && reasons[userType] && (
-          <div style={{ background: "#132137″, borderRadius: 12, padding: 20, marginBottom: 24, border: "1px solid #F5E642" }}>
-            <div style={{ color: "#F5E642″, fontWeight: 800, fontSize: 16, marginBottom: 14 }}>{reasons[userType].title}</div>
+          <div style={{ background: "#132137", borderRadius: 12, padding: 20, marginBottom: 24, border: "1px solid #F5E642" }}>
+            <div style={{ color: "#F5E642", fontWeight: 800, fontSize: 16, marginBottom: 14 }}>{reasons[userType].title}</div>
             {reasons[userType].points.map((point, i) => (
-              <div key={i} style={{ color: "#CBD5E1″, fontSize: 14, marginBottom: 10, paddingLeft: 8, borderLeft: "2px solid #F5E642" }}>
+              <div key={i} style={{ color: "#CBD5E1", fontSize: 14, marginBottom: 10, paddingLeft: 8, borderLeft: "2px solid #F5E642" }}>
                 {point}
               </div>
             ))}
-            <div style={{ background: "#F5E642″, borderRadius: 8, padding: "10px 14px", marginTop: 14 }}>
-              <div style={{ color: "#0A1628″, fontWeight: 800, fontSize: 13 }}>{reasons[userType].urgency}</div>
+            <div style={{ background: "#F5E642", borderRadius: 8, padding: "10px 14px", marginTop: 14 }}>
+              <div style={{ color: "#0A1628", fontWeight: 800, fontSize: 13 }}>{reasons[userType].urgency}</div>
             </div>
           </div>
         )}
 
-        <div style={{ background: "#F5E642″, borderRadius: 12, padding: 20, textAlign: "center" }}>
+        <div style={{ background: "#F5E642", borderRadius: 12, padding: 20, textAlign: "center" }}>
           <div style={{ fontSize: 28 }}>🚀</div>
-          <div style={{ color: "#0A1628″, fontWeight: 800, fontSize: 16, marginTop: 8 }}>The Window Is Open Now</div>
-          <div style={{ color: "#1E2D45″, fontSize: 13, marginTop: 6 }}>In 12 months, the best DFW network positions will be taken. In 24 months, Charter will be a legend. The time to act is today.</div>
+          <div style={{ color: "#0A1628", fontWeight: 800, fontSize: 16, marginTop: 8 }}>The Window Is Open Now</div>
+          <div style={{ color: "#1E2D45", fontSize: 13, marginTop: 6 }}>In 12 months, the best DFW network positions will be taken. In 24 months, Charter will be a legend. The time to act is today.</div>
         </div>
       </div>
     </div>

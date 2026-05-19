@@ -98,8 +98,8 @@ export default function DFWServiceQuoteComparisonGuide() {
             </div>
           </div>
           {recommendation && (
-            <div style={{ padding: 14, background: '#0A1628', borderRadius: 8, marginBottom: 14, borderLeft: '3px solid #F5E642′ }}>
-              <div style={{ fontSize: 14, color: '#E8ECF0′ }}>{recommendation}</div>
+            <div style={{ padding: 14, background: '#0A1628', borderRadius: 8, marginBottom: 14, borderLeft: '3px solid #F5E642' }}>
+              <div style={{ fontSize: 14, color: '#E8ECF0' }}>{recommendation}</div>
             </div>
           )}
           {selected && (
@@ -123,7 +123,7 @@ export default function DFWServiceQuoteComparisonGuide() {
           )}
         </div>
 
-        <div style={{ background: '#F5E642', borderRadius: 12, padding: 20, color: '#0A1628′ }}>
+        <div style={{ background: '#F5E642', borderRadius: 12, padding: 20, color: '#0A1628' }}>
           <div style={{ fontWeight: 800, fontSize: 15, marginBottom: 4 }}>💡 ProLnk Tip</div>
           <div style={{ fontSize: 14 }}>ProLnk sends you pre-screened, licensed DFW contractors with verified reviews. Get 3 quotes in 24 hours — guaranteed apples-to-apples scope.</div>
         </div>

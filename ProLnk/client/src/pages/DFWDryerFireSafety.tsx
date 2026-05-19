@@ -69,7 +69,7 @@ export default function DFWDryerFireSafety() {
           In North Texas, failure to clean the duct annually is a leading cause of preventable house fires.
         </p>
         <div style={{ background: '#162844', borderRadius: 10, padding: '14px 18px', marginBottom: 28 }}>
-          <strong style={{ color: '#F5E642′ }}>DFW Code Note:</strong>
+          <strong style={{ color: '#F5E642' }}>DFW Code Note:</strong>
           <p style={{ color: '#8FA3BF', marginTop: 6, lineHeight: 1.6 }}>
             The International Residential Code (IRC), adopted in DFW municipalities, requires dryer ducts to be rigid or semi-rigid metal.
             Flexible plastic or foil ducts are prohibited. Duct runs must not exceed 25 feet with appropriate deductions for bends.
@@ -80,16 +80,16 @@ export default function DFWDryerFireSafety() {
           <label style={{ display: 'block', color: '#8FA3BF', marginBottom: 6, fontSize: 14 }}>Dryer Age</label>
           <select value={age} onChange={e => setAge(e.target.value)} style={{ width: '100%', background: '#162844', color: '#E8EDF5', border: '1px solid #2A4A6E', borderRadius: 8, padding: '10px 12px', marginBottom: 16, fontSize: 15 }}>
             <option value="">Select age...</option>
-            <option value="under-5″>Under 5 years old</option>
-            <option value="5-to-10″>5 to 10 years old</option>
-            <option value="over-10″>Over 10 years old</option>
+            <option value="under-5">Under 5 years old</option>
+            <option value="5-to-10">5 to 10 years old</option>
+            <option value="over-10">Over 10 years old</option>
           </select>
           <label style={{ display: 'block', color: '#8FA3BF', marginBottom: 6, fontSize: 14 }}>Approximate Duct Length</label>
           <select value={ductLength} onChange={e => setDuctLength(e.target.value)} style={{ width: '100%', background: '#162844', color: '#E8EDF5', border: '1px solid #2A4A6E', borderRadius: 8, padding: '10px 12px', marginBottom: 16, fontSize: 15 }}>
             <option value="">Select duct length...</option>
-            <option value="under-10″>Under 10 feet</option>
-            <option value="10-to-15″>10 to 15 feet</option>
-            <option value="over-15″>Over 15 feet</option>
+            <option value="under-10">Under 10 feet</option>
+            <option value="10-to-15">10 to 15 feet</option>
+            <option value="over-15">Over 15 feet</option>
           </select>
           <label style={{ display: 'block', color: '#8FA3BF', marginBottom: 6, fontSize: 14 }}>Last Professional Duct Cleaning</label>
           <select value={lastCleaning} onChange={e => setLastCleaning(e.target.value)} style={{ width: '100%', background: '#162844', color: '#E8EDF5', border: '1px solid #2A4A6E', borderRadius: 8, padding: '10px 12px', fontSize: 15 }}>
@@ -102,8 +102,8 @@ export default function DFWDryerFireSafety() {
           {result && (
             <div style={{ marginTop: 20, background: '#0A1628', borderRadius: 10, padding: 18, borderLeft: `4px solid ${result.color}` }}>
               <div style={{ color: result.color, fontWeight: 700, fontSize: 18, marginBottom: 10 }}>{result.level}</div>
-              <div style={{ marginBottom: 8 }}><strong style={{ color: '#F5E642′ }}>Cleaning Schedule:</strong> <span style={{ color: '#8FA3BF' }}>{result.schedule}</span></div>
-              <div style={{ marginBottom: 12 }}><strong style={{ color: '#F5E642′ }}>Duct Action:</strong> <span style={{ color: '#8FA3BF' }}>{result.ductAction}</span></div>
+              <div style={{ marginBottom: 8 }}><strong style={{ color: '#F5E642' }}>Cleaning Schedule:</strong> <span style={{ color: '#8FA3BF' }}>{result.schedule}</span></div>
+              <div style={{ marginBottom: 12 }}><strong style={{ color: '#F5E642' }}>Duct Action:</strong> <span style={{ color: '#8FA3BF' }}>{result.ductAction}</span></div>
               <ul style={{ paddingLeft: 20, color: '#8FA3BF', lineHeight: 1.8 }}>
                 {result.tips.map((tip, i) => <li key={i}>{tip}</li>)}
               </ul>
@@ -120,7 +120,7 @@ export default function DFWDryerFireSafety() {
           ].map(item => (
             <div key={item.title} style={{ display: 'flex', gap: 14, marginBottom: 16 }}>
               <span style={{ fontSize: 22, flexShrink: 0 }}>{item.icon}</span>
-              <div><strong style={{ color: '#E8EDF5′ }}>{item.title}:</strong> <span style={{ color: '#8FA3BF' }}>{item.body}</span></div>
+              <div><strong style={{ color: '#E8EDF5' }}>{item.title}:</strong> <span style={{ color: '#8FA3BF' }}>{item.body}</span></div>
             </div>
           ))}
         </div>

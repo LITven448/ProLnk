@@ -60,7 +60,7 @@ export default function DFWHomeServicesFuture2026() {
         <div style={{ color: '#F5E642', fontSize: 13, fontWeight: 700, letterSpacing: 2, marginBottom: 12 }}>DFW FUTURE OUTLOOK</div>
         <h1 style={{ fontSize: 36, fontWeight: 800, marginBottom: 16, lineHeight: 1.2 }}>The Future of Home Services in DFW — 2026 and Beyond</h1>
         <p style={{ color: '#94a3b8', fontSize: 17, marginBottom: 40, lineHeight: 1.7 }}>
-          DFW is one of the fastest-adopting tech metros in America. Smart home diagnostics, AI-powered contractor matching, drone inspection, and augmented reality are changing how homes are maintained, improved, and bought. Here's what’s already here and what’s coming.
+          DFW is one of the fastest-adopting tech metros in America. Smart home diagnostics, AI-powered contractor matching, drone inspection, and augmented reality are changing how homes are maintained, improved, and bought. Here's what's already here and what's coming.
         </p>
 
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: 16, marginBottom: 48 }}>
@@ -116,7 +116,7 @@ export default function DFWHomeServicesFuture2026() {
                 <div style={{ color: '#64748b', fontSize: 12, marginBottom: 4 }}>TODAY</div>
                 <div style={{ color: '#94a3b8', fontSize: 15, lineHeight: 1.6 }}>{detail.now}</div>
               </div>
-              <div style={{ backgroundColor: '#0d1b30', borderRadius: 10, padding: '16px', border: '1px solid #F5E642′ }}>
+              <div style={{ backgroundColor: '#0d1b30', borderRadius: 10, padding: '16px', border: '1px solid #F5E642' }}>
                 <div style={{ color: '#F5E642', fontSize: 12, fontWeight: 700, marginBottom: 4 }}>FUTURE ({detail.timeline})</div>
                 <div style={{ fontSize: 15, lineHeight: 1.6 }}>{detail.future}</div>
               </div>

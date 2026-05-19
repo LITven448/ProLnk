@@ -1,13 +1,13 @@
 import { useState } from 'react';
 
 const rebates = [
-  { id: 'solar', label: 'Solar panels', federal: 30, utility: 0, note: '30% federal tax credit through 2032′ },
+  { id: 'solar', label: 'Solar panels', federal: 30, utility: 0, note: '30% federal tax credit through 2032' },
   { id: 'battery', label: 'Battery storage', federal: 30, utility: 0, note: '30% federal tax credit' },
   { id: 'heatpump', label: 'Heat pump HVAC', federal: 30, utility: 500, note: 'Federal credit + Oncor rebate' },
   { id: 'geothermal', label: 'Geothermal heat pump', federal: 30, utility: 0, note: '30% federal tax credit' },
   { id: 'insulation', label: 'Insulation upgrade', federal: 30, utility: 0, note: '30% federal credit (up to $1,200)' },
   { id: 'thermostat', label: 'Smart thermostat', federal: 0, utility: 100, note: 'Oncor: $100 rebate' },
-  { id: 'evcharger', label: 'EV charger (Level 2)', federal: 30, utility: 250, note: 'Federal 30% + Oncor $250′ },
+  { id: 'evcharger', label: 'EV charger (Level 2)', federal: 30, utility: 250, note: 'Federal 30% + Oncor $250' },
   { id: 'irrigation', label: 'Smart irrigation (Frisco)', federal: 0, utility: 75, note: 'Frisco water conservation rebate' },
 ];
 
@@ -55,7 +55,7 @@ export default function HomeEnergyRebatesGuide() {
         <h2 style={{ fontSize: 24, fontWeight: 700, marginBottom: 24, color: '#ffffff' }}>🏛️ Federal Tax Credits (Through 2032)</h2>
         <div style={{ background: '#111827', borderRadius: 16, padding: 24, marginBottom: 32 }}>
           <p style={{ color: '#94a3b8', marginBottom: 16, lineHeight: 1.7 }}>
-            The Inflation Reduction Act provides a <strong style={{ color: '#4ade80′ }}>30% federal tax credit</strong> on qualifying home energy improvements. This is a dollar-for-dollar reduction in your tax bill — not a deduction.
+            The Inflation Reduction Act provides a <strong style={{ color: '#4ade80' }}>30% federal tax credit</strong> on qualifying home energy improvements. This is a dollar-for-dollar reduction in your tax bill — not a deduction.
           </p>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: 12 }}>
             {['Solar panels', 'Geothermal heat pump', 'Battery storage', 'Qualifying heat pump HVAC', 'Insulation & air sealing (up to $1,200)', 'Energy-efficient windows (up to $600)'].map(item => (
@@ -111,7 +111,7 @@ export default function HomeEnergyRebatesGuide() {
                       type="number"
                       value={jobCost[r.id] || ''}
                       onChange={e => setJobCost(prev => ({ ...prev, [r.id]: Number(e.target.value) }))}
-                      placeholder="e.g. 15000″
+                      placeholder="e.g. 15000"
                       style={{ background: '#0f172a', border: '1px solid #334155', borderRadius: 6, padding: '6px 10px', color: '#f0f0f0', width: 140, fontSize: 14 }}
                     />
                     {jobCost[r.id] > 0 && (
@@ -128,9 +128,9 @@ export default function HomeEnergyRebatesGuide() {
           {selected.length > 0 && (
             <div style={{ marginTop: 24, background: '#0d1f0d', border: '1px solid #4ade80', borderRadius: 12, padding: 20 }}>
               <h3 style={{ color: '#4ade80', marginBottom: 12, fontSize: 18 }}>Your Estimated Rebates</h3>
-              {totalFederal > 0 && <p style={{ color: '#e2e8f0′ }}>Federal tax credits: <strong style={{ color: '#4ade80' }}>${Math.round(totalFederal).toLocaleString()}</strong></p>}
-              {totalUtility > 0 && <p style={{ color: '#e2e8f0′ }}>Utility rebates: <strong style={{ color: '#4ade80' }}>${totalUtility.toLocaleString()}</strong></p>}
-              <p style={{ color: '#ffffff', fontSize: 20, fontWeight: 700, marginTop: 8 }}>Total estimated savings: <span style={{ color: '#4ade80′ }}>${Math.round(totalSavings).toLocaleString()}</span></p>
+              {totalFederal > 0 && <p style={{ color: '#e2e8f0' }}>Federal tax credits: <strong style={{ color: '#4ade80' }}>${Math.round(totalFederal).toLocaleString()}</strong></p>}
+              {totalUtility > 0 && <p style={{ color: '#e2e8f0' }}>Utility rebates: <strong style={{ color: '#4ade80' }}>${totalUtility.toLocaleString()}</strong></p>}
+              <p style={{ color: '#ffffff', fontSize: 20, fontWeight: 700, marginTop: 8 }}>Total estimated savings: <span style={{ color: '#4ade80' }}>${Math.round(totalSavings).toLocaleString()}</span></p>
               <p style={{ color: '#64748b', fontSize: 13, marginTop: 8 }}>Federal credits applied when you file your 2026 tax return. Utility rebates typically paid within 6-8 weeks of application.</p>
             </div>
           )}

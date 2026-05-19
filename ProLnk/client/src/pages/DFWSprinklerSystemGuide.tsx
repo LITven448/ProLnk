@@ -37,7 +37,7 @@ export default function DFWSprinklerSystemGuide() {
             <div style={{ fontWeight: 700, marginBottom: 10, color: '#F5E642', fontSize: 14 }}>Property Size</div>
             {LOT_SIZES.map(s => (
               <button key={s} onClick={() => setLotSize(s)}
-                style={{ display: 'block', width: '100%', background: s === lotSize ? '#F5E642′ : '#1C2E4A', color: s === lotSize ? '#0A1628' : '#E8EDF5',
+                style={{ display: 'block', width: '100%', background: s === lotSize ? '#F5E642' : '#1C2E4A', color: s === lotSize ? '#0A1628' : '#E8EDF5',
                   border: 'none', borderRadius: 8, padding: '8px 14px', cursor: 'pointer', fontWeight: 600, fontSize: 13, textAlign: 'left', marginBottom: 6 }}>
                 {s}
               </button>
@@ -47,7 +47,7 @@ export default function DFWSprinklerSystemGuide() {
             <div style={{ fontWeight: 700, marginBottom: 10, color: '#F5E642', fontSize: 14 }}>DFW Location</div>
             {LOCATIONS.map(l => (
               <button key={l} onClick={() => setLocation(l)}
-                style={{ display: 'block', width: '100%', background: l === location ? '#F5E642′ : '#1C2E4A', color: l === location ? '#0A1628' : '#E8EDF5',
+                style={{ display: 'block', width: '100%', background: l === location ? '#F5E642' : '#1C2E4A', color: l === location ? '#0A1628' : '#E8EDF5',
                   border: 'none', borderRadius: 8, padding: '8px 14px', cursor: 'pointer', fontWeight: 600, fontSize: 12, textAlign: 'left', marginBottom: 6 }}>
                 {l}
               </button>
@@ -59,7 +59,7 @@ export default function DFWSprinklerSystemGuide() {
           {[['Zones Needed', `${zones} zones`], ['Install Cost', `$${costLow.toLocaleString()} - $${costHigh.toLocaleString()}`], ['System Type', zones <= 6 ? 'Standard Rotary' : 'Smart Multi-Zone']].map(([label, val]) => (
             <div key={label} style={{ background: '#111E35', borderRadius: 10, padding: 16, textAlign: 'center' }}>
               <div style={{ fontSize: 11, color: '#8899B0', marginBottom: 6 }}>{label}</div>
-              <div style={{ fontSize: 16, fontWeight: 800, color: '#F5E642′ }}>{val}</div>
+              <div style={{ fontSize: 16, fontWeight: 800, color: '#F5E642' }}>{val}</div>
             </div>
           ))}
         </div>
@@ -79,7 +79,7 @@ export default function DFWSprinklerSystemGuide() {
           ].map(([season, task]) => (
             <div key={season} style={{ marginBottom: 12 }}>
               <div style={{ fontWeight: 700, fontSize: 13, color: '#F5E642', marginBottom: 3 }}>{season}</div>
-              <div style={{ fontSize: 13, color: '#8899B0′ }}>{task}</div>
+              <div style={{ fontSize: 13, color: '#8899B0' }}>{task}</div>
             </div>
           ))}
         </div>

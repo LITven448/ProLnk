@@ -41,13 +41,13 @@ export default function DFWLakeFrontPropertyGuide2026() {
           <h2 style={{ fontSize: 18, fontWeight: 700, marginBottom: 16 }}>📍 Select Your Lake</h2>
           <div style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
             {LAKES.map(l => (
-              <button key={l.id} onClick={() => setSelectedLake(l.id)} style={{ padding: '12px 16px', borderRadius: 8, border: 'none', cursor: 'pointer', fontWeight: 600, textAlign: 'left', backgroundColor: selectedLake === l.id ? '#F5E642′ : '#1e2d4a', color: selectedLake === l.id ? '#0A1628' : '#fff' }}>
+              <button key={l.id} onClick={() => setSelectedLake(l.id)} style={{ padding: '12px 16px', borderRadius: 8, border: 'none', cursor: 'pointer', fontWeight: 600, textAlign: 'left', backgroundColor: selectedLake === l.id ? '#F5E642' : '#1e2d4a', color: selectedLake === l.id ? '#0A1628' : '#fff' }}>
                 {l.label} — {l.county}
               </button>
             ))}
           </div>
           {lake && (
-            <div style={{ marginTop: 16, backgroundColor: '#0A1628', borderRadius: 8, padding: 14, borderLeft: '4px solid #F5E642′ }}>
+            <div style={{ marginTop: 16, backgroundColor: '#0A1628', borderRadius: 8, padding: 14, borderLeft: '4px solid #F5E642' }}>
               <div style={{ color: '#F5E642', fontWeight: 700, marginBottom: 4 }}>Permit Authority</div>
               <div style={{ color: '#cbd5e1', fontSize: 14 }}>{lake.notes}</div>
             </div>
@@ -58,14 +58,14 @@ export default function DFWLakeFrontPropertyGuide2026() {
           <h2 style={{ fontSize: 18, fontWeight: 700, marginBottom: 16 }}>🔧 Lake Property Features → Maintenance Guide</h2>
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: 10, marginBottom: 20 }}>
             {Object.keys(FEATURE_LABELS).map(f => (
-              <button key={f} onClick={() => setSelectedFeature(f)} style={{ padding: '10px 16px', borderRadius: 8, border: 'none', cursor: 'pointer', fontWeight: 600, backgroundColor: selectedFeature === f ? '#F5E642′ : '#1e2d4a', color: selectedFeature === f ? '#0A1628' : '#fff' }}>{FEATURE_LABELS[f]}</button>
+              <button key={f} onClick={() => setSelectedFeature(f)} style={{ padding: '10px 16px', borderRadius: 8, border: 'none', cursor: 'pointer', fontWeight: 600, backgroundColor: selectedFeature === f ? '#F5E642' : '#1e2d4a', color: selectedFeature === f ? '#0A1628' : '#fff' }}>{FEATURE_LABELS[f]}</button>
             ))}
           </div>
           {selectedFeature && (
             <div>
               <h3 style={{ color: '#F5E642', marginBottom: 12, fontSize: 15 }}>{FEATURE_LABELS[selectedFeature]}</h3>
               {FEATURES[selectedFeature].map((item, i) => (
-                <div key={i} style={{ padding: '8px 0', borderBottom: '1px solid #1e2d4a', fontSize: 14, color: '#cbd5e1′ }}>✅ {item}</div>
+                <div key={i} style={{ padding: '8px 0', borderBottom: '1px solid #1e2d4a', fontSize: 14, color: '#cbd5e1' }}>✅ {item}</div>
               ))}
             </div>
           )}

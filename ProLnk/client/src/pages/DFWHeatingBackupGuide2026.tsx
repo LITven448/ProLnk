@@ -35,8 +35,8 @@ export default function DFWHeatingBackupGuide2026() {
       <div style={{ maxWidth: 800, margin: '0 auto' }}>
         <div style={{ textAlign: 'center', marginBottom: '2rem' }}>
           <div style={{ fontSize: '3rem' }}>🧊❄️</div>
-          <h1 style={{ color: '#F5E642', fontSize: '2rem', margin: '0.5rem 0′ }}>DFW Heating Backup Guide 2026</h1>
-          <p style={{ color: '#a0aec0′ }}>Lessons from February 2021 — be ready before the next DFW freeze</p>
+          <h1 style={{ color: '#F5E642', fontSize: '2rem', margin: '0.5rem 0' }}>DFW Heating Backup Guide 2026</h1>
+          <p style={{ color: '#a0aec0' }}>Lessons from February 2021 — be ready before the next DFW freeze</p>
         </div>
 
         <div style={{ background: '#1a0a0a', border: '2px solid #e53e3e', borderRadius: 12, padding: '1.25rem', marginBottom: '1.5rem' }}>

@@ -46,7 +46,7 @@ export default function DFWKoiPondGuide() {
         <div style={{ fontSize: '2.2rem', fontWeight: 800, color: '#F5E642', marginBottom: '0.25rem' }}>🐟 DFW Koi Pond Guide</div>
         <div style={{ color: '#94A3B8', marginBottom: '2rem' }}>Survive DFW summers and predators — build a thriving koi habitat</div>
 
-        <div style={{ background: '#7F1D1D', borderRadius: 12, padding: '1.25rem', marginBottom: '1.5rem', border: '1px solid #EF4444′ }}>
+        <div style={{ background: '#7F1D1D', borderRadius: 12, padding: '1.25rem', marginBottom: '1.5rem', border: '1px solid #EF4444' }}>
           <div style={{ color: '#FCA5A5', fontWeight: 700, marginBottom: '0.5rem' }}>🌡️ DFW Summer Heat — Critical Warning</div>
           <div style={{ color: '#FEE2E2', lineHeight: 1.7 }}>
             Koi begin experiencing heat stress at 86°F and die rapidly above 95°F water temperature. DFW summers regularly produce 100–110°F air temperatures. <strong>An unshaded pond in DFW will kill koi.</strong> Minimum 4 ft depth + 50% shade coverage is non-negotiable. Aeration must run 24/7 June through September — warm water holds less oxygen.
@@ -55,7 +55,7 @@ export default function DFWKoiPondGuide() {
 
         <div style={{ background: '#0F2040', borderRadius: 12, padding: '1.5rem', marginBottom: '1.5rem' }}>
           <div style={{ color: '#F5E642', fontWeight: 700, marginBottom: '0.75rem' }}>📏 DFW Depth Requirements</div>
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0.75rem', color: '#CBD5E1′ }}>
+          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0.75rem', color: '#CBD5E1' }}>
             <div>Minimum depth: <strong style={{ color: '#fff' }}>4 ft</strong></div>
             <div>Recommended DFW depth: <strong style={{ color: '#fff' }}>5–6 ft</strong></div>
             <div>Koi per 100 gal: <strong style={{ color: '#fff' }}>1 inch of fish</strong></div>
@@ -82,22 +82,22 @@ export default function DFWKoiPondGuide() {
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
             <div>
               <div style={{ color: '#94A3B8', fontSize: '0.85rem', marginBottom: '0.4rem' }}>Available Space (sq ft)</div>
-              <input value={space} onChange={e => setSpace(e.target.value)} placeholder="e.g. 400″ style={{ width: '100%', padding: '0.6rem', borderRadius: 8, border: '1px solid #2D4A6E', background: '#0A1628', color: '#fff', boxSizing: 'border-box' }} />
+              <input value={space} onChange={e => setSpace(e.target.value)} placeholder="e.g. 400" style={{ width: '100%', padding: '0.6rem', borderRadius: 8, border: '1px solid #2D4A6E', background: '#0A1628', color: '#fff', boxSizing: 'border-box' }} />
             </div>
             <div>
               <div style={{ color: '#94A3B8', fontSize: '0.85rem', marginBottom: '0.4rem' }}>Planned Fish Count</div>
-              <input value={fish} onChange={e => setFish(e.target.value)} placeholder="e.g. 15″ style={{ width: '100%', padding: '0.6rem', borderRadius: 8, border: '1px solid #2D4A6E', background: '#0A1628', color: '#fff', boxSizing: 'border-box' }} />
+              <input value={fish} onChange={e => setFish(e.target.value)} placeholder="e.g. 15" style={{ width: '100%', padding: '0.6rem', borderRadius: 8, border: '1px solid #2D4A6E', background: '#0A1628', color: '#fff', boxSizing: 'border-box' }} />
             </div>
             <div>
               <div style={{ color: '#94A3B8', fontSize: '0.85rem', marginBottom: '0.4rem' }}>Total Budget ($)</div>
-              <input value={budget} onChange={e => setBudget(e.target.value)} placeholder="e.g. 25000″ style={{ width: '100%', padding: '0.6rem', borderRadius: 8, border: '1px solid #2D4A6E', background: '#0A1628', color: '#fff', boxSizing: 'border-box' }} />
+              <input value={budget} onChange={e => setBudget(e.target.value)} placeholder="e.g. 25000" style={{ width: '100%', padding: '0.6rem', borderRadius: 8, border: '1px solid #2D4A6E', background: '#0A1628', color: '#fff', boxSizing: 'border-box' }} />
             </div>
           </div>
           <button onClick={calculate} style={{ background: '#F5E642', color: '#0A1628', fontWeight: 700, padding: '0.75rem 2rem', borderRadius: 8, border: 'none', cursor: 'pointer', fontSize: '1rem' }}>Get Recommendation</button>
           {result && (
-            <div style={{ marginTop: '1.25rem', background: '#0A1628', borderRadius: 10, padding: '1.25rem', border: '1px solid #F5E642′ }}>
+            <div style={{ marginTop: '1.25rem', background: '#0A1628', borderRadius: 10, padding: '1.25rem', border: '1px solid #F5E642' }}>
               <div style={{ color: '#F5E642', fontWeight: 700, marginBottom: '0.5rem' }}>Recommended Pond Size: {result.size}</div>
-              <div style={{ color: '#CBD5E1′ }}>Depth: {result.depth}</div>
+              <div style={{ color: '#CBD5E1' }}>Depth: {result.depth}</div>
               <div style={{ color: '#CBD5E1', marginTop: '0.25rem' }}>Filtration: {result.filterCost}</div>
               <div style={{ color: '#CBD5E1', marginTop: '0.25rem' }}>Shade: {result.shade}</div>
               <div style={{ color: '#F5E642', marginTop: '0.5rem', fontWeight: 600 }}>Total Estimate: {result.totalCost}</div>

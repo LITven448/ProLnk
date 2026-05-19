@@ -63,7 +63,7 @@ export default function DFWShingleLifeExtender2026() {
           </div>
           <button onClick={getOptions} style={{ background: '#F5E642', color: '#0A1628', border: 'none', borderRadius: 8, padding: '12px 24px', fontWeight: 700, fontSize: 15, cursor: 'pointer', width: '100%' }}>Get Extension Plan →</button>
           {result && (
-            <div style={{ marginTop: 20, background: '#0A1628', borderRadius: 10, padding: 20, borderLeft: '4px solid #F5E642′ }}>
+            <div style={{ marginTop: 20, background: '#0A1628', borderRadius: 10, padding: 20, borderLeft: '4px solid #F5E642' }}>
               <div style={{ fontSize: 28, marginBottom: 8 }}>{result.icon}</div>
               <div style={{ color: '#F5E642', fontWeight: 700, fontSize: 16, marginBottom: 12 }}>Recommended Actions</div>
               <ul style={{ margin: 0, paddingLeft: 20 }}>

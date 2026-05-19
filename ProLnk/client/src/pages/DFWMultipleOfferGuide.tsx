@@ -84,11 +84,11 @@ export default function DFWMultipleOfferGuide() {
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
             <div>
               <label style={{ display: 'block', fontSize: '0.85rem', color: '#aaa', marginBottom: '0.4rem' }}>Home Price ($)</label>
-              <input type='number' value={price} onChange={e => setPrice(e.target.value)} placeholder='e.g. 425000′ style={{ width: '100%', padding: '0.6rem', borderRadius: '8px', border: '1.5px solid #333', backgroundColor: '#0A1628', color: '#fff', fontSize: '0.95rem', boxSizing: ’border-box' }} />
+              <input type='number' value={price} onChange={e => setPrice(e.target.value)} placeholder='e.g. 425000' style={{ width: '100%', padding: '0.6rem', borderRadius: '8px', border: '1.5px solid #333', backgroundColor: '#0A1628', color: '#fff', fontSize: '0.95rem', boxSizing: 'border-box' }} />
             </div>
             <div>
               <label style={{ display: 'block', fontSize: '0.85rem', color: '#aaa', marginBottom: '0.4rem' }}>Competing Offers</label>
-              <input type='number' value={offers} onChange={e => setOffers(e.target.value)} placeholder='e.g. 4′ style={{ width: '100%', padding: '0.6rem', borderRadius: '8px', border: '1.5px solid #333', backgroundColor: '#0A1628', color: '#fff', fontSize: '0.95rem', boxSizing: ’border-box' }} />
+              <input type='number' value={offers} onChange={e => setOffers(e.target.value)} placeholder='e.g. 4' style={{ width: '100%', padding: '0.6rem', borderRadius: '8px', border: '1.5px solid #333', backgroundColor: '#0A1628', color: '#fff', fontSize: '0.95rem', boxSizing: 'border-box' }} />
             </div>
             <div>
               <label style={{ display: 'block', fontSize: '0.85rem', color: '#aaa', marginBottom: '0.4rem' }}>Can Waive Inspection?</label>
@@ -112,8 +112,8 @@ export default function DFWMultipleOfferGuide() {
                   </div>
                 </div>
               ))}
-              <div style={{ marginTop: '0.75rem', padding: '0.75rem', backgroundColor: '#2a1010', borderRadius: '8px', fontSize: '0.9rem', color: '#ff9999′ }}>⚠️ {strategy.risk}</div>
-              <div style={{ marginTop: '0.5rem', padding: '0.75rem', backgroundColor: '#0e1f0e', borderRadius: '8px', fontSize: '0.9rem', color: '#90ee90′ }}>✅ Avoid: {strategy.avoid}</div>
+              <div style={{ marginTop: '0.75rem', padding: '0.75rem', backgroundColor: '#2a1010', borderRadius: '8px', fontSize: '0.9rem', color: '#ff9999' }}>⚠️ {strategy.risk}</div>
+              <div style={{ marginTop: '0.5rem', padding: '0.75rem', backgroundColor: '#0e1f0e', borderRadius: '8px', fontSize: '0.9rem', color: '#90ee90' }}>✅ Avoid: {strategy.avoid}</div>
             </div>
           )}
         </div>

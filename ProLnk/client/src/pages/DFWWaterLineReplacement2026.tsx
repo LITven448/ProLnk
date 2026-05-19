@@ -75,7 +75,7 @@ export default function DFWWaterLineReplacement2026() {
 
         <div style={{ marginTop: 32, padding: '20px', background: '#132035', borderRadius: 12, textAlign: 'center' }}>
           <div style={{ color: '#F5E642', fontWeight: 700, marginBottom: 8 }}>Get DFW water line replacement quotes today</div>
-          <div style={{ color: '#94A3B8′ }}>ProLnk connects you with licensed plumbers who specialize in main line work — free quotes, no obligation.</div>
+          <div style={{ color: '#94A3B8' }}>ProLnk connects you with licensed plumbers who specialize in main line work — free quotes, no obligation.</div>
         </div>
       </div>
     </div>

@@ -27,7 +27,7 @@ export default function DFWRoofingSingleShingle2026() {
         <div style={{ color: '#F5E642', fontSize: 13, marginBottom: 8 }}>PROLNK DFW ROOFING GUIDE 2026</div>
         <h1 style={{ fontSize: 28, fontWeight: 700, marginBottom: 12 }}>🏚️ Single Shingle Replacement in DFW</h1>
         <p style={{ color: '#94a3b8', marginBottom: 24, lineHeight: 1.6 }}>
-          Sometimes one shingle is all that needs replacing. Here's when that’s true — and when it’s not enough.
+          Sometimes one shingle is all that needs replacing. Here's when that's true — and when it's not enough.
         </p>
 
         <div style={{ background: '#0f2035', borderRadius: 12, padding: 20, marginBottom: 20 }}>

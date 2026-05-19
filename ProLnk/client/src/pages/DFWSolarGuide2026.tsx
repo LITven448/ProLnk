@@ -21,13 +21,13 @@ export default function DFWSolarGuide2026() {
 
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3,1fr)', gap: 16, marginBottom: 32 }}>
           {[
-            { icon: '🌤️', label: 'Sunny Days/Year', value: '229′ },
-            { icon: '💰', label: 'Avg System Cost', value: '$17,500′ },
+            { icon: '🌤️', label: 'Sunny Days/Year', value: '229' },
+            { icon: '💰', label: 'Avg System Cost', value: '$17,500' },
             { icon: '📅', label: 'Typical Payback', value: '7–9 yrs' },
           ].map(card => (
             <div key={card.label} style={{ background: '#132040', borderRadius: 12, padding: 20, textAlign: 'center' }}>
               <div style={{ fontSize: 28 }}>{card.icon}</div>
-              <div style={{ fontSize: 22, fontWeight: 700, color: '#F5E642′ }}>{card.value}</div>
+              <div style={{ fontSize: 22, fontWeight: 700, color: '#F5E642' }}>{card.value}</div>
               <div style={{ fontSize: 12, color: '#94a3b8', marginTop: 4 }}>{card.label}</div>
             </div>
           ))}
@@ -51,14 +51,14 @@ export default function DFWSolarGuide2026() {
               <label style={{ color: '#94a3b8', fontSize: 13 }}>Home Size (sqft)</label>
               <input type="range" min={1000} max={5000} step={100} value={homeSize}
                 onChange={e => setHomeSize(Number(e.target.value))}
-                style={{ width: '100%', accentColor: '#F5E642′ }} />
+                style={{ width: '100%', accentColor: '#F5E642' }} />
               <div style={{ color: '#F5E642', fontWeight: 700 }}>{homeSize.toLocaleString()} sqft</div>
             </div>
             <div>
               <label style={{ color: '#94a3b8', fontSize: 13 }}>Monthly Electric Bill ($)</label>
               <input type="range" min={50} max={500} step={10} value={electricBill}
                 onChange={e => setElectricBill(Number(e.target.value))}
-                style={{ width: '100%', accentColor: '#F5E642′ }} />
+                style={{ width: '100%', accentColor: '#F5E642' }} />
               <div style={{ color: '#F5E642', fontWeight: 700 }}>${electricBill}/mo</div>
             </div>
           </div>
@@ -70,7 +70,7 @@ export default function DFWSolarGuide2026() {
               { label: 'Payback', value: `${payback} yrs` },
             ].map(r => (
               <div key={r.label} style={{ background: '#0A1628', borderRadius: 8, padding: 12, textAlign: 'center' }}>
-                <div style={{ fontSize: 18, fontWeight: 700, color: '#F5E642′ }}>{r.value}</div>
+                <div style={{ fontSize: 18, fontWeight: 700, color: '#F5E642' }}>{r.value}</div>
                 <div style={{ fontSize: 11, color: '#94a3b8', marginTop: 4 }}>{r.label}</div>
               </div>
             ))}

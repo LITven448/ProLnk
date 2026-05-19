@@ -97,7 +97,7 @@ export default function DFWHomeSellingChecklist2026() {
               <button
                 key={p.id}
                 onClick={() => setSelected(p.id)}
-                style={{ padding: '8px 16px', borderRadius: 20, border: 'none', cursor: 'pointer', fontSize: 13, background: selected === p.id ? '#F5E642′ : '#1a2d4a', color: selected === p.id ? '#0A1628' : '#ccc', fontWeight: selected === p.id ? 700 : 400 }}
+                style={{ padding: '8px 16px', borderRadius: 20, border: 'none', cursor: 'pointer', fontSize: 13, background: selected === p.id ? '#F5E642' : '#1a2d4a', color: selected === p.id ? '#0A1628' : '#ccc', fontWeight: selected === p.id ? 700 : 400 }}
               >
                 {p.label}
               </button>

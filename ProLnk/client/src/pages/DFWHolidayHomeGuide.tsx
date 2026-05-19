@@ -60,7 +60,7 @@ export default function DFWHolidayHomeGuide() {
               {hostingStyles.map(h => <option key={h} value={h}>{h}</option>)}
             </select>
           </div>
-          <button onClick={() => setSubmitted(true)} disabled={!homeSize || !guestCount || !hostingStyle} style={{ width: '100%', padding: '12px', backgroundColor: homeSize && guestCount && hostingStyle ? '#0A1628′ : '#E2E8F0', color: homeSize && guestCount && hostingStyle ? '#F5E642' : '#9AABB8', fontWeight: 700, border: ’none', borderRadius: 8, cursor: homeSize && guestCount && hostingStyle ? 'pointer' : 'not-allowed', fontSize: 15 }}>
+          <button onClick={() => setSubmitted(true)} disabled={!homeSize || !guestCount || !hostingStyle} style={{ width: '100%', padding: '12px', backgroundColor: homeSize && guestCount && hostingStyle ? '#0A1628' : '#E2E8F0', color: homeSize && guestCount && hostingStyle ? '#F5E642' : '#9AABB8', fontWeight: 700, border: 'none', borderRadius: 8, cursor: homeSize && guestCount && hostingStyle ? 'pointer' : 'not-allowed', fontSize: 15 }}>
             Generate My Hosting Checklist
           </button>
         </div>

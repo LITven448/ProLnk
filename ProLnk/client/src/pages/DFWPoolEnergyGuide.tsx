@@ -121,11 +121,11 @@ export default function DFWPoolEnergyGuide() {
                 ].map(r => (
                   <div key={r.label} style={{ background: '#0F1E35', borderRadius: '8px', padding: '12px' }}>
                     <div style={{ color: '#718096', fontSize: '11px', marginBottom: '4px' }}>{r.label}</div>
-                    <div style={{ color: r.green ? '#68D391′ : '#FFF', fontWeight: 700, fontSize: '16px' }}>{r.val}</div>
+                    <div style={{ color: r.green ? '#68D391' : '#FFF', fontWeight: 700, fontSize: '16px' }}>{r.val}</div>
                   </div>
                 ))}
               </div>
-              <div style={{ background: '#1A2F50', borderRadius: '8px', padding: '12px', fontSize: '13px', color: '#A0AEC0′ }}>
+              <div style={{ background: '#1A2F50', borderRadius: '8px', padding: '12px', fontSize: '13px', color: '#A0AEC0' }}>
                 💡 Upgrade package includes: variable speed pump ($1,200), LED lights ($400){heated ? ', solar heating ($4,500)' : ''}. Oncor rebate applied to pump only.
               </div>
             </div>

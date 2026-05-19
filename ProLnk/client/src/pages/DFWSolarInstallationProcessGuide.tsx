@@ -89,7 +89,7 @@ export default function DFWSolarInstallationProcessGuide() {
             </div>
             <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
               {result.steps.map((step, i) => (
-                <div key={step.phase} style={{ background: '#0F2040', borderRadius: 12, padding: 20, borderLeft: '3px solid #F5E642′ }}>
+                <div key={step.phase} style={{ background: '#0F2040', borderRadius: 12, padding: 20, borderLeft: '3px solid #F5E642' }}>
                   <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: 6 }}>
                     <div style={{ fontWeight: 700 }}>Step {i + 1}: {step.phase}</div>
                     <div style={{ color: '#F5E642', fontSize: 13 }}>⏱ {step.duration}</div>
@@ -101,7 +101,7 @@ export default function DFWSolarInstallationProcessGuide() {
           </>
         )}
         {!result && (
-          <div style={{ background: '#0F2040', borderRadius: 12, padding: 28, textAlign: 'center', color: '#94A3B8′ }}>
+          <div style={{ background: '#0F2040', borderRadius: 12, padding: 28, textAlign: 'center', color: '#94A3B8' }}>
             Select your home type and monthly bill to see your personalized solar timeline.
           </div>
         )}

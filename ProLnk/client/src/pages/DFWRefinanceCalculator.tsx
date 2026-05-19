@@ -58,14 +58,14 @@ export default function DFWRefinanceCalculator() {
               <div style={{ fontSize: 20, fontWeight: 700, color: '#F5E642', background: '#0A1628', borderRadius: 8, padding: '8px 12px', marginBottom: 8 }}>
                 {prefix}{typeof value === 'number' && value % 1 !== 0 ? value.toFixed(value < 10 ? 2 : 1) : value.toLocaleString()}{suffix}
               </div>
-              <input type="range" min={min} max={max} step={step} value={value} onChange={e => set(Number(e.target.value))} style={{ width: '100%', accentColor: '#F5E642′ }} />
+              <input type="range" min={min} max={max} step={step} value={value} onChange={e => set(Number(e.target.value))} style={{ width: '100%', accentColor: '#F5E642' }} />
             </div>
           ))}
         </div>
 
         <div style={{ background: '#0A1628', borderRadius: 16, padding: 24, marginBottom: 24 }}>
           <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: 20 }}>
-            <div style={{ fontSize: 18, fontWeight: 700, color: '#F5E642′ }}>📊 Refinance Analysis</div>
+            <div style={{ fontSize: 18, fontWeight: 700, color: '#F5E642' }}>📊 Refinance Analysis</div>
             <div style={{ background: goodRefi ? '#16a34a' : '#dc2626', color: '#fff', borderRadius: 8, padding: '6px 14px', fontSize: 12, fontWeight: 700 }}>
               {goodRefi ? '✅ LOOKS WORTH IT' : '⚠️ MARGINAL'}
             </div>
@@ -88,7 +88,7 @@ export default function DFWRefinanceCalculator() {
             ].map(({ label, val, ok }) => (
               <div key={label} style={{ background: 'rgba(255,255,255,0.07)', borderRadius: 8, padding: '10px 12px', textAlign: 'center' }}>
                 <div style={{ color: '#94a3b8', fontSize: 12 }}>{label}</div>
-                <div style={{ color: ok ? '#4ade80′ : '#f87171', fontSize: 20, fontWeight: 700, marginTop: 4 }}>{val}</div>
+                <div style={{ color: ok ? '#4ade80' : '#f87171', fontSize: 20, fontWeight: 700, marginTop: 4 }}>{val}</div>
               </div>
             ))}
           </div>
@@ -102,17 +102,17 @@ export default function DFWRefinanceCalculator() {
           ].map(({ label, val }) => (
             <div key={label} style={{ background: '#fff', borderRadius: 12, padding: 16, boxShadow: '0 1px 4px rgba(0,0,0,0.07)', textAlign: 'center' }}>
               <div style={{ fontSize: 12, color: '#64748b', marginBottom: 6 }}>{label}</div>
-              <div style={{ fontSize: 22, fontWeight: 700, color: '#0A1628′ }}>{val}</div>
+              <div style={{ fontSize: 22, fontWeight: 700, color: '#0A1628' }}>{val}</div>
             </div>
           ))}
         </div>
 
         <div style={{ background: '#f0fdf4', border: '1px solid #86efac', borderRadius: 12, padding: 20 }}>
           <div style={{ fontSize: 15, fontWeight: 700, color: '#166534', marginBottom: 10 }}>🏠 DFW Cash-Out Potential</div>
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: 12, fontSize: 13, color: '#166534′ }}>
-            <div><div style={{ color: '#6b7280′ }}>Current LTV</div><strong>{ltv}%</strong></div>
-            <div><div style={{ color: '#6b7280′ }}>Total Equity</div><strong>{fmt(availableEquity)}</strong></div>
-            <div><div style={{ color: '#6b7280′ }}>Max Cash-Out (80% LTV)</div><strong>{fmt(maxCashOut)}</strong></div>
+          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: 12, fontSize: 13, color: '#166534' }}>
+            <div><div style={{ color: '#6b7280' }}>Current LTV</div><strong>{ltv}%</strong></div>
+            <div><div style={{ color: '#6b7280' }}>Total Equity</div><strong>{fmt(availableEquity)}</strong></div>
+            <div><div style={{ color: '#6b7280' }}>Max Cash-Out (80% LTV)</div><strong>{fmt(maxCashOut)}</strong></div>
           </div>
           <div style={{ marginTop: 10, fontSize: 13, color: '#15803d' }}>💡 DFW home values have appreciated ~4.5%/yr — your home may appraise higher than you expect. Get an appraisal before deciding.</div>
         </div>

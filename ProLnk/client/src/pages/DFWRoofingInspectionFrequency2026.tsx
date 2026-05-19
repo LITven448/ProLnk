@@ -48,7 +48,7 @@ export default function DFWRoofingInspectionFrequency2026() {
         <div style={{ background: '#0f2040', borderRadius: 12, padding: 20, marginBottom: 20 }}>
           <h2 style={{ color: '#F5E642', fontSize: 16, marginBottom: 16 }}>DFW Roof Inspection Schedule by Age</h2>
           {[
-            ['New (0-5 yrs)', 'Inspect at 5-year mark + after any significant storm (1.5″+ hail or 50mph+ wind)'],
+            ['New (0-5 yrs)', 'Inspect at 5-year mark + after any significant storm (1.5"+ hail or 50mph+ wind)'],
             ['Mid-Life (5-15 yrs)', 'Annual inspection minimum — best timing is after DFW hail season ends (June/July)'],
             ['Aging (15+ yrs)', 'Biannual: spring before hail season + fall before winter rains. Plus every storm event.'],
             ['Any Age: Post-Storm', 'Never skip a post-hail inspection — TX insurance deadline is 1 year from damage date']
@@ -68,7 +68,7 @@ export default function DFWRoofingInspectionFrequency2026() {
               value={roofAge}
               onChange={e => setRoofAge(e.target.value)}
               type="number"
-              placeholder="e.g. 12″
+              placeholder="e.g. 12"
               style={{ background: '#1a2f50', border: '1px solid #2d4a7a', borderRadius: 8, padding: '10px 14px', color: '#fff', width: '100%', fontSize: 14 }}
             />
           </div>

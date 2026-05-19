@@ -57,10 +57,10 @@ export default function DFWHVACDFWComplete2026B() {
               key={c.id}
               onClick={() => setSelected(selected === c.id ? null : c.id)}
               style={{
-                background: selected === c.id ? '#F5E642′ : '#0F2040',
-                color: selected === c.id ? '#0A1628′ : '#fff',
+                background: selected === c.id ? '#F5E642' : '#0F2040',
+                color: selected === c.id ? '#0A1628' : '#fff',
                 border: '1px solid',
-                borderColor: selected === c.id ? '#F5E642′ : '#1E3A5F',
+                borderColor: selected === c.id ? '#F5E642' : '#1E3A5F',
                 borderRadius: 10,
                 padding: '14px 16px',
                 textAlign: 'left',

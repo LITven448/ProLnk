@@ -50,12 +50,12 @@ export default function DFWHVACRenovationGuide() {
         </div>
 
         <div style={{ background: '#0f1f3d', borderRadius: 12, padding: 24, marginBottom: 24 }}>
-          <h2 style={{ fontSize: 18, fontWeight: 700, marginBottom: 16, color: '#F5E642′ }}>🔨 Get Your Recommendation</h2>
+          <h2 style={{ fontSize: 18, fontWeight: 700, marginBottom: 16, color: '#F5E642' }}>🔨 Get Your Recommendation</h2>
           <div style={{ marginBottom: 16 }}>
             <label style={{ color: '#94a3b8', fontSize: 13, display: 'block', marginBottom: 6 }}>RENOVATION TYPE</label>
             <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8 }}>
               {renovationTypes.map(r => (
-                <button key={r} onClick={() => setReno(r)} style={{ padding: '8px 16px', borderRadius: 6, border: '2px solid', borderColor: reno === r ? '#F5E642′ : '#1e3a5f', background: reno === r ? '#F5E642' : ’transparent', color: reno === r ? '#0A1628′ : '#fff', cursor: ’pointer', fontWeight: 600, fontSize: 13 }}>{r}</button>
+                <button key={r} onClick={() => setReno(r)} style={{ padding: '8px 16px', borderRadius: 6, border: '2px solid', borderColor: reno === r ? '#F5E642' : '#1e3a5f', background: reno === r ? '#F5E642' : 'transparent', color: reno === r ? '#0A1628' : '#fff', cursor: 'pointer', fontWeight: 600, fontSize: 13 }}>{r}</button>
               ))}
             </div>
           </div>
@@ -63,12 +63,12 @@ export default function DFWHVACRenovationGuide() {
             <label style={{ color: '#94a3b8', fontSize: 13, display: 'block', marginBottom: 6 }}>CURRENT HVAC AGE</label>
             <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8 }}>
               {hvacAges.map(a => (
-                <button key={a} onClick={() => setAge(a)} style={{ padding: '8px 16px', borderRadius: 6, border: '2px solid', borderColor: age === a ? '#F5E642′ : '#1e3a5f', background: age === a ? '#F5E642' : ’transparent', color: age === a ? '#0A1628′ : '#fff', cursor: ’pointer', fontWeight: 600, fontSize: 13 }}>{a}</button>
+                <button key={a} onClick={() => setAge(a)} style={{ padding: '8px 16px', borderRadius: 6, border: '2px solid', borderColor: age === a ? '#F5E642' : '#1e3a5f', background: age === a ? '#F5E642' : 'transparent', color: age === a ? '#0A1628' : '#fff', cursor: 'pointer', fontWeight: 600, fontSize: 13 }}>{a}</button>
               ))}
             </div>
           </div>
           {result && (
-            <div style={{ background: '#1e3a5f', borderRadius: 8, padding: 16, borderLeft: '4px solid #F5E642′ }}>
+            <div style={{ background: '#1e3a5f', borderRadius: 8, padding: 16, borderLeft: '4px solid #F5E642' }}>
               <div style={{ fontWeight: 700, color: '#F5E642', marginBottom: 6 }}>Recommendation</div>
               <div style={{ color: '#e2e8f0', fontSize: 14, lineHeight: 1.7 }}>{result}</div>
             </div>

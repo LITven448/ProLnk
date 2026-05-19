@@ -53,8 +53,8 @@ export default function DFWProLnkMayAction() {
                 key={a.id}
                 onClick={() => setSelected(a.id)}
                 style={{
-                  background: selected === a.id ? '#F5E642′ : '#1a3050',
-                  color: selected === a.id ? '#0A1628′ : '#fff',
+                  background: selected === a.id ? '#F5E642' : '#1a3050',
+                  color: selected === a.id ? '#0A1628' : '#fff',
                   border: 'none', borderRadius: 10, padding: '14px 18px',
                   textAlign: 'left', cursor: 'pointer', fontSize: 14, fontWeight: 500,
                   transition: 'all 0.15s',
@@ -65,7 +65,7 @@ export default function DFWProLnkMayAction() {
             ))}
           </div>
           {result && (
-            <div style={{ background: '#0A1628', borderRadius: 12, padding: '20px 24px', borderLeft: '4px solid #F5E642′ }}>
+            <div style={{ background: '#0A1628', borderRadius: 12, padding: '20px 24px', borderLeft: '4px solid #F5E642' }}>
               <div style={{ color: '#F5E642', fontWeight: 700, fontSize: 13, marginBottom: 8 }}>HOW TO DO IT NOW</div>
               <div style={{ color: '#e2e8f0', fontSize: 15, lineHeight: 1.7 }}>{result.how}</div>
             </div>

@@ -5,34 +5,34 @@ const CLAY_LEVELS = ['Low Exposure', 'Moderate', 'High', 'Extreme'];
 
 const patternData: Record<string, Record<string, { pattern: string; joint: string; cost: string }>> = {
   'Concrete Paver': {
-    'Low Exposure': { pattern: 'Running Bond', joint: '1/4″ every 8 ft', cost: '$8-12/sq ft' },
-    'Moderate': { pattern: 'Herringbone 45°', joint: '3/8″ every 6 ft', cost: '$10-15/sq ft' },
-    'High': { pattern: 'Basketweave', joint: '1/2″ every 4 ft', cost: '$12-18/sq ft' },
-    'Extreme': { pattern: 'Pinwheel w/ border', joint: '3/4″ every 3 ft', cost: '$16-24/sq ft' },
+    'Low Exposure': { pattern: 'Running Bond', joint: '1/4" every 8 ft', cost: '$8-12/sq ft' },
+    'Moderate': { pattern: 'Herringbone 45°', joint: '3/8" every 6 ft', cost: '$10-15/sq ft' },
+    'High': { pattern: 'Basketweave', joint: '1/2" every 4 ft', cost: '$12-18/sq ft' },
+    'Extreme': { pattern: 'Pinwheel w/ border', joint: '3/4" every 3 ft', cost: '$16-24/sq ft' },
   },
   'Brick': {
-    'Low Exposure': { pattern: 'Running Bond', joint: '3/8″ every 10 ft', cost: '$12-18/sq ft' },
-    'Moderate': { pattern: 'Herringbone', joint: '1/2″ every 6 ft', cost: '$15-22/sq ft' },
-    'High': { pattern: 'Stacked Bond w/ tie', joint: '1/2″ every 4 ft', cost: '$18-26/sq ft' },
-    'Extreme': { pattern: 'Diagonal Herringbone', joint: '3/4″ every 3 ft', cost: '$22-32/sq ft' },
+    'Low Exposure': { pattern: 'Running Bond', joint: '3/8" every 10 ft', cost: '$12-18/sq ft' },
+    'Moderate': { pattern: 'Herringbone', joint: '1/2" every 6 ft', cost: '$15-22/sq ft' },
+    'High': { pattern: 'Stacked Bond w/ tie', joint: '1/2" every 4 ft', cost: '$18-26/sq ft' },
+    'Extreme': { pattern: 'Diagonal Herringbone', joint: '3/4" every 3 ft', cost: '$22-32/sq ft' },
   },
   'Flagstone': {
     'Low Exposure': { pattern: 'Random Irregular', joint: 'Mortared joints', cost: '$15-22/sq ft' },
-    'Moderate': { pattern: 'Fitted Random', joint: '1/2″ dry-set', cost: '$18-28/sq ft' },
-    'High': { pattern: 'Cut Random', joint: '3/4″ flexible grout', cost: '$22-35/sq ft' },
-    'Extreme': { pattern: 'Rectangular Cut', joint: '1″ flexible w/ sand', cost: '$30-45/sq ft' },
+    'Moderate': { pattern: 'Fitted Random', joint: '1/2" dry-set', cost: '$18-28/sq ft' },
+    'High': { pattern: 'Cut Random', joint: '3/4" flexible grout', cost: '$22-35/sq ft' },
+    'Extreme': { pattern: 'Rectangular Cut', joint: '1" flexible w/ sand', cost: '$30-45/sq ft' },
   },
   'Travertine': {
-    'Low Exposure': { pattern: '4x4 Grid', joint: '1/4″ sanded', cost: '$18-25/sq ft' },
-    'Moderate': { pattern: 'Versailles Pattern', joint: '3/8″ flexible', cost: '$22-32/sq ft' },
-    'High': { pattern: 'Straight Stack', joint: '1/2″ polymer', cost: '$28-40/sq ft' },
-    'Extreme': { pattern: 'Roman Pattern', joint: '3/4″ polymer every 3ft', cost: '$35-50/sq ft' },
+    'Low Exposure': { pattern: '4x4 Grid', joint: '1/4" sanded', cost: '$18-25/sq ft' },
+    'Moderate': { pattern: 'Versailles Pattern', joint: '3/8" flexible', cost: '$22-32/sq ft' },
+    'High': { pattern: 'Straight Stack', joint: '1/2" polymer', cost: '$28-40/sq ft' },
+    'Extreme': { pattern: 'Roman Pattern', joint: '3/4" polymer every 3ft', cost: '$35-50/sq ft' },
   },
   'Decomposed Granite': {
     'Low Exposure': { pattern: 'Compacted flat', joint: 'N/A — permeable', cost: '$3-6/sq ft' },
     'Moderate': { pattern: 'DG w/ stabilizer', joint: 'N/A — permeable', cost: '$5-8/sq ft' },
-    'High': { pattern: 'DG w/ border pavers', joint: 'Border: 1/2″ every 6ft', cost: '$7-12/sq ft' },
-    'Extreme': { pattern: 'DG + decomp border', joint: 'Border: 3/4″ every 4ft', cost: '$9-15/sq ft' },
+    'High': { pattern: 'DG w/ border pavers', joint: 'Border: 1/2" every 6ft', cost: '$7-12/sq ft' },
+    'Extreme': { pattern: 'DG + decomp border', joint: 'Border: 3/4" every 4ft', cost: '$9-15/sq ft' },
   },
 };
 
@@ -91,15 +91,15 @@ export default function DFWPatioStonePatternGuide() {
           <div style={{ fontWeight: 600, color: '#F5E642', marginBottom: '0.5rem' }}>🌡️ DFW Thermal Expansion by Material</div>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2,1fr)', gap: '0.6rem' }}>
             {[
-              { mat: 'Concrete Paver', exp: '~3/16″ per 10ft in summer', risk: 'Medium' },
-              { mat: 'Brick', exp: '~1/8″ per 10ft in summer', risk: 'Low' },
+              { mat: 'Concrete Paver', exp: '~3/16" per 10ft in summer', risk: 'Medium' },
+              { mat: 'Brick', exp: '~1/8" per 10ft in summer', risk: 'Low' },
               { mat: 'Flagstone', exp: 'Varies by stone', risk: 'Low-Medium' },
-              { mat: 'Travertine', exp: '~1/4″ per 10ft in summer', risk: 'High' },
+              { mat: 'Travertine', exp: '~1/4" per 10ft in summer', risk: 'High' },
             ].map(item => (
               <div key={item.mat} style={{ background: '#0A1628', borderRadius: 8, padding: '0.7rem' }}>
                 <div style={{ color: '#F5E642', fontWeight: 600 }}>{item.mat}</div>
                 <div style={{ color: '#94A3B8', fontSize: '0.8rem' }}>{item.exp}</div>
-                <div style={{ color: item.risk === 'High' ? '#EF4444′ : item.risk === ’Medium' ? '#F59E0B' : '#22C55E', fontSize: '0.8rem' }}>Risk: {item.risk}</div>
+                <div style={{ color: item.risk === 'High' ? '#EF4444' : item.risk === 'Medium' ? '#F59E0B' : '#22C55E', fontSize: '0.8rem' }}>Risk: {item.risk}</div>
               </div>
             ))}
           </div>

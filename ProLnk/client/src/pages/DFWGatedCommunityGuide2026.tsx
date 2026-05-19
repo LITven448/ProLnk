@@ -44,7 +44,7 @@ export default function DFWGatedCommunityGuide2026() {
             {securityLevels.map((s) => (
               <button key={s.id} onClick={() => setSelected(s.id)}
                 style={{ padding: '8px 16px', borderRadius: 8, border: 'none', cursor: 'pointer', fontSize: 13, fontWeight: 600,
-                  background: selected === s.id ? '#F5E642′ : '#1e2e4a', color: selected === s.id ? '#0A1628' : '#94a3b8' }}>
+                  background: selected === s.id ? '#F5E642' : '#1e2e4a', color: selected === s.id ? '#0A1628' : '#94a3b8' }}>
                 {s.label}
               </button>
             ))}
@@ -57,7 +57,7 @@ export default function DFWGatedCommunityGuide2026() {
                 <div style={{ fontSize: 12, color: '#F5E642', marginBottom: 6, textTransform: 'uppercase', letterSpacing: 1 }}>Security Features</div>
                 {active.features.map((f) => (
                   <div key={f} style={{ display: 'flex', gap: 6, marginBottom: 4, fontSize: 12 }}>
-                    <span style={{ color: '#22c55e' }}>✓</span><span style={{ color: '#cbd5e1′ }}>{f}</span>
+                    <span style={{ color: '#22c55e' }}>✓</span><span style={{ color: '#cbd5e1' }}>{f}</span>
                   </div>
                 ))}
               </div>
@@ -84,7 +84,7 @@ export default function DFWGatedCommunityGuide2026() {
               <span style={{ fontSize: 20 }}>{row.icon}</span>
               <div>
                 <div style={{ fontSize: 13, fontWeight: 700, color: '#fff', marginBottom: 3 }}>{row.title}</div>
-                <div style={{ fontSize: 12, color: '#94a3b8′ }}>{row.note}</div>
+                <div style={{ fontSize: 12, color: '#94a3b8' }}>{row.note}</div>
               </div>
             </div>
           ))}

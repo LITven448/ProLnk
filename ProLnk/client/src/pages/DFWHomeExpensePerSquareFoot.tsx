@@ -69,7 +69,7 @@ export default function DFWHomeExpensePerSquareFoot() {
                 textAlign: 'center',
               }}
             >
-              <div style={{ color: sqft === String(b.sqft) ? '#F5E642′ : '#94a3b8', fontSize: 12, marginBottom: 4 }}>{b.label}</div>
+              <div style={{ color: sqft === String(b.sqft) ? '#F5E642' : '#94a3b8', fontSize: 12, marginBottom: 4 }}>{b.label}</div>
               <div style={{ fontWeight: 700, fontSize: 15 }}>{b.sqft.toLocaleString()} sqft</div>
             </div>
           ))}
@@ -80,7 +80,7 @@ export default function DFWHomeExpensePerSquareFoot() {
             <label style={{ color: '#F5E642', fontWeight: 600, display: 'block', marginBottom: 8 }}>Home Size (sq ft)</label>
             <input
               type="number"
-              placeholder="e.g. 2,100″
+              placeholder="e.g. 2,100"
               value={sqft}
               onChange={e => setSqft(e.target.value)}
               style={{ background: '#1a2f4e', color: '#fff', border: '1px solid #1e3a5f', borderRadius: 8, padding: '10px 14px', width: '100%', fontSize: 15, boxSizing: 'border-box' }}
@@ -107,17 +107,17 @@ export default function DFWHomeExpensePerSquareFoot() {
         <button
           onClick={() => setCalculated(true)}
           disabled={!sqft || !totalMonthly}
-          style={{ background: sqft && totalMonthly ? '#F5E642′ : '#1e3a5f', color: '#0A1628', fontWeight: 700, fontSize: 16, border: ’none', borderRadius: 10, padding: '14px 32px', width: '100%', cursor: sqft && totalMonthly ? 'pointer' : 'not-allowed', marginBottom: 24 }}
+          style={{ background: sqft && totalMonthly ? '#F5E642' : '#1e3a5f', color: '#0A1628', fontWeight: 700, fontSize: 16, border: 'none', borderRadius: 10, padding: '14px 32px', width: '100%', cursor: sqft && totalMonthly ? 'pointer' : 'not-allowed', marginBottom: 24 }}
         >
           Calculate My Cost per Sq Ft
         </button>
 
         {calculated && homeSqft > 0 && totalMonthly > 0 && (
-          <div style={{ background: '#0F2040', borderRadius: 12, padding: 24, borderLeft: '4px solid #F5E642′ }}>
+          <div style={{ background: '#0F2040', borderRadius: 12, padding: 24, borderLeft: '4px solid #F5E642' }}>
             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16, marginBottom: 20 }}>
               <div style={{ background: '#1a2f4e', borderRadius: 8, padding: 16, textAlign: 'center' }}>
                 <div style={{ color: '#94a3b8', fontSize: 13 }}>Your Cost/Sq Ft/Year</div>
-                <div style={{ fontSize: 32, fontWeight: 700, color: '#F5E642′ }}>${userPerSqft.toFixed(2)}</div>
+                <div style={{ fontSize: 32, fontWeight: 700, color: '#F5E642' }}>${userPerSqft.toFixed(2)}</div>
               </div>
               <div style={{ background: '#1a2f4e', borderRadius: 8, padding: 16, textAlign: 'center' }}>
                 <div style={{ color: '#94a3b8', fontSize: 13 }}>DFW Average</div>
@@ -134,7 +134,7 @@ export default function DFWHomeExpensePerSquareFoot() {
                     <span style={{ color: '#cbd5e1', fontSize: 14 }}>{CATEGORY_LABELS[key]}</span>
                     <div style={{ textAlign: 'right' }}>
                       <span style={{ color: '#fff', fontWeight: 700, fontSize: 14 }}>${perSqft.toFixed(2)}/sqft</span>
-                      <span style={{ marginLeft: 8, fontSize: 12, color: delta > 0.2 ? '#f87171′ : delta < -0.2 ? '#34d399' : '#94a3b8' }}>
+                      <span style={{ marginLeft: 8, fontSize: 12, color: delta > 0.2 ? '#f87171' : delta < -0.2 ? '#34d399' : '#94a3b8' }}>
                         {delta > 0.2 ? `▲ +$${delta.toFixed(2)}` : delta < -0.2 ? `▼ -$${Math.abs(delta).toFixed(2)}` : '≈ avg'}
                       </span>
                     </div>
@@ -142,8 +142,8 @@ export default function DFWHomeExpensePerSquareFoot() {
                 );
               })}
             </div>
-            <div style={{ padding: 12, background: userPerSqft > DFW_TOTAL_AVG * 1.15 ? '#2d1515′ : '#0d2d1a', borderRadius: 8 }}>
-              <span style={{ fontWeight: 700, color: userPerSqft > DFW_TOTAL_AVG * 1.15 ? '#f87171′ : '#34d399' }}>
+            <div style={{ padding: 12, background: userPerSqft > DFW_TOTAL_AVG * 1.15 ? '#2d1515' : '#0d2d1a', borderRadius: 8 }}>
+              <span style={{ fontWeight: 700, color: userPerSqft > DFW_TOTAL_AVG * 1.15 ? '#f87171' : '#34d399' }}>
                 {userPerSqft > DFW_TOTAL_AVG * 1.15
                   ? `⚠️ You're ${Math.round(((userPerSqft / DFW_TOTAL_AVG) - 1) * 100)}% above DFW average — ${Math.round((userPerSqft - DFW_TOTAL_AVG) * homeSqft).toLocaleString()} extra/year`
                   : `✅ Your cost of ownership is ${userPerSqft < DFW_TOTAL_AVG ? 'below' : 'near'} DFW average`}

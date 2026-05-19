@@ -53,7 +53,7 @@ export default function DFWHVACHeatRecovery2026() {
           <p style={{ color: '#94a3b8', marginBottom: 20 }}>Select your DFW home situation:</p>
           <div style={{ display: 'flex', flexDirection: 'column', gap: 10, marginBottom: 20 }}>
             {situations.map(s => (
-              <button key={s.value} onClick={() => setSituation(s.value)} style={{ padding: '12px 16px', borderRadius: 8, border: , background: situation === s.value ? '#F5E642′ : '#0A1628', color: situation === s.value ? '#0A1628' : '#fff', cursor: ’pointer', textAlign: 'left', fontWeight: 600 }}>{s.label}</button>
+              <button key={s.value} onClick={() => setSituation(s.value)} style={{ padding: '12px 16px', borderRadius: 8, border: , background: situation === s.value ? '#F5E642' : '#0A1628', color: situation === s.value ? '#0A1628' : '#fff', cursor: 'pointer', textAlign: 'left', fontWeight: 600 }}>{s.label}</button>
             ))}
           </div>
           <button onClick={handleCheck} style={{ background: '#F5E642', color: '#0A1628', border: 'none', borderRadius: 8, padding: '14px 28px', fontWeight: 800, fontSize: 16, cursor: 'pointer', width: '100%' }}>Get My Recommendation</button>

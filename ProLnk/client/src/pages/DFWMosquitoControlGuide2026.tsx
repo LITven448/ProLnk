@@ -24,11 +24,11 @@ export default function DFWMosquitoControlGuide2026() {
   const result = recMap[size]?.[severity];
 
   return (
-    <div style={{ background: "#0A1628″, minHeight: "100vh", color: "#fff", fontFamily: "sans-serif", padding: "2rem" }}>
+    <div style={{ background: "#0A1628", minHeight: "100vh", color: "#fff", fontFamily: "sans-serif", padding: "2rem" }}>
       <div style={{ maxWidth: 800, margin: "0 auto" }}>
-        <div style={{ color: "#F5E642″, fontSize: "0.85rem", marginBottom: "0.5rem" }}>🏠 ProLnk DFW Pest Guide</div>
+        <div style={{ color: "#F5E642", fontSize: "0.85rem", marginBottom: "0.5rem" }}>🏠 ProLnk DFW Pest Guide</div>
         <h1 style={{ fontSize: "2rem", fontWeight: 700, marginBottom: "0.5rem" }}>🦟 DFW Mosquito Control Guide 2026</h1>
-        <p style={{ color: "#94a3b8″, marginBottom: "2rem" }}>Spring rains create standing water across DFW — prime mosquito breeding grounds. West Nile Virus risk peaks July–September in North Texas.</p>
+        <p style={{ color: "#94a3b8", marginBottom: "2rem" }}>Spring rains create standing water across DFW — prime mosquito breeding grounds. West Nile Virus risk peaks July–September in North Texas.</p>
 
         <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "1rem", marginBottom: "2rem" }}>
           {[
@@ -37,43 +37,43 @@ export default function DFWMosquitoControlGuide2026() {
             { icon: "📅", label: "Peak Season", val: "April – October" },
             { icon: "⚡", label: "Top Pro Method", val: "Barrier Spray" },
           ].map(({ icon, label, val }) => (
-            <div key={label} style={{ background: "#111d35″, borderRadius: 10, padding: "1rem", border: "1px solid #1e3a5f" }}>
+            <div key={label} style={{ background: "#111d35", borderRadius: 10, padding: "1rem", border: "1px solid #1e3a5f" }}>
               <div style={{ fontSize: "1.5rem" }}>{icon}</div>
-              <div style={{ color: "#94a3b8″, fontSize: "0.8rem" }}>{label}</div>
-              <div style={{ fontWeight: 700, color: "#F5E642″ }}>{val}</div>
+              <div style={{ color: "#94a3b8", fontSize: "0.8rem" }}>{label}</div>
+              <div style={{ fontWeight: 700, color: "#F5E642" }}>{val}</div>
             </div>
           ))}
         </div>
 
-        <div style={{ background: "#111d35″, borderRadius: 12, padding: "1.5rem", marginBottom: "2rem", border: "1px solid #1e3a5f" }}>
-          <h2 style={{ color: "#F5E642″, marginBottom: "1rem" }}>🔬 Treatment Methods</h2>
+        <div style={{ background: "#111d35", borderRadius: 12, padding: "1.5rem", marginBottom: "2rem", border: "1px solid #1e3a5f" }}>
+          <h2 style={{ color: "#F5E642", marginBottom: "1rem" }}>🔬 Treatment Methods</h2>
           {[
             { name: "In2Care Stations", desc: "Attracts and kills egg-laying females, spreads biological larvicide to breeding sites", best: "Yards with water features" },
             { name: "Barrier Spray", desc: "Pyrethrin applied to foliage where mosquitoes rest; lasts 3–4 weeks", best: "Most DFW residential yards" },
             { name: "Misting System", desc: "Automated timed release, programmable dawn/dusk cycles", best: "Large properties, high-use yards" },
           ].map((t) => (
-            <div key={t.name} style={{ marginBottom: "0.75rem", padding: "0.85rem", background: "#0A1628″, borderRadius: 8, border: "1px solid #1e3a5f" }}>
+            <div key={t.name} style={{ marginBottom: "0.75rem", padding: "0.85rem", background: "#0A1628", borderRadius: 8, border: "1px solid #1e3a5f" }}>
               <div style={{ fontWeight: 700, marginBottom: "0.2rem" }}>{t.name}</div>
-              <div style={{ color: "#94a3b8″, fontSize: "0.85rem", marginBottom: "0.2rem" }}>{t.desc}</div>
-              <div style={{ color: "#F5E642″, fontSize: "0.8rem" }}>Best for: {t.best}</div>
+              <div style={{ color: "#94a3b8", fontSize: "0.85rem", marginBottom: "0.2rem" }}>{t.desc}</div>
+              <div style={{ color: "#F5E642", fontSize: "0.8rem" }}>Best for: {t.best}</div>
             </div>
           ))}
         </div>
 
-        <div style={{ background: "#111d35″, borderRadius: 12, padding: "1.5rem", border: "1px solid #F5E642" }}>
-          <h2 style={{ color: "#F5E642″, marginBottom: "1rem" }}>🧮 Treatment Finder</h2>
+        <div style={{ background: "#111d35", borderRadius: 12, padding: "1.5rem", border: "1px solid #F5E642" }}>
+          <h2 style={{ color: "#F5E642", marginBottom: "1rem" }}>🧮 Treatment Finder</h2>
           <div style={{ display: "flex", gap: "1rem", marginBottom: "1rem", flexWrap: "wrap" }}>
             <div>
-              <label style={{ color: "#94a3b8″, fontSize: "0.85rem" }}>Yard Size</label>
-              <select value={size} onChange={(e) => setSize(e.target.value)} style={{ display: "block", marginTop: "0.25rem", background: "#0A1628″, color: "#fff", border: "1px solid #1e3a5f", borderRadius: 6, padding: "0.5rem 1rem" }}>
+              <label style={{ color: "#94a3b8", fontSize: "0.85rem" }}>Yard Size</label>
+              <select value={size} onChange={(e) => setSize(e.target.value)} style={{ display: "block", marginTop: "0.25rem", background: "#0A1628", color: "#fff", border: "1px solid #1e3a5f", borderRadius: 6, padding: "0.5rem 1rem" }}>
                 <option value="small">Small (&lt;5,000 sqft)</option>
                 <option value="medium">Medium (5K–15K sqft)</option>
                 <option value="large">Large (15K+ sqft)</option>
               </select>
             </div>
             <div>
-              <label style={{ color: "#94a3b8″, fontSize: "0.85rem" }}>Mosquito Pressure</label>
-              <select value={severity} onChange={(e) => setSeverity(e.target.value)} style={{ display: "block", marginTop: "0.25rem", background: "#0A1628″, color: "#fff", border: "1px solid #1e3a5f", borderRadius: 6, padding: "0.5rem 1rem" }}>
+              <label style={{ color: "#94a3b8", fontSize: "0.85rem" }}>Mosquito Pressure</label>
+              <select value={severity} onChange={(e) => setSeverity(e.target.value)} style={{ display: "block", marginTop: "0.25rem", background: "#0A1628", color: "#fff", border: "1px solid #1e3a5f", borderRadius: 6, padding: "0.5rem 1rem" }}>
                 <option value="low">Low (few bites)</option>
                 <option value="moderate">Moderate (active at dusk)</option>
                 <option value="severe">Severe (can't go outside)</option>
@@ -81,10 +81,10 @@ export default function DFWMosquitoControlGuide2026() {
             </div>
           </div>
           {result && (
-            <div style={{ background: "#0A1628″, borderRadius: 8, padding: "1rem", borderLeft: "4px solid #F5E642" }}>
-              <div style={{ fontWeight: 700, color: "#F5E642″, marginBottom: "0.25rem" }}>{result.rec}</div>
+            <div style={{ background: "#0A1628", borderRadius: 8, padding: "1rem", borderLeft: "4px solid #F5E642" }}>
+              <div style={{ fontWeight: 700, color: "#F5E642", marginBottom: "0.25rem" }}>{result.rec}</div>
               <div style={{ color: "#22c55e", fontSize: "0.85rem" }}>Estimated cost: {result.cost}</div>
-              <div style={{ color: "#94a3b8″, fontSize: "0.85rem", marginTop: "0.25rem" }}>💡 {result.note}</div>
+              <div style={{ color: "#94a3b8", fontSize: "0.85rem", marginTop: "0.25rem" }}>💡 {result.note}</div>
             </div>
           )}
         </div>

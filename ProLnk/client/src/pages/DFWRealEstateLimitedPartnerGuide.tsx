@@ -64,11 +64,11 @@ export default function DFWRealEstateLimitedPartnerGuide() {
           <h2 style={{ color: '#F5E642', fontWeight: 700, marginBottom: '1rem', fontSize: '1.15rem' }}>📊 LP Return Estimator</h2>
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: '1rem', marginBottom: '1rem' }}>
             <div style={{ flex: 1, minWidth: 180 }}>
-              <label style={{ display: 'block', marginBottom: 4, fontSize: '0.9rem', color: '#a0aec0′ }}>Investment Amount ($)</label>
-              <input value={investAmount} onChange={(e) => setInvestAmount(e.target.value)} placeholder="e.g. 100000″ style={{ width: '100%', padding: '0.6rem', borderRadius: 8, border: '1px solid #2d3748', background: '#0A1628', color: '#fff', fontSize: '1rem', boxSizing: 'border-box' }} />
+              <label style={{ display: 'block', marginBottom: 4, fontSize: '0.9rem', color: '#a0aec0' }}>Investment Amount ($)</label>
+              <input value={investAmount} onChange={(e) => setInvestAmount(e.target.value)} placeholder="e.g. 100000" style={{ width: '100%', padding: '0.6rem', borderRadius: 8, border: '1px solid #2d3748', background: '#0A1628', color: '#fff', fontSize: '1rem', boxSizing: 'border-box' }} />
             </div>
             <div style={{ flex: 1, minWidth: 140 }}>
-              <label style={{ display: 'block', marginBottom: 4, fontSize: '0.9rem', color: '#a0aec0′ }}>Hold Period (years)</label>
+              <label style={{ display: 'block', marginBottom: 4, fontSize: '0.9rem', color: '#a0aec0' }}>Hold Period (years)</label>
               <select value={holdYears} onChange={(e) => setHoldYears(e.target.value)} style={{ width: '100%', padding: '0.6rem', borderRadius: 8, border: '1px solid #2d3748', background: '#0A1628', color: '#fff', fontSize: '1rem', boxSizing: 'border-box' }}>
                 {['3','5','7','10'].map((y) => <option key={y} value={y}>{y} years</option>)}
               </select>

@@ -63,13 +63,13 @@ export default function DFWFoundationCrackWidth2026() {
           <h2 style={{ color: '#F5E642', marginTop: 0, fontSize: 18 }}>📏 Crack Width</h2>
           <div style={{ display: 'flex', flexDirection: 'column', gap: 8, marginBottom: 24 }}>
             {widths.map(w => (
-              <button key={w.value} onClick={() => setWidth(w.value)} style={{ padding: '11px 14px', borderRadius: 8, border: `2px solid ${width === w.value ? '#F5E642' : '#1e3a5f'}`, background: width === w.value ? '#F5E642′ : '#0A1628', color: width === w.value ? '#0A1628' : '#fff', cursor: ’pointer', textAlign: 'left', fontWeight: 600, fontSize: 14 }}>{w.label}</button>
+              <button key={w.value} onClick={() => setWidth(w.value)} style={{ padding: '11px 14px', borderRadius: 8, border: `2px solid ${width === w.value ? '#F5E642' : '#1e3a5f'}`, background: width === w.value ? '#F5E642' : '#0A1628', color: width === w.value ? '#0A1628' : '#fff', cursor: 'pointer', textAlign: 'left', fontWeight: 600, fontSize: 14 }}>{w.label}</button>
             ))}
           </div>
           <h2 style={{ color: '#F5E642', marginTop: 0, fontSize: 18 }}>↗️ Crack Pattern</h2>
           <div style={{ display: 'flex', flexDirection: 'column', gap: 8, marginBottom: 20 }}>
             {patterns.map(p => (
-              <button key={p.value} onClick={() => setPattern(p.value)} style={{ padding: '11px 14px', borderRadius: 8, border: `2px solid ${pattern === p.value ? '#F5E642' : '#1e3a5f'}`, background: pattern === p.value ? '#F5E642′ : '#0A1628', color: pattern === p.value ? '#0A1628' : '#fff', cursor: ’pointer', textAlign: 'left', fontWeight: 600, fontSize: 14 }}>{p.label}</button>
+              <button key={p.value} onClick={() => setPattern(p.value)} style={{ padding: '11px 14px', borderRadius: 8, border: `2px solid ${pattern === p.value ? '#F5E642' : '#1e3a5f'}`, background: pattern === p.value ? '#F5E642' : '#0A1628', color: pattern === p.value ? '#0A1628' : '#fff', cursor: 'pointer', textAlign: 'left', fontWeight: 600, fontSize: 14 }}>{p.label}</button>
             ))}
           </div>
           <button onClick={assess} style={{ background: '#F5E642', color: '#0A1628', border: 'none', borderRadius: 8, padding: '14px 28px', fontWeight: 800, fontSize: 16, cursor: 'pointer', width: '100%' }}>Assess My Crack</button>
@@ -79,7 +79,7 @@ export default function DFWFoundationCrackWidth2026() {
           <div style={{ background: '#0F1F3D', borderRadius: 16, padding: 28, border: `2px solid ${result.color}` }}>
             <h3 style={{ color: result.color, marginTop: 0, fontSize: 22 }}>Urgency: {result.urgency}</h3>
             <p style={{ color: '#e2e8f0', fontWeight: 600, marginBottom: 8 }}>📋 Action: {result.action}</p>
-            <p style={{ color: '#94a3b8′ }}>{result.detail}</p>
+            <p style={{ color: '#94a3b8' }}>{result.detail}</p>
             <p style={{ color: '#64748b', fontSize: 13, marginTop: 16 }}>ProLnk connects you with licensed DFW foundation specialists who understand expansive clay soil behavior.</p>
           </div>
         )}

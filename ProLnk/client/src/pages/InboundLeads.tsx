@@ -28,19 +28,19 @@ const DECLINE_REASONS = [
 ];
 
 const TRADE_COLORS: Record<string, string> = {
-  "Lawn Care": "#10B981″, "HVAC": "#3B82F6", "Plumbing": "#14B8A6",
-  "Pest Control": "#F59E0B", "Fence & Deck": "#6366F1″, "Roofing": "#F97316",
-  "Electrical": "#EAB308″, "Cleaning": "#EC4899", "Pool Service": "#06B6D4", "Painting": "#8B5CF6",
+  "Lawn Care": "#10B981", "HVAC": "#3B82F6", "Plumbing": "#14B8A6",
+  "Pest Control": "#F59E0B", "Fence & Deck": "#6366F1", "Roofing": "#F97316",
+  "Electrical": "#EAB308", "Cleaning": "#EC4899", "Pool Service": "#06B6D4", "Painting": "#8B5CF6",
 };
 
 const TRADE_BG_COLORS: Record<string, string> = {
-  "Lawn Care": "#ECFDF5″, "HVAC": "#EFF6FF", "Plumbing": "#F0FDFA",
+  "Lawn Care": "#ECFDF5", "HVAC": "#EFF6FF", "Plumbing": "#F0FDFA",
   "Pest Control": "#FFFBEB", "Fence & Deck": "#EEF2FF", "Roofing": "#FFF7ED",
-  "Electrical": "#FEFCE8″, "Cleaning": "#FDF2F8", "Pool Service": "#ECFEFF", "Painting": "#F5F3FF",
+  "Electrical": "#FEFCE8", "Cleaning": "#FDF2F8", "Pool Service": "#ECFEFF", "Painting": "#F5F3FF",
 };
 
 function TradeIcon({ trade, size = 16 }: { trade: string; size?: number }) {
-  const color = TRADE_COLORS[trade] ?? "#6366F1″;
+  const color = TRADE_COLORS[trade] ?? "#6366F1";
   const bg = TRADE_BG_COLORS[trade] ?? "#EEF2FF";
   const cls = `shrink-0 rounded-lg flex items-center justify-center`;
   const style = { width: size * 2.25, height: size * 2.25, backgroundColor: bg };
@@ -56,17 +56,17 @@ function TradeIcon({ trade, size = 16 }: { trade: string; size?: number }) {
 
 function AiMatchScore({ score }: { score: number }) {
   const pct = Math.min(100, Math.max(0, Math.round(score)));
-  const color = pct >= 85 ? "#14B8A6″ : pct >= 65 ? "#3B82F6" : "#F59E0B";
+  const color = pct >= 85 ? "#14B8A6" : pct >= 65 ? "#3B82F6" : "#F59E0B";
   const label = pct >= 85 ? "Excellent" : pct >= 65 ? "Good" : "Fair";
   const circumference = 2 * Math.PI * 20;
   const strokeDashoffset = circumference - (pct / 100) * circumference;
   return (
-    <div className="flex flex-col items-center gap-0.5 flex-shrink-0″>
-      <div className="relative w-14 h-14″>
-        <svg className="w-14 h-14 -rotate-90″ viewBox="0 0 48 48">
-          <circle cx="24″ cy="24" r="20" fill="none" stroke="#E5E7EB" strokeWidth="4" />
+    <div className="flex flex-col items-center gap-0.5 flex-shrink-0">
+      <div className="relative w-14 h-14">
+        <svg className="w-14 h-14 -rotate-90" viewBox="0 0 48 48">
+          <circle cx="24" cy="24" r="20" fill="none" stroke="#E5E7EB" strokeWidth="4" />
           <circle
-            cx="24″ cy="24" r="20" fill="none" strokeWidth="4"
+            cx="24" cy="24" r="20" fill="none" strokeWidth="4"
             stroke={color}
             strokeDasharray={circumference}
             strokeDashoffset={strokeDashoffset}
@@ -86,10 +86,10 @@ function AiMatchScore({ score }: { score: number }) {
 function MatchReasonPills({ reasons }: { reasons: string[] }) {
   if (!reasons.length) return null;
   return (
-    <div className="flex flex-wrap gap-1.5 mt-2″>
+    <div className="flex flex-wrap gap-1.5 mt-2">
       {reasons.map((r) => (
         <span key={r} className="inline-flex items-center gap-1 text-xs bg-teal-50 text-teal-700 border border-teal-100 px-2 py-0.5 rounded-full font-medium">
-          <ShieldCheck className="w-3 h-3″ />{r}
+          <ShieldCheck className="w-3 h-3" />{r}
         </span>
       ))}
     </div>
@@ -115,24 +115,24 @@ function deriveMatchReasons(lead: any): string[] {
 
 function AcceptedConfirmation({ onClose }: { onClose: () => void }) {
   return (
-    <div className="mt-4 rounded-xl border border-emerald-200 bg-emerald-50 p-4 space-y-3″>
-      <div className="flex items-center gap-2″>
-        <CheckCircle className="w-5 h-5 text-emerald-600 shrink-0″ />
+    <div className="mt-4 rounded-xl border border-emerald-200 bg-emerald-50 p-4 space-y-3">
+      <div className="flex items-center gap-2">
+        <CheckCircle className="w-5 h-5 text-emerald-600 shrink-0" />
         <p className="font-semibold text-emerald-800 text-sm">Lead accepted — the homeowner has been notified</p>
       </div>
-      <div className="bg-white rounded-lg border border-emerald-100 p-3 space-y-2″>
+      <div className="bg-white rounded-lg border border-emerald-100 p-3 space-y-2">
         <p className="text-xs font-bold text-gray-600 uppercase tracking-wide">Next Steps</p>
-        <p className="text-sm text-gray-700″>
-          <span className="font-semibold text-emerald-700″>1.</span> Contact the homeowner within 2 hours to maximize close rate
+        <p className="text-sm text-gray-700">
+          <span className="font-semibold text-emerald-700">1.</span> Contact the homeowner within 2 hours to maximize close rate
         </p>
-        <p className="text-sm text-gray-700″>
-          <span className="font-semibold text-gray-500″>2.</span> Confirm job scope and schedule an estimate visit
+        <p className="text-sm text-gray-700">
+          <span className="font-semibold text-gray-500">2.</span> Confirm job scope and schedule an estimate visit
         </p>
-        <p className="text-sm text-gray-700″>
-          <span className="font-semibold text-gray-500″>3.</span> Mark job complete once finished to unlock your commission
+        <p className="text-sm text-gray-700">
+          <span className="font-semibold text-gray-500">3.</span> Mark job complete once finished to unlock your commission
         </p>
       </div>
-      <button onClick={onClose} className="text-xs text-emerald-600 hover:text-emerald-800 underline underline-offset-2″>
+      <button onClick={onClose} className="text-xs text-emerald-600 hover:text-emerald-800 underline underline-offset-2">
         Dismiss
       </button>
     </div>
@@ -167,11 +167,11 @@ function CountdownTimer({ expiresAt }: { expiresAt: string | Date | null }) {
   const urgent = t.total < 4 * 3600 * 1000;
   const expired = t.total === 0;
   if (expired) return (
-    <span className="text-xs font-bold px-2.5 py-0.5 rounded-full bg-red-100 text-red-700 border border-red-200″>Expired</span>
+    <span className="text-xs font-bold px-2.5 py-0.5 rounded-full bg-red-100 text-red-700 border border-red-200">Expired</span>
   );
   return (
     <span className={`text-xs font-bold px-2.5 py-0.5 rounded-full flex items-center gap-1 ${urgent ? "bg-amber-100 text-amber-700 border border-amber-200" : "bg-blue-50 text-blue-600 border border-blue-100"}`}>
-      <Timer className="w-3 h-3″ />
+      <Timer className="w-3 h-3" />
       {t.hours > 0 ? `${t.hours}h ${t.minutes}m` : `${t.minutes}m`} left
     </span>
   );
@@ -231,72 +231,72 @@ export default function InboundLeads() {
 
   return (
     <PartnerLayout>
-      <div className="max-w-3xl mx-auto px-4 py-8 space-y-6″>
+      <div className="max-w-3xl mx-auto px-4 py-8 space-y-6">
         <div className="flex items-center justify-between">
           <div>
-            <h1 className="text-2xl font-heading font-bold text-gray-900 flex items-center gap-3″>
+            <h1 className="text-2xl font-heading font-bold text-gray-900 flex items-center gap-3">
               <Inbox className="w-6 h-6 text-[#0A1628]" />Inbound Leads
             </h1>
-            <p className="text-sm text-gray-500 mt-1″>Leads routed to you by the ProLnk AI network</p>
+            <p className="text-sm text-gray-500 mt-1">Leads routed to you by the ProLnk AI network</p>
           </div>
-          <div className="flex items-center gap-2″>
+          <div className="flex items-center gap-2">
             {pending.length > 0 && (
-              <Badge className="bg-amber-100 text-amber-700 border-amber-200″>{pending.length} Pending</Badge>
+              <Badge className="bg-amber-100 text-amber-700 border-amber-200">{pending.length} Pending</Badge>
             )}
             <Button variant="outline" size="sm" onClick={() => refetch()}>
-              <RefreshCw className="w-4 h-4 mr-2″ />Refresh
+              <RefreshCw className="w-4 h-4 mr-2" />Refresh
             </Button>
           </div>
         </div>
 
         <Tabs defaultValue="network">
-          <TabsList className="w-full mb-4″>
-            <TabsTrigger value="network" className="flex-1″>
+          <TabsList className="w-full mb-4">
+            <TabsTrigger value="network" className="flex-1">
               Network Leads {pending.length > 0 && <Badge className="ml-1.5 bg-amber-100 text-amber-700 border-0 text-xs">{pending.length}</Badge>}
             </TabsTrigger>
-            <TabsTrigger value="trustypro" className="flex-1″>
+            <TabsTrigger value="trustypro" className="flex-1">
               TrustyPro Leads {newTrustyLeads.length > 0 && <Badge className="ml-1.5 bg-indigo-100 text-indigo-700 border-0 text-xs">{newTrustyLeads.length}</Badge>}
             </TabsTrigger>
           </TabsList>
           <TabsContent value="network">
         {isLoading && (
-          <div className="flex items-center justify-center py-16 text-gray-400″>
-            <RefreshCw className="w-6 h-6 animate-spin mr-3″ />Loading leads...
+          <div className="flex items-center justify-center py-16 text-gray-400">
+            <RefreshCw className="w-6 h-6 animate-spin mr-3" />Loading leads...
           </div>
         )}
 
         {!isLoading && leads.length === 0 && (
           <Card className="border-dashed border-2 border-gray-200 overflow-hidden">
-            <CardContent className="p-0″>
+            <CardContent className="p-0">
               <div className="flex flex-col items-center justify-center pt-12 pb-8 px-6 text-center">
                 <div className="w-20 h-20 rounded-2xl bg-gradient-to-br from-teal-50 to-blue-50 border border-teal-100 flex items-center justify-center mb-5 shadow-sm">
-                  <Inbox className="w-9 h-9 text-teal-500″ />
+                  <Inbox className="w-9 h-9 text-teal-500" />
                 </div>
-                <h3 className="font-heading font-bold text-gray-800 text-xl mb-2″>Your first lead will appear here</h3>
-                <p className="text-sm text-gray-500 max-w-xs mb-6″>
+                <h3 className="font-heading font-bold text-gray-800 text-xl mb-2">Your first lead will appear here</h3>
+                <p className="text-sm text-gray-500 max-w-xs mb-6">
                   The ProLnk AI network scans job photos 24/7. When a homeowner in your area requests a quote that matches your trade, you'll get notified instantly.
                 </p>
-                <div className="w-full max-w-xs space-y-3 mb-6″>
+                <div className="w-full max-w-xs space-y-3 mb-6">
                   <div className="flex items-start gap-3 bg-teal-50 rounded-xl p-3.5 border border-teal-100 text-left">
-                    <Camera className="w-5 h-5 text-teal-600 mt-0.5 shrink-0″ />
+                    <Camera className="w-5 h-5 text-teal-600 mt-0.5 shrink-0" />
                     <div>
-                      <p className="text-sm font-semibold text-gray-800″>Upload job photos to trigger AI lead detection</p>
-                      <p className="text-xs text-gray-500 mt-0.5″>Our AI finds work that matches your trade</p>
+                      <p className="text-sm font-semibold text-gray-800">Upload job photos to trigger AI lead detection</p>
+                      <p className="text-xs text-gray-500 mt-0.5">Our AI finds work that matches your trade</p>
                     </div>
                   </div>
                   <div className="flex items-start gap-3 bg-blue-50 rounded-xl p-3.5 border border-blue-100 text-left">
-                    <MapPin className="w-5 h-5 text-blue-500 mt-0.5 shrink-0″ />
+                    <MapPin className="w-5 h-5 text-blue-500 mt-0.5 shrink-0" />
                     <div>
-                      <p className="text-sm font-semibold text-gray-800″>Or wait for homeowners in your area to request quotes</p>
-                      <p className="text-xs text-gray-500 mt-0.5″>Leads are routed based on your trade and service area</p>
+                      <p className="text-sm font-semibold text-gray-800">Or wait for homeowners in your area to request quotes</p>
+                      <p className="text-xs text-gray-500 mt-0.5">Leads are routed based on your trade and service area</p>
                     </div>
                   </div>
                 </div>
                 <Button
-                  className="bg-teal-600 hover:bg-teal-700 text-white px-6″
+                  className="bg-teal-600 hover:bg-teal-700 text-white px-6"
                   onClick={() => navigate("/photo-upload")}
                 >
-                  <Camera className="w-4 h-4 mr-2″ />Upload Photos
+                  <Camera className="w-4 h-4 mr-2" />Upload Photos
                 </Button>
               </div>
             </CardContent>
@@ -304,7 +304,7 @@ export default function InboundLeads() {
         )}
 
         {pending.length > 0 && (
-          <div className="space-y-4″>
+          <div className="space-y-4">
             <h2 className="text-sm font-semibold text-gray-500 uppercase tracking-wide">Pending Response</h2>
             {pending.map((lead: any) => {
               const aiResult = lead.aiAnalysisResult as any;
@@ -312,7 +312,7 @@ export default function InboundLeads() {
               const t = timeLeft(lead.leadExpiresAt);
               const isExpiringSoon = t !== null && t.total < 4 * 3600 * 1000;
               const trade = lead.opportunityCategory ?? "General";
-              const tradeColor = TRADE_COLORS[trade] ?? "#6366F1″;
+              const tradeColor = TRADE_COLORS[trade] ?? "#6366F1";
               const isOpen = expanded === lead.id;
               const estimatedValue = topOpp?.estimatedValue ?? lead.estimatedValue;
               const matchScore = aiResult?.matchScore ?? aiResult?.confidence ?? topOpp?.confidence ?? 87;
@@ -332,28 +332,28 @@ export default function InboundLeads() {
 
               return (
                 <Card key={lead.id} className={`border-2 transition-all ${isExpiringSoon ? "border-amber-300" : "border-gray-200 hover:border-teal-300"}`}>
-                  <CardContent className="p-5″>
+                  <CardContent className="p-5">
                     {/* Header row: AI score + trade info + value */}
-                    <div className="flex items-start gap-3″>
+                    <div className="flex items-start gap-3">
                       <AiMatchScore score={matchScore} />
-                      <div className="flex-1 min-w-0″>
+                      <div className="flex-1 min-w-0">
                         <div className="flex items-center gap-2 mb-1 flex-wrap">
                           <span className="text-xs font-bold px-2.5 py-0.5 rounded-full text-white" style={{ backgroundColor: tradeColor }}>
                             {trade}
                           </span>
                           {isHighValue && (
-                            <span className="inline-flex items-center gap-1 text-xs font-bold px-2 py-0.5 rounded-full bg-yellow-100 text-yellow-700 border border-yellow-200″>
-                              <Star className="w-3 h-3 fill-yellow-500 text-yellow-500″ />High Value
+                            <span className="inline-flex items-center gap-1 text-xs font-bold px-2 py-0.5 rounded-full bg-yellow-100 text-yellow-700 border border-yellow-200">
+                              <Star className="w-3 h-3 fill-yellow-500 text-yellow-500" />High Value
                             </span>
                           )}
                           {isUrgent && (
-                            <span className="inline-flex items-center gap-1 text-xs font-bold px-2 py-0.5 rounded-full bg-red-100 text-red-700 border border-red-200″>
-                              <Flame className="w-3 h-3″ />Urgent
+                            <span className="inline-flex items-center gap-1 text-xs font-bold px-2 py-0.5 rounded-full bg-red-100 text-red-700 border border-red-200">
+                              <Flame className="w-3 h-3" />Urgent
                             </span>
                           )}
                           <CountdownTimer expiresAt={lead.leadExpiresAt} />
                           {lead.status === "accepted" && !showAccepted && (
-                            <Badge className="bg-emerald-100 text-emerald-700 border-emerald-200″>Accepted</Badge>
+                            <Badge className="bg-emerald-100 text-emerald-700 border-emerald-200">Accepted</Badge>
                           )}
                         </div>
                         <p className="font-bold text-gray-900 text-base leading-snug">
@@ -362,11 +362,11 @@ export default function InboundLeads() {
                         <MatchReasonPills reasons={matchReasons} />
                       </div>
                       {estimatedValue && (
-                        <div className="text-right flex-shrink-0 ml-2″>
+                        <div className="text-right flex-shrink-0 ml-2">
                           <div className="text-2xl font-heading font-bold text-gray-900 leading-none">
                             ${Number(estimatedValue).toLocaleString()}
                           </div>
-                          <div className="text-xs text-gray-400 mt-0.5″>est. value</div>
+                          <div className="text-xs text-gray-400 mt-0.5">est. value</div>
                         </div>
                       )}
                     </div>
@@ -374,29 +374,29 @@ export default function InboundLeads() {
                     {/* Meta row */}
                     <div className="flex items-center gap-3 mt-2 text-xs text-gray-400 flex-wrap">
                       {partialAddress && (
-                        <span className="flex items-center gap-1″>
-                          <MapPin className="w-3 h-3″ />{partialAddress}
+                        <span className="flex items-center gap-1">
+                          <MapPin className="w-3 h-3" />{partialAddress}
                         </span>
                       )}
-                      <span className="flex items-center gap-1″>
-                        <Clock className="w-3 h-3″ />Detected {relativeTime(lead.createdAt)}
+                      <span className="flex items-center gap-1">
+                        <Clock className="w-3 h-3" />Detected {relativeTime(lead.createdAt)}
                       </span>
                     </div>
 
                     {/* Accept / Pass buttons — always visible for dispatched leads */}
                     {lead.status === "dispatched" && !showAccepted && (
-                      <div className="flex gap-2 mt-4″>
+                      <div className="flex gap-2 mt-4">
                         <Button
                           className="flex-1 bg-teal-600 hover:bg-teal-700 text-white font-semibold shadow-sm"
                           disabled={respondMutation.isPending}
                           onClick={() => respondMutation.mutate({ opportunityId: lead.id, response: "accepted" })}
                         >
-                          <CheckCircle className="w-4 h-4 mr-2″ />Accept Lead
+                          <CheckCircle className="w-4 h-4 mr-2" />Accept Lead
                         </Button>
                         <Button
                           variant="outline"
                           size="default"
-                          className="text-gray-500 border-gray-200 hover:bg-gray-50 px-4″
+                          className="text-gray-500 border-gray-200 hover:bg-gray-50 px-4"
                           disabled={respondMutation.isPending}
                           onClick={() => { setDeclineReason(""); setDeclineDialog({ id: lead.id }); }}
                         >
@@ -418,21 +418,21 @@ export default function InboundLeads() {
 
                     {/* Expand toggle for extra details */}
                     <button
-                      className="mt-3 text-xs text-gray-400 hover:text-gray-600 flex items-center gap-1″
+                      className="mt-3 text-xs text-gray-400 hover:text-gray-600 flex items-center gap-1"
                       onClick={() => setExpanded(isOpen ? null : lead.id)}
                     >
-                      {isOpen ? <><ChevronUp className="w-3 h-3″ />Hide details</> : <><ChevronDown className="w-3 h-3" />More details</>}
+                      {isOpen ? <><ChevronUp className="w-3 h-3" />Hide details</> : <><ChevronDown className="w-3 h-3" />More details</>}
                     </button>
 
                     {isOpen && (
-                      <div className="mt-3 pt-3 border-t border-gray-100 space-y-3″>
+                      <div className="mt-3 pt-3 border-t border-gray-100 space-y-3">
                         {(topOpp?.description ?? lead.description) && (
-                          <p className="text-sm text-gray-600″>{topOpp?.description ?? lead.description}</p>
+                          <p className="text-sm text-gray-600">{topOpp?.description ?? lead.description}</p>
                         )}
                         {aiResult?.analysisNotes && (
-                          <div className="bg-purple-50 border border-purple-200 rounded-xl p-3″>
-                            <p className="text-xs font-semibold text-purple-700 mb-1″>AI Analysis Notes</p>
-                            <p className="text-sm text-purple-900″>{aiResult.analysisNotes}</p>
+                          <div className="bg-purple-50 border border-purple-200 rounded-xl p-3">
+                            <p className="text-xs font-semibold text-purple-700 mb-1">AI Analysis Notes</p>
+                            <p className="text-sm text-purple-900">{aiResult.analysisNotes}</p>
                           </div>
                         )}
                         {lead.status === "accepted" && (
@@ -446,7 +446,7 @@ export default function InboundLeads() {
                               }
                             }}
                           >
-                            <DollarSign className="w-4 h-4 mr-2″ />Mark Job Complete & Enter Value
+                            <DollarSign className="w-4 h-4 mr-2" />Mark Job Complete & Enter Value
                           </Button>
                         )}
                       </div>
@@ -459,19 +459,19 @@ export default function InboundLeads() {
         )}
 
         {history.length > 0 && (
-          <div className="space-y-3″>
+          <div className="space-y-3">
             <h2 className="text-sm font-semibold text-gray-500 uppercase tracking-wide">History</h2>
             {history.map((lead: any) => {
               const aiResult = lead.aiAnalysisResult as any;
               const topOpp = aiResult?.opportunities?.[0];
-              const statusColor = lead.status === "closed" ? "bg-emerald-100 text-emerald-700″ : lead.status === "declined" ? "bg-red-100 text-red-700" : "bg-gray-100 text-gray-600";
+              const statusColor = lead.status === "closed" ? "bg-emerald-100 text-emerald-700" : lead.status === "declined" ? "bg-red-100 text-red-700" : "bg-gray-100 text-gray-600";
               return (
-                <Card key={lead.id} className="border border-gray-100 opacity-80″>
-                  <CardContent className="p-4″>
-                    <div className="flex items-center justify-between gap-4″>
-                      <div className="flex-1 min-w-0″>
+                <Card key={lead.id} className="border border-gray-100 opacity-80">
+                  <CardContent className="p-4">
+                    <div className="flex items-center justify-between gap-4">
+                      <div className="flex-1 min-w-0">
                         <p className="font-semibold text-gray-800 text-sm">{topOpp?.type ?? lead.opportunityType ?? "Opportunity"}</p>
-                        <p className="text-xs text-gray-500 mt-0.5″>{relativeTime(lead.createdAt)}</p>
+                        <p className="text-xs text-gray-500 mt-0.5">{relativeTime(lead.createdAt)}</p>
                       </div>
                       <Badge className={statusColor}>{lead.status}</Badge>
                     </div>
@@ -484,17 +484,17 @@ export default function InboundLeads() {
           </TabsContent>
           {/* TrustyPro Leads Tab */}
           <TabsContent value="trustypro">
-            <div className="space-y-4″>
+            <div className="space-y-4">
               {trustyLoading && (
-                <div className="flex items-center justify-center py-16 text-gray-400″>
-                  <RefreshCw className="w-6 h-6 animate-spin mr-3″ />Loading TrustyPro leads...
+                <div className="flex items-center justify-center py-16 text-gray-400">
+                  <RefreshCw className="w-6 h-6 animate-spin mr-3" />Loading TrustyPro leads...
                 </div>
               )}
               {!trustyLoading && (trustyLeads as any[]).length === 0 && (
-                <div className="text-center py-16 text-gray-400″>
-                  <Home className="w-10 h-10 mx-auto mb-3 opacity-30″ />
-                  <p className="font-medium text-gray-600″>No TrustyPro leads yet</p>
-                  <p className="text-sm mt-1″>When a homeowner AI scan matches your trade, leads appear here</p>
+                <div className="text-center py-16 text-gray-400">
+                  <Home className="w-10 h-10 mx-auto mb-3 opacity-30" />
+                  <p className="font-medium text-gray-600">No TrustyPro leads yet</p>
+                  <p className="text-sm mt-1">When a homeowner AI scan matches your trade, leads appear here</p>
                 </div>
               )}
               {(trustyLeads as any[]).map((lead) => {
@@ -502,63 +502,63 @@ export default function InboundLeads() {
                 const isExpanded = trustyExpanded === lead.id;
                 const isNew = lead.status === "new" || lead.status === "matched";
                 const statusColors: Record<string, string> = {
-                  new: "bg-blue-100 text-blue-700″, matched: "bg-indigo-100 text-indigo-700",
-                  contacted: "bg-green-100 text-green-700″, closed: "bg-gray-100 text-gray-600", lost: "bg-red-100 text-red-600",
+                  new: "bg-blue-100 text-blue-700", matched: "bg-indigo-100 text-indigo-700",
+                  contacted: "bg-green-100 text-green-700", closed: "bg-gray-100 text-gray-600", lost: "bg-red-100 text-red-600",
                 };
                 return (
                   <Card key={lead.id} className={`border ${isNew ? "border-indigo-200 shadow-sm" : "border-gray-100 opacity-80"}`}>
-                    <CardContent className="p-4″>
+                    <CardContent className="p-4">
                       <div className="flex items-start justify-between gap-3 flex-wrap">
-                        <div className="flex-1 min-w-0″>
-                          <div className="flex items-center gap-2 flex-wrap mb-1″>
-                            <Home className="w-4 h-4 text-indigo-500 shrink-0″ />
-                            <span className="font-bold text-gray-900″>{lead.address ?? "Address on file"}</span>
+                        <div className="flex-1 min-w-0">
+                          <div className="flex items-center gap-2 flex-wrap mb-1">
+                            <Home className="w-4 h-4 text-indigo-500 shrink-0" />
+                            <span className="font-bold text-gray-900">{lead.address ?? "Address on file"}</span>
                             <span className={`text-xs font-semibold px-2 py-0.5 rounded-full ${statusColors[lead.status] ?? "bg-gray-100 text-gray-600"}`}>{lead.status}</span>
                           </div>
-                          <p className="text-xs text-gray-500″>{new Date(lead.createdAt).toLocaleDateString()}</p>
+                          <p className="text-xs text-gray-500">{new Date(lead.createdAt).toLocaleDateString()}</p>
                           {analysis?.overallCondition && (
                             <p className="text-xs text-indigo-600 mt-1 font-medium">AI Condition: {analysis.overallCondition.replace("_", " ")}</p>
                           )}
                         </div>
                         <Button variant="outline" size="sm" className="text-xs" onClick={() => setTrustyExpanded(isExpanded ? null : lead.id)}>
-                          <Eye className="w-3 h-3 mr-1″ />{isExpanded ? "Hide" : "View Scan"}
+                          <Eye className="w-3 h-3 mr-1" />{isExpanded ? "Hide" : "View Scan"}
                         </Button>
                       </div>
 
                       {isExpanded && analysis && (
-                        <div className="mt-3 bg-indigo-50 rounded-lg p-3 space-y-2″>
-                          {analysis.summary && <p className="text-sm text-gray-700″>{analysis.summary}</p>}
+                        <div className="mt-3 bg-indigo-50 rounded-lg p-3 space-y-2">
+                          {analysis.summary && <p className="text-sm text-gray-700">{analysis.summary}</p>}
                           {(analysis.issues ?? []).slice(0, 5).map((issue: any, idx: number) => (
-                            <div key={idx} className="flex items-center gap-2 text-xs bg-white rounded px-2 py-1.5 border border-indigo-100″>
+                            <div key={idx} className="flex items-center gap-2 text-xs bg-white rounded px-2 py-1.5 border border-indigo-100">
                               <span className={`w-2 h-2 rounded-full shrink-0 ${issue.severity === "urgent" ? "bg-red-500" : issue.severity === "moderate" ? "bg-amber-500" : "bg-green-500"}`} />
-                              <span className="font-semibold text-gray-800 flex-1″>{issue.name}</span>
-                              <span className="text-gray-500″>{issue.tradeType}</span>
-                              <span className="text-gray-400″>{issue.estimatedCost}</span>
+                              <span className="font-semibold text-gray-800 flex-1">{issue.name}</span>
+                              <span className="text-gray-500">{issue.tradeType}</span>
+                              <span className="text-gray-400">{issue.estimatedCost}</span>
                             </div>
                           ))}
                         </div>
                       )}
 
                       {(lead.status === "contacted" || lead.status === "closed") && (
-                        <div className="mt-3 bg-green-50 rounded-lg p-3 space-y-1 border border-green-200″>
-                          <p className="text-xs font-bold text-green-700 mb-1″>Homeowner Contact</p>
-                          {lead.name && <p className="text-sm font-semibold text-gray-800″>{lead.name}</p>}
-                          {lead.email && <a href={`mailto:${lead.email}`} className="flex items-center gap-1.5 text-sm text-blue-600 hover:underline"><Mail className="w-3.5 h-3.5″ />{lead.email}</a>}
-                          {lead.phone && <a href={`tel:${lead.phone}`} className="flex items-center gap-1.5 text-sm text-blue-600 hover:underline"><Phone className="w-3.5 h-3.5″ />{lead.phone}</a>}
+                        <div className="mt-3 bg-green-50 rounded-lg p-3 space-y-1 border border-green-200">
+                          <p className="text-xs font-bold text-green-700 mb-1">Homeowner Contact</p>
+                          {lead.name && <p className="text-sm font-semibold text-gray-800">{lead.name}</p>}
+                          {lead.email && <a href={`mailto:${lead.email}`} className="flex items-center gap-1.5 text-sm text-blue-600 hover:underline"><Mail className="w-3.5 h-3.5" />{lead.email}</a>}
+                          {lead.phone && <a href={`tel:${lead.phone}`} className="flex items-center gap-1.5 text-sm text-blue-600 hover:underline"><Phone className="w-3.5 h-3.5" />{lead.phone}</a>}
                         </div>
                       )}
 
                       {isNew && (
-                        <div className="mt-3 flex gap-2″>
+                        <div className="mt-3 flex gap-2">
                           <Button size="sm" className="flex-1 bg-[#0A1628] hover:bg-teal-700 text-white"
                             disabled={respondTrustyMutation.isPending}
                             onClick={() => respondTrustyMutation.mutate({ leadId: lead.id, response: "accepted" })}>
-                            <CheckCircle className="w-4 h-4 mr-2″ />Accept & Unlock Contact
+                            <CheckCircle className="w-4 h-4 mr-2" />Accept & Unlock Contact
                           </Button>
-                          <Button variant="outline" size="sm" className="flex-1 border-red-200 text-red-600 hover:bg-red-50″
+                          <Button variant="outline" size="sm" className="flex-1 border-red-200 text-red-600 hover:bg-red-50"
                             disabled={respondTrustyMutation.isPending}
                             onClick={() => { setTrustyDeclineReason(""); setTrustyDeclineDialog({ id: lead.id }); }}>
-                            <XCircle className="w-4 h-4 mr-2″ />Decline
+                            <XCircle className="w-4 h-4 mr-2" />Decline
                           </Button>
                         </div>
                       )}
@@ -574,9 +574,9 @@ export default function InboundLeads() {
       <Dialog open={!!trustyDeclineDialog} onOpenChange={(open) => { if (!open) setTrustyDeclineDialog(null); }}>
         <DialogContent className="max-w-sm">
           <DialogHeader><DialogTitle>Decline This TrustyPro Lead</DialogTitle></DialogHeader>
-          <div className="space-y-3 py-2″>
-            <Label className="text-sm text-gray-600″>Why are you declining?</Label>
-            <div className="grid grid-cols-1 gap-2″>
+          <div className="space-y-3 py-2">
+            <Label className="text-sm text-gray-600">Why are you declining?</Label>
+            <div className="grid grid-cols-1 gap-2">
               {DECLINE_REASONS.map((reason) => (
                 <button key={reason} onClick={() => setTrustyDeclineReason(reason)}
                   className={`text-left px-3 py-2 rounded-lg border text-sm transition-colors ${trustyDeclineReason === reason ? "border-[#0A1628] bg-[#0A1628]/5 text-[#0A1628] font-medium" : "border-gray-200 hover:border-gray-300 text-gray-700"}`}>
@@ -585,7 +585,7 @@ export default function InboundLeads() {
               ))}
             </div>
           </div>
-          <DialogFooter className="gap-2″>
+          <DialogFooter className="gap-2">
             <Button variant="outline" onClick={() => setTrustyDeclineDialog(null)}>Cancel</Button>
             <Button className="bg-red-600 hover:bg-red-700 text-white"
               disabled={!trustyDeclineReason || respondTrustyMutation.isPending}
@@ -596,7 +596,7 @@ export default function InboundLeads() {
                   { onSettled: () => setTrustyDeclineDialog(null) }
                 );
               }}>
-              <XCircle className="w-4 h-4 mr-2″ />Confirm Decline
+              <XCircle className="w-4 h-4 mr-2" />Confirm Decline
             </Button>
           </DialogFooter>
         </DialogContent>
@@ -608,9 +608,9 @@ export default function InboundLeads() {
           <DialogHeader>
             <DialogTitle>Decline This Lead</DialogTitle>
           </DialogHeader>
-          <div className="space-y-3 py-2″>
-            <Label className="text-sm text-gray-600″>Why are you declining? (helps us route better)</Label>
-            <div className="grid grid-cols-1 gap-2″>
+          <div className="space-y-3 py-2">
+            <Label className="text-sm text-gray-600">Why are you declining? (helps us route better)</Label>
+            <div className="grid grid-cols-1 gap-2">
               {DECLINE_REASONS.map((reason) => (
                 <button
                   key={reason}
@@ -618,7 +618,7 @@ export default function InboundLeads() {
                   className={`text-left px-3 py-2 rounded-lg border text-sm transition-colors ${
                     declineReason === reason
                       ? "border-[#0A1628] bg-[#0A1628]/5 text-[#0A1628] font-medium"
-                      : "border-gray-200 hover:border-gray-300 text-gray-700″
+                      : "border-gray-200 hover:border-gray-300 text-gray-700"
                   }`}
                 >
                   {reason}
@@ -626,7 +626,7 @@ export default function InboundLeads() {
               ))}
             </div>
           </div>
-          <DialogFooter className="gap-2″>
+          <DialogFooter className="gap-2">
             <Button variant="outline" onClick={() => setDeclineDialog(null)}>Cancel</Button>
             <Button
               className="bg-red-600 hover:bg-red-700 text-white"
@@ -639,7 +639,7 @@ export default function InboundLeads() {
                 );
               }}
             >
-              <XCircle className="w-4 h-4 mr-2″ />Confirm Decline
+              <XCircle className="w-4 h-4 mr-2" />Confirm Decline
             </Button>
           </DialogFooter>
         </DialogContent>

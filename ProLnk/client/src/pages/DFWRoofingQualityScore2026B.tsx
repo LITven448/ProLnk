@@ -13,9 +13,9 @@ export default function DFWRoofingQualityScore2026B() {
     (localOffice ? 1 : 0) + (pullsPermit ? 1 : 0) + (writtenContract ? 1 : 0);
 
   const rating = score >= 8 ? { label: 'Elite', color: '#22c55e' }
-    : score >= 6 ? { label: 'Qualified', color: '#F5E642′ }
-    : score >= 4 ? { label: 'Acceptable', color: '#f97316′ }
-    : { label: 'Avoid', color: '#ef4444′ };
+    : score >= 6 ? { label: 'Qualified', color: '#F5E642' }
+    : score >= 4 ? { label: 'Acceptable', color: '#f97316' }
+    : { label: 'Avoid', color: '#ef4444' };
 
   const certOptions: { val: 'none'|'basic'|'preferred'|'elite', label: string, pts: number }[] = [
     { val: 'none', label: 'No Certification', pts: 0 },
@@ -25,7 +25,7 @@ export default function DFWRoofingQualityScore2026B() {
   ];
 
   return (
-    <div style={{ background: '#0A1628', minHeight: '100vh', padding: '2rem', fontFamily: 'sans-serif', color: '#e2e8f0′ }}>
+    <div style={{ background: '#0A1628', minHeight: '100vh', padding: '2rem', fontFamily: 'sans-serif', color: '#e2e8f0' }}>
       <div style={{ maxWidth: '680px', margin: '0 auto' }}>
         <div style={{ textAlign: 'center', marginBottom: '2rem' }}>
           <h1 style={{ color: '#F5E642', fontSize: '1.6rem', fontWeight: 700, marginBottom: '0.5rem' }}>
@@ -41,8 +41,8 @@ export default function DFWRoofingQualityScore2026B() {
               {certOptions.map(opt => (
                 <button key={opt.val} onClick={() => setMfgCertLevel(opt.val)}
                   style={{ padding: '0.4rem 0.75rem', borderRadius: '8px', border: 'none', cursor: 'pointer', fontSize: '0.8rem', fontWeight: 600,
-                    background: mfgCertLevel === opt.val ? '#F5E642′ : '#1e2d47',
-                    color: mfgCertLevel === opt.val ? '#0A1628′ : '#94a3b8' }}>
+                    background: mfgCertLevel === opt.val ? '#F5E642' : '#1e2d47',
+                    color: mfgCertLevel === opt.val ? '#0A1628' : '#94a3b8' }}>
                   {opt.label} (+{opt.pts})
                 </button>
               ))}
@@ -58,7 +58,7 @@ export default function DFWRoofingQualityScore2026B() {
           ].map((c, i) => (
             <label key={i} style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', padding: '0.6rem 0', borderTop: '1px solid #1e2d47', cursor: 'pointer' }}>
               <input type="checkbox" checked={c.value} onChange={e => c.set(e.target.checked)}
-                style={{ width: '18px', height: '18px', accentColor: '#F5E642′ }} />
+                style={{ width: '18px', height: '18px', accentColor: '#F5E642' }} />
               <span style={{ flex: 1, fontSize: '0.9rem' }}>{c.label}</span>
               <span style={{ color: '#F5E642', fontWeight: 600, fontSize: '0.85rem' }}>+{c.pts} pts</span>
             </label>

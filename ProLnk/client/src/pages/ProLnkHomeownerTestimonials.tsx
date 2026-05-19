@@ -60,7 +60,7 @@ export default function ProLnkHomeownerTestimonials() {
 
         <div style={{ display: 'flex', gap: 10, justifyContent: 'center', marginBottom: 36, flexWrap: 'wrap' }}>
           {(Object.keys(testimonials) as TradeKey[]).map(k => (
-            <button key={k} onClick={() => setActive(k)} style={{ padding: '10px 20px', borderRadius: 8, border: 'none', cursor: 'pointer', fontWeight: 600, fontSize: 14, background: active === k ? '#F5E642′ : '#1e2d4a', color: active === k ? '#0A1628' : '#94a3b8' }}>
+            <button key={k} onClick={() => setActive(k)} style={{ padding: '10px 20px', borderRadius: 8, border: 'none', cursor: 'pointer', fontWeight: 600, fontSize: 14, background: active === k ? '#F5E642' : '#1e2d4a', color: active === k ? '#0A1628' : '#94a3b8' }}>
               {testimonials[k].icon} {testimonials[k].trade}
             </button>
           ))}
@@ -76,7 +76,7 @@ export default function ProLnkHomeownerTestimonials() {
             </div>
           </div>
           <p style={{ color: '#cbd5e1', lineHeight: 1.7, fontSize: 16, marginBottom: 20 }}>{t.story}</p>
-          <div style={{ background: '#0A1628', borderRadius: 10, padding: 16, borderLeft: '4px solid #F5E642′ }}>
+          <div style={{ background: '#0A1628', borderRadius: 10, padding: 16, borderLeft: '4px solid #F5E642' }}>
             <div style={{ color: '#F5E642', fontWeight: 700, fontSize: 13, marginBottom: 6 }}>✅ OUTCOME</div>
             <div style={{ color: '#94a3b8', fontSize: 15 }}>{t.outcome}</div>
           </div>

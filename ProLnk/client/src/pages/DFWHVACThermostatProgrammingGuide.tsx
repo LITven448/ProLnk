@@ -51,7 +51,7 @@ export default function DFWHVACThermostatProgrammingGuide() {
             <div style={{ fontSize: '12px', color: '#94A3B8', marginBottom: '6px' }}>SCHEDULE TYPE</div>
             <div style={{ display: 'flex', gap: '8px' }}>
               {(['weekday', 'weekend'] as const).map(t => (
-                <button key={t} onClick={() => setScheduleType(t)} style={{ padding: '8px 16px', borderRadius: '8px', border: 'none', cursor: 'pointer', fontWeight: 600, fontSize: '13px', backgroundColor: scheduleType === t ? '#F5E642′ : '#1E2D45', color: scheduleType === t ? '#0A1628' : '#E8EDF5' }}>{t.charAt(0).toUpperCase() + t.slice(1)}</button>
+                <button key={t} onClick={() => setScheduleType(t)} style={{ padding: '8px 16px', borderRadius: '8px', border: 'none', cursor: 'pointer', fontWeight: 600, fontSize: '13px', backgroundColor: scheduleType === t ? '#F5E642' : '#1E2D45', color: scheduleType === t ? '#0A1628' : '#E8EDF5' }}>{t.charAt(0).toUpperCase() + t.slice(1)}</button>
               ))}
             </div>
           </div>
@@ -59,7 +59,7 @@ export default function DFWHVACThermostatProgrammingGuide() {
             <div style={{ fontSize: '12px', color: '#94A3B8', marginBottom: '6px' }}>DFW SEASON</div>
             <div style={{ display: 'flex', gap: '8px' }}>
               {(['summer', 'winter'] as const).map(s => (
-                <button key={s} onClick={() => setSeason(s)} style={{ padding: '8px 16px', borderRadius: '8px', border: 'none', cursor: 'pointer', fontWeight: 600, fontSize: '13px', backgroundColor: season === s ? '#F5E642′ : '#1E2D45', color: season === s ? '#0A1628' : '#E8EDF5' }}>{s === ’summer' ? '☀️ Summer' : '❄️ Winter'}</button>
+                <button key={s} onClick={() => setSeason(s)} style={{ padding: '8px 16px', borderRadius: '8px', border: 'none', cursor: 'pointer', fontWeight: 600, fontSize: '13px', backgroundColor: season === s ? '#F5E642' : '#1E2D45', color: season === s ? '#0A1628' : '#E8EDF5' }}>{s === 'summer' ? '☀️ Summer' : '❄️ Winter'}</button>
               ))}
             </div>
           </div>
@@ -68,10 +68,10 @@ export default function DFWHVACThermostatProgrammingGuide() {
         <div style={{ backgroundColor: '#1E2D45', borderRadius: '12px', padding: '20px', marginBottom: '20px' }}>
           <div style={{ fontSize: '13px', fontWeight: 700, color: '#F5E642', marginBottom: '14px' }}>📅 {scheduleType.charAt(0).toUpperCase() + scheduleType.slice(1)} Schedule — {season === 'summer' ? 'Cooling' : 'Heating'} Mode</div>
           {schedule.map((row, i) => (
-            <div key={i} style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '10px 0', borderBottom: i < schedule.length - 1 ? '1px solid #2D3F58′ : ’none' }}>
+            <div key={i} style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '10px 0', borderBottom: i < schedule.length - 1 ? '1px solid #2D3F58' : 'none' }}>
               <div>
                 <div style={{ fontWeight: 600, fontSize: '14px' }}>{row.time}</div>
-                <div style={{ fontSize: '12px', color: '#94A3B8′ }}>{row.label}</div>
+                <div style={{ fontSize: '12px', color: '#94A3B8' }}>{row.label}</div>
               </div>
               <div style={{ fontSize: '20px', fontWeight: 700, color: season === 'summer' ? '#60A5FA' : '#FB923C' }}>{season === 'summer' ? row.cooling : row.heating}</div>
             </div>
@@ -81,7 +81,7 @@ export default function DFWHVACThermostatProgrammingGuide() {
         <div style={{ backgroundColor: '#1E2D45', borderRadius: '12px', padding: '20px', marginBottom: '20px' }}>
           <div style={{ fontSize: '13px', fontWeight: 700, color: '#F5E642', marginBottom: '12px' }}>⚡ DFW {season === 'summer' ? 'Summer' : 'Winter'} Tips</div>
           {seasonTips[season].map((tip, i) => (
-            <div key={i} style={{ display: 'flex', gap: '10px', marginBottom: '10px', fontSize: '14px', color: '#CBD5E1′ }}>
+            <div key={i} style={{ display: 'flex', gap: '10px', marginBottom: '10px', fontSize: '14px', color: '#CBD5E1' }}>
               <span style={{ color: '#F5E642', flexShrink: 0 }}>›</span><span>{tip}</span>
             </div>
           ))}

@@ -40,41 +40,41 @@ export default function DFWFilterReplacementGuide2026() {
   const guide = GUIDES[system];
 
   return (
-    <div style={{ minHeight: "100vh", background: "#0A1628″, color: "#fff", fontFamily: "system-ui, sans-serif", padding: "32px 16px" }}>
+    <div style={{ minHeight: "100vh", background: "#0A1628", color: "#fff", fontFamily: "system-ui, sans-serif", padding: "32px 16px" }}>
       <div style={{ maxWidth: 720, margin: "0 auto" }}>
-        <div style={{ color: "#F5E642″, fontSize: 13, fontWeight: 700, letterSpacing: 2, marginBottom: 8 }}>PROLNK - DFW HOMEOWNER GUIDE</div>
+        <div style={{ color: "#F5E642", fontSize: 13, fontWeight: 700, letterSpacing: 2, marginBottom: 8 }}>PROLNK - DFW HOMEOWNER GUIDE</div>
         <h1 style={{ fontSize: 28, fontWeight: 800, marginBottom: 8 }}>🌬️ DFW Air Filter Replacement Guide 2026</h1>
-        <p style={{ color: "#94a3b8″, marginBottom: 32 }}>Step-by-step HVAC filter replacement for DFW homes. Select your system type.</p>
+        <p style={{ color: "#94a3b8", marginBottom: 32 }}>Step-by-step HVAC filter replacement for DFW homes. Select your system type.</p>
 
         <div style={{ marginBottom: 28 }}>
-          <div style={{ color: "#F5E642″, fontWeight: 700, marginBottom: 12, fontSize: 14 }}>SELECT YOUR SYSTEM TYPE</div>
+          <div style={{ color: "#F5E642", fontWeight: 700, marginBottom: 12, fontSize: 14 }}>SELECT YOUR SYSTEM TYPE</div>
           <div style={{ display: "flex", gap: 8, flexWrap: "wrap" }}>
             {(Object.keys(GUIDES) as SystemType[]).map((s) => (
-              <button key={s} onClick={() => setSystem(s)} style={{ padding: "8px 12px", borderRadius: 8, border: "2px solid", borderColor: system === s ? "#F5E642″ : "#1e3a5f", background: system === s ? "#F5E642" : "transparent", color: system === s ? "#0A1628" : "#fff", fontWeight: 700, cursor: "pointer", fontSize: 11 }}>{s}</button>
+              <button key={s} onClick={() => setSystem(s)} style={{ padding: "8px 12px", borderRadius: 8, border: "2px solid", borderColor: system === s ? "#F5E642" : "#1e3a5f", background: system === s ? "#F5E642" : "transparent", color: system === s ? "#0A1628" : "#fff", fontWeight: 700, cursor: "pointer", fontSize: 11 }}>{s}</button>
             ))}
           </div>
         </div>
 
-        <div style={{ background: "#0f2035″, borderRadius: 12, padding: 20, marginBottom: 16, border: "1px solid #1e3a5f" }}>
-          <div style={{ color: "#F5E642″, fontWeight: 700, fontSize: 12, marginBottom: 8 }}>📍 FILTER LOCATION</div>
-          <div style={{ color: "#e2e8f0″, fontSize: 14 }}>{guide.location}</div>
+        <div style={{ background: "#0f2035", borderRadius: 12, padding: 20, marginBottom: 16, border: "1px solid #1e3a5f" }}>
+          <div style={{ color: "#F5E642", fontWeight: 700, fontSize: 12, marginBottom: 8 }}>📍 FILTER LOCATION</div>
+          <div style={{ color: "#e2e8f0", fontSize: 14 }}>{guide.location}</div>
         </div>
 
-        <div style={{ background: "#0f2035″, borderRadius: 12, padding: 20, marginBottom: 16, border: "1px solid #1e3a5f" }}>
-          <div style={{ color: "#F5E642″, fontWeight: 700, fontSize: 12, marginBottom: 12 }}>📋 STEP-BY-STEP</div>
-          <ol style={{ margin: 0, paddingLeft: 20, color: "#e2e8f0″, lineHeight: 2, fontSize: 14 }}>
+        <div style={{ background: "#0f2035", borderRadius: 12, padding: 20, marginBottom: 16, border: "1px solid #1e3a5f" }}>
+          <div style={{ color: "#F5E642", fontWeight: 700, fontSize: 12, marginBottom: 12 }}>📋 STEP-BY-STEP</div>
+          <ol style={{ margin: 0, paddingLeft: 20, color: "#e2e8f0", lineHeight: 2, fontSize: 14 }}>
             {guide.steps.map((step, i) => <li key={i}>{step}</li>)}
           </ol>
         </div>
 
-        <div style={{ background: "#0f2035″, borderRadius: 12, padding: 20, marginBottom: 16, border: "1px solid #1e3a5f" }}>
-          <div style={{ color: "#F5E642″, fontWeight: 700, fontSize: 12, marginBottom: 8 }}>📐 COMMON FILTER SIZES</div>
-          <div style={{ color: "#e2e8f0″, fontSize: 14 }}>{guide.sizes}</div>
+        <div style={{ background: "#0f2035", borderRadius: 12, padding: 20, marginBottom: 16, border: "1px solid #1e3a5f" }}>
+          <div style={{ color: "#F5E642", fontWeight: 700, fontSize: 12, marginBottom: 8 }}>📐 COMMON FILTER SIZES</div>
+          <div style={{ color: "#e2e8f0", fontSize: 14 }}>{guide.sizes}</div>
         </div>
 
-        <div style={{ background: "#162d4a", borderRadius: 12, padding: 20, border: "1px solid #F5E642″ }}>
-          <div style={{ color: "#F5E642″, fontWeight: 700, fontSize: 12, marginBottom: 8 }}>⚠️ DFW REMINDER</div>
-          <div style={{ color: "#fef9c3″, fontSize: 14, lineHeight: 1.6 }}>{guide.reminder}</div>
+        <div style={{ background: "#162d4a", borderRadius: 12, padding: 20, border: "1px solid #F5E642" }}>
+          <div style={{ color: "#F5E642", fontWeight: 700, fontSize: 12, marginBottom: 8 }}>⚠️ DFW REMINDER</div>
+          <div style={{ color: "#fef9c3", fontSize: 14, lineHeight: 1.6 }}>{guide.reminder}</div>
         </div>
 
         <div style={{ marginTop: 32, textAlign: "center", color: "#64748b", fontSize: 13 }}>ProLnk - Connecting DFW Homeowners with Trusted Pros - prolnk.io</div>

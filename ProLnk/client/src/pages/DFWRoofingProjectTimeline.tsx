@@ -46,13 +46,13 @@ export default function DFWRoofingProjectTimeline() {
           <h2 style={{ fontSize: 15, fontWeight: 600, color: '#F5E642', marginBottom: 14 }}>🏗️ Project Type</h2>
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: 10 }}>
             {Object.entries(projectTypes).map(([key, val]) => (
-              <button key={key} onClick={() => setProjectType(key)} style={{ padding: '9px 18px', borderRadius: 8, border: `2px solid ${projectType === key ? '#F5E642' : '#1E3050'}`, background: projectType === key ? '#F5E642′ : ’transparent', color: projectType === key ? '#0A1628′ : '#9BAEC8', fontWeight: 600, cursor: ’pointer', fontSize: 13 }}>{val.label}</button>
+              <button key={key} onClick={() => setProjectType(key)} style={{ padding: '9px 18px', borderRadius: 8, border: `2px solid ${projectType === key ? '#F5E642' : '#1E3050'}`, background: projectType === key ? '#F5E642' : 'transparent', color: projectType === key ? '#0A1628' : '#9BAEC8', fontWeight: 600, cursor: 'pointer', fontSize: 13 }}>{val.label}</button>
             ))}
           </div>
           {selected && (
-            <div style={{ marginTop: 16, background: '#0A1628', borderRadius: 8, padding: 14, borderLeft: '3px solid #F5E642′ }}>
+            <div style={{ marginTop: 16, background: '#0A1628', borderRadius: 8, padding: 14, borderLeft: '3px solid #F5E642' }}>
               <span style={{ color: '#F5E642', fontWeight: 700 }}>Expected Timeline: </span>
-              <span style={{ color: '#E8EDF5′ }}>{selected.timeline}</span>
+              <span style={{ color: '#E8EDF5' }}>{selected.timeline}</span>
             </div>
           )}
         </div>
@@ -70,7 +70,7 @@ export default function DFWRoofingProjectTimeline() {
           <h2 style={{ fontSize: 15, fontWeight: 600, color: '#F5E642', marginBottom: 14 }}>🏙️ DFW City Permit Times</h2>
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8, marginBottom: 14 }}>
             {Object.keys(cityPermitInfo).map((c) => (
-              <button key={c} onClick={() => setCity(c)} style={{ padding: '6px 14px', borderRadius: 8, border: `2px solid ${city === c ? '#F5E642' : '#1E3050'}`, background: city === c ? '#F5E642′ : ’transparent', color: city === c ? '#0A1628′ : '#9BAEC8', fontWeight: 600, cursor: ’pointer', fontSize: 12, textTransform: 'capitalize' }}>{c === 'fortworth' ? 'Fort Worth' : c.charAt(0).toUpperCase() + c.slice(1)}</button>
+              <button key={c} onClick={() => setCity(c)} style={{ padding: '6px 14px', borderRadius: 8, border: `2px solid ${city === c ? '#F5E642' : '#1E3050'}`, background: city === c ? '#F5E642' : 'transparent', color: city === c ? '#0A1628' : '#9BAEC8', fontWeight: 600, cursor: 'pointer', fontSize: 12, textTransform: 'capitalize' }}>{c === 'fortworth' ? 'Fort Worth' : c.charAt(0).toUpperCase() + c.slice(1)}</button>
             ))}
           </div>
           {city && <p style={{ color: '#E8EDF5', fontSize: 14, margin: 0 }}>{cityPermitInfo[city]}</p>}

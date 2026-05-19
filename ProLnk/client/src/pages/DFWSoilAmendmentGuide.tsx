@@ -52,7 +52,7 @@ export default function DFWSoilAmendmentGuide() {
             <div style={{ color: '#94a3b8', fontSize: 13, marginBottom: 8 }}>Your soil problem:</div>
             <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8 }}>
               {soilProblems.map(p => (
-                <button key={p} onClick={() => setProblem(p)} style={{ background: problem === p ? '#F5E642′ : '#1e3a5f', color: problem === p ? '#0A1628' : '#fff', border: ’none', borderRadius: 8, padding: '8px 14px', cursor: 'pointer', fontSize: 13 }}>{p}</button>
+                <button key={p} onClick={() => setProblem(p)} style={{ background: problem === p ? '#F5E642' : '#1e3a5f', color: problem === p ? '#0A1628' : '#fff', border: 'none', borderRadius: 8, padding: '8px 14px', cursor: 'pointer', fontSize: 13 }}>{p}</button>
               ))}
             </div>
           </div>
@@ -60,7 +60,7 @@ export default function DFWSoilAmendmentGuide() {
             <div style={{ color: '#94a3b8', fontSize: 13, marginBottom: 8 }}>Intended use:</div>
             <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8 }}>
               {intendedUses.map(u => (
-                <button key={u} onClick={() => setUseCase(u)} style={{ background: useCase === u ? '#F5E642′ : '#1e3a5f', color: useCase === u ? '#0A1628' : '#fff', border: ’none', borderRadius: 8, padding: '8px 14px', cursor: 'pointer', fontSize: 13 }}>{u}</button>
+                <button key={u} onClick={() => setUseCase(u)} style={{ background: useCase === u ? '#F5E642' : '#1e3a5f', color: useCase === u ? '#0A1628' : '#fff', border: 'none', borderRadius: 8, padding: '8px 14px', cursor: 'pointer', fontSize: 13 }}>{u}</button>
               ))}
             </div>
           </div>

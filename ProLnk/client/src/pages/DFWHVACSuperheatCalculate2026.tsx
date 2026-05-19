@@ -65,17 +65,17 @@ export default function DFWHVACSuperheatCalculate2026() {
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: 12, marginBottom: 16 }}>
             <div>
               <label style={{ color: '#94a3b8', fontSize: 13, display: 'block', marginBottom: 6 }}>Suction Line Temp (°F)</label>
-              <input value={suctionTemp} onChange={e => setSuctionTemp(e.target.value)} placeholder="e.g. 52″ style={{ width: '100%', background: '#0A1628', border: '1px solid #2d5a8e', borderRadius: 6, padding: '10px 12px', color: '#e2e8f0', fontSize: 14, boxSizing: 'border-box' }} />
+              <input value={suctionTemp} onChange={e => setSuctionTemp(e.target.value)} placeholder="e.g. 52" style={{ width: '100%', background: '#0A1628', border: '1px solid #2d5a8e', borderRadius: 6, padding: '10px 12px', color: '#e2e8f0', fontSize: 14, boxSizing: 'border-box' }} />
             </div>
             <div>
               <label style={{ color: '#94a3b8', fontSize: 13, display: 'block', marginBottom: 6 }}>Suction Pressure (PSIG)</label>
-              <input value={suctionPressure} onChange={e => setSuctionPressure(e.target.value)} placeholder="e.g. 125″ style={{ width: '100%', background: '#0A1628', border: '1px solid #2d5a8e', borderRadius: 6, padding: '10px 12px', color: '#e2e8f0', fontSize: 14, boxSizing: 'border-box' }} />
+              <input value={suctionPressure} onChange={e => setSuctionPressure(e.target.value)} placeholder="e.g. 125" style={{ width: '100%', background: '#0A1628', border: '1px solid #2d5a8e', borderRadius: 6, padding: '10px 12px', color: '#e2e8f0', fontSize: 14, boxSizing: 'border-box' }} />
             </div>
             <div>
               <label style={{ color: '#94a3b8', fontSize: 13, display: 'block', marginBottom: 6 }}>Refrigerant Type</label>
               <select value={refrigerant} onChange={e => setRefrigerant(e.target.value)} style={{ width: '100%', background: '#0A1628', border: '1px solid #2d5a8e', borderRadius: 6, padding: '10px 12px', color: '#e2e8f0', fontSize: 14 }}>
                 <option value="R410A">R-410A (most DFW systems)</option>
-                <option value="R22″>R-22 (older systems)</option>
+                <option value="R22">R-22 (older systems)</option>
               </select>
             </div>
           </div>

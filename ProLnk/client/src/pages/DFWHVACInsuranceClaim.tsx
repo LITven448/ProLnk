@@ -63,7 +63,7 @@ export default function DFWHVACInsuranceClaim() {
               key={d.type}
               onClick={() => setSelected(selected === d.type ? null : d.type)}
               style={{
-                background: selected === d.type ? '#132040′ : '#0F1E35',
+                background: selected === d.type ? '#132040' : '#0F1E35',
                 border: `1.5px solid ${selected === d.type ? '#F5E642' : '#1E2D45'}`,
                 borderRadius: 10,
                 padding: '14px 20px',
@@ -77,7 +77,7 @@ export default function DFWHVACInsuranceClaim() {
               <span style={{ fontSize: 26 }}>{d.icon}</span>
               <div>
                 <div style={{ color: '#FFFFFF', fontWeight: 700, fontSize: 15 }}>{d.type}</div>
-                <div style={{ color: d.covered.startsWith('Usually YES') || d.covered === 'YES' ? '#4ADE80′ : d.covered === ’NO' ? '#F87171′ : '#FACC15', fontSize: 13, fontWeight: 600 }}>{d.covered}</div>
+                <div style={{ color: d.covered.startsWith('Usually YES') || d.covered === 'YES' ? '#4ADE80' : d.covered === 'NO' ? '#F87171' : '#FACC15', fontSize: 13, fontWeight: 600 }}>{d.covered}</div>
               </div>
             </button>
           ))}
@@ -87,7 +87,7 @@ export default function DFWHVACInsuranceClaim() {
           <div style={{ background: '#132040', border: '1.5px solid #F5E642', borderRadius: 12, padding: '24px 28px' }}>
             <div style={{ fontSize: 26, marginBottom: 8 }}>{active.icon}</div>
             <h2 style={{ color: '#F5E642', fontSize: 20, fontWeight: 700, margin: '0 0 6px' }}>{active.type}</h2>
-            <div style={{ fontWeight: 700, marginBottom: 12, color: active.covered.startsWith('Usually YES') || active.covered === 'YES' ? '#4ADE80′ : active.covered === ’NO' ? '#F87171′ : '#FACC15' }}>Coverage: {active.covered}</div>
+            <div style={{ fontWeight: 700, marginBottom: 12, color: active.covered.startsWith('Usually YES') || active.covered === 'YES' ? '#4ADE80' : active.covered === 'NO' ? '#F87171' : '#FACC15' }}>Coverage: {active.covered}</div>
             <p style={{ color: '#C8CDD8', lineHeight: 1.7, marginBottom: 18 }}>{active.coverageDetail}</p>
             <div style={{ marginBottom: 18 }}>
               <div style={{ color: '#F5E642', fontWeight: 700, marginBottom: 8 }}>📁 Documentation Required</div>
@@ -97,7 +97,7 @@ export default function DFWHVACInsuranceClaim() {
                 ))}
               </ul>
             </div>
-            <div style={{ background: '#0F1E35', borderRadius: 8, padding: '14px 18px', borderLeft: '3px solid #F5E642′ }}>
+            <div style={{ background: '#0F1E35', borderRadius: 8, padding: '14px 18px', borderLeft: '3px solid #F5E642' }}>
               <div style={{ color: '#F5E642', fontWeight: 700, marginBottom: 4 }}>🤝 Adjuster Strategy</div>
               <div style={{ color: '#9AA3B2', fontSize: 13, lineHeight: 1.6 }}>{active.adjuster}</div>
             </div>

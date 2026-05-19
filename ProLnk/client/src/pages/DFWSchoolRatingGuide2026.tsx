@@ -2,7 +2,7 @@ import { useState } from 'react';
 
 const priorities: Record<string, { steps: string[]; note: string; areas: string[] }> = {
   "Test Scores": {
-    steps: ["Visit GreatSchools.org — enter DFW address for ratings 1–10″,"Check TEA (Texas Education Agency) accountability ratings","Look at STAAR test pass rates — aim for 80%+ passing","Compare math AND reading scores separately","Check 3-year trend — improving schools matter more than snapshot"],
+    steps: ["Visit GreatSchools.org — enter DFW address for ratings 1–10","Check TEA (Texas Education Agency) accountability ratings","Look at STAAR test pass rates — aim for 80%+ passing","Compare math AND reading scores separately","Check 3-year trend — improving schools matter more than snapshot"],
     note: "Frisco ISD and Carroll ISD (Southlake) consistently score in top 5% statewide.",
     areas: ["Frisco ISD","Carroll ISD — Southlake","Highland Park ISD","Coppell ISD","Allen ISD"],
   },
@@ -56,7 +56,7 @@ export default function DFWSchoolRatingGuide2026() {
           <h2 style={{ color: '#F5E642', fontSize: 18, marginBottom: 16 }}>🎯 What Is Your School Priority?</h2>
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: 10, marginBottom: 20 }}>
             {Object.keys(priorities).map(p => (
-              <button key={p} onClick={() => setSelected(p)} style={{ padding: '10px 18px', borderRadius: 8, border: 'none', cursor: 'pointer', background: selected === p ? '#F5E642′ : '#1A2E48', color: selected === p ? '#0A1628' : '#E8EAF0', fontWeight: 600, fontSize: 14 }}>{p}</button>
+              <button key={p} onClick={() => setSelected(p)} style={{ padding: '10px 18px', borderRadius: 8, border: 'none', cursor: 'pointer', background: selected === p ? '#F5E642' : '#1A2E48', color: selected === p ? '#0A1628' : '#E8EAF0', fontWeight: 600, fontSize: 14 }}>{p}</button>
             ))}
           </div>
           {result && (
@@ -64,12 +64,12 @@ export default function DFWSchoolRatingGuide2026() {
               <div style={{ background: '#0A1628', borderRadius: 10, padding: 20, border: '1px solid #1E3A5F' }}>
                 <h3 style={{ color: '#F5E642', marginBottom: 12, fontSize: 15 }}>📋 Research Steps</h3>
                 {result.steps.map((s, i) => (
-                  <div key={i} style={{ display: 'flex', gap: 8, marginBottom: 8, fontSize: 13, color: '#CBD5E1′ }}>
+                  <div key={i} style={{ display: 'flex', gap: 8, marginBottom: 8, fontSize: 13, color: '#CBD5E1' }}>
                     <span style={{ color: '#F5E642', flexShrink: 0 }}>{i + 1}.</span>
                     <span>{s}</span>
                   </div>
                 ))}
-                <div style={{ marginTop: 14, padding: '10px 14px', background: '#0F1E35', borderRadius: 8, fontSize: 13, color: '#9BA3B2', borderLeft: '3px solid #F5E642′ }}>{result.note}</div>
+                <div style={{ marginTop: 14, padding: '10px 14px', background: '#0F1E35', borderRadius: 8, fontSize: 13, color: '#9BA3B2', borderLeft: '3px solid #F5E642' }}>{result.note}</div>
               </div>
               <div style={{ background: '#0A1628', borderRadius: 10, padding: 20, border: '1px solid #1E3A5F' }}>
                 <h3 style={{ color: '#F5E642', marginBottom: 12, fontSize: 15 }}>📍 Top DFW Options</h3>

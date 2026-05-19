@@ -73,7 +73,7 @@ export default function DFWFoundationPierSinking2026() {
         <h2 style={{ color: '#F5E642', fontSize: 16, marginBottom: 12 }}>🔍 Post-Repair Symptoms</h2>
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 10, marginBottom: 24 }}>
           {symptoms.map(s => (
-            <button key={s.id} onClick={() => setSelected(s.id)} style={{ background: selected === s.id ? '#F5E642′ : '#1a2f4e', color: selected === s.id ? '#0A1628' : '#fff', border: '2px solid ' + (selected === s.id ? '#F5E642' : '#334155'), borderRadius: 10, padding: '14px 12px', cursor: ’pointer', fontWeight: 600, fontSize: 14, textAlign: 'left', transition: 'all 0.15s' }}>
+            <button key={s.id} onClick={() => setSelected(s.id)} style={{ background: selected === s.id ? '#F5E642' : '#1a2f4e', color: selected === s.id ? '#0A1628' : '#fff', border: '2px solid ' + (selected === s.id ? '#F5E642' : '#334155'), borderRadius: 10, padding: '14px 12px', cursor: 'pointer', fontWeight: 600, fontSize: 14, textAlign: 'left', transition: 'all 0.15s' }}>
               <span style={{ marginRight: 8 }}>{s.icon}</span>{s.label}
             </button>
           ))}

@@ -258,11 +258,11 @@ export default function PortfolioDashboard() {
               <ResponsiveContainer width="100%" height="100%">
                 <AreaChart data={combinedTrend} margin={{ top: 4, right: 4, bottom: 0, left: -20 }}>
                   <defs>
-                    <linearGradient id="gProlnk"    x1="0″ y1="0" x2="0" y2="1"><stop offset="5%" stopColor={T.accent} stopOpacity={0.2} /><stop offset="95%" stopColor={T.accent} stopOpacity={0} /></linearGradient>
-                    <linearGradient id="gTrusty"    x1="0″ y1="0" x2="0" y2="1"><stop offset="5%" stopColor={T.green}  stopOpacity={0.2} /><stop offset="95%" stopColor={T.green}  stopOpacity={0} /></linearGradient>
-                    <linearGradient id="gMedia"     x1="0″ y1="0" x2="0" y2="1"><stop offset="5%" stopColor={T.amber}  stopOpacity={0.2} /><stop offset="95%" stopColor={T.amber}  stopOpacity={0} /></linearGradient>
+                    <linearGradient id="gProlnk"    x1="0" y1="0" x2="0" y2="1"><stop offset="5%" stopColor={T.accent} stopOpacity={0.2} /><stop offset="95%" stopColor={T.accent} stopOpacity={0} /></linearGradient>
+                    <linearGradient id="gTrusty"    x1="0" y1="0" x2="0" y2="1"><stop offset="5%" stopColor={T.green}  stopOpacity={0.2} /><stop offset="95%" stopColor={T.green}  stopOpacity={0} /></linearGradient>
+                    <linearGradient id="gMedia"     x1="0" y1="0" x2="0" y2="1"><stop offset="5%" stopColor={T.amber}  stopOpacity={0.2} /><stop offset="95%" stopColor={T.amber}  stopOpacity={0} /></linearGradient>
                   </defs>
-                  <CartesianGrid strokeDasharray="3 3″ stroke={T.border} vertical={false} />
+                  <CartesianGrid strokeDasharray="3 3" stroke={T.border} vertical={false} />
                   <XAxis dataKey="month" tick={axisStyle} axisLine={false} tickLine={false} />
                   <YAxis tick={axisStyle} axisLine={false} tickLine={false} />
                   <Tooltip contentStyle={tooltipStyle} />
@@ -286,7 +286,7 @@ export default function PortfolioDashboard() {
             <div style={{ height: 160 }}>
               <ResponsiveContainer width="100%" height="100%">
                 <BarChart data={revenueBreakdown} margin={{ top: 4, right: 4, bottom: 0, left: -20 }}>
-                  <CartesianGrid strokeDasharray="3 3″ stroke={T.border} vertical={false} />
+                  <CartesianGrid strokeDasharray="3 3" stroke={T.border} vertical={false} />
                   <XAxis dataKey="name" tick={axisStyle} axisLine={false} tickLine={false} />
                   <YAxis tick={axisStyle} axisLine={false} tickLine={false} />
                   <Tooltip contentStyle={tooltipStyle} formatter={(v: any) => [`$${Number(v).toLocaleString()}`, "Est. Revenue"]} />

@@ -53,11 +53,11 @@ export default function DFWFoundationMarketGuide() {
             </select>
           </div>
           {result && (
-            <div style={{ backgroundColor: '#0A1628', borderRadius: 10, padding: 20, borderLeft: '4px solid #F5E642′ }}>
+            <div style={{ backgroundColor: '#0A1628', borderRadius: 10, padding: 20, borderLeft: '4px solid #F5E642' }}>
               <div style={{ marginBottom: 10 }}><span style={{ color: '#F5E642', fontWeight: 600 }}>Demand Level: </span>{result.demand}</div>
-              <div style={{ marginBottom: 10 }}><span style={{ color: '#F5E642', fontWeight: 600 }}>Market: </span><span style={{ color: '#e2e8f0′ }}>{result.companies}</span></div>
-              <div style={{ marginBottom: 10 }}><span style={{ color: '#F5E642', fontWeight: 600 }}>Typical Cost: </span><span style={{ color: '#e2e8f0′ }}>{result.price}</span></div>
-              <div style={{ backgroundColor: '#1a2f4e', borderRadius: 8, padding: 10, fontSize: 13, color: '#94a3b8′ }}>🌍 Soil Note: {result.soilNote}</div>
+              <div style={{ marginBottom: 10 }}><span style={{ color: '#F5E642', fontWeight: 600 }}>Market: </span><span style={{ color: '#e2e8f0' }}>{result.companies}</span></div>
+              <div style={{ marginBottom: 10 }}><span style={{ color: '#F5E642', fontWeight: 600 }}>Typical Cost: </span><span style={{ color: '#e2e8f0' }}>{result.price}</span></div>
+              <div style={{ backgroundColor: '#1a2f4e', borderRadius: 8, padding: 10, fontSize: 13, color: '#94a3b8' }}>🌍 Soil Note: {result.soilNote}</div>
             </div>
           )}
         </div>

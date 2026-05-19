@@ -80,17 +80,17 @@ const WEBHOOK_EVENTS = [
 const SAMPLE_PAYLOAD = `{
   "event": "commission.paid",
   "timestamp": "2026-05-12T14:23:00Z",
-  "version": "1.0″,
+  "version": "1.0",
   "data": {
-    "partner_id": "prt_abc123″,
+    "partner_id": "prt_abc123",
     "partner_email": "john@example.com",
-    "job_id": "job_xyz789″,
+    "job_id": "job_xyz789",
     "commission_type": "direct",
     "gross_amount": 847.00,
     "tier_rate": 0.20,
     "net_amount": 169.40,
     "payout_method": "ach",
-    "payout_reference": "pay_2026051201″
+    "payout_reference": "pay_2026051201"
   }
 }`;
 
@@ -119,7 +119,7 @@ function CopyButton({ text }: { text: string }) {
         border: `1px solid ${copied ? "rgba(34,211,238,0.3)" : "rgba(255,255,255,0.1)"}`,
       }}
     >
-      {copied ? <Check className="w-3 h-3″ /> : <Copy className="w-3 h-3" />}
+      {copied ? <Check className="w-3 h-3" /> : <Copy className="w-3 h-3" />}
       {copied ? "Copied" : "Copy"}
     </button>
   );
@@ -139,7 +139,7 @@ function Section({
   const [open, setOpen] = useState(defaultOpen);
   return (
     <div
-      className="mb-6″
+      className="mb-6"
       style={{ border: "1px solid rgba(255,255,255,0.08)" }}
     >
       <button
@@ -147,28 +147,28 @@ function Section({
         className="w-full flex items-center justify-between px-6 py-4 text-left"
         style={{ background: "rgba(255,255,255,0.03)" }}
       >
-        <div className="flex items-center gap-3″>
-          <Icon className="w-4 h-4″ style={{ color: "#22d3ee" }} />
+        <div className="flex items-center gap-3">
+          <Icon className="w-4 h-4" style={{ color: "#22d3ee" }} />
           <span className="font-bold text-white">{title}</span>
         </div>
         {open ? (
-          <ChevronUp className="w-4 h-4 text-white/30″ />
+          <ChevronUp className="w-4 h-4 text-white/30" />
         ) : (
-          <ChevronDown className="w-4 h-4 text-white/30″ />
+          <ChevronDown className="w-4 h-4 text-white/30" />
         )}
       </button>
-      {open && <div className="px-6 py-5″>{children}</div>}
+      {open && <div className="px-6 py-5">{children}</div>}
     </div>
   );
 }
 
 const categoryColors: Record<string, string> = {
   Partner: "#22d3ee",
-  Jobs: "#4ade80″,
+  Jobs: "#4ade80",
   Finance: "#f59e0b",
   Network: "#a78bfa",
-  Homeowner: "#fb7185″,
-  TrustyPro: "#38bdf8″,
+  Homeowner: "#fb7185",
+  TrustyPro: "#38bdf8",
 };
 
 export default function APIGuide() {
@@ -180,7 +180,7 @@ export default function APIGuide() {
     : WEBHOOK_EVENTS;
 
   return (
-    <div className="min-h-screen" style={{ backgroundColor: "#080f1e", color: "#e2e8f0″ }}>
+    <div className="min-h-screen" style={{ backgroundColor: "#080f1e", color: "#e2e8f0" }}>
       {/* Nav */}
       <nav
         className="border-b px-6 py-4 flex items-center justify-between"
@@ -194,7 +194,7 @@ export default function APIGuide() {
             ProLnk
           </span>
         </Link>
-        <div className="flex items-center gap-4″>
+        <div className="flex items-center gap-4">
           <Link href="/help">
             <span className="text-sm text-white/40 hover:text-white transition-colors cursor-pointer">
               Help Center
@@ -202,7 +202,7 @@ export default function APIGuide() {
           </Link>
           <Link href="/">
             <span className="inline-flex items-center gap-1 text-sm text-white/40 hover:text-white transition-colors cursor-pointer">
-              <ArrowLeft className="w-4 h-4″ />
+              <ArrowLeft className="w-4 h-4" />
               Back to home
             </span>
           </Link>
@@ -219,14 +219,14 @@ export default function APIGuide() {
       >
         <div className="max-w-3xl mx-auto">
           <div
-            className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold mb-4″
+            className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold mb-4"
             style={{ background: "rgba(34,211,238,0.12)", color: "#22d3ee" }}
           >
-            <Activity className="w-3 h-3″ />
+            <Activity className="w-3 h-3" />
             API & Integrations
           </div>
           <h1
-            className="text-4xl font-black mb-3″
+            className="text-4xl font-black mb-3"
             style={{ fontFamily: "'Bricolage Grotesque', sans-serif" }}
           >
             ProLnk Integration Guide
@@ -238,7 +238,7 @@ export default function APIGuide() {
         </div>
       </div>
 
-      <div className="max-w-3xl mx-auto px-6 py-12″>
+      <div className="max-w-3xl mx-auto px-6 py-12">
         {/* API Key */}
         <Section title="Using Your API Key" icon={Key}>
           <p className="text-sm text-white/60 mb-4 leading-relaxed">
@@ -256,23 +256,23 @@ export default function APIGuide() {
             style={{
               background: "rgba(245,158,11,0.08)",
               border: "1px solid rgba(245,158,11,0.2)",
-              color: "#fbbf24″,
+              color: "#fbbf24",
             }}
           >
-            <div className="flex items-start gap-2″>
-              <AlertCircle className="w-4 h-4 shrink-0 mt-0.5″ />
+            <div className="flex items-start gap-2">
+              <AlertCircle className="w-4 h-4 shrink-0 mt-0.5" />
               <span>
                 Never expose your API key in client-side code. Store it as an environment
                 variable in your automation tool.
               </span>
             </div>
           </div>
-          <p className="text-sm text-white/60 mb-3″>
-            Include your key in the <code className="text-teal-300″>Authorization</code> header:
+          <p className="text-sm text-white/60 mb-3">
+            Include your key in the <code className="text-teal-300">Authorization</code> header:
           </p>
           <div
-            className="flex items-center justify-between p-4″
-            style={{ background: "#0d1526″, border: "1px solid rgba(255,255,255,0.08)" }}
+            className="flex items-center justify-between p-4"
+            style={{ background: "#0d1526", border: "1px solid rgba(255,255,255,0.08)" }}
           >
             <code className="text-sm" style={{ color: "#86efac" }}>
               Authorization: Bearer pl_live_your_api_key_here
@@ -285,14 +285,14 @@ export default function APIGuide() {
         <Section title="Webhook Setup" icon={Webhook}>
           <p className="text-sm text-white/60 mb-5 leading-relaxed">
             Register an HTTPS endpoint URL to receive real-time event payloads. ProLnk sends
-            a <code className="text-teal-300″>POST</code> request with a JSON body and the
-            header <code className="text-teal-300″>X-ProLnk-Signature</code> (HMAC-SHA256
+            a <code className="text-teal-300">POST</code> request with a JSON body and the
+            header <code className="text-teal-300">X-ProLnk-Signature</code> (HMAC-SHA256
             signed with your webhook secret).
           </p>
-          <ol className="space-y-4 text-sm text-white/60″>
-            <li className="flex gap-3″>
+          <ol className="space-y-4 text-sm text-white/60">
+            <li className="flex gap-3">
               <span
-                className="w-6 h-6 flex items-center justify-center text-xs font-bold shrink-0 mt-0.5″
+                className="w-6 h-6 flex items-center justify-center text-xs font-bold shrink-0 mt-0.5"
                 style={{ background: "rgba(34,211,238,0.15)", color: "#22d3ee" }}
               >
                 1
@@ -307,22 +307,22 @@ export default function APIGuide() {
                 and click <strong className="text-white">Add Webhook</strong>.
               </span>
             </li>
-            <li className="flex gap-3″>
+            <li className="flex gap-3">
               <span
-                className="w-6 h-6 flex items-center justify-center text-xs font-bold shrink-0 mt-0.5″
+                className="w-6 h-6 flex items-center justify-center text-xs font-bold shrink-0 mt-0.5"
                 style={{ background: "rgba(34,211,238,0.15)", color: "#22d3ee" }}
               >
                 2
               </span>
               <span>
                 Paste your n8n webhook URL (e.g.{" "}
-                <code className="text-teal-300″>https://your-n8n.app/webhook/prolnk</code>
+                <code className="text-teal-300">https://your-n8n.app/webhook/prolnk</code>
                 ) or your Zapier catch URL.
               </span>
             </li>
-            <li className="flex gap-3″>
+            <li className="flex gap-3">
               <span
-                className="w-6 h-6 flex items-center justify-center text-xs font-bold shrink-0 mt-0.5″
+                className="w-6 h-6 flex items-center justify-center text-xs font-bold shrink-0 mt-0.5"
                 style={{ background: "rgba(34,211,238,0.15)", color: "#22d3ee" }}
               >
                 3
@@ -332,9 +332,9 @@ export default function APIGuide() {
                 <strong className="text-white">All Events</strong>).
               </span>
             </li>
-            <li className="flex gap-3″>
+            <li className="flex gap-3">
               <span
-                className="w-6 h-6 flex items-center justify-center text-xs font-bold shrink-0 mt-0.5″
+                className="w-6 h-6 flex items-center justify-center text-xs font-bold shrink-0 mt-0.5"
                 style={{ background: "rgba(34,211,238,0.15)", color: "#22d3ee" }}
               >
                 4
@@ -344,9 +344,9 @@ export default function APIGuide() {
                 sign all payloads.
               </span>
             </li>
-            <li className="flex gap-3″>
+            <li className="flex gap-3">
               <span
-                className="w-6 h-6 flex items-center justify-center text-xs font-bold shrink-0 mt-0.5″
+                className="w-6 h-6 flex items-center justify-center text-xs font-bold shrink-0 mt-0.5"
                 style={{ background: "rgba(34,211,238,0.15)", color: "#22d3ee" }}
               >
                 5
@@ -361,7 +361,7 @@ export default function APIGuide() {
 
         {/* Webhook Events */}
         <Section title="Available Webhook Events" icon={Zap}>
-          <div className="flex flex-wrap gap-2 mb-5″>
+          <div className="flex flex-wrap gap-2 mb-5">
             <button
               onClick={() => setActiveCategory(null)}
               className="px-3 py-1 text-xs font-semibold transition-all"
@@ -396,21 +396,21 @@ export default function APIGuide() {
               </button>
             ))}
           </div>
-          <div className="space-y-2″>
+          <div className="space-y-2">
             {filteredEvents.map((ev) => (
               <div
                 key={ev.event}
-                className="flex items-start justify-between gap-4 px-4 py-3″
+                className="flex items-start justify-between gap-4 px-4 py-3"
                 style={{ background: "rgba(255,255,255,0.02)", border: "1px solid rgba(255,255,255,0.06)" }}
               >
                 <div>
                   <code className="text-sm font-bold" style={{ color: "#22d3ee" }}>
                     {ev.event}
                   </code>
-                  <p className="text-xs text-white/40 mt-0.5″>{ev.description}</p>
+                  <p className="text-xs text-white/40 mt-0.5">{ev.description}</p>
                 </div>
                 <span
-                  className="text-xs font-semibold px-2 py-0.5 shrink-0″
+                  className="text-xs font-semibold px-2 py-0.5 shrink-0"
                   style={{
                     background: `${categoryColors[ev.category]}18`,
                     color: categoryColors[ev.category],
@@ -425,28 +425,28 @@ export default function APIGuide() {
 
         {/* Sample Payload */}
         <Section title="Sample Webhook Payload" icon={Activity}>
-          <p className="text-sm text-white/60 mb-4″>
-            Example payload for the <code className="text-teal-300″>commission.paid</code> event:
+          <p className="text-sm text-white/60 mb-4">
+            Example payload for the <code className="text-teal-300">commission.paid</code> event:
           </p>
           <div
             className="relative p-5 overflow-x-auto"
-            style={{ background: "#0d1526″, border: "1px solid rgba(255,255,255,0.08)" }}
+            style={{ background: "#0d1526", border: "1px solid rgba(255,255,255,0.08)" }}
           >
-            <div className="absolute top-3 right-3″>
+            <div className="absolute top-3 right-3">
               <CopyButton text={SAMPLE_PAYLOAD} />
             </div>
             <pre className="text-xs leading-relaxed" style={{ color: "#86efac" }}>
               {SAMPLE_PAYLOAD}
             </pre>
           </div>
-          <p className="text-xs text-white/40 mt-3″>
+          <p className="text-xs text-white/40 mt-3">
             All timestamps are UTC ISO 8601. Monetary values are in USD as floats.
           </p>
         </Section>
 
         {/* Rate Limits */}
         <Section title="Rate Limits" icon={AlertCircle} defaultOpen={false}>
-          <p className="text-sm text-white/60 mb-5″>
+          <p className="text-sm text-white/60 mb-5">
             Webhook delivery retries follow exponential back-off (1s → 5s → 30s → 5min → 30min).
             Endpoints that return non-2xx for 24 hours are auto-disabled.
           </p>
@@ -457,13 +457,13 @@ export default function APIGuide() {
             <table className="w-full text-sm">
               <thead>
                 <tr style={{ background: "rgba(255,255,255,0.04)" }}>
-                  <th className="text-left px-4 py-3 text-xs font-bold uppercase tracking-widest text-white/40″>
+                  <th className="text-left px-4 py-3 text-xs font-bold uppercase tracking-widest text-white/40">
                     Plan
                   </th>
-                  <th className="text-left px-4 py-3 text-xs font-bold uppercase tracking-widest text-white/40″>
+                  <th className="text-left px-4 py-3 text-xs font-bold uppercase tracking-widest text-white/40">
                     Requests / Hour
                   </th>
-                  <th className="text-left px-4 py-3 text-xs font-bold uppercase tracking-widest text-white/40″>
+                  <th className="text-left px-4 py-3 text-xs font-bold uppercase tracking-widest text-white/40">
                     Burst
                   </th>
                 </tr>
@@ -474,9 +474,9 @@ export default function APIGuide() {
                     key={i}
                     style={{ borderTop: "1px solid rgba(255,255,255,0.06)" }}
                   >
-                    <td className="px-4 py-3 text-white/70″>{row.plan}</td>
-                    <td className="px-4 py-3 font-mono text-teal-400″>{row.requests}</td>
-                    <td className="px-4 py-3 font-mono text-white/50″>{row.burst}</td>
+                    <td className="px-4 py-3 text-white/70">{row.plan}</td>
+                    <td className="px-4 py-3 font-mono text-teal-400">{row.requests}</td>
+                    <td className="px-4 py-3 font-mono text-white/50">{row.burst}</td>
                   </tr>
                 ))}
               </tbody>
@@ -492,12 +492,12 @@ export default function APIGuide() {
             border: "1px solid rgba(34,211,238,0.15)",
           }}
         >
-          <p className="text-sm text-white/60 mb-4″>
+          <p className="text-sm text-white/60 mb-4">
             Need a custom integration or have questions about the API?
           </p>
           <a
             href="mailto:support@prolnk.io"
-            className="inline-flex items-center gap-2 px-5 py-2.5 text-sm font-bold transition-opacity hover:opacity-90″
+            className="inline-flex items-center gap-2 px-5 py-2.5 text-sm font-bold transition-opacity hover:opacity-90"
             style={{ backgroundColor: "#22d3ee", color: "#080f1e" }}
           >
             Contact Support

@@ -60,7 +60,7 @@ export default function DFWMovingDayGuide2026() {
           ))}
         </div>
 
-        <div style={{ background: '#1a1200', borderRadius: 12, padding: 24, marginBottom: 24, border: '1px solid #5a4400′ }}>
+        <div style={{ background: '#1a1200', borderRadius: 12, padding: 24, marginBottom: 24, border: '1px solid #5a4400' }}>
           <h2 style={{ color: '#F5E642', fontSize: 16, marginBottom: 16 }}>🌡️ DFW Summer Heat Warning</h2>
           <p style={{ color: '#ffddaa', fontSize: 14, lineHeight: 1.6 }}>June through September in DFW means 100°F+ heat index is routine. Start before 7am. Keep movers hydrated with electrolytes, not just water. Schedule breaks every 90 minutes. If anyone shows signs of heat exhaustion, stop immediately. Floors and metal railings heat to dangerous temperatures. Budget extra time — pace drops 30-40% in extreme heat.</p>
         </div>
@@ -85,7 +85,7 @@ export default function DFWMovingDayGuide2026() {
               <button
                 key={o.id}
                 onClick={() => setSelected(o.id)}
-                style={{ padding: '8px 16px', borderRadius: 20, border: 'none', cursor: 'pointer', fontSize: 13, background: selected === o.id ? '#F5E642′ : '#1a2d4a', color: selected === o.id ? '#0A1628' : '#ccc', fontWeight: selected === o.id ? 700 : 400 }}
+                style={{ padding: '8px 16px', borderRadius: 20, border: 'none', cursor: 'pointer', fontSize: 13, background: selected === o.id ? '#F5E642' : '#1a2d4a', color: selected === o.id ? '#0A1628' : '#ccc', fontWeight: selected === o.id ? 700 : 400 }}
               >
                 {o.label}
               </button>

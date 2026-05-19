@@ -70,15 +70,15 @@ export default function StormPrepChecklist() {
   const circumference = 2 * Math.PI * 40;
   const dashOffset = circumference - (pct / 100) * circumference;
 
-  const scoreColor = pct >= 80 ? "#14B8A6″ : pct >= 50 ? "#F59E0B" : "#EF4444";
+  const scoreColor = pct >= 80 ? "#14B8A6" : pct >= 50 ? "#F59E0B" : "#EF4444";
 
   return (
     <HomeownerLayout>
       <div className="min-h-screen bg-[#0A1628] text-white">
-        <div className="max-w-4xl mx-auto px-4 py-12″>
-          <div className="mb-10 flex flex-col md:flex-row md:items-start md:justify-between gap-6″>
+        <div className="max-w-4xl mx-auto px-4 py-12">
+          <div className="mb-10 flex flex-col md:flex-row md:items-start md:justify-between gap-6">
             <div>
-              <h1 className="text-4xl font-bold mb-2″>DFW Storm Prep Checklist</h1>
+              <h1 className="text-4xl font-bold mb-2">DFW Storm Prep Checklist</h1>
               <p className="text-[#94A3B8] text-lg">Be ready before the sirens</p>
               <div className="mt-4 bg-[#1E293B] rounded-xl p-4 max-w-lg">
                 <p className="text-sm text-[#CBD5E1]">
@@ -88,22 +88,22 @@ export default function StormPrepChecklist() {
               </div>
             </div>
             <div className="flex flex-col items-center bg-[#1E293B] rounded-2xl p-6 min-w-[140px]">
-              <svg width="100″ height="100" viewBox="0 0 100 100">
-                <circle cx="50″ cy="50" r="40" fill="none" stroke="#1E3A5F" strokeWidth="10" />
+              <svg width="100" height="100" viewBox="0 0 100 100">
+                <circle cx="50" cy="50" r="40" fill="none" stroke="#1E3A5F" strokeWidth="10" />
                 <circle
-                  cx="50″
-                  cy="50″
-                  r="40″
+                  cx="50"
+                  cy="50"
+                  r="40"
                   fill="none"
                   stroke={scoreColor}
-                  strokeWidth="10″
+                  strokeWidth="10"
                   strokeDasharray={circumference}
                   strokeDashoffset={dashOffset}
                   strokeLinecap="round"
                   transform="rotate(-90 50 50)"
                   style={{ transition: "stroke-dashoffset 0.4s ease" }}
                 />
-                <text x="50″ y="56" textAnchor="middle" fill="white" fontSize="20" fontWeight="bold">
+                <text x="50" y="56" textAnchor="middle" fill="white" fontSize="20" fontWeight="bold">
                   {pct}%
                 </text>
               </svg>
@@ -114,11 +114,11 @@ export default function StormPrepChecklist() {
             </div>
           </div>
 
-          <div className="space-y-8″>
+          <div className="space-y-8">
             {categories.map((cat, ci) => (
-              <div key={cat.title} className="bg-[#1E293B] rounded-2xl p-6″>
+              <div key={cat.title} className="bg-[#1E293B] rounded-2xl p-6">
                 <h2 className="text-lg font-semibold mb-4 text-[#14B8A6]">{cat.title}</h2>
-                <ul className="space-y-3″>
+                <ul className="space-y-3">
                   {cat.items.map((item) => (
                     <li
                       key={item.id}
@@ -126,7 +126,7 @@ export default function StormPrepChecklist() {
                       onClick={() => toggle(ci, item.id)}
                     >
                       {item.checked ? (
-                        <CheckCircle className="w-5 h-5 text-[#14B8A6] flex-shrink-0″ />
+                        <CheckCircle className="w-5 h-5 text-[#14B8A6] flex-shrink-0" />
                       ) : (
                         <Circle className="w-5 h-5 text-[#475569] flex-shrink-0 group-hover:text-[#94A3B8]" />
                       )}
@@ -137,28 +137,28 @@ export default function StormPrepChecklist() {
               </div>
             ))}
 
-            <div className="bg-[#1E293B] rounded-2xl p-6″>
+            <div className="bg-[#1E293B] rounded-2xl p-6">
               <h2 className="text-lg font-semibold mb-4 text-[#14B8A6]">After a Storm</h2>
-              <ul className="space-y-3″>
+              <ul className="space-y-3">
                 {afterItems.map((item, i) => (
-                  <li key={i} className="flex items-start gap-3″>
-                    <AlertTriangle className="w-5 h-5 text-[#F59E0B] flex-shrink-0 mt-0.5″ />
+                  <li key={i} className="flex items-start gap-3">
+                    <AlertTriangle className="w-5 h-5 text-[#F59E0B] flex-shrink-0 mt-0.5" />
                     <span className="text-[#CBD5E1]">{item}</span>
                   </li>
                 ))}
               </ul>
             </div>
 
-            <div className="bg-[#1E293B] rounded-2xl p-6″>
+            <div className="bg-[#1E293B] rounded-2xl p-6">
               <h2 className="text-lg font-semibold mb-4 text-[#14B8A6]">Emergency Contacts</h2>
-              <div className="space-y-3″>
+              <div className="space-y-3">
                 {[
-                  { label: "Gas — Atmos Energy", number: "800-460-3030″ },
-                  { label: "Electric — Oncor", number: "888-313-4747″ },
+                  { label: "Gas — Atmos Energy", number: "800-460-3030" },
+                  { label: "Electric — Oncor", number: "888-313-4747" },
                   { label: "Insurance Agent", number: "Your agent" },
                 ].map((c) => (
-                  <div key={c.label} className="flex items-center justify-between bg-[#0A1628] rounded-lg px-4 py-3″>
-                    <div className="flex items-center gap-2″>
+                  <div key={c.label} className="flex items-center justify-between bg-[#0A1628] rounded-lg px-4 py-3">
+                    <div className="flex items-center gap-2">
                       <Phone className="w-4 h-4 text-[#94A3B8]" />
                       <span className="text-sm text-[#CBD5E1]">{c.label}</span>
                     </div>
@@ -167,7 +167,7 @@ export default function StormPrepChecklist() {
                 ))}
               </div>
               <button className="mt-6 w-full flex items-center justify-center gap-2 bg-[#14B8A6] hover:bg-[#0D9488] text-white font-semibold py-3 rounded-xl transition-colors">
-                <Zap className="w-5 h-5″ />
+                <Zap className="w-5 h-5" />
                 Find Emergency Pros
               </button>
             </div>

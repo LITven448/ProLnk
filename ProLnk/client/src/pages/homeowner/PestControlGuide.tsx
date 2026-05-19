@@ -6,20 +6,20 @@ import {
 } from "lucide-react";
 
 const D = {
-  bg: "#0D0F14″,
+  bg: "#0D0F14",
   surface: "#13161E",
   card: "#1A1E2A",
   border: "#252A3A",
   text: "#F0F2FF",
-  muted: "#8B91A8″,
-  dim: "#555B72″,
+  muted: "#8B91A8",
+  dim: "#555B72",
   cyan: "#00D4FF",
-  green: "#00E676″,
-  amber: "#FFB300″,
-  red: "#FF4444″,
-  teal: "#14B8A6″,
-  orange: "#F97316″,
-  purple: "#A855F7″,
+  green: "#00E676",
+  amber: "#FFB300",
+  red: "#FF4444",
+  teal: "#14B8A6",
+  orange: "#F97316",
+  purple: "#A855F7",
 };
 
 type CheckStatus = "ok" | "warn" | "bad";
@@ -31,12 +31,12 @@ interface CheckItem {
 }
 
 const CHECKLIST: CheckItem[] = [
-  { id: "c1″, label: "Exterior caulk gaps sealed", status: "ok" },
-  { id: "c2″, label: "No standing water in yard", status: "warn" },
-  { id: "c3″, label: "Firewood stored away from house", status: "ok" },
-  { id: "c4″, label: "Door sweeps installed", status: "ok" },
-  { id: "c5″, label: "Gutters clean", status: "warn" },
-  { id: "c6″, label: "No mulch against foundation", status: "bad" },
+  { id: "c1", label: "Exterior caulk gaps sealed", status: "ok" },
+  { id: "c2", label: "No standing water in yard", status: "warn" },
+  { id: "c3", label: "Firewood stored away from house", status: "ok" },
+  { id: "c4", label: "Door sweeps installed", status: "ok" },
+  { id: "c5", label: "Gutters clean", status: "warn" },
+  { id: "c6", label: "No mulch against foundation", status: "bad" },
 ];
 
 const STATUS_ICON = {
@@ -149,13 +149,13 @@ export default function PestControlGuide() {
 
         {/* Season alert */}
         <div style={{
-          background: "#1C1200″, border: `1px solid ${D.amber}33`, borderRadius: 10,
+          background: "#1C1200", border: `1px solid ${D.amber}33`, borderRadius: 10,
           padding: "12px 16px", display: "flex", gap: 10, alignItems: "flex-start", marginBottom: 28,
         }}>
           <AlertTriangle size={18} color={D.amber} style={{ marginTop: 1, flexShrink: 0 }} />
           <div>
             <span style={{ color: D.amber, fontWeight: 600, fontSize: 13 }}>May — Termite Swarm Season</span>
-            <p style={{ color: D.muted, fontSize: 13, margin: "4px 0 0″ }}>
+            <p style={{ color: D.muted, fontSize: 13, margin: "4px 0 0" }}>
               Inspect crawl spaces and wood for frass (sawdust-like droppings). Winged termites near windows are a red flag.
             </p>
           </div>
@@ -171,7 +171,7 @@ export default function PestControlGuide() {
             <table style={{ width: "100%", borderCollapse: "collapse", fontSize: 12 }}>
               <thead>
                 <tr>
-                  <th style={{ color: D.muted, textAlign: "left", padding: "4px 8px 8px 0″, fontWeight: 500, minWidth: 90 }}>Pest</th>
+                  <th style={{ color: D.muted, textAlign: "left", padding: "4px 8px 8px 0", fontWeight: 500, minWidth: 90 }}>Pest</th>
                   {MONTHS.map(m => (
                     <th key={m} style={{ color: D.dim, fontWeight: 400, padding: "4px 3px 8px", textAlign: "center", minWidth: 30 }}>{m}</th>
                   ))}
@@ -180,12 +180,12 @@ export default function PestControlGuide() {
               <tbody>
                 {PESTS.map(pest => (
                   <tr key={pest.name}>
-                    <td style={{ color: pest.color, padding: "5px 8px 5px 0″, fontWeight: 600, whiteSpace: "nowrap" }}>{pest.name}</td>
+                    <td style={{ color: pest.color, padding: "5px 8px 5px 0", fontWeight: 600, whiteSpace: "nowrap" }}>{pest.name}</td>
                     {MONTHS.map((_, idx) => (
                       <td key={idx} style={{ padding: "5px 3px", textAlign: "center" }}>
                         <div style={{
                           width: 20, height: 20, borderRadius: 4, margin: "0 auto",
-                          background: pest.peak.includes(idx) ? pest.color + "44″ : D.surface,
+                          background: pest.peak.includes(idx) ? pest.color + "44" : D.surface,
                           border: pest.peak.includes(idx) ? `1px solid ${pest.color}66` : `1px solid ${D.border}`,
                           display: "flex", alignItems: "center", justifyContent: "center",
                         }}>
@@ -210,7 +210,7 @@ export default function PestControlGuide() {
               Prevention Checklist
             </h2>
             <span style={{
-              background: okCount === checklist.length ? D.green + "22″ : D.amber + "22",
+              background: okCount === checklist.length ? D.green + "22" : D.amber + "22",
               color: okCount === checklist.length ? D.green : D.amber,
               fontSize: 12, fontWeight: 600, padding: "3px 10px", borderRadius: 20,
             }}>
@@ -276,7 +276,7 @@ export default function PestControlGuide() {
                     </div>
                     <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
                       <span style={{
-                        background: t.pro ? D.orange + "22″ : D.green + "22",
+                        background: t.pro ? D.orange + "22" : D.green + "22",
                         color: t.pro ? D.orange : D.green,
                         fontSize: 11, fontWeight: 600, padding: "2px 8px", borderRadius: 20,
                       }}>
@@ -313,7 +313,7 @@ export default function PestControlGuide() {
             Get quotes from DFW's top-rated pest control pros — screened and licensed.
           </p>
           <button style={{
-            background: D.teal, color: "#000″, fontWeight: 700, fontSize: 14,
+            background: D.teal, color: "#000", fontWeight: 700, fontSize: 14,
             padding: "12px 28px", borderRadius: 8, border: "none", cursor: "pointer",
           }}>
             Schedule Pest Control

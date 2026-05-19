@@ -51,14 +51,14 @@ export default function DFWProLnkForPropertyManagers() {
           {portfolioTiers.map((tier, i) => (
             <div key={tier.size} onClick={() => setActive(active === i ? null : i)} style={{
               background: active === i ? '#0f2a4a' : '#0d1f36',
-              border: '2px solid', borderColor: active === i ? '#F5E642′ : '#1e3a5f',
+              border: '2px solid', borderColor: active === i ? '#F5E642' : '#1e3a5f',
               borderRadius: 12, padding: '18px 22px', cursor: 'pointer', transition: 'all 0.2s'
             }}>
               <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
                 <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
                   <span style={{ fontSize: 28 }}>{tier.emoji}</span>
                   <div>
-                    <div style={{ fontWeight: 800, color: active === i ? '#F5E642′ : '#e2e8f0', fontSize: 17 }}>{tier.size}</div>
+                    <div style={{ fontWeight: 800, color: active === i ? '#F5E642' : '#e2e8f0', fontSize: 17 }}>{tier.size}</div>
                     <div style={{ color: '#64748b', fontSize: 13 }}>Click to see your ProLnk ROI</div>
                   </div>
                 </div>
@@ -74,11 +74,11 @@ export default function DFWProLnkForPropertyManagers() {
                 <div style={{ marginTop: 16, paddingTop: 16, borderTop: '1px solid #1e3a5f' }}>
                   <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12, marginBottom: 16 }}>
                     <div style={{ background: '#0A1628', borderRadius: 8, padding: '14px 16px', textAlign: 'center' }}>
-                      <div style={{ fontSize: 28, fontWeight: 800, color: '#F5E642′ }}>{tier.timeSaved}</div>
+                      <div style={{ fontSize: 28, fontWeight: 800, color: '#F5E642' }}>{tier.timeSaved}</div>
                       <div style={{ color: '#64748b', fontSize: 12, marginTop: 4 }}>Time saved per week</div>
                     </div>
                     <div style={{ background: '#0A1628', borderRadius: 8, padding: '14px 16px', textAlign: 'center' }}>
-                      <div style={{ fontSize: 28, fontWeight: 800, color: '#F5E642′ }}>{tier.costReduction}</div>
+                      <div style={{ fontSize: 28, fontWeight: 800, color: '#F5E642' }}>{tier.costReduction}</div>
                       <div style={{ color: '#64748b', fontSize: 12, marginTop: 4 }}>Maintenance cost reduction</div>
                     </div>
                   </div>

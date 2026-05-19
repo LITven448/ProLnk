@@ -60,12 +60,12 @@ export default function DFWProLnkForInsuranceAgents() {
           {scenarios.map((s, i) => (
             <div key={s.label} onClick={() => setActive(active === i ? null : i)} style={{
               background: active === i ? '#0f2a4a' : '#0d1f36',
-              border: '1px solid', borderColor: active === i ? '#F5E642′ : '#1e3a5f',
+              border: '1px solid', borderColor: active === i ? '#F5E642' : '#1e3a5f',
               borderRadius: 10, padding: '16px 20px', cursor: 'pointer', transition: 'all 0.2s'
             }}>
               <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
                 <span style={{ fontSize: 24 }}>{s.emoji}</span>
-                <span style={{ fontWeight: 700, color: active === i ? '#F5E642′ : '#e2e8f0', fontSize: 15 }}>{s.label}</span>
+                <span style={{ fontWeight: 700, color: active === i ? '#F5E642' : '#e2e8f0', fontSize: 15 }}>{s.label}</span>
               </div>
               {active === i && (
                 <div style={{ marginTop: 14, paddingTop: 14, borderTop: '1px solid #1e3a5f' }}>

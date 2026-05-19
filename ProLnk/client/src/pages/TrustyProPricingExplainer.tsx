@@ -48,7 +48,7 @@ export default function TrustyProPricingExplainer() {
           </p>
         </div>
 
-        <div style={{ display: 'flex', gap: 0, marginBottom: 32, borderRadius: 10, overflow: 'hidden', border: '1px solid #e2e8f0′ }}>
+        <div style={{ display: 'flex', gap: 0, marginBottom: 32, borderRadius: 10, overflow: 'hidden', border: '1px solid #e2e8f0' }}>
           {[
             { key: 'homeowners', label: '🏠 What Homeowners Get' },
             { key: 'funded', label: '💰 How It’s Funded' },
@@ -58,7 +58,7 @@ export default function TrustyProPricingExplainer() {
               onClick={() => setActiveTab(tab.key as 'homeowners' | 'funded')}
               style={{
                 flex: 1, padding: '14px 20px', border: 'none', cursor: 'pointer', fontWeight: 700, fontSize: 15,
-                background: activeTab === tab.key ? '#0284c7′ : ’white',
+                background: activeTab === tab.key ? '#0284c7' : 'white',
                 color: activeTab === tab.key ? 'white' : '#64748b',
                 transition: 'all 0.2s',
               }}
@@ -123,7 +123,7 @@ export default function TrustyProPricingExplainer() {
         <div style={{ background: 'white', borderRadius: 12, overflow: 'hidden', boxShadow: '0 1px 3px rgba(0,0,0,0.08)', marginBottom: 40 }}>
           <table style={{ width: '100%', borderCollapse: 'collapse' }}>
             <thead>
-              <tr style={{ background: '#f1f5f9′ }}>
+              <tr style={{ background: '#f1f5f9' }}>
                 {['Platform', 'Homeowner Fee', 'Contractor Fee', 'Transparency', 'Free for Homeowners'].map(h => (
                   <th key={h} style={{ padding: '14px 16px', textAlign: 'left', color: '#475569', fontSize: 12, fontWeight: 700 }}>{h}</th>
                 ))}
@@ -131,11 +131,11 @@ export default function TrustyProPricingExplainer() {
             </thead>
             <tbody>
               {comparisons.map((row, i) => (
-                <tr key={row.platform} style={{ borderTop: '1px solid #e2e8f0', background: row.platform === 'TrustyPro' ? '#f0fdf4′ : i % 2 === 0 ? ’white' : '#f8fafc' }}>
-                  <td style={{ padding: '14px 16px', fontWeight: row.platform === 'TrustyPro' ? 800 : 600, color: row.platform === 'TrustyPro' ? '#059669′ : '#0f172a', fontSize: 14 }}>{row.platform}</td>
-                  <td style={{ padding: '14px 16px', color: row.freeForHomeowners ? '#059669′ : '#dc2626', fontSize: 13, fontWeight: row.freeForHomeowners ? 700 : 400 }}>{row.homeownerFee}</td>
+                <tr key={row.platform} style={{ borderTop: '1px solid #e2e8f0', background: row.platform === 'TrustyPro' ? '#f0fdf4' : i % 2 === 0 ? 'white' : '#f8fafc' }}>
+                  <td style={{ padding: '14px 16px', fontWeight: row.platform === 'TrustyPro' ? 800 : 600, color: row.platform === 'TrustyPro' ? '#059669' : '#0f172a', fontSize: 14 }}>{row.platform}</td>
+                  <td style={{ padding: '14px 16px', color: row.freeForHomeowners ? '#059669' : '#dc2626', fontSize: 13, fontWeight: row.freeForHomeowners ? 700 : 400 }}>{row.homeownerFee}</td>
                   <td style={{ padding: '14px 16px', color: '#64748b', fontSize: 13 }}>{row.contractorFee}</td>
-                  <td style={{ padding: '14px 16px', color: row.transparency === 'Full' ? '#059669′ : '#f59e0b', fontSize: 13, fontWeight: row.transparency === ’Full' ? 700 : 400 }}>{row.transparency}</td>
+                  <td style={{ padding: '14px 16px', color: row.transparency === 'Full' ? '#059669' : '#f59e0b', fontSize: 13, fontWeight: row.transparency === 'Full' ? 700 : 400 }}>{row.transparency}</td>
                   <td style={{ padding: '14px 16px', fontSize: 18 }}>{row.freeForHomeowners ? '✅' : '❌'}</td>
                 </tr>
               ))}

@@ -147,15 +147,15 @@ export default function SpringHomeChecklist() {
 
       <div className="min-h-screen bg-[#0A1628] text-white">
         {/* Hero */}
-        <div className="bg-gradient-to-br from-slate-900 via-blue-950/30 to-slate-900 border-b border-slate-800″>
-          <div className="max-w-4xl mx-auto px-6 py-12″>
-            <div className="inline-flex items-center gap-2 bg-green-500/10 border border-green-500/20 rounded-full px-4 py-1.5 mb-4″>
+        <div className="bg-gradient-to-br from-slate-900 via-blue-950/30 to-slate-900 border-b border-slate-800">
+          <div className="max-w-4xl mx-auto px-6 py-12">
+            <div className="inline-flex items-center gap-2 bg-green-500/10 border border-green-500/20 rounded-full px-4 py-1.5 mb-4">
               <span className="text-green-400 text-sm font-medium">🌱 Spring Edition — March through June</span>
             </div>
-            <h1 className="text-3xl sm:text-4xl font-bold text-white mb-3″>
+            <h1 className="text-3xl sm:text-4xl font-bold text-white mb-3">
               DFW Spring Home Checklist
             </h1>
-            <p className="text-slate-400 text-lg mb-2″>
+            <p className="text-slate-400 text-lg mb-2">
               47 items for the most dangerous home maintenance season in North Texas.
             </p>
             <p className="text-slate-500 text-sm">
@@ -164,16 +164,16 @@ export default function SpringHomeChecklist() {
           </div>
         </div>
 
-        <div className="max-w-4xl mx-auto px-6 py-8″>
+        <div className="max-w-4xl mx-auto px-6 py-8">
           {/* Progress ring */}
-          <div className="flex items-center gap-6 bg-slate-800/60 border border-slate-700 rounded-2xl p-6 mb-8″>
-            <div className="relative w-24 h-24 shrink-0″>
-              <svg className="w-24 h-24 -rotate-90″ viewBox="0 0 100 100">
-                <circle cx="50″ cy="50" r="40" fill="none" stroke="#1e293b" strokeWidth="10" />
+          <div className="flex items-center gap-6 bg-slate-800/60 border border-slate-700 rounded-2xl p-6 mb-8">
+            <div className="relative w-24 h-24 shrink-0">
+              <svg className="w-24 h-24 -rotate-90" viewBox="0 0 100 100">
+                <circle cx="50" cy="50" r="40" fill="none" stroke="#1e293b" strokeWidth="10" />
                 <circle
-                  cx="50″ cy="50" r="40" fill="none"
+                  cx="50" cy="50" r="40" fill="none"
                   stroke={pct === 100 ? '#22c55e' : '#14b8a6'}
-                  strokeWidth="10″
+                  strokeWidth="10"
                   strokeDasharray={circumference}
                   strokeDashoffset={offset}
                   strokeLinecap="round"
@@ -186,7 +186,7 @@ export default function SpringHomeChecklist() {
             </div>
             <div>
               <p className="text-white font-semibold text-lg">{done} of {total} items complete</p>
-              <p className="text-slate-400 text-sm mt-1″>
+              <p className="text-slate-400 text-sm mt-1">
                 {pct < 25 && 'Get started — storm season waits for no one.'}
                 {pct >= 25 && pct < 50 && 'Good start. Keep going before the first hail storm.'}
                 {pct >= 50 && pct < 75 && 'Halfway there. Your home is getting safer every item.'}
@@ -204,21 +204,21 @@ export default function SpringHomeChecklist() {
           </div>
 
           {/* Categories */}
-          <div className="space-y-6″>
+          <div className="space-y-6">
             {CATEGORIES.map((cat) => {
               const catDone = cat.items.filter((i) => checked.has(i.id)).length;
               const catPct = Math.round((catDone / cat.items.length) * 100);
               return (
                 <div key={cat.id} className={`rounded-2xl border bg-gradient-to-br ${cat.color} overflow-hidden`}>
                   <div className="px-5 py-4 border-b border-white/10 flex items-center justify-between">
-                    <div className="flex items-center gap-3″>
+                    <div className="flex items-center gap-3">
                       <span className="text-2xl">{cat.icon}</span>
                       <div>
                         <h2 className="text-white font-bold">{cat.title}</h2>
                         <p className="text-slate-400 text-xs">{catDone}/{cat.items.length} complete</p>
                       </div>
                     </div>
-                    <div className="flex items-center gap-2″>
+                    <div className="flex items-center gap-2">
                       <div className="w-20 h-2 bg-slate-700 rounded-full overflow-hidden">
                         <div
                           className="h-full bg-teal-500 rounded-full transition-all"
@@ -228,7 +228,7 @@ export default function SpringHomeChecklist() {
                       <span className="text-slate-400 text-xs w-8 text-right">{catPct}%</span>
                     </div>
                   </div>
-                  <div className="divide-y divide-white/5″>
+                  <div className="divide-y divide-white/5">
                     {cat.items.map((item) => {
                       const isChecked = checked.has(item.id);
                       return (
@@ -236,21 +236,21 @@ export default function SpringHomeChecklist() {
                           key={item.id}
                           className={`flex gap-4 px-5 py-4 cursor-pointer transition-colors ${isChecked ? 'bg-teal-500/10' : 'hover:bg-white/5'}`}
                         >
-                          <div className="mt-0.5 shrink-0″>
+                          <div className="mt-0.5 shrink-0">
                             <div
                               onClick={() => toggle(item.id)}
                               className={`w-5 h-5 rounded border-2 flex items-center justify-center transition-all ${
-                                isChecked ? 'bg-teal-500 border-teal-500′ : ’border-slate-600'
+                                isChecked ? 'bg-teal-500 border-teal-500' : 'border-slate-600'
                               }`}
                             >
                               {isChecked && (
-                                <svg className="w-3 h-3 text-white" viewBox="0 0 12 12″ fill="none">
-                                  <path d="M2 6l3 3 5-5″ stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                                <svg className="w-3 h-3 text-white" viewBox="0 0 12 12" fill="none">
+                                  <path d="M2 6l3 3 5-5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                                 </svg>
                               )}
                             </div>
                           </div>
-                          <div className="flex-1 min-w-0″>
+                          <div className="flex-1 min-w-0">
                             <p className={`text-sm font-medium leading-snug ${isChecked ? 'text-slate-400 line-through' : 'text-white'}`}>
                               {item.label}
                             </p>
@@ -267,8 +267,8 @@ export default function SpringHomeChecklist() {
 
           {/* CTA */}
           <div className="mt-10 bg-gradient-to-br from-teal-900/40 to-slate-800/60 border border-teal-700/30 rounded-2xl p-8 text-center">
-            <p className="text-2xl font-bold text-white mb-2″>Need help with any of these items?</p>
-            <p className="text-slate-400 mb-5″>ProLnk connects you with licensed, vetted DFW contractors — HVAC, roofing, plumbing, foundation, pest, and more. Free to request, no obligation.</p>
+            <p className="text-2xl font-bold text-white mb-2">Need help with any of these items?</p>
+            <p className="text-slate-400 mb-5">ProLnk connects you with licensed, vetted DFW contractors — HVAC, roofing, plumbing, foundation, pest, and more. Free to request, no obligation.</p>
             <Link href="/request-quote">
               <button className="inline-flex items-center gap-2 px-6 py-3 bg-teal-600 hover:bg-teal-700 rounded-xl text-white font-semibold transition-colors">
                 Find a Contractor →

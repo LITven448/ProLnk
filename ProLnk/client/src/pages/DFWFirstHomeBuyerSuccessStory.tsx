@@ -72,7 +72,7 @@ export default function DFWFirstHomeBuyerSuccessStory() {
           {journeys.map((j, i) => (
             <button key={i} onClick={() => setSelected(i)} style={{
               padding: '8px 14px', borderRadius: 6, border: 'none', cursor: 'pointer', fontWeight: 600, fontSize: 12,
-              backgroundColor: selected === i ? '#0A1628′ : '#E5E7EB', color: selected === i ? '#F5E642' : '#0A1628',
+              backgroundColor: selected === i ? '#0A1628' : '#E5E7EB', color: selected === i ? '#F5E642' : '#0A1628',
             }}>
               {j.situation}
             </button>
@@ -99,11 +99,11 @@ export default function DFWFirstHomeBuyerSuccessStory() {
             ))}
           </div>
 
-          <p style={{ lineHeight: 1.8, marginBottom: 20, color: '#374151′ }}>{j.story}</p>
+          <p style={{ lineHeight: 1.8, marginBottom: 20, color: '#374151' }}>{j.story}</p>
 
           <div style={{ backgroundColor: '#FAFAFA', borderLeft: '3px solid #F5E642', padding: '12px 16px', borderRadius: 4 }}>
             <div style={{ fontWeight: 700, marginBottom: 4 }}>💡 What They Wish They Knew</div>
-            <p style={{ margin: 0, lineHeight: 1.7, color: '#374151′ }}>{j.wishTheyKnew}</p>
+            <p style={{ margin: 0, lineHeight: 1.7, color: '#374151' }}>{j.wishTheyKnew}</p>
           </div>
         </div>
 

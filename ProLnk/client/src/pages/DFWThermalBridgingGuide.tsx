@@ -39,7 +39,7 @@ export default function DFWThermalBridgingGuide() {
           <p style={{ color: '#94a3b8', marginBottom: 12 }}>Thermal bridging occurs when a material with high thermal conductivity creates a direct path through your insulation layer. In a standard 2x4 wood-framed wall with R-13 batts, the actual whole-wall R-value drops to ~R-9 because the studs (comprising 25% of wall area) conduct heat at R-4.5.</p>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12 }}>
             {[
-              { label: 'Wood stud conductivity', value: '~R-4.5 per 3.5″' },
+              { label: 'Wood stud conductivity', value: '~R-4.5 per 3.5"' },
               { label: 'Metal stud conductivity', value: '300–400x worse than wood' },
               { label: 'Whole-wall R loss (wood)', value: '~30% of nominal R' },
               { label: 'Whole-wall R loss (metal)', value: '50–60% of nominal R' },
@@ -58,11 +58,11 @@ export default function DFWThermalBridgingGuide() {
           {[
             { step: '1', title: 'Identify your framing', desc: 'Tap walls. Metal framing sounds hollow and tinny. Check garage walls — steel framing is visible there.' },
             { step: '2', title: 'Add continuous exterior insulation', desc: 'Install polyiso or XPS rigid foam board over the entire exterior sheathing, outboard of studs. R-5 to R-10 recommended for DFW.' },
-            { step: '3', title: 'Consider interior flash-and-batt', desc: '1″ closed-cell spray foam against exterior sheathing + fiberglass batts fills the cavity and blocks air movement that worsens bridging.' },
+            { step: '3', title: 'Consider interior flash-and-batt', desc: '1" closed-cell spray foam against exterior sheathing + fiberglass batts fills the cavity and blocks air movement that worsens bridging.' },
           ].map(item => (
             <div key={item.step} style={{ display: 'flex', gap: 12, marginBottom: 16 }}>
               <div style={{ width: 32, height: 32, borderRadius: '50%', background: '#F5E642', color: '#0A1628', fontWeight: 800, display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>{item.step}</div>
-              <div><div style={{ fontWeight: 600, color: '#e2e8f0', marginBottom: 4 }}>{item.title}</div><div style={{ fontSize: 14, color: '#94a3b8′ }}>{item.desc}</div></div>
+              <div><div style={{ fontWeight: 600, color: '#e2e8f0', marginBottom: 4 }}>{item.title}</div><div style={{ fontSize: 14, color: '#94a3b8' }}>{item.desc}</div></div>
             </div>
           ))}
         </div>
@@ -81,10 +81,10 @@ export default function DFWThermalBridgingGuide() {
           </div>
           <button onClick={assess} style={{ background: '#F5E642', color: '#0A1628', fontWeight: 700, fontSize: 15, border: 'none', borderRadius: 8, padding: '12px 28px', cursor: 'pointer' }}>Assess My DFW Walls →</button>
           {result && (
-            <div style={{ marginTop: 20, padding: 16, background: '#1a2a3a', borderRadius: 8, borderLeft: '4px solid #F5E642′ }}>
+            <div style={{ marginTop: 20, padding: 16, background: '#1a2a3a', borderRadius: 8, borderLeft: '4px solid #F5E642' }}>
               <div style={{ color: '#F5E642', fontWeight: 700, marginBottom: 8 }}>Severity: {result.severity}</div>
               <div style={{ color: '#cbd5e1', marginBottom: 8 }}>{result.solution}</div>
-              <div style={{ color: '#94a3b8', fontSize: 14 }}>Estimated cost: <strong style={{ color: '#F5E642′ }}>{result.cost}</strong></div>
+              <div style={{ color: '#94a3b8', fontSize: 14 }}>Estimated cost: <strong style={{ color: '#F5E642' }}>{result.cost}</strong></div>
             </div>
           )}
         </div>

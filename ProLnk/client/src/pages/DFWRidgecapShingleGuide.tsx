@@ -45,15 +45,15 @@ export default function DFWRidgecapShingleGuide() {
         </p>
 
         <div style={{ display: 'grid', gap: '1rem', marginBottom: '1.5rem' }}>
-          <div style={{ background: '#0F2040', borderRadius: 10, padding: '1.25rem', borderLeft: '4px solid #F5E642′ }}>
+          <div style={{ background: '#0F2040', borderRadius: 10, padding: '1.25rem', borderLeft: '4px solid #F5E642' }}>
             <div style={{ fontWeight: 600, color: '#F5E642', marginBottom: '.5rem' }}>☀️ Why Ridge Caps Fail First in DFW</div>
             <p style={{ color: '#9AAAB8', margin: 0, fontSize: '.95rem' }}>Ridge caps bend over the peak at a sharp angle, constantly expanding and contracting with DFW's 50°F daily temperature swings. The asphalt adhesive strip that holds them sealed degrades fastest at the peak. Combined with DFW wind uplift patterns, ridge caps typically have 60-70% of field shingle lifespan.</p>
           </div>
-          <div style={{ background: '#0F2040', borderRadius: 10, padding: '1.25rem', borderLeft: '4px solid #3B82F6′ }}>
+          <div style={{ background: '#0F2040', borderRadius: 10, padding: '1.25rem', borderLeft: '4px solid #3B82F6' }}>
             <div style={{ fontWeight: 600, color: '#3B82F6', marginBottom: '.5rem' }}>🔭 How to Inspect from the Ground</div>
             <p style={{ color: '#9AAAB8', margin: 0, fontSize: '.95rem' }}>Use binoculars or your phone camera with zoom from street level. Look for: gaps between ridge cap courses, lifted corners (shadow lines along the ridge), missing caps (exposed dark strip), or granule-free surfaces that look lighter than surrounding shingles.</p>
           </div>
-          <div style={{ background: '#0F2040', borderRadius: 10, padding: '1.25rem', borderLeft: '4px solid #10B981′ }}>
+          <div style={{ background: '#0F2040', borderRadius: 10, padding: '1.25rem', borderLeft: '4px solid #10B981' }}>
             <div style={{ fontWeight: 600, color: '#10B981', marginBottom: '.5rem' }}>💡 Replace With Full Roof or Standalone?</div>
             <p style={{ color: '#9AAAB8', margin: 0, fontSize: '.95rem' }}>If your full roof has less than 5 years of life remaining, bundle ridge cap replacement into the full reroof — marginal cost delta. If your field shingles have 8+ years left and ridge caps are failing, standalone replacement ($400-900) is the right call. Do not let ridge caps fail while waiting for a full reroof.</p>
           </div>
@@ -85,8 +85,8 @@ export default function DFWRidgecapShingleGuide() {
           <div style={{ background: '#0F2040', borderRadius: 12, padding: '1.5rem', border: `1px solid ${result.urgencyColor}` }}>
             <h3 style={{ color: result.urgencyColor, marginBottom: '1rem' }}>{result.urgency}</h3>
             <div style={{ display: 'grid', gap: '.75rem' }}>
-              <div><span style={{ color: '#9AAAB8′ }}>Estimated Cost: </span><strong style={{ color: '#F5E642' }}>{result.cost}</strong></div>
-              <div><span style={{ color: '#9AAAB8′ }}>Timing: </span><span style={{ color: '#E8EDF5' }}>{result.timing}</span></div>
+              <div><span style={{ color: '#9AAAB8' }}>Estimated Cost: </span><strong style={{ color: '#F5E642' }}>{result.cost}</strong></div>
+              <div><span style={{ color: '#9AAAB8' }}>Timing: </span><span style={{ color: '#E8EDF5' }}>{result.timing}</span></div>
               <div style={{ color: '#9AAAB8', fontSize: '.9rem', borderTop: '1px solid #1E3A5F', paddingTop: '.75rem' }}>{result.note}</div>
             </div>
           </div>

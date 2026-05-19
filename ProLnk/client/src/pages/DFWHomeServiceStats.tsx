@@ -51,7 +51,7 @@ export default function DFWHomeServiceStats() {
           <p style={{ fontSize: 17, color: '#a0aec0', lineHeight: 1.7, marginBottom: 16 }}>
             The Dallas–Fort Worth Metroplex is one of the fastest-growing home services markets in the United States. Here's what the data shows.
           </p>
-          <p style={{ fontSize: 13, color: '#555′ }}>Data sourced from U.S. Census Bureau, Texas Real Estate Commission, NAHB, and ProLnk platform analytics · Updated May 2026</p>
+          <p style={{ fontSize: 13, color: '#555' }}>Data sourced from U.S. Census Bureau, Texas Real Estate Commission, NAHB, and ProLnk platform analytics · Updated May 2026</p>
         </div>
       </div>
 
@@ -71,7 +71,7 @@ export default function DFWHomeServiceStats() {
                 <div style={{ fontSize: 32, marginBottom: 8 }}>{stat.emoji}</div>
                 <div style={{ fontSize: 30, fontWeight: 800, color: '#F5E642', marginBottom: 4 }}>{stat.value}</div>
                 <div style={{ fontSize: 13, fontWeight: 700, color: '#fff', marginBottom: 2 }}>{stat.label}</div>
-                <div style={{ fontSize: 12, color: '#888′ }}>{stat.sub}</div>
+                <div style={{ fontSize: 12, color: '#888' }}>{stat.sub}</div>
               </div>
             ))}
           </div>
@@ -84,14 +84,14 @@ export default function DFWHomeServiceStats() {
             {topServices.map((s, i) => (
               <div key={i} style={{ background: 'rgba(255,255,255,0.04)', borderRadius: 10, padding: '14px 20px', border: '1px solid rgba(255,255,255,0.07)' }}>
                 <div style={{ display: 'flex', alignItems: 'center', gap: 14, marginBottom: 8 }}>
-                  <span style={{ fontSize: 14, fontWeight: 800, color: i < 3 ? '#F5E642′ : '#666', minWidth: 28, textAlign: ’center' }}>#{s.rank}</span>
+                  <span style={{ fontSize: 14, fontWeight: 800, color: i < 3 ? '#F5E642' : '#666', minWidth: 28, textAlign: 'center' }}>#{s.rank}</span>
                   <span style={{ flex: 1, fontWeight: 600, fontSize: 15 }}>{s.service}</span>
                   <span style={{ fontSize: 13, color: '#4ade80', fontWeight: 700 }}>{s.yoy}</span>
                 </div>
                 <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
                   <span style={{ fontSize: 11, color: '#888', minWidth: 28 }}></span>
                   <div style={{ flex: 1, background: 'rgba(255,255,255,0.08)', borderRadius: 4, height: 6, overflow: 'hidden' }}>
-                    <div style={{ width: `${s.demand}%`, height: '100%', background: i < 3 ? '#F5E642′ : '#4a6fa5', borderRadius: 4, transition: ’width 0.5s' }} />
+                    <div style={{ width: `${s.demand}%`, height: '100%', background: i < 3 ? '#F5E642' : '#4a6fa5', borderRadius: 4, transition: 'width 0.5s' }} />
                   </div>
                   <span style={{ fontSize: 12, color: '#888', minWidth: 32, textAlign: 'right' }}>{s.demand}%</span>
                 </div>
@@ -111,18 +111,18 @@ export default function DFWHomeServiceStats() {
                   onMouseLeave={() => setHoveredMonth(null)}
                 >
                   <div style={{ fontSize: 10, color: '#F5E642', fontWeight: 700, visibility: hoveredMonth === i ? 'visible' : 'hidden', whiteSpace: 'nowrap' }}>{d.demand}%</div>
-                  <div style={{ width: '100%', borderRadius: '4px 4px 0 0', background: hoveredMonth === i ? '#F5E642′ : d.demand >= 80 ? '#4a9eff' : ’rgba(255,255,255,0.25)', transition: 'all 0.2s', height: `${(d.demand / maxDemand) * 150}px` }} />
+                  <div style={{ width: '100%', borderRadius: '4px 4px 0 0', background: hoveredMonth === i ? '#F5E642' : d.demand >= 80 ? '#4a9eff' : 'rgba(255,255,255,0.25)', transition: 'all 0.2s', height: `${(d.demand / maxDemand) * 150}px` }} />
                 </div>
               ))}
             </div>
             <div style={{ display: 'flex', gap: 6 }}>
               {seasonalData.map((d, i) => (
-                <div key={i} style={{ flex: 1, textAlign: 'center', fontSize: 10, color: hoveredMonth === i ? '#F5E642′ : '#888', fontWeight: hoveredMonth === i ? 700 : 400 }}>{d.month}</div>
+                <div key={i} style={{ flex: 1, textAlign: 'center', fontSize: 10, color: hoveredMonth === i ? '#F5E642' : '#888', fontWeight: hoveredMonth === i ? 700 : 400 }}>{d.month}</div>
               ))}
             </div>
             {hoveredMonth !== null && (
-              <div style={{ marginTop: 16, padding: '10px 16px', background: 'rgba(245,230,66,0.1)', borderRadius: 8, border: '1px solid rgba(245,230,66,0.3)', fontSize: 14, color: '#e0e6f0′ }}>
-                <strong style={{ color: '#F5E642′ }}>{seasonalData[hoveredMonth].month}:</strong> {seasonalData[hoveredMonth].label}
+              <div style={{ marginTop: 16, padding: '10px 16px', background: 'rgba(245,230,66,0.1)', borderRadius: 8, border: '1px solid rgba(245,230,66,0.3)', fontSize: 14, color: '#e0e6f0' }}>
+                <strong style={{ color: '#F5E642' }}>{seasonalData[hoveredMonth].month}:</strong> {seasonalData[hoveredMonth].label}
               </div>
             )}
           </div>
@@ -144,9 +144,9 @@ export default function DFWHomeServiceStats() {
                 {countyData.map((row, i) => (
                   <tr key={i} style={{ borderBottom: '1px solid rgba(255,255,255,0.06)' }}>
                     <td style={{ padding: '12px 16px', fontWeight: 600 }}>{row.county}</td>
-                    <td style={{ padding: '12px 16px', color: '#a0aec0′ }}>{row.homes.toLocaleString()}</td>
+                    <td style={{ padding: '12px 16px', color: '#a0aec0' }}>{row.homes.toLocaleString()}</td>
                     <td style={{ padding: '12px 16px', color: '#4ade80', fontWeight: 700 }}>{row.spend}/yr</td>
-                    <td style={{ padding: '12px 16px', color: '#a0aec0′ }}>{row.pros.toLocaleString()}</td>
+                    <td style={{ padding: '12px 16px', color: '#a0aec0' }}>{row.pros.toLocaleString()}</td>
                   </tr>
                 ))}
               </tbody>

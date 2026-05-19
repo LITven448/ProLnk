@@ -39,7 +39,7 @@ const CDN = {
 };
 
 // --- Accent Color --------------------------------------------------------------
-const ACCENT = "#4F46E5″;
+const ACCENT = "#4F46E5";
 const ACCENT_LIGHT = "#EEF2FF";
 
 // --- Services ------------------------------------------------------------------
@@ -53,12 +53,12 @@ const SERVICES = [
 
 // --- Projects ------------------------------------------------------------------
 const PROJECTS = [
-  { cat: "Kitchen Remodel",   year: "2025″, title: "Modern Kitchen Transformation",   desc: "Full gut renovation with quartz countertops and custom cabinetry in Frisco.", img: CDN.projectKitchen },
-  { cat: "Exterior",          year: "2025″, title: "Luxury Curb Appeal Upgrade",       desc: "Complete exterior renovation with new siding, windows, and landscaping.", img: CDN.heroExterior },
-  { cat: "Bathroom",          year: "2025″, title: "Master Bath Spa Retreat",          desc: "Walk-in shower, soaking tub, and heated floors in a Plano home.", img: CDN.projectBath },
-  { cat: "Flooring",          year: "2025″, title: "Hardwood Throughout",              desc: "3,200 sq ft of white oak hardwood installed in a Frisco home.", img: CDN.projectFloor },
-  { cat: "Landscaping",       year: "2025″, title: "Backyard Oasis",                   desc: "Full landscaping with pergola, turf, and outdoor lighting in Allen.", img: CDN.projectLand },
-  { cat: "Painting",          year: "2025″, title: "Interior Refresh",                 desc: "Full interior repaint with premium Sherwin-Williams paint in McKinney.", img: CDN.projectPaint },
+  { cat: "Kitchen Remodel",   year: "2025", title: "Modern Kitchen Transformation",   desc: "Full gut renovation with quartz countertops and custom cabinetry in Frisco.", img: CDN.projectKitchen },
+  { cat: "Exterior",          year: "2025", title: "Luxury Curb Appeal Upgrade",       desc: "Complete exterior renovation with new siding, windows, and landscaping.", img: CDN.heroExterior },
+  { cat: "Bathroom",          year: "2025", title: "Master Bath Spa Retreat",          desc: "Walk-in shower, soaking tub, and heated floors in a Plano home.", img: CDN.projectBath },
+  { cat: "Flooring",          year: "2025", title: "Hardwood Throughout",              desc: "3,200 sq ft of white oak hardwood installed in a Frisco home.", img: CDN.projectFloor },
+  { cat: "Landscaping",       year: "2025", title: "Backyard Oasis",                   desc: "Full landscaping with pergola, turf, and outdoor lighting in Allen.", img: CDN.projectLand },
+  { cat: "Painting",          year: "2025", title: "Interior Refresh",                 desc: "Full interior repaint with premium Sherwin-Williams paint in McKinney.", img: CDN.projectPaint },
 ];
 
 // --- Benefits ------------------------------------------------------------------
@@ -162,7 +162,7 @@ function HomeownerProblemSection({ onScan }: { onScan: () => void }) {
     {
       icon: Search,
       title: "Searching Google or Lead Sites",
-      color: "#EF4444″,
+      color: "#EF4444",
       stats: "Pros pay $15–100 per lead on Angi — baked into your quote",
       points: [
         "You don't know if they're licensed or insured",
@@ -174,7 +174,7 @@ function HomeownerProblemSection({ onScan }: { onScan: () => void }) {
     {
       icon: AlertTriangle,
       title: "The Door-to-Door Salesperson",
-      color: "#F97316″,
+      color: "#F97316",
       stats: "Over $3B lost to contractor fraud annually in the US",
       points: [
         "No license verification, no insurance check",
@@ -186,7 +186,7 @@ function HomeownerProblemSection({ onScan }: { onScan: () => void }) {
     {
       icon: Clock,
       title: "Waiting for Callbacks That Never Come",
-      color: "#EAB308″,
+      color: "#EAB308",
       stats: "Avg. 4.7 days to get a contractor callback in DFW",
       points: [
         "Leave 3 voicemails, get 1 callback",
@@ -199,37 +199,37 @@ function HomeownerProblemSection({ onScan }: { onScan: () => void }) {
 
   return (
     <section className="py-24 bg-gray-50 overflow-hidden" style={{ borderTop: '1px solid #e5e7eb', borderBottom: '1px solid #e5e7eb' }}>
-      <div className="max-w-6xl mx-auto px-6″>
-        <AnimSection variants={fadeUp} className="text-center mb-16″>
-          <span className="inline-block px-4 py-1.5 rounded-full text-sm font-semibold mb-6″ style={{ backgroundColor: "rgba(79,70,229,0.1)", color: "#4f46e5" }}>
+      <div className="max-w-6xl mx-auto px-6">
+        <AnimSection variants={fadeUp} className="text-center mb-16">
+          <span className="inline-block px-4 py-1.5 rounded-full text-sm font-semibold mb-6" style={{ backgroundColor: "rgba(79,70,229,0.1)", color: "#4f46e5" }}>
             The Problem
           </span>
-          <h2 className="text-4xl md:text-6xl font-black text-gray-950 leading-tight mb-4″>
+          <h2 className="text-4xl md:text-6xl font-black text-gray-950 leading-tight mb-4">
             Finding a Contractor Is<br />
-            <span style={{ color: "#4f46e5″ }}>Still Broken in 2025.</span>
+            <span style={{ color: "#4f46e5" }}>Still Broken in 2025.</span>
           </h2>
           <p className="text-gray-500 text-lg max-w-2xl mx-auto">
-            Most homeowners don't realize they’re overpaying, getting ghosted, or hiring unverified strangers. Here’s the reality of the traditional contractor search.
+            Most homeowners don't realize they're overpaying, getting ghosted, or hiring unverified strangers. Here's the reality of the traditional contractor search.
           </p>
         </AnimSection>
 
-        <div className="grid md:grid-cols-3 gap-6 mb-16″>
+        <div className="grid md:grid-cols-3 gap-6 mb-16">
           {problems.map((prob) => (
             <AnimSection key={prob.title} variants={fadeUp}>
               <div className="rounded-2xl p-6 h-full border border-gray-200 bg-white shadow-sm">
-                <div className="flex items-center gap-3 mb-5″>
+                <div className="flex items-center gap-3 mb-5">
                   <div className="w-10 h-10 rounded-xl flex items-center justify-center" style={{ backgroundColor: `${prob.color}20` }}>
-                    <prob.icon className="w-5 h-5″ style={{ color: prob.color }} />
+                    <prob.icon className="w-5 h-5" style={{ color: prob.color }} />
                   </div>
                   <h3 className="font-black text-gray-900 text-base leading-tight">{prob.title}</h3>
                 </div>
                 <p className="text-xs font-bold mb-4 px-3 py-1.5 rounded-full inline-block" style={{ backgroundColor: `${prob.color}15`, color: prob.color }}>
                   {prob.stats}
                 </p>
-                <div className="space-y-2.5″>
+                <div className="space-y-2.5">
                   {prob.points.map((pt) => (
-                    <div key={pt} className="flex items-start gap-2.5″>
-                      <XCircle className="w-4 h-4 mt-0.5 flex-shrink-0″ style={{ color: prob.color }} />
+                    <div key={pt} className="flex items-start gap-2.5">
+                      <XCircle className="w-4 h-4 mt-0.5 flex-shrink-0" style={{ color: prob.color }} />
                       <p className="text-sm text-gray-600 leading-snug">{pt}</p>
                     </div>
                   ))}
@@ -242,22 +242,22 @@ function HomeownerProblemSection({ onScan }: { onScan: () => void }) {
         {/* The Solution Bridge */}
         <AnimSection variants={fadeUp}>
           <div className="rounded-2xl p-8 md:p-12 text-center bg-white" style={{ border: "1px solid rgba(79,70,229,0.2)", boxShadow: "0 4px 24px rgba(79,70,229,0.08)" }}>
-            <div className="text-5xl mb-4″>💡</div>
-            <h3 className="text-3xl md:text-4xl font-black text-gray-950 mb-4″>
+            <div className="text-5xl mb-4">💡</div>
+            <h3 className="text-3xl md:text-4xl font-black text-gray-950 mb-4">
               TrustyPro Solves Every Single One of These.
             </h3>
-            <p className="text-gray-500 text-lg max-w-2xl mx-auto mb-8″>
+            <p className="text-gray-500 text-lg max-w-2xl mx-auto mb-8">
               We built TrustyPro because we were tired of watching homeowners get burned. Every pro is verified before you ever see their name. Every quote is transparent. Every job is tracked. And you initiate everything — on your terms, on your timeline.
             </p>
-            <div className="grid sm:grid-cols-3 gap-4 mb-8″>
+            <div className="grid sm:grid-cols-3 gap-4 mb-8">
               {[
                 { stat: "7-point", label: "Verification process" },
                 { stat: "< 4 hrs", label: "Average match time" },
                 { stat: "100%", label: "Licensed & insured" },
               ].map((s) => (
-                <div key={s.stat} className="rounded-xl p-4″ style={{ backgroundColor: "rgba(79,70,229,0.06)" }}>
-                  <p className="text-3xl font-black" style={{ color: "#4f46e5″ }}>{s.stat}</p>
-                  <p className="text-sm text-gray-500 mt-1″>{s.label}</p>
+                <div key={s.stat} className="rounded-xl p-4" style={{ backgroundColor: "rgba(79,70,229,0.06)" }}>
+                  <p className="text-3xl font-black" style={{ color: "#4f46e5" }}>{s.stat}</p>
+                  <p className="text-sm text-gray-500 mt-1">{s.label}</p>
                 </div>
               ))}
             </div>
@@ -268,7 +268,7 @@ function HomeownerProblemSection({ onScan }: { onScan: () => void }) {
               whileHover={{ scale: 1.04 }}
               whileTap={{ scale: 0.97 }}
             >
-              Scan My Home Free — See the Difference <ArrowRight className="w-5 h-5″ />
+              Scan My Home Free — See the Difference <ArrowRight className="w-5 h-5" />
             </motion.button>
           </div>
         </AnimSection>
@@ -342,9 +342,9 @@ function BeforeAfterSlider({ before, after }: { before: string; after: string })
       <div className="absolute inset-0 overflow-hidden" style={{ width: `${pos}%` }}>
         <img src={before} alt="Before" className="absolute inset-0 h-full object-cover" style={{ width: `${10000/pos}%`, maxWidth: "none" }} draggable={false} />
       </div>
-      <div className="absolute top-0 bottom-0 w-0.5 bg-white shadow-xl z-10″ style={{ left: `${pos}%`, transform: "translateX(-50%)" }}>
+      <div className="absolute top-0 bottom-0 w-0.5 bg-white shadow-xl z-10" style={{ left: `${pos}%`, transform: "translateX(-50%)" }}>
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-white shadow-2xl flex items-center justify-center">
-          <ChevronLeft size={12} className="text-gray-600″ /><ChevronRight size={12} className="text-gray-600" />
+          <ChevronLeft size={12} className="text-gray-600" /><ChevronRight size={12} className="text-gray-600" />
         </div>
       </div>
       <div className="absolute top-3 left-3 z-10 px-2.5 py-1 bg-black/60 text-white text-xs font-bold uppercase tracking-widest">BEFORE</div>
@@ -359,9 +359,9 @@ const SCAN_TABS = [
     label: "Interior",
     img: "https://pub-ee8fee527ee84997b9eae6e57cd17168.r2.dev/trustypro-hero-interior_21ad489c.webp",
     issues: [
-      { label: "Water Damage", color: "#ef4444″ },
+      { label: "Water Damage", color: "#ef4444" },
       { label: "Floor Refinishing", color: "#f59e0b" },
-      { label: "Foundation Check", color: "#6366f1″ },
+      { label: "Foundation Check", color: "#6366f1" },
     ],
     count: 3,
   },
@@ -369,9 +369,9 @@ const SCAN_TABS = [
     label: "Front Yard",
     img: "https://pub-ee8fee527ee84997b9eae6e57cd17168.r2.dev/trustypro-frontyard-damage-scan-v2-D9sW97trHmaDoMH7jXUN8A.webp",
     issues: [
-      { label: "Driveway Crack", color: "#ef4444″ },
+      { label: "Driveway Crack", color: "#ef4444" },
       { label: "Gutter Sagging", color: "#f59e0b" },
-      { label: "Exterior Paint Fading", color: "#6366f1″ },
+      { label: "Exterior Paint Fading", color: "#6366f1" },
     ],
     count: 3,
   },
@@ -379,9 +379,9 @@ const SCAN_TABS = [
     label: "Back Yard",
     img: "https://pub-ee8fee527ee84997b9eae6e57cd17168.r2.dev/trustypro-backyard-damage-scan-iNiCrAstyruUq9w9XysU59.webp",
     issues: [
-      { label: "Fence Damage", color: "#ef4444″ },
+      { label: "Fence Damage", color: "#ef4444" },
       { label: "Deck Wear", color: "#f59e0b" },
-      { label: "Drainage Issue", color: "#10b981″ },
+      { label: "Drainage Issue", color: "#10b981" },
     ],
     count: 3,
   },
@@ -391,15 +391,15 @@ function ScanDemoCarousel() {
   const [active, setActive] = useState(0);
   const tab = SCAN_TABS[active];
   return (
-    <div className="rounded-3xl overflow-hidden shadow-2xl border border-gray-100″>
+    <div className="rounded-3xl overflow-hidden shadow-2xl border border-gray-100">
       {/* Tab row */}
-      <div className="flex bg-gray-950″>
+      <div className="flex bg-gray-950">
         {SCAN_TABS.map((t, i) => (
           <button
             key={t.label}
             onClick={() => setActive(i)}
             className={`flex-1 py-3 text-sm font-bold transition-colors ${
-              i === active ? "text-white border-b-2″ : "text-gray-400 hover:text-gray-200"
+              i === active ? "text-white border-b-2" : "text-gray-400 hover:text-gray-200"
             }`}
             style={i === active ? { borderBottomColor: ACCENT } : {}}
           >
@@ -423,9 +423,9 @@ function ScanDemoCarousel() {
       {/* Caption strip */}
       <div className="bg-gray-950 px-6 py-4 flex flex-wrap gap-4 items-center justify-between">
         <p className="text-white text-sm font-semibold">AI identified {tab.count} issues in this {tab.label.toLowerCase()} scan</p>
-        <div className="flex flex-wrap gap-2″>
+        <div className="flex flex-wrap gap-2">
           {tab.issues.map((tag) => (
-            <span key={tag.label} className="px-3 py-1 rounded-full text-xs font-bold" style={{ backgroundColor: tag.color + "22″, border: `1px solid ${tag.color}`, color: tag.color }}>
+            <span key={tag.label} className="px-3 py-1 rounded-full text-xs font-bold" style={{ backgroundColor: tag.color + "22", border: `1px solid ${tag.color}`, color: tag.color }}>
               {tag.label}
             </span>
           ))}
@@ -527,7 +527,7 @@ export default function TrustyProHome() {
       <AnimatePresence>
         {intakeOpen && (
           <motion.div
-            className="fixed inset-0 z-[100] flex items-center justify-center p-4″
+            className="fixed inset-0 z-[100] flex items-center justify-center p-4"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
@@ -543,34 +543,34 @@ export default function TrustyProHome() {
               transition={{ duration: 0.35, ease: EASE }}
             >
               {/* Header */}
-              <div className="px-8 pt-8 pb-5 border-b border-gray-100″>
+              <div className="px-8 pt-8 pb-5 border-b border-gray-100">
                 <button onClick={closeIntake} className="absolute top-5 right-5 w-8 h-8 rounded-full bg-gray-100 flex items-center justify-center hover:bg-gray-200 transition-colors">
-                  <X className="w-4 h-4 text-gray-600″ />
+                  <X className="w-4 h-4 text-gray-600" />
                 </button>
                 {intakeStep < 3 ? (
                   <>
-                    <div className="flex items-center gap-2 mb-3″>
+                    <div className="flex items-center gap-2 mb-3">
                       <span className="inline-block px-3 py-1 rounded-full text-xs font-bold text-white" style={{ backgroundColor: ACCENT }}>Free</span>
                       <span className="text-xs text-gray-400 font-medium">No credit card required</span>
                     </div>
-                    <h2 className="text-2xl font-black text-gray-950″>
+                    <h2 className="text-2xl font-black text-gray-950">
                       {intakeStep === 1 ? "Tell us about yourself" : "Describe your project"}
                     </h2>
-                    <p className="text-sm text-gray-500 mt-1″>
+                    <p className="text-sm text-gray-500 mt-1">
                       {intakeStep === 1 ? "We'll match you with a verified local pro in your area." : "The more detail you share, the better we can match you."}
                     </p>
                     {/* Step indicator */}
-                    <div className="flex gap-2 mt-4″>
+                    <div className="flex gap-2 mt-4">
                       <div className="h-1 flex-1 rounded-full" style={{ backgroundColor: intakeStep >= 1 ? ACCENT : "#E5E7EB" }} />
                       <div className="h-1 flex-1 rounded-full" style={{ backgroundColor: intakeStep >= 2 ? ACCENT : "#E5E7EB" }} />
                     </div>
                   </>
                 ) : (
-                  <div className="text-center py-4″>
-                    <div className="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4″ style={{ backgroundColor: ACCENT_LIGHT }}>
-                      <CheckCircle className="w-8 h-8″ style={{ color: ACCENT }} />
+                  <div className="text-center py-4">
+                    <div className="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4" style={{ backgroundColor: ACCENT_LIGHT }}>
+                      <CheckCircle className="w-8 h-8" style={{ color: ACCENT }} />
                     </div>
-                    <h2 className="text-2xl font-black text-gray-950″>You're on the list!</h2>
+                    <h2 className="text-2xl font-black text-gray-950">You're on the list!</h2>
                     <p className="text-gray-500 mt-2 text-sm">We received your request and will match you with a verified DFW pro within a few hours. Check your email for updates.</p>
                   </div>
                 )}
@@ -578,44 +578,44 @@ export default function TrustyProHome() {
 
               {/* Body */}
               {intakeStep === 1 && (
-                <div className="px-8 py-6 space-y-4″>
-                  <div className="grid grid-cols-2 gap-4″>
+                <div className="px-8 py-6 space-y-4">
+                  <div className="grid grid-cols-2 gap-4">
                     <div>
-                      <label className="block text-xs font-bold text-gray-700 mb-1″>Full Name *</label>
+                      <label className="block text-xs font-bold text-gray-700 mb-1">Full Name *</label>
                       <input
                         type="text" placeholder="Jane Smith"
                         value={intakeForm.name}
                         onChange={e => setIntakeForm(f => ({ ...f, name: e.target.value }))}
-                        className="w-full px-4 py-2.5 rounded-xl border border-gray-200 text-sm focus:outline-none focus:ring-2 text-gray-900″
+                        className="w-full px-4 py-2.5 rounded-xl border border-gray-200 text-sm focus:outline-none focus:ring-2 text-gray-900"
                         style={{ focusRingColor: ACCENT } as React.CSSProperties}
                       />
                     </div>
                     <div>
-                      <label className="block text-xs font-bold text-gray-700 mb-1″>Phone</label>
+                      <label className="block text-xs font-bold text-gray-700 mb-1">Phone</label>
                       <input
-                        type="tel" placeholder="(214) 555-0100″
+                        type="tel" placeholder="(214) 555-0100"
                         value={intakeForm.phone}
                         onChange={e => setIntakeForm(f => ({ ...f, phone: e.target.value }))}
-                        className="w-full px-4 py-2.5 rounded-xl border border-gray-200 text-sm focus:outline-none focus:ring-2 text-gray-900″
+                        className="w-full px-4 py-2.5 rounded-xl border border-gray-200 text-sm focus:outline-none focus:ring-2 text-gray-900"
                       />
                     </div>
                   </div>
                   <div>
-                    <label className="block text-xs font-bold text-gray-700 mb-1″>Email Address *</label>
+                    <label className="block text-xs font-bold text-gray-700 mb-1">Email Address *</label>
                     <input
                       type="email" placeholder="jane@example.com"
                       value={intakeForm.email}
                       onChange={e => setIntakeForm(f => ({ ...f, email: e.target.value }))}
-                      className="w-full px-4 py-2.5 rounded-xl border border-gray-200 text-sm focus:outline-none focus:ring-2 text-gray-900″
+                      className="w-full px-4 py-2.5 rounded-xl border border-gray-200 text-sm focus:outline-none focus:ring-2 text-gray-900"
                     />
                   </div>
                   <div>
-                    <label className="block text-xs font-bold text-gray-700 mb-1″>Home Address *</label>
+                    <label className="block text-xs font-bold text-gray-700 mb-1">Home Address *</label>
                     <input
-                      type="text" placeholder="123 Main St, Frisco, TX 75034″
+                      type="text" placeholder="123 Main St, Frisco, TX 75034"
                       value={intakeForm.address}
                       onChange={e => setIntakeForm(f => ({ ...f, address: e.target.value }))}
-                      className="w-full px-4 py-2.5 rounded-xl border border-gray-200 text-sm focus:outline-none focus:ring-2 text-gray-900″
+                      className="w-full px-4 py-2.5 rounded-xl border border-gray-200 text-sm focus:outline-none focus:ring-2 text-gray-900"
                     />
                   </div>
                   <button
@@ -628,22 +628,22 @@ export default function TrustyProHome() {
                     className="w-full py-3 rounded-xl text-sm font-bold text-white hover:opacity-90 transition-opacity"
                     style={{ backgroundColor: ACCENT }}
                   >
-                    Next -- Describe Your Project <ArrowRight className="inline w-4 h-4 ml-1″ />
+                    Next -- Describe Your Project <ArrowRight className="inline w-4 h-4 ml-1" />
                   </button>
                 </div>
               )}
 
               {intakeStep === 2 && (
-                <div className="px-8 py-6 space-y-4″>
+                <div className="px-8 py-6 space-y-4">
                   <div>
-                    <label className="block text-xs font-bold text-gray-700 mb-2″>What type of project? *</label>
-                    <div className="flex flex-wrap gap-2″>
+                    <label className="block text-xs font-bold text-gray-700 mb-2">What type of project? *</label>
+                    <div className="flex flex-wrap gap-2">
                       {SERVICE_TYPES.map(s => (
                         <button
                           key={s}
                           onClick={() => setIntakeForm(f => ({ ...f, serviceType: s }))}
                           className="px-3 py-1.5 rounded-full text-xs font-semibold border transition-all"
-                          style={intakeForm.serviceType === s ? { backgroundColor: ACCENT, color: "white", borderColor: ACCENT } : { backgroundColor: "white", color: "#374151″, borderColor: "#E5E7EB" }}
+                          style={intakeForm.serviceType === s ? { backgroundColor: ACCENT, color: "white", borderColor: ACCENT } : { backgroundColor: "white", color: "#374151", borderColor: "#E5E7EB" }}
                         >
                           {s}
                         </button>
@@ -651,7 +651,7 @@ export default function TrustyProHome() {
                     </div>
                   </div>
                   <div>
-                    <label className="block text-xs font-bold text-gray-700 mb-1″>Describe what you need *</label>
+                    <label className="block text-xs font-bold text-gray-700 mb-1">Describe what you need *</label>
                     <textarea
                       rows={3} placeholder="e.g. My kitchen cabinets need replacing and I'd like new countertops too..."
                       value={intakeForm.description}
@@ -660,21 +660,21 @@ export default function TrustyProHome() {
                     />
                   </div>
                   <div>
-                    <label className="block text-xs font-bold text-gray-700 mb-2″>How urgent is this?</label>
-                    <div className="flex gap-2″>
+                    <label className="block text-xs font-bold text-gray-700 mb-2">How urgent is this?</label>
+                    <div className="flex gap-2">
                       {(["urgent","moderate","low"] as const).map(u => (
                         <button
                           key={u}
                           onClick={() => setIntakeForm(f => ({ ...f, urgency: u }))}
                           className="flex-1 py-2 rounded-xl text-xs font-semibold border capitalize transition-all"
-                          style={intakeForm.urgency === u ? { backgroundColor: ACCENT, color: "white", borderColor: ACCENT } : { backgroundColor: "white", color: "#374151″, borderColor: "#E5E7EB" }}
+                          style={intakeForm.urgency === u ? { backgroundColor: ACCENT, color: "white", borderColor: ACCENT } : { backgroundColor: "white", color: "#374151", borderColor: "#E5E7EB" }}
                         >
                           {u === "urgent" ? " Urgent" : u === "moderate" ? " Moderate" : " No Rush"}
                         </button>
                       ))}
                     </div>
                   </div>
-                  <div className="flex gap-3″>
+                  <div className="flex gap-3">
                     <button
                       onClick={() => setIntakeStep(1)}
                       className="flex-1 py-3 rounded-xl text-sm font-bold text-gray-600 bg-gray-100 hover:bg-gray-200 transition-colors"
@@ -684,7 +684,7 @@ export default function TrustyProHome() {
                     <button
                       onClick={handleIntakeSubmit}
                       disabled={submitLead.isPending}
-                      className="flex-1 py-3 rounded-xl text-sm font-bold text-white hover:opacity-90 transition-opacity disabled:opacity-60 flex items-center justify-center gap-2″
+                      className="flex-1 py-3 rounded-xl text-sm font-bold text-white hover:opacity-90 transition-opacity disabled:opacity-60 flex items-center justify-center gap-2"
                       style={{ backgroundColor: ACCENT }}
                     >
                       {submitLead.isPending ? <><Loader2 className="w-4 h-4 animate-spin" /> Submitting...</> : "Get Matched -- It's Free"}
@@ -710,22 +710,22 @@ export default function TrustyProHome() {
       </AnimatePresence>
 
       {/* -- NAV --------------------------------------------------------------- */}
-      <nav className="sticky top-0 z-50 bg-white/95 backdrop-blur-sm border-b border-gray-100″>
+      <nav className="sticky top-0 z-50 bg-white/95 backdrop-blur-sm border-b border-gray-100">
         <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
           <Link href="/trustypro">
             <TrustyProLogo height={52} />
           </Link>
-          <div className="hidden md:flex items-center gap-8″>
+          <div className="hidden md:flex items-center gap-8">
             {[["about","About Us"],["services","Services"],["how-it-works","How It Works"],["benefits","Why TrustyPro"]].map(([id,label]) => (
               <button key={id} onClick={() => scrollTo(id)} className="text-sm font-medium text-gray-600 hover:text-gray-900 transition-colors">{label}</button>
             ))}
             <button onClick={() => { setChatOpen(true); setMobileOpen(false); }} className="text-sm font-medium text-gray-600 hover:text-gray-900 transition-colors">Contact</button>
           </div>
-          <div className="hidden md:flex items-center gap-3″>
+          <div className="hidden md:flex items-center gap-3">
 <button onClick={goToWizard} className="text-sm font-semibold px-4 py-1.5 rounded-full border-2 transition-colors" style={{ borderColor: ACCENT, color: ACCENT }}>Scan My Home ✦</button>
             <button
               onClick={() => navigate("/trustypro/login")}
-              className="text-sm font-medium text-gray-600 hover:text-gray-900 transition-colors border border-gray-200 px-4 py-2 rounded-full hover:border-gray-400″
+              className="text-sm font-medium text-gray-600 hover:text-gray-900 transition-colors border border-gray-200 px-4 py-2 rounded-full hover:border-gray-400"
             >
               My Home Login
             </button>
@@ -733,7 +733,7 @@ export default function TrustyProHome() {
               Get Started
             </button>
           </div>
-          <button className="md:hidden p-2″ onClick={() => setMobileOpen(!mobileOpen)}><Menu className="w-5 h-5" /></button>
+          <button className="md:hidden p-2" onClick={() => setMobileOpen(!mobileOpen)}><Menu className="w-5 h-5" /></button>
         </div>
         <AnimatePresence>
           {mobileOpen && (
@@ -745,11 +745,11 @@ export default function TrustyProHome() {
               className="md:hidden bg-white border-t border-gray-100 px-6 py-4 flex flex-col gap-4 overflow-hidden"
             >
               {[["about","About Us"],["services","Services"],["how-it-works","How It Works"],["benefits","Why TrustyPro"]].map(([id,label]) => (
-                <button key={id} onClick={() => scrollTo(id)} className="text-left text-sm font-medium text-gray-600″>{label}</button>
+                <button key={id} onClick={() => scrollTo(id)} className="text-left text-sm font-medium text-gray-600">{label}</button>
               ))}
-              <button onClick={() => { setChatOpen(true); setMobileOpen(false); }} className="text-left text-sm font-medium text-gray-600″>Contact</button>
-              <button onClick={goToWizard} className="text-left text-sm font-medium text-gray-600″>Scan My Home</button>
-              <button onClick={() => navigate("/trustypro/login")} className="text-left text-sm font-medium text-gray-600″>My Home Login</button>
+              <button onClick={() => { setChatOpen(true); setMobileOpen(false); }} className="text-left text-sm font-medium text-gray-600">Contact</button>
+              <button onClick={goToWizard} className="text-left text-sm font-medium text-gray-600">Scan My Home</button>
+              <button onClick={() => navigate("/trustypro/login")} className="text-left text-sm font-medium text-gray-600">My Home Login</button>
               <button onClick={goToWizard} className="px-5 py-2 rounded-full text-sm font-semibold text-white w-fit" style={{ backgroundColor: ACCENT }}>Get Started</button>
             </motion.div>
           )}
@@ -762,19 +762,19 @@ export default function TrustyProHome() {
 
           {/* FREE badge */}
           <motion.div
-            className="inline-flex items-center gap-2 px-4 py-2 rounded-full mb-6″
-            style={{ backgroundColor: "#dcfce7″, border: "1.5px solid #86efac" }}
+            className="inline-flex items-center gap-2 px-4 py-2 rounded-full mb-6"
+            style={{ backgroundColor: "#dcfce7", border: "1.5px solid #86efac" }}
             initial={{ opacity: 0, scale: 0.85 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.5, ease: EASE }}
           >
             <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
-            <span className="text-sm font-bold text-green-700″>100% Free for Homeowners — No Catch. No Credit Card.</span>
+            <span className="text-sm font-bold text-green-700">100% Free for Homeowners — No Catch. No Credit Card.</span>
           </motion.div>
 
           {/* Primary headline */}
           <motion.h1
-            className="text-5xl md:text-7xl font-black text-gray-950 leading-[1.05] tracking-tight mb-5″
+            className="text-5xl md:text-7xl font-black text-gray-950 leading-[1.05] tracking-tight mb-5"
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: EASE, delay: 0.1 }}
@@ -804,7 +804,7 @@ export default function TrustyProHome() {
 
           {/* 3 benefit columns */}
           <motion.div
-            className="grid grid-cols-3 gap-4 max-w-2xl mx-auto mb-8″
+            className="grid grid-cols-3 gap-4 max-w-2xl mx-auto mb-8"
             initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, ease: EASE, delay: 0.35 }}
@@ -819,12 +819,12 @@ export default function TrustyProHome() {
                 className="rounded-2xl p-4 text-center border border-gray-200 bg-white shadow-sm"
               >
                 <div
-                  className="w-10 h-10 rounded-xl flex items-center justify-center mx-auto mb-3″
+                  className="w-10 h-10 rounded-xl flex items-center justify-center mx-auto mb-3"
                   style={{ backgroundColor: ACCENT_LIGHT }}
                 >
-                  <Icon className="w-5 h-5″ style={{ color: ACCENT }} />
+                  <Icon className="w-5 h-5" style={{ color: ACCENT }} />
                 </div>
-                <p className="text-sm font-black text-gray-900 mb-1″>{label}</p>
+                <p className="text-sm font-black text-gray-900 mb-1">{label}</p>
                 <p className="text-xs text-gray-500 leading-snug">{desc}</p>
               </div>
             ))}
@@ -832,13 +832,13 @@ export default function TrustyProHome() {
 
           {/* Social proof counter */}
           <motion.div
-            className="inline-flex items-center gap-3 px-5 py-2.5 rounded-full mb-6″
+            className="inline-flex items-center gap-3 px-5 py-2.5 rounded-full mb-6"
             style={{ backgroundColor: "rgba(79,70,229,0.07)", border: "1px solid rgba(79,70,229,0.18)" }}
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.6, ease: EASE, delay: 0.38 }}
           >
-            <div className="flex -space-x-1.5″>
+            <div className="flex -space-x-1.5">
               {["👩","👨","👩‍🦳","👨‍🦱","👩‍💼"].map((e, i) => (
                 <div key={i} className="w-7 h-7 rounded-full bg-indigo-100 flex items-center justify-center text-sm border-2 border-white text-xs">{e}</div>
               ))}
@@ -850,7 +850,7 @@ export default function TrustyProHome() {
 
           {/* Primary CTA */}
           <motion.div
-            className="flex flex-col items-center gap-4″
+            className="flex flex-col items-center gap-4"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, ease: EASE, delay: 0.42 }}
@@ -860,11 +860,11 @@ export default function TrustyProHome() {
               className="inline-flex items-center gap-2 px-10 py-4 rounded-full text-base font-black text-white hover:opacity-90 transition-opacity shadow-xl"
               style={{ backgroundColor: ACCENT }}
             >
-              Start Your Free Scan <ArrowRight className="w-5 h-5″ />
+              Start Your Free Scan <ArrowRight className="w-5 h-5" />
             </button>
 
             {/* Trust badges */}
-            <div className="flex flex-wrap items-center justify-center gap-3″>
+            <div className="flex flex-wrap items-center justify-center gap-3">
               {[
                 { icon: Shield, label: "HIPAA Compliant" },
                 { icon: Zap, label: "AI-Powered" },
@@ -873,16 +873,16 @@ export default function TrustyProHome() {
                 <span
                   key={label}
                   className="flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-semibold border"
-                  style={{ borderColor: "#d1d5db", color: "#4b5563″, backgroundColor: "#fff" }}
+                  style={{ borderColor: "#d1d5db", color: "#4b5563", backgroundColor: "#fff" }}
                 >
-                  <Icon className="w-3.5 h-3.5″ style={{ color: ACCENT }} />
+                  <Icon className="w-3.5 h-3.5" style={{ color: ACCENT }} />
                   {label}
                 </span>
               ))}
             </div>
 
             {/* Claim CTA */}
-            <p className="text-sm text-gray-500″>
+            <p className="text-sm text-gray-500">
               Already a DFW homeowner?{" "}
               <Link href="/trustypro/claim" className="font-semibold underline underline-offset-2 hover:opacity-80 transition-opacity" style={{ color: ACCENT }}>
                 Search if your home is in our network →
@@ -916,7 +916,7 @@ export default function TrustyProHome() {
           <div className="flex animate-marquee-tp whitespace-nowrap">
             {[...MARQUEE, ...MARQUEE].map((item, i) => (
               <span key={i} className="mx-8 text-sm font-medium text-white/70 uppercase tracking-widest">
-                {item} <span className="text-white/30 mx-4″></span>
+                {item} <span className="text-white/30 mx-4"></span>
               </span>
             ))}
           </div>
@@ -924,14 +924,14 @@ export default function TrustyProHome() {
       </section>
 
       {/* -- ABOUT ------------------------------------------------------------- */}
-      <section id="about" className="bg-gray-50 py-20″>
-        <div className="max-w-7xl mx-auto px-6″>
-          <div className="grid md:grid-cols-2 gap-12 items-start mb-12″>
+      <section id="about" className="bg-gray-50 py-20">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="grid md:grid-cols-2 gap-12 items-start mb-12">
             <AnimSection variants={fadeLeft}>
               <h2 className="text-4xl md:text-5xl font-black text-gray-950 leading-tight">Hire a Pro You Can Actually Trust</h2>
             </AnimSection>
             <AnimSection variants={fadeRight}>
-              <div className="pt-2″>
+              <div className="pt-2">
                 <p className="text-lg text-gray-600 leading-relaxed">
                   At TrustyPro, we bring skill and care to every detail. We connect DFW homeowners with verified, background-checked professionals who turn ordinary rooms into beautiful, functional spaces that feel like home. Whether it's a small upgrade or a complete renovation, we make every improvement count.
                 </p>
@@ -942,7 +942,7 @@ export default function TrustyProHome() {
                 whileHover={{ scale: 1.04 }}
                 whileTap={{ scale: 0.97 }}
               >
-                Scan My Home Free <ArrowRight className="w-4 h-4″ />
+                Scan My Home Free <ArrowRight className="w-4 h-4" />
               </motion.button>
               </div>
             </AnimSection>
@@ -950,17 +950,17 @@ export default function TrustyProHome() {
           <AnimSection variants={scaleIn}>
             <ParallaxImage src={CDN.aboutWide} alt="Beautiful living space" className="w-full h-[300px] md:h-[440px] rounded-2xl shadow-sm" />
           </AnimSection>
-          <AnimSection variants={scaleIn} className="mt-4″>
+          <AnimSection variants={scaleIn} className="mt-4">
             <ParallaxImage src={CDN.aboutWide2} alt="Modern kitchen" className="w-full h-[240px] md:h-[340px] rounded-2xl shadow-sm" />
           </AnimSection>
         </div>
       </section>
 
       {/* -- STATS ------------------------------------------------------------- */}
-      <section className="bg-white py-20″>
-        <div className="max-w-7xl mx-auto px-6″>
+      <section className="bg-white py-20">
+        <div className="max-w-7xl mx-auto px-6">
           <motion.div
-            className="grid grid-cols-2 md:grid-cols-4 gap-8″
+            className="grid grid-cols-2 md:grid-cols-4 gap-8"
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, margin: "-80px" }}
@@ -974,7 +974,7 @@ export default function TrustyProHome() {
             ].map((s, i) => (
               <motion.div key={i} ref={s.r as React.RefObject<HTMLDivElement>} className="text-center md:text-left" variants={staggerItem}>
                 <div className="text-5xl md:text-6xl font-black text-gray-950 leading-none">{s.c.toLocaleString()}{s.suffix}</div>
-                <div className="mt-2 text-sm font-bold text-gray-900″>{s.label}</div>
+                <div className="mt-2 text-sm font-bold text-gray-900">{s.label}</div>
                 <div className="mt-1 text-xs text-gray-500 leading-relaxed">{s.desc}</div>
               </motion.div>
             ))}
@@ -983,18 +983,18 @@ export default function TrustyProHome() {
       </section>
 
       {/* -- HOW IT WORKS ------------------------------------------------------ */}
-      <section id="how-it-works" className="bg-white py-24″>
-        <div className="max-w-5xl mx-auto px-6″>
-          <AnimSection variants={fadeUp} className="text-center mb-16″>
-            <span className="inline-block px-4 py-1.5 rounded-full text-sm font-semibold text-white mb-4″ style={{ backgroundColor: ACCENT }}>How It Works</span>
+      <section id="how-it-works" className="bg-white py-24">
+        <div className="max-w-5xl mx-auto px-6">
+          <AnimSection variants={fadeUp} className="text-center mb-16">
+            <span className="inline-block px-4 py-1.5 rounded-full text-sm font-semibold text-white mb-4" style={{ backgroundColor: ACCENT }}>How It Works</span>
             <h2 className="text-4xl md:text-6xl font-black text-gray-950 leading-tight">From Photo to Pro<br />in 3 Simple Steps</h2>
             <p className="mt-4 text-gray-500 text-lg max-w-xl mx-auto">No calls. No guessing. No wasted time. Just upload a few photos and let us do the work.</p>
           </AnimSection>
           <div className="relative">
             {/* Vertical connector line on desktop */}
-            <div className="hidden md:block absolute left-[39px] top-12 bottom-12 w-0.5 bg-gradient-to-b from-indigo-200 via-indigo-400 to-indigo-200″ />
+            <div className="hidden md:block absolute left-[39px] top-12 bottom-12 w-0.5 bg-gradient-to-b from-indigo-200 via-indigo-400 to-indigo-200" />
             <motion.div
-              className="space-y-10″
+              className="space-y-10"
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true, margin: "-60px" }}
@@ -1002,21 +1002,21 @@ export default function TrustyProHome() {
             >
               {[
                 {
-                  n: "01″,
+                  n: "01",
                   icon: Camera,
                   title: "Snap a Few Photos of Your Home",
                   desc: "Take photos of any area you're curious about -- exterior, kitchen, bathroom, yard, roof. No special equipment needed. Your phone camera is all it takes.",
                   detail: "Takes less than 2 minutes"
                 },
                 {
-                  n: "02″,
+                  n: "02",
                   icon: Shield,
                   title: "Our AI Identifies What Needs Attention",
                   desc: "TrustyPro's AI scans your photos and flags issues -- cracked paint, aging gutters, worn flooring, overgrown landscaping, and 50+ more. You get a clear, honest report of what your home actually needs.",
                   detail: "Results in under 60 seconds"
                 },
                 {
-                  n: "03″,
+                  n: "03",
                   icon: CheckCircle,
                   title: "We Match You with a Verified Local Pro",
                   desc: "Based on your home's needs and your zip code, we connect you with a background-checked, insured professional who specializes in exactly that type of work. No middlemen. No bidding wars. Just the right pro.",
@@ -1029,18 +1029,18 @@ export default function TrustyProHome() {
                   variants={{ hidden: { opacity: 0, x: -40 }, visible: { opacity: 1, x: 0, transition: { duration: 0.7, ease: EASE } } }}
                 >
                   {/* Step circle */}
-                  <div className="relative flex-shrink-0″>
+                  <div className="relative flex-shrink-0">
                     <div className="w-20 h-20 rounded-2xl flex flex-col items-center justify-center shadow-lg z-10 relative" style={{ backgroundColor: ACCENT }}>
-                      <step.icon className="w-7 h-7 text-white mb-1″ />
-                      <span className="text-xs font-black text-white/70″>{step.n}</span>
+                      <step.icon className="w-7 h-7 text-white mb-1" />
+                      <span className="text-xs font-black text-white/70">{step.n}</span>
                     </div>
                   </div>
                   {/* Content */}
-                  <div className="pt-2 flex-1″>
-                    <h3 className="text-xl md:text-2xl font-black text-gray-950 mb-2″>{step.title}</h3>
-                    <p className="text-gray-500 leading-relaxed mb-3″>{step.desc}</p>
+                  <div className="pt-2 flex-1">
+                    <h3 className="text-xl md:text-2xl font-black text-gray-950 mb-2">{step.title}</h3>
+                    <p className="text-gray-500 leading-relaxed mb-3">{step.desc}</p>
                     <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold" style={{ backgroundColor: ACCENT_LIGHT, color: ACCENT }}>
-                      <CheckCircle className="w-3 h-3″ /> {step.detail}
+                      <CheckCircle className="w-3 h-3" /> {step.detail}
                     </span>
                   </div>
                 </motion.div>
@@ -1048,11 +1048,11 @@ export default function TrustyProHome() {
             </motion.div>
           </div>
           {/* -- AI Detection Demo Carousel -- */}
-          <AnimSection variants={fadeUp} className="mt-14″>
+          <AnimSection variants={fadeUp} className="mt-14">
             <ScanDemoCarousel />
           </AnimSection>
 
-          <AnimSection variants={fadeUp} className="text-center mt-10″>
+          <AnimSection variants={fadeUp} className="text-center mt-10">
             <motion.button
               onClick={goToWizard}
               className="inline-flex items-center gap-2 px-8 py-4 rounded-full text-base font-bold text-white hover:opacity-90 transition-opacity shadow-lg"
@@ -1060,9 +1060,9 @@ export default function TrustyProHome() {
               whileHover={{ scale: 1.04 }}
               whileTap={{ scale: 0.97 }}
             >
-              Try It Free -- Scan My Home <ArrowRight className="w-4 h-4″ />
+              Try It Free -- Scan My Home <ArrowRight className="w-4 h-4" />
             </motion.button>
-            <p className="text-xs text-gray-400 mt-3″>Free • No account required • Results in under 60 seconds</p>
+            <p className="text-xs text-gray-400 mt-3">Free • No account required • Results in under 60 seconds</p>
           </AnimSection>
         </div>
       </section>
@@ -1071,11 +1071,11 @@ export default function TrustyProHome() {
       <HomeownerProblemSection onScan={goToWizard} />
 
       {/* -- SERVICES ACCORDION ------------------------------------------------ */}
-      <section id="services" className="bg-white py-20″>
-        <div className="max-w-7xl mx-auto px-6″>
-          <AnimSection variants={fadeUp} className="text-center mb-12″>
-            <span className="inline-block px-4 py-1.5 rounded-full text-sm font-semibold text-white mb-4″ style={{ backgroundColor: ACCENT }}>Services</span>
-            <h2 className="text-4xl md:text-5xl font-black text-gray-950″>Every Trade. One Trusted Network.</h2>
+      <section id="services" className="bg-white py-20">
+        <div className="max-w-7xl mx-auto px-6">
+          <AnimSection variants={fadeUp} className="text-center mb-12">
+            <span className="inline-block px-4 py-1.5 rounded-full text-sm font-semibold text-white mb-4" style={{ backgroundColor: ACCENT }}>Services</span>
+            <h2 className="text-4xl md:text-5xl font-black text-gray-950">Every Trade. One Trusted Network.</h2>
             <p className="mt-3 text-gray-500 text-lg">From roofing to landscaping to HVAC — every professional in the TrustyPro network is verified, insured, and rated before you ever see their name.</p>
           </AnimSection>
           <div className="grid md:grid-cols-2 gap-8 items-start">
@@ -1083,19 +1083,19 @@ export default function TrustyProHome() {
             <AnimSection variants={fadeLeft}>
               <div>
                 {SERVICES.map((svc, i) => (
-                  <div key={i} className="border-b border-gray-100″>
+                  <div key={i} className="border-b border-gray-100">
                     <button className="w-full flex items-center justify-between py-5 text-left group" onClick={() => setActiveService(i)}>
-                      <div className="flex items-center gap-4″>
-                        <span className="text-xs font-bold text-gray-400 w-6″>0{i + 1}</span>
+                      <div className="flex items-center gap-4">
+                        <span className="text-xs font-bold text-gray-400 w-6">0{i + 1}</span>
                         <span className={`text-base font-bold transition-colors ${activeService === i ? "text-gray-950" : "text-gray-600 group-hover:text-gray-900"}`}>{svc.title}</span>
                       </div>
                       <motion.div
-                        className="w-7 h-7 rounded-full flex items-center justify-center flex-shrink-0″
-                        style={{ backgroundColor: activeService === i ? ACCENT : "#F3F4F6″ }}
+                        className="w-7 h-7 rounded-full flex items-center justify-center flex-shrink-0"
+                        style={{ backgroundColor: activeService === i ? ACCENT : "#F3F4F6" }}
                         animate={{ rotate: activeService === i ? 45 : 0 }}
                         transition={{ duration: 0.25 }}
                       >
-                        <Plus className="w-3.5 h-3.5″ style={{ color: activeService === i ? "white" : "#6B7280" }} />
+                        <Plus className="w-3.5 h-3.5" style={{ color: activeService === i ? "white" : "#6B7280" }} />
                       </motion.div>
                     </button>
                     <AnimatePresence initial={false}>
@@ -1118,7 +1118,7 @@ export default function TrustyProHome() {
             </AnimSection>
             {/* Photo with crossfade */}
             <AnimSection variants={fadeRight}>
-              <div className="sticky top-24″>
+              <div className="sticky top-24">
                 <div className="w-full h-[400px] rounded-2xl overflow-hidden shadow-lg relative">
                   <AnimatePresence mode="wait">
                     <motion.img
@@ -1140,11 +1140,11 @@ export default function TrustyProHome() {
       </section>
 
       {/* -- BEFORE / AFTER ---------------------------------------------------- */}
-      <section className="bg-gray-50 py-20″>
-        <div className="max-w-7xl mx-auto px-6″>
-          <AnimSection variants={fadeUp} className="text-center mb-10″>
-            <span className="inline-block px-4 py-1.5 rounded-full text-sm font-semibold text-white mb-4″ style={{ backgroundColor: ACCENT }}>Results</span>
-            <h2 className="text-4xl md:text-5xl font-black text-gray-950″>See the Transformation</h2>
+      <section className="bg-gray-50 py-20">
+        <div className="max-w-7xl mx-auto px-6">
+          <AnimSection variants={fadeUp} className="text-center mb-10">
+            <span className="inline-block px-4 py-1.5 rounded-full text-sm font-semibold text-white mb-4" style={{ backgroundColor: ACCENT }}>Results</span>
+            <h2 className="text-4xl md:text-5xl font-black text-gray-950">See the Transformation</h2>
             <p className="mt-3 text-gray-500 text-lg">Drag the slider to see before and after results from real TrustyPro projects.</p>
           </AnimSection>
           <AnimSection variants={scaleIn}>
@@ -1156,16 +1156,16 @@ export default function TrustyProHome() {
       </section>
 
       {/* -- BENEFITS ---------------------------------------------------------- */}
-      <section id="benefits" className="bg-white py-20″>
-        <div className="max-w-7xl mx-auto px-6″>
+      <section id="benefits" className="bg-white py-20">
+        <div className="max-w-7xl mx-auto px-6">
           <div className="grid md:grid-cols-2 gap-12 items-start">
             <AnimSection variants={fadeLeft}>
-              <span className="inline-block px-4 py-1.5 rounded-full text-sm font-semibold text-white mb-4″ style={{ backgroundColor: ACCENT }}>Benefits</span>
+              <span className="inline-block px-4 py-1.5 rounded-full text-sm font-semibold text-white mb-4" style={{ backgroundColor: ACCENT }}>Benefits</span>
               <h2 className="text-4xl md:text-5xl font-black text-gray-950 leading-tight">Why Choose TrustyPro</h2>
               <p className="mt-4 text-gray-500 text-lg leading-relaxed">We combine AI technology, verified professionals, and a seamless process to transform everyday spaces into lasting impressions.</p>
             </AnimSection>
             <motion.div
-              className="space-y-4″
+              className="space-y-4"
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true, margin: "-60px" }}
@@ -1179,11 +1179,11 @@ export default function TrustyProHome() {
                   whileHover={{ x: 4 }}
                   transition={{ duration: 0.25 }}
                 >
-                  <div className="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0″ style={{ backgroundColor: ACCENT_LIGHT }}>
-                    <b.icon className="w-5 h-5″ style={{ color: ACCENT }} />
+                  <div className="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0" style={{ backgroundColor: ACCENT_LIGHT }}>
+                    <b.icon className="w-5 h-5" style={{ color: ACCENT }} />
                   </div>
                   <div>
-                    <h3 className="font-bold text-gray-900″>{b.title}</h3>
+                    <h3 className="font-bold text-gray-900">{b.title}</h3>
                     <p className="mt-1 text-sm text-gray-500 leading-relaxed">{b.desc}</p>
                   </div>
                 </motion.div>
@@ -1195,17 +1195,17 @@ export default function TrustyProHome() {
 
       {/* -- TESTIMONIALS ------------------------------------------------------ */}
       <section className="bg-gray-50 py-20 overflow-hidden">
-        <div className="max-w-7xl mx-auto px-6″>
-          <AnimSection variants={fadeUp} className="text-center mb-12″>
-            <span className="inline-block px-4 py-1.5 rounded-full text-sm font-semibold text-white mb-4″ style={{ backgroundColor: ACCENT }}>Reviews</span>
-            <h2 className="text-4xl md:text-5xl font-black text-gray-950″>What DFW Homeowners Say</h2>
+        <div className="max-w-7xl mx-auto px-6">
+          <AnimSection variants={fadeUp} className="text-center mb-12">
+            <span className="inline-block px-4 py-1.5 rounded-full text-sm font-semibold text-white mb-4" style={{ backgroundColor: ACCENT }}>Reviews</span>
+            <h2 className="text-4xl md:text-5xl font-black text-gray-950">What DFW Homeowners Say</h2>
             <p className="mt-3 text-gray-500 text-lg">Real reviews from real homeowners across the DFW Metroplex.</p>
           </AnimSection>
           {/* Staggered 2-column layout like Estatia -- cards come at you from different heights */}
-          <div className="grid md:grid-cols-2 gap-6″>
+          <div className="grid md:grid-cols-2 gap-6">
             {/* Left column -- offset down */}
             <motion.div
-              className="flex flex-col gap-6 md:mt-10″
+              className="flex flex-col gap-6 md:mt-10"
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true, margin: "-60px" }}
@@ -1214,18 +1214,18 @@ export default function TrustyProHome() {
               {[TESTIMONIALS[0], TESTIMONIALS[2], TESTIMONIALS[4]].map((t, i) => (
                 <motion.div
                   key={i}
-                  className="bg-white rounded-2xl p-6 shadow-md border border-gray-50″
+                  className="bg-white rounded-2xl p-6 shadow-md border border-gray-50"
                   variants={{ hidden: { opacity: 0, y: 48, rotate: -1 }, visible: { opacity: 1, y: 0, rotate: 0, transition: { duration: 0.7, ease: EASE } } }}
                   whileHover={{ y: -6, boxShadow: "0 16px 40px rgba(0,0,0,0.1)" }}
                 >
-                  <div className="flex gap-1 mb-3″>{Array.from({ length: t.rating }).map((_, j) => <Star key={j} className="w-4 h-4 fill-yellow-400 text-yellow-400" />)}</div>
-                  <p className="text-gray-700 text-sm leading-relaxed mb-4″>"{t.text}"</p>
+                  <div className="flex gap-1 mb-3">{Array.from({ length: t.rating }).map((_, j) => <Star key={j} className="w-4 h-4 fill-yellow-400 text-yellow-400" />)}</div>
+                  <p className="text-gray-700 text-sm leading-relaxed mb-4">"{t.text}"</p>
                   <div className="flex items-center justify-between">
-                    <div className="flex items-center gap-2.5″>
-                      <div className="w-9 h-9 rounded-full flex items-center justify-center text-sm font-bold text-white flex-shrink-0 ring-2 ring-offset-1 ring-indigo-200″ style={{ background: `linear-gradient(135deg, ${ACCENT}, #7C3AED)` }}>{t.name[0]}</div>
+                    <div className="flex items-center gap-2.5">
+                      <div className="w-9 h-9 rounded-full flex items-center justify-center text-sm font-bold text-white flex-shrink-0 ring-2 ring-offset-1 ring-indigo-200" style={{ background: `linear-gradient(135deg, ${ACCENT}, #7C3AED)` }}>{t.name[0]}</div>
                       <div>
                         <div className="font-bold text-gray-900 text-sm">{t.name}</div>
-                        <div className="text-xs text-gray-400″>{t.loc}</div>
+                        <div className="text-xs text-gray-400">{t.loc}</div>
                       </div>
                     </div>
                     <span className="px-2 py-1 rounded-full text-xs font-medium text-white" style={{ backgroundColor: ACCENT }}>{t.proj}</span>
@@ -1235,7 +1235,7 @@ export default function TrustyProHome() {
             </motion.div>
             {/* Right column -- offset up */}
             <motion.div
-              className="flex flex-col gap-6 md:-mt-10″
+              className="flex flex-col gap-6 md:-mt-10"
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true, margin: "-60px" }}
@@ -1244,18 +1244,18 @@ export default function TrustyProHome() {
               {[TESTIMONIALS[1], TESTIMONIALS[3], TESTIMONIALS[5]].map((t, i) => (
                 <motion.div
                   key={i}
-                  className="bg-white rounded-2xl p-6 shadow-md border border-gray-50″
+                  className="bg-white rounded-2xl p-6 shadow-md border border-gray-50"
                   variants={{ hidden: { opacity: 0, y: 48, rotate: 1 }, visible: { opacity: 1, y: 0, rotate: 0, transition: { duration: 0.7, ease: EASE } } }}
                   whileHover={{ y: -6, boxShadow: "0 16px 40px rgba(0,0,0,0.1)" }}
                 >
-                  <div className="flex gap-1 mb-3″>{Array.from({ length: t.rating }).map((_, j) => <Star key={j} className="w-4 h-4 fill-yellow-400 text-yellow-400" />)}</div>
-                  <p className="text-gray-700 text-sm leading-relaxed mb-4″>"{t.text}"</p>
+                  <div className="flex gap-1 mb-3">{Array.from({ length: t.rating }).map((_, j) => <Star key={j} className="w-4 h-4 fill-yellow-400 text-yellow-400" />)}</div>
+                  <p className="text-gray-700 text-sm leading-relaxed mb-4">"{t.text}"</p>
                   <div className="flex items-center justify-between">
-                    <div className="flex items-center gap-2.5″>
-                      <div className="w-9 h-9 rounded-full flex items-center justify-center text-sm font-bold text-white flex-shrink-0 ring-2 ring-offset-1 ring-indigo-200″ style={{ background: `linear-gradient(135deg, ${ACCENT}, #7C3AED)` }}>{t.name[0]}</div>
+                    <div className="flex items-center gap-2.5">
+                      <div className="w-9 h-9 rounded-full flex items-center justify-center text-sm font-bold text-white flex-shrink-0 ring-2 ring-offset-1 ring-indigo-200" style={{ background: `linear-gradient(135deg, ${ACCENT}, #7C3AED)` }}>{t.name[0]}</div>
                       <div>
                         <div className="font-bold text-gray-900 text-sm">{t.name}</div>
-                        <div className="text-xs text-gray-400″>{t.loc}</div>
+                        <div className="text-xs text-gray-400">{t.loc}</div>
                       </div>
                     </div>
                     <span className="px-2 py-1 rounded-full text-xs font-medium text-white" style={{ backgroundColor: ACCENT }}>{t.proj}</span>
@@ -1269,19 +1269,19 @@ export default function TrustyProHome() {
 
       {/* -- DIFFERENTIATOR ---------------------------------------------------- */}
       <section className="py-24 overflow-hidden" style={{ backgroundColor: "#0a0f1e" }}>
-        <div className="max-w-5xl mx-auto px-6″>
-          <AnimSection variants={fadeUp} className="mb-16″>
-            <span className="inline-block px-4 py-1.5 rounded-full text-sm font-semibold mb-6″ style={{ backgroundColor: "rgba(79,70,229,0.2)", color: "#818cf8" }}>Why TrustyPro Is Different</span>
-            <h2 className="text-4xl md:text-6xl font-black text-white leading-tight mb-6″>
+        <div className="max-w-5xl mx-auto px-6">
+          <AnimSection variants={fadeUp} className="mb-16">
+            <span className="inline-block px-4 py-1.5 rounded-full text-sm font-semibold mb-6" style={{ backgroundColor: "rgba(79,70,229,0.2)", color: "#818cf8" }}>Why TrustyPro Is Different</span>
+            <h2 className="text-4xl md:text-6xl font-black text-white leading-tight mb-6">
               They used to knock on your door.<br />
-              <span style={{ color: "#818cf8″ }}>Now you knock on theirs.</span>
+              <span style={{ color: "#818cf8" }}>Now you knock on theirs.</span>
             </h2>
             <p className="text-gray-400 text-lg leading-relaxed max-w-2xl">
               For years, homeowners had to deal with door-to-door salespeople, pushy contractors, and cold calls from companies they never asked to hear from. TrustyPro flips that model completely.
             </p>
           </AnimSection>
           <motion.div
-            className="grid md:grid-cols-2 gap-6 mb-12″
+            className="grid md:grid-cols-2 gap-6 mb-12"
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, margin: "-60px" }}
@@ -1291,7 +1291,7 @@ export default function TrustyProHome() {
               {
                 label: "The Old Way",
                 icon: "",
-                color: "#ef4444″,
+                color: "#ef4444",
                 bg: "rgba(239,68,68,0.08)",
                 border: "rgba(239,68,68,0.2)",
                 points: [
@@ -1305,7 +1305,7 @@ export default function TrustyProHome() {
               {
                 label: "The TrustyPro Way",
                 icon: "",
-                color: "#818cf8″,
+                color: "#818cf8",
                 bg: "rgba(79,70,229,0.08)",
                 border: "rgba(79,70,229,0.3)",
                 points: [
@@ -1323,13 +1323,13 @@ export default function TrustyProHome() {
                 style={{ backgroundColor: col.bg, borderColor: col.border }}
                 variants={{ hidden: { opacity: 0, y: 40 }, visible: { opacity: 1, y: 0, transition: { duration: 0.7, ease: EASE } } }}
               >
-                <div className="flex items-center gap-3 mb-5″>
+                <div className="flex items-center gap-3 mb-5">
                   <span className="text-2xl font-black" style={{ color: col.color }}>{col.icon}</span>
                   <span className="font-black text-white text-lg">{col.label}</span>
                 </div>
-                <ul className="space-y-3″>
+                <ul className="space-y-3">
                   {col.points.map((pt, j) => (
-                    <li key={j} className="flex items-start gap-3″>
+                    <li key={j} className="flex items-start gap-3">
                       <span className="mt-0.5 flex-shrink-0 text-sm font-bold" style={{ color: col.color }}>{col.icon}</span>
                       <span className="text-gray-300 text-sm leading-relaxed">{pt}</span>
                     </li>
@@ -1340,7 +1340,7 @@ export default function TrustyProHome() {
           </motion.div>
           <AnimSection variants={fadeUp}>
             <div className="rounded-2xl p-8 text-center" style={{ backgroundColor: "rgba(79,70,229,0.12)", border: "1px solid rgba(79,70,229,0.25)" }}>
-              <p className="text-2xl md:text-3xl font-black text-white leading-snug mb-2″>
+              <p className="text-2xl md:text-3xl font-black text-white leading-snug mb-2">
                 "We don't sell you anything. We find what your home needs -- and connect you with someone who can fix it."
               </p>
               <p className="text-gray-500 text-sm">-- The TrustyPro Promise</p>
@@ -1350,10 +1350,10 @@ export default function TrustyProHome() {
       </section>
 
       {/* -- HOME HEALTH VAULT ------------------------------------------------- */}
-      <section className="bg-white py-24″>
-        <div className="max-w-5xl mx-auto px-6″>
-          <AnimSection variants={fadeUp} className="text-center mb-14″>
-            <span className="inline-block px-4 py-1.5 rounded-full text-sm font-semibold text-white mb-4″ style={{ backgroundColor: ACCENT }}>Home Health Vault</span>
+      <section className="bg-white py-24">
+        <div className="max-w-5xl mx-auto px-6">
+          <AnimSection variants={fadeUp} className="text-center mb-14">
+            <span className="inline-block px-4 py-1.5 rounded-full text-sm font-semibold text-white mb-4" style={{ backgroundColor: ACCENT }}>Home Health Vault</span>
             <h2 className="text-4xl md:text-6xl font-black text-gray-950 leading-tight">
               Your Home's Complete<br />Living Record
             </h2>
@@ -1361,7 +1361,7 @@ export default function TrustyProHome() {
               Every repair, upgrade, inspection, and maintenance task — permanently logged in one secure place. When you sell, you have proof. When something breaks, you have the history.
             </p>
           </AnimSection>
-          <div className="grid md:grid-cols-3 gap-6″>
+          <div className="grid md:grid-cols-3 gap-6">
             {[
               {
                 icon: FileText,
@@ -1374,29 +1374,29 @@ export default function TrustyProHome() {
                 icon: TrendingUp,
                 title: "Home Value Impact",
                 desc: "See how each improvement affects your resale value. Documented maintenance returns $2–4 for every $1 spent at sale time.",
-                color: "#10B981″,
-                bg: "#D1FAE5″,
+                color: "#10B981",
+                bg: "#D1FAE5",
               },
               {
                 icon: RefreshCw,
                 title: "Proactive Maintenance Alerts",
                 desc: "AI monitors your home's systems and alerts you before small issues become expensive problems. Stay ahead of repairs.",
                 color: "#F59E0B",
-                bg: "#FEF3C7″,
+                bg: "#FEF3C7",
               },
             ].map((card) => (
               <AnimSection key={card.title} variants={fadeUp}>
-                <div className="rounded-2xl p-6 h-full border border-gray-100 bg-gray-50″>
-                  <div className="w-11 h-11 rounded-xl flex items-center justify-center mb-4″ style={{ backgroundColor: card.bg }}>
-                    <card.icon className="w-5 h-5″ style={{ color: card.color }} />
+                <div className="rounded-2xl p-6 h-full border border-gray-100 bg-gray-50">
+                  <div className="w-11 h-11 rounded-xl flex items-center justify-center mb-4" style={{ backgroundColor: card.bg }}>
+                    <card.icon className="w-5 h-5" style={{ color: card.color }} />
                   </div>
-                  <h3 className="font-black text-gray-900 mb-2″>{card.title}</h3>
+                  <h3 className="font-black text-gray-900 mb-2">{card.title}</h3>
                   <p className="text-sm text-gray-500 leading-relaxed">{card.desc}</p>
                 </div>
               </AnimSection>
             ))}
           </div>
-          <AnimSection variants={fadeUp} className="text-center mt-10″>
+          <AnimSection variants={fadeUp} className="text-center mt-10">
             <motion.button
               onClick={goToWizard}
               className="inline-flex items-center gap-2 px-8 py-4 rounded-full text-base font-bold text-white hover:opacity-90 transition-opacity shadow-lg"
@@ -1404,67 +1404,67 @@ export default function TrustyProHome() {
               whileHover={{ scale: 1.04 }}
               whileTap={{ scale: 0.97 }}
             >
-              Start Building Your Vault — Free <ArrowRight className="w-4 h-4″ />
+              Start Building Your Vault — Free <ArrowRight className="w-4 h-4" />
             </motion.button>
           </AnimSection>
         </div>
       </section>
 
       {/* -- TRUST BADGES ------------------------------------------------------ */}
-      <section className="bg-gray-50 py-20″>
-        <div className="max-w-5xl mx-auto px-6″>
-          <AnimSection variants={fadeUp} className="text-center mb-12″>
-            <span className="inline-block px-4 py-1.5 rounded-full text-sm font-semibold text-white mb-4″ style={{ backgroundColor: ACCENT }}>Verification Process</span>
-            <h2 className="text-4xl md:text-5xl font-black text-gray-950″>
+      <section className="bg-gray-50 py-20">
+        <div className="max-w-5xl mx-auto px-6">
+          <AnimSection variants={fadeUp} className="text-center mb-12">
+            <span className="inline-block px-4 py-1.5 rounded-full text-sm font-semibold text-white mb-4" style={{ backgroundColor: ACCENT }}>Verification Process</span>
+            <h2 className="text-4xl md:text-5xl font-black text-gray-950">
               How We Verify Every Pro
             </h2>
             <p className="mt-3 text-gray-500 text-lg max-w-xl mx-auto">
               Before any professional appears on TrustyPro, they pass our 7-point verification. No shortcuts.
             </p>
           </AnimSection>
-          <div className="grid sm:grid-cols-2 md:grid-cols-4 gap-4 mb-10″>
+          <div className="grid sm:grid-cols-2 md:grid-cols-4 gap-4 mb-10">
             {[
-              { step: "01″, label: "License Verification", desc: "State contractor license confirmed active and in good standing." },
-              { step: "02″, label: "Background Check", desc: "Full criminal history and identity verification completed." },
-              { step: "03″, label: "Insurance Confirmation", desc: "General liability and workers' comp insurance verified." },
-              { step: "04″, label: "Reference Review", desc: "Past client references checked and scored." },
+              { step: "01", label: "License Verification", desc: "State contractor license confirmed active and in good standing." },
+              { step: "02", label: "Background Check", desc: "Full criminal history and identity verification completed." },
+              { step: "03", label: "Insurance Confirmation", desc: "General liability and workers' comp insurance verified." },
+              { step: "04", label: "Reference Review", desc: "Past client references checked and scored." },
             ].map((item) => (
               <AnimSection key={item.step} variants={fadeUp}>
                 <div className="bg-white rounded-2xl p-5 border border-gray-100 h-full">
-                  <div className="text-2xl font-black mb-3″ style={{ color: ACCENT }}>{item.step}</div>
-                  <h3 className="text-sm font-black text-gray-900 mb-1.5″>{item.label}</h3>
+                  <div className="text-2xl font-black mb-3" style={{ color: ACCENT }}>{item.step}</div>
+                  <h3 className="text-sm font-black text-gray-900 mb-1.5">{item.label}</h3>
                   <p className="text-xs text-gray-500 leading-relaxed">{item.desc}</p>
                 </div>
               </AnimSection>
             ))}
           </div>
-          <div className="grid sm:grid-cols-3 gap-4″>
+          <div className="grid sm:grid-cols-3 gap-4">
             {[
-              { step: "05″, label: "Portfolio Review", desc: "Past project photos reviewed for quality and craftsmanship." },
-              { step: "06″, label: "Pricing Transparency Check", desc: "Quotes audited for accuracy and fair market rates." },
-              { step: "07″, label: "Ongoing Rating Monitoring", desc: "Continuous review score tracking. Pros removed if quality slips." },
+              { step: "05", label: "Portfolio Review", desc: "Past project photos reviewed for quality and craftsmanship." },
+              { step: "06", label: "Pricing Transparency Check", desc: "Quotes audited for accuracy and fair market rates." },
+              { step: "07", label: "Ongoing Rating Monitoring", desc: "Continuous review score tracking. Pros removed if quality slips." },
             ].map((item) => (
               <AnimSection key={item.step} variants={fadeUp}>
                 <div className="bg-white rounded-2xl p-5 border border-gray-100 h-full">
-                  <div className="text-2xl font-black mb-3″ style={{ color: ACCENT }}>{item.step}</div>
-                  <h3 className="text-sm font-black text-gray-900 mb-1.5″>{item.label}</h3>
+                  <div className="text-2xl font-black mb-3" style={{ color: ACCENT }}>{item.step}</div>
+                  <h3 className="text-sm font-black text-gray-900 mb-1.5">{item.label}</h3>
                   <p className="text-xs text-gray-500 leading-relaxed">{item.desc}</p>
                 </div>
               </AnimSection>
             ))}
           </div>
-          <AnimSection variants={fadeUp} className="mt-8″>
+          <AnimSection variants={fadeUp} className="mt-8">
             <div className="bg-white rounded-2xl p-6 flex flex-col sm:flex-row items-center gap-5 border border-gray-100 text-center sm:text-left">
-              <div className="w-14 h-14 rounded-2xl flex items-center justify-center flex-shrink-0 mx-auto sm:mx-0″ style={{ backgroundColor: ACCENT }}>
+              <div className="w-14 h-14 rounded-2xl flex items-center justify-center flex-shrink-0 mx-auto sm:mx-0" style={{ backgroundColor: ACCENT }}>
                 <Award className="w-7 h-7 text-white" />
               </div>
-              <div className="flex-1″>
-                <h3 className="font-black text-gray-900 mb-1″>TrustyPro Certified Badge</h3>
-                <p className="text-sm text-gray-500″>Only pros who pass all 7 checks earn the TrustyPro Certified badge. If a pro loses their license or lets insurance lapse, they're removed immediately — no exceptions.</p>
+              <div className="flex-1">
+                <h3 className="font-black text-gray-900 mb-1">TrustyPro Certified Badge</h3>
+                <p className="text-sm text-gray-500">Only pros who pass all 7 checks earn the TrustyPro Certified badge. If a pro loses their license or lets insurance lapse, they're removed immediately — no exceptions.</p>
               </div>
               <motion.button
                 onClick={goToWizard}
-                className="px-6 py-3 rounded-full text-sm font-bold text-white hover:opacity-90 transition-opacity flex-shrink-0″
+                className="px-6 py-3 rounded-full text-sm font-bold text-white hover:opacity-90 transition-opacity flex-shrink-0"
                 style={{ backgroundColor: ACCENT }}
                 whileHover={{ scale: 1.04 }}
               >
@@ -1476,8 +1476,8 @@ export default function TrustyProHome() {
       </section>
 
       {/* -- FAQ --------------------------------------------------------------- */}
-      <section className="bg-gray-50 py-20″>
-        <div className="max-w-7xl mx-auto px-6″>
+      <section className="bg-gray-50 py-20">
+        <div className="max-w-7xl mx-auto px-6">
           <div className="grid md:grid-cols-2 gap-12 items-start">
             <AnimSection variants={fadeLeft}>
               <h2 className="text-4xl md:text-5xl font-black text-gray-950 leading-tight">Frequently Asked Questions</h2>
@@ -1495,16 +1495,16 @@ export default function TrustyProHome() {
             <AnimSection variants={fadeRight}>
               <div>
                 {FAQS.map((faq, i) => (
-                  <div key={i} className="border-b border-gray-200″>
+                  <div key={i} className="border-b border-gray-200">
                     <button className="w-full flex items-center justify-between py-5 text-left" onClick={() => setOpenFaq(openFaq === i ? null : i)}>
                       <span className="font-medium text-gray-900 pr-4 text-sm">{faq.q}</span>
                       <motion.div
-                        className="w-7 h-7 rounded-full flex items-center justify-center flex-shrink-0″
-                        style={{ backgroundColor: openFaq === i ? ACCENT : "#F3F4F6″ }}
+                        className="w-7 h-7 rounded-full flex items-center justify-center flex-shrink-0"
+                        style={{ backgroundColor: openFaq === i ? ACCENT : "#F3F4F6" }}
                         animate={{ rotate: openFaq === i ? 45 : 0 }}
                         transition={{ duration: 0.25 }}
                       >
-                        <Plus className="w-3.5 h-3.5″ style={{ color: openFaq === i ? "white" : "#6B7280" }} />
+                        <Plus className="w-3.5 h-3.5" style={{ color: openFaq === i ? "white" : "#6B7280" }} />
                       </motion.div>
                     </button>
                     <AnimatePresence initial={false}>
@@ -1533,7 +1533,7 @@ export default function TrustyProHome() {
       <section id="contact" className="bg-gray-950 py-20 overflow-hidden">
         <div className="max-w-7xl mx-auto px-6 text-center">
           <motion.h2
-            className="text-4xl md:text-6xl font-black text-white leading-tight mb-6″
+            className="text-4xl md:text-6xl font-black text-white leading-tight mb-6"
             initial={{ opacity: 0, y: 48 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -1542,7 +1542,7 @@ export default function TrustyProHome() {
             Ready to Transform Your Home?
           </motion.h2>
           <motion.p
-            className="text-gray-400 text-lg max-w-2xl mx-auto mb-10″
+            className="text-gray-400 text-lg max-w-2xl mx-auto mb-10"
             initial={{ opacity: 0, y: 32 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -1587,33 +1587,33 @@ export default function TrustyProHome() {
       </section>
 
       {/* -- FOOTER ------------------------------------------------------------ */}
-      <footer className="bg-gray-950 border-t border-white/10 py-12″>
-        <div className="max-w-7xl mx-auto px-6″>
-          <div className="grid md:grid-cols-4 gap-8 mb-10″>
-            <div className="md:col-span-2″>
+      <footer className="bg-gray-950 border-t border-white/10 py-12">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="grid md:grid-cols-4 gap-8 mb-10">
+            <div className="md:col-span-2">
               <TrustyProLogo height={34} variant="dark" />
               <p className="mt-4 text-sm text-gray-400 leading-relaxed max-w-xs">At TrustyPro, we transform DFW homes with verified professionals who blend style, function, and lasting quality into every project.</p>
             </div>
             <div>
-              <div className="text-xs font-bold text-gray-500 uppercase tracking-widest mb-4″>Menu</div>
-              <div className="space-y-2″>
+              <div className="text-xs font-bold text-gray-500 uppercase tracking-widest mb-4">Menu</div>
+              <div className="space-y-2">
                 {[["about","About Us"],["projects","Projects"],["services","Services"],["benefits","Benefits"]].map(([id,label]) => (
                   <button key={id} onClick={() => scrollTo(id)} className="block text-sm text-gray-400 hover:text-white transition-colors">{label}</button>
                 ))}
               </div>
             </div>
             <div>
-              <div className="text-xs font-bold text-gray-500 uppercase tracking-widest mb-4″>Contact</div>
-              <div className="space-y-2″>
-                <div className="flex items-center gap-2 text-sm text-gray-400″><Mail className="w-3.5 h-3.5" /> support@trustypro.com</div>
-                <div className="flex items-center gap-2 text-sm text-gray-400″><Phone className="w-3.5 h-3.5" /> (214) 555-0100</div>
-                <div className="flex items-center gap-2 text-sm text-gray-400″><MapPin className="w-3.5 h-3.5" /> DFW Metroplex, TX</div>
+              <div className="text-xs font-bold text-gray-500 uppercase tracking-widest mb-4">Contact</div>
+              <div className="space-y-2">
+                <div className="flex items-center gap-2 text-sm text-gray-400"><Mail className="w-3.5 h-3.5" /> support@trustypro.com</div>
+                <div className="flex items-center gap-2 text-sm text-gray-400"><Phone className="w-3.5 h-3.5" /> (214) 555-0100</div>
+                <div className="flex items-center gap-2 text-sm text-gray-400"><MapPin className="w-3.5 h-3.5" /> DFW Metroplex, TX</div>
               </div>
             </div>
           </div>
-          <div className="border-t border-white/10 pt-6 flex flex-col md:flex-row items-center justify-between gap-4″>
-            <p className="text-xs text-gray-500″>TrustyPro 2026. All Rights Reserved.</p>
-            <div className="flex gap-6″>
+          <div className="border-t border-white/10 pt-6 flex flex-col md:flex-row items-center justify-between gap-4">
+            <p className="text-xs text-gray-500">TrustyPro 2026. All Rights Reserved.</p>
+            <div className="flex gap-6">
               <a href="/privacy" className="text-xs text-gray-500 hover:text-white transition-colors">Privacy Policy</a>
               <a href="/terms" className="text-xs text-gray-500 hover:text-white transition-colors">Terms of Service</a>
               <a href="/ccpa" className="text-xs text-gray-500 hover:text-white transition-colors">CCPA Rights</a>
@@ -1629,7 +1629,7 @@ export default function TrustyProHome() {
       `}</style>
       <SupportChatWidget
         mode="homeowner"
-        accentColor="#4F46E5″
+        accentColor="#4F46E5"
         title="TrustyPro Support"
         subtitle="Ask us anything about the platform"
         forceOpen={chatOpen}

@@ -38,7 +38,7 @@ export default function DFWHVACContractsGuide() {
         <div style={{ marginBottom: 8, fontSize: 13, color: '#F5E642', fontWeight: 600, letterSpacing: 1 }}>DFW HVAC GUIDE</div>
         <h1 style={{ fontSize: 28, fontWeight: 800, marginBottom: 8, lineHeight: 1.2 }}>HVAC Maintenance Contracts in DFW</h1>
         <p style={{ color: '#94A3B8', marginBottom: 28, fontSize: 15 }}>
-          A good HVAC maintenance contract in DFW means two visits per year — spring and fall — timed around DFW's brutal cooling season and mild heating season. Here’s how to evaluate what you’re being sold.
+          A good HVAC maintenance contract in DFW means two visits per year — spring and fall — timed around DFW's brutal cooling season and mild heating season. Here's how to evaluate what you're being sold.
         </p>
 
         <div style={{ background: '#111E35', borderRadius: 12, padding: 20, marginBottom: 20 }}>
@@ -46,7 +46,7 @@ export default function DFWHVACContractsGuide() {
           <p style={{ color: '#94A3B8', fontSize: 13, marginBottom: 12 }}>A legitimate DFW HVAC service visit should cover at least these 18 items. Ask for a written checklist — any reputable company will provide one.</p>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 6 }}>
             {THE_18.map((item, i) => (
-              <div key={i} style={{ display: 'flex', gap: 8, alignItems: 'flex-start', fontSize: 12, color: '#94A3B8′ }}>
+              <div key={i} style={{ display: 'flex', gap: 8, alignItems: 'flex-start', fontSize: 12, color: '#94A3B8' }}>
                 <span style={{ color: '#F5E642', flexShrink: 0 }}>✓</span>{item}
               </div>
             ))}
@@ -73,7 +73,7 @@ export default function DFWHVACContractsGuide() {
             <label style={{ fontSize: 13, color: '#94A3B8', display: 'block', marginBottom: 8 }}>Contract Type</label>
             <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap' }}>
               {CONTRACT_TYPES.map(({ key, label }) => (
-                <button key={key} onClick={() => { setContractType(key); setShowResult(false); }} style={{ padding: '8px 14px', borderRadius: 8, border: '1.5px solid', borderColor: contractType === key ? '#F5E642′ : '#1E3A5F', background: contractType === key ? '#F5E64220' : ’transparent', color: contractType === key ? '#F5E642′ : '#94A3B8', cursor: ’pointer', fontSize: 13, fontWeight: 600 }}>{label}</button>
+                <button key={key} onClick={() => { setContractType(key); setShowResult(false); }} style={{ padding: '8px 14px', borderRadius: 8, border: '1.5px solid', borderColor: contractType === key ? '#F5E642' : '#1E3A5F', background: contractType === key ? '#F5E64220' : 'transparent', color: contractType === key ? '#F5E642' : '#94A3B8', cursor: 'pointer', fontSize: 13, fontWeight: 600 }}>{label}</button>
               ))}
             </div>
           </div>
@@ -81,11 +81,11 @@ export default function DFWHVACContractsGuide() {
             <label style={{ fontSize: 13, color: '#94A3B8', display: 'block', marginBottom: 8 }}>Number of HVAC Units</label>
             <div style={{ display: 'flex', gap: 8 }}>
               {UNIT_COUNTS.map(u => (
-                <button key={u} onClick={() => { setUnitCount(u); setShowResult(false); }} style={{ padding: '8px 20px', borderRadius: 8, border: '1.5px solid', borderColor: unitCount === u ? '#F5E642′ : '#1E3A5F', background: unitCount === u ? '#F5E64220' : ’transparent', color: unitCount === u ? '#F5E642′ : '#94A3B8', cursor: ’pointer', fontSize: 13, fontWeight: 600 }}>{u}</button>
+                <button key={u} onClick={() => { setUnitCount(u); setShowResult(false); }} style={{ padding: '8px 20px', borderRadius: 8, border: '1.5px solid', borderColor: unitCount === u ? '#F5E642' : '#1E3A5F', background: unitCount === u ? '#F5E64220' : 'transparent', color: unitCount === u ? '#F5E642' : '#94A3B8', cursor: 'pointer', fontSize: 13, fontWeight: 600 }}>{u}</button>
               ))}
             </div>
           </div>
-          <button onClick={() => setShowResult(true)} disabled={!contractType || !unitCount} style={{ background: contractType && unitCount ? '#F5E642′ : '#1E3A5F', color: contractType && unitCount ? '#0A1628' : '#4A6080', border: ’none', borderRadius: 8, padding: '12px 24px', fontWeight: 700, fontSize: 14, cursor: contractType && unitCount ? 'pointer' : 'not-allowed', width: '100%' }}>
+          <button onClick={() => setShowResult(true)} disabled={!contractType || !unitCount} style={{ background: contractType && unitCount ? '#F5E642' : '#1E3A5F', color: contractType && unitCount ? '#0A1628' : '#4A6080', border: 'none', borderRadius: 8, padding: '12px 24px', fontWeight: 700, fontSize: 14, cursor: contractType && unitCount ? 'pointer' : 'not-allowed', width: '100%' }}>
             Show Fair Price Range
           </button>
         </div>

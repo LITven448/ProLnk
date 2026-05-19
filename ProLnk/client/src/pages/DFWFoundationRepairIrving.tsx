@@ -58,11 +58,11 @@ export default function DFWFoundationRepairIrving() {
 
   const YesNo = ({ label, value, onChange }: { label: string; value: boolean | null; onChange: (v: boolean) => void }) => (
     <div style={{ marginBottom: 20 }}>
-      <div style={{ fontSize: 15, fontWeight: 600, marginBottom: 10, color: '#e2e8f0′ }}>{label}</div>
+      <div style={{ fontSize: 15, fontWeight: 600, marginBottom: 10, color: '#e2e8f0' }}>{label}</div>
       <div style={{ display: 'flex', gap: 10 }}>
         {([true, false] as const).map(v => (
           <button key={String(v)} onClick={() => onChange(v)}
-            style={{ padding: '10px 24px', borderRadius: 8, border: `2px solid ${value === v ? '#F5E642' : '#2d4a7a'}`, background: value === v ? '#F5E642′ : ’transparent', color: value === v ? '#0A1628′ : ’white', fontWeight: 700, cursor: 'pointer', fontSize: 14 }}>
+            style={{ padding: '10px 24px', borderRadius: 8, border: `2px solid ${value === v ? '#F5E642' : '#2d4a7a'}`, background: value === v ? '#F5E642' : 'transparent', color: value === v ? '#0A1628' : 'white', fontWeight: 700, cursor: 'pointer', fontSize: 14 }}>
             {v ? 'Yes' : 'No'}
           </button>
         ))}
@@ -82,7 +82,7 @@ export default function DFWFoundationRepairIrving() {
 
         <h1 style={{ fontSize: 42, fontWeight: 800, lineHeight: 1.15, marginBottom: 16 }}>
           Irving TX Foundation Repair —{' '}
-          <span style={{ color: '#F5E642′ }}>Urban Suburb Specialists</span>
+          <span style={{ color: '#F5E642' }}>Urban Suburb Specialists</span>
         </h1>
 
         <p style={{ fontSize: 18, color: '#94a3b8', lineHeight: 1.7, marginBottom: 40, maxWidth: 700 }}>
@@ -99,7 +99,7 @@ export default function DFWFoundationRepairIrving() {
           ].map(card => (
             <div key={card.title} style={{ background: '#111f3a', borderRadius: 12, padding: 24, border: '1px solid #1e3a5f' }}>
               <div style={{ fontSize: 32, marginBottom: 12 }}>{card.icon}</div>
-              <h3 style={{ fontSize: 17, fontWeight: 700, marginBottom: 8, color: '#F5E642′ }}>{card.title}</h3>
+              <h3 style={{ fontSize: 17, fontWeight: 700, marginBottom: 8, color: '#F5E642' }}>{card.title}</h3>
               <p style={{ fontSize: 14, color: '#94a3b8', lineHeight: 1.6 }}>{card.desc}</p>
             </div>
           ))}
@@ -131,7 +131,7 @@ export default function DFWFoundationRepairIrving() {
               <div style={{ fontSize: 13, fontWeight: 700, color: '#F5E642', marginBottom: 10 }}>RECOMMENDED NEXT STEPS</div>
               {result.nextSteps.map(step => (
                 <div key={step} style={{ fontSize: 14, color: '#94a3b8', marginBottom: 6, paddingLeft: 16, position: 'relative' }}>
-                  <span style={{ position: 'absolute', left: 0, color: '#F5E642′ }}>→</span> {step}
+                  <span style={{ position: 'absolute', left: 0, color: '#F5E642' }}>→</span> {step}
                 </div>
               ))}
             </div>
@@ -147,7 +147,7 @@ export default function DFWFoundationRepairIrving() {
           </p>
         </div>
 
-        <div style={{ textAlign: 'center', background: '#111f3a', borderRadius: 16, padding: 40, border: '2px solid #F5E642′ }}>
+        <div style={{ textAlign: 'center', background: '#111f3a', borderRadius: 16, padding: 40, border: '2px solid #F5E642' }}>
           <div style={{ fontSize: 36, marginBottom: 12 }}>🏗️</div>
           <h2 style={{ fontSize: 26, fontWeight: 800, marginBottom: 12 }}>Get Irving Foundation Repair Quotes Today</h2>
           <p style={{ color: '#94a3b8', marginBottom: 24 }}>ProLnk connects Irving homeowners with licensed foundation contractors. Compare 3 quotes — all with written estimates.</p>

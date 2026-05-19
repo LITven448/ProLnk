@@ -46,7 +46,7 @@ export default function DFWConcreteFinishingGuide() {
       <div style={{ maxWidth: '800px', margin: '0 auto' }}>
         <div style={{ marginBottom: '2rem' }}>
           <span style={{ fontSize: '2rem' }}>🪣</span>
-          <h1 style={{ color: '#F5E642', fontSize: '1.8rem', margin: '0.5rem 0′ }}>DFW Concrete Finishing Guide</h1>
+          <h1 style={{ color: '#F5E642', fontSize: '1.8rem', margin: '0.5rem 0' }}>DFW Concrete Finishing Guide</h1>
           <p style={{ color: '#94a3b8', lineHeight: 1.6 }}>
             At 105°F, concrete surface temperature can hit 140°F — your working window shrinks from 60 min to under 25 min. Finishing too late in DFW summer means torn, rough surfaces. The right finish chosen at the right time is the difference between a showroom slab and a redo.
           </p>
@@ -97,7 +97,7 @@ export default function DFWConcreteFinishingGuide() {
         <div style={{ backgroundColor: '#1e293b', borderRadius: '8px', padding: '1.25rem' }}>
           <h3 style={{ color: '#F5E642', marginTop: 0 }}>🌡️ DFW Temperature Impact on Working Time</h3>
           {[['70°F', '60-90 min', 'Ideal — full working window'], ['85°F', '40-55 min', 'Warm — plan your crew count'], ['95°F', '25-35 min', 'Hot — pour in sections'], ['105°F+', '15-25 min', 'Extreme — pro crew only, pre-wet everything']].map(([temp, time, note]) => (
-            <div key={temp} style={{ display: 'grid', gridTemplateColumns: '70px 100px 1fr', gap: '0.5rem', padding: '0.5rem 0', borderBottom: '1px solid #334155′ }}>
+            <div key={temp} style={{ display: 'grid', gridTemplateColumns: '70px 100px 1fr', gap: '0.5rem', padding: '0.5rem 0', borderBottom: '1px solid #334155' }}>
               <span style={{ color: '#F5E642', fontWeight: 'bold' }}>{temp}</span>
               <span style={{ color: '#fff' }}>{time}</span>
               <span style={{ color: '#94a3b8', fontSize: '0.9rem' }}>{note}</span>

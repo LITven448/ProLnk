@@ -31,10 +31,10 @@ export default function DFWInsurancePolicyReview2026() {
           </div>
         </div>
 
-        <h2 style={{ fontSize: '1.1rem', fontWeight: 700, marginBottom: '1rem', color: '#F5E642′ }}>Select a policy element to review:</h2>
+        <h2 style={{ fontSize: '1.1rem', fontWeight: 700, marginBottom: '1rem', color: '#F5E642' }}>Select a policy element to review:</h2>
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0.75rem', marginBottom: '1.5rem' }}>
           {elements.map(e => (
-            <button key={e.id} onClick={() => setSelected(selected === e.id ? null : e.id)} style={{ background: selected === e.id ? '#F5E642′ : '#112240', color: selected === e.id ? '#0A1628' : '#fff', border: ’none', borderRadius: 10, padding: '0.9rem', cursor: 'pointer', textAlign: 'left', fontWeight: 600, fontSize: '0.87rem', transition: 'all 0.2s' }}>{e.label}</button>
+            <button key={e.id} onClick={() => setSelected(selected === e.id ? null : e.id)} style={{ background: selected === e.id ? '#F5E642' : '#112240', color: selected === e.id ? '#0A1628' : '#fff', border: 'none', borderRadius: 10, padding: '0.9rem', cursor: 'pointer', textAlign: 'left', fontWeight: 600, fontSize: '0.87rem', transition: 'all 0.2s' }}>{e.label}</button>
           ))}
         </div>
 
@@ -51,7 +51,7 @@ export default function DFWInsurancePolicyReview2026() {
           </div>
         )}
 
-        <div style={{ background: '#112240', borderRadius: 12, padding: '1.5rem', borderLeft: '4px solid #F5E642′ }}>
+        <div style={{ background: '#112240', borderRadius: 12, padding: '1.5rem', borderLeft: '4px solid #F5E642' }}>
           <h3 style={{ color: '#F5E642', marginBottom: '0.5rem' }}>🔧 Need Repairs Before Renewal?</h3>
           <p style={{ color: '#94a3b8', lineHeight: 1.6, margin: 0 }}>A damaged roof or foundation can spike your premium at renewal. ProLnk connects you with vetted DFW contractors to address issues before your insurer re-inspects.</p>
         </div>

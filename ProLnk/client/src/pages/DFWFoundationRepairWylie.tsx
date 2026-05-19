@@ -76,7 +76,7 @@ export default function DFWFoundationRepairWylie() {
             <label style={{ display: 'block', color: '#F5E642', fontWeight: 600, marginBottom: 10 }}>When was your home built?</label>
             <div style={{ display: 'flex', flexWrap: 'wrap', gap: 10 }}>
               {homeAges.map(a => (
-                <button key={a} onClick={() => setAge(a)} style={{ padding: '10px 18px', borderRadius: 8, border: '2px solid', borderColor: age === a ? '#F5E642′ : '#1e3a5f', backgroundColor: age === a ? '#F5E642' : ’transparent', color: age === a ? '#0A1628′ : '#fff', fontWeight: age === a ? 700 : 400, cursor: ’pointer', fontSize: 14 }}>{a}</button>
+                <button key={a} onClick={() => setAge(a)} style={{ padding: '10px 18px', borderRadius: 8, border: '2px solid', borderColor: age === a ? '#F5E642' : '#1e3a5f', backgroundColor: age === a ? '#F5E642' : 'transparent', color: age === a ? '#0A1628' : '#fff', fontWeight: age === a ? 700 : 400, cursor: 'pointer', fontSize: 14 }}>{a}</button>
               ))}
             </div>
           </div>
@@ -85,13 +85,13 @@ export default function DFWFoundationRepairWylie() {
             <label style={{ display: 'block', color: '#F5E642', fontWeight: 600, marginBottom: 10 }}>What symptoms are you seeing?</label>
             <div style={{ display: 'flex', flexWrap: 'wrap', gap: 10 }}>
               {symptoms.map(s => (
-                <button key={s} onClick={() => setSymptom(s)} style={{ padding: '10px 18px', borderRadius: 8, border: '2px solid', borderColor: symptom === s ? '#F5E642′ : '#1e3a5f', backgroundColor: symptom === s ? '#F5E642' : ’transparent', color: symptom === s ? '#0A1628′ : '#fff', fontWeight: symptom === s ? 700 : 400, cursor: ’pointer', fontSize: 14 }}>{s}</button>
+                <button key={s} onClick={() => setSymptom(s)} style={{ padding: '10px 18px', borderRadius: 8, border: '2px solid', borderColor: symptom === s ? '#F5E642' : '#1e3a5f', backgroundColor: symptom === s ? '#F5E642' : 'transparent', color: symptom === s ? '#0A1628' : '#fff', fontWeight: symptom === s ? 700 : 400, cursor: 'pointer', fontSize: 14 }}>{s}</button>
               ))}
             </div>
           </div>
 
           {result && (
-            <div style={{ backgroundColor: '#0A1628', borderRadius: 12, padding: 24, borderLeft: '4px solid #F5E642′ }}>
+            <div style={{ backgroundColor: '#0A1628', borderRadius: 12, padding: 24, borderLeft: '4px solid #F5E642' }}>
               <div style={{ fontSize: 17, fontWeight: 700, marginBottom: 8 }}>{result.severity}</div>
               <div style={{ color: '#cbd5e1', marginBottom: 8, fontSize: 14 }}>{result.action}</div>
               <div style={{ color: '#fbbf24', marginBottom: 16, fontSize: 13 }}>⏰ {result.urgency}</div>

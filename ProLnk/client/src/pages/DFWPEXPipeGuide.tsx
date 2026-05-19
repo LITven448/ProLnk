@@ -32,11 +32,11 @@ export default function DFWPEXPipeGuide() {
     } else if (concern === 'freeze') {
       setResult({ verdict: '✅ Good Freeze Resistance', notes: 'PEX-B and PEX-C also resist freezing far better than copper or CPVC. DFW freezes (2021 Uri-type events) are well-handled by all PEX.', tip: 'Insulate at slab penetrations where DFW cold air infiltrates.', color: '#22c55e' });
     } else if (concern === 'heat' && pexType === 'pex_a') {
-      setResult({ verdict: '⚠️ Monitor Attic Routing', notes: 'PEX-A rated to 200°F but DFW attics can hit 160°F. Sustained exposure near max rating reduces lifespan. Re-route away from direct radiant heat where possible.', tip: 'Add attic insulation above PEX runs; consider spray foam baffles.', color: '#eab308′ });
+      setResult({ verdict: '⚠️ Monitor Attic Routing', notes: 'PEX-A rated to 200°F but DFW attics can hit 160°F. Sustained exposure near max rating reduces lifespan. Re-route away from direct radiant heat where possible.', tip: 'Add attic insulation above PEX runs; consider spray foam baffles.', color: '#eab308' });
     } else if (concern === 'heat') {
-      setResult({ verdict: '⚠️ Manage Heat Exposure', notes: 'PEX-B and PEX-C have similar temp ratings. DFW attic heat is within spec but at the upper range. Prioritize insulation upgrades.', tip: 'Radiant barrier in attic reduces temperature by 20–30°F.', color: '#eab308′ });
+      setResult({ verdict: '⚠️ Manage Heat Exposure', notes: 'PEX-B and PEX-C have similar temp ratings. DFW attic heat is within spec but at the upper range. Prioritize insulation upgrades.', tip: 'Radiant barrier in attic reduces temperature by 20–30°F.', color: '#eab308' });
     } else if (concern === 'compatibility') {
-      setResult({ verdict: '🔧 Check Fitting Types', notes: 'PEX-A uses expansion fittings (best flow); PEX-B/C use crimp or clamp. Do NOT mix fitting systems. DFW pros often use push-fit (SharkBite) for repairs — compatible with all PEX types.', tip: 'Label your PEX type at the manifold for future service.', color: '#3b82f6′ });
+      setResult({ verdict: '🔧 Check Fitting Types', notes: 'PEX-A uses expansion fittings (best flow); PEX-B/C use crimp or clamp. Do NOT mix fitting systems. DFW pros often use push-fit (SharkBite) for repairs — compatible with all PEX types.', tip: 'Label your PEX type at the manifold for future service.', color: '#3b82f6' });
     } else {
       setResult({ verdict: '✅ Standard Maintenance', notes: 'Flush manifold valves annually. Check push-fit fittings every 3–5 years. PEX systems in DFW typically last 40–50+ years with normal maintenance.', tip: 'Install whole-home water softener to maximize PEX and fixture lifespan in DFW hard water.', color: '#22c55e' });
     }

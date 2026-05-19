@@ -6,14 +6,14 @@ export default function DFWHVACMiteControl2026() {
 
   const pests = [
     { name: 'Cockroaches in Ductwork', icon: '🪳', detail: 'Love warm DFW ducts. Enter via returns, nest near air handler. Signs: egg casings in vents, musty odor from registers.' },
-    { name: 'Mice via Condensate Drain', icon: '🐭', detail: 'Enter through 3/4″ condensate drain line from outside. Can chew insulation on refrigerant lines. Seal with fine mesh.' },
+    { name: 'Mice via Condensate Drain', icon: '🐭', detail: 'Enter through 3/4" condensate drain line from outside. Can chew insulation on refrigerant lines. Seal with fine mesh.' },
     { name: 'Wasps in Outdoor Unit', icon: '🐝', detail: 'Build nests in condenser cabinet, especially in spring. Can damage wiring. Always disconnect power before inspecting.' },
     { name: 'Biological Growth on Coils', icon: '🦠', detail: 'Mold, mildew, algae on evaporator coil — common in DFW humidity. UV light kills growth continuously. Safe for HVAC components.' },
   ];
 
   const guides: Record<string, string> = {
     cockroach: '🪳 COCKROACH PROTOCOL: (1) Seal all return air gaps with metal mesh. (2) Professional duct cleaning — do NOT use bug spray in ducts (toxic air). (3) Boric acid bait stations near air handler. (4) HVAC tech to inspect for duct breach. Cost: $200–$500 duct cleaning.',
-    mouse: '🐭 MOUSE PROTOCOL: (1) Locate condensate drain exit on exterior — install 1/4″ mesh cap (keep drain flowing). (2) Check insulation on suction line for chew damage — replace if compromised. (3) Snap traps in mechanical room, not poison (dead mice in ducts = worse problem). Cost: $50–$200.',
+    mouse: '🐭 MOUSE PROTOCOL: (1) Locate condensate drain exit on exterior — install 1/4" mesh cap (keep drain flowing). (2) Check insulation on suction line for chew damage — replace if compromised. (3) Snap traps in mechanical room, not poison (dead mice in ducts = worse problem). Cost: $50–$200.',
     wasp: '🐝 WASP PROTOCOL: (1) Turn off power to condenser at disconnect box. (2) Remove cabinet side panel carefully. (3) Pest pro to remove nest — do NOT spray aerosol near capacitors. (4) Check wiring for damage after removal. Seasonal: inspect every April in DFW. Cost: $75–$150.',
     uv: '🦠 UV LIGHT PROTOCOL: (1) Single-lamp UV ($150–$300 installed) kills mold on coil surface. (2) Dual-lamp UV ($300–$600) also treats airstream. (3) Replace UV bulb annually — loses effectiveness. (4) Also run drain pan tablets monthly. DFW recommendation: install UV if coil cleaned more than once per year.',
   };
@@ -35,7 +35,7 @@ export default function DFWHVACMiteControl2026() {
         </p>
         <div style={{ display: 'flex', flexDirection: 'column', gap: 14, marginBottom: 32 }}>
           {pests.map(p => (
-            <div key={p.name} style={{ background: '#1E2D45', borderRadius: 10, padding: '14px 18px', borderLeft: '4px solid #F5E642′ }}>
+            <div key={p.name} style={{ background: '#1E2D45', borderRadius: 10, padding: '14px 18px', borderLeft: '4px solid #F5E642' }}>
               <div style={{ fontWeight: 700, fontSize: 15, marginBottom: 4 }}>{p.icon} {p.name}</div>
               <div style={{ color: '#94a3b8', fontSize: 13, lineHeight: 1.6 }}>{p.detail}</div>
             </div>
@@ -60,7 +60,7 @@ export default function DFWHVACMiteControl2026() {
           {result && <div style={{ marginTop: 16, background: '#0A1628', borderRadius: 8, padding: 16, color: '#F5E642', fontWeight: 600, fontSize: 13, lineHeight: 1.7 }}>{result}</div>}
         </div>
         <div style={{ background: '#1E2D45', borderRadius: 10, padding: '16px 20px', color: '#94a3b8', fontSize: 13, lineHeight: 1.7 }}>
-          ⚠️ <strong style={{ color: '#F5E642′ }}>Never spray pesticide into ductwork</strong> — it circulates toxic fumes through your home. Always hire a pest pro and HVAC tech together for duct-involved infestations.
+          ⚠️ <strong style={{ color: '#F5E642' }}>Never spray pesticide into ductwork</strong> — it circulates toxic fumes through your home. Always hire a pest pro and HVAC tech together for duct-involved infestations.
         </div>
       </div>
     </div>

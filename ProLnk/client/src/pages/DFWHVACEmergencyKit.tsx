@@ -52,7 +52,7 @@ export default function DFWHVACEmergencyKit() {
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.6rem', marginBottom: '1.25rem' }}>
             {homeFeatures.map(f => (
               <button key={f.id} onClick={() => toggle(f.id)}
-                style={{ padding: '0.5rem 1rem', borderRadius: 8, border: '2px solid', borderColor: selected.includes(f.id) ? '#F5E642′ : '#1E3A5F', background: selected.includes(f.id) ? '#F5E642' : ’transparent', color: selected.includes(f.id) ? '#0A1628′ : '#E8EEF4', cursor: ’pointer', fontWeight: 600, fontSize: '0.85rem' }}>
+                style={{ padding: '0.5rem 1rem', borderRadius: 8, border: '2px solid', borderColor: selected.includes(f.id) ? '#F5E642' : '#1E3A5F', background: selected.includes(f.id) ? '#F5E642' : 'transparent', color: selected.includes(f.id) ? '#0A1628' : '#E8EEF4', cursor: 'pointer', fontWeight: 600, fontSize: '0.85rem' }}>
                 {f.label}
               </button>
             ))}
@@ -64,7 +64,7 @@ export default function DFWHVACEmergencyKit() {
         </div>
 
         {kit && (
-          <div style={{ background: '#0F2040', borderRadius: 12, padding: '1.5rem', borderLeft: '4px solid #F5E642′ }}>
+          <div style={{ background: '#0F2040', borderRadius: 12, padding: '1.5rem', borderLeft: '4px solid #F5E642' }}>
             <h3 style={{ color: '#F5E642', margin: '0 0 0.25rem' }}>Your DFW HVAC Emergency Kit</h3>
             <p style={{ color: '#94A3B8', fontSize: '0.85rem', marginBottom: '1.25rem' }}>{kit.length} items — store in a labeled bin near your air handler</p>
             <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>

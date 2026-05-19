@@ -39,7 +39,7 @@ export default function DFWRoofPitchGuide() {
           DFW Roof Pitch Guide
         </h1>
         <p style={{ color: '#9AAAB8', marginBottom: '2rem', lineHeight: 1.6 }}>
-          Your roof's pitch — the ratio of rise to run — determines shingle lifespan, hail damage patterns, reroofing cost, and maintenance requirements in DFW’s brutal climate. Know your pitch before calling any contractor.
+          Your roof's pitch — the ratio of rise to run — determines shingle lifespan, hail damage patterns, reroofing cost, and maintenance requirements in DFW's brutal climate. Know your pitch before calling any contractor.
         </p>
 
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '1rem', marginBottom: '1.5rem' }}>
@@ -51,7 +51,7 @@ export default function DFWRoofPitchGuide() {
             <div key={p.label} style={{ background: '#0F2040', borderRadius: 10, padding: '1rem', borderTop: `4px solid ${p.color}`, textAlign: 'center' }}>
               <div style={{ fontSize: '1.5rem', marginBottom: '.25rem' }}>{p.icon}</div>
               <div style={{ fontWeight: 700, color: p.color, fontSize: '.9rem' }}>{p.label}</div>
-              <div style={{ color: '#F5E642', fontSize: '.8rem', margin: '.25rem 0′ }}>{p.range}</div>
+              <div style={{ color: '#F5E642', fontSize: '.8rem', margin: '.25rem 0' }}>{p.range}</div>
               <div style={{ color: '#9AAAB8', fontSize: '.8rem' }}>{p.desc}</div>
             </div>
           ))}
@@ -85,13 +85,13 @@ export default function DFWRoofPitchGuide() {
         </div>
 
         {result && (
-          <div style={{ background: '#0F2040', borderRadius: 12, padding: '1.5rem', border: '1px solid #F5E642′ }}>
+          <div style={{ background: '#0F2040', borderRadius: 12, padding: '1.5rem', border: '1px solid #F5E642' }}>
             <h3 style={{ color: '#F5E642', marginBottom: '1rem' }}>Pitch Analysis for DFW</h3>
             <div style={{ display: 'grid', gap: '.75rem' }}>
-              <div><div style={{ color: '#9AAAB8', fontSize: '.85rem', marginBottom: '.25rem' }}>EXPECTED SHINGLE LIFESPAN</div><div style={{ color: '#E8EDF5′ }}>{result.lifespan}</div></div>
-              <div><div style={{ color: '#9AAAB8', fontSize: '.85rem', marginBottom: '.25rem' }}>HAIL DAMAGE PATTERN</div><div style={{ color: '#E8EDF5′ }}>{result.hailNote}</div></div>
-              <div><div style={{ color: '#9AAAB8', fontSize: '.85rem', marginBottom: '.25rem' }}>REROOFING CONSIDERATIONS</div><div style={{ color: '#E8EDF5′ }}>{result.reroof}</div></div>
-              <div><div style={{ color: '#9AAAB8', fontSize: '.85rem', marginBottom: '.25rem' }}>MAINTENANCE APPROACH</div><div style={{ color: '#E8EDF5′ }}>{result.maintenance}</div></div>
+              <div><div style={{ color: '#9AAAB8', fontSize: '.85rem', marginBottom: '.25rem' }}>EXPECTED SHINGLE LIFESPAN</div><div style={{ color: '#E8EDF5' }}>{result.lifespan}</div></div>
+              <div><div style={{ color: '#9AAAB8', fontSize: '.85rem', marginBottom: '.25rem' }}>HAIL DAMAGE PATTERN</div><div style={{ color: '#E8EDF5' }}>{result.hailNote}</div></div>
+              <div><div style={{ color: '#9AAAB8', fontSize: '.85rem', marginBottom: '.25rem' }}>REROOFING CONSIDERATIONS</div><div style={{ color: '#E8EDF5' }}>{result.reroof}</div></div>
+              <div><div style={{ color: '#9AAAB8', fontSize: '.85rem', marginBottom: '.25rem' }}>MAINTENANCE APPROACH</div><div style={{ color: '#E8EDF5' }}>{result.maintenance}</div></div>
             </div>
           </div>
         )}

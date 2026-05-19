@@ -51,7 +51,7 @@ export default function DFWHVACThermostatTypesGuide2026() {
           <p style={{ color: '#cbd5e1', fontSize: 14, marginBottom: 8 }}>{current.desc}</p>
           <div style={{ background: '#0A1628', borderRadius: 8, padding: '10px 14px' }}>
             <span style={{ color: '#F5E642', fontSize: 12, fontWeight: 700 }}>DFW FIT: {current.dfwFit}</span>
-            <p style={{ color: '#94a3b8', fontSize: 13, margin: '4px 0 0′ }}>{current.note}</p>
+            <p style={{ color: '#94a3b8', fontSize: 13, margin: '4px 0 0' }}>{current.note}</p>
           </div>
         </div>
 
@@ -60,7 +60,7 @@ export default function DFWHVACThermostatTypesGuide2026() {
           <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap', marginBottom: 16 }}>
             {situations.map((s, i) => (
               <button key={i} onClick={() => setSituation(i)}
-                style={{ background: situation === i ? '#F5E642′ : '#1e3a5f', color: situation === i ? '#0A1628' : '#fff', border: ’none', borderRadius: 20, padding: '6px 14px', fontSize: 13, cursor: 'pointer', fontWeight: 600 }}>
+                style={{ background: situation === i ? '#F5E642' : '#1e3a5f', color: situation === i ? '#0A1628' : '#fff', border: 'none', borderRadius: 20, padding: '6px 14px', fontSize: 13, cursor: 'pointer', fontWeight: 600 }}>
                 {s.q}
               </button>
             ))}

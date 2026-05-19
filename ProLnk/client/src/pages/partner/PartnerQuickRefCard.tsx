@@ -8,8 +8,8 @@ const rates = {
 };
 
 const tiers = [
-  { name: 'Charter', matches: 25, color: '#F5E642′ },
-  { name: 'Founding', matches: 100, color: '#F5E642′ },
+  { name: 'Charter', matches: 25, color: '#F5E642' },
+  { name: 'Founding', matches: 100, color: '#F5E642' },
   { name: 'Level 3', matches: 400, color: '#D1D5DB' },
   { name: 'Level 4', matches: 1600, color: '#D1D5DB' },
 ];
@@ -31,7 +31,7 @@ export default function PartnerQuickRefCard() {
           <h2 style={{ color: '#0A1628', fontSize: 16, fontWeight: 700, marginTop: 0, marginBottom: 16 }}>🔧 Select Your Trade</h2>
           <div style={{ display: 'flex', gap: 10, flexWrap: 'wrap' }}>
             {Object.keys(rates).map(t => (
-              <button key={t} onClick={() => setTrade(t)} style={{ padding: '8px 18px', borderRadius: 8, border: '2px solid', borderColor: trade === t ? '#F5E642′ : '#E5E7EB', background: trade === t ? '#F5E642' : '#fff', color: '#0A1628', fontWeight: 600, cursor: ’pointer', textTransform: 'capitalize', fontSize: 14 }}>{t}</button>
+              <button key={t} onClick={() => setTrade(t)} style={{ padding: '8px 18px', borderRadius: 8, border: '2px solid', borderColor: trade === t ? '#F5E642' : '#E5E7EB', background: trade === t ? '#F5E642' : '#fff', color: '#0A1628', fontWeight: 600, cursor: 'pointer', textTransform: 'capitalize', fontSize: 14 }}>{t}</button>
             ))}
           </div>
         </div>
@@ -45,7 +45,7 @@ export default function PartnerQuickRefCard() {
           ].map(item => (
             <div key={item.label} style={{ background: '#fff', border: '2px solid #F5E642', borderRadius: 12, padding: '18px 20px' }}>
               <div style={{ fontSize: 13, color: '#6B7280', marginBottom: 6 }}>{item.label}</div>
-              <div style={{ fontSize: 28, fontWeight: 800, color: '#0A1628′ }}>{item.value}</div>
+              <div style={{ fontSize: 28, fontWeight: 800, color: '#0A1628' }}>{item.value}</div>
               <div style={{ fontSize: 12, color: '#9CA3AF', marginTop: 4 }}>{item.note}</div>
             </div>
           ))}
@@ -57,8 +57,8 @@ export default function PartnerQuickRefCard() {
             {tiers.map(t => (
               <div key={t.name} style={{ flex: '1 1 120px', background: '#F9FAFB', borderRadius: 10, padding: '14px 16px', textAlign: 'center', border: `2px solid ${t.color}` }}>
                 <div style={{ fontWeight: 700, color: '#0A1628', fontSize: 15 }}>{t.name}</div>
-                <div style={{ fontSize: 22, fontWeight: 800, color: '#0A1628', margin: '4px 0′ }}>{t.matches}</div>
-                <div style={{ fontSize: 11, color: '#6B7280′ }}>matches to qualify</div>
+                <div style={{ fontSize: 22, fontWeight: 800, color: '#0A1628', margin: '4px 0' }}>{t.matches}</div>
+                <div style={{ fontSize: 11, color: '#6B7280' }}>matches to qualify</div>
               </div>
             ))}
           </div>

@@ -46,7 +46,7 @@ export default function DFWCommutingGuide() {
     setSearched(true);
   }
 
-  const commuteColor = (mins: number) => mins <= 20 ? '#4ade80′ : mins <= 35 ? '#f59e0b' : '#ef4444';
+  const commuteColor = (mins: number) => mins <= 20 ? '#4ade80' : mins <= 35 ? '#f59e0b' : '#ef4444';
 
   return (
     <div style={{ background: '#0A1628', minHeight: '100vh', color: '#fff', fontFamily: 'sans-serif', padding: '32px 24px' }}>
@@ -80,9 +80,9 @@ export default function DFWCommutingGuide() {
             {employerClusters.map(e => (
               <button key={e.id} onClick={() => setEmployer(e.id)}
                 style={{ padding: '10px 16px', borderRadius: 8, border: '1px solid', cursor: 'pointer', textAlign: 'left', fontSize: 13,
-                  borderColor: employer === e.id ? '#F5E642′ : '#1e3a5f',
+                  borderColor: employer === e.id ? '#F5E642' : '#1e3a5f',
                   background: employer === e.id ? '#0d2a4a' : 'transparent',
-                  color: employer === e.id ? '#F5E642′ : '#94a3b8' }}>
+                  color: employer === e.id ? '#F5E642' : '#94a3b8' }}>
                 {e.label}
               </button>
             ))}
@@ -92,7 +92,7 @@ export default function DFWCommutingGuide() {
           <div style={{ display: 'flex', alignItems: 'center', gap: 16, marginBottom: 24 }}>
             <input type="range" min={200000} max={700000} step={10000} value={budget}
               onChange={e => setBudget(Number(e.target.value))}
-              style={{ flex: 1, accentColor: '#F5E642′ }} />
+              style={{ flex: 1, accentColor: '#F5E642' }} />
             <span style={{ color: '#F5E642', fontWeight: 700 }}>${budget.toLocaleString()}</span>
           </div>
 
@@ -113,7 +113,7 @@ export default function DFWCommutingGuide() {
                     <h3 style={{ margin: 0, fontSize: 18 }}>#{i + 1} {s.name}</h3>
                     <span style={{ color: commuteColor(mins), fontWeight: 700, fontSize: 16 }}>{mins} min</span>
                   </div>
-                  <div style={{ display: 'flex', gap: 16, fontSize: 13, color: '#94a3b8′ }}>
+                  <div style={{ display: 'flex', gap: 16, fontSize: 13, color: '#94a3b8' }}>
                     <span>🏠 ${s.medianHome.toLocaleString()}</span>
                     <span>{s.dart ? '🚆 DART access' : '🚗 Car required'}</span>
                   </div>

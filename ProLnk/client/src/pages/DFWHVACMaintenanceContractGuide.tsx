@@ -51,7 +51,7 @@ export default function DFWHVACMaintenanceContractGuide() {
         <div style={{ fontSize: 13, color: '#F5E642', marginBottom: 8, fontWeight: 600 }}>🏠 DFW Home Guide</div>
         <h1 style={{ fontSize: 32, fontWeight: 800, marginBottom: 8, lineHeight: 1.2 }}>HVAC Maintenance Contract Guide for DFW</h1>
         <p style={{ color: '#94a3b8', fontSize: 16, lineHeight: 1.6, marginBottom: 32 }}>
-          In DFW, biannual HVAC service isn't optional — it’s a requirement. Spring prep before triple-digit summers and fall service before cold snaps protect your system and keep manufacturer warranties valid.
+          In DFW, biannual HVAC service isn't optional — it's a requirement. Spring prep before triple-digit summers and fall service before cold snaps protect your system and keep manufacturer warranties valid.
         </p>
 
         <div style={{ background: 'rgba(245,230,66,0.08)', border: '1.5px solid rgba(245,230,66,0.25)', borderRadius: 12, padding: 16, marginBottom: 24, fontSize: 14, color: '#fde68a' }}>
@@ -59,24 +59,24 @@ export default function DFWHVACMaintenanceContractGuide() {
         </div>
 
         <div style={{ background: 'rgba(255,255,255,0.06)', borderRadius: 16, padding: 28, marginBottom: 24 }}>
-          <h2 style={{ fontSize: 18, fontWeight: 700, marginBottom: 20, color: '#F5E642′ }}>🔧 Contract Recommender</h2>
+          <h2 style={{ fontSize: 18, fontWeight: 700, marginBottom: 20, color: '#F5E642' }}>🔧 Contract Recommender</h2>
           <div style={{ display: 'grid', gap: 16 }}>
             <div>
-              <label style={{ display: 'block', fontSize: 13, fontWeight: 600, marginBottom: 6, color: '#cbd5e1′ }}>Number of HVAC Systems</label>
+              <label style={{ display: 'block', fontSize: 13, fontWeight: 600, marginBottom: 6, color: '#cbd5e1' }}>Number of HVAC Systems</label>
               <div style={{ display: 'flex', gap: 10 }}>
                 {systemCounts.map(n => (
-                  <button key={n} onClick={() => setCount(n)} style={{ flex: 1, padding: '10px 0', borderRadius: 8, border: '1.5px solid', borderColor: count === n ? '#F5E642′ : '#334155', background: count === n ? '#F5E642' : ’transparent', color: count === n ? '#0A1628′ : '#fff', fontWeight: 700, fontSize: 16, cursor: ’pointer' }}>{n}</button>
+                  <button key={n} onClick={() => setCount(n)} style={{ flex: 1, padding: '10px 0', borderRadius: 8, border: '1.5px solid', borderColor: count === n ? '#F5E642' : '#334155', background: count === n ? '#F5E642' : 'transparent', color: count === n ? '#0A1628' : '#fff', fontWeight: 700, fontSize: 16, cursor: 'pointer' }}>{n}</button>
                 ))}
               </div>
             </div>
             <div>
-              <label style={{ display: 'block', fontSize: 13, fontWeight: 600, marginBottom: 6, color: '#cbd5e1′ }}>Home Size</label>
+              <label style={{ display: 'block', fontSize: 13, fontWeight: 600, marginBottom: 6, color: '#cbd5e1' }}>Home Size</label>
               <select value={size} onChange={e => setSize(e.target.value)} style={{ width: '100%', padding: '10px 14px', borderRadius: 8, border: '1.5px solid #334155', fontSize: 15, background: '#0f2040', color: '#fff' }}>
                 {homeSizes.map(s => <option key={s}>{s}</option>)}
               </select>
             </div>
             <div>
-              <label style={{ display: 'block', fontSize: 13, fontWeight: 600, marginBottom: 6, color: '#cbd5e1′ }}>System Age</label>
+              <label style={{ display: 'block', fontSize: 13, fontWeight: 600, marginBottom: 6, color: '#cbd5e1' }}>System Age</label>
               <select value={age} onChange={e => setAge(e.target.value)} style={{ width: '100%', padding: '10px 14px', borderRadius: 8, border: '1.5px solid #334155', fontSize: 15, background: '#0f2040', color: '#fff' }}>
                 {systemAges.map(a => <option key={a}>{a}</option>)}
               </select>
@@ -85,8 +85,8 @@ export default function DFWHVACMaintenanceContractGuide() {
         </div>
 
         <div style={{ background: 'rgba(245,230,66,0.1)', border: '1.5px solid rgba(245,230,66,0.3)', borderRadius: 16, padding: 28, marginBottom: 24 }}>
-          <div style={{ fontSize: 20, fontWeight: 800, marginBottom: 8, color: '#F5E642′ }}>📋 {rec.type}</div>
-          <div style={{ fontSize: 28, fontWeight: 800, marginBottom: 12 }}>${rec.cost[0]}–${rec.cost[1]}<span style={{ fontSize: 16, fontWeight: 400, color: '#94a3b8′ }}>/year</span></div>
+          <div style={{ fontSize: 20, fontWeight: 800, marginBottom: 8, color: '#F5E642' }}>📋 {rec.type}</div>
+          <div style={{ fontSize: 28, fontWeight: 800, marginBottom: 12 }}>${rec.cost[0]}–${rec.cost[1]}<span style={{ fontSize: 16, fontWeight: 400, color: '#94a3b8' }}>/year</span></div>
           <p style={{ color: '#cbd5e1', lineHeight: 1.6, margin: 0 }}>{rec.note}</p>
         </div>
 
@@ -98,7 +98,7 @@ export default function DFWHVACMaintenanceContractGuide() {
                   <div style={{ fontWeight: 700, fontSize: 16 }}>{c.name} {c.name === rec.type && <span style={{ color: '#F5E642', fontSize: 12, marginLeft: 8 }}>★ RECOMMENDED</span>}</div>
                   <div style={{ fontSize: 13, color: '#64748b', marginTop: 2 }}>🗓️ {c.frequency}</div>
                 </div>
-                <div style={{ fontSize: 18, fontWeight: 800, color: '#F5E642′ }}>${c.annualCost[0]}–${c.annualCost[1]}</div>
+                <div style={{ fontSize: 18, fontWeight: 800, color: '#F5E642' }}>${c.annualCost[0]}–${c.annualCost[1]}</div>
               </div>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 10 }}>
                 <div>

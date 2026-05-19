@@ -24,11 +24,11 @@ const ENTERPRISE_INTEGRATIONS = [
     features: ["Bidirectional contact sync", "Opportunity creation on job close", "Custom field mapping", "Flow/Apex triggers", "Real-time webhooks"],
     setupTime: "2–4 hours",
     docsUrl: "https://developer.salesforce.com/",
-    authMethod: "OAuth 2.0″,
+    authMethod: "OAuth 2.0",
   },
   {
     id: "dynamics",
-    name: "Microsoft Dynamics 365″,
+    name: "Microsoft Dynamics 365",
     logo: "🔷",
     category: "CRM / ERP",
     status: "available",
@@ -37,7 +37,7 @@ const ENTERPRISE_INTEGRATIONS = [
     features: ["Contact & account sync", "Work order creation", "Field Service integration", "Power Automate triggers", "Azure AD SSO"],
     setupTime: "3–6 hours",
     docsUrl: "https://docs.microsoft.com/dynamics365/",
-    authMethod: "Azure AD / OAuth 2.0″,
+    authMethod: "Azure AD / OAuth 2.0",
   },
   {
     id: "mri",
@@ -63,7 +63,7 @@ const ENTERPRISE_INTEGRATIONS = [
     features: ["Deal pipeline sync", "Contact creation", "Email sequence triggers", "Attribution tracking", "Custom properties"],
     setupTime: "1–2 hours",
     docsUrl: "https://developers.hubspot.com/",
-    authMethod: "OAuth 2.0″,
+    authMethod: "OAuth 2.0",
   },
   {
     id: "yardi",
@@ -105,9 +105,9 @@ const WEBHOOK_EVENTS = [
 ];
 
 const TIER_CONFIG = {
-  "Pro+": "bg-blue-100 text-blue-700″,
-  "Company+": "bg-purple-100 text-purple-700″,
-  "Enterprise": "bg-amber-100 text-amber-700″,
+  "Pro+": "bg-blue-100 text-blue-700",
+  "Company+": "bg-purple-100 text-purple-700",
+  "Enterprise": "bg-amber-100 text-amber-700",
 };
 
 export default function EnterpriseIntegrations() {
@@ -137,14 +137,14 @@ export default function EnterpriseIntegrations() {
 
   return (
     <AdminLayout>
-      <div className="max-w-6xl mx-auto px-4 py-8 space-y-6″>
+      <div className="max-w-6xl mx-auto px-4 py-8 space-y-6">
         {/* Header */}
         <div className="flex items-start justify-between">
           <div>
-            <h1 className="text-2xl font-heading font-bold text-gray-900 flex items-center gap-3″>
+            <h1 className="text-2xl font-heading font-bold text-gray-900 flex items-center gap-3">
               <Plug className="w-6 h-6 text-[#0A1628]" />Enterprise Integrations
             </h1>
-            <p className="text-sm text-gray-500 mt-1″>
+            <p className="text-sm text-gray-500 mt-1">
               Connect ProLnk to your CRM, property management software, and enterprise systems.
             </p>
           </div>
@@ -152,7 +152,7 @@ export default function EnterpriseIntegrations() {
         </div>
 
         {/* Tab Toggle */}
-        <div className="flex gap-2 border-b border-gray-200″>
+        <div className="flex gap-2 border-b border-gray-200">
           {(["integrations", "webhooks"] as const).map((tab) => (
             <button
               key={tab}
@@ -160,10 +160,10 @@ export default function EnterpriseIntegrations() {
               className={`flex items-center gap-2 px-4 py-2.5 text-sm font-medium border-b-2 transition-colors capitalize ${
                 activeTab === tab
                   ? "border-[#0A1628] text-[#0A1628]"
-                  : "border-transparent text-gray-500 hover:text-gray-700″
+                  : "border-transparent text-gray-500 hover:text-gray-700"
               }`}
             >
-              {tab === "integrations" ? <Plug className="w-4 h-4″ /> : <Webhook className="w-4 h-4" />}
+              {tab === "integrations" ? <Plug className="w-4 h-4" /> : <Webhook className="w-4 h-4" />}
               {tab === "integrations" ? "Platform Integrations" : "Webhook Manager"}
             </button>
           ))}
@@ -171,45 +171,45 @@ export default function EnterpriseIntegrations() {
 
         {/* Integrations Tab */}
         {activeTab === "integrations" && (
-          <div className="space-y-4″>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4″>
+          <div className="space-y-4">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               {ENTERPRISE_INTEGRATIONS.map((integration) => {
-                const tierColor = TIER_CONFIG[integration.tier as keyof typeof TIER_CONFIG] || "bg-gray-100 text-gray-600″;
+                const tierColor = TIER_CONFIG[integration.tier as keyof typeof TIER_CONFIG] || "bg-gray-100 text-gray-600";
                 return (
                   <Card key={integration.id} className="border border-gray-200 hover:shadow-sm transition-shadow">
-                    <CardContent className="p-5″>
-                      <div className="flex items-start justify-between gap-3 mb-3″>
-                        <div className="flex items-center gap-3″>
+                    <CardContent className="p-5">
+                      <div className="flex items-start justify-between gap-3 mb-3">
+                        <div className="flex items-center gap-3">
                           <span className="text-2xl">{integration.logo}</span>
                           <div>
                             <div className="flex items-center gap-2 flex-wrap">
                               <h3 className="font-semibold text-gray-900 text-sm">{integration.name}</h3>
                               <Badge className={`${tierColor} text-xs`}>{integration.tier}</Badge>
                             </div>
-                            <p className="text-xs text-gray-500″>{integration.category}</p>
+                            <p className="text-xs text-gray-500">{integration.category}</p>
                           </div>
                         </div>
-                        <Badge className="bg-blue-100 text-blue-700 text-xs flex items-center gap-1 shrink-0″>
-                          <Clock className="w-3 h-3″ />Available
+                        <Badge className="bg-blue-100 text-blue-700 text-xs flex items-center gap-1 shrink-0">
+                          <Clock className="w-3 h-3" />Available
                         </Badge>
                       </div>
-                      <p className="text-xs text-gray-600 mb-3″>{integration.description}</p>
-                      <div className="space-y-1 mb-3″>
+                      <p className="text-xs text-gray-600 mb-3">{integration.description}</p>
+                      <div className="space-y-1 mb-3">
                         {integration.features.map((f) => (
-                          <div key={f} className="flex items-center gap-1.5 text-xs text-gray-600″>
-                            <CheckCircle className="w-3 h-3 text-emerald-500 shrink-0″ />{f}
+                          <div key={f} className="flex items-center gap-1.5 text-xs text-gray-600">
+                            <CheckCircle className="w-3 h-3 text-emerald-500 shrink-0" />{f}
                           </div>
                         ))}
                       </div>
-                      <div className="flex items-center justify-between pt-3 border-t border-gray-100″>
-                        <div className="text-xs text-gray-400″>
-                          <span className="flex items-center gap-1″><Lock className="w-3 h-3" />{integration.authMethod}</span>
-                          <span className="flex items-center gap-1 mt-0.5″><Clock className="w-3 h-3" />Setup: {integration.setupTime}</span>
+                      <div className="flex items-center justify-between pt-3 border-t border-gray-100">
+                        <div className="text-xs text-gray-400">
+                          <span className="flex items-center gap-1"><Lock className="w-3 h-3" />{integration.authMethod}</span>
+                          <span className="flex items-center gap-1 mt-0.5"><Clock className="w-3 h-3" />Setup: {integration.setupTime}</span>
                         </div>
-                        <div className="flex gap-2″>
+                        <div className="flex gap-2">
                           <a href={integration.docsUrl} target="_blank" rel="noopener noreferrer">
                             <Button size="sm" variant="outline" className="text-xs">
-                              <Globe className="w-3 h-3 mr-1″ />Docs
+                              <Globe className="w-3 h-3 mr-1" />Docs
                             </Button>
                           </a>
                           <Button
@@ -217,7 +217,7 @@ export default function EnterpriseIntegrations() {
                             className="bg-[#0A1628] text-white hover:bg-[#0A1628]/90 text-xs"
                             onClick={() => toast.info(`${integration.name} setup`, { description: "Contact your account manager to configure this enterprise integration." })}
                           >
-                            <Zap className="w-3 h-3 mr-1″ />Connect
+                            <Zap className="w-3 h-3 mr-1" />Connect
                           </Button>
                         </div>
                       </div>
@@ -231,12 +231,12 @@ export default function EnterpriseIntegrations() {
 
         {/* Webhook Manager Tab */}
         {activeTab === "webhooks" && (
-          <div className="space-y-6″>
-            <Card className="border border-gray-200″>
-              <CardHeader className="pb-3″>
+          <div className="space-y-6">
+            <Card className="border border-gray-200">
+              <CardHeader className="pb-3">
                 <CardTitle className="text-base font-semibold">Add Webhook Endpoint</CardTitle>
               </CardHeader>
-              <CardContent className="space-y-4″>
+              <CardContent className="space-y-4">
                 <div>
                   <Label className="text-sm font-medium">Endpoint URL</Label>
                   <Input
@@ -248,39 +248,39 @@ export default function EnterpriseIntegrations() {
                 </div>
                 <div>
                   <Label className="text-sm font-medium mb-2 block">Subscribe to Events</Label>
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-2″>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
                     {WEBHOOK_EVENTS.map((we) => (
                       <button
                         key={we.event}
                         onClick={() => toggleEvent(we.event)}
                         className={`text-left p-3 rounded-lg border text-xs transition-colors ${
                           selectedEvents.includes(we.event)
-                            ? "border-[#0A1628] bg-[#0A1628]/5″
-                            : "border-gray-200 hover:border-gray-300″
+                            ? "border-[#0A1628] bg-[#0A1628]/5"
+                            : "border-gray-200 hover:border-gray-300"
                         }`}
                       >
-                        <div className="font-mono font-semibold text-gray-800″>{we.event}</div>
-                        <div className="text-gray-500 mt-0.5″>{we.description}</div>
+                        <div className="font-mono font-semibold text-gray-800">{we.event}</div>
+                        <div className="text-gray-500 mt-0.5">{we.description}</div>
                       </button>
                     ))}
                   </div>
                 </div>
-                <div className="flex items-center justify-between pt-2″>
-                  <p className="text-xs text-gray-500″>
+                <div className="flex items-center justify-between pt-2">
+                  <p className="text-xs text-gray-500">
                     {selectedEvents.length} event{selectedEvents.length !== 1 ? "s" : ""} selected
                   </p>
                   <Button
-                    className="bg-[#0A1628] text-white hover:bg-[#0A1628]/90″
+                    className="bg-[#0A1628] text-white hover:bg-[#0A1628]/90"
                     onClick={handleSaveWebhook}
                   >
-                    <Webhook className="w-4 h-4 mr-2″ />Save Webhook
+                    <Webhook className="w-4 h-4 mr-2" />Save Webhook
                   </Button>
                 </div>
               </CardContent>
             </Card>
 
-            <Card className="border border-gray-200″>
-              <CardHeader className="pb-3″>
+            <Card className="border border-gray-200">
+              <CardHeader className="pb-3">
                 <CardTitle className="text-base font-semibold">Webhook Payload Format</CardTitle>
               </CardHeader>
               <CardContent>

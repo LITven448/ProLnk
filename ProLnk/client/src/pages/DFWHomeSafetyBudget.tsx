@@ -39,7 +39,7 @@ export default function DFWHomeSafetyBudget() {
           <div style={{ fontWeight: 700, marginBottom: 12, color: '#0f172a' }}>Your home features</div>
           <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap' }}>
             {features.map(f => (
-              <button key={f} onClick={() => toggle(f)} style={{ background: selected[f] ? '#1d4ed8′ : '#f1f5f9', color: selected[f] ? '#fff' : '#334155', border: ’none', borderRadius: 6, padding: '0.5rem 1rem', cursor: 'pointer', fontWeight: 600, fontSize: 13 }}>{f}</button>
+              <button key={f} onClick={() => toggle(f)} style={{ background: selected[f] ? '#1d4ed8' : '#f1f5f9', color: selected[f] ? '#fff' : '#334155', border: 'none', borderRadius: 6, padding: '0.5rem 1rem', cursor: 'pointer', fontWeight: 600, fontSize: 13 }}>{f}</button>
             ))}
           </div>
         </div>
@@ -47,16 +47,16 @@ export default function DFWHomeSafetyBudget() {
         {hasFeatures && (
           <div style={{ background: '#eff6ff', borderRadius: 10, padding: '1rem 1.5rem', marginBottom: 24, display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
             <div>
-              <div style={{ fontWeight: 700, color: '#1d4ed8′ }}>Recommended Safety Budget</div>
+              <div style={{ fontWeight: 700, color: '#1d4ed8' }}>Recommended Safety Budget</div>
               <div style={{ color: '#475569', fontSize: 13 }}>{recommended.length} items · prioritized for your home</div>
             </div>
-            <div style={{ fontSize: 32, fontWeight: 900, color: '#1d4ed8′ }}>${total.toLocaleString()}</div>
+            <div style={{ fontSize: 32, fontWeight: 900, color: '#1d4ed8' }}>${total.toLocaleString()}</div>
           </div>
         )}
 
         <div style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
           {recommended.sort((a, b) => a.priority - b.priority).map((item, i) => (
-            <div key={item.key} style={{ background: '#fff', borderRadius: 10, padding: '1rem 1.25rem', display: 'flex', alignItems: 'center', gap: 14, boxShadow: '0 1px 3px rgba(0,0,0,0.06)', borderLeft: '4px solid #1d4ed8′ }}>
+            <div key={item.key} style={{ background: '#fff', borderRadius: 10, padding: '1rem 1.25rem', display: 'flex', alignItems: 'center', gap: 14, boxShadow: '0 1px 3px rgba(0,0,0,0.06)', borderLeft: '4px solid #1d4ed8' }}>
               <div style={{ background: '#eff6ff', color: '#1d4ed8', fontWeight: 800, fontSize: 13, width: 28, height: 28, borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>#{i + 1}</div>
               <div style={{ flex: 1 }}>
                 <div style={{ fontWeight: 700 }}>{item.label}</div>

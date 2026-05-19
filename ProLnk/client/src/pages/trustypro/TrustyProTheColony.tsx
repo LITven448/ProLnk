@@ -82,7 +82,7 @@ export default function TrustyProTheColony() {
         <div style={{ maxWidth: 860, margin: '0 auto', display: 'flex', gap: 40, flexWrap: 'wrap' }}>
           {STATS.map(s => (
             <div key={s.label}>
-              <div style={{ fontSize: 22, fontWeight: 800, color: '#4F46E5′ }}>{s.value}</div>
+              <div style={{ fontSize: 22, fontWeight: 800, color: '#4F46E5' }}>{s.value}</div>
               <div style={{ fontSize: 12, color: '#6B7280', fontWeight: 500 }}>{s.label}</div>
             </div>
           ))}

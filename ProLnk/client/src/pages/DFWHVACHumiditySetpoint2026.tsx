@@ -31,7 +31,7 @@ export default function DFWHVACHumiditySetpoint2026() {
       <div style={{ maxWidth: '720px', margin: '0 auto' }}>
         <div style={{ marginBottom: '8px', color: '#F5E642', fontSize: '13px', fontWeight: 600, letterSpacing: '1px', textTransform: 'uppercase' }}>💧 DFW HVAC Guide 2026</div>
         <h1 style={{ fontSize: '32px', fontWeight: 800, marginBottom: '8px', lineHeight: 1.2 }}>DFW Humidity Setpoint Guide</h1>
-        <p style={{ color: '#8899AA', fontSize: '16px', marginBottom: '32px' }}>DFW's extreme heat and seasonal swings demand precise humidity control. Too low damages wood. Too high breeds mold. Here’s your seasonal setpoint guide.</p>
+        <p style={{ color: '#8899AA', fontSize: '16px', marginBottom: '32px' }}>DFW's extreme heat and seasonal swings demand precise humidity control. Too low damages wood. Too high breeds mold. Here's your seasonal setpoint guide.</p>
 
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '16px', marginBottom: '32px' }}>
           {[{ season: 'summer', label: '☀️ Summer', target: '45–50% RH', note: 'AC dehumidifies — lower setpoint = more removal' },
@@ -48,7 +48,7 @@ export default function DFWHVACHumiditySetpoint2026() {
         </div>
 
         <div style={{ backgroundColor: '#0D1F38', border: '1px solid #1a3050', borderRadius: '12px', padding: '28px', marginBottom: '32px' }}>
-          <h2 style={{ fontSize: '20px', fontWeight: 700, marginBottom: '20px', color: '#F5E642′ }}>🎛️ Get My Setpoint Guidance</h2>
+          <h2 style={{ fontSize: '20px', fontWeight: 700, marginBottom: '20px', color: '#F5E642' }}>🎛️ Get My Setpoint Guidance</h2>
           <div style={{ marginBottom: '16px' }}>
             <label style={{ display: 'block', fontSize: '14px', color: '#8899AA', marginBottom: '8px' }}>Current DFW Season</label>
             <select value={season} onChange={e => setSeason(e.target.value)} style={{ width: '100%', padding: '12px', backgroundColor: '#0A1628', border: '1px solid #1a3050', borderRadius: '8px', color: '#fff', fontSize: '15px' }}>
@@ -60,14 +60,14 @@ export default function DFWHVACHumiditySetpoint2026() {
           </div>
           <div style={{ marginBottom: '20px' }}>
             <label style={{ display: 'block', fontSize: '14px', color: '#8899AA', marginBottom: '8px' }}>Current Indoor Humidity (%RH)</label>
-            <input type='number' value={currentRH} onChange={e => setCurrentRH(e.target.value)} placeholder='e.g. 58′ style={{ width: '100%', padding: '12px', backgroundColor: '#0A1628', border: '1px solid #1a3050', borderRadius: '8px', color: '#fff', fontSize: '15px', boxSizing: ’border-box' }} />
+            <input type='number' value={currentRH} onChange={e => setCurrentRH(e.target.value)} placeholder='e.g. 58' style={{ width: '100%', padding: '12px', backgroundColor: '#0A1628', border: '1px solid #1a3050', borderRadius: '8px', color: '#fff', fontSize: '15px', boxSizing: 'border-box' }} />
           </div>
           <button onClick={getGuide} style={{ backgroundColor: '#F5E642', color: '#0A1628', border: 'none', borderRadius: '8px', padding: '14px 28px', fontSize: '16px', fontWeight: 700, cursor: 'pointer', width: '100%' }}>Get Setpoint Guide</button>
           {guide && <div style={{ marginTop: '20px', padding: '16px', backgroundColor: '#0A1628', borderRadius: '8px', border: '1px solid #F5E642', fontSize: '15px', lineHeight: 1.6 }}>{guide}</div>}
         </div>
 
         <div style={{ backgroundColor: '#0D1F38', border: '1px solid #1a3050', borderRadius: '12px', padding: '24px' }}>
-          <h3 style={{ fontSize: '17px', fontWeight: 700, marginBottom: '16px', color: '#F5E642′ }}>💡 How DFW AC Controls Humidity</h3>
+          <h3 style={{ fontSize: '17px', fontWeight: 700, marginBottom: '16px', color: '#F5E642' }}>💡 How DFW AC Controls Humidity</h3>
           <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
             {['Lower thermostat setpoint → AC runs longer → removes more moisture from air', 'DFW summer air at 95°F holds enormous moisture — your AC battles this daily', 'Oversized AC units short-cycle, cooling fast without adequate dehumidification', 'Two-stage or variable speed AC handles DFW humidity 40% better than single-stage', 'ERV (Energy Recovery Ventilator) can manage fresh air without humidity spikes'].map((tip, i) => (
               <div key={i} style={{ display: 'flex', gap: '12px', alignItems: 'flex-start' }}>

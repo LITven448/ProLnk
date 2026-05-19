@@ -69,7 +69,7 @@ export default function DFWHomeValueAdder() {
 
         <div style={{ marginBottom: 20 }}>
           <div style={{ color: '#94A3B8', fontSize: 13, marginBottom: 8 }}>💰 Approximate Home Value</div>
-          <input type='text' placeholder='e.g. $425,000′ value={homeValue}
+          <input type='text' placeholder='e.g. $425,000' value={homeValue}
             onChange={e => { setHomeValue(e.target.value); setSelectedTier(''); setShowResults(false); }}
             style={{ width: '100%', padding: '12px 14px', borderRadius: 8, background: '#0F2240', border: '1.5px solid #1E3A5F', color: '#fff', fontSize: 15, boxSizing: 'border-box' }} />
         </div>
@@ -81,7 +81,7 @@ export default function DFWHomeValueAdder() {
               const key = (['starter', 'mid', 'upper', 'luxury'] as TierKey[])[i];
               return (
                 <button key={key} onClick={() => { setSelectedTier(key); setHomeValue(''); setShowResults(false); }}
-                  style={{ padding: '10px 14px', borderRadius: 8, border: `1.5px solid ${selectedTier === key ? '#F5E642' : '#1E3A5F'}`, background: selectedTier === key ? '#F5E642′ : ’transparent', color: selectedTier === key ? '#0A1628′ : '#fff', fontWeight: 600, cursor: ’pointer', textAlign: 'left' }}>
+                  style={{ padding: '10px 14px', borderRadius: 8, border: `1.5px solid ${selectedTier === key ? '#F5E642' : '#1E3A5F'}`, background: selectedTier === key ? '#F5E642' : 'transparent', color: selectedTier === key ? '#0A1628' : '#fff', fontWeight: 600, cursor: 'pointer', textAlign: 'left' }}>
                   {t.label}
                 </button>
               );
@@ -104,8 +104,8 @@ export default function DFWHomeValueAdder() {
                   <span style={{ background: '#0A3020', color: '#4ADE80', fontWeight: 700, borderRadius: 6, padding: '2px 10px', fontSize: 13 }}>ROI {item.roi}</span>
                 </div>
                 <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 8, marginBottom: 8 }}>
-                  <div style={{ color: '#94A3B8', fontSize: 13 }}>💸 Cost: <span style={{ color: '#E2E8F0′ }}>{item.cost}</span></div>
-                  <div style={{ color: '#94A3B8', fontSize: 13 }}>📈 Value add: <span style={{ color: '#F5E642′ }}>{item.valueAdd}</span></div>
+                  <div style={{ color: '#94A3B8', fontSize: 13 }}>💸 Cost: <span style={{ color: '#E2E8F0' }}>{item.cost}</span></div>
+                  <div style={{ color: '#94A3B8', fontSize: 13 }}>📈 Value add: <span style={{ color: '#F5E642' }}>{item.valueAdd}</span></div>
                 </div>
                 <div style={{ color: '#64748B', fontSize: 13 }}>{item.note}</div>
               </div>

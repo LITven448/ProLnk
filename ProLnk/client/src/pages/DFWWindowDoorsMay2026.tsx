@@ -21,7 +21,7 @@ export default function DFWWindowDoorsMay2026() {
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 12, marginBottom: 24 }}>
           {[['15%', 'Cooling savings', 'Low-E glass upgrade'],['30%', 'Heat loss', 'Through window gaps in older homes'],['7–10yr', 'Payback period', 'Full window replacement in DFW']].map(([stat, label, sub]) => (
             <div key={label} style={{ background: '#0F2040', borderRadius: 10, padding: '0.9rem', textAlign: 'center' }}>
-              <div style={{ fontSize: 22, fontWeight: 800, color: '#F5E642′ }}>{stat}</div>
+              <div style={{ fontSize: 22, fontWeight: 800, color: '#F5E642' }}>{stat}</div>
               <div style={{ fontSize: 12, fontWeight: 700, marginTop: 2 }}>{label}</div>
               <div style={{ fontSize: 11, color: '#64748b', marginTop: 2 }}>{sub}</div>
             </div>
@@ -31,14 +31,14 @@ export default function DFWWindowDoorsMay2026() {
         <div style={{ marginBottom: 16, fontWeight: 700, color: '#94a3b8', fontSize: 14 }}>Select your home age:</div>
         <div style={{ display: 'flex', gap: 10, marginBottom: 24, flexWrap: 'wrap' }}>
           {homeAges.map(h => (
-            <button key={h.id} onClick={() => setSelected(h.id)} style={{ background: selected === h.id ? '#F5E642′ : '#0F2040', color: selected === h.id ? '#0A1628' : '#fff', border: ’none', borderRadius: 8, padding: '0.6rem 1.2rem', cursor: 'pointer', fontWeight: 700, fontSize: 14, transition: 'all 0.2s' }}>
+            <button key={h.id} onClick={() => setSelected(h.id)} style={{ background: selected === h.id ? '#F5E642' : '#0F2040', color: selected === h.id ? '#0A1628' : '#fff', border: 'none', borderRadius: 8, padding: '0.6rem 1.2rem', cursor: 'pointer', fontWeight: 700, fontSize: 14, transition: 'all 0.2s' }}>
               {h.label}
             </button>
           ))}
         </div>
 
         <div style={{ background: '#0F2040', borderRadius: 14, padding: '1.5rem' }}>
-          <h2 style={{ fontWeight: 800, marginBottom: 16, color: '#F5E642′ }}>{item.label} — Priorities</h2>
+          <h2 style={{ fontWeight: 800, marginBottom: 16, color: '#F5E642' }}>{item.label} — Priorities</h2>
           {item.priorities.map((p, i) => (
             <div key={i} style={{ display: 'flex', gap: 14, marginBottom: 14, alignItems: 'flex-start' }}>
               <div style={{ width: 26, height: 26, background: '#F5E642', color: '#0A1628', borderRadius: 6, display: 'flex', alignItems: 'center', justifyContent: 'center', fontWeight: 800, fontSize: 13, flexShrink: 0 }}>{i + 1}</div>

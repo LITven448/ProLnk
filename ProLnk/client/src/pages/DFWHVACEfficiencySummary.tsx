@@ -2,10 +2,10 @@ import { useState } from 'react';
 
 const efficiencyTiers = [
   { label: 'Minimum (Code)', seer2: '14–15', cost: '$', savings: 'Baseline', taxCredit: '$0', dfwRec: 'Avoid — runs constantly in DFW summers, costs more long term', color: '#FF6B6B' },
-  { label: 'Good', seer2: '16–17', cost: '$$', savings: '10–15% vs min', taxCredit: '$0', dfwRec: 'Acceptable for budget buyers in DFW; covers most summer days well', color: '#FFB347′ },
-  { label: 'Better', seer2: '18–20', cost: '$$', savings: '20–30% vs min', taxCredit: 'Up to $600', dfwRec: 'Sweet spot for DFW — qualifies for federal tax credit', color: '#F5E642′ },
-  { label: 'Best', seer2: '21–24', cost: '$$$', savings: '35–45% vs min', taxCredit: 'Up to $600', dfwRec: 'Ideal for DFW homes 2,000+ sqft with high summer bills', color: '#4CAF50′ },
-  { label: 'Ultra Premium', seer2: '25+', cost: '$$$$', savings: '50%+ vs min', taxCredit: 'Up to $600', dfwRec: 'Best for large DFW homes, long-term owners, net-zero goals', color: '#00BCD4′ },
+  { label: 'Good', seer2: '16–17', cost: '$$', savings: '10–15% vs min', taxCredit: '$0', dfwRec: 'Acceptable for budget buyers in DFW; covers most summer days well', color: '#FFB347' },
+  { label: 'Better', seer2: '18–20', cost: '$$', savings: '20–30% vs min', taxCredit: 'Up to $600', dfwRec: 'Sweet spot for DFW — qualifies for federal tax credit', color: '#F5E642' },
+  { label: 'Best', seer2: '21–24', cost: '$$$', savings: '35–45% vs min', taxCredit: 'Up to $600', dfwRec: 'Ideal for DFW homes 2,000+ sqft with high summer bills', color: '#4CAF50' },
+  { label: 'Ultra Premium', seer2: '25+', cost: '$$$$', savings: '50%+ vs min', taxCredit: 'Up to $600', dfwRec: 'Best for large DFW homes, long-term owners, net-zero goals', color: '#00BCD4' },
 ];
 
 const goals = [
@@ -36,7 +36,7 @@ export default function DFWHVACEfficiencySummary() {
       <div style={{ maxWidth: 900, margin: '0 auto' }}>
         <div style={{ textAlign: 'center', marginBottom: '2rem' }}>
           <div style={{ fontSize: '2.5rem' }}>⚡</div>
-          <h1 style={{ color: '#F5E642', fontSize: '2rem', fontWeight: 700, margin: '0.5rem 0′ }}>DFW HVAC Efficiency Guide</h1>
+          <h1 style={{ color: '#F5E642', fontSize: '2rem', fontWeight: 700, margin: '0.5rem 0' }}>DFW HVAC Efficiency Guide</h1>
           <p style={{ color: '#8899AA', fontSize: '1rem' }}>What SEER2, EER2 & HSPF2 mean for your Dallas-Fort Worth home — and what's worth upgrading to</p>
         </div>
 
@@ -59,7 +59,7 @@ export default function DFWHVACEfficiencySummary() {
               <div style={{ color: tier.color, fontWeight: 700, fontSize: '0.9rem', marginBottom: 4 }}>{tier.label}</div>
               <div style={{ color: '#fff', fontSize: '1.1rem', fontWeight: 700 }}>{tier.seer2} SEER2</div>
               <div style={{ color: '#F5E642', fontSize: '0.8rem' }}>{tier.cost} · {tier.taxCredit} credit</div>
-              <p style={{ color: '#8899AA', fontSize: '0.75rem', margin: '0.5rem 0 0′ }}>{tier.dfwRec}</p>
+              <p style={{ color: '#8899AA', fontSize: '0.75rem', margin: '0.5rem 0 0' }}>{tier.dfwRec}</p>
             </div>
           ))}
         </div>
@@ -83,10 +83,10 @@ export default function DFWHVACEfficiencySummary() {
             </div>
           </div>
           {recTier && homeSize && (
-            <div style={{ padding: '1rem', background: '#0A1628', borderRadius: 8, borderLeft: '4px solid #F5E642′ }}>
+            <div style={{ padding: '1rem', background: '#0A1628', borderRadius: 8, borderLeft: '4px solid #F5E642' }}>
               <p style={{ color: '#F5E642', fontWeight: 700, margin: 0 }}>Recommended: {recTier.label} — {recTier.seer2} SEER2</p>
-              <p style={{ color: '#AAB8C2', fontSize: '0.85rem', margin: '0.25rem 0′ }}>Estimated annual savings vs minimum: {savingsMap[homeSize]}</p>
-              {recTier.taxCredit !== '$0′ && <p style={{ color: '#4CAF50', fontSize: '0.85rem', margin: 0 }}>✅ Qualifies for federal tax credit: {recTier.taxCredit}</p>}
+              <p style={{ color: '#AAB8C2', fontSize: '0.85rem', margin: '0.25rem 0' }}>Estimated annual savings vs minimum: {savingsMap[homeSize]}</p>
+              {recTier.taxCredit !== '$0' && <p style={{ color: '#4CAF50', fontSize: '0.85rem', margin: 0 }}>✅ Qualifies for federal tax credit: {recTier.taxCredit}</p>}
             </div>
           )}
         </div>

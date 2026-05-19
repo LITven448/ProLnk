@@ -126,7 +126,7 @@ export default function DFWCrawlSpacePestGuide() {
           particularly for subterranean termites, which are endemic throughout North Texas.
         </p>
         <div style={{ background: '#162844', borderRadius: 10, padding: '14px 18px', marginBottom: 28 }}>
-          <strong style={{ color: '#F5E642′ }}>DFW Crawl Space Context:</strong>
+          <strong style={{ color: '#F5E642' }}>DFW Crawl Space Context:</strong>
           <ul style={{ color: '#8FA3BF', marginTop: 8, paddingLeft: 20, lineHeight: 1.8 }}>
             <li>DFW has high subterranean termite pressure — Formosan termites (more aggressive) are established in Dallas County.</li>
             <li>DFW summer humidity levels of 60-80% make moisture management critical in any crawl space.</li>
@@ -148,10 +148,10 @@ export default function DFWCrawlSpacePestGuide() {
           {result && (
             <div style={{ marginTop: 20, background: '#0A1628', borderRadius: 10, padding: 18, borderLeft: `4px solid ${result.color}` }}>
               <div style={{ color: result.color, fontWeight: 700, marginBottom: 10 }}>{result.pestLikelihood}</div>
-              <div style={{ marginBottom: 10 }}><strong style={{ color: '#F5E642′ }}>Treatment:</strong> <span style={{ color: '#8FA3BF' }}>{result.treatment}</span></div>
-              <div style={{ marginBottom: 10 }}><strong style={{ color: '#F5E642′ }}>Moisture Control:</strong> <span style={{ color: '#8FA3BF' }}>{result.moistureControl}</span></div>
-              <div style={{ marginBottom: 12 }}><strong style={{ color: '#F5E642′ }}>Estimated DFW Cost:</strong> <span style={{ color: '#8FA3BF' }}>{result.cost}</span></div>
-              <strong style={{ color: '#F5E642′ }}>Key Notes:</strong>
+              <div style={{ marginBottom: 10 }}><strong style={{ color: '#F5E642' }}>Treatment:</strong> <span style={{ color: '#8FA3BF' }}>{result.treatment}</span></div>
+              <div style={{ marginBottom: 10 }}><strong style={{ color: '#F5E642' }}>Moisture Control:</strong> <span style={{ color: '#8FA3BF' }}>{result.moistureControl}</span></div>
+              <div style={{ marginBottom: 12 }}><strong style={{ color: '#F5E642' }}>Estimated DFW Cost:</strong> <span style={{ color: '#8FA3BF' }}>{result.cost}</span></div>
+              <strong style={{ color: '#F5E642' }}>Key Notes:</strong>
               <ul style={{ paddingLeft: 20, color: '#8FA3BF', lineHeight: 1.8, marginTop: 8 }}>
                 {result.notes.map((note, i) => <li key={i}>{note}</li>)}
               </ul>
@@ -168,7 +168,7 @@ export default function DFWCrawlSpacePestGuide() {
           ].map(item => (
             <div key={item.title} style={{ display: 'flex', gap: 14, marginBottom: 16 }}>
               <span style={{ fontSize: 22, flexShrink: 0 }}>{item.icon}</span>
-              <div><strong style={{ color: '#E8EDF5′ }}>{item.title}:</strong> <span style={{ color: '#8FA3BF' }}>{item.body}</span></div>
+              <div><strong style={{ color: '#E8EDF5' }}>{item.title}:</strong> <span style={{ color: '#8FA3BF' }}>{item.body}</span></div>
             </div>
           ))}
         </div>

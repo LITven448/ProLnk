@@ -60,18 +60,18 @@ export default function DFWOutdoorFaucetGuide2026() {
         <div style={{ background: '#1e293b', borderRadius: 12, padding: 24, marginBottom: 24 }}>
           <h2 style={{ color: '#F5E642', fontSize: 20, marginBottom: 20 }}>🔍 Diagnose Your Outdoor Faucet Problem</h2>
           <div style={{ marginBottom: 16 }}>
-            <label style={{ display: 'block', marginBottom: 8, color: '#94a3b8′ }}>Faucet Type</label>
+            <label style={{ display: 'block', marginBottom: 8, color: '#94a3b8' }}>Faucet Type</label>
             <select value={faucetType} onChange={e => setFaucetType(e.target.value)}
-              style={{ width: '100%', padding: '10px', borderRadius: 6, background: '#0A1628', color: '#fff', border: '1px solid #334155′ }}>
+              style={{ width: '100%', padding: '10px', borderRadius: 6, background: '#0A1628', color: '#fff', border: '1px solid #334155' }}>
               <option value="">Select faucet type...</option>
               <option value="frost-free">❄️ Frost-free sillcock (long stem)</option>
               <option value="standard">🔧 Standard hose bib (short, older)</option>
             </select>
           </div>
           <div style={{ marginBottom: 16 }}>
-            <label style={{ display: 'block', marginBottom: 8, color: '#94a3b8′ }}>Problem</label>
+            <label style={{ display: 'block', marginBottom: 8, color: '#94a3b8' }}>Problem</label>
             <select value={problem} onChange={e => setProblem(e.target.value)}
-              style={{ width: '100%', padding: '10px', borderRadius: 6, background: '#0A1628', color: '#fff', border: '1px solid #334155′ }}>
+              style={{ width: '100%', padding: '10px', borderRadius: 6, background: '#0A1628', color: '#fff', border: '1px solid #334155' }}>
               <option value="">Select problem...</option>
               <option value="freeze">🥶 Damaged after a freeze</option>
               <option value="backflow">🔄 Missing backflow preventer</option>
@@ -84,7 +84,7 @@ export default function DFWOutdoorFaucetGuide2026() {
             Get Repair Guide
           </button>
           {guide && (
-            <div style={{ marginTop: 20, background: '#0A1628', borderRadius: 8, padding: 16, borderLeft: '4px solid #F5E642', color: '#e2e8f0′ }}>
+            <div style={{ marginTop: 20, background: '#0A1628', borderRadius: 8, padding: 16, borderLeft: '4px solid #F5E642', color: '#e2e8f0' }}>
               {guide}
             </div>
           )}
@@ -94,13 +94,13 @@ export default function DFWOutdoorFaucetGuide2026() {
           <h2 style={{ color: '#F5E642', fontSize: 20, marginBottom: 12 }}>💰 DFW Outdoor Faucet Costs 2026</h2>
           <div style={{ display: 'grid', gap: 10 }}>
             {[
-              { item: 'Anti-siphon vacuum breaker (DIY)', cost: '$8-15′ },
-              { item: 'Frost-free stem replacement (DIY)', cost: '$20-40′ },
-              { item: 'Full frost-free faucet replacement', cost: '$150-250′ },
-              { item: 'Freeze damage repair + drywall', cost: '$300-800′ },
+              { item: 'Anti-siphon vacuum breaker (DIY)', cost: '$8-15' },
+              { item: 'Frost-free stem replacement (DIY)', cost: '$20-40' },
+              { item: 'Full frost-free faucet replacement', cost: '$150-250' },
+              { item: 'Freeze damage repair + drywall', cost: '$300-800' },
             ].map(r => (
               <div key={r.item} style={{ display: 'flex', justifyContent: 'space-between', borderBottom: '1px solid #334155', paddingBottom: 8 }}>
-                <span style={{ color: '#cbd5e1′ }}>{r.item}</span>
+                <span style={{ color: '#cbd5e1' }}>{r.item}</span>
                 <span style={{ color: '#F5E642', fontWeight: 700 }}>{r.cost}</span>
               </div>
             ))}

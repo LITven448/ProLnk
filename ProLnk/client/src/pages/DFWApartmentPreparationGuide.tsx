@@ -43,18 +43,18 @@ export default function DFWApartmentPreparationGuide() {
         </p>
 
         <div style={{ background: '#111E35', borderRadius: 12, padding: 24, marginBottom: 24 }}>
-          <h2 style={{ fontSize: 16, fontWeight: 700, marginBottom: 16, color: '#F5E642′ }}>📍 DFW Area Overview</h2>
+          <h2 style={{ fontSize: 16, fontWeight: 700, marginBottom: 16, color: '#F5E642' }}>📍 DFW Area Overview</h2>
           {DFW_AREAS.map((a) => (
             <div key={a.area} style={{ borderBottom: '1px solid #1E2F4A', paddingBottom: 14, marginBottom: 14 }}>
               <div style={{ fontWeight: 700, fontSize: 14, marginBottom: 4 }}>{a.area}</div>
               <div style={{ fontSize: 13, color: '#F5E642', marginBottom: 4 }}>💰 {a.rent}</div>
-              <div style={{ fontSize: 12, color: '#6B7FA0′ }}>{a.notes}</div>
+              <div style={{ fontSize: 12, color: '#6B7FA0' }}>{a.notes}</div>
             </div>
           ))}
         </div>
 
         <div style={{ background: '#111E35', borderRadius: 12, padding: 24, marginBottom: 24 }}>
-          <h2 style={{ fontSize: 16, fontWeight: 700, marginBottom: 8, color: '#F5E642′ }}>💡 What to Negotiate in DFW</h2>
+          <h2 style={{ fontSize: 16, fontWeight: 700, marginBottom: 8, color: '#F5E642' }}>💡 What to Negotiate in DFW</h2>
           <ul style={{ fontSize: 13, color: '#8A9BC0', paddingLeft: 18, margin: 0 }}>
             <li style={{ marginBottom: 8 }}>Month-to-month clause or 60-day out provision (especially Q4 when complexes have vacancy)</li>
             <li style={{ marginBottom: 8 }}>Waived application fee if you pay first month upfront</li>
@@ -65,7 +65,7 @@ export default function DFWApartmentPreparationGuide() {
         </div>
 
         <div style={{ background: '#111E35', borderRadius: 12, padding: 24, marginBottom: 24 }}>
-          <h2 style={{ fontSize: 16, fontWeight: 700, marginBottom: 16, color: '#F5E642′ }}>🔧 Build Your Strategy</h2>
+          <h2 style={{ fontSize: 16, fontWeight: 700, marginBottom: 16, color: '#F5E642' }}>🔧 Build Your Strategy</h2>
           <div style={{ display: 'flex', flexDirection: 'column', gap: 14 }}>
             <div>
               <label style={{ fontSize: 13, color: '#8A9BC0', display: 'block', marginBottom: 6 }}>Target DFW Area (for home purchase)</label>
@@ -96,14 +96,14 @@ export default function DFWApartmentPreparationGuide() {
             </button>
           </div>
           {result && (
-            <div style={{ marginTop: 20, background: '#0A1628', borderRadius: 10, padding: 20, borderLeft: '4px solid #F5E642′ }}>
+            <div style={{ marginTop: 20, background: '#0A1628', borderRadius: 10, padding: 20, borderLeft: '4px solid #F5E642' }}>
               <div style={{ fontWeight: 700, fontSize: 16, marginBottom: 8 }}>🏠 Strategy: {result.label}</div>
               <div style={{ fontSize: 13, color: '#8A9BC0', marginBottom: 10 }}>💡 {result.tip}</div>
               {areaInfo && (
                 <div style={{ borderTop: '1px solid #1E2F4A', paddingTop: 12 }}>
                   <div style={{ fontWeight: 600, fontSize: 14, marginBottom: 4 }}>📍 {areaInfo.area}</div>
                   <div style={{ fontSize: 13, color: '#F5E642', marginBottom: 4 }}>💰 {areaInfo.rent}</div>
-                  <div style={{ fontSize: 12, color: '#6B7FA0′ }}>{areaInfo.notes}</div>
+                  <div style={{ fontSize: 12, color: '#6B7FA0' }}>{areaInfo.notes}</div>
                 </div>
               )}
             </div>

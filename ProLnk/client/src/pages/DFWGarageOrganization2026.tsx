@@ -13,7 +13,7 @@ const SYSTEMS: Record<string, { title: string; items: string[]; cost: string; ti
   vehicles: { title: 'Vehicle-First Layout', items: ['Overhead ceiling storage for seasonal', 'Wall-mounted bike hoists', 'Slim rolling tool chest', 'Magnetic strip for small tools', 'Anti-fatigue mats at workbench'], cost: '$800–$1,800', tip: 'Keep 3-ft clearance on all vehicle sides. DFW hail events need fast entry.' },
   workshop: { title: 'Workshop Configuration', items: ['Pegboard tool walls (16 sqft min)', 'French cleat system for flexibility', 'Rolling workbench with drawers', 'Dust collection integration', 'Bright LED shop lights (5000K)'], cost: '$1,200–$3,500', tip: 'DFW dust storms (haboobs) infiltrate gaps — seal bottom of garage door.' },
   storage: { title: 'Maximum Storage System', items: ['Ceiling-mounted racks (holds 1,000 lbs)', 'Heavy-duty wire shelving units', 'Labeled plastic bins (stackable)', 'Zone map on wall', 'Step stool or rolling ladder'], cost: '$600–$2,000', tip: 'Keep 18 inches below sprinklers if applicable. Label all bins facing outward.' },
-  gym: { title: 'Garage Gym Setup', items: ['Rubber flooring (3/4″ min for DFW concrete)', 'Wall-mounted TV or mirror', 'Portable AC unit (essential May–Oct)', 'Equipment storage wall hooks', 'Fan system for airflow'], cost: '$1,500–$5,000', tip: 'DFW summers make gym unusable without cooling. Mini-split pays for itself in comfort.' },
+  gym: { title: 'Garage Gym Setup', items: ['Rubber flooring (3/4" min for DFW concrete)', 'Wall-mounted TV or mirror', 'Portable AC unit (essential May–Oct)', 'Equipment storage wall hooks', 'Fan system for airflow'], cost: '$1,500–$5,000', tip: 'DFW summers make gym unusable without cooling. Mini-split pays for itself in comfort.' },
 };
 
 const SIZES = ['1-car (200–250 sqft)', '2-car (400–500 sqft)', '3-car (600–900 sqft)', 'Oversized 3-car (900+)'];
@@ -43,7 +43,7 @@ export default function DFWGarageOrganization2026() {
         <div style={{ display: 'grid', gap: 10, marginBottom: 40 }}>
           {HEAT_RISKS.map(r => (
             <div key={r.item} style={{ background: '#fff', borderRadius: 10, padding: '14px 18px', display: 'flex', alignItems: 'flex-start', gap: 14, boxShadow: '0 1px 3px rgba(0,0,0,0.07)' }}>
-              <span style={{ background: r.risk === 'HIGH' ? '#fee2e2′ : r.risk === ’MED' ? '#fef3c7′ : '#dcfce7', color: r.risk === ’HIGH' ? '#dc2626′ : r.risk === ’MED' ? '#d97706′ : '#16a34a', borderRadius: 6, padding: '2px 10px', fontSize: 12, fontWeight: 700, whiteSpace: ’nowrap', marginTop: 2 }}>{r.risk}</span>
+              <span style={{ background: r.risk === 'HIGH' ? '#fee2e2' : r.risk === 'MED' ? '#fef3c7' : '#dcfce7', color: r.risk === 'HIGH' ? '#dc2626' : r.risk === 'MED' ? '#d97706' : '#16a34a', borderRadius: 6, padding: '2px 10px', fontSize: 12, fontWeight: 700, whiteSpace: 'nowrap', marginTop: 2 }}>{r.risk}</span>
               <div>
                 <div style={{ fontWeight: 600 }}>{r.item}</div>
                 <div style={{ fontSize: 13, color: '#64748b', marginTop: 3 }}>{r.note}</div>
@@ -76,7 +76,7 @@ export default function DFWGarageOrganization2026() {
             <div style={{ marginTop: 24, padding: 20, background: '#F9FAFB', borderRadius: 10 }}>
               <div style={{ fontWeight: 700, fontSize: 18, marginBottom: 4 }}>{result.title}</div>
               <div style={{ color: '#16a34a', fontWeight: 600, marginBottom: 14 }}>Estimated Cost: {result.cost}</div>
-              {result.items.map(item => <div key={item} style={{ padding: '5px 0', color: '#475569′ }}>✓ {item}</div>)}
+              {result.items.map(item => <div key={item} style={{ padding: '5px 0', color: '#475569' }}>✓ {item}</div>)}
               <div style={{ marginTop: 16, padding: 14, background: '#F5E642', borderRadius: 8, fontSize: 14, color: '#0A1628', fontWeight: 600 }}>💡 {result.tip}</div>
             </div>
           )}

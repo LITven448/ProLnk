@@ -26,11 +26,11 @@ interface PendingRow {
 }
 
 const PENDING_DATA: PendingRow[] = [
-  { id: 1, partner: "Ray Daniels",   trade: "Roofing",    submitted: "May 12″, completenessPct: 88, status: "pending" },
-  { id: 2, partner: "Yolanda Grant", trade: "HVAC",       submitted: "May 12″, completenessPct: 74, status: "pending" },
-  { id: 3, partner: "Ben Hooper",    trade: "Plumbing",   submitted: "May 11″, completenessPct: 61, status: "warning" },
-  { id: 4, partner: "Fatima Ali",    trade: "Electrical", submitted: "May 10″, completenessPct: 95, status: "pending" },
-  { id: 5, partner: "Jerome Walsh",  trade: "Flooring",   submitted: "May 9″,  completenessPct: 52, status: "warning" },
+  { id: 1, partner: "Ray Daniels",   trade: "Roofing",    submitted: "May 12", completenessPct: 88, status: "pending" },
+  { id: 2, partner: "Yolanda Grant", trade: "HVAC",       submitted: "May 12", completenessPct: 74, status: "pending" },
+  { id: 3, partner: "Ben Hooper",    trade: "Plumbing",   submitted: "May 11", completenessPct: 61, status: "warning" },
+  { id: 4, partner: "Fatima Ali",    trade: "Electrical", submitted: "May 10", completenessPct: 95, status: "pending" },
+  { id: 5, partner: "Jerome Walsh",  trade: "Flooring",   submitted: "May 9",  completenessPct: 52, status: "warning" },
 ];
 
 const DONUT_SEGMENTS = [
@@ -85,7 +85,7 @@ export default function BriefcaseAdmin() {
     trade:        r.trade,
     submitted:    r.submitted,
     completeness: (
-      <div className="flex items-center justify-end gap-2″>
+      <div className="flex items-center justify-end gap-2">
         <div
           className="h-1.5 w-16 rounded-full overflow-hidden"
           style={{ background: D.border }}
@@ -103,7 +103,7 @@ export default function BriefcaseAdmin() {
     ),
     reviewStatus: <StatusBadge status={r.status} />,
     actions: (
-      <div className="flex items-center justify-center gap-1″>
+      <div className="flex items-center justify-center gap-1">
         <button
           onClick={() => handleApprove(r.id, r.partner)}
           className="px-2 py-1 rounded-lg text-xs font-semibold"
@@ -124,22 +124,22 @@ export default function BriefcaseAdmin() {
 
   return (
     <AdminLayout>
-      <div className="space-y-6″ style={{ background: D.bg, minHeight: "100vh" }}>
+      <div className="space-y-6" style={{ background: D.bg, minHeight: "100vh" }}>
 
         {/* Header */}
         <div className="flex items-center justify-between">
           <div>
             <h1 className="text-2xl font-black" style={{ color: D.text }}>Briefcase Admin</h1>
-            <p className="text-sm mt-1″ style={{ color: D.muted }}>Review, approve, and track partner portfolio completeness</p>
+            <p className="text-sm mt-1" style={{ color: D.muted }}>Review, approve, and track partner portfolio completeness</p>
           </div>
         </div>
 
         {/* Metric Cards */}
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4″>
-          <MetricCard label="Total Briefcases"  value="147″  sub="All submitted portfolios"       color={D.cyan}   icon={<Briefcase className="w-4 h-4" />}   trend={11}  />
-          <MetricCard label="Pending Review"    value="12″   sub="Awaiting admin decision"         color={D.amber}  icon={<Clock className="w-4 h-4" />}       trend={-2}  />
-          <MetricCard label="Avg Completeness"  value="71%"  sub="Up from 65% last month"          color={D.green}  icon={<Star className="w-4 h-4″ />}        trend={9}   />
-          <MetricCard label="Featured Portfolios" value="24″ sub="Highlighted in directory"        color={D.purple} icon={<CheckCircle className="w-4 h-4" />} trend={20}  />
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
+          <MetricCard label="Total Briefcases"  value="147"  sub="All submitted portfolios"       color={D.cyan}   icon={<Briefcase className="w-4 h-4" />}   trend={11}  />
+          <MetricCard label="Pending Review"    value="12"   sub="Awaiting admin decision"         color={D.amber}  icon={<Clock className="w-4 h-4" />}       trend={-2}  />
+          <MetricCard label="Avg Completeness"  value="71%"  sub="Up from 65% last month"          color={D.green}  icon={<Star className="w-4 h-4" />}        trend={9}   />
+          <MetricCard label="Featured Portfolios" value="24" sub="Highlighted in directory"        color={D.purple} icon={<CheckCircle className="w-4 h-4" />} trend={20}  />
         </div>
 
         {/* Review Queue */}
@@ -148,7 +148,7 @@ export default function BriefcaseAdmin() {
             title="Review Queue"
             subtitle={`${pending.length} briefcase${pending.length !== 1 ? "s" : ""} awaiting decision`}
             action={
-              <div className="flex gap-2″>
+              <div className="flex gap-2">
                 <button
                   onClick={() => setShowConfirm("remind")}
                   className="px-3 py-1.5 rounded-lg text-xs font-semibold"
@@ -170,13 +170,13 @@ export default function BriefcaseAdmin() {
           {/* Confirmation banners */}
           {showConfirm === "approveAll" && (
             <div
-              className="mb-4 p-3 rounded-xl flex items-center justify-between gap-4″
+              className="mb-4 p-3 rounded-xl flex items-center justify-between gap-4"
               style={{ background: `${D.green}15`, border: `1px solid ${D.green}30` }}
             >
               <span className="text-xs font-semibold" style={{ color: D.green }}>
                 Approve all {pending.length} pending briefcases?
               </span>
-              <div className="flex gap-2″>
+              <div className="flex gap-2">
                 <button
                   onClick={handleApproveAll}
                   className="px-3 py-1 rounded-lg text-xs font-semibold"
@@ -197,13 +197,13 @@ export default function BriefcaseAdmin() {
 
           {showConfirm === "remind" && (
             <div
-              className="mb-4 p-3 rounded-xl flex items-center justify-between gap-4″
+              className="mb-4 p-3 rounded-xl flex items-center justify-between gap-4"
               style={{ background: `${D.amber}15`, border: `1px solid ${D.amber}30` }}
             >
               <span className="text-xs font-semibold" style={{ color: D.amber }}>
                 Send reminder emails to {pending.length} partners with incomplete briefcases?
               </span>
-              <div className="flex gap-2″>
+              <div className="flex gap-2">
                 <button
                   onClick={handleRemind}
                   className="px-3 py-1 rounded-lg text-xs font-semibold"
@@ -224,7 +224,7 @@ export default function BriefcaseAdmin() {
 
           {pending.length === 0 ? (
             <div className="py-12 text-center">
-              <CheckCircle className="w-10 h-10 mx-auto mb-3″ style={{ color: D.green }} />
+              <CheckCircle className="w-10 h-10 mx-auto mb-3" style={{ color: D.green }} />
               <p className="text-sm" style={{ color: D.muted }}>All briefcases are reviewed</p>
             </div>
           ) : (
@@ -233,7 +233,7 @@ export default function BriefcaseAdmin() {
         </DCard>
 
         {/* Donut + Checklist */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6″>
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
           <DCard>
             <SectionHeader title="Completeness Distribution" subtitle="All 147 briefcases" />
             <DonutChart segments={DONUT_SEGMENTS} size={120} />
@@ -241,7 +241,7 @@ export default function BriefcaseAdmin() {
 
           <DCard>
             <SectionHeader title="Checklist Component Coverage" subtitle="% of partners with each item complete" />
-            <div className="space-y-4 mt-2″>
+            <div className="space-y-4 mt-2">
               {CHECKLIST.map(item => (
                 <ProgressBar
                   key={item.label}

@@ -55,9 +55,9 @@ export default function DFWProLnkPartnerMonth1() {
             {tradeOptions.map(t => (
               <button key={t} onClick={() => setTrade(t)}
                 style={{ padding: '10px 14px', borderRadius: 8, border: '2px solid',
-                  borderColor: trade === t ? '#F5E642′ : '#1e3a5f',
+                  borderColor: trade === t ? '#F5E642' : '#1e3a5f',
                   background: trade === t ? 'rgba(245,230,66,0.12)' : 'transparent',
-                  color: trade === t ? '#F5E642′ : '#94a3b8', cursor: ’pointer', fontSize: 13, textAlign: 'left' }}>
+                  color: trade === t ? '#F5E642' : '#94a3b8', cursor: 'pointer', fontSize: 13, textAlign: 'left' }}>
                 {t}
               </button>
             ))}
@@ -70,9 +70,9 @@ export default function DFWProLnkPartnerMonth1() {
             {submarketOptions.map(s => (
               <button key={s} onClick={() => setSubmarket(s)}
                 style={{ padding: '10px 14px', borderRadius: 8, border: '2px solid',
-                  borderColor: submarket === s ? '#F5E642′ : '#1e3a5f',
+                  borderColor: submarket === s ? '#F5E642' : '#1e3a5f',
                   background: submarket === s ? 'rgba(245,230,66,0.12)' : 'transparent',
-                  color: submarket === s ? '#F5E642′ : '#94a3b8', cursor: ’pointer', fontSize: 13, textAlign: 'left' }}>
+                  color: submarket === s ? '#F5E642' : '#94a3b8', cursor: 'pointer', fontSize: 13, textAlign: 'left' }}>
                 {s}
               </button>
             ))}
@@ -80,8 +80,8 @@ export default function DFWProLnkPartnerMonth1() {
         </div>
 
         <button onClick={() => setGenerated(true)} disabled={!ready}
-          style={{ width: '100%', padding: '16px', background: ready ? '#F5E642′ : '#1e3a5f',
-            color: ready ? '#0A1628′ : '#4a6080', border: ’none', borderRadius: 12,
+          style={{ width: '100%', padding: '16px', background: ready ? '#F5E642' : '#1e3a5f',
+            color: ready ? '#0A1628' : '#4a6080', border: 'none', borderRadius: 12,
             fontWeight: 700, fontSize: 16, cursor: ready ? 'pointer' : 'not-allowed' }}>
           {ready ? 'Build My Month 1 Roadmap →' : 'Select trade and submarket to continue'}
         </button>
@@ -90,19 +90,19 @@ export default function DFWProLnkPartnerMonth1() {
           <div style={{ marginTop: 24 }}>
             <div style={{ background: 'rgba(245,230,66,0.08)', border: '1px solid rgba(245,230,66,0.3)', borderRadius: 12, padding: '16px 20px', marginBottom: 16 }}>
               <div style={{ fontWeight: 700, color: '#F5E642', marginBottom: 8 }}>⚡ Your Trade Advantage: {trade}</div>
-              <div style={{ fontSize: 14, color: '#cbd5e1′ }}>{tradeAdvantage[trade] || tradeAdvantage[’Non-trade professional']}</div>
+              <div style={{ fontSize: 14, color: '#cbd5e1' }}>{tradeAdvantage[trade] || tradeAdvantage['Non-trade professional']}</div>
             </div>
             <div style={{ background: '#0f1f3a', borderRadius: 12, padding: '16px 20px', marginBottom: 20 }}>
               <div style={{ fontWeight: 700, color: '#F5E642', marginBottom: 8 }}>📍 {submarket} Submarket Playbook</div>
-              <div style={{ fontSize: 14, color: '#cbd5e1′ }}>{submarketFocus[submarket] || submarketFocus[’Irving/Las Colinas']}</div>
+              <div style={{ fontSize: 14, color: '#cbd5e1' }}>{submarketFocus[submarket] || submarketFocus['Irving/Las Colinas']}</div>
             </div>
-            <div style={{ fontWeight: 700, marginBottom: 12, color: '#F5E642′ }}>📊 Month 1 Milestone Targets</div>
+            <div style={{ fontWeight: 700, marginBottom: 12, color: '#F5E642' }}>📊 Month 1 Milestone Targets</div>
             {milestones.map((m, i) => (
               <div key={i} style={{ background: '#0f1f3a', borderRadius: 12, padding: '16px 20px', marginBottom: 12, display: 'flex', gap: 14 }}>
                 <div style={{ fontSize: 28, flexShrink: 0 }}>{m.icon}</div>
                 <div>
                   <div style={{ fontWeight: 700, marginBottom: 4 }}>{m.week}: {m.title}</div>
-                  <div style={{ fontSize: 13, color: '#94a3b8′ }}>{m.desc}</div>
+                  <div style={{ fontSize: 13, color: '#94a3b8' }}>{m.desc}</div>
                 </div>
               </div>
             ))}
@@ -113,7 +113,7 @@ export default function DFWProLnkPartnerMonth1() {
                   <div key={label} style={{ background: '#0A1628', borderRadius: 10, padding: '14px 8px' }}>
                     <div style={{ fontSize: 12, color: '#64748b', marginBottom: 4 }}>{label}</div>
                     <div style={{ fontWeight: 700, color: '#F5E642', marginBottom: 2 }}>{earn}</div>
-                    <div style={{ fontSize: 12, color: '#94a3b8′ }}>{matches}</div>
+                    <div style={{ fontSize: 12, color: '#94a3b8' }}>{matches}</div>
                   </div>
                 ))}
               </div>

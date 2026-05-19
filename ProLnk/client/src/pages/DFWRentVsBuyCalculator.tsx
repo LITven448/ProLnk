@@ -71,7 +71,7 @@ export default function DFWRentVsBuyCalculator() {
               <div style={{ fontSize: 20, fontWeight: 700, color: '#F5E642', background: '#0A1628', borderRadius: 8, padding: '8px 12px', marginBottom: 8 }}>
                 {prefix}{value}{suffix}
               </div>
-              <input type="range" min={min} max={max} step={step} value={value} onChange={e => set(Number(e.target.value))} style={{ width: '100%', accentColor: '#F5E642′ }} />
+              <input type="range" min={min} max={max} step={step} value={value} onChange={e => set(Number(e.target.value))} style={{ width: '100%', accentColor: '#F5E642' }} />
             </div>
           ))}
         </div>
@@ -84,13 +84,13 @@ export default function DFWRentVsBuyCalculator() {
               <div style={{ color: '#fff', fontSize: 28, fontWeight: 700 }}>{fmt(monthlyRent)}</div>
               <div style={{ color: '#94a3b8', fontSize: 12, marginTop: 4 }}>per month, all-in</div>
             </div>
-            <div style={{ background: 'rgba(245,230,66,0.1)', borderRadius: 10, padding: 16, border: '1px solid #F5E642′ }}>
+            <div style={{ background: 'rgba(245,230,66,0.1)', borderRadius: 10, padding: 16, border: '1px solid #F5E642' }}>
               <div style={{ color: '#94a3b8', fontSize: 13, marginBottom: 8 }}>🏠 Buying</div>
               <div style={{ color: '#F5E642', fontSize: 28, fontWeight: 700 }}>{fmt(totalMonthlyBuy)}</div>
               <div style={{ color: '#94a3b8', fontSize: 12, marginTop: 4 }}>P&I + tax + HOA + maint</div>
             </div>
           </div>
-          <div style={{ marginTop: 12, color: rentVsBuyDiff > 0 ? '#f87171′ : '#4ade80', fontSize: 14, textAlign: ’center' }}>
+          <div style={{ marginTop: 12, color: rentVsBuyDiff > 0 ? '#f87171' : '#4ade80', fontSize: 14, textAlign: 'center' }}>
             Buying costs {rentVsBuyDiff > 0 ? `${fmt(rentVsBuyDiff)} MORE` : `${fmt(-rentVsBuyDiff)} LESS`} per month than renting
           </div>
         </div>
@@ -98,17 +98,17 @@ export default function DFWRentVsBuyCalculator() {
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16 }}>
           <div style={{ background: '#fff', borderRadius: 12, padding: 20, boxShadow: '0 1px 4px rgba(0,0,0,0.07)', textAlign: 'center' }}>
             <div style={{ fontSize: 13, color: '#64748b', marginBottom: 8 }}>⏳ Break-Even Year</div>
-            <div style={{ fontSize: 36, fontWeight: 700, color: '#0A1628′ }}>{breakEvenYear || '30+'}</div>
-            <div style={{ fontSize: 12, color: '#94a3b8′ }}>years until buying wins</div>
+            <div style={{ fontSize: 36, fontWeight: 700, color: '#0A1628' }}>{breakEvenYear || '30+'}</div>
+            <div style={{ fontSize: 12, color: '#94a3b8' }}>years until buying wins</div>
           </div>
           <div style={{ background: '#fff', borderRadius: 12, padding: 20, boxShadow: '0 1px 4px rgba(0,0,0,0.07)', textAlign: 'center' }}>
             <div style={{ fontSize: 13, color: '#64748b', marginBottom: 8 }}>💼 10-Year Wealth (Buy)</div>
-            <div style={{ fontSize: 28, fontWeight: 700, color: buyWealth10 > 0 ? '#16a34a' : '#dc2626′ }}>{fmt(Math.abs(buyWealth10))}</div>
-            <div style={{ fontSize: 12, color: '#94a3b8′ }}>net equity after costs</div>
+            <div style={{ fontSize: 28, fontWeight: 700, color: buyWealth10 > 0 ? '#16a34a' : '#dc2626' }}>{fmt(Math.abs(buyWealth10))}</div>
+            <div style={{ fontSize: 12, color: '#94a3b8' }}>net equity after costs</div>
           </div>
         </div>
 
-        <div style={{ marginTop: 16, background: '#fefce8', border: '1px solid #fde047', borderRadius: 12, padding: 16, fontSize: 13, color: '#713f12′ }}>
+        <div style={{ marginTop: 16, background: '#fefce8', border: '1px solid #fde047', borderRadius: 12, padding: 16, fontSize: 13, color: '#713f12' }}>
           ⚠️ <strong>DFW Property Tax Alert:</strong> At {propertyTaxRate}% effective rate, your annual property tax is {fmt(homePrice * propertyTaxRate / 100)} — significantly higher than the national avg of 1.07%. This directly reduces your buying power.
         </div>
       </div>

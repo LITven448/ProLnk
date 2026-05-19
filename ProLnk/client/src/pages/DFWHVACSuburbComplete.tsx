@@ -71,7 +71,7 @@ export default function DFWHVACSuburbComplete() {
   return (
     <div style={{ minHeight: '100vh', background: '#0A1628', color: '#fff', fontFamily: 'sans-serif', padding: '2rem' }}>
       <div style={{ maxWidth: 860, margin: '0 auto' }}>
-        <div style={{ marginBottom: '0.5rem', fontSize: '0.85rem', color: '#F5E642′ }}>🏠 DFW HVAC Guide — Complete Reference</div>
+        <div style={{ marginBottom: '0.5rem', fontSize: '0.85rem', color: '#F5E642' }}>🏠 DFW HVAC Guide — Complete Reference</div>
         <h1 style={{ fontSize: '2rem', fontWeight: 700, marginBottom: '0.5rem' }}>DFW Complete Suburb HVAC Reference</h1>
         <p style={{ color: '#94a3b8', marginBottom: '2rem', lineHeight: 1.6 }}>
           The definitive HVAC guide for all DFW suburbs — north, south, east, west, and urban core.
@@ -87,8 +87,8 @@ export default function DFWHVACSuburbComplete() {
                 padding: '1rem 0.75rem',
                 borderRadius: 10,
                 border: `2px solid ${selected === r.label ? '#F5E642' : '#1e3a5f'}`,
-                background: selected === r.label ? '#F5E642′ : '#0F2040',
-                color: selected === r.label ? '#0A1628′ : '#fff',
+                background: selected === r.label ? '#F5E642' : '#0F2040',
+                color: selected === r.label ? '#0A1628' : '#fff',
                 cursor: 'pointer',
                 fontWeight: 700,
                 fontSize: '1rem',
@@ -119,10 +119,10 @@ export default function DFWHVACSuburbComplete() {
                 </div>
               ))}
             </div>
-            <div style={{ background: '#1a2f50', borderRadius: 8, padding: '1rem', marginBottom: '0.75rem', color: '#cbd5e1′ }}>
+            <div style={{ background: '#1a2f50', borderRadius: 8, padding: '1rem', marginBottom: '0.75rem', color: '#cbd5e1' }}>
               💡 <strong>HVAC Highlight:</strong> {profile.hvacHighlight}
             </div>
-            <div style={{ background: '#1a2f50', borderRadius: 8, padding: '1rem', color: '#fbbf24′ }}>
+            <div style={{ background: '#1a2f50', borderRadius: 8, padding: '1rem', color: '#fbbf24' }}>
               ⚠️ <strong>Watch For:</strong> {profile.watchFor}
             </div>
           </div>
@@ -135,17 +135,17 @@ export default function DFWHVACSuburbComplete() {
               <thead>
                 <tr style={{ borderBottom: '1px solid #1e3a5f' }}>
                   {['Region', 'Typical System', 'Wait Time', 'SEER'].map((h) => (
-                    <th key={h} style={{ padding: '0.5rem 0.75rem', textAlign: 'left', color: '#94a3b8′ }}>{h}</th>
+                    <th key={h} style={{ padding: '0.5rem 0.75rem', textAlign: 'left', color: '#94a3b8' }}>{h}</th>
                   ))}
                 </tr>
               </thead>
               <tbody>
                 {regions.map((r) => (
-                  <tr key={r.label} style={{ borderBottom: '1px solid #0F2040′ }}>
+                  <tr key={r.label} style={{ borderBottom: '1px solid #0F2040' }}>
                     <td style={{ padding: '0.6rem 0.75rem', color: '#F5E642', fontWeight: 600 }}>{r.emoji} {r.label}</td>
-                    <td style={{ padding: '0.6rem 0.75rem', color: '#cbd5e1′ }}>{r.typicalSystem}</td>
-                    <td style={{ padding: '0.6rem 0.75rem', color: '#cbd5e1′ }}>{r.contractorWait}</td>
-                    <td style={{ padding: '0.6rem 0.75rem', color: '#cbd5e1′ }}>{r.avgSEER}</td>
+                    <td style={{ padding: '0.6rem 0.75rem', color: '#cbd5e1' }}>{r.typicalSystem}</td>
+                    <td style={{ padding: '0.6rem 0.75rem', color: '#cbd5e1' }}>{r.contractorWait}</td>
+                    <td style={{ padding: '0.6rem 0.75rem', color: '#cbd5e1' }}>{r.avgSEER}</td>
                   </tr>
                 ))}
               </tbody>

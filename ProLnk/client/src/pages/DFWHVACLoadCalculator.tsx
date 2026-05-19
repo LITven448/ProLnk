@@ -54,14 +54,14 @@ export default function DFWHVACLoadCalculator() {
         <div style={{ fontSize: 13, color: '#F5E642', fontWeight: 700, letterSpacing: 2, marginBottom: 8 }}>DFW HVAC GUIDE</div>
         <h1 style={{ fontSize: 32, fontWeight: 800, marginBottom: 8 }}>HVAC Load Calculator</h1>
         <p style={{ color: '#94A3B8', marginBottom: 8 }}>In DFW, oversized HVAC systems are a real problem — they cool fast but don't run long enough to dehumidify, leaving your home cold AND muggy. Right-sizing matters.</p>
-        <div style={{ background: '#0F2240', borderRadius: 10, padding: '14px 16px', marginBottom: 28, borderLeft: '3px solid #F5E642′ }}>
+        <div style={{ background: '#0F2240', borderRadius: 10, padding: '14px 16px', marginBottom: 28, borderLeft: '3px solid #F5E642' }}>
           <div style={{ color: '#F5E642', fontWeight: 700, marginBottom: 6 }}>⚠️ Why This Matters in DFW</div>
           <div style={{ color: '#94A3B8', fontSize: 14, lineHeight: 1.6 }}>DFW averages 60+ days above 100°F with 60–80% humidity in summer. Oversized units short-cycle — they cool temp fast but leave moisture. Result: 72°F but feels like 80°F. Undersized units run constantly, fail early, and never reach setpoint on hottest days. A proper Manual J load calculation is the only accurate method — this tool gives you an educated estimate to verify your contractor's recommendation.</div>
         </div>
 
         <div style={{ marginBottom: 20 }}>
           <div style={{ color: '#94A3B8', fontSize: 13, marginBottom: 8 }}>📐 Home Square Footage</div>
-          <input type='number' placeholder='e.g. 2400′ value={sqft}
+          <input type='number' placeholder='e.g. 2400' value={sqft}
             onChange={e => { setSqft(e.target.value); setShowResult(false); }}
             style={{ width: '100%', padding: '12px 14px', borderRadius: 8, background: '#0F2240', border: '1.5px solid #1E3A5F', color: '#fff', fontSize: 15, boxSizing: 'border-box' }} />
         </div>
@@ -71,7 +71,7 @@ export default function DFWHVACLoadCalculator() {
           <div style={{ display: 'flex', gap: 8 }}>
             {stories.map(s => (
               <button key={s} onClick={() => { setStory(s); setShowResult(false); }}
-                style={{ flex: 1, padding: '10px', borderRadius: 8, border: `1.5px solid ${story === s ? '#F5E642' : '#1E3A5F'}`, background: story === s ? '#F5E642′ : ’transparent', color: story === s ? '#0A1628′ : '#fff', fontWeight: 600, cursor: ’pointer' }}>
+                style={{ flex: 1, padding: '10px', borderRadius: 8, border: `1.5px solid ${story === s ? '#F5E642' : '#1E3A5F'}`, background: story === s ? '#F5E642' : 'transparent', color: story === s ? '#0A1628' : '#fff', fontWeight: 600, cursor: 'pointer' }}>
                 {s}
               </button>
             ))}
@@ -83,7 +83,7 @@ export default function DFWHVACLoadCalculator() {
           <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
             {insulationLevels.map(l => (
               <button key={l} onClick={() => { setInsulation(l); setShowResult(false); }}
-                style={{ padding: '10px 14px', borderRadius: 8, border: `1.5px solid ${insulation === l ? '#F5E642' : '#1E3A5F'}`, background: insulation === l ? '#F5E642′ : ’transparent', color: insulation === l ? '#0A1628′ : '#fff', fontWeight: 600, cursor: ’pointer', textAlign: 'left' }}>
+                style={{ padding: '10px 14px', borderRadius: 8, border: `1.5px solid ${insulation === l ? '#F5E642' : '#1E3A5F'}`, background: insulation === l ? '#F5E642' : 'transparent', color: insulation === l ? '#0A1628' : '#fff', fontWeight: 600, cursor: 'pointer', textAlign: 'left' }}>
                 {l}
               </button>
             ))}
@@ -95,7 +95,7 @@ export default function DFWHVACLoadCalculator() {
           <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
             {windowCoverage.map(w => (
               <button key={w} onClick={() => { setWindows(w); setShowResult(false); }}
-                style={{ padding: '10px 14px', borderRadius: 8, border: `1.5px solid ${windows === w ? '#F5E642' : '#1E3A5F'}`, background: windows === w ? '#F5E642′ : ’transparent', color: windows === w ? '#0A1628′ : '#fff', fontWeight: 600, cursor: ’pointer', textAlign: 'left' }}>
+                style={{ padding: '10px 14px', borderRadius: 8, border: `1.5px solid ${windows === w ? '#F5E642' : '#1E3A5F'}`, background: windows === w ? '#F5E642' : 'transparent', color: windows === w ? '#0A1628' : '#fff', fontWeight: 600, cursor: 'pointer', textAlign: 'left' }}>
                 {w}
               </button>
             ))}

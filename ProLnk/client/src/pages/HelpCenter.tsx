@@ -33,7 +33,7 @@ const CATEGORIES = [
   {
     id: "commissions",
     icon: DollarSign,
-    color: "#4ade80″,
+    color: "#4ade80",
     title: "Commission & Payouts",
     description: "Understand your earnings, tiers, and payout schedule",
     articles: [
@@ -71,7 +71,7 @@ const CATEGORIES = [
   {
     id: "billing",
     icon: CreditCard,
-    color: "#fb7185″,
+    color: "#fb7185",
     title: "Account & Billing",
     description: "Subscription, invoices, and account management",
     articles: [
@@ -104,7 +104,7 @@ export default function HelpCenter() {
   })).filter((cat) => !query || cat.articles.length > 0);
 
   return (
-    <div className="min-h-screen" style={{ backgroundColor: "#080f1e", color: "#e2e8f0″ }}>
+    <div className="min-h-screen" style={{ backgroundColor: "#080f1e", color: "#e2e8f0" }}>
       {/* Nav */}
       <nav
         className="border-b px-6 py-4 flex items-center justify-between"
@@ -120,7 +120,7 @@ export default function HelpCenter() {
         </Link>
         <Link href="/">
           <span className="inline-flex items-center gap-1 text-sm text-white/40 hover:text-white transition-colors cursor-pointer">
-            <ArrowLeft className="w-4 h-4″ />
+            <ArrowLeft className="w-4 h-4" />
             Back to home
           </span>
         </Link>
@@ -135,50 +135,50 @@ export default function HelpCenter() {
       >
         <div className="max-w-2xl mx-auto">
           <div
-            className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold mb-4″
+            className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold mb-4"
             style={{ background: "rgba(34,211,238,0.12)", color: "#22d3ee" }}
           >
-            <Zap className="w-3 h-3″ />
+            <Zap className="w-3 h-3" />
             Help Center
           </div>
           <h1
-            className="text-4xl font-black mb-3″
+            className="text-4xl font-black mb-3"
             style={{ fontFamily: "'Bricolage Grotesque', sans-serif" }}
           >
             How can we help you?
           </h1>
-          <p className="text-white/50 mb-8″>
+          <p className="text-white/50 mb-8">
             Search our knowledge base or browse categories below.
           </p>
           <div className="relative max-w-lg mx-auto">
-            <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-white/30″ />
+            <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-white/30" />
             <input
               type="text"
               value={query}
               onChange={(e) => setQuery(e.target.value)}
               placeholder="Search articles..."
-              className="w-full pl-12 pr-4 py-4 text-sm text-white placeholder:text-white/30 focus:outline-none focus:ring-2 focus:ring-teal-500/40″
+              className="w-full pl-12 pr-4 py-4 text-sm text-white placeholder:text-white/30 focus:outline-none focus:ring-2 focus:ring-teal-500/40"
               style={{
                 background: "rgba(255,255,255,0.05)",
                 border: "1px solid rgba(255,255,255,0.12)",
-                borderRadius: "0″,
+                borderRadius: "0",
               }}
             />
           </div>
         </div>
       </div>
 
-      <div className="max-w-6xl mx-auto px-6 pb-24″>
+      <div className="max-w-6xl mx-auto px-6 pb-24">
         {/* Featured Articles */}
         {!query && (
-          <section className="mb-16″>
-            <div className="flex items-center gap-2 mb-6″>
-              <Star className="w-4 h-4″ style={{ color: "#f59e0b" }} />
-              <h2 className="text-sm font-bold uppercase tracking-widest text-white/40″>
+          <section className="mb-16">
+            <div className="flex items-center gap-2 mb-6">
+              <Star className="w-4 h-4" style={{ color: "#f59e0b" }} />
+              <h2 className="text-sm font-bold uppercase tracking-widest text-white/40">
                 Most Popular
               </h2>
             </div>
-            <div className="grid gap-3″>
+            <div className="grid gap-3">
               {FEATURED.map((article, i) => (
                 <button
                   key={i}
@@ -198,11 +198,11 @@ export default function HelpCenter() {
                   }}
                 >
                   <div>
-                    <p className="text-sm font-semibold text-white/90″>{article.title}</p>
-                    <p className="text-xs text-white/40 mt-0.5″>{article.category}</p>
+                    <p className="text-sm font-semibold text-white/90">{article.title}</p>
+                    <p className="text-xs text-white/40 mt-0.5">{article.category}</p>
                   </div>
-                  <div className="flex items-center gap-3 shrink-0 ml-4″>
-                    <span className="text-xs text-white/30″>{article.views.toLocaleString()} views</span>
+                  <div className="flex items-center gap-3 shrink-0 ml-4">
+                    <span className="text-xs text-white/30">{article.views.toLocaleString()} views</span>
                     <ChevronRight className="w-4 h-4 text-white/20 group-hover:text-teal-400 transition-colors" />
                   </div>
                 </button>
@@ -213,38 +213,38 @@ export default function HelpCenter() {
 
         {/* Categories */}
         <section>
-          <h2 className="text-sm font-bold uppercase tracking-widest text-white/40 mb-6″>
+          <h2 className="text-sm font-bold uppercase tracking-widest text-white/40 mb-6">
             {query ? `Results for "${query}"` : "Browse by Category"}
           </h2>
-          <div className="grid md:grid-cols-2 gap-6″>
+          <div className="grid md:grid-cols-2 gap-6">
             {filteredCategories.map((cat) => {
               const Icon = cat.icon;
               return (
                 <div
                   key={cat.id}
-                  className="p-6″
+                  className="p-6"
                   style={{
                     background: "rgba(255,255,255,0.03)",
                     border: "1px solid rgba(255,255,255,0.07)",
                   }}
                 >
-                  <div className="flex items-start gap-4 mb-5″>
+                  <div className="flex items-start gap-4 mb-5">
                     <div
-                      className="w-10 h-10 flex items-center justify-center shrink-0″
+                      className="w-10 h-10 flex items-center justify-center shrink-0"
                       style={{ background: `${cat.color}18` }}
                     >
-                      <Icon className="w-5 h-5″ style={{ color: cat.color }} />
+                      <Icon className="w-5 h-5" style={{ color: cat.color }} />
                     </div>
                     <div>
                       <h3 className="font-bold text-white">{cat.title}</h3>
-                      <p className="text-xs text-white/40 mt-0.5″>{cat.description}</p>
+                      <p className="text-xs text-white/40 mt-0.5">{cat.description}</p>
                     </div>
                   </div>
-                  <ul className="space-y-2″>
+                  <ul className="space-y-2">
                     {cat.articles.map((article, i) => (
                       <li key={i}>
                         <button
-                          className="flex items-center justify-between w-full text-left group py-1.5″
+                          className="flex items-center justify-between w-full text-left group py-1.5"
                         >
                           <span className="text-sm text-white/60 group-hover:text-white transition-colors">
                             {article.title}
@@ -255,7 +255,7 @@ export default function HelpCenter() {
                     ))}
                   </ul>
                   <div
-                    className="mt-4 pt-4″
+                    className="mt-4 pt-4"
                     style={{ borderTop: "1px solid rgba(255,255,255,0.06)" }}
                   >
                     <span className="text-xs" style={{ color: cat.color }}>
@@ -276,23 +276,23 @@ export default function HelpCenter() {
             border: "1px solid rgba(34,211,238,0.15)",
           }}
         >
-          <MessageCircle className="w-8 h-8 mx-auto mb-4″ style={{ color: "#22d3ee" }} />
+          <MessageCircle className="w-8 h-8 mx-auto mb-4" style={{ color: "#22d3ee" }} />
           <h3
-            className="text-xl font-black mb-2″
+            className="text-xl font-black mb-2"
             style={{ fontFamily: "'Bricolage Grotesque', sans-serif" }}
           >
             Still need help?
           </h3>
-          <p className="text-white/50 text-sm mb-6″>
+          <p className="text-white/50 text-sm mb-6">
             Our support team typically responds within 2 business hours.
           </p>
           <div className="flex flex-col sm:flex-row gap-3 justify-center">
             <a
               href="mailto:support@prolnk.io"
-              className="inline-flex items-center gap-2 px-6 py-3 text-sm font-bold transition-opacity hover:opacity-90″
+              className="inline-flex items-center gap-2 px-6 py-3 text-sm font-bold transition-opacity hover:opacity-90"
               style={{ backgroundColor: "#22d3ee", color: "#080f1e" }}
             >
-              <Mail className="w-4 h-4″ />
+              <Mail className="w-4 h-4" />
               Email Support
             </a>
             <span className="text-xs text-white/30 self-center hidden sm:inline">
@@ -303,12 +303,12 @@ export default function HelpCenter() {
       </div>
 
       {/* Live chat widget placeholder */}
-      <div className="fixed bottom-6 right-6 z-50″>
+      <div className="fixed bottom-6 right-6 z-50">
         <button
-          className="flex items-center gap-2 px-4 py-3 text-sm font-bold shadow-lg transition-transform hover:scale-105″
+          className="flex items-center gap-2 px-4 py-3 text-sm font-bold shadow-lg transition-transform hover:scale-105"
           style={{ backgroundColor: "#22d3ee", color: "#080f1e" }}
         >
-          <MessageCircle className="w-4 h-4″ />
+          <MessageCircle className="w-4 h-4" />
           Live Chat
         </button>
       </div>

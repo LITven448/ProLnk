@@ -21,7 +21,7 @@ export default function DFWZillowEstimateGuide2026() {
         <div style={{ marginBottom: 8, fontSize: 13, color: '#F5E642', letterSpacing: 1 }}>DFW REAL ESTATE · 2026</div>
         <h1 style={{ fontSize: 32, fontWeight: 800, marginBottom: 8 }}>🔎 DFW Zillow Zestimate Guide 2026</h1>
         <p style={{ color: '#94a3b8', marginBottom: 32, lineHeight: 1.7 }}>
-          Zillow's median error rate in DFW is <strong style={{ color: '#F5E642' }}>6.9%</strong> — that’s off by $26K on an average $380K home.
+          Zillow's median error rate in DFW is <strong style={{ color: '#F5E642' }}>6.9%</strong> — that's off by $26K on an average $380K home.
           DFW comps move fast, recent renovations aren't captured, and foundation repairs rarely show in public records.
           Here's when to trust it and when to ignore it.
         </p>
@@ -51,7 +51,7 @@ export default function DFWZillowEstimateGuide2026() {
                 onClick={() => setSelected(selected === i ? null : i)}
                 style={{
                   background: selected === i ? '#1a3a5c' : '#0d2035',
-                  border: selected === i ? '2px solid #F5E642′ : '2px solid transparent',
+                  border: selected === i ? '2px solid #F5E642' : '2px solid transparent',
                   color: '#fff', borderRadius: 8, padding: '10px 14px', cursor: 'pointer', textAlign: 'left', fontSize: 13
                 }}
               >{s.label}</button>
@@ -60,8 +60,8 @@ export default function DFWZillowEstimateGuide2026() {
           {scenario && (
             <div style={{ background: '#1a3a5c', borderRadius: 10, padding: 16, borderLeft: `4px solid ${scenario.trust ? '#22c55e' : '#ef4444'}` }}>
               <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: 8 }}>
-                <div><div style={{ fontSize: 12, color: '#94a3b8′ }}>Zestimate</div><div style={{ fontSize: 22, fontWeight: 800 }}>${scenario.zestimate.toLocaleString()}</div></div>
-                <div style={{ textAlign: 'right' }}><div style={{ fontSize: 12, color: '#94a3b8′ }}>Actual Value</div><div style={{ fontSize: 22, fontWeight: 800, color: '#F5E642' }}>${scenario.actual.toLocaleString()}</div></div>
+                <div><div style={{ fontSize: 12, color: '#94a3b8' }}>Zestimate</div><div style={{ fontSize: 22, fontWeight: 800 }}>${scenario.zestimate.toLocaleString()}</div></div>
+                <div style={{ textAlign: 'right' }}><div style={{ fontSize: 12, color: '#94a3b8' }}>Actual Value</div><div style={{ fontSize: 22, fontWeight: 800, color: '#F5E642' }}>${scenario.actual.toLocaleString()}</div></div>
               </div>
               <div style={{ color: diff > 0 ? '#22c55e' : '#ef4444', fontWeight: 700, fontSize: 14 }}>
                 {diff > 0 ? '+' : ''}${diff.toLocaleString()} ({pct}% off) — {scenario.trust ? '✅ Trust it' : '⚠️ Do not rely on it'}

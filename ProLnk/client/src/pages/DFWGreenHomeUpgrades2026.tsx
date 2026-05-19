@@ -27,7 +27,7 @@ export default function DFWGreenHomeUpgrades2026() {
           <label style={{ color: '#94a3b8', fontSize: 13 }}>Your Budget</label>
           <input type="range" min={250} max={30000} step={250} value={budget}
             onChange={e => setBudget(Number(e.target.value))}
-            style={{ width: '100%', accentColor: '#F5E642', margin: '8px 0′ }} />
+            style={{ width: '100%', accentColor: '#F5E642', margin: '8px 0' }} />
           <div style={{ display: 'flex', justifyContent: 'space-between' }}>
             <span style={{ color: '#F5E642', fontWeight: 700, fontSize: 20 }}>${budget.toLocaleString()}</span>
             {upgrades.length > 0 && <span style={{ color: '#4ade80', fontWeight: 600 }}>Est. annual savings: ${totalSavings}/yr</span>}
@@ -35,7 +35,7 @@ export default function DFWGreenHomeUpgrades2026() {
         </div>
 
         {upgrades.length === 0 ? (
-          <div style={{ background: '#132040', borderRadius: 12, padding: 24, textAlign: 'center', color: '#94a3b8′ }}>
+          <div style={{ background: '#132040', borderRadius: 12, padding: 24, textAlign: 'center', color: '#94a3b8' }}>
             Increase budget to see upgrade recommendations.
           </div>
         ) : (

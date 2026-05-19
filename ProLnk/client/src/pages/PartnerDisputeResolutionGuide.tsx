@@ -82,7 +82,7 @@ export default function PartnerDisputeResolutionGuide() {
 
   return (
     <div style={{ background: '#f8fafc', minHeight: '100vh', color: '#1e293b', fontFamily: 'system-ui, sans-serif', padding: '0 0 80px' }}>
-      <div style={{ maxWidth: 860, margin: '0 auto', padding: '60px 24px 0′ }}>
+      <div style={{ maxWidth: 860, margin: '0 auto', padding: '60px 24px 0' }}>
         <div style={{ textAlign: 'center', marginBottom: 52 }}>
           <div style={{ fontSize: 36, marginBottom: 16 }}>⚖️</div>
           <h1 style={{ fontSize: 'clamp(24px,4vw,38px)', fontWeight: 800, color: '#0f172a', margin: '0 0 16px', lineHeight: 1.15 }}>
@@ -119,7 +119,7 @@ export default function PartnerDisputeResolutionGuide() {
                 key={d.id}
                 onClick={() => setSelected(selected === d.id ? null : d.id)}
                 style={{
-                  background: selected === d.id ? '#1d4ed8′ : '#fff',
+                  background: selected === d.id ? '#1d4ed8' : '#fff',
                   border: `2px solid ${selected === d.id ? '#3b82f6' : '#e2e8f0'}`,
                   borderRadius: 12, padding: '18px 14px', cursor: 'pointer',
                   textAlign: 'center', transition: 'all 0.2s',

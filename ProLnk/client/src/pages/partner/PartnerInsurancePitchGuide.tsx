@@ -64,7 +64,7 @@ export default function PartnerInsurancePitchGuide() {
 
         <div style={{ background: '#fff', borderRadius: 12, padding: 24, marginBottom: 24, boxShadow: '0 1px 4px rgba(0,0,0,0.06)' }}>
           <h2 style={{ color: '#0A1628', fontSize: 16, fontWeight: 700, marginBottom: 16 }}>🎯 Select Insurance Type</h2>
-          <select value={insuranceType} onChange={e => setInsuranceType(e.target.value)} style={{ width: '100%', padding: '10px 12px', border: '1px solid #E2E8F0', borderRadius: 8, fontSize: 14, color: '#0A1628′ }}>
+          <select value={insuranceType} onChange={e => setInsuranceType(e.target.value)} style={{ width: '100%', padding: '10px 12px', border: '1px solid #E2E8F0', borderRadius: 8, fontSize: 14, color: '#0A1628' }}>
             {INSURANCE_TYPES.map(t => <option key={t}>{t}</option>)}
           </select>
         </div>
@@ -91,7 +91,7 @@ export default function PartnerInsurancePitchGuide() {
               ))}
             </div>
 
-            <div style={{ background: '#F0FDF4', borderRadius: 12, padding: 24, border: '1px solid #BBF7D0′ }}>
+            <div style={{ background: '#F0FDF4', borderRadius: 12, padding: 24, border: '1px solid #BBF7D0' }}>
               <h2 style={{ color: '#14532D', fontSize: 16, fontWeight: 700, marginBottom: 12 }}>📦 What to Leave Behind</h2>
               {data.leaveBehinds.map((lb, i) => (
                 <div key={i} style={{ display: 'flex', gap: 8, marginBottom: 8, alignItems: 'flex-start' }}>

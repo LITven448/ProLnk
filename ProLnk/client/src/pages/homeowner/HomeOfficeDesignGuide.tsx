@@ -32,7 +32,7 @@ export default function HomeOfficeDesignGuide() {
   const priorities = showResults ? getPriorities() : [];
 
   return (
-    <div style={{ background: '#0f172a', minHeight: '100vh', fontFamily: "'Inter', sans-serif", color: '#f1f5f9′ }}>
+    <div style={{ background: '#0f172a', minHeight: '100vh', fontFamily: "'Inter', sans-serif", color: '#f1f5f9' }}>
       <div style={{ maxWidth: 860, margin: '0 auto', padding: '60px 24px' }}>
 
         <div style={{ textAlign: 'center', marginBottom: 48 }}>
@@ -45,12 +45,12 @@ export default function HomeOfficeDesignGuide() {
           </p>
         </div>
 
-        <div style={{ background: '#1e293b', borderRadius: 16, padding: 32, marginBottom: 32, border: '1px solid #3b82f6′ }}>
+        <div style={{ background: '#1e293b', borderRadius: 16, padding: 32, marginBottom: 32, border: '1px solid #3b82f6' }}>
           <h2 style={{ fontSize: 22, fontWeight: 700, marginBottom: 12, color: '#60a5fa' }}>
             📊 The DFW Remote Work Reality
           </h2>
           <p style={{ color: '#94a3b8', lineHeight: 1.7, fontSize: 16 }}>
-            34% of DFW workers are fully remote or hybrid in 2026. A dedicated, well-designed home office adds <strong style={{ color: '#f1f5f9′ }}>$8,000–$15,000 to home value</strong> and is now expected by most buyers in the $400K–$700K range. If you’re working from a bedroom corner, you’re leaving money on the table.
+            34% of DFW workers are fully remote or hybrid in 2026. A dedicated, well-designed home office adds <strong style={{ color: '#f1f5f9' }}>$8,000–$15,000 to home value</strong> and is now expected by most buyers in the $400K–$700K range. If you're working from a bedroom corner, you're leaving money on the table.
           </p>
         </div>
 
@@ -64,7 +64,7 @@ export default function HomeOfficeDesignGuide() {
             { rank: 3, type: 'Garage office conversion', verdict: 'Acceptable', color: '#f59e0b', detail: 'Works in DFW only if properly insulated. Extreme summer heat requires $2,000–$4,000 in insulation and a dedicated mini-split.' },
             { rank: 4, type: 'Closet conversion', verdict: 'Last resort', color: '#ef4444', detail: 'Functional for light work but not advisable for 40+ hour remote weeks. Poor ergonomics, limited power.' },
           ].map(r => (
-            <div key={r.rank} style={{ display: 'flex', gap: 16, padding: '16px 0', borderBottom: '1px solid #334155′ }}>
+            <div key={r.rank} style={{ display: 'flex', gap: 16, padding: '16px 0', borderBottom: '1px solid #334155' }}>
               <div style={{ width: 36, height: 36, background: r.color, borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', fontWeight: 800, color: '#0f172a', flexShrink: 0, fontSize: 16 }}>{r.rank}</div>
               <div>
                 <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 4 }}>
@@ -114,7 +114,7 @@ export default function HomeOfficeDesignGuide() {
             {factors.map(f => (
               <div key={f.id}>
                 <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: 6 }}>
-                  <span style={{ fontSize: 15, color: '#e2e8f0′ }}>{f.label}</span>
+                  <span style={{ fontSize: 15, color: '#e2e8f0' }}>{f.label}</span>
                   <span style={{ color: '#60a5fa', fontWeight: 600 }}>{scores[f.id] || '—'}</span>
                 </div>
                 <div style={{ display: 'flex', gap: 8 }}>
@@ -122,7 +122,7 @@ export default function HomeOfficeDesignGuide() {
                     <button
                       key={n}
                       onClick={() => setScores(prev => ({ ...prev, [f.id]: n }))}
-                      style={{ flex: 1, padding: '8px 0', borderRadius: 8, border: '1px solid #334155', cursor: 'pointer', background: scores[f.id] === n ? '#3b82f6′ : '#0f172a', color: scores[f.id] === n ? '#fff' : '#94a3b8', fontWeight: 700, fontSize: 14 }}
+                      style={{ flex: 1, padding: '8px 0', borderRadius: 8, border: '1px solid #334155', cursor: 'pointer', background: scores[f.id] === n ? '#3b82f6' : '#0f172a', color: scores[f.id] === n ? '#fff' : '#94a3b8', fontWeight: 700, fontSize: 14 }}
                     >
                       {n}
                     </button>
@@ -140,8 +140,8 @@ export default function HomeOfficeDesignGuide() {
           {showResults && (
             <div style={{ marginTop: 24, background: '#0f172a', borderRadius: 12, padding: 24 }}>
               <div style={{ textAlign: 'center', marginBottom: 20 }}>
-                <div style={{ fontSize: 48, fontWeight: 800, color: score >= 70 ? '#22c55e' : score >= 50 ? '#f59e0b' : '#ef4444′ }}>{score}%</div>
-                <div style={{ color: '#94a3b8′ }}>Office Readiness Score</div>
+                <div style={{ fontSize: 48, fontWeight: 800, color: score >= 70 ? '#22c55e' : score >= 50 ? '#f59e0b' : '#ef4444' }}>{score}%</div>
+                <div style={{ color: '#94a3b8' }}>Office Readiness Score</div>
               </div>
               {priorities.length > 0 ? (
                 <>
@@ -160,7 +160,7 @@ export default function HomeOfficeDesignGuide() {
           )}
         </div>
 
-        <div style={{ textAlign: 'center', background: '#1e3a5f', borderRadius: 16, padding: 40, border: '1px solid #3b82f6′ }}>
+        <div style={{ textAlign: 'center', background: '#1e3a5f', borderRadius: 16, padding: 40, border: '1px solid #3b82f6' }}>
           <h3 style={{ fontSize: 26, fontWeight: 700, marginBottom: 12 }}>
             Find a Contractor for Your Office Upgrade
           </h3>

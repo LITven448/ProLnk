@@ -31,10 +31,10 @@ interface DIVItem {
 }
 
 const STATUS_CONFIG: Record<CheckStatus, { color: string; bg: string; label: string }> = {
-  done: { color: "#16A34A", bg: "#DCFCE7″, label: "Done" },
-  due:  { color: "#D97706″, bg: "#FEF3C7", label: "Due" },
-  todo: { color: "#64748B", bg: "#F1F5F9″, label: "To Do" },
-  na:   { color: "#94A3B8″, bg: "#F8FAFC", label: "N/A" },
+  done: { color: "#16A34A", bg: "#DCFCE7", label: "Done" },
+  due:  { color: "#D97706", bg: "#FEF3C7", label: "Due" },
+  todo: { color: "#64748B", bg: "#F1F5F9", label: "To Do" },
+  na:   { color: "#94A3B8", bg: "#F8FAFC", label: "N/A" },
 };
 
 const INITIAL_CHECKLIST: CheckItem[] = [
@@ -48,10 +48,10 @@ const INITIAL_CHECKLIST: CheckItem[] = [
 ];
 
 const HARD_WATER: HardWaterCard[] = [
-  { title: "Scale buildup in pipes", impact: "Reduces flow up to 40%", detail: "Mineral deposits narrow pipe diameter over years. DFW 300+ PPM accelerates this.", icon: Droplets, color: "#3B82F6″ },
+  { title: "Scale buildup in pipes", impact: "Reduces flow up to 40%", detail: "Mineral deposits narrow pipe diameter over years. DFW 300+ PPM accelerates this.", icon: Droplets, color: "#3B82F6" },
   { title: "Water heater efficiency", impact: "+25% energy use", detail: "A ¼" layer of scale on heating element increases energy consumption by 25%.", icon: Zap, color: "#F59E0B" },
-  { title: "Appliance lifespan", impact: "30–50% shorter life", detail: "Dishwashers, washing machines, and coffee makers all suffer from mineral buildup.", icon: Home, color: "#EF4444″ },
-  { title: "Shower heads", impact: "Clog quarterly", detail: "Soak in white vinegar overnight to clear mineral deposits. Replace every 2–3 years.", icon: Droplets, color: "#8B5CF6″ },
+  { title: "Appliance lifespan", impact: "30–50% shorter life", detail: "Dishwashers, washing machines, and coffee makers all suffer from mineral buildup.", icon: Home, color: "#EF4444" },
+  { title: "Shower heads", impact: "Clog quarterly", detail: "Soak in white vinegar overnight to clear mineral deposits. Replace every 2–3 years.", icon: Droplets, color: "#8B5CF6" },
 ];
 
 const DIV_ITEMS: DIVItem[] = [
@@ -108,7 +108,7 @@ export default function PlumbingGuide() {
           display: "flex", alignItems: "flex-start", gap: 10,
         }}>
           <ShieldCheck size={18} color="#2563EB" style={{ minWidth: 18, marginTop: 2 }} />
-          <p style={{ fontSize: 14, color: "#1D4ED8″, margin: 0, lineHeight: 1.6 }}>
+          <p style={{ fontSize: 14, color: "#1D4ED8", margin: 0, lineHeight: 1.6 }}>
             <strong>DFW plumbing context:</strong> Hard water (300–500 PPM in DFW) causes mineral buildup in pipes and appliances.
             Texas freeze events cause burst pipes. Know your system before an emergency hits.
           </p>
@@ -118,11 +118,11 @@ export default function PlumbingGuide() {
         <div style={{
           background: "linear-gradient(135deg, #7F1D1D, #991B1B)",
           borderRadius: 16, padding: "20px 24px", marginBottom: 20,
-          border: "1px solid #DC2626″,
+          border: "1px solid #DC2626",
         }}>
           <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 12 }}>
-            <AlertTriangle size={22} color="#FCA5A5″ />
-            <span style={{ fontSize: 18, fontWeight: 700, color: "#FEF2F2″ }}>
+            <AlertTriangle size={22} color="#FCA5A5" />
+            <span style={{ fontSize: 18, fontWeight: 700, color: "#FEF2F2" }}>
               Water emergency? Turn off main shutoff FIRST.
             </span>
           </div>
@@ -135,15 +135,15 @@ export default function PlumbingGuide() {
             ].map((item, i) => (
               <div key={i} style={{
                 display: "flex", alignItems: "flex-start", gap: 10,
-                padding: "8px 0″,
+                padding: "8px 0",
                 borderBottom: i < 3 ? "1px solid rgba(255,255,255,0.1)" : "none",
               }}>
                 <div style={{
                   minWidth: 8, height: 8, borderRadius: "50%",
-                  background: "#FCA5A5″, marginTop: 6,
+                  background: "#FCA5A5", marginTop: 6,
                 }} />
                 <div>
-                  <span style={{ fontSize: 14, fontWeight: 600, color: "#FEF2F2″ }}>{item.loc}</span>
+                  <span style={{ fontSize: 14, fontWeight: 600, color: "#FEF2F2" }}>{item.loc}</span>
                   <span style={{ fontSize: 13, color: "#FECACA", marginLeft: 6 }}>— {item.tip}</span>
                 </div>
               </div>
@@ -158,14 +158,14 @@ export default function PlumbingGuide() {
         <p style={{ fontSize: 13, color: "#64748B", marginBottom: 14 }}>
           {doneCount} of {totalCount} complete
         </p>
-        <div style={{ width: "100%", background: "#E2E8F0″, borderRadius: 4, height: 6, marginBottom: 16 }}>
+        <div style={{ width: "100%", background: "#E2E8F0", borderRadius: 4, height: 6, marginBottom: 16 }}>
           <div style={{
             width: `${Math.round((doneCount / Math.max(totalCount, 1)) * 100)}%`,
             background: "#16A34A", height: 6, borderRadius: 4, transition: "width 0.3s",
           }} />
         </div>
         <Card style={{ marginBottom: 24 }}>
-          <CardContent style={{ padding: "8px 0″ }}>
+          <CardContent style={{ padding: "8px 0" }}>
             {checklist.map((item, i) => {
               const cfg = STATUS_CONFIG[item.status];
               const clickable = item.status !== "na";
@@ -176,9 +176,9 @@ export default function PlumbingGuide() {
                   style={{
                     display: "flex", alignItems: "flex-start", gap: 12,
                     padding: "12px 20px",
-                    borderBottom: i < checklist.length - 1 ? "1px solid #F1F5F9″ : "none",
+                    borderBottom: i < checklist.length - 1 ? "1px solid #F1F5F9" : "none",
                     cursor: clickable ? "pointer" : "default",
-                    background: item.status === "done" ? "#F0FDF4″ : "transparent",
+                    background: item.status === "done" ? "#F0FDF4" : "transparent",
                   }}
                 >
                   <div style={{
@@ -193,7 +193,7 @@ export default function PlumbingGuide() {
                   <div style={{ flex: 1 }}>
                     <div style={{ display: "flex", alignItems: "center", gap: 8, flexWrap: "wrap" }}>
                       <span style={{
-                        fontSize: 14, color: item.status === "done" ? "#15803D" : "#334155″,
+                        fontSize: 14, color: item.status === "done" ? "#15803D" : "#334155",
                         textDecoration: item.status === "done" ? "line-through" : "none",
                         lineHeight: 1.5,
                       }}>{item.label}</span>
@@ -203,7 +203,7 @@ export default function PlumbingGuide() {
                       }}>{cfg.label}</span>
                     </div>
                     {item.note && (
-                      <p style={{ fontSize: 12, color: "#94A3B8″, margin: "3px 0 0" }}>{item.note}</p>
+                      <p style={{ fontSize: 12, color: "#94A3B8", margin: "3px 0 0" }}>{item.note}</p>
                     )}
                   </div>
                 </div>
@@ -220,7 +220,7 @@ export default function PlumbingGuide() {
           {HARD_WATER.map(item => {
             const Icon = item.icon;
             return (
-              <Card key={item.title} style={{ border: "1px solid #E2E8F0″ }}>
+              <Card key={item.title} style={{ border: "1px solid #E2E8F0" }}>
                 <CardContent style={{ padding: "16px" }}>
                   <div style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: 8 }}>
                     <Icon size={16} color={item.color} />
@@ -247,7 +247,7 @@ export default function PlumbingGuide() {
               <Droplets size={18} color="#2563EB" />
               <span style={{ fontWeight: 700, fontSize: 15, color: "#1E40AF" }}>Water softener guide</span>
             </div>
-            <p style={{ fontSize: 14, color: "#1D4ED8″, margin: "0 0 10px", lineHeight: 1.6 }}>
+            <p style={{ fontSize: 14, color: "#1D4ED8", margin: "0 0 10px", lineHeight: 1.6 }}>
               DFW water hardness: <strong>300–500 PPM</strong>. A water softener is recommended for homes above 180 PPM.
               At 300+ PPM (most of DFW), scale buildup is measurable within 1–2 years.
             </p>
@@ -258,7 +258,7 @@ export default function PlumbingGuide() {
                 { label: "ROI payback period", value: "2–3 years in appliance savings" },
               ].map(item => (
                 <div key={item.label}>
-                  <div style={{ fontSize: 11, color: "#3B82F6″, fontWeight: 700, textTransform: "uppercase", letterSpacing: 0.5 }}>{item.label}</div>
+                  <div style={{ fontSize: 11, color: "#3B82F6", fontWeight: 700, textTransform: "uppercase", letterSpacing: 0.5 }}>{item.label}</div>
                   <div style={{ fontSize: 14, fontWeight: 600, color: "#1E3A8A" }}>{item.value}</div>
                 </div>
               ))}
@@ -271,20 +271,20 @@ export default function PlumbingGuide() {
           DIY vs. Pro guide
         </h2>
         <Card style={{ marginBottom: 28 }}>
-          <CardContent style={{ padding: "8px 0″ }}>
+          <CardContent style={{ padding: "8px 0" }}>
             {DIV_ITEMS.map((item, i) => (
               <div key={item.task} style={{
                 display: "flex", alignItems: "flex-start", gap: 12, padding: "14px 20px",
-                borderBottom: i < DIV_ITEMS.length - 1 ? "1px solid #F1F5F9″ : "none",
+                borderBottom: i < DIV_ITEMS.length - 1 ? "1px solid #F1F5F9" : "none",
               }}>
                 <div style={{
                   minWidth: 28, height: 28, borderRadius: 8,
-                  background: item.rec === "DIY" ? "#DCFCE7″ : "#FEE2E2",
+                  background: item.rec === "DIY" ? "#DCFCE7" : "#FEE2E2",
                   display: "flex", alignItems: "center", justifyContent: "center",
                 }}>
                   {item.rec === "DIY"
                     ? <ThumbsUp size={14} color="#16A34A" />
-                    : <Wrench size={14} color="#DC2626″ />
+                    : <Wrench size={14} color="#DC2626" />
                   }
                 </div>
                 <div style={{ flex: 1 }}>
@@ -292,8 +292,8 @@ export default function PlumbingGuide() {
                     <span style={{ fontSize: 14, fontWeight: 600, color: "#0F172A" }}>{item.task}</span>
                     <span style={{
                       fontSize: 11, fontWeight: 700, padding: "1px 8px", borderRadius: 20,
-                      background: item.rec === "DIY" ? "#DCFCE7″ : "#FEE2E2",
-                      color: item.rec === "DIY" ? "#15803D" : "#DC2626″,
+                      background: item.rec === "DIY" ? "#DCFCE7" : "#FEE2E2",
+                      color: item.rec === "DIY" ? "#15803D" : "#DC2626",
                     }}>{item.rec}</span>
                   </div>
                   <p style={{ fontSize: 13, color: "#64748B", margin: 0, lineHeight: 1.4 }}>{item.reason}</p>
@@ -317,7 +317,7 @@ export default function PlumbingGuide() {
           </p>
           <a href="/trustypro/book?trade=plumbing">
             <Button style={{
-              background: "#fff", color: "#1D4ED8″, fontWeight: 700,
+              background: "#fff", color: "#1D4ED8", fontWeight: 700,
               padding: "10px 28px", fontSize: 15, borderRadius: 10,
               display: "inline-flex", alignItems: "center", gap: 8,
             }}>

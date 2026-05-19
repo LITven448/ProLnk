@@ -18,7 +18,7 @@ export default function DFWHouseHackingGuide() {
   return (
     <div style={{ background: '#0A1628', minHeight: '100vh', color: '#E8EDF5', fontFamily: 'system-ui, sans-serif', padding: '40px 20px' }}>
       <div style={{ maxWidth: 860, margin: '0 auto' }}>
-        <div style={{ marginBottom: 12, fontSize: 13, color: '#F5E642′ }}>🏠 DFW REAL ESTATE INVESTOR SERIES</div>
+        <div style={{ marginBottom: 12, fontSize: 13, color: '#F5E642' }}>🏠 DFW REAL ESTATE INVESTOR SERIES</div>
         <h1 style={{ fontSize: 38, fontWeight: 800, marginBottom: 8, lineHeight: 1.2 }}>
           DFW House Hacking Guide
         </h1>
@@ -27,7 +27,7 @@ export default function DFWHouseHackingGuide() {
         </p>
 
         <div style={{ background: '#111E35', borderRadius: 16, padding: 32, marginBottom: 32 }}>
-          <h2 style={{ fontSize: 22, fontWeight: 700, marginBottom: 20, color: '#F5E642′ }}>🏘️ What Is House Hacking?</h2>
+          <h2 style={{ fontSize: 22, fontWeight: 700, marginBottom: 20, color: '#F5E642' }}>🏘️ What Is House Hacking?</h2>
           <p style={{ color: '#C4D0E3', lineHeight: 1.7, marginBottom: 16 }}>
             House hacking means purchasing a small multi-unit property (2–4 units), occupying one unit as your primary residence, 
             and renting the remaining units to tenants. Your tenants help pay your mortgage — sometimes entirely.
@@ -39,7 +39,7 @@ export default function DFWHouseHackingGuide() {
         </div>
 
         <div style={{ background: '#111E35', borderRadius: 16, padding: 32, marginBottom: 32 }}>
-          <h2 style={{ fontSize: 22, fontWeight: 700, marginBottom: 20, color: '#F5E642′ }}>📍 Where to Find DFW Duplexes</h2>
+          <h2 style={{ fontSize: 22, fontWeight: 700, marginBottom: 20, color: '#F5E642' }}>📍 Where to Find DFW Duplexes</h2>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: 16 }}>
             {[
               { area: 'Oak Cliff (Dallas)', note: 'Strong rental demand, improving values' },
@@ -49,16 +49,16 @@ export default function DFWHouseHackingGuide() {
               { area: 'Irving / Grand Prairie', note: 'Central DFW, diverse tenant pool' },
               { area: 'Haltom City / Richland Hills', note: 'Value-add opportunities, near TCU' },
             ].map((item, i) => (
-              <div key={i} style={{ background: '#0A1628', borderRadius: 12, padding: 16, borderLeft: '3px solid #F5E642′ }}>
+              <div key={i} style={{ background: '#0A1628', borderRadius: 12, padding: 16, borderLeft: '3px solid #F5E642' }}>
                 <div style={{ fontWeight: 700, marginBottom: 4 }}>{item.area}</div>
-                <div style={{ fontSize: 13, color: '#8A9BB5′ }}>{item.note}</div>
+                <div style={{ fontSize: 13, color: '#8A9BB5' }}>{item.note}</div>
               </div>
             ))}
           </div>
         </div>
 
         <div style={{ background: '#111E35', borderRadius: 16, padding: 32, marginBottom: 32 }}>
-          <h2 style={{ fontSize: 22, fontWeight: 700, marginBottom: 20, color: '#F5E642′ }}>🏦 FHA Loan for House Hacking</h2>
+          <h2 style={{ fontSize: 22, fontWeight: 700, marginBottom: 20, color: '#F5E642' }}>🏦 FHA Loan for House Hacking</h2>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: 16, marginBottom: 20 }}>
             {[
               { label: 'Down Payment', value: '3.5% only' },
@@ -68,7 +68,7 @@ export default function DFWHouseHackingGuide() {
             ].map((item, i) => (
               <div key={i} style={{ background: '#0A1628', borderRadius: 12, padding: 16, textAlign: 'center' }}>
                 <div style={{ fontSize: 20, fontWeight: 800, color: '#F5E642', marginBottom: 4 }}>{item.value}</div>
-                <div style={{ fontSize: 13, color: '#8A9BB5′ }}>{item.label}</div>
+                <div style={{ fontSize: 13, color: '#8A9BB5' }}>{item.label}</div>
               </div>
             ))}
           </div>
@@ -79,27 +79,27 @@ export default function DFWHouseHackingGuide() {
         </div>
 
         <div style={{ background: '#111E35', borderRadius: 16, padding: 32 }}>
-          <h2 style={{ fontSize: 22, fontWeight: 700, marginBottom: 24, color: '#F5E642′ }}>🧮 House Hack Calculator</h2>
+          <h2 style={{ fontSize: 22, fontWeight: 700, marginBottom: 24, color: '#F5E642' }}>🧮 House Hack Calculator</h2>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: 20, marginBottom: 32 }}>
             <div>
-              <label style={{ display: 'block', marginBottom: 8, fontSize: 14, color: '#8A9BB5′ }}>Property Price ($)</label>
+              <label style={{ display: 'block', marginBottom: 8, fontSize: 14, color: '#8A9BB5' }}>Property Price ($)</label>
               <input type="range" min={150000} max={800000} step={10000} value={propPrice}
                 onChange={e => setPropPrice(Number(e.target.value))}
-                style={{ width: '100%', accentColor: '#F5E642′ }} />
+                style={{ width: '100%', accentColor: '#F5E642' }} />
               <div style={{ color: '#F5E642', fontWeight: 700 }}>${propPrice.toLocaleString()}</div>
             </div>
             <div>
-              <label style={{ display: 'block', marginBottom: 8, fontSize: 14, color: '#8A9BB5′ }}>Rental Units (not yours)</label>
+              <label style={{ display: 'block', marginBottom: 8, fontSize: 14, color: '#8A9BB5' }}>Rental Units (not yours)</label>
               <input type="range" min={1} max={3} step={1} value={rentalUnits}
                 onChange={e => setRentalUnits(Number(e.target.value))}
-                style={{ width: '100%', accentColor: '#F5E642′ }} />
+                style={{ width: '100%', accentColor: '#F5E642' }} />
               <div style={{ color: '#F5E642', fontWeight: 700 }}>{rentalUnits} unit{rentalUnits > 1 ? 's' : ''}</div>
             </div>
             <div>
-              <label style={{ display: 'block', marginBottom: 8, fontSize: 14, color: '#8A9BB5′ }}>Rent Per Unit ($/mo)</label>
+              <label style={{ display: 'block', marginBottom: 8, fontSize: 14, color: '#8A9BB5' }}>Rent Per Unit ($/mo)</label>
               <input type="range" min={800} max={2500} step={50} value={rentPerUnit}
                 onChange={e => setRentPerUnit(Number(e.target.value))}
-                style={{ width: '100%', accentColor: '#F5E642′ }} />
+                style={{ width: '100%', accentColor: '#F5E642' }} />
               <div style={{ color: '#F5E642', fontWeight: 700 }}>${rentPerUnit.toLocaleString()}/mo</div>
             </div>
           </div>
@@ -112,9 +112,9 @@ export default function DFWHouseHackingGuide() {
               { label: 'Your Effective Payment', value: `$${Math.round(effectivePayment).toLocaleString()}/mo`, highlight: true },
               { label: 'Monthly Cash Flow', value: cashFlow >= 0 ? `+$${Math.round(cashFlow).toLocaleString()}` : `-$${Math.round(Math.abs(cashFlow)).toLocaleString()}` },
             ].map((item, i) => (
-              <div key={i} style={{ background: item.highlight ? '#1A2E4A' : '#0A1628', borderRadius: 12, padding: 16, border: item.highlight ? '2px solid #F5E642′ : ’none' }}>
-                <div style={{ fontSize: 20, fontWeight: 800, color: item.highlight ? '#F5E642′ : '#E8EDF5', marginBottom: 4 }}>{item.value}</div>
-                <div style={{ fontSize: 12, color: '#8A9BB5′ }}>{item.label}</div>
+              <div key={i} style={{ background: item.highlight ? '#1A2E4A' : '#0A1628', borderRadius: 12, padding: 16, border: item.highlight ? '2px solid #F5E642' : 'none' }}>
+                <div style={{ fontSize: 20, fontWeight: 800, color: item.highlight ? '#F5E642' : '#E8EDF5', marginBottom: 4 }}>{item.value}</div>
+                <div style={{ fontSize: 12, color: '#8A9BB5' }}>{item.label}</div>
               </div>
             ))}
           </div>

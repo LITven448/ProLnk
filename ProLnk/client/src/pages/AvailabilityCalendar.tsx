@@ -155,19 +155,19 @@ export default function AvailabilityCalendar() {
         <div className="max-w-5xl mx-auto">
 
           {/* Header */}
-          <div className="mb-6 flex flex-col md:flex-row md:items-start md:justify-between gap-4″>
+          <div className="mb-6 flex flex-col md:flex-row md:items-start md:justify-between gap-4">
             <div>
               <h1 className="text-2xl md:text-3xl font-bold text-white">Availability Calendar</h1>
               <p className="text-slate-400 mt-1 text-sm">Click or drag to set your available time blocks</p>
             </div>
-            <div className="flex flex-wrap gap-2″>
+            <div className="flex flex-wrap gap-2">
               <Button
                 variant="outline"
                 size="sm"
                 onClick={() => setShowRecurring(v => !v)}
                 className={`border-teal-600 text-teal-400 hover:bg-teal-900/30 bg-transparent text-xs ${recurringEnabled ? "bg-teal-900/20" : ""}`}
               >
-                {recurringEnabled ? <ToggleRight className="w-4 h-4 mr-1.5″ /> : <ToggleLeft className="w-4 h-4 mr-1.5" />}
+                {recurringEnabled ? <ToggleRight className="w-4 h-4 mr-1.5" /> : <ToggleLeft className="w-4 h-4 mr-1.5" />}
                 Recurring Schedule
               </Button>
               <Button
@@ -176,7 +176,7 @@ export default function AvailabilityCalendar() {
                 onClick={() => setShowVacation(v => !v)}
                 className="border-amber-600 text-amber-400 hover:bg-amber-900/30 bg-transparent text-xs"
               >
-                <Palmtree className="w-4 h-4 mr-1.5″ />
+                <Palmtree className="w-4 h-4 mr-1.5" />
                 Blackout Dates
               </Button>
               <Button
@@ -185,7 +185,7 @@ export default function AvailabilityCalendar() {
                 onClick={clearAll}
                 className="border-slate-600 text-slate-400 hover:bg-slate-700/50 bg-transparent text-xs"
               >
-                <RefreshCw className="w-4 h-4 mr-1.5″ />
+                <RefreshCw className="w-4 h-4 mr-1.5" />
                 Clear All
               </Button>
               <Button
@@ -196,7 +196,7 @@ export default function AvailabilityCalendar() {
               >
                 {saveMutation.isPending
                   ? <Loader2 className="w-4 h-4 mr-1.5 animate-spin" />
-                  : <Save className="w-4 h-4 mr-1.5″ />}
+                  : <Save className="w-4 h-4 mr-1.5" />}
                 Save Schedule
               </Button>
             </div>
@@ -205,8 +205,8 @@ export default function AvailabilityCalendar() {
           {/* Recurring preset panel */}
           {showRecurring && (
             <div className="mb-4 p-4 bg-[#0F1E35] border border-teal-700/40 rounded-xl">
-              <p className="text-sm font-semibold text-teal-300 mb-3″>Apply a Recurring Schedule</p>
-              <div className="flex flex-wrap gap-2″>
+              <p className="text-sm font-semibold text-teal-300 mb-3">Apply a Recurring Schedule</p>
+              <div className="flex flex-wrap gap-2">
                 {RECURRING_PRESETS.map(preset => (
                   <button
                     key={preset.label}
@@ -217,63 +217,63 @@ export default function AvailabilityCalendar() {
                   </button>
                 ))}
               </div>
-              <p className="text-xs text-slate-500 mt-3″>Applying a preset adds to your current schedule. You can still override individual slots.</p>
+              <p className="text-xs text-slate-500 mt-3">Applying a preset adds to your current schedule. You can still override individual slots.</p>
             </div>
           )}
 
           {/* Vacation/blackout panel */}
           {showVacation && (
-            <div className="mb-4 p-4 bg-[#0F1E35] border border-amber-700/40 rounded-xl flex flex-wrap items-end gap-3″>
+            <div className="mb-4 p-4 bg-[#0F1E35] border border-amber-700/40 rounded-xl flex flex-wrap items-end gap-3">
               <div>
-                <label className="block text-xs text-amber-400 font-medium mb-1″>Start date</label>
+                <label className="block text-xs text-amber-400 font-medium mb-1">Start date</label>
                 <input type="date" value={vacationStart} onChange={e => setVacationStart(e.target.value)}
-                  className="border border-amber-700/40 rounded-lg px-3 py-1.5 text-sm bg-[#0A1628] text-white focus:outline-none focus:ring-2 focus:ring-amber-500/50″ />
+                  className="border border-amber-700/40 rounded-lg px-3 py-1.5 text-sm bg-[#0A1628] text-white focus:outline-none focus:ring-2 focus:ring-amber-500/50" />
               </div>
               <div>
-                <label className="block text-xs text-amber-400 font-medium mb-1″>End date</label>
+                <label className="block text-xs text-amber-400 font-medium mb-1">End date</label>
                 <input type="date" value={vacationEnd} onChange={e => setVacationEnd(e.target.value)}
-                  className="border border-amber-700/40 rounded-lg px-3 py-1.5 text-sm bg-[#0A1628] text-white focus:outline-none focus:ring-2 focus:ring-amber-500/50″ />
+                  className="border border-amber-700/40 rounded-lg px-3 py-1.5 text-sm bg-[#0A1628] text-white focus:outline-none focus:ring-2 focus:ring-amber-500/50" />
               </div>
               <Button onClick={blockVacation} size="sm" className="bg-amber-500 hover:bg-amber-400 text-slate-900 font-semibold text-xs">
                 Block Dates
               </Button>
-              <button onClick={() => setShowVacation(false)} className="text-xs text-slate-500 hover:text-slate-300″>Cancel</button>
+              <button onClick={() => setShowVacation(false)} className="text-xs text-slate-500 hover:text-slate-300">Cancel</button>
             </div>
           )}
 
           {/* Week nav + stats */}
-          <div className="flex flex-col sm:flex-row sm:items-center gap-3 mb-4″>
-            <div className="flex items-center gap-1″>
+          <div className="flex flex-col sm:flex-row sm:items-center gap-3 mb-4">
+            <div className="flex items-center gap-1">
               <button
                 onClick={() => setWeekOffset(w => w - 1)}
                 className="p-1.5 rounded-lg border border-slate-700 text-slate-400 hover:bg-slate-700/50 transition-colors"
               >
-                <ChevronLeft className="w-4 h-4″ />
+                <ChevronLeft className="w-4 h-4" />
               </button>
-              <span className="text-sm font-medium text-slate-300 px-2″>{weekLabel}</span>
+              <span className="text-sm font-medium text-slate-300 px-2">{weekLabel}</span>
               <button
                 onClick={() => setWeekOffset(w => w + 1)}
                 className="p-1.5 rounded-lg border border-slate-700 text-slate-400 hover:bg-slate-700/50 transition-colors"
               >
-                <ChevronRight className="w-4 h-4″ />
+                <ChevronRight className="w-4 h-4" />
               </button>
               {weekOffset !== 0 && (
                 <button
                   onClick={() => setWeekOffset(0)}
-                  className="ml-1 px-2 py-1 text-xs text-teal-400 border border-teal-700/50 rounded-lg hover:bg-teal-900/30″
+                  className="ml-1 px-2 py-1 text-xs text-teal-400 border border-teal-700/50 rounded-lg hover:bg-teal-900/30"
                 >
                   Today
                 </button>
               )}
             </div>
-            <div className="sm:ml-auto flex items-center gap-3 text-xs text-slate-400″>
-              <span className="flex items-center gap-1.5″>
+            <div className="sm:ml-auto flex items-center gap-3 text-xs text-slate-400">
+              <span className="flex items-center gap-1.5">
                 <span className="w-2.5 h-2.5 rounded-sm bg-teal-500 inline-block" /> Available
               </span>
-              <span className="flex items-center gap-1.5″>
+              <span className="flex items-center gap-1.5">
                 <span className="w-2.5 h-2.5 rounded-sm bg-slate-700 inline-block" /> Unavailable
               </span>
-              <span className="flex items-center gap-1.5″>
+              <span className="flex items-center gap-1.5">
                 <span className="w-2.5 h-2.5 rounded-sm bg-[#0F1E35] border border-slate-700 inline-block" /> Unset
               </span>
               {availableCount > 0 && (
@@ -285,16 +285,16 @@ export default function AvailabilityCalendar() {
           {/* Calendar grid */}
           <div className="bg-[#0F1E35] rounded-2xl border border-slate-700/50 overflow-hidden">
             {isLoading ? (
-              <div className="flex items-center justify-center py-16″>
-                <Loader2 className="w-6 h-6 animate-spin text-teal-500″ />
+              <div className="flex items-center justify-center py-16">
+                <Loader2 className="w-6 h-6 animate-spin text-teal-500" />
                 <span className="ml-2 text-slate-400 text-sm">Loading your schedule...</span>
               </div>
             ) : (
               <div className="overflow-x-auto">
                 <table className="w-full min-w-[600px]">
                   <thead>
-                    <tr className="border-b border-slate-700/50″>
-                      <th className="w-16 text-left text-slate-500 font-normal text-xs py-3 pl-4″>Time</th>
+                    <tr className="border-b border-slate-700/50">
+                      <th className="w-16 text-left text-slate-500 font-normal text-xs py-3 pl-4">Time</th>
                       {DAYS.map((d, i) => {
                         const colDate = new Date(weekStart);
                         colDate.setDate(weekStart.getDate() + i);
@@ -313,13 +313,13 @@ export default function AvailabilityCalendar() {
                   <tbody>
                     {HOURS.map((hour, rowIdx) => (
                       <tr key={hour} className={rowIdx % 2 === 0 ? "" : "bg-white/[0.02]"}>
-                        <td className="text-slate-500 text-[11px] pl-4 py-1 whitespace-nowrap w-16″>
+                        <td className="text-slate-500 text-[11px] pl-4 py-1 whitespace-nowrap w-16">
                           {HOUR_LABELS[hour]}
                         </td>
                         {DAY_INDICES.map((dayOfWeekIdx) => {
                           const status = getSlotStatus(dayOfWeekIdx, hour);
                           return (
-                            <td key={dayOfWeekIdx} className="px-1 py-0.5″>
+                            <td key={dayOfWeekIdx} className="px-1 py-0.5">
                               <div
                                 onMouseDown={() => handleMouseDown(dayOfWeekIdx, hour)}
                                 onMouseEnter={() => handleMouseEnter(dayOfWeekIdx, hour)}
@@ -327,10 +327,10 @@ export default function AvailabilityCalendar() {
                                   "w-full h-9 rounded-md cursor-pointer transition-colors select-none flex items-center justify-center text-[11px] font-medium",
                                   isDragging ? "cursor-crosshair" : "cursor-pointer",
                                   status === "available"
-                                    ? "bg-teal-500/30 border border-teal-500/60 text-teal-300 hover:bg-teal-500/40″
+                                    ? "bg-teal-500/30 border border-teal-500/60 text-teal-300 hover:bg-teal-500/40"
                                     : status === "unavailable"
-                                      ? "bg-slate-700/60 border border-slate-600/40 text-slate-500 hover:bg-slate-600/60″
-                                      : "bg-transparent border border-slate-700/30 text-slate-700 hover:border-teal-600/40 hover:bg-teal-900/10″,
+                                      ? "bg-slate-700/60 border border-slate-600/40 text-slate-500 hover:bg-slate-600/60"
+                                      : "bg-transparent border border-slate-700/30 text-slate-700 hover:border-teal-600/40 hover:bg-teal-900/10",
                                 ].join(" ")}
                               >
                                 {status === "available" ? "✓" : status === "unavailable" ? "–" : ""}
@@ -347,14 +347,14 @@ export default function AvailabilityCalendar() {
           </div>
 
           {/* Service Radius + tip */}
-          <div className="mt-4 flex flex-col sm:flex-row gap-4″>
-            <div className="flex-1 bg-[#0F1E35] rounded-xl border border-slate-700/50 p-4″>
-              <div className="flex items-center gap-2 mb-3″>
-                <MapPin className="w-4 h-4 text-teal-400″ />
+          <div className="mt-4 flex flex-col sm:flex-row gap-4">
+            <div className="flex-1 bg-[#0F1E35] rounded-xl border border-slate-700/50 p-4">
+              <div className="flex items-center gap-2 mb-3">
+                <MapPin className="w-4 h-4 text-teal-400" />
                 <p className="text-sm font-semibold text-white">Service Radius</p>
               </div>
-              <p className="text-xs text-slate-400 mb-3″>Max distance from your home base you'll travel for jobs.</p>
-              <div className="flex flex-wrap gap-2″>
+              <p className="text-xs text-slate-400 mb-3">Max distance from your home base you'll travel for jobs.</p>
+              <div className="flex flex-wrap gap-2">
                 {RADIUS_OPTIONS.map(r => (
                   <button
                     key={r}
@@ -363,7 +363,7 @@ export default function AvailabilityCalendar() {
                       "px-3 py-1.5 rounded-lg border text-xs font-medium transition-all",
                       serviceRadius === r
                         ? "bg-teal-500 border-teal-400 text-slate-900 font-bold"
-                        : "bg-transparent border-slate-600 text-slate-400 hover:border-teal-600/50 hover:text-teal-300″,
+                        : "bg-transparent border-slate-600 text-slate-400 hover:border-teal-600/50 hover:text-teal-300",
                     ].join(" ")}
                   >
                     {r} mi
@@ -374,14 +374,14 @@ export default function AvailabilityCalendar() {
 
             <div className="sm:w-64 bg-[#0F1E35] rounded-xl border border-slate-700/50 p-4 flex flex-col justify-between">
               <div>
-                <p className="text-xs text-slate-500 font-medium mb-2 flex items-center gap-1.5″>
-                  <CheckCircle className="w-3.5 h-3.5 text-teal-400″ />
+                <p className="text-xs text-slate-500 font-medium mb-2 flex items-center gap-1.5">
+                  <CheckCircle className="w-3.5 h-3.5 text-teal-400" />
                   Drag tip
                 </p>
-                <p className="text-xs text-slate-400″>Click a cell to toggle it. Click and drag across multiple cells to set them all at once.</p>
+                <p className="text-xs text-slate-400">Click a cell to toggle it. Click and drag across multiple cells to set them all at once.</p>
               </div>
               {dirty && (
-                <div className="mt-3 flex items-center gap-1.5 text-xs text-amber-400″>
+                <div className="mt-3 flex items-center gap-1.5 text-xs text-amber-400">
                   <span className="w-1.5 h-1.5 rounded-full bg-amber-400 animate-pulse inline-block" />
                   Unsaved changes
                 </div>

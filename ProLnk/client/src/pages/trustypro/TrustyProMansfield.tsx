@@ -1,6 +1,6 @@
 import { Link } from "wouter";
 
-const INDIGO = "#4F46E5″;
+const INDIGO = "#4F46E5";
 const AMBER  = "#F59E0B";
 const LIGHT  = "#F8FAFC";
 
@@ -12,15 +12,15 @@ const stats = [
 ];
 
 const steps = [
-  { n: "01″, title: "Describe Your Need", body: "Storm damage from your mature trees? HVAC on its last legs? Hard-water scale destroying your fixtures? Tell us and we'll find your match." },
-  { n: "02″, title: "Get Matched to a Mansfield Pro", body: "Our AI connects you with Tarrant County specialists who know Trinity River water chemistry, aging HVAC, and Mansfield's dense tree canopy risks." },
-  { n: "03″, title: "Book & Track", body: "Review your quotes side-by-side, pick the right pro, and track the job from scheduling to sign-off." },
+  { n: "01", title: "Describe Your Need", body: "Storm damage from your mature trees? HVAC on its last legs? Hard-water scale destroying your fixtures? Tell us and we'll find your match." },
+  { n: "02", title: "Get Matched to a Mansfield Pro", body: "Our AI connects you with Tarrant County specialists who know Trinity River water chemistry, aging HVAC, and Mansfield's dense tree canopy risks." },
+  { n: "03", title: "Book & Track", body: "Review your quotes side-by-side, pick the right pro, and track the job from scheduling to sign-off." },
 ];
 
 const pros = [
-  { name: "Kevin O.", trade: "Tree & Storm Damage", rating: "4.9″, jobs: 231, note: "Expert in post-storm assessment and limb removal in Mansfield's mature neighborhoods." },
-  { name: "Priya D.", trade: "HVAC Replacement", rating: "4.9″, jobs: 189, note: "Specializes in aging R-22 and early R-410A system replacements across mid-cities homes." },
-  { name: "Jason R.", trade: "Irrigation & Water Treatment", rating: "4.8″, jobs: 164, note: "Handles 290 PPM hard-water scale, RO systems, and Mansfield irrigation failure diagnosis." },
+  { name: "Kevin O.", trade: "Tree & Storm Damage", rating: "4.9", jobs: 231, note: "Expert in post-storm assessment and limb removal in Mansfield's mature neighborhoods." },
+  { name: "Priya D.", trade: "HVAC Replacement", rating: "4.9", jobs: 189, note: "Specializes in aging R-22 and early R-410A system replacements across mid-cities homes." },
+  { name: "Jason R.", trade: "Irrigation & Water Treatment", rating: "4.8", jobs: 164, note: "Handles 290 PPM hard-water scale, RO systems, and Mansfield irrigation failure diagnosis." },
 ];
 
 const testimonials = [
@@ -66,10 +66,10 @@ export default function TrustyProMansfield() {
       </section>
 
       {/* Stats Bar */}
-      <section style={{ background: "#fff", borderBottom: "1px solid #E2E8F0″ }}>
+      <section style={{ background: "#fff", borderBottom: "1px solid #E2E8F0" }}>
         <div style={{ maxWidth: 900, margin: "0 auto", display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(180px, 1fr))", padding: "0 24px" }}>
           {stats.map(s => (
-            <div key={s.label} style={{ textAlign: "center", padding: "28px 16px", borderRight: "1px solid #E2E8F0″ }}>
+            <div key={s.label} style={{ textAlign: "center", padding: "28px 16px", borderRight: "1px solid #E2E8F0" }}>
               <div style={{ fontSize: 28, fontWeight: 800, color: INDIGO }}>{s.value}</div>
               <div style={{ fontSize: 12, color: "#64748B", marginTop: 4, lineHeight: 1.4 }}>{s.label}</div>
             </div>
@@ -85,7 +85,7 @@ export default function TrustyProMansfield() {
             <div key={s.n} style={{ background: "#fff", borderRadius: 16, padding: 32, boxShadow: "0 2px 12px rgba(0,0,0,0.06)" }}>
               <div style={{ fontSize: 40, fontWeight: 900, color: INDIGO, opacity: 0.15, lineHeight: 1 }}>{s.n}</div>
               <h3 style={{ fontSize: 18, fontWeight: 700, margin: "8px 0 10px" }}>{s.title}</h3>
-              <p style={{ fontSize: 14, color: "#475569″, lineHeight: 1.7, margin: 0 }}>{s.body}</p>
+              <p style={{ fontSize: 14, color: "#475569", lineHeight: 1.7, margin: 0 }}>{s.body}</p>
             </div>
           ))}
         </div>
@@ -110,7 +110,7 @@ export default function TrustyProMansfield() {
                   <span style={{ fontSize: 13, fontWeight: 600, color: AMBER }}>★ {p.rating}</span>
                   <span style={{ fontSize: 13, color: "#64748B" }}>{p.jobs} jobs</span>
                 </div>
-                <p style={{ fontSize: 13, color: "#475569″, lineHeight: 1.6, margin: 0 }}>{p.note}</p>
+                <p style={{ fontSize: 13, color: "#475569", lineHeight: 1.6, margin: 0 }}>{p.note}</p>
               </div>
             ))}
           </div>
@@ -124,7 +124,7 @@ export default function TrustyProMansfield() {
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))", gap: 24 }}>
             {testimonials.map(t => (
               <div key={t.name} style={{ background: "#fff", borderRadius: 16, padding: 28, boxShadow: "0 2px 12px rgba(0,0,0,0.06)", borderTop: `4px solid ${INDIGO}` }}>
-                <p style={{ fontSize: 15, fontStyle: "italic", lineHeight: 1.7, marginBottom: 16, color: "#334155″ }}>"{t.quote}"</p>
+                <p style={{ fontSize: 15, fontStyle: "italic", lineHeight: 1.7, marginBottom: 16, color: "#334155" }}>"{t.quote}"</p>
                 <div style={{ fontWeight: 700, fontSize: 14 }}>{t.name}</div>
                 <div style={{ fontSize: 12, color: "#64748B" }}>{t.area}</div>
               </div>
@@ -141,7 +141,7 @@ export default function TrustyProMansfield() {
             {faqs.map(f => (
               <div key={f.q} style={{ borderLeft: `4px solid ${INDIGO}`, paddingLeft: 20 }}>
                 <div style={{ fontWeight: 700, fontSize: 16, marginBottom: 6 }}>{f.q}</div>
-                <div style={{ fontSize: 14, color: "#475569″, lineHeight: 1.7 }}>{f.a}</div>
+                <div style={{ fontSize: 14, color: "#475569", lineHeight: 1.7 }}>{f.a}</div>
               </div>
             ))}
           </div>

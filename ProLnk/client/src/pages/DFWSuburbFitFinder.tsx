@@ -89,9 +89,9 @@ export default function DFWSuburbFitFinder() {
                   {[1, 2, 3, 4, 5].map(n => (
                     <button key={n} onClick={() => setRank(p.key, n)}
                       style={{ width: 44, height: 44, borderRadius: 8, border: '2px solid', cursor: 'pointer', fontWeight: 700, fontSize: 16,
-                        borderColor: rankings[p.key] === n ? '#F5E642′ : '#E2E8F0',
-                        backgroundColor: rankings[p.key] === n ? '#F5E642′ : '#F9FAFB',
-                        color: '#0A1628′ }}>{n}</button>
+                        borderColor: rankings[p.key] === n ? '#F5E642' : '#E2E8F0',
+                        backgroundColor: rankings[p.key] === n ? '#F5E642' : '#F9FAFB',
+                        color: '#0A1628' }}>{n}</button>
                   ))}
                 </div>
               </div>
@@ -104,7 +104,7 @@ export default function DFWSuburbFitFinder() {
         ) : (
           <div>
             {results.map((s, i) => (
-              <div key={s.name} style={{ backgroundColor: '#fff', borderRadius: 12, padding: 28, marginBottom: 20, boxShadow: '0 2px 8px rgba(0,0,0,0.06)', borderLeft: i === 0 ? '4px solid #F5E642′ : '4px solid #E2E8F0' }}>
+              <div key={s.name} style={{ backgroundColor: '#fff', borderRadius: 12, padding: 28, marginBottom: 20, boxShadow: '0 2px 8px rgba(0,0,0,0.06)', borderLeft: i === 0 ? '4px solid #F5E642' : '4px solid #E2E8F0' }}>
                 <div style={{ fontSize: 13, color: '#64748B', fontWeight: 600, marginBottom: 4 }}>#{i + 1} MATCH</div>
                 <h3 style={{ color: '#0A1628', fontSize: 22, fontWeight: 700, margin: '0 0 12px' }}>{s.name}</h3>
                 <p style={{ color: '#334155', marginBottom: 12 }}><strong>Why it fits:</strong> {s.why}</p>

@@ -7,16 +7,16 @@ import {
 } from "lucide-react";
 
 const D = {
-  bg: "#0D0F14″,
+  bg: "#0D0F14",
   surface: "#13161E",
   card: "#1A1E2A",
   border: "#252A3A",
   text: "#F0F2FF",
-  muted: "#8B91A8″,
-  teal: "#00C2A8″,
+  muted: "#8B91A8",
+  teal: "#00C2A8",
   green: "#22C55E",
   amber: "#F59E0B",
-  blue: "#3B82F6″,
+  blue: "#3B82F6",
 };
 
 interface CheckItem {
@@ -35,45 +35,45 @@ interface Section {
 
 const SECTIONS: Section[] = [
   {
-    id: "week1″,
-    title: "Week 1″,
+    id: "week1",
+    title: "Week 1",
     icon: Calendar,
     color: D.teal,
     items: [
-      { id: "w1-1″, label: "Change all locks and garage codes" },
-      { id: "w1-2″, label: "Locate and test water main shutoff" },
-      { id: "w1-3″, label: "Find electrical panel, label all breakers" },
-      { id: "w1-4″, label: "Test all smoke and CO detectors" },
-      { id: "w1-5″, label: "Locate gas shutoff valve" },
-      { id: "w1-6″, label: "Get copies of all warranties from seller" },
-      { id: "w1-7″, label: "Change HVAC filter" },
+      { id: "w1-1", label: "Change all locks and garage codes" },
+      { id: "w1-2", label: "Locate and test water main shutoff" },
+      { id: "w1-3", label: "Find electrical panel, label all breakers" },
+      { id: "w1-4", label: "Test all smoke and CO detectors" },
+      { id: "w1-5", label: "Locate gas shutoff valve" },
+      { id: "w1-6", label: "Get copies of all warranties from seller" },
+      { id: "w1-7", label: "Change HVAC filter" },
     ],
   },
   {
-    id: "month1″,
-    title: "Month 1″,
+    id: "month1",
+    title: "Month 1",
     icon: Activity,
     color: D.blue,
     items: [
-      { id: "m1-1″, label: "Schedule HVAC inspection", note: "$89–150" },
-      { id: "m1-2″, label: "Roof inspection if not done during purchase" },
-      { id: "m1-3″, label: "Get to know your neighbors" },
-      { id: "m1-4″, label: "Set up mail forwarding completely" },
-      { id: "m1-5″, label: "Update driver's license address" },
-      { id: "m1-6″, label: "Locate nearest urgent care" },
+      { id: "m1-1", label: "Schedule HVAC inspection", note: "$89–150" },
+      { id: "m1-2", label: "Roof inspection if not done during purchase" },
+      { id: "m1-3", label: "Get to know your neighbors" },
+      { id: "m1-4", label: "Set up mail forwarding completely" },
+      { id: "m1-5", label: "Update driver's license address" },
+      { id: "m1-6", label: "Locate nearest urgent care" },
     ],
   },
   {
-    id: "month3″,
-    title: "Months 2–3″,
+    id: "month3",
+    title: "Months 2–3",
     icon: ShieldCheck,
     color: D.green,
     items: [
-      { id: "m3-1″, label: "Deep clean air ducts if older home" },
-      { id: "m3-2″, label: "Check attic for insulation and pest signs" },
-      { id: "m3-3″, label: "Test all outlets with GFCI tester" },
-      { id: "m3-4″, label: "Document all home systems (photos + serial numbers)" },
-      { id: "m3-5″, label: "Open a home maintenance savings account", note: "$200/mo recommended" },
+      { id: "m3-1", label: "Deep clean air ducts if older home" },
+      { id: "m3-2", label: "Check attic for insulation and pest signs" },
+      { id: "m3-3", label: "Test all outlets with GFCI tester" },
+      { id: "m3-4", label: "Document all home systems (photos + serial numbers)" },
+      { id: "m3-5", label: "Open a home maintenance savings account", note: "$200/mo recommended" },
     ],
   },
 ];
@@ -182,7 +182,7 @@ export default function FirstTimeBuyerGuide() {
                         onClick={() => toggle(item.id)}
                         style={{
                           display: "flex", alignItems: "center", gap: 12,
-                          padding: "10px 0″, cursor: "pointer",
+                          padding: "10px 0", cursor: "pointer",
                           borderBottom: `1px solid ${D.border}`,
                         }}
                       >
@@ -246,7 +246,7 @@ export default function FirstTimeBuyerGuide() {
             <Link href="/homeowner/vault">
               <a style={{
                 display: "inline-block",
-                background: D.teal, color: "#000″,
+                background: D.teal, color: "#000",
                 fontWeight: 700, fontSize: 15, padding: "12px 28px",
                 borderRadius: 8, textDecoration: "none",
               }}>

@@ -52,7 +52,7 @@ export default function DFWMultipleHomeContractGuide() {
   const selected = scenarios.find(s => s.key === buyerSituation);
 
   return (
-    <div style={{ background: '#F9FAFB', minHeight: '100vh', fontFamily: 'system-ui, sans-serif', color: '#0A1628′ }}>
+    <div style={{ background: '#F9FAFB', minHeight: '100vh', fontFamily: 'system-ui, sans-serif', color: '#0A1628' }}>
       <div style={{ background: '#0A1628', padding: '40px 24px', textAlign: 'center' }}>
         <div style={{ fontSize: 48 }}>📄📄</div>
         <h1 style={{ color: '#F5E642', fontSize: 28, fontWeight: 700, margin: '12px 0 8px' }}>Multiple Home Contracts in DFW</h1>
@@ -73,10 +73,10 @@ export default function DFWMultipleHomeContractGuide() {
         <h2 style={{ fontSize: 20, fontWeight: 700, marginBottom: 16 }}>🎯 Select Your Buyer Situation</h2>
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16, marginBottom: 32 }}>
           {scenarios.map(s => (
-            <div key={s.key} onClick={() => setBuyerSituation(s.key)} style={{ background: buyerSituation === s.key ? '#0A1628′ : '#fff', color: buyerSituation === s.key ? '#fff' : '#0A1628', borderRadius: 12, padding: 20, border: `2px solid ${buyerSituation === s.key ? '#F5E642' : '#E2E8F0'}`, cursor: ’pointer' }}>
+            <div key={s.key} onClick={() => setBuyerSituation(s.key)} style={{ background: buyerSituation === s.key ? '#0A1628' : '#fff', color: buyerSituation === s.key ? '#fff' : '#0A1628', borderRadius: 12, padding: 20, border: `2px solid ${buyerSituation === s.key ? '#F5E642' : '#E2E8F0'}`, cursor: 'pointer' }}>
               <div style={{ fontSize: 32, marginBottom: 8 }}>{s.emoji}</div>
               <h3 style={{ margin: '0 0 6px', fontSize: 15, fontWeight: 700 }}>{s.label}</h3>
-              <div style={{ fontSize: 12, padding: '4px 10px', borderRadius: 20, display: 'inline-block', background: s.canDoMultiple ? '#DCFCE7′ : '#FEE2E2', color: s.canDoMultiple ? '#166534' : '#991B1B', fontWeight: 700 }}>
+              <div style={{ fontSize: 12, padding: '4px 10px', borderRadius: 20, display: 'inline-block', background: s.canDoMultiple ? '#DCFCE7' : '#FEE2E2', color: s.canDoMultiple ? '#166534' : '#991B1B', fontWeight: 700 }}>
                 {s.canDoMultiple ? '✅ Multiple Contracts: Generally OK' : '⚠️ Multiple Contracts: Use Caution'}
               </div>
             </div>
@@ -84,12 +84,12 @@ export default function DFWMultipleHomeContractGuide() {
         </div>
 
         {selected && (
-          <div style={{ background: '#fff', borderRadius: 12, padding: 24, border: '1px solid #E2E8F0′ }}>
+          <div style={{ background: '#fff', borderRadius: 12, padding: 24, border: '1px solid #E2E8F0' }}>
             <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 16 }}>
               <span style={{ fontSize: 36 }}>{selected.emoji}</span>
               <div>
                 <h3 style={{ margin: 0, fontSize: 18 }}>{selected.label}</h3>
-                <div style={{ fontSize: 12, marginTop: 4, padding: '3px 10px', borderRadius: 20, display: 'inline-block', background: selected.canDoMultiple ? '#DCFCE7′ : '#FEE2E2', color: selected.canDoMultiple ? '#166534' : '#991B1B', fontWeight: 700 }}>
+                <div style={{ fontSize: 12, marginTop: 4, padding: '3px 10px', borderRadius: 20, display: 'inline-block', background: selected.canDoMultiple ? '#DCFCE7' : '#FEE2E2', color: selected.canDoMultiple ? '#166534' : '#991B1B', fontWeight: 700 }}>
                   {selected.canDoMultiple ? '✅ Multiple Contracts Generally Appropriate' : '⚠️ Proceed with Caution'}
                 </div>
               </div>
@@ -100,7 +100,7 @@ export default function DFWMultipleHomeContractGuide() {
             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 20 }}>
               <div>
                 <p style={{ fontWeight: 700, fontSize: 13, marginBottom: 8 }}>📋 How This Works in DFW</p>
-                {selected.howItWorks.map((h, i) => <div key={i} style={{ fontSize: 13, padding: '5px 0', borderBottom: '1px solid #F1F5F9′ }}>Step {i+1}: {h}</div>)}
+                {selected.howItWorks.map((h, i) => <div key={i} style={{ fontSize: 13, padding: '5px 0', borderBottom: '1px solid #F1F5F9' }}>Step {i+1}: {h}</div>)}
                 <div style={{ marginTop: 16, background: '#DBEAFE', borderRadius: 8, padding: 10 }}>
                   <p style={{ margin: 0, fontSize: 12 }}>⚖️ <strong>Legal Note:</strong> {selected.legalNote}</p>
                 </div>
@@ -109,7 +109,7 @@ export default function DFWMultipleHomeContractGuide() {
                 <p style={{ fontWeight: 700, fontSize: 13, marginBottom: 8 }}>🤝 What to Tell Your Agent</p>
                 <div style={{ background: '#F0FDF4', borderRadius: 8, padding: 10, marginBottom: 16, fontSize: 13 }}>{selected.agentNote}</div>
                 <p style={{ fontWeight: 700, fontSize: 13, marginBottom: 8 }}>⚠️ Risks to Know</p>
-                {selected.risks.map((r, i) => <div key={i} style={{ fontSize: 13, padding: '4px 0', borderBottom: '1px solid #F1F5F9', color: '#DC2626′ }}>• {r}</div>)}
+                {selected.risks.map((r, i) => <div key={i} style={{ fontSize: 13, padding: '4px 0', borderBottom: '1px solid #F1F5F9', color: '#DC2626' }}>• {r}</div>)}
               </div>
             </div>
           </div>

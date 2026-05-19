@@ -24,7 +24,7 @@ export default function DFWSystemLifespanGuide() {
   const remaining = (system && age !== null) ? Math.max(0, dfwLifespan! - age) : null;
   const pct = (system && age !== null && dfwLifespan) ? Math.min(100, Math.round((age / dfwLifespan) * 100)) : null;
 
-  const statusColor = remaining === null ? '#aaa' : remaining <= 2 ? '#ef4444′ : remaining <= 5 ? '#f97316' : '#22c55e';
+  const statusColor = remaining === null ? '#aaa' : remaining <= 2 ? '#ef4444' : remaining <= 5 ? '#f97316' : '#22c55e';
   const statusLabel = remaining === null ? '' : remaining === 0 ? 'Replace Now' : remaining <= 2 ? 'Replace Soon' : remaining <= 5 ? 'Plan Replacement' : 'Good Shape';
 
   return (
@@ -32,7 +32,7 @@ export default function DFWSystemLifespanGuide() {
       <div style={{ maxWidth: 700, margin: '0 auto' }}>
         <div style={{ textAlign: 'center', marginBottom: '2rem' }}>
           <div style={{ fontSize: '2.5rem' }}>🏡</div>
-          <h1 style={{ color: '#F5E642', fontSize: '1.8rem', margin: '0.5rem 0′ }}>DFW Home System Lifespan Guide</h1>
+          <h1 style={{ color: '#F5E642', fontSize: '1.8rem', margin: '0.5rem 0' }}>DFW Home System Lifespan Guide</h1>
           <p style={{ color: '#94a3b8', fontSize: '0.95rem' }}>DFW climate-adjusted lifespans — extreme heat, hail, and expansive clay soil all factor in</p>
         </div>
 
@@ -45,7 +45,7 @@ export default function DFWSystemLifespanGuide() {
           </select>
 
           <label style={{ display: 'block', color: '#F5E642', marginBottom: 8, fontWeight: 600 }}>Install Year</label>
-          <input type="number" placeholder="e.g. 2010″ min={1950} max={currentYear} value={installYear}
+          <input type="number" placeholder="e.g. 2010" min={1950} max={currentYear} value={installYear}
             onChange={e => setInstallYear(e.target.value)}
             style={{ width: '100%', padding: '0.75rem', borderRadius: 8, border: '1px solid #1e3a5f', background: '#0A1628', color: '#fff', fontSize: '1rem', boxSizing: 'border-box' }} />
         </div>
@@ -87,7 +87,7 @@ export default function DFWSystemLifespanGuide() {
           {SYSTEMS.map(s => (
             <div key={s.name} onClick={() => setSelectedSystem(s.name)}
               style={{ display: 'flex', justifyContent: 'space-between', padding: '0.6rem 0', borderBottom: '1px solid #1e3a5f', cursor: 'pointer' }}>
-              <span style={{ color: '#e2e8f0′ }}>{s.icon} {s.name}</span>
+              <span style={{ color: '#e2e8f0' }}>{s.icon} {s.name}</span>
               <span style={{ color: '#F5E642', fontWeight: 600 }}>{Math.round(s.national + s.dfwAdjust)} yrs {s.hailRisk ? '🌨️' : ''}</span>
             </div>
           ))}

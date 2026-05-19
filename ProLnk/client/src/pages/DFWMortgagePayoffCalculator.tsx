@@ -50,21 +50,21 @@ export default function DFWMortgagePayoffCalculator() {
               <label style={{ display: 'block', fontWeight: 700, color: '#1a2744', marginBottom: '0.5rem', fontSize: '0.85rem' }}>Loan Balance</label>
               <input type="range" min={50000} max={900000} step={5000} value={balance}
                 onChange={e => setBalance(Number(e.target.value))}
-                style={{ width: '100%', accentColor: '#1a2744′ }} />
+                style={{ width: '100%', accentColor: '#1a2744' }} />
               <div style={{ textAlign: 'center', fontWeight: 700, color: '#1a2744', fontSize: '1.1rem' }}>${balance.toLocaleString()}</div>
             </div>
             <div>
               <label style={{ display: 'block', fontWeight: 700, color: '#1a2744', marginBottom: '0.5rem', fontSize: '0.85rem' }}>Interest Rate (%)</label>
               <input type="range" min={3} max={10} step={0.25} value={rate}
                 onChange={e => setRate(Number(e.target.value))}
-                style={{ width: '100%', accentColor: '#1a2744′ }} />
+                style={{ width: '100%', accentColor: '#1a2744' }} />
               <div style={{ textAlign: 'center', fontWeight: 700, color: '#1a2744', fontSize: '1.1rem' }}>{rate.toFixed(2)}%</div>
             </div>
             <div>
               <label style={{ display: 'block', fontWeight: 700, color: '#1a2744', marginBottom: '0.5rem', fontSize: '0.85rem' }}>Extra Monthly ($)</label>
               <input type="range" min={0} max={2000} step={50} value={extra}
                 onChange={e => setExtra(Number(e.target.value))}
-                style={{ width: '100%', accentColor: '#1a2744′ }} />
+                style={{ width: '100%', accentColor: '#1a2744' }} />
               <div style={{ textAlign: 'center', fontWeight: 700, color: '#1a2744', fontSize: '1.1rem' }}>${extra.toLocaleString()}</div>
             </div>
           </div>
@@ -73,9 +73,9 @@ export default function DFWMortgagePayoffCalculator() {
         <div style={{ background: '#1a2744', borderRadius: 16, padding: '1.5rem', marginBottom: '1.5rem', color: '#fff' }}>
           <h2 style={{ margin: '0 0 1rem', fontSize: '1rem', color: '#aab4cc' }}>Your Custom Extra Payment: +${extra}/mo</h2>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: '1rem', textAlign: 'center' }}>
-            <div><div style={{ fontSize: '2rem', fontWeight: 800, color: '#F5E642′ }}>{custom.monthsSaved}</div><div style={{ fontSize: '0.8rem', color: '#aab4cc' }}>Months Saved</div></div>
-            <div><div style={{ fontSize: '2rem', fontWeight: 800, color: '#F5E642′ }}>${Math.round(custom.interestSaved).toLocaleString()}</div><div style={{ fontSize: '0.8rem', color: '#aab4cc' }}>Interest Saved</div></div>
-            <div><div style={{ fontSize: '1.25rem', fontWeight: 800, color: '#F5E642′ }}>{addMonths(custom.months)}</div><div style={{ fontSize: '0.8rem', color: '#aab4cc' }}>New Payoff Date</div></div>
+            <div><div style={{ fontSize: '2rem', fontWeight: 800, color: '#F5E642' }}>{custom.monthsSaved}</div><div style={{ fontSize: '0.8rem', color: '#aab4cc' }}>Months Saved</div></div>
+            <div><div style={{ fontSize: '2rem', fontWeight: 800, color: '#F5E642' }}>${Math.round(custom.interestSaved).toLocaleString()}</div><div style={{ fontSize: '0.8rem', color: '#aab4cc' }}>Interest Saved</div></div>
+            <div><div style={{ fontSize: '1.25rem', fontWeight: 800, color: '#F5E642' }}>{addMonths(custom.months)}</div><div style={{ fontSize: '0.8rem', color: '#aab4cc' }}>New Payoff Date</div></div>
           </div>
         </div>
 
@@ -85,8 +85,8 @@ export default function DFWMortgagePayoffCalculator() {
             return (
               <div key={s} style={{ background: '#fff', borderRadius: 12, padding: '1rem', boxShadow: '0 2px 8px rgba(0,0,0,0.06)', textAlign: 'center' }}>
                 <div style={{ fontWeight: 700, color: '#1a2744', marginBottom: '0.5rem', fontSize: '0.9rem' }}>+${s}/mo</div>
-                <div style={{ fontSize: '1.5rem', fontWeight: 800, color: '#2e7d32′ }}>{r.monthsSaved}mo</div>
-                <div style={{ fontSize: '0.75rem', color: '#888′ }}>saved</div>
+                <div style={{ fontSize: '1.5rem', fontWeight: 800, color: '#2e7d32' }}>{r.monthsSaved}mo</div>
+                <div style={{ fontSize: '0.75rem', color: '#888' }}>saved</div>
                 <div style={{ fontSize: '0.85rem', fontWeight: 700, color: '#1a2744', marginTop: '0.25rem' }}>${Math.round(r.interestSaved / 1000)}K less interest</div>
               </div>
             );

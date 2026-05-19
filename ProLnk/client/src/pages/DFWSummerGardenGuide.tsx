@@ -48,8 +48,8 @@ export default function DFWSummerGardenGuide() {
             {heatTolerantFlowers.map(f => (
               <div key={f.name} style={{ background: '#0A1628', borderRadius: '8px', padding: '12px', border: '1px solid #2d3f5e' }}>
                 <div style={{ color: '#F5E642', fontWeight: 700, marginBottom: '4px' }}>{f.name}</div>
-                <div style={{ fontSize: '0.8rem', color: '#94a3b8′ }}>💧 {f.water}</div>
-                <div style={{ fontSize: '0.8rem', color: '#94a3b8′ }}>☀️ {f.sun}</div>
+                <div style={{ fontSize: '0.8rem', color: '#94a3b8' }}>💧 {f.water}</div>
+                <div style={{ fontSize: '0.8rem', color: '#94a3b8' }}>☀️ {f.sun}</div>
                 <div style={{ fontSize: '0.8rem', color: '#64748b', marginTop: '4px' }}>{f.notes}</div>
               </div>
             ))}
@@ -62,11 +62,11 @@ export default function DFWSummerGardenGuide() {
             <div key={v.name} style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '10px 0', borderBottom: '1px solid #2d3f5e' }}>
               <div>
                 <div style={{ fontWeight: 600 }}>{v.name}</div>
-                <div style={{ fontSize: '0.8rem', color: '#94a3b8′ }}>{v.notes}</div>
+                <div style={{ fontSize: '0.8rem', color: '#94a3b8' }}>{v.notes}</div>
               </div>
               <div style={{ textAlign: 'right', fontSize: '0.85rem' }}>
-                <div style={{ color: '#F5E642′ }}>Plant by {v.plantBy}</div>
-                <div style={{ color: '#94a3b8′ }}>Harvest {v.harvest}</div>
+                <div style={{ color: '#F5E642' }}>Plant by {v.plantBy}</div>
+                <div style={{ color: '#94a3b8' }}>Harvest {v.harvest}</div>
               </div>
             </div>
           ))}
@@ -75,7 +75,7 @@ export default function DFWSummerGardenGuide() {
         <div style={{ background: '#1e2d45', borderRadius: '12px', padding: '20px', marginBottom: '24px', border: '1px solid #2d3f5e' }}>
           <h2 style={{ color: '#F5E642', fontSize: '1.1rem', fontWeight: 700, marginBottom: '12px' }}>❌ What to Skip June–August in DFW</h2>
           {skipInSummer.map((item, i) => (
-            <div key={i} style={{ padding: '8px 0', borderBottom: '1px solid #2d3f5e', fontSize: '0.9rem', color: '#94a3b8′ }}>
+            <div key={i} style={{ padding: '8px 0', borderBottom: '1px solid #2d3f5e', fontSize: '0.9rem', color: '#94a3b8' }}>
               🚫 {item}
             </div>
           ))}
@@ -99,14 +99,14 @@ export default function DFWSummerGardenGuide() {
               </select>
             </div>
           </div>
-          <button onClick={() => setShowResults(true)} disabled={!gardenType || !spaceSize} style={{ background: gardenType && spaceSize ? '#F5E642′ : '#2d3f5e', color: gardenType && spaceSize ? '#0A1628' : '#64748b', border: ’none', borderRadius: '8px', padding: '12px 24px', fontWeight: 700, cursor: gardenType && spaceSize ? 'pointer' : 'not-allowed', fontSize: '0.95rem' }}>
+          <button onClick={() => setShowResults(true)} disabled={!gardenType || !spaceSize} style={{ background: gardenType && spaceSize ? '#F5E642' : '#2d3f5e', color: gardenType && spaceSize ? '#0A1628' : '#64748b', border: 'none', borderRadius: '8px', padding: '12px 24px', fontWeight: 700, cursor: gardenType && spaceSize ? 'pointer' : 'not-allowed', fontSize: '0.95rem' }}>
             Generate My Summer Garden Plan
           </button>
           {showResults && gardenType && (
-            <div style={{ marginTop: '16px', background: '#0A1628', borderRadius: '8px', padding: '16px', border: '1px solid #F5E642′ }}>
+            <div style={{ marginTop: '16px', background: '#0A1628', borderRadius: '8px', padding: '16px', border: '1px solid #F5E642' }}>
               <div style={{ color: '#F5E642', fontWeight: 700, marginBottom: '10px' }}>💧 Watering Schedule for {gardenType}</div>
               {getWateringSchedule().map((s, i) => (
-                <div key={i} style={{ padding: '6px 0', fontSize: '0.9rem', color: '#e2e8f0', borderBottom: '1px solid #1e2d45′ }}>✅ {s}</div>
+                <div key={i} style={{ padding: '6px 0', fontSize: '0.9rem', color: '#e2e8f0', borderBottom: '1px solid #1e2d45' }}>✅ {s}</div>
               ))}
               <div style={{ marginTop: '12px', color: '#F5E642', fontWeight: 700 }}>🌿 Best Choices for {spaceSize}:</div>
               <div style={{ fontSize: '0.9rem', color: '#94a3b8', marginTop: '6px' }}>Lantana, Portulaca, Okra — proven DFW summer survivors for your space size.</div>

@@ -4,12 +4,12 @@ const homeTypes = ['Single Story Slab', 'Two Story Wood Frame', 'Brick Veneer', 
 const weatherConcerns = ['Summer Heat (100°F+)', 'Ice Storms', '60mph Wind Gusts', 'Flash Floods', 'Tornado Risk', 'Hail'];
 
 const recommendations: Record<string, { items: string[]; cost: string }> = {
-  'Single Story Slab|Summer Heat (100°F+)': { items: ['Radiant barrier in attic', 'Upgrade attic insulation to R-38+', 'Solar attic fan', 'Programmable thermostat', 'Seal all ductwork'], cost: '$1,200–$3,500′ },
-  'Single Story Slab|Ice Storms': { items: ['Pipe insulation in exterior walls', 'Outdoor faucet covers', 'Attic hatch insulation', 'Weatherstrip all doors', 'Generator hookup'], cost: '$800–$2,200′ },
-  'Single Story Slab|60mph Wind Gusts': { items: ['Reinforce garage door (bracing kit)', 'Impact-rated entry doors', 'Strap down HVAC unit', 'Trim overhanging trees', 'Inspect roof fasteners'], cost: '$1,500–$4,000′ },
-  'Single Story Slab|Flash Floods': { items: ['Regrade yard away from foundation', 'French drain installation', 'Flood vents in garage', 'Sump pump in low spots', 'Extend downspouts 6ft+'], cost: '$2,000–$8,000′ },
-  'Single Story Slab|Tornado Risk': { items: ['Safe room installation', 'Reinforce garage door', 'Secure outdoor furniture anchors', 'Interior safe room or shelter', 'Emergency kit + plan'], cost: '$5,000–$12,000′ },
-  'Single Story Slab|Hail': { items: ['Class 4 impact-resistant roof', 'Hail-rated skylights', 'Screen HVAC condenser', 'Vehicle covered parking', 'Document pre-storm condition'], cost: '$8,000–$18,000′ },
+  'Single Story Slab|Summer Heat (100°F+)': { items: ['Radiant barrier in attic', 'Upgrade attic insulation to R-38+', 'Solar attic fan', 'Programmable thermostat', 'Seal all ductwork'], cost: '$1,200–$3,500' },
+  'Single Story Slab|Ice Storms': { items: ['Pipe insulation in exterior walls', 'Outdoor faucet covers', 'Attic hatch insulation', 'Weatherstrip all doors', 'Generator hookup'], cost: '$800–$2,200' },
+  'Single Story Slab|60mph Wind Gusts': { items: ['Reinforce garage door (bracing kit)', 'Impact-rated entry doors', 'Strap down HVAC unit', 'Trim overhanging trees', 'Inspect roof fasteners'], cost: '$1,500–$4,000' },
+  'Single Story Slab|Flash Floods': { items: ['Regrade yard away from foundation', 'French drain installation', 'Flood vents in garage', 'Sump pump in low spots', 'Extend downspouts 6ft+'], cost: '$2,000–$8,000' },
+  'Single Story Slab|Tornado Risk': { items: ['Safe room installation', 'Reinforce garage door', 'Secure outdoor furniture anchors', 'Interior safe room or shelter', 'Emergency kit + plan'], cost: '$5,000–$12,000' },
+  'Single Story Slab|Hail': { items: ['Class 4 impact-resistant roof', 'Hail-rated skylights', 'Screen HVAC condenser', 'Vehicle covered parking', 'Document pre-storm condition'], cost: '$8,000–$18,000' },
 };
 
 function getRecommendation(home: string, concern: string) {
@@ -39,7 +39,7 @@ export default function DFWHomeWeatherProofingGuide() {
         </p>
 
         <div style={{ background: '#0f2040', borderRadius: 8, padding: '1.5rem', marginBottom: '1.5rem' }}>
-          <div style={{ fontWeight: 600, marginBottom: '1rem', color: '#F5E642′ }}>🏠 Priority Weather Protection by Risk</div>
+          <div style={{ fontWeight: 600, marginBottom: '1rem', color: '#F5E642' }}>🏠 Priority Weather Protection by Risk</div>
           {[['☀️ Summer Heat', 'Radiant barrier + R-38 insulation = 20–30% cooling cost reduction'],
             ['🧊 Ice Storms', 'Pipe insulation + generator = prevents most Feb 2021-style losses'],
             ['💨 Wind', 'Garage door bracing is #1 — single largest point of failure in high wind'],
@@ -54,7 +54,7 @@ export default function DFWHomeWeatherProofingGuide() {
         </div>
 
         <div style={{ background: '#0f2040', borderRadius: 8, padding: '1.5rem', marginBottom: '1.5rem' }}>
-          <div style={{ fontWeight: 600, marginBottom: '1rem', color: '#F5E642′ }}>🔍 Get Your Priority List</div>
+          <div style={{ fontWeight: 600, marginBottom: '1rem', color: '#F5E642' }}>🔍 Get Your Priority List</div>
           <div style={{ marginBottom: '1rem' }}>
             <label style={{ display: 'block', marginBottom: '0.4rem', color: '#94a3b8', fontSize: '0.9rem' }}>Home Type</label>
             <select value={homeType} onChange={e => setHomeType(e.target.value)}
@@ -78,12 +78,12 @@ export default function DFWHomeWeatherProofingGuide() {
         </div>
 
         {result && (
-          <div style={{ background: '#0f2040', borderRadius: 8, padding: '1.5rem', border: '1px solid #F5E642′ }}>
+          <div style={{ background: '#0f2040', borderRadius: 8, padding: '1.5rem', border: '1px solid #F5E642' }}>
             <div style={{ fontWeight: 700, color: '#F5E642', marginBottom: '1rem' }}>✅ Your Priority Weatherproofing Investments</div>
             {result.items.map((item, i) => (
               <div key={i} style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
-                <span style={{ color: '#F5E642′ }}>▸</span>
-                <span style={{ color: '#e2e8f0′ }}>{item}</span>
+                <span style={{ color: '#F5E642' }}>▸</span>
+                <span style={{ color: '#e2e8f0' }}>{item}</span>
               </div>
             ))}
             <div style={{ marginTop: '1rem', background: '#1e3a5f', borderRadius: 6, padding: '0.75rem', color: '#F5E642', fontWeight: 600 }}>

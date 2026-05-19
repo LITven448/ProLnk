@@ -30,8 +30,8 @@ export default function DFWHomeAutomationGuide2026() {
             <div key={p.name} style={{ background: '#112240', borderRadius: 10, padding: 16 }}>
               <div style={{ fontSize: 22, marginBottom: 6 }}>{p.icon}</div>
               <div style={{ fontWeight: 700, color: '#F5E642', marginBottom: 4 }}>{p.name}</div>
-              <div style={{ fontSize: 12, color: '#94a3b8′ }}>{p.freq}</div>
-              <div style={{ fontSize: 12, color: '#94a3b8′ }}>{p.range}</div>
+              <div style={{ fontSize: 12, color: '#94a3b8' }}>{p.freq}</div>
+              <div style={{ fontSize: 12, color: '#94a3b8' }}>{p.range}</div>
               <div style={{ fontSize: 12, color: '#cbd5e1', marginTop: 6 }}>Best for: {p.best}</div>
             </div>
           ))}
@@ -41,17 +41,17 @@ export default function DFWHomeAutomationGuide2026() {
           <h2 style={{ color: '#F5E642', fontSize: 16, marginBottom: 12 }}>🎯 What's your automation goal?</h2>
           <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
             {goals.map((g, i) => (
-              <button key={i} onClick={() => setSelected(i)} style={{ background: selected === i ? '#F5E642′ : '#1e3a5f', color: selected === i ? '#0A1628' : '#e2e8f0', border: ’none', borderRadius: 8, padding: '10px 14px', textAlign: 'left', cursor: 'pointer', fontWeight: 600, fontSize: 14 }}>
+              <button key={i} onClick={() => setSelected(i)} style={{ background: selected === i ? '#F5E642' : '#1e3a5f', color: selected === i ? '#0A1628' : '#e2e8f0', border: 'none', borderRadius: 8, padding: '10px 14px', textAlign: 'left', cursor: 'pointer', fontWeight: 600, fontSize: 14 }}>
                 {g.icon} {g.label}
               </button>
             ))}
           </div>
           {rec && (
-            <div style={{ marginTop: 16, background: '#0A1628', borderRadius: 10, padding: 16, borderLeft: '4px solid #F5E642′ }}>
+            <div style={{ marginTop: 16, background: '#0A1628', borderRadius: 10, padding: 16, borderLeft: '4px solid #F5E642' }}>
               <div style={{ color: '#F5E642', fontWeight: 700, marginBottom: 6 }}>Recommended: {rec.protocol}</div>
               <div style={{ fontSize: 13, color: '#cbd5e1', marginBottom: 4 }}>Hub: {rec.hub}</div>
               <div style={{ fontSize: 13, color: '#cbd5e1', marginBottom: 4 }}>Start with: {rec.starter}</div>
-              <div style={{ fontSize: 12, color: '#94a3b8′ }}>💡 {rec.note}</div>
+              <div style={{ fontSize: 12, color: '#94a3b8' }}>💡 {rec.note}</div>
             </div>
           )}
         </div>

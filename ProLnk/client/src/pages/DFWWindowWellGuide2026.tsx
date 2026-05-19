@@ -27,10 +27,10 @@ export default function DFWWindowWellGuide2026() {
 
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16, marginBottom: 32 }}>
           {[
-            { icon: '📏', title: 'Egress Minimum Size', desc: '20″ wide × 24″ high × 5.7 sq ft net opening — IRC minimum for bedroom egress compliance.' },
-            { icon: '🌧️', title: 'DFW Drainage Critical', desc: 'Clay soil around well base holds water. 6″ crushed gravel + drain pipe prevents hydrostatic window damage.' },
+            { icon: '📏', title: 'Egress Minimum Size', desc: '20" wide × 24" high × 5.7 sq ft net opening — IRC minimum for bedroom egress compliance.' },
+            { icon: '🌧️', title: 'DFW Drainage Critical', desc: 'Clay soil around well base holds water. 6" crushed gravel + drain pipe prevents hydrostatic window damage.' },
             { icon: '🦝', title: 'Cover Required', desc: 'Polycarbonate bubble cover blocks DFW storms and critters. Egress covers must open from inside without tools.' },
-            { icon: '🪜', title: 'Ladder for Deep Wells', desc: 'IRC requires ladder for wells deeper than 44″. Most DFW egress wells are 48–60″ deep — ladder required.' },
+            { icon: '🪜', title: 'Ladder for Deep Wells', desc: 'IRC requires ladder for wells deeper than 44". Most DFW egress wells are 48–60" deep — ladder required.' },
           ].map(item => (
             <div key={item.title} style={{ background: '#1e3a5f', borderRadius: 10, padding: 20 }}>
               <div style={{ fontSize: 28, marginBottom: 8 }}>{item.icon}</div>

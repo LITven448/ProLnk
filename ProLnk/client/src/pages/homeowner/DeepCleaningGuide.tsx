@@ -44,7 +44,7 @@ const INITIAL_ROOMS: Room[] = [
     id: "bathrooms",
     name: "Bathrooms",
     icon: Bath,
-    color: "#06B6D4″,
+    color: "#06B6D4",
     items: makeItems("bathrooms", [
       "Scrub tile grout with baking soda + brush",
       "Clean exhaust fan blades and housing",
@@ -58,7 +58,7 @@ const INITIAL_ROOMS: Room[] = [
     id: "living",
     name: "Living Areas",
     icon: Sofa,
-    color: "#8B5CF6″,
+    color: "#8B5CF6",
     items: makeItems("living", [
       "Wipe ceiling fan blades — both sides",
       "Vacuum and wipe baseboards throughout",
@@ -71,7 +71,7 @@ const INITIAL_ROOMS: Room[] = [
     id: "bedrooms",
     name: "Bedrooms",
     icon: BedDouble,
-    color: "#10B981″,
+    color: "#10B981",
     items: makeItems("bedrooms", [
       "Vacuum and sanitize under all beds",
       "Declutter and organize closets fully",
@@ -83,7 +83,7 @@ const INITIAL_ROOMS: Room[] = [
     id: "garage",
     name: "Garage",
     icon: Car,
-    color: "#EF4444″,
+    color: "#EF4444",
     items: makeItems("garage", [
       "Apply degreaser to concrete floor and rinse",
       "Organize tools, shelving, and storage bins",
@@ -96,7 +96,7 @@ const INITIAL_ROOMS: Room[] = [
     id: "exterior",
     name: "Exterior",
     icon: Sun,
-    color: "#F97316″,
+    color: "#F97316",
     items: makeItems("exterior", [
       "Pressure wash driveway, sidewalks, and siding",
       "Clean and seal deck or patio surface",
@@ -108,17 +108,17 @@ const INITIAL_ROOMS: Room[] = [
 ];
 
 const PRO_SERVICES = [
-  { name: "Carpet Deep Clean", range: "$150–$250″, note: "High-traffic areas trap allergens", icon: Sparkles, color: "#8B5CF6" },
-  { name: "Air Duct Cleaning", range: "$200–$400″, note: "Removes pollen, mold spores, dust", icon: Wind, color: "#06B6D4" },
-  { name: "Pressure Washing", range: "$150–$300″, note: "Siding, driveway, roof stains", icon: Droplets, color: "#3B82F6" },
-  { name: "Window Cleaning", range: "$150–$400″, note: "Interior + exterior, all stories", icon: Sun, color: "#F59E0B" },
+  { name: "Carpet Deep Clean", range: "$150–$250", note: "High-traffic areas trap allergens", icon: Sparkles, color: "#8B5CF6" },
+  { name: "Air Duct Cleaning", range: "$200–$400", note: "Removes pollen, mold spores, dust", icon: Wind, color: "#06B6D4" },
+  { name: "Pressure Washing", range: "$150–$300", note: "Siding, driveway, roof stains", icon: Droplets, color: "#3B82F6" },
+  { name: "Window Cleaning", range: "$150–$400", note: "Interior + exterior, all stories", icon: Sun, color: "#F59E0B" },
 ];
 
 function ProgressRing({ pct, size = 80, stroke = 8 }: { pct: number; size?: number; stroke?: number }) {
   const r = (size - stroke) / 2;
   const circ = 2 * Math.PI * r;
   const offset = circ - (pct / 100) * circ;
-  const color = pct >= 80 ? "#10B981″ : pct >= 40 ? "#F59E0B" : "#00B5B8";
+  const color = pct >= 80 ? "#10B981" : pct >= 40 ? "#F59E0B" : "#00B5B8";
   return (
     <svg width={size} height={size} style={{ transform: "rotate(-90deg)" }}>
       <circle cx={size / 2} cy={size / 2} r={r} fill="none" stroke="#1E3A5F" strokeWidth={stroke} />
@@ -153,8 +153,8 @@ export default function DeepCleaningGuide() {
       <div className="min-h-screen bg-[#0A1628] text-white px-4 py-8 max-w-4xl mx-auto">
 
         {/* Header */}
-        <div className="mb-8″>
-          <div className="flex items-center gap-3 mb-2″>
+        <div className="mb-8">
+          <div className="flex items-center gap-3 mb-2">
             <div className="w-10 h-10 rounded-xl bg-[#00B5B8]/20 flex items-center justify-center">
               <Sparkles className="w-5 h-5 text-[#00B5B8]" />
             </div>
@@ -164,25 +164,25 @@ export default function DeepCleaningGuide() {
             </div>
           </div>
           <div className="mt-3 inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#10B981]/10 border border-[#10B981]/30 text-xs text-[#10B981]">
-            <Sun className="w-3.5 h-3.5″ />
+            <Sun className="w-3.5 h-3.5" />
             Spring Cleaning Focus — May 2026
           </div>
         </div>
 
         {/* Overall Progress */}
-        <div className="bg-[#0D2137] rounded-2xl border border-[#1E3A5F] p-6 mb-8 flex items-center gap-6″>
-          <div className="relative flex-shrink-0″>
+        <div className="bg-[#0D2137] rounded-2xl border border-[#1E3A5F] p-6 mb-8 flex items-center gap-6">
+          <div className="relative flex-shrink-0">
             <ProgressRing pct={overallPct} size={100} stroke={10} />
             <div className="absolute inset-0 flex items-center justify-center">
               <span className="text-xl font-bold">{overallPct}%</span>
             </div>
           </div>
           <div>
-            <p className="text-lg font-semibold mb-1″>Overall Progress</p>
+            <p className="text-lg font-semibold mb-1">Overall Progress</p>
             <p className="text-[#94A3B8] text-sm">{totalChecked} of {totalItems} tasks complete across {rooms.length} rooms</p>
             {overallPct === 100 && (
               <div className="mt-2 flex items-center gap-2 text-[#10B981] text-sm font-medium">
-                <Star className="w-4 h-4″ /> Spring cleaning complete!
+                <Star className="w-4 h-4" /> Spring cleaning complete!
               </div>
             )}
           </div>
@@ -193,30 +193,30 @@ export default function DeepCleaningGuide() {
         </div>
 
         {/* DFW Tip */}
-        <div className="bg-[#F59E0B]/10 border border-[#F59E0B]/30 rounded-xl p-4 mb-8 flex gap-3″>
-          <Wind className="w-5 h-5 text-[#F59E0B] flex-shrink-0 mt-0.5″ />
+        <div className="bg-[#F59E0B]/10 border border-[#F59E0B]/30 rounded-xl p-4 mb-8 flex gap-3">
+          <Wind className="w-5 h-5 text-[#F59E0B] flex-shrink-0 mt-0.5" />
           <p className="text-sm text-[#FCD34D]">
             <span className="font-semibold">DFW Tip:</span> Texas spring means heavy pollen. MERV-11 filters and weekly vacuuming reduce indoor pollen by 60%. Replace your filter now before peak cedar/oak season.
           </p>
         </div>
 
         {/* Room Checklists */}
-        <div className="space-y-4 mb-10″>
+        <div className="space-y-4 mb-10">
           {rooms.map(room => {
             const checked = room.items.filter(i => i.checked).length;
             const pct = Math.round((checked / room.items.length) * 100);
             const Icon = room.icon;
             return (
               <div key={room.id} className="bg-[#0D2137] rounded-2xl border border-[#1E3A5F] overflow-hidden">
-                <div className="flex items-center gap-4 px-5 py-4 border-b border-[#1E3A5F]/50″>
-                  <div className="w-9 h-9 rounded-lg flex items-center justify-center" style={{ background: room.color + "20″ }}>
-                    <Icon className="w-5 h-5″ style={{ color: room.color }} />
+                <div className="flex items-center gap-4 px-5 py-4 border-b border-[#1E3A5F]/50">
+                  <div className="w-9 h-9 rounded-lg flex items-center justify-center" style={{ background: room.color + "20" }}>
+                    <Icon className="w-5 h-5" style={{ color: room.color }} />
                   </div>
-                  <div className="flex-1″>
+                  <div className="flex-1">
                     <p className="font-semibold">{room.name}</p>
                     <p className="text-xs text-[#94A3B8]">{checked}/{room.items.length} complete</p>
                   </div>
-                  <div className="flex items-center gap-3″>
+                  <div className="flex items-center gap-3">
                     <div className="relative">
                       <ProgressRing pct={pct} size={40} stroke={4} />
                       <div className="absolute inset-0 flex items-center justify-center">
@@ -225,7 +225,7 @@ export default function DeepCleaningGuide() {
                     </div>
                   </div>
                 </div>
-                <div className="divide-y divide-[#1E3A5F]/30″>
+                <div className="divide-y divide-[#1E3A5F]/30">
                   {room.items.map(item => (
                     <button
                       key={item.id}
@@ -233,7 +233,7 @@ export default function DeepCleaningGuide() {
                       className="w-full flex items-center gap-3 px-5 py-3.5 hover:bg-[#1E3A5F]/30 transition-colors text-left"
                     >
                       {item.checked
-                        ? <CheckSquare className="w-5 h-5 flex-shrink-0″ style={{ color: room.color }} />
+                        ? <CheckSquare className="w-5 h-5 flex-shrink-0" style={{ color: room.color }} />
                         : <Square className="w-5 h-5 flex-shrink-0 text-[#4B5563]" />
                       }
                       <span className={`text-sm ${item.checked ? "line-through text-[#4B5563]" : "text-[#CBD5E1]"}`}>
@@ -248,23 +248,23 @@ export default function DeepCleaningGuide() {
         </div>
 
         {/* When to Hire Pros */}
-        <div className="mb-10″>
-          <div className="flex items-center gap-2 mb-4″>
+        <div className="mb-10">
+          <div className="flex items-center gap-2 mb-4">
             <TrendingUp className="w-5 h-5 text-[#00B5B8]" />
             <h2 className="text-lg font-semibold">When to Hire Pros</h2>
           </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3″>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
             {PRO_SERVICES.map(svc => {
               const Icon = svc.icon;
               return (
-                <div key={svc.name} className="bg-[#0D2137] border border-[#1E3A5F] rounded-xl p-4 flex gap-3″>
-                  <div className="w-10 h-10 rounded-lg flex items-center justify-center flex-shrink-0″ style={{ background: svc.color + "20" }}>
-                    <Icon className="w-5 h-5″ style={{ color: svc.color }} />
+                <div key={svc.name} className="bg-[#0D2137] border border-[#1E3A5F] rounded-xl p-4 flex gap-3">
+                  <div className="w-10 h-10 rounded-lg flex items-center justify-center flex-shrink-0" style={{ background: svc.color + "20" }}>
+                    <Icon className="w-5 h-5" style={{ color: svc.color }} />
                   </div>
                   <div>
                     <p className="font-semibold text-sm">{svc.name}</p>
                     <p className="text-[#00B5B8] font-bold text-sm">{svc.range}</p>
-                    <p className="text-xs text-[#94A3B8] mt-0.5″>{svc.note}</p>
+                    <p className="text-xs text-[#94A3B8] mt-0.5">{svc.note}</p>
                   </div>
                 </div>
               );
@@ -273,13 +273,13 @@ export default function DeepCleaningGuide() {
         </div>
 
         {/* CTA */}
-        <div className="bg-gradient-to-r from-[#00B5B8]/20 to-[#0D2137] border border-[#00B5B8]/40 rounded-2xl p-6 flex flex-col sm:flex-row items-start sm:items-center gap-4″>
-          <div className="flex-1″>
-            <p className="font-semibold text-lg mb-1″>Ready to go deeper?</p>
+        <div className="bg-gradient-to-r from-[#00B5B8]/20 to-[#0D2137] border border-[#00B5B8]/40 rounded-2xl p-6 flex flex-col sm:flex-row items-start sm:items-center gap-4">
+          <div className="flex-1">
+            <p className="font-semibold text-lg mb-1">Ready to go deeper?</p>
             <p className="text-[#94A3B8] text-sm">Connect with a vetted DFW cleaning pro for the tasks you'd rather skip.</p>
           </div>
-          <button className="flex items-center gap-2 bg-[#00B5B8] hover:bg-[#009EA1] text-white px-5 py-2.5 rounded-xl font-semibold text-sm transition-colors flex-shrink-0″>
-            <PhoneCall className="w-4 h-4″ />
+          <button className="flex items-center gap-2 bg-[#00B5B8] hover:bg-[#009EA1] text-white px-5 py-2.5 rounded-xl font-semibold text-sm transition-colors flex-shrink-0">
+            <PhoneCall className="w-4 h-4" />
             Book a Cleaning Pro
           </button>
         </div>

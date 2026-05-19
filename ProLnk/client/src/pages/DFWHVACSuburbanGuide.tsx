@@ -68,7 +68,7 @@ export default function DFWHVACSuburbanGuide() {
               onClick={() => setSelected(s)}
               style={{
                 padding: '10px 20px', borderRadius: 8, border: `2px solid ${selected.name === s.name ? '#F5E642' : '#1e3a5f'}`,
-                background: selected.name === s.name ? '#F5E642′ : '#0d2137', color: selected.name === s.name ? '#0A1628' : '#94a3b8',
+                background: selected.name === s.name ? '#F5E642' : '#0d2137', color: selected.name === s.name ? '#0A1628' : '#94a3b8',
                 fontWeight: 600, cursor: 'pointer', fontSize: 14,
               }}
             >

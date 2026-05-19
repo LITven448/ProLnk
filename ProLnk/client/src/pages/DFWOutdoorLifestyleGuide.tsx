@@ -113,7 +113,7 @@ export default function DFWOutdoorLifestyleGuide() {
             { icon: '🚵', name: 'Erwin MTB Park', desc: 'McKinney — best mountain biking in DFW' },
             { icon: '🌊', name: 'Grapevine Lake', desc: 'Flower Mound — largest DFW lake park' },
           ].map(s => (
-            <div key={s.name} style={{ background: '#111e35', borderRadius: 10, padding: 16, borderLeft: '3px solid #F5E642′ }}>
+            <div key={s.name} style={{ background: '#111e35', borderRadius: 10, padding: 16, borderLeft: '3px solid #F5E642' }}>
               <div style={{ fontSize: 24, marginBottom: 6 }}>{s.icon}</div>
               <div style={{ fontWeight: 600, fontSize: 14 }}>{s.name}</div>
               <div style={{ color: '#94a3b8', fontSize: 12 }}>{s.desc}</div>
@@ -129,9 +129,9 @@ export default function DFWOutdoorLifestyleGuide() {
             {activityOptions.map(a => (
               <button key={a} onClick={() => toggleActivity(a)}
                 style={{ padding: '8px 16px', borderRadius: 20, border: '1px solid', cursor: 'pointer', fontSize: 13,
-                  borderColor: selectedActivities.includes(a) ? '#F5E642′ : '#1e3a5f',
-                  background: selectedActivities.includes(a) ? '#F5E642′ : ’transparent',
-                  color: selectedActivities.includes(a) ? '#0A1628′ : '#94a3b8' }}>
+                  borderColor: selectedActivities.includes(a) ? '#F5E642' : '#1e3a5f',
+                  background: selectedActivities.includes(a) ? '#F5E642' : 'transparent',
+                  color: selectedActivities.includes(a) ? '#0A1628' : '#94a3b8' }}>
                 {a === 'hiking' ? '🥾 Hiking' : a === 'cycling' ? '🚴 Cycling' : a === 'kayaking' ? '🛶 Kayaking' :
                  a === 'fishing' ? '🎣 Fishing' : a === 'golf' ? '⛳ Golf' : a === 'mountain biking' ? '🚵 MTB' : '🏃 Running'}
               </button>
@@ -142,7 +142,7 @@ export default function DFWOutdoorLifestyleGuide() {
           <div style={{ display: 'flex', alignItems: 'center', gap: 16, marginBottom: 24 }}>
             <input type="range" min={200000} max={900000} step={10000} value={budget}
               onChange={e => setBudget(Number(e.target.value))}
-              style={{ flex: 1, accentColor: '#F5E642′ }} />
+              style={{ flex: 1, accentColor: '#F5E642' }} />
             <span style={{ color: '#F5E642', fontWeight: 700 }}>${budget.toLocaleString()}</span>
           </div>
 
@@ -156,7 +156,7 @@ export default function DFWOutdoorLifestyleGuide() {
           <div>
             <h2 style={{ marginBottom: 16 }}>🌿 {results.length} Neighborhoods Match</h2>
             {results.map(n => (
-              <div key={n.name} style={{ background: '#111e35', borderRadius: 12, padding: 20, marginBottom: 16, borderLeft: '4px solid #F5E642′ }}>
+              <div key={n.name} style={{ background: '#111e35', borderRadius: 12, padding: 20, marginBottom: 16, borderLeft: '4px solid #F5E642' }}>
                 <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: 8 }}>
                   <h3 style={{ margin: 0, fontSize: 18 }}>{n.name}</h3>
                   <span style={{ color: '#4ade80', fontSize: 13, fontWeight: 600 }}>{n.trailMiles} trail mi</span>

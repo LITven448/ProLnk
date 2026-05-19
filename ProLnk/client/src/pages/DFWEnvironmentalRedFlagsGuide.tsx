@@ -71,7 +71,7 @@ export default function DFWEnvironmentalRedFlagsGuide() {
                 {result.research.map((r, i) => (
                   <div key={i} style={{ display: 'flex', gap: 8, marginBottom: 8, alignItems: 'flex-start' }}>
                     <span style={{ color: result.color, minWidth: 16 }}>→</span>
-                    <span style={{ fontSize: 13, color: '#CBD5E1′ }}>{r}</span>
+                    <span style={{ fontSize: 13, color: '#CBD5E1' }}>{r}</span>
                   </div>
                 ))}
               </div>
@@ -80,7 +80,7 @@ export default function DFWEnvironmentalRedFlagsGuide() {
         )}
 
         {selected.length === 0 && (
-          <div style={{ textAlign: 'center', padding: 48, color: '#475569′ }}>
+          <div style={{ textAlign: 'center', padding: 48, color: '#475569' }}>
             <div style={{ fontSize: 40, marginBottom: 12 }}>🌍</div>
             <p>Select environmental concerns you've identified to get your risk assessment.</p>
           </div>

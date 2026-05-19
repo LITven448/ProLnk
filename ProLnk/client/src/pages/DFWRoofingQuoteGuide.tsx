@@ -1,10 +1,10 @@
 import { useState } from 'react';
 
 const roofSizes = [
-  { label: 'Under 1,800 sq ft (18 squares)', squares: '18', estReplace: '$9,000–$16,000', estRepair: '$500–$2,500′ },
-  { label: '1,800–2,500 sq ft (25 squares)', squares: '25', estReplace: '$13,000–$22,000', estRepair: '$800–$4,000′ },
-  { label: '2,500–3,500 sq ft (35 squares)', squares: '35', estReplace: '$18,000–$30,000', estRepair: '$1,200–$6,000′ },
-  { label: 'Over 3,500 sq ft (35+ squares)', squares: '35+', estReplace: '$25,000–$45,000+', estRepair: '$1,500–$8,000′ },
+  { label: 'Under 1,800 sq ft (18 squares)', squares: '18', estReplace: '$9,000–$16,000', estRepair: '$500–$2,500' },
+  { label: '1,800–2,500 sq ft (25 squares)', squares: '25', estReplace: '$13,000–$22,000', estRepair: '$800–$4,000' },
+  { label: '2,500–3,500 sq ft (35 squares)', squares: '35', estReplace: '$18,000–$30,000', estRepair: '$1,200–$6,000' },
+  { label: 'Over 3,500 sq ft (35+ squares)', squares: '35+', estReplace: '$25,000–$45,000+', estRepair: '$1,500–$8,000' },
 ];
 
 const replacementTypes = [
@@ -42,12 +42,12 @@ export default function DFWRoofingQuoteGuide() {
 
         <h2 style={{ color: '#F5E642', fontSize: 18, fontWeight: 700, marginBottom: 12 }}>🔑 What Every DFW Roofing Quote Must Specify</h2>
         <ul style={{ color: '#9BA8B8', fontSize: 15, lineHeight: 1.8, marginBottom: 32, paddingLeft: 20 }}>
-          <li><strong style={{ color: '#E8ECF0′ }}>Shingle manufacturer + model + class</strong> — "Class 4 impact-resistant" reduces DFW insurance premiums. Demand the exact model.</li>
-          <li><strong style={{ color: '#E8ECF0′ }}>Underlayment specification</strong> — synthetic vs. 30lb felt. Synthetic is standard for DFW. Cost difference is minimal; quality difference is major.</li>
-          <li><strong style={{ color: '#E8ECF0′ }}>Drip edge</strong> — required by IRC code and all DFW city inspections. If not listed, they’re cutting corners.</li>
-          <li><strong style={{ color: '#E8ECF0′ }}>Ventilation plan</strong> — DFW summers destroy roofs without proper ridge + soffit ventilation ratio. Should be in every quote.</li>
-          <li><strong style={{ color: '#E8ECF0′ }}>Permit pulled by contractor</strong> — all DFW cities require a permit. Homeowner permits create future title and insurance issues.</li>
-          <li><strong style={{ color: '#E8ECF0′ }}>Decking replacement cost</strong> — listed as a per-sheet line item, not buried or absent.</li>
+          <li><strong style={{ color: '#E8ECF0' }}>Shingle manufacturer + model + class</strong> — "Class 4 impact-resistant" reduces DFW insurance premiums. Demand the exact model.</li>
+          <li><strong style={{ color: '#E8ECF0' }}>Underlayment specification</strong> — synthetic vs. 30lb felt. Synthetic is standard for DFW. Cost difference is minimal; quality difference is major.</li>
+          <li><strong style={{ color: '#E8ECF0' }}>Drip edge</strong> — required by IRC code and all DFW city inspections. If not listed, they're cutting corners.</li>
+          <li><strong style={{ color: '#E8ECF0' }}>Ventilation plan</strong> — DFW summers destroy roofs without proper ridge + soffit ventilation ratio. Should be in every quote.</li>
+          <li><strong style={{ color: '#E8ECF0' }}>Permit pulled by contractor</strong> — all DFW cities require a permit. Homeowner permits create future title and insurance issues.</li>
+          <li><strong style={{ color: '#E8ECF0' }}>Decking replacement cost</strong> — listed as a per-sheet line item, not buried or absent.</li>
         </ul>
 
         <h2 style={{ color: '#F5E642', fontSize: 18, fontWeight: 700, marginBottom: 12 }}>🚩 Storm Chaser Red Flags (DFW-Specific)</h2>
@@ -81,9 +81,9 @@ export default function DFWRoofingQuoteGuide() {
             </div>
           </div>
           {selectedSize && (
-            <div style={{ marginBottom: 14, padding: 14, background: '#0A1628', borderRadius: 8, borderLeft: '3px solid #F5E642′ }}>
+            <div style={{ marginBottom: 14, padding: 14, background: '#0A1628', borderRadius: 8, borderLeft: '3px solid #F5E642' }}>
               <div style={{ fontWeight: 700, marginBottom: 6 }}>{selectedSize.squares} squares (~{selectedSize.label})</div>
-              <div style={{ fontSize: 13, color: '#4CAF50′ }}>Full replacement DFW range: {selectedSize.estReplace}</div>
+              <div style={{ fontSize: 13, color: '#4CAF50' }}>Full replacement DFW range: {selectedSize.estReplace}</div>
               <div style={{ fontSize: 13, color: '#9BA8B8', marginTop: 2 }}>Repair-only range: {selectedSize.estRepair}</div>
             </div>
           )}
@@ -105,7 +105,7 @@ export default function DFWRoofingQuoteGuide() {
           )}
         </div>
 
-        <div style={{ background: '#F5E642', borderRadius: 12, padding: 20, color: '#0A1628′ }}>
+        <div style={{ background: '#F5E642', borderRadius: 12, padding: 20, color: '#0A1628' }}>
           <div style={{ fontWeight: 800, fontSize: 15, marginBottom: 4 }}>💡 ProLnk Tip</div>
           <div style={{ fontSize: 14 }}>ProLnk only works with licensed, insured, locally-rooted DFW roofers — no storm chasers. Class 4 shingle specialists available.</div>
         </div>

@@ -32,10 +32,10 @@ const trees = [
 ];
 
 const permitCities = [
-  { city: 'Dallas', rule: 'Trees >19″ diameter require permit for removal on private property in protected areas', link: 'dallascityhall.com/arborist' },
-  { city: 'Frisco', rule: 'Heritage trees (oak, elm, pecan) over 6″ diameter may require permit', link: 'friscotexas.gov/trees' },
+  { city: 'Dallas', rule: 'Trees >19" diameter require permit for removal on private property in protected areas', link: 'dallascityhall.com/arborist' },
+  { city: 'Frisco', rule: 'Heritage trees (oak, elm, pecan) over 6" diameter may require permit', link: 'friscotexas.gov/trees' },
   { city: 'Plano', rule: 'No city permit for private property trees, but HOA rules often apply', link: 'plano.gov' },
-  { city: 'McKinney', rule: 'Protected heritage tree ordinance — 8″+ diameter trees may need review', link: 'mckinneytexas.org' },
+  { city: 'McKinney', rule: 'Protected heritage tree ordinance — 8"+ diameter trees may need review', link: 'mckinneytexas.org' },
   { city: 'Arlington', rule: 'No general tree removal permit, but flood plain trees have restrictions', link: 'arlingtontx.gov' },
 ];
 
@@ -162,7 +162,7 @@ export default function TreeServiceGuide() {
               </div>
               <div>
                 <label style={{ color: '#cbd5e1', display: 'block', marginBottom: '0.4rem', fontSize: '0.85rem' }}>Trunk diameter (inches):</label>
-                <input type="number" value={diameter} onChange={e => setDiameter(e.target.value)} placeholder="e.g. 18″
+                <input type="number" value={diameter} onChange={e => setDiameter(e.target.value)} placeholder="e.g. 18"
                   style={{ background: '#0A1628', border: '1px solid #2d3f58', borderRadius: '6px', padding: '0.5rem', color: '#fff', width: '100%' }} />
               </div>
               <div>

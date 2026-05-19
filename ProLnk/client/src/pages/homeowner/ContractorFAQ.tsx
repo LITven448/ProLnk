@@ -49,7 +49,7 @@ const FAQ_SECTIONS: FAQSection[] = [
   {
     title: "Hiring",
     icon: ShieldCheck,
-    color: "#00E676″,
+    color: "#00E676",
     items: [
       {
         q: "What does 'licensed and insured' mean?",
@@ -68,7 +68,7 @@ const FAQ_SECTIONS: FAQSection[] = [
   {
     title: "During the Job",
     icon: Wrench,
-    color: "#F97316″,
+    color: "#F97316",
     items: [
       {
         q: "What if the scope of work changes mid-project?",
@@ -87,7 +87,7 @@ const FAQ_SECTIONS: FAQSection[] = [
   {
     title: "Payment",
     icon: CreditCard,
-    color: "#A855F7″,
+    color: "#A855F7",
     items: [
       {
         q: "When should I pay my contractor?",
@@ -106,7 +106,7 @@ const FAQ_SECTIONS: FAQSection[] = [
   {
     title: "TrustyPro Specific",
     icon: BadgeCheck,
-    color: "#FFB300″,
+    color: "#FFB300",
     items: [
       {
         q: "How does TrustyPro verify its pros?",
@@ -128,21 +128,21 @@ function FAQItemRow({ item, isOpen, onToggle }: { item: FAQItem; isOpen: boolean
   return (
     <div
       className="rounded-xl overflow-hidden transition-all"
-      style={{ border: `1px solid ${isOpen ? "#252A3A" : "#1A1E2A"}`, background: isOpen ? "#13161E" : "#0F1520″ }}
+      style={{ border: `1px solid ${isOpen ? "#252A3A" : "#1A1E2A"}`, background: isOpen ? "#13161E" : "#0F1520" }}
     >
       <button
         onClick={onToggle}
         className="w-full flex items-start justify-between gap-4 p-4 text-left transition-colors hover:bg-[#13161E]"
       >
-        <span className="text-white font-medium text-sm leading-relaxed flex-1″>{item.q}</span>
+        <span className="text-white font-medium text-sm leading-relaxed flex-1">{item.q}</span>
         {isOpen
-          ? <ChevronUp className="w-4 h-4 shrink-0 mt-0.5″ style={{ color: "#8B91A8" }} />
-          : <ChevronDown className="w-4 h-4 shrink-0 mt-0.5″ style={{ color: "#8B91A8" }} />
+          ? <ChevronUp className="w-4 h-4 shrink-0 mt-0.5" style={{ color: "#8B91A8" }} />
+          : <ChevronDown className="w-4 h-4 shrink-0 mt-0.5" style={{ color: "#8B91A8" }} />
         }
       </button>
       {isOpen && (
-        <div className="px-4 pb-4″>
-          <div style={{ borderTop: "1px solid #252A3A" }} className="pt-3″>
+        <div className="px-4 pb-4">
+          <div style={{ borderTop: "1px solid #252A3A" }} className="pt-3">
             <p className="text-[#8B91A8] text-sm leading-relaxed">{item.a}</p>
           </div>
         </div>
@@ -184,24 +184,24 @@ export default function ContractorFAQ() {
 
   return (
     <HomeownerLayout>
-      <div className="min-h-screen bg-[#0A1628] text-white p-6″>
+      <div className="min-h-screen bg-[#0A1628] text-white p-6">
         <div className="max-w-3xl mx-auto">
 
           {/* Header */}
           <div className="mb-8 text-center">
             <div
-              className="inline-flex items-center justify-center p-3 rounded-2xl mb-4″
-              style={{ background: "linear-gradient(135deg, #FFB30022, #FFB30044)", border: "1px solid #FFB30030″ }}
+              className="inline-flex items-center justify-center p-3 rounded-2xl mb-4"
+              style={{ background: "linear-gradient(135deg, #FFB30022, #FFB30044)", border: "1px solid #FFB30030" }}
             >
-              <HelpCircle className="w-8 h-8″ style={{ color: "#FFB300" }} />
+              <HelpCircle className="w-8 h-8" style={{ color: "#FFB300" }} />
             </div>
-            <h1 className="text-3xl font-bold text-white mb-2″>Contractor FAQ</h1>
+            <h1 className="text-3xl font-bold text-white mb-2">Contractor FAQ</h1>
             <p className="text-[#8B91A8]">Answers to your most common questions</p>
           </div>
 
           {/* Search */}
-          <div className="relative mb-8″>
-            <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4″ style={{ color: "#8B91A8" }} />
+          <div className="relative mb-8">
+            <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4" style={{ color: "#8B91A8" }} />
             <input
               type="text"
               placeholder="Search questions..."
@@ -213,11 +213,11 @@ export default function ContractorFAQ() {
                 border: "1px solid #252A3A",
                 color: "#F0F2FF",
               }}
-              onFocus={(e) => (e.currentTarget.style.borderColor = "#FFB30060″)}
+              onFocus={(e) => (e.currentTarget.style.borderColor = "#FFB30060")}
               onBlur={(e) => (e.currentTarget.style.borderColor = "#252A3A")}
             />
             {search && (
-              <span className="absolute right-4 top-1/2 -translate-y-1/2 text-xs" style={{ color: "#555B72″ }}>
+              <span className="absolute right-4 top-1/2 -translate-y-1/2 text-xs" style={{ color: "#555B72" }}>
                 {totalResults} result{totalResults !== 1 ? "s" : ""}
               </span>
             )}
@@ -225,29 +225,29 @@ export default function ContractorFAQ() {
 
           {/* FAQ Sections */}
           {filteredSections.length === 0 ? (
-            <div className="text-center py-16″>
-              <HelpCircle className="w-10 h-10 mx-auto mb-3″ style={{ color: "#555B72" }} />
+            <div className="text-center py-16">
+              <HelpCircle className="w-10 h-10 mx-auto mb-3" style={{ color: "#555B72" }} />
               <p className="text-[#8B91A8]">No questions match your search.</p>
               <button
                 onClick={() => setSearch("")}
                 className="mt-3 text-sm underline"
-                style={{ color: "#FFB300″ }}
+                style={{ color: "#FFB300" }}
               >
                 Clear search
               </button>
             </div>
           ) : (
-            <div className="space-y-8″>
+            <div className="space-y-8">
               {filteredSections.map((section) => {
                 const Icon = section.icon;
                 return (
                   <div key={section.title}>
-                    <div className="flex items-center gap-2 mb-4″>
+                    <div className="flex items-center gap-2 mb-4">
                       <div
                         className="p-1.5 rounded-lg"
                         style={{ background: `${section.color}15` }}
                       >
-                        <Icon className="w-4 h-4″ style={{ color: section.color }} />
+                        <Icon className="w-4 h-4" style={{ color: section.color }} />
                       </div>
                       <h2 className="text-white font-semibold">{section.title}</h2>
                       <span
@@ -257,7 +257,7 @@ export default function ContractorFAQ() {
                         {section.items.length}
                       </span>
                     </div>
-                    <div className="space-y-2″>
+                    <div className="space-y-2">
                       {section.items.map((item, idx) => {
                         const key = `${section.title}-${idx}`;
                         return (
@@ -278,19 +278,19 @@ export default function ContractorFAQ() {
 
           {/* Still Have Questions CTA */}
           <div
-            className="mt-12 rounded-2xl p-6″
+            className="mt-12 rounded-2xl p-6"
             style={{ background: "#13161E", border: "1px solid #252A3A" }}
           >
             <h3 className="text-white font-semibold text-lg mb-1 text-center">Still have questions?</h3>
-            <p className="text-[#8B91A8] text-sm text-center mb-5″>
+            <p className="text-[#8B91A8] text-sm text-center mb-5">
               Our AI assistant can answer follow-up questions, or connect with a real support agent.
             </p>
             <div className="flex flex-col sm:flex-row gap-3 justify-center">
               <button
                 className="flex items-center justify-center gap-2 px-5 py-3 rounded-xl font-medium text-sm transition-all"
-                style={{ background: "linear-gradient(135deg, #FFB300, #F97316)", color: "#0A1628″ }}
+                style={{ background: "linear-gradient(135deg, #FFB300, #F97316)", color: "#0A1628" }}
               >
-                <Sparkles className="w-4 h-4″ />
+                <Sparkles className="w-4 h-4" />
                 Ask our AI assistant
               </button>
               <button
@@ -300,10 +300,10 @@ export default function ContractorFAQ() {
                   border: "1px solid #252A3A",
                   color: "#F0F2FF",
                 }}
-                onMouseEnter={(e) => (e.currentTarget.style.borderColor = "#FFB30060″)}
+                onMouseEnter={(e) => (e.currentTarget.style.borderColor = "#FFB30060")}
                 onMouseLeave={(e) => (e.currentTarget.style.borderColor = "#252A3A")}
               >
-                <MessageCircle className="w-4 h-4″ style={{ color: "#8B91A8" }} />
+                <MessageCircle className="w-4 h-4" style={{ color: "#8B91A8" }} />
                 Chat with support
               </button>
             </div>

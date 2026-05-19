@@ -21,7 +21,7 @@ export default function DFWHVACProLnkReady() {
 
   const score = Math.round((checked.length / checklist.length) * 100);
   const missing = checklist.filter(item => !checked.includes(item.id));
-  const scoreColor = score >= 80 ? '#22c55e' : score >= 50 ? '#F5E642′ : '#3b82f6';
+  const scoreColor = score >= 80 ? '#22c55e' : score >= 50 ? '#F5E642' : '#3b82f6';
   const scoreLabel = score >= 80 ? '🔗 ProLnk Ready — Let’s Go!' : score >= 50 ? '⚡ Almost Ready' : '📋 A Few Steps First';
 
   return (
@@ -29,11 +29,11 @@ export default function DFWHVACProLnkReady() {
       <div style={{ maxWidth: 720, margin: '0 auto' }}>
         <div style={{ textAlign: 'center', marginBottom: '2rem' }}>
           <div style={{ fontSize: '3rem' }}>🔗</div>
-          <h1 style={{ color: '#F5E642', fontSize: '1.8rem', fontWeight: 800, margin: '0.5rem 0′ }}>
+          <h1 style={{ color: '#F5E642', fontSize: '1.8rem', fontWeight: 800, margin: '0.5rem 0' }}>
             Are You Ready for ProLnk?
           </h1>
           <p style={{ color: '#94a3b8', fontSize: '1rem' }}>
-            ProLnk connects DFW homeowners with verified HVAC pros — fast, transparent, and on your terms. Let's see if you’re ready.
+            ProLnk connects DFW homeowners with verified HVAC pros — fast, transparent, and on your terms. Let's see if you're ready.
           </p>
         </div>
 

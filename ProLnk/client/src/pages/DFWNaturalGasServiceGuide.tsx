@@ -44,7 +44,7 @@ export default function DFWNaturalGasServiceGuide() {
         </div>
         <div style={{ background: '#0f2040', borderRadius: 12, padding: '1.25rem', marginBottom: '1.5rem', border: '1px solid #1e3a5f' }}>
           <h2 style={{ color: '#F5E642', fontSize: '1rem', marginTop: 0 }}>🏢 No Choice — Atmos Energy Has a Monopoly</h2>
-          <p style={{ color: '#cbd5e1', lineHeight: 1.7, margin: 0 }}>Unlike electricity, natural gas in DFW is <strong style={{ color: '#F5E642′ }}>not deregulated</strong>. If your home has gas, <strong style={{ color: '#F5E642' }}>Atmos Energy</strong> is your only option — no shopping required. Atmos is regulated by the Texas Railroad Commission (not an actual railroad) and rates are set by the state.</p>
+          <p style={{ color: '#cbd5e1', lineHeight: 1.7, margin: 0 }}>Unlike electricity, natural gas in DFW is <strong style={{ color: '#F5E642' }}>not deregulated</strong>. If your home has gas, <strong style={{ color: '#F5E642' }}>Atmos Energy</strong> is your only option — no shopping required. Atmos is regulated by the Texas Railroad Commission (not an actual railroad) and rates are set by the state.</p>
         </div>
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1.5rem' }}>
           <div style={{ background: '#0f2040', borderRadius: 10, padding: '1rem', border: '1px solid #1e3a5f' }}>
@@ -68,8 +68,8 @@ export default function DFWNaturalGasServiceGuide() {
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '0.5rem' }}>
             {[
               { season: 'Summer', months: 'Jun–Sep', use: 'Very Low', note: 'Water heater only', color: '#22c55e' },
-              { season: 'Fall', months: 'Oct–Nov', use: 'Low–Moderate', note: 'Start of heating', color: '#eab308′ },
-              { season: 'Winter', months: 'Dec–Feb', use: 'High', note: 'Heating dominant', color: '#ef4444′ },
+              { season: 'Fall', months: 'Oct–Nov', use: 'Low–Moderate', note: 'Start of heating', color: '#eab308' },
+              { season: 'Winter', months: 'Dec–Feb', use: 'High', note: 'Heating dominant', color: '#ef4444' },
               { season: 'Spring', months: 'Mar–May', use: 'Low', note: 'Mild weather', color: '#22c55e' },
             ].map(s => (
               <div key={s.season} style={{ background: '#0A1628', borderRadius: 8, padding: '0.75rem', textAlign: 'center' }}>
@@ -81,7 +81,7 @@ export default function DFWNaturalGasServiceGuide() {
             ))}
           </div>
         </div>
-        <div style={{ background: '#0f2040', borderRadius: 12, padding: '1.5rem', border: '1px solid #F5E642′ }}>
+        <div style={{ background: '#0f2040', borderRadius: 12, padding: '1.5rem', border: '1px solid #F5E642' }}>
           <h2 style={{ color: '#F5E642', fontSize: '1.1rem', marginTop: 0 }}>🔍 Check Gas Availability in Your City</h2>
           <div style={{ marginBottom: '1rem' }}>
             <label style={{ color: '#94a3b8', fontSize: '0.8rem', display: 'block', marginBottom: '0.25rem' }}>Your DFW City</label>

@@ -2,7 +2,7 @@ import { useState } from 'react';
 
 const TASKS = {
   hvac: { label: 'HVAC', tasks: ['Switch system from heating to cooling mode', 'Replace air filter before summer', 'Schedule AC tune-up before peak season', 'Clean condenser coils and fins', 'Test thermostat cooling mode now'] },
-  lawn: { label: 'Lawn & Garden', tasks: ['Apply pre-emergent fertilizer (April ideal for warm-season grass)', 'Overseed bare patches before heat sets in', 'Set irrigation to 1-2x per week schedule', 'Edge beds and apply fresh mulch', 'Mow at 3.5″ height — do not scalp'] },
+  lawn: { label: 'Lawn & Garden', tasks: ['Apply pre-emergent fertilizer (April ideal for warm-season grass)', 'Overseed bare patches before heat sets in', 'Set irrigation to 1-2x per week schedule', 'Edge beds and apply fresh mulch', 'Mow at 3.5" height — do not scalp'] },
   trees: { label: 'Trees & Pruning', tasks: ['OAK WILT BAN STARTS APRIL 1 — do NOT prune oaks', 'Trim dead branches from winter storms', 'Check for storm damage from spring systems', 'Identify trees close to roof or power lines', 'Apply wound sealant to any recent oak cuts'] },
   storms: { label: 'Storm Prep', tasks: ['Inspect roof for winter damage before storm season', 'Clean gutters from winter debris', 'Check window and door seals', 'Test sump pump if applicable', 'Locate and test whole-home shutoffs'] },
   tax: { label: 'Property Tax', tasks: ['DEADLINE: May 15 — protest window open NOW', 'Pull your DCAD appraisal notice', 'Compare to neighbor comps on DCAD.org', 'Document any defects with photos', 'File protest online at DCAD.org before May 15'] },
@@ -32,7 +32,7 @@ export default function DFWAprilHomeGuide() {
         </p>
 
         <div style={{ background: '#F5E64220', border: '1px solid #F5E642', borderRadius: 8, padding: '1rem', marginBottom: '2rem' }}>
-          <strong style={{ color: '#F5E642′ }}>⚠️ April DFW Alerts</strong>
+          <strong style={{ color: '#F5E642' }}>⚠️ April DFW Alerts</strong>
           <ul style={{ margin: '0.5rem 0 0', paddingLeft: '1.25rem', color: '#CBD5E1', fontSize: '0.9rem' }}>
             <li>Oak wilt pruning ban starts April 1 — sap beetles spread the fungus</li>
             <li>Property tax protest window is OPEN — deadline May 15</li>
@@ -45,9 +45,9 @@ export default function DFWAprilHomeGuide() {
           {Object.entries(TASKS).map(([key, val]) => (
             <button key={key} onClick={() => toggle(key)} style={{
               padding: '0.5rem 1rem', borderRadius: 20, border: '1px solid',
-              borderColor: selected.includes(key) ? '#F5E642′ : '#334155',
-              background: selected.includes(key) ? '#F5E64220′ : ’transparent',
-              color: selected.includes(key) ? '#F5E642′ : '#94A3B8',
+              borderColor: selected.includes(key) ? '#F5E642' : '#334155',
+              background: selected.includes(key) ? '#F5E64220' : 'transparent',
+              color: selected.includes(key) ? '#F5E642' : '#94A3B8',
               cursor: 'pointer', fontSize: '0.85rem', fontWeight: 600,
             }}>{val.label}</button>
           ))}
@@ -61,10 +61,10 @@ export default function DFWAprilHomeGuide() {
                 display: 'flex', alignItems: 'flex-start', gap: '0.75rem',
                 padding: '0.75rem 1rem', marginBottom: '0.5rem', borderRadius: 8,
                 background: done[task] ? '#0F2A1A' : '#0F1C2E', cursor: 'pointer',
-                border: '1px solid', borderColor: done[task] ? '#22C55E40′ : '#1E3A5F',
+                border: '1px solid', borderColor: done[task] ? '#22C55E40' : '#1E3A5F',
               }}>
                 <span style={{ fontSize: '1rem', marginTop: 2 }}>{done[task] ? '✅' : '⬜'}</span>
-                <span style={{ color: done[task] ? '#4ADE80′ : '#CBD5E1', textDecoration: done[task] ? ’line-through' : 'none', fontSize: '0.9rem' }}>{task}</span>
+                <span style={{ color: done[task] ? '#4ADE80' : '#CBD5E1', textDecoration: done[task] ? 'line-through' : 'none', fontSize: '0.9rem' }}>{task}</span>
               </div>
             ))}
             <div style={{ marginTop: '1rem', padding: '0.75rem 1rem', background: '#0F1C2E', borderRadius: 8, color: '#64748B', fontSize: '0.8rem' }}>

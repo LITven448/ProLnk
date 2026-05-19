@@ -132,7 +132,7 @@ export default function DFWHVACInstallationSeasonGuide() {
         <div style={{ display: 'grid', gap: 10, marginBottom: 24 }}>
           {situations.map((s) => (
             <button key={s.id} onClick={() => setSituation(s.id)} style={{
-              background: situation === s.id ? '#F5E642′ : '#1E3A5F', color: situation === s.id ? '#0A1628' : '#fff',
+              background: situation === s.id ? '#F5E642' : '#1E3A5F', color: situation === s.id ? '#0A1628' : '#fff',
               border: 'none', borderRadius: 8, padding: '14px 18px', textAlign: 'left', cursor: 'pointer', fontSize: 14, fontWeight: 600,
             }}>{s.label}</button>
           ))}

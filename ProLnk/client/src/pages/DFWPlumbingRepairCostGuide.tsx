@@ -27,7 +27,7 @@ export default function DFWPlumbingRepairCostGuide() {
     });
   }
 
-  const diyColor = (v: string) => v === 'Easy' ? '#22C55E' : v === 'Moderate' ? '#F5E642′ : '#F97316';
+  const diyColor = (v: string) => v === 'Easy' ? '#22C55E' : v === 'Moderate' ? '#F5E642' : '#F97316';
 
   return (
     <div style={{ background: '#0A1628', minHeight: '100vh', color: '#CBD5E1', fontFamily: 'system-ui, sans-serif', padding: '40px 20px' }}>
@@ -35,7 +35,7 @@ export default function DFWPlumbingRepairCostGuide() {
         <div style={{ fontSize: 13, color: '#F5E642', fontWeight: 700, letterSpacing: 2, marginBottom: 8 }}>DFW HOME SERVICES GUIDE</div>
         <h1 style={{ fontSize: 32, fontWeight: 800, color: '#F1F5F9', margin: '0 0 8px' }}>DFW Plumbing Repair Cost Guide</h1>
         <p style={{ color: '#94A3B8', marginBottom: 32, lineHeight: 1.7 }}>
-          DFW's expansive Blackland Prairie clay creates <strong style={{ color: '#F5E642' }}>unique plumbing challenges</strong> — from slab leaks to root-invaded drains. Here’s what repairs actually cost in the DFW market, including the clay soil premium.
+          DFW's expansive Blackland Prairie clay creates <strong style={{ color: '#F5E642' }}>unique plumbing challenges</strong> — from slab leaks to root-invaded drains. Here's what repairs actually cost in the DFW market, including the clay soil premium.
         </p>
 
         <div style={{ background: '#0F1F3D', borderRadius: 12, padding: 24, marginBottom: 20 }}>
@@ -45,14 +45,14 @@ export default function DFWPlumbingRepairCostGuide() {
               {Object.entries(REPAIR_DATA).map(([key, d]) => (
                 <button key={key} onClick={() => setRepairType(key)} style={{
                   padding: '12px 16px', borderRadius: 8, border: '2px solid',
-                  borderColor: repairType === key ? '#F5E642′ : '#2A3A5C',
-                  background: repairType === key ? '#1a1500′ : '#0A1628',
-                  color: repairType === key ? '#F5E642′ : '#CBD5E1',
+                  borderColor: repairType === key ? '#F5E642' : '#2A3A5C',
+                  background: repairType === key ? '#1a1500' : '#0A1628',
+                  color: repairType === key ? '#F5E642' : '#CBD5E1',
                   cursor: 'pointer', textAlign: 'left', fontWeight: repairType === key ? 700 : 400,
                   display: 'flex', justifyContent: 'space-between', alignItems: 'center'
                 }}>
                   <span>{d.label}</span>
-                  <span style={{ fontSize: 13, color: '#94A3B8′ }}>${d.low.toLocaleString()}–${d.high.toLocaleString()}</span>
+                  <span style={{ fontSize: 13, color: '#94A3B8' }}>${d.low.toLocaleString()}–${d.high.toLocaleString()}</span>
                 </button>
               ))}
             </div>
@@ -63,9 +63,9 @@ export default function DFWPlumbingRepairCostGuide() {
               {[['Standard (M–F, 8am–5pm)', 'no'], ['Emergency / Weekend', 'yes']].map(([l, v]) => (
                 <button key={v} onClick={() => setIsEmergency(v)} style={{
                   padding: '8px 18px', borderRadius: 20, border: '2px solid',
-                  borderColor: isEmergency === v ? '#F5E642′ : '#2A3A5C',
-                  background: isEmergency === v ? '#F5E642′ : ’transparent',
-                  color: isEmergency === v ? '#0A1628′ : '#CBD5E1',
+                  borderColor: isEmergency === v ? '#F5E642' : '#2A3A5C',
+                  background: isEmergency === v ? '#F5E642' : 'transparent',
+                  color: isEmergency === v ? '#0A1628' : '#CBD5E1',
                   cursor: 'pointer', fontWeight: 600, fontSize: 13, margin: '4px 6px 4px 0'
                 }}>{l}</button>
               ))}
@@ -86,7 +86,7 @@ export default function DFWPlumbingRepairCostGuide() {
               </div>
               <div style={{ background: '#0A1628', borderRadius: 8, padding: 16, textAlign: 'center' }}>
                 <div style={{ fontSize: 12, color: '#94A3B8', marginBottom: 4' }}>Emergency Rate</div>
-                <div style={{ fontSize: 24, fontWeight: 800, color: '#F97316′ }}>${result.emergLow.toLocaleString()}–${result.emergHigh.toLocaleString()}</div>
+                <div style={{ fontSize: 24, fontWeight: 800, color: '#F97316' }}>${result.emergLow.toLocaleString()}–${result.emergHigh.toLocaleString()}</div>
               </div>
             </div>
             <div style={{ display: 'flex', gap: 12, marginBottom: 12 }}>
@@ -95,7 +95,7 @@ export default function DFWPlumbingRepairCostGuide() {
                 <div style={{ fontWeight: 800, color: diyColor(result.diy) }}>{result.diy}</div>
               </div>
             </div>
-            <div style={{ background: '#1a1500', borderRadius: 8, padding: 14, border: '1px solid #F5E642′ }}>
+            <div style={{ background: '#1a1500', borderRadius: 8, padding: 14, border: '1px solid #F5E642' }}>
               <strong style={{ color: '#F5E642', fontSize: 13 }}>🌍 DFW Clay Soil Impact:</strong>
               <span style={{ color: '#CBD5E1', fontSize: 13 }}> {result.note}</span>
             </div>

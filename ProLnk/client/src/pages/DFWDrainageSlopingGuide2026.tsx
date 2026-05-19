@@ -53,13 +53,13 @@ export default function DFWDrainageSlopingGuide2026() {
           <div style={{ display: 'flex', flexDirection: 'column', gap: '0.6rem', marginBottom: '1rem' }}>
             {challenges.map(c => (
               <button key={c.id} onClick={() => setChallenge(c.id)}
-                style={{ textAlign: 'left', padding: '0.75rem 1rem', borderRadius: '8px', border: challenge === c.id ? '2px solid #F5E642′ : '1px solid #1e3a5f', backgroundColor: challenge === c.id ? '#1a3060' : '#0A1628', color: '#fff', cursor: ’pointer', fontSize: '0.9rem' }}>
+                style={{ textAlign: 'left', padding: '0.75rem 1rem', borderRadius: '8px', border: challenge === c.id ? '2px solid #F5E642' : '1px solid #1e3a5f', backgroundColor: challenge === c.id ? '#1a3060' : '#0A1628', color: '#fff', cursor: 'pointer', fontSize: '0.9rem' }}>
                 {c.label}
               </button>
             ))}
           </div>
           <button onClick={handleCheck} disabled={!challenge}
-            style={{ backgroundColor: challenge ? '#F5E642′ : '#2a3a50', color: '#0A1628', fontWeight: 700, border: ’none', borderRadius: '8px', padding: '0.75rem 1.5rem', cursor: challenge ? 'pointer' : 'not-allowed', fontSize: '0.95rem', width: '100%' }}>
+            style={{ backgroundColor: challenge ? '#F5E642' : '#2a3a50', color: '#0A1628', fontWeight: 700, border: 'none', borderRadius: '8px', padding: '0.75rem 1.5rem', cursor: challenge ? 'pointer' : 'not-allowed', fontSize: '0.95rem', width: '100%' }}>
             Get Grading Solution →
           </button>
           {result && (

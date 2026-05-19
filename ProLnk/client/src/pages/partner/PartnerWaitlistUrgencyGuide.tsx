@@ -68,7 +68,7 @@ export default function PartnerWaitlistUrgencyGuide() {
 
         <div style={{ background: '#fff', borderRadius: 12, padding: 24, marginBottom: 20, boxShadow: '0 1px 4px rgba(0,0,0,0.06)' }}>
           <h2 style={{ color: '#0A1628', fontSize: 16, fontWeight: 700, marginBottom: 12 }}>🎯 Select Prospect Situation</h2>
-          <select value={situation} onChange={e => setSituation(e.target.value)} style={{ width: '100%', padding: '10px 12px', border: '1px solid #E2E8F0', borderRadius: 8, fontSize: 14, color: '#0A1628′ }}>
+          <select value={situation} onChange={e => setSituation(e.target.value)} style={{ width: '100%', padding: '10px 12px', border: '1px solid #E2E8F0', borderRadius: 8, fontSize: 14, color: '#0A1628' }}>
             {SITUATIONS.map(s => <option key={s}>{s}</option>)}
           </select>
         </div>
@@ -80,7 +80,7 @@ export default function PartnerWaitlistUrgencyGuide() {
                 <h2 style={{ color: '#0A1628', fontSize: 16, fontWeight: 700, margin: 0 }}>💬 What to Say</h2>
                 <span style={{ background: '#F5E642', color: '#0A1628', borderRadius: 6, padding: '3px 10px', fontSize: 12, fontWeight: 700 }}>{data.subject}</span>
               </div>
-              <div style={{ background: '#F8FAFC', borderRadius: 8, padding: 16, borderLeft: '3px solid #F5E642′ }}>
+              <div style={{ background: '#F8FAFC', borderRadius: 8, padding: 16, borderLeft: '3px solid #F5E642' }}>
                 <p style={{ color: '#334155', margin: 0, lineHeight: 1.7, fontStyle: 'italic' }}>"{data.message}"</p>
               </div>
             </div>
@@ -90,7 +90,7 @@ export default function PartnerWaitlistUrgencyGuide() {
                 <h3 style={{ color: '#1E40AF', fontSize: 14, fontWeight: 700, marginBottom: 8 }}>⏰ Timing</h3>
                 <p style={{ color: '#1E3A8A', margin: 0, fontSize: 13, lineHeight: 1.5 }}>{data.timing}</p>
               </div>
-              <div style={{ background: '#F0FDF4', borderRadius: 12, padding: 18, border: '1px solid #BBF7D0′ }}>
+              <div style={{ background: '#F0FDF4', borderRadius: 12, padding: 18, border: '1px solid #BBF7D0' }}>
                 <h3 style={{ color: '#14532D', fontSize: 14, fontWeight: 700, marginBottom: 8 }}>📤 Follow-Up</h3>
                 <p style={{ color: '#15803D', margin: 0, fontSize: 13, lineHeight: 1.5 }}>{data.followUp}</p>
               </div>

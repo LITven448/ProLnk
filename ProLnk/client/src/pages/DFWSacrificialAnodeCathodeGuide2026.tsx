@@ -46,8 +46,8 @@ export default function DFWSacrificialAnodeCathodeGuide2026() {
             'A depleted anode rod leaves the steel tank exposed, leading to rust and tank failure.',
           ].map((fact, i) => (
             <div key={i} style={{ display: 'flex', gap: '0.75rem', marginBottom: '0.75rem' }}>
-              <span style={{ color: '#F5E642′ }}>▸</span>
-              <span style={{ color: '#cbd5e1′ }}>{fact}</span>
+              <span style={{ color: '#F5E642' }}>▸</span>
+              <span style={{ color: '#cbd5e1' }}>{fact}</span>
             </div>
           ))}
         </div>
@@ -55,14 +55,14 @@ export default function DFWSacrificialAnodeCathodeGuide2026() {
         <div style={{ background: '#0f2744', border: '1px solid #1e3a5f', borderRadius: '12px', padding: '1.5rem', marginBottom: '2rem' }}>
           <h2 style={{ color: '#F5E642', marginBottom: '1.25rem' }}>🧮 Your Anode Replacement Calculator</h2>
           <div style={{ marginBottom: '1rem' }}>
-            <label style={{ color: '#94a3b8', fontSize: '0.9rem' }}>Local Water Hardness (ppm): <strong style={{ color: '#F5E642′ }}>{hardness}</strong></label>
+            <label style={{ color: '#94a3b8', fontSize: '0.9rem' }}>Local Water Hardness (ppm): <strong style={{ color: '#F5E642' }}>{hardness}</strong></label>
             <input type="range" min={50} max={450} value={hardness} onChange={e => setHardness(Number(e.target.value))}
-              style={{ width: '100%', marginTop: '0.5rem', accentColor: '#F5E642′ }} />
+              style={{ width: '100%', marginTop: '0.5rem', accentColor: '#F5E642' }} />
           </div>
           <div style={{ marginBottom: '1.5rem' }}>
-            <label style={{ color: '#94a3b8', fontSize: '0.9rem' }}>Water Heater Age (years): <strong style={{ color: '#F5E642′ }}>{heaterAge}</strong></label>
+            <label style={{ color: '#94a3b8', fontSize: '0.9rem' }}>Water Heater Age (years): <strong style={{ color: '#F5E642' }}>{heaterAge}</strong></label>
             <input type="range" min={1} max={15} value={heaterAge} onChange={e => setHeaterAge(Number(e.target.value))}
-              style={{ width: '100%', marginTop: '0.5rem', accentColor: '#F5E642′ }} />
+              style={{ width: '100%', marginTop: '0.5rem', accentColor: '#F5E642' }} />
           </div>
           <div style={{ background: '#1e3a5f', borderRadius: '8px', padding: '1rem', textAlign: 'center' }}>
             <div style={{ color: result.color, fontWeight: 800, fontSize: '1.3rem' }}>{result.urgency}</div>
@@ -72,10 +72,10 @@ export default function DFWSacrificialAnodeCathodeGuide2026() {
 
         <div style={{ background: '#1e3a5f', borderRadius: '12px', padding: '1.5rem' }}>
           <h2 style={{ color: '#F5E642', marginBottom: '1rem' }}>🔧 Replacement Procedure</h2>
-          {['Turn off cold water supply and heater power/gas', 'Connect garden hose to drain valve, flush 2–3 gallons', 'Locate anode port (usually under top panel or hex plug on top)', 'Use 1-1/16″ socket to remove old rod — expect resistance', 'Wrap new magnesium rod threads with Teflon tape', 'Torque to 40–50 ft-lbs, restore water and power'].map((step, i) => (
+          {['Turn off cold water supply and heater power/gas', 'Connect garden hose to drain valve, flush 2–3 gallons', 'Locate anode port (usually under top panel or hex plug on top)', 'Use 1-1/16" socket to remove old rod — expect resistance', 'Wrap new magnesium rod threads with Teflon tape', 'Torque to 40–50 ft-lbs, restore water and power'].map((step, i) => (
             <div key={i} style={{ display: 'flex', gap: '0.75rem', marginBottom: '0.6rem', alignItems: 'flex-start' }}>
               <span style={{ background: '#F5E642', color: '#0A1628', borderRadius: '50%', width: '22px', height: '22px', display: 'flex', alignItems: 'center', justifyContent: 'center', fontWeight: 700, fontSize: '0.75rem', flexShrink: 0 }}>{i + 1}</span>
-              <span style={{ color: '#cbd5e1′ }}>{step}</span>
+              <span style={{ color: '#cbd5e1' }}>{step}</span>
             </div>
           ))}
         </div>

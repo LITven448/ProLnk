@@ -85,7 +85,7 @@ export default function HomeBuyingContingenciesGuide() {
   return (
     <div style={{ background: '#0a0a0a', color: '#e5e7eb', minHeight: '100vh', fontFamily: 'system-ui, sans-serif' }}>
       <div style={{ maxWidth: 860, margin: '0 auto', padding: '48px 24px' }}>
-        <div style={{ marginBottom: 12, fontSize: 13, color: '#6b7280′ }}>
+        <div style={{ marginBottom: 12, fontSize: 13, color: '#6b7280' }}>
           🏠 ProLnk Homeowner Resource — DFW Edition
         </div>
         <h1 style={{ fontSize: 'clamp(26px, 5vw, 40px)', fontWeight: 700, color: '#f9fafb', lineHeight: 1.2, marginBottom: 16 }}>
@@ -96,14 +96,14 @@ export default function HomeBuyingContingenciesGuide() {
         </p>
 
         {/* What is a contingency */}
-        <section style={{ marginBottom: 48, background: '#111827', borderRadius: 12, padding: 28, border: '1px solid #1f2937′ }}>
+        <section style={{ marginBottom: 48, background: '#111827', borderRadius: 12, padding: 28, border: '1px solid #1f2937' }}>
           <h2 style={{ fontSize: 20, fontWeight: 700, color: '#f3f4f6', marginBottom: 12 }}>
             📋 What Is a Contingency?
           </h2>
           <p style={{ color: '#9ca3af', lineHeight: 1.7, marginBottom: 16 }}>
             A contingency is a condition that must be met for the home sale to proceed. If the condition is not satisfied, the buyer has the right to exit the contract without losing their earnest money deposit.
           </p>
-          <div style={{ background: '#0d1f33', borderRadius: 8, padding: 16, borderLeft: '4px solid #3b82f6′ }}>
+          <div style={{ background: '#0d1f33', borderRadius: 8, padding: 16, borderLeft: '4px solid #3b82f6' }}>
             <span style={{ color: '#93c5fd', fontWeight: 600 }}>Texas-Specific Note: </span>
             <span style={{ color: '#d1d5db', fontSize: 14 }}>Texas has some of the strongest buyer protections in the country — particularly the Option Period, which gives you the right to back out for any reason. Most other states do not have this. Use it every time.</span>
           </div>
@@ -127,8 +127,8 @@ export default function HomeBuyingContingenciesGuide() {
                   </span>
                 </div>
                 <div style={{ display: 'flex', gap: 24, marginBottom: 12, flexWrap: 'wrap' }}>
-                  <span style={{ fontSize: 13, color: '#6b7280′ }}>💵 {c.cost}</span>
-                  <span style={{ fontSize: 13, color: '#6b7280′ }}>⏱️ {c.duration}</span>
+                  <span style={{ fontSize: 13, color: '#6b7280' }}>💵 {c.cost}</span>
+                  <span style={{ fontSize: 13, color: '#6b7280' }}>⏱️ {c.duration}</span>
                 </div>
                 <p style={{ color: '#9ca3af', fontSize: 14, lineHeight: 1.7, margin: 0 }}>{c.protection}</p>
               </div>
@@ -176,7 +176,7 @@ export default function HomeBuyingContingenciesGuide() {
                 onClick={() => setSelectedSituation(key)}
                 style={{
                   background: selectedSituation === key ? '#1e3a5f' : '#111827',
-                  border: selectedSituation === key ? '2px solid #3b82f6′ : '2px solid #1f2937',
+                  border: selectedSituation === key ? '2px solid #3b82f6' : '2px solid #1f2937',
                   borderRadius: 10,
                   padding: '14px 20px',
                   color: selectedSituation === key ? '#93c5fd' : '#d1d5db',

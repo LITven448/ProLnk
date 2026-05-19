@@ -67,20 +67,20 @@ export default function DFWBedroomAdditionCost() {
         <div style={{ background: '#1e2d45', borderRadius: 12, padding: '1.5rem', marginBottom: '1.5rem' }}>
           <h2 style={{ fontSize: '1rem', fontWeight: 600, color: '#F5E642', marginBottom: '1rem' }}>📊 Full Analysis</h2>
           <div style={{ display: 'flex', justifyContent: 'space-between', padding: '0.5rem 0', borderBottom: '1px solid #2d3f5e' }}>
-            <span style={{ color: '#cbd5e1′ }}>Addition Cost ({sqft} sq ft)</span>
+            <span style={{ color: '#cbd5e1' }}>Addition Cost ({sqft} sq ft)</span>
             <span style={{ fontWeight: 700 }}>${costLow.toLocaleString()} – ${costHigh.toLocaleString()}</span>
           </div>
           <div style={{ display: 'flex', justifyContent: 'space-between', padding: '0.5rem 0', borderBottom: '1px solid #2d3f5e' }}>
-            <span style={{ color: '#cbd5e1′ }}>Estimated Value Added</span>
-            <span style={{ fontWeight: 700, color: '#4ade80′ }}>+${valueAdd.toLocaleString()} – ${valueAddHigh.toLocaleString()}</span>
+            <span style={{ color: '#cbd5e1' }}>Estimated Value Added</span>
+            <span style={{ fontWeight: 700, color: '#4ade80' }}>+${valueAdd.toLocaleString()} – ${valueAddHigh.toLocaleString()}</span>
           </div>
           <div style={{ display: 'flex', justifyContent: 'space-between', padding: '0.5rem 0', borderBottom: '1px solid #2d3f5e' }}>
-            <span style={{ color: '#cbd5e1′ }}>Annual Tax Increase ({loc.taxRate}% rate)</span>
-            <span style={{ fontWeight: 700, color: '#f87171′ }}>+${annualTaxIncrease.toLocaleString()}/yr</span>
+            <span style={{ color: '#cbd5e1' }}>Annual Tax Increase ({loc.taxRate}% rate)</span>
+            <span style={{ fontWeight: 700, color: '#f87171' }}>+${annualTaxIncrease.toLocaleString()}/yr</span>
           </div>
           <div style={{ display: 'flex', justifyContent: 'space-between', padding: '0.5rem 0', borderBottom: '1px solid #2d3f5e' }}>
-            <span style={{ color: '#cbd5e1′ }}>Neighborhood Value Ceiling</span>
-            <span style={{ fontWeight: 700, color: '#fbbf24′ }}>{loc.ceiling}</span>
+            <span style={{ color: '#cbd5e1' }}>Neighborhood Value Ceiling</span>
+            <span style={{ fontWeight: 700, color: '#fbbf24' }}>{loc.ceiling}</span>
           </div>
           <div style={{ display: 'flex', justifyContent: 'space-between', padding: '0.75rem 0 0', fontSize: '0.85rem' }}>
             <span style={{ color: '#64748b' }}>vs. Buying Bigger (move + transaction costs)</span>

@@ -8,7 +8,7 @@ const issues = [
   { id: 'commercial', label: 'Nearby Blight / Commercial', icon: '🏭', impact: '-5 to -15%', severity: 'critical', actions: ['Industrial blight or failing commercial within 500ft can reduce values 5-15%', 'Organize neighbors to attend city zoning hearings — numbers matter', 'File with TX Commission on Environmental Quality if contamination suspected', 'Petition city for blight remediation funding (CDBG grants available)', 'Work with NTCAR (North TX Commercial Assoc of Realtors) advocacy programs', 'Consult a TX property rights attorney for inverse condemnation claims'] },
 ];
 
-const severityColor: Record<string, string> = { medium: '#fbbf24', high: '#f97316', critical: '#dc2626′ };
+const severityColor: Record<string, string> = { medium: '#fbbf24', high: '#f97316', critical: '#dc2626' };
 
 export default function DFWPropertyValuesNeighborImpact2026() {
   const [selected, setSelected] = useState('yard');
@@ -29,7 +29,7 @@ export default function DFWPropertyValuesNeighborImpact2026() {
         <div style={{ display: 'flex', flexWrap: 'wrap', gap: 10, marginBottom: 28 }}>
           {issues.map(i => (
             <button key={i.id} onClick={() => setSelected(i.id)}
-              style={{ background: selected === i.id ? '#F5E642′ : '#111e35', color: selected === i.id ? '#0A1628' : '#fff', border: '1px solid #1e3a5f', borderRadius: 8, padding: '10px 18px', cursor: ’pointer', fontWeight: 600, fontSize: 14 }}>
+              style={{ background: selected === i.id ? '#F5E642' : '#111e35', color: selected === i.id ? '#0A1628' : '#fff', border: '1px solid #1e3a5f', borderRadius: 8, padding: '10px 18px', cursor: 'pointer', fontWeight: 600, fontSize: 14 }}>
               {i.icon} {i.label}
             </button>
           ))}

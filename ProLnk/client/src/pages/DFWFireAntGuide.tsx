@@ -36,7 +36,7 @@ export default function DFWFireAntGuide() {
           <div style={{ fontSize: 40, marginBottom: 12 }}>🐜</div>
           <h1 style={{ fontSize: 32, fontWeight: 700, color: '#F5E642', marginBottom: 8 }}>DFW Fire Ant Treatment Guide</h1>
           <p style={{ color: '#94a3b8', fontSize: 16, lineHeight: 1.6 }}>
-            Texas fire ants (<em>Solenopsis invicta</em>) are <strong style={{ color: '#F5E642′ }}>aggressive year-round in DFW</strong> due to mild winters. Unlike northern states, you get no seasonal break. Colonies can contain 250,000+ workers and multiple queens, making elimination without the right approach nearly impossible.
+            Texas fire ants (<em>Solenopsis invicta</em>) are <strong style={{ color: '#F5E642' }}>aggressive year-round in DFW</strong> due to mild winters. Unlike northern states, you get no seasonal break. Colonies can contain 250,000+ workers and multiple queens, making elimination without the right approach nearly impossible.
           </p>
         </div>
 
@@ -60,7 +60,7 @@ export default function DFWFireAntGuide() {
           <h2 style={{ fontSize: 20, fontWeight: 600, color: '#F5E642', marginBottom: 16 }}>🔄 When Treatments Fail: Re-Invasion</h2>
           <div style={{ backgroundColor: '#1a2d4a', borderRadius: 8, padding: 16, borderLeft: '4px solid #f59e0b' }}>
             <p style={{ color: '#cbd5e1', fontSize: 14, lineHeight: 1.7, margin: 0 }}>
-              Fire ants treated in your yard will re-invade from neighboring properties within <strong style={{ color: '#e2e8f0′ }}>30–60 days</strong>. This is the #1 reason DFW homeowners feel treatment "didn’t work." Solutions: (1) re-apply bait every 6 months, (2) coordinate with neighbors, (3) talk to your HOA about community-wide treatment programs. Some DFW HOAs fund quarterly community treatments — check yours.
+              Fire ants treated in your yard will re-invade from neighboring properties within <strong style={{ color: '#e2e8f0' }}>30–60 days</strong>. This is the #1 reason DFW homeowners feel treatment "didn't work." Solutions: (1) re-apply bait every 6 months, (2) coordinate with neighbors, (3) talk to your HOA about community-wide treatment programs. Some DFW HOAs fund quarterly community treatments — check yours.
             </p>
           </div>
         </div>
@@ -90,7 +90,7 @@ export default function DFWFireAntGuide() {
             <div style={{ display: 'flex', gap: 8 }}>
               {[['small', 'Small (<5,000 sq ft)'], ['medium', 'Medium (5–10K sq ft)'], ['large', 'Large (10K+ sq ft)']].map(([v, l]) => (
                 <button key={v} onClick={() => setYardSize(v)}
-                  style={{ flex: 1, padding: '10px 4px', borderRadius: 8, border: '2px solid', borderColor: yardSize === v ? '#F5E642′ : '#1a2d4a', backgroundColor: yardSize === v ? '#F5E642' : '#1a2d4a', color: yardSize === v ? '#0A1628' : '#cbd5e1', fontWeight: 600, cursor: ’pointer', fontSize: 12 }}>
+                  style={{ flex: 1, padding: '10px 4px', borderRadius: 8, border: '2px solid', borderColor: yardSize === v ? '#F5E642' : '#1a2d4a', backgroundColor: yardSize === v ? '#F5E642' : '#1a2d4a', color: yardSize === v ? '#0A1628' : '#cbd5e1', fontWeight: 600, cursor: 'pointer', fontSize: 12 }}>
                   {l}
                 </button>
               ))}
@@ -102,7 +102,7 @@ export default function DFWFireAntGuide() {
             <div style={{ display: 'flex', gap: 8 }}>
               {[['low', 'Low (1–3 mounds)'], ['moderate', 'Moderate (4–10)'], ['high', 'Heavy (10+ mounds)']].map(([v, l]) => (
                 <button key={v} onClick={() => setSeverity(v)}
-                  style={{ flex: 1, padding: '10px 4px', borderRadius: 8, border: '2px solid', borderColor: severity === v ? '#F5E642′ : '#1a2d4a', backgroundColor: severity === v ? '#F5E642' : '#1a2d4a', color: severity === v ? '#0A1628' : '#cbd5e1', fontWeight: 600, cursor: ’pointer', fontSize: 12 }}>
+                  style={{ flex: 1, padding: '10px 4px', borderRadius: 8, border: '2px solid', borderColor: severity === v ? '#F5E642' : '#1a2d4a', backgroundColor: severity === v ? '#F5E642' : '#1a2d4a', color: severity === v ? '#0A1628' : '#cbd5e1', fontWeight: 600, cursor: 'pointer', fontSize: 12 }}>
                   {l}
                 </button>
               ))}

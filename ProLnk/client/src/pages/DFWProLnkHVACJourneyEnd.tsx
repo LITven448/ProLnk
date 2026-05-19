@@ -41,13 +41,13 @@ export default function DFWProLnkHVACJourneyEnd() {
           <p style={{ color: '#94a3b8', marginBottom: 20 }}>Who are you?</p>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: 12 }}>
             {personas.map(p => (
-              <button key={p.id} onClick={() => setSelected(p.id)} style={{ background: selected === p.id ? '#F5E642′ : '#1e3a5f', color: selected === p.id ? '#0A1628' : '#fff', border: ’none', borderRadius: 10, padding: '14px 16px', cursor: 'pointer', fontSize: 14, fontWeight: 600, transition: 'all 0.2s' }}>
+              <button key={p.id} onClick={() => setSelected(p.id)} style={{ background: selected === p.id ? '#F5E642' : '#1e3a5f', color: selected === p.id ? '#0A1628' : '#fff', border: 'none', borderRadius: 10, padding: '14px 16px', cursor: 'pointer', fontSize: 14, fontWeight: 600, transition: 'all 0.2s' }}>
                 {p.label}
               </button>
             ))}
           </div>
           {result && (
-            <div style={{ marginTop: 24, background: '#0A1628', borderRadius: 10, padding: 20, borderLeft: '4px solid #F5E642′ }}>
+            <div style={{ marginTop: 24, background: '#0A1628', borderRadius: 10, padding: 20, borderLeft: '4px solid #F5E642' }}>
               <div style={{ fontSize: 15, color: '#e2e8f0', lineHeight: 1.8 }}>{result.message}</div>
             </div>
           )}

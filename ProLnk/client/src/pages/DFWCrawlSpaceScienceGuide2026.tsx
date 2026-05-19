@@ -7,7 +7,7 @@ export default function DFWCrawlSpaceScienceGuide2026() {
     'visible-moisture': {
       title: 'Active Moisture Intrusion',
       science: 'DFW soil releases moisture vapor upward continuously. Without a vapor barrier, relative humidity in pier-and-beam crawl spaces often exceeds 80% — well above the 70% threshold for mold growth.\',
-      solution: 'Install 6-mil polyethylene vapor barrier across entire soil surface, overlapping 12″ at seams, sealed to piers. Eliminates up to 98% of soil vapor transmission.\',
+      solution: 'Install 6-mil polyethylene vapor barrier across entire soil surface, overlapping 12" at seams, sealed to piers. Eliminates up to 98% of soil vapor transmission.\',
       cost: '$1,800–$4,200'
     },
     'musty-smell': {
@@ -65,8 +65,8 @@ export default function DFWCrawlSpaceScienceGuide2026() {
             'A properly encapsulated crawl space can reduce whole-home humidity by 15–20% without a whole-house dehumidifier.\',
           ].map((fact, i) => (
             <div key={i} style={{ display: 'flex', gap: '0.75rem', marginBottom: '0.75rem' }}>
-              <span style={{ color: '#F5E642′ }}>▸</span>
-              <span style={{ color: '#cbd5e1′ }}>{fact}</span>
+              <span style={{ color: '#F5E642' }}>▸</span>
+              <span style={{ color: '#cbd5e1' }}>{fact}</span>
             </div>
           ))}
         </div>
@@ -76,7 +76,7 @@ export default function DFWCrawlSpaceScienceGuide2026() {
           <div style={{ display: 'flex', gap: '0.75rem', flexWrap: 'wrap', marginBottom: '1.5rem' }}>
             {Object.entries({ 'visible-moisture': '💧 Visible Moisture', 'musty-smell': '👃 Musty Smell', 'wood-rot': '🪵 Wood Rot', 'high-humidity': '☁️ High Humidity' }).map(([k, v]) => (
               <button key={k} onClick={() => setCondition(k)}
-                style={{ padding: '0.5rem 1rem', borderRadius: '20px', border: 'none', cursor: 'pointer', background: condition === k ? '#F5E642′ : '#1e3a5f', color: condition === k ? '#0A1628' : '#94a3b8', fontWeight: 600 }}>
+                style={{ padding: '0.5rem 1rem', borderRadius: '20px', border: 'none', cursor: 'pointer', background: condition === k ? '#F5E642' : '#1e3a5f', color: condition === k ? '#0A1628' : '#94a3b8', fontWeight: 600 }}>
                 {v}
               </button>
             ))}

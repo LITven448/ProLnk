@@ -40,7 +40,7 @@ export default function DFWTransferHomeBuyerGuide() {
       <div style={{ maxWidth: 820, margin: '0 auto' }}>
         <div style={{ textAlign: 'center', marginBottom: '2.5rem' }}>
           <div style={{ fontSize: '3rem' }}>📦</div>
-          <h1 style={{ fontSize: '2.2rem', color: '#0A1628', margin: '0.5rem 0′ }}>DFW Corporate Transfer Home Buyer Guide</h1>
+          <h1 style={{ fontSize: '2.2rem', color: '#0A1628', margin: '0.5rem 0' }}>DFW Corporate Transfer Home Buyer Guide</h1>
           <p style={{ color: '#5A7090', fontSize: '1.05rem' }}>When your company moves you to DFW — compressed timelines, relo packages, and suburb strategy</p>
         </div>
 
@@ -63,7 +63,7 @@ export default function DFWTransferHomeBuyerGuide() {
             </div>
           </div>
           {result && (
-            <div style={{ marginTop: '1.5rem', background: '#EFF6FF', borderRadius: 10, padding: '1.2rem', borderLeft: '4px solid #0A1628′ }}>
+            <div style={{ marginTop: '1.5rem', background: '#EFF6FF', borderRadius: 10, padding: '1.2rem', borderLeft: '4px solid #0A1628' }}>
               <div style={{ fontSize: '1rem', fontWeight: 700, color: '#0A1628', marginBottom: '0.8rem' }}>📋 Strategy: {result.strategy}</div>
               <div style={{ marginBottom: 8 }}><span style={{ color: '#1D4ED8', fontWeight: 600 }}>📍 Best Suburbs: </span>{result.suburbs.join(' · ')}</div>
               <div style={{ marginBottom: 8 }}><span style={{ color: '#1D4ED8', fontWeight: 600 }}>🎯 Priorities: </span>{result.priorities.join(' | ')}</div>

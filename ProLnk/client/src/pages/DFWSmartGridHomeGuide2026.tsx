@@ -27,7 +27,7 @@ export default function DFWSmartGridHomeGuide2026() {
           <p style={{ color: '#94a3b8', fontSize: 15 }}>How DFW homes connect, optimize, and earn from the smart grid</p>
         </div>
 
-        <div style={{ background: '#112240', borderRadius: 12, padding: 20, marginBottom: 28, borderLeft: '4px solid #F5E642′ }}>
+        <div style={{ background: '#112240', borderRadius: 12, padding: 20, marginBottom: 28, borderLeft: '4px solid #F5E642' }}>
           <h2 style={{ color: '#F5E642', margin: '0 0 8px', fontSize: 16 }}>🔮 Bidirectional Power Flow Coming 2027</h2>
           <p style={{ color: '#cbd5e1', fontSize: 14, margin: 0 }}>ERCOT is piloting Vehicle-to-Grid programs. F-150 Lightning and future EVs will export power back to the grid during peak demand — earning DFW homeowners $500-1,500/yr. Homes with solar+battery+EV become mini power plants.</p>
         </div>
@@ -50,7 +50,7 @@ export default function DFWSmartGridHomeGuide2026() {
         <div style={{ display: 'flex', flexWrap: 'wrap', gap: 10, marginBottom: 20 }}>
           {setups.map(s => (
             <button key={s.label} onClick={() => setSelected(s.label)}
-              style={{ background: selected === s.label ? '#F5E642′ : '#1e3a5f', color: selected === s.label ? '#0A1628' : '#fff', border: ’none', borderRadius: 8, padding: '10px 18px', cursor: 'pointer', fontWeight: 600, fontSize: 13 }}>
+              style={{ background: selected === s.label ? '#F5E642' : '#1e3a5f', color: selected === s.label ? '#0A1628' : '#fff', border: 'none', borderRadius: 8, padding: '10px 18px', cursor: 'pointer', fontWeight: 600, fontSize: 13 }}>
               {s.label}
             </button>
           ))}

@@ -40,26 +40,26 @@ export default function DFWHVACTechVisitGuide() {
         </p>
 
         <div style={{ background: '#0F2040', borderRadius: 12, padding: 24, marginBottom: 24 }}>
-          <h2 style={{ fontSize: 18, fontWeight: 700, marginBottom: 12, color: '#F5E642′ }}>📅 Step 1: Select Visit Type</h2>
+          <h2 style={{ fontSize: 18, fontWeight: 700, marginBottom: 12, color: '#F5E642' }}>📅 Step 1: Select Visit Type</h2>
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8 }}>
             {VISIT_TYPES.map(v => (
-              <button key={v} onClick={() => setVisitType(v)} style={{ background: visitType === v ? '#F5E642′ : '#162030', color: visitType === v ? '#0A1628' : '#fff', border: ’none', borderRadius: 8, padding: '10px 16px', cursor: 'pointer', fontWeight: visitType === v ? 700 : 400, fontSize: 13 }}>{v}</button>
+              <button key={v} onClick={() => setVisitType(v)} style={{ background: visitType === v ? '#F5E642' : '#162030', color: visitType === v ? '#0A1628' : '#fff', border: 'none', borderRadius: 8, padding: '10px 16px', cursor: 'pointer', fontWeight: visitType === v ? 700 : 400, fontSize: 13 }}>{v}</button>
             ))}
           </div>
         </div>
 
         <div style={{ background: '#0F2040', borderRadius: 12, padding: 24, marginBottom: 24 }}>
-          <h2 style={{ fontSize: 18, fontWeight: 700, marginBottom: 12, color: '#F5E642′ }}>🏠 Step 2: Your Situation</h2>
+          <h2 style={{ fontSize: 18, fontWeight: 700, marginBottom: 12, color: '#F5E642' }}>🏠 Step 2: Your Situation</h2>
           <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
             {SITUATIONS.map(s => (
-              <button key={s} onClick={() => setSituation(s)} style={{ background: situation === s ? '#F5E642′ : '#162030', color: situation === s ? '#0A1628' : '#fff', border: ’none', borderRadius: 8, padding: '12px 16px', textAlign: 'left', cursor: 'pointer', fontWeight: situation === s ? 700 : 400, fontSize: 14 }}>{s}</button>
+              <button key={s} onClick={() => setSituation(s)} style={{ background: situation === s ? '#F5E642' : '#162030', color: situation === s ? '#0A1628' : '#fff', border: 'none', borderRadius: 8, padding: '12px 16px', textAlign: 'left', cursor: 'pointer', fontWeight: situation === s ? 700 : 400, fontSize: 14 }}>{s}</button>
             ))}
           </div>
         </div>
 
         {checklist && (
           <div style={{ background: '#0F2040', borderRadius: 12, padding: 24, marginBottom: 24 }}>
-            <h2 style={{ fontSize: 18, fontWeight: 700, marginBottom: 20, color: '#F5E642′ }}>✅ Your Preparation Checklist</h2>
+            <h2 style={{ fontSize: 18, fontWeight: 700, marginBottom: 20, color: '#F5E642' }}>✅ Your Preparation Checklist</h2>
             {[['Before the Visit', checklist.before], ['During the Visit', checklist.during], ['After the Visit', checklist.after]].map(([label, items]) => (
               <div key={label as string} style={{ marginBottom: 20 }}>
                 <div style={{ fontWeight: 700, marginBottom: 10, fontSize: 15 }}>{label as string}</div>

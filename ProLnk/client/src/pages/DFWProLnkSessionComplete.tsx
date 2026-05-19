@@ -79,7 +79,7 @@ export default function DFWProLnkSessionComplete() {
           ].map((stat, i) => (
             <div key={i} style={{ background: '#0d1f3c', borderRadius: 12, padding: 20, textAlign: 'center' }}>
               <div style={{ fontSize: 32, marginBottom: 8 }}>{stat.icon}</div>
-              <div style={{ fontSize: 28, fontWeight: 800, color: '#F5E642′ }}>{stat.number}</div>
+              <div style={{ fontSize: 28, fontWeight: 800, color: '#F5E642' }}>{stat.number}</div>
               <div style={{ color: '#8899aa', fontSize: 13 }}>{stat.label}</div>
             </div>
           ))}
@@ -91,13 +91,13 @@ export default function DFWProLnkSessionComplete() {
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12, marginBottom: 20 }}>
             {roles.map(r => (
               <button key={r} onClick={() => { setRole(r); setRevealed(false); }}
-                style={{ background: role === r ? '#F5E642′ : '#152238', color: role === r ? '#0A1628' : '#ccd9e8', border: role === r ? ’none' : '1px solid #1e3a5f', borderRadius: 8, padding: '12px 16px', fontWeight: role === r ? 700 : 400, fontSize: 14, cursor: 'pointer', textAlign: 'left' }}>
+                style={{ background: role === r ? '#F5E642' : '#152238', color: role === r ? '#0A1628' : '#ccd9e8', border: role === r ? 'none' : '1px solid #1e3a5f', borderRadius: 8, padding: '12px 16px', fontWeight: role === r ? 700 : 400, fontSize: 14, cursor: 'pointer', textAlign: 'left' }}>
                 {r}
               </button>
             ))}
           </div>
           <button onClick={() => setRevealed(true)} disabled={!role}
-            style={{ background: role ? '#F5E642′ : '#1e3a5f', color: role ? '#0A1628' : '#4a6080', border: ’none', borderRadius: 8, padding: '12px 28px', fontWeight: 700, fontSize: 15, cursor: role ? 'pointer' : 'not-allowed' }}>
+            style={{ background: role ? '#F5E642' : '#1e3a5f', color: role ? '#0A1628' : '#4a6080', border: 'none', borderRadius: 8, padding: '12px 28px', fontWeight: 700, fontSize: 15, cursor: role ? 'pointer' : 'not-allowed' }}>
             Show My Message →
           </button>
         </div>
@@ -114,7 +114,7 @@ export default function DFWProLnkSessionComplete() {
               {msg.steps.map((step, i) => (
                 <div key={i} style={{ display: 'flex', gap: 12, marginBottom: 10, padding: 12, background: '#152238', borderRadius: 8 }}>
                   <span style={{ color: '#F5E642', fontWeight: 800, flexShrink: 0 }}>{i + 1}.</span>
-                  <span style={{ fontSize: 13, color: '#ccd9e8′ }}>{step}</span>
+                  <span style={{ fontSize: 13, color: '#ccd9e8' }}>{step}</span>
                 </div>
               ))}
             </div>

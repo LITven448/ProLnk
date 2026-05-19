@@ -51,7 +51,7 @@ export default function DFWHVACHumidifierTypeGuide() {
   return (
     <div style={{ background: '#0A1628', minHeight: '100vh', color: '#fff', fontFamily: 'sans-serif', padding: '2rem' }}>
       <div style={{ maxWidth: '800px', margin: '0 auto' }}>
-        <div style={{ marginBottom: '0.5rem', fontSize: '0.85rem', color: '#F5E642′ }}>💧 DFW HVAC GUIDE</div>
+        <div style={{ marginBottom: '0.5rem', fontSize: '0.85rem', color: '#F5E642' }}>💧 DFW HVAC GUIDE</div>
         <h1 style={{ fontSize: '2rem', fontWeight: 800, marginBottom: '0.75rem' }}>
           Humidifier Type Guide for DFW Homes
         </h1>
@@ -66,7 +66,7 @@ export default function DFWHVACHumidifierTypeGuide() {
             <div>
               <label style={{ display: 'block', marginBottom: '0.4rem', color: '#94a3b8', fontSize: '0.85rem' }}>HOME SIZE</label>
               <select value={homeSize} onChange={e => setHomeSize(e.target.value)}
-                style={{ width: '100%', padding: '0.6rem', borderRadius: '8px', background: '#1a2f55', color: '#fff', border: '1px solid #2a4080′ }}>
+                style={{ width: '100%', padding: '0.6rem', borderRadius: '8px', background: '#1a2f55', color: '#fff', border: '1px solid #2a4080' }}>
                 <option value="">Select size</option>
                 <option value="small">Under 2,000 sq ft</option>
                 <option value="medium">2,000–4,000 sq ft</option>
@@ -76,7 +76,7 @@ export default function DFWHVACHumidifierTypeGuide() {
             <div>
               <label style={{ display: 'block', marginBottom: '0.4rem', color: '#94a3b8', fontSize: '0.85rem' }}>DRY AIR PROBLEM</label>
               <select value={humidityProblem} onChange={e => setHumidityProblem(e.target.value)}
-                style={{ width: '100%', padding: '0.6rem', borderRadius: '8px', background: '#1a2f55', color: '#fff', border: '1px solid #2a4080′ }}>
+                style={{ width: '100%', padding: '0.6rem', borderRadius: '8px', background: '#1a2f55', color: '#fff', border: '1px solid #2a4080' }}>
                 <option value="">Select severity</option>
                 <option value="mild">Mild — occasional static</option>
                 <option value="moderate">Moderate — nosebleeds, dry skin</option>
@@ -91,7 +91,7 @@ export default function DFWHVACHumidifierTypeGuide() {
         </div>
 
         {rec && (
-          <div style={{ background: '#0f1f3d', borderRadius: '12px', padding: '1.5rem', marginBottom: '2rem', border: '1px solid #F5E642′ }}>
+          <div style={{ background: '#0f1f3d', borderRadius: '12px', padding: '1.5rem', marginBottom: '2rem', border: '1px solid #F5E642' }}>
             <h3 style={{ color: '#F5E642', marginBottom: '0.5rem' }}>✅ Recommended: {rec.name}</h3>
             <p style={{ color: '#94a3b8', marginBottom: '1rem', fontSize: '0.9rem' }}>{rec.dfwNote}</p>
             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: '1rem' }}>
@@ -102,14 +102,14 @@ export default function DFWHVACHumidifierTypeGuide() {
           </div>
         )}
 
-        <h2 style={{ fontSize: '1.2rem', fontWeight: 700, marginBottom: '1rem', color: '#F5E642′ }}>📊 All Three Types Compared</h2>
+        <h2 style={{ fontSize: '1.2rem', fontWeight: 700, marginBottom: '1rem', color: '#F5E642' }}>📊 All Three Types Compared</h2>
         {Object.values(humidifierData).map(h => (
           <div key={h.name} style={{ background: '#0f1f3d', borderRadius: '10px', padding: '1.2rem', marginBottom: '1rem' }}>
             <h3 style={{ marginBottom: '0.4rem' }}>🌡️ {h.name}</h3>
             <p style={{ color: '#94a3b8', fontSize: '0.85rem', marginBottom: '0.5rem' }}>{h.dfwNote}</p>
             <div style={{ display: 'flex', gap: '2rem', fontSize: '0.85rem' }}>
-              <div><span style={{ color: '#F5E642′ }}>Cost: </span>{h.cost}</div>
-              <div><span style={{ color: '#F5E642′ }}>Sizing: </span>{h.sizing}</div>
+              <div><span style={{ color: '#F5E642' }}>Cost: </span>{h.cost}</div>
+              <div><span style={{ color: '#F5E642' }}>Sizing: </span>{h.sizing}</div>
             </div>
           </div>
         ))}
@@ -117,7 +117,7 @@ export default function DFWHVACHumidifierTypeGuide() {
         <div style={{ background: '#0f1f3d', borderRadius: '10px', padding: '1.2rem', marginTop: '1rem' }}>
           <h3 style={{ color: '#F5E642', marginBottom: '0.5rem' }}>⚠️ DFW Install Tips</h3>
           <ul style={{ color: '#94a3b8', lineHeight: 2, paddingLeft: '1.2rem' }}>
-            <li>Set humidistat to 35–45% RH for DFW winters — don't chase 50%+ or you’ll get window condensation</li>
+            <li>Set humidistat to 35–45% RH for DFW winters — don't chase 50%+ or you'll get window condensation</li>
             <li>Install a whole-home humidistat, not just a furnace-mounted one, for accurate readings</li>
             <li>Bypass and fan-powered models need annual pad replacement — budget $30–60/yr</li>
             <li>Steam humidifiers need distilled water or annual electrode replacement in DFW's hard water areas</li>

@@ -101,7 +101,7 @@ export default function DFWAirHandlerLocationGuide() {
             Analyze My Location Impact
           </button>
           {showResult && (
-            <div style={{ marginTop: 20, background: '#0A1628', borderRadius: 10, padding: 20, borderLeft: '4px solid #F5E642′ }}>
+            <div style={{ marginTop: 20, background: '#0A1628', borderRadius: 10, padding: 20, borderLeft: '4px solid #F5E642' }}>
               <div style={{ fontWeight: 700, color: '#F5E642', marginBottom: 12, fontSize: 16 }}>Location Analysis: {loc.label}</div>
               <div style={{ color: '#CBD2E0', marginBottom: 6 }}><strong>Efficiency loss estimate:</strong> {loc.efficiencyLoss}</div>
               <div style={{ color: '#CBD2E0', marginBottom: 6 }}><strong>Operating environment:</strong> {loc.summerAtticTemp} in summer</div>

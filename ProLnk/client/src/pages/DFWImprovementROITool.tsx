@@ -66,8 +66,8 @@ export default function DFWImprovementROITool() {
             </select>
           </div>
           {[
-            { label: 'Project Cost ($)', value: projectCost, set: setProjectCost, placeholder: '45,000′ },
-            { label: 'Current Home Value ($)', value: homeValue, set: setHomeValue, placeholder: '450,000′ },
+            { label: 'Project Cost ($)', value: projectCost, set: setProjectCost, placeholder: '45,000' },
+            { label: 'Current Home Value ($)', value: homeValue, set: setHomeValue, placeholder: '450,000' },
           ].map(({ label, value, set, placeholder }) => (
             <div key={label} style={{ marginBottom: 16 }}>
               <label style={{ display: 'block', fontWeight: 600, marginBottom: 6, fontSize: 14 }}>{label}</label>
@@ -85,7 +85,7 @@ export default function DFWImprovementROITool() {
                 { key: 'luxury', label: '🏰 Luxury' },
               ].map(({ key, label }) => (
                 <button key={key} onClick={() => setNeighborhoodTier(key)}
-                  style={{ padding: '10px', borderRadius: 8, border: `2px solid ${neighborhoodTier === key ? '#F5E642' : '#E5E7EB'}`, background: neighborhoodTier === key ? '#FEFCE8′ : '#fff', cursor: ’pointer', fontWeight: 600, fontSize: 13 }}>
+                  style={{ padding: '10px', borderRadius: 8, border: `2px solid ${neighborhoodTier === key ? '#F5E642' : '#E5E7EB'}`, background: neighborhoodTier === key ? '#FEFCE8' : '#fff', cursor: 'pointer', fontWeight: 600, fontSize: 13 }}>
                   {label}
                 </button>
               ))}
@@ -99,7 +99,7 @@ export default function DFWImprovementROITool() {
 
         {results && (
           <div style={{ background: '#fff', borderRadius: 12, padding: 24, boxShadow: '0 2px 8px rgba(0,0,0,0.08)' }}>
-            <div style={{ background: results.pencils ? '#F0FDF4′ : '#FFFBEB', borderRadius: 8, padding: '12px 16px', marginBottom: 20, fontWeight: 600, fontSize: 14 }}>
+            <div style={{ background: results.pencils ? '#F0FDF4' : '#FFFBEB', borderRadius: 8, padding: '12px 16px', marginBottom: 20, fontWeight: 600, fontSize: 14 }}>
               {results.verdict}
             </div>
             {[
@@ -107,7 +107,7 @@ export default function DFWImprovementROITool() {
               { label: '📊 ROI Percentage', value: `${results.roi.toFixed(1)}%` },
               { label: '⏱️ Approx. Payback Period', value: `${results.payback} years` },
             ].map(({ label, value }) => (
-              <div key={label} style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '12px 0', borderBottom: '1px solid #F3F4F6′ }}>
+              <div key={label} style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '12px 0', borderBottom: '1px solid #F3F4F6' }}>
                 <span style={{ fontWeight: 500 }}>{label}</span>
                 <span style={{ fontWeight: 700, fontSize: 18, background: '#F5E642', padding: '2px 10px', borderRadius: 4 }}>{value}</span>
               </div>

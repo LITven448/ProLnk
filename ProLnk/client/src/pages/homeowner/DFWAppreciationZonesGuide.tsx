@@ -122,7 +122,7 @@ export default function DFWAppreciationZonesGuide() {
             <input
               value={zip}
               onChange={e => setZip(e.target.value)}
-              placeholder="e.g. 75009″
+              placeholder="e.g. 75009"
               maxLength={5}
               style={{ flex: 1, padding: '12px 16px', borderRadius: 8, border: '1px solid #334155', background: '#0f172a', color: '#f8fafc', fontSize: 15 }}
             />

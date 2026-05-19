@@ -20,11 +20,11 @@ export default function DFWPrimingAndSealingGuide() {
         <h1 style={{ fontSize: 28, fontWeight: 800, margin: '0 0 8px' }}>Priming & Sealing Guide</h1>
         <p style={{ color: '#8899B0', fontSize: 15, margin: '0 0 32px' }}>DFW-specific primer and sealer recommendations by surface type and situation.</p>
         <div style={{ background: '#111E35', borderRadius: 12, padding: 24, marginBottom: 24 }}>
-          <div style={{ fontWeight: 700, marginBottom: 12, color: '#F5E642′ }}>Select Surface Type</div>
+          <div style={{ fontWeight: 700, marginBottom: 12, color: '#F5E642' }}>Select Surface Type</div>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 10 }}>
             {SURFACES.map(s => (
               <button key={s.id} onClick={() => setSurfaceId(s.id)}
-                style={{ background: s.id === surfaceId ? '#F5E642′ : '#1C2E4A', color: s.id === surfaceId ? '#0A1628' : '#E8EDF5',
+                style={{ background: s.id === surfaceId ? '#F5E642' : '#1C2E4A', color: s.id === surfaceId ? '#0A1628' : '#E8EDF5',
                   border: 'none', borderRadius: 8, padding: '10px 14px', cursor: 'pointer', fontWeight: 600, fontSize: 13, textAlign: 'left' }}>
                 {s.label}
               </button>
@@ -32,12 +32,12 @@ export default function DFWPrimingAndSealingGuide() {
           </div>
         </div>
         <div style={{ background: '#1C2E4A', borderRadius: 12, padding: 24, marginBottom: 20 }}>
-          <div style={{ fontSize: 18, fontWeight: 800, marginBottom: 16, color: '#F5E642′ }}>Paint {sel.label}</div>
+          <div style={{ fontSize: 18, fontWeight: 800, marginBottom: 16, color: '#F5E642' }}>Paint {sel.label}</div>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 14, marginBottom: 16 }}>
             {[['Primer', sel.primer], ['Sealer', sel.sealer]].map(([label, val]) => (
               <div key={label} style={{ background: '#0A1628', borderRadius: 8, padding: 14 }}>
                 <div style={{ fontSize: 11, color: '#8899B0', marginBottom: 4 }}>{label}</div>
-                <div style={{ fontWeight: 700, fontSize: 14, color: '#E8EDF5′ }}>{val}</div>
+                <div style={{ fontWeight: 700, fontSize: 14, color: '#E8EDF5' }}>{val}</div>
               </div>
             ))}
           </div>
@@ -45,7 +45,7 @@ export default function DFWPrimingAndSealingGuide() {
             <div style={{ color: '#F5E642', fontWeight: 700, marginBottom: 4, fontSize: 13 }}>Why This Choice</div>
             <div style={{ color: '#8899B0', fontSize: 14 }}>{sel.reason}</div>
           </div>
-          <div style={{ background: '#112240', borderRadius: 8, padding: 14, border: '1px solid #F5E642′ }}>
+          <div style={{ background: '#112240', borderRadius: 8, padding: 14, border: '1px solid #F5E642' }}>
             <div style={{ color: '#F5E642', fontWeight: 700, marginBottom: 4, fontSize: 13 }}>DFW-Specific Note</div>
             <div style={{ color: '#E8EDF5', fontSize: 14 }}>{sel.dfwNote}</div>
           </div>

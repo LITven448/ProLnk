@@ -10,14 +10,14 @@ function getReadiness(age: string, size: string): ReadinessResult {
   const sizeIdx = homeSizes.indexOf(size);
   const score = Math.max(0, 100 - ageIdx * 16 - sizeIdx * 2);
   const tier = sizeIdx <= 1
-    ? ageIdx >= 3 ? 'Economy 14-SEER2′ : ’Standard 16-SEER2'
+    ? ageIdx >= 3 ? 'Economy 14-SEER2' : 'Standard 16-SEER2'
     : sizeIdx <= 2
-    ? ageIdx >= 3 ? 'Standard 16-SEER2′ : ’Comfort 18-SEER2'
-    : ageIdx >= 3 ? 'Comfort 18-SEER2′ : ’Premium 20-SEER2';
+    ? ageIdx >= 3 ? 'Standard 16-SEER2' : 'Comfort 18-SEER2'
+    : ageIdx >= 3 ? 'Comfort 18-SEER2' : 'Premium 20-SEER2';
   const baseMin = 4200 + sizeIdx * 800 + Math.max(0, ageIdx - 2) * 200;
   const baseMax = baseMin + 2000 + sizeIdx * 500;
   const label = score >= 70 ? 'GOOD' : score >= 40 ? 'AGING' : score >= 20 ? 'DECLINING' : 'REPLACE SOON';
-  const color = score >= 70 ? '#44FF88′ : score >= 40 ? '#F5E642' : score >= 20 ? '#FF8C00' : '#FF4444';
+  const color = score >= 70 ? '#44FF88' : score >= 40 ? '#F5E642' : score >= 20 ? '#FF8C00' : '#FF4444';
   const tierDesc = {
     'Economy 14-SEER2': 'Best value for smaller DeSoto homes. Meets minimum efficiency standards. Good for moderate use.',
     'Standard 16-SEER2': 'Most popular choice in DeSoto. Balances upfront cost with long-term savings on Oncor bills.',
@@ -41,7 +41,7 @@ export default function DFWHVACDeSoto() {
         </div>
         <h1 style={{ fontSize: 'clamp(26px, 4vw, 42px)', fontWeight: 800, lineHeight: 1.2, marginBottom: 12 }}>
           DeSoto TX HVAC<br />
-          <span style={{ color: '#F5E642′ }}>South Dallas County Specialists</span>
+          <span style={{ color: '#F5E642' }}>South Dallas County Specialists</span>
         </h1>
         <p style={{ color: '#94A3B8', fontSize: 16, maxWidth: 680, lineHeight: 1.7, marginBottom: 40 }}>
           DeSoto is a well-established middle-class community in southern Dallas County where most homes were built between the 1970s and early 2000s. Many systems in DeSoto are reaching or past end-of-life — and with summer temperatures regularly hitting 100°F+, a failing AC is a real health and safety issue. Our vetted HVAC pros offer honest load calculations, not oversized equipment.
@@ -56,14 +56,14 @@ export default function DFWHVACDeSoto() {
           ].map(card => (
             <div key={card.label} style={{ background: '#132040', borderRadius: 12, padding: 20, border: '1px solid #1E3A5F' }}>
               <div style={{ fontSize: 28, marginBottom: 10 }}>{card.emoji}</div>
-              <div style={{ fontWeight: 700, marginBottom: 6, color: '#F5E642′ }}>{card.label}</div>
+              <div style={{ fontWeight: 700, marginBottom: 6, color: '#F5E642' }}>{card.label}</div>
               <div style={{ color: '#94A3B8', fontSize: 14, lineHeight: 1.6 }}>{card.desc}</div>
             </div>
           ))}
         </div>
 
         <div style={{ background: '#132040', borderRadius: 16, padding: 32, border: '1px solid #F5E642', marginBottom: 40 }}>
-          <h2 style={{ fontSize: 22, fontWeight: 700, marginBottom: 8, color: '#F5E642′ }}>
+          <h2 style={{ fontSize: 22, fontWeight: 700, marginBottom: 8, color: '#F5E642' }}>
             🌡️ Replacement Readiness Score
           </h2>
           <p style={{ color: '#94A3B8', fontSize: 14, marginBottom: 24 }}>

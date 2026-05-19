@@ -39,7 +39,7 @@ export default function DFWEnergyEfficiencyPyramid() {
                 onClick={() => toggle(item.id)}
                 style={{
                   background: isSelected ? 'rgba(245,230,66,0.12)' : 'rgba(255,255,255,0.05)',
-                  border: isSelected ? '1px solid #F5E642′ : '1px solid rgba(255,255,255,0.1)',
+                  border: isSelected ? '1px solid #F5E642' : '1px solid rgba(255,255,255,0.1)',
                   borderRadius: 12,
                   padding: '1rem 1.25rem',
                   cursor: 'pointer',
@@ -52,7 +52,7 @@ export default function DFWEnergyEfficiencyPyramid() {
                 <div style={{ fontSize: 28, minWidth: 36, textAlign: 'center' }}>{item.icon}</div>
                 <div style={{ flex: 1 }}>
                   <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: 4 }}>
-                    <span style={{ fontWeight: 600, color: isSelected ? '#F5E642′ : '#fff' }}>
+                    <span style={{ fontWeight: 600, color: isSelected ? '#F5E642' : '#fff' }}>
                       Step {item.level}: {item.label}
                     </span>
                     <span style={{ color: '#64748b', fontSize: '0.85rem' }}>{item.cost}</span>

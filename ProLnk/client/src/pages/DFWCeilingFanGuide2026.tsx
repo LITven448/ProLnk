@@ -43,7 +43,7 @@ export default function DFWCeilingFanGuide2026() {
         </div>
 
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12, marginBottom: 24 }}>
-          <div style={{ background: '#1e293b', borderRadius: 10, padding: 14, borderLeft: '3px solid #F5E642′ }}>
+          <div style={{ background: '#1e293b', borderRadius: 10, padding: 14, borderLeft: '3px solid #F5E642' }}>
             <div style={{ fontSize: 24, marginBottom: 4 }}>☀️</div>
             <p style={{ color: '#F5E642', fontWeight: 700, fontSize: 14, margin: '0 0 4px' }}>Summer: Counterclockwise</p>
             <p style={{ color: '#94a3b8', fontSize: 13, margin: 0 }}>Blades push cool air down. Can feel 8°F cooler in DFW summers. Set thermostat higher, save on A/C.</p>
@@ -107,7 +107,7 @@ export default function DFWCeilingFanGuide2026() {
           ))}
         </div>
 
-        <div style={{ background: '#1e293b', borderRadius: 10, padding: 14, borderLeft: '3px solid #F5E642′ }}>
+        <div style={{ background: '#1e293b', borderRadius: 10, padding: 14, borderLeft: '3px solid #F5E642' }}>
           <p style={{ color: '#94a3b8', fontSize: 13, margin: 0 }}>🌿 DFW outdoor fans must be UL wet-rated for uncovered areas, UL damp-rated for covered patios. Standard indoor fans will corrode rapidly in DFW humidity and summer storms.</p>
         </div>
       </div>

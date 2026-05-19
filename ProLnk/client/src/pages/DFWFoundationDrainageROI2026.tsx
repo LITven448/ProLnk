@@ -41,7 +41,7 @@ export default function DFWFoundationDrainageROI2026() {
             ].map(item => (
               <div key={item.label} style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '12px', background: '#1a2f4a', borderRadius: 8 }}>
                 <span style={{ fontSize: 14 }}>{item.label}</span>
-                <span style={{ color: item.type === 'investment' ? '#F5E642′ : item.type === ’gain' ? '#4ade80′ : '#f87171', fontWeight: 700, fontSize: 14 }}>{item.cost}</span>
+                <span style={{ color: item.type === 'investment' ? '#F5E642' : item.type === 'gain' ? '#4ade80' : '#f87171', fontWeight: 700, fontSize: 14 }}>{item.cost}</span>
               </div>
             ))}
           </div>

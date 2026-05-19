@@ -56,7 +56,7 @@ export default function DFWPartnerROICalculator() {
           <p style={{ color: '#64748b', margin: 0 }}>Model your Charter membership return — month by month</p>
         </div>
         <div style={{ background: '#fff', border: '1px solid #e2e8f0', borderRadius: 12, padding: 28, marginBottom: 24 }}>
-          <h2 style={{ marginTop: 0, fontSize: 18, color: '#0A1628′ }}>Your Profile</h2>
+          <h2 style={{ marginTop: 0, fontSize: 18, color: '#0A1628' }}>Your Profile</h2>
           <div style={{ marginBottom: 18 }}>
             <label style={{ fontSize: 13, fontWeight: 600, color: '#475569', display: 'block', marginBottom: 8 }}>🔨 Your Trade</label>
             <select value={trade} onChange={e => { setTrade(e.target.value); setCalculated(false); }}
@@ -69,7 +69,7 @@ export default function DFWPartnerROICalculator() {
             <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap' }}>
               {NETWORK_SIZES.map(s => (
                 <button key={s} onClick={() => { setNetwork(s); setCalculated(false); }}
-                  style={{ background: network === s ? '#0A1628′ : '#f1f5f9', color: network === s ? '#F5E642' : '#475569', border: '1px solid', borderColor: network === s ? '#0A1628' : '#e2e8f0', borderRadius: 8, padding: '7px 12px', cursor: ’pointer', fontSize: 12, fontWeight: network === s ? 700 : 400 }}>
+                  style={{ background: network === s ? '#0A1628' : '#f1f5f9', color: network === s ? '#F5E642' : '#475569', border: '1px solid', borderColor: network === s ? '#0A1628' : '#e2e8f0', borderRadius: 8, padding: '7px 12px', cursor: 'pointer', fontSize: 12, fontWeight: network === s ? 700 : 400 }}>
                   {s}
                 </button>
               ))}
@@ -80,7 +80,7 @@ export default function DFWPartnerROICalculator() {
             <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap' }}>
               {TIME_AVAILABLE.map(t => (
                 <button key={t} onClick={() => { setTime(t); setCalculated(false); }}
-                  style={{ background: time === t ? '#0A1628′ : '#f1f5f9', color: time === t ? '#F5E642' : '#475569', border: '1px solid', borderColor: time === t ? '#0A1628' : '#e2e8f0', borderRadius: 8, padding: '7px 12px', cursor: ’pointer', fontSize: 12, fontWeight: time === t ? 700 : 400 }}>
+                  style={{ background: time === t ? '#0A1628' : '#f1f5f9', color: time === t ? '#F5E642' : '#475569', border: '1px solid', borderColor: time === t ? '#0A1628' : '#e2e8f0', borderRadius: 8, padding: '7px 12px', cursor: 'pointer', fontSize: 12, fontWeight: time === t ? 700 : 400 }}>
                   {t}
                 </button>
               ))}
@@ -96,9 +96,9 @@ export default function DFWPartnerROICalculator() {
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(160px, 1fr))', gap: 12, marginBottom: 20 }}>
               {[
                 { label: 'Month 6 Income', value: `$${month6.monthly.toLocaleString()}/mo`, sub: `Net: $${month6.net.toLocaleString()}`, color: '#16a34a' },
-                { label: 'Month 12 Income', value: `$${month12.monthly.toLocaleString()}/mo`, sub: `Net: $${month12.net.toLocaleString()}`, color: '#0A1628′ },
+                { label: 'Month 12 Income', value: `$${month12.monthly.toLocaleString()}/mo`, sub: `Net: $${month12.net.toLocaleString()}`, color: '#0A1628' },
                 { label: 'Break-Even', value: breakEvenMonth ? `Month ${breakEvenMonth}` : 'Month 1+', sub: 'Cost recovered', color: '#7c3aed' },
-                { label: '12-Month Net ROI', value: `${netROI}%`, sub: `$${(totalReturn - totalInvest).toLocaleString()} profit`, color: '#dc2626′ },
+                { label: '12-Month Net ROI', value: `${netROI}%`, sub: `$${(totalReturn - totalInvest).toLocaleString()} profit`, color: '#dc2626' },
               ].map((card, i) => (
                 <div key={i} style={{ background: '#fff', border: '1px solid #e2e8f0', borderRadius: 12, padding: 18, textAlign: 'center' }}>
                   <div style={{ fontSize: 11, color: '#94a3b8', marginBottom: 4 }}>{card.label}</div>
@@ -114,17 +114,17 @@ export default function DFWPartnerROICalculator() {
                   <thead>
                     <tr style={{ background: '#f8fafc' }}>
                       {['Month', 'Gross Income', 'Membership Cost', 'Net'].map(h => (
-                        <th key={h} style={{ padding: '8px 12px', textAlign: 'left', color: '#64748b', fontWeight: 600, borderBottom: '1px solid #e2e8f0′ }}>{h}</th>
+                        <th key={h} style={{ padding: '8px 12px', textAlign: 'left', color: '#64748b', fontWeight: 600, borderBottom: '1px solid #e2e8f0' }}>{h}</th>
                       ))}
                     </tr>
                   </thead>
                   <tbody>
                     {months.map(m => (
                       <tr key={m.month} style={{ background: m.month % 2 === 0 ? '#fafafa' : '#fff' }}>
-                        <td style={{ padding: '8px 12px', color: '#475569′ }}>Mo. {m.month}</td>
+                        <td style={{ padding: '8px 12px', color: '#475569' }}>Mo. {m.month}</td>
                         <td style={{ padding: '8px 12px', fontWeight: 600, color: '#16a34a' }}>${m.monthly.toLocaleString()}</td>
-                        <td style={{ padding: '8px 12px', color: '#dc2626′ }}>-${CHARTER_COST}</td>
-                        <td style={{ padding: '8px 12px', fontWeight: 700, color: m.net >= 0 ? '#16a34a' : '#dc2626′ }}>${m.net.toLocaleString()}</td>
+                        <td style={{ padding: '8px 12px', color: '#dc2626' }}>-${CHARTER_COST}</td>
+                        <td style={{ padding: '8px 12px', fontWeight: 700, color: m.net >= 0 ? '#16a34a' : '#dc2626' }}>${m.net.toLocaleString()}</td>
                       </tr>
                     ))}
                   </tbody>

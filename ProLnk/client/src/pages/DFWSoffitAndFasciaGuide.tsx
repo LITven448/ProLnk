@@ -111,7 +111,7 @@ export default function DFWSoffitAndFasciaGuide() {
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: '1rem', textAlign: 'center', marginBottom: '0.75rem' }}>
                 <div>
                   <div style={{ color: '#94a3b8', fontSize: '0.8rem' }}>Recommendation</div>
-                  <div style={{ color: result.action === 'Repair' ? '#4ade80′ : '#facc15', fontSize: '1.1rem', fontWeight: 700 }}>{result.action}</div>
+                  <div style={{ color: result.action === 'Repair' ? '#4ade80' : '#facc15', fontSize: '1.1rem', fontWeight: 700 }}>{result.action}</div>
                 </div>
                 <div>
                   <div style={{ color: '#94a3b8', fontSize: '0.8rem' }}>Est. Cost</div>
@@ -119,11 +119,11 @@ export default function DFWSoffitAndFasciaGuide() {
                 </div>
                 <div>
                   <div style={{ color: '#94a3b8', fontSize: '0.8rem' }}>Pest Risk</div>
-                  <div style={{ color: result.pestRisk ? '#f87171′ : '#4ade80', fontSize: '1.1rem', fontWeight: 700 }}>{result.pestRisk ? ’High' : 'Low'}</div>
+                  <div style={{ color: result.pestRisk ? '#f87171' : '#4ade80', fontSize: '1.1rem', fontWeight: 700 }}>{result.pestRisk ? 'High' : 'Low'}</div>
                 </div>
               </div>
               <div style={{ color: '#94a3b8', fontSize: '0.85rem', borderTop: '1px solid #1e3a5f', paddingTop: '0.75rem' }}>
-                💡 <strong style={{ color: '#F5E642′ }}>Best Material:</strong> {result.material}
+                💡 <strong style={{ color: '#F5E642' }}>Best Material:</strong> {result.material}
               </div>
             </div>
           )}

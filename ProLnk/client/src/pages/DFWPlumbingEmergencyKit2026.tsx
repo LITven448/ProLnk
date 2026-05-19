@@ -11,9 +11,9 @@ const KITS: Record<string, { title: string; items: string[] }> = {
   'burst': {
     title: 'Burst Pipe Kit Items',
     items: [
-      '🔧 Adjustable wrench (10″) — for main shutoff valve under sink or at meter',
+      '🔧 Adjustable wrench (10") — for main shutoff valve under sink or at meter',
       '💧 Water shutoff key — DFW water meters often need this pentagon wrench',
-      '🪣 Pipe wrench (14″) — for galvanized or older pipe shutoffs',
+      '🪣 Pipe wrench (14") — for galvanized or older pipe shutoffs',
       '📱 ProLnk contact saved under "Emergency Plumber" in your phone',
       '🧱 Slip joint pliers — for quick hand-tightening compression fittings',
       '📋 Know your main shutoff location before emergency occurs',
@@ -80,8 +80,8 @@ export default function DFWPlumbingEmergencyKit2026() {
                 key={e.id}
                 onClick={() => setSelected(e.id)}
                 style={{
-                  background: selected === e.id ? '#F5E642′ : '#1e3a5f',
-                  color: selected === e.id ? '#0A1628′ : '#fff',
+                  background: selected === e.id ? '#F5E642' : '#1e3a5f',
+                  color: selected === e.id ? '#0A1628' : '#fff',
                   border: 'none', borderRadius: '8px', padding: '0.75rem',
                   fontWeight: 700, cursor: 'pointer', fontSize: '0.95rem',
                 }}
@@ -97,7 +97,7 @@ export default function DFWPlumbingEmergencyKit2026() {
             <h3 style={{ color: '#F5E642', fontWeight: 800, marginBottom: '1rem' }}>{KITS[selected].title}</h3>
             <ul style={{ listStyle: 'none', padding: 0, margin: 0 }}>
               {KITS[selected].items.map((item, i) => (
-                <li key={i} style={{ padding: '0.75rem', borderBottom: '1px solid #1e3a5f', lineHeight: 1.5, color: '#cbd5e1′ }}>
+                <li key={i} style={{ padding: '0.75rem', borderBottom: '1px solid #1e3a5f', lineHeight: 1.5, color: '#cbd5e1' }}>
                   {item}
                 </li>
               ))}

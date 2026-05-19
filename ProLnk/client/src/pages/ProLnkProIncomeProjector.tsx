@@ -36,7 +36,7 @@ export default function ProLnkProIncomeProjector() {
             {trades.map(t => (
               <button key={t} onClick={() => setTrade(t)}
                 style={{ padding: '8px 16px', borderRadius: 20, border: 'none', cursor: 'pointer',
-                  background: trade === t ? '#F5E642′ : '#1A2E4A', color: trade === t ? '#0A1628' : '#fff',
+                  background: trade === t ? '#F5E642' : '#1A2E4A', color: trade === t ? '#0A1628' : '#fff',
                   fontWeight: trade === t ? 700 : 400 }}>
                 {t}
               </button>
@@ -46,30 +46,30 @@ export default function ProLnkProIncomeProjector() {
 
         <div style={{ background: '#0F2040', borderRadius: 12, padding: 24, marginBottom: 20 }}>
           <label style={{ color: '#8899AA', fontSize: 12, display: 'block', marginBottom: 8 }}>
-            YEARS EXPERIENCE: <span style={{ color: '#F5E642′ }}>{experience} yrs</span>
+            YEARS EXPERIENCE: <span style={{ color: '#F5E642' }}>{experience} yrs</span>
           </label>
           <input type="range" min={1} max={20} value={experience} onChange={e => setExperience(+e.target.value)}
-            style={{ width: '100%', accentColor: '#F5E642′ }} />
+            style={{ width: '100%', accentColor: '#F5E642' }} />
           <div style={{ color: '#8899AA', fontSize: 11, marginTop: 4 }}>Tier: {tierLabel}</div>
         </div>
 
         <div style={{ background: '#0F2040', borderRadius: 12, padding: 24, marginBottom: 20 }}>
           <label style={{ color: '#8899AA', fontSize: 12, display: 'block', marginBottom: 8 }}>
-            AVG JOB TICKET: <span style={{ color: '#F5E642′ }}>${avgTicket.toLocaleString()}</span>
+            AVG JOB TICKET: <span style={{ color: '#F5E642' }}>${avgTicket.toLocaleString()}</span>
           </label>
           <input type="range" min={200} max={5000} step={100} value={avgTicket}
-            onChange={e => setAvgTicket(+e.target.value)} style={{ width: '100%', accentColor: '#F5E642′ }} />
+            onChange={e => setAvgTicket(+e.target.value)} style={{ width: '100%', accentColor: '#F5E642' }} />
         </div>
 
         <div style={{ background: '#0F2040', borderRadius: 12, padding: 24, marginBottom: 24 }}>
           <label style={{ color: '#8899AA', fontSize: 12, display: 'block', marginBottom: 8 }}>
-            NETWORK SIZE (PROS YOU RECRUITED): <span style={{ color: '#F5E642′ }}>{networkSize}</span>
+            NETWORK SIZE (PROS YOU RECRUITED): <span style={{ color: '#F5E642' }}>{networkSize}</span>
           </label>
           <input type="range" min={0} max={100} value={networkSize}
-            onChange={e => setNetworkSize(+e.target.value)} style={{ width: '100%', accentColor: '#F5E642′ }} />
+            onChange={e => setNetworkSize(+e.target.value)} style={{ width: '100%', accentColor: '#F5E642' }} />
         </div>
 
-        <div style={{ background: '#1A2E4A', borderRadius: 12, padding: 24, border: '2px solid #F5E642′ }}>
+        <div style={{ background: '#1A2E4A', borderRadius: 12, padding: 24, border: '2px solid #F5E642' }}>
           <h3 style={{ color: '#F5E642', margin: '0 0 16px', fontSize: 16 }}>📊 Monthly Income Projection</h3>
           {[
             ['🔨 Direct Commissions', `$${directCommission.toLocaleString()}`, `${matchesPerMonth} matches × $${avgTicket} × ${Math.round(tier * 100)}%`],

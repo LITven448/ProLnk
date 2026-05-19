@@ -75,7 +75,7 @@ export default function ProLnkProSeasonalStrategy() {
             {trades.map(t => (
               <button key={t} onClick={() => setTrade(t)}
                 style={{ padding: '7px 14px', borderRadius: 20, border: 'none', cursor: 'pointer',
-                  background: trade === t ? '#F5E642′ : '#1A2E4A', color: trade === t ? '#0A1628' : '#fff',
+                  background: trade === t ? '#F5E642' : '#1A2E4A', color: trade === t ? '#0A1628' : '#fff',
                   fontWeight: trade === t ? 700 : 400, fontSize: 13 }}>
                 {t}
               </button>
@@ -92,7 +92,7 @@ export default function ProLnkProSeasonalStrategy() {
                   border: `2px solid ${activeSeason === s ? '#F5E642' : 'transparent'}`,
                   background: activeSeason === s ? '#1A2E4A' : '#0F2040', cursor: 'pointer', textAlign: 'center' }}>
                 <div style={{ fontSize: 20 }}>{sd.icon}</div>
-                <div style={{ color: activeSeason === s ? '#F5E642′ : '#8899AA', fontSize: 11, marginTop: 4, textTransform: ’capitalize' }}>{s}</div>
+                <div style={{ color: activeSeason === s ? '#F5E642' : '#8899AA', fontSize: 11, marginTop: 4, textTransform: 'capitalize' }}>{s}</div>
                 {sd.peak && (
                   <div style={{ background: '#F5E642', color: '#0A1628', fontSize: 9, fontWeight: 700,
                     borderRadius: 4, padding: '1px 4px', marginTop: 3 }}>PEAK</div>
@@ -110,8 +110,8 @@ export default function ProLnkProSeasonalStrategy() {
               <div style={{ color: '#F5E642', fontWeight: 700, fontSize: 16, textTransform: 'capitalize' }}>
                 {activeSeason} Strategy
               </div>
-              <div style={{ background: seasonData.peak ? '#F5E642′ : '#2A3E5A',
-                color: seasonData.peak ? '#0A1628′ : '#8899AA', fontSize: 11, fontWeight: 700,
+              <div style={{ background: seasonData.peak ? '#F5E642' : '#2A3E5A',
+                color: seasonData.peak ? '#0A1628' : '#8899AA', fontSize: 11, fontWeight: 700,
                 borderRadius: 4, padding: '2px 8px', display: 'inline-block', marginTop: 2 }}>
                 {seasonData.label}
               </div>

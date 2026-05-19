@@ -143,7 +143,7 @@ export default function DFWElectricalInspectionGuide() {
               <div style={{ color: result.color, fontWeight: 800, fontSize: 20, marginBottom: 4 }}>{result.label}</div>
               <div style={{ color: '#1E3A5F', fontSize: 13, fontWeight: 700, marginBottom: 10 }}>{result.level}</div>
               <p style={{ color: '#475569', margin: '0 0 10px' }}>{result.rec}</p>
-              <div style={{ color: '#64748B', fontSize: 13, backgroundColor: '#fff', borderRadius: 6, padding: 10, border: '1px solid #E2E8F0′ }}>Estimated upgrade costs: {result.upgrades}</div>
+              <div style={{ color: '#64748B', fontSize: 13, backgroundColor: '#fff', borderRadius: 6, padding: 10, border: '1px solid #E2E8F0' }}>Estimated upgrade costs: {result.upgrades}</div>
             </div>
           )}
         </div>

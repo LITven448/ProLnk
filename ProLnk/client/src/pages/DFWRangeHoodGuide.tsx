@@ -15,8 +15,8 @@ export default function DFWRangeHoodGuide() {
     if (cfm >= 900) { hood = 'Commercial-style wall mount (900+ CFM)'; brand = 'Zephyr Monsoon or Vent-A-Hood'; }
     else if (cfm >= 600) { hood = 'Island or wall mount (600-900 CFM)'; brand = 'Broan Elite or BEST by Broan'; }
     else if (cfm >= 400) { hood = 'Under-cabinet ducted (400-600 CFM)'; brand = 'Cosmo or Hauslane'; }
-    else { hood = 'Standard under-cabinet (200-400 CFM)'; brand = 'Broan 30″ or GE Profile'; }
-    const installCost = requiresMakeupAir ? '$1,800-$3,200′ : '$400-$900';
+    else { hood = 'Standard under-cabinet (200-400 CFM)'; brand = 'Broan 30" or GE Profile'; }
+    const installCost = requiresMakeupAir ? '$1,800-$3,200' : '$400-$900';
     setRecommendation({ cfm, hood, brand, requiresMakeupAir, installCost });
   };
 
@@ -85,10 +85,10 @@ export default function DFWRangeHoodGuide() {
               <label style={{ display: 'block', color: '#a0aebe', marginBottom: '6px', fontSize: '13px' }}>Cooktop Total BTU</label>
               <select style={selectStyle} value={cooktopBTU} onChange={e => setCooktopBTU(e.target.value)}>
                 <option value="">Select...</option>
-                <option value="30000″>Under 30,000 BTU (basic gas)</option>
-                <option value="45000″>30,000-45,000 BTU (mid-range)</option>
-                <option value="60000″>45,000-60,000 BTU (pro-style)</option>
-                <option value="80000″>60,000+ BTU (commercial)</option>
+                <option value="30000">Under 30,000 BTU (basic gas)</option>
+                <option value="45000">30,000-45,000 BTU (mid-range)</option>
+                <option value="60000">45,000-60,000 BTU (pro-style)</option>
+                <option value="80000">60,000+ BTU (commercial)</option>
               </select>
             </div>
             <div>
@@ -106,13 +106,13 @@ export default function DFWRangeHoodGuide() {
             Calculate CFM & Get Hood Recommendation
           </button>
           {recommendation && (
-            <div style={{ marginTop: '24px', background: '#0f1e38', borderRadius: '10px', padding: '20px', borderLeft: '4px solid #F5E642′ }}>
+            <div style={{ marginTop: '24px', background: '#0f1e38', borderRadius: '10px', padding: '20px', borderLeft: '4px solid #F5E642' }}>
               <h3 style={{ color: '#F5E642', marginTop: 0 }}>Your Hood Recommendation</h3>
-              <p style={{ margin: '4px 0′ }}><strong>Required CFM:</strong> {recommendation.cfm} CFM</p>
-              <p style={{ margin: '4px 0′ }}><strong>Hood Type:</strong> {recommendation.hood}</p>
-              <p style={{ margin: '4px 0′ }}><strong>Recommended Brands:</strong> {recommendation.brand}</p>
-              <p style={{ margin: '4px 0′ }}><strong>Makeup Air Required:</strong> {recommendation.requiresMakeupAir ? '⚠️ Yes — Texas code requirement' : '✅ Not required at this CFM'}</p>
-              <p style={{ margin: '4px 0′ }}><strong>Estimated Install Cost:</strong> {recommendation.installCost}</p>
+              <p style={{ margin: '4px 0' }}><strong>Required CFM:</strong> {recommendation.cfm} CFM</p>
+              <p style={{ margin: '4px 0' }}><strong>Hood Type:</strong> {recommendation.hood}</p>
+              <p style={{ margin: '4px 0' }}><strong>Recommended Brands:</strong> {recommendation.brand}</p>
+              <p style={{ margin: '4px 0' }}><strong>Makeup Air Required:</strong> {recommendation.requiresMakeupAir ? '⚠️ Yes — Texas code requirement' : '✅ Not required at this CFM'}</p>
+              <p style={{ margin: '4px 0' }}><strong>Estimated Install Cost:</strong> {recommendation.installCost}</p>
             </div>
           )}
         </div>

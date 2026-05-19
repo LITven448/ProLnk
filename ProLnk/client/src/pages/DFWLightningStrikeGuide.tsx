@@ -18,10 +18,10 @@ const homeFeatures = [
 ];
 
 const damageTypes = [
-  { type: 'Electrical system damage', desc: 'Wiring melted, breakers destroyed, panel replacement often needed', cost: '$2,000–$15,000′ },
-  { type: 'Appliance / electronics loss', desc: 'TVs, HVAC, water heaters, refrigerators — often total loss', cost: '$1,000–$8,000′ },
+  { type: 'Electrical system damage', desc: 'Wiring melted, breakers destroyed, panel replacement often needed', cost: '$2,000–$15,000' },
+  { type: 'Appliance / electronics loss', desc: 'TVs, HVAC, water heaters, refrigerators — often total loss', cost: '$1,000–$8,000' },
   { type: 'Roof penetration / fire', desc: 'Direct strike can ignite framing, sheathing, or attic insulation', cost: '$5,000–$50,000+' },
-  { type: 'Plumbing damage', desc: 'Metal pipes can carry charge — faucets and fixtures at risk', cost: '$500–$3,000′ },
+  { type: 'Plumbing damage', desc: 'Metal pipes can carry charge — faucets and fixtures at risk', cost: '$500–$3,000' },
 ];
 
 export default function DFWLightningStrikeGuide() {
@@ -59,7 +59,7 @@ export default function DFWLightningStrikeGuide() {
           <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
             {zones.map((z, i) => (
               <button key={z.name} onClick={() => setSelectedZone(i === selectedZone ? null : i)}
-                style={{ background: selectedZone === i ? '#1e3a5f' : '#0A1628', border: selectedZone === i ? '2px solid #F5E642′ : '2px solid #2d4a6b', borderRadius: '10px', padding: '0.75rem 1rem', cursor: ’pointer', color: '#fff', textAlign: 'left', display: 'flex', justifyContent: 'space-between', alignItems: 'center', transition: 'all 0.2s' }}>
+                style={{ background: selectedZone === i ? '#1e3a5f' : '#0A1628', border: selectedZone === i ? '2px solid #F5E642' : '2px solid #2d4a6b', borderRadius: '10px', padding: '0.75rem 1rem', cursor: 'pointer', color: '#fff', textAlign: 'left', display: 'flex', justifyContent: 'space-between', alignItems: 'center', transition: 'all 0.2s' }}>
                 <div style={{ display: 'flex', gap: '0.75rem', alignItems: 'center' }}><span style={{ fontSize: '1.3rem' }}>{z.emoji}</span><span style={{ fontWeight: 600 }}>{z.name}</span></div>
                 <div style={{ textAlign: 'right' }}><div style={{ color: '#F5E642', fontWeight: 700 }}>{z.strikes} strikes/mi²/yr</div><div style={{ color: '#94a3b8', fontSize: '0.8rem' }}>{z.risk} risk</div></div>
               </button>
@@ -72,7 +72,7 @@ export default function DFWLightningStrikeGuide() {
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0.5rem' }}>
             {homeFeatures.map((f, i) => (
               <button key={f.name} onClick={() => toggleFeature(i)}
-                style={{ background: selectedFeatures.includes(i) ? '#1e3a5f' : '#0A1628', border: selectedFeatures.includes(i) ? '2px solid #F5E642′ : '2px solid #2d4a6b', borderRadius: '10px', padding: '0.75rem', cursor: ’pointer', color: '#fff', textAlign: 'left', transition: 'all 0.2s' }}>
+                style={{ background: selectedFeatures.includes(i) ? '#1e3a5f' : '#0A1628', border: selectedFeatures.includes(i) ? '2px solid #F5E642' : '2px solid #2d4a6b', borderRadius: '10px', padding: '0.75rem', cursor: 'pointer', color: '#fff', textAlign: 'left', transition: 'all 0.2s' }}>
                 <div style={{ fontSize: '1.3rem' }}>{f.emoji}</div>
                 <div style={{ fontWeight: 600, fontSize: '0.9rem' }}>{f.name}</div>
               </button>
@@ -85,8 +85,8 @@ export default function DFWLightningStrikeGuide() {
             <h3 style={{ color: '#F5E642', marginBottom: '1rem' }}>⚡ Your Lightning Risk Assessment</h3>
             {zone && <div style={{ background: '#0A1628', borderRadius: '10px', padding: '1rem', marginBottom: '1rem' }}>
               <div style={{ display: 'flex', gap: '1.5rem' }}>
-                <div><div style={{ fontSize: '1.6rem', fontWeight: 700, color: '#F5E642′ }}>{zone.strikes}</div><div style={{ color: '#94a3b8', fontSize: '0.8rem' }}>strikes/mi²/yr</div></div>
-                <div><div style={{ fontSize: '1.6rem', fontWeight: 700, color: '#ef4444′ }}>{overallRisk}</div><div style={{ color: '#94a3b8', fontSize: '0.8rem' }}>overall risk</div></div>
+                <div><div style={{ fontSize: '1.6rem', fontWeight: 700, color: '#F5E642' }}>{zone.strikes}</div><div style={{ color: '#94a3b8', fontSize: '0.8rem' }}>strikes/mi²/yr</div></div>
+                <div><div style={{ fontSize: '1.6rem', fontWeight: 700, color: '#ef4444' }}>{overallRisk}</div><div style={{ color: '#94a3b8', fontSize: '0.8rem' }}>overall risk</div></div>
               </div>
             </div>}
             {features.length > 0 && <div style={{ background: '#0A1628', borderRadius: '10px', padding: '1rem', marginBottom: '1rem' }}>
@@ -95,7 +95,7 @@ export default function DFWLightningStrikeGuide() {
             </div>}
             <div style={{ background: '#0A1628', borderRadius: '10px', padding: '1rem' }}>
               <div style={{ color: '#F5E642', fontWeight: 700, marginBottom: '0.5rem' }}>🛡️ Protection Recommendation</div>
-              <div style={{ color: '#e2e8f0′ }}>
+              <div style={{ color: '#e2e8f0' }}>
                 {!hasSurge && !hasRod && '⚠️ Install whole-home surge protection ($300–600) and consider a lightning rod system ($1,500–3,000). '}
                 {hasSurge && !hasRod && '✅ Surge protection in place. Consider adding a lightning rod system for direct strike protection. '}
                 {!hasSurge && hasRod && '✅ Lightning rod helps. Add whole-home surge protector to protect electronics. '}
@@ -110,7 +110,7 @@ export default function DFWLightningStrikeGuide() {
           <div style={{ color: '#F5E642', fontWeight: 700, marginBottom: '0.75rem' }}>💰 Typical Lightning Damage Costs in DFW</div>
           {damageTypes.map((d) => (
             <div key={d.type} style={{ background: '#0A1628', borderRadius: '10px', padding: '0.75rem 1rem', marginBottom: '0.5rem', display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start' }}>
-              <div><div style={{ fontWeight: 700, color: '#e2e8f0′ }}>{d.type}</div><div style={{ color: '#94a3b8', fontSize: '0.85rem' }}>{d.desc}</div></div>
+              <div><div style={{ fontWeight: 700, color: '#e2e8f0' }}>{d.type}</div><div style={{ color: '#94a3b8', fontSize: '0.85rem' }}>{d.desc}</div></div>
               <div style={{ color: '#F5E642', fontWeight: 700, whiteSpace: 'nowrap', marginLeft: '1rem' }}>{d.cost}</div>
             </div>
           ))}

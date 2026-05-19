@@ -31,7 +31,7 @@ export default function DFWWinterReadinessScore2026() {
     (questions.reduce((s, q) => s + (answers[q.id] === true ? q.weight : 0), 0) / totalWeight) * 100
   );
 
-  const scoreColor = score >= 80 ? '#22c55e' : score >= 55 ? '#F5E642′ : '#ef4444';
+  const scoreColor = score >= 80 ? '#22c55e' : score >= 55 ? '#F5E642' : '#ef4444';
   const label = score >= 80 ? 'Winter Ready ❄️' : score >= 55 ? 'Needs Action ⚠️' : 'High Risk 🔴';
 
   const priorities = questions

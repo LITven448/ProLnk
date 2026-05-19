@@ -42,13 +42,13 @@ export default function DFWFoundationRepairSuccessStory() {
           DFW FOUNDATION REPAIR GUIDE
         </div>
         <h1 style={{ fontSize: 28, fontWeight: 800, marginBottom: 8 }}>Foundation Repair Doesn't Kill a Sale — Hiding It Does</h1>
-        <p style={{ color: '#4B5563', marginBottom: 28 }}>DFW's clay soil means foundation movement is extremely common. Here’s how homeowners handled it and what happened at closing.</p>
+        <p style={{ color: '#4B5563', marginBottom: 28 }}>DFW's clay soil means foundation movement is extremely common. Here's how homeowners handled it and what happened at closing.</p>
 
         <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap', marginBottom: 28 }}>
           {situations.map((s, i) => (
             <button key={i} onClick={() => setSelected(i)} style={{
               padding: '8px 14px', borderRadius: 6, border: 'none', cursor: 'pointer', fontWeight: 600, fontSize: 13,
-              backgroundColor: selected === i ? '#0A1628′ : '#E5E7EB', color: selected === i ? '#F5E642' : '#0A1628',
+              backgroundColor: selected === i ? '#0A1628' : '#E5E7EB', color: selected === i ? '#F5E642' : '#0A1628',
             }}>
               {s.label}
             </button>
@@ -58,7 +58,7 @@ export default function DFWFoundationRepairSuccessStory() {
         <div style={{ backgroundColor: '#fff', borderRadius: 12, padding: 28, boxShadow: '0 1px 4px rgba(0,0,0,0.08)', marginBottom: 20 }}>
           <div style={{ display: 'flex', justifyContent: 'space-between', flexWrap: 'wrap', gap: 8, marginBottom: 16 }}>
             <span style={{ fontWeight: 700, fontSize: 18 }}>{s.label}</span>
-            <span style={{ backgroundColor: selected === 3 ? '#FEE2E2′ : '#D1FAE5', padding: '4px 10px', borderRadius: 4, fontWeight: 700, fontSize: 13 }}>{s.outcome}</span>
+            <span style={{ backgroundColor: selected === 3 ? '#FEE2E2' : '#D1FAE5', padding: '4px 10px', borderRadius: 4, fontWeight: 700, fontSize: 13 }}>{s.outcome}</span>
           </div>
           <p style={{ lineHeight: 1.7, marginBottom: 20 }}>{s.detail}</p>
 

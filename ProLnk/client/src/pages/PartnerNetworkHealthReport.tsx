@@ -51,7 +51,7 @@ export default function PartnerNetworkHealthReport() {
     setResult({ score: totalScore, issues });
   };
 
-  const scoreColor = result ? (result.score >= 80 ? '#22c55e' : result.score >= 50 ? '#eab308′ : '#ef4444') : '#94a3b8';
+  const scoreColor = result ? (result.score >= 80 ? '#22c55e' : result.score >= 50 ? '#eab308' : '#ef4444') : '#94a3b8';
   const scoreLabel = result ? (result.score >= 80 ? 'Healthy Network' : result.score >= 50 ? 'Needs Attention' : 'Urgent Action Required') : '';
 
   return (
@@ -62,7 +62,7 @@ export default function PartnerNetworkHealthReport() {
           Your Network Health Report — Is Your Downline Growing the Right Way?
         </h1>
         <p style={{ color: '#64748b', fontSize: 16, marginBottom: 48, lineHeight: 1.7 }}>
-          Most partners track their own income — but the real signal is in your downline's behavior. These five metrics tell you where your network is healthy, where it’s at risk, and exactly what to do about each.
+          Most partners track their own income — but the real signal is in your downline's behavior. These five metrics tell you where your network is healthy, where it's at risk, and exactly what to do about each.
         </p>
 
         {/* Metrics to Track */}
@@ -148,7 +148,7 @@ export default function PartnerNetworkHealthReport() {
                     type="number"
                     value={values[m.key] || ''}
                     onChange={e => setValue(m.key, e.target.value)}
-                    placeholder="0″
+                    placeholder="0"
                     style={{ width: 80, background: '#f8fafc', border: '1px solid #e2e8f0', borderRadius: 8, color: '#0f172a', padding: '8px 12px', fontSize: 14, textAlign: 'right' }}
                   />
                   <span style={{ color: '#94a3b8', fontSize: 13, minWidth: 30 }}>{m.unit}</span>
@@ -177,7 +177,7 @@ export default function PartnerNetworkHealthReport() {
                     {result.issues.map(key => {
                       const m = metrics.find(x => x.key === key)!;
                       return (
-                        <div key={key} style={{ background: '#fff', borderRadius: 10, padding: 16, border: '1px solid #e2e8f0′ }}>
+                        <div key={key} style={{ background: '#fff', borderRadius: 10, padding: 16, border: '1px solid #e2e8f0' }}>
                           <div style={{ color: '#ef4444', fontWeight: 700, fontSize: 13, marginBottom: 6 }}>Fix: {m.label}</div>
                           <div style={{ color: '#374151', fontSize: 13, lineHeight: 1.6 }}>{diagnoses[key]}</div>
                         </div>

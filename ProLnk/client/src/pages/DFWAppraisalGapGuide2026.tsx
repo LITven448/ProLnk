@@ -10,7 +10,7 @@ export default function DFWAppraisalGapGuide2026() {
   const gapPct = gap > 0 ? ((gap / offerPrice) * 100).toFixed(1) : '0';
 
   const decision = gap <= 0 ? 'APPRAISE_OK' : gap <= 5000 ? 'COVER_GAP' : canCover && gap <= 20000 ? 'CONSIDER_COVERING' : 'NEGOTIATE_OR_WALK';
-  const decisionColors: Record<string, string> = { APPRAISE_OK: '#34D399', COVER_GAP: '#F5E642', CONSIDER_COVERING: '#F59E0B', NEGOTIATE_OR_WALK: '#EF4444′ };
+  const decisionColors: Record<string, string> = { APPRAISE_OK: '#34D399', COVER_GAP: '#F5E642', CONSIDER_COVERING: '#F59E0B', NEGOTIATE_OR_WALK: '#EF4444' };
 
   return (
     <div style={{ background: '#0A1628', minHeight: '100vh', color: '#fff', fontFamily: 'sans-serif', padding: '32px 24px' }}>
@@ -32,15 +32,15 @@ export default function DFWAppraisalGapGuide2026() {
                 <span style={{ color: '#F5E642', fontWeight: 700 }}>${(val as number).toLocaleString()}</span>
               </div>
               <input type="range" min={min as number} max={max as number} step={step as number} value={val as number}
-                onChange={e => (setter as Function)(+e.target.value)} style={{ width: '100%', accentColor: '#F5E642′ }} />
+                onChange={e => (setter as Function)(+e.target.value)} style={{ width: '100%', accentColor: '#F5E642' }} />
             </div>
           ))}
 
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: 12, marginBottom: 20 }}>
             {[
-              ['Appraisal Gap', gap > 0 ? `$${gap.toLocaleString()}` : 'No Gap ✅', gap > 0 ? '#EF4444′ : '#34D399'],
+              ['Appraisal Gap', gap > 0 ? `$${gap.toLocaleString()}` : 'No Gap ✅', gap > 0 ? '#EF4444' : '#34D399'],
               ['Gap as % of Offer', gap > 0 ? `${gapPct}%` : '—', '#F5E642'],
-              ['Can You Cover?', gap <= 0 ? 'N/A' : canCover ? 'Yes ✅' : 'No ❌', canCover || gap <= 0 ? '#34D399′ : '#EF4444'],
+              ['Can You Cover?', gap <= 0 ? 'N/A' : canCover ? 'Yes ✅' : 'No ❌', canCover || gap <= 0 ? '#34D399' : '#EF4444'],
             ].map(([k, v, c]) => (
               <div key={k as string} style={{ background: '#0A1628', borderRadius: 8, padding: '12px 16px', textAlign: 'center' }}>
                 <div style={{ color: '#64748B', fontSize: 11 }}>{k}</div>

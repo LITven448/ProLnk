@@ -97,8 +97,8 @@ export default function DFWSeniorPropertyTaxRelief2026() {
               key={c.id}
               onClick={() => setSelected(selected === c.id ? null : c.id)}
               style={{
-                background: selected === c.id ? '#F5E642′ : '#1e2d45',
-                color: selected === c.id ? '#0A1628′ : '#fff',
+                background: selected === c.id ? '#F5E642' : '#1e2d45',
+                color: selected === c.id ? '#0A1628' : '#fff',
                 border: '1px solid #334155',
                 borderRadius: 8,
                 padding: '0.9rem 1.2rem',

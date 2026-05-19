@@ -92,13 +92,13 @@ export default function PartnerRealEstatePitchGuide() {
           <div style={{ display: 'flex', gap: 16, flexWrap: 'wrap' }}>
             <div style={{ flex: 1, minWidth: 200 }}>
               <label style={{ display: 'block', fontSize: 13, color: '#64748B', marginBottom: 6 }}>Agent Specialty</label>
-              <select value={specialty} onChange={e => setSpecialty(e.target.value)} style={{ width: '100%', padding: '10px 12px', border: '1px solid #E2E8F0', borderRadius: 8, fontSize: 14, color: '#0A1628′ }}>
+              <select value={specialty} onChange={e => setSpecialty(e.target.value)} style={{ width: '100%', padding: '10px 12px', border: '1px solid #E2E8F0', borderRadius: 8, fontSize: 14, color: '#0A1628' }}>
                 {SPECIALTIES.map(s => <option key={s}>{s}</option>)}
               </select>
             </div>
             <div style={{ flex: 1, minWidth: 200 }}>
               <label style={{ display: 'block', fontSize: 13, color: '#64748B', marginBottom: 6 }}>Market Area</label>
-              <select value={market} onChange={e => setMarket(e.target.value)} style={{ width: '100%', padding: '10px 12px', border: '1px solid #E2E8F0', borderRadius: 8, fontSize: 14, color: '#0A1628′ }}>
+              <select value={market} onChange={e => setMarket(e.target.value)} style={{ width: '100%', padding: '10px 12px', border: '1px solid #E2E8F0', borderRadius: 8, fontSize: 14, color: '#0A1628' }}>
                 {MARKETS.map(m => <option key={m}>{m}</option>)}
               </select>
             </div>

@@ -23,7 +23,7 @@ export default function DFWHomePriceNegotiationGuide2026() {
 
   const finding = findings.find(f => f.label === selected);
 
-  const leverageColor = (lev: string) => lev === 'High' ? '#F5E642′ : lev === ’Medium' ? '#f97316′ : '#64748b';
+  const leverageColor = (lev: string) => lev === 'High' ? '#F5E642' : lev === 'Medium' ? '#f97316' : '#64748b';
 
   return (
     <div style={{ background: '#0A1628', minHeight: '100vh', color: '#fff', fontFamily: 'sans-serif', padding: '32px 20px' }}>
@@ -57,7 +57,7 @@ export default function DFWHomePriceNegotiationGuide2026() {
             ))}
           </div>
           {finding && (
-            <div style={{ background: '#1a3a5c', borderRadius: 10, padding: 16, borderLeft: '4px solid #F5E642′ }}>
+            <div style={{ background: '#1a3a5c', borderRadius: 10, padding: 16, borderLeft: '4px solid #F5E642' }}>
               <div style={{ color: '#F5E642', fontWeight: 800, fontSize: 20, marginBottom: 6 }}>Ask for: {finding.credit}</div>
               <div style={{ color: '#cbd5e1', fontSize: 14, lineHeight: 1.7 }}>{finding.strategy}</div>
             </div>
@@ -94,7 +94,7 @@ export default function DFWHomePriceNegotiationGuide2026() {
             'In DFW 2026 — repair credits are easier to get than price reductions in most zip codes',
             'Sellers prefer credits because it shows up as full-price sale in MLS comps',
           ].map(t => (
-            <div key={t} style={{ color: '#94a3b8', fontSize: 14, marginBottom: 8, paddingLeft: 12, borderLeft: '2px solid #F5E642′ }}>{t}</div>
+            <div key={t} style={{ color: '#94a3b8', fontSize: 14, marginBottom: 8, paddingLeft: 12, borderLeft: '2px solid #F5E642' }}>{t}</div>
           ))}
         </div>
 

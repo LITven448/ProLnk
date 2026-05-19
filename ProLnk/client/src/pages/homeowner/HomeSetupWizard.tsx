@@ -64,13 +64,13 @@ const HOME_TYPES = [
 ];
 
 const YEAR_RANGES = [
-  { value: 1955, label: "Before 1960″ },
-  { value: 1965, label: "1960–1970″ },
-  { value: 1975, label: "1971–1980″ },
-  { value: 1985, label: "1981–1990″ },
-  { value: 1995, label: "1991–2000″ },
-  { value: 2005, label: "2001–2010″ },
-  { value: 2015, label: "2011–2020″ },
+  { value: 1955, label: "Before 1960" },
+  { value: 1965, label: "1960–1970" },
+  { value: 1975, label: "1971–1980" },
+  { value: 1985, label: "1981–1990" },
+  { value: 1995, label: "1991–2000" },
+  { value: 2005, label: "2001–2010" },
+  { value: 2015, label: "2011–2020" },
   { value: 2022, label: "2021 or newer" },
 ];
 
@@ -83,18 +83,18 @@ const SQFT_RANGES = [
 ];
 
 const LOT_SIZES = [
-  { value: "under_0_25″,  label: "Under ¼ acre" },
-  { value: "0_25_to_0_5″, label: "¼–½ acre" },
-  { value: "0_5_to_1″,    label: "½–1 acre" },
-  { value: "over_1″,      label: "Over 1 acre" },
+  { value: "under_0_25",  label: "Under ¼ acre" },
+  { value: "0_25_to_0_5", label: "¼–½ acre" },
+  { value: "0_5_to_1",    label: "½–1 acre" },
+  { value: "over_1",      label: "Over 1 acre" },
 ];
 
 const OWNERSHIP_YEARS = [
-  { value: "under_1″,  label: "Less than 1 year" },
-  { value: "1_to_3″,   label: "1–3 years" },
-  { value: "3_to_7″,   label: "3–7 years" },
-  { value: "7_to_15″,  label: "7–15 years" },
-  { value: "over_15″,  label: "Over 15 years" },
+  { value: "under_1",  label: "Less than 1 year" },
+  { value: "1_to_3",   label: "1–3 years" },
+  { value: "3_to_7",   label: "3–7 years" },
+  { value: "7_to_15",  label: "7–15 years" },
+  { value: "over_15",  label: "Over 15 years" },
 ];
 
 const HIRING_PRIORITIES = [
@@ -130,11 +130,11 @@ const HOME_SYSTEMS = [
 ];
 
 const SYSTEM_AGES = [
-  { value: "0_2″,    label: "0–2 yrs (new)" },
-  { value: "3_5″,    label: "3–5 yrs" },
-  { value: "6_10″,   label: "6–10 yrs" },
-  { value: "11_15″,  label: "11–15 yrs" },
-  { value: "over_15″,label: "15+ yrs (aging)" },
+  { value: "0_2",    label: "0–2 yrs (new)" },
+  { value: "3_5",    label: "3–5 yrs" },
+  { value: "6_10",   label: "6–10 yrs" },
+  { value: "11_15",  label: "11–15 yrs" },
+  { value: "over_15",label: "15+ yrs (aging)" },
   { value: "unknown",label: "Not sure" },
 ];
 
@@ -164,20 +164,20 @@ const WISH_CATEGORIES = [
 ];
 
 const BUDGET_RANGES = [
-  { value: "under_1k", label: "Under $1,000″ },
-  { value: "1k_5k",    label: "$1,000–$5,000″ },
-  { value: "5k_15k",   label: "$5,000–$15,000″ },
-  { value: "15k_50k",  label: "$15,000–$50,000″ },
-  { value: "over_50k", label: "Over $50,000″ },
+  { value: "under_1k", label: "Under $1,000" },
+  { value: "1k_5k",    label: "$1,000–$5,000" },
+  { value: "5k_15k",   label: "$5,000–$15,000" },
+  { value: "15k_50k",  label: "$15,000–$50,000" },
+  { value: "over_50k", label: "Over $50,000" },
   { value: "not_sure", label: "Not sure yet" },
 ];
 
 const URGENCY_OPTIONS = [
-  { value: "within_30_days",   label: "Within 30 days",   color: "#DC2626″ },
-  { value: "1_to_3_months",    label: "1–3 months",       color: "#D97706″ },
-  { value: "3_to_6_months",    label: "3–6 months",       color: "#059669″ },
-  { value: "6_to_12_months",   label: "6–12 months",      color: "#0891b2″ },
-  { value: "just_researching", label: "Just researching", color: "#6B7280″ },
+  { value: "within_30_days",   label: "Within 30 days",   color: "#DC2626" },
+  { value: "1_to_3_months",    label: "1–3 months",       color: "#D97706" },
+  { value: "3_to_6_months",    label: "3–6 months",       color: "#059669" },
+  { value: "6_to_12_months",   label: "6–12 months",      color: "#0891b2" },
+  { value: "just_researching", label: "Just researching", color: "#6B7280" },
 ];
 
 const HOME_STYLES = [
@@ -290,7 +290,7 @@ function Chip({ label, active, onClick, color }: { label: string; active: boolea
       className={`px-3 py-1.5 rounded-full text-xs font-semibold border transition-all ${
         active ? "text-white border-transparent" : "border-gray-200 text-gray-600 hover:border-gray-300 bg-white"
       }`}
-      style={active ? { backgroundColor: color ?? "#0A1628″, borderColor: color ?? "#0A1628" } : {}}
+      style={active ? { backgroundColor: color ?? "#0A1628", borderColor: color ?? "#0A1628" } : {}}
     >
       {label}
     </button>
@@ -301,22 +301,22 @@ function Chip({ label, active, onClick, color }: { label: string; active: boolea
 function ProgressBar({ step, total }: { step: number; total: number }) {
   const pct = Math.round(((step - 1) / (total - 1)) * 100);
   return (
-    <div className="mb-6″>
-      <div className="flex justify-between items-center mb-2″>
-        <span className="text-[11px] font-semibold text-gray-400″>Step {step} of {total}</span>
+    <div className="mb-6">
+      <div className="flex justify-between items-center mb-2">
+        <span className="text-[11px] font-semibold text-gray-400">Step {step} of {total}</span>
         <span className="text-xs font-bold text-[#0891b2]">{pct}% complete</span>
       </div>
       <div className="w-full bg-gray-100 rounded-full h-2.5 overflow-hidden">
         <div
-          className="h-2.5 rounded-full transition-all duration-700″
+          className="h-2.5 rounded-full transition-all duration-700"
           style={{ width: `${pct}%`, background: "linear-gradient(90deg,#0A1628 0%,#0891b2 60%,#06b6d4 100%)" }}
         />
       </div>
-      <div className="flex justify-between mt-2″>
+      <div className="flex justify-between mt-2">
         {Array.from({ length: total }).map((_, i) => (
           <div key={i}
-            className="w-1.5 h-1.5 rounded-full transition-all duration-300″
-            style={{ backgroundColor: i < step ? "#0891b2″ : "#e5e7eb" }}
+            className="w-1.5 h-1.5 rounded-full transition-all duration-300"
+            style={{ backgroundColor: i < step ? "#0891b2" : "#e5e7eb" }}
           />
         ))}
       </div>
@@ -346,9 +346,9 @@ function AttomAutofill({ data, setData }: { data: any; setData: (d: any) => void
       sqft: 2750,
       bedrooms: 4,
       bathrooms: 2.5,
-      lotSize: "0_25_to_0_5″,
+      lotSize: "0_25_to_0_5",
       propertyType: "single_family",
-      storiesCount: "2″,
+      storiesCount: "2",
     });
     setLoading(false);
     setFound(true);
@@ -357,29 +357,29 @@ function AttomAutofill({ data, setData }: { data: any; setData: (d: any) => void
   if (dismissed) return null;
 
   return (
-    <div className="mb-6 rounded-xl border-2 border-cyan-200 bg-gradient-to-r from-cyan-50 to-blue-50 p-4″>
-      <div className="flex items-start justify-between gap-3 mb-3″>
+    <div className="mb-6 rounded-xl border-2 border-cyan-200 bg-gradient-to-r from-cyan-50 to-blue-50 p-4">
+      <div className="flex items-start justify-between gap-3 mb-3">
         <div>
-          <div className="flex items-center gap-2 mb-0.5″>
-            <Sparkles className="w-4 h-4 text-cyan-600″ />
-            <span className="text-sm font-bold text-gray-800″>Auto-fill from your address</span>
+          <div className="flex items-center gap-2 mb-0.5">
+            <Sparkles className="w-4 h-4 text-cyan-600" />
+            <span className="text-sm font-bold text-gray-800">Auto-fill from your address</span>
           </div>
-          <p className="text-xs text-gray-500″>Enter your address to auto-populate home details from public records</p>
+          <p className="text-xs text-gray-500">Enter your address to auto-populate home details from public records</p>
         </div>
-        <button onClick={() => setDismissed(true)} className="text-gray-300 hover:text-gray-500 flex-shrink-0 mt-0.5″>
+        <button onClick={() => setDismissed(true)} className="text-gray-300 hover:text-gray-500 flex-shrink-0 mt-0.5">
           <span className="text-lg leading-none">×</span>
         </button>
       </div>
 
       {found ? (
-        <div className="flex items-center gap-2 py-2 px-3 rounded-lg bg-green-50 border border-green-200″>
-          <CheckCircle className="w-4 h-4 text-green-600 flex-shrink-0″ />
-          <span className="text-xs font-semibold text-green-700″>Home details populated! Review and adjust below.</span>
+        <div className="flex items-center gap-2 py-2 px-3 rounded-lg bg-green-50 border border-green-200">
+          <CheckCircle className="w-4 h-4 text-green-600 flex-shrink-0" />
+          <span className="text-xs font-semibold text-green-700">Home details populated! Review and adjust below.</span>
         </div>
       ) : (
-        <div className="flex gap-2″>
+        <div className="flex gap-2">
           <Input
-            placeholder="123 Main St, Frisco, TX 75034″
+            placeholder="123 Main St, Frisco, TX 75034"
             value={lookupAddr}
             onChange={e => setLookupAddr(e.target.value)}
             onKeyDown={e => e.key === "Enter" && handleLookup()}
@@ -388,12 +388,12 @@ function AttomAutofill({ data, setData }: { data: any; setData: (d: any) => void
           <button
             onClick={handleLookup}
             disabled={loading || !lookupAddr.trim()}
-            className="px-4 py-2 rounded-lg bg-cyan-600 hover:bg-cyan-700 text-white text-xs font-semibold transition-colors disabled:opacity-50 flex items-center gap-1.5″
+            className="px-4 py-2 rounded-lg bg-cyan-600 hover:bg-cyan-700 text-white text-xs font-semibold transition-colors disabled:opacity-50 flex items-center gap-1.5"
           >
             {loading ? (
               <div className="w-3.5 h-3.5 border-2 border-white border-t-transparent rounded-full animate-spin" />
             ) : (
-              <Sparkles className="w-3.5 h-3.5″ />
+              <Sparkles className="w-3.5 h-3.5" />
             )}
             {loading ? "Looking up..." : "Auto-fill"}
           </button>
@@ -406,15 +406,15 @@ function AttomAutofill({ data, setData }: { data: any; setData: (d: any) => void
 // ─── Step 1: Property Basics ──────────────────────────────────────────────────
 function Step1({ data, setData }: { data: any; setData: (d: any) => void }) {
   return (
-    <div className="space-y-6″>
+    <div className="space-y-6">
       <AttomAutofill data={data} setData={setData} />
       <div>
         <Label className="text-sm font-semibold text-gray-700 mb-3 block">Property type</Label>
-        <div className="grid grid-cols-3 gap-2 sm:grid-cols-5″>
+        <div className="grid grid-cols-3 gap-2 sm:grid-cols-5">
           {HOME_TYPES.map((t) => (
             <button key={t.value} type="button" onClick={() => setData({ ...data, propertyType: t.value })}
               className={`flex flex-col items-center gap-1.5 p-3 rounded-xl border-2 transition-all ${
-                data.propertyType === t.value ? "border-[#0A1628] bg-[#0A1628]/5″ : "border-gray-200 hover:border-gray-300 bg-white"
+                data.propertyType === t.value ? "border-[#0A1628] bg-[#0A1628]/5" : "border-gray-200 hover:border-gray-300 bg-white"
               }`}>
               <span className="text-xl">{t.icon}</span>
               <span className="text-[10px] font-medium text-gray-700 text-center leading-tight">{t.label}</span>
@@ -425,14 +425,14 @@ function Step1({ data, setData }: { data: any; setData: (d: any) => void }) {
 
       <div>
         <Label className="text-sm font-semibold text-gray-700 mb-2 block">
-          <MapPin className="w-3.5 h-3.5 inline mr-1″ />Property address
+          <MapPin className="w-3.5 h-3.5 inline mr-1" />Property address
         </Label>
-        <Input placeholder="123 Main St, Dallas, TX 75201″ value={data.address ?? ""}
+        <Input placeholder="123 Main St, Dallas, TX 75201" value={data.address ?? ""}
           onChange={(e) => setData({ ...data, address: e.target.value })} className="text-sm" />
-        <p className="text-[10px] text-gray-400 mt-1″>Used for AI matching and service area routing</p>
+        <p className="text-[10px] text-gray-400 mt-1">Used for AI matching and service area routing</p>
       </div>
 
-      <div className="grid grid-cols-3 gap-3″>
+      <div className="grid grid-cols-3 gap-3">
         <div>
           <Label className="text-xs font-semibold text-gray-600 mb-1 block">City</Label>
           <Input placeholder="Frisco" value={data.city ?? ""} onChange={(e) => setData({ ...data, city: e.target.value })} className="text-sm" />
@@ -443,14 +443,14 @@ function Step1({ data, setData }: { data: any; setData: (d: any) => void }) {
         </div>
         <div>
           <Label className="text-xs font-semibold text-gray-600 mb-1 block">ZIP</Label>
-          <Input placeholder="75034″ value={data.zip ?? ""} onChange={(e) => setData({ ...data, zip: e.target.value })} className="text-sm" maxLength={10} />
+          <Input placeholder="75034" value={data.zip ?? ""} onChange={(e) => setData({ ...data, zip: e.target.value })} className="text-sm" maxLength={10} />
         </div>
       </div>
 
-      <div className="grid grid-cols-2 gap-4″>
+      <div className="grid grid-cols-2 gap-4">
         <div>
           <Label className="text-sm font-semibold text-gray-700 mb-2 block">
-            <Calendar className="w-3.5 h-3.5 inline mr-1″ />Year built
+            <Calendar className="w-3.5 h-3.5 inline mr-1" />Year built
           </Label>
           <select value={data.yearBuilt ?? ""} onChange={(e) => setData({ ...data, yearBuilt: Number(e.target.value) })}
             className="w-full text-sm border border-gray-200 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-[#0A1628]/20 bg-white">
@@ -460,7 +460,7 @@ function Step1({ data, setData }: { data: any; setData: (d: any) => void }) {
         </div>
         <div>
           <Label className="text-sm font-semibold text-gray-700 mb-2 block">
-            <Ruler className="w-3.5 h-3.5 inline mr-1″ />Square footage
+            <Ruler className="w-3.5 h-3.5 inline mr-1" />Square footage
           </Label>
           <select value={data.sqft ?? ""} onChange={(e) => setData({ ...data, sqft: Number(e.target.value) })}
             className="w-full text-sm border border-gray-200 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-[#0A1628]/20 bg-white">
@@ -470,10 +470,10 @@ function Step1({ data, setData }: { data: any; setData: (d: any) => void }) {
         </div>
       </div>
 
-      <div className="grid grid-cols-2 gap-4″>
+      <div className="grid grid-cols-2 gap-4">
         <div>
           <Label className="text-sm font-semibold text-gray-700 mb-2 block">
-            <Bed className="w-3.5 h-3.5 inline mr-1″ />Bedrooms
+            <Bed className="w-3.5 h-3.5 inline mr-1" />Bedrooms
           </Label>
           <select value={data.bedrooms ?? ""} onChange={(e) => setData({ ...data, bedrooms: Number(e.target.value) })}
             className="w-full text-sm border border-gray-200 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-[#0A1628]/20 bg-white">
@@ -483,7 +483,7 @@ function Step1({ data, setData }: { data: any; setData: (d: any) => void }) {
         </div>
         <div>
           <Label className="text-sm font-semibold text-gray-700 mb-2 block">
-            <Bath className="w-3.5 h-3.5 inline mr-1″ />Bathrooms
+            <Bath className="w-3.5 h-3.5 inline mr-1" />Bathrooms
           </Label>
           <select value={data.bathrooms ?? ""} onChange={(e) => setData({ ...data, bathrooms: Number(e.target.value) })}
             className="w-full text-sm border border-gray-200 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-[#0A1628]/20 bg-white">
@@ -495,7 +495,7 @@ function Step1({ data, setData }: { data: any; setData: (d: any) => void }) {
 
       <div>
         <Label className="text-sm font-semibold text-gray-700 mb-2 block">Lot size</Label>
-        <div className="grid grid-cols-2 gap-2 sm:grid-cols-4″>
+        <div className="grid grid-cols-2 gap-2 sm:grid-cols-4">
           {LOT_SIZES.map((l) => (
             <button key={l.value} type="button" onClick={() => setData({ ...data, lotSize: l.value })}
               className={`px-3 py-2 rounded-lg border text-xs font-medium transition-all ${
@@ -510,10 +510,10 @@ function Step1({ data, setData }: { data: any; setData: (d: any) => void }) {
       {/* Stories */}
       <div>
         <Label className="text-sm font-semibold text-gray-700 mb-2 block">
-          <Layers className="w-3.5 h-3.5 inline mr-1″ />Number of stories
+          <Layers className="w-3.5 h-3.5 inline mr-1" />Number of stories
         </Label>
-        <div className="grid grid-cols-4 gap-2″>
-          {[{v:"1″,l:"1 Story"},{v:"1.5",l:"1.5 Stories"},{v:"2",l:"2 Stories"},{v:"3_plus",l:"3+"}].map((s) => (
+        <div className="grid grid-cols-4 gap-2">
+          {[{v:"1",l:"1 Story"},{v:"1.5",l:"1.5 Stories"},{v:"2",l:"2 Stories"},{v:"3_plus",l:"3+"}].map((s) => (
             <button key={s.v} type="button" onClick={() => setData({ ...data, storiesCount: s.v })}
               className={`px-2 py-2 rounded-lg border text-xs font-medium transition-all ${
                 data.storiesCount === s.v ? "border-[#0A1628] bg-[#0A1628] text-white" : "border-gray-200 text-gray-600 hover:border-gray-300 bg-white"
@@ -525,7 +525,7 @@ function Step1({ data, setData }: { data: any; setData: (d: any) => void }) {
       {/* Property features */}
       <div>
         <Label className="text-sm font-semibold text-gray-700 mb-3 block">Exterior features</Label>
-        <div className="flex flex-wrap gap-2″>
+        <div className="flex flex-wrap gap-2">
           {[
             { key: "hasPool",          label: "Pool",              icon: "🏊" },
             { key: "hasSpa",           label: "Spa / Hot Tub",     icon: "♨️" },
@@ -558,7 +558,7 @@ function Step1({ data, setData }: { data: any; setData: (d: any) => void }) {
 
       {/* Garage details */}
       {data.hasGarage && (
-        <div className="grid grid-cols-2 gap-3″>
+        <div className="grid grid-cols-2 gap-3">
           <div>
             <Label className="text-xs font-semibold text-gray-600 mb-1 block">Garage type</Label>
             <select value={data.garageType ?? "attached"} onChange={(e) => setData({ ...data, garageType: e.target.value })}
@@ -581,11 +581,11 @@ function Step1({ data, setData }: { data: any; setData: (d: any) => void }) {
       {data.hasFence && (
         <div>
           <Label className="text-xs font-semibold text-gray-600 mb-1 block">Fence material</Label>
-          <div className="flex flex-wrap gap-2″>
+          <div className="flex flex-wrap gap-2">
             {["Wood","Iron / Wrought","Vinyl","Chain Link","Brick / Stone","Aluminum"].map((f) => (
               <button key={f} type="button" onClick={() => setData({ ...data, fenceType: f.toLowerCase().replace(" / ","_").replace(" ","_") })}
                 className={`px-3 py-1.5 rounded-full text-xs font-semibold border transition-all ${
-                  data.fenceType === f.toLowerCase().replace(" / ","_").replace(" ","_") ? "bg-[#0A1628] text-white border-[#0A1628]" : "border-gray-200 text-gray-600 bg-white hover:border-gray-300″
+                  data.fenceType === f.toLowerCase().replace(" / ","_").replace(" ","_") ? "bg-[#0A1628] text-white border-[#0A1628]" : "border-gray-200 text-gray-600 bg-white hover:border-gray-300"
                 }`}>{f}</button>
             ))}
           </div>
@@ -595,13 +595,13 @@ function Step1({ data, setData }: { data: any; setData: (d: any) => void }) {
       {/* Driveway */}
       <div>
         <Label className="text-sm font-semibold text-gray-700 mb-2 block">
-          <Car className="w-3.5 h-3.5 inline mr-1″ />Driveway surface
+          <Car className="w-3.5 h-3.5 inline mr-1" />Driveway surface
         </Label>
-        <div className="flex flex-wrap gap-2″>
+        <div className="flex flex-wrap gap-2">
           {["Concrete","Asphalt","Pavers","Gravel","Brick","None"].map((d) => (
             <button key={d} type="button" onClick={() => setData({ ...data, drivewaySurface: d.toLowerCase() })}
               className={`px-3 py-1.5 rounded-full text-xs font-semibold border transition-all ${
-                data.drivewaySurface === d.toLowerCase() ? "bg-[#0A1628] text-white border-[#0A1628]" : "border-gray-200 text-gray-600 bg-white hover:border-gray-300″
+                data.drivewaySurface === d.toLowerCase() ? "bg-[#0A1628] text-white border-[#0A1628]" : "border-gray-200 text-gray-600 bg-white hover:border-gray-300"
               }`}>{d}</button>
           ))}
         </div>
@@ -610,9 +610,9 @@ function Step1({ data, setData }: { data: any; setData: (d: any) => void }) {
       {/* Lawn size */}
       <div>
         <Label className="text-sm font-semibold text-gray-700 mb-2 block">
-          <TreePine className="w-3.5 h-3.5 inline mr-1″ />Lawn / yard size
+          <TreePine className="w-3.5 h-3.5 inline mr-1" />Lawn / yard size
         </Label>
-        <div className="grid grid-cols-3 gap-2 sm:grid-cols-5″>
+        <div className="grid grid-cols-3 gap-2 sm:grid-cols-5">
           {[{v:"minimal",l:"Minimal"},{v:"small",l:"Small"},{v:"medium",l:"Medium"},{v:"large",l:"Large"},{v:"very_large",l:"Very Large"}].map((s) => (
             <button key={s.v} type="button" onClick={() => setData({ ...data, lawnSize: s.v })}
               className={`px-2 py-2 rounded-lg border text-xs font-medium transition-all ${
@@ -625,8 +625,8 @@ function Step1({ data, setData }: { data: any; setData: (d: any) => void }) {
       {/* Trees */}
       <div>
         <Label className="text-sm font-semibold text-gray-700 mb-2 block">Approximate tree count</Label>
-        <div className="grid grid-cols-4 gap-2″>
-          {[{v:"none",l:"None"},{v:"1_3″,l:"1–3"},{v:"4_10",l:"4–10"},{v:"over_10",l:"10+"}].map((t) => (
+        <div className="grid grid-cols-4 gap-2">
+          {[{v:"none",l:"None"},{v:"1_3",l:"1–3"},{v:"4_10",l:"4–10"},{v:"over_10",l:"10+"}].map((t) => (
             <button key={t.v} type="button" onClick={() => setData({ ...data, treeCount: t.v })}
               className={`px-2 py-2 rounded-lg border text-xs font-medium transition-all ${
                 data.treeCount === t.v ? "border-[#0A1628] bg-[#0A1628] text-white" : "border-gray-200 text-gray-600 hover:border-gray-300 bg-white"
@@ -636,43 +636,43 @@ function Step1({ data, setData }: { data: any; setData: (d: any) => void }) {
       </div>
 
       {/* Pets section */}
-      <div className="p-4 rounded-xl border-2 border-amber-100 bg-amber-50/50″>
-        <div className="flex items-center gap-2 mb-3″>
-          <PawPrint className="w-4 h-4 text-amber-600″ />
-          <Label className="text-sm font-semibold text-gray-700″>Do you have pets?</Label>
+      <div className="p-4 rounded-xl border-2 border-amber-100 bg-amber-50/50">
+        <div className="flex items-center gap-2 mb-3">
+          <PawPrint className="w-4 h-4 text-amber-600" />
+          <Label className="text-sm font-semibold text-gray-700">Do you have pets?</Label>
         </div>
-        <div className="flex gap-3 mb-4″>
+        <div className="flex gap-3 mb-4">
           <button type="button" onClick={() => setData({ ...data, hasPets: true })}
             className={`flex-1 py-2.5 rounded-xl border-2 text-sm font-semibold transition-all ${
-              data.hasPets === true ? "border-amber-500 bg-amber-500 text-white" : "border-gray-200 text-gray-600 bg-white hover:border-amber-300″
+              data.hasPets === true ? "border-amber-500 bg-amber-500 text-white" : "border-gray-200 text-gray-600 bg-white hover:border-amber-300"
             }`}>🐾 Yes, I have pets</button>
           <button type="button" onClick={() => setData({ ...data, hasPets: false, dogCount: 0, catCount: 0, otherPets: "", petServiceNeeds: [] })}
             className={`flex-1 py-2.5 rounded-xl border-2 text-sm font-semibold transition-all ${
-              data.hasPets === false ? "border-gray-500 bg-gray-500 text-white" : "border-gray-200 text-gray-600 bg-white hover:border-gray-300″
+              data.hasPets === false ? "border-gray-500 bg-gray-500 text-white" : "border-gray-200 text-gray-600 bg-white hover:border-gray-300"
             }`}>No pets</button>
         </div>
 
         {data.hasPets === true && (
-          <div className="space-y-4″>
+          <div className="space-y-4">
             {/* Dogs */}
             <div>
               <Label className="text-xs font-semibold text-gray-600 mb-2 block">🐕 Dogs — how many?</Label>
-              <div className="flex gap-2″>
+              <div className="flex gap-2">
                 {[0,1,2,3,4,"5+"].map((n) => (
                   <button key={n} type="button" onClick={() => setData({ ...data, dogCount: n === "5+" ? 5 : n })}
                     className={`w-10 h-10 rounded-lg border text-sm font-bold transition-all ${
-                      data.dogCount === (n === "5+" ? 5 : n) ? "border-amber-500 bg-amber-500 text-white" : "border-gray-200 text-gray-600 bg-white hover:border-amber-300″
+                      data.dogCount === (n === "5+" ? 5 : n) ? "border-amber-500 bg-amber-500 text-white" : "border-gray-200 text-gray-600 bg-white hover:border-amber-300"
                     }`}>{n}</button>
                 ))}
               </div>
               {(data.dogCount ?? 0) > 0 && (
-                <div className="mt-2″>
+                <div className="mt-2">
                   <Label className="text-xs font-semibold text-gray-600 mb-1 block">Breed size</Label>
-                  <div className="flex gap-2″>
+                  <div className="flex gap-2">
                     {[{v:"small",l:"Small (under 25 lbs)"},{v:"medium",l:"Medium"},{v:"large",l:"Large (50+ lbs)"},{v:"mixed",l:"Mixed sizes"}].map((b) => (
                       <button key={b.v} type="button" onClick={() => setData({ ...data, dogBreedSize: b.v })}
                         className={`flex-1 py-1.5 rounded-lg border text-[10px] font-semibold transition-all ${
-                          data.dogBreedSize === b.v ? "border-amber-500 bg-amber-500 text-white" : "border-gray-200 text-gray-600 bg-white hover:border-amber-300″
+                          data.dogBreedSize === b.v ? "border-amber-500 bg-amber-500 text-white" : "border-gray-200 text-gray-600 bg-white hover:border-amber-300"
                         }`}>{b.l}</button>
                     ))}
                   </div>
@@ -683,11 +683,11 @@ function Step1({ data, setData }: { data: any; setData: (d: any) => void }) {
             {/* Cats */}
             <div>
               <Label className="text-xs font-semibold text-gray-600 mb-2 block">🐈 Cats — how many?</Label>
-              <div className="flex gap-2″>
+              <div className="flex gap-2">
                 {[0,1,2,3,4,"5+"].map((n) => (
                   <button key={n} type="button" onClick={() => setData({ ...data, catCount: n === "5+" ? 5 : n })}
                     className={`w-10 h-10 rounded-lg border text-sm font-bold transition-all ${
-                      data.catCount === (n === "5+" ? 5 : n) ? "border-amber-500 bg-amber-500 text-white" : "border-gray-200 text-gray-600 bg-white hover:border-amber-300″
+                      data.catCount === (n === "5+" ? 5 : n) ? "border-amber-500 bg-amber-500 text-white" : "border-gray-200 text-gray-600 bg-white hover:border-amber-300"
                     }`}>{n}</button>
                 ))}
               </div>
@@ -703,7 +703,7 @@ function Step1({ data, setData }: { data: any; setData: (d: any) => void }) {
             {/* Pet service needs */}
             <div>
               <Label className="text-xs font-semibold text-gray-600 mb-2 block">Pet-related service needs (select all that apply)</Label>
-              <div className="flex flex-wrap gap-2″>
+              <div className="flex flex-wrap gap-2">
                 {PET_SERVICE_NEEDS.map((s) => {
                   const needs: string[] = data.petServiceNeeds ?? [];
                   const active = needs.includes(s);
@@ -711,7 +711,7 @@ function Step1({ data, setData }: { data: any; setData: (d: any) => void }) {
                     <button key={s} type="button"
                       onClick={() => setData({ ...data, petServiceNeeds: active ? needs.filter(x => x !== s) : [...needs, s] })}
                       className={`px-3 py-1.5 rounded-full text-xs font-semibold border transition-all ${
-                        active ? "bg-amber-500 text-white border-amber-500″ : "border-gray-200 text-gray-600 bg-white hover:border-amber-300"
+                        active ? "bg-amber-500 text-white border-amber-500" : "border-gray-200 text-gray-600 bg-white hover:border-amber-300"
                       }`}>{s}</button>
                   );
                 })}
@@ -738,10 +738,10 @@ function Step2({ data, setData }: { data: any; setData: (d: any) => void }) {
     setData({ ...data, hiringPriorities: next });
   };
   return (
-    <div className="space-y-6″>
+    <div className="space-y-6">
       <div>
         <Label className="text-sm font-semibold text-gray-700 mb-3 block">How long have you owned this property?</Label>
-        <div className="grid grid-cols-2 gap-2 sm:grid-cols-3″>
+        <div className="grid grid-cols-2 gap-2 sm:grid-cols-3">
           {OWNERSHIP_YEARS.map((o) => (
             <button key={o.value} type="button" onClick={() => setData({ ...data, ownershipYears: o.value })}
               className={`px-3 py-2.5 rounded-xl border-2 text-sm font-medium transition-all ${
@@ -755,7 +755,7 @@ function Step2({ data, setData }: { data: any; setData: (d: any) => void }) {
 
       <div>
         <Label className="text-sm font-semibold text-gray-700 mb-3 block">Who lives here?</Label>
-        <div className="grid grid-cols-3 gap-2″>
+        <div className="grid grid-cols-3 gap-2">
           {[
             { value: "owner_occupied",  label: "I live here",         icon: "🏠" },
             { value: "tenant_occupied", label: "Tenant lives here",   icon: "🔑" },
@@ -763,7 +763,7 @@ function Step2({ data, setData }: { data: any; setData: (d: any) => void }) {
           ].map((o) => (
             <button key={o.value} type="button" onClick={() => setData({ ...data, occupancy: o.value })}
               className={`flex flex-col items-center gap-1.5 p-3 rounded-xl border-2 transition-all ${
-                data.occupancy === o.value ? "border-[#0A1628] bg-[#0A1628]/5″ : "border-gray-200 hover:border-gray-300 bg-white"
+                data.occupancy === o.value ? "border-[#0A1628] bg-[#0A1628]/5" : "border-gray-200 hover:border-gray-300 bg-white"
               }`}>
               <span className="text-xl">{o.icon}</span>
               <span className="text-xs font-medium text-gray-700 text-center">{o.label}</span>
@@ -774,7 +774,7 @@ function Step2({ data, setData }: { data: any; setData: (d: any) => void }) {
 
       <div>
         <Label className="text-sm font-semibold text-gray-700 mb-3 block">Ownership Type</Label>
-        <div className="grid grid-cols-3 gap-2″>
+        <div className="grid grid-cols-3 gap-2">
           {[
             { value: "primary_residence", label: "Primary Residence", icon: "🏠" },
             { value: "rental",            label: "Rental Property",   icon: "🔑" },
@@ -784,7 +784,7 @@ function Step2({ data, setData }: { data: any; setData: (d: any) => void }) {
               onClick={() => setData({ ...data, ownershipType: o.value, isRental: o.value === "rental" })}
               className={`flex flex-col items-center gap-1.5 p-3 rounded-xl border-2 transition-all ${
                 (data.ownershipType ?? "primary_residence") === o.value
-                  ? "border-[#0A1628] bg-[#0A1628]/5″
+                  ? "border-[#0A1628] bg-[#0A1628]/5"
                   : "border-gray-200 hover:border-gray-300 bg-white"
               }`}>
               <span className="text-xl">{o.icon}</span>
@@ -795,9 +795,9 @@ function Step2({ data, setData }: { data: any; setData: (d: any) => void }) {
       </div>
 
       {(data.ownershipType === "company_owned") && (
-        <div className="space-y-3 p-4 rounded-xl border border-[#0A1628]/20 bg-[#0A1628]/3″>
+        <div className="space-y-3 p-4 rounded-xl border border-[#0A1628]/20 bg-[#0A1628]/3">
           <p className="text-xs font-semibold text-[#0A1628] uppercase tracking-wider">Company Details</p>
-          <div className="grid grid-cols-1 gap-3 sm:grid-cols-2″>
+          <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
             <div>
               <Label className="text-xs font-medium text-gray-600 mb-1 block">Company Name</Label>
               <Input value={data.companyName ?? ""}
@@ -808,7 +808,7 @@ function Step2({ data, setData }: { data: any; setData: (d: any) => void }) {
               <Label className="text-xs font-medium text-gray-600 mb-1 block">EIN (optional)</Label>
               <Input value={data.companyEin ?? ""}
                 onChange={(e) => setData({ ...data, companyEin: e.target.value })}
-                placeholder="12-3456789″ className="h-9 text-sm" />
+                placeholder="12-3456789" className="h-9 text-sm" />
             </div>
             <div>
               <Label className="text-xs font-medium text-gray-600 mb-1 block">Property Manager Name</Label>
@@ -820,16 +820,16 @@ function Step2({ data, setData }: { data: any; setData: (d: any) => void }) {
               <Label className="text-xs font-medium text-gray-600 mb-1 block">Property Manager Phone</Label>
               <Input value={data.propertyManagerPhone ?? ""}
                 onChange={(e) => setData({ ...data, propertyManagerPhone: e.target.value })}
-                placeholder="(214) 555-0100″ className="h-9 text-sm" />
+                placeholder="(214) 555-0100" className="h-9 text-sm" />
             </div>
           </div>
         </div>
       )}
 
       {(data.ownershipType === "rental") && (
-        <div className="space-y-3 p-4 rounded-xl border border-amber-200 bg-amber-50″>
+        <div className="space-y-3 p-4 rounded-xl border border-amber-200 bg-amber-50">
           <p className="text-xs font-semibold text-amber-700 uppercase tracking-wider">Property Manager (optional)</p>
-          <div className="grid grid-cols-1 gap-3 sm:grid-cols-2″>
+          <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
             <div>
               <Label className="text-xs font-medium text-gray-600 mb-1 block">Manager Name</Label>
               <Input value={data.propertyManagerName ?? ""}
@@ -840,7 +840,7 @@ function Step2({ data, setData }: { data: any; setData: (d: any) => void }) {
               <Label className="text-xs font-medium text-gray-600 mb-1 block">Manager Phone</Label>
               <Input value={data.propertyManagerPhone ?? ""}
                 onChange={(e) => setData({ ...data, propertyManagerPhone: e.target.value })}
-                placeholder="(214) 555-0100″ className="h-9 text-sm" />
+                placeholder="(214) 555-0100" className="h-9 text-sm" />
             </div>
           </div>
         </div>
@@ -848,8 +848,8 @@ function Step2({ data, setData }: { data: any; setData: (d: any) => void }) {
 
       <div>
         <Label className="text-sm font-semibold text-gray-700 mb-1 block">What matters most when hiring a pro?</Label>
-        <p className="text-xs text-gray-400 mb-3″>Select all that apply — we'll use this to rank your matches</p>
-        <div className="flex flex-wrap gap-2″>
+        <p className="text-xs text-gray-400 mb-3">Select all that apply — we'll use this to rank your matches</p>
+        <div className="flex flex-wrap gap-2">
           {HIRING_PRIORITIES.map((p) => (
             <Chip key={p} label={p} active={priorities.includes(p)} onClick={() => toggle(p)} />
           ))}
@@ -886,32 +886,32 @@ function Step3({ data, setData }: { data: any; setData: (d: any) => void }) {
   };
 
   return (
-    <div className="space-y-3″>
-      <p className="text-sm text-gray-500″>Select all systems your home has. For selected systems, tell us their approximate age — this helps us prioritize maintenance alerts.</p>
+    <div className="space-y-3">
+      <p className="text-sm text-gray-500">Select all systems your home has. For selected systems, tell us their approximate age — this helps us prioritize maintenance alerts.</p>
 
       {/* Home Health Baseline */}
-      <div className="rounded-xl border-2 border-amber-200 bg-amber-50 p-4 mb-2″>
-        <div className="flex items-center gap-2 mb-2″>
-          <AlertTriangle className="w-4 h-4 text-amber-600″ />
-          <span className="text-sm font-bold text-gray-800″>Home Health Baseline</span>
+      <div className="rounded-xl border-2 border-amber-200 bg-amber-50 p-4 mb-2">
+        <div className="flex items-center gap-2 mb-2">
+          <AlertTriangle className="w-4 h-4 text-amber-600" />
+          <span className="text-sm font-bold text-gray-800">Home Health Baseline</span>
         </div>
-        <p className="text-xs text-gray-500 mb-3″>Check any known issues — we'll factor these into your Health Score and prioritize recommendations.</p>
-        <div className="grid grid-cols-2 gap-2″>
+        <p className="text-xs text-gray-500 mb-3">Check any known issues — we'll factor these into your Health Score and prioritize recommendations.</p>
+        <div className="grid grid-cols-2 gap-2">
           {KNOWN_ISSUES.map(issue => {
             const active = knownIssues.includes(issue.key);
             return (
               <button key={issue.key} type="button" onClick={() => toggleIssue(issue.key)}
                 className={`flex items-center gap-2 p-2.5 rounded-xl border-2 text-left transition-all ${
-                  active ? "border-amber-500 bg-amber-500/10″ : "border-gray-200 bg-white hover:border-amber-300"
+                  active ? "border-amber-500 bg-amber-500/10" : "border-gray-200 bg-white hover:border-amber-300"
                 }`}>
-                <span className="text-base flex-shrink-0″>{issue.icon}</span>
+                <span className="text-base flex-shrink-0">{issue.icon}</span>
                 <span className={`text-[11px] font-semibold leading-tight ${active ? "text-amber-800" : "text-gray-600"}`}>{issue.label}</span>
               </button>
             );
           })}
         </div>
         {knownIssues.length > 0 && (
-          <p className="text-[10px] text-amber-700 font-medium mt-2″>
+          <p className="text-[10px] text-amber-700 font-medium mt-2">
             {knownIssues.length} issue{knownIssues.length > 1 ? "s" : ""} flagged — we'll prioritize these in your action plan
           </p>
         )}
@@ -926,22 +926,22 @@ function Step3({ data, setData }: { data: any; setData: (d: any) => void }) {
               <div className={`w-9 h-9 rounded-lg flex items-center justify-center flex-shrink-0 ${active ? "bg-[#0A1628]" : "bg-gray-100"}`}>
                 <Icon className={`w-4 h-4 ${active ? "text-white" : "text-gray-500"}`} />
               </div>
-              <div className="flex-1″>
+              <div className="flex-1">
                 <p className={`font-semibold text-sm ${active ? "text-[#0A1628]" : "text-gray-700"}`}>{sys.label}</p>
-                <p className="text-[10px] text-gray-400″>{sys.desc}</p>
+                <p className="text-[10px] text-gray-400">{sys.desc}</p>
               </div>
               <div className={`w-5 h-5 rounded-full border-2 flex items-center justify-center flex-shrink-0 ${active ? "border-[#0A1628] bg-[#0A1628]" : "border-gray-300"}`}>
                 {active && <CheckCircle className="w-3 h-3 text-white" />}
               </div>
             </button>
             {active && (
-              <div className="px-4 pb-3 pt-1 bg-[#0A1628]/3 border-t border-[#0A1628]/10″>
+              <div className="px-4 pb-3 pt-1 bg-[#0A1628]/3 border-t border-[#0A1628]/10">
                 <Label className="text-[10px] font-semibold text-gray-500 uppercase tracking-wider mb-1.5 block">Approximate age</Label>
-                <div className="flex flex-wrap gap-1.5″>
+                <div className="flex flex-wrap gap-1.5">
                   {SYSTEM_AGES.map((a) => (
                     <button key={a.value} type="button" onClick={() => setAge(sys.id, a.value)}
                       className={`px-2.5 py-1 rounded-full text-[10px] font-semibold border transition-all ${
-                        systemAges[sys.id] === a.value ? "bg-[#0A1628] text-white border-[#0A1628]" : "border-gray-200 text-gray-600 bg-white hover:border-gray-300″
+                        systemAges[sys.id] === a.value ? "bg-[#0A1628] text-white border-[#0A1628]" : "border-gray-200 text-gray-600 bg-white hover:border-gray-300"
                       }`}>
                       {a.label}
                     </button>
@@ -964,24 +964,24 @@ function Step4({ data, setData }: { data: any; setData: (d: any) => void }) {
   const update = (i: number, field: string, value: any) => setData({ ...data, improvements: improvements.map((imp, idx) => idx === i ? { ...imp, [field]: value } : imp) });
 
   return (
-    <div className="space-y-4″>
-      <div className="p-3 rounded-xl bg-blue-50 border border-blue-100 flex items-start gap-2″>
-        <Info className="w-4 h-4 text-blue-500 flex-shrink-0 mt-0.5″ />
-        <p className="text-xs text-blue-700″>List any major work done in the last 5 years. This builds your property's value history and helps AI identify what's next.</p>
+    <div className="space-y-4">
+      <div className="p-3 rounded-xl bg-blue-50 border border-blue-100 flex items-start gap-2">
+        <Info className="w-4 h-4 text-blue-500 flex-shrink-0 mt-0.5" />
+        <p className="text-xs text-blue-700">List any major work done in the last 5 years. This builds your property's value history and helps AI identify what's next.</p>
       </div>
       {improvements.length === 0 && (
-        <div className="text-center py-8 text-gray-400″>
-          <Hammer className="w-10 h-10 mx-auto mb-2 opacity-30″ />
+        <div className="text-center py-8 text-gray-400">
+          <Hammer className="w-10 h-10 mx-auto mb-2 opacity-30" />
           <p className="text-sm">No improvements added yet</p>
-          <p className="text-xs mt-1″>Click below to add work that's been done</p>
+          <p className="text-xs mt-1">Click below to add work that's been done</p>
         </div>
       )}
-      <div className="space-y-3″>
+      <div className="space-y-3">
         {improvements.map((imp, i) => (
-          <div key={i} className="p-4 rounded-xl border border-gray-200 bg-white space-y-3″>
+          <div key={i} className="p-4 rounded-xl border border-gray-200 bg-white space-y-3">
             <div className="flex items-center justify-between">
               <span className="text-xs font-bold text-gray-500 uppercase tracking-wider">Improvement #{i + 1}</span>
-              <button type="button" onClick={() => remove(i)} className="text-red-400 hover:text-red-600 transition-colors"><Trash2 className="w-4 h-4″ /></button>
+              <button type="button" onClick={() => remove(i)} className="text-red-400 hover:text-red-600 transition-colors"><Trash2 className="w-4 h-4" /></button>
             </div>
             <div>
               <Label className="text-xs font-semibold text-gray-600 mb-1 block">Category</Label>
@@ -991,7 +991,7 @@ function Step4({ data, setData }: { data: any; setData: (d: any) => void }) {
                 {IMPROVEMENT_CATEGORIES.map((c) => <option key={c} value={c}>{c}</option>)}
               </select>
             </div>
-            <div className="grid grid-cols-2 gap-3″>
+            <div className="grid grid-cols-2 gap-3">
               <div>
                 <Label className="text-xs font-semibold text-gray-600 mb-1 block">Year completed</Label>
                 <select value={imp.completedYear ?? ""} onChange={(e) => update(i, "completedYear", Number(e.target.value))}
@@ -1000,7 +1000,7 @@ function Step4({ data, setData }: { data: any; setData: (d: any) => void }) {
                   {Array.from({ length: 6 }, (_, k) => new Date().getFullYear() - k).map((y) => <option key={y} value={y}>{y}</option>)}
                 </select>
               </div>
-              <div className="flex items-end pb-2″>
+              <div className="flex items-end pb-2">
                 <label className="flex items-center gap-2 cursor-pointer" onClick={() => update(i, "hasWarranty", !imp.hasWarranty)}>
                   <input type="checkbox" checked={imp.hasWarranty} readOnly className="w-4 h-4 accent-[#0A1628]" />
                   <span className="text-xs text-gray-600 font-medium">Has warranty</span>
@@ -1017,7 +1017,7 @@ function Step4({ data, setData }: { data: any; setData: (d: any) => void }) {
       </div>
       <Button type="button" variant="outline" onClick={add}
         className="w-full flex items-center gap-2 border-dashed border-gray-300 text-gray-600 hover:border-[#0A1628] hover:text-[#0A1628]">
-        <Plus className="w-4 h-4″ /> Add an improvement
+        <Plus className="w-4 h-4" /> Add an improvement
       </Button>
     </div>
   );
@@ -1031,24 +1031,24 @@ function Step5({ data, setData }: { data: any; setData: (d: any) => void }) {
   const update = (i: number, field: string, value: any) => setData({ ...data, wishes: wishes.map((w, idx) => idx === i ? { ...w, [field]: value } : w) });
 
   return (
-    <div className="space-y-4″>
-      <div className="p-3 rounded-xl bg-amber-50 border border-amber-100 flex items-start gap-2″>
-        <Star className="w-4 h-4 text-amber-500 flex-shrink-0 mt-0.5″ />
-        <p className="text-xs text-amber-700″>Your wish list helps us match you with the right pros before you even ask. Add anything you're thinking about — no commitment required.</p>
+    <div className="space-y-4">
+      <div className="p-3 rounded-xl bg-amber-50 border border-amber-100 flex items-start gap-2">
+        <Star className="w-4 h-4 text-amber-500 flex-shrink-0 mt-0.5" />
+        <p className="text-xs text-amber-700">Your wish list helps us match you with the right pros before you even ask. Add anything you're thinking about — no commitment required.</p>
       </div>
       {wishes.length === 0 && (
-        <div className="text-center py-8 text-gray-400″>
-          <Heart className="w-10 h-10 mx-auto mb-2 opacity-30″ />
+        <div className="text-center py-8 text-gray-400">
+          <Heart className="w-10 h-10 mx-auto mb-2 opacity-30" />
           <p className="text-sm">No projects added yet</p>
-          <p className="text-xs mt-1″>What's on your home improvement radar?</p>
+          <p className="text-xs mt-1">What's on your home improvement radar?</p>
         </div>
       )}
-      <div className="space-y-3″>
+      <div className="space-y-3">
         {wishes.map((wish, i) => (
-          <div key={i} className="p-4 rounded-xl border border-gray-200 bg-white space-y-3″>
+          <div key={i} className="p-4 rounded-xl border border-gray-200 bg-white space-y-3">
             <div className="flex items-center justify-between">
               <span className="text-xs font-bold text-gray-500 uppercase tracking-wider">Project #{i + 1}</span>
-              <button type="button" onClick={() => remove(i)} className="text-red-400 hover:text-red-600 transition-colors"><Trash2 className="w-4 h-4″ /></button>
+              <button type="button" onClick={() => remove(i)} className="text-red-400 hover:text-red-600 transition-colors"><Trash2 className="w-4 h-4" /></button>
             </div>
             <div>
               <Label className="text-xs font-semibold text-gray-600 mb-1 block">Project type</Label>
@@ -1062,11 +1062,11 @@ function Step5({ data, setData }: { data: any; setData: (d: any) => void }) {
               <Label className="text-xs font-semibold text-gray-600 mb-2 block">
                 <DollarSign className="w-3 h-3 inline" /> Budget range
               </Label>
-              <div className="flex flex-wrap gap-1.5″>
+              <div className="flex flex-wrap gap-1.5">
                 {BUDGET_RANGES.map((b) => (
                   <button key={b.value} type="button" onClick={() => update(i, "budgetRange", b.value)}
                     className={`px-2.5 py-1 rounded-full text-[10px] font-semibold border transition-all ${
-                      wish.budgetRange === b.value ? "bg-[#0A1628] text-white border-[#0A1628]" : "border-gray-200 text-gray-600 bg-white hover:border-gray-300″
+                      wish.budgetRange === b.value ? "bg-[#0A1628] text-white border-[#0A1628]" : "border-gray-200 text-gray-600 bg-white hover:border-gray-300"
                     }`}>
                     {b.label}
                   </button>
@@ -1077,11 +1077,11 @@ function Step5({ data, setData }: { data: any; setData: (d: any) => void }) {
               <Label className="text-xs font-semibold text-gray-600 mb-2 block">
                 <Clock className="w-3 h-3 inline" /> Timeline
               </Label>
-              <div className="flex flex-wrap gap-1.5″>
+              <div className="flex flex-wrap gap-1.5">
                 {URGENCY_OPTIONS.map((u) => (
                   <button key={u.value} type="button" onClick={() => update(i, "urgency", u.value)}
                     className={`px-2.5 py-1 rounded-full text-[10px] font-semibold border transition-all ${
-                      wish.urgency === u.value ? "text-white border-transparent" : "border-gray-200 text-gray-600 bg-white hover:border-gray-300″
+                      wish.urgency === u.value ? "text-white border-transparent" : "border-gray-200 text-gray-600 bg-white hover:border-gray-300"
                     }`}
                     style={wish.urgency === u.value ? { backgroundColor: u.color, borderColor: u.color } : {}}>
                     {u.label}
@@ -1099,7 +1099,7 @@ function Step5({ data, setData }: { data: any; setData: (d: any) => void }) {
       </div>
       <Button type="button" variant="outline" onClick={add}
         className="w-full flex items-center gap-2 border-dashed border-gray-300 text-gray-600 hover:border-[#0A1628] hover:text-[#0A1628]">
-        <Plus className="w-4 h-4″ /> Add a project
+        <Plus className="w-4 h-4" /> Add a project
       </Button>
     </div>
   );
@@ -1116,17 +1116,17 @@ function Step6({ data, setData }: { data: any; setData: (d: any) => void }) {
   };
 
   return (
-    <div className="space-y-6″>
-      <p className="text-sm text-gray-500″>Interior details help us match the right pros and generate accurate AI before/after mockups of your home.</p>
+    <div className="space-y-6">
+      <p className="text-sm text-gray-500">Interior details help us match the right pros and generate accurate AI before/after mockups of your home.</p>
 
       {/* Flooring */}
       <div>
         <Label className="text-sm font-semibold text-gray-700 mb-2 block">Flooring types in your home (select all that apply)</Label>
-        <div className="flex flex-wrap gap-2″>
+        <div className="flex flex-wrap gap-2">
           {FLOORING_TYPES.map((f) => (
             <button key={f} type="button" onClick={() => toggleFlooring(f)}
               className={`px-3 py-1.5 rounded-full text-xs font-semibold border transition-all ${
-                flooringTypes.includes(f) ? "bg-[#0A1628] text-white border-[#0A1628]" : "border-gray-200 text-gray-600 bg-white hover:border-gray-300″
+                flooringTypes.includes(f) ? "bg-[#0A1628] text-white border-[#0A1628]" : "border-gray-200 text-gray-600 bg-white hover:border-gray-300"
               }`}>{f}</button>
           ))}
         </div>
@@ -1135,11 +1135,11 @@ function Step6({ data, setData }: { data: any; setData: (d: any) => void }) {
       {/* Kitchen countertop */}
       <div>
         <Label className="text-sm font-semibold text-gray-700 mb-2 block">Kitchen countertop material</Label>
-        <div className="flex flex-wrap gap-2″>
+        <div className="flex flex-wrap gap-2">
           {["Granite","Quartz","Marble","Laminate","Butcher Block","Concrete","Tile","Other"].map((c) => (
             <button key={c} type="button" onClick={() => setData({ ...data, kitchenCountertop: c.toLowerCase().replace(" ","_") })}
               className={`px-3 py-1.5 rounded-full text-xs font-semibold border transition-all ${
-                data.kitchenCountertop === c.toLowerCase().replace(" ","_") ? "bg-[#0A1628] text-white border-[#0A1628]" : "border-gray-200 text-gray-600 bg-white hover:border-gray-300″
+                data.kitchenCountertop === c.toLowerCase().replace(" ","_") ? "bg-[#0A1628] text-white border-[#0A1628]" : "border-gray-200 text-gray-600 bg-white hover:border-gray-300"
               }`}>{c}</button>
           ))}
         </div>
@@ -1148,7 +1148,7 @@ function Step6({ data, setData }: { data: any; setData: (d: any) => void }) {
       {/* Primary bath */}
       <div>
         <Label className="text-sm font-semibold text-gray-700 mb-2 block">Primary bathroom type</Label>
-        <div className="flex flex-wrap gap-2″>
+        <div className="flex flex-wrap gap-2">
           {[
             {v:"walk_in_shower",l:"Walk-In Shower"},
             {v:"tub_shower_combo",l:"Tub/Shower Combo"},
@@ -1158,7 +1158,7 @@ function Step6({ data, setData }: { data: any; setData: (d: any) => void }) {
           ].map((b) => (
             <button key={b.v} type="button" onClick={() => setData({ ...data, primaryBathType: b.v })}
               className={`px-3 py-1.5 rounded-full text-xs font-semibold border transition-all ${
-                data.primaryBathType === b.v ? "bg-[#0A1628] text-white border-[#0A1628]" : "border-gray-200 text-gray-600 bg-white hover:border-gray-300″
+                data.primaryBathType === b.v ? "bg-[#0A1628] text-white border-[#0A1628]" : "border-gray-200 text-gray-600 bg-white hover:border-gray-300"
               }`}>{b.l}</button>
           ))}
         </div>
@@ -1167,24 +1167,24 @@ function Step6({ data, setData }: { data: any; setData: (d: any) => void }) {
       {/* Fireplace */}
       <div>
         <Label className="text-sm font-semibold text-gray-700 mb-2 block">
-          <Flame className="w-3.5 h-3.5 inline mr-1″ />Fireplace
+          <Flame className="w-3.5 h-3.5 inline mr-1" />Fireplace
         </Label>
         <div className="flex gap-2 flex-wrap">
           {[{v:"none",l:"None"},{v:"gas",l:"Gas"},{v:"wood_burning",l:"Wood Burning"},{v:"electric",l:"Electric"}].map((f) => (
             <button key={f.v} type="button" onClick={() => setData({ ...data, fireplaceType: f.v, fireplaceCount: f.v === "none" ? 0 : (data.fireplaceCount || 1) })}
               className={`px-3 py-1.5 rounded-full text-xs font-semibold border transition-all ${
-                data.fireplaceType === f.v ? "bg-[#0A1628] text-white border-[#0A1628]" : "border-gray-200 text-gray-600 bg-white hover:border-gray-300″
+                data.fireplaceType === f.v ? "bg-[#0A1628] text-white border-[#0A1628]" : "border-gray-200 text-gray-600 bg-white hover:border-gray-300"
               }`}>{f.l}</button>
           ))}
         </div>
         {data.fireplaceType && data.fireplaceType !== "none" && (
-          <div className="mt-2 flex items-center gap-3″>
-            <Label className="text-xs text-gray-600″>How many?</Label>
-            <div className="flex gap-2″>
+          <div className="mt-2 flex items-center gap-3">
+            <Label className="text-xs text-gray-600">How many?</Label>
+            <div className="flex gap-2">
               {[1,2,3].map(n => (
                 <button key={n} type="button" onClick={() => setData({ ...data, fireplaceCount: n })}
                   className={`w-9 h-9 rounded-lg border text-sm font-bold transition-all ${
-                    data.fireplaceCount === n ? "border-[#0A1628] bg-[#0A1628] text-white" : "border-gray-200 text-gray-600 bg-white hover:border-gray-300″
+                    data.fireplaceCount === n ? "border-[#0A1628] bg-[#0A1628] text-white" : "border-gray-200 text-gray-600 bg-white hover:border-gray-300"
                   }`}>{n}</button>
               ))}
             </div>
@@ -1195,7 +1195,7 @@ function Step6({ data, setData }: { data: any; setData: (d: any) => void }) {
       {/* Ceiling height */}
       <div>
         <Label className="text-sm font-semibold text-gray-700 mb-2 block">Ceiling height</Label>
-        <div className="flex flex-wrap gap-2″>
+        <div className="flex flex-wrap gap-2">
           {[
             {v:"standard_8ft",l:"8 ft (Standard)"},
             {v:"9ft",l:"9 ft"},
@@ -1206,7 +1206,7 @@ function Step6({ data, setData }: { data: any; setData: (d: any) => void }) {
           ].map((c) => (
             <button key={c.v} type="button" onClick={() => setData({ ...data, ceilingHeight: c.v })}
               className={`px-3 py-1.5 rounded-full text-xs font-semibold border transition-all ${
-                data.ceilingHeight === c.v ? "bg-[#0A1628] text-white border-[#0A1628]" : "border-gray-200 text-gray-600 bg-white hover:border-gray-300″
+                data.ceilingHeight === c.v ? "bg-[#0A1628] text-white border-[#0A1628]" : "border-gray-200 text-gray-600 bg-white hover:border-gray-300"
               }`}>{c.l}</button>
           ))}
         </div>
@@ -1215,7 +1215,7 @@ function Step6({ data, setData }: { data: any; setData: (d: any) => void }) {
       {/* Window type */}
       <div>
         <Label className="text-sm font-semibold text-gray-700 mb-2 block">Window type</Label>
-        <div className="flex flex-wrap gap-2″>
+        <div className="flex flex-wrap gap-2">
           {[
             {v:"single_pane",l:"Single Pane (older)"},
             {v:"double_pane",l:"Double Pane"},
@@ -1225,33 +1225,33 @@ function Step6({ data, setData }: { data: any; setData: (d: any) => void }) {
           ].map((w) => (
             <button key={w.v} type="button" onClick={() => setData({ ...data, windowType: w.v })}
               className={`px-3 py-1.5 rounded-full text-xs font-semibold border transition-all ${
-                data.windowType === w.v ? "bg-[#0A1628] text-white border-[#0A1628]" : "border-gray-200 text-gray-600 bg-white hover:border-gray-300″
+                data.windowType === w.v ? "bg-[#0A1628] text-white border-[#0A1628]" : "border-gray-200 text-gray-600 bg-white hover:border-gray-300"
               }`}>{w.l}</button>
           ))}
         </div>
       </div>
 
-      <div className="border-t border-gray-100 pt-4″>
-        <p className="text-xs font-bold text-gray-500 uppercase tracking-wider mb-4″>Visual Style & Aesthetic</p>
+      <div className="border-t border-gray-100 pt-4">
+        <p className="text-xs font-bold text-gray-500 uppercase tracking-wider mb-4">Visual Style & Aesthetic</p>
       </div>
 
       <div>
         <Label className="text-sm font-semibold text-gray-700 mb-3 block">Home architectural style</Label>
-        <div className="flex flex-wrap gap-2″>
+        <div className="flex flex-wrap gap-2">
           {HOME_STYLES.map((s) => <Chip key={s} label={s} active={prefs.homeStyle === s} onClick={() => set("homeStyle", s)} />)}
         </div>
       </div>
 
       <div>
         <Label className="text-sm font-semibold text-gray-700 mb-3 block">Current exterior color palette</Label>
-        <div className="flex flex-wrap gap-2″>
-          {EXTERIOR_COLORS.map((c) => <Chip key={c} label={c} active={prefs.exteriorColor === c} onClick={() => set("exteriorColor", c)} color="#0891b2″ />)}
+        <div className="flex flex-wrap gap-2">
+          {EXTERIOR_COLORS.map((c) => <Chip key={c} label={c} active={prefs.exteriorColor === c} onClick={() => set("exteriorColor", c)} color="#0891b2" />)}
         </div>
       </div>
 
       <div>
         <Label className="text-sm font-semibold text-gray-700 mb-3 block">Interior color palette</Label>
-        <div className="space-y-2″>
+        <div className="space-y-2">
           {INTERIOR_PALETTES.map((p) => (
             <button key={p} type="button" onClick={() => set("interiorPalette", p)}
               className={`w-full text-left px-4 py-2.5 rounded-xl border-2 text-sm transition-all ${
@@ -1265,7 +1265,7 @@ function Step6({ data, setData }: { data: any; setData: (d: any) => void }) {
 
       <div>
         <Label className="text-sm font-semibold text-gray-700 mb-3 block">Overall design aesthetic</Label>
-        <div className="flex flex-wrap gap-2″>
+        <div className="flex flex-wrap gap-2">
           {DESIGN_AESTHETICS.map((a) => <Chip key={a} label={a} active={prefs.designAesthetic === a} onClick={() => set("designAesthetic", a)} color="#7C3AED" />)}
         </div>
       </div>
@@ -1327,27 +1327,27 @@ function Step7({ data, setData, propertyId }: { data: any; setData: (d: any) => 
   const roomsWithPhotos = Object.keys(uploadedPhotos).filter(k => (uploadedPhotos[k] ?? []).length > 0).length;
 
   return (
-    <div className="space-y-4″>
+    <div className="space-y-4">
       {/* Photo Tips Banner */}
-      <div className="p-3 rounded-xl bg-teal-50 border border-teal-100″>
-        <div className="flex items-start justify-between gap-2″>
-          <div className="flex items-start gap-2″>
-            <Camera className="w-4 h-4 text-teal-600 flex-shrink-0 mt-0.5″ />
-            <p className="text-xs text-teal-700″>
+      <div className="p-3 rounded-xl bg-teal-50 border border-teal-100">
+        <div className="flex items-start justify-between gap-2">
+          <div className="flex items-start gap-2">
+            <Camera className="w-4 h-4 text-teal-600 flex-shrink-0 mt-0.5" />
+            <p className="text-xs text-teal-700">
               Photos are the most valuable data point in your home profile. Our AI uses them to detect issues, generate before/after mockups, and match you with the right pros.
             </p>
           </div>
           <button
             type="button"
             onClick={() => setShowTips(!showTips)}
-            className="text-[10px] font-semibold text-teal-700 underline whitespace-nowrap flex-shrink-0″
+            className="text-[10px] font-semibold text-teal-700 underline whitespace-nowrap flex-shrink-0"
           >
             {showTips ? "Hide tips" : "Photo tips"}
           </button>
         </div>
         {showTips && (
-          <div className="mt-3 pt-3 border-t border-teal-200 space-y-3″>
-            <p className="text-xs font-semibold text-teal-800″>How to take a great home photo</p>
+          <div className="mt-3 pt-3 border-t border-teal-200 space-y-3">
+            <p className="text-xs font-semibold text-teal-800">How to take a great home photo</p>
             <img
               src={PHOTO_EXAMPLE_URL}
               alt="Example of a quality home photo"
@@ -1355,7 +1355,7 @@ function Step7({ data, setData, propertyId }: { data: any; setData: (d: any) => 
               style={{ maxHeight: 180 }}
             />
             <p className="text-[10px] text-teal-700 italic">Example: Wide-angle corner shot, natural light, full room visible from floor to ceiling</p>
-            <div className="grid grid-cols-1 gap-1.5″>
+            <div className="grid grid-cols-1 gap-1.5">
               {[
                 { icon: "📐", tip: "Shoot from a corner — capture the full room, not just one wall" },
                 { icon: "☀️", tip: "Use natural light — open blinds and turn on all lights" },
@@ -1364,9 +1364,9 @@ function Step7({ data, setData, propertyId }: { data: any; setData: (d: any) => 
                 { icon: "🚫", tip: "Remove clutter, pets, and people from the frame" },
                 { icon: "🔍", tip: "Take close-ups of damage, wear, or special features separately" },
               ].map(({ icon, tip }) => (
-                <div key={tip} className="flex items-start gap-1.5″>
-                  <span className="text-sm flex-shrink-0″>{icon}</span>
-                  <p className="text-[10px] text-teal-700″>{tip}</p>
+                <div key={tip} className="flex items-start gap-1.5">
+                  <span className="text-sm flex-shrink-0">{icon}</span>
+                  <p className="text-[10px] text-teal-700">{tip}</p>
                 </div>
               ))}
             </div>
@@ -1375,7 +1375,7 @@ function Step7({ data, setData, propertyId }: { data: any; setData: (d: any) => 
       </div>
 
       {/* Room Cards */}
-      <div className="space-y-2″>
+      <div className="space-y-2">
         {PHOTO_ROOMS.map((room) => {
           const photos = uploadedPhotos[room.id] ?? [];
           const isUploading = uploadingRoom === room.id;
@@ -1388,14 +1388,14 @@ function Step7({ data, setData, propertyId }: { data: any; setData: (d: any) => 
                 className="w-full flex items-center justify-between p-3 bg-white hover:bg-gray-50 transition-colors"
                 onClick={() => setExpandedRoom(isExpanded ? null : room.id)}
               >
-                <div className="flex items-center gap-2″>
+                <div className="flex items-center gap-2">
                   <span className="text-xl">{room.icon}</span>
                   <div className="text-left">
-                    <p className="text-xs font-semibold text-gray-800″>{room.label}</p>
-                    <p className="text-[9px] text-gray-400″>{room.tip}</p>
+                    <p className="text-xs font-semibold text-gray-800">{room.label}</p>
+                    <p className="text-[9px] text-gray-400">{room.tip}</p>
                   </div>
                 </div>
-                <div className="flex items-center gap-2″>
+                <div className="flex items-center gap-2">
                   {photos.length > 0 && (
                     <span className="bg-teal-100 text-teal-700 text-[10px] font-bold px-2 py-0.5 rounded-full">
                       {photos.length} photo{photos.length !== 1 ? "s" : ""}
@@ -1406,12 +1406,12 @@ function Step7({ data, setData, propertyId }: { data: any; setData: (d: any) => 
               </button>
 
               {isExpanded && (
-                <div className="border-t border-gray-100 p-3 bg-gray-50 space-y-3″>
+                <div className="border-t border-gray-100 p-3 bg-gray-50 space-y-3">
                   <div className="p-2 bg-blue-50 rounded-lg">
-                    <p className="text-[10px] font-semibold text-blue-700 mb-1″>📸 Suggested shots:</p>
-                    <ul className="space-y-0.5″>
+                    <p className="text-[10px] font-semibold text-blue-700 mb-1">📸 Suggested shots:</p>
+                    <ul className="space-y-0.5">
                       {room.shots.map((shot: string, i: number) => (
-                        <li key={i} className="text-[9px] text-blue-600 flex items-start gap-1″>
+                        <li key={i} className="text-[9px] text-blue-600 flex items-start gap-1">
                           <span className="font-bold">{i + 1}.</span> {shot}
                         </li>
                       ))}
@@ -1420,18 +1420,18 @@ function Step7({ data, setData, propertyId }: { data: any; setData: (d: any) => 
                   </div>
 
                   {photos.length > 0 && (
-                    <div className="grid grid-cols-3 gap-2″>
+                    <div className="grid grid-cols-3 gap-2">
                       {photos.map((url: string, idx: number) => (
                         <div key={idx} className="relative rounded-lg overflow-hidden">
                           <img src={url} alt={`${room.label} ${idx + 1}`} className="w-full h-20 object-cover" />
                           <button
                             type="button"
                             onClick={() => removePhoto(room.id, idx)}
-                            className="absolute top-1 right-1 bg-red-500 rounded-full w-4 h-4 flex items-center justify-center text-white text-[9px] font-bold hover:bg-red-600″
+                            className="absolute top-1 right-1 bg-red-500 rounded-full w-4 h-4 flex items-center justify-center text-white text-[9px] font-bold hover:bg-red-600"
                           >
                             x
                           </button>
-                          <div className="absolute bottom-0 left-0 right-0 bg-black/40 text-white text-[8px] text-center py-0.5″>
+                          <div className="absolute bottom-0 left-0 right-0 bg-black/40 text-white text-[8px] text-center py-0.5">
                             Photo {idx + 1}
                           </div>
                         </div>
@@ -1440,12 +1440,12 @@ function Step7({ data, setData, propertyId }: { data: any; setData: (d: any) => 
                   )}
 
                   {isUploading ? (
-                    <div className="flex items-center justify-center gap-2 py-3 rounded-lg border-2 border-dashed border-teal-300 bg-teal-50″>
+                    <div className="flex items-center justify-center gap-2 py-3 rounded-lg border-2 border-dashed border-teal-300 bg-teal-50">
                       <div className="w-4 h-4 border-2 border-teal-500 border-t-transparent rounded-full animate-spin" />
-                      <span className="text-xs text-teal-600″>Uploading...</span>
+                      <span className="text-xs text-teal-600">Uploading...</span>
                     </div>
                   ) : (
-                    <div className="flex gap-2″>
+                    <div className="flex gap-2">
                       <label className="flex-1 cursor-pointer">
                         <input
                           type="file"
@@ -1457,7 +1457,7 @@ function Step7({ data, setData, propertyId }: { data: any; setData: (d: any) => 
                           }}
                         />
                         <div className="flex items-center justify-center gap-1.5 py-2.5 rounded-lg bg-teal-600 text-white text-xs font-bold active:scale-95 transition-all">
-                          <Camera className="w-3.5 h-3.5″ /> Take Photo
+                          <Camera className="w-3.5 h-3.5" /> Take Photo
                         </div>
                       </label>
                       <label className="flex-1 cursor-pointer">
@@ -1471,7 +1471,7 @@ function Step7({ data, setData, propertyId }: { data: any; setData: (d: any) => 
                           }}
                         />
                         <div className="flex items-center justify-center gap-1.5 py-2.5 rounded-lg border border-gray-300 bg-white text-gray-600 text-xs font-semibold active:scale-95 transition-all">
-                          <Upload className="w-3.5 h-3.5″ /> Library
+                          <Upload className="w-3.5 h-3.5" /> Library
                         </div>
                       </label>
                     </div>
@@ -1483,16 +1483,16 @@ function Step7({ data, setData, propertyId }: { data: any; setData: (d: any) => 
         })}
       </div>
 
-      <div className="text-center space-y-1″>
-        <p className="text-xs text-gray-500″>
-          <span className="font-semibold text-teal-600″>{totalPhotos} photo{totalPhotos !== 1 ? "s" : ""}</span> uploaded across{" "}
-          <span className="font-semibold text-teal-600″>{roomsWithPhotos}</span> of {PHOTO_ROOMS.length} rooms
+      <div className="text-center space-y-1">
+        <p className="text-xs text-gray-500">
+          <span className="font-semibold text-teal-600">{totalPhotos} photo{totalPhotos !== 1 ? "s" : ""}</span> uploaded across{" "}
+          <span className="font-semibold text-teal-600">{roomsWithPhotos}</span> of {PHOTO_ROOMS.length} rooms
         </p>
         {totalPhotos === 0 && (
-          <p className="text-[10px] text-gray-400″>Photos are optional but significantly improve your AI analysis</p>
+          <p className="text-[10px] text-gray-400">Photos are optional but significantly improve your AI analysis</p>
         )}
         {totalPhotos >= 5 && totalPhotos < 15 && (
-          <p className="text-[10px] text-teal-500″>Good start! More photos = better AI insights</p>
+          <p className="text-[10px] text-teal-500">Good start! More photos = better AI insights</p>
         )}
         {totalPhotos >= 15 && (
           <p className="text-[10px] text-teal-600 font-semibold">Excellent coverage — your AI analysis will be highly accurate</p>
@@ -1514,17 +1514,17 @@ function Step8({ data, setData }: { data: any; setData: (d: any) => void }) {
   ];
 
   return (
-    <div className="space-y-5″>
-      <div className="text-center py-2″>
-        <div className="w-16 h-16 rounded-full bg-green-50 flex items-center justify-center mx-auto mb-3″>
-          <CheckCircle className="w-8 h-8 text-green-500″ />
+    <div className="space-y-5">
+      <div className="text-center py-2">
+        <div className="w-16 h-16 rounded-full bg-green-50 flex items-center justify-center mx-auto mb-3">
+          <CheckCircle className="w-8 h-8 text-green-500" />
         </div>
-        <h3 className="text-xl font-bold text-gray-900 mb-1″>Almost done!</h3>
-        <p className="text-sm text-gray-500″>Add your contact info and review your consent preferences.</p>
+        <h3 className="text-xl font-bold text-gray-900 mb-1">Almost done!</h3>
+        <p className="text-sm text-gray-500">Add your contact info and review your consent preferences.</p>
       </div>
 
       {/* Contact info */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 p-4 rounded-xl bg-gray-50 border border-gray-200″>
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 p-4 rounded-xl bg-gray-50 border border-gray-200">
         <div>
           <Label className="text-xs font-semibold text-gray-600 mb-1 block">Display Name</Label>
           <Input
@@ -1538,7 +1538,7 @@ function Step8({ data, setData }: { data: any; setData: (d: any) => void }) {
           <Label className="text-xs font-semibold text-gray-600 mb-1 block">Phone Number</Label>
           <Input
             type="tel"
-            placeholder="(214) 555-0100″
+            placeholder="(214) 555-0100"
             value={data.phone ?? ""}
             onChange={(e) => setData({ ...data, phone: e.target.value })}
             className="text-sm"
@@ -1546,21 +1546,21 @@ function Step8({ data, setData }: { data: any; setData: (d: any) => void }) {
         </div>
       </div>
 
-      <div className="space-y-3″>
+      <div className="space-y-3">
         {CONSENT_ITEMS.map((item) => {
           const Icon = item.icon;
           const checked = !!consents[item.key];
           return (
             <div key={item.key} onClick={() => set(item.key, !checked)}
               className={`flex items-start gap-3 p-4 rounded-xl border-2 cursor-pointer transition-all ${
-                checked ? "border-[#0A1628] bg-[#0A1628]/3″ : "border-gray-200 hover:border-gray-300 bg-white"
+                checked ? "border-[#0A1628] bg-[#0A1628]/3" : "border-gray-200 hover:border-gray-300 bg-white"
               }`}>
               <div className={`w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0 ${checked ? "bg-[#0A1628]" : "bg-gray-100"}`}>
                 <Icon className={`w-4 h-4 ${checked ? "text-white" : "text-gray-500"}`} />
               </div>
-              <div className="flex-1″>
-                <div className="flex items-center gap-2 mb-0.5″>
-                  <p className="text-sm font-semibold text-gray-800″>{item.title}</p>
+              <div className="flex-1">
+                <div className="flex items-center gap-2 mb-0.5">
+                  <p className="text-sm font-semibold text-gray-800">{item.title}</p>
                   {item.required && <span className="text-[9px] font-bold uppercase tracking-wider text-red-500 bg-red-50 px-1.5 py-0.5 rounded">Required</span>}
                 </div>
                 <p className="text-xs text-gray-500 leading-relaxed">{item.desc}</p>
@@ -1574,22 +1574,22 @@ function Step8({ data, setData }: { data: any; setData: (d: any) => void }) {
       </div>
 
       {!consents.consentTerms && (
-        <div className="flex items-center gap-2 p-3 rounded-xl bg-red-50 border border-red-100″>
-          <AlertTriangle className="w-4 h-4 text-red-500 flex-shrink-0″ />
-          <p className="text-xs text-red-600″>Please accept the required Terms of Service to continue.</p>
+        <div className="flex items-center gap-2 p-3 rounded-xl bg-red-50 border border-red-100">
+          <AlertTriangle className="w-4 h-4 text-red-500 flex-shrink-0" />
+          <p className="text-xs text-red-600">Please accept the required Terms of Service to continue.</p>
         </div>
       )}
 
       <div className="p-4 rounded-xl bg-gradient-to-r from-[#0A1628] to-[#0891b2] text-white">
-        <div className="flex items-center gap-2 mb-2″>
-          <Sparkles className="w-4 h-4″ />
+        <div className="flex items-center gap-2 mb-2">
+          <Sparkles className="w-4 h-4" />
           <span className="text-sm font-bold">What happens next</span>
         </div>
-        <ul className="space-y-1.5 text-xs text-white/80″>
-          <li className="flex items-center gap-2″><ArrowRight className="w-3 h-3 flex-shrink-0" /> Your home profile is activated in the ProLnk network</li>
-          <li className="flex items-center gap-2″><ArrowRight className="w-3 h-3 flex-shrink-0" /> AI scans your property data for maintenance opportunities</li>
-          <li className="flex items-center gap-2″><ArrowRight className="w-3 h-3 flex-shrink-0" /> Vetted pros in your area are matched to your wish list</li>
-          <li className="flex items-center gap-2″><ArrowRight className="w-3 h-3 flex-shrink-0" /> You receive curated offers — no spam, no cold calls</li>
+        <ul className="space-y-1.5 text-xs text-white/80">
+          <li className="flex items-center gap-2"><ArrowRight className="w-3 h-3 flex-shrink-0" /> Your home profile is activated in the ProLnk network</li>
+          <li className="flex items-center gap-2"><ArrowRight className="w-3 h-3 flex-shrink-0" /> AI scans your property data for maintenance opportunities</li>
+          <li className="flex items-center gap-2"><ArrowRight className="w-3 h-3 flex-shrink-0" /> Vetted pros in your area are matched to your wish list</li>
+          <li className="flex items-center gap-2"><ArrowRight className="w-3 h-3 flex-shrink-0" /> You receive curated offers — no spam, no cold calls</li>
         </ul>
       </div>
     </div>
@@ -1729,31 +1729,31 @@ export default function HomeSetupWizard() {
 
   return (
     <HomeownerLayout>
-    <div className="min-h-screen bg-gradient-to-br from-gray-50 to-slate-100 flex items-start justify-center p-4 py-8″>
+    <div className="min-h-screen bg-gradient-to-br from-gray-50 to-slate-100 flex items-start justify-center p-4 py-8">
       <div className="w-full max-w-xl">
         {/* Logo */}
-        <div className="text-center mb-6″>
-          <div className="inline-flex items-center gap-2 mb-1″>
+        <div className="text-center mb-6">
+          <div className="inline-flex items-center gap-2 mb-1">
             <div className="w-8 h-8 rounded-xl bg-[#0A1628] flex items-center justify-center">
               <Home className="w-4 h-4 text-white" />
             </div>
-            <span className="text-lg font-black text-gray-900″>TrustyPro</span>
+            <span className="text-lg font-black text-gray-900">TrustyPro</span>
           </div>
-          <p className="text-xs text-gray-400″>Home Profile Setup</p>
+          <p className="text-xs text-gray-400">Home Profile Setup</p>
         </div>
 
         {/* Card */}
-        <div className="bg-white rounded-2xl shadow-sm border border-gray-200 p-6 sm:p-8″>
+        <div className="bg-white rounded-2xl shadow-sm border border-gray-200 p-6 sm:p-8">
           <ProgressBar step={step} total={STEPS.length} />
 
           {/* Step header */}
-          <div className="flex items-center gap-3 mb-6″>
-            <div className="w-10 h-10 rounded-xl bg-[#0A1628]/8 flex items-center justify-center flex-shrink-0″>
+          <div className="flex items-center gap-3 mb-6">
+            <div className="w-10 h-10 rounded-xl bg-[#0A1628]/8 flex items-center justify-center flex-shrink-0">
               <Icon className="w-5 h-5 text-[#0A1628]" />
             </div>
             <div>
-              <h2 className="text-xl font-black text-gray-900″>{S.title}</h2>
-              <p className="text-xs text-gray-400″>{S.desc}</p>
+              <h2 className="text-xl font-black text-gray-900">{S.title}</h2>
+              <p className="text-xs text-gray-400">{S.desc}</p>
             </div>
           </div>
 
@@ -1768,30 +1768,30 @@ export default function HomeSetupWizard() {
           {step === 8 && <Step8 data={data} setData={setData} />}
 
           {/* Navigation */}
-          <div className="flex items-center justify-between mt-8 pt-6 border-t border-gray-100″>
+          <div className="flex items-center justify-between mt-8 pt-6 border-t border-gray-100">
             {step > 1 ? (
               <button type="button" onClick={() => setStep((s) => s - 1)}
                 className="flex items-center gap-1.5 text-sm text-gray-500 hover:text-gray-700 transition-colors">
-                <ChevronLeft className="w-4 h-4″ /> Back
+                <ChevronLeft className="w-4 h-4" /> Back
               </button>
             ) : <div />}
 
             {step < STEPS.length ? (
               <Button onClick={handleNext} disabled={!canProceed() || saving}
-                className="flex items-center gap-2 px-6″ style={{ backgroundColor: "#0A1628" }}>
+                className="flex items-center gap-2 px-6" style={{ backgroundColor: "#0A1628" }}>
                 {saving ? (
                   <div className="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin" />
                 ) : (
-                  <>Continue <ChevronRight className="w-4 h-4″ /></>
+                  <>Continue <ChevronRight className="w-4 h-4" /></>
                 )}
               </Button>
             ) : (
               <Button onClick={handleFinish} disabled={!canProceed() || saving}
-                className="flex items-center gap-2 px-6″ style={{ backgroundColor: "#059669" }}>
+                className="flex items-center gap-2 px-6" style={{ backgroundColor: "#059669" }}>
                 {saving ? (
                   <div className="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin" />
                 ) : (
-                  <>Activate My Profile <CheckCircle className="w-4 h-4″ /></>
+                  <>Activate My Profile <CheckCircle className="w-4 h-4" /></>
                 )}
               </Button>
             )}
@@ -1800,12 +1800,12 @@ export default function HomeSetupWizard() {
 
         {/* Finish later */}
         {step < STEPS.length && (
-          <div className="text-center mt-4 space-y-2″>
+          <div className="text-center mt-4 space-y-2">
             <button type="button" onClick={() => navigate("/my-home")}
               className="text-xs text-gray-400 hover:text-gray-600 transition-colors underline-offset-2 hover:underline">
               I'll finish later — save my progress and return to dashboard
             </button>
-            <p className="text-[10px] text-gray-300″>Your progress is automatically saved</p>
+            <p className="text-[10px] text-gray-300">Your progress is automatically saved</p>
           </div>
         )}
       </div>

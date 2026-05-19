@@ -29,7 +29,7 @@ export default function DFWProLnkValueProposition2026() {
       <div style={{ maxWidth: 900, margin: '0 auto' }}>
         <div style={{ textAlign: 'center', marginBottom: '2rem' }}>
           <span style={{ fontSize: '2.5rem' }}>🏆</span>
-          <h1 style={{ color: '#F5E642', fontSize: '1.9rem', margin: '0.5rem 0′ }}>Why ProLnk Wins — DFW 2026 Value Deep Dive</h1>
+          <h1 style={{ color: '#F5E642', fontSize: '1.9rem', margin: '0.5rem 0' }}>Why ProLnk Wins — DFW 2026 Value Deep Dive</h1>
           <p style={{ color: '#94a3b8', maxWidth: 620, margin: '0 auto' }}>
             ProLnk is built for both sides. Homeowners get trust and speed. Pros get leads, income, and community.
           </p>
@@ -38,7 +38,7 @@ export default function DFWProLnkValueProposition2026() {
         <div style={{ display: 'flex', justifyContent: 'center', gap: '1rem', marginBottom: '2rem' }}>
           {(['homeowner', 'pro'] as UserType[]).map((t) => (
             <button key={t} onClick={() => setUserType(t)}
-              style={{ background: userType === t ? '#F5E642′ : '#1e293b', color: userType === t ? '#0A1628' : '#f1f5f9', border: userType === t ? ’none' : '1px solid #334155', borderRadius: 10, padding: '0.7rem 2rem', cursor: 'pointer', fontWeight: 700, fontSize: '1rem' }}>
+              style={{ background: userType === t ? '#F5E642' : '#1e293b', color: userType === t ? '#0A1628' : '#f1f5f9', border: userType === t ? 'none' : '1px solid #334155', borderRadius: 10, padding: '0.7rem 2rem', cursor: 'pointer', fontWeight: 700, fontSize: '1rem' }}>
               {t === 'homeowner' ? '🏠 I\’m a Homeowner' : '🔧 I\’m a Pro'}
             </button>
           ))}
@@ -46,7 +46,7 @@ export default function DFWProLnkValueProposition2026() {
 
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '1rem', marginBottom: '2rem' }}>
           {items.map((item) => (
-            <div key={item.title} style={{ background: '#1e293b', borderRadius: 12, padding: '1.3rem', border: '1px solid #334155′ }}>
+            <div key={item.title} style={{ background: '#1e293b', borderRadius: 12, padding: '1.3rem', border: '1px solid #334155' }}>
               <div style={{ fontSize: '1.8rem', marginBottom: '0.5rem' }}>{item.icon}</div>
               <div style={{ color: '#F5E642', fontWeight: 700, fontSize: '0.95rem', marginBottom: '0.4rem' }}>{item.title}</div>
               <div style={{ color: '#94a3b8', fontSize: '0.85rem', lineHeight: 1.6 }}>{item.desc}</div>
@@ -56,7 +56,7 @@ export default function DFWProLnkValueProposition2026() {
 
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '1rem', marginBottom: '2rem' }}>
           {[['🏙️', 'DFW Focus', 'Built for North Texas trades and homeowners'], ['📡', 'AI Matching', 'Smart match engine improves with every job'], ['🔒', 'Data Secure', 'Home Health Vault privacy-first architecture'], ['🌐', '500 Charter', 'DFW founding spots — locked rate forever']].map(([icon, title, desc]) => (
-            <div key={String(title)} style={{ background: '#1e293b', borderRadius: 10, padding: '1rem', textAlign: 'center', border: '1px solid #334155′ }}>
+            <div key={String(title)} style={{ background: '#1e293b', borderRadius: 10, padding: '1rem', textAlign: 'center', border: '1px solid #334155' }}>
               <div style={{ fontSize: '1.5rem' }}>{icon}</div>
               <div style={{ color: '#F5E642', fontWeight: 700, fontSize: '0.85rem', margin: '0.4rem 0 0.2rem' }}>{title}</div>
               <div style={{ color: '#94a3b8', fontSize: '0.78rem', lineHeight: 1.5 }}>{desc}</div>

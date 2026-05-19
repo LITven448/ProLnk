@@ -47,7 +47,7 @@ export default function DFWHomeownerNetworkGuide() {
               ['hoa_community', '🏠 HOA-governed community'],
             ].map(([val, label]) => (
               <label key={val} style={{ display: 'flex', alignItems: 'center', gap: 12, cursor: 'pointer', padding: '0.75rem 1rem', borderRadius: 8, background: neighborhood === val ? '#1e3a5f' : '#162035', border: `2px solid ${neighborhood === val ? '#F5E642' : '#334155'}` }}>
-                <input type="radio" name="neighborhood" value={val} checked={neighborhood === val} onChange={() => setNeighborhood(val)} style={{ accentColor: '#F5E642′ }} />
+                <input type="radio" name="neighborhood" value={val} checked={neighborhood === val} onChange={() => setNeighborhood(val)} style={{ accentColor: '#F5E642' }} />
                 <span style={{ fontWeight: neighborhood === val ? 700 : 400, fontSize: 14 }}>{label}</span>
               </label>
             ))}
@@ -55,7 +55,7 @@ export default function DFWHomeownerNetworkGuide() {
           <div style={{ marginBottom: 16 }}>
             <label style={{ fontSize: 13, color: '#94a3b8', display: 'block', marginBottom: 6 }}>Home Age (years)</label>
             <input type="range" min={1} max={50} value={homeAge} onChange={e => setHomeAge(Number(e.target.value))}
-              style={{ width: '100%', accentColor: '#F5E642′ }} />
+              style={{ width: '100%', accentColor: '#F5E642' }} />
             <div style={{ color: '#F5E642', fontWeight: 700 }}>{homeAge} years</div>
           </div>
           <button onClick={() => setSubmitted(true)}

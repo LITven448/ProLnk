@@ -55,7 +55,7 @@ export default function DFWHVACGoodOwnerGuide() {
             What a Good DFW HVAC Owner Looks Like
           </h1>
           <p style={{ color: '#94a3b8', fontSize: '1.05rem', maxWidth: 560, margin: '0 auto' }}>
-            In DFW, good HVAC ownership isn't luck — it’s a set of consistent habits that keep your system running through 110°F summers and ice storms.
+            In DFW, good HVAC ownership isn't luck — it's a set of consistent habits that keep your system running through 110°F summers and ice storms.
           </p>
         </div>
 
@@ -67,8 +67,8 @@ export default function DFWHVACGoodOwnerGuide() {
                 key={s.id}
                 onClick={() => setSelected(s.id)}
                 style={{
-                  background: selected === s.id ? '#F5E642′ : '#1a2f55',
-                  color: selected === s.id ? '#0A1628′ : '#fff',
+                  background: selected === s.id ? '#F5E642' : '#1a2f55',
+                  color: selected === s.id ? '#0A1628' : '#fff',
                   border: 'none', borderRadius: 8, padding: '1rem', cursor: 'pointer',
                   fontWeight: 600, textAlign: 'left',
                 }}

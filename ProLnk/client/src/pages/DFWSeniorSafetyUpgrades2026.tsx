@@ -36,7 +36,7 @@ const concerns = [
   },
 ];
 
-const impactColor: Record<string, string> = { HIGH: '#22c55e', MEDIUM: '#f59e0b', LOW: '#94a3b8′ };
+const impactColor: Record<string, string> = { HIGH: '#22c55e', MEDIUM: '#f59e0b', LOW: '#94a3b8' };
 
 export default function DFWSeniorSafetyUpgrades2026() {
   const [selected, setSelected] = useState<string | null>(null);
@@ -57,7 +57,7 @@ export default function DFWSeniorSafetyUpgrades2026() {
         </div>
 
         <div style={{ background: '#F5E64220', border: '1px solid #F5E642', borderRadius: 8, padding: '1rem', marginBottom: '2rem' }}>
-          <p style={{ margin: 0, fontSize: '0.9rem', color: '#F5E642′ }}>
+          <p style={{ margin: 0, fontSize: '0.9rem', color: '#F5E642' }}>
             📊 <strong>Falls are the #1 cause of injury death for seniors 65+.</strong> Most fall-prevention upgrades cost under $500 and can be installed by a ProLnk-verified contractor in a single visit.
           </p>
         </div>
@@ -72,8 +72,8 @@ export default function DFWSeniorSafetyUpgrades2026() {
               key={c.id}
               onClick={() => setSelected(selected === c.id ? null : c.id)}
               style={{
-                background: selected === c.id ? '#F5E642′ : '#1e2d45',
-                color: selected === c.id ? '#0A1628′ : '#fff',
+                background: selected === c.id ? '#F5E642' : '#1e2d45',
+                color: selected === c.id ? '#0A1628' : '#fff',
                 border: '1px solid #334155',
                 borderRadius: 8,
                 padding: '0.9rem 1.2rem',

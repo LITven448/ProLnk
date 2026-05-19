@@ -43,7 +43,7 @@ export default function DFWSoilMovementGuide() {
           <h2 style={{ fontSize: 18, fontWeight: 700, color: '#F5E642', marginBottom: 16 }}>🔍 What Are You Seeing?</h2>
           <div style={{ display: 'grid', gap: 10 }}>
             {movementTypes.map(mt => (
-              <button key={mt.key} onClick={() => { setSelected(mt.key); setRes(results[mt.key]); }} style={{ background: selected === mt.key ? '#F5E642′ : '#0A1628', color: selected === mt.key ? '#0A1628' : '#E8EDF5', border: '1px solid #1E2D4A', borderRadius: 8, padding: '12px 16px', cursor: ’pointer', fontSize: 14, textAlign: 'left', fontWeight: selected === mt.key ? 700 : 400 }}>{mt.label}</button>
+              <button key={mt.key} onClick={() => { setSelected(mt.key); setRes(results[mt.key]); }} style={{ background: selected === mt.key ? '#F5E642' : '#0A1628', color: selected === mt.key ? '#0A1628' : '#E8EDF5', border: '1px solid #1E2D4A', borderRadius: 8, padding: '12px 16px', cursor: 'pointer', fontSize: 14, textAlign: 'left', fontWeight: selected === mt.key ? 700 : 400 }}>{mt.label}</button>
             ))}
           </div>
         </div>
@@ -55,9 +55,9 @@ export default function DFWSoilMovementGuide() {
               <div style={{ fontSize: 16 }}>{res.verdict}</div>
             </div>
             <h3 style={{ color: '#F5E642', fontSize: 16, fontWeight: 700, marginBottom: 8 }}>📋 What to Monitor</h3>
-            <ul style={{ paddingLeft: 20, marginBottom: 16 }}>{res.monitor.map((m, i) => <li key={i} style={{ marginBottom: 6, color: '#E8EDF5′ }}>{m}</li>)}</ul>
+            <ul style={{ paddingLeft: 20, marginBottom: 16 }}>{res.monitor.map((m, i) => <li key={i} style={{ marginBottom: 6, color: '#E8EDF5' }}>{m}</li>)}</ul>
             {res.callEngineer && (
-              <div style={{ background: '#3B1A00', borderRadius: 8, padding: 16, borderLeft: '4px solid #EF4444′ }}>
+              <div style={{ background: '#3B1A00', borderRadius: 8, padding: 16, borderLeft: '4px solid #EF4444' }}>
                 <div style={{ fontWeight: 700, color: '#EF4444', marginBottom: 4 }}>🔴 Get a Structural Engineer</div>
                 <div style={{ color: '#FCA5A5', fontSize: 14 }}>The pattern you are describing warrants a professional foundation evaluation. A licensed structural engineer (not a foundation repair company) gives unbiased assessment. Expect -600 for inspection report.</div>
               </div>

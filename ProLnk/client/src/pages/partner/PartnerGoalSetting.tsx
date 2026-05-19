@@ -102,7 +102,7 @@ export default function PartnerGoalSetting() {
                 width: 200,
                 outline: 'none',
               }}
-              placeholder="3200″
+              placeholder="3200"
             />
             <span style={{ color: '#94A3B8', fontSize: 16 }}>/month</span>
           </div>
@@ -144,7 +144,7 @@ export default function PartnerGoalSetting() {
                   width: 52,
                   height: 52,
                   borderRadius: '50%',
-                  background: i === ms.length - 1 ? '#F5E642′ : '#0A1628',
+                  background: i === ms.length - 1 ? '#F5E642' : '#0A1628',
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'center',
@@ -155,7 +155,7 @@ export default function PartnerGoalSetting() {
                   {m.emoji}
                 </div>
                 {i < ms.length - 1 && (
-                  <div style={{ width: 2, flex: 1, background: '#E2E8F0', margin: '6px 0′ }} />
+                  <div style={{ width: 2, flex: 1, background: '#E2E8F0', margin: '6px 0' }} />
                 )}
               </div>
               <div style={{

@@ -35,13 +35,13 @@ export default function ProLnkAPIPartnersPage() {
             <div key={i} style={{ background: '#0f1f3d', border: '1px solid #1e3a5f', borderRadius: 12, padding: 20 }}>
               <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 10 }}>
                 <span style={{ fontSize: 22 }}>{p.icon}</span>
-                <span style={{ fontWeight: 700, color: '#F5E642′ }}>{p.name}</span>
+                <span style={{ fontWeight: 700, color: '#F5E642' }}>{p.name}</span>
                 <span style={{ marginLeft: 'auto', fontSize: 11, fontWeight: 700, padding: '2px 10px', borderRadius: 12,
-                  background: p.status === 'Live' ? '#16a34a' : '#1e3a5f', color: p.status === 'Live' ? '#fff' : '#94a3b8′ }}>
+                  background: p.status === 'Live' ? '#16a34a' : '#1e3a5f', color: p.status === 'Live' ? '#fff' : '#94a3b8' }}>
                   {p.status}
                 </span>
               </div>
-              <div style={{ fontSize: 13, color: '#94a3b8′ }}>{p.desc}</div>
+              <div style={{ fontSize: 13, color: '#94a3b8' }}>{p.desc}</div>
             </div>
           ))}
         </div>
@@ -53,15 +53,15 @@ export default function ProLnkAPIPartnersPage() {
             {Object.keys(industryMap).map(ind => (
               <button key={ind} onClick={() => setIndustry(ind)}
                 style={{ padding: '10px 16px', borderRadius: 8, border: 'none', cursor: 'pointer', fontWeight: 700, fontSize: 13,
-                  background: industry === ind ? '#F5E642′ : '#1e3a5f', color: industry === ind ? '#0A1628' : '#fff' }}>
+                  background: industry === ind ? '#F5E642' : '#1e3a5f', color: industry === ind ? '#0A1628' : '#fff' }}>
                 {ind}
               </button>
             ))}
           </div>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: 12 }}>
             {industryMap[industry].map((item, i) => (
-              <div key={i} style={{ background: '#162033', borderRadius: 10, padding: 16, borderLeft: '3px solid #F5E642′ }}>
-                <span style={{ fontSize: 13, color: '#cbd5e1′ }}>🔗 {item}</span>
+              <div key={i} style={{ background: '#162033', borderRadius: 10, padding: 16, borderLeft: '3px solid #F5E642' }}>
+                <span style={{ fontSize: 13, color: '#cbd5e1' }}>🔗 {item}</span>
               </div>
             ))}
           </div>

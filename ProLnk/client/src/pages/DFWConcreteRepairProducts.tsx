@@ -22,9 +22,9 @@ export default function DFWConcreteRepairProducts() {
       <div style={{ maxWidth: '800px', margin: '0 auto' }}>
         <div style={{ marginBottom: '2rem' }}>
           <span style={{ fontSize: '2rem' }}>🔧</span>
-          <h1 style={{ color: '#F5E642', fontSize: '1.8rem', margin: '0.5rem 0′ }}>DFW Concrete Repair Products</h1>
+          <h1 style={{ color: '#F5E642', fontSize: '1.8rem', margin: '0.5rem 0' }}>DFW Concrete Repair Products</h1>
           <p style={{ color: '#94a3b8', lineHeight: 1.6 }}>
-            DFW concrete repair fails when homeowners use the wrong product for the damage type. Crack filler won't stop an active leak. Resurfacer won’t fix a structural crack. Use this guide to match product to problem — and get the DFW-specific application notes that most product labels skip.
+            DFW concrete repair fails when homeowners use the wrong product for the damage type. Crack filler won't stop an active leak. Resurfacer won't fix a structural crack. Use this guide to match product to problem — and get the DFW-specific application notes that most product labels skip.
           </p>
         </div>
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '2rem' }}>
@@ -77,7 +77,7 @@ export default function DFWConcreteRepairProducts() {
         <div style={{ backgroundColor: '#1e293b', borderRadius: '8px', padding: '1.25rem' }}>
           <h3 style={{ color: '#F5E642', marginTop: 0 }}>⚡ Quick Product Match</h3>
           {[['Active leak', 'Hydraulic Cement', 'Only product that sets against water'], ['Structural crack', 'Epoxy Injection', 'Restores structural integrity'], ['Surface flaking', 'Concrete Resurfacer', 'Bonds and protects'], ['Joint failure', 'Polyurethane Caulk', 'Flexible for DFW temp swings'], ['Sunken slab', 'Foam Injection', 'Raises without full replacement']].map(([damage, product, note]) => (
-            <div key={damage} style={{ display: 'grid', gridTemplateColumns: '140px 160px 1fr', gap: '0.5rem', padding: '0.5rem 0', borderBottom: '1px solid #334155′ }}>
+            <div key={damage} style={{ display: 'grid', gridTemplateColumns: '140px 160px 1fr', gap: '0.5rem', padding: '0.5rem 0', borderBottom: '1px solid #334155' }}>
               <span style={{ color: '#94a3b8', fontSize: '0.9rem' }}>{damage}</span>
               <span style={{ color: '#F5E642', fontWeight: 'bold', fontSize: '0.9rem' }}>{product}</span>
               <span style={{ color: '#64748b', fontSize: '0.85rem' }}>{note}</span>

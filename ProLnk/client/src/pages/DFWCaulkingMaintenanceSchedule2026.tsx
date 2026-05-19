@@ -48,7 +48,7 @@ export default function DFWCaulkingMaintenanceSchedule2026() {
       <div style={{ maxWidth: 700, margin: '0 auto' }}>
         <div style={{ textAlign: 'center', marginBottom: '2rem' }}>
           <div style={{ fontSize: '2.5rem' }}>🔧🏠</div>
-          <h1 style={{ color: '#F5E642', fontSize: '1.8rem', margin: '0.5rem 0′ }}>DFW Caulking Maintenance Schedule 2026</h1>
+          <h1 style={{ color: '#F5E642', fontSize: '1.8rem', margin: '0.5rem 0' }}>DFW Caulking Maintenance Schedule 2026</h1>
           <p style={{ color: '#94a3b8', fontSize: '0.95rem' }}>DFW UV degrades caulk in 3-5 years. Best seasons: spring or fall (50-80F). Never caulk in 100F summer heat.</p>
         </div>
 
@@ -60,8 +60,8 @@ export default function DFWCaulkingMaintenanceSchedule2026() {
                 key={l}
                 onClick={() => setLocation(l as LocationKey)}
                 style={{
-                  background: location === l ? '#F5E642′ : '#0A1628',
-                  color: location === l ? '#0A1628′ : '#cbd5e1',
+                  background: location === l ? '#F5E642' : '#0A1628',
+                  color: location === l ? '#0A1628' : '#cbd5e1',
                   border: '1px solid #1e3a5f',
                   borderRadius: 6,
                   padding: '0.5rem 0.75rem',
@@ -96,13 +96,13 @@ export default function DFWCaulkingMaintenanceSchedule2026() {
         <div style={{ background: '#132040', borderRadius: 12, padding: '1.25rem', marginBottom: '1.5rem' }}>
           <h3 style={{ color: '#F5E642', fontSize: '0.95rem', marginBottom: '0.75rem' }}>DFW Caulking Rules</h3>
           {rules.map((rule, i) => (
-            <p key={i} style={{ color: '#94a3b8', fontSize: '0.88rem', margin: '0.3rem 0′ }}>{i < 3 ? '✅' : '❌'} {rule}</p>
+            <p key={i} style={{ color: '#94a3b8', fontSize: '0.88rem', margin: '0.3rem 0' }}>{i < 3 ? '✅' : '❌'} {rule}</p>
           ))}
         </div>
 
         <div style={{ background: '#132040', borderRadius: 12, padding: '1.25rem', textAlign: 'center' }}>
           <p style={{ color: '#94a3b8', fontSize: '0.9rem', margin: 0 }}>
-            <strong style={{ color: '#F5E642′ }}>ProLnk Vault</strong> logs every caulking job - location, product used, date - so you never guess when it was last done.
+            <strong style={{ color: '#F5E642' }}>ProLnk Vault</strong> logs every caulking job - location, product used, date - so you never guess when it was last done.
           </p>
         </div>
       </div>

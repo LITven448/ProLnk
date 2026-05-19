@@ -17,7 +17,7 @@ export default function DFWProLnkRecognitionGuide() {
       <div style={{ maxWidth: 800, margin: '0 auto' }}>
         <div style={{ textAlign: 'center', marginBottom: '2rem' }}>
           <div style={{ fontSize: '2.5rem' }}>🎖</div>
-          <h1 style={{ fontSize: '2rem', color: '#F5E642', margin: '0.5rem 0 0′ }}>Partner Recognition Program</h1>
+          <h1 style={{ fontSize: '2rem', color: '#F5E642', margin: '0.5rem 0 0' }}>Partner Recognition Program</h1>
           <p style={{ color: '#94A3B8', marginTop: '0.5rem' }}>How ProLnk celebrates DFW partner milestones — and what each one means for your income</p>
         </div>
 
@@ -25,7 +25,7 @@ export default function DFWProLnkRecognitionGuide() {
           <h2 style={{ color: '#F5E642', margin: '0 0 1rem', fontSize: '1rem' }}>Select a Milestone</h2>
           <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
             {milestones.map(m => (
-              <button key={m.id} onClick={() => setSelected(m)} style={{ textAlign: 'left', padding: '0.75rem 1rem', borderRadius: 6, border: `2px solid ${selected.id === m.id ? '#F5E642' : '#1E3A5F'}`, backgroundColor: selected.id === m.id ? '#1E3A5F' : 'transparent', color: selected.id === m.id ? '#F5E642′ : '#CBD5E1', cursor: ’pointer', fontSize: '0.9rem' }}>
+              <button key={m.id} onClick={() => setSelected(m)} style={{ textAlign: 'left', padding: '0.75rem 1rem', borderRadius: 6, border: `2px solid ${selected.id === m.id ? '#F5E642' : '#1E3A5F'}`, backgroundColor: selected.id === m.id ? '#1E3A5F' : 'transparent', color: selected.id === m.id ? '#F5E642' : '#CBD5E1', cursor: 'pointer', fontSize: '0.9rem' }}>
                 {m.label}
               </button>
             ))}

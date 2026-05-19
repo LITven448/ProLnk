@@ -4,24 +4,24 @@ const styles = {
   page: { backgroundColor: '#0A1628', minHeight: '100vh', color: '#ffffff', fontFamily: 'system-ui, sans-serif', padding: '32px 24px' },
   container: { maxWidth: '860px', margin: '0 auto' },
   badge: { backgroundColor: '#1a2d4a', color: '#F5E642', padding: '4px 12px', borderRadius: '20px', fontSize: '12px', fontWeight: '700', display: 'inline-block', marginBottom: '16px' },
-  h1: { fontSize: '36px', fontWeight: '800', marginBottom: '12px', lineHeight: '1.2′ },
-  accent: { color: '#F5E642′ },
-  lead: { color: '#94a3b8', fontSize: '18px', marginBottom: '40px', lineHeight: '1.6′ },
+  h1: { fontSize: '36px', fontWeight: '800', marginBottom: '12px', lineHeight: '1.2' },
+  accent: { color: '#F5E642' },
+  lead: { color: '#94a3b8', fontSize: '18px', marginBottom: '40px', lineHeight: '1.6' },
   card: { backgroundColor: '#111f38', border: '1px solid #1e3a5f', borderRadius: '12px', padding: '24px', marginBottom: '24px' },
   cardTitle: { fontSize: '20px', fontWeight: '700', marginBottom: '16px', display: 'flex', alignItems: 'center', gap: '10px' },
   grid: { display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '16px', marginBottom: '24px' },
   statBox: { backgroundColor: '#0d1a2e', borderRadius: '10px', padding: '20px', textAlign: 'center' as const },
-  statNum: { fontSize: '32px', fontWeight: '800', color: '#F5E642′ },
+  statNum: { fontSize: '32px', fontWeight: '800', color: '#F5E642' },
   statLabel: { color: '#94a3b8', fontSize: '13px', marginTop: '4px' },
   list: { listStyle: 'none', padding: 0, margin: 0 },
   listItem: { padding: '10px 0', borderBottom: '1px solid #1e3a5f', color: '#cbd5e1', display: 'flex', gap: '10px' },
   label: { color: '#94a3b8', fontSize: '14px', marginBottom: '8px', display: 'block' },
   select: { width: '100%', backgroundColor: '#0d1a2e', color: '#ffffff', border: '1px solid #1e3a5f', borderRadius: '8px', padding: '10px 14px', fontSize: '14px', marginBottom: '16px' },
   btn: { backgroundColor: '#F5E642', color: '#0A1628', border: 'none', borderRadius: '8px', padding: '12px 28px', fontSize: '15px', fontWeight: '700', cursor: 'pointer', width: '100%' },
-  result: { backgroundColor: '#0d1a2e', borderRadius: '10px', padding: '20px', marginTop: '16px', border: '2px solid #F5E642′ },
-  scoreHigh: { color: '#ef4444', fontSize: '28px', fontWeight: '800′ },
-  scoreMed: { color: '#f59e0b', fontSize: '28px', fontWeight: '800′ },
-  scoreLow: { color: '#22c55e', fontSize: '28px', fontWeight: '800′ },
+  result: { backgroundColor: '#0d1a2e', borderRadius: '10px', padding: '20px', marginTop: '16px', border: '2px solid #F5E642' },
+  scoreHigh: { color: '#ef4444', fontSize: '28px', fontWeight: '800' },
+  scoreMed: { color: '#f59e0b', fontSize: '28px', fontWeight: '800' },
+  scoreLow: { color: '#22c55e', fontSize: '28px', fontWeight: '800' },
   tag: { backgroundColor: '#1e3a5f', padding: '3px 10px', borderRadius: '12px', fontSize: '12px', display: 'inline-block', margin: '3px' },
   sectionNote: { backgroundColor: '#0d2e1a', border: '1px solid #166534', borderRadius: '8px', padding: '14px 18px', color: '#86efac', fontSize: '14px', marginTop: '16px' },
   warningNote: { backgroundColor: '#2d1000', border: '1px solid #9a3412', borderRadius: '8px', padding: '14px 18px', color: '#fdba74', fontSize: '14px', marginTop: '16px' },
@@ -84,7 +84,7 @@ export default function DFWFoundationMoistureGuide() {
         <div style={styles.card}>
           <div style={styles.cardTitle}><span>💧</span> Why Consistent Moisture = Healthy Foundation</div>
           <p style={{ color: '#94a3b8', lineHeight: '1.7', marginBottom: '12px' }}>DFW's black and gray clay soil (Blackland Prairie) swells when wet and shrinks dramatically when dry. This seasonal movement is what causes most foundation problems — not a single flood or drought event, but years of uneven cycles.</p>
-          <p style={{ color: '#cbd5e1', lineHeight: '1.7′ }}>The goal is to keep the soil at a <strong style={{ color: '#F5E642' }}>consistent moisture level</strong> year-round. This means watering during droughts and ensuring drainage during heavy rains — opposite actions, same goal.</p>
+          <p style={{ color: '#cbd5e1', lineHeight: '1.7' }}>The goal is to keep the soil at a <strong style={{ color: '#F5E642' }}>consistent moisture level</strong> year-round. This means watering during droughts and ensuring drainage during heavy rains — opposite actions, same goal.</p>
           <div style={styles.sectionNote}>✅ Foundation engineers call this "maintaining moisture equilibrium" — and it's cheaper than any repair.</div>
         </div>
 
@@ -164,7 +164,7 @@ export default function DFWFoundationMoistureGuide() {
             <div style={styles.result}>
               <div style={result.score >= 6 ? styles.scoreHigh : result.score >= 3 ? styles.scoreMed : styles.scoreLow}>{result.label}</div>
               <div style={{ color: '#94a3b8', marginBottom: '12px', fontSize: '13px' }}>Risk score: {result.score}/8</div>
-              <div style={{ fontWeight: '700', marginBottom: '8px', color: '#F5E642′ }}>Recommended Actions:</div>
+              <div style={{ fontWeight: '700', marginBottom: '8px', color: '#F5E642' }}>Recommended Actions:</div>
               {result.actions.map((a, i) => <div key={i} style={{ color: '#cbd5e1', padding: '6px 0', borderBottom: '1px solid #1e3a5f', fontSize: '14px' }}>• {a}</div>)}
             </div>
           )}

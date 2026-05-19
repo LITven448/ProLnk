@@ -52,7 +52,7 @@ export default function DFWOldHomeGuide() {
             <button key={v.id} onClick={() => setSelected(v.id)}
               style={{ background: selected === v.id ? '#1E3A5F' : '#0F2236', border: `2px solid ${selected === v.id ? '#F5E642' : '#1E3A5F'}`, borderRadius: 10, padding: '16px 12px', color: '#E8F0FE', cursor: 'pointer', textAlign: 'center' }}>
               <div style={{ fontSize: 28, marginBottom: 8 }}>{v.emoji}</div>
-              <div style={{ fontSize: 13, fontWeight: 600, color: selected === v.id ? '#F5E642′ : '#CBD5E1' }}>{v.label}</div>
+              <div style={{ fontSize: 13, fontWeight: 600, color: selected === v.id ? '#F5E642' : '#CBD5E1' }}>{v.label}</div>
             </button>
           ))}
         </div>
@@ -65,7 +65,7 @@ export default function DFWOldHomeGuide() {
                 {vintage.issues.map((issue, i) => (
                   <div key={i} style={{ display: 'flex', gap: 8, marginBottom: 6, alignItems: 'flex-start' }}>
                     <span style={{ color: '#F87171', fontSize: 12, minWidth: 16 }}>•</span>
-                    <span style={{ fontSize: 12, color: '#FED7D7′ }}>{issue}</span>
+                    <span style={{ fontSize: 12, color: '#FED7D7' }}>{issue}</span>
                   </div>
                 ))}
               </div>
@@ -74,7 +74,7 @@ export default function DFWOldHomeGuide() {
                 {vintage.charm.map((c, i) => (
                   <div key={i} style={{ display: 'flex', gap: 8, marginBottom: 6, alignItems: 'flex-start' }}>
                     <span style={{ color: '#4ADE80', fontSize: 12, minWidth: 16 }}>•</span>
-                    <span style={{ fontSize: 12, color: '#BBF7D0′ }}>{c}</span>
+                    <span style={{ fontSize: 12, color: '#BBF7D0' }}>{c}</span>
                   </div>
                 ))}
               </div>
@@ -82,15 +82,15 @@ export default function DFWOldHomeGuide() {
 
             <div style={{ background: '#1E3A5F', borderRadius: 10, padding: 20, marginBottom: 20, textAlign: 'center' }}>
               <div style={{ fontSize: 12, color: '#94A3B8', textTransform: 'uppercase', letterSpacing: 1, marginBottom: 4 }}>Renovation Budget Guideline</div>
-              <div style={{ fontSize: 42, fontWeight: 900, color: '#F5E642′ }}>{vintage.budget}</div>
-              <div style={{ fontSize: 13, color: '#94A3B8′ }}>{vintage.budgetNote}</div>
+              <div style={{ fontSize: 42, fontWeight: 900, color: '#F5E642' }}>{vintage.budget}</div>
+              <div style={{ fontSize: 13, color: '#94A3B8' }}>{vintage.budgetNote}</div>
             </div>
 
             <div style={{ background: '#0F2236', border: '1px solid #1E3A5F', borderRadius: 10, padding: 16 }}>
               <h3 style={{ fontSize: 14, fontWeight: 700, color: '#F5E642', marginBottom: 12 }}>🤝 Negotiate These at Purchase</h3>
               <div style={{ display: 'grid', gap: 8 }}>
                 {vintage.negotiate.map((n, i) => (
-                  <div key={i} style={{ background: '#1E3A5F', borderRadius: 6, padding: '8px 12px', fontSize: 13, color: '#CBD5E1′ }}>
+                  <div key={i} style={{ background: '#1E3A5F', borderRadius: 6, padding: '8px 12px', fontSize: 13, color: '#CBD5E1' }}>
                     <span style={{ color: '#F5E642', marginRight: 8 }}>→</span>{n}
                   </div>
                 ))}
@@ -100,9 +100,9 @@ export default function DFWOldHomeGuide() {
         )}
 
         {!selected && (
-          <div style={{ textAlign: 'center', padding: 48, color: '#475569′ }}>
+          <div style={{ textAlign: 'center', padding: 48, color: '#475569' }}>
             <div style={{ fontSize: 40, marginBottom: 12 }}>🏛️</div>
-            <p>Select your home's vintage above to see what you’re getting into.</p>
+            <p>Select your home's vintage above to see what you're getting into.</p>
           </div>
         )}
       </div>

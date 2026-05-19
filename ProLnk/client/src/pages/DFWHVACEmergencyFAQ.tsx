@@ -50,8 +50,8 @@ export default function DFWHVACEmergencyFAQ() {
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(180px, 1fr))', gap: 10 }}>
             {symptoms.map((s, i) => (
               <button key={i} onClick={() => setSelectedSymptom(selectedSymptom === i ? null : i)}
-                style={{ padding: '12px 14px', borderRadius: 10, border: selectedSymptom === i ? '2px solid #F5E642′ : '1px solid #1e3a5f', cursor: ’pointer', textAlign: 'left',
-                  background: selectedSymptom === i ? '#1e3a5f' : '#0A1628′ }}>
+                style={{ padding: '12px 14px', borderRadius: 10, border: selectedSymptom === i ? '2px solid #F5E642' : '1px solid #1e3a5f', cursor: 'pointer', textAlign: 'left',
+                  background: selectedSymptom === i ? '#1e3a5f' : '#0A1628' }}>
                 <div style={{ fontSize: 22, marginBottom: 4 }}>{s.icon}</div>
                 <div style={{ color: '#e2e8f0', fontSize: 13, fontWeight: 600 }}>{s.label}</div>
                 {s.emergency && <div style={{ color: '#f87171', fontSize: 10, fontWeight: 700, marginTop: 4 }}>⚡ EMERGENCY</div>}
@@ -75,7 +75,7 @@ export default function DFWHVACEmergencyFAQ() {
                 <li key={i} style={{ color: '#94a3b8', fontSize: 14, lineHeight: 1.8 }}>{step}</li>
               ))}
             </ol>
-            <div style={{ background: '#0A1628', borderRadius: 8, padding: 12, borderLeft: '3px solid #F5E642′ }}>
+            <div style={{ background: '#0A1628', borderRadius: 8, padding: 12, borderLeft: '3px solid #F5E642' }}>
               <p style={{ color: '#e2e8f0', fontSize: 13, margin: 0 }}>💡 <strong>Pro tip:</strong> {symptoms[selectedSymptom].tip}</p>
             </div>
           </div>
@@ -84,7 +84,7 @@ export default function DFWHVACEmergencyFAQ() {
         <h2 style={{ color: '#F5E642', fontSize: 20, fontWeight: 700, marginBottom: 16 }}>HVAC Emergency FAQ</h2>
         <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
           {faqs.map((faq, i) => (
-            <div key={i} style={{ background: '#112240', borderRadius: 10, overflow: 'hidden', border: open === i ? '1px solid #F5E642′ : '1px solid #1e3a5f' }}>
+            <div key={i} style={{ background: '#112240', borderRadius: 10, overflow: 'hidden', border: open === i ? '1px solid #F5E642' : '1px solid #1e3a5f' }}>
               <button onClick={() => setOpen(open === i ? null : i)}
                 style={{ width: '100%', textAlign: 'left', padding: '14px 18px', background: 'none', border: 'none', cursor: 'pointer', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
                 <span style={{ color: '#e2e8f0', fontSize: 14, fontWeight: 600 }}>{faq.q}</span>

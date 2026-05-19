@@ -20,10 +20,10 @@ export default function DFWHomeInsuranceReviewGuide2026() {
           <p style={{ color: '#94a3b8', fontSize: 15 }}>Why reviewing your policy every year protects your biggest asset</p>
         </div>
 
-        <div style={{ background: '#0F2140', borderRadius: 12, padding: 24, marginBottom: 28, borderLeft: '4px solid #F5E642′ }}>
+        <div style={{ background: '#0F2140', borderRadius: 12, padding: 24, marginBottom: 28, borderLeft: '4px solid #F5E642' }}>
           <h2 style={{ color: '#F5E642', fontSize: 17, marginBottom: 12 }}>🚨 The Silent Coverage Gap Problem</h2>
           <p style={{ color: '#cbd5e1', fontSize: 14, lineHeight: 1.7 }}>
-            DFW home rebuild costs rose <strong style={{ color: '#F5E642′ }}>18-22% from 2022-2025</strong> due to lumber, labor, and permit costs. Most homeowners are insured at 2022 replacement values. After a total loss, this gap averages <strong style={{ color: '#F5E642' }}>$47,000</strong> in DFW. An annual review closes this gap before a disaster — not after.
+            DFW home rebuild costs rose <strong style={{ color: '#F5E642' }}>18-22% from 2022-2025</strong> due to lumber, labor, and permit costs. Most homeowners are insured at 2022 replacement values. After a total loss, this gap averages <strong style={{ color: '#F5E642' }}>$47,000</strong> in DFW. An annual review closes this gap before a disaster — not after.
           </p>
         </div>
 
@@ -42,13 +42,13 @@ export default function DFWHomeInsuranceReviewGuide2026() {
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: 10, marginBottom: 20 }}>
             {reviewTriggers.map((r, i) => (
               <button key={i} onClick={() => setSelected(i === selected ? null : i)}
-                style={{ background: selected === i ? '#F5E642′ : '#1e3a5f', color: selected === i ? '#0A1628' : '#fff', border: ’none', borderRadius: 8, padding: '10px 16px', fontSize: 13, fontWeight: 600, cursor: 'pointer', display: 'flex', alignItems: 'center', gap: 6 }}>
+                style={{ background: selected === i ? '#F5E642' : '#1e3a5f', color: selected === i ? '#0A1628' : '#fff', border: 'none', borderRadius: 8, padding: '10px 16px', fontSize: 13, fontWeight: 600, cursor: 'pointer', display: 'flex', alignItems: 'center', gap: 6 }}>
                 {r.icon} {r.label}
               </button>
             ))}
           </div>
           {selected !== null && (
-            <div style={{ background: '#0F2140', borderRadius: 12, padding: 20, borderLeft: '4px solid #F5E642′ }}>
+            <div style={{ background: '#0F2140', borderRadius: 12, padding: 20, borderLeft: '4px solid #F5E642' }}>
               <h3 style={{ color: '#F5E642', marginBottom: 12 }}>{reviewTriggers[selected].icon} Review Checklist</h3>
               <ul style={{ color: '#cbd5e1', fontSize: 14, lineHeight: 1.8, paddingLeft: 18 }}>
                 {reviewTriggers[selected].items.map((item, i) => <li key={i}>{item}</li>)}

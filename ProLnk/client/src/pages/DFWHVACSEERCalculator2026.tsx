@@ -28,27 +28,27 @@ export default function DFWHVACSEERCalculator2026() {
               <div style={{ color: '#94a3b8', fontSize: 12, marginTop: 4 }}>Install cost</div>
               <div style={{ fontWeight: 600, fontSize: 14 }}>{s.cost}</div>
               <div style={{ color: '#94a3b8', fontSize: 12, marginTop: 8 }}>DFW Payback</div>
-              <div style={{ fontWeight: 600, fontSize: 14, color: '#F5E642′ }}>{s.payback}</div>
+              <div style={{ fontWeight: 600, fontSize: 14, color: '#F5E642' }}>{s.payback}</div>
             </div>
           ))}
         </div>
 
         <div style={{ background: '#132035', borderRadius: 12, padding: 24, marginBottom: 24 }}>
-          <div style={{ fontWeight: 700, fontSize: 16, marginBottom: 20, color: '#F5E642′ }}>🧮 My SEER Upgrade ROI</div>
+          <div style={{ fontWeight: 700, fontSize: 16, marginBottom: 20, color: '#F5E642' }}>🧮 My SEER Upgrade ROI</div>
           <div style={{ display: 'grid', gap: 16 }}>
             <div>
               <label style={{ fontSize: 13, color: '#94a3b8', display: 'block', marginBottom: 6 }}>Monthly Electric Bill: ${monthlyBill}</label>
-              <input type="range" min={100} max={600} step={10} value={monthlyBill} onChange={e => setMonthlyBill(+e.target.value)} style={{ width: '100%', accentColor: '#F5E642′ }} />
+              <input type="range" min={100} max={600} step={10} value={monthlyBill} onChange={e => setMonthlyBill(+e.target.value)} style={{ width: '100%', accentColor: '#F5E642' }} />
             </div>
             <div>
               <label style={{ fontSize: 13, color: '#94a3b8', display: 'block', marginBottom: 6 }}>HVAC % of Bill: {hvacPct}%</label>
-              <input type="range" min={30} max={70} step={5} value={hvacPct} onChange={e => setHvacPct(+e.target.value)} style={{ width: '100%', accentColor: '#F5E642′ }} />
+              <input type="range" min={30} max={70} step={5} value={hvacPct} onChange={e => setHvacPct(+e.target.value)} style={{ width: '100%', accentColor: '#F5E642' }} />
             </div>
             <div>
               <label style={{ fontSize: 13, color: '#94a3b8', display: 'block', marginBottom: 6 }}>Current System</label>
               <div style={{ display: 'flex', gap: 8 }}>
                 {[12, 14, 16].map(s => (
-                  <button key={s} onClick={() => setCurrentSEER(s)} style={{ flex: 1, padding: '8px', borderRadius: 8, border: 'none', cursor: 'pointer', background: currentSEER === s ? '#F5E642′ : '#1e3a5f', color: currentSEER === s ? '#0A1628' : '#fff', fontWeight: 600 }}>{s} SEER</button>
+                  <button key={s} onClick={() => setCurrentSEER(s)} style={{ flex: 1, padding: '8px', borderRadius: 8, border: 'none', cursor: 'pointer', background: currentSEER === s ? '#F5E642' : '#1e3a5f', color: currentSEER === s ? '#0A1628' : '#fff', fontWeight: 600 }}>{s} SEER</button>
                 ))}
               </div>
             </div>
@@ -56,7 +56,7 @@ export default function DFWHVACSEERCalculator2026() {
               <label style={{ fontSize: 13, color: '#94a3b8', display: 'block', marginBottom: 6 }}>Upgrade To</label>
               <div style={{ display: 'flex', gap: 8 }}>
                 {seerOptions.map(o => (
-                  <button key={o.v} onClick={() => setNewSEER(o.v)} style={{ flex: 1, padding: '8px', borderRadius: 8, border: 'none', cursor: 'pointer', background: newSEER === o.v ? '#F5E642′ : '#1e3a5f', color: newSEER === o.v ? '#0A1628' : '#fff', fontWeight: 600, fontSize: 12 }}>{o.l}</button>
+                  <button key={o.v} onClick={() => setNewSEER(o.v)} style={{ flex: 1, padding: '8px', borderRadius: 8, border: 'none', cursor: 'pointer', background: newSEER === o.v ? '#F5E642' : '#1e3a5f', color: newSEER === o.v ? '#0A1628' : '#fff', fontWeight: 600, fontSize: 12 }}>{o.l}</button>
                 ))}
               </div>
             </div>
@@ -74,15 +74,15 @@ export default function DFWHVACSEERCalculator2026() {
         </div>
 
         <div style={{ background: '#132035', borderRadius: 12, padding: 20, marginBottom: 24 }}>
-          <div style={{ fontWeight: 700, fontSize: 15, marginBottom: 12, color: '#F5E642′ }}>💡 DFW Context: Why SEER Matters More Here</div>
+          <div style={{ fontWeight: 700, fontSize: 15, marginBottom: 12, color: '#F5E642' }}>💡 DFW Context: Why SEER Matters More Here</div>
           {['DFW: 2,500+ AC hours/year · Boston: ~800 hours/year', 'Every efficiency point saves proportionally more in extreme Texas heat', 'SEER2 ratings (new standard) are ~5% lower than old SEER numbers', 'Federal tax credit: 30% up to $600 for qualifying high-efficiency units'].map(t => (
             <div key={t} style={{ display: 'flex', gap: 10, marginBottom: 10 }}>
-              <span style={{ color: '#F5E642′ }}>›</span><span style={{ color: '#cbd5e1', fontSize: 14 }}>{t}</span>
+              <span style={{ color: '#F5E642' }}>›</span><span style={{ color: '#cbd5e1', fontSize: 14 }}>{t}</span>
             </div>
           ))}
         </div>
 
-        <div style={{ background: '#F5E642', borderRadius: 12, padding: 20, textAlign: 'center', color: '#0A1628′ }}>
+        <div style={{ background: '#F5E642', borderRadius: 12, padding: 20, textAlign: 'center', color: '#0A1628' }}>
           <div style={{ fontWeight: 700, fontSize: 16, marginBottom: 8 }}>🏠 Get SEER Quotes from DFW HVAC Pros</div>
           <div style={{ fontSize: 13 }}>ProLnk matches you with verified contractors who explain SEER differences honestly.</div>
         </div>

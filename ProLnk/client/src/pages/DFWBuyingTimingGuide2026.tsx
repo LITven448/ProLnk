@@ -40,13 +40,13 @@ export default function DFWBuyingTimingGuide2026() {
               <label style={{ color: '#94A3B8', fontSize: 13 }}>Buying Urgency (1 = flexible, 10 = must move soon)</label>
               <span style={{ color: '#F5E642', fontWeight: 700 }}>{urgency}/10</span>
             </div>
-            <input type="range" min={1} max={10} value={urgency} onChange={e => setUrgency(+e.target.value)} style={{ width: '100%', accentColor: '#F5E642′ }} />
+            <input type="range" min={1} max={10} value={urgency} onChange={e => setUrgency(+e.target.value)} style={{ width: '100%', accentColor: '#F5E642' }} />
           </div>
           <div style={{ marginBottom: 20 }}>
             <label style={{ color: '#94A3B8', fontSize: 13, display: 'block', marginBottom: 10 }}>Your Situation</label>
             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: 10 }}>
               {[['first', '🏠 First-Time Buyer'], ['relocating', '✈️ Relocating to DFW'], ['upgrading', '⬆️ Upsizing']].map(([val, label]) => (
-                <button key={val} onClick={() => setSituation(val)} style={{ padding: '10px 8px', borderRadius: 8, border: `2px solid ${situation === val ? '#F5E642' : '#374151'}`, background: situation === val ? '#F5E64222′ : ’transparent', color: situation === val ? '#F5E642′ : '#94A3B8', cursor: ’pointer', fontSize: 13, fontWeight: situation === val ? 700 : 400 }}>{label}</button>
+                <button key={val} onClick={() => setSituation(val)} style={{ padding: '10px 8px', borderRadius: 8, border: `2px solid ${situation === val ? '#F5E642' : '#374151'}`, background: situation === val ? '#F5E64222' : 'transparent', color: situation === val ? '#F5E642' : '#94A3B8', cursor: 'pointer', fontSize: 13, fontWeight: situation === val ? 700 : 400 }}>{label}</button>
               ))}
             </div>
           </div>

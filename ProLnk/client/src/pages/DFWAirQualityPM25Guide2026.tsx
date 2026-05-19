@@ -41,7 +41,7 @@ export default function DFWAirQualityPM25Guide2026() {
           <ul style={{ listStyle: 'none', padding: 0, margin: 0 }}>
             {['HVAC infiltration during high-traffic door opens pulls outdoor PM2.5 inside','Duct leaks in attic or crawlspace draw in unconditioned outdoor air','Standard MERV-8 filters only capture particles larger than 3 microns','PM2.5 (2.5 micron) passes straight through most builder-grade filters','DFW summer ozone season (Jun–Sep) produces highest PM2.5 concentrations'].map(item => (
               <li key={item} style={{ display: 'flex', gap: 10, marginBottom: 10, color: '#cbd5e1', fontSize: 14 }}>
-                <span style={{ color: '#F5E642′ }}>→</span>{item}
+                <span style={{ color: '#F5E642' }}>→</span>{item}
               </li>
             ))}
           </ul>
@@ -52,7 +52,7 @@ export default function DFWAirQualityPM25Guide2026() {
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12 }}>
             {concerns.map(c => (
               <button key={c.id} onClick={() => setConcern(c.id === concern ? null : c.id)}
-                style={{ background: concern === c.id ? '#F5E642′ : '#1e3a5f', color: concern === c.id ? '#0A1628' : '#fff', border: ’none', borderRadius: 10, padding: '14px 16px', cursor: 'pointer', fontWeight: 600, fontSize: 14, textAlign: 'left' }}>
+                style={{ background: concern === c.id ? '#F5E642' : '#1e3a5f', color: concern === c.id ? '#0A1628' : '#fff', border: 'none', borderRadius: 10, padding: '14px 16px', cursor: 'pointer', fontWeight: 600, fontSize: 14, textAlign: 'left' }}>
                 {c.label}
               </button>
             ))}

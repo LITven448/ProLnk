@@ -123,7 +123,7 @@ export default function DFWFoundationIrrigationSystems() {
           <h2 style={{ color: '#F5E642', fontSize: 15, marginBottom: 10 }}>📅 DFW Seasonal Schedule</h2>
           {[['Jan–Mar', '1–2x/week, 20 min'], ['Apr–Jun', '2–3x/week, 25 min'], ['Jul–Aug', 'Daily, 30 min'], ['Sep–Oct', '2–3x/week, 20 min'], ['Nov–Dec', '1x/week, 15 min']].map(([mo, freq]) => (
             <div key={mo} style={{ display: 'flex', justifyContent: 'space-between', padding: '8px 0', borderBottom: '1px solid #1E3A5F', color: '#CBD5E1', fontSize: 14 }}>
-              <span>{mo}</span><span style={{ color: '#F5E642′ }}>{freq}</span>
+              <span>{mo}</span><span style={{ color: '#F5E642' }}>{freq}</span>
             </div>
           ))}
         </div>

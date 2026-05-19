@@ -56,9 +56,9 @@ export default function DFWSeerTwoGuide2026() {
               </p>
             </div>
           </div>
-          <div style={{ background: '#0d1f35', borderRadius: 10, padding: 16, borderLeft: '4px solid #F5E642′ }}>
+          <div style={{ background: '#0d1f35', borderRadius: 10, padding: 16, borderLeft: '4px solid #F5E642' }}>
             <p style={{ color: '#e2e8f0', lineHeight: 1.7 }}>
-              <strong style={{ color: '#F5E642′ }}>Texas Rule:</strong> Minimum 15 SEER2 for split AC systems in Climate Zone 3 (all of DFW). This equates to approximately 14.3 SEER2 if converting an old 15 SEER unit — which is why comparing old SEER to new SEER2 ratings requires the conversion factor.
+              <strong style={{ color: '#F5E642' }}>Texas Rule:</strong> Minimum 15 SEER2 for split AC systems in Climate Zone 3 (all of DFW). This equates to approximately 14.3 SEER2 if converting an old 15 SEER unit — which is why comparing old SEER to new SEER2 ratings requires the conversion factor.
             </p>
           </div>
         </div>
@@ -71,7 +71,7 @@ export default function DFWSeerTwoGuide2026() {
               <button
                 key={s}
                 onClick={() => setSelectedSeer(s)}
-                style={{ padding: '8px 18px', background: selectedSeer === s ? '#F5E642′ : '#0d1f35', color: selectedSeer === s ? '#0A1628' : '#e2e8f0', border: '1px solid #1e3a5f', borderRadius: 8, cursor: ’pointer', fontWeight: 700, fontSize: 16 }}
+                style={{ padding: '8px 18px', background: selectedSeer === s ? '#F5E642' : '#0d1f35', color: selectedSeer === s ? '#0A1628' : '#e2e8f0', border: '1px solid #1e3a5f', borderRadius: 8, cursor: 'pointer', fontWeight: 700, fontSize: 16 }}
               >
                 {s}
               </button>
@@ -82,11 +82,11 @@ export default function DFWSeerTwoGuide2026() {
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: 16, textAlign: 'center' }}>
                 <div>
                   <div style={{ color: '#94a3b8', fontSize: 12, marginBottom: 4 }}>YOUR SEER</div>
-                  <div style={{ fontSize: 36, fontWeight: 700, color: '#e2e8f0′ }}>{selectedSeer}</div>
+                  <div style={{ fontSize: 36, fontWeight: 700, color: '#e2e8f0' }}>{selectedSeer}</div>
                 </div>
                 <div>
                   <div style={{ color: '#94a3b8', fontSize: 12, marginBottom: 4 }}>SEER2 EQUIV.</div>
-                  <div style={{ fontSize: 36, fontWeight: 700, color: '#F5E642′ }}>{seerToSeer2[selectedSeer].seer2}</div>
+                  <div style={{ fontSize: 36, fontWeight: 700, color: '#F5E642' }}>{seerToSeer2[selectedSeer].seer2}</div>
                 </div>
                 <div>
                   <div style={{ color: '#94a3b8', fontSize: 12, marginBottom: 4 }}>CATEGORY</div>
@@ -101,7 +101,7 @@ export default function DFWSeerTwoGuide2026() {
           <h2 style={{ color: '#F5E642', fontSize: 18, marginBottom: 16 }}>💰 DFW Upgrade Savings Estimates</h2>
           {savingsData.map((row) => (
             <div key={`${row.from}-${row.to}`} style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '12px 0', borderBottom: '1px solid #1e3a5f' }}>
-              <div style={{ color: '#e2e8f0′ }}>SEER {row.from} → SEER {row.to}</div>
+              <div style={{ color: '#e2e8f0' }}>SEER {row.from} → SEER {row.to}</div>
               <div style={{ color: '#22c55e', fontWeight: 700 }}>~${row.annual}/yr · ${row.tenYear.toLocaleString()} over 10 yrs</div>
             </div>
           ))}

@@ -78,17 +78,17 @@ export default function DFWProLnk5500Pages2026() {
         </div>
 
         <div style={{ background: '#112240', borderRadius: 12, padding: 24, marginBottom: 24 }}>
-          <div style={{ fontWeight: 700, marginBottom: 14, color: '#F5E642′ }}>🔎 What Does 5,500 Pages Mean For You?</div>
+          <div style={{ fontWeight: 700, marginBottom: 14, color: '#F5E642' }}>🔎 What Does 5,500 Pages Mean For You?</div>
           <div style={{ display: 'flex', flexDirection: 'column', gap: 10, marginBottom: 20 }}>
             {stakeholders.map(s => (
               <button key={s.id} onClick={() => setSelected(s.id)}
-                style={{ background: selected === s.id ? '#F5E642′ : '#1e3a5f', color: selected === s.id ? '#0A1628' : '#fff', border: ’none', borderRadius: 8, padding: '12px 16px', cursor: 'pointer', fontWeight: 600, textAlign: 'left', fontSize: 15 }}>
+                style={{ background: selected === s.id ? '#F5E642' : '#1e3a5f', color: selected === s.id ? '#0A1628' : '#fff', border: 'none', borderRadius: 8, padding: '12px 16px', cursor: 'pointer', fontWeight: 600, textAlign: 'left', fontSize: 15 }}>
                 {s.label}
               </button>
             ))}
           </div>
           {result && (
-            <div style={{ background: '#0A1628', borderRadius: 8, padding: 16, borderLeft: '4px solid #F5E642′ }}>
+            <div style={{ background: '#0A1628', borderRadius: 8, padding: 16, borderLeft: '4px solid #F5E642' }}>
               <div style={{ color: '#cbd5e1', marginBottom: 14, lineHeight: 1.6 }}>{result.impact}</div>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 10 }}>
                 {result.stats.map(stat => (
@@ -117,7 +117,7 @@ export default function DFWProLnk5500Pages2026() {
           ))}
         </div>
 
-        <div style={{ background: '#F5E642', borderRadius: 10, padding: 20, color: '#0A1628′ }}>
+        <div style={{ background: '#F5E642', borderRadius: 10, padding: 20, color: '#0A1628' }}>
           <div style={{ fontWeight: 800, fontSize: 16 }}>🚀 The Library Grows With Every Charter Pro Who Joins</div>
           <div style={{ fontSize: 14, marginTop: 6 }}>Each Charter pro's trade, service area, and expertise generates 15-20 new targeted pages. 500 Charter pros = 7,500–10,000 additional pages. The moat compounds automatically.</div>
         </div>

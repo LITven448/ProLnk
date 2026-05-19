@@ -22,7 +22,7 @@ export default function DFWHomeScorecard() {
   const dfwAvgScore = Math.round(DIMENSIONS.reduce((s, d) => s + d.dfwAvg, 0) / DIMENSIONS.length * 10) / 10;
   const totalRaw = answered === DIMENSIONS.length ? Object.values(scores).reduce((s, v) => s + v, 0) : null;
 
-  const getColor = (score: number) => score >= 8 ? '#22c55e' : score >= 5 ? '#F5E642′ : '#ef4444';
+  const getColor = (score: number) => score >= 8 ? '#22c55e' : score >= 5 ? '#F5E642' : '#ef4444';
   const getLabel = (score: number) => score >= 8 ? 'Excellent' : score >= 6 ? 'Good' : score >= 4 ? 'Average' : 'Needs Work';
 
   const priorities = DIMENSIONS
@@ -35,14 +35,14 @@ export default function DFWHomeScorecard() {
       <div style={{ maxWidth: 720, margin: '0 auto' }}>
         <div style={{ textAlign: 'center', marginBottom: '2rem' }}>
           <div style={{ fontSize: '2.5rem' }}>🏆</div>
-          <h1 style={{ color: '#F5E642', fontSize: '1.8rem', margin: '0.5rem 0′ }}>DFW Home Scorecard</h1>
-          <p style={{ color: '#94a3b8′ }}>Rate your home on 10 key dimensions and compare to DFW averages</p>
+          <h1 style={{ color: '#F5E642', fontSize: '1.8rem', margin: '0.5rem 0' }}>DFW Home Scorecard</h1>
+          <p style={{ color: '#94a3b8' }}>Rate your home on 10 key dimensions and compare to DFW averages</p>
         </div>
 
         {totalRaw !== null && (
           <div style={{ background: '#0f2040', borderRadius: 12, padding: '1.5rem', marginBottom: '1.5rem', textAlign: 'center' }}>
             <div style={{ color: '#94a3b8', marginBottom: 4 }}>Your DFW Home Score</div>
-            <div style={{ color: '#F5E642', fontSize: '3.5rem', fontWeight: 700 }}>{totalRaw}<span style={{ fontSize: '1.5rem', color: '#94a3b8′ }}>/100</span></div>
+            <div style={{ color: '#F5E642', fontSize: '3.5rem', fontWeight: 700 }}>{totalRaw}<span style={{ fontSize: '1.5rem', color: '#94a3b8' }}>/100</span></div>
             <div style={{ display: 'flex', justifyContent: 'center', gap: '2rem', marginTop: '0.75rem' }}>
               <div style={{ textAlign: 'center' }}>
                 <div style={{ color: '#94a3b8', fontSize: '0.8rem' }}>Your Score</div>
@@ -68,7 +68,7 @@ export default function DFWHomeScorecard() {
             <div key={d.id} style={{ marginBottom: '1.25rem' }}>
               <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: 6 }}>
                 <div>
-                  <span style={{ fontWeight: 600, color: '#e2e8f0′ }}>{d.icon} {d.label}</span>
+                  <span style={{ fontWeight: 600, color: '#e2e8f0' }}>{d.icon} {d.label}</span>
                   <div style={{ color: '#94a3b8', fontSize: '0.8rem' }}>{d.desc}</div>
                 </div>
                 <div style={{ textAlign: 'right', flexShrink: 0, marginLeft: 12 }}>
@@ -81,7 +81,7 @@ export default function DFWHomeScorecard() {
               <div style={{ display: 'flex', gap: 4 }}>
                 {[1,2,3,4,5,6,7,8,9,10].map(n => (
                   <button key={n} onClick={() => setScore(d.id, n)}
-                    style={{ flex: 1, padding: '0.4rem 0', borderRadius: 6, border: `1px solid ${scores[d.id] === n ? '#F5E642' : '#1e3a5f'}`, background: scores[d.id] === n ? '#F5E642′ : scores[d.id] !== undefined && n <= scores[d.id] ? '#1a2d4a' : ’transparent', color: scores[d.id] === n ? '#0A1628′ : '#94a3b8', cursor: ’pointer', fontWeight: scores[d.id] === n ? 700 : 400, fontSize: '0.8rem' }}>
+                    style={{ flex: 1, padding: '0.4rem 0', borderRadius: 6, border: `1px solid ${scores[d.id] === n ? '#F5E642' : '#1e3a5f'}`, background: scores[d.id] === n ? '#F5E642' : scores[d.id] !== undefined && n <= scores[d.id] ? '#1a2d4a' : 'transparent', color: scores[d.id] === n ? '#0A1628' : '#94a3b8', cursor: 'pointer', fontWeight: scores[d.id] === n ? 700 : 400, fontSize: '0.8rem' }}>
                     {n}
                   </button>
                 ))}
@@ -96,7 +96,7 @@ export default function DFWHomeScorecard() {
             {priorities.map((d, i) => (
               <div key={d.id} style={{ background: '#0A1628', borderRadius: 8, padding: '1rem', marginBottom: '0.75rem', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
                 <div>
-                  <div style={{ fontWeight: 600, color: '#e2e8f0′ }}>#{i+1} {d.icon} {d.label}</div>
+                  <div style={{ fontWeight: 600, color: '#e2e8f0' }}>#{i+1} {d.icon} {d.label}</div>
                   <div style={{ color: '#94a3b8', fontSize: '0.8rem' }}>{d.desc}</div>
                 </div>
                 <div style={{ textAlign: 'center', marginLeft: 12 }}>
@@ -109,7 +109,7 @@ export default function DFWHomeScorecard() {
         )}
 
         {answered > 0 && answered < DIMENSIONS.length && (
-          <div style={{ background: '#0f2040', borderRadius: 12, padding: '1rem', textAlign: 'center', color: '#94a3b8′ }}>
+          <div style={{ background: '#0f2040', borderRadius: 12, padding: '1rem', textAlign: 'center', color: '#94a3b8' }}>
             Rate {DIMENSIONS.length - answered} more dimension(s) to see your full score
           </div>
         )}

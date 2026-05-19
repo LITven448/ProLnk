@@ -52,7 +52,7 @@ export default function DFWHVACMaintenanceContract2026() {
       <div style={{ maxWidth: 800, margin: '0 auto' }}>
         <div style={{ marginBottom: 8, fontSize: 13, color: '#F5E642', letterSpacing: 2, textTransform: 'uppercase' }}>DFW HVAC Guide 2026</div>
         <h1 style={{ fontSize: 32, fontWeight: 800, color: '#FFFFFF', marginBottom: 8 }}>Maintenance Contract Buyer's Guide</h1>
-        <p style={{ color: '#94A3B8', marginBottom: 36 }}>Know exactly what your DFW HVAC maintenance contract should include — and what's missing from the one you’re being sold.</p>
+        <p style={{ color: '#94A3B8', marginBottom: 36 }}>Know exactly what your DFW HVAC maintenance contract should include — and what's missing from the one you're being sold.</p>
 
         <h2 style={{ color: '#F5E642', fontSize: 18, marginBottom: 16 }}>📋 What Every DFW Contract Must Include</h2>
         <div style={{ marginBottom: 36 }}>
@@ -60,7 +60,7 @@ export default function DFWHVACMaintenanceContract2026() {
             <div key={i} style={{ background: '#111D35', borderRadius: 10, padding: '14px 18px', marginBottom: 10, borderLeft: `4px solid ${ci.required ? '#F5E642' : '#1E3A5F'}` }}>
               <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
                 <span style={{ fontWeight: 600, fontSize: 15 }}>{ci.required ? '⚠️' : '✅'} {ci.item}</span>
-                <span style={{ fontSize: 12, color: ci.required ? '#F5E642′ : '#64748B', background: ci.required ? '#1A2A10' : '#0F1A2E', padding: '3px 10px', borderRadius: 20 }}>{ci.required ? ’REQUIRED' : 'OPTIONAL'}</span>
+                <span style={{ fontSize: 12, color: ci.required ? '#F5E642' : '#64748B', background: ci.required ? '#1A2A10' : '#0F1A2E', padding: '3px 10px', borderRadius: 20 }}>{ci.required ? 'REQUIRED' : 'OPTIONAL'}</span>
               </div>
               <div style={{ fontSize: 13, color: '#94A3B8', marginTop: 6 }}>{ci.note}</div>
             </div>
@@ -71,7 +71,7 @@ export default function DFWHVACMaintenanceContract2026() {
         <div style={{ display: 'grid', gap: 12, marginBottom: 36 }}>
           {Object.values(priceRanges).map((pr, i) => (
             <div key={i} style={{ background: '#111D35', borderRadius: 10, padding: '14px 18px', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-              <span style={{ fontSize: 14, color: '#CBD5E1′ }}>{pr.label}</span>
+              <span style={{ fontSize: 14, color: '#CBD5E1' }}>{pr.label}</span>
               <span style={{ fontWeight: 700, color: '#F5E642', fontSize: 16 }}>{pr.range}</span>
             </div>
           ))}
@@ -93,7 +93,7 @@ export default function DFWHVACMaintenanceContract2026() {
         {analysis && (
           <div style={{ background: '#111D35', borderRadius: 12, padding: 24 }}>
             <div style={{ display: 'flex', alignItems: 'center', gap: 16, marginBottom: 20 }}>
-              <div style={{ fontSize: 48, fontWeight: 800, color: analysis.score >= 70 ? '#22C55E' : analysis.score >= 40 ? '#F5E642′ : '#EF4444' }}>{analysis.score}</div>
+              <div style={{ fontSize: 48, fontWeight: 800, color: analysis.score >= 70 ? '#22C55E' : analysis.score >= 40 ? '#F5E642' : '#EF4444' }}>{analysis.score}</div>
               <div>
                 <div style={{ fontWeight: 700, fontSize: 18 }}>Contract Score</div>
                 <div style={{ color: '#94A3B8', fontSize: 14 }}>Equivalent to {priceRanges[analysis.tier as keyof typeof priceRanges].label}</div>
@@ -101,9 +101,9 @@ export default function DFWHVACMaintenanceContract2026() {
             </div>
             {analysis.missing.length > 0 && (
               <>
-                <div style={{ fontWeight: 600, marginBottom: 10, color: '#F5E642′ }}>❌ What’s Missing:</div>
+                <div style={{ fontWeight: 600, marginBottom: 10, color: '#F5E642' }}>❌ What's Missing:</div>
                 {analysis.missing.map((m, i) => (
-                  <div key={i} style={{ background: '#0A1628', borderRadius: 8, padding: '10px 14px', marginBottom: 8, fontSize: 14, color: '#CBD5E1′ }}>• {m}</div>
+                  <div key={i} style={{ background: '#0A1628', borderRadius: 8, padding: '10px 14px', marginBottom: 8, fontSize: 14, color: '#CBD5E1' }}>• {m}</div>
                 ))}
               </>
             )}
@@ -111,9 +111,9 @@ export default function DFWHVACMaintenanceContract2026() {
           </div>
         )}
 
-        <div style={{ marginTop: 40, padding: '20px 24px', background: '#0F1E38', borderRadius: 12, borderLeft: '4px solid #F5E642′ }}>
+        <div style={{ marginTop: 40, padding: '20px 24px', background: '#0F1E38', borderRadius: 12, borderLeft: '4px solid #F5E642' }}>
           <div style={{ fontWeight: 700, marginBottom: 6 }}>🌡️ DFW Climate Reality</div>
-          <div style={{ fontSize: 14, color: '#94A3B8′ }}>DFW averages 67 days above 100°F annually. Without a proper maintenance contract with priority service, emergency AC repairs in July average $800-2,400 with 3-5 day wait times. A $299 contract pays for itself the first emergency call.</div>
+          <div style={{ fontSize: 14, color: '#94A3B8' }}>DFW averages 67 days above 100°F annually. Without a proper maintenance contract with priority service, emergency AC repairs in July average $800-2,400 with 3-5 day wait times. A $299 contract pays for itself the first emergency call.</div>
         </div>
       </div>
     </div>

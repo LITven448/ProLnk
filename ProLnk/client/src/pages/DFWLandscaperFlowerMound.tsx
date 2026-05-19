@@ -50,7 +50,7 @@ export default function DFWLandscaperFlowerMound() {
       {/* City Stats */}
       <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))', gap: 16, padding: '40px 24px', maxWidth: 900, margin: '0 auto' }}>
         {[
-          { icon: '🏡', label: 'Median Home Value', value: '$615,000′ },
+          { icon: '🏡', label: 'Median Home Value', value: '$615,000' },
           { icon: '📐', label: 'Avg Lot Size', value: '10,000–20,000 sq ft' },
           { icon: '☀️', label: 'Stage 2 Restrictions', value: 'May–Oct most years' },
           { icon: '💧', label: 'Irrigation Penetration', value: '~68% of homes' },
@@ -84,7 +84,7 @@ export default function DFWLandscaperFlowerMound() {
         <input
           type="range" min={2000} max={25000} step={500} value={lotSize}
           onChange={e => setLotSize(Number(e.target.value))}
-          style={{ width: '100%', marginBottom: 20, accentColor: '#F5E642′ }}
+          style={{ width: '100%', marginBottom: 20, accentColor: '#F5E642' }}
         />
 
         <label style={{ display: 'flex', alignItems: 'center', gap: 12, fontWeight: 700, marginBottom: 24, cursor: 'pointer' }}>
@@ -92,7 +92,7 @@ export default function DFWLandscaperFlowerMound() {
             type="checkbox"
             checked={wantsIrrigation}
             onChange={e => setWantsIrrigation(e.target.checked)}
-            style={{ width: 18, height: 18, accentColor: '#F5E642′ }}
+            style={{ width: 18, height: 18, accentColor: '#F5E642' }}
           />
           Add Drip / Smart Irrigation System (+$2,500–$4,500)
         </label>
@@ -130,7 +130,7 @@ export default function DFWLandscaperFlowerMound() {
           ].map(c => (
             <div key={c.title} style={{ background: '#112244', borderRadius: 10, padding: '20px' }}>
               <div style={{ fontSize: 28, marginBottom: 8 }}>{c.icon}</div>
-              <div style={{ fontWeight: 700, fontSize: 15, marginBottom: 6, color: '#F5E642′ }}>{c.title}</div>
+              <div style={{ fontWeight: 700, fontSize: 15, marginBottom: 6, color: '#F5E642' }}>{c.title}</div>
               <div style={{ fontSize: 14, color: '#aac', lineHeight: 1.6 }}>{c.desc}</div>
             </div>
           ))}
@@ -153,8 +153,8 @@ export default function DFWLandscaperFlowerMound() {
         </a>
       </div>
 
-      <div style={{ background: '#071020', padding: '20px', textAlign: 'center', fontSize: 13, color: '#556′ }}>
-        © 2026 ProLnk · Serving Flower Mound, TX and all of DFW · <a href="/privacy" style={{ color: '#556′ }}>Privacy</a>
+      <div style={{ background: '#071020', padding: '20px', textAlign: 'center', fontSize: 13, color: '#556' }}>
+        © 2026 ProLnk · Serving Flower Mound, TX and all of DFW · <a href="/privacy" style={{ color: '#556' }}>Privacy</a>
       </div>
     </div>
   );

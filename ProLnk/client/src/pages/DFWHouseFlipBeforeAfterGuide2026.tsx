@@ -25,7 +25,7 @@ export default function DFWHouseFlipBeforeAfterGuide2026() {
           {stages.map(s => (
             <button key={s.id} onClick={() => setActive(s.id)}
               style={{ padding: '8px 16px', borderRadius: 8, border: 'none', cursor: 'pointer', fontSize: 14, fontWeight: 600,
-                background: active === s.id ? '#F5E642′ : '#1e3a5f', color: active === s.id ? '#0A1628' : '#94a3b8' }}>
+                background: active === s.id ? '#F5E642' : '#1e3a5f', color: active === s.id ? '#0A1628' : '#94a3b8' }}>
               {s.emoji} {s.label}
             </button>
           ))}
@@ -34,7 +34,7 @@ export default function DFWHouseFlipBeforeAfterGuide2026() {
         <div style={{ background: '#1e3a5f', borderRadius: 12, padding: 24 }}>
           <h2 style={{ color: '#F5E642', fontSize: 20, marginBottom: 16 }}>{stage.emoji} {stage.label} Checklist</h2>
           {stage.docs.map((doc, i) => (
-            <div key={i} style={{ display: 'flex', alignItems: 'center', gap: 10, padding: '10px 0', borderBottom: '1px solid #0A1628′ }}>
+            <div key={i} style={{ display: 'flex', alignItems: 'center', gap: 10, padding: '10px 0', borderBottom: '1px solid #0A1628' }}>
               <span style={{ color: '#F5E642', fontSize: 18 }}>✓</span>
               <span style={{ fontSize: 15 }}>{doc}</span>
             </div>

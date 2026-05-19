@@ -1,11 +1,11 @@
 import { useState } from 'react';
 
 const roomSizes = [
-  { label: 'Small room (up to 75 sq ft)', fanSize: '29″–36″', examples: 'Bathrooms, small bedrooms' },
-  { label: 'Medium room (76–144 sq ft)', fanSize: '36″–48″', examples: 'Bedrooms, offices' },
-  { label: 'Large room (145–225 sq ft)', fanSize: '50″–56″', examples: 'Living rooms, master bedrooms' },
-  { label: 'Great room (226–400 sq ft)', fanSize: '60″–72″', examples: 'Open living/dining, great rooms' },
-  { label: 'Covered patio/outdoor', fanSize: '52″–60″ (outdoor rated)', examples: 'Texas patios, pergolas' },
+  { label: 'Small room (up to 75 sq ft)', fanSize: '29"–36"', examples: 'Bathrooms, small bedrooms' },
+  { label: 'Medium room (76–144 sq ft)', fanSize: '36"–48"', examples: 'Bedrooms, offices' },
+  { label: 'Large room (145–225 sq ft)', fanSize: '50"–56"', examples: 'Living rooms, master bedrooms' },
+  { label: 'Great room (226–400 sq ft)', fanSize: '60"–72"', examples: 'Open living/dining, great rooms' },
+  { label: 'Covered patio/outdoor', fanSize: '52"–60" (outdoor rated)', examples: 'Texas patios, pergolas' },
 ];
 
 const fanCategories = [
@@ -26,7 +26,7 @@ function getFanRecommendation(rooms: number, hasPatio: boolean) {
 
   const fans: string[] = [];
   if (rooms >= 1) fans.push(`${rooms} indoor fan(s) — 52" recommended for standard DFW bedrooms`);
-  if (hasPatio) fans.push('1 outdoor wet-rated fan for patio — 52″–60″, wet-rated required');
+  if (hasPatio) fans.push('1 outdoor wet-rated fan for patio — 52"–60", wet-rated required');
   if (rooms >= 3) fans.push('Consider smart fans for living areas to auto-adjust with thermostat');
 
   return { totalCost, acSavings, fans, fanCount: rooms + (hasPatio ? 1 : 0) };
@@ -132,7 +132,7 @@ export default function DFWCeilingFanGuide() {
           </div>
         </div>
 
-        <div style={{ background: '#111E35', borderRadius: 12, padding: 28, border: '1px solid #F5E642′ }}>
+        <div style={{ background: '#111E35', borderRadius: 12, padding: 28, border: '1px solid #F5E642' }}>
           <h2 style={{ color: '#F5E642', fontSize: 20, fontWeight: 700, margin: '0 0 20px' }}>🧮 Fan Installation Estimator</h2>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 20, marginBottom: 20 }}>
             <div>
@@ -140,7 +140,7 @@ export default function DFWCeilingFanGuide() {
                 Number of Indoor Rooms: <span style={{ color: '#F5E642', fontWeight: 700 }}>{roomCount}</span>
               </label>
               <input type="range" min={1} max={8} value={roomCount} onChange={e => setRoomCount(Number(e.target.value))}
-                style={{ width: '100%', accentColor: '#F5E642′ }} />
+                style={{ width: '100%', accentColor: '#F5E642' }} />
               <div style={{ display: 'flex', justifyContent: 'space-between', color: '#8A9AB5', fontSize: 11, marginTop: 4 }}>
                 <span>1 room</span><span>8 rooms</span>
               </div>

@@ -51,7 +51,7 @@ export default function DFWGroundSourceHeatPumpGuide() {
   return (
     <div style={{ background: '#0A1628', minHeight: '100vh', color: '#E2E8F0', fontFamily: 'system-ui, sans-serif', padding: '2rem' }}>
       <div style={{ maxWidth: 800, margin: '0 auto' }}>
-        <div style={{ marginBottom: '0.5rem', fontSize: '0.875rem', color: '#94A3B8′ }}>🏠 DFW Building Science</div>
+        <div style={{ marginBottom: '0.5rem', fontSize: '0.875rem', color: '#94A3B8' }}>🏠 DFW Building Science</div>
         <h1 style={{ fontSize: '2rem', fontWeight: 700, color: '#F5E642', marginBottom: '0.5rem' }}>
           Geothermal Heat Pumps for DFW
         </h1>
@@ -64,8 +64,8 @@ export default function DFWGroundSourceHeatPumpGuide() {
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0.75rem', marginBottom: '1.25rem' }}>
             {homeSizes.map(opt => (
               <button key={opt.value} onClick={() => setHomeSize(opt.value)} style={{
-                background: homeSize === opt.value ? '#F5E642′ : '#1E3A5F',
-                color: homeSize === opt.value ? '#0A1628′ : '#E2E8F0',
+                background: homeSize === opt.value ? '#F5E642' : '#1E3A5F',
+                color: homeSize === opt.value ? '#0A1628' : '#E2E8F0',
                 border: 'none', borderRadius: 8, padding: '0.75rem', cursor: 'pointer', fontWeight: 600, fontSize: '0.8rem', textAlign: 'left',
               }}>{opt.label}</button>
             ))}
@@ -74,18 +74,18 @@ export default function DFWGroundSourceHeatPumpGuide() {
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0.75rem' }}>
             {lotSizes.map(opt => (
               <button key={opt.value} onClick={() => setLotSize(opt.value)} style={{
-                background: lotSize === opt.value ? '#F5E642′ : '#1E3A5F',
-                color: lotSize === opt.value ? '#0A1628′ : '#E2E8F0',
+                background: lotSize === opt.value ? '#F5E642' : '#1E3A5F',
+                color: lotSize === opt.value ? '#0A1628' : '#E2E8F0',
                 border: 'none', borderRadius: 8, padding: '0.75rem', cursor: 'pointer', fontWeight: 600, fontSize: '0.8rem', textAlign: 'left',
               }}>{opt.label}</button>
             ))}
           </div>
         </div>
 
-        <div style={{ background: data.feasible ? '#0F2040′ : '#1A0A0A', borderRadius: 12, padding: '1.5rem', border: , marginBottom: '1.5rem' }}>
+        <div style={{ background: data.feasible ? '#0F2040' : '#1A0A0A', borderRadius: 12, padding: '1.5rem', border: , marginBottom: '1.5rem' }}>
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1rem' }}>
             <h2 style={{ color: '#F5E642', fontSize: '1.1rem', margin: 0 }}>📊 Geothermal Feasibility</h2>
-            <span style={{ background: data.feasible ? '#065F46′ : '#5F1E1E', color: data.feasible ? '#6EE7B7' : '#FCA5A5', borderRadius: 6, padding: '0.25rem 0.75rem', fontSize: '0.85rem', fontWeight: 700 }}>{data.feasible ? ’Feasible' : 'Challenging'}</span>
+            <span style={{ background: data.feasible ? '#065F46' : '#5F1E1E', color: data.feasible ? '#6EE7B7' : '#FCA5A5', borderRadius: 6, padding: '0.25rem 0.75rem', fontSize: '0.85rem', fontWeight: 700 }}>{data.feasible ? 'Feasible' : 'Challenging'}</span>
           </div>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
             <div style={{ background: '#1E3A5F', borderRadius: 8, padding: '0.75rem', textAlign: 'center' }}>
@@ -102,16 +102,16 @@ export default function DFWGroundSourceHeatPumpGuide() {
             </div>
           </div>
           <div style={{ background: '#1E3A5F', borderRadius: 8, padding: '1rem', marginBottom: '1rem', fontSize: '0.9rem', color: '#CBD5E1', lineHeight: 1.6 }}>
-            🌍 <strong style={{ color: '#F5E642′ }}>DFW Clay Soil Note:</strong> {data.claySoilNote}
+            🌍 <strong style={{ color: '#F5E642' }}>DFW Clay Soil Note:</strong> {data.claySoilNote}
           </div>
           <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
             {data.details.map((d, i) => (
-              <div key={i} style={{ background: '#0A1628', borderRadius: 8, padding: '0.75rem', fontSize: '0.875rem', color: '#E2E8F0′ }}>⚙️ {d}</div>
+              <div key={i} style={{ background: '#0A1628', borderRadius: 8, padding: '0.75rem', fontSize: '0.875rem', color: '#E2E8F0' }}>⚙️ {d}</div>
             ))}
           </div>
         </div>
 
-        <div style={{ background: '#F5E642', borderRadius: 12, padding: '1.25rem', color: '#0A1628′ }}>
+        <div style={{ background: '#F5E642', borderRadius: 12, padding: '1.25rem', color: '#0A1628' }}>
           <div style={{ fontWeight: 700, marginBottom: '0.25rem' }}>💰 Federal Tax Credit</div>
           <div style={{ fontSize: '0.9rem', lineHeight: 1.6 }}>Geothermal heat pumps qualify for a 30% federal tax credit (IRS Form 5695) through 2032. On a \,000 system, that is \,500 back on your taxes. This dramatically improves payback period and makes geothermal one of the strongest home energy investments available in DFW.</div>
         </div>

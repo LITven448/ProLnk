@@ -23,15 +23,15 @@ export default function DFWInsuranceShoppingGuide2026() {
         <p style={{ color: '#94a3b8', marginBottom: 32 }}>Price is only one factor. The wrong carrier costs you at claim time.</p>
 
         <div style={{ background: '#0f1f3d', borderRadius: 12, padding: 20, marginBottom: 24 }}>
-          <h2 style={{ fontSize: 16, fontWeight: 700, marginBottom: 16, color: '#F5E642′ }}>🏢 Major DFW Carriers Compared</h2>
+          <h2 style={{ fontSize: 16, fontWeight: 700, marginBottom: 16, color: '#F5E642' }}>🏢 Major DFW Carriers Compared</h2>
           {[
-            { name: 'State Farm', icon: '🔴', strength: 'Largest network, strong claims', note: 'Rates up 25% in 2024′ },
+            { name: 'State Farm', icon: '🔴', strength: 'Largest network, strong claims', note: 'Rates up 25% in 2024' },
             { name: 'Allstate', icon: '🔵', strength: 'Good bundling discounts', note: 'Higher complaint ratio' },
             { name: 'USAA', icon: '⭐', strength: 'Best overall — veterans only', note: 'Must be military/veteran/family' },
             { name: 'Farmers', icon: '🟡', strength: 'Specialty coverage options', note: 'Avg DFW rates' },
             { name: 'TX Farm Bureau', icon: '🟢', strength: 'Lowest DFW rates consistently', note: 'Membership req ($35/yr)' },
           ].map(c => (
-            <div key={c.name} style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '10px 0', borderBottom: '1px solid #1a2f55′ }}>
+            <div key={c.name} style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '10px 0', borderBottom: '1px solid #1a2f55' }}>
               <div style={{ display: 'flex', gap: 10, alignItems: 'center' }}>
                 <span style={{ fontSize: 18 }}>{c.icon}</span>
                 <div>
@@ -45,7 +45,7 @@ export default function DFWInsuranceShoppingGuide2026() {
         </div>
 
         <div style={{ background: '#0f1f3d', borderRadius: 12, padding: 20, marginBottom: 24 }}>
-          <h2 style={{ fontSize: 16, fontWeight: 700, marginBottom: 16, color: '#F5E642′ }}>🎯 Personalized Shopping Checklist</h2>
+          <h2 style={{ fontSize: 16, fontWeight: 700, marginBottom: 16, color: '#F5E642' }}>🎯 Personalized Shopping Checklist</h2>
           <div style={{ marginBottom: 16 }}>
             <label style={{ fontSize: 13, color: '#94a3b8', display: 'block', marginBottom: 8 }}>Home Type</label>
             <select value={homeType} onChange={e => setHomeType(e.target.value)}
@@ -59,17 +59,17 @@ export default function DFWInsuranceShoppingGuide2026() {
             <label style={{ fontSize: 13, color: '#94a3b8', display: 'block', marginBottom: 8 }}>Your Priorities (select all that apply)</label>
             {[{v:'price',l:'💰 Lowest price'},{v:'service',l:'🤝 Best customer service'},{v:'claims',l:'⚡ Fastest claims'},{v:'bundle',l:'📦 Bundle discount'}].map(p => (
               <label key={p.v} style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 10, cursor: 'pointer' }}>
-                <input type="checkbox" checked={priorities.includes(p.v)} onChange={() => toggle(p.v)} style={{ accentColor: '#F5E642′ }} />
+                <input type="checkbox" checked={priorities.includes(p.v)} onChange={() => toggle(p.v)} style={{ accentColor: '#F5E642' }} />
                 <span style={{ fontSize: 13 }}>{p.l}</span>
               </label>
             ))}
           </div>
           {allRecs.length > 0 && (
             <div style={{ background: '#1a2f55', borderRadius: 8, padding: 14 }}>
-              <div style={{ fontSize: 13, fontWeight: 700, marginBottom: 10, color: '#F5E642′ }}>Your Recommendations:</div>
+              <div style={{ fontSize: 13, fontWeight: 700, marginBottom: 10, color: '#F5E642' }}>Your Recommendations:</div>
               {allRecs.map(r => (
                 <div key={r} style={{ display: 'flex', gap: 8, marginBottom: 8, fontSize: 13 }}>
-                  <span>→</span><span style={{ color: '#94a3b8′ }}>{r}</span>
+                  <span>→</span><span style={{ color: '#94a3b8' }}>{r}</span>
                 </div>
               ))}
             </div>

@@ -46,7 +46,7 @@ export default function DFWConcreteExpansionJoints() {
       <div style={{ maxWidth: '800px', margin: '0 auto' }}>
         <div style={{ marginBottom: '2rem' }}>
           <span style={{ fontSize: '2rem' }}>📐</span>
-          <h1 style={{ color: '#F5E642', fontSize: '1.8rem', margin: '0.5rem 0′ }}>DFW Concrete Expansion Joint Guide</h1>
+          <h1 style={{ color: '#F5E642', fontSize: '1.8rem', margin: '0.5rem 0' }}>DFW Concrete Expansion Joint Guide</h1>
           <p style={{ color: '#94a3b8', lineHeight: 1.6 }}>
             DFW's 120°F annual temperature swing (-5°F to 115°F) means concrete expands and contracts more than almost anywhere in the US. Without properly spaced and sealed expansion joints, that movement becomes cracking. Most DFW concrete cracks are a joint spacing failure, not a concrete quality failure.
           </p>
@@ -119,7 +119,7 @@ export default function DFWConcreteExpansionJoints() {
         <div style={{ backgroundColor: '#1e293b', borderRadius: '8px', padding: '1.25rem' }}>
           <h3 style={{ color: '#F5E642', marginTop: 0 }}>🧪 DFW Joint Material Comparison</h3>
           {[['Polyurethane (NP1)', 'Most flexible', 'Best for DFW outdoor — handles 120°F swing', '5-7 yrs sun, 10 yrs shade'], ['Semi-Rigid Epoxy', 'Vehicle traffic', 'Best for DFW garage/commercial floors', '12-20 years interior'], ['Silicone', 'Long-lasting', 'Good DFW UV resistance but poor adhesion to aggregate', '10-15 years outdoor'], ['Fiber Board', 'Pre-formed compressible', 'Install at pour in all DFW expansion joints', 'Permanent — only sealant replaced']].map(([mat, strength, dfwUse, life]) => (
-            <div key={mat} style={{ padding: '0.75rem 0', borderBottom: '1px solid #334155′ }}>
+            <div key={mat} style={{ padding: '0.75rem 0', borderBottom: '1px solid #334155' }}>
               <div style={{ display: 'grid', gridTemplateColumns: '140px 120px 1fr', gap: '0.5rem', alignItems: 'start' }}>
                 <span style={{ color: '#F5E642', fontWeight: 'bold', fontSize: '0.9rem' }}>{mat}</span>
                 <span style={{ color: '#94a3b8', fontSize: '0.85rem' }}>{strength}</span>

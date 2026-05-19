@@ -94,18 +94,18 @@ export default function TrustyProIntegrationGuide() {
           <h2 style={{ fontSize: 22, fontWeight: 700, marginBottom: 20 }}>Select a Service Type</h2>
           <div style={{ display: 'flex', gap: 10, flexWrap: 'wrap', marginBottom: 28 }}>
             {serviceTypes.map(s => (
-              <button key={s.id} onClick={() => setService(s)} style={{ padding: '10px 16px', borderRadius: 8, border: 'none', cursor: 'pointer', fontSize: 13, fontWeight: 600, background: service.id === s.id ? '#4F46E5′ : '#1e3a5f', color: '#fff' }}>
+              <button key={s.id} onClick={() => setService(s)} style={{ padding: '10px 16px', borderRadius: 8, border: 'none', cursor: 'pointer', fontSize: 13, fontWeight: 600, background: service.id === s.id ? '#4F46E5' : '#1e3a5f', color: '#fff' }}>
                 {s.emoji} {s.label}
               </button>
             ))}
           </div>
 
           <div style={{ display: 'flex', flexDirection: 'column', gap: 16 }}>
-            <div style={{ background: '#050d1a', borderRadius: 12, padding: 20, borderLeft: '4px solid #4F46E5′ }}>
+            <div style={{ background: '#050d1a', borderRadius: 12, padding: 20, borderLeft: '4px solid #4F46E5' }}>
               <div style={{ color: '#4F46E5', fontWeight: 700, marginBottom: 8 }}>📊 How Scan Data Improves the Match — {service.label}</div>
               <p style={{ color: '#e2e8f0', fontSize: 14, lineHeight: 1.7 }}>{service.matchImprovement}</p>
             </div>
-            <div style={{ background: '#050d1a', borderRadius: 12, padding: 20, borderLeft: '4px solid #FACC15′ }}>
+            <div style={{ background: '#050d1a', borderRadius: 12, padding: 20, borderLeft: '4px solid #FACC15' }}>
               <div style={{ color: '#FACC15', fontWeight: 700, marginBottom: 8 }}>👷 What the Contractor Sees in Their Lead Card</div>
               <p style={{ color: '#e2e8f0', fontSize: 14, lineHeight: 1.7 }}>{service.contractorSees}</p>
             </div>

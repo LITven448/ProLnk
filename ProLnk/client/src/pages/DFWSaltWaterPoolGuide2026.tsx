@@ -15,7 +15,7 @@ export default function DFWSaltWaterPoolGuide2026() {
       <div style={{ maxWidth: 820, margin: '0 auto' }}>
         <div style={{ textAlign: 'center', marginBottom: '2rem' }}>
           <div style={{ fontSize: '3rem' }}>🧂</div>
-          <h1 style={{ color: '#F5E642', fontSize: '2rem', margin: '0.5rem 0′ }}>DFW Salt Water Pool Guide 2026</h1>
+          <h1 style={{ color: '#F5E642', fontSize: '2rem', margin: '0.5rem 0' }}>DFW Salt Water Pool Guide 2026</h1>
           <p style={{ color: '#94a3b8', maxWidth: 600, margin: '0 auto' }}>
             Salt pools are booming in DFW — but DFW hard water creates unique calcium challenges. This guide covers
             everything from conversion costs to cell maintenance.
@@ -39,7 +39,7 @@ export default function DFWSaltWaterPoolGuide2026() {
 
         <div style={{ background: '#1e3a5f', borderRadius: 12, padding: '1.5rem', marginBottom: '2rem', border: '1px solid #2d4a7a' }}>
           <h2 style={{ color: '#F5E642', marginTop: 0 }}>⚠️ DFW Hard Water Warning</h2>
-          <p style={{ color: '#94a3b8′ }}>DFW tap water averages 200-400 ppm calcium hardness. Salt chlorinators generate a slight pH rise which, combined with DFW hard water, accelerates calcium scaling on the cell plates. This is the #1 reason cells fail early in DFW. Quarterly acid washes and a CalHypo-free chemical approach keep your cell running at full capacity for its full 5-year life.</p>
+          <p style={{ color: '#94a3b8' }}>DFW tap water averages 200-400 ppm calcium hardness. Salt chlorinators generate a slight pH rise which, combined with DFW hard water, accelerates calcium scaling on the cell plates. This is the #1 reason cells fail early in DFW. Quarterly acid washes and a CalHypo-free chemical approach keep your cell running at full capacity for its full 5-year life.</p>
         </div>
 
         <div style={{ background: '#1e3a5f', borderRadius: 12, padding: '1.5rem', border: '1px solid #2d4a7a' }}>
@@ -47,7 +47,7 @@ export default function DFWSaltWaterPoolGuide2026() {
           <div style={{ display: 'flex', gap: '0.75rem', flexWrap: 'wrap', marginBottom: '1rem' }}>
             {poolTypes.map(p => (
               <button key={p.id} onClick={() => setSelected(p.id === selected ? null : p.id)}
-                style={{ padding: '0.5rem 1rem', borderRadius: 8, border: '2px solid', borderColor: selected === p.id ? '#F5E642′ : '#2d4a7a', background: selected === p.id ? '#F5E642' : '#0A1628', color: selected === p.id ? '#0A1628' : '#fff', cursor: ’pointer', fontWeight: 600 }}>
+                style={{ padding: '0.5rem 1rem', borderRadius: 8, border: '2px solid', borderColor: selected === p.id ? '#F5E642' : '#2d4a7a', background: selected === p.id ? '#F5E642' : '#0A1628', color: selected === p.id ? '#0A1628' : '#fff', cursor: 'pointer', fontWeight: 600 }}>
                 {p.label}
               </button>
             ))}
@@ -57,7 +57,7 @@ export default function DFWSaltWaterPoolGuide2026() {
               {steps.map(s => <li key={s} style={{ color: '#e2e8f0', marginBottom: '0.5rem' }}>{s}</li>)}
             </ol>
           )}
-          {!selected && <p style={{ color: '#94a3b8′ }}>Select your pool type above to see your DFW-specific salt conversion steps.</p>}
+          {!selected && <p style={{ color: '#94a3b8' }}>Select your pool type above to see your DFW-specific salt conversion steps.</p>}
         </div>
       </div>
     </div>

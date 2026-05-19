@@ -42,7 +42,7 @@ export default function DFWBrickHomeGuide2026() {
           <h2 style={{ color: '#F5E642', fontSize: 18, fontWeight: 700, margin: '0 0 16px' }}>🔍 Brick Home Age → Maintenance Checklist</h2>
           <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap', marginBottom: 20 }}>
             {brickAges.map((a, i) => (
-              <button key={i} onClick={() => setSelectedAge(i)} style={{ padding: '8px 16px', borderRadius: 8, border: 'none', cursor: 'pointer', fontWeight: 700, fontSize: 13, background: selectedAge === i ? '#F5E642′ : '#1e3a5f', color: selectedAge === i ? '#0A1628' : '#fff' }}>{a.range}</button>
+              <button key={i} onClick={() => setSelectedAge(i)} style={{ padding: '8px 16px', borderRadius: 8, border: 'none', cursor: 'pointer', fontWeight: 700, fontSize: 13, background: selectedAge === i ? '#F5E642' : '#1e3a5f', color: selectedAge === i ? '#0A1628' : '#fff' }}>{a.range}</button>
             ))}
           </div>
           <div style={{ display: 'grid', gap: 10 }}>
@@ -55,7 +55,7 @@ export default function DFWBrickHomeGuide2026() {
           </div>
         </div>
 
-        <div style={{ textAlign: 'center', marginTop: 32, padding: 20, background: '#0f2040', borderRadius: 12, border: '1px solid #F5E642′ }}>
+        <div style={{ textAlign: 'center', marginTop: 32, padding: 20, background: '#0f2040', borderRadius: 12, border: '1px solid #F5E642' }}>
           <div style={{ color: '#F5E642', fontWeight: 700, marginBottom: 6 }}>Need a Brick Specialist in DFW?</div>
           <div style={{ color: '#94a3b8', fontSize: 14 }}>ProLnk connects you with vetted masonry pros across the Metroplex</div>
         </div>

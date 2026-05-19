@@ -23,8 +23,8 @@ export default function DFWWindowCondensationGuide() {
       <div style={{ maxWidth: 760, margin: '0 auto' }}>
         <div style={{ marginBottom: '2rem' }}>
           <span style={{ color: '#F5E642', fontSize: '2rem' }}>🪟💧</span>
-          <h1 style={{ color: '#F5E642', fontSize: '1.8rem', margin: '0.5rem 0′ }}>DFW Window Condensation Guide</h1>
-          <p style={{ color: '#94a3b8′ }}>Three types of condensation, three different causes — location tells you everything.</p>
+          <h1 style={{ color: '#F5E642', fontSize: '1.8rem', margin: '0.5rem 0' }}>DFW Window Condensation Guide</h1>
+          <p style={{ color: '#94a3b8' }}>Three types of condensation, three different causes — location tells you everything.</p>
         </div>
 
         <div style={{ backgroundColor: '#0f2040', borderRadius: 10, padding: '1.5rem', marginBottom: '1.5rem' }}>
@@ -46,8 +46,8 @@ export default function DFWWindowCondensationGuide() {
             ['Winter', 'Short but sharp cold snaps. Single-pane or older windows condensate heavily on inside when temps drop below 30°F.'],
             ['Spring/Fall', 'Exterior condensation peaks at dawn. Temperature swings are biggest. Most seal failures show up in these transitions.'],
           ].map(([s, desc]) => (
-            <div key={s} style={{ marginBottom: '1rem', paddingLeft: '1rem', borderLeft: '3px solid #F5E642′ }}>
-              <div style={{ fontWeight: 'bold', color: '#e2e8f0′ }}>{s}</div>
+            <div key={s} style={{ marginBottom: '1rem', paddingLeft: '1rem', borderLeft: '3px solid #F5E642' }}>
+              <div style={{ fontWeight: 'bold', color: '#e2e8f0' }}>{s}</div>
               <div style={{ color: '#94a3b8', fontSize: '0.9rem' }}>{desc}</div>
             </div>
           ))}
@@ -56,24 +56,24 @@ export default function DFWWindowCondensationGuide() {
         <div style={{ backgroundColor: '#0f2040', borderRadius: 10, padding: '1.5rem', marginBottom: '1.5rem' }}>
           <h2 style={{ color: '#F5E642', marginBottom: '1rem' }}>🔍 Diagnose Your Condensation</h2>
           <div style={{ marginBottom: '1rem' }}>
-            <label style={{ display: 'block', marginBottom: '0.5rem', color: '#94a3b8′ }}>Where is the condensation?</label>
+            <label style={{ display: 'block', marginBottom: '0.5rem', color: '#94a3b8' }}>Where is the condensation?</label>
             <select value={loc} onChange={e => setLoc(e.target.value)} style={{ width: '100%', padding: '0.6rem', backgroundColor: '#0A1628', color: '#e2e8f0', border: '1px solid #1e3a5f', borderRadius: 6 }}>
               <option value="">Select location...</option>
               {locations.map(l => <option key={l} value={l}>{l}</option>)}
             </select>
           </div>
           <div style={{ marginBottom: '1.5rem' }}>
-            <label style={{ display: 'block', marginBottom: '0.5rem', color: '#94a3b8′ }}>DFW season when it appears:</label>
+            <label style={{ display: 'block', marginBottom: '0.5rem', color: '#94a3b8' }}>DFW season when it appears:</label>
             <select value={season} onChange={e => setSeason(e.target.value)} style={{ width: '100%', padding: '0.6rem', backgroundColor: '#0A1628', color: '#e2e8f0', border: '1px solid #1e3a5f', borderRadius: 6 }}>
               <option value="">Select season...</option>
               {seasons.map(s => <option key={s} value={s}>{s}</option>)}
             </select>
           </div>
           {result && (
-            <div style={{ backgroundColor: '#162d4a', borderRadius: 8, padding: '1.2rem', border: '1px solid #F5E642′ }}>
+            <div style={{ backgroundColor: '#162d4a', borderRadius: 8, padding: '1.2rem', border: '1px solid #F5E642' }}>
               <div style={{ fontWeight: 'bold', color: '#F5E642', marginBottom: '0.8rem', fontSize: '1.05rem' }}>{result.urgency}</div>
-              <div style={{ marginBottom: '0.8rem' }}><span style={{ color: '#94a3b8′ }}>Cause: </span><span>{result.cause}</span></div>
-              <div style={{ marginBottom: '0.8rem' }}><span style={{ color: '#94a3b8′ }}>Solution: </span><span>{result.solution}</span></div>
+              <div style={{ marginBottom: '0.8rem' }}><span style={{ color: '#94a3b8' }}>Cause: </span><span>{result.cause}</span></div>
+              <div style={{ marginBottom: '0.8rem' }}><span style={{ color: '#94a3b8' }}>Solution: </span><span>{result.solution}</span></div>
               <div style={{ padding: '0.8rem', backgroundColor: '#0A1628', borderRadius: 6, color: '#94a3b8', fontSize: '0.9rem' }}>💡 {result.note}</div>
             </div>
           )}
@@ -83,8 +83,8 @@ export default function DFWWindowCondensationGuide() {
           <h2 style={{ color: '#F5E642', marginBottom: '1rem' }}>💰 Repair Cost Reference (DFW)</h2>
           {[['Window insulation film (DIY)', '$15–$40/window'], ['Whole-home dehumidifier', '$1,200–$2,500 installed'], ['IGU glass replacement', '$200–$400/window'], ['Full window replacement', '$400–$900/window installed']].map(([item, cost]) => (
             <div key={item} style={{ display: 'flex', justifyContent: 'space-between', padding: '0.5rem 0', borderBottom: '1px solid #1e3a5f' }}>
-              <span style={{ color: '#94a3b8′ }}>{item}</span>
-              <span style={{ color: '#F5E642′ }}>{cost}</span>
+              <span style={{ color: '#94a3b8' }}>{item}</span>
+              <span style={{ color: '#F5E642' }}>{cost}</span>
             </div>
           ))}
         </div>

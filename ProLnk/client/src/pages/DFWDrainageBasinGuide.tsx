@@ -54,7 +54,7 @@ export default function DFWDrainageBasinGuide() {
       <div style={{ maxWidth: 720, margin: '0 auto' }}>
         <div style={{ color: '#F5E642', fontSize: 13, fontWeight: 700, letterSpacing: 2, marginBottom: 8 }}>DFW HOME GUIDE</div>
         <h1 style={{ fontSize: 28, fontWeight: 800, marginBottom: 8 }}>🌊 DFW Drainage Basin Guide</h1>
-        <p style={{ color: '#94A3B8', marginBottom: 32 }}>Nearly every DFW subdivision has a detention pond. Knowing who's responsible for maintenance, mosquito control, and what you can (and can’t) do in a drainage easement can save you thousands.</p>
+        <p style={{ color: '#94A3B8', marginBottom: 32 }}>Nearly every DFW subdivision has a detention pond. Knowing who's responsible for maintenance, mosquito control, and what you can (and can't) do in a drainage easement can save you thousands.</p>
 
         <h2 style={{ color: '#F5E642', fontSize: 16, fontWeight: 700, marginBottom: 16 }}>Responsibility Finder</h2>
         <div style={{ background: '#111F3A', borderRadius: 12, padding: 24, marginBottom: 32 }}>
@@ -83,7 +83,7 @@ export default function DFWDrainageBasinGuide() {
         </div>
 
         {result && (
-          <div style={{ background: '#111F3A', borderRadius: 12, padding: 24, marginBottom: 32, border: '2px solid #F5E642′ }}>
+          <div style={{ background: '#111F3A', borderRadius: 12, padding: 24, marginBottom: 32, border: '2px solid #F5E642' }}>
             <div style={{ color: '#F5E642', fontWeight: 700, marginBottom: 4 }}>✅ Responsible Party</div>
             <h3 style={{ fontSize: 20, fontWeight: 800, marginBottom: 8 }}>{result.entity}</h3>
             <div style={{ background: '#0A1628', borderRadius: 8, padding: 12, marginBottom: 12, fontSize: 14 }}>{result.dfwNote}</div>

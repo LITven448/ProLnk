@@ -5,9 +5,9 @@ export default function DFWPorchBuildingCosts2026() {
   const [decking, setDecking] = useState<'cedar' | 'composite'>('cedar');
 
   const costs: Record<string, Record<string, string>> = {
-    small: { cedar: '$8,000–$12,000', composite: '$11,000–$16,000′ },
-    covered: { cedar: '$12,000–$20,000', composite: '$16,000–$26,000′ },
-    wraparound: { cedar: '$25,000–$35,000', composite: '$30,000–$40,000′ },
+    small: { cedar: '$8,000–$12,000', composite: '$11,000–$16,000' },
+    covered: { cedar: '$12,000–$20,000', composite: '$16,000–$26,000' },
+    wraparound: { cedar: '$25,000–$35,000', composite: '$30,000–$40,000' },
   };
 
   return (
@@ -23,7 +23,7 @@ export default function DFWPorchBuildingCosts2026() {
             <div style={{ fontSize: 13, color: '#94a3b8', marginBottom: 8 }}>Porch Type</div>
             <div style={{ display: 'flex', gap: 10, flexWrap: 'wrap' }}>
               {(['small', 'covered', 'wraparound'] as const).map(p => (
-                <button key={p} onClick={() => setPorchType(p)} style={{ padding: '8px 18px', borderRadius: 8, border: 'none', cursor: 'pointer', background: porchType === p ? '#F5E642′ : '#1e2d45', color: porchType === p ? '#0A1628' : '#fff', fontWeight: 600 }}>
+                <button key={p} onClick={() => setPorchType(p)} style={{ padding: '8px 18px', borderRadius: 8, border: 'none', cursor: 'pointer', background: porchType === p ? '#F5E642' : '#1e2d45', color: porchType === p ? '#0A1628' : '#fff', fontWeight: 600 }}>
                   {p === 'small' ? 'Small Open' : p === 'covered' ? 'Covered Porch' : 'Wraparound'}
                 </button>
               ))}
@@ -33,7 +33,7 @@ export default function DFWPorchBuildingCosts2026() {
             <div style={{ fontSize: 13, color: '#94a3b8', marginBottom: 8 }}>Decking Material</div>
             <div style={{ display: 'flex', gap: 10 }}>
               {(['cedar', 'composite'] as const).map(d => (
-                <button key={d} onClick={() => setDecking(d)} style={{ padding: '8px 18px', borderRadius: 8, border: 'none', cursor: 'pointer', background: decking === d ? '#F5E642′ : '#1e2d45', color: decking === d ? '#0A1628' : '#fff', fontWeight: 600 }}>
+                <button key={d} onClick={() => setDecking(d)} style={{ padding: '8px 18px', borderRadius: 8, border: 'none', cursor: 'pointer', background: decking === d ? '#F5E642' : '#1e2d45', color: decking === d ? '#0A1628' : '#fff', fontWeight: 600 }}>
                   {d === 'cedar' ? 'Cedar Wood' : 'Composite'}
                 </button>
               ))}
@@ -41,7 +41,7 @@ export default function DFWPorchBuildingCosts2026() {
           </div>
           <div style={{ background: '#0A1628', borderRadius: 10, padding: 20, textAlign: 'center' }}>
             <div style={{ fontSize: 13, color: '#94a3b8', marginBottom: 4 }}>Estimated DFW Cost</div>
-            <div style={{ fontSize: 36, fontWeight: 700, color: '#F5E642′ }}>{costs[porchType][decking]}</div>
+            <div style={{ fontSize: 36, fontWeight: 700, color: '#F5E642' }}>{costs[porchType][decking]}</div>
             <div style={{ fontSize: 12, color: '#64748b', marginTop: 4 }}>Permit + foundation tie-in included in range</div>
           </div>
         </div>
@@ -56,7 +56,7 @@ export default function DFWPorchBuildingCosts2026() {
             <div key={c.title} style={{ background: '#111e33', borderRadius: 10, padding: 18 }}>
               <div style={{ fontSize: 22, marginBottom: 8 }}>{c.icon}</div>
               <div style={{ fontWeight: 600, marginBottom: 6 }}>{c.title}</div>
-              <div style={{ fontSize: 13, color: '#94a3b8′ }}>{c.desc}</div>
+              <div style={{ fontSize: 13, color: '#94a3b8' }}>{c.desc}</div>
             </div>
           ))}
         </div>

@@ -51,7 +51,7 @@ export default function DFWPropertyTaxProjection() {
               <label style={{ display: 'block', fontWeight: 700, color: '#1a2744', marginBottom: '0.5rem', fontSize: '0.85rem' }}>Appraised Value</label>
               <input type="range" min={100000} max={2000000} step={10000} value={value}
                 onChange={e => setValue(Number(e.target.value))}
-                style={{ width: '100%', accentColor: '#1a2744′ }} />
+                style={{ width: '100%', accentColor: '#1a2744' }} />
               <div style={{ textAlign: 'center', fontWeight: 700, color: '#1a2744', fontSize: '1.1rem' }}>${value.toLocaleString()}</div>
             </div>
             <div>
@@ -63,11 +63,11 @@ export default function DFWPropertyTaxProjection() {
             </div>
           </div>
           <div style={{ display: 'flex', gap: '1.5rem', flexWrap: 'wrap' }}>
-            <label style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', cursor: 'pointer', fontWeight: 600, color: '#1a2744′ }}>
+            <label style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', cursor: 'pointer', fontWeight: 600, color: '#1a2744' }}>
               <input type="checkbox" checked={homestead} onChange={e => setHomestead(e.target.checked)} style={{ accentColor: '#1a2744', width: 18, height: 18 }} />
               Homestead Exemption ($100K)
             </label>
-            <label style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', cursor: 'pointer', fontWeight: 600, color: '#1a2744′ }}>
+            <label style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', cursor: 'pointer', fontWeight: 600, color: '#1a2744' }}>
               <input type="checkbox" checked={protest} onChange={e => setProtest(e.target.checked)} style={{ accentColor: '#1a2744', width: 18, height: 18 }} />
               Model Protest Impact (~12% reduction)
             </label>
@@ -76,21 +76,21 @@ export default function DFWPropertyTaxProjection() {
 
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: '1rem', marginBottom: '1.5rem' }}>
           <div style={{ background: '#1a2744', borderRadius: 12, padding: '1.25rem', textAlign: 'center', color: '#fff' }}>
-            <div style={{ fontSize: '1.75rem', fontWeight: 800, color: '#F5E642′ }}>${effectiveTax.toLocaleString()}</div>
+            <div style={{ fontSize: '1.75rem', fontWeight: 800, color: '#F5E642' }}>${effectiveTax.toLocaleString()}</div>
             <div style={{ fontSize: '0.8rem', color: '#aab4cc' }}>2026 Tax Bill{protest ? ' (after protest)' : ''}</div>
           </div>
           <div style={{ background: '#1a2744', borderRadius: 12, padding: '1.25rem', textAlign: 'center', color: '#fff' }}>
-            <div style={{ fontSize: '1.75rem', fontWeight: 800, color: '#F5E642′ }}>${monthlyEscrow}</div>
+            <div style={{ fontSize: '1.75rem', fontWeight: 800, color: '#F5E642' }}>${monthlyEscrow}</div>
             <div style={{ fontSize: '0.8rem', color: '#aab4cc' }}>Monthly Escrow Needed</div>
           </div>
-          <div style={{ background: protest ? '#2e7d32′ : '#1a2744', borderRadius: 12, padding: '1.25rem', textAlign: ’center', color: '#fff' }}>
-            <div style={{ fontSize: '1.75rem', fontWeight: 800, color: '#F5E642′ }}>${protestSaving.toLocaleString()}</div>
+          <div style={{ background: protest ? '#2e7d32' : '#1a2744', borderRadius: 12, padding: '1.25rem', textAlign: 'center', color: '#fff' }}>
+            <div style={{ fontSize: '1.75rem', fontWeight: 800, color: '#F5E642' }}>${protestSaving.toLocaleString()}</div>
             <div style={{ fontSize: '0.8rem', color: '#aab4cc' }}>Protest Savings Est.</div>
           </div>
         </div>
 
         <div style={{ background: '#fff', borderRadius: 16, padding: '1.5rem', boxShadow: '0 2px 12px rgba(0,0,0,0.08)' }}>
-          <h2 style={{ margin: '0 0 1rem', fontSize: '1rem', fontWeight: 700, color: '#1a2744′ }}>📈 5-Year Projection ({(GROWTH_RATE * 100).toFixed(1)}% annual growth)</h2>
+          <h2 style={{ margin: '0 0 1rem', fontSize: '1rem', fontWeight: 700, color: '#1a2744' }}>📈 5-Year Projection ({(GROWTH_RATE * 100).toFixed(1)}% annual growth)</h2>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(5, 1fr)', gap: '0.75rem' }}>
             {projections.map(p => (
               <div key={p.year} style={{ textAlign: 'center', padding: '0.75rem', background: '#f0f2f5', borderRadius: 10 }}>

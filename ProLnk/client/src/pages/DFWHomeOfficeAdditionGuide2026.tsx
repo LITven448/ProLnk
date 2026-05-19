@@ -52,7 +52,7 @@ export default function DFWHomeOfficeAdditionGuide2026() {
             {spaces.map((s, i) => (
               <button key={s.label} onClick={() => setIdx(i)}
                 style={{ padding: '10px 16px', borderRadius: 8, border: 'none', cursor: 'pointer', fontSize: 13, flex: 1,
-                  background: idx === i ? '#F5E642′ : '#1e3a5f', color: idx === i ? '#0A1628' : '#fff', fontWeight: idx === i ? 700 : 400 }}>
+                  background: idx === i ? '#F5E642' : '#1e3a5f', color: idx === i ? '#0A1628' : '#fff', fontWeight: idx === i ? 700 : 400 }}>
                 {s.icon} {s.label}
               </button>
             ))}

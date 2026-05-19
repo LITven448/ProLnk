@@ -53,15 +53,15 @@ export default function DFWMiscHVACPartsGuide2026() {
       <div style={{ maxWidth: '800px', margin: '0 auto' }}>
         <div style={{ textAlign: 'center', marginBottom: '2rem' }}>
           <div style={{ fontSize: '3rem' }}>🔩</div>
-          <h1 style={{ color: '#F5E642', fontSize: '1.8rem', margin: '0.5rem 0′ }}>DFW HVAC Miscellaneous Parts Guide 2026</h1>
+          <h1 style={{ color: '#F5E642', fontSize: '1.8rem', margin: '0.5rem 0' }}>DFW HVAC Miscellaneous Parts Guide 2026</h1>
           <p style={{ color: '#94a3b8', marginTop: '0.5rem' }}>Lesser-known parts that fail — and what to do about it</p>
         </div>
 
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '2rem' }}>
           {parts.map(part => (
             <button key={part.id} onClick={() => setSelected(selected === part.id ? null : part.id)}
-              style={{ background: selected === part.id ? '#F5E642′ : '#1e293b', color: selected === part.id ? '#0A1628' : '#fff',
-                border: '2px solid' + (selected === part.id ? ' #F5E642′ : ' #334155'), borderRadius: '0.75rem',
+              style={{ background: selected === part.id ? '#F5E642' : '#1e293b', color: selected === part.id ? '#0A1628' : '#fff',
+                border: '2px solid' + (selected === part.id ? ' #F5E642' : ' #334155'), borderRadius: '0.75rem',
                 padding: '1.2rem', cursor: 'pointer', textAlign: 'left' }}>
               <div style={{ fontSize: '1.8rem', marginBottom: '0.4rem' }}>{part.icon}</div>
               <div style={{ fontWeight: '700', fontSize: '1rem' }}>{part.name}</div>
@@ -71,7 +71,7 @@ export default function DFWMiscHVACPartsGuide2026() {
         </div>
 
         {selected_part && (
-          <div style={{ background: '#1e293b', borderRadius: '1rem', padding: '1.5rem', border: '1px solid #F5E642′ }}>
+          <div style={{ background: '#1e293b', borderRadius: '1rem', padding: '1.5rem', border: '1px solid #F5E642' }}>
             <h2 style={{ color: '#F5E642', margin: '0 0 0.75rem' }}>{selected_part.icon} {selected_part.name}</h2>
             <p style={{ color: '#cbd5e1', marginBottom: '1rem' }}>{selected_part.desc}</p>
             <div style={{ marginBottom: '1rem' }}>
@@ -84,7 +84,7 @@ export default function DFWMiscHVACPartsGuide2026() {
               <div style={{ color: '#4ade80', fontWeight: '600', marginBottom: '0.4rem' }}>✅ Fix</div>
               <div style={{ color: '#cbd5e1', fontSize: '0.9rem' }}>{selected_part.fix}</div>
             </div>
-            <div style={{ color: '#F5E642', fontWeight: '700′ }}>💰 Typical Cost: {selected_part.cost}</div>
+            <div style={{ color: '#F5E642', fontWeight: '700' }}>💰 Typical Cost: {selected_part.cost}</div>
           </div>
         )}
 

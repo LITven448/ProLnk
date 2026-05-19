@@ -66,12 +66,12 @@ export default function DFWWholesalingGuide() {
           <h2 style={{ color: '#F5E642', fontWeight: 700, marginBottom: '1rem', fontSize: '1.15rem' }}>📊 Deal Viability Calculator</h2>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(160px, 1fr))', gap: '0.75rem', marginBottom: '1rem' }}>
             {[
-              { label: 'Estimated ARV ($)', val: estArv, set: setEstArv, ph: '300000′ },
-              { label: 'Repair Cost ($)', val: repairCost, set: setRepairCost, ph: '45000′ },
-              { label: 'Your Wholesale Fee ($)', val: fee, set: setFee, ph: '10000′ },
+              { label: 'Estimated ARV ($)', val: estArv, set: setEstArv, ph: '300000' },
+              { label: 'Repair Cost ($)', val: repairCost, set: setRepairCost, ph: '45000' },
+              { label: 'Your Wholesale Fee ($)', val: fee, set: setFee, ph: '10000' },
             ].map((f) => (
               <div key={f.label}>
-                <label style={{ display: 'block', marginBottom: 4, fontSize: '0.85rem', color: '#a0aec0′ }}>{f.label}</label>
+                <label style={{ display: 'block', marginBottom: 4, fontSize: '0.85rem', color: '#a0aec0' }}>{f.label}</label>
                 <input value={f.val} onChange={(e) => f.set(e.target.value)} placeholder={f.ph} style={{ width: '100%', padding: '0.55rem', borderRadius: 8, border: '1px solid #2d3748', background: '#0A1628', color: '#fff', fontSize: '0.95rem', boxSizing: 'border-box' }} />
               </div>
             ))}
@@ -83,7 +83,7 @@ export default function DFWWholesalingGuide() {
             <div style={{ marginTop: '1rem', padding: '1rem', background: '#0A1628', borderRadius: 8 }}>
               <div style={{ color: '#F5E642', fontWeight: 700, marginBottom: '0.4rem' }}>Max Assignment Price: {result.assignPrice}</div>
               <div style={{ color: '#a0aec0', fontSize: '0.9rem', marginBottom: '0.4rem' }}>Buyer Projected Profit: {result.buyerProfit}</div>
-              <div style={{ color: result.viable.startsWith('Strong') ? '#4ade80′ : result.viable.startsWith(’Marginal') ? '#facc15′ : '#f87171', fontWeight: 600, fontSize: '0.9rem' }}>
+              <div style={{ color: result.viable.startsWith('Strong') ? '#4ade80' : result.viable.startsWith('Marginal') ? '#facc15' : '#f87171', fontWeight: 600, fontSize: '0.9rem' }}>
                 Viability: {result.viable}
               </div>
             </div>

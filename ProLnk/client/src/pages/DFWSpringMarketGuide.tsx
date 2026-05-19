@@ -65,7 +65,7 @@ export default function DFWSpringMarketGuide() {
             <div key={i}>
               <button
                 onClick={() => setActive(active === String(i) ? null : String(i))}
-                style={{ width: '100%', textAlign: 'left', background: active === String(i) ? '#1E3A5F' : '#0F2340', border: '1px solid', borderColor: active === String(i) ? '#F5E642′ : '#1E3A5F', borderRadius: 10, padding: '14px 18px', color: '#E8EDF5', fontSize: 15, fontWeight: 600, cursor: ’pointer', display: 'flex', alignItems: 'center', gap: 12 }}
+                style={{ width: '100%', textAlign: 'left', background: active === String(i) ? '#1E3A5F' : '#0F2340', border: '1px solid', borderColor: active === String(i) ? '#F5E642' : '#1E3A5F', borderRadius: 10, padding: '14px 18px', color: '#E8EDF5', fontSize: 15, fontWeight: 600, cursor: 'pointer', display: 'flex', alignItems: 'center', gap: 12 }}
               >
                 <span>{f.icon}</span><span>{f.title}</span>
               </button>
@@ -87,7 +87,7 @@ export default function DFWSpringMarketGuide() {
               <button
                 key={r}
                 onClick={() => setRole(r)}
-                style={{ flex: 1, padding: '11px 0', background: role === r ? '#F5E642′ : '#1E3A5F', color: role === r ? '#0A1628' : '#E8EDF5', border: ’none', borderRadius: 8, fontWeight: 700, fontSize: 14, cursor: 'pointer' }}
+                style={{ flex: 1, padding: '11px 0', background: role === r ? '#F5E642' : '#1E3A5F', color: role === r ? '#0A1628' : '#E8EDF5', border: 'none', borderRadius: 8, fontWeight: 700, fontSize: 14, cursor: 'pointer' }}
               >
                 {r === 'buyer' ? '🛒 Buyer' : r === 'seller' ? '🏷️ Seller' : '🏠 Owner'}
               </button>

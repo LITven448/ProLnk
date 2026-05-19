@@ -19,10 +19,10 @@ export default function DFWHomeSystemsSafetyTotal() {
 
   const totalAvg = submitted ? Math.round(parsed.reduce((a, s) => a + s.score, 0) / SYSTEMS.length) : 0;
   const grade = totalAvg >= 90 ? 'A' : totalAvg >= 75 ? 'B' : totalAvg >= 60 ? 'C' : totalAvg >= 45 ? 'D' : 'F';
-  const gradeColor = totalAvg >= 90 ? '#22c55e' : totalAvg >= 75 ? '#84cc16′ : totalAvg >= 60 ? '#eab308' : totalAvg >= 45 ? '#f97316' : '#ef4444';
+  const gradeColor = totalAvg >= 90 ? '#22c55e' : totalAvg >= 75 ? '#84cc16' : totalAvg >= 60 ? '#eab308' : totalAvg >= 45 ? '#f97316' : '#ef4444';
 
   const systemGrade = (n: number) => n >= 90 ? 'A' : n >= 75 ? 'B' : n >= 60 ? 'C' : n >= 45 ? 'D' : 'F';
-  const systemColor = (n: number) => n >= 90 ? '#22c55e' : n >= 75 ? '#84cc16′ : n >= 60 ? '#eab308' : n >= 45 ? '#f97316' : '#ef4444';
+  const systemColor = (n: number) => n >= 90 ? '#22c55e' : n >= 75 ? '#84cc16' : n >= 60 ? '#eab308' : n >= 45 ? '#f97316' : '#ef4444';
 
   const worstThree = [...parsed].sort((a, b) => a.score - b.score).slice(0, 3);
 
@@ -33,8 +33,8 @@ export default function DFWHomeSystemsSafetyTotal() {
       <div style={{ maxWidth: 720, margin: '0 auto' }}>
         <div style={{ textAlign: 'center', marginBottom: 32 }}>
           <div style={{ fontSize: 40 }}>🏡</div>
-          <h1 style={{ color: '#F5E642', fontSize: 28, margin: '8px 0′ }}>DFW Home Safety Total Score</h1>
-          <p style={{ color: '#94a3b8′ }}>Enter your score (0–100) from each system assessment</p>
+          <h1 style={{ color: '#F5E642', fontSize: 28, margin: '8px 0' }}>DFW Home Safety Total Score</h1>
+          <p style={{ color: '#94a3b8' }}>Enter your score (0–100) from each system assessment</p>
         </div>
 
         {!submitted ? (
@@ -48,7 +48,7 @@ export default function DFWHomeSystemsSafetyTotal() {
                     <div style={{ color: '#94a3b8', fontSize: 13 }}>{s.description}</div>
                   </div>
                 </div>
-                <div style={{ background: '#0a1e3a', borderRadius: 8, padding: '8px 12px', marginBottom: 12, fontSize: 13, color: '#f97316′ }}>
+                <div style={{ background: '#0a1e3a', borderRadius: 8, padding: '8px 12px', marginBottom: 12, fontSize: 13, color: '#f97316' }}>
                   ⚠️ DFW Note: {s.dfwNote}
                 </div>
                 <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
@@ -77,7 +77,7 @@ export default function DFWHomeSystemsSafetyTotal() {
             <div style={{ background: '#0f2038', borderRadius: 16, padding: 32, marginBottom: 24, textAlign: 'center' }}>
               <p style={{ color: '#94a3b8', margin: 0 }}>Overall Home Safety Grade</p>
               <div style={{ fontSize: 96, fontWeight: 900, color: gradeColor, lineHeight: 1 }}>{grade}</div>
-              <div style={{ fontSize: 40, fontWeight: 700, color: '#F5E642′ }}>{totalAvg}%</div>
+              <div style={{ fontSize: 40, fontWeight: 700, color: '#F5E642' }}>{totalAvg}%</div>
             </div>
 
             <div style={{ background: '#0f2038', borderRadius: 12, padding: 20, marginBottom: 20 }}>

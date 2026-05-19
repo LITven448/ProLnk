@@ -71,7 +71,7 @@ export default function DFWWholehomeAudioGuide() {
               {[{ v: '2-3', l: '2–3 Zones' }, { v: '4-6', l: '4–6 Zones' }].map((o) => (
                 <button key={o.v} onClick={() => setZones(o.v)}
                   style={{ padding: '10px 16px', borderRadius: 8, border: `2px solid ${zones === o.v ? '#F5E642' : '#1E2D4A'}`,
-                    backgroundColor: zones === o.v ? '#F5E642′ : ’transparent', color: zones === o.v ? '#0A1628′ : '#9BA3B8',
+                    backgroundColor: zones === o.v ? '#F5E642' : 'transparent', color: zones === o.v ? '#0A1628' : '#9BA3B8',
                     cursor: 'pointer', fontWeight: 600, fontSize: 13 }}>
                   {o.l}
                 </button>
@@ -84,7 +84,7 @@ export default function DFWWholehomeAudioGuide() {
               {[{ v: 'indoor', l: 'Indoor Zones' }, { v: 'outdoor', l: 'Outdoor / Patio / Pool' }].map((o) => (
                 <button key={o.v} onClick={() => setLocation(o.v)}
                   style={{ padding: '10px 16px', borderRadius: 8, border: `2px solid ${location === o.v ? '#F5E642' : '#1E2D4A'}`,
-                    backgroundColor: location === o.v ? '#F5E642′ : ’transparent', color: location === o.v ? '#0A1628′ : '#9BA3B8',
+                    backgroundColor: location === o.v ? '#F5E642' : 'transparent', color: location === o.v ? '#0A1628' : '#9BA3B8',
                     cursor: 'pointer', fontWeight: 600, fontSize: 13 }}>
                   {o.l}
                 </button>
@@ -97,7 +97,7 @@ export default function DFWWholehomeAudioGuide() {
               {[{ v: 'budget', l: 'Entry' }, { v: 'mid', l: 'Mid-Range' }, { v: 'premium', l: 'Premium' }].map((o) => (
                 <button key={o.v} onClick={() => setBudget(o.v)}
                   style={{ padding: '10px 16px', borderRadius: 8, border: `2px solid ${budget === o.v ? '#F5E642' : '#1E2D4A'}`,
-                    backgroundColor: budget === o.v ? '#F5E642′ : ’transparent', color: budget === o.v ? '#0A1628′ : '#9BA3B8',
+                    backgroundColor: budget === o.v ? '#F5E642' : 'transparent', color: budget === o.v ? '#0A1628' : '#9BA3B8',
                     cursor: 'pointer', fontWeight: 600, fontSize: 13 }}>
                   {o.l}
                 </button>

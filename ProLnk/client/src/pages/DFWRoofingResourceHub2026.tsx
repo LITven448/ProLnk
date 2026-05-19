@@ -57,7 +57,7 @@ export default function DFWRoofingResourceHub2026() {
           </p>
         </div>
 
-        <div style={{ background: '#1e3a5f', borderRadius: 12, padding: 16, marginBottom: 28, border: '1px solid #F5E642′ }}>
+        <div style={{ background: '#1e3a5f', borderRadius: 12, padding: 16, marginBottom: 28, border: '1px solid #F5E642' }}>
           <p style={{ color: '#F5E642', fontWeight: 700, margin: '0 0 4px', fontSize: 14 }}>⛈️ DFW Storm Season Alert</p>
           <p style={{ color: '#94a3b8', margin: 0, fontSize: 14 }}>
             Dallas-Fort Worth averages 6-8 hailstorms per year, many exceeding 2" in diameter. North Texas consistently ranks #1 for hail damage insurance claims nationally.
@@ -71,7 +71,7 @@ export default function DFWRoofingResourceHub2026() {
               onClick={() => setActive(c.id)}
               style={{
                 padding: '10px 20px', borderRadius: 24, border: 'none', cursor: 'pointer', fontWeight: 700, fontSize: 14,
-                background: active === c.id ? '#F5E642′ : '#1e3a5f', color: active === c.id ? '#0A1628' : '#94a3b8',
+                background: active === c.id ? '#F5E642' : '#1e3a5f', color: active === c.id ? '#0A1628' : '#94a3b8',
               }}
             >
               {c.label}
@@ -94,7 +94,7 @@ export default function DFWRoofingResourceHub2026() {
           ))}
         </div>
 
-        <div style={{ background: '#1e3a5f', borderRadius: 16, padding: 28, textAlign: 'center', border: '2px solid #F5E642′ }}>
+        <div style={{ background: '#1e3a5f', borderRadius: 16, padding: 28, textAlign: 'center', border: '2px solid #F5E642' }}>
           <div style={{ fontSize: 32, marginBottom: 8 }}>🏠</div>
           <h2 style={{ fontSize: 22, fontWeight: 800, color: '#F5E642', margin: '0 0 8px' }}>Get Matched with a Trusted DFW Roofer</h2>
           <p style={{ color: '#94a3b8', marginBottom: 16 }}>ProLnk verifies DFW roofing contractors so you don\'t have to. No storm chasers, no scams.</p>

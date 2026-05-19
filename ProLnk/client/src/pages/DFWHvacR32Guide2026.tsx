@@ -1,11 +1,11 @@
 import { useState } from 'react';
 
 const refrigerants = [
-  { name: 'R-22 (Freon)', gwp: 1810, status: 'Phased Out 2020', color: '#ef4444′ },
-  { name: 'R-410A (Puron)', gwp: 2088, status: 'Phase-Out by 2025', color: '#f97316′ },
-  { name: 'R-32', gwp: 675, status: 'Transitional Choice', color: '#eab308′ },
+  { name: 'R-22 (Freon)', gwp: 1810, status: 'Phased Out 2020', color: '#ef4444' },
+  { name: 'R-410A (Puron)', gwp: 2088, status: 'Phase-Out by 2025', color: '#f97316' },
+  { name: 'R-32', gwp: 675, status: 'Transitional Choice', color: '#eab308' },
   { name: 'R-454B (Puron Advance)', gwp: 466, status: 'Carrier Standard', color: '#22c55e' },
-  { name: 'R-290 (Propane)', gwp: 3, status: 'Future Low-GWP', color: '#06b6d4′ },
+  { name: 'R-290 (Propane)', gwp: 3, status: 'Future Low-GWP', color: '#06b6d4' },
 ];
 
 const ageToRefrigerant: Record<string, string> = {
@@ -48,8 +48,8 @@ export default function DFWHvacR32Guide2026() {
             <div key={r.name} style={{ display: 'flex', alignItems: 'center', gap: 16, marginBottom: 12, padding: 12, background: '#0d1f35', borderRadius: 8 }}>
               <div style={{ width: 12, height: 12, borderRadius: '50%', background: r.color, flexShrink: 0 }} />
               <div style={{ flex: 1 }}>
-                <div style={{ fontWeight: 600, color: '#e2e8f0′ }}>{r.name}</div>
-                <div style={{ fontSize: 13, color: '#94a3b8′ }}>{r.status}</div>
+                <div style={{ fontWeight: 600, color: '#e2e8f0' }}>{r.name}</div>
+                <div style={{ fontSize: 13, color: '#94a3b8' }}>{r.status}</div>
               </div>
               <div style={{ textAlign: 'right' }}>
                 <div style={{ color: r.color, fontWeight: 700 }}>GWP: {r.gwp.toLocaleString()}</div>
@@ -80,14 +80,14 @@ export default function DFWHvacR32Guide2026() {
               <button
                 key={key}
                 onClick={() => { setSystemAge(key); setShowResult(true); }}
-                style={{ padding: '10px 16px', background: systemAge === key ? '#F5E642′ : '#0d1f35', color: systemAge === key ? '#0A1628' : '#e2e8f0', border: '1px solid #1e3a5f', borderRadius: 8, cursor: ’pointer', fontWeight: 600, fontSize: 14 }}
+                style={{ padding: '10px 16px', background: systemAge === key ? '#F5E642' : '#0d1f35', color: systemAge === key ? '#0A1628' : '#e2e8f0', border: '1px solid #1e3a5f', borderRadius: 8, cursor: 'pointer', fontWeight: 600, fontSize: 14 }}
               >
                 {key.replace(/-/g, ' ')}
               </button>
             ))}
           </div>
           {showResult && systemAge && (
-            <div style={{ background: '#0d1f35', borderRadius: 10, padding: 16, borderLeft: '4px solid #F5E642′ }}>
+            <div style={{ background: '#0d1f35', borderRadius: 10, padding: 16, borderLeft: '4px solid #F5E642' }}>
               <p style={{ color: '#e2e8f0', lineHeight: 1.7 }}>{ageToRefrigerant[systemAge]}</p>
             </div>
           )}

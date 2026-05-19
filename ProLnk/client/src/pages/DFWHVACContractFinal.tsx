@@ -48,11 +48,11 @@ export default function DFWHVACContractFinal() {
           </div>
           <button onClick={evaluate} style={{ background: '#F5E642', color: '#0A1628', fontWeight: 700, padding: '14px 32px', borderRadius: 8, border: 'none', cursor: 'pointer', fontSize: 16 }}>Get Checklist →</button>
           {checklist.length > 0 && (
-            <div style={{ marginTop: 24, background: '#0A1628', borderRadius: 12, padding: 20, border: '1px solid #F5E642′ }}>
+            <div style={{ marginTop: 24, background: '#0A1628', borderRadius: 12, padding: 20, border: '1px solid #F5E642' }}>
               <div style={{ color: '#F5E642', fontWeight: 700, marginBottom: 12 }}>✅ {contractStage} Checklist</div>
               {checklist.map(item => (
                 <div key={item} style={{ color: '#cbd5e1', fontSize: 14, padding: '6px 0', borderBottom: '1px solid #1e3a5f', display: 'flex', gap: 8 }}>
-                  <span style={{ color: '#F5E642′ }}>□</span> {item}
+                  <span style={{ color: '#F5E642' }}>□</span> {item}
                 </div>
               ))}
             </div>
@@ -62,7 +62,7 @@ export default function DFWHVACContractFinal() {
         <div style={{ background: '#0f2035', borderRadius: 16, padding: 32, border: '1px solid #7f1d1d' }}>
           <h2 style={{ color: '#f87171', marginBottom: 16 }}>🚩 DFW Contract Red Flags</h2>
           {redFlags.map(flag => (
-            <div key={flag} style={{ color: '#fca5a5', fontSize: 14, padding: '8px 0', borderBottom: '1px solid #2d1111′ }}>{flag}</div>
+            <div key={flag} style={{ color: '#fca5a5', fontSize: 14, padding: '8px 0', borderBottom: '1px solid #2d1111' }}>{flag}</div>
           ))}
           <div style={{ color: '#60a5fa', fontSize: 13, marginTop: 16 }}>ProLnk-matched DFW contractors sign a standard ProLnk contract addendum covering all required terms before any job starts.</div>
         </div>

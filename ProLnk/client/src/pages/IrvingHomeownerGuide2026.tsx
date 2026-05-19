@@ -34,7 +34,7 @@ export default function IrvingHomeownerGuide2026() {
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12 }}>
             {homeAreas.map(a => (
               <button key={a.id} onClick={() => setSelected(a.id === selected ? null : a.id)}
-                style={{ backgroundColor: selected === a.id ? '#F5E642′ : '#112240', color: selected === a.id ? '#0A1628' : '#E8E8E8', border: ’none', borderRadius: 10, padding: 16, cursor: 'pointer', textAlign: 'left' }}>
+                style={{ backgroundColor: selected === a.id ? '#F5E642' : '#112240', color: selected === a.id ? '#0A1628' : '#E8E8E8', border: 'none', borderRadius: 10, padding: 16, cursor: 'pointer', textAlign: 'left' }}>
                 <div style={{ fontWeight: 700 }}>{a.label}</div>
                 <div style={{ fontSize: 12, opacity: 0.7 }}>{a.era}</div>
               </button>
@@ -47,7 +47,7 @@ export default function IrvingHomeownerGuide2026() {
             <h3 style={{ color: '#F5E642', marginBottom: 12 }}>🔧 {area.label} Maintenance Priorities</h3>
             {area.tips.map(t => (
               <div key={t} style={{ display: 'flex', alignItems: 'flex-start', gap: 10, marginBottom: 10 }}>
-                <span style={{ color: '#F5E642′ }}>▸</span>
+                <span style={{ color: '#F5E642' }}>▸</span>
                 <span style={{ fontSize: 14, lineHeight: 1.5 }}>{t}</span>
               </div>
             ))}
@@ -59,7 +59,7 @@ export default function IrvingHomeownerGuide2026() {
           {[{m:'February',t:'Schedule HVAC tune-up before summer peak'},{m:'April',t:'Foundation inspection after spring rains'},{m:'June',t:'Check attic ventilation and insulation for heat season'},{m:'October',t:'Clean gutters, inspect roof before winter storms'}].map(item => (
             <div key={item.m} style={{ display: 'flex', gap: 12, marginBottom: 10, alignItems: 'center' }}>
               <span style={{ color: '#F5E642', fontWeight: 700, minWidth: 80, fontSize: 13 }}>{item.m}</span>
-              <span style={{ fontSize: 13, color: '#A0AEC0′ }}>{item.t}</span>
+              <span style={{ fontSize: 13, color: '#A0AEC0' }}>{item.t}</span>
             </div>
           ))}
         </div>

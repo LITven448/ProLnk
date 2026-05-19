@@ -65,15 +65,15 @@ export default function DFWRetiredOwnerGuide() {
     <div style={{ background: '#F8F9FA', minHeight: '100vh', color: '#1A2332', fontFamily: 'system-ui', padding: '32px 16px' }}>
       <div style={{ maxWidth: 760, margin: '0 auto' }}>
         <div style={{ color: '#0A1628', fontSize: 13, fontWeight: 700, letterSpacing: 2, marginBottom: 8 }}>DFW RETIRED HOMEOWNER</div>
-        <h1 style={{ fontSize: 28, fontWeight: 800, margin: '0 0 8px', color: '#0A1628′ }}>Retired Owner Guide</h1>
+        <h1 style={{ fontSize: 28, fontWeight: 800, margin: '0 0 8px', color: '#0A1628' }}>Retired Owner Guide</h1>
         <p style={{ color: '#5A6A7E', fontSize: 15, margin: '0 0 32px' }}>Financial and practical priorities for retired DFW homeowners — from tax freezes to estate planning.</p>
 
         <div style={{ background: '#FFFFFF', borderRadius: 12, padding: 20, marginBottom: 24, boxShadow: '0 2px 8px rgba(0,0,0,0.06)' }}>
-          <div style={{ fontWeight: 700, marginBottom: 12, color: '#0A1628′ }}>Your Situation</div>
+          <div style={{ fontWeight: 700, marginBottom: 12, color: '#0A1628' }}>Your Situation</div>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 10 }}>
             {SITUATIONS.map(s => (
               <button key={s.id} onClick={() => setSituationId(s.id)}
-                style={{ background: s.id === situationId ? '#0A1628′ : '#F0F4F8', color: s.id === situationId ? '#F5E642' : '#1A2332',
+                style={{ background: s.id === situationId ? '#0A1628' : '#F0F4F8', color: s.id === situationId ? '#F5E642' : '#1A2332',
                   border: 'none', borderRadius: 8, padding: '10px 14px', cursor: 'pointer', fontWeight: 600, fontSize: 13, textAlign: 'left' }}>
                 {s.label}
               </button>
@@ -84,11 +84,11 @@ export default function DFWRetiredOwnerGuide() {
         <div style={{ background: '#FFFFFF', borderRadius: 12, padding: 24, marginBottom: 20, boxShadow: '0 2px 8px rgba(0,0,0,0.08)', borderTop: `4px solid ${sel.color}` }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 14 }}>
             <span style={{ background: sel.color, color: '#fff', borderRadius: 6, padding: '3px 10px', fontSize: 11, fontWeight: 800 }}>{sel.priority}</span>
-            <span style={{ fontSize: 18, fontWeight: 800, color: '#0A1628′ }}>{sel.label}</span>
+            <span style={{ fontSize: 18, fontWeight: 800, color: '#0A1628' }}>{sel.label}</span>
           </div>
           <p style={{ color: '#3A4A5E', fontSize: 14, lineHeight: 1.6, marginBottom: 20 }}>{sel.summary}</p>
           <div style={{ background: '#F0F4F8', borderRadius: 10, padding: 16, marginBottom: 16 }}>
-            <div style={{ fontWeight: 700, marginBottom: 10, fontSize: 13, color: '#0A1628′ }}>Key Steps</div>
+            <div style={{ fontWeight: 700, marginBottom: 10, fontSize: 13, color: '#0A1628' }}>Key Steps</div>
             {sel.steps.map((step, i) => (
               <div key={i} style={{ display: 'flex', gap: 10, marginBottom: 8, fontSize: 13, color: '#3A4A5E' }}>
                 <span style={{ color: sel.color, fontWeight: 800, flexShrink: 0 }}>+</span> {step}

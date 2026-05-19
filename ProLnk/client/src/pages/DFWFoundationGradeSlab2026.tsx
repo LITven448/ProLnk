@@ -49,7 +49,7 @@ export default function DFWFoundationGradeSlab2026() {
         <div style={{ background: '#1e3a5f', borderRadius: 8, padding: '1rem', marginBottom: '2rem' }}>
           <div style={{ color: '#F5E642', fontWeight: 700, marginBottom: '0.5rem' }}>🧱 DFW Clay Reality</div>
           <p style={{ color: '#cbd5e1', margin: 0 }}>
-            Dallas-Fort Worth sits on some of <strong style={{ color: '#F5E642′ }}>North America’s most expansive clay</strong>. A dry summer followed by heavy rain can move soil 2–4 inches — enough to crack any foundation type.
+            Dallas-Fort Worth sits on some of <strong style={{ color: '#F5E642' }}>North America's most expansive clay</strong>. A dry summer followed by heavy rain can move soil 2–4 inches — enough to crack any foundation type.
           </p>
         </div>
 
@@ -57,7 +57,7 @@ export default function DFWFoundationGradeSlab2026() {
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '1rem', marginBottom: '2rem' }}>
           {foundationTypes.map(f => (
             <button key={f.id} onClick={() => setSelected(f.id)}
-              style={{ background: selected === f.id ? '#F5E642′ : '#1e293b', color: selected === f.id ? '#0A1628' : '#fff', border: '2px solid' + (selected === f.id ? ' #F5E642' : ' #334155'), borderRadius: 8, padding: '1rem', cursor: ’pointer', textAlign: 'left' }}>
+              style={{ background: selected === f.id ? '#F5E642' : '#1e293b', color: selected === f.id ? '#0A1628' : '#fff', border: '2px solid' + (selected === f.id ? ' #F5E642' : ' #334155'), borderRadius: 8, padding: '1rem', cursor: 'pointer', textAlign: 'left' }}>
               <div style={{ fontWeight: 700 }}>{f.label}</div>
               <div style={{ fontSize: '0.8rem', opacity: 0.8 }}>{f.desc}</div>
             </button>
@@ -65,12 +65,12 @@ export default function DFWFoundationGradeSlab2026() {
         </div>
 
         {selected && guideMap[selected] && (
-          <div style={{ background: '#1e293b', borderRadius: 8, padding: '1.5rem', borderLeft: '4px solid #F5E642′ }}>
+          <div style={{ background: '#1e293b', borderRadius: 8, padding: '1.5rem', borderLeft: '4px solid #F5E642' }}>
             <h3 style={{ color: '#F5E642', marginBottom: '1rem' }}>{guideMap[selected].title}</h3>
             <ul style={{ margin: 0, padding: 0, listStyle: 'none' }}>
               {guideMap[selected].points.map((p, i) => (
                 <li key={i} style={{ padding: '0.5rem 0', borderBottom: '1px solid #334155', color: '#cbd5e1', display: 'flex', gap: '0.5rem' }}>
-                  <span style={{ color: '#F5E642′ }}>✓</span>{p}
+                  <span style={{ color: '#F5E642' }}>✓</span>{p}
                 </li>
               ))}
             </ul>

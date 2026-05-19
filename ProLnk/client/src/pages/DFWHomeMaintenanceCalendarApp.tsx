@@ -39,16 +39,16 @@ export default function DFWHomeMaintenanceCalendarApp() {
 
       <div style={{ display: 'grid', gridTemplateColumns: 'repeat(6, 1fr)', gap: 6, marginBottom: 20 }}>
         {Object.entries(CALENDAR).map(([m, { name }]) => (
-          <button key={m} onClick={() => setSelected(Number(m))} style={{ padding: '8px 4px', borderRadius: 8, border: 'none', cursor: 'pointer', background: selected === Number(m) ? '#F5E642′ : '#0D1F35', color: selected === Number(m) ? '#0A1628' : '#aaa', fontWeight: 600, fontSize: '0.75rem' }}>
+          <button key={m} onClick={() => setSelected(Number(m))} style={{ padding: '8px 4px', borderRadius: 8, border: 'none', cursor: 'pointer', background: selected === Number(m) ? '#F5E642' : '#0D1F35', color: selected === Number(m) ? '#0A1628' : '#aaa', fontWeight: 600, fontSize: '0.75rem' }}>
             {name.slice(0, 3)}
           </button>
         ))}
       </div>
 
       <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap', marginBottom: 20 }}>
-        <button onClick={() => setFilter('all')} style={{ padding: '5px 14px', borderRadius: 20, border: 'none', cursor: 'pointer', background: filter === 'all' ? '#F5E642′ : '#1C2E45', color: filter === ’all' ? '#0A1628′ : '#aaa', fontSize: '0.8rem' }}>All trades</button>
+        <button onClick={() => setFilter('all')} style={{ padding: '5px 14px', borderRadius: 20, border: 'none', cursor: 'pointer', background: filter === 'all' ? '#F5E642' : '#1C2E45', color: filter === 'all' ? '#0A1628' : '#aaa', fontSize: '0.8rem' }}>All trades</button>
         {Object.entries(TRADES).map(([key, { label, emoji }]) => (
-          <button key={key} onClick={() => setFilter(filter === key ? 'all' : key)} style={{ padding: '5px 14px', borderRadius: 20, border: 'none', cursor: 'pointer', background: filter === key ? '#F5E642′ : '#1C2E45', color: filter === key ? '#0A1628' : '#aaa', fontSize: '0.8rem' }}>
+          <button key={key} onClick={() => setFilter(filter === key ? 'all' : key)} style={{ padding: '5px 14px', borderRadius: 20, border: 'none', cursor: 'pointer', background: filter === key ? '#F5E642' : '#1C2E45', color: filter === key ? '#0A1628' : '#aaa', fontSize: '0.8rem' }}>
             {emoji} {label}
           </button>
         ))}

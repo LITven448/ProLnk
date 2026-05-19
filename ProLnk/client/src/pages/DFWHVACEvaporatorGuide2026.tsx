@@ -37,18 +37,18 @@ export default function DFWHVACEvaporatorGuide2026() {
           {facts.map(f => (
             <div key={f.title} style={{ background: '#1e2d45', borderRadius: 8, padding: 16 }}>
               <div style={{ fontSize: 22, marginBottom: 8 }}>{f.icon}</div>
-              <div style={{ fontWeight: 700, marginBottom: 4, color: '#F5E642′ }}>{f.title}</div>
+              <div style={{ fontWeight: 700, marginBottom: 4, color: '#F5E642' }}>{f.title}</div>
               <div style={{ color: '#94a3b8', fontSize: 13, lineHeight: 1.5 }}>{f.body}</div>
             </div>
           ))}
         </div>
 
         <div style={{ background: '#1e2d45', borderRadius: 10, padding: 24, marginBottom: 20 }}>
-          <h2 style={{ fontSize: 18, fontWeight: 700, marginBottom: 16, color: '#F5E642′ }}>🔍 HVAC Performance Issue → Evaporator Coil Assessment</h2>
+          <h2 style={{ fontSize: 18, fontWeight: 700, marginBottom: 16, color: '#F5E642' }}>🔍 HVAC Performance Issue → Evaporator Coil Assessment</h2>
           <div style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
             {issues.map(i => (
               <button key={i.id} onClick={() => setSelected(i.id)}
-                style={{ background: selected === i.id ? '#F5E642′ : '#0A1628', color: selected === i.id ? '#0A1628' : '#fff', border: '1px solid #2d3f5a', borderRadius: 8, padding: '12px 16px', textAlign: ’left', cursor: 'pointer', fontWeight: 600 }}>
+                style={{ background: selected === i.id ? '#F5E642' : '#0A1628', color: selected === i.id ? '#0A1628' : '#fff', border: '1px solid #2d3f5a', borderRadius: 8, padding: '12px 16px', textAlign: 'left', cursor: 'pointer', fontWeight: 600 }}>
                 {i.label}
               </button>
             ))}
@@ -61,8 +61,8 @@ export default function DFWHVACEvaporatorGuide2026() {
           )}
         </div>
 
-        <div style={{ background: '#1e2d45', borderRadius: 8, padding: 16, fontSize: 13, color: '#94a3b8′ }}>
-          <strong style={{ color: '#F5E642′ }}>ProLnk Tip:</strong> DFW HVAC coil cleaning is a high-demand service April-May. Homeowners with humidity complaints and running AC are almost always dealing with a dirty evaporator coil — quick diagnostic win for HVAC pros.
+        <div style={{ background: '#1e2d45', borderRadius: 8, padding: 16, fontSize: 13, color: '#94a3b8' }}>
+          <strong style={{ color: '#F5E642' }}>ProLnk Tip:</strong> DFW HVAC coil cleaning is a high-demand service April-May. Homeowners with humidity complaints and running AC are almost always dealing with a dirty evaporator coil — quick diagnostic win for HVAC pros.
         </div>
       </div>
     </div>

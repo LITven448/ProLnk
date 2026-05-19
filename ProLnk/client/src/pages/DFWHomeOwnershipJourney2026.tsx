@@ -70,7 +70,7 @@ export default function DFWHomeOwnershipJourney2026() {
           {journey.map(j => (
             <button key={j.id} onClick={() => setStage(j.id)}
               style={{ padding: '7px 14px', borderRadius: 8, border: 'none', cursor: 'pointer', fontWeight: 600, fontSize: 13,
-                background: stage === j.id ? '#F5E642′ : '#1e2d45', color: stage === j.id ? '#0A1628' : '#94a3b8' }}>
+                background: stage === j.id ? '#F5E642' : '#1e2d45', color: stage === j.id ? '#0A1628' : '#94a3b8' }}>
               {j.label}
             </button>
           ))}
@@ -80,7 +80,7 @@ export default function DFWHomeOwnershipJourney2026() {
           <p style={{ color: '#94a3b8', marginBottom: 20, lineHeight: 1.6 }}>{s.description}</p>
           <h3 style={{ color: '#F5E642', fontSize: 14, fontWeight: 700, marginBottom: 12 }}>✅ What to do now</h3>
           {s.tips.map((tip, i) => (
-            <div key={i} style={{ padding: '10px 0', borderBottom: i < s.tips.length - 1 ? '1px solid #1e2d45′ : ’none', color: '#e2e8f0', fontSize: 14 }}>
+            <div key={i} style={{ padding: '10px 0', borderBottom: i < s.tips.length - 1 ? '1px solid #1e2d45' : 'none', color: '#e2e8f0', fontSize: 14 }}>
               • {tip}
             </div>
           ))}
@@ -92,7 +92,7 @@ export default function DFWHomeOwnershipJourney2026() {
             Next milestone: <span style={{ color: '#F5E642', fontWeight: 600 }}>{s.next}</span>
           </div>
         </div>
-        <div style={{ background: '#F5E642', borderRadius: 12, padding: '16px 20px', color: '#0A1628′ }}>
+        <div style={{ background: '#F5E642', borderRadius: 12, padding: '16px 20px', color: '#0A1628' }}>
           <strong>🏠 ProLnk supports every stage of your DFW homeownership journey.</strong> One platform, vetted pros, from move-in to move-out.
         </div>
       </div>

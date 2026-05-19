@@ -33,12 +33,12 @@ export default function DFWPlumbingLongTerm2026() {
           <h2 style={{ color: '#F5E642', fontSize: 16, marginBottom: 16 }}>🏠 Home Age</h2>
           <select value={homeAge} onChange={e => { setHomeAge(e.target.value); setPlan(false); }} style={{ width: '100%', background: '#0A1628', color: '#fff', border: '1px solid #F5E642', borderRadius: 8, padding: '10px', fontSize: 14, marginBottom: 16 }}>
             <option value="">-- Select home age --</option>
-            <option value="under10″>Under 10 years</option>
-            <option value="10to20″>10–20 years</option>
-            <option value="20to30″>20–30 years</option>
-            <option value="over30″>Over 30 years</option>
+            <option value="under10">Under 10 years</option>
+            <option value="10to20">10–20 years</option>
+            <option value="20to30">20–30 years</option>
+            <option value="over30">Over 30 years</option>
           </select>
-          <button onClick={() => setPlan(true)} disabled={!homeAge} style={{ background: homeAge ? '#F5E642′ : '#334155', color: '#0A1628', border: ’none', borderRadius: 8, padding: '12px 28px', fontWeight: 700, fontSize: 15, cursor: homeAge ? 'pointer' : 'default' }}>
+          <button onClick={() => setPlan(true)} disabled={!homeAge} style={{ background: homeAge ? '#F5E642' : '#334155', color: '#0A1628', border: 'none', borderRadius: 8, padding: '12px 28px', fontWeight: 700, fontSize: 15, cursor: homeAge ? 'pointer' : 'default' }}>
             Generate My Plumbing Plan →
           </button>
         </div>
@@ -65,7 +65,7 @@ export default function DFWPlumbingLongTerm2026() {
         <div style={{ background: '#1e2d45', borderRadius: 12, padding: 20, marginTop: 8 }}>
           <h3 style={{ color: '#F5E642', fontSize: 14, marginBottom: 10 }}>💧 DFW Plumbing Facts</h3>
           {['DFW water hardness: 200–400 ppm (very hard)', 'Slab leak repair avg cost: $3,000–$8,000 per leak', 'Whole-home PEX repipe: $8,000–$18,000 in DFW', 'Water softener ROI in DFW: typically 3–5 years'].map((f, i) => (
-            <div key={i} style={{ fontSize: 13, color: '#cbd5e1', padding: '6px 0', borderBottom: i < 3 ? '1px solid #334155′ : ’none' }}>📍 {f}</div>
+            <div key={i} style={{ fontSize: 13, color: '#cbd5e1', padding: '6px 0', borderBottom: i < 3 ? '1px solid #334155' : 'none' }}>📍 {f}</div>
           ))}
         </div>
       </div>

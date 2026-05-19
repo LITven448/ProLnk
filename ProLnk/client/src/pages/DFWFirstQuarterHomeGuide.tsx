@@ -26,7 +26,7 @@ const priorities: Record<string, { q1Task: string; timing: string; why: string; 
   ],
 };
 
-const urgencyColor: Record<string, string> = { CRITICAL: '#ef4444', HIGH: '#f97316', MEDIUM: '#F5E642', LOW: '#4ade80′ };
+const urgencyColor: Record<string, string> = { CRITICAL: '#ef4444', HIGH: '#f97316', MEDIUM: '#F5E642', LOW: '#4ade80' };
 
 export default function DFWFirstQuarterHomeGuide() {
   const [selected, setSelected] = useState<string[]>([]);
@@ -53,13 +53,13 @@ export default function DFWFirstQuarterHomeGuide() {
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0.5rem', marginBottom: '1rem' }}>
             {features.map(f => (
               <label key={f} style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', cursor: 'pointer', padding: '0.5rem', borderRadius: 6, background: selected.includes(f) ? '#1e3a5f' : '#0A1628', border: `1px solid ${selected.includes(f) ? '#F5E642' : '#1e3a5f'}` }}>
-                <input type="checkbox" checked={selected.includes(f)} onChange={() => toggle(f)} style={{ accentColor: '#F5E642′ }} />
+                <input type="checkbox" checked={selected.includes(f)} onChange={() => toggle(f)} style={{ accentColor: '#F5E642' }} />
                 <span style={{ fontSize: '0.9rem' }}>{f}</span>
               </label>
             ))}
           </div>
           <button onClick={() => setShown(true)} disabled={selected.length === 0}
-            style={{ background: selected.length > 0 ? '#F5E642′ : '#1e3a5f', color: '#0A1628', border: ’none', borderRadius: 8, padding: '0.75rem 2rem', fontWeight: 700, fontSize: '1rem', cursor: selected.length > 0 ? 'pointer' : 'default' }}>
+            style={{ background: selected.length > 0 ? '#F5E642' : '#1e3a5f', color: '#0A1628', border: 'none', borderRadius: 8, padding: '0.75rem 2rem', fontWeight: 700, fontSize: '1rem', cursor: selected.length > 0 ? 'pointer' : 'default' }}>
             Build My Q1 Priority List
           </button>
         </div>

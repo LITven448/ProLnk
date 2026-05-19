@@ -164,7 +164,7 @@ export default function PartnerDailyPlannerGuide() {
             onClick={handleGenerate}
             disabled={!trade}
             style={{
-              background: trade ? '#6366f1′ : '#cbd5e1', color: '#fff',
+              background: trade ? '#6366f1' : '#cbd5e1', color: '#fff',
               border: 'none', borderRadius: 10, padding: '12px 28px',
               fontSize: 15, fontWeight: 700, cursor: trade ? 'pointer' : 'not-allowed',
               marginBottom: generated ? 24 : 0,
@@ -174,21 +174,21 @@ export default function PartnerDailyPlannerGuide() {
           </button>
 
           {generated && (
-            <div style={{ background: '#fff', borderRadius: 12, padding: 24, border: '1px solid #e2e8f0′ }}>
+            <div style={{ background: '#fff', borderRadius: 12, padding: 24, border: '1px solid #e2e8f0' }}>
               <div style={{ fontWeight: 700, color: '#312e81', fontSize: 17, marginBottom: 16 }}>
                 Your Custom ProLnk Schedule — {trade}
               </div>
               <div style={{ display: 'grid', gap: 10 }}>
-                <div style={{ display: 'flex', justifyContent: 'space-between', padding: '10px 0', borderBottom: '1px solid #f1f5f9′ }}>
-                  <span style={{ color: '#475569′ }}>🌅 Morning dashboard check</span>
+                <div style={{ display: 'flex', justifyContent: 'space-between', padding: '10px 0', borderBottom: '1px solid #f1f5f9' }}>
+                  <span style={{ color: '#475569' }}>🌅 Morning dashboard check</span>
                   <span style={{ color: '#6366f1', fontWeight: 600 }}>{startHour}:00–{startHour}:30 AM</span>
                 </div>
-                <div style={{ display: 'flex', justifyContent: 'space-between', padding: '10px 0', borderBottom: '1px solid #f1f5f9′ }}>
-                  <span style={{ color: '#475569′ }}>🔧 On-site jobs + photo uploads</span>
+                <div style={{ display: 'flex', justifyContent: 'space-between', padding: '10px 0', borderBottom: '1px solid #f1f5f9' }}>
+                  <span style={{ color: '#475569' }}>🔧 On-site jobs + photo uploads</span>
                   <span style={{ color: '#6366f1', fontWeight: 600' }}>{startHour}:30 AM – {Number(endHour) > 12 ? `${Number(endHour)-12}:00 PM` : `${endHour}:00`}</span>
                 </div>
-                <div style={{ display: 'flex', justifyContent: 'space-between', padding: '10px 0′ }}>
-                  <span style={{ color: '#475569′ }}>🌇 Evening wrap-up</span>
+                <div style={{ display: 'flex', justifyContent: 'space-between', padding: '10px 0' }}>
+                  <span style={{ color: '#475569' }}>🌇 Evening wrap-up</span>
                   <span style={{ color: '#6366f1', fontWeight: 600 }}>{Number(endHour) > 12 ? `${Number(endHour)-12}:00` : endHour}–{Number(endHour) > 12 ? `${Number(endHour)-11}:15 PM` : `${Number(endHour)+1}:15`}</span>
                 </div>
               </div>

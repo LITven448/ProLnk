@@ -36,10 +36,10 @@ export default function DFWHVACTipsLoop() {
               style={{
                 width: 44, height: 44,
                 borderRadius: '50%',
-                background: active === t.n ? '#F5E642′ : '#0F2040',
-                color: active === t.n ? '#0A1628′ : '#fff',
+                background: active === t.n ? '#F5E642' : '#0F2040',
+                color: active === t.n ? '#0A1628' : '#fff',
                 border: '2px solid',
-                borderColor: active === t.n ? '#F5E642′ : '#1E3A5F',
+                borderColor: active === t.n ? '#F5E642' : '#1E3A5F',
                 fontWeight: 800,
                 fontSize: 15,
                 cursor: 'pointer',

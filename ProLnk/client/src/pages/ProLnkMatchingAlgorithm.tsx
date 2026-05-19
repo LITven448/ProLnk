@@ -39,7 +39,7 @@ export default function ProLnkMatchingAlgorithm() {
                   <span style={{ fontSize: 22 }}>{s.emoji}</span>
                   <span style={{ color: '#F5E642', fontWeight: 700 }}>{s.title}</span>
                 </div>
-                <div style={{ color: '#94a3b8′ }}>{s.desc}</div>
+                <div style={{ color: '#94a3b8' }}>{s.desc}</div>
               </div>
             </div>
           ))}
@@ -54,7 +54,7 @@ export default function ProLnkMatchingAlgorithm() {
                 {jobTypes.map((j, i) => (
                   <button key={i} onClick={() => setJobType(i)}
                     style={{ padding: '8px 14px', borderRadius: 8, border: 'none', cursor: 'pointer', textAlign: 'left', fontWeight: 600, fontSize: 13,
-                      background: jobType === i ? '#F5E642′ : '#1e3a5f', color: jobType === i ? '#0A1628' : '#fff' }}>{j}</button>
+                      background: jobType === i ? '#F5E642' : '#1e3a5f', color: jobType === i ? '#0A1628' : '#fff' }}>{j}</button>
                 ))}
               </div>
             </div>
@@ -64,7 +64,7 @@ export default function ProLnkMatchingAlgorithm() {
                 {urgencies.map((u, i) => (
                   <button key={i} onClick={() => setUrgency(i)}
                     style={{ padding: '8px 14px', borderRadius: 8, border: 'none', cursor: 'pointer', textAlign: 'left', fontWeight: 600, fontSize: 13,
-                      background: urgency === i ? '#F5E642′ : '#1e3a5f', color: urgency === i ? '#0A1628' : '#fff' }}>{u}</button>
+                      background: urgency === i ? '#F5E642' : '#1e3a5f', color: urgency === i ? '#0A1628' : '#fff' }}>{u}</button>
                 ))}
               </div>
             </div>
@@ -72,7 +72,7 @@ export default function ProLnkMatchingAlgorithm() {
           <div style={{ background: '#0A1628', borderRadius: 12, padding: 24, display: 'grid', gap: 12 }}>
             <div><span style={{ color: '#64748b', fontSize: 13 }}>Expected Response: </span><span style={{ color: '#22c55e', fontWeight: 700 }}>{responseTime}</span></div>
             <div><span style={{ color: '#64748b', fontSize: 13 }}>Priority Weighting: </span><span style={{ color: '#fff' }}>{priority}</span></div>
-            <div><span style={{ color: '#64748b', fontSize: 13 }}>Why ProLnk Wins: </span><span style={{ color: '#F5E642′ }}>{advantage}</span></div>
+            <div><span style={{ color: '#64748b', fontSize: 13 }}>Why ProLnk Wins: </span><span style={{ color: '#F5E642' }}>{advantage}</span></div>
           </div>
         </div>
       </div>

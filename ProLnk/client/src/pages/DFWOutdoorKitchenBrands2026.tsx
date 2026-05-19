@@ -13,8 +13,8 @@ export default function DFWOutdoorKitchenBrands2026() {
   ];
 
   const budgetOpts = [
-    { id: 'entry', label: '💰 Under $5,000′ },
-    { id: 'mid', label: '💰💰 $5,000–$15,000′ },
+    { id: 'entry', label: '💰 Under $5,000' },
+    { id: 'mid', label: '💰💰 $5,000–$15,000' },
     { id: 'luxury', label: '💰💰💰 $15,000+' },
   ];
 
@@ -43,18 +43,18 @@ export default function DFWOutdoorKitchenBrands2026() {
       <div style={{ maxWidth: 800, margin: '0 auto' }}>
         <div style={{ textAlign: 'center', marginBottom: '2rem' }}>
           <span style={{ fontSize: '3rem' }}>🔥</span>
-          <h1 style={{ color: '#F5E642', fontSize: '1.8rem', margin: '.5rem 0′ }}>DFW Outdoor Kitchen Brands 2026</h1>
-          <p style={{ color: '#94a3b8′ }}>Best outdoor kitchen brands built for DFW weather — 304 stainless required for North Texas humidity.</p>
+          <h1 style={{ color: '#F5E642', fontSize: '1.8rem', margin: '.5rem 0' }}>DFW Outdoor Kitchen Brands 2026</h1>
+          <p style={{ color: '#94a3b8' }}>Best outdoor kitchen brands built for DFW weather — 304 stainless required for North Texas humidity.</p>
         </div>
 
-        <div style={{ background: '#1e3a5f', borderRadius: 10, padding: '1rem', marginBottom: '1.5rem', border: '1px solid #F5E642′ }}>
+        <div style={{ background: '#1e3a5f', borderRadius: 10, padding: '1rem', marginBottom: '1.5rem', border: '1px solid #F5E642' }}>
           <p style={{ color: '#F5E642', fontWeight: 600, marginBottom: '.5rem' }}>⚠️ DFW Critical: 304 Stainless Only</p>
           <p style={{ color: '#94a3b8', fontSize: '.9rem', lineHeight: 1.6 }}>DFW humidity + summer heat destroys 430 stainless. Every brand below uses 304 stainless — never accept 430 in DFW outdoor kitchens or it will rust within 2 years.</p>
         </div>
 
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(220px, 1fr))', gap: '1rem', marginBottom: '2rem' }}>
           {brands.map(b => (
-            <div key={b.name} style={{ background: '#1e3a5f', borderRadius: 10, padding: '1rem', border: '1px solid #334155′ }}>
+            <div key={b.name} style={{ background: '#1e3a5f', borderRadius: 10, padding: '1rem', border: '1px solid #334155' }}>
               <div style={{ fontSize: '1.5rem', marginBottom: '.25rem' }}>{b.icon}</div>
               <div style={{ color: '#F5E642', fontWeight: 700 }}>{b.name}</div>
               <div style={{ color: '#64748b', fontSize: '.75rem', marginBottom: '.5rem' }}>{b.origin} · {b.tier}</div>
@@ -71,7 +71,7 @@ export default function DFWOutdoorKitchenBrands2026() {
             <p style={{ color: '#94a3b8', marginBottom: '.5rem', fontSize: '.9rem' }}>Budget:</p>
             <div style={{ display: 'flex', gap: '.5rem' }}>
               {budgetOpts.map(b => (
-                <button key={b.id} onClick={() => setBudget(b.id)} style={{ flex: 1, background: budget === b.id ? '#F5E642′ : '#0d2137', color: budget === b.id ? '#0A1628' : '#fff', border: '1px solid #334155', borderRadius: 8, padding: '.6rem', cursor: ’pointer', fontSize: '.78rem', fontWeight: budget === b.id ? 700 : 400 }}>{b.label}</button>
+                <button key={b.id} onClick={() => setBudget(b.id)} style={{ flex: 1, background: budget === b.id ? '#F5E642' : '#0d2137', color: budget === b.id ? '#0A1628' : '#fff', border: '1px solid #334155', borderRadius: 8, padding: '.6rem', cursor: 'pointer', fontSize: '.78rem', fontWeight: budget === b.id ? 700 : 400 }}>{b.label}</button>
               ))}
             </div>
           </div>
@@ -79,7 +79,7 @@ export default function DFWOutdoorKitchenBrands2026() {
             <p style={{ color: '#94a3b8', marginBottom: '.5rem', fontSize: '.9rem' }}>What matters most?</p>
             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '.5rem' }}>
               {featureOpts.map(f => (
-                <button key={f.id} onClick={() => setFeatures(f.id)} style={{ background: features === f.id ? '#F5E642′ : '#0d2137', color: features === f.id ? '#0A1628' : '#fff', border: '1px solid #334155', borderRadius: 8, padding: '.6rem', cursor: ’pointer', fontSize: '.85rem', fontWeight: features === f.id ? 700 : 400 }}>{f.label}</button>
+                <button key={f.id} onClick={() => setFeatures(f.id)} style={{ background: features === f.id ? '#F5E642' : '#0d2137', color: features === f.id ? '#0A1628' : '#fff', border: '1px solid #334155', borderRadius: 8, padding: '.6rem', cursor: 'pointer', fontSize: '.85rem', fontWeight: features === f.id ? 700 : 400 }}>{f.label}</button>
               ))}
             </div>
           </div>

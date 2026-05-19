@@ -52,9 +52,9 @@ export default function DFWOpportunityZoneGuide() {
         <div style={{ background: '#111d35', borderRadius: 12, padding: '1.5rem', marginBottom: '1.5rem' }}>
           <h2 style={{ color: '#F5E642', fontWeight: 700, marginBottom: '1rem', fontSize: '1.15rem' }}>📍 DFW QOZ Locations</h2>
           {ZONES.map((z) => (
-            <div key={z.area} style={{ marginBottom: '0.75rem', paddingBottom: '0.75rem', borderBottom: '1px solid #1e2d45′ }}>
+            <div key={z.area} style={{ marginBottom: '0.75rem', paddingBottom: '0.75rem', borderBottom: '1px solid #1e2d45' }}>
               <span style={{ fontWeight: 700, color: '#fff' }}>{z.area}: </span>
-              <span style={{ color: '#a0aec0′ }}>{z.detail}</span>
+              <span style={{ color: '#a0aec0' }}>{z.detail}</span>
             </div>
           ))}
         </div>
@@ -78,11 +78,11 @@ export default function DFWOpportunityZoneGuide() {
           <h2 style={{ color: '#F5E642', fontWeight: 700, marginBottom: '1rem', fontSize: '1.15rem' }}>📊 QOZ Tax Savings Calculator</h2>
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: '1rem', marginBottom: '1rem' }}>
             <div style={{ flex: 1, minWidth: 180 }}>
-              <label style={{ display: 'block', marginBottom: 4, fontSize: '0.9rem', color: '#a0aec0′ }}>Capital Gain to Invest ($)</label>
-              <input value={investAmount} onChange={(e) => setInvestAmount(e.target.value)} placeholder="e.g. 250000″ style={{ width: '100%', padding: '0.6rem', borderRadius: 8, border: '1px solid #2d3748', background: '#0A1628', color: '#fff', fontSize: '1rem', boxSizing: 'border-box' }} />
+              <label style={{ display: 'block', marginBottom: 4, fontSize: '0.9rem', color: '#a0aec0' }}>Capital Gain to Invest ($)</label>
+              <input value={investAmount} onChange={(e) => setInvestAmount(e.target.value)} placeholder="e.g. 250000" style={{ width: '100%', padding: '0.6rem', borderRadius: 8, border: '1px solid #2d3748', background: '#0A1628', color: '#fff', fontSize: '1rem', boxSizing: 'border-box' }} />
             </div>
             <div style={{ flex: 1, minWidth: 140 }}>
-              <label style={{ display: 'block', marginBottom: 4, fontSize: '0.9rem', color: '#a0aec0′ }}>Hold Period (years)</label>
+              <label style={{ display: 'block', marginBottom: 4, fontSize: '0.9rem', color: '#a0aec0' }}>Hold Period (years)</label>
               <select value={years} onChange={(e) => setYears(e.target.value)} style={{ width: '100%', padding: '0.6rem', borderRadius: 8, border: '1px solid #2d3748', background: '#0A1628', color: '#fff', fontSize: '1rem', boxSizing: 'border-box' }}>
                 {['3','5','7','10','15'].map((y) => <option key={y} value={y}>{y} years</option>)}
               </select>

@@ -34,28 +34,28 @@ export default function DFWElectricalProTools2026() {
   const [selected, setSelected] = useState<string>("");
 
   return (
-    <div style={{ background: "#0A1628″, minHeight: "100vh", color: "#fff", fontFamily: "system-ui, sans-serif", padding: "2rem" }}>
+    <div style={{ background: "#0A1628", minHeight: "100vh", color: "#fff", fontFamily: "system-ui, sans-serif", padding: "2rem" }}>
       <div style={{ maxWidth: 860, margin: "0 auto" }}>
         <div style={{ textAlign: "center", marginBottom: "2rem" }}>
           <div style={{ fontSize: "3rem" }}>⚡</div>
-          <h1 style={{ color: "#F5E642″, fontSize: "1.9rem", fontWeight: 800, margin: "0.5rem 0" }}>
+          <h1 style={{ color: "#F5E642", fontSize: "1.9rem", fontWeight: 800, margin: "0.5rem 0" }}>
             DFW Electrical Pro Essential Tools Guide 2026
           </h1>
-          <p style={{ color: "#94a3b8″, fontSize: "1rem" }}>
+          <p style={{ color: "#94a3b8", fontSize: "1rem" }}>
             What DFW electricians need — residential panels, commercial, EV/solar
           </p>
         </div>
 
-        <div style={{ background: "#0f2040″, borderRadius: 12, padding: "1.5rem", marginBottom: "1.5rem" }}>
-          <h2 style={{ color: "#F5E642″, fontSize: "1.1rem", marginBottom: "1rem" }}>🔍 Select Your DFW Electrical Work Type</h2>
+        <div style={{ background: "#0f2040", borderRadius: 12, padding: "1.5rem", marginBottom: "1.5rem" }}>
+          <h2 style={{ color: "#F5E642", fontSize: "1.1rem", marginBottom: "1rem" }}>🔍 Select Your DFW Electrical Work Type</h2>
           <div style={{ display: "flex", gap: "0.75rem", flexWrap: "wrap" }}>
             {Object.keys(electricalTypes).map((k) => (
               <button
                 key={k}
                 onClick={() => setSelected(k)}
                 style={{
-                  background: selected === k ? "#F5E642″ : "#1e3a5f",
-                  color: selected === k ? "#0A1628″ : "#fff",
+                  background: selected === k ? "#F5E642" : "#1e3a5f",
+                  color: selected === k ? "#0A1628" : "#fff",
                   border: "none",
                   borderRadius: 8,
                   padding: "0.6rem 1.2rem",
@@ -71,20 +71,20 @@ export default function DFWElectricalProTools2026() {
         </div>
 
         {selected && (
-          <div style={{ background: "#0f2040″, borderRadius: 12, padding: "1.5rem", marginBottom: "1.5rem" }}>
-            <h3 style={{ color: "#F5E642″, marginBottom: "1rem" }}>🧰 Priority Tools: {selected}</h3>
+          <div style={{ background: "#0f2040", borderRadius: 12, padding: "1.5rem", marginBottom: "1.5rem" }}>
+            <h3 style={{ color: "#F5E642", marginBottom: "1rem" }}>🧰 Priority Tools: {selected}</h3>
             {electricalTypes[selected].tools.map((t, i) => (
               <div key={i} style={{ background: "#162d4a", borderRadius: 8, padding: "1rem", marginBottom: "0.75rem" }}>
-                <div style={{ color: "#F5E642″, fontWeight: 700, marginBottom: "0.25rem" }}>{i + 1}. {t.name}</div>
-                <div style={{ color: "#94a3b8″, fontSize: "0.9rem" }}>{t.why}</div>
+                <div style={{ color: "#F5E642", fontWeight: 700, marginBottom: "0.25rem" }}>{i + 1}. {t.name}</div>
+                <div style={{ color: "#94a3b8", fontSize: "0.9rem" }}>{t.why}</div>
               </div>
             ))}
           </div>
         )}
 
-        <div style={{ background: "#0f2040″, borderRadius: 12, padding: "1.25rem", textAlign: "center" }}>
-          <div style={{ color: "#F5E642″, fontWeight: 700, marginBottom: "0.5rem" }}>🏆 ProLnk Charter Electricians — First Match Priority in DFW</div>
-          <div style={{ color: "#94a3b8″, fontSize: "0.9rem" }}>Locked $149/mo · 12% direct commission · Exclusive DFW panel upgrade lead data</div>
+        <div style={{ background: "#0f2040", borderRadius: 12, padding: "1.25rem", textAlign: "center" }}>
+          <div style={{ color: "#F5E642", fontWeight: 700, marginBottom: "0.5rem" }}>🏆 ProLnk Charter Electricians — First Match Priority in DFW</div>
+          <div style={{ color: "#94a3b8", fontSize: "0.9rem" }}>Locked $149/mo · 12% direct commission · Exclusive DFW panel upgrade lead data</div>
         </div>
       </div>
     </div>

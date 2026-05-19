@@ -67,7 +67,7 @@ export default function DFWContractorVetting2026() {
         <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap', marginBottom: 24 }}>
           {trades.map(t => (
             <button key={t.trade} onClick={() => setActive(t)}
-              style={{ background: active.trade === t.trade ? '#F5E642′ : '#111c35', color: active.trade === t.trade ? '#0A1628' : '#fff', border: `1px solid ${active.trade === t.trade ? '#F5E642' : '#1e3a5f'}`, borderRadius: 8, padding: '10px 16px', cursor: ’pointer', fontWeight: 700, fontSize: 13 }}>
+              style={{ background: active.trade === t.trade ? '#F5E642' : '#111c35', color: active.trade === t.trade ? '#0A1628' : '#fff', border: `1px solid ${active.trade === t.trade ? '#F5E642' : '#1e3a5f'}`, borderRadius: 8, padding: '10px 16px', cursor: 'pointer', fontWeight: 700, fontSize: 13 }}>
               {t.icon} {t.trade}
             </button>
           ))}
@@ -77,16 +77,16 @@ export default function DFWContractorVetting2026() {
           <div style={{ fontWeight: 700, marginBottom: 14 }}>{active.icon} {active.trade} Vetting Checklist</div>
           {active.checklist.map((c, i) => (
             <div key={i} style={{ background: '#0d1f3a', borderRadius: 8, padding: 14, marginBottom: 10 }}>
-              <div style={{ fontWeight: 700, marginBottom: 4, color: '#F5E642′ }}>✓ {c.item}</div>
+              <div style={{ fontWeight: 700, marginBottom: 4, color: '#F5E642' }}>✓ {c.item}</div>
               <div style={{ color: '#94a3b8', fontSize: 13 }}>{c.how}</div>
             </div>
           ))}
         </div>
 
         <div style={{ background: '#2d0a0a', border: '1px solid #f87171', borderRadius: 12, padding: 20, marginBottom: 24 }}>
-          <div style={{ fontWeight: 700, marginBottom: 10, color: '#f87171′ }}>🚨 Universal Red Flags — Walk Away</div>
+          <div style={{ fontWeight: 700, marginBottom: 10, color: '#f87171' }}>🚨 Universal Red Flags — Walk Away</div>
           {redFlags.map((f, i) => (
-            <div key={i} style={{ color: '#fca5a5', fontSize: 14, marginBottom: 6, paddingLeft: 12, borderLeft: '3px solid #f87171′ }}>{f}</div>
+            <div key={i} style={{ color: '#fca5a5', fontSize: 14, marginBottom: 6, paddingLeft: 12, borderLeft: '3px solid #f87171' }}>{f}</div>
           ))}
         </div>
 

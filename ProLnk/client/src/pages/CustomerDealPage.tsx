@@ -33,26 +33,26 @@ import {
 
 // --- Status badge colors ------------------------------------------------------
 const STATUS_CONFIG: Record<string, { label: string; color: string }> = {
-  draft:        { label: "Preview",    color: "bg-gray-100 text-gray-700″ },
-  sent:         { label: "New Offer",  color: "bg-blue-100 text-blue-700″ },
-  viewed:       { label: "Viewed",     color: "bg-purple-100 text-purple-700″ },
-  scheduled:    { label: "Scheduled",  color: "bg-green-100 text-green-700″ },
-  estimate_done:{ label: "Quoted",     color: "bg-yellow-100 text-yellow-700″ },
-  accepted:     { label: "Accepted",   color: "bg-emerald-100 text-emerald-700″ },
+  draft:        { label: "Preview",    color: "bg-gray-100 text-gray-700" },
+  sent:         { label: "New Offer",  color: "bg-blue-100 text-blue-700" },
+  viewed:       { label: "Viewed",     color: "bg-purple-100 text-purple-700" },
+  scheduled:    { label: "Scheduled",  color: "bg-green-100 text-green-700" },
+  estimate_done:{ label: "Quoted",     color: "bg-yellow-100 text-yellow-700" },
+  accepted:     { label: "Accepted",   color: "bg-emerald-100 text-emerald-700" },
   job_closed:   { label: "Complete",   color: "bg-[#0A1628]/10 text-[#0A1628]" },
-  declined:     { label: "Declined",   color: "bg-red-100 text-red-700″ },
-  expired:      { label: "Expired",    color: "bg-gray-100 text-gray-500″ },
+  declined:     { label: "Declined",   color: "bg-red-100 text-red-700" },
+  expired:      { label: "Expired",    color: "bg-gray-100 text-gray-500" },
 };
 
 // --- Star rating display ------------------------------------------------------
 function StarRating({ rating, size = 16 }: { rating: number; size?: number }) {
   return (
-    <div className="flex gap-0.5″>
+    <div className="flex gap-0.5">
       {[1, 2, 3, 4, 5].map(i => (
         <Star
           key={i}
           size={size}
-          className={i <= Math.round(rating) ? "fill-amber-400 text-amber-400″ : "text-gray-300"}
+          className={i <= Math.round(rating) ? "fill-amber-400 text-amber-400" : "text-gray-300"}
         />
       ))}
     </div>
@@ -74,7 +74,7 @@ function PhotoCarousel({ photoUrl, photoUrls, aiConfidence }: {
   if (photos.length === 0) {
     return (
       <div className="h-40 bg-gradient-to-br from-teal-50 to-blue-50 flex items-center justify-center">
-        <Wrench size={40} className="text-[#0A1628]/60″ />
+        <Wrench size={40} className="text-[#0A1628]/60" />
       </div>
     );
   }
@@ -85,7 +85,7 @@ function PhotoCarousel({ photoUrl, photoUrls, aiConfidence }: {
         key={idx}
         src={photos[idx]}
         alt={`Property photo ${idx + 1}`}
-        className="w-full object-cover max-h-72″
+        className="w-full object-cover max-h-72"
       />
       {photos.length > 1 && (
         <>
@@ -101,7 +101,7 @@ function PhotoCarousel({ photoUrl, photoUrls, aiConfidence }: {
           >
             <ChevronRightIcon size={18} />
           </button>
-          <div className="absolute bottom-3 left-1/2 -translate-x-1/2 flex gap-1.5″>
+          <div className="absolute bottom-3 left-1/2 -translate-x-1/2 flex gap-1.5">
             {photos.map((_, i) => (
               <button
                 key={i}
@@ -112,14 +112,14 @@ function PhotoCarousel({ photoUrl, photoUrls, aiConfidence }: {
           </div>
         </>
       )}
-      <div className="absolute top-3 left-3″>
-        <div className="bg-black/60 backdrop-blur-sm text-white text-xs px-2.5 py-1 rounded-full flex items-center gap-1.5″>
+      <div className="absolute top-3 left-3">
+        <div className="bg-black/60 backdrop-blur-sm text-white text-xs px-2.5 py-1 rounded-full flex items-center gap-1.5">
           <Camera size={11} />
           {photos.length > 1 ? `${labels[idx] ?? `Photo ${idx + 1}`}  ${idx + 1}/${photos.length}` : "AI Analyzed"}
         </div>
       </div>
       {aiConfidence && (
-        <div className="absolute top-3 right-3″>
+        <div className="absolute top-3 right-3">
           <div className="bg-[#0A1628]/90 backdrop-blur-sm text-white text-xs px-2.5 py-1 rounded-full font-semibold">
             {aiConfidence}% Confidence
           </div>
@@ -150,23 +150,23 @@ function CountdownTimer({ expiresAt }: { expiresAt: string }) {
 
   return (
     <div className={`rounded-xl px-4 py-3 border ${
-      expired ? "bg-gray-50 border-gray-200″ :
-      urgent ? "bg-red-50 border-red-200″ : "bg-amber-50 border-amber-200"
+      expired ? "bg-gray-50 border-gray-200" :
+      urgent ? "bg-red-50 border-red-200" : "bg-amber-50 border-amber-200"
     }`}>
-      <div className="flex items-center justify-between mb-2″>
-        <div className="flex items-center gap-1.5″>
-          <Clock size={14} className={expired ? "text-gray-400″ : urgent ? "text-red-600" : "text-amber-600"} />
+      <div className="flex items-center justify-between mb-2">
+        <div className="flex items-center gap-1.5">
+          <Clock size={14} className={expired ? "text-gray-400" : urgent ? "text-red-600" : "text-amber-600"} />
           <span className={`text-sm font-semibold ${
-            expired ? "text-gray-500″ : urgent ? "text-red-700" : "text-amber-800"
+            expired ? "text-gray-500" : urgent ? "text-red-700" : "text-amber-800"
           }`}>
             {expired ? "Offer Expired" : "Offer expires in"}
           </span>
         </div>
         {!expired && (
           <span className={`text-lg font-bold tabular-nums ${
-            urgent ? "text-red-700″ : "text-amber-800"
+            urgent ? "text-red-700" : "text-amber-800"
           }`}>
-            {String(h).padStart(2, "0″)}:{String(m).padStart(2, "0")}:{String(s).padStart(2, "0")}
+            {String(h).padStart(2, "0")}:{String(m).padStart(2, "0")}:{String(s).padStart(2, "0")}
           </span>
         )}
       </div>
@@ -174,7 +174,7 @@ function CountdownTimer({ expiresAt }: { expiresAt: string }) {
         <div className="w-full bg-white/60 rounded-full h-1.5 overflow-hidden">
           <div
             className={`h-full rounded-full transition-all duration-1000 ${
-              urgent ? "bg-red-500″ : pct > 50 ? "bg-amber-400" : "bg-yellow-500"
+              urgent ? "bg-red-500" : pct > 50 ? "bg-amber-400" : "bg-yellow-500"
             }`}
             style={{ width: `${pct}%` }}
           />
@@ -188,12 +188,12 @@ function CountdownTimer({ expiresAt }: { expiresAt: string }) {
 function ReviewCard({ review }: { review: any }) {
   return (
     <div className="bg-white rounded-xl p-4 border border-gray-100 shadow-sm">
-      <div className="flex items-start justify-between gap-2 mb-2″>
+      <div className="flex items-start justify-between gap-2 mb-2">
         <div>
           <p className="font-medium text-gray-900 text-sm">
             {review.homeownerName || "Verified Customer"}
           </p>
-          <p className="text-xs text-gray-500″>
+          <p className="text-xs text-gray-500">
             {new Date(review.createdAt).toLocaleDateString("en-US", { month: "short", year: "numeric" })}
           </p>
         </div>
@@ -229,20 +229,20 @@ function ContactForm({
   };
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-4″>
+    <form onSubmit={handleSubmit} className="space-y-4">
       <div>
-        <Label htmlFor="name" className="text-sm font-medium text-gray-700″>Your Name</Label>
+        <Label htmlFor="name" className="text-sm font-medium text-gray-700">Your Name</Label>
         <Input
           id="name"
           value={name}
           onChange={e => setName(e.target.value)}
           placeholder="Jane Smith"
           required
-          className="mt-1″
+          className="mt-1"
         />
       </div>
       <div>
-        <Label htmlFor="email" className="text-sm font-medium text-gray-700″>Email Address</Label>
+        <Label htmlFor="email" className="text-sm font-medium text-gray-700">Email Address</Label>
         <Input
           id="email"
           type="email"
@@ -250,11 +250,11 @@ function ContactForm({
           onChange={e => setEmail(e.target.value)}
           placeholder="jane@example.com"
           required
-          className="mt-1″
+          className="mt-1"
         />
       </div>
       <div>
-        <Label htmlFor="phone" className="text-sm font-medium text-gray-700″>
+        <Label htmlFor="phone" className="text-sm font-medium text-gray-700">
           Phone <span className="text-gray-400 font-normal">(optional)</span>
         </Label>
         <Input
@@ -262,8 +262,8 @@ function ContactForm({
           type="tel"
           value={phone}
           onChange={e => setPhone(e.target.value)}
-          placeholder="(214) 555-0100″
-          className="mt-1″
+          placeholder="(214) 555-0100"
+          className="mt-1"
         />
       </div>
       <Button
@@ -272,9 +272,9 @@ function ContactForm({
         className="w-full bg-[#0A1628] hover:bg-teal-700 text-white font-semibold py-3 rounded-xl"
       >
         {submitContact.isPending ? (
-          <><Loader2 size={16} className="animate-spin mr-2″ /> Confirming...</>
+          <><Loader2 size={16} className="animate-spin mr-2" /> Confirming...</>
         ) : (
-          <><Calendar size={16} className="mr-2″ /> Confirm Free Estimate Request</>
+          <><Calendar size={16} className="mr-2" /> Confirm Free Estimate Request</>
         )}
       </Button>
       {submitContact.isError && (
@@ -302,19 +302,19 @@ function ReviewForm({ token, onSuccess }: { token: string; onSuccess: () => void
 
   if (submitted) {
     return (
-      <div className="text-center py-8″>
-        <CheckCircle size={48} className="text-[#0A1628] mx-auto mb-3″ />
-        <h3 className="font-semibold text-gray-900 mb-1″>Thank you for your review!</h3>
-        <p className="text-sm text-gray-600″>Your feedback helps other homeowners in the network.</p>
+      <div className="text-center py-8">
+        <CheckCircle size={48} className="text-[#0A1628] mx-auto mb-3" />
+        <h3 className="font-semibold text-gray-900 mb-1">Thank you for your review!</h3>
+        <p className="text-sm text-gray-600">Your feedback helps other homeowners in the network.</p>
       </div>
     );
   }
 
   return (
-    <div className="space-y-4″>
+    <div className="space-y-4">
       <div>
-        <p className="text-sm font-medium text-gray-700 mb-2″>How was your experience?</p>
-        <div className="flex gap-1″>
+        <p className="text-sm font-medium text-gray-700 mb-2">How was your experience?</p>
+        <div className="flex gap-1">
           {[1, 2, 3, 4, 5].map(i => (
             <button
               key={i}
@@ -322,20 +322,20 @@ function ReviewForm({ token, onSuccess }: { token: string; onSuccess: () => void
               onClick={() => setRating(i)}
               onMouseEnter={() => setHovered(i)}
               onMouseLeave={() => setHovered(0)}
-              className="p-1″
+              className="p-1"
             >
               <Star
                 size={32}
                 className={i <= (hovered || rating)
-                  ? "fill-amber-400 text-amber-400″
-                  : "text-gray-300″}
+                  ? "fill-amber-400 text-amber-400"
+                  : "text-gray-300"}
               />
             </button>
           ))}
         </div>
       </div>
       <div>
-        <Label htmlFor="review" className="text-sm font-medium text-gray-700″>
+        <Label htmlFor="review" className="text-sm font-medium text-gray-700">
           Share your experience <span className="text-gray-400 font-normal">(optional)</span>
         </Label>
         <Textarea
@@ -353,9 +353,9 @@ function ReviewForm({ token, onSuccess }: { token: string; onSuccess: () => void
         className="w-full bg-[#0A1628] hover:bg-teal-700 text-white font-semibold py-3 rounded-xl"
       >
         {submitReview.isPending ? (
-          <><Loader2 size={16} className="animate-spin mr-2″ /> Submitting...</>
+          <><Loader2 size={16} className="animate-spin mr-2" /> Submitting...</>
         ) : (
-          <><ThumbsUp size={16} className="mr-2″ /> Submit Review</>
+          <><ThumbsUp size={16} className="mr-2" /> Submit Review</>
         )}
       </Button>
     </div>
@@ -444,8 +444,8 @@ export default function CustomerDealPage() {
     return (
       <div className="min-h-screen bg-gray-50 flex items-center justify-center">
         <div className="text-center">
-          <Loader2 size={32} className="animate-spin text-[#0A1628] mx-auto mb-3″ />
-          <p className="text-gray-600″>Loading your offer...</p>
+          <Loader2 size={32} className="animate-spin text-[#0A1628] mx-auto mb-3" />
+          <p className="text-gray-600">Loading your offer...</p>
         </div>
       </div>
     );
@@ -454,11 +454,11 @@ export default function CustomerDealPage() {
   // -- Not found ----------------------------------------------------------------
   if (!deal) {
     return (
-      <div className="min-h-screen bg-gray-50 flex items-center justify-center px-4″>
+      <div className="min-h-screen bg-gray-50 flex items-center justify-center px-4">
         <div className="text-center max-w-sm">
-          <AlertTriangle size={48} className="text-amber-500 mx-auto mb-4″ />
-          <h1 className="text-xl font-bold text-gray-900 mb-2″>Offer Not Found</h1>
-          <p className="text-gray-600″>
+          <AlertTriangle size={48} className="text-amber-500 mx-auto mb-4" />
+          <h1 className="text-xl font-bold text-gray-900 mb-2">Offer Not Found</h1>
+          <p className="text-gray-600">
             This offer link may have expired or is no longer valid.
             If you believe this is an error, please contact the company that sent this to you.
           </p>
@@ -475,15 +475,15 @@ export default function CustomerDealPage() {
   // -- Expired / Declined -------------------------------------------------------
   if (deal.status === "expired" || deal.status === "declined") {
     return (
-      <div className="min-h-screen bg-gray-50 flex items-center justify-center px-4″>
+      <div className="min-h-screen bg-gray-50 flex items-center justify-center px-4">
         <div className="text-center max-w-sm">
-          <div className="w-16 h-16 bg-gray-100 rounded-full flex items-center justify-center mx-auto mb-4″>
-            <XCircle size={32} className="text-gray-400″ />
+          <div className="w-16 h-16 bg-gray-100 rounded-full flex items-center justify-center mx-auto mb-4">
+            <XCircle size={32} className="text-gray-400" />
           </div>
-          <h1 className="text-xl font-bold text-gray-900 mb-2″>
+          <h1 className="text-xl font-bold text-gray-900 mb-2">
             {deal.status === "expired" ? "This Offer Has Expired" : "Offer Declined"}
           </h1>
-          <p className="text-gray-600 mb-6″>
+          <p className="text-gray-600 mb-6">
             {deal.status === "expired"
               ? "This 48-hour offer window has closed. If you're still interested in getting a quote, reach out to the partner directly."
               : "You've declined this offer. If you change your mind, feel free to reach out to the partner directly."}
@@ -503,11 +503,11 @@ export default function CustomerDealPage() {
   }
 
   return (
-    <div className="min-h-screen bg-gray-50″>
+    <div className="min-h-screen bg-gray-50">
       {/* -- Header ----------------------------------------------------------- */}
-      <div className="bg-white border-b border-gray-100 sticky top-0 z-10″>
+      <div className="bg-white border-b border-gray-100 sticky top-0 z-10">
         <div className="max-w-lg mx-auto px-4 py-3 flex items-center justify-between">
-          <div className="flex items-center gap-2″>
+          <div className="flex items-center gap-2">
             <div className="w-8 h-8 bg-[#0A1628] rounded-lg flex items-center justify-center">
               <Shield size={16} className="text-white" />
             </div>
@@ -522,7 +522,7 @@ export default function CustomerDealPage() {
         </div>
       </div>
 
-      <div className="max-w-lg mx-auto px-4 py-6 space-y-5″>
+      <div className="max-w-lg mx-auto px-4 py-6 space-y-5">
 
         {/* -- Expiry timer ----------------------------------------------------- */}
         {isActive && deal.expiresAt && !isScheduled && (
@@ -531,13 +531,13 @@ export default function CustomerDealPage() {
 
         {/* -- E-Signature Pad --------------------------------------------------- */}
         {contactSubmitted && !signatureDone && !isScheduled && (
-          <div className="bg-white rounded-2xl p-5 shadow-sm border border-gray-100″>
-            <div className="flex items-center gap-2 mb-1″>
+          <div className="bg-white rounded-2xl p-5 shadow-sm border border-gray-100">
+            <div className="flex items-center gap-2 mb-1">
               <PenLine size={18} className="text-[#0A1628]" />
-              <h3 className="font-bold text-gray-900″>Sign to Confirm Your Request</h3>
+              <h3 className="font-bold text-gray-900">Sign to Confirm Your Request</h3>
             </div>
-            <p className="text-sm text-gray-500 mb-4″>Your signature confirms you'd like a free estimate. No payment required.</p>
-            <div className="mb-3″>
+            <p className="text-sm text-gray-500 mb-4">Your signature confirms you'd like a free estimate. No payment required.</p>
+            <div className="mb-3">
               <Label className="text-xs font-semibold text-gray-700 mb-1 block">Full Name</Label>
               <Input
                 value={signerName}
@@ -546,9 +546,9 @@ export default function CustomerDealPage() {
                 className="text-sm"
               />
             </div>
-            <div className="mb-2″>
+            <div className="mb-2">
               <Label className="text-xs font-semibold text-gray-700 mb-1 block">Signature</Label>
-              <div className="relative border-2 border-dashed border-gray-200 rounded-xl overflow-hidden bg-gray-50″>
+              <div className="relative border-2 border-dashed border-gray-200 rounded-xl overflow-hidden bg-gray-50">
                 <canvas
                   ref={canvasRef}
                   width={600}
@@ -591,7 +591,7 @@ export default function CustomerDealPage() {
                 <p className="absolute bottom-2 right-3 text-xs text-gray-300 pointer-events-none">Sign above</p>
               </div>
             </div>
-            <div className="flex gap-2 mt-3″>
+            <div className="flex gap-2 mt-3">
               <button onClick={clearSignature} className="flex items-center gap-1.5 text-xs text-gray-500 hover:text-gray-700 px-3 py-2 border border-gray-200 rounded-lg">
                 <RotateCcw size={12} /> Clear
               </button>
@@ -600,24 +600,24 @@ export default function CustomerDealPage() {
                 disabled={!signerName.trim() || saveSignatureMutation.isPending}
                 className="flex-1 bg-[#0A1628] hover:bg-teal-700 text-white text-sm"
               >
-                {saveSignatureMutation.isPending ? <Loader2 size={14} className="animate-spin mr-1″ /> : <PenLine size={14} className="mr-1" />}
+                {saveSignatureMutation.isPending ? <Loader2 size={14} className="animate-spin mr-1" /> : <PenLine size={14} className="mr-1" />}
                 Confirm & Sign
               </Button>
             </div>
             {saveSignatureMutation.isError && (
-              <p className="text-xs text-red-500 mt-2″>Failed to save signature. Please try again.</p>
+              <p className="text-xs text-red-500 mt-2">Failed to save signature. Please try again.</p>
             )}
           </div>
         )}
 
         {/* -- Confirmation banner ----------------------------------------------- */}
         {(isScheduled || signatureDone) && (
-          <div className="bg-[#F5E642]/10 border border-[#0A1628]/20 rounded-xl px-4 py-4″>
-            <div className="flex items-start gap-3″>
-              <CheckCircle size={20} className="text-[#0A1628] mt-0.5 shrink-0″ />
+          <div className="bg-[#F5E642]/10 border border-[#0A1628]/20 rounded-xl px-4 py-4">
+            <div className="flex items-start gap-3">
+              <CheckCircle size={20} className="text-[#0A1628] mt-0.5 shrink-0" />
               <div>
-                <p className="font-semibold text-teal-900″>{signatureDone ? 'Request Signed & Confirmed' : 'Estimate Request Confirmed'}</p>
-                <p className="text-sm text-[#0A1628] mt-0.5″>
+                <p className="font-semibold text-teal-900">{signatureDone ? 'Request Signed & Confirmed' : 'Estimate Request Confirmed'}</p>
+                <p className="text-sm text-[#0A1628] mt-0.5">
                   {deal.receivingPartnerName || 'The partner'} will reach out within 24 hours to schedule your free estimate.
                 </p>
               </div>
@@ -639,20 +639,20 @@ export default function CustomerDealPage() {
         )}
 
         {/* -- Photo Carousel + AI Finding -------------------------------------- */}
-        <div className="bg-white rounded-2xl overflow-hidden shadow-sm border border-gray-100″>
+        <div className="bg-white rounded-2xl overflow-hidden shadow-sm border border-gray-100">
           <PhotoCarousel
             photoUrl={deal.photoUrl}
             photoUrls={deal.photoUrls as string[] | null}
             aiConfidence={deal.aiConfidence}
           />
 
-          <div className="p-5″>
-            <div className="flex items-start gap-3 mb-3″>
-              <div className="w-10 h-10 bg-amber-100 rounded-xl flex items-center justify-center shrink-0″>
-                <AlertTriangle size={18} className="text-amber-600″ />
+          <div className="p-5">
+            <div className="flex items-start gap-3 mb-3">
+              <div className="w-10 h-10 bg-amber-100 rounded-xl flex items-center justify-center shrink-0">
+                <AlertTriangle size={18} className="text-amber-600" />
               </div>
               <div>
-                <p className="text-xs font-semibold text-amber-600 uppercase tracking-wide mb-0.5″>
+                <p className="text-xs font-semibold text-amber-600 uppercase tracking-wide mb-0.5">
                   {deal.issueCategory}
                 </p>
                 <h2 className="text-lg font-bold text-gray-900 leading-tight">
@@ -661,15 +661,15 @@ export default function CustomerDealPage() {
               </div>
             </div>
 
-            <p className="text-sm text-gray-700 leading-relaxed mb-4″>
+            <p className="text-sm text-gray-700 leading-relaxed mb-4">
               {deal.issueDescription}
             </p>
 
             {(deal.estimatedValueLow || deal.estimatedValueHigh) && (
               <div className="bg-gray-50 rounded-xl px-4 py-3 flex items-center justify-between">
                 <div>
-                  <p className="text-xs text-gray-500 mb-0.5″>Estimated Repair Cost</p>
-                  <p className="font-bold text-gray-900″>
+                  <p className="text-xs text-gray-500 mb-0.5">Estimated Repair Cost</p>
+                  <p className="font-bold text-gray-900">
                     {deal.estimatedValueLow && deal.estimatedValueHigh
                       ? `$${Number(deal.estimatedValueLow).toLocaleString()} - $${Number(deal.estimatedValueHigh).toLocaleString()}`
                       : deal.estimatedValueLow
@@ -686,10 +686,10 @@ export default function CustomerDealPage() {
 
         {/* -- Homeowner message ------------------------------------------------ */}
         {deal.homeownerMessageSnippet && (
-          <div className="bg-blue-50 border border-blue-100 rounded-2xl p-5″>
-            <div className="flex items-center gap-2 mb-3″>
+          <div className="bg-blue-50 border border-blue-100 rounded-2xl p-5">
+            <div className="flex items-center gap-2 mb-3">
               <div className="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center">
-                <Shield size={14} className="text-blue-600″ />
+                <Shield size={14} className="text-blue-600" />
               </div>
               <div>
                 <p className="text-xs text-blue-600 font-semibold">From {deal.referringPartnerName || "Your Service Pro"}</p>
@@ -703,22 +703,22 @@ export default function CustomerDealPage() {
 
         {/* -- Receiving Partner Card ------------------------------------------- */}
         {deal.receivingPartnerName && (
-          <div className="bg-white rounded-2xl p-5 shadow-sm border border-gray-100″>
-            <div className="flex items-start gap-4″>
-              <div className="w-14 h-14 bg-[#0A1628] rounded-2xl flex items-center justify-center shrink-0″>
+          <div className="bg-white rounded-2xl p-5 shadow-sm border border-gray-100">
+            <div className="flex items-start gap-4">
+              <div className="w-14 h-14 bg-[#0A1628] rounded-2xl flex items-center justify-center shrink-0">
                 <span className="text-white font-bold text-xl">
                   {deal.receivingPartnerName.charAt(0)}
                 </span>
               </div>
-              <div className="flex-1 min-w-0″>
-                <div className="flex items-start justify-between gap-2″>
+              <div className="flex-1 min-w-0">
+                <div className="flex items-start justify-between gap-2">
                   <div>
-                    <h3 className="font-bold text-gray-900″>{deal.receivingPartnerName}</h3>
-                    <p className="text-sm text-gray-500″>{deal.receivingPartnerType}</p>
+                    <h3 className="font-bold text-gray-900">{deal.receivingPartnerName}</h3>
+                    <p className="text-sm text-gray-500">{deal.receivingPartnerType}</p>
                   </div>
                   {deal.receivingPartnerTier === "gold" && (
-                    <Badge className="bg-amber-100 text-amber-700 text-xs shrink-0″>
-                      <Award size={10} className="mr-1″ />
+                    <Badge className="bg-amber-100 text-amber-700 text-xs shrink-0">
+                      <Award size={10} className="mr-1" />
                       Gold
                     </Badge>
                   )}
@@ -726,16 +726,16 @@ export default function CustomerDealPage() {
 
                 {/* Rating */}
                 {Number(deal.reviewCount) > 0 && (
-                  <div className="flex items-center gap-2 mt-2″>
+                  <div className="flex items-center gap-2 mt-2">
                     <StarRating rating={Number(deal.avgRating)} size={14} />
-                    <span className="text-sm font-semibold text-gray-900″>{deal.avgRating}</span>
-                    <span className="text-xs text-gray-500″>({deal.reviewCount} reviews)</span>
+                    <span className="text-sm font-semibold text-gray-900">{deal.avgRating}</span>
+                    <span className="text-xs text-gray-500">({deal.reviewCount} reviews)</span>
                   </div>
                 )}
 
                 {/* Service area */}
                 {deal.receivingPartnerServiceArea && (
-                  <div className="flex items-center gap-1.5 mt-2 text-xs text-gray-500″>
+                  <div className="flex items-center gap-1.5 mt-2 text-xs text-gray-500">
                     <MapPin size={11} />
                     <span>{deal.receivingPartnerServiceArea}</span>
                   </div>
@@ -750,7 +750,7 @@ export default function CustomerDealPage() {
             )}
 
             {/* Contact links */}
-            <div className="flex gap-2 mt-4″>
+            <div className="flex gap-2 mt-4">
               {deal.receivingPartnerPhone && (
                 <a
                   href={`tel:${deal.receivingPartnerPhone}`}
@@ -785,7 +785,7 @@ export default function CustomerDealPage() {
             )}
 
             {showReviews && deal.reviews && (
-              <div className="mt-3 space-y-3″>
+              <div className="mt-3 space-y-3">
                 {deal.reviews.map((review: any, i: number) => (
                   <ReviewCard key={i} review={review} />
                 ))}
@@ -795,26 +795,26 @@ export default function CustomerDealPage() {
         )}
 
         {/* -- Trust badges ----------------------------------------------------- */}
-        <div className="grid grid-cols-3 gap-3″>
+        <div className="grid grid-cols-3 gap-3">
           {[
             { icon: Shield, label: "Verified Pro", sub: "Background checked" },
             { icon: Award, label: "Trusted Network", sub: "ProLnk certified" },
             { icon: CheckCircle, label: "Free Estimate", sub: "No obligation" },
           ].map(({ icon: Icon, label, sub }) => (
-            <div key={label} className="bg-white rounded-xl p-3 text-center shadow-sm border border-gray-100″>
-              <Icon size={20} className="text-[#0A1628] mx-auto mb-1.5″ />
+            <div key={label} className="bg-white rounded-xl p-3 text-center shadow-sm border border-gray-100">
+              <Icon size={20} className="text-[#0A1628] mx-auto mb-1.5" />
               <p className="text-xs font-semibold text-gray-900 leading-tight">{label}</p>
-              <p className="text-xs text-gray-500 leading-tight mt-0.5″>{sub}</p>
+              <p className="text-xs text-gray-500 leading-tight mt-0.5">{sub}</p>
             </div>
           ))}
         </div>
 
         {/* -- Lead Source Tag Instruction (for the receiving pro -- shown after estimate confirmed) -- */}
         {(isScheduled || signatureDone) && deal.receivingPartnerId && (
-          <div className="bg-amber-50 border border-amber-200 rounded-2xl p-4″>
-            <div className="flex items-start gap-3″>
-              <div className="w-8 h-8 bg-amber-100 rounded-full flex items-center justify-center shrink-0 mt-0.5″>
-                <Wrench size={14} className="text-amber-700″ />
+          <div className="bg-amber-50 border border-amber-200 rounded-2xl p-4">
+            <div className="flex items-start gap-3">
+              <div className="w-8 h-8 bg-amber-100 rounded-full flex items-center justify-center shrink-0 mt-0.5">
+                <Wrench size={14} className="text-amber-700" />
               </div>
               <div>
                 <p className="font-semibold text-amber-900 text-sm">Action Required for {deal.receivingPartnerName || "the Pro"}</p>
@@ -822,20 +822,20 @@ export default function CustomerDealPage() {
                   When creating this job in your FSM (Housecall Pro, Jobber, Workiz, etc.), set the{" "}
                   <strong>Lead Source</strong> field to:
                 </p>
-                <div className="mt-2 bg-white border border-amber-300 rounded-lg px-3 py-2 flex items-center justify-between gap-2″>
-                  <code className="text-sm font-mono font-bold text-amber-900″>
+                <div className="mt-2 bg-white border border-amber-300 rounded-lg px-3 py-2 flex items-center justify-between gap-2">
+                  <code className="text-sm font-mono font-bold text-amber-900">
                     ProLnk-{deal.receivingPartnerId}
                   </code>
                   <button
                     onClick={() => {
                       navigator.clipboard.writeText(`ProLnk-${deal.receivingPartnerId}`);
                     }}
-                    className="text-xs text-amber-700 hover:text-amber-900 font-medium shrink-0″
+                    className="text-xs text-amber-700 hover:text-amber-900 font-medium shrink-0"
                   >
                     Copy
                   </button>
                 </div>
-                <p className="text-xs text-amber-700 mt-2″>
+                <p className="text-xs text-amber-700 mt-2">
                   This ensures your commission is automatically tracked and paid when the job closes.
                 </p>
               </div>
@@ -845,16 +845,16 @@ export default function CustomerDealPage() {
 
         {/* -- CTA Section ------------------------------------------------------ */}
         {isActive && !contactSubmitted && !isScheduled && (
-          <div className="space-y-3″>
+          <div className="space-y-3">
             {!showContactForm ? (
               <>
                 <Button
                   onClick={() => setShowContactForm(true)}
-                  className="w-full bg-[#0A1628] hover:bg-teal-700 text-white font-bold py-4 rounded-2xl text-base shadow-lg shadow-teal-200″
+                  className="w-full bg-[#0A1628] hover:bg-teal-700 text-white font-bold py-4 rounded-2xl text-base shadow-lg shadow-teal-200"
                 >
-                  <Calendar size={18} className="mr-2″ />
+                  <Calendar size={18} className="mr-2" />
                   Get My Free Estimate
-                  <ArrowRight size={16} className="ml-2″ />
+                  <ArrowRight size={16} className="ml-2" />
                 </Button>
                 <button
                   onClick={() => setShowDeclineConfirm(true)}
@@ -864,9 +864,9 @@ export default function CustomerDealPage() {
                 </button>
               </>
             ) : (
-              <div className="bg-white rounded-2xl p-5 shadow-sm border border-gray-100″>
-                <h3 className="font-bold text-gray-900 mb-1″>Request Your Free Estimate</h3>
-                <p className="text-sm text-gray-500 mb-4″>
+              <div className="bg-white rounded-2xl p-5 shadow-sm border border-gray-100">
+                <h3 className="font-bold text-gray-900 mb-1">Request Your Free Estimate</h3>
+                <p className="text-sm text-gray-500 mb-4">
                   {deal.receivingPartnerName || "The partner"} will contact you within 24 hours to schedule.
                 </p>
                 <ContactForm
@@ -892,16 +892,16 @@ export default function CustomerDealPage() {
 
         {/* -- Decline confirm -------------------------------------------------- */}
         {showDeclineConfirm && (
-          <div className="bg-white rounded-2xl p-5 shadow-sm border border-red-100″>
-            <h3 className="font-bold text-gray-900 mb-2″>Decline this offer?</h3>
-            <p className="text-sm text-gray-600 mb-4″>
+          <div className="bg-white rounded-2xl p-5 shadow-sm border border-red-100">
+            <h3 className="font-bold text-gray-900 mb-2">Decline this offer?</h3>
+            <p className="text-sm text-gray-600 mb-4">
               This offer will be removed. You can still contact {deal.receivingPartnerName || "the partner"} directly if you change your mind.
             </p>
-            <div className="flex gap-3″>
+            <div className="flex gap-3">
               <Button
                 variant="outline"
                 onClick={() => setShowDeclineConfirm(false)}
-                className="flex-1″
+                className="flex-1"
               >
                 Keep Offer
               </Button>
@@ -911,7 +911,7 @@ export default function CustomerDealPage() {
                   decline.mutate({ token: token || "" });
                   setShowDeclineConfirm(false);
                 }}
-                className="flex-1″
+                className="flex-1"
               >
                 Yes, Decline
               </Button>
@@ -921,14 +921,14 @@ export default function CustomerDealPage() {
 
         {/* -- Confirm Job Done (for scheduled/accepted deals not yet closed) --- */}
         {isScheduled && !isComplete && !jobConfirmed && (
-          <div className="bg-emerald-50 border border-emerald-200 rounded-2xl p-5″>
-            <div className="flex items-start gap-3 mb-3″>
-              <div className="w-9 h-9 bg-emerald-100 rounded-xl flex items-center justify-center shrink-0″>
-                <CheckCircle size={18} className="text-emerald-600″ />
+          <div className="bg-emerald-50 border border-emerald-200 rounded-2xl p-5">
+            <div className="flex items-start gap-3 mb-3">
+              <div className="w-9 h-9 bg-emerald-100 rounded-xl flex items-center justify-center shrink-0">
+                <CheckCircle size={18} className="text-emerald-600" />
               </div>
               <div>
                 <h3 className="font-bold text-emerald-900 text-sm">Did the job get done?</h3>
-                <p className="text-xs text-emerald-700 mt-0.5″>Confirming completion helps track your savings and ensures the pro gets credit.</p>
+                <p className="text-xs text-emerald-700 mt-0.5">Confirming completion helps track your savings and ensures the pro gets credit.</p>
               </div>
             </div>
             {!showConfirmJobDone ? (
@@ -936,14 +936,14 @@ export default function CustomerDealPage() {
                 onClick={() => setShowConfirmJobDone(true)}
                 className="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-semibold py-3 rounded-xl text-sm"
               >
-                <CheckCircle size={16} className="mr-2″ />
+                <CheckCircle size={16} className="mr-2" />
                 Yes, the job is complete
               </Button>
             ) : (
-              <div className="space-y-3″>
+              <div className="space-y-3">
                 <div>
-                  <p className="text-xs font-semibold text-emerald-800 mb-2″>How would you rate the work? (optional)</p>
-                  <div className="flex gap-2″>
+                  <p className="text-xs font-semibold text-emerald-800 mb-2">How would you rate the work? (optional)</p>
+                  <div className="flex gap-2">
                     {[1, 2, 3, 4, 5].map(n => (
                       <button
                         key={n}
@@ -951,7 +951,7 @@ export default function CustomerDealPage() {
                         className={`w-10 h-10 rounded-xl text-lg transition-all ${
                           confirmJobRating >= n
                             ? "bg-emerald-500 text-white"
-                            : "bg-white border border-emerald-200 text-gray-400″
+                            : "bg-white border border-emerald-200 text-gray-400"
                         }`}
                       >
                         ★
@@ -971,28 +971,28 @@ export default function CustomerDealPage() {
                   disabled={confirmJobMut.isPending}
                   className="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-semibold py-3 rounded-xl text-sm"
                 >
-                  {confirmJobMut.isPending ? <><Loader2 size={16} className="animate-spin mr-2″ /> Confirming...</> : "Confirm Job Complete"}
+                  {confirmJobMut.isPending ? <><Loader2 size={16} className="animate-spin mr-2" /> Confirming...</> : "Confirm Job Complete"}
                 </Button>
-                <button onClick={() => setShowConfirmJobDone(false)} className="w-full text-xs text-emerald-600 py-1″>Cancel</button>
+                <button onClick={() => setShowConfirmJobDone(false)} className="w-full text-xs text-emerald-600 py-1">Cancel</button>
               </div>
             )}
           </div>
         )}
         {/* -- Job confirmed banner --------------------------------------------- */}
         {jobConfirmed && (
-          <div className="bg-emerald-50 border border-emerald-200 rounded-xl p-4 flex items-start gap-3″>
-            <CheckCircle size={20} className="text-emerald-500 shrink-0 mt-0.5″ />
+          <div className="bg-emerald-50 border border-emerald-200 rounded-xl p-4 flex items-start gap-3">
+            <CheckCircle size={20} className="text-emerald-500 shrink-0 mt-0.5" />
             <div>
               <p className="font-semibold text-emerald-800 text-sm">Job Complete — Thank You!</p>
-              <p className="text-xs text-emerald-700 mt-0.5″>Your confirmation helps keep the ProLnk network accountable and ensures fair commission tracking.</p>
+              <p className="text-xs text-emerald-700 mt-0.5">Your confirmation helps keep the ProLnk network accountable and ensures fair commission tracking.</p>
             </div>
           </div>
         )}
         {/* -- Review prompt (after job closed) -------------------------------- */}
         {(isComplete || jobConfirmed) && (
-          <div className="bg-white rounded-2xl p-5 shadow-sm border border-gray-100″>
-            <h3 className="font-bold text-gray-900 mb-1″>How did it go?</h3>
-            <p className="text-sm text-gray-500 mb-4″>
+          <div className="bg-white rounded-2xl p-5 shadow-sm border border-gray-100">
+            <h3 className="font-bold text-gray-900 mb-1">How did it go?</h3>
+            <p className="text-sm text-gray-500 mb-4">
               Your review helps other homeowners in the network find trusted pros.
             </p>
             {!showReviewForm ? (
@@ -1000,7 +1000,7 @@ export default function CustomerDealPage() {
                 onClick={() => setShowReviewForm(true)}
                 className="w-full bg-[#0A1628] hover:bg-teal-700 text-white font-semibold py-3 rounded-xl"
               >
-                <Star size={16} className="mr-2″ />
+                <Star size={16} className="mr-2" />
                 Leave a Review
               </Button>
             ) : (
@@ -1013,12 +1013,12 @@ export default function CustomerDealPage() {
         )}
 
         {/* -- Footer ----------------------------------------------------------- */}
-        <div className="text-center pb-8″>
-          <div className="flex items-center justify-center gap-1.5 mb-2″>
-            <Shield size={12} className="text-gray-400″ />
-            <p className="text-xs text-gray-400″>Powered by ProLnk Trusted Partner Network</p>
+        <div className="text-center pb-8">
+          <div className="flex items-center justify-center gap-1.5 mb-2">
+            <Shield size={12} className="text-gray-400" />
+            <p className="text-xs text-gray-400">Powered by ProLnk Trusted Partner Network</p>
           </div>
-          <p className="text-xs text-gray-300″>
+          <p className="text-xs text-gray-300">
             This offer was generated from a photo taken during a routine service visit at your property.
             Your information is never sold or shared outside the ProLnk network.
           </p>

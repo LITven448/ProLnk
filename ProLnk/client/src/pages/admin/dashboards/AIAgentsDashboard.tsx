@@ -166,13 +166,13 @@ function OrgNode({ agentId, onSelect, selectedId, depth = 0 }: {
             color: agent.color,
           }}
         >
-          <Icon className={isOrchestrator ? "w-5 h-5″ : "w-4 h-4"} />
+          <Icon className={isOrchestrator ? "w-5 h-5" : "w-4 h-4"} />
         </div>
         <p className={`font-bold text-center leading-tight ${isOrchestrator ? "text-sm" : "text-xs"}`} style={{ color: D.text }}>
           {agent.name}
         </p>
         <p className="text-[10px] text-center" style={{ color: D.muted }}>{agent.role}</p>
-        <div className="flex items-center gap-1 mt-0.5″>
+        <div className="flex items-center gap-1 mt-0.5">
           <div className="w-1.5 h-1.5 rounded-full" style={{ backgroundColor: D.green }} />
           <span className="text-[10px] font-semibold" style={{ color: D.green }}>{agent.actionsToday} today</span>
         </div>
@@ -182,19 +182,19 @@ function OrgNode({ agentId, onSelect, selectedId, depth = 0 }: {
       {agent.children.length > 0 && (
         <>
           {/* Vertical connector */}
-          <div className="w-0.5 h-6″ style={{ backgroundColor: D.border }} />
+          <div className="w-0.5 h-6" style={{ backgroundColor: D.border }} />
           {/* Horizontal bar */}
           <div className="relative flex items-start">
             {agent.children.length > 1 && (
               <div
-                className="absolute top-0 left-0 right-0 h-0.5″
+                className="absolute top-0 left-0 right-0 h-0.5"
                 style={{ backgroundColor: D.border }}
               />
             )}
-            <div className="flex gap-4″>
+            <div className="flex gap-4">
               {agent.children.map(childId => (
                 <div key={childId} className="flex flex-col items-center">
-                  <div className="w-0.5 h-6″ style={{ backgroundColor: D.border }} />
+                  <div className="w-0.5 h-6" style={{ backgroundColor: D.border }} />
                   <OrgNode agentId={childId} onSelect={onSelect} selectedId={selectedId} depth={depth + 1} />
                 </div>
               ))}
@@ -219,43 +219,43 @@ export default function AIAgentsDashboard() {
     <AdminLayout title="AI Agents Dashboard" subtitle="Real-time agent status, org chart, and accountability tracking">
       <div className="p-6 space-y-6 overflow-y-auto" style={{ backgroundColor: D.bg, minHeight: "100%" }}>
         {/* Pre-Launch Banner */}
-        <div className="flex items-center gap-3 px-4 py-3 rounded-xl" style={{ background: "#00D4FF15″, border: "1px solid #00D4FF33" }}>
-          <AlertTriangle className="w-4 h-4 flex-shrink-0″ style={{ color: "#00D4FF" }} />
+        <div className="flex items-center gap-3 px-4 py-3 rounded-xl" style={{ background: "#00D4FF15", border: "1px solid #00D4FF33" }}>
+          <AlertTriangle className="w-4 h-4 flex-shrink-0" style={{ color: "#00D4FF" }} />
           <div>
             <span className="text-xs font-bold" style={{ color: "#00D4FF" }}>Pre-Launch Mode</span>
-            <span className="text-xs ml-2″ style={{ color: "#7B809A" }}>Data shown represents projections and targets. Live metrics will populate after launch.</span>
+            <span className="text-xs ml-2" style={{ color: "#7B809A" }}>Data shown represents projections and targets. Live metrics will populate after launch.</span>
           </div>
         </div>
 
         {/* ── KPIs ── */}
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4″>
-          <MetricCard label="Total Actions Today" value={totalActions.toLocaleString()} sub="Across all 8 agents" trend={14.2} color={D.cyan} icon={<Activity className="w-4 h-4″ />} />
-          <MetricCard label="Avg Success Rate" value={`${avgSuccess}%`} sub="All agents combined" trend={0.4} color={D.green} icon={<CheckCircle className="w-4 h-4″ />} />
-          <MetricCard label="Active Agents" value="8 / 8″ sub="All systems nominal" trend={0} color={D.lime} icon={<Bot className="w-4 h-4" />} />
-          <MetricCard label="Automations / Hour" value="~142″ sub="Peak: 214 at 11 AM" trend={8.7} color={D.purple} icon={<Zap className="w-4 h-4" />} />
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
+          <MetricCard label="Total Actions Today" value={totalActions.toLocaleString()} sub="Across all 8 agents" trend={14.2} color={D.cyan} icon={<Activity className="w-4 h-4" />} />
+          <MetricCard label="Avg Success Rate" value={`${avgSuccess}%`} sub="All agents combined" trend={0.4} color={D.green} icon={<CheckCircle className="w-4 h-4" />} />
+          <MetricCard label="Active Agents" value="8 / 8" sub="All systems nominal" trend={0} color={D.lime} icon={<Bot className="w-4 h-4" />} />
+          <MetricCard label="Automations / Hour" value="~142" sub="Peak: 214 at 11 AM" trend={8.7} color={D.purple} icon={<Zap className="w-4 h-4" />} />
         </div>
 
         {/* ── Org Chart ── */}
         <DCard>
           <SectionHeader title="Agent Org Chart" subtitle="Click any agent to see details — live status indicators" />
-          <div className="overflow-x-auto pb-4″>
-            <div className="flex justify-center pt-2″ style={{ minWidth: 900 }}>
+          <div className="overflow-x-auto pb-4">
+            <div className="flex justify-center pt-2" style={{ minWidth: 900 }}>
               <OrgNode agentId="orchestrator" onSelect={setSelectedId} selectedId={selectedId} />
             </div>
           </div>
         </DCard>
 
         {/* ── Agent Detail + Accountability Grid ── */}
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-4″>
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
           {/* Selected Agent Detail */}
           {selected && (
             <DCard style={{ borderColor: `${selected.color}40` }}>
-              <div className="flex items-center gap-3 mb-4″>
+              <div className="flex items-center gap-3 mb-4">
                 <div
                   className="flex items-center justify-center w-12 h-12 rounded-2xl"
                   style={{ background: `linear-gradient(135deg, ${selected.color}30, ${selected.color}60)`, color: selected.color }}
                 >
-                  <selected.icon className="w-6 h-6″ />
+                  <selected.icon className="w-6 h-6" />
                 </div>
                 <div>
                   <h3 className="text-base font-black" style={{ color: D.text }}>{selected.name}</h3>
@@ -263,15 +263,15 @@ export default function AIAgentsDashboard() {
                 </div>
               </div>
               <p className="text-sm mb-4 leading-relaxed" style={{ color: D.muted }}>{selected.desc}</p>
-              <div className="space-y-2″>
+              <div className="space-y-2">
                 {[
                   { label: "Status",         value: <StatusBadge status={selected.status} /> },
                   { label: "Actions Today",  value: selected.actionsToday.toLocaleString() },
                   { label: "Success Rate",   value: `${selected.successRate}%` },
                   { label: "Last Action",    value: selected.lastAction },
                 ].map(s => (
-                  <div key={s.label} className="flex items-start justify-between gap-2 py-1.5″ style={{ borderBottom: `1px solid ${D.border}` }}>
-                    <span className="text-xs flex-shrink-0″ style={{ color: D.muted }}>{s.label}</span>
+                  <div key={s.label} className="flex items-start justify-between gap-2 py-1.5" style={{ borderBottom: `1px solid ${D.border}` }}>
+                    <span className="text-xs flex-shrink-0" style={{ color: D.muted }}>{s.label}</span>
                     <span className="text-xs font-semibold text-right" style={{ color: D.text }}>{s.value}</span>
                   </div>
                 ))}
@@ -280,7 +280,7 @@ export default function AIAgentsDashboard() {
           )}
 
           {/* Accountability Grid */}
-          <DCard className="lg:col-span-2″>
+          <DCard className="lg:col-span-2">
             <SectionHeader title="Agent Accountability" subtitle="All agents — actions and performance today" />
             <DataTable
               accentCol="name"
@@ -303,7 +303,7 @@ export default function AIAgentsDashboard() {
         </div>
 
         {/* ── Actions Chart + Live Feed ── */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-4″>
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
           <DCard>
             <SectionHeader title="Actions by Agent" subtitle="Today's automation volume" />
             <BarChart
@@ -322,7 +322,7 @@ export default function AIAgentsDashboard() {
                   time={a.lastAction.split("—").pop()?.trim() ?? ""}
                   type="success"
                   message={`[${a.name}] ${a.lastAction.split("—")[0].trim()}`}
-                  icon={<a.icon className="w-3.5 h-3.5″ />}
+                  icon={<a.icon className="w-3.5 h-3.5" />}
                 />
               ))}
             </div>

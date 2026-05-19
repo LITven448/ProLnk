@@ -1,7 +1,7 @@
 import { Link } from "wouter";
 import { ArrowLeft, Lock } from "lucide-react";
 
-const EFFECTIVE_DATE = "January 1, 2026″;
+const EFFECTIVE_DATE = "January 1, 2026";
 const COMPANY = "ProLnk Technologies, LLC";
 const PRIVACY_EMAIL = "privacy@prolnk.io";
 
@@ -125,24 +125,24 @@ To exercise any of these rights, contact ${PRIVACY_EMAIL}.`,
 
 export default function PrivacyPolicy() {
   return (
-    <div className="min-h-screen" style={{ backgroundColor: "#0a1628″, fontFamily: "'Inter', sans-serif" }}>
-      <div style={{ backgroundColor: "#0d1f3c", borderBottom: "1px solid #1e3a5f" }} className="sticky top-0 z-10″>
+    <div className="min-h-screen" style={{ backgroundColor: "#0a1628", fontFamily: "'Inter', sans-serif" }}>
+      <div style={{ backgroundColor: "#0d1f3c", borderBottom: "1px solid #1e3a5f" }} className="sticky top-0 z-10">
         <div className="max-w-3xl mx-auto px-4 py-4 flex items-center justify-between">
           <Link href="/">
             <button className="flex items-center gap-2 text-sm transition-colors" style={{ color: "#7aa3cc" }}>
-              <ArrowLeft className="w-4 h-4″ /> Back to Home
+              <ArrowLeft className="w-4 h-4" /> Back to Home
             </button>
           </Link>
-          <div className="flex items-center gap-2 text-sm" style={{ color: "#4a6fa0″ }}>
-            <Lock className="w-4 h-4″ />
+          <div className="flex items-center gap-2 text-sm" style={{ color: "#4a6fa0" }}>
+            <Lock className="w-4 h-4" />
             Effective: {EFFECTIVE_DATE}
           </div>
         </div>
       </div>
 
-      <div className="max-w-3xl mx-auto px-4 py-12 space-y-10″>
+      <div className="max-w-3xl mx-auto px-4 py-12 space-y-10">
         <div>
-          <h1 className="text-3xl font-black mb-3″ style={{ color: "#e8f0fe" }}>Privacy Policy</h1>
+          <h1 className="text-3xl font-black mb-3" style={{ color: "#e8f0fe" }}>Privacy Policy</h1>
           <p style={{ color: "#7aa3cc" }} className="leading-relaxed">
             This Privacy Policy describes how {COMPANY} collects, uses, and protects information about
             users of the ProLnk and TrustyPro platforms. We believe privacy should be simple: we collect
@@ -151,18 +151,18 @@ export default function PrivacyPolicy() {
         </div>
 
         {sections.map(({ title, body }) => (
-          <section key={title} className="space-y-3″>
-            <h2 className="text-base font-bold" style={{ color: "#3b82f6″ }}>{title}</h2>
-            <div className="text-sm leading-relaxed whitespace-pre-line" style={{ color: "#a8c4e0″ }}>
+          <section key={title} className="space-y-3">
+            <h2 className="text-base font-bold" style={{ color: "#3b82f6" }}>{title}</h2>
+            <div className="text-sm leading-relaxed whitespace-pre-line" style={{ color: "#a8c4e0" }}>
               {body}
             </div>
           </section>
         ))}
 
         <div style={{ borderTop: "1px solid #1e3a5f" }} className="pt-8 flex flex-wrap gap-4 text-sm">
-          <Link href="/terms"><span className="hover:underline cursor-pointer" style={{ color: "#3b82f6″ }}>Terms of Service</span></Link>
-          <Link href="/ccpa"><span className="hover:underline cursor-pointer" style={{ color: "#3b82f6″ }}>CCPA Data Rights</span></Link>
-          <Link href="/cookies"><span className="hover:underline cursor-pointer" style={{ color: "#3b82f6″ }}>Cookie Policy</span></Link>
+          <Link href="/terms"><span className="hover:underline cursor-pointer" style={{ color: "#3b82f6" }}>Terms of Service</span></Link>
+          <Link href="/ccpa"><span className="hover:underline cursor-pointer" style={{ color: "#3b82f6" }}>CCPA Data Rights</span></Link>
+          <Link href="/cookies"><span className="hover:underline cursor-pointer" style={{ color: "#3b82f6" }}>Cookie Policy</span></Link>
         </div>
       </div>
     </div>

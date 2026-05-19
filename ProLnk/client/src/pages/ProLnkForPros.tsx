@@ -3,12 +3,12 @@ import { useState } from 'react';
 const trades = ['Plumber', 'Electrician', 'HVAC Tech', 'Roofer', 'General Contractor', 'Painter'];
 const expLevels = ['0-2 years', '3-5 years', '6-10 years', '10+ years'];
 const incomeMap: Record<string, Record<string, string>> = {
-  'Plumber': { '0-2 years': '$18,400', '3-5 years': '$31,200', '6-10 years': '$48,600', '10+ years': '$72,000′ },
-  'Electrician': { '0-2 years': '$17,800', '3-5 years': '$30,400', '6-10 years': '$46,200', '10+ years': '$69,500′ },
-  'HVAC Tech': { '0-2 years': '$19,200', '3-5 years': '$33,600', '6-10 years': '$51,000', '10+ years': '$76,400′ },
-  'Roofer': { '0-2 years': '$16,400', '3-5 years': '$28,800', '6-10 years': '$43,500', '10+ years': '$64,200′ },
-  'General Contractor': { '0-2 years': '$20,100', '3-5 years': '$35,200', '6-10 years': '$54,800', '10+ years': '$81,000′ },
-  'Painter': { '0-2 years': '$14,200', '3-5 years': '$24,000', '6-10 years': '$36,600', '10+ years': '$52,400′ },
+  'Plumber': { '0-2 years': '$18,400', '3-5 years': '$31,200', '6-10 years': '$48,600', '10+ years': '$72,000' },
+  'Electrician': { '0-2 years': '$17,800', '3-5 years': '$30,400', '6-10 years': '$46,200', '10+ years': '$69,500' },
+  'HVAC Tech': { '0-2 years': '$19,200', '3-5 years': '$33,600', '6-10 years': '$51,000', '10+ years': '$76,400' },
+  'Roofer': { '0-2 years': '$16,400', '3-5 years': '$28,800', '6-10 years': '$43,500', '10+ years': '$64,200' },
+  'General Contractor': { '0-2 years': '$20,100', '3-5 years': '$35,200', '6-10 years': '$54,800', '10+ years': '$81,000' },
+  'Painter': { '0-2 years': '$14,200', '3-5 years': '$24,000', '6-10 years': '$36,600', '10+ years': '$52,400' },
 };
 
 export default function ProLnkForPros() {
@@ -57,7 +57,7 @@ export default function ProLnkForPros() {
           {income && (
             <div style={{ background: '#0A1628', borderRadius: 12, padding: 24, textAlign: 'center' }}>
               <div style={{ color: '#94a3b8', fontSize: 14, marginBottom: 8 }}>Projected Year 1 ProLnk Income</div>
-              <div style={{ fontSize: 48, fontWeight: 700, color: '#F5E642′ }}>{income}</div>
+              <div style={{ fontSize: 48, fontWeight: 700, color: '#F5E642' }}>{income}</div>
               <div style={{ color: '#64748b', fontSize: 13, marginTop: 8 }}>Across all 5 income streams at Charter tier rates</div>
             </div>
           )}

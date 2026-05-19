@@ -58,7 +58,7 @@ export default function DFWHVACKnowledgeLegacy() {
             <div key={stat.label} style={{ backgroundColor: '#0f2040', borderRadius: '12px', padding: '20px', border: '1px solid #1e3a5f', textAlign: 'center' }}>
               <div style={{ fontSize: '28px', marginBottom: '8px' }}>{stat.emoji}</div>
               <div style={{ fontSize: '26px', fontWeight: '800', color: '#F5E642', marginBottom: '6px' }}>{stat.value}</div>
-              <div style={{ fontSize: '13px', color: '#94a3b8′ }}>{stat.label}</div>
+              <div style={{ fontSize: '13px', color: '#94a3b8' }}>{stat.label}</div>
             </div>
           ))}
         </div>
@@ -73,8 +73,8 @@ export default function DFWHVACKnowledgeLegacy() {
                 key={l.id}
                 onClick={() => setSelected(l.id)}
                 style={{
-                  backgroundColor: selected === l.id ? '#F5E642′ : '#0f2040',
-                  color: selected === l.id ? '#0A1628′ : '#fff',
+                  backgroundColor: selected === l.id ? '#F5E642' : '#0f2040',
+                  color: selected === l.id ? '#0A1628' : '#fff',
                   border: `2px solid ${selected === l.id ? '#F5E642' : '#1e3a5f'}`,
                   borderRadius: '12px',
                   padding: '16px',

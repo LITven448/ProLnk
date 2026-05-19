@@ -35,7 +35,7 @@ export default function DFWRoofingFinalChecklist() {
   const hailTotal = ITEMS.filter(i => i.hail).length;
   const hailScore = Math.round(((hailTotal - hailUnchecked) / hailTotal) * 100);
   const readiness = hailScore >= 80 ? 'HAIL READY 🛡️' : hailScore >= 50 ? 'PARTIALLY READY ⚠️' : 'EXPOSED TO HAIL 🚨';
-  const readinessColor = hailScore >= 80 ? '#7EE8A2′ : hailScore >= 50 ? '#FF9F6B' : '#FF6B6B';
+  const readinessColor = hailScore >= 80 ? '#7EE8A2' : hailScore >= 50 ? '#FF9F6B' : '#FF6B6B';
   const cats = [...new Set(ITEMS.map(i => i.cat))];
 
   return (
@@ -47,7 +47,7 @@ export default function DFWRoofingFinalChecklist() {
 
         <div style={{ background: '#0F2040', borderRadius: 12, padding: 20, marginBottom: 28, display: 'flex', gap: 20, flexWrap: 'wrap' }}>
           <div style={{ flex: 1, minWidth: 130 }}>
-            <div style={{ fontSize: 42, fontWeight: 800, color: '#F5E642′ }}>{score}%</div>
+            <div style={{ fontSize: 42, fontWeight: 800, color: '#F5E642' }}>{score}%</div>
             <div style={{ color: '#9BB3CC', fontSize: 13 }}>{checked.size}/{ITEMS.length} complete</div>
           </div>
           <div style={{ flex: 1, minWidth: 180, background: '#0A1628', borderRadius: 10, padding: '14px 18px' }}>
@@ -63,15 +63,15 @@ export default function DFWRoofingFinalChecklist() {
             {ITEMS.filter(i => i.cat === cat).map(item => (
               <div key={item.id} onClick={() => toggle(item.id)}
                 style={{ display: 'flex', alignItems: 'flex-start', gap: 12, padding: '12px 14px', borderRadius: 8, marginBottom: 8, cursor: 'pointer',
-                  background: checked.has(item.id) ? '#0F2040′ : '#111E35',
+                  background: checked.has(item.id) ? '#0F2040' : '#111E35',
                   border: `1px solid ${checked.has(item.id) ? '#1E3A5F' : item.hail ? '#2A2A10' : '#1A2F4A'}`,
                   opacity: checked.has(item.id) ? 0.55 : 1 }}>
                 <div style={{ width: 22, height: 22, borderRadius: 6, border: `2px solid ${checked.has(item.id) ? '#F5E642' : '#2A4060'}`,
-                  background: checked.has(item.id) ? '#F5E642′ : ’transparent', flexShrink: 0, display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 13, color: '#0A1628', fontWeight: 700 }}>
+                  background: checked.has(item.id) ? '#F5E642' : 'transparent', flexShrink: 0, display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 13, color: '#0A1628', fontWeight: 700 }}>
                   {checked.has(item.id) ? '✓' : ''}
                 </div>
                 <div style={{ flex: 1 }}>
-                  <span style={{ fontSize: 14, lineHeight: 1.5, textDecoration: checked.has(item.id) ? 'line-through' : 'none', color: checked.has(item.id) ? '#5A7A9A' : '#D4E4F4′ }}>
+                  <span style={{ fontSize: 14, lineHeight: 1.5, textDecoration: checked.has(item.id) ? 'line-through' : 'none', color: checked.has(item.id) ? '#5A7A9A' : '#D4E4F4' }}>
                     {item.text}
                   </span>
                   {item.hail && !checked.has(item.id) && (

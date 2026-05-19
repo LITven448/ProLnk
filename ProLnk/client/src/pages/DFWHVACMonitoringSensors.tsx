@@ -1,11 +1,11 @@
 import { useState } from 'react';
 
 const sensors = [
-  { goal: 'Temperature Control', sensor: 'Supply/Return Air Temperature Sensor', placement: 'Supply plenum + return air grille', integration: 'Nest, Ecobee, Honeywell T6 Pro', cost: '$45–$120′ },
-  { goal: 'Humidity Management', sensor: 'Duct & Room Humidity Sensor', placement: 'Main supply duct + living area wall', integration: 'Aprilaire, Honeywell HumidiPRO', cost: '$60–$150′ },
-  { goal: 'Condensate Safety', sensor: 'Condensate Float Switch', placement: 'Primary and secondary drain pan', integration: 'Wired to air handler shutoff', cost: '$15–$40′ },
-  { goal: 'CO Safety', sensor: 'Carbon Monoxide Detector', placement: 'Within 10 ft of furnace + each sleeping area', integration: 'Google Nest Protect, Ring', cost: '$30–$80′ },
-  { goal: 'Filter Monitoring', sensor: 'Differential Pressure Sensor', placement: 'Across filter cabinet', integration: 'Filterboss, AprilAire 5000', cost: '$80–$200′ },
+  { goal: 'Temperature Control', sensor: 'Supply/Return Air Temperature Sensor', placement: 'Supply plenum + return air grille', integration: 'Nest, Ecobee, Honeywell T6 Pro', cost: '$45–$120' },
+  { goal: 'Humidity Management', sensor: 'Duct & Room Humidity Sensor', placement: 'Main supply duct + living area wall', integration: 'Aprilaire, Honeywell HumidiPRO', cost: '$60–$150' },
+  { goal: 'Condensate Safety', sensor: 'Condensate Float Switch', placement: 'Primary and secondary drain pan', integration: 'Wired to air handler shutoff', cost: '$15–$40' },
+  { goal: 'CO Safety', sensor: 'Carbon Monoxide Detector', placement: 'Within 10 ft of furnace + each sleeping area', integration: 'Google Nest Protect, Ring', cost: '$30–$80' },
+  { goal: 'Filter Monitoring', sensor: 'Differential Pressure Sensor', placement: 'Across filter cabinet', integration: 'Filterboss, AprilAire 5000', cost: '$80–$200' },
 ];
 
 export default function DFWHVACMonitoringSensors() {
@@ -33,8 +33,8 @@ export default function DFWHVACMonitoringSensors() {
                 key={s.goal}
                 onClick={() => setSelected(s.goal === selected ? null : s.goal)}
                 style={{
-                  background: selected === s.goal ? '#F5E642′ : '#1e3a5f',
-                  color: selected === s.goal ? '#0A1628′ : '#fff',
+                  background: selected === s.goal ? '#F5E642' : '#1e3a5f',
+                  color: selected === s.goal ? '#0A1628' : '#fff',
                   border: 'none', borderRadius: 8, padding: '0.75rem',
                   cursor: 'pointer', fontWeight: 600, fontSize: '0.85rem', transition: 'all 0.2s'
                 }}
@@ -46,7 +46,7 @@ export default function DFWHVACMonitoringSensors() {
         </div>
 
         {match && (
-          <div style={{ background: '#112240', borderRadius: 12, padding: '1.5rem', marginBottom: '1.5rem', borderLeft: '4px solid #F5E642′ }}>
+          <div style={{ background: '#112240', borderRadius: 12, padding: '1.5rem', marginBottom: '1.5rem', borderLeft: '4px solid #F5E642' }}>
             <h3 style={{ color: '#F5E642', marginBottom: '1rem' }}>🔍 {match.goal}</h3>
             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
               {[

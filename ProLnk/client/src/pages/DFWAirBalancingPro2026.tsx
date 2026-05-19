@@ -40,28 +40,28 @@ export default function DFWAirBalancingPro2026() {
   const [selected, setSelected] = useState<string>("");
 
   return (
-    <div style={{ background: "#0A1628″, minHeight: "100vh", color: "#fff", fontFamily: "system-ui, sans-serif", padding: "2rem" }}>
+    <div style={{ background: "#0A1628", minHeight: "100vh", color: "#fff", fontFamily: "system-ui, sans-serif", padding: "2rem" }}>
       <div style={{ maxWidth: 860, margin: "0 auto" }}>
         <div style={{ textAlign: "center", marginBottom: "2rem" }}>
           <div style={{ fontSize: "3rem" }}>🌡️</div>
-          <h1 style={{ color: "#F5E642″, fontSize: "1.9rem", fontWeight: 800, margin: "0.5rem 0" }}>
+          <h1 style={{ color: "#F5E642", fontSize: "1.9rem", fontWeight: 800, margin: "0.5rem 0" }}>
             DFW HVAC Air Balancing for Pros 2026
           </h1>
-          <p style={{ color: "#94a3b8″, fontSize: "1rem" }}>
+          <p style={{ color: "#94a3b8", fontSize: "1rem" }}>
             ProLnk Charter HVAC techs — room-by-room balancing guide for DFW homes
           </p>
         </div>
 
-        <div style={{ background: "#0f2040″, borderRadius: 12, padding: "1.5rem", marginBottom: "1.5rem" }}>
-          <h2 style={{ color: "#F5E642″, fontSize: "1.1rem", marginBottom: "1rem" }}>🔍 Select Problem Type</h2>
+        <div style={{ background: "#0f2040", borderRadius: 12, padding: "1.5rem", marginBottom: "1.5rem" }}>
+          <h2 style={{ color: "#F5E642", fontSize: "1.1rem", marginBottom: "1rem" }}>🔍 Select Problem Type</h2>
           <div style={{ display: "flex", gap: "0.75rem", flexWrap: "wrap" }}>
             {Object.keys(techniques).map((k) => (
               <button
                 key={k}
                 onClick={() => setSelected(k)}
                 style={{
-                  background: selected === k ? "#F5E642″ : "#1e3a5f",
-                  color: selected === k ? "#0A1628″ : "#fff",
+                  background: selected === k ? "#F5E642" : "#1e3a5f",
+                  color: selected === k ? "#0A1628" : "#fff",
                   border: "none",
                   borderRadius: 8,
                   padding: "0.6rem 1.2rem",
@@ -77,25 +77,25 @@ export default function DFWAirBalancingPro2026() {
         </div>
 
         {selected && (
-          <div style={{ background: "#0f2040″, borderRadius: 12, padding: "1.5rem", marginBottom: "1.5rem" }}>
-            <h3 style={{ color: "#F5E642″, marginBottom: "1rem" }}>⚙️ Balancing Protocol: {selected}</h3>
+          <div style={{ background: "#0f2040", borderRadius: 12, padding: "1.5rem", marginBottom: "1.5rem" }}>
+            <h3 style={{ color: "#F5E642", marginBottom: "1rem" }}>⚙️ Balancing Protocol: {selected}</h3>
             <ol style={{ paddingLeft: "1.25rem", lineHeight: 2 }}>
               {techniques[selected].steps.map((s, i) => (
-                <li key={i} style={{ color: "#cbd5e1″, marginBottom: "0.25rem" }}>{s}</li>
+                <li key={i} style={{ color: "#cbd5e1", marginBottom: "0.25rem" }}>{s}</li>
               ))}
             </ol>
             <div style={{ marginTop: "1.25rem", background: "#162d4a", borderRadius: 8, padding: "1rem" }}>
-              <div style={{ color: "#F5E642″, fontWeight: 700, marginBottom: "0.5rem" }}>🧰 Tools Required</div>
+              <div style={{ color: "#F5E642", fontWeight: 700, marginBottom: "0.5rem" }}>🧰 Tools Required</div>
               {techniques[selected].tools.map((t, i) => (
-                <div key={i} style={{ color: "#94a3b8″, fontSize: "0.9rem" }}>• {t}</div>
+                <div key={i} style={{ color: "#94a3b8", fontSize: "0.9rem" }}>• {t}</div>
               ))}
             </div>
           </div>
         )}
 
-        <div style={{ background: "#0f2040″, borderRadius: 12, padding: "1.25rem", textAlign: "center" }}>
-          <div style={{ color: "#F5E642″, fontWeight: 700, marginBottom: "0.5rem" }}>🏆 ProLnk Charter HVAC Techs Get First Match Priority</div>
-          <div style={{ color: "#94a3b8″, fontSize: "0.9rem" }}>Locked $149/mo · 12% direct commission · Exclusive DFW market data</div>
+        <div style={{ background: "#0f2040", borderRadius: 12, padding: "1.25rem", textAlign: "center" }}>
+          <div style={{ color: "#F5E642", fontWeight: 700, marginBottom: "0.5rem" }}>🏆 ProLnk Charter HVAC Techs Get First Match Priority</div>
+          <div style={{ color: "#94a3b8", fontSize: "0.9rem" }}>Locked $149/mo · 12% direct commission · Exclusive DFW market data</div>
         </div>
       </div>
     </div>

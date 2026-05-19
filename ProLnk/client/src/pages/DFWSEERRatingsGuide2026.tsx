@@ -38,24 +38,24 @@ export default function DFWSEERRatingsGuide2026() {
           <h2 style={{ color: '#F5E642', fontWeight: 700, marginBottom: 16 }}>💡 Annual Savings Calculator</h2>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16, marginBottom: 16 }}>
             <div>
-              <label style={{ color: '#94a3b8', fontSize: 13, display: 'block', marginBottom: 4 }}>Current SEER: <strong style={{ color: '#F5E642′ }}>{currentSEER}</strong></label>
-              <input type="range" min={8} max={18} value={currentSEER} onChange={(e) => setCurrentSEER(Number(e.target.value))} style={{ width: '100%', accentColor: '#F5E642′ }} />
+              <label style={{ color: '#94a3b8', fontSize: 13, display: 'block', marginBottom: 4 }}>Current SEER: <strong style={{ color: '#F5E642' }}>{currentSEER}</strong></label>
+              <input type="range" min={8} max={18} value={currentSEER} onChange={(e) => setCurrentSEER(Number(e.target.value))} style={{ width: '100%', accentColor: '#F5E642' }} />
             </div>
             <div>
-              <label style={{ color: '#94a3b8', fontSize: 13, display: 'block', marginBottom: 4 }}>New SEER2: <strong style={{ color: '#F5E642′ }}>{newSEER2}</strong></label>
-              <input type="range" min={15} max={24} value={newSEER2} onChange={(e) => setNewSEER2(Number(e.target.value))} style={{ width: '100%', accentColor: '#F5E642′ }} />
+              <label style={{ color: '#94a3b8', fontSize: 13, display: 'block', marginBottom: 4 }}>New SEER2: <strong style={{ color: '#F5E642' }}>{newSEER2}</strong></label>
+              <input type="range" min={15} max={24} value={newSEER2} onChange={(e) => setNewSEER2(Number(e.target.value))} style={{ width: '100%', accentColor: '#F5E642' }} />
             </div>
           </div>
           <div style={{ marginBottom: 16 }}>
-            <label style={{ color: '#94a3b8', fontSize: 13, display: 'block', marginBottom: 4 }}>Avg summer monthly bill: <strong style={{ color: '#F5E642′ }}>${monthlyBill}</strong></label>
-            <input type="range" min={80} max={500} step={10} value={monthlyBill} onChange={(e) => setMonthlyBill(Number(e.target.value))} style={{ width: '100%', accentColor: '#F5E642′ }} />
+            <label style={{ color: '#94a3b8', fontSize: 13, display: 'block', marginBottom: 4 }}>Avg summer monthly bill: <strong style={{ color: '#F5E642' }}>${monthlyBill}</strong></label>
+            <input type="range" min={80} max={500} step={10} value={monthlyBill} onChange={(e) => setMonthlyBill(Number(e.target.value))} style={{ width: '100%', accentColor: '#F5E642' }} />
           </div>
           <button onClick={calculate} style={{ background: '#F5E642', color: '#0A1628', border: 'none', borderRadius: 8, padding: '10px 24px', fontWeight: 700, cursor: 'pointer', fontSize: 15 }}>
             Calculate Savings
           </button>
           {savings !== null && (
-            <div style={{ marginTop: 16, background: '#0A1628', borderRadius: 8, padding: 16, color: '#e2e8f0′ }}>
-              <span style={{ fontSize: 28, fontWeight: 800, color: '#F5E642′ }}>${savings.toLocaleString()}</span>
+            <div style={{ marginTop: 16, background: '#0A1628', borderRadius: 8, padding: 16, color: '#e2e8f0' }}>
+              <span style={{ fontSize: 28, fontWeight: 800, color: '#F5E642' }}>${savings.toLocaleString()}</span>
               <span style={{ color: '#94a3b8', marginLeft: 8 }}>estimated annual savings</span>
               <div style={{ color: '#94a3b8', fontSize: 13, marginTop: 4 }}>Payback period: ~{savings > 0 ? Math.round(2000/savings) : 'N/A'} years on a $2,000 upgrade premium</div>
             </div>

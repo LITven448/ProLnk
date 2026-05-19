@@ -80,7 +80,7 @@ export default function TrustyProQualityMetrics() {
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))', gap: '10px', marginBottom: '32px' }}>
           {concerns.map((c, i) => (
             <button key={i} onClick={() => setSelected(i)}
-              style={{ padding: '12px', borderRadius: '10px', border: `2px solid ${selected === i ? '#4F46E5' : '#1e2d45'}`, backgroundColor: selected === i ? '#4F46E5′ : '#0d1f35', color: '#fff', cursor: ’pointer', fontSize: '0.85rem', fontWeight: 600, textAlign: 'center' }}>
+              style={{ padding: '12px', borderRadius: '10px', border: `2px solid ${selected === i ? '#4F46E5' : '#1e2d45'}`, backgroundColor: selected === i ? '#4F46E5' : '#0d1f35', color: '#fff', cursor: 'pointer', fontSize: '0.85rem', fontWeight: 600, textAlign: 'center' }}>
               {c.icon}<br />{c.label}
             </button>
           ))}
@@ -99,7 +99,7 @@ export default function TrustyProQualityMetrics() {
               ))}
             </ul>
           </div>
-          <div style={{ backgroundColor: '#4F46E522', borderRadius: '10px', padding: '16px', border: '1px solid #4F46E5′ }}>
+          <div style={{ backgroundColor: '#4F46E522', borderRadius: '10px', padding: '16px', border: '1px solid #4F46E5' }}>
             <div style={{ color: '#818cf8', fontWeight: 700, fontSize: '0.8rem', marginBottom: '6px' }}>ACCURACY IMPACT</div>
             <p style={{ color: '#c7d2fe', fontSize: '0.9rem', margin: 0 }}>{concern.accuracy}</p>
           </div>
@@ -110,7 +110,7 @@ export default function TrustyProQualityMetrics() {
             { icon: '🎯', label: 'Focus', weight: 'High impact' },
             { icon: '🗂️', label: 'Coverage', weight: 'High impact' },
           ].map((m, i) => (
-            <div key={i} style={{ backgroundColor: '#0d1f35', borderRadius: '12px', padding: '20px', textAlign: 'center', border: '1px solid #1e2d45′ }}>
+            <div key={i} style={{ backgroundColor: '#0d1f35', borderRadius: '12px', padding: '20px', textAlign: 'center', border: '1px solid #1e2d45' }}>
               <div style={{ fontSize: '28px', marginBottom: '8px' }}>{m.icon}</div>
               <div style={{ fontWeight: 700, marginBottom: '4px' }}>{m.label}</div>
               <div style={{ color: '#FACC15', fontSize: '0.8rem' }}>{m.weight}</div>

@@ -64,7 +64,7 @@ export default function DFWCurbAndGutterGuide() {
           <h2 style={{ color: '#F5E642', fontSize: '1.1rem', marginBottom: '0.75rem' }}>📋 The Basic Rule</h2>
           <p style={{ color: '#94a3b8', lineHeight: 1.7, margin: 0 }}>
             In virtually every DFW city, the curb and gutter along a public street sit within the city right-of-way.
-            The <strong style={{ color: '#e2e8f0′ }}>city is responsible for maintenance and repair</strong> — not the adjacent homeowner.
+            The <strong style={{ color: '#e2e8f0' }}>city is responsible for maintenance and repair</strong> — not the adjacent homeowner.
             The exception: your private <em>driveway apron</em> (the concrete connecting your driveway to the street) is typically your responsibility.
           </p>
         </div>
@@ -91,7 +91,7 @@ export default function DFWCurbAndGutterGuide() {
           </div>
 
           {result && city && (
-            <div style={{ background: '#0A1628', borderRadius: 8, padding: '1.25rem', borderLeft: '4px solid #F5E642′ }}>
+            <div style={{ background: '#0A1628', borderRadius: 8, padding: '1.25rem', borderLeft: '4px solid #F5E642' }}>
               <div style={{ marginBottom: '0.75rem' }}>
                 <span style={{ color: '#64748b', fontSize: '0.8rem' }}>RESPONSIBLE PARTY</span>
                 <div style={{ color: '#F5E642', fontWeight: 600, marginTop: '0.2rem' }}>{result.owner.replace('[city]', city)}</div>
@@ -105,7 +105,7 @@ export default function DFWCurbAndGutterGuide() {
                 <div style={{ color: '#e2e8f0', marginTop: '0.2rem' }}>{result.timeline}</div>
               </div>
               <div style={{ borderTop: '1px solid #1e2d47', paddingTop: '0.75rem' }}>
-                <span style={{ color: '#F5E642′ }}>💡 </span>
+                <span style={{ color: '#F5E642' }}>💡 </span>
                 <span style={{ color: '#94a3b8', fontSize: '0.9rem' }}>{result.tip}</span>
               </div>
             </div>

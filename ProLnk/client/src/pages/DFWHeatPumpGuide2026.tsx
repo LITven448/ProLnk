@@ -27,7 +27,7 @@ export default function DFWHeatPumpGuide2026() {
 
         <div style={{ background: '#0f2444', borderRadius: 10, padding: 20, border: '1px solid #1e3a5f', marginBottom: 24 }}>
           <div style={{ fontWeight: 700, color: '#F5E642', marginBottom: 12, fontSize: 18 }}>🌡️ Why Heat Pumps Work in DFW Now</div>
-          <div style={{ color: '#cbd5e1', fontSize: 15, lineHeight: 1.7 }}>Modern cold-climate heat pumps operate efficiently down to <strong style={{ color: '#F5E642′ }}>-13°F</strong>. DFW rarely drops below 20°F. Dual-fuel systems pair a heat pump with existing gas backup — giving you heat pump efficiency 95% of the year with gas reliability during rare ice storms.</div>
+          <div style={{ color: '#cbd5e1', fontSize: 15, lineHeight: 1.7 }}>Modern cold-climate heat pumps operate efficiently down to <strong style={{ color: '#F5E642' }}>-13°F</strong>. DFW rarely drops below 20°F. Dual-fuel systems pair a heat pump with existing gas backup — giving you heat pump efficiency 95% of the year with gas reliability during rare ice storms.</div>
         </div>
 
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16, marginBottom: 32 }}>
@@ -48,7 +48,7 @@ export default function DFWHeatPumpGuide2026() {
         <div style={{ background: '#0f2444', borderRadius: 12, padding: 24, border: '1px solid #F5E642', marginBottom: 24 }}>
           <h2 style={{ color: '#F5E642', fontWeight: 700, marginBottom: 16 }}>🔍 Heat Pump Feasibility Assessment</h2>
           <div style={{ marginBottom: 16 }}>
-            <label style={{ display: 'block', marginBottom: 8, color: '#94a3b8′ }}>Current system type:</label>
+            <label style={{ display: 'block', marginBottom: 8, color: '#94a3b8' }}>Current system type:</label>
             <div style={{ display: 'flex', gap: 10 }}>
               {[{v:'gas',l:'Gas Furnace + AC'},{v:'electric',l:'Electric + AC'},{v:'heatpump',l:'Older Heat Pump'}].map(opt => (
                 <button key={opt.v} onClick={() => setSystemType(opt.v)}
@@ -58,9 +58,9 @@ export default function DFWHeatPumpGuide2026() {
               ))}
             </div>
           </div>
-          <label style={{ display: 'block', marginBottom: 8, color: '#94a3b8′ }}>Home size: <strong style={{ color: '#F5E642' }}>{sqft.toLocaleString()} sq ft</strong></label>
+          <label style={{ display: 'block', marginBottom: 8, color: '#94a3b8' }}>Home size: <strong style={{ color: '#F5E642' }}>{sqft.toLocaleString()} sq ft</strong></label>
           <input type="range" min={800} max={5000} step={100} value={sqft} onChange={(e) => setSqft(Number(e.target.value))}
-            style={{ width: '100%', marginBottom: 16, accentColor: '#F5E642′ }} />
+            style={{ width: '100%', marginBottom: 16, accentColor: '#F5E642' }} />
           <button onClick={assess} style={{ background: '#F5E642', color: '#0A1628', border: 'none', borderRadius: 8, padding: '10px 24px', fontWeight: 700, cursor: 'pointer', fontSize: 15 }}>
             Assess Feasibility
           </button>

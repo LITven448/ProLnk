@@ -29,7 +29,7 @@ export default function DFWHomeRenovationFunding() {
     <div style={{ background: '#F8F9FA', minHeight: '100vh', color: '#1A2332', fontFamily: 'system-ui', padding: '32px 16px' }}>
       <div style={{ maxWidth: 760, margin: '0 auto' }}>
         <div style={{ color: '#0A1628', fontSize: 13, fontWeight: 700, letterSpacing: 2, marginBottom: 8 }}>DFW HOMEOWNER FINANCE</div>
-        <h1 style={{ fontSize: 28, fontWeight: 800, margin: '0 0 8px', color: '#0A1628′ }}>Renovation Funding Guide</h1>
+        <h1 style={{ fontSize: 28, fontWeight: 800, margin: '0 0 8px', color: '#0A1628' }}>Renovation Funding Guide</h1>
         <p style={{ color: '#5A6A7E', fontSize: 15, margin: '0 0 32px' }}>Compare all funding options for DFW homeowners based on your situation.</p>
 
         <div style={{ background: '#FFFFFF', borderRadius: 12, padding: 24, marginBottom: 20, boxShadow: '0 2px 8px rgba(0,0,0,0.08)' }}>
@@ -61,7 +61,7 @@ export default function DFWHomeRenovationFunding() {
 
         <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
           {ranked.map((f, i) => (
-            <div key={f.id} style={{ background: '#FFFFFF', borderRadius: 12, padding: 20, boxShadow: '0 2px 8px rgba(0,0,0,0.06)', borderLeft: i === 0 ? '4px solid #F5E642′ : '4px solid #E8EDF5' }}>
+            <div key={f.id} style={{ background: '#FFFFFF', borderRadius: 12, padding: 20, boxShadow: '0 2px 8px rgba(0,0,0,0.06)', borderLeft: i === 0 ? '4px solid #F5E642' : '4px solid #E8EDF5' }}>
               <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: 10 }}>
                 <div>
                   {i === 0 && <span style={{ background: '#F5E642', color: '#0A1628', fontSize: 10, fontWeight: 800, padding: '2px 8px', borderRadius: 4, marginRight: 8 }}>TOP PICK</span>}

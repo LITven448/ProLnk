@@ -58,12 +58,12 @@ export default function DFWSolarRentalIncomeGuide() {
       <div style={{ maxWidth: 760, margin: '0 auto', padding: '40px 20px' }}>
         <div style={{ marginBottom: 32 }}>
           <div style={{ fontSize: 36, marginBottom: 8 }}>☀️</div>
-          <h1 style={{ fontSize: 28, fontWeight: 800, margin: '0 0 8px', color: '#F5E642′ }}>DFW Solar Income Opportunities</h1>
+          <h1 style={{ fontSize: 28, fontWeight: 800, margin: '0 0 8px', color: '#F5E642' }}>DFW Solar Income Opportunities</h1>
           <p style={{ margin: 0, opacity: 0.8, lineHeight: 1.6 }}>DFW homeowners with solar and battery storage can earn real cash — not just bill credits. Tesla Powerwall's Virtual Power Plant pays ~$1,500/yr. ERCOT demand response events add more.</p>
         </div>
 
         <div style={{ background: 'rgba(255,255,255,0.07)', borderRadius: 12, padding: 24, marginBottom: 24 }}>
-          <h2 style={{ fontSize: 18, fontWeight: 700, marginBottom: 16, color: '#F5E642′ }}>⚡ How DFW Net Metering Works</h2>
+          <h2 style={{ fontSize: 18, fontWeight: 700, marginBottom: 16, color: '#F5E642' }}>⚡ How DFW Net Metering Works</h2>
           <ul style={{ lineHeight: 2, paddingLeft: 20, margin: 0, opacity: 0.9 }}>
             <li>Oncor distributes electricity in DFW — they offer net metering credits (~$0.08/kWh)</li>
             <li>Credits offset your bill but Oncor does NOT write you a check</li>
@@ -74,7 +74,7 @@ export default function DFWSolarRentalIncomeGuide() {
         </div>
 
         <div style={{ background: 'rgba(255,255,255,0.07)', borderRadius: 12, padding: 24, marginBottom: 24 }}>
-          <h2 style={{ fontSize: 18, fontWeight: 700, marginBottom: 20, color: '#F5E642′ }}>💰 Income Calculator</h2>
+          <h2 style={{ fontSize: 18, fontWeight: 700, marginBottom: 20, color: '#F5E642' }}>💰 Income Calculator</h2>
           <div style={{ display: 'grid', gap: 14, marginBottom: 20 }}>
             <div>
               <label style={{ display: 'block', fontWeight: 600, marginBottom: 6 }}>Your Current Solar Setup</label>
@@ -107,7 +107,7 @@ export default function DFWSolarRentalIncomeGuide() {
         </div>
 
         <div style={{ background: 'rgba(255,255,255,0.07)', borderRadius: 12, padding: 24 }}>
-          <h2 style={{ fontSize: 18, fontWeight: 700, marginBottom: 16, color: '#F5E642′ }}>🔋 Solar Lease & Rental Models in DFW</h2>
+          <h2 style={{ fontSize: 18, fontWeight: 700, marginBottom: 16, color: '#F5E642' }}>🔋 Solar Lease & Rental Models in DFW</h2>
           <ul style={{ lineHeight: 2, paddingLeft: 20, margin: 0, opacity: 0.9 }}>
             <li>$0-down solar leases: Sunrun, SunPower, and Tesla offer DFW leases — you use power, they own panels</li>
             <li>Power Purchase Agreement (PPA): Pay per kWh at locked rate (typically 20-40% below Oncor)</li>

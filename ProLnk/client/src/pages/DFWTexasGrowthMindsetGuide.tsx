@@ -59,18 +59,18 @@ export default function DFWTexasGrowthMindsetGuide() {
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16, marginBottom: 20 }}>
             <div>
               <label style={{ color: '#94a3b8', fontSize: 14, display: 'block', marginBottom: 8 }}>Home value estimate</label>
-              <input value={valueStr} onChange={e => setValueStr(e.target.value)} placeholder="e.g. 450000″ style={{ width: '100%', background: '#0A1628', color: '#fff', border: '1px solid #1e3a5f', borderRadius: 8, padding: '10px 12px', fontSize: 14, boxSizing: 'border-box' }} />
+              <input value={valueStr} onChange={e => setValueStr(e.target.value)} placeholder="e.g. 450000" style={{ width: '100%', background: '#0A1628', color: '#fff', border: '1px solid #1e3a5f', borderRadius: 8, padding: '10px 12px', fontSize: 14, boxSizing: 'border-box' }} />
             </div>
             <div>
               <label style={{ color: '#94a3b8', fontSize: 14, display: 'block', marginBottom: 8 }}>Years owned</label>
-              <input value={yearsStr} onChange={e => setYearsStr(e.target.value)} placeholder="e.g. 4″ type="number" style={{ width: '100%', background: '#0A1628', color: '#fff', border: '1px solid #1e3a5f', borderRadius: 8, padding: '10px 12px', fontSize: 14, boxSizing: 'border-box' }} />
+              <input value={yearsStr} onChange={e => setYearsStr(e.target.value)} placeholder="e.g. 4" type="number" style={{ width: '100%', background: '#0A1628', color: '#fff', border: '1px solid #1e3a5f', borderRadius: 8, padding: '10px 12px', fontSize: 14, boxSizing: 'border-box' }} />
             </div>
           </div>
           <div style={{ marginBottom: 20 }}>
             <label style={{ color: '#94a3b8', fontSize: 14, display: 'block', marginBottom: 10 }}>Primary goal</label>
             <div style={{ display: 'flex', gap: 10 }}>
               {([['invest', '💰 Build Wealth'], ['comfort', '🛋️ Quality of Life'], ['resale', '🏷️ Maximize Resale']] as [Goal, string][]).map(([g, label]) => (
-                <button key={g} onClick={() => setGoal(g)} style={{ flex: 1, background: goal === g ? '#F5E642′ : '#0A1628', color: goal === g ? '#0A1628' : '#fff', border: '1px solid #1e3a5f', borderRadius: 8, padding: '10px 6px', fontWeight: 600, cursor: ’pointer', fontSize: 13 }}>{label}</button>
+                <button key={g} onClick={() => setGoal(g)} style={{ flex: 1, background: goal === g ? '#F5E642' : '#0A1628', color: goal === g ? '#0A1628' : '#fff', border: '1px solid #1e3a5f', borderRadius: 8, padding: '10px 6px', fontWeight: 600, cursor: 'pointer', fontSize: 13 }}>{label}</button>
               ))}
             </div>
           </div>
@@ -95,7 +95,7 @@ export default function DFWTexasGrowthMindsetGuide() {
         <div style={{ background: '#112240', borderRadius: 12, padding: 24 }}>
           <div style={{ color: '#F5E642', fontWeight: 700, fontSize: 16, marginBottom: 12 }}>🎯 DFW Market Truths</div>
           {['DFW appreciates 7-12%/year — strategic upgrades compound this', 'Move vs improve: if neighbors are capped, move up', 'Deferred maintenance destroys DFW resale — buyers discount 3x the fix cost', 'Foundation health is the most important asset in DFW — clay soil is relentless'].map((t, i) => (
-            <div key={i} style={{ color: '#94a3b8', fontSize: 14, marginBottom: 8, paddingLeft: 16, borderLeft: '2px solid #F5E642′ }}>{t}</div>
+            <div key={i} style={{ color: '#94a3b8', fontSize: 14, marginBottom: 8, paddingLeft: 16, borderLeft: '2px solid #F5E642' }}>{t}</div>
           ))}
         </div>
       </div>

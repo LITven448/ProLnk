@@ -65,7 +65,7 @@ export default function DFWTexasHomesteadLaw() {
         <div style={{ fontSize: '2rem', marginBottom: '0.25rem' }}>🏠</div>
         <h1 style={{ color: '#F5E642', fontSize: '1.75rem', marginBottom: '0.5rem' }}>Texas Homestead Law Guide</h1>
         <p style={{ color: '#94a3b8', marginBottom: '2rem' }}>
-          Texas homestead protections are among the strongest in the nation. Unlike most states, Texas prohibits forced sale of your home for most debts — but only if you've properly designated it. Understanding what’s protected and what isn’t can save your home.
+          Texas homestead protections are among the strongest in the nation. Unlike most states, Texas prohibits forced sale of your home for most debts — but only if you've properly designated it. Understanding what's protected and what isn't can save your home.
         </p>
 
         <div style={{ background: '#0f2040', borderRadius: 10, padding: '1.5rem', marginBottom: '2rem' }}>
@@ -83,10 +83,10 @@ export default function DFWTexasHomesteadLaw() {
         {result && (
           <div style={{ display: 'grid', gap: '1rem' }}>
             {[
-              { label: '🛡️ Protections You Have', items: result.protections, color: '#F5E642′ },
+              { label: '🛡️ Protections You Have', items: result.protections, color: '#F5E642' },
               { label: '📋 Designation Process', items: result.process, color: '#60a5fa' },
-              { label: '✅ What\’s Protected', items: result.protected, color: '#4ade80′ },
-              { label: '❌ What\’s NOT Protected', items: result.notProtected, color: '#f87171′ },
+              { label: '✅ What\’s Protected', items: result.protected, color: '#4ade80' },
+              { label: '❌ What\’s NOT Protected', items: result.notProtected, color: '#f87171' },
             ].map(section => (
               <div key={section.label} style={{ background: '#0f2040', borderRadius: 10, padding: '1.5rem' }}>
                 <h2 style={{ color: section.color, fontSize: '1rem', marginBottom: '0.75rem' }}>{section.label}</h2>

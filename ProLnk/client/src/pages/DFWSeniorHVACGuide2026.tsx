@@ -81,7 +81,7 @@ export default function DFWSeniorHVACGuide2026() {
         </div>
 
         <div style={{ background: '#ef444420', border: '1px solid #ef4444', borderRadius: 8, padding: '1rem', marginBottom: '2rem' }}>
-          <p style={{ margin: 0, fontSize: '0.9rem', color: '#fca5a5′ }}>
+          <p style={{ margin: 0, fontSize: '0.9rem', color: '#fca5a5' }}>
             ⚠️ <strong>DFW Heat Fact:</strong> Dallas-Fort Worth averages 60+ days above 95°F annually. Heat stroke risk for seniors 65+ is 3x higher than the general population. HVAC failure = medical emergency.
           </p>
         </div>
@@ -96,8 +96,8 @@ export default function DFWSeniorHVACGuide2026() {
               key={s.id}
               onClick={() => setSelected(selected === s.id ? null : s.id)}
               style={{
-                background: selected === s.id ? '#F5E642′ : '#1e2d45',
-                color: selected === s.id ? '#0A1628′ : '#fff',
+                background: selected === s.id ? '#F5E642' : '#1e2d45',
+                color: selected === s.id ? '#0A1628' : '#fff',
                 border: '1px solid #334155',
                 borderRadius: 8,
                 padding: '0.9rem 1.2rem',

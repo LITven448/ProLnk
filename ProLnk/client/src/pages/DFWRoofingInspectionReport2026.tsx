@@ -23,7 +23,7 @@ export default function DFWRoofingInspectionReport2026() {
           <div style={{ color: '#F5E642', fontWeight: 700, marginBottom: 12 }}>📋 Select Your Report Finding</div>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 8 }}>
             {findings.map(f => (
-              <button key={f.id} onClick={() => setFinding(f)} style={{ background: finding.id === f.id ? '#1A2F50′ : '#0A1628', border: finding.id === f.id ? `2px solid ${f.color}` : '1px solid #1A2F50', borderRadius: 8, padding: '10px 12px', cursor: ’pointer', textAlign: 'left' }}>
+              <button key={f.id} onClick={() => setFinding(f)} style={{ background: finding.id === f.id ? '#1A2F50' : '#0A1628', border: finding.id === f.id ? `2px solid ${f.color}` : '1px solid #1A2F50', borderRadius: 8, padding: '10px 12px', cursor: 'pointer', textAlign: 'left' }}>
                 <div style={{ color: f.color, fontWeight: 700, fontSize: 13 }}>{f.label}</div>
                 <div style={{ color: '#9BA3AF', fontSize: 12 }}>{f.rating}</div>
               </button>
@@ -56,7 +56,7 @@ export default function DFWRoofingInspectionReport2026() {
           <div style={{ color: '#F5E642', fontWeight: 700, marginBottom: 12 }}>📄 HAAG-Certified Report Sections</div>
           {['Field Section: shingle condition, granule loss %, hail impact diameter and pattern', 'Penetrations: flashing at chimney, vents, skylights, plumbing boots', 'Drainage: gutters, scuppers, slope adequacy, ponding evidence', 'Edge Details: drip edge, fascia, soffit — common entry point for water and pests', 'Overall Condition Rating: Excellent / Good / Fair / Poor / Failed'].map((f, i) => (
             <div key={i} style={{ display: 'flex', gap: 10, marginBottom: 8 }}>
-              <span style={{ color: '#F5E642′ }}>📌</span>
+              <span style={{ color: '#F5E642' }}>📌</span>
               <span style={{ color: '#CBD5E1', fontSize: 14 }}>{f}</span>
             </div>
           ))}
@@ -66,7 +66,7 @@ export default function DFWRoofingInspectionReport2026() {
           <div style={{ color: '#F5E642', fontWeight: 700, marginBottom: 12 }}>🌩️ DFW Roofing Facts</div>
           {['DFW averages 4-6 significant hail events per year — most in North Texas history', 'HAAG certification is the industry standard Texas adjusters use for claim validation', '1-year filing window after storm date — most homeowners miss it without an inspection', 'Class 4 impact-resistant shingles can reduce DFW insurance premiums 20-30%', 'Charter ProLnk roofers are HAAG-certified and coordinate directly with adjusters'].map((f, i) => (
             <div key={i} style={{ display: 'flex', gap: 10, marginBottom: 8 }}>
-              <span style={{ color: '#F5E642′ }}>✓</span>
+              <span style={{ color: '#F5E642' }}>✓</span>
               <span style={{ color: '#CBD5E1', fontSize: 14 }}>{f}</span>
             </div>
           ))}

@@ -17,12 +17,12 @@ import {
 } from "lucide-react";
 
 const NOTIFICATION_TYPES = [
-  { value: "new_lead",         label: "New Lead",           icon: Zap,         color: "text-blue-500″,   bg: "bg-blue-50",   border: "border-blue-200" },
-  { value: "commission_paid",  label: "Commission Paid",    icon: TrendingUp,  color: "text-emerald-500″, bg: "bg-emerald-50", border: "border-emerald-200" },
-  { value: "approval",         label: "Tier / Approval",   icon: Award,       color: "text-purple-500″, bg: "bg-purple-50",  border: "border-purple-200" },
-  { value: "broadcast",        label: "Broadcast",          icon: Megaphone,   color: "text-amber-500″,  bg: "bg-amber-50",   border: "border-amber-200" },
-  { value: "system",           label: "System Alert",       icon: AlertCircle, color: "text-red-500″,    bg: "bg-red-50",     border: "border-red-200" },
-  { value: "lead_expired",     label: "Lead Expired",       icon: Bell,        color: "text-slate-500″,  bg: "bg-slate-50",   border: "border-slate-200" },
+  { value: "new_lead",         label: "New Lead",           icon: Zap,         color: "text-blue-500",   bg: "bg-blue-50",   border: "border-blue-200" },
+  { value: "commission_paid",  label: "Commission Paid",    icon: TrendingUp,  color: "text-emerald-500", bg: "bg-emerald-50", border: "border-emerald-200" },
+  { value: "approval",         label: "Tier / Approval",   icon: Award,       color: "text-purple-500", bg: "bg-purple-50",  border: "border-purple-200" },
+  { value: "broadcast",        label: "Broadcast",          icon: Megaphone,   color: "text-amber-500",  bg: "bg-amber-50",   border: "border-amber-200" },
+  { value: "system",           label: "System Alert",       icon: AlertCircle, color: "text-red-500",    bg: "bg-red-50",     border: "border-red-200" },
+  { value: "lead_expired",     label: "Lead Expired",       icon: Bell,        color: "text-slate-500",  bg: "bg-slate-50",   border: "border-slate-200" },
 ] as const;
 
 type NotifType = typeof NOTIFICATION_TYPES[number]["value"];
@@ -35,7 +35,7 @@ const SMART_TEMPLATES: { label: string; type: NotifType; title: string; message:
     message: "You have an active lead that expires soon. Log in to your dashboard to accept or decline before it auto-routes to another partner.",
   },
   {
-    label: "Commission Milestone: $500″,
+    label: "Commission Milestone: $500",
     type: "commission_paid",
     title: "🎉 You've earned $500 in commissions!",
     message: "Congratulations — you've crossed the $500 commission milestone. Keep referring quality leads to keep climbing the leaderboard.",
@@ -125,13 +125,13 @@ export default function SmartNotifications() {
 
   return (
     <AdminLayout>
-      <div className="max-w-3xl mx-auto px-4 py-8 space-y-6″>
+      <div className="max-w-3xl mx-auto px-4 py-8 space-y-6">
         {/* Header */}
         <div>
-          <h1 className="text-2xl font-black text-gray-800 flex items-center gap-2″>
-            <Bell className="w-6 h-6 text-blue-500″ /> Smart Notifications
+          <h1 className="text-2xl font-black text-gray-800 flex items-center gap-2">
+            <Bell className="w-6 h-6 text-blue-500" /> Smart Notifications
           </h1>
-          <p className="text-slate-500 text-sm mt-1″>
+          <p className="text-slate-500 text-sm mt-1">
             Send targeted or broadcast in-app notifications to partners
           </p>
         </div>
@@ -143,16 +143,16 @@ export default function SmartNotifications() {
               key={m}
               onClick={() => setMode(m)}
               className={`flex-1 py-2.5 text-sm font-semibold flex items-center justify-center gap-2 transition-colors ${
-                mode === m ? "bg-blue-600 text-white" : "text-slate-600 hover:bg-gray-50″
+                mode === m ? "bg-blue-600 text-white" : "text-slate-600 hover:bg-gray-50"
               }`}
             >
-              {m === "broadcast" ? <><Megaphone className="w-4 h-4″ /> Broadcast to All</> : <><Users className="w-4 h-4" /> Single Partner</>}
+              {m === "broadcast" ? <><Megaphone className="w-4 h-4" /> Broadcast to All</> : <><Users className="w-4 h-4" /> Single Partner</>}
             </button>
           ))}
         </div>
 
         {/* Composer card */}
-        <div className="rounded-2xl border border-gray-200 bg-white shadow-sm p-6 space-y-5″>
+        <div className="rounded-2xl border border-gray-200 bg-white shadow-sm p-6 space-y-5">
           {/* Target selector */}
           {mode === "single" ? (
             <div>
@@ -160,7 +160,7 @@ export default function SmartNotifications() {
               <select
                 value={partnerId}
                 onChange={e => setPartnerId(e.target.value)}
-                className="w-full rounded-lg border border-gray-200 px-3 py-2 text-sm text-gray-800 focus:outline-none focus:ring-2 focus:ring-blue-500″
+                className="w-full rounded-lg border border-gray-200 px-3 py-2 text-sm text-gray-800 focus:outline-none focus:ring-2 focus:ring-blue-500"
               >
                 <option value="">Select a partner...</option>
                 {approvedPartners.map((p: { id: number; businessName: string; tier: string | null }) => (
@@ -183,8 +183,8 @@ export default function SmartNotifications() {
                     onClick={() => setTierFilter(t)}
                     className={`px-3 py-1.5 rounded-lg text-xs font-semibold capitalize border transition-colors ${
                       tierFilter === t
-                        ? "bg-blue-600 text-white border-blue-600″
-                        : "border-gray-200 text-slate-600 hover:bg-gray-50″
+                        ? "bg-blue-600 text-white border-blue-600"
+                        : "border-gray-200 text-slate-600 hover:bg-gray-50"
                     }`}
                   >
                     {t === "all" ? "All Tiers" : t}
@@ -197,7 +197,7 @@ export default function SmartNotifications() {
           {/* Notification type */}
           <div>
             <label className="text-xs font-semibold text-slate-500 uppercase tracking-wider mb-1.5 block">Notification Type</label>
-            <div className="grid grid-cols-3 gap-2″>
+            <div className="grid grid-cols-3 gap-2">
               {NOTIFICATION_TYPES.map(n => (
                 <button
                   key={n.value}
@@ -205,7 +205,7 @@ export default function SmartNotifications() {
                   className={`flex items-center gap-2 px-3 py-2 rounded-lg border text-xs font-semibold transition-colors ${
                     type === n.value
                       ? `${n.bg} ${n.border} ${n.color}`
-                      : "border-gray-200 text-slate-600 hover:bg-gray-50″
+                      : "border-gray-200 text-slate-600 hover:bg-gray-50"
                   }`}
                 >
                   <n.icon className={`w-3.5 h-3.5 ${type === n.value ? n.color : "text-slate-400"}`} />
@@ -221,20 +221,20 @@ export default function SmartNotifications() {
               onClick={() => setShowTemplates(v => !v)}
               className="flex items-center gap-1.5 text-xs text-blue-600 font-semibold hover:underline"
             >
-              <Star className="w-3.5 h-3.5″ />
+              <Star className="w-3.5 h-3.5" />
               Smart Templates
               <ChevronDown className={`w-3.5 h-3.5 transition-transform ${showTemplates ? "rotate-180" : ""}`} />
             </button>
             {showTemplates && (
-              <div className="mt-2 grid grid-cols-1 gap-2″>
+              <div className="mt-2 grid grid-cols-1 gap-2">
                 {SMART_TEMPLATES.map(t => (
                   <button
                     key={t.label}
                     onClick={() => applyTemplate(t)}
                     className="text-left px-3 py-2.5 rounded-lg border border-gray-200 hover:bg-blue-50 hover:border-blue-200 transition-colors"
                   >
-                    <p className="text-xs font-semibold text-gray-800″>{t.label}</p>
-                    <p className="text-xs text-slate-500 truncate mt-0.5″>{t.title}</p>
+                    <p className="text-xs font-semibold text-gray-800">{t.label}</p>
+                    <p className="text-xs text-slate-500 truncate mt-0.5">{t.title}</p>
                   </button>
                 ))}
               </div>
@@ -248,7 +248,7 @@ export default function SmartNotifications() {
               placeholder="e.g. ⏰ Your lead expires in 24 hours"
               value={title}
               onChange={e => setTitle(e.target.value)}
-              className="border-gray-200 text-gray-800 placeholder:text-slate-400″
+              className="border-gray-200 text-gray-800 placeholder:text-slate-400"
             />
           </div>
 
@@ -273,22 +273,22 @@ export default function SmartNotifications() {
               placeholder="e.g. /dashboard/leads"
               value={actionUrl}
               onChange={e => setActionUrl(e.target.value)}
-              className="border-gray-200 text-gray-800 placeholder:text-slate-400″
+              className="border-gray-200 text-gray-800 placeholder:text-slate-400"
             />
           </div>
 
           {/* Preview */}
           {(title || message) && (
             <div className={`rounded-xl border p-4 ${selectedType.bg} ${selectedType.border}`}>
-              <p className="text-[10px] uppercase tracking-widest text-slate-500 font-semibold mb-2″>Preview</p>
-              <div className="flex items-start gap-3″>
+              <p className="text-[10px] uppercase tracking-widest text-slate-500 font-semibold mb-2">Preview</p>
+              <div className="flex items-start gap-3">
                 <div className={`w-8 h-8 rounded-lg flex items-center justify-center shrink-0 ${selectedType.bg}`}>
                   <selectedType.icon className={`w-4 h-4 ${selectedType.color}`} />
                 </div>
                 <div>
-                  <p className="text-sm font-semibold text-gray-800″>{title || "Notification title"}</p>
-                  <p className="text-xs text-slate-600 mt-0.5″>{message || "Notification message"}</p>
-                  {actionUrl && <p className="text-xs text-blue-600 mt-1″>{actionUrl}</p>}
+                  <p className="text-sm font-semibold text-gray-800">{title || "Notification title"}</p>
+                  <p className="text-xs text-slate-600 mt-0.5">{message || "Notification message"}</p>
+                  {actionUrl && <p className="text-xs text-blue-600 mt-1">{actionUrl}</p>}
                 </div>
               </div>
             </div>
@@ -298,19 +298,19 @@ export default function SmartNotifications() {
           <Button
             onClick={handleSend}
             disabled={isBusy || !title.trim() || !message.trim()}
-            className="w-full bg-blue-600 hover:bg-blue-500 text-white gap-2″
+            className="w-full bg-blue-600 hover:bg-blue-500 text-white gap-2"
           >
             {isBusy ? (
               <><Loader2 className="w-4 h-4 animate-spin" /> Sending...</>
             ) : (
-              <><Send className="w-4 h-4″ /> Send to {mode === "broadcast" ? `${targetCount} Partner${targetCount !== 1 ? "s" : ""}` : "Partner"}</>
+              <><Send className="w-4 h-4" /> Send to {mode === "broadcast" ? `${targetCount} Partner${targetCount !== 1 ? "s" : ""}` : "Partner"}</>
             )}
           </Button>
         </div>
 
         {/* Info */}
-        <div className="flex items-start gap-3 rounded-xl border border-blue-200 bg-blue-50 p-4 text-sm text-blue-700″>
-          <CheckCircle className="w-5 h-5 text-blue-500 mt-0.5 shrink-0″ />
+        <div className="flex items-start gap-3 rounded-xl border border-blue-200 bg-blue-50 p-4 text-sm text-blue-700">
+          <CheckCircle className="w-5 h-5 text-blue-500 mt-0.5 shrink-0" />
           <div>
             Notifications appear in the partner's in-app notification bell. Partners with email notifications enabled will also receive an email.
             Use the <strong>Smart Templates</strong> above for pre-written, high-converting messages.

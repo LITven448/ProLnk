@@ -38,7 +38,7 @@ export default function DFWTornadoRatingGuide() {
                 style={{ background: selectedEF === i ? e.color : '#0A1628', border: `2px solid ${e.color}`, borderRadius: '10px', padding: '0.75rem 1rem', cursor: 'pointer', color: '#fff', fontWeight: 700, transition: 'all 0.2s', minWidth: 90, textAlign: 'center' }}>
                 <div style={{ fontSize: '1.5rem' }}>{e.emoji}</div>
                 <div>{e.ef}</div>
-                <div style={{ fontSize: '0.75rem', color: '#cbd5e1′ }}>{e.wind}</div>
+                <div style={{ fontSize: '0.75rem', color: '#cbd5e1' }}>{e.wind}</div>
               </button>
             ))}
           </div>
@@ -49,7 +49,7 @@ export default function DFWTornadoRatingGuide() {
           <div style={{ display: 'flex', gap: '0.5rem', flexWrap: 'wrap' }}>
             {constructionTypes.map((c) => (
               <button key={c} onClick={() => setSelectedConstruction(c === selectedConstruction ? null : c)}
-                style={{ background: selectedConstruction === c ? '#1e3a5f' : '#0A1628', border: selectedConstruction === c ? '2px solid #F5E642′ : '2px solid #2d4a6b', borderRadius: '10px', padding: '0.75rem 1.2rem', cursor: ’pointer', color: '#fff', fontWeight: 600, transition: 'all 0.2s' }}>
+                style={{ background: selectedConstruction === c ? '#1e3a5f' : '#0A1628', border: selectedConstruction === c ? '2px solid #F5E642' : '2px solid #2d4a6b', borderRadius: '10px', padding: '0.75rem 1.2rem', cursor: 'pointer', color: '#fff', fontWeight: 600, transition: 'all 0.2s' }}>
                 {c}
               </button>
             ))}
@@ -62,30 +62,30 @@ export default function DFWTornadoRatingGuide() {
             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0.75rem', marginBottom: '1rem' }}>
               <div style={{ background: '#0A1628', borderRadius: '10px', padding: '1rem' }}>
                 <div style={{ color: '#F5E642', fontWeight: 700, marginBottom: '0.25rem' }}>⏱️ Typical Duration</div>
-                <div style={{ color: '#e2e8f0′ }}>{ef.duration}</div>
+                <div style={{ color: '#e2e8f0' }}>{ef.duration}</div>
               </div>
               <div style={{ background: '#0A1628', borderRadius: '10px', padding: '1rem' }}>
                 <div style={{ color: '#F5E642', fontWeight: 700, marginBottom: '0.25rem' }}>📏 Track Length</div>
-                <div style={{ color: '#e2e8f0′ }}>{ef.trackLen}</div>
+                <div style={{ color: '#e2e8f0' }}>{ef.trackLen}</div>
               </div>
             </div>
             {selectedConstruction && (
               <div style={{ background: '#0A1628', borderRadius: '10px', padding: '1rem', marginBottom: '0.75rem' }}>
                 <div style={{ color: '#F5E642', fontWeight: 700, marginBottom: '0.25rem' }}>🏗️ {selectedConstruction} — Expected Damage</div>
-                <div style={{ color: '#e2e8f0′ }}>{(ef.constructions as Record<string,string>)[selectedConstruction]}</div>
+                <div style={{ color: '#e2e8f0' }}>{(ef.constructions as Record<string,string>)[selectedConstruction]}</div>
               </div>
             )}
             {!selectedConstruction && (
               <div style={{ background: '#0A1628', borderRadius: '10px', padding: '1rem', marginBottom: '0.75rem' }}>
                 <div style={{ color: '#F5E642', fontWeight: 700, marginBottom: '0.5rem' }}>🏗️ Damage by Construction Type</div>
                 {constructionTypes.map((c) => (
-                  <div key={c} style={{ marginBottom: '0.4rem', color: '#e2e8f0', fontSize: '0.9rem' }}><strong style={{ color: '#94a3b8′ }}>{c}:</strong> {(ef.constructions as Record<string,string>)[c]}</div>
+                  <div key={c} style={{ marginBottom: '0.4rem', color: '#e2e8f0', fontSize: '0.9rem' }}><strong style={{ color: '#94a3b8' }}>{c}:</strong> {(ef.constructions as Record<string,string>)[c]}</div>
                 ))}
               </div>
             )}
             <div style={{ background: '#0A1628', borderRadius: '10px', padding: '1rem', marginBottom: '0.75rem' }}>
               <div style={{ color: '#F5E642', fontWeight: 700, marginBottom: '0.25rem' }}>🛡️ Shelter Recommendation</div>
-              <div style={{ color: '#e2e8f0′ }}>{ef.shelter}</div>
+              <div style={{ color: '#e2e8f0' }}>{ef.shelter}</div>
             </div>
             <div style={{ background: ef.color, borderRadius: '10px', padding: '1rem', textAlign: 'center', fontWeight: 700 }}>
               ⚡ {ef.action}

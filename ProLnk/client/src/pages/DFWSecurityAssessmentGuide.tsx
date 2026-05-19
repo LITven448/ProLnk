@@ -40,7 +40,7 @@ export default function DFWSecurityAssessmentGuide() {
     <div style={{ background: '#0A1628', minHeight: '100vh', color: '#E8EDF5', fontFamily: 'system-ui, sans-serif', padding: '2rem' }}>
       <div style={{ maxWidth: 760, margin: '0 auto' }}>
         <div style={{ fontSize: 40 }}>🔍</div>
-        <h1 style={{ color: '#F5E642', fontSize: 28, margin: '0.5rem 0′ }}>DFW Home Security Assessment Guide</h1>
+        <h1 style={{ color: '#F5E642', fontSize: 28, margin: '0.5rem 0' }}>DFW Home Security Assessment Guide</h1>
         <p style={{ color: '#9BA8BB', marginBottom: '1.5rem' }}>
           DFW burglaries peak 10am–3pm on weekdays — when residents are at work. Understanding your home's specific
           vulnerabilities is the first step to meaningful protection.
@@ -49,7 +49,7 @@ export default function DFWSecurityAssessmentGuide() {
         <div style={{ background: '#112240', borderRadius: 12, padding: '1.5rem', marginBottom: '1.5rem' }}>
           <h2 style={{ color: '#F5E642', fontSize: 18, marginBottom: '1rem' }}>📍 Free DFW Resource</h2>
           <p style={{ color: '#9BA8BB', margin: 0 }}>
-            Many DFW cities offer <strong style={{ color: '#E8EDF5′ }}>free home security walk-throughs</strong> by off-duty officers.
+            Many DFW cities offer <strong style={{ color: '#E8EDF5' }}>free home security walk-throughs</strong> by off-duty officers.
             Call your city's police non-emergency line and ask for a "residential security assessment." Available in:
             Plano (972-424-5678), Frisco (972-292-6010), McKinney (972-547-5350), Allen (214-509-4321).
           </p>
@@ -100,14 +100,14 @@ export default function DFWSecurityAssessmentGuide() {
             <h2 style={{ color: '#F5E642', fontSize: 18, marginBottom: '1rem' }}>⚠️ Vulnerabilities Found</h2>
             {result.vulns.map((v, i) => (
               <div key={i} style={{ display: 'flex', gap: '0.75rem', marginBottom: '0.75rem', alignItems: 'flex-start' }}>
-                <span style={{ color: '#F5E642′ }}>▸</span>
-                <span style={{ color: '#E8EDF5′ }}>{v}</span>
+                <span style={{ color: '#F5E642' }}>▸</span>
+                <span style={{ color: '#E8EDF5' }}>{v}</span>
               </div>
             ))}
             <h2 style={{ color: '#F5E642', fontSize: 18, margin: '1.5rem 0 1rem' }}>✅ Priority Improvements</h2>
             {result.tips.map((t, i) => (
               <div key={i} style={{ background: '#0A1628', borderRadius: 8, padding: '0.75rem 1rem', marginBottom: '0.5rem', display: 'flex', justifyContent: 'space-between' }}>
-                <span style={{ color: '#E8EDF5′ }}>#{t.priority} {t.item}</span>
+                <span style={{ color: '#E8EDF5' }}>#{t.priority} {t.item}</span>
                 <span style={{ color: '#F5E642', fontWeight: 700 }}>{t.cost}</span>
               </div>
             ))}

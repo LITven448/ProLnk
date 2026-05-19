@@ -36,7 +36,7 @@ export default function DFWEmergencyHomeKitGuide2026() {
         <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap', marginBottom: 24 }}>
           {kitItems.map(s => (
             <button key={s.id} onClick={() => setActiveItem(s.id)}
-              style={{ background: activeItem === s.id ? '#F5E642′ : '#1e2d4a', color: activeItem === s.id ? '#0A1628' : '#fff', border: ’none', borderRadius: 8, padding: '8px 14px', cursor: 'pointer', fontWeight: 600, fontSize: 13 }}>
+              style={{ background: activeItem === s.id ? '#F5E642' : '#1e2d4a', color: activeItem === s.id ? '#0A1628' : '#fff', border: 'none', borderRadius: 8, padding: '8px 14px', cursor: 'pointer', fontWeight: 600, fontSize: 13 }}>
               {s.label}
             </button>
           ))}
@@ -54,14 +54,14 @@ export default function DFWEmergencyHomeKitGuide2026() {
           <div style={{ display: 'flex', gap: 10, marginBottom: 16, flexWrap: 'wrap' }}>
             {['small', 'medium', 'large'].map(t => (
               <button key={t} onClick={() => setHomeSize(t)}
-                style={{ background: homeSize === t ? '#F5E642′ : '#0A1628', color: homeSize === t ? '#0A1628' : '#fff', border: '1px solid #2d4a6e', borderRadius: 8, padding: '8px 16px', cursor: ’pointer', fontWeight: 600, textTransform: 'capitalize' }}>
+                style={{ background: homeSize === t ? '#F5E642' : '#0A1628', color: homeSize === t ? '#0A1628' : '#fff', border: '1px solid #2d4a6e', borderRadius: 8, padding: '8px 16px', cursor: 'pointer', fontWeight: 600, textTransform: 'capitalize' }}>
                 {t === 'small' ? 'Small (&lt;1,500 sq ft)' : t === 'medium' ? 'Medium (1,500–3,000)' : 'Large (3,000+)'}
               </button>
             ))}
           </div>
           {guide && guide.map((tip, i) => (
             <div key={i} onClick={() => toggle(`tip-${i}`)}
-              style={{ display: 'flex', gap: 10, alignItems: 'flex-start', padding: '8px 0', cursor: 'pointer', borderBottom: '1px solid #0A1628′ }}>
+              style={{ display: 'flex', gap: 10, alignItems: 'flex-start', padding: '8px 0', cursor: 'pointer', borderBottom: '1px solid #0A1628' }}>
               <span style={{ fontSize: 18 }}>{checked.includes(`tip-${i}`) ? '✅' : '⬜'}</span>
               <span style={{ color: '#cbd5e1', fontSize: 14 }}>{tip}</span>
             </div>

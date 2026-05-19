@@ -28,7 +28,7 @@ export default function DFWPlanoLegacyWestGuide2026() {
         <div style={{ background: '#0d1f38', borderRadius: 12, padding: 20, marginBottom: 24 }}>
           <h2 style={{ fontSize: 16, color: '#F5E642', marginBottom: 14 }}>📍 District Snapshot</h2>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12 }}>
-            {[{ icon: '🏗️', label: 'Build Era', val: '2015–2026′ }, { icon: '📋', label: ’HOA Activity', val: 'Very High' }, { icon: '🏢', label: 'Tech Anchors', val: 'Toyota · JPMorgan' }, { icon: '💰', label: 'Market Tier', val: 'Luxury' }].map(s => (
+            {[{ icon: '🏗️', label: 'Build Era', val: '2015–2026' }, { icon: '📋', label: 'HOA Activity', val: 'Very High' }, { icon: '🏢', label: 'Tech Anchors', val: 'Toyota · JPMorgan' }, { icon: '💰', label: 'Market Tier', val: 'Luxury' }].map(s => (
               <div key={s.label} style={{ background: '#162236', borderRadius: 8, padding: '12px 16px' }}>
                 <div style={{ fontSize: 20 }}>{s.icon}</div>
                 <div style={{ fontSize: 11, color: '#8899aa', marginTop: 4 }}>{s.label}</div>
@@ -43,7 +43,7 @@ export default function DFWPlanoLegacyWestGuide2026() {
           <div style={{ display: 'flex', gap: 10, flexWrap: 'wrap', marginBottom: 16 }}>
             {propertyTypes.map(p => (
               <button key={p.id} onClick={() => setSelected(p.id === selected ? null : p.id)}
-                style={{ background: selected === p.id ? '#F5E642′ : '#162236', color: selected === p.id ? '#0A1628' : '#fff', border: ’none', borderRadius: 8, padding: '10px 16px', cursor: 'pointer', fontWeight: 600, fontSize: 14 }}>
+                style={{ background: selected === p.id ? '#F5E642' : '#162236', color: selected === p.id ? '#0A1628' : '#fff', border: 'none', borderRadius: 8, padding: '10px 16px', cursor: 'pointer', fontWeight: 600, fontSize: 14 }}>
                 {p.label}
               </button>
             ))}
@@ -53,7 +53,7 @@ export default function DFWPlanoLegacyWestGuide2026() {
               <h3 style={{ color: '#F5E642', marginBottom: 12, fontSize: 14 }}>{active.label} — Owner Guide</h3>
               {active.tips.map((t, i) => (
                 <div key={i} style={{ display: 'flex', gap: 10, marginBottom: 10 }}>
-                  <span style={{ color: '#F5E642′ }}>✓</span>
+                  <span style={{ color: '#F5E642' }}>✓</span>
                   <span style={{ color: '#ccd6e0', fontSize: 14 }}>{t}</span>
                 </div>
               ))}
@@ -65,7 +65,7 @@ export default function DFWPlanoLegacyWestGuide2026() {
           <h2 style={{ fontSize: 16, color: '#F5E642', marginBottom: 14 }}>🏢 Tech Campus Impact</h2>
           {techCampusTips.map((t, i) => (
             <div key={i} style={{ display: 'flex', gap: 10, marginBottom: 10 }}>
-              <span style={{ color: '#F5E642′ }}>→</span>
+              <span style={{ color: '#F5E642' }}>→</span>
               <span style={{ color: '#ccd6e0', fontSize: 14 }}>{t}</span>
             </div>
           ))}

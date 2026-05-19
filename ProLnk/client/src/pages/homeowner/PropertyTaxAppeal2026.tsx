@@ -102,7 +102,7 @@ export default function PropertyTaxAppeal2026() {
           {savings > 0 ? (
             <div style={{ background: '#0d2818', border: '1px solid #238636', borderRadius: 10, padding: 20, textAlign: 'center' }}>
               <div style={{ fontSize: 13, color: '#3fb950', marginBottom: 4 }}>Potential Annual Tax Savings</div>
-              <div style={{ fontSize: 40, fontWeight: 800, color: '#3fb950′ }}>${savings.toLocaleString()}</div>
+              <div style={{ fontSize: 40, fontWeight: 800, color: '#3fb950' }}>${savings.toLocaleString()}</div>
               <div style={{ fontSize: 13, color: '#8b949e', marginTop: 4 }}>Based on {reductionPct}% value reduction (${(assessed - market).toLocaleString()} decrease)</div>
             </div>
           ) : (

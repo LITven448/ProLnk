@@ -7,8 +7,8 @@ const cityData: Record<string, { days: string; inspections: number; expedite: st
   'Fort Worth': { days: '10–15 business days', inspections: 4, expedite: 'Expedited Review $300 for residential', notes: 'Fort Worth Development permits.fortworthtexas.gov' },
   McKinney: { days: '5–8 business days', inspections: 3, expedite: 'Pre-submittal conference free, speeds approval', notes: 'McKinney CSS portal; strong online scheduling' },
   Allen: { days: '3–5 business days', inspections: 3, expedite: 'Walk-through same day for additions under 500 sq ft', notes: 'One of fastest DFW cities for residential permits' },
-  Garland: { days: '7–10 business days', inspections: 4, expedite: 'No formal program; call chief inspector', notes: 'Garland Development Services 972-205-2170′ },
-  Irving: { days: '7–12 business days', inspections: 3, expedite: '$250 expedite; 3-day turnaround', notes: 'Irving ePlans system adopted 2023′ },
+  Garland: { days: '7–10 business days', inspections: 4, expedite: 'No formal program; call chief inspector', notes: 'Garland Development Services 972-205-2170' },
+  Irving: { days: '7–12 business days', inspections: 3, expedite: '$250 expedite; 3-day turnaround', notes: 'Irving ePlans system adopted 2023' },
   Denton: { days: '5–10 business days', inspections: 3, expedite: 'Pre-application meetings reduce revision cycles', notes: 'Denton One Stop Shop portal' },
   Mesquite: { days: '7–14 business days', inspections: 4, expedite: 'No formal expedite; complete submittals fastest path', notes: 'Older review process; paper submittals still common' },
 };
@@ -55,25 +55,25 @@ export default function DFWRenovationPermitTimeline() {
         </div>
 
         {cityInfo && (
-          <div style={{ backgroundColor: '#162033', borderRadius: 12, padding: 24, marginBottom: 20, border: '1px solid #2D3E55′ }}>
+          <div style={{ backgroundColor: '#162033', borderRadius: 12, padding: 24, marginBottom: 20, border: '1px solid #2D3E55' }}>
             <div style={{ fontSize: 18, fontWeight: 700, color: '#F5E642', marginBottom: 16 }}>📋 {city} Permit Info</div>
             <div style={{ display: 'grid', gap: 12 }}>
               <div style={{ display: 'flex', justifyContent: 'space-between', flexWrap: 'wrap', gap: 8 }}>
-                <span style={{ color: '#94A3B8′ }}>⏱️ Base timeline</span>
+                <span style={{ color: '#94A3B8' }}>⏱️ Base timeline</span>
                 <span style={{ fontWeight: 600 }}>{cityInfo.days}</span>
               </div>
               {projectInfo && (
                 <div style={{ display: 'flex', justifyContent: 'space-between', flexWrap: 'wrap', gap: 8 }}>
-                  <span style={{ color: '#94A3B8′ }}>🔧 Project adjustment</span>
+                  <span style={{ color: '#94A3B8' }}>🔧 Project adjustment</span>
                   <span style={{ fontWeight: 600 }}>{projectInfo.delay}</span>
                 </div>
               )}
               <div style={{ display: 'flex', justifyContent: 'space-between', flexWrap: 'wrap', gap: 8 }}>
-                <span style={{ color: '#94A3B8′ }}>🔍 Inspections needed</span>
+                <span style={{ color: '#94A3B8' }}>🔍 Inspections needed</span>
                 <span style={{ fontWeight: 600 }}>{cityInfo.inspections} inspections</span>
               </div>
               <div style={{ display: 'flex', justifyContent: 'space-between', flexWrap: 'wrap', gap: 8 }}>
-                <span style={{ color: '#94A3B8′ }}>⚡ Expedite option</span>
+                <span style={{ color: '#94A3B8' }}>⚡ Expedite option</span>
                 <span style={{ fontWeight: 600, textAlign: 'right', maxWidth: 320 }}>{cityInfo.expedite}</span>
               </div>
               <div style={{ borderTop: '1px solid #2D3E55', paddingTop: 12, color: '#94A3B8', fontSize: 14 }}>💡 {cityInfo.notes}</div>
@@ -81,7 +81,7 @@ export default function DFWRenovationPermitTimeline() {
           </div>
         )}
 
-        <div style={{ backgroundColor: '#162033', borderRadius: 12, padding: 24, border: '1px solid #2D3E55′ }}>
+        <div style={{ backgroundColor: '#162033', borderRadius: 12, padding: 24, border: '1px solid #2D3E55' }}>
           <div style={{ fontSize: 16, fontWeight: 700, marginBottom: 12 }}>⚠️ What Delays DFW Permits</div>
           <ul style={{ paddingLeft: 20, margin: 0, color: '#94A3B8', fontSize: 14, lineHeight: 1.8 }}>
             <li>Incomplete plan sets — missing dimensions, materials, or MEP details</li>

@@ -63,7 +63,7 @@ export default function DFWFoundationSummary2026() {
             <button onClick={() => setSubmitted(true)} style={{ background: '#F5E642', color: '#0A1628', border: 'none', borderRadius: 8, padding: '10px 20px', fontWeight: 700, cursor: 'pointer' }}>Generate</button>
           </div>
           {submitted && profile && (
-            <div style={{ background: '#0A1628', borderRadius: 10, padding: 16, border: '1px solid #F5E642′ }}>
+            <div style={{ background: '#0A1628', borderRadius: 10, padding: 16, border: '1px solid #F5E642' }}>
               <div style={{ fontWeight: 600, color: '#F5E642', marginBottom: 8 }}>Era: {eraKey} — {profile.profile}</div>
               <div style={{ color: '#FF8C69', marginBottom: 6, fontSize: 14 }}>⚠️ {profile.risk}</div>
               <div style={{ color: '#6EE7B7', fontSize: 14 }}>✅ {profile.action}</div>

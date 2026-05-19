@@ -31,7 +31,7 @@ const specs: Record<string, RoomSpec> = {
   },
   'Media/Home Theater': {
     minSize: '12ft × 16ft minimum for true theater experience',
-    equipment: ['4K projector or 100″+ screen ($1,000–$8,000)', 'AV receiver + surround sound system ($800–$5,000)', 'Recliner seating ($1,500–$8,000)', 'Acoustic panels + bass traps', 'Blackout curtains or window elimination'],
+    equipment: ['4K projector or 100"+ screen ($1,000–$8,000)', 'AV receiver + surround sound system ($800–$5,000)', 'Recliner seating ($1,500–$8,000)', 'Acoustic panels + bass traps', 'Blackout curtains or window elimination'],
     hvac: 'Near-silent HVAC essential — duct noise ruins quiet scenes. Consider mini-split with variable speed fan. Insulate ducts.',
     acoustic: 'Acoustic treatment is the single biggest upgrade for home theaters. Room treatment > equipment cost for most builds.',
     cost: '$8,000–$40,000 full build',
@@ -92,7 +92,7 @@ export default function DFWGameRoomGuide() {
         </div>
 
         <div style={{ backgroundColor: '#112240', borderRadius: '16px', padding: '28px', marginBottom: '32px' }}>
-          <h2 style={{ fontSize: '22px', fontWeight: 700, marginBottom: '20px', color: '#F5E642′ }}>
+          <h2 style={{ fontSize: '22px', fontWeight: 700, marginBottom: '20px', color: '#F5E642' }}>
             🔧 Entertainment Room Planner
           </h2>
 
@@ -102,8 +102,8 @@ export default function DFWGameRoomGuide() {
               {roomSizes.map(s => (
                 <button key={s} onClick={() => { setRoomSize(s); setShowResults(false); }}
                   style={{ padding: '10px 16px', borderRadius: '8px', border: 'none', cursor: 'pointer', fontSize: '13px',
-                    backgroundColor: roomSize === s ? '#F5E642′ : '#1E3A5F',
-                    color: roomSize === s ? '#0A1628′ : '#E8EAF0', fontWeight: 600 }}>
+                    backgroundColor: roomSize === s ? '#F5E642' : '#1E3A5F',
+                    color: roomSize === s ? '#0A1628' : '#E8EAF0', fontWeight: 600 }}>
                   {s}
                 </button>
               ))}
@@ -116,8 +116,8 @@ export default function DFWGameRoomGuide() {
               {primaryUses.map(u => (
                 <button key={u} onClick={() => { setPrimaryUse(u); setShowResults(false); }}
                   style={{ padding: '10px 16px', borderRadius: '8px', border: 'none', cursor: 'pointer', fontSize: '13px',
-                    backgroundColor: primaryUse === u ? '#F5E642′ : '#1E3A5F',
-                    color: primaryUse === u ? '#0A1628′ : '#E8EAF0', fontWeight: 600 }}>
+                    backgroundColor: primaryUse === u ? '#F5E642' : '#1E3A5F',
+                    color: primaryUse === u ? '#0A1628' : '#E8EAF0', fontWeight: 600 }}>
                   {u}
                 </button>
               ))}
@@ -151,18 +151,18 @@ export default function DFWGameRoomGuide() {
               ))}
             </div>
 
-            <div style={{ marginBottom: '16px', padding: '16px', backgroundColor: '#FF444415', borderRadius: '8px', border: '1px solid #FF444440′ }}>
-              <div style={{ fontWeight: 700, marginBottom: '6px', fontSize: '13px', color: '#FF9999′ }}>🌡️ HVAC Requirement</div>
+            <div style={{ marginBottom: '16px', padding: '16px', backgroundColor: '#FF444415', borderRadius: '8px', border: '1px solid #FF444440' }}>
+              <div style={{ fontWeight: 700, marginBottom: '6px', fontSize: '13px', color: '#FF9999' }}>🌡️ HVAC Requirement</div>
               <p style={{ margin: 0, fontSize: '13px', lineHeight: 1.5 }}>{spec.hvac}</p>
             </div>
 
-            <div style={{ marginBottom: '16px', padding: '16px', backgroundColor: '#F5E64210', borderRadius: '8px', border: '1px solid #F5E64240′ }}>
-              <div style={{ fontWeight: 700, marginBottom: '6px', fontSize: '13px', color: '#F5E642′ }}>🔊 Acoustic Treatment</div>
+            <div style={{ marginBottom: '16px', padding: '16px', backgroundColor: '#F5E64210', borderRadius: '8px', border: '1px solid #F5E64240' }}>
+              <div style={{ fontWeight: 700, marginBottom: '6px', fontSize: '13px', color: '#F5E642' }}>🔊 Acoustic Treatment</div>
               <p style={{ margin: 0, fontSize: '13px', lineHeight: 1.5 }}>{spec.acoustic}</p>
             </div>
 
             <div style={{ padding: '16px', backgroundColor: '#112240', borderRadius: '8px', border: '1px solid #1E3A5F' }}>
-              <div style={{ fontWeight: 700, marginBottom: '6px', fontSize: '13px', color: '#94A3B8′ }}>🤠 DFW Market Note</div>
+              <div style={{ fontWeight: 700, marginBottom: '6px', fontSize: '13px', color: '#94A3B8' }}>🤠 DFW Market Note</div>
               <p style={{ margin: 0, fontSize: '13px', lineHeight: 1.5 }}>{spec.dfwNote}</p>
             </div>
           </div>

@@ -13,7 +13,7 @@ const OPPORTUNITY: Record<string, { headline: string; stats: { label: string; va
     headline: 'DFW homeowners overpay by $2,800/yr on average for home services',
     stats: [
       { label: 'DFW homes needing service annually', value: '2.1M' },
-      { label: 'Avg homeowner spend on services/yr', value: '$8,400′ },
+      { label: 'Avg homeowner spend on services/yr', value: '$8,400' },
       { label: 'Avg overpayment vs. matched rate', value: '33%' },
       { label: 'Time wasted finding contractors/yr', value: '28 hrs' },
     ],
@@ -24,9 +24,9 @@ const OPPORTUNITY: Record<string, { headline: string; stats: { label: string; va
     headline: 'DFW has 42,000 daily service calls — and 30% go unfilled due to bad matching',
     stats: [
       { label: 'Annual DFW home services market', value: '$2.1B' },
-      { label: 'Daily service calls in DFW metro', value: '42,000′ },
+      { label: 'Daily service calls in DFW metro', value: '42,000' },
       { label: 'Jobs lost to no-show / no-contact', value: '30%' },
-      { label: 'Avg cost of a bad lead (Angi/etc)', value: '$85′ },
+      { label: 'Avg cost of a bad lead (Angi/etc)', value: '$85' },
     ],
     insight: 'DFW contractors waste 35% of their marketing budget on unqualified leads. ProLnk\’s match-only model means every lead you receive is pre-qualified for your trade, your territory, and your availability. Charter members pay $149/mo and earn 5 income streams — including a permanent cut of every homeowner they originate.',
     cta: 'Apply for Charter Pro membership — 500 spots at founding rate',
@@ -36,8 +36,8 @@ const OPPORTUNITY: Record<string, { headline: string; stats: { label: string; va
     stats: [
       { label: 'DFW home services market size', value: '$2.1B' },
       { label: 'ProLnk addressable share at scale', value: '$420M' },
-      { label: 'Partner income streams available', value: '5′ },
-      { label: 'Avg monthly partner earning at 1K pros', value: '$4,200′ },
+      { label: 'Partner income streams available', value: '5' },
+      { label: 'Avg monthly partner earning at 1K pros', value: '$4,200' },
     ],
     insight: 'No platform in DFW has built a referral partner network for home services. ProLnk\’s 5-stream income model means you earn from every contractor you recruit, every homeowner you refer, every home added to the Vault — permanently. Founding partners lock in the highest commission rates before the market matures.',
     cta: 'Get partner onboarding info — founding partner rates closing soon',
@@ -56,8 +56,8 @@ const OPPORTUNITY: Record<string, { headline: string; stats: { label: string; va
   agent: {
     headline: 'DFW real estate agents leave $4,200/transaction in unrealized service value',
     stats: [
-      { label: 'DFW home transactions annually', value: '112,000′ },
-      { label: 'Avg service calls per transaction', value: '6.4′ },
+      { label: 'DFW home transactions annually', value: '112,000' },
+      { label: 'Avg service calls per transaction', value: '6.4' },
       { label: 'Agent referral income per transaction', value: '$0 today' },
       { label: 'Potential partner income per transaction', value: '$340+' },
     ],
@@ -70,9 +70,9 @@ const MARKET_FACTS = [
   { icon: '📍', label: 'Market', value: 'Dallas-Fort Worth Metro' },
   { icon: '🏘️', label: 'Total Homes', value: '3.2M' },
   { icon: '💵', label: 'Annual Spend', value: '$2.1 Billion' },
-  { icon: '📞', label: 'Daily Service Calls', value: '42,000′ },
+  { icon: '📞', label: 'Daily Service Calls', value: '42,000' },
   { icon: '📈', label: 'Growth Rate', value: '8% Annually' },
-  { icon: '🏗️', label: 'New Homes/Yr', value: '48,000′ },
+  { icon: '🏗️', label: 'New Homes/Yr', value: '48,000' },
 ];
 
 export default function DFWProLnkMarketOpportunity() {
@@ -100,8 +100,8 @@ export default function DFWProLnkMarketOpportunity() {
           <h2 style={{ color: '#F5E642', fontSize: 16, fontWeight: 700, marginBottom: 12 }}>👤 What is your role?</h2>
           <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
             {STAKEHOLDERS.map((s) => (
-              <button key={s.key} onClick={() => setSelected(s.key === selected ? null : s.key)} style={{ textAlign: 'left', padding: '12px 16px', borderRadius: 8, border: `2px solid ${selected === s.key ? '#F5E642' : '#0A1628'}`, background: selected === s.key ? '#0A1628′ : '#0d1f38', cursor: ’pointer', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                <span style={{ color: selected === s.key ? '#F5E642′ : '#e2e8f0', fontWeight: selected === s.key ? 700 : 400, fontSize: 14 }}>{s.label}</span>
+              <button key={s.key} onClick={() => setSelected(s.key === selected ? null : s.key)} style={{ textAlign: 'left', padding: '12px 16px', borderRadius: 8, border: `2px solid ${selected === s.key ? '#F5E642' : '#0A1628'}`, background: selected === s.key ? '#0A1628' : '#0d1f38', cursor: 'pointer', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                <span style={{ color: selected === s.key ? '#F5E642' : '#e2e8f0', fontWeight: selected === s.key ? 700 : 400, fontSize: 14 }}>{s.label}</span>
                 <span style={{ color: '#64748b', fontSize: 12 }}>{s.desc}</span>
               </button>
             ))}

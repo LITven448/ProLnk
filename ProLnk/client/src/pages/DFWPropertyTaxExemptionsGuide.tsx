@@ -20,7 +20,7 @@ export default function DFWPropertyTaxExemptionsGuide() {
           <p style={{ color: '#94A3B8', marginTop: 8 }}>Complete Texas exemption guide — homestead, over-65, veteran, disability, and agricultural exemptions</p>
         </div>
 
-        <div style={{ background: '#FFF9E6', borderRadius: 10, padding: '1rem', marginBottom: 20, border: '1px solid #F5E642′ }}>
+        <div style={{ background: '#FFF9E6', borderRadius: 10, padding: '1rem', marginBottom: 20, border: '1px solid #F5E642' }}>
           <div style={{ fontWeight: 700, color: '#92400E', marginBottom: 4 }}>⏰ Key Deadline: April 30</div>
           <div style={{ color: '#78350F', fontSize: 14 }}>Most exemption applications must be filed by April 30 for the current tax year. You must own and occupy the property as of January 1. Late applications accepted up to 2 years back in most cases.</div>
         </div>
@@ -30,7 +30,7 @@ export default function DFWPropertyTaxExemptionsGuide() {
           {SITUATIONS.map((s, i) => (
             <div key={i} onClick={() => setSelected(selected === i ? null : i)}
               style={{ background: '#fff', borderRadius: 10, padding: '1.2rem', cursor: 'pointer',
-                border: selected === i ? '2px solid #F5E642′ : '2px solid transparent', boxShadow: '0 1px 4px rgba(0,0,0,0.06)' }}>
+                border: selected === i ? '2px solid #F5E642' : '2px solid transparent', boxShadow: '0 1px 4px rgba(0,0,0,0.06)' }}>
               <div style={{ fontWeight: 600, color: '#0A1628', fontSize: 16 }}>{s.situation}</div>
               {selected === i && (
                 <div style={{ marginTop: 12 }}>

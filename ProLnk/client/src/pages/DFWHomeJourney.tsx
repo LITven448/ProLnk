@@ -72,7 +72,7 @@ export default function DFWHomeJourney() {
 
         <div style={{ display: 'flex', gap: 10, flexWrap: 'wrap', marginBottom: 32 }}>
           {stages.map((s, i) => (
-            <button key={s.key} onClick={() => setActive(s.key)} style={{ flex: 1, minWidth: 120, background: active === s.key ? s.color : '#111d30', color: active === s.key ? '#0A1628′ : '#fff', border: `2px solid ${active === s.key ? s.color : '#1e3a5f'}`, borderRadius: 10, padding: '0.75rem 0.5rem', cursor: ’pointer', fontWeight: 700, fontSize: 13, textAlign: 'center', transition: 'all 0.2s' }}>
+            <button key={s.key} onClick={() => setActive(s.key)} style={{ flex: 1, minWidth: 120, background: active === s.key ? s.color : '#111d30', color: active === s.key ? '#0A1628' : '#fff', border: `2px solid ${active === s.key ? s.color : '#1e3a5f'}`, borderRadius: 10, padding: '0.75rem 0.5rem', cursor: 'pointer', fontWeight: 700, fontSize: 13, textAlign: 'center', transition: 'all 0.2s' }}>
               {s.label}
             </button>
           ))}

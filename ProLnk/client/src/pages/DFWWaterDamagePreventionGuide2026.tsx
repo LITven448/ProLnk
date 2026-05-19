@@ -26,15 +26,15 @@ export default function DFWWaterDamagePreventionGuide2026() {
         <h1 style={{ fontSize: 28, fontWeight: 800, marginBottom: 8, lineHeight: 1.2 }}>💧 DFW Water Damage Prevention Guide 2026</h1>
         <p style={{ color: '#94a3b8', marginBottom: 28, fontSize: 15 }}>Proactive water damage prevention for DFW homes — average claim is $11,000, prevention costs under $500.</p>
 
-        <div style={{ background: '#1e2d4a', borderRadius: 8, padding: 16, marginBottom: 24, borderLeft: '4px solid #F5E642′ }}>
+        <div style={{ background: '#1e2d4a', borderRadius: 8, padding: 16, marginBottom: 24, borderLeft: '4px solid #F5E642' }}>
           <div style={{ fontWeight: 700, marginBottom: 6 }}>⚡ Highest ROI Single Action</div>
           <div style={{ color: '#e2e8f0', fontSize: 14 }}>Install a smart whole-home water shutoff sensor ($200-400). Automatically cuts water supply on leak detection. One prevention = one avoided $11,000 average claim.</div>
         </div>
 
-        <h2 style={{ fontSize: 17, fontWeight: 700, marginBottom: 14, color: '#F5E642′ }}>🔍 Select Home Feature for Prevention Tips</h2>
+        <h2 style={{ fontSize: 17, fontWeight: 700, marginBottom: 14, color: '#F5E642' }}>🔍 Select Home Feature for Prevention Tips</h2>
         <div style={{ display: 'flex', flexDirection: 'column', gap: 8, marginBottom: 20 }}>
           {items.map(i => (
-            <button key={i.label} onClick={() => handleSelect(i)} style={{ background: selected === i.label ? '#F5E642′ : '#1e2d4a', color: selected === i.label ? '#0A1628' : '#fff', border: ’none', borderRadius: 6, padding: '12px 16px', textAlign: 'left', cursor: 'pointer', fontWeight: 600, fontSize: 14 }}>{i.label}</button>
+            <button key={i.label} onClick={() => handleSelect(i)} style={{ background: selected === i.label ? '#F5E642' : '#1e2d4a', color: selected === i.label ? '#0A1628' : '#fff', border: 'none', borderRadius: 6, padding: '12px 16px', textAlign: 'left', cursor: 'pointer', fontWeight: 600, fontSize: 14 }}>{i.label}</button>
           ))}
         </div>
         {tip && (

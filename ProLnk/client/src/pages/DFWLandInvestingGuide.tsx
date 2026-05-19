@@ -19,7 +19,7 @@ export default function DFWLandInvestingGuide() {
   return (
     <div style={{ background: '#0A1628', minHeight: '100vh', color: '#E8EDF5', fontFamily: 'system-ui, sans-serif', padding: '40px 20px' }}>
       <div style={{ maxWidth: 860, margin: '0 auto' }}>
-        <div style={{ marginBottom: 12, fontSize: 13, color: '#F5E642′ }}>🌾 DFW REAL ESTATE INVESTOR SERIES</div>
+        <div style={{ marginBottom: 12, fontSize: 13, color: '#F5E642' }}>🌾 DFW REAL ESTATE INVESTOR SERIES</div>
         <h1 style={{ fontSize: 38, fontWeight: 800, marginBottom: 8, lineHeight: 1.2 }}>
           DFW Land Investing Guide
         </h1>
@@ -28,7 +28,7 @@ export default function DFWLandInvestingGuide() {
         </p>
 
         <div style={{ background: '#111E35', borderRadius: 16, padding: 32, marginBottom: 32 }}>
-          <h2 style={{ fontSize: 22, fontWeight: 700, marginBottom: 20, color: '#F5E642′ }}>📍 Where the Growth Is Going</h2>
+          <h2 style={{ fontSize: 22, fontWeight: 700, marginBottom: 20, color: '#F5E642' }}>📍 Where the Growth Is Going</h2>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: 16 }}>
             {[
               { city: 'Celina', note: 'One of the fastest-growing cities in the US. Land prices tripled in 5 years.' },
@@ -38,16 +38,16 @@ export default function DFWLandInvestingGuide() {
               { city: 'Gunter', note: 'North of Celina, attracting early land speculators now.' },
               { city: 'Blue Ridge / Lavon', note: 'Eastward growth from McKinney. Still affordable raw land.' },
             ].map((item, i) => (
-              <div key={i} style={{ background: '#0A1628', borderRadius: 12, padding: 16, borderLeft: '3px solid #F5E642′ }}>
+              <div key={i} style={{ background: '#0A1628', borderRadius: 12, padding: 16, borderLeft: '3px solid #F5E642' }}>
                 <div style={{ fontWeight: 700, marginBottom: 4 }}>{item.city}</div>
-                <div style={{ fontSize: 13, color: '#8A9BB5′ }}>{item.note}</div>
+                <div style={{ fontSize: 13, color: '#8A9BB5' }}>{item.note}</div>
               </div>
             ))}
           </div>
         </div>
 
         <div style={{ background: '#111E35', borderRadius: 16, padding: 32, marginBottom: 32 }}>
-          <h2 style={{ fontSize: 22, fontWeight: 700, marginBottom: 20, color: '#F5E642′ }}>💡 Key Land Investing Concepts</h2>
+          <h2 style={{ fontSize: 22, fontWeight: 700, marginBottom: 20, color: '#F5E642' }}>💡 Key Land Investing Concepts</h2>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: 16 }}>
             {[
               { title: 'Entitlement Risk', desc: 'Raw land must be rezoned, platted, and permitted for development. This takes time and can fail.' },
@@ -66,24 +66,24 @@ export default function DFWLandInvestingGuide() {
         </div>
 
         <div style={{ background: '#111E35', borderRadius: 16, padding: 32 }}>
-          <h2 style={{ fontSize: 22, fontWeight: 700, marginBottom: 24, color: '#F5E642′ }}>🧮 Land Value Estimator</h2>
+          <h2 style={{ fontSize: 22, fontWeight: 700, marginBottom: 24, color: '#F5E642' }}>🧮 Land Value Estimator</h2>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: 20, marginBottom: 32 }}>
             <div>
-              <label style={{ display: 'block', marginBottom: 8, fontSize: 14, color: '#8A9BB5′ }}>Acreage</label>
+              <label style={{ display: 'block', marginBottom: 8, fontSize: 14, color: '#8A9BB5' }}>Acreage</label>
               <input type="range" min={1} max={100} step={1} value={acreage}
                 onChange={e => setAcreage(Number(e.target.value))}
-                style={{ width: '100%', accentColor: '#F5E642′ }} />
+                style={{ width: '100%', accentColor: '#F5E642' }} />
               <div style={{ color: '#F5E642', fontWeight: 700 }}>{acreage} acres</div>
             </div>
             <div>
-              <label style={{ display: 'block', marginBottom: 8, fontSize: 14, color: '#8A9BB5′ }}>Location Tier</label>
+              <label style={{ display: 'block', marginBottom: 8, fontSize: 14, color: '#8A9BB5' }}>Location Tier</label>
               <select value={locationTier} onChange={e => setLocationTier(Number(e.target.value))}
                 style={{ width: '100%', background: '#0A1628', color: '#E8EDF5', border: '1px solid #2A4070', borderRadius: 8, padding: '8px 12px', fontSize: 14 }}>
                 {tiers.map((t, i) => <option key={i} value={i + 1}>{t}</option>)}
               </select>
             </div>
             <div>
-              <label style={{ display: 'block', marginBottom: 8, fontSize: 14, color: '#8A9BB5′ }}>Services Available</label>
+              <label style={{ display: 'block', marginBottom: 8, fontSize: 14, color: '#8A9BB5' }}>Services Available</label>
               <select value={servicesAvailable} onChange={e => setServicesAvailable(Number(e.target.value))}
                 style={{ width: '100%', background: '#0A1628', color: '#E8EDF5', border: '1px solid #2A4070', borderRadius: 8, padding: '8px 12px', fontSize: 14 }}>
                 {services.map((s, i) => <option key={i} value={i + 1}>{s}</option>)}
@@ -99,9 +99,9 @@ export default function DFWLandInvestingGuide() {
               { label: 'Ag Exemption Tax (~$8/ac)', value: `$${Math.round(agExemptTax).toLocaleString()}/yr` },
               { label: 'Est. Residential Lots (Dev)', value: `~${Math.round(devPotential)} lots`, highlight: true },
             ].map((item, i) => (
-              <div key={i} style={{ background: item.highlight ? '#1A2E4A' : '#0A1628', borderRadius: 12, padding: 16, border: item.highlight ? '2px solid #F5E642′ : ’none' }}>
-                <div style={{ fontSize: 18, fontWeight: 800, color: item.highlight ? '#F5E642′ : '#E8EDF5', marginBottom: 4 }}>{item.value}</div>
-                <div style={{ fontSize: 12, color: '#8A9BB5′ }}>{item.label}</div>
+              <div key={i} style={{ background: item.highlight ? '#1A2E4A' : '#0A1628', borderRadius: 12, padding: 16, border: item.highlight ? '2px solid #F5E642' : 'none' }}>
+                <div style={{ fontSize: 18, fontWeight: 800, color: item.highlight ? '#F5E642' : '#E8EDF5', marginBottom: 4 }}>{item.value}</div>
+                <div style={{ fontSize: 12, color: '#8A9BB5' }}>{item.label}</div>
               </div>
             ))}
           </div>

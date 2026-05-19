@@ -109,7 +109,7 @@ export default function DFWFirstTimeBuyerMistakes() {
   ];
 
   return (
-    <div style={{ background: '#F9FAFB', minHeight: '100vh', fontFamily: 'system-ui, sans-serif', color: '#0A1628′ }}>
+    <div style={{ background: '#F9FAFB', minHeight: '100vh', fontFamily: 'system-ui, sans-serif', color: '#0A1628' }}>
       <div style={{ maxWidth: 780, margin: '0 auto', padding: '40px 20px' }}>
         <div style={{ background: '#0A1628', borderRadius: 12, padding: '32px', marginBottom: 32 }}>
           <div style={{ fontSize: 13, color: '#F5E642', fontWeight: 700, letterSpacing: 1, marginBottom: 8 }}>DFW FIRST-TIME BUYERS</div>
@@ -117,15 +117,15 @@ export default function DFWFirstTimeBuyerMistakes() {
           <p style={{ color: '#94a3b8', margin: 0, lineHeight: 1.6 }}>North Texas has its own unique pitfalls. Knowing them before you buy can save you tens of thousands.</p>
         </div>
 
-        <div style={{ background: '#fff', borderRadius: 12, padding: 28, marginBottom: 28, border: '1px solid #e2e8f0′ }}>
+        <div style={{ background: '#fff', borderRadius: 12, padding: 28, marginBottom: 28, border: '1px solid #e2e8f0' }}>
           <h2 style={{ fontSize: 18, fontWeight: 700, marginBottom: 6 }}>🎯 Find Your Risk Areas</h2>
           <p style={{ color: '#64748b', fontSize: 14, marginBottom: 20 }}>Select situations that apply to you — we'll highlight the mistakes most likely to affect you.</p>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))', gap: 10, marginBottom: 20 }}>
             {situations.map(s => (
               <button key={s.id} onClick={() => toggle(s.id)} style={{
                 padding: '10px 14px', borderRadius: 8, textAlign: 'left', fontSize: 13, fontWeight: 500, cursor: 'pointer',
-                border: selected.includes(s.id) ? '2px solid #F5E642′ : '2px solid #e2e8f0',
-                background: selected.includes(s.id) ? '#fffde7′ : '#f8fafc', color: '#0A1628'
+                border: selected.includes(s.id) ? '2px solid #F5E642' : '2px solid #e2e8f0',
+                background: selected.includes(s.id) ? '#fffde7' : '#f8fafc', color: '#0A1628'
               }}>{s.label}</button>
             ))}
           </div>
@@ -137,15 +137,15 @@ export default function DFWFirstTimeBuyerMistakes() {
 
         <div style={{ display: 'flex', flexDirection: 'column', gap: 16 }}>
           {(showResults ? (relevantMistakes.length > 0 ? relevantMistakes : mistakes) : mistakes).map((m, i) => (
-            <div key={m.id} style={{ background: '#fff', borderRadius: 12, padding: 24, border: '1px solid #e2e8f0′ }}>
+            <div key={m.id} style={{ background: '#fff', borderRadius: 12, padding: 24, border: '1px solid #e2e8f0' }}>
               <div style={{ display: 'flex', alignItems: 'flex-start', gap: 16 }}>
-                <div style={{ background: m.risk === 'High' ? '#fee2e2′ : '#fef9c3', color: m.risk === ’High' ? '#991b1b' : '#92400e', borderRadius: 6, padding: '3px 10px', fontSize: 12, fontWeight: 700, whiteSpace: 'nowrap', marginTop: 2 }}>{m.risk} Risk</div>
+                <div style={{ background: m.risk === 'High' ? '#fee2e2' : '#fef9c3', color: m.risk === 'High' ? '#991b1b' : '#92400e', borderRadius: 6, padding: '3px 10px', fontSize: 12, fontWeight: 700, whiteSpace: 'nowrap', marginTop: 2 }}>{m.risk} Risk</div>
                 <div>
                   <h3 style={{ fontSize: 16, fontWeight: 700, margin: '0 0 8px' }}>#{i + 1} {m.label}</h3>
                   <p style={{ color: '#475569', fontSize: 14, lineHeight: 1.6, margin: '0 0 10px' }}>{m.detail}</p>
-                  <div style={{ background: '#f0fdf4', borderRadius: 8, padding: '10px 14px', border: '1px solid #bbf7d0′ }}>
+                  <div style={{ background: '#f0fdf4', borderRadius: 8, padding: '10px 14px', border: '1px solid #bbf7d0' }}>
                     <span style={{ fontSize: 13, color: '#166534', fontWeight: 600 }}>✅ How to avoid: </span>
-                    <span style={{ fontSize: 13, color: '#166534′ }}>{m.fix}</span>
+                    <span style={{ fontSize: 13, color: '#166534' }}>{m.fix}</span>
                   </div>
                 </div>
               </div>

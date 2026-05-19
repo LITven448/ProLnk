@@ -27,7 +27,7 @@ export default function DFWPoolServiceGuide() {
   const perVisit = Math.round((POOL_SIZES[pi].base + featAdd) * freq.disc / freq.mult);
   const monthly = Math.round((POOL_SIZES[pi].base + featAdd) * freq.disc);
   const warning = fi === 1 ? 'Bi-weekly is risky June-Sep in DFW — algae can bloom in 72hrs during peak heat.' : 'Weekly is strongly recommended May-Sep when DFW temps exceed 95F consistently.';
-  const btn = (active: boolean) => ({ padding: '8px 16px', borderRadius: 8, border: 'none', cursor: 'pointer' as const, fontSize: 13, background: active ? '#F5E642′ : '#1A2E4A', color: active ? '#0A1628' : '#E8EDF5', fontWeight: active ? 700 : 400 });
+  const btn = (active: boolean) => ({ padding: '8px 16px', borderRadius: 8, border: 'none', cursor: 'pointer' as const, fontSize: 13, background: active ? '#F5E642' : '#1A2E4A', color: active ? '#0A1628' : '#E8EDF5', fontWeight: active ? 700 : 400 });
 
   return (
     <div style={{ background: '#0A1628', minHeight: '100vh', color: '#E8EDF5', fontFamily: 'system-ui,sans-serif', padding: '32px 16px' }}>
@@ -63,14 +63,14 @@ export default function DFWPoolServiceGuide() {
             <div style={{ display: 'flex', gap: 8 }}>
               {FREQS.map((f, i) => <button key={i} onClick={() => setFi(i)} style={btn(fi === i)}>{f.label}</button>)}
             </div>
-            <div style={{ color: fi === 1 ? '#F5A623′ : '#4ADE80', fontSize: 12, marginTop: 8 }}>⚠️ {warning}</div>
+            <div style={{ color: fi === 1 ? '#F5A623' : '#4ADE80', fontSize: 12, marginTop: 8 }}>⚠️ {warning}</div>
           </div>
 
           <div style={{ marginBottom: 20 }}>
             <div style={{ color: '#94A3B8', fontSize: 13, marginBottom: 8 }}>POOL FEATURES</div>
             <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8 }}>
               {FEATURES.map((f, i) => (
-                <button key={i} onClick={() => tog(i)} style={{ padding: '8px 14px', borderRadius: 8, border: `2px solid ${feats.includes(i) ? '#F5E642' : '#1A2E4A'}`, cursor: 'pointer', fontSize: 13, background: feats.includes(i) ? '#1A2E4A' : '#0A1628', color: '#E8EDF5′ }}>{f.label} +${f.add}/mo</button>
+                <button key={i} onClick={() => tog(i)} style={{ padding: '8px 14px', borderRadius: 8, border: `2px solid ${feats.includes(i) ? '#F5E642' : '#1A2E4A'}`, cursor: 'pointer', fontSize: 13, background: feats.includes(i) ? '#1A2E4A' : '#0A1628', color: '#E8EDF5' }}>{f.label} +${f.add}/mo</button>
               ))}
             </div>
           </div>
@@ -78,7 +78,7 @@ export default function DFWPoolServiceGuide() {
           <div style={{ background: '#0A1628', borderRadius: 12, padding: 20, display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: 12 }}>
             <div>
               <div style={{ color: '#94A3B8', fontSize: 13 }}>Included Each Visit</div>
-              <div style={{ fontWeight: 600, fontSize: 14, color: '#CBD5E1′ }}>Chemicals · Brush · Vacuum · Baskets</div>
+              <div style={{ fontWeight: 600, fontSize: 14, color: '#CBD5E1' }}>Chemicals · Brush · Vacuum · Baskets</div>
             </div>
             <div style={{ textAlign: 'right' }}>
               <div style={{ color: '#94A3B8', fontSize: 13 }}>Est. per visit / monthly</div>

@@ -48,20 +48,20 @@ export default function DFWFoundationBeamDepth2026() {
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 10 }}>
             {vintages.map((v, i) => (
               <button key={i} onClick={() => setActive(i)}
-                style={{ padding: '12px 8px', borderRadius: 8, border: active === i ? '2px solid #F5E642′ : '2px solid #334155',
-                  backgroundColor: active === i ? '#0A1628′ : '#0F2340', color: active === i ? '#F5E642' : '#CBD5E1',
+                style={{ padding: '12px 8px', borderRadius: 8, border: active === i ? '2px solid #F5E642' : '2px solid #334155',
+                  backgroundColor: active === i ? '#0A1628' : '#0F2340', color: active === i ? '#F5E642' : '#CBD5E1',
                   cursor: 'pointer', fontSize: 13, fontWeight: 600 }}>
                 {v.icon}<br />{v.era}
               </button>
             ))}
           </div>
 
-          <div style={{ marginTop: 20, backgroundColor: '#0A1628', borderRadius: 8, padding: 16, borderLeft: '4px solid #F5E642′ }}>
+          <div style={{ marginTop: 20, backgroundColor: '#0A1628', borderRadius: 8, padding: 16, borderLeft: '4px solid #F5E642' }}>
             <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: 10 }}>
               <span style={{ color: '#F5E642', fontWeight: 700, fontSize: 16 }}>Era: {vintages[active].era}</span>
               <span style={{ padding: '4px 12px', borderRadius: 20, fontSize: 12, fontWeight: 700,
                 backgroundColor: vintages[active].concern === 'High' || vintages[active].concern === 'Medium-High' ? '#7F1D1D' : '#14532D',
-                color: vintages[active].concern === 'High' || vintages[active].concern === 'Medium-High' ? '#FCA5A5′ : '#86EFAC' }}>
+                color: vintages[active].concern === 'High' || vintages[active].concern === 'Medium-High' ? '#FCA5A5' : '#86EFAC' }}>
                 Risk: {vintages[active].concern}
               </span>
             </div>

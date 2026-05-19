@@ -80,8 +80,8 @@ export default function DFWFireDamagedHomeGuide2026() {
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12, marginBottom: 28 }}>
           {damageTypes.map(d => (
             <button key={d.id} onClick={() => setSelected(d.id)} style={{
-              background: selected === d.id ? '#F5E642′ : '#1e3a5f',
-              color: selected === d.id ? '#0A1628′ : '#fff',
+              background: selected === d.id ? '#F5E642' : '#1e3a5f',
+              color: selected === d.id ? '#0A1628' : '#fff',
               border: 'none', borderRadius: 10, padding: '14px 16px',
               cursor: 'pointer', fontWeight: 600, fontSize: 14, textAlign: 'left'
             }}>{d.label}</button>
@@ -90,14 +90,14 @@ export default function DFWFireDamagedHomeGuide2026() {
 
         {selected && guides[selected] && (
           <div style={{ background: '#0f1f3d', borderRadius: 12, padding: 24 }}>
-            <div style={{ fontSize: 18, fontWeight: 700, marginBottom: 16, color: '#F5E642′ }}>{guides[selected].verdict}</div>
+            <div style={{ fontSize: 18, fontWeight: 700, marginBottom: 16, color: '#F5E642' }}>{guides[selected].verdict}</div>
             <h3 style={{ color: '#F5E642', marginBottom: 12 }}>📋 Due Diligence Steps</h3>
             <ul style={{ color: '#cbd5e1', lineHeight: 2, paddingLeft: 20 }}>
               {guides[selected].steps.map((step, i) => <li key={i}>{step}</li>)}
             </ul>
             <div style={{ marginTop: 20, background: '#162944', borderRadius: 8, padding: 14 }}>
               <span style={{ color: '#F5E642', fontWeight: 700 }}>💡 DFW Tip: </span>
-              <span style={{ color: '#94a3b8′ }}>{guides[selected].tip}</span>
+              <span style={{ color: '#94a3b8' }}>{guides[selected].tip}</span>
             </div>
           </div>
         )}

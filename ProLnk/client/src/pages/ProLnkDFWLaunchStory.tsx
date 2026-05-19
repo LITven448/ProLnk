@@ -53,7 +53,7 @@ export default function ProLnkDFWLaunchStory() {
 
         <div style={{ display: 'flex', gap: 10, justifyContent: 'center', marginBottom: 36 }}>
           {(Object.keys(perspectives) as PerspKey[]).map(k => (
-            <button key={k} onClick={() => setActive(k)} style={{ padding: '10px 22px', borderRadius: 8, border: 'none', cursor: 'pointer', fontWeight: 600, fontSize: 14, background: active === k ? '#F5E642′ : '#1e2d4a', color: active === k ? '#0A1628' : '#94a3b8' }}>
+            <button key={k} onClick={() => setActive(k)} style={{ padding: '10px 22px', borderRadius: 8, border: 'none', cursor: 'pointer', fontWeight: 600, fontSize: 14, background: active === k ? '#F5E642' : '#1e2d4a', color: active === k ? '#0A1628' : '#94a3b8' }}>
               {perspectives[k].icon} {perspectives[k].label}
             </button>
           ))}
@@ -74,7 +74,7 @@ export default function ProLnkDFWLaunchStory() {
           </div>
         </div>
 
-        <div style={{ background: '#1e2d4a', borderRadius: 12, padding: 24, border: '1px solid #F5E642′ }}>
+        <div style={{ background: '#1e2d4a', borderRadius: 12, padding: 24, border: '1px solid #F5E642' }}>
           <div style={{ display: 'flex', gap: 12, alignItems: 'flex-start' }}>
             <div style={{ fontSize: 36, flexShrink: 0 }}>👤</div>
             <div>

@@ -71,7 +71,7 @@ export default function DFWHVACAdaptationGuide() {
               key={e.event}
               onClick={() => setSelected(selected === e.event ? null : e.event)}
               style={{
-                background: selected === e.event ? '#132040′ : '#0F1E35',
+                background: selected === e.event ? '#132040' : '#0F1E35',
                 border: `1.5px solid ${selected === e.event ? '#F5E642' : '#1E2D45'}`,
                 borderRadius: 10,
                 padding: '16px 20px',
@@ -97,7 +97,7 @@ export default function DFWHVACAdaptationGuide() {
                 <li key={i} style={{ color: '#C8CDD8', lineHeight: 1.7, marginBottom: 8 }}>{s}</li>
               ))}
             </ol>
-            <div style={{ background: '#0F1E35', borderRadius: 8, padding: '14px 18px', borderLeft: '3px solid #F5E642′ }}>
+            <div style={{ background: '#0F1E35', borderRadius: 8, padding: '14px 18px', borderLeft: '3px solid #F5E642' }}>
               <div style={{ color: '#F5E642', fontWeight: 700, marginBottom: 4 }}>🛠️ Prepare Now</div>
               <div style={{ color: '#9AA3B2', fontSize: 13, lineHeight: 1.6 }}>{active.prepare}</div>
             </div>

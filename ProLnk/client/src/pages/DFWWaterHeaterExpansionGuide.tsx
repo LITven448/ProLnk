@@ -37,8 +37,8 @@ export default function DFWWaterHeaterExpansionGuide() {
 
         <div style={{ background: '#132240', borderRadius: 12, padding: '1.5rem', marginBottom: '1.5rem' }}>
           <h2 style={{ color: '#F5E642', fontSize: '1.1rem' }}>Why DFW Homes Are at Risk</h2>
-          <p style={{ lineHeight: 1.7, color: '#c8d8f0′ }}>
-            DFW municipalities overwhelmingly use <strong style={{ color: '#F5E642′ }}>pressure reducing valves (PRVs)</strong> — and
+          <p style={{ lineHeight: 1.7, color: '#c8d8f0' }}>
+            DFW municipalities overwhelmingly use <strong style={{ color: '#F5E642' }}>pressure reducing valves (PRVs)</strong> — and
             a PRV creates a closed plumbing system. In a closed system, when your water heater heats water it has nowhere to expand.
             That pressure builds up inside your tank and pipes, accelerating wear and eventually causing failure or a T&P valve discharge.
           </p>
@@ -77,7 +77,7 @@ export default function DFWWaterHeaterExpansionGuide() {
             <div>
               <label style={{ color: '#c8d8f0', display: 'block', marginBottom: '0.4rem' }}>Home Type</label>
               <select value={homeType} onChange={e => setHomeType(e.target.value)}
-                style={{ width: '100%', padding: '0.6rem', borderRadius: 8, background: '#0d1e38', color: '#fff', border: '1px solid #F5E642′ }}>
+                style={{ width: '100%', padding: '0.6rem', borderRadius: 8, background: '#0d1e38', color: '#fff', border: '1px solid #F5E642' }}>
                 <option value=''>Select type...</option>
                 {homeTypes.map(t => <option key={t} value={t}>{t}</option>)}
               </select>
@@ -85,7 +85,7 @@ export default function DFWWaterHeaterExpansionGuide() {
             <div>
               <label style={{ color: '#c8d8f0', display: 'block', marginBottom: '0.4rem' }}>DFW City</label>
               <select value={city} onChange={e => setCity(e.target.value)}
-                style={{ width: '100%', padding: '0.6rem', borderRadius: 8, background: '#0d1e38', color: '#fff', border: '1px solid #F5E642′ }}>
+                style={{ width: '100%', padding: '0.6rem', borderRadius: 8, background: '#0d1e38', color: '#fff', border: '1px solid #F5E642' }}>
                 <option value=''>Select city...</option>
                 {cities.map(c => <option key={c} value={c}>{c}</option>)}
               </select>
@@ -96,7 +96,7 @@ export default function DFWWaterHeaterExpansionGuide() {
             </button>
           </div>
           {result && (
-            <div style={{ marginTop: '1.25rem', background: '#0d1e38', borderRadius: 10, padding: '1.25rem', borderLeft: '4px solid #F5E642′ }}>
+            <div style={{ marginTop: '1.25rem', background: '#0d1e38', borderRadius: 10, padding: '1.25rem', borderLeft: '4px solid #F5E642' }}>
               <div style={{ fontSize: '1.3rem', fontWeight: 700, color: '#F5E642', marginBottom: '0.5rem' }}>
                 {result.likelihood}% Closed System Likelihood
               </div>

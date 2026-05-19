@@ -32,8 +32,8 @@ export default function DFWPipeInsuranceGuide() {
         <div style={{ background: '#111D35', borderRadius: 12, padding: 24, marginBottom: 24 }}>
           <h2 style={{ fontSize: 18, fontWeight: 700, color: '#F5E642', marginBottom: 12 }}>🧊 DFW-Specific Risks</h2>
           {[['Polybutylene pipes', 'Gray plastic pipes installed 1978-1995. Common in DFW suburbs. Prone to failure — must disclose at sale.'],['Freeze events', 'February 2021 showed DFW homes are not built for hard freezes. Many policies have freeze exclusions for unheated spaces.'],['Soil movement', 'Expansive clay soil puts constant stress on pipes — accelerates joint failures over time.'],['Slab foundations', 'Most DFW homes are slab — pipe breaks under slab require cutting concrete and are expensive to repair.']].map(([t, d]) => (
-            <div key={t} style={{ borderBottom: '1px solid #1E2D4A', padding: '10px 0′ }}>
-              <div style={{ fontWeight: 600, color: '#F5E642′ }}>{t}</div>
+            <div key={t} style={{ borderBottom: '1px solid #1E2D4A', padding: '10px 0' }}>
+              <div style={{ fontWeight: 600, color: '#F5E642' }}>{t}</div>
               <div style={{ color: '#94A3B8', fontSize: 14 }}>{d}</div>
             </div>
           ))}
@@ -44,19 +44,19 @@ export default function DFWPipeInsuranceGuide() {
           <label style={{ fontWeight: 600, display: 'block', marginBottom: 8 }}>What type of pipe issue do you have?</label>
           <div style={{ display: 'grid', gap: 10, marginBottom: 16 }}>
             {issueTypes.map(it => (
-              <button key={it.key} onClick={() => { setIssue(it.key); setResult(coverage[it.key]); }} style={{ background: issue === it.key ? '#F5E642′ : '#0A1628', color: issue === it.key ? '#0A1628' : '#E8EDF5', border: '1px solid #1E2D4A', borderRadius: 8, padding: '12px 16px', cursor: ’pointer', fontSize: 14, textAlign: 'left', fontWeight: issue === it.key ? 700 : 400 }}>{it.label}</button>
+              <button key={it.key} onClick={() => { setIssue(it.key); setResult(coverage[it.key]); }} style={{ background: issue === it.key ? '#F5E642' : '#0A1628', color: issue === it.key ? '#0A1628' : '#E8EDF5', border: '1px solid #1E2D4A', borderRadius: 8, padding: '12px 16px', cursor: 'pointer', fontSize: 14, textAlign: 'left', fontWeight: issue === it.key ? 700 : 400 }}>{it.label}</button>
             ))}
           </div>
         </div>
 
         {result && (
           <div style={{ background: '#111D35', borderRadius: 12, padding: 24 }}>
-            <div style={{ background: '#0A1628', borderRadius: 8, padding: 12, marginBottom: 16, borderLeft: '4px solid #F5E642′ }}>
+            <div style={{ background: '#0A1628', borderRadius: 8, padding: 12, marginBottom: 16, borderLeft: '4px solid #F5E642' }}>
               <div style={{ fontWeight: 700, color: '#F5E642', marginBottom: 4 }}>Coverage Verdict</div>
               <div style={{ fontSize: 16 }}>{result.verdict}</div>
             </div>
             <h3 style={{ color: '#F5E642', fontSize: 16, fontWeight: 700, marginBottom: 8 }}>📁 Documentation to Gather Now</h3>
-            <ul style={{ paddingLeft: 20, marginBottom: 16 }}>{result.docs.map((d, i) => <li key={i} style={{ marginBottom: 6, color: '#E8EDF5′ }}>{d}</li>)}</ul>
+            <ul style={{ paddingLeft: 20, marginBottom: 16 }}>{result.docs.map((d, i) => <li key={i} style={{ marginBottom: 6, color: '#E8EDF5' }}>{d}</li>)}</ul>
             <h3 style={{ color: '#F5E642', fontSize: 16, fontWeight: 700, marginBottom: 8 }}>🎯 Claim Strategy</h3>
             <p style={{ color: '#E8EDF5', lineHeight: 1.6 }}>{result.strategy}</p>
           </div>

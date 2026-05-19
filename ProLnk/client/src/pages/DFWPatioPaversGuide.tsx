@@ -33,7 +33,7 @@ const paverMatrix: Record<string, Record<string, { type: string; joint: string; 
     'Budget Priority': { type: 'Crushed Granite or Decomposed Granite', joint: 'Compacted base is the joint', cost: '$2-4/sqft', why: 'Crushed granite fire pit surround is the most budget-friendly DFW option. Comfortable, cool, and handles clay movement perfectly.' },
   },
   'Driveway Accent': {
-    'DFW Clay Soil Movement': { type: 'Concrete Pavers (Interlocking) on 6″ Compacted Base', joint: 'Polymeric sand with edge restraint', cost: '$12-18/sqft', why: 'Interlocking pavers on deep compacted base resist DFW clay heave better than any rigid paving. When they shift, reset individually.' },
+    'DFW Clay Soil Movement': { type: 'Concrete Pavers (Interlocking) on 6" Compacted Base', joint: 'Polymeric sand with edge restraint', cost: '$12-18/sqft', why: 'Interlocking pavers on deep compacted base resist DFW clay heave better than any rigid paving. When they shift, reset individually.' },
     'DFW Heat & UV': { type: 'Light Concrete or Clay Pavers', joint: 'Polymeric sand', cost: '$10-16/sqft', why: 'Driveway pavers face maximum DFW UV. Light tones hold color significantly longer than dark pavers in Texas sun.' },
     'Low Maintenance': { type: 'Sealed Concrete Pavers', joint: 'Polymeric sand (sealed)', cost: '$12-17/sqft', why: 'Sealed paver driveways in DFW resist oil, clay, and UV staining. Reseal every 4-5 years.' },
     'Resale Value': { type: 'Clay Brick Paver Driveway or Accent Border', joint: 'Polymeric sand', cost: '$15-22/sqft', why: 'Clay brick driveway or apron is a significant DFW curb appeal differentiator. Adds 1-3% to home value in DFW market.' },
@@ -62,13 +62,13 @@ export default function DFWPatioPaversGuide() {
           <div>
             <div style={{ color: '#F5E642', fontWeight: 700, marginBottom: '0.5rem', fontSize: '0.85rem', textTransform: 'uppercase', letterSpacing: 1 }}>Patio Use</div>
             {PATIO_USES.map(u => (
-              <button key={u} onClick={() => setUse(u)} style={{ display: 'block', width: '100%', marginBottom: '0.5rem', padding: '0.6rem 1rem', background: use === u ? '#F5E642′ : '#0D1E3A', color: use === u ? '#0A1628' : '#CDD5E0', border: '1px solid', borderColor: use === u ? '#F5E642' : '#1C2E4A', borderRadius: 8, cursor: ’pointer', textAlign: 'left', fontWeight: use === u ? 700 : 400, transition: 'all 0.2s' }}>{u}</button>
+              <button key={u} onClick={() => setUse(u)} style={{ display: 'block', width: '100%', marginBottom: '0.5rem', padding: '0.6rem 1rem', background: use === u ? '#F5E642' : '#0D1E3A', color: use === u ? '#0A1628' : '#CDD5E0', border: '1px solid', borderColor: use === u ? '#F5E642' : '#1C2E4A', borderRadius: 8, cursor: 'pointer', textAlign: 'left', fontWeight: use === u ? 700 : 400, transition: 'all 0.2s' }}>{u}</button>
             ))}
           </div>
           <div>
             <div style={{ color: '#F5E642', fontWeight: 700, marginBottom: '0.5rem', fontSize: '0.85rem', textTransform: 'uppercase', letterSpacing: 1 }}>Primary DFW Concern</div>
             {DFW_CONDITIONS.map(c => (
-              <button key={c} onClick={() => setCond(c)} style={{ display: 'block', width: '100%', marginBottom: '0.5rem', padding: '0.6rem 1rem', background: cond === c ? '#F5E642′ : '#0D1E3A', color: cond === c ? '#0A1628' : '#CDD5E0', border: '1px solid', borderColor: cond === c ? '#F5E642' : '#1C2E4A', borderRadius: 8, cursor: ’pointer', textAlign: 'left', fontWeight: cond === c ? 700 : 400, transition: 'all 0.2s' }}>{c}</button>
+              <button key={c} onClick={() => setCond(c)} style={{ display: 'block', width: '100%', marginBottom: '0.5rem', padding: '0.6rem 1rem', background: cond === c ? '#F5E642' : '#0D1E3A', color: cond === c ? '#0A1628' : '#CDD5E0', border: '1px solid', borderColor: cond === c ? '#F5E642' : '#1C2E4A', borderRadius: 8, cursor: 'pointer', textAlign: 'left', fontWeight: cond === c ? 700 : 400, transition: 'all 0.2s' }}>{c}</button>
             ))}
           </div>
         </div>
@@ -92,7 +92,7 @@ export default function DFWPatioPaversGuide() {
         <div style={{ background: '#0D1E3A', borderRadius: 12, padding: '1.25rem', border: '1px solid #1C2E4A' }}>
           <div style={{ color: '#F5E642', fontWeight: 700, marginBottom: '0.75rem' }}>🌱 DFW Pavers vs Slab Facts</div>
           {['DFW clay soil expands up to 6 inches vertically -- pavers accommodate this, slabs crack.', 'Polymeric sand in DFW joints is essential -- regular sand washes out in DFW rain events.', 'Edge restraint (steel or plastic) is mandatory -- DFW pavers migrate outward without it.', 'Compact base minimum 4 inches for patios, 6 inches for driveways on DFW clay.', 'Pavers can be individually reset after DFW clay heave events -- no jack-hammering needed.'].map((tip, i) => (
-            <div key={i} style={{ color: '#8899BB', fontSize: '0.875rem', marginBottom: '0.4rem', paddingLeft: '0.5rem', borderLeft: '2px solid #F5E642′ }}>{tip}</div>
+            <div key={i} style={{ color: '#8899BB', fontSize: '0.875rem', marginBottom: '0.4rem', paddingLeft: '0.5rem', borderLeft: '2px solid #F5E642' }}>{tip}</div>
           ))}
         </div>
       </div>

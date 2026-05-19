@@ -24,8 +24,8 @@ const articles: Article[] = [
     id: 1,
     title: "5 Ways AI Is Transforming Home Service Referrals",
     category: "Technology",
-    categoryColor: "bg-cyan-500/20 text-cyan-400 border-cyan-500/30″,
-    date: "May 12, 2026″,
+    categoryColor: "bg-cyan-500/20 text-cyan-400 border-cyan-500/30",
+    date: "May 12, 2026",
     readTime: "5 min",
     author: "Andrew Frakes",
     authorRole: "Founder, ProLnk",
@@ -37,8 +37,8 @@ const articles: Article[] = [
     id: 2,
     title: "How Founding Members Are Earning $3,200/mo in Network Income",
     category: "Success Stories",
-    categoryColor: "bg-teal-500/20 text-teal-400 border-teal-500/30″,
-    date: "May 8, 2026″,
+    categoryColor: "bg-teal-500/20 text-teal-400 border-teal-500/30",
+    date: "May 8, 2026",
     readTime: "6 min",
     author: "ProLnk Team",
     authorRole: "Editorial",
@@ -49,8 +49,8 @@ const articles: Article[] = [
     id: 3,
     title: "DFW Homeowners: How to Find Verified Service Pros in 24 Hours",
     category: "Homeowner Guide",
-    categoryColor: "bg-purple-500/20 text-purple-400 border-purple-500/30″,
-    date: "May 5, 2026″,
+    categoryColor: "bg-purple-500/20 text-purple-400 border-purple-500/30",
+    date: "May 5, 2026",
     readTime: "4 min",
     author: "Sarah K.",
     authorRole: "Homeowner Advocate, ProLnk",
@@ -61,8 +61,8 @@ const articles: Article[] = [
     id: 4,
     title: "Why 2,125 Home Service Pros Are Joining ProLnk Before Launch",
     category: "Founding Network",
-    categoryColor: "bg-amber-500/20 text-amber-400 border-amber-500/30″,
-    date: "April 30, 2026″,
+    categoryColor: "bg-amber-500/20 text-amber-400 border-amber-500/30",
+    date: "April 30, 2026",
     readTime: "4 min",
     author: "Andrew Frakes",
     authorRole: "Founder, ProLnk",
@@ -73,8 +73,8 @@ const articles: Article[] = [
     id: 5,
     title: "The 5 Income Streams Every ProLnk Partner Earns",
     category: "Commission",
-    categoryColor: "bg-blue-500/20 text-blue-400 border-blue-500/30″,
-    date: "April 24, 2026″,
+    categoryColor: "bg-blue-500/20 text-blue-400 border-blue-500/30",
+    date: "April 24, 2026",
     readTime: "6 min",
     author: "ProLnk Team",
     authorRole: "Editorial",
@@ -85,8 +85,8 @@ const articles: Article[] = [
     id: 6,
     title: "How Home Origination Rights Work (And Why They're Valuable)",
     category: "Education",
-    categoryColor: "bg-emerald-500/20 text-emerald-400 border-emerald-500/30″,
-    date: "April 18, 2026″,
+    categoryColor: "bg-emerald-500/20 text-emerald-400 border-emerald-500/30",
+    date: "April 18, 2026",
     readTime: "4 min",
     author: "ProLnk Team",
     authorRole: "Editorial",
@@ -105,11 +105,11 @@ function AuthorByline({ author, role }: { author: string; role: string }) {
     .join("")
     .slice(0, 2);
   return (
-    <div className="flex items-center gap-2″>
-      <div className="w-6 h-6 rounded-full bg-teal-900 border border-teal-400/30 flex items-center justify-center text-xs font-bold text-teal-400″>
+    <div className="flex items-center gap-2">
+      <div className="w-6 h-6 rounded-full bg-teal-900 border border-teal-400/30 flex items-center justify-center text-xs font-bold text-teal-400">
         {initials}
       </div>
-      <span className="text-xs text-slate-400″>
+      <span className="text-xs text-slate-400">
         {author} · {role}
       </span>
     </div>
@@ -137,18 +137,18 @@ export default function Blog() {
       </Helmet>
 
       <div className="min-h-screen bg-[#0A1628] text-white">
-        <div className="max-w-6xl mx-auto px-4 py-12″>
+        <div className="max-w-6xl mx-auto px-4 py-12">
 
           {/* Coming Soon Banner */}
-          <div className="flex items-center gap-3 mb-10 px-5 py-3 rounded-xl border border-teal-500/30 bg-teal-500/10″>
-            <Megaphone className="h-4 w-4 text-teal-400 flex-shrink-0″ />
-            <p className="text-sm text-teal-300″>
+          <div className="flex items-center gap-3 mb-10 px-5 py-3 rounded-xl border border-teal-500/30 bg-teal-500/10">
+            <Megaphone className="h-4 w-4 text-teal-400 flex-shrink-0" />
+            <p className="text-sm text-teal-300">
               <span className="font-semibold">Full articles coming at DFW launch.</span> Founding network closes at 500 applications + 5,000 homes.
             </p>
           </div>
 
           {/* Page Header */}
-          <div className="mb-12″>
+          <div className="mb-12">
             <h1 className="text-4xl font-bold text-white mb-3 tracking-tight">ProLnk Resources</h1>
             <p className="text-slate-400 text-lg max-w-2xl">
               Strategy, education, and inside stories for home service professionals, real estate agents, and DFW homeowners building long-term income on the ProLnk network.
@@ -158,26 +158,26 @@ export default function Blog() {
           {/* Featured Article Hero */}
           <div className="relative rounded-2xl overflow-hidden mb-12 group cursor-pointer" style={{ minHeight: "380px" }}>
             <div
-              className="absolute inset-0″
+              className="absolute inset-0"
               style={{ background: "linear-gradient(135deg, #0d2137 0%, #0a3d2e 50%, #0d2137 100%)" }}
             />
             <div
-              className="absolute inset-0 opacity-10″
+              className="absolute inset-0 opacity-10"
               style={{
                 backgroundImage: "radial-gradient(circle at 1px 1px, #14b8a6 1px, transparent 0)",
                 backgroundSize: "32px 32px",
               }}
             />
             <div
-              className="absolute inset-0″
+              className="absolute inset-0"
               style={{ background: "linear-gradient(to top, rgba(10,22,40,0.95) 0%, rgba(10,22,40,0.4) 60%, transparent 100%)" }}
             />
             <div className="relative z-10 p-8 md:p-12 flex flex-col justify-end" style={{ minHeight: "380px" }}>
-              <div className="flex items-center gap-3 mb-4″>
+              <div className="flex items-center gap-3 mb-4">
                 <span className={`text-xs font-semibold px-3 py-1 rounded-full border ${featured.categoryColor}`}>
                   {featured.category}
                 </span>
-                <span className="text-xs text-slate-400 flex items-center gap-1″>
+                <span className="text-xs text-slate-400 flex items-center gap-1">
                   <span className="w-1.5 h-1.5 rounded-full bg-teal-400 inline-block" />
                   FEATURED
                 </span>
@@ -188,66 +188,66 @@ export default function Blog() {
               <p className="text-slate-300 text-base max-w-2xl mb-5 leading-relaxed">
                 {featured.excerpt}
               </p>
-              <div className="flex flex-wrap items-center gap-5 text-sm text-slate-400″>
-                <span className="flex items-center gap-1.5″>
-                  <Calendar className="h-3.5 w-3.5″ />
+              <div className="flex flex-wrap items-center gap-5 text-sm text-slate-400">
+                <span className="flex items-center gap-1.5">
+                  <Calendar className="h-3.5 w-3.5" />
                   {featured.date}
                 </span>
-                <span className="flex items-center gap-1.5″>
-                  <Clock className="h-3.5 w-3.5″ />
+                <span className="flex items-center gap-1.5">
+                  <Clock className="h-3.5 w-3.5" />
                   {featured.readTime} read
                 </span>
                 <AuthorByline author={featured.author} role={featured.authorRole} />
                 <span className="flex items-center gap-1.5 text-teal-400 font-medium ml-auto group-hover:gap-2.5 transition-all">
-                  Read article <ArrowRight className="h-4 w-4″ />
+                  Read article <ArrowRight className="h-4 w-4" />
                 </span>
               </div>
             </div>
           </div>
 
           {/* Section Label */}
-          <div className="flex items-center gap-4 mb-8″>
+          <div className="flex items-center gap-4 mb-8">
             <h2 className="text-lg font-semibold text-white">Recent Articles</h2>
-            <div className="flex-1 h-px bg-slate-700/60″ />
+            <div className="flex-1 h-px bg-slate-700/60" />
           </div>
 
           {/* Article Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16″>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
             {grid.map((article) => (
               <div
                 key={article.id}
                 className="group flex flex-col h-full rounded-xl border border-slate-700/60 bg-slate-800/40 hover:bg-slate-800/70 hover:border-teal-500/40 transition-all duration-200 cursor-pointer overflow-hidden"
               >
                 <div className="h-0.5 w-full bg-gradient-to-r from-teal-500/0 via-teal-500/60 to-teal-500/0 opacity-0 group-hover:opacity-100 transition-opacity" />
-                <div className="p-6 flex flex-col flex-1″>
-                  <div className="flex items-center justify-between mb-4″>
+                <div className="p-6 flex flex-col flex-1">
+                  <div className="flex items-center justify-between mb-4">
                     <span className={`text-xs font-semibold px-2.5 py-1 rounded-full border ${article.categoryColor}`}>
                       {article.category}
                     </span>
-                    <span className="text-xs text-slate-500 flex items-center gap-1″>
-                      <Clock className="h-3 w-3″ />
+                    <span className="text-xs text-slate-500 flex items-center gap-1">
+                      <Clock className="h-3 w-3" />
                       {article.readTime}
                     </span>
                   </div>
                   <h3 className="text-base font-semibold text-white mb-3 leading-snug group-hover:text-teal-300 transition-colors">
                     {article.title}
                   </h3>
-                  <p className="text-sm text-slate-400 leading-relaxed flex-1 mb-5 line-clamp-3″>
+                  <p className="text-sm text-slate-400 leading-relaxed flex-1 mb-5 line-clamp-3">
                     {article.excerpt}
                   </p>
-                  <div className="flex items-center justify-between pt-4 border-t border-slate-700/50″>
-                    <div className="flex items-center gap-1.5 text-xs text-slate-500″>
-                      <User className="h-3 w-3″ />
+                  <div className="flex items-center justify-between pt-4 border-t border-slate-700/50">
+                    <div className="flex items-center gap-1.5 text-xs text-slate-500">
+                      <User className="h-3 w-3" />
                       {article.author}
                     </div>
-                    <span className="text-xs text-slate-500 flex items-center gap-1″>
-                      <Calendar className="h-3 w-3″ />
+                    <span className="text-xs text-slate-500 flex items-center gap-1">
+                      <Calendar className="h-3 w-3" />
                       {article.date}
                     </span>
                   </div>
-                  <div className="flex items-center justify-end mt-3″>
+                  <div className="flex items-center justify-end mt-3">
                     <span className="text-xs text-teal-500 flex items-center gap-1 font-medium group-hover:gap-1.5 transition-all">
-                      Read More <ArrowRight className="h-3 w-3″ />
+                      Read More <ArrowRight className="h-3 w-3" />
                     </span>
                   </div>
                 </div>
@@ -256,10 +256,10 @@ export default function Blog() {
           </div>
 
           {/* Newsletter Signup */}
-          <div className="bg-slate-800/50 border border-slate-700 rounded-2xl px-6 py-10 md:px-12 text-center mb-12″>
+          <div className="bg-slate-800/50 border border-slate-700 rounded-2xl px-6 py-10 md:px-12 text-center mb-12">
             {subscribed ? (
-              <div className="flex flex-col items-center gap-3″>
-                <CheckCircle className="w-10 h-10 text-teal-400″ />
+              <div className="flex flex-col items-center gap-3">
+                <CheckCircle className="w-10 h-10 text-teal-400" />
                 <h3 className="text-xl font-bold text-white">You're on the list.</h3>
                 <p className="text-slate-400 text-sm max-w-md">
                   We'll send you new articles, founding network updates, and DFW launch news. No spam — unsubscribe anytime.
@@ -267,9 +267,9 @@ export default function Blog() {
               </div>
             ) : (
               <>
-                <Mail className="w-8 h-8 text-teal-400 mx-auto mb-4″ />
-                <h3 className="text-xl font-bold text-white mb-2″>Get Articles in Your Inbox</h3>
-                <p className="text-slate-400 text-sm max-w-md mx-auto mb-6″>
+                <Mail className="w-8 h-8 text-teal-400 mx-auto mb-4" />
+                <h3 className="text-xl font-bold text-white mb-2">Get Articles in Your Inbox</h3>
+                <p className="text-slate-400 text-sm max-w-md mx-auto mb-6">
                   New guides, founding network updates, and DFW launch news — delivered directly to you. No spam. Unsubscribe anytime.
                 </p>
                 <form
@@ -286,7 +286,7 @@ export default function Blog() {
                   />
                   <Button
                     type="submit"
-                    className="bg-teal-500 hover:bg-teal-400 text-white font-semibold text-sm px-6″
+                    className="bg-teal-500 hover:bg-teal-400 text-white font-semibold text-sm px-6"
                   >
                     Subscribe
                   </Button>
@@ -296,18 +296,18 @@ export default function Blog() {
           </div>
 
           {/* Bottom CTA */}
-          <div className="text-center px-6 py-10 rounded-2xl border border-slate-700/50 bg-slate-800/30″>
-            <p className="text-slate-400 text-sm mb-1″>Don't just read about it</p>
-            <h3 className="text-xl font-bold text-white mb-4″>Join the founding network before it closes</h3>
-            <p className="text-slate-400 text-sm max-w-md mx-auto mb-6″>
+          <div className="text-center px-6 py-10 rounded-2xl border border-slate-700/50 bg-slate-800/30">
+            <p className="text-slate-400 text-sm mb-1">Don't just read about it</p>
+            <h3 className="text-xl font-bold text-white mb-4">Join the founding network before it closes</h3>
+            <p className="text-slate-400 text-sm max-w-md mx-auto mb-6">
               Waitlist closes at 500 partner applications and 5,000 homes. Charter-tier pricing locks in at $149/mo — permanently.
             </p>
             <Button
               size="lg"
-              className="bg-[#F5E642] text-[#0A1628] hover:bg-[#F5E642]/90 font-bold text-sm px-8″
+              className="bg-[#F5E642] text-[#0A1628] hover:bg-[#F5E642]/90 font-bold text-sm px-8"
               onClick={() => setLocation("/pro-waitlist")}
             >
-              Secure Your Spot <ArrowRight className="ml-2 h-4 w-4″ />
+              Secure Your Spot <ArrowRight className="ml-2 h-4 w-4" />
             </Button>
           </div>
 

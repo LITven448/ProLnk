@@ -55,7 +55,7 @@ export default function DFWNegotiationGuide() {
             ].map((item, i) => (
               <div key={i} style={{ display: 'flex', gap: '0.5rem', alignItems: 'flex-start', padding: '0.75rem', backgroundColor: '#f8f9fa', borderRadius: '8px' }}>
                 <span style={{ fontSize: '1.2rem' }}>{item.icon}</span>
-                <span style={{ fontSize: '0.9rem', color: '#444′ }}>{item.text}</span>
+                <span style={{ fontSize: '0.9rem', color: '#444' }}>{item.text}</span>
               </div>
             ))}
           </div>
@@ -65,7 +65,7 @@ export default function DFWNegotiationGuide() {
           <h2 style={{ fontSize: '1.1rem', fontWeight: 700, color: '#1a2744', marginBottom: '1rem' }}>🎯 What You Can Negotiate</h2>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3,1fr)', gap: '0.75rem' }}>
             {['Purchase Price', 'Closing Cost Assistance', 'Repairs or Credits', 'Home Warranty', 'Possession Date', 'Personal Property'].map((item, i) => (
-              <div key={i} style={{ padding: '0.75rem', backgroundColor: '#e8f4fd', borderRadius: '8px', textAlign: 'center', fontSize: '0.9rem', fontWeight: 600, color: '#1a2744′ }}>{item}</div>
+              <div key={i} style={{ padding: '0.75rem', backgroundColor: '#e8f4fd', borderRadius: '8px', textAlign: 'center', fontSize: '0.9rem', fontWeight: 600, color: '#1a2744' }}>{item}</div>
             ))}
           </div>
         </div>

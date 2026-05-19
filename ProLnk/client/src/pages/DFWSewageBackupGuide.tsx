@@ -39,7 +39,7 @@ export default function DFWSewageBackupGuide() {
           DFW's expansive clay soil constantly shifts, causing pipe belly (sagging sections where waste collects) and root intrusion from mature neighborhood trees. Sewage backup is a biohazard — act fast and protect your family.
         </p>
 
-        <div style={{ background: '#7f1d1d', borderRadius: '12px', padding: '1.25rem', marginBottom: '1.5rem', border: '1px solid #ef4444′ }}>
+        <div style={{ background: '#7f1d1d', borderRadius: '12px', padding: '1.25rem', marginBottom: '1.5rem', border: '1px solid #ef4444' }}>
           <h2 style={{ color: '#fca5a5', fontSize: '1rem', marginBottom: '0.5rem' }}>⚠️ Biohazard Warning</h2>
           <p style={{ color: '#fecaca', margin: 0, fontSize: '0.9rem' }}>Sewage contains bacteria, viruses, and parasites. Wear rubber gloves and boots. Keep children and pets away. Do not operate HVAC until cleaned — it spreads contamination.</p>
         </div>
@@ -63,7 +63,7 @@ export default function DFWSewageBackupGuide() {
               { key: 'floor_drain', label: '🌊 Floor drain / basement flooding' },
               { key: 'single_drain', label: '🚿 Single drain / one fixture' },
             ].map(opt => (
-              <button key={opt.key} onClick={() => { setBackupLocation(opt.key); setResult(plans[opt.key as keyof typeof plans]); }} style={{ padding: '0.75rem 1.25rem', borderRadius: '8px', border: '2px solid', borderColor: backupLocation === opt.key ? '#F5E642′ : '#334155', background: backupLocation === opt.key ? '#F5E642' : ’transparent', color: backupLocation === opt.key ? '#0A1628′ : '#cbd5e1', fontWeight: 600, cursor: ’pointer' }}>
+              <button key={opt.key} onClick={() => { setBackupLocation(opt.key); setResult(plans[opt.key as keyof typeof plans]); }} style={{ padding: '0.75rem 1.25rem', borderRadius: '8px', border: '2px solid', borderColor: backupLocation === opt.key ? '#F5E642' : '#334155', background: backupLocation === opt.key ? '#F5E642' : 'transparent', color: backupLocation === opt.key ? '#0A1628' : '#cbd5e1', fontWeight: 600, cursor: 'pointer' }}>
                 {opt.label}
               </button>
             ))}
@@ -75,9 +75,9 @@ export default function DFWSewageBackupGuide() {
             <h2 style={{ color: '#F5E642', fontSize: '1.1rem', marginBottom: '1rem' }}>⚡ Action Plan</h2>
             <div style={{ background: '#0A1628', borderRadius: '8px', padding: '1rem', marginBottom: '1rem' }}>
               <div style={{ color: '#F5E642', fontWeight: 600, marginBottom: '0.5rem' }}>🔎 Likely Cause</div>
-              <div style={{ color: '#cbd5e1′ }}>{result.cause}</div>
+              <div style={{ color: '#cbd5e1' }}>{result.cause}</div>
             </div>
-            <ol style={{ color: '#cbd5e1', lineHeight: 2, paddingLeft: '1.2rem', margin: '0 0 1rem 0′ }}>
+            <ol style={{ color: '#cbd5e1', lineHeight: 2, paddingLeft: '1.2rem', margin: '0 0 1rem 0' }}>
               {result.actions.map((a, i) => <li key={i}>{a}</li>)}
             </ol>
             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0.75rem' }}>

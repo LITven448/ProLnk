@@ -80,9 +80,9 @@ export default function DFWHVACWaterHeaterInteraction() {
           <div style={{ fontSize: '12px', color: '#94A3B8', marginBottom: '8px' }}>YOUR SYSTEM COMBINATION</div>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '8px' }}>
             {(Object.keys(combos) as SystemCombo[]).map(c => (
-              <button key={c} onClick={() => setCombo(c)} style={{ padding: '12px', borderRadius: '10px', border: combo === c ? '2px solid #F5E642′ : '2px solid transparent', cursor: ’pointer', backgroundColor: '#1E2D45', textAlign: 'left' }}>
+              <button key={c} onClick={() => setCombo(c)} style={{ padding: '12px', borderRadius: '10px', border: combo === c ? '2px solid #F5E642' : '2px solid transparent', cursor: 'pointer', backgroundColor: '#1E2D45', textAlign: 'left' }}>
                 <div style={{ fontSize: '16px', marginBottom: '4px' }}>{combos[c].emoji}</div>
-                <div style={{ fontSize: '12px', fontWeight: 600, color: combo === c ? '#F5E642′ : '#E8EDF5' }}>{combos[c].label}</div>
+                <div style={{ fontSize: '12px', fontWeight: 600, color: combo === c ? '#F5E642' : '#E8EDF5' }}>{combos[c].label}</div>
               </button>
             ))}
           </div>
@@ -92,7 +92,7 @@ export default function DFWHVACWaterHeaterInteraction() {
           <div style={{ fontSize: '12px', color: '#94A3B8', marginBottom: '8px' }}>DFW SITUATION</div>
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px' }}>
             {(Object.keys(situations) as DFWSituation[]).map(s => (
-              <button key={s} onClick={() => setSituation(s)} style={{ padding: '8px 14px', borderRadius: '8px', border: 'none', cursor: 'pointer', fontWeight: 600, fontSize: '12px', backgroundColor: situation === s ? '#F5E642′ : '#1E2D45', color: situation === s ? '#0A1628' : '#E8EDF5' }}>{situations[s]}</button>
+              <button key={s} onClick={() => setSituation(s)} style={{ padding: '8px 14px', borderRadius: '8px', border: 'none', cursor: 'pointer', fontWeight: 600, fontSize: '12px', backgroundColor: situation === s ? '#F5E642' : '#1E2D45', color: situation === s ? '#0A1628' : '#E8EDF5' }}>{situations[s]}</button>
             ))}
           </div>
         </div>

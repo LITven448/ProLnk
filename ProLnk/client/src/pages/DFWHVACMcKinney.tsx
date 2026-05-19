@@ -47,7 +47,7 @@ export default function DFWHVACMcKinney() {
           { icon: '🏙️', label: 'Population', value: '220,000+ residents' },
           { icon: '☀️', label: 'Days Above 90°F', value: '90+ days/year avg' },
           { icon: '🏠', label: 'Homes Built 2000–2020', value: '~60% of housing stock' },
-          { icon: '💸', label: 'HVAC Replacement', value: '$4,500 – $12,000′ },
+          { icon: '💸', label: 'HVAC Replacement', value: '$4,500 – $12,000' },
         ].map(s => (
           <div key={s.label} style={{ background: '#112244', borderRadius: 10, padding: '20px 16px', textAlign: 'center' }}>
             <div style={{ fontSize: 28 }}>{s.icon}</div>
@@ -77,7 +77,7 @@ export default function DFWHVACMcKinney() {
             type="checkbox"
             checked={isEmergency}
             onChange={e => setIsEmergency(e.target.checked)}
-            style={{ width: 18, height: 18, accentColor: '#F5E642′ }}
+            style={{ width: 18, height: 18, accentColor: '#F5E642' }}
           />
           Emergency / Same-Day Service (+$300 typical upcharge)
         </label>
@@ -114,7 +114,7 @@ export default function DFWHVACMcKinney() {
           ].map(c => (
             <div key={c.title} style={{ background: '#112244', borderRadius: 10, padding: '20px' }}>
               <div style={{ fontSize: 28, marginBottom: 8 }}>{c.icon}</div>
-              <div style={{ fontWeight: 700, fontSize: 15, marginBottom: 6, color: '#F5E642′ }}>{c.title}</div>
+              <div style={{ fontWeight: 700, fontSize: 15, marginBottom: 6, color: '#F5E642' }}>{c.title}</div>
               <div style={{ fontSize: 14, color: '#aac', lineHeight: 1.6 }}>{c.desc}</div>
             </div>
           ))}
@@ -137,8 +137,8 @@ export default function DFWHVACMcKinney() {
         </a>
       </div>
 
-      <div style={{ background: '#071020', padding: '20px', textAlign: 'center', fontSize: 13, color: '#556′ }}>
-        © 2026 ProLnk · Serving McKinney, TX and all of DFW · <a href="/privacy" style={{ color: '#556′ }}>Privacy</a>
+      <div style={{ background: '#071020', padding: '20px', textAlign: 'center', fontSize: 13, color: '#556' }}>
+        © 2026 ProLnk · Serving McKinney, TX and all of DFW · <a href="/privacy" style={{ color: '#556' }}>Privacy</a>
       </div>
     </div>
   );

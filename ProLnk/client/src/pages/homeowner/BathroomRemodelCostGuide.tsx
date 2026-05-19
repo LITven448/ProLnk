@@ -107,7 +107,7 @@ export default function BathroomRemodelCostGuide() {
                 {rooms.map((r,i) => <option key={r.type} value={i}>{r.type} (~{r.sqft} sq ft)</option>)}
               </select>
             </div>
-            <div style={{ gridColumn: '1/-1′ }}>
+            <div style={{ gridColumn: '1/-1' }}>
               <label style={{ display: 'block', color: MUTED, marginBottom: 8, fontSize: 14 }}>Labor %: <strong style={{ color: '#fff' }}>{laborPct}%</strong> (DFW avg: 40–50%)</label>
               <input type="range" min={30} max={60} step={5} value={laborPct} onChange={e => setLaborPct(+e.target.value)} style={{ width: '100%', accentColor: YELLOW }} />
             </div>

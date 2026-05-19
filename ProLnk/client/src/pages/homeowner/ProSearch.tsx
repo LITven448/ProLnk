@@ -9,10 +9,10 @@ import {
 // ─── Design tokens ────────────────────────────────────────────────────────────
 
 const D = {
-  bg: "#0D0F14″, surface: "#13161E", card: "#1A1E2A", border: "#252A3A",
-  text: "#F0F2FF", muted: "#8B91A8″, dim: "#555B72",
-  cyan: "#00D4FF", green: "#00E676″, amber: "#FFB300",
-  teal: "#14B8A6″, purple: "#A855F7", blue: "#3B82F6",
+  bg: "#0D0F14", surface: "#13161E", card: "#1A1E2A", border: "#252A3A",
+  text: "#F0F2FF", muted: "#8B91A8", dim: "#555B72",
+  cyan: "#00D4FF", green: "#00E676", amber: "#FFB300",
+  teal: "#14B8A6", purple: "#A855F7", blue: "#3B82F6",
 };
 
 // ─── Static data ──────────────────────────────────────────────────────────────
@@ -24,7 +24,7 @@ const CATEGORIES = [
   { id: "electrical",  label: "Electrical",     icon: Zap,         color: D.amber  },
   { id: "foundation",  label: "Foundation",     icon: Shield,      color: D.purple },
   { id: "pest",        label: "Pest Control",   icon: Bug,         color: D.green  },
-  { id: "landscaping", label: "Landscaping",    icon: Leaf,        color: "#84CC16″ },
+  { id: "landscaping", label: "Landscaping",    icon: Leaf,        color: "#84CC16" },
   { id: "handyman",    label: "Handyman",       icon: Wrench,      color: D.teal   },
 ];
 
@@ -66,13 +66,13 @@ const PROS = [
     verified: true, backgroundChecked: true, licensed: false,
   },
   {
-    id: 7, name: "Alicia Moreno",       initials: "AM", color: "#EC4899″,
+    id: 7, name: "Alicia Moreno",       initials: "AM", color: "#EC4899",
     trade: "HVAC", rating: 4.6, reviews: 76,  match: 83,
     price: "$$", responseTime: "< 2 hrs", distance: "8.1 mi",
     verified: true, backgroundChecked: false, licensed: true,
   },
   {
-    id: 8, name: "ProTemp Solutions",   initials: "PT", color: "#F97316″,
+    id: 8, name: "ProTemp Solutions",   initials: "PT", color: "#F97316",
     trade: "HVAC", rating: 4.5, reviews: 63,  match: 81,
     price: "$$$", responseTime: "< 1 hr", distance: "9.4 mi",
     verified: false, backgroundChecked: true, licensed: true,
@@ -87,7 +87,7 @@ const WHY_TRUSTYPRO = [
 ];
 
 type Availability = "today" | "week" | "any";
-type RatingFilter  = "4.5″ | "4.0" | "any";
+type RatingFilter  = "4.5" | "4.0" | "any";
 type PriceFilter   = "$" | "$$" | "$$$" | "any";
 
 // ─── Sub-components ───────────────────────────────────────────────────────────
@@ -127,7 +127,7 @@ function FilterChip({
       style={{
         padding: "6px 14px", borderRadius: 99, cursor: "pointer",
         fontSize: 12, fontWeight: active ? 700 : 500,
-        background: active ? D.cyan + "22″ : D.card,
+        background: active ? D.cyan + "22" : D.card,
         border: `1px solid ${active ? D.cyan + "55" : D.border}`,
         color: active ? D.cyan : D.muted,
         transition: "all 0.15s",
@@ -295,7 +295,7 @@ export default function ProSearch() {
               <span style={{ fontSize: 11, color: D.muted, marginRight: 4, textTransform: "uppercase", letterSpacing: "0.05em" }}>
                 Rating:
               </span>
-              {(["4.5″, "4.0", "any"] as RatingFilter[]).map((v) => (
+              {(["4.5", "4.0", "any"] as RatingFilter[]).map((v) => (
                 <FilterChip key={v} label={v === "any" ? "Any" : `${v}★+`} active={ratingFilter === v} onClick={() => setRating(v)} />
               ))}
               <span style={{ color: D.border, margin: "0 4px" }}>|</span>
@@ -312,7 +312,7 @@ export default function ProSearch() {
                   display: "flex", alignItems: "center", gap: 6,
                   padding: "6px 14px", borderRadius: 99, cursor: "pointer",
                   fontSize: 12, fontWeight: verifiedOnly ? 700 : 500,
-                  background: verifiedOnly ? D.green + "22″ : D.card,
+                  background: verifiedOnly ? D.green + "22" : D.card,
                   border: `1px solid ${verifiedOnly ? D.green + "55" : D.border}`,
                   color: verifiedOnly ? D.green : D.muted,
                 }}
@@ -410,7 +410,7 @@ export default function ProSearch() {
                         disabled={isBooked}
                         style={{
                           padding: "9px 18px", borderRadius: 10, cursor: isBooked ? "default" : "pointer",
-                          background: isBooked ? D.green + "22″ : D.teal,
+                          background: isBooked ? D.green + "22" : D.teal,
                           border: `1px solid ${isBooked ? D.green + "55" : D.teal}`,
                           color: isBooked ? D.green : "#fff",
                           fontSize: 13, fontWeight: 700,

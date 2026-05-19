@@ -43,15 +43,15 @@ export default function DFWHVACAfterHoursGuide() {
           In DFW summers, a broken AC at 11pm is not always an emergency — but sometimes it is. This guide helps you decide when to call for after-hours service and what to expect.
         </p>
 
-        <div style={{ background: '#EF444420', borderRadius: 10, padding: 16, marginBottom: 24, border: '1px solid #EF4444′ }}>
+        <div style={{ background: '#EF444420', borderRadius: 10, padding: 16, marginBottom: 24, border: '1px solid #EF4444' }}>
           <div style={{ fontWeight: 700, color: '#EF4444', marginBottom: 6 }}>🌡️ DFW-Specific Rule of Thumb</div>
-          <div style={{ fontSize: 14, color: '#CBD5E1′ }}>
+          <div style={{ fontSize: 14, color: '#CBD5E1' }}>
             If outdoor temp is above 95°F AND your AC is completely down AND anyone vulnerable is in the home — call for emergency service immediately. DFW summer nights rarely drop below 80°F, making indoor temps dangerous within hours.
           </div>
         </div>
 
         <div style={{ background: '#0F2240', borderRadius: 12, padding: 20, marginBottom: 24, border: '1px solid #1E3A5F' }}>
-          <h2 style={{ fontSize: 16, fontWeight: 700, marginBottom: 16, color: '#F5E642′ }}>💰 Real After-Hours Costs in DFW</h2>
+          <h2 style={{ fontSize: 16, fontWeight: 700, marginBottom: 16, color: '#F5E642' }}>💰 Real After-Hours Costs in DFW</h2>
           <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
             {costs.map(c => (
               <div key={c.label} style={{ display: 'flex', gap: 12, background: '#0A1628', borderRadius: 8, padding: 12, alignItems: 'flex-start' }}>
@@ -66,7 +66,7 @@ export default function DFWHVACAfterHoursGuide() {
         </div>
 
         <div style={{ background: '#0F2240', borderRadius: 12, padding: 20, border: '1px solid #1E3A5F' }}>
-          <h2 style={{ fontSize: 16, fontWeight: 700, marginBottom: 12, color: '#F5E642′ }}>🏠 My Situation — Emergency or Wait?</h2>
+          <h2 style={{ fontSize: 16, fontWeight: 700, marginBottom: 12, color: '#F5E642' }}>🏠 My Situation — Emergency or Wait?</h2>
           <select value={situation} onChange={e => setSituation(e.target.value)}
             style={{ width: '100%', padding: '10px 14px', background: '#0A1628', color: '#E8EDF5', border: '1px solid #1E3A5F', borderRadius: 8, fontSize: 14, marginBottom: 16 }}>
             <option value=>Describe your situation...</option>
@@ -76,7 +76,7 @@ export default function DFWHVACAfterHoursGuide() {
             <div style={{ background: '#0A1628', borderRadius: 8, padding: 16, border:  }}>
               <div style={{ fontSize: 18, fontWeight: 800, color: situations[situation].color, marginBottom: 10 }}>{situations[situation].verdict}</div>
               <div style={{ fontSize: 14, color: '#CBD5E1', lineHeight: 1.7, marginBottom: 10 }}>{situations[situation].reason}</div>
-              <div style={{ fontSize: 13, fontWeight: 700, color: '#F5E642′ }}>Estimated cost: {situations[situation].cost}</div>
+              <div style={{ fontSize: 13, fontWeight: 700, color: '#F5E642' }}>Estimated cost: {situations[situation].cost}</div>
             </div>
           )}
         </div>

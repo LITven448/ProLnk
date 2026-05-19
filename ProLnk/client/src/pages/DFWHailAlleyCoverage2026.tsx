@@ -19,17 +19,17 @@ export default function DFWHailAlleyCoverage2026() {
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2,1fr)', gap: '1rem', marginBottom: '2rem' }}>
           {[['#1','DFW Hail Rank','Most hail-prone major metro in the US (NOAA 2025)'],['💰','Avg Roof Claim','$12,400 in DFW — up 38% since 2020'],['🛡️','Class 4 Savings','15–30% premium discount with impact-resistant roof'],['📋','TX Wind/Hail','Separate deductible required by TX law for coastal + high-risk zones']].map(([icon,label,val]) => (
             <div key={label} style={{ background: '#111C30', borderRadius: 10, padding: '1rem' }}>
-              <div style={{ fontSize: '1.4rem', color: '#F5E642′ }}>{icon}</div>
+              <div style={{ fontSize: '1.4rem', color: '#F5E642' }}>{icon}</div>
               <div style={{ color: '#F5E642', fontWeight: 700, fontSize: '0.9rem' }}>{label}</div>
               <div style={{ color: '#94A3B8', fontSize: '0.85rem', marginTop: 4 }}>{val}</div>
             </div>
           ))}
         </div>
 
-        <div style={{ background: '#111C30', borderRadius: 12, padding: '1.25rem', marginBottom: '2rem', borderLeft: '3px solid #F5E642′ }}>
+        <div style={{ background: '#111C30', borderRadius: 12, padding: '1.25rem', marginBottom: '2rem', borderLeft: '3px solid #F5E642' }}>
           <div style={{ color: '#F5E642', fontWeight: 700, marginBottom: 8 }}>📋 DFW Hail Documentation Strategy</div>
           {['Take timestamped photos within 24 hours of storm','Use NOAA Storm Data to confirm hail size + date for claims','Request a written roof inspection from a licensed roofer','File claim within policy window — TX standard is 1 year','Keep receipts: Class 4 shingles qualify for premium discounts'].map((t,i) => (
-            <div key={i} style={{ display: 'flex', gap: 8, marginBottom: 6, color: '#CBD5E1', fontSize: '0.9rem' }}><span style={{ color: '#F5E642′ }}>✓</span>{t}</div>
+            <div key={i} style={{ display: 'flex', gap: 8, marginBottom: 6, color: '#CBD5E1', fontSize: '0.9rem' }}><span style={{ color: '#F5E642' }}>✓</span>{t}</div>
           ))}
         </div>
 
@@ -43,7 +43,7 @@ export default function DFWHailAlleyCoverage2026() {
         </div>
 
         {selected !== null && (
-          <div style={{ background: '#111C30', borderRadius: 12, padding: '1.5rem', borderLeft: '4px solid #F5E642′ }}>
+          <div style={{ background: '#111C30', borderRadius: 12, padding: '1.5rem', borderLeft: '4px solid #F5E642' }}>
             <div style={{ color: '#F5E642', fontWeight: 700, marginBottom: 8 }}>⛈️ Risk: {locations[selected].risk}</div>
             <p style={{ color: '#CBD5E1', margin: 0, fontSize: '0.95rem' }}>{locations[selected].tip}</p>
             <p style={{ color: '#64748B', fontSize: '0.85rem', marginTop: 12 }}>ProLnk connects you with Class 4 roofing contractors in your specific DFW county.</p>

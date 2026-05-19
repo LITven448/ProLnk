@@ -17,8 +17,8 @@ export default function DFWFoundationMudJacking2026() {
   return (
     <div style={{ backgroundColor: '#0A1628', minHeight: '100vh', color: '#ffffff', fontFamily: 'system-ui, sans-serif', padding: '24px' }}>
       <div style={{ maxWidth: '800px', margin: '0 auto' }}>
-        <div style={{ marginBottom: '8px', color: '#F5E642', fontSize: '14px', fontWeight: '600′ }}>🏗️ DFW FOUNDATION GUIDE 2026</div>
-        <h1 style={{ fontSize: '32px', fontWeight: '800', marginBottom: '12px', lineHeight: '1.2′ }}>Mudjacking vs. Polyurethane Foam in DFW</h1>
+        <div style={{ marginBottom: '8px', color: '#F5E642', fontSize: '14px', fontWeight: '600' }}>🏗️ DFW FOUNDATION GUIDE 2026</div>
+        <h1 style={{ fontSize: '32px', fontWeight: '800', marginBottom: '12px', lineHeight: '1.2' }}>Mudjacking vs. Polyurethane Foam in DFW</h1>
         <p style={{ color: '#94a3b8', fontSize: '16px', marginBottom: '32px' }}>DFW's expansive clay soil makes sunken concrete common — and the lifting method you choose matters more here than anywhere else.</p>
 
         <div style={{ backgroundColor: '#1e3a5f', borderRadius: '12px', padding: '24px', marginBottom: '24px' }}>
@@ -26,16 +26,16 @@ export default function DFWFoundationMudJacking2026() {
           <div style={{ overflowX: 'auto' }}>
             <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: '14px' }}>
               <thead>
-                <tr style={{ borderBottom: '2px solid #F5E642′ }}>
-                  {['Factor','Mudjacking','Polyurethane Foam'].map(h => <th key={h} style={{ textAlign: 'left', padding: '10px 12px', color: '#F5E642′ }}>{h}</th>)}
+                <tr style={{ borderBottom: '2px solid #F5E642' }}>
+                  {['Factor','Mudjacking','Polyurethane Foam'].map(h => <th key={h} style={{ textAlign: 'left', padding: '10px 12px', color: '#F5E642' }}>{h}</th>)}
                 </tr>
               </thead>
               <tbody>
                 {[['Cost','$3–$8 per sqft','$5–$25 per sqft'],['Material Weight','Heavy (cement slurry)','Lightweight (expands 2x)'],['Cure Time','24–72 hours','15–30 minutes'],['Void Fill','Solid areas only','Expands into gaps'],['DFW Clay Performance','Good short-term','Better long-term'],['Hole Size','1.5–2 inch holes','5/8 inch holes'],['Lifespan','5–10 years','10–15 years']].map(([f, m, p]) => (
-                  <tr key={f} style={{ borderBottom: '1px solid #334155′ }}>
-                    <td style={{ padding: '10px 12px', color: '#94a3b8′ }}>{f}</td>
-                    <td style={{ padding: '10px 12px', color: '#cbd5e1′ }}>{m}</td>
-                    <td style={{ padding: '10px 12px', color: '#cbd5e1′ }}>{p}</td>
+                  <tr key={f} style={{ borderBottom: '1px solid #334155' }}>
+                    <td style={{ padding: '10px 12px', color: '#94a3b8' }}>{f}</td>
+                    <td style={{ padding: '10px 12px', color: '#cbd5e1' }}>{m}</td>
+                    <td style={{ padding: '10px 12px', color: '#cbd5e1' }}>{p}</td>
                   </tr>
                 ))}
               </tbody>
@@ -69,7 +69,7 @@ export default function DFWFoundationMudJacking2026() {
             style={{ backgroundColor: '#F5E642', color: '#0A1628', border: 'none', borderRadius: '8px', padding: '12px 24px', fontSize: '15px', fontWeight: '700', cursor: 'pointer', width: '100%' }}>
             Get My Recommendation →
           </button>
-          {result && <div style={{ marginTop: '16px', backgroundColor: '#0A1628', borderRadius: '8px', padding: '16px', color: '#cbd5e1', fontSize: '15px', lineHeight: '1.6′ }}>{result}</div>}
+          {result && <div style={{ marginTop: '16px', backgroundColor: '#0A1628', borderRadius: '8px', padding: '16px', color: '#cbd5e1', fontSize: '15px', lineHeight: '1.6' }}>{result}</div>}
         </div>
 
         <div style={{ backgroundColor: '#1e3a5f', borderRadius: '12px', padding: '20px' }}>

@@ -25,7 +25,7 @@ export default function DFWElectricBillShockGuide() {
           ⚡ DFW Electric Bill Shock Guide
         </div>
         <p style={{ color: '#94A3B8', marginBottom: '1.5rem' }}>
-          DFW's deregulated electricity market means you could be on the wrong plan. Combined with extreme summer heat, bills can spike 3-4x in July-August. Here’s how to diagnose and fix high bills.
+          DFW's deregulated electricity market means you could be on the wrong plan. Combined with extreme summer heat, bills can spike 3-4x in July-August. Here's how to diagnose and fix high bills.
         </p>
         <div style={{ background: '#1E2D45', borderRadius: 10, padding: '1.2rem', marginBottom: '1.2rem' }}>
           <div style={{ fontWeight: 600, color: '#F5E642', marginBottom: '0.8rem' }}>🏛️ DFW Deregulated Market — What You Need to Know</div>
@@ -75,7 +75,7 @@ export default function DFWElectricBillShockGuide() {
               <div style={{ background: '#0A1628', borderRadius: 8, padding: '1rem' }}>
                 <div style={{ color: '#94A3B8', fontSize: '0.85rem', marginBottom: '0.5rem' }}>✅ Action Plan</div>
                 {rec.actions.map((a, i) => (
-                  <div key={i} style={{ color: '#E8EDF5', fontSize: '0.9rem', padding: '0.3rem 0', borderBottom: '1px solid #1E2D45′ }}>
+                  <div key={i} style={{ color: '#E8EDF5', fontSize: '0.9rem', padding: '0.3rem 0', borderBottom: '1px solid #1E2D45' }}>
                     {i + 1}. {a}
                   </div>
                 ))}

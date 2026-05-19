@@ -26,7 +26,7 @@ export default function DFWElectricalSafetyScore() {
   const maxScore = questions.length * 10;
   const pct = Math.round((totalScore / maxScore) * 100);
   const grade = pct >= 90 ? 'A' : pct >= 75 ? 'B' : pct >= 60 ? 'C' : pct >= 45 ? 'D' : 'F';
-  const gradeColor = pct >= 90 ? '#22c55e' : pct >= 75 ? '#84cc16′ : pct >= 60 ? '#eab308' : pct >= 45 ? '#f97316' : '#ef4444';
+  const gradeColor = pct >= 90 ? '#22c55e' : pct >= 75 ? '#84cc16' : pct >= 60 ? '#eab308' : pct >= 45 ? '#f97316' : '#ef4444';
 
   const dfwRisks = [
     answers[2] <= 1 && 'Federal Pacific or Zinsco panel — common DFW fire risk',
@@ -44,19 +44,19 @@ export default function DFWElectricalSafetyScore() {
       <div style={{ maxWidth: 700, margin: '0 auto' }}>
         <div style={{ textAlign: 'center', marginBottom: 32 }}>
           <div style={{ fontSize: 40 }}>⚡</div>
-          <h1 style={{ color: '#F5E642', fontSize: 28, margin: '8px 0′ }}>DFW Electrical Safety Score</h1>
-          <p style={{ color: '#94a3b8′ }}>15-question assessment for Dallas-Fort Worth homes</p>
+          <h1 style={{ color: '#F5E642', fontSize: 28, margin: '8px 0' }}>DFW Electrical Safety Score</h1>
+          <p style={{ color: '#94a3b8' }}>15-question assessment for Dallas-Fort Worth homes</p>
         </div>
 
         {!submitted ? (
           <>
             {questions.map((q, qi) => (
               <div key={q.id} style={{ background: '#0f2038', borderRadius: 12, padding: 20, marginBottom: 16 }}>
-                <p style={{ fontWeight: 600, marginBottom: 12, color: '#F5E642′ }}>{qi + 1}. {q.text}</p>
+                <p style={{ fontWeight: 600, marginBottom: 12, color: '#F5E642' }}>{qi + 1}. {q.text}</p>
                 <div style={{ display: 'grid', gap: 8 }}>
                   {q.options.map((opt, oi) => (
                     <button key={oi} onClick={() => setAnswers(prev => ({ ...prev, [q.id]: q.scores[oi] }))}
-                      style={{ background: answers[q.id] === q.scores[oi] ? '#F5E642′ : '#1e3a5f', color: answers[q.id] === q.scores[oi] ? '#0A1628' : '#fff', border: ’none', borderRadius: 8, padding: '10px 16px', textAlign: 'left', cursor: 'pointer', fontWeight: 500 }}>
+                      style={{ background: answers[q.id] === q.scores[oi] ? '#F5E642' : '#1e3a5f', color: answers[q.id] === q.scores[oi] ? '#0A1628' : '#fff', border: 'none', borderRadius: 8, padding: '10px 16px', textAlign: 'left', cursor: 'pointer', fontWeight: 500 }}>
                       {opt}
                     </button>
                   ))}
@@ -72,8 +72,8 @@ export default function DFWElectricalSafetyScore() {
           <div style={{ textAlign: 'center' }}>
             <div style={{ background: '#0f2038', borderRadius: 16, padding: 32, marginBottom: 24 }}>
               <div style={{ fontSize: 72, fontWeight: 900, color: gradeColor }}>{grade}</div>
-              <div style={{ fontSize: 48, fontWeight: 700, color: '#F5E642′ }}>{pct}%</div>
-              <p style={{ color: '#94a3b8′ }}>{totalScore} / {maxScore} points</p>
+              <div style={{ fontSize: 48, fontWeight: 700, color: '#F5E642' }}>{pct}%</div>
+              <p style={{ color: '#94a3b8' }}>{totalScore} / {maxScore} points</p>
             </div>
             {dfwRisks.length > 0 && (
               <div style={{ background: '#1a0a0a', borderRadius: 12, padding: 20, marginBottom: 16, textAlign: 'left' }}>

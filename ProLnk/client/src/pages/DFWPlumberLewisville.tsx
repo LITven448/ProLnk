@@ -58,7 +58,7 @@ export default function DFWPlumberLewisville() {
 
         <h1 style={{ fontSize: 42, fontWeight: 800, lineHeight: 1.15, marginBottom: 16 }}>
           Lewisville TX Plumbers —{' '}
-          <span style={{ color: '#F5E642′ }}>Lake Lewisville Area Specialists</span>
+          <span style={{ color: '#F5E642' }}>Lake Lewisville Area Specialists</span>
         </h1>
 
         <p style={{ fontSize: 18, color: '#94a3b8', lineHeight: 1.7, marginBottom: 40, maxWidth: 700 }}>
@@ -75,7 +75,7 @@ export default function DFWPlumberLewisville() {
           ].map(card => (
             <div key={card.title} style={{ background: '#111f3a', borderRadius: 12, padding: 24, border: '1px solid #1e3a5f' }}>
               <div style={{ fontSize: 32, marginBottom: 12 }}>{card.icon}</div>
-              <h3 style={{ fontSize: 17, fontWeight: 700, marginBottom: 8, color: '#F5E642′ }}>{card.title}</h3>
+              <h3 style={{ fontSize: 17, fontWeight: 700, marginBottom: 8, color: '#F5E642' }}>{card.title}</h3>
               <p style={{ fontSize: 14, color: '#94a3b8', lineHeight: 1.6 }}>{card.desc}</p>
             </div>
           ))}
@@ -88,7 +88,7 @@ export default function DFWPlumberLewisville() {
           </p>
 
           <div style={{ marginBottom: 24 }}>
-            <label style={{ display: 'block', fontSize: 14, fontWeight: 600, marginBottom: 8, color: '#F5E642′ }}>
+            <label style={{ display: 'block', fontSize: 14, fontWeight: 600, marginBottom: 8, color: '#F5E642' }}>
               When was your home built?
             </label>
             <select
@@ -136,7 +136,7 @@ export default function DFWPlumberLewisville() {
           </p>
         </div>
 
-        <div style={{ textAlign: 'center', background: '#111f3a', borderRadius: 16, padding: 40, border: '2px solid #F5E642′ }}>
+        <div style={{ textAlign: 'center', background: '#111f3a', borderRadius: 16, padding: 40, border: '2px solid #F5E642' }}>
           <div style={{ fontSize: 36, marginBottom: 12 }}>🔧</div>
           <h2 style={{ fontSize: 26, fontWeight: 800, marginBottom: 12 }}>Get Lewisville Plumber Quotes Today</h2>
           <p style={{ color: '#94a3b8', marginBottom: 24 }}>ProLnk matches you with licensed Lewisville plumbers. Get 3 quotes — fast, free, no commitment.</p>

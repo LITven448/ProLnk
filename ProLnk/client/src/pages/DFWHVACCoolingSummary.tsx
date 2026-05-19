@@ -106,8 +106,8 @@ export default function DFWHVACCoolingSummary() {
                 key={s.key}
                 onClick={() => setSelected(s.key)}
                 style={{
-                  background: selected === s.key ? '#F5E642′ : '#1A2F4E',
-                  color: selected === s.key ? '#0A1628′ : '#fff',
+                  background: selected === s.key ? '#F5E642' : '#1A2F4E',
+                  color: selected === s.key ? '#0A1628' : '#fff',
                   border: 'none', borderRadius: 10, padding: '13px 18px',
                   textAlign: 'left', cursor: 'pointer', fontWeight: 600, fontSize: 15,
                 }}

@@ -67,12 +67,12 @@ export default function HowTrustyProWorks() {
             {detectItems.map((d, i) => (
               <div key={i} style={{ background: '#FFFFFF', border: '1px solid #E5E7EB', borderRadius: 10, padding: '16px 18px', display: 'flex', gap: 12, alignItems: 'center' }}>
                 <span style={{ fontSize: 22 }}>{d.icon}</span>
-                <span style={{ fontSize: 14, fontWeight: 600, color: '#374151′ }}>{d.label}</span>
+                <span style={{ fontSize: 14, fontWeight: 600, color: '#374151' }}>{d.label}</span>
               </div>
             ))}
           </div>
           <div style={{ background: '#EFF6FF', border: '1px solid #BFDBFE', borderRadius: 10, padding: '16px 20px' }}>
-            <span style={{ fontWeight: 700, color: '#1D4ED8′ }}>Result: </span>
+            <span style={{ fontWeight: 700, color: '#1D4ED8' }}>Result: </span>
             <span style={{ color: '#1E40AF', fontSize: 14 }}>A detailed home health report with AI confidence levels, findings, recommendations, and contractor quote options.</span>
           </div>
         </div>
@@ -139,7 +139,7 @@ export default function HowTrustyProWorks() {
               When 5 or more neighbors need the same service, TrustyPro negotiates group pricing automatically. You see the group rate vs. your individual rate — and you choose.
             </p>
             <div style={{ display: 'flex', gap: 12, alignItems: 'center' }}>
-              <span style={{ fontSize: 28, fontWeight: 800, color: '#D97706′ }}>15–25%</span>
+              <span style={{ fontSize: 28, fontWeight: 800, color: '#D97706' }}>15–25%</span>
               <span style={{ color: '#92400E', fontSize: 15 }}>average group discount on qualifying services</span>
             </div>
           </div>

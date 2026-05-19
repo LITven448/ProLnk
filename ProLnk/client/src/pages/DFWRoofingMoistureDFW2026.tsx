@@ -46,11 +46,11 @@ export default function DFWRoofingMoistureDFW2026() {
           ))}
         </div>
 
-        <h2 style={{ fontSize: 18, fontWeight: 600, marginBottom: 12, color: '#F5E642′ }}>🔍 Your DFW Moisture Concern → Roof Guide</h2>
+        <h2 style={{ fontSize: 18, fontWeight: 600, marginBottom: 12, color: '#F5E642' }}>🔍 Your DFW Moisture Concern → Roof Guide</h2>
         <div style={{ display: 'grid', gap: 10, marginBottom: 20 }}>
           {concerns.map(c => (
             <button key={c.id} onClick={() => handleSelect(c.id)}
-              style={{ background: concern === c.id ? '#F5E642′ : '#1e2d45', color: concern === c.id ? '#0A1628' : '#fff', border: ’none', borderRadius: 8, padding: '12px 16px', textAlign: 'left', cursor: 'pointer', fontWeight: 600, fontSize: 15 }}>
+              style={{ background: concern === c.id ? '#F5E642' : '#1e2d45', color: concern === c.id ? '#0A1628' : '#fff', border: 'none', borderRadius: 8, padding: '12px 16px', textAlign: 'left', cursor: 'pointer', fontWeight: 600, fontSize: 15 }}>
               {c.label}
             </button>
           ))}
@@ -60,7 +60,7 @@ export default function DFWRoofingMoistureDFW2026() {
             {result}
           </div>
         )}
-        <div style={{ marginTop: 32, padding: 16, background: '#1e2d45', borderRadius: 10, fontSize: 13, color: '#94a3b8′ }}>
+        <div style={{ marginTop: 32, padding: 16, background: '#1e2d45', borderRadius: 10, fontSize: 13, color: '#94a3b8' }}>
           💡 ProLnk connects DFW homeowners with verified roofing contractors who specialize in moisture management.
         </div>
       </div>

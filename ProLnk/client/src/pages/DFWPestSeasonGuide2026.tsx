@@ -28,7 +28,7 @@ export default function DFWPestSeasonGuide2026() {
         </div>
         <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8, marginBottom: 24 }}>
           {months.map((mo, i) => (
-            <button key={i} onClick={() => setSelected(i)} style={{ padding: '6px 12px', borderRadius: 8, border: 'none', cursor: 'pointer', background: selected === i ? '#F5E642′ : '#1e3a5f', color: selected === i ? '#0A1628' : '#e2e8f0', fontWeight: 600, fontSize: 13 }}>{mo.name}</button>
+            <button key={i} onClick={() => setSelected(i)} style={{ padding: '6px 12px', borderRadius: 8, border: 'none', cursor: 'pointer', background: selected === i ? '#F5E642' : '#1e3a5f', color: selected === i ? '#0A1628' : '#e2e8f0', fontWeight: 600, fontSize: 13 }}>{mo.name}</button>
           ))}
         </div>
         <div style={{ background: '#0f2040', borderRadius: 12, padding: 24 }}>

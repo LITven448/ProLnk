@@ -1,11 +1,11 @@
 import { useState } from 'react';
 
 const symptomGroups = [
-  { label: 'System cools but inefficiently, high electric bill', value: 'inefficient', likelihood: 35, type: 'Non-condensable gases (air/nitrogen)', service: 'Recover refrigerant, evacuate system, recharge', cost: '$350–$600′ },
-  { label: 'Freeze-up or fluctuating pressures', value: 'freeze', likelihood: 50, type: 'Moisture contamination', service: 'Deep vacuum evacuation + filter drier replacement', cost: '$400–$700′ },
-  { label: 'Compressor makes noise, high amp draw', value: 'noisy', likelihood: 65, type: 'Acid contamination from partial burnout', service: 'System flush + compressor evaluation + driers', cost: '$800–$2,000′ },
-  { label: 'Acid test strips positive', value: 'acid', likelihood: 90, type: 'Confirmed acid contamination', service: 'Full flush, new compressor, dual filter driers, oil change', cost: '$1,500–$3,500′ },
-  { label: 'System was recently serviced and now underperforms', value: 'post_service', likelihood: 60, type: 'Air or nitrogen left in system (improper recovery)', service: 'Recover, triple-evacuate, recharge to spec', cost: '$300–$550′ },
+  { label: 'System cools but inefficiently, high electric bill', value: 'inefficient', likelihood: 35, type: 'Non-condensable gases (air/nitrogen)', service: 'Recover refrigerant, evacuate system, recharge', cost: '$350–$600' },
+  { label: 'Freeze-up or fluctuating pressures', value: 'freeze', likelihood: 50, type: 'Moisture contamination', service: 'Deep vacuum evacuation + filter drier replacement', cost: '$400–$700' },
+  { label: 'Compressor makes noise, high amp draw', value: 'noisy', likelihood: 65, type: 'Acid contamination from partial burnout', service: 'System flush + compressor evaluation + driers', cost: '$800–$2,000' },
+  { label: 'Acid test strips positive', value: 'acid', likelihood: 90, type: 'Confirmed acid contamination', service: 'Full flush, new compressor, dual filter driers, oil change', cost: '$1,500–$3,500' },
+  { label: 'System was recently serviced and now underperforms', value: 'post_service', likelihood: 60, type: 'Air or nitrogen left in system (improper recovery)', service: 'Recover, triple-evacuate, recharge to spec', cost: '$300–$550' },
 ];
 
 const causes = [
@@ -39,16 +39,16 @@ export default function DFWHVACContaminationGuide() {
           <div style={{ color: '#F5E642', fontWeight: 700, marginBottom: 16 }}>🩺 Select Your Symptoms</div>
           <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
             {symptomGroups.map(s => (
-              <button key={s.value} onClick={() => setSymptom(s)} style={{ padding: '12px 16px', borderRadius: 8, border: 'none', cursor: 'pointer', textAlign: 'left', background: symptom.value === s.value ? '#F5E642′ : '#1e3a5f', color: symptom.value === s.value ? '#0A1628' : '#fff', fontWeight: 600 }}>{s.label}</button>
+              <button key={s.value} onClick={() => setSymptom(s)} style={{ padding: '12px 16px', borderRadius: 8, border: 'none', cursor: 'pointer', textAlign: 'left', background: symptom.value === s.value ? '#F5E642' : '#1e3a5f', color: symptom.value === s.value ? '#0A1628' : '#fff', fontWeight: 600 }}>{s.label}</button>
             ))}
           </div>
         </div>
 
-        <div style={{ background: '#111f3a', borderRadius: 12, padding: 24, marginBottom: 20, borderLeft: '4px solid #F5E642′ }}>
+        <div style={{ background: '#111f3a', borderRadius: 12, padding: 24, marginBottom: 20, borderLeft: '4px solid #F5E642' }}>
           <div style={{ fontWeight: 700, fontSize: 18, marginBottom: 10 }}>🔬 Contamination Likelihood: {symptom.likelihood}%</div>
           <div style={{ color: '#F5E642', marginBottom: 6 }}>Likely Type: {symptom.type}</div>
           <div style={{ color: '#cbd5e1', marginBottom: 6 }}>Required Service: {symptom.service}</div>
-          <div style={{ color: '#94a3b8′ }}>Estimated Cost: {symptom.cost}</div>
+          <div style={{ color: '#94a3b8' }}>Estimated Cost: {symptom.cost}</div>
         </div>
 
         <div style={{ background: '#111f3a', borderRadius: 12, padding: 24, marginBottom: 20 }}>

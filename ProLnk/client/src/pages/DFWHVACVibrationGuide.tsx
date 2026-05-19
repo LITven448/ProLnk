@@ -64,7 +64,7 @@ export default function DFWHVACVibrationGuide() {
   return (
     <div style={{ background: '#0A1628', minHeight: '100vh', color: '#E8EAF0', fontFamily: 'sans-serif', padding: '2rem' }}>
       <div style={{ maxWidth: 760, margin: '0 auto' }}>
-        <div style={{ marginBottom: '0.5rem', fontSize: '0.85rem', color: '#F5E642′ }}>🔧 DFW HVAC Guide</div>
+        <div style={{ marginBottom: '0.5rem', fontSize: '0.85rem', color: '#F5E642' }}>🔧 DFW HVAC Guide</div>
         <h1 style={{ fontSize: '1.9rem', fontWeight: 800, marginBottom: '0.5rem', color: '#FFFFFF' }}>
           HVAC Vibration & Noise Diagnosis
         </h1>
@@ -81,8 +81,8 @@ export default function DFWHVACVibrationGuide() {
                 onClick={() => { setSelectedLocation(loc); setResult(null); }}
                 style={{
                   padding: '0.4rem 1rem', borderRadius: 20, border: 'none', cursor: 'pointer', fontSize: '0.85rem',
-                  background: selectedLocation === loc ? '#F5E642′ : '#1A2540',
-                  color: selectedLocation === loc ? '#0A1628′ : '#E8EAF0',
+                  background: selectedLocation === loc ? '#F5E642' : '#1A2540',
+                  color: selectedLocation === loc ? '#0A1628' : '#E8EAF0',
                   fontWeight: selectedLocation === loc ? 700 : 400,
                 }}
               >{loc}</button>
@@ -97,7 +97,7 @@ export default function DFWHVACVibrationGuide() {
               onClick={() => setResult(v)}
               style={{
                 background: result === v ? '#1E3A5F' : '#111E35',
-                border: result === v ? '1.5px solid #F5E642′ : '1.5px solid #1A2540',
+                border: result === v ? '1.5px solid #F5E642' : '1.5px solid #1A2540',
                 borderRadius: 10, padding: '1rem 1.25rem', textAlign: 'left', cursor: 'pointer', color: '#E8EAF0',
               }}
             >
@@ -110,8 +110,8 @@ export default function DFWHVACVibrationGuide() {
         </div>
 
         {result && (
-          <div style={{ background: '#111E35', borderRadius: 12, padding: '1.5rem', border: '1.5px solid #F5E642′ }}>
-            <div style={{ fontWeight: 700, fontSize: '1.1rem', marginBottom: '1rem', color: '#F5E642′ }}>
+          <div style={{ background: '#111E35', borderRadius: 12, padding: '1.5rem', border: '1.5px solid #F5E642' }}>
+            <div style={{ fontWeight: 700, fontSize: '1.1rem', marginBottom: '1rem', color: '#F5E642' }}>
               Diagnosis: {result.type}
             </div>
             <div style={{ display: 'grid', gap: '0.75rem' }}>
@@ -129,7 +129,7 @@ export default function DFWHVACVibrationGuide() {
           </div>
         )}
 
-        <div style={{ marginTop: '2rem', background: '#111E35', borderRadius: 10, padding: '1rem 1.25rem', fontSize: '0.85rem', color: '#9CA3B0′ }}>
+        <div style={{ marginTop: '2rem', background: '#111E35', borderRadius: 10, padding: '1rem 1.25rem', fontSize: '0.85rem', color: '#9CA3B0' }}>
           💡 DFW Note: Clay soil expansion in summer and contraction in winter is the #1 cause of condenser pad tilt and duct hanger loosening in DFW homes.
         </div>
       </div>

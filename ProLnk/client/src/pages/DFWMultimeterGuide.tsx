@@ -109,7 +109,7 @@ export default function DFWMultimeterGuide() {
               'Non-contact voltage tester ($15-20) is safer for quick checks',
               'Get a tester with CAT III rating minimum for DFW residential work',
             ].map(f => (
-              <div key={f} style={{ backgroundColor: '#0A1628', borderRadius: 8, padding: 12, fontSize: 13, color: '#CBD5E1', borderLeft: '3px solid #F5E642′ }}>
+              <div key={f} style={{ backgroundColor: '#0A1628', borderRadius: 8, padding: 12, fontSize: 13, color: '#CBD5E1', borderLeft: '3px solid #F5E642' }}>
                 {f}
               </div>
             ))}
@@ -136,7 +136,7 @@ export default function DFWMultimeterGuide() {
         </div>
 
         {result && (
-          <div style={{ backgroundColor: '#112240', borderRadius: 12, padding: 24, borderLeft: '4px solid #F5E642′ }}>
+          <div style={{ backgroundColor: '#112240', borderRadius: 12, padding: 24, borderLeft: '4px solid #F5E642' }}>
             <h3 style={{ color: '#F5E642', fontSize: 16, marginBottom: 14 }}>📋 Test Steps</h3>
             {result.testSteps.map((s, i) => (
               <div key={i} style={{ display: 'flex', gap: 12, marginBottom: 10, backgroundColor: '#0A1628', borderRadius: 8, padding: 12 }}>
@@ -153,7 +153,7 @@ export default function DFWMultimeterGuide() {
               </div>
             ))}
 
-            <div style={{ backgroundColor: '#0A1628', borderRadius: 8, padding: 14, marginTop: 16, borderLeft: '3px solid #4FC3F7′ }}>
+            <div style={{ backgroundColor: '#0A1628', borderRadius: 8, padding: 14, marginTop: 16, borderLeft: '3px solid #4FC3F7' }}>
               <div style={{ color: '#4FC3F7', fontSize: 12, fontWeight: 700, marginBottom: 8 }}>🏙️ DFW-SPECIFIC NOTE</div>
               <div style={{ color: '#CBD5E1', fontSize: 13 }}>{result.dfwNote}</div>
             </div>

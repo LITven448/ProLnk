@@ -23,7 +23,7 @@ export default function DFWPorcelainTileGuide2026() {
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(220px, 1fr))', gap: '12px', marginBottom: '32px' }}>
           {issues.map((issue, i) => (
             <button key={i} onClick={() => setSelected(selected === i ? null : i)}
-              style={{ backgroundColor: selected === i ? '#F5E642′ : '#0f2040', color: selected === i ? '#0A1628' : '#ffffff', border: '1px solid', borderColor: selected === i ? '#F5E642' : '#1e3a5f', borderRadius: '10px', padding: '18px 14px', cursor: ’pointer', textAlign: 'left', transition: 'all 0.2s' }}>
+              style={{ backgroundColor: selected === i ? '#F5E642' : '#0f2040', color: selected === i ? '#0A1628' : '#ffffff', border: '1px solid', borderColor: selected === i ? '#F5E642' : '#1e3a5f', borderRadius: '10px', padding: '18px 14px', cursor: 'pointer', textAlign: 'left', transition: 'all 0.2s' }}>
               <div style={{ fontSize: '28px', marginBottom: '8px' }}>{issue.icon}</div>
               <div style={{ fontWeight: '600', fontSize: '14px' }}>{issue.label}</div>
             </button>
@@ -34,7 +34,7 @@ export default function DFWPorcelainTileGuide2026() {
           <div style={{ backgroundColor: '#0f2040', border: '1px solid #F5E642', borderRadius: '12px', padding: '24px' }}>
             <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '16px' }}>
               <span style={{ fontSize: '32px' }}>{issues[selected].icon}</span>
-              <h2 style={{ color: '#F5E642', fontSize: '20px', fontWeight: '700′ }}>{issues[selected].label}</h2>
+              <h2 style={{ color: '#F5E642', fontSize: '20px', fontWeight: '700' }}>{issues[selected].label}</h2>
             </div>
             <p style={{ color: '#cbd5e1', lineHeight: '1.7', fontSize: '15px' }}>{issues[selected].guide}</p>
           </div>

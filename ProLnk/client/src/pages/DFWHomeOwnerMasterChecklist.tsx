@@ -201,7 +201,7 @@ export default function DFWHomeOwnerMasterChecklist() {
               {sys.items.map((item, i) => {
                 const key = `${sys.name}-${i}`;
                 return (
-                  <div key={key} onClick={() => toggle(key)} style={{ display: 'flex', alignItems: 'center', gap: 10, padding: '7px 0', cursor: 'pointer', borderBottom: '1px solid #0A1628′ }}>
+                  <div key={key} onClick={() => toggle(key)} style={{ display: 'flex', alignItems: 'center', gap: 10, padding: '7px 0', cursor: 'pointer', borderBottom: '1px solid #0A1628' }}>
                     <span style={{ fontSize: 18 }}>{checked[key] ? '✅' : '⬜'}</span>
                     <span style={{ color: checked[key] ? '#64748b' : '#e2e8f0', textDecoration: checked[key] ? 'line-through' : 'none', fontSize: 14 }}>{item}</span>
                   </div>

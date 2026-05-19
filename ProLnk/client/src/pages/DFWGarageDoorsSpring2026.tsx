@@ -24,14 +24,14 @@ export default function DFWGarageDoorsSpring2026() {
         <div style={{ marginBottom: 16, fontWeight: 700, color: '#94a3b8', fontSize: 14 }}>Select your door age:</div>
         <div style={{ display: 'flex', gap: 10, marginBottom: 24, flexWrap: 'wrap' }}>
           {ageGroups.map(g => (
-            <button key={g.id} onClick={() => setSelected(g.id)} style={{ background: selected === g.id ? '#F5E642′ : '#0F2040', color: selected === g.id ? '#0A1628' : '#fff', border: ’none', borderRadius: 8, padding: '0.6rem 1.2rem', cursor: 'pointer', fontWeight: 700, fontSize: 14, transition: 'all 0.2s' }}>
+            <button key={g.id} onClick={() => setSelected(g.id)} style={{ background: selected === g.id ? '#F5E642' : '#0F2040', color: selected === g.id ? '#0A1628' : '#fff', border: 'none', borderRadius: 8, padding: '0.6rem 1.2rem', cursor: 'pointer', fontWeight: 700, fontSize: 14, transition: 'all 0.2s' }}>
               {g.label}
             </button>
           ))}
         </div>
 
         <div style={{ background: '#0F2040', borderRadius: 14, padding: '1.5rem', marginBottom: 20 }}>
-          <h2 style={{ fontWeight: 800, marginBottom: 16, color: '#F5E642′ }}>{item.label} — Spring Checklist</h2>
+          <h2 style={{ fontWeight: 800, marginBottom: 16, color: '#F5E642' }}>{item.label} — Spring Checklist</h2>
           {item.checks.map((c, i) => (
             <div key={i} style={{ display: 'flex', gap: 14, marginBottom: 14, alignItems: 'flex-start' }}>
               <div style={{ width: 26, height: 26, background: '#F5E642', color: '#0A1628', borderRadius: 6, display: 'flex', alignItems: 'center', justifyContent: 'center', fontWeight: 800, fontSize: 13, flexShrink: 0 }}>{i + 1}</div>

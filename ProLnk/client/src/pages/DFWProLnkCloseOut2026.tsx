@@ -31,25 +31,25 @@ export default function DFWProLnkCloseOut2026() {
   const [selected, setSelected] = useState(3);
 
   return (
-    <div style={{ background: "#0A1628″, minHeight: "100vh", padding: "40px 24px", fontFamily: "system-ui, sans-serif", color: "#fff" }}>
+    <div style={{ background: "#0A1628", minHeight: "100vh", padding: "40px 24px", fontFamily: "system-ui, sans-serif", color: "#fff" }}>
       <div style={{ maxWidth: 860, margin: "0 auto" }}>
         <div style={{ textAlign: "center", marginBottom: 40 }}>
           <div style={{ fontSize: 48 }}>🏁</div>
-          <h1 style={{ fontSize: 32, fontWeight: 800, color: "#F5E642″, margin: "12px 0 8px" }}>ProLnk DFW Close-Out Guide</h1>
-          <p style={{ color: "#94a3b8″, fontSize: 16 }}>May 17, 2026 — Wrapping up 36 hours of autonomous building</p>
+          <h1 style={{ fontSize: 32, fontWeight: 800, color: "#F5E642", margin: "12px 0 8px" }}>ProLnk DFW Close-Out Guide</h1>
+          <p style={{ color: "#94a3b8", fontSize: 16 }}>May 17, 2026 — Wrapping up 36 hours of autonomous building</p>
         </div>
 
-        <div style={{ background: "#1e2d45″, borderRadius: 16, padding: 28, marginBottom: 36, border: "2px solid #F5E642" }}>
+        <div style={{ background: "#1e2d45", borderRadius: 16, padding: 28, marginBottom: 36, border: "2px solid #F5E642" }}>
           <div style={{ display: "flex", gap: 24, flexWrap: "wrap", justifyContent: "space-around", textAlign: "center" }}>
             {[
-              { label: "Started", value: "3,328″, sub: "pages" },
+              { label: "Started", value: "3,328", sub: "pages" },
               { label: "Finished", value: "5,460+", sub: "pages" },
               { label: "Built", value: "2,132+", sub: "new pages" },
-              { label: "Cost", value: "$0″, sub: "agency fees" },
+              { label: "Cost", value: "$0", sub: "agency fees" },
             ].map((stat, i) => (
               <div key={i}>
-                <div style={{ fontSize: 28, fontWeight: 800, color: "#F5E642″ }}>{stat.value}</div>
-                <div style={{ color: "#94a3b8″, fontSize: 13 }}>{stat.label} ({stat.sub})</div>
+                <div style={{ fontSize: 28, fontWeight: 800, color: "#F5E642" }}>{stat.value}</div>
+                <div style={{ color: "#94a3b8", fontSize: 13 }}>{stat.label} ({stat.sub})</div>
               </div>
             ))}
           </div>
@@ -61,8 +61,8 @@ export default function DFWProLnkCloseOut2026() {
               key={i}
               onClick={() => setSelected(i)}
               style={{
-                background: selected === i ? "#F5E642″ : "#1e2d45",
-                color: selected === i ? "#0A1628″ : "#94a3b8",
+                background: selected === i ? "#F5E642" : "#1e2d45",
+                color: selected === i ? "#0A1628" : "#94a3b8",
                 border: "none", borderRadius: 8, padding: "10px 18px",
                 cursor: "pointer", fontWeight: 600, fontSize: 14,
               }}
@@ -72,18 +72,18 @@ export default function DFWProLnkCloseOut2026() {
           ))}
         </div>
 
-        <div style={{ background: "#1e2d45″, borderRadius: 16, padding: 32 }}>
+        <div style={{ background: "#1e2d45", borderRadius: 16, padding: 32 }}>
           <div style={{ fontSize: 40, marginBottom: 12 }}>{stakeholders[selected].icon}</div>
-          <h2 style={{ fontSize: 22, fontWeight: 700, color: "#F5E642″, margin: "0 0 16px" }}>Close-Out Summary: {stakeholders[selected].label}</h2>
-          <p style={{ color: "#cbd5e1″, lineHeight: 1.7, fontSize: 15, marginBottom: 20 }}>{stakeholders[selected].summary}</p>
-          <div style={{ background: "#0A1628″, borderRadius: 8, padding: "12px 18px", borderLeft: "4px solid #F5E642" }}>
-            <span style={{ color: "#F5E642″, fontWeight: 700 }}>📊 {stakeholders[selected].metric}</span>
+          <h2 style={{ fontSize: 22, fontWeight: 700, color: "#F5E642", margin: "0 0 16px" }}>Close-Out Summary: {stakeholders[selected].label}</h2>
+          <p style={{ color: "#cbd5e1", lineHeight: 1.7, fontSize: 15, marginBottom: 20 }}>{stakeholders[selected].summary}</p>
+          <div style={{ background: "#0A1628", borderRadius: 8, padding: "12px 18px", borderLeft: "4px solid #F5E642" }}>
+            <span style={{ color: "#F5E642", fontWeight: 700 }}>📊 {stakeholders[selected].metric}</span>
           </div>
         </div>
 
-        <div style={{ marginTop: 32, background: "#1e2d45″, borderRadius: 12, padding: 24 }}>
-          <h3 style={{ color: "#F5E642″, fontWeight: 700, marginTop: 0 }}>⏭️ What's Next</h3>
-          <p style={{ color: "#94a3b8″, lineHeight: 1.6, margin: 0 }}>
+        <div style={{ marginTop: 32, background: "#1e2d45", borderRadius: 12, padding: 24 }}>
+          <h3 style={{ color: "#F5E642", fontWeight: 700, marginTop: 0 }}>⏭️ What's Next</h3>
+          <p style={{ color: "#94a3b8", lineHeight: 1.6, margin: 0 }}>
             All 5,460+ pages staged in GitHub. Awaiting Render credits to deploy. Once live, the SEO engine activates and ProLnk begins capturing organic DFW search traffic across every home service category. The most comprehensively resourced DFW home services platform in existence — ready to launch.
           </p>
         </div>

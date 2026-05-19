@@ -35,7 +35,7 @@ export default function DFWCommunityBankGuide() {
     <div style={{ background: '#F9FAFB', minHeight: '100vh', fontFamily: 'system-ui, sans-serif', color: '#0A1628', padding: '2rem' }}>
       <div style={{ maxWidth: 780, margin: '0 auto' }}>
         <div style={{ background: '#0A1628', borderRadius: 12, padding: '1.5rem 2rem', marginBottom: '2rem' }}>
-          <div style={{ fontSize: 28, fontWeight: 800, color: '#F5E642′ }}>🏦 Community Bank vs Big Bank</div>
+          <div style={{ fontSize: 28, fontWeight: 800, color: '#F5E642' }}>🏦 Community Bank vs Big Bank</div>
           <div style={{ color: '#CBD5E1', marginTop: 6 }}>DFW Home Loan — Which Lender Type Wins for You</div>
         </div>
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: '1rem', marginBottom: '1.5rem' }}>
@@ -44,14 +44,14 @@ export default function DFWCommunityBankGuide() {
             { label: 'Credit Unions', icon: '🤝', pros: ['Member-owned (aligned incentives)', 'Often lowest rates', 'Strong HELOC products', 'Less fee-driven'], cons: ['Membership required', 'Slower tech', 'Limited branches'] },
             { label: 'Big Banks', icon: '🏢', pros: ['Lowest rates (conforming)', 'Full digital experience', 'Branch everywhere'], cons: ['Algorithm-driven', 'No flexibility', 'Hard on self-employed', 'Call center support'] },
           ].map(b => (
-            <div key={b.label} style={{ background: '#fff', borderRadius: 10, padding: '1.25rem', border: '1px solid #E2E8F0′ }}>
+            <div key={b.label} style={{ background: '#fff', borderRadius: 10, padding: '1.25rem', border: '1px solid #E2E8F0' }}>
               <div style={{ fontWeight: 700, fontSize: 15, marginBottom: 8 }}>{b.icon} {b.label}</div>
               {b.pros.map(p => <div key={p} style={{ fontSize: 12, color: '#16A34A', marginBottom: 2 }}>✓ {p}</div>)}
               <div style={{ marginTop: 6 }}>{b.cons.map(c => <div key={c} style={{ fontSize: 12, color: '#DC2626', marginBottom: 2 }}>✗ {c}</div>)}</div>
             </div>
           ))}
         </div>
-        <div style={{ background: '#fff', borderRadius: 10, padding: '1.5rem', marginBottom: '1.5rem', border: '1px solid #E2E8F0′ }}>
+        <div style={{ background: '#fff', borderRadius: 10, padding: '1.5rem', marginBottom: '1.5rem', border: '1px solid #E2E8F0' }}>
           <div style={{ fontWeight: 700, fontSize: 16, marginBottom: 12 }}>🎯 Which Lender Type Wins by Situation</div>
           <div style={{ display: 'grid', gap: '0.75rem' }}>
             {factors.map(f => (
@@ -63,7 +63,7 @@ export default function DFWCommunityBankGuide() {
             ))}
           </div>
         </div>
-        <div style={{ background: '#fff', borderRadius: 10, padding: '1.5rem', marginBottom: '1.5rem', border: '1px solid #E2E8F0′ }}>
+        <div style={{ background: '#fff', borderRadius: 10, padding: '1.5rem', marginBottom: '1.5rem', border: '1px solid #E2E8F0' }}>
           <div style={{ fontWeight: 700, fontSize: 16, marginBottom: 14 }}>🔢 Find Your Best Lender Type</div>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
             <div>
@@ -84,13 +84,13 @@ export default function DFWCommunityBankGuide() {
               </select>
             </div>
             <div>
-              <div style={{ fontSize: 13, fontWeight: 600, marginBottom: 4 }}>Credit Score: <span style={{ color: '#6366F1′ }}>{score}</span></div>
+              <div style={{ fontSize: 13, fontWeight: 600, marginBottom: 4 }}>Credit Score: <span style={{ color: '#6366F1' }}>{score}</span></div>
               <input type="range" min={580} max={850} step={10} value={score} onChange={e => setScore(Number(e.target.value))} style={{ width: '100%' }} />
             </div>
           </div>
           <div style={{ background: '#0A1628', borderRadius: 8, padding: '1rem', color: '#fff' }}>
             <div style={{ fontWeight: 700, fontSize: 15, color: '#F5E642', marginBottom: 6 }}>✅ Recommendation: {res.rec}</div>
-            <div style={{ fontSize: 14, color: '#CBD5E1′ }}>{res.reason}</div>
+            <div style={{ fontSize: 14, color: '#CBD5E1' }}>{res.reason}</div>
           </div>
         </div>
         <div style={{ fontWeight: 700, fontSize: 16, marginBottom: 10 }}>📍 DFW-Specific Institutions to Consider</div>

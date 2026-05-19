@@ -54,7 +54,7 @@ export default function DFWHomeStagingCostGuide() {
               <div style={{ fontSize: 32, marginBottom: 8 }}>{s.icon}</div>
               <div style={{ fontWeight: 700, color: '#0A1628', marginBottom: 4 }}>{s.label}</div>
               <div style={{ fontSize: 22, fontWeight: 800, color: '#F5E642', backgroundColor: '#0A1628', borderRadius: 8, padding: '4px 12px', display: 'inline-block', marginBottom: 4 }}>{s.value}</div>
-              <div style={{ fontSize: 13, color: '#888′ }}>{s.sub}</div>
+              <div style={{ fontSize: 13, color: '#888' }}>{s.sub}</div>
             </div>
           ))}
         </div>
@@ -82,7 +82,7 @@ export default function DFWHomeStagingCostGuide() {
           </div>
         </div>
 
-        <div style={{ backgroundColor: '#fff8e1', borderRadius: 16, padding: 32, marginBottom: 48, border: '1px solid #ffe082′ }}>
+        <div style={{ backgroundColor: '#fff8e1', borderRadius: 16, padding: 32, marginBottom: 48, border: '1px solid #ffe082' }}>
           <h2 style={{ fontSize: 22, fontWeight: 700, color: '#0A1628', marginBottom: 8 }}>🌟 DFW Market Specifics</h2>
           <p style={{ color: '#555', marginBottom: 16 }}>DFW buyers in 2026 expect move-in ready. The Metroplex has one of the most competitive resale markets in the South — staged homes consistently outperform unstaged listings.</p>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16 }}>
@@ -92,13 +92,13 @@ export default function DFWHomeStagingCostGuide() {
               '🕐 DFW staged homes average 9 days on market vs 27 unstaged',
               '💵 Staged DFW homes sell for 1–5% more on average',
             ].map(tip => (
-              <div key={tip} style={{ backgroundColor: '#ffffff', borderRadius: 8, padding: 12, fontSize: 14, color: '#444′ }}>{tip}</div>
+              <div key={tip} style={{ backgroundColor: '#ffffff', borderRadius: 8, padding: 12, fontSize: 14, color: '#444' }}>{tip}</div>
             ))}
           </div>
         </div>
 
         <div style={{ backgroundColor: '#0A1628', borderRadius: 16, padding: 32, marginBottom: 32, color: '#fff' }}>
-          <h2 style={{ fontSize: 22, fontWeight: 700, marginBottom: 20, color: '#F5E642′ }}>🧮 Staging Cost Estimator</h2>
+          <h2 style={{ fontSize: 22, fontWeight: 700, marginBottom: 20, color: '#F5E642' }}>🧮 Staging Cost Estimator</h2>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 20, marginBottom: 20 }}>
             <div>
               <label style={{ display: 'block', marginBottom: 8, color: '#ccc', fontSize: 14 }}>Home Size</label>
@@ -141,7 +141,7 @@ export default function DFWHomeStagingCostGuide() {
                 </div>
               </div>
               <div style={{ marginTop: 16, padding: 16, backgroundColor: result.diy ? '#1a3a1a' : '#1a1a3a', borderRadius: 8, borderLeft: `4px solid ${result.diy ? '#4ade80' : '#818cf8'}` }}>
-                <strong style={{ color: result.diy ? '#4ade80′ : '#818cf8' }}>{result.diy ? '✅ DIY-Friendly' : '🏆 Hire a Pro'}</strong>
+                <strong style={{ color: result.diy ? '#4ade80' : '#818cf8' }}>{result.diy ? '✅ DIY-Friendly' : '🏆 Hire a Pro'}</strong>
                 <p style={{ color: '#ccc', fontSize: 13, marginTop: 4 }}>
                   {result.diy ? 'Your home size is manageable for DIY staging. Invest in key pieces: fresh linens, neutral throw pillows, and a declutter day can go a long way.' : 'At this scale, a professional stager will pay for themselves. DFW staging pros know what Metroplex buyers respond to.'}
                 </p>

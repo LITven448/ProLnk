@@ -50,7 +50,7 @@ export default function DFWDrivewayDrainageGuide() {
               <div style={{ fontSize: 12, color: '#94A3B8', fontWeight: 700, letterSpacing: 1, marginBottom: 8 }}>{label}</div>
               <div style={{ display: 'flex', flexDirection: 'column', gap: 6 }}>
                 {opts.map(o => (
-                  <button key={o} onClick={() => set(o)} style={{ background: val === o ? '#F5E642′ : '#1A2D4A', color: val === o ? '#0A1628' : '#E8EDF5', border: ’none', borderRadius: 8, padding: '10px 12px', cursor: 'pointer', fontWeight: val === o ? 700 : 400, fontSize: 13, textAlign: 'left', transition: 'all 0.15s' }}>{o}</button>
+                  <button key={o} onClick={() => set(o)} style={{ background: val === o ? '#F5E642' : '#1A2D4A', color: val === o ? '#0A1628' : '#E8EDF5', border: 'none', borderRadius: 8, padding: '10px 12px', cursor: 'pointer', fontWeight: val === o ? 700 : 400, fontSize: 13, textAlign: 'left', transition: 'all 0.15s' }}>{o}</button>
                 ))}
               </div>
             </div>
@@ -70,7 +70,7 @@ export default function DFWDrivewayDrainageGuide() {
             <div style={{ color: '#94A3B8', fontSize: 14, lineHeight: 1.6 }}>💡 {result.notes}</div>
           </div>
         ) : (
-          <div style={{ background: '#1A2D4A', borderRadius: 12, padding: 28, textAlign: 'center', color: '#94A3B8′ }}>Select your driveway size, slope direction, and flooding frequency to get a drainage recommendation.</div>
+          <div style={{ background: '#1A2D4A', borderRadius: 12, padding: 28, textAlign: 'center', color: '#94A3B8' }}>Select your driveway size, slope direction, and flooding frequency to get a drainage recommendation.</div>
         )}
         <div style={{ marginTop: 32, display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16 }}>
           {[{ icon: '🚿', title: 'Channel Drains', text: 'A linear channel drain across the driveway catches surface runoff and pipes it underground to a street outlet or pop-up emitter. Best solution when water flows across the full driveway width.' }, { icon: '🌱', title: 'Dry Creek Beds', text: 'A decorative gravel channel that carries water from driveway to street or rear yard. DFW homeowners love these — they handle drainage and look intentional. Works best with gentle slopes.' }, { icon: '🔄', title: 'Pop-Up Emitters', text: 'Install at the outlet of underground drainage pipes. They close when no water flows (keeping critters out) and open automatically under water pressure. Required at all underground drain terminations.' }, { icon: '🏗️', title: 'Concrete vs. Asphalt', text: 'Concrete can be saw-cut and resurfaced with proper drainage slopes. Asphalt is easier to regrade when hot. Neither material absorbs water in DFW — all runoff must go somewhere. The somewhere needs to be planned.' }].map(({ icon, title, text }) => (

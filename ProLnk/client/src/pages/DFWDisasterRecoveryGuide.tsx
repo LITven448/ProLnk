@@ -49,7 +49,7 @@ export default function DFWDisasterRecoveryGuide() {
         <div style={{ background: '#1e3a5f', borderRadius: 12, padding: 24, marginBottom: 24 }}>
           <h2 style={{ color: '#F5E642', fontSize: 20, marginBottom: 16 }}>📋 First 24 Hours: Always Do This</h2>
           {[['📸 Document everything', 'Video walkthrough before ANY cleanup — courts and insurers need visual proof'], ['📞 Call insurer immediately', 'Do not wait — claim delays can complicate coverage'], ['🔒 Secure your property', 'Tarp, board-up, water extraction to prevent additional damage (fully reimbursable)'], ['🏨 Arrange housing', 'ALE (Additional Living Expense) coverage pays hotel + meals if home is uninhabitable'], ['📝 Start a log', 'Date, time, every call, every expense, every contractor contact — paper trail is your friend']].map(([t, d]) => (
-            <div key={t as string} style={{ display: 'flex', gap: 12, padding: '9px 0', borderBottom: '1px solid #0A1628′ }}>
+            <div key={t as string} style={{ display: 'flex', gap: 12, padding: '9px 0', borderBottom: '1px solid #0A1628' }}>
               <span style={{ color: '#F5E642', fontWeight: 700, minWidth: 180, fontSize: 13 }}>{t}</span>
               <span style={{ color: '#94a3b8', fontSize: 13 }}>{d}</span>
             </div>
@@ -59,7 +59,7 @@ export default function DFWDisasterRecoveryGuide() {
         <div style={{ background: '#1e3a5f', borderRadius: 12, padding: 24, marginBottom: 24 }}>
           <h2 style={{ color: '#F5E642', fontSize: 20, marginBottom: 20 }}>🔍 Recovery Plan Generator</h2>
           <div style={{ marginBottom: 16 }}>
-            <label style={{ display: 'block', marginBottom: 8, color: '#94a3b8′ }}>Disaster Type</label>
+            <label style={{ display: 'block', marginBottom: 8, color: '#94a3b8' }}>Disaster Type</label>
             <select value={disasterType} onChange={e => setDisasterType(e.target.value)} style={{ width: '100%', padding: 12, borderRadius: 8, background: '#0A1628', color: '#e2e8f0', border: '1px solid #334155', fontSize: 15 }}>
               <option value="">Select disaster type...</option>
               <option value="tornado">Tornado / Wind</option>
@@ -69,7 +69,7 @@ export default function DFWDisasterRecoveryGuide() {
             </select>
           </div>
           <div style={{ marginBottom: 20 }}>
-            <label style={{ display: 'block', marginBottom: 8, color: '#94a3b8′ }}>Damage Level</label>
+            <label style={{ display: 'block', marginBottom: 8, color: '#94a3b8' }}>Damage Level</label>
             <select value={damageLevel} onChange={e => setDamageLevel(e.target.value)} style={{ width: '100%', padding: 12, borderRadius: 8, background: '#0A1628', color: '#e2e8f0', border: '1px solid #334155', fontSize: 15 }}>
               <option value="">Select damage level...</option>
               <option value="minor">Minor — Home livable, cosmetic or component damage</option>
@@ -80,11 +80,11 @@ export default function DFWDisasterRecoveryGuide() {
           <button onClick={calculate} style={{ width: '100%', padding: 14, background: '#F5E642', color: '#0A1628', borderRadius: 8, border: 'none', fontWeight: 700, fontSize: 16, cursor: 'pointer' }}>Generate Recovery Plan →</button>
 
           {result && (
-            <div style={{ marginTop: 24, background: '#0A1628', borderRadius: 10, padding: 20, borderLeft: '4px solid #F5E642′ }}>
+            <div style={{ marginTop: 24, background: '#0A1628', borderRadius: 10, padding: 20, borderLeft: '4px solid #F5E642' }}>
               <div style={{ display: 'flex', gap: 16, flexWrap: 'wrap', marginBottom: 20 }}>
-                <div style={{ background: '#1e3a5f', borderRadius: 8, padding: '8px 16px' }}><div style={{ fontSize: 11, color: '#94a3b8′ }}>TIMELINE</div><div style={{ fontWeight: 700, color: '#F5E642' }}>{result.timeline}</div></div>
-                <div style={{ background: '#1e3a5f', borderRadius: 8, padding: '8px 16px' }}><div style={{ fontSize: 11, color: '#94a3b8′ }}>EST. COST</div><div style={{ fontWeight: 700, color: '#e2e8f0', fontSize: 13 }}>{result.cost}</div></div>
-                {result.fema && <div style={{ background: '#1e3775', borderRadius: 8, padding: '8px 16px' }}><div style={{ fontSize: 11, color: '#94a3b8′ }}>FEMA ELIGIBLE</div><div style={{ fontWeight: 700, color: '#60a5fa' }}>✓ Apply Now</div></div>}
+                <div style={{ background: '#1e3a5f', borderRadius: 8, padding: '8px 16px' }}><div style={{ fontSize: 11, color: '#94a3b8' }}>TIMELINE</div><div style={{ fontWeight: 700, color: '#F5E642' }}>{result.timeline}</div></div>
+                <div style={{ background: '#1e3a5f', borderRadius: 8, padding: '8px 16px' }}><div style={{ fontSize: 11, color: '#94a3b8' }}>EST. COST</div><div style={{ fontWeight: 700, color: '#e2e8f0', fontSize: 13 }}>{result.cost}</div></div>
+                {result.fema && <div style={{ background: '#1e3775', borderRadius: 8, padding: '8px 16px' }}><div style={{ fontSize: 11, color: '#94a3b8' }}>FEMA ELIGIBLE</div><div style={{ fontWeight: 700, color: '#60a5fa' }}>✓ Apply Now</div></div>}
               </div>
               <div style={{ marginBottom: 16 }}>
                 <div style={{ color: '#F5E642', fontWeight: 600, marginBottom: 8 }}>📋 Priority Repair Order</div>

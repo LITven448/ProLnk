@@ -10,12 +10,12 @@ const floorPlanTypes = [
 ];
 
 const modifications: Record<string, { mod: string; cost: string }[]> = {
-  open: [{ mod: 'Add kitchen island with seating', cost: '$4,000–$8,000′ }, { mod: ’Upgrade to 10-ft ceilings if possible', cost: '$8,000–$15,000′ }, { mod: ’Extend sliding doors to outdoor patio', cost: '$6,000–$12,000′ }],
-  traditional: [{ mod: 'Remove wall between kitchen and dining', cost: '$3,000–$7,000′ }, { mod: ’Open kitchen to family room', cost: '$5,000–$12,000′ }, { mod: ’Convert formal living to home office', cost: '$1,500–$4,000′ }],
-  split: [{ mod: 'Expand primary suite closet', cost: '$2,000–$6,000′ }, { mod: ’Add ensuite to second bedroom', cost: '$8,000–$15,000′ }, { mod: ’Widen hallway to secondary bedrooms', cost: '$2,500–$5,000′ }],
-  twostory: [{ mod: 'Convert downstairs flex room to primary', cost: '$10,000–$25,000′ }, { mod: ’Add main-floor half bath', cost: '$5,000–$10,000′ }, { mod: ’Create dedicated home office on main', cost: '$2,000–$5,000′ }],
-  firstprimary: [{ mod: 'Extend primary bath with spa shower', cost: '$8,000–$18,000′ }, { mod: ’Add 3-car garage if lot allows', cost: '$25,000–$50,000′ }, { mod: ’Create mudroom entry from garage', cost: '$3,000–$8,000′ }],
-  ranch: [{ mod: 'Open kitchen to living area', cost: '$4,000–$10,000′ }, { mod: ’Add dedicated home office', cost: '$2,000–$6,000′ }, { mod: ’Extend covered patio for outdoor living', cost: '$10,000–$25,000′ }],
+  open: [{ mod: 'Add kitchen island with seating', cost: '$4,000–$8,000' }, { mod: 'Upgrade to 10-ft ceilings if possible', cost: '$8,000–$15,000' }, { mod: 'Extend sliding doors to outdoor patio', cost: '$6,000–$12,000' }],
+  traditional: [{ mod: 'Remove wall between kitchen and dining', cost: '$3,000–$7,000' }, { mod: 'Open kitchen to family room', cost: '$5,000–$12,000' }, { mod: 'Convert formal living to home office', cost: '$1,500–$4,000' }],
+  split: [{ mod: 'Expand primary suite closet', cost: '$2,000–$6,000' }, { mod: 'Add ensuite to second bedroom', cost: '$8,000–$15,000' }, { mod: 'Widen hallway to secondary bedrooms', cost: '$2,500–$5,000' }],
+  twostory: [{ mod: 'Convert downstairs flex room to primary', cost: '$10,000–$25,000' }, { mod: 'Add main-floor half bath', cost: '$5,000–$10,000' }, { mod: 'Create dedicated home office on main', cost: '$2,000–$5,000' }],
+  firstprimary: [{ mod: 'Extend primary bath with spa shower', cost: '$8,000–$18,000' }, { mod: 'Add 3-car garage if lot allows', cost: '$25,000–$50,000' }, { mod: 'Create mudroom entry from garage', cost: '$3,000–$8,000' }],
+  ranch: [{ mod: 'Open kitchen to living area', cost: '$4,000–$10,000' }, { mod: 'Add dedicated home office', cost: '$2,000–$6,000' }, { mod: 'Extend covered patio for outdoor living', cost: '$10,000–$25,000' }],
 };
 
 export default function DFWFloorPlanGuide() {
@@ -42,7 +42,7 @@ export default function DFWFloorPlanGuide() {
             ].map(item => (
               <div key={item.label} style={{ background: '#0A1628', borderRadius: 8, padding: 16, border: '1px solid #1E3A5F' }}>
                 <div style={{ fontSize: 24, marginBottom: 8 }}>{item.icon}</div>
-                <div style={{ fontWeight: 700, marginBottom: 4, color: '#F5E642′ }}>{item.label}</div>
+                <div style={{ fontWeight: 700, marginBottom: 4, color: '#F5E642' }}>{item.label}</div>
                 <div style={{ fontSize: 13, color: '#8B9DC3', lineHeight: 1.5 }}>{item.note}</div>
               </div>
             ))}
@@ -54,20 +54,20 @@ export default function DFWFloorPlanGuide() {
           <p style={{ color: '#8B9DC3', marginBottom: 16, fontSize: 14 }}>Select your current floor plan type:</p>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))', gap: 12, marginBottom: 24 }}>
             {floorPlanTypes.map(fp => (
-              <button key={fp.id} onClick={() => setSelected(fp.id)} style={{ background: selected === fp.id ? '#F5E642′ : '#0A1628', color: selected === fp.id ? '#0A1628' : '#E8EAF0', border: '2px solid', borderColor: selected === fp.id ? '#F5E642' : '#1E3A5F', borderRadius: 8, padding: '12px 16px', cursor: ’pointer', textAlign: 'left', fontWeight: 600, fontSize: 14 }}>
+              <button key={fp.id} onClick={() => setSelected(fp.id)} style={{ background: selected === fp.id ? '#F5E642' : '#0A1628', color: selected === fp.id ? '#0A1628' : '#E8EAF0', border: '2px solid', borderColor: selected === fp.id ? '#F5E642' : '#1E3A5F', borderRadius: 8, padding: '12px 16px', cursor: 'pointer', textAlign: 'left', fontWeight: 600, fontSize: 14 }}>
                 {fp.label}
               </button>
             ))}
           </div>
           {plan && (
-            <div style={{ background: '#0A1628', borderRadius: 10, padding: 24, border: '1px solid #F5E642′ }}>
+            <div style={{ background: '#0A1628', borderRadius: 10, padding: 24, border: '1px solid #F5E642' }}>
               <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: 20, flexWrap: 'wrap', gap: 12 }}>
                 <div>
                   <div style={{ fontWeight: 800, fontSize: 22, marginBottom: 4 }}>{plan.label}</div>
                   <div style={{ color: '#8B9DC3', fontSize: 14 }}>{plan.description}</div>
                 </div>
                 <div style={{ textAlign: 'center' }}>
-                  <div style={{ fontSize: 40, fontWeight: 800, color: plan.appeal >= 80 ? '#4CAF50′ : plan.appeal >= 65 ? '#F5E642' : '#FF6B6B' }}>{plan.appeal}</div>
+                  <div style={{ fontSize: 40, fontWeight: 800, color: plan.appeal >= 80 ? '#4CAF50' : plan.appeal >= 65 ? '#F5E642' : '#FF6B6B' }}>{plan.appeal}</div>
                   <div style={{ fontSize: 11, color: '#8B9DC3', textTransform: 'uppercase', letterSpacing: 1 }}>DFW Appeal / 100</div>
                 </div>
               </div>
@@ -88,9 +88,9 @@ export default function DFWFloorPlanGuide() {
             <div key={fp.id} style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 10 }}>
               <div style={{ width: 180, fontSize: 14 }}>{fp.label}</div>
               <div style={{ flex: 1, background: '#0A1628', borderRadius: 4, height: 20, overflow: 'hidden' }}>
-                <div style={{ width: `${fp.appeal}%`, background: fp.appeal >= 80 ? '#4CAF50′ : fp.appeal >= 65 ? '#F5E642' : '#FF6B6B', height: '100%', borderRadius: 4, transition: ’width 0.3s' }} />
+                <div style={{ width: `${fp.appeal}%`, background: fp.appeal >= 80 ? '#4CAF50' : fp.appeal >= 65 ? '#F5E642' : '#FF6B6B', height: '100%', borderRadius: 4, transition: 'width 0.3s' }} />
               </div>
-              <div style={{ width: 40, textAlign: 'right', fontWeight: 700, fontSize: 14, color: '#F5E642′ }}>{fp.appeal}</div>
+              <div style={{ width: 40, textAlign: 'right', fontWeight: 700, fontSize: 14, color: '#F5E642' }}>{fp.appeal}</div>
             </div>
           ))}
         </div>

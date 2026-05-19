@@ -29,9 +29,9 @@ export default function DFWProLnkWaitlistJoin2026() {
           {(['pro', 'homeowner'] as const).map(t => (
             <button key={t} onClick={() => setUserType(t)} style={{
               flex: 1, padding: '16px', borderRadius: 10, border: '2px solid',
-              borderColor: userType === t ? '#F5E642′ : '#1E3A5F',
-              background: userType === t ? '#F5E642′ : '#0D1F3C',
-              color: userType === t ? '#0A1628′ : '#fff',
+              borderColor: userType === t ? '#F5E642' : '#1E3A5F',
+              background: userType === t ? '#F5E642' : '#0D1F3C',
+              color: userType === t ? '#0A1628' : '#fff',
               cursor: 'pointer', fontWeight: 700, fontSize: 16
             }}>
               {t === 'pro' ? '🔧 Service Pro' : '🏠 Homeowner'}

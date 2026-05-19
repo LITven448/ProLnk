@@ -67,7 +67,7 @@ export default function DFWMarchHomeGuide() {
           Spring prep season. DFW oak pollen peaks. Get HVAC ready before triple-digit temps arrive. Foundation moisture check critical after dry winter.
         </p>
 
-        <div style={{ background: '#F5E642', borderRadius: 10, padding: '16px 20px', marginBottom: 28, color: '#0A1628′ }}>
+        <div style={{ background: '#F5E642', borderRadius: 10, padding: '16px 20px', marginBottom: 28, color: '#0A1628' }}>
           <strong>🌿 March DFW Priorities</strong>
           <ul style={{ margin: '8px 0 0', paddingLeft: 20, lineHeight: 1.8 }}>
             <li>Schedule HVAC tune-up NOW — summer books fast in DFW</li>
@@ -86,8 +86,8 @@ export default function DFWMarchHomeGuide() {
                 padding: '8px 16px',
                 borderRadius: 8,
                 border: `2px solid ${selected.includes(f) ? '#F5E642' : '#1E3050'}`,
-                background: selected.includes(f) ? '#F5E642′ : '#111F35',
-                color: selected.includes(f) ? '#0A1628′ : '#ccc',
+                background: selected.includes(f) ? '#F5E642' : '#111F35',
+                color: selected.includes(f) ? '#0A1628' : '#ccc',
                 fontWeight: 600,
                 cursor: 'pointer',
                 fontSize: 13,

@@ -23,15 +23,15 @@ export default function DFWMortarMixGuide() {
       <div style={{ maxWidth: '800px', margin: '0 auto' }}>
         <div style={{ marginBottom: '2rem' }}>
           <span style={{ fontSize: '2rem' }}>🧱</span>
-          <h1 style={{ color: '#F5E642', fontSize: '1.8rem', margin: '0.5rem 0′ }}>DFW Mortar Mix Guide</h1>
+          <h1 style={{ color: '#F5E642', fontSize: '1.8rem', margin: '0.5rem 0' }}>DFW Mortar Mix Guide</h1>
           <p style={{ color: '#94a3b8', lineHeight: 1.6 }}>
             The #1 DFW masonry mistake: using high-PSI mortar because it sounds stronger. In DFW, high-PSI mortar is stiffer than the brick — so when DFW clay soil shifts, the brick face cracks instead of the joint. Joints are cheap. Brick replacement is not.
           </p>
         </div>
 
-        <div style={{ backgroundColor: '#1e293b', borderRadius: '8px', padding: '1rem', marginBottom: '1.5rem', borderLeft: '4px solid #F5E642′ }}>
-          <strong style={{ color: '#F5E642′ }}>🔑 DFW Rule:</strong>
-          <span style={{ color: '#94a3b8′ }}> Mortar must be weaker than the masonry unit. Type N for old brick. Type S for block/structural. Type M only for below-grade foundations.</span>
+        <div style={{ backgroundColor: '#1e293b', borderRadius: '8px', padding: '1rem', marginBottom: '1.5rem', borderLeft: '4px solid #F5E642' }}>
+          <strong style={{ color: '#F5E642' }}>🔑 DFW Rule:</strong>
+          <span style={{ color: '#94a3b8' }}> Mortar must be weaker than the masonry unit. Type N for old brick. Type S for block/structural. Type M only for below-grade foundations.</span>
         </div>
 
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '2rem' }}>
@@ -84,7 +84,7 @@ export default function DFWMortarMixGuide() {
           {[['Type N', '270 PSI', 'Exposed brick, chimneys, veneers', '✅ Best for DFW brick repair'], ['Type S', '1800 PSI', 'Below-grade, structural block', '✅ Best for new DFW construction'], ['Type M', '2500 PSI', 'Below-grade foundations only', '⚠️ Too rigid for most DFW use']].map(([type, psi, use, note]) => (
             <div key={type} style={{ display: 'grid', gridTemplateColumns: '80px 100px 1fr 1fr', gap: '0.5rem', padding: '0.5rem 0', borderBottom: '1px solid #334155', alignItems: 'center' }}>
               <span style={{ color: '#F5E642', fontWeight: 'bold' }}>{type}</span>
-              <span style={{ color: '#94a3b8′ }}>{psi}</span>
+              <span style={{ color: '#94a3b8' }}>{psi}</span>
               <span style={{ color: '#fff', fontSize: '0.9rem' }}>{use}</span>
               <span style={{ color: '#94a3b8', fontSize: '0.85rem' }}>{note}</span>
             </div>

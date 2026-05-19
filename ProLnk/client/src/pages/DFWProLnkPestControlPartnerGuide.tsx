@@ -9,7 +9,7 @@ const businessTypes = [
 
 const stats = [
   { icon: '🦟', label: 'DFW Pest Control Market Size', value: '$890M/yr' },
-  { icon: '🏡', label: 'Avg DFW Homeowner Pest Spend/Yr', value: '$1,400′ },
+  { icon: '🏡', label: 'Avg DFW Homeowner Pest Spend/Yr', value: '$1,400' },
   { icon: '🐜', label: 'Fire Ant Calls (DFW, 2025)', value: '214,000+' },
   { icon: '📊', label: 'Quarterly Contract Renewal Rate', value: '78%' },
 ];
@@ -39,7 +39,7 @@ export default function DFWProLnkPestControlPartnerGuide() {
           ))}
         </div>
 
-        <h2 style={{ fontSize: 20, fontWeight: 700, marginBottom: 16, color: '#F5E642′ }}>Select Your Pest Business Type</h2>
+        <h2 style={{ fontSize: 20, fontWeight: 700, marginBottom: 16, color: '#F5E642' }}>Select Your Pest Business Type</h2>
         <div style={{ display: 'grid', gap: 12, marginBottom: 32 }}>
           {businessTypes.map((b, i) => (
             <div key={i} onClick={() => setSelected(i === selected ? null : i)}

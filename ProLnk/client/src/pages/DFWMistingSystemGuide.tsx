@@ -34,7 +34,7 @@ export default function DFWMistingSystemGuide() {
         </p>
 
         <div style={{ background: '#1E2D45', borderRadius: 12, padding: '1.5rem', marginBottom: 24 }}>
-          <h2 style={{ fontSize: 18, fontWeight: 700, marginBottom: 16, color: '#F5E642′ }}>⚙️ System Types Compared</h2>
+          <h2 style={{ fontSize: 18, fontWeight: 700, marginBottom: 16, color: '#F5E642' }}>⚙️ System Types Compared</h2>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 14 }}>
             {[
               { icon: '💧', type: 'Low Pressure', psi: '40–60 PSI', cooling: '5–10°F', cost: '$150–$500', pro: 'DIY, low cost', con: 'Slight wet feeling on skin' },
@@ -46,15 +46,15 @@ export default function DFWMistingSystemGuide() {
                 <div style={{ fontWeight: 700, marginBottom: 4 }}>{s.type}</div>
                 <div style={{ color: '#F5E642', fontSize: 13, marginBottom: 4 }}>{s.cooling} cooling</div>
                 <div style={{ color: '#94A3B8', fontSize: 12, marginBottom: 4 }}>{s.psi} · {s.cost}</div>
-                <div style={{ fontSize: 12, marginBottom: 2, color: '#4ADE80′ }}>✓ {s.pro}</div>
-                <div style={{ fontSize: 12, color: '#F87171′ }}>✗ {s.con}</div>
+                <div style={{ fontSize: 12, marginBottom: 2, color: '#4ADE80' }}>✓ {s.pro}</div>
+                <div style={{ fontSize: 12, color: '#F87171' }}>✗ {s.con}</div>
               </div>
             ))}
           </div>
         </div>
 
         <div style={{ background: '#1E2D45', borderRadius: 12, padding: '1.5rem', marginBottom: 24 }}>
-          <h2 style={{ fontSize: 18, fontWeight: 700, marginBottom: 12, color: '#F5E642′ }}>🔧 Installation & Winterization</h2>
+          <h2 style={{ fontSize: 18, fontWeight: 700, marginBottom: 12, color: '#F5E642' }}>🔧 Installation & Winterization</h2>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16 }}>
             <div>
               <div style={{ fontWeight: 700, marginBottom: 8 }}>Installation Tips</div>
@@ -68,7 +68,7 @@ export default function DFWMistingSystemGuide() {
         </div>
 
         <div style={{ background: '#1E2D45', borderRadius: 12, padding: '1.5rem', marginBottom: 24 }}>
-          <h2 style={{ fontSize: 18, fontWeight: 700, marginBottom: 16, color: '#F5E642′ }}>🔍 System Calculator</h2>
+          <h2 style={{ fontSize: 18, fontWeight: 700, marginBottom: 16, color: '#F5E642' }}>🔍 System Calculator</h2>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16, marginBottom: 16 }}>
             <div>
               <label style={{ fontSize: 13, color: '#94A3B8', display: 'block', marginBottom: 6 }}>Patio Size</label>
@@ -92,7 +92,7 @@ export default function DFWMistingSystemGuide() {
           </button>
           {showPlan && plan && (
             <div style={{ marginTop: 20 }}>
-              <div style={{ background: '#0A1628', borderRadius: 8, padding: '1rem', marginBottom: 12, borderLeft: '4px solid #F5E642′ }}>
+              <div style={{ background: '#0A1628', borderRadius: 8, padding: '1rem', marginBottom: 12, borderLeft: '4px solid #F5E642' }}>
                 <div style={{ fontWeight: 700, color: '#F5E642', marginBottom: 4 }}>Recommended: {plan.system}</div>
                 <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 8, marginTop: 8 }}>
                   {[{ label: 'Nozzles', val: plan.nozzles }, { label: 'Cost', val: plan.cost }, { label: 'Water/hr', val: plan.water }].map(m => (

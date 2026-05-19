@@ -2,19 +2,19 @@ import { useState } from 'react';
 
 const viewingStyles: Record<string, { display: string; seating: string; acoustic: string; note: string }> = {
   movies: {
-    display: 'Projector + 120″–150″ screen — best cinematic experience, but DFW afternoon sun requires 100% blackout shades (budget $400–$900)',
+    display: 'Projector + 120"–150" screen — best cinematic experience, but DFW afternoon sun requires 100% blackout shades (budget $400–$900)',
     seating: 'Tiered recliner seating (2–3 rows) with USB charging and cupholder armrests',
     acoustic: 'Acoustic panels on side walls + bass traps in corners — critical for DFW open-plan adjacency',
     note: 'DFW tip: West-facing rooms get brutal afternoon sun — projectors work best in north or east-facing rooms',
   },
   sports: {
-    display: '85″–100″ 4K QLED or OLED TV — handles DFW ambient light better than projector, no blackout required',
+    display: '85"–100" 4K QLED or OLED TV — handles DFW ambient light better than projector, no blackout required',
     seating: 'Stadium-style seating or sectional with clear sightlines — multiple viewing angles for game day',
     acoustic: 'Sound bar or 5.1 surround system — sports audio benefits from directional front speakers',
     note: 'DFW tip: Football season crowds need 8–12 seat capacity — design around your biggest game day',
   },
   gaming: {
-    display: '55″–77″ OLED with <1ms response — wall-mount at seated eye level, no projector lag',
+    display: '55"–77" OLED with <1ms response — wall-mount at seated eye level, no projector lag',
     seating: 'Gaming chairs or low-profile seating 6–10 ft from screen — ergonomic for extended sessions',
     acoustic: 'Surround headphone setup or ceiling Atmos speakers — keeps peace with DFW neighbors',
     note: 'DFW tip: Dedicated gaming room benefits from dimmable bias lighting (Govee or Philips Hue)',
@@ -22,9 +22,9 @@ const viewingStyles: Record<string, { display: string; seating: string; acoustic
 };
 
 const budgetCosts: Record<string, Record<string, string>> = {
-  small: { economy: '$8,000–$15,000', mid: '$15,000–$28,000', luxury: '$28,000–$55,000′ },
-  medium: { economy: '$12,000–$22,000', mid: '$22,000–$40,000', luxury: '$40,000–$80,000′ },
-  large: { economy: '$18,000–$32,000', mid: '$32,000–$60,000', luxury: '$60,000–$120,000′ },
+  small: { economy: '$8,000–$15,000', mid: '$15,000–$28,000', luxury: '$28,000–$55,000' },
+  medium: { economy: '$12,000–$22,000', mid: '$22,000–$40,000', luxury: '$40,000–$80,000' },
+  large: { economy: '$18,000–$32,000', mid: '$32,000–$60,000', luxury: '$60,000–$120,000' },
 };
 
 export default function DFWMediaRoomGuide() {
@@ -69,7 +69,7 @@ export default function DFWMediaRoomGuide() {
             <div style={{ display: 'flex', gap: 10, flexWrap: 'wrap' }}>
               {[['small','📦 Small (200–350 sq ft)'],['medium','🏠 Medium (350–550 sq ft)'],['large','🏢 Large (550+ sq ft)']].map(([key, label]) => (
                 <button key={key} onClick={() => setRoomSize(key)}
-                  style={{ padding: '8px 16px', borderRadius: 8, border: '2px solid', borderColor: roomSize === key ? '#F5E642′ : '#1E3A5F', backgroundColor: roomSize === key ? '#F5E6421A' : ’transparent', color: roomSize === key ? '#F5E642′ : '#9AA5B4', cursor: ’pointer', fontSize: 13 }}>
+                  style={{ padding: '8px 16px', borderRadius: 8, border: '2px solid', borderColor: roomSize === key ? '#F5E642' : '#1E3A5F', backgroundColor: roomSize === key ? '#F5E6421A' : 'transparent', color: roomSize === key ? '#F5E642' : '#9AA5B4', cursor: 'pointer', fontSize: 13 }}>
                   {label}
                 </button>
               ))}
@@ -81,7 +81,7 @@ export default function DFWMediaRoomGuide() {
             <div style={{ display: 'flex', gap: 10, flexWrap: 'wrap' }}>
               {[['movies','🎬 Movies / Streaming'],['sports','🏈 Sports / Live TV'],['gaming','🎮 Gaming']].map(([key, label]) => (
                 <button key={key} onClick={() => setViewStyle(key)}
-                  style={{ padding: '8px 16px', borderRadius: 8, border: '2px solid', borderColor: viewStyle === key ? '#F5E642′ : '#1E3A5F', backgroundColor: viewStyle === key ? '#F5E6421A' : ’transparent', color: viewStyle === key ? '#F5E642′ : '#9AA5B4', cursor: ’pointer', fontSize: 13 }}>
+                  style={{ padding: '8px 16px', borderRadius: 8, border: '2px solid', borderColor: viewStyle === key ? '#F5E642' : '#1E3A5F', backgroundColor: viewStyle === key ? '#F5E6421A' : 'transparent', color: viewStyle === key ? '#F5E642' : '#9AA5B4', cursor: 'pointer', fontSize: 13 }}>
                   {label}
                 </button>
               ))}
@@ -93,7 +93,7 @@ export default function DFWMediaRoomGuide() {
             <div style={{ display: 'flex', gap: 10, flexWrap: 'wrap' }}>
               {[['economy','💰 Economy'],['mid','💎 Mid-Range'],['luxury','👑 Luxury']].map(([key, label]) => (
                 <button key={key} onClick={() => setBudget(key)}
-                  style={{ padding: '8px 16px', borderRadius: 8, border: '2px solid', borderColor: budget === key ? '#F5E642′ : '#1E3A5F', backgroundColor: budget === key ? '#F5E6421A' : ’transparent', color: budget === key ? '#F5E642′ : '#9AA5B4', cursor: ’pointer', fontSize: 13 }}>
+                  style={{ padding: '8px 16px', borderRadius: 8, border: '2px solid', borderColor: budget === key ? '#F5E642' : '#1E3A5F', backgroundColor: budget === key ? '#F5E6421A' : 'transparent', color: budget === key ? '#F5E642' : '#9AA5B4', cursor: 'pointer', fontSize: 13 }}>
                   {label}
                 </button>
               ))}
@@ -107,7 +107,7 @@ export default function DFWMediaRoomGuide() {
         </div>
 
         {result && (
-          <div style={{ backgroundColor: '#1E3A5F', borderRadius: 12, padding: 24, border: '2px solid #F5E642′ }}>
+          <div style={{ backgroundColor: '#1E3A5F', borderRadius: 12, padding: 24, border: '2px solid #F5E642' }}>
             <h3 style={{ color: '#F5E642', marginBottom: 16 }}>🎬 Your DFW Media Room Plan</h3>
             {[['📺 Display System', result.display],['🛋️ Seating Configuration', result.seating],['🔊 Acoustic Treatment', result.acoustic],['🌞 DFW-Specific Tip', result.note],['💵 Estimated DFW Cost', result.cost]].map(([label, value]) => (
               <div key={label as string} style={{ marginBottom: 14 }}>

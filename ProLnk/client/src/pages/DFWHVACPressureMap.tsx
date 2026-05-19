@@ -41,50 +41,50 @@ export default function DFWHVACPressureMap() {
   const result = size && symptom ? PRESSURE_GUIDANCE[size]?.[symptom] : null;
 
   return (
-    <div style={{ background: "#0A1628″, minHeight: "100vh", color: "#fff", fontFamily: "sans-serif", padding: "32px 16px" }}>
+    <div style={{ background: "#0A1628", minHeight: "100vh", color: "#fff", fontFamily: "sans-serif", padding: "32px 16px" }}>
       <div style={{ maxWidth: 720, margin: "0 auto" }}>
-        <div style={{ color: "#F5E642″, fontSize: 13, fontWeight: 700, letterSpacing: 2, marginBottom: 8 }}>PROLNK · DFW HVAC RESOURCE</div>
+        <div style={{ color: "#F5E642", fontSize: 13, fontWeight: 700, letterSpacing: 2, marginBottom: 8 }}>PROLNK · DFW HVAC RESOURCE</div>
         <h1 style={{ fontSize: 28, fontWeight: 800, marginBottom: 8 }}>DFW HVAC Pressure Map 📊</h1>
-        <p style={{ color: "#94a3b8″, fontSize: 15, marginBottom: 32 }}>
+        <p style={{ color: "#94a3b8", fontSize: 15, marginBottom: 32 }}>
           Understanding static pressure throughout your DFW HVAC system — where to measure, what readings mean, and DFW-specific design pressure requirements.
         </p>
 
-        <div style={{ background: "#0f2040″, borderRadius: 12, padding: 24, marginBottom: 24 }}>
-          <h2 style={{ color: "#F5E642″, fontSize: 16, fontWeight: 700, marginBottom: 16 }}>📐 Pressure Assessment Tool</h2>
+        <div style={{ background: "#0f2040", borderRadius: 12, padding: 24, marginBottom: 24 }}>
+          <h2 style={{ color: "#F5E642", fontSize: 16, fontWeight: 700, marginBottom: 16 }}>📐 Pressure Assessment Tool</h2>
           <div style={{ marginBottom: 16 }}>
-            <label style={{ color: "#94a3b8″, fontSize: 13, display: "block", marginBottom: 6 }}>Home Size</label>
-            <select value={size} onChange={e => setSize(e.target.value)} style={{ width: "100%", padding: "10px 12px", borderRadius: 8, background: "#0A1628″, color: "#fff", border: "1px solid #1e3a5f", fontSize: 14 }}>
+            <label style={{ color: "#94a3b8", fontSize: 13, display: "block", marginBottom: 6 }}>Home Size</label>
+            <select value={size} onChange={e => setSize(e.target.value)} style={{ width: "100%", padding: "10px 12px", borderRadius: 8, background: "#0A1628", color: "#fff", border: "1px solid #1e3a5f", fontSize: 14 }}>
               <option value="">Select home size...</option>
               {HOME_SIZES.map(s => <option key={s} value={s}>{s}</option>)}
             </select>
           </div>
           <div style={{ marginBottom: 16 }}>
-            <label style={{ color: "#94a3b8″, fontSize: 13, display: "block", marginBottom: 6 }}>Symptom</label>
-            <select value={symptom} onChange={e => setSymptom(e.target.value)} style={{ width: "100%", padding: "10px 12px", borderRadius: 8, background: "#0A1628″, color: "#fff", border: "1px solid #1e3a5f", fontSize: 14 }}>
+            <label style={{ color: "#94a3b8", fontSize: 13, display: "block", marginBottom: 6 }}>Symptom</label>
+            <select value={symptom} onChange={e => setSymptom(e.target.value)} style={{ width: "100%", padding: "10px 12px", borderRadius: 8, background: "#0A1628", color: "#fff", border: "1px solid #1e3a5f", fontSize: 14 }}>
               <option value="">Select symptom...</option>
               {SYMPTOMS.map(s => <option key={s} value={s}>{s}</option>)}
             </select>
           </div>
           {result && (
-            <div style={{ background: "#0A1628″, borderRadius: 8, padding: 20, borderLeft: "4px solid #F5E642" }}>
-              <div style={{ color: "#F5E642″, fontWeight: 700, fontSize: 14, marginBottom: 8 }}>📏 Expected Reading</div>
-              <p style={{ color: "#e2e8f0″, fontSize: 14, marginBottom: 16 }}>{result.reading}</p>
-              <div style={{ color: "#F5E642″, fontWeight: 700, fontSize: 14, marginBottom: 8 }}>🔧 What to Check</div>
-              <p style={{ color: "#e2e8f0″, fontSize: 14 }}>{result.check}</p>
+            <div style={{ background: "#0A1628", borderRadius: 8, padding: 20, borderLeft: "4px solid #F5E642" }}>
+              <div style={{ color: "#F5E642", fontWeight: 700, fontSize: 14, marginBottom: 8 }}>📏 Expected Reading</div>
+              <p style={{ color: "#e2e8f0", fontSize: 14, marginBottom: 16 }}>{result.reading}</p>
+              <div style={{ color: "#F5E642", fontWeight: 700, fontSize: 14, marginBottom: 8 }}>🔧 What to Check</div>
+              <p style={{ color: "#e2e8f0", fontSize: 14 }}>{result.check}</p>
             </div>
           )}
         </div>
 
         <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 12 }}>
-          {[["🏠 Return Static", "Measure 6 inches from blower — target: 0.1–0.2 in. w.g."], ["❄️ Supply Static", "Measure at supply plenum — target: 0.2–0.3 in. w.g."], ["🌡️ DFW Design Req.", "Total ESP 0.5 in. w.g. for ENERGY STAR certification"], ["📋 Manometer", "Digital manometer from Dwyer or Fieldpiece — around $80″]].map(([label, desc]) => (
-            <div key={label as string} style={{ background: "#0f2040″, borderRadius: 10, padding: 16 }}>
+          {[["🏠 Return Static", "Measure 6 inches from blower — target: 0.1–0.2 in. w.g."], ["❄️ Supply Static", "Measure at supply plenum — target: 0.2–0.3 in. w.g."], ["🌡️ DFW Design Req.", "Total ESP 0.5 in. w.g. for ENERGY STAR certification"], ["📋 Manometer", "Digital manometer from Dwyer or Fieldpiece — around $80"]].map(([label, desc]) => (
+            <div key={label as string} style={{ background: "#0f2040", borderRadius: 10, padding: 16 }}>
               <div style={{ fontWeight: 700, fontSize: 14, marginBottom: 6 }}>{label as string}</div>
-              <div style={{ color: "#94a3b8″, fontSize: 13 }}>{desc as string}</div>
+              <div style={{ color: "#94a3b8", fontSize: 13 }}>{desc as string}</div>
             </div>
           ))}
         </div>
 
-        <div style={{ marginTop: 32, textAlign: "center", color: "#475569″, fontSize: 12 }}>
+        <div style={{ marginTop: 32, textAlign: "center", color: "#475569", fontSize: 12 }}>
           ProLnk connects DFW homeowners with HVAC pros who know static pressure. © 2026 ProLnk
         </div>
       </div>

@@ -41,35 +41,35 @@ export default function DFWGardenRoomGuide() {
         </p>
 
         <div style={{ background: '#111E35', borderRadius: 12, padding: 24, marginBottom: 24 }}>
-          <h2 style={{ fontSize: 16, fontWeight: 700, marginBottom: 16, color: '#F5E642′ }}>🌿 DFW Garden Room Types</h2>
+          <h2 style={{ fontSize: 16, fontWeight: 700, marginBottom: 16, color: '#F5E642' }}>🌿 DFW Garden Room Types</h2>
           {ROOM_TYPES.map((r) => (
             <div key={r.type} style={{ borderBottom: '1px solid #1E2F4A', paddingBottom: 16, marginBottom: 16 }}>
               <div style={{ fontWeight: 700, fontSize: 15, marginBottom: 4 }}>{r.type}</div>
               <div style={{ fontSize: 13, color: '#4ADE80', marginBottom: 2 }}>✅ {r.pros}</div>
               <div style={{ fontSize: 13, color: '#F87171', marginBottom: 4 }}>⚠️ {r.cons}</div>
               <div style={{ display: 'flex', gap: 16, fontSize: 13 }}>
-                <span style={{ color: '#F5E642′ }}>💰 {r.cost}</span>
-                <span style={{ color: '#8A9BC0′ }}>❄️ {r.hvac}</span>
+                <span style={{ color: '#F5E642' }}>💰 {r.cost}</span>
+                <span style={{ color: '#8A9BC0' }}>❄️ {r.hvac}</span>
               </div>
             </div>
           ))}
         </div>
 
         <div style={{ background: '#111E35', borderRadius: 12, padding: 24, marginBottom: 24 }}>
-          <h2 style={{ fontSize: 16, fontWeight: 700, marginBottom: 8, color: '#F5E642′ }}>☀️ DFW Climate Reality</h2>
+          <h2 style={{ fontSize: 16, fontWeight: 700, marginBottom: 8, color: '#F5E642' }}>☀️ DFW Climate Reality</h2>
           <p style={{ fontSize: 13, color: '#8A9BC0', marginBottom: 12 }}>
             DFW summers are brutal — 95–105°F for 3+ months. Any garden room without climate control becomes a plant oven from June–September.
           </p>
           {CLIMATE_NEEDS.map((c) => (
             <div key={c.label} style={{ background: '#0A1628', borderRadius: 8, padding: 12, marginBottom: 8 }}>
               <div style={{ fontWeight: 600, fontSize: 14, marginBottom: 4 }}>🌡️ {c.label}</div>
-              <div style={{ fontSize: 12, color: '#6B7FA0′ }}>{c.note}</div>
+              <div style={{ fontSize: 12, color: '#6B7FA0' }}>{c.note}</div>
             </div>
           ))}
         </div>
 
         <div style={{ background: '#111E35', borderRadius: 12, padding: 24, marginBottom: 24 }}>
-          <h2 style={{ fontSize: 16, fontWeight: 700, marginBottom: 16, color: '#F5E642′ }}>🔧 Find Your Garden Room</h2>
+          <h2 style={{ fontSize: 16, fontWeight: 700, marginBottom: 16, color: '#F5E642' }}>🔧 Find Your Garden Room</h2>
           <div style={{ display: 'flex', flexDirection: 'column', gap: 14 }}>
             <div>
               <label style={{ fontSize: 13, color: '#8A9BC0', display: 'block', marginBottom: 6 }}>Room Size</label>
@@ -100,7 +100,7 @@ export default function DFWGardenRoomGuide() {
             </button>
           </div>
           {result && (
-            <div style={{ marginTop: 20, background: '#0A1628', borderRadius: 10, padding: 20, borderLeft: '4px solid #F5E642′ }}>
+            <div style={{ marginTop: 20, background: '#0A1628', borderRadius: 10, padding: 20, borderLeft: '4px solid #F5E642' }}>
               <div style={{ fontWeight: 700, fontSize: 16, marginBottom: 8 }}>🌿 {result.type}</div>
               <div style={{ fontSize: 13, color: '#F5E642', marginBottom: 4 }}>💰 Est. Cost: {result.cost}</div>
               <div style={{ fontSize: 13, color: '#8A9BC0', marginBottom: 8 }}>❄️ HVAC: {result.hvac}</div>

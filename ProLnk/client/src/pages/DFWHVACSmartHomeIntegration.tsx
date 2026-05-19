@@ -19,7 +19,7 @@ const advice: Record<string, Record<string, string>> = {
   'Apple HomeKit': {
     'ERCOT peak demand savings': 'HomeKit thermostats (ecobee, Honeywell T9) support HomeKit automations but direct ERCOT utility integration is limited. Use Ecobee via HomeKit and enroll Ecobee directly in demand response separately.',
     'Geofencing empty home': 'HomeKit geofencing is very reliable for single-occupant DFW homes. Set automation: "When last person leaves, set to 82°F." Focus on 82°F ceiling — DFW humidity spikes above that.',
-    'Multi-zone voice control': 'Siri controls HomeKit thermostats per zone. "Hey Siri, set the bedroom to 72″ works with any HomeKit-compatible thermostat. Scene integration works well for DFW morning/evening routines.',
+    'Multi-zone voice control': 'Siri controls HomeKit thermostats per zone. "Hey Siri, set the bedroom to 72" works with any HomeKit-compatible thermostat. Scene integration works well for DFW morning/evening routines.',
     'Energy monitoring': 'HomeKit lacks native energy monitoring for HVAC. Pair with Sense energy monitor for circuit-level HVAC runtime data to track DFW cooling costs.',
   },
   'SmartThings / Hub': {
@@ -50,12 +50,12 @@ export default function DFWHVACSmartHomeIntegration() {
         </div>
 
         <div style={{ background: '#0f1f3d', borderRadius: 12, padding: 24, marginBottom: 24 }}>
-          <h2 style={{ fontSize: 18, fontWeight: 700, marginBottom: 16, color: '#F5E642′ }}>📱 Get Your Integration Plan</h2>
+          <h2 style={{ fontSize: 18, fontWeight: 700, marginBottom: 16, color: '#F5E642' }}>📱 Get Your Integration Plan</h2>
           <div style={{ marginBottom: 16 }}>
             <label style={{ color: '#94a3b8', fontSize: 13, display: 'block', marginBottom: 6 }}>YOUR SMART HOME ECOSYSTEM</label>
             <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8 }}>
               {ecosystems.map(e => (
-                <button key={e} onClick={() => setEcosystem(e)} style={{ padding: '8px 16px', borderRadius: 6, border: '2px solid', borderColor: ecosystem === e ? '#F5E642′ : '#1e3a5f', background: ecosystem === e ? '#F5E642' : ’transparent', color: ecosystem === e ? '#0A1628′ : '#fff', cursor: ’pointer', fontWeight: 600, fontSize: 13 }}>{e}</button>
+                <button key={e} onClick={() => setEcosystem(e)} style={{ padding: '8px 16px', borderRadius: 6, border: '2px solid', borderColor: ecosystem === e ? '#F5E642' : '#1e3a5f', background: ecosystem === e ? '#F5E642' : 'transparent', color: ecosystem === e ? '#0A1628' : '#fff', cursor: 'pointer', fontWeight: 600, fontSize: 13 }}>{e}</button>
               ))}
             </div>
           </div>
@@ -63,12 +63,12 @@ export default function DFWHVACSmartHomeIntegration() {
             <label style={{ color: '#94a3b8', fontSize: 13, display: 'block', marginBottom: 6 }}>DFW USE CASE</label>
             <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8 }}>
               {useCases.map(u => (
-                <button key={u} onClick={() => setUseCase(u)} style={{ padding: '8px 16px', borderRadius: 6, border: '2px solid', borderColor: useCase === u ? '#F5E642′ : '#1e3a5f', background: useCase === u ? '#F5E642' : ’transparent', color: useCase === u ? '#0A1628′ : '#fff', cursor: ’pointer', fontWeight: 600, fontSize: 13 }}>{u}</button>
+                <button key={u} onClick={() => setUseCase(u)} style={{ padding: '8px 16px', borderRadius: 6, border: '2px solid', borderColor: useCase === u ? '#F5E642' : '#1e3a5f', background: useCase === u ? '#F5E642' : 'transparent', color: useCase === u ? '#0A1628' : '#fff', cursor: 'pointer', fontWeight: 600, fontSize: 13 }}>{u}</button>
               ))}
             </div>
           </div>
           {result && (
-            <div style={{ background: '#1e3a5f', borderRadius: 8, padding: 16, borderLeft: '4px solid #F5E642′ }}>
+            <div style={{ background: '#1e3a5f', borderRadius: 8, padding: 16, borderLeft: '4px solid #F5E642' }}>
               <div style={{ fontWeight: 700, color: '#F5E642', marginBottom: 6 }}>Integration Approach</div>
               <div style={{ color: '#e2e8f0', fontSize: 14, lineHeight: 1.7 }}>{result}</div>
             </div>

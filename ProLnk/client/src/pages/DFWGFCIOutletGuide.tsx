@@ -38,7 +38,7 @@ export default function DFWGFCIOutletGuide() {
   return (
     <div style={{ minHeight: '100vh', background: '#0A1628', color: '#E8EAF0', fontFamily: 'system-ui, sans-serif', padding: '2rem' }}>
       <div style={{ maxWidth: 720, margin: '0 auto' }}>
-        <div style={{ marginBottom: '0.5rem', fontSize: '0.85rem', color: '#F5E642′ }}>🔌 DFW HOME SAFETY GUIDES</div>
+        <div style={{ marginBottom: '0.5rem', fontSize: '0.85rem', color: '#F5E642' }}>🔌 DFW HOME SAFETY GUIDES</div>
         <h1 style={{ fontSize: '2rem', fontWeight: 800, color: '#FFFFFF', marginBottom: '0.5rem' }}>GFCI Outlet Guide</h1>
         <p style={{ color: '#9AA3B2', marginBottom: '2rem' }}>GFCI outlets prevent electrocution by cutting power in milliseconds when current leaks — critical near water. NEC requirements have expanded over decades, meaning older DFW homes often have dangerous gaps.</p>
 
@@ -63,9 +63,9 @@ export default function DFWGFCIOutletGuide() {
         <div style={{ background: '#1A2744', borderRadius: 12, padding: '1.5rem', marginBottom: '1.5rem' }}>
           <h2 style={{ color: '#F5E642', fontSize: '1.1rem', marginBottom: '1rem' }}>🧪 Monthly Test Protocol</h2>
           <div style={{ color: '#C8D0DC', lineHeight: 1.8 }}>
-            <div>1. Press the <strong style={{ color: '#F5E642′ }}>TEST</strong> button — the outlet should go dead</div>
+            <div>1. Press the <strong style={{ color: '#F5E642' }}>TEST</strong> button — the outlet should go dead</div>
             <div>2. Plug in a lamp to confirm power is off</div>
-            <div>3. Press the <strong style={{ color: '#F5E642′ }}>RESET</strong> button — power should restore</div>
+            <div>3. Press the <strong style={{ color: '#F5E642' }}>RESET</strong> button — power should restore</div>
             <div style={{ color: '#E67E22', marginTop: 8 }}>⚠️ If RESET won't hold → GFCI has failed and must be replaced immediately</div>
           </div>
         </div>
@@ -104,7 +104,7 @@ export default function DFWGFCIOutletGuide() {
                 {result.missing.map((r, i) => (
                   <div key={i} style={{ display: 'flex', justifyContent: 'space-between', padding: '0.5rem 0', borderBottom: '1px solid #2A3A5C', color: '#C8D0DC' }}>
                     <span>⚠️ {r.label}</span>
-                    <span style={{ color: r.diy ? '#2ECC71′ : '#E67E22', fontSize: '0.85rem' }}>{r.diy ? '🔧 DIY OK' : '👷 Need electrician'}</span>
+                    <span style={{ color: r.diy ? '#2ECC71' : '#E67E22', fontSize: '0.85rem' }}>{r.diy ? '🔧 DIY OK' : '👷 Need electrician'}</span>
                   </div>
                 ))}
                 <div style={{ marginTop: '1rem', padding: '1rem', background: '#0A1628', borderRadius: 8 }}>

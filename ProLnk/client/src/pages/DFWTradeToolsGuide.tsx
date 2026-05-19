@@ -55,18 +55,18 @@ export default function DFWTradeToolsGuide() {
       <div style={{ maxWidth: 760, margin: '0 auto' }}>
         <div style={{ marginBottom: 8, color: '#F5E642', fontWeight: 700, fontSize: 13, letterSpacing: 2 }}>🔧 PROLNK DFW PRO RESOURCE</div>
         <h1 style={{ fontSize: 32, fontWeight: 800, margin: '0 0 8px' }}>DFW Trade Tools Guide</h1>
-        <p style={{ color: '#94a3b8', margin: '0 0 32px', lineHeight: 1.6 }}>The right tools mean faster jobs, happier DFW homeowners, and higher ratings on ProLnk. Don't underbid your equipment — it’s your business infrastructure.</p>
+        <p style={{ color: '#94a3b8', margin: '0 0 32px', lineHeight: 1.6 }}>The right tools mean faster jobs, happier DFW homeowners, and higher ratings on ProLnk. Don't underbid your equipment — it's your business infrastructure.</p>
 
         <div style={{ background: '#0F1F3D', borderRadius: 12, padding: 24, marginBottom: 24 }}>
           <h2 style={{ margin: '0 0 16px', fontSize: 18 }}>🎯 Find Your Essential Tool List</h2>
           <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap', marginBottom: 16 }}>
             {Object.entries(trades).map(([k, v]) => (
-              <button key={k} onClick={() => setTrade(k)} style={{ padding: '10px 18px', borderRadius: 8, border: '2px solid', borderColor: trade === k ? '#F5E642′ : '#1e3a5f', background: trade === k ? '#F5E642' : ’transparent', color: trade === k ? '#0A1628′ : '#fff', fontWeight: 700, cursor: ’pointer' }}>{v.label}</button>
+              <button key={k} onClick={() => setTrade(k)} style={{ padding: '10px 18px', borderRadius: 8, border: '2px solid', borderColor: trade === k ? '#F5E642' : '#1e3a5f', background: trade === k ? '#F5E642' : 'transparent', color: trade === k ? '#0A1628' : '#fff', fontWeight: 700, cursor: 'pointer' }}>{v.label}</button>
             ))}
           </div>
           <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap' }}>
             {Object.entries(levels).map(([k, v]) => (
-              <button key={k} onClick={() => setLevel(k)} style={{ padding: '10px 18px', borderRadius: 8, border: '2px solid', borderColor: level === k ? '#F5E642′ : '#1e3a5f', background: level === k ? '#F5E642' : ’transparent', color: level === k ? '#0A1628′ : '#fff', fontWeight: 700, cursor: ’pointer' }}>{v}</button>
+              <button key={k} onClick={() => setLevel(k)} style={{ padding: '10px 18px', borderRadius: 8, border: '2px solid', borderColor: level === k ? '#F5E642' : '#1e3a5f', background: level === k ? '#F5E642' : 'transparent', color: level === k ? '#0A1628' : '#fff', fontWeight: 700, cursor: 'pointer' }}>{v}</button>
             ))}
           </div>
         </div>
@@ -76,7 +76,7 @@ export default function DFWTradeToolsGuide() {
             <div style={{ background: '#0F1F3D', borderRadius: 12, padding: 24 }}>
               <h3 style={{ color: '#F5E642', margin: '0 0 12px' }}>🛠️ Essential Tools — {selected.label}</h3>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 8 }}>
-                {selected.tools.map((t, i) => <div key={i} style={{ background: '#0A1628', borderRadius: 6, padding: '8px 12px', fontSize: 14, color: '#cbd5e1′ }}>✅ {t}</div>)}
+                {selected.tools.map((t, i) => <div key={i} style={{ background: '#0A1628', borderRadius: 6, padding: '8px 12px', fontSize: 14, color: '#cbd5e1' }}>✅ {t}</div>)}
               </div>
             </div>
             {investment && (
@@ -98,7 +98,7 @@ export default function DFWTradeToolsGuide() {
           </div>
         )}
 
-        <div style={{ marginTop: 32, padding: 24, background: 'linear-gradient(135deg, #1a2f5a, #0F1F3D)', borderRadius: 12, border: '1px solid #F5E642′ }}>
+        <div style={{ marginTop: 32, padding: 24, background: 'linear-gradient(135deg, #1a2f5a, #0F1F3D)', borderRadius: 12, border: '1px solid #F5E642' }}>
           <h3 style={{ color: '#F5E642', margin: '0 0 8px' }}>📋 ProLnk Tool Requirement</h3>
           <p style={{ color: '#cbd5e1', margin: 0, fontSize: 14, lineHeight: 1.6 }}>ProLnk pros must arrive to every DFW job fully equipped. Homeowners rate tool readiness — it affects your match priority score. Invest in your tools and protect them — they're what puts you at the top of the feed.</p>
         </div>

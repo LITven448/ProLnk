@@ -9,11 +9,11 @@ import { toast } from "sonner";
 import { MapPin, Search, CheckCircle, Lock, TrendingUp, ChevronDown, ChevronUp, AlertTriangle } from "lucide-react";
 
 const TIER_COLORS: Record<string, string> = {
-  scout: "bg-gray-100 text-gray-700 border-gray-300″,
-  pro: "bg-blue-100 text-blue-700 border-blue-300″,
-  crew: "bg-green-100 text-green-700 border-green-300″,
-  company: "bg-purple-100 text-purple-700 border-purple-300″,
-  enterprise: "bg-amber-100 text-amber-800 border-amber-300″,
+  scout: "bg-gray-100 text-gray-700 border-gray-300",
+  pro: "bg-blue-100 text-blue-700 border-blue-300",
+  crew: "bg-green-100 text-green-700 border-green-300",
+  company: "bg-purple-100 text-purple-700 border-purple-300",
+  enterprise: "bg-amber-100 text-amber-800 border-amber-300",
 };
 
 const TIER_UPGRADE_MSG: Record<string, string> = {
@@ -145,8 +145,8 @@ export default function ServiceAreaManager() {
   if (isLoading) {
     return (
       <PartnerLayout>
-        <div className="flex items-center justify-center h-64″>
-          <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-blue-600″ />
+        <div className="flex items-center justify-center h-64">
+          <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-blue-600" />
         </div>
       </PartnerLayout>
     );
@@ -154,19 +154,19 @@ export default function ServiceAreaManager() {
 
   return (
     <PartnerLayout>
-      <div className="max-w-5xl mx-auto px-4 py-6 space-y-6″>
+      <div className="max-w-5xl mx-auto px-4 py-6 space-y-6">
         {/* Header */}
-        <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4″>
+        <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
           <div>
-            <h1 className="text-2xl font-bold text-gray-900 flex items-center gap-2″>
-              <MapPin className="w-6 h-6 text-blue-600″ />
+            <h1 className="text-2xl font-bold text-gray-900 flex items-center gap-2">
+              <MapPin className="w-6 h-6 text-blue-600" />
               Service Area Manager
             </h1>
-            <p className="text-sm text-gray-500 mt-1″>
+            <p className="text-sm text-gray-500 mt-1">
               Select the DFW zip codes where you want to receive leads and quote requests.
             </p>
           </div>
-          <div className="flex items-center gap-3″>
+          <div className="flex items-center gap-3">
             <Badge className={`text-sm px-3 py-1 border ${TIER_COLORS[tier] ?? TIER_COLORS.scout}`}>
               {tier.charAt(0).toUpperCase() + tier.slice(1)} Plan
             </Badge>
@@ -179,43 +179,43 @@ export default function ServiceAreaManager() {
         </div>
 
         {/* Coverage Stats */}
-        <div className="grid grid-cols-2 sm:grid-cols-4 gap-4″>
-          <Card className="border-0 shadow-sm bg-blue-50″>
-            <CardContent className="pt-4 pb-3″>
-              <div className="text-2xl font-bold text-blue-700″>{selectedCount}</div>
-              <div className="text-xs text-blue-600 mt-0.5″>Zip Codes Selected</div>
+        <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
+          <Card className="border-0 shadow-sm bg-blue-50">
+            <CardContent className="pt-4 pb-3">
+              <div className="text-2xl font-bold text-blue-700">{selectedCount}</div>
+              <div className="text-xs text-blue-600 mt-0.5">Zip Codes Selected</div>
             </CardContent>
           </Card>
-          <Card className="border-0 shadow-sm bg-green-50″>
-            <CardContent className="pt-4 pb-3″>
-              <div className="text-2xl font-bold text-green-700″>{maxAllowed === 999 ? "∞" : maxAllowed - selectedCount}</div>
-              <div className="text-xs text-green-600 mt-0.5″>Slots Remaining</div>
+          <Card className="border-0 shadow-sm bg-green-50">
+            <CardContent className="pt-4 pb-3">
+              <div className="text-2xl font-bold text-green-700">{maxAllowed === 999 ? "∞" : maxAllowed - selectedCount}</div>
+              <div className="text-xs text-green-600 mt-0.5">Slots Remaining</div>
             </CardContent>
           </Card>
-          <Card className="border-0 shadow-sm bg-purple-50″>
-            <CardContent className="pt-4 pb-3″>
-              <div className="text-2xl font-bold text-purple-700″>{maxAllowed === 999 ? "Unlimited" : maxAllowed}</div>
-              <div className="text-xs text-purple-600 mt-0.5″>Max Allowed ({tier})</div>
+          <Card className="border-0 shadow-sm bg-purple-50">
+            <CardContent className="pt-4 pb-3">
+              <div className="text-2xl font-bold text-purple-700">{maxAllowed === 999 ? "Unlimited" : maxAllowed}</div>
+              <div className="text-xs text-purple-600 mt-0.5">Max Allowed ({tier})</div>
             </CardContent>
           </Card>
-          <Card className="border-0 shadow-sm bg-amber-50″>
-            <CardContent className="pt-4 pb-3″>
-              <div className="text-2xl font-bold text-amber-700″>{allZips.length}</div>
-              <div className="text-xs text-amber-600 mt-0.5″>Total DFW Zips</div>
+          <Card className="border-0 shadow-sm bg-amber-50">
+            <CardContent className="pt-4 pb-3">
+              <div className="text-2xl font-bold text-amber-700">{allZips.length}</div>
+              <div className="text-xs text-amber-600 mt-0.5">Total DFW Zips</div>
             </CardContent>
           </Card>
         </div>
 
         {/* Upgrade CTA */}
         {tier !== "enterprise" && (
-          <Card className="border border-amber-200 bg-amber-50″>
-            <CardContent className="py-3 flex items-center gap-3″>
-              <TrendingUp className="w-5 h-5 text-amber-600 flex-shrink-0″ />
-              <div className="flex-1″>
-                <span className="text-sm font-medium text-amber-800″>{TIER_UPGRADE_MSG[tier]}</span>
-                <span className="text-xs text-amber-600 ml-2″>More coverage = more leads.</span>
+          <Card className="border border-amber-200 bg-amber-50">
+            <CardContent className="py-3 flex items-center gap-3">
+              <TrendingUp className="w-5 h-5 text-amber-600 flex-shrink-0" />
+              <div className="flex-1">
+                <span className="text-sm font-medium text-amber-800">{TIER_UPGRADE_MSG[tier]}</span>
+                <span className="text-xs text-amber-600 ml-2">More coverage = more leads.</span>
               </div>
-              <Button size="sm" variant="outline" className="border-amber-400 text-amber-700 hover:bg-amber-100 flex-shrink-0″
+              <Button size="sm" variant="outline" className="border-amber-400 text-amber-700 hover:bg-amber-100 flex-shrink-0"
                 onClick={() => window.location.href = "/dashboard/settings"}>
                 Upgrade Plan
               </Button>
@@ -224,20 +224,20 @@ export default function ServiceAreaManager() {
         )}
 
         {/* Search + Filter */}
-        <div className="flex flex-col sm:flex-row gap-3″>
-          <div className="relative flex-1″>
-            <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400″ />
+        <div className="flex flex-col sm:flex-row gap-3">
+          <div className="relative flex-1">
+            <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400" />
             <Input
               placeholder="Search by zip code, city, or submarket..."
               value={search}
               onChange={e => setSearch(e.target.value)}
-              className="pl-9″
+              className="pl-9"
             />
           </div>
           <select
             value={selectedSubmarket}
             onChange={e => setSelectedSubmarket(e.target.value)}
-            className="border border-gray-200 rounded-md px-3 py-2 text-sm bg-white focus:outline-none focus:ring-2 focus:ring-blue-500″
+            className="border border-gray-200 rounded-md px-3 py-2 text-sm bg-white focus:outline-none focus:ring-2 focus:ring-blue-500"
           >
             <option value="all">All Submarkets</option>
             {submarketNames.map(sm => (
@@ -247,7 +247,7 @@ export default function ServiceAreaManager() {
         </div>
 
         {/* Zip Code Grid by Submarket */}
-        <div className="space-y-3″>
+        <div className="space-y-3">
           {Object.entries(filteredBySubmarket).map(([sm, zips]) => {
             const smSelected = zips.filter(z => activeZips.has(z.zip)).length;
             const smTotal = zips.length;
@@ -260,26 +260,26 @@ export default function ServiceAreaManager() {
                   className="flex items-center justify-between px-4 py-3 cursor-pointer hover:bg-gray-50 select-none"
                   onClick={() => toggleExpand(sm)}
                 >
-                  <div className="flex items-center gap-3″>
+                  <div className="flex items-center gap-3">
                     <button
                       onClick={e => { e.stopPropagation(); toggleSubmarket(sm); }}
                       className={`w-5 h-5 rounded border-2 flex items-center justify-center transition-colors ${
-                        allSmSelected ? "bg-blue-600 border-blue-600″ : smSelected > 0 ? "bg-blue-200 border-blue-400" : "border-gray-300"
+                        allSmSelected ? "bg-blue-600 border-blue-600" : smSelected > 0 ? "bg-blue-200 border-blue-400" : "border-gray-300"
                       }`}
                     >
                       {allSmSelected && <CheckCircle className="w-3.5 h-3.5 text-white" />}
-                      {!allSmSelected && smSelected > 0 && <div className="w-2 h-2 rounded-sm bg-blue-600″ />}
+                      {!allSmSelected && smSelected > 0 && <div className="w-2 h-2 rounded-sm bg-blue-600" />}
                     </button>
-                    <span className="font-semibold text-gray-800″>{sm}</span>
+                    <span className="font-semibold text-gray-800">{sm}</span>
                     <Badge variant="outline" className="text-xs">
                       {smSelected}/{smTotal} selected
                     </Badge>
                   </div>
-                  {expanded ? <ChevronUp className="w-4 h-4 text-gray-400″ /> : <ChevronDown className="w-4 h-4 text-gray-400" />}
+                  {expanded ? <ChevronUp className="w-4 h-4 text-gray-400" /> : <ChevronDown className="w-4 h-4 text-gray-400" />}
                 </div>
 
                 {expanded && (
-                  <div className="border-t border-gray-100 px-4 py-3 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-2″>
+                  <div className="border-t border-gray-100 px-4 py-3 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-2">
                     {zips.map(z => {
                       const selected = activeZips.has(z.zip);
                       const atLimit = !selected && selectedCount >= maxAllowed;
@@ -293,13 +293,13 @@ export default function ServiceAreaManager() {
                               ? "bg-blue-600 border-blue-600 text-white"
                               : atLimit
                               ? "bg-gray-50 border-gray-200 text-gray-400 cursor-not-allowed"
-                              : "bg-white border-gray-200 hover:border-blue-400 hover:bg-blue-50″
+                              : "bg-white border-gray-200 hover:border-blue-400 hover:bg-blue-50"
                           }`}
                         >
                           <div className="flex items-center justify-between w-full">
                             <span className="font-mono font-bold text-sm">{z.zip}</span>
-                            {atLimit && !selected && <Lock className="w-3 h-3″ />}
-                            {selected && <CheckCircle className="w-3.5 h-3.5″ />}
+                            {atLimit && !selected && <Lock className="w-3 h-3" />}
+                            {selected && <CheckCircle className="w-3.5 h-3.5" />}
                           </div>
                           <span className={`text-xs mt-0.5 truncate w-full ${selected ? "text-blue-100" : "text-gray-500"}`}>{z.city}</span>
                           <span className={`text-xs ${selected ? "text-blue-200" : "text-gray-400"}`}>
@@ -318,9 +318,9 @@ export default function ServiceAreaManager() {
         {/* Save Footer */}
         {hasChanges && (
           <div className="sticky bottom-4 flex justify-end">
-            <div className="bg-white shadow-lg rounded-xl border border-gray-200 px-5 py-3 flex items-center gap-4″>
-              <div className="flex items-center gap-2 text-sm text-amber-700″>
-                <AlertTriangle className="w-4 h-4″ />
+            <div className="bg-white shadow-lg rounded-xl border border-gray-200 px-5 py-3 flex items-center gap-4">
+              <div className="flex items-center gap-2 text-sm text-amber-700">
+                <AlertTriangle className="w-4 h-4" />
                 <span>Unsaved changes — {selectedCount} zip codes selected</span>
               </div>
               <Button

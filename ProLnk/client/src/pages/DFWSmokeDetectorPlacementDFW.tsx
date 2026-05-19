@@ -1,10 +1,10 @@
 import { useState } from 'react';
 
 const plans = [
-  { size: 'Under 1,500 sqft', bedrooms: 1, detectors: 4, placement: 'Each bedroom, hallway outside bedrooms, main living area', interconnected: 'Recommended — 3-wire or wireless', cost: '$80–$160′ },
-  { size: '1,500–2,500 sqft', bedrooms: 2, detectors: 6, placement: 'Each bedroom, hallway, living area, basement or bonus room', interconnected: 'Strongly recommended', cost: '$140–$280′ },
-  { size: '2,500–4,000 sqft', bedrooms: 3, detectors: 9, placement: 'Each bedroom, each hallway, 2-story landings, garage entry', interconnected: 'Essential — alarm must reach all areas', cost: '$220–$440′ },
-  { size: '4,000+ sqft', bedrooms: 4, detectors: 12, placement: 'Each bedroom, all hallways, multiple floors, media room, guest suite', interconnected: 'Required — wireless mesh system', cost: '$300–$600′ },
+  { size: 'Under 1,500 sqft', bedrooms: 1, detectors: 4, placement: 'Each bedroom, hallway outside bedrooms, main living area', interconnected: 'Recommended — 3-wire or wireless', cost: '$80–$160' },
+  { size: '1,500–2,500 sqft', bedrooms: 2, detectors: 6, placement: 'Each bedroom, hallway, living area, basement or bonus room', interconnected: 'Strongly recommended', cost: '$140–$280' },
+  { size: '2,500–4,000 sqft', bedrooms: 3, detectors: 9, placement: 'Each bedroom, each hallway, 2-story landings, garage entry', interconnected: 'Essential — alarm must reach all areas', cost: '$220–$440' },
+  { size: '4,000+ sqft', bedrooms: 4, detectors: 12, placement: 'Each bedroom, all hallways, multiple floors, media room, guest suite', interconnected: 'Required — wireless mesh system', cost: '$300–$600' },
 ];
 
 export default function DFWSmokeDetectorPlacementDFW() {
@@ -19,7 +19,7 @@ export default function DFWSmokeDetectorPlacementDFW() {
           <h1 style={{ color: '#F5E642', fontSize: '2rem', fontWeight: 700, marginBottom: '0.5rem' }}>
             DFW Smoke Detector Placement Guide
           </h1>
-          <p style={{ color: '#94a3b8′ }}>
+          <p style={{ color: '#94a3b8' }}>
             Texas law requires smoke detectors in every sleeping area and outside each bedroom. DFW large homes need interconnected systems.
           </p>
         </div>
@@ -32,8 +32,8 @@ export default function DFWSmokeDetectorPlacementDFW() {
                 key={p.size}
                 onClick={() => setSelected(p.size === selected ? null : p.size)}
                 style={{
-                  background: selected === p.size ? '#F5E642′ : '#1e3a5f',
-                  color: selected === p.size ? '#0A1628′ : '#fff',
+                  background: selected === p.size ? '#F5E642' : '#1e3a5f',
+                  color: selected === p.size ? '#0A1628' : '#fff',
                   border: 'none', borderRadius: 8, padding: '0.75rem',
                   cursor: 'pointer', fontWeight: 600, fontSize: '0.82rem', transition: 'all 0.2s'
                 }}
@@ -45,7 +45,7 @@ export default function DFWSmokeDetectorPlacementDFW() {
         </div>
 
         {match && (
-          <div style={{ background: '#112240', borderRadius: 12, padding: '1.5rem', marginBottom: '1.5rem', borderLeft: '4px solid #F5E642′ }}>
+          <div style={{ background: '#112240', borderRadius: 12, padding: '1.5rem', marginBottom: '1.5rem', borderLeft: '4px solid #F5E642' }}>
             <h3 style={{ color: '#F5E642', marginBottom: '1rem' }}>Placement Plan — {match.size}</h3>
             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
               {[

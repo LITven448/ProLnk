@@ -68,7 +68,7 @@ export default function DFWWindowInstallationGuide() {
           <div style={{ overflowX: 'auto' }}>
             <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: 14 }}>
               <thead>
-                <tr style={{ color: '#94A3B8', borderBottom: '1px solid #2D3F57′ }}>
+                <tr style={{ color: '#94A3B8', borderBottom: '1px solid #2D3F57' }}>
                   {['Material', 'DFW Performance', 'Maintenance', 'Cost Factor'].map(h => (
                     <th key={h} style={{ textAlign: 'left', paddingBottom: 10, paddingRight: 16 }}>{h}</th>
                   ))}
@@ -83,7 +83,7 @@ export default function DFWWindowInstallationGuide() {
                 ].map(row => (
                   <tr key={row[0]} style={{ borderBottom: '1px solid #16213A' }}>
                     {row.map((cell, i) => (
-                      <td key={i} style={{ padding: '10px 16px 10px 0', color: i === 0 ? '#E8EDF4′ : '#94A3B8' }}>{cell}</td>
+                      <td key={i} style={{ padding: '10px 16px 10px 0', color: i === 0 ? '#E8EDF4' : '#94A3B8' }}>{cell}</td>
                     ))}
                   </tr>
                 ))}
@@ -145,9 +145,9 @@ export default function DFWWindowInstallationGuide() {
           <h3 style={{ color: '#F5E642', fontWeight: 700, marginBottom: 14, fontSize: 16 }}>✅ Energy Star Requirements for DFW (North-Central Climate Zone)</h3>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))', gap: 12 }}>
             {[
-              { label: 'U-Factor', value: '≤ 0.27′ },
-              { label: 'SHGC', value: '≤ 0.25′ },
-              { label: 'Air Leakage', value: '≤ 0.3 cfm/ft²′ },
+              { label: 'U-Factor', value: '≤ 0.27' },
+              { label: 'SHGC', value: '≤ 0.25' },
+              { label: 'Air Leakage', value: '≤ 0.3 cfm/ft²' },
               { label: 'VT (Visible Light)', value: '≥ 0.40 recommended' },
             ].map(req => (
               <div key={req.label} style={{ background: '#0A1628', borderRadius: 8, padding: 14 }}>

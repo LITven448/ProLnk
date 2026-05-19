@@ -49,7 +49,7 @@ export default function DFWCommuteCostCalculator() {
 
         <div style={{ background: '#fff', borderRadius: 12, padding: 24, boxShadow: '0 2px 12px rgba(0,0,0,0.08)', marginBottom: 20 }}>
           <label style={{ display: 'block', marginBottom: 16 }}>
-            <span style={{ fontWeight: 600, color: '#333′ }}>🏠 Home Location</span>
+            <span style={{ fontWeight: 600, color: '#333' }}>🏠 Home Location</span>
             <select value={homeZone} onChange={e => setHomeZone(Number(e.target.value))}
               style={{ display: 'block', width: '100%', marginTop: 8, padding: '10px 12px', borderRadius: 8, border: '1px solid #ddd', fontSize: 15 }}>
               {DFW_ZONES.map((z, i) => <option key={i} value={i}>{z.label} (~{z.avgMiles} mi from core)</option>)}
@@ -57,7 +57,7 @@ export default function DFWCommuteCostCalculator() {
           </label>
 
           <label style={{ display: 'block', marginBottom: 16 }}>
-            <span style={{ fontWeight: 600, color: '#333′ }}>🏢 Work Location</span>
+            <span style={{ fontWeight: 600, color: '#333' }}>🏢 Work Location</span>
             <select value={workZone} onChange={e => setWorkZone(Number(e.target.value))}
               style={{ display: 'block', width: '100%', marginTop: 8, padding: '10px 12px', borderRadius: 8, border: '1px solid #ddd', fontSize: 15 }}>
               {DFW_ZONES.map((z, i) => <option key={i} value={i}>{z.label}</option>)}

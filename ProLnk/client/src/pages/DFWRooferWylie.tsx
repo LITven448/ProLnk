@@ -1,16 +1,16 @@
 import { useState } from 'react';
 
 const roofVintages = ['Pre-2000', '2000-2010', '2010-2020', '2020+'];
-const stormEvents = ['None in 3 years', 'Minor (< 1″ hail)', 'Moderate (1-2″ hail)', 'Severe (2″+ hail / high winds)'];
+const stormEvents = ['None in 3 years', 'Minor (< 1" hail)', 'Moderate (1-2" hail)', 'Severe (2"+ hail / high winds)'];
 
 function getUrgency(vintage: string, storm: string) {
   const vintageScore = roofVintages.indexOf(vintage);
   const stormScore = stormEvents.indexOf(storm);
   const total = vintageScore + stormScore;
-  if (total >= 5) return { level: 'CRITICAL', action: 'Emergency inspection within 48 hours. File insurance claim immediately.', color: '#FF4444′ };
-  if (total >= 3) return { level: 'HIGH', action: 'Schedule professional inspection within 2 weeks. Document visible damage.', color: '#FF8C00′ };
-  if (total >= 1) return { level: 'MODERATE', action: 'Annual inspection recommended. Monitor for granule loss and soft spots.', color: '#F5E642′ };
-  return { level: 'LOW', action: 'Standard 3-year inspection cycle. Keep gutters clear after storms.', color: '#44FF88′ };
+  if (total >= 5) return { level: 'CRITICAL', action: 'Emergency inspection within 48 hours. File insurance claim immediately.', color: '#FF4444' };
+  if (total >= 3) return { level: 'HIGH', action: 'Schedule professional inspection within 2 weeks. Document visible damage.', color: '#FF8C00' };
+  if (total >= 1) return { level: 'MODERATE', action: 'Annual inspection recommended. Monitor for granule loss and soft spots.', color: '#F5E642' };
+  return { level: 'LOW', action: 'Standard 3-year inspection cycle. Keep gutters clear after storms.', color: '#44FF88' };
 }
 
 export default function DFWRooferWylie() {
@@ -27,7 +27,7 @@ export default function DFWRooferWylie() {
         </div>
         <h1 style={{ fontSize: 'clamp(26px, 4vw, 42px)', fontWeight: 800, lineHeight: 1.2, marginBottom: 12 }}>
           Wylie TX Roofers<br />
-          <span style={{ color: '#F5E642′ }}>East Collin County Storm Specialists</span>
+          <span style={{ color: '#F5E642' }}>East Collin County Storm Specialists</span>
         </h1>
         <p style={{ color: '#94A3B8', fontSize: 16, maxWidth: 680, lineHeight: 1.7, marginBottom: 40 }}>
           Wylie sits directly in the storm corridor tracking northeast out of DFW. With thousands of homes built between 2000 and 2020, many roofs are hitting peak vulnerability just as storm intensity increases. Our vetted Wylie roofers know east Collin County codes, HOA requirements, and insurance documentation standards.
@@ -42,14 +42,14 @@ export default function DFWRooferWylie() {
           ].map(card => (
             <div key={card.label} style={{ background: '#132040', borderRadius: 12, padding: 20, border: '1px solid #1E3A5F' }}>
               <div style={{ fontSize: 28, marginBottom: 10 }}>{card.emoji}</div>
-              <div style={{ fontWeight: 700, marginBottom: 6, color: '#F5E642′ }}>{card.label}</div>
+              <div style={{ fontWeight: 700, marginBottom: 6, color: '#F5E642' }}>{card.label}</div>
               <div style={{ color: '#94A3B8', fontSize: 14, lineHeight: 1.6 }}>{card.desc}</div>
             </div>
           ))}
         </div>
 
         <div style={{ background: '#132040', borderRadius: 16, padding: 32, border: '1px solid #F5E642', marginBottom: 40 }}>
-          <h2 style={{ fontSize: 22, fontWeight: 700, marginBottom: 8, color: '#F5E642′ }}>
+          <h2 style={{ fontSize: 22, fontWeight: 700, marginBottom: 8, color: '#F5E642' }}>
             🔍 Storm Inspection Urgency Calculator
           </h2>
           <p style={{ color: '#94A3B8', fontSize: 14, marginBottom: 24 }}>
@@ -107,7 +107,7 @@ export default function DFWRooferWylie() {
               { num: '100%', label: 'Licensed & Insured Pros' },
             ].map(s => (
               <div key={s.label} style={{ textAlign: 'center' }}>
-                <div style={{ fontSize: 32, fontWeight: 800, color: '#F5E642′ }}>{s.num}</div>
+                <div style={{ fontSize: 32, fontWeight: 800, color: '#F5E642' }}>{s.num}</div>
                 <div style={{ color: '#94A3B8', fontSize: 14, marginTop: 4 }}>{s.label}</div>
               </div>
             ))}

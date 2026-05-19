@@ -46,12 +46,12 @@ export default function DFWTradePricingGuide() {
           <h2 style={{ margin: '0 0 16px', fontSize: 18 }}>Calculate Your DFW Pricing</h2>
           <div style={{ display: 'flex', gap: 10, flexWrap: 'wrap', marginBottom: 16 }}>
             {Object.entries(tradeRates).map(([k, v]) => (
-              <button key={k} onClick={() => setTrade(k)} style={{ padding: '10px 18px', borderRadius: 8, border: '2px solid', borderColor: trade === k ? '#F5E642′ : '#1e3a5f', background: trade === k ? '#F5E642' : ’transparent', color: trade === k ? '#0A1628′ : '#fff', fontWeight: 700, cursor: ’pointer' }}>{v.label}</button>
+              <button key={k} onClick={() => setTrade(k)} style={{ padding: '10px 18px', borderRadius: 8, border: '2px solid', borderColor: trade === k ? '#F5E642' : '#1e3a5f', background: trade === k ? '#F5E642' : 'transparent', color: trade === k ? '#0A1628' : '#fff', fontWeight: 700, cursor: 'pointer' }}>{v.label}</button>
             ))}
           </div>
           <div style={{ display: 'flex', gap: 10, flexWrap: 'wrap', marginBottom: 16 }}>
             {Object.entries(experience).map(([k, v]) => (
-              <button key={k} onClick={() => setExp(k)} style={{ padding: '10px 18px', borderRadius: 8, border: '2px solid', borderColor: exp === k ? '#F5E642′ : '#1e3a5f', background: exp === k ? '#F5E642' : ’transparent', color: exp === k ? '#0A1628′ : '#fff', fontWeight: 700, cursor: ’pointer' }}>{v.label}</button>
+              <button key={k} onClick={() => setExp(k)} style={{ padding: '10px 18px', borderRadius: 8, border: '2px solid', borderColor: exp === k ? '#F5E642' : '#1e3a5f', background: exp === k ? '#F5E642' : 'transparent', color: exp === k ? '#0A1628' : '#fff', fontWeight: 700, cursor: 'pointer' }}>{v.label}</button>
             ))}
           </div>
           <div>
@@ -66,28 +66,28 @@ export default function DFWTradePricingGuide() {
               {t.serviceCall > 0 && (
                 <div style={{ background: '#0F1F3D', borderRadius: 12, padding: 20 }}>
                   <div style={{ fontSize: 12, color: '#64748b', marginBottom: 4 }}>SERVICE CALL RATE</div>
-                  <div style={{ fontSize: 28, fontWeight: 800, color: '#F5E642′ }}>${adj(t.serviceCall) || t.serviceCall}</div>
+                  <div style={{ fontSize: 28, fontWeight: 800, color: '#F5E642' }}>${adj(t.serviceCall) || t.serviceCall}</div>
                   <div style={{ fontSize: 12, color: '#94a3b8', marginTop: 4 }}>per visit</div>
                 </div>
               )}
               <div style={{ background: '#0F1F3D', borderRadius: 12, padding: 20 }}>
                 <div style={{ fontSize: 12, color: '#64748b', marginBottom: 4 }}>HOURLY LABOR</div>
-                <div style={{ fontSize: 28, fontWeight: 800, color: '#F5E642′ }}>${adj(t.hourlyLabor) || t.hourlyLabor}</div>
+                <div style={{ fontSize: 28, fontWeight: 800, color: '#F5E642' }}>${adj(t.hourlyLabor) || t.hourlyLabor}</div>
                 <div style={{ fontSize: 12, color: '#94a3b8', marginTop: 4 }}>per hour</div>
               </div>
               <div style={{ background: '#0F1F3D', borderRadius: 12, padding: 20 }}>
                 <div style={{ fontSize: 12, color: '#64748b', marginBottom: 4 }}>AVG INSTALL JOB</div>
-                <div style={{ fontSize: 28, fontWeight: 800, color: '#F5E642′ }}>${(adj(t.install) || t.install).toLocaleString()}</div>
+                <div style={{ fontSize: 28, fontWeight: 800, color: '#F5E642' }}>${(adj(t.install) || t.install).toLocaleString()}</div>
                 <div style={{ fontSize: 12, color: '#94a3b8', marginTop: 4 }}>typical DFW value</div>
               </div>
               <div style={{ background: '#0F1F3D', borderRadius: 12, padding: 20 }}>
                 <div style={{ fontSize: 12, color: '#64748b', marginBottom: 4 }}>TARGET MARGIN</div>
-                <div style={{ fontSize: 28, fontWeight: 800, color: '#F5E642′ }}>{t.margin}%</div>
+                <div style={{ fontSize: 28, fontWeight: 800, color: '#F5E642' }}>{t.margin}%</div>
                 <div style={{ fontSize: 12, color: '#94a3b8', marginTop: 4 }}>net profit target</div>
               </div>
             </div>
 
-            {e && <div style={{ background: '#0F1F3D', borderRadius: 12, padding: 20, borderLeft: '3px solid #F5E642′ }}>
+            {e && <div style={{ background: '#0F1F3D', borderRadius: 12, padding: 20, borderLeft: '3px solid #F5E642' }}>
               <div style={{ fontSize: 13, fontWeight: 700, color: '#F5E642', marginBottom: 6 }}>Pricing Strategy for Your Level</div>
               <p style={{ color: '#cbd5e1', margin: 0, fontSize: 14 }}>{e.note}</p>
             </div>}
@@ -95,7 +95,7 @@ export default function DFWTradePricingGuide() {
             {breakEven !== null && (
               <div style={{ background: '#0F1F3D', borderRadius: 12, padding: 20 }}>
                 <div style={{ fontSize: 13, color: '#64748b', marginBottom: 4 }}>BREAK-EVEN JOBS/MONTH</div>
-                <div style={{ fontSize: 36, fontWeight: 800, color: '#F5E642′ }}>{breakEven} jobs</div>
+                <div style={{ fontSize: 36, fontWeight: 800, color: '#F5E642' }}>{breakEven} jobs</div>
                 <p style={{ color: '#94a3b8', margin: '8px 0 0', fontSize: 13 }}>Based on ${effectiveOverhead.toLocaleString()}/mo overhead</p>
               </div>
             )}

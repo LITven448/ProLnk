@@ -4,27 +4,27 @@ const styles = {
   page: { backgroundColor: '#0A1628', minHeight: '100vh', color: '#ffffff', fontFamily: 'system-ui, sans-serif', padding: '32px 24px' },
   container: { maxWidth: '860px', margin: '0 auto' },
   badge: { backgroundColor: '#1a2d4a', color: '#F5E642', padding: '4px 12px', borderRadius: '20px', fontSize: '12px', fontWeight: '700', display: 'inline-block', marginBottom: '16px' },
-  h1: { fontSize: '36px', fontWeight: '800', marginBottom: '12px', lineHeight: '1.2′ },
-  accent: { color: '#F5E642′ },
-  lead: { color: '#94a3b8', fontSize: '18px', marginBottom: '40px', lineHeight: '1.6′ },
+  h1: { fontSize: '36px', fontWeight: '800', marginBottom: '12px', lineHeight: '1.2' },
+  accent: { color: '#F5E642' },
+  lead: { color: '#94a3b8', fontSize: '18px', marginBottom: '40px', lineHeight: '1.6' },
   card: { backgroundColor: '#111f38', border: '1px solid #1e3a5f', borderRadius: '12px', padding: '24px', marginBottom: '24px' },
   cardTitle: { fontSize: '20px', fontWeight: '700', marginBottom: '16px', display: 'flex', alignItems: 'center', gap: '10px' },
   grid2: { display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '16px', marginBottom: '24px' },
   statBox: { backgroundColor: '#0d1a2e', borderRadius: '10px', padding: '20px', textAlign: 'center' as const },
-  statNum: { fontSize: '32px', fontWeight: '800', color: '#F5E642′ },
+  statNum: { fontSize: '32px', fontWeight: '800', color: '#F5E642' },
   statLabel: { color: '#94a3b8', fontSize: '13px', marginTop: '4px' },
   list: { listStyle: 'none', padding: 0, margin: 0 },
   listItem: { padding: '10px 0', borderBottom: '1px solid #1e3a5f', color: '#cbd5e1', display: 'flex', gap: '10px', fontSize: '14px' },
   label: { color: '#94a3b8', fontSize: '14px', marginBottom: '8px', display: 'block' },
   select: { width: '100%', backgroundColor: '#0d1a2e', color: '#ffffff', border: '1px solid #1e3a5f', borderRadius: '8px', padding: '10px 14px', fontSize: '14px', marginBottom: '16px' },
   btn: { backgroundColor: '#F5E642', color: '#0A1628', border: 'none', borderRadius: '8px', padding: '12px 28px', fontSize: '15px', fontWeight: '700', cursor: 'pointer', width: '100%' },
-  result: { backgroundColor: '#0d1a2e', borderRadius: '10px', padding: '20px', marginTop: '16px', border: '2px solid #F5E642′ },
+  result: { backgroundColor: '#0d1a2e', borderRadius: '10px', padding: '20px', marginTop: '16px', border: '2px solid #F5E642' },
   warnNote: { backgroundColor: '#2d1000', border: '1px solid #9a3412', borderRadius: '8px', padding: '14px 18px', color: '#fdba74', fontSize: '14px', marginTop: '16px' },
   greenNote: { backgroundColor: '#0d2e1a', border: '1px solid #166534', borderRadius: '8px', padding: '14px 18px', color: '#86efac', fontSize: '14px', marginTop: '16px' },
-  typeCard: { backgroundColor: '#0d1a2e', borderRadius: '10px', padding: '16px', marginBottom: '12px', borderLeft: '3px solid #F5E642′ },
-  typeTitle: { fontWeight: '700', fontSize: '15px', marginBottom: '6px', color: '#F5E642′ },
-  typeDesc: { color: '#94a3b8', fontSize: '13px', lineHeight: '1.6′ },
-  typeVerdict: { color: '#cbd5e1', fontSize: '13px', marginTop: '8px', fontWeight: '600′ },
+  typeCard: { backgroundColor: '#0d1a2e', borderRadius: '10px', padding: '16px', marginBottom: '12px', borderLeft: '3px solid #F5E642' },
+  typeTitle: { fontWeight: '700', fontSize: '15px', marginBottom: '6px', color: '#F5E642' },
+  typeDesc: { color: '#94a3b8', fontSize: '13px', lineHeight: '1.6' },
+  typeVerdict: { color: '#cbd5e1', fontSize: '13px', marginTop: '8px', fontWeight: '600' },
   costRow: { display: 'flex', justifyContent: 'space-between', padding: '10px 0', borderBottom: '1px solid #1e3a5f', color: '#cbd5e1', fontSize: '14px' },
 };
 
@@ -85,7 +85,7 @@ export default function DFWCrawlSpaceGuide() {
       <div style={styles.container}>
         <div style={styles.badge}>📍 DFW Crawl Space Guide</div>
         <h1 style={styles.h1}>Crawl Space Guide <span style={styles.accent}>for DFW Homeowners</span></h1>
-        <p style={styles.lead}>DFW's hot, humid summers make vented crawl spaces a moisture disaster waiting to happen. Encapsulation is the standard solution — here’s what it costs, what it includes, and what you actually need.</p>
+        <p style={styles.lead}>DFW's hot, humid summers make vented crawl spaces a moisture disaster waiting to happen. Encapsulation is the standard solution — here's what it costs, what it includes, and what you actually need.</p>
 
         <div style={styles.grid2}>
           <div style={styles.statBox}><div style={styles.statNum}>75%</div><div style={styles.statLabel}>DFW summer outdoor RH — too high for vented crawl space</div></div>
@@ -95,10 +95,10 @@ export default function DFWCrawlSpaceGuide() {
         <div style={styles.card}>
           <div style={styles.cardTitle}><span>🏗️</span> Three Types of Crawl Spaces — DFW Reality Check</div>
           {crawlTypes.map((type, i) => (
-            <div key={i} style={{ ...styles.typeCard, borderLeftColor: type.dfwNote.startsWith('⚠️') ? '#ef4444′ : '#22c55e' }}>
+            <div key={i} style={{ ...styles.typeCard, borderLeftColor: type.dfwNote.startsWith('⚠️') ? '#ef4444' : '#22c55e' }}>
               <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '4px' }}>
                 <div style={styles.typeTitle}>{type.icon} {type.name}</div>
-                <div style={{ fontSize: '12px', color: type.dfwNote.startsWith('⚠️') ? '#ef4444′ : '#22c55e', fontWeight: '700' }}>{type.dfwNote}</div>
+                <div style={{ fontSize: '12px', color: type.dfwNote.startsWith('⚠️') ? '#ef4444' : '#22c55e', fontWeight: '700' }}>{type.dfwNote}</div>
               </div>
               <div style={styles.typeDesc}>{type.desc}</div>
               <div style={styles.typeVerdict}>{type.verdict}</div>
@@ -112,7 +112,7 @@ export default function DFWCrawlSpaceGuide() {
             {components.map((c, i) => (
               <li key={i} style={{ ...styles.listItem, flexDirection: 'column' as const, gap: '2px' }}>
                 <div style={{ fontWeight: '700', color: '#ffffff' }}>{c.icon} {c.name}</div>
-                <div style={{ color: '#94a3b8′ }}>{c.detail}</div>
+                <div style={{ color: '#94a3b8' }}>{c.detail}</div>
               </li>
             ))}
           </ul>

@@ -99,11 +99,11 @@ export default function TaxReports() {
         <div className="flex items-center justify-between">
           <div>
             <h1 className="text-2xl font-bold text-foreground">Tax Reports</h1>
-            <p className="text-muted-foreground text-sm mt-1″>
+            <p className="text-muted-foreground text-sm mt-1">
               1099-NEC annual commission summaries  IRS threshold: ${IRS_THRESHOLD}
             </p>
           </div>
-          <div className="flex items-center gap-3″>
+          <div className="flex items-center gap-3">
             <select
               value={year}
               onChange={e => setYear(parseInt(e.target.value))}
@@ -111,19 +111,19 @@ export default function TaxReports() {
             >
               {years.map(y => <option key={y} value={y}>{y}</option>)}
             </select>
-            <Button onClick={exportCSV} disabled={exporting || above1099.length === 0} className="gap-2″>
-              <Download className="w-4 h-4″ />
+            <Button onClick={exportCSV} disabled={exporting || above1099.length === 0} className="gap-2">
+              <Download className="w-4 h-4" />
               {exporting ? "Exporting..." : `Export ${year} CSV`}
             </Button>
           </div>
         </div>
 
         {/* Policy banner */}
-        <div className="flex items-start gap-3 bg-blue-50 dark:bg-blue-950/20 border border-blue-200 dark:border-blue-800 rounded-xl p-4″>
-          <Info className="w-5 h-5 text-blue-600 flex-shrink-0 mt-0.5″ />
-          <div className="text-sm text-blue-800 dark:text-blue-300″>
+        <div className="flex items-start gap-3 bg-blue-50 dark:bg-blue-950/20 border border-blue-200 dark:border-blue-800 rounded-xl p-4">
+          <Info className="w-5 h-5 text-blue-600 flex-shrink-0 mt-0.5" />
+          <div className="text-sm text-blue-800 dark:text-blue-300">
             <p className="font-semibold">1099-NEC Policy</p>
-            <p className="text-xs text-blue-700 dark:text-blue-400 mt-0.5″>
+            <p className="text-xs text-blue-700 dark:text-blue-400 mt-0.5">
               Per IRS rules, a 1099-NEC must be issued to any non-employee (partner) paid $600 or more in a calendar year.
               This report identifies all qualifying partners. Consult your CPA before filing. Deadline: January 31 of the following year.
             </p>
@@ -131,24 +131,24 @@ export default function TaxReports() {
         </div>
 
         {/* Summary cards */}
-        <div className="grid grid-cols-3 gap-4″>
+        <div className="grid grid-cols-3 gap-4">
           {[
-            { label: `Total Paid (${year})`, value: `$${totalPaid.toLocaleString("en-US", { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`, icon: DollarSign, color: "text-[#82D616]", bg: "bg-[#82D616]/10″ },
-            { label: "1099 Required", value: above1099.length, icon: FileText, color: "text-amber-400″, bg: "bg-amber-400/10" },
-            { label: "Below Threshold", value: below1099.length, icon: CheckCircle, color: "text-green-500″, bg: "bg-green-500/10" },
+            { label: `Total Paid (${year})`, value: `$${totalPaid.toLocaleString("en-US", { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`, icon: DollarSign, color: "text-[#82D616]", bg: "bg-[#82D616]/10" },
+            { label: "1099 Required", value: above1099.length, icon: FileText, color: "text-amber-400", bg: "bg-amber-400/10" },
+            { label: "Below Threshold", value: below1099.length, icon: CheckCircle, color: "text-green-500", bg: "bg-green-500/10" },
           ].map(m => (
-            <div key={m.label} className="bg-card border rounded-xl p-4″>
+            <div key={m.label} className="bg-card border rounded-xl p-4">
               <div className={`w-9 h-9 rounded-lg ${m.bg} flex items-center justify-center mb-3`}>
                 <m.icon className={`w-4.5 h-4.5 ${m.color}`} />
               </div>
               <p className="text-2xl font-black text-foreground">{m.value}</p>
-              <p className="text-muted-foreground text-xs mt-0.5″>{m.label}</p>
+              <p className="text-muted-foreground text-xs mt-0.5">{m.label}</p>
             </div>
           ))}
         </div>
 
         {isLoading ? (
-          <div className="flex items-center justify-center h-32″>
+          <div className="flex items-center justify-center h-32">
             <RefreshCw className="w-5 h-5 animate-spin text-muted-foreground" />
           </div>
         ) : (
@@ -156,8 +156,8 @@ export default function TaxReports() {
             {/* 1099 Required table */}
             {above1099.length > 0 && (
               <div className="bg-card border rounded-xl overflow-hidden">
-                <div className="px-4 py-3 border-b bg-amber-50 dark:bg-amber-950/20 flex items-center gap-2″>
-                  <AlertTriangle className="w-4 h-4 text-amber-600″ />
+                <div className="px-4 py-3 border-b bg-amber-50 dark:bg-amber-950/20 flex items-center gap-2">
+                  <AlertTriangle className="w-4 h-4 text-amber-600" />
                   <span className="font-semibold text-amber-800 dark:text-amber-300 text-sm">
                     1099-NEC Required -- {above1099.length} partners
                   </span>
@@ -190,8 +190,8 @@ export default function TaxReports() {
             {/* Below threshold table */}
             {below1099.length > 0 && (
               <div className="bg-card border rounded-xl overflow-hidden">
-                <div className="px-4 py-3 border-b bg-green-50 dark:bg-green-950/20 flex items-center gap-2″>
-                  <CheckCircle className="w-4 h-4 text-green-600″ />
+                <div className="px-4 py-3 border-b bg-green-50 dark:bg-green-950/20 flex items-center gap-2">
+                  <CheckCircle className="w-4 h-4 text-green-600" />
                   <span className="font-semibold text-green-800 dark:text-green-300 text-sm">
                     Below $600 Threshold -- No 1099 Required ({below1099.length} partners)
                   </span>
@@ -219,7 +219,7 @@ export default function TaxReports() {
 
             {partnerTotals.length === 0 && (
               <div className="bg-card border rounded-xl p-8 text-center">
-                <FileText className="w-8 h-8 text-muted-foreground mx-auto mb-2″ />
+                <FileText className="w-8 h-8 text-muted-foreground mx-auto mb-2" />
                 <p className="text-muted-foreground text-sm">No paid commissions found for {year}</p>
               </div>
             )}

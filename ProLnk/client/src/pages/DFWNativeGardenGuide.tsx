@@ -43,7 +43,7 @@ export default function DFWNativeGardenGuide() {
 
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16, marginBottom: 32 }}>
           {[
-            { icon: '☀️', title: 'Blackfoot Daisy', desc: 'Blooms 9+ months, zero supplemental water needed after Year 1′ },
+            { icon: '☀️', title: 'Blackfoot Daisy', desc: 'Blooms 9+ months, zero supplemental water needed after Year 1' },
             { icon: '🌺', title: 'Salvia greggii', desc: 'Hummingbird magnet, 20+ color varieties, survives DFW winters' },
             { icon: '🌵', title: 'Yucca', desc: 'Zero water, dramatic structure, wildlife nesting habitat' },
             { icon: '🌸', title: 'Indian Blanket', desc: 'Texas state wildflower, reseeds freely, full sun xeric champion' },
@@ -57,9 +57,9 @@ export default function DFWNativeGardenGuide() {
         </div>
 
         <div style={{ background: '#1E2D45', borderRadius: 12, padding: '1.5rem', marginBottom: 24 }}>
-          <h2 style={{ fontSize: 18, fontWeight: 700, marginBottom: 16, color: '#F5E642′ }}>🌱 Lawn Conversion Process</h2>
+          <h2 style={{ fontSize: 18, fontWeight: 700, marginBottom: 16, color: '#F5E642' }}>🌱 Lawn Conversion Process</h2>
           {[
-            { step: '1', title: 'Sheet Mulch', desc: 'Lay cardboard over existing lawn, wet thoroughly, cover with 4″ mulch. Kills grass without chemicals.' },
+            { step: '1', title: 'Sheet Mulch', desc: 'Lay cardboard over existing lawn, wet thoroughly, cover with 4" mulch. Kills grass without chemicals.' },
             { step: '2', title: 'Plant in Fall', desc: 'Oct–Nov is best for DFW natives — roots establish during mild winter before brutal summer.' },
             { step: '3', title: 'Water Year 1 Only', desc: 'Deep water weekly first summer. After that: zero irrigation needed for most natives.' },
             { step: '4', title: 'Navigate HOA', desc: 'Frame as "low-water landscape." Show neighbors\’ examples. Most HOAs allow if kept tidy.' },
@@ -72,7 +72,7 @@ export default function DFWNativeGardenGuide() {
         </div>
 
         <div style={{ background: '#1E2D45', borderRadius: 12, padding: '1.5rem', marginBottom: 24 }}>
-          <h2 style={{ fontSize: 18, fontWeight: 700, marginBottom: 16, color: '#F5E642′ }}>🔍 Plant Finder</h2>
+          <h2 style={{ fontSize: 18, fontWeight: 700, marginBottom: 16, color: '#F5E642' }}>🔍 Plant Finder</h2>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16, marginBottom: 16 }}>
             <div>
               <label style={{ fontSize: 13, color: '#94A3B8', display: 'block', marginBottom: 6 }}>Sun Exposure</label>
@@ -94,8 +94,8 @@ export default function DFWNativeGardenGuide() {
           </button>
           {showResults && (
             <div style={{ marginTop: 20 }}>
-              <div style={{ background: '#0A1628', borderRadius: 8, padding: '12px 16px', marginBottom: 16, borderLeft: '4px solid #F5E642′ }}>
-                <div style={{ fontWeight: 700, color: '#F5E642′ }}>💧 Estimated Water Savings: {savings} vs. traditional lawn</div>
+              <div style={{ background: '#0A1628', borderRadius: 8, padding: '12px 16px', marginBottom: 16, borderLeft: '4px solid #F5E642' }}>
+                <div style={{ fontWeight: 700, color: '#F5E642' }}>💧 Estimated Water Savings: {savings} vs. traditional lawn</div>
                 <div style={{ color: '#94A3B8', fontSize: 13, marginTop: 4 }}>After establishment period (Year 1)</div>
               </div>
               {recommendations.length > 0 ? recommendations.map(r => (
@@ -104,7 +104,7 @@ export default function DFWNativeGardenGuide() {
                   <div style={{ color: '#F5E642', fontSize: 13, marginBottom: 4 }}>Bloom: {r.bloom} · Water: {r.water}</div>
                   <div style={{ color: '#94A3B8', fontSize: 13 }}>{r.notes}</div>
                 </div>
-              )) : <div style={{ color: '#94A3B8′ }}>Try another combination for more results.</div>}
+              )) : <div style={{ color: '#94A3B8' }}>Try another combination for more results.</div>}
             </div>
           )}
         </div>

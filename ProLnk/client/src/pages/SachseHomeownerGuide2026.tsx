@@ -68,7 +68,7 @@ export default function SachseHomeownerGuide2026() {
             ].map((item) => (
               <div key={item.label} style={{ backgroundColor: '#0A1628', borderRadius: '8px', padding: '1rem' }}>
                 <div style={{ fontSize: '1.5rem', marginBottom: '0.4rem' }}>{item.icon}</div>
-                <div style={{ fontWeight: 700, fontSize: '0.9rem', color: '#F5E642′ }}>{item.label}</div>
+                <div style={{ fontWeight: 700, fontSize: '0.9rem', color: '#F5E642' }}>{item.label}</div>
                 <div style={{ color: '#94a3b8', fontSize: '0.8rem', marginTop: '0.3rem' }}>{item.desc}</div>
               </div>
             ))}
@@ -79,7 +79,7 @@ export default function SachseHomeownerGuide2026() {
           <h2 style={{ color: '#F5E642', fontSize: '1.1rem', marginBottom: '1rem' }}>🗓️ Select Your Home's Decade Built</h2>
           <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap', marginBottom: '1.5rem' }}>
             {Object.keys(decades).map((d) => (
-              <button key={d} onClick={() => setDecade(d)} style={{ padding: '0.6rem 1.4rem', borderRadius: '8px', border: 'none', cursor: 'pointer', fontWeight: 700, backgroundColor: decade === d ? '#F5E642′ : '#1e3a5f', color: decade === d ? '#0A1628' : '#fff' }}>
+              <button key={d} onClick={() => setDecade(d)} style={{ padding: '0.6rem 1.4rem', borderRadius: '8px', border: 'none', cursor: 'pointer', fontWeight: 700, backgroundColor: decade === d ? '#F5E642' : '#1e3a5f', color: decade === d ? '#0A1628' : '#fff' }}>
                 {d}
               </button>
             ))}

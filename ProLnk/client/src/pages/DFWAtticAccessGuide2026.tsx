@@ -4,7 +4,7 @@ const atticTypes = [
   { id: 'pulldown', label: '🪜 Pull-Down Stair Attic', steps: ['Test stair load rating before stepping — most are 250 lbs max', 'Inspect hardware: hinges, springs, and pivot arms age in DFW heat', 'Set up work light before climbing — attics are dark and full of trip hazards', 'Go in March–May or October–November — summer attic temps reach 140°F', 'Wear N95 mask — insulation fibers and dust are a respiratory hazard'] },
   { id: 'hatch', label: '🟫 Ceiling Hatch Access', steps: ['Use a stable 6-ft ladder — do not overreach, repositioning is safer', 'Push hatch straight up and slide to the side, avoid dropping insulation', 'Keep one hand on the ladder at all times when transitioning in', 'Use a headlamp — hands-free is essential for hatch entry', 'Lay a plywood board across joists before moving around — never step between joists'] },
   { id: 'knee', label: '🚪 Knee Wall / Side Access', steps: ['Knee wall doors are typically in closets or hallways in DFW ranch homes', 'Access is easier but beams are low — bring a headlamp and expect to crouch', 'Check for pest activity near the door — gaps allow entry', 'Side attic spaces often have poor insulation at the knee wall itself', 'Inspect knee wall insulation batts — they fall over time due to DFW humidity cycling'] },
-  { id: 'noAccess', label: '❌ No Attic Access', steps: ['No access is a red flag — means no way to inspect HVAC ducts or roof deck', 'A carpenter or handyman can typically install a hatch for $200-$400', 'Choose a closet ceiling location to keep it out of living areas', 'Minimum hatch size is 22″×30″ per building code', 'Install attic stairs if you plan to use the space for storage'] },
+  { id: 'noAccess', label: '❌ No Attic Access', steps: ['No access is a red flag — means no way to inspect HVAC ducts or roof deck', 'A carpenter or handyman can typically install a hatch for $200-$400', 'Choose a closet ceiling location to keep it out of living areas', 'Minimum hatch size is 22"×30" per building code', 'Install attic stairs if you plan to use the space for storage'] },
 ];
 
 export default function DFWAtticAccessGuide2026() {
@@ -55,7 +55,7 @@ export default function DFWAtticAccessGuide2026() {
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 10, marginBottom: 24 }}>
           {atticTypes.map(t => (
             <button key={t.id} onClick={() => setSelected(t.id === selected ? null : t.id)}
-              style={{ background: selected === t.id ? '#F5E642′ : '#111d30', color: selected === t.id ? '#0A1628' : '#fff', border: ’none', borderRadius: 8, padding: '14px', cursor: 'pointer', fontWeight: 600, fontSize: 14, textAlign: 'left' }}>
+              style={{ background: selected === t.id ? '#F5E642' : '#111d30', color: selected === t.id ? '#0A1628' : '#fff', border: 'none', borderRadius: 8, padding: '14px', cursor: 'pointer', fontWeight: 600, fontSize: 14, textAlign: 'left' }}>
               {t.label}
             </button>
           ))}

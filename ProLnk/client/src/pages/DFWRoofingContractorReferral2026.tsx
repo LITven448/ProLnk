@@ -65,7 +65,7 @@ export default function DFWRoofingContractorReferral2026() {
             <li>DFW attracts hundreds of out-of-state storm chasers after major hail events</li>
             <li>Many operate 1–2 seasons then dissolve — no warranty support</li>
             <li>Texas requires roofing contractors to register with TDLR (License required)</li>
-            <li>Verify at <strong style={{ color: '#F5E642′ }}>tdlr.texas.gov</strong> — takes 60 seconds</li>
+            <li>Verify at <strong style={{ color: '#F5E642' }}>tdlr.texas.gov</strong> — takes 60 seconds</li>
             <li>Never sign an Assignment of Benefits (AOB) without reading carefully</li>
           </ul>
         </div>
@@ -74,12 +74,12 @@ export default function DFWRoofingContractorReferral2026() {
           <div style={{ fontWeight: 700, color: '#F5E642', marginBottom: 16 }}>📋 Verification Checklist by Referral Source</div>
           <div style={{ display: 'flex', flexDirection: 'column', gap: 8, marginBottom: 20 }}>
             {SOURCES.map(s => (
-              <button key={s.id} onClick={() => setSelected(s.id)} style={{ padding: '12px 16px', borderRadius: 8, border: 'none', background: selected === s.id ? '#F5E642′ : '#1e3a5f', color: selected === s.id ? '#0A1628' : '#cbd5e1', fontWeight: selected === s.id ? 700 : 400, cursor: ’pointer', textAlign: 'left', fontSize: 14 }}>
+              <button key={s.id} onClick={() => setSelected(s.id)} style={{ padding: '12px 16px', borderRadius: 8, border: 'none', background: selected === s.id ? '#F5E642' : '#1e3a5f', color: selected === s.id ? '#0A1628' : '#cbd5e1', fontWeight: selected === s.id ? 700 : 400, cursor: 'pointer', textAlign: 'left', fontSize: 14 }}>
                 {s.label}
               </button>
             ))}
           </div>
-          <div style={{ background: '#0A1628', borderRadius: 8, padding: 16, borderLeft: '3px solid #F5E642′ }}>
+          <div style={{ background: '#0A1628', borderRadius: 8, padding: 16, borderLeft: '3px solid #F5E642' }}>
             <ul style={{ color: '#cbd5e1', fontSize: 14, lineHeight: 1.9, paddingLeft: 20, margin: 0 }}>
               {current.checklist.map((item, i) => (
                 <li key={i}>{item}</li>

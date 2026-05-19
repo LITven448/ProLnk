@@ -47,11 +47,11 @@ export default function DFWAirflowCalculatorGuide() {
         <p style={{ color: '#94a3b8', marginBottom: 32, lineHeight: 1.6 }}>
           Proper airflow is why some DFW rooms are comfortable and others are sweltering. DFW's large homes,
           open floor plans, and two-story designs create unique distribution challenges that undersized or
-          poorly designed duct systems can't solve. Here’s how to understand your airflow needs.
+          poorly designed duct systems can't solve. Here's how to understand your airflow needs.
         </p>
 
         <div style={{ background: '#0f2035', borderRadius: 12, padding: 24, marginBottom: 24 }}>
-          <h2 style={{ fontSize: 20, fontWeight: 700, marginBottom: 16, color: '#F5E642′ }}>📐 DFW-Specific Airflow Challenges</h2>
+          <h2 style={{ fontSize: 20, fontWeight: 700, marginBottom: 16, color: '#F5E642' }}>📐 DFW-Specific Airflow Challenges</h2>
           {[
             ['Large square footage', 'DFW homes average 2,200–3,800 sq ft. Larger homes need more airflow volume and more duct branches to reach every room.'],
             ['Two-story stratification', 'Hot air rises. In DFW summer, upper floors can run 8–12°F hotter than the thermostat setting, pushing the system to overcool downstairs.'],
@@ -66,23 +66,23 @@ export default function DFWAirflowCalculatorGuide() {
 
         <div style={{ background: '#0f2035', borderRadius: 12, padding: 24, marginBottom: 24 }}>
           <h2 style={{ fontSize: 20, fontWeight: 700, marginBottom: 16 }}>🔍 Airflow Requirements Calculator</h2>
-          <label style={{ display: 'block', marginBottom: 6, fontSize: 14, color: '#94a3b8′ }}>Home Size (sq ft)</label>
-          <input type="number" value={sqft} onChange={e => setSqft(e.target.value)} placeholder="e.g. 2800″
+          <label style={{ display: 'block', marginBottom: 6, fontSize: 14, color: '#94a3b8' }}>Home Size (sq ft)</label>
+          <input type="number" value={sqft} onChange={e => setSqft(e.target.value)} placeholder="e.g. 2800"
             style={{ background: '#1a2f4a', border: '1px solid #2a4060', borderRadius: 8, color: '#fff', padding: '10px 14px', width: '100%', marginBottom: 16, fontSize: 15, boxSizing: 'border-box' }} />
-          <label style={{ display: 'block', marginBottom: 6, fontSize: 14, color: '#94a3b8′ }}>Number of Stories</label>
+          <label style={{ display: 'block', marginBottom: 6, fontSize: 14, color: '#94a3b8' }}>Number of Stories</label>
           <div style={{ display: 'flex', gap: 10, marginBottom: 16 }}>
             {['1', '2', '3'].map(n => (
               <button key={n} onClick={() => setStories(n)}
-                style={{ flex: 1, background: stories === n ? '#F5E642′ : '#1a2f4a', color: stories === n ? '#0A1628' : '#fff', border: ’none', borderRadius: 8, padding: '12px', cursor: 'pointer', fontWeight: 700, fontSize: 15 }}>
-                {n} {n === '1′ ? ’Story' : 'Stories'}
+                style={{ flex: 1, background: stories === n ? '#F5E642' : '#1a2f4a', color: stories === n ? '#0A1628' : '#fff', border: 'none', borderRadius: 8, padding: '12px', cursor: 'pointer', fontWeight: 700, fontSize: 15 }}>
+                {n} {n === '1' ? 'Story' : 'Stories'}
               </button>
             ))}
           </div>
-          <label style={{ display: 'block', marginBottom: 6, fontSize: 14, color: '#94a3b8′ }}>Layout Type</label>
+          <label style={{ display: 'block', marginBottom: 6, fontSize: 14, color: '#94a3b8' }}>Layout Type</label>
           <div style={{ display: 'grid', gap: 10, marginBottom: 20 }}>
             {[['traditional', '🏡 Traditional (separate rooms, hallways)'], ['open', '🏠 Open Floor Plan (great room, open kitchen)'], ['vaulted', '🔺 Vaulted/Cathedral Ceilings']].map(([v, l]) => (
               <button key={v} onClick={() => setLayout(v)}
-                style={{ background: layout === v ? '#F5E642′ : '#1a2f4a', color: layout === v ? '#0A1628' : '#fff', border: ’none', borderRadius: 8, padding: '12px 16px', cursor: 'pointer', textAlign: 'left', fontSize: 14, fontWeight: 600 }}>
+                style={{ background: layout === v ? '#F5E642' : '#1a2f4a', color: layout === v ? '#0A1628' : '#fff', border: 'none', borderRadius: 8, padding: '12px 16px', cursor: 'pointer', textAlign: 'left', fontSize: 14, fontWeight: 600 }}>
                 {l}
               </button>
             ))}
@@ -94,7 +94,7 @@ export default function DFWAirflowCalculatorGuide() {
         </div>
 
         {result && (
-          <div style={{ background: '#0f2035', borderRadius: 12, padding: 24, borderLeft: '4px solid #F5E642′ }}>
+          <div style={{ background: '#0f2035', borderRadius: 12, padding: 24, borderLeft: '4px solid #F5E642' }}>
             <div style={{ color: '#F5E642', fontWeight: 800, fontSize: 18, marginBottom: 16 }}>System Airflow Target: {result.cfm}</div>
             {result.challenges.length > 0 && (
               <div style={{ marginBottom: 16 }}>

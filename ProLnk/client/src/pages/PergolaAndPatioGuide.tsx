@@ -18,7 +18,7 @@ const coverageOptions = [
 
 const windLoadNote = {
   title: '💨 DFW Wind Load Requirements — Critical',
-  body: 'DFW sits in a high-wind zone. Pergolas act like sails in straight-line storms and tornadoes. Most North Texas cities require engineered plans for freestanding structures over 200 sq ft. Posts must be set in concrete footings (typically 24–36″ deep for DFW clay soil). Failure to comply can result in demolition orders and denied insurance claims after storm damage.',
+  body: 'DFW sits in a high-wind zone. Pergolas act like sails in straight-line storms and tornadoes. Most North Texas cities require engineered plans for freestanding structures over 200 sq ft. Posts must be set in concrete footings (typically 24–36" deep for DFW clay soil). Failure to comply can result in demolition orders and denied insurance claims after storm damage.',
 };
 
 const hoaChecklist = [
@@ -58,7 +58,7 @@ export default function PergolaAndPatioGuide() {
           </p>
         </div>
 
-        <div style={{ background: '#7F1D1D', borderRadius: 12, padding: 20, marginBottom: 32, borderLeft: '4px solid #F87171′ }}>
+        <div style={{ background: '#7F1D1D', borderRadius: 12, padding: 20, marginBottom: 32, borderLeft: '4px solid #F87171' }}>
           <h2 style={{ color: '#FCA5A5', marginBottom: 10, fontSize: 18 }}>{windLoadNote.title}</h2>
           <p style={{ color: '#FEE2E2', lineHeight: 1.7, marginBottom: 0 }}>{windLoadNote.body}</p>
         </div>
@@ -72,9 +72,9 @@ export default function PergolaAndPatioGuide() {
                 <div>
                   <h3 style={{ color: '#E8EDF5', fontSize: 16, fontWeight: 700, marginBottom: 8 }}>{m.name}</h3>
                   <div style={{ display: 'flex', gap: 16, flexWrap: 'wrap', marginBottom: 8 }}>
-                    <span style={{ fontSize: 13, color: '#94A3B8′ }}>Lifespan: <strong style={{ color: '#60A5FA' }}>{m.durability}</strong></span>
-                    <span style={{ fontSize: 13, color: '#94A3B8′ }}>Maint: <strong style={{ color: '#F5E642' }}>{m.maintenance}</strong></span>
-                    <span style={{ fontSize: 13, color: '#94A3B8′ }}>Texas heat: <strong style={{ color: '#F87171' }}>{m.heat}</strong></span>
+                    <span style={{ fontSize: 13, color: '#94A3B8' }}>Lifespan: <strong style={{ color: '#60A5FA' }}>{m.durability}</strong></span>
+                    <span style={{ fontSize: 13, color: '#94A3B8' }}>Maint: <strong style={{ color: '#F5E642' }}>{m.maintenance}</strong></span>
+                    <span style={{ fontSize: 13, color: '#94A3B8' }}>Texas heat: <strong style={{ color: '#F87171' }}>{m.heat}</strong></span>
                   </div>
                   <div style={{ fontSize: 13, color: '#64748B' }}>{m.dfw}</div>
                 </div>
@@ -97,8 +97,8 @@ export default function PergolaAndPatioGuide() {
                   <div style={{ fontSize: 13, color: '#64748B' }}>{c.description}</div>
                 </div>
                 <div style={{ display: 'flex', gap: 10, alignItems: 'center' }}>
-                  <span style={{ background: '#1E2D45', padding: '4px 12px', borderRadius: 20, fontSize: 13, color: '#F5E642′ }}>☀️ {c.shade} shade</span>
-                  <span style={{ background: '#1E2D45', padding: '4px 12px', borderRadius: 20, fontSize: 13, color: '#4ADE80′ }}>{c.cost}</span>
+                  <span style={{ background: '#1E2D45', padding: '4px 12px', borderRadius: 20, fontSize: 13, color: '#F5E642' }}>☀️ {c.shade} shade</span>
+                  <span style={{ background: '#1E2D45', padding: '4px 12px', borderRadius: 20, fontSize: 13, color: '#4ADE80' }}>{c.cost}</span>
                 </div>
               </div>
             ))}
@@ -122,16 +122,16 @@ export default function PergolaAndPatioGuide() {
           <h2 style={{ color: '#F5E642', marginBottom: 20, fontSize: 20 }}>🧮 Cost Estimator</h2>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))', gap: 20, marginBottom: 20 }}>
             <div>
-              <label style={{ display: 'block', color: '#94A3B8', marginBottom: 8, fontSize: 14 }}>Width: <strong style={{ color: '#F5E642′ }}>{width} ft</strong></label>
+              <label style={{ display: 'block', color: '#94A3B8', marginBottom: 8, fontSize: 14 }}>Width: <strong style={{ color: '#F5E642' }}>{width} ft</strong></label>
               <input type="range" min={8} max={30} step={1} value={width}
                 onChange={e => setWidth(Number(e.target.value))}
-                style={{ width: '100%', accentColor: '#F5E642′ }} />
+                style={{ width: '100%', accentColor: '#F5E642' }} />
             </div>
             <div>
-              <label style={{ display: 'block', color: '#94A3B8', marginBottom: 8, fontSize: 14 }}>Depth: <strong style={{ color: '#F5E642′ }}>{depth} ft</strong></label>
+              <label style={{ display: 'block', color: '#94A3B8', marginBottom: 8, fontSize: 14 }}>Depth: <strong style={{ color: '#F5E642' }}>{depth} ft</strong></label>
               <input type="range" min={8} max={30} step={1} value={depth}
                 onChange={e => setDepth(Number(e.target.value))}
-                style={{ width: '100%', accentColor: '#F5E642′ }} />
+                style={{ width: '100%', accentColor: '#F5E642' }} />
             </div>
           </div>
           <div style={{ marginBottom: 20 }}>
@@ -140,7 +140,7 @@ export default function PergolaAndPatioGuide() {
               {materials.map(m => (
                 <button key={m.name} onClick={() => setMaterial(m.name)}
                   style={{ padding: '7px 14px', borderRadius: 8, border: 'none', cursor: 'pointer', fontSize: 13, fontWeight: 600,
-                    background: material === m.name ? '#F5E642′ : '#0A1628', color: material === m.name ? '#0A1628' : '#94A3B8' }}>
+                    background: material === m.name ? '#F5E642' : '#0A1628', color: material === m.name ? '#0A1628' : '#94A3B8' }}>
                   {m.icon} {m.name.split(' ')[0]}
                 </button>
               ))}
@@ -152,7 +152,7 @@ export default function PergolaAndPatioGuide() {
               {coverageOptions.map(c => (
                 <button key={c.type} onClick={() => setCoverage(c.type)}
                   style={{ padding: '7px 14px', borderRadius: 8, border: 'none', cursor: 'pointer', fontSize: 13, fontWeight: 600,
-                    background: coverage === c.type ? '#F5E642′ : '#0A1628', color: coverage === c.type ? '#0A1628' : '#94A3B8' }}>
+                    background: coverage === c.type ? '#F5E642' : '#0A1628', color: coverage === c.type ? '#0A1628' : '#94A3B8' }}>
                   {c.type}
                 </button>
               ))}
@@ -161,8 +161,8 @@ export default function PergolaAndPatioGuide() {
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(150px, 1fr))', gap: 14 }}>
             {[
               { label: 'Patio Size', value: `${sqft} sq ft`, color: '#60A5FA' },
-              { label: 'Estimated Cost', value: `$${Math.round(totalMin).toLocaleString()}–$${Math.round(totalMax).toLocaleString()}`, color: '#F5E642′ },
-              { label: 'Coverage Type', value: selectedCov.shade + ' shade', color: '#4ADE80′ },
+              { label: 'Estimated Cost', value: `$${Math.round(totalMin).toLocaleString()}–$${Math.round(totalMax).toLocaleString()}`, color: '#F5E642' },
+              { label: 'Coverage Type', value: selectedCov.shade + ' shade', color: '#4ADE80' },
             ].map((stat, i) => (
               <div key={i} style={{ background: '#0A1628', borderRadius: 10, padding: 16, textAlign: 'center' }}>
                 <div style={{ fontSize: 18, fontWeight: 800, color: stat.color }}>{stat.value}</div>

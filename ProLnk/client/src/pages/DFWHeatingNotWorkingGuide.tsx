@@ -15,14 +15,14 @@ const heatPumpSteps = [
 
 const diagMap: Record<string, Record<string, { steps: string; urgency: string; cost: string }>> = {
   furnace: {
-    no-heat: { steps: 'Check thermostat heat mode → check filter → check pilot/igniter → check breaker → call tech', urgency: 'High if below 40°F outside', cost: '$80–$600′ },
-    weak-heat: { steps: 'Replace filter → check all vents open → inspect heat exchanger for cracks', urgency: 'Moderate — schedule within 48h', cost: '$50–$400′ },
-    short-cycling: { steps: 'Dirty filter most common cause → check flue pipe not blocked → call if continues', urgency: 'High — can damage unit', cost: '$100–$500′ },
+    no-heat: { steps: 'Check thermostat heat mode → check filter → check pilot/igniter → check breaker → call tech', urgency: 'High if below 40°F outside', cost: '$80–$600' },
+    weak-heat: { steps: 'Replace filter → check all vents open → inspect heat exchanger for cracks', urgency: 'Moderate — schedule within 48h', cost: '$50–$400' },
+    short-cycling: { steps: 'Dirty filter most common cause → check flue pipe not blocked → call if continues', urgency: 'High — can damage unit', cost: '$100–$500' },
   },
   heat-pump: {
-    no-heat: { steps: 'Check defrost mode (wait 15 min) → switch to emergency heat → call HVAC', urgency: 'High if temps below 35°F', cost: '$150–$800′ },
-    weak-heat: { steps: 'Heat pumps lose efficiency below 35°F — normal. Supplement with emergency heat.', urgency: 'Low if above 35°F outside', cost: '$0–$200′ },
-    short-cycling: { steps: 'Check refrigerant charge → inspect reversing valve → call licensed tech', urgency: 'High — compressor at risk', cost: '$200–$1,000′ },
+    no-heat: { steps: 'Check defrost mode (wait 15 min) → switch to emergency heat → call HVAC', urgency: 'High if temps below 35°F', cost: '$150–$800' },
+    weak-heat: { steps: 'Heat pumps lose efficiency below 35°F — normal. Supplement with emergency heat.', urgency: 'Low if above 35°F outside', cost: '$0–$200' },
+    short-cycling: { steps: 'Check refrigerant charge → inspect reversing valve → call licensed tech', urgency: 'High — compressor at risk', cost: '$200–$1,000' },
   },
 };
 
@@ -40,7 +40,7 @@ export default function DFWHeatingNotWorkingGuide() {
 
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16, marginBottom: 28 }}>
           <div style={{ background: '#132035', borderRadius: 10, padding: 18 }}>
-            <h2 style={{ fontSize: 16, fontWeight: 700, marginBottom: 14, color: '#F5E642′ }}>🔥 Gas Furnace Steps</h2>
+            <h2 style={{ fontSize: 16, fontWeight: 700, marginBottom: 14, color: '#F5E642' }}>🔥 Gas Furnace Steps</h2>
             {furnaceSteps.map(s => (
               <div key={s.id} style={{ marginBottom: 12, paddingBottom: 12, borderBottom: '1px solid #1e3a5f' }}>
                 <div style={{ fontWeight: 700, fontSize: 14, marginBottom: 4 }}>{s.emoji} {s.label}</div>
@@ -49,7 +49,7 @@ export default function DFWHeatingNotWorkingGuide() {
             ))}
           </div>
           <div style={{ background: '#132035', borderRadius: 10, padding: 18 }}>
-            <h2 style={{ fontSize: 16, fontWeight: 700, marginBottom: 14, color: '#F5E642′ }}>💨 Heat Pump Steps</h2>
+            <h2 style={{ fontSize: 16, fontWeight: 700, marginBottom: 14, color: '#F5E642' }}>💨 Heat Pump Steps</h2>
             {heatPumpSteps.map(s => (
               <div key={s.id} style={{ marginBottom: 12, paddingBottom: 12, borderBottom: '1px solid #1e3a5f' }}>
                 <div style={{ fontWeight: 700, fontSize: 14, marginBottom: 4 }}>{s.emoji} {s.label}</div>
@@ -60,9 +60,9 @@ export default function DFWHeatingNotWorkingGuide() {
         </div>
 
         <div style={{ background: '#132035', borderRadius: 10, padding: 22, marginBottom: 20 }}>
-          <h2 style={{ fontSize: 18, fontWeight: 700, marginBottom: 16, color: '#F5E642′ }}>🔍 Heating Diagnosis Tool</h2>
+          <h2 style={{ fontSize: 18, fontWeight: 700, marginBottom: 16, color: '#F5E642' }}>🔍 Heating Diagnosis Tool</h2>
           <div style={{ marginBottom: 14 }}>
-            <label style={{ display: 'block', marginBottom: 6, fontSize: 13, color: '#94a3b8′ }}>Heating system type?</label>
+            <label style={{ display: 'block', marginBottom: 6, fontSize: 13, color: '#94a3b8' }}>Heating system type?</label>
             <select value={system} onChange={e => setSystem(e.target.value)} style={{ width: '100%', padding: '10px 12px', background: '#0A1628', color: '#fff', border: '1px solid #1e3a5f', borderRadius: 6, fontSize: 14 }}>
               <option value="">Select system...</option>
               <option value="furnace">Gas Furnace</option>
@@ -70,7 +70,7 @@ export default function DFWHeatingNotWorkingGuide() {
             </select>
           </div>
           <div style={{ marginBottom: 16 }}>
-            <label style={{ display: 'block', marginBottom: 6, fontSize: 13, color: '#94a3b8′ }}>What is it doing?</label>
+            <label style={{ display: 'block', marginBottom: 6, fontSize: 13, color: '#94a3b8' }}>What is it doing?</label>
             <select value={symptom} onChange={e => setSymptom(e.target.value)} style={{ width: '100%', padding: '10px 12px', background: '#0A1628', color: '#fff', border: '1px solid #1e3a5f', borderRadius: 6, fontSize: 14 }}>
               <option value="">Select symptom...</option>
               <option value="no-heat">Not producing any heat</option>
@@ -79,7 +79,7 @@ export default function DFWHeatingNotWorkingGuide() {
             </select>
           </div>
           {result && (
-            <div style={{ background: '#0A1628', borderRadius: 8, padding: 16, borderLeft: '4px solid #F5E642′ }}>
+            <div style={{ background: '#0A1628', borderRadius: 8, padding: 16, borderLeft: '4px solid #F5E642' }}>
               <div style={{ marginBottom: 8 }}><span style={{ color: '#F5E642', fontWeight: 700 }}>Steps: </span>{result.steps}</div>
               <div style={{ marginBottom: 8 }}><span style={{ color: '#F5E642', fontWeight: 700 }}>Urgency: </span>{result.urgency}</div>
               <div><span style={{ color: '#F5E642', fontWeight: 700 }}>Est. Cost: </span>{result.cost}</div>

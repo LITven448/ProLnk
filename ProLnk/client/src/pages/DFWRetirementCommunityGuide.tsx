@@ -90,7 +90,7 @@ export default function DFWRetirementCommunityGuide() {
           Texas has no state income tax and offers a property tax freeze at age 65 — making DFW one of the top retirement destinations in the US. Robson Ranch in Denton is the premier active adult community in the metro. Here's everything you need to know.
         </p>
 
-        <div style={{ background: '#0d3b6e', borderRadius: 12, padding: 20, marginBottom: 24, borderLeft: '4px solid #F5E642′ }}>
+        <div style={{ background: '#0d3b6e', borderRadius: 12, padding: 20, marginBottom: 24, borderLeft: '4px solid #F5E642' }}>
           <h3 style={{ color: '#F5E642', marginBottom: 8 }}>⭐ Texas Property Tax Freeze — Age 65+</h3>
           <p style={{ color: '#e2e8f0', margin: 0, lineHeight: 1.6 }}>
             Once you turn 65, your school district taxes are frozen at that year's assessed value — even if your home appreciates. Combined with no state income tax, Texas retirement income stretch significantly further than most states.
@@ -102,16 +102,16 @@ export default function DFWRetirementCommunityGuide() {
 
           <label style={{ display: 'block', marginBottom: 8, color: '#94a3b8', fontSize: 13 }}>Your Age: {age}</label>
           <input type="range" min={55} max={85} value={age} onChange={e => setAge(Number(e.target.value))}
-            style={{ width: '100%', marginBottom: 20, accentColor: '#F5E642′ }} />
+            style={{ width: '100%', marginBottom: 20, accentColor: '#F5E642' }} />
 
           <label style={{ display: 'block', marginBottom: 12, color: '#94a3b8', fontSize: 13 }}>Care Level Needed</label>
           <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap', marginBottom: 20 }}>
             {careOptions.map(o => (
               <button key={o} onClick={() => setCareNeed(o)}
                 style={{ padding: '8px 16px', borderRadius: 8, border: '1px solid', cursor: 'pointer', fontSize: 13,
-                  borderColor: careNeed === o ? '#F5E642′ : '#1e3a5f',
-                  background: careNeed === o ? '#F5E642′ : ’transparent',
-                  color: careNeed === o ? '#0A1628′ : '#94a3b8' }}>
+                  borderColor: careNeed === o ? '#F5E642' : '#1e3a5f',
+                  background: careNeed === o ? '#F5E642' : 'transparent',
+                  color: careNeed === o ? '#0A1628' : '#94a3b8' }}>
                 {o}
               </button>
             ))}
@@ -121,7 +121,7 @@ export default function DFWRetirementCommunityGuide() {
           <div style={{ display: 'flex', alignItems: 'center', gap: 16, marginBottom: 24 }}>
             <input type="range" min={200000} max={800000} step={25000} value={budget}
               onChange={e => setBudget(Number(e.target.value))}
-              style={{ flex: 1, accentColor: '#F5E642′ }} />
+              style={{ flex: 1, accentColor: '#F5E642' }} />
             <span style={{ color: '#F5E642', fontWeight: 700 }}>${budget.toLocaleString()}</span>
           </div>
 
@@ -135,7 +135,7 @@ export default function DFWRetirementCommunityGuide() {
           <div>
             <h2 style={{ marginBottom: 16 }}>{results.length > 0 ? `✅ ${results.length} Communities Match` : '❌ Adjust filters to see options'}</h2>
             {results.map(c => (
-              <div key={c.name} style={{ background: '#111e35', borderRadius: 12, padding: 20, marginBottom: 16, borderLeft: '4px solid #F5E642′ }}>
+              <div key={c.name} style={{ background: '#111e35', borderRadius: 12, padding: 20, marginBottom: 16, borderLeft: '4px solid #F5E642' }}>
                 <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: 8 }}>
                   <div>
                     <h3 style={{ margin: 0, fontSize: 18 }}>{c.name}</h3>
@@ -144,7 +144,7 @@ export default function DFWRetirementCommunityGuide() {
                   {c.taxFreeze && <span style={{ background: '#1a4a1a', color: '#4ade80', padding: '4px 10px', borderRadius: 20, fontSize: 12 }}>Tax Freeze Eligible</span>}
                 </div>
                 <p style={{ color: '#94a3b8', marginBottom: 12 }}>{c.highlight}</p>
-                <div style={{ fontSize: 13, color: '#94a3b8′ }}>
+                <div style={{ fontSize: 13, color: '#94a3b8' }}>
                   {c.homePriceRange[1] > 0
                     ? <span>🏠 ${c.homePriceRange[0].toLocaleString()}–${c.homePriceRange[1].toLocaleString()} · HOA ${c.monthlyHOA}/mo</span>
                     : <span>💰 ~${c.monthlyHOA.toLocaleString()}/mo all-inclusive</span>}

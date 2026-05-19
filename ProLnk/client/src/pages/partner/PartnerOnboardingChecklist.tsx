@@ -125,7 +125,7 @@ export default function PartnerOnboardingChecklist() {
                 borderRadius: 14,
                 marginBottom: 16,
                 boxShadow: '0 2px 8px rgba(0,0,0,0.05)',
-                border: isOpen ? '2px solid #F5E642′ : '2px solid transparent',
+                border: isOpen ? '2px solid #F5E642' : '2px solid transparent',
                 overflow: 'hidden',
               }}
             >
@@ -169,7 +169,7 @@ export default function PartnerOnboardingChecklist() {
                           height: 22,
                           borderRadius: 6,
                           border: done ? 'none' : '2px solid #CBD5E1',
-                          background: done ? '#F5E642′ : '#fff',
+                          background: done ? '#F5E642' : '#fff',
                           display: 'flex',
                           alignItems: 'center',
                           justifyContent: 'center',
@@ -181,7 +181,7 @@ export default function PartnerOnboardingChecklist() {
                         }}>
                           {done ? '✓' : ''}
                         </div>
-                        <span style={{ fontSize: 14, color: done ? '#94A3B8′ : '#334155', textDecoration: done ? ’line-through' : 'none', lineHeight: 1.5 }}>
+                        <span style={{ fontSize: 14, color: done ? '#94A3B8' : '#334155', textDecoration: done ? 'line-through' : 'none', lineHeight: 1.5 }}>
                           {item}
                         </span>
                       </div>

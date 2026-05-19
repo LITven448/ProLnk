@@ -31,14 +31,14 @@ export default function DFWEquinePropertyGuide2026() {
           <h2 style={{ fontSize: 18, fontWeight: 700, marginBottom: 16 }}>📐 Property Size → Maintenance Checklist</h2>
           <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap', marginBottom: 20 }}>
             {ACREAGES.map(a => (
-              <button key={a.id} onClick={() => setSelectedAcreage(a.id)} style={{ padding: '10px 20px', borderRadius: 8, border: 'none', cursor: 'pointer', fontWeight: 700, backgroundColor: selectedAcreage === a.id ? '#F5E642′ : '#1e2d4a', color: selectedAcreage === a.id ? '#0A1628' : '#fff' }}>{a.label}</button>
+              <button key={a.id} onClick={() => setSelectedAcreage(a.id)} style={{ padding: '10px 20px', borderRadius: 8, border: 'none', cursor: 'pointer', fontWeight: 700, backgroundColor: selectedAcreage === a.id ? '#F5E642' : '#1e2d4a', color: selectedAcreage === a.id ? '#0A1628' : '#fff' }}>{a.label}</button>
             ))}
           </div>
           {found && (
             <div>
               <h3 style={{ color: '#F5E642', marginBottom: 12, fontSize: 15 }}>Maintenance Checklist for {found.label}:</h3>
               {found.checklist.map((item, i) => (
-                <div key={i} style={{ padding: '8px 0', borderBottom: '1px solid #1e2d4a', fontSize: 14, color: '#cbd5e1′ }}>✅ {item}</div>
+                <div key={i} style={{ padding: '8px 0', borderBottom: '1px solid #1e2d4a', fontSize: 14, color: '#cbd5e1' }}>✅ {item}</div>
               ))}
             </div>
           )}

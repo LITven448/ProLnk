@@ -36,7 +36,7 @@ export default function DFWHVACDFWFuture() {
             <div key={t.title} style={{ backgroundColor: '#0f2040', borderRadius: '14px', padding: '22px', border: '1px solid #1e3a5f' }}>
               <div style={{ fontSize: '28px', marginBottom: '8px' }}>{t.emoji}</div>
               <div style={{ fontSize: '15px', fontWeight: '700', color: '#F5E642', marginBottom: '4px' }}>{t.title}</div>
-              <div style={{ fontSize: '12px', color: '#64748b', marginBottom: '10px', fontWeight: '600′ }}>{t.timeline}</div>
+              <div style={{ fontSize: '12px', color: '#64748b', marginBottom: '10px', fontWeight: '600' }}>{t.timeline}</div>
               <div style={{ fontSize: '13px', color: '#94a3b8', lineHeight: 1.6 }}>{t.desc}</div>
             </div>
           ))}
@@ -53,8 +53,8 @@ export default function DFWHVACDFWFuture() {
                 key={s.id}
                 onClick={() => setSelected(s.id)}
                 style={{
-                  backgroundColor: selected === s.id ? '#F5E642′ : '#0f2040',
-                  color: selected === s.id ? '#0A1628′ : '#fff',
+                  backgroundColor: selected === s.id ? '#F5E642' : '#0f2040',
+                  color: selected === s.id ? '#0A1628' : '#fff',
                   border: `2px solid ${selected === s.id ? '#F5E642' : '#1e3a5f'}`,
                   borderRadius: '12px',
                   padding: '16px',

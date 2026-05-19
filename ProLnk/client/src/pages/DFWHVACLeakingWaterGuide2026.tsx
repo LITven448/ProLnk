@@ -15,7 +15,7 @@ export default function DFWHVACLeakingWaterGuide2026() {
       <div style={{ maxWidth: 720, margin: '0 auto' }}>
         <div style={{ background: '#F5E642', color: '#0A1628', borderRadius: 12, padding: '24px', marginBottom: 32 }}>
           <h1 style={{ fontSize: 26, fontWeight: 800, margin: 0 }}>💧 DFW HVAC Leaking Water Guide — 2026</h1>
-          <p style={{ margin: '8px 0 0', fontWeight: 600 }}>DFW's summer humidity makes condensate drains the #1 HVAC service call. Here’s what to do.</p>
+          <p style={{ margin: '8px 0 0', fontWeight: 600 }}>DFW's summer humidity makes condensate drains the #1 HVAC service call. Here's what to do.</p>
         </div>
 
         <div style={{ background: '#112240', borderRadius: 12, padding: 24, marginBottom: 24 }}>
@@ -23,7 +23,7 @@ export default function DFWHVACLeakingWaterGuide2026() {
           {['Locate condensate drain cleanout — white PVC pipe near air handler', 'Pour 1 cup white vinegar or distilled bleach solution monthly', 'Use wet/dry vac at outdoor drain exit to pull clog', 'Run AC — check drain is flowing outside within 30 min', 'Repeat monthly June-Sept during DFW humidity season'].map((item, i) => (
             <div key={i} style={{ display: 'flex', gap: 10, padding: '8px 0', borderBottom: '1px solid #1e3a5f' }}>
               <span style={{ color: '#F5E642', fontWeight: 800 }}>{i + 1}.</span>
-              <span style={{ color: '#cdd9e5′ }}>{item}</span>
+              <span style={{ color: '#cdd9e5' }}>{item}</span>
             </div>
           ))}
         </div>
@@ -33,7 +33,7 @@ export default function DFWHVACLeakingWaterGuide2026() {
           <div style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
             {leakLocations.map(l => (
               <button key={l.id} onClick={() => setSelected(l.id === selected ? null : l.id)}
-                style={{ background: selected === l.id ? '#F5E642′ : '#1e3a5f', color: selected === l.id ? '#0A1628' : '#fff', border: ’none', borderRadius: 8, padding: '14px 18px', fontSize: 15, fontWeight: 700, cursor: 'pointer', textAlign: 'left' }}>
+                style={{ background: selected === l.id ? '#F5E642' : '#1e3a5f', color: selected === l.id ? '#0A1628' : '#fff', border: 'none', borderRadius: 8, padding: '14px 18px', fontSize: 15, fontWeight: 700, cursor: 'pointer', textAlign: 'left' }}>
                 {l.label}
               </button>
             ))}
@@ -43,7 +43,7 @@ export default function DFWHVACLeakingWaterGuide2026() {
               <div style={{ marginBottom: 16 }}>
                 <div style={{ color: '#F5E642', fontWeight: 700, marginBottom: 8 }}>🔍 Likely Causes</div>
                 {active.causes.map((cause, i) => (
-                  <div key={i} style={{ padding: '6px 0', borderBottom: '1px solid #1e3a5f', color: '#cdd9e5′ }}>• {cause}</div>
+                  <div key={i} style={{ padding: '6px 0', borderBottom: '1px solid #1e3a5f', color: '#cdd9e5' }}>• {cause}</div>
                 ))}
               </div>
               <div style={{ background: '#112240', borderRadius: 8, padding: 16, marginTop: 12 }}>

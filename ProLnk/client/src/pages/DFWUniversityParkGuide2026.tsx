@@ -37,7 +37,7 @@ export default function DFWUniversityParkGuide2026() {
         <div style={{ display: 'flex', flexDirection: 'column', gap: 10, marginBottom: 28 }}>
           {propTypes.map(p => (
             <button key={p.id} onClick={() => setSelected(p.id === selected ? null : p.id)}
-              style={{ background: selected === p.id ? '#F5E642′ : '#111f35', color: selected === p.id ? '#0A1628' : '#fff', border: ’none', borderRadius: 10, padding: '14px 18px', textAlign: 'left', cursor: 'pointer', fontWeight: 600, fontSize: 15 }}>
+              style={{ background: selected === p.id ? '#F5E642' : '#111f35', color: selected === p.id ? '#0A1628' : '#fff', border: 'none', borderRadius: 10, padding: '14px 18px', textAlign: 'left', cursor: 'pointer', fontWeight: 600, fontSize: 15 }}>
               {p.label}
             </button>
           ))}

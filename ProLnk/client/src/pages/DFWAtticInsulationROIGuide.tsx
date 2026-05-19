@@ -33,7 +33,7 @@ export default function DFWAtticInsulationROIGuide() {
     const targetCost = 1.4;
     const addedCostPerSqFt = Math.max(targetCost - currentCost, 0.5);
     const totalCost = Math.round(area * addedCostPerSqFt + 300);
-    const annualSavings = Math.round(area * 0.18 * (currentR === 'r7′ ? 1.4 : currentR === ’r11′ ? 1.2 : currentR === ’r19′ ? 0.9 : 0.6));
+    const annualSavings = Math.round(area * 0.18 * (currentR === 'r7' ? 1.4 : currentR === 'r11' ? 1.2 : currentR === 'r19' ? 0.9 : 0.6));
     const rebateEligible = currentR !== 'r38';
     const rebate = rebateEligible ? Math.min(Math.round(area * 0.15), 1500) : 0;
     const netCost = totalCost - rebate;
@@ -71,7 +71,7 @@ export default function DFWAtticInsulationROIGuide() {
         <div style={styles.card}>
           <h2 style={styles.h2}>💰 Oncor Rebate Program</h2>
           <div style={styles.rebate}>
-            <strong style={{ color: '#3ddc84′ }}>Oncor Energy Efficiency Rebate:</strong> Up to $1,500 for upgrading attic insulation to R-38 or above. Must use a participating contractor. Rebates are processed within 60–90 days of project completion. Check oncor.com/savings for current availability — programs change seasonally.
+            <strong style={{ color: '#3ddc84' }}>Oncor Energy Efficiency Rebate:</strong> Up to $1,500 for upgrading attic insulation to R-38 or above. Must use a participating contractor. Rebates are processed within 60–90 days of project completion. Check oncor.com/savings for current availability — programs change seasonally.
           </div>
         </div>
 
@@ -80,16 +80,16 @@ export default function DFWAtticInsulationROIGuide() {
           <div style={styles.row}>
             <div>
               <label style={styles.label}>Attic Square Footage</label>
-              <input style={styles.input} type="number" value={sqFt} onChange={e => setSqFt(e.target.value)} placeholder="e.g. 1500″ />
+              <input style={styles.input} type="number" value={sqFt} onChange={e => setSqFt(e.target.value)} placeholder="e.g. 1500" />
             </div>
             <div>
               <label style={styles.label}>Current R-Value</label>
               <select style={styles.select} value={currentR} onChange={e => setCurrentR(e.target.value)}>
-                <option value="r7″>R-7 or less (very old)</option>
-                <option value="r11″>R-11 (common pre-1990)</option>
-                <option value="r19″>R-19 (1990s homes)</option>
-                <option value="r30″>R-30 (partial upgrade)</option>
-                <option value="r38″>R-38+ (already upgraded)</option>
+                <option value="r7">R-7 or less (very old)</option>
+                <option value="r11">R-11 (common pre-1990)</option>
+                <option value="r19">R-19 (1990s homes)</option>
+                <option value="r30">R-30 (partial upgrade)</option>
+                <option value="r38">R-38+ (already upgraded)</option>
               </select>
             </div>
           </div>

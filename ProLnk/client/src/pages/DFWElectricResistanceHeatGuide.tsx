@@ -43,7 +43,7 @@ export default function DFWElectricResistanceHeatGuide() {
           <div style={{ color: '#F5E642', fontWeight: 700, marginBottom: '1rem' }}>💡 Why Electric Resistance Is Costly in DFW</div>
           <ul style={{ color: '#ccc', lineHeight: 1.8, paddingLeft: '1.2rem' }}>
             <li>Electric resistance converts 1 kWh of electricity → 1 unit of heat (100% efficient)</li>
-            <li>Heat pumps move heat — converting 1 kWh → 3–4 units of heat (<strong style={{ color: '#F5E642′ }}>300–400% efficient</strong>)</li>
+            <li>Heat pumps move heat — converting 1 kWh → 3–4 units of heat (<strong style={{ color: '#F5E642' }}>300–400% efficient</strong>)</li>
             <li>DFW mild winters are ideal for heat pumps — they work best above 25°F</li>
             <li>Electric resistance heating costs 3x more per BTU than a modern heat pump in DFW</li>
             <li>Baseboard heaters and electric furnaces found in 1960s–80s DFW construction</li>
@@ -72,7 +72,7 @@ export default function DFWElectricResistanceHeatGuide() {
           <div style={{ display: 'grid', gap: '1rem', marginBottom: '1rem' }}>
             <div>
               <label style={{ color: '#aaa', fontSize: '0.9rem' }}>Home Size (sq ft)</label>
-              <input type="number" value={sqft} onChange={e => setSqft(e.target.value)} placeholder="e.g. 1800″
+              <input type="number" value={sqft} onChange={e => setSqft(e.target.value)} placeholder="e.g. 1800"
                 style={{ width: '100%', marginTop: 6, padding: '0.6rem', borderRadius: 6, border: '1px solid #334', background: '#0A1628', color: '#fff', boxSizing: 'border-box' }} />
             </div>
             <div>

@@ -55,14 +55,14 @@ const ACTIVE_TESTS = [
 ];
 
 const COMPLETED_TESTS = [
-  { name: "Founding Tier Landing Page Hero", winner: "Variant B", lift: "+22%", date: "Apr 28, 2026″, applied: true },
-  { name: "Pro Waitlist Form Fields", winner: "Variant A", lift: "+9%", date: "Apr 15, 2026″, applied: true },
-  { name: "Email Subject: Welcome Flow", winner: "Variant B", lift: "+31%", date: "Apr 2, 2026″, applied: true },
-  { name: "Homeowner Signup CTA Color", winner: "Variant A", lift: "+14%", date: "Mar 22, 2026″, applied: true },
-  { name: "Admin Dashboard Layout", winner: "Variant A", lift: "+7%", date: "Mar 10, 2026″, applied: false },
-  { name: "Commission Tooltip Copy", winner: "Variant B", lift: "+18%", date: "Feb 28, 2026″, applied: true },
-  { name: "Network Tree Visualization", winner: "Variant B", lift: "+44%", date: "Feb 14, 2026″, applied: true },
-  { name: "Mobile Nav Placement", winner: "Variant A", lift: "+11%", date: "Jan 30, 2026″, applied: true },
+  { name: "Founding Tier Landing Page Hero", winner: "Variant B", lift: "+22%", date: "Apr 28, 2026", applied: true },
+  { name: "Pro Waitlist Form Fields", winner: "Variant A", lift: "+9%", date: "Apr 15, 2026", applied: true },
+  { name: "Email Subject: Welcome Flow", winner: "Variant B", lift: "+31%", date: "Apr 2, 2026", applied: true },
+  { name: "Homeowner Signup CTA Color", winner: "Variant A", lift: "+14%", date: "Mar 22, 2026", applied: true },
+  { name: "Admin Dashboard Layout", winner: "Variant A", lift: "+7%", date: "Mar 10, 2026", applied: false },
+  { name: "Commission Tooltip Copy", winner: "Variant B", lift: "+18%", date: "Feb 28, 2026", applied: true },
+  { name: "Network Tree Visualization", winner: "Variant B", lift: "+44%", date: "Feb 14, 2026", applied: true },
+  { name: "Mobile Nav Placement", winner: "Variant A", lift: "+11%", date: "Jan 30, 2026", applied: true },
 ];
 
 const COMPONENTS = [
@@ -103,7 +103,7 @@ function ConfidenceBar({ confidence, winner }: { confidence: number; winner: str
     "Too early to call";
 
   return (
-    <div className="space-y-1.5″>
+    <div className="space-y-1.5">
       <div className="flex items-center justify-between">
         <span className="text-xs font-semibold" style={{ color }}>{confidence}% confidence</span>
         <span className="text-xs" style={{ color: D.muted }}>{label}</span>
@@ -119,10 +119,10 @@ function ConfidenceBar({ confidence, winner }: { confidence: number; winner: str
 }
 
 function StatSigCalc() {
-  const [rateA, setRateA] = useState("6.4″);
-  const [rateB, setRateB] = useState("8.1″);
-  const [nA, setNA] = useState("1420″);
-  const [nB, setNB] = useState("1420″);
+  const [rateA, setRateA] = useState("6.4");
+  const [rateB, setRateB] = useState("8.1");
+  const [nA, setNA] = useState("1420");
+  const [nB, setNB] = useState("1420");
 
   const calculate = () => {
     const ra = parseFloat(rateA) / 100;
@@ -144,10 +144,10 @@ function StatSigCalc() {
   const result = calculate();
 
   return (
-    <div className="rounded-2xl p-6 space-y-5″ style={{ background: D.card, border: `1px solid ${D.border}` }}>
-      <div className="flex items-center gap-3 mb-1″>
+    <div className="rounded-2xl p-6 space-y-5" style={{ background: D.card, border: `1px solid ${D.border}` }}>
+      <div className="flex items-center gap-3 mb-1">
         <div className="w-9 h-9 rounded-xl flex items-center justify-center" style={{ background: `${D.purple}20` }}>
-          <BarChart2 className="w-5 h-5″ style={{ color: D.purple }} />
+          <BarChart2 className="w-5 h-5" style={{ color: D.purple }} />
         </div>
         <div>
           <p className="font-bold text-sm" style={{ color: D.text }}>Statistical Significance Calculator</p>
@@ -155,8 +155,8 @@ function StatSigCalc() {
         </div>
       </div>
 
-      <div className="grid grid-cols-2 gap-4″>
-        <div className="space-y-1.5″>
+      <div className="grid grid-cols-2 gap-4">
+        <div className="space-y-1.5">
           <label className="text-xs font-semibold uppercase tracking-widest" style={{ color: D.muted }}>Variant A rate (%)</label>
           <input
             type="number"
@@ -164,10 +164,10 @@ function StatSigCalc() {
             onChange={e => setRateA(e.target.value)}
             className="w-full px-3 py-2 rounded-xl text-sm"
             style={{ background: D.surface, border: `1px solid ${D.borderHi}`, color: D.text }}
-            placeholder="6.4″
+            placeholder="6.4"
           />
         </div>
-        <div className="space-y-1.5″>
+        <div className="space-y-1.5">
           <label className="text-xs font-semibold uppercase tracking-widest" style={{ color: D.muted }}>Variant B rate (%)</label>
           <input
             type="number"
@@ -175,10 +175,10 @@ function StatSigCalc() {
             onChange={e => setRateB(e.target.value)}
             className="w-full px-3 py-2 rounded-xl text-sm"
             style={{ background: D.surface, border: `1px solid ${D.borderHi}`, color: D.text }}
-            placeholder="8.1″
+            placeholder="8.1"
           />
         </div>
-        <div className="space-y-1.5″>
+        <div className="space-y-1.5">
           <label className="text-xs font-semibold uppercase tracking-widest" style={{ color: D.muted }}>Sample A</label>
           <input
             type="number"
@@ -186,10 +186,10 @@ function StatSigCalc() {
             onChange={e => setNA(e.target.value)}
             className="w-full px-3 py-2 rounded-xl text-sm"
             style={{ background: D.surface, border: `1px solid ${D.borderHi}`, color: D.text }}
-            placeholder="1420″
+            placeholder="1420"
           />
         </div>
-        <div className="space-y-1.5″>
+        <div className="space-y-1.5">
           <label className="text-xs font-semibold uppercase tracking-widest" style={{ color: D.muted }}>Sample B</label>
           <input
             type="number"
@@ -197,23 +197,23 @@ function StatSigCalc() {
             onChange={e => setNB(e.target.value)}
             className="w-full px-3 py-2 rounded-xl text-sm"
             style={{ background: D.surface, border: `1px solid ${D.borderHi}`, color: D.text }}
-            placeholder="1420″
+            placeholder="1420"
           />
         </div>
       </div>
 
       {result && (
         <div
-          className="rounded-xl p-4 space-y-2″
+          className="rounded-xl p-4 space-y-2"
           style={{
             background: result.significant ? `${D.green}10` : `${D.amber}10`,
             border: `1px solid ${result.significant ? D.green : D.amber}40`,
           }}
         >
-          <div className="flex items-center gap-2″>
+          <div className="flex items-center gap-2">
             {result.significant
-              ? <CheckCircle className="w-4 h-4″ style={{ color: D.green }} />
-              : <AlertTriangle className="w-4 h-4″ style={{ color: D.amber }} />
+              ? <CheckCircle className="w-4 h-4" style={{ color: D.green }} />
+              : <AlertTriangle className="w-4 h-4" style={{ color: D.amber }} />
             }
             <span className="text-sm font-bold" style={{ color: result.significant ? D.green : D.amber }}>
               {result.significant
@@ -238,7 +238,7 @@ function CreateTestForm({ onClose }: { onClose: () => void }) {
   });
 
   const field = (key: keyof typeof form, label: string, placeholder: string, type = "text") => (
-    <div className="space-y-1.5″>
+    <div className="space-y-1.5">
       <label className="text-xs font-semibold uppercase tracking-widest" style={{ color: D.muted }}>{label}</label>
       {key === "component" ? (
         <select
@@ -274,11 +274,11 @@ function CreateTestForm({ onClose }: { onClose: () => void }) {
   );
 
   return (
-    <div className="rounded-2xl p-6 space-y-5″ style={{ background: D.card, border: `1px solid ${D.border}` }}>
+    <div className="rounded-2xl p-6 space-y-5" style={{ background: D.card, border: `1px solid ${D.border}` }}>
       <div className="flex items-center justify-between">
-        <div className="flex items-center gap-3″>
+        <div className="flex items-center gap-3">
           <div className="w-9 h-9 rounded-xl flex items-center justify-center" style={{ background: `${D.cyan}20` }}>
-            <Plus className="w-5 h-5″ style={{ color: D.cyan }} />
+            <Plus className="w-5 h-5" style={{ color: D.cyan }} />
           </div>
           <p className="font-bold text-sm" style={{ color: D.text }}>Create New Test</p>
         </div>
@@ -287,13 +287,13 @@ function CreateTestForm({ onClose }: { onClose: () => void }) {
         </button>
       </div>
 
-      <div className="grid grid-cols-2 gap-4″>
+      <div className="grid grid-cols-2 gap-4">
         {field("name", "Test Name", "e.g. Homepage Hero CTA")}
         {field("component", "Page / Component", "")}
         {field("variantA", "Variant A Description", "Control — current version")}
         {field("variantB", "Variant B Description", "Challenger — proposed change")}
         {field("metric", "Primary Metric", "")}
-        {field("sampleTarget", "Sample Size Target", "e.g. 2000″, "number")}
+        {field("sampleTarget", "Sample Size Target", "e.g. 2000", "number")}
       </div>
 
       <button
@@ -322,16 +322,16 @@ export default function ABTestingCenter() {
 
   return (
     <AdminLayout>
-      <div className="min-h-screen p-6 space-y-8″ style={{ background: D.bg, fontFamily: "'Inter', sans-serif" }}>
+      <div className="min-h-screen p-6 space-y-8" style={{ background: D.bg, fontFamily: "'Inter', sans-serif" }}>
 
         {/* Header */}
         <div className="flex items-center justify-between">
-          <div className="flex items-center gap-4″>
+          <div className="flex items-center gap-4">
             <div
               className="w-12 h-12 rounded-2xl flex items-center justify-center"
               style={{ background: `linear-gradient(135deg, ${D.cyan}30, ${D.purple}30)`, border: `1px solid ${D.cyan}40` }}
             >
-              <FlaskConical className="w-6 h-6″ style={{ color: D.cyan }} />
+              <FlaskConical className="w-6 h-6" style={{ color: D.cyan }} />
             </div>
             <div>
               <h1 className="text-2xl font-black tracking-tight" style={{ color: D.text }}>A/B Testing Center</h1>
@@ -343,17 +343,17 @@ export default function ABTestingCenter() {
             style={{ background: `linear-gradient(135deg, ${D.cyan}cc, ${D.purple}cc)`, color: "#fff" }}
             onClick={() => setShowCreate(!showCreate)}
           >
-            <Plus className="w-4 h-4″ />
+            <Plus className="w-4 h-4" />
             New Test
           </button>
         </div>
 
         {/* Impact banner */}
         <div
-          className="rounded-2xl p-4 flex items-center gap-4″
+          className="rounded-2xl p-4 flex items-center gap-4"
           style={{ background: `linear-gradient(135deg, ${D.green}12, ${D.cyan}12)`, border: `1px solid ${D.green}30` }}
         >
-          <TrendingUp className="w-5 h-5 flex-shrink-0″ style={{ color: D.green }} />
+          <TrendingUp className="w-5 h-5 flex-shrink-0" style={{ color: D.green }} />
           <p className="text-sm" style={{ color: D.text }}>
             <span className="font-bold" style={{ color: D.green }}>A/B tests have improved platform conversion by an estimated 34% this year.</span>
             {" "}8 completed tests, 6 applied to production.
@@ -361,11 +361,11 @@ export default function ABTestingCenter() {
         </div>
 
         {/* Metric row */}
-        <div className="grid grid-cols-4 gap-4″>
-          <MetricCard label="Active Tests" value="3″ sub="Running now" color={D.cyan} icon={<Play className="w-4 h-4" />} />
-          <MetricCard label="Completed" value="8″ sub="All time" color={D.green} icon={<CheckCircle className="w-4 h-4" />} />
-          <MetricCard label="Avg Confidence" value="63%" sub="Across active tests" color={D.amber} icon={<Target className="w-4 h-4″ />} />
-          <MetricCard label="Avg Lift (Won)" value="+19%" sub="Applied tests" color={D.purple} icon={<Award className="w-4 h-4″ />} />
+        <div className="grid grid-cols-4 gap-4">
+          <MetricCard label="Active Tests" value="3" sub="Running now" color={D.cyan} icon={<Play className="w-4 h-4" />} />
+          <MetricCard label="Completed" value="8" sub="All time" color={D.green} icon={<CheckCircle className="w-4 h-4" />} />
+          <MetricCard label="Avg Confidence" value="63%" sub="Across active tests" color={D.amber} icon={<Target className="w-4 h-4" />} />
+          <MetricCard label="Avg Lift (Won)" value="+19%" sub="Applied tests" color={D.purple} icon={<Award className="w-4 h-4" />} />
         </div>
 
         {/* Create form */}
@@ -383,17 +383,17 @@ export default function ABTestingCenter() {
               </div>
             }
           />
-          <div className="space-y-4″>
+          <div className="space-y-4">
             {ACTIVE_TESTS.map(test => (
               <div
                 key={test.id}
-                className="rounded-2xl p-6 space-y-5″
+                className="rounded-2xl p-6 space-y-5"
                 style={{ background: D.card, border: `1px solid ${D.border}` }}
               >
                 {/* Test header */}
-                <div className="flex items-start justify-between gap-4″>
-                  <div className="flex-1″>
-                    <div className="flex items-center gap-2 mb-1″>
+                <div className="flex items-start justify-between gap-4">
+                  <div className="flex-1">
+                    <div className="flex items-center gap-2 mb-1">
                       <span className="text-base font-bold" style={{ color: D.text }}>{test.name}</span>
                       {test.confidence >= 80 && (
                         <span className="px-2 py-0.5 rounded-full text-xs font-bold" style={{ background: `${D.amber}20`, color: D.amber }}>
@@ -404,20 +404,20 @@ export default function ABTestingCenter() {
                     <p className="text-xs" style={{ color: D.muted }}>{test.hypothesis}</p>
                   </div>
                   <div className="flex items-center gap-2 text-xs" style={{ color: D.muted }}>
-                    <Clock className="w-3.5 h-3.5″ />
+                    <Clock className="w-3.5 h-3.5" />
                     {test.daysRunning} days
                   </div>
                 </div>
 
                 {/* Variants */}
-                <div className="grid grid-cols-2 gap-3″>
+                <div className="grid grid-cols-2 gap-3">
                   {[
                     { label: "A", desc: test.variantA, rate: test.rateA, isWinner: test.winner === "A" },
                     { label: "B", desc: test.variantB, rate: test.rateB, isWinner: test.winner === "B" },
                   ].map(v => (
                     <div
                       key={v.label}
-                      className="rounded-xl p-4 space-y-2″
+                      className="rounded-xl p-4 space-y-2"
                       style={{
                         background: D.surface,
                         border: `1px solid ${v.isWinner && test.winner ? D.cyan : D.border}`,
@@ -439,7 +439,7 @@ export default function ABTestingCenter() {
                 </div>
 
                 {/* Confidence + sample */}
-                <div className="space-y-3″>
+                <div className="space-y-3">
                   <ConfidenceBar confidence={test.confidence} winner={test.winner} />
                   <div className="flex items-center justify-between text-xs" style={{ color: D.muted }}>
                     <span>Sample size: <span style={{ color: D.text }}>{test.sampleSize.toLocaleString()}</span></span>

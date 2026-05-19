@@ -10,24 +10,24 @@ import {
 import { toast } from "sonner";
 
 const D = {
-  bg: "#0D0F14″,
+  bg: "#0D0F14",
   surface: "#13161E",
   card: "#1A1E2A",
   border: "#252A3A",
   text: "#F0F2FF",
-  muted: "#8B91A8″,
-  dim: "#555B72″,
-  teal: "#14B8A6″,
-  green: "#00E676″,
-  amber: "#FFB300″,
-  red: "#FF4444″,
+  muted: "#8B91A8",
+  dim: "#555B72",
+  teal: "#14B8A6",
+  green: "#00E676",
+  amber: "#FFB300",
+  red: "#FF4444",
   cyan: "#00D4FF",
-  purple: "#A855F7″,
+  purple: "#A855F7",
 };
 
 const KPI = [
-  { label: "Active Subscribers", value: "147″, sub: "Paying $149/mo", icon: Users, color: D.teal },
-  { label: "Monthly Sub Revenue", value: "$21,903″, sub: "Pure recurring", icon: DollarSign, color: D.green },
+  { label: "Active Subscribers", value: "147", sub: "Paying $149/mo", icon: Users, color: D.teal },
+  { label: "Monthly Sub Revenue", value: "$21,903", sub: "Pure recurring", icon: DollarSign, color: D.green },
   { label: "Churn Rate", value: "2.1%/mo", sub: "~3 subs lost/month", icon: TrendingDown, color: D.amber },
   { label: "Avg Sub Age", value: "4.2 mo", sub: "Time since activation", icon: Clock, color: D.purple },
 ];
@@ -65,10 +65,10 @@ const AT_RISK = [
 ];
 
 const COHORTS = [
-  { month: "Feb 2026″, started: 32, active: 28, ret1: "100%", ret3: "91%", ret6: "—" },
-  { month: "Mar 2026″, started: 41, active: 38, ret1: "100%", ret3: "93%", ret6: "—" },
-  { month: "Apr 2026″, started: 52, active: 50, ret1: "100%", ret3: "—", ret6: "—" },
-  { month: "May 2026″, started: 22, active: 22, ret1: "100%", ret3: "—", ret6: "—" },
+  { month: "Feb 2026", started: 32, active: 28, ret1: "100%", ret3: "91%", ret6: "—" },
+  { month: "Mar 2026", started: 41, active: 38, ret1: "100%", ret3: "93%", ret6: "—" },
+  { month: "Apr 2026", started: 52, active: 50, ret1: "100%", ret3: "—", ret6: "—" },
+  { month: "May 2026", started: 22, active: 22, ret1: "100%", ret3: "—", ret6: "—" },
 ];
 
 function riskColor(score: number) {
@@ -87,29 +87,29 @@ export default function SubscriptionAnalytics() {
 
   return (
     <AdminLayout>
-      <div className="space-y-8″ style={{ fontFamily: "'Inter', system-ui, sans-serif" }}>
+      <div className="space-y-8" style={{ fontFamily: "'Inter', system-ui, sans-serif" }}>
 
         {/* Header */}
         <div>
-          <h1 className="text-3xl font-black tracking-tight flex items-center gap-3″ style={{ color: D.text }}>
-            <DollarSign className="w-8 h-8″ style={{ color: D.teal }} />
+          <h1 className="text-3xl font-black tracking-tight flex items-center gap-3" style={{ color: D.text }}>
+            <DollarSign className="w-8 h-8" style={{ color: D.teal }} />
             Subscription Analytics
           </h1>
           <p className="mt-1 text-sm" style={{ color: D.muted }}>Your $149/month recurring engine</p>
         </div>
 
         {/* KPI Row */}
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4″>
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
           {KPI.map((k) => (
             <div
               key={k.label}
-              className="rounded-2xl p-5 flex flex-col gap-2″
+              className="rounded-2xl p-5 flex flex-col gap-2"
               style={{ background: D.card, border: `1px solid ${D.border}` }}
             >
               <div className="flex items-center justify-between">
                 <span className="text-xs uppercase tracking-widest font-semibold" style={{ color: D.muted }}>{k.label}</span>
                 <div className="w-8 h-8 rounded-lg flex items-center justify-center" style={{ background: `${k.color}22` }}>
-                  <k.icon className="w-4 h-4″ style={{ color: k.color }} />
+                  <k.icon className="w-4 h-4" style={{ color: k.color }} />
                 </div>
               </div>
               <p className="text-3xl font-black" style={{ color: k.color }}>{k.value}</p>
@@ -119,17 +119,17 @@ export default function SubscriptionAnalytics() {
         </div>
 
         {/* MRR Growth */}
-        <div className="rounded-2xl p-6″ style={{ background: D.card, border: `1px solid ${D.border}` }}>
-          <h2 className="text-lg font-bold mb-4″ style={{ color: D.text }}>MRR Growth — Last 6 Months</h2>
+        <div className="rounded-2xl p-6" style={{ background: D.card, border: `1px solid ${D.border}` }}>
+          <h2 className="text-lg font-bold mb-4" style={{ color: D.text }}>MRR Growth — Last 6 Months</h2>
           <ResponsiveContainer width="100%" height={220}>
             <AreaChart data={MRR_DATA} margin={{ top: 10, right: 10, left: 0, bottom: 0 }}>
               <defs>
-                <linearGradient id="mrrGrad" x1="0″ y1="0" x2="0" y2="1">
+                <linearGradient id="mrrGrad" x1="0" y1="0" x2="0" y2="1">
                   <stop offset="5%" stopColor={D.teal} stopOpacity={0.35} />
                   <stop offset="95%" stopColor={D.teal} stopOpacity={0.02} />
                 </linearGradient>
               </defs>
-              <CartesianGrid strokeDasharray="3 3″ stroke={D.border} />
+              <CartesianGrid strokeDasharray="3 3" stroke={D.border} />
               <XAxis dataKey="month" tick={{ fill: D.muted, fontSize: 12 }} axisLine={false} tickLine={false} />
               <YAxis tick={{ fill: D.muted, fontSize: 12 }} axisLine={false} tickLine={false} tickFormatter={(v) => `$${(v / 1000).toFixed(0)}K`} />
               <Tooltip
@@ -142,12 +142,12 @@ export default function SubscriptionAnalytics() {
         </div>
 
         {/* Churn Analysis */}
-        <div className="grid lg:grid-cols-2 gap-6″>
-          <div className="rounded-2xl p-6″ style={{ background: D.card, border: `1px solid ${D.border}` }}>
-            <h2 className="text-lg font-bold mb-4″ style={{ color: D.text }}>Churn by Month</h2>
+        <div className="grid lg:grid-cols-2 gap-6">
+          <div className="rounded-2xl p-6" style={{ background: D.card, border: `1px solid ${D.border}` }}>
+            <h2 className="text-lg font-bold mb-4" style={{ color: D.text }}>Churn by Month</h2>
             <ResponsiveContainer width="100%" height={180}>
               <BarChart data={CHURN_DATA} margin={{ top: 5, right: 5, left: 0, bottom: 0 }}>
-                <CartesianGrid strokeDasharray="3 3″ stroke={D.border} />
+                <CartesianGrid strokeDasharray="3 3" stroke={D.border} />
                 <XAxis dataKey="month" tick={{ fill: D.muted, fontSize: 12 }} axisLine={false} tickLine={false} />
                 <YAxis tick={{ fill: D.muted, fontSize: 12 }} axisLine={false} tickLine={false} allowDecimals={false} />
                 <Tooltip
@@ -159,12 +159,12 @@ export default function SubscriptionAnalytics() {
             </ResponsiveContainer>
           </div>
 
-          <div className="rounded-2xl p-6″ style={{ background: D.card, border: `1px solid ${D.border}` }}>
-            <h2 className="text-lg font-bold mb-4″ style={{ color: D.text }}>Top Churn Reasons</h2>
-            <div className="space-y-4″>
+          <div className="rounded-2xl p-6" style={{ background: D.card, border: `1px solid ${D.border}` }}>
+            <h2 className="text-lg font-bold mb-4" style={{ color: D.text }}>Top Churn Reasons</h2>
+            <div className="space-y-4">
               {CHURN_REASONS.map((r) => (
                 <div key={r.reason}>
-                  <div className="flex justify-between mb-1″>
+                  <div className="flex justify-between mb-1">
                     <span className="text-sm" style={{ color: D.text }}>{r.reason}</span>
                     <span className="text-sm font-semibold" style={{ color: D.amber }}>{r.count} subs</span>
                   </div>
@@ -181,23 +181,23 @@ export default function SubscriptionAnalytics() {
         </div>
 
         {/* At-Risk Subscribers */}
-        <div className="rounded-2xl p-6″ style={{ background: D.card, border: `1px solid ${D.border}` }}>
-          <div className="flex items-center gap-2 mb-5″>
-            <AlertTriangle className="w-5 h-5″ style={{ color: D.amber }} />
+        <div className="rounded-2xl p-6" style={{ background: D.card, border: `1px solid ${D.border}` }}>
+          <div className="flex items-center gap-2 mb-5">
+            <AlertTriangle className="w-5 h-5" style={{ color: D.amber }} />
             <h2 className="text-lg font-bold" style={{ color: D.text }}>At-Risk Subscribers</h2>
           </div>
-          <div className="space-y-3″>
+          <div className="space-y-3">
             {AT_RISK.map((p, idx) => (
               <div
                 key={p.name}
-                className="flex items-center justify-between rounded-xl px-5 py-4″
+                className="flex items-center justify-between rounded-xl px-5 py-4"
                 style={{ background: D.surface, border: `1px solid ${D.border}` }}
               >
                 <div>
                   <p className="font-semibold" style={{ color: D.text }}>{p.name}</p>
-                  <p className="text-xs mt-0.5″ style={{ color: D.muted }}>{p.trade} · {p.months} mo subscribed · {p.daysInactive}d inactive</p>
+                  <p className="text-xs mt-0.5" style={{ color: D.muted }}>{p.trade} · {p.months} mo subscribed · {p.daysInactive}d inactive</p>
                 </div>
-                <div className="flex items-center gap-4″>
+                <div className="flex items-center gap-4">
                   <div className="text-center">
                     <p className="text-xs" style={{ color: D.muted }}>Risk</p>
                     <p className="text-lg font-black" style={{ color: riskColor(p.riskScore) }}>{p.riskScore}</p>
@@ -213,7 +213,7 @@ export default function SubscriptionAnalytics() {
                       opacity: reached.has(idx) ? 0.7 : 1,
                     }}
                   >
-                    <Mail className="w-4 h-4″ />
+                    <Mail className="w-4 h-4" />
                     {reached.has(idx) ? "Queued" : "Reach Out"}
                   </button>
                 </div>
@@ -223,8 +223,8 @@ export default function SubscriptionAnalytics() {
         </div>
 
         {/* Cohort Retention Table */}
-        <div className="rounded-2xl p-6″ style={{ background: D.card, border: `1px solid ${D.border}` }}>
-          <h2 className="text-lg font-bold mb-4″ style={{ color: D.text }}>Cohort Retention</h2>
+        <div className="rounded-2xl p-6" style={{ background: D.card, border: `1px solid ${D.border}` }}>
+          <h2 className="text-lg font-bold mb-4" style={{ color: D.text }}>Cohort Retention</h2>
           <div className="overflow-x-auto">
             <table className="w-full text-sm">
               <thead>
@@ -238,11 +238,11 @@ export default function SubscriptionAnalytics() {
                 {COHORTS.map((c) => (
                   <tr key={c.month} style={{ borderBottom: `1px solid ${D.border}` }}>
                     <td className="py-3 pr-6 font-medium" style={{ color: D.text }}>{c.month}</td>
-                    <td className="py-3 pr-6″ style={{ color: D.muted }}>{c.started}</td>
+                    <td className="py-3 pr-6" style={{ color: D.muted }}>{c.started}</td>
                     <td className="py-3 pr-6 font-semibold" style={{ color: D.green }}>{c.active}</td>
-                    <td className="py-3 pr-6″ style={{ color: D.cyan }}>{c.ret1}</td>
-                    <td className="py-3 pr-6″ style={{ color: c.ret3 === "—" ? D.dim : D.cyan }}>{c.ret3}</td>
-                    <td className="py-3 pr-6″ style={{ color: D.dim }}>{c.ret6}</td>
+                    <td className="py-3 pr-6" style={{ color: D.cyan }}>{c.ret1}</td>
+                    <td className="py-3 pr-6" style={{ color: c.ret3 === "—" ? D.dim : D.cyan }}>{c.ret3}</td>
+                    <td className="py-3 pr-6" style={{ color: D.dim }}>{c.ret6}</td>
                   </tr>
                 ))}
               </tbody>
@@ -252,20 +252,20 @@ export default function SubscriptionAnalytics() {
 
         {/* Revenue Projection */}
         <div
-          className="rounded-2xl p-6″
+          className="rounded-2xl p-6"
           style={{ background: `linear-gradient(135deg, ${D.teal}10, ${D.purple}10)`, border: `1px solid ${D.teal}30` }}
         >
-          <h2 className="text-lg font-bold mb-3″ style={{ color: D.text }}>Revenue Projection</h2>
-          <div className="grid lg:grid-cols-2 gap-4″>
-            <div className="rounded-xl p-4″ style={{ background: D.card, border: `1px solid ${D.border}` }}>
-              <p className="text-xs uppercase tracking-wider font-semibold mb-2″ style={{ color: D.muted }}>At Current Churn (2.1%)</p>
+          <h2 className="text-lg font-bold mb-3" style={{ color: D.text }}>Revenue Projection</h2>
+          <div className="grid lg:grid-cols-2 gap-4">
+            <div className="rounded-xl p-4" style={{ background: D.card, border: `1px solid ${D.border}` }}>
+              <p className="text-xs uppercase tracking-wider font-semibold mb-2" style={{ color: D.muted }}>At Current Churn (2.1%)</p>
               <p className="text-2xl font-black" style={{ color: D.amber }}>$246K ARR</p>
-              <p className="text-xs mt-1″ style={{ color: D.dim }}>From subscriptions only</p>
+              <p className="text-xs mt-1" style={{ color: D.dim }}>From subscriptions only</p>
             </div>
-            <div className="rounded-xl p-4″ style={{ background: D.card, border: `1px solid ${D.teal}30` }}>
-              <p className="text-xs uppercase tracking-wider font-semibold mb-2″ style={{ color: D.muted }}>If Churn Reduced to 1%</p>
+            <div className="rounded-xl p-4" style={{ background: D.card, border: `1px solid ${D.teal}30` }}>
+              <p className="text-xs uppercase tracking-wider font-semibold mb-2" style={{ color: D.muted }}>If Churn Reduced to 1%</p>
               <p className="text-2xl font-black" style={{ color: D.green }}>$267K ARR</p>
-              <p className="text-xs mt-1″ style={{ color: D.teal }}>+$21K/yr opportunity</p>
+              <p className="text-xs mt-1" style={{ color: D.teal }}>+$21K/yr opportunity</p>
             </div>
           </div>
         </div>
@@ -276,8 +276,8 @@ export default function SubscriptionAnalytics() {
           style={{ background: D.card, border: `1px solid ${D.amber}30` }}
         >
           <div>
-            <div className="flex items-center gap-2 mb-1″>
-              <AlertTriangle className="w-5 h-5″ style={{ color: D.amber }} />
+            <div className="flex items-center gap-2 mb-1">
+              <AlertTriangle className="w-5 h-5" style={{ color: D.amber }} />
               <h2 className="text-lg font-bold" style={{ color: D.text }}>Win-Back Campaign</h2>
             </div>
             <p className="text-sm" style={{ color: D.muted }}>3 partners cancelled in the last 30 days. Send win-back offer?</p>
@@ -287,7 +287,7 @@ export default function SubscriptionAnalytics() {
             className="flex items-center gap-2 px-5 py-2.5 rounded-xl text-sm font-semibold"
             style={{ background: `${D.amber}22`, color: D.amber, border: `1px solid ${D.amber}44` }}
           >
-            <Mail className="w-4 h-4″ />
+            <Mail className="w-4 h-4" />
             Send Win-Back Offer
           </button>
         </div>

@@ -51,14 +51,14 @@ export default function DFWCreditScoreHomeGuide2026() {
       <div style={{ maxWidth: 800, margin: '0 auto' }}>
         <div style={{ color: '#F5E642', fontSize: '0.85rem', marginBottom: '0.5rem' }}>PROLNK · DFW CREDIT SCORE GUIDE 2026</div>
         <h1 style={{ fontSize: '2rem', fontWeight: 800, marginBottom: '0.5rem' }}>DFW Credit Score and Home Buying Guide 2026</h1>
-        <p style={{ color: '#94a3b8', marginBottom: '2rem' }}>On a DFW median loan, a 620 vs 760 score means a difference of <strong style={{ color: '#F5E642′ }}>+/mo</strong> — that’s ,000+ over 30 years.</p>
+        <p style={{ color: '#94a3b8', marginBottom: '2rem' }}>On a DFW median loan, a 620 vs 760 score means a difference of <strong style={{ color: '#F5E642' }}>+/mo</strong> — that's ,000+ over 30 years.</p>
 
         <div style={{ display: 'grid', gap: '0.6rem', marginBottom: '2rem' }}>
           {tiers.map(t => (
             <div key={t.range} style={{ background: '#0f2040', border: '1px solid #1e3a5f', borderRadius: 8, padding: '0.9rem', display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '0.5rem' }}>
               <div>
                 <span style={{ color: t.color, fontWeight: 700, marginRight: '0.75rem' }}>{t.range}</span>
-                <span style={{ color: '#cbd5e1′ }}>{t.label}</span>
+                <span style={{ color: '#cbd5e1' }}>{t.label}</span>
               </div>
               <div style={{ textAlign: 'right' }}>
                 {t.rate ? (
@@ -73,7 +73,7 @@ export default function DFWCreditScoreHomeGuide2026() {
           <h2 style={{ color: '#F5E642', marginBottom: '1.2rem' }}>📊 Your Score Impact Calculator</h2>
           <div style={{ marginBottom: '1.2rem' }}>
             <label style={{ color: '#94a3b8', display: 'block', marginBottom: '0.3rem' }}>Credit Score: <strong style={{ color: '#fff', fontSize: '1.2rem' }}>{score}</strong></label>
-            <input type='range' min={500} max={850} value={score} onChange={e => setScore(+e.target.value)} style={{ width: '100%', accentColor: '#F5E642′ }} />
+            <input type='range' min={500} max={850} value={score} onChange={e => setScore(+e.target.value)} style={{ width: '100%', accentColor: '#F5E642' }} />
             <div style={{ display: 'flex', justifyContent: 'space-between', color: '#475569', fontSize: '0.8rem', marginTop: '0.2rem' }}>
               <span>500</span><span>620 FHA</span><span>700</span><span>740</span><span>760</span><span>850</span>
             </div>

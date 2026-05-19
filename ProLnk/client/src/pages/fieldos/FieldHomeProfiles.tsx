@@ -17,7 +17,7 @@ const HEALTH_CFG = {
   excellent: { label: "Excellent",       color: FOS.teal,  score: 92 },
   good:      { label: "Good",            color: FOS.green, score: 74 },
   fair:      { label: "Fair",            color: FOS.lime,  score: 54 },
-  poor:      { label: "Needs Attention", color: "#EF4444″, score: 28 },
+  poor:      { label: "Needs Attention", color: "#EF4444", score: 28 },
 } as const;
 type HealthKey = keyof typeof HEALTH_CFG;
 
@@ -25,12 +25,12 @@ const SORT_OPTIONS = ["Last Visit", "Health Score", "Address"] as const;
 type SortOption = typeof SORT_OPTIONS[number];
 
 const TRADE_BADGES: Record<string, { label: string; color: string }> = {
-  plumbing:    { label: "Plumbing",    color: "#3B82F6″ },
-  roofing:     { label: "Roofing",     color: "#8B5CF6″ },
+  plumbing:    { label: "Plumbing",    color: "#3B82F6" },
+  roofing:     { label: "Roofing",     color: "#8B5CF6" },
   electrical:  { label: "Electrical",  color: FOS.lime  },
-  hvac:        { label: "HVAC",        color: "#06B6D4″ },
+  hvac:        { label: "HVAC",        color: "#06B6D4" },
   landscaping: { label: "Landscaping", color: FOS.green },
-  painting:    { label: "Painting",    color: "#F97316″ },
+  painting:    { label: "Painting",    color: "#F97316" },
   flooring:    { label: "Flooring",    color: "#A78BFA" },
   cleaning:    { label: "Cleaning",    color: FOS.teal  },
   general:     { label: "General",     color: FOS.muted },
@@ -46,9 +46,9 @@ function HealthBar({ health, score }: { health: HealthKey; score: number }) {
   const cfg = HEALTH_CFG[health];
   return (
     <div>
-      <div className="flex justify-between items-center mb-1.5″>
-        <div className="flex items-center gap-1.5″>
-          <Shield className="w-3.5 h-3.5″ style={{ color: cfg.color }} />
+      <div className="flex justify-between items-center mb-1.5">
+        <div className="flex items-center gap-1.5">
+          <Shield className="w-3.5 h-3.5" style={{ color: cfg.color }} />
           <span className="text-xs font-semibold" style={{ color: cfg.color }}>
             Health: {cfg.label}
           </span>
@@ -71,10 +71,10 @@ function StatTile({
 }: { icon: React.ElementType; value: string | number; label: string; color: string }) {
   return (
     <div
-      className="rounded-2xl p-4 flex flex-col gap-2″
+      className="rounded-2xl p-4 flex flex-col gap-2"
       style={{ background: FOS.surface, border: `1px solid ${FOS.border}` }}
     >
-      <Icon className="w-5 h-5″ style={{ color }} />
+      <Icon className="w-5 h-5" style={{ color }} />
       <p className="text-white text-xl font-black leading-none">{value}</p>
       <p className="text-[10px] uppercase tracking-wider" style={{ color: FOS.faint }}>{label}</p>
     </div>
@@ -101,24 +101,24 @@ function MapPlaceholder({ count }: { count: number }) {
       }}
     >
       {/* Grid lines */}
-      <svg width="100%" height="100%" className="absolute inset-0 opacity-20″>
+      <svg width="100%" height="100%" className="absolute inset-0 opacity-20">
         {[0.25, 0.5, 0.75].map(f => (
           <g key={f}>
-            <line x1={`${f * 100}%`} y1="0″ x2={`${f * 100}%`} y2="100%" stroke={FOS.teal} strokeWidth="0.5" />
-            <line x1="0″ y1={`${f * 100}%`} x2="100%" y2={`${f * 100}%`} stroke={FOS.teal} strokeWidth="0.5" />
+            <line x1={`${f * 100}%`} y1="0" x2={`${f * 100}%`} y2="100%" stroke={FOS.teal} strokeWidth="0.5" />
+            <line x1="0" y1={`${f * 100}%`} x2="100%" y2={`${f * 100}%`} stroke={FOS.teal} strokeWidth="0.5" />
           </g>
         ))}
       </svg>
 
       {/* Faint road lines */}
-      <svg width="100%" height="100%" className="absolute inset-0 opacity-15″>
-        <line x1="0″ y1="45%" x2="100%" y2="50%" stroke="rgba(255,255,255,0.4)" strokeWidth="1.5" />
-        <line x1="30%" y1="0″ x2="45%" y2="100%" stroke="rgba(255,255,255,0.4)" strokeWidth="1" />
+      <svg width="100%" height="100%" className="absolute inset-0 opacity-15">
+        <line x1="0" y1="45%" x2="100%" y2="50%" stroke="rgba(255,255,255,0.4)" strokeWidth="1.5" />
+        <line x1="30%" y1="0" x2="45%" y2="100%" stroke="rgba(255,255,255,0.4)" strokeWidth="1" />
       </svg>
 
       {/* Pins */}
       {pinPositions.map((pos, i) => {
-        const colors = [FOS.teal, FOS.lime, FOS.green, "#3B82F6″, "#F97316"];
+        const colors = [FOS.teal, FOS.lime, FOS.green, "#3B82F6", "#F97316"];
         const c = colors[i % colors.length];
         return (
           <div
@@ -131,22 +131,22 @@ function MapPlaceholder({ count }: { count: number }) {
               style={{
                 background: c,
                 boxShadow: `0 0 8px ${c}80`,
-                color: "#000″,
+                color: "#000",
               }}
             >
               {i + 1}
             </div>
-            <div className="w-0.5 h-2″ style={{ background: c }} />
+            <div className="w-0.5 h-2" style={{ background: c }} />
           </div>
         );
       })}
 
       {/* Label */}
       <div
-        className="absolute bottom-3 left-3 flex items-center gap-1.5 rounded-lg px-2.5 py-1.5″
+        className="absolute bottom-3 left-3 flex items-center gap-1.5 rounded-lg px-2.5 py-1.5"
         style={{ background: "rgba(7,13,26,0.80)", backdropFilter: "blur(4px)" }}
       >
-        <MapPin className="w-3 h-3″ style={{ color: FOS.teal }} />
+        <MapPin className="w-3 h-3" style={{ color: FOS.teal }} />
         <p className="text-[10px] font-semibold" style={{ color: FOS.muted }}>
           Last {Math.min(5, count)} visited homes
         </p>
@@ -169,7 +169,7 @@ function SortPill({
         border:     active ? `1px solid ${FOS.teal}40` : `1px solid ${FOS.border}`,
       }}
     >
-      {active && <SortAsc className="w-3 h-3″ />}
+      {active && <SortAsc className="w-3 h-3" />}
       {label}
     </button>
   );
@@ -271,7 +271,7 @@ export default function FieldHomeProfiles() {
 
   if (isLoading) {
     return (
-      <div className="flex flex-col items-center justify-center min-h-[60vh] gap-3″ style={{ background: FOS.bg }}>
+      <div className="flex flex-col items-center justify-center min-h-[60vh] gap-3" style={{ background: FOS.bg }}>
         <Loader2 className="w-7 h-7 animate-spin" style={{ color: FOS.teal }} />
         <p className="text-sm" style={{ color: FOS.muted }}>Loading profiles...</p>
       </div>
@@ -287,32 +287,32 @@ export default function FieldHomeProfiles() {
     return (
       <div className="flex flex-col pb-4 min-h-full" style={{ background: FOS.bg }}>
         {/* Back */}
-        <div className="px-5 pt-5 pb-3″>
+        <div className="px-5 pt-5 pb-3">
           <button
             onClick={() => setSelected(null)}
-            className="flex items-center gap-2 text-sm font-semibold active:opacity-70″
+            className="flex items-center gap-2 text-sm font-semibold active:opacity-70"
             style={{ color: FOS.teal }}
           >
-            <ArrowLeft className="w-4 h-4″ /> Back to Profiles
+            <ArrowLeft className="w-4 h-4" /> Back to Profiles
           </button>
         </div>
 
         {/* Address card */}
-        <div className="px-5 mb-5″>
-          <div className="rounded-3xl p-5″ style={{ background: FOS.surface, border: `1px solid ${FOS.border}` }}>
-            <div className="flex items-start gap-3 mb-4″>
+        <div className="px-5 mb-5">
+          <div className="rounded-3xl p-5" style={{ background: FOS.surface, border: `1px solid ${FOS.border}` }}>
+            <div className="flex items-start gap-3 mb-4">
               <div
-                className="w-11 h-11 rounded-2xl flex items-center justify-center shrink-0″
+                className="w-11 h-11 rounded-2xl flex items-center justify-center shrink-0"
                 style={{ background: FOS.tealDim }}
               >
-                <Building2 className="w-5 h-5″ style={{ color: FOS.teal }} />
+                <Building2 className="w-5 h-5" style={{ color: FOS.teal }} />
               </div>
-              <div className="flex-1 min-w-0″>
+              <div className="flex-1 min-w-0">
                 <p className="text-white font-black text-sm leading-tight">{selected.address}</p>
                 {selected.suburb && (
-                  <p className="text-xs mt-0.5″ style={{ color: FOS.muted }}>{selected.suburb}</p>
+                  <p className="text-xs mt-0.5" style={{ color: FOS.muted }}>{selected.suburb}</p>
                 )}
-                <div className="flex items-center gap-2 mt-2″>
+                <div className="flex items-center gap-2 mt-2">
                   <span
                     className="text-[10px] font-semibold px-2 py-0.5 rounded-full"
                     style={{ color: badge.color, background: `${badge.color}18` }}
@@ -333,8 +333,8 @@ export default function FieldHomeProfiles() {
 
             <HealthBar health={selected.health} score={healthCfg.score} />
 
-            <div className="flex items-center gap-2 mt-3″>
-              <Calendar className="w-3.5 h-3.5″ style={{ color: FOS.faint }} />
+            <div className="flex items-center gap-2 mt-3">
+              <Calendar className="w-3.5 h-3.5" style={{ color: FOS.faint }} />
               <p className="text-xs" style={{ color: FOS.muted }}>
                 Last visited{" "}
                 {selected.lastVisit.toLocaleDateString("en-US", {
@@ -344,8 +344,8 @@ export default function FieldHomeProfiles() {
             </div>
 
             {/* Profile completeness */}
-            <div className="mt-4″>
-              <div className="flex justify-between items-center mb-1.5″>
+            <div className="mt-4">
+              <div className="flex justify-between items-center mb-1.5">
                 <span className="text-xs" style={{ color: FOS.muted }}>Profile Completeness</span>
                 <span className="text-xs font-bold" style={{ color: FOS.faint }}>{completeness}%</span>
               </div>
@@ -353,7 +353,7 @@ export default function FieldHomeProfiles() {
                 <div className="h-full rounded-full transition-all" style={{ width: `${completeness}%`, background: FOS.teal }} />
               </div>
               {completeness < 100 && (
-                <p className="text-[10px] mt-1.5″ style={{ color: FOS.faint }}>
+                <p className="text-[10px] mt-1.5" style={{ color: FOS.faint }}>
                   {5 - selected.visits} more visit{5 - selected.visits !== 1 ? "s" : ""} to complete
                 </p>
               )}
@@ -362,8 +362,8 @@ export default function FieldHomeProfiles() {
         </div>
 
         {/* Stats grid */}
-        <div className="px-5 mb-5″>
-          <div className="grid grid-cols-2 gap-3″>
+        <div className="px-5 mb-5">
+          <div className="grid grid-cols-2 gap-3">
             <StatTile icon={Camera}     value={selected.photos}                        label="Photos"   color={FOS.teal}  />
             <StatTile icon={MapPin}     value={selected.visits}                        label="Visits"   color={FOS.green} />
             <StatTile icon={Zap}        value={selected.leads}                         label="AI Leads" color={FOS.lime}  />
@@ -372,13 +372,13 @@ export default function FieldHomeProfiles() {
         </div>
 
         {/* AI Insight */}
-        <div className="px-5 mb-5″>
+        <div className="px-5 mb-5">
           <div
-            className="rounded-2xl p-4″
+            className="rounded-2xl p-4"
             style={{ background: FOS.tealDim, border: `1px solid ${FOS.teal}25` }}
           >
-            <div className="flex items-center gap-2 mb-2″>
-              <Zap className="w-4 h-4″ style={{ color: FOS.teal }} />
+            <div className="flex items-center gap-2 mb-2">
+              <Zap className="w-4 h-4" style={{ color: FOS.teal }} />
               <p className="text-sm font-bold" style={{ color: FOS.teal }}>AI Insight</p>
             </div>
             {selected.visits >= 3 ? (
@@ -401,9 +401,9 @@ export default function FieldHomeProfiles() {
         </div>
 
         {/* Book return visit CTA */}
-        <div className="px-5″>
+        <div className="px-5">
           <button
-            className="w-full py-4 rounded-2xl text-base font-black transition-all active:scale-95″
+            className="w-full py-4 rounded-2xl text-base font-black transition-all active:scale-95"
             style={{
               background: `linear-gradient(135deg, ${FOS.teal}, #0ea5e9)`,
               color:      "#ffffff",
@@ -422,10 +422,10 @@ export default function FieldHomeProfiles() {
     <div className="flex flex-col pb-4 min-h-full" style={{ background: FOS.bg }}>
 
       {/* Header */}
-      <div className="px-5 pt-6 pb-4″>
-        <div className="flex items-start justify-between mb-4″>
+      <div className="px-5 pt-6 pb-4">
+        <div className="flex items-start justify-between mb-4">
           <div>
-            <p className="text-[10px] uppercase tracking-widest mb-1″ style={{ color: FOS.muted }}>Your Territory</p>
+            <p className="text-[10px] uppercase tracking-widest mb-1" style={{ color: FOS.muted }}>Your Territory</p>
             <h2 className="text-white text-2xl font-black">Home Profiles</h2>
           </div>
           <div
@@ -439,7 +439,7 @@ export default function FieldHomeProfiles() {
 
         {/* Search */}
         <div className="relative">
-          <Search className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4″ style={{ color: FOS.faint }} />
+          <Search className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4" style={{ color: FOS.faint }} />
           <input
             type="text"
             value={search}
@@ -456,28 +456,28 @@ export default function FieldHomeProfiles() {
       </div>
 
       {/* Quick stats */}
-      <div className="px-5 mb-4″>
+      <div className="px-5 mb-4">
         <div
-          className="rounded-2xl px-4 py-3 grid grid-cols-3 gap-0″
+          className="rounded-2xl px-4 py-3 grid grid-cols-3 gap-0"
           style={{ background: FOS.surface, border: `1px solid ${FOS.border}` }}
         >
           <div className="text-center">
-            <div className="flex items-center justify-center gap-1.5 mb-1″>
-              <Home className="w-3.5 h-3.5″ style={{ color: FOS.teal }} />
+            <div className="flex items-center justify-center gap-1.5 mb-1">
+              <Home className="w-3.5 h-3.5" style={{ color: FOS.teal }} />
               <p className="text-lg font-black" style={{ color: FOS.teal }}>{totalHomes}</p>
             </div>
             <p className="text-[9px] uppercase tracking-wider" style={{ color: FOS.faint }}>Homes Served</p>
           </div>
           <div className="text-center" style={{ borderLeft: `1px solid ${FOS.border}`, borderRight: `1px solid ${FOS.border}` }}>
-            <div className="flex items-center justify-center gap-1.5 mb-1″>
-              <Users className="w-3.5 h-3.5″ style={{ color: FOS.green }} />
+            <div className="flex items-center justify-center gap-1.5 mb-1">
+              <Users className="w-3.5 h-3.5" style={{ color: FOS.green }} />
               <p className="text-lg font-black" style={{ color: FOS.green }}>{repeatCount}</p>
             </div>
             <p className="text-[9px] uppercase tracking-wider" style={{ color: FOS.faint }}>Repeat Clients</p>
           </div>
           <div className="text-center">
-            <div className="flex items-center justify-center gap-1.5 mb-1″>
-              <Star className="w-3.5 h-3.5″ style={{ color: FOS.lime }} />
+            <div className="flex items-center justify-center gap-1.5 mb-1">
+              <Star className="w-3.5 h-3.5" style={{ color: FOS.lime }} />
               <p className="text-lg font-black" style={{ color: FOS.lime }}>{avgHealthScore}</p>
             </div>
             <p className="text-[9px] uppercase tracking-wider" style={{ color: FOS.faint }}>Avg Health</p>
@@ -487,16 +487,16 @@ export default function FieldHomeProfiles() {
 
       {/* Map placeholder */}
       {profiles.length > 0 && (
-        <div className="px-5 mb-4″>
+        <div className="px-5 mb-4">
           <MapPlaceholder count={profiles.length} />
         </div>
       )}
 
       {/* Sort options */}
       {profiles.length > 0 && (
-        <div className="px-5 mb-3″>
-          <div className="flex items-center gap-2 overflow-x-auto pb-1″ style={{ scrollbarWidth: "none" }}>
-            <p className="text-[10px] uppercase tracking-wider shrink-0″ style={{ color: FOS.faint }}>Sort:</p>
+        <div className="px-5 mb-3">
+          <div className="flex items-center gap-2 overflow-x-auto pb-1" style={{ scrollbarWidth: "none" }}>
+            <p className="text-[10px] uppercase tracking-wider shrink-0" style={{ color: FOS.faint }}>Sort:</p>
             {SORT_OPTIONS.map(opt => (
               <SortPill
                 key={opt}
@@ -510,14 +510,14 @@ export default function FieldHomeProfiles() {
       )}
 
       {/* Cards */}
-      <div className="px-5 flex flex-col gap-3″>
+      <div className="px-5 flex flex-col gap-3">
         {filtered.length === 0 ? (
           <div className="flex flex-col items-center justify-center py-16 gap-4 text-center">
             <div
               className="w-16 h-16 rounded-3xl flex items-center justify-center"
               style={{ background: FOS.surface, border: `1px solid ${FOS.border}` }}
             >
-              <Building2 className="w-7 h-7″ style={{ color: FOS.faint }} />
+              <Building2 className="w-7 h-7" style={{ color: FOS.faint }} />
             </div>
             <div>
               <p className="font-semibold text-sm" style={{ color: FOS.muted }}>
@@ -542,32 +542,32 @@ export default function FieldHomeProfiles() {
                 style={{ background: FOS.surface, border: `1px solid ${FOS.border}` }}
               >
                 {/* Top row: address + chevron */}
-                <div className="flex items-start justify-between mb-3″>
-                  <div className="flex items-start gap-3″>
+                <div className="flex items-start justify-between mb-3">
+                  <div className="flex items-start gap-3">
                     <div
-                      className="w-9 h-9 rounded-xl flex items-center justify-center shrink-0 mt-0.5″
+                      className="w-9 h-9 rounded-xl flex items-center justify-center shrink-0 mt-0.5"
                       style={{ background: FOS.tealDim }}
                     >
-                      <Building2 className="w-4 h-4″ style={{ color: FOS.teal }} />
+                      <Building2 className="w-4 h-4" style={{ color: FOS.teal }} />
                     </div>
-                    <div className="min-w-0″>
-                      <p className="text-white font-bold text-sm leading-tight line-clamp-1″>
+                    <div className="min-w-0">
+                      <p className="text-white font-bold text-sm leading-tight line-clamp-1">
                         {profile.address}
                       </p>
                       {profile.suburb && (
-                        <p className="text-[11px] mt-0.5 line-clamp-1″ style={{ color: FOS.faint }}>
+                        <p className="text-[11px] mt-0.5 line-clamp-1" style={{ color: FOS.faint }}>
                           {profile.suburb}
                         </p>
                       )}
                     </div>
                   </div>
-                  <ChevronRight className="w-4 h-4 shrink-0 mt-1″ style={{ color: FOS.faint }} />
+                  <ChevronRight className="w-4 h-4 shrink-0 mt-1" style={{ color: FOS.faint }} />
                 </div>
 
                 {/* Last service + trade badge */}
-                <div className="flex items-center gap-2 mb-3″>
-                  <div className="flex items-center gap-1″>
-                    <Calendar className="w-3 h-3″ style={{ color: FOS.faint }} />
+                <div className="flex items-center gap-2 mb-3">
+                  <div className="flex items-center gap-1">
+                    <Calendar className="w-3 h-3" style={{ color: FOS.faint }} />
                     <p className="text-[11px]" style={{ color: FOS.muted }}>
                       {profile.lastVisit.toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" })}
                     </p>
@@ -589,10 +589,10 @@ export default function FieldHomeProfiles() {
                 </div>
 
                 {/* Health score bar */}
-                <div className="mb-3″>
-                  <div className="flex justify-between items-center mb-1″>
-                    <div className="flex items-center gap-1″>
-                      <Shield className="w-3 h-3″ style={{ color: h.color }} />
+                <div className="mb-3">
+                  <div className="flex justify-between items-center mb-1">
+                    <div className="flex items-center gap-1">
+                      <Shield className="w-3 h-3" style={{ color: h.color }} />
                       <p className="text-[10px] font-semibold" style={{ color: h.color }}>{h.label}</p>
                     </div>
                     <p className="text-[10px] font-black" style={{ color: h.color }}>{h.score}/100</p>
@@ -607,8 +607,8 @@ export default function FieldHomeProfiles() {
 
                 {/* Footer: job count + CTA hint */}
                 <div className="flex items-center justify-between">
-                  <div className="flex items-center gap-1.5″>
-                    <Wrench className="w-3 h-3″ style={{ color: FOS.faint }} />
+                  <div className="flex items-center gap-1.5">
+                    <Wrench className="w-3 h-3" style={{ color: FOS.faint }} />
                     <p className="text-[11px]" style={{ color: FOS.muted }}>
                       {profile.visits} job{profile.visits !== 1 ? "s" : ""} completed here
                     </p>

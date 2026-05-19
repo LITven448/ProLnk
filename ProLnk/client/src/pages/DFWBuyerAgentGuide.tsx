@@ -59,7 +59,7 @@ export default function DFWBuyerAgentGuide() {
         </div>
         <div style={{ background: '#fff', border: '1px solid #ddd', borderRadius: 12, padding: 28, marginBottom: 28 }}>
           <h2 style={{ fontSize: 20, fontWeight: 700, marginBottom: 16 }}>⚠️ DFW Dual Agency — Avoid It</h2>
-          <p style={{ lineHeight: 1.7, color: '#444′ }}>
+          <p style={{ lineHeight: 1.7, color: '#444' }}>
             Dual agency means one agent represents both buyer and seller. Legal in Texas but creates inherent conflict. The agent cannot fully advocate for your price while protecting the seller. In DFW where gaps between offer and list commonly exceed $50,000, dedicated representation matters.
           </p>
         </div>
@@ -72,12 +72,12 @@ export default function DFWBuyerAgentGuide() {
           </div>
         </div>
         <div style={{ background: '#0A1628', borderRadius: 12, padding: 28, marginBottom: 28, color: '#fff' }}>
-          <h2 style={{ fontSize: 20, fontWeight: 700, marginBottom: 16, color: '#F5E642′ }}>🧮 Find Your Agent Criteria</h2>
+          <h2 style={{ fontSize: 20, fontWeight: 700, marginBottom: 16, color: '#F5E642' }}>🧮 Find Your Agent Criteria</h2>
           <p style={{ color: '#ccc', marginBottom: 20 }}>Select your situation to get agent selection criteria and key questions to ask</p>
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: 10, marginBottom: 20 }}>
             {situations.map(s => (
               <button key={s.id} onClick={() => { setSituation(s.id); setShowResult(false); }}
-                style={{ padding: '8px 16px', borderRadius: 8, border: '2px solid', borderColor: situation === s.id ? '#F5E642′ : '#444', background: situation === s.id ? '#F5E642' : ’transparent', color: situation === s.id ? '#0A1628′ : '#fff', fontWeight: 600, cursor: ’pointer' }}>
+                style={{ padding: '8px 16px', borderRadius: 8, border: '2px solid', borderColor: situation === s.id ? '#F5E642' : '#444', background: situation === s.id ? '#F5E642' : 'transparent', color: situation === s.id ? '#0A1628' : '#fff', fontWeight: 600, cursor: 'pointer' }}>
                 {s.label}
               </button>
             ))}
@@ -87,7 +87,7 @@ export default function DFWBuyerAgentGuide() {
             <span style={{ color: '#ccc' }}>This is my first home purchase</span>
           </label>
           <button onClick={() => setShowResult(true)} disabled={!situation}
-            style={{ background: situation ? '#F5E642′ : '#333', color: '#0A1628', border: ’none', borderRadius: 8, padding: '12px 28px', fontWeight: 700, cursor: situation ? 'pointer' : 'not-allowed', fontSize: 16 }}>
+            style={{ background: situation ? '#F5E642' : '#333', color: '#0A1628', border: 'none', borderRadius: 8, padding: '12px 28px', fontWeight: 700, cursor: situation ? 'pointer' : 'not-allowed', fontSize: 16 }}>
             Show My Criteria →
           </button>
           {showResult && situation && (
@@ -101,7 +101,7 @@ export default function DFWBuyerAgentGuide() {
         </div>
         <div style={{ background: '#fff', border: '1px solid #ddd', borderRadius: 12, padding: 28 }}>
           <h2 style={{ fontSize: 18, fontWeight: 700, marginBottom: 12 }}>📌 DFW-Specific Notes</h2>
-          <ul style={{ paddingLeft: 20, lineHeight: 2, color: '#444′ }}>
+          <ul style={{ paddingLeft: 20, lineHeight: 2, color: '#444' }}>
             <li>DFW has <strong>32 plus distinct submarkets</strong> — pick an agent who knows your target area</li>
             <li>Typical buyer agent fee: <strong>2.5 to 3 percent</strong> of purchase price, often negotiable</li>
             <li>Many DFW sellers still offer buyer-agent compensation — ask your agent to verify</li>

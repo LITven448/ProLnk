@@ -37,7 +37,7 @@ export default function DFWSummerThermostatGuide() {
         </p>
 
         <div style={{ background: '#0f2035', borderRadius: 12, padding: 24, marginBottom: 24 }}>
-          <h2 style={{ fontSize: 20, fontWeight: 700, marginBottom: 16, color: '#F5E642′ }}>🌡️ The DFW Thermostat Rules</h2>
+          <h2 style={{ fontSize: 20, fontWeight: 700, marginBottom: 16, color: '#F5E642' }}>🌡️ The DFW Thermostat Rules</h2>
           {[
             ['The 78°F myth', '78°F is often cited as the optimal summer setting, but DFW\’s humidity makes 78°F feel like 84°F to many people. Your comfort preference and home insulation quality matter more than any single number.'],
             ['The 82°F ceiling', 'Never set your DFW thermostat above 82°F while away. Above this threshold, relative humidity inside your home can climb high enough to promote mold growth in walls, under furniture, and in closets within 24–48 hours.'],
@@ -52,23 +52,23 @@ export default function DFWSummerThermostatGuide() {
 
         <div style={{ background: '#0f2035', borderRadius: 12, padding: 24, marginBottom: 24 }}>
           <h2 style={{ fontSize: 20, fontWeight: 700, marginBottom: 16 }}>🔍 Get Your DFW Thermostat Schedule</h2>
-          <label style={{ display: 'block', marginBottom: 6, fontSize: 14, color: '#94a3b8′ }}>Home Size (sq ft)</label>
-          <input type="number" value={sqft} onChange={e => setSqft(e.target.value)} placeholder="e.g. 2400″
+          <label style={{ display: 'block', marginBottom: 6, fontSize: 14, color: '#94a3b8' }}>Home Size (sq ft)</label>
+          <input type="number" value={sqft} onChange={e => setSqft(e.target.value)} placeholder="e.g. 2400"
             style={{ background: '#1a2f4a', border: '1px solid #2a4060', borderRadius: 8, color: '#fff', padding: '10px 14px', width: '100%', marginBottom: 16, fontSize: 15, boxSizing: 'border-box' }} />
-          <label style={{ display: 'block', marginBottom: 6, fontSize: 14, color: '#94a3b8′ }}>Comfort Preference</label>
+          <label style={{ display: 'block', marginBottom: 6, fontSize: 14, color: '#94a3b8' }}>Comfort Preference</label>
           <div style={{ display: 'flex', gap: 10, marginBottom: 16 }}>
             {[['cool', '❄️ Run cool'], ['moderate', '🌡️ Moderate'], ['warm', '☀️ Save money, run warmer']].map(([v, l]) => (
               <button key={v} onClick={() => setPreference(v)}
-                style={{ flex: 1, background: preference === v ? '#F5E642′ : '#1a2f4a', color: preference === v ? '#0A1628' : '#fff', border: ’none', borderRadius: 8, padding: '10px 6px', cursor: 'pointer', fontSize: 12, fontWeight: 600 }}>
+                style={{ flex: 1, background: preference === v ? '#F5E642' : '#1a2f4a', color: preference === v ? '#0A1628' : '#fff', border: 'none', borderRadius: 8, padding: '10px 6px', cursor: 'pointer', fontSize: 12, fontWeight: 600 }}>
                 {l}
               </button>
             ))}
           </div>
-          <label style={{ display: 'block', marginBottom: 6, fontSize: 14, color: '#94a3b8′ }}>Smart Thermostat?</label>
+          <label style={{ display: 'block', marginBottom: 6, fontSize: 14, color: '#94a3b8' }}>Smart Thermostat?</label>
           <div style={{ display: 'flex', gap: 10, marginBottom: 20 }}>
             {[['yes', '✅ Yes (Nest, Ecobee, etc.)'], ['no', '❌ Standard Programmable']].map(([v, l]) => (
               <button key={v} onClick={() => setSmart(v)}
-                style={{ flex: 1, background: smart === v ? '#F5E642′ : '#1a2f4a', color: smart === v ? '#0A1628' : '#fff', border: ’none', borderRadius: 8, padding: '10px', cursor: 'pointer', fontSize: 13, fontWeight: 600 }}>
+                style={{ flex: 1, background: smart === v ? '#F5E642' : '#1a2f4a', color: smart === v ? '#0A1628' : '#fff', border: 'none', borderRadius: 8, padding: '10px', cursor: 'pointer', fontSize: 13, fontWeight: 600 }}>
                 {l}
               </button>
             ))}
@@ -80,7 +80,7 @@ export default function DFWSummerThermostatGuide() {
         </div>
 
         {result && (
-          <div style={{ background: '#0f2035', borderRadius: 12, padding: 24, borderLeft: '4px solid #F5E642′ }}>
+          <div style={{ background: '#0f2035', borderRadius: 12, padding: 24, borderLeft: '4px solid #F5E642' }}>
             <div style={{ fontWeight: 700, marginBottom: 14, fontSize: 16 }}>📅 Your Recommended DFW Schedule</div>
             {result.schedule.map((s, i) => (
               <div key={i} style={{ marginBottom: 12, borderBottom: '1px solid #1a2f4a', paddingBottom: 12 }}>

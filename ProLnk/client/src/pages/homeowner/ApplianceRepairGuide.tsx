@@ -43,7 +43,7 @@ export default function ApplianceRepairGuide() {
         <div style={{ marginBottom: 8, fontSize: 13, color: '#94a3b8', letterSpacing: 1 }}>DFW HOMEOWNER GUIDE</div>
         <h1 style={{ fontSize: 36, fontWeight: 800, marginBottom: 12, lineHeight: 1.15 }}>
           DFW Appliance Repair Guide<br />
-          <span style={{ color: '#38bdf8′ }}>When to Fix vs. Replace</span>
+          <span style={{ color: '#38bdf8' }}>When to Fix vs. Replace</span>
         </h1>
 
         <div style={{ background: '#1e293b', borderRadius: 12, padding: 24, border: '1px solid #334155', marginBottom: 48 }}>
@@ -52,12 +52,12 @@ export default function ApplianceRepairGuide() {
           <div style={{ background: '#0f172a', borderRadius: 8, padding: 16 }}>
             <div style={{ color: '#64748b', fontSize: 13, marginBottom: 4 }}>⚠️ DFW HARD WATER WARNING</div>
             <p style={{ color: '#94a3b8', margin: 0, fontSize: 14 }}>
-              DFW water hardness runs 300–500 PPM — some of the hardest in Texas. This cuts the lifespan of water-using appliances (dishwashers, washing machines, water heaters) by <strong style={{ color: '#f1f5f9′ }}>25–30%</strong>. Factor this into your repair decisions.
+              DFW water hardness runs 300–500 PPM — some of the hardest in Texas. This cuts the lifespan of water-using appliances (dishwashers, washing machines, water heaters) by <strong style={{ color: '#f1f5f9' }}>25–30%</strong>. Factor this into your repair decisions.
             </p>
           </div>
         </div>
 
-        <h2 style={{ fontSize: 22, fontWeight: 700, marginBottom: 24, color: '#e2e8f0′ }}>📱 Fix vs. Replace Decision Tool</h2>
+        <h2 style={{ fontSize: 22, fontWeight: 700, marginBottom: 24, color: '#e2e8f0' }}>📱 Fix vs. Replace Decision Tool</h2>
         <div style={{ background: '#1e293b', borderRadius: 16, padding: 28, border: '1px solid #334155', marginBottom: 32 }}>
           <div style={{ display: 'grid', gap: 24, marginBottom: 28 }}>
             <div>
@@ -75,15 +75,15 @@ export default function ApplianceRepairGuide() {
             </div>
             <div>
               <label style={{ display: 'block', fontSize: 14, fontWeight: 600, color: '#94a3b8', marginBottom: 10 }}>
-                Appliance age: <strong style={{ color: '#38bdf8′ }}>{age} years</strong>
+                Appliance age: <strong style={{ color: '#38bdf8' }}>{age} years</strong>
               </label>
-              <input type="range" min={1} max={20} value={age} onChange={e => setAge(Number(e.target.value))} style={{ width: '100%', accentColor: '#38bdf8′ }} />
+              <input type="range" min={1} max={20} value={age} onChange={e => setAge(Number(e.target.value))} style={{ width: '100%', accentColor: '#38bdf8' }} />
             </div>
             <div>
               <label style={{ display: 'block', fontSize: 14, fontWeight: 600, color: '#94a3b8', marginBottom: 10 }}>
-                Repair quote: <strong style={{ color: '#38bdf8′ }}>${repairQuote}</strong>
+                Repair quote: <strong style={{ color: '#38bdf8' }}>${repairQuote}</strong>
               </label>
-              <input type="range" min={50} max={2000} step={50} value={repairQuote} onChange={e => setRepairQuote(Number(e.target.value))} style={{ width: '100%', accentColor: '#38bdf8′ }} />
+              <input type="range" min={50} max={2000} step={50} value={repairQuote} onChange={e => setRepairQuote(Number(e.target.value))} style={{ width: '100%', accentColor: '#38bdf8' }} />
             </div>
           </div>
 
@@ -103,7 +103,7 @@ export default function ApplianceRepairGuide() {
 
         <div style={{ background: 'linear-gradient(135deg, #1e3a5f, #1e40af)', borderRadius: 16, padding: 32, textAlign: 'center' }}>
           <div style={{ fontSize: 28 }}>🔧</div>
-          <h3 style={{ fontSize: 22, fontWeight: 700, margin: '12px 0 8px', color: '#f1f5f9′ }}>Find Repair Technicians Through TrustyPro</h3>
+          <h3 style={{ fontSize: 22, fontWeight: 700, margin: '12px 0 8px', color: '#f1f5f9' }}>Find Repair Technicians Through TrustyPro</h3>
           <p style={{ color: '#93c5fd', marginBottom: 24 }}>Get quotes from vetted DFW appliance repair specialists. Background-checked, licensed, and rated.</p>
           <a href="/homeowner-signup" style={{ display: 'inline-block', background: '#2563eb', color: '#fff', padding: '14px 32px', borderRadius: 8, fontWeight: 700, fontSize: 16, textDecoration: 'none' }}>
             Get Repair Quotes →

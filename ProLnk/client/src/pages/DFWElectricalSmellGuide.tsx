@@ -54,7 +54,7 @@ export default function DFWElectricalSmellGuide() {
         </div>
 
         <div style={{ marginBottom: 24 }}>
-          <h2 style={{ fontSize: 16, fontWeight: 700, marginBottom: 12, color: '#F5E642′ }}>🔍 Safe Investigation Steps</h2>
+          <h2 style={{ fontSize: 16, fontWeight: 700, marginBottom: 12, color: '#F5E642' }}>🔍 Safe Investigation Steps</h2>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 10 }}>
             {immediateSteps.map(s => (
               <div key={s.label} style={{ background: '#132035', borderRadius: 8, padding: '12px 14px' }}>
@@ -66,7 +66,7 @@ export default function DFWElectricalSmellGuide() {
         </div>
 
         <div style={{ marginBottom: 24 }}>
-          <h2 style={{ fontSize: 16, fontWeight: 700, marginBottom: 12, color: '#F5E642′ }}>🏠 DFW Electrical Risk Factors</h2>
+          <h2 style={{ fontSize: 16, fontWeight: 700, marginBottom: 12, color: '#F5E642' }}>🏠 DFW Electrical Risk Factors</h2>
           <div style={{ display: 'grid', gap: 8 }}>
             {dfwFactors.map(f => (
               <div key={f.factor} style={{ background: '#132035', borderRadius: 8, padding: '12px 16px', display: 'flex', gap: 12 }}>
@@ -81,9 +81,9 @@ export default function DFWElectricalSmellGuide() {
         </div>
 
         <div style={{ background: '#132035', borderRadius: 10, padding: 22, marginBottom: 20 }}>
-          <h2 style={{ fontSize: 18, fontWeight: 700, marginBottom: 16, color: '#F5E642′ }}>⚡ Emergency Assessment Tool</h2>
+          <h2 style={{ fontSize: 18, fontWeight: 700, marginBottom: 16, color: '#F5E642' }}>⚡ Emergency Assessment Tool</h2>
           <div style={{ marginBottom: 14 }}>
-            <label style={{ display: 'block', marginBottom: 6, fontSize: 13, color: '#94a3b8′ }}>Where is the smell coming from?</label>
+            <label style={{ display: 'block', marginBottom: 6, fontSize: 13, color: '#94a3b8' }}>Where is the smell coming from?</label>
             <select value={location} onChange={e => setLocation(e.target.value)} style={{ width: '100%', padding: '10px 12px', background: '#0A1628', color: '#fff', border: '1px solid #1e3a5f', borderRadius: 6, fontSize: 14 }}>
               <option value="">Select location...</option>
               <option value="outlet">Outlet or switch</option>
@@ -93,7 +93,7 @@ export default function DFWElectricalSmellGuide() {
             </select>
           </div>
           <div style={{ marginBottom: 16 }}>
-            <label style={{ display: 'block', marginBottom: 6, fontSize: 13, color: '#94a3b8′ }}>What else are you observing?</label>
+            <label style={{ display: 'block', marginBottom: 6, fontSize: 13, color: '#94a3b8' }}>What else are you observing?</label>
             <select value={symptom} onChange={e => setSymptom(e.target.value)} style={{ width: '100%', padding: '10px 12px', background: '#0A1628', color: '#fff', border: '1px solid #1e3a5f', borderRadius: 6, fontSize: 14 }}>
               <option value="">Select observation...</option>
               <option value="smell-only">Smell only — no visible damage</option>

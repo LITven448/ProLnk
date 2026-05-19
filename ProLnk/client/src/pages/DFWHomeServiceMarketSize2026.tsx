@@ -24,10 +24,10 @@ export default function DFWHomeServiceMarketSize2026() {
 
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3,1fr)', gap: '0.75rem', marginBottom: '2rem' }}>
           {trades.map(t => (
-            <button key={t.id} onClick={() => setActive(t.id)} style={{ background: active === t.id ? '#F5E642′ : '#0F2340', color: active === t.id ? '#0A1628' : '#E8EDF5', border: '2px solid', borderColor: active === t.id ? '#F5E642' : '#1E3A5F', borderRadius: 10, padding: '0.85rem 0.5rem', cursor: ’pointer', transition: 'all 0.2s', fontWeight: 700, fontSize: '0.85rem' }}>
+            <button key={t.id} onClick={() => setActive(t.id)} style={{ background: active === t.id ? '#F5E642' : '#0F2340', color: active === t.id ? '#0A1628' : '#E8EDF5', border: '2px solid', borderColor: active === t.id ? '#F5E642' : '#1E3A5F', borderRadius: 10, padding: '0.85rem 0.5rem', cursor: 'pointer', transition: 'all 0.2s', fontWeight: 700, fontSize: '0.85rem' }}>
               <div style={{ fontSize: '1.5rem' }}>{t.icon}</div>
               <div>{t.label}</div>
-              <div style={{ fontSize: '1.1rem', marginTop: '0.2rem', color: active === t.id ? '#0A1628′ : '#F5E642' }}>{t.size}</div>
+              <div style={{ fontSize: '1.1rem', marginTop: '0.2rem', color: active === t.id ? '#0A1628' : '#F5E642' }}>{t.size}</div>
               <div style={{ fontSize: '0.75rem', opacity: 0.8 }}>{t.pct}% of market</div>
             </button>
           ))}

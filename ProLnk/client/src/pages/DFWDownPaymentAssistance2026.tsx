@@ -30,7 +30,7 @@ export default function DFWDownPaymentAssistance2026() {
 
         <div style={{ background: '#1e2d45', borderRadius: 12, padding: 24, marginBottom: 24 }}>
           <h2 style={{ color: '#F5E642', fontSize: 18, marginTop: 0 }}>🎯 Find Your Programs</h2>
-          <label style={{ display: 'block', color: '#94a3b8', marginBottom: 8 }}>Household Income: <strong style={{ color: '#F5E642′ }}>${incomeK}K/yr</strong></label>
+          <label style={{ display: 'block', color: '#94a3b8', marginBottom: 8 }}>Household Income: <strong style={{ color: '#F5E642' }}>${incomeK}K/yr</strong></label>
           <input type="range" min={30} max={130} step={5} value={incomeK} onChange={e => setIncomeK(Number(e.target.value))} style={{ width: '100%', accentColor: '#F5E642', marginBottom: 20 }} />
           <label style={{ display: 'block', color: '#94a3b8', marginBottom: 10 }}>Your City</label>
           <div style={{ display: 'flex', gap: 10, flexWrap: 'wrap' }}>
@@ -44,14 +44,14 @@ export default function DFWDownPaymentAssistance2026() {
 
         <div style={{ background: '#1e2d45', borderRadius: 12, padding: 24, marginBottom: 24 }}>
           <h2 style={{ color: '#F5E642', fontSize: 18, marginTop: 0 }}>✅ Available Programs ({eligible.length} found)</h2>
-          {eligible.length === 0 && <p style={{ color: '#ef4444′ }}>No local programs found. Try TSAHC or My First Texas Home which are statewide.</p>}
+          {eligible.length === 0 && <p style={{ color: '#ef4444' }}>No local programs found. Try TSAHC or My First Texas Home which are statewide.</p>}
           {eligible.map((p, i) => (
             <div key={i} style={{ background: '#0A1628', borderRadius: 10, padding: 16, marginBottom: 12 }}>
               <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start' }}>
                 <span style={{ fontWeight: 700 }}>{p.icon} {p.name}</span>
                 <span style={{ background: '#F5E642', color: '#0A1628', borderRadius: 6, padding: '3px 10px', fontSize: 13, fontWeight: 700, whiteSpace: 'nowrap', marginLeft: 8 }}>{p.range}</span>
               </div>
-              <p style={{ color: '#94a3b8', fontSize: 13, margin: '8px 0 0′ }}>{p.desc}</p>
+              <p style={{ color: '#94a3b8', fontSize: 13, margin: '8px 0 0' }}>{p.desc}</p>
             </div>
           ))}
         </div>
@@ -60,7 +60,7 @@ export default function DFWDownPaymentAssistance2026() {
           <h2 style={{ color: '#F5E642', fontSize: 18, marginTop: 0 }}>📋 DPA Quick Tips</h2>
           {['Stack programs — combine TSAHC DPA with MCC tax credit','Most DPA requires homebuyer education course (HUD-approved, ~8hrs)','Seller concessions (2-6%) can further reduce out-of-pocket costs','DPA funds often reserved — apply early in the year','Primary residence only — investment properties do not qualify'].map((t,i) => (
             <div key={i} style={{ display:'flex', gap:10, padding:'9px 0', borderBottom:i<4?'1px solid #0A1628':'none' }}>
-              <span style={{ color:'#F5E642′ }}>✓</span>
+              <span style={{ color:'#F5E642' }}>✓</span>
               <span style={{ color:'#cbd5e1', fontSize:14 }}>{t}</span>
             </div>
           ))}

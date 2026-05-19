@@ -6,7 +6,7 @@ const heaterTypes = {
     emoji: '🔥',
     heat_time: 'Fastest (1–4 hrs for 10°F)',
     install: '$1,500–$3,500',
-    monthly_op: { small: '$80–$140', medium: '$130–$220', large: '$200–$350′ },
+    monthly_op: { small: '$80–$140', medium: '$130–$220', large: '$200–$350' },
     best_for: 'Occasional use, fast heat-up, DFW city areas with gas lines',
     dfwNote: 'Best for DFW pools used on weekends. Low DFW gas rates ($0.90–$1.10/therm) make this cost-competitive.',
     pros: ['Fastest heating', 'Works in cold weather', 'Good for occasional use'],
@@ -17,7 +17,7 @@ const heaterTypes = {
     emoji: '💨',
     heat_time: 'Moderate (8–16 hrs for 10°F)',
     install: '$2,500–$5,500',
-    monthly_op: { small: '$25–$50', medium: '$40–$80', large: '$65–$120′ },
+    monthly_op: { small: '$25–$50', medium: '$40–$80', large: '$65–$120' },
     best_for: 'DFW pools used regularly — mild DFW climate is perfect for heat pump efficiency',
     dfwNote: 'Ideal for DFW. Heat pumps work best above 50°F — DFW rarely drops below that. 70–80% lower operating cost than gas.',
     pros: ['Cheapest to operate in DFW', 'Environmentally friendly', 'DFW climate is ideal', 'Long lifespan 10–15 yrs'],
@@ -28,7 +28,7 @@ const heaterTypes = {
     emoji: '⚡',
     heat_time: 'Slow (12–24 hrs for 10°F)',
     install: '$500–$1,200',
-    monthly_op: { small: '$180–$280', medium: '$280–$420', large: '$400–$600′ },
+    monthly_op: { small: '$180–$280', medium: '$280–$420', large: '$400–$600' },
     best_for: 'Not recommended for DFW pools',
     dfwNote: 'Avoid in DFW. TXU/Oncor electricity rates make electric resistance prohibitively expensive. Only consider if no gas line and heat pump install not feasible.',
     pros: ['Lowest install cost', 'No gas line needed', 'Simple maintenance'],
@@ -39,7 +39,7 @@ const heaterTypes = {
     emoji: '🛢️',
     heat_time: 'Fast (2–5 hrs for 10°F)',
     install: '$1,500–$3,200',
-    monthly_op: { small: '$120–$200', medium: '$200–$320', large: '$300–$480′ },
+    monthly_op: { small: '$120–$200', medium: '$200–$320', large: '$300–$480' },
     best_for: 'Outer DFW / rural areas without natural gas lines',
     dfwNote: 'For outer DFW areas (Weatherford, Granbury, Corsicana) without gas lines. Propane at $2.50–$3.50/gallon is 2x cost of natural gas per BTU.',
     pros: ['Fast heating like gas', 'Works without gas line', 'Reliable in outages'],
@@ -75,20 +75,20 @@ export default function DFWPoolHeaterTypeGuide() {
           DFW's mild winters make heat pumps the operating cost winner for regular swimmers. Gas wins for weekend warriors who need fast heat-up.
         </p>
 
-        <div style={{ background: '#1E2D45', borderRadius: 12, padding: '16px 20px', marginBottom: 28, border: '1px solid #2D4060′ }}>
+        <div style={{ background: '#1E2D45', borderRadius: 12, padding: '16px 20px', marginBottom: 28, border: '1px solid #2D4060' }}>
           <div style={{ fontSize: 13, fontWeight: 700, color: '#F5E642', marginBottom: 10 }}>🌡️ DFW CLIMATE ADVANTAGE FOR HEAT PUMPS</div>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: 12 }}>
             <div style={{ textAlign: 'center' }}>
-              <div style={{ fontSize: 22, fontWeight: 800, color: '#F5E642′ }}>58°F</div>
-              <div style={{ fontSize: 11, color: '#94A3B8′ }}>DFW Avg Winter Temp</div>
+              <div style={{ fontSize: 22, fontWeight: 800, color: '#F5E642' }}>58°F</div>
+              <div style={{ fontSize: 11, color: '#94A3B8' }}>DFW Avg Winter Temp</div>
             </div>
             <div style={{ textAlign: 'center' }}>
-              <div style={{ fontSize: 22, fontWeight: 800, color: '#F5E642′ }}>50°F</div>
-              <div style={{ fontSize: 11, color: '#94A3B8′ }}>Heat Pump Min Temp</div>
+              <div style={{ fontSize: 22, fontWeight: 800, color: '#F5E642' }}>50°F</div>
+              <div style={{ fontSize: 11, color: '#94A3B8' }}>Heat Pump Min Temp</div>
             </div>
             <div style={{ textAlign: 'center' }}>
               <div style={{ fontSize: 22, fontWeight: 800, color: '#22C55E' }}>✓ Ideal</div>
-              <div style={{ fontSize: 11, color: '#94A3B8′ }}>DFW = Heat Pump Country</div>
+              <div style={{ fontSize: 11, color: '#94A3B8' }}>DFW = Heat Pump Country</div>
             </div>
           </div>
         </div>
@@ -117,7 +117,7 @@ export default function DFWPoolHeaterTypeGuide() {
         </button>
 
         {result && (
-          <div style={{ background: '#1E2D45', borderRadius: 12, padding: 24, marginBottom: 28, border: '2px solid #F5E642′ }}>
+          <div style={{ background: '#1E2D45', borderRadius: 12, padding: 24, marginBottom: 28, border: '2px solid #F5E642' }}>
             <div style={{ fontSize: 12, color: '#F5E642', fontWeight: 700, marginBottom: 4 }}>RECOMMENDED FOR YOUR DFW POOL</div>
             <h3 style={{ fontSize: 22, fontWeight: 800, margin: '0 0 4px' }}>{result.emoji} {result.name}</h3>
             <p style={{ color: '#94A3B8', margin: '0 0 16px', fontSize: 13 }}>{result.dfwNote}</p>
@@ -132,7 +132,7 @@ export default function DFWPoolHeaterTypeGuide() {
               </div>
             </div>
             <div style={{ background: '#0A1628', borderRadius: 8, padding: 14, marginBottom: 12, fontSize: 13 }}>
-              ⏱ Heat-up time: <strong style={{ color: '#E8EDF5′ }}>{result.heat_time}</strong>
+              ⏱ Heat-up time: <strong style={{ color: '#E8EDF5' }}>{result.heat_time}</strong>
             </div>
             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12 }}>
               <div><div style={{ fontSize: 11, color: '#94A3B8', marginBottom: 6 }}>✅ PROS</div>{result.pros.map(p => <div key={p} style={{ fontSize: 13, marginBottom: 3 }}>• {p}</div>)}</div>
@@ -149,8 +149,8 @@ export default function DFWPoolHeaterTypeGuide() {
                 <div style={{ fontWeight: 700 }}>{h.emoji} {h.name}</div>
                 <div style={{ color: '#F5E642', fontSize: 13 }}>Install: {h.install}</div>
               </div>
-              <div style={{ fontSize: 12, color: '#94A3B8′ }}>{h.best_for}</div>
-              <div style={{ fontSize: 12, marginTop: 6, color: '#E8EDF5′ }}>Monthly: Medium pool = {h.monthly_op.medium}</div>
+              <div style={{ fontSize: 12, color: '#94A3B8' }}>{h.best_for}</div>
+              <div style={{ fontSize: 12, marginTop: 6, color: '#E8EDF5' }}>Monthly: Medium pool = {h.monthly_op.medium}</div>
             </div>
           ))}
         </div>

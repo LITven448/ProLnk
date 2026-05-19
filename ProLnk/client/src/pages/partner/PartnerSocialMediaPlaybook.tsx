@@ -64,7 +64,7 @@ export default function PartnerSocialMediaPlaybook() {
   const schedule = SCHEDULE[time]?.[platform] || [];
 
   return (
-    <div style={{ backgroundColor: '#F9FAFB', minHeight: '100vh', fontFamily: 'Inter, sans-serif', color: '#0A1628′ }}>
+    <div style={{ backgroundColor: '#F9FAFB', minHeight: '100vh', fontFamily: 'Inter, sans-serif', color: '#0A1628' }}>
       <div style={{ maxWidth: 900, margin: '0 auto', padding: '48px 24px' }}>
         <div style={{ textAlign: 'center', marginBottom: 48 }}>
           <div style={{ fontSize: 40, marginBottom: 12 }}>📱</div>
@@ -78,9 +78,9 @@ export default function PartnerSocialMediaPlaybook() {
           {PLATFORMS.map(p => (
             <button key={p} onClick={() => setPlatform(p)}
               style={{ padding: '12px 8px', borderRadius: 10, border: '2px solid',
-                borderColor: platform === p ? '#0A1628′ : '#E5E7EB',
-                background: platform === p ? '#0A1628′ : '#fff',
-                color: platform === p ? '#F5E642′ : '#374151',
+                borderColor: platform === p ? '#0A1628' : '#E5E7EB',
+                background: platform === p ? '#0A1628' : '#fff',
+                color: platform === p ? '#F5E642' : '#374151',
                 fontWeight: 700, fontSize: 13, cursor: 'pointer' }}>
               {PLATFORM_INFO[p].icon} {p}
             </button>
@@ -113,8 +113,8 @@ export default function PartnerSocialMediaPlaybook() {
               {TIME_OPTIONS.map(t => (
                 <button key={t} onClick={() => setTime(t)}
                   style={{ padding: '8px 16px', borderRadius: 8, border: '2px solid',
-                    borderColor: time === t ? '#F5E642′ : '#E5E7EB',
-                    background: time === t ? '#F5E642′ : '#fff',
+                    borderColor: time === t ? '#F5E642' : '#E5E7EB',
+                    background: time === t ? '#F5E642' : '#fff',
                     fontWeight: time === t ? 700 : 400, fontSize: 13, cursor: 'pointer' }}>
                   {t}
                 </button>
@@ -122,7 +122,7 @@ export default function PartnerSocialMediaPlaybook() {
             </div>
           </div>
           <div style={{ background: '#F9FAFB', borderRadius: 10, padding: 16 }}>
-            <div style={{ fontSize: 13, fontWeight: 700, marginBottom: 10, color: '#6B7280′ }}>
+            <div style={{ fontSize: 13, fontWeight: 700, marginBottom: 10, color: '#6B7280' }}>
               RECOMMENDED FOR {platform.toUpperCase()} @ {time.toUpperCase()}
             </div>
             {schedule.map((item, i) => (
@@ -141,10 +141,10 @@ export default function PartnerSocialMediaPlaybook() {
             {CONTENT_CALENDAR.map(item => (
               <div key={item.day} style={{ display: 'grid', gridTemplateColumns: '40px 120px 100px 1fr', gap: 12,
                 alignItems: 'center', padding: '10px 14px', background: '#F9FAFB', borderRadius: 8 }}>
-                <div style={{ fontWeight: 700, fontSize: 13, color: '#0A1628′ }}>Day {item.day}</div>
-                <div style={{ fontSize: 12, fontWeight: 600, color: '#6B7280′ }}>{item.type}</div>
+                <div style={{ fontWeight: 700, fontSize: 13, color: '#0A1628' }}>Day {item.day}</div>
+                <div style={{ fontSize: 12, fontWeight: 600, color: '#6B7280' }}>{item.type}</div>
                 <div style={{ fontSize: 12, background: '#E5E7EB', borderRadius: 6, padding: '2px 8px', textAlign: 'center' }}>{item.platform}</div>
-                <div style={{ fontSize: 12, color: '#374151′ }}>{item.example}</div>
+                <div style={{ fontSize: 12, color: '#374151' }}>{item.example}</div>
               </div>
             ))}
           </div>
@@ -162,7 +162,7 @@ export default function PartnerSocialMediaPlaybook() {
             ].map((item, i) => (
               <div key={i} style={{ display: 'flex', gap: 8, alignItems: 'flex-start' }}>
                 <span style={{ color: '#B91C1C', fontWeight: 700 }}>✗</span>
-                <span style={{ fontSize: 14, color: '#374151′ }}>{item}</span>
+                <span style={{ fontSize: 14, color: '#374151' }}>{item}</span>
               </div>
             ))}
           </div>

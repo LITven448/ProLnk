@@ -38,13 +38,13 @@ export default function DFWKitchenRenovationTimeline() {
           <h2 style={{ fontSize: 15, fontWeight: 600, color: '#F5E642', marginBottom: 14 }}>🔧 What's Your Scope?</h2>
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: 10 }}>
             {Object.entries(scopeTimelines).map(([key, val]) => (
-              <button key={key} onClick={() => setScope(key)} style={{ padding: '8px 16px', borderRadius: 8, border: `2px solid ${scope === key ? '#F5E642' : '#1E3050'}`, background: scope === key ? '#F5E642′ : ’transparent', color: scope === key ? '#0A1628′ : '#9BAEC8', fontWeight: 600, cursor: ’pointer', fontSize: 13, textTransform: 'capitalize' }}>{key}</button>
+              <button key={key} onClick={() => setScope(key)} style={{ padding: '8px 16px', borderRadius: 8, border: `2px solid ${scope === key ? '#F5E642' : '#1E3050'}`, background: scope === key ? '#F5E642' : 'transparent', color: scope === key ? '#0A1628' : '#9BAEC8', fontWeight: 600, cursor: 'pointer', fontSize: 13, textTransform: 'capitalize' }}>{key}</button>
             ))}
           </div>
           {scope && (
-            <div style={{ marginTop: 16, background: '#0A1628', borderRadius: 8, padding: 14, borderLeft: '3px solid #F5E642′ }}>
+            <div style={{ marginTop: 16, background: '#0A1628', borderRadius: 8, padding: 14, borderLeft: '3px solid #F5E642' }}>
               <span style={{ color: '#F5E642', fontWeight: 700 }}>Realistic DFW Timeline: </span>
-              <span style={{ color: '#E8EDF5′ }}>{scopeTimelines[scope]}</span>
+              <span style={{ color: '#E8EDF5' }}>{scopeTimelines[scope]}</span>
             </div>
           )}
         </div>
@@ -52,7 +52,7 @@ export default function DFWKitchenRenovationTimeline() {
         <h2 style={{ fontSize: 16, fontWeight: 700, color: '#fff', marginBottom: 16 }}>📅 Phase-by-Phase Breakdown</h2>
         <div style={{ display: 'flex', flexDirection: 'column', gap: 14, marginBottom: 32 }}>
           {phases.map((p, i) => (
-            <div key={i} style={{ background: '#111E35', borderRadius: 10, padding: 18, borderLeft: '3px solid #F5E642′ }}>
+            <div key={i} style={{ background: '#111E35', borderRadius: 10, padding: 18, borderLeft: '3px solid #F5E642' }}>
               <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 8 }}>
                 <span style={{ background: '#F5E642', color: '#0A1628', borderRadius: 6, padding: '2px 10px', fontSize: 12, fontWeight: 700 }}>{p.weeks}</span>
                 <span style={{ fontWeight: 700, color: '#fff', fontSize: 15 }}>{p.label}</span>

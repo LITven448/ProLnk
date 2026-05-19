@@ -44,7 +44,7 @@ export default function DFWJulyHomeMaintenanceGuide() {
           <p style={{ color: '#CBD5E1', marginBottom: 12, fontWeight: 600 }}>What's your biggest July concern?</p>
           <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap' }}>
             {[{ key: 'high_bill', label: '⚡ Sky-High Electric Bill' }, { key: 'foundation', label: '🏠 Foundation Health' }, { key: 'pipes', label: '🚰 Pipe Exposure Risk' }].map(opt => (
-              <button key={opt.key} onClick={() => setSituation(opt.key)} style={{ padding: '10px 20px', borderRadius: 8, border: '2px solid', borderColor: situation === opt.key ? '#F5E642′ : '#1E3A5F', backgroundColor: situation === opt.key ? '#1a2f4e' : '#0D1F3C', color: '#fff', cursor: ’pointer', fontWeight: 600 }}>{opt.label}</button>
+              <button key={opt.key} onClick={() => setSituation(opt.key)} style={{ padding: '10px 20px', borderRadius: 8, border: '2px solid', borderColor: situation === opt.key ? '#F5E642' : '#1E3A5F', backgroundColor: situation === opt.key ? '#1a2f4e' : '#0D1F3C', color: '#fff', cursor: 'pointer', fontWeight: 600 }}>{opt.label}</button>
             ))}
           </div>
         </div>
@@ -56,7 +56,7 @@ export default function DFWJulyHomeMaintenanceGuide() {
               <div key={i} style={{ display: 'flex', alignItems: 'flex-start', gap: 14, backgroundColor: '#0D1F3C', borderRadius: 10, padding: '14px 16px', marginBottom: 10, borderLeft: `4px solid ${urgencyColor[task.urgency]}` }}>
                 <span style={{ fontSize: 24 }}>{task.icon}</span>
                 <div>
-                  <p style={{ margin: 0, fontWeight: 600, color: '#E2E8F0′ }}>{task.title}</p>
+                  <p style={{ margin: 0, fontWeight: 600, color: '#E2E8F0' }}>{task.title}</p>
                   <span style={{ fontSize: 12, color: urgencyColor[task.urgency], fontWeight: 700 }}>{task.urgency}</span>
                 </div>
               </div>

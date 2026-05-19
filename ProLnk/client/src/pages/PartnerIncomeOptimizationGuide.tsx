@@ -80,7 +80,7 @@ export default function PartnerIncomeOptimizationGuide() {
   return (
     <div style={{ background: '#f9fafb', color: '#111827', minHeight: '100vh', fontFamily: 'system-ui, sans-serif' }}>
       <div style={{ maxWidth: 860, margin: '0 auto', padding: '48px 24px' }}>
-        <div style={{ marginBottom: 12, fontSize: 13, color: '#6b7280′ }}>
+        <div style={{ marginBottom: 12, fontSize: 13, color: '#6b7280' }}>
           💼 ProLnk Partner Resource
         </div>
         <h1 style={{ fontSize: 'clamp(26px, 5vw, 42px)', fontWeight: 700, color: '#111827', lineHeight: 1.2, marginBottom: 16 }}>
@@ -116,7 +116,7 @@ export default function PartnerIncomeOptimizationGuide() {
                       <div style={{ fontWeight: 700, color: '#111827', fontSize: 16 }}>{stream.title}</div>
                     </div>
                   </div>
-                  <div style={{ background: '#f0fdf4', color: '#166534', padding: '6px 14px', borderRadius: 20, fontSize: 13, fontWeight: 700, border: '1px solid #bbf7d0′ }}>
+                  <div style={{ background: '#f0fdf4', color: '#166534', padding: '6px 14px', borderRadius: 20, fontSize: 13, fontWeight: 700, border: '1px solid #bbf7d0' }}>
                     {stream.math}
                   </div>
                 </div>
@@ -190,13 +190,13 @@ export default function PartnerIncomeOptimizationGuide() {
           </h2>
           <div style={{ background: '#fff', border: '1px solid #e5e7eb', borderRadius: 14, padding: 28, boxShadow: '0 1px 4px rgba(0,0,0,0.06)' }}>
             {[
-              { label: '15 jobs/mo × $312 avg commission', value: '$4,680′ },
-              { label: '10 active recruits network override', value: '$2,870′ },
-              { label: '5 homeowner referrals × $75', value: '$375′ },
-              { label: '200 home origination rights', value: '$370′ },
-              { label: 'Subscription overrides (10 recruits)', value: '$200′ },
+              { label: '15 jobs/mo × $312 avg commission', value: '$4,680' },
+              { label: '10 active recruits network override', value: '$2,870' },
+              { label: '5 homeowner referrals × $75', value: '$375' },
+              { label: '200 home origination rights', value: '$370' },
+              { label: 'Subscription overrides (10 recruits)', value: '$200' },
             ].map((row, i) => (
-              <div key={i} style={{ display: 'flex', justifyContent: 'space-between', padding: '12px 0', borderBottom: i < 4 ? '1px solid #f3f4f6′ : ’none', alignItems: 'center' }}>
+              <div key={i} style={{ display: 'flex', justifyContent: 'space-between', padding: '12px 0', borderBottom: i < 4 ? '1px solid #f3f4f6' : 'none', alignItems: 'center' }}>
                 <span style={{ color: '#374151', fontSize: 14 }}>{row.label}</span>
                 <span style={{ color: '#111827', fontWeight: 700, fontSize: 16 }}>{row.value}</span>
               </div>

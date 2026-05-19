@@ -72,12 +72,12 @@ export default function DFWWorkshopSafetyGuide() {
               <label style={{ display: 'block', color: '#8899AA', fontSize: 13, marginBottom: 8 }}>Tools in Your Shop (select all that apply)</label>
               <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8 }}>
                 {TOOL_SETS[workshopType].map(tool => (
-                  <button key={tool} onClick={() => toggleTool(tool)} style={{ background: selectedTools.includes(tool) ? '#F5E642′ : '#0A1628', color: selectedTools.includes(tool) ? '#0A1628' : '#fff', border: '1px solid #1E3050', borderRadius: 20, padding: '6px 14px', cursor: ’pointer', fontSize: 13, fontWeight: selectedTools.includes(tool) ? 700 : 400 }}>{tool}</button>
+                  <button key={tool} onClick={() => toggleTool(tool)} style={{ background: selectedTools.includes(tool) ? '#F5E642' : '#0A1628', color: selectedTools.includes(tool) ? '#0A1628' : '#fff', border: '1px solid #1E3050', borderRadius: 20, padding: '6px 14px', cursor: 'pointer', fontSize: 13, fontWeight: selectedTools.includes(tool) ? 700 : 400 }}>{tool}</button>
                 ))}
               </div>
             </div>
           )}
-          <button onClick={calculate} disabled={!workshopType} style={{ background: workshopType ? '#F5E642′ : '#1E3050', color: workshopType ? '#0A1628' : '#8899AA', border: ’none', borderRadius: 8, padding: '12px 28px', fontWeight: 700, fontSize: 16, cursor: workshopType ? 'pointer' : 'not-allowed', width: '100%' }}>Generate Safety Plan</button>
+          <button onClick={calculate} disabled={!workshopType} style={{ background: workshopType ? '#F5E642' : '#1E3050', color: workshopType ? '#0A1628' : '#8899AA', border: 'none', borderRadius: 8, padding: '12px 28px', fontWeight: 700, fontSize: 16, cursor: workshopType ? 'pointer' : 'not-allowed', width: '100%' }}>Generate Safety Plan</button>
         </div>
 
         {result && (
@@ -89,7 +89,7 @@ export default function DFWWorkshopSafetyGuide() {
               { label: '🔥 Fire Safety', value: result.fire },
               { label: '📊 Recommended Panel Capacity', value:  },
             ].map(item => (
-              <div key={item.label} style={{ marginBottom: 16, paddingBottom: 16, borderBottom: '1px solid #1E3050′ }}>
+              <div key={item.label} style={{ marginBottom: 16, paddingBottom: 16, borderBottom: '1px solid #1E3050' }}>
                 <div style={{ color: '#F5E642', fontWeight: 700, marginBottom: 4 }}>{item.label}</div>
                 <div style={{ color: '#CCD6E0', lineHeight: 1.6 }}>{item.value}</div>
               </div>

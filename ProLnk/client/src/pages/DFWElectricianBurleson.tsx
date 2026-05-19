@@ -52,7 +52,7 @@ export default function DFWElectricianBurleson() {
           ].map(s => (
             <div key={s.label} style={{ background: '#112240', borderRadius: 10, padding: 16, textAlign: 'center' }}>
               <div style={{ fontSize: 24, marginBottom: 6 }}>{s.icon}</div>
-              <div style={{ fontSize: 15, fontWeight: 700, color: '#F5E642′ }}>{s.value}</div>
+              <div style={{ fontSize: 15, fontWeight: 700, color: '#F5E642' }}>{s.value}</div>
               <div style={{ color: '#aaa', fontSize: 12, marginTop: 4 }}>{s.label}</div>
             </div>
           ))}
@@ -86,8 +86,8 @@ export default function DFWElectricianBurleson() {
                   key={p}
                   onClick={() => setPropType(p)}
                   style={{
-                    background: propType === p ? '#F5E642′ : '#0A1628',
-                    color: propType === p ? '#0A1628′ : '#fff',
+                    background: propType === p ? '#F5E642' : '#0A1628',
+                    color: propType === p ? '#0A1628' : '#fff',
                     border: '1px solid #334',
                     borderRadius: 8,
                     padding: '12px 16px',
@@ -127,14 +127,14 @@ export default function DFWElectricianBurleson() {
             {['✅ Panel upgrades to 200A/400A', '✅ Agricultural & shop electrical installs',
               '✅ Generator hookup & transfer switches', '✅ EV charger installation',
               '✅ Johnson County permit-ready work', '✅ 24/7 emergency electrician'].map(s => (
-              <div key={s} style={{ color: '#ccc', fontSize: 14, padding: '8px 0′ }}>{s}</div>
+              <div key={s} style={{ color: '#ccc', fontSize: 14, padding: '8px 0' }}>{s}</div>
             ))}
           </div>
         </div>
 
         <div style={{ textAlign: 'center', background: '#F5E642', borderRadius: 12, padding: 32 }}>
           <div style={{ fontSize: 28 }}>📞</div>
-          <h2 style={{ color: '#0A1628', fontSize: 22, fontWeight: 700, margin: '8px 0′ }}>Get a Free Electrical Quote in Burleson</h2>
+          <h2 style={{ color: '#0A1628', fontSize: 22, fontWeight: 700, margin: '8px 0' }}>Get a Free Electrical Quote in Burleson</h2>
           <p style={{ color: '#333', marginBottom: 16 }}>Licensed master electricians, rural & residential, same-week scheduling</p>
           <button style={{ background: '#0A1628', color: '#F5E642', border: 'none', borderRadius: 8, padding: '14px 32px', fontSize: 16, fontWeight: 700, cursor: 'pointer' }}>
             Request Free Quote →

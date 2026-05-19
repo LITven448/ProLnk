@@ -4,7 +4,7 @@ const cityRules = [
   { city: 'Dallas', allowed: true, permit: 'Required ($100–250/yr)', hoaNote: 'HOA may restrict', notes: 'Must collect hotel tax (7.75%)' },
   { city: 'Fort Worth', allowed: true, permit: 'Required ($150/yr)', hoaNote: 'HOA may restrict', notes: 'Must be owner-occupied or licensed' },
   { city: 'Plano', allowed: true, permit: 'Required ($200/yr)', hoaNote: 'HOA may restrict', notes: 'Strict noise ordinance enforcement' },
-  { city: 'Frisco', allowed: 'Limited', permit: 'Case-by-case', hoaNote: 'Most HOAs ban STR', notes: 'Many communities banned STR 2023′ },
+  { city: 'Frisco', allowed: 'Limited', permit: 'Case-by-case', hoaNote: 'Most HOAs ban STR', notes: 'Many communities banned STR 2023' },
   { city: 'McKinney', allowed: 'Limited', permit: 'Conditional use', hoaNote: 'Most HOAs ban STR', notes: 'Residential zones may prohibit' },
   { city: 'Southlake', allowed: false, permit: 'N/A', hoaNote: 'N/A', notes: 'City-wide STR ban in effect' },
   { city: 'Colleyville', allowed: false, permit: 'N/A', hoaNote: 'N/A', notes: 'City-wide STR ban in effect' },
@@ -50,7 +50,7 @@ export default function DFWVacationRentalGuide() {
           <div style={{ overflowX: 'auto' }}>
             <table style={{ width: '100%', borderCollapse: 'collapse' }}>
               <thead>
-                <tr style={{ borderBottom: '2px solid #F5E642′ }}>
+                <tr style={{ borderBottom: '2px solid #F5E642' }}>
                   {['City', 'STR Allowed', 'Permit Required', 'HOA', 'Key Notes'].map(h => (
                     <th key={h} style={{ textAlign: 'left', padding: '10px 12px', color: '#F5E642', fontSize: 13 }}>{h}</th>
                   ))}
@@ -58,10 +58,10 @@ export default function DFWVacationRentalGuide() {
               </thead>
               <tbody>
                 {cityRules.map((row, i) => (
-                  <tr key={i} style={{ borderBottom: '1px solid #1E3A5F', background: i % 2 === 0 ? 'transparent' : '#0D1F38′ }}>
+                  <tr key={i} style={{ borderBottom: '1px solid #1E3A5F', background: i % 2 === 0 ? 'transparent' : '#0D1F38' }}>
                     <td style={{ padding: '10px 12px', color: '#E8EDF5', fontWeight: 700, fontSize: 14 }}>{row.city}</td>
                     <td style={{ padding: '10px 12px' }}>
-                      <span style={{ background: row.allowed === true ? '#1A4A2E' : row.allowed === 'Limited' ? '#3A3A1A' : '#3A1A1A', color: row.allowed === true ? '#4ADE80′ : row.allowed === ’Limited' ? '#F5E642′ : '#F87171', borderRadius: 6, padding: '2px 10px', fontSize: 12, fontWeight: 600 }}>
+                      <span style={{ background: row.allowed === true ? '#1A4A2E' : row.allowed === 'Limited' ? '#3A3A1A' : '#3A1A1A', color: row.allowed === true ? '#4ADE80' : row.allowed === 'Limited' ? '#F5E642' : '#F87171', borderRadius: 6, padding: '2px 10px', fontSize: 12, fontWeight: 600 }}>
                         {row.allowed === true ? 'Yes' : row.allowed === 'Limited' ? 'Limited' : 'No'}
                       </span>
                     </td>
@@ -75,13 +75,13 @@ export default function DFWVacationRentalGuide() {
           </div>
         </div>
 
-        <div style={{ background: '#112240', borderRadius: 16, padding: 32, margin: '32px 0', border: '2px solid #F5E642′ }}>
+        <div style={{ background: '#112240', borderRadius: 16, padding: 32, margin: '32px 0', border: '2px solid #F5E642' }}>
           <h2 style={{ color: '#F5E642', fontSize: 22, fontWeight: 700, marginBottom: 20 }}>🧮 STR vs Long-Term Rental Comparison</h2>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 16, marginBottom: 24 }}>
             <div>
               <label style={{ display: 'block', color: '#8899AA', fontSize: 13, marginBottom: 6 }}>Bedrooms</label>
               <select value={bedrooms} onChange={e => setBedrooms(e.target.value)} style={{ width: '100%', background: '#0A1628', color: '#E8EDF5', border: '1px solid #1E3A5F', borderRadius: 8, padding: '10px 14px', fontSize: 14 }}>
-                {['1','2','3','4','5'].map(n => <option key={n} value={n}>{n} Bedroom{n !== '1′ ? ’s' : ''}</option>)}
+                {['1','2','3','4','5'].map(n => <option key={n} value={n}>{n} Bedroom{n !== '1' ? 's' : ''}</option>)}
               </select>
             </div>
             <div>
@@ -100,7 +100,7 @@ export default function DFWVacationRentalGuide() {
           </div>
 
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 20 }}>
-            <div style={{ background: '#0A1628', borderRadius: 12, padding: 24, border: '1px solid #F5E642′ }}>
+            <div style={{ background: '#0A1628', borderRadius: 12, padding: 24, border: '1px solid #F5E642' }}>
               <div style={{ color: '#F5E642', fontWeight: 700, fontSize: 16, marginBottom: 16 }}>🏠 Short-Term Rental (STR)</div>
               {[['Avg nightly rate', `$${avgNightly}`], ['Est. days booked/mo', `${daysBooked} days (68% occ.)`], ['Gross revenue', `$${grossSTR.toLocaleString()}/mo`], ['Platform fees (3%)', `-$${platformFee}`], ['Cleaning costs', `-$${Math.round(cleaningCosts)}`], ['Supplies & toiletries', `-$${supplies}`]].map(([k, v]) => (
                 <div key={k} style={{ display: 'flex', justifyContent: 'space-between', marginBottom: 8, paddingBottom: 8, borderBottom: '1px solid #1E3A5F' }}>
@@ -113,7 +113,7 @@ export default function DFWVacationRentalGuide() {
                 <span style={{ color: '#4ADE80', fontSize: 20, fontWeight: 800 }}>${netSTR.toLocaleString()}/mo</span>
               </div>
             </div>
-            <div style={{ background: '#0A1628', borderRadius: 12, padding: 24, border: '1px solid #4ADE80′ }}>
+            <div style={{ background: '#0A1628', borderRadius: 12, padding: 24, border: '1px solid #4ADE80' }}>
               <div style={{ color: '#4ADE80', fontWeight: 700, fontSize: 16, marginBottom: 16 }}>📋 Long-Term Rental (LTR)</div>
               {[['Monthly rent', `$${monthlyLTR.toLocaleString()}`], ['Vacancy allowance (5%)', `-$${Math.round(monthlyLTR * 0.05)}`], ['Property mgmt (5%)', `-$${Math.round(monthlyLTR * 0.05)}`]].map(([k, v]) => (
                 <div key={k} style={{ display: 'flex', justifyContent: 'space-between', marginBottom: 8, paddingBottom: 8, borderBottom: '1px solid #1E3A5F' }}>
@@ -133,7 +133,7 @@ export default function DFWVacationRentalGuide() {
           </div>
           <div style={{ marginTop: 16, background: '#1A3A50', borderRadius: 10, padding: 16, textAlign: 'center' }}>
             <span style={{ color: '#8899AA', fontSize: 14 }}>STR Premium: </span>
-            <span style={{ color: netSTR > ltrNet ? '#4ADE80′ : '#F87171', fontSize: 18, fontWeight: 700 }}>
+            <span style={{ color: netSTR > ltrNet ? '#4ADE80' : '#F87171', fontSize: 18, fontWeight: 700 }}>
               {netSTR > ltrNet ? `+$${(netSTR - ltrNet).toLocaleString()}/mo more than LTR` : `$${(ltrNet - netSTR).toLocaleString()}/mo less than LTR`}
             </span>
           </div>

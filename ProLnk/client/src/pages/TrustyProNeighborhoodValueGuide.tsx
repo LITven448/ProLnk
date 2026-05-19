@@ -74,7 +74,7 @@ export default function TrustyProNeighborhoodValueGuide() {
         </div>
 
         {/* Network Effect */}
-        <div style={{ background: '#eff6ff', border: '1px solid #bfdbfe', borderRadius: 16, padding: 28, margin: '40px 0′ }}>
+        <div style={{ background: '#eff6ff', border: '1px solid #bfdbfe', borderRadius: 16, padding: 28, margin: '40px 0' }}>
           <h2 style={{ fontSize: 20, fontWeight: 700, color: '#1e3a5f', margin: '0 0 12px' }}>🔗 The Neighborhood Network Effect</h2>
           <p style={{ color: '#374151', lineHeight: 1.8, margin: 0 }}>
             When <strong>5+ homes on your block</strong> join TrustyPro, group deals become available.
@@ -102,7 +102,7 @@ export default function TrustyProNeighborhoodValueGuide() {
               value={zip}
               onChange={e => setZip(e.target.value)}
               onKeyDown={e => e.key === 'Enter' && lookup()}
-              placeholder="e.g. 75034″
+              placeholder="e.g. 75034"
               maxLength={5}
               style={{ flex: 1, background: '#f9fafb', border: '1px solid #d1d5db', borderRadius: 8, padding: '10px 14px', fontSize: 15, color: '#1a1a1a' }}
             />
@@ -117,7 +117,7 @@ export default function TrustyProNeighborhoodValueGuide() {
               <div style={{ fontSize: 52, fontWeight: 900, color: scoreColor(result.score), marginBottom: 16, lineHeight: 1 }}>{result.score}<span style={{ fontSize: 20 }}>/100</span></div>
               <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(160px, 1fr))', gap: 16 }}>
                 <div><div style={{ fontSize: 11, color: '#aaa', marginBottom: 4 }}>TOP ISSUE</div><div style={{ fontSize: 14, fontWeight: 600, color: '#1a1a1a' }}>{result.topIssue}</div></div>
-                <div><div style={{ fontSize: 11, color: '#aaa', marginBottom: 4 }}>TREND</div><div style={{ fontSize: 14, fontWeight: 600, color: result.trend.includes('Improving') ? '#22c55e' : result.trend.includes('Declining') ? '#ef4444′ : '#f59e0b' }}>{result.trend}</div></div>
+                <div><div style={{ fontSize: 11, color: '#aaa', marginBottom: 4 }}>TREND</div><div style={{ fontSize: 14, fontWeight: 600, color: result.trend.includes('Improving') ? '#22c55e' : result.trend.includes('Declining') ? '#ef4444' : '#f59e0b' }}>{result.trend}</div></div>
                 <div><div style={{ fontSize: 11, color: '#aaa', marginBottom: 4 }}>UNADDRESSED ISSUES</div><div style={{ fontSize: 14, fontWeight: 600, color: '#1a1a1a' }}>{result.unaddressed} of homes</div></div>
               </div>
             </div>

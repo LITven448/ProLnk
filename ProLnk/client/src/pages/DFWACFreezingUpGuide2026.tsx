@@ -23,8 +23,8 @@ export default function DFWACFreezingUpGuide2026() {
           <h2 style={{ color: '#F5E642', fontSize: 18, marginTop: 0 }}>❄️ Signs Your AC Is Freezing Up</h2>
           {['Ice visible on copper refrigerant lines outside', 'Ice on indoor evaporator coil (in air handler)', 'AC runs but no cool air coming out', 'Water dripping / flooding around indoor unit', 'System short-cycling (turns on and off rapidly)'].map((item, i) => (
             <div key={i} style={{ display: 'flex', gap: 10, padding: '8px 0', borderBottom: '1px solid #1e3a5f' }}>
-              <span style={{ color: '#F5E642′ }}>❄️</span>
-              <span style={{ color: '#cdd9e5′ }}>{item}</span>
+              <span style={{ color: '#F5E642' }}>❄️</span>
+              <span style={{ color: '#cdd9e5' }}>{item}</span>
             </div>
           ))}
         </div>
@@ -34,7 +34,7 @@ export default function DFWACFreezingUpGuide2026() {
           <div style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
             {scenarios.map(s => (
               <button key={s.id} onClick={() => setSelected(s.id === selected ? null : s.id)}
-                style={{ background: selected === s.id ? '#F5E642′ : '#1e3a5f', color: selected === s.id ? '#0A1628' : '#fff', border: ’none', borderRadius: 8, padding: '14px 18px', fontSize: 15, fontWeight: 700, cursor: 'pointer', textAlign: 'left' }}>
+                style={{ background: selected === s.id ? '#F5E642' : '#1e3a5f', color: selected === s.id ? '#0A1628' : '#fff', border: 'none', borderRadius: 8, padding: '14px 18px', fontSize: 15, fontWeight: 700, cursor: 'pointer', textAlign: 'left' }}>
                 {s.label}
               </button>
             ))}
@@ -45,7 +45,7 @@ export default function DFWACFreezingUpGuide2026() {
               {active.fix.map((step, i) => (
                 <div key={i} style={{ display: 'flex', gap: 12, padding: '8px 0', borderBottom: '1px solid #1e3a5f' }}>
                   <span style={{ color: '#F5E642', fontWeight: 800, minWidth: 24 }}>{i + 1}.</span>
-                  <span style={{ color: '#cdd9e5′ }}>{step}</span>
+                  <span style={{ color: '#cdd9e5' }}>{step}</span>
                 </div>
               ))}
             </div>

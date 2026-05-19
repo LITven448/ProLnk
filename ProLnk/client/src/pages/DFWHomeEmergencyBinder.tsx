@@ -147,10 +147,10 @@ export default function DFWHomeEmergencyBinder() {
         </div>
 
         {showGuide && customItems.length > 0 && (
-          <div style={{ background: '#fff', borderRadius: 12, padding: 24, marginBottom: 24, boxShadow: '0 1px 4px rgba(0,0,0,0.08)', borderLeft: '4px solid #F5E642′ }}>
+          <div style={{ background: '#fff', borderRadius: 12, padding: 24, marginBottom: 24, boxShadow: '0 1px 4px rgba(0,0,0,0.08)', borderLeft: '4px solid #F5E642' }}>
             <h2 style={{ fontSize: 16, fontWeight: 700, marginBottom: 12 }}>⭐ Your Custom Additions</h2>
             {customItems.map((item, i) => (
-              <div key={i} style={{ padding: '6px 0', fontSize: 14, color: '#475569′ }}>{item}</div>
+              <div key={i} style={{ padding: '6px 0', fontSize: 14, color: '#475569' }}>{item}</div>
             ))}
           </div>
         )}
@@ -170,17 +170,17 @@ export default function DFWHomeEmergencyBinder() {
         <div style={{ background: '#fff', borderRadius: 12, padding: 24, marginBottom: 24, boxShadow: '0 1px 4px rgba(0,0,0,0.08)' }}>
           <h2 style={{ fontSize: 16, fontWeight: 700, marginBottom: 12 }}>☁️ Digital Backup Recommendations</h2>
           {digitalBackups.map((item, i) => (
-            <div key={i} style={{ padding: '6px 0', fontSize: 14, color: '#475569′ }}>{item}</div>
+            <div key={i} style={{ padding: '6px 0', fontSize: 14, color: '#475569' }}>{item}</div>
           ))}
         </div>
 
         <div style={{ background: '#fff', borderRadius: 12, padding: 24, marginBottom: 24, boxShadow: '0 1px 4px rgba(0,0,0,0.08)' }}>
           <h2 style={{ fontSize: 16, fontWeight: 700, marginBottom: 12 }}>🗄️ Where to Store Your Binder</h2>
           {storageOptions.map((opt, i) => (
-            <div key={i} style={{ padding: '12px 0', borderBottom: i < storageOptions.length - 1 ? '1px solid #f1f5f9′ : ’none' }}>
+            <div key={i} style={{ padding: '12px 0', borderBottom: i < storageOptions.length - 1 ? '1px solid #f1f5f9' : 'none' }}>
               <div style={{ fontWeight: 700, marginBottom: 4 }}>{opt.type}</div>
               <div style={{ fontSize: 13, color: '#16a34a' }}>✅ {opt.pro}</div>
-              <div style={{ fontSize: 13, color: '#dc2626′ }}>⚠️ {opt.con}</div>
+              <div style={{ fontSize: 13, color: '#dc2626' }}>⚠️ {opt.con}</div>
               <div style={{ fontSize: 13, color: '#64748b' }}>📍 {opt.location}</div>
             </div>
           ))}

@@ -44,8 +44,8 @@ export default function DFWHELOCCalculator() {
 
         <div style={{ background: '#fff', borderRadius: 12, padding: 24, boxShadow: '0 2px 8px rgba(0,0,0,0.08)', marginBottom: 24 }}>
           {[
-            { label: 'Home Value ($)', value: homeValue, set: setHomeValue, placeholder: '450,000′ },
-            { label: 'Current Mortgage Balance ($)', value: mortgageBalance, set: setMortgageBalance, placeholder: '275,000′ },
+            { label: 'Home Value ($)', value: homeValue, set: setHomeValue, placeholder: '450,000' },
+            { label: 'Current Mortgage Balance ($)', value: mortgageBalance, set: setMortgageBalance, placeholder: '275,000' },
           ].map(({ label, value, set, placeholder }) => (
             <div key={label} style={{ marginBottom: 16 }}>
               <label style={{ display: 'block', fontWeight: 600, marginBottom: 6, fontSize: 14 }}>{label}</label>
@@ -59,9 +59,9 @@ export default function DFWHELOCCalculator() {
           ))}
           <div style={{ marginBottom: 20 }}>
             <label style={{ display: 'block', fontWeight: 600, marginBottom: 6, fontSize: 14 }}>HELOC Rate: {rate}%</label>
-            <input type="range" min="6″ max="13" step="0.25" value={rate} onChange={e => setRate(e.target.value)}
-              style={{ width: '100%', accentColor: '#F5E642′ }} />
-            <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: 12, color: '#6B7280′ }}>
+            <input type="range" min="6" max="13" step="0.25" value={rate} onChange={e => setRate(e.target.value)}
+              style={{ width: '100%', accentColor: '#F5E642' }} />
+            <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: 12, color: '#6B7280' }}>
               <span>6%</span><span>13%</span>
             </div>
           </div>
@@ -80,9 +80,9 @@ export default function DFWHELOCCalculator() {
               { label: 'Estimated Draw Limit', value: fmt(results.drawLimit), sub: '90% of available line' },
               { label: 'Monthly Interest-Only', value: fmt(results.monthlyInterest), sub: `At ${rate}% on full draw` },
             ].map(({ label, value, sub }) => (
-              <div key={label} style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '10px 0', borderBottom: '1px solid #F3F4F6′ }}>
-                <div><div style={{ fontWeight: 600 }}>{label}</div><div style={{ fontSize: 12, color: '#6B7280′ }}>{sub}</div></div>
-                <div style={{ fontWeight: 700, fontSize: 18, color: '#0A1628′ }}>{value}</div>
+              <div key={label} style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '10px 0', borderBottom: '1px solid #F3F4F6' }}>
+                <div><div style={{ fontWeight: 600 }}>{label}</div><div style={{ fontSize: 12, color: '#6B7280' }}>{sub}</div></div>
+                <div style={{ fontWeight: 700, fontSize: 18, color: '#0A1628' }}>{value}</div>
               </div>
             ))}
             <h3 style={{ fontWeight: 700, fontSize: 15, marginTop: 20, marginBottom: 12 }}>🛠️ What You Could Fund</h3>

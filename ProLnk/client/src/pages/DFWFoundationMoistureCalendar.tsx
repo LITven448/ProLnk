@@ -63,7 +63,7 @@ export default function DFWFoundationMoistureCalendar() {
             <label style={{ display: 'block', fontWeight: 700, color: '#aab4cc', marginBottom: '0.5rem', fontSize: '0.85rem' }}>Home Size (sq ft)</label>
             <input type="range" min={800} max={6000} step={100} value={sqft}
               onChange={e => setSqft(Number(e.target.value))}
-              style={{ width: '100%', accentColor: '#F5E642′ }} />
+              style={{ width: '100%', accentColor: '#F5E642' }} />
             <div style={{ textAlign: 'center', fontWeight: 700, color: '#F5E642', fontSize: '1.1rem' }}>{sqft.toLocaleString()} sq ft · Est. {perimeter} ft perimeter</div>
           </div>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
@@ -89,24 +89,24 @@ export default function DFWFoundationMoistureCalendar() {
             <span style={{ fontSize: '1.5rem' }}>☀️</span>
             <div>
               <div style={{ fontWeight: 700 }}>DFW Summer Drought Conditions Active</div>
-              <div style={{ fontSize: '0.85rem', color: '#e1bee7′ }}>DFW averages 20+ consecutive days above 95°F in summer. Foundation watering is critical — skipping even 3 days can cause clay shrinkage and cracks.</div>
+              <div style={{ fontSize: '0.85rem', color: '#e1bee7' }}>DFW averages 20+ consecutive days above 95°F in summer. Foundation watering is critical — skipping even 3 days can cause clay shrinkage and cracks.</div>
             </div>
           </div>
         )}
 
         <div style={{ background: '#132038', borderRadius: 16, padding: '1.5rem', marginBottom: '1.5rem' }}>
-          <h2 style={{ margin: '0 0 1.25rem', fontSize: '1rem', fontWeight: 700, color: '#F5E642′ }}>📅 Recommended Watering Schedule</h2>
+          <h2 style={{ margin: '0 0 1.25rem', fontSize: '1rem', fontWeight: 700, color: '#F5E642' }}>📅 Recommended Watering Schedule</h2>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
             <div style={{ textAlign: 'center', background: '#0A1628', borderRadius: 10, padding: '1rem' }}>
-              <div style={{ fontSize: '1.5rem', fontWeight: 800, color: '#F5E642′ }}>{schedule.frequency}</div>
+              <div style={{ fontSize: '1.5rem', fontWeight: 800, color: '#F5E642' }}>{schedule.frequency}</div>
               <div style={{ fontSize: '0.78rem', color: '#8899bb', marginTop: '0.25rem' }}>Frequency</div>
             </div>
             <div style={{ textAlign: 'center', background: '#0A1628', borderRadius: 10, padding: '1rem' }}>
-              <div style={{ fontSize: '1.5rem', fontWeight: 800, color: '#F5E642′ }}>{schedule.duration}</div>
+              <div style={{ fontSize: '1.5rem', fontWeight: 800, color: '#F5E642' }}>{schedule.duration}</div>
               <div style={{ fontSize: '0.78rem', color: '#8899bb', marginTop: '0.25rem' }}>Per Session</div>
             </div>
             <div style={{ textAlign: 'center', background: '#0A1628', borderRadius: 10, padding: '1rem' }}>
-              <div style={{ fontSize: '1.25rem', fontWeight: 800, color: '#F5E642′ }}>{schedule.distance}</div>
+              <div style={{ fontSize: '1.25rem', fontWeight: 800, color: '#F5E642' }}>{schedule.distance}</div>
               <div style={{ fontSize: '0.78rem', color: '#8899bb', marginTop: '0.25rem' }}>Placement</div>
             </div>
           </div>
@@ -117,7 +117,7 @@ export default function DFWFoundationMoistureCalendar() {
 
         <div style={{ background: '#132038', borderRadius: 12, padding: '1.25rem', textAlign: 'center' }}>
           <div style={{ fontSize: '0.85rem', color: '#8899bb', marginBottom: '0.25rem' }}>Estimated Monthly Water Cost to Maintain Foundation Health</div>
-          <div style={{ fontSize: '2.5rem', fontWeight: 800, color: '#F5E642′ }}>${monthlyCost}</div>
+          <div style={{ fontSize: '2.5rem', fontWeight: 800, color: '#F5E642' }}>${monthlyCost}</div>
           <div style={{ fontSize: '0.8rem', color: '#6677aa' }}>vs. $8,000–$40,000+ for foundation repair</div>
         </div>
         <p style={{ textAlign: 'center', color: '#445577', fontSize: '0.75rem', marginTop: '1.5rem' }}>Consistent soil moisture is cheaper than any repair. Use soaker hoses 6–18 inches from the foundation perimeter.</p>

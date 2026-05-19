@@ -38,12 +38,12 @@ export default function DFWHVACDocumentationGuide() {
 
         <div style={{ background: '#0F2040', borderRadius: 12, padding: 24, marginBottom: 24 }}>
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 20 }}>
-            <h2 style={{ fontSize: 18, fontWeight: 700, color: '#F5E642′ }}>📁 Documentation Checklist</h2>
-            <div style={{ background: doneCount === DOC_ITEMS.length ? '#F5E642′ : '#162030', color: doneCount === DOC_ITEMS.length ? '#0A1628' : '#fff', borderRadius: 20, padding: '4px 12px', fontSize: 13, fontWeight: 700 }}>{doneCount}/{DOC_ITEMS.length} Complete</div>
+            <h2 style={{ fontSize: 18, fontWeight: 700, color: '#F5E642' }}>📁 Documentation Checklist</h2>
+            <div style={{ background: doneCount === DOC_ITEMS.length ? '#F5E642' : '#162030', color: doneCount === DOC_ITEMS.length ? '#0A1628' : '#fff', borderRadius: 20, padding: '4px 12px', fontSize: 13, fontWeight: 700 }}>{doneCount}/{DOC_ITEMS.length} Complete</div>
           </div>
           {DOC_ITEMS.map(item => (
             <div key={item.id} onClick={() => toggle(item.id)} style={{ display: 'flex', gap: 14, marginBottom: 16, cursor: 'pointer', opacity: checked[item.id] ? 0.6 : 1 }}>
-              <div style={{ width: 22, height: 22, borderRadius: 6, background: checked[item.id] ? '#F5E642′ : '#162030', border: '2px solid #F5E642', flexShrink: 0, display: ’flex', alignItems: 'center', justifyContent: 'center', fontSize: 12, color: '#0A1628', fontWeight: 700, marginTop: 2 }}>{checked[item.id] ? '✓' : ''}</div>
+              <div style={{ width: 22, height: 22, borderRadius: 6, background: checked[item.id] ? '#F5E642' : '#162030', border: '2px solid #F5E642', flexShrink: 0, display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 12, color: '#0A1628', fontWeight: 700, marginTop: 2 }}>{checked[item.id] ? '✓' : ''}</div>
               <div>
                 <div style={{ fontWeight: 700, fontSize: 14, marginBottom: 4, textDecoration: checked[item.id] ? 'line-through' : 'none' }}>{item.label}</div>
                 <div style={{ fontSize: 12, color: '#8899AA', marginBottom: 2 }}><strong>Why:</strong> {item.why}</div>
@@ -54,10 +54,10 @@ export default function DFWHVACDocumentationGuide() {
         </div>
 
         <div style={{ background: '#0F2040', borderRadius: 12, padding: 24, marginBottom: 24 }}>
-          <h2 style={{ fontSize: 18, fontWeight: 700, marginBottom: 16, color: '#F5E642′ }}>📍 Where Are You Now?</h2>
+          <h2 style={{ fontSize: 18, fontWeight: 700, marginBottom: 16, color: '#F5E642' }}>📍 Where Are You Now?</h2>
           <div style={{ display: 'flex', flexDirection: 'column', gap: 8, marginBottom: 16 }}>
             {STATUS_OPTIONS.map(s => (
-              <button key={s} onClick={() => setStatus(s)} style={{ background: status === s ? '#F5E642′ : '#162030', color: status === s ? '#0A1628' : '#fff', border: ’none', borderRadius: 8, padding: '12px 16px', textAlign: 'left', cursor: 'pointer', fontWeight: status === s ? 700 : 400, fontSize: 13 }}>{s}</button>
+              <button key={s} onClick={() => setStatus(s)} style={{ background: status === s ? '#F5E642' : '#162030', color: status === s ? '#0A1628' : '#fff', border: 'none', borderRadius: 8, padding: '12px 16px', textAlign: 'left', cursor: 'pointer', fontWeight: status === s ? 700 : 400, fontSize: 13 }}>{s}</button>
             ))}
           </div>
           {status && <div style={{ background: '#162030', borderRadius: 10, padding: 16, fontSize: 14, color: '#ddd', lineHeight: 1.7 }}>{GUIDANCE[status]}</div>}

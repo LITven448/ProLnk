@@ -93,7 +93,7 @@ export default function DFWSteelBuildingGuide() {
                 <div><div style={{ color: '#94a3b8', fontSize: 11 }}>Cost Range</div><div style={{ color: '#F5E642', fontSize: 15, fontWeight: 800 }}>${result.low.toLocaleString()}–${result.high.toLocaleString()}</div></div>
                 <div><div style={{ color: '#94a3b8', fontSize: 11 }}>Lead Time</div><div style={{ color: '#e2e8f0', fontSize: 14, fontWeight: 700 }}>{result.lead}</div></div>
                 <div><div style={{ color: '#94a3b8', fontSize: 11 }}>Wind Load</div><div style={{ color: '#e2e8f0', fontSize: 12, fontWeight: 600 }}>{result.windLoad}</div></div>
-                <div><div style={{ color: '#94a3b8', fontSize: 11 }}>Permit Req.</div><div style={{ fontSize: 14, fontWeight: 700, color: result.permitReq ? '#ef4444′ : '#22c55e' }}>{result.permitReq ? '⚠️ Yes' : '✅ Likely No'}</div></div>
+                <div><div style={{ color: '#94a3b8', fontSize: 11 }}>Permit Req.</div><div style={{ fontSize: 14, fontWeight: 700, color: result.permitReq ? '#ef4444' : '#22c55e' }}>{result.permitReq ? '⚠️ Yes' : '✅ Likely No'}</div></div>
               </div>
             </div>
           )}

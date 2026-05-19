@@ -35,7 +35,7 @@ export default function DFWHOADisputeGuide2026() {
         <div style={{ display: 'flex', flexWrap: 'wrap', gap: 10, marginBottom: 28 }}>
           {disputes.map(d => (
             <button key={d.id} onClick={() => setSelected(d.id)}
-              style={{ background: selected === d.id ? '#F5E642′ : '#111e35', color: selected === d.id ? '#0A1628' : '#fff', border: '1px solid #1e3a5f', borderRadius: 8, padding: '10px 18px', cursor: ’pointer', fontWeight: 600, fontSize: 14 }}>
+              style={{ background: selected === d.id ? '#F5E642' : '#111e35', color: selected === d.id ? '#0A1628' : '#fff', border: '1px solid #1e3a5f', borderRadius: 8, padding: '10px 18px', cursor: 'pointer', fontWeight: 600, fontSize: 14 }}>
               {d.icon} {d.label}
             </button>
           ))}
@@ -45,7 +45,7 @@ export default function DFWHOADisputeGuide2026() {
           <h3 style={{ color: '#F5E642', fontSize: 20, margin: '0 0 20px' }}>{active.icon} Resolution Pathway: {active.label}</h3>
           {active.steps.map((step, idx) => (
             <div key={idx} style={{ display: 'flex', gap: 12, marginBottom: 16, alignItems: 'flex-start' }}>
-              <span style={{ background: idx === active.steps.length - 1 ? '#dc2626′ : '#F5E642', color: '#0A1628', borderRadius: '50%', width: 26, height: 26, display: ’flex', alignItems: 'center', justifyContent: 'center', fontWeight: 800, fontSize: 13, flexShrink: 0 }}>{idx + 1}</span>
+              <span style={{ background: idx === active.steps.length - 1 ? '#dc2626' : '#F5E642', color: '#0A1628', borderRadius: '50%', width: 26, height: 26, display: 'flex', alignItems: 'center', justifyContent: 'center', fontWeight: 800, fontSize: 13, flexShrink: 0 }}>{idx + 1}</span>
               <span style={{ color: '#cbd5e1', fontSize: 15, paddingTop: 2 }}>{step}</span>
             </div>
           ))}

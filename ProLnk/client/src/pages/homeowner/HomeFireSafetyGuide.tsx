@@ -67,7 +67,7 @@ export default function HomeFireSafetyGuide() {
           </h1>
           <p style={{ fontSize: 20, color: '#FCA5A5', fontWeight: 700, margin: '0 0 12px' }}>8 Minutes Is All You Have</p>
           <p style={{ fontSize: 16, color: '#94A3B8', margin: 0 }}>
-            The average house fire gives occupants 8 minutes to escape safely. DFW sees <strong style={{ color: '#F1F5F9′ }}>6,400+ home fires annually</strong>. 
+            The average house fire gives occupants 8 minutes to escape safely. DFW sees <strong style={{ color: '#F1F5F9' }}>6,400+ home fires annually</strong>. 
             Take this assessment to see how prepared your home is.
           </p>
         </div>
@@ -138,7 +138,7 @@ export default function HomeFireSafetyGuide() {
         <div style={{ background: 'rgba(249,115,22,0.08)', border: '1px solid rgba(249,115,22,0.3)', borderRadius: 12, padding: 24, marginBottom: 48 }}>
           <h3 style={{ fontSize: 18, fontWeight: 700, color: '#FB923C', margin: '0 0 12px' }}>🌿 DFW Wildfire Interface Risk</h3>
           <p style={{ color: '#CBD5E1', margin: '0 0 12px', fontSize: 15, lineHeight: 1.7 }}>
-            Homes in outer DFW suburbs — <strong style={{ color: '#F1F5F9′ }}>Celina, Prosper, Aubrey, Forney, Waxahachie, and rural edges</strong> — sit in the 
+            Homes in outer DFW suburbs — <strong style={{ color: '#F1F5F9' }}>Celina, Prosper, Aubrey, Forney, Waxahachie, and rural edges</strong> — sit in the 
             Wildland-Urban Interface (WUI). During dry summers, grass fires can reach these neighborhoods in minutes.
           </p>
           <ul style={{ margin: 0, padding: '0 0 0 20px', color: '#94A3B8', fontSize: 14, lineHeight: 2 }}>

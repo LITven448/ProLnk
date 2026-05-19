@@ -20,7 +20,7 @@ export default function DFWHVACEvaporatorCoilGuide() {
           <h1 style={{ fontSize: 28, fontWeight: 700, color: '#F5E642', margin: 0 }}>DFW Evaporator Coil Guide</h1>
         </div>
         <p style={{ color: '#94A3B8', marginBottom: 32, lineHeight: 1.6 }}>
-          The evaporator coil sits inside your air handler and absorbs heat from your home's air. In DFW’s humid summers, it also removes massive amounts of moisture — which is why it’s one of the most mold-prone components in your HVAC system.
+          The evaporator coil sits inside your air handler and absorbs heat from your home's air. In DFW's humid summers, it also removes massive amounts of moisture — which is why it's one of the most mold-prone components in your HVAC system.
         </p>
 
         <div style={{ background: '#0F2038', borderRadius: 12, padding: 24, marginBottom: 28 }}>
@@ -77,12 +77,12 @@ export default function DFWHVACEvaporatorCoilGuide() {
             ))}
           </div>
           {match && (
-            <div style={{ background: '#0A1628', borderRadius: 10, padding: 20, borderLeft: '4px solid #F5E642′ }}>
+            <div style={{ background: '#0A1628', borderRadius: 10, padding: 20, borderLeft: '4px solid #F5E642' }}>
               <div style={{ fontWeight: 700, color: '#F5E642', marginBottom: 8 }}>Assessment</div>
               <div style={{ marginBottom: 8 }}>{match.solution}</div>
-              <div style={{ color: '#94A3B8', fontSize: 14, marginBottom: 6 }}>Cost range: <strong style={{ color: '#F5E642′ }}>{match.cost}</strong></div>
+              <div style={{ color: '#94A3B8', fontSize: 14, marginBottom: 6 }}>Cost range: <strong style={{ color: '#F5E642' }}>{match.cost}</strong></div>
               <div style={{ background: '#1E3A5F', borderRadius: 6, padding: 10, fontSize: 14 }}>
-                <strong style={{ color: '#F5E642′ }}>Action:</strong> {match.action}
+                <strong style={{ color: '#F5E642' }}>Action:</strong> {match.action}
               </div>
             </div>
           )}

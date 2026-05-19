@@ -2,19 +2,19 @@ import { useState } from 'react';
 
 const exposures = ['Light — Tree Cover, North Side', 'Moderate — Mixed Sun/Shade', 'Heavy — Open Sky, Large Roof Area'];
 const budgets = ['Budget ($3–5/linear ft)', 'Mid-Range ($5–8/linear ft)', 'Premium ($8–15+/linear ft)'];
-const hailHistory = ['None in 5 Years', '1–2 Hail Events', '3+ Hail Events or Large Hail (1″+)'];
+const hailHistory = ['None in 5 Years', '1–2 Hail Events', '3+ Hail Events or Large Hail (1"+)'];
 
 const gutterRecs: Record<string, { material: string; type: string; cost: string; maintenance: string }> = {
-  'Light — Tree Cover, North Side|Budget ($3–5/linear ft)|None in 5 Years': { material: '🥈 Aluminum Seamless', type: 'Seamless 5″ K-style', cost: '$4–$6/linear ft installed', maintenance: 'Clean 2x/year, inspect joints, repaint every 10 years' },
-  'Light — Tree Cover, North Side|Mid-Range ($5–8/linear ft)|None in 5 Years': { material: '🥇 Aluminum Seamless + Gutter Guard', type: 'Seamless 6″ K-style with micro-mesh guard', cost: '$10–$18/linear ft installed', maintenance: 'Annual inspection, occasional flush — minimal upkeep' },
-  'Moderate — Mixed Sun/Shade|Budget ($3–5/linear ft)|None in 5 Years': { material: '🥈 Aluminum Seamless 5″', type: 'Standard seamless K-style', cost: '$4–$7/linear ft', maintenance: 'Clean 2x/year. DFW oak and sweet gum debris clogs quickly.' },
-  'Moderate — Mixed Sun/Shade|Mid-Range ($5–8/linear ft)|1–2 Hail Events': { material: '🥇 Steel Seamless 5″', type: '26-gauge steel seamless — dents less in DFW hail', cost: '$7–$10/linear ft installed', maintenance: 'Annual inspection for rust at seams, repaint every 7–10 years' },
+  'Light — Tree Cover, North Side|Budget ($3–5/linear ft)|None in 5 Years': { material: '🥈 Aluminum Seamless', type: 'Seamless 5" K-style', cost: '$4–$6/linear ft installed', maintenance: 'Clean 2x/year, inspect joints, repaint every 10 years' },
+  'Light — Tree Cover, North Side|Mid-Range ($5–8/linear ft)|None in 5 Years': { material: '🥇 Aluminum Seamless + Gutter Guard', type: 'Seamless 6" K-style with micro-mesh guard', cost: '$10–$18/linear ft installed', maintenance: 'Annual inspection, occasional flush — minimal upkeep' },
+  'Moderate — Mixed Sun/Shade|Budget ($3–5/linear ft)|None in 5 Years': { material: '🥈 Aluminum Seamless 5"', type: 'Standard seamless K-style', cost: '$4–$7/linear ft', maintenance: 'Clean 2x/year. DFW oak and sweet gum debris clogs quickly.' },
+  'Moderate — Mixed Sun/Shade|Mid-Range ($5–8/linear ft)|1–2 Hail Events': { material: '🥇 Steel Seamless 5"', type: '26-gauge steel seamless — dents less in DFW hail', cost: '$7–$10/linear ft installed', maintenance: 'Annual inspection for rust at seams, repaint every 7–10 years' },
   'Moderate — Mixed Sun/Shade|Premium ($8–15+/linear ft)|None in 5 Years': { material: '🏆 Copper Seamless', type: '16 oz copper half-round or K-style', cost: '$15–$25/linear ft installed', maintenance: 'Virtually none — copper self-cleans and lasts 50–100 years in DFW' },
-  'Heavy — Open Sky, Large Roof Area|Budget ($3–5/linear ft)|1–2 Hail Events': { material: '🥈 Aluminum Seamless 6″', type: '6″ K-style for higher volume — budget choice', cost: '$5–$8/linear ft installed', maintenance: 'Clean 3x/year, inspect for dents after hail, replace damaged sections promptly' },
-  'Heavy — Open Sky, Large Roof Area|Mid-Range ($5–8/linear ft)|3+ Hail Events or Large Hail (1″+)': { material: '🥇 Steel Seamless 6″', type: '26-gauge steel 6″ K-style — DFW hail champion', cost: '$9–$13/linear ft installed', maintenance: 'Annual inspection, paint every 8 years, inspect fasteners after major hail' },
-  'Heavy — Open Sky, Large Roof Area|Premium ($8–15+/linear ft)|3+ Hail Events or Large Hail (1″+)': { material: '🏆 Aluminum Seamless 6″ + Premium Guard', type: 'Heavy-gauge aluminum + stainless micro-mesh guard', cost: '$15–$25/linear ft installed', maintenance: 'Annual inspection only — gutter guard eliminates most cleaning in DFW debris zones' },
-  'Light — Tree Cover, North Side|Mid-Range ($5–8/linear ft)|1–2 Hail Events': { material: '🥇 Aluminum Seamless with Gutter Guard', type: '5″ K-style seamless + micro-mesh for tree debris', cost: '$10–$16/linear ft installed', maintenance: 'Bi-annual inspection — guard keeps out DFW oak catkins and sweet gum balls' },
-  'Heavy — Open Sky, Large Roof Area|Budget ($3–5/linear ft)|None in 5 Years': { material: '🥈 Aluminum Seamless 6″', type: 'Upsized for volume — open sky needs capacity', cost: '$5–$8/linear ft', maintenance: 'Clean 2x/year minimum, check slope quarterly, inspect downspout clears' },
+  'Heavy — Open Sky, Large Roof Area|Budget ($3–5/linear ft)|1–2 Hail Events': { material: '🥈 Aluminum Seamless 6"', type: '6" K-style for higher volume — budget choice', cost: '$5–$8/linear ft installed', maintenance: 'Clean 3x/year, inspect for dents after hail, replace damaged sections promptly' },
+  'Heavy — Open Sky, Large Roof Area|Mid-Range ($5–8/linear ft)|3+ Hail Events or Large Hail (1"+)': { material: '🥇 Steel Seamless 6"', type: '26-gauge steel 6" K-style — DFW hail champion', cost: '$9–$13/linear ft installed', maintenance: 'Annual inspection, paint every 8 years, inspect fasteners after major hail' },
+  'Heavy — Open Sky, Large Roof Area|Premium ($8–15+/linear ft)|3+ Hail Events or Large Hail (1"+)': { material: '🏆 Aluminum Seamless 6" + Premium Guard', type: 'Heavy-gauge aluminum + stainless micro-mesh guard', cost: '$15–$25/linear ft installed', maintenance: 'Annual inspection only — gutter guard eliminates most cleaning in DFW debris zones' },
+  'Light — Tree Cover, North Side|Mid-Range ($5–8/linear ft)|1–2 Hail Events': { material: '🥇 Aluminum Seamless with Gutter Guard', type: '5" K-style seamless + micro-mesh for tree debris', cost: '$10–$16/linear ft installed', maintenance: 'Bi-annual inspection — guard keeps out DFW oak catkins and sweet gum balls' },
+  'Heavy — Open Sky, Large Roof Area|Budget ($3–5/linear ft)|None in 5 Years': { material: '🥈 Aluminum Seamless 6"', type: 'Upsized for volume — open sky needs capacity', cost: '$5–$8/linear ft', maintenance: 'Clean 2x/year minimum, check slope quarterly, inspect downspout clears' },
 };
 
 const defaultRec = { material: '🔍 Professional Assessment Recommended', type: 'Multiple options may apply', cost: 'Get quotes from 3 local DFW contractors', maintenance: 'Proper installation is as important as material in DFW conditions' };
@@ -43,7 +43,7 @@ export default function DFWGutterMaterialGuide() {
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: 14, marginBottom: 32 }}>
           {[
             { icon: '🥇', label: 'Aluminum Seamless', text: 'DFW standard — no joints to leak, handles moderate hail, affordable, 20–30 year lifespan' },
-            { icon: '⚔️', label: 'Steel Seamless', text: 'DFW hail champion — 26-gauge steel resists denting from 1″+ hail that flattens aluminum' },
+            { icon: '⚔️', label: 'Steel Seamless', text: 'DFW hail champion — 26-gauge steel resists denting from 1"+ hail that flattens aluminum' },
             { icon: '👑', label: 'Copper', text: 'Premium choice — 50–100 year lifespan, patinas beautifully, never needs painting, worth every penny for DFW luxury homes' },
           ].map(card => (
             <div key={card.label} style={{ background: '#111D35', borderRadius: 12, padding: 18 }}>
@@ -55,7 +55,7 @@ export default function DFWGutterMaterialGuide() {
         </div>
 
         <div style={{ background: '#111D35', borderRadius: 16, padding: 28, marginBottom: 24 }}>
-          <h2 style={{ fontSize: 18, fontWeight: 700, marginBottom: 20, color: '#F5E642′ }}>🔍 DFW Gutter Selector</h2>
+          <h2 style={{ fontSize: 18, fontWeight: 700, marginBottom: 20, color: '#F5E642' }}>🔍 DFW Gutter Selector</h2>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: 16, marginBottom: 20 }}>
             {[
               { label: 'DFW EXPOSURE', value: exposure, setter: setExposure, opts: exposures },
@@ -72,11 +72,11 @@ export default function DFWGutterMaterialGuide() {
             ))}
           </div>
           {result && (
-            <div style={{ background: '#0A1628', borderRadius: 12, padding: 20, borderLeft: '4px solid #F5E642′ }}>
+            <div style={{ background: '#0A1628', borderRadius: 12, padding: 20, borderLeft: '4px solid #F5E642' }}>
               <div style={{ fontSize: 16, fontWeight: 700, marginBottom: 12 }}>{result.material}</div>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12, marginBottom: 12 }}>
                 <div><div style={{ color: '#9BA3B5', fontSize: 11, fontWeight: 700, marginBottom: 4 }}>RECOMMENDED TYPE</div><div style={{ fontSize: 14 }}>{result.type}</div></div>
-                <div><div style={{ color: '#9BA3B5', fontSize: 11, fontWeight: 700, marginBottom: 4 }}>COST PER LINEAR FOOT</div><div style={{ fontSize: 14, color: '#F5E642′ }}>{result.cost}</div></div>
+                <div><div style={{ color: '#9BA3B5', fontSize: 11, fontWeight: 700, marginBottom: 4 }}>COST PER LINEAR FOOT</div><div style={{ fontSize: 14, color: '#F5E642' }}>{result.cost}</div></div>
               </div>
               <div><div style={{ color: '#9BA3B5', fontSize: 11, fontWeight: 700, marginBottom: 4 }}>DFW MAINTENANCE NOTES</div><div style={{ fontSize: 13 }}>{result.maintenance}</div></div>
             </div>

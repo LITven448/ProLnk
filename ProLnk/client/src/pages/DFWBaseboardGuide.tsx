@@ -93,7 +93,7 @@ export default function DFWBaseboardGuide() {
             <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px' }}>
               {roomTypes.map(r => (
                 <button key={r} onClick={() => setRoom(r)} style={{
-                  background: room === r ? '#F5E642′ : '#162035', color: room === r ? '#0A1628' : '#CBD5E1',
+                  background: room === r ? '#F5E642' : '#162035', color: room === r ? '#0A1628' : '#CBD5E1',
                   border: 'none', borderRadius: '6px', padding: '8px 14px', fontSize: '13px', cursor: 'pointer', fontWeight: room === r ? 700 : 400
                 }}>{r}</button>
               ))}
@@ -104,7 +104,7 @@ export default function DFWBaseboardGuide() {
             <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px' }}>
               {moistureLevels.map(m => (
                 <button key={m} onClick={() => setMoisture(m)} style={{
-                  background: moisture === m ? '#F5E642′ : '#162035', color: moisture === m ? '#0A1628' : '#CBD5E1',
+                  background: moisture === m ? '#F5E642' : '#162035', color: moisture === m ? '#0A1628' : '#CBD5E1',
                   border: 'none', borderRadius: '6px', padding: '8px 14px', fontSize: '13px', cursor: 'pointer', fontWeight: moisture === m ? 700 : 400
                 }}>{m}</button>
               ))}

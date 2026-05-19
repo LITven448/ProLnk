@@ -35,7 +35,7 @@ export default function DFWHVACSpringTuneUp() {
         <h1 style={{ fontSize: 32, fontWeight: 800, color: '#FFFFFF', marginBottom: 8 }}>Spring Tune-Up Guide</h1>
         <p style={{ color: '#94A3B8', marginBottom: 36 }}>Why March-April is the most important HVAC maintenance window in DFW — and exactly what to ask for.</p>
 
-        <div style={{ background: '#0F1E38', borderRadius: 12, padding: 24, marginBottom: 32, borderLeft: '4px solid #F5E642′ }}>
+        <div style={{ background: '#0F1E38', borderRadius: 12, padding: 24, marginBottom: 32, borderLeft: '4px solid #F5E642' }}>
           <div style={{ fontWeight: 700, fontSize: 18, marginBottom: 12 }}>🌸 Why Spring Matters Most in DFW</div>
           <div style={{ display: 'grid', gap: 10 }}>
             {[
@@ -44,7 +44,7 @@ export default function DFWHVACSpringTuneUp() {
               'Capacitor failures spike in first heat wave — spring replacement costs $150 vs. $450 emergency call in July',
               'Condensate drain algae grows exponentially once humidity arrives — prevention in spring prevents flooding in August',
             ].map((point, i) => (
-              <div key={i} style={{ background: '#111D35', borderRadius: 8, padding: '12px 16px', fontSize: 14, color: '#CBD5E1′ }}>📍 {point}</div>
+              <div key={i} style={{ background: '#111D35', borderRadius: 8, padding: '12px 16px', fontSize: 14, color: '#CBD5E1' }}>📍 {point}</div>
             ))}
           </div>
         </div>
@@ -68,7 +68,7 @@ export default function DFWHVACSpringTuneUp() {
             <label style={{ fontSize: 14, color: '#94A3B8', display: 'block', marginBottom: 8 }}>Your home type:</label>
             <div style={{ display: 'grid', gap: 8 }}>
               {homeTypes.map(ht => (
-                <button key={ht} onClick={() => setHomeType(ht)} style={{ textAlign: 'left', padding: '10px 16px', borderRadius: 8, border: '1px solid', borderColor: homeType === ht ? '#F5E642′ : '#1E3A5F', background: homeType === ht ? '#1A2A10' : '#0A1628', color: homeType === ht ? '#F5E642' : '#CBD5E1', fontSize: 14, cursor: ’pointer' }}>
+                <button key={ht} onClick={() => setHomeType(ht)} style={{ textAlign: 'left', padding: '10px 16px', borderRadius: 8, border: '1px solid', borderColor: homeType === ht ? '#F5E642' : '#1E3A5F', background: homeType === ht ? '#1A2A10' : '#0A1628', color: homeType === ht ? '#F5E642' : '#CBD5E1', fontSize: 14, cursor: 'pointer' }}>
                   {homeType === ht ? '● ' : '○ '}{ht}
                 </button>
               ))}
@@ -78,13 +78,13 @@ export default function DFWHVACSpringTuneUp() {
             <label style={{ fontSize: 14, color: '#94A3B8', display: 'block', marginBottom: 8 }}>Previous year's issue (if any):</label>
             <div style={{ display: 'grid', gap: 8 }}>
               {previousIssues.map(pi => (
-                <button key={pi} onClick={() => setIssue(pi)} style={{ textAlign: 'left', padding: '10px 16px', borderRadius: 8, border: '1px solid', borderColor: issue === pi ? '#F5E642′ : '#1E3A5F', background: issue === pi ? '#1A2A10' : '#0A1628', color: issue === pi ? '#F5E642' : '#CBD5E1', fontSize: 14, cursor: ’pointer' }}>
+                <button key={pi} onClick={() => setIssue(pi)} style={{ textAlign: 'left', padding: '10px 16px', borderRadius: 8, border: '1px solid', borderColor: issue === pi ? '#F5E642' : '#1E3A5F', background: issue === pi ? '#1A2A10' : '#0A1628', color: issue === pi ? '#F5E642' : '#CBD5E1', fontSize: 14, cursor: 'pointer' }}>
                   {issue === pi ? '● ' : '○ '}{pi}
                 </button>
               ))}
             </div>
           </div>
-          <button onClick={() => setShowPlan(true)} disabled={!homeType || !issue} style={{ background: homeType && issue ? '#F5E642′ : '#1E3A5F', color: '#0A1628', border: ’none', borderRadius: 8, padding: '12px 28px', fontWeight: 700, fontSize: 15, cursor: homeType && issue ? 'pointer' : 'not-allowed' }}>
+          <button onClick={() => setShowPlan(true)} disabled={!homeType || !issue} style={{ background: homeType && issue ? '#F5E642' : '#1E3A5F', color: '#0A1628', border: 'none', borderRadius: 8, padding: '12px 28px', fontWeight: 700, fontSize: 15, cursor: homeType && issue ? 'pointer' : 'not-allowed' }}>
             Generate My Spring Plan →
           </button>
         </div>
@@ -95,10 +95,10 @@ export default function DFWHVACSpringTuneUp() {
             <div style={{ fontSize: 14, color: '#94A3B8', marginBottom: 16 }}>{homeType} · Issue: {issue}</div>
             <div style={{ fontWeight: 600, marginBottom: 10 }}>Questions to ask your tech at the spring visit:</div>
             {(questionsByIssue[issue] || questionsByIssue['No issues last year']).map((q, i) => (
-              <div key={i} style={{ background: '#0A1628', borderRadius: 8, padding: '12px 16px', marginBottom: 8, fontSize: 14, color: '#CBD5E1′ }}>❓ {q}</div>
+              <div key={i} style={{ background: '#0A1628', borderRadius: 8, padding: '12px 16px', marginBottom: 8, fontSize: 14, color: '#CBD5E1' }}>❓ {q}</div>
             ))}
             {homeType.includes('older') || homeType.includes('15+') ? (
-              <div style={{ marginTop: 16, padding: '14px 18px', background: '#1A1010', borderRadius: 8, borderLeft: '4px solid #EF4444', fontSize: 14, color: '#FCA5A5′ }}>
+              <div style={{ marginTop: 16, padding: '14px 18px', background: '#1A1010', borderRadius: 8, borderLeft: '4px solid #EF4444', fontSize: 14, color: '#FCA5A5' }}>
                 ⚠️ Older homes (15+ years): Ask specifically about refrigerant type — R-22 (Freon) systems are expensive to service. Get a quote for conversion or replacement.
               </div>
             ) : null}

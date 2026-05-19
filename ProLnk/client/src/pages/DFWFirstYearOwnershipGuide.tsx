@@ -73,14 +73,14 @@ export default function DFWFirstYearOwnershipGuide() {
         <div style={{ background: '#0A1628', borderRadius: 12, padding: '28px 32px', marginBottom: 32 }}>
           <div style={{ fontSize: 13, color: '#F5E642', fontWeight: 600, marginBottom: 6 }}>DFW FIRST YEAR OWNERSHIP GUIDE</div>
           <h1 style={{ fontSize: 28, fontWeight: 700, color: '#fff', margin: 0 }}>📅 Your 12-Month Homeowner Calendar</h1>
-          <p style={{ color: '#94a3b8', margin: '8px 0 0′ }}>Month-by-month priorities personalized for your DFW home.</p>
+          <p style={{ color: '#94a3b8', margin: '8px 0 0' }}>Month-by-month priorities personalized for your DFW home.</p>
         </div>
 
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16, marginBottom: 24 }}>
           <div style={{ background: '#fff', borderRadius: 12, padding: 20, boxShadow: '0 1px 4px rgba(0,0,0,0.08)' }}>
             <div style={{ fontWeight: 700, marginBottom: 12 }}>🏠 Home Age</div>
             {homeAges.map(a => (
-              <button key={a} onClick={() => setHomeAge(a === homeAge ? '' : a)} style={{ display: 'block', width: '100%', textAlign: 'left', padding: '8px 12px', borderRadius: 8, border: homeAge === a ? '2px solid #F5E642′ : '1px solid #e2e8f0', background: homeAge === a ? '#0A1628' : '#F9FAFB', color: homeAge === a ? '#F5E642' : '#0A1628', fontWeight: homeAge === a ? 700 : 400, cursor: ’pointer', fontSize: 14, marginBottom: 6 }}>
+              <button key={a} onClick={() => setHomeAge(a === homeAge ? '' : a)} style={{ display: 'block', width: '100%', textAlign: 'left', padding: '8px 12px', borderRadius: 8, border: homeAge === a ? '2px solid #F5E642' : '1px solid #e2e8f0', background: homeAge === a ? '#0A1628' : '#F9FAFB', color: homeAge === a ? '#F5E642' : '#0A1628', fontWeight: homeAge === a ? 700 : 400, cursor: 'pointer', fontSize: 14, marginBottom: 6 }}>
                 {a}
               </button>
             ))}
@@ -89,7 +89,7 @@ export default function DFWFirstYearOwnershipGuide() {
             <div style={{ fontWeight: 700, marginBottom: 12 }}>📅 Month You Purchased</div>
             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 6 }}>
               {months.map((m, i) => (
-                <button key={m} onClick={() => setPurchaseMonth(purchaseMonth === i + 1 ? null : i + 1)} style={{ padding: '6px 10px', borderRadius: 8, border: purchaseMonth === i + 1 ? '2px solid #F5E642′ : '1px solid #e2e8f0', background: purchaseMonth === i + 1 ? '#0A1628' : '#F9FAFB', color: purchaseMonth === i + 1 ? '#F5E642' : '#0A1628', fontWeight: purchaseMonth === i + 1 ? 700 : 400, cursor: ’pointer', fontSize: 13 }}>
+                <button key={m} onClick={() => setPurchaseMonth(purchaseMonth === i + 1 ? null : i + 1)} style={{ padding: '6px 10px', borderRadius: 8, border: purchaseMonth === i + 1 ? '2px solid #F5E642' : '1px solid #e2e8f0', background: purchaseMonth === i + 1 ? '#0A1628' : '#F9FAFB', color: purchaseMonth === i + 1 ? '#F5E642' : '#0A1628', fontWeight: purchaseMonth === i + 1 ? 700 : 400, cursor: 'pointer', fontSize: 13 }}>
                   {m.slice(0, 3)}
                 </button>
               ))}
@@ -108,10 +108,10 @@ export default function DFWFirstYearOwnershipGuide() {
                   {offset === 3 && '🌱 '}
                   {offset === 6 && '☀️ '}
                   {offset === 12 && '🎉 '}
-                  {offset === 1 ? 'Month 1′ : `Month ${offset}`}
+                  {offset === 1 ? 'Month 1' : `Month ${offset}`}
                   {purchaseMonth && <span style={{ fontWeight: 400, color: '#64748b', fontSize: 14 }}> — {getMonthLabel(offset)}</span>}
                 </div>
-                <div style={{ background: doneCount === tasks.length && tasks.length > 0 ? '#dcfce7′ : '#f1f5f9', color: doneCount === tasks.length && tasks.length > 0 ? '#16a34a' : '#475569', fontSize: 13, fontWeight: 600, padding: '3px 10px', borderRadius: 12 }}>
+                <div style={{ background: doneCount === tasks.length && tasks.length > 0 ? '#dcfce7' : '#f1f5f9', color: doneCount === tasks.length && tasks.length > 0 ? '#16a34a' : '#475569', fontSize: 13, fontWeight: 600, padding: '3px 10px', borderRadius: 12 }}>
                   {doneCount}/{tasks.length}
                 </div>
               </div>
@@ -119,7 +119,7 @@ export default function DFWFirstYearOwnershipGuide() {
                 <label key={t.task} style={{ display: 'flex', gap: 12, marginBottom: 12, cursor: 'pointer', alignItems: 'flex-start' }}>
                   <input type="checkbox" checked={checked.includes(t.task)} onChange={() => toggle(t.task)} style={{ marginTop: 3, flexShrink: 0 }} />
                   <div>
-                    <div style={{ fontSize: 14, fontWeight: checked.includes(t.task) ? 400 : 600, color: checked.includes(t.task) ? '#94a3b8′ : '#0A1628', textDecoration: checked.includes(t.task) ? ’line-through' : 'none' }}>{t.task}</div>
+                    <div style={{ fontSize: 14, fontWeight: checked.includes(t.task) ? 400 : 600, color: checked.includes(t.task) ? '#94a3b8' : '#0A1628', textDecoration: checked.includes(t.task) ? 'line-through' : 'none' }}>{t.task}</div>
                     <div style={{ fontSize: 12, color: '#64748b', marginTop: 2 }}>💡 {t.why}</div>
                   </div>
                 </label>

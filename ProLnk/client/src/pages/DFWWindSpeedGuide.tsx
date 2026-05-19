@@ -45,7 +45,7 @@ export default function DFWWindSpeedGuide() {
                 onClick={() => setSelectedMaterial(i === selectedMaterial ? null : i)}
                 style={{
                   background: selectedMaterial === i ? '#1e3a5f' : '#0A1628',
-                  border: selectedMaterial === i ? '2px solid #F5E642′ : '2px solid #2d4a6b',
+                  border: selectedMaterial === i ? '2px solid #F5E642' : '2px solid #2d4a6b',
                   borderRadius: '10px',
                   padding: '0.75rem',
                   cursor: 'pointer',
@@ -72,7 +72,7 @@ export default function DFWWindSpeedGuide() {
                 onClick={() => setSelectedZone(i === selectedZone ? null : i)}
                 style={{
                   background: selectedZone === i ? '#1e3a5f' : '#0A1628',
-                  border: selectedZone === i ? '2px solid #F5E642′ : '2px solid #2d4a6b',
+                  border: selectedZone === i ? '2px solid #F5E642' : '2px solid #2d4a6b',
                   borderRadius: '10px',
                   padding: '0.75rem 1rem',
                   cursor: 'pointer',
@@ -95,12 +95,12 @@ export default function DFWWindSpeedGuide() {
         </div>
 
         {(mat || zone) && (
-          <div style={{ background: '#1e2d47', borderRadius: '16px', padding: '1.5rem', border: '2px solid #F5E642′ }}>
+          <div style={{ background: '#1e2d47', borderRadius: '16px', padding: '1.5rem', border: '2px solid #F5E642' }}>
             {zone && (
               <div style={{ marginBottom: '1rem' }}>
                 <div style={{ color: '#F5E642', fontWeight: 700, marginBottom: '0.5rem' }}>🏗️ Building Code Wind Speed</div>
                 <div style={{ background: '#0A1628', borderRadius: '10px', padding: '1rem', display: 'flex', gap: '1.5rem' }}>
-                  <div><div style={{ fontSize: '1.6rem', fontWeight: 700, color: '#F5E642′ }}>{zone.designSpeed}</div><div style={{ color: '#94a3b8', fontSize: '0.8rem' }}>Design Wind Speed</div></div>
+                  <div><div style={{ fontSize: '1.6rem', fontWeight: 700, color: '#F5E642' }}>{zone.designSpeed}</div><div style={{ color: '#94a3b8', fontSize: '0.8rem' }}>Design Wind Speed</div></div>
                   <div><div style={{ fontSize: '1.6rem', fontWeight: 700, color: '#60a5fa' }}>{zone.exposure}</div><div style={{ color: '#94a3b8', fontSize: '0.8rem' }}>Exposure Category</div></div>
                 </div>
               </div>
@@ -110,7 +110,7 @@ export default function DFWWindSpeedGuide() {
                 <div style={{ color: '#F5E642', fontWeight: 700, marginBottom: '0.5rem' }}>{mat.emoji} {mat.name} — Wind Tips</div>
                 <div style={{ background: '#0A1628', borderRadius: '10px', padding: '1rem' }}>
                   <div style={{ marginBottom: '0.5rem' }}>Damage threshold: <span style={{ color: '#ef4444', fontWeight: 700 }}>{mat.threshold}</span> | Code requirement: <span style={{ color: '#22c55e', fontWeight: 700 }}>{mat.code}</span></div>
-                  <ul style={{ margin: 0, paddingLeft: '1.2rem', color: '#e2e8f0′ }}>
+                  <ul style={{ margin: 0, paddingLeft: '1.2rem', color: '#e2e8f0' }}>
                     {mat.tips.map((t) => <li key={t} style={{ marginBottom: '0.25rem' }}>{t}</li>)}
                   </ul>
                 </div>
@@ -120,7 +120,7 @@ export default function DFWWindSpeedGuide() {
         )}
 
         {!mat && !zone && (
-          <div style={{ textAlign: 'center', color: '#94a3b8′ }}>
+          <div style={{ textAlign: 'center', color: '#94a3b8' }}>
             👆 Select your building material and DFW location for wind damage assessment
           </div>
         )}

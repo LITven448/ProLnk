@@ -27,18 +27,18 @@ export default function PartnerCommissionDeepDive() {
   }));
 
   const streams = [
-    { label: 'Stream 1', name: 'Direct Commission', value: stream1, rate: '12% of job match value', color: '#0A1628′ },
+    { label: 'Stream 1', name: 'Direct Commission', value: stream1, rate: '12% of job match value', color: '#0A1628' },
     { label: 'Stream 2 L1', name: 'Network Override Lvl 1', value: stream2L1, rate: `7% × ${networkSize} pros`, color: '#1E3A5F' },
     { label: 'Stream 2 L2', name: 'Network Override Lvl 2', value: stream2L2, rate: `4% × ${Math.floor(networkSize * 2)} pros`, color: '#2D5A8E' },
     { label: 'Stream 2 L3', name: 'Network Override Lvl 3', value: stream2L3, rate: `2% × ${Math.floor(networkSize * 4)} pros`, color: '#3D7ABD' },
     { label: 'Stream 2 L4', name: 'Network Override Lvl 4', value: stream2L4, rate: `1% × ${Math.floor(networkSize * 8)} pros`, color: '#4D9AEC' },
-    { label: 'Stream 3', name: 'Subscription Override', value: stream3, rate: `10% × ${networkSize} subs × $149`, color: '#059669′ },
+    { label: 'Stream 3', name: 'Subscription Override', value: stream3, rate: `10% × ${networkSize} subs × $149`, color: '#059669' },
     { label: 'Stream 4', name: 'Homeowner Referral', value: stream4, rate: '$50 per qualified homeowner', color: '#7C3AED' },
-    { label: 'Stream 5', name: 'Origination Rights', value: stream5, rate: `${isCharter ? '1.5%' : '1.0%'} of job value (permanent)`, color: '#D97706′ },
+    { label: 'Stream 5', name: 'Origination Rights', value: stream5, rate: `${isCharter ? '1.5%' : '1.0%'} of job value (permanent)`, color: '#D97706' },
   ];
 
   return (
-    <div style={{ backgroundColor: '#F9FAFB', minHeight: '100vh', fontFamily: 'Inter, sans-serif', color: '#0A1628′ }}>
+    <div style={{ backgroundColor: '#F9FAFB', minHeight: '100vh', fontFamily: 'Inter, sans-serif', color: '#0A1628' }}>
       <div style={{ maxWidth: 900, margin: '0 auto', padding: '48px 24px' }}>
         <div style={{ textAlign: 'center', marginBottom: 48 }}>
           <div style={{ fontSize: 40, marginBottom: 12 }}>💰</div>
@@ -99,17 +99,17 @@ export default function PartnerCommissionDeepDive() {
               <thead>
                 <tr>
                   <th style={{ textAlign: 'left', padding: '10px 12px', borderBottom: '2px solid #E5E7EB' }}>Year</th>
-                  <th style={{ textAlign: 'right', padding: '10px 12px', borderBottom: '2px solid #E5E7EB', color: '#0A1628′ }}>Charter Annual</th>
-                  <th style={{ textAlign: 'right', padding: '10px 12px', borderBottom: '2px solid #E5E7EB', color: '#4B5563′ }}>Founding Annual</th>
-                  <th style={{ textAlign: 'right', padding: '10px 12px', borderBottom: '2px solid #E5E7EB', color: '#059669′ }}>Charter Advantage</th>
+                  <th style={{ textAlign: 'right', padding: '10px 12px', borderBottom: '2px solid #E5E7EB', color: '#0A1628' }}>Charter Annual</th>
+                  <th style={{ textAlign: 'right', padding: '10px 12px', borderBottom: '2px solid #E5E7EB', color: '#4B5563' }}>Founding Annual</th>
+                  <th style={{ textAlign: 'right', padding: '10px 12px', borderBottom: '2px solid #E5E7EB', color: '#059669' }}>Charter Advantage</th>
                 </tr>
               </thead>
               <tbody>
                 {fiveYearCharter.map(row => (
-                  <tr key={row.year} style={{ borderBottom: '1px solid #F3F4F6′ }}>
+                  <tr key={row.year} style={{ borderBottom: '1px solid #F3F4F6' }}>
                     <td style={{ padding: '12px 12px', fontWeight: 700 }}>Year {row.year}</td>
-                    <td style={{ padding: '12px 12px', textAlign: 'right', fontWeight: 700, color: '#0A1628′ }}>${row.charter.toLocaleString()}</td>
-                    <td style={{ padding: '12px 12px', textAlign: 'right', color: '#4B5563′ }}>${row.founding.toLocaleString()}</td>
+                    <td style={{ padding: '12px 12px', textAlign: 'right', fontWeight: 700, color: '#0A1628' }}>${row.charter.toLocaleString()}</td>
+                    <td style={{ padding: '12px 12px', textAlign: 'right', color: '#4B5563' }}>${row.founding.toLocaleString()}</td>
                     <td style={{ padding: '12px 12px', textAlign: 'right', color: '#059669', fontWeight: 600 }}>
                       +${(row.charter - row.founding).toLocaleString()}
                     </td>

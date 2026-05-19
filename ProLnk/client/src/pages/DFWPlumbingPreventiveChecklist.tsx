@@ -27,8 +27,8 @@ export default function DFWPlumbingPreventiveChecklist() {
   const nextDue = CHECKLIST.find((_, i) => !completed[i]);
 
   function getHealthLabel() {
-    if (pct >= 75) return { label: 'Healthy', color: '#4CAF50′ };
-    if (pct >= 40) return { label: 'Fair', color: '#F5E642′ };
+    if (pct >= 75) return { label: 'Healthy', color: '#4CAF50' };
+    if (pct >= 40) return { label: 'Fair', color: '#F5E642' };
     return { label: 'Needs Work', color: '#FF6B6B' };
   }
 
@@ -49,8 +49,8 @@ export default function DFWPlumbingPreventiveChecklist() {
 
         <div style={{ display: 'flex', gap: 12, marginBottom: 24 }}>
           <div style={{ background: '#0F2040', borderRadius: 12, padding: '16px 24px', flex: 1 }}>
-            <div style={{ fontSize: 36, fontWeight: 800, color: '#F5E642′ }}>{pct}%</div>
-            <div style={{ fontSize: 13, color: '#8B9BB4′ }}>Annual completion</div>
+            <div style={{ fontSize: 36, fontWeight: 800, color: '#F5E642' }}>{pct}%</div>
+            <div style={{ fontSize: 13, color: '#8B9BB4' }}>Annual completion</div>
           </div>
           <div style={{ background: '#0F2040', borderRadius: 12, padding: '16px 24px', flex: 1 }}>
             <div style={{ fontSize: 13, color: '#8B9BB4', marginBottom: 4 }}>Plumbing health</div>
@@ -72,19 +72,19 @@ export default function DFWPlumbingPreventiveChecklist() {
               style={{
                 display: 'flex', alignItems: 'flex-start', gap: 14, padding: '14px 20px',
                 borderBottom: i < CHECKLIST.length - 1 ? '1px solid #1A2E4A' : 'none',
-                cursor: 'pointer', background: completed[i] ? '#0A1E38′ : ’transparent',
+                cursor: 'pointer', background: completed[i] ? '#0A1E38' : 'transparent',
               }}
             >
               <div style={{
                 width: 22, height: 22, borderRadius: 6, border: `2px solid ${completed[i] ? '#F5E642' : '#2A3F5F'}`,
-                background: completed[i] ? '#F5E642′ : ’transparent', flexShrink: 0, marginTop: 2,
+                background: completed[i] ? '#F5E642' : 'transparent', flexShrink: 0, marginTop: 2,
                 display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 13,
               }}>
                 {completed[i] ? '✓' : ''}
               </div>
               <div style={{ flex: 1 }}>
                 <div style={{ fontSize: 12, color: '#F5E642', fontWeight: 600, marginBottom: 2 }}>{item.month}</div>
-                <div style={{ fontSize: 15, color: completed[i] ? '#6B7B99′ : '#E8EAF0', textDecoration: completed[i] ? ’line-through' : 'none' }}>
+                <div style={{ fontSize: 15, color: completed[i] ? '#6B7B99' : '#E8EAF0', textDecoration: completed[i] ? 'line-through' : 'none' }}>
                   {item.icon} {item.task}
                 </div>
               </div>
@@ -92,8 +92,8 @@ export default function DFWPlumbingPreventiveChecklist() {
           ))}
         </div>
 
-        <div style={{ marginTop: 16, padding: '12px 16px', background: '#0F2040', borderRadius: 10, borderLeft: '3px solid #F5E642′ }}>
-          <span style={{ fontSize: 13, color: '#8B9BB4′ }}>💡 DFW Tip: DFW water is extremely hard (200–400 ppm). Flush your water heater annually and consider a whole-home softener — hard water cuts water heater lifespan by 30–50%.</span>
+        <div style={{ marginTop: 16, padding: '12px 16px', background: '#0F2040', borderRadius: 10, borderLeft: '3px solid #F5E642' }}>
+          <span style={{ fontSize: 13, color: '#8B9BB4' }}>💡 DFW Tip: DFW water is extremely hard (200–400 ppm). Flush your water heater annually and consider a whole-home softener — hard water cuts water heater lifespan by 30–50%.</span>
         </div>
       </div>
     </div>

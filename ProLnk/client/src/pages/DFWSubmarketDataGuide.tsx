@@ -94,7 +94,7 @@ export default function DFWSubmarketDataGuide() {
               {SUBMARKETS.map(o => (
                 <button key={o} onClick={() => setSubmarket(o)}
                   style={{ padding: '0.4rem 0.9rem', borderRadius: 6, border: '2px solid', cursor: 'pointer', fontSize: '0.8rem',
-                    borderColor: submarket === o ? '#0369a1′ : '#e2e8f0', background: submarket === o ? '#0369a1' : '#fff',
+                    borderColor: submarket === o ? '#0369a1' : '#e2e8f0', background: submarket === o ? '#0369a1' : '#fff',
                     color: submarket === o ? '#fff' : '#475569', fontWeight: submarket === o ? 700 : 400 }}>
                   {o}
                 </button>
@@ -107,7 +107,7 @@ export default function DFWSubmarketDataGuide() {
               {RESEARCH_NEEDS.map(o => (
                 <button key={o} onClick={() => setResearchNeed(o)}
                   style={{ padding: '0.6rem 1rem', borderRadius: 7, border: '2px solid', cursor: 'pointer', fontSize: '0.875rem', textAlign: 'left',
-                    borderColor: researchNeed === o ? '#0369a1′ : '#e2e8f0', background: researchNeed === o ? '#0369a1' : '#fff',
+                    borderColor: researchNeed === o ? '#0369a1' : '#e2e8f0', background: researchNeed === o ? '#0369a1' : '#fff',
                     color: researchNeed === o ? '#fff' : '#334155', fontWeight: researchNeed === o ? 700 : 400 }}>
                   {o}
                 </button>
@@ -117,7 +117,7 @@ export default function DFWSubmarketDataGuide() {
         </div>
 
         <button onClick={handleAnalyze} disabled={!researchNeed}
-          style={{ background: researchNeed ? '#0369a1′ : '#e2e8f0', color: researchNeed ? '#fff' : '#94a3b8',
+          style={{ background: researchNeed ? '#0369a1' : '#e2e8f0', color: researchNeed ? '#fff' : '#94a3b8',
             border: 'none', borderRadius: 8, padding: '0.75rem 2rem', fontWeight: 800, fontSize: '1rem', cursor: researchNeed ? 'pointer' : 'default', marginBottom: '2rem' }}>
           Find the Right Data Source →
         </button>
@@ -128,15 +128,15 @@ export default function DFWSubmarketDataGuide() {
             {[
               { label: '⭐ PRIMARY SOURCE', value: result.primarySource, bg: '#eff6ff', border: '#bfdbfe', text: '#1e3a8a' },
               { label: '📋 SECONDARY SOURCE', value: result.secondarySource, bg: '#f0fdf4', border: '#bbf7d0', text: '#14532d' },
-              { label: '🏗️ PERMIT / DEVELOPMENT SOURCE', value: result.permitSource, bg: '#faf5ff', border: '#e9d5ff', text: '#4c1d95′ },
-              { label: '📈 HOW TO INTERPRET THIS DATA', value: result.interpretation, bg: '#fff7ed', border: '#fed7aa', text: '#7c2d12′ },
+              { label: '🏗️ PERMIT / DEVELOPMENT SOURCE', value: result.permitSource, bg: '#faf5ff', border: '#e9d5ff', text: '#4c1d95' },
+              { label: '📈 HOW TO INTERPRET THIS DATA', value: result.interpretation, bg: '#fff7ed', border: '#fed7aa', text: '#7c2d12' },
             ].map(({ label, value, bg, border, text }) => (
               <div key={label} style={{ background: bg, borderRadius: 8, padding: '1rem', border: `1px solid ${border}` }}>
                 <div style={{ color: text, fontSize: '0.8rem', fontWeight: 700, marginBottom: '0.4rem' }}>{label}</div>
                 <div style={{ color: text, fontSize: '0.9rem', lineHeight: 1.6, opacity: 0.9 }}>{value}</div>
               </div>
             ))}
-            <div style={{ background: '#fef9c3', borderRadius: 8, padding: '1rem', border: '1px solid #fde047′ }}>
+            <div style={{ background: '#fef9c3', borderRadius: 8, padding: '1rem', border: '1px solid #fde047' }}>
               <div style={{ color: '#713f12', fontSize: '0.8rem', fontWeight: 700, marginBottom: '0.4rem' }}>🌟 DFW-SPECIFIC NOTE</div>
               <div style={{ color: '#713f12', fontSize: '0.9rem', lineHeight: 1.6 }}>{result.dfwNote}</div>
             </div>

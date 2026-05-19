@@ -20,11 +20,11 @@ const styleRecs: Record<StylePref, { name: string; desc: string; dfwNote: string
 };
 
 const installCosts: Record<RoomType, { sqft: string; matCost: string; installCost: string; diyCost: string }> = {
-  powder: { sqft: '60–100 sq ft', matCost: '$200–$600', installCost: '$300–$600', diyCost: '$150–$400′ },
-  dining: { sqft: '200–400 sq ft', matCost: '$800–$3,000', installCost: '$800–$1,800', diyCost: '$500–$1,500′ },
-  bedroom: { sqft: '100–200 sq ft', matCost: '$400–$1,400', installCost: '$400–$900', diyCost: '$250–$800′ },
-  entryway: { sqft: '80–160 sq ft', matCost: '$350–$1,200', installCost: '$400–$900', diyCost: '$200–$600′ },
-  living: { sqft: '300–600 sq ft', matCost: '$1,200–$5,000', installCost: '$1,200–$3,000', diyCost: '$700–$2,000′ },
+  powder: { sqft: '60–100 sq ft', matCost: '$200–$600', installCost: '$300–$600', diyCost: '$150–$400' },
+  dining: { sqft: '200–400 sq ft', matCost: '$800–$3,000', installCost: '$800–$1,800', diyCost: '$500–$1,500' },
+  bedroom: { sqft: '100–200 sq ft', matCost: '$400–$1,400', installCost: '$400–$900', diyCost: '$250–$800' },
+  entryway: { sqft: '80–160 sq ft', matCost: '$350–$1,200', installCost: '$400–$900', diyCost: '$200–$600' },
+  living: { sqft: '300–600 sq ft', matCost: '$1,200–$5,000', installCost: '$1,200–$3,000', diyCost: '$700–$2,000' },
 };
 
 export default function DFWWallpaperTrendsGuide() {
@@ -46,11 +46,11 @@ export default function DFWWallpaperTrendsGuide() {
       <div style={{ maxWidth: 860, margin: '0 auto', padding: '48px 24px' }}>
         <div style={{ fontSize: 13, color: '#F5E642', marginBottom: 8, letterSpacing: 1, textTransform: 'uppercase' }}>DFW Wallpaper Guide 2026</div>
         <h1 style={{ fontSize: 38, fontWeight: 800, marginBottom: 8, lineHeight: 1.2 }}>Wallpaper Comeback: DFW Guide</h1>
-        <p style={{ fontSize: 17, color: '#94a3b8', marginBottom: 40, lineHeight: 1.7 }}>Wallpaper is back in a big way across DFW. Here's where it works, what’s trending, and when to call a pro.</p>
+        <p style={{ fontSize: 17, color: '#94a3b8', marginBottom: 40, lineHeight: 1.7 }}>Wallpaper is back in a big way across DFW. Here's where it works, what's trending, and when to call a pro.</p>
 
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 20, marginBottom: 32 }}>
           <div style={{ background: '#0f2847', borderRadius: 12, padding: 24 }}>
-            <h2 style={{ fontSize: 18, fontWeight: 700, marginBottom: 16, color: '#4ade80′ }}>✅ Best Rooms for Wallpaper</h2>
+            <h2 style={{ fontSize: 18, fontWeight: 700, marginBottom: 16, color: '#4ade80' }}>✅ Best Rooms for Wallpaper</h2>
             {[
               { r: '🚿 Powder Bath', d: '#1 choice in DFW — small space, huge impact' },
               { r: '🍽️ Dining Room', d: 'Statement walls with DFW tall ceilings' },
@@ -59,12 +59,12 @@ export default function DFWWallpaperTrendsGuide() {
             ].map(item => (
               <div key={item.r} style={{ padding: '8px 0', borderBottom: '1px solid #1e3a5f' }}>
                 <div style={{ fontWeight: 700, fontSize: 14 }}>{item.r}</div>
-                <div style={{ fontSize: 13, color: '#94a3b8′ }}>{item.d}</div>
+                <div style={{ fontSize: 13, color: '#94a3b8' }}>{item.d}</div>
               </div>
             ))}
           </div>
           <div style={{ background: '#0f2847', borderRadius: 12, padding: 24 }}>
-            <h2 style={{ fontSize: 18, fontWeight: 700, marginBottom: 16, color: '#fbbf24′ }}>⚠️ DFW Humidity Considerations</h2>
+            <h2 style={{ fontSize: 18, fontWeight: 700, marginBottom: 16, color: '#fbbf24' }}>⚠️ DFW Humidity Considerations</h2>
             <div style={{ fontSize: 14, color: '#cbd5e1', lineHeight: 1.7 }}>
               <p style={{ marginBottom: 12 }}>Peel-and-stick wallpaper performs well in low-humidity rooms (bedrooms, living areas) but <strong>fails in bathrooms and kitchens</strong> where steam and moisture loosen adhesive.</p>
               <p style={{ marginBottom: 0 }}>For powder baths and dining rooms, use traditional paste-the-wall or paste-the-paper wallpaper. It lasts 10–20 years with proper prep.</p>
@@ -77,7 +77,7 @@ export default function DFWWallpaperTrendsGuide() {
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: 12 }}>
             {Object.entries(styleRecs).map(([key, s]) => (
               <div key={key} style={{ background: '#0A1628', borderRadius: 8, padding: 14 }}>
-                <div style={{ fontWeight: 700, fontSize: 14, marginBottom: 4, color: '#F5E642′ }}>{s.name}</div>
+                <div style={{ fontWeight: 700, fontSize: 14, marginBottom: 4, color: '#F5E642' }}>{s.name}</div>
                 <div style={{ fontSize: 12, color: '#94a3b8', lineHeight: 1.5 }}>{s.desc}</div>
               </div>
             ))}
@@ -88,14 +88,14 @@ export default function DFWWallpaperTrendsGuide() {
           <h2 style={{ fontSize: 22, fontWeight: 700, marginBottom: 20 }}>🎯 Get My Wallpaper Recommendation</h2>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16, marginBottom: 20 }}>
             <div>
-              <label style={{ fontSize: 13, fontWeight: 700, display: 'block', marginBottom: 6, color: '#F5E642′ }}>Room Type</label>
+              <label style={{ fontSize: 13, fontWeight: 700, display: 'block', marginBottom: 6, color: '#F5E642' }}>Room Type</label>
               <select value={room} onChange={e => setRoom(e.target.value as RoomType)} style={{ width: '100%', padding: '10px 12px', borderRadius: 8, border: '1px solid #334155', background: '#0A1628', color: '#fff', fontSize: 15 }}>
                 <option value=''>Select room...</option>
                 {(Object.entries(roomInfo) as [RoomType, typeof roomInfo[RoomType]][]).map(([k, v]) => <option key={k} value={k}>{v.label}</option>)}
               </select>
             </div>
             <div>
-              <label style={{ fontSize: 13, fontWeight: 700, display: 'block', marginBottom: 6, color: '#F5E642′ }}>Style Preference</label>
+              <label style={{ fontSize: 13, fontWeight: 700, display: 'block', marginBottom: 6, color: '#F5E642' }}>Style Preference</label>
               <select value={style} onChange={e => setStyle(e.target.value as StylePref)} style={{ width: '100%', padding: '10px 12px', borderRadius: 8, border: '1px solid #334155', background: '#0A1628', color: '#fff', fontSize: 15 }}>
                 <option value=''>Select style...</option>
                 {(Object.entries(styleRecs) as [StylePref, typeof styleRecs[StylePref]][]).map(([k, v]) => <option key={k} value={k}>{v.name}</option>)}
@@ -105,7 +105,7 @@ export default function DFWWallpaperTrendsGuide() {
           <button onClick={getRecommendation} style={{ background: '#F5E642', color: '#0A1628', border: 'none', borderRadius: 8, padding: '12px 28px', fontSize: 15, fontWeight: 800, cursor: 'pointer' }}>Get Recommendation</button>
           {rec && (
             <div style={{ marginTop: 24, background: '#0A1628', borderRadius: 8, padding: 24 }}>
-              <div style={{ fontWeight: 800, fontSize: 18, marginBottom: 4, color: '#F5E642′ }}>{rec.styleData.name} — {rec.roomData.label}</div>
+              <div style={{ fontWeight: 800, fontSize: 18, marginBottom: 4, color: '#F5E642' }}>{rec.styleData.name} — {rec.roomData.label}</div>
               <div style={{ fontSize: 14, color: '#94a3b8', marginBottom: 16, lineHeight: 1.6 }}>{rec.styleData.desc}</div>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12, marginBottom: 16 }}>
                 {[
@@ -116,7 +116,7 @@ export default function DFWWallpaperTrendsGuide() {
                 ].map(item => (
                   <div key={item.label} style={{ background: '#0f2847', borderRadius: 8, padding: 12 }}>
                     <div style={{ fontSize: 12, color: '#94a3b8', marginBottom: 4 }}>{item.label}</div>
-                    <div style={{ fontWeight: 700, color: '#4ade80′ }}>{item.val}</div>
+                    <div style={{ fontWeight: 700, color: '#4ade80' }}>{item.val}</div>
                   </div>
                 ))}
               </div>

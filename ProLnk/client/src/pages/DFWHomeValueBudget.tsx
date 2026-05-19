@@ -67,21 +67,21 @@ export default function DFWHomeValueBudget() {
         <div style={{ marginBottom: 20 }}>
           <div style={{ color: '#F5E642', fontWeight: 700, marginBottom: 8 }}>Home value</div>
           <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap' }}>
-            {homeValues.map(v => <button key={v} onClick={() => setHomeValue(v)} style={{ background: homeValue === v ? '#F5E642′ : '#111d30', color: homeValue === v ? '#0A1628' : '#fff', border: '1px solid #1e3a5f', borderRadius: 6, padding: '0.5rem 1rem', cursor: ’pointer', fontWeight: 600, fontSize: 13 }}>{v}</button>)}
+            {homeValues.map(v => <button key={v} onClick={() => setHomeValue(v)} style={{ background: homeValue === v ? '#F5E642' : '#111d30', color: homeValue === v ? '#0A1628' : '#fff', border: '1px solid #1e3a5f', borderRadius: 6, padding: '0.5rem 1rem', cursor: 'pointer', fontWeight: 600, fontSize: 13 }}>{v}</button>)}
           </div>
         </div>
 
         <div style={{ marginBottom: 20 }}>
           <div style={{ color: '#F5E642', fontWeight: 700, marginBottom: 8 }}>Years until you sell</div>
           <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap' }}>
-            {timelines.map(t => <button key={t} onClick={() => setTimeline(t)} style={{ background: timeline === t ? '#F5E642′ : '#111d30', color: timeline === t ? '#0A1628' : '#fff', border: '1px solid #1e3a5f', borderRadius: 6, padding: '0.5rem 1rem', cursor: ’pointer', fontWeight: 600 }}>{t}</button>)}
+            {timelines.map(t => <button key={t} onClick={() => setTimeline(t)} style={{ background: timeline === t ? '#F5E642' : '#111d30', color: timeline === t ? '#0A1628' : '#fff', border: '1px solid #1e3a5f', borderRadius: 6, padding: '0.5rem 1rem', cursor: 'pointer', fontWeight: 600 }}>{t}</button>)}
           </div>
         </div>
 
         <div style={{ marginBottom: 28 }}>
           <div style={{ color: '#F5E642', fontWeight: 700, marginBottom: 8 }}>DFW submarket</div>
           <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap' }}>
-            {submarkets.map(s => <button key={s} onClick={() => setSubmarket(s)} style={{ background: submarket === s ? '#F5E642′ : '#111d30', color: submarket === s ? '#0A1628' : '#fff', border: '1px solid #1e3a5f', borderRadius: 6, padding: '0.5rem 1rem', cursor: ’pointer', fontWeight: 600, fontSize: 12 }}>{s}</button>)}
+            {submarkets.map(s => <button key={s} onClick={() => setSubmarket(s)} style={{ background: submarket === s ? '#F5E642' : '#111d30', color: submarket === s ? '#0A1628' : '#fff', border: '1px solid #1e3a5f', borderRadius: 6, padding: '0.5rem 1rem', cursor: 'pointer', fontWeight: 600, fontSize: 12 }}>{s}</button>)}
           </div>
         </div>
 
@@ -102,7 +102,7 @@ export default function DFWHomeValueBudget() {
               ))}
             </div>
             <div style={{ marginTop: 24, background: '#111d30', borderRadius: 10, padding: '1rem', color: '#64748b', fontSize: 13 }}>
-              💡 <strong style={{ color: '#F5E642′ }}>ProLnk tip:</strong> Get 3 competitive quotes on any value project. ProLnk matches you with verified DFW contractors who know your submarket.
+              💡 <strong style={{ color: '#F5E642' }}>ProLnk tip:</strong> Get 3 competitive quotes on any value project. ProLnk matches you with verified DFW contractors who know your submarket.
             </div>
           </>
         )}

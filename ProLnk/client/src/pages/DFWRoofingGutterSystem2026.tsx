@@ -62,7 +62,7 @@ export default function DFWRoofingGutterSystem2026() {
         </div>
 
         <div style={{ backgroundColor: '#112240', borderRadius: 8, padding: 16, marginBottom: 16 }}>
-          <div style={{ fontWeight: 700, fontSize: 14, marginBottom: 8, color: '#F5E642′ }}>⚠️ A note on gutter guards in DFW</div>
+          <div style={{ fontWeight: 700, fontSize: 14, marginBottom: 8, color: '#F5E642' }}>⚠️ A note on gutter guards in DFW</div>
           <div style={{ color: '#94A3B8', fontSize: 13, lineHeight: 1.6 }}>Results are mixed in DFW. Micro-mesh guards work reasonably well for leaf debris but DFW spring pollen creates a biofilm that can clog even fine mesh. Foam inserts fill with debris in one season. If you use guards, budget for at least one annual cleaning regardless.</div>
         </div>
 

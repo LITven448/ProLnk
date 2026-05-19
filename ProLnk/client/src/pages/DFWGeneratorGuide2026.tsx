@@ -39,7 +39,7 @@ export default function DFWGeneratorGuide2026() {
           ].map(card => (
             <div key={card.label} style={{ background: '#132040', borderRadius: 12, padding: 20, textAlign: 'center' }}>
               <div style={{ fontSize: 28 }}>{card.icon}</div>
-              <div style={{ fontSize: 20, fontWeight: 700, color: '#F5E642′ }}>{card.value}</div>
+              <div style={{ fontSize: 20, fontWeight: 700, color: '#F5E642' }}>{card.value}</div>
               <div style={{ fontSize: 12, color: '#94a3b8', marginTop: 4 }}>{card.label}</div>
             </div>
           ))}
@@ -62,7 +62,7 @@ export default function DFWGeneratorGuide2026() {
             <label style={{ color: '#94a3b8', fontSize: 13 }}>Home Size: {homeSize.toLocaleString()} sqft</label>
             <input type="range" min={1000} max={6000} step={100} value={homeSize}
               onChange={e => setHomeSize(Number(e.target.value))}
-              style={{ width: '100%', accentColor: '#F5E642′ }} />
+              style={{ width: '100%', accentColor: '#F5E642' }} />
           </div>
           <p style={{ color: '#94a3b8', fontSize: 14, marginBottom: 12 }}>Select critical loads:</p>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3,1fr)', gap: 10, marginBottom: 20 }}>
@@ -82,7 +82,7 @@ export default function DFWGeneratorGuide2026() {
                 { label: 'Est. Installed Cost', value: `$${estCost.toLocaleString()}` },
               ].map(r => (
                 <div key={r.label} style={{ background: '#0A1628', borderRadius: 8, padding: 12, textAlign: 'center' }}>
-                  <div style={{ fontSize: 18, fontWeight: 700, color: '#F5E642′ }}>{r.value}</div>
+                  <div style={{ fontSize: 18, fontWeight: 700, color: '#F5E642' }}>{r.value}</div>
                   <div style={{ fontSize: 11, color: '#94a3b8', marginTop: 4 }}>{r.label}</div>
                 </div>
               ))}

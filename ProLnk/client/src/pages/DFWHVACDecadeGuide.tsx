@@ -118,7 +118,7 @@ export default function DFWHVACDecadeGuide() {
         <div style={{ display: 'flex', flexWrap: 'wrap', gap: 12, marginBottom: 32 }}>
           {decades.map((d, i) => (
             <button key={i} onClick={() => setSelected(i === selected ? null : i)}
-              style={{ padding: '10px 18px', borderRadius: 8, border: `2px solid ${selected === i ? '#F5E642' : '#1E3A5F'}`, background: selected === i ? '#F5E642′ : '#0F2645', color: selected === i ? '#0A1628' : '#E8EAF0', fontWeight: 700, cursor: ’pointer', fontSize: 14 }}>
+              style={{ padding: '10px 18px', borderRadius: 8, border: `2px solid ${selected === i ? '#F5E642' : '#1E3A5F'}`, background: selected === i ? '#F5E642' : '#0F2645', color: selected === i ? '#0A1628' : '#E8EAF0', fontWeight: 700, cursor: 'pointer', fontSize: 14 }}>
               {d.label}
             </button>
           ))}
@@ -133,8 +133,8 @@ export default function DFWHVACDecadeGuide() {
               {active.inspect.map((item, i) => <div key={i} style={{ marginBottom: 4, paddingLeft: 12 }}>• {item}</div>)}
             </div>
             <div style={{ marginBottom: 12 }}><span style={{ color: '#F5E642', fontWeight: 700 }}>💰 Budget Estimate: </span>{active.budget}</div>
-            <div style={{ background: '#162035', borderRadius: 8, padding: 12, marginBottom: 12, fontSize: 14, color: '#94A3B8', borderLeft: '3px solid #F5E642′ }}>🌡️ DFW Context: {active.dfw}</div>
-            <div style={{ background: '#0A1628', borderRadius: 8, padding: 16, marginBottom: 16, fontSize: 14, color: '#94A3B8′ }}>{active.note}</div>
+            <div style={{ background: '#162035', borderRadius: 8, padding: 12, marginBottom: 12, fontSize: 14, color: '#94A3B8', borderLeft: '3px solid #F5E642' }}>🌡️ DFW Context: {active.dfw}</div>
+            <div style={{ background: '#0A1628', borderRadius: 8, padding: 16, marginBottom: 16, fontSize: 14, color: '#94A3B8' }}>{active.note}</div>
             <div style={{ color: '#F5E642', fontWeight: 700, fontSize: 15 }}>📅 Timeline: {active.timeline}</div>
           </div>
         )}

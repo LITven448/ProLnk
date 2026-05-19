@@ -111,7 +111,7 @@ export default function EmergencyContractorGuide() {
           <h1 style={{ fontSize: '2rem', fontWeight: 700, color: '#F5E642', marginBottom: '0.5rem' }}>
             DFW Emergency Home Repair
           </h1>
-          <p style={{ color: '#94a3b8′ }}>Who to call, what to do first, and what NOT to do — by emergency type</p>
+          <p style={{ color: '#94a3b8' }}>Who to call, what to do first, and what NOT to do — by emergency type</p>
         </div>
 
         <div style={{ background: '#F5E642', color: '#0A1628', borderRadius: 12, padding: '1rem 1.5rem', marginBottom: '2rem', display: 'flex', gap: '1rem', alignItems: 'center' }}>
@@ -128,8 +128,8 @@ export default function EmergencyContractorGuide() {
               key={e.id}
               onClick={() => setSelected(e.id === selected ? null : e.id)}
               style={{
-                background: selected === e.id ? '#F5E642′ : '#112240',
-                color: selected === e.id ? '#0A1628′ : '#fff',
+                background: selected === e.id ? '#F5E642' : '#112240',
+                color: selected === e.id ? '#0A1628' : '#fff',
                 border: `2px solid ${selected === e.id ? '#F5E642' : '#1e3a5f'}`,
                 borderRadius: 10, padding: '1rem', cursor: 'pointer', textAlign: 'left',
                 transition: 'all 0.15s',

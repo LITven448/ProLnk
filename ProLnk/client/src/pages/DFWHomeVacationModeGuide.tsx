@@ -104,8 +104,8 @@ export default function DFWHomeVacationModeGuide() {
             </select>
           </div>
           <div onClick={() => setHasSmartHome(!hasSmartHome)} style={{ display: 'flex', alignItems: 'center', gap: 12, cursor: 'pointer', marginBottom: 20, padding: 12, background: hasSmartHome ? '#1a3a5c' : '#0A1628', borderRadius: 8, border: `1px solid ${hasSmartHome ? '#F5E642' : '#1e3a5f'}` }}>
-            <div style={{ width: 22, height: 22, borderRadius: 4, background: hasSmartHome ? '#F5E642′ : ’transparent', border: `2px solid ${hasSmartHome ? '#F5E642' : '#475569'}`, display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#0A1628', fontWeight: 700, fontSize: 14 }}>{hasSmartHome ? '✓' : ''}</div>
-            <span style={{ color: '#cbd5e1′ }}>📱 I have smart home devices (thermostat, cameras, locks)</span>
+            <div style={{ width: 22, height: 22, borderRadius: 4, background: hasSmartHome ? '#F5E642' : 'transparent', border: `2px solid ${hasSmartHome ? '#F5E642' : '#475569'}`, display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#0A1628', fontWeight: 700, fontSize: 14 }}>{hasSmartHome ? '✓' : ''}</div>
+            <span style={{ color: '#cbd5e1' }}>📱 I have smart home devices (thermostat, cameras, locks)</span>
           </div>
           <button onClick={generate} style={{ background: '#F5E642', color: '#0A1628', border: 'none', borderRadius: 8, padding: '12px 24px', fontWeight: 700, cursor: 'pointer', width: '100%' }}>Build My DFW Vacation Plan</button>
         </div>

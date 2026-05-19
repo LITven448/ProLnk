@@ -43,13 +43,13 @@ export default function DFWHVACDehumidifierGuide2026() {
           <div style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
             {problems.map(p => (
               <button key={p.id} onClick={() => setSelected(p.id === selected ? null : p.id)}
-                style={{ background: selected === p.id ? '#F5E642′ : '#1a2f4a', color: selected === p.id ? '#0A1628' : '#fff', border: ’none', borderRadius: 8, padding: '12px 16px', textAlign: 'left', cursor: 'pointer', fontWeight: 600, fontSize: 14 }}>
+                style={{ background: selected === p.id ? '#F5E642' : '#1a2f4a', color: selected === p.id ? '#0A1628' : '#fff', border: 'none', borderRadius: 8, padding: '12px 16px', textAlign: 'left', cursor: 'pointer', fontWeight: 600, fontSize: 14 }}>
                 {p.label}
               </button>
             ))}
           </div>
           {match && (
-            <div style={{ marginTop: 16, background: '#1a2f4a', borderRadius: 10, padding: 16, borderLeft: '4px solid #F5E642′ }}>
+            <div style={{ marginTop: 16, background: '#1a2f4a', borderRadius: 10, padding: 16, borderLeft: '4px solid #F5E642' }}>
               <div style={{ color: '#F5E642', fontWeight: 700, marginBottom: 6 }}>Recommended Solution</div>
               <div style={{ color: '#e2e8f0', fontSize: 14, marginBottom: 8 }}>{match.solution}</div>
               <div style={{ color: '#F5E642', fontSize: 13 }}>💰 Installed Cost: {match.cost}</div>

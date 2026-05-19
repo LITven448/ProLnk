@@ -64,7 +64,7 @@ export default function DFWWinterStormKit() {
           are not built for extreme cold. This kit helps you survive the next one.
         </p>
 
-        <div style={{ background: '#1e3a5f', borderRadius: 10, padding: '16px 20px', marginBottom: 28, borderLeft: '4px solid #F5E642′ }}>
+        <div style={{ background: '#1e3a5f', borderRadius: 10, padding: '16px 20px', marginBottom: 28, borderLeft: '4px solid #F5E642' }}>
           <strong>📌 2021 Lesson:</strong> Burst pipes caused $18B in damage statewide. Most was preventable with proper dripping and insulation.
         </div>
 
@@ -106,7 +106,7 @@ export default function DFWWinterStormKit() {
         {showKit && (
           <>
             <div style={{ background: '#0f2040', borderRadius: 12, padding: 24, marginBottom: 24 }}>
-              <h2 style={{ fontSize: 18, fontWeight: 700, marginBottom: 16, color: '#F5E642′ }}>📦 Your Winter Storm Kit</h2>
+              <h2 style={{ fontSize: 18, fontWeight: 700, marginBottom: 16, color: '#F5E642' }}>📦 Your Winter Storm Kit</h2>
               {baseKit.map((item, i) => (
                 <div key={i} style={{ padding: '8px 0', borderBottom: '1px solid #1e3a5f', fontSize: 14 }}>{item}</div>
               ))}
@@ -116,7 +116,7 @@ export default function DFWWinterStormKit() {
               <div style={{ background: '#0f2040', borderRadius: 12, padding: 24, marginBottom: 24 }}>
                 <h2 style={{ fontSize: 18, fontWeight: 700, marginBottom: 12 }}>💧 Pipe Protection — Your Home Type</h2>
                 {pipeTips.map((t, i) => (
-                  <div key={i} style={{ padding: '6px 0', fontSize: 14, color: '#cbd5e1′ }}>{t}</div>
+                  <div key={i} style={{ padding: '6px 0', fontSize: 14, color: '#cbd5e1' }}>{t}</div>
                 ))}
               </div>
             )}
@@ -128,7 +128,7 @@ export default function DFWWinterStormKit() {
           {tempThresholds.map((t, i) => (
             <div key={i} style={{ display: 'flex', gap: 12, padding: '10px 0', borderBottom: '1px solid #1e3a5f' }}>
               <span style={{ background: '#F5E642', color: '#0A1628', fontWeight: 700, borderRadius: 6, padding: '2px 8px', fontSize: 13, whiteSpace: 'nowrap', height: 'fit-content' }}>{t.temp}</span>
-              <span style={{ fontSize: 14, color: '#cbd5e1′ }}>{t.action}</span>
+              <span style={{ fontSize: 14, color: '#cbd5e1' }}>{t.action}</span>
             </div>
           ))}
         </div>

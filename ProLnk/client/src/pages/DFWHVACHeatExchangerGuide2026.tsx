@@ -31,7 +31,7 @@ export default function DFWHVACHeatExchangerGuide2026() {
           DFW HVAC GUIDE 2026
         </div>
         <div style={{ background: '#7f1d1d', border: '2px solid #ef4444', borderRadius: 10, padding: '14px 18px', marginBottom: 20 }}>
-          <div style={{ fontWeight: 800, fontSize: 15, color: '#fca5a5′ }}>☠️ SAFETY CRITICAL — READ FIRST</div>
+          <div style={{ fontWeight: 800, fontSize: 15, color: '#fca5a5' }}>☠️ SAFETY CRITICAL — READ FIRST</div>
           <div style={{ color: '#fecaca', fontSize: 13, marginTop: 6, lineHeight: 1.6 }}>A cracked heat exchanger leaks carbon monoxide. If CO alarm sounds or you suspect a crack — turn off furnace and evacuate. Do not re-enter until cleared by emergency services.</div>
         </div>
         <h1 style={{ fontSize: 28, fontWeight: 800, marginBottom: 8 }}>🔥 Heat Exchanger Guide — DFW</h1>
@@ -40,7 +40,7 @@ export default function DFWHVACHeatExchangerGuide2026() {
         </p>
         <div style={{ display: 'flex', flexDirection: 'column', gap: 14, marginBottom: 32 }}>
           {facts.map(f => (
-            <div key={f.title} style={{ background: '#1E2D45', borderRadius: 10, padding: '14px 18px', borderLeft: '4px solid #F5E642′ }}>
+            <div key={f.title} style={{ background: '#1E2D45', borderRadius: 10, padding: '14px 18px', borderLeft: '4px solid #F5E642' }}>
               <div style={{ fontWeight: 700, fontSize: 15, marginBottom: 4 }}>{f.icon} {f.title}</div>
               <div style={{ color: '#94a3b8', fontSize: 13, lineHeight: 1.6 }}>{f.detail}</div>
             </div>
@@ -66,7 +66,7 @@ export default function DFWHVACHeatExchangerGuide2026() {
           {result && <div style={{ marginTop: 16, background: '#0A1628', borderRadius: 8, padding: 16, color: '#F5E642', fontWeight: 600, fontSize: 13, lineHeight: 1.7 }}>{result}</div>}
         </div>
         <div style={{ background: '#1E2D45', borderRadius: 10, padding: '16px 20px', color: '#94a3b8', fontSize: 13, lineHeight: 1.7 }}>
-          🛡️ <strong style={{ color: '#F5E642′ }}>Required for every DFW home:</strong> CO detector on every floor within 15 feet of sleeping areas. Replace batteries annually. Test monthly. Carbon monoxide kills hundreds of Americans per year — all preventable.
+          🛡️ <strong style={{ color: '#F5E642' }}>Required for every DFW home:</strong> CO detector on every floor within 15 feet of sleeping areas. Replace batteries annually. Test monthly. Carbon monoxide kills hundreds of Americans per year — all preventable.
         </div>
       </div>
     </div>

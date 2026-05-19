@@ -34,7 +34,7 @@ function getCompatibility(tAge: string, hAge: string) {
   return {
     compatible: !oldHvac,
     savings,
-    annualSavings: oldHvac ? '$90–$130′ : '$150–$280',
+    annualSavings: oldHvac ? '$90–$130' : '$150–$280',
     issues: issues.length ? issues : ['Your system should be compatible with any smart thermostat listed below.'],
     recommendation: oldThermostat ? 'Ecobee (C-wire adapter included)' : 'Nest or Ecobee (best automation for DFW heat)',
   };
@@ -56,7 +56,7 @@ export default function DFWSmartThermostatGuide() {
           </h1>
         </div>
         <p style={{ color: '#8A9AB5', fontSize: 16, marginBottom: 12 }}>
-          DFW runs AC 10+ months a year. A smart thermostat isn't optional — it’s essential.
+          DFW runs AC 10+ months a year. A smart thermostat isn't optional — it's essential.
         </p>
         <div style={{ display: 'flex', gap: 12, marginBottom: 40 }}>
           <span style={{ background: '#1B2E1B', color: '#4ECDC4', padding: '6px 14px', borderRadius: 20, fontSize: 13, fontWeight: 600 }}>
@@ -92,8 +92,8 @@ export default function DFWSmartThermostatGuide() {
                 </div>
               </div>
               <div style={{ fontSize: 12, marginBottom: 6 }}>
-                <span style={{ color: '#8A9AB5′ }}>C-Wire: </span>
-                <span style={{ color: t.cWire === 'Not required' ? '#4ECDC4′ : '#FFB347', fontWeight: 600 }}>{t.cWire}</span>
+                <span style={{ color: '#8A9AB5' }}>C-Wire: </span>
+                <span style={{ color: t.cWire === 'Not required' ? '#4ECDC4' : '#FFB347', fontWeight: 600 }}>{t.cWire}</span>
               </div>
               <div style={{ color: '#4ECDC4', fontSize: 12, marginBottom: 4 }}>✓ {t.pros}</div>
               <div style={{ color: '#FF6B6B', fontSize: 12 }}>✗ {t.cons}</div>
@@ -110,7 +110,7 @@ export default function DFWSmartThermostatGuide() {
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12 }}>
             {[
               { label: 'Option 1', detail: 'Use Ecobee or Sensi — both include C-wire adapters in box' },
-              { label: 'Option 2', detail: 'Have electrician run new C-wire — typically $75–$200′ },
+              { label: 'Option 2', detail: 'Have electrician run new C-wire — typically $75–$200' },
               { label: 'Option 3', detail: 'Install "add-a-wire" kit — $30 DIY or $75 installed' },
               { label: 'Check First', detail: 'Open thermostat cover — often there IS a C-wire, just disconnected' },
             ].map(o => (
@@ -122,7 +122,7 @@ export default function DFWSmartThermostatGuide() {
           </div>
         </div>
 
-        <div style={{ background: '#111E35', borderRadius: 12, padding: 28, border: '1px solid #F5E642′ }}>
+        <div style={{ background: '#111E35', borderRadius: 12, padding: 28, border: '1px solid #F5E642' }}>
           <h2 style={{ color: '#F5E642', fontSize: 20, fontWeight: 700, margin: '0 0 20px' }}>🧮 Compatibility Checker</h2>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16, marginBottom: 20 }}>
             <div>

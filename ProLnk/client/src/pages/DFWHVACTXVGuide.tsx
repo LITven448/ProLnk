@@ -42,19 +42,19 @@ export default function DFWHVACTXVGuide() {
           <div style={{ color: '#F5E642', fontWeight: 700, marginBottom: 16 }}>🩺 Your Symptoms</div>
           <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
             {symptomSets.map(s => (
-              <button key={s.value} onClick={() => setSymptom(s)} style={{ padding: '10px 16px', borderRadius: 8, border: 'none', cursor: 'pointer', textAlign: 'left', background: symptom.value === s.value ? '#F5E642′ : '#1e3a5f', color: symptom.value === s.value ? '#0A1628' : '#fff', fontWeight: 600 }}>{s.label}</button>
+              <button key={s.value} onClick={() => setSymptom(s)} style={{ padding: '10px 16px', borderRadius: 8, border: 'none', cursor: 'pointer', textAlign: 'left', background: symptom.value === s.value ? '#F5E642' : '#1e3a5f', color: symptom.value === s.value ? '#0A1628' : '#fff', fontWeight: 600 }}>{s.label}</button>
             ))}
           </div>
 
           <div style={{ color: '#F5E642', fontWeight: 700, marginBottom: 16, marginTop: 20 }}>🌡️ DFW Season</div>
           <div style={{ display: 'flex', gap: 10, flexWrap: 'wrap' }}>
             {seasons.map(s => (
-              <button key={s.value} onClick={() => setSeason(s)} style={{ padding: '10px 16px', borderRadius: 8, border: 'none', cursor: 'pointer', background: season.value === s.value ? '#F5E642′ : '#1e3a5f', color: season.value === s.value ? '#0A1628' : '#fff', fontWeight: 600 }}>{s.label}</button>
+              <button key={s.value} onClick={() => setSeason(s)} style={{ padding: '10px 16px', borderRadius: 8, border: 'none', cursor: 'pointer', background: season.value === s.value ? '#F5E642' : '#1e3a5f', color: season.value === s.value ? '#0A1628' : '#fff', fontWeight: 600 }}>{s.label}</button>
             ))}
           </div>
         </div>
 
-        <div style={{ background: '#111f3a', borderRadius: 12, padding: 24, marginBottom: 20, borderLeft: '4px solid #F5E642′ }}>
+        <div style={{ background: '#111f3a', borderRadius: 12, padding: 24, marginBottom: 20, borderLeft: '4px solid #F5E642' }}>
           <div style={{ fontWeight: 700, fontSize: 18, marginBottom: 8 }}>🧠 TXV Likelihood: {symptom.likelihood}%</div>
           <div style={{ color: '#94a3b8', marginBottom: 8 }}>{symptom.note}</div>
           <div style={{ color: '#F5E642', marginBottom: 4 }}>⚠️ {season.riskNote}</div>

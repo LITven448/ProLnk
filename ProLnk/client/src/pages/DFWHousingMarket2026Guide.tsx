@@ -46,12 +46,12 @@ export default function DFWHousingMarket2026Guide() {
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: '1rem', marginBottom: '2rem' }}>
           {[
             { label: '🏷️ Median Price', value: '$390K', sub: '+3.8% YoY' },
-            { label: '⏱️ Days on Market', value: '23 avg', sub: 'Up from 18 in 2024′ },
+            { label: '⏱️ Days on Market', value: '23 avg', sub: 'Up from 18 in 2024' },
             { label: '📦 Inventory', value: '3.1 months', sub: 'Slight buyer favor' },
           ].map((stat, i) => (
             <div key={i} style={{ background: '#111f3d', borderRadius: 12, padding: '1.25rem', border: '1px solid #1e3a5f', textAlign: 'center' }}>
               <p style={{ color: '#94a3b8', fontSize: '0.875rem', marginBottom: '0.5rem' }}>{stat.label}</p>
-              <p style={{ color: '#F5E642', fontSize: '1.75rem', fontWeight: 700, margin: '0.25rem 0′ }}>{stat.value}</p>
+              <p style={{ color: '#F5E642', fontSize: '1.75rem', fontWeight: 700, margin: '0.25rem 0' }}>{stat.value}</p>
               <p style={{ color: '#94a3b8', fontSize: '0.8rem' }}>{stat.sub}</p>
             </div>
           ))}
@@ -75,7 +75,7 @@ export default function DFWHousingMarket2026Guide() {
                     <td style={{ padding: '0.625rem 0.75rem', color: '#94a3b8', fontSize: '0.85rem' }}>{s.type}</td>
                     <td style={{ padding: '0.625rem 0.75rem', color: '#e2e8f0', fontSize: '0.9rem' }}>{s.dom} days</td>
                     <td style={{ padding: '0.625rem 0.75rem' }}>
-                      <span style={{ color: s.trend === 'Seller' ? '#4ade80′ : s.trend === ’Buyer' ? '#60a5fa' : '#e2e8f0', fontSize: '0.85rem' }}>{s.trend}</span>
+                      <span style={{ color: s.trend === 'Seller' ? '#4ade80' : s.trend === 'Buyer' ? '#60a5fa' : '#e2e8f0', fontSize: '0.85rem' }}>{s.trend}</span>
                     </td>
                     <td style={{ padding: '0.625rem 0.75rem', color: '#F5E642', fontSize: '0.9rem' }}>{s.appreciation}</td>
                   </tr>
@@ -117,10 +117,10 @@ export default function DFWHousingMarket2026Guide() {
         </div>
 
         {advice && (
-          <div style={{ background: '#111f3d', borderRadius: 12, padding: '1.5rem', border: '2px solid #F5E642′ }}>
+          <div style={{ background: '#111f3d', borderRadius: 12, padding: '1.5rem', border: '2px solid #F5E642' }}>
             <h3 style={{ color: '#F5E642', marginBottom: '1rem' }}>📍 Your 2026 Market Strategy</h3>
-            <p style={{ color: '#e2e8f0', marginBottom: '0.75rem' }}><strong style={{ color: '#F5E642′ }}>Timing:</strong> {advice.timing}</p>
-            <p style={{ color: '#e2e8f0', marginBottom: '0.75rem' }}><strong style={{ color: '#F5E642′ }}>Best Submarket:</strong> {advice.submarket}</p>
+            <p style={{ color: '#e2e8f0', marginBottom: '0.75rem' }}><strong style={{ color: '#F5E642' }}>Timing:</strong> {advice.timing}</p>
+            <p style={{ color: '#e2e8f0', marginBottom: '0.75rem' }}><strong style={{ color: '#F5E642' }}>Best Submarket:</strong> {advice.submarket}</p>
             <p style={{ color: '#94a3b8', fontSize: '0.9rem' }}>{advice.detail}</p>
           </div>
         )}

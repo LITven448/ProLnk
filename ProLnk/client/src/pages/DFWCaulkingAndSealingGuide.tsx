@@ -41,7 +41,7 @@ export default function DFWCaulkingAndSealingGuide() {
           Dallas–Fort Worth 2026 guide to caulking windows, doors, bathtubs, and siding — DFW heat effects, caulk types, re-caulking frequency, and energy savings from proper sealing.
         </p>
 
-        <div style={{ backgroundColor: '#112244', borderRadius: 12, padding: 24, marginBottom: 32, borderLeft: '4px solid #F5E642′ }}>
+        <div style={{ backgroundColor: '#112244', borderRadius: 12, padding: 24, marginBottom: 32, borderLeft: '4px solid #F5E642' }}>
           <div style={{ fontSize: 20, marginBottom: 4 }}>🌡️ Why DFW Heat Destroys Caulk Faster</div>
           <p style={{ color: '#C8D4E8', margin: 0, lineHeight: 1.6 }}>
             DFW exterior surfaces can reach 160°F+ in summer. Standard latex caulk becomes brittle and cracks within 3–5 years in DFW conditions — half the lifespan seen in cooler climates. South and west-facing surfaces fail first. Use UV-resistant silicone or polyurethane for all DFW exterior applications.
@@ -54,7 +54,7 @@ export default function DFWCaulkingAndSealingGuide() {
             <div key={i} style={{ backgroundColor: '#112244', borderRadius: 10, padding: 16, display: 'grid', gridTemplateColumns: '2fr 1fr 1fr 2fr', gap: 12, alignItems: 'center' }}>
               <div style={{ fontWeight: 600, color: '#FFFFFF', fontSize: 13 }}>{loc.area}</div>
               <div>
-                <span style={{ backgroundColor: loc.priority === 'Critical' ? '#EF4444′ : loc.priority === ’High' ? '#F59E0B' : '#3B82F6', color: '#FFFFFF', fontSize: 11, padding: '2px 8px', borderRadius: 4 }}>{loc.priority}</span>
+                <span style={{ backgroundColor: loc.priority === 'Critical' ? '#EF4444' : loc.priority === 'High' ? '#F59E0B' : '#3B82F6', color: '#FFFFFF', fontSize: 11, padding: '2px 8px', borderRadius: 4 }}>{loc.priority}</span>
               </div>
               <div style={{ color: '#A0ADBF', fontSize: 12 }}>{loc.frequency}</div>
               <div style={{ color: '#C8D4E8', fontSize: 12 }}>{loc.dfwReason}</div>
@@ -83,7 +83,7 @@ export default function DFWCaulkingAndSealingGuide() {
               <input
                 type="range" min={5} max={40} value={windows}
                 onChange={(e) => setWindows(Number(e.target.value))}
-                style={{ width: '100%', accentColor: '#F5E642′ }}
+                style={{ width: '100%', accentColor: '#F5E642' }}
               />
               <div style={{ color: '#FFFFFF', fontWeight: 700, fontSize: 18, marginTop: 4 }}>{windows} windows</div>
             </div>
@@ -92,7 +92,7 @@ export default function DFWCaulkingAndSealingGuide() {
               <input
                 type="range" min={1000} max={5000} step={500} value={homeSqft}
                 onChange={(e) => setHomeSqft(Number(e.target.value))}
-                style={{ width: '100%', accentColor: '#F5E642′ }}
+                style={{ width: '100%', accentColor: '#F5E642' }}
               />
               <div style={{ color: '#FFFFFF', fontWeight: 700, fontSize: 18, marginTop: 4 }}>{homeSqft.toLocaleString()} sq ft</div>
             </div>
@@ -100,11 +100,11 @@ export default function DFWCaulkingAndSealingGuide() {
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 16 }}>
             <div style={{ backgroundColor: '#0A1628', borderRadius: 10, padding: 16, textAlign: 'center' }}>
               <div style={{ fontSize: 12, color: '#A0ADBF', marginBottom: 4 }}>MATERIALS</div>
-              <div style={{ fontSize: 26, fontWeight: 800, color: '#C8D4E8′ }}>${materialCost.toLocaleString()}</div>
+              <div style={{ fontSize: 26, fontWeight: 800, color: '#C8D4E8' }}>${materialCost.toLocaleString()}</div>
             </div>
             <div style={{ backgroundColor: '#0A1628', borderRadius: 10, padding: 16, textAlign: 'center' }}>
               <div style={{ fontSize: 12, color: '#A0ADBF', marginBottom: 4 }}>TOTAL COST (DFW)</div>
-              <div style={{ fontSize: 26, fontWeight: 800, color: '#F5E642′ }}>${totalLow.toLocaleString()} – ${totalHigh.toLocaleString()}</div>
+              <div style={{ fontSize: 26, fontWeight: 800, color: '#F5E642' }}>${totalLow.toLocaleString()} – ${totalHigh.toLocaleString()}</div>
             </div>
             <div style={{ backgroundColor: '#0A2B1A', borderRadius: 10, padding: 16, textAlign: 'center', border: '1px solid #22C55E' }}>
               <div style={{ fontSize: 12, color: '#A0ADBF', marginBottom: 4 }}>EST. ANNUAL ENERGY SAVINGS</div>

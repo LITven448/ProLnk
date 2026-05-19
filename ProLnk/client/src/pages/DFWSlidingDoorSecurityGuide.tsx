@@ -41,9 +41,9 @@ export default function DFWSlidingDoorSecurityGuide() {
     <div style={{ background: '#0A1628', minHeight: '100vh', color: '#E8EDF5', fontFamily: 'system-ui, sans-serif', padding: '2rem' }}>
       <div style={{ maxWidth: 760, margin: '0 auto' }}>
         <div style={{ fontSize: 40 }}>🚪</div>
-        <h1 style={{ color: '#F5E642', fontSize: 28, margin: '0.5rem 0′ }}>DFW Sliding Door Security Guide</h1>
+        <h1 style={{ color: '#F5E642', fontSize: 28, margin: '0.5rem 0' }}>DFW Sliding Door Security Guide</h1>
         <p style={{ color: '#9BA8BB', marginBottom: '1.5rem' }}>
-          DFW's indoor-outdoor lifestyle means most homes have 2–4 sliding glass doors. They’re also the most
+          DFW's indoor-outdoor lifestyle means most homes have 2–4 sliding glass doors. They're also the most
           frequently targeted entry point after garages — standard sliding locks can be defeated in seconds.
         </p>
 
@@ -93,14 +93,14 @@ export default function DFWSlidingDoorSecurityGuide() {
               <div key={i} style={{ background: '#0A1628', borderRadius: 8, padding: '0.75rem 1rem', marginBottom: '0.5rem', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
                 <div>
                   <div style={{ color: '#E8EDF5', marginBottom: 2 }}>{r.priority > 0 ? `#${r.priority} ` : ''}{r.label}</div>
-                  <div style={{ fontSize: 12, color: r.diy ? '#4CAF82′ : '#F5A623' }}>{r.diy ? '🔧 DIY-friendly' : '👷 Pro install'}</div>
+                  <div style={{ fontSize: 12, color: r.diy ? '#4CAF82' : '#F5A623' }}>{r.diy ? '🔧 DIY-friendly' : '👷 Pro install'}</div>
                 </div>
                 <span style={{ color: '#F5E642', fontWeight: 700, whiteSpace: 'nowrap', marginLeft: '1rem' }}>{r.cost}</span>
               </div>
             ))}
             <div style={{ marginTop: '1rem', padding: '0.75rem', background: '#0D1F38', borderRadius: 8 }}>
               <span style={{ color: '#9BA8BB', fontSize: 13 }}>
-                💡 Total estimated cost: <strong style={{ color: '#F5E642′ }}>
+                💡 Total estimated cost: <strong style={{ color: '#F5E642' }}>
                   ${result.filter(r => r.cost !== '$0').length * 35}–${result.filter(r => r.cost !== '$0').length * 100} per door
                 </strong> for complete coverage
               </span>

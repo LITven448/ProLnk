@@ -60,13 +60,13 @@ export default function DFWHVACIndoorAirQualityStandards() {
   return (
     <div style={{ background: '#0A1628', minHeight: '100vh', color: '#fff', fontFamily: 'sans-serif', padding: '2rem' }}>
       <div style={{ maxWidth: '800px', margin: '0 auto' }}>
-        <div style={{ marginBottom: '0.5rem', fontSize: '0.85rem', color: '#F5E642′ }}>🫁 DFW IAQ GUIDE</div>
+        <div style={{ marginBottom: '0.5rem', fontSize: '0.85rem', color: '#F5E642' }}>🫁 DFW IAQ GUIDE</div>
         <h1 style={{ fontSize: '2rem', fontWeight: 800, marginBottom: '0.75rem' }}>
           Indoor Air Quality Standards for DFW Homes
         </h1>
         <p style={{ color: '#94a3b8', marginBottom: '2rem', lineHeight: 1.7 }}>
           ASHRAE sets minimum indoor air quality standards for CO2, particulates, humidity, VOCs, and temperature.
-          DFW's climate creates specific challenges for each. Here’s what to monitor and when to act.
+          DFW's climate creates specific challenges for each. Here's what to monitor and when to act.
         </p>
 
         <div style={{ background: '#0f1f3d', borderRadius: '12px', padding: '1.5rem', marginBottom: '2rem' }}>
@@ -74,7 +74,7 @@ export default function DFWHVACIndoorAirQualityStandards() {
           <div style={{ display: 'grid', gridTemplateColumns: '1fr', gap: '0.6rem', marginBottom: '1rem' }}>
             {concerns.map(c => (
               <button key={c.id} onClick={() => { setConcern(c.id); setResult(c.id); }}
-                style={{ background: concern === c.id ? '#F5E642′ : '#1a2f55', color: concern === c.id ? '#0A1628' : '#fff',
+                style={{ background: concern === c.id ? '#F5E642' : '#1a2f55', color: concern === c.id ? '#0A1628' : '#fff',
                   padding: '0.75rem 1rem', borderRadius: '8px', border: '1px solid #2a4080', cursor: 'pointer',
                   fontWeight: concern === c.id ? 700 : 400, textAlign: 'left', fontSize: '0.9rem' }}>
                 {c.label}
@@ -84,7 +84,7 @@ export default function DFWHVACIndoorAirQualityStandards() {
         </div>
 
         {param && (
-          <div style={{ background: '#0f1f3d', borderRadius: '12px', padding: '1.5rem', marginBottom: '2rem', border: '1px solid #F5E642′ }}>
+          <div style={{ background: '#0f1f3d', borderRadius: '12px', padding: '1.5rem', marginBottom: '2rem', border: '1px solid #F5E642' }}>
             <h3 style={{ color: '#F5E642', marginBottom: '0.5rem' }}>📊 Monitor: {param.name}</h3>
             <p style={{ color: '#94a3b8', marginBottom: '1rem', fontSize: '0.9rem', lineHeight: 1.6 }}>{param.dfwNote}</p>
             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
@@ -100,11 +100,11 @@ export default function DFWHVACIndoorAirQualityStandards() {
           </div>
         )}
 
-        <h2 style={{ fontSize: '1.2rem', fontWeight: 700, marginBottom: '1rem', color: '#F5E642′ }}>📋 All IAQ Parameters at a Glance</h2>
+        <h2 style={{ fontSize: '1.2rem', fontWeight: 700, marginBottom: '1rem', color: '#F5E642' }}>📋 All IAQ Parameters at a Glance</h2>
         <div style={{ overflowX: 'auto' }}>
           <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: '0.85rem' }}>
             <thead>
-              <tr style={{ background: '#1a2f55′ }}>
+              <tr style={{ background: '#1a2f55' }}>
                 {['Parameter', 'Unit', 'Healthy Range', 'Action Level'].map(h => (
                   <th key={h} style={{ padding: '0.7rem', textAlign: 'left', color: '#F5E642', fontWeight: 600 }}>{h}</th>
                 ))}
@@ -112,11 +112,11 @@ export default function DFWHVACIndoorAirQualityStandards() {
             </thead>
             <tbody>
               {Object.values(iaqParams).map((p, i) => (
-                <tr key={p.name} style={{ background: i % 2 === 0 ? '#0f1f3d' : '#0a1628', borderBottom: '1px solid #1a2f55′ }}>
+                <tr key={p.name} style={{ background: i % 2 === 0 ? '#0f1f3d' : '#0a1628', borderBottom: '1px solid #1a2f55' }}>
                   <td style={{ padding: '0.7rem', fontWeight: 600 }}>{p.name}</td>
-                  <td style={{ padding: '0.7rem', color: '#94a3b8′ }}>{p.unit}</td>
-                  <td style={{ padding: '0.7rem', color: '#94a3b8′ }}>{p.good}</td>
-                  <td style={{ padding: '0.7rem', color: '#f87171′ }}>{p.action}</td>
+                  <td style={{ padding: '0.7rem', color: '#94a3b8' }}>{p.unit}</td>
+                  <td style={{ padding: '0.7rem', color: '#94a3b8' }}>{p.good}</td>
+                  <td style={{ padding: '0.7rem', color: '#f87171' }}>{p.action}</td>
                 </tr>
               ))}
             </tbody>

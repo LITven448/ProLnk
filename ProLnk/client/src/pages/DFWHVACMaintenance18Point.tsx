@@ -40,11 +40,11 @@ export default function DFWHVACMaintenance18Point() {
 
         <div style={{ background: '#111D35', borderRadius: 12, padding: 20, marginBottom: 32, display: 'flex', alignItems: 'center', gap: 20 }}>
           <div style={{ position: 'relative', width: 80, height: 80 }}>
-            <svg viewBox="0 0 80 80″ style={{ width: 80, height: 80, transform: 'rotate(-90deg)' }}>
-              <circle cx="40″ cy="40" r="34" fill="none" stroke="#1E3A5F" strokeWidth="8" />
-              <circle cx="40″ cy="40" r="34" fill="none" stroke="#F5E642" strokeWidth="8" strokeDasharray={`${pct * 2.136} 213.6`} strokeLinecap="round" />
+            <svg viewBox="0 0 80 80" style={{ width: 80, height: 80, transform: 'rotate(-90deg)' }}>
+              <circle cx="40" cy="40" r="34" fill="none" stroke="#1E3A5F" strokeWidth="8" />
+              <circle cx="40" cy="40" r="34" fill="none" stroke="#F5E642" strokeWidth="8" strokeDasharray={`${pct * 2.136} 213.6`} strokeLinecap="round" />
             </svg>
-            <div style={{ position: 'absolute', inset: 0, display: 'flex', alignItems: 'center', justifyContent: 'center', fontWeight: 800, fontSize: 18, color: '#F5E642′ }}>{pct}%</div>
+            <div style={{ position: 'absolute', inset: 0, display: 'flex', alignItems: 'center', justifyContent: 'center', fontWeight: 800, fontSize: 18, color: '#F5E642' }}>{pct}%</div>
           </div>
           <div>
             <div style={{ fontWeight: 700, fontSize: 18 }}>{checked.length} of 18 Items Checked</div>
@@ -61,7 +61,7 @@ export default function DFWHVACMaintenance18Point() {
                 {checked.includes(ci.id) && <span style={{ color: '#0A1628', fontSize: 14, fontWeight: 900 }}>✓</span>}
               </div>
               <div style={{ flex: 1 }}>
-                <span style={{ fontWeight: 600, fontSize: 15, textDecoration: checked.includes(ci.id) ? 'line-through' : 'none', color: checked.includes(ci.id) ? '#64748B' : '#E8EDF5′ }}>
+                <span style={{ fontWeight: 600, fontSize: 15, textDecoration: checked.includes(ci.id) ? 'line-through' : 'none', color: checked.includes(ci.id) ? '#64748B' : '#E8EDF5' }}>
                   {ci.id}. {ci.item}
                 </span>
               </div>
@@ -77,9 +77,9 @@ export default function DFWHVACMaintenance18Point() {
           </div>
         ))}
 
-        <div style={{ marginTop: 32, padding: '20px 24px', background: '#0F1E38', borderRadius: 12, borderLeft: '4px solid #F5E642′ }}>
+        <div style={{ marginTop: 32, padding: '20px 24px', background: '#0F1E38', borderRadius: 12, borderLeft: '4px solid #F5E642' }}>
           <div style={{ fontWeight: 700, marginBottom: 6 }}>💡 Pro Tip: Print & Bring This List</div>
-          <div style={{ fontSize: 14, color: '#94A3B8′ }}>Hand this checklist to your technician at the start of every visit. Legitimate DFW HVAC companies welcome it. If a tech is annoyed by the list, that’s a red flag worth noting.</div>
+          <div style={{ fontSize: 14, color: '#94A3B8' }}>Hand this checklist to your technician at the start of every visit. Legitimate DFW HVAC companies welcome it. If a tech is annoyed by the list, that's a red flag worth noting.</div>
         </div>
       </div>
     </div>

@@ -4,14 +4,14 @@ const styles = {
   page: { backgroundColor: '#0A1628', minHeight: '100vh', color: '#ffffff', fontFamily: 'system-ui, sans-serif', padding: '32px 24px' },
   container: { maxWidth: '860px', margin: '0 auto' },
   badge: { backgroundColor: '#1a2d4a', color: '#F5E642', padding: '4px 12px', borderRadius: '20px', fontSize: '12px', fontWeight: '700', display: 'inline-block', marginBottom: '16px' },
-  h1: { fontSize: '36px', fontWeight: '800', marginBottom: '12px', lineHeight: '1.2′ },
-  accent: { color: '#F5E642′ },
-  lead: { color: '#94a3b8', fontSize: '18px', marginBottom: '40px', lineHeight: '1.6′ },
+  h1: { fontSize: '36px', fontWeight: '800', marginBottom: '12px', lineHeight: '1.2' },
+  accent: { color: '#F5E642' },
+  lead: { color: '#94a3b8', fontSize: '18px', marginBottom: '40px', lineHeight: '1.6' },
   card: { backgroundColor: '#111f38', border: '1px solid #1e3a5f', borderRadius: '12px', padding: '24px', marginBottom: '24px' },
   cardTitle: { fontSize: '20px', fontWeight: '700', marginBottom: '16px', display: 'flex', alignItems: 'center', gap: '10px' },
   grid2: { display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '16px', marginBottom: '24px' },
   statBox: { backgroundColor: '#0d1a2e', borderRadius: '10px', padding: '20px', textAlign: 'center' as const },
-  statNum: { fontSize: '32px', fontWeight: '800', color: '#F5E642′ },
+  statNum: { fontSize: '32px', fontWeight: '800', color: '#F5E642' },
   statLabel: { color: '#94a3b8', fontSize: '13px', marginTop: '4px' },
   col: { flex: 1, backgroundColor: '#0d1a2e', borderRadius: '10px', padding: '18px' },
   row: { display: 'flex', gap: '16px', marginBottom: '24px' },
@@ -21,8 +21,8 @@ const styles = {
   label: { color: '#94a3b8', fontSize: '14px', marginBottom: '8px', display: 'block' },
   select: { width: '100%', backgroundColor: '#0d1a2e', color: '#ffffff', border: '1px solid #1e3a5f', borderRadius: '8px', padding: '10px 14px', fontSize: '14px', marginBottom: '16px' },
   btn: { backgroundColor: '#F5E642', color: '#0A1628', border: 'none', borderRadius: '8px', padding: '12px 28px', fontSize: '15px', fontWeight: '700', cursor: 'pointer', width: '100%' },
-  result: { backgroundColor: '#0d1a2e', borderRadius: '10px', padding: '20px', marginTop: '16px', border: '2px solid #F5E642′ },
-  costTag: { backgroundColor: '#0d2e1a', color: '#86efac', borderRadius: '8px', padding: '10px 14px', fontSize: '15px', fontWeight: '700', margin: '6px 0′ },
+  result: { backgroundColor: '#0d1a2e', borderRadius: '10px', padding: '20px', marginTop: '16px', border: '2px solid #F5E642' },
+  costTag: { backgroundColor: '#0d2e1a', color: '#86efac', borderRadius: '8px', padding: '10px 14px', fontSize: '15px', fontWeight: '700', margin: '6px 0' },
   warnNote: { backgroundColor: '#2d1000', border: '1px solid #9a3412', borderRadius: '8px', padding: '14px 18px', color: '#fdba74', fontSize: '14px', marginTop: '16px' },
   greenNote: { backgroundColor: '#0d2e1a', border: '1px solid #166534', borderRadius: '8px', padding: '14px 18px', color: '#86efac', fontSize: '14px', marginTop: '16px' },
   problemCard: { backgroundColor: '#0d1a2e', borderRadius: '8px', padding: '14px', marginBottom: '10px' },
@@ -88,13 +88,13 @@ export default function DFWPierAndBeamGuide() {
           <div style={styles.cardTitle}><span>⚖️</span> Pier and Beam vs. Slab Foundation</div>
           <div style={styles.row}>
             <div style={styles.col}>
-              <div style={{ ...styles.colTitle, color: '#F5E642′ }}>✅ Pier & Beam Pros</div>
+              <div style={{ ...styles.colTitle, color: '#F5E642' }}>✅ Pier & Beam Pros</div>
               <ul style={styles.list}>
                 {['Easier access to plumbing and wiring underneath', 'Individual piers can be releveled without major excavation', 'Less affected by sudden soil shifts — more flexible', 'Crawl space provides natural buffer from ground moisture'].map((t, i) => <li key={i} style={styles.listItem}><span>•</span><span>{t}</span></li>)}
               </ul>
             </div>
             <div style={styles.col}>
-              <div style={{ ...styles.colTitle, color: '#ef4444′ }}>❌ Pier & Beam Cons</div>
+              <div style={{ ...styles.colTitle, color: '#ef4444' }}>❌ Pier & Beam Cons</div>
               <ul style={styles.list}>
                 {['Wood components vulnerable to rot and pests', 'Requires active moisture and ventilation management', 'Can feel "bouncy" — less solid than slab', 'More maintenance than modern slab construction'].map((t, i) => <li key={i} style={styles.listItem}><span>•</span><span>{t}</span></li>)}
               </ul>
@@ -108,7 +108,7 @@ export default function DFWPierAndBeamGuide() {
             <div key={i} style={styles.problemCard}>
               <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '6px' }}>
                 <div style={{ fontWeight: '700', fontSize: '15px' }}>{p.icon} {p.name}</div>
-                <div style={{ color: p.severity === 'High' ? '#ef4444′ : '#f59e0b', fontSize: '12px', fontWeight: '700' }}>{p.severity} Risk</div>
+                <div style={{ color: p.severity === 'High' ? '#ef4444' : '#f59e0b', fontSize: '12px', fontWeight: '700' }}>{p.severity} Risk</div>
               </div>
               <div style={{ color: '#94a3b8', fontSize: '14px' }}>{p.desc}</div>
             </div>
@@ -141,7 +141,7 @@ export default function DFWPierAndBeamGuide() {
           <label style={styles.label}>Detected problems (select all that apply)</label>
           <div style={{ display: 'flex', gap: '12px', flexWrap: 'wrap' as const, marginBottom: '16px' }}>
             {[{ key: 'settle', label: '📐 Pier Settling / Sloped Floors' }, { key: 'rot', label: '🪵 Wood Rot or Soft Spots' }, { key: 'pest', label: '🐜 Pest Evidence' }, { key: 'moisture', label: '💧 Moisture / Humidity' }].map(p => (
-              <div key={p.key} onClick={() => toggleProblem(p.key)} style={{ padding: '8px 14px', borderRadius: '8px', cursor: 'pointer', fontSize: '13px', backgroundColor: problems2.includes(p.key) ? '#F5E642′ : '#0d1a2e', color: problems2.includes(p.key) ? '#0A1628' : '#ffffff', border: '1px solid #1e3a5f' }}>{p.label}</div>
+              <div key={p.key} onClick={() => toggleProblem(p.key)} style={{ padding: '8px 14px', borderRadius: '8px', cursor: 'pointer', fontSize: '13px', backgroundColor: problems2.includes(p.key) ? '#F5E642' : '#0d1a2e', color: problems2.includes(p.key) ? '#0A1628' : '#ffffff', border: '1px solid #1e3a5f' }}>{p.label}</div>
             ))}
           </div>
           <button style={styles.btn} onClick={calculate}>Get Repair Recommendation</button>

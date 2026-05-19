@@ -49,12 +49,12 @@ export default function DFWFiberInternetGuide2026() {
             {dfwCities.map(c => (
               <button key={c.city} onClick={() => setSelected(c.city)}
                 style={{ padding: '8px 14px', borderRadius: 8, border: 'none', cursor: 'pointer', fontSize: 13,
-                  background: selected === c.city ? '#F5E642′ : '#1e3a5f', color: selected === c.city ? '#0A1628' : '#fff', fontWeight: selected === c.city ? 700 : 400 }}>
+                  background: selected === c.city ? '#F5E642' : '#1e3a5f', color: selected === c.city ? '#0A1628' : '#fff', fontWeight: selected === c.city ? 700 : 400 }}>
                 {c.city}
               </button>
             ))}
           </div>
-          <div style={{ color: '#fff', fontSize: 15, marginBottom: 12 }}>Fiber options in <strong style={{ color: '#F5E642′ }}>{city.city}</strong>:</div>
+          <div style={{ color: '#fff', fontSize: 15, marginBottom: 12 }}>Fiber options in <strong style={{ color: '#F5E642' }}>{city.city}</strong>:</div>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2,1fr)', gap: 10 }}>
             {[['⚡ AT&T Fiber', city.att],['🟦 Google Fiber', city.google],['🔵 Spectrum',city.spectrum],['🟠 Frontier Fiber',city.frontier]].map(([label, avail]) => (
               <div key={String(label)} style={{ background: '#0A1628', borderRadius: 8, padding: 12, display: 'flex', alignItems: 'center', gap: 10 }}>

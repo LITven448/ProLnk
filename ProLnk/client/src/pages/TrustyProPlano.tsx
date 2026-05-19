@@ -78,7 +78,7 @@ export default function TrustyProPlano() {
           <h2 style={{ textAlign: 'center', fontSize: 28, fontWeight: 700, marginBottom: 48 }}>Plano by the Numbers</h2>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: 24 }}>
             {[
-              { label: 'Avg Home Value',       value: '$520K', sub: 'Plano metro 2025′ },
+              { label: 'Avg Home Value',       value: '$520K', sub: 'Plano metro 2025' },
               { label: 'Built Before 1995',    value: '45%',   sub: 'of Plano housing stock' },
               { label: 'Hail Events / Year',   value: '2.8 avg', sub: 'North Collin County' },
               { label: 'Electrical Issues',    value: '#1',    sub: 'most common scan finding' },

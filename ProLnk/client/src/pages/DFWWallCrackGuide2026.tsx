@@ -44,7 +44,7 @@ export default function DFWWallCrackGuide2026() {
         <div style={{ background: '#112240', borderRadius: 12, padding: '1.5rem', marginBottom: '1.5rem' }}>
           <div style={{ color: '#F5E642', fontWeight: 600, marginBottom: '1rem' }}>🌡️ DFW Clay Soil — Why Cracks Happen Here</div>
           {['DFW sits on expansive Blackland Prairie clay — one of the most reactive soils in the US','Clay expands when wet (winter rain) and contracts when dry (summer heat)','Homes experience seasonal movement of up to 2–4 inches in extreme conditions','New construction cracks in year 1–3 are often just settlement — not structural failure','Proper drainage and foundation watering programs reduce cracking dramatically'].map((tip, i) => (
-            <div key={i} style={{ display: 'flex', gap: '0.5rem', marginBottom: '0.5rem', color: '#cbd5e1′ }}><span style={{ color: '#F5E642' }}>▶</span>{tip}</div>
+            <div key={i} style={{ display: 'flex', gap: '0.5rem', marginBottom: '0.5rem', color: '#cbd5e1' }}><span style={{ color: '#F5E642' }}>▶</span>{tip}</div>
           ))}
         </div>
 
@@ -68,7 +68,7 @@ export default function DFWWallCrackGuide2026() {
             </select>
             <button onClick={assess} style={{ background: '#F5E642', color: '#0A1628', border: 'none', borderRadius: 8, padding: '0.5rem 1.2rem', fontWeight: 700, cursor: 'pointer' }}>Assess Severity</button>
           </div>
-          {result && <div style={{ background: '#0f2744', borderRadius: 8, padding: '1rem', color: '#e2e8f0′ }}>{result}</div>}
+          {result && <div style={{ background: '#0f2744', borderRadius: 8, padding: '1rem', color: '#e2e8f0' }}>{result}</div>}
         </div>
 
         <div style={{ background: '#F5E642', borderRadius: 12, padding: '1rem 1.5rem', color: '#0A1628', fontWeight: 600 }}>

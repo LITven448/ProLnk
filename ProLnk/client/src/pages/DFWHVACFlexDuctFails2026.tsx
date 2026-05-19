@@ -45,8 +45,8 @@ export default function DFWHVACFlexDuctFails2026() {
                 key={s.id}
                 onClick={() => setSelected(s.id)}
                 style={{
-                  backgroundColor: selected === s.id ? '#F5E642′ : '#0A1628',
-                  color: selected === s.id ? '#0A1628′ : '#fff',
+                  backgroundColor: selected === s.id ? '#F5E642' : '#0A1628',
+                  color: selected === s.id ? '#0A1628' : '#fff',
                   border: '1px solid #334155',
                   borderRadius: '8px',
                   padding: '0.75rem 1rem',
@@ -63,7 +63,7 @@ export default function DFWHVACFlexDuctFails2026() {
               <div style={{ display: 'inline-block', backgroundColor: '#1d4ed8', color: '#fff', padding: '0.3rem 0.8rem', borderRadius: '20px', fontSize: '0.8rem', fontWeight: '700', marginBottom: '0.8rem' }}>
                 Failure Mode: {match.mode}
               </div>
-              <div style={{ backgroundColor: '#0f172a', borderRadius: '8px', padding: '1rem', borderLeft: '4px solid #F5E642′ }}>
+              <div style={{ backgroundColor: '#0f172a', borderRadius: '8px', padding: '1rem', borderLeft: '4px solid #F5E642' }}>
                 <p style={{ margin: 0, lineHeight: '1.6', fontSize: '0.95rem' }}>{match.guide}</p>
               </div>
             </div>

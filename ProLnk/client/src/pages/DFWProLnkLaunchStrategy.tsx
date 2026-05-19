@@ -105,7 +105,7 @@ export default function DFWProLnkLaunchStrategy() {
   const strat = selected ? STRATEGY[selected] : null;
 
   return (
-    <div style={{ background: '#f8fafc', minHeight: '100vh', padding: '32px 16px', fontFamily: 'sans-serif', color: '#0A1628′ }}>
+    <div style={{ background: '#f8fafc', minHeight: '100vh', padding: '32px 16px', fontFamily: 'sans-serif', color: '#0A1628' }}>
       <div style={{ maxWidth: 800, margin: '0 auto' }}>
         <h1 style={{ color: '#0A1628', fontSize: 28, fontWeight: 800, marginBottom: 4 }}>🚀 DFW Launch Strategy</h1>
         <p style={{ color: '#475569', marginBottom: 8 }}>Why Dallas-Fort Worth is the perfect first market — and what it means for national expansion</p>
@@ -127,7 +127,7 @@ export default function DFWProLnkLaunchStrategy() {
           <div style={{ display: 'flex', gap: 6, flexWrap: 'wrap', alignItems: 'center' }}>
             {EXPANSION.map((step, i) => (
               <div key={i} style={{ display: 'flex', alignItems: 'center', gap: 6 }}>
-                <div style={{ background: i === 0 ? '#F5E642′ : '#1e2d45', color: i === 0 ? '#0A1628' : '#94a3b8', borderRadius: 20, padding: '7px 14px', fontWeight: i === 0 ? 800 : 500, fontSize: 13 }}>{step}</div>
+                <div style={{ background: i === 0 ? '#F5E642' : '#1e2d45', color: i === 0 ? '#0A1628' : '#94a3b8', borderRadius: 20, padding: '7px 14px', fontWeight: i === 0 ? 800 : 500, fontSize: 13 }}>{step}</div>
                 {i < EXPANSION.length - 1 && <span style={{ color: '#F5E642', fontSize: 16 }}>→</span>}
               </div>
             ))}
@@ -138,8 +138,8 @@ export default function DFWProLnkLaunchStrategy() {
           <h2 style={{ color: '#0A1628', fontSize: 16, fontWeight: 700, marginBottom: 12 }}>🔍 What brings you here?</h2>
           <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
             {INTERESTS.map((s) => (
-              <button key={s.key} onClick={() => setSelected(s.key === selected ? null : s.key)} style={{ textAlign: 'left', padding: '12px 16px', borderRadius: 8, border: `2px solid ${selected === s.key ? '#0A1628' : '#e2e8f0'}`, background: selected === s.key ? '#0A1628′ : '#f8fafc', cursor: ’pointer', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                <span style={{ color: selected === s.key ? '#F5E642′ : '#0A1628', fontWeight: selected === s.key ? 700 : 400, fontSize: 14 }}>{s.label}</span>
+              <button key={s.key} onClick={() => setSelected(s.key === selected ? null : s.key)} style={{ textAlign: 'left', padding: '12px 16px', borderRadius: 8, border: `2px solid ${selected === s.key ? '#0A1628' : '#e2e8f0'}`, background: selected === s.key ? '#0A1628' : '#f8fafc', cursor: 'pointer', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                <span style={{ color: selected === s.key ? '#F5E642' : '#0A1628', fontWeight: selected === s.key ? 700 : 400, fontSize: 14 }}>{s.label}</span>
                 <span style={{ color: '#94a3b8', fontSize: 12 }}>{s.desc}</span>
               </button>
             ))}
@@ -171,7 +171,7 @@ export default function DFWProLnkLaunchStrategy() {
         )}
 
         {!strat && (
-          <div style={{ background: '#fff', border: '2px solid #e2e8f0', borderRadius: 12, padding: 24, textAlign: 'center', color: '#94a3b8′ }}>
+          <div style={{ background: '#fff', border: '2px solid #e2e8f0', borderRadius: 12, padding: 24, textAlign: 'center', color: '#94a3b8' }}>
             <div style={{ fontSize: 40, marginBottom: 8 }}>🚀</div>
             <div style={{ fontSize: 15 }}>Select your interest above to see what the DFW launch means for you</div>
           </div>

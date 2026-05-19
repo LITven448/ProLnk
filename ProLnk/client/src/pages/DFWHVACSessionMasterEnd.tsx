@@ -71,8 +71,8 @@ export default function DFWHVACSessionMasterEnd() {
                 key={j.id}
                 onClick={() => setSelected(selected === j.id ? null : j.id)}
                 style={{
-                  background: selected === j.id ? '#F5E642′ : '#0A1628',
-                  color: selected === j.id ? '#0A1628′ : '#E8EDF5',
+                  background: selected === j.id ? '#F5E642' : '#0A1628',
+                  color: selected === j.id ? '#0A1628' : '#E8EDF5',
                   border: 'none',
                   borderRadius: 8,
                   padding: '14px 18px',
@@ -90,7 +90,7 @@ export default function DFWHVACSessionMasterEnd() {
         </div>
 
         {journey && (
-          <div style={{ background: '#1E2D45', borderRadius: 12, padding: 28, marginBottom: 32, borderLeft: '4px solid #F5E642′ }}>
+          <div style={{ background: '#1E2D45', borderRadius: 12, padding: 28, marginBottom: 32, borderLeft: '4px solid #F5E642' }}>
             <div style={{ color: '#F5E642', fontWeight: 700, fontSize: 13, marginBottom: 10 }}>🤝 PROLNK'S FOREVER COMMITMENT TO YOU</div>
             <p style={{ color: '#E2E8F0', lineHeight: 1.8, fontSize: 15 }}>{journey.commitment}</p>
           </div>

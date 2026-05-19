@@ -75,7 +75,7 @@ export default function DFWInsuranceCoverageGapsGuide() {
     <div style={{ minHeight: '100vh', backgroundColor: '#0A1628', color: '#fff', fontFamily: 'system-ui, sans-serif', padding: '2rem 1rem' }}>
       <div style={{ maxWidth: 740, margin: '0 auto' }}>
         <div style={{ marginBottom: '0.5rem', fontSize: '0.85rem', color: '#F5E642', opacity: 0.8 }}>ProLnk Guide · DFW Homeowners</div>
-        <h1 style={{ fontSize: '2rem', fontWeight: 700, marginBottom: '0.5rem', color: '#F5E642′ }}>
+        <h1 style={{ fontSize: '2rem', fontWeight: 700, marginBottom: '0.5rem', color: '#F5E642' }}>
           ⚠️ DFW Insurance Coverage Gaps
         </h1>
         <p style={{ color: '#ccc', marginBottom: '2rem', lineHeight: 1.6 }}>
@@ -84,12 +84,12 @@ export default function DFWInsuranceCoverageGapsGuide() {
 
         <div style={{ marginBottom: '2rem' }}>
           {gaps.map(gap => (
-            <div key={gap.id} style={{ background: '#112240', borderRadius: 10, padding: '1.25rem', marginBottom: '1rem', borderLeft: '4px solid #dc3545′ }}>
+            <div key={gap.id} style={{ background: '#112240', borderRadius: 10, padding: '1.25rem', marginBottom: '1rem', borderLeft: '4px solid #dc3545' }}>
               <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start' }}>
                 <div style={{ flex: 1 }}>
                   <div style={{ fontWeight: 700, fontSize: '1.05rem', marginBottom: '0.4rem' }}>{gap.icon} {gap.label} <span style={{ color: '#dc3545', fontSize: '0.8rem', fontWeight: 600 }}>NOT COVERED</span></div>
                   <p style={{ color: '#bbb', fontSize: '0.875rem', margin: '0 0 0.5rem', lineHeight: 1.5 }}>{gap.description}</p>
-                  <div style={{ fontSize: '0.8rem', color: '#F5E642′ }}>📍 DFW: {gap.dfwNote}</div>
+                  <div style={{ fontSize: '0.8rem', color: '#F5E642' }}>📍 DFW: {gap.dfwNote}</div>
                   <div style={{ marginTop: '0.5rem', fontSize: '0.8rem', color: '#aaa' }}>
                     <span style={{ marginRight: '1rem' }}>🔧 Fix: {gap.endorsement}</span>
                     <span>💰 Cost: {gap.cost}</span>
@@ -101,11 +101,11 @@ export default function DFWInsuranceCoverageGapsGuide() {
         </div>
 
         <div style={{ background: '#112240', borderRadius: 12, padding: '1.5rem', marginBottom: '1.5rem' }}>
-          <h2 style={{ fontSize: '1.2rem', fontWeight: 700, marginBottom: '0.5rem', color: '#F5E642′ }}>🏠 Your Situation → Your Gaps</h2>
+          <h2 style={{ fontSize: '1.2rem', fontWeight: 700, marginBottom: '0.5rem', color: '#F5E642' }}>🏠 Your Situation → Your Gaps</h2>
           <p style={{ color: '#ccc', fontSize: '0.875rem', marginBottom: '1rem' }}>Select the risks that apply to your home:</p>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0.5rem', marginBottom: '1rem' }}>
             {gaps.map(gap => (
-              <button key={gap.id} onClick={() => toggle(gap.id)} style={{ background: situation[gap.id] ? '#F5E642′ : '#0A1628', color: situation[gap.id] ? '#0A1628' : '#fff', border: '1px solid ' + (situation[gap.id] ? '#F5E642' : '#334'), borderRadius: 8, padding: '0.5rem 0.75rem', cursor: ’pointer', textAlign: 'left', fontSize: '0.875rem', fontWeight: 600 }}>
+              <button key={gap.id} onClick={() => toggle(gap.id)} style={{ background: situation[gap.id] ? '#F5E642' : '#0A1628', color: situation[gap.id] ? '#0A1628' : '#fff', border: '1px solid ' + (situation[gap.id] ? '#F5E642' : '#334'), borderRadius: 8, padding: '0.5rem 0.75rem', cursor: 'pointer', textAlign: 'left', fontSize: '0.875rem', fontWeight: 600 }}>
                 {gap.icon} {gap.label}
               </button>
             ))}
@@ -114,12 +114,12 @@ export default function DFWInsuranceCoverageGapsGuide() {
 
           {showResults && relevant.length > 0 && (
             <div style={{ marginTop: '1.25rem' }}>
-              <div style={{ fontWeight: 700, marginBottom: '0.75rem', color: '#F5E642′ }}>Your Priority Gaps to Address:</div>
+              <div style={{ fontWeight: 700, marginBottom: '0.75rem', color: '#F5E642' }}>Your Priority Gaps to Address:</div>
               {relevant.map(gap => (
                 <div key={gap.id} style={{ background: '#0A1628', borderRadius: 8, padding: '1rem', marginBottom: '0.75rem' }}>
                   <div style={{ fontWeight: 700, marginBottom: '0.25rem' }}>{gap.icon} {gap.label}</div>
                   <div style={{ fontSize: '0.875rem', color: '#ccc', marginBottom: '0.25rem' }}>{gap.endorsement}</div>
-                  <div style={{ fontSize: '0.875rem', color: '#F5E642′ }}>Estimated cost: {gap.cost}</div>
+                  <div style={{ fontSize: '0.875rem', color: '#F5E642' }}>Estimated cost: {gap.cost}</div>
                 </div>
               ))}
             </div>

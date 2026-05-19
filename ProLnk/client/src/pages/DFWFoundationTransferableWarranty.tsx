@@ -24,7 +24,7 @@ const assessments: Record<string, WarrantyResult> = {
   'No warranty offered-Over $1,000': { rating: 'N/A', score: 0, questions: [], flags: ['Walk away immediately'] },
 };
 
-const ratingColors: Record<string, string> = { Excellent: '#22C55E', Good: '#84CC16', Acceptable: '#EAB308', 'Below Average': '#F97316', Poor: '#EF4444', 'Very Poor': '#DC2626', 'Red Flag': '#991B1B', 'No Warranty': '#6B7280', 'N/A': '#6B7280', Fair: '#EAB308′ };
+const ratingColors: Record<string, string> = { Excellent: '#22C55E', Good: '#84CC16', Acceptable: '#EAB308', 'Below Average': '#F97316', Poor: '#EF4444', 'Very Poor': '#DC2626', 'Red Flag': '#991B1B', 'No Warranty': '#6B7280', 'N/A': '#6B7280', Fair: '#EAB308' };
 
 export default function DFWFoundationTransferableWarranty() {
   const [warrantyType, setWarrantyType] = useState('');
@@ -37,19 +37,19 @@ export default function DFWFoundationTransferableWarranty() {
       <div style={{ maxWidth: 800, margin: '0 auto' }}>
         <div style={{ marginBottom: '2rem' }}>
           <span style={{ fontSize: '2.5rem' }}>📜</span>
-          <h1 style={{ color: '#F5E642', fontSize: '2rem', margin: '0.5rem 0′ }}>DFW Foundation Transferable Warranty Guide</h1>
+          <h1 style={{ color: '#F5E642', fontSize: '2rem', margin: '0.5rem 0' }}>DFW Foundation Transferable Warranty Guide</h1>
           <p style={{ color: '#9CA3AF', lineHeight: 1.6 }}>
             A foundation warranty is only as good as what it actually covers and what it costs to transfer. In DFW's active 
             real estate market, a poorly structured warranty can hurt your home's resale value.
           </p>
         </div>
 
-        <div style={{ backgroundColor: '#111D35', borderRadius: 12, padding: '1.5rem', marginBottom: '1.5rem', borderLeft: '4px solid #F5E642′ }}>
+        <div style={{ backgroundColor: '#111D35', borderRadius: 12, padding: '1.5rem', marginBottom: '1.5rem', borderLeft: '4px solid #F5E642' }}>
           <h2 style={{ color: '#F5E642', marginTop: 0 }}>📋 What "Transferable" Actually Means</h2>
           <p style={{ color: '#CBD5E1', lineHeight: 1.7 }}>
-            A transferable warranty moves to the new homeowner at the time of sale. It requires <strong style={{ color: '#F5E642′ }}>formal disclosure</strong> in the seller’s 
-            disclosure form (required in Texas), a <strong style={{ color: '#F5E642′ }}>transfer notification to the company</strong> within 30–60 days of closing, 
-            and sometimes a <strong style={{ color: '#F5E642′ }}>transfer fee</strong>. Lifetime means the company agrees to service the piers indefinitely — 
+            A transferable warranty moves to the new homeowner at the time of sale. It requires <strong style={{ color: '#F5E642' }}>formal disclosure</strong> in the seller's 
+            disclosure form (required in Texas), a <strong style={{ color: '#F5E642' }}>transfer notification to the company</strong> within 30–60 days of closing, 
+            and sometimes a <strong style={{ color: '#F5E642' }}>transfer fee</strong>. Lifetime means the company agrees to service the piers indefinitely — 
             but only if they're still in business.
           </p>
         </div>
@@ -75,10 +75,10 @@ export default function DFWFoundationTransferableWarranty() {
             </div>
           </div>
           {result && (
-            <div style={{ backgroundColor: '#0A1628', borderRadius: 8, padding: '1.2rem', border: '1px solid #F5E642′ }}>
+            <div style={{ backgroundColor: '#0A1628', borderRadius: 8, padding: '1.2rem', border: '1px solid #F5E642' }}>
               <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '1rem' }}>
                 <div style={{ backgroundColor: ratingColors[result.rating] || '#6B7280', borderRadius: 8, padding: '0.5rem 1rem', fontWeight: 700 }}>{result.rating}</div>
-                {result.score > 0 && <div style={{ color: '#9CA3AF' }}>Quality Score: <strong style={{ color: '#F5E642′ }}>{result.score}/100</strong></div>}
+                {result.score > 0 && <div style={{ color: '#9CA3AF' }}>Quality Score: <strong style={{ color: '#F5E642' }}>{result.score}/100</strong></div>}
               </div>
               {result.flags.length > 0 && <div style={{ marginBottom: '0.8rem' }}><div style={{ color: '#EF4444', fontWeight: 700, marginBottom: 4 }}>⚠️ Red Flags</div>{result.flags.map((f, i) => <div key={i} style={{ color: '#CBD5E1', fontSize: '0.9rem', marginBottom: 4 }}>• {f}</div>)}</div>}
               {result.questions.length > 0 && <div><div style={{ color: '#F5E642', fontWeight: 700, marginBottom: 4 }}>❓ Ask These Questions</div>{result.questions.map((q, i) => <div key={i} style={{ color: '#CBD5E1', fontSize: '0.9rem', marginBottom: 4 }}>• {q}</div>)}</div>}

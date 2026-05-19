@@ -62,12 +62,12 @@ export default function DFWPantryOrganizationGuide() {
         <div style={{ background: '#1a1000', border: '1px solid #854d0e', borderRadius: 12, padding: 24, marginBottom: 40 }}>
           <h3 style={{ color: '#fbbf24', marginBottom: 16 }}>🌡️ DFW Heat & Humidity: Pantry Food Safety</h3>
           {heatTips.map(h => (
-            <div key={h.item} style={{ display: 'flex', gap: 12, padding: '10px 0', borderBottom: '1px solid #1c1005′ }}>
+            <div key={h.item} style={{ display: 'flex', gap: 12, padding: '10px 0', borderBottom: '1px solid #1c1005' }}>
               <div style={{ color: '#f59e0b', fontWeight: 600, minWidth: 160, fontSize: 13 }}>{h.item}</div>
               <div style={{ color: '#94a3b8', fontSize: 13 }}>{h.tip}</div>
             </div>
           ))}
-          <div style={{ marginTop: 16, color: '#94a3b8', fontSize: 13 }}>🛒 <strong style={{ color: '#fbbf24′ }}>Bulk buyer tip:</strong> Costco hauls need dedicated zones — label bins by category (baking, grains, snacks, canned) and rotate FIFO.</div>
+          <div style={{ marginTop: 16, color: '#94a3b8', fontSize: 13 }}>🛒 <strong style={{ color: '#fbbf24' }}>Bulk buyer tip:</strong> Costco hauls need dedicated zones — label bins by category (baking, grains, snacks, canned) and rotate FIFO.</div>
         </div>
 
         <div style={{ background: '#0f2040', border: '1px solid #1e3a5f', borderRadius: 16, padding: 32, marginBottom: 40 }}>
@@ -75,25 +75,25 @@ export default function DFWPantryOrganizationGuide() {
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))', gap: 16, marginBottom: 20 }}>
             <div>
               <label style={{ display: 'block', color: '#94a3b8', fontSize: 13, marginBottom: 6 }}>Pantry sq footage</label>
-              <input value={pantrySize} onChange={e => setPantrySize(e.target.value)} type="number" placeholder="e.g. 25″ style={{ width: '100%', background: '#0A1628', border: '1px solid #1e3a5f', borderRadius: 8, padding: '10px 14px', color: '#fff', fontSize: 15, boxSizing: 'border-box' }} />
+              <input value={pantrySize} onChange={e => setPantrySize(e.target.value)} type="number" placeholder="e.g. 25" style={{ width: '100%', background: '#0A1628', border: '1px solid #1e3a5f', borderRadius: 8, padding: '10px 14px', color: '#fff', fontSize: 15, boxSizing: 'border-box' }} />
             </div>
             <div>
               <label style={{ display: 'block', color: '#94a3b8', fontSize: 13, marginBottom: 6 }}>Household size</label>
               <select value={household} onChange={e => setHousehold(e.target.value)} style={{ width: '100%', background: '#0A1628', border: '1px solid #1e3a5f', borderRadius: 8, padding: '10px 14px', color: '#fff', fontSize: 15, boxSizing: 'border-box' }}>
-                <option value="2″>1–2 people</option>
-                <option value="4″>3–4 people</option>
-                <option value="6″>5–6 people</option>
-                <option value="8″>7+ people</option>
+                <option value="2">1–2 people</option>
+                <option value="4">3–4 people</option>
+                <option value="6">5–6 people</option>
+                <option value="8">7+ people</option>
               </select>
             </div>
             <div>
               <label style={{ display: 'block', color: '#94a3b8', fontSize: 13, marginBottom: 6 }}>Budget ($)</label>
-              <input value={budget} onChange={e => setBudget(e.target.value)} type="number" placeholder="e.g. 1200″ style={{ width: '100%', background: '#0A1628', border: '1px solid #1e3a5f', borderRadius: 8, padding: '10px 14px', color: '#fff', fontSize: 15, boxSizing: 'border-box' }} />
+              <input value={budget} onChange={e => setBudget(e.target.value)} type="number" placeholder="e.g. 1200" style={{ width: '100%', background: '#0A1628', border: '1px solid #1e3a5f', borderRadius: 8, padding: '10px 14px', color: '#fff', fontSize: 15, boxSizing: 'border-box' }} />
             </div>
           </div>
           <button onClick={calculate} style={{ background: '#F5E642', color: '#0A1628', border: 'none', borderRadius: 8, padding: '12px 28px', fontSize: 15, fontWeight: 700, cursor: 'pointer' }}>Get Recommendation →</button>
           {result && (
-            <div style={{ marginTop: 24, background: '#0A1628', borderRadius: 12, padding: 20, border: '1px solid #F5E642′ }}>
+            <div style={{ marginTop: 24, background: '#0A1628', borderRadius: 12, padding: 20, border: '1px solid #F5E642' }}>
               <div style={{ color: '#F5E642', fontWeight: 700, fontSize: 16, marginBottom: 8 }}>✅ {result.rec}</div>
               <div style={{ color: '#fff', fontSize: 14, marginBottom: 6 }}>Estimated shelving cost: <strong>{result.shelving}</strong></div>
               <div style={{ color: '#94a3b8', fontSize: 13 }}>💡 {result.tip}</div>

@@ -7,14 +7,14 @@ const recommendations: Record<string, Record<string, { action: string; savings: 
   'Attic (unconditioned)': {
     'R-4 or less': { action: '🔴 Immediate upgrade required. DFW attics hit 150°F vs 55°F supply air = 95°F delta. R-4 allows massive heat gain — your system is working 30–40% harder than necessary. Upgrade to R-8 immediately.', savings: 'Est. 25–35% reduction in duct heat gain. $300–$500/year savings.', cost: '$2–$4 per linear ft to re-wrap existing flex duct' },
     'R-6': { action: '⚠️ Upgrade recommended. R-6 meets older code but not current DFW standards. DFW is climate zone 3 — R-8 is the current minimum for attic ducts. Schedule upgrade within 1 year.', savings: 'Est. 10–15% additional efficiency gain over R-6.', cost: '$1.50–$2.50 per linear ft to upgrade wrap' },
-    'R-8': { action: '✅ Code compliant for DFW. R-8 meets current IECC requirements for climate zone 3. Verify insulation is intact with no gaps, tears, or compression.', savings: 'Already optimized. Focus on air sealing duct joints instead.', cost: 'Inspection only: $150–$250′ },
+    'R-8': { action: '✅ Code compliant for DFW. R-8 meets current IECC requirements for climate zone 3. Verify insulation is intact with no gaps, tears, or compression.', savings: 'Already optimized. Focus on air sealing duct joints instead.', cost: 'Inspection only: $150–$250' },
     'Unknown / not sure': { action: '🔍 Schedule duct inspection. In DFW, assume R-4 or less if home is pre-2005 and ducts have never been replaced. Many DFW attic ducts were installed with R-4 foil wrap.', savings: 'Potential 20–35% savings if upgrading from low R-value.', cost: 'Inspection: $150–$250 + upgrade if needed' },
   },
   'Interior walls/ceiling': {
     'R-4 or less': { action: '⚠️ Marginal. Interior ducts face lower temperature swings than attic. R-4 is borderline acceptable for conditioned interior spaces in DFW.', savings: 'Modest gains from upgrade — prioritize attic ducts first.', cost: '$1–$2 per linear ft if upgrading' },
     'R-6': { action: '✅ Acceptable for interior locations. R-6 is adequate for interior walls and conditioned ceiling spaces in DFW homes.', savings: 'Diminishing returns for interior upgrades vs attic.', cost: 'No action needed' },
     'R-8': { action: '✅ Excellent. R-8 in interior spaces is above and beyond for DFW. Well optimized.', savings: 'Already maximized for this location.', cost: 'No action needed' },
-    'Unknown / not sure': { action: '🔍 Low urgency for interior ducts. Check attic ducts first as they are far more impactful in DFW.', savings: 'Focus budget on attic duct insulation first.', cost: 'Inspection: $150–$250′ },
+    'Unknown / not sure': { action: '🔍 Low urgency for interior ducts. Check attic ducts first as they are far more impactful in DFW.', savings: 'Focus budget on attic duct insulation first.', cost: 'Inspection: $150–$250' },
   },
   'Crawl space': {
     'R-4 or less': { action: '⚠️ Upgrade recommended. Crawl space temps in DFW range 90–110°F in summer. R-4 is insufficient — heat gain and humidity are both concerns.', savings: 'Est. 10–20% efficiency gain from upgrade.', cost: '$1.50–$3 per linear ft to re-wrap' },
@@ -26,7 +26,7 @@ const recommendations: Record<string, Record<string, { action: string; savings: 
     'R-4 or less': { action: '🔴 Upgrade needed. DFW garages reach 120°F+ in summer. Any duct passing through garage needs R-8 minimum.', savings: 'Est. 15–25% savings on duct runs through garage.', cost: '$2–$4 per linear ft' },
     'R-6': { action: '⚠️ Marginal for DFW garages. Garages see extreme temps. R-8 preferred for garage duct runs in DFW climate.', savings: 'Upgrade to R-8 yields additional 5–10% efficiency.', cost: '$1–$2 per linear ft to upgrade' },
     'R-8': { action: '✅ Correct for DFW garage conditions. R-8 handles the 120°F+ garage environment adequately.', savings: 'Already optimized.', cost: 'No action needed' },
-    'Unknown / not sure': { action: '🔍 Inspect garage duct runs. They are often overlooked and under-insulated in DFW homes.', savings: 'Potentially significant if upgrade is needed.', cost: 'Inspection: $150–$250′ },
+    'Unknown / not sure': { action: '🔍 Inspect garage duct runs. They are often overlooked and under-insulated in DFW homes.', savings: 'Potentially significant if upgrade is needed.', cost: 'Inspection: $150–$250' },
   },
 };
 
@@ -70,7 +70,7 @@ export default function DFWDuctInsulationGuide() {
         </div>
 
         {result && (
-          <div style={{ background: '#132035', borderRadius: 12, padding: 20, borderLeft: '4px solid #F5E642′ }}>
+          <div style={{ background: '#132035', borderRadius: 12, padding: 20, borderLeft: '4px solid #F5E642' }}>
             <p style={{ color: '#cbd5e1', lineHeight: 1.7, marginBottom: 12 }}>{result.action}</p>
             <div style={{ color: '#4ade80', fontWeight: 600, marginBottom: 8 }}>📈 {result.savings}</div>
             <div style={{ color: '#F5E642', fontWeight: 600 }}>💰 {result.cost}</div>

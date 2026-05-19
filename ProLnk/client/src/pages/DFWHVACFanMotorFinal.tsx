@@ -76,8 +76,8 @@ export default function DFWHVACFanMotorFinal() {
               </div>
             </div>
           </div>
-          <div style={{ background: '#0A1628', borderRadius: 8, padding: 14, marginTop: 12, borderLeft: '3px solid #F5E642′ }}>
-            <span style={{ color: '#F5E642′ }}>🌡️ DFW Factor: </span>
+          <div style={{ background: '#0A1628', borderRadius: 8, padding: 14, marginTop: 12, borderLeft: '3px solid #F5E642' }}>
+            <span style={{ color: '#F5E642' }}>🌡️ DFW Factor: </span>
             <span style={{ color: '#94a3b8', fontSize: 14 }}>The average DFW home runs its air handler fan 5,000-6,000 hours/year (vs national 2,500-3,000). ECM savings are nearly double vs national averages.</span>
           </div>
         </div>
@@ -99,12 +99,12 @@ export default function DFWHVACFanMotorFinal() {
             </select>
           </div>
           {rec && (
-            <div style={{ background: '#0A1628', borderRadius: 10, padding: 20, borderLeft: '4px solid #F5E642′ }}>
+            <div style={{ background: '#0A1628', borderRadius: 10, padding: 20, borderLeft: '4px solid #F5E642' }}>
               <div style={{ color: '#F5E642', fontWeight: 700, fontSize: 18, marginBottom: 4 }}>✅ {rec.type}</div>
               <div style={{ color: '#22c55e', fontSize: 20, fontWeight: 700, marginBottom: 12 }}>💰 Est. savings: {rec.saving}</div>
               <div style={{ color: '#94a3b8', marginBottom: 12, lineHeight: 1.6 }}>{rec.reason}</div>
               <div style={{ background: '#0f2040', borderRadius: 8, padding: 12, marginBottom: 10 }}>
-                <span style={{ color: '#F5E642′ }}>🌡️ DFW Note: </span><span style={{ color: '#e2e8f0', fontSize: 14 }}>{rec.dfwNote}</span>
+                <span style={{ color: '#F5E642' }}>🌡️ DFW Note: </span><span style={{ color: '#e2e8f0', fontSize: 14 }}>{rec.dfwNote}</span>
               </div>
               <div style={{ color: '#64748b', fontSize: 14 }}>{rec.cost}</div>
             </div>

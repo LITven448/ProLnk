@@ -14,35 +14,35 @@ export default function DFWPlumberLicensingGuide2026() {
 
   const stats = [
     { emoji: "💰", label: "Avg DFW Salary", value: "$72,100/yr" },
-    { emoji: "📈", label: "Job Growth", value: "+5% by 2030″ },
+    { emoji: "📈", label: "Job Growth", value: "+5% by 2030" },
     { emoji: "🏠", label: "DFW Demand", value: "High — housing boom" },
     { emoji: "🔧", label: "Top Earners", value: "$98K+/yr" },
   ];
 
   return (
-    <div style={{ minHeight: "100vh", backgroundColor: "#0A1628″, color: "#fff", fontFamily: "sans-serif", padding: "2rem" }}>
+    <div style={{ minHeight: "100vh", backgroundColor: "#0A1628", color: "#fff", fontFamily: "sans-serif", padding: "2rem" }}>
       <div style={{ maxWidth: "860px", margin: "0 auto" }}>
         <div style={{ textAlign: "center", marginBottom: "2.5rem" }}>
           <div style={{ fontSize: "3rem", marginBottom: "0.5rem" }}>🔧</div>
-          <h1 style={{ fontSize: "2rem", fontWeight: 800, color: "#F5E642″, marginBottom: "0.5rem" }}>DFW Plumber Licensing Guide 2026</h1>
-          <p style={{ color: "#94a3b8″, fontSize: "1rem" }}>Texas TSBPE licensing pathway — Apprentice to Master Plumber</p>
+          <h1 style={{ fontSize: "2rem", fontWeight: 800, color: "#F5E642", marginBottom: "0.5rem" }}>DFW Plumber Licensing Guide 2026</h1>
+          <p style={{ color: "#94a3b8", fontSize: "1rem" }}>Texas TSBPE licensing pathway — Apprentice to Master Plumber</p>
         </div>
 
         <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: "1rem", marginBottom: "2.5rem" }}>
           {stats.map(s => (
-            <div key={s.label} style={{ backgroundColor: "#0F2040″, borderRadius: "12px", padding: "1rem", textAlign: "center", border: "1px solid #1e3a5f" }}>
+            <div key={s.label} style={{ backgroundColor: "#0F2040", borderRadius: "12px", padding: "1rem", textAlign: "center", border: "1px solid #1e3a5f" }}>
               <div style={{ fontSize: "1.5rem" }}>{s.emoji}</div>
-              <div style={{ fontSize: "1.1rem", fontWeight: 700, color: "#F5E642″ }}>{s.value}</div>
-              <div style={{ fontSize: "0.75rem", color: "#94a3b8″ }}>{s.label}</div>
+              <div style={{ fontSize: "1.1rem", fontWeight: 700, color: "#F5E642" }}>{s.value}</div>
+              <div style={{ fontSize: "0.75rem", color: "#94a3b8" }}>{s.label}</div>
             </div>
           ))}
         </div>
 
-        <div style={{ backgroundColor: "#0F2040″, borderRadius: "12px", padding: "1.5rem", marginBottom: "2rem", border: "1px solid #1e3a5f" }}>
-          <h2 style={{ fontSize: "1.2rem", fontWeight: 700, color: "#F5E642″, marginBottom: "1rem" }}>💧 What is your current status?</h2>
+        <div style={{ backgroundColor: "#0F2040", borderRadius: "12px", padding: "1.5rem", marginBottom: "2rem", border: "1px solid #1e3a5f" }}>
+          <h2 style={{ fontSize: "1.2rem", fontWeight: 700, color: "#F5E642", marginBottom: "1rem" }}>💧 What is your current status?</h2>
           <div style={{ display: "grid", gridTemplateColumns: "repeat(2, 1fr)", gap: "0.75rem" }}>
             {pathways.map(p => (
-              <button key={p.id} onClick={() => setCurrentStatus(p.id)} style={{ backgroundColor: currentStatus === p.id ? "#F5E642″ : "#162035", color: currentStatus === p.id ? "#0A1628" : "#fff", border: "2px solid", borderColor: currentStatus === p.id ? "#F5E642" : "#1e3a5f", borderRadius: "8px", padding: "0.75rem", fontWeight: 600, cursor: "pointer", textAlign: "left", fontSize: "0.9rem" }}>
+              <button key={p.id} onClick={() => setCurrentStatus(p.id)} style={{ backgroundColor: currentStatus === p.id ? "#F5E642" : "#162035", color: currentStatus === p.id ? "#0A1628" : "#fff", border: "2px solid", borderColor: currentStatus === p.id ? "#F5E642" : "#1e3a5f", borderRadius: "8px", padding: "0.75rem", fontWeight: 600, cursor: "pointer", textAlign: "left", fontSize: "0.9rem" }}>
                 {p.label}
               </button>
             ))}
@@ -50,25 +50,25 @@ export default function DFWPlumberLicensingGuide2026() {
         </div>
 
         {selected && (
-          <div style={{ backgroundColor: "#0F2040″, borderRadius: "12px", padding: "1.5rem", border: "2px solid #F5E642" }}>
+          <div style={{ backgroundColor: "#0F2040", borderRadius: "12px", padding: "1.5rem", border: "2px solid #F5E642" }}>
             <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "1rem", flexWrap: "wrap", gap: "0.5rem" }}>
-              <h2 style={{ fontSize: "1.2rem", fontWeight: 700, color: "#F5E642″ }}>Next Step: {selected.next}</h2>
-              <span style={{ backgroundColor: "#162035″, color: "#94a3b8", borderRadius: "20px", padding: "0.3rem 0.9rem", fontSize: "0.8rem" }}>⏱ {selected.timeframe}</span>
+              <h2 style={{ fontSize: "1.2rem", fontWeight: 700, color: "#F5E642" }}>Next Step: {selected.next}</h2>
+              <span style={{ backgroundColor: "#162035", color: "#94a3b8", borderRadius: "20px", padding: "0.3rem 0.9rem", fontSize: "0.8rem" }}>⏱ {selected.timeframe}</span>
             </div>
             <ul style={{ listStyle: "none", padding: 0, margin: 0 }}>
               {selected.steps.map((step, i) => (
                 <li key={i} style={{ display: "flex", gap: "0.75rem", marginBottom: "0.75rem", alignItems: "flex-start" }}>
-                  <span style={{ backgroundColor: "#F5E642″, color: "#0A1628", borderRadius: "50%", width: "24px", height: "24px", display: "flex", alignItems: "center", justifyContent: "center", fontWeight: 700, fontSize: "0.75rem", flexShrink: 0 }}>{i + 1}</span>
-                  <span style={{ color: "#cbd5e1″, fontSize: "0.95rem", lineHeight: 1.5 }}>{step}</span>
+                  <span style={{ backgroundColor: "#F5E642", color: "#0A1628", borderRadius: "50%", width: "24px", height: "24px", display: "flex", alignItems: "center", justifyContent: "center", fontWeight: 700, fontSize: "0.75rem", flexShrink: 0 }}>{i + 1}</span>
+                  <span style={{ color: "#cbd5e1", fontSize: "0.95rem", lineHeight: 1.5 }}>{step}</span>
                 </li>
               ))}
             </ul>
           </div>
         )}
 
-        <div style={{ marginTop: "2rem", backgroundColor: "#0F2040″, borderRadius: "12px", padding: "1.25rem", border: "1px solid #1e3a5f", textAlign: "center" }}>
-          <p style={{ color: "#94a3b8″, marginBottom: "0.5rem", fontSize: "0.9rem" }}>Licensed plumber ready for DFW jobs?</p>
-          <p style={{ color: "#F5E642″, fontWeight: 700, fontSize: "1rem" }}>🔧 Join ProLnk — Connect with DFW homeowners needing plumbing services</p>
+        <div style={{ marginTop: "2rem", backgroundColor: "#0F2040", borderRadius: "12px", padding: "1.25rem", border: "1px solid #1e3a5f", textAlign: "center" }}>
+          <p style={{ color: "#94a3b8", marginBottom: "0.5rem", fontSize: "0.9rem" }}>Licensed plumber ready for DFW jobs?</p>
+          <p style={{ color: "#F5E642", fontWeight: 700, fontSize: "1rem" }}>🔧 Join ProLnk — Connect with DFW homeowners needing plumbing services</p>
         </div>
       </div>
     </div>

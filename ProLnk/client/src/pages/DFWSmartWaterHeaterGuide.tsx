@@ -60,7 +60,7 @@ export default function DFWSmartWaterHeaterGuide() {
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: '1rem', marginBottom: '2rem' }}>
           {[
             { icon: '💰', label: '$15–$40/mo', sub: 'savings from peak scheduling' },
-            { icon: '🧊', label: 'Freeze Protection', sub: 'critical after Feb 2021′ },
+            { icon: '🧊', label: 'Freeze Protection', sub: 'critical after Feb 2021' },
             { icon: '💧', label: 'Leak Detection', sub: 'avg claim: $11K in DFW' },
           ].map(c => (
             <div key={c.label} style={{ background: '#0D1F3C', borderRadius: 8, padding: '1rem', textAlign: 'center' }}>

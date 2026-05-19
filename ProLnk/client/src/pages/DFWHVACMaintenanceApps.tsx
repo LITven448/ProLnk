@@ -92,11 +92,11 @@ export default function DFWHVACMaintenanceApps() {
                 <div style={{ fontSize: 12, color: '#F5E642', fontWeight: 700, marginBottom: 6 }}>DFW-RELEVANT FEATURES</div>
                 <div style={{ display: 'flex', flexDirection: 'column', gap: 4 }}>
                   {app.dfwFeatures.map((f, i) => (
-                    <div key={i} style={{ fontSize: 13, color: '#CBD5E1′ }}>✓ {f}</div>
+                    <div key={i} style={{ fontSize: 13, color: '#CBD5E1' }}>✓ {f}</div>
                   ))}
                 </div>
               </div>
-              <div style={{ background: '#0A1628', borderRadius: 8, padding: '10px 14px', fontSize: 13, color: '#94A3B8′ }}>
+              <div style={{ background: '#0A1628', borderRadius: 8, padding: '10px 14px', fontSize: 13, color: '#94A3B8' }}>
                 <strong style={{ color: '#fff' }}>Best for:</strong> {app.bestFor}
               </div>
             </div>
@@ -107,14 +107,14 @@ export default function DFWHVACMaintenanceApps() {
         <div style={{ display: 'grid', gap: 10, marginBottom: 24 }}>
           {needs.map((n) => (
             <button key={n.id} onClick={() => setNeed(n.id)} style={{
-              background: need === n.id ? '#F5E642′ : '#1E3A5F', color: need === n.id ? '#0A1628' : '#fff',
+              background: need === n.id ? '#F5E642' : '#1E3A5F', color: need === n.id ? '#0A1628' : '#fff',
               border: 'none', borderRadius: 8, padding: '14px 18px', textAlign: 'left', cursor: 'pointer', fontSize: 14, fontWeight: 600,
             }}>{n.label}</button>
           ))}
         </div>
 
         {selected && recApp && (
-          <div style={{ background: '#112240', borderRadius: 12, padding: '24px', marginBottom: 32, borderLeft: '4px solid #F5E642′ }}>
+          <div style={{ background: '#112240', borderRadius: 12, padding: '24px', marginBottom: 32, borderLeft: '4px solid #F5E642' }}>
             <div style={{ color: '#F5E642', fontWeight: 700, marginBottom: 6 }}>Recommended: {recApp.icon} {recApp.name}</div>
             <p style={{ color: '#CBD5E1', fontSize: 14, lineHeight: 1.7, margin: 0 }}>{selected.howTo}</p>
           </div>

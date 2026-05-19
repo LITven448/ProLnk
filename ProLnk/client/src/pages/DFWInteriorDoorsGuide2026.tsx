@@ -3,7 +3,7 @@ import { useState } from 'react';
 const doorProblems = [
   { id: 'sticking', label: '🚪 Door Sticking / Hard to Close', causes: [{ cause: 'Foundation Movement (DFW Clay Soil)', signals: ['Sticking is diagonal — top corner binds or bottom corner drags', 'Other doors in house also sticky, especially in dry summer', 'Visible cracks in drywall near door frame corners'], fixes: ['Do NOT plane the door yet — may correct itself when soil re-moistens', 'Monitor with tape marks on door edge for seasonal movement', 'If permanent, get foundation inspection before any door repair'] }, { cause: 'Humidity Swelling', signals: ['Only sticks during spring rain season', 'Bottom of door (typically exposed wood) swells more than top', 'Single door affected, not multiple'], fixes: ['Seal door edges with primer and paint — stops moisture absorption', 'Plane lightly on hinge side — remove minimal material', 'Install dehumidifier if interior RH exceeds 60% regularly'] }] },
   { id: 'gaps', label: '📐 Door Gaps / Light Showing', causes: [{ cause: 'Foundation / Frame Racking', signals: ['Gap is parallelogram-shaped — wider at top than bottom or vice versa', 'Frame is no longer square when measured corner to corner'], fixes: ['Shimming hinges can buy time but is not a long-term fix', 'Document with photos — useful for foundation contractor assessment', 'Add weatherstripping as temporary air seal until root cause is addressed'] }] },
-  { id: 'hinges', label: '🔩 Hinge Problems', causes: [{ cause: 'Worn or Loose Hardware', signals: ['Door sags on hinge side', 'Screws spin but do not tighten', 'Hinge barrel shows wear gap'], fixes: ['Replace short hinge screws with 3″ screws that reach the stud', 'Fill stripped screw holes with wood glue and toothpicks, let dry 24 hours', 'Upgrade to heavy-duty ball-bearing hinges for doors used frequently'] }] },
+  { id: 'hinges', label: '🔩 Hinge Problems', causes: [{ cause: 'Worn or Loose Hardware', signals: ['Door sags on hinge side', 'Screws spin but do not tighten', 'Hinge barrel shows wear gap'], fixes: ['Replace short hinge screws with 3" screws that reach the stud', 'Fill stripped screw holes with wood glue and toothpicks, let dry 24 hours', 'Upgrade to heavy-duty ball-bearing hinges for doors used frequently'] }] },
   { id: 'smartLock', label: '🔐 Smart Lock Installation', causes: [{ cause: 'Interior Smart Lock Considerations', signals: ['Thinking about a connected lock for home office, garage entry, or rental unit'], fixes: ['Interior doors use privacy locks — many smart options like Wyze or August', 'Ensure door is plumb and square before installing — misaligned doors cause motor strain', 'Choose Z-Wave or Zigbee for home automation compatibility over Wi-Fi-only devices'] }] },
 ];
 
@@ -38,7 +38,7 @@ export default function DFWInteriorDoorsGuide2026() {
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 10, marginBottom: 24 }}>
           {doorProblems.map(d => (
             <button key={d.id} onClick={() => setSelected(d.id === selected ? null : d.id)}
-              style={{ background: selected === d.id ? '#F5E642′ : '#111d30', color: selected === d.id ? '#0A1628' : '#fff', border: ’none', borderRadius: 8, padding: '14px', cursor: 'pointer', fontWeight: 600, fontSize: 14, textAlign: 'left' }}>
+              style={{ background: selected === d.id ? '#F5E642' : '#111d30', color: selected === d.id ? '#0A1628' : '#fff', border: 'none', borderRadius: 8, padding: '14px', cursor: 'pointer', fontWeight: 600, fontSize: 14, textAlign: 'left' }}>
               {d.label}
             </button>
           ))}
@@ -48,7 +48,7 @@ export default function DFWInteriorDoorsGuide2026() {
           <div key={ci} style={{ background: '#111d30', borderRadius: 10, padding: 20, marginBottom: 16 }}>
             <div style={{ color: '#F5E642', fontWeight: 700, marginBottom: 12 }}>{c.cause}</div>
             {c.signals && <><div style={{ color: '#94a3b8', fontSize: 13, marginBottom: 8 }}>Signs this is your cause:</div>
-            {c.signals.map((s, i) => <div key={i} style={{ color: '#e2e8f0', fontSize: 13, marginBottom: 5, paddingLeft: 12, borderLeft: '2px solid #F5E642′ }}>{s}</div>)}</>}
+            {c.signals.map((s, i) => <div key={i} style={{ color: '#e2e8f0', fontSize: 13, marginBottom: 5, paddingLeft: 12, borderLeft: '2px solid #F5E642' }}>{s}</div>)}</>}
             <div style={{ color: '#94a3b8', fontSize: 13, marginTop: 12, marginBottom: 8 }}>Recommended actions:</div>
             {c.fixes.map((f, i) => (
               <div key={i} style={{ display: 'flex', gap: 10, marginBottom: 8 }}>

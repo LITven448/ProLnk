@@ -71,7 +71,7 @@ export default function DFWRoofingGAFHDZ2026() {
         <div style={{ background: '#1e3a5f', borderRadius: 8, padding: '1rem', marginBottom: '2rem' }}>
           <div style={{ color: '#F5E642', fontWeight: 700, marginBottom: '0.5rem' }}>📌 Why HDZ Dominates DFW</div>
           <p style={{ color: '#cbd5e1', margin: 0 }}>
-            DFW averages <strong style={{ color: '#F5E642′ }}>18+ hail events per year</strong> and frequent 60–80 mph straight-line wind gusts. The HDZ was engineered for exactly these conditions.
+            DFW averages <strong style={{ color: '#F5E642' }}>18+ hail events per year</strong> and frequent 60–80 mph straight-line wind gusts. The HDZ was engineered for exactly these conditions.
           </p>
         </div>
 
@@ -79,7 +79,7 @@ export default function DFWRoofingGAFHDZ2026() {
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '1rem', marginBottom: '2rem' }}>
           {decisions.map(d => (
             <button key={d.id} onClick={() => setSelected(d.id)}
-              style={{ background: selected === d.id ? '#F5E642′ : '#1e293b', color: selected === d.id ? '#0A1628' : '#fff', border: '2px solid' + (selected === d.id ? ' #F5E642' : ' #334155'), borderRadius: 8, padding: '1rem', cursor: ’pointer', textAlign: 'left' }}>
+              style={{ background: selected === d.id ? '#F5E642' : '#1e293b', color: selected === d.id ? '#0A1628' : '#fff', border: '2px solid' + (selected === d.id ? ' #F5E642' : ' #334155'), borderRadius: 8, padding: '1rem', cursor: 'pointer', textAlign: 'left' }}>
               <div style={{ fontWeight: 700 }}>{d.label}</div>
               <div style={{ fontSize: '0.8rem', opacity: 0.8 }}>{d.desc}</div>
             </button>
@@ -87,12 +87,12 @@ export default function DFWRoofingGAFHDZ2026() {
         </div>
 
         {selected && guideMap[selected] && (
-          <div style={{ background: '#1e293b', borderRadius: 8, padding: '1.5rem', borderLeft: '4px solid #F5E642′ }}>
+          <div style={{ background: '#1e293b', borderRadius: 8, padding: '1.5rem', borderLeft: '4px solid #F5E642' }}>
             <h3 style={{ color: '#F5E642', marginBottom: '1rem' }}>{guideMap[selected].title}</h3>
             <ul style={{ margin: 0, padding: 0, listStyle: 'none' }}>
               {guideMap[selected].points.map((p, i) => (
                 <li key={i} style={{ padding: '0.5rem 0', borderBottom: '1px solid #334155', color: '#cbd5e1', display: 'flex', gap: '0.5rem' }}>
-                  <span style={{ color: '#F5E642′ }}>✓</span>{p}
+                  <span style={{ color: '#F5E642' }}>✓</span>{p}
                 </li>
               ))}
             </ul>

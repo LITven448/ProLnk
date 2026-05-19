@@ -50,14 +50,14 @@ export default function DFWWelcomeToProLnk() {
         <div style={{ textAlign: 'center', marginBottom: 36 }}>
           <div style={{ fontSize: 44 }}>🎉</div>
           <h1 style={{ color: '#F5E642', fontSize: 30, fontWeight: 800, margin: '12px 0 8px' }}>Welcome to ProLnk</h1>
-          <p style={{ color: '#8B9BB4', fontSize: 15, maxWidth: 440, margin: '0 auto' }}>You're now part of DFW’s most trusted home services network. Here’s what to do in your first 24 hours.</p>
+          <p style={{ color: '#8B9BB4', fontSize: 15, maxWidth: 440, margin: '0 auto' }}>You're now part of DFW's most trusted home services network. Here's what to do in your first 24 hours.</p>
         </div>
 
         <div style={{ background: '#111E35', borderRadius: 12, padding: 24, marginBottom: 24 }}>
           <p style={{ color: '#8B9BB4', fontSize: 13, marginBottom: 12, textTransform: 'uppercase', letterSpacing: 1 }}>I joined as a...</p>
           <div style={{ display: 'flex', gap: 10 }}>
             {memberTypes.map(t => (
-              <button key={t} onClick={() => setMemberType(t)} style={{ flex: 1, padding: '10px 0', borderRadius: 8, border: 'none', cursor: 'pointer', fontWeight: 700, fontSize: 14, background: memberType === t ? '#F5E642′ : '#1A2E4A', color: memberType === t ? '#0A1628' : '#8B9BB4' }}>{t}</button>
+              <button key={t} onClick={() => setMemberType(t)} style={{ flex: 1, padding: '10px 0', borderRadius: 8, border: 'none', cursor: 'pointer', fontWeight: 700, fontSize: 14, background: memberType === t ? '#F5E642' : '#1A2E4A', color: memberType === t ? '#0A1628' : '#8B9BB4' }}>{t}</button>
             ))}
           </div>
         </div>
@@ -72,7 +72,7 @@ export default function DFWWelcomeToProLnk() {
               <div style={{ fontSize: 24, flexShrink: 0 }}>{step.icon}</div>
               <div style={{ flex: 1 }}>
                 <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                  <span style={{ fontWeight: 700, fontSize: 14, color: done[step.title] ? '#8B9BB4′ : '#E8EAF0', textDecoration: done[step.title] ? ’line-through' : 'none' }}>{step.title}</span>
+                  <span style={{ fontWeight: 700, fontSize: 14, color: done[step.title] ? '#8B9BB4' : '#E8EAF0', textDecoration: done[step.title] ? 'line-through' : 'none' }}>{step.title}</span>
                   <span style={{ fontSize: 12, color: '#F5E642', background: '#1A2E4A', padding: '2px 8px', borderRadius: 12 }}>⏱ {step.time}</span>
                 </div>
                 <p style={{ margin: '4px 0 0', fontSize: 13, color: '#8B9BB4', lineHeight: 1.5 }}>{step.desc}</p>
@@ -84,7 +84,7 @@ export default function DFWWelcomeToProLnk() {
         <div style={{ background: '#111E35', borderRadius: 12, padding: 24 }}>
           <h2 style={{ color: '#F5E642', fontSize: 15, fontWeight: 700, marginBottom: 14 }}>The ProLnk Promise</h2>
           {promises.map(p => (
-            <p key={p} style={{ fontSize: 14, color: '#8B9BB4', margin: '8px 0′ }}>{p}</p>
+            <p key={p} style={{ fontSize: 14, color: '#8B9BB4', margin: '8px 0' }}>{p}</p>
           ))}
         </div>
       </div>

@@ -74,7 +74,7 @@ export default function DFWFlexDuctProblemsGuide() {
         </div>
 
         {result && (
-          <div style={{ background: '#132035', borderRadius: 12, padding: 20, borderLeft: '4px solid #F5E642′ }}>
+          <div style={{ background: '#132035', borderRadius: 12, padding: 20, borderLeft: '4px solid #F5E642' }}>
             <p style={{ color: '#cbd5e1', lineHeight: 1.7, marginBottom: 12 }}><strong>Likely Issue:</strong> {result.issue}</p>
             <p style={{ color: '#cbd5e1', lineHeight: 1.7, marginBottom: 12 }}><strong>Fix:</strong> {result.fix}</p>
             <div style={{ color: '#F5E642', fontWeight: 600 }}>{result.approach}</div>

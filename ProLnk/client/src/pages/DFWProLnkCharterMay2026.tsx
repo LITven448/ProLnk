@@ -37,7 +37,7 @@ export default function DFWProLnkCharterMay2026() {
             ].map(([label, charter, post, isData]) => (
               <div key={String(label)} style={{
                 display: 'grid', gridTemplateColumns: '1fr 1fr 1fr',
-                background: isData ? '#0A1628′ : '#1E2D42',
+                background: isData ? '#0A1628' : '#1E2D42',
                 padding: '10px 14px', borderBottom: '1px solid #1E2D42'
               }}>
                 <span style={{ color: '#8899AA', fontSize: 13 }}>{label}</span>
@@ -53,8 +53,8 @@ export default function DFWProLnkCharterMay2026() {
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: 10 }}>
             {situations.map(s => (
               <button key={s.id} onClick={() => setSelected(s.id)} style={{
-                background: selected === s.id ? '#F5E642′ : '#111D2E',
-                color: selected === s.id ? '#0A1628′ : '#fff',
+                background: selected === s.id ? '#F5E642' : '#111D2E',
+                color: selected === s.id ? '#0A1628' : '#fff',
                 border: '1px solid #F5E642', borderRadius: 8, padding: '10px 16px',
                 cursor: 'pointer', fontWeight: 600, fontSize: 13,
               }}>{s.label}</button>

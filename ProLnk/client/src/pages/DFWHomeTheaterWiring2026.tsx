@@ -6,11 +6,11 @@ export default function DFWHomeTheaterWiring2026() {
 
   const getWiring = () => {
     const isLarge = roomSize === 'large';
-    const is71 = setup === '71′ || setup === ’atmos';
+    const is71 = setup === '71' || setup === 'atmos';
     const wireGauge = isLarge ? '14AWG speaker wire (long runs >30ft)' : '16AWG speaker wire';
     const circuit = 'Dedicated 20A circuit for AV rack (hire electrician)';
     const hdmi = 'HDMI 2.1 in-wall rated cables (hire electrician for in-wall runs)';
-    const conduit = isLarge ? '2″ EMT conduit — future-proof for 8K/IP upgrades' : '1″ PVC conduit for cable runs';
+    const conduit = isLarge ? '2" EMT conduit — future-proof for 8K/IP upgrades' : '1" PVC conduit for cable runs';
     const speakerRuns = setup === 'atmos' ? 'Front L/R, Center, Surround L/R, Rear L/R, 2x ceiling Atmos' : is71 ? 'Front L/R, Center, Side Surround L/R, Rear Surround L/R, Subwoofer' : 'Front L/R, Center, Surround L/R, Subwoofer';
     const tip = isLarge ? 'For rooms >400sqft, use a receiver with pre-amp outputs to separate amplification' : 'Position center channel at ear height, speakers at 22–30° off-axis from seating';
     return { wireGauge, circuit, hdmi, conduit, speakerRuns, tip };
@@ -19,7 +19,7 @@ export default function DFWHomeTheaterWiring2026() {
   const wiring = getWiring();
 
   return (
-    <div style={{ background: '#0A1628', minHeight: '100vh', padding: '32px 24px', fontFamily: 'system-ui, sans-serif', color: '#e2e8f0′ }}>
+    <div style={{ background: '#0A1628', minHeight: '100vh', padding: '32px 24px', fontFamily: 'system-ui, sans-serif', color: '#e2e8f0' }}>
       <div style={{ maxWidth: 720, margin: '0 auto' }}>
         <div style={{ textAlign: 'center', marginBottom: 32 }}>
           <div style={{ fontSize: 48, marginBottom: 12 }}>🎬</div>
@@ -56,8 +56,8 @@ export default function DFWHomeTheaterWiring2026() {
             <div>
               <label style={{ color: '#94a3b8', fontSize: 13, display: 'block', marginBottom: 6 }}>Surround Sound Setup</label>
               <select value={setup} onChange={e => setSetup(e.target.value)} style={{ width: '100%', padding: '10px 14px', background: '#0A1628', border: '1px solid #1e3a5f', borderRadius: 8, color: '#e2e8f0', fontSize: 14 }}>
-                <option value="51″>5.1 Surround</option>
-                <option value="71″>7.1 Surround</option>
+                <option value="51">5.1 Surround</option>
+                <option value="71">7.1 Surround</option>
                 <option value="atmos">Dolby Atmos (7.1.2 or 7.1.4)</option>
               </select>
             </div>
@@ -83,7 +83,7 @@ export default function DFWHomeTheaterWiring2026() {
         </div>
 
         <div style={{ background: '#112240', borderRadius: 12, padding: 20, textAlign: 'center' }}>
-          <p style={{ color: '#94a3b8', fontSize: 13, margin: 0 }}>Need a DFW electrician or AV installer for your media room? <span style={{ color: '#F5E642′ }}>ProLnk connects you with vetted local pros.</span></p>
+          <p style={{ color: '#94a3b8', fontSize: 13, margin: 0 }}>Need a DFW electrician or AV installer for your media room? <span style={{ color: '#F5E642' }}>ProLnk connects you with vetted local pros.</span></p>
         </div>
       </div>
     </div>

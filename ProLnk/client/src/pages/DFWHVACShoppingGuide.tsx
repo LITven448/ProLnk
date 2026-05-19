@@ -97,7 +97,7 @@ export default function DFWHVACShoppingGuide() {
         <div style={{ display: 'grid', gap: 10, marginBottom: 24 }}>
           {situations.map((s) => (
             <button key={s.id} onClick={() => setSituation(s.id)} style={{
-              background: situation === s.id ? '#F5E642′ : '#1E3A5F', color: situation === s.id ? '#0A1628' : '#fff',
+              background: situation === s.id ? '#F5E642' : '#1E3A5F', color: situation === s.id ? '#0A1628' : '#fff',
               border: 'none', borderRadius: 8, padding: '14px 18px', textAlign: 'left', cursor: 'pointer', fontSize: 14, fontWeight: 600,
             }}>{s.label}</button>
           ))}
@@ -117,7 +117,7 @@ export default function DFWHVACShoppingGuide() {
               <div style={{ color: '#F5E642', fontWeight: 700, fontSize: 12, marginBottom: 4 }}>FAIR PRICE RANGE (DFW 2026)</div>
               <div style={{ color: '#CBD5E1', fontSize: 13 }}>{result.priceRange}</div>
             </div>
-            <div style={{ fontSize: 13, color: '#94A3B8′ }}>Urgency level: <strong style={{ color: '#fff' }}>{result.urgency}</strong></div>
+            <div style={{ fontSize: 13, color: '#94A3B8' }}>Urgency level: <strong style={{ color: '#fff' }}>{result.urgency}</strong></div>
           </div>
         )}
 

@@ -21,7 +21,7 @@ export default function DFWHVACEfficiencyStandards2026() {
   const result = key && efficiencyData[key] ? efficiencyData[key] : null;
 
   return (
-    <div style={{ background: '#0A1628', minHeight: '100vh', padding: '2rem', fontFamily: 'system-ui, sans-serif', color: '#e2e8f0′ }}>
+    <div style={{ background: '#0A1628', minHeight: '100vh', padding: '2rem', fontFamily: 'system-ui, sans-serif', color: '#e2e8f0' }}>
       <div style={{ maxWidth: '820px', margin: '0 auto' }}>
         <div style={{ marginBottom: '2rem' }}>
           <span style={{ background: '#F5E642', color: '#0A1628', padding: '0.25rem 0.75rem', borderRadius: '999px', fontSize: '0.75rem', fontWeight: 700 }}>DFW HVAC GUIDE</span>
@@ -33,7 +33,7 @@ export default function DFWHVACEfficiencyStandards2026() {
           </p>
         </div>
 
-        <div style={{ background: '#0f1e35', borderRadius: '12px', padding: '1.25rem', marginBottom: '2rem', border: '1px solid #F5E642′ }}>
+        <div style={{ background: '#0f1e35', borderRadius: '12px', padding: '1.25rem', marginBottom: '2rem', border: '1px solid #F5E642' }}>
           <div style={{ fontWeight: 700, color: '#F5E642', marginBottom: '0.5rem', fontSize: '0.95rem' }}>⚡ What Changed with SEER2</div>
           <p style={{ color: '#94a3b8', fontSize: '0.85rem', lineHeight: 1.6, margin: 0 }}>
             SEER2 uses a more realistic test condition (0.5 inches external static pressure vs 0.1 for SEER).
@@ -86,7 +86,7 @@ export default function DFWHVACEfficiencyStandards2026() {
                   <div style={{ color: '#94a3b8', fontSize: '0.78rem' }}>Estimated SEER2 Equivalent</div>
                   <div style={{ color: '#F5E642', fontWeight: 800, fontSize: '1.5rem' }}>{result.seer2Equiv}</div>
                 </div>
-                <div style={{ background: result.compliant ? '#16a34a22′ : '#dc262622', border: `1px solid ${result.color}`, borderRadius: '8px', padding: '0.5rem 1rem', color: result.color, fontWeight: 700, fontSize: '0.85rem' }}>
+                <div style={{ background: result.compliant ? '#16a34a22' : '#dc262622', border: `1px solid ${result.color}`, borderRadius: '8px', padding: '0.5rem 1rem', color: result.color, fontWeight: 700, fontSize: '0.85rem' }}>
                   {result.compliant ? '✅ Zone 3 Compliant' : '❌ Below DFW Minimum'}
                 </div>
               </div>

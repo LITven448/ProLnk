@@ -64,8 +64,8 @@ export default function DFWHVACDFWPride() {
                 key={c.id}
                 onClick={() => setSelected(c.id)}
                 style={{
-                  backgroundColor: selected === c.id ? '#F5E642′ : '#0f2040',
-                  color: selected === c.id ? '#0A1628′ : '#fff',
+                  backgroundColor: selected === c.id ? '#F5E642' : '#0f2040',
+                  color: selected === c.id ? '#0A1628' : '#fff',
                   border: `2px solid ${selected === c.id ? '#F5E642' : '#1e3a5f'}`,
                   borderRadius: '12px',
                   padding: '16px',

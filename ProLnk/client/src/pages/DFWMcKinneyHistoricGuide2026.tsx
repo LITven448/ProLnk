@@ -44,7 +44,7 @@ export default function DFWMcKinneyHistoricGuide2026() {
           <div style={{ display: 'flex', gap: 10, flexWrap: 'wrap', marginBottom: 16 }}>
             {homeEras.map(e => (
               <button key={e.id} onClick={() => setSelected(e.id === selected ? null : e.id)}
-                style={{ background: selected === e.id ? '#F5E642′ : '#162236', color: selected === e.id ? '#0A1628' : '#fff', border: ’none', borderRadius: 8, padding: '10px 16px', cursor: 'pointer', fontWeight: 600, fontSize: 14 }}>
+                style={{ background: selected === e.id ? '#F5E642' : '#162236', color: selected === e.id ? '#0A1628' : '#fff', border: 'none', borderRadius: 8, padding: '10px 16px', cursor: 'pointer', fontWeight: 600, fontSize: 14 }}>
                 {e.label}
               </button>
             ))}
@@ -54,7 +54,7 @@ export default function DFWMcKinneyHistoricGuide2026() {
               <h3 style={{ color: '#F5E642', marginBottom: 12, fontSize: 14 }}>{active.label} — Owner Guide</h3>
               {active.tips.map((t, i) => (
                 <div key={i} style={{ display: 'flex', gap: 10, marginBottom: 10 }}>
-                  <span style={{ color: '#F5E642′ }}>✓</span>
+                  <span style={{ color: '#F5E642' }}>✓</span>
                   <span style={{ color: '#ccd6e0', fontSize: 14 }}>{t}</span>
                 </div>
               ))}
@@ -66,7 +66,7 @@ export default function DFWMcKinneyHistoricGuide2026() {
           <h2 style={{ fontSize: 16, color: '#F5E642', marginBottom: 14 }}>📜 Historic District Key Facts</h2>
           {historicDistrictFacts.map((f, i) => (
             <div key={i} style={{ display: 'flex', gap: 10, marginBottom: 10 }}>
-              <span style={{ color: '#F5E642′ }}>→</span>
+              <span style={{ color: '#F5E642' }}>→</span>
               <span style={{ color: '#ccd6e0', fontSize: 14 }}>{f}</span>
             </div>
           ))}

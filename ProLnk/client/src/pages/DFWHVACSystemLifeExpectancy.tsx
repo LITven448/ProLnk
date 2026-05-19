@@ -49,7 +49,7 @@ const lifeData: Record<SystemKey, Record<UsageKey, Record<AgeKey, LifeResult>>> 
   },
 };
 
-const urgencyColors = { low: '#4ade80', medium: '#facc15', high: '#f87171′ };
+const urgencyColors = { low: '#4ade80', medium: '#facc15', high: '#f87171' };
 
 export default function DFWHVACSystemLifeExpectancy() {
   const [system, setSystem] = useState<SystemKey | null>(null);
@@ -83,7 +83,7 @@ export default function DFWHVACSystemLifeExpectancy() {
               <div style={{ color: '#94a3b8', fontSize: 13, marginBottom: 8 }}>{row.label}</div>
               <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8 }}>
                 {row.options.map((o: { id: string; label: string }) => (
-                  <button key={o.id} onClick={() => row.setter(o.id)} style={{ background: row.state === o.id ? '#F5E642′ : '#1e3a5f', color: row.state === o.id ? '#0A1628' : '#fff', border: ’none', borderRadius: 8, padding: '9px 14px', cursor: 'pointer', fontWeight: 600, fontSize: 12 }}>{o.label}</button>
+                  <button key={o.id} onClick={() => row.setter(o.id)} style={{ background: row.state === o.id ? '#F5E642' : '#1e3a5f', color: row.state === o.id ? '#0A1628' : '#fff', border: 'none', borderRadius: 8, padding: '9px 14px', cursor: 'pointer', fontWeight: 600, fontSize: 12 }}>{o.label}</button>
                 ))}
               </div>
             </div>
@@ -91,7 +91,7 @@ export default function DFWHVACSystemLifeExpectancy() {
           {result && (
             <div style={{ background: '#0A1628', borderRadius: 10, padding: 20, borderLeft: `4px solid ${urgencyColors[result.urgency]}` }}>
               <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: 12, marginBottom: 14 }}>
-                <div><div style={{ fontSize: 15, fontWeight: 700, color: '#F5E642′ }}>{result.dfwExpected}</div><div style={{ fontSize: 11, color: '#64748b' }}>DFW Expected Lifespan</div></div>
+                <div><div style={{ fontSize: 15, fontWeight: 700, color: '#F5E642' }}>{result.dfwExpected}</div><div style={{ fontSize: 11, color: '#64748b' }}>DFW Expected Lifespan</div></div>
                 <div><div style={{ fontSize: 15, fontWeight: 700, color: urgencyColors[result.urgency] }}>{result.remaining}</div><div style={{ fontSize: 11, color: '#64748b' }}>Est. Remaining Life</div></div>
               </div>
               <p style={{ color: '#94a3b8', margin: 0, fontSize: 14, lineHeight: 1.6 }}>🔧 {result.action}</p>

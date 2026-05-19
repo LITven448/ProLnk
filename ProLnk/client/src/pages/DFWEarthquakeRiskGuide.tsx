@@ -10,9 +10,9 @@ const locations = [
 ];
 
 const vintages = [
-  { id: 'pre1970', label: 'Pre-1970′ },
-  { id: '1970_2000', label: '1970-2000′ },
-  { id: 'post2000', label: 'Post-2000′ },
+  { id: 'pre1970', label: 'Pre-1970' },
+  { id: '1970_2000', label: '1970-2000' },
+  { id: 'post2000', label: 'Post-2000' },
 ];
 
 const assessments: Record<string, Record<string, { risk: string; color: string; explanation: string; actions: string[] }>> = {
@@ -78,7 +78,7 @@ export default function DFWEarthquakeRiskGuide() {
           <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap' }}>
             {locations.map(l => (
               <button key={l.id} onClick={() => setLocation(l.id)}
-                style={{ background: location === l.id ? '#F5E642′ : '#0f2240', color: location === l.id ? '#0A1628' : '#fff', border: '2px solid #F5E642', borderRadius: 8, padding: '8px 14px', cursor: ’pointer', fontSize: 13, fontWeight: 600 }}>
+                style={{ background: location === l.id ? '#F5E642' : '#0f2240', color: location === l.id ? '#0A1628' : '#fff', border: '2px solid #F5E642', borderRadius: 8, padding: '8px 14px', cursor: 'pointer', fontSize: 13, fontWeight: 600 }}>
                 {l.label}
               </button>
             ))}
@@ -89,7 +89,7 @@ export default function DFWEarthquakeRiskGuide() {
           <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap' }}>
             {vintages.map(v => (
               <button key={v.id} onClick={() => setVintage(v.id)}
-                style={{ background: vintage === v.id ? '#F5E642′ : '#0f2240', color: vintage === v.id ? '#0A1628' : '#fff', border: '2px solid #F5E642', borderRadius: 8, padding: '8px 14px', cursor: ’pointer', fontSize: 13, fontWeight: 600 }}>
+                style={{ background: vintage === v.id ? '#F5E642' : '#0f2240', color: vintage === v.id ? '#0A1628' : '#fff', border: '2px solid #F5E642', borderRadius: 8, padding: '8px 14px', cursor: 'pointer', fontSize: 13, fontWeight: 600 }}>
                 {v.label}
               </button>
             ))}

@@ -46,7 +46,7 @@ export default function DFWOctoberHomeMaintenanceGuide() {
           <p style={{ color: '#CBD5E1', marginBottom: 12, fontWeight: 600 }}>What project are you planning?</p>
           <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap' }}>
             {[{ key: 'exterior', label: '🎨 Exterior & Roof' }, { key: 'hvac', label: '🔥 HVAC & Heating' }, { key: 'landscaping', label: '🌿 Landscaping' }].map(opt => (
-              <button key={opt.key} onClick={() => setProjectType(opt.key)} style={{ padding: '10px 20px', borderRadius: 8, border: '2px solid', borderColor: projectType === opt.key ? '#F5E642′ : '#1E3A5F', backgroundColor: projectType === opt.key ? '#1a2f4e' : '#0D1F3C', color: '#fff', cursor: ’pointer', fontWeight: 600 }}>{opt.label}</button>
+              <button key={opt.key} onClick={() => setProjectType(opt.key)} style={{ padding: '10px 20px', borderRadius: 8, border: '2px solid', borderColor: projectType === opt.key ? '#F5E642' : '#1E3A5F', backgroundColor: projectType === opt.key ? '#1a2f4e' : '#0D1F3C', color: '#fff', cursor: 'pointer', fontWeight: 600 }}>{opt.label}</button>
             ))}
           </div>
         </div>
@@ -58,7 +58,7 @@ export default function DFWOctoberHomeMaintenanceGuide() {
               <div key={i} style={{ display: 'flex', alignItems: 'flex-start', gap: 14, backgroundColor: '#0D1F3C', borderRadius: 10, padding: '14px 16px', marginBottom: 10, borderLeft: `4px solid ${timingColor[task.timing]}` }}>
                 <span style={{ fontSize: 24 }}>{task.icon}</span>
                 <div>
-                  <p style={{ margin: 0, fontWeight: 600, color: '#E2E8F0′ }}>{task.title}</p>
+                  <p style={{ margin: 0, fontWeight: 600, color: '#E2E8F0' }}>{task.title}</p>
                   <span style={{ fontSize: 12, color: timingColor[task.timing], fontWeight: 700 }}>{task.timing}</span>
                 </div>
               </div>

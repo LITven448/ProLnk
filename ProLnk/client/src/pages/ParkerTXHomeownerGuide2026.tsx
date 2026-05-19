@@ -68,7 +68,7 @@ export default function ParkerTXHomeownerGuide2026() {
             ].map((item) => (
               <div key={item.label} style={{ backgroundColor: '#0A1628', borderRadius: '8px', padding: '1rem' }}>
                 <div style={{ fontSize: '1.5rem', marginBottom: '0.4rem' }}>{item.icon}</div>
-                <div style={{ fontWeight: 700, fontSize: '0.9rem', color: '#F5E642′ }}>{item.label}</div>
+                <div style={{ fontWeight: 700, fontSize: '0.9rem', color: '#F5E642' }}>{item.label}</div>
                 <div style={{ color: '#94a3b8', fontSize: '0.8rem', marginTop: '0.3rem' }}>{item.desc}</div>
               </div>
             ))}
@@ -83,7 +83,7 @@ export default function ParkerTXHomeownerGuide2026() {
               { key: 'standard', label: 'Custom Home (1-5 acres)' },
               { key: 'horse', label: 'Horse-Friendly Property' },
             ].map((opt) => (
-              <button key={opt.key} onClick={() => setScale(opt.key)} style={{ padding: '0.6rem 1.4rem', borderRadius: '8px', border: 'none', cursor: 'pointer', fontWeight: 700, backgroundColor: scale === opt.key ? '#F5E642′ : '#1e3a5f', color: scale === opt.key ? '#0A1628' : '#fff' }}>
+              <button key={opt.key} onClick={() => setScale(opt.key)} style={{ padding: '0.6rem 1.4rem', borderRadius: '8px', border: 'none', cursor: 'pointer', fontWeight: 700, backgroundColor: scale === opt.key ? '#F5E642' : '#1e3a5f', color: scale === opt.key ? '#0A1628' : '#fff' }}>
                 {opt.label}
               </button>
             ))}

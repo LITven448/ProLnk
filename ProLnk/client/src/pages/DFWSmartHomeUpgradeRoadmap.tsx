@@ -51,7 +51,7 @@ export default function DFWSmartHomeUpgradeRoadmap() {
       <div style={{ maxWidth: 800, margin: '0 auto' }}>
         <div style={{ textAlign: 'center', marginBottom: '2rem' }}>
           <div style={{ fontSize: '2.5rem' }}>🏡</div>
-          <h1 style={{ color: '#F5E642', fontSize: '1.8rem', margin: '0.5rem 0′ }}>DFW Smart Home Upgrade Roadmap</h1>
+          <h1 style={{ color: '#F5E642', fontSize: '1.8rem', margin: '0.5rem 0' }}>DFW Smart Home Upgrade Roadmap</h1>
           <p style={{ color: '#94A3B8', margin: 0 }}>Your personalized 3-year plan for the Dallas-Fort Worth market</p>
         </div>
 
@@ -61,9 +61,9 @@ export default function DFWSmartHomeUpgradeRoadmap() {
             {DEVICE_OPTIONS.map(d => (
               <button key={d} onClick={() => toggle(d)} style={{
                 padding: '0.4rem 0.9rem', borderRadius: 20, border: '2px solid',
-                borderColor: owned.includes(d) ? '#F5E642′ : '#1E3A5F',
-                background: owned.includes(d) ? '#F5E642′ : ’transparent',
-                color: owned.includes(d) ? '#0A1628′ : '#94A3B8',
+                borderColor: owned.includes(d) ? '#F5E642' : '#1E3A5F',
+                background: owned.includes(d) ? '#F5E642' : 'transparent',
+                color: owned.includes(d) ? '#0A1628' : '#94A3B8',
                 cursor: 'pointer', fontSize: '0.85rem', fontWeight: 600,
               }}>{d}</button>
             ))}
@@ -73,15 +73,15 @@ export default function DFWSmartHomeUpgradeRoadmap() {
             {BUDGETS.map(b => (
               <button key={b} onClick={() => setBudget(b)} style={{
                 padding: '0.4rem 0.9rem', borderRadius: 20, border: '2px solid',
-                borderColor: budget === b ? '#F5E642′ : '#1E3A5F',
-                background: budget === b ? '#F5E642′ : ’transparent',
-                color: budget === b ? '#0A1628′ : '#94A3B8',
+                borderColor: budget === b ? '#F5E642' : '#1E3A5F',
+                background: budget === b ? '#F5E642' : 'transparent',
+                color: budget === b ? '#0A1628' : '#94A3B8',
                 cursor: 'pointer', fontSize: '0.85rem', fontWeight: 600,
               }}>{b}</button>
             ))}
           </div>
           <button onClick={() => setShowRoadmap(true)} disabled={!budget} style={{
-            background: budget ? '#F5E642′ : '#1E3A5F', color: '#0A1628', border: ’none',
+            background: budget ? '#F5E642' : '#1E3A5F', color: '#0A1628', border: 'none',
             borderRadius: 8, padding: '0.75rem 2rem', fontWeight: 700, fontSize: '1rem', cursor: budget ? 'pointer' : 'not-allowed',
           }}>Generate My DFW Roadmap →</button>
         </div>

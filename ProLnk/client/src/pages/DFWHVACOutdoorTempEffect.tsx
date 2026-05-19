@@ -63,12 +63,12 @@ export default function DFWHVACOutdoorTempEffect() {
           </p>
         </div>
 
-        <div style={{ background: '#0f1f3d', borderRadius: '12px', padding: '1.5rem', marginBottom: '1.5rem', borderLeft: '4px solid #F5E642′ }}>
+        <div style={{ background: '#0f1f3d', borderRadius: '12px', padding: '1.5rem', marginBottom: '1.5rem', borderLeft: '4px solid #F5E642' }}>
           <div style={{ fontWeight: 'bold', color: '#F5E642', marginBottom: '0.75rem' }}>📉 How Heat Affects AC Capacity</div>
           <ul style={{ color: '#94a3b8', paddingLeft: '1.5rem' }}>
-            <li style={{ marginBottom: '0.4rem' }}>AC units are rated at <strong style={{ color: '#e2e8f0′ }}>95°F outdoor temp</strong> (ARI/AHRI standard)</li>
-            <li style={{ marginBottom: '0.4rem' }}>Every 5°F above 95°F costs approximately <strong style={{ color: '#e2e8f0′ }}>3-5% of rated capacity</strong></li>
-            <li style={{ marginBottom: '0.4rem' }}>At 115°F (common DFW heat wave), most units operate at <strong style={{ color: '#ef4444′ }}>70-75% of rated capacity</strong></li>
+            <li style={{ marginBottom: '0.4rem' }}>AC units are rated at <strong style={{ color: '#e2e8f0' }}>95°F outdoor temp</strong> (ARI/AHRI standard)</li>
+            <li style={{ marginBottom: '0.4rem' }}>Every 5°F above 95°F costs approximately <strong style={{ color: '#e2e8f0' }}>3-5% of rated capacity</strong></li>
+            <li style={{ marginBottom: '0.4rem' }}>At 115°F (common DFW heat wave), most units operate at <strong style={{ color: '#ef4444' }}>70-75% of rated capacity</strong></li>
             <li style={{ marginBottom: '0.4rem' }}>Meanwhile, your home's cooling load is at <strong style={{ color: '#ef4444' }}>maximum</strong> — the worst possible combination</li>
             <li>This is why DFW homes need properly sized systems — at design conditions, there's no margin for error</li>
           </ul>
@@ -83,8 +83,8 @@ export default function DFWHVACOutdoorTempEffect() {
               {outdoorTemps.map(temp => (
                 <button key={temp} onClick={() => setSelectedTemp(temp)}
                   style={{ padding: '0.5rem 1rem', borderRadius: '8px', border: 'none', cursor: 'pointer', minWidth: '60px',
-                    background: selectedTemp === temp ? '#F5E642′ : temp >= 110 ? '#3a1515' : temp >= 105 ? '#2a1a0a' : '#1e3a5f',
-                    color: selectedTemp === temp ? '#0A1628′ : temp >= 110 ? '#fca5a5' : temp >= 105 ? '#fdba74' : '#e2e8f0',
+                    background: selectedTemp === temp ? '#F5E642' : temp >= 110 ? '#3a1515' : temp >= 105 ? '#2a1a0a' : '#1e3a5f',
+                    color: selectedTemp === temp ? '#0A1628' : temp >= 110 ? '#fca5a5' : temp >= 105 ? '#fdba74' : '#e2e8f0',
                     fontWeight: selectedTemp === temp ? 'bold' : 'normal' }}>
                   {temp}°F
                 </button>
@@ -97,7 +97,7 @@ export default function DFWHVACOutdoorTempEffect() {
             <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5rem' }}>
               {homeSizes.map(size => (
                 <button key={size} onClick={() => setSelectedSize(size)}
-                  style={{ padding: '0.5rem 1rem', borderRadius: '8px', border: 'none', cursor: 'pointer', background: selectedSize === size ? '#F5E642′ : '#1e3a5f', color: selectedSize === size ? '#0A1628' : '#e2e8f0', fontWeight: selectedSize === size ? ’bold' : 'normal' }}>
+                  style={{ padding: '0.5rem 1rem', borderRadius: '8px', border: 'none', cursor: 'pointer', background: selectedSize === size ? '#F5E642' : '#1e3a5f', color: selectedSize === size ? '#0A1628' : '#e2e8f0', fontWeight: selectedSize === size ? 'bold' : 'normal' }}>
                   {size}
                 </button>
               ))}
@@ -108,7 +108,7 @@ export default function DFWHVACOutdoorTempEffect() {
         {result && (
           <div style={{ background: '#0f1f3d', borderRadius: '12px', padding: '1.5rem', borderLeft: `4px solid ${result.comfort.color}` }}>
             <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '1rem' }}>
-              <span style={{ fontWeight: 'bold', color: '#e2e8f0′ }}>Comfort Outlook:</span>
+              <span style={{ fontWeight: 'bold', color: '#e2e8f0' }}>Comfort Outlook:</span>
               <span style={{ background: result.comfort.color, color: '#0A1628', padding: '0.25rem 0.75rem', borderRadius: '999px', fontWeight: 'bold' }}>{result.comfort.label}</span>
             </div>
             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>

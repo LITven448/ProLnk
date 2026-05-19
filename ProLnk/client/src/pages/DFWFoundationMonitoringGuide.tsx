@@ -1,7 +1,7 @@
 import { useState } from 'react';
 
 const HOME_AGES = [
-  { label: 'Built before 1980', value: 'pre80′ },
+  { label: 'Built before 1980', value: 'pre80' },
   { label: '1980–2000', value: '80s90s' },
   { label: '2000–2015', value: '00s' },
   { label: '2015 or newer', value: 'new' },
@@ -93,8 +93,8 @@ export default function DFWFoundationMonitoringGuide() {
               {HOME_AGES.map(a => (
                 <button key={a.value} onClick={() => setAge(a.value)}
                   style={{ padding: '8px 14px', borderRadius: 8, border: 'none', cursor: 'pointer',
-                    background: age === a.value ? '#F5E642′ : '#0A1628',
-                    color: age === a.value ? '#0A1628′ : '#E8EDF5', fontWeight: 600, fontSize: 13 }}>
+                    background: age === a.value ? '#F5E642' : '#0A1628',
+                    color: age === a.value ? '#0A1628' : '#E8EDF5', fontWeight: 600, fontSize: 13 }}>
                   {a.label}
                 </button>
               ))}
@@ -106,15 +106,15 @@ export default function DFWFoundationMonitoringGuide() {
               {CONCERN_LEVELS.map(c => (
                 <button key={c.value} onClick={() => setConcern(c.value)}
                   style={{ padding: '8px 14px', borderRadius: 8, border: 'none', cursor: 'pointer',
-                    background: concern === c.value ? '#F5E642′ : '#0A1628',
-                    color: concern === c.value ? '#0A1628′ : '#E8EDF5', fontWeight: 600, fontSize: 13 }}>
+                    background: concern === c.value ? '#F5E642' : '#0A1628',
+                    color: concern === c.value ? '#0A1628' : '#E8EDF5', fontWeight: 600, fontSize: 13 }}>
                   {c.label}
                 </button>
               ))}
             </div>
           </div>
           {rec && (
-            <div style={{ background: '#0A1628', borderRadius: 10, padding: 20, borderLeft: '4px solid #F5E642′ }}>
+            <div style={{ background: '#0A1628', borderRadius: 10, padding: 20, borderLeft: '4px solid #F5E642' }}>
               <div style={{ fontWeight: 700, fontSize: 16, marginBottom: 8 }}>{rec.approach}</div>
               <div style={{ color: '#F5E642', fontWeight: 600, marginBottom: 10 }}>Estimated Cost: {rec.cost}</div>
               <div style={{ background: '#1E2D45', borderRadius: 8, padding: 12 }}>

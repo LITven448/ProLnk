@@ -29,36 +29,36 @@ const PIPELINE_STAGES: { key: BidStatus; label: string; icon: React.ReactNode; c
   {
     key: "submitted",
     label: "Submitted",
-    icon: <ClipboardList className="w-4 h-4″ />,
-    color: "#818cf8″,
+    icon: <ClipboardList className="w-4 h-4" />,
+    color: "#818cf8",
     bg: "rgba(99,102,241,0.12)",
   },
   {
     key: "under_review",
     label: "Under Review",
-    icon: <Circle className="w-4 h-4″ />,
+    icon: <Circle className="w-4 h-4" />,
     color: "#F59E0B",
     bg: "rgba(245,158,11,0.12)",
   },
   {
     key: "shortlisted",
     label: "Shortlisted",
-    icon: <Star className="w-4 h-4″ />,
-    color: "#38bdf8″,
+    icon: <Star className="w-4 h-4" />,
+    color: "#38bdf8",
     bg: "rgba(14,165,233,0.12)",
   },
   {
     key: "awarded",
     label: "Awarded",
-    icon: <Award className="w-4 h-4″ />,
-    color: "#4ade80″,
+    icon: <Award className="w-4 h-4" />,
+    color: "#4ade80",
     bg: "rgba(34,197,94,0.12)",
   },
   {
     key: "declined",
     label: "Declined",
-    icon: <XCircle className="w-4 h-4″ />,
-    color: "#f87171″,
+    icon: <XCircle className="w-4 h-4" />,
+    color: "#f87171",
     bg: "rgba(239,68,68,0.12)",
   },
 ];
@@ -76,16 +76,16 @@ function BidPipelineBar({ status }: { status: string }) {
   if (isDeclined) {
     return (
       <div className="mt-3 flex items-center gap-2 px-3 py-2 rounded-xl" style={{ backgroundColor: "rgba(239,68,68,0.08)", border: "1px solid rgba(239,68,68,0.2)" }}>
-        <XCircle className="w-4 h-4 flex-shrink-0″ style={{ color: "#f87171" }} />
-        <span className="text-xs font-semibold" style={{ color: "#f87171″ }}>Bid Declined</span>
-        <span className="text-xs ml-1″ style={{ color: "rgba(255,255,255,0.3)" }}>— This position has been filled</span>
+        <XCircle className="w-4 h-4 flex-shrink-0" style={{ color: "#f87171" }} />
+        <span className="text-xs font-semibold" style={{ color: "#f87171" }}>Bid Declined</span>
+        <span className="text-xs ml-1" style={{ color: "rgba(255,255,255,0.3)" }}>— This position has been filled</span>
       </div>
     );
   }
 
   return (
-    <div className="mt-3″>
-      <div className="flex items-center gap-0″>
+    <div className="mt-3">
+      <div className="flex items-center gap-0">
         {activeStages.map((stage, idx) => {
           const stageInfo = PIPELINE_STAGES.find((s) => s.key === stage)!;
           const isPast = idx < currentIdx;
@@ -93,8 +93,8 @@ function BidPipelineBar({ status }: { status: string }) {
           const isLast = idx === activeStages.length - 1;
 
           return (
-            <div key={stage} className="flex items-center flex-1 min-w-0″>
-              <div className="flex flex-col items-center gap-1 flex-shrink-0″>
+            <div key={stage} className="flex items-center flex-1 min-w-0">
+              <div className="flex flex-col items-center gap-1 flex-shrink-0">
                 <div
                   className="w-7 h-7 rounded-full flex items-center justify-center transition-all"
                   style={{
@@ -104,9 +104,9 @@ function BidPipelineBar({ status }: { status: string }) {
                   }}
                 >
                   {isPast ? (
-                    <CheckCircle className="w-3.5 h-3.5″ />
+                    <CheckCircle className="w-3.5 h-3.5" />
                   ) : (
-                    <span className="scale-75″>{stageInfo.icon}</span>
+                    <span className="scale-75">{stageInfo.icon}</span>
                   )}
                 </div>
                 <span
@@ -125,9 +125,9 @@ function BidPipelineBar({ status }: { status: string }) {
               </div>
               {!isLast && (
                 <div
-                  className="h-0.5 flex-1 mx-1 mb-4″
+                  className="h-0.5 flex-1 mx-1 mb-4"
                   style={{
-                    backgroundColor: isPast ? "#4ade8060″ : "rgba(255,255,255,0.08)",
+                    backgroundColor: isPast ? "#4ade8060" : "rgba(255,255,255,0.08)",
                   }}
                 />
               )}
@@ -167,14 +167,14 @@ export default function BidBoardPage() {
 
   return (
     <PartnerLayout>
-      <div className="space-y-6″>
+      <div className="space-y-6">
         <div className="flex items-center justify-between">
           <div>
             <h1 className="text-2xl font-black text-white">Bid Board</h1>
-            <p className="text-gray-400 text-sm mt-1″>Projects posted by Scouts and general contractors</p>
+            <p className="text-gray-400 text-sm mt-1">Projects posted by Scouts and general contractors</p>
           </div>
-          <Button onClick={() => navigate("/dashboard/bid-board/new")} className="bg-teal-500 hover:bg-teal-400 text-white gap-2″>
-            <ClipboardList className="w-4 h-4″ /> Post a Project
+          <Button onClick={() => navigate("/dashboard/bid-board/new")} className="bg-teal-500 hover:bg-teal-400 text-white gap-2">
+            <ClipboardList className="w-4 h-4" /> Post a Project
           </Button>
         </div>
 
@@ -194,42 +194,42 @@ export default function BidBoardPage() {
         {tab === "browse" && (
           <>
             {/* Filters */}
-            <div className="flex gap-3″>
+            <div className="flex gap-3">
               <Input placeholder="Filter by trade (e.g. roofing)" value={filter.trade} onChange={e => setFilter(f => ({ ...f, trade: e.target.value }))} className="bg-gray-800 border-gray-700 text-white max-w-xs" />
               <Input placeholder="Filter by ZIP code" value={filter.zip} onChange={e => setFilter(f => ({ ...f, zip: e.target.value }))} className="bg-gray-800 border-gray-700 text-white max-w-xs" />
             </div>
 
             {openProjects.isLoading ? (
-              <div className="text-center py-12 text-gray-500″>Loading projects...</div>
+              <div className="text-center py-12 text-gray-500">Loading projects...</div>
             ) : !openProjects.data?.projects?.length ? (
-              <div className="text-center py-16″>
-                <ClipboardList className="w-16 h-16 text-gray-600 mx-auto mb-4″ />
-                <p className="text-gray-500″>No open projects in your area yet</p>
+              <div className="text-center py-16">
+                <ClipboardList className="w-16 h-16 text-gray-600 mx-auto mb-4" />
+                <p className="text-gray-500">No open projects in your area yet</p>
               </div>
             ) : (
-              <div className="space-y-3″>
+              <div className="space-y-3">
                 {openProjects.data.projects.map((project: any) => (
                   <div key={project.id} className="bg-gray-800 rounded-xl p-5 border border-gray-700 hover:border-gray-600 transition-all">
-                    <div className="flex items-start gap-4″>
+                    <div className="flex items-start gap-4">
                       <div className="text-3xl">{PROPERTY_ICONS[project.propertyType] ?? "📋"}</div>
-                      <div className="flex-1 min-w-0″>
-                        <div className="flex items-start justify-between gap-4″>
+                      <div className="flex-1 min-w-0">
+                        <div className="flex items-start justify-between gap-4">
                           <div>
                             <h3 className="font-bold text-white">{project.projectTitle}</h3>
-                            <div className="flex items-center gap-3 mt-1 text-xs text-gray-400″>
-                              <span className="flex items-center gap-1″><MapPin className="w-3 h-3" />{project.propertyZip || "DFW"}</span>
-                              <span className="flex items-center gap-1″><Clock className="w-3 h-3" />Closes {new Date(project.biddingDeadline).toLocaleDateString()}</span>
+                            <div className="flex items-center gap-3 mt-1 text-xs text-gray-400">
+                              <span className="flex items-center gap-1"><MapPin className="w-3 h-3" />{project.propertyZip || "DFW"}</span>
+                              <span className="flex items-center gap-1"><Clock className="w-3 h-3" />Closes {new Date(project.biddingDeadline).toLocaleDateString()}</span>
                               <span>{project.bidCount ?? 0} bids</span>
                             </div>
                           </div>
-                          <div className="text-right shrink-0″>
-                            <div className="text-xl font-black text-teal-400″>${parseFloat(project.totalEstimatedValue).toLocaleString()}</div>
+                          <div className="text-right shrink-0">
+                            <div className="text-xl font-black text-teal-400">${parseFloat(project.totalEstimatedValue).toLocaleString()}</div>
                             <div className="text-gray-500 text-xs">est. value</div>
                           </div>
                         </div>
-                        <p className="text-gray-400 text-sm mt-2 line-clamp-2″>{project.projectDescription}</p>
+                        <p className="text-gray-400 text-sm mt-2 line-clamp-2">{project.projectDescription}</p>
                         {project.tradesNeeded && (
-                          <div className="flex flex-wrap gap-1.5 mt-3″>
+                          <div className="flex flex-wrap gap-1.5 mt-3">
                             {JSON.parse(project.tradesNeeded || "[]").slice(0, 4).map((t: string) => (
                               <Badge key={t} className="bg-indigo-500/10 text-indigo-400 border-indigo-500/20 text-xs">{t}</Badge>
                             ))}
@@ -238,8 +238,8 @@ export default function BidBoardPage() {
 
                         {/* Bid form */}
                         {showBidForm === project.id ? (
-                          <div className="mt-4 bg-gray-700 rounded-xl p-4 space-y-3″>
-                            <div className="flex items-center gap-3″>
+                          <div className="mt-4 bg-gray-700 rounded-xl p-4 space-y-3">
+                            <div className="flex items-center gap-3">
                               <Input
                                 type="number"
                                 placeholder="Your bid amount ($)"
@@ -248,22 +248,22 @@ export default function BidBoardPage() {
                                 className="bg-gray-600 border-gray-500 text-white"
                               />
                               <Button
-                                className="bg-teal-500 hover:bg-teal-400 text-white font-bold shrink-0″
+                                className="bg-teal-500 hover:bg-teal-400 text-white font-bold shrink-0"
                                 disabled={!bidAmount[project.id] || submitBid.isPending}
                                 onClick={() => submitBid.mutate({ projectId: project.id, bidAmount: parseFloat(bidAmount[project.id]) })}
                               >
                                 Submit Bid
                               </Button>
-                              <Button variant="ghost" className="text-gray-400″ onClick={() => setShowBidForm(null)}>Cancel</Button>
+                              <Button variant="ghost" className="text-gray-400" onClick={() => setShowBidForm(null)}>Cancel</Button>
                             </div>
                           </div>
                         ) : (
-                          <div className="flex items-center gap-3 mt-4″>
+                          <div className="flex items-center gap-3 mt-4">
                             {project.myBidCount > 0 ? (
-                              <Badge className="bg-green-500/10 text-green-400 border-green-500/30″>You bid on this</Badge>
+                              <Badge className="bg-green-500/10 text-green-400 border-green-500/30">You bid on this</Badge>
                             ) : (
-                              <Button size="sm" className="bg-indigo-600 hover:bg-indigo-500 text-white gap-1″ onClick={() => setShowBidForm(project.id)}>
-                                Submit a Bid <ArrowRight className="w-3.5 h-3.5″ />
+                              <Button size="sm" className="bg-indigo-600 hover:bg-indigo-500 text-white gap-1" onClick={() => setShowBidForm(project.id)}>
+                                Submit a Bid <ArrowRight className="w-3.5 h-3.5" />
                               </Button>
                             )}
                           </div>
@@ -278,9 +278,9 @@ export default function BidBoardPage() {
         )}
 
         {tab === "my-bids" && (
-          <div className="space-y-4″>
+          <div className="space-y-4">
             {/* Pipeline summary bar */}
-            <div className="grid grid-cols-5 gap-2″>
+            <div className="grid grid-cols-5 gap-2">
               {PIPELINE_STAGES.map((stage) => {
                 const count = statusCounts[stage.key] ?? 0;
                 const isActive = pipelineFilter === stage.key;
@@ -319,7 +319,7 @@ export default function BidBoardPage() {
 
             {pipelineFilter !== "all" && (
               <div className="flex items-center justify-between">
-                <span className="text-sm text-gray-400″>
+                <span className="text-sm text-gray-400">
                   Showing <span className="text-white font-semibold">{filteredBids.length}</span> bids in{" "}
                   <span style={{ color: PIPELINE_STAGES.find((s) => s.key === pipelineFilter)?.color }}>
                     {PIPELINE_STAGES.find((s) => s.key === pipelineFilter)?.label}
@@ -335,7 +335,7 @@ export default function BidBoardPage() {
             )}
 
             {/* Bid cards with pipeline status */}
-            <div className="space-y-3″>
+            <div className="space-y-3">
               {(myBids.isLoading ? [] : filteredBids).map((bid: any) => {
                 const stageInfo = PIPELINE_STAGES.find((s) => s.key === bid.status) ?? PIPELINE_STAGES[0];
                 return (
@@ -351,17 +351,17 @@ export default function BidBoardPage() {
                         : "rgba(255,255,255,0.08)",
                     }}
                   >
-                    <div className="flex items-start gap-4″>
-                      <div className="flex-1 min-w-0″>
-                        <div className="flex items-start justify-between gap-3″>
+                    <div className="flex items-start gap-4">
+                      <div className="flex-1 min-w-0">
+                        <div className="flex items-start justify-between gap-3">
                           <div>
                             <div className="font-semibold text-white text-sm">{bid.projectTitle}</div>
-                            <div className="text-gray-400 text-xs mt-0.5″>{bid.propertyAddress}</div>
+                            <div className="text-gray-400 text-xs mt-0.5">{bid.propertyAddress}</div>
                           </div>
-                          <div className="text-right shrink-0″>
-                            <div className="text-lg font-bold text-teal-400″>${parseFloat(bid.bidAmount).toLocaleString()}</div>
+                          <div className="text-right shrink-0">
+                            <div className="text-lg font-bold text-teal-400">${parseFloat(bid.bidAmount).toLocaleString()}</div>
                             <div
-                              className="inline-flex items-center gap-1 text-xs font-semibold px-2 py-0.5 rounded-full mt-1″
+                              className="inline-flex items-center gap-1 text-xs font-semibold px-2 py-0.5 rounded-full mt-1"
                               style={{ backgroundColor: stageInfo.bg, color: stageInfo.color }}
                             >
                               {stageInfo.icon}
@@ -376,7 +376,7 @@ export default function BidBoardPage() {
                 );
               })}
               {!myBids.isLoading && filteredBids.length === 0 && (
-                <div className="text-center py-12 text-gray-500″>
+                <div className="text-center py-12 text-gray-500">
                   {pipelineFilter === "all"
                     ? "No bids submitted yet"
                     : `No bids in ${PIPELINE_STAGES.find((s) => s.key === pipelineFilter)?.label} stage`}
@@ -387,16 +387,16 @@ export default function BidBoardPage() {
         )}
 
         {tab === "my-projects" && (
-          <div className="space-y-3″>
+          <div className="space-y-3">
             {myProjects.data?.map((project: any) => (
-              <div key={project.id} className="bg-gray-800 rounded-xl p-4 border border-gray-700 flex items-center gap-4″>
-                <div className="flex-1″>
+              <div key={project.id} className="bg-gray-800 rounded-xl p-4 border border-gray-700 flex items-center gap-4">
+                <div className="flex-1">
                   <div className="font-semibold text-white text-sm">{project.projectTitle}</div>
-                  <div className="text-gray-400 text-xs mt-0.5″>{project.propertyAddress} · {project.bidCount ?? 0} bids received</div>
+                  <div className="text-gray-400 text-xs mt-0.5">{project.propertyAddress} · {project.bidCount ?? 0} bids received</div>
                 </div>
                 <div className="text-right">
                   <div className="text-lg font-bold text-white">${parseFloat(project.totalEstimatedValue).toLocaleString()}</div>
-                  <Badge className="text-xs mt-1 bg-gray-700 text-gray-400″>{project.status}</Badge>
+                  <Badge className="text-xs mt-1 bg-gray-700 text-gray-400">{project.status}</Badge>
                 </div>
                 {project.bidCount > 0 && (
                   <Button size="sm" variant="outline" className="border-gray-600 text-gray-300 text-xs" onClick={() => navigate(`/dashboard/bid-board/${project.id}`)}>
@@ -405,7 +405,7 @@ export default function BidBoardPage() {
                 )}
               </div>
             ))}
-            {!myProjects.data?.length && <div className="text-center py-12 text-gray-500″>No projects posted yet</div>}
+            {!myProjects.data?.length && <div className="text-center py-12 text-gray-500">No projects posted yet</div>}
           </div>
         )}
       </div>

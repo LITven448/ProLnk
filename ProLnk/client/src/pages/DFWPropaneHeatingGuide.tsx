@@ -44,7 +44,7 @@ export default function DFWPropaneHeatingGuide() {
         <div style={{ background: '#112240', borderRadius: 12, padding: '1.5rem', marginBottom: '1.5rem' }}>
           <div style={{ color: '#F5E642', fontWeight: 700, marginBottom: '1rem' }}>📦 Propane Basics for DFW Homeowners</div>
           <ul style={{ color: '#ccc', lineHeight: 1.8, paddingLeft: '1.2rem' }}>
-            <li>Propane delivers <strong style={{ color: '#F5E642′ }}>91,500 BTU per gallon</strong> vs natural gas at ~100,000 BTU per therm</li>
+            <li>Propane delivers <strong style={{ color: '#F5E642' }}>91,500 BTU per gallon</strong> vs natural gas at ~100,000 BTU per therm</li>
             <li>Propane is ~30–50% more expensive than Atmos gas per BTU in DFW</li>
             <li>DFW propane prices spike in winter — lock in summer fill rates (June–August)</li>
             <li>Tank ownership vs rental: owned tanks allow switching suppliers; rented tanks lock you to one provider</li>
@@ -74,7 +74,7 @@ export default function DFWPropaneHeatingGuide() {
           <div style={{ display: 'grid', gap: '1rem', marginBottom: '1rem' }}>
             <div>
               <label style={{ color: '#aaa', fontSize: '0.9rem' }}>Estimated Annual Propane Usage (gallons)</label>
-              <input type="number" value={gallonsPerYear} onChange={e => setGallonsPerYear(e.target.value)} placeholder="e.g. 400″
+              <input type="number" value={gallonsPerYear} onChange={e => setGallonsPerYear(e.target.value)} placeholder="e.g. 400"
                 style={{ width: '100%', marginTop: 6, padding: '0.6rem', borderRadius: 6, border: '1px solid #334', background: '#0A1628', color: '#fff', boxSizing: 'border-box' }} />
             </div>
             <div>
@@ -96,7 +96,7 @@ export default function DFWPropaneHeatingGuide() {
             <div style={{ marginTop: '1rem', background: '#0A1628', borderRadius: 8, padding: '1rem' }}>
               <div style={{ color: '#F5E642', fontWeight: 700, marginBottom: 8 }}>🎯 Your Results</div>
               <div style={{ color: '#fff', marginBottom: 4 }}>📦 <strong>Tank Size:</strong> {result.tankSize}</div>
-              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0.5rem', margin: '0.75rem 0′ }}>
+              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0.5rem', margin: '0.75rem 0' }}>
                 <div style={{ background: '#1a2a4a', borderRadius: 6, padding: '0.6rem', textAlign: 'center' }}>
                   <div style={{ color: '#aaa', fontSize: '0.8rem' }}>Annual Propane Cost</div>
                   <div style={{ color: '#f87', fontSize: '1.3rem', fontWeight: 700 }}>${result.annualCostPropane}</div>

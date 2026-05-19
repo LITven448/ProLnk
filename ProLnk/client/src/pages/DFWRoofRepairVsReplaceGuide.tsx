@@ -46,9 +46,9 @@ export default function DFWRoofRepairVsReplaceGuide() {
   const pill = (label: string, val: string, current: string, set: (v: string) => void) => (
     <button key={val} onClick={() => set(val)} style={{
       padding: '8px 16px', borderRadius: 20, border: '2px solid',
-      borderColor: current === val ? '#F5E642′ : '#2A3A5C',
-      background: current === val ? '#F5E642′ : ’transparent',
-      color: current === val ? '#0A1628′ : '#CBD5E1',
+      borderColor: current === val ? '#F5E642' : '#2A3A5C',
+      background: current === val ? '#F5E642' : 'transparent',
+      color: current === val ? '#0A1628' : '#CBD5E1',
       cursor: 'pointer', fontWeight: 600, fontSize: 13, margin: '4px 6px 4px 0'
     }}>{label}</button>
   );
@@ -59,13 +59,13 @@ export default function DFWRoofRepairVsReplaceGuide() {
         <div style={{ fontSize: 13, color: '#F5E642', fontWeight: 700, letterSpacing: 2, marginBottom: 8 }}>DFW HOME SERVICES GUIDE</div>
         <h1 style={{ fontSize: 32, fontWeight: 800, color: '#F1F5F9', margin: '0 0 8px' }}>Roof: Repair vs Replace?</h1>
         <p style={{ color: '#94A3B8', marginBottom: 32, lineHeight: 1.7 }}>
-          DFW averages <strong style={{ color: '#F5E642′ }}>12+ hail events per year</strong> — more than any major US metro. One good storm can change the repair vs replace calculus entirely. Use this guide to find your best path.
+          DFW averages <strong style={{ color: '#F5E642' }}>12+ hail events per year</strong> — more than any major US metro. One good storm can change the repair vs replace calculus entirely. Use this guide to find your best path.
         </p>
 
         <div style={{ background: '#0F1F3D', borderRadius: 12, padding: 24, marginBottom: 20 }}>
           <div style={{ marginBottom: 20 }}>
             <label style={{ display: 'block', fontWeight: 700, color: '#F1F5F9', marginBottom: 8 }}>Roof Age (years)</label>
-            <input type="number" value={roofAge} onChange={e => setRoofAge(e.target.value)} placeholder="e.g. 18″
+            <input type="number" value={roofAge} onChange={e => setRoofAge(e.target.value)} placeholder="e.g. 18"
               style={{ width: '100%', padding: '12px 16px', borderRadius: 8, border: '2px solid #2A3A5C', background: '#0A1628', color: '#F1F5F9', fontSize: 16, boxSizing: 'border-box' }} />
           </div>
           <div style={{ marginBottom: 20 }}>

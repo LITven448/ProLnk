@@ -65,12 +65,12 @@ export default function DFWHomeKnowledgeSummary2026() {
             <button onClick={() => setSubmitted(true)} style={{ background: '#F5E642', color: '#0A1628', border: 'none', borderRadius: 8, padding: '10px 24px', fontWeight: 700, cursor: 'pointer', fontSize: 15 }}>Generate My Summary</button>
           </div>
           {submitted && profile && (
-            <div style={{ background: '#0A1628', borderRadius: 10, padding: 20, border: '1px solid #F5E642′ }}>
+            <div style={{ background: '#0A1628', borderRadius: 10, padding: 20, border: '1px solid #F5E642' }}>
               <div style={{ fontWeight: 700, color: '#F5E642', marginBottom: 12, fontSize: 16 }}>Your Top 5 DFW Priorities:</div>
               {profile.priorities.map((p, i) => (
                 <div key={i} style={{ display: 'flex', gap: 10, marginBottom: 8, fontSize: 14 }}>
                   <span style={{ color: '#F5E642', fontWeight: 700, minWidth: 20 }}>{i + 1}.</span>
-                  <span style={{ color: '#E8EAF0′ }}>{p}</span>
+                  <span style={{ color: '#E8EAF0' }}>{p}</span>
                 </div>
               ))}
               <div style={{ marginTop: 16, padding: 14, background: '#0F2140', borderRadius: 8, border: '1px solid #1E3A5F' }}>
@@ -81,7 +81,7 @@ export default function DFWHomeKnowledgeSummary2026() {
           )}
         </div>
 
-        <div style={{ background: 'linear-gradient(135deg, #0F2140, #1A3A60)', borderRadius: 12, padding: 24, border: '2px solid #F5E642′ }}>
+        <div style={{ background: 'linear-gradient(135deg, #0F2140, #1A3A60)', borderRadius: 12, padding: 24, border: '2px solid #F5E642' }}>
           <div style={{ color: '#F5E642', fontWeight: 700, fontSize: 18, marginBottom: 10 }}>🏆 ProLnk: Your DFW Home's Command Center</div>
           <p style={{ color: '#A8B8CC', fontSize: 14, margin: '0 0 12px', lineHeight: 1.6 }}>ProLnk exists because DFW homeownership is uniquely demanding. Clay soil, hail alley, extreme heat, hard water, and high property taxes create a maintenance burden unlike any other US metro. We built ProLnk to give every DFW homeowner access to vetted, licensed professionals — no guesswork, no storm chasers, no kickbacks.</p>
           <div style={{ color: '#F5E642', fontSize: 14, fontWeight: 600 }}>Every ProLnk partner: Licensed · Insured · Vetted · Local · Competitive</div>

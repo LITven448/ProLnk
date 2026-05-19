@@ -72,7 +72,7 @@ export default function PartnerRetentionGuide() {
                 gap: 10,
                 padding: '10px 14px',
                 borderRadius: 10,
-                background: s.severity === 'high' ? '#FEF2F2′ : s.severity === ’medium' ? '#FFFBEB' : '#F0FDF4',
+                background: s.severity === 'high' ? '#FEF2F2' : s.severity === 'medium' ? '#FFFBEB' : '#F0FDF4',
                 border: `1px solid ${s.severity === 'high' ? '#FECACA' : s.severity === 'medium' ? '#FDE68A' : '#BBF7D0'}`,
               }}>
                 <span style={{ fontSize: 16 }}>{s.severity === 'high' ? '🔴' : s.severity === 'medium' ? '🟡' : '🟢'}</span>
@@ -115,7 +115,7 @@ export default function PartnerRetentionGuide() {
                 alignItems: 'flex-start',
                 padding: '12px 16px',
                 borderRadius: 12,
-                background: inc.works ? '#F0FDF4′ : '#FEF2F2',
+                background: inc.works ? '#F0FDF4' : '#FEF2F2',
                 border: `1px solid ${inc.works ? '#BBF7D0' : '#FECACA'}`,
               }}>
                 <span style={{ fontSize: 18, flexShrink: 0 }}>{inc.works ? '✅' : '❌'}</span>
@@ -150,7 +150,7 @@ export default function PartnerRetentionGuide() {
                 height: 22,
                 borderRadius: 6,
                 border: answers[i] ? 'none' : '2px solid #334155',
-                background: answers[i] ? '#F5E642′ : ’transparent',
+                background: answers[i] ? '#F5E642' : 'transparent',
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
@@ -171,8 +171,8 @@ export default function PartnerRetentionGuide() {
             disabled={answered < 8}
             style={{
               marginTop: 24,
-              background: answered >= 8 ? '#F5E642′ : '#334155',
-              color: answered >= 8 ? '#0A1628′ : '#94A3B8',
+              background: answered >= 8 ? '#F5E642' : '#334155',
+              color: answered >= 8 ? '#0A1628' : '#94A3B8',
               border: 'none',
               borderRadius: 10,
               padding: '12px 28px',

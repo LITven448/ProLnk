@@ -24,7 +24,7 @@ const labels: Record<string, string> = {
 };
 
 function Stars({ n }: { n: number }) {
-  return <span style={{ color: '#F5E642′ }}>{'★'.repeat(n)}{'☆'.repeat(5 - n)}</span>;
+  return <span style={{ color: '#F5E642' }}>{'★'.repeat(n)}{'☆'.repeat(5 - n)}</span>;
 }
 
 export default function DFWWaterHeaterBrandsCompared() {
@@ -51,9 +51,9 @@ export default function DFWWaterHeaterBrandsCompared() {
                 {(['small', 'medium', 'large'] as FamilySize[]).map(f => (
                   <button key={f} onClick={() => setFamily(f)}
                     style={{ padding: '8px 14px', borderRadius: 8, border: '2px solid', cursor: 'pointer', fontWeight: 600, fontSize: 13,
-                      borderColor: family === f ? '#F5E642′ : '#1e3a5f',
-                      background: family === f ? '#F5E642′ : ’transparent',
-                      color: family === f ? '#0A1628′ : '#94a3b8' }}>
+                      borderColor: family === f ? '#F5E642' : '#1e3a5f',
+                      background: family === f ? '#F5E642' : 'transparent',
+                      color: family === f ? '#0A1628' : '#94a3b8' }}>
                     {f.charAt(0).toUpperCase() + f.slice(1)}
                   </button>
                 ))}
@@ -65,9 +65,9 @@ export default function DFWWaterHeaterBrandsCompared() {
                 {(['gas', 'electric'] as FuelType[]).map(f => (
                   <button key={f} onClick={() => setFuel(f)}
                     style={{ padding: '8px 14px', borderRadius: 8, border: '2px solid', cursor: 'pointer', fontWeight: 600, fontSize: 13,
-                      borderColor: fuel === f ? '#F5E642′ : '#1e3a5f',
-                      background: fuel === f ? '#F5E642′ : ’transparent',
-                      color: fuel === f ? '#0A1628′ : '#94a3b8' }}>
+                      borderColor: fuel === f ? '#F5E642' : '#1e3a5f',
+                      background: fuel === f ? '#F5E642' : 'transparent',
+                      color: fuel === f ? '#0A1628' : '#94a3b8' }}>
                     {f.charAt(0).toUpperCase() + f.slice(1)}
                   </button>
                 ))}
@@ -79,16 +79,16 @@ export default function DFWWaterHeaterBrandsCompared() {
                 {(['tank', 'tankless'] as TankType[]).map(t => (
                   <button key={t} onClick={() => setTankType(t)}
                     style={{ padding: '8px 14px', borderRadius: 8, border: '2px solid', cursor: 'pointer', fontWeight: 600, fontSize: 13,
-                      borderColor: tankType === t ? '#F5E642′ : '#1e3a5f',
-                      background: tankType === t ? '#F5E642′ : ’transparent',
-                      color: tankType === t ? '#0A1628′ : '#94a3b8' }}>
+                      borderColor: tankType === t ? '#F5E642' : '#1e3a5f',
+                      background: tankType === t ? '#F5E642' : 'transparent',
+                      color: tankType === t ? '#0A1628' : '#94a3b8' }}>
                     {t.charAt(0).toUpperCase() + t.slice(1)}
                   </button>
                 ))}
               </div>
             </div>
           </div>
-          <div style={{ padding: '14px 18px', background: '#1a3a6e', borderRadius: 10, borderLeft: '4px solid #F5E642′ }}>
+          <div style={{ padding: '14px 18px', background: '#1a3a6e', borderRadius: 10, borderLeft: '4px solid #F5E642' }}>
             <p style={{ margin: 0, color: '#F5E642', fontWeight: 700 }}>🏆 Best fit for your DFW home: {pick}</p>
           </div>
         </div>
@@ -97,13 +97,13 @@ export default function DFWWaterHeaterBrandsCompared() {
           {brands.map(b => (
             <div key={b.name} onClick={() => setExpanded(expanded === b.name ? null : b.name)}
               style={{ background: '#0f2040', borderRadius: 12, padding: 20, cursor: 'pointer',
-                border: b.name === pick ? '2px solid #F5E642′ : '2px solid #1e3a5f' }}>
+                border: b.name === pick ? '2px solid #F5E642' : '2px solid #1e3a5f' }}>
               <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
                 <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
                   {b.name === pick && <span style={{ background: '#F5E642', color: '#0A1628', fontSize: 11, fontWeight: 800, padding: '2px 8px', borderRadius: 20 }}>TOP PICK</span>}
                   <span style={{ fontWeight: 700, fontSize: 18 }}>{b.name}</span>
                 </div>
-                <span style={{ color: '#94a3b8′ }}>{expanded === b.name ? '▲' : '▼'}</span>
+                <span style={{ color: '#94a3b8' }}>{expanded === b.name ? '▲' : '▼'}</span>
               </div>
               <div style={{ display: 'flex', flexWrap: 'wrap', gap: 16, marginTop: 14 }}>
                 {Object.keys(labels).map(k => (
@@ -123,7 +123,7 @@ export default function DFWWaterHeaterBrandsCompared() {
         </div>
 
         <div style={{ marginTop: 28, textAlign: 'center', color: '#475569', fontSize: 13 }}>
-          Get matched with top DFW plumbers — <span style={{ color: '#F5E642′ }}>prolnk.io</span>
+          Get matched with top DFW plumbers — <span style={{ color: '#F5E642' }}>prolnk.io</span>
         </div>
       </div>
     </div>

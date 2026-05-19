@@ -57,14 +57,14 @@ export default function DFWFireSprinklerGuide() {
 
           <div style={{ marginBottom: '1.25rem' }}>
             <label style={{ color: '#94a3b8', fontSize: '0.85rem', fontWeight: 600, display: 'block', marginBottom: '0.5rem' }}>HOME SIZE (sq ft)</label>
-            <input type="number" value={sqft} onChange={e => { setSqft(e.target.value); setResult(null); }} placeholder="e.g. 2500″ style={{ backgroundColor: '#0A1628', border: '1.5px solid #1e3a5f', borderRadius: '8px', padding: '0.6rem 1rem', color: '#fff', fontSize: '1rem', width: '200px' }} />
+            <input type="number" value={sqft} onChange={e => { setSqft(e.target.value); setResult(null); }} placeholder="e.g. 2500" style={{ backgroundColor: '#0A1628', border: '1.5px solid #1e3a5f', borderRadius: '8px', padding: '0.6rem 1rem', color: '#fff', fontSize: '1rem', width: '200px' }} />
           </div>
 
           <div style={{ marginBottom: '1.5rem' }}>
             <label style={{ color: '#94a3b8', fontSize: '0.85rem', fontWeight: 600, display: 'block', marginBottom: '0.5rem' }}>CONSTRUCTION TYPE</label>
             <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5rem' }}>
               {WOOD_TYPES.map(t => (
-                <button key={t} onClick={() => { setWoodType(t); setResult(null); }} style={{ padding: '0.45rem 1rem', borderRadius: '20px', border: '1.5px solid', borderColor: woodType === t ? '#F5E642′ : '#1e3a5f', backgroundColor: woodType === t ? '#F5E642' : ’transparent', color: woodType === t ? '#0A1628′ : '#94a3b8', fontWeight: 600, fontSize: '0.85rem', cursor: ’pointer' }}>{t}</button>
+                <button key={t} onClick={() => { setWoodType(t); setResult(null); }} style={{ padding: '0.45rem 1rem', borderRadius: '20px', border: '1.5px solid', borderColor: woodType === t ? '#F5E642' : '#1e3a5f', backgroundColor: woodType === t ? '#F5E642' : 'transparent', color: woodType === t ? '#0A1628' : '#94a3b8', fontWeight: 600, fontSize: '0.85rem', cursor: 'pointer' }}>{t}</button>
               ))}
             </div>
           </div>

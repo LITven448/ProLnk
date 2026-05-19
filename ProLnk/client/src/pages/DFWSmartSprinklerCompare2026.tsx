@@ -14,7 +14,7 @@ export default function DFWSmartSprinklerCompare2026() {
   }
 
   const btnStyle = (active: boolean) => ({
-    padding: '.65rem 1.25rem', borderRadius: '8px', border: active ? '2px solid #F5E642′ : '2px solid #1e3a5f',
+    padding: '.65rem 1.25rem', borderRadius: '8px', border: active ? '2px solid #F5E642' : '2px solid #1e3a5f',
     backgroundColor: active ? '#1a2f4e' : '#0d1f35', color: '#fff', cursor: 'pointer', fontSize: '.9rem'
   });
 
@@ -23,8 +23,8 @@ export default function DFWSmartSprinklerCompare2026() {
       <div style={{ maxWidth: '860px', margin: '0 auto' }}>
         <div style={{ textAlign: 'center', marginBottom: '2rem' }}>
           <div style={{ fontSize: '3rem' }}>💧</div>
-          <h1 style={{ color: '#F5E642', fontSize: '2rem', margin: '.5rem 0′ }}>DFW Smart Sprinkler Controller Comparison 2026</h1>
-          <p style={{ color: '#94a3b8′ }}>Rachio vs RainBird vs Orbit B-hyve — what works best for North Texas lawns?</p>
+          <h1 style={{ color: '#F5E642', fontSize: '2rem', margin: '.5rem 0' }}>DFW Smart Sprinkler Controller Comparison 2026</h1>
+          <p style={{ color: '#94a3b8' }}>Rachio vs RainBird vs Orbit B-hyve — what works best for North Texas lawns?</p>
         </div>
 
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: '1.25rem', marginBottom: '2rem' }}>
@@ -38,7 +38,7 @@ export default function DFWSmartSprinklerCompare2026() {
               <li>No subscription required</li>
             </ul>
           </div>
-          <div style={{ backgroundColor: '#112240', borderRadius: '12px', padding: '1.25rem', border: '2px solid #3b82f6′ }}>
+          <div style={{ backgroundColor: '#112240', borderRadius: '12px', padding: '1.25rem', border: '2px solid #3b82f6' }}>
             <div style={{ fontSize: '1.5rem', marginBottom: '.5rem' }}>🔵 RainBird ST8I</div>
             <ul style={{ color: '#cbd5e1', lineHeight: '1.7', paddingLeft: '1rem', fontSize: '.9rem' }}>
               <li>Professional-grade reliability</li>
@@ -79,12 +79,12 @@ export default function DFWSmartSprinklerCompare2026() {
           <button onClick={recommend} style={{ backgroundColor: '#F5E642', color: '#0A1628', border: 'none', borderRadius: '8px', padding: '.75rem 2rem', fontWeight: 'bold', cursor: 'pointer', fontSize: '1rem' }}>
             Get My Controller →
           </button>
-          {result && <div style={{ marginTop: '1rem', padding: '1rem', backgroundColor: '#0d1f35', borderRadius: '8px', color: '#F5E642', lineHeight: '1.6′ }}>{result}</div>}
+          {result && <div style={{ marginTop: '1rem', padding: '1rem', backgroundColor: '#0d1f35', borderRadius: '8px', color: '#F5E642', lineHeight: '1.6' }}>{result}</div>}
         </div>
 
         <div style={{ backgroundColor: '#112240', borderRadius: '12px', padding: '1.5rem' }}>
           <h3 style={{ color: '#F5E642', marginBottom: '.5rem' }}>💧 DFW Water Restriction Note</h3>
-          <p style={{ color: '#cbd5e1', lineHeight: '1.7′ }}>Most DFW municipalities (Frisco, Plano, McKinney, Allen) enforce Stage 1–2 water restrictions June–September. Rachio automatically respects odd/even watering schedules and skips after rainfall detected at nearby DFW weather stations — saving up to 30% on summer water bills.</p>
+          <p style={{ color: '#cbd5e1', lineHeight: '1.7' }}>Most DFW municipalities (Frisco, Plano, McKinney, Allen) enforce Stage 1–2 water restrictions June–September. Rachio automatically respects odd/even watering schedules and skips after rainfall detected at nearby DFW weather stations — saving up to 30% on summer water bills.</p>
         </div>
       </div>
     </div>

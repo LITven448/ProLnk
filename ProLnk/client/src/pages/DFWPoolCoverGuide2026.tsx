@@ -13,9 +13,9 @@ export default function DFWPoolCoverGuide2026() {
 
   const recs: Record<string, { title: string; desc: string; cost: string }> = {
     safety: { title: 'Mesh Safety Cover', desc: 'TX Pool Safety Act compliant. Solid or mesh options, supports 485 lbs. Mesh drains rain, solid blocks debris. Required if pool is within 5ft of structure. Annual inspection recommended.', cost: '$1,200 – $3,500 installed' },
-    heat: { title: 'Solar Bubble Cover', desc: 'Reduces DFW evaporation by 95% and heats water 10-15°F passively. Perfect for DFW spring (March) and fall (Oct-Nov) shoulder seasons. Blue or clear; clear heats slightly better.', cost: '$200 – $600′ },
+    heat: { title: 'Solar Bubble Cover', desc: 'Reduces DFW evaporation by 95% and heats water 10-15°F passively. Perfect for DFW spring (March) and fall (Oct-Nov) shoulder seasons. Blue or clear; clear heats slightly better.', cost: '$200 – $600' },
     auto: { title: 'Automatic Retractable Cover', desc: 'One-button operation. Doubles as safety cover (ASTM F1346 certified). Most popular luxury upgrade in DFW 2024-2026. Works with any pool shape. Motorized track system.', cost: '$10,000 – $20,000 installed' },
-    winter: { title: 'Solid Winter Cover + Water Bags', desc: 'Heavy-duty solid cover anchored with water bags. DFW winters rarely freeze hard but debris management is key Nov-Feb. Replace water bags annually.', cost: '$400 – $900′ },
+    winter: { title: 'Solid Winter Cover + Water Bags', desc: 'Heavy-duty solid cover anchored with water bags. DFW winters rarely freeze hard but debris management is key Nov-Feb. Replace water bags annually.', cost: '$400 – $900' },
   };
 
   function handleSelect(id: string) {
@@ -32,17 +32,17 @@ export default function DFWPoolCoverGuide2026() {
           Choosing the right pool cover for DFW depends on your primary goal. Texas Pool Safety Act requires compliant barriers. Solar covers can extend your swim season by 6+ weeks. Auto covers offer top convenience.
         </p>
 
-        <h2 style={{ fontSize: 18, fontWeight: 700, marginBottom: 16, color: '#F5E642′ }}>What is your primary goal?</h2>
+        <h2 style={{ fontSize: 18, fontWeight: 700, marginBottom: 16, color: '#F5E642' }}>What is your primary goal?</h2>
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2,1fr)', gap: 12, marginBottom: 28 }}>
           {goals.map(g => (
-            <button key={g.id} onClick={() => handleSelect(g.id)} style={{ background: goal === g.id ? '#F5E642′ : '#1e2d45', color: goal === g.id ? '#0A1628' : '#fff', border: '2px solid' + (goal === g.id ? ' #F5E642' : ' #2d3f5a'), borderRadius: 10, padding: '16px', fontSize: 15, fontWeight: 600, cursor: ’pointer', textAlign: 'left' }}>
+            <button key={g.id} onClick={() => handleSelect(g.id)} style={{ background: goal === g.id ? '#F5E642' : '#1e2d45', color: goal === g.id ? '#0A1628' : '#fff', border: '2px solid' + (goal === g.id ? ' #F5E642' : ' #2d3f5a'), borderRadius: 10, padding: '16px', fontSize: 15, fontWeight: 600, cursor: 'pointer', textAlign: 'left' }}>
               {g.label}
             </button>
           ))}
         </div>
 
         {rec && recs[rec] && (
-          <div style={{ background: '#1e2d45', borderRadius: 12, padding: 24, borderLeft: '4px solid #F5E642′ }}>
+          <div style={{ background: '#1e2d45', borderRadius: 12, padding: 24, borderLeft: '4px solid #F5E642' }}>
             <div style={{ color: '#F5E642', fontWeight: 700, fontSize: 11, letterSpacing: 1, marginBottom: 8 }}>RECOMMENDED</div>
             <h3 style={{ fontSize: 22, fontWeight: 800, marginBottom: 10 }}>✅ {recs[rec].title}</h3>
             <p style={{ color: '#cbd5e1', lineHeight: 1.7, marginBottom: 14 }}>{recs[rec].desc}</p>

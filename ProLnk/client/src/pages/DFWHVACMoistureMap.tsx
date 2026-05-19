@@ -61,45 +61,45 @@ export default function DFWHVACMoistureMap() {
   const result = concern ? MOISTURE_GUIDANCE[concern] : null;
 
   return (
-    <div style={{ background: "#0A1628″, minHeight: "100vh", color: "#fff", fontFamily: "sans-serif", padding: "32px 16px" }}>
+    <div style={{ background: "#0A1628", minHeight: "100vh", color: "#fff", fontFamily: "sans-serif", padding: "32px 16px" }}>
       <div style={{ maxWidth: 720, margin: "0 auto" }}>
-        <div style={{ color: "#F5E642″, fontSize: 13, fontWeight: 700, letterSpacing: 2, marginBottom: 8 }}>PROLNK · DFW HVAC RESOURCE</div>
+        <div style={{ color: "#F5E642", fontSize: 13, fontWeight: 700, letterSpacing: 2, marginBottom: 8 }}>PROLNK · DFW HVAC RESOURCE</div>
         <h1 style={{ fontSize: 28, fontWeight: 800, marginBottom: 8 }}>DFW HVAC Moisture Management Map 💦</h1>
-        <p style={{ color: "#94a3b8″, fontSize: 15, marginBottom: 32 }}>
+        <p style={{ color: "#94a3b8", fontSize: 15, marginBottom: 32 }}>
           Where your DFW HVAC adds or removes moisture — evaporator removes moisture in summer, humidifier adds in winter, condensate routes moisture away — mapped to your specific concern.
         </p>
 
-        <div style={{ background: "#0f2040″, borderRadius: 12, padding: 24, marginBottom: 24 }}>
-          <h2 style={{ color: "#F5E642″, fontSize: 16, fontWeight: 700, marginBottom: 16 }}>💧 Moisture Concern Guide</h2>
+        <div style={{ background: "#0f2040", borderRadius: 12, padding: 24, marginBottom: 24 }}>
+          <h2 style={{ color: "#F5E642", fontSize: 16, fontWeight: 700, marginBottom: 16 }}>💧 Moisture Concern Guide</h2>
           <div style={{ marginBottom: 16 }}>
-            <label style={{ color: "#94a3b8″, fontSize: 13, display: "block", marginBottom: 6 }}>Your Moisture Concern</label>
-            <select value={concern} onChange={e => setConcern(e.target.value)} style={{ width: "100%", padding: "10px 12px", borderRadius: 8, background: "#0A1628″, color: "#fff", border: "1px solid #1e3a5f", fontSize: 14 }}>
+            <label style={{ color: "#94a3b8", fontSize: 13, display: "block", marginBottom: 6 }}>Your Moisture Concern</label>
+            <select value={concern} onChange={e => setConcern(e.target.value)} style={{ width: "100%", padding: "10px 12px", borderRadius: 8, background: "#0A1628", color: "#fff", border: "1px solid #1e3a5f", fontSize: 14 }}>
               <option value="">Select your concern...</option>
               {MOISTURE_CONCERNS.map(c => <option key={c} value={c}>{c}</option>)}
             </select>
           </div>
           {result && (
-            <div style={{ background: "#0A1628″, borderRadius: 8, padding: 20, borderLeft: "4px solid #F5E642" }}>
-              <div style={{ color: "#F5E642″, fontWeight: 700, fontSize: 14, marginBottom: 6 }}>🗺️ Moisture Map</div>
-              <p style={{ color: "#e2e8f0″, fontSize: 14, marginBottom: 14 }}>{result.map}</p>
-              <div style={{ color: "#F5E642″, fontWeight: 700, fontSize: 14, marginBottom: 6 }}>🔧 Management Approach</div>
-              <p style={{ color: "#e2e8f0″, fontSize: 14, marginBottom: 14 }}>{result.approach}</p>
-              <div style={{ color: "#F5E642″, fontWeight: 700, fontSize: 14, marginBottom: 6 }}>📅 DFW Season Context</div>
-              <p style={{ color: "#e2e8f0″, fontSize: 14 }}>{result.dfwSeason}</p>
+            <div style={{ background: "#0A1628", borderRadius: 8, padding: 20, borderLeft: "4px solid #F5E642" }}>
+              <div style={{ color: "#F5E642", fontWeight: 700, fontSize: 14, marginBottom: 6 }}>🗺️ Moisture Map</div>
+              <p style={{ color: "#e2e8f0", fontSize: 14, marginBottom: 14 }}>{result.map}</p>
+              <div style={{ color: "#F5E642", fontWeight: 700, fontSize: 14, marginBottom: 6 }}>🔧 Management Approach</div>
+              <p style={{ color: "#e2e8f0", fontSize: 14, marginBottom: 14 }}>{result.approach}</p>
+              <div style={{ color: "#F5E642", fontWeight: 700, fontSize: 14, marginBottom: 6 }}>📅 DFW Season Context</div>
+              <p style={{ color: "#e2e8f0", fontSize: 14 }}>{result.dfwSeason}</p>
             </div>
           )}
         </div>
 
         <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 12 }}>
           {STATS.map(([label, desc]) => (
-            <div key={label} style={{ background: "#0f2040″, borderRadius: 10, padding: 16 }}>
+            <div key={label} style={{ background: "#0f2040", borderRadius: 10, padding: 16 }}>
               <div style={{ fontWeight: 700, fontSize: 14, marginBottom: 6 }}>{label}</div>
-              <div style={{ color: "#94a3b8″, fontSize: 13 }}>{desc}</div>
+              <div style={{ color: "#94a3b8", fontSize: 13 }}>{desc}</div>
             </div>
           ))}
         </div>
 
-        <div style={{ marginTop: 32, textAlign: "center", color: "#475569″, fontSize: 12 }}>
+        <div style={{ marginTop: 32, textAlign: "center", color: "#475569", fontSize: 12 }}>
           ProLnk connects DFW homeowners with HVAC moisture and IAQ specialists. © 2026 ProLnk
         </div>
       </div>

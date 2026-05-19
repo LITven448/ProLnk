@@ -31,7 +31,7 @@ export default function DFWCondoBuyingGuide2026() {
             {locations.map((l) => (
               <button key={l.id} onClick={() => setSelected(l.id)}
                 style={{ padding: '8px 16px', borderRadius: 8, border: 'none', cursor: 'pointer', fontSize: 13, fontWeight: 600,
-                  background: selected === l.id ? '#F5E642′ : '#1e2e4a', color: selected === l.id ? '#0A1628' : '#94a3b8' }}>
+                  background: selected === l.id ? '#F5E642' : '#1e2e4a', color: selected === l.id ? '#0A1628' : '#94a3b8' }}>
                 {l.label}
               </button>
             ))}
@@ -39,7 +39,7 @@ export default function DFWCondoBuyingGuide2026() {
           <div style={{ background: '#0A1628', borderRadius: 8, padding: 16 }}>
             <div style={{ fontSize: 18, fontWeight: 700, color: '#F5E642', marginBottom: 6 }}>{active.label}</div>
             <div style={{ fontSize: 13, color: '#94a3b8', marginBottom: 4 }}>💰 Typical HOA: <span style={{ color: '#fff' }}>{active.hoa}</span></div>
-            <div style={{ fontSize: 13, color: '#94a3b8′ }}>{active.notes}</div>
+            <div style={{ fontSize: 13, color: '#94a3b8' }}>{active.notes}</div>
           </div>
         </div>
 
@@ -47,7 +47,7 @@ export default function DFWCondoBuyingGuide2026() {
           <div style={{ fontSize: 14, fontWeight: 700, color: '#F5E642', marginBottom: 12 }}>📋 What HOA Fees Typically Cover</div>
           {['Exterior building maintenance & roof', 'Landscaping and common areas', 'Shared amenities (pool, gym, concierge)', 'Master insurance policy (structure only)', 'Trash removal and water in many buildings'].map((item) => (
             <div key={item} style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 6, fontSize: 13 }}>
-              <span style={{ color: '#F5E642′ }}>✓</span><span style={{ color: '#cbd5e1' }}>{item}</span>
+              <span style={{ color: '#F5E642' }}>✓</span><span style={{ color: '#cbd5e1' }}>{item}</span>
             </div>
           ))}
         </div>
@@ -57,7 +57,7 @@ export default function DFWCondoBuyingGuide2026() {
           {fhaVa.map((item) => (
             <div key={item.label} style={{ marginBottom: 12, paddingBottom: 12, borderBottom: '1px solid #1e2e4a' }}>
               <div style={{ fontSize: 13, fontWeight: 700, color: '#fff', marginBottom: 3 }}>{item.label}</div>
-              <div style={{ fontSize: 12, color: '#94a3b8′ }}>{item.note}</div>
+              <div style={{ fontSize: 12, color: '#94a3b8' }}>{item.note}</div>
             </div>
           ))}
         </div>

@@ -7,9 +7,9 @@ export default function DFWACFilterGuide2026() {
   const [homeSize, setHomeSize] = useState('medium');
 
   const getMerv = () => {
-    if (allergies) return { merv: 'MERV 13', change: 'Monthly during cedar/pollen season', cost: '$18-30', note: 'DFW cedar season (Dec-Feb) is brutal — upgrade to MERV 13′ };
+    if (allergies) return { merv: 'MERV 13', change: 'Monthly during cedar/pollen season', cost: '$18-30', note: 'DFW cedar season (Dec-Feb) is brutal — upgrade to MERV 13' };
     if (pets || dusty) return { merv: 'MERV 11', change: 'Every 45 days', cost: '$12-20', note: 'Pets and DFW dust require more frequent changes' };
-    return { merv: 'MERV 8', change: 'Every 90 days', cost: '$8-15', note: 'Minimum recommended — DFW air quality demands at least MERV 8′ };
+    return { merv: 'MERV 8', change: 'Every 90 days', cost: '$8-15', note: 'Minimum recommended — DFW air quality demands at least MERV 8' };
   };
 
   const rec = getMerv();
@@ -40,10 +40,10 @@ export default function DFWACFilterGuide2026() {
             <tbody>
               {mervData.map((row, i) => (
                 <tr key={i} style={{ borderTop: '1px solid #1e3a5f', backgroundColor: i % 2 === 0 ? '#0d1f3a' : 'transparent' }}>
-                  <td style={{ padding: '12px 16px', fontWeight: 700, color: '#F5E642′ }}>{row.rating}</td>
+                  <td style={{ padding: '12px 16px', fontWeight: 700, color: '#F5E642' }}>{row.rating}</td>
                   <td style={{ padding: '12px 16px', fontSize: 14 }}>{row.use}</td>
-                  <td style={{ padding: '12px 16px', fontSize: 14, color: '#94a3b8′ }}>{row.capture}</td>
-                  <td style={{ padding: '12px 16px', fontSize: 14, color: '#94a3b8′ }}>{row.dfwNote}</td>
+                  <td style={{ padding: '12px 16px', fontSize: 14, color: '#94a3b8' }}>{row.capture}</td>
+                  <td style={{ padding: '12px 16px', fontSize: 14, color: '#94a3b8' }}>{row.dfwNote}</td>
                 </tr>
               ))}
             </tbody>
@@ -60,7 +60,7 @@ export default function DFWACFilterGuide2026() {
             ].map(item => (
               <button key={item.id} onClick={() => item.set(!item.val)}
                 style={{ padding: '14px', borderRadius: 8, border: '2px solid', cursor: 'pointer', fontWeight: 600, fontSize: 14,
-                  borderColor: item.val ? '#F5E642′ : '#1e3a5f',
+                  borderColor: item.val ? '#F5E642' : '#1e3a5f',
                   backgroundColor: item.val ? 'rgba(245,230,66,0.15)' : '#0A1628', color: '#fff' }}>
                 {item.label}
               </button>
@@ -68,9 +68,9 @@ export default function DFWACFilterGuide2026() {
           </div>
           <div style={{ backgroundColor: '#0A1628', borderRadius: 8, padding: 20 }}>
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 12 }}>
-              <div><div style={{ fontSize: 22, fontWeight: 700, color: '#F5E642′ }}>{rec.merv}</div><div style={{ color: '#94a3b8', fontSize: 13 }}>Recommended Rating</div></div>
+              <div><div style={{ fontSize: 22, fontWeight: 700, color: '#F5E642' }}>{rec.merv}</div><div style={{ color: '#94a3b8', fontSize: 13 }}>Recommended Rating</div></div>
               <div><div style={{ fontSize: 18, fontWeight: 600 }}>{rec.change}</div><div style={{ color: '#94a3b8', fontSize: 13 }}>Change Frequency</div></div>
-              <div><div style={{ fontSize: 18, fontWeight: 600, color: '#F5E642′ }}>{rec.cost}</div><div style={{ color: '#94a3b8', fontSize: 13 }}>Per Filter</div></div>
+              <div><div style={{ fontSize: 18, fontWeight: 600, color: '#F5E642' }}>{rec.cost}</div><div style={{ color: '#94a3b8', fontSize: 13 }}>Per Filter</div></div>
             </div>
             <div style={{ color: '#94a3b8', fontSize: 14 }}>{rec.note}</div>
           </div>

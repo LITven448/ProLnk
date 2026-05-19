@@ -43,7 +43,7 @@ export default function DFWHVACMayTuneup2026() {
               'Electrical connections tightened',
             ].map(item => (
               <div key={item} style={{ display: 'flex', gap: 10, padding: '8px 12px', background: '#1a2f4a', borderRadius: 6 }}>
-                <span style={{ color: '#F5E642′ }}>✓</span>
+                <span style={{ color: '#F5E642' }}>✓</span>
                 <span style={{ color: '#94a3b8', fontSize: 14 }}>{item}</span>
               </div>
             ))}

@@ -42,7 +42,7 @@ export default function DFWHVACCompressorProtect2026() {
         <div style={{ background: '#112240', borderRadius: 12, padding: 24, marginBottom: 20 }}>
           <h2 style={{ color: '#F5E642', fontSize: 16, marginBottom: 16 }}>🔍 Get Your Protection Plan</h2>
           <label style={{ display: 'block', marginBottom: 8, color: '#94a3b8', fontSize: 14 }}>Compressor Age (years)</label>
-          <input value={age} onChange={e => setAge(e.target.value)} type="number" placeholder="e.g. 7″ style={{ width: '100%', background: '#0A1628', border: '1px solid #1e3a5f', borderRadius: 8, padding: '10px 14px', color: '#fff', fontSize: 14, marginBottom: 16, boxSizing: 'border-box' }} />
+          <input value={age} onChange={e => setAge(e.target.value)} type="number" placeholder="e.g. 7" style={{ width: '100%', background: '#0A1628', border: '1px solid #1e3a5f', borderRadius: 8, padding: '10px 14px', color: '#fff', fontSize: 14, marginBottom: 16, boxSizing: 'border-box' }} />
           <label style={{ display: 'block', marginBottom: 8, color: '#94a3b8', fontSize: 14 }}>DFW Summer Behavior</label>
           <select value={behavior} onChange={e => setBehavior(e.target.value)} style={{ width: '100%', background: '#0A1628', border: '1px solid #1e3a5f', borderRadius: 8, padding: '10px 14px', color: '#fff', fontSize: 14, marginBottom: 20, boxSizing: 'border-box' }}>
             <option value="">Select behavior...</option>

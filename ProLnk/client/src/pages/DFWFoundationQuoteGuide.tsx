@@ -56,7 +56,7 @@ export default function DFWFoundationQuoteGuide() {
   const selectedSymptoms = symptomSets.find(s => s.symptoms === symptoms);
 
   const severityColor = (sev: string) =>
-    sev === 'Severe' ? '#FF4444′ : sev === ’Significant' ? '#FF8C00′ : '#F5E642';
+    sev === 'Severe' ? '#FF4444' : sev === 'Significant' ? '#FF8C00' : '#F5E642';
 
   return (
     <div style={{ background: '#0A1628', minHeight: '100vh', color: '#E8ECF0', fontFamily: 'system-ui, sans-serif', padding: '32px 24px' }}>
@@ -68,16 +68,16 @@ export default function DFWFoundationQuoteGuide() {
           Foundation Repair Quote Guide for DFW
         </h1>
         <p style={{ color: '#9BA8B8', fontSize: 16, marginBottom: 36 }}>
-          DFW's expansive clay soil makes foundation repair the most confusing and highest-variance quote in home services — $5K to $25K for the same house is common. Here’s how to compare.
+          DFW's expansive clay soil makes foundation repair the most confusing and highest-variance quote in home services — $5K to $25K for the same house is common. Here's how to compare.
         </p>
 
         <h2 style={{ color: '#F5E642', fontSize: 18, fontWeight: 700, marginBottom: 12 }}>⚠️ Why DFW Quotes Vary So Dramatically</h2>
         <ul style={{ color: '#9BA8B8', fontSize: 15, lineHeight: 1.8, marginBottom: 32, paddingLeft: 20 }}>
-          <li><strong style={{ color: '#E8ECF0′ }}>Pier type varies wildly</strong> — pressed concrete piers ($300–400 each) vs steel push piers ($600–1,200 each) vs Bell Bottom piers ($800–1,500 each).</li>
-          <li><strong style={{ color: '#E8ECF0′ }}>Pier count is the biggest cost lever</strong> — contractors choosing fewer piers reduce cost but not the problem.</li>
-          <li><strong style={{ color: '#E8ECF0′ }}>Warranty transferability</strong> — a non-transferable warranty destroys resale value and often signals poor confidence in the repair.</li>
-          <li><strong style={{ color: '#E8ECF0′ }}>Engineer involvement</strong> — some include it, most don’t. If the quote lacks engineer certification, lenders and buyers won’t accept it.</li>
-          <li><strong style={{ color: '#E8ECF0′ }}>Interior access restoration</strong> — cutting open floors costs more. Some quote it separately after the fact.</li>
+          <li><strong style={{ color: '#E8ECF0' }}>Pier type varies wildly</strong> — pressed concrete piers ($300–400 each) vs steel push piers ($600–1,200 each) vs Bell Bottom piers ($800–1,500 each).</li>
+          <li><strong style={{ color: '#E8ECF0' }}>Pier count is the biggest cost lever</strong> — contractors choosing fewer piers reduce cost but not the problem.</li>
+          <li><strong style={{ color: '#E8ECF0' }}>Warranty transferability</strong> — a non-transferable warranty destroys resale value and often signals poor confidence in the repair.</li>
+          <li><strong style={{ color: '#E8ECF0' }}>Engineer involvement</strong> — some include it, most don't. If the quote lacks engineer certification, lenders and buyers won't accept it.</li>
+          <li><strong style={{ color: '#E8ECF0' }}>Interior access restoration</strong> — cutting open floors costs more. Some quote it separately after the fact.</li>
         </ul>
 
         <h2 style={{ color: '#F5E642', fontSize: 18, fontWeight: 700, marginBottom: 12 }}>🔑 Non-Negotiable Quote Elements</h2>
@@ -111,9 +111,9 @@ export default function DFWFoundationQuoteGuide() {
             </div>
           </div>
           {selectedSize && (
-            <div style={{ marginBottom: 14, padding: 14, background: '#0A1628', borderRadius: 8, borderLeft: '3px solid #F5E642′ }}>
-              <div style={{ fontWeight: 700, marginBottom: 4 }}>Expected pier count: <span style={{ color: '#F5E642′ }}>{selectedSize.pierRange}</span></div>
-              <div style={{ fontSize: 13, color: '#4CAF50′ }}>DFW market range: {selectedSize.estRange}</div>
+            <div style={{ marginBottom: 14, padding: 14, background: '#0A1628', borderRadius: 8, borderLeft: '3px solid #F5E642' }}>
+              <div style={{ fontWeight: 700, marginBottom: 4 }}>Expected pier count: <span style={{ color: '#F5E642' }}>{selectedSize.pierRange}</span></div>
+              <div style={{ fontSize: 13, color: '#4CAF50' }}>DFW market range: {selectedSize.estRange}</div>
               <div style={{ fontSize: 13, color: '#9BA8B8', marginTop: 4 }}>{selectedSize.note}</div>
             </div>
           )}
@@ -121,7 +121,7 @@ export default function DFWFoundationQuoteGuide() {
             <>
               <div style={{ marginBottom: 12, padding: 12, background: '#0A1628', borderRadius: 8, borderLeft: `3px solid ${severityColor(selectedSymptoms.severity)}` }}>
                 <div style={{ fontWeight: 700, color: severityColor(selectedSymptoms.severity), marginBottom: 4 }}>Severity: {selectedSymptoms.severity}</div>
-                <div style={{ fontSize: 13, color: '#9BA8B8′ }}>{selectedSymptoms.notes}</div>
+                <div style={{ fontSize: 13, color: '#9BA8B8' }}>{selectedSymptoms.notes}</div>
               </div>
               <div>
                 <div style={{ fontSize: 13, color: '#F5E642', fontWeight: 700, marginBottom: 8 }}>YOUR QUOTE MUST INCLUDE</div>
@@ -133,7 +133,7 @@ export default function DFWFoundationQuoteGuide() {
           )}
         </div>
 
-        <div style={{ background: '#F5E642', borderRadius: 12, padding: 20, color: '#0A1628′ }}>
+        <div style={{ background: '#F5E642', borderRadius: 12, padding: 20, color: '#0A1628' }}>
           <div style={{ fontWeight: 800, fontSize: 15, marginBottom: 4 }}>💡 ProLnk Tip</div>
           <div style={{ fontSize: 14 }}>ProLnk works with DFW foundation contractors who include engineer certs and transferable warranties as standard. No pier count games.</div>
         </div>

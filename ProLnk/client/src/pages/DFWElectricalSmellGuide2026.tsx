@@ -65,47 +65,47 @@ export default function DFWElectricalSmellGuide2026() {
   const diag = location ? actions[location] : null;
 
   return (
-    <div style={{ background: "#0A1628″, minHeight: "100vh", color: "#fff", fontFamily: "system-ui, sans-serif", padding: "40px 20px" }}>
+    <div style={{ background: "#0A1628", minHeight: "100vh", color: "#fff", fontFamily: "system-ui, sans-serif", padding: "40px 20px" }}>
       <div style={{ maxWidth: 720, margin: "0 auto" }}>
-        <div style={{ color: "#ef4444″, fontSize: 14, marginBottom: 8, fontWeight: 700 }}>🚨 DFW ELECTRICAL EMERGENCY GUIDE 2026</div>
+        <div style={{ color: "#ef4444", fontSize: 14, marginBottom: 8, fontWeight: 700 }}>🚨 DFW ELECTRICAL EMERGENCY GUIDE 2026</div>
         <h1 style={{ fontSize: 32, fontWeight: 800, marginBottom: 8 }}>Burning Electrical Smell</h1>
-        <div style={{ background: "#7f1d1d", border: "2px solid #ef4444″, borderRadius: 12, padding: 20, marginBottom: 24 }}>
-          <strong style={{ color: "#fca5a5″, fontSize: 18 }}>⚠️ THIS IS A POTENTIAL FIRE EMERGENCY</strong>
-          <p style={{ color: "#fca5a5″, marginTop: 8, marginBottom: 0 }}>Burning plastic smell from electrical components means insulation is melting or an arc fault is active. Do not ignore. Do not wait. Act now.</p>
+        <div style={{ background: "#7f1d1d", border: "2px solid #ef4444", borderRadius: 12, padding: 20, marginBottom: 24 }}>
+          <strong style={{ color: "#fca5a5", fontSize: 18 }}>⚠️ THIS IS A POTENTIAL FIRE EMERGENCY</strong>
+          <p style={{ color: "#fca5a5", marginTop: 8, marginBottom: 0 }}>Burning plastic smell from electrical components means insulation is melting or an arc fault is active. Do not ignore. Do not wait. Act now.</p>
         </div>
 
-        <div style={{ background: "#0f2040″, borderRadius: 12, padding: 24, marginBottom: 24 }}>
-          <h2 style={{ color: "#F5E642″, marginBottom: 16, fontSize: 18 }}>📍 Where Is the Smell Coming From?</h2>
-          <select value={location} onChange={e => setLocation(e.target.value)} style={{ width: "100%", background: "#1e3a5f", color: "#fff", border: "2px solid #ef4444″, borderRadius: 8, padding: "10px 14px", fontSize: 15 }}>
+        <div style={{ background: "#0f2040", borderRadius: 12, padding: 24, marginBottom: 24 }}>
+          <h2 style={{ color: "#F5E642", marginBottom: 16, fontSize: 18 }}>📍 Where Is the Smell Coming From?</h2>
+          <select value={location} onChange={e => setLocation(e.target.value)} style={{ width: "100%", background: "#1e3a5f", color: "#fff", border: "2px solid #ef4444", borderRadius: 8, padding: "10px 14px", fontSize: 15 }}>
             <option value="">Select smell location...</option>
             {smellLocations.map(l => <option key={l}>{l}</option>)}
           </select>
 
           {diag && (
             <div style={{ marginTop: 20 }}>
-              <div style={{ background: "#7f1d1d", border: "1px solid #ef4444″, borderRadius: 10, padding: 16, marginBottom: 16 }}>
-                <div style={{ color: "#fca5a5″, fontWeight: 700, marginBottom: 6 }}>🚨 {diag.description}</div>
+              <div style={{ background: "#7f1d1d", border: "1px solid #ef4444", borderRadius: 10, padding: 16, marginBottom: 16 }}>
+                <div style={{ color: "#fca5a5", fontWeight: 700, marginBottom: 6 }}>🚨 {diag.description}</div>
               </div>
-              <div style={{ background: "#0a1628″, border: "1px solid #1e3a5f", borderRadius: 10, padding: 16 }}>
-                <div style={{ fontWeight: 700, marginBottom: 12, color: "#F5E642″ }}>Emergency Action Steps:</div>
+              <div style={{ background: "#0a1628", border: "1px solid #1e3a5f", borderRadius: 10, padding: 16 }}>
+                <div style={{ fontWeight: 700, marginBottom: 12, color: "#F5E642" }}>Emergency Action Steps:</div>
                 {diag.steps.map(s => (
-                  <div key={s} style={{ padding: "8px 0″, borderBottom: "1px solid #1e3a5f", color: "#e2e8f0", fontSize: 14, lineHeight: 1.6 }}>{s}</div>
+                  <div key={s} style={{ padding: "8px 0", borderBottom: "1px solid #1e3a5f", color: "#e2e8f0", fontSize: 14, lineHeight: 1.6 }}>{s}</div>
                 ))}
               </div>
             </div>
           )}
         </div>
 
-        <div style={{ background: "#0f2040″, borderRadius: 12, padding: 24, marginBottom: 24 }}>
-          <h2 style={{ color: "#F5E642″, marginBottom: 16, fontSize: 18 }}>📞 Emergency Contacts</h2>
-          {[["🚒 Fire Emergency","911″],["⚡ Oncor Power Emergency","888-313-4747"],["🔌 TDLR License Lookup","tdlr.texas.gov"],["📱 ProLnk Emergency Electricians","Available 24/7"]].map(([label, val]) => (
-            <div key={label as string} style={{ display: "flex", justifyContent: "space-between", padding: "10px 0″, borderBottom: "1px solid #1e3a5f" }}>
-              <span>{label}</span><span style={{ color: "#F5E642″, fontWeight: 700 }}>{val}</span>
+        <div style={{ background: "#0f2040", borderRadius: 12, padding: 24, marginBottom: 24 }}>
+          <h2 style={{ color: "#F5E642", marginBottom: 16, fontSize: 18 }}>📞 Emergency Contacts</h2>
+          {[["🚒 Fire Emergency","911"],["⚡ Oncor Power Emergency","888-313-4747"],["🔌 TDLR License Lookup","tdlr.texas.gov"],["📱 ProLnk Emergency Electricians","Available 24/7"]].map(([label, val]) => (
+            <div key={label as string} style={{ display: "flex", justifyContent: "space-between", padding: "10px 0", borderBottom: "1px solid #1e3a5f" }}>
+              <span>{label}</span><span style={{ color: "#F5E642", fontWeight: 700 }}>{val}</span>
             </div>
           ))}
         </div>
 
-        <div style={{ background: "#F5E642″, color: "#0A1628", borderRadius: 8, padding: 14, fontWeight: 700, textAlign: "center" as const }}>
+        <div style={{ background: "#F5E642", color: "#0A1628", borderRadius: 8, padding: 14, fontWeight: 700, textAlign: "center" as const }}>
           🏅 24/7 Emergency Electricians — ProLnk DFW Network
         </div>
       </div>

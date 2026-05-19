@@ -60,18 +60,18 @@ export default function DFWHomeownerFinalGuide2026() {
           <h2 style={{ color: '#F5E642', fontSize: 17, marginBottom: 14 }}>🔍 Your Situation</h2>
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8, marginBottom: 20 }}>
             {situations.map(s => (
-              <button key={s.situation} onClick={() => setSituation(s.situation)} style={{ padding: '9px 14px', borderRadius: 8, border: 'none', cursor: 'pointer', background: situation === s.situation ? '#F5E642′ : '#162842', color: situation === s.situation ? '#0A1628' : '#fff', fontWeight: 600, fontSize: 12 }}>{s.icon} {s.situation}</button>
+              <button key={s.situation} onClick={() => setSituation(s.situation)} style={{ padding: '9px 14px', borderRadius: 8, border: 'none', cursor: 'pointer', background: situation === s.situation ? '#F5E642' : '#162842', color: situation === s.situation ? '#0A1628' : '#fff', fontWeight: 600, fontSize: 12 }}>{s.icon} {s.situation}</button>
             ))}
           </div>
 
           <div style={{ display: 'flex', gap: 6, marginBottom: 16, flexWrap: 'wrap' }}>
             {sections.map(s => (
-              <button key={s.key} onClick={() => setSection(s.key)} style={{ padding: '7px 12px', borderRadius: 8, border: 'none', cursor: 'pointer', background: section === s.key ? '#F5E642′ : '#162842', color: section === s.key ? '#0A1628' : '#94a3b8', fontWeight: 600, fontSize: 12 }}>{s.label}</button>
+              <button key={s.key} onClick={() => setSection(s.key)} style={{ padding: '7px 12px', borderRadius: 8, border: 'none', cursor: 'pointer', background: section === s.key ? '#F5E642' : '#162842', color: section === s.key ? '#0A1628' : '#94a3b8', fontWeight: 600, fontSize: 12 }}>{s.label}</button>
             ))}
           </div>
 
           {data && (
-            <div style={{ background: '#162842', borderRadius: 12, padding: 20, borderLeft: '4px solid #F5E642′ }}>
+            <div style={{ background: '#162842', borderRadius: 12, padding: 20, borderLeft: '4px solid #F5E642' }}>
               {Array.isArray(data[section as keyof typeof data]) ? (
                 <ul style={{ margin: 0, paddingLeft: 20 }}>
                   {(data[section as keyof typeof data] as string[]).map((item, i) => (

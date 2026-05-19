@@ -47,7 +47,7 @@ export default function DFWMicrogridGuide() {
 
         <div style={{ background: '#111D35', borderRadius: 12, padding: 24, marginBottom: 24, border: '1px solid #1E3A5F' }}>
           <h2 style={{ color: '#F5E642', fontSize: 18, marginBottom: 16 }}>❄️ Why DFW Homeowners Want Microgrids</h2>
-          <p style={{ color: '#94A3B8', lineHeight: 1.7, marginBottom: 12 }}>February 2021 changed everything. 4.5 million Texas homes lost power — some for 10+ days at temperatures near 0°F. A true microgrid combines <strong style={{ color: '#F5E642′ }}>solar generation</strong>, <strong style={{ color: '#F5E642' }}>battery storage</strong>, and <strong style={{ color: '#F5E642' }}>backup generation</strong> into an islanded power system that disconnects from the grid and runs independently.</p>
+          <p style={{ color: '#94A3B8', lineHeight: 1.7, marginBottom: 12 }}>February 2021 changed everything. 4.5 million Texas homes lost power — some for 10+ days at temperatures near 0°F. A true microgrid combines <strong style={{ color: '#F5E642' }}>solar generation</strong>, <strong style={{ color: '#F5E642' }}>battery storage</strong>, and <strong style={{ color: '#F5E642' }}>backup generation</strong> into an islanded power system that disconnects from the grid and runs independently.</p>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: 12 }}>
             {[['☀️', 'Solar', 'Generates daytime power, charges batteries'], ['🔋', 'Battery', 'Stores solar, bridges nights + cloudy days'], ['⛽', 'Generator', 'Backs up extended outages, fuel-independent']].map(([icon, label, desc]) => (
               <div key={label} style={{ background: '#0A1628', borderRadius: 8, padding: 14, textAlign: 'center' }}>
@@ -73,13 +73,13 @@ export default function DFWMicrogridGuide() {
             </div>
           ))}
           <button onClick={() => setShowResult(true)} disabled={!homeSize || !goal}
-            style={{ width: '100%', background: homeSize && goal ? '#F5E642′ : '#1E3A5F', color: homeSize && goal ? '#0A1628' : '#4A6FA5', border: ’none', borderRadius: 8, padding: '12px 0', fontSize: 16, fontWeight: 700, cursor: homeSize && goal ? 'pointer' : 'default' }}>
+            style={{ width: '100%', background: homeSize && goal ? '#F5E642' : '#1E3A5F', color: homeSize && goal ? '#0A1628' : '#4A6FA5', border: 'none', borderRadius: 8, padding: '12px 0', fontSize: 16, fontWeight: 700, cursor: homeSize && goal ? 'pointer' : 'default' }}>
             Design My DFW Microgrid →
           </button>
         </div>
 
         {showResult && config && (
-          <div style={{ background: '#111D35', borderRadius: 12, padding: 24, border: '2px solid #F5E642′ }}>
+          <div style={{ background: '#111D35', borderRadius: 12, padding: 24, border: '2px solid #F5E642' }}>
             <h3 style={{ color: '#F5E642', fontSize: 20, marginBottom: 20 }}>⚡ Your DFW Microgrid Configuration</h3>
             {[
               ['☀️', 'Solar Array', config.solar],

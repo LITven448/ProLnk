@@ -10,17 +10,17 @@ import {
 } from "lucide-react";
 
 const D = {
-  bg: "#0A1628″,
-  surface: "#0F1D35″,
-  card: "#162035″,
+  bg: "#0A1628",
+  surface: "#0F1D35",
+  card: "#162035",
   border: "#1E2D4A",
   text: "#F0F4FF",
   muted: "#7B8BAA",
-  teal: "#00C2A8″,
+  teal: "#00C2A8",
   amber: "#F59E0B",
   green: "#22C55E",
-  red: "#EF4444″,
-  blue: "#3B82F6″,
+  red: "#EF4444",
+  blue: "#3B82F6",
 };
 
 const SETUP_STEPS = [
@@ -50,13 +50,13 @@ const SETUP_STEPS = [
 const PACKAGES = [
   {
     name: "Basic Criminal",
-    price: "$29.99″,
+    price: "$29.99",
     items: ["SSN trace", "National criminal database", "Sex offender registry"],
     recommended: false,
   },
   {
     name: "Standard",
-    price: "$49.99″,
+    price: "$49.99",
     items: [
       "Everything in Basic",
       "Motor vehicle record (MVR)",
@@ -66,7 +66,7 @@ const PACKAGES = [
   },
   {
     name: "Pro",
-    price: "$79.99″,
+    price: "$79.99",
     items: [
       "Everything in Standard",
       "Education verification",
@@ -129,7 +129,7 @@ export default function CheckrIntegration() {
                     onClick={() => setConnected(!connected)}
                     style={{
                       background: connected ? "rgba(239,68,68,0.15)" : D.teal,
-                      color: connected ? D.red : "#000″,
+                      color: connected ? D.red : "#000",
                       border: connected ? `1px solid ${D.red}` : "none",
                       fontWeight: 600, cursor: "pointer",
                     }}
@@ -203,7 +203,7 @@ export default function CheckrIntegration() {
                     {pkg.recommended && (
                       <div style={{
                         position: "absolute", top: -1, right: 12,
-                        background: D.teal, color: "#000″,
+                        background: D.teal, color: "#000",
                         fontSize: 10, fontWeight: 700, padding: "2px 8px",
                         borderRadius: "0 0 6px 6px",
                       }}>
@@ -211,7 +211,7 @@ export default function CheckrIntegration() {
                       </div>
                     )}
                     <div style={{ color: D.text, fontWeight: 700, fontSize: 16 }}>{pkg.name}</div>
-                    <div style={{ color: D.teal, fontWeight: 700, fontSize: 22, margin: "8px 0″ }}>{pkg.price}</div>
+                    <div style={{ color: D.teal, fontWeight: 700, fontSize: 22, margin: "8px 0" }}>{pkg.price}</div>
                     <div style={{ display: "flex", flexDirection: "column", gap: 6 }}>
                       {pkg.items.map((item) => (
                         <div key={item} style={{ display: "flex", alignItems: "center", gap: 8 }}>
@@ -308,7 +308,7 @@ export default function CheckrIntegration() {
               disabled={!connected}
               style={{
                 background: connected ? D.teal : `${D.teal}30`,
-                color: connected ? "#000″ : D.muted,
+                color: connected ? "#000" : D.muted,
                 fontWeight: 700, fontSize: 15, padding: "12px 28px",
                 cursor: connected ? "pointer" : "not-allowed",
                 opacity: connected ? 1 : 0.6,

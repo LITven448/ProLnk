@@ -57,7 +57,7 @@ export default function ChimneyFireplaceGuide() {
           <h2 style={{ fontSize: 24, fontWeight: 700, color: '#fb923c', marginBottom: 16 }}>🏠 DFW Fireplace Reality</h2>
           <div style={{ background: '#1a0e00', border: '1px solid #7c2d00', borderRadius: 12, padding: 24 }}>
             <p style={{ color: '#fed7aa', lineHeight: 1.7, margin: 0 }}>
-              <strong>70% of DFW homes</strong> have decorative fireplaces that go years — sometimes decades — without a professional inspection. Because DFW winters are mild, most homeowners assume chimneys don't need maintenance. They’re wrong. Infrequently used chimneys attract animals, collect moisture damage, and develop blockages that can be fatal when the fireplace is finally turned on.
+              <strong>70% of DFW homes</strong> have decorative fireplaces that go years — sometimes decades — without a professional inspection. Because DFW winters are mild, most homeowners assume chimneys don't need maintenance. They're wrong. Infrequently used chimneys attract animals, collect moisture damage, and develop blockages that can be fatal when the fireplace is finally turned on.
             </p>
           </div>
         </section>
@@ -119,7 +119,7 @@ export default function ChimneyFireplaceGuide() {
                 <span style={{ fontSize: 32, flexShrink: 0 }}>{fp.icon}</span>
                 <div style={{ flex: 1 }}>
                   <div style={{ fontWeight: 700, color: '#fb923c', marginBottom: 4 }}>{fp.type}</div>
-                  <div style={{ fontSize: 13, color: '#60a5fa', marginBottom: 6 }}>{fp.service} · <strong style={{ color: '#4ade80′ }}>{fp.cost}</strong></div>
+                  <div style={{ fontSize: 13, color: '#60a5fa', marginBottom: 6 }}>{fp.service} · <strong style={{ color: '#4ade80' }}>{fp.cost}</strong></div>
                   <div style={{ fontSize: 13, color: '#94a3b8', lineHeight: 1.5 }}>{fp.notes}</div>
                 </div>
               </div>
@@ -137,7 +137,7 @@ export default function ChimneyFireplaceGuide() {
               { icon: '🐿️', prob: 'Animal Nesting', fix: 'Install a stainless chimney cap with screen — standard solution, $100–$200 installed. Most pros include this in annual service.' },
               { icon: '💨', prob: 'Failed Damper', fix: 'A stuck-open damper wastes conditioned air year-round. In DFW this can add $15–$30/month to energy bills. Replacement: $200–$400.' },
             ].map(item => (
-              <div key={item.prob} style={{ display: 'flex', gap: 14, padding: '14px 0', borderBottom: '1px solid #1e2d40′ }}>
+              <div key={item.prob} style={{ display: 'flex', gap: 14, padding: '14px 0', borderBottom: '1px solid #1e2d40' }}>
                 <span style={{ fontSize: 22, flexShrink: 0 }}>{item.icon}</span>
                 <div>
                   <div style={{ fontWeight: 600, color: '#fca5a5', marginBottom: 4 }}>{item.prob}</div>
@@ -153,7 +153,7 @@ export default function ChimneyFireplaceGuide() {
           <div style={{ background: '#1a0a0a', border: '2px solid #dc2626', borderRadius: 12, padding: 24 }}>
             <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 12 }}>
               <span style={{ fontSize: 28 }}>☠️</span>
-              <h3 style={{ margin: 0, fontSize: 18, fontWeight: 700, color: '#f87171′ }}>Carbon Monoxide Warning</h3>
+              <h3 style={{ margin: 0, fontSize: 18, fontWeight: 700, color: '#f87171' }}>Carbon Monoxide Warning</h3>
             </div>
             <p style={{ color: '#fca5a5', margin: 0, lineHeight: 1.6 }}>
               Gas fireplaces <strong>must have working CO detectors within 15 feet</strong>. If your gas fireplace produces a <strong>yellow or orange flame</strong> (it should always burn blue), turn it off immediately and call a licensed technician — do not use it again until inspected. Yellow flame indicates incomplete combustion and CO production.
@@ -190,11 +190,11 @@ export default function ChimneyFireplaceGuide() {
                   <>
                     <div style={{ fontSize: 13, color: '#94a3b8', marginBottom: 8 }}>Overdue tasks:</div>
                     {score.items.map(i => (
-                      <div key={i} style={{ fontSize: 13, color: '#fca5a5', padding: '4px 0′ }}>• {i}</div>
+                      <div key={i} style={{ fontSize: 13, color: '#fca5a5', padding: '4px 0' }}>• {i}</div>
                     ))}
                   </>
                 ) : (
-                  <div style={{ fontSize: 14, color: '#4ade80′ }}>All maintenance tasks are current. Great job keeping your chimney safe!</div>
+                  <div style={{ fontSize: 14, color: '#4ade80' }}>All maintenance tasks are current. Great job keeping your chimney safe!</div>
                 )}
               </div>
             )}

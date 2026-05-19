@@ -45,20 +45,20 @@ export default function DFWSummerHVACChecklistPro2026() {
   const [age, setAge] = useState<string>(ages[0]);
 
   return (
-    <div style={{ background: "#0A1628″, minHeight: "100vh", color: "#fff", fontFamily: "system-ui, sans-serif", padding: "32px 16px" }}>
+    <div style={{ background: "#0A1628", minHeight: "100vh", color: "#fff", fontFamily: "system-ui, sans-serif", padding: "32px 16px" }}>
       <div style={{ maxWidth: 760, margin: "0 auto" }}>
         <div style={{ textAlign: "center", marginBottom: 40 }}>
           <span style={{ fontSize: 48 }}>❄️</span>
-          <h1 style={{ fontSize: 28, fontWeight: 800, color: "#F5E642″, margin: "12px 0 8px" }}>
+          <h1 style={{ fontSize: 28, fontWeight: 800, color: "#F5E642", margin: "12px 0 8px" }}>
             DFW Summer HVAC Tune-Up Checklist for Pros 2026
           </h1>
-          <p style={{ color: "#94a3b8″, fontSize: 15, maxWidth: 580, margin: "0 auto" }}>
+          <p style={{ color: "#94a3b8", fontSize: 15, maxWidth: 580, margin: "0 auto" }}>
             DFW summer kills capacitors, starves refrigerant charge, and clogs drains. Charter pros run this checklist on every tune-up — no exceptions.
           </p>
         </div>
 
         <div style={{ background: "#0f1f3d", borderRadius: 12, padding: 24, marginBottom: 32 }}>
-          <h2 style={{ color: "#F5E642″, fontSize: 16, marginBottom: 16 }}>Select System Age → Get Pro Checklist</h2>
+          <h2 style={{ color: "#F5E642", fontSize: 16, marginBottom: 16 }}>Select System Age → Get Pro Checklist</h2>
           <div style={{ display: "flex", gap: 10, flexWrap: "wrap", marginBottom: 24 }}>
             {ages.map(a => (
               <button
@@ -69,8 +69,8 @@ export default function DFWSummerHVACChecklistPro2026() {
                   borderRadius: 8,
                   border: "none",
                   cursor: "pointer",
-                  background: age === a ? "#F5E642″ : "#1a2f55",
-                  color: age === a ? "#0A1628″ : "#e2e8f0",
+                  background: age === a ? "#F5E642" : "#1a2f55",
+                  color: age === a ? "#0A1628" : "#e2e8f0",
                   fontWeight: 700,
                   fontSize: 13,
                 }}
@@ -81,7 +81,7 @@ export default function DFWSummerHVACChecklistPro2026() {
           </div>
           <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
             {systemAgeMap[age].map((item, i) => (
-              <div key={i} style={{ background: "#0A1628″, borderRadius: 8, padding: "12px 16px", fontSize: 14, color: "#e2e8f0", border: "1px solid #1e3a5f" }}>
+              <div key={i} style={{ background: "#0A1628", borderRadius: 8, padding: "12px 16px", fontSize: 14, color: "#e2e8f0", border: "1px solid #1e3a5f" }}>
                 {item}
               </div>
             ))}
@@ -89,8 +89,8 @@ export default function DFWSummerHVACChecklistPro2026() {
         </div>
 
         <div style={{ background: "#0f1f3d", borderRadius: 12, padding: 24, marginBottom: 32 }}>
-          <h2 style={{ color: "#F5E642″, fontSize: 16, marginBottom: 16 }}>🌡️ DFW-Specific Reminders</h2>
-          <ul style={{ color: "#94a3b8″, fontSize: 14, paddingLeft: 20, margin: 0, display: "flex", flexDirection: "column", gap: 8 }}>
+          <h2 style={{ color: "#F5E642", fontSize: 16, marginBottom: 16 }}>🌡️ DFW-Specific Reminders</h2>
+          <ul style={{ color: "#94a3b8", fontSize: 14, paddingLeft: 20, margin: 0, display: "flex", flexDirection: "column", gap: 8 }}>
             <li>DFW ambient temps hit 105°F+ — high ambient reduces system capacity by up to 20%</li>
             <li>Capacitors rated for 85°F ambient degrade fast at DFW temps — replace proactively</li>
             <li>Condensate drains clog from clay soil dust — flush every visit</li>
@@ -98,9 +98,9 @@ export default function DFWSummerHVACChecklistPro2026() {
           </ul>
         </div>
 
-        <div style={{ background: "#F5E642″, borderRadius: 12, padding: "24px", textAlign: "center" }}>
-          <p style={{ color: "#0A1628″, fontWeight: 800, fontSize: 18, margin: "0 0 8px" }}>ProLnk Charter HVAC Pros — DFW Founding Slots Open</p>
-          <p style={{ color: "#1a2f55″, fontSize: 14, margin: 0 }}>Join at prolnk.io — waitlist closes at 500 Charter members</p>
+        <div style={{ background: "#F5E642", borderRadius: 12, padding: "24px", textAlign: "center" }}>
+          <p style={{ color: "#0A1628", fontWeight: 800, fontSize: 18, margin: "0 0 8px" }}>ProLnk Charter HVAC Pros — DFW Founding Slots Open</p>
+          <p style={{ color: "#1a2f55", fontSize: 14, margin: 0 }}>Join at prolnk.io — waitlist closes at 500 Charter members</p>
         </div>
       </div>
     </div>

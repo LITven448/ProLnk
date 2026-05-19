@@ -45,20 +45,20 @@ export default function LovejoyAreaHomeownerGuide2026() {
   const [selected, setSelected] = useState<string | null>(null);
 
   return (
-    <div style={{ backgroundColor: "#0A1628″, minHeight: "100vh", color: "#fff", fontFamily: "sans-serif", padding: "2rem" }}>
+    <div style={{ backgroundColor: "#0A1628", minHeight: "100vh", color: "#fff", fontFamily: "sans-serif", padding: "2rem" }}>
       <div style={{ maxWidth: 720, margin: "0 auto" }}>
-        <div style={{ color: "#F5E642″, fontSize: "0.85rem", marginBottom: "0.5rem", letterSpacing: "0.1em" }}>
+        <div style={{ color: "#F5E642", fontSize: "0.85rem", marginBottom: "0.5rem", letterSpacing: "0.1em" }}>
           COLLIN COUNTY · LOVEJOY ISD AREA
         </div>
         <h1 style={{ fontSize: "2rem", fontWeight: 700, marginBottom: "0.5rem" }}>
           Lovejoy Area Homeowner Guide 2026
         </h1>
-        <p style={{ color: "#94a3b8″, marginBottom: "2rem", lineHeight: 1.7 }}>
+        <p style={{ color: "#94a3b8", marginBottom: "2rem", lineHeight: 1.7 }}>
           The Lovejoy ISD corridor is one of Collin County's most sought-after unincorporated areas. Top-rated schools drive premium home values, mostly 2000s-2020s custom builds on large lots. Some properties remain on well water and septic, while maintenance standards are elevated by the premium resale market.
         </p>
 
         <div style={{ backgroundColor: "#111f3c", borderRadius: 12, padding: "1.5rem", marginBottom: "2rem" }}>
-          <h2 style={{ color: "#F5E642″, fontSize: "1.1rem", marginBottom: "1rem" }}>📐 Select Your Property Size</h2>
+          <h2 style={{ color: "#F5E642", fontSize: "1.1rem", marginBottom: "1rem" }}>📐 Select Your Property Size</h2>
           <div style={{ display: "flex", gap: "0.75rem", flexWrap: "wrap" }}>
             {propertySizes.map((s) => (
               <button
@@ -69,8 +69,8 @@ export default function LovejoyAreaHomeownerGuide2026() {
                   borderRadius: 8,
                   border: "none",
                   cursor: "pointer",
-                  backgroundColor: selected === s ? "#F5E642″ : "#1e3a5f",
-                  color: selected === s ? "#0A1628″ : "#fff",
+                  backgroundColor: selected === s ? "#F5E642" : "#1e3a5f",
+                  color: selected === s ? "#0A1628" : "#fff",
                   fontWeight: 600,
                 }}
               >
@@ -82,12 +82,12 @@ export default function LovejoyAreaHomeownerGuide2026() {
 
         {selected && (
           <div style={{ backgroundColor: "#111f3c", borderRadius: 12, padding: "1.5rem", marginBottom: "2rem" }}>
-            <h2 style={{ color: "#F5E642″, fontSize: "1.1rem", marginBottom: "1rem" }}>
+            <h2 style={{ color: "#F5E642", fontSize: "1.1rem", marginBottom: "1rem" }}>
               🔧 Lovejoy Area Maintenance Guide — {selected}
             </h2>
             <ul style={{ listStyle: "none", padding: 0, margin: 0 }}>
               {guides[selected].map((item, i) => (
-                <li key={i} style={{ padding: "0.6rem 0″, borderBottom: "1px solid #1e3a5f", color: "#cbd5e1" }}>
+                <li key={i} style={{ padding: "0.6rem 0", borderBottom: "1px solid #1e3a5f", color: "#cbd5e1" }}>
                   {item}
                 </li>
               ))}
@@ -96,12 +96,12 @@ export default function LovejoyAreaHomeownerGuide2026() {
         )}
 
         <div style={{ backgroundColor: "#111f3c", borderRadius: 12, padding: "1.5rem" }}>
-          <h2 style={{ color: "#F5E642″, fontSize: "1rem", marginBottom: "0.75rem" }}>📍 Lovejoy Area Fast Facts</h2>
+          <h2 style={{ color: "#F5E642", fontSize: "1rem", marginBottom: "0.75rem" }}>📍 Lovejoy Area Fast Facts</h2>
           <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "0.75rem" }}>
             {[["County", "Collin (unincorporated)"], ["School District", "Lovejoy ISD — top 5 in TX"], ["Home Style", "Custom — large lots"], ["Median Home Value", "~$700K-$1M+"], ["Water Source", "Mixed — city and well"], ["Character", "Premium semi-rural"]].map(([k, v]) => (
-              <div key={k} style={{ backgroundColor: "#0A1628″, borderRadius: 8, padding: "0.75rem" }}>
-                <div style={{ color: "#94a3b8″, fontSize: "0.75rem" }}>{k}</div>
-                <div style={{ color: "#F5E642″, fontWeight: 600 }}>{v}</div>
+              <div key={k} style={{ backgroundColor: "#0A1628", borderRadius: 8, padding: "0.75rem" }}>
+                <div style={{ color: "#94a3b8", fontSize: "0.75rem" }}>{k}</div>
+                <div style={{ color: "#F5E642", fontWeight: 600 }}>{v}</div>
               </div>
             ))}
           </div>

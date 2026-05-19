@@ -31,7 +31,7 @@ export default function DFWTraneVsLennoxGuide2026() {
               <li>Reputation: Most reliable in TX</li>
             </ul>
           </div>
-          <div style={{ background: '#111f3a', borderRadius: 12, padding: 20, borderTop: '3px solid #3b82f6′ }}>
+          <div style={{ background: '#111f3a', borderRadius: 12, padding: 20, borderTop: '3px solid #3b82f6' }}>
             <div style={{ fontSize: 22, marginBottom: 8 }}>🔵 Lennox</div>
             <ul style={{ color: '#94a3b8', lineHeight: 1.8, paddingLeft: 16, fontSize: 14 }}>
               <li>10-year parts + 5-yr labor option</li>
@@ -53,11 +53,11 @@ export default function DFWTraneVsLennoxGuide2026() {
           <div style={{ color: '#F5E642', fontWeight: 700, marginBottom: 16 }}>🎯 What matters most to you?</div>
           <div style={{ display: 'flex', gap: 10, flexWrap: 'wrap' }}>
             {['efficiency', 'reliability', 'cost'].map(p => (
-              <button key={p} onClick={() => setPriority(p)} style={{ padding: '10px 20px', borderRadius: 8, border: 'none', cursor: 'pointer', fontWeight: 700, textTransform: 'capitalize', background: priority === p ? '#F5E642′ : '#1e3a5f', color: priority === p ? '#0A1628' : '#fff' }}>{p}</button>
+              <button key={p} onClick={() => setPriority(p)} style={{ padding: '10px 20px', borderRadius: 8, border: 'none', cursor: 'pointer', fontWeight: 700, textTransform: 'capitalize', background: priority === p ? '#F5E642' : '#1e3a5f', color: priority === p ? '#0A1628' : '#fff' }}>{p}</button>
             ))}
           </div>
           {rec && (
-            <div style={{ marginTop: 16, background: '#0d2240', borderRadius: 8, padding: 16, borderLeft: '4px solid #F5E642′ }}>
+            <div style={{ marginTop: 16, background: '#0d2240', borderRadius: 8, padding: 16, borderLeft: '4px solid #F5E642' }}>
               <div style={{ fontWeight: 700, marginBottom: 6 }}>{rec.emoji} Recommendation: {rec.brand}</div>
               <p style={{ color: '#94a3b8', fontSize: 14 }}>{rec.reason}</p>
             </div>

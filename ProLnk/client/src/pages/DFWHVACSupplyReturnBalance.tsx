@@ -29,8 +29,8 @@ function getBalanceDiagnosis(homeType: string, complaint: string) {
       detail: 'When supply air enters a room faster than return can remove it, pressure builds. This forces conditioned air out through every gap in walls, ceilings, and floors — pulling hot attic air in elsewhere.',
       solutions: [
         'Add dedicated return grille in pressurized rooms',
-        'Install transfer grilles above doors (12″×6″ minimum)',
-        'Undercut interior doors 1″ minimum for return air path',
+        'Install transfer grilles above doors (12"×6" minimum)',
+        'Undercut interior doors 1" minimum for return air path',
         'Measure static pressure — should be near zero at room level',
       ],
     };
@@ -76,7 +76,7 @@ function getBalanceDiagnosis(homeType: string, complaint: string) {
         'Add dedicated return on upper floor (critical for DFW)',
         'Install transfer grilles in all upstairs bedroom doors',
         'Consider separate zoned system for upper floor',
-        'At minimum, undercut all upper floor doors 1.5″',
+        'At minimum, undercut all upper floor doors 1.5"',
       ],
     };
   }
@@ -111,7 +111,7 @@ export default function DFWHVACSupplyReturnBalance() {
           </p>
         </div>
 
-        <div style={{ background: '#0f1f3d', borderRadius: '12px', padding: '1.5rem', marginBottom: '1.5rem', borderLeft: '4px solid #F5E642′ }}>
+        <div style={{ background: '#0f1f3d', borderRadius: '12px', padding: '1.5rem', marginBottom: '1.5rem', borderLeft: '4px solid #F5E642' }}>
           <div style={{ fontWeight: 'bold', color: '#F5E642', marginBottom: '0.75rem' }}>📊 How to Check Your Balance</div>
           <ul style={{ color: '#94a3b8', paddingLeft: '1.5rem' }}>
             <li style={{ marginBottom: '0.5rem' }}>Sum all supply register CFM (from flow hood or tech measurement)</li>
@@ -129,7 +129,7 @@ export default function DFWHVACSupplyReturnBalance() {
             <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5rem' }}>
               {homeTypes.map(h => (
                 <button key={h} onClick={() => setHomeType(h)}
-                  style={{ padding: '0.5rem 1rem', borderRadius: '8px', border: 'none', cursor: 'pointer', background: homeType === h ? '#F5E642′ : '#1e3a5f', color: homeType === h ? '#0A1628' : '#e2e8f0', fontWeight: homeType === h ? ’bold' : 'normal' }}>
+                  style={{ padding: '0.5rem 1rem', borderRadius: '8px', border: 'none', cursor: 'pointer', background: homeType === h ? '#F5E642' : '#1e3a5f', color: homeType === h ? '#0A1628' : '#e2e8f0', fontWeight: homeType === h ? 'bold' : 'normal' }}>
                   {h}
                 </button>
               ))}
@@ -140,7 +140,7 @@ export default function DFWHVACSupplyReturnBalance() {
             <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5rem' }}>
               {complaints.map(c => (
                 <button key={c} onClick={() => setComplaint(c)}
-                  style={{ padding: '0.5rem 1rem', borderRadius: '8px', border: 'none', cursor: 'pointer', background: complaint === c ? '#F5E642′ : '#1e3a5f', color: complaint === c ? '#0A1628' : '#e2e8f0', fontWeight: complaint === c ? ’bold' : 'normal' }}>
+                  style={{ padding: '0.5rem 1rem', borderRadius: '8px', border: 'none', cursor: 'pointer', background: complaint === c ? '#F5E642' : '#1e3a5f', color: complaint === c ? '#0A1628' : '#e2e8f0', fontWeight: complaint === c ? 'bold' : 'normal' }}>
                   {c}
                 </button>
               ))}
@@ -151,7 +151,7 @@ export default function DFWHVACSupplyReturnBalance() {
         {diagnosis && (
           <div style={{ background: '#0f1f3d', borderRadius: '12px', padding: '1.5rem', borderLeft: `4px solid ${diagnosis.color}` }}>
             <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '1rem' }}>
-              <span style={{ fontWeight: 'bold', color: '#e2e8f0′ }}>Issue Severity:</span>
+              <span style={{ fontWeight: 'bold', color: '#e2e8f0' }}>Issue Severity:</span>
               <span style={{ background: diagnosis.color, color: '#0A1628', padding: '0.25rem 0.75rem', borderRadius: '999px', fontWeight: 'bold', fontSize: '0.9rem' }}>{diagnosis.severity}</span>
             </div>
             <p style={{ color: '#e2e8f0', fontWeight: 'bold', marginBottom: '0.5rem' }}>⚠️ {diagnosis.issue}</p>

@@ -58,12 +58,12 @@ export default function DFWNurseryRoomGuide() {
 
   return (
     <div style={{ backgroundColor: '#0A1628', minHeight: '100vh', color: '#E8EDF5', fontFamily: 'system-ui, sans-serif', padding: '0 0 60px' }}>
-      <div style={{ background: 'linear-gradient(135deg, #0A1628 0%, #112240 100%)', padding: '60px 24px 40px', borderBottom: '3px solid #F5E642′ }}>
+      <div style={{ background: 'linear-gradient(135deg, #0A1628 0%, #112240 100%)', padding: '60px 24px 40px', borderBottom: '3px solid #F5E642' }}>
         <div style={{ maxWidth: 860, margin: '0 auto' }}>
           <div style={{ fontSize: 40, marginBottom: 12 }}>🍼</div>
           <h1 style={{ fontSize: 38, fontWeight: 800, color: '#F5E642', margin: '0 0 12px' }}>DFW Nursery Room Preparation Guide</h1>
           <p style={{ fontSize: 18, color: '#A8B8D0', maxWidth: 640 }}>
-            Preparing a safe, comfortable nursery in DFW's climate requires extra attention to air quality, temperature control, and light management. Here’s everything new DFW parents need to know.
+            Preparing a safe, comfortable nursery in DFW's climate requires extra attention to air quality, temperature control, and light management. Here's everything new DFW parents need to know.
           </p>
         </div>
       </div>
@@ -91,7 +91,7 @@ export default function DFWNurseryRoomGuide() {
           ))}
         </div>
 
-        <div style={{ background: '#112240', borderRadius: 16, padding: 32, border: '2px solid #F5E642′ }}>
+        <div style={{ background: '#112240', borderRadius: 16, padding: 32, border: '2px solid #F5E642' }}>
           <h2 style={{ color: '#F5E642', fontSize: 22, fontWeight: 700, margin: '0 0 6px' }}>🧮 Nursery Setup Estimator</h2>
           <p style={{ color: '#A8B8D0', fontSize: 14, margin: '0 0 24px' }}>Get a temperature control solution and complete setup cost based on your DFW home</p>
 
@@ -100,7 +100,7 @@ export default function DFWNurseryRoomGuide() {
             <div style={{ display: 'flex', flexWrap: 'wrap', gap: 10 }}>
               {(['Small (under 120 sq ft)', 'Medium (120–200 sq ft)', 'Large (200+ sq ft)'] as RoomSize[]).map(opt => (
                 <button key={opt} onClick={() => { setRoomSize(opt); setShowResults(false); }}
-                  style={{ padding: '8px 16px', borderRadius: 8, border: `2px solid ${roomSize === opt ? '#F5E642' : '#1E3A5F'}`, background: roomSize === opt ? '#F5E642′ : '#0D1B33', color: roomSize === opt ? '#0A1628' : '#E8EDF5', fontWeight: 600, cursor: ’pointer', fontSize: 13 }}>
+                  style={{ padding: '8px 16px', borderRadius: 8, border: `2px solid ${roomSize === opt ? '#F5E642' : '#1E3A5F'}`, background: roomSize === opt ? '#F5E642' : '#0D1B33', color: roomSize === opt ? '#0A1628' : '#E8EDF5', fontWeight: 600, cursor: 'pointer', fontSize: 13 }}>
                   {opt}
                 </button>
               ))}
@@ -112,7 +112,7 @@ export default function DFWNurseryRoomGuide() {
             <div style={{ display: 'flex', flexWrap: 'wrap', gap: 10 }}>
               {(['Central AC only (no zone control)', 'Zoned HVAC system', 'Mini-split available', 'Window unit only'] as HVACSetup[]).map(opt => (
                 <button key={opt} onClick={() => { setHVAC(opt); setShowResults(false); }}
-                  style={{ padding: '8px 16px', borderRadius: 8, border: `2px solid ${hvac === opt ? '#F5E642' : '#1E3A5F'}`, background: hvac === opt ? '#F5E642′ : '#0D1B33', color: hvac === opt ? '#0A1628' : '#E8EDF5', fontWeight: 600, cursor: ’pointer', fontSize: 13 }}>
+                  style={{ padding: '8px 16px', borderRadius: 8, border: `2px solid ${hvac === opt ? '#F5E642' : '#1E3A5F'}`, background: hvac === opt ? '#F5E642' : '#0D1B33', color: hvac === opt ? '#0A1628' : '#E8EDF5', fontWeight: 600, cursor: 'pointer', fontSize: 13 }}>
                   {opt}
                 </button>
               ))}
@@ -125,7 +125,7 @@ export default function DFWNurseryRoomGuide() {
           </button>
 
           {showResults && result && (
-            <div style={{ marginTop: 28, background: '#0A1628', borderRadius: 12, padding: 24, border: '2px solid #F5E642′ }}>
+            <div style={{ marginTop: 28, background: '#0A1628', borderRadius: 12, padding: 24, border: '2px solid #F5E642' }}>
               <h3 style={{ color: '#F5E642', margin: '0 0 6px', fontSize: 20 }}>Complete Nursery Setup Plan</h3>
               <p style={{ fontSize: 28, fontWeight: 800, color: '#E8EDF5', margin: '0 0 16px' }}>Total Investment: ${result.costLow.toLocaleString()} – ${result.costHigh.toLocaleString()}</p>
               <ol style={{ margin: 0, paddingLeft: 22 }}>

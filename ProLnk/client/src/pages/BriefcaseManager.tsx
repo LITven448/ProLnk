@@ -22,7 +22,7 @@ const DOC_TYPES = [
   { key: "general_liability", label: "General Liability Insurance", icon: "🛡️", required: true, weight: 25 },
   { key: "workers_comp", label: "Workers Compensation", icon: "👷", required: true, weight: 20 },
   { key: "contractor_license", label: "Contractor License", icon: "📋", required: true, weight: 20 },
-  { key: "w9″, label: "W-9 Form", icon: "📄", required: true, weight: 10 },
+  { key: "w9", label: "W-9 Form", icon: "📄", required: true, weight: 10 },
   { key: "ein", label: "EIN Document", icon: "🏛️", required: true, weight: 10 },
   { key: "llc_registration", label: "LLC / Business Registration", icon: "🏢", required: false, weight: 8 },
   { key: "business_license", label: "Business License", icon: "🏪", required: false, weight: 5 },
@@ -30,13 +30,13 @@ const DOC_TYPES = [
 ];
 
 const STATUS_CONFIG: Record<string, { color: string; label: string; icon: React.ReactNode }> = {
-  missing:    { color: "text-gray-500″, label: "Upload required", icon: <Upload className="w-4 h-4" /> },
-  pending:    { color: "text-yellow-400″, label: "Pending review", icon: <Clock className="w-4 h-4" /> },
-  verified:   { color: "text-green-400″, label: "Verified", icon: <CheckCircle className="w-4 h-4" /> },
-  expired:    { color: "text-red-400″, label: "Expired", icon: <AlertTriangle className="w-4 h-4" /> },
-  rejected:   { color: "text-red-400″, label: "Rejected", icon: <AlertTriangle className="w-4 h-4" /> },
-  exempt:     { color: "text-blue-400″, label: "Exempt", icon: <CheckCircle className="w-4 h-4" /> },
-  not_applicable: { color: "text-gray-500″, label: "N/A", icon: null },
+  missing:    { color: "text-gray-500", label: "Upload required", icon: <Upload className="w-4 h-4" /> },
+  pending:    { color: "text-yellow-400", label: "Pending review", icon: <Clock className="w-4 h-4" /> },
+  verified:   { color: "text-green-400", label: "Verified", icon: <CheckCircle className="w-4 h-4" /> },
+  expired:    { color: "text-red-400", label: "Expired", icon: <AlertTriangle className="w-4 h-4" /> },
+  rejected:   { color: "text-red-400", label: "Rejected", icon: <AlertTriangle className="w-4 h-4" /> },
+  exempt:     { color: "text-blue-400", label: "Exempt", icon: <CheckCircle className="w-4 h-4" /> },
+  not_applicable: { color: "text-gray-500", label: "N/A", icon: null },
 };
 
 export default function BriefcaseManager() {
@@ -78,16 +78,16 @@ export default function BriefcaseManager() {
     reader.readAsDataURL(file);
   };
 
-  if (myBriefcase.isLoading) return <PartnerLayout><div className="flex items-center justify-center h-64 text-gray-500″>Loading...</div></PartnerLayout>;
+  if (myBriefcase.isLoading) return <PartnerLayout><div className="flex items-center justify-center h-64 text-gray-500">Loading...</div></PartnerLayout>;
 
   if (!briefcase) {
     return (
       <PartnerLayout>
         <div className="max-w-2xl mx-auto">
-          <div className="text-center py-16″>
-            <Briefcase className="w-16 h-16 text-gray-600 mx-auto mb-4″ />
-            <h2 className="text-xl font-bold text-white mb-2″>Set Up Your Briefcase</h2>
-            <p className="text-gray-400 text-sm mb-8″>Your Briefcase contains all your company credentials. Higher scores unlock more leads and commercial opportunities.</p>
+          <div className="text-center py-16">
+            <Briefcase className="w-16 h-16 text-gray-600 mx-auto mb-4" />
+            <h2 className="text-xl font-bold text-white mb-2">Set Up Your Briefcase</h2>
+            <p className="text-gray-400 text-sm mb-8">Your Briefcase contains all your company credentials. Higher scores unlock more leads and commercial opportunities.</p>
             <Button onClick={() => initBriefcase.mutate()} disabled={initBriefcase.isPending} className="bg-teal-500 hover:bg-teal-400 text-white font-bold">
               {initBriefcase.isPending ? "Setting up..." : "Initialize My Briefcase"}
             </Button>
@@ -99,38 +99,38 @@ export default function BriefcaseManager() {
 
   return (
     <PartnerLayout>
-      <div className="max-w-3xl mx-auto space-y-6″>
+      <div className="max-w-3xl mx-auto space-y-6">
         <div className="flex items-center justify-between">
           <div>
             <h1 className="text-2xl font-black text-white">My Briefcase</h1>
-            <p className="text-gray-400 text-sm mt-1″>Company credentials and verification status</p>
+            <p className="text-gray-400 text-sm mt-1">Company credentials and verification status</p>
           </div>
           {briefcase.briefcaseSlug && (
-            <Button variant="outline" size="sm" className="border-gray-700 text-gray-400 gap-2″ onClick={() => window.open(`/verify/${briefcase.briefcaseSlug}`, "_blank")}>
-              <ExternalLink className="w-4 h-4″ />
+            <Button variant="outline" size="sm" className="border-gray-700 text-gray-400 gap-2" onClick={() => window.open(`/verify/${briefcase.briefcaseSlug}`, "_blank")}>
+              <ExternalLink className="w-4 h-4" />
               Public Profile
             </Button>
           )}
         </div>
 
         {/* Score card */}
-        <div className="bg-gray-800 rounded-2xl p-6 border border-gray-700″>
-          <div className="flex items-center justify-between mb-4″>
+        <div className="bg-gray-800 rounded-2xl p-6 border border-gray-700">
+          <div className="flex items-center justify-between mb-4">
             <div>
               <div className="text-4xl font-black text-white">{score}<span className="text-gray-500 text-lg">/100</span></div>
               <div className="text-gray-400 text-sm">Briefcase Score</div>
             </div>
             <Badge className={
-              briefcase.status === "active" ? "bg-green-500/10 text-green-400 border-green-500/30″ :
-              briefcase.status === "restricted" ? "bg-orange-500/10 text-orange-400 border-orange-500/30″ :
-              "bg-gray-700 text-gray-400″
+              briefcase.status === "active" ? "bg-green-500/10 text-green-400 border-green-500/30" :
+              briefcase.status === "restricted" ? "bg-orange-500/10 text-orange-400 border-orange-500/30" :
+              "bg-gray-700 text-gray-400"
             }>
-              <Shield className="w-3 h-3 mr-1″ />
+              <Shield className="w-3 h-3 mr-1" />
               {briefcase.status?.charAt(0).toUpperCase() + briefcase.status?.slice(1)}
             </Badge>
           </div>
-          <Progress value={score} className="h-2 bg-gray-700″ />
-          <div className="flex items-center justify-between text-xs text-gray-500 mt-2″>
+          <Progress value={score} className="h-2 bg-gray-700" />
+          <div className="flex items-center justify-between text-xs text-gray-500 mt-2">
             <span>Restricted (30+)</span>
             <span>Active (60+)</span>
             <span>Verified (90+)</span>
@@ -138,7 +138,7 @@ export default function BriefcaseManager() {
         </div>
 
         {/* Documents */}
-        <div className="space-y-3″>
+        <div className="space-y-3">
           {DOC_TYPES.map((doc) => {
             const status = getDocStatus(doc.key);
             const statusConfig = STATUS_CONFIG[status] ?? STATUS_CONFIG.missing;
@@ -147,15 +147,15 @@ export default function BriefcaseManager() {
 
             return (
               <div key={doc.key} className={`bg-gray-800 rounded-xl p-4 border transition-all ${status === "verified" ? "border-green-500/20" : status === "pending" ? "border-yellow-500/20" : status === "expired" ? "border-red-500/20" : "border-gray-700"}`}>
-                <div className="flex items-center gap-3″>
+                <div className="flex items-center gap-3">
                   <span className="text-2xl">{doc.icon}</span>
-                  <div className="flex-1 min-w-0″>
-                    <div className="flex items-center gap-2″>
+                  <div className="flex-1 min-w-0">
+                    <div className="flex items-center gap-2">
                       <span className="font-semibold text-white text-sm">{doc.label}</span>
-                      {doc.required && <span className="text-xs text-red-400″>required</span>}
+                      {doc.required && <span className="text-xs text-red-400">required</span>}
                     </div>
                     {existingDoc?.expiryDate && (
-                      <div className="text-xs text-gray-500 mt-0.5″>
+                      <div className="text-xs text-gray-500 mt-0.5">
                         Expires: {new Date(existingDoc.expiryDate).toLocaleDateString()}
                       </div>
                     )}

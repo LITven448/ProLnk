@@ -48,7 +48,7 @@ export default function DFWAirFiltrationGuide2026() {
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12 }}>
             {concerns.map(c => (
               <button key={c.id} onClick={() => setConcern(c.id === concern ? null : c.id)}
-                style={{ background: concern === c.id ? '#F5E642′ : '#1e3a5f', color: concern === c.id ? '#0A1628' : '#fff', border: ’none', borderRadius: 10, padding: '14px 16px', cursor: 'pointer', fontWeight: 600, fontSize: 14, textAlign: 'left' }}>
+                style={{ background: concern === c.id ? '#F5E642' : '#1e3a5f', color: concern === c.id ? '#0A1628' : '#fff', border: 'none', borderRadius: 10, padding: '14px 16px', cursor: 'pointer', fontWeight: 600, fontSize: 14, textAlign: 'left' }}>
                 {c.label}
               </button>
             ))}
@@ -79,7 +79,7 @@ export default function DFWAirFiltrationGuide2026() {
           <h2 style={{ fontSize: 18, fontWeight: 700, color: '#F5E642', marginBottom: 16 }}>📅 DFW Filtration Calendar</h2>
           {['Dec–Feb: Cedar season — MERV-13 mandatory, HEPA purifier in bedroom','Mar–Jun: Pollen season — change filter at season start, run HVAC fan continuously','Jun–Sep: Ozone/PM2.5 season — avoid opening windows on Code Orange days','Oct–Nov: Best ventilation months — open windows during mild weather to flush indoor pollutants'].map(item => (
             <div key={item} style={{ display: 'flex', gap: 10, marginBottom: 10 }}>
-              <span style={{ color: '#F5E642′ }}>📅</span>
+              <span style={{ color: '#F5E642' }}>📅</span>
               <span style={{ color: '#cbd5e1', fontSize: 14 }}>{item}</span>
             </div>
           ))}

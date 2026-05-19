@@ -79,9 +79,9 @@ export default function DFWGeneralContractorGuide() {
             {projectScopes.map((p, i) => (
               <button key={i} onClick={() => setSelected(selected === i ? null : i)}
                 style={{ padding: '8px 16px', borderRadius: 8, border: '2px solid', cursor: 'pointer', fontSize: 14, fontWeight: 600,
-                  borderColor: selected === i ? '#0A1628′ : '#e2e8f0',
-                  backgroundColor: selected === i ? '#0A1628′ : ’transparent',
-                  color: selected === i ? '#F5E642′ : '#1e293b' }}>
+                  borderColor: selected === i ? '#0A1628' : '#e2e8f0',
+                  backgroundColor: selected === i ? '#0A1628' : 'transparent',
+                  color: selected === i ? '#F5E642' : '#1e293b' }}>
                 {p.label}
               </button>
             ))}
@@ -90,7 +90,7 @@ export default function DFWGeneralContractorGuide() {
             <div style={{ backgroundColor: '#f1f5f9', borderRadius: 10, padding: 20 }}>
               <h3 style={{ color: '#0A1628', marginBottom: 8 }}>{projectScopes[selected].label}</h3>
               <div style={{ marginBottom: 12 }}>
-                <span style={{ fontWeight: 700, color: projectScopes[selected].needsGC ? '#16a34a' : '#dc2626′ }}>
+                <span style={{ fontWeight: 700, color: projectScopes[selected].needsGC ? '#16a34a' : '#dc2626' }}>
                   {projectScopes[selected].needsGC ? '✅ You Need a GC' : '❌ GC Not Required'}
                 </span>
                 <div style={{ color: '#475569', fontSize: 14, marginTop: 4 }}>{projectScopes[selected].reason}</div>

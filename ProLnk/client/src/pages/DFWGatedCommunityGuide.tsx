@@ -65,7 +65,7 @@ export default function DFWGatedCommunityGuide() {
 
   return (
     <div style={{ background: '#0A1628', minHeight: '100vh', color: '#E8EDF5', fontFamily: 'system-ui, sans-serif' }}>
-      <div style={{ background: 'linear-gradient(135deg, #0A1628 0%, #112240 100%)', padding: '48px 24px 32px', borderBottom: '2px solid #F5E642′ }}>
+      <div style={{ background: 'linear-gradient(135deg, #0A1628 0%, #112240 100%)', padding: '48px 24px 32px', borderBottom: '2px solid #F5E642' }}>
         <div style={{ maxWidth: '900px', margin: '0 auto' }}>
           <div style={{ fontSize: '13px', color: '#F5E642', letterSpacing: '2px', marginBottom: '12px' }}>🏠 DFW COMMUNITY GUIDE</div>
           <h1 style={{ fontSize: '36px', fontWeight: '800', color: '#FFFFFF', margin: '0 0 12px' }}>DFW Gated Community Guide</h1>
@@ -85,11 +85,11 @@ export default function DFWGatedCommunityGuide() {
                 <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '8px', flexWrap: 'wrap', gap: '8px' }}>
                   <div style={{ fontSize: '16px', fontWeight: '700', color: '#FFFFFF' }}>{g.type}</div>
                   <div style={{ display: 'flex', gap: '12px' }}>
-                    <span style={{ fontSize: '13px', color: '#F5E642', fontWeight: '600′ }}>{g.cost}</span>
+                    <span style={{ fontSize: '13px', color: '#F5E642', fontWeight: '600' }}>{g.cost}</span>
                     <span style={{ fontSize: '12px', color: '#64748B', background: '#0A1628', padding: '2px 10px', borderRadius: '10px' }}>{g.security}</span>
                   </div>
                 </div>
-                <div style={{ fontSize: '13px', color: '#94A3B8′ }}>{g.notes}</div>
+                <div style={{ fontSize: '13px', color: '#94A3B8' }}>{g.notes}</div>
               </div>
             ))}
           </div>
@@ -99,15 +99,15 @@ export default function DFWGatedCommunityGuide() {
           <h2 style={{ fontSize: '24px', fontWeight: '700', color: '#F5E642', marginBottom: '20px' }}>💰 DFW Gated Community HOA Premiums</h2>
           <div style={{ background: '#112240', borderRadius: '12px', overflow: 'hidden' }}>
             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 100px', background: '#0A1628', padding: '12px 20px' }}>
-              <span style={{ fontSize: '13px', fontWeight: '600', color: '#94A3B8′ }}>Community Type</span>
-              <span style={{ fontSize: '13px', fontWeight: '600', color: '#94A3B8′ }}>Gate Technology</span>
-              <span style={{ fontSize: '13px', fontWeight: '600', color: '#F5E642′ }}>Monthly Premium</span>
+              <span style={{ fontSize: '13px', fontWeight: '600', color: '#94A3B8' }}>Community Type</span>
+              <span style={{ fontSize: '13px', fontWeight: '600', color: '#94A3B8' }}>Gate Technology</span>
+              <span style={{ fontSize: '13px', fontWeight: '600', color: '#F5E642' }}>Monthly Premium</span>
             </div>
             {GATE_HOA_COSTS.map((row, i) => (
-              <div key={i} style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 100px', padding: '14px 20px', borderBottom: '1px solid #0A1628′ }}>
-                <span style={{ fontSize: '13px', color: '#CBD5E1′ }}>{row.community}</span>
-                <span style={{ fontSize: '13px', color: '#94A3B8′ }}>{row.type}</span>
-                <span style={{ fontSize: '13px', color: '#F5E642', fontWeight: '600′ }}>{row.premium}</span>
+              <div key={i} style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 100px', padding: '14px 20px', borderBottom: '1px solid #0A1628' }}>
+                <span style={{ fontSize: '13px', color: '#CBD5E1' }}>{row.community}</span>
+                <span style={{ fontSize: '13px', color: '#94A3B8' }}>{row.type}</span>
+                <span style={{ fontSize: '13px', color: '#F5E642', fontWeight: '600' }}>{row.premium}</span>
               </div>
             ))}
           </div>
@@ -120,11 +120,11 @@ export default function DFWGatedCommunityGuide() {
               <div key={i} style={{ background: '#112240', borderRadius: '10px', overflow: 'hidden' }}>
                 <div style={{ padding: '14px 20px', background: '#1E3A5F', display: 'flex', gap: '10px', alignItems: 'flex-start' }}>
                   <span style={{ fontSize: '16px' }}>❌</span>
-                  <div style={{ fontSize: '14px', color: '#EF4444', fontWeight: '600′ }}>MYTH: {m.myth}</div>
+                  <div style={{ fontSize: '14px', color: '#EF4444', fontWeight: '600' }}>MYTH: {m.myth}</div>
                 </div>
                 <div style={{ padding: '14px 20px', display: 'flex', gap: '10px', alignItems: 'flex-start' }}>
                   <span style={{ fontSize: '16px' }}>✅</span>
-                  <div style={{ fontSize: '13px', color: '#94A3B8′ }}>REALITY: {m.fact}</div>
+                  <div style={{ fontSize: '13px', color: '#94A3B8' }}>REALITY: {m.fact}</div>
                 </div>
               </div>
             ))}
@@ -135,26 +135,26 @@ export default function DFWGatedCommunityGuide() {
           <h2 style={{ fontSize: '24px', fontWeight: '700', color: '#F5E642', marginBottom: '8px' }}>🎯 Gated vs Non-Gated Recommender</h2>
           <p style={{ fontSize: '14px', color: '#94A3B8', marginBottom: '24px' }}>Tell us your situation and we will give you a straight recommendation.</p>
 
-          <label style={{ display: 'block', marginBottom: '8px', fontSize: '14px', color: '#CBD5E1′ }}>
-            Home Budget: <strong style={{ color: '#F5E642′ }}>${budget.toLocaleString()}</strong>
+          <label style={{ display: 'block', marginBottom: '8px', fontSize: '14px', color: '#CBD5E1' }}>
+            Home Budget: <strong style={{ color: '#F5E642' }}>${budget.toLocaleString()}</strong>
           </label>
           <input type="range" min={250000} max={2000000} step={25000} value={budget} onChange={e => setBudget(Number(e.target.value))}
-            style={{ width: '100%', marginBottom: '20px', accentColor: '#F5E642′ }} />
+            style={{ width: '100%', marginBottom: '20px', accentColor: '#F5E642' }} />
 
-          <label style={{ display: 'block', marginBottom: '8px', fontSize: '14px', color: '#CBD5E1′ }}>
-            Security Priority (1 = low, 5 = very high): <strong style={{ color: '#F5E642′ }}>{securityPriority}/5</strong>
+          <label style={{ display: 'block', marginBottom: '8px', fontSize: '14px', color: '#CBD5E1' }}>
+            Security Priority (1 = low, 5 = very high): <strong style={{ color: '#F5E642' }}>{securityPriority}/5</strong>
           </label>
           <input type="range" min={1} max={5} step={1} value={securityPriority} onChange={e => setSecurityPriority(Number(e.target.value))}
-            style={{ width: '100%', marginBottom: '20px', accentColor: '#F5E642′ }} />
+            style={{ width: '100%', marginBottom: '20px', accentColor: '#F5E642' }} />
 
-          <label style={{ display: 'block', marginBottom: '10px', fontSize: '14px', color: '#CBD5E1′ }}>Community Type Preference:</label>
+          <label style={{ display: 'block', marginBottom: '10px', fontSize: '14px', color: '#CBD5E1' }}>Community Type Preference:</label>
           <div style={{ display: 'flex', gap: '10px', marginBottom: '24px', flexWrap: 'wrap' }}>
             {[{ value: 'mpc', label: '🏘️ Master-Planned' }, { value: 'standard', label: '🏠 Standard Subdivision' }, { value: 'luxury', label: '💎 Luxury Enclave' }].map(opt => (
               <button key={opt.value} onClick={() => setCommunityType(opt.value)}
                 style={{ padding: '8px 16px', borderRadius: '8px', border: '1px solid', fontSize: '13px', cursor: 'pointer',
-                  background: communityType === opt.value ? '#F5E642′ : ’transparent',
-                  color: communityType === opt.value ? '#0A1628′ : '#94A3B8',
-                  borderColor: communityType === opt.value ? '#F5E642′ : '#334155' }}>
+                  background: communityType === opt.value ? '#F5E642' : 'transparent',
+                  color: communityType === opt.value ? '#0A1628' : '#94A3B8',
+                  borderColor: communityType === opt.value ? '#F5E642' : '#334155' }}>
                 {opt.label}
               </button>
             ))}
@@ -169,8 +169,8 @@ export default function DFWGatedCommunityGuide() {
             <div style={{ marginTop: '24px', padding: '20px', background: '#0A1628', borderRadius: '10px' }}>
               <div style={{ fontSize: '20px', fontWeight: '800', color: '#F5E642', marginBottom: '12px' }}>{result.recommendation}</div>
               <div style={{ fontSize: '14px', color: '#CBD5E1', marginBottom: '12px' }}>{result.reasoning}</div>
-              <div style={{ background: '#112240', borderRadius: '8px', padding: '12px 16px', fontSize: '13px', color: '#94A3B8′ }}>
-                💰 Cost Premium: <strong style={{ color: '#F5E642′ }}>{result.monthlyCostPremium}</strong>
+              <div style={{ background: '#112240', borderRadius: '8px', padding: '12px 16px', fontSize: '13px', color: '#94A3B8' }}>
+                💰 Cost Premium: <strong style={{ color: '#F5E642' }}>{result.monthlyCostPremium}</strong>
               </div>
             </div>
           )}

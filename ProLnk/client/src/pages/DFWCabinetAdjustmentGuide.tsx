@@ -26,8 +26,8 @@ export default function DFWCabinetAdjustmentGuide() {
       <div style={{ maxWidth: 760, margin: '0 auto' }}>
         <div style={{ marginBottom: '2rem' }}>
           <span style={{ color: '#F5E642', fontSize: '2rem' }}>🚪🔧</span>
-          <h1 style={{ color: '#F5E642', fontSize: '1.8rem', margin: '0.5rem 0′ }}>DFW Cabinet Adjustment Guide</h1>
-          <p style={{ color: '#94a3b8′ }}>DFW heat and humidity cause wood expansion — most cabinet issues are adjustable, not replaceable.</p>
+          <h1 style={{ color: '#F5E642', fontSize: '1.8rem', margin: '0.5rem 0' }}>DFW Cabinet Adjustment Guide</h1>
+          <p style={{ color: '#94a3b8' }}>DFW heat and humidity cause wood expansion — most cabinet issues are adjustable, not replaceable.</p>
         </div>
 
         <div style={{ backgroundColor: '#0f2040', borderRadius: 10, padding: '1.5rem', marginBottom: '1.5rem' }}>
@@ -37,8 +37,8 @@ export default function DFWCabinetAdjustmentGuide() {
             ['European cup hinges are adjustable', 'Most DFW homes built after 2000 have 3-way adjustable hinges. All issues have a screw to fix them.'],
             ['Humidity affects drawer slides', 'DFW spring humidity (March–May) swells drawer boxes. Drawers that stuck last spring may not this year.'],
           ].map(([title, desc]) => (
-            <div key={title} style={{ marginBottom: '1rem', paddingLeft: '1rem', borderLeft: '3px solid #F5E642′ }}>
-              <div style={{ fontWeight: 'bold', color: '#e2e8f0′ }}>{title}</div>
+            <div key={title} style={{ marginBottom: '1rem', paddingLeft: '1rem', borderLeft: '3px solid #F5E642' }}>
+              <div style={{ fontWeight: 'bold', color: '#e2e8f0' }}>{title}</div>
               <div style={{ color: '#94a3b8', fontSize: '0.9rem' }}>{desc}</div>
             </div>
           ))}
@@ -51,7 +51,7 @@ export default function DFWCabinetAdjustmentGuide() {
             ['Depth screw (front/back)', 'Moves door closer to or farther from frame face. Adjusts gap consistency.'],
           ].map(([screw, fn]) => (
             <div key={screw} style={{ marginBottom: '1rem', padding: '0.8rem', backgroundColor: '#162d4a', borderRadius: 6 }}>
-              <div style={{ fontWeight: 'bold', color: '#F5E642′ }}>{screw}</div>
+              <div style={{ fontWeight: 'bold', color: '#F5E642' }}>{screw}</div>
               <div style={{ color: '#94a3b8', fontSize: '0.9rem', marginTop: '0.3rem' }}>{fn}</div>
             </div>
           ))}
@@ -60,21 +60,21 @@ export default function DFWCabinetAdjustmentGuide() {
         <div style={{ backgroundColor: '#0f2040', borderRadius: 10, padding: '1.5rem', marginBottom: '1.5rem' }}>
           <h2 style={{ color: '#F5E642', marginBottom: '1rem' }}>🔍 Get Your Adjustment Guide</h2>
           <div style={{ marginBottom: '1rem' }}>
-            <label style={{ display: 'block', marginBottom: '0.5rem', color: '#94a3b8′ }}>What’s the cabinet issue?</label>
+            <label style={{ display: 'block', marginBottom: '0.5rem', color: '#94a3b8' }}>What's the cabinet issue?</label>
             <select value={issue} onChange={e => setIssue(e.target.value)} style={{ width: '100%', padding: '0.6rem', backgroundColor: '#0A1628', color: '#e2e8f0', border: '1px solid #1e3a5f', borderRadius: 6 }}>
               <option value="">Select issue...</option>
               {issueTypes.map(i => <option key={i} value={i}>{i}</option>)}
             </select>
           </div>
           <div style={{ marginBottom: '1.5rem' }}>
-            <label style={{ display: 'block', marginBottom: '0.5rem', color: '#94a3b8′ }}>Approximate cabinet era:</label>
+            <label style={{ display: 'block', marginBottom: '0.5rem', color: '#94a3b8' }}>Approximate cabinet era:</label>
             <select value={era} onChange={e => setEra(e.target.value)} style={{ width: '100%', padding: '0.6rem', backgroundColor: '#0A1628', color: '#e2e8f0', border: '1px solid #1e3a5f', borderRadius: 6 }}>
               <option value="">Select era...</option>
               {cabinetEras.map(e => <option key={e} value={e}>{e}</option>)}
             </select>
           </div>
           {fix && (
-            <div style={{ backgroundColor: '#162d4a', borderRadius: 8, padding: '1.2rem', border: '1px solid #F5E642′ }}>
+            <div style={{ backgroundColor: '#162d4a', borderRadius: 8, padding: '1.2rem', border: '1px solid #F5E642' }}>
               {[['Hardware type', fix.hingeType], ['How to adjust', fix.adjustment], ['DFW climate factor', fix.climate], ['Adjust vs. replace', fix.replaceVsAdjust]].map(([label, val]) => (
                 <div key={label} style={{ marginBottom: '0.8rem' }}>
                   <div style={{ color: '#F5E642', fontSize: '0.85rem', marginBottom: '0.2rem' }}>{label}</div>

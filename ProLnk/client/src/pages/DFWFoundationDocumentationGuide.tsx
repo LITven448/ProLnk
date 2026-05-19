@@ -31,22 +31,22 @@ export default function DFWFoundationDocumentationGuide() {
       <div style={{ maxWidth: 760, margin: '0 auto' }}>
         <div style={{ color: '#1A5FE8', fontSize: 13, fontWeight: 700, letterSpacing: 2, marginBottom: 12 }}>PROLNK SELLER GUIDE</div>
         <h1 style={{ fontSize: 32, fontWeight: 800, marginBottom: 8, lineHeight: 1.2 }}>📄 DFW Foundation Documentation Guide</h1>
-        <p style={{ color: '#5A6B82', fontSize: 16, marginBottom: 32 }}>Foundation repairs don't kill DFW home sales — poor documentation does. Here’s exactly what to have ready before you list.</p>
+        <p style={{ color: '#5A6B82', fontSize: 16, marginBottom: 32 }}>Foundation repairs don't kill DFW home sales — poor documentation does. Here's exactly what to have ready before you list.</p>
 
-        <div style={{ background: '#EEF3FF', borderRadius: 12, padding: 20, marginBottom: 28, borderLeft: '4px solid #1A5FE8′ }}>
+        <div style={{ background: '#EEF3FF', borderRadius: 12, padding: 20, marginBottom: 28, borderLeft: '4px solid #1A5FE8' }}>
           <div style={{ fontWeight: 700, marginBottom: 8 }}>📌 DFW Market Reality</div>
-          <div style={{ color: '#3A4B62', fontSize: 14 }}>DFW's expansive clay soils cause foundation movement in a majority of homes. Buyers and lenders know this. A properly documented and repaired foundation is rarely a deal-killer — it’s the undocumented repairs that create problems.</div>
+          <div style={{ color: '#3A4B62', fontSize: 14 }}>DFW's expansive clay soils cause foundation movement in a majority of homes. Buyers and lenders know this. A properly documented and repaired foundation is rarely a deal-killer — it's the undocumented repairs that create problems.</div>
         </div>
 
         <div style={{ background: '#FFFFFF', borderRadius: 12, padding: 24, marginBottom: 24, boxShadow: '0 2px 12px rgba(0,0,0,0.08)' }}>
-          <h2 style={{ fontSize: 18, fontWeight: 700, marginBottom: 20, color: '#1A2537′ }}>🗂️ What Buyers and Lenders Want to See</h2>
+          <h2 style={{ fontSize: 18, fontWeight: 700, marginBottom: 20, color: '#1A2537' }}>🗂️ What Buyers and Lenders Want to See</h2>
           {[
             ['📐 Structural Engineer Report', 'An engineer (PE-licensed) must assess the foundation condition. Pre-repair and post-repair reports are both valuable. The post-repair report certifying stability is what lenders need for FHA/VA loans.'],
             ['🧾 Repair Invoices', 'Full invoices showing scope of work, contractor license number, and date. Pier count and locations matter — buyers will verify.'],
             ['🔄 Transferable Warranty', 'Most reputable DFW foundation companies (Olshan, Foundation Repair of Texas, etc.) offer 25-year transferable warranties. Confirm the warranty transfers at no cost.'],
             ['📸 Before/After Photos', 'Document the foundation state before and after repair. Photos showing completed piers with labels are highly reassuring to buyers.'],
           ].map(([title, desc]) => (
-            <div key={title as string} style={{ borderBottom: '1px solid #E8EDF5', padding: '16px 0′ }}>
+            <div key={title as string} style={{ borderBottom: '1px solid #E8EDF5', padding: '16px 0' }}>
               <div style={{ fontWeight: 700, marginBottom: 6 }}>{title}</div>
               <div style={{ color: '#5A6B82', fontSize: 14 }}>{desc}</div>
             </div>
@@ -61,7 +61,7 @@ export default function DFWFoundationDocumentationGuide() {
               {[['recent', 'Within 5 years'], ['mid', '5–15 years ago'], ['old', '15+ years ago']].map(([val, label]) => (
                 <button key={val} onClick={() => setRepairAge(val)}
                   style={{ flex: 1, padding: '10px 8px', borderRadius: 8, border: '2px solid', cursor: 'pointer', fontWeight: 600, fontSize: 13,
-                    borderColor: repairAge === val ? '#1A5FE8′ : '#E0E7EF', background: repairAge === val ? '#EEF3FF' : '#FFF', color: repairAge === val ? '#1A5FE8' : '#5A6B82' }}>
+                    borderColor: repairAge === val ? '#1A5FE8' : '#E0E7EF', background: repairAge === val ? '#EEF3FF' : '#FFF', color: repairAge === val ? '#1A5FE8' : '#5A6B82' }}>
                   {label}
                 </button>
               ))}
@@ -75,7 +75,7 @@ export default function DFWFoundationDocumentationGuide() {
                   {[['Yes', true], ['No', false]].map(([lbl, v]) => (
                     <button key={lbl as string} onClick={() => (setter as Function)(v)}
                       style={{ flex: 1, padding: '8px 0', borderRadius: 8, border: '2px solid', cursor: 'pointer', fontWeight: 600, fontSize: 13,
-                        borderColor: val === v ? '#1A5FE8′ : '#E0E7EF', background: val === v ? '#EEF3FF' : '#FFF', color: val === v ? '#1A5FE8' : '#5A6B82' }}>
+                        borderColor: val === v ? '#1A5FE8' : '#E0E7EF', background: val === v ? '#EEF3FF' : '#FFF', color: val === v ? '#1A5FE8' : '#5A6B82' }}>
                       {lbl as string}
                     </button>
                   ))}
@@ -92,14 +92,14 @@ export default function DFWFoundationDocumentationGuide() {
         {showResults && (
           <div style={{ background: '#FFFFFF', borderRadius: 12, padding: 24, boxShadow: '0 2px 12px rgba(0,0,0,0.08)' }}>
             <h2 style={{ fontSize: 18, fontWeight: 700, marginBottom: 16 }}>✅ Your Documentation Checklist</h2>
-            <div style={{ padding: 16, background: docScore === 'full' ? '#EEFAF3′ : docScore === ’partial' ? '#FFF9E8′ : '#FFF0F0', borderRadius: 8, marginBottom: 20 }}>
+            <div style={{ padding: 16, background: docScore === 'full' ? '#EEFAF3' : docScore === 'partial' ? '#FFF9E8' : '#FFF0F0', borderRadius: 8, marginBottom: 20 }}>
               <div style={{ fontWeight: 700, marginBottom: 4 }}>📊 Expected Buyer Response</div>
-              <div style={{ fontSize: 14, color: '#3A4B62′ }}>{buyerResponses[docScore]}</div>
+              <div style={{ fontSize: 14, color: '#3A4B62' }}>{buyerResponses[docScore]}</div>
             </div>
             <ul style={{ listStyle: 'none', padding: 0 }}>
               {docs.map((item, i) => (
-                <li key={i} style={{ padding: '10px 0', borderBottom: '1px solid #E8EDF5', fontSize: 14, display: 'flex', gap: 10, color: item.startsWith('⚠️') ? '#D4550A' : '#1A2537′ }}>
-                  {!item.startsWith('⚠️') && <span style={{ color: '#1A5FE8′ }}>▸</span>}{item}
+                <li key={i} style={{ padding: '10px 0', borderBottom: '1px solid #E8EDF5', fontSize: 14, display: 'flex', gap: 10, color: item.startsWith('⚠️') ? '#D4550A' : '#1A2537' }}>
+                  {!item.startsWith('⚠️') && <span style={{ color: '#1A5FE8' }}>▸</span>}{item}
                 </li>
               ))}
             </ul>

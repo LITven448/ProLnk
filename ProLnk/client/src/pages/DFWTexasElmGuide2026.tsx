@@ -31,7 +31,7 @@ export default function DFWTexasElmGuide2026() {
 
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '2rem' }}>
           {[{ icon: '📏', label: 'Height', value: '60–70 ft' }, { icon: '💧', label: 'Drought Tolerant', value: 'After 3 Years' }, { icon: '🌡️', label: 'AC Savings', value: 'Up to 30%' }, { icon: '🐛', label: 'Watch For', value: 'Elm Leaf Beetle' }].map(s => (
-            <div key={s.label} style={{ background: '#1e293b', borderRadius: '8px', padding: '1rem', border: '1px solid #334155′ }}>
+            <div key={s.label} style={{ background: '#1e293b', borderRadius: '8px', padding: '1rem', border: '1px solid #334155' }}>
               <div style={{ fontSize: '1.5rem' }}>{s.icon}</div>
               <div style={{ color: '#94a3b8', fontSize: '.8rem' }}>{s.label}</div>
               <div style={{ color: '#F5E642', fontWeight: 700 }}>{s.value}</div>
@@ -45,7 +45,7 @@ export default function DFWTexasElmGuide2026() {
             <label style={{ color: '#94a3b8', display: 'block', marginBottom: '.5rem' }}>Shade Goal</label>
             <div style={{ display: 'flex', gap: '.5rem', flexWrap: 'wrap' }}>
               {['cooling', 'privacy', 'shade'].map(g => (
-                <button key={g} onClick={() => setShadeGoal(g)} style={{ padding: '.5rem 1rem', borderRadius: '6px', border: 'none', cursor: 'pointer', background: shadeGoal === g ? '#F5E642′ : '#334155', color: shadeGoal === g ? '#0A1628' : '#fff', fontWeight: 600, textTransform: ’capitalize' }}>{g}</button>
+                <button key={g} onClick={() => setShadeGoal(g)} style={{ padding: '.5rem 1rem', borderRadius: '6px', border: 'none', cursor: 'pointer', background: shadeGoal === g ? '#F5E642' : '#334155', color: shadeGoal === g ? '#0A1628' : '#fff', fontWeight: 600, textTransform: 'capitalize' }}>{g}</button>
               ))}
             </div>
           </div>
@@ -53,16 +53,16 @@ export default function DFWTexasElmGuide2026() {
             <label style={{ color: '#94a3b8', display: 'block', marginBottom: '.5rem' }}>Lot Size</label>
             <div style={{ display: 'flex', gap: '.5rem' }}>
               {['small', 'medium', 'large'].map(s => (
-                <button key={s} onClick={() => setLotSize(s)} style={{ padding: '.5rem 1rem', borderRadius: '6px', border: 'none', cursor: 'pointer', background: lotSize === s ? '#F5E642′ : '#334155', color: lotSize === s ? '#0A1628' : '#fff', fontWeight: 600, textTransform: ’capitalize' }}>{s}</button>
+                <button key={s} onClick={() => setLotSize(s)} style={{ padding: '.5rem 1rem', borderRadius: '6px', border: 'none', cursor: 'pointer', background: lotSize === s ? '#F5E642' : '#334155', color: lotSize === s ? '#0A1628' : '#fff', fontWeight: 600, textTransform: 'capitalize' }}>{s}</button>
               ))}
             </div>
           </div>
-          <div style={{ background: '#0A1628', borderRadius: '8px', padding: '1rem', color: '#e2e8f0′ }}>{placements[shadeGoal][lotSize]}</div>
+          <div style={{ background: '#0A1628', borderRadius: '8px', padding: '1rem', color: '#e2e8f0' }}>{placements[shadeGoal][lotSize]}</div>
         </div>
 
         <div style={{ background: '#1e293b', borderRadius: '12px', padding: '1.5rem', marginBottom: '1.5rem' }}>
           <h2 style={{ color: '#F5E642', marginBottom: '1rem' }}>⚠️ Elm Leaf Beetle — Not Dutch Elm Disease</h2>
-          <p style={{ color: '#94a3b8′ }}>Cedar Elms in DFW are NOT susceptible to Dutch Elm Disease (American Elm risk). Elm Leaf Beetle causes cosmetic skeletonizing — rarely fatal. Treat with systemic imidacloprid in spring if infestation is severe.</p>
+          <p style={{ color: '#94a3b8' }}>Cedar Elms in DFW are NOT susceptible to Dutch Elm Disease (American Elm risk). Elm Leaf Beetle causes cosmetic skeletonizing — rarely fatal. Treat with systemic imidacloprid in spring if infestation is severe.</p>
         </div>
 
         <div style={{ background: '#F5E642', borderRadius: '12px', padding: '1.5rem', textAlign: 'center' }}>

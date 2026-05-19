@@ -30,7 +30,7 @@ export default function DFWCommuteCostGuide2026() {
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 16, marginBottom: 32 }}>
           {[
             { icon: '🚗', label: 'Avg DFW Commute', value: '32 min', sub: 'One-way, all modes' },
-            { icon: '🛣️', label: 'Major Congested Highways', value: '4 corridors', sub: 'I-35, I-635, I-75, SH-121′ },
+            { icon: '🛣️', label: 'Major Congested Highways', value: '4 corridors', sub: 'I-35, I-635, I-75, SH-121' },
             { icon: '🚊', label: 'DART Rail Coverage', value: 'Limited', sub: 'Best for downtown Dallas routes' },
           ].map((card) => (
             <div key={card.label} style={{ background: '#132040', borderRadius: 12, padding: '20px 18px', border: '1px solid #1E3A5F' }}>
@@ -62,7 +62,7 @@ export default function DFWCommuteCostGuide2026() {
             <div style={{ fontWeight: 700, fontSize: 16, marginBottom: 8 }}>Best suburbs for {loc.area}</div>
             <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap', marginBottom: 10 }}>
               {loc.suburbs.map((s) => (
-                <span key={s} style={{ background: '#1E3A5F', borderRadius: 6, padding: '4px 10px', fontSize: 13, color: '#F5E642′ }}>{s}</span>
+                <span key={s} style={{ background: '#1E3A5F', borderRadius: 6, padding: '4px 10px', fontSize: 13, color: '#F5E642' }}>{s}</span>
               ))}
             </div>
             <div style={{ color: '#94A3B8', fontSize: 13 }}>Best highway: <strong style={{ color: '#fff' }}>{loc.highway}</strong> · Avg commute: <strong style={{ color: '#22C55E' }}>{loc.avgCommute}</strong></div>

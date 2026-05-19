@@ -1,7 +1,7 @@
 import { useState } from 'react';
 
 const GRASS_TYPES = ['Bermuda', 'St. Augustine', 'Zoysia', 'Tall Fescue'];
-const CONDITIONS = ['Compacted — water pools after rain', 'Thatch over 0.5″ thick', 'Thin and struggling despite fertilization', 'Never aerated', 'Recovering from renovation'];
+const CONDITIONS = ['Compacted — water pools after rain', 'Thatch over 0.5" thick', 'Thin and struggling despite fertilization', 'Never aerated', 'Recovering from renovation'];
 
 type AerationPlan = { timing: string; method: string; benefits: string[]; cost: string; schedule: string };
 
@@ -9,12 +9,12 @@ const PLANS: Record<string, Record<string, AerationPlan>> = {
   Bermuda: {
     'Compacted — water pools after rain': {
       timing: 'April–May (critical window)',
-      method: 'Core aeration — pull 3″ plugs from DFW clay',
+      method: 'Core aeration — pull 3" plugs from DFW clay',
       benefits: ['Water penetrates instead of running off', 'Roots reach deeper into soil profile', 'Fertilizer reaches root zone instead of sitting on surface', 'DFW clay loosens and allows gas exchange'],
       cost: '$75–$200 for typical DFW lot',
       schedule: 'Aerate annually in late April for best results in Bermuda',
     },
-    'Thatch over 0.5″ thick': {
+    'Thatch over 0.5" thick': {
       timing: 'May (after green-up, before heat)',
       method: 'Dethatch first, then core aerate same day',
       benefits: ['Removes thatch barrier blocking water and air', 'Cores create channels through remaining thatch', 'Allows fertilizer to reach soil directly', 'Bermuda rebounds aggressively after combined treatment'],
@@ -58,7 +58,7 @@ const PLANS: Record<string, Record<string, AerationPlan>> = {
       cost: '$150–$300 with overseeding',
       schedule: 'Annual fall treatment',
     },
-    'Thatch over 0.5″ thick': {
+    'Thatch over 0.5" thick': {
       timing: 'September only',
       method: 'Core aeration (avoid aggressive dethatching of fescue)',
       benefits: ['Fescue is bunch-type — dethatching can kill it', 'Cores alone break up thatch layer safely', 'Follow with overseeding'],
@@ -117,7 +117,7 @@ export default function DFWLawnAerationGuide() {
             ['🌾 Tall Fescue', 'September–October ONLY — fall is fescue\’s growing season in DFW'],
             ['❄️ Never aerate dormant grass', 'Aerating Bermuda in fall/winter causes unnecessary stress and slow recovery'],
             ['🏡 Core aeration vs spike', 'Core aeration (pulls plugs) is always better — spike aeration compacts surrounding clay more'],
-            ['📏 Plug depth matters', 'Quality machines pull 2.5–3″ plugs — shallow plugs don\’t help DFW clay'],
+            ['📏 Plug depth matters', 'Quality machines pull 2.5–3" plugs — shallow plugs don\’t help DFW clay'],
           ].map(([label, detail], i) => (
             <div key={i} style={{ marginBottom: 12 }}>
               <div style={{ color: '#F5E642', fontSize: 13, fontWeight: 600 }}>{label}</div>
@@ -163,7 +163,7 @@ export default function DFWLawnAerationGuide() {
             <div style={{ marginBottom: 16 }}>
               <div style={{ color: '#F5E642', fontSize: 13, fontWeight: 600, marginBottom: 8 }}>Expected Benefits</div>
               {plan.benefits.map((b, i) => (
-                <div key={i} style={{ color: '#cbd5e1', fontSize: 13, marginBottom: 6, paddingLeft: 12, borderLeft: '2px solid #F5E642′ }}>{b}</div>
+                <div key={i} style={{ color: '#cbd5e1', fontSize: 13, marginBottom: 6, paddingLeft: 12, borderLeft: '2px solid #F5E642' }}>{b}</div>
               ))}
             </div>
             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12 }}>

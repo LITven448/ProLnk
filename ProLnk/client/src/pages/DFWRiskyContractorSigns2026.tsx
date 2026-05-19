@@ -12,7 +12,7 @@ const approaches = [
 export default function DFWRiskyContractorSigns2026() {
   const [selected, setSelected] = useState<string | null>(null);
   const active = approaches.find(a => a.id === selected);
-  const riskColor = (r: number) => r >= 9 ? '#ef4444′ : r >= 7 ? '#f97316' : '#eab308';
+  const riskColor = (r: number) => r >= 9 ? '#ef4444' : r >= 7 ? '#f97316' : '#eab308';
 
   return (
     <div style={{ minHeight: '100vh', background: '#0A1628', color: '#fff', fontFamily: 'system-ui, sans-serif', padding: '2rem' }}>
@@ -25,10 +25,10 @@ export default function DFWRiskyContractorSigns2026() {
           <p style={{ margin: 0, color: '#fca5a5', lineHeight: 1.6 }}>⚠️ <strong>DFW Storm Season Warning:</strong> After a major hail or wind event, unqualified contractors can appear within hours. Never feel pressured to decide on-the-spot. A legitimate contractor will still be in business tomorrow.</p>
         </div>
 
-        <h2 style={{ fontSize: '1.1rem', fontWeight: 700, marginBottom: '1rem', color: '#F5E642′ }}>Select a contractor approach to see the risk score:</h2>
+        <h2 style={{ fontSize: '1.1rem', fontWeight: 700, marginBottom: '1rem', color: '#F5E642' }}>Select a contractor approach to see the risk score:</h2>
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0.75rem', marginBottom: '1.5rem' }}>
           {approaches.map(a => (
-            <button key={a.id} onClick={() => setSelected(selected === a.id ? null : a.id)} style={{ background: selected === a.id ? '#F5E642′ : '#112240', color: selected === a.id ? '#0A1628' : '#fff', border: ’none', borderRadius: 10, padding: '0.9rem', cursor: 'pointer', textAlign: 'left', fontWeight: 600, fontSize: '0.87rem', transition: 'all 0.2s' }}>{a.label}</button>
+            <button key={a.id} onClick={() => setSelected(selected === a.id ? null : a.id)} style={{ background: selected === a.id ? '#F5E642' : '#112240', color: selected === a.id ? '#0A1628' : '#fff', border: 'none', borderRadius: 10, padding: '0.9rem', cursor: 'pointer', textAlign: 'left', fontWeight: 600, fontSize: '0.87rem', transition: 'all 0.2s' }}>{a.label}</button>
           ))}
         </div>
 
@@ -48,7 +48,7 @@ export default function DFWRiskyContractorSigns2026() {
           </div>
         )}
 
-        <div style={{ background: '#112240', borderRadius: 12, padding: '1.5rem', borderLeft: '4px solid #F5E642′ }}>
+        <div style={{ background: '#112240', borderRadius: 12, padding: '1.5rem', borderLeft: '4px solid #F5E642' }}>
           <h3 style={{ color: '#F5E642', marginBottom: '0.5rem' }}>✅ How ProLnk Eliminates Every Red Flag</h3>
           <p style={{ color: '#94a3b8', lineHeight: 1.6, marginBottom: '0.75rem' }}>Every contractor in the ProLnk network is verified before they receive a single lead: Texas license confirmed, insurance on file, local business address required, and background checked. No exceptions.</p>
           <p style={{ color: '#94a3b8', lineHeight: 1.6, margin: 0 }}>No door-to-door. No out-of-state plates. No cash-only. No pressure. Just licensed professionals competing for your business on merit.</p>

@@ -111,7 +111,7 @@ export default function HomeMaintenanceSavingsGuide() {
             Home Maintenance Savings Guide
           </h1>
           <p style={{ margin: '0 0 6px', color: '#94A3B8', fontSize: '15px' }}>
-            DFW homeowners spend avg <strong style={{ color: '#F1F5F9′ }}>$4,200/year</strong> on maintenance.
+            DFW homeowners spend avg <strong style={{ color: '#F1F5F9' }}>$4,200/year</strong> on maintenance.
             These strategies reduce it by 30-40%.
           </p>
           <p style={{ margin: 0, color: '#64748B', fontSize: '13px' }}>
@@ -133,7 +133,7 @@ export default function HomeMaintenanceSavingsGuide() {
             <div style={{ fontSize: '12px', color: '#64748B', fontWeight: '600', letterSpacing: '0.06em', marginBottom: '6px' }}>
               TOTAL POTENTIAL SAVINGS
             </div>
-            <div style={{ fontSize: '36px', fontWeight: '800', color: '#34D399′ }}>
+            <div style={{ fontSize: '36px', fontWeight: '800', color: '#34D399' }}>
               ${totalPotential.toLocaleString()}/yr
             </div>
             <div style={{ fontSize: '13px', color: '#64748B' }}>if you apply all 10 strategies</div>
@@ -142,7 +142,7 @@ export default function HomeMaintenanceSavingsGuide() {
             <div style={{ fontSize: '12px', color: '#64748B', fontWeight: '600', letterSpacing: '0.06em', marginBottom: '6px' }}>
               YOUR SELECTED SAVINGS
             </div>
-            <div style={{ fontSize: '36px', fontWeight: '800', color: selectedCount > 0 ? '#FBBF24′ : '#1E3A5F' }}>
+            <div style={{ fontSize: '36px', fontWeight: '800', color: selectedCount > 0 ? '#FBBF24' : '#1E3A5F' }}>
               ${totalSelected.toLocaleString()}/yr
             </div>
             <div style={{ fontSize: '13px', color: '#64748B' }}>{selectedCount} strategies selected</div>
@@ -159,7 +159,7 @@ export default function HomeMaintenanceSavingsGuide() {
                 alignItems: 'flex-start',
                 gap: '14px',
                 padding: '16px',
-                background: active[st.id] ? '#0F2918′ : '#0F1E38',
+                background: active[st.id] ? '#0F2918' : '#0F1E38',
                 borderRadius: '12px',
                 border: `1px solid ${active[st.id] ? '#166534' : '#1E3A5F'}`,
                 cursor: 'pointer',
@@ -186,15 +186,15 @@ export default function HomeMaintenanceSavingsGuide() {
               <div style={{ flex: 1 }}>
                 <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '4px', flexWrap: 'wrap' }}>
                   <span style={{ fontSize: '18px' }}>{st.emoji}</span>
-                  <span style={{ fontSize: '15px', fontWeight: '700', color: active[st.id] ? '#6EE7B7′ : '#F1F5F9' }}>
+                  <span style={{ fontSize: '15px', fontWeight: '700', color: active[st.id] ? '#6EE7B7' : '#F1F5F9' }}>
                     {st.title}
                   </span>
                   <span style={{
                     marginLeft: 'auto',
                     fontSize: '13px',
                     fontWeight: '700',
-                    color: active[st.id] ? '#34D399′ : '#64748B',
-                    background: active[st.id] ? '#0F2918′ : '#0A1628',
+                    color: active[st.id] ? '#34D399' : '#64748B',
+                    background: active[st.id] ? '#0F2918' : '#0A1628',
                     border: `1px solid ${active[st.id] ? '#166534' : '#1E3A5F'}`,
                     padding: '2px 10px',
                     borderRadius: '20px',

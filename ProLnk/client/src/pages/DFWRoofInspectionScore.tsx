@@ -29,9 +29,9 @@ const weights = [
 function grade(score: number) {
   if (score <= 12) return { letter: 'A', label: 'Excellent', color: '#22C55E' };
   if (score <= 30) return { letter: 'B', label: 'Good', color: '#86EFAC' };
-  if (score <= 60) return { letter: 'C', label: 'Fair — Monitor Closely', color: '#F5E642′ };
-  if (score <= 95) return { letter: 'D', label: 'Poor — Replace Soon', color: '#F97316′ };
-  return { letter: 'F', label: 'Failing — Immediate Replacement', color: '#EF4444′ };
+  if (score <= 60) return { letter: 'C', label: 'Fair — Monitor Closely', color: '#F5E642' };
+  if (score <= 95) return { letter: 'D', label: 'Poor — Replace Soon', color: '#F97316' };
+  return { letter: 'F', label: 'Failing — Immediate Replacement', color: '#EF4444' };
 }
 
 function hailRating(a: number[]) {
@@ -88,7 +88,7 @@ export default function DFWRoofInspectionScore() {
               <div style={{ fontWeight: 600, marginBottom: '0.5rem', fontSize: '0.95rem' }}>{qi + 1}. {item.q}</div>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0.4rem' }}>
                 {item.opts.map((opt, ai) => (
-                  <button key={ai} onClick={() => setAnswer(qi, ai)} style={{ background: answers[qi] === ai ? '#F5E642′ : '#1A3050', color: answers[qi] === ai ? '#0A1628' : '#E8F0FE', border: '1px solid #2A4060', borderRadius: 6, padding: '0.5rem 0.75rem', cursor: ’pointer', fontSize: '0.82rem', textAlign: 'left', fontWeight: answers[qi] === ai ? 700 : 400 }}>
+                  <button key={ai} onClick={() => setAnswer(qi, ai)} style={{ background: answers[qi] === ai ? '#F5E642' : '#1A3050', color: answers[qi] === ai ? '#0A1628' : '#E8F0FE', border: '1px solid #2A4060', borderRadius: 6, padding: '0.5rem 0.75rem', cursor: 'pointer', fontSize: '0.82rem', textAlign: 'left', fontWeight: answers[qi] === ai ? 700 : 400 }}>
                     {opt}
                   </button>
                 ))}
@@ -108,11 +108,11 @@ export default function DFWRoofInspectionScore() {
             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0.75rem', marginBottom: '1.25rem' }}>
               <div style={{ background: '#1A3050', borderRadius: 8, padding: '1rem' }}>
                 <div style={{ color: result.hail.color, fontWeight: 700, marginBottom: '0.4rem' }}>⛈️ {result.hail.label}</div>
-                <div style={{ fontSize: '0.85rem', color: '#94A3B8′ }}>{result.hail.desc}</div>
+                <div style={{ fontSize: '0.85rem', color: '#94A3B8' }}>{result.hail.desc}</div>
               </div>
               <div style={{ background: '#1A3050', borderRadius: 8, padding: '1rem' }}>
                 <div style={{ color: result.uv.color, fontWeight: 700, marginBottom: '0.4rem' }}>☀️ {result.uv.label}</div>
-                <div style={{ fontSize: '0.85rem', color: '#94A3B8′ }}>{result.uv.desc}</div>
+                <div style={{ fontSize: '0.85rem', color: '#94A3B8' }}>{result.uv.desc}</div>
               </div>
             </div>
             <h3 style={{ color: '#F5E642', marginBottom: '0.75rem' }}>Priority Actions</h3>

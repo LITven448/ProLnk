@@ -56,7 +56,7 @@ export default function PartnerAnnualIncomeForecaster() {
           </p>
         </div>
 
-        <div style={{ backgroundColor: '#fff', borderRadius: 12, padding: 24, marginBottom: 24, border: '1px solid #E2E8F0′ }}>
+        <div style={{ backgroundColor: '#fff', borderRadius: 12, padding: 24, marginBottom: 24, border: '1px solid #E2E8F0' }}>
           <h2 style={{ fontWeight: 700, color: '#0A1628', fontSize: 16, marginTop: 0, marginBottom: 20 }}>🎛️ Your Inputs</h2>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 24 }}>
             {[
@@ -79,7 +79,7 @@ export default function PartnerAnnualIncomeForecaster() {
                   step={step}
                   value={value}
                   onChange={e => set(Number(e.target.value))}
-                  style={{ width: '100%', accentColor: '#F5E642′ }}
+                  style={{ width: '100%', accentColor: '#F5E642' }}
                 />
               </div>
             ))}
@@ -88,21 +88,21 @@ export default function PartnerAnnualIncomeForecaster() {
 
         <div style={{ backgroundColor: '#0A1628', borderRadius: 12, padding: 24, marginBottom: 24, color: '#fff' }}>
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 4 }}>
-            <span style={{ fontSize: 15, color: '#94A3B8′ }}>Projected Annual Income</span>
-            <span style={{ fontSize: 14, color: '#94A3B8′ }}>at current trajectory</span>
+            <span style={{ fontSize: 15, color: '#94A3B8' }}>Projected Annual Income</span>
+            <span style={{ fontSize: 14, color: '#94A3B8' }}>at current trajectory</span>
           </div>
-          <div style={{ fontSize: 44, fontWeight: 800, color: '#F5E642′ }}>{fmt(annual)}</div>
-          <p style={{ color: '#94A3B8', fontSize: 13, margin: '8px 0 0′ }}>
+          <div style={{ fontSize: 44, fontWeight: 800, color: '#F5E642' }}>{fmt(annual)}</div>
+          <p style={{ color: '#94A3B8', fontSize: 13, margin: '8px 0 0' }}>
             ⚡ Network income doubles every 2–3 months when you are actively recruiting. Month 12 alone: {fmt(incomes[11])}
           </p>
         </div>
 
-        <div style={{ backgroundColor: '#fff', borderRadius: 12, padding: 24, marginBottom: 24, border: '1px solid #E2E8F0′ }}>
+        <div style={{ backgroundColor: '#fff', borderRadius: 12, padding: 24, marginBottom: 24, border: '1px solid #E2E8F0' }}>
           <h2 style={{ fontWeight: 700, color: '#0A1628', fontSize: 16, marginTop: 0, marginBottom: 20 }}>📊 Month-by-Month Projection</h2>
           <div style={{ overflowX: 'auto' }}>
             <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: 14 }}>
               <thead>
-                <tr style={{ borderBottom: '2px solid #E2E8F0′ }}>
+                <tr style={{ borderBottom: '2px solid #E2E8F0' }}>
                   <th style={{ textAlign: 'left', padding: '6px 8px', color: '#64748B', fontWeight: 600 }}>Month</th>
                   <th style={{ textAlign: 'right', padding: '6px 8px', color: '#64748B', fontWeight: 600 }}>Income</th>
                   <th style={{ textAlign: 'left', padding: '6px 8px', color: '#64748B', fontWeight: 600, width: '50%' }}>Growth Bar</th>
@@ -110,7 +110,7 @@ export default function PartnerAnnualIncomeForecaster() {
               </thead>
               <tbody>
                 {incomes.map((inc, i) => (
-                  <tr key={i} style={{ borderBottom: '1px solid #F1F5F9′ }}>
+                  <tr key={i} style={{ borderBottom: '1px solid #F1F5F9' }}>
                     <td style={{ padding: '8px 8px', color: '#0A1628', fontWeight: 600 }}>{monthLabels[i]}</td>
                     <td style={{ padding: '8px 8px', color: '#0A1628', textAlign: 'right', fontWeight: 700 }}>{fmt(inc)}</td>
                     <td style={{ padding: '8px 8px' }}>
@@ -126,7 +126,7 @@ export default function PartnerAnnualIncomeForecaster() {
         </div>
 
         <div style={{ backgroundColor: '#FFF8E1', border: '1px solid #F5E642', borderRadius: 12, padding: 20 }}>
-          <p style={{ margin: 0, fontSize: 13, color: '#0A1628′ }}>
+          <p style={{ margin: 0, fontSize: 13, color: '#0A1628' }}>
             <strong>⚠️ Disclaimer:</strong> These projections are illustrative estimates based on typical network growth patterns. Actual results depend on your activity, market conditions, and the performance of your recruited partners. Income is not guaranteed.
           </p>
         </div>

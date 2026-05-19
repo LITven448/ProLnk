@@ -25,7 +25,7 @@ export default function DFWHVACSystemTroubleshooting2026() {
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '10px' }}>
             {symptoms.map(s => (
               <button key={s.id} onClick={() => { setSymptom(s.id); setStep(0); }}
-                style={{ background: symptom === s.id ? '#F5E642′ : '#1e2d45', color: symptom === s.id ? '#0A1628' : '#fff', border: ’none', borderRadius: '10px', padding: '14px', cursor: 'pointer', fontWeight: 700, fontSize: '14px', textAlign: 'left' }}>
+                style={{ background: symptom === s.id ? '#F5E642' : '#1e2d45', color: symptom === s.id ? '#0A1628' : '#fff', border: 'none', borderRadius: '10px', padding: '14px', cursor: 'pointer', fontWeight: 700, fontSize: '14px', textAlign: 'left' }}>
                 {s.label}
               </button>
             ))}
@@ -37,7 +37,7 @@ export default function DFWHVACSystemTroubleshooting2026() {
             <p style={{ color: '#F5E642', fontWeight: 700, fontSize: '13px', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: '16px' }}>5-Step Diagnosis</p>
             {selected.steps.map((s, i) => (
               <div key={i} onClick={() => setStep(i)} style={{ display: 'flex', alignItems: 'flex-start', gap: '12px', marginBottom: '12px', cursor: 'pointer', opacity: step === i ? 1 : 0.6 }}>
-                <div style={{ background: step === i ? '#F5E642′ : '#334155', color: step === i ? '#0A1628' : '#fff', borderRadius: '50%', width: '26px', height: '26px', display: ’flex', alignItems: 'center', justifyContent: 'center', fontWeight: 800, fontSize: '13px', flexShrink: 0 }}>{i + 1}</div>
+                <div style={{ background: step === i ? '#F5E642' : '#334155', color: step === i ? '#0A1628' : '#fff', borderRadius: '50%', width: '26px', height: '26px', display: 'flex', alignItems: 'center', justifyContent: 'center', fontWeight: 800, fontSize: '13px', flexShrink: 0 }}>{i + 1}</div>
                 <p style={{ color: step === i ? '#fff' : '#94a3b8', fontSize: '14px', margin: 0, paddingTop: '3px' }}>{s}</p>
               </div>
             ))}

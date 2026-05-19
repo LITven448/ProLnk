@@ -7,18 +7,18 @@ export default function DFWDrywallTextureGuide() {
 
   const guide = {
     skipTrowel: {
-      small: { technique: 'Hand-apply with 6″ trowel, pull at 15° angle', tools: 'Trowel, joint compound, sanding sponge', diy: true, note: 'Skip trowel is forgiving — DFW\’s most DIY-friendly texture' },
-      medium: { technique: 'Multiple passes with trowel, feather edges 8″ out', tools: '6″ and 10″ trowel, mud pan, sanding block', diy: true, note: 'Practice on cardboard first to match your existing skip pattern' },
+      small: { technique: 'Hand-apply with 6" trowel, pull at 15° angle', tools: 'Trowel, joint compound, sanding sponge', diy: true, note: 'Skip trowel is forgiving — DFW\’s most DIY-friendly texture' },
+      medium: { technique: 'Multiple passes with trowel, feather edges 8" out', tools: '6" and 10" trowel, mud pan, sanding block', diy: true, note: 'Practice on cardboard first to match your existing skip pattern' },
       large: { technique: 'Full section re-texture recommended', tools: 'All trowels + spray equipment', diy: false, note: 'Large areas are hard to blend — consider professional for rooms over 10 sq ft' },
     },
     orangePeel: {
-      small: { technique: 'Homax spray can — 2–3 light coats from 18″', tools: 'Homax Orange Peel spray can, primer', diy: true, note: 'Test spray pattern on cardboard to match bead size before applying' },
+      small: { technique: 'Homax spray can — 2–3 light coats from 18"', tools: 'Homax Orange Peel spray can, primer', diy: true, note: 'Test spray pattern on cardboard to match bead size before applying' },
       medium: { technique: 'Spray can with multiple light passes', tools: 'Homax can, tape, primer, sanding sponge', diy: true, note: 'Let each coat tack before adding next — DFW humidity slows this' },
       large: { technique: 'Hopper gun with air compressor at 25–30 PSI', tools: 'Hopper gun, compressor, joint compound thinned 50%', diy: false, note: 'Professional sprayers achieve much more consistent results on large areas' },
     },
     smooth: {
-      small: { technique: 'Skim coat with all-purpose compound, sand to 220 grit', tools: '12″ knife, compound, fine sanding sponge', diy: true, note: 'Smooth texture shows every imperfection — prime before painting' },
-      medium: { technique: '2–3 skim coats, feather wide, sand between each', tools: '12–18″ finishing knife, pole sander, 220 grit', diy: false, note: 'Medium smooth patches are very hard to hide — professional recommended' },
+      small: { technique: 'Skim coat with all-purpose compound, sand to 220 grit', tools: '12" knife, compound, fine sanding sponge', diy: true, note: 'Smooth texture shows every imperfection — prime before painting' },
+      medium: { technique: '2–3 skim coats, feather wide, sand between each', tools: '12–18" finishing knife, pole sander, 220 grit', diy: false, note: 'Medium smooth patches are very hard to hide — professional recommended' },
       large: { technique: 'Full wall skim coat or drywall replacement', tools: 'Full skim coat setup or new drywall', diy: false, note: 'Large smooth texture repairs almost always require professional finishing' },
     },
     popcorn: {
@@ -64,7 +64,7 @@ export default function DFWDrywallTextureGuide() {
           <h2 style={{ color: '#F5E642', fontSize: 18, marginBottom: 16 }}>🔬 How to Identify Your Texture</h2>
           {[
             { step: '1', title: 'Take a side-light photo', desc: 'Hold a flashlight at a sharp angle to the wall and photograph. Texture pops in raking light.' },
-            { step: '2', title: 'Measure the pattern', desc: 'Skip trowel: 2–4″ patterns. Orange peel: 1/8″–1/4″ bumps. Smooth: no depth. Popcorn: dense coverage.' },
+            { step: '2', title: 'Measure the pattern', desc: 'Skip trowel: 2–4" patterns. Orange peel: 1/8"–1/4" bumps. Smooth: no depth. Popcorn: dense coverage.' },
             { step: '3', title: 'Check the era', desc: 'DFW homes pre-1990: likely popcorn ceilings, skip trowel walls. 1990–2010: orange peel. 2010+: smooth or skip trowel.' },
           ].map(item => (
             <div key={item.step} style={{ display: 'flex', gap: 16, marginBottom: 16 }}>
@@ -80,13 +80,13 @@ export default function DFWDrywallTextureGuide() {
             <div>
               <label style={{ fontSize: 13, color: '#94a3b8', display: 'block', marginBottom: 8 }}>EXISTING TEXTURE</label>
               {textures.map(opt => (
-                <button key={opt.val} onClick={() => setTextureType(opt.val)} style={{ display: 'block', width: '100%', padding: '10px 14px', marginBottom: 8, borderRadius: 8, border: `2px solid ${textureType === opt.val ? '#F5E642' : '#1e3a5f'}`, backgroundColor: textureType === opt.val ? '#F5E642′ : ’transparent', color: textureType === opt.val ? '#0A1628′ : '#fff', cursor: ’pointer', textAlign: 'left', fontSize: 14 }}>{opt.icon} {opt.label}</button>
+                <button key={opt.val} onClick={() => setTextureType(opt.val)} style={{ display: 'block', width: '100%', padding: '10px 14px', marginBottom: 8, borderRadius: 8, border: `2px solid ${textureType === opt.val ? '#F5E642' : '#1e3a5f'}`, backgroundColor: textureType === opt.val ? '#F5E642' : 'transparent', color: textureType === opt.val ? '#0A1628' : '#fff', cursor: 'pointer', textAlign: 'left', fontSize: 14 }}>{opt.icon} {opt.label}</button>
               ))}
             </div>
             <div>
               <label style={{ fontSize: 13, color: '#94a3b8', display: 'block', marginBottom: 8 }}>REPAIR AREA</label>
               {[{ val: 'small', label: 'Under 4 sq ft' }, { val: 'medium', label: '4–10 sq ft' }, { val: 'large', label: 'Over 10 sq ft' }].map(opt => (
-                <button key={opt.val} onClick={() => setRepairArea(opt.val)} style={{ display: 'block', width: '100%', padding: '10px 14px', marginBottom: 8, borderRadius: 8, border: `2px solid ${repairArea === opt.val ? '#F5E642' : '#1e3a5f'}`, backgroundColor: repairArea === opt.val ? '#F5E642′ : ’transparent', color: repairArea === opt.val ? '#0A1628′ : '#fff', cursor: ’pointer', textAlign: 'left', fontSize: 14 }}>{opt.label}</button>
+                <button key={opt.val} onClick={() => setRepairArea(opt.val)} style={{ display: 'block', width: '100%', padding: '10px 14px', marginBottom: 8, borderRadius: 8, border: `2px solid ${repairArea === opt.val ? '#F5E642' : '#1e3a5f'}`, backgroundColor: repairArea === opt.val ? '#F5E642' : 'transparent', color: repairArea === opt.val ? '#0A1628' : '#fff', cursor: 'pointer', textAlign: 'left', fontSize: 14 }}>{opt.label}</button>
               ))}
             </div>
           </div>
@@ -100,7 +100,7 @@ export default function DFWDrywallTextureGuide() {
               </div>
               <div style={{ color: '#94a3b8', marginBottom: 8, fontSize: 14 }}>🔧 {result.technique}</div>
               <div style={{ color: '#94a3b8', marginBottom: 12, fontSize: 14 }}>🛒 Tools: {result.tools}</div>
-              <div style={{ backgroundColor: '#0f1f3d', borderRadius: 8, padding: 12 }}><span style={{ color: '#F5E642′ }}>💡 </span><span style={{ color: '#94a3b8', fontSize: 14 }}>{result.note}</span></div>
+              <div style={{ backgroundColor: '#0f1f3d', borderRadius: 8, padding: 12 }}><span style={{ color: '#F5E642' }}>💡 </span><span style={{ color: '#94a3b8', fontSize: 14 }}>{result.note}</span></div>
             </div>
           )}
         </div>

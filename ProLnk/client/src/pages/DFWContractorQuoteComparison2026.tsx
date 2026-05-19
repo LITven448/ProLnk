@@ -42,8 +42,8 @@ export default function DFWContractorQuoteComparison2026() {
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 10 }}>
             {Object.entries({ price: '💰 Price Gap', timeline: '📅 Timeline', materials: '🧱 Materials', warranty: '🛡️ Warranty' }).map(([k, label]) => (
               <button key={k} onClick={() => setDiscrepancyType(k)}
-                style={{ padding: '12px', background: discrepancyType === k ? '#F5E642′ : '#1A2A45',
-                  color: discrepancyType === k ? '#0A1628′ : '#fff', border: ’none', borderRadius: 8, cursor: 'pointer', fontWeight: 700, fontSize: 14 }}>
+                style={{ padding: '12px', background: discrepancyType === k ? '#F5E642' : '#1A2A45',
+                  color: discrepancyType === k ? '#0A1628' : '#fff', border: 'none', borderRadius: 8, cursor: 'pointer', fontWeight: 700, fontSize: 14 }}>
                 {label}
               </button>
             ))}
@@ -53,7 +53,7 @@ export default function DFWContractorQuoteComparison2026() {
         <div style={{ background: '#111D35', borderRadius: 12, padding: 24, marginBottom: 20 }}>
           <h2 style={{ color: '#F5E642', fontSize: 18, marginBottom: 16 }}>🚩 Red Flags: {guide.title}</h2>
           {guide.flags.map((f, i) => (
-            <div key={i} style={{ display: 'flex', gap: 10, marginBottom: 10, padding: '10px', background: '#1A0A0A', borderRadius: 8, borderLeft: '3px solid #E55′ }}>
+            <div key={i} style={{ display: 'flex', gap: 10, marginBottom: 10, padding: '10px', background: '#1A0A0A', borderRadius: 8, borderLeft: '3px solid #E55' }}>
               <span>⚠️</span><span style={{ color: '#ccc', fontSize: 14 }}>{f}</span>
             </div>
           ))}

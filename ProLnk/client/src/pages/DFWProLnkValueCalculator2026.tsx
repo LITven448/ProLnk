@@ -25,8 +25,8 @@ export default function DFWProLnkValueCalculator2026() {
 
   const rows = [
     { label: 'Contractor Fraud Avoided', emoji: '🛡️', value: fraudSaved, desc: 'Avg DFW homeowner loss to unlicensed/fraudulent contractors', color: '#22c55e' },
-    { label: 'Competitive Quote Savings', emoji: '📋', value: quoteSavings, desc: `${servicesPerYear} services/yr × $${avgServiceCost} avg × 15% savings × ${Math.min(years, 3)} yrs`, color: '#3b82f6′ },
-    { label: 'ProLnk Vault Resale Premium', emoji: '🏠', value: vaultPremium, desc: `Documented home history adds ${hv > 0 ? '~2.5%' : '$5K–$15K'} to DFW resale value`, color: '#F5E642′ },
+    { label: 'Competitive Quote Savings', emoji: '📋', value: quoteSavings, desc: `${servicesPerYear} services/yr × $${avgServiceCost} avg × 15% savings × ${Math.min(years, 3)} yrs`, color: '#3b82f6' },
+    { label: 'ProLnk Vault Resale Premium', emoji: '🏠', value: vaultPremium, desc: `Documented home history adds ${hv > 0 ? '~2.5%' : '$5K–$15K'} to DFW resale value`, color: '#F5E642' },
     { label: 'Peace of Mind', emoji: '❤️', value: 0, desc: 'Knowing your home is documented, protected, and connected to verified pros — priceless', color: '#ec4899', priceless: true },
   ];
 
@@ -44,25 +44,25 @@ export default function DFWProLnkValueCalculator2026() {
           <div style={{ display: 'flex', flexDirection: 'column', gap: 14 }}>
             <div>
               <label style={{ color: '#94a3b8', fontSize: 13, display: 'block', marginBottom: 6 }}>Estimated Home Value ($)</label>
-              <input type="text" value={homeValue} onChange={e => setHomeValue(e.target.value)} placeholder="e.g. 450000″
+              <input type="text" value={homeValue} onChange={e => setHomeValue(e.target.value)} placeholder="e.g. 450000"
                 style={{ width: '100%', background: '#1e3a5f', border: '1px solid #334155', borderRadius: 8, padding: '10px 14px', color: '#fff', fontSize: 15, boxSizing: 'border-box' }} />
             </div>
             <div>
               <label style={{ color: '#94a3b8', fontSize: 13, display: 'block', marginBottom: 6 }}>Years of Homeownership (for calculation)</label>
-              <input type="number" value={yearsOwned} onChange={e => setYearsOwned(e.target.value)} placeholder="e.g. 3″ min={1} max={30}
+              <input type="number" value={yearsOwned} onChange={e => setYearsOwned(e.target.value)} placeholder="e.g. 3" min={1} max={30}
                 style={{ width: '100%', background: '#1e3a5f', border: '1px solid #334155', borderRadius: 8, padding: '10px 14px', color: '#fff', fontSize: 15, boxSizing: 'border-box' }} />
             </div>
             <div>
-              <label style={{ color: '#94a3b8', fontSize: 13, display: 'block', marginBottom: 6 }}>Home Services Per Year: <span style={{ color: '#F5E642′ }}>{servicesPerYear}</span></label>
+              <label style={{ color: '#94a3b8', fontSize: 13, display: 'block', marginBottom: 6 }}>Home Services Per Year: <span style={{ color: '#F5E642' }}>{servicesPerYear}</span></label>
               <input type="range" min={1} max={8} value={servicesPerYear} onChange={e => setServicesPerYear(Number(e.target.value))}
-                style={{ width: '100%', accentColor: '#F5E642′ }} />
-              <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: 11, color: '#475569′ }}><span>1 (minimal)</span><span>8 (active)</span></div>
+                style={{ width: '100%', accentColor: '#F5E642' }} />
+              <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: 11, color: '#475569' }}><span>1 (minimal)</span><span>8 (active)</span></div>
             </div>
             <div>
-              <label style={{ color: '#94a3b8', fontSize: 13, display: 'block', marginBottom: 6 }}>Average Service Cost: <span style={{ color: '#F5E642′ }}>${avgServiceCost.toLocaleString()}</span></label>
+              <label style={{ color: '#94a3b8', fontSize: 13, display: 'block', marginBottom: 6 }}>Average Service Cost: <span style={{ color: '#F5E642' }}>${avgServiceCost.toLocaleString()}</span></label>
               <input type="range" min={200} max={5000} step={100} value={avgServiceCost} onChange={e => setAvgServiceCost(Number(e.target.value))}
-                style={{ width: '100%', accentColor: '#F5E642′ }} />
-              <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: 11, color: '#475569′ }}><span>$200</span><span>$5,000</span></div>
+                style={{ width: '100%', accentColor: '#F5E642' }} />
+              <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: 11, color: '#475569' }}><span>$200</span><span>$5,000</span></div>
             </div>
           </div>
           <button onClick={() => setCalculated(true)}
@@ -88,9 +88,9 @@ export default function DFWProLnkValueCalculator2026() {
               ))}
             </div>
 
-            <div style={{ background: 'linear-gradient(135deg, #0f2040, #1e3a5f)', borderRadius: 16, padding: 24, textAlign: 'center', border: '2px solid #F5E642′ }}>
+            <div style={{ background: 'linear-gradient(135deg, #0f2040, #1e3a5f)', borderRadius: 16, padding: 24, textAlign: 'center', border: '2px solid #F5E642' }}>
               <p style={{ color: '#94a3b8', fontSize: 14, marginBottom: 4 }}>Estimated 3-Year ProLnk Value for Your DFW Home</p>
-              <div style={{ fontSize: 48, fontWeight: 800, color: '#F5E642′ }}>{formatMoney(totalValue)}</div>
+              <div style={{ fontSize: 48, fontWeight: 800, color: '#F5E642' }}>{formatMoney(totalValue)}</div>
               <p style={{ color: '#94a3b8', fontSize: 12, marginTop: 4 }}>Based on your inputs · Does not include peace of mind 😄</p>
               <div style={{ marginTop: 20, display: 'flex', gap: 12, justifyContent: 'center', flexWrap: 'wrap' }}>
                 <div style={{ background: '#0A1628', borderRadius: 10, padding: '12px 20px', fontSize: 13 }}>

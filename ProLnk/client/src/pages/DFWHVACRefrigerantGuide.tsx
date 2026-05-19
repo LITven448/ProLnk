@@ -11,7 +11,7 @@ const styles = {
   label: { display: 'block', color: '#94a3b8', fontSize: '0.85rem', marginBottom: '6px', marginTop: '16px' },
   select: { width: '100%', padding: '10px 12px', backgroundColor: '#0A1628', border: '1px solid #1e3a5f', borderRadius: '8px', color: '#fff', fontSize: '0.95rem' },
   btn: { marginTop: '20px', width: '100%', padding: '14px', backgroundColor: '#F5E642', color: '#0A1628', fontWeight: 800, fontSize: '1rem', border: 'none', borderRadius: '10px', cursor: 'pointer' },
-  result: { backgroundColor: '#0A1628', borderRadius: '10px', padding: '20px', marginTop: '16px', border: '1px solid #F5E642′ },
+  result: { backgroundColor: '#0A1628', borderRadius: '10px', padding: '20px', marginTop: '16px', border: '1px solid #F5E642' },
   resultTitle: { color: '#F5E642', fontWeight: 700, fontSize: '1.1rem', marginBottom: '12px' },
   row: { display: 'flex', justifyContent: 'space-between', borderBottom: '1px solid #1e3a5f', padding: '8px 0', color: '#cbd5e1', fontSize: '0.9rem' },
   warn: { backgroundColor: '#2d1b00', border: '1px solid #f59e0b', borderRadius: '8px', padding: '12px 16px', color: '#fbbf24', fontSize: '0.9rem', marginBottom: '12px' },
@@ -63,7 +63,7 @@ export default function DFWHVACRefrigerantGuide() {
         <div style={styles.section}>
           <div style={styles.sectionTitle}>🌡️ Why DFW Heat Reveals Leaks Fast</div>
           <p style={styles.text}>In most climates, a slow refrigerant leak might go unnoticed for months. In DFW, your AC runs at 100% capacity for weeks at a time — 100°F days with high humidity demand maximum performance. A refrigerant-low system that might cope in a milder climate will blow warm air within days in North Texas.</p>
-          <p style={styles.text}>This means DFW homeowners catch leaks faster, but also face higher urgency — you can't limp through the summer on low refrigerant when it’s 105°F outside and you have a family at home.</p>
+          <p style={styles.text}>This means DFW homeowners catch leaks faster, but also face higher urgency — you can't limp through the summer on low refrigerant when it's 105°F outside and you have a family at home.</p>
         </div>
 
         <div style={styles.section}>
@@ -88,15 +88,15 @@ export default function DFWHVACRefrigerantGuide() {
           <label style={styles.label}>System age</label>
           <select style={styles.select} value={sysAge} onChange={e => setSysAge(e.target.value)}>
             <option value="">Select age</option>
-            <option value="5″>Under 7 years</option>
-            <option value="10″>7–12 years</option>
-            <option value="15″>12–18 years</option>
-            <option value="20″>18+ years</option>
+            <option value="5">Under 7 years</option>
+            <option value="10">7–12 years</option>
+            <option value="15">12–18 years</option>
+            <option value="20">18+ years</option>
           </select>
           <label style={styles.label}>Refrigerant type</label>
           <select style={styles.select} value={refrigerant} onChange={e => setRefrigerant(e.target.value)}>
             <option value="">Select type</option>
-            <option value="r22″>R-22 (Freon) — system is pre-2010</option>
+            <option value="r22">R-22 (Freon) — system is pre-2010</option>
             <option value="r410a">R-410A (Puron) — system is 2010–2024</option>
             <option value="new">R-32 or R-454B — system is 2024+</option>
           </select>

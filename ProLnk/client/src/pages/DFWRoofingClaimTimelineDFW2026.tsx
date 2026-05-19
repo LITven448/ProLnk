@@ -22,13 +22,13 @@ export default function DFWRoofingClaimTimelineDFW2026() {
 
         <div style={{ display: 'flex', gap: 6, overflowX: 'auto', paddingBottom: 8, marginBottom: 20 }}>
           {STAGES.map((s, i) => (
-            <button key={i} onClick={() => setStage(i)} style={{ flexShrink: 0, padding: '8px 12px', borderRadius: 8, border: 'none', background: stage === i ? '#F5E642′ : '#0f1f3d', color: stage === i ? '#0A1628' : '#94a3b8', fontWeight: 700, cursor: ’pointer', fontSize: 12 }}>
+            <button key={i} onClick={() => setStage(i)} style={{ flexShrink: 0, padding: '8px 12px', borderRadius: 8, border: 'none', background: stage === i ? '#F5E642' : '#0f1f3d', color: stage === i ? '#0A1628' : '#94a3b8', fontWeight: 700, cursor: 'pointer', fontSize: 12 }}>
               {s.icon} {s.day}
             </button>
           ))}
         </div>
 
-        <div style={{ background: '#0f1f3d', borderRadius: 12, padding: 24, marginBottom: 20, borderLeft: '4px solid #F5E642′ }}>
+        <div style={{ background: '#0f1f3d', borderRadius: 12, padding: 24, marginBottom: 20, borderLeft: '4px solid #F5E642' }}>
           <div style={{ fontSize: 13, color: '#F5E642', marginBottom: 4 }}>{STAGES[stage].day}</div>
           <div style={{ fontSize: 20, fontWeight: 800, marginBottom: 12 }}>{STAGES[stage].icon} {STAGES[stage].label}</div>
           <div style={{ color: '#cbd5e1', fontSize: 14, lineHeight: 1.7 }}>{STAGES[stage].detail}</div>
@@ -40,7 +40,7 @@ export default function DFWRoofingClaimTimelineDFW2026() {
             {STAGES.map((s, i) => (
               <div key={i} style={{ display: 'flex', gap: 12, alignItems: 'flex-start' }}>
                 <div style={{ width: 80, flexShrink: 0, color: '#F5E642', fontWeight: 700, fontSize: 12, paddingTop: 2 }}>{s.day}</div>
-                <div style={{ width: 2, background: i <= stage ? '#F5E642′ : '#1e3a5f', borderRadius: 2, flexShrink: 0, minHeight: 20 }}></div>
+                <div style={{ width: 2, background: i <= stage ? '#F5E642' : '#1e3a5f', borderRadius: 2, flexShrink: 0, minHeight: 20 }}></div>
                 <div style={{ color: i <= stage ? '#fff' : '#475569', fontSize: 13 }}>{s.icon} {s.label}</div>
               </div>
             ))}

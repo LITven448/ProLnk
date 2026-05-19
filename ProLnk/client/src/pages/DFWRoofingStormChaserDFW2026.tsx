@@ -46,7 +46,7 @@ export default function DFWRoofingStormChaserDFW2026() {
           <h2 style={{ color: '#F5E642', marginTop: 0, fontSize: 20 }}>🚩 Check Every Red Flag You Observe</h2>
           <div style={{ display: 'flex', flexDirection: 'column', gap: 10, marginBottom: 20 }}>
             {redFlags.map(f => (
-              <button key={f.id} onClick={() => toggle(f.id, f.weight)} style={{ padding: '12px 16px', borderRadius: 8, border: `2px solid ${flags.includes(f.id) ? '#ef4444' : '#1e3a5f'}`, background: flags.includes(f.id) ? '#3D0F0F' : '#0A1628', color: flags.includes(f.id) ? '#fca5a5′ : '#fff', cursor: ’pointer', textAlign: 'left', fontWeight: 600, display: 'flex', justifyContent: 'space-between' }}>
+              <button key={f.id} onClick={() => toggle(f.id, f.weight)} style={{ padding: '12px 16px', borderRadius: 8, border: `2px solid ${flags.includes(f.id) ? '#ef4444' : '#1e3a5f'}`, background: flags.includes(f.id) ? '#3D0F0F' : '#0A1628', color: flags.includes(f.id) ? '#fca5a5' : '#fff', cursor: 'pointer', textAlign: 'left', fontWeight: 600, display: 'flex', justifyContent: 'space-between' }}>
                 <span>{flags.includes(f.id) ? '🚩 ' : '⬜ '}{f.label}</span>
                 <span style={{ color: '#94a3b8', fontSize: 13 }}>+{f.weight}pts</span>
               </button>
@@ -59,7 +59,7 @@ export default function DFWRoofingStormChaserDFW2026() {
           <div style={{ background: '#0F1F3D', borderRadius: 16, padding: 28, border: `2px solid ${risk.color}` }}>
             <h3 style={{ color: risk.color, marginTop: 0, fontSize: 24 }}>Risk Score: {score}/100</h3>
             <p style={{ color: risk.color, fontWeight: 700, fontSize: 18 }}>{risk.label}</p>
-            <p style={{ color: '#94a3b8′ }}>{risk.advice}</p>
+            <p style={{ color: '#94a3b8' }}>{risk.advice}</p>
             <p style={{ color: '#64748b', fontSize: 13, marginTop: 16 }}>ProLnk only works with licensed, verified Texas roofing contractors — zero storm chasers, guaranteed.</p>
           </div>
         )}

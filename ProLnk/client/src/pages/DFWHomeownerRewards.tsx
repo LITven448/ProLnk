@@ -107,7 +107,7 @@ export default function DFWHomeownerRewards() {
       <div style={{ maxWidth: 720, margin: '0 auto' }}>
         <div style={{ textAlign: 'center', marginBottom: 40 }}>
           <div style={{ fontSize: 48, marginBottom: 12 }}>🏡💰⭐</div>
-          <h1 style={{ margin: '0 0 12px', fontSize: 32, fontWeight: 800, color: '#F5E642′ }}>ProLnk Homeowner Rewards</h1>
+          <h1 style={{ margin: '0 0 12px', fontSize: 32, fontWeight: 800, color: '#F5E642' }}>ProLnk Homeowner Rewards</h1>
           <p style={{ margin: 0, fontSize: 17, opacity: 0.8, lineHeight: 1.6 }}>
             Your home earns for you. Discover what you unlock at every level.
           </p>
@@ -128,11 +128,11 @@ export default function DFWHomeownerRewards() {
         </div>
 
         <div style={{ background: 'rgba(255,255,255,0.05)', borderRadius: 12, padding: 28, marginBottom: 24 }}>
-          <h2 style={{ margin: '0 0 16px', fontSize: 18, color: '#F5E642′ }}>🏠 What describes you?</h2>
+          <h2 style={{ margin: '0 0 16px', fontSize: 18, color: '#F5E642' }}>🏠 What describes you?</h2>
           <div style={{ display: 'grid', gap: 12 }}>
             {engagementLevels.map(e => (
               <button key={e.value} onClick={() => setSelected(e.value)}
-                style={{ padding: '14px 18px', borderRadius: 8, border: selected === e.value ? '2px solid #F5E642′ : '2px solid rgba(255,255,255,0.15)', background: selected === e.value ? ’rgba(245,230,66,0.12)' : 'rgba(255,255,255,0.03)', cursor: 'pointer', textAlign: 'left', fontSize: 15, fontWeight: selected === e.value ? 700 : 400, color: '#fff' }}>
+                style={{ padding: '14px 18px', borderRadius: 8, border: selected === e.value ? '2px solid #F5E642' : '2px solid rgba(255,255,255,0.15)', background: selected === e.value ? 'rgba(245,230,66,0.12)' : 'rgba(255,255,255,0.03)', cursor: 'pointer', textAlign: 'left', fontSize: 15, fontWeight: selected === e.value ? 700 : 400, color: '#fff' }}>
                 {e.label}
               </button>
             ))}
@@ -162,7 +162,7 @@ export default function DFWHomeownerRewards() {
               </ul>
             </div>
 
-            <div style={{ background: '#F5E642', borderRadius: 12, padding: 24, color: '#0A1628′ }}>
+            <div style={{ background: '#F5E642', borderRadius: 12, padding: 24, color: '#0A1628' }}>
               <h3 style={{ margin: '0 0 12px', fontSize: 16, fontWeight: 800 }}>⚡ How to Maximize Your Rewards</h3>
               <ul style={{ margin: 0, paddingLeft: 20, lineHeight: 2, fontSize: 14, fontWeight: 500 }}>
                 {result.maximize.map((m, i) => <li key={i}>{m}</li>)}

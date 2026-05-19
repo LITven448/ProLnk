@@ -150,10 +150,10 @@ const CONTRACTORS = [
 
 const LOGO_COLORS = [
   { bg: "rgba(245,158,11,0.18)", color: "#F59E0B" },
-  { bg: "rgba(99,102,241,0.18)", color: "#818cf8″ },
-  { bg: "rgba(34,197,94,0.18)", color: "#4ade80″ },
-  { bg: "rgba(239,68,68,0.18)", color: "#f87171″ },
-  { bg: "rgba(14,165,233,0.18)", color: "#38bdf8″ },
+  { bg: "rgba(99,102,241,0.18)", color: "#818cf8" },
+  { bg: "rgba(34,197,94,0.18)", color: "#4ade80" },
+  { bg: "rgba(239,68,68,0.18)", color: "#f87171" },
+  { bg: "rgba(14,165,233,0.18)", color: "#38bdf8" },
   { bg: "rgba(168,85,247,0.18)", color: "#c084fc" },
   { bg: "rgba(251,146,60,0.18)", color: "#fb923c" },
   { bg: "rgba(20,184,166,0.18)", color: "#2dd4bf" },
@@ -181,7 +181,7 @@ function parseMinRating(option: string): number {
 
 function StarRating({ rating }: { rating: number }) {
   return (
-    <div className="flex items-center gap-0.5″>
+    <div className="flex items-center gap-0.5">
       {[1, 2, 3, 4, 5].map((s) => (
         <Star
           key={s}
@@ -211,7 +211,7 @@ function InviteModal({
 
   return (
     <div
-      className="fixed inset-0 z-50 flex items-center justify-center p-4″
+      className="fixed inset-0 z-50 flex items-center justify-center p-4"
       style={{ backgroundColor: "rgba(0,0,0,0.75)", backdropFilter: "blur(4px)" }}
       onClick={(e) => { if (e.target === e.currentTarget) onClose(); }}
     >
@@ -224,14 +224,14 @@ function InviteModal({
           style={{ borderColor: "rgba(255,255,255,0.08)" }}
         >
           <div
-            className="w-10 h-10 rounded-xl flex items-center justify-center text-sm font-bold flex-shrink-0″
+            className="w-10 h-10 rounded-xl flex items-center justify-center text-sm font-bold flex-shrink-0"
             style={{ backgroundColor: logoStyle.bg, color: logoStyle.color }}
           >
             {getInitials(contractor.name)}
           </div>
-          <div className="flex-1 min-w-0″>
+          <div className="flex-1 min-w-0">
             <p className="text-white font-bold text-sm truncate">{contractor.name}</p>
-            <p className="text-xs mt-0.5″ style={{ color: "rgba(255,255,255,0.4)" }}>
+            <p className="text-xs mt-0.5" style={{ color: "rgba(255,255,255,0.4)" }}>
               {contractor.trade} · {contractor.location}
             </p>
           </div>
@@ -246,12 +246,12 @@ function InviteModal({
         {sent ? (
           <div className="p-8 text-center">
             <div
-              className="w-14 h-14 rounded-2xl flex items-center justify-center mx-auto mb-4″
+              className="w-14 h-14 rounded-2xl flex items-center justify-center mx-auto mb-4"
               style={{ backgroundColor: "rgba(34,197,94,0.12)" }}
             >
-              <CheckCircle className="w-7 h-7 text-emerald-400″ />
+              <CheckCircle className="w-7 h-7 text-emerald-400" />
             </div>
-            <h3 className="text-white font-bold text-lg mb-2″>Invite Sent!</h3>
+            <h3 className="text-white font-bold text-lg mb-2">Invite Sent!</h3>
             <p className="text-sm" style={{ color: "rgba(255,255,255,0.5)" }}>
               {contractor.contact} will be notified about your job. Expect a response within {contractor.responseTime}.
             </p>
@@ -264,7 +264,7 @@ function InviteModal({
             </button>
           </div>
         ) : (
-          <form onSubmit={handleSend} className="p-6 space-y-4″>
+          <form onSubmit={handleSend} className="p-6 space-y-4">
             <div>
               <label
                 className="block text-xs font-semibold mb-1.5 uppercase tracking-wider"
@@ -312,7 +312,7 @@ function InviteModal({
               className="w-full py-3 rounded-xl text-sm font-bold text-[#0A1628] flex items-center justify-center gap-2 hover:opacity-90 transition-opacity"
               style={{ backgroundColor: "#F59E0B" }}
             >
-              <Send className="w-4 h-4″ />
+              <Send className="w-4 h-4" />
               Send Invite to Bid
             </button>
             <p className="text-xs text-center" style={{ color: "rgba(255,255,255,0.25)" }}>
@@ -335,25 +335,25 @@ function ContractorCard({ contractor }: { contractor: (typeof CONTRACTORS)[0] })
         <InviteModal contractor={contractor} onClose={() => setInviting(false)} />
       )}
       <div
-        className="rounded-2xl p-6 border transition-all hover:border-amber-500/30 flex flex-col gap-4″
+        className="rounded-2xl p-6 border transition-all hover:border-amber-500/30 flex flex-col gap-4"
         style={{
           backgroundColor: "rgba(255,255,255,0.04)",
           borderColor: "rgba(255,255,255,0.1)",
         }}
       >
         {/* Header row */}
-        <div className="flex items-start gap-3″>
+        <div className="flex items-start gap-3">
           <div
-            className="w-12 h-12 rounded-xl flex items-center justify-center text-base font-bold flex-shrink-0″
+            className="w-12 h-12 rounded-xl flex items-center justify-center text-base font-bold flex-shrink-0"
             style={{ backgroundColor: logoStyle.bg, color: logoStyle.color }}
           >
             {getInitials(contractor.name)}
           </div>
-          <div className="flex-1 min-w-0″>
-            <div className="flex items-center gap-1.5 flex-wrap mb-0.5″>
+          <div className="flex-1 min-w-0">
+            <div className="flex items-center gap-1.5 flex-wrap mb-0.5">
               <h3 className="text-white font-bold text-sm leading-tight">{contractor.name}</h3>
               {contractor.verified && (
-                <BadgeCheck className="w-4 h-4 flex-shrink-0″ style={{ color: "#38bdf8" }} />
+                <BadgeCheck className="w-4 h-4 flex-shrink-0" style={{ color: "#38bdf8" }} />
               )}
             </div>
             <p className="text-xs" style={{ color: "rgba(255,255,255,0.4)" }}>
@@ -363,7 +363,7 @@ function ContractorCard({ contractor }: { contractor: (typeof CONTRACTORS)[0] })
         </div>
 
         {/* Meta pills */}
-        <div className="flex flex-wrap gap-2″>
+        <div className="flex flex-wrap gap-2">
           <span
             className="inline-flex items-center gap-1 text-xs font-semibold px-2.5 py-1 rounded-full border"
             style={{
@@ -372,21 +372,21 @@ function ContractorCard({ contractor }: { contractor: (typeof CONTRACTORS)[0] })
               color: "#F59E0B",
             }}
           >
-            <Briefcase className="w-3 h-3″ />
+            <Briefcase className="w-3 h-3" />
             {contractor.trade}
           </span>
           <span
             className="inline-flex items-center gap-1 text-xs px-2.5 py-1 rounded-full"
             style={{ backgroundColor: "rgba(255,255,255,0.07)", color: "rgba(255,255,255,0.55)" }}
           >
-            <MapPin className="w-3 h-3″ />
+            <MapPin className="w-3 h-3" />
             {contractor.location}
           </span>
           <span
             className="inline-flex items-center gap-1 text-xs px-2.5 py-1 rounded-full"
             style={{ backgroundColor: "rgba(255,255,255,0.07)", color: "rgba(255,255,255,0.55)" }}
           >
-            <Clock className="w-3 h-3″ />
+            <Clock className="w-3 h-3" />
             {contractor.responseTime}
           </span>
         </div>
@@ -398,16 +398,16 @@ function ContractorCard({ contractor }: { contractor: (typeof CONTRACTORS)[0] })
         >
           <div className="text-center">
             <p className="text-white font-bold text-base">{contractor.jobsCompleted}</p>
-            <p className="text-xs mt-0.5″ style={{ color: "rgba(255,255,255,0.35)" }}>Jobs Done</p>
+            <p className="text-xs mt-0.5" style={{ color: "rgba(255,255,255,0.35)" }}>Jobs Done</p>
           </div>
           <div className="text-center">
-            <p className="font-bold text-base" style={{ color: "#4ade80″ }}>
+            <p className="font-bold text-base" style={{ color: "#4ade80" }}>
               {contractor.bidWinRate}%
             </p>
-            <p className="text-xs mt-0.5″ style={{ color: "rgba(255,255,255,0.35)" }}>Win Rate</p>
+            <p className="text-xs mt-0.5" style={{ color: "rgba(255,255,255,0.35)" }}>Win Rate</p>
           </div>
           <div className="text-center">
-            <div className="flex justify-center mb-0.5″>
+            <div className="flex justify-center mb-0.5">
               <StarRating rating={contractor.rating} />
             </div>
             <p className="text-xs" style={{ color: "rgba(255,255,255,0.35)" }}>
@@ -417,7 +417,7 @@ function ContractorCard({ contractor }: { contractor: (typeof CONTRACTORS)[0] })
         </div>
 
         {/* Tags */}
-        <div className="flex flex-wrap gap-1.5″>
+        <div className="flex flex-wrap gap-1.5">
           {contractor.tags.map((tag) => (
             <span
               key={tag}
@@ -432,14 +432,14 @@ function ContractorCard({ contractor }: { contractor: (typeof CONTRACTORS)[0] })
         {/* CTA */}
         <button
           onClick={() => setInviting(true)}
-          className="w-full py-2.5 rounded-xl text-sm font-bold flex items-center justify-center gap-2 transition-all hover:opacity-90″
+          className="w-full py-2.5 rounded-xl text-sm font-bold flex items-center justify-center gap-2 transition-all hover:opacity-90"
           style={{
             backgroundColor: "rgba(245,158,11,0.12)",
             color: "#F59E0B",
             border: "1px solid rgba(245,158,11,0.25)",
           }}
         >
-          <Send className="w-4 h-4″ />
+          <Send className="w-4 h-4" />
           Invite to Bid
         </button>
       </div>
@@ -484,14 +484,14 @@ export default function ExchangeContractors() {
   return (
     <div
       className="min-h-screen"
-      style={{ backgroundColor: "#0A1628″, fontFamily: "'Inter', system-ui, sans-serif" }}
+      style={{ backgroundColor: "#0A1628", fontFamily: "'Inter', system-ui, sans-serif" }}
     >
       {/* Nav */}
       <nav className="flex items-center justify-between px-6 py-4 border-b border-white/10 max-w-6xl mx-auto">
         <Link href="/">
           <span className="text-white font-bold text-lg tracking-tight cursor-pointer">ProLnk</span>
         </Link>
-        <div className="flex items-center gap-4″>
+        <div className="flex items-center gap-4">
           <Link href="/exchange/jobs">
             <span className="text-sm cursor-pointer transition-colors" style={{ color: "rgba(255,255,255,0.5)" }}>
               Browse Jobs
@@ -504,7 +504,7 @@ export default function ExchangeContractors() {
           </Link>
           <Link href="/exchange/post">
             <button
-              className="px-4 py-2 rounded-xl text-sm font-semibold text-[#0A1628] transition-all hover:opacity-90″
+              className="px-4 py-2 rounded-xl text-sm font-semibold text-[#0A1628] transition-all hover:opacity-90"
               style={{ backgroundColor: "#F59E0B" }}
             >
               Post a Job
@@ -516,13 +516,13 @@ export default function ExchangeContractors() {
       {/* Coming Soon Banner */}
       <div
         className="text-center py-2.5 text-xs font-semibold tracking-wider"
-        style={{ backgroundColor: "#F59E0B", color: "#0A1628″ }}
+        style={{ backgroundColor: "#F59E0B", color: "#0A1628" }}
       >
         COMING Q3 2026 &nbsp;·&nbsp; PREVIEW CONTRACTOR DIRECTORY &nbsp;·&nbsp; DFW LAUNCH
       </div>
 
       {/* Page Header */}
-      <section className="max-w-6xl mx-auto px-6 pt-12 pb-8″>
+      <section className="max-w-6xl mx-auto px-6 pt-12 pb-8">
         <div className="flex items-start justify-between gap-6 flex-wrap">
           <div>
             <div
@@ -533,10 +533,10 @@ export default function ExchangeContractors() {
                 borderColor: "rgba(245,158,11,0.3)",
               }}
             >
-              <Users className="w-3.5 h-3.5″ />
+              <Users className="w-3.5 h-3.5" />
               Contractor Directory
             </div>
-            <div className="flex items-center gap-3 mb-2″>
+            <div className="flex items-center gap-3 mb-2">
               <h1 className="text-3xl md:text-4xl font-bold text-white">Find Contractors</h1>
               <span
                 className="hidden md:inline-flex items-center px-3 py-1 rounded-full text-sm font-bold"
@@ -549,12 +549,12 @@ export default function ExchangeContractors() {
               Browse verified commercial contractors across DFW. Filter by trade, location, jobs completed, and rating — then invite the right fit to bid on your job.
             </p>
           </div>
-          <div className="flex items-center gap-2″>
+          <div className="flex items-center gap-2">
             <div
               className="flex items-center gap-2 px-3 py-2 rounded-xl text-xs"
-              style={{ backgroundColor: "rgba(14,165,233,0.1)", color: "#38bdf8″, border: "1px solid rgba(14,165,233,0.2)" }}
+              style={{ backgroundColor: "rgba(14,165,233,0.1)", color: "#38bdf8", border: "1px solid rgba(14,165,233,0.2)" }}
             >
-              <BadgeCheck className="w-3.5 h-3.5″ />
+              <BadgeCheck className="w-3.5 h-3.5" />
               Verified badge = license confirmed
             </div>
           </div>
@@ -562,7 +562,7 @@ export default function ExchangeContractors() {
       </section>
 
       {/* Search + Filters */}
-      <section className="max-w-6xl mx-auto px-6 pb-8″>
+      <section className="max-w-6xl mx-auto px-6 pb-8">
         <div
           className="flex flex-wrap gap-3 items-center p-4 rounded-2xl border"
           style={{
@@ -573,7 +573,7 @@ export default function ExchangeContractors() {
           {/* Search */}
           <div className="relative flex-1 min-w-[200px]">
             <Search
-              className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4″
+              className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4"
               style={{ color: "rgba(255,255,255,0.35)" }}
             />
             <input
@@ -591,7 +591,7 @@ export default function ExchangeContractors() {
           </div>
 
           <div className="flex items-center gap-2 text-xs" style={{ color: "rgba(255,255,255,0.4)" }}>
-            <Filter className="w-4 h-4″ />
+            <Filter className="w-4 h-4" />
           </div>
 
           {/* Trade filter */}
@@ -687,7 +687,7 @@ export default function ExchangeContractors() {
       </section>
 
       {/* Contractor Grid */}
-      <section className="max-w-6xl mx-auto px-6 pb-16″>
+      <section className="max-w-6xl mx-auto px-6 pb-16">
         {filtered.length === 0 ? (
           <div
             className="text-center py-16 rounded-2xl border"
@@ -696,13 +696,13 @@ export default function ExchangeContractors() {
               borderColor: "rgba(255,255,255,0.08)",
             }}
           >
-            <p className="text-white/40 text-sm mb-3″>No contractors match your filters.</p>
+            <p className="text-white/40 text-sm mb-3">No contractors match your filters.</p>
             <button onClick={clearFilters} className="text-amber-400 text-sm underline">
               Clear filters
             </button>
           </div>
         ) : (
-          <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4″>
+          <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4">
             {filtered.map((c) => (
               <ContractorCard key={c.id} contractor={c} />
             ))}
@@ -720,21 +720,21 @@ export default function ExchangeContractors() {
           }}
         >
           <div
-            className="w-12 h-12 rounded-xl flex items-center justify-center mx-auto mb-4″
+            className="w-12 h-12 rounded-xl flex items-center justify-center mx-auto mb-4"
             style={{ backgroundColor: "rgba(245,158,11,0.12)" }}
           >
-            <TrendingUp className="w-6 h-6 text-amber-400″ />
+            <TrendingUp className="w-6 h-6 text-amber-400" />
           </div>
-          <h2 className="text-white font-bold text-xl mb-2″>Are you a contractor?</h2>
-          <p className="text-sm mb-5″ style={{ color: "rgba(255,255,255,0.5)" }}>
+          <h2 className="text-white font-bold text-xl mb-2">Are you a contractor?</h2>
+          <p className="text-sm mb-5" style={{ color: "rgba(255,255,255,0.5)" }}>
             Get listed in the directory and start receiving invites from property managers, HOAs, and GCs before bidding opens in Q3 2026.
           </p>
           <Link href="/signup/pro">
             <button
-              className="inline-flex items-center gap-2 px-6 py-3 rounded-xl text-sm font-bold text-[#0A1628] transition-all hover:opacity-90″
+              className="inline-flex items-center gap-2 px-6 py-3 rounded-xl text-sm font-bold text-[#0A1628] transition-all hover:opacity-90"
               style={{ backgroundColor: "#F59E0B" }}
             >
-              Apply as a Contractor <ArrowRight className="w-4 h-4″ />
+              Apply as a Contractor <ArrowRight className="w-4 h-4" />
             </button>
           </Link>
         </div>

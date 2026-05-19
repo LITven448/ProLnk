@@ -1,12 +1,12 @@
 import { useState } from 'react';
 
 const waterRecs = [
-  { space: 'small', birdInterest: 'high', location: 'north', rec: 'Pedestal bird bath with solar recirculating pump + mosquito dunks', feature: 'Classic concrete or resin pedestal bath, 18–24″ diameter', mosquito: 'Bt dunks (Bacillus thuringiensis) — safe for birds, lethal to mosquito larvae', maintenance: 'Change water every 3 days in summer, clean weekly, refill daily in DFW heat', cost: '$80–$350′ },
-  { space: 'small', birdInterest: 'low', location: 'north', rec: 'Small tabletop fountain with continuous flow (moving water only)', feature: 'Ceramic or resin tabletop fountain — 12–18″ wide', mosquito: 'Continuous flow prevents mosquito larvae — no dunks needed if pump runs 24/7', maintenance: 'Clean monthly, top off weekly — DFW evaporation is significant in summer', cost: '$60–$250′ },
-  { space: 'medium', birdInterest: 'high', location: 'north', rec: 'Dripper bird bath + native plant habitat garden', feature: 'Wide shallow bath (28″+ diameter) with dripper attachment — birds prefer moving water', mosquito: 'Dripper keeps water moving + add Bt dunks as backup. Change every 2–3 days in summer.', maintenance: 'Scrub with stiff brush weekly — algae builds fast in DFW sun', cost: '$150–$600′ },
-  { space: 'medium', birdInterest: 'high', location: 'south', rec: 'Ground-level naturalistic water feature with recirculating pump', feature: 'Preformed pond liner or flagstone water feature — mimics natural water source', mosquito: 'Recirculating pump + Bt dunks + goldfish (eat larvae naturally)', maintenance: 'Quarterly deep clean, algae treatment, pump maintenance', cost: '$400–$1,800′ },
-  { space: 'large', birdInterest: 'high', location: 'south', rec: 'Formal fountain with basin + integrated bird drinking ledge', feature: 'Cast stone or concrete multi-tier fountain — 3–5 ft diameter', mosquito: 'Recirculating pump (no stagnation) + Bt dunks in basin water', maintenance: 'Monthly cleaning, winterize basin during DFW freeze events', cost: '$800–$4,000′ },
-  { space: 'large', birdInterest: 'low', location: 'south', rec: 'Decorative pondless waterfall or stream feature', feature: 'Waterfall into gravel reservoir — no open standing water exposed to mosquitoes', mosquito: 'Zero mosquito risk — water stays below gravel surface between pump cycles', maintenance: 'Annual pump cleaning, top off monthly, leaf removal in fall', cost: '$2,000–$8,000′ },
+  { space: 'small', birdInterest: 'high', location: 'north', rec: 'Pedestal bird bath with solar recirculating pump + mosquito dunks', feature: 'Classic concrete or resin pedestal bath, 18–24" diameter', mosquito: 'Bt dunks (Bacillus thuringiensis) — safe for birds, lethal to mosquito larvae', maintenance: 'Change water every 3 days in summer, clean weekly, refill daily in DFW heat', cost: '$80–$350' },
+  { space: 'small', birdInterest: 'low', location: 'north', rec: 'Small tabletop fountain with continuous flow (moving water only)', feature: 'Ceramic or resin tabletop fountain — 12–18" wide', mosquito: 'Continuous flow prevents mosquito larvae — no dunks needed if pump runs 24/7', maintenance: 'Clean monthly, top off weekly — DFW evaporation is significant in summer', cost: '$60–$250' },
+  { space: 'medium', birdInterest: 'high', location: 'north', rec: 'Dripper bird bath + native plant habitat garden', feature: 'Wide shallow bath (28"+ diameter) with dripper attachment — birds prefer moving water', mosquito: 'Dripper keeps water moving + add Bt dunks as backup. Change every 2–3 days in summer.', maintenance: 'Scrub with stiff brush weekly — algae builds fast in DFW sun', cost: '$150–$600' },
+  { space: 'medium', birdInterest: 'high', location: 'south', rec: 'Ground-level naturalistic water feature with recirculating pump', feature: 'Preformed pond liner or flagstone water feature — mimics natural water source', mosquito: 'Recirculating pump + Bt dunks + goldfish (eat larvae naturally)', maintenance: 'Quarterly deep clean, algae treatment, pump maintenance', cost: '$400–$1,800' },
+  { space: 'large', birdInterest: 'high', location: 'south', rec: 'Formal fountain with basin + integrated bird drinking ledge', feature: 'Cast stone or concrete multi-tier fountain — 3–5 ft diameter', mosquito: 'Recirculating pump (no stagnation) + Bt dunks in basin water', maintenance: 'Monthly cleaning, winterize basin during DFW freeze events', cost: '$800–$4,000' },
+  { space: 'large', birdInterest: 'low', location: 'south', rec: 'Decorative pondless waterfall or stream feature', feature: 'Waterfall into gravel reservoir — no open standing water exposed to mosquitoes', mosquito: 'Zero mosquito risk — water stays below gravel surface between pump cycles', maintenance: 'Annual pump cleaning, top off monthly, leaf removal in fall', cost: '$2,000–$8,000' },
 ];
 
 export default function DFWBirdBathAndFountainGuide() {
@@ -37,7 +37,7 @@ export default function DFWBirdBathAndFountainGuide() {
 
         <div style={{ background: '#0f1f3d', borderRadius: 12, padding: 24, marginBottom: 24 }}>
           <h2 style={{ color: '#F5E642', marginBottom: 16, fontSize: 18 }}>🦟 DFW Mosquito Prevention — Non-Negotiable</h2>
-          <div style={{ background: '#2a0a0a', borderRadius: 8, padding: 16, marginBottom: 16, borderLeft: '4px solid #ef4444′ }}>
+          <div style={{ background: '#2a0a0a', borderRadius: 8, padding: 16, marginBottom: 16, borderLeft: '4px solid #ef4444' }}>
             <p style={{ color: '#ef4444', fontWeight: 700, margin: '0 0 8px' }}>⚠️ DFW Mosquito Season: April – November</p>
             <p style={{ color: '#94a3b8', margin: 0, fontSize: 14, lineHeight: 1.5 }}>
               DFW has one of the most aggressive mosquito populations in the US. Aedes aegypti and Culex mosquitoes
@@ -55,7 +55,7 @@ export default function DFWBirdBathAndFountainGuide() {
             <div key={method as string} style={{ borderBottom: '1px solid #1e3a5f', paddingBottom: 12, marginBottom: 12 }}>
               <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: 4 }}>
                 <span style={{ color: '#fff', fontWeight: 700, fontSize: 14 }}>{method as string}</span>
-                <span style={{ fontSize: 13, fontWeight: 600, color: (rating as string).includes('Best') || (rating as string).includes('Excellent') || (rating as string).includes('Natural') ? '#22c55e' : (rating as string).includes('Ineffective') ? '#ef4444′ : '#fbbf24' }}>{rating as string}</span>
+                <span style={{ fontSize: 13, fontWeight: 600, color: (rating as string).includes('Best') || (rating as string).includes('Excellent') || (rating as string).includes('Natural') ? '#22c55e' : (rating as string).includes('Ineffective') ? '#ef4444' : '#fbbf24' }}>{rating as string}</span>
               </div>
               <p style={{ color: '#94a3b8', fontSize: 13, margin: 0 }}>{desc as string}</p>
             </div>
@@ -85,7 +85,7 @@ export default function DFWBirdBathAndFountainGuide() {
               <label style={{ color: '#94a3b8', fontSize: 13, display: 'block', marginBottom: 8 }}>{label}</label>
               <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap' }}>
                 {options.map(([val, text]) => (
-                  <button key={val} onClick={() => setter(val)} style={{ padding: '8px 14px', borderRadius: 8, border: '1px solid', borderColor: value === val ? '#F5E642′ : '#1e3a5f', background: value === val ? '#F5E642' : ’transparent', color: value === val ? '#0A1628′ : '#94a3b8', cursor: ’pointer', fontSize: 13, fontWeight: value === val ? 700 : 400 }}>{text}</button>
+                  <button key={val} onClick={() => setter(val)} style={{ padding: '8px 14px', borderRadius: 8, border: '1px solid', borderColor: value === val ? '#F5E642' : '#1e3a5f', background: value === val ? '#F5E642' : 'transparent', color: value === val ? '#0A1628' : '#94a3b8', cursor: 'pointer', fontSize: 13, fontWeight: value === val ? 700 : 400 }}>{text}</button>
                 ))}
               </div>
             </div>

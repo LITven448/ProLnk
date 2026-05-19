@@ -5,10 +5,10 @@ const submarkets = ['Dallas proper', 'Fort Worth / TCU area', 'Frisco / McKinney
 
 function getPlan(vintage: string, submarket: string) {
   const clayRisk = submarket.includes('Frisco') || submarket.includes('Plano') || submarket.includes('Allen') ? 'High' : submarket.includes('South DFW') || submarket.includes('Fort Worth') ? 'Moderate-High' : 'Moderate';
-  const slabType = vintage === 'Pre-1960′ ? ’Conventional slab — no post-tension cables. Thinner, more vulnerable.' : vintage === '1960–1979′ ? ’Early post-tension or conventional. Inspect cable condition if visible.' : 'Post-tension slab standard. Locate cables before any drilling.';
-  const pierType = vintage === 'Pre-1960′ || vintage === '1960–1979' ? ’Pressed concrete or steel piers. Older homes often need more piers due to less rigid slab.' : 'Pressed concrete piers standard. Helical if poor load strata detected.';
+  const slabType = vintage === 'Pre-1960' ? 'Conventional slab — no post-tension cables. Thinner, more vulnerable.' : vintage === '1960–1979' ? 'Early post-tension or conventional. Inspect cable condition if visible.' : 'Post-tension slab standard. Locate cables before any drilling.';
+  const pierType = vintage === 'Pre-1960' || vintage === '1960–1979' ? 'Pressed concrete or steel piers. Older homes often need more piers due to less rigid slab.' : 'Pressed concrete piers standard. Helical if poor load strata detected.';
   const actions = [
-    vintage === 'Pre-1960′ ? ’Get foundation inspection every 2 years' : 'Annual foundation inspection recommended',
+    vintage === 'Pre-1960' ? 'Get foundation inspection every 2 years' : 'Annual foundation inspection recommended',
     'Install perimeter soaker hose if not present',
     'Maintain soil moisture within 18 inches of foundation year-round',
     'Document all cracks with photos and measurements',
@@ -16,7 +16,7 @@ function getPlan(vintage: string, submarket: string) {
     'Keep trees 15–25ft from foundation depending on species',
   ];
   const warrantyNote = 'Most DFW pier warranties are 10–25 years transferable. Get in writing before signing any repair contract.';
-  const engineerNote = vintage === 'Pre-1960′ ? ’Structural engineer review strongly recommended before any repair on a pre-1960 home.' : 'Engineer recommended for repairs exceeding 10 piers or any differential movement over 1 inch.';
+  const engineerNote = vintage === 'Pre-1960' ? 'Structural engineer review strongly recommended before any repair on a pre-1960 home.' : 'Engineer recommended for repairs exceeding 10 piers or any differential movement over 1 inch.';
   return { clayRisk, slabType, pierType, actions, warrantyNote, engineerNote };
 }
 
@@ -78,7 +78,7 @@ export default function DFWFoundation2026Summary() {
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12, marginBottom: 16 }}>
                 <div style={{ background: '#0A1628', borderRadius: 8, padding: 12 }}>
                   <div style={{ color: '#94A3B8', fontSize: 11, fontWeight: 700, marginBottom: 4 }}>CLAY RISK LEVEL</div>
-                  <div style={{ color: result.clayRisk === 'High' ? '#F87171′ : '#FB923C', fontWeight: 700 }}>{result.clayRisk}</div>
+                  <div style={{ color: result.clayRisk === 'High' ? '#F87171' : '#FB923C', fontWeight: 700 }}>{result.clayRisk}</div>
                 </div>
                 <div style={{ background: '#0A1628', borderRadius: 8, padding: 12 }}>
                   <div style={{ color: '#94A3B8', fontSize: 11, fontWeight: 700, marginBottom: 4 }}>SLAB TYPE</div>
@@ -87,7 +87,7 @@ export default function DFWFoundation2026Summary() {
               </div>
               <div style={{ background: '#0A1628', borderRadius: 8, padding: 14, marginBottom: 12 }}>
                 <div style={{ color: '#F5E642', fontSize: 12, fontWeight: 700, marginBottom: 10 }}>✅ YOUR 2026 ACTION PLAN</div>
-                {result.actions.map((a, i) => <div key={i} style={{ color: '#CBD5E1', fontSize: 14, marginBottom: 8, display: 'flex', gap: 8 }}><span style={{ color: '#F5E642′ }}>{i + 1}.</span>{a}</div>)}
+                {result.actions.map((a, i) => <div key={i} style={{ color: '#CBD5E1', fontSize: 14, marginBottom: 8, display: 'flex', gap: 8 }}><span style={{ color: '#F5E642' }}>{i + 1}.</span>{a}</div>)}
               </div>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12 }}>
                 <div style={{ background: '#0A1628', borderRadius: 8, padding: 12 }}>

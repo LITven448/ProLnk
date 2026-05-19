@@ -22,7 +22,7 @@ export default function DFWFoundationPierMaterialLife2026() {
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(220px, 1fr))', gap: '12px', marginBottom: '28px' }}>
           {pierTypes.map(p => (
             <button key={p.id} onClick={() => setSelected(selected === p.id ? null : p.id)}
-              style={{ padding: '14px 16px', borderRadius: '10px', border: '2px solid', borderColor: selected === p.id ? '#F5E642′ : '#1e3a5f', backgroundColor: selected === p.id ? '#F5E64220' : '#0d1f3c', color: '#ffffff', cursor: ’pointer', textAlign: 'left', fontSize: '14px', fontWeight: 600, transition: 'all 0.2s' }}>
+              style={{ padding: '14px 16px', borderRadius: '10px', border: '2px solid', borderColor: selected === p.id ? '#F5E642' : '#1e3a5f', backgroundColor: selected === p.id ? '#F5E64220' : '#0d1f3c', color: '#ffffff', cursor: 'pointer', textAlign: 'left', fontSize: '14px', fontWeight: 600, transition: 'all 0.2s' }}>
               🏗️ {p.label}
             </button>
           ))}
@@ -37,7 +37,7 @@ export default function DFWFoundationPierMaterialLife2026() {
         )}
 
         <div style={{ backgroundColor: '#0d1f3c', borderRadius: '12px', padding: '24px', marginBottom: '28px' }}>
-          <h2 style={{ fontSize: '18px', marginBottom: '16px', color: '#F5E642′ }}>📊 DFW Pier Longevity at a Glance</h2>
+          <h2 style={{ fontSize: '18px', marginBottom: '16px', color: '#F5E642' }}>📊 DFW Pier Longevity at a Glance</h2>
           {[{label:'Galvanized Steel',life:'30-50 years'},{label:'Powder-Coated Steel',life:'35-55 years'},{label:'Stainless Steel (316)',life:'50+ years'},{label:'Concrete (pressed/bell)',life:'60+ years'}].map((r,i) => (
             <div key={i} style={{ display: 'flex', justifyContent: 'space-between', padding: '10px 0', borderBottom: '1px solid #1e3a5f' }}>
               <span style={{ color: '#cbd5e1', fontSize: '14px' }}>🏗️ {r.label}</span>

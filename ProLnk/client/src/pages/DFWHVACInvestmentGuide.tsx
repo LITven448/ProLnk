@@ -101,7 +101,7 @@ export default function DFWHVACInvestmentGuide() {
           {situations.map(s => (
             <button key={s} onClick={() => setActiveSituation(s)}
               style={{ padding: '9px 16px', borderRadius: 10, border: 'none', cursor: 'pointer', fontWeight: 600, fontSize: 13,
-                background: activeSituation === s ? '#F5E642′ : '#1e2d45', color: activeSituation === s ? '#0A1628' : '#94a3b8' }}>
+                background: activeSituation === s ? '#F5E642' : '#1e2d45', color: activeSituation === s ? '#0A1628' : '#94a3b8' }}>
               {s}
             </button>
           ))}
@@ -109,7 +109,7 @@ export default function DFWHVACInvestmentGuide() {
 
         {data && (
           <div>
-            <div style={{ background: '#1e2d45', borderRadius: 14, padding: '22px 24px', marginBottom: 16, border: '1px solid #F5E642′ }}>
+            <div style={{ background: '#1e2d45', borderRadius: 14, padding: '22px 24px', marginBottom: 16, border: '1px solid #F5E642' }}>
               <h2 style={{ color: '#F5E642', margin: '0 0 16px', fontSize: 20 }}>{data.headline}</h2>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12 }}>
                 <div style={{ background: '#0A1628', borderRadius: 10, padding: '14px 16px' }}>
@@ -132,7 +132,7 @@ export default function DFWHVACInvestmentGuide() {
               ))}
             </div>
 
-            <div style={{ background: '#0d2137', borderRadius: 14, padding: '20px 24px', border: '2px solid #F5E642′ }}>
+            <div style={{ background: '#0d2137', borderRadius: 14, padding: '20px 24px', border: '2px solid #F5E642' }}>
               <div style={{ color: '#F5E642', fontWeight: 800, fontSize: 14, marginBottom: 8 }}>PROLNK VERDICT</div>
               <p style={{ color: '#fff', margin: 0, fontSize: 15, lineHeight: 1.7, fontWeight: 500 }}>{data.verdict}</p>
             </div>

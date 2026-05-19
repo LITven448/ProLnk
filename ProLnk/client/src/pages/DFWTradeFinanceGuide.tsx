@@ -45,11 +45,11 @@ export default function DFWTradeFinanceGuide() {
           <h2 style={{ margin: '0 0 16px', fontSize: 18 }}>Calculate Your Financial Targets</h2>
           <div style={{ marginBottom: 16 }}>
             <label style={{ fontSize: 13, color: '#94a3b8', display: 'block', marginBottom: 6 }}>Average Monthly Revenue ($)</label>
-            <input value={revenue} onChange={ev => setRevenue(ev.target.value)} placeholder="e.g. 12000″ style={{ background: '#0A1628', border: '1px solid #1e3a5f', borderRadius: 8, padding: '12px 16px', color: '#fff', fontSize: 18, width: '100%', boxSizing: 'border-box', fontWeight: 700 }} />
+            <input value={revenue} onChange={ev => setRevenue(ev.target.value)} placeholder="e.g. 12000" style={{ background: '#0A1628', border: '1px solid #1e3a5f', borderRadius: 8, padding: '12px 16px', color: '#fff', fontSize: 18, width: '100%', boxSizing: 'border-box', fontWeight: 700 }} />
           </div>
           <div style={{ display: 'flex', gap: 10, flexWrap: 'wrap' }}>
             {Object.keys(slowSeasons).map(k => (
-              <button key={k} onClick={() => setTrade(k)} style={{ padding: '10px 18px', borderRadius: 8, border: '2px solid', borderColor: trade === k ? '#F5E642′ : '#1e3a5f', background: trade === k ? '#F5E642' : ’transparent', color: trade === k ? '#0A1628′ : '#fff', fontWeight: 700, cursor: ’pointer', textTransform: 'capitalize' }}>{k}</button>
+              <button key={k} onClick={() => setTrade(k)} style={{ padding: '10px 18px', borderRadius: 8, border: '2px solid', borderColor: trade === k ? '#F5E642' : '#1e3a5f', background: trade === k ? '#F5E642' : 'transparent', color: trade === k ? '#0A1628' : '#fff', fontWeight: 700, cursor: 'pointer', textTransform: 'capitalize' }}>{k}</button>
             ))}
           </div>
         </div>
@@ -59,34 +59,34 @@ export default function DFWTradeFinanceGuide() {
             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12 }}>
               <div style={{ background: '#0F1F3D', borderRadius: 12, padding: 20 }}>
                 <div style={{ fontSize: 12, color: '#64748b', marginBottom: 4 }}>SET ASIDE FOR TAXES</div>
-                <div style={{ fontSize: 28, fontWeight: 800, color: '#F5E642′ }}>${monthlyTax.toLocaleString()}</div>
+                <div style={{ fontSize: 28, fontWeight: 800, color: '#F5E642' }}>${monthlyTax.toLocaleString()}</div>
                 <div style={{ fontSize: 12, color: '#94a3b8', marginTop: 4 }}>per month ({bracket.label})</div>
               </div>
               <div style={{ background: '#0F1F3D', borderRadius: 12, padding: 20 }}>
                 <div style={{ fontSize: 12, color: '#64748b', marginBottom: 4 }}>QUARTERLY TAX PAYMENT</div>
-                <div style={{ fontSize: 28, fontWeight: 800, color: '#ef4444′ }}>${quarterlyTax.toLocaleString()}</div>
+                <div style={{ fontSize: 28, fontWeight: 800, color: '#ef4444' }}>${quarterlyTax.toLocaleString()}</div>
                 <div style={{ fontSize: 12, color: '#94a3b8', marginTop: 4 }}>due Apr 15, Jun 15, Sep 15, Jan 15</div>
               </div>
               <div style={{ background: '#0F1F3D', borderRadius: 12, padding: 20 }}>
                 <div style={{ fontSize: 12, color: '#64748b', marginBottom: 4 }}>EMERGENCY FUND TARGET</div>
-                <div style={{ fontSize: 28, fontWeight: 800, color: '#F5E642′ }}>${emergencyFund.toLocaleString()}</div>
+                <div style={{ fontSize: 28, fontWeight: 800, color: '#F5E642' }}>${emergencyFund.toLocaleString()}</div>
                 <div style={{ fontSize: 12, color: '#94a3b8', marginTop: 4 }}>3 months expenses minimum</div>
               </div>
               <div style={{ background: '#0F1F3D', borderRadius: 12, padding: 20 }}>
                 <div style={{ fontSize: 12, color: '#64748b', marginBottom: 4 }}>SLOW SEASON RESERVE</div>
-                <div style={{ fontSize: 28, fontWeight: 800, color: '#F5E642′ }}>${slowSeasonReserve.toLocaleString()}</div>
+                <div style={{ fontSize: 28, fontWeight: 800, color: '#F5E642' }}>${slowSeasonReserve.toLocaleString()}</div>
                 <div style={{ fontSize: 12, color: '#94a3b8', marginTop: 4 }}>2 months revenue in the bank</div>
               </div>
             </div>
 
             <div style={{ background: '#0F1F3D', borderRadius: 12, padding: 20 }}>
               <div style={{ fontSize: 13, color: '#64748b', marginBottom: 4 }}>MONTHLY SAVINGS TARGET</div>
-              <div style={{ fontSize: 36, fontWeight: 800, color: '#F5E642′ }}>${businessSavings.toLocaleString()}<span style={{ fontSize: 16, color: '#64748b' }}>/mo</span></div>
+              <div style={{ fontSize: 36, fontWeight: 800, color: '#F5E642' }}>${businessSavings.toLocaleString()}<span style={{ fontSize: 16, color: '#64748b' }}>/mo</span></div>
               <p style={{ color: '#94a3b8', margin: '8px 0 0', fontSize: 13 }}>20% of revenue into business savings covers taxes, reserve, and equipment fund</p>
             </div>
 
             {trade && (
-              <div style={{ background: '#0F1F3D', borderRadius: 12, padding: 20, borderLeft: '3px solid #F5E642′ }}>
+              <div style={{ background: '#0F1F3D', borderRadius: 12, padding: 20, borderLeft: '3px solid #F5E642' }}>
                 <div style={{ fontSize: 13, fontWeight: 700, color: '#F5E642', marginBottom: 8 }}>DFW Slow Season for {trade.charAt(0).toUpperCase() + trade.slice(1)}</div>
                 <p style={{ color: '#cbd5e1', margin: 0, fontSize: 14 }}>{slowSeasons[trade as keyof typeof slowSeasons]}</p>
                 <p style={{ color: '#94a3b8', margin: '8px 0 0', fontSize: 13 }}>Your ${slowSeasonReserve.toLocaleString()} slow season reserve covers 2 months at current revenue. Build it during peak season (May-Sep).</p>

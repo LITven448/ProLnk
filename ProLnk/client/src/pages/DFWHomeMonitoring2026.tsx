@@ -47,7 +47,7 @@ export default function DFWHomeMonitoring2026() {
             <div style={{ color: '#94a3b8', fontSize: 13, marginBottom: 8 }}>Home size:</div>
             <div style={{ display: 'flex', flexDirection: 'column', gap: 6 }}>
               {sizes.map(s => (
-                <button key={s} onClick={() => setSize(s)} style={{ background: size === s ? '#F5E642′ : '#1e3a5f', color: size === s ? '#0A1628' : '#e2e8f0', border: ’none', borderRadius: 8, padding: '9px 14px', textAlign: 'left', cursor: 'pointer', fontWeight: 600, fontSize: 13 }}>{s}</button>
+                <button key={s} onClick={() => setSize(s)} style={{ background: size === s ? '#F5E642' : '#1e3a5f', color: size === s ? '#0A1628' : '#e2e8f0', border: 'none', borderRadius: 8, padding: '9px 14px', textAlign: 'left', cursor: 'pointer', fontWeight: 600, fontSize: 13 }}>{s}</button>
               ))}
             </div>
           </div>
@@ -55,16 +55,16 @@ export default function DFWHomeMonitoring2026() {
             <div style={{ color: '#94a3b8', fontSize: 13, marginBottom: 8 }}>Primary concern:</div>
             <div style={{ display: 'flex', flexDirection: 'column', gap: 6 }}>
               {concerns.map(c => (
-                <button key={c} onClick={() => setConcern(c)} style={{ background: concern === c ? '#F5E642′ : '#1e3a5f', color: concern === c ? '#0A1628' : '#e2e8f0', border: ’none', borderRadius: 8, padding: '9px 14px', textAlign: 'left', cursor: 'pointer', fontWeight: 600, fontSize: 13 }}>{c}</button>
+                <button key={c} onClick={() => setConcern(c)} style={{ background: concern === c ? '#F5E642' : '#1e3a5f', color: concern === c ? '#0A1628' : '#e2e8f0', border: 'none', borderRadius: 8, padding: '9px 14px', textAlign: 'left', cursor: 'pointer', fontWeight: 600, fontSize: 13 }}>{c}</button>
               ))}
             </div>
           </div>
           {match && (
-            <div style={{ background: '#0A1628', borderRadius: 10, padding: 16, borderLeft: '4px solid #F5E642′ }}>
+            <div style={{ background: '#0A1628', borderRadius: 10, padding: 16, borderLeft: '4px solid #F5E642' }}>
               <div style={{ color: '#F5E642', fontWeight: 700, marginBottom: 6 }}>{match.icon} Recommendation: {match.rec}</div>
               <div style={{ fontSize: 13, color: '#cbd5e1', marginBottom: 4 }}>System: {match.system}</div>
               <div style={{ fontSize: 13, color: '#cbd5e1', marginBottom: 4 }}>Backup: {match.backup}</div>
-              <div style={{ fontSize: 12, color: '#94a3b8′ }}>💡 {match.note}</div>
+              <div style={{ fontSize: 12, color: '#94a3b8' }}>💡 {match.note}</div>
             </div>
           )}
         </div>

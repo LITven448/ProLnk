@@ -27,7 +27,7 @@ export default function DFWSummerReadyMay2026() {
         <p style={{ color: '#94a3b8', marginBottom: 24 }}>DFW summers average 40+ days above 100°F. Get ahead of it now.</p>
 
         <div style={{ background: '#0F2040', borderRadius: 12, padding: '1rem 1.5rem', marginBottom: 24, display: 'flex', alignItems: 'center', gap: 16 }}>
-          <div style={{ fontSize: 36, fontWeight: 800, color: '#F5E642′ }}>{pct}%</div>
+          <div style={{ fontSize: 36, fontWeight: 800, color: '#F5E642' }}>{pct}%</div>
           <div>
             <div style={{ fontWeight: 700 }}>Ready for Summer</div>
             <div style={{ color: '#94a3b8', fontSize: 13 }}>{done.length} of {checks.length} tasks complete</div>
@@ -47,7 +47,7 @@ export default function DFWSummerReadyMay2026() {
                 <div style={{ fontWeight: 700, fontSize: 15 }}>{c.label}</div>
                 <div style={{ color: '#94a3b8', fontSize: 13 }}>{c.desc}</div>
               </div>
-              <div style={{ fontSize: 11, fontWeight: 700, padding: '3px 8px', borderRadius: 99, background: c.priority === 'Critical' ? '#7f1d1d' : c.priority === 'High' ? '#1e3a5f' : '#1a2e1a', color: c.priority === 'Critical' ? '#fca5a5′ : c.priority === ’High' ? '#93c5fd' : '#86efac' }}>{c.priority}</div>
+              <div style={{ fontSize: 11, fontWeight: 700, padding: '3px 8px', borderRadius: 99, background: c.priority === 'Critical' ? '#7f1d1d' : c.priority === 'High' ? '#1e3a5f' : '#1a2e1a', color: c.priority === 'Critical' ? '#fca5a5' : c.priority === 'High' ? '#93c5fd' : '#86efac' }}>{c.priority}</div>
             </div>
           ))}
         </div>

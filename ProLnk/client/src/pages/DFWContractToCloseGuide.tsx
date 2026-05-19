@@ -81,7 +81,7 @@ export default function DFWContractToCloseGuide() {
   const guide = issueType ? issueGuide[issueType] : null;
 
   return (
-    <div style={{ background: '#F9FAFB', minHeight: '100vh', padding: '32px 16px', fontFamily: 'system-ui,sans-serif', color: '#0A1628′ }}>
+    <div style={{ background: '#F9FAFB', minHeight: '100vh', padding: '32px 16px', fontFamily: 'system-ui,sans-serif', color: '#0A1628' }}>
       <div style={{ maxWidth: 760, margin: '0 auto' }}>
         <div style={{ background: '#0A1628', borderRadius: 12, padding: '28px 24px', marginBottom: 28 }}>
           <div style={{ fontSize: 28 }}>🔐</div>
@@ -89,7 +89,7 @@ export default function DFWContractToCloseGuide() {
           <p style={{ color: '#CBD5E1', margin: 0 }}>What happens at each stage after accepting an offer, what you must do, and how to handle contract issues without losing your deal.</p>
         </div>
 
-        <div style={{ background: '#fff', borderRadius: 10, padding: 20, marginBottom: 20, border: '1px solid #E2E8F0′ }}>
+        <div style={{ background: '#fff', borderRadius: 10, padding: 20, marginBottom: 20, border: '1px solid #E2E8F0' }}>
           <h2 style={{ fontSize: 16, fontWeight: 700, marginBottom: 12 }}>📋 The DFW Close Timeline</h2>
           {stages.map(s => (
             <div key={s.name} style={{ marginBottom: 14 }}>
@@ -102,7 +102,7 @@ export default function DFWContractToCloseGuide() {
           ))}
         </div>
 
-        <div style={{ background: '#fff', borderRadius: 10, padding: 20, marginBottom: 20, border: '1px solid #E2E8F0′ }}>
+        <div style={{ background: '#fff', borderRadius: 10, padding: 20, marginBottom: 20, border: '1px solid #E2E8F0' }}>
           <h2 style={{ fontSize: 16, fontWeight: 700, marginBottom: 6 }}>⚠️ Handle a Contract Issue</h2>
           <p style={{ fontSize: 13, color: '#64748B', marginBottom: 10 }}>Select the issue you're facing for guidance, your rights, and when to involve an attorney.</p>
           <select value={issueType} onChange={e => setIssueType(e.target.value)} style={{ width: '100%', padding: '9px 12px', borderRadius: 6, border: '1px solid #CBD5E1', fontSize: 13, background: '#fff', color: '#0A1628', marginBottom: 14 }}>
@@ -116,7 +116,7 @@ export default function DFWContractToCloseGuide() {
                 <p style={{ fontSize: 13, color: '#334155', margin: 0, lineHeight: 1.6 }}>{guide.action}</p>
               </div>
               <div style={{ background: '#EFF6FF', border: '1px solid #BFDBFE', borderRadius: 8, padding: 14, marginBottom: 10 }}>
-                <div style={{ fontWeight: 600, fontSize: 13, marginBottom: 6, color: '#1D4ED8′ }}>⚖️ Your Seller Rights</div>
+                <div style={{ fontWeight: 600, fontSize: 13, marginBottom: 6, color: '#1D4ED8' }}>⚖️ Your Seller Rights</div>
                 <p style={{ fontSize: 13, color: '#1E3A5F', margin: 0, lineHeight: 1.6 }}>{guide.rights}</p>
               </div>
               {guide.attorney && (

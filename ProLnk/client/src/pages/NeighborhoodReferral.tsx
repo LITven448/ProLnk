@@ -15,15 +15,15 @@ type NeighborReferral = {
 };
 
 const STATUS_CONFIG: Record<ReferralStatus, { color: string; bg: string; dot: string }> = {
-  Invited: { color: "#f59e0b", bg: "rgba(245,158,11,0.12)", dot: "bg-amber-400″ },
-  Joined: { color: "#3b82f6″, bg: "rgba(59,130,246,0.12)", dot: "bg-blue-400" },
-  Scanned: { color: "#22c55e", bg: "rgba(34,197,94,0.12)", dot: "bg-green-400″ },
+  Invited: { color: "#f59e0b", bg: "rgba(245,158,11,0.12)", dot: "bg-amber-400" },
+  Joined: { color: "#3b82f6", bg: "rgba(59,130,246,0.12)", dot: "bg-blue-400" },
+  Scanned: { color: "#22c55e", bg: "rgba(34,197,94,0.12)", dot: "bg-green-400" },
 };
 
 const MOCK_REFERRALS: NeighborReferral[] = [
-  { id: "1″, name: "Jennifer K.", email: "j***@gmail.com", status: "Scanned", invitedAt: "2 days ago" },
-  { id: "2″, name: "Marcus T.", email: "m***@gmail.com", status: "Joined", invitedAt: "4 days ago" },
-  { id: "3″, name: "Anonymous", email: "a***@icloud.com", status: "Invited", invitedAt: "1 week ago" },
+  { id: "1", name: "Jennifer K.", email: "j***@gmail.com", status: "Scanned", invitedAt: "2 days ago" },
+  { id: "2", name: "Marcus T.", email: "m***@gmail.com", status: "Joined", invitedAt: "4 days ago" },
+  { id: "3", name: "Anonymous", email: "a***@icloud.com", status: "Invited", invitedAt: "1 week ago" },
 ];
 
 function CopyButton({ text, label, variant = "default" }: { text: string; label: string; variant?: "default" | "primary" }) {
@@ -73,15 +73,15 @@ function MilestoneBar({ joined }: { joined: number }) {
 
   return (
     <div
-      className="p-4 rounded-xl space-y-3″
+      className="p-4 rounded-xl space-y-3"
       style={{ background: "rgba(99,102,241,0.1)", border: "1px solid rgba(99,102,241,0.25)" }}
     >
-      <div className="flex items-center gap-2″>
-        <Gift size={16} className="text-indigo-400″ />
+      <div className="flex items-center gap-2">
+        <Gift size={16} className="text-indigo-400" />
         <span className="text-sm font-semibold text-white">Free Premium Scan Reward</span>
       </div>
       <div className="flex items-center justify-between text-xs">
-        <span className="text-gray-400″>
+        <span className="text-gray-400">
           {joined} of {goal} neighbors joined
         </span>
         {remaining > 0 ? (
@@ -99,7 +99,7 @@ function MilestoneBar({ joined }: { joined: number }) {
           style={{ background: "linear-gradient(90deg, #6366f1, #8b5cf6)" }}
         />
       </div>
-      <p className="text-xs text-gray-500″>
+      <p className="text-xs text-gray-500">
         When 3 neighbors join using your link, you earn a free TrustyPro Premium Scan (valued at $99).
       </p>
     </div>
@@ -144,8 +144,8 @@ export default function NeighborhoodReferral() {
   };
 
   return (
-    <div className="min-h-screen pb-20″ style={{ background: "#0c0f1a", color: "#fff" }}>
-      <div className="max-w-lg mx-auto px-4 pt-10 space-y-6″>
+    <div className="min-h-screen pb-20" style={{ background: "#0c0f1a", color: "#fff" }}>
+      <div className="max-w-lg mx-auto px-4 pt-10 space-y-6">
 
         {/* Hero */}
         <motion.div
@@ -155,14 +155,14 @@ export default function NeighborhoodReferral() {
           className="text-center"
         >
           <div
-            className="w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-4″
+            className="w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-4"
             style={{ background: "rgba(99,102,241,0.15)", border: "1px solid rgba(99,102,241,0.3)" }}
           >
-            <Home size={28} className="text-indigo-400″ />
+            <Home size={28} className="text-indigo-400" />
           </div>
           <h1 className="text-3xl font-black mb-2 leading-tight">
             Help your neighbors<br />
-            <span className="text-indigo-400″>protect their homes</span>
+            <span className="text-indigo-400">protect their homes</span>
           </h1>
           <p className="text-gray-400 text-sm max-w-xs mx-auto">
             Share TrustyPro with your neighbors. When they join, everyone on your street gets smarter home protection.
@@ -183,11 +183,11 @@ export default function NeighborhoodReferral() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.1 }}
-          className="p-5 rounded-2xl space-y-4″
-          style={{ background: "#131726″, border: "1px solid rgba(255,255,255,0.08)" }}
+          className="p-5 rounded-2xl space-y-4"
+          style={{ background: "#131726", border: "1px solid rgba(255,255,255,0.08)" }}
         >
-          <div className="flex items-center gap-2 mb-1″>
-            <Send size={16} className="text-indigo-400″ />
+          <div className="flex items-center gap-2 mb-1">
+            <Send size={16} className="text-indigo-400" />
             <h2 className="font-bold text-white">Invite a Neighbor by Email</h2>
           </div>
 
@@ -201,13 +201,13 @@ export default function NeighborhoodReferral() {
                 className="flex flex-col items-center py-4 text-center"
               >
                 <div
-                  className="w-12 h-12 rounded-full flex items-center justify-center mb-3″
+                  className="w-12 h-12 rounded-full flex items-center justify-center mb-3"
                   style={{ background: "rgba(34,197,94,0.15)", border: "1px solid rgba(34,197,94,0.3)" }}
                 >
-                  <Check size={22} className="text-green-400″ />
+                  <Check size={22} className="text-green-400" />
                 </div>
                 <p className="text-white font-semibold">Invite sent!</p>
-                <p className="text-gray-400 text-xs mt-1″>We notified your neighbor. You'll see them appear below when they join.</p>
+                <p className="text-gray-400 text-xs mt-1">We notified your neighbor. You'll see them appear below when they join.</p>
                 <button
                   onClick={() => setSubmitState("idle")}
                   className="mt-4 text-xs text-indigo-400 hover:text-indigo-300 underline"
@@ -221,28 +221,28 @@ export default function NeighborhoodReferral() {
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 onSubmit={handleSendInvite}
-                className="space-y-3″
+                className="space-y-3"
               >
                 <div>
-                  <label className="text-xs text-gray-400 block mb-1.5″>Neighbor's name (optional)</label>
+                  <label className="text-xs text-gray-400 block mb-1.5">Neighbor's name (optional)</label>
                   <input
                     type="text"
                     value={neighborName}
                     onChange={(e) => setNeighborName(e.target.value)}
                     placeholder="e.g. Mike next door"
-                    className="w-full px-3 py-2.5 rounded-xl text-sm text-white placeholder-gray-600 outline-none focus:ring-1 focus:ring-indigo-500″
+                    className="w-full px-3 py-2.5 rounded-xl text-sm text-white placeholder-gray-600 outline-none focus:ring-1 focus:ring-indigo-500"
                     style={{ background: "rgba(255,255,255,0.05)", border: "1px solid rgba(255,255,255,0.1)" }}
                   />
                 </div>
                 <div>
-                  <label className="text-xs text-gray-400 block mb-1.5″>Neighbor's email *</label>
+                  <label className="text-xs text-gray-400 block mb-1.5">Neighbor's email *</label>
                   <input
                     type="email"
                     value={neighborEmail}
                     onChange={(e) => setNeighborEmail(e.target.value)}
                     placeholder="neighbor@example.com"
                     required
-                    className="w-full px-3 py-2.5 rounded-xl text-sm text-white placeholder-gray-600 outline-none focus:ring-1 focus:ring-indigo-500″
+                    className="w-full px-3 py-2.5 rounded-xl text-sm text-white placeholder-gray-600 outline-none focus:ring-1 focus:ring-indigo-500"
                     style={{ background: "rgba(255,255,255,0.05)", border: "1px solid rgba(255,255,255,0.1)" }}
                   />
                 </div>
@@ -252,7 +252,7 @@ export default function NeighborhoodReferral() {
                 <button
                   type="submit"
                   disabled={submitState === "loading" || !neighborEmail.trim()}
-                  className="w-full py-3 rounded-xl font-semibold text-sm transition-all disabled:opacity-50″
+                  className="w-full py-3 rounded-xl font-semibold text-sm transition-all disabled:opacity-50"
                   style={{ background: "rgba(99,102,241,0.9)", color: "#fff" }}
                 >
                   {submitState === "loading" ? "Sending…" : "Send Invite"}
@@ -267,18 +267,18 @@ export default function NeighborhoodReferral() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.15 }}
-          className="p-5 rounded-2xl space-y-3″
-          style={{ background: "#131726″, border: "1px solid rgba(255,255,255,0.08)" }}
+          className="p-5 rounded-2xl space-y-3"
+          style={{ background: "#131726", border: "1px solid rgba(255,255,255,0.08)" }}
         >
-          <div className="flex items-center gap-2 mb-1″>
-            <Sparkles size={15} className="text-amber-400″ />
+          <div className="flex items-center gap-2 mb-1">
+            <Sparkles size={15} className="text-amber-400" />
             <h2 className="font-bold text-white">Or Copy Your Personal Invite Link</h2>
           </div>
           <div
             className="flex items-center gap-2 px-3 py-2.5 rounded-xl overflow-hidden"
             style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)" }}
           >
-            <span className="text-xs text-gray-400 flex-1 truncate font-mono min-w-0″>{inviteLink}</span>
+            <span className="text-xs text-gray-400 flex-1 truncate font-mono min-w-0">{inviteLink}</span>
           </div>
           <CopyButton text={inviteLink} label="Copy Invite Link" variant="primary" />
           <p className="text-xs text-gray-600 text-center">Share on Nextdoor, neighborhood Facebook groups, or text it directly</p>
@@ -289,12 +289,12 @@ export default function NeighborhoodReferral() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.2 }}
-          className="p-5 rounded-2xl space-y-4″
-          style={{ background: "#131726″, border: "1px solid rgba(255,255,255,0.08)" }}
+          className="p-5 rounded-2xl space-y-4"
+          style={{ background: "#131726", border: "1px solid rgba(255,255,255,0.08)" }}
         >
           <div className="flex items-center justify-between">
-            <div className="flex items-center gap-2″>
-              <Users size={16} className="text-green-400″ />
+            <div className="flex items-center gap-2">
+              <Users size={16} className="text-green-400" />
               <h2 className="font-bold text-white">Your Neighbor Referrals</h2>
             </div>
             <span
@@ -306,12 +306,12 @@ export default function NeighborhoodReferral() {
           </div>
 
           {referrals.length === 0 ? (
-            <div className="text-center py-8″>
+            <div className="text-center py-8">
               <p className="text-gray-500 text-sm">No referrals yet</p>
-              <p className="text-xs text-gray-600 mt-1″>Send your first invite above to start tracking</p>
+              <p className="text-xs text-gray-600 mt-1">Send your first invite above to start tracking</p>
             </div>
           ) : (
-            <div className="space-y-2″>
+            <div className="space-y-2">
               {referrals.map((r) => {
                 const cfg = STATUS_CONFIG[r.status];
                 return (
@@ -321,17 +321,17 @@ export default function NeighborhoodReferral() {
                     style={{ background: "rgba(255,255,255,0.03)", border: "1px solid rgba(255,255,255,0.06)" }}
                   >
                     <div
-                      className="w-9 h-9 rounded-full flex items-center justify-center text-sm font-bold flex-shrink-0″
-                      style={{ background: "rgba(99,102,241,0.15)", color: "#818cf8″ }}
+                      className="w-9 h-9 rounded-full flex items-center justify-center text-sm font-bold flex-shrink-0"
+                      style={{ background: "rgba(99,102,241,0.15)", color: "#818cf8" }}
                     >
                       {r.name === "Anonymous" ? "?" : r.name[0]}
                     </div>
-                    <div className="flex-1 min-w-0″>
+                    <div className="flex-1 min-w-0">
                       <p className="text-sm text-white font-medium truncate">{r.name}</p>
-                      <p className="text-xs text-gray-500″>{r.email} · {r.invitedAt}</p>
+                      <p className="text-xs text-gray-500">{r.email} · {r.invitedAt}</p>
                     </div>
                     <span
-                      className="flex items-center gap-1.5 text-xs font-semibold px-2.5 py-1 rounded-full flex-shrink-0″
+                      className="flex items-center gap-1.5 text-xs font-semibold px-2.5 py-1 rounded-full flex-shrink-0"
                       style={{ background: cfg.bg, color: cfg.color }}
                     >
                       <span className={`w-1.5 h-1.5 rounded-full ${cfg.dot}`} />
@@ -344,13 +344,13 @@ export default function NeighborhoodReferral() {
           )}
 
           {/* Legend */}
-          <div className="flex items-center gap-4 pt-1 border-t border-white/5″>
+          <div className="flex items-center gap-4 pt-1 border-t border-white/5">
             {(["Invited", "Joined", "Scanned"] as ReferralStatus[]).map((s) => {
               const cfg = STATUS_CONFIG[s];
               return (
-                <div key={s} className="flex items-center gap-1.5″>
+                <div key={s} className="flex items-center gap-1.5">
                   <span className={`w-1.5 h-1.5 rounded-full ${cfg.dot}`} />
-                  <span className="text-xs text-gray-500″>{s}</span>
+                  <span className="text-xs text-gray-500">{s}</span>
                 </div>
               );
             })}
@@ -362,27 +362,27 @@ export default function NeighborhoodReferral() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.25 }}
-          className="p-5 rounded-2xl space-y-4″
+          className="p-5 rounded-2xl space-y-4"
           style={{ background: "rgba(99,102,241,0.07)", border: "1px solid rgba(99,102,241,0.2)" }}
         >
-          <div className="flex items-center gap-2″>
-            <Star size={15} className="text-indigo-400″ />
+          <div className="flex items-center gap-2">
+            <Star size={15} className="text-indigo-400" />
             <h2 className="font-bold text-white text-sm">How It Works</h2>
           </div>
-          <div className="space-y-3″>
+          <div className="space-y-3">
             {[
-              { step: "1″, text: "Share your personal invite link with neighbors" },
-              { step: "2″, text: "They sign up for TrustyPro Home Health" },
-              { step: "3″, text: "When 3 neighbors join, you get a free Premium Scan" },
+              { step: "1", text: "Share your personal invite link with neighbors" },
+              { step: "2", text: "They sign up for TrustyPro Home Health" },
+              { step: "3", text: "When 3 neighbors join, you get a free Premium Scan" },
             ].map(({ step, text }) => (
-              <div key={step} className="flex items-start gap-3″>
+              <div key={step} className="flex items-start gap-3">
                 <div
-                  className="w-6 h-6 rounded-full flex items-center justify-center text-xs font-bold flex-shrink-0 mt-0.5″
-                  style={{ background: "rgba(99,102,241,0.25)", color: "#818cf8″ }}
+                  className="w-6 h-6 rounded-full flex items-center justify-center text-xs font-bold flex-shrink-0 mt-0.5"
+                  style={{ background: "rgba(99,102,241,0.25)", color: "#818cf8" }}
                 >
                   {step}
                 </div>
-                <p className="text-sm text-gray-300″>{text}</p>
+                <p className="text-sm text-gray-300">{text}</p>
               </div>
             ))}
           </div>
@@ -390,8 +390,8 @@ export default function NeighborhoodReferral() {
             className="flex items-center gap-2 p-3 rounded-xl"
             style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.06)" }}
           >
-            <Gift size={14} className="text-amber-400 flex-shrink-0″ />
-            <p className="text-xs text-gray-400″>
+            <Gift size={14} className="text-amber-400 flex-shrink-0" />
+            <p className="text-xs text-gray-400">
               Premium Scan includes a full AI-powered home health analysis, safety risk detection, and a 23-point inspection report — valued at $99.
             </p>
           </div>

@@ -1,9 +1,9 @@
 import { useState } from 'react';
 
 const ageGroups = [
-  { label: '0–5 yrs old', scope: 'Light touch-up', items: ['Touch-up paint ($300–600)', 'Carpet steam clean ($200)', 'HVAC filter replacement', 'Deep clean ($250–400)', 'Re-key locks ($80)', 'Inspect appliances'], estimate: '$1,000–1,500′ },
-  { label: '6–10 yrs old', scope: 'Moderate refresh', items: ['Full interior paint ($600–1,000)', 'Carpet clean or patch ($350)', 'HVAC service + filter', 'Deep clean ($300–450)', 'Minor drywall repairs ($200)', 'Faucet/fixture check'], estimate: '$1,800–2,800′ },
-  { label: '11–20 yrs old', scope: 'Significant refresh', items: ['Full paint ($900–1,400)', 'Carpet replace 1–2 rooms ($800)', 'HVAC tune-up or repair', 'Deep clean ($400)', 'Appliance inspect/replace', 'Door hardware update', 'Caulk bathrooms/kitchen'], estimate: '$2,500–4,000′ },
+  { label: '0–5 yrs old', scope: 'Light touch-up', items: ['Touch-up paint ($300–600)', 'Carpet steam clean ($200)', 'HVAC filter replacement', 'Deep clean ($250–400)', 'Re-key locks ($80)', 'Inspect appliances'], estimate: '$1,000–1,500' },
+  { label: '6–10 yrs old', scope: 'Moderate refresh', items: ['Full interior paint ($600–1,000)', 'Carpet clean or patch ($350)', 'HVAC service + filter', 'Deep clean ($300–450)', 'Minor drywall repairs ($200)', 'Faucet/fixture check'], estimate: '$1,800–2,800' },
+  { label: '11–20 yrs old', scope: 'Significant refresh', items: ['Full paint ($900–1,400)', 'Carpet replace 1–2 rooms ($800)', 'HVAC tune-up or repair', 'Deep clean ($400)', 'Appliance inspect/replace', 'Door hardware update', 'Caulk bathrooms/kitchen'], estimate: '$2,500–4,000' },
   { label: '20+ yrs old', scope: 'Full renovation scope', items: ['Paint entire unit ($1,200+)', 'Full carpet/flooring replace ($1,500+)', 'HVAC evaluate for replacement', 'Deep clean ($500)', 'Update fixtures + hardware', 'Inspect plumbing + electrical', 'Consider countertop/cabinet refresh'], estimate: '$4,000–7,000+' },
 ];
 
@@ -33,7 +33,7 @@ export default function DFWTurnoverRepairsGuide2026() {
           <h2 style={{ color: '#F5E642', fontSize: 17, marginBottom: 16 }}>🏚️ Property Age → Turnover Repair Scope</h2>
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8, marginBottom: 20 }}>
             {ageGroups.map((ag, i) => (
-              <button key={ag.label} onClick={() => setSelected(i)} style={{ background: selected === i ? '#F5E642′ : '#1e3a5f', color: selected === i ? '#0A1628' : '#fff', border: ’none', borderRadius: 8, padding: '8px 14px', fontSize: 13, cursor: 'pointer', fontWeight: selected === i ? 700 : 400 }}>
+              <button key={ag.label} onClick={() => setSelected(i)} style={{ background: selected === i ? '#F5E642' : '#1e3a5f', color: selected === i ? '#0A1628' : '#fff', border: 'none', borderRadius: 8, padding: '8px 14px', fontSize: 13, cursor: 'pointer', fontWeight: selected === i ? 700 : 400 }}>
                 {ag.label}
               </button>
             ))}

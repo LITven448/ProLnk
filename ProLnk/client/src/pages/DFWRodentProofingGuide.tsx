@@ -45,7 +45,7 @@ export default function DFWRodentProofingGuide() {
           <div style={{ fontSize: 40, marginBottom: 12 }}>🐭</div>
           <h1 style={{ fontSize: 32, fontWeight: 700, color: '#F5E642', marginBottom: 8 }}>DFW Rodent-Proofing Guide</h1>
           <p style={{ color: '#94a3b8', fontSize: 16, lineHeight: 1.6 }}>
-            Mice and rats are a <strong style={{ color: '#F5E642′ }}>major issue in DFW winters</strong> (November–February). As temperatures drop, rodents seek warmth inside homes. DFW’s older housing stock — especially 1970s–1990s brick homes — has countless potential entry points. Attic damage from rodents is the #1 hidden home repair cost in North Texas.
+            Mice and rats are a <strong style={{ color: '#F5E642' }}>major issue in DFW winters</strong> (November–February). As temperatures drop, rodents seek warmth inside homes. DFW's older housing stock — especially 1970s–1990s brick homes — has countless potential entry points. Attic damage from rodents is the #1 hidden home repair cost in North Texas.
           </p>
         </div>
 
@@ -78,7 +78,7 @@ export default function DFWRodentProofingGuide() {
               { title: 'Trapping', icon: '🪤', desc: 'Snap traps or live traps inside home. Effective for existing infestation. Must be combined with exclusion or population rebounds. Check daily — trapped rodents decay fast in DFW heat.', recommended: false },
               { title: 'Rodenticide (Poison Bait)', icon: '☠️', desc: 'Fast knockdown of large populations. Risk: rodents die inside walls causing odor. Risk to pets and raptors (owls, hawks) from secondary poisoning. Use only as last resort or with tamper-resistant bait stations outside.', recommended: false },
             ].map(t => (
-              <div key={t.title} style={{ flex: '1 1 220px', backgroundColor: '#1a2d4a', borderRadius: 10, padding: 16, borderTop: t.recommended ? '3px solid #22c55e' : '3px solid #334155′ }}>
+              <div key={t.title} style={{ flex: '1 1 220px', backgroundColor: '#1a2d4a', borderRadius: 10, padding: 16, borderTop: t.recommended ? '3px solid #22c55e' : '3px solid #334155' }}>
                 <div style={{ fontSize: 24, marginBottom: 8 }}>{t.icon}</div>
                 <div style={{ fontWeight: 600, color: '#e2e8f0', marginBottom: 6 }}>{t.title}</div>
                 {t.recommended && <div style={{ color: '#22c55e', fontSize: 12, marginBottom: 6 }}>✅ Recommended first step</div>}
@@ -90,7 +90,7 @@ export default function DFWRodentProofingGuide() {
 
         <div style={{ backgroundColor: '#0f2040', borderRadius: 12, padding: 24, marginBottom: 24 }}>
           <h2 style={{ fontSize: 20, fontWeight: 600, color: '#F5E642', marginBottom: 16 }}>⚠️ DFW Attic Damage: What's at Stake</h2>
-          <div style={{ backgroundColor: '#1a2d4a', borderRadius: 8, padding: 16, borderLeft: '4px solid #ef4444′ }}>
+          <div style={{ backgroundColor: '#1a2d4a', borderRadius: 8, padding: 16, borderLeft: '4px solid #ef4444' }}>
             <p style={{ color: '#cbd5e1', fontSize: 14, lineHeight: 1.7, margin: 0 }}>
               DFW attics are prime real estate for rats. They shred blown-in insulation for nests (requires full re-insulation at $2,000–$5,000), chew through electrical wiring (fire hazard), and contaminate insulation with urine and droppings (health risk). If you hear scratching in your attic, treat as urgent — the longer they stay, the more damage compounds.
             </p>
@@ -105,7 +105,7 @@ export default function DFWRodentProofingGuide() {
             <div style={{ display: 'flex', gap: 8 }}>
               {[['newer', 'After 2000'], ['mid', '1980–2000'], ['older', 'Before 1980']].map(([v, l]) => (
                 <button key={v} onClick={() => setHomeAge(v)}
-                  style={{ flex: 1, padding: '10px 4px', borderRadius: 8, border: '2px solid', borderColor: homeAge === v ? '#F5E642′ : '#1a2d4a', backgroundColor: homeAge === v ? '#F5E642' : '#1a2d4a', color: homeAge === v ? '#0A1628' : '#cbd5e1', fontWeight: 600, cursor: ’pointer', fontSize: 12 }}>
+                  style={{ flex: 1, padding: '10px 4px', borderRadius: 8, border: '2px solid', borderColor: homeAge === v ? '#F5E642' : '#1a2d4a', backgroundColor: homeAge === v ? '#F5E642' : '#1a2d4a', color: homeAge === v ? '#0A1628' : '#cbd5e1', fontWeight: 600, cursor: 'pointer', fontSize: 12 }}>
                   {l}
                 </button>
               ))}
@@ -117,7 +117,7 @@ export default function DFWRodentProofingGuide() {
             <div style={{ display: 'flex', gap: 8 }}>
               {[['droppings', '💩 Droppings'], ['sounds', '👂 Sounds/scratching'], ['sightings', '👁️ Live sightings']].map(([v, l]) => (
                 <button key={v} onClick={() => setEvidence(v)}
-                  style={{ flex: 1, padding: '10px 4px', borderRadius: 8, border: '2px solid', borderColor: evidence === v ? '#F5E642′ : '#1a2d4a', backgroundColor: evidence === v ? '#F5E642' : '#1a2d4a', color: evidence === v ? '#0A1628' : '#cbd5e1', fontWeight: 600, cursor: ’pointer', fontSize: 12 }}>
+                  style={{ flex: 1, padding: '10px 4px', borderRadius: 8, border: '2px solid', borderColor: evidence === v ? '#F5E642' : '#1a2d4a', backgroundColor: evidence === v ? '#F5E642' : '#1a2d4a', color: evidence === v ? '#0A1628' : '#cbd5e1', fontWeight: 600, cursor: 'pointer', fontSize: 12 }}>
                   {l}
                 </button>
               ))}
@@ -134,7 +134,7 @@ export default function DFWRodentProofingGuide() {
               <div style={{ fontSize: 22, fontWeight: 700, color: '#F5E642', marginBottom: 12 }}>Estimated Cost: ${cost.low}–${cost.high}</div>
               <div style={{ fontWeight: 600, color: '#e2e8f0', marginBottom: 10 }}>🔍 Inspection Checklist:</div>
               {checklist.map((item, i) => (
-                <div key={i} style={{ display: 'flex', alignItems: 'flex-start', gap: 10, padding: '8px 0', borderBottom: '1px solid #0f2040′ }}>
+                <div key={i} style={{ display: 'flex', alignItems: 'flex-start', gap: 10, padding: '8px 0', borderBottom: '1px solid #0f2040' }}>
                   <span style={{ color: '#F5E642', fontWeight: 700, minWidth: 20 }}>{i + 1}.</span>
                   <span style={{ color: '#cbd5e1', fontSize: 14 }}>{item}</span>
                 </div>

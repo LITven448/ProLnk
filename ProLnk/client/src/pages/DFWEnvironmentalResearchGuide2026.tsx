@@ -43,7 +43,7 @@ export default function DFWEnvironmentalResearchGuide2026() {
   const [activeType, setActiveType] = useState('Residential');
 
   return (
-    <div style={{ background: '#0A1628', minHeight: '100vh', padding: '40px 20px', fontFamily: 'system-ui, sans-serif', color: '#E8EDF5′ }}>
+    <div style={{ background: '#0A1628', minHeight: '100vh', padding: '40px 20px', fontFamily: 'system-ui, sans-serif', color: '#E8EDF5' }}>
       <div style={{ maxWidth: 800, margin: '0 auto' }}>
         <div style={{ textAlign: 'center', marginBottom: 40 }}>
           <div style={{ fontSize: 48, marginBottom: 12 }}>🌿</div>
@@ -59,7 +59,7 @@ export default function DFWEnvironmentalResearchGuide2026() {
 
         <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap', marginBottom: 32, justifyContent: 'center' }}>
           {propertyTypes.map(t => (
-            <button key={t} onClick={() => setActiveType(t)} style={{ padding: '10px 18px', borderRadius: 8, border: 'none', cursor: 'pointer', fontWeight: 600, fontSize: 14, background: activeType === t ? '#F5E642′ : '#1E2D45', color: activeType === t ? '#0A1628' : '#94A3B8', transition: ’all 0.2s' }}>{t}</button>
+            <button key={t} onClick={() => setActiveType(t)} style={{ padding: '10px 18px', borderRadius: 8, border: 'none', cursor: 'pointer', fontWeight: 600, fontSize: 14, background: activeType === t ? '#F5E642' : '#1E2D45', color: activeType === t ? '#0A1628' : '#94A3B8', transition: 'all 0.2s' }}>{t}</button>
           ))}
         </div>
 
@@ -70,7 +70,7 @@ export default function DFWEnvironmentalResearchGuide2026() {
               <ul style={{ margin: 0, paddingLeft: 0, listStyle: 'none', display: 'flex', flexDirection: 'column', gap: 9 }}>
                 {block.items.map((item, j) => (
                   <li key={j} style={{ fontSize: 14, color: '#CBD5E1', paddingLeft: 20, position: 'relative', lineHeight: 1.5 }}>
-                    <span style={{ position: 'absolute', left: 0, color: '#F5E642′ }}>›</span>{item}
+                    <span style={{ position: 'absolute', left: 0, color: '#F5E642' }}>›</span>{item}
                   </li>
                 ))}
               </ul>

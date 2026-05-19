@@ -8,7 +8,7 @@ const pressureScenarios = [
   { ambient: 'Any temp — suction <80 PSI', suction: '<80 PSI', discharge: 'any', status: 'abnormal', note: 'Low suction: undercharge (leak), restricted filter, or failing TXV.' },
 ];
 
-const statusColor: Record<string, string> = { normal: '#22C55E', 'high-normal': '#F59E0B', abnormal: '#EF4444′ };
+const statusColor: Record<string, string> = { normal: '#22C55E', 'high-normal': '#F59E0B', abnormal: '#EF4444' };
 const statusLabel: Record<string, string> = { normal: '✅ Normal', 'high-normal': '⚠️ Monitor', abnormal: '🚨 Abnormal' };
 
 export default function DFWHVACLinePressureGuide() {
@@ -57,7 +57,7 @@ export default function DFWHVACLinePressureGuide() {
           <div style={{ display: 'flex', flexDirection: 'column', gap: 8, marginBottom: 16 }}>
             {pressureScenarios.map((s, i) => (
               <button key={i} onClick={() => setSelected(i)}
-                style={{ background: selected === i ? '#F5E642′ : '#0A1628', color: selected === i ? '#0A1628' : '#E8EDF5', border: '1px solid #1E3A5F', borderRadius: 8, padding: '10px 14px', textAlign: ’left', cursor: 'pointer', fontSize: 14, fontWeight: selected === i ? 700 : 400 }}>
+                style={{ background: selected === i ? '#F5E642' : '#0A1628', color: selected === i ? '#0A1628' : '#E8EDF5', border: '1px solid #1E3A5F', borderRadius: 8, padding: '10px 14px', textAlign: 'left', cursor: 'pointer', fontSize: 14, fontWeight: selected === i ? 700 : 400 }}>
                 {s.ambient}
               </button>
             ))}

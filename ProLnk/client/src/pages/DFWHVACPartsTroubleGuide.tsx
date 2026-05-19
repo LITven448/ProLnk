@@ -32,7 +32,7 @@ export default function DFWHVACPartsTroubleGuide() {
     setResult(parts[0]);
   }
 
-  const riskColor = (r: string) => r === 'HIGHEST' || r === 'CATASTROPHIC' ? '#FF6B6B' : r === 'HIGH' ? '#F5A623′ : '#F5E642';
+  const riskColor = (r: string) => r === 'HIGHEST' || r === 'CATASTROPHIC' ? '#FF6B6B' : r === 'HIGH' ? '#F5A623' : '#F5E642';
 
   return (
     <div style={{ background: '#0A1628', minHeight: '100vh', color: '#E8EDF5', fontFamily: 'system-ui, sans-serif', padding: '2rem' }}>
@@ -41,7 +41,7 @@ export default function DFWHVACPartsTroubleGuide() {
         <h1 style={{ fontSize: '2rem', fontWeight: 800, marginBottom: '0.5rem', lineHeight: 1.2 }}>HVAC Parts Troubleshooting Guide</h1>
         <p style={{ color: '#9AA5B8', marginBottom: '2rem', fontSize: '1rem' }}>Common DFW HVAC part failures by system age and symptom — know before you call.</p>
 
-        <h2 style={{ fontSize: '1.2rem', fontWeight: 700, marginBottom: '1rem', color: '#F5E642′ }}>⚙️ DFW Part Failure Risk by Component</h2>
+        <h2 style={{ fontSize: '1.2rem', fontWeight: 700, marginBottom: '1rem', color: '#F5E642' }}>⚙️ DFW Part Failure Risk by Component</h2>
         <div style={{ display: 'grid', gap: '1rem', marginBottom: '2.5rem' }}>
           {parts.map(p => (
             <div key={p.id} style={{ background: '#0F2040', borderRadius: '10px', padding: '1.25rem', border: '1px solid #1E3A5F' }}>
@@ -52,24 +52,24 @@ export default function DFWHVACPartsTroubleGuide() {
               </div>
               <div style={{ fontSize: '0.85rem', color: '#9AA5B8', marginBottom: '0.5rem' }}>{p.why}</div>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0.5rem', fontSize: '0.83rem' }}>
-                <div><span style={{ color: '#F5E642′ }}>Life: </span>{p.ageRange}</div>
-                <div><span style={{ color: '#F5E642′ }}>Cost: </span>{p.cost}</div>
+                <div><span style={{ color: '#F5E642' }}>Life: </span>{p.ageRange}</div>
+                <div><span style={{ color: '#F5E642' }}>Cost: </span>{p.cost}</div>
               </div>
             </div>
           ))}
         </div>
 
-        <h2 style={{ fontSize: '1.2rem', fontWeight: 700, marginBottom: '1rem', color: '#F5E642′ }}>🔍 Diagnose Your DFW System</h2>
+        <h2 style={{ fontSize: '1.2rem', fontWeight: 700, marginBottom: '1rem', color: '#F5E642' }}>🔍 Diagnose Your DFW System</h2>
         <div style={{ background: '#0F2040', borderRadius: '12px', padding: '1.5rem', border: '1px solid #1E3A5F', marginBottom: '2rem' }}>
           <div style={{ marginBottom: '1rem' }}>
             <label style={{ fontSize: '0.9rem', color: '#9AA5B8', display: 'block', marginBottom: '0.4rem' }}>System Age (years)</label>
-            <input value={age} onChange={e => setAge(e.target.value)} type="number" placeholder="e.g. 8″ style={{ background: '#0A1628', border: '1px solid #1E3A5F', borderRadius: '8px', padding: '0.6rem 1rem', color: '#E8EDF5', fontSize: '0.95rem', width: '120px' }} />
+            <input value={age} onChange={e => setAge(e.target.value)} type="number" placeholder="e.g. 8" style={{ background: '#0A1628', border: '1px solid #1E3A5F', borderRadius: '8px', padding: '0.6rem 1rem', color: '#E8EDF5', fontSize: '0.95rem', width: '120px' }} />
           </div>
           <div style={{ marginBottom: '1.25rem' }}>
             <label style={{ fontSize: '0.9rem', color: '#9AA5B8', display: 'block', marginBottom: '0.4rem' }}>Primary Symptom</label>
             <div style={{ display: 'flex', gap: '0.6rem', flexWrap: 'wrap' }}>
               {[['warm','Runs but blows warm'],['nostart','Will not turn on'],['fanstop','Fan not spinning'],['weakflow','Weak airflow'],['nocool','No cooling at all']].map(([v,l]) => (
-                <button key={v} onClick={() => setSymptom(v)} style={{ padding: '0.5rem 0.9rem', borderRadius: '8px', border: symptom === v ? '2px solid #F5E642′ : '1px solid #1E3A5F', background: symptom === v ? '#F5E64220' : '#0A1628', color: symptom === v ? '#F5E642' : '#E8EDF5', cursor: ’pointer', fontSize: '0.85rem' }}>{l}</button>
+                <button key={v} onClick={() => setSymptom(v)} style={{ padding: '0.5rem 0.9rem', borderRadius: '8px', border: symptom === v ? '2px solid #F5E642' : '1px solid #1E3A5F', background: symptom === v ? '#F5E64220' : '#0A1628', color: symptom === v ? '#F5E642' : '#E8EDF5', cursor: 'pointer', fontSize: '0.85rem' }}>{l}</button>
               ))}
             </div>
           </div>
@@ -77,14 +77,14 @@ export default function DFWHVACPartsTroubleGuide() {
         </div>
 
         {result && (
-          <div style={{ background: '#0F2040', borderRadius: '12px', padding: '1.5rem', border: '2px solid #F5E642′ }}>
+          <div style={{ background: '#0F2040', borderRadius: '12px', padding: '1.5rem', border: '2px solid #F5E642' }}>
             <div style={{ fontWeight: 800, fontSize: '1.1rem', color: '#F5E642', marginBottom: '0.75rem' }}>{result.icon} Most Likely: {result.name}</div>
             <div style={{ fontSize: '0.9rem', marginBottom: '0.75rem' }}>{result.why}</div>
             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0.75rem', marginBottom: '0.75rem' }}>
-              <div><span style={{ color: '#9AA5B8′ }}>Repair Cost: </span><span style={{ color: '#F5E642', fontWeight: 700 }}>{result.cost}</span></div>
-              <div><span style={{ color: '#9AA5B8′ }}>DFW Life: </span>{result.ageRange}</div>
+              <div><span style={{ color: '#9AA5B8' }}>Repair Cost: </span><span style={{ color: '#F5E642', fontWeight: 700 }}>{result.cost}</span></div>
+              <div><span style={{ color: '#9AA5B8' }}>DFW Life: </span>{result.ageRange}</div>
             </div>
-            <div><span style={{ color: '#9AA5B8′ }}>Urgency: </span><span style={{ color: '#FF6B6B', fontWeight: 600 }}>{urgencyMap[result.id]}</span></div>
+            <div><span style={{ color: '#9AA5B8' }}>Urgency: </span><span style={{ color: '#FF6B6B', fontWeight: 600 }}>{urgencyMap[result.id]}</span></div>
           </div>
         )}
 

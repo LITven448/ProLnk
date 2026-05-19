@@ -42,7 +42,7 @@ export default function DFWMiniSplitGuide() {
 
   return (
     <div style={{ background: '#0A1628', minHeight: '100vh', color: '#fff', fontFamily: 'system-ui, sans-serif', padding: '0 0 60px' }}>
-      <div style={{ background: 'linear-gradient(135deg, #0A1628 0%, #112240 100%)', padding: '48px 24px 40px', textAlign: 'center', borderBottom: '3px solid #F5E642′ }}>
+      <div style={{ background: 'linear-gradient(135deg, #0A1628 0%, #112240 100%)', padding: '48px 24px 40px', textAlign: 'center', borderBottom: '3px solid #F5E642' }}>
         <div style={{ fontSize: 48 }}>❄️</div>
         <h1 style={{ fontSize: 32, fontWeight: 800, color: '#F5E642', margin: '12px 0 8px' }}>DFW Mini-Split Guide 2026</h1>
         <p style={{ color: '#94a3b8', fontSize: 16, maxWidth: 600, margin: '0 auto' }}>Is a ductless mini-split right for your DFW home? Get the facts on cost, efficiency, and when to choose mini-split vs central AC.</p>
@@ -74,7 +74,7 @@ export default function DFWMiniSplitGuide() {
             <p style={{ color: '#cbd5e1', fontSize: 14, marginBottom: 10, fontWeight: 600 }}>How many rooms/zones need cooling?</p>
             <div style={{ display: 'flex', gap: 10, flexWrap: 'wrap' }}>
               {zones.map((z, i) => (
-                <button key={z.label} onClick={() => { setSelectedZone(i); setShowResult(false); }} style={{ padding: '10px 20px', borderRadius: 8, border: `2px solid ${selectedZone === i ? '#F5E642' : '#1e3a5f'}`, background: selectedZone === i ? '#F5E642′ : '#0A1628', color: selectedZone === i ? '#0A1628' : '#94a3b8', fontWeight: 700, cursor: ’pointer', fontSize: 14 }}>{z.label}</button>
+                <button key={z.label} onClick={() => { setSelectedZone(i); setShowResult(false); }} style={{ padding: '10px 20px', borderRadius: 8, border: `2px solid ${selectedZone === i ? '#F5E642' : '#1e3a5f'}`, background: selectedZone === i ? '#F5E642' : '#0A1628', color: selectedZone === i ? '#0A1628' : '#94a3b8', fontWeight: 700, cursor: 'pointer', fontSize: 14 }}>{z.label}</button>
               ))}
             </div>
           </div>
@@ -83,7 +83,7 @@ export default function DFWMiniSplitGuide() {
             <p style={{ color: '#cbd5e1', fontSize: 14, marginBottom: 10, fontWeight: 600 }}>Total square footage to condition?</p>
             <div style={{ display: 'flex', gap: 10, flexWrap: 'wrap' }}>
               {sqftOptions.map((s, i) => (
-                <button key={s} onClick={() => { setSelectedSqft(i); setShowResult(false); }} style={{ padding: '10px 20px', borderRadius: 8, border: `2px solid ${selectedSqft === i ? '#F5E642' : '#1e3a5f'}`, background: selectedSqft === i ? '#F5E642′ : '#0A1628', color: selectedSqft === i ? '#0A1628' : '#94a3b8', fontWeight: 700, cursor: ’pointer', fontSize: 14 }}>{s}</button>
+                <button key={s} onClick={() => { setSelectedSqft(i); setShowResult(false); }} style={{ padding: '10px 20px', borderRadius: 8, border: `2px solid ${selectedSqft === i ? '#F5E642' : '#1e3a5f'}`, background: selectedSqft === i ? '#F5E642' : '#0A1628', color: selectedSqft === i ? '#0A1628' : '#94a3b8', fontWeight: 700, cursor: 'pointer', fontSize: 14 }}>{s}</button>
               ))}
             </div>
           </div>
@@ -91,7 +91,7 @@ export default function DFWMiniSplitGuide() {
           <button onClick={() => setShowResult(true)} style={{ background: '#F5E642', color: '#0A1628', border: 'none', borderRadius: 10, padding: '14px 32px', fontWeight: 800, fontSize: 16, cursor: 'pointer' }}>Get Recommendation →</button>
 
           {showResult && (
-            <div style={{ marginTop: 24, background: '#0A1628', borderRadius: 12, padding: 24, border: '1px solid #F5E642′ }}>
+            <div style={{ marginTop: 24, background: '#0A1628', borderRadius: 12, padding: 24, border: '1px solid #F5E642' }}>
               <p style={{ color: '#F5E642', fontSize: 18, fontWeight: 800, marginBottom: 8 }}>✅ Recommended: {rec.type}</p>
               <p style={{ color: '#94a3b8', fontSize: 15, marginBottom: 8 }}>{rec.reason}</p>
               <p style={{ color: '#F5E642', fontWeight: 700 }}>Estimated Cost: {rec.cost}</p>
@@ -104,8 +104,8 @@ export default function DFWMiniSplitGuide() {
           <div style={{ overflowX: 'auto' }}>
             <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: 14 }}>
               <thead>
-                <tr style={{ borderBottom: '2px solid #F5E642′ }}>
-                  {['Feature', 'Single-Zone', 'Multi-Zone'].map((h) => <th key={h} style={{ padding: '10px 14px', textAlign: 'left', color: '#F5E642′ }}>{h}</th>)}
+                <tr style={{ borderBottom: '2px solid #F5E642' }}>
+                  {['Feature', 'Single-Zone', 'Multi-Zone'].map((h) => <th key={h} style={{ padding: '10px 14px', textAlign: 'left', color: '#F5E642' }}>{h}</th>)}
                 </tr>
               </thead>
               <tbody>
@@ -117,7 +117,7 @@ export default function DFWMiniSplitGuide() {
                   ['Installation time', '4–8 hours', '1–2 days'],
                 ].map((row) => (
                   <tr key={row[0]} style={{ borderBottom: '1px solid #1e3a5f' }}>
-                    {row.map((cell, i) => <td key={i} style={{ padding: '10px 14px', color: i === 0 ? '#cbd5e1′ : '#94a3b8' }}>{cell}</td>)}
+                    {row.map((cell, i) => <td key={i} style={{ padding: '10px 14px', color: i === 0 ? '#cbd5e1' : '#94a3b8' }}>{cell}</td>)}
                   </tr>
                 ))}
               </tbody>

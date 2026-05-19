@@ -35,13 +35,13 @@ export default function DFWHVACLongTerm2026() {
           <h2 style={{ color: '#F5E642', fontSize: 16, marginBottom: 16 }}>🌡️ Current System Age</h2>
           <select value={systemAge} onChange={e => { setSystemAge(e.target.value); setPlan(false); }} style={{ width: '100%', background: '#0A1628', color: '#fff', border: '1px solid #F5E642', borderRadius: 8, padding: '10px', fontSize: 14, marginBottom: 16 }}>
             <option value="">-- Select system age --</option>
-            <option value="0to5″>0–5 years (newer system)</option>
-            <option value="5to10″>5–10 years</option>
-            <option value="10to12″>10–12 years</option>
-            <option value="12to15″>12–15 years (replace now)</option>
-            <option value="over15″>Over 15 years (urgent)</option>
+            <option value="0to5">0–5 years (newer system)</option>
+            <option value="5to10">5–10 years</option>
+            <option value="10to12">10–12 years</option>
+            <option value="12to15">12–15 years (replace now)</option>
+            <option value="over15">Over 15 years (urgent)</option>
           </select>
-          <button onClick={() => setPlan(true)} disabled={!systemAge} style={{ background: systemAge ? '#F5E642′ : '#334155', color: '#0A1628', border: ’none', borderRadius: 8, padding: '12px 28px', fontWeight: 700, fontSize: 15, cursor: systemAge ? 'pointer' : 'default' }}>
+          <button onClick={() => setPlan(true)} disabled={!systemAge} style={{ background: systemAge ? '#F5E642' : '#334155', color: '#0A1628', border: 'none', borderRadius: 8, padding: '12px 28px', fontWeight: 700, fontSize: 15, cursor: systemAge ? 'pointer' : 'default' }}>
             Show My Ownership Plan →
           </button>
         </div>
@@ -68,7 +68,7 @@ export default function DFWHVACLongTerm2026() {
         <div style={{ background: '#1e2d45', borderRadius: 12, padding: 20, marginTop: 8 }}>
           <h3 style={{ color: '#F5E642', fontSize: 14, marginBottom: 10 }}>🌞 DFW HVAC Reality</h3>
           {['DFW averages 30+ days over 100°F annually', 'HVAC runs 2,800+ hours/year in DFW (vs 1,200 national avg)', 'R-22 systems are end-of-life — refrigerant unavailable', 'Variable speed systems handle DFW humidity far better'].map((f, i) => (
-            <div key={i} style={{ fontSize: 13, color: '#cbd5e1', padding: '6px 0', borderBottom: i < 3 ? '1px solid #334155′ : ’none' }}>📍 {f}</div>
+            <div key={i} style={{ fontSize: 13, color: '#cbd5e1', padding: '6px 0', borderBottom: i < 3 ? '1px solid #334155' : 'none' }}>📍 {f}</div>
           ))}
         </div>
       </div>

@@ -77,23 +77,23 @@ export default function DFWProLnkAbsoluteFinalPage() {
             {roles.map(r => (
               <button key={r.id} onClick={() => setActive(active === r.id ? null : r.id)} style={{
                 padding: '14px 18px', borderRadius: 10, border: '2px solid',
-                borderColor: active === r.id ? '#F5E642′ : '#1e3a5f',
+                borderColor: active === r.id ? '#F5E642' : '#1e3a5f',
                 background: active === r.id ? '#0f2a4a' : '#0d1f36',
                 color: '#fff', fontWeight: 700, fontSize: 15, cursor: 'pointer',
                 textAlign: 'left', transition: 'all 0.2s'
               }}>
                 <div style={{ fontSize: 24, marginBottom: 6 }}>{r.emoji}</div>
-                <div style={{ color: active === r.id ? '#F5E642′ : '#e2e8f0' }}>{r.label}</div>
+                <div style={{ color: active === r.id ? '#F5E642' : '#e2e8f0' }}>{r.label}</div>
               </button>
             ))}
           </div>
 
           {selected && (
-            <div style={{ background: '#0d1f36', borderRadius: 12, padding: 24, border: '2px solid #F5E642′ }}>
+            <div style={{ background: '#0d1f36', borderRadius: 12, padding: 24, border: '2px solid #F5E642' }}>
               <div style={{ fontSize: 13, fontWeight: 700, color: '#F5E642', marginBottom: 4 }}>THE PROMISE TO YOU</div>
               <div style={{ fontSize: 18, fontWeight: 800, color: '#fff', marginBottom: 16 }}>{selected.promise}</div>
               <p style={{ color: '#94a3b8', fontSize: 14, lineHeight: 1.7, margin: '0 0 16px' }}>{selected.success}</p>
-              <div style={{ background: '#0A1628', borderRadius: 8, padding: 14, borderLeft: '3px solid #F5E642′ }}>
+              <div style={{ background: '#0A1628', borderRadius: 8, padding: 14, borderLeft: '3px solid #F5E642' }}>
                 <div style={{ color: '#F5E642', fontSize: 12, fontWeight: 700, marginBottom: 4 }}>WHY PROLNK IS DIFFERENT</div>
                 <p style={{ color: '#94a3b8', fontSize: 13, margin: 0, lineHeight: 1.6 }}>{selected.differentiator}</p>
               </div>

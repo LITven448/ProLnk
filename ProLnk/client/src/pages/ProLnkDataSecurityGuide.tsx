@@ -49,7 +49,7 @@ export default function ProLnkDataSecurityGuide() {
           <div style={{ fontSize: 48, marginBottom: 12 }}>🔒</div>
           <h1 style={{ fontSize: 36, fontWeight: 800, color: '#0A1628', marginBottom: 12 }}>Data Security Guide</h1>
           <p style={{ fontSize: 18, color: '#555', maxWidth: 540, margin: '0 auto' }}>
-            What ProLnk collects, how it's used, how it’s protected, and your full rights over your own data.
+            What ProLnk collects, how it's used, how it's protected, and your full rights over your own data.
           </p>
         </div>
 
@@ -61,7 +61,7 @@ export default function ProLnkDataSecurityGuide() {
           ].map((col) => (
             <div key={col.title} style={{ background: '#fff', borderRadius: 12, padding: 20, boxShadow: '0 1px 6px rgba(0,0,0,0.08)' }}>
               <div style={{ fontSize: 28, marginBottom: 8 }}>{col.icon}</div>
-              <div style={{ fontWeight: 700, fontSize: 15, marginBottom: 12, color: '#0A1628′ }}>{col.title}</div>
+              <div style={{ fontWeight: 700, fontSize: 15, marginBottom: 12, color: '#0A1628' }}>{col.title}</div>
               {col.items.map((item) => (
                 <div key={item} style={{ fontSize: 13, color: '#555', marginBottom: 6, display: 'flex', gap: 6 }}>
                   <span style={{ color: '#0077cc' }}>•</span> {item}
@@ -81,7 +81,7 @@ export default function ProLnkDataSecurityGuide() {
             <div key={item.title} style={{ background: '#fff', borderRadius: 12, padding: 20, display: 'flex', gap: 14, alignItems: 'flex-start', boxShadow: '0 1px 6px rgba(0,0,0,0.08)' }}>
               <div style={{ fontSize: 28, flexShrink: 0 }}>{item.icon}</div>
               <div>
-                <div style={{ fontWeight: 700, fontSize: 15, marginBottom: 4, color: '#0A1628′ }}>{item.title}</div>
+                <div style={{ fontWeight: 700, fontSize: 15, marginBottom: 4, color: '#0A1628' }}>{item.title}</div>
                 <div style={{ color: '#555', fontSize: 13, lineHeight: 1.6 }}>{item.desc}</div>
               </div>
             </div>
@@ -89,12 +89,12 @@ export default function ProLnkDataSecurityGuide() {
         </div>
 
         <div style={{ background: '#fff', borderRadius: 16, padding: 32, boxShadow: '0 1px 6px rgba(0,0,0,0.08)' }}>
-          <h2 style={{ fontSize: 22, fontWeight: 700, marginBottom: 8, color: '#0A1628′ }}>🔎 Your Data Concern</h2>
+          <h2 style={{ fontSize: 22, fontWeight: 700, marginBottom: 8, color: '#0A1628' }}>🔎 Your Data Concern</h2>
           <p style={{ color: '#555', fontSize: 15, marginBottom: 20 }}>Select a topic to get a specific, direct answer about how ProLnk handles that data.</p>
 
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: 10, marginBottom: 24 }}>
             {dataConcerns.map((d, i) => (
-              <button key={d.label} onClick={() => setSelected(i)} style={{ padding: '10px 18px', borderRadius: 8, border: selected === i ? '2px solid #F5E642′ : '2px solid #ddd', background: selected === i ? '#0A1628' : '#fff', color: selected === i ? '#F5E642' : '#333', fontWeight: 600, cursor: ’pointer', fontSize: 13 }}>
+              <button key={d.label} onClick={() => setSelected(i)} style={{ padding: '10px 18px', borderRadius: 8, border: selected === i ? '2px solid #F5E642' : '2px solid #ddd', background: selected === i ? '#0A1628' : '#fff', color: selected === i ? '#F5E642' : '#333', fontWeight: 600, cursor: 'pointer', fontSize: 13 }}>
                 {d.icon} {d.label}
               </button>
             ))}

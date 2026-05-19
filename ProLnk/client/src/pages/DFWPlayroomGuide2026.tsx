@@ -46,7 +46,7 @@ export default function DFWPlayroomGuide2026() {
             {[{ id: 'playroom', label: '🧸 Playroom' }, { id: 'media', label: '🎬 Media Room' }, { id: 'flex', label: '🔄 Flex Space' }].map((opt) => (
               <button key={opt.id} onClick={() => setSpaceUse(opt.id)}
                 style={{ padding: '10px 16px', borderRadius: 8, border: 'none', cursor: 'pointer', fontWeight: 600, fontSize: 13,
-                  background: spaceUse === opt.id ? '#F5E642′ : '#0f172a', color: spaceUse === opt.id ? '#0A1628' : '#fff' }}>
+                  background: spaceUse === opt.id ? '#F5E642' : '#0f172a', color: spaceUse === opt.id ? '#0A1628' : '#fff' }}>
                 {opt.label}
               </button>
             ))}
@@ -67,12 +67,12 @@ export default function DFWPlayroomGuide2026() {
             {[{ id: 'toddler', label: '👶 Toddler (0–4)' }, { id: 'school', label: '🎒 School Age (5–12)' }, { id: 'teen', label: '🎮 Teen (13+)' }].map((opt) => (
               <button key={opt.id} onClick={() => setChildAge(opt.id)}
                 style={{ padding: '8px 12px', borderRadius: 8, border: 'none', cursor: 'pointer', fontWeight: 600, fontSize: 12,
-                  background: childAge === opt.id ? '#F5E642′ : '#0f172a', color: childAge === opt.id ? '#0A1628' : '#fff' }}>
+                  background: childAge === opt.id ? '#F5E642' : '#0f172a', color: childAge === opt.id ? '#0A1628' : '#fff' }}>
                 {opt.label}
               </button>
             ))}
           </div>
-          <div style={{ background: '#0f172a', borderRadius: 8, padding: 14, fontSize: 13, color: '#cbd5e1′ }}>💡 {ageNotes[childAge]}</div>
+          <div style={{ background: '#0f172a', borderRadius: 8, padding: 14, fontSize: 13, color: '#cbd5e1' }}>💡 {ageNotes[childAge]}</div>
         </div>
       </div>
     </div>

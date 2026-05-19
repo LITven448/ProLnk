@@ -86,10 +86,10 @@ export default function DFWColdRoofVsHotRoofGuide() {
           </div>
           <button onClick={assess} style={{ background: '#F5E642', color: '#0A1628', fontWeight: 700, fontSize: 15, border: 'none', borderRadius: 8, padding: '12px 28px', cursor: 'pointer' }}>Get My DFW Recommendation →</button>
           {result && (
-            <div style={{ marginTop: 20, padding: 16, background: '#1a2a3a', borderRadius: 8, borderLeft: '4px solid #F5E642′ }}>
+            <div style={{ marginTop: 20, padding: 16, background: '#1a2a3a', borderRadius: 8, borderLeft: '4px solid #F5E642' }}>
               <div style={{ color: '#F5E642', fontWeight: 700, fontSize: 17, marginBottom: 10 }}>{result.recommendation}</div>
               <div style={{ color: '#cbd5e1', marginBottom: 12, fontSize: 14 }}>{result.why}</div>
-              <div style={{ color: '#94a3b8', fontSize: 13, marginBottom: 6 }}>Estimated cost: <strong style={{ color: '#F5E642′ }}>{result.cost}</strong></div>
+              <div style={{ color: '#94a3b8', fontSize: 13, marginBottom: 6 }}>Estimated cost: <strong style={{ color: '#F5E642' }}>{result.cost}</strong></div>
               <div style={{ color: '#64748b', fontSize: 12, borderTop: '1px solid #1a3a5c', paddingTop: 10, marginTop: 10 }}>Code note: {result.codeNote}</div>
             </div>
           )}

@@ -37,7 +37,7 @@ export default function DFWHVACCoolCoatGuide2026() {
           <h1 style={{ fontSize: 26, fontWeight: 800, color: '#F5E642', margin: 0 }}>DFW HVAC & Radiant Barrier Interaction Guide 2026</h1>
         </div>
         <p style={{ color: '#94a3b8', marginBottom: 28, fontSize: 15 }}>
-          Radiant barrier changes your DFW home's cooling load — your HVAC installer must account for it. Here’s how they interact.
+          Radiant barrier changes your DFW home's cooling load — your HVAC installer must account for it. Here's how they interact.
         </p>
 
         <div style={{ background: '#0f2040', borderRadius: 12, padding: 20, marginBottom: 24 }}>
@@ -55,13 +55,13 @@ export default function DFWHVACCoolCoatGuide2026() {
         <h2 style={{ color: '#F5E642', fontSize: 16, marginBottom: 12 }}>🏠 Your Home Features</h2>
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 10, marginBottom: 24 }}>
           {features.map(f => (
-            <button key={f.id} onClick={() => toggle(f.id)} style={{ background: selected.includes(f.id) ? '#F5E642′ : '#1a2f4e', color: selected.includes(f.id) ? '#0A1628' : '#fff', border: '2px solid ' + (selected.includes(f.id) ? '#F5E642' : '#334155'), borderRadius: 10, padding: '14px 12px', cursor: ’pointer', fontWeight: 600, fontSize: 14, textAlign: 'left', transition: 'all 0.15s' }}>
+            <button key={f.id} onClick={() => toggle(f.id)} style={{ background: selected.includes(f.id) ? '#F5E642' : '#1a2f4e', color: selected.includes(f.id) ? '#0A1628' : '#fff', border: '2px solid ' + (selected.includes(f.id) ? '#F5E642' : '#334155'), borderRadius: 10, padding: '14px 12px', cursor: 'pointer', fontWeight: 600, fontSize: 14, textAlign: 'left', transition: 'all 0.15s' }}>
               <span style={{ marginRight: 8 }}>{f.icon}</span>{f.label}
             </button>
           ))}
         </div>
 
-        <div style={{ background: '#1a2f4e', borderRadius: 12, padding: 22, borderLeft: '4px solid #F5E642′ }}>
+        <div style={{ background: '#1a2f4e', borderRadius: 12, padding: 22, borderLeft: '4px solid #F5E642' }}>
           <h3 style={{ color: '#F5E642', margin: '0 0 8px', fontSize: 18 }}>{result.title}</h3>
           <p style={{ color: '#cbd5e1', margin: 0, lineHeight: 1.6 }}>{result.detail}</p>
         </div>

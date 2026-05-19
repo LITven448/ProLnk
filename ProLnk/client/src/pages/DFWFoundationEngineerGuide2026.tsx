@@ -30,7 +30,7 @@ export default function DFWFoundationEngineerGuide2026() {
             { label: '⚖️ Texas Licensing Requirement', desc: 'Only a licensed Professional Engineer (PE) can provide a structural report. Always verify Texas PE license at Texas.gov before paying.' },
           ].map((c) => (
             <div key={c.label} style={{ background: '#112240', borderRadius: 8, padding: 20, border: '1px solid #1e3a5f' }}>
-              <div style={{ fontWeight: 700, marginBottom: 8, color: '#F5E642′ }}>{c.label}</div>
+              <div style={{ fontWeight: 700, marginBottom: 8, color: '#F5E642' }}>{c.label}</div>
               <div style={{ color: '#94a3b8', fontSize: 14 }}>{c.desc}</div>
             </div>
           ))}
@@ -55,7 +55,7 @@ export default function DFWFoundationEngineerGuide2026() {
             <option value="major_damage">Major damage or visible structural issues</option>
           </select>
           {result && (
-            <div style={{ background: '#0A1628', borderRadius: 6, padding: 16, border: '1px solid #F5E642′ }}>
+            <div style={{ background: '#0A1628', borderRadius: 6, padding: 16, border: '1px solid #F5E642' }}>
               <div style={{ color: '#F5E642', fontWeight: 700, fontSize: 16, marginBottom: 8 }}>{result.recommendation}</div>
               <div style={{ color: '#cbd5e1', fontSize: 14, marginBottom: 8 }}>{result.reason}</div>
               <div style={{ display: 'flex', gap: 16 }}>

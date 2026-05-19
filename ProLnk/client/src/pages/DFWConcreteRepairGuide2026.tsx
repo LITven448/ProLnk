@@ -1,11 +1,11 @@
 import { useState } from 'react';
 
 const issues = [
-  { label: 'Driveway Cracks', icon: '🛣️', repair: 'Expansion joint failure is the #1 cause in DFW. For cracks under 1/4″, apply polyurethane caulk. Over 1/4″ wide or deep — saw-cut and replace the joint. Full slab replacement needed when cracks exceed 1/2″ width or slab has shifted.' },
+  { label: 'Driveway Cracks', icon: '🛣️', repair: 'Expansion joint failure is the #1 cause in DFW. For cracks under 1/4", apply polyurethane caulk. Over 1/4" wide or deep — saw-cut and replace the joint. Full slab replacement needed when cracks exceed 1/2" width or slab has shifted.' },
   { label: 'Sidewalk Trip Hazard', icon: '🚶', repair: 'Mudjacking lifts sunken slabs by pumping slurry underneath — costs -8/sq ft. Replacement runs -12/sq ft. Mudjacking works when slab is intact; if crumbling or severely cracked, replace. DFW clay soil movement makes recurrence common without root barrier.' },
   { label: 'Patio Cracks', icon: '🏡', repair: 'DFW foundation movement telegraphs into patios. Hairline cracks: seal with concrete caulk + paint. Structural cracks with offset: requires slab lifting or partial demo. Always address foundation drainage before patching or cracks recur within 1-2 seasons.' },
   { label: 'Sealant Application', icon: '🧴', repair: 'Apply penetrating silane-siloxane sealer every 2-3 years in DFW. Best applied in fall (50-85°F range). DFW freeze-thaw cycles (rare but real) cause spalling without sealer. Avoid film-forming sealers on driveways — they trap moisture and peel in DFW heat.' },
-  { label: 'Surface Spalling', icon: '❄️', repair: 'Spalling (surface flaking) from freeze-thaw or deicing salts. Shallow spalling: apply concrete resurfacer at 3/16″ min thickness. Deep spalling exposing aggregate: full slab section replacement. In DFW, salt damage is rare but occurs after ice storms — rinse immediately after any salt application.' },
+  { label: 'Surface Spalling', icon: '❄️', repair: 'Spalling (surface flaking) from freeze-thaw or deicing salts. Shallow spalling: apply concrete resurfacer at 3/16" min thickness. Deep spalling exposing aggregate: full slab section replacement. In DFW, salt damage is rare but occurs after ice storms — rinse immediately after any salt application.' },
 ];
 
 export default function DFWConcreteRepairGuide2026() {
@@ -23,7 +23,7 @@ export default function DFWConcreteRepairGuide2026() {
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(220px, 1fr))', gap: '12px', marginBottom: '32px' }}>
           {issues.map((issue, i) => (
             <button key={i} onClick={() => setSelected(selected === i ? null : i)}
-              style={{ backgroundColor: selected === i ? '#F5E642′ : '#0f2040', color: selected === i ? '#0A1628' : '#ffffff', border: '1px solid', borderColor: selected === i ? '#F5E642' : '#1e3a5f', borderRadius: '10px', padding: '18px 14px', cursor: ’pointer', textAlign: 'left', transition: 'all 0.2s' }}>
+              style={{ backgroundColor: selected === i ? '#F5E642' : '#0f2040', color: selected === i ? '#0A1628' : '#ffffff', border: '1px solid', borderColor: selected === i ? '#F5E642' : '#1e3a5f', borderRadius: '10px', padding: '18px 14px', cursor: 'pointer', textAlign: 'left', transition: 'all 0.2s' }}>
               <div style={{ fontSize: '28px', marginBottom: '8px' }}>{issue.icon}</div>
               <div style={{ fontWeight: '600', fontSize: '14px' }}>{issue.label}</div>
             </button>
@@ -34,7 +34,7 @@ export default function DFWConcreteRepairGuide2026() {
           <div style={{ backgroundColor: '#0f2040', border: '1px solid #F5E642', borderRadius: '12px', padding: '24px' }}>
             <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '16px' }}>
               <span style={{ fontSize: '32px' }}>{issues[selected].icon}</span>
-              <h2 style={{ color: '#F5E642', fontSize: '20px', fontWeight: '700′ }}>{issues[selected].label}</h2>
+              <h2 style={{ color: '#F5E642', fontSize: '20px', fontWeight: '700' }}>{issues[selected].label}</h2>
             </div>
             <p style={{ color: '#cbd5e1', lineHeight: '1.7', fontSize: '15px' }}>{issues[selected].repair}</p>
           </div>

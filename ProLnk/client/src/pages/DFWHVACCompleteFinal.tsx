@@ -70,7 +70,7 @@ export default function DFWHVACCompleteFinal() {
         </div>
         {selected && (
           <div style={{ background: '#0f1f35', border: '2px solid #F5E642', borderRadius: 12, padding: '1.5rem' }}>
-            <h2 style={{ fontSize: 18, fontWeight: 700, marginBottom: '1rem', color: '#F5E642′ }}>Your Action Plan</h2>
+            <h2 style={{ fontSize: 18, fontWeight: 700, marginBottom: '1rem', color: '#F5E642' }}>Your Action Plan</h2>
             <ol style={{ margin: 0, padding: '0 0 0 1.2rem' }}>
               {selected.plan.map((step, i) => (
                 <li key={i} style={{ color: '#e2e8f0', lineHeight: 1.7, fontSize: 15, marginBottom: '0.75rem' }}>
@@ -80,7 +80,7 @@ export default function DFWHVACCompleteFinal() {
             </ol>
           </div>
         )}
-        <div style={{ marginTop: '2.5rem', background: 'linear-gradient(135deg, #0f1f35, #1a2e4a)', borderRadius: 12, padding: '1.5rem', textAlign: 'center', border: '2px solid #F5E642′ }}>
+        <div style={{ marginTop: '2.5rem', background: 'linear-gradient(135deg, #0f1f35, #1a2e4a)', borderRadius: 12, padding: '1.5rem', textAlign: 'center', border: '2px solid #F5E642' }}>
           <div style={{ fontSize: 28, marginBottom: 8 }}>🏁</div>
           <div style={{ color: '#F5E642', fontWeight: 800, fontSize: 18, marginBottom: 8 }}>You are ready for DFW HVAC</div>
           <div style={{ color: '#94a3b8', fontSize: 14, lineHeight: 1.6 }}>ProLnk connects you to vetted DFW HVAC pros who know everything you just learned — and then some. Join the waitlist for early access.</div>

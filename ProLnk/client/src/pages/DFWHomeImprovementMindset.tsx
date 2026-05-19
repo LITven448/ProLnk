@@ -22,7 +22,7 @@ const situations = [
     mindset: 'Investigate Before Panicking',
     framework: [
       '🏠 DFW clay soil is the most active in the country. Seasonal movement is normal — cracking is not always crisis.',
-      '🔍 Rule of thumb: hairline cracks = seasonal movement. Stair-step cracks in brick or cracks wider than 1/4″ = call an engineer.',
+      '🔍 Rule of thumb: hairline cracks = seasonal movement. Stair-step cracks in brick or cracks wider than 1/4" = call an engineer.',
       '💧 Foundation watering is the #1 most important thing you can do. Consistent moisture prevents the shrink-swell cycle that breaks foundations.',
       '⚠️ Don\’t let foundation companies scare you into repairs. Get an independent structural engineer\’s opinion first ($500-800).',
     ],
@@ -111,7 +111,7 @@ export default function DFWHomeImprovementMindset() {
         <div style={{ display: 'flex', flexDirection: 'column', gap: 8, marginBottom: 24 }}>
           {situations.map(s => (
             <button key={s.id} onClick={() => setSelected(s.id)} style={{
-              padding: '12px 16px', borderRadius: 10, border: selected === s.id ? '2px solid #F5E642′ : '2px solid transparent',
+              padding: '12px 16px', borderRadius: 10, border: selected === s.id ? '2px solid #F5E642' : '2px solid transparent',
               background: selected === s.id ? '#111f3a' : '#0d1c33', color: '#fff', textAlign: 'left', cursor: 'pointer', fontSize: 14,
             }}>
               {selected === s.id ? '▶ ' : '○ '}{s.label}

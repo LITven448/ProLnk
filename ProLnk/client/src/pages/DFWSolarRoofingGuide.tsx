@@ -4,7 +4,7 @@ const roofTypes = ['Asphalt Shingle', 'Metal', 'Clay Tile', 'Flat/TPO'];
 const homeStyles = ['Ranch/Single Story', 'Two Story', 'Split Level', 'Contemporary'];
 
 const solarData: Record<string, { roof: string; panels: string; risk: string; recRoof: string; recPanels: string }> = {
-  'Asphalt Shingle': { roof: '$45,000–$65,000', panels: '$18,000–$28,000', risk: 'High — tiles crack on hail 1.5″+', recRoof: 'Replace roof first, then add traditional panels', recPanels: 'Traditional panels on new shingles' },
+  'Asphalt Shingle': { roof: '$45,000–$65,000', panels: '$18,000–$28,000', risk: 'High — tiles crack on hail 1.5"+', recRoof: 'Replace roof first, then add traditional panels', recPanels: 'Traditional panels on new shingles' },
   'Metal':           { roof: '$55,000–$75,000', panels: '$18,000–$28,000', risk: 'Low — metal handles DFW hail well',   recRoof: 'Tesla Solar Roof or metal roof + panels both viable', recPanels: 'Either option — metal roof lasts 50+ years' },
   'Clay Tile':       { roof: '$60,000–$80,000', panels: '$18,000–$28,000', risk: 'Medium — tiles chip but rarely crack',  recRoof: 'Add traditional panels on existing tile',             recPanels: 'Traditional panel rack over tile' },
   'Flat/TPO':        { roof: '$35,000–$50,000', panels: '$18,000–$28,000', risk: 'Medium — flat great for ballast panels', recRoof: 'Ballasted flat-mount panels on TPO',                 recPanels: 'Ballasted racking, no penetrations needed' },
@@ -64,13 +64,13 @@ export default function DFWSolarRoofingGuide() {
             </select>
           </div>
           <button onClick={() => setShowResult(true)} disabled={!roofType || !homeStyle}
-            style={{ width: '100%', background: roofType && homeStyle ? '#F5E642′ : '#1E3A5F', color: roofType && homeStyle ? '#0A1628' : '#4A6FA5', border: ’none', borderRadius: 8, padding: '12px 0', fontSize: 16, fontWeight: 700, cursor: roofType && homeStyle ? 'pointer' : 'default' }}>
+            style={{ width: '100%', background: roofType && homeStyle ? '#F5E642' : '#1E3A5F', color: roofType && homeStyle ? '#0A1628' : '#4A6FA5', border: 'none', borderRadius: 8, padding: '12px 0', fontSize: 16, fontWeight: 700, cursor: roofType && homeStyle ? 'pointer' : 'default' }}>
             Get My DFW Solar Recommendation →
           </button>
         </div>
 
         {showResult && result && (
-          <div style={{ background: '#111D35', borderRadius: 12, padding: 24, border: '2px solid #F5E642′ }}>
+          <div style={{ background: '#111D35', borderRadius: 12, padding: 24, border: '2px solid #F5E642' }}>
             <h3 style={{ color: '#F5E642', fontSize: 20, marginBottom: 20 }}>🎯 Your DFW Solar Recommendation</h3>
             {[
               ['🏗️', 'Recommended Approach', result.recRoof],

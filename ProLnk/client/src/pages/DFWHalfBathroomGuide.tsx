@@ -7,9 +7,9 @@ const styles = {
 };
 
 const budgetRanges: Record<string, Record<string, string>> = {
-  small: { economy: '$3,500–$6,000', mid: '$6,000–$10,000', luxury: '$10,000–$18,000′ },
-  medium: { economy: '$5,000–$8,000', mid: '$8,000–$14,000', luxury: '$14,000–$25,000′ },
-  large: { economy: '$7,000–$11,000', mid: '$11,000–$18,000', luxury: '$18,000–$35,000′ },
+  small: { economy: '$3,500–$6,000', mid: '$6,000–$10,000', luxury: '$10,000–$18,000' },
+  medium: { economy: '$5,000–$8,000', mid: '$8,000–$14,000', luxury: '$14,000–$25,000' },
+  large: { economy: '$7,000–$11,000', mid: '$11,000–$18,000', luxury: '$18,000–$35,000' },
 };
 
 const styleRecs: Record<string, { design: string; vanity: string; lighting: string; wallTreatment: string }> = {
@@ -60,7 +60,7 @@ export default function DFWHalfBathroomGuide() {
           <ul style={{ listStyle: 'none', padding: 0, display: 'flex', flexDirection: 'column', gap: 10 }}>
             {['DFW buyers form impressions in under 8 seconds — powder rooms are often the first interior bathroom they see','Small footprint means full luxury materials at fraction of whole-bath cost','Statement wallpaper, bold vanity, and dramatic lighting cost $800–$2,000 but add perceived value of $8,000+','DFW resale market rewards updated powder rooms in homes over $400K'].map(tip => (
               <li key={tip} style={{ display: 'flex', gap: 10, alignItems: 'flex-start' }}>
-                <span style={{ color: '#F5E642′ }}>✓</span>
+                <span style={{ color: '#F5E642' }}>✓</span>
                 <span style={{ color: '#CBD5E0', fontSize: 14 }}>{tip}</span>
               </li>
             ))}
@@ -75,7 +75,7 @@ export default function DFWHalfBathroomGuide() {
             <div style={{ display: 'flex', gap: 10, flexWrap: 'wrap' }}>
               {Object.entries(styles).map(([key, val]) => (
                 <button key={key} onClick={() => setSize(key)}
-                  style={{ padding: '8px 16px', borderRadius: 8, border: '2px solid', borderColor: size === key ? '#F5E642′ : '#1E3A5F', backgroundColor: size === key ? '#F5E6421A' : ’transparent', color: size === key ? '#F5E642′ : '#9AA5B4', cursor: ’pointer', fontSize: 13 }}>
+                  style={{ padding: '8px 16px', borderRadius: 8, border: '2px solid', borderColor: size === key ? '#F5E642' : '#1E3A5F', backgroundColor: size === key ? '#F5E6421A' : 'transparent', color: size === key ? '#F5E642' : '#9AA5B4', cursor: 'pointer', fontSize: 13 }}>
                   {val.sqft} — {val.typical}
                 </button>
               ))}
@@ -87,7 +87,7 @@ export default function DFWHalfBathroomGuide() {
             <div style={{ display: 'flex', gap: 10, flexWrap: 'wrap' }}>
               {[['modern','🏙️ Modern / Minimalist'],['traditional','🏛️ Traditional / Classic'],['bold','🎨 Bold / Statement']].map(([key, label]) => (
                 <button key={key} onClick={() => setStyle(key)}
-                  style={{ padding: '8px 16px', borderRadius: 8, border: '2px solid', borderColor: style === key ? '#F5E642′ : '#1E3A5F', backgroundColor: style === key ? '#F5E6421A' : ’transparent', color: style === key ? '#F5E642′ : '#9AA5B4', cursor: ’pointer', fontSize: 13 }}>
+                  style={{ padding: '8px 16px', borderRadius: 8, border: '2px solid', borderColor: style === key ? '#F5E642' : '#1E3A5F', backgroundColor: style === key ? '#F5E6421A' : 'transparent', color: style === key ? '#F5E642' : '#9AA5B4', cursor: 'pointer', fontSize: 13 }}>
                   {label}
                 </button>
               ))}
@@ -99,7 +99,7 @@ export default function DFWHalfBathroomGuide() {
             <div style={{ display: 'flex', gap: 10, flexWrap: 'wrap' }}>
               {[['economy','💰 Economy'],['mid','💎 Mid-Range'],['luxury','👑 Luxury']].map(([key, label]) => (
                 <button key={key} onClick={() => setBudget(key)}
-                  style={{ padding: '8px 16px', borderRadius: 8, border: '2px solid', borderColor: budget === key ? '#F5E642′ : '#1E3A5F', backgroundColor: budget === key ? '#F5E6421A' : ’transparent', color: budget === key ? '#F5E642′ : '#9AA5B4', cursor: ’pointer', fontSize: 13 }}>
+                  style={{ padding: '8px 16px', borderRadius: 8, border: '2px solid', borderColor: budget === key ? '#F5E642' : '#1E3A5F', backgroundColor: budget === key ? '#F5E6421A' : 'transparent', color: budget === key ? '#F5E642' : '#9AA5B4', cursor: 'pointer', fontSize: 13 }}>
                   {label}
                 </button>
               ))}
@@ -113,7 +113,7 @@ export default function DFWHalfBathroomGuide() {
         </div>
 
         {result && (
-          <div style={{ backgroundColor: '#1E3A5F', borderRadius: 12, padding: 24, border: '2px solid #F5E642′ }}>
+          <div style={{ backgroundColor: '#1E3A5F', borderRadius: 12, padding: 24, border: '2px solid #F5E642' }}>
             <h3 style={{ color: '#F5E642', marginBottom: 16 }}>✨ Your DFW Powder Room Plan</h3>
             {[['🎨 Design Concept', result.design],['🪞 Vanity Recommendation', result.vanity],['💡 Lighting Plan', result.lighting],['🖼️ Wall Treatment', result.wallTreatment],['💵 Estimated DFW Cost', result.cost]].map(([label, value]) => (
               <div key={label as string} style={{ marginBottom: 14 }}>

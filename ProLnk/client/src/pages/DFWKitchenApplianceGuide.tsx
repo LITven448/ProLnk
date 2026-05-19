@@ -119,11 +119,11 @@ export default function DFWKitchenApplianceGuide() {
             Get Appliance Recommendation
           </button>
           { recommendation && (
-            <div style={{ marginTop: '24px', background: '#0f1e38', borderRadius: '10px', padding: '20px', borderLeft: '4px solid #F5E642′ }}>
+            <div style={{ marginTop: '24px', background: '#0f1e38', borderRadius: '10px', padding: '20px', borderLeft: '4px solid #F5E642' }}>
               <h3 style={{ color: '#F5E642', marginTop: 0 }}>Recommended Package</h3>
-              <p style={{ margin: '4px 0′ }}><strong>Cooktop:</strong> {recommendation.cooktop}</p>
-              <p style={{ margin: '4px 0′ }}><strong>Refrigerator:</strong> {recommendation.fridge}</p>
-              <p style={{ margin: '4px 0′ }}><strong>Dishwasher:</strong> {recommendation.dishwasher}</p>
+              <p style={{ margin: '4px 0' }}><strong>Cooktop:</strong> {recommendation.cooktop}</p>
+              <p style={{ margin: '4px 0' }}><strong>Refrigerator:</strong> {recommendation.fridge}</p>
+              <p style={{ margin: '4px 0' }}><strong>Dishwasher:</strong> {recommendation.dishwasher}</p>
               <div style={{ display: 'flex', gap: '24px', marginTop: '16px' }}>
                 <div style={{ background: '#1a3050', borderRadius: '8px', padding: '14px 20px', textAlign: 'center' }}>
                   <div style={{ color: '#F5E642', fontSize: '22px', fontWeight: 700 }}>${recommendation.baseCost.toLocaleString()}</div>

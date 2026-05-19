@@ -72,7 +72,7 @@ export default function DFWSystemReplacementForecast() {
             {SYSTEMS.map(sys => (
               <label key={sys} style={{ display: 'block' }}>
                 <span style={{ color: '#F5E642', fontSize: 12 }}>{SYSTEM_ICONS[sys]} {sys} Age (yrs)</span>
-                <input type="number" value={ages[sys]} onChange={e => setAge(sys, e.target.value)} placeholder="e.g. 8″
+                <input type="number" value={ages[sys]} onChange={e => setAge(sys, e.target.value)} placeholder="e.g. 8"
                   style={{ display: 'block', width: '100%', marginTop: 4, padding: '8px 12px', borderRadius: 8, border: '1px solid #1e3a5f', background: '#0A1628', color: '#fff', fontSize: 15, boxSizing: 'border-box' }} />
               </label>
             ))}

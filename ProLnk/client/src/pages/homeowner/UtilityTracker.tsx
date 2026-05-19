@@ -29,10 +29,10 @@ const UTILITIES: Utility[] = [
     provider: "Oncor",
     initial: "O",
     initColor: "#F59E0B",
-    accountMasked: "***-4821″,
+    accountMasked: "***-4821",
     monthlyAvg: 142,
     lastBill: 158,
-    dueDate: "May 22″,
+    dueDate: "May 22",
     autopay: true,
     payLink: "#",
     icon: <Zap size={20} color="#F59E0B" />,
@@ -42,70 +42,70 @@ const UTILITIES: Utility[] = [
     name: "Gas",
     provider: "Atmos Energy",
     initial: "A",
-    initColor: "#EF4444″,
-    accountMasked: "***-7392″,
+    initColor: "#EF4444",
+    accountMasked: "***-7392",
     monthlyAvg: 87,
     lastBill: 64,
-    dueDate: "May 28″,
+    dueDate: "May 28",
     autopay: true,
     payLink: "#",
-    icon: <Flame size={20} color="#EF4444″ />,
+    icon: <Flame size={20} color="#EF4444" />,
   },
   {
     id: 3,
     name: "Water",
     provider: "City of Frisco",
     initial: "F",
-    initColor: "#0EA5E9″,
-    accountMasked: "***-1155″,
+    initColor: "#0EA5E9",
+    accountMasked: "***-1155",
     monthlyAvg: 56,
     lastBill: 61,
-    dueDate: "Jun 1″,
+    dueDate: "Jun 1",
     autopay: false,
     payLink: "#",
-    icon: <Droplets size={20} color="#0EA5E9″ />,
+    icon: <Droplets size={20} color="#0EA5E9" />,
   },
   {
     id: 4,
     name: "Internet",
     provider: "Spectrum",
     initial: "S",
-    initColor: "#8B5CF6″,
-    accountMasked: "***-0044″,
+    initColor: "#8B5CF6",
+    accountMasked: "***-0044",
     monthlyAvg: 79,
     lastBill: 79,
-    dueDate: "May 19″,
+    dueDate: "May 19",
     autopay: true,
     payLink: "#",
-    icon: <Wifi size={20} color="#8B5CF6″ />,
+    icon: <Wifi size={20} color="#8B5CF6" />,
   },
   {
     id: 5,
     name: "Trash",
     provider: "Republic Services",
     initial: "R",
-    initColor: "#10B981″,
-    accountMasked: "***-8830″,
+    initColor: "#10B981",
+    accountMasked: "***-8830",
     monthlyAvg: 38,
     lastBill: 38,
-    dueDate: "Jun 5″,
+    dueDate: "Jun 5",
     autopay: false,
     payLink: "#",
-    icon: <Trash2 size={20} color="#10B981″ />,
+    icon: <Trash2 size={20} color="#10B981" />,
   },
   {
     id: 6,
     name: "HOA",
     provider: "Frisco Lakes HOA",
     initial: "H",
-    initColor: "#00B5B8″,
-    accountMasked: "***-2200″,
+    initColor: "#00B5B8",
+    accountMasked: "***-2200",
     monthlyAvg: 185,
     lastBill: 185,
-    dueDate: "Jun 1″,
+    dueDate: "Jun 1",
     autopay: false,
     payLink: "#",
-    icon: <Building2 size={20} color="#00B5B8″ />,
+    icon: <Building2 size={20} color="#00B5B8" />,
   },
 ];
 
@@ -135,7 +135,7 @@ function SparkLine() {
         points={pts}
         fill="none"
         stroke="#F59E0B"
-        strokeWidth="2″
+        strokeWidth="2"
         strokeLinejoin="round"
       />
       {KWH_DATA.map((d, i) => {
@@ -170,7 +170,7 @@ export default function UtilityTracker() {
       provider: form.provider,
       initial: form.provider[0]?.toUpperCase() ?? "U",
       initColor: "#64748B",
-      accountMasked: "***-0000″,
+      accountMasked: "***-0000",
       monthlyAvg: Number(form.monthlyAvg) || 0,
       lastBill: Number(form.monthlyAvg) || 0,
       dueDate: "—",
@@ -189,8 +189,8 @@ export default function UtilityTracker() {
 
         {/* Header */}
         <div style={{ marginBottom: 24 }}>
-          <h1 style={{ fontSize: 26, fontWeight: 700, color: "#F1F5F9″, margin: 0 }}>Utility Tracker</h1>
-          <p style={{ color: "#94A3B8″, marginTop: 4, fontSize: 14 }}>All your home utilities in one place</p>
+          <h1 style={{ fontSize: 26, fontWeight: 700, color: "#F1F5F9", margin: 0 }}>Utility Tracker</h1>
+          <p style={{ color: "#94A3B8", marginTop: 4, fontSize: 14 }}>All your home utilities in one place</p>
         </div>
 
         {/* Summary banner */}
@@ -207,9 +207,9 @@ export default function UtilityTracker() {
           justifyContent: "space-between",
         }}>
           <div>
-            <div style={{ color: "#94A3B8″, fontSize: 13, marginBottom: 4 }}>Monthly Utilities</div>
-            <div style={{ fontSize: 36, fontWeight: 800, color: "#F1F5F9″ }}>${totalMonthly}</div>
-            <div style={{ color: "#94A3B8″, fontSize: 12, marginTop: 2 }}>estimate for your home size/ZIP</div>
+            <div style={{ color: "#94A3B8", fontSize: 13, marginBottom: 4 }}>Monthly Utilities</div>
+            <div style={{ fontSize: 36, fontWeight: 800, color: "#F1F5F9" }}>${totalMonthly}</div>
+            <div style={{ color: "#94A3B8", fontSize: 12, marginTop: 2 }}>estimate for your home size/ZIP</div>
           </div>
           <div style={{
             background: diff >= 0 ? "rgba(16,185,129,0.12)" : "rgba(239,68,68,0.12)",
@@ -221,13 +221,13 @@ export default function UtilityTracker() {
             gap: 10,
           }}>
             {diff >= 0
-              ? <TrendingDown size={22} color="#10B981″ />
-              : <TrendingUp size={22} color="#EF4444″ />}
+              ? <TrendingDown size={22} color="#10B981" />
+              : <TrendingUp size={22} color="#EF4444" />}
             <div>
-              <div style={{ color: diff >= 0 ? "#10B981″ : "#EF4444", fontWeight: 700, fontSize: 15 }}>
+              <div style={{ color: diff >= 0 ? "#10B981" : "#EF4444", fontWeight: 700, fontSize: 15 }}>
                 {diff >= 0 ? `$${diff} below` : `$${Math.abs(diff)} above`} average
               </div>
-              <div style={{ color: "#94A3B8″, fontSize: 12 }}>Average DFW home pays ${avgDfw}/mo in utilities</div>
+              <div style={{ color: "#94A3B8", fontSize: 12 }}>Average DFW home pays ${avgDfw}/mo in utilities</div>
             </div>
           </div>
         </div>
@@ -241,7 +241,7 @@ export default function UtilityTracker() {
         }}>
           {utilities.map(u => (
             <div key={u.id} style={{
-              background: "#0D1F35″,
+              background: "#0D1F35",
               border: "1px solid #1E3A5F",
               borderRadius: 12,
               padding: 18,
@@ -249,7 +249,7 @@ export default function UtilityTracker() {
               <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 12 }}>
                 <div style={{
                   width: 40, height: 40, borderRadius: 10,
-                  background: u.initColor + "22″,
+                  background: u.initColor + "22",
                   border: `1px solid ${u.initColor}44`,
                   display: "flex", alignItems: "center", justifyContent: "center",
                   fontWeight: 700, fontSize: 16, color: u.initColor,
@@ -257,26 +257,26 @@ export default function UtilityTracker() {
                   {u.initial}
                 </div>
                 <div style={{ flex: 1 }}>
-                  <div style={{ color: "#F1F5F9″, fontWeight: 600, fontSize: 14 }}>{u.provider}</div>
+                  <div style={{ color: "#F1F5F9", fontWeight: 600, fontSize: 14 }}>{u.provider}</div>
                   <div style={{ color: "#64748B", fontSize: 12 }}>{u.name}</div>
                 </div>
                 {u.icon}
               </div>
 
               <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 8, marginBottom: 12 }}>
-                <div style={{ background: "#0A1628″, borderRadius: 8, padding: "8px 10px" }}>
+                <div style={{ background: "#0A1628", borderRadius: 8, padding: "8px 10px" }}>
                   <div style={{ color: "#64748B", fontSize: 11 }}>Account</div>
-                  <div style={{ color: "#CBD5E1″, fontSize: 13, fontFamily: "monospace" }}>{u.accountMasked}</div>
+                  <div style={{ color: "#CBD5E1", fontSize: 13, fontFamily: "monospace" }}>{u.accountMasked}</div>
                 </div>
-                <div style={{ background: "#0A1628″, borderRadius: 8, padding: "8px 10px" }}>
+                <div style={{ background: "#0A1628", borderRadius: 8, padding: "8px 10px" }}>
                   <div style={{ color: "#64748B", fontSize: 11 }}>Monthly avg</div>
-                  <div style={{ color: "#10B981″, fontSize: 13, fontWeight: 600 }}>${u.monthlyAvg}/mo</div>
+                  <div style={{ color: "#10B981", fontSize: 13, fontWeight: 600 }}>${u.monthlyAvg}/mo</div>
                 </div>
-                <div style={{ background: "#0A1628″, borderRadius: 8, padding: "8px 10px" }}>
+                <div style={{ background: "#0A1628", borderRadius: 8, padding: "8px 10px" }}>
                   <div style={{ color: "#64748B", fontSize: 11 }}>Last bill</div>
-                  <div style={{ color: "#F1F5F9″, fontSize: 13 }}>${u.lastBill}</div>
+                  <div style={{ color: "#F1F5F9", fontSize: 13 }}>${u.lastBill}</div>
                 </div>
-                <div style={{ background: "#0A1628″, borderRadius: 8, padding: "8px 10px" }}>
+                <div style={{ background: "#0A1628", borderRadius: 8, padding: "8px 10px" }}>
                   <div style={{ color: "#64748B", fontSize: 11 }}>Due</div>
                   <div style={{ color: "#F59E0B", fontSize: 13 }}>{u.dueDate}</div>
                 </div>
@@ -285,16 +285,16 @@ export default function UtilityTracker() {
               <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between" }}>
                 <div style={{ display: "flex", alignItems: "center", gap: 6 }}>
                   {u.autopay
-                    ? <><CheckCircle size={13} color="#10B981″ /><span style={{ color: "#10B981", fontSize: 12 }}>Autopay on</span></>
+                    ? <><CheckCircle size={13} color="#10B981" /><span style={{ color: "#10B981", fontSize: 12 }}>Autopay on</span></>
                     : <><AlertCircle size={13} color="#F59E0B" /><span style={{ color: "#F59E0B", fontSize: 12 }}>Manual pay</span></>}
                 </div>
                 <div style={{ display: "flex", gap: 8 }}>
                   <a
                     href={u.payLink}
                     style={{
-                      fontSize: 12, fontWeight: 600, color: "#00B5B8″,
+                      fontSize: 12, fontWeight: 600, color: "#00B5B8",
                       textDecoration: "none", padding: "4px 10px",
-                      border: "1px solid #00B5B866″, borderRadius: 6,
+                      border: "1px solid #00B5B866", borderRadius: 6,
                     }}
                   >
                     Pay Bill
@@ -302,7 +302,7 @@ export default function UtilityTracker() {
                   <button
                     onClick={() => setEditId(editId === u.id ? null : u.id)}
                     style={{
-                      fontSize: 12, fontWeight: 600, color: "#94A3B8″,
+                      fontSize: 12, fontWeight: 600, color: "#94A3B8",
                       background: "#1E3A5F", border: "none", borderRadius: 6,
                       padding: "4px 10px", cursor: "pointer",
                     }}
@@ -317,7 +317,7 @@ export default function UtilityTracker() {
 
         {/* Energy usage trend */}
         <div style={{
-          background: "#0D1F35″,
+          background: "#0D1F35",
           border: "1px solid #1E3A5F",
           borderRadius: 12,
           padding: "20px 24px",
@@ -325,7 +325,7 @@ export default function UtilityTracker() {
         }}>
           <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 16 }}>
             <Zap size={18} color="#F59E0B" />
-            <span style={{ color: "#F1F5F9″, fontWeight: 600, fontSize: 15 }}>Electric Usage Trend</span>
+            <span style={{ color: "#F1F5F9", fontWeight: 600, fontSize: 15 }}>Electric Usage Trend</span>
             <span style={{ color: "#64748B", fontSize: 12, marginLeft: "auto" }}>kWh — last 6 months</span>
           </div>
           <SparkLine />
@@ -341,9 +341,9 @@ export default function UtilityTracker() {
               onClick={() => setShowForm(true)}
               style={{
                 display: "flex", alignItems: "center", gap: 8,
-                background: "#1E3A5F", border: "1px dashed #00B5B866″,
+                background: "#1E3A5F", border: "1px dashed #00B5B866",
                 borderRadius: 10, padding: "12px 20px", cursor: "pointer",
-                color: "#00B5B8″, fontWeight: 600, fontSize: 14, width: "100%",
+                color: "#00B5B8", fontWeight: 600, fontSize: 14, width: "100%",
                 justifyContent: "center",
               }}
             >
@@ -352,52 +352,52 @@ export default function UtilityTracker() {
             </button>
           ) : (
             <div style={{
-              background: "#0D1F35″, border: "1px solid #1E3A5F",
+              background: "#0D1F35", border: "1px solid #1E3A5F",
               borderRadius: 12, padding: "20px 24px",
             }}>
               <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 16 }}>
-                <span style={{ color: "#F1F5F9″, fontWeight: 600 }}>Add Utility</span>
+                <span style={{ color: "#F1F5F9", fontWeight: 600 }}>Add Utility</span>
                 <button onClick={() => setShowForm(false)} style={{ background: "none", border: "none", cursor: "pointer", color: "#64748B" }}>
                   <X size={16} />
                 </button>
               </div>
               <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: 12, marginBottom: 14 }}>
                 <div>
-                  <div style={{ color: "#94A3B8″, fontSize: 12, marginBottom: 6 }}>Utility type</div>
+                  <div style={{ color: "#94A3B8", fontSize: 12, marginBottom: 6 }}>Utility type</div>
                   <input
                     value={form.name}
                     onChange={e => setForm(f => ({ ...f, name: e.target.value }))}
                     placeholder="Electric, Gas, etc."
                     style={{
-                      width: "100%", background: "#0A1628″, border: "1px solid #1E3A5F",
-                      borderRadius: 8, padding: "8px 12px", color: "#F1F5F9″, fontSize: 14,
+                      width: "100%", background: "#0A1628", border: "1px solid #1E3A5F",
+                      borderRadius: 8, padding: "8px 12px", color: "#F1F5F9", fontSize: 14,
                       outline: "none", boxSizing: "border-box",
                     }}
                   />
                 </div>
                 <div>
-                  <div style={{ color: "#94A3B8″, fontSize: 12, marginBottom: 6 }}>Provider name</div>
+                  <div style={{ color: "#94A3B8", fontSize: 12, marginBottom: 6 }}>Provider name</div>
                   <input
                     value={form.provider}
                     onChange={e => setForm(f => ({ ...f, provider: e.target.value }))}
                     placeholder="Provider"
                     style={{
-                      width: "100%", background: "#0A1628″, border: "1px solid #1E3A5F",
-                      borderRadius: 8, padding: "8px 12px", color: "#F1F5F9″, fontSize: 14,
+                      width: "100%", background: "#0A1628", border: "1px solid #1E3A5F",
+                      borderRadius: 8, padding: "8px 12px", color: "#F1F5F9", fontSize: 14,
                       outline: "none", boxSizing: "border-box",
                     }}
                   />
                 </div>
                 <div>
-                  <div style={{ color: "#94A3B8″, fontSize: 12, marginBottom: 6 }}>Monthly avg ($)</div>
+                  <div style={{ color: "#94A3B8", fontSize: 12, marginBottom: 6 }}>Monthly avg ($)</div>
                   <input
                     type="number"
                     value={form.monthlyAvg}
                     onChange={e => setForm(f => ({ ...f, monthlyAvg: e.target.value }))}
-                    placeholder="0″
+                    placeholder="0"
                     style={{
-                      width: "100%", background: "#0A1628″, border: "1px solid #1E3A5F",
-                      borderRadius: 8, padding: "8px 12px", color: "#F1F5F9″, fontSize: 14,
+                      width: "100%", background: "#0A1628", border: "1px solid #1E3A5F",
+                      borderRadius: 8, padding: "8px 12px", color: "#F1F5F9", fontSize: 14,
                       outline: "none", boxSizing: "border-box",
                     }}
                   />
@@ -406,7 +406,7 @@ export default function UtilityTracker() {
               <button
                 onClick={addUtility}
                 style={{
-                  background: "#00B5B8″, border: "none", borderRadius: 8,
+                  background: "#00B5B8", border: "none", borderRadius: 8,
                   padding: "10px 24px", color: "#fff", fontWeight: 600, fontSize: 14,
                   cursor: "pointer",
                 }}

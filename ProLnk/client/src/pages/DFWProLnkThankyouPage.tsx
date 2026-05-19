@@ -62,7 +62,7 @@ export default function DFWProLnkThankyouPage() {
           <div style={{ textAlign: 'center', color: '#F5E642', fontWeight: 700, fontSize: 16, marginBottom: 20 }}>
             {timeLabels[timeRange]}
           </div>
-          <div style={{ background: '#0A1628', borderRadius: 12, padding: 24, borderLeft: '4px solid #F5E642′ }}>
+          <div style={{ background: '#0A1628', borderRadius: 12, padding: 24, borderLeft: '4px solid #F5E642' }}>
             <p style={{ color: '#CBD5E1', lineHeight: 1.8, fontSize: 16, margin: 0 }}>{timeMessages[timeRange]}</p>
           </div>
         </div>

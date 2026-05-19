@@ -56,13 +56,13 @@ export default function DFWHVACFlexDuctCalc2026() {
           <label style={{ color: '#a0b0c8', fontSize: 13, display: 'block', marginBottom: 6 }}>Duct Diameter</label>
           <select value={ductSize} onChange={e => setDuctSize(e.target.value)} style={{ width: '100%', padding: '10px', borderRadius: 8, background: '#0A1628', color: '#fff', border: '1px solid #1e3a5f', marginBottom: 14 }}>
             <option value="">Select diameter...</option>
-            <option value="6″>6-inch</option>
-            <option value="8″>8-inch</option>
-            <option value="10″>10-inch</option>
-            <option value="12″>12-inch</option>
+            <option value="6">6-inch</option>
+            <option value="8">8-inch</option>
+            <option value="10">10-inch</option>
+            <option value="12">12-inch</option>
           </select>
           <label style={{ color: '#a0b0c8', fontSize: 13, display: 'block', marginBottom: 6 }}>Actual Run Length (feet)</label>
-          <input type="number" value={runLength} onChange={e => setRunLength(e.target.value)} placeholder="e.g. 35″ style={{ width: '100%', padding: '10px', borderRadius: 8, background: '#0A1628', color: '#fff', border: '1px solid #1e3a5f', marginBottom: 14, boxSizing: 'border-box' }} />
+          <input type="number" value={runLength} onChange={e => setRunLength(e.target.value)} placeholder="e.g. 35" style={{ width: '100%', padding: '10px', borderRadius: 8, background: '#0A1628', color: '#fff', border: '1px solid #1e3a5f', marginBottom: 14, boxSizing: 'border-box' }} />
           <label style={{ color: '#a0b0c8', fontSize: 13, display: 'block', marginBottom: 6 }}>Number of 90° Bends</label>
           <select value={bends} onChange={e => setBends(e.target.value)} style={{ width: '100%', padding: '10px', borderRadius: 8, background: '#0A1628', color: '#fff', border: '1px solid #1e3a5f', marginBottom: 14 }}>
             {[0,1,2,3,4,5].map(n => <option key={n} value={n}>{n} bend{n !== 1 ? 's' : ''}</option>)}

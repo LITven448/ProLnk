@@ -6,9 +6,9 @@ export default function DFWFoundationSeasonalGuide2026() {
 
   const months = [
     { season: 'Spring (Mar–May)', icon: '🌱', task: 'Soil Re-Hydration Check', detail: 'DFW clay soil swells with spring rains. Check for new cracks or door misalignment after wet spells.', color: '#22c55e' },
-    { season: 'Summer (Jun–Aug)', icon: '🔥', task: 'Daily Watering Protocol', detail: 'DFW drought shrinks clay up to 4 inches. Water foundation perimeter 30 min/day during heat waves to prevent settlement.', color: '#ef4444′ },
-    { season: 'Fall (Sep–Nov)', icon: '🍁', task: 'Reduce Watering Gradually', detail: 'As temps drop below 80°F, taper watering to avoid over-saturation. Inspect for fall cracks before winter freeze.', color: '#f97316′ },
-    { season: 'Winter (Dec–Feb)', icon: '🧊', task: 'Freeze Protection for Piers', detail: 'Exposed piers on pier-and-beam homes can shift in hard freezes. Skirt the perimeter and check for frost heave after cold snaps.', color: '#3b82f6′ },
+    { season: 'Summer (Jun–Aug)', icon: '🔥', task: 'Daily Watering Protocol', detail: 'DFW drought shrinks clay up to 4 inches. Water foundation perimeter 30 min/day during heat waves to prevent settlement.', color: '#ef4444' },
+    { season: 'Fall (Sep–Nov)', icon: '🍁', task: 'Reduce Watering Gradually', detail: 'As temps drop below 80°F, taper watering to avoid over-saturation. Inspect for fall cracks before winter freeze.', color: '#f97316' },
+    { season: 'Winter (Dec–Feb)', icon: '🧊', task: 'Freeze Protection for Piers', detail: 'Exposed piers on pier-and-beam homes can shift in hard freezes. Skirt the perimeter and check for frost heave after cold snaps.', color: '#3b82f6' },
   ];
 
   const getSchedule = () => {
@@ -49,7 +49,7 @@ export default function DFWFoundationSeasonalGuide2026() {
             {['slab', 'pier', 'basement'].map((type) => (
               <button key={type} onClick={() => setFoundationType(type)}
                 style={{ padding: '10px 18px', borderRadius: 8, border: `2px solid ${foundationType === type ? '#F5E642' : '#1e3a5f'}`,
-                  background: foundationType === type ? '#F5E642′ : '#0A1628', color: foundationType === type ? '#0A1628' : '#fff', fontWeight: 700, cursor: ’pointer', fontSize: 14, textTransform: 'capitalize' }}>
+                  background: foundationType === type ? '#F5E642' : '#0A1628', color: foundationType === type ? '#0A1628' : '#fff', fontWeight: 700, cursor: 'pointer', fontSize: 14, textTransform: 'capitalize' }}>
                 {type === 'slab' ? '🧱 Slab' : type === 'pier' ? '🔩 Pier & Beam' : '🏗️ Basement'}
               </button>
             ))}

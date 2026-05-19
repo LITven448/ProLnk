@@ -40,8 +40,8 @@ export default function DFWHVACReplacementTimingGuide2026() {
         <div style={{ background: '#0F2240', borderRadius: 12, padding: 24, marginBottom: 24 }}>
           <h2 style={{ color: '#F5E642', fontSize: 18, marginBottom: 16 }}>📐 The $5,000 Rule</h2>
           <div style={{ color: '#C8D8E8', lineHeight: 1.8 }}>
-            <p><strong style={{ color: '#E8EFF8′ }}>Formula:</strong> Repair Cost × System Age = Score</p>
-            <p style={{ marginTop: 8 }}>If the score exceeds <strong style={{ color: '#F5E642′ }}>$5,000</strong>, replace. If it’s under, repair and monitor.</p>
+            <p><strong style={{ color: '#E8EFF8' }}>Formula:</strong> Repair Cost × System Age = Score</p>
+            <p style={{ marginTop: 8 }}>If the score exceeds <strong style={{ color: '#F5E642' }}>$5,000</strong>, replace. If it's under, repair and monitor.</p>
             <p style={{ marginTop: 8 }}>Example: $800 repair × 10 years = $8,000 → Replace</p>
             <p style={{ marginTop: 4 }}>Example: $400 repair × 8 years = $3,200 → Repair OK</p>
           </div>
@@ -50,10 +50,10 @@ export default function DFWHVACReplacementTimingGuide2026() {
         <div style={{ background: '#0F2240', borderRadius: 12, padding: 24, marginBottom: 24 }}>
           <h2 style={{ color: '#F5E642', fontSize: 18, marginBottom: 16 }}>📅 DFW Timing Matters More Than Most Markets</h2>
           <ul style={{ color: '#C8D8E8', lineHeight: 2, paddingLeft: 20 }}>
-            <li><strong style={{ color: '#E8EFF8′ }}>Jan–April:</strong> Best pricing, best availability, crews ready. Do it now if you can.</li>
-            <li><strong style={{ color: '#E8EFF8′ }}>May:</strong> Last chance before summer rush — book immediately</li>
-            <li><strong style={{ color: '#E8EFF8′ }}>June–August:</strong> 1–3 week wait times, premium pricing, worst time</li>
-            <li><strong style={{ color: '#E8EFF8′ }}>Sept–Dec:</strong> Great availability, good pricing, prepare for next summer</li>
+            <li><strong style={{ color: '#E8EFF8' }}>Jan–April:</strong> Best pricing, best availability, crews ready. Do it now if you can.</li>
+            <li><strong style={{ color: '#E8EFF8' }}>May:</strong> Last chance before summer rush — book immediately</li>
+            <li><strong style={{ color: '#E8EFF8' }}>June–August:</strong> 1–3 week wait times, premium pricing, worst time</li>
+            <li><strong style={{ color: '#E8EFF8' }}>Sept–Dec:</strong> Great availability, good pricing, prepare for next summer</li>
             <li>DFW 2026: Equipment lead times have improved but 2-stage units still 1–2 week lead times</li>
           </ul>
         </div>
@@ -87,7 +87,7 @@ export default function DFWHVACReplacementTimingGuide2026() {
         </div>
 
         {result && (
-          <div style={{ background: '#0F2240', borderRadius: 12, padding: 24, borderLeft: '4px solid #F5E642′ }}>
+          <div style={{ background: '#0F2240', borderRadius: 12, padding: 24, borderLeft: '4px solid #F5E642' }}>
             <h3 style={{ color: '#F5E642', marginBottom: 16 }}>📊 DFW Replace vs Repair Decision</h3>
             <div style={{ marginBottom: 16, fontSize: 18, fontWeight: 800, color: '#FFFFFF' }}>{result.decision}</div>
             <div style={{ marginBottom: 12, padding: 12, background: '#0A1628', borderRadius: 8, color: '#C8D8E8', fontSize: 14 }}>📐 Rule: {result.ruleCalc}</div>

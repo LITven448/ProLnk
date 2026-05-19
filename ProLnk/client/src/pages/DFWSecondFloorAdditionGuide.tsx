@@ -102,7 +102,7 @@ export default function DFWSecondFloorAdditionGuide() {
               ['Total budget', budget, setBudget, [['', 'Select budget'], ['over-300k', 'Over $300,000'], ['200-300k', '$200,000 – $300,000'], ['under-200k', 'Under $200,000']]],
             ].map(([label, val, setter, opts]: any) => (
               <div key={label}>
-                <label style={{ display: 'block', marginBottom: 8, color: '#94A3B8′ }}>{label}</label>
+                <label style={{ display: 'block', marginBottom: 8, color: '#94A3B8' }}>{label}</label>
                 <select value={val} onChange={e => setter(e.target.value)}
                   style={{ width: '100%', padding: '10px 14px', background: '#0A1628', border: '1px solid #1E3A5F', borderRadius: 8, color: '#fff', fontSize: 15 }}>
                   {opts.map(([v, l]: string[]) => <option key={v} value={v}>{l}</option>)}

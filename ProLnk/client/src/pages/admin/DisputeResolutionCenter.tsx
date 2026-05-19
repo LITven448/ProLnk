@@ -50,8 +50,8 @@ const STATUS_COLORS: Record<string, string> = {
 
 const DISPUTES: Dispute[] = [
   {
-    id: "DSP-2847″,
-    dateOpened: "May 12, 2026″,
+    id: "DSP-2847",
+    dateOpened: "May 12, 2026",
     homeowner: "Patricia M.",
     pro: "Aaron HVAC Solutions",
     issueType: "Quality dispute",
@@ -65,8 +65,8 @@ const DISPUTES: Dispute[] = [
     ],
   },
   {
-    id: "DSP-2851″,
-    dateOpened: "May 13, 2026″,
+    id: "DSP-2851",
+    dateOpened: "May 13, 2026",
     homeowner: "Robert K.",
     pro: "FastFix Plumbing",
     issueType: "No-show",
@@ -79,8 +79,8 @@ const DISPUTES: Dispute[] = [
     ],
   },
   {
-    id: "DSP-2858″,
-    dateOpened: "May 14, 2026″,
+    id: "DSP-2858",
+    dateOpened: "May 14, 2026",
     homeowner: "Sandra T.",
     pro: "DFW Electric Pro",
     issueType: "Payment dispute",
@@ -95,16 +95,16 @@ const DISPUTES: Dispute[] = [
 ];
 
 const RESOLVED: ResolvedDispute[] = [
-  { id: "DSP-2831″, homeowner: "James L.", pro: "Roof Pro DFW", issueType: "Quality dispute", outcome: "Side with Homeowner", amount: 620, daysToResolve: 3, homeownerSat: 5, proSat: 3 },
-  { id: "DSP-2820″, homeowner: "Maria C.", pro: "AllPro HVAC", issueType: "Payment dispute", outcome: "Split decision", amount: 200, daysToResolve: 2, homeownerSat: 4, proSat: 4 },
-  { id: "DSP-2815″, homeowner: "Tom B.", pro: "QuickPlumb", issueType: "No-show", outcome: "Side with Homeowner", amount: 0, daysToResolve: 1, homeownerSat: 5, proSat: 2 },
-  { id: "DSP-2801″, homeowner: "Linda H.", pro: "Elite Electric", issueType: "Quality dispute", outcome: "Side with Pro", amount: 450, daysToResolve: 4, homeownerSat: 3, proSat: 5 },
-  { id: "DSP-2797″, homeowner: "Carlos M.", pro: "DrainMaster TX", issueType: "Payment dispute", outcome: "Split decision", amount: 310, daysToResolve: 2, homeownerSat: 4, proSat: 4 },
-  { id: "DSP-2790″, homeowner: "Susan P.", pro: "SkyRoof", issueType: "Other", outcome: "Request more info", amount: 0, daysToResolve: 5, homeownerSat: 4, proSat: 3 },
-  { id: "DSP-2784″, homeowner: "David R.", pro: "CoolAir DFW", issueType: "Quality dispute", outcome: "Side with Homeowner", amount: 780, daysToResolve: 3, homeownerSat: 5, proSat: 2 },
-  { id: "DSP-2775″, homeowner: "Amy S.", pro: "PowerUp Electric", issueType: "No-show", outcome: "Side with Homeowner", amount: 0, daysToResolve: 1, homeownerSat: 5, proSat: 3 },
-  { id: "DSP-2770″, homeowner: "Brian T.", pro: "PipeMaster Pro", issueType: "Payment dispute", outcome: "Side with Pro", amount: 225, daysToResolve: 3, homeownerSat: 3, proSat: 5 },
-  { id: "DSP-2762″, homeowner: "Nicole W.", pro: "Foundation Fix TX", issueType: "Quality dispute", outcome: "Split decision", amount: 1200, daysToResolve: 4, homeownerSat: 4, proSat: 4 },
+  { id: "DSP-2831", homeowner: "James L.", pro: "Roof Pro DFW", issueType: "Quality dispute", outcome: "Side with Homeowner", amount: 620, daysToResolve: 3, homeownerSat: 5, proSat: 3 },
+  { id: "DSP-2820", homeowner: "Maria C.", pro: "AllPro HVAC", issueType: "Payment dispute", outcome: "Split decision", amount: 200, daysToResolve: 2, homeownerSat: 4, proSat: 4 },
+  { id: "DSP-2815", homeowner: "Tom B.", pro: "QuickPlumb", issueType: "No-show", outcome: "Side with Homeowner", amount: 0, daysToResolve: 1, homeownerSat: 5, proSat: 2 },
+  { id: "DSP-2801", homeowner: "Linda H.", pro: "Elite Electric", issueType: "Quality dispute", outcome: "Side with Pro", amount: 450, daysToResolve: 4, homeownerSat: 3, proSat: 5 },
+  { id: "DSP-2797", homeowner: "Carlos M.", pro: "DrainMaster TX", issueType: "Payment dispute", outcome: "Split decision", amount: 310, daysToResolve: 2, homeownerSat: 4, proSat: 4 },
+  { id: "DSP-2790", homeowner: "Susan P.", pro: "SkyRoof", issueType: "Other", outcome: "Request more info", amount: 0, daysToResolve: 5, homeownerSat: 4, proSat: 3 },
+  { id: "DSP-2784", homeowner: "David R.", pro: "CoolAir DFW", issueType: "Quality dispute", outcome: "Side with Homeowner", amount: 780, daysToResolve: 3, homeownerSat: 5, proSat: 2 },
+  { id: "DSP-2775", homeowner: "Amy S.", pro: "PowerUp Electric", issueType: "No-show", outcome: "Side with Homeowner", amount: 0, daysToResolve: 1, homeownerSat: 5, proSat: 3 },
+  { id: "DSP-2770", homeowner: "Brian T.", pro: "PipeMaster Pro", issueType: "Payment dispute", outcome: "Side with Pro", amount: 225, daysToResolve: 3, homeownerSat: 3, proSat: 5 },
+  { id: "DSP-2762", homeowner: "Nicole W.", pro: "Foundation Fix TX", issueType: "Quality dispute", outcome: "Split decision", amount: 1200, daysToResolve: 4, homeownerSat: 4, proSat: 4 },
 ];
 
 const RESOLVED_COLUMNS = [
@@ -280,10 +280,10 @@ export default function DisputeResolutionCenter() {
 
         {/* Stats */}
         <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 16, marginBottom: 32 }}>
-          <MetricCard label="Active Disputes" value="3″ trend={0} color={D.amber} gradient={D.gradAmber} icon={<Scale size={18} color={D.amber} />} />
-          <MetricCard label="Resolved This Month" value="8″ trend={14} color={D.green} gradient={D.gradGreen} icon={<CheckCircle size={18} color={D.green} />} />
+          <MetricCard label="Active Disputes" value="3" trend={0} color={D.amber} gradient={D.gradAmber} icon={<Scale size={18} color={D.amber} />} />
+          <MetricCard label="Resolved This Month" value="8" trend={14} color={D.green} gradient={D.gradGreen} icon={<CheckCircle size={18} color={D.green} />} />
           <MetricCard label="Avg Resolution Time" value="2.4 days" sub="target: 5 days" trend={8} color={D.cyan} gradient={D.gradCyan} icon={<Clock size={18} color={D.cyan} />} />
-          <MetricCard label="Customer Satisfaction" value="4.7 / 5″ trend={3} color={D.purple} gradient={D.gradPurple} icon={<Star size={18} color={D.purple} />} />
+          <MetricCard label="Customer Satisfaction" value="4.7 / 5" trend={3} color={D.purple} gradient={D.gradPurple} icon={<Star size={18} color={D.purple} />} />
         </div>
 
         {/* Active Disputes */}

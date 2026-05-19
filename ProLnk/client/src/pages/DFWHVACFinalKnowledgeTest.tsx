@@ -27,7 +27,7 @@ export default function DFWHVACFinalKnowledgeTest() {
   const score = submitted ? answers.filter((a, i) => a === questions[i].correct).length : 0;
   const pct = Math.round((score / questions.length) * 100);
   const grade = pct >= 90 ? 'A' : pct >= 80 ? 'B' : pct >= 70 ? 'C' : pct >= 60 ? 'D' : 'F';
-  const gradeColor = pct >= 80 ? '#10B981′ : pct >= 60 ? '#F59E0B' : '#EF4444';
+  const gradeColor = pct >= 80 ? '#10B981' : pct >= 60 ? '#F59E0B' : '#EF4444';
 
   return (
     <div style={{ background: '#0A1628', minHeight: '100vh', color: '#E2E8F0', fontFamily: 'system-ui, sans-serif', padding: '24px' }}>
@@ -39,7 +39,7 @@ export default function DFWHVACFinalKnowledgeTest() {
         </div>
 
         {questions.map((q, qi) => (
-          <div key={qi} style={{ background: '#0F2140', borderRadius: 12, padding: 20, marginBottom: 16, border: submitted && answers[qi] !== q.correct ? '1px solid #EF4444′ : submitted ? '1px solid #10B981' : '1px solid #1E3A5F' }}>
+          <div key={qi} style={{ background: '#0F2140', borderRadius: 12, padding: 20, marginBottom: 16, border: submitted && answers[qi] !== q.correct ? '1px solid #EF4444' : submitted ? '1px solid #10B981' : '1px solid #1E3A5F' }}>
             <div style={{ color: '#F5E642', fontWeight: 600, fontSize: 14, marginBottom: 10 }}>Q{qi + 1}: {q.q}</div>
             <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
               {q.options.map((opt, oi) => {
@@ -68,12 +68,12 @@ export default function DFWHVACFinalKnowledgeTest() {
           <div style={{ textAlign: 'center', marginTop: 8 }}>
             <div style={{ color: '#94A3B8', fontSize: 13, marginBottom: 12 }}>{answers.filter(a => a !== null).length} of {questions.length} answered</div>
             <button onClick={() => setSubmitted(true)} disabled={answers.some(a => a === null)}
-              style={{ background: answers.some(a => a === null) ? '#334155′ : '#F5E642', color: '#0A1628', fontWeight: 700, fontSize: 16, border: ’none', borderRadius: 8, padding: '14px 36px', cursor: answers.some(a => a === null) ? 'not-allowed' : 'pointer' }}>
+              style={{ background: answers.some(a => a === null) ? '#334155' : '#F5E642', color: '#0A1628', fontWeight: 700, fontSize: 16, border: 'none', borderRadius: 8, padding: '14px 36px', cursor: answers.some(a => a === null) ? 'not-allowed' : 'pointer' }}>
               Submit Quiz
             </button>
           </div>
         ) : (
-          <div style={{ background: '#0F2140', borderRadius: 12, padding: 28, textAlign: 'center', border: '2px solid #F5E642′ }}>
+          <div style={{ background: '#0F2140', borderRadius: 12, padding: 28, textAlign: 'center', border: '2px solid #F5E642' }}>
             <div style={{ fontSize: 56, marginBottom: 8 }}>📊</div>
             <div style={{ color: gradeColor, fontSize: 52, fontWeight: 900 }}>{grade}</div>
             <div style={{ color: '#F5E642', fontSize: 22, fontWeight: 700, margin: '8px 0 4px' }}>{score} / {questions.length} correct ({pct}%)</div>

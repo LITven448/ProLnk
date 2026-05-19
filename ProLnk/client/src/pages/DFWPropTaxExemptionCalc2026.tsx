@@ -10,7 +10,7 @@ export default function DFWPropTaxExemptionCalc2026() {
   const value = parseFloat(homeValue) || 0;
 
   const homesteadReduction = Math.min(value, 100000);
-  const over65Extra = ownerStatus === 'over65′ || ownerStatus === ’disabled' ? 10000 : 0;
+  const over65Extra = ownerStatus === 'over65' || ownerStatus === 'disabled' ? 10000 : 0;
   const veteranReduction: Record<string, number> = { veteran10: value * 0.1, veteran30: value * 0.3, veteran50: value * 0.5, veteran70: value * 0.7, veteran100: value };
   const vetRed = ownerStatus.startsWith('veteran') ? (veteranReduction[ownerStatus] || 0) : 0;
 
@@ -36,24 +36,24 @@ export default function DFWPropTaxExemptionCalc2026() {
         <div style={{ background: '#1e2d47', borderRadius: 12, padding: 24, marginBottom: 28 }}>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: 16, marginBottom: 20 }}>
             <div>
-              <label style={{ fontSize: 12, color: '#94a3b8′ }}>🏠 Home Value ($)</label>
+              <label style={{ fontSize: 12, color: '#94a3b8' }}>🏠 Home Value ($)</label>
               <input type="number" value={homeValue} onChange={e => setHomeValue(e.target.value)} style={{ display: 'block', marginTop: 6, width: '100%', background: '#0A1628', color: '#fff', border: '1px solid #334155', borderRadius: 8, padding: '10px', fontSize: 15 }} />
             </div>
             <div>
-              <label style={{ fontSize: 12, color: '#94a3b8′ }}>👤 Owner Status</label>
+              <label style={{ fontSize: 12, color: '#94a3b8' }}>👤 Owner Status</label>
               <select value={ownerStatus} onChange={e => setOwnerStatus(e.target.value)} style={{ display: 'block', marginTop: 6, width: '100%', background: '#0A1628', color: '#fff', border: '1px solid #334155', borderRadius: 8, padding: '10px', fontSize: 14 }}>
                 <option value="standard">Standard Homeowner</option>
-                <option value="over65″>Over 65</option>
+                <option value="over65">Over 65</option>
                 <option value="disabled">Disabled Person</option>
-                <option value="veteran10″>Veteran 10% Disability</option>
-                <option value="veteran30″>Veteran 30% Disability</option>
-                <option value="veteran50″>Veteran 50% Disability</option>
-                <option value="veteran70″>Veteran 70% Disability</option>
-                <option value="veteran100″>Veteran 100% Disabled</option>
+                <option value="veteran10">Veteran 10% Disability</option>
+                <option value="veteran30">Veteran 30% Disability</option>
+                <option value="veteran50">Veteran 50% Disability</option>
+                <option value="veteran70">Veteran 70% Disability</option>
+                <option value="veteran100">Veteran 100% Disabled</option>
               </select>
             </div>
             <div>
-              <label style={{ fontSize: 12, color: '#94a3b8′ }}>📍 DFW County</label>
+              <label style={{ fontSize: 12, color: '#94a3b8' }}>📍 DFW County</label>
               <select value={county} onChange={e => setCounty(e.target.value)} style={{ display: 'block', marginTop: 6, width: '100%', background: '#0A1628', color: '#fff', border: '1px solid #334155', borderRadius: 8, padding: '10px', fontSize: 14 }}>
                 <option value="dallas">Dallas County (~2.35%)</option>
                 <option value="tarrant">Tarrant County (~2.28%)</option>
@@ -65,8 +65,8 @@ export default function DFWPropTaxExemptionCalc2026() {
 
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 12 }}>
             {[
-              { label: 'Total Exemption Reduction', value: `$${totalReduction.toLocaleString()}`, color: '#F5E642′ },
-              { label: 'Annual Tax Savings', value: `$${savings.toLocaleString()}`, color: '#4ade80′ },
+              { label: 'Total Exemption Reduction', value: `$${totalReduction.toLocaleString()}`, color: '#F5E642' },
+              { label: 'Annual Tax Savings', value: `$${savings.toLocaleString()}`, color: '#4ade80' },
               { label: 'Est. Annual Tax Bill', value: `$${annualTax.toLocaleString()}`, color: '#fff' },
             ].map(m => (
               <div key={m.label} style={{ background: '#0A1628', borderRadius: 10, padding: 16, textAlign: 'center' }}>
@@ -83,12 +83,12 @@ export default function DFWPropTaxExemptionCalc2026() {
             <span style={{ fontSize: 24 }}>{e.icon}</span>
             <div>
               <div style={{ fontWeight: 700, marginBottom: 4 }}>{e.title}</div>
-              <div style={{ fontSize: 13, color: '#94a3b8′ }}>{e.desc}</div>
+              <div style={{ fontSize: 13, color: '#94a3b8' }}>{e.desc}</div>
             </div>
           </div>
         ))}
 
-        <div style={{ marginTop: 24, background: '#1e2d47', borderRadius: 12, padding: 20, borderLeft: '4px solid #F5E642′ }}>
+        <div style={{ marginTop: 24, background: '#1e2d47', borderRadius: 12, padding: 20, borderLeft: '4px solid #F5E642' }}>
           <div style={{ fontWeight: 700, marginBottom: 6 }}>📅 Apply Before April 30</div>
           <div style={{ color: '#94a3b8', fontSize: 14 }}>New DFW homeowners must apply for homestead exemption by April 30 of the year after purchase. Apply at your county appraisal district website — free, takes 10 minutes, saves thousands per year.</div>
         </div>

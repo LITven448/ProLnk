@@ -65,7 +65,7 @@ export default function DFWIrrigationMaintenanceGuide2026() {
           <h2 style={{ color: '#F5E642', marginTop: '0', fontSize: '1.1rem' }}>📋 DFW Irrigation Fast Facts</h2>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0.75rem' }}>
             {['🌿 DFW grass target: 1 inch water per week (spring/fall), 1.5 inch in peak summer', '🕓 Best watering time: 4–6am — reduces evaporation and fungal risk', '📜 TX law: rain sensor required on all new irrigation installs since 2009', '🔧 Backflow test: required annually by most DFW water districts (licensed irrigator)', '💧 Watering restrictions: most DFW cities limit to 2 days/week June–Oct', '❄️ Freeze threshold: protect above-ground components below 28°F for 4+ hours'].map((item, i) => (
-              <div key={i} style={{ background: '#1a3a5c', borderRadius: '8px', padding: '0.75rem', fontSize: '0.9rem', lineHeight: '1.5′ }}>{item}</div>
+              <div key={i} style={{ background: '#1a3a5c', borderRadius: '8px', padding: '0.75rem', fontSize: '0.9rem', lineHeight: '1.5' }}>{item}</div>
             ))}
           </div>
         </div>
@@ -75,7 +75,7 @@ export default function DFWIrrigationMaintenanceGuide2026() {
           <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
             {seasons.map(s => (
               <button key={s.id} onClick={() => setSelected(s.id === selected ? null : s.id)}
-                style={{ background: selected === s.id ? '#F5E642′ : '#1a3a5c', color: selected === s.id ? '#0A1628' : '#e2e8f0', border: ’none', borderRadius: '8px', padding: '0.75rem 1.25rem', cursor: 'pointer', fontWeight: '700', fontSize: '0.95rem' }}>
+                style={{ background: selected === s.id ? '#F5E642' : '#1a3a5c', color: selected === s.id ? '#0A1628' : '#e2e8f0', border: 'none', borderRadius: '8px', padding: '0.75rem 1.25rem', cursor: 'pointer', fontWeight: '700', fontSize: '0.95rem' }}>
                 {s.label}
               </button>
             ))}
@@ -84,10 +84,10 @@ export default function DFWIrrigationMaintenanceGuide2026() {
 
         {match && (
           <div style={{ background: '#0f2040', borderRadius: '12px', padding: '1.5rem', marginBottom: '1.5rem' }}>
-            <h3 style={{ color: '#F5E642', marginTop: '0′ }}>Checklist: {match.label}</h3>
+            <h3 style={{ color: '#F5E642', marginTop: '0' }}>Checklist: {match.label}</h3>
             <ul style={{ margin: '0', paddingLeft: '1.25rem' }}>
               {match.tasks.map((task, i) => (
-                <li key={i} style={{ marginBottom: '0.6rem', lineHeight: '1.6′ }}>{task}</li>
+                <li key={i} style={{ marginBottom: '0.6rem', lineHeight: '1.6' }}>{task}</li>
               ))}
             </ul>
           </div>

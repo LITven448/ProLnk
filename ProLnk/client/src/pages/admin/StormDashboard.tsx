@@ -29,11 +29,11 @@ const US_STATES = [
 ];
 
 const DFW_ZONES = [
-  { name: "Dallas Core", lat: 32.7767, lon: -96.797, zip: "75201″ },
-  { name: "Fort Worth", lat: 32.7555, lon: -97.3308, zip: "76101″ },
-  { name: "Plano / Collin Co.", lat: 33.0198, lon: -96.6989, zip: "75023″ },
-  { name: "Arlington", lat: 32.7357, lon: -97.1081, zip: "76010″ },
-  { name: "Denton Co.", lat: 33.2148, lon: -97.1331, zip: "76201″ },
+  { name: "Dallas Core", lat: 32.7767, lon: -96.797, zip: "75201" },
+  { name: "Fort Worth", lat: 32.7555, lon: -97.3308, zip: "76101" },
+  { name: "Plano / Collin Co.", lat: 33.0198, lon: -96.6989, zip: "75023" },
+  { name: "Arlington", lat: 32.7357, lon: -97.1081, zip: "76010" },
+  { name: "Denton Co.", lat: 33.2148, lon: -97.1331, zip: "76201" },
 ];
 
 interface ZoneWeather {
@@ -56,10 +56,10 @@ const MOCK_ZONE_DATA: Omit<ZoneWeather, "zone" | "loading">[] = [
 ];
 
 const THREAT_STYLE: Record<string, { border: string; bg: string; badge: string; dot: string }> = {
-  Extreme: { border: "border-red-500/60″, bg: "bg-red-500/10", badge: "bg-red-600 text-white", dot: "bg-red-500" },
-  Warning: { border: "border-amber-500/40″, bg: "bg-amber-500/8", badge: "bg-amber-500 text-black", dot: "bg-amber-500" },
-  Watch: { border: "border-yellow-400/30″, bg: "bg-yellow-500/5", badge: "bg-yellow-400 text-black", dot: "bg-yellow-400" },
-  Clear: { border: "border-white/10″, bg: "bg-white/3", badge: "bg-teal-600 text-white", dot: "bg-teal-400" },
+  Extreme: { border: "border-red-500/60", bg: "bg-red-500/10", badge: "bg-red-600 text-white", dot: "bg-red-500" },
+  Warning: { border: "border-amber-500/40", bg: "bg-amber-500/8", badge: "bg-amber-500 text-black", dot: "bg-amber-500" },
+  Watch: { border: "border-yellow-400/30", bg: "bg-yellow-500/5", badge: "bg-yellow-400 text-black", dot: "bg-yellow-400" },
+  Clear: { border: "border-white/10", bg: "bg-white/3", badge: "bg-teal-600 text-white", dot: "bg-teal-400" },
 };
 
 const NOTIFICATION_RULES = [
@@ -71,11 +71,11 @@ const NOTIFICATION_RULES = [
 ];
 
 const RESPONSE_ANALYTICS = [
-  { storm: "May 8 Supercell", date: "May 8″, leadsGen: 412, accepted: 387, passed: 25, avgResponseMin: 4.2, revenue: "$1.4M" },
-  { storm: "Apr 23 Hail Event", date: "Apr 23″, leadsGen: 287, accepted: 261, passed: 26, avgResponseMin: 6.8, revenue: "$980K" },
-  { storm: "Apr 11 Flash Flood", date: "Apr 11″, leadsGen: 156, accepted: 139, passed: 17, avgResponseMin: 8.1, revenue: "$520K" },
-  { storm: "Mar 29 Tornado Watch", date: "Mar 29″, leadsGen: 203, accepted: 190, passed: 13, avgResponseMin: 3.7, revenue: "$712K" },
-  { storm: "Mar 14 Ice Storm", date: "Mar 14″, leadsGen: 318, accepted: 295, passed: 23, avgResponseMin: 5.4, revenue: "$1.1M" },
+  { storm: "May 8 Supercell", date: "May 8", leadsGen: 412, accepted: 387, passed: 25, avgResponseMin: 4.2, revenue: "$1.4M" },
+  { storm: "Apr 23 Hail Event", date: "Apr 23", leadsGen: 287, accepted: 261, passed: 26, avgResponseMin: 6.8, revenue: "$980K" },
+  { storm: "Apr 11 Flash Flood", date: "Apr 11", leadsGen: 156, accepted: 139, passed: 17, avgResponseMin: 8.1, revenue: "$520K" },
+  { storm: "Mar 29 Tornado Watch", date: "Mar 29", leadsGen: 203, accepted: 190, passed: 13, avgResponseMin: 3.7, revenue: "$712K" },
+  { storm: "Mar 14 Ice Storm", date: "Mar 14", leadsGen: 318, accepted: 295, passed: 23, avgResponseMin: 5.4, revenue: "$1.1M" },
 ];
 
 function formatLastScan(dateVal: string | null | undefined): string {
@@ -141,37 +141,37 @@ function ZoneTile({ zone }: { zone: ZoneWeather }) {
   const style = THREAT_STYLE[zone.threatLevel];
   return (
     <div className={`rounded-xl border p-4 transition-all ${style.border} ${style.bg}`}>
-      <div className="flex items-start justify-between mb-3″>
+      <div className="flex items-start justify-between mb-3">
         <div>
           <p className="text-sm font-bold text-white">{zone.zone.name}</p>
-          <p className="text-[10px] text-gray-500″>ZIP {zone.zone.zip}</p>
+          <p className="text-[10px] text-gray-500">ZIP {zone.zone.zip}</p>
         </div>
-        <div className="flex items-center gap-1.5″>
+        <div className="flex items-center gap-1.5">
           <div className={`w-2 h-2 rounded-full animate-pulse ${style.dot}`} />
           <span className={`text-[10px] font-bold px-2 py-0.5 rounded-full ${style.badge}`}>{zone.threatLevel}</span>
         </div>
       </div>
-      <div className="grid grid-cols-3 gap-2″>
+      <div className="grid grid-cols-3 gap-2">
         <div className="text-center">
-          <div className="flex items-center justify-center gap-0.5 mb-0.5″>
-            <Thermometer className="w-3 h-3 text-amber-400″ />
+          <div className="flex items-center justify-center gap-0.5 mb-0.5">
+            <Thermometer className="w-3 h-3 text-amber-400" />
           </div>
           <p className="text-sm font-bold text-white">{zone.temp}°F</p>
-          <p className="text-[9px] text-gray-500″>Temp</p>
+          <p className="text-[9px] text-gray-500">Temp</p>
         </div>
         <div className="text-center">
-          <div className="flex items-center justify-center gap-0.5 mb-0.5″>
+          <div className="flex items-center justify-center gap-0.5 mb-0.5">
             <Wind className={`w-3 h-3 ${zone.windSpeed > 40 ? "text-red-400" : "text-blue-400"}`} />
           </div>
           <p className={`text-sm font-bold ${zone.windSpeed > 40 ? "text-red-400" : "text-white"}`}>{zone.windSpeed}mph</p>
-          <p className="text-[9px] text-gray-500″>Wind</p>
+          <p className="text-[9px] text-gray-500">Wind</p>
         </div>
         <div className="text-center">
-          <div className="flex items-center justify-center gap-0.5 mb-0.5″>
-            <Droplets className="w-3 h-3 text-blue-400″ />
+          <div className="flex items-center justify-center gap-0.5 mb-0.5">
+            <Droplets className="w-3 h-3 text-blue-400" />
           </div>
           <p className="text-sm font-bold text-white">{zone.precipProb}%</p>
-          <p className="text-[9px] text-gray-500″>Precip</p>
+          <p className="text-[9px] text-gray-500">Precip</p>
         </div>
       </div>
     </div>
@@ -224,21 +224,21 @@ export default function StormDashboard() {
 
   return (
     <AdminLayout>
-      <div className="p-6 space-y-6″>
+      <div className="p-6 space-y-6">
         {/* Header */}
         <div className="flex items-center justify-between">
-          <div className="flex items-center gap-3″>
+          <div className="flex items-center gap-3">
             <div className="p-2 bg-orange-500/10 rounded-lg">
-              <CloudLightning className="w-6 h-6 text-orange-500″ />
+              <CloudLightning className="w-6 h-6 text-orange-500" />
             </div>
             <div>
               <h1 className="text-2xl font-bold text-foreground">Storm Tracking Dashboard</h1>
               <p className="text-sm text-muted-foreground">NOAA + Tomorrow.io → real-time lead generation engine</p>
             </div>
           </div>
-          <div className="flex items-center gap-3″>
+          <div className="flex items-center gap-3">
             <Select value={selectedState} onValueChange={setSelectedState}>
-              <SelectTrigger className="w-24″>
+              <SelectTrigger className="w-24">
                 <SelectValue />
               </SelectTrigger>
               <SelectContent>
@@ -248,9 +248,9 @@ export default function StormDashboard() {
             <Button
               onClick={() => triggerScan.mutate({ state: selectedState })}
               disabled={triggerScan.isPending}
-              className="bg-orange-500 hover:bg-orange-600 text-white gap-2″
+              className="bg-orange-500 hover:bg-orange-600 text-white gap-2"
             >
-              {triggerScan.isPending ? <RefreshCw className="w-4 h-4 animate-spin" /> : <Zap className="w-4 h-4″ />}
+              {triggerScan.isPending ? <RefreshCw className="w-4 h-4 animate-spin" /> : <Zap className="w-4 h-4" />}
               {triggerScan.isPending ? "Scanning..." : "Run Storm Scan"}
             </Button>
           </div>
@@ -258,8 +258,8 @@ export default function StormDashboard() {
 
         {/* Scan result banner */}
         {lastRunResult && (
-          <div className="flex items-center gap-3 bg-green-50 dark:bg-green-950/30 border border-green-200 dark:border-green-800 rounded-lg px-4 py-3″>
-            <CheckCircle className="w-4 h-4 text-green-600 flex-shrink-0″ />
+          <div className="flex items-center gap-3 bg-green-50 dark:bg-green-950/30 border border-green-200 dark:border-green-800 rounded-lg px-4 py-3">
+            <CheckCircle className="w-4 h-4 text-green-600 flex-shrink-0" />
             <p className="text-sm text-green-800 dark:text-green-300 font-medium">
               Scan complete — {lastRunResult.eventsProcessed} events · {lastRunResult.leadsGenerated} leads · {lastRunResult.propertiesAffected} properties
               {lastRunResult.affectedZips?.length ? ` · ${lastRunResult.affectedZips.length} zip codes` : ""}
@@ -269,20 +269,20 @@ export default function StormDashboard() {
         )}
 
         {/* KPI strip */}
-        <div className="grid grid-cols-2 sm:grid-cols-4 gap-4″>
+        <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
           {[
-            { label: "Total Events", value: stats?.totalEvents ?? 0, icon: CloudLightning, color: "text-orange-500″, sub: "all time" },
-            { label: "Leads Generated", value: stats?.totalLeads ?? 0, icon: Zap, color: "text-yellow-500″, sub: "from storms" },
-            { label: "Affected Properties", value: stats?.totalProperties ?? 0, icon: MapPin, color: "text-blue-500″, sub: "properties flagged" },
-            { label: "Last Scan", value: formatLastScan(stats?.lastScanAt), icon: Clock, color: "text-green-500″, sub: "auto-runs every 15m" },
+            { label: "Total Events", value: stats?.totalEvents ?? 0, icon: CloudLightning, color: "text-orange-500", sub: "all time" },
+            { label: "Leads Generated", value: stats?.totalLeads ?? 0, icon: Zap, color: "text-yellow-500", sub: "from storms" },
+            { label: "Affected Properties", value: stats?.totalProperties ?? 0, icon: MapPin, color: "text-blue-500", sub: "properties flagged" },
+            { label: "Last Scan", value: formatLastScan(stats?.lastScanAt), icon: Clock, color: "text-green-500", sub: "auto-runs every 15m" },
           ].map(s => (
             <Card key={s.label}>
-              <CardContent className="p-4 flex items-center gap-3″>
+              <CardContent className="p-4 flex items-center gap-3">
                 <s.icon className={`w-8 h-8 ${s.color} flex-shrink-0`} />
                 <div>
                   <p className="text-2xl font-bold">{s.value}</p>
                   <p className="text-xs text-muted-foreground">{s.label}</p>
-                  <p className="text-[10px] text-muted-foreground/60″>{s.sub}</p>
+                  <p className="text-[10px] text-muted-foreground/60">{s.sub}</p>
                 </div>
               </CardContent>
             </Card>
@@ -295,15 +295,15 @@ export default function StormDashboard() {
             <Radio className={`w-4 h-4 flex-shrink-0 ${extremeZones > 0 ? "text-red-400 animate-pulse" : "text-amber-400"}`} />
             <p className="text-sm font-medium">
               {extremeZones > 0 && <span className="text-red-400 font-bold">{extremeZones} zone{extremeZones > 1 ? "s" : ""} at Extreme threat. </span>}
-              {warningZones > 0 && <span className="text-amber-400″>{warningZones} zone{warningZones > 1 ? "s" : ""} under Warning. </span>}
+              {warningZones > 0 && <span className="text-amber-400">{warningZones} zone{warningZones > 1 ? "s" : ""} under Warning. </span>}
               <span className="text-muted-foreground">Storm lead queue is active.</span>
             </p>
           </div>
         )}
 
         {affectedZipCount > 0 && (
-          <div className="flex items-center gap-2 text-sm text-muted-foreground bg-muted/40 rounded-lg px-4 py-2″>
-            <MapPin className="w-4 h-4 text-orange-400″ />
+          <div className="flex items-center gap-2 text-sm text-muted-foreground bg-muted/40 rounded-lg px-4 py-2">
+            <MapPin className="w-4 h-4 text-orange-400" />
             <span><strong className="text-foreground">{affectedZipCount}</strong> ZIP codes in storm-affected areas</span>
           </div>
         )}
@@ -316,11 +316,11 @@ export default function StormDashboard() {
               onClick={() => setActiveTab(tab.id)}
               className={`flex items-center gap-2 px-4 py-2.5 text-sm font-medium border-b-2 transition-colors -mb-px ${
                 activeTab === tab.id
-                  ? "border-orange-500 text-orange-500″
+                  ? "border-orange-500 text-orange-500"
                   : "border-transparent text-muted-foreground hover:text-foreground"
               }`}
             >
-              <tab.icon className="w-4 h-4″ />
+              <tab.icon className="w-4 h-4" />
               {tab.label}
             </button>
           ))}
@@ -328,61 +328,61 @@ export default function StormDashboard() {
 
         {/* Overview tab */}
         {activeTab === "overview" && (
-          <div className="space-y-6″>
+          <div className="space-y-6">
             {/* 5-Zone Weather Tiles */}
             <div>
-              <div className="flex items-center justify-between mb-3″>
-                <h2 className="text-sm font-semibold text-foreground flex items-center gap-2″>
-                  <Eye className="w-4 h-4 text-blue-400″ />
+              <div className="flex items-center justify-between mb-3">
+                <h2 className="text-sm font-semibold text-foreground flex items-center gap-2">
+                  <Eye className="w-4 h-4 text-blue-400" />
                   Live DFW Zone Conditions
                   {TOMORROW_API_KEY ? <span className="text-xs text-teal-400 font-normal">· Tomorrow.io live</span> : <span className="text-xs text-gray-500 font-normal">· Demo data</span>}
                 </h2>
               </div>
-              <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3″>
+              <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3">
                 {zones.map((zone, i) => <ZoneTile key={i} zone={zone} />)}
               </div>
             </div>
 
             {/* Events grid */}
-            <div className="grid grid-cols-2 gap-6″>
+            <div className="grid grid-cols-2 gap-6">
               <Card>
-                <CardHeader className="pb-3″>
-                  <CardTitle className="text-base flex items-center gap-2″>
-                    <AlertTriangle className="w-4 h-4 text-orange-500″ />
+                <CardHeader className="pb-3">
+                  <CardTitle className="text-base flex items-center gap-2">
+                    <AlertTriangle className="w-4 h-4 text-orange-500" />
                     Live NOAA — {selectedState}
-                    <Button variant="ghost" size="sm" onClick={() => refetchPreview()} className="ml-auto h-7 px-2″>
-                      <RefreshCw className="w-3 h-3″ />
+                    <Button variant="ghost" size="sm" onClick={() => refetchPreview()} className="ml-auto h-7 px-2">
+                      <RefreshCw className="w-3 h-3" />
                     </Button>
                   </CardTitle>
                 </CardHeader>
                 <CardContent className="space-y-2 max-h-72 overflow-y-auto">
                   {!preview || preview.length === 0 ? (
-                    <p className="text-sm text-muted-foreground text-center py-8″>No active alerts for {selectedState}</p>
+                    <p className="text-sm text-muted-foreground text-center py-8">No active alerts for {selectedState}</p>
                   ) : preview.map((alert: any) => (
-                    <div key={alert.id} className="p-3 rounded-lg border bg-card space-y-1″>
+                    <div key={alert.id} className="p-3 rounded-lg border bg-card space-y-1">
                       <div className="flex items-center justify-between">
                         <span className="text-sm font-semibold">{alert.eventType}</span>
                         <Badge className={`text-xs ${SEVERITY_COLOR[alert.severity] ?? "bg-gray-500 text-white"}`}>{alert.severity}</Badge>
                       </div>
-                      <p className="text-xs text-muted-foreground line-clamp-2″>{alert.headline}</p>
-                      {alert.areas[0] && <p className="text-xs text-blue-400″>{alert.areas[0]}</p>}
+                      <p className="text-xs text-muted-foreground line-clamp-2">{alert.headline}</p>
+                      {alert.areas[0] && <p className="text-xs text-blue-400">{alert.areas[0]}</p>}
                     </div>
                   ))}
                 </CardContent>
               </Card>
 
               <Card>
-                <CardHeader className="pb-3″>
-                  <CardTitle className="text-base flex items-center gap-2″>
-                    <CloudLightning className="w-4 h-4 text-orange-500″ />
+                <CardHeader className="pb-3">
+                  <CardTitle className="text-base flex items-center gap-2">
+                    <CloudLightning className="w-4 h-4 text-orange-500" />
                     Processed Storm Events
                   </CardTitle>
                 </CardHeader>
                 <CardContent className="space-y-2 max-h-72 overflow-y-auto">
                   {eventsLoading ? (
-                    <p className="text-sm text-muted-foreground text-center py-8″>Loading...</p>
+                    <p className="text-sm text-muted-foreground text-center py-8">Loading...</p>
                   ) : !events || events.length === 0 ? (
-                    <p className="text-sm text-muted-foreground text-center py-8″>No events yet. Run a scan to start.</p>
+                    <p className="text-sm text-muted-foreground text-center py-8">No events yet. Run a scan to start.</p>
                   ) : events.map((evt: any) => (
                     <div
                       key={evt.id}
@@ -393,12 +393,12 @@ export default function StormDashboard() {
                         <span className="text-sm font-semibold">{evt.eventType}</span>
                         <Badge variant="outline" className="text-xs">{evt.status}</Badge>
                       </div>
-                      <div className="flex items-center gap-3 mt-1″>
-                        <span className="text-xs text-muted-foreground flex items-center gap-1″>
-                          <Zap className="w-3 h-3″ />{evt.leadsGenerated} leads
+                      <div className="flex items-center gap-3 mt-1">
+                        <span className="text-xs text-muted-foreground flex items-center gap-1">
+                          <Zap className="w-3 h-3" />{evt.leadsGenerated} leads
                         </span>
-                        <span className="text-xs text-muted-foreground flex items-center gap-1″>
-                          <MapPin className="w-3 h-3″ />{evt.propertiesAffected} properties
+                        <span className="text-xs text-muted-foreground flex items-center gap-1">
+                          <MapPin className="w-3 h-3" />{evt.propertiesAffected} properties
                         </span>
                         <span className="text-xs text-muted-foreground ml-auto">
                           {new Date(evt.createdAt).toLocaleDateString()}
@@ -414,34 +414,34 @@ export default function StormDashboard() {
 
         {/* Alerts tab */}
         {activeTab === "alerts" && (
-          <div className="space-y-4″>
-            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3″>
+          <div className="space-y-4">
+            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3">
               {zones.map((zone, i) => <ZoneTile key={i} zone={zone} />)}
             </div>
             <Card>
-              <CardHeader className="pb-3″>
-                <CardTitle className="text-base flex items-center gap-2″>
-                  <AlertTriangle className="w-4 h-4 text-orange-500″ />
+              <CardHeader className="pb-3">
+                <CardTitle className="text-base flex items-center gap-2">
+                  <AlertTriangle className="w-4 h-4 text-orange-500" />
                   Active Storm Alerts
-                  <Button variant="ghost" size="sm" onClick={() => refetchPreview()} className="ml-auto h-7 px-2″>
-                    <RefreshCw className="w-3 h-3″ />
+                  <Button variant="ghost" size="sm" onClick={() => refetchPreview()} className="ml-auto h-7 px-2">
+                    <RefreshCw className="w-3 h-3" />
                   </Button>
                 </CardTitle>
               </CardHeader>
-              <CardContent className="space-y-2″>
+              <CardContent className="space-y-2">
                 {!preview || preview.length === 0 ? (
                   <div className="py-12 text-center">
-                    <CloudLightning className="w-12 h-12 text-muted-foreground/30 mx-auto mb-3″ />
+                    <CloudLightning className="w-12 h-12 text-muted-foreground/30 mx-auto mb-3" />
                     <p className="text-sm text-muted-foreground">No active severe weather alerts for {selectedState}</p>
                   </div>
                 ) : preview.map((alert: any) => (
                   <div key={alert.id} className={`p-4 rounded-xl border ${SEVERITY_COLOR[alert.severity] ? "border-orange-500/30 bg-orange-500/5" : "border-border"}`}>
-                    <div className="flex items-center justify-between mb-2″>
+                    <div className="flex items-center justify-between mb-2">
                       <span className="font-semibold">{alert.eventType}</span>
                       <Badge className={`text-xs ${SEVERITY_COLOR[alert.severity] ?? "bg-gray-500 text-white"}`}>{alert.severity}</Badge>
                     </div>
                     <p className="text-sm text-muted-foreground">{alert.headline}</p>
-                    {alert.areas?.[0] && <p className="text-xs text-blue-400 mt-1″>{alert.areas[0]}</p>}
+                    {alert.areas?.[0] && <p className="text-xs text-blue-400 mt-1">{alert.areas[0]}</p>}
                     <div className="flex gap-3 mt-2 text-xs text-muted-foreground">
                       <span>Onset: {alert.onset ? new Date(alert.onset).toLocaleString() : "Active"}</span>
                       <span>Expires: {alert.expires ? new Date(alert.expires).toLocaleString() : "TBD"}</span>
@@ -455,7 +455,7 @@ export default function StormDashboard() {
 
         {/* Notification Rules tab */}
         {activeTab === "notifications" && (
-          <div className="space-y-4″>
+          <div className="space-y-4">
             <div className="flex items-center justify-between">
               <div>
                 <h2 className="font-semibold">Automatic Notification Rules</h2>
@@ -463,25 +463,25 @@ export default function StormDashboard() {
               </div>
               <Badge variant="outline">{notifRules.filter(r => r.enabled).length} of {notifRules.length} active</Badge>
             </div>
-            <div className="space-y-3″>
+            <div className="space-y-3">
               {notifRules.map(rule => (
-                <Card key={rule.id} className={rule.enabled ? "border-orange-500/20″ : ""}>
-                  <CardContent className="p-4″>
-                    <div className="flex items-start justify-between gap-4″>
-                      <div className="flex-1″>
-                        <div className="flex items-center gap-2 mb-1″>
+                <Card key={rule.id} className={rule.enabled ? "border-orange-500/20" : ""}>
+                  <CardContent className="p-4">
+                    <div className="flex items-start justify-between gap-4">
+                      <div className="flex-1">
+                        <div className="flex items-center gap-2 mb-1">
                           <Bell className={`w-4 h-4 ${rule.enabled ? "text-orange-400" : "text-muted-foreground"}`} />
                           <span className="font-semibold text-sm">{rule.condition}</span>
                           {rule.enabled && <div className="w-1.5 h-1.5 rounded-full bg-green-400 animate-pulse" />}
                         </div>
-                        <p className="text-sm text-muted-foreground ml-6″>→ {rule.action}</p>
-                        <div className="flex gap-1.5 mt-2 ml-6″>
+                        <p className="text-sm text-muted-foreground ml-6">→ {rule.action}</p>
+                        <div className="flex gap-1.5 mt-2 ml-6">
                           {rule.trades.map(t => (
-                            <span key={t} className="text-[10px] px-2 py-0.5 rounded-full bg-blue-500/10 text-blue-400 border border-blue-500/20″>{t}</span>
+                            <span key={t} className="text-[10px] px-2 py-0.5 rounded-full bg-blue-500/10 text-blue-400 border border-blue-500/20">{t}</span>
                           ))}
                         </div>
                       </div>
-                      <div className="flex items-center gap-2 flex-shrink-0″>
+                      <div className="flex items-center gap-2 flex-shrink-0">
                         <span className={`text-xs font-medium ${rule.enabled ? "text-green-400" : "text-muted-foreground"}`}>
                           {rule.enabled ? "Enabled" : "Disabled"}
                         </span>
@@ -498,9 +498,9 @@ export default function StormDashboard() {
               ))}
             </div>
             <div className="p-4 rounded-xl border border-dashed border-border text-center">
-              <Settings className="w-5 h-5 text-muted-foreground mx-auto mb-2″ />
+              <Settings className="w-5 h-5 text-muted-foreground mx-auto mb-2" />
               <p className="text-sm text-muted-foreground">Add custom notification rule</p>
-              <Button variant="outline" size="sm" className="mt-2″ onClick={() => toast.info("Custom rule builder — coming soon")}>
+              <Button variant="outline" size="sm" className="mt-2" onClick={() => toast.info("Custom rule builder — coming soon")}>
                 + Add Rule
               </Button>
             </div>
@@ -509,48 +509,48 @@ export default function StormDashboard() {
 
         {/* Response Analytics tab */}
         {activeTab === "analytics" && (
-          <div className="space-y-6″>
-            <div className="grid grid-cols-3 gap-4″>
+          <div className="space-y-6">
+            <div className="grid grid-cols-3 gap-4">
               {[
                 {
                   label: "Avg Response Time",
                   value: `${(RESPONSE_ANALYTICS.reduce((a, s) => a + s.avgResponseMin, 0) / RESPONSE_ANALYTICS.length).toFixed(1)}m`,
                   icon: Clock,
-                  color: "text-green-400″,
+                  color: "text-green-400",
                   sub: "median across last 5 storms",
                 },
                 {
                   label: "Acceptance Rate",
                   value: `${Math.round((RESPONSE_ANALYTICS.reduce((a, s) => a + s.accepted, 0) / RESPONSE_ANALYTICS.reduce((a, s) => a + s.leadsGen, 0)) * 100)}%`,
                   icon: TrendingUp,
-                  color: "text-teal-400″,
+                  color: "text-teal-400",
                   sub: "leads accepted vs passed",
                 },
                 {
                   label: "Total Storm Revenue",
                   value: "$4.7M",
                   icon: ArrowUpRight,
-                  color: "text-amber-400″,
+                  color: "text-amber-400",
                   sub: "estimated from last 5 events",
                 },
               ].map(s => (
                 <Card key={s.label}>
-                  <CardContent className="p-4″>
-                    <div className="flex items-center gap-2 mb-1″>
+                  <CardContent className="p-4">
+                    <div className="flex items-center gap-2 mb-1">
                       <s.icon className={`w-4 h-4 ${s.color}`} />
                       <span className="text-xs text-muted-foreground">{s.label}</span>
                     </div>
                     <p className={`text-3xl font-bold ${s.color}`}>{s.value}</p>
-                    <p className="text-[10px] text-muted-foreground mt-0.5″>{s.sub}</p>
+                    <p className="text-[10px] text-muted-foreground mt-0.5">{s.sub}</p>
                   </CardContent>
                 </Card>
               ))}
             </div>
 
             <Card>
-              <CardHeader className="pb-3″>
-                <CardTitle className="text-base flex items-center gap-2″>
-                  <BarChart3 className="w-4 h-4 text-orange-400″ />
+              <CardHeader className="pb-3">
+                <CardTitle className="text-base flex items-center gap-2">
+                  <BarChart3 className="w-4 h-4 text-orange-400" />
                   Storm Response Performance — Last 5 Events
                 </CardTitle>
               </CardHeader>
@@ -559,21 +559,21 @@ export default function StormDashboard() {
                   <table className="w-full text-sm">
                     <thead>
                       <tr className="border-b border-border text-xs text-muted-foreground">
-                        <th className="text-left pb-3 pr-4″>Storm Event</th>
-                        <th className="text-right pb-3 pr-4″>Leads Gen.</th>
-                        <th className="text-right pb-3 pr-4″>Accepted</th>
-                        <th className="text-right pb-3 pr-4″>Passed</th>
-                        <th className="text-right pb-3 pr-4″>Acceptance</th>
-                        <th className="text-right pb-3 pr-4″>Avg Response</th>
-                        <th className="text-right pb-3″>Est. Revenue</th>
+                        <th className="text-left pb-3 pr-4">Storm Event</th>
+                        <th className="text-right pb-3 pr-4">Leads Gen.</th>
+                        <th className="text-right pb-3 pr-4">Accepted</th>
+                        <th className="text-right pb-3 pr-4">Passed</th>
+                        <th className="text-right pb-3 pr-4">Acceptance</th>
+                        <th className="text-right pb-3 pr-4">Avg Response</th>
+                        <th className="text-right pb-3">Est. Revenue</th>
                       </tr>
                     </thead>
                     <tbody>
                       {RESPONSE_ANALYTICS.map((row, i) => {
                         const rate = Math.round((row.accepted / row.leadsGen) * 100);
                         return (
-                          <tr key={i} className="border-b border-border/50 hover:bg-accent/50″>
-                            <td className="py-3 pr-4″>
+                          <tr key={i} className="border-b border-border/50 hover:bg-accent/50">
+                            <td className="py-3 pr-4">
                               <p className="font-semibold">{row.storm}</p>
                               <p className="text-xs text-muted-foreground">{row.date}, 2026</p>
                             </td>
@@ -590,7 +590,7 @@ export default function StormDashboard() {
                                 {row.avgResponseMin}m
                               </span>
                             </td>
-                            <td className="py-3 text-right font-bold text-amber-400″>{row.revenue}</td>
+                            <td className="py-3 text-right font-bold text-amber-400">{row.revenue}</td>
                           </tr>
                         );
                       })}
@@ -601,16 +601,16 @@ export default function StormDashboard() {
                 {/* Mini bar chart */}
                 <div className="mt-6 pt-4 border-t border-border">
                   <p className="text-xs text-muted-foreground mb-3 font-medium uppercase tracking-wide">Leads Generated per Storm</p>
-                  <div className="space-y-2″>
+                  <div className="space-y-2">
                     {RESPONSE_ANALYTICS.map((row, i) => {
                       const maxLeads = Math.max(...RESPONSE_ANALYTICS.map(r => r.leadsGen));
                       const pct = (row.leadsGen / maxLeads) * 100;
                       return (
-                        <div key={i} className="flex items-center gap-3″>
+                        <div key={i} className="flex items-center gap-3">
                           <span className="text-xs text-muted-foreground w-32 truncate">{row.storm.split("—")[0].trim()}</span>
-                          <div className="flex-1 bg-muted/40 rounded-full h-2″>
+                          <div className="flex-1 bg-muted/40 rounded-full h-2">
                             <div
-                              className="bg-gradient-to-r from-orange-500 to-amber-400 h-2 rounded-full transition-all duration-700″
+                              className="bg-gradient-to-r from-orange-500 to-amber-400 h-2 rounded-full transition-all duration-700"
                               style={{ width: `${pct}%` }}
                             />
                           </div>
@@ -628,11 +628,11 @@ export default function StormDashboard() {
         {/* Storm Leads panel (when event selected) */}
         {selectedEventId && leads && activeTab === "overview" && (
           <Card>
-            <CardHeader className="pb-3″>
-              <CardTitle className="text-base flex items-center gap-2″>
-                <Users className="w-4 h-4 text-blue-500″ />
+            <CardHeader className="pb-3">
+              <CardTitle className="text-base flex items-center gap-2">
+                <Users className="w-4 h-4 text-blue-500" />
                 Storm Leads — Event #{selectedEventId}
-                <Badge variant="outline" className="ml-2″>{leads.length} leads</Badge>
+                <Badge variant="outline" className="ml-2">{leads.length} leads</Badge>
                 <button className="ml-auto text-xs text-muted-foreground hover:text-foreground" onClick={() => setSelectedEventId(null)}>Close</button>
               </CardTitle>
             </CardHeader>
@@ -641,30 +641,30 @@ export default function StormDashboard() {
                 <table className="w-full text-sm">
                   <thead>
                     <tr className="border-b text-muted-foreground text-xs">
-                      <th className="text-left pb-2 pr-4″>Address</th>
-                      <th className="text-left pb-2 pr-4″>Trade</th>
-                      <th className="text-left pb-2 pr-4″>Priority</th>
-                      <th className="text-left pb-2 pr-4″>Status</th>
-                      <th className="text-left pb-2″>Dispatched To</th>
+                      <th className="text-left pb-2 pr-4">Address</th>
+                      <th className="text-left pb-2 pr-4">Trade</th>
+                      <th className="text-left pb-2 pr-4">Priority</th>
+                      <th className="text-left pb-2 pr-4">Status</th>
+                      <th className="text-left pb-2">Dispatched To</th>
                     </tr>
                   </thead>
                   <tbody>
                     {leads.slice(0, 50).map((lead: any) => (
-                      <tr key={lead.id} className="border-b border-border/50 hover:bg-accent/50″>
+                      <tr key={lead.id} className="border-b border-border/50 hover:bg-accent/50">
                         <td className="py-2 pr-4 font-medium">{lead.address}, {lead.city}</td>
                         <td className="py-2 pr-4 capitalize">{(lead.tradeCategory ?? "").replace(/_/g, " ")}</td>
-                        <td className="py-2 pr-4″>
-                          <Badge className={lead.priority === "critical" ? "bg-red-700 text-white" : lead.priority === "high" ? "bg-red-500 text-white" : "bg-gray-200 text-gray-700″}>
+                        <td className="py-2 pr-4">
+                          <Badge className={lead.priority === "critical" ? "bg-red-700 text-white" : lead.priority === "high" ? "bg-red-500 text-white" : "bg-gray-200 text-gray-700"}>
                             {lead.priority}
                           </Badge>
                         </td>
-                        <td className="py-2 pr-4″><Badge variant="outline">{lead.status}</Badge></td>
+                        <td className="py-2 pr-4"><Badge variant="outline">{lead.status}</Badge></td>
                         <td className="py-2 text-muted-foreground">{lead.partnerName ?? "—"}</td>
                       </tr>
                     ))}
                   </tbody>
                 </table>
-                {leads.length > 50 && <p className="text-xs text-muted-foreground mt-2″>Showing 50 of {leads.length} leads</p>}
+                {leads.length > 50 && <p className="text-xs text-muted-foreground mt-2">Showing 50 of {leads.length} leads</p>}
               </div>
             </CardContent>
           </Card>

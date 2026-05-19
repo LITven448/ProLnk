@@ -5,7 +5,7 @@ export default function DFWFoundationSoilTestGuide2026() {
   const [result, setResult] = useState<{ soil: string; pi: string; risk: string; tip: string } | null>(null);
 
   const soilData: Record<string, { soil: string; pi: string; risk: string; tip: string }> = {
-    dallas: { soil: 'Ferris/Houston Clay', pi: 'PI 35-50', risk: 'Very High', tip: 'Monitor foundation quarterly. Maintain consistent soil moisture 18″ from foundation year-round.' },
+    dallas: { soil: 'Ferris/Houston Clay', pi: 'PI 35-50', risk: 'Very High', tip: 'Monitor foundation quarterly. Maintain consistent soil moisture 18" from foundation year-round.' },
     fortworth: { soil: 'Black Waxy Clay (Blackland Prairie)', pi: 'PI 40-60', risk: 'Extreme', tip: 'Install soaker hose system. Fort Worth clay is among most expansive in DFW — foundation movement expected.' },
     plano: { soil: 'Silty Clay Loam', pi: 'PI 25-35', risk: 'High', tip: 'Plano transitions from clay to loam northward. Test your specific lot — PI varies significantly block to block.' },
     frisco: { soil: 'Sandy Loam / Limestone Mix', pi: 'PI 10-20', risk: 'Moderate', tip: 'Northern Frisco sits on limestone. Less expansion risk but watch for differential settlement at soil transitions.' },
@@ -54,9 +54,9 @@ export default function DFWFoundationSoilTestGuide2026() {
           {result && (
             <div style={{ background: '#0A1628', borderRadius: 8, padding: '16px' }}>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12, marginBottom: 12 }}>
-                <div><div style={{ color: '#8899aa', fontSize: 12 }}>SOIL TYPE</div><div style={{ fontWeight: 700, color: '#F5E642′ }}>{result.soil}</div></div>
+                <div><div style={{ color: '#8899aa', fontSize: 12 }}>SOIL TYPE</div><div style={{ fontWeight: 700, color: '#F5E642' }}>{result.soil}</div></div>
                 <div><div style={{ color: '#8899aa', fontSize: 12 }}>PLASTICITY INDEX</div><div style={{ fontWeight: 700 }}>{result.pi}</div></div>
-                <div><div style={{ color: '#8899aa', fontSize: 12 }}>EXPANSION RISK</div><div style={{ fontWeight: 700, color: result.risk === 'Extreme' ? '#ff4444′ : result.risk === ’Very High' ? '#ff8800′ : '#ffcc00' }}>{result.risk}</div></div>
+                <div><div style={{ color: '#8899aa', fontSize: 12 }}>EXPANSION RISK</div><div style={{ fontWeight: 700, color: result.risk === 'Extreme' ? '#ff4444' : result.risk === 'Very High' ? '#ff8800' : '#ffcc00' }}>{result.risk}</div></div>
               </div>
               <div style={{ color: '#cdd9e5', fontSize: 14, borderTop: '1px solid #1e3a5f', paddingTop: 12 }}>{result.tip}</div>
             </div>
@@ -65,9 +65,9 @@ export default function DFWFoundationSoilTestGuide2026() {
 
         <div style={{ background: '#132240', borderRadius: 12, padding: '20px', marginBottom: 24 }}>
           <div style={{ fontWeight: 700, marginBottom: 12 }}>Soil Moisture Monitoring Tips</div>
-          {['Install soil moisture meter at 3 depths: 6″, 12″, 18″ from surface', 'Target: consistent moisture year-round (not too wet, not too dry)', 'Soaker hose 18-24″ from foundation perimeter during dry spells', 'Avoid planting large trees within 20 ft of foundation'].map((tip) => (
+          {['Install soil moisture meter at 3 depths: 6", 12", 18" from surface', 'Target: consistent moisture year-round (not too wet, not too dry)', 'Soaker hose 18-24" from foundation perimeter during dry spells', 'Avoid planting large trees within 20 ft of foundation'].map((tip) => (
             <div key={tip} style={{ display: 'flex', gap: 10, marginBottom: 8, color: '#cdd9e5', fontSize: 14 }}>
-              <span style={{ color: '#F5E642′ }}>▸</span>{tip}
+              <span style={{ color: '#F5E642' }}>▸</span>{tip}
             </div>
           ))}
         </div>

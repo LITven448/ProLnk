@@ -30,16 +30,16 @@ export default function DFWHomeMaintenanceApp() {
     <div style={{ background: '#F8FAFC', minHeight: '100vh', color: '#1A2940', fontFamily: 'system-ui, sans-serif', padding: '40px 20px' }}>
       <div style={{ maxWidth: 800, margin: '0 auto' }}>
         <div style={{ color: '#1A4FBF', fontSize: 13, fontWeight: 700, letterSpacing: 2, textTransform: 'uppercase', marginBottom: 12 }}>DFW HOME MAINTENANCE APPS</div>
-        <h1 style={{ fontSize: 34, fontWeight: 800, margin: '0 0 14px', color: '#0A1628′ }}>The Best Home Maintenance Apps for <span style={{ color: '#1A4FBF' }}>DFW Homeowners in 2026</span></h1>
-        <p style={{ color: '#4A6280', fontSize: 15, lineHeight: 1.7, marginBottom: 36 }}>From automated lawn care to contractor matching, there's an app for every home maintenance need. Here’s how the leading options stack up for Dallas-Fort Worth homeowners.</p>
+        <h1 style={{ fontSize: 34, fontWeight: 800, margin: '0 0 14px', color: '#0A1628' }}>The Best Home Maintenance Apps for <span style={{ color: '#1A4FBF' }}>DFW Homeowners in 2026</span></h1>
+        <p style={{ color: '#4A6280', fontSize: 15, lineHeight: 1.7, marginBottom: 36 }}>From automated lawn care to contractor matching, there's an app for every home maintenance need. Here's how the leading options stack up for Dallas-Fort Worth homeowners.</p>
 
         <div style={{ display: 'grid', gap: 16, marginBottom: 36 }}>
           {APPS.map(app => (
-            <div key={app.name} style={{ background: '#FFFFFF', borderRadius: 14, padding: 24, boxShadow: '0 2px 12px rgba(0,0,0,0.06)', border: '1px solid #E2EAF4′ }}>
+            <div key={app.name} style={{ background: '#FFFFFF', borderRadius: 14, padding: 24, boxShadow: '0 2px 12px rgba(0,0,0,0.06)', border: '1px solid #E2EAF4' }}>
               <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 10 }}>
                 <span style={{ fontSize: 26 }}>{app.emoji}</span>
                 <div>
-                  <div style={{ fontWeight: 700, fontSize: 18, color: '#0A1628′ }}>{app.name}</div>
+                  <div style={{ fontWeight: 700, fontSize: 18, color: '#0A1628' }}>{app.name}</div>
                   <div style={{ fontSize: 13, color: '#1A4FBF', fontWeight: 600 }}>Cost: {app.cost}</div>
                 </div>
               </div>
@@ -49,8 +49,8 @@ export default function DFWHomeMaintenanceApp() {
           ))}
         </div>
 
-        <div style={{ background: '#FFFFFF', borderRadius: 16, padding: 28, boxShadow: '0 4px 20px rgba(0,0,0,0.08)', border: '1px solid #E2EAF4′ }}>
-          <h2 style={{ fontSize: 20, fontWeight: 700, marginTop: 0, marginBottom: 20, color: '#0A1628′ }}>🎯 Which App Fits Your Homeowner Need?</h2>
+        <div style={{ background: '#FFFFFF', borderRadius: 16, padding: 28, boxShadow: '0 4px 20px rgba(0,0,0,0.08)', border: '1px solid #E2EAF4' }}>
+          <h2 style={{ fontSize: 20, fontWeight: 700, marginTop: 0, marginBottom: 20, color: '#0A1628' }}>🎯 Which App Fits Your Homeowner Need?</h2>
           <select value={need} onChange={e => setNeed(e.target.value)} style={{ background: '#F8FAFC', border: '1.5px solid #CBD5E1', borderRadius: 8, color: '#1A2940', padding: '11px 16px', fontSize: 15, width: '100%', marginBottom: 16 }}>
             <option value="">Select your primary need...</option>
             <option value="vetted">I want vetted, trusted contractors only</option>
@@ -63,9 +63,9 @@ export default function DFWHomeMaintenanceApp() {
           <button onClick={calcRec} style={{ background: '#0A1628', color: '#F5E642', border: 'none', borderRadius: 8, padding: '13px 28px', fontWeight: 800, fontSize: 15, cursor: 'pointer', width: '100%', marginBottom: 16 }}>Find My Best App Match</button>
           {recs.length > 0 && (
             <div style={{ padding: 18, background: '#F0F7FF', borderRadius: 10, borderLeft: '4px solid #1A4FBF' }}>
-              <div style={{ fontWeight: 700, marginBottom: 8, color: '#0A1628′ }}>Recommended for you:</div>
+              <div style={{ fontWeight: 700, marginBottom: 8, color: '#0A1628' }}>Recommended for you:</div>
               {recs.map(r => <div key={r} style={{ color: '#1A4FBF', fontWeight: 600, fontSize: 15 }}>✓ {r}</div>)}
-              {recs.includes('ProLnk') && <div style={{ marginTop: 10, fontSize: 13, color: '#4A6280′ }}>ProLnk is free for DFW homeowners and includes vetted pros, job history, and optional income from your home network.</div>}
+              {recs.includes('ProLnk') && <div style={{ marginTop: 10, fontSize: 13, color: '#4A6280' }}>ProLnk is free for DFW homeowners and includes vetted pros, job history, and optional income from your home network.</div>}
             </div>
           )}
         </div>

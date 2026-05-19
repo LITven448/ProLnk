@@ -44,7 +44,7 @@ export default function DFWGazeboGuide() {
         <div style={{ fontSize: '2.2rem', fontWeight: 800, color: '#F5E642', marginBottom: '0.25rem' }}>🏛️ DFW Gazebo Guide</div>
         <div style={{ color: '#94A3B8', marginBottom: '2rem' }}>Built to survive DFW severe weather — not just look good</div>
 
-        <div style={{ background: '#7F1D1D', borderRadius: 12, padding: '1.25rem', marginBottom: '1.5rem', border: '1px solid #EF4444′ }}>
+        <div style={{ background: '#7F1D1D', borderRadius: 12, padding: '1.25rem', marginBottom: '1.5rem', border: '1px solid #EF4444' }}>
           <div style={{ color: '#FCA5A5', fontWeight: 700, marginBottom: '0.5rem' }}>⚠️ Avoid Fabric/Soft-Top Gazebos in DFW</div>
           <div style={{ color: '#FEE2E2', lineHeight: 1.7 }}>
             Fabric canopy gazebos sold at home improvement stores have an average lifespan of <strong>18–24 months</strong> in DFW. A single severe thunderstorm with 50+ mph winds will destroy them. DFW averages 3–5 severe weather events per year. Only hardtop aluminum, steel, or wood frame gazebos are appropriate for permanent DFW installation.
@@ -55,7 +55,7 @@ export default function DFWGazeboGuide() {
           <div style={{ color: '#F5E642', fontWeight: 700, marginBottom: '0.75rem' }}>🏗️ Material Comparison</div>
           <div style={{ display: 'grid', gap: '0.75rem' }}>
             {Object.entries(MATERIALS).map(([k, v]) => (
-              <div key={k} style={{ background: '#0A1628', borderRadius: 8, padding: '1rem', borderLeft: '3px solid #F5E642′ }}>
+              <div key={k} style={{ background: '#0A1628', borderRadius: 8, padding: '1rem', borderLeft: '3px solid #F5E642' }}>
                 <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
                   <div style={{ color: '#fff', fontWeight: 700 }}>{v.label}</div>
                   <div style={{ color: '#F5E642', fontSize: '0.85rem' }}>Wind: {v.windRating}</div>
@@ -92,7 +92,7 @@ export default function DFWGazeboGuide() {
                 <option value="cedar">Cedar Wood</option>
               </select>
             </div>
-            <div style={{ gridColumn: '1 / -1′ }}>
+            <div style={{ gridColumn: '1 / -1' }}>
               <div style={{ color: '#94A3B8', fontSize: '0.85rem', marginBottom: '0.4rem' }}>DFW Wind Zone</div>
               <select value={zone} onChange={e => setZone(e.target.value)} style={{ width: '100%', padding: '0.6rem', borderRadius: 8, border: '1px solid #2D4A6E', background: '#0A1628', color: '#fff', boxSizing: 'border-box' }}>
                 <option value="">Select zone</option>
@@ -105,10 +105,10 @@ export default function DFWGazeboGuide() {
           </div>
           <button onClick={calculate} style={{ background: '#F5E642', color: '#0A1628', fontWeight: 700, padding: '0.75rem 2rem', borderRadius: 8, border: 'none', cursor: 'pointer', fontSize: '1rem' }}>Get Recommendation</button>
           {result && (
-            <div style={{ marginTop: '1.25rem', background: '#0A1628', borderRadius: 10, padding: '1.25rem', border: '1px solid #F5E642′ }}>
+            <div style={{ marginTop: '1.25rem', background: '#0A1628', borderRadius: 10, padding: '1.25rem', border: '1px solid #F5E642' }}>
               <div style={{ color: '#F5E642', fontWeight: 700 }}>Recommended: {result.material} Frame</div>
               <div style={{ color: '#CBD5E1', marginTop: '0.5rem' }}>Foundation: {result.foundation}</div>
-              <div style={{ color: '#CBD5E1', marginTop: '0.25rem' }}>Total Estimated Cost: <strong style={{ color: '#F5E642′ }}>{result.cost}</strong></div>
+              <div style={{ color: '#CBD5E1', marginTop: '0.25rem' }}>Total Estimated Cost: <strong style={{ color: '#F5E642' }}>{result.cost}</strong></div>
               <div style={{ color: '#94A3B8', marginTop: '0.5rem', fontSize: '0.85rem' }}>🌪️ {result.windNote}</div>
               <div style={{ color: '#94A3B8', marginTop: '0.5rem', fontSize: '0.85rem' }}>📋 Permits: {result.permit}</div>
             </div>

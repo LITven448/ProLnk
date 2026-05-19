@@ -50,7 +50,7 @@ export default function DFWTaxAssessmentGuide() {
         </div>
 
         <div style={{ background: '#12213A', borderRadius: 14, padding: 32, marginBottom: 28, border: '1px solid #1e3a5f' }}>
-          <h2 style={{ fontSize: 22, fontWeight: 700, marginBottom: 20, color: '#F5E642′ }}>🧮 Protest Worthiness Calculator</h2>
+          <h2 style={{ fontSize: 22, fontWeight: 700, marginBottom: 20, color: '#F5E642' }}>🧮 Protest Worthiness Calculator</h2>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16, marginBottom: 20 }}>
             <div>
               <label style={{ fontSize: 13, fontWeight: 600, color: '#8a9fc0', display: 'block', marginBottom: 6 }}>Your Assessed Value (CAD Notice)</label>
@@ -70,9 +70,9 @@ export default function DFWTaxAssessmentGuide() {
           {result && (
             <div style={{ marginTop: 24, background: '#0A1628', borderRadius: 10, padding: 24 }}>
               <p style={{ fontSize: 13, color: '#8a9fc0', marginBottom: 4 }}>Protest Assessment</p>
-              <p style={{ fontSize: 22, fontWeight: 800, color: result.worthIt ? '#F5E642′ : '#6af26a', marginBottom: 8 }}>{result.score}</p>
+              <p style={{ fontSize: 22, fontWeight: 800, color: result.worthIt ? '#F5E642' : '#6af26a', marginBottom: 8 }}>{result.score}</p>
               {result.worthIt && result.savings > 0 && (
-                <p style={{ fontSize: 15, color: '#b0bdd4′ }}>Estimated annual tax savings if successful: <strong style={{ color: '#F5E642' }}>{fmt(result.savings)}</strong></p>
+                <p style={{ fontSize: 15, color: '#b0bdd4' }}>Estimated annual tax savings if successful: <strong style={{ color: '#F5E642' }}>{fmt(result.savings)}</strong></p>
               )}
               <p style={{ fontSize: 13, color: '#8a9fc0', marginTop: 8 }}>Filing is free and takes ~30 min online via your county CAD portal. Bring 3 comps pulled from the MLS within the past 6 months.</p>
             </div>

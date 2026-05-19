@@ -47,9 +47,9 @@ export default function DFWContractorContactManager() {
           {TRADES.map(t => (
             <button key={t} onClick={() => setSelectedTrade(t)}
               style={{ padding: '7px 14px', borderRadius: 20, border: '2px solid', cursor: 'pointer', fontWeight: 700, fontSize: 13,
-                borderColor: selectedTrade === t ? '#F5E642′ : '#1E3A5F',
-                background: selectedTrade === t ? '#F5E642′ : ’transparent',
-                color: selectedTrade === t ? '#0A1628′ : '#8CA4C0' }}>
+                borderColor: selectedTrade === t ? '#F5E642' : '#1E3A5F',
+                background: selectedTrade === t ? '#F5E642' : 'transparent',
+                color: selectedTrade === t ? '#0A1628' : '#8CA4C0' }}>
               {t}
             </button>
           ))}
@@ -72,7 +72,7 @@ export default function DFWContractorContactManager() {
 
         {showForm && (
           <div style={{ background: '#0F2037', borderRadius: 12, padding: 24, marginBottom: 24 }}>
-            <h3 style={{ fontSize: 16, fontWeight: 700, marginBottom: 16, color: '#F5E642′ }}>New {selectedTrade} Contact</h3>
+            <h3 style={{ fontSize: 16, fontWeight: 700, marginBottom: 16, color: '#F5E642' }}>New {selectedTrade} Contact</h3>
             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12, marginBottom: 12 }}>
               {[['company','Company Name'],['license','License Number'],['phone','Phone'],['lastUsed','Last Used Date']].map(([key, label]) => (
                 <div key={key}>
@@ -103,7 +103,7 @@ export default function DFWContractorContactManager() {
         )}
 
         {filtered.length === 0 && !showForm && (
-          <div style={{ background: '#0F2037', borderRadius: 12, padding: 32, textAlign: 'center', color: '#8CA4C0′ }}>
+          <div style={{ background: '#0F2037', borderRadius: 12, padding: 32, textAlign: 'center', color: '#8CA4C0' }}>
             No {selectedTrade}s saved yet. Add your first trusted contractor above.
           </div>
         )}

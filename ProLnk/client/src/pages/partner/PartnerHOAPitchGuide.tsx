@@ -77,13 +77,13 @@ export default function PartnerHOAPitchGuide() {
           <div style={{ display: 'flex', gap: 16, flexWrap: 'wrap' }}>
             <div style={{ flex: 1, minWidth: 200 }}>
               <label style={{ display: 'block', fontSize: 13, color: '#64748B', marginBottom: 6 }}>HOA Size</label>
-              <select value={size} onChange={e => setSize(e.target.value)} style={{ width: '100%', padding: '10px 12px', border: '1px solid #E2E8F0', borderRadius: 8, fontSize: 14, color: '#0A1628′ }}>
+              <select value={size} onChange={e => setSize(e.target.value)} style={{ width: '100%', padding: '10px 12px', border: '1px solid #E2E8F0', borderRadius: 8, fontSize: 14, color: '#0A1628' }}>
                 {HOA_SIZES.map(s => <option key={s}>{s}</option>)}
               </select>
             </div>
             <div style={{ flex: 1, minWidth: 200 }}>
               <label style={{ display: 'block', fontSize: 13, color: '#64748B', marginBottom: 6 }}>Community Type</label>
-              <select value={type} onChange={e => setType(e.target.value)} style={{ width: '100%', padding: '10px 12px', border: '1px solid #E2E8F0', borderRadius: 8, fontSize: 14, color: '#0A1628′ }}>
+              <select value={type} onChange={e => setType(e.target.value)} style={{ width: '100%', padding: '10px 12px', border: '1px solid #E2E8F0', borderRadius: 8, fontSize: 14, color: '#0A1628' }}>
                 {COMMUNITY_TYPES.map(t => <option key={t}>{t}</option>)}
               </select>
             </div>

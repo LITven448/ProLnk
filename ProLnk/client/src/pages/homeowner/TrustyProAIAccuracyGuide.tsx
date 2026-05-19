@@ -4,12 +4,12 @@ type FindingType = 'hvac' | 'roof' | 'electrical' | 'foundation' | 'water' | 'pl
 type ConfidenceLevel = 'high' | 'medium' | 'low' | '';
 
 const accuracyData = [
-  { system: 'Electrical panel identification', pct: 97, bar: '#4ade80′ },
-  { system: 'HVAC age identification', pct: 94, bar: '#4ade80′ },
+  { system: 'Electrical panel identification', pct: 97, bar: '#4ade80' },
+  { system: 'HVAC age identification', pct: 94, bar: '#4ade80' },
   { system: 'Water damage indicators', pct: 91, bar: '#86efac' },
   { system: 'Roof shingle condition', pct: 89, bar: '#86efac' },
-  { system: 'Foundation crack detection', pct: 86, bar: '#fbbf24′ },
-  { system: 'Plumbing age indicators', pct: 83, bar: '#fbbf24′ },
+  { system: 'Foundation crack detection', pct: 86, bar: '#fbbf24' },
+  { system: 'Plumbing age indicators', pct: 83, bar: '#fbbf24' },
 ];
 
 const interpretations: Record<FindingType extends '' ? never : FindingType, Record<ConfidenceLevel extends '' ? never : ConfidenceLevel, { label: string; action: string; detail: string }>> = {
@@ -68,7 +68,7 @@ export default function TrustyProAIAccuracyGuide() {
         </div>
 
         {/* Accuracy Bars */}
-        <div style={{ background: '#1e293b', borderRadius: 16, padding: 32, marginBottom: 40, border: '1px solid #334155′ }}>
+        <div style={{ background: '#1e293b', borderRadius: 16, padding: 32, marginBottom: 40, border: '1px solid #334155' }}>
           <h2 style={{ fontSize: 20, fontWeight: 700, color: '#f1f5f9', marginBottom: 8 }}>📊 Published Accuracy Rates (2026)</h2>
           <p style={{ color: '#64748b', marginBottom: 28, fontSize: 14 }}>Based on validation testing against licensed inspector reports across 12,000+ homes.</p>
           <div style={{ display: 'grid', gap: 18 }}>
@@ -96,7 +96,7 @@ export default function TrustyProAIAccuracyGuide() {
               { icon: '👁️', factor: 'System Visibility', good: 'Visible components = scoreable', bad: 'Inside walls or buried = not scored' },
               { icon: '📅', factor: 'System Age Range', good: '5–30 year old systems = highest accuracy', bad: 'Very new (<5 yr) or very old (>40 yr) = lower edge accuracy' },
             ].map(f => (
-              <div key={f.factor} style={{ background: '#1e293b', borderRadius: 12, padding: 22, border: '1px solid #334155′ }}>
+              <div key={f.factor} style={{ background: '#1e293b', borderRadius: 12, padding: 22, border: '1px solid #334155' }}>
                 <div style={{ fontSize: 26, marginBottom: 8 }}>{f.icon}</div>
                 <div style={{ fontWeight: 700, color: '#f1f5f9', marginBottom: 10 }}>{f.factor}</div>
                 <div style={{ color: '#4ade80', fontSize: 13, marginBottom: 4 }}>✓ {f.good}</div>
@@ -107,7 +107,7 @@ export default function TrustyProAIAccuracyGuide() {
         </div>
 
         {/* What AI Can't Do */}
-        <div style={{ background: '#1a1a2e', borderRadius: 14, padding: 28, marginBottom: 40, border: '1px solid #4c1d95′ }}>
+        <div style={{ background: '#1a1a2e', borderRadius: 14, padding: 28, marginBottom: 40, border: '1px solid #4c1d95' }}>
           <h2 style={{ fontSize: 20, fontWeight: 700, color: '#c4b5fd', marginBottom: 20 }}>🚫 What TrustyPro AI Can't Do (Yet)</h2>
           <div style={{ display: 'grid', gap: 12 }}>
             {[
@@ -125,7 +125,7 @@ export default function TrustyProAIAccuracyGuide() {
         </div>
 
         {/* Confidence explanation */}
-        <div style={{ background: '#172033', borderRadius: 14, padding: 24, marginBottom: 52, borderLeft: '4px solid #3b82f6′ }}>
+        <div style={{ background: '#172033', borderRadius: 14, padding: 24, marginBottom: 52, borderLeft: '4px solid #3b82f6' }}>
           <h3 style={{ fontWeight: 700, color: '#93c5fd', marginBottom: 10 }}>Why Confidence % Matters</h3>
           <p style={{ color: '#94a3b8', margin: '0 0 12px', lineHeight: 1.7 }}>
             "A finding at 60% confidence isn't wrong — it means the AI thinks there's a 60% chance the issue exists. Always have a licensed professional confirm before spending money."
@@ -136,7 +136,7 @@ export default function TrustyProAIAccuracyGuide() {
         </div>
 
         {/* Interactive Guide */}
-        <div style={{ background: '#1e293b', borderRadius: 16, padding: 32, border: '1px solid #334155′ }}>
+        <div style={{ background: '#1e293b', borderRadius: 16, padding: 32, border: '1px solid #334155' }}>
           <h2 style={{ fontSize: 22, fontWeight: 700, color: '#f1f5f9', marginBottom: 8 }}>🔬 Accuracy Scenario Guide</h2>
           <p style={{ color: '#64748b', marginBottom: 28, fontSize: 15 }}>Enter your finding type and confidence level to get an interpretation and recommended action.</p>
 
@@ -146,7 +146,7 @@ export default function TrustyProAIAccuracyGuide() {
               <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(160px, 1fr))', gap: 8 }}>
                 {([['hvac', '❄️ HVAC'], ['roof', '🏠 Roof'], ['electrical', '⚡ Electrical'], ['foundation', '🏗️ Foundation'], ['water', '💧 Water Damage'], ['plumbing', '🔧 Plumbing']] as [FindingType, string][]).map(([val, label]) => (
                   <button key={val} onClick={() => { setFindingType(val); setShowGuide(false); }}
-                    style={{ padding: '11px 8px', borderRadius: 8, border: `1px solid ${findingType === val ? '#3b82f6' : '#334155'}`, background: findingType === val ? '#1d4ed8′ : '#0f172a', color: findingType === val ? '#fff' : '#94a3b8', cursor: ’pointer', fontSize: 14, fontWeight: findingType === val ? 700 : 400 }}>
+                    style={{ padding: '11px 8px', borderRadius: 8, border: `1px solid ${findingType === val ? '#3b82f6' : '#334155'}`, background: findingType === val ? '#1d4ed8' : '#0f172a', color: findingType === val ? '#fff' : '#94a3b8', cursor: 'pointer', fontSize: 14, fontWeight: findingType === val ? 700 : 400 }}>
                     {label}
                   </button>
                 ))}
@@ -174,7 +174,7 @@ export default function TrustyProAIAccuracyGuide() {
           )}
 
           {showGuide && guide && (
-            <div style={{ background: '#0f172a', borderRadius: 12, padding: 28, border: '1px solid #334155′ }}>
+            <div style={{ background: '#0f172a', borderRadius: 12, padding: 28, border: '1px solid #334155' }}>
               <div style={{ fontWeight: 700, color: '#60a5fa', fontSize: 16, marginBottom: 16 }}>{guide.label}</div>
               <div style={{ background: '#172033', borderRadius: 10, padding: '14px 18px', marginBottom: 16, borderLeft: '4px solid #22c55e' }}>
                 <div style={{ fontWeight: 700, color: '#4ade80', marginBottom: 4, fontSize: 13 }}>RECOMMENDED ACTION</div>

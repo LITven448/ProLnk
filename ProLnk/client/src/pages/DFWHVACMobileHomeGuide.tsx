@@ -42,7 +42,7 @@ export default function DFWHVACMobileHomeGuide() {
         <div style={{ color: '#F5E642', fontSize: 13, fontWeight: 700, letterSpacing: 2, marginBottom: 8 }}>DFW HVAC GUIDE</div>
         <h1 style={{ fontSize: 32, fontWeight: 800, marginBottom: 8 }}>Mobile & Manufactured Homes</h1>
         <p style={{ color: '#94a3b8', fontSize: 15, marginBottom: 32, lineHeight: 1.7 }}>
-          DFW has one of the largest manufactured housing populations in Texas. Mobile and manufactured homes have unique HVAC requirements — standard residential equipment often doesn't work correctly. Know your home’s vintage and HUD compliance status before any HVAC decision.
+          DFW has one of the largest manufactured housing populations in Texas. Mobile and manufactured homes have unique HVAC requirements — standard residential equipment often doesn't work correctly. Know your home's vintage and HUD compliance status before any HVAC decision.
         </p>
 
         <div style={{ background: '#F5E642', color: '#0A1628', borderRadius: 8, padding: '14px 18px', marginBottom: 28, fontSize: 14, fontWeight: 600 }}>
@@ -50,12 +50,12 @@ export default function DFWHVACMobileHomeGuide() {
         </div>
 
         <div style={{ background: '#0f1f3d', borderRadius: 12, padding: 24, marginBottom: 24 }}>
-          <h2 style={{ fontSize: 18, fontWeight: 700, marginBottom: 16, color: '#F5E642′ }}>🏠 Get Your Recommendation</h2>
+          <h2 style={{ fontSize: 18, fontWeight: 700, marginBottom: 16, color: '#F5E642' }}>🏠 Get Your Recommendation</h2>
           <div style={{ marginBottom: 16 }}>
             <label style={{ color: '#94a3b8', fontSize: 13, display: 'block', marginBottom: 6 }}>HOME VINTAGE</label>
             <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8 }}>
               {vintages.map(v => (
-                <button key={v} onClick={() => setVintage(v)} style={{ padding: '8px 16px', borderRadius: 6, border: '2px solid', borderColor: vintage === v ? '#F5E642′ : '#1e3a5f', background: vintage === v ? '#F5E642' : ’transparent', color: vintage === v ? '#0A1628′ : '#fff', cursor: ’pointer', fontWeight: 600, fontSize: 13 }}>{v}</button>
+                <button key={v} onClick={() => setVintage(v)} style={{ padding: '8px 16px', borderRadius: 6, border: '2px solid', borderColor: vintage === v ? '#F5E642' : '#1e3a5f', background: vintage === v ? '#F5E642' : 'transparent', color: vintage === v ? '#0A1628' : '#fff', cursor: 'pointer', fontWeight: 600, fontSize: 13 }}>{v}</button>
               ))}
             </div>
           </div>
@@ -63,12 +63,12 @@ export default function DFWHVACMobileHomeGuide() {
             <label style={{ color: '#94a3b8', fontSize: 13, display: 'block', marginBottom: 6 }}>CURRENT SITUATION</label>
             <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8 }}>
               {situations.map(s => (
-                <button key={s} onClick={() => setSituation(s)} style={{ padding: '8px 16px', borderRadius: 6, border: '2px solid', borderColor: situation === s ? '#F5E642′ : '#1e3a5f', background: situation === s ? '#F5E642' : ’transparent', color: situation === s ? '#0A1628′ : '#fff', cursor: ’pointer', fontWeight: 600, fontSize: 13 }}>{s}</button>
+                <button key={s} onClick={() => setSituation(s)} style={{ padding: '8px 16px', borderRadius: 6, border: '2px solid', borderColor: situation === s ? '#F5E642' : '#1e3a5f', background: situation === s ? '#F5E642' : 'transparent', color: situation === s ? '#0A1628' : '#fff', cursor: 'pointer', fontWeight: 600, fontSize: 13 }}>{s}</button>
               ))}
             </div>
           </div>
           {result && (
-            <div style={{ background: '#1e3a5f', borderRadius: 8, padding: 16, borderLeft: '4px solid #F5E642′ }}>
+            <div style={{ background: '#1e3a5f', borderRadius: 8, padding: 16, borderLeft: '4px solid #F5E642' }}>
               <div style={{ fontWeight: 700, color: '#F5E642', marginBottom: 6 }}>Recommendation</div>
               <div style={{ color: '#e2e8f0', fontSize: 14, lineHeight: 1.7 }}>{result}</div>
             </div>

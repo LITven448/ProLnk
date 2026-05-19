@@ -1,14 +1,14 @@
 import { useState } from 'react';
 
 const COURT_TYPES = [
-  { id: 'basketball', label: '🏀 Basketball Court', fullSize: { w: 84, l: 50 }, halfSize: { w: 42, l: 50 }, concreteLow: 18000, concreteHigh: 32000, asphaltLow: 12000, asphaltHigh: 22000, tileLow: 22000, tileHigh: 40000, hoaLikelihood: 'moderate', note: 'Full NBA regulation 84x50 — most homeowners install half-court 42x50′ },
+  { id: 'basketball', label: '🏀 Basketball Court', fullSize: { w: 84, l: 50 }, halfSize: { w: 42, l: 50 }, concreteLow: 18000, concreteHigh: 32000, asphaltLow: 12000, asphaltHigh: 22000, tileLow: 22000, tileHigh: 40000, hoaLikelihood: 'moderate', note: 'Full NBA regulation 84x50 — most homeowners install half-court 42x50' },
   { id: 'pickleball', label: '🏓 Pickleball Court', fullSize: { w: 20, l: 44 }, halfSize: { w: 20, l: 44 }, concreteLow: 11000, concreteHigh: 20000, asphaltLow: 8000, asphaltHigh: 14000, tileLow: 14000, tileHigh: 24000, hoaLikelihood: 'high', note: 'Fastest growing sport in DFW — standard 20x44 ft with buffer zones' },
-  { id: 'tennis', label: '🎾 Tennis Court', fullSize: { w: 36, l: 78 }, halfSize: { w: 36, l: 78 }, concreteLow: 30000, concreteHigh: 55000, asphaltLow: 20000, asphaltHigh: 38000, tileLow: 40000, tileHigh: 70000, hoaLikelihood: 'low', note: 'Requires large lot — 7,200 sqft minimum. Fencing adds $8,000–$18,000′ },
+  { id: 'tennis', label: '🎾 Tennis Court', fullSize: { w: 36, l: 78 }, halfSize: { w: 36, l: 78 }, concreteLow: 30000, concreteHigh: 55000, asphaltLow: 20000, asphaltHigh: 38000, tileLow: 40000, tileHigh: 70000, hoaLikelihood: 'low', note: 'Requires large lot — 7,200 sqft minimum. Fencing adds $8,000–$18,000' },
   { id: 'multisport', label: '⚽ Multi-Sport Court', fullSize: { w: 50, l: 90 }, halfSize: { w: 50, l: 90 }, concreteLow: 25000, concreteHigh: 50000, asphaltLow: 18000, asphaltHigh: 35000, tileLow: 30000, tileHigh: 60000, hoaLikelihood: 'low', note: 'Combines basketball, pickleball, and volleyball — modular tile is ideal' },
 ];
 
 const SURFACE_TYPES = [
-  { id: 'concrete', label: 'Concrete', note: 'Best for DFW — stable in clay soil, requires 4″ reinforced slab, lower maintenance' },
+  { id: 'concrete', label: 'Concrete', note: 'Best for DFW — stable in clay soil, requires 4" reinforced slab, lower maintenance' },
   { id: 'asphalt', label: 'Asphalt', note: 'Cheaper upfront, softens in DFW summer heat (115°F+ surface temps), cracks over time' },
   { id: 'tile', label: 'Modular Sport Tile', note: 'Snaps over concrete base, cushioned, ideal for multi-use, allows drainage' },
 ];
@@ -74,23 +74,23 @@ export default function DFWSportsCourtsGuide() {
           <h2 style={{ color: '#F5E642', fontSize: 18, marginBottom: 16 }}>💰 Cost Estimator</h2>
           {courtType.id === 'basketball' && (
             <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 14 }}>
-              <input type="checkbox" id="half" checked={halfCourt} onChange={e => setHalfCourt(e.target.checked)} style={{ width: 18, height: 18, accentColor: '#F5E642′ }} />
+              <input type="checkbox" id="half" checked={halfCourt} onChange={e => setHalfCourt(e.target.checked)} style={{ width: 18, height: 18, accentColor: '#F5E642' }} />
               <label htmlFor="half" style={{ color: '#cbd5e1', cursor: 'pointer' }}>Half-court only (42x50 ft)</label>
             </div>
           )}
           <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 10 }}>
-            <input type="checkbox" id="lighting" checked={addLighting} onChange={e => setAddLighting(e.target.checked)} style={{ width: 18, height: 18, accentColor: '#F5E642′ }} />
+            <input type="checkbox" id="lighting" checked={addLighting} onChange={e => setAddLighting(e.target.checked)} style={{ width: 18, height: 18, accentColor: '#F5E642' }} />
             <label htmlFor="lighting" style={{ color: '#cbd5e1', cursor: 'pointer' }}>Add LED court lighting (+$12,000)</label>
           </div>
           <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 16 }}>
-            <input type="checkbox" id="fencing" checked={addFencing} onChange={e => setAddFencing(e.target.checked)} style={{ width: 18, height: 18, accentColor: '#F5E642′ }} />
+            <input type="checkbox" id="fencing" checked={addFencing} onChange={e => setAddFencing(e.target.checked)} style={{ width: 18, height: 18, accentColor: '#F5E642' }} />
             <label htmlFor="fencing" style={{ color: '#cbd5e1', cursor: 'pointer' }}>Add perimeter fencing (+$10,000 avg)</label>
           </div>
           <button onClick={() => setShowResult(true)} style={{ background: '#F5E642', color: '#0A1628', border: 'none', borderRadius: 8, padding: '12px 24px', fontWeight: 800, cursor: 'pointer', width: '100%', fontSize: 16 }}>
             Calculate Total Cost
           </button>
           {showResult && (
-            <div style={{ background: '#0A1628', borderRadius: 10, padding: 16, marginTop: 14, border: '2px solid #F5E642′ }}>
+            <div style={{ background: '#0A1628', borderRadius: 10, padding: 16, marginTop: 14, border: '2px solid #F5E642' }}>
               <div style={{ fontWeight: 800, fontSize: 20, color: '#F5E642', marginBottom: 8 }}>${totalLow.toLocaleString()} – ${totalHigh.toLocaleString()}</div>
               <div style={{ color: '#94a3b8', fontSize: 13, marginBottom: 10 }}>Includes site prep (~$4,500), {surface.label} surface, {addLighting ? 'lighting, ' : ''}{addFencing ? 'fencing, ' : ''}and court markings.</div>
               <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>

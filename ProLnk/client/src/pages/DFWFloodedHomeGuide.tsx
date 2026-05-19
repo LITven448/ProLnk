@@ -52,7 +52,7 @@ export default function DFWFloodedHomeGuide() {
           DFW flash floods are sudden and severe — the region averages over 40 flash flood events annually. With summer temperatures above 95°F and 70%+ humidity, mold can begin growing in as little as 24 hours. The first 48 hours are critical.
         </p>
 
-        <div style={{ background: '#1e3a5f', borderRadius: '12px', padding: '1.25rem', marginBottom: '1.5rem', border: '1px solid #3b82f6′ }}>
+        <div style={{ background: '#1e3a5f', borderRadius: '12px', padding: '1.25rem', marginBottom: '1.5rem', border: '1px solid #3b82f6' }}>
           <h2 style={{ color: '#93c5fd', fontSize: '1rem', marginBottom: '0.5rem' }}>🏥 Safety First</h2>
           <p style={{ color: '#bfdbfe', margin: 0, fontSize: '0.9rem' }}>Do not enter flooded areas if electricity may be on. Floodwater can carry sewage, chemicals, and debris. Check for structural damage before entering. Turn off electricity at the breaker if safe to do so.</p>
         </div>
@@ -62,7 +62,7 @@ export default function DFWFloodedHomeGuide() {
           <label style={{ color: '#94a3b8', display: 'block', marginBottom: '0.5rem' }}>Source of flooding:</label>
           <div style={{ display: 'flex', gap: '0.75rem', marginBottom: '1rem', flexWrap: 'wrap' }}>
             {[{ key: 'storm', label: '⛈️ Storm / rising water / rain' }, { key: 'plumbing', label: '🚿 Plumbing failure / burst pipe' }].map(opt => (
-              <button key={opt.key} onClick={() => setSource(opt.key)} style={{ padding: '0.6rem 1.2rem', borderRadius: '8px', border: '2px solid', borderColor: source === opt.key ? '#F5E642′ : '#334155', background: source === opt.key ? '#F5E642' : ’transparent', color: source === opt.key ? '#0A1628′ : '#cbd5e1', fontWeight: 600, cursor: ’pointer' }}>
+              <button key={opt.key} onClick={() => setSource(opt.key)} style={{ padding: '0.6rem 1.2rem', borderRadius: '8px', border: '2px solid', borderColor: source === opt.key ? '#F5E642' : '#334155', background: source === opt.key ? '#F5E642' : 'transparent', color: source === opt.key ? '#0A1628' : '#cbd5e1', fontWeight: 600, cursor: 'pointer' }}>
                 {opt.label}
               </button>
             ))}
@@ -70,7 +70,7 @@ export default function DFWFloodedHomeGuide() {
           <label style={{ color: '#94a3b8', display: 'block', marginBottom: '0.5rem' }}>Extent of flooding:</label>
           <div style={{ display: 'flex', gap: '0.75rem', marginBottom: '1rem', flexWrap: 'wrap' }}>
             {[{ key: 'minor', label: '🟡 Less than 1 inch / limited area' }, { key: 'severe', label: '🔴 Multiple rooms or inches deep' }].map(opt => (
-              <button key={opt.key} onClick={() => setExtent(opt.key)} style={{ padding: '0.6rem 1.2rem', borderRadius: '8px', border: '2px solid', borderColor: extent === opt.key ? '#F5E642′ : '#334155', background: extent === opt.key ? '#F5E642' : ’transparent', color: extent === opt.key ? '#0A1628′ : '#cbd5e1', fontWeight: 600, cursor: ’pointer' }}>
+              <button key={opt.key} onClick={() => setExtent(opt.key)} style={{ padding: '0.6rem 1.2rem', borderRadius: '8px', border: '2px solid', borderColor: extent === opt.key ? '#F5E642' : '#334155', background: extent === opt.key ? '#F5E642' : 'transparent', color: extent === opt.key ? '#0A1628' : '#cbd5e1', fontWeight: 600, cursor: 'pointer' }}>
                 {opt.label}
               </button>
             ))}
@@ -93,7 +93,7 @@ export default function DFWFloodedHomeGuide() {
               </div>
             </div>
             <h3 style={{ color: '#F5E642', fontSize: '1rem', marginBottom: '0.75rem' }}>⏱️ Action Timeline</h3>
-            <ol style={{ color: '#cbd5e1', lineHeight: 2, paddingLeft: '1.2rem', margin: '0 0 1rem 0′ }}>
+            <ol style={{ color: '#cbd5e1', lineHeight: 2, paddingLeft: '1.2rem', margin: '0 0 1rem 0' }}>
               {result.timeline.map((t, i) => <li key={i}>{t}</li>)}
             </ol>
             <div style={{ background: '#0A1628', borderRadius: '8px', padding: '1rem', marginBottom: '0.75rem' }}>

@@ -55,7 +55,7 @@ export default function DFWSpringTreeGuide() {
             <div style={{ color: '#94a3b8', fontSize: 13, marginBottom: 8 }}>Yard size:</div>
             <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8 }}>
               {yardSizes.map(s => (
-                <button key={s} onClick={() => setSize(s)} style={{ background: size === s ? '#F5E642′ : '#1e3a5f', color: size === s ? '#0A1628' : '#fff', border: ’none', borderRadius: 8, padding: '8px 14px', cursor: 'pointer', fontSize: 13 }}>{s}</button>
+                <button key={s} onClick={() => setSize(s)} style={{ background: size === s ? '#F5E642' : '#1e3a5f', color: size === s ? '#0A1628' : '#fff', border: 'none', borderRadius: 8, padding: '8px 14px', cursor: 'pointer', fontSize: 13 }}>{s}</button>
               ))}
             </div>
           </div>
@@ -63,7 +63,7 @@ export default function DFWSpringTreeGuide() {
             <div style={{ color: '#94a3b8', fontSize: 13, marginBottom: 8 }}>DFW conditions:</div>
             <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8 }}>
               {conditions.map(c => (
-                <button key={c} onClick={() => setCondition(c)} style={{ background: condition === c ? '#F5E642′ : '#1e3a5f', color: condition === c ? '#0A1628' : '#fff', border: ’none', borderRadius: 8, padding: '8px 14px', cursor: 'pointer', fontSize: 13 }}>{c}</button>
+                <button key={c} onClick={() => setCondition(c)} style={{ background: condition === c ? '#F5E642' : '#1e3a5f', color: condition === c ? '#0A1628' : '#fff', border: 'none', borderRadius: 8, padding: '8px 14px', cursor: 'pointer', fontSize: 13 }}>{c}</button>
               ))}
             </div>
           </div>

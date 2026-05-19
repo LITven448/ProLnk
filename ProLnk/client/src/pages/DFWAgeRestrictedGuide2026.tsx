@@ -48,7 +48,7 @@ export default function DFWAgeRestrictedGuide2026() {
             {communities.map((c) => (
               <button key={c.id} onClick={() => setSelected(c.id)}
                 style={{ padding: '8px 16px', borderRadius: 8, border: 'none', cursor: 'pointer', fontSize: 13, fontWeight: 600,
-                  background: selected === c.id ? '#F5E642′ : '#1e2e4a', color: selected === c.id ? '#0A1628' : '#94a3b8' }}>
+                  background: selected === c.id ? '#F5E642' : '#1e2e4a', color: selected === c.id ? '#0A1628' : '#94a3b8' }}>
                 {c.label}
               </button>
             ))}
@@ -78,7 +78,7 @@ export default function DFWAgeRestrictedGuide2026() {
               <span style={{ fontSize: 20 }}>{row.icon}</span>
               <div>
                 <div style={{ fontSize: 13, fontWeight: 700, color: '#fff', marginBottom: 3 }}>{row.title}</div>
-                <div style={{ fontSize: 12, color: '#94a3b8′ }}>{row.note}</div>
+                <div style={{ fontSize: 12, color: '#94a3b8' }}>{row.note}</div>
               </div>
             </div>
           ))}

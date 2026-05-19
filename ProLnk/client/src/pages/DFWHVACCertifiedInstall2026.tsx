@@ -23,7 +23,7 @@ export default function DFWHVACCertifiedInstall2026() {
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(220px, 1fr))', gap: '12px', marginBottom: '28px' }}>
           {concerns.map(c => (
             <button key={c.id} onClick={() => setSelected(selected === c.id ? null : c.id)}
-              style={{ padding: '14px 16px', borderRadius: '10px', border: '2px solid', borderColor: selected === c.id ? '#F5E642′ : '#1e3a5f', backgroundColor: selected === c.id ? '#F5E64220' : '#0d1f3c', color: '#ffffff', cursor: ’pointer', textAlign: 'left', fontSize: '14px', fontWeight: 600, transition: 'all 0.2s' }}>
+              style={{ padding: '14px 16px', borderRadius: '10px', border: '2px solid', borderColor: selected === c.id ? '#F5E642' : '#1e3a5f', backgroundColor: selected === c.id ? '#F5E64220' : '#0d1f3c', color: '#ffffff', cursor: 'pointer', textAlign: 'left', fontSize: '14px', fontWeight: 600, transition: 'all 0.2s' }}>
               🔧 {c.label}
             </button>
           ))}
@@ -38,7 +38,7 @@ export default function DFWHVACCertifiedInstall2026() {
         )}
 
         <div style={{ backgroundColor: '#0d1f3c', borderRadius: '12px', padding: '24px', marginBottom: '28px' }}>
-          <h2 style={{ fontSize: '18px', marginBottom: '16px', color: '#F5E642′ }}>⚙️ How ProLnk Verifies Installation Quality</h2>
+          <h2 style={{ fontSize: '18px', marginBottom: '16px', color: '#F5E642' }}>⚙️ How ProLnk Verifies Installation Quality</h2>
           {['All matched HVAC pros hold active EPA 608 certification', 'Pros must upload startup documentation to close the job', 'Homeowners rate installation quality — low scores trigger review', 'ProLnk requires permit number before final job payment releases', 'Manual J sizing required for units over 3 tons — verified on file'].map((item, i) => (
             <div key={i} style={{ display: 'flex', gap: '10px', marginBottom: '10px', alignItems: 'flex-start' }}>
               <span style={{ color: '#F5E642', marginTop: '2px' }}>✅</span>

@@ -45,13 +45,13 @@ export default function DFWHVACFinalInsight() {
   const chosen = situations.find(s => s.id === selected);
 
   return (
-    <div style={{ background: '#0A1628', minHeight: '100vh', padding: '40px 20px', fontFamily: 'system-ui, sans-serif', color: '#E8EDF5′ }}>
+    <div style={{ background: '#0A1628', minHeight: '100vh', padding: '40px 20px', fontFamily: 'system-ui, sans-serif', color: '#E8EDF5' }}>
       <div style={{ maxWidth: 780, margin: '0 auto' }}>
         <div style={{ textAlign: 'center', marginBottom: 40 }}>
           <div style={{ fontSize: 48, marginBottom: 12 }}>💡</div>
           <h1 style={{ fontSize: 32, fontWeight: 800, color: '#F5E642', marginBottom: 12 }}>The Most Important HVAC Insight for DFW Homeowners</h1>
           <p style={{ fontSize: 16, color: '#94A3B8', lineHeight: 1.6 }}>
-            Your HVAC is your home's most important system. Here’s why — and what to do about it.
+            Your HVAC is your home's most important system. Here's why — and what to do about it.
           </p>
         </div>
 
@@ -71,7 +71,7 @@ export default function DFWHVACFinalInsight() {
           <div style={{ display: 'grid', gap: 10, marginBottom: 20 }}>
             {situations.map(s => (
               <button key={s.id} onClick={() => setSelected(s.id)}
-                style={{ background: selected === s.id ? '#F5E642′ : '#0A1628', color: selected === s.id ? '#0A1628' : '#E8EDF5', border: '1px solid #1E3A5F', borderRadius: 10, padding: '12px 16px', cursor: ’pointer', textAlign: 'left', fontWeight: 600, fontSize: 15 }}>
+                style={{ background: selected === s.id ? '#F5E642' : '#0A1628', color: selected === s.id ? '#0A1628' : '#E8EDF5', border: '1px solid #1E3A5F', borderRadius: 10, padding: '12px 16px', cursor: 'pointer', textAlign: 'left', fontWeight: 600, fontSize: 15 }}>
                 {s.label}
               </button>
             ))}
@@ -81,8 +81,8 @@ export default function DFWHVACFinalInsight() {
               <div style={{ fontWeight: 700, color: '#F5E642', marginBottom: 8, fontSize: 16 }}>Your Key Insight:</div>
               <div style={{ color: '#E8EDF5', lineHeight: 1.7, marginBottom: 16 }}>{chosen.insight}</div>
               <div style={{ borderTop: '1px solid #1E3A5F', paddingTop: 12 }}>
-                <span style={{ fontWeight: 700, color: '#F5E642′ }}>Next Action: </span>
-                <span style={{ color: '#CBD5E1′ }}>{chosen.action}</span>
+                <span style={{ fontWeight: 700, color: '#F5E642' }}>Next Action: </span>
+                <span style={{ color: '#CBD5E1' }}>{chosen.action}</span>
               </div>
             </div>
           )}

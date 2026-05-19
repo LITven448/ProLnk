@@ -44,7 +44,7 @@ export default function DFWHomeMaintenancePriorityTool2026() {
         <div style={{ background: '#111D35', borderRadius: 12, padding: 20, marginBottom: 20 }}>
           <div style={{ color: '#F5E642', fontWeight: 700, marginBottom: 12 }}>Home Age: {homeAge} years</div>
           <input type="range" min={1} max={60} value={homeAge} onChange={e => setHomeAge(+e.target.value)}
-            style={{ width: '100%', accentColor: '#F5E642′ }} />
+            style={{ width: '100%', accentColor: '#F5E642' }} />
           <div style={{ display: 'flex', justifyContent: 'space-between', color: '#8899BB', fontSize: 12 }}><span>New</span><span>60 yrs</span></div>
         </div>
 
@@ -61,7 +61,7 @@ export default function DFWHomeMaintenancePriorityTool2026() {
               <div style={{ width: 90, color: '#ccc', fontSize: 14 }}>{name as string}</div>
               {['good', 'fair', 'poor'].map(opt => (
                 <button key={opt} onClick={() => (setter as (v: string) => void)(opt)}
-                  style={{ padding: '5px 12px', background: val === opt ? (opt === 'good' ? '#2A7A2A' : opt === 'fair' ? '#8A6000′ : '#8A2A2A') : '#1A2A45',
+                  style={{ padding: '5px 12px', background: val === opt ? (opt === 'good' ? '#2A7A2A' : opt === 'fair' ? '#8A6000' : '#8A2A2A') : '#1A2A45',
                     color: '#fff', border: 'none', borderRadius: 6, cursor: 'pointer', fontSize: 13, textTransform: 'capitalize', fontWeight: val === opt ? 700 : 400 }}>
                   {opt}
                 </button>

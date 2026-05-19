@@ -21,12 +21,12 @@ export default function DFWPoolPumpSizing2026() {
 
     if (pipeSize === '1.5') {
       const maxGPM = 42;
-      tips.push(`🔩 1.5" pipe maximum flow: ~42 GPM. ${requiredGPM > maxGPM ? `⚠️ Your pool needs ${requiredGPM} GPM — 1.5" pipe is undersized. Upgrade to 2″ pipe recommended.` : '✅ 1.5″ pipe can handle your flow requirements.'}`);
+      tips.push(`🔩 1.5" pipe maximum flow: ~42 GPM. ${requiredGPM > maxGPM ? `⚠️ Your pool needs ${requiredGPM} GPM — 1.5" pipe is undersized. Upgrade to 2" pipe recommended.` : '✅ 1.5" pipe can handle your flow requirements.'}`);
     } else if (pipeSize === '2') {
       const maxGPM = 73;
-      tips.push(`🔩 2" pipe maximum flow: ~73 GPM. ${requiredGPM > maxGPM ? `⚠️ Your pool needs ${requiredGPM} GPM — consider 2.5" pipe.` : '✅ 2″ pipe handles your flow requirements comfortably.'}`);
+      tips.push(`🔩 2" pipe maximum flow: ~73 GPM. ${requiredGPM > maxGPM ? `⚠️ Your pool needs ${requiredGPM} GPM — consider 2.5" pipe.` : '✅ 2" pipe handles your flow requirements comfortably.'}`);
     } else if (pipeSize === '2.5') {
-      tips.push('🔩 2.5″ pipe maximum flow: ~110 GPM. ✅ Sufficient for almost all residential DFW pools.');
+      tips.push('🔩 2.5" pipe maximum flow: ~110 GPM. ✅ Sufficient for almost all residential DFW pools.');
     }
 
     const hpEstimate = requiredGPM <= 40 ? '1.0 HP' : requiredGPM <= 65 ? '1.5 HP' : '2.0 HP';
@@ -55,7 +55,7 @@ export default function DFWPoolPumpSizing2026() {
           <div>
             <label style={{ color: '#F5E642', display: 'block', marginBottom: 6, fontSize: 14 }}>Main Pipe Diameter</label>
             <div style={{ display: 'flex', gap: 8 }}>
-              {[{v:'1.5',l:'1.5″'},{v:'2',l:'2″'},{v:'2.5',l:'2.5″'}].map(({v,l}) => (
+              {[{v:'1.5',l:'1.5"'},{v:'2',l:'2"'},{v:'2.5',l:'2.5"'}].map(({v,l}) => (
                 <button key={v} onClick={() => setPipeSize(v)}
                   style={{ flex: 1, padding: '10px 8px', borderRadius: 8, border: `2px solid ${pipeSize===v?'#F5E642':'#1e3a5f'}`, backgroundColor: pipeSize===v?'#F5E642':'#0d1e36', color: pipeSize===v?'#0A1628':'#fff', cursor: 'pointer', fontWeight: 600 }}>
                   {l}

@@ -5,8 +5,8 @@ const SITUATIONS = ['Installing new lawn', 'Replacing dead Bermuda', 'Bare spots
 
 const RESULTS: Record<string, Record<string, { feasibility: string; requirements: string[]; alternatives: string[] }>> = {
   'Installing new lawn': {
-    'Full sun (6+ hrs)': { feasibility: '⚠️ Consider Bermuda instead', requirements: ['St. Aug will grow but Bermuda performs better in full DFW sun', 'Requires 1.5″–2″ water per week in summer', 'Sod-only installation — seed not reliable', 'Cost: $0.80–$1.50/sq ft installed'], alternatives: ['Bermuda: cheaper, more drought-tolerant', 'Zoysia: slower but lower maintenance'] },
-    'Partial shade (3–6 hrs)': { feasibility: '✅ St. Augustine is your best option', requirements: ['Ideal shade tolerance for DFW conditions', 'Install sod April–June for best root establishment', 'Water daily for first 2 weeks, then 1.5″/week', 'Fertilize 60 days after installation', 'Cost: $0.80–$1.50/sq ft installed'], alternatives: ['Zoysia: works but slower fill-in', 'Bermuda will fail in this shade level'] },
+    'Full sun (6+ hrs)': { feasibility: '⚠️ Consider Bermuda instead', requirements: ['St. Aug will grow but Bermuda performs better in full DFW sun', 'Requires 1.5"–2" water per week in summer', 'Sod-only installation — seed not reliable', 'Cost: $0.80–$1.50/sq ft installed'], alternatives: ['Bermuda: cheaper, more drought-tolerant', 'Zoysia: slower but lower maintenance'] },
+    'Partial shade (3–6 hrs)': { feasibility: '✅ St. Augustine is your best option', requirements: ['Ideal shade tolerance for DFW conditions', 'Install sod April–June for best root establishment', 'Water daily for first 2 weeks, then 1.5"/week', 'Fertilize 60 days after installation', 'Cost: $0.80–$1.50/sq ft installed'], alternatives: ['Zoysia: works but slower fill-in', 'Bermuda will fail in this shade level'] },
     'Heavy shade (<3 hrs)': { feasibility: '❌ No grass thrives here', requirements: ['Even St. Aug struggles below 3 hrs direct sun', 'Consider shade-tolerant groundcovers instead', 'Asian jasmine, mondograss, or mulch are DFW-proven options'], alternatives: ['Mondograss: best shade groundcover for DFW', 'Asian jasmine: fast-spreading shade cover', 'Mulch + shade plants: most sustainable option'] },
   },
   'Replacing dead Bermuda': {
@@ -39,7 +39,7 @@ export default function DFWSaintAugustineGuide() {
           <h2 style={{ color: '#F5E642', fontSize: 16, marginBottom: 16 }}>⚡ St. Augustine vs Bermuda in DFW</h2>
           {[
             ['🌤️ Shade tolerance', 'St. Aug wins — handles 3–6 hrs sun; Bermuda needs 6+'],
-            ['💧 Water needs', 'Bermuda wins — St. Aug needs 1.5–2″/week vs Bermuda\’s 1″'],
+            ['💧 Water needs', 'Bermuda wins — St. Aug needs 1.5–2"/week vs Bermuda\’s 1"'],
             ['🌡️ Drought resistance', 'Bermuda wins — St. Aug will brown and die without water'],
             ['🐛 Pest vulnerability', 'Bermuda wins — chinch bugs devastate DFW St. Aug in July–Aug'],
             ['💵 Installation cost', 'Similar — both require sod at $0.80–$1.50/sq ft'],
@@ -78,7 +78,7 @@ export default function DFWSaintAugustineGuide() {
             <h2 style={{ color: '#F5E642', fontSize: 16, marginBottom: 8 }}>📊 Feasibility: {result.feasibility}</h2>
             <div style={{ marginBottom: 16 }}>
               {result.requirements.map((r, i) => (
-                <div key={i} style={{ color: '#cbd5e1', fontSize: 14, marginBottom: 8, paddingLeft: 12, borderLeft: '2px solid #F5E642′ }}>{r}</div>
+                <div key={i} style={{ color: '#cbd5e1', fontSize: 14, marginBottom: 8, paddingLeft: 12, borderLeft: '2px solid #F5E642' }}>{r}</div>
               ))}
             </div>
             <div style={{ background: '#0A1628', borderRadius: 8, padding: 12 }}>

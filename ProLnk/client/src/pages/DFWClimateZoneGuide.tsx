@@ -88,7 +88,7 @@ export default function DFWClimateZoneGuide() {
           <div style={{ display: 'flex', gap: '0.5rem', flexWrap: 'wrap', marginBottom: '1.25rem' }}>
             {improvements.map((imp2, i) => (
               <button key={imp2.type} onClick={() => setImpIdx(i)}
-                style={{ padding: '0.4rem 0.9rem', borderRadius: 20, border: i === impIdx ? '2px solid #F5E642′ : '2px solid #2d4a7a', background: i === impIdx ? '#F5E642' : ’transparent', color: i === impIdx ? '#0A1628′ : '#fff', fontWeight: 700, cursor: ’pointer', fontSize: '0.8rem' }}>
+                style={{ padding: '0.4rem 0.9rem', borderRadius: 20, border: i === impIdx ? '2px solid #F5E642' : '2px solid #2d4a7a', background: i === impIdx ? '#F5E642' : 'transparent', color: i === impIdx ? '#0A1628' : '#fff', fontWeight: 700, cursor: 'pointer', fontSize: '0.8rem' }}>
                 {imp2.icon} {imp2.type}
               </button>
             ))}
@@ -96,12 +96,12 @@ export default function DFWClimateZoneGuide() {
           <div style={{ background: '#1a2f55', borderRadius: 10, padding: '1.25rem' }}>
             <div style={{ fontWeight: 800, fontSize: '1.2rem', marginBottom: '1rem' }}>{imp.icon} {imp.type}</div>
             <div style={{ display: 'grid', gap: '0.75rem', marginBottom: '1rem' }}>
-              <div style={{ background: '#0A1628', borderRadius: 8, padding: '0.75rem', borderLeft: '3px solid #F5E642′ }}>
+              <div style={{ background: '#0A1628', borderRadius: 8, padding: '0.75rem', borderLeft: '3px solid #F5E642' }}>
                 <div style={{ color: '#F5E642', fontWeight: 700, fontSize: '0.8rem', marginBottom: 4 }}>ZONE 3A REQUIREMENT</div>
                 <div style={{ fontWeight: 700, marginBottom: 4 }}>{imp.zone3a.requirement}</div>
                 <div style={{ color: '#94a3b8', fontSize: '0.85rem' }}>{imp.zone3a.note}</div>
               </div>
-              <div style={{ background: '#0A1628', borderRadius: 8, padding: '0.75rem', borderLeft: '3px solid #475569′ }}>
+              <div style={{ background: '#0A1628', borderRadius: 8, padding: '0.75rem', borderLeft: '3px solid #475569' }}>
                 <div style={{ color: '#94a3b8', fontWeight: 700, fontSize: '0.8rem', marginBottom: 4 }}>NATIONAL COMPARISON</div>
                 <div style={{ color: '#94a3b8', fontSize: '0.85rem' }}>{imp.national}</div>
               </div>

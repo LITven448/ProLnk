@@ -23,10 +23,10 @@ export default function DFWTornadoRiskByAreaGuide2026() {
           <p style={{ color: '#fca5a5', margin: 0, lineHeight: 1.6 }}>Interior room, lowest floor, away from all windows and exterior walls. A small interior bathroom or closet with no windows is ideal. Put as many walls between you and the outside as possible.</p>
         </div>
 
-        <h2 style={{ fontSize: '1.1rem', fontWeight: 700, marginBottom: '1rem', color: '#F5E642′ }}>Select your DFW area for tornado risk profile:</h2>
+        <h2 style={{ fontSize: '1.1rem', fontWeight: 700, marginBottom: '1rem', color: '#F5E642' }}>Select your DFW area for tornado risk profile:</h2>
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0.75rem', marginBottom: '1.5rem' }}>
           {areas.map(a => (
-            <button key={a.id} onClick={() => setSelected(selected === a.id ? null : a.id)} style={{ background: selected === a.id ? '#F5E642′ : '#112240', color: selected === a.id ? '#0A1628' : '#fff', border: ’none', borderRadius: 10, padding: '0.9rem', cursor: 'pointer', textAlign: 'left', fontWeight: 600, fontSize: '0.85rem', transition: 'all 0.2s' }}>{a.label}</button>
+            <button key={a.id} onClick={() => setSelected(selected === a.id ? null : a.id)} style={{ background: selected === a.id ? '#F5E642' : '#112240', color: selected === a.id ? '#0A1628' : '#fff', border: 'none', borderRadius: 10, padding: '0.9rem', cursor: 'pointer', textAlign: 'left', fontWeight: 600, fontSize: '0.85rem', transition: 'all 0.2s' }}>{a.label}</button>
           ))}
         </div>
 
@@ -39,16 +39,16 @@ export default function DFWTornadoRiskByAreaGuide2026() {
             <p style={{ color: '#cbd5e1', lineHeight: 1.7, marginBottom: '1rem' }}>{active.desc}</p>
             <div style={{ background: '#0A1628', borderRadius: 8, padding: '0.8rem', marginBottom: '0.75rem' }}>
               <span style={{ color: '#F5E642', fontWeight: 700 }}>🏠 Shelter Strategy: </span>
-              <span style={{ color: '#94a3b8′ }}>{active.shelter}</span>
+              <span style={{ color: '#94a3b8' }}>{active.shelter}</span>
             </div>
             <div style={{ background: '#0A1628', borderRadius: 8, padding: '0.8rem' }}>
               <span style={{ color: '#F5E642', fontWeight: 700 }}>🚪 Safe Room Tip: </span>
-              <span style={{ color: '#94a3b8′ }}>{active.roomTip}</span>
+              <span style={{ color: '#94a3b8' }}>{active.roomTip}</span>
             </div>
           </div>
         )}
 
-        <div style={{ background: '#112240', borderRadius: 12, padding: '1.5rem', borderLeft: '4px solid #F5E642′ }}>
+        <div style={{ background: '#112240', borderRadius: 12, padding: '1.5rem', borderLeft: '4px solid #F5E642' }}>
           <h3 style={{ color: '#F5E642', marginBottom: '0.5rem' }}>🔧 Storm Damage Repairs via ProLnk</h3>
           <p style={{ color: '#94a3b8', lineHeight: 1.6, margin: 0 }}>After a tornado event, only use licensed, local contractors. ProLnk verifies every pro — no out-of-state plates, no door-knockers, no cash-only schemes.</p>
         </div>

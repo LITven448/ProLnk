@@ -59,7 +59,7 @@ export default function DFWOutdoorKitchenMaterialsGuide() {
         </div>
 
         <div style={{ background: '#111D35', borderRadius: 16, padding: 28, marginBottom: 24 }}>
-          <h2 style={{ fontSize: 18, fontWeight: 700, marginBottom: 20, color: '#F5E642′ }}>🔍 Material Recommendation Engine</h2>
+          <h2 style={{ fontSize: 18, fontWeight: 700, marginBottom: 20, color: '#F5E642' }}>🔍 Material Recommendation Engine</h2>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16, marginBottom: 20 }}>
             <div>
               <label style={{ display: 'block', color: '#9BA3B5', fontSize: 12, fontWeight: 700, marginBottom: 8 }}>KITCHEN ELEMENT</label>
@@ -77,12 +77,12 @@ export default function DFWOutdoorKitchenMaterialsGuide() {
             </div>
           </div>
           {result && (
-            <div style={{ background: '#0A1628', borderRadius: 12, padding: 20, borderLeft: '4px solid #F5E642′ }}>
+            <div style={{ background: '#0A1628', borderRadius: 12, padding: 20, borderLeft: '4px solid #F5E642' }}>
               <div style={{ color: '#F5E642', fontWeight: 700, fontSize: 13, marginBottom: 12 }}>RECOMMENDED MATERIAL</div>
               <p style={{ fontSize: 14, marginBottom: 16 }}>{result.material}</p>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12, marginBottom: 12 }}>
                 <div><div style={{ color: '#9BA3B5', fontSize: 11, fontWeight: 700, marginBottom: 4 }}>MAINTENANCE</div><div style={{ fontSize: 13 }}>{result.maintenance}</div></div>
-                <div><div style={{ color: '#9BA3B5', fontSize: 11, fontWeight: 700, marginBottom: 4 }}>COST RANGE</div><div style={{ fontSize: 13, color: '#F5E642′ }}>{result.cost}</div></div>
+                <div><div style={{ color: '#9BA3B5', fontSize: 11, fontWeight: 700, marginBottom: 4 }}>COST RANGE</div><div style={{ fontSize: 13, color: '#F5E642' }}>{result.cost}</div></div>
               </div>
               <div style={{ background: '#1A0A0A', border: '1px solid #5A2A2A', borderRadius: 8, padding: '10px 14px', fontSize: 13, color: '#FF9B9B' }}>⚠️ Avoid: {result.avoid}</div>
             </div>

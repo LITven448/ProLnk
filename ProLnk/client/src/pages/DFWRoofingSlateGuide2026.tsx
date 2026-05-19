@@ -19,16 +19,16 @@ export default function DFWRoofingSlateGuide2026() {
   return (
     <div style={{ backgroundColor: '#0A1628', minHeight: '100vh', color: '#ffffff', fontFamily: 'system-ui, sans-serif', padding: '24px' }}>
       <div style={{ maxWidth: '800px', margin: '0 auto' }}>
-        <div style={{ marginBottom: '8px', color: '#F5E642', fontSize: '14px', fontWeight: '600′ }}>🏠 DFW ROOFING GUIDE 2026</div>
-        <h1 style={{ fontSize: '32px', fontWeight: '800', marginBottom: '12px', lineHeight: '1.2′ }}>Natural Slate Roofing in DFW</h1>
+        <div style={{ marginBottom: '8px', color: '#F5E642', fontSize: '14px', fontWeight: '600' }}>🏠 DFW ROOFING GUIDE 2026</div>
+        <h1 style={{ fontSize: '32px', fontWeight: '800', marginBottom: '12px', lineHeight: '1.2' }}>Natural Slate Roofing in DFW</h1>
         <p style={{ color: '#94a3b8', fontSize: '16px', marginBottom: '32px' }}>Slate outlasts the homes it covers — but DFW's unique conditions make it a specialty decision that requires careful evaluation.</p>
 
         <div style={{ backgroundColor: '#1e3a5f', borderRadius: '12px', padding: '24px', marginBottom: '24px' }}>
           <h2 style={{ color: '#F5E642', fontSize: '20px', fontWeight: '700', marginBottom: '16px' }}>🪨 Natural Slate Facts for DFW</h2>
           {[['Lifespan','75–150 years — natural slate genuinely outlasts most DFW homes (average DFW home age: 28 years)'],['Weight','800–1,500 lbs per square (100 sqft). Asphalt shingles: 250–400 lbs/square. Structural assessment required.'],['DFW Hail Performance','Excellent. Slate rated Class 4 impact resistance — the highest rating. Best option for hail-prone DFW.'],['Cost Installed','$25–$40 per square foot in DFW metro (2026). A 2,500 sqft home = $62,500–$100,000+.'],['Fire Rating','Class A — the highest fire resistance rating. Fully non-combustible.'],['Installer Availability','Fewer than 15 certified natural slate installers in DFW metro area. Scheduling lead times: 4–12 months.']].map(([label, value]) => (
-            <div key={label} style={{ padding: '12px 0', borderBottom: '1px solid #334155′ }}>
+            <div key={label} style={{ padding: '12px 0', borderBottom: '1px solid #334155' }}>
               <div style={{ color: '#F5E642', fontWeight: '700', fontSize: '13px', marginBottom: '4px' }}>{label}</div>
-              <div style={{ color: '#cbd5e1', fontSize: '14px', lineHeight: '1.5′ }}>{value}</div>
+              <div style={{ color: '#cbd5e1', fontSize: '14px', lineHeight: '1.5' }}>{value}</div>
             </div>
           ))}
         </div>
@@ -38,7 +38,7 @@ export default function DFWRoofingSlateGuide2026() {
           {[['🌡️ Thermal Expansion','DFW temperature swings (15°F to 110°F) require proper flashing and installation technique — slate is rigid and improperly fastened slate cracks'],['🌧️ Flat Sections','Slate minimum pitch is 4:12 — many DFW homes have porch or garage extensions with lower pitches requiring different materials in those areas'],['🔧 Repair Specialists','When a slate tile breaks (and some will), you need a slate specialist — a standard DFW roofer can cause more damage attempting repairs'],['🏠 HOA Approval','Many DFW HOAs require approval for roofing material changes — slate approval is usually straightforward given its premium nature']].map(([title, desc]) => (
             <div key={title} style={{ backgroundColor: '#0A1628', borderRadius: '8px', padding: '14px', marginBottom: '10px' }}>
               <div style={{ fontWeight: '700', marginBottom: '6px', fontSize: '14px' }}>{title}</div>
-              <div style={{ color: '#94a3b8', fontSize: '13px', lineHeight: '1.5′ }}>{desc}</div>
+              <div style={{ color: '#94a3b8', fontSize: '13px', lineHeight: '1.5' }}>{desc}</div>
             </div>
           ))}
         </div>
@@ -64,12 +64,12 @@ export default function DFWRoofingSlateGuide2026() {
             style={{ backgroundColor: '#F5E642', color: '#0A1628', border: 'none', borderRadius: '8px', padding: '12px 24px', fontSize: '15px', fontWeight: '700', cursor: 'pointer', width: '100%' }}>
             Check Slate Feasibility →
           </button>
-          {result && <div style={{ marginTop: '16px', backgroundColor: '#0A1628', borderRadius: '8px', padding: '16px', color: '#cbd5e1', fontSize: '15px', lineHeight: '1.7′ }}>{result}</div>}
+          {result && <div style={{ marginTop: '16px', backgroundColor: '#0A1628', borderRadius: '8px', padding: '16px', color: '#cbd5e1', fontSize: '15px', lineHeight: '1.7' }}>{result}</div>}
         </div>
 
         <div style={{ backgroundColor: '#1e3a5f', borderRadius: '12px', padding: '20px' }}>
           <div style={{ color: '#F5E642', fontWeight: '700', marginBottom: '8px' }}>🏠 ProLnk Tip</div>
-          <div style={{ color: '#94a3b8', fontSize: '14px', lineHeight: '1.6′ }}>ProLnk maintains a short list of DFW-area certified slate installers — one of the scarcest contractor categories in North Texas. Natural slate installation is a lifetime investment that dramatically increases home value and is fully documented in the ProLnk Home Health Vault.</div>
+          <div style={{ color: '#94a3b8', fontSize: '14px', lineHeight: '1.6' }}>ProLnk maintains a short list of DFW-area certified slate installers — one of the scarcest contractor categories in North Texas. Natural slate installation is a lifetime investment that dramatically increases home value and is fully documented in the ProLnk Home Health Vault.</div>
         </div>
       </div>
     </div>

@@ -39,7 +39,7 @@ export default function DFWHomeStudioGuide2026() {
             {budgets.map((b, i) => (
               <button key={b.label} onClick={() => setSelected(i)}
                 style={{ padding: '8px 14px', borderRadius: 8, border: 'none', cursor: 'pointer', fontSize: 13,
-                  background: selected === i ? '#F5E642′ : '#1e3a5f', color: selected === i ? '#0A1628' : '#fff', fontWeight: selected === i ? 700 : 400 }}>
+                  background: selected === i ? '#F5E642' : '#1e3a5f', color: selected === i ? '#0A1628' : '#fff', fontWeight: selected === i ? 700 : 400 }}>
                 {b.label}
               </button>
             ))}
@@ -56,7 +56,7 @@ export default function DFWHomeStudioGuide2026() {
           <h3 style={{ color: '#F5E642', fontSize: 16, marginBottom: 12 }}>❄️ HVAC is the Silent Killer</h3>
           {['DFW summers require AC nearly year-round — duct noise ruins recordings','Mini-split systems are ideal: quiet, zoned, no ductwork through studio walls','Variable-speed compressors run quieter than single-stage units','Schedule HVAC off during tracking sessions if budget system is too loud'].map(tip => (
             <div key={tip} style={{ display: 'flex', gap: 10, marginBottom: 10 }}>
-              <span style={{ color: '#F5E642′ }}>→</span>
+              <span style={{ color: '#F5E642' }}>→</span>
               <span style={{ color: '#94a3b8', fontSize: 13 }}>{tip}</span>
             </div>
           ))}
@@ -66,7 +66,7 @@ export default function DFWHomeStudioGuide2026() {
           <h3 style={{ color: '#F5E642', fontSize: 16, marginBottom: 12 }}>⚡ Electrical Must-Haves</h3>
           {['Dedicated circuit prevents ground hum from shared lines','20A circuit for pro gear: interface, monitors, computer, lighting','UPS (uninterruptible power supply) protects against ERCOT grid blips','Consult licensed electrician — unpermitted work voids insurance'].map(tip => (
             <div key={tip} style={{ display: 'flex', gap: 10, marginBottom: 10 }}>
-              <span style={{ color: '#F5E642′ }}>→</span>
+              <span style={{ color: '#F5E642' }}>→</span>
               <span style={{ color: '#94a3b8', fontSize: 13 }}>{tip}</span>
             </div>
           ))}

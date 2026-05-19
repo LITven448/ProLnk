@@ -53,7 +53,7 @@ export default function DFWHomeValueCalculatorGuide() {
           3–8% in DFW — sometimes more in fast-moving markets. Here is how to get a sharper number.
         </p>
 
-        <div style={{ background: '#fff', borderRadius: 12, padding: 32, marginBottom: 32, border: '1px solid #e8e3d9′ }}>
+        <div style={{ background: '#fff', borderRadius: 12, padding: 32, marginBottom: 32, border: '1px solid #e8e3d9' }}>
           <h2 style={{ fontSize: 22, fontWeight: 700, marginBottom: 8 }}>🏠 Why AVMs Miss in DFW</h2>
           <ul style={{ fontSize: 15, lineHeight: 2, color: '#444', paddingLeft: 20 }}>
             <li>DFW has hyper-local micro-markets — street-to-street value swings are common</li>
@@ -63,7 +63,7 @@ export default function DFWHomeValueCalculatorGuide() {
           </ul>
         </div>
 
-        <div style={{ background: '#fff', borderRadius: 12, padding: 32, marginBottom: 32, border: '1px solid #e8e3d9′ }}>
+        <div style={{ background: '#fff', borderRadius: 12, padding: 32, marginBottom: 32, border: '1px solid #e8e3d9' }}>
           <h2 style={{ fontSize: 22, fontWeight: 700, marginBottom: 20 }}>📊 DFW Value Estimator</h2>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16, marginBottom: 20 }}>
             <div>
@@ -109,7 +109,7 @@ export default function DFWHomeValueCalculatorGuide() {
           )}
         </div>
 
-        <div style={{ background: '#fff', borderRadius: 12, padding: 32, border: '1px solid #e8e3d9′ }}>
+        <div style={{ background: '#fff', borderRadius: 12, padding: 32, border: '1px solid #e8e3d9' }}>
           <h2 style={{ fontSize: 20, fontWeight: 700, marginBottom: 12 }}>📋 How to Get a Better Estimate</h2>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: 16 }}>
             {[

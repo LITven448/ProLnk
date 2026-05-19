@@ -61,14 +61,14 @@ export default function DFWSpareRoomRenovationGuide() {
         </p>
 
         <div style={{ background: '#111E35', borderRadius: 12, padding: 24, marginBottom: 24 }}>
-          <h2 style={{ fontSize: 16, fontWeight: 700, marginBottom: 16, color: '#F5E642′ }}>🏠 Conversion Options</h2>
+          <h2 style={{ fontSize: 16, fontWeight: 700, marginBottom: 16, color: '#F5E642' }}>🏠 Conversion Options</h2>
           {CONVERSIONS.map((c) => (
             <div key={c.use} style={{ borderBottom: '1px solid #1E2F4A', paddingBottom: 16, marginBottom: 16 }}>
               <div style={{ fontWeight: 700, fontSize: 15, marginBottom: 4 }}>{c.use}</div>
               <div style={{ fontSize: 13, color: '#8A9BC0', marginBottom: 4 }}>📋 Permits: {c.permits}</div>
               <div style={{ display: 'flex', gap: 16, fontSize: 13 }}>
-                <span style={{ color: '#F5E642′ }}>💰 {c.cost}</span>
-                <span style={{ color: '#4ADE80′ }}>📈 {c.valueImpact}</span>
+                <span style={{ color: '#F5E642' }}>💰 {c.cost}</span>
+                <span style={{ color: '#4ADE80' }}>📈 {c.valueImpact}</span>
               </div>
               <div style={{ fontSize: 12, color: '#6B7FA0', marginTop: 4 }}>{c.notes}</div>
             </div>
@@ -76,7 +76,7 @@ export default function DFWSpareRoomRenovationGuide() {
         </div>
 
         <div style={{ background: '#111E35', borderRadius: 12, padding: 24, marginBottom: 24 }}>
-          <h2 style={{ fontSize: 16, fontWeight: 700, marginBottom: 16, color: '#F5E642′ }}>🔧 Get Your Recommendation</h2>
+          <h2 style={{ fontSize: 16, fontWeight: 700, marginBottom: 16, color: '#F5E642' }}>🔧 Get Your Recommendation</h2>
           <div style={{ display: 'flex', flexDirection: 'column', gap: 14 }}>
             <div>
               <label style={{ fontSize: 13, color: '#8A9BC0', display: 'block', marginBottom: 6 }}>Current Room Use</label>
@@ -104,12 +104,12 @@ export default function DFWSpareRoomRenovationGuide() {
             </button>
           </div>
           {result && (
-            <div style={{ marginTop: 20, background: '#0A1628', borderRadius: 10, padding: 20, borderLeft: '4px solid #F5E642′ }}>
+            <div style={{ marginTop: 20, background: '#0A1628', borderRadius: 10, padding: 20, borderLeft: '4px solid #F5E642' }}>
               <div style={{ fontWeight: 700, fontSize: 16, marginBottom: 10 }}>✅ {result.use} Conversion</div>
               <div style={{ fontSize: 13, color: '#8A9BC0', marginBottom: 6 }}>📋 {result.permits}</div>
               <div style={{ fontSize: 14, color: '#F5E642', marginBottom: 4 }}>Est. Cost: {result.cost}</div>
               <div style={{ fontSize: 14, color: '#4ADE80', marginBottom: 8 }}>Value Impact: {result.valueImpact}</div>
-              <div style={{ fontSize: 13, color: '#6B7FA0′ }}>💡 {result.notes}</div>
+              <div style={{ fontSize: 13, color: '#6B7FA0' }}>💡 {result.notes}</div>
             </div>
           )}
         </div>

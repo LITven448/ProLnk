@@ -28,7 +28,7 @@ export default function DFWAtticInsulationGuide2026() {
         <div style={{ background: '#0f2444', borderRadius: 10, padding: 20, border: '1px solid #1e3a5f', marginBottom: 24 }}>
           <div style={{ fontWeight: 700, color: '#F5E642', marginBottom: 12, fontSize: 18 }}>☀️ The DFW Insulation Crisis</div>
           <div style={{ color: '#cbd5e1', fontSize: 15, lineHeight: 1.7 }}>
-            Energy.gov recommends <strong style={{ color: '#F5E642′ }}>R-38 to R-60</strong> for DFW (Climate Zone 3). The average DFW home built before 2005 has R-11 to R-19. That gap costs homeowners <strong style={{ color: '#F5E642' }}>$500-900/year</strong> in excess cooling costs.
+            Energy.gov recommends <strong style={{ color: '#F5E642' }}>R-38 to R-60</strong> for DFW (Climate Zone 3). The average DFW home built before 2005 has R-11 to R-19. That gap costs homeowners <strong style={{ color: '#F5E642' }}>$500-900/year</strong> in excess cooling costs.
           </div>
         </div>
 
@@ -50,12 +50,12 @@ export default function DFWAtticInsulationGuide2026() {
         <div style={{ background: '#0f2444', borderRadius: 12, padding: 24, border: '1px solid #F5E642', marginBottom: 24 }}>
           <h2 style={{ color: '#F5E642', fontWeight: 700, marginBottom: 16 }}>📊 Upgrade ROI Calculator</h2>
           <div style={{ marginBottom: 16 }}>
-            <label style={{ display: 'block', marginBottom: 8, color: '#94a3b8′ }}>Current insulation level: <strong style={{ color: '#F5E642' }}>R-{currentR}</strong></label>
-            <input type="range" min={0} max={50} value={currentR} onChange={(e) => setCurrentR(Number(e.target.value))} style={{ width: '100%', accentColor: '#F5E642′ }} />
+            <label style={{ display: 'block', marginBottom: 8, color: '#94a3b8' }}>Current insulation level: <strong style={{ color: '#F5E642' }}>R-{currentR}</strong></label>
+            <input type="range" min={0} max={50} value={currentR} onChange={(e) => setCurrentR(Number(e.target.value))} style={{ width: '100%', accentColor: '#F5E642' }} />
           </div>
           <div style={{ marginBottom: 16 }}>
-            <label style={{ display: 'block', marginBottom: 8, color: '#94a3b8′ }}>Attic sq ft: <strong style={{ color: '#F5E642' }}>{sqft.toLocaleString()}</strong></label>
-            <input type="range" min={500} max={4000} step={100} value={sqft} onChange={(e) => setSqft(Number(e.target.value))} style={{ width: '100%', accentColor: '#F5E642′ }} />
+            <label style={{ display: 'block', marginBottom: 8, color: '#94a3b8' }}>Attic sq ft: <strong style={{ color: '#F5E642' }}>{sqft.toLocaleString()}</strong></label>
+            <input type="range" min={500} max={4000} step={100} value={sqft} onChange={(e) => setSqft(Number(e.target.value))} style={{ width: '100%', accentColor: '#F5E642' }} />
           </div>
           <button onClick={calcROI} style={{ background: '#F5E642', color: '#0A1628', border: 'none', borderRadius: 8, padding: '10px 24px', fontWeight: 700, cursor: 'pointer', fontSize: 15 }}>
             Calculate My ROI

@@ -34,7 +34,7 @@ export default function DFWBuilderWarrantyGuide() {
 
   const getStatus = (active: boolean) => active
     ? { label: 'ACTIVE', color: '#22c55e' }
-    : { label: 'EXPIRED', color: '#ef4444′ };
+    : { label: 'EXPIRED', color: '#ef4444' };
 
   const inspectItems = [
     yr1Active && 'Document all cosmetic defects NOW before 1-year expires',
@@ -72,7 +72,7 @@ export default function DFWBuilderWarrantyGuide() {
         </div>
 
         <div style={{ background: '#0d1f38', borderRadius: 16, padding: 32, marginBottom: 32, border: '1px solid #1e3a5f' }}>
-          <h2 style={{ fontSize: 20, fontWeight: 700, marginBottom: 24, color: '#F5E642′ }}>🏠 Check Your Coverage</h2>
+          <h2 style={{ fontSize: 20, fontWeight: 700, marginBottom: 24, color: '#F5E642' }}>🏠 Check Your Coverage</h2>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 24, marginBottom: 24 }}>
             <div>
               <label style={{ color: '#94a3b8', fontSize: 13, fontWeight: 600 }}>Home Age (Years)</label>
@@ -90,10 +90,10 @@ export default function DFWBuilderWarrantyGuide() {
             </div>
           </div>
           <div style={{ background: '#1a2a4a', borderRadius: 12, padding: 20 }}>
-            <div style={{ fontSize: 15, fontWeight: 700, marginBottom: 12, color: '#F5E642′ }}>📋 What To Do Right Now</div>
+            <div style={{ fontSize: 15, fontWeight: 700, marginBottom: 12, color: '#F5E642' }}>📋 What To Do Right Now</div>
             {inspectItems.map((item, i) => (
               <div key={i} style={{ display: 'flex', gap: 10, marginBottom: 8 }}>
-                <span style={{ color: '#F5E642′ }}>→</span>
+                <span style={{ color: '#F5E642' }}>→</span>
                 <span style={{ color: '#cbd5e1', fontSize: 14 }}>{item as string}</span>
               </div>
             ))}
@@ -102,7 +102,7 @@ export default function DFWBuilderWarrantyGuide() {
 
         {Object.entries(COVERAGE).map(([key, section]) => (
           <div key={key} style={{ background: '#0d1f38', borderRadius: 16, padding: 28, marginBottom: 20, border: '1px solid #1e3a5f' }}>
-            <h3 style={{ fontSize: 17, fontWeight: 700, marginBottom: 16, color: '#F5E642′ }}>{section.label}</h3>
+            <h3 style={{ fontSize: 17, fontWeight: 700, marginBottom: 16, color: '#F5E642' }}>{section.label}</h3>
             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 20 }}>
               <div>
                 <div style={{ color: '#22c55e', fontWeight: 700, fontSize: 13, marginBottom: 8 }}>✓ COVERED</div>
@@ -121,7 +121,7 @@ export default function DFWBuilderWarrantyGuide() {
         ))}
 
         <div style={{ background: '#1a2a0a', borderRadius: 16, padding: 24, border: '1px solid #2a4a1a' }}>
-          <h3 style={{ fontSize: 17, fontWeight: 700, marginBottom: 12, color: '#F5E642′ }}>📞 How to File a Warranty Claim</h3>
+          <h3 style={{ fontSize: 17, fontWeight: 700, marginBottom: 12, color: '#F5E642' }}>📞 How to File a Warranty Claim</h3>
           {['Submit written request to builder warranty department (email creates paper trail)', 'Include photos, dates noticed, and description of defect', 'Request written confirmation of receipt within 5 business days', 'Builder must respond within 10 days under Texas law (Tex. Prop. Code 430)', 'If denied, escalate to Texas Real Estate Commission or file in small claims court'].map((step, i) => (
             <div key={i} style={{ display: 'flex', gap: 14, marginBottom: 12 }}>
               <div style={{ background: '#F5E642', color: '#0A1628', borderRadius: '50%', width: 24, height: 24, display: 'flex', alignItems: 'center', justifyContent: 'center', fontWeight: 800, fontSize: 13, flexShrink: 0 }}>{i + 1}</div>

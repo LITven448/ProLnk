@@ -49,11 +49,11 @@ export default function ProLnkJoinPage() {
           <p style={{ color: '#94a3b8', fontSize: 17 }}>Dallas-Fort Worth's home services network — built for homeowners and pros</p>
         </div>
         <div style={{ background: '#111d30', borderRadius: 16, padding: 24, marginBottom: 28, border: '1px solid #1e3a5f' }}>
-          <div style={{ fontWeight: 700, fontSize: 17, marginBottom: 16, color: '#F5E642′ }}>I am joining as a...</div>
+          <div style={{ fontWeight: 700, fontSize: 17, marginBottom: 16, color: '#F5E642' }}>I am joining as a...</div>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: 12 }}>
             {(['homeowner', 'partner', 'both'] as const).map(r => (
               <button key={r} onClick={() => setRole(r)}
-                style={{ padding: '16px 8px', background: role === r ? '#F5E642′ : '#0A1628', color: role === r ? '#0A1628' : '#cbd5e1', border: '1.5px solid #1e3a5f', borderRadius: 12, fontWeight: 700, fontSize: 15, cursor: ’pointer', textTransform: 'capitalize' }}>
+                style={{ padding: '16px 8px', background: role === r ? '#F5E642' : '#0A1628', color: role === r ? '#0A1628' : '#cbd5e1', border: '1.5px solid #1e3a5f', borderRadius: 12, fontWeight: 700, fontSize: 15, cursor: 'pointer', textTransform: 'capitalize' }}>
                 {r === 'homeowner' ? '🏠 Homeowner' : r === 'partner' ? '🔧 Partner' : '⭐ Both'}
               </button>
             ))}
@@ -61,8 +61,8 @@ export default function ProLnkJoinPage() {
         </div>
         {journey && (
           <div>
-            <div style={{ background: '#111d30', borderRadius: 16, padding: 24, marginBottom: 20, border: '2px solid #F5E642′ }}>
-              <div style={{ fontWeight: 700, fontSize: 18, marginBottom: 20, color: '#F5E642′ }}>Your {journey.title} — Days 1-7</div>
+            <div style={{ background: '#111d30', borderRadius: 16, padding: 24, marginBottom: 20, border: '2px solid #F5E642' }}>
+              <div style={{ fontWeight: 700, fontSize: 18, marginBottom: 20, color: '#F5E642' }}>Your {journey.title} — Days 1-7</div>
               {journey.steps.map((s, i) => (
                 <div key={i} style={{ display: 'flex', gap: 16, marginBottom: 16, alignItems: 'flex-start' }}>
                   <div style={{ minWidth: 70, color: '#F5E642', fontWeight: 700, fontSize: 13 }}>{s.day}</div>
@@ -72,10 +72,10 @@ export default function ProLnkJoinPage() {
               ))}
             </div>
             <div style={{ background: '#111d30', borderRadius: 16, padding: 24, border: '1px solid #1e3a5f' }}>
-              <div style={{ fontWeight: 700, fontSize: 16, marginBottom: 14, color: '#F5E642′ }}>✨ Your Perks</div>
+              <div style={{ fontWeight: 700, fontSize: 16, marginBottom: 14, color: '#F5E642' }}>✨ Your Perks</div>
               {journey.perks.map((p, i) => (
                 <div key={i} style={{ display: 'flex', gap: 10, padding: '8px 0', color: '#94a3b8', fontSize: 14, borderBottom: '1px solid #1e3a5f' }}>
-                  <span style={{ color: '#F5E642′ }}>→</span> {p}
+                  <span style={{ color: '#F5E642' }}>→</span> {p}
                 </div>
               ))}
             </div>

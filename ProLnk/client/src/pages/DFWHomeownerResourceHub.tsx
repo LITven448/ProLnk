@@ -75,7 +75,7 @@ export default function DFWHomeownerResourceHub() {
         <p style={{ color: '#F5E642', fontWeight: 600, marginBottom: 12 }}>What do you need?</p>
         <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap' }}>
           {needs.map(n => (
-            <button key={n.id} onClick={() => setNeed(n.id)} style={{ padding: '7px 16px', borderRadius: 20, border: 'none', cursor: 'pointer', background: need === n.id ? '#F5E642′ : '#1C2E45', color: need === n.id ? '#0A1628' : '#aaa', fontWeight: 600, fontSize: '0.85rem' }}>
+            <button key={n.id} onClick={() => setNeed(n.id)} style={{ padding: '7px 16px', borderRadius: 20, border: 'none', cursor: 'pointer', background: need === n.id ? '#F5E642' : '#1C2E45', color: need === n.id ? '#0A1628' : '#aaa', fontWeight: 600, fontSize: '0.85rem' }}>
               {n.label}
             </button>
           ))}

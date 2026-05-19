@@ -53,11 +53,11 @@ export default function DFWHVACMiniSplitCalc() {
           🌡️ DFW Rule of Thumb: <span style={{ fontWeight: 400 }}>For additions, garages, bonus rooms, and sunrooms — mini-split almost always wins in DFW. Central ductwork extension costs $3,000–$8,000+ and usually doesn't solve the heat problem.</span>
         </div>
 
-        <h2 style={{ fontSize: '1.1rem', fontWeight: 700, marginBottom: '0.75rem', color: '#F5E642′ }}>Step 1: Select Your Space Type</h2>
+        <h2 style={{ fontSize: '1.1rem', fontWeight: 700, marginBottom: '0.75rem', color: '#F5E642' }}>Step 1: Select Your Space Type</h2>
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0.5rem', marginBottom: '1.5rem' }}>
           {spaceTypes.map((s, i) => (
             <button key={i} onClick={() => setSpaceIdx(i)}
-              style={{ background: spaceIdx === i ? '#162035′ : '#111D33', border: `1.5px solid ${spaceIdx === i ? '#F5E642' : '#1E2D45'}`, borderRadius: 8, padding: '0.75rem', cursor: ’pointer', color: '#E8EAF0', textAlign: 'left' }}>
+              style={{ background: spaceIdx === i ? '#162035' : '#111D33', border: `1.5px solid ${spaceIdx === i ? '#F5E642' : '#1E2D45'}`, borderRadius: 8, padding: '0.75rem', cursor: 'pointer', color: '#E8EAF0', textAlign: 'left' }}>
               <div style={{ fontSize: '1.25rem', marginBottom: '0.25rem' }}>{s.icon}</div>
               <div style={{ fontWeight: 700, fontSize: '0.9rem' }}>{s.label}</div>
             </button>
@@ -66,18 +66,18 @@ export default function DFWHVACMiniSplitCalc() {
 
         {space && (
           <div style={{ background: miniWins ? '#0D1F0D' : '#1A1A0D', border: `1.5px solid ${miniWins ? '#7ED321' : '#F5E642'}`, borderRadius: 10, padding: '1rem 1.25rem', marginBottom: '1.5rem' }}>
-            <div style={{ fontWeight: 800, color: miniWins ? '#7ED321′ : '#F5E642', marginBottom: '0.5rem' }}>
+            <div style={{ fontWeight: 800, color: miniWins ? '#7ED321' : '#F5E642', marginBottom: '0.5rem' }}>
               {miniWins ? '✅ Mini-Split Recommended for DFW' : '⚖️ Compare Both Options for DFW'}
             </div>
             <p style={{ color: '#E8EAF0', fontSize: '0.9rem' }}>{space.baseReason}</p>
           </div>
         )}
 
-        <h2 style={{ fontSize: '1.1rem', fontWeight: 700, marginBottom: '0.75rem', color: '#F5E642′ }}>Step 2: Space Size (sq ft)</h2>
+        <h2 style={{ fontSize: '1.1rem', fontWeight: 700, marginBottom: '0.75rem', color: '#F5E642' }}>Step 2: Space Size (sq ft)</h2>
         <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5rem', marginBottom: '1.5rem' }}>
           {sqftOptions.map(s => (
             <button key={s} onClick={() => setSqft(s)}
-              style={{ background: sqft === s ? '#F5E642′ : '#111D33', border: `1.5px solid ${sqft === s ? '#F5E642' : '#1E2D45'}`, borderRadius: 8, padding: '0.5rem 1rem', cursor: ’pointer', color: sqft === s ? '#0A1628′ : '#E8EAF0', fontWeight: 700 }}>
+              style={{ background: sqft === s ? '#F5E642' : '#111D33', border: `1.5px solid ${sqft === s ? '#F5E642' : '#1E2D45'}`, borderRadius: 8, padding: '0.5rem 1rem', cursor: 'pointer', color: sqft === s ? '#0A1628' : '#E8EAF0', fontWeight: 700 }}>
               {s} sq ft
             </button>
           ))}
@@ -99,11 +99,11 @@ export default function DFWHVACMiniSplitCalc() {
                 <div style={{ color: '#7ED321', fontWeight: 800, fontSize: '1.5rem' }}>${miniCost.low.toLocaleString()}–${miniCost.high.toLocaleString()}</div>
                 <div style={{ color: '#8A9BB5', fontSize: '0.8rem', marginTop: '0.25rem' }}>Installed, DFW labor rates</div>
                 <div style={{ marginTop: '0.75rem', fontSize: '0.85rem' }}>
-                  <div style={{ color: '#7ED321′ }}>✓ Precise temp control</div>
-                  <div style={{ color: '#7ED321′ }}>✓ High efficiency (18–26 SEER)</div>
-                  <div style={{ color: '#7ED321′ }}>✓ No duct heat gain</div>
-                  <div style={{ color: '#8A9BB5′ }}>✗ Separate thermostat</div>
-                  <div style={{ color: '#8A9BB5′ }}>✗ Wall unit visible</div>
+                  <div style={{ color: '#7ED321' }}>✓ Precise temp control</div>
+                  <div style={{ color: '#7ED321' }}>✓ High efficiency (18–26 SEER)</div>
+                  <div style={{ color: '#7ED321' }}>✓ No duct heat gain</div>
+                  <div style={{ color: '#8A9BB5' }}>✗ Separate thermostat</div>
+                  <div style={{ color: '#8A9BB5' }}>✗ Wall unit visible</div>
                 </div>
               </div>
               <div style={{ background: '#111D33', border: '1.5px solid #1E2D45', borderRadius: 10, padding: '1rem' }}>
@@ -111,8 +111,8 @@ export default function DFWHVACMiniSplitCalc() {
                 <div style={{ color: '#4A9EFF', fontWeight: 800, fontSize: '1.5rem' }}>${ductCost.low.toLocaleString()}–${ductCost.high.toLocaleString()}</div>
                 <div style={{ color: '#8A9BB5', fontSize: '0.8rem', marginTop: '0.25rem' }}>DFW market estimate</div>
                 <div style={{ marginTop: '0.75rem', fontSize: '0.85rem' }}>
-                  <div style={{ color: '#7ED321′ }}>✓ Single thermostat control</div>
-                  <div style={{ color: '#7ED321′ }}>✓ No visible equipment</div>
+                  <div style={{ color: '#7ED321' }}>✓ Single thermostat control</div>
+                  <div style={{ color: '#7ED321' }}>✓ No visible equipment</div>
                   <div style={{ color: '#E87D4A' }}>✗ May not fix hot spots</div>
                   <div style={{ color: '#E87D4A' }}>✗ Duct heat loss in DFW attics</div>
                   <div style={{ color: '#E87D4A' }}>✗ May overload existing unit</div>

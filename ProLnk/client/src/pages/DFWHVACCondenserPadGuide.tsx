@@ -56,7 +56,7 @@ export default function DFWHVACCondenserPadGuide() {
   return (
     <div style={{ background: '#0A1628', minHeight: '100vh', color: '#E8EAF0', fontFamily: 'sans-serif', padding: '2rem' }}>
       <div style={{ maxWidth: 760, margin: '0 auto' }}>
-        <div style={{ marginBottom: '0.5rem', fontSize: '0.85rem', color: '#F5E642′ }}>🧱 DFW HVAC Guide</div>
+        <div style={{ marginBottom: '0.5rem', fontSize: '0.85rem', color: '#F5E642' }}>🧱 DFW HVAC Guide</div>
         <h1 style={{ fontSize: '1.9rem', fontWeight: 800, marginBottom: '0.5rem', color: '#FFFFFF' }}>
           Condenser Pad Guide for DFW
         </h1>
@@ -64,7 +64,7 @@ export default function DFWHVACCondenserPadGuide() {
           DFW clay soil is one of the most expansive in the US. It shrinks in drought years and swells in wet years — shifting condenser pads and damaging compressors. Most homeowners do not know to check this.
         </p>
 
-        <div style={{ background: '#111E35', borderRadius: 10, padding: '1rem 1.25rem', marginBottom: '2rem', borderLeft: '4px solid #F5E642′ }}>
+        <div style={{ background: '#111E35', borderRadius: 10, padding: '1rem 1.25rem', marginBottom: '2rem', borderLeft: '4px solid #F5E642' }}>
           <div style={{ fontWeight: 700, color: '#F5E642', marginBottom: '0.25rem' }}>Why Pad Level Matters</div>
           <div style={{ color: '#9CA3B0', fontSize: '0.9rem', lineHeight: 1.5 }}>
             Compressors are lubricated by refrigerant oil that circulates through the system. When the unit tilts, oil pools on the low side. Over months, the compressor bearing runs dry. A $400 pad repair prevents a $2,500+ compressor replacement.
@@ -79,7 +79,7 @@ export default function DFWHVACCondenserPadGuide() {
               onClick={() => setSelected(p)}
               style={{
                 background: selected === p ? '#1E3A5F' : '#111E35',
-                border: selected === p ? '1.5px solid #F5E642′ : '1.5px solid #1A2540',
+                border: selected === p ? '1.5px solid #F5E642' : '1.5px solid #1A2540',
                 borderRadius: 10, padding: '1rem 1.25rem', textAlign: 'left', cursor: 'pointer', color: '#E8EAF0',
               }}
             >
@@ -90,7 +90,7 @@ export default function DFWHVACCondenserPadGuide() {
         </div>
 
         {selected && (
-          <div style={{ background: '#111E35', borderRadius: 12, padding: '1.5rem', border: '1.5px solid #F5E642′ }}>
+          <div style={{ background: '#111E35', borderRadius: 12, padding: '1.5rem', border: '1.5px solid #F5E642' }}>
             <div style={{
               display: 'inline-block', padding: '0.35rem 1rem', borderRadius: 20, fontWeight: 800, marginBottom: '1rem',
               background: urgencyColor(selected.recommendation), color: '#FFFFFF', fontSize: '0.85rem',
@@ -114,14 +114,14 @@ export default function DFWHVACCondenserPadGuide() {
                 <div style={{ color: '#9CA3B0', fontSize: '0.75rem', marginBottom: '0.25rem' }}>RISK IF IGNORED</div>
                 <div style={{ color: '#C8D0DC', fontSize: '0.9rem' }}>{selected.risk}</div>
               </div>
-              <div style={{ background: '#0A1628', borderRadius: 8, padding: '0.75rem', borderLeft: '3px solid #F5E642', fontSize: '0.85rem', color: '#9CA3B0′ }}>
+              <div style={{ background: '#0A1628', borderRadius: 8, padding: '0.75rem', borderLeft: '3px solid #F5E642', fontSize: '0.85rem', color: '#9CA3B0' }}>
                 🌆 {selected.dfwNote}
               </div>
             </div>
           </div>
         )}
 
-        <div style={{ marginTop: '2rem', background: '#111E35', borderRadius: 10, padding: '1rem 1.25rem', fontSize: '0.85rem', color: '#9CA3B0′ }}>
+        <div style={{ marginTop: '2rem', background: '#111E35', borderRadius: 10, padding: '1rem 1.25rem', fontSize: '0.85rem', color: '#9CA3B0' }}>
           💡 How to Check: Use a standard level app on your phone against the flat top of the outdoor unit. More than 1/4 inch off level warrants attention.
         </div>
       </div>

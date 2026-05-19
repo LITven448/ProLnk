@@ -85,7 +85,7 @@ export default function DFWAlleyMaintenanceGuide() {
           <h2 style={{ color: '#F5E642', fontSize: '1.1rem', marginBottom: '0.75rem' }}>📋 The Short Answer</h2>
           <p style={{ color: '#94a3b8', lineHeight: 1.7, margin: 0 }}>
             DFW residential alleys are public right-of-way maintained by the city.
-            As an adjacent homeowner, you are responsible for <strong style={{ color: '#e2e8f0′ }}>keeping your side clear</strong> of debris, not dumping, and ensuring your structures (fences, sheds) do not encroach into the ROW.
+            As an adjacent homeowner, you are responsible for <strong style={{ color: '#e2e8f0' }}>keeping your side clear</strong> of debris, not dumping, and ensuring your structures (fences, sheds) do not encroach into the ROW.
             You cannot block alley access and must maintain vegetation on your property that could obstruct alley use.
           </p>
         </div>
@@ -112,7 +112,7 @@ export default function DFWAlleyMaintenanceGuide() {
           </div>
 
           {result && (
-            <div style={{ background: '#0A1628', borderRadius: 8, padding: '1.25rem', borderLeft: '4px solid #F5E642′ }}>
+            <div style={{ background: '#0A1628', borderRadius: 8, padding: '1.25rem', borderLeft: '4px solid #F5E642' }}>
               <div style={{ marginBottom: '0.75rem' }}>
                 <span style={{ color: '#64748b', fontSize: '0.8rem' }}>WHO&apos;S RESPONSIBLE</span>
                 <div style={{ color: '#F5E642', fontWeight: 600, marginTop: '0.2rem' }}>{result.responsible}</div>
@@ -130,7 +130,7 @@ export default function DFWAlleyMaintenanceGuide() {
                 <div style={{ color: '#e2e8f0', marginTop: '0.2rem' }}>{result.timeline}</div>
               </div>
               <div style={{ borderTop: '1px solid #1e2d47', paddingTop: '0.75rem' }}>
-                <span style={{ color: '#F5E642′ }}>💡 </span>
+                <span style={{ color: '#F5E642' }}>💡 </span>
                 <span style={{ color: '#94a3b8', fontSize: '0.9rem' }}>{result.tip}</span>
               </div>
             </div>

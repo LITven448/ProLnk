@@ -48,7 +48,7 @@ export default function DFWBestSchoolDistrictsGuide() {
           ].map(stat => (
             <div key={stat.label} style={{ background: 'rgba(245,230,66,0.08)', border: '1px solid rgba(245,230,66,0.2)', borderRadius: 12, padding: 16, textAlign: 'center' }}>
               <div style={{ fontSize: 28, marginBottom: 6 }}>{stat.icon}</div>
-              <div style={{ fontWeight: 700, fontSize: 14, color: '#F5E642′ }}>{stat.label}</div>
+              <div style={{ fontWeight: 700, fontSize: 14, color: '#F5E642' }}>{stat.label}</div>
               <div style={{ fontSize: 12, color: '#64748b', marginTop: 4 }}>{stat.sub}</div>
             </div>
           ))}
@@ -57,7 +57,7 @@ export default function DFWBestSchoolDistrictsGuide() {
         <div style={{ overflowX: 'auto', marginBottom: 36 }}>
           <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: 13 }}>
             <thead>
-              <tr style={{ background: '#F5E642', color: '#0A1628′ }}>
+              <tr style={{ background: '#F5E642', color: '#0A1628' }}>
                 {['#', 'District', 'City', 'TEA', 'SAT Avg', '👨‍🏫 Ratio', '🏈 Sports', '🎭 Arts', '📚 Academic', '🌍 Diversity', '🏡 Median Home'].map(h => (
                   <th key={h} style={{ padding: '9px 10px', textAlign: 'left', fontWeight: 700, whiteSpace: 'nowrap' }}>{h}</th>
                 ))}
@@ -72,9 +72,9 @@ export default function DFWBestSchoolDistrictsGuide() {
                   <td style={{ padding: '8px 10px', color: d.tea.includes('Exemplary') ? '#22c55e' : '#94a3b8', whiteSpace: 'nowrap' }}>{d.tea}</td>
                   <td style={{ padding: '8px 10px', color: d.sat >= 1250 ? '#22c55e' : '#fff' }}>{d.sat}</td>
                   <td style={{ padding: '8px 10px' }}>{d.ratio}</td>
-                  <td style={{ padding: '8px 10px', color: d.sports >= 90 ? '#f59e0b' : '#94a3b8′ }}>{d.sports}/100</td>
+                  <td style={{ padding: '8px 10px', color: d.sports >= 90 ? '#f59e0b' : '#94a3b8' }}>{d.sports}/100</td>
                   <td style={{ padding: '8px 10px' }}>{d.arts}/100</td>
-                  <td style={{ padding: '8px 10px', color: d.academics >= 94 ? '#22c55e' : '#94a3b8′ }}>{d.academics}/100</td>
+                  <td style={{ padding: '8px 10px', color: d.academics >= 94 ? '#22c55e' : '#94a3b8' }}>{d.academics}/100</td>
                   <td style={{ padding: '8px 10px' }}>{d.diversity}/100</td>
                   <td style={{ padding: '8px 10px', whiteSpace: 'nowrap' }}>${(d.medianHome / 1000).toFixed(0)}K</td>
                 </tr>
@@ -88,7 +88,7 @@ export default function DFWBestSchoolDistrictsGuide() {
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 20, marginBottom: 24 }}>
             <div>
               <label style={{ display: 'block', marginBottom: 8, color: '#94a3b8', fontSize: 13 }}>Max Home Budget</label>
-              <input type="range" min={400000} max={1000000} step={10000} value={budget} onChange={e => setBudget(Number(e.target.value))} style={{ width: '100%', accentColor: '#F5E642′ }} />
+              <input type="range" min={400000} max={1000000} step={10000} value={budget} onChange={e => setBudget(Number(e.target.value))} style={{ width: '100%', accentColor: '#F5E642' }} />
               <div style={{ color: '#F5E642', fontWeight: 700 }}>${budget.toLocaleString()}</div>
             </div>
             <div>
@@ -103,12 +103,12 @@ export default function DFWBestSchoolDistrictsGuide() {
           </div>
           {top3.length > 0 ? (
             <div>
-              <div style={{ marginBottom: 12, fontSize: 14, color: '#94a3b8′ }}>Top 3 ISDs for {priorityLabel} within your budget:</div>
+              <div style={{ marginBottom: 12, fontSize: 14, color: '#94a3b8' }}>Top 3 ISDs for {priorityLabel} within your budget:</div>
               <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 16 }}>
                 {top3.map((d, i) => (
-                  <div key={d.name} style={{ background: i === 0 ? 'rgba(245,230,66,0.15)' : 'rgba(255,255,255,0.05)', border: i === 0 ? '1px solid #F5E642′ : '1px solid rgba(255,255,255,0.1)', borderRadius: 12, padding: 16 }}>
+                  <div key={d.name} style={{ background: i === 0 ? 'rgba(245,230,66,0.15)' : 'rgba(255,255,255,0.05)', border: i === 0 ? '1px solid #F5E642' : '1px solid rgba(255,255,255,0.1)', borderRadius: 12, padding: 16 }}>
                     <div style={{ fontSize: 22, marginBottom: 4 }}>{i === 0 ? '🥇' : i === 1 ? '🥈' : '🥉'}</div>
-                    <div style={{ fontWeight: 700, color: i === 0 ? '#F5E642′ : '#fff', marginBottom: 2 }}>{d.name}</div>
+                    <div style={{ fontWeight: 700, color: i === 0 ? '#F5E642' : '#fff', marginBottom: 2 }}>{d.name}</div>
                     <div style={{ fontSize: 12, color: '#64748b', marginBottom: 4 }}>{d.city}</div>
                     <div style={{ fontSize: 13, color: '#22c55e' }}>{priorityLabel}: {getPriorityScore(d)}/100</div>
                     <div style={{ fontSize: 12, color: '#94a3b8', marginTop: 4 }}>Homes: ${(d.medianHome / 1000).toFixed(0)}K median</div>
@@ -122,7 +122,7 @@ export default function DFWBestSchoolDistrictsGuide() {
         </div>
 
         <div style={{ marginTop: 24, background: 'rgba(255,255,255,0.03)', borderRadius: 12, padding: 20, fontSize: 13, color: '#64748b' }}>
-          <strong style={{ color: '#94a3b8′ }}>Note on Texas School Sports:</strong> In Texas, high school sports — especially football — are a major factor in community identity. Allen ISD’s Eagle Stadium seats 18,000. Southlake Carroll Dragon football has won 7 state titles. When choosing an ISD, factor in the community culture around sports as a real quality-of-life element.
+          <strong style={{ color: '#94a3b8' }}>Note on Texas School Sports:</strong> In Texas, high school sports — especially football — are a major factor in community identity. Allen ISD's Eagle Stadium seats 18,000. Southlake Carroll Dragon football has won 7 state titles. When choosing an ISD, factor in the community culture around sports as a real quality-of-life element.
         </div>
       </div>
     </div>

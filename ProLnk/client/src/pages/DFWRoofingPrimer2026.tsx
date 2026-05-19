@@ -30,7 +30,7 @@ export default function DFWRoofingPrimer2026() {
       icon: '⭐',
       title: 'Experienced Homeowner Deep Dive',
       steps: [
-        '1. Decking condition matters: When replacing, specify 7/16″ or 1/2″ OSB or plywood decking. Avoid re-covering over old decking unless engineer-approved.',
+        '1. Decking condition matters: When replacing, specify 7/16" or 1/2" OSB or plywood decking. Avoid re-covering over old decking unless engineer-approved.',
         '2. Ventilation ratio: DFW code requires 1:150 ventilation ratio (attic sq ft to net free area). Improper ventilation voids many shingle warranties.',
         '3. Class 4 impact shingles: In DFW, Class 4 IR-rated shingles qualify for 20–30% insurance discounts. Calculate payback vs. premium cost.',
         '4. Radiant barrier: If replacing roof, add radiant barrier decking for $0.15–$0.25/sq ft during replacement — the only time it is cost-effective to install.',

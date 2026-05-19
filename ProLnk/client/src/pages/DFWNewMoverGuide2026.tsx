@@ -43,7 +43,7 @@ const originData: Record<string, { differences: string[]; surprises: string[] }>
       "HOA rules can be stricter than expected — read CC&Rs carefully",
       "Wildfire smoke from western states drifts in some summers",
       "The job market is extremely competitive and dynamic",
-      "Property tax bills arrive in October and are due January 31″,
+      "Property tax bills arrive in October and are due January 31",
     ],
   },
   south: {
@@ -64,10 +64,10 @@ const originData: Record<string, { differences: string[]; surprises: string[] }>
 };
 
 const firstThirtyDays = [
-  { week: "Week 1″, tasks: ["Register vehicle with Texas DMV (90-day window)", "Get Texas driver license (30-day window if employed)", "Set up utilities: Oncor/TXU Energy, Atmos Gas, city water"] },
-  { week: "Week 2″, tasks: ["File homestead exemption at county appraisal district", "Find your HOA contact and read CC&Rs cover to cover", "Locate nearest urgent care, ER, and primary care physicians"] },
-  { week: "Week 3″, tasks: ["Join neighborhood Facebook group and Nextdoor", "Explore your city park system and trail network", "Identify your school district and enrollment deadlines"] },
-  { week: "Week 4″, tasks: ["Attend a local community event or city council meeting", "Check your property tax appraisal and protest deadline", "Connect with a local real estate attorney for estate planning update"] },
+  { week: "Week 1", tasks: ["Register vehicle with Texas DMV (90-day window)", "Get Texas driver license (30-day window if employed)", "Set up utilities: Oncor/TXU Energy, Atmos Gas, city water"] },
+  { week: "Week 2", tasks: ["File homestead exemption at county appraisal district", "Find your HOA contact and read CC&Rs cover to cover", "Locate nearest urgent care, ER, and primary care physicians"] },
+  { week: "Week 3", tasks: ["Join neighborhood Facebook group and Nextdoor", "Explore your city park system and trail network", "Identify your school district and enrollment deadlines"] },
+  { week: "Week 4", tasks: ["Attend a local community event or city council meeting", "Check your property tax appraisal and protest deadline", "Connect with a local real estate attorney for estate planning update"] },
 ];
 
 export default function DFWNewMoverGuide2026() {
@@ -84,26 +84,26 @@ export default function DFWNewMoverGuide2026() {
   const selected = originData[origin];
 
   return (
-    <div style={{ background: "#0A1628″, minHeight: "100vh", color: "#fff", fontFamily: "sans-serif", padding: "40px 20px" }}>
+    <div style={{ background: "#0A1628", minHeight: "100vh", color: "#fff", fontFamily: "sans-serif", padding: "40px 20px" }}>
       <div style={{ maxWidth: 860, margin: "0 auto" }}>
-        <div style={{ marginBottom: 8, color: "#F5E642″, fontSize: 13, fontWeight: 700, letterSpacing: 2 }}>PROLNK GUIDE — DFW 2026</div>
+        <div style={{ marginBottom: 8, color: "#F5E642", fontSize: 13, fontWeight: 700, letterSpacing: 2 }}>PROLNK GUIDE — DFW 2026</div>
         <h1 style={{ fontSize: 36, fontWeight: 800, marginBottom: 8 }}>New Mover Guide: Welcome to DFW 🤠</h1>
         <p style={{ color: "#8899AA", fontSize: 16, marginBottom: 40 }}>Everything you need to know for your first 30 days in the Dallas-Fort Worth Metroplex.</p>
 
         <div style={{ background: "#111D2E", borderRadius: 12, padding: 28, marginBottom: 32 }}>
-          <h2 style={{ color: "#F5E642″, fontSize: 20, fontWeight: 700, marginBottom: 16 }}>🗺️ Your First 30 Days — Week by Week</h2>
+          <h2 style={{ color: "#F5E642", fontSize: 20, fontWeight: 700, marginBottom: 16 }}>🗺️ Your First 30 Days — Week by Week</h2>
           {firstThirtyDays.map((w) => (
             <div key={w.week} style={{ marginBottom: 16 }}>
-              <div style={{ color: "#F5E642″, fontWeight: 700, marginBottom: 6 }}>{w.week}</div>
+              <div style={{ color: "#F5E642", fontWeight: 700, marginBottom: 6 }}>{w.week}</div>
               {w.tasks.map((t, i) => (
-                <div key={i} style={{ color: "#CBD5E1″, fontSize: 14, marginBottom: 4, paddingLeft: 16 }}>✓ {t}</div>
+                <div key={i} style={{ color: "#CBD5E1", fontSize: 14, marginBottom: 4, paddingLeft: 16 }}>✓ {t}</div>
               ))}
             </div>
           ))}
         </div>
 
         <div style={{ background: "#111D2E", borderRadius: 12, padding: 28, marginBottom: 32 }}>
-          <h2 style={{ color: "#F5E642″, fontSize: 20, fontWeight: 700, marginBottom: 8 }}>🏡 DFW Culture Essentials</h2>
+          <h2 style={{ color: "#F5E642", fontSize: 20, fontWeight: 700, marginBottom: 8 }}>🏡 DFW Culture Essentials</h2>
           <p style={{ color: "#8899AA", fontSize: 14, marginBottom: 12 }}>Texas is its own world. Here is what every newcomer needs to understand.</p>
           {[
             "Texas pride is identity — it is not just patriotism, it is a lifestyle. Embrace it.",
@@ -112,16 +112,16 @@ export default function DFWNewMoverGuide2026() {
             "Big homes are normal — 2,500+ sqft starter homes are common in suburbs.",
             "Drought and hail are real risks — landscaping and roof insurance matter.",
           ].map((tip, i) => (
-            <div key={i} style={{ color: "#CBD5E1″, fontSize: 14, marginBottom: 8, paddingLeft: 12, borderLeft: "2px solid #F5E642" }}>{tip}</div>
+            <div key={i} style={{ color: "#CBD5E1", fontSize: 14, marginBottom: 8, paddingLeft: 12, borderLeft: "2px solid #F5E642" }}>{tip}</div>
           ))}
         </div>
 
         <div style={{ background: "#111D2E", borderRadius: 12, padding: 28 }}>
-          <h2 style={{ color: "#F5E642″, fontSize: 20, fontWeight: 700, marginBottom: 16 }}>📍 Where Are You Moving From?</h2>
+          <h2 style={{ color: "#F5E642", fontSize: 20, fontWeight: 700, marginBottom: 16 }}>📍 Where Are You Moving From?</h2>
           <div style={{ display: "flex", gap: 12, flexWrap: "wrap", marginBottom: 20 }}>
             {originOptions.map((o) => (
               <button key={o.value} onClick={() => { setOrigin(o.value); setShowGuide(true); }}
-                style={{ background: origin === o.value ? "#F5E642″ : "#1E2D42", color: origin === o.value ? "#0A1628" : "#fff", border: "none", borderRadius: 8, padding: "10px 18px", cursor: "pointer", fontWeight: 600, fontSize: 14 }}>
+                style={{ background: origin === o.value ? "#F5E642" : "#1E2D42", color: origin === o.value ? "#0A1628" : "#fff", border: "none", borderRadius: 8, padding: "10px 18px", cursor: "pointer", fontWeight: 600, fontSize: 14 }}>
                 {o.label}
               </button>
             ))}
@@ -129,12 +129,12 @@ export default function DFWNewMoverGuide2026() {
           {showGuide && selected && (
             <div>
               <div style={{ marginBottom: 20 }}>
-                <div style={{ color: "#F5E642″, fontWeight: 700, marginBottom: 10 }}>🔄 Key Differences from {originOptions.find(o => o.value === origin)?.label}</div>
-                {selected.differences.map((d, i) => <div key={i} style={{ color: "#CBD5E1″, fontSize: 14, marginBottom: 6 }}>• {d}</div>)}
+                <div style={{ color: "#F5E642", fontWeight: 700, marginBottom: 10 }}>🔄 Key Differences from {originOptions.find(o => o.value === origin)?.label}</div>
+                {selected.differences.map((d, i) => <div key={i} style={{ color: "#CBD5E1", fontSize: 14, marginBottom: 6 }}>• {d}</div>)}
               </div>
               <div>
-                <div style={{ color: "#F5E642″, fontWeight: 700, marginBottom: 10 }}>😲 What Surprises People from Your Region</div>
-                {selected.surprises.map((s, i) => <div key={i} style={{ color: "#CBD5E1″, fontSize: 14, marginBottom: 6 }}>• {s}</div>)}
+                <div style={{ color: "#F5E642", fontWeight: 700, marginBottom: 10 }}>😲 What Surprises People from Your Region</div>
+                {selected.surprises.map((s, i) => <div key={i} style={{ color: "#CBD5E1", fontSize: 14, marginBottom: 6 }}>• {s}</div>)}
               </div>
             </div>
           )}

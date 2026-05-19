@@ -59,10 +59,10 @@ export default function DFWMoveInInspectionGuide() {
           The move-in inspection is different from your purchase inspection — this is about documenting condition and testing everything before your warranty window closes or your landlord dispute begins.
         </p>
         <div style={{ background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.1)', borderRadius: 12, padding: 28, marginBottom: 28 }}>
-          <h2 style={{ fontSize: 20, fontWeight: 700, marginBottom: 16, color: '#F5E642′ }}>🔑 Move-In Day vs. Inspection Day</h2>
+          <h2 style={{ fontSize: 20, fontWeight: 700, marginBottom: 16, color: '#F5E642' }}>🔑 Move-In Day vs. Inspection Day</h2>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16 }}>
             <div style={{ background: 'rgba(245,230,66,0.08)', borderRadius: 8, padding: 16 }}>
-              <strong style={{ color: '#F5E642′ }}>Purchase Inspection</strong>
+              <strong style={{ color: '#F5E642' }}>Purchase Inspection</strong>
               <ul style={{ paddingLeft: 18, lineHeight: 1.9, fontSize: 14, marginTop: 10, color: '#ccc' }}>
                 <li>Done during option period</li>
                 <li>Professional inspector hired</li>
@@ -71,7 +71,7 @@ export default function DFWMoveInInspectionGuide() {
               </ul>
             </div>
             <div style={{ background: 'rgba(245,230,66,0.08)', borderRadius: 8, padding: 16 }}>
-              <strong style={{ color: '#F5E642′ }}>Move-In Inspection</strong>
+              <strong style={{ color: '#F5E642' }}>Move-In Inspection</strong>
               <ul style={{ paddingLeft: 18, lineHeight: 1.9, fontSize: 14, marginTop: 10, color: '#ccc' }}>
                 <li>Done on closing or move-in day</li>
                 <li>You walk through yourself</li>
@@ -82,7 +82,7 @@ export default function DFWMoveInInspectionGuide() {
           </div>
         </div>
         <div style={{ background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.1)', borderRadius: 12, padding: 28, marginBottom: 28 }}>
-          <h2 style={{ fontSize: 20, fontWeight: 700, marginBottom: 16, color: '#F5E642′ }}>⚡ DFW-Specific First Checks</h2>
+          <h2 style={{ fontSize: 20, fontWeight: 700, marginBottom: 16, color: '#F5E642' }}>⚡ DFW-Specific First Checks</h2>
           <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
             {[
               { icon: '❄️', title: 'AC Performance', desc: 'DFW summers hit 100+ regularly. Run the AC and confirm it reaches set temperature within 20 minutes.' },
@@ -92,12 +92,12 @@ export default function DFWMoveInInspectionGuide() {
             ].map(item => (
               <div key={item.title} style={{ display: 'flex', gap: 14, alignItems: 'flex-start', background: 'rgba(255,255,255,0.03)', borderRadius: 8, padding: 14 }}>
                 <span style={{ fontSize: 24 }}>{item.icon}</span>
-                <div><strong style={{ color: '#F5E642′ }}>{item.title}</strong><br /><span style={{ color: '#aaa', fontSize: 14 }}>{item.desc}</span></div>
+                <div><strong style={{ color: '#F5E642' }}>{item.title}</strong><br /><span style={{ color: '#aaa', fontSize: 14 }}>{item.desc}</span></div>
               </div>
             ))}
           </div>
         </div>
-        <div style={{ background: '#F5E642', borderRadius: 12, padding: 28, marginBottom: 28, color: '#0A1628′ }}>
+        <div style={{ background: '#F5E642', borderRadius: 12, padding: 28, marginBottom: 28, color: '#0A1628' }}>
           <h2 style={{ fontSize: 20, fontWeight: 700, marginBottom: 16 }}>📋 Get Your Move-In Checklist</h2>
           <p style={{ color: '#333', marginBottom: 20 }}>Home type plus age → personalized checklist, priorities, and documentation guide</p>
           <div style={{ marginBottom: 20 }}>
@@ -105,7 +105,7 @@ export default function DFWMoveInInspectionGuide() {
             <div style={{ display: 'flex', flexWrap: 'wrap', gap: 10 }}>
               {homeTypes.map(t => (
                 <button key={t.id} onClick={() => { setHomeType(t.id); setShowResult(false); }}
-                  style={{ padding: '8px 16px', borderRadius: 8, border: '2px solid', borderColor: homeType === t.id ? '#0A1628′ : ’rgba(10,22,40,0.3)', background: homeType === t.id ? '#0A1628′ : ’transparent', color: homeType === t.id ? '#F5E642′ : '#0A1628', fontWeight: 600, cursor: ’pointer' }}>
+                  style={{ padding: '8px 16px', borderRadius: 8, border: '2px solid', borderColor: homeType === t.id ? '#0A1628' : 'rgba(10,22,40,0.3)', background: homeType === t.id ? '#0A1628' : 'transparent', color: homeType === t.id ? '#F5E642' : '#0A1628', fontWeight: 600, cursor: 'pointer' }}>
                   {t.label}
                 </button>
               ))}
@@ -116,14 +116,14 @@ export default function DFWMoveInInspectionGuide() {
             <div style={{ display: 'flex', flexWrap: 'wrap', gap: 10 }}>
               {homeAges.map(a => (
                 <button key={a.id} onClick={() => { setHomeAge(a.id); setShowResult(false); }}
-                  style={{ padding: '8px 16px', borderRadius: 8, border: '2px solid', borderColor: homeAge === a.id ? '#0A1628′ : ’rgba(10,22,40,0.3)', background: homeAge === a.id ? '#0A1628′ : ’transparent', color: homeAge === a.id ? '#F5E642′ : '#0A1628', fontWeight: 600, cursor: ’pointer' }}>
+                  style={{ padding: '8px 16px', borderRadius: 8, border: '2px solid', borderColor: homeAge === a.id ? '#0A1628' : 'rgba(10,22,40,0.3)', background: homeAge === a.id ? '#0A1628' : 'transparent', color: homeAge === a.id ? '#F5E642' : '#0A1628', fontWeight: 600, cursor: 'pointer' }}>
                   {a.label}
                 </button>
               ))}
             </div>
           </div>
           <button onClick={() => setShowResult(true)} disabled={!homeType || !homeAge}
-            style={{ background: homeType && homeAge ? '#0A1628′ : ’rgba(10,22,40,0.3)', color: '#F5E642', border: 'none', borderRadius: 8, padding: '12px 28px', fontWeight: 700, cursor: homeType && homeAge ? 'pointer' : 'not-allowed', fontSize: 16 }}>
+            style={{ background: homeType && homeAge ? '#0A1628' : 'rgba(10,22,40,0.3)', color: '#F5E642', border: 'none', borderRadius: 8, padding: '12px 28px', fontWeight: 700, cursor: homeType && homeAge ? 'pointer' : 'not-allowed', fontSize: 16 }}>
             Generate My Checklist →
           </button>
         </div>
@@ -156,7 +156,7 @@ export default function DFWMoveInInspectionGuide() {
           </div>
         )}
         <div style={{ background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.1)', borderRadius: 12, padding: 28 }}>
-          <h2 style={{ fontSize: 18, fontWeight: 700, marginBottom: 12, color: '#F5E642′ }}>📸 Documentation Guide</h2>
+          <h2 style={{ fontSize: 18, fontWeight: 700, marginBottom: 12, color: '#F5E642' }}>📸 Documentation Guide</h2>
           <ul style={{ paddingLeft: 20, lineHeight: 2, color: '#aaa' }}>
             <li>Take timestamped photos or video of every room before moving furniture in</li>
             <li>For rentals — submit written move-in condition report within 72 hours (Texas law protects you)</li>

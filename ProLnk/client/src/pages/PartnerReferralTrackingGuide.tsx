@@ -144,12 +144,12 @@ export default function PartnerReferralTrackingGuide() {
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 24, marginBottom: 28 }}>
             <div>
               <label style={{ display: 'block', color: '#374151', fontWeight: 600, marginBottom: 8 }}>
-                Partners Recruited (active): <span style={{ color: '#6366f1′ }}>{partners}</span>
+                Partners Recruited (active): <span style={{ color: '#6366f1' }}>{partners}</span>
               </label>
               <input
                 type="range" min={0} max={50} value={partners}
                 onChange={(e) => setPartners(Number(e.target.value))}
-                style={{ width: '100%', accentColor: '#6366f1′ }}
+                style={{ width: '100%', accentColor: '#6366f1' }}
               />
               <div style={{ display: 'flex', justifyContent: 'space-between', color: '#94a3b8', fontSize: 12, marginTop: 4 }}>
                 <span>0</span><span>25</span><span>50</span>
@@ -157,12 +157,12 @@ export default function PartnerReferralTrackingGuide() {
             </div>
             <div>
               <label style={{ display: 'block', color: '#374151', fontWeight: 600, marginBottom: 8 }}>
-                Homeowners Referred (monthly): <span style={{ color: '#10b981′ }}>{homeowners}</span>
+                Homeowners Referred (monthly): <span style={{ color: '#10b981' }}>{homeowners}</span>
               </label>
               <input
                 type="range" min={0} max={100} value={homeowners}
                 onChange={(e) => setHomeowners(Number(e.target.value))}
-                style={{ width: '100%', accentColor: '#10b981′ }}
+                style={{ width: '100%', accentColor: '#10b981' }}
               />
               <div style={{ display: 'flex', justifyContent: 'space-between', color: '#94a3b8', fontSize: 12, marginTop: 4 }}>
                 <span>0</span><span>50</span><span>100</span>

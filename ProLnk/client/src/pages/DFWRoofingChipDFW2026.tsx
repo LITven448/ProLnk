@@ -8,7 +8,7 @@ export default function DFWRoofingChipDFW2026() {
       id: 'chipped',
       label: '🪨 Chipped Shingle Corners',
       title: 'DFW Hail Impact — Claim Potential: HIGH',
-      body: 'Chipped corners on architectural shingles are the signature of DFW 1/2″–1″ hail. Adjusters look for matching damage pattern across the slope. If 10+ shingles show corner chips in the same hail impact zone, this qualifies as storm damage. Document within 30 days of storm. ProLnk Vault timestamps the damage event against NOAA storm data.',
+      body: 'Chipped corners on architectural shingles are the signature of DFW 1/2"–1" hail. Adjusters look for matching damage pattern across the slope. If 10+ shingles show corner chips in the same hail impact zone, this qualifies as storm damage. Document within 30 days of storm. ProLnk Vault timestamps the damage event against NOAA storm data.',
     },
     {
       id: 'ridgecap',
@@ -20,13 +20,13 @@ export default function DFWRoofingChipDFW2026() {
       id: 'pipeboot',
       label: '🔧 Small Pipe Boot Tears',
       title: 'UV Degradation — Silent DFW Water Entry Point',
-      body: 'Pipe boot rubber degrades in DFW UV within 7–12 years — earlier on south-facing slopes. A 1/4″ tear channels rain directly into the attic. Not typically claimable unless storm-caused. ProLnk checklists include all pipe penetrations. Replacement runs $75–$150/boot — cheapest repair, highest leak-per-dollar prevention in DFW.',
+      body: 'Pipe boot rubber degrades in DFW UV within 7–12 years — earlier on south-facing slopes. A 1/4" tear channels rain directly into the attic. Not typically claimable unless storm-caused. ProLnk checklists include all pipe penetrations. Replacement runs $75–$150/boot — cheapest repair, highest leak-per-dollar prevention in DFW.',
     },
     {
       id: 'granule',
       label: '✨ Granule Loss in Specific Spots',
       title: 'Hail Bruising — The Invisible DFW Claim',
-      body: 'Concentrated granule loss in 2″ circles is hail bruising — each impact strips 200–400 granules, exposing asphalt. Visible from attic as bright spots on underside. DFW adjusters require 8+ bruises per 10 sq ft for claim approval. This damage accelerates shingle aging by 3–5 years. ProLnk documents bruise density per slope for claim support.',
+      body: 'Concentrated granule loss in 2" circles is hail bruising — each impact strips 200–400 granules, exposing asphalt. Visible from attic as bright spots on underside. DFW adjusters require 8+ bruises per 10 sq ft for claim approval. This damage accelerates shingle aging by 3–5 years. ProLnk documents bruise density per slope for claim support.',
     },
     {
       id: 'vault',
@@ -56,7 +56,7 @@ export default function DFWRoofingChipDFW2026() {
         <div style={{ display: 'flex', flexWrap: 'wrap', gap: 10, marginBottom: 24 }}>
           {damages.map(s => (
             <button key={s.id} onClick={() => setSelected(s.id === selected ? null : s.id)}
-              style={{ backgroundColor: selected === s.id ? '#F5E642′ : '#1e3a5f', color: selected === s.id ? '#0A1628' : '#fff', border: ’none', borderRadius: 6, padding: '10px 16px', cursor: 'pointer', fontSize: 14 }}>
+              style={{ backgroundColor: selected === s.id ? '#F5E642' : '#1e3a5f', color: selected === s.id ? '#0A1628' : '#fff', border: 'none', borderRadius: 6, padding: '10px 16px', cursor: 'pointer', fontSize: 14 }}>
               {s.label}
             </button>
           ))}

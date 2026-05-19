@@ -35,7 +35,7 @@ export default function DFWNaturalGasGuide2026() {
           {[
             { icon: '🏢', label: 'Primary Provider', value: 'Atmos Energy' },
             { icon: '💰', label: 'Average Rate', value: '$0.85/therm' },
-            { icon: '📞', label: 'Emergency Line', value: '800-460-3030′ },
+            { icon: '📞', label: 'Emergency Line', value: '800-460-3030' },
             { icon: '🌡️', label: 'Gas vs Electric Heat', value: '~40% cheaper' },
           ].map(s => (
             <div key={s.label} style={{ background: '#112240', borderRadius: 12, padding: 16, border: '1px solid #1e3a5f', textAlign: 'center' }}>
@@ -51,15 +51,15 @@ export default function DFWNaturalGasGuide2026() {
           <p style={{ color: '#94a3b8', fontSize: 13, marginBottom: 16 }}>Select your gas appliances:</p>
           <div style={{ display: 'flex', flexDirection: 'column', gap: 8, marginBottom: 20 }}>
             {appliances.map(a => (
-              <label key={a.id} style={{ display: 'flex', alignItems: 'center', gap: 10, cursor: 'pointer', background: '#0A1628', borderRadius: 8, padding: '10px 12px', border: selected.includes(a.id) ? '1px solid #F5E642′ : '1px solid #1e3a5f' }}>
+              <label key={a.id} style={{ display: 'flex', alignItems: 'center', gap: 10, cursor: 'pointer', background: '#0A1628', borderRadius: 8, padding: '10px 12px', border: selected.includes(a.id) ? '1px solid #F5E642' : '1px solid #1e3a5f' }}>
                 <input type="checkbox" checked={selected.includes(a.id)} onChange={() => toggle(a.id)}
-                  style={{ width: 16, height: 16, accentColor: '#F5E642′ }} />
+                  style={{ width: 16, height: 16, accentColor: '#F5E642' }} />
                 <span style={{ color: '#cbd5e1', fontSize: 14, flex: 1 }}>{a.label}</span>
                 <span style={{ color: '#94a3b8', fontSize: 12 }}>~{a.therms} therms/mo</span>
               </label>
             ))}
           </div>
-          <div style={{ background: '#0A1628', borderRadius: 12, padding: 20, textAlign: 'center', borderLeft: '4px solid #F5E642′ }}>
+          <div style={{ background: '#0A1628', borderRadius: 12, padding: 20, textAlign: 'center', borderLeft: '4px solid #F5E642' }}>
             <div style={{ color: '#94a3b8', fontSize: 13 }}>Estimated Monthly Gas Bill</div>
             <div style={{ color: '#F5E642', fontSize: 42, fontWeight: 900 }}>${monthlyCost}</div>
             <div style={{ color: '#94a3b8', fontSize: 13 }}>{totalTherms} therms × $0.85/therm (avg Atmos rate)</div>

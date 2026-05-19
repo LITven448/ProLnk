@@ -9,10 +9,10 @@ export default function DFWBalconyDeckSafetyGuide2026() {
   const inspect = () => {
     const items: string[] = [];
     if (deckType === 'above30') {
-      items.push('🚨 Guardrail REQUIRED — deck is 30+ inches above grade (IRC R312.1.1). Minimum 36″ height.');
-      items.push('📏 Baluster spacing max 4 inches — check all openings with a 4″ diameter ball');
+      items.push('🚨 Guardrail REQUIRED — deck is 30+ inches above grade (IRC R312.1.1). Minimum 36" height.');
+      items.push('📏 Baluster spacing max 4 inches — check all openings with a 4" diameter ball');
     }
-    if (deckType === 'below30') items.push('✅ Under 30″ above grade — guardrail not required but strongly recommended');
+    if (deckType === 'below30') items.push('✅ Under 30" above grade — guardrail not required but strongly recommended');
     if (age === 'over10') items.push('⚠️ Deck over 10 years old — inspect ledger board connection, joist hangers, and beam-to-post connections annually');
     if (age === 'over20') items.push('🚨 Deck over 20 years old — professional structural inspection strongly recommended; check for wood rot at post bases');
     if (material === 'wood') items.push('🌧️ DFW humidity warning: wood decks prone to rot and insect damage — probe post bases and ledger with screwdriver annually');
@@ -34,7 +34,7 @@ export default function DFWBalconyDeckSafetyGuide2026() {
         <div style={{ display: 'grid', gap: 16, marginBottom: 28 }}>
           {[
             { icon: '⚠️', title: '30-Inch Guardrail Threshold', desc: 'IRC R312.1.1: Any deck surface 30 inches or more above grade requires a guardrail. Minimum height is 36 inches. Top rail must not facilitate climbing.' },
-            { icon: '📐', title: 'Baluster Spacing', desc: 'Maximum 4-inch spacing between balusters and between bottom rail and deck surface. A 4″ sphere must not pass through any opening.' },
+            { icon: '📐', title: 'Baluster Spacing', desc: 'Maximum 4-inch spacing between balusters and between bottom rail and deck surface. A 4" sphere must not pass through any opening.' },
             { icon: '💧', title: 'Ledger Board Flashing', desc: 'Ledger connection failure is the #1 cause of deck collapse. Proper flashing prevents water intrusion. Inspect annually for separation or rot.' },
             { icon: '🌿', title: 'DFW Humidity & Wood Rot', desc: 'DFW humidity cycles accelerate wood rot, especially at post bases in soil contact. Use composite or pressure-treated lumber rated for ground contact (UC4B+).' },
           ].map((item, i) => (
@@ -55,17 +55,17 @@ export default function DFWBalconyDeckSafetyGuide2026() {
               <label style={{ color: '#9CA3AF', fontSize: 13, display: 'block', marginBottom: 6 }}>Deck Height Above Grade</label>
               <select value={deckType} onChange={e => setDeckType(e.target.value)} style={{ width: '100%', padding: '10px 12px', background: '#0A1628', color: '#E8EAF0', border: '1px solid #2D4A7A', borderRadius: 8, fontSize: 14 }}>
                 <option value="">Select height...</option>
-                <option value="below30″>Under 30 inches</option>
-                <option value="above30″>30 inches or higher</option>
+                <option value="below30">Under 30 inches</option>
+                <option value="above30">30 inches or higher</option>
               </select>
             </div>
             <div>
               <label style={{ color: '#9CA3AF', fontSize: 13, display: 'block', marginBottom: 6 }}>Deck Age</label>
               <select value={age} onChange={e => setAge(e.target.value)} style={{ width: '100%', padding: '10px 12px', background: '#0A1628', color: '#E8EAF0', border: '1px solid #2D4A7A', borderRadius: 8, fontSize: 14 }}>
                 <option value="">Select age...</option>
-                <option value="under10″>Under 10 years</option>
-                <option value="over10″>10–20 years</option>
-                <option value="over20″>20+ years</option>
+                <option value="under10">Under 10 years</option>
+                <option value="over10">10–20 years</option>
+                <option value="over20">20+ years</option>
               </select>
             </div>
             <div>
@@ -80,7 +80,7 @@ export default function DFWBalconyDeckSafetyGuide2026() {
           <button onClick={inspect} style={{ background: '#F5E642', color: '#0A1628', border: 'none', borderRadius: 8, padding: '12px 28px', fontWeight: 700, fontSize: 15, cursor: 'pointer', width: '100%' }}>Generate Inspection Checklist</button>
           {result.length > 0 && (
             <div style={{ marginTop: 20 }}>
-              {result.map((r, i) => <div key={i} style={{ background: '#0A1628', borderRadius: 8, padding: '10px 14px', marginBottom: 8, fontSize: 14, color: '#CBD5E1′ }}>{r}</div>)}
+              {result.map((r, i) => <div key={i} style={{ background: '#0A1628', borderRadius: 8, padding: '10px 14px', marginBottom: 8, fontSize: 14, color: '#CBD5E1' }}>{r}</div>)}
             </div>
           )}
         </div>

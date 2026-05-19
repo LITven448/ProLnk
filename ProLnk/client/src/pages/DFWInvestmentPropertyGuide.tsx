@@ -12,7 +12,7 @@ const submarkets = [
 ];
 
 const rentalStats = [
-  { stat: 'DFW Average Monthly Rent (SFR)', value: '$1,850′ },
+  { stat: 'DFW Average Monthly Rent (SFR)', value: '$1,850' },
   { stat: 'Vacancy Rate', value: '4.2%' },
   { stat: 'YoY Rent Growth (2025)', value: '+3.8%' },
   { stat: 'Population Growth Rate', value: '+2.1%/yr' },
@@ -62,7 +62,7 @@ export default function DFWInvestmentPropertyGuide() {
               onClick={() => setActiveTab(tab)}
               style={{
                 padding: '10px 20px', borderRadius: 8, border: 'none', cursor: 'pointer', fontWeight: 600, fontSize: 14,
-                background: activeTab === tab ? '#F5E642′ : '#1E3A5F', color: activeTab === tab ? '#0A1628' : '#fff',
+                background: activeTab === tab ? '#F5E642' : '#1E3A5F', color: activeTab === tab ? '#0A1628' : '#fff',
               }}
             >
               {tab === 'market' ? '🏙️ Why DFW' : tab === 'submarkets' ? '🗺️ Cap Rates by Area' : tab === 'calculator' ? '🧮 ROI Calculator' : '⚖️ SFR vs Multifamily'}
@@ -75,7 +75,7 @@ export default function DFWInvestmentPropertyGuide() {
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 16, marginBottom: 24 }}>
               {rentalStats.map(s => (
                 <div key={s.stat} style={{ background: '#1E3A5F', borderRadius: 10, padding: 20, textAlign: 'center' }}>
-                  <div style={{ fontSize: 24, fontWeight: 800, color: '#F5E642′ }}>{s.value}</div>
+                  <div style={{ fontSize: 24, fontWeight: 800, color: '#F5E642' }}>{s.value}</div>
                   <div style={{ color: '#94A3B8', fontSize: 12, marginTop: 6 }}>{s.stat}</div>
                 </div>
               ))}
@@ -157,7 +157,7 @@ export default function DFWInvestmentPropertyGuide() {
                   { label: 'Interest Rate', value: interestRate, setter: setInterestRate, min: 4, max: 12, step: 0.25, format: (v: number) => `${v}%` },
                   { label: 'Expense Ratio (taxes, insurance, maintenance, PM)', value: expenses, setter: setExpenses, min: 20, max: 60, step: 5, format: (v: number) => `${v}% of gross rent` },
                 ].map(field => (
-                  <div key={field.label} style={{ gridColumn: field.label.includes('Expense') ? '1 / -1′ : undefined }}>
+                  <div key={field.label} style={{ gridColumn: field.label.includes('Expense') ? '1 / -1' : undefined }}>
                     <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: 8 }}>
                       <label style={{ color: '#94A3B8', fontSize: 13 }}>{field.label}</label>
                       <span style={{ color: '#F5E642', fontWeight: 700 }}>{field.format(field.value)}</span>
@@ -167,7 +167,7 @@ export default function DFWInvestmentPropertyGuide() {
                       min={field.min} max={field.max} step={field.step}
                       value={field.value}
                       onChange={e => field.setter(Number(e.target.value))}
-                      style={{ width: '100%', accentColor: '#F5E642′ }}
+                      style={{ width: '100%', accentColor: '#F5E642' }}
                     />
                     <div style={{ display: 'flex', justifyContent: 'space-between', color: '#2D4A6B', fontSize: 11, marginTop: 2 }}>
                       <span>{field.format(field.min)}</span>
@@ -180,9 +180,9 @@ export default function DFWInvestmentPropertyGuide() {
 
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: 16, marginBottom: 24 }}>
               {[
-                { label: 'Cap Rate', value: `${capRate}%`, sub: 'NOI / Purchase Price', color: Number(capRate) >= 6 ? '#34D399′ : Number(capRate) >= 5 ? '#F5E642' : '#F87171' },
-                { label: 'Cash-on-Cash Return', value: `${cashOnCash}%`, sub: 'Annual cash flow / down payment', color: Number(cashOnCash) >= 8 ? '#34D399′ : Number(cashOnCash) >= 5 ? '#F5E642' : '#F87171' },
-                { label: 'Monthly Cash Flow', value: `${monthlyCashFlow >= 0 ? '+' : ''}$${Math.abs(monthlyCashFlow).toLocaleString()}`, sub: 'After mortgage and all expenses', color: monthlyCashFlow >= 200 ? '#34D399′ : monthlyCashFlow >= 0 ? '#F5E642' : '#F87171' },
+                { label: 'Cap Rate', value: `${capRate}%`, sub: 'NOI / Purchase Price', color: Number(capRate) >= 6 ? '#34D399' : Number(capRate) >= 5 ? '#F5E642' : '#F87171' },
+                { label: 'Cash-on-Cash Return', value: `${cashOnCash}%`, sub: 'Annual cash flow / down payment', color: Number(cashOnCash) >= 8 ? '#34D399' : Number(cashOnCash) >= 5 ? '#F5E642' : '#F87171' },
+                { label: 'Monthly Cash Flow', value: `${monthlyCashFlow >= 0 ? '+' : ''}$${Math.abs(monthlyCashFlow).toLocaleString()}`, sub: 'After mortgage and all expenses', color: monthlyCashFlow >= 200 ? '#34D399' : monthlyCashFlow >= 0 ? '#F5E642' : '#F87171' },
                 { label: 'Annual NOI', value: `$${Math.round(noi).toLocaleString()}`, sub: 'Net operating income', color: '#60A5FA' },
               ].map(metric => (
                 <div key={metric.label} style={{ background: '#1E3A5F', borderRadius: 12, padding: 24, textAlign: 'center' }}>
@@ -205,7 +205,7 @@ export default function DFWInvestmentPropertyGuide() {
                 ['Annual Cash Flow', `${annualCashFlow >= 0 ? '+' : ''}$${Math.round(annualCashFlow).toLocaleString()}`],
               ].map(([label, val]) => (
                 <div key={label} style={{ display: 'flex', justifyContent: 'space-between', padding: '10px 0', borderBottom: '1px solid #1A2E4A', fontSize: 14 }}>
-                  <span style={{ color: '#94A3B8′ }}>{label}</span>
+                  <span style={{ color: '#94A3B8' }}>{label}</span>
                   <span style={{ color: '#fff', fontWeight: 600 }}>{val}</span>
                 </div>
               ))}

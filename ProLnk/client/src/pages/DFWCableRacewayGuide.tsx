@@ -18,7 +18,7 @@ function getRecommendation(location: string, count: string, diy: string) {
   return {
     solution: count === '6-10 cables' || count === '10+' ? 'D-Line Paintable Cable Raceway System' : 'SimpleCord Raceway Kit',
     difficulty: diy.includes('Beginner') ? 'Easy' : 'Intermediate',
-    cost: count === '10+' ? '$60-150′ : '$25-70',
+    cost: count === '10+' ? '$60-150' : '$25-70',
     steps: [
       'Measure cable run length and add 20% for routing',
       'Use paintable raceway — match to wall color with standard latex paint',
@@ -79,7 +79,7 @@ export default function DFWCableRacewayGuide() {
               <div style={{ textAlign: 'right' }}><div style={{ color: '#94A3B8', fontSize: 13 }}>Estimated Cost</div><div style={{ color: '#F5E642', fontWeight: 700, fontSize: 18 }}>{result.cost}</div></div>
             </div>
             <div style={{ background: '#0A1628', borderRadius: 8, padding: '8px 16px', marginBottom: 16, display: 'inline-block' }}>
-              <span style={{ color: '#94A3B8′ }}>Difficulty: </span><span style={{ color: '#F5E642', fontWeight: 600 }}>{result.difficulty}</span>
+              <span style={{ color: '#94A3B8' }}>Difficulty: </span><span style={{ color: '#F5E642', fontWeight: 600 }}>{result.difficulty}</span>
             </div>
             <div style={{ marginBottom: 16 }}>
               {result.steps.map((step, i) => (

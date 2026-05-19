@@ -6,7 +6,7 @@ const conditions = ['Excellent', 'Good', 'Fair', 'Poor'];
 const metalInfo: Record<string, { lifespan: string; hailRating: string; energySavings: string; noiseLevel: string; installCost: string }> = {
   'Standing Seam Steel': {
     lifespan: '40-70 years',
-    hailRating: 'Class 4 — denting possible at 2″+, no granule loss or leak risk',
+    hailRating: 'Class 4 — denting possible at 2"+, no granule loss or leak risk',
     energySavings: '10-25% cooling reduction in DFW summer with reflective coating',
     noiseLevel: 'Moderate in DFW rain — foam insulation underlayment reduces noise',
     installCost: '$12-18/sq ft installed (1,500 sq ft home: $18,000-27,000)',
@@ -72,12 +72,12 @@ export default function DFWMetalRoofGuide() {
       <div style={{ maxWidth: '800px', margin: '0 auto' }}>
         <div style={{ marginBottom: '8px', color: '#F5E642', fontSize: '13px' }}>🏠 ProLnk DFW Roofing Guides</div>
         <h1 style={{ fontSize: '28px', fontWeight: 700, color: '#F5E642', marginBottom: '8px' }}>Metal Roofing Guide — Dallas/Fort Worth</h1>
-        <p style={{ color: '#9BA3B8', marginBottom: '24px', lineHeight: '1.6′ }}>
+        <p style={{ color: '#9BA3B8', marginBottom: '24px', lineHeight: '1.6' }}>
           Metal roofing is the fastest-growing residential roofing category in DFW. Key DFW considerations: superior hail performance (denting vs granule loss), energy savings in extreme summer heat, and noise management during DFW thunderstorms.
         </p>
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '16px', marginBottom: '24px' }}>
           {[{ label: '🏆 vs Asphalt', val: '3-4x longer lifespan' }, { label: '🌨️ Hail Advantage', val: 'Dents only — no granule loss' }, { label: '❄️ Energy Savings', val: '10-30% cooling reduction' }, { label: '📈 ROI', val: '85-95% home value return' }].map(({ label, val }) => (
-            <div key={label} style={{ background: '#111E35', borderRadius: '10px', padding: '16px', border: '1px solid #1E2D47′ }}>
+            <div key={label} style={{ background: '#111E35', borderRadius: '10px', padding: '16px', border: '1px solid #1E2D47' }}>
               <div style={{ color: '#F5E642', fontSize: '13px', marginBottom: '4px' }}>{label}</div>
               <div style={{ fontWeight: 600 }}>{val}</div>
             </div>
@@ -104,24 +104,24 @@ export default function DFWMetalRoofGuide() {
           {info && (
             <div style={{ background: '#0A1628', borderRadius: '10px', padding: '16px', border: '1px solid #1E2D47', marginBottom: '12px' }}>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '8px' }}>
-                <div><span style={{ color: '#F5E642′ }}>Lifespan: </span>{info.lifespan}</div>
-                <div><span style={{ color: '#F5E642′ }}>Cost: </span>{info.installCost}</div>
-                <div style={{ gridColumn: '1/-1′ }}><span style={{ color: '#F5E642' }}>Hail: </span>{info.hailRating}</div>
-                <div style={{ gridColumn: '1/-1′ }}><span style={{ color: '#F5E642' }}>Energy: </span>{info.energySavings}</div>
-                <div style={{ gridColumn: '1/-1′ }}><span style={{ color: '#F5E642' }}>Noise: </span>{info.noiseLevel}</div>
+                <div><span style={{ color: '#F5E642' }}>Lifespan: </span>{info.lifespan}</div>
+                <div><span style={{ color: '#F5E642' }}>Cost: </span>{info.installCost}</div>
+                <div style={{ gridColumn: '1/-1' }}><span style={{ color: '#F5E642' }}>Hail: </span>{info.hailRating}</div>
+                <div style={{ gridColumn: '1/-1' }}><span style={{ color: '#F5E642' }}>Energy: </span>{info.energySavings}</div>
+                <div style={{ gridColumn: '1/-1' }}><span style={{ color: '#F5E642' }}>Noise: </span>{info.noiseLevel}</div>
               </div>
             </div>
           )}
           {maintenance && (
-            <div style={{ background: '#0A1628', borderRadius: '10px', padding: '16px', border: '1px solid #F5E642′ }}>
+            <div style={{ background: '#0A1628', borderRadius: '10px', padding: '16px', border: '1px solid #F5E642' }}>
               <div style={{ color: '#F5E642', fontWeight: 600, marginBottom: '6px' }}>Maintenance Recommendation</div>
               <div>{maintenance}</div>
             </div>
           )}
         </div>
-        <div style={{ background: '#111E35', borderRadius: '10px', padding: '16px', border: '1px solid #1E2D47′ }}>
+        <div style={{ background: '#111E35', borderRadius: '10px', padding: '16px', border: '1px solid #1E2D47' }}>
           <div style={{ color: '#F5E642', fontWeight: 600, marginBottom: '8px' }}>🌧️ DFW Rain Noise Note</div>
-          <p style={{ color: '#9BA3B8', fontSize: '14px', margin: 0, lineHeight: '1.6′ }}>DFW averages 78 thunderstorm days per year. Minimize noise with foam insulation beneath metal panels, solid plywood sheathing, and higher gauge (thicker) metal. Most DFW homeowners report adapting within weeks.</p>
+          <p style={{ color: '#9BA3B8', fontSize: '14px', margin: 0, lineHeight: '1.6' }}>DFW averages 78 thunderstorm days per year. Minimize noise with foam insulation beneath metal panels, solid plywood sheathing, and higher gauge (thicker) metal. Most DFW homeowners report adapting within weeks.</p>
         </div>
       </div>
     </div>

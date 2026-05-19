@@ -1,17 +1,17 @@
 import { useState } from 'react';
 
 const concepts = [
-  { icon: '📐', title: 'What the Ziplevel Measures', detail: 'Uses liquid pressure to measure elevation differences across a floor plan. Accurate to ±1/16″. Takes readings at 8–16 points inside a DFW home and produces a contour map of floor movement.' },
+  { icon: '📐', title: 'What the Ziplevel Measures', detail: 'Uses liquid pressure to measure elevation differences across a floor plan. Accurate to ±1/16". Takes readings at 8–16 points inside a DFW home and produces a contour map of floor movement.' },
   { icon: '📄', title: 'Reading Your Survey Report', detail: 'Reports show inches above or below the reference point (usually front door). Negative numbers = settlement. Positive = heave. DFW expansive clay causes both, often in same home.' },
-  { icon: '🗺️', title: 'What the Numbers Mean', detail: 'Under 1″ differential: monitor only. 1–2″: minor distress, document and watch. 2–4″: moderate, engineer evaluation needed. Over 4″: active movement, immediate assessment required.' },
+  { icon: '🗺️', title: 'What the Numbers Mean', detail: 'Under 1" differential: monitor only. 1–2": minor distress, document and watch. 2–4": moderate, engineer evaluation needed. Over 4": active movement, immediate assessment required.' },
   { icon: '🏗️', title: 'When Survey Is Needed vs Visual', detail: 'Visual assessment (cracks, sticking doors) confirms something is wrong. Elevation survey tells you WHERE, HOW MUCH, and which direction movement is occurring — essential for repair scoping.' },
   { icon: '📅', title: 'DFW Survey Timing', detail: 'Best done in late summer (peak dry season) and late spring (peak wet season) to capture full movement range. Single survey misses seasonal cycle data critical for DFW clay behavior.' },
 ];
 
 const concerns = [
-  { concern: 'Doors sticking in summer only', guide: 'Likely seasonal clay shrinkage — heave cycle. Ziplevel survey in August vs. March will show differential. Usually under 1″ — monitor, not repair.' },
-  { concern: 'Cracks diagonal from door corners', guide: 'Classic DFW foundation distress pattern. Elevation survey will identify which corner has settled. Readings over 2″ differential indicate pier evaluation needed.' },
-  { concern: 'Sloping floor toward one room', guide: 'Ziplevel will quantify slope precisely. 1″ per 20 feet is borderline; over 1″ per 10 feet typically requires pier intervention under that zone.' },
+  { concern: 'Doors sticking in summer only', guide: 'Likely seasonal clay shrinkage — heave cycle. Ziplevel survey in August vs. March will show differential. Usually under 1" — monitor, not repair.' },
+  { concern: 'Cracks diagonal from door corners', guide: 'Classic DFW foundation distress pattern. Elevation survey will identify which corner has settled. Readings over 2" differential indicate pier evaluation needed.' },
+  { concern: 'Sloping floor toward one room', guide: 'Ziplevel will quantify slope precisely. 1" per 20 feet is borderline; over 1" per 10 feet typically requires pier intervention under that zone.' },
   { concern: 'Separation at wall-ceiling junction', guide: 'Often indicates differential settlement between interior and perimeter. Survey the full grid — look for interior high point vs. perimeter low.' },
   { concern: 'Previous repair, checking if holding', guide: 'Post-repair elevation survey is the gold standard for DFW warranty verification. Compare to pre-repair survey to quantify improvement.' },
 ];
@@ -46,7 +46,7 @@ export default function DFWFoundationSurveyElevation2026() {
               <div key={i}>
                 <button
                   onClick={() => setSelected(selected === i ? null : i)}
-                  style={{ width: '100%', textAlign: 'left', background: selected === i ? '#F5E642′ : '#162035', color: selected === i ? '#0A1628' : '#fff', border: ’none', borderRadius: 8, padding: '12px 16px', cursor: 'pointer', fontWeight: 600, fontSize: 14 }}
+                  style={{ width: '100%', textAlign: 'left', background: selected === i ? '#F5E642' : '#162035', color: selected === i ? '#0A1628' : '#fff', border: 'none', borderRadius: 8, padding: '12px 16px', cursor: 'pointer', fontWeight: 600, fontSize: 14 }}
                 >
                   {c.concern}
                 </button>

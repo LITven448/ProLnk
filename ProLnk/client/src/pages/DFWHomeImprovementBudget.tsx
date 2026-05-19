@@ -33,11 +33,11 @@ export default function DFWHomeImprovementBudget() {
     setResult({ monthly, total, canFinance: monthly > 2000, items });
   }
 
-  const priorityColor: Record<string, string> = { critical: '#FEE2E2', high: '#FEF9C3', medium: '#E0F2FE', low: '#F0FDF4′ };
+  const priorityColor: Record<string, string> = { critical: '#FEE2E2', high: '#FEF9C3', medium: '#E0F2FE', low: '#F0FDF4' };
   const priorityLabel: Record<string, string> = { critical: '🔴', high: '🟡', medium: '🔵', low: '🟢' };
 
   return (
-    <div style={{ background: '#F9FAFB', minHeight: '100vh', padding: '32px 16px', fontFamily: 'system-ui, sans-serif', color: '#0A1628′ }}>
+    <div style={{ background: '#F9FAFB', minHeight: '100vh', padding: '32px 16px', fontFamily: 'system-ui, sans-serif', color: '#0A1628' }}>
       <div style={{ maxWidth: 700, margin: '0 auto' }}>
         <div style={{ background: '#0A1628', borderRadius: 12, padding: '28px 32px', marginBottom: 28 }}>
           <div style={{ fontSize: 32 }}>🔨💡</div>
@@ -52,7 +52,7 @@ export default function DFWHomeImprovementBudget() {
             {PROJECTS.map(p => (
               <button key={p.name} onClick={() => toggle(p.name)}
                 style={{ textAlign: 'left', padding: '10px 12px', borderRadius: 8, border: `2px solid ${selected.includes(p.name) ? '#0A1628' : '#E2E8F0'}`,
-                  background: selected.includes(p.name) ? '#0A1628′ : priorityColor[p.priority], color: selected.includes(p.name) ? '#F5E642' : '#0A1628',
+                  background: selected.includes(p.name) ? '#0A1628' : priorityColor[p.priority], color: selected.includes(p.name) ? '#F5E642' : '#0A1628',
                   cursor: 'pointer', fontSize: 13 }}>
                 {priorityLabel[p.priority]} {p.name}
                 <div style={{ fontSize: 12, opacity: 0.8, marginTop: 2 }}>${p.cost.toLocaleString()}</div>
@@ -69,10 +69,10 @@ export default function DFWHomeImprovementBudget() {
             Save over how many months?
             <select value={months} onChange={e => setMonths(e.target.value)}
               style={{ padding: '10px 14px', borderRadius: 8, border: '1.5px solid #E2E8F0', fontSize: 15 }}>
-              <option value="12″>12 months</option>
-              <option value="24″>24 months</option>
-              <option value="36″>36 months</option>
-              <option value="48″>48 months</option>
+              <option value="12">12 months</option>
+              <option value="24">24 months</option>
+              <option value="36">36 months</option>
+              <option value="48">48 months</option>
             </select>
           </label>
           <button onClick={calculate}
@@ -90,13 +90,13 @@ export default function DFWHomeImprovementBudget() {
                 <span style={{ fontWeight: 600 }}>${item.cost.toLocaleString()}</span>
               </div>
             ))}
-            <div style={{ display: 'flex', justifyContent: 'space-between', marginTop: 14, padding: '14px 0', borderTop: '2.5px solid #0A1628′ }}>
+            <div style={{ display: 'flex', justifyContent: 'space-between', marginTop: 14, padding: '14px 0', borderTop: '2.5px solid #0A1628' }}>
               <span style={{ fontWeight: 800 }}>Total Project Cost</span>
               <span style={{ fontWeight: 800, fontSize: 20 }}>${result.total.toLocaleString()}</span>
             </div>
             <div style={{ background: '#F0FDF4', borderRadius: 10, padding: 18, textAlign: 'center', marginTop: 16 }}>
-              <div style={{ fontSize: 13, color: '#166534′ }}>Save monthly for {months} months</div>
-              <div style={{ fontSize: 34, fontWeight: 800, color: '#166534′ }}>${Math.round(result.monthly).toLocaleString()}/mo</div>
+              <div style={{ fontSize: 13, color: '#166534' }}>Save monthly for {months} months</div>
+              <div style={{ fontSize: 34, fontWeight: 800, color: '#166534' }}>${Math.round(result.monthly).toLocaleString()}/mo</div>
             </div>
             {result.canFinance && (
               <div style={{ marginTop: 14, padding: 14, background: '#FEF2F2', borderRadius: 8, fontSize: 13, color: '#991B1B' }}>

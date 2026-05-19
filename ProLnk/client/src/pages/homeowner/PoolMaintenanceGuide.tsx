@@ -32,7 +32,7 @@ const seasons = [
     tasks: [
       'Do a final balance: raise pH to 7.4–7.6, alkalinity 100–120 ppm',
       'Shock pool and add algaecide for winter',
-      'Lower water level 4–6″ below return jets (skimmer level in cold climates)',
+      'Lower water level 4–6" below return jets (skimmer level in cold climates)',
       'Blow out all plumbing lines with an air compressor',
       'Add antifreeze to lines in freeze-zone climates',
       'Plug return jets and skimmer with rubber plugs',
@@ -82,7 +82,7 @@ export default function PoolMaintenanceGuide() {
           <h1 style={{ fontSize: 42, fontWeight: 800, margin: 0, color: '#FFFFFF' }}>
             Pool Maintenance Guide
           </h1>
-          <p style={{ fontSize: 18, color: '#94A3B8', marginTop: 12, maxWidth: 620, margin: '12px auto 0′ }}>
+          <p style={{ fontSize: 18, color: '#94A3B8', marginTop: 12, maxWidth: 620, margin: '12px auto 0' }}>
             Year-round schedules, chemistry cheat sheets, and troubleshooting for a crystal-clear pool all season.
           </p>
           <div style={{ display: 'flex', justifyContent: 'center', gap: 20, marginTop: 28, flexWrap: 'wrap' }}>
@@ -113,7 +113,7 @@ export default function PoolMaintenanceGuide() {
                 }}
               >
                 <div style={{ fontSize: 28, marginBottom: 6 }}>{s.emoji}</div>
-                <div style={{ fontWeight: 700, color: activeSeason === i ? '#38BDF8′ : '#FFFFFF', fontSize: 14 }}>{s.season}</div>
+                <div style={{ fontWeight: 700, color: activeSeason === i ? '#38BDF8' : '#FFFFFF', fontSize: 14 }}>{s.season}</div>
               </button>
             ))}
           </div>
@@ -146,10 +146,10 @@ export default function PoolMaintenanceGuide() {
               </thead>
               <tbody>
                 {chemCard.map((c, i) => (
-                  <tr key={i} style={{ background: i % 2 === 0 ? '#0F2340′ : '#0A1628', borderBottom: '1px solid #1E3A5F' }}>
+                  <tr key={i} style={{ background: i % 2 === 0 ? '#0F2340' : '#0A1628', borderBottom: '1px solid #1E3A5F' }}>
                     <td style={{ padding: '12px 14px', fontWeight: 700, color: '#FFFFFF' }}>{c.param}</td>
                     <td style={{ padding: '12px 14px', color: '#34D399', fontWeight: 600 }}>{c.target}</td>
-                    <td style={{ padding: '12px 14px', color: '#FCA5A5′ }}>{c.low}</td>
+                    <td style={{ padding: '12px 14px', color: '#FCA5A5' }}>{c.low}</td>
                     <td style={{ padding: '12px 14px', color: '#FCD34D' }}>{c.high}</td>
                   </tr>
                 ))}
@@ -168,7 +168,7 @@ export default function PoolMaintenanceGuide() {
               return (
                 <div
                   key={i}
-                  style={{ background: isOpen ? '#0F2340′ : '#0A1628', border: `1px solid ${isOpen ? '#38BDF8' : '#1E3A5F'}`, borderRadius: 12, overflow: ’hidden', cursor: 'pointer' }}
+                  style={{ background: isOpen ? '#0F2340' : '#0A1628', border: `1px solid ${isOpen ? '#38BDF8' : '#1E3A5F'}`, borderRadius: 12, overflow: 'hidden', cursor: 'pointer' }}
                   onClick={() => setActiveIssue(isOpen ? null : i)}
                 >
                   <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '16px 20px' }}>
@@ -183,7 +183,7 @@ export default function PoolMaintenanceGuide() {
                           <span style={{ color: '#CBD5E1', fontSize: 14 }}>{t.cause}</span>
                         </div>
                         <div>
-                          <span style={{ fontWeight: 700, color: '#34D399′ }}>Fix: </span>
+                          <span style={{ fontWeight: 700, color: '#34D399' }}>Fix: </span>
                           <span style={{ color: '#CBD5E1', fontSize: 14 }}>{t.fix}</span>
                         </div>
                       </div>
@@ -216,7 +216,7 @@ export default function PoolMaintenanceGuide() {
         </div>
 
         {/* CTA */}
-        <div style={{ background: 'linear-gradient(135deg, #0C4A6E, #0A1628)', borderRadius: 20, padding: 44, textAlign: 'center', border: '1px solid #0284C7′ }}>
+        <div style={{ background: 'linear-gradient(135deg, #0C4A6E, #0A1628)', borderRadius: 20, padding: 44, textAlign: 'center', border: '1px solid #0284C7' }}>
           <div style={{ fontSize: 44, marginBottom: 16 }}>💧</div>
           <h2 style={{ fontSize: 30, fontWeight: 800, margin: '0 0 12px', color: '#FFFFFF' }}>
             Rather Let a Pro Handle It?

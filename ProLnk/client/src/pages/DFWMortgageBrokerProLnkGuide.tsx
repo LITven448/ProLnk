@@ -49,7 +49,7 @@ export default function DFWMortgageBrokerProLnkGuide() {
 
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))', gap: 16, marginBottom: 32 }}>
           {benefits.map((b) => (
-            <div key={b.title} style={{ background: '#fff', borderRadius: 12, padding: 20, boxShadow: '0 2px 12px rgba(0,0,0,0.06)', borderTop: '3px solid #F5E642′ }}>
+            <div key={b.title} style={{ background: '#fff', borderRadius: 12, padding: 20, boxShadow: '0 2px 12px rgba(0,0,0,0.06)', borderTop: '3px solid #F5E642' }}>
               <div style={{ fontSize: 28, marginBottom: 8 }}>{b.icon}</div>
               <div style={{ fontWeight: 700, fontSize: 15, marginBottom: 6 }}>{b.title}</div>
               <div style={{ color: '#64748b', fontSize: 13, lineHeight: 1.5 }}>{b.desc}</div>
@@ -63,13 +63,13 @@ export default function DFWMortgageBrokerProLnkGuide() {
             <div>
               <label style={{ fontWeight: 600, fontSize: 14, display: 'block', marginBottom: 6 }}>Monthly Loan Closings</label>
               <input type="range" min={1} max={50} value={monthlyClosings} onChange={(e) => setMonthlyClosings(Number(e.target.value))}
-                style={{ width: '100%', accentColor: '#F5E642′ }} />
+                style={{ width: '100%', accentColor: '#F5E642' }} />
               <div style={{ textAlign: 'center', fontWeight: 700, color: '#0A1628', fontSize: 20 }}>{monthlyClosings}/mo</div>
             </div>
             <div>
               <label style={{ fontWeight: 600, fontSize: 14, display: 'block', marginBottom: 6 }}>Avg Loan Size</label>
               <input type="range" min={150000} max={1200000} step={25000} value={avgLoanSize} onChange={(e) => setAvgLoanSize(Number(e.target.value))}
-                style={{ width: '100%', accentColor: '#F5E642′ }} />
+                style={{ width: '100%', accentColor: '#F5E642' }} />
               <div style={{ textAlign: 'center', fontWeight: 700, color: '#0A1628', fontSize: 20 }}>${(avgLoanSize / 1000).toFixed(0)}K</div>
             </div>
           </div>
@@ -81,8 +81,8 @@ export default function DFWMortgageBrokerProLnkGuide() {
             ].map((item) => (
               <div key={item.label} style={{ background: '#f8f9fb', borderRadius: 10, padding: 16, textAlign: 'center' }}>
                 <div style={{ fontSize: 13, color: '#64748b', marginBottom: 4 }}>{item.label}</div>
-                <div style={{ fontSize: 22, fontWeight: 800, color: '#0A1628′ }}>{item.value}</div>
-                <div style={{ fontSize: 12, color: '#94a3b8′ }}>{item.sub}</div>
+                <div style={{ fontSize: 22, fontWeight: 800, color: '#0A1628' }}>{item.value}</div>
+                <div style={{ fontSize: 12, color: '#94a3b8' }}>{item.sub}</div>
               </div>
             ))}
           </div>

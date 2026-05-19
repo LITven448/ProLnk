@@ -76,7 +76,7 @@ export default function DFWPestControlFrisco() {
             <label style={{ display: 'block', color: '#F5E642', fontWeight: 600, marginBottom: 10 }}>Your community type?</label>
             <div style={{ display: 'flex', flexWrap: 'wrap', gap: 10 }}>
               {communityTypes.map(c => (
-                <button key={c} onClick={() => setCommunity(c)} style={{ padding: '10px 18px', borderRadius: 8, border: '2px solid', borderColor: community === c ? '#F5E642′ : '#1e3a5f', backgroundColor: community === c ? '#F5E642' : ’transparent', color: community === c ? '#0A1628′ : '#fff', fontWeight: community === c ? 700 : 400, cursor: ’pointer', fontSize: 14 }}>{c}</button>
+                <button key={c} onClick={() => setCommunity(c)} style={{ padding: '10px 18px', borderRadius: 8, border: '2px solid', borderColor: community === c ? '#F5E642' : '#1e3a5f', backgroundColor: community === c ? '#F5E642' : 'transparent', color: community === c ? '#0A1628' : '#fff', fontWeight: community === c ? 700 : 400, cursor: 'pointer', fontSize: 14 }}>{c}</button>
               ))}
             </div>
           </div>
@@ -85,13 +85,13 @@ export default function DFWPestControlFrisco() {
             <label style={{ display: 'block', color: '#F5E642', fontWeight: 600, marginBottom: 10 }}>Pest detected?</label>
             <div style={{ display: 'flex', flexWrap: 'wrap', gap: 10 }}>
               {detectedPests.map(p => (
-                <button key={p} onClick={() => setPest(p)} style={{ padding: '10px 18px', borderRadius: 8, border: '2px solid', borderColor: pest === p ? '#F5E642′ : '#1e3a5f', backgroundColor: pest === p ? '#F5E642' : ’transparent', color: pest === p ? '#0A1628′ : '#fff', fontWeight: pest === p ? 700 : 400, cursor: ’pointer', fontSize: 14 }}>{p}</button>
+                <button key={p} onClick={() => setPest(p)} style={{ padding: '10px 18px', borderRadius: 8, border: '2px solid', borderColor: pest === p ? '#F5E642' : '#1e3a5f', backgroundColor: pest === p ? '#F5E642' : 'transparent', color: pest === p ? '#0A1628' : '#fff', fontWeight: pest === p ? 700 : 400, cursor: 'pointer', fontSize: 14 }}>{p}</button>
               ))}
             </div>
           </div>
 
           {result && (
-            <div style={{ backgroundColor: '#0A1628', borderRadius: 12, padding: 24, borderLeft: '4px solid #F5E642′ }}>
+            <div style={{ backgroundColor: '#0A1628', borderRadius: 12, padding: 24, borderLeft: '4px solid #F5E642' }}>
               <div style={{ fontSize: 15, fontWeight: 700, marginBottom: 4 }}>Recommended Plan: {result.plan}</div>
               <div style={{ color: '#F5E642', fontSize: 13, marginBottom: 8 }}>Service Frequency: {result.frequency}</div>
               <div style={{ color: '#94a3b8', marginBottom: 16, fontSize: 13 }}>{result.note}</div>

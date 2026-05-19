@@ -59,7 +59,7 @@ export default function DFWHVACLocalBrandsGuide2026() {
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8, marginBottom: 16 }}>
             {Object.keys(prefGuide).map(p => (
               <button key={p} onClick={() => setPref(p)}
-                style={{ background: pref === p ? '#F5E642′ : '#0A1628', color: pref === p ? '#0A1628' : '#94a3b8', border: '1px solid #1e3a5f', borderRadius: 8, padding: '6px 14px', cursor: ’pointer', fontSize: 12, fontWeight: 600 }}>
+                style={{ background: pref === p ? '#F5E642' : '#0A1628', color: pref === p ? '#0A1628' : '#94a3b8', border: '1px solid #1e3a5f', borderRadius: 8, padding: '6px 14px', cursor: 'pointer', fontSize: 12, fontWeight: 600 }}>
                 {p}
               </button>
             ))}

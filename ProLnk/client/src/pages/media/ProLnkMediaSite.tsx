@@ -4,15 +4,15 @@ import { motion } from "framer-motion";
 import { Helmet } from "react-helmet-async";
 
 // Videos served from /videos/ (Vite static public dir)
-const V1 = "/videos/prolnk-media-1.mp4″;
-const V2 = "/videos/prolnk-media-2.mp4″;
-const V3 = "/videos/prolnk-media-3.mp4″;
-const V4 = "/videos/prolnk-media-4.mp4″;
+const V1 = "/videos/prolnk-media-1.mp4";
+const V2 = "/videos/prolnk-media-2.mp4";
+const V3 = "/videos/prolnk-media-3.mp4";
+const V4 = "/videos/prolnk-media-4.mp4";
 
-const GOLD = "#E8A020″;
-const NAVY = "#080C14″;
-const SURFACE = "#0D1424″;
-const CREAM = "#F5F0E8″;
+const GOLD = "#E8A020";
+const NAVY = "#080C14";
+const SURFACE = "#0D1424";
+const CREAM = "#F5F0E8";
 const BORDER = "rgba(255,255,255,0.07)";
 
 function useScrolled(threshold = 60) {
@@ -106,7 +106,7 @@ function Nav({ onCta }: { onCta: () => void }) {
         ))}
       </div>
       <button onClick={onCta} style={{
-        background: GOLD, color: "#080C14″, border: "none",
+        background: GOLD, color: "#080C14", border: "none",
         padding: "10px 24px", borderRadius: 100,
         fontWeight: 700, fontSize: 14, cursor: "pointer",
         fontFamily: "inherit",
@@ -277,7 +277,7 @@ function AdFormats() {
             <h2 style={{ fontFamily: "Playfair Display, serif", fontSize: "clamp(36px,5vw,64px)", fontWeight: 900, color: CREAM, margin: 0 }}>
               Every Touchpoint in the<br /><em style={{ color: GOLD }}>Trade Ecosystem.</em>
             </h2>
-            <p style={{ color: "rgba(245,240,232,0.6)", marginTop: 20, fontSize: 18, maxWidth: 600, margin: "20px auto 0″ }}>
+            <p style={{ color: "rgba(245,240,232,0.6)", marginTop: 20, fontSize: 18, maxWidth: 600, margin: "20px auto 0" }}>
               From job creation to payment to referral — your brand is there at every moment that matters.
             </p>
           </div>
@@ -366,8 +366,8 @@ function About() {
 
 // ─── Pricing ─────────────────────────────────────────────────────────────────
 const TIERS = [
-  { name: "Spotlight", price: "$499″, unit: "/mo", highlight: false, features: ["Partner directory listing", "1 targeted email blast/mo", "Partner dashboard badge", "DFW geo-targeting", "Monthly performance report"] },
-  { name: "Featured", price: "$1,499″, unit: "/mo", highlight: true, features: ["Everything in Spotlight", "Priority dashboard placement", "Weekly email to 5K+ pros", "Event-triggered notifications", "Homeowner report sponsorship", "Dedicated account manager"] },
+  { name: "Spotlight", price: "$499", unit: "/mo", highlight: false, features: ["Partner directory listing", "1 targeted email blast/mo", "Partner dashboard badge", "DFW geo-targeting", "Monthly performance report"] },
+  { name: "Featured", price: "$1,499", unit: "/mo", highlight: true, features: ["Everything in Spotlight", "Priority dashboard placement", "Weekly email to 5K+ pros", "Event-triggered notifications", "Homeowner report sponsorship", "Dedicated account manager"] },
   { name: "Enterprise", price: "Custom", unit: "", highlight: false, features: ["Full network exclusivity", "Category lock-out", "Custom subsite build", "Social media integration", "Home sale history matching", "White-glove campaign management"] },
 ];
 
@@ -491,7 +491,7 @@ function Modal({ open, onClose }: { open: boolean; onClose: () => void }) {
         animate={{ y: open ? 0 : 60, opacity: open ? 1 : 0 }}
         transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
         style={{
-          background: SURFACE, borderRadius: "20px 20px 0 0″,
+          background: SURFACE, borderRadius: "20px 20px 0 0",
           width: "100%", maxWidth: 560,
           padding: "40px 32px 48px",
           border: `1px solid ${BORDER}`,
@@ -502,7 +502,7 @@ function Modal({ open, onClose }: { open: boolean; onClose: () => void }) {
           <button onClick={onClose} style={{ background: "none", border: "none", color: "rgba(245,240,232,0.4)", fontSize: 24, cursor: "pointer" }}>×</button>
         </div>
         {sent ? (
-          <div style={{ textAlign: "center", padding: "32px 0″ }}>
+          <div style={{ textAlign: "center", padding: "32px 0" }}>
             <div style={{ fontSize: 48, marginBottom: 16 }}>✓</div>
             <div style={{ fontFamily: "Playfair Display, serif", fontSize: 24, color: GOLD, marginBottom: 12 }}>You're on the list.</div>
             <div style={{ color: "rgba(245,240,232,0.6)" }}>We'll reach out within 24 hours to discuss your campaign.</div>
@@ -545,7 +545,7 @@ function Modal({ open, onClose }: { open: boolean; onClose: () => void }) {
 const PARTNER_TIERS = [
   {
     name: "Starter",
-    price: "$999″,
+    price: "$999",
     unit: "/mo",
     tagline: "Get in front of the network",
     highlight: false,
@@ -560,7 +560,7 @@ const PARTNER_TIERS = [
   },
   {
     name: "Growth",
-    price: "$2,999″,
+    price: "$2,999",
     unit: "/mo",
     tagline: "Dominate your category",
     highlight: true,
@@ -644,8 +644,8 @@ function PartnerProgram({ onCta }: { onCta: () => void }) {
                 fontWeight: 700, fontSize: 15, cursor: "pointer", fontFamily: "inherit",
                 transition: "opacity 0.2s",
               }}
-              onMouseEnter={e => { (e.currentTarget.style.opacity = "0.85″); }}
-              onMouseLeave={e => { (e.currentTarget.style.opacity = "1″); }}>
+              onMouseEnter={e => { (e.currentTarget.style.opacity = "0.85"); }}
+              onMouseLeave={e => { (e.currentTarget.style.opacity = "1"); }}>
                 {tier.price === "Custom" ? "Contact Sales →" : "Claim This Tier →"}
               </button>
             </div>

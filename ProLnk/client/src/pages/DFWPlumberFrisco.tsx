@@ -48,7 +48,7 @@ export default function DFWPlumberFrisco() {
       {/* City Stats */}
       <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))', gap: 16, padding: '40px 24px', maxWidth: 900, margin: '0 auto' }}>
         {[
-          { icon: '📈', label: 'Population Growth', value: '+212% since 2010′ },
+          { icon: '📈', label: 'Population Growth', value: '+212% since 2010' },
           { icon: '🏗️', label: 'New Homes/Year', value: '~4,000 permits' },
           { icon: '🌡️', label: 'Avg Summer High', value: '97°F (stresses pipes)' },
           { icon: '🏚️', label: 'Slab Leak Rate', value: '1 in 11 homes / decade' },
@@ -80,7 +80,7 @@ export default function DFWPlumberFrisco() {
         <input
           type="range" min={1} max={8} value={hours}
           onChange={e => setHours(Number(e.target.value))}
-          style={{ width: '100%', marginBottom: 24, accentColor: '#F5E642′ }}
+          style={{ width: '100%', marginBottom: 24, accentColor: '#F5E642' }}
         />
 
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: 12 }}>
@@ -116,7 +116,7 @@ export default function DFWPlumberFrisco() {
           ].map(c => (
             <div key={c.title} style={{ background: '#112244', borderRadius: 10, padding: '20px' }}>
               <div style={{ fontSize: 28, marginBottom: 8 }}>{c.icon}</div>
-              <div style={{ fontWeight: 700, fontSize: 15, marginBottom: 6, color: '#F5E642′ }}>{c.title}</div>
+              <div style={{ fontWeight: 700, fontSize: 15, marginBottom: 6, color: '#F5E642' }}>{c.title}</div>
               <div style={{ fontSize: 14, color: '#aac', lineHeight: 1.6 }}>{c.desc}</div>
             </div>
           ))}
@@ -139,8 +139,8 @@ export default function DFWPlumberFrisco() {
         </a>
       </div>
 
-      <div style={{ background: '#071020', padding: '20px', textAlign: 'center', fontSize: 13, color: '#556′ }}>
-        © 2026 ProLnk · Serving Frisco, TX and all of DFW · <a href="/privacy" style={{ color: '#556′ }}>Privacy</a>
+      <div style={{ background: '#071020', padding: '20px', textAlign: 'center', fontSize: 13, color: '#556' }}>
+        © 2026 ProLnk · Serving Frisco, TX and all of DFW · <a href="/privacy" style={{ color: '#556' }}>Privacy</a>
       </div>
     </div>
   );

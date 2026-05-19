@@ -33,7 +33,7 @@ export default function DFWInsuranceMay2026() {
           <div style={{ display: 'flex', gap: 8, marginBottom: 16, flexWrap: 'wrap' }}>
             {claimTypes.map(c => (
               <button key={c.type} onClick={() => setSelected(c)}
-                style={{ background: selected.type === c.type ? '#F5E642′ : '#1a2f52', color: selected.type === c.type ? '#0A1628' : '#fff', border: ’none', borderRadius: 8, padding: '8px 14px', cursor: 'pointer', fontWeight: 600, fontSize: 13 }}>
+                style={{ background: selected.type === c.type ? '#F5E642' : '#1a2f52', color: selected.type === c.type ? '#0A1628' : '#fff', border: 'none', borderRadius: 8, padding: '8px 14px', cursor: 'pointer', fontWeight: 600, fontSize: 13 }}>
                 {c.icon} {c.type}
               </button>
             ))}

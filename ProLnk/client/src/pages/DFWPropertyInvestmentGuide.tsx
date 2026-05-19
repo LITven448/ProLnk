@@ -107,7 +107,7 @@ export default function DFWPropertyInvestmentGuide() {
                     <div style={{ display: 'flex', gap: '12px', flexWrap: 'wrap' }}>
                       <div style={{ background: '#dcfce7', borderRadius: '6px', padding: '6px 10px' }}>
                         <span style={{ fontSize: '11px', color: '#16a34a', fontWeight: 700 }}>✅ </span>
-                        <span style={{ fontSize: '12px', color: '#166534′ }}>{pt.pros}</span>
+                        <span style={{ fontSize: '12px', color: '#166534' }}>{pt.pros}</span>
                       </div>
                       <div style={{ background: '#fef2f2', borderRadius: '6px', padding: '6px 10px' }}>
                         <span style={{ fontSize: '11px', color: '#dc2626', fontWeight: 700 }}>⚠️ </span>
@@ -118,7 +118,7 @@ export default function DFWPropertyInvestmentGuide() {
                   <div style={{ display: 'flex', flexDirection: 'column', gap: '8px', minWidth: '140px' }}>
                     <div>
                       <div style={{ fontSize: '11px', color: '#9ca3af', textTransform: 'uppercase', marginBottom: '2px' }}>Entry Range</div>
-                      <div style={{ fontSize: '14px', fontWeight: 700, color: '#374151′ }}>{pt.entry}</div>
+                      <div style={{ fontSize: '14px', fontWeight: 700, color: '#374151' }}>{pt.entry}</div>
                     </div>
                     <div>
                       <div style={{ fontSize: '11px', color: '#9ca3af', textTransform: 'uppercase', marginBottom: '2px' }}>Yield</div>
@@ -140,7 +140,7 @@ export default function DFWPropertyInvestmentGuide() {
               <div key={i} style={{ background: '#f9fafb', border: '1px solid #e5e7eb', borderRadius: '12px', padding: '20px' }}>
                 <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '10px' }}>
                   <div>
-                    <div style={{ fontSize: '18px', fontWeight: 700, color: '#111827′ }}>{market.emoji} {market.city}</div>
+                    <div style={{ fontSize: '18px', fontWeight: 700, color: '#111827' }}>{market.emoji} {market.city}</div>
                   </div>
                   <span style={{ fontSize: '11px', fontWeight: 700, color: typeColors[market.type], background: `${typeColors[market.type]}20`, padding: '3px 8px', borderRadius: '4px', whiteSpace: 'nowrap' }}>
                     {market.type}
@@ -149,7 +149,7 @@ export default function DFWPropertyInvestmentGuide() {
                 <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '8px', marginBottom: '10px' }}>
                   <div>
                     <div style={{ fontSize: '11px', color: '#9ca3af', textTransform: 'uppercase', marginBottom: '2px' }}>Entry Price</div>
-                    <div style={{ fontSize: '13px', fontWeight: 600, color: '#374151′ }}>{market.entryPrice}</div>
+                    <div style={{ fontSize: '13px', fontWeight: 600, color: '#374151' }}>{market.entryPrice}</div>
                   </div>
                   <div>
                     <div style={{ fontSize: '11px', color: '#9ca3af', textTransform: 'uppercase', marginBottom: '2px' }}>Gross Yield</div>
@@ -157,7 +157,7 @@ export default function DFWPropertyInvestmentGuide() {
                   </div>
                   <div>
                     <div style={{ fontSize: '11px', color: '#9ca3af', textTransform: 'uppercase', marginBottom: '2px' }}>Appreciation</div>
-                    <div style={{ fontSize: '13px', fontWeight: 600, color: '#374151′ }}>{market.appreciation}</div>
+                    <div style={{ fontSize: '13px', fontWeight: 600, color: '#374151' }}>{market.appreciation}</div>
                   </div>
                 </div>
                 <p style={{ fontSize: '13px', color: '#6b7280', lineHeight: 1.5 }}>{market.notes}</p>
@@ -192,8 +192,8 @@ export default function DFWPropertyInvestmentGuide() {
           <div style={{ background: '#f9fafb', border: '1px solid #e5e7eb', borderRadius: '12px', padding: '32px' }}>
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '16px', marginBottom: '20px' }}>
               {[
-                { label: 'Purchase Price ($)', value: purchasePrice, setter: setPurchasePrice, placeholder: '350,000′ },
-                { label: 'Monthly Rent ($)', value: monthlyRent, setter: setMonthlyRent, placeholder: '2,400′ },
+                { label: 'Purchase Price ($)', value: purchasePrice, setter: setPurchasePrice, placeholder: '350,000' },
+                { label: 'Monthly Rent ($)', value: monthlyRent, setter: setMonthlyRent, placeholder: '2,400' },
                 { label: 'Monthly Expenses ($)', value: monthlyExpenses, setter: setMonthlyExpenses, placeholder: '800 (taxes, insurance, mgmt, maintenance)' },
                 { label: 'Down Payment ($)', value: downPayment, setter: setDownPayment, placeholder: '87,500 (25%)' },
               ].map((field, i) => (
@@ -222,7 +222,7 @@ export default function DFWPropertyInvestmentGuide() {
                   { label: 'Gross Yield', value: results.grossYield, desc: 'Annual rent / purchase price', color: '#16a34a' },
                   { label: 'Cap Rate', value: results.capRate, desc: 'NOI / purchase price', color: '#2563eb' },
                   { label: 'Cash-on-Cash', value: results.cashOnCash, desc: 'Annual cash flow / down payment', color: '#7c3aed' },
-                  { label: 'Monthly Cash Flow', value: results.monthlyCashFlow, desc: 'Rent minus all expenses', color: parseFloat(results.monthlyCashFlow) >= 0 ? '#16a34a' : '#dc2626′ },
+                  { label: 'Monthly Cash Flow', value: results.monthlyCashFlow, desc: 'Rent minus all expenses', color: parseFloat(results.monthlyCashFlow) >= 0 ? '#16a34a' : '#dc2626' },
                 ].map((metric, i) => (
                   <div key={i} style={{ background: '#ffffff', border: '1px solid #e5e7eb', borderRadius: '10px', padding: '20px', textAlign: 'center' }}>
                     <div style={{ fontSize: '11px', color: '#9ca3af', textTransform: 'uppercase', marginBottom: '4px' }}>{metric.label}</div>

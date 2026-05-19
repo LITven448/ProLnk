@@ -54,18 +54,18 @@ export default function DFWNewHomeWarrantyClaimsGuide() {
           Builder responsiveness in DFW varies dramatically. Knowing your rights under Texas law — and how to escalate — is the difference between a repaired defect and an ignored claim.
         </p>
         <div style={{ background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.1)', borderRadius: 12, padding: 28, marginBottom: 28 }}>
-          <h2 style={{ fontSize: 20, fontWeight: 700, marginBottom: 16, color: '#F5E642′ }}>📋 Texas New Home Warranty Structure</h2>
+          <h2 style={{ fontSize: 20, fontWeight: 700, marginBottom: 16, color: '#F5E642' }}>📋 Texas New Home Warranty Structure</h2>
           <div style={{ display: 'flex', flexDirection: 'column', gap: 14 }}>
             {warrantyTypes.map(w => (
               <div key={w.id} style={{ background: 'rgba(245,230,66,0.08)', borderLeft: '3px solid #F5E642', borderRadius: 8, padding: 16 }}>
-                <strong style={{ color: '#F5E642′ }}>{w.label}</strong>
-                <p style={{ color: '#ccc', fontSize: 14, margin: '6px 0 0′ }}>{w.desc}</p>
+                <strong style={{ color: '#F5E642' }}>{w.label}</strong>
+                <p style={{ color: '#ccc', fontSize: 14, margin: '6px 0 0' }}>{w.desc}</p>
               </div>
             ))}
           </div>
         </div>
         <div style={{ background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.1)', borderRadius: 12, padding: 28, marginBottom: 28 }}>
-          <h2 style={{ fontSize: 20, fontWeight: 700, marginBottom: 16, color: '#F5E642′ }}>⚖️ Texas Residential Construction Liability Act (RCLA)</h2>
+          <h2 style={{ fontSize: 20, fontWeight: 700, marginBottom: 16, color: '#F5E642' }}>⚖️ Texas Residential Construction Liability Act (RCLA)</h2>
           <ul style={{ paddingLeft: 20, lineHeight: 2, color: '#ccc' }}>
             <li>You must give the builder a <strong>written 60-day notice</strong> before filing a lawsuit</li>
             <li>Builder has <strong>45 days after that notice</strong> to offer a repair or settlement</li>
@@ -75,15 +75,15 @@ export default function DFWNewHomeWarrantyClaimsGuide() {
           </ul>
         </div>
         <div style={{ background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.1)', borderRadius: 12, padding: 28, marginBottom: 28 }}>
-          <h2 style={{ fontSize: 20, fontWeight: 700, marginBottom: 16, color: '#F5E642′ }}>📅 Use Your 11-Month Warranty Inspection</h2>
+          <h2 style={{ fontSize: 20, fontWeight: 700, marginBottom: 16, color: '#F5E642' }}>📅 Use Your 11-Month Warranty Inspection</h2>
           <p style={{ color: '#ccc', lineHeight: 1.7, marginBottom: 14 }}>
             Schedule an independent home inspection at the 11-month mark — before your 1-year warranty expires. A professional inspector will identify issues you may have missed. Submit all findings to your builder in writing before the anniversary date.
           </p>
           <div style={{ background: 'rgba(245,230,66,0.1)', border: '1px solid rgba(245,230,66,0.3)', borderRadius: 8, padding: 16, fontSize: 14 }}>
-            <strong style={{ color: '#F5E642′ }}>DFW Tip:</strong> DFW clay soil causes settlement in the first year — foundation cracks appearing at month 10 are very common. An 11-month inspection catches these before your warranty window closes.
+            <strong style={{ color: '#F5E642' }}>DFW Tip:</strong> DFW clay soil causes settlement in the first year — foundation cracks appearing at month 10 are very common. An 11-month inspection catches these before your warranty window closes.
           </div>
         </div>
-        <div style={{ background: '#F5E642', borderRadius: 12, padding: 28, marginBottom: 28, color: '#0A1628′ }}>
+        <div style={{ background: '#F5E642', borderRadius: 12, padding: 28, marginBottom: 28, color: '#0A1628' }}>
           <h2 style={{ fontSize: 20, fontWeight: 700, marginBottom: 16 }}>🧮 Warranty Coverage Checker</h2>
           <p style={{ color: '#333', marginBottom: 20 }}>Warranty type plus issue type → covered, how to file, timeline, and escalation path</p>
           <div style={{ marginBottom: 20 }}>
@@ -91,7 +91,7 @@ export default function DFWNewHomeWarrantyClaimsGuide() {
             <div style={{ display: 'flex', flexWrap: 'wrap', gap: 10 }}>
               {warrantyTypes.map(w => (
                 <button key={w.id} onClick={() => { setWarranty(w.id); setShowResult(false); }}
-                  style={{ padding: '8px 16px', borderRadius: 8, border: '2px solid', borderColor: warranty === w.id ? '#0A1628′ : ’rgba(10,22,40,0.3)', background: warranty === w.id ? '#0A1628′ : ’transparent', color: warranty === w.id ? '#F5E642′ : '#0A1628', fontWeight: 600, cursor: ’pointer' }}>
+                  style={{ padding: '8px 16px', borderRadius: 8, border: '2px solid', borderColor: warranty === w.id ? '#0A1628' : 'rgba(10,22,40,0.3)', background: warranty === w.id ? '#0A1628' : 'transparent', color: warranty === w.id ? '#F5E642' : '#0A1628', fontWeight: 600, cursor: 'pointer' }}>
                   {w.label}
                 </button>
               ))}
@@ -102,24 +102,24 @@ export default function DFWNewHomeWarrantyClaimsGuide() {
             <div style={{ display: 'flex', flexWrap: 'wrap', gap: 10 }}>
               {issueTypes.map(i => (
                 <button key={i.id} onClick={() => { setIssue(i.id); setShowResult(false); }}
-                  style={{ padding: '8px 16px', borderRadius: 8, border: '2px solid', borderColor: issue === i.id ? '#0A1628′ : ’rgba(10,22,40,0.3)', background: issue === i.id ? '#0A1628′ : ’transparent', color: issue === i.id ? '#F5E642′ : '#0A1628', fontWeight: 600, cursor: ’pointer' }}>
+                  style={{ padding: '8px 16px', borderRadius: 8, border: '2px solid', borderColor: issue === i.id ? '#0A1628' : 'rgba(10,22,40,0.3)', background: issue === i.id ? '#0A1628' : 'transparent', color: issue === i.id ? '#F5E642' : '#0A1628', fontWeight: 600, cursor: 'pointer' }}>
                   {i.label}
                 </button>
               ))}
             </div>
           </div>
           <button onClick={() => setShowResult(true)} disabled={!warranty || !issue}
-            style={{ background: warranty && issue ? '#0A1628′ : ’rgba(10,22,40,0.3)', color: '#F5E642', border: 'none', borderRadius: 8, padding: '12px 28px', fontWeight: 700, cursor: warranty && issue ? 'pointer' : 'not-allowed', fontSize: 16 }}>
+            style={{ background: warranty && issue ? '#0A1628' : 'rgba(10,22,40,0.3)', color: '#F5E642', border: 'none', borderRadius: 8, padding: '12px 28px', fontWeight: 700, cursor: warranty && issue ? 'pointer' : 'not-allowed', fontSize: 16 }}>
             Check Coverage →
           </button>
         </div>
         {showResult && result && (
           <div style={{ background: 'rgba(255,255,255,0.05)', border: `2px solid ${result.covered ? '#4CAF50' : '#f44336'}`, borderRadius: 12, padding: 28, marginBottom: 28 }}>
             <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 20 }}>
-              <div style={{ background: result.covered ? '#4CAF50′ : '#f44336', borderRadius: '50%', width: 44, height: 44, display: ’flex', alignItems: 'center', justifyContent: 'center', fontSize: 22 }}>
+              <div style={{ background: result.covered ? '#4CAF50' : '#f44336', borderRadius: '50%', width: 44, height: 44, display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 22 }}>
                 {result.covered ? '✅' : '❌'}
               </div>
-              <h3 style={{ fontSize: 22, fontWeight: 700, color: result.covered ? '#4CAF50′ : '#f44336' }}>
+              <h3 style={{ fontSize: 22, fontWeight: 700, color: result.covered ? '#4CAF50' : '#f44336' }}>
                 {result.covered ? 'Covered Under This Warranty' : 'Not Covered Under This Warranty'}
               </h3>
             </div>
@@ -131,7 +131,7 @@ export default function DFWNewHomeWarrantyClaimsGuide() {
           </div>
         )}
         <div style={{ background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.1)', borderRadius: 12, padding: 28 }}>
-          <h2 style={{ fontSize: 18, fontWeight: 700, marginBottom: 12, color: '#F5E642′ }}>📌 DFW Builder Responsiveness Reality</h2>
+          <h2 style={{ fontSize: 18, fontWeight: 700, marginBottom: 12, color: '#F5E642' }}>📌 DFW Builder Responsiveness Reality</h2>
           <ul style={{ paddingLeft: 20, lineHeight: 2, color: '#aaa' }}>
             <li>Large national builders (D.R. Horton, Lennar, Pulte) have formal warranty departments — document everything in their portal</li>
             <li>Smaller custom builders may be more responsive personally but have less structured processes</li>

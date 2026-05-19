@@ -32,7 +32,7 @@ export default function DFWHomeDocumentVaultGuide() {
     <div style={{ background: '#F8F9FB', minHeight: '100vh', color: '#0A1628', fontFamily: 'sans-serif', padding: '32px 24px' }}>
       <div style={{ maxWidth: 800, margin: '0 auto' }}>
         <div style={{ marginBottom: 8, fontSize: 13, color: '#1D4ED8', letterSpacing: 1, fontWeight: 700 }}>DFW HOMEOWNER TOOLS</div>
-        <h1 style={{ fontSize: 28, fontWeight: 800, marginBottom: 6, color: '#0A1628′ }}>🗄️ Home Document Vault Guide</h1>
+        <h1 style={{ fontSize: 28, fontWeight: 800, marginBottom: 6, color: '#0A1628' }}>🗄️ Home Document Vault Guide</h1>
         <p style={{ color: '#5A7A9A', marginBottom: 28 }}>Know exactly where to keep every document — physical, digital, or both.</p>
 
         <div style={{ background: '#FFF8E1', border: '2px solid #F5E642', borderRadius: 12, padding: 16, marginBottom: 24 }}>
@@ -44,8 +44,8 @@ export default function DFWHomeDocumentVaultGuide() {
           {DOC_TYPES.map(d => (
             <button key={d} onClick={() => setSelected(d)}
               style={{ padding: '8px 16px', borderRadius: 20, border: '2px solid', cursor: 'pointer', fontWeight: 700, fontSize: 13,
-                borderColor: selected === d ? '#0A1628′ : '#D1D9E6',
-                background: selected === d ? '#0A1628′ : '#fff',
+                borderColor: selected === d ? '#0A1628' : '#D1D9E6',
+                background: selected === d ? '#0A1628' : '#fff',
                 color: selected === d ? '#fff' : '#5A7A9A' }}>
               {d}
             </button>
@@ -65,7 +65,7 @@ export default function DFWHomeDocumentVaultGuide() {
             </div>
             <div style={{ background: '#F8F9FB', borderRadius: 10, padding: 16 }}>
               <div style={{ fontSize: 12, color: '#5A7A9A', fontWeight: 700, marginBottom: 6 }}>HOW LONG TO KEEP</div>
-              <div style={{ fontWeight: 800, fontSize: 15, color: '#0A1628′ }}>{info.keepFor}</div>
+              <div style={{ fontWeight: 800, fontSize: 15, color: '#0A1628' }}>{info.keepFor}</div>
             </div>
           </div>
 
@@ -83,7 +83,7 @@ export default function DFWHomeDocumentVaultGuide() {
         <div style={{ background: '#fff', borderRadius: 12, padding: 24, boxShadow: '0 2px 12px rgba(10,22,40,0.06)' }}>
           <h2 style={{ fontSize: 18, fontWeight: 800, marginBottom: 16 }}>🔥 Fireproof Safe Essentials</h2>
           {['Deed and title (original)', 'Birth certificates + passports', 'Insurance policy documents', 'Vehicle titles', 'Wills and trusts', 'Social Security cards', 'Medical records summaries'].map((item, i) => (
-            <div key={i} style={{ fontSize: 14, padding: '8px 0', borderBottom: i < 6 ? '1px solid #F0F2F5′ : ’none', color: '#0A1628′ }}>
+            <div key={i} style={{ fontSize: 14, padding: '8px 0', borderBottom: i < 6 ? '1px solid #F0F2F5' : 'none', color: '#0A1628' }}>
               ✅ {item}
             </div>
           ))}

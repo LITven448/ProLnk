@@ -1,30 +1,30 @@
 import { Link } from "wouter";
 import { ArrowLeft, Shield } from "lucide-react";
 
-const LAST_UPDATED = "March 29, 2026″;
+const LAST_UPDATED = "March 29, 2026";
 const EMAIL = "privacy@prolnk.com";
 
 export default function CCPARights() {
   return (
-    <div className="min-h-screen bg-gray-50″ style={{ fontFamily: "'Inter', sans-serif" }}>
-      <div className="bg-white border-b border-gray-200 sticky top-0 z-10″>
+    <div className="min-h-screen bg-gray-50" style={{ fontFamily: "'Inter', sans-serif" }}>
+      <div className="bg-white border-b border-gray-200 sticky top-0 z-10">
         <div className="max-w-3xl mx-auto px-4 py-4 flex items-center justify-between">
           <Link href="/">
             <button className="flex items-center gap-2 text-sm text-gray-500 hover:text-gray-800 transition-colors">
-              <ArrowLeft className="w-4 h-4″ /> Back to Home
+              <ArrowLeft className="w-4 h-4" /> Back to Home
             </button>
           </Link>
-          <div className="flex items-center gap-2 text-sm text-gray-400″>
-            <Shield className="w-4 h-4″ />
+          <div className="flex items-center gap-2 text-sm text-gray-400">
+            <Shield className="w-4 h-4" />
             Last updated: {LAST_UPDATED}
           </div>
         </div>
       </div>
 
-      <div className="max-w-3xl mx-auto px-4 py-12 space-y-10″>
+      <div className="max-w-3xl mx-auto px-4 py-12 space-y-10">
         <div>
-          <h1 className="text-3xl font-black text-gray-900 mb-2″>CCPA Data Rights</h1>
-          <p className="text-gray-500″>
+          <h1 className="text-3xl font-black text-gray-900 mb-2">CCPA Data Rights</h1>
+          <p className="text-gray-500">
             This page describes the rights of California residents under the California Consumer Privacy Act (CCPA) and the California Privacy Rights Act (CPRA) as they apply to your use of ProLnk and TrustyPro.
           </p>
         </div>
@@ -59,13 +59,13 @@ export default function CCPARights() {
             body: `For CCPA-related questions, contact our Privacy Team at ${EMAIL}.`,
           },
         ].map(({ title, body }) => (
-          <section key={title} className="space-y-3″>
-            <h2 className="text-lg font-bold text-gray-900″>{title}</h2>
+          <section key={title} className="space-y-3">
+            <h2 className="text-lg font-bold text-gray-900">{title}</h2>
             <p className="text-gray-600 leading-relaxed text-sm">{body}</p>
           </section>
         ))}
 
-        <div className="border-t border-gray-200 pt-8 flex flex-wrap gap-4 text-sm text-indigo-600″>
+        <div className="border-t border-gray-200 pt-8 flex flex-wrap gap-4 text-sm text-indigo-600">
           <Link href="/terms"><span className="hover:underline cursor-pointer">Terms of Service</span></Link>
           <Link href="/privacy"><span className="hover:underline cursor-pointer">Privacy Policy</span></Link>
           <Link href="/cookies"><span className="hover:underline cursor-pointer">Cookie Policy</span></Link>

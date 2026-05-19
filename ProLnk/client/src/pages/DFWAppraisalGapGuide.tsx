@@ -31,7 +31,7 @@ export default function DFWAppraisalGapGuide() {
 
     if (canCoverFull) return {
       label: gap < 10000 ? '✅ Manageable Gap — Cover It to Win' : gap < 25000 ? '⚠️ Significant Gap — Evaluate Carefully' : '🔴 Large Gap — Consider Alternatives',
-      color: gap < 10000 ? '#27ae60′ : gap < 25000 ? '#e67e22' : '#e74c3c',
+      color: gap < 10000 ? '#27ae60' : gap < 25000 ? '#e67e22' : '#e74c3c',
       gapAmt: gap,
       feasibility: gap < 10000 ? 'Strong' : gap < 25000 ? 'Feasible' : 'Risky',
       summary: `You would need $${gap.toLocaleString()} (${gapPct}% of offer) in cash at closing above what lender will loan. You have enough cash available.`,
@@ -86,7 +86,7 @@ export default function DFWAppraisalGapGuide() {
               { icon: '3️⃣', step: 'Gap Appears', detail: 'Lender will only loan based on $430K — $20K gap' },
               { icon: '4️⃣', step: 'You Must Decide', detail: 'Pay gap in cash, renegotiate, or exit deal' },
               { icon: '5️⃣', step: 'Gap Coverage Clause', detail: 'Pre-agree in offer to cover up to $X above appraisal' },
-              { icon: '6️⃣', step: 'DFW Reality', detail: 'Hot areas: gaps of $15K-$50K are common in 2024-2025′ },
+              { icon: '6️⃣', step: 'DFW Reality', detail: 'Hot areas: gaps of $15K-$50K are common in 2024-2025' },
             ].map((item, i) => (
               <div key={i} style={{ backgroundColor: '#0A1628', borderRadius: '8px', padding: '0.75rem' }}>
                 <div style={{ fontSize: '1.2rem', marginBottom: '0.3rem' }}>{item.icon}</div>
@@ -101,9 +101,9 @@ export default function DFWAppraisalGapGuide() {
           <h2 style={{ fontSize: '1.1rem', fontWeight: 700, color: '#F5E642', marginBottom: '1rem' }}>🧮 Appraisal Gap Calculator</h2>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
             {[
-              { label: 'Your Offer Price ($)', value: offerPrice, set: setOfferPrice, placeholder: 'e.g. 475000′ },
-              { label: 'Likely Appraisal Value ($)', value: likelyAppraisal, set: setLikelyAppraisal, placeholder: 'e.g. 450000′ },
-              { label: 'Available Cash for Gap ($)', value: availableCash, set: setAvailableCash, placeholder: 'e.g. 20000′ },
+              { label: 'Your Offer Price ($)', value: offerPrice, set: setOfferPrice, placeholder: 'e.g. 475000' },
+              { label: 'Likely Appraisal Value ($)', value: likelyAppraisal, set: setLikelyAppraisal, placeholder: 'e.g. 450000' },
+              { label: 'Available Cash for Gap ($)', value: availableCash, set: setAvailableCash, placeholder: 'e.g. 20000' },
             ].map((field, i) => (
               <div key={i}>
                 <label style={{ display: 'block', fontSize: '0.85rem', color: '#aaa', marginBottom: '0.4rem' }}>{field.label}</label>
@@ -143,7 +143,7 @@ export default function DFWAppraisalGapGuide() {
                   {result.alternatives.map((a, i) => <div key={i} style={{ fontSize: '0.9rem', color: '#ccc', marginBottom: '0.25rem' }}>• {a}</div>)}
                 </div>
               )}
-              {result.warning && <div style={{ padding: '0.75rem', backgroundColor: '#2a1010', borderRadius: '8px', fontSize: '0.9rem', color: '#ff9999′ }}>{result.warning}</div>}
+              {result.warning && <div style={{ padding: '0.75rem', backgroundColor: '#2a1010', borderRadius: '8px', fontSize: '0.9rem', color: '#ff9999' }}>{result.warning}</div>}
             </div>
           )}
         </div>

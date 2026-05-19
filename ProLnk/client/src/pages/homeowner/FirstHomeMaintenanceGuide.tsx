@@ -58,7 +58,7 @@ const timeline = [
 
 const dfwItems = [
   { icon: '❄️', label: 'HVAC Filters', freq: 'Monthly May–Oct, every 90 days Nov–Apr', priority: 'Critical' },
-  { icon: '🌧️', label: 'Foundation Moisture', freq: 'Monitor monthly — water within 18″ of foundation', priority: 'Critical' },
+  { icon: '🌧️', label: 'Foundation Moisture', freq: 'Monitor monthly — water within 18" of foundation', priority: 'Critical' },
   { icon: '🐛', label: 'Pest Control', freq: 'Quarterly (termites, fire ants, roaches)', priority: 'High' },
   { icon: '☀️', label: 'Roof Inspection', freq: 'Annually + after each major hail event', priority: 'High' },
   { icon: '🌿', label: 'Tree Trimming', freq: 'Annually — DFW storms cause major limb damage', priority: 'Medium' },
@@ -90,7 +90,7 @@ export default function FirstHomeMaintenanceGuide() {
           <h1 style={{ fontSize: '2rem', fontWeight: 700, color: '#F5E642', marginBottom: '0.5rem' }}>
             First-Time Homeowner Maintenance Guide
           </h1>
-          <p style={{ color: '#94a3b8′ }}>Your first 90 days checklist — DFW edition</p>
+          <p style={{ color: '#94a3b8' }}>Your first 90 days checklist — DFW edition</p>
         </div>
 
         <div style={{ background: '#112240', borderRadius: 12, padding: '1rem 1.5rem', marginBottom: '2rem' }}>
@@ -152,7 +152,7 @@ export default function FirstHomeMaintenanceGuide() {
                   <div style={{ color: '#94a3b8', fontSize: '0.8rem' }}>{item.freq}</div>
                 </div>
                 <span style={{
-                  background: item.priority === 'Critical' ? '#ef4444′ : item.priority === ’High' ? '#f59e0b' : '#3b82f6',
+                  background: item.priority === 'Critical' ? '#ef4444' : item.priority === 'High' ? '#f59e0b' : '#3b82f6',
                   color: '#fff', borderRadius: 6, padding: '2px 10px', fontSize: '0.75rem', fontWeight: 700, whiteSpace: 'nowrap',
                 }}>{item.priority}</span>
               </div>

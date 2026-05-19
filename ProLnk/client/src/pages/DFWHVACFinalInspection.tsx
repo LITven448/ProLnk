@@ -20,7 +20,7 @@ export default function DFWHVACFinalInspection() {
   const result = key && inspectionData[key] ? inspectionData[key] : null;
 
   return (
-    <div style={{ background: '#0A1628', minHeight: '100vh', padding: '2rem', fontFamily: 'system-ui, sans-serif', color: '#e2e8f0′ }}>
+    <div style={{ background: '#0A1628', minHeight: '100vh', padding: '2rem', fontFamily: 'system-ui, sans-serif', color: '#e2e8f0' }}>
       <div style={{ maxWidth: '820px', margin: '0 auto' }}>
         <div style={{ marginBottom: '2rem' }}>
           <span style={{ background: '#F5E642', color: '#0A1628', padding: '0.25rem 0.75rem', borderRadius: '999px', fontSize: '0.75rem', fontWeight: 700 }}>DFW HVAC GUIDE</span>
@@ -32,7 +32,7 @@ export default function DFWHVACFinalInspection() {
           </p>
         </div>
 
-        <div style={{ background: '#0f1e35', borderRadius: '12px', padding: '1.25rem', marginBottom: '2rem', border: '1px solid #F5E642′ }}>
+        <div style={{ background: '#0f1e35', borderRadius: '12px', padding: '1.25rem', marginBottom: '2rem', border: '1px solid #F5E642' }}>
           <div style={{ fontWeight: 700, color: '#F5E642', marginBottom: '0.5rem' }}>📋 Why HVAC Permits &amp; Inspections Matter in DFW</div>
           <p style={{ color: '#94a3b8', fontSize: '0.85rem', lineHeight: 1.6, margin: 0 }}>
             Unpermitted HVAC work can void your homeowner's insurance, create disclosure liability when you sell, and leave you without recourse if the installation causes water or fire damage.
@@ -76,7 +76,7 @@ export default function DFWHVACFinalInspection() {
                 <div style={{ color: '#22c55e', fontWeight: 700, fontSize: '0.9rem', marginBottom: '0.5rem' }}>🛠 How to Prepare</div>
                 <ol style={{ margin: 0, padding: '0 0 0 1.2rem' }}>{result.prepSteps.map((s, i) => <li key={i} style={{ color: '#86efac', fontSize: '0.84rem', marginBottom: '0.35rem' }}>{s}</li>)}</ol>
               </div>
-              <div style={{ padding: '0.75rem', background: '#0f1e35', borderRadius: '8px', color: '#94a3b8', fontSize: '0.82rem', borderLeft: '3px solid #F5E642′ }}>
+              <div style={{ padding: '0.75rem', background: '#0f1e35', borderRadius: '8px', color: '#94a3b8', fontSize: '0.82rem', borderLeft: '3px solid #F5E642' }}>
                 💡 {result.note}
               </div>
             </div>

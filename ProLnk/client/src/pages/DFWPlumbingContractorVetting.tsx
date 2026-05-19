@@ -45,7 +45,7 @@ export default function DFWPlumbingContractorVetting() {
         <h2 style={{ color: '#F5E642', fontSize: 16, fontWeight: 700, marginBottom: 12 }}>8 Things to Verify</h2>
         <div style={{ display: 'grid', gap: 10, marginBottom: 36 }}>
           {vetItems.map((item, i) => (
-            <div key={i} style={{ background: '#111f38', borderRadius: 8, padding: '12px 16px', borderLeft: '3px solid #F5E642′ }}>
+            <div key={i} style={{ background: '#111f38', borderRadius: 8, padding: '12px 16px', borderLeft: '3px solid #F5E642' }}>
               <div style={{ fontWeight: 700, marginBottom: 4 }}>✅ {item.label}</div>
               <div style={{ color: '#94a3b8', fontSize: 14 }}>{item.detail}</div>
             </div>
@@ -56,7 +56,7 @@ export default function DFWPlumbingContractorVetting() {
         <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap', marginBottom: 16 }}>
           {projectTypes.map((p, i) => (
             <button key={i} onClick={() => setSelected(selected === i ? null : i)}
-              style={{ background: selected === i ? '#F5E642′ : '#1e3a5f', color: selected === i ? '#0A1628' : '#fff', border: ’none', borderRadius: 6, padding: '8px 14px', cursor: 'pointer', fontWeight: 600, fontSize: 13 }}>
+              style={{ background: selected === i ? '#F5E642' : '#1e3a5f', color: selected === i ? '#0A1628' : '#fff', border: 'none', borderRadius: 6, padding: '8px 14px', cursor: 'pointer', fontWeight: 600, fontSize: 13 }}>
               {p.type}
             </button>
           ))}
@@ -79,10 +79,10 @@ export default function DFWPlumbingContractorVetting() {
           </div>
         )}
 
-        <div style={{ marginTop: 32, background: '#111f38', borderRadius: 10, padding: 20, borderTop: '2px solid #F5E642′ }}>
+        <div style={{ marginTop: 32, background: '#111f38', borderRadius: 10, padding: 20, borderTop: '2px solid #F5E642' }}>
           <div style={{ color: '#F5E642', fontWeight: 700, marginBottom: 8 }}>🚩 DFW Plumbing Red Flags</div>
           <div style={{ color: '#94a3b8', fontSize: 14, lineHeight: 1.7 }}>
-            Can't provide TSBPE license number on the spot. Won’t pull permits. No written estimate before work begins. Quotes price over the phone without seeing the problem. Demands payment in full before job is complete.
+            Can't provide TSBPE license number on the spot. Won't pull permits. No written estimate before work begins. Quotes price over the phone without seeing the problem. Demands payment in full before job is complete.
           </div>
         </div>
 
@@ -90,7 +90,7 @@ export default function DFWPlumbingContractorVetting() {
           <div style={{ color: '#F5E642', fontWeight: 700, marginBottom: 8 }}>💰 DFW Market Rates (2026)</div>
           <div style={{ display: 'grid', gap: 6 }}>
             {[['Service call / diagnostic', '$75–$150'], ['Toilet replacement', '$350–$600'], ['Water heater (40 gal)', '$900–$1,400'], ['Sewer camera inspection', '$200–$400'], ['Slab leak repair', '$2,500–$6,000']].map(([label, rate]) => (
-              <div key={label} style={{ display: 'flex', justifyContent: 'space-between', fontSize: 14, color: '#cbd5e1′ }}>
+              <div key={label} style={{ display: 'flex', justifyContent: 'space-between', fontSize: 14, color: '#cbd5e1' }}>
                 <span>{label}</span><span style={{ color: '#F5E642', fontWeight: 600 }}>{rate}</span>
               </div>
             ))}

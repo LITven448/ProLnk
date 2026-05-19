@@ -73,13 +73,13 @@ export default function DFWHomeownerChallengeGuide() {
       </div>
 
       {DAYS.map(({ day, task, why }) => (
-        <div key={day} onClick={() => setActive(active === day ? null : day)} style={{ background: '#0D1F35', borderRadius: 10, padding: '12px 14px', marginBottom: 8, cursor: 'pointer', borderLeft: done.includes(day) ? '3px solid #81C784′ : '3px solid #1C2E45' }}>
+        <div key={day} onClick={() => setActive(active === day ? null : day)} style={{ background: '#0D1F35', borderRadius: 10, padding: '12px 14px', marginBottom: 8, cursor: 'pointer', borderLeft: done.includes(day) ? '3px solid #81C784' : '3px solid #1C2E45' }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
-            <button onClick={e => { e.stopPropagation(); toggle(day); }} style={{ background: done.includes(day) ? '#81C784′ : '#1C2E45', border: ’none', borderRadius: 6, width: 28, height: 28, cursor: 'pointer', color: done.includes(day) ? '#fff' : '#555', fontWeight: 700, flexShrink: 0 }}>
+            <button onClick={e => { e.stopPropagation(); toggle(day); }} style={{ background: done.includes(day) ? '#81C784' : '#1C2E45', border: 'none', borderRadius: 6, width: 28, height: 28, cursor: 'pointer', color: done.includes(day) ? '#fff' : '#555', fontWeight: 700, flexShrink: 0 }}>
               {done.includes(day) ? '✓' : day}
             </button>
             <div style={{ flex: 1 }}>
-              <div style={{ color: done.includes(day) ? '#888′ : '#ddd', textDecoration: done.includes(day) ? ’line-through' : 'none', fontSize: '0.9rem' }}>{task}</div>
+              <div style={{ color: done.includes(day) ? '#888' : '#ddd', textDecoration: done.includes(day) ? 'line-through' : 'none', fontSize: '0.9rem' }}>{task}</div>
               {active === day && <div style={{ color: '#4FC3F7', fontSize: '0.8rem', marginTop: 6 }}>💡 {why}</div>}
             </div>
           </div>

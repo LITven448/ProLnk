@@ -10,26 +10,26 @@ const steps = [
 
 const symptomMap: Record<string, Record<string, { cause: string; diy: string; urgency: string; cost: string }>> = {
   warm_air: {
-    below90: { cause: 'Dirty filter or low refrigerant', diy: 'Replace filter; check vents open', urgency: 'Moderate — schedule within 48h', cost: '$20–$400′ },
-    t90to100: { cause: 'Capacitor failure or refrigerant leak', diy: 'Listen for clicking at outdoor unit', urgency: 'High — same day', cost: '$150–$800′ },
-    above100: { cause: 'System overload or refrigerant critically low', diy: 'Shade outdoor unit; call HVAC now', urgency: '🚨 Emergency', cost: '$300–$1,200′ },
+    below90: { cause: 'Dirty filter or low refrigerant', diy: 'Replace filter; check vents open', urgency: 'Moderate — schedule within 48h', cost: '$20–$400' },
+    t90to100: { cause: 'Capacitor failure or refrigerant leak', diy: 'Listen for clicking at outdoor unit', urgency: 'High — same day', cost: '$150–$800' },
+    above100: { cause: 'System overload or refrigerant critically low', diy: 'Shade outdoor unit; call HVAC now', urgency: '🚨 Emergency', cost: '$300–$1,200' },
   },
   not_running: {
-    below90: { cause: 'Tripped breaker or bad capacitor', diy: 'Reset breaker; check thermostat batteries', urgency: 'Moderate', cost: '$100–$400′ },
-    t90to100: { cause: 'Capacitor burned out from heat load', diy: 'Check outdoor disconnect box', urgency: 'High — same day', cost: '$150–$500′ },
-    above100: { cause: 'Thermal overload or compressor failure', diy: 'Do not reset repeatedly — call HVAC', urgency: '🚨 Emergency', cost: '$500–$3,000′ },
+    below90: { cause: 'Tripped breaker or bad capacitor', diy: 'Reset breaker; check thermostat batteries', urgency: 'Moderate', cost: '$100–$400' },
+    t90to100: { cause: 'Capacitor burned out from heat load', diy: 'Check outdoor disconnect box', urgency: 'High — same day', cost: '$150–$500' },
+    above100: { cause: 'Thermal overload or compressor failure', diy: 'Do not reset repeatedly — call HVAC', urgency: '🚨 Emergency', cost: '$500–$3,000' },
   },
   freezing: {
-    below90: { cause: 'Dirty coils or blocked airflow', diy: 'Turn off cooling; run fan only 2h to thaw', urgency: 'Moderate', cost: '$80–$300′ },
-    t90to100: { cause: 'Low refrigerant causing ice buildup', diy: 'Thaw then test — if repeats, call tech', urgency: 'High', cost: '$200–$600′ },
-    above100: { cause: 'Refrigerant critically low — compressor at risk', diy: 'Shut down system; call HVAC immediately', urgency: '🚨 Emergency', cost: '$400–$1,500′ },
+    below90: { cause: 'Dirty coils or blocked airflow', diy: 'Turn off cooling; run fan only 2h to thaw', urgency: 'Moderate', cost: '$80–$300' },
+    t90to100: { cause: 'Low refrigerant causing ice buildup', diy: 'Thaw then test — if repeats, call tech', urgency: 'High', cost: '$200–$600' },
+    above100: { cause: 'Refrigerant critically low — compressor at risk', diy: 'Shut down system; call HVAC immediately', urgency: '🚨 Emergency', cost: '$400–$1,500' },
   },
 };
 
 export default function DFWACNotCoolingGuide() {
   const [symptom, setSymptom] = useState('');
   const [temp, setTemp] = useState('');
-  const tempKey = temp === 'below-90′ ? ’below90′ : temp === '90-100' ? ’t90to100′ : temp === ’above-100′ ? ’above100′ : '';
+  const tempKey = temp === 'below-90' ? 'below90' : temp === '90-100' ? 't90to100' : temp === 'above-100' ? 'above100' : '';
   const symptomKey = symptom === 'warm-air' ? 'warm_air' : symptom === 'not-running' ? 'not_running' : symptom;
   const result = symptomKey && tempKey ? symptomMap[symptomKey]?.[tempKey] : null;
 
@@ -55,9 +55,9 @@ export default function DFWACNotCoolingGuide() {
           ))}
         </div>
         <div style={{ background: '#132035', borderRadius: 10, padding: 22, marginBottom: 20 }}>
-          <h2 style={{ fontSize: 18, fontWeight: 700, marginBottom: 16, color: '#F5E642′ }}>🔍 Symptom Checker</h2>
+          <h2 style={{ fontSize: 18, fontWeight: 700, marginBottom: 16, color: '#F5E642' }}>🔍 Symptom Checker</h2>
           <div style={{ marginBottom: 14 }}>
-            <label style={{ display: 'block', marginBottom: 6, fontSize: 13, color: '#94a3b8′ }}>What is the AC doing?</label>
+            <label style={{ display: 'block', marginBottom: 6, fontSize: 13, color: '#94a3b8' }}>What is the AC doing?</label>
             <select value={symptom} onChange={e => setSymptom(e.target.value)} style={{ width: '100%', padding: '10px 12px', background: '#0A1628', color: '#fff', border: '1px solid #1e3a5f', borderRadius: 6, fontSize: 14 }}>
               <option value="">Select symptom...</option>
               <option value="warm-air">Running but blowing warm air</option>
@@ -66,16 +66,16 @@ export default function DFWACNotCoolingGuide() {
             </select>
           </div>
           <div style={{ marginBottom: 16 }}>
-            <label style={{ display: 'block', marginBottom: 6, fontSize: 13, color: '#94a3b8′ }}>Outside temperature?</label>
+            <label style={{ display: 'block', marginBottom: 6, fontSize: 13, color: '#94a3b8' }}>Outside temperature?</label>
             <select value={temp} onChange={e => setTemp(e.target.value)} style={{ width: '100%', padding: '10px 12px', background: '#0A1628', color: '#fff', border: '1px solid #1e3a5f', borderRadius: 6, fontSize: 14 }}>
               <option value="">Select temp range...</option>
-              <option value="below-90″>Below 90°F</option>
-              <option value="90-100″>90–100°F</option>
-              <option value="above-100″>Above 100°F</option>
+              <option value="below-90">Below 90°F</option>
+              <option value="90-100">90–100°F</option>
+              <option value="above-100">Above 100°F</option>
             </select>
           </div>
           {result && (
-            <div style={{ background: '#0A1628', borderRadius: 8, padding: 16, borderLeft: '4px solid #F5E642′ }}>
+            <div style={{ background: '#0A1628', borderRadius: 8, padding: 16, borderLeft: '4px solid #F5E642' }}>
               <div style={{ marginBottom: 8 }}><span style={{ color: '#F5E642', fontWeight: 700 }}>Likely Cause: </span>{result.cause}</div>
               <div style={{ marginBottom: 8 }}><span style={{ color: '#F5E642', fontWeight: 700 }}>DIY Check: </span>{result.diy}</div>
               <div style={{ marginBottom: 8 }}><span style={{ color: '#F5E642', fontWeight: 700 }}>Urgency: </span>{result.urgency}</div>

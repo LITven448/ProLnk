@@ -49,7 +49,7 @@ export default function DFWNeighborhoodResearchGuide2026() {
   const [activeStage, setActiveStage] = useState('Crime & Safety');
 
   return (
-    <div style={{ background: '#0A1628', minHeight: '100vh', padding: '40px 20px', fontFamily: 'system-ui, sans-serif', color: '#E8EDF5′ }}>
+    <div style={{ background: '#0A1628', minHeight: '100vh', padding: '40px 20px', fontFamily: 'system-ui, sans-serif', color: '#E8EDF5' }}>
       <div style={{ maxWidth: 800, margin: '0 auto' }}>
         <div style={{ textAlign: 'center', marginBottom: 40 }}>
           <div style={{ fontSize: 48, marginBottom: 12 }}>🏘️</div>
@@ -59,7 +59,7 @@ export default function DFWNeighborhoodResearchGuide2026() {
 
         <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap', marginBottom: 32, justifyContent: 'center' }}>
           {stages.map(s => (
-            <button key={s} onClick={() => setActiveStage(s)} style={{ padding: '10px 18px', borderRadius: 8, border: 'none', cursor: 'pointer', fontWeight: 600, fontSize: 14, background: activeStage === s ? '#F5E642′ : '#1E2D45', color: activeStage === s ? '#0A1628' : '#94A3B8', transition: ’all 0.2s' }}>{s}</button>
+            <button key={s} onClick={() => setActiveStage(s)} style={{ padding: '10px 18px', borderRadius: 8, border: 'none', cursor: 'pointer', fontWeight: 600, fontSize: 14, background: activeStage === s ? '#F5E642' : '#1E2D45', color: activeStage === s ? '#0A1628' : '#94A3B8', transition: 'all 0.2s' }}>{s}</button>
           ))}
         </div>
 
@@ -67,7 +67,7 @@ export default function DFWNeighborhoodResearchGuide2026() {
           <h2 style={{ fontSize: 20, fontWeight: 700, color: '#F5E642', marginTop: 0, marginBottom: 20 }}>✅ {activeStage} Checklist</h2>
           <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
             {checklists[activeStage].map((item, i) => (
-              <div key={i} style={{ background: '#0A1628', borderRadius: 8, padding: '12px 16px', fontSize: 15, color: '#CBD5E1', lineHeight: 1.5, borderLeft: '3px solid #F5E642′ }}>{item}</div>
+              <div key={i} style={{ background: '#0A1628', borderRadius: 8, padding: '12px 16px', fontSize: 15, color: '#CBD5E1', lineHeight: 1.5, borderLeft: '3px solid #F5E642' }}>{item}</div>
             ))}
           </div>
         </div>

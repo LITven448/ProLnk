@@ -32,7 +32,7 @@ export default function DFWIndoorPlantsGuide2026() {
               {['low','medium','high'].map(l => (
                 <button key={l} onClick={() => setLight(light === l ? '' : l)}
                   style={{ marginRight: 8, padding: '6px 14px', borderRadius: 20, border: 'none', cursor: 'pointer',
-                    background: light === l ? '#F5E642′ : '#1C2D4A', color: light === l ? '#0A1628' : '#fff', fontWeight: 600, fontSize: 13 }}>
+                    background: light === l ? '#F5E642' : '#1C2D4A', color: light === l ? '#0A1628' : '#fff', fontWeight: 600, fontSize: 13 }}>
                   {l.charAt(0).toUpperCase() + l.slice(1)}
                 </button>
               ))}
@@ -42,7 +42,7 @@ export default function DFWIndoorPlantsGuide2026() {
               {['beginner','intermediate','expert'].map(e => (
                 <button key={e} onClick={() => setExp(exp === e ? '' : e)}
                   style={{ marginRight: 8, padding: '6px 14px', borderRadius: 20, border: 'none', cursor: 'pointer',
-                    background: exp === e ? '#F5E642′ : '#1C2D4A', color: exp === e ? '#0A1628' : '#fff', fontWeight: 600, fontSize: 13 }}>
+                    background: exp === e ? '#F5E642' : '#1C2D4A', color: exp === e ? '#0A1628' : '#fff', fontWeight: 600, fontSize: 13 }}>
                   {e.charAt(0).toUpperCase() + e.slice(1)}
                 </button>
               ))}
@@ -54,7 +54,7 @@ export default function DFWIndoorPlantsGuide2026() {
             <div key={p.name} style={{ background: '#111E33', borderRadius: 12, padding: 20, border: '1px solid #1C2D4A' }}>
               <div style={{ fontSize: 32, marginBottom: 8 }}>{p.emoji}</div>
               <div style={{ fontWeight: 700, fontSize: 16, marginBottom: 6 }}>{p.name}</div>
-              <div style={{ fontSize: 12, color: '#9BA3B2′ }}>{p.tip}</div>
+              <div style={{ fontSize: 12, color: '#9BA3B2' }}>{p.tip}</div>
             </div>
           ))}
           {filtered.length === 0 && <div style={{ color: '#9BA3B2', gridColumn: '1/-1', textAlign: 'center', padding: 32 }}>No plants match — try adjusting filters.</div>}

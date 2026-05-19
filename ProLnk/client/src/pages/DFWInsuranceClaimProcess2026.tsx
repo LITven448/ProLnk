@@ -38,19 +38,19 @@ export default function DFWInsuranceClaimProcess2026() {
         <p style={{ color: '#94a3b8', marginBottom: 32 }}>Step-by-step guidance for DFW claims — what you do in the first 48 hours determines your outcome.</p>
 
         <div style={{ background: '#0f1f3d', borderRadius: 12, padding: 20, marginBottom: 24 }}>
-          <h2 style={{ fontSize: 16, fontWeight: 700, marginBottom: 16, color: '#F5E642′ }}>🔍 Claim Walkthrough by Damage Type</h2>
+          <h2 style={{ fontSize: 16, fontWeight: 700, marginBottom: 16, color: '#F5E642' }}>🔍 Claim Walkthrough by Damage Type</h2>
           <div style={{ display: 'flex', gap: 8, marginBottom: 20 }}>
             {[{v:'hail',l:'⛈️ Hail/Wind'},{v:'water',l:'💧 Water'},{v:'fire',l:'🔥 Fire'}].map(d => (
               <button key={d.v} onClick={() => { setDamageType(d.v); setStep(0); }}
                 style={{ padding: '8px 16px', borderRadius: 20, border: 'none', cursor: 'pointer', fontSize: 13, fontWeight: 600,
-                  background: damageType === d.v ? '#F5E642′ : '#1a2f55', color: damageType === d.v ? '#0A1628' : '#fff' }}>
+                  background: damageType === d.v ? '#F5E642' : '#1a2f55', color: damageType === d.v ? '#0A1628' : '#fff' }}>
                 {d.l}
               </button>
             ))}
           </div>
           {currentSteps.map((s, i) => (
             <div key={i} onClick={() => setStep(i)}
-              style={{ background: step === i ? '#1a2f55′ : ’transparent', border: '1px solid', borderColor: step === i ? '#F5E642′ : '#1a2f55',
+              style={{ background: step === i ? '#1a2f55' : 'transparent', border: '1px solid', borderColor: step === i ? '#F5E642' : '#1a2f55',
                 borderRadius: 10, padding: 14, marginBottom: 10, cursor: 'pointer' }}>
               <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
                 <span style={{ fontSize: 20 }}>{s.icon}</span>
@@ -64,10 +64,10 @@ export default function DFWInsuranceClaimProcess2026() {
         </div>
 
         <div style={{ background: '#0f1f3d', borderRadius: 12, padding: 20 }}>
-          <h2 style={{ fontSize: 16, fontWeight: 700, marginBottom: 12, color: '#F5E642′ }}>⚖️ Know Your TX Rights</h2>
+          <h2 style={{ fontSize: 16, fontWeight: 700, marginBottom: 12, color: '#F5E642' }}>⚖️ Know Your TX Rights</h2>
           {['Insurer must acknowledge claim within 15 days (TX Insurance Code)','Must accept/reject within 15 days of receiving all docs','Must pay within 5 days of settlement acceptance','You can hire a public adjuster — they work on contingency (10-15% of payout)'].map(t => (
             <div key={t} style={{ display: 'flex', gap: 10, marginBottom: 10, fontSize: 13 }}>
-              <span>⚡</span><span style={{ color: '#94a3b8′ }}>{t}</span>
+              <span>⚡</span><span style={{ color: '#94a3b8' }}>{t}</span>
             </div>
           ))}
         </div>

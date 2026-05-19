@@ -32,7 +32,7 @@ export default function DFWHardWaterDamageGuide() {
 
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16, marginBottom: 32 }}>
           {[
-            { icon: '🔥', title: 'Water Heater Impact', body: 'Scale acts as insulation. Every 1/4″ of scale = 25% efficiency loss. Lifespan drops from 12 years to 6–8 in hard water areas.' },
+            { icon: '🔥', title: 'Water Heater Impact', body: 'Scale acts as insulation. Every 1/4" of scale = 25% efficiency loss. Lifespan drops from 12 years to 6–8 in hard water areas.' },
             { icon: '🍽️', title: 'Dishwasher & Appliances', body: 'Spray arms clog within 3–5 years without treatment. Heating elements scale over, drawing more power and failing early.' },
             { icon: '🚿', title: 'Fixtures & Shower Heads', body: 'DFW shower heads lose 60–75% of flow rate within 2 years without cleaning or a filter. White deposits visible on tile.' },
             { icon: '🧴', title: 'Prevention Options', body: 'Whole-home water softener ($400–$1,200 installed), salt-free conditioner, or inline filters at specific fixtures.' },
@@ -67,7 +67,7 @@ export default function DFWHardWaterDamageGuide() {
             <div style={{ background: '#0A1628', borderRadius: 12, padding: 20, display: 'flex', flexDirection: 'column', gap: 14 }}>
               <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap' }}>
                 <div style={{ background: '#F5E642', color: '#0A1628', fontWeight: 800, borderRadius: 8, padding: '4px 14px', fontSize: 13 }}>{result.label} — {result.gpg} GPG</div>
-                <div style={{ background: result.level === 'Severe' ? '#7F1D1D' : result.level === 'High' ? '#4A1D00′ : '#1A3A1A', color: '#FFF', fontWeight: 700, borderRadius: 8, padding: '4px 14px', fontSize: 13 }}>Damage Level: {result.level}</div>
+                <div style={{ background: result.level === 'Severe' ? '#7F1D1D' : result.level === 'High' ? '#4A1D00' : '#1A3A1A', color: '#FFF', fontWeight: 700, borderRadius: 8, padding: '4px 14px', fontSize: 13 }}>Damage Level: {result.level}</div>
               </div>
               <div><div style={{ color: '#F5E642', fontWeight: 700, fontSize: 13, marginBottom: 4 }}>🔧 CURRENT DAMAGE ESTIMATE</div><div style={{ color: '#E8EDF5', fontSize: 14 }}>{result.replace}</div></div>
               <div><div style={{ color: '#F5E642', fontWeight: 700, fontSize: 13, marginBottom: 4 }}>💰 TREATMENT COST vs. CONTINUED DAMAGE</div><div style={{ color: '#E8EDF5', fontSize: 14 }}>Treatment now: {result.treatCost} · Doing nothing: +$500–$3,000/yr in premature appliance replacements</div></div>

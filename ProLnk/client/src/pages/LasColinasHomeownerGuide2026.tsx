@@ -34,7 +34,7 @@ export default function LasColinasHomeownerGuide2026() {
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12 }}>
             {propertyTypes.map(p => (
               <button key={p.id} onClick={() => setSelected(p.id === selected ? null : p.id)}
-                style={{ backgroundColor: selected === p.id ? '#F5E642′ : '#112240', color: selected === p.id ? '#0A1628' : '#E8E8E8', border: ’none', borderRadius: 10, padding: 16, cursor: 'pointer', textAlign: 'left', fontWeight: 600, fontSize: 15 }}>
+                style={{ backgroundColor: selected === p.id ? '#F5E642' : '#112240', color: selected === p.id ? '#0A1628' : '#E8E8E8', border: 'none', borderRadius: 10, padding: 16, cursor: 'pointer', textAlign: 'left', fontWeight: 600, fontSize: 15 }}>
                 {p.label}
               </button>
             ))}
@@ -46,7 +46,7 @@ export default function LasColinasHomeownerGuide2026() {
             <h3 style={{ color: '#F5E642', marginBottom: 12 }}>🔧 {prop.label} Owner Guide</h3>
             {prop.tips.map(t => (
               <div key={t} style={{ display: 'flex', alignItems: 'flex-start', gap: 10, marginBottom: 10 }}>
-                <span style={{ color: '#F5E642′ }}>▸</span>
+                <span style={{ color: '#F5E642' }}>▸</span>
                 <span style={{ fontSize: 14, lineHeight: 1.5 }}>{t}</span>
               </div>
             ))}
@@ -57,8 +57,8 @@ export default function LasColinasHomeownerGuide2026() {
           <h2 style={{ color: '#F5E642', fontSize: 16, marginBottom: 12 }}>📋 HOA Compliance Checklist</h2>
           {['Exterior paint must match approved HOA palette','Landscaping trimmed and edged — inspected quarterly','No visible storage on balconies or patios','Mailbox must match neighborhood standard','Outdoor lighting: warm tone only, no harsh white'].map(item => (
             <div key={item} style={{ display: 'flex', gap: 10, marginBottom: 8, alignItems: 'center' }}>
-              <span style={{ color: '#F5E642′ }}>✓</span>
-              <span style={{ fontSize: 13, color: '#A0AEC0′ }}>{item}</span>
+              <span style={{ color: '#F5E642' }}>✓</span>
+              <span style={{ fontSize: 13, color: '#A0AEC0' }}>{item}</span>
             </div>
           ))}
         </div>

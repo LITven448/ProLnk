@@ -81,13 +81,13 @@ export default function DFWChimneyUsageGuide() {
             </div>
           ))}
           {result && (
-            <div style={{ background: '#0A1628', borderRadius: 10, padding: 20, marginTop: 8, borderLeft: '4px solid #F5E642′ }}>
+            <div style={{ background: '#0A1628', borderRadius: 10, padding: 20, marginTop: 8, borderLeft: '4px solid #F5E642' }}>
               <div style={{ color: '#F5E642', fontWeight: 700, fontSize: 16, marginBottom: 8 }}>{result.schedule}</div>
               <div style={{ background: '#111E35', borderRadius: 8, padding: '12px 16px', marginBottom: 10 }}>
                 <div style={{ color: '#9BA3B8', fontSize: 11, marginBottom: 4 }}>WHAT TO CHECK</div>
                 <div style={{ color: '#E8EAF0', fontSize: 14 }}>{result.firstCheck}</div>
               </div>
-              <div style={{ background: '#111E35', borderRadius: 8, padding: '12px 16px', marginBottom: 10, borderLeft: '3px solid #F5A642′ }}>
+              <div style={{ background: '#111E35', borderRadius: 8, padding: '12px 16px', marginBottom: 10, borderLeft: '3px solid #F5A642' }}>
                 <div style={{ color: '#F5A642', fontSize: 11, marginBottom: 4 }}>DFW-SPECIFIC WARNING</div>
                 <div style={{ color: '#E8EAF0', fontSize: 14 }}>{result.warning}</div>
               </div>

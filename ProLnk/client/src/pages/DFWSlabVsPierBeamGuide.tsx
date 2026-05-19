@@ -44,7 +44,7 @@ export default function DFWSlabVsPierBeamGuide() {
 
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16, marginBottom: 32 }}>
           {[
-            { label: '🏗️ Slab Foundation', data: slabData, accent: '#F5E642′ },
+            { label: '🏗️ Slab Foundation', data: slabData, accent: '#F5E642' },
             { label: '🪵 Pier & Beam Foundation', data: pierBeamData, accent: '#60a5fa' },
           ].map(({ label, data, accent }) => (
             <div key={label} style={{ background: '#112240', borderRadius: 12, padding: 20, border: `1px solid ${accent}33` }}>
@@ -54,7 +54,7 @@ export default function DFWSlabVsPierBeamGuide() {
               <div style={{ fontSize: 13, color: '#94a3b8', marginTop: 10, marginBottom: 8 }}>⚠️ Cons</div>
               {data.cons.map(c => <div key={c} style={{ fontSize: 13, marginBottom: 4 }}>• {c}</div>)}
               <div style={{ marginTop: 12, padding: '8px 12px', background: '#0A1628', borderRadius: 8 }}>
-                <div style={{ fontSize: 12, color: '#F5E642′ }}>💰 Cost Range</div>
+                <div style={{ fontSize: 12, color: '#F5E642' }}>💰 Cost Range</div>
                 <div style={{ fontSize: 13, marginTop: 4 }}>{data.costRange}</div>
               </div>
             </div>
@@ -83,7 +83,7 @@ export default function DFWSlabVsPierBeamGuide() {
             Get Foundation Guidance
           </button>
           {showResult && homeType && issue && (
-            <div style={{ marginTop: 16, padding: 16, background: '#0A1628', borderRadius: 8, borderLeft: '3px solid #F5E642′ }}>
+            <div style={{ marginTop: 16, padding: 16, background: '#0A1628', borderRadius: 8, borderLeft: '3px solid #F5E642' }}>
               <div style={{ color: '#F5E642', fontWeight: 700, marginBottom: 8 }}>📋 Your Foundation Profile</div>
               <p style={{ fontSize: 14, lineHeight: 1.7, margin: 0 }}>{getImplication(homeType, issue)}</p>
             </div>
@@ -91,9 +91,9 @@ export default function DFWSlabVsPierBeamGuide() {
         </div>
 
         <div style={{ background: '#112240', borderRadius: 12, padding: 20 }}>
-          <div style={{ fontWeight: 700, marginBottom: 12, color: '#F5E642′ }}>📍 DFW-Specific Facts</div>
+          <div style={{ fontWeight: 700, marginBottom: 12, color: '#F5E642' }}>📍 DFW-Specific Facts</div>
           {['DFW clay soil (expansive) is the #1 cause of foundation movement', 'Post-tension slabs are common in DFW — do NOT drill without a PT map', 'Pier & beam homes found in older East Dallas, Fort Worth historic districts', 'Foundation warranties vary: push piers typically 5-10 years, helical 15-25 years'].map(f => (
-            <div key={f} style={{ fontSize: 13, marginBottom: 8, color: '#cbd5e1′ }}>• {f}</div>
+            <div key={f} style={{ fontSize: 13, marginBottom: 8, color: '#cbd5e1' }}>• {f}</div>
           ))}
         </div>
       </div>

@@ -20,7 +20,7 @@ export default function DFWPolybutyleneClaims() {
   const result = key && results[key] ? results[key] : null;
 
   return (
-    <div style={{ background: '#0A1628', minHeight: '100vh', padding: '2rem', fontFamily: 'system-ui, sans-serif', color: '#e2e8f0′ }}>
+    <div style={{ background: '#0A1628', minHeight: '100vh', padding: '2rem', fontFamily: 'system-ui, sans-serif', color: '#e2e8f0' }}>
       <div style={{ maxWidth: '820px', margin: '0 auto' }}>
         <div style={{ marginBottom: '2rem' }}>
           <span style={{ background: '#F5E642', color: '#0A1628', padding: '0.25rem 0.75rem', borderRadius: '999px', fontSize: '0.75rem', fontWeight: 700 }}>DFW PLUMBING GUIDE</span>
@@ -88,7 +88,7 @@ export default function DFWPolybutyleneClaims() {
                 <ul style={{ margin: 0, padding: '0 0 0 1.2rem' }}>{result.remedies.map((r, i) => <li key={i} style={{ color: '#cbd5e1', fontSize: '0.85rem', marginBottom: '0.3rem' }}>{r}</li>)}</ul>
               </div>
               <div style={{ padding: '0.75rem', background: '#0f1e35', borderRadius: '8px', color: '#94a3b8', fontSize: '0.82rem' }}>
-                📋 <strong style={{ color: '#F5E642′ }}>Disclosure:</strong> {result.disclosure}
+                📋 <strong style={{ color: '#F5E642' }}>Disclosure:</strong> {result.disclosure}
               </div>
             </div>
           )}

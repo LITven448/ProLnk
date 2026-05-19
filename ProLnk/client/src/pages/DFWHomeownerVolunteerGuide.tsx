@@ -49,7 +49,7 @@ export default function DFWHomeownerVolunteerGuide() {
     <div style={{ background: '#F8FAFC', minHeight: '100vh', color: '#0A1628', padding: '40px 20px', fontFamily: 'system-ui, sans-serif' }}>
       <div style={{ maxWidth: 860, margin: '0 auto' }}>
         <div style={{ marginBottom: 8, color: '#1E6FD9', fontSize: 13, fontWeight: 600, letterSpacing: 2 }}>🤝 DFW HOMEOWNER GUIDE</div>
-        <h1 style={{ fontSize: 36, fontWeight: 800, marginBottom: 8, lineHeight: 1.2, color: '#0A1628′ }}>Volunteer & Give Back — DFW Homeowners</h1>
+        <h1 style={{ fontSize: 36, fontWeight: 800, marginBottom: 8, lineHeight: 1.2, color: '#0A1628' }}>Volunteer & Give Back — DFW Homeowners</h1>
         <p style={{ color: '#4B6278', fontSize: 16, marginBottom: 32 }}>
           DFW homeowners and licensed pros can transform their community. From Habitat builds to emergency HVAC repairs for seniors, your skills have direct impact on housing stability in North Texas.
         </p>
@@ -61,7 +61,7 @@ export default function DFWHomeownerVolunteerGuide() {
             { icon: '💙', org: 'United Way Home Repair', stat: 'Emergency response', desc: 'Crisis home repair to prevent unsafe conditions and evictions' },
             { icon: '☀️', org: 'Beat the Heat DFW', stat: 'June–Sept', desc: 'AC installation and repair for at-risk seniors during heat emergencies' },
           ].map(c => (
-            <div key={c.org} style={{ background: '#fff', borderRadius: 12, padding: 20, boxShadow: '0 2px 12px rgba(0,0,0,0.07)', border: '1px solid #E2EBF3′ }}>
+            <div key={c.org} style={{ background: '#fff', borderRadius: 12, padding: 20, boxShadow: '0 2px 12px rgba(0,0,0,0.07)', border: '1px solid #E2EBF3' }}>
               <div style={{ fontSize: 28, marginBottom: 8 }}>{c.icon}</div>
               <div style={{ fontWeight: 700, marginBottom: 4, fontSize: 15 }}>{c.org}</div>
               <div style={{ color: '#1E6FD9', fontSize: 13, fontWeight: 600, marginBottom: 4 }}>{c.stat}</div>
@@ -70,7 +70,7 @@ export default function DFWHomeownerVolunteerGuide() {
           ))}
         </div>
 
-        <div style={{ background: '#fff', borderRadius: 12, padding: 24, marginBottom: 24, boxShadow: '0 2px 12px rgba(0,0,0,0.07)', border: '1px solid #E2EBF3′ }}>
+        <div style={{ background: '#fff', borderRadius: 12, padding: 24, marginBottom: 24, boxShadow: '0 2px 12px rgba(0,0,0,0.07)', border: '1px solid #E2EBF3' }}>
           <h2 style={{ color: '#0A1628', fontSize: 18, marginBottom: 16 }}>🎯 Find Your Best Match</h2>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16, marginBottom: 16 }}>
             <div>
@@ -95,7 +95,7 @@ export default function DFWHomeownerVolunteerGuide() {
         </div>
 
         {showResults && matches.map(m => (
-          <div key={m.org} style={{ background: '#fff', borderRadius: 12, padding: 24, marginBottom: 16, boxShadow: '0 2px 12px rgba(0,0,0,0.07)', border: '1px solid #E2EBF3′ }}>
+          <div key={m.org} style={{ background: '#fff', borderRadius: 12, padding: 24, marginBottom: 16, boxShadow: '0 2px 12px rgba(0,0,0,0.07)', border: '1px solid #E2EBF3' }}>
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: 10 }}>
               <div>
                 <div style={{ fontWeight: 800, fontSize: 17, marginBottom: 2 }}>{m.org}</div>
@@ -108,7 +108,7 @@ export default function DFWHomeownerVolunteerGuide() {
             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 10, marginTop: 10 }}>
               <div style={{ color: '#4B6278', fontSize: 13 }}>⏱️ <strong>Commitment:</strong> {m.commitment}</div>
               <div style={{ color: '#4B6278', fontSize: 13 }}>🌟 <strong>Contact:</strong> {m.contact}</div>
-              <div style={{ color: '#1E6FD9', fontSize: 13, gridColumn: '1 / -1′ }}>💥 <strong>Your impact:</strong> {m.impact}</div>
+              <div style={{ color: '#1E6FD9', fontSize: 13, gridColumn: '1 / -1' }}>💥 <strong>Your impact:</strong> {m.impact}</div>
             </div>
           </div>
         ))}

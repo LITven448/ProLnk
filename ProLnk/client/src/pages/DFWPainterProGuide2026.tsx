@@ -28,8 +28,8 @@ export default function DFWPainterProGuide2026() {
 
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16, marginBottom: 32 }}>
           {[
-            { icon: '🏠', label: 'Interior Avg Job', value: '$3,500′ },
-            { icon: '🏡', label: 'Exterior Avg Job', value: '$4,500′ },
+            { icon: '🏠', label: 'Interior Avg Job', value: '$3,500' },
+            { icon: '🏡', label: 'Exterior Avg Job', value: '$4,500' },
             { icon: '☀️', label: 'Summer Hours', value: 'Before 10am' },
             { icon: '🌸', label: 'Peak Seasons', value: 'Spring & Fall' },
           ].map((s) => (
@@ -45,7 +45,7 @@ export default function DFWPainterProGuide2026() {
           <h2 style={{ color: '#F5E642', fontSize: 16, fontWeight: 700, marginBottom: 16, margin: '0 0 16px' }}>💰 DFW Income Projector</h2>
           <div style={{ display: 'flex', gap: 10, flexWrap: 'wrap', marginBottom: 20 }}>
             {Object.entries(projections).map(([key, val]) => (
-              <button key={key} onClick={() => setSpecialty(key)} style={{ padding: '8px 16px', borderRadius: 8, border: 'none', cursor: 'pointer', fontWeight: 600, fontSize: 13, backgroundColor: specialty === key ? '#F5E642′ : '#1e3a5f', color: specialty === key ? '#0A1628' : '#94a3b8' }}>
+              <button key={key} onClick={() => setSpecialty(key)} style={{ padding: '8px 16px', borderRadius: 8, border: 'none', cursor: 'pointer', fontWeight: 600, fontSize: 13, backgroundColor: specialty === key ? '#F5E642' : '#1e3a5f', color: specialty === key ? '#0A1628' : '#94a3b8' }}>
                 {val.label}
               </button>
             ))}
@@ -70,7 +70,7 @@ export default function DFWPainterProGuide2026() {
           <h2 style={{ color: '#F5E642', fontSize: 16, fontWeight: 700, margin: '0 0 12px' }}>⭐ Charter Tier Benefits</h2>
           {['Priority match placement in DFW feed', 'Locked $149/mo rate before price increases', 'Network income on pros you refer', '1.5% origination rights on homes you source', 'Direct access to ProLnk success team'].map((b) => (
             <div key={b} style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 8 }}>
-              <span style={{ color: '#F5E642′ }}>✓</span>
+              <span style={{ color: '#F5E642' }}>✓</span>
               <span style={{ color: '#cbd5e1', fontSize: 14 }}>{b}</span>
             </div>
           ))}

@@ -6,11 +6,11 @@ import { Shield, Star, CheckCircle, ArrowRight, Lock, Eye, EyeOff } from "lucide
 import { motion } from "framer-motion";
 import { useState } from "react";
 
-const BRAND = "#0d9488″;
+const BRAND = "#0d9488";
 const BRAND_LIGHT = "rgba(13,148,136,0.15)";
 const BRAND_BORDER = "rgba(13,148,136,0.4)";
 const NAVY = "#0a0f1e";
-const CARD_BG = "#0e1628″;
+const CARD_BG = "#0e1628";
 const INPUT_BG = "rgba(255,255,255,0.06)";
 const INPUT_BORDER = "rgba(255,255,255,0.12)";
 const INPUT_FOCUS_BORDER = BRAND;
@@ -65,10 +65,10 @@ export default function TrustyProLogin() {
   }
 
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center px-4 py-12″ style={{ background: NAVY }}>
+    <div className="min-h-screen flex flex-col items-center justify-center px-4 py-12" style={{ background: NAVY }}>
       {/* Subtle radial glow */}
       <div
-        className="pointer-events-none fixed inset-0″
+        className="pointer-events-none fixed inset-0"
         style={{
           background: "radial-gradient(ellipse 60% 50% at 50% 0%, rgba(13,148,136,0.12) 0%, transparent 70%)",
           zIndex: 0,
@@ -82,30 +82,30 @@ export default function TrustyProLogin() {
         className="relative z-10 w-full max-w-sm"
       >
         {/* Logo */}
-        <div className="flex justify-center mb-8″>
+        <div className="flex justify-center mb-8">
           <TrustyProLogo variant="dark" height={40} />
         </div>
 
         {/* Card */}
         <div
-          className="rounded-2xl p-8″
+          className="rounded-2xl p-8"
           style={{
             background: CARD_BG,
             border: "1px solid rgba(255,255,255,0.08)",
             boxShadow: "0 24px 48px rgba(0,0,0,0.5), 0 0 0 1px rgba(255,255,255,0.04)",
           }}
         >
-          <div className="text-center mb-8″>
+          <div className="text-center mb-8">
             <h1 className="text-2xl font-black text-white">Log in to TrustyPro</h1>
-            <p className="text-sm mt-1″ style={{ color: "rgba(255,255,255,0.45)" }}>
+            <p className="text-sm mt-1" style={{ color: "rgba(255,255,255,0.45)" }}>
               Access your home profile and pro network
             </p>
           </div>
 
-          <form onSubmit={handleLogin} className="space-y-4″>
+          <form onSubmit={handleLogin} className="space-y-4">
             {/* Email */}
             <div>
-              <label className="block text-xs font-semibold text-gray-400 mb-1.5″>Email address</label>
+              <label className="block text-xs font-semibold text-gray-400 mb-1.5">Email address</label>
               <input
                 type="email"
                 autoComplete="email"
@@ -125,8 +125,8 @@ export default function TrustyProLogin() {
 
             {/* Password */}
             <div>
-              <div className="flex items-center justify-between mb-1.5″>
-                <label className="text-xs font-semibold text-gray-400″>Password</label>
+              <div className="flex items-center justify-between mb-1.5">
+                <label className="text-xs font-semibold text-gray-400">Password</label>
                 <button
                   type="button"
                   className="text-xs transition-colors hover:text-white"
@@ -166,7 +166,7 @@ export default function TrustyProLogin() {
             {/* Submit */}
             <button
               type="submit"
-              className="w-full flex items-center justify-center gap-2 py-3.5 rounded-xl text-sm font-bold text-white transition-opacity hover:opacity-90 mt-2″
+              className="w-full flex items-center justify-center gap-2 py-3.5 rounded-xl text-sm font-bold text-white transition-opacity hover:opacity-90 mt-2"
               style={{ background: BRAND }}
             >
               Log in to TrustyPro
@@ -175,7 +175,7 @@ export default function TrustyProLogin() {
           </form>
 
           {/* Google OAuth */}
-          <div className="relative my-5″>
+          <div className="relative my-5">
             <div className="absolute inset-0 flex items-center">
               <div className="w-full" style={{ borderTop: "1px solid rgba(255,255,255,0.07)" }} />
             </div>
@@ -185,21 +185,21 @@ export default function TrustyProLogin() {
           </div>
           <button
             type="button"
-            className="w-full flex items-center justify-center gap-3 py-3 rounded-xl text-sm font-semibold transition-all hover:opacity-90″
+            className="w-full flex items-center justify-center gap-3 py-3 rounded-xl text-sm font-semibold transition-all hover:opacity-90"
             style={{ background: "rgba(255,255,255,0.06)", border: "1px solid rgba(255,255,255,0.12)", color: "rgba(255,255,255,0.85)" }}
             onClick={() => {}}
           >
-            <svg width="18″ height="18" viewBox="0 0 18 18" fill="none">
-              <path d="M17.64 9.2c0-.637-.057-1.251-.164-1.84H9v3.481h4.844a4.14 4.14 0 01-1.796 2.716v2.259h2.908c1.702-1.567 2.684-3.875 2.684-6.615z" fill="#4285F4″/>
-              <path d="M9 18c2.43 0 4.467-.806 5.956-2.184l-2.908-2.259c-.806.54-1.837.86-3.048.86-2.344 0-4.328-1.584-5.036-3.711H.957v2.332A8.997 8.997 0 009 18z" fill="#34A853″/>
-              <path d="M3.964 10.706A5.41 5.41 0 013.682 9c0-.593.102-1.17.282-1.706V4.962H.957A8.996 8.996 0 000 9c0 1.452.348 2.827.957 4.038l3.007-2.332z" fill="#FBBC05″/>
-              <path d="M9 3.58c1.321 0 2.508.454 3.44 1.345l2.582-2.58C13.463.891 11.426 0 9 0A8.997 8.997 0 00.957 4.962L3.964 7.294C4.672 5.163 6.656 3.58 9 3.58z" fill="#EA4335″/>
+            <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+              <path d="M17.64 9.2c0-.637-.057-1.251-.164-1.84H9v3.481h4.844a4.14 4.14 0 01-1.796 2.716v2.259h2.908c1.702-1.567 2.684-3.875 2.684-6.615z" fill="#4285F4"/>
+              <path d="M9 18c2.43 0 4.467-.806 5.956-2.184l-2.908-2.259c-.806.54-1.837.86-3.048.86-2.344 0-4.328-1.584-5.036-3.711H.957v2.332A8.997 8.997 0 009 18z" fill="#34A853"/>
+              <path d="M3.964 10.706A5.41 5.41 0 013.682 9c0-.593.102-1.17.282-1.706V4.962H.957A8.996 8.996 0 000 9c0 1.452.348 2.827.957 4.038l3.007-2.332z" fill="#FBBC05"/>
+              <path d="M9 3.58c1.321 0 2.508.454 3.44 1.345l2.582-2.58C13.463.891 11.426 0 9 0A8.997 8.997 0 00.957 4.962L3.964 7.294C4.672 5.163 6.656 3.58 9 3.58z" fill="#EA4335"/>
             </svg>
             Continue with Google
           </button>
 
           {/* Divider */}
-          <div className="relative my-5″>
+          <div className="relative my-5">
             <div className="absolute inset-0 flex items-center">
               <div className="w-full" style={{ borderTop: "1px solid rgba(255,255,255,0.07)" }} />
             </div>
@@ -213,11 +213,11 @@ export default function TrustyProLogin() {
           {/* Sign up CTA — Founding Partner */}
           <Link
             href="/founding-partner"
-            className="flex items-center justify-center gap-2 w-full py-3.5 rounded-xl text-sm font-bold transition-all hover:opacity-90″
+            className="flex items-center justify-center gap-2 w-full py-3.5 rounded-xl text-sm font-bold transition-all hover:opacity-90"
             style={{
               background: BRAND_LIGHT,
               border: `1px solid ${BRAND_BORDER}`,
-              color: "#5eead4″,
+              color: "#5eead4",
             }}
           >
             Join as Founding Partner
@@ -225,12 +225,12 @@ export default function TrustyProLogin() {
           </Link>
 
           {/* Trust indicators */}
-          <div className="mt-6 pt-5″ style={{ borderTop: "1px solid rgba(255,255,255,0.06)" }}>
-            <div className="flex flex-col gap-2″>
+          <div className="mt-6 pt-5" style={{ borderTop: "1px solid rgba(255,255,255,0.06)" }}>
+            <div className="flex flex-col gap-2">
               {TRUST_INDICATORS.map(({ icon: Icon, text }) => (
-                <div key={text} className="flex items-center gap-2.5″>
+                <div key={text} className="flex items-center gap-2.5">
                   <div
-                    className="w-6 h-6 rounded-md flex items-center justify-center flex-shrink-0″
+                    className="w-6 h-6 rounded-md flex items-center justify-center flex-shrink-0"
                     style={{ background: BRAND_LIGHT, border: `1px solid ${BRAND_BORDER}` }}
                   >
                     <Icon size={12} style={{ color: BRAND }} />
@@ -243,7 +243,7 @@ export default function TrustyProLogin() {
         </div>
 
         {/* Footer links */}
-        <div className="flex items-center justify-between mt-6 text-xs px-1″>
+        <div className="flex items-center justify-between mt-6 text-xs px-1">
           <button
             onClick={() => navigate("/trustypro")}
             className="transition-colors hover:text-white"
@@ -251,7 +251,7 @@ export default function TrustyProLogin() {
           >
             ← Back to TrustyPro
           </button>
-          <div className="flex items-center gap-1″ style={{ color: "rgba(255,255,255,0.2)" }}>
+          <div className="flex items-center gap-1" style={{ color: "rgba(255,255,255,0.2)" }}>
             <Lock size={10} />
             <span>Secure login</span>
           </div>

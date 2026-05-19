@@ -42,7 +42,7 @@ export default function DFWProLnkROIGuide2026() {
   const data = roiData[userType];
 
   return (
-    <div style={{ background: '#0A1628', minHeight: '100vh', padding: '32px 24px', fontFamily: 'sans-serif', color: '#E8EAF0′ }}>
+    <div style={{ background: '#0A1628', minHeight: '100vh', padding: '32px 24px', fontFamily: 'sans-serif', color: '#E8EAF0' }}>
       <div style={{ maxWidth: 680, margin: '0 auto' }}>
         <div style={{ color: '#F5E642', fontSize: 13, fontWeight: 700, textTransform: 'uppercase', letterSpacing: 2, marginBottom: 8 }}>ProLnk Platform 2026</div>
         <h1 style={{ fontSize: 30, fontWeight: 800, color: '#FFFFFF', margin: '0 0 8px' }}>📈 ProLnk ROI Guide — DFW</h1>
@@ -50,7 +50,7 @@ export default function DFWProLnkROIGuide2026() {
 
         <div style={{ display: 'flex', gap: 8, marginBottom: 28 }}>
           {['homeowner', 'pro', 'scout'].map((t) => (
-            <button key={t} onClick={() => setUserType(t)} style={{ flex: 1, padding: '10px', borderRadius: 8, border: 'none', cursor: 'pointer', fontWeight: 700, fontSize: 13, background: userType === t ? '#F5E642′ : '#111D33', color: userType === t ? '#0A1628' : '#8892A4' }}>
+            <button key={t} onClick={() => setUserType(t)} style={{ flex: 1, padding: '10px', borderRadius: 8, border: 'none', cursor: 'pointer', fontWeight: 700, fontSize: 13, background: userType === t ? '#F5E642' : '#111D33', color: userType === t ? '#0A1628' : '#8892A4' }}>
               {t === 'homeowner' ? '🏡 Homeowner' : t === 'pro' ? '🔧 Pro' : '🗺️ Scout'}
             </button>
           ))}
@@ -60,12 +60,12 @@ export default function DFWProLnkROIGuide2026() {
           <div style={{ fontSize: 18, fontWeight: 800, color: '#FFFFFF', marginBottom: 8 }}>{data.title}</div>
           <div style={{ fontSize: 14, color: '#F5E642', marginBottom: 20 }}>{data.headline}</div>
           {data.items.map((item) => (
-            <div key={item.label} style={{ padding: '14px 0', borderBottom: '1px solid #1E2D45′ }}>
+            <div key={item.label} style={{ padding: '14px 0', borderBottom: '1px solid #1E2D45' }}>
               <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: 4 }}>
                 <span style={{ fontSize: 14, color: '#C8D0DC' }}>{item.label}</span>
-                <span style={{ fontSize: 16, fontWeight: 800, color: '#F5E642′ }}>{item.value}</span>
+                <span style={{ fontSize: 16, fontWeight: 800, color: '#F5E642' }}>{item.value}</span>
               </div>
-              <div style={{ fontSize: 12, color: '#6B7A90′ }}>{item.detail}</div>
+              <div style={{ fontSize: 12, color: '#6B7A90' }}>{item.detail}</div>
             </div>
           ))}
         </div>

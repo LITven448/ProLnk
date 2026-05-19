@@ -32,7 +32,7 @@ export default function DFWRoofUnderlaymentGuide2026() {
           <h1 style={{ fontSize: 28, fontWeight: 700, color: '#F5E642', margin: 0 }}>DFW Roofing Underlayment Guide 2026</h1>
           <p style={{ color: '#94a3b8', marginTop: 8 }}>Choose the right underlayment for North Texas heat and UV conditions</p>
         </div>
-        <div style={{ background: '#1a2744', borderRadius: 12, padding: 16, marginBottom: 24, border: '1px solid #F5E642′ }}>
+        <div style={{ background: '#1a2744', borderRadius: 12, padding: 16, marginBottom: 24, border: '1px solid #F5E642' }}>
           <p style={{ margin: 0, color: '#F5E642', fontWeight: 600 }}>☀️ DFW Climate Reality: Attic temperatures regularly exceed 150°F in summer. Felt paper degrades in 3–5 years under these conditions. Synthetic is not a luxury — it's the correct specification for North Texas.</p>
         </div>
         <div style={{ display: 'grid', gap: 16, marginBottom: 32 }}>
@@ -42,7 +42,7 @@ export default function DFWRoofUnderlaymentGuide2026() {
                 <span style={{ fontSize: 32 }}>{u.icon}</span>
                 <div style={{ flex: 1 }}>
                   <div style={{ display: 'flex', alignItems: 'center', gap: 8, flexWrap: 'wrap' }}>
-                    <h3 style={{ margin: 0, color: '#F5E642′ }}>{u.name}</h3>
+                    <h3 style={{ margin: 0, color: '#F5E642' }}>{u.name}</h3>
                     {u.tag && <span style={{ fontSize: 11, background: u.color, color: '#0A1628', padding: '2px 8px', borderRadius: 20, fontWeight: 700 }}>{u.tag}</span>}
                   </div>
                   <p style={{ margin: '4px 0 0', color: '#94a3b8', fontSize: 14 }}>{u.desc}</p>
@@ -51,7 +51,7 @@ export default function DFWRoofUnderlaymentGuide2026() {
               <div style={{ display: 'grid', gridTemplateColumns: 'repeat(5, 1fr)', gap: 8 }}>
                 {[['🌡️ Max Temp', u.temp], ['☀️ UV Resist', u.uv], ['💧 Moisture', u.moisture], ['💰 Cost', u.cost], ['📅 Lifespan', u.lifespan]].map(([label, val]) => (
                   <div key={String(label)} style={{ background: '#0A1628', padding: '8px', borderRadius: 8, textAlign: 'center' }}>
-                    <p style={{ margin: 0, fontSize: 10, color: '#94a3b8′ }}>{label}</p>
+                    <p style={{ margin: 0, fontSize: 10, color: '#94a3b8' }}>{label}</p>
                     <p style={{ margin: '2px 0 0', fontSize: 12, color: '#cbd5e1', fontWeight: 600 }}>{val}</p>
                   </div>
                 ))}

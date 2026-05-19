@@ -76,10 +76,10 @@ export default function DFWHVACDFWBenchmark() {
         <div style={{ background: '#111f3a', borderRadius: 12, padding: 24, marginBottom: 24 }}>
           <h2 style={{ color: '#F5E642', fontSize: 18, marginBottom: 20 }}>🏠 Enter Your DFW Home Profile</h2>
           <div style={{ display: 'grid', gap: 16 }}>
-            <div><label style={labelStyle}>Home square footage *</label><input style={inputStyle} placeholder="e.g. 2400″ value={sqft} onChange={e => setSqft(e.target.value)} /></div>
-            <div><label style={labelStyle}>Average summer monthly electric bill ($) *</label><input style={inputStyle} placeholder="e.g. 280″ value={monthly} onChange={e => setMonthly(e.target.value)} /></div>
-            <div><label style={labelStyle}>AC runtime on hot days (hours/day, optional)</label><input style={inputStyle} placeholder="e.g. 14″ value={runtime} onChange={e => setRuntime(e.target.value)} /></div>
-            <div><label style={labelStyle}>Annual HVAC maintenance cost ($, optional)</label><input style={inputStyle} placeholder="e.g. 450″ value={maintCost} onChange={e => setMaintCost(e.target.value)} /></div>
+            <div><label style={labelStyle}>Home square footage *</label><input style={inputStyle} placeholder="e.g. 2400" value={sqft} onChange={e => setSqft(e.target.value)} /></div>
+            <div><label style={labelStyle}>Average summer monthly electric bill ($) *</label><input style={inputStyle} placeholder="e.g. 280" value={monthly} onChange={e => setMonthly(e.target.value)} /></div>
+            <div><label style={labelStyle}>AC runtime on hot days (hours/day, optional)</label><input style={inputStyle} placeholder="e.g. 14" value={runtime} onChange={e => setRuntime(e.target.value)} /></div>
+            <div><label style={labelStyle}>Annual HVAC maintenance cost ($, optional)</label><input style={inputStyle} placeholder="e.g. 450" value={maintCost} onChange={e => setMaintCost(e.target.value)} /></div>
           </div>
           <button onClick={benchmark}
             style={{ marginTop: 20, background: '#F5E642', color: '#0A1628', border: 'none', borderRadius: 8, padding: '12px 28px', fontWeight: 700, fontSize: 15, cursor: 'pointer' }}>

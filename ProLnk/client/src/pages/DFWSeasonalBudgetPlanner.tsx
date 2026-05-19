@@ -67,7 +67,7 @@ export default function DFWSeasonalBudgetPlanner() {
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8 }}>
             {homeTypes.map(h => (
               <button key={h} onClick={() => { setHomeType(h); setShowCalendar(false); }}
-                style={{ padding: '8px 14px', borderRadius: 8, border: `1.5px solid ${homeType === h ? '#F5E642' : '#1E3A5F'}`, background: homeType === h ? '#F5E642′ : ’transparent', color: homeType === h ? '#0A1628′ : '#fff', fontWeight: 600, cursor: ’pointer' }}>
+                style={{ padding: '8px 14px', borderRadius: 8, border: `1.5px solid ${homeType === h ? '#F5E642' : '#1E3A5F'}`, background: homeType === h ? '#F5E642' : 'transparent', color: homeType === h ? '#0A1628' : '#fff', fontWeight: 600, cursor: 'pointer' }}>
                 {h}
               </button>
             ))}
@@ -79,7 +79,7 @@ export default function DFWSeasonalBudgetPlanner() {
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8 }}>
             {features.map(f => (
               <button key={f} onClick={() => { toggleFeature(f); setShowCalendar(false); }}
-                style={{ padding: '8px 14px', borderRadius: 8, border: `1.5px solid ${selectedFeatures.includes(f) ? '#F5E642' : '#1E3A5F'}`, background: selectedFeatures.includes(f) ? '#F5E642′ : ’transparent', color: selectedFeatures.includes(f) ? '#0A1628′ : '#fff', fontWeight: 600, cursor: ’pointer' }}>
+                style={{ padding: '8px 14px', borderRadius: 8, border: `1.5px solid ${selectedFeatures.includes(f) ? '#F5E642' : '#1E3A5F'}`, background: selectedFeatures.includes(f) ? '#F5E642' : 'transparent', color: selectedFeatures.includes(f) ? '#0A1628' : '#fff', fontWeight: 600, cursor: 'pointer' }}>
                 {f}
               </button>
             ))}
@@ -105,7 +105,7 @@ export default function DFWSeasonalBudgetPlanner() {
                   <div key={month} style={{ background: '#0F2240', borderRadius: 10, padding: '14px', borderTop: `3px solid ${total > 200 ? '#F5E642' : total > 0 ? '#3B82F6' : '#1E3A5F'}` }}>
                     <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: 8 }}>
                       <span style={{ fontWeight: 700 }}>{month}</span>
-                      <span style={{ color: total > 0 ? '#F5E642′ : '#475569', fontWeight: 700 }}>{total > 0 ? `~$${total}` : '$0'}</span>
+                      <span style={{ color: total > 0 ? '#F5E642' : '#475569', fontWeight: 700 }}>{total > 0 ? `~$${total}` : '$0'}</span>
                     </div>
                     {items.length > 0 ? items.map((item, i) => (
                       <div key={i} style={{ color: '#94A3B8', fontSize: 12, marginBottom: 2 }}>• {item}</div>

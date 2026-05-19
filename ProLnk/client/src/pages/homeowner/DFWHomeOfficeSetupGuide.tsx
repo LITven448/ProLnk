@@ -41,7 +41,7 @@ export default function DFWHomeOfficeSetupGuide() {
         {/* DFW Context */}
         <div style={{ background: '#1e293b', borderRadius: 16, padding: 28, marginTop: 40 }}>
           <p style={{ color: '#94a3b8', lineHeight: 1.7, margin: 0, fontSize: 16 }}>
-            With <strong style={{ color: '#f1f5f9′ }}>34% of DFW workers remote or hybrid</strong>, the home office isn’t optional —
+            With <strong style={{ color: '#f1f5f9' }}>34% of DFW workers remote or hybrid</strong>, the home office isn't optional —
             it's a selling point and a productivity essential. DFW-specific challenges (heat, power fluctuations, open floor plans)
             mean a generic setup won't cut it.
           </p>
@@ -132,17 +132,17 @@ export default function DFWHomeOfficeSetupGuide() {
           <div style={{ display: 'flex', flexDirection: 'column', gap: 24, marginBottom: 32 }}>
             <div>
               <label style={{ display: 'block', color: '#94a3b8', marginBottom: 8, fontWeight: 600 }}>
-                Budget: <span style={{ color: '#38bdf8′ }}>${budget.toLocaleString()}</span>
+                Budget: <span style={{ color: '#38bdf8' }}>${budget.toLocaleString()}</span>
               </label>
-              <input type="range" min={200} max={5000} step={100} value={budget} onChange={e => setBudget(Number(e.target.value))} style={{ width: '100%', accentColor: '#38bdf8′ }} />
+              <input type="range" min={200} max={5000} step={100} value={budget} onChange={e => setBudget(Number(e.target.value))} style={{ width: '100%', accentColor: '#38bdf8' }} />
             </div>
 
             <div>
               <label style={{ display: 'block', color: '#94a3b8', marginBottom: 8, fontWeight: 600 }}>
-                Room size: <span style={{ color: '#38bdf8′ }}>{roomSqft} sqft</span>
+                Room size: <span style={{ color: '#38bdf8' }}>{roomSqft} sqft</span>
                 {roomSqft > 200 && <span style={{ color: '#f59e0b', fontSize: 13, marginLeft: 8 }}>→ Consider mini-split</span>}
               </label>
-              <input type="range" min={60} max={400} step={10} value={roomSqft} onChange={e => setRoomSqft(Number(e.target.value))} style={{ width: '100%', accentColor: '#38bdf8′ }} />
+              <input type="range" min={60} max={400} step={10} value={roomSqft} onChange={e => setRoomSqft(Number(e.target.value))} style={{ width: '100%', accentColor: '#38bdf8' }} />
             </div>
           </div>
 
@@ -163,9 +163,9 @@ export default function DFWHomeOfficeSetupGuide() {
 
               <div style={{ background: 'linear-gradient(135deg, #1e3a5f, #0f172a)', borderRadius: 14, padding: '24px 28px', textAlign: 'center' }}>
                 <div style={{ color: '#94a3b8', fontSize: 14, marginBottom: 6 }}>Estimated Total Investment</div>
-                <div style={{ fontSize: 32, fontWeight: 800, color: '#38bdf8′ }}>${totalLow.toLocaleString()}–${totalHigh.toLocaleString()}</div>
+                <div style={{ fontSize: 32, fontWeight: 800, color: '#38bdf8' }}>${totalLow.toLocaleString()}–${totalHigh.toLocaleString()}</div>
                 <div style={{ color: '#64748b', fontSize: 13, marginTop: 6 }}>
-                  Climate recommendation: <strong style={{ color: '#f1f5f9′ }}>{climateSolution}</strong> for your room size
+                  Climate recommendation: <strong style={{ color: '#f1f5f9' }}>{climateSolution}</strong> for your room size
                 </div>
               </div>
             </>

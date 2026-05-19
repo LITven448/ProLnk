@@ -77,7 +77,7 @@ export default function DFWDesignTrends2026() {
             <div key={label} style={{ background: '#fff', borderRadius: 12, padding: 20, boxShadow: '0 2px 12px rgba(0,0,0,0.07)' }}>
               <div style={{ fontSize: 28, marginBottom: 8 }}>{icon}</div>
               <div style={{ fontWeight: 700, fontSize: 15, marginBottom: 4 }}>{label}</div>
-              <div style={{ fontSize: 13, color: '#888′ }}>{sub}</div>
+              <div style={{ fontSize: 13, color: '#888' }}>{sub}</div>
             </div>
           ))}
         </div>
@@ -98,7 +98,7 @@ export default function DFWDesignTrends2026() {
                   cursor: 'pointer',
                   fontWeight: 700,
                   fontSize: 14,
-                  background: selected === r.id ? '#8B6F47′ : '#F0EDE8',
+                  background: selected === r.id ? '#8B6F47' : '#F0EDE8',
                   color: selected === r.id ? '#fff' : '#555',
                   transition: 'all 0.2s',
                 }}
@@ -119,7 +119,7 @@ export default function DFWDesignTrends2026() {
             ))}
           </div>
 
-          <div style={{ marginTop: 24, padding: '16px 20px', background: '#FDF8F2', borderRadius: 10, borderLeft: '4px solid #8B6F47′ }}>
+          <div style={{ marginTop: 24, padding: '16px 20px', background: '#FDF8F2', borderRadius: 10, borderLeft: '4px solid #8B6F47' }}>
             <span style={{ fontSize: 13, color: '#8B6F47', fontWeight: 700, textTransform: 'uppercase', letterSpacing: 1 }}>Estimated renovation range</span>
             <div style={{ fontSize: 24, fontWeight: 800, marginTop: 4 }}>{data.cost}</div>
           </div>

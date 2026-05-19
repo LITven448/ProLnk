@@ -41,7 +41,7 @@ export default function DFWFoundationHydrostaticLift2026() {
         <h2 style={{ color: '#F5E642', fontSize: 16, marginBottom: 12 }}>📍 Your Property Location</h2>
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 10, marginBottom: 24 }}>
           {locations.map(loc => (
-            <button key={loc.id} onClick={() => setSelected(loc.id)} style={{ background: selected === loc.id ? '#F5E642′ : '#1a2f4e', color: selected === loc.id ? '#0A1628' : '#fff', border: '2px solid ' + (selected === loc.id ? '#F5E642' : '#334155'), borderRadius: 10, padding: '14px 12px', cursor: ’pointer', fontWeight: 600, fontSize: 14, textAlign: 'left', transition: 'all 0.15s' }}>
+            <button key={loc.id} onClick={() => setSelected(loc.id)} style={{ background: selected === loc.id ? '#F5E642' : '#1a2f4e', color: selected === loc.id ? '#0A1628' : '#fff', border: '2px solid ' + (selected === loc.id ? '#F5E642' : '#334155'), borderRadius: 10, padding: '14px 12px', cursor: 'pointer', fontWeight: 600, fontSize: 14, textAlign: 'left', transition: 'all 0.15s' }}>
               <span style={{ marginRight: 8 }}>{loc.icon}</span>{loc.label}
             </button>
           ))}
@@ -63,7 +63,7 @@ export default function DFWFoundationHydrostaticLift2026() {
           ))}
         </div>
 
-        <div style={{ background: '#1a2f4e', borderRadius: 10, padding: 16, borderLeft: '4px solid #F5E642′ }}>
+        <div style={{ background: '#1a2f4e', borderRadius: 10, padding: 16, borderLeft: '4px solid #F5E642' }}>
           <h3 style={{ color: '#F5E642', margin: '0 0 8px', fontSize: 15 }}>💡 Pool Owners: Critical Rule</h3>
           <p style={{ color: '#94a3b8', margin: 0, fontSize: 14, lineHeight: 1.6 }}>Always consult a pool professional before draining your DFW pool. If the water table is high from recent heavy rain, an empty pool shell can pop out of the ground — a catastrophic and expensive failure.</p>
         </div>

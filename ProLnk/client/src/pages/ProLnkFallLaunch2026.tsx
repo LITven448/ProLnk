@@ -36,10 +36,10 @@ export default function ProLnkFallLaunch2026() {
               key={i}
               onClick={() => setSelected(selected === i ? null : i)}
               style={{
-                background: selected === i ? '#F5E642′ : '#111f35',
-                color: selected === i ? '#0A1628′ : '#ffffff',
+                background: selected === i ? '#F5E642' : '#111f35',
+                color: selected === i ? '#0A1628' : '#ffffff',
                 border: '1px solid',
-                borderColor: selected === i ? '#F5E642′ : '#1e3050',
+                borderColor: selected === i ? '#F5E642' : '#1e3050',
                 borderRadius: '10px',
                 padding: '16px 20px',
                 fontSize: '15px',
@@ -51,7 +51,7 @@ export default function ProLnkFallLaunch2026() {
             >
               {p.project}
               {selected === i && (
-                <p style={{ marginTop: '10px', fontWeight: '400', fontSize: '14px', lineHeight: 1.6, color: '#0A1628′ }}>
+                <p style={{ marginTop: '10px', fontWeight: '400', fontSize: '14px', lineHeight: 1.6, color: '#0A1628' }}>
                   {p.detail}
                 </p>
               )}
@@ -61,14 +61,14 @@ export default function ProLnkFallLaunch2026() {
 
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: '16px', marginBottom: '32px' }}>
           {['🔍 Verified Pros', '⚡ 1-Hour Response', '🏦 Vault Records'].map((item, i) => (
-            <div key={i} style={{ background: '#111f35', borderRadius: '10px', padding: '18px 12px', textAlign: 'center', border: '1px solid #1e3050′ }}>
+            <div key={i} style={{ background: '#111f35', borderRadius: '10px', padding: '18px 12px', textAlign: 'center', border: '1px solid #1e3050' }}>
               <div style={{ fontSize: '24px', marginBottom: '6px' }}>{item.split(' ')[0]}</div>
-              <div style={{ fontSize: '12px', color: '#a0b4cc', fontWeight: '600′ }}>{item.split(' ').slice(1).join(' ')}</div>
+              <div style={{ fontSize: '12px', color: '#a0b4cc', fontWeight: '600' }}>{item.split(' ').slice(1).join(' ')}</div>
             </div>
           ))}
         </div>
 
-        <div style={{ background: '#111f35', borderRadius: '14px', padding: '28px', textAlign: 'center', border: '1px solid #1e3050′ }}>
+        <div style={{ background: '#111f35', borderRadius: '14px', padding: '28px', textAlign: 'center', border: '1px solid #1e3050' }}>
           <h3 style={{ color: '#F5E642', fontSize: '20px', fontWeight: '700', margin: '0 0 8px' }}>Get Your Fall Project Matched</h3>
           <p style={{ color: '#7a90a8', fontSize: '14px', margin: '0 0 20px', lineHeight: 1.6 }}>
             Join the ProLnk waitlist. Homeowner signups connect to Charter pros in your DFW zip code.

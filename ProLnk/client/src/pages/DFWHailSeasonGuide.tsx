@@ -41,20 +41,20 @@ export default function DFWHailSeasonGuide() {
 
   return (
     <div style={{ background: '#0A1628', minHeight: '100vh', color: '#fff', fontFamily: 'system-ui, sans-serif', padding: '0 0 60px' }}>
-      <div style={{ background: 'linear-gradient(135deg, #0A1628 0%, #1a2d4a 100%)', padding: '48px 24px 40px', textAlign: 'center', borderBottom: '2px solid #F5E642′ }}>
+      <div style={{ background: 'linear-gradient(135deg, #0A1628 0%, #1a2d4a 100%)', padding: '48px 24px 40px', textAlign: 'center', borderBottom: '2px solid #F5E642' }}>
         <div style={{ fontSize: 48, marginBottom: 12 }}>⛈️</div>
         <h1 style={{ fontSize: 32, fontWeight: 800, color: '#F5E642', margin: '0 0 8px' }}>DFW Hail Season Guide</h1>
         <p style={{ color: '#94a3b8', fontSize: 16, margin: 0 }}>Peak Season: March – June</p>
       </div>
 
-      <div style={{ maxWidth: 720, margin: '0 auto', padding: '32px 24px 0′ }}>
+      <div style={{ maxWidth: 720, margin: '0 auto', padding: '32px 24px 0' }}>
         <div style={{ background: '#F5E642', color: '#0A1628', borderRadius: 10, padding: '14px 20px', marginBottom: 28, fontWeight: 700, fontSize: 15 }}>
           ⚠️ CONTRACTOR SCAM ALERT: After major DFW hail events, out-of-state "storm chasers" flood neighborhoods. NEVER let a contractor start work before your insurance adjuster visits. Always verify Texas Dept of Insurance license.
         </div>
 
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 8, marginBottom: 28 }}>
           {(['before', 'during', 'after'] as const).map(p => (
-            <button key={p} onClick={() => setPhase(p)} style={{ background: phase === p ? '#F5E642′ : '#111f35', color: phase === p ? '#0A1628' : '#fff', border: ’none', borderRadius: 10, padding: '12px 8px', fontWeight: 700, fontSize: 14, cursor: 'pointer', textTransform: 'capitalize' }}>
+            <button key={p} onClick={() => setPhase(p)} style={{ background: phase === p ? '#F5E642' : '#111f35', color: phase === p ? '#0A1628' : '#fff', border: 'none', borderRadius: 10, padding: '12px 8px', fontWeight: 700, fontSize: 14, cursor: 'pointer', textTransform: 'capitalize' }}>
               {p === 'before' ? '⏰ Before' : p === 'during' ? '🌩️ During' : '🔍 After'}
             </button>
           ))}

@@ -6,28 +6,28 @@ const issues = ['Surface Cracks', 'Moisture Intrusion', 'UV Fading/Chalking', 'D
 
 const matrix: Record<string, Record<string, { guide: string; approach: string; cost: string }>> = {
   'Hard Coat (3-Coat)': {
-    'Under 5 Years': { guide: 'New hard coat — inspect for shrinkage cracks at control joints', approach: 'Flexible caulk at joints + paint', cost: '$200–$600′ },
-    '5–15 Years': { guide: 'Prime maintenance window — seal and repaint before moisture intrusion', approach: 'Elastomeric paint + crack repair', cost: '$600–$2,000′ },
-    '16–25 Years': { guide: 'DFW UV has degraded surface — waterproofing essential', approach: 'Full repaint + recoat with elastomeric', cost: '$1,500–$4,000′ },
-    '25+ Years': { guide: 'Evaluate structural integrity — partial or full re-stucco may be needed', approach: 'Professional assessment + potential re-stucco', cost: '$3,000–$12,000′ },
+    'Under 5 Years': { guide: 'New hard coat — inspect for shrinkage cracks at control joints', approach: 'Flexible caulk at joints + paint', cost: '$200–$600' },
+    '5–15 Years': { guide: 'Prime maintenance window — seal and repaint before moisture intrusion', approach: 'Elastomeric paint + crack repair', cost: '$600–$2,000' },
+    '16–25 Years': { guide: 'DFW UV has degraded surface — waterproofing essential', approach: 'Full repaint + recoat with elastomeric', cost: '$1,500–$4,000' },
+    '25+ Years': { guide: 'Evaluate structural integrity — partial or full re-stucco may be needed', approach: 'Professional assessment + potential re-stucco', cost: '$3,000–$12,000' },
   },
   'EIFS (Synthetic)': {
-    'Under 5 Years': { guide: 'EIFS requires caulk maintenance at all joints and penetrations', approach: 'Inspect and re-caulk all transitions', cost: '$300–$800′ },
-    '5–15 Years': { guide: 'DFW thermal movement is stressing EIFS seams — re-caulk critical', approach: 'Full joint re-caulking + inspection', cost: '$800–$2,500′ },
-    '16–25 Years': { guide: 'High moisture intrusion risk — probe for soft spots in foam', approach: 'Probe testing + targeted replacement', cost: '$2,000–$6,000′ },
-    '25+ Years': { guide: 'EIFS at end of life in DFW climate — removal recommended', approach: 'Remove EIFS + replace with hard coat or fiber cement', cost: '$8,000–$25,000′ },
+    'Under 5 Years': { guide: 'EIFS requires caulk maintenance at all joints and penetrations', approach: 'Inspect and re-caulk all transitions', cost: '$300–$800' },
+    '5–15 Years': { guide: 'DFW thermal movement is stressing EIFS seams — re-caulk critical', approach: 'Full joint re-caulking + inspection', cost: '$800–$2,500' },
+    '16–25 Years': { guide: 'High moisture intrusion risk — probe for soft spots in foam', approach: 'Probe testing + targeted replacement', cost: '$2,000–$6,000' },
+    '25+ Years': { guide: 'EIFS at end of life in DFW climate — removal recommended', approach: 'Remove EIFS + replace with hard coat or fiber cement', cost: '$8,000–$25,000' },
   },
   'One-Coat': {
-    'Under 5 Years': { guide: 'One-coat performs well early — control joint inspection key', approach: 'Control joint caulk + monitor', cost: '$150–$400′ },
-    '5–15 Years': { guide: 'DFW UV fading accelerates on one-coat — repaint on schedule', approach: 'Repaint + elastomeric top coat', cost: '$800–$2,200′ },
-    '16–25 Years': { guide: 'Cracking and porosity increasing — waterproofing needed', approach: 'Crack repair + waterproof coating', cost: '$1,200–$3,500′ },
-    '25+ Years': { guide: 'One-coat at end of serviceable life — re-stucco or reside', approach: 'Full re-stucco or fiber cement replacement', cost: '$4,000–$15,000′ },
+    'Under 5 Years': { guide: 'One-coat performs well early — control joint inspection key', approach: 'Control joint caulk + monitor', cost: '$150–$400' },
+    '5–15 Years': { guide: 'DFW UV fading accelerates on one-coat — repaint on schedule', approach: 'Repaint + elastomeric top coat', cost: '$800–$2,200' },
+    '16–25 Years': { guide: 'Cracking and porosity increasing — waterproofing needed', approach: 'Crack repair + waterproof coating', cost: '$1,200–$3,500' },
+    '25+ Years': { guide: 'One-coat at end of serviceable life — re-stucco or reside', approach: 'Full re-stucco or fiber cement replacement', cost: '$4,000–$15,000' },
   },
   'Unknown': {
-    'Under 5 Years': { guide: 'Identify system before treatment — probe and tap test recommended', approach: 'Professional assessment first', cost: '$200–$500′ },
-    '5–15 Years': { guide: 'Type identification important for correct repair approach', approach: 'Assessment + targeted repair', cost: '$500–$2,000′ },
-    '16–25 Years': { guide: 'Age and unknown type = higher risk — full assessment needed', approach: 'Professional inspection + plan', cost: '$800–$3,000′ },
-    '25+ Years': { guide: 'Significant maintenance overdue — complete evaluation essential', approach: 'Full evaluation + likely re-stucco', cost: '$3,000–$15,000′ },
+    'Under 5 Years': { guide: 'Identify system before treatment — probe and tap test recommended', approach: 'Professional assessment first', cost: '$200–$500' },
+    '5–15 Years': { guide: 'Type identification important for correct repair approach', approach: 'Assessment + targeted repair', cost: '$500–$2,000' },
+    '16–25 Years': { guide: 'Age and unknown type = higher risk — full assessment needed', approach: 'Professional inspection + plan', cost: '$800–$3,000' },
+    '25+ Years': { guide: 'Significant maintenance overdue — complete evaluation essential', approach: 'Full evaluation + likely re-stucco', cost: '$3,000–$15,000' },
   },
 };
 
@@ -60,13 +60,13 @@ export default function DFWStuccoHouseGuide() {
         <div style={{ background: '#111D35', borderRadius: 12, padding: 20, marginBottom: 24 }}>
           <div style={{ color: '#F5E642', fontWeight: 700, marginBottom: 16 }}>📊 DFW Stucco System Comparison</div>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: 1, background: '#0A1628', borderRadius: 8, overflow: 'hidden' }}>
-            {['System', 'DFW Rating', 'Lifespan'].map(h => <div key={h} style={{ background: '#1E3A5F', padding: '10px 14px', fontSize: 12, fontWeight: 700, color: '#9BA3B5′ }}>{h}</div>)}
+            {['System', 'DFW Rating', 'Lifespan'].map(h => <div key={h} style={{ background: '#1E3A5F', padding: '10px 14px', fontSize: 12, fontWeight: 700, color: '#9BA3B5' }}>{h}</div>)}
             {[['Hard Coat 3-Coat', '⭐⭐⭐⭐⭐', '30–50 yrs'], ['One-Coat', '⭐⭐⭐⭐', '20–35 yrs'], ['EIFS Synthetic', '⭐⭐⭐', '15–25 yrs']].map(row => row.map((cell, i) => <div key={`${row[0]}-${i}`} style={{ background: '#111D35', padding: '10px 14px', fontSize: 13 }}>{cell}</div>))}
           </div>
         </div>
 
         <div style={{ background: '#111D35', borderRadius: 16, padding: 28, marginBottom: 24 }}>
-          <h2 style={{ fontSize: 18, fontWeight: 700, marginBottom: 20, color: '#F5E642′ }}>🔍 Stucco Maintenance Advisor</h2>
+          <h2 style={{ fontSize: 18, fontWeight: 700, marginBottom: 20, color: '#F5E642' }}>🔍 Stucco Maintenance Advisor</h2>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16, marginBottom: 20 }}>
             <div>
               <label style={{ display: 'block', color: '#9BA3B5', fontSize: 12, fontWeight: 700, marginBottom: 8 }}>STUCCO TYPE</label>
@@ -84,12 +84,12 @@ export default function DFWStuccoHouseGuide() {
             </div>
           </div>
           {result && (
-            <div style={{ background: '#0A1628', borderRadius: 12, padding: 20, borderLeft: '4px solid #F5E642′ }}>
+            <div style={{ background: '#0A1628', borderRadius: 12, padding: 20, borderLeft: '4px solid #F5E642' }}>
               <div style={{ color: '#F5E642', fontWeight: 700, fontSize: 13, marginBottom: 12 }}>MAINTENANCE GUIDE</div>
               <p style={{ marginBottom: 12, fontSize: 14 }}>{result.guide}</p>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12 }}>
                 <div><div style={{ color: '#9BA3B5', fontSize: 11, fontWeight: 700, marginBottom: 4 }}>REPAIR APPROACH</div><div style={{ fontSize: 14 }}>{result.approach}</div></div>
-                <div><div style={{ color: '#9BA3B5', fontSize: 11, fontWeight: 700, marginBottom: 4 }}>ESTIMATED COST</div><div style={{ fontSize: 14, color: '#F5E642′ }}>{result.cost}</div></div>
+                <div><div style={{ color: '#9BA3B5', fontSize: 11, fontWeight: 700, marginBottom: 4 }}>ESTIMATED COST</div><div style={{ fontSize: 14, color: '#F5E642' }}>{result.cost}</div></div>
               </div>
             </div>
           )}

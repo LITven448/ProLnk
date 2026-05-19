@@ -54,12 +54,12 @@ export default function DFWOutdoorLivingROIGuide() {
         </div>
 
         <div style={{ background: '#111d33', border: '1px solid #1e3a5f', borderRadius: 16, padding: 32 }}>
-          <h2 style={{ fontSize: 22, fontWeight: 700, marginBottom: 24, color: '#F5E642′ }}>
+          <h2 style={{ fontSize: 22, fontWeight: 700, marginBottom: 24, color: '#F5E642' }}>
             📊 Calculate Your Project ROI
           </h2>
 
           <div style={{ marginBottom: 20 }}>
-            <label style={{ display: 'block', fontSize: 13, fontWeight: 600, marginBottom: 8, color: '#cbd5e1′ }}>
+            <label style={{ display: 'block', fontSize: 13, fontWeight: 600, marginBottom: 8, color: '#cbd5e1' }}>
               Outdoor Project Type
             </label>
             <select
@@ -73,14 +73,14 @@ export default function DFWOutdoorLivingROIGuide() {
           </div>
 
           <div style={{ marginBottom: 24 }}>
-            <label style={{ display: 'block', fontSize: 13, fontWeight: 600, marginBottom: 8, color: '#cbd5e1′ }}>
+            <label style={{ display: 'block', fontSize: 13, fontWeight: 600, marginBottom: 8, color: '#cbd5e1' }}>
               Estimated Project Cost ($)
             </label>
             <input
               type="number"
               value={cost}
               onChange={e => setCost(e.target.value)}
-              placeholder="e.g. 25000″
+              placeholder="e.g. 25000"
               style={{ width: '100%', padding: '12px 16px', background: '#0A1628', border: '1px solid #1e3a5f', borderRadius: 8, color: '#fff', fontSize: 15, boxSizing: 'border-box' }}
             />
           </div>
@@ -93,7 +93,7 @@ export default function DFWOutdoorLivingROIGuide() {
           </button>
 
           {result && (
-            <div style={{ marginTop: 28, background: '#0A1628', borderRadius: 12, padding: 24, border: '1px solid #F5E642′ }}>
+            <div style={{ marginTop: 28, background: '#0A1628', borderRadius: 12, padding: 24, border: '1px solid #F5E642' }}>
               <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 16, marginBottom: 16 }}>
                 <div style={{ textAlign: 'center' }}>
                   <div style={{ color: '#F5E642', fontWeight: 800, fontSize: 26 }}>${result.valueAdded.toLocaleString()}</div>

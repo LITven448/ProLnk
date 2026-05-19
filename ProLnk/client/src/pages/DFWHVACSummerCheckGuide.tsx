@@ -35,7 +35,7 @@ export default function DFWHVACSummerCheckGuide() {
   }
 
   return (
-    <div style={{ background: '#0A1628', minHeight: '100vh', padding: '32px 16px', fontFamily: 'sans-serif', color: '#E8EDF5′ }}>
+    <div style={{ background: '#0A1628', minHeight: '100vh', padding: '32px 16px', fontFamily: 'sans-serif', color: '#E8EDF5' }}>
       <div style={{ maxWidth: 760, margin: '0 auto' }}>
         <div style={{ fontSize: 36, marginBottom: 8 }}>☀️</div>
         <h1 style={{ color: '#F5E642', fontSize: 28, fontWeight: 700, marginBottom: 8 }}>
@@ -44,18 +44,18 @@ export default function DFWHVACSummerCheckGuide() {
         <p style={{ color: '#9AAFC4', marginBottom: 8 }}>
           The definitive 10-step DFW summer HVAC checklist homeowners can complete themselves. Do this every May before temperatures hit 95°F+.
         </p>
-        <div style={{ background: '#1A2B45', borderRadius: 8, padding: '10px 16px', marginBottom: 28, fontSize: 14, color: '#F5E642′ }}>
+        <div style={{ background: '#1A2B45', borderRadius: 8, padding: '10px 16px', marginBottom: 28, fontSize: 14, color: '#F5E642' }}>
           🌡️ DFW Context: Your AC runs 3,000+ hours June-September. A single missed maintenance item can cost $500-3,000 in emergency repairs.
         </div>
         <div style={{ display: 'grid', gap: 10, marginBottom: 28 }}>
           {checks.map((c, i) => (
-            <div key={c.id} style={{ background: completed.includes(c.id) ? '#0D3B1E' : '#1A2B45', borderRadius: 8, border: completed.includes(c.id) ? '1px solid #2ECC71′ : '1px solid #2A4A6B' }}>
+            <div key={c.id} style={{ background: completed.includes(c.id) ? '#0D3B1E' : '#1A2B45', borderRadius: 8, border: completed.includes(c.id) ? '1px solid #2ECC71' : '1px solid #2A4A6B' }}>
               <div style={{ display: 'flex', alignItems: 'center', padding: '14px 16px', cursor: 'pointer' }}
                 onClick={() => setExpanded(expanded === c.id ? null : c.id)}>
                 <input type="checkbox" checked={completed.includes(c.id)}
                   onChange={() => toggle(c.id)}
                   onClick={e => e.stopPropagation()}
-                  style={{ marginRight: 14, width: 18, height: 18, cursor: 'pointer', accentColor: '#F5E642′ }} />
+                  style={{ marginRight: 14, width: 18, height: 18, cursor: 'pointer', accentColor: '#F5E642' }} />
                 <div style={{ flex: 1, fontWeight: 600 }}>Step {i + 1}: {c.label}</div>
                 <div style={{ color: '#9AAFC4', fontSize: 18 }}>{expanded === c.id ? '▲' : '▼'}</div>
               </div>

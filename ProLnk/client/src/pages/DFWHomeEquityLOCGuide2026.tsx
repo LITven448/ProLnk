@@ -55,16 +55,16 @@ export default function DFWHomeEquityLOCGuide2026() {
         <div style={{ background: '#0f2040', border: '1px solid #F5E642', borderRadius: 12, padding: '1.8rem', marginBottom: '2rem' }}>
           <h2 style={{ color: '#F5E642', marginBottom: '1.2rem' }}>🏠 DFW HELOC Calculator</h2>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1.2rem', background: '#0A1628', borderRadius: 8, padding: '1rem' }}>
-            <div>Home Equity: <strong style={{ color: '#4ade80′ }}>${currentEquity.toLocaleString()} ({equityPct}%)</strong></div>
-            <div>Max HELOC: <strong style={{ color: '#F5E642′ }}>${maxBorrow.toLocaleString()}</strong></div>
+            <div>Home Equity: <strong style={{ color: '#4ade80' }}>${currentEquity.toLocaleString()} ({equityPct}%)</strong></div>
+            <div>Max HELOC: <strong style={{ color: '#F5E642' }}>${maxBorrow.toLocaleString()}</strong></div>
           </div>
           <div style={{ marginBottom: '1rem' }}>
             <label style={{ color: '#94a3b8', display: 'block', marginBottom: '0.3rem' }}>Home Value: <strong style={{ color: '#fff' }}>${homeValue.toLocaleString()}</strong></label>
-            <input type='range' min={200000} max={1500000} step={10000} value={homeValue} onChange={e => setHomeValue(+e.target.value)} style={{ width: '100%', accentColor: '#F5E642′ }} />
+            <input type='range' min={200000} max={1500000} step={10000} value={homeValue} onChange={e => setHomeValue(+e.target.value)} style={{ width: '100%', accentColor: '#F5E642' }} />
           </div>
           <div style={{ marginBottom: '1.2rem' }}>
             <label style={{ color: '#94a3b8', display: 'block', marginBottom: '0.3rem' }}>Existing Mortgage Balance: <strong style={{ color: '#fff' }}>${mortgage.toLocaleString()}</strong></label>
-            <input type='range' min={0} max={homeValue * 0.95} step={5000} value={Math.min(mortgage, homeValue * 0.95)} onChange={e => setMortgage(+e.target.value)} style={{ width: '100%', accentColor: '#F5E642′ }} />
+            <input type='range' min={0} max={homeValue * 0.95} step={5000} value={Math.min(mortgage, homeValue * 0.95)} onChange={e => setMortgage(+e.target.value)} style={{ width: '100%', accentColor: '#F5E642' }} />
           </div>
           <div style={{ marginBottom: '1.2rem' }}>
             <label style={{ color: '#94a3b8', display: 'block', marginBottom: '0.4rem' }}>Use Case</label>

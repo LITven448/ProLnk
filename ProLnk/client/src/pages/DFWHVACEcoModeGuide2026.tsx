@@ -21,15 +21,15 @@ export default function DFWHVACEcoModeGuide2026() {
   };
 
   return (
-    <div style={{ background: "#0A1628″, minHeight: "100vh", color: "#fff", fontFamily: "sans-serif", padding: "32px 16px" }}>
+    <div style={{ background: "#0A1628", minHeight: "100vh", color: "#fff", fontFamily: "sans-serif", padding: "32px 16px" }}>
       <div style={{ maxWidth: 720, margin: "0 auto" }}>
         <div style={{ textAlign: "center", marginBottom: 32 }}>
           <div style={{ fontSize: 48 }}>🌿</div>
-          <h1 style={{ color: "#F5E642″, fontSize: 28, margin: "8px 0" }}>DFW HVAC Eco Mode & Smart Features 2026</h1>
-          <p style={{ color: "#94a3b8″, fontSize: 15 }}>ERCOT demand response, geofencing, occupancy sensing, remote diagnostics — what DFW homeowners need to know</p>
+          <h1 style={{ color: "#F5E642", fontSize: 28, margin: "8px 0" }}>DFW HVAC Eco Mode & Smart Features 2026</h1>
+          <p style={{ color: "#94a3b8", fontSize: 15 }}>ERCOT demand response, geofencing, occupancy sensing, remote diagnostics — what DFW homeowners need to know</p>
         </div>
         <div style={{ background: "#0f1f3d", borderRadius: 12, padding: 24, marginBottom: 24 }}>
-          <h2 style={{ color: "#F5E642″, fontSize: 17, marginBottom: 16 }}>🏆 DFW Smart HVAC Overview</h2>
+          <h2 style={{ color: "#F5E642", fontSize: 17, marginBottom: 16 }}>🏆 DFW Smart HVAC Overview</h2>
           {[
             ["🔋", "ERCOT peak hours", "Summer demand spikes 3-7pm; smart thermostats auto-reduce load and can earn bill credits"],
             ["📍", "Geofencing", "Ecobee & Nest shift to eco mode when you leave; returns to comfort before you arrive"],
@@ -39,23 +39,23 @@ export default function DFWHVACEcoModeGuide2026() {
           ].map(([icon, label, desc]) => (
             <div key={label} style={{ display: "flex", gap: 12, marginBottom: 14 }}>
               <span style={{ fontSize: 22 }}>{icon}</span>
-              <div><div style={{ color: "#F5E642″, fontWeight: 600, fontSize: 14 }}>{label}</div><div style={{ color: "#94a3b8", fontSize: 13 }}>{desc}</div></div>
+              <div><div style={{ color: "#F5E642", fontWeight: 600, fontSize: 14 }}>{label}</div><div style={{ color: "#94a3b8", fontSize: 13 }}>{desc}</div></div>
             </div>
           ))}
         </div>
         <div style={{ background: "#0f1f3d", borderRadius: 12, padding: 24, marginBottom: 24 }}>
-          <h2 style={{ color: "#F5E642″, fontSize: 17, marginBottom: 16 }}>🔍 Feature Interest Guide</h2>
-          <p style={{ color: "#94a3b8″, fontSize: 13, marginBottom: 12 }}>Select features you are interested in:</p>
+          <h2 style={{ color: "#F5E642", fontSize: 17, marginBottom: 16 }}>🔍 Feature Interest Guide</h2>
+          <p style={{ color: "#94a3b8", fontSize: 13, marginBottom: 12 }}>Select features you are interested in:</p>
           {features.map(f => (
-            <div key={f} onClick={() => toggle(f)} style={{ display: "flex", alignItems: "center", gap: 12, padding: "10px 14px", borderRadius: 8, marginBottom: 8, background: selected.includes(f) ? "#1e3a5f" : "#162032″, border: selected.includes(f) ? "1px solid #F5E642" : "1px solid #334155", cursor: "pointer" }}>
+            <div key={f} onClick={() => toggle(f)} style={{ display: "flex", alignItems: "center", gap: 12, padding: "10px 14px", borderRadius: 8, marginBottom: 8, background: selected.includes(f) ? "#1e3a5f" : "#162032", border: selected.includes(f) ? "1px solid #F5E642" : "1px solid #334155", cursor: "pointer" }}>
               <span style={{ fontSize: 18 }}>{selected.includes(f) ? "✅" : "⬜"}</span>
-              <span style={{ color: "#e2e8f0″, fontSize: 14 }}>{f}</span>
+              <span style={{ color: "#e2e8f0", fontSize: 14 }}>{f}</span>
             </div>
           ))}
-          <button onClick={evaluate} style={{ background: "#F5E642″, color: "#0A1628", border: "none", borderRadius: 8, padding: "12px 24px", fontWeight: 700, fontSize: 15, cursor: "pointer", width: "100%", marginTop: 12 }}>Get Smart HVAC Guide</button>
-          {result && <div style={{ marginTop: 16, background: "#1e3a5f", borderRadius: 8, padding: 14, color: "#e2e8f0″, fontSize: 14, lineHeight: 1.8, whiteSpace: "pre-line" }}>{result}</div>}
+          <button onClick={evaluate} style={{ background: "#F5E642", color: "#0A1628", border: "none", borderRadius: 8, padding: "12px 24px", fontWeight: 700, fontSize: 15, cursor: "pointer", width: "100%", marginTop: 12 }}>Get Smart HVAC Guide</button>
+          {result && <div style={{ marginTop: 16, background: "#1e3a5f", borderRadius: 8, padding: 14, color: "#e2e8f0", fontSize: 14, lineHeight: 1.8, whiteSpace: "pre-line" }}>{result}</div>}
         </div>
-        <div style={{ textAlign: "center", color: "#475569″, fontSize: 13 }}>ProLnk · Smart HVAC for DFW Homeowners · 2026</div>
+        <div style={{ textAlign: "center", color: "#475569", fontSize: 13 }}>ProLnk · Smart HVAC for DFW Homeowners · 2026</div>
       </div>
     </div>
   );

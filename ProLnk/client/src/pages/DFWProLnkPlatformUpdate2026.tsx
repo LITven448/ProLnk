@@ -49,11 +49,11 @@ export default function DFWProLnkPlatformUpdate2026() {
           ))}
         </div>
 
-        <h2 style={{ fontSize: 18, fontWeight: 600, marginBottom: 12, color: '#F5E642′ }}>🔍 Your Role → What This Means for You</h2>
+        <h2 style={{ fontSize: 18, fontWeight: 600, marginBottom: 12, color: '#F5E642' }}>🔍 Your Role → What This Means for You</h2>
         <div style={{ display: 'grid', gap: 10, marginBottom: 20 }}>
           {stakeholders.map(s => (
             <button key={s.id} onClick={() => handleSelect(s.id)}
-              style={{ background: stakeholder === s.id ? '#F5E642′ : '#1e2d45', color: stakeholder === s.id ? '#0A1628' : '#fff', border: ’none', borderRadius: 8, padding: '12px 16px', textAlign: 'left', cursor: 'pointer', fontWeight: 600, fontSize: 15 }}>
+              style={{ background: stakeholder === s.id ? '#F5E642' : '#1e2d45', color: stakeholder === s.id ? '#0A1628' : '#fff', border: 'none', borderRadius: 8, padding: '12px 16px', textAlign: 'left', cursor: 'pointer', fontWeight: 600, fontSize: 15 }}>
               {s.label}
             </button>
           ))}
@@ -63,7 +63,7 @@ export default function DFWProLnkPlatformUpdate2026() {
             {result}
           </div>
         )}
-        <div style={{ marginTop: 32, padding: 16, background: '#1e2d45', borderRadius: 10, fontSize: 13, color: '#94a3b8′ }}>
+        <div style={{ marginTop: 32, padding: 16, background: '#1e2d45', borderRadius: 10, fontSize: 13, color: '#94a3b8' }}>
           🚀 ProLnk — DFW home services platform. Charter Pro waitlist open now at prolnk.io.
         </div>
       </div>

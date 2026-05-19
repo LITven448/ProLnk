@@ -70,7 +70,7 @@ export default function DFWProLnkCharterBenefitCalc() {
               </select>
             </div>
           </div>
-          <button onClick={() => setShown(true)} disabled={!activity} style={{ background: activity ? '#F5E642′ : '#1E3A5F', color: activity ? '#0A1628' : '#445566', border: ’none', borderRadius: 8, padding: '12px 24px', fontWeight: 700, fontSize: 15, cursor: activity ? 'pointer' : 'not-allowed', width: '100%' }}>
+          <button onClick={() => setShown(true)} disabled={!activity} style={{ background: activity ? '#F5E642' : '#1E3A5F', color: activity ? '#0A1628' : '#445566', border: 'none', borderRadius: 8, padding: '12px 24px', fontWeight: 700, fontSize: 15, cursor: activity ? 'pointer' : 'not-allowed', width: '100%' }}>
             Calculate Charter vs Post-Close Value →
           </button>
         </div>
@@ -83,7 +83,7 @@ export default function DFWProLnkCharterBenefitCalc() {
               { label: 'Origination Advantage', val: `$${originationUpside.toLocaleString()}`, icon: '🏠', note: '1.5% vs 1.0% origination rights' },
               { label: `${yearCount}-Year Net Advantage`, val: `$${totalAdvantage.toLocaleString()}`, icon: '🏆', note: 'Total Charter vs post-close', highlight: true },
             ].map((s, i) => (
-              <div key={i} style={{ background: s.highlight ? '#1A3A00′ : '#0D1F38', border: s.highlight ? '2px solid #F5E642' : '1px solid #1E3A5F', borderRadius: 12, padding: 20, textAlign: ’center' }}>
+              <div key={i} style={{ background: s.highlight ? '#1A3A00' : '#0D1F38', border: s.highlight ? '2px solid #F5E642' : '1px solid #1E3A5F', borderRadius: 12, padding: 20, textAlign: 'center' }}>
                 <div style={{ fontSize: 28 }}>{s.icon}</div>
                 <div style={{ color: '#F5E642', fontSize: 26, fontWeight: 800 }}>{s.val}</div>
                 <div style={{ color: '#fff', fontSize: 14, fontWeight: 600, margin: '4px 0 2px' }}>{s.label}</div>

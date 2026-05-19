@@ -29,9 +29,9 @@ const weights = [
 function grade(score: number) {
   if (score <= 10) return { letter: 'A', label: 'Excellent', color: '#22C55E' };
   if (score <= 25) return { letter: 'B', label: 'Good', color: '#86EFAC' };
-  if (score <= 50) return { letter: 'C', label: 'Fair — Action Recommended', color: '#F5E642′ };
-  if (score <= 80) return { letter: 'D', label: 'Poor — Immediate Attention', color: '#F97316′ };
-  return { letter: 'F', label: 'Failing — Urgent Risk', color: '#EF4444′ };
+  if (score <= 50) return { letter: 'C', label: 'Fair — Action Recommended', color: '#F5E642' };
+  if (score <= 80) return { letter: 'D', label: 'Poor — Immediate Attention', color: '#F97316' };
+  return { letter: 'F', label: 'Failing — Urgent Risk', color: '#EF4444' };
 }
 
 export default function DFWElectricalInspectionScore() {
@@ -72,7 +72,7 @@ export default function DFWElectricalInspectionScore() {
               <div style={{ fontWeight: 600, marginBottom: '0.5rem', fontSize: '0.95rem' }}>{qi + 1}. {item.q}</div>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0.4rem' }}>
                 {item.opts.map((opt, ai) => (
-                  <button key={ai} onClick={() => setAnswer(qi, ai)} style={{ background: answers[qi] === ai ? '#F5E642′ : '#1A3050', color: answers[qi] === ai ? '#0A1628' : '#E8F0FE', border: '1px solid #2A4060', borderRadius: 6, padding: '0.5rem 0.75rem', cursor: ’pointer', fontSize: '0.82rem', textAlign: 'left', fontWeight: answers[qi] === ai ? 700 : 400 }}>
+                  <button key={ai} onClick={() => setAnswer(qi, ai)} style={{ background: answers[qi] === ai ? '#F5E642' : '#1A3050', color: answers[qi] === ai ? '#0A1628' : '#E8F0FE', border: '1px solid #2A4060', borderRadius: 6, padding: '0.5rem 0.75rem', cursor: 'pointer', fontSize: '0.82rem', textAlign: 'left', fontWeight: answers[qi] === ai ? 700 : 400 }}>
                     {opt}
                   </button>
                 ))}

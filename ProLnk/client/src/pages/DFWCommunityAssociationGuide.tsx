@@ -98,7 +98,7 @@ export default function DFWCommunityAssociationGuide() {
             <div style={{ marginTop: 20, background: '#fff', borderRadius: 8, padding: 20 }}>
               <div style={{ color: '#0A1628', fontWeight: 800, fontSize: 20, marginBottom: 12 }}>Estimated Budget: {result.budget}</div>
               <div style={{ color: '#374151', fontWeight: 700, marginBottom: 8 }}>Top Service Needs:</div>
-              {result.topNeeds.map((need, i) => <div key={i} style={{ color: '#374151', fontSize: 14, padding: '4px 0′ }}>• {need}</div>)}
+              {result.topNeeds.map((need, i) => <div key={i} style={{ color: '#374151', fontSize: 14, padding: '4px 0' }}>• {need}</div>)}
             </div>
           )}
         </div>

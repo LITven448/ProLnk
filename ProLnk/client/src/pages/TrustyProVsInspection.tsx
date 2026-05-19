@@ -73,7 +73,7 @@ export default function TrustyProVsInspection() {
               style={{
                 padding: '10px 24px', borderRadius: 8, border: 'none', cursor: 'pointer', fontWeight: 600, fontSize: 15,
                 background: activeTab === tab.id ? '#ffffff' : 'transparent',
-                color: activeTab === tab.id ? '#0284c7′ : '#64748b',
+                color: activeTab === tab.id ? '#0284c7' : '#64748b',
                 boxShadow: activeTab === tab.id ? '0 1px 3px rgba(0,0,0,0.1)' : 'none',
               }}
             >
@@ -99,17 +99,17 @@ export default function TrustyProVsInspection() {
                       <td style={{ padding: '14px 20px', color: '#475569', fontWeight: 600, fontSize: 14 }}>{row.feature}</td>
                       <td style={{ padding: '14px 20px', textAlign: 'center' }}>
                         <span style={{
-                          color: row.winner === 'traditional' ? '#166534′ : '#64748b',
+                          color: row.winner === 'traditional' ? '#166534' : '#64748b',
                           fontWeight: row.winner === 'traditional' ? 700 : 400,
                           fontSize: 14,
-                          background: row.winner === 'traditional' ? '#dcfce7′ : ’transparent',
+                          background: row.winner === 'traditional' ? '#dcfce7' : 'transparent',
                           padding: row.winner === 'traditional' ? '4px 10px' : '4px 0',
                           borderRadius: 20,
                         }}>{row.traditional}</span>
                       </td>
                       <td style={{ padding: '14px 20px', textAlign: 'center' }}>
                         <span style={{
-                          color: row.winner === 'trustypro' ? '#0369a1′ : '#64748b',
+                          color: row.winner === 'trustypro' ? '#0369a1' : '#64748b',
                           fontWeight: row.winner === 'trustypro' ? 700 : 400,
                           fontSize: 14,
                           background: row.winner === 'trustypro' ? '#e0f2fe' : 'transparent',
@@ -126,8 +126,8 @@ export default function TrustyProVsInspection() {
             <div style={{ background: '#fff7ed', border: '1px solid #fed7aa', borderRadius: 14, padding: 24, marginBottom: 32 }}>
               <h3 style={{ color: '#9a3412', fontWeight: 700, marginBottom: 8, fontSize: 18 }}>⚠️ Important: When You Need Both</h3>
               <p style={{ color: '#7c2d12', lineHeight: 1.7, margin: 0 }}>
-                TrustyPro doesn't replace a licensed inspector for legal purposes — including mortgage underwriting, homeowner’s insurance, and seller disclosure. It supplements ongoing monitoring after you buy.
-                Think of TrustyPro as your home's continuous health tracker. Think of a traditional inspection as the doctor’s physical before a major procedure.
+                TrustyPro doesn't replace a licensed inspector for legal purposes — including mortgage underwriting, homeowner's insurance, and seller disclosure. It supplements ongoing monitoring after you buy.
+                Think of TrustyPro as your home's continuous health tracker. Think of a traditional inspection as the doctor's physical before a major procedure.
               </p>
             </div>
           </div>
@@ -155,8 +155,8 @@ export default function TrustyProVsInspection() {
           <h2 style={{ fontSize: 22, fontWeight: 700, color: '#ffffff', marginBottom: 16 }}>🔄 The Complementary Approach</h2>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: 16 }}>
             {[
-              { step: '1', label: 'Buying', desc: 'Traditional inspection for legal due diligence and negotiation', color: '#fbbf24′ },
-              { step: '2', label: 'Move-In', desc: 'TrustyPro baseline scan to establish your home’s starting condition', color: '#34d399′ },
+              { step: '1', label: 'Buying', desc: 'Traditional inspection for legal due diligence and negotiation', color: '#fbbf24' },
+              { step: '2', label: 'Move-In', desc: 'TrustyPro baseline scan to establish your home’s starting condition', color: '#34d399' },
               { step: '3', label: 'Annually', desc: 'TrustyPro yearly scan to track changes and plan maintenance', color: '#60a5fa' },
               { step: '4', label: 'After Storms', desc: 'TrustyPro immediate scan to detect storm damage early', color: '#a78bfa' },
             ].map(s => (

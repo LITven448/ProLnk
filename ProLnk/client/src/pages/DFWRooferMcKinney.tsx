@@ -95,9 +95,9 @@ export default function DFWRooferMcKinney() {
                     padding: '10px 18px',
                     borderRadius: 8,
                     border: '2px solid',
-                    borderColor: era === e ? '#F5E642′ : '#1e3a5f',
-                    backgroundColor: era === e ? '#F5E642′ : ’transparent',
-                    color: era === e ? '#0A1628′ : '#fff',
+                    borderColor: era === e ? '#F5E642' : '#1e3a5f',
+                    backgroundColor: era === e ? '#F5E642' : 'transparent',
+                    color: era === e ? '#0A1628' : '#fff',
                     fontWeight: era === e ? 700 : 400,
                     cursor: 'pointer',
                     fontSize: 14,
@@ -122,9 +122,9 @@ export default function DFWRooferMcKinney() {
                     padding: '10px 18px',
                     borderRadius: 8,
                     border: '2px solid',
-                    borderColor: damage === d ? '#F5E642′ : '#1e3a5f',
-                    backgroundColor: damage === d ? '#F5E642′ : ’transparent',
-                    color: damage === d ? '#0A1628′ : '#fff',
+                    borderColor: damage === d ? '#F5E642' : '#1e3a5f',
+                    backgroundColor: damage === d ? '#F5E642' : 'transparent',
+                    color: damage === d ? '#0A1628' : '#fff',
                     fontWeight: damage === d ? 700 : 400,
                     cursor: 'pointer',
                     fontSize: 14,
@@ -137,7 +137,7 @@ export default function DFWRooferMcKinney() {
           </div>
 
           {result && (
-            <div style={{ backgroundColor: '#0A1628', borderRadius: 12, padding: 24, borderLeft: '4px solid #F5E642′ }}>
+            <div style={{ backgroundColor: '#0A1628', borderRadius: 12, padding: 24, borderLeft: '4px solid #F5E642' }}>
               <div style={{ fontSize: 18, fontWeight: 700, marginBottom: 8 }}>{result.urgency}</div>
               <div style={{ color: '#cbd5e1', marginBottom: 12 }}>{result.action}</div>
               {boost && <div style={{ color: '#fbbf24', marginBottom: 12, fontSize: 14 }}>{boost}</div>}

@@ -44,11 +44,11 @@ export default function DFWHVACReplacementCost2026() {
           <div style={{ color: '#F5E642', fontWeight: 700, marginBottom: 12 }}>⚠️ Factors That Increase Price</div>
           <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
             {[
-              { factor: '2-story home', impact: '+$300–600′ },
-              { factor: 'Attic installation', impact: '+$400–800′ },
-              { factor: 'Difficult access / crawlspace', impact: '+$300–500′ },
-              { factor: 'Ductwork replacement needed', impact: '+$1,500–4,000′ },
-              { factor: 'Electrical panel upgrade', impact: '+$1,000–2,500′ },
+              { factor: '2-story home', impact: '+$300–600' },
+              { factor: 'Attic installation', impact: '+$400–800' },
+              { factor: 'Difficult access / crawlspace', impact: '+$300–500' },
+              { factor: 'Ductwork replacement needed', impact: '+$1,500–4,000' },
+              { factor: 'Electrical panel upgrade', impact: '+$1,000–2,500' },
             ].map(f => (
               <div key={f.factor} style={{ display: 'flex', justifyContent: 'space-between', background: '#0d2240', padding: '10px 14px', borderRadius: 6 }}>
                 <span style={{ color: '#94a3b8', fontSize: 14 }}>{f.factor}</span>
@@ -64,7 +64,7 @@ export default function DFWHVACReplacementCost2026() {
             <div style={{ color: '#94a3b8', fontSize: 13, marginBottom: 8 }}>Home size:</div>
             <div style={{ display: 'flex', gap: 10 }}>
               {[{ v: 'small', l: 'Under 1,500 sqft' }, { v: 'medium', l: '1,500–2,500 sqft' }, { v: 'large', l: '2,500+ sqft' }].map(s => (
-                <button key={s.v} onClick={() => setHomeSize(s.v)} style={{ padding: '8px 12px', borderRadius: 8, border: 'none', cursor: 'pointer', fontSize: 12, fontWeight: 700, background: homeSize === s.v ? '#F5E642′ : '#1e3a5f', color: homeSize === s.v ? '#0A1628' : '#fff' }}>{s.l}</button>
+                <button key={s.v} onClick={() => setHomeSize(s.v)} style={{ padding: '8px 12px', borderRadius: 8, border: 'none', cursor: 'pointer', fontSize: 12, fontWeight: 700, background: homeSize === s.v ? '#F5E642' : '#1e3a5f', color: homeSize === s.v ? '#0A1628' : '#fff' }}>{s.l}</button>
               ))}
             </div>
           </div>
@@ -72,12 +72,12 @@ export default function DFWHVACReplacementCost2026() {
             <div style={{ color: '#94a3b8', fontSize: 13, marginBottom: 8 }}>System type:</div>
             <div style={{ display: 'flex', gap: 10 }}>
               {[{ v: 'standard', l: 'Standard AC' }, { v: 'heatpump', l: 'Heat Pump' }, { v: 'twostage', l: 'Two-Stage' }].map(s => (
-                <button key={s.v} onClick={() => setSystemType(s.v)} style={{ padding: '8px 12px', borderRadius: 8, border: 'none', cursor: 'pointer', fontSize: 12, fontWeight: 700, background: systemType === s.v ? '#F5E642′ : '#1e3a5f', color: systemType === s.v ? '#0A1628' : '#fff' }}>{s.l}</button>
+                <button key={s.v} onClick={() => setSystemType(s.v)} style={{ padding: '8px 12px', borderRadius: 8, border: 'none', cursor: 'pointer', fontSize: 12, fontWeight: 700, background: systemType === s.v ? '#F5E642' : '#1e3a5f', color: systemType === s.v ? '#0A1628' : '#fff' }}>{s.l}</button>
               ))}
             </div>
           </div>
           {est && (
-            <div style={{ marginTop: 16, background: '#0d2240', borderRadius: 8, padding: 16, borderLeft: '4px solid #F5E642′ }}>
+            <div style={{ marginTop: 16, background: '#0d2240', borderRadius: 8, padding: 16, borderLeft: '4px solid #F5E642' }}>
               <div style={{ color: '#94a3b8', fontSize: 13 }}>Estimated DFW replacement cost</div>
               <div style={{ color: '#F5E642', fontWeight: 800, fontSize: 24 }}>${est.lo.toLocaleString()}–${est.hi.toLocaleString()}</div>
               <div style={{ color: '#64748b', fontSize: 12 }}>Installed, including labor. Get 3 quotes to confirm.</div>

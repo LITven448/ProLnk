@@ -46,19 +46,19 @@ export default function DFWFoundationEngineerVsCompany() {
       <div style={{ maxWidth: 800, margin: '0 auto' }}>
         <div style={{ marginBottom: '2rem' }}>
           <span style={{ fontSize: '2.5rem' }}>⚖️</span>
-          <h1 style={{ color: '#F5E642', fontSize: '2rem', margin: '0.5rem 0′ }}>DFW Foundation Engineer vs. Company Guide</h1>
+          <h1 style={{ color: '#F5E642', fontSize: '2rem', margin: '0.5rem 0' }}>DFW Foundation Engineer vs. Company Guide</h1>
           <p style={{ color: '#9CA3AF', lineHeight: 1.6 }}>
             In DFW, foundation companies have a direct financial interest in recommending repairs. An independent structural 
             engineer has no stake in the outcome — they just tell you the truth. Knowing when to get one can save you tens of thousands.
           </p>
         </div>
 
-        <div style={{ backgroundColor: '#111D35', borderRadius: 12, padding: '1.5rem', marginBottom: '1.5rem', borderLeft: '4px solid #EF4444′ }}>
+        <div style={{ backgroundColor: '#111D35', borderRadius: 12, padding: '1.5rem', marginBottom: '1.5rem', borderLeft: '4px solid #EF4444' }}>
           <h2 style={{ color: '#EF4444', marginTop: 0 }}>⚠️ The Conflict of Interest Problem</h2>
           <p style={{ color: '#CBD5E1', lineHeight: 1.7 }}>
             Foundation companies in Texas are paid per pier installed — typically $800–$1,500 each. A company quoting 20 piers 
             earns $16,000–$30,000. An independent engineer with no financial stake often finds that 8–12 piers are sufficient. 
-            The average DFW homeowner who skips the engineer overpays by <strong style={{ color: '#F5E642′ }}>$8,000–$15,000</strong>.
+            The average DFW homeowner who skips the engineer overpays by <strong style={{ color: '#F5E642' }}>$8,000–$15,000</strong>.
           </p>
         </div>
 
@@ -83,7 +83,7 @@ export default function DFWFoundationEngineerVsCompany() {
             </div>
           </div>
           {result && (
-            <div style={{ backgroundColor: '#0A1628', borderRadius: 8, padding: '1.2rem', border: '1px solid #F5E642′ }}>
+            <div style={{ backgroundColor: '#0A1628', borderRadius: 8, padding: '1.2rem', border: '1px solid #F5E642' }}>
               <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '1rem' }}>
                 <div style={{ backgroundColor: result.getEngineer ? '#22C55E' : '#6B7280', borderRadius: 8, padding: '0.5rem 1rem', fontWeight: 700, fontSize: '1.1rem' }}>
                   {result.getEngineer ? '✅ Get Engineer First' : '⏸️ Not Required Yet'}
@@ -100,7 +100,7 @@ export default function DFWFoundationEngineerVsCompany() {
               )}
               <div style={{ marginTop: '1rem', padding: '0.8rem', backgroundColor: '#111D35', borderRadius: 8 }}>
                 <span style={{ color: '#F5E642', fontWeight: 700 }}>💰 Cost Analysis: </span>
-                <span style={{ color: '#CBD5E1′ }}>{result.costSavings}</span>
+                <span style={{ color: '#CBD5E1' }}>{result.costSavings}</span>
               </div>
             </div>
           )}

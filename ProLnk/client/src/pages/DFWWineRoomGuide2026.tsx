@@ -63,7 +63,7 @@ export default function DFWWineRoomGuide2026() {
             {[{ id: 'small', label: '🍾 Small (< 200 bottles)' }, { id: 'medium', label: '🍷 Medium (200–600)' }, { id: 'large', label: '🏰 Large (600+)' }].map((opt) => (
               <button key={opt.id} onClick={() => setCollection(opt.id)}
                 style={{ padding: '8px 12px', borderRadius: 8, border: 'none', cursor: 'pointer', fontWeight: 600, fontSize: 12,
-                  background: collection === opt.id ? '#F5E642′ : '#0f172a', color: collection === opt.id ? '#0A1628' : '#fff' }}>
+                  background: collection === opt.id ? '#F5E642' : '#0f172a', color: collection === opt.id ? '#0A1628' : '#fff' }}>
                 {opt.label}
               </button>
             ))}
@@ -74,16 +74,16 @@ export default function DFWWineRoomGuide2026() {
           <h2 style={{ color: '#F5E642', fontSize: 16, marginBottom: 4 }}>💰 Budget</h2>
           <input type="range" min={500} max={20000} step={500} value={budget}
             onChange={(e) => setBudget(Number(e.target.value))}
-            style={{ width: '100%', marginBottom: 8, accentColor: '#F5E642′ }} />
+            style={{ width: '100%', marginBottom: 8, accentColor: '#F5E642' }} />
           <div style={{ textAlign: 'center', color: '#F5E642', fontWeight: 700, fontSize: 20, marginBottom: 16 }}>${budget.toLocaleString()}</div>
           <div style={{ background: '#0f172a', borderRadius: 8, padding: 16 }}>
             <div style={{ color: '#F5E642', fontWeight: 700, fontSize: 15, marginBottom: 4 }}>{sol.label}</div>
             <div style={{ fontSize: 13, color: '#94a3b8', marginBottom: 8 }}>{sol.desc}</div>
             <div style={{ fontSize: 13, marginBottom: 4 }}>🌡️ <strong>Temp Control:</strong> {sol.tempControl}</div>
             <div style={{ fontSize: 13, marginBottom: 4 }}>🍾 <strong>Capacity:</strong> {sol.bottles}</div>
-            <div style={{ fontSize: 13, color: '#F5E642′ }}>💵 <strong>Cost Range:</strong> {sol.cost}</div>
+            <div style={{ fontSize: 13, color: '#F5E642' }}>💵 <strong>Cost Range:</strong> {sol.cost}</div>
           </div>
-          <div style={{ marginTop: 12, background: '#0f172a', borderRadius: 8, padding: 12, fontSize: 13, color: '#94a3b8′ }}>💡 {getDFWNote(budget)}</div>
+          <div style={{ marginTop: 12, background: '#0f172a', borderRadius: 8, padding: 12, fontSize: 13, color: '#94a3b8' }}>💡 {getDFWNote(budget)}</div>
         </div>
       </div>
     </div>

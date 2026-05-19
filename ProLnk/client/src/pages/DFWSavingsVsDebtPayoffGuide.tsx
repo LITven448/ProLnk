@@ -33,13 +33,13 @@ export default function DFWSavingsVsDebtPayoffGuide() {
 
   const payDebtFirst = highRateDebts.length > 0;
   const strategy = payDebtFirst
-    ? { label: 'Pay High-Interest Debt First', icon: '💳', color: '#ef4444′ }
+    ? { label: 'Pay High-Interest Debt First', icon: '💳', color: '#ef4444' }
     : { label: 'Save for House First', icon: '🏠', color: '#22c55e' };
 
   const hyMortgageDiff = highRateDebts.reduce((s, d) => s + (d.rate - mortgageRate) / 100 * d.balance, 0);
 
   return (
-    <div style={{ background: '#F9FAFB', minHeight: '100vh', padding: '2rem', fontFamily: 'sans-serif', color: '#0A1628′ }}>
+    <div style={{ background: '#F9FAFB', minHeight: '100vh', padding: '2rem', fontFamily: 'sans-serif', color: '#0A1628' }}>
       <div style={{ maxWidth: 720, margin: '0 auto' }}>
         <div style={{ background: '#0A1628', borderRadius: 12, padding: '2rem', marginBottom: '2rem', color: '#fff' }}>
           <div style={{ fontSize: 28, marginBottom: 8 }}>⚖️ Save for House vs. Pay Off Debt First?</div>
@@ -49,7 +49,7 @@ export default function DFWSavingsVsDebtPayoffGuide() {
         <div style={{ background: '#fff', borderRadius: 12, padding: '1.5rem', marginBottom: '1.5rem', boxShadow: '0 1px 4px rgba(0,0,0,0.08)' }}>
           <h2 style={{ marginTop: 0 }}>🏠 Your DFW Home Goal</h2>
           <label style={{ fontWeight: 600 }}>Target Home Price: <span style={{ color: '#F5E642', background: '#0A1628', padding: '2px 10px', borderRadius: 6 }}>${homePriceK}K</span></label>
-          <input type="range" min={200} max={800} step={25} value={homePriceK} onChange={e => setHomePriceK(+e.target.value)} style={{ width: '100%', margin: '0.5rem 0', accentColor: '#F5E642′ }} />
+          <input type="range" min={200} max={800} step={25} value={homePriceK} onChange={e => setHomePriceK(+e.target.value)} style={{ width: '100%', margin: '0.5rem 0', accentColor: '#F5E642' }} />
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12, marginTop: 12 }}>
             <div>
               <label style={{ fontWeight: 600, fontSize: 14 }}>Current Savings ($)</label>
@@ -70,7 +70,7 @@ export default function DFWSavingsVsDebtPayoffGuide() {
               <div key={i} style={{
                 border: `2px solid ${aboveMortgage ? '#ef4444' : '#22c55e'}`,
                 borderRadius: 10, padding: '0.75rem', marginBottom: 8,
-                background: aboveMortgage ? '#fef2f2′ : '#f0fdf4'
+                background: aboveMortgage ? '#fef2f2' : '#f0fdf4'
               }}>
                 <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
                   <div>
@@ -78,7 +78,7 @@ export default function DFWSavingsVsDebtPayoffGuide() {
                     <span style={{ marginLeft: 8, fontSize: 12, color: '#64748b' }}>${d.balance.toLocaleString()} @ {d.rate}% APR</span>
                   </div>
                   <div style={{ textAlign: 'right' }}>
-                    <div style={{ fontWeight: 700, color: aboveMortgage ? '#ef4444′ : '#22c55e' }}>
+                    <div style={{ fontWeight: 700, color: aboveMortgage ? '#ef4444' : '#22c55e' }}>
                       {aboveMortgage ? `⬆️ +${(d.rate - mortgageRate).toFixed(1)}% above mortgage` : `✅ Below mortgage rate`}
                     </div>
                     <div style={{ fontSize: 12, color: '#64748b' }}>{aboveMortgage ? 'Pay this off first' : 'OK to carry while saving'}</div>
@@ -116,8 +116,8 @@ export default function DFWSavingsVsDebtPayoffGuide() {
         </div>
 
         <div style={{ background: '#0A1628', borderRadius: 12, padding: '1.5rem', color: '#fff' }}>
-          <h2 style={{ marginTop: 0, color: '#F5E642′ }}>🎯 Our Recommendation</h2>
-          <div style={{ background: strategy.color === '#ef4444′ ? '#7c2d12' : '#166534', borderRadius: 8, padding: '1rem', marginBottom: 12 }}>
+          <h2 style={{ marginTop: 0, color: '#F5E642' }}>🎯 Our Recommendation</h2>
+          <div style={{ background: strategy.color === '#ef4444' ? '#7c2d12' : '#166534', borderRadius: 8, padding: '1rem', marginBottom: 12 }}>
             <div style={{ fontSize: 20, fontWeight: 800 }}>{strategy.icon} {strategy.label}</div>
           </div>
           <div style={{ background: '#1e293b', borderRadius: 8, padding: '1rem' }}>

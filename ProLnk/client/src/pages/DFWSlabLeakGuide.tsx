@@ -34,10 +34,10 @@ export default function DFWSlabLeakGuide() {
 
   return (
     <div style={{ background: '#0A1628', minHeight: '100vh', color: '#E8EDF5', fontFamily: 'system-ui, sans-serif', padding: '0 0 60px' }}>
-      <div style={{ background: 'linear-gradient(135deg, #0A1628 0%, #112240 100%)', padding: '48px 24px 40px', borderBottom: '2px solid #F5E642′ }}>
+      <div style={{ background: 'linear-gradient(135deg, #0A1628 0%, #112240 100%)', padding: '48px 24px 40px', borderBottom: '2px solid #F5E642' }}>
         <div style={{ maxWidth: 860, margin: '0 auto' }}>
           <div style={{ color: '#F5E642', fontSize: 13, fontWeight: 700, letterSpacing: 2, marginBottom: 12 }}>🏗️ DFW FOUNDATION PLUMBING</div>
-          <h1 style={{ fontSize: 'clamp(26px, 5vw, 44px)', fontWeight: 900, margin: '0 0 16px', lineHeight: 1.15 }}>Slab Leak Detection & Repair<br /><span style={{ color: '#F5E642′ }}>Guide for DFW Homeowners</span></h1>
+          <h1 style={{ fontSize: 'clamp(26px, 5vw, 44px)', fontWeight: 900, margin: '0 0 16px', lineHeight: 1.15 }}>Slab Leak Detection & Repair<br /><span style={{ color: '#F5E642' }}>Guide for DFW Homeowners</span></h1>
           <p style={{ fontSize: 16, color: '#8BA3C7', maxWidth: 620, margin: 0 }}>DFW's expansive clay soil shifts with every rain and drought cycle — putting constant stress on pipes embedded in your foundation. Slab leaks are more common here than anywhere else in the country.</p>
         </div>
       </div>
@@ -49,7 +49,7 @@ export default function DFWSlabLeakGuide() {
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))', gap: 14 }}>
             {[
               { icon: '☀️', stat: '40+ days', desc: '100°F+ per summer — extreme clay shrinkage' },
-              { icon: '🌧️', stat: '37″', desc: 'Annual rainfall — clay swells repeatedly' },
+              { icon: '🌧️', stat: '37"', desc: 'Annual rainfall — clay swells repeatedly' },
               { icon: '📊', stat: '3–5%', desc: 'Volume change in DFW Blackland clay' },
               { icon: '🏠', stat: '60%', desc: 'DFW homes on slab foundations' },
             ].map(item => (
@@ -75,8 +75,8 @@ export default function DFWSlabLeakGuide() {
                 <div style={{ fontWeight: 800, color: '#E8EDF5', marginBottom: 8 }}>{item.method}</div>
                 <div style={{ color: '#8BA3C7', fontSize: 13, lineHeight: 1.6, marginBottom: 12 }}>{item.how}</div>
                 <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: 12 }}>
-                  <span style={{ color: '#4ECDC4′ }}>✓ {item.accuracy} accuracy</span>
-                  <span style={{ color: '#F5E642′ }}>{item.cost}</span>
+                  <span style={{ color: '#4ECDC4' }}>✓ {item.accuracy} accuracy</span>
+                  <span style={{ color: '#F5E642' }}>{item.cost}</span>
                 </div>
                 <div style={{ color: '#8BA3C7', fontSize: 12, marginTop: 6 }}>Best for: {item.best}</div>
               </div>
@@ -89,7 +89,7 @@ export default function DFWSlabLeakGuide() {
           <div style={{ overflowX: 'auto' }}>
             <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: 14 }}>
               <thead>
-                <tr style={{ background: '#F5E642', color: '#0A1628′ }}>
+                <tr style={{ background: '#F5E642', color: '#0A1628' }}>
                   {['Repair Method', 'Description', 'When To Use', 'Cost Range', 'Disruption'].map(h => (
                     <th key={h} style={{ padding: '10px 14px', textAlign: 'left', fontWeight: 800 }}>{h}</th>
                   ))}
@@ -102,9 +102,9 @@ export default function DFWSlabLeakGuide() {
                   ['Epoxy Lining', 'Coat interior of existing pipe', 'Pinhole leaks throughout line', '$3,000–6,000', 'Low — no cutting'],
                   ['Full Repipe', 'Replace all slab plumbing', 'Systemic failure, old galvanized', '$8,000–15,000', 'High — 3–5 days'],
                 ].map((row, i) => (
-                  <tr key={i} style={{ background: i % 2 === 0 ? '#0E1E35′ : '#112240' }}>
+                  <tr key={i} style={{ background: i % 2 === 0 ? '#0E1E35' : '#112240' }}>
                     {row.map((cell, j) => (
-                      <td key={j} style={{ padding: '10px 14px', color: j === 0 ? '#F5E642′ : '#C0D0E8', borderBottom: '1px solid #1E3A5F' }}>{cell}</td>
+                      <td key={j} style={{ padding: '10px 14px', color: j === 0 ? '#F5E642' : '#C0D0E8', borderBottom: '1px solid #1E3A5F' }}>{cell}</td>
                     ))}
                   </tr>
                 ))}
@@ -115,16 +115,16 @@ export default function DFWSlabLeakGuide() {
 
         <section style={{ marginTop: 40, background: '#112240', border: '2px solid #F5E642', borderRadius: 16, padding: 28 }}>
           <h2 style={{ color: '#F5E642', fontSize: 22, fontWeight: 800, marginBottom: 20 }}>🩺 Symptom Checker — Slab Leak Estimator</h2>
-          <p style={{ color: '#8BA3C7', marginBottom: 20 }}>Check all symptoms you're experiencing. We’ll estimate urgency and likely leak location.</p>
+          <p style={{ color: '#8BA3C7', marginBottom: 20 }}>Check all symptoms you're experiencing. We'll estimate urgency and likely leak location.</p>
           <div style={{ display: 'grid', gap: 10, marginBottom: 20 }}>
             {SYMPTOMS.map(s => (
               <label key={s.id} style={{ display: 'flex', alignItems: 'center', gap: 12, cursor: 'pointer', background: selected.has(s.id) ? '#0D2B4E' : '#0A1628', border: `1px solid ${selected.has(s.id) ? '#F5E642' : '#1E3A5F'}`, borderRadius: 8, padding: '12px 16px' }}>
                 <input type="checkbox" checked={selected.has(s.id)} onChange={() => toggle(s.id)} style={{ accentColor: '#F5E642', width: 18, height: 18 }} />
-                <span style={{ color: selected.has(s.id) ? '#E8EDF5′ : '#8BA3C7', fontSize: 15 }}>{s.label}</span>
+                <span style={{ color: selected.has(s.id) ? '#E8EDF5' : '#8BA3C7', fontSize: 15 }}>{s.label}</span>
               </label>
             ))}
           </div>
-          <button onClick={() => setShowResult(true)} disabled={selected.size === 0} style={{ background: selected.size > 0 ? '#F5E642′ : '#1E3A5F', color: '#0A1628', border: ’none', borderRadius: 8, padding: '13px 28px', fontWeight: 800, fontSize: 15, cursor: selected.size > 0 ? 'pointer' : 'not-allowed', width: '100%', marginBottom: 20 }}>
+          <button onClick={() => setShowResult(true)} disabled={selected.size === 0} style={{ background: selected.size > 0 ? '#F5E642' : '#1E3A5F', color: '#0A1628', border: 'none', borderRadius: 8, padding: '13px 28px', fontWeight: 800, fontSize: 15, cursor: selected.size > 0 ? 'pointer' : 'not-allowed', width: '100%', marginBottom: 20 }}>
             Analyze My Symptoms
           </button>
           {showResult && selected.size > 0 && (
@@ -132,7 +132,7 @@ export default function DFWSlabLeakGuide() {
               <div style={{ background: '#0A1628', borderRadius: 10, padding: 20, borderLeft: `4px solid ${est.color}`, marginBottom: 16 }}>
                 <div style={{ fontSize: 12, color: '#8BA3C7', marginBottom: 4 }}>URGENCY LEVEL</div>
                 <div style={{ fontSize: 28, fontWeight: 900, color: est.color, marginBottom: 8 }}>{est.urgency}</div>
-                <div style={{ color: '#C0D0E8', marginBottom: 8 }}>Estimated Repair Range: <strong style={{ color: '#F5E642′ }}>{est.range}</strong></div>
+                <div style={{ color: '#C0D0E8', marginBottom: 8 }}>Estimated Repair Range: <strong style={{ color: '#F5E642' }}>{est.range}</strong></div>
                 <div style={{ color: '#8BA3C7', fontSize: 14, lineHeight: 1.6 }}>{est.repair}</div>
               </div>
               {locations.length > 0 && (

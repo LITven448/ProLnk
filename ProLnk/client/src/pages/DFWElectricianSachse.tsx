@@ -38,7 +38,7 @@ export default function DFWElectricianSachse() {
       </div>
 
       <div style={{ maxWidth: '720px', margin: '0 auto', padding: '32px 24px' }}>
-        <div style={{ background: '#0F2040', borderRadius: '12px', padding: '24px', marginBottom: '24px', border: '1px solid #1A3060′ }}>
+        <div style={{ background: '#0F2040', borderRadius: '12px', padding: '24px', marginBottom: '24px', border: '1px solid #1A3060' }}>
           <h2 style={{ color: '#F5E642', fontSize: '18px', margin: '0 0 16px' }}>⚡ Sachse's Fast-Growth Electrical Profile</h2>
           <div style={{ display: 'grid', gap: '12px' }}>
             {[
@@ -57,7 +57,7 @@ export default function DFWElectricianSachse() {
           </div>
         </div>
 
-        <div style={{ background: '#0F2040', borderRadius: '12px', padding: '24px', marginBottom: '24px', border: '1px solid #1A3060′ }}>
+        <div style={{ background: '#0F2040', borderRadius: '12px', padding: '24px', marginBottom: '24px', border: '1px solid #1A3060' }}>
           <h2 style={{ color: '#F5E642', fontSize: '18px', margin: '0 0 16px' }}>🔌 Electrical Capacity + Permit Requirements Check</h2>
           <div style={{ display: 'grid', gap: '16px', marginBottom: '16px' }}>
             <div>
@@ -68,9 +68,9 @@ export default function DFWElectricianSachse() {
                 style={{ width: '100%', background: '#0A1628', border: '1px solid #2A4080', borderRadius: '8px', padding: '10px 12px', color: '#E8EDF5', fontSize: '14px' }}
               >
                 <option value="">Select era...</option>
-                <option value="pre2000″>Before 2000 — older Sachse neighborhood</option>
-                <option value="2000to2015″>2000–2015 — mid-growth era</option>
-                <option value="post2015″>2015 or newer — modern subdivision</option>
+                <option value="pre2000">Before 2000 — older Sachse neighborhood</option>
+                <option value="2000to2015">2000–2015 — mid-growth era</option>
+                <option value="post2015">2015 or newer — modern subdivision</option>
               </select>
             </div>
             <div>
@@ -90,15 +90,15 @@ export default function DFWElectricianSachse() {
           <button
             onClick={check}
             disabled={!homeAge || !upgrade}
-            style={{ width: '100%', background: homeAge && upgrade ? '#F5E642′ : '#2A4080', color: homeAge && upgrade ? '#0A1628' : '#4A6080', border: ’none', borderRadius: '8px', padding: '12px', fontSize: '15px', fontWeight: '700', cursor: homeAge && upgrade ? 'pointer' : 'not-allowed' }}
+            style={{ width: '100%', background: homeAge && upgrade ? '#F5E642' : '#2A4080', color: homeAge && upgrade ? '#0A1628' : '#4A6080', border: 'none', borderRadius: '8px', padding: '12px', fontSize: '15px', fontWeight: '700', cursor: homeAge && upgrade ? 'pointer' : 'not-allowed' }}
           >
             Check Capacity + Permit Requirements
           </button>
           {result && (
-            <div style={{ marginTop: '16px', background: '#0A1628', borderRadius: '8px', padding: '16px', border: '1px solid #F5E642′ }}>
+            <div style={{ marginTop: '16px', background: '#0A1628', borderRadius: '8px', padding: '16px', border: '1px solid #F5E642' }}>
               <div style={{ fontWeight: '800', fontSize: '16px', color: '#F5E642', marginBottom: '6px' }}>{result.status}</div>
               <div style={{ color: '#E8EDF5', fontSize: '13px', marginBottom: '10px' }}>{result.issues}</div>
-              <div style={{ background: '#0F2040', borderRadius: '6px', padding: '10px', color: '#A8B8D0', fontSize: '12px', borderLeft: '3px solid #F5E642′ }}>
+              <div style={{ background: '#0F2040', borderRadius: '6px', padding: '10px', color: '#A8B8D0', fontSize: '12px', borderLeft: '3px solid #F5E642' }}>
                 📋 Permit Info: {result.permits}
               </div>
             </div>

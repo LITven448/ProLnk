@@ -44,8 +44,8 @@ export default function DFWRoofingContractorEvaluation2026() {
                   <input type="checkbox" checked={item.val} onChange={e => item.set(e.target.checked)} style={{ marginTop: '3px', accentColor: '#F5E642', width: '18px', height: '18px', flexShrink: 0 }} />
                   <div style={{ flex: 1 }}>
                     <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '0.25rem' }}>
-                      <span style={{ color: item.val ? '#F5E642′ : '#E8EAF0', fontWeight: 600, fontSize: '0.95rem' }}>{item.label}</span>
-                      <span style={{ color: item.val ? '#4CAF50′ : '#9BA3B2', fontWeight: 700, fontSize: '0.9rem', flexShrink: 0, marginLeft: '0.5rem' }}>{item.val ? `+${item.pts}` : `0/${item.pts}`}</span>
+                      <span style={{ color: item.val ? '#F5E642' : '#E8EAF0', fontWeight: 600, fontSize: '0.95rem' }}>{item.label}</span>
+                      <span style={{ color: item.val ? '#4CAF50' : '#9BA3B2', fontWeight: 700, fontSize: '0.9rem', flexShrink: 0, marginLeft: '0.5rem' }}>{item.val ? `+${item.pts}` : `0/${item.pts}`}</span>
                     </div>
                     <div style={{ color: '#9BA3B2', fontSize: '0.83rem' }}>{item.desc}</div>
                   </div>

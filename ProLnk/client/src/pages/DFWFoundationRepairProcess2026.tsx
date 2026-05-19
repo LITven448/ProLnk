@@ -37,7 +37,7 @@ export default function DFWFoundationRepairProcess2026() {
           {(['Pressed', 'Tunneled'] as const).map(t => (
             <button key={t} onClick={() => setType(t)}
               style={{ padding: '10px 24px', borderRadius: 8, border: 'none', cursor: 'pointer', fontWeight: 700, fontSize: 14,
-                background: type === t ? '#F5E642′ : '#1e2d45', color: type === t ? '#0A1628' : '#94a3b8' }}>
+                background: type === t ? '#F5E642' : '#1e2d45', color: type === t ? '#0A1628' : '#94a3b8' }}>
               {t} Piers
             </button>
           ))}

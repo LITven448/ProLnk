@@ -66,7 +66,7 @@ export default function DFWTradeGlossaryGuide() {
             <button
               key={trade}
               onClick={() => setActiveTrade(trade)}
-              style={{ padding: '8px 18px', borderRadius: 8, border: 'none', cursor: 'pointer', fontWeight: 700, fontSize: 14, background: activeTrade === trade ? '#F5E642′ : '#1E3A5F', color: activeTrade === trade ? '#0A1628' : '#fff' }}
+              style={{ padding: '8px 18px', borderRadius: 8, border: 'none', cursor: 'pointer', fontWeight: 700, fontSize: 14, background: activeTrade === trade ? '#F5E642' : '#1E3A5F', color: activeTrade === trade ? '#0A1628' : '#fff' }}
             >
               {tradeEmojis[trade]} {trade}
             </button>

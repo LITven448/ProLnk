@@ -75,17 +75,17 @@ export default function DFWTradeInsuranceGuide() {
           <h2 style={{ margin: '0 0 16px', fontSize: 18 }}>Get Your Coverage Estimate</h2>
           <div style={{ display: 'flex', gap: 10, flexWrap: 'wrap', marginBottom: 16 }}>
             {Object.entries(coverageData).map(([k, v]) => (
-              <button key={k} onClick={() => setTrade(k)} style={{ padding: '10px 18px', borderRadius: 8, border: '2px solid', borderColor: trade === k ? '#F5E642′ : '#1e3a5f', background: trade === k ? '#F5E642' : ’transparent', color: trade === k ? '#0A1628′ : '#fff', fontWeight: 700, cursor: ’pointer' }}>{v.label}</button>
+              <button key={k} onClick={() => setTrade(k)} style={{ padding: '10px 18px', borderRadius: 8, border: '2px solid', borderColor: trade === k ? '#F5E642' : '#1e3a5f', background: trade === k ? '#F5E642' : 'transparent', color: trade === k ? '#0A1628' : '#fff', fontWeight: 700, cursor: 'pointer' }}>{v.label}</button>
             ))}
           </div>
           <div style={{ display: 'flex', gap: 10, flexWrap: 'wrap', marginBottom: 16 }}>
             {Object.entries(employees).map(([k, v]) => (
-              <button key={k} onClick={() => setEmp(k)} style={{ padding: '10px 18px', borderRadius: 8, border: '2px solid', borderColor: emp === k ? '#F5E642′ : '#1e3a5f', background: emp === k ? '#F5E642' : ’transparent', color: emp === k ? '#0A1628′ : '#fff', fontWeight: 700, cursor: ’pointer' }}>{v}</button>
+              <button key={k} onClick={() => setEmp(k)} style={{ padding: '10px 18px', borderRadius: 8, border: '2px solid', borderColor: emp === k ? '#F5E642' : '#1e3a5f', background: emp === k ? '#F5E642' : 'transparent', color: emp === k ? '#0A1628' : '#fff', fontWeight: 700, cursor: 'pointer' }}>{v}</button>
             ))}
           </div>
           <div>
             <label style={{ fontSize: 13, color: '#94a3b8', display: 'block', marginBottom: 6 }}>Total Equipment/Tool Value ($) for floater estimate</label>
-            <input value={equip} onChange={ev => setEquip(ev.target.value)} placeholder="e.g. 12000″ style={{ background: '#0A1628', border: '1px solid #1e3a5f', borderRadius: 8, padding: '10px 14px', color: '#fff', fontSize: 14, width: '100%', boxSizing: 'border-box' }} />
+            <input value={equip} onChange={ev => setEquip(ev.target.value)} placeholder="e.g. 12000" style={{ background: '#0A1628', border: '1px solid #1e3a5f', borderRadius: 8, padding: '10px 14px', color: '#fff', fontSize: 14, width: '100%', boxSizing: 'border-box' }} />
           </div>
         </div>
 
@@ -123,7 +123,7 @@ export default function DFWTradeInsuranceGuide() {
                 <div key={i} style={{ padding: '12px 0', borderBottom: i < dfwBrokers.length - 1 ? '1px solid #1e3a5f' : 'none' }}>
                   <div style={{ fontWeight: 700, marginBottom: 4 }}>{broker.name}</div>
                   <div style={{ fontSize: 13, color: '#64748b', marginBottom: 2 }}>{broker.specialty}</div>
-                  <div style={{ fontSize: 13, color: '#94a3b8′ }}>{broker.note}</div>
+                  <div style={{ fontSize: 13, color: '#94a3b8' }}>{broker.note}</div>
                 </div>
               ))}
             </div>

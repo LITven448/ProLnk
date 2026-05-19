@@ -72,13 +72,13 @@ export default function DFWCommuteGuide() {
         <div style={{ marginBottom: 8, fontSize: 13, color: '#94a3b8', letterSpacing: 1 }}>DFW HOMEOWNER GUIDE</div>
         <h1 style={{ fontSize: 36, fontWeight: 800, marginBottom: 12, lineHeight: 1.15 }}>
           DFW Commute Guide<br />
-          <span style={{ color: '#38bdf8′ }}>Choose Your Neighborhood Based on Where You Work</span>
+          <span style={{ color: '#38bdf8' }}>Choose Your Neighborhood Based on Where You Work</span>
         </h1>
         <p style={{ color: '#94a3b8', fontSize: 16, marginBottom: 48, maxWidth: 620 }}>
           DFW has no meaningful public transit. DART covers some Dallas suburbs but most DFW residents drive. Plan for 30–60 minute commutes from most suburbs to major employment centers.
         </p>
 
-        <h2 style={{ fontSize: 22, fontWeight: 700, marginBottom: 24, color: '#e2e8f0′ }}>🗺️ Commute Estimator</h2>
+        <h2 style={{ fontSize: 22, fontWeight: 700, marginBottom: 24, color: '#e2e8f0' }}>🗺️ Commute Estimator</h2>
         <div style={{ background: '#1e293b', borderRadius: 16, padding: 28, border: '1px solid #334155', marginBottom: 48 }}>
           <label style={{ display: 'block', fontSize: 15, fontWeight: 600, color: '#94a3b8', marginBottom: 12 }}>
             Select your employment center:
@@ -96,12 +96,12 @@ export default function DFWCommuteGuide() {
 
           {center ? (
             <div>
-              <div style={{ fontSize: 14, color: '#64748b', marginBottom: 16 }}>Recommended suburbs for <strong style={{ color: '#38bdf8′ }}>{center.name}</strong>:</div>
+              <div style={{ fontSize: 14, color: '#64748b', marginBottom: 16 }}>Recommended suburbs for <strong style={{ color: '#38bdf8' }}>{center.name}</strong>:</div>
               <div style={{ display: 'grid', gap: 12 }}>
                 {center.suburbs.map(s => (
                   <div key={s.name} style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', background: '#0f172a', padding: '14px 20px', borderRadius: 10, border: '1px solid #1e293b' }}>
                     <span style={{ fontWeight: 600, color: '#e2e8f0', fontSize: 15 }}>🏘️ {s.name}</span>
-                    <span style={{ color: s.max <= 20 ? '#4ade80′ : s.max <= 30 ? '#facc15' : '#f87171', fontWeight: 700, fontSize: 15 }}>
+                    <span style={{ color: s.max <= 20 ? '#4ade80' : s.max <= 30 ? '#facc15' : '#f87171', fontWeight: 700, fontSize: 15 }}>
                       {s.min}–{s.max} min
                     </span>
                   </div>
@@ -116,7 +116,7 @@ export default function DFWCommuteGuide() {
           )}
         </div>
 
-        <h2 style={{ fontSize: 22, fontWeight: 700, marginBottom: 20, color: '#e2e8f0′ }}>🚗 Major DFW Traffic Corridors</h2>
+        <h2 style={{ fontSize: 22, fontWeight: 700, marginBottom: 20, color: '#e2e8f0' }}>🚗 Major DFW Traffic Corridors</h2>
         <div style={{ display: 'grid', gap: 12, marginBottom: 48 }}>
           {[
             { road: 'I-35E / I-35W', peak: '7–9am, 4:30–6:30pm', tip: 'Worst congestion in DFW. Consider express lanes where available.' },
@@ -127,7 +127,7 @@ export default function DFWCommuteGuide() {
             <div key={r.road} style={{ background: '#1e293b', borderRadius: 10, padding: 20, border: '1px solid #334155', display: 'grid', gridTemplateColumns: '180px 1fr', gap: 16, alignItems: 'center' }}>
               <div>
                 <div style={{ fontWeight: 700, color: '#f1f5f9', marginBottom: 4 }}>{r.road}</div>
-                <div style={{ fontSize: 12, color: '#ef4444′ }}>⚠️ Peak: {r.peak}</div>
+                <div style={{ fontSize: 12, color: '#ef4444' }}>⚠️ Peak: {r.peak}</div>
               </div>
               <div style={{ color: '#94a3b8', fontSize: 14 }}>{r.tip}</div>
             </div>
@@ -143,7 +143,7 @@ export default function DFWCommuteGuide() {
 
         <div style={{ background: 'linear-gradient(135deg, #1e3a5f, #1e40af)', borderRadius: 16, padding: 32, textAlign: 'center' }}>
           <div style={{ fontSize: 28 }}>🏡</div>
-          <h3 style={{ fontSize: 22, fontWeight: 700, margin: '12px 0 8px', color: '#f1f5f9′ }}>Found Your Neighborhood?</h3>
+          <h3 style={{ fontSize: 22, fontWeight: 700, margin: '12px 0 8px', color: '#f1f5f9' }}>Found Your Neighborhood?</h3>
           <p style={{ color: '#93c5fd', marginBottom: 24 }}>Protect your new DFW home from day one. Get quotes from vetted local contractors for security, HVAC, and maintenance.</p>
           <a href="/homeowner-signup" style={{ display: 'inline-block', background: '#2563eb', color: '#fff', padding: '14px 32px', borderRadius: 8, fontWeight: 700, fontSize: 16, textDecoration: 'none' }}>
             Secure Your Home →

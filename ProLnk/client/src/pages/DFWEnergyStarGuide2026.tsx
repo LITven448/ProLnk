@@ -63,7 +63,7 @@ export default function DFWEnergyStarGuide2026() {
             <button
               key={key}
               onClick={() => setCategory(key)}
-              style={{ backgroundColor: category === key ? '#F5E642′ : '#1e3a5f', color: category === key ? '#0A1628' : '#ffffff', border: ’none', borderRadius: '10px', padding: '14px 8px', cursor: 'pointer', textAlign: 'center', fontWeight: 600, fontSize: '13px', transition: 'all 0.2s' }}
+              style={{ backgroundColor: category === key ? '#F5E642' : '#1e3a5f', color: category === key ? '#0A1628' : '#ffffff', border: 'none', borderRadius: '10px', padding: '14px 8px', cursor: 'pointer', textAlign: 'center', fontWeight: 600, fontSize: '13px', transition: 'all 0.2s' }}
             >
               <div style={{ fontSize: '24px', marginBottom: '4px' }}>{val.emoji}</div>
               {val.title.split(' ').slice(-1)}
@@ -81,15 +81,15 @@ export default function DFWEnergyStarGuide2026() {
             </div>
             <div style={{ backgroundColor: '#0A1628', borderRadius: '8px', padding: '14px', marginBottom: '14px' }}>
               <div style={{ color: '#94a3b8', fontSize: '12px', marginBottom: '4px' }}>💡 Why It Matters in DFW</div>
-              <div style={{ color: '#cbd5e1', lineHeight: '1.6′ }}>{sel.why}</div>
+              <div style={{ color: '#cbd5e1', lineHeight: '1.6' }}>{sel.why}</div>
             </div>
             <div style={{ backgroundColor: '#0A1628', borderRadius: '8px', padding: '14px', marginBottom: '14px' }}>
               <div style={{ color: '#94a3b8', fontSize: '12px', marginBottom: '4px' }}>💰 Available DFW Rebates</div>
-              <div style={{ color: '#22c55e', lineHeight: '1.6′ }}>{sel.rebate}</div>
+              <div style={{ color: '#22c55e', lineHeight: '1.6' }}>{sel.rebate}</div>
             </div>
             <div style={{ backgroundColor: '#0A1628', borderRadius: '8px', padding: '14px' }}>
               <div style={{ color: '#94a3b8', fontSize: '12px', marginBottom: '4px' }}>🔧 DFW Pro Tip</div>
-              <div style={{ color: '#cbd5e1', lineHeight: '1.6′ }}>{sel.tip}</div>
+              <div style={{ color: '#cbd5e1', lineHeight: '1.6' }}>{sel.tip}</div>
             </div>
           </div>
         )}

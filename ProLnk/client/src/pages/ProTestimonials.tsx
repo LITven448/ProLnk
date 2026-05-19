@@ -94,10 +94,10 @@ const TESTIMONIALS = [
 ];
 
 const BADGES = [
-  { icon: <Camera className="w-4 h-4″ />, label: "AI Photo Analysis" },
-  { icon: <Zap className="w-4 h-4″ />, label: "Storm Dispatch" },
-  { icon: <DollarSign className="w-4 h-4″ />, label: "5 Income Streams" },
-  { icon: <Users className="w-4 h-4″ />, label: "4-Level Network" },
+  { icon: <Camera className="w-4 h-4" />, label: "AI Photo Analysis" },
+  { icon: <Zap className="w-4 h-4" />, label: "Storm Dispatch" },
+  { icon: <DollarSign className="w-4 h-4" />, label: "5 Income Streams" },
+  { icon: <Users className="w-4 h-4" />, label: "4-Level Network" },
 ];
 
 export default function ProTestimonials() {
@@ -106,16 +106,16 @@ export default function ProTestimonials() {
       {/* Hero */}
       <div className="bg-[#0A1628] text-white">
         <div className="max-w-6xl mx-auto px-4 py-16 md:py-20 text-center">
-          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-yellow-400/10 border border-yellow-400/20 text-yellow-300 text-xs font-semibold mb-6″>
-            <Star className="w-3.5 h-3.5 fill-yellow-400 text-yellow-400″ /> Partner Success Stories
+          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-yellow-400/10 border border-yellow-400/20 text-yellow-300 text-xs font-semibold mb-6">
+            <Star className="w-3.5 h-3.5 fill-yellow-400 text-yellow-400" /> Partner Success Stories
           </div>
-          <h1 className="text-4xl md:text-5xl font-black mb-4″>
+          <h1 className="text-4xl md:text-5xl font-black mb-4">
             What ProLnk Partners Are Saying
           </h1>
           <p className="text-slate-400 text-lg max-w-xl mx-auto">
             Real DFW pros, real numbers — no embellishment.
           </p>
-          <div className="flex flex-wrap justify-center gap-3 mt-8″>
+          <div className="flex flex-wrap justify-center gap-3 mt-8">
             {BADGES.map((b) => (
               <div
                 key={b.label}
@@ -129,28 +129,28 @@ export default function ProTestimonials() {
       </div>
 
       {/* Testimonials Grid */}
-      <div className="max-w-6xl mx-auto px-4 py-14 md:py-16″>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5″>
+      <div className="max-w-6xl mx-auto px-4 py-14 md:py-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
           {TESTIMONIALS.map((t, i) => (
             <div
               key={i}
               className="bg-white rounded-2xl border border-gray-100 shadow-sm p-6 flex flex-col"
             >
               {/* Stars */}
-              <div className="flex gap-0.5 mb-4″>
+              <div className="flex gap-0.5 mb-4">
                 {Array.from({ length: t.stars }).map((_, s) => (
-                  <Star key={s} className="w-4 h-4 fill-yellow-400 text-yellow-400″ />
+                  <Star key={s} className="w-4 h-4 fill-yellow-400 text-yellow-400" />
                 ))}
               </div>
 
               {/* Quote */}
-              <p className="text-gray-700 text-sm leading-relaxed flex-1 mb-5″>
+              <p className="text-gray-700 text-sm leading-relaxed flex-1 mb-5">
                 \u201c{t.quote}\u201d
               </p>
 
               {/* Earnings callout */}
-              <div className="bg-yellow-50 border border-yellow-200 rounded-xl px-4 py-2.5 mb-4 flex items-center gap-2″>
-                <DollarSign className="w-4 h-4 text-yellow-600 flex-shrink-0″ />
+              <div className="bg-yellow-50 border border-yellow-200 rounded-xl px-4 py-2.5 mb-4 flex items-center gap-2">
+                <DollarSign className="w-4 h-4 text-yellow-600 flex-shrink-0" />
                 <span className="text-yellow-800 text-xs font-bold">{t.earnings}</span>
               </div>
 
@@ -172,10 +172,10 @@ export default function ProTestimonials() {
       {/* CTA */}
       <div className="bg-[#0A1628] text-white">
         <div className="max-w-4xl mx-auto px-4 py-14 md:py-16 text-center">
-          <h2 className="text-3xl md:text-4xl font-black mb-4″>
+          <h2 className="text-3xl md:text-4xl font-black mb-4">
             Join These Pros
           </h2>
-          <p className="text-slate-400 text-base max-w-xl mx-auto mb-8″>
+          <p className="text-slate-400 text-base max-w-xl mx-auto mb-8">
             Charter membership closes at 500 applicants. DFW market only.
             Every week you wait is leads someone else is capturing.
           </p>
@@ -183,9 +183,9 @@ export default function ProTestimonials() {
             href="/apply"
             className="inline-flex items-center gap-2 px-8 py-3.5 rounded-xl bg-yellow-400 hover:bg-yellow-300 text-gray-900 font-bold text-sm transition-colors"
           >
-            Apply Now — Charter Pricing <ChevronRight className="w-4 h-4″ />
+            Apply Now — Charter Pricing <ChevronRight className="w-4 h-4" />
           </a>
-          <p className="text-slate-500 text-xs mt-4″>
+          <p className="text-slate-500 text-xs mt-4">
             $149/mo locked for life after acceptance · No setup fees
           </p>
         </div>

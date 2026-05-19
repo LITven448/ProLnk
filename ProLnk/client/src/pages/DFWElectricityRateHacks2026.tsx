@@ -11,9 +11,9 @@ const tasks = [
 
 const touRates = [
   { period: '11pm – 6am', rate: '$0.06–0.08', label: 'Off-Peak', color: '#22c55e' },
-  { period: '6am – 3pm', rate: '$0.10–0.12', label: 'Mid-Peak', color: '#F5E642′ },
-  { period: '3pm – 9pm', rate: '$0.18–0.24', label: 'Peak', color: '#ef4444′ },
-  { period: '9pm – 11pm', rate: '$0.10–0.12', label: 'Mid-Peak', color: '#F5E642′ },
+  { period: '6am – 3pm', rate: '$0.10–0.12', label: 'Mid-Peak', color: '#F5E642' },
+  { period: '3pm – 9pm', rate: '$0.18–0.24', label: 'Peak', color: '#ef4444' },
+  { period: '9pm – 11pm', rate: '$0.10–0.12', label: 'Mid-Peak', color: '#F5E642' },
 ];
 
 export default function DFWElectricityRateHacks2026() {
@@ -36,7 +36,7 @@ export default function DFWElectricityRateHacks2026() {
             {touRates.map(r => (
               <div key={r.period} style={{ background: '#0A1628', borderRadius: 10, padding: 14, borderLeft: `4px solid ${r.color}` }}>
                 <div style={{ color: r.color, fontWeight: 700, fontSize: 13 }}>{r.label}</div>
-                <div style={{ color: '#fff', fontSize: 18, fontWeight: 900, margin: '4px 0′ }}>{r.rate}</div>
+                <div style={{ color: '#fff', fontSize: 18, fontWeight: 900, margin: '4px 0' }}>{r.rate}</div>
                 <div style={{ color: '#94a3b8', fontSize: 12 }}>{r.period}</div>
               </div>
             ))}
@@ -48,15 +48,15 @@ export default function DFWElectricityRateHacks2026() {
           <p style={{ color: '#94a3b8', fontSize: 13, marginBottom: 16 }}>Check what changes you can make to your daily schedule:</p>
           <div style={{ display: 'flex', flexDirection: 'column', gap: 8, marginBottom: 20 }}>
             {tasks.map(t => (
-              <label key={t.id} style={{ display: 'flex', alignItems: 'center', gap: 10, cursor: 'pointer', background: '#0A1628', borderRadius: 8, padding: '10px 12px', border: checked.includes(t.id) ? '1px solid #F5E642′ : '1px solid #1e3a5f' }}>
+              <label key={t.id} style={{ display: 'flex', alignItems: 'center', gap: 10, cursor: 'pointer', background: '#0A1628', borderRadius: 8, padding: '10px 12px', border: checked.includes(t.id) ? '1px solid #F5E642' : '1px solid #1e3a5f' }}>
                 <input type="checkbox" checked={checked.includes(t.id)} onChange={() => toggle(t.id)}
-                  style={{ width: 16, height: 16, accentColor: '#F5E642′ }} />
+                  style={{ width: 16, height: 16, accentColor: '#F5E642' }} />
                 <span style={{ color: '#cbd5e1', fontSize: 14, flex: 1 }}>{t.label}</span>
                 <span style={{ color: '#22c55e', fontSize: 13, fontWeight: 700 }}>~${t.saving}/mo</span>
               </label>
             ))}
           </div>
-          <div style={{ background: '#0A1628', borderRadius: 12, padding: 20, textAlign: 'center', borderLeft: '4px solid #F5E642′ }}>
+          <div style={{ background: '#0A1628', borderRadius: 12, padding: 20, textAlign: 'center', borderLeft: '4px solid #F5E642' }}>
             <div style={{ color: '#94a3b8', fontSize: 13 }}>Estimated Monthly Savings</div>
             <div style={{ color: '#F5E642', fontSize: 42, fontWeight: 900 }}>${totalSaving}</div>
             <div style={{ color: '#94a3b8', fontSize: 13 }}>${totalSaving * 12}/year — select more items above to increase savings</div>

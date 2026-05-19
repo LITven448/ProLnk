@@ -9,12 +9,12 @@ const factors = [
 ];
 
 const timingAdvice = [
-  { month: 'Jan–Feb', advice: '✅ Best time to buy — off-season discounts 15–25%, full installer availability', color: '#4CAF50′ },
-  { month: 'Mar–Apr', advice: '⚠️ Book early — DFW spring rush begins, prices rising', color: '#FFB347′ },
+  { month: 'Jan–Feb', advice: '✅ Best time to buy — off-season discounts 15–25%, full installer availability', color: '#4CAF50' },
+  { month: 'Mar–Apr', advice: '⚠️ Book early — DFW spring rush begins, prices rising', color: '#FFB347' },
   { month: 'May–Jun', advice: '❌ Peak demand — limited scheduling, no discounts, emergency installs', color: '#FF6B6B' },
   { month: 'Jul–Aug', advice: '❌ Worst time — full emergency mode, installers booked weeks out', color: '#FF6B6B' },
-  { month: 'Sep–Oct', advice: '✅ Second best — summer rush over, good deals, available crews', color: '#4CAF50′ },
-  { month: 'Nov–Dec', advice: '✅ Good time — off-season pricing, plan for spring delivery if needed', color: '#4CAF50′ },
+  { month: 'Sep–Oct', advice: '✅ Second best — summer rush over, good deals, available crews', color: '#4CAF50' },
+  { month: 'Nov–Dec', advice: '✅ Good time — off-season pricing, plan for spring delivery if needed', color: '#4CAF50' },
 ];
 
 export default function DFWHVACReplacementSummary() {
@@ -37,7 +37,7 @@ export default function DFWHVACReplacementSummary() {
       <div style={{ maxWidth: 900, margin: '0 auto' }}>
         <div style={{ textAlign: 'center', marginBottom: '2rem' }}>
           <div style={{ fontSize: '2.5rem' }}>🔄</div>
-          <h1 style={{ color: '#F5E642', fontSize: '2rem', fontWeight: 700, margin: '0.5rem 0′ }}>DFW HVAC Replacement Decision</h1>
+          <h1 style={{ color: '#F5E642', fontSize: '2rem', fontWeight: 700, margin: '0.5rem 0' }}>DFW HVAC Replacement Decision</h1>
           <p style={{ color: '#8899AA', fontSize: '1rem' }}>The complete framework: $5,000 Rule + DFW climate factor + optimal timing</p>
         </div>
 
@@ -52,7 +52,7 @@ export default function DFWHVACReplacementSummary() {
               <p style={{ color: '#fff', fontWeight: 600, margin: '0 0 0.5rem' }}>{f.label}: {f.question}</p>
               <div style={{ display: 'flex', gap: '0.5rem', flexWrap: 'wrap' }}>
                 {f.options.map((opt, i) => (
-                  <button key={opt} onClick={() => setAnswers(prev => ({ ...prev, [f.id]: f.scores[i] }))} style={{ padding: '0.4rem 0.8rem', borderRadius: 8, border: `2px solid ${answers[f.id] === f.scores[i] ? '#F5E642' : '#1E3A5F'}`, background: answers[f.id] === f.scores[i] ? '#F5E642′ : ’transparent', color: answers[f.id] === f.scores[i] ? '#0A1628′ : '#fff', cursor: ’pointer', fontSize: '0.82rem', fontWeight: answers[f.id] === f.scores[i] ? 700 : 400 }}>
+                  <button key={opt} onClick={() => setAnswers(prev => ({ ...prev, [f.id]: f.scores[i] }))} style={{ padding: '0.4rem 0.8rem', borderRadius: 8, border: `2px solid ${answers[f.id] === f.scores[i] ? '#F5E642' : '#1E3A5F'}`, background: answers[f.id] === f.scores[i] ? '#F5E642' : 'transparent', color: answers[f.id] === f.scores[i] ? '#0A1628' : '#fff', cursor: 'pointer', fontSize: '0.82rem', fontWeight: answers[f.id] === f.scores[i] ? 700 : 400 }}>
                     {opt}
                   </button>
                 ))}
@@ -64,7 +64,7 @@ export default function DFWHVACReplacementSummary() {
         {allAnswered && (
           <div style={{ background: '#0D1F35', border: `2px solid ${verdictColor}`, borderRadius: 12, padding: '1.25rem', marginBottom: '1.5rem' }}>
             <p style={{ color: verdictColor, fontWeight: 700, fontSize: '1.05rem', margin: 0 }}>{verdict}</p>
-            <p style={{ color: '#8899AA', fontSize: '0.85rem', margin: '0.5rem 0 0′ }}>Score: {totalScore}/15 — {totalScore <= 3 ? ’Low urgency' : totalScore <= 7 ? 'Monitor closely' : 'High urgency'}</p>
+            <p style={{ color: '#8899AA', fontSize: '0.85rem', margin: '0.5rem 0 0' }}>Score: {totalScore}/15 — {totalScore <= 3 ? 'Low urgency' : totalScore <= 7 ? 'Monitor closely' : 'High urgency'}</p>
           </div>
         )}
 
@@ -72,7 +72,7 @@ export default function DFWHVACReplacementSummary() {
           <h3 style={{ color: '#F5E642', margin: '0 0 0.75rem' }}>📆 Best Time to Replace in DFW</h3>
           <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
             {timingAdvice.map(t => (
-              <div key={t.month} style={{ display: 'flex', gap: '1rem', padding: '0.5rem', borderRadius: 8, background: '#0A1628′ }}>
+              <div key={t.month} style={{ display: 'flex', gap: '1rem', padding: '0.5rem', borderRadius: 8, background: '#0A1628' }}>
                 <span style={{ color: '#F5E642', fontWeight: 700, minWidth: 80, fontSize: '0.85rem' }}>{t.month}</span>
                 <span style={{ color: t.color, fontSize: '0.85rem' }}>{t.advice}</span>
               </div>

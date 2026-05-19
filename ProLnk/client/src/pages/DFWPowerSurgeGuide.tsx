@@ -70,7 +70,7 @@ export default function DFWPowerSurgeGuide() {
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0.5rem' }}>
             {[['🏠 HVAC Board', '$800–$2,000'], ['📺 Smart TV', '$400–$1,500'], ['🖥️ Computer', '$500–$2,000'], ['🍳 Smart Appliances', '$300–$800']].map(([item, cost]) => (
               <div key={item as string} style={{ background: '#1e3a5f', borderRadius: 8, padding: '0.5rem 0.75rem' }}>
-                <div style={{ color: '#cbd5e1′ }}>{item}</div>
+                <div style={{ color: '#cbd5e1' }}>{item}</div>
                 <div style={{ color: '#f87171', fontWeight: 700, fontSize: '0.9rem' }}>{cost} to replace</div>
               </div>
             ))}
@@ -85,7 +85,7 @@ export default function DFWPowerSurgeGuide() {
           ].map(({ label, value, setter, options }) => (
             <div key={label} style={{ marginBottom: '1rem' }}>
               <div style={{ color: '#94a3b8', marginBottom: '0.4rem' }}>{label}</div>
-              <select value={value} onChange={e => setter(e.target.value)} style={{ width: '100%', padding: '0.5rem', borderRadius: 8, background: '#1e3a5f', color: '#fff', border: '1px solid #334155′ }}>
+              <select value={value} onChange={e => setter(e.target.value)} style={{ width: '100%', padding: '0.5rem', borderRadius: 8, background: '#1e3a5f', color: '#fff', border: '1px solid #334155' }}>
                 <option value="">Select...</option>
                 {options.map(([v, l]) => <option key={v} value={v}>{l}</option>)}
               </select>
@@ -93,7 +93,7 @@ export default function DFWPowerSurgeGuide() {
           ))}
           <button onClick={assess} style={{ background: '#F5E642', color: '#0A1628', fontWeight: 700, border: 'none', borderRadius: 8, padding: '0.75rem 1.5rem', cursor: 'pointer', width: '100%' }}>Get Protection Plan</button>
           {result && (
-            <div style={{ marginTop: '1rem', padding: '1rem', borderRadius: 8, background: '#001a2e', borderLeft: '4px solid #F5E642′ }}>
+            <div style={{ marginTop: '1rem', padding: '1rem', borderRadius: 8, background: '#001a2e', borderLeft: '4px solid #F5E642' }}>
               <div style={{ color: '#F5E642', fontWeight: 700, marginBottom: '0.5rem' }}>{result.priority}</div>
               <div style={{ color: '#cbd5e1', marginBottom: '0.4rem' }}>🛡️ {result.protection}</div>
               <div style={{ color: '#4ade80', marginBottom: '0.4rem' }}>💰 {result.cost}</div>
@@ -104,7 +104,7 @@ export default function DFWPowerSurgeGuide() {
 
         <div style={{ background: '#0f2040', borderRadius: 12, padding: '1.5rem' }}>
           <div style={{ color: '#F5E642', fontWeight: 700, marginBottom: '0.5rem' }}>📋 DFW Insurance Tip</div>
-          <div style={{ color: '#94a3b8′ }}>Texas homeowners insurance typically covers sudden surge damage from lightning. HVAC cycling damage (gradual) is usually excluded. After a storm, document and file within 60 days. Keep receipts — adjusters require proof of pre-storm value.</div>
+          <div style={{ color: '#94a3b8' }}>Texas homeowners insurance typically covers sudden surge damage from lightning. HVAC cycling damage (gradual) is usually excluded. After a storm, document and file within 60 days. Keep receipts — adjusters require proof of pre-storm value.</div>
         </div>
       </div>
     </div>

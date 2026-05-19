@@ -20,7 +20,7 @@ export default function DFWCaulkApplicationGuide2026() {
           <p style={{ color: '#94a3b8', fontSize: 15 }}>Step-by-step caulking techniques for DFW homeowners — select your application location.</p>
         </div>
 
-        <div style={{ background: '#1e293b', borderRadius: 12, padding: 18, marginBottom: 24, border: '1px solid #334155′ }}>
+        <div style={{ background: '#1e293b', borderRadius: 12, padding: 18, marginBottom: 24, border: '1px solid #334155' }}>
           <h3 style={{ color: '#F5E642', margin: '0 0 10px', fontSize: 15 }}>🎯 Universal Caulking Rules</h3>
           <ul style={{ margin: 0, paddingLeft: 18, color: '#94a3b8', fontSize: 14 }}>
             <li style={{ marginBottom: 6 }}>Cut tip at 45° — never more than 1/4 inch opening (smaller = better control)</li>
@@ -34,19 +34,19 @@ export default function DFWCaulkApplicationGuide2026() {
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12, marginBottom: 28 }}>
           {locations.map(l => (
             <button key={l.id} onClick={() => setSelected(l.id)}
-              style={{ background: selected === l.id ? '#F5E642′ : '#1e293b', color: selected === l.id ? '#0A1628' : '#fff', border: '2px solid ' + (selected === l.id ? '#F5E642' : '#334155'), borderRadius: 10, padding: '14px 12px', cursor: ’pointer', fontWeight: 600, fontSize: 14, textAlign: 'left' }}>
+              style={{ background: selected === l.id ? '#F5E642' : '#1e293b', color: selected === l.id ? '#0A1628' : '#fff', border: '2px solid ' + (selected === l.id ? '#F5E642' : '#334155'), borderRadius: 10, padding: '14px 12px', cursor: 'pointer', fontWeight: 600, fontSize: 14, textAlign: 'left' }}>
               {l.label}
-              <div style={{ fontSize: 12, fontWeight: 400, marginTop: 4, color: selected === l.id ? '#0A1628′ : '#94a3b8' }}>Use: {l.caulk}</div>
+              <div style={{ fontSize: 12, fontWeight: 400, marginTop: 4, color: selected === l.id ? '#0A1628' : '#94a3b8' }}>Use: {l.caulk}</div>
             </button>
           ))}
         </div>
 
         {loc && (
-          <div style={{ background: '#1e293b', borderRadius: 14, padding: 24, border: '1px solid #334155′ }}>
+          <div style={{ background: '#1e293b', borderRadius: 14, padding: 24, border: '1px solid #334155' }}>
             <h2 style={{ color: '#F5E642', fontSize: 20, margin: '0 0 4px' }}>{loc.label}</h2>
             <div style={{ display: 'flex', gap: 12, marginBottom: 16, flexWrap: 'wrap' }}>
-              <span style={{ background: '#0f172a', borderRadius: 6, padding: '4px 10px', fontSize: 13, color: '#94a3b8′ }}>🧴 {loc.caulk}</span>
-              <span style={{ background: '#0f172a', borderRadius: 6, padding: '4px 10px', fontSize: 13, color: '#94a3b8′ }}>🧹 {loc.prep}</span>
+              <span style={{ background: '#0f172a', borderRadius: 6, padding: '4px 10px', fontSize: 13, color: '#94a3b8' }}>🧴 {loc.caulk}</span>
+              <span style={{ background: '#0f172a', borderRadius: 6, padding: '4px 10px', fontSize: 13, color: '#94a3b8' }}>🧹 {loc.prep}</span>
             </div>
             <ol style={{ margin: 0, paddingLeft: 20 }}>
               {loc.steps.map((s, i) => (
@@ -57,7 +57,7 @@ export default function DFWCaulkApplicationGuide2026() {
         )}
 
         {!loc && (
-          <div style={{ background: '#1e293b', borderRadius: 14, padding: 24, textAlign: 'center', color: '#94a3b8′ }}>
+          <div style={{ background: '#1e293b', borderRadius: 14, padding: 24, textAlign: 'center', color: '#94a3b8' }}>
             <div style={{ fontSize: 36, marginBottom: 8 }}>👆</div>
             <p>Select an application location above to get the step-by-step guide.</p>
           </div>

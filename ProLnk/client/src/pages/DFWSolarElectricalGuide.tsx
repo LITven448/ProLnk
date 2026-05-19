@@ -67,7 +67,7 @@ export default function DFWSolarElectricalGuide() {
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 12, marginBottom: 32 }}>
           {(['string-inverter', 'microinverter', 'hybrid'] as const).map(type => (
             <button key={type} onClick={() => setSystemType(type)}
-              style={{ padding: '14px 12px', background: systemType === type ? '#F5E642′ : '#0F1F3D', color: systemType === type ? '#0A1628' : '#E8F0FE', border: '1px solid', borderColor: systemType === type ? '#F5E642' : '#2D3F5E', borderRadius: 10, fontWeight: 700, cursor: ’pointer', fontSize: 14 }}>
+              style={{ padding: '14px 12px', background: systemType === type ? '#F5E642' : '#0F1F3D', color: systemType === type ? '#0A1628' : '#E8F0FE', border: '1px solid', borderColor: systemType === type ? '#F5E642' : '#2D3F5E', borderRadius: 10, fontWeight: 700, cursor: 'pointer', fontSize: 14 }}>
               {type === 'string-inverter' ? '🔲 String Inverter' : type === 'microinverter' ? '☀️ Microinverter' : '🔋 Hybrid + Battery'}
             </button>
           ))}
@@ -96,13 +96,13 @@ export default function DFWSolarElectricalGuide() {
                   <p style={{ color: '#CBD5E1', lineHeight: 1.5, margin: 0, paddingTop: 4 }}>{step}</p>
                 </div>
               ))}
-              <div style={{ marginTop: 16, padding: '12px 16px', background: '#162035', borderRadius: 8, borderLeft: '3px solid #F5E642′ }}>
+              <div style={{ marginTop: 16, padding: '12px 16px', background: '#162035', borderRadius: 8, borderLeft: '3px solid #F5E642' }}>
                 <span style={{ color: '#F5E642', fontWeight: 700 }}>⏱ Timeline: </span>
-                <span style={{ color: '#CBD5E1′ }}>{info.timeline}</span>
+                <span style={{ color: '#CBD5E1' }}>{info.timeline}</span>
               </div>
             </div>
 
-            <div style={{ background: '#162035', borderRadius: 12, padding: 20, marginBottom: 24, borderLeft: '3px solid #94A3B8′ }}>
+            <div style={{ background: '#162035', borderRadius: 12, padding: 20, marginBottom: 24, borderLeft: '3px solid #94A3B8' }}>
               <div style={{ color: '#E8F0FE', fontWeight: 700, marginBottom: 6 }}>💡 DFW Notes</div>
               <p style={{ color: '#94A3B8', lineHeight: 1.6, margin: 0 }}>{info.notes}</p>
             </div>

@@ -11,10 +11,10 @@ const SYSTEMS = [
 
 function grade(score: number) {
   if (score >= 4.5) return { letter: 'A', color: '#22c55e' };
-  if (score >= 3.5) return { letter: 'B', color: '#84cc16′ };
-  if (score >= 2.5) return { letter: 'C', color: '#eab308′ };
-  if (score >= 1.5) return { letter: 'D', color: '#f97316′ };
-  return { letter: 'F', color: '#ef4444′ };
+  if (score >= 3.5) return { letter: 'B', color: '#84cc16' };
+  if (score >= 2.5) return { letter: 'C', color: '#eab308' };
+  if (score >= 1.5) return { letter: 'D', color: '#f97316' };
+  return { letter: 'F', color: '#ef4444' };
 }
 
 export default function DFWHomeCheckupScore2026() {
@@ -46,8 +46,8 @@ export default function DFWHomeCheckupScore2026() {
                   {[1,2,3,4,5].map(n => (
                     <button key={n} onClick={() => setRatings(r => ({ ...r, [s.key]: n }))}
                       style={{ width: 34, height: 34, borderRadius: 6, border: 'none', cursor: 'pointer',
-                        background: ratings[s.key] === n ? '#F5E642′ : '#1e3a5f',
-                        color: ratings[s.key] === n ? '#0A1628′ : '#fff', fontWeight: ’bold', fontSize: '.9rem' }}>
+                        background: ratings[s.key] === n ? '#F5E642' : '#1e3a5f',
+                        color: ratings[s.key] === n ? '#0A1628' : '#fff', fontWeight: 'bold', fontSize: '.9rem' }}>
                       {n}
                     </button>
                   ))}
@@ -55,7 +55,7 @@ export default function DFWHomeCheckupScore2026() {
               </div>
             ))}
             <button onClick={() => setSubmitted(true)} disabled={rated.length < 6}
-              style={{ width: '100%', padding: '1rem', background: rated.length >= 6 ? '#F5E642′ : '#1e3a5f',
+              style={{ width: '100%', padding: '1rem', background: rated.length >= 6 ? '#F5E642' : '#1e3a5f',
                 color: '#0A1628', border: 'none', borderRadius: 10, fontSize: '1.1rem', fontWeight: 'bold', cursor: rated.length >= 6 ? 'pointer' : 'not-allowed' }}>
               Calculate Score →
             </button>

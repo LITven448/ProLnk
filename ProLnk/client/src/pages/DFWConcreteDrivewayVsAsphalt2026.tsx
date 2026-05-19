@@ -37,10 +37,10 @@ export default function DFWConcreteDrivewayVsAsphalt2026() {
             <div key={m.name} style={{ background: '#1e2d45', borderRadius: 12, padding: 16, border: '1px solid #2d4a6b' }}>
               <div style={{ fontSize: 28, marginBottom: 6 }}>{m.icon}</div>
               <div style={{ color: '#F5E642', fontWeight: 700, fontSize: 16 }}>{m.name}</div>
-              <div style={{ color: '#94a3b8', fontSize: 12, margin: '4px 0′ }}>💰 {m.cost} | ⏳ {m.life}</div>
+              <div style={{ color: '#94a3b8', fontSize: 12, margin: '4px 0' }}>💰 {m.cost} | ⏳ {m.life}</div>
               <div style={{ color: '#f97316', fontSize: 12, marginBottom: 6 }}>☀️ DFW: {m.dfwNote}</div>
               <div style={{ fontSize: 12 }}>✅ {m.pro}</div>
-              <div style={{ fontSize: 12, color: '#f87171′ }}>⚠️ {m.con}</div>
+              <div style={{ fontSize: 12, color: '#f87171' }}>⚠️ {m.con}</div>
             </div>
           ))}
         </div>
@@ -51,7 +51,7 @@ export default function DFWConcreteDrivewayVsAsphalt2026() {
             <div style={{ fontSize: 13, color: '#94a3b8', marginBottom: 6 }}>Your situation:</div>
             <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8 }}>
               {situations.map(s => (
-                <button key={s} onClick={() => setSituation(s)} style={{ padding: '6px 12px', borderRadius: 20, border: 'none', cursor: 'pointer', background: situation === s ? '#F5E642′ : '#0A1628', color: situation === s ? '#0A1628' : '#fff', fontSize: 12 }}>{s}</button>
+                <button key={s} onClick={() => setSituation(s)} style={{ padding: '6px 12px', borderRadius: 20, border: 'none', cursor: 'pointer', background: situation === s ? '#F5E642' : '#0A1628', color: situation === s ? '#0A1628' : '#fff', fontSize: 12 }}>{s}</button>
               ))}
             </div>
           </div>
@@ -59,7 +59,7 @@ export default function DFWConcreteDrivewayVsAsphalt2026() {
             <div style={{ fontSize: 13, color: '#94a3b8', marginBottom: 6 }}>Budget:</div>
             <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8 }}>
               {budgets.map(b => (
-                <button key={b} onClick={() => setBudget(b)} style={{ padding: '6px 12px', borderRadius: 20, border: 'none', cursor: 'pointer', background: budget === b ? '#F5E642′ : '#0A1628', color: budget === b ? '#0A1628' : '#fff', fontSize: 12 }}>{b}</button>
+                <button key={b} onClick={() => setBudget(b)} style={{ padding: '6px 12px', borderRadius: 20, border: 'none', cursor: 'pointer', background: budget === b ? '#F5E642' : '#0A1628', color: budget === b ? '#0A1628' : '#fff', fontSize: 12 }}>{b}</button>
               ))}
             </div>
           </div>
@@ -67,7 +67,7 @@ export default function DFWConcreteDrivewayVsAsphalt2026() {
           {rec && <div style={{ marginTop: 16, background: '#0A1628', borderRadius: 8, padding: 14, fontSize: 14, lineHeight: 1.5 }}>{rec}</div>}
         </div>
 
-        <div style={{ background: '#1e2d45', borderRadius: 12, padding: 16, fontSize: 13, color: '#94a3b8′ }}>
+        <div style={{ background: '#1e2d45', borderRadius: 12, padding: 16, fontSize: 13, color: '#94a3b8' }}>
           <div style={{ color: '#F5E642', fontWeight: 700, marginBottom: 6 }}>☀️ DFW Climate Reality</div>
           DFW summers regularly hit 100–110°F. Asphalt softens above 120°F surface temp (common on dark driveways). Concrete is rigid but can crack from expansive clay soil — use 4–6" thickness + control joints every 10 ft.
         </div>

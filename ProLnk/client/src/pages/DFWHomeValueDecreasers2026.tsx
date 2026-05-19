@@ -35,7 +35,7 @@ export default function DFWHomeValueDecreasers2026() {
                 key={i.issue}
                 onClick={() => setSelected(selected === i.issue ? null : i.issue)}
                 style={{
-                  background: selected === i.issue ? '#ef4444′ : '#1a3a5c',
+                  background: selected === i.issue ? '#ef4444' : '#1a3a5c',
                   color: '#fff', border: 'none', borderRadius: 8,
                   padding: '8px 12px', cursor: 'pointer', fontSize: 12, fontWeight: 600
                 }}
@@ -43,7 +43,7 @@ export default function DFWHomeValueDecreasers2026() {
             ))}
           </div>
           {selectedIssue && (
-            <div style={{ background: '#1a3a5c', borderRadius: 10, padding: 16, borderLeft: '4px solid #ef4444′ }}>
+            <div style={{ background: '#1a3a5c', borderRadius: 10, padding: 16, borderLeft: '4px solid #ef4444' }}>
               <div style={{ fontSize: 26, fontWeight: 800, color: '#ef4444', marginBottom: 4 }}>
                 -{Math.abs(selectedIssue.impact / 1000).toFixed(0)}K avg ({selectedIssue.range})
               </div>
@@ -60,7 +60,7 @@ export default function DFWHomeValueDecreasers2026() {
             'Foundation issues in Dallas clay soil are expected — but undocumented ones = instant discount',
             '73% of DFW contracts in 2026 include inspection contingency (up from 61% in 2021)',
           ].map(t => (
-            <div key={t} style={{ color: '#94a3b8', fontSize: 14, marginBottom: 10, paddingLeft: 12, borderLeft: '2px solid #ef4444′ }}>{t}</div>
+            <div key={t} style={{ color: '#94a3b8', fontSize: 14, marginBottom: 10, paddingLeft: 12, borderLeft: '2px solid #ef4444' }}>{t}</div>
           ))}
         </div>
 

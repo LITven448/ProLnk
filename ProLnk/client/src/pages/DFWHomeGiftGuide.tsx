@@ -2,7 +2,7 @@ import { useState } from 'react';
 
 const gifts = [
   { name: 'Rekey Door Locks', cost: 80, situation: ['new'], priority: 'essential', why: 'Previous owners/agents have keys — rekeying is the #1 new DFW homeowner safety move', vendor: 'Local locksmith or Home Depot key service' },
-  { name: 'HVAC Filter Subscription', cost: 60, situation: ['new', 'firsthome'], priority: 'essential', why: 'DFW dust and pollen are brutal — 1″ filters monthly, 4″ filters quarterly. Filterbuy or Amazon Subscribe & Save', vendor: 'Filterbuy.com or Amazon Subscribe & Save' },
+  { name: 'HVAC Filter Subscription', cost: 60, situation: ['new', 'firsthome'], priority: 'essential', why: 'DFW dust and pollen are brutal — 1" filters monthly, 4" filters quarterly. Filterbuy or Amazon Subscribe & Save', vendor: 'Filterbuy.com or Amazon Subscribe & Save' },
   { name: 'Water Softener Salt (6-month supply)', cost: 120, situation: ['new', 'renovation', 'firsthome'], priority: 'high', why: 'DFW has very hard water — softener salt extends water heater and appliance life significantly', vendor: 'Morton Salt or Lowes — 40lb bags' },
   { name: 'Quarterly Pest Control Plan', cost: 200, situation: ['new', 'firsthome'], priority: 'high', why: 'DFW has scorpions, roaches, and fire ants — quarterly treatment is standard practice here', vendor: 'Terminix, Arrow, or local DFW company' },
   { name: 'Tree Trimming Gift Card', cost: 250, situation: ['new', 'renovation'], priority: 'high', why: 'DFW spring storms hit hard — overhanging oak or elm limbs are a roof risk. Annual trim is essential', vendor: 'Local arborist or GreenPal' },
@@ -24,7 +24,7 @@ export default function DFWHomeGiftGuide() {
     setResults(filtered.sort((a, b) => a.cost - b.cost));
   }
 
-  const priorityColor = (p: string) => p === 'essential' ? '#f87171′ : p === ’high' ? '#F5E642′ : '#94a3b8';
+  const priorityColor = (p: string) => p === 'essential' ? '#f87171' : p === 'high' ? '#F5E642' : '#94a3b8';
 
   return (
     <div style={{ background: '#0A1628', minHeight: '100vh', color: '#fff', fontFamily: 'system-ui, sans-serif', padding: '32px 24px' }}>
@@ -37,7 +37,7 @@ export default function DFWHomeGiftGuide() {
           <h2 style={{ color: '#F5E642', fontSize: 18, marginBottom: 16 }}>🔍 Find the Right DFW Gift</h2>
           <div style={{ marginBottom: 16 }}>
             <label style={{ display: 'block', color: '#94a3b8', marginBottom: 8 }}>Budget: ${budget}</label>
-            <input type="range" min={40} max={500} step={10} value={budget} onChange={e => setBudget(Number(e.target.value))} style={{ width: '100%', accentColor: '#F5E642′ }} />
+            <input type="range" min={40} max={500} step={10} value={budget} onChange={e => setBudget(Number(e.target.value))} style={{ width: '100%', accentColor: '#F5E642' }} />
             <div style={{ display: 'flex', justifyContent: 'space-between', color: '#64748b', fontSize: 12 }}>
               <span>$40</span><span>$500</span>
             </div>
@@ -75,7 +75,7 @@ export default function DFWHomeGiftGuide() {
 
         {results.length === 0 && situation && (
           <div style={{ background: '#112240', borderRadius: 12, padding: 24, textAlign: 'center' }}>
-            <p style={{ color: '#94a3b8′ }}>No gifts found — try increasing your budget above $40</p>
+            <p style={{ color: '#94a3b8' }}>No gifts found — try increasing your budget above $40</p>
           </div>
         )}
       </div>

@@ -34,15 +34,15 @@ export default function DFWACCompressorGuide2026() {
   };
 
   return (
-    <div style={{ background: "#0A1628″, minHeight: "100vh", color: "#fff", fontFamily: "sans-serif", padding: "32px 16px" }}>
+    <div style={{ background: "#0A1628", minHeight: "100vh", color: "#fff", fontFamily: "sans-serif", padding: "32px 16px" }}>
       <div style={{ maxWidth: 720, margin: "0 auto" }}>
         <div style={{ textAlign: "center", marginBottom: 32 }}>
           <div style={{ fontSize: 48 }}>⚙️</div>
-          <h1 style={{ color: "#F5E642″, fontSize: 28, margin: "8px 0" }}>DFW AC Compressor Guide 2026</h1>
-          <p style={{ color: "#94a3b8″, fontSize: 15 }}>The heart of your AC — symptoms, hard start kits, refrigerant compatibility, and when to replace vs repair</p>
+          <h1 style={{ color: "#F5E642", fontSize: 28, margin: "8px 0" }}>DFW AC Compressor Guide 2026</h1>
+          <p style={{ color: "#94a3b8", fontSize: 15 }}>The heart of your AC — symptoms, hard start kits, refrigerant compatibility, and when to replace vs repair</p>
         </div>
         <div style={{ background: "#0f1f3d", borderRadius: 12, padding: 24, marginBottom: 24 }}>
-          <h2 style={{ color: "#F5E642″, fontSize: 17, marginBottom: 16 }}>🔧 DFW Compressor Key Facts</h2>
+          <h2 style={{ color: "#F5E642", fontSize: 17, marginBottom: 16 }}>🔧 DFW Compressor Key Facts</h2>
           {[
             ["⚙️", "Most expensive single part", "Compressor replacement: $1,200-$2,500; often triggers full system replacement"],
             ["🌡️", "DFW heat impact", "DFW compressors cycle 2,000-3,000 times/summer; heat accelerates wear on capacitors and windings"],
@@ -52,23 +52,23 @@ export default function DFWACCompressorGuide2026() {
           ].map(([icon, label, desc]) => (
             <div key={label} style={{ display: "flex", gap: 12, marginBottom: 14 }}>
               <span style={{ fontSize: 22 }}>{icon}</span>
-              <div><div style={{ color: "#F5E642″, fontWeight: 600, fontSize: 14 }}>{label}</div><div style={{ color: "#94a3b8", fontSize: 13 }}>{desc}</div></div>
+              <div><div style={{ color: "#F5E642", fontWeight: 600, fontSize: 14 }}>{label}</div><div style={{ color: "#94a3b8", fontSize: 13 }}>{desc}</div></div>
             </div>
           ))}
         </div>
         <div style={{ background: "#0f1f3d", borderRadius: 12, padding: 24, marginBottom: 24 }}>
-          <h2 style={{ color: "#F5E642″, fontSize: 17, marginBottom: 16 }}>🩺 Compressor Symptom Diagnosis</h2>
-          <p style={{ color: "#94a3b8″, fontSize: 13, marginBottom: 12 }}>Select all symptoms you are experiencing:</p>
+          <h2 style={{ color: "#F5E642", fontSize: 17, marginBottom: 16 }}>🩺 Compressor Symptom Diagnosis</h2>
+          <p style={{ color: "#94a3b8", fontSize: 13, marginBottom: 12 }}>Select all symptoms you are experiencing:</p>
           {symptoms.map(s => (
-            <div key={s} onClick={() => toggle(s)} style={{ display: "flex", alignItems: "center", gap: 12, padding: "10px 14px", borderRadius: 8, marginBottom: 8, background: selected.includes(s) ? "#1e3a5f" : "#162032″, border: selected.includes(s) ? "1px solid #F5E642" : "1px solid #334155", cursor: "pointer" }}>
+            <div key={s} onClick={() => toggle(s)} style={{ display: "flex", alignItems: "center", gap: 12, padding: "10px 14px", borderRadius: 8, marginBottom: 8, background: selected.includes(s) ? "#1e3a5f" : "#162032", border: selected.includes(s) ? "1px solid #F5E642" : "1px solid #334155", cursor: "pointer" }}>
               <span style={{ fontSize: 18 }}>{selected.includes(s) ? "✅" : "⬜"}</span>
-              <span style={{ color: "#e2e8f0″, fontSize: 14 }}>{s}</span>
+              <span style={{ color: "#e2e8f0", fontSize: 14 }}>{s}</span>
             </div>
           ))}
-          <button onClick={evaluate} style={{ background: "#F5E642″, color: "#0A1628", border: "none", borderRadius: 8, padding: "12px 24px", fontWeight: 700, fontSize: 15, cursor: "pointer", width: "100%", marginTop: 12 }}>Diagnose Compressor Issue</button>
-          {result && <div style={{ marginTop: 16, background: "#1e3a5f", borderRadius: 8, padding: 14, color: "#e2e8f0″, fontSize: 14, lineHeight: 1.6 }}>{result}</div>}
+          <button onClick={evaluate} style={{ background: "#F5E642", color: "#0A1628", border: "none", borderRadius: 8, padding: "12px 24px", fontWeight: 700, fontSize: 15, cursor: "pointer", width: "100%", marginTop: 12 }}>Diagnose Compressor Issue</button>
+          {result && <div style={{ marginTop: 16, background: "#1e3a5f", borderRadius: 8, padding: 14, color: "#e2e8f0", fontSize: 14, lineHeight: 1.6 }}>{result}</div>}
         </div>
-        <div style={{ textAlign: "center", color: "#475569″, fontSize: 13 }}>ProLnk · DFW AC Compressor Expertise · 2026</div>
+        <div style={{ textAlign: "center", color: "#475569", fontSize: 13 }}>ProLnk · DFW AC Compressor Expertise · 2026</div>
       </div>
     </div>
   );

@@ -30,7 +30,7 @@ export default function DFWHomeOwnerMilestone() {
             DFW Homeowner Milestone
           </h1>
           <p style={{ fontSize: 18, color: '#94A3B8', lineHeight: 1.6 }}>
-            Celebrating your mastery of DFW homeownership knowledge — what you've learned, what it’s worth, and what comes next.
+            Celebrating your mastery of DFW homeownership knowledge — what you've learned, what it's worth, and what comes next.
           </p>
         </div>
 
@@ -44,7 +44,7 @@ export default function DFWHomeOwnerMilestone() {
             onChange={e => setPagesRead(Number(e.target.value))}
             style={{ width: '100%', accentColor: '#F5E642', marginBottom: 12 }}
           />
-          <div style={{ textAlign: 'center', fontSize: 24, fontWeight: 700, color: '#F5E642′ }}>
+          <div style={{ textAlign: 'center', fontSize: 24, fontWeight: 700, color: '#F5E642' }}>
             {pagesRead} {pagesRead === 1 ? 'guide' : 'guides'}
           </div>
         </div>
@@ -60,7 +60,7 @@ export default function DFWHomeOwnerMilestone() {
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12, marginBottom: 20 }}>
             {topics.map((t, i) => (
               <button key={i} onClick={() => setSelectedTopic(selectedTopic === i ? null : i)}
-                style={{ background: selectedTopic === i ? '#F5E642′ : '#0A1628', color: selectedTopic === i ? '#0A1628' : '#fff', border: '1px solid #F5E642', borderRadius: 10, padding: '14px 12px', cursor: ’pointer', fontWeight: 600, fontSize: 14, textAlign: 'left' }}>
+                style={{ background: selectedTopic === i ? '#F5E642' : '#0A1628', color: selectedTopic === i ? '#0A1628' : '#fff', border: '1px solid #F5E642', borderRadius: 10, padding: '14px 12px', cursor: 'pointer', fontWeight: 600, fontSize: 14, textAlign: 'left' }}>
                 {t.emoji} {t.label}
               </button>
             ))}

@@ -71,7 +71,7 @@ const PITCHES: Record<Role, Pitch> = {
 };
 
 const STATS = [
-  { label: 'Charter Spots Remaining', value: '~100′ },
+  { label: 'Charter Spots Remaining', value: '~100' },
   { label: 'DFW Homeowners Waiting', value: '5,000+' },
   { label: 'Waitlist Closes At', value: '500 Pros' },
 ];
@@ -121,7 +121,7 @@ export default function DFWProLnkJoinNow() {
           </div>
 
           {pitch && (
-            <div style={{ background: '#0A1628', borderRadius: 8, padding: '1.25rem', borderLeft: '4px solid #F5E642′ }}>
+            <div style={{ background: '#0A1628', borderRadius: 8, padding: '1.25rem', borderLeft: '4px solid #F5E642' }}>
               <h3 style={{ color: '#F5E642', margin: '0 0 1rem' }}>{area ?  : }</h3>
               <p style={{ color: '#e2e8f0', fontWeight: 600, marginBottom: '0.75rem' }}>{pitch.headline}</p>
               <div style={{ marginBottom: '1rem' }}>
@@ -141,7 +141,7 @@ export default function DFWProLnkJoinNow() {
                 ))}
               </div>
               <div style={{ background: '#1e2d47', borderRadius: 8, padding: '0.75rem', marginBottom: '1rem' }}>
-                <span style={{ color: '#F5E642′ }}>⏰ </span>
+                <span style={{ color: '#F5E642' }}>⏰ </span>
                 <span style={{ color: '#e2e8f0', fontSize: '0.9rem', fontWeight: 600 }}>{pitch.urgency}</span>
               </div>
               <a href='/signup' style={{ display: 'block', background: '#F5E642', color: '#0A1628', padding: '0.875rem', borderRadius: 8, fontWeight: 700, textDecoration: 'none', textAlign: 'center', fontSize: '1.05rem' }}>
@@ -163,7 +163,7 @@ export default function DFWProLnkJoinNow() {
         <div style={{ background: '#1e2d47', borderRadius: 12, padding: '1.25rem', marginTop: '1.5rem', textAlign: 'center' }}>
           <p style={{ color: '#64748b', fontSize: '0.85rem', margin: 0 }}>
             ProLnk is a DFW-first platform. Charter waitlist closes at 500 Pro applications. Homeowner access is always free.
-            Questions? <a href='mailto:hello@prolnk.io' style={{ color: '#F5E642′ }}>hello@prolnk.io</a>
+            Questions? <a href='mailto:hello@prolnk.io' style={{ color: '#F5E642' }}>hello@prolnk.io</a>
           </p>
         </div>
       </div>

@@ -58,7 +58,7 @@ export default function DFWSchoolDistrictValueGuide() {
         </div>
 
         <div style={{ background: '#12213A', borderRadius: 14, padding: 32, marginBottom: 28, border: '1px solid #1e3a5f' }}>
-          <h2 style={{ fontSize: 22, fontWeight: 700, marginBottom: 20, color: '#F5E642′ }}>🎓 ISD Budget Fit Calculator</h2>
+          <h2 style={{ fontSize: 22, fontWeight: 700, marginBottom: 20, color: '#F5E642' }}>🎓 ISD Budget Fit Calculator</h2>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16, marginBottom: 20 }}>
             <div>
               <label style={{ fontSize: 12, fontWeight: 600, color: '#8a9fc0', display: 'block', marginBottom: 6 }}>Target ISD</label>
@@ -82,7 +82,7 @@ export default function DFWSchoolDistrictValueGuide() {
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: 12, marginBottom: 16 }}>
                 <div style={{ textAlign: 'center' }}>
                   <p style={{ fontSize: 11, color: '#8a9fc0', marginBottom: 4 }}>TEA Rating</p>
-                  <p style={{ fontSize: 28, fontWeight: 800, color: '#F5E642′ }}>{result.info.rating}/10</p>
+                  <p style={{ fontSize: 28, fontWeight: 800, color: '#F5E642' }}>{result.info.rating}/10</p>
                 </div>
                 <div style={{ textAlign: 'center' }}>
                   <p style={{ fontSize: 11, color: '#8a9fc0', marginBottom: 4 }}>Median Home Price</p>
@@ -90,7 +90,7 @@ export default function DFWSchoolDistrictValueGuide() {
                 </div>
                 <div style={{ textAlign: 'center' }}>
                   <p style={{ fontSize: 11, color: '#8a9fc0', marginBottom: 4 }}>ISD Premium vs Avg</p>
-                  <p style={{ fontSize: 28, fontWeight: 800, color: result.altSavings > 30000 ? '#f87171′ : '#6af26a' }}>+{fmt(result.altSavings)}</p>
+                  <p style={{ fontSize: 28, fontWeight: 800, color: result.altSavings > 30000 ? '#f87171' : '#6af26a' }}>+{fmt(result.altSavings)}</p>
                 </div>
               </div>
               <p style={{ fontSize: 14, color: result.budgetFit ? '#6af26a' : '#f87171', fontWeight: 600 }}>
@@ -105,7 +105,7 @@ export default function DFWSchoolDistrictValueGuide() {
           <div style={{ overflowX: 'auto' }}>
             <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: 13 }}>
               <thead>
-                <tr style={{ color: '#F5E642′ }}>
+                <tr style={{ color: '#F5E642' }}>
                   <th style={{ textAlign: 'left', padding: '8px 12px' }}>District</th>
                   <th style={{ textAlign: 'center', padding: '8px 12px' }}>Rating</th>
                   <th style={{ textAlign: 'right', padding: '8px 12px' }}>Median Home</th>
@@ -115,9 +115,9 @@ export default function DFWSchoolDistrictValueGuide() {
               <tbody>
                 {Object.entries(ISDS).map(([k, v]) => (
                   <tr key={k} style={{ borderTop: '1px solid #1e3a5f' }}>
-                    <td style={{ padding: '8px 12px', color: '#b0bdd4′ }}>{v.label}</td>
-                    <td style={{ padding: '8px 12px', textAlign: 'center', color: v.rating >= 9 ? '#F5E642′ : '#b0bdd4' }}>{v.rating}/10</td>
-                    <td style={{ padding: '8px 12px', textAlign: 'right', color: '#b0bdd4′ }}>{fmt(v.medianHome)}</td>
+                    <td style={{ padding: '8px 12px', color: '#b0bdd4' }}>{v.label}</td>
+                    <td style={{ padding: '8px 12px', textAlign: 'center', color: v.rating >= 9 ? '#F5E642' : '#b0bdd4' }}>{v.rating}/10</td>
+                    <td style={{ padding: '8px 12px', textAlign: 'right', color: '#b0bdd4' }}>{fmt(v.medianHome)}</td>
                     <td style={{ padding: '8px 12px', textAlign: 'right', color: '#6af26a' }}>+{v.premiumPct}%</td>
                   </tr>
                 ))}

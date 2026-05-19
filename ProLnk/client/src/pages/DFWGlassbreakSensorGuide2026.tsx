@@ -58,7 +58,7 @@ export default function DFWGlassbreakSensorGuide2026() {
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.6rem', marginBottom: '1rem' }}>
             {concerns.map(c => (
               <button key={c.id} onClick={() => setSelected(c.id === selected ? null : c.id)}
-                style={{ background: selected === c.id ? '#F5E642′ : '#1e3a5f', color: selected === c.id ? '#0A1628' : '#fff', border: ’none', borderRadius: 6, padding: '0.5rem 1rem', cursor: 'pointer', fontWeight: 600, fontSize: '0.85rem' }}>
+                style={{ background: selected === c.id ? '#F5E642' : '#1e3a5f', color: selected === c.id ? '#0A1628' : '#fff', border: 'none', borderRadius: 6, padding: '0.5rem 1rem', cursor: 'pointer', fontWeight: 600, fontSize: '0.85rem' }}>
                 {c.label}
               </button>
             ))}

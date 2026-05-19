@@ -130,25 +130,25 @@ export default function HomeDocumentVault() {
   };
 
   return (
-    <div style={{ background: "#0A1628″, minHeight: "100vh", color: "#fff", fontFamily: "system-ui, sans-serif" }}>
+    <div style={{ background: "#0A1628", minHeight: "100vh", color: "#fff", fontFamily: "system-ui, sans-serif" }}>
       {/* Hero */}
       <div style={{ background: "linear-gradient(135deg, #0A1628 0%, #0f2a1a 100%)", padding: "72px 24px 56px", textAlign: "center" }}>
-        <div style={{ fontSize: "14px", color: "#4ade80″, fontWeight: 600, letterSpacing: "2px", marginBottom: "14px" }}>HOME DOCUMENT GUIDE</div>
+        <div style={{ fontSize: "14px", color: "#4ade80", fontWeight: 600, letterSpacing: "2px", marginBottom: "14px" }}>HOME DOCUMENT GUIDE</div>
         <h1 style={{ fontSize: "clamp(26px, 4.5vw, 44px)", fontWeight: 800, margin: "0 0 18px", lineHeight: 1.15 }}>
           Home Document Vault Checklist — Every Document You Need to Own Your Home
         </h1>
-        <p style={{ fontSize: "17px", color: "#94a3b8″, maxWidth: "600px", margin: "0 auto" }}>
+        <p style={{ fontSize: "17px", color: "#94a3b8", maxWidth: "600px", margin: "0 auto" }}>
           Most homeowners have fewer than 40% of the documents they'll need at sale, during a dispute, or in a claim. Check yours now.
         </p>
       </div>
 
       {/* Progress Bar */}
-      <div style={{ maxWidth: "700px", margin: "0 auto", padding: "40px 24px 0″ }}>
+      <div style={{ maxWidth: "700px", margin: "0 auto", padding: "40px 24px 0" }}>
         <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "10px" }}>
           <span style={{ fontWeight: 700, fontSize: "16px" }}>Your Document Vault</span>
-          <span style={{ color: "#4ade80″, fontWeight: 700, fontSize: "18px" }}>{pct}% Complete</span>
+          <span style={{ color: "#4ade80", fontWeight: 700, fontSize: "18px" }}>{pct}% Complete</span>
         </div>
-        <div style={{ background: "#111d35″, borderRadius: "999px", height: "12px", overflow: "hidden" }}>
+        <div style={{ background: "#111d35", borderRadius: "999px", height: "12px", overflow: "hidden" }}>
           <div style={{ background: "linear-gradient(90deg, #4ade80, #22c55e)", width: `${pct}%`, height: "100%", borderRadius: "999px", transition: "width 0.4s" }} />
         </div>
         <div style={{ color: "#64748b", fontSize: "13px", marginTop: "8px" }}>{checkedItems} of {totalItems} documents accounted for</div>
@@ -160,28 +160,28 @@ export default function HomeDocumentVault() {
           const { done, total } = catProgress(cat);
           const isOpen = openCat === cat.id;
           return (
-            <div key={cat.id} style={{ background: "#111d35″, borderRadius: "12px", border: "1px solid #1e3a5f", marginBottom: "16px", overflow: "hidden" }}>
+            <div key={cat.id} style={{ background: "#111d35", borderRadius: "12px", border: "1px solid #1e3a5f", marginBottom: "16px", overflow: "hidden" }}>
               <button
                 onClick={() => setOpenCat(isOpen ? null : cat.id)}
                 style={{ width: "100%", background: "none", border: "none", padding: "20px 24px", display: "flex", alignItems: "center", gap: "14px", cursor: "pointer", textAlign: "left", color: "#fff" }}>
                 <span style={{ fontSize: "22px" }}>{cat.icon}</span>
                 <div style={{ flex: 1 }}>
                   <div style={{ fontWeight: 700, fontSize: "16px" }}>{cat.label}</div>
-                  <div style={{ color: done === total ? "#4ade80″ : "#64748b", fontSize: "12px", marginTop: "3px" }}>
+                  <div style={{ color: done === total ? "#4ade80" : "#64748b", fontSize: "12px", marginTop: "3px" }}>
                     {done}/{total} documented {done === total ? "✓" : ""}
                   </div>
                 </div>
-                <div style={{ width: "48px", height: "6px", background: "#0d1f38″, borderRadius: "999px", overflow: "hidden" }}>
-                  <div style={{ background: "#4ade80″, width: `${(done / total) * 100}%`, height: "100%", borderRadius: "999px" }} />
+                <div style={{ width: "48px", height: "6px", background: "#0d1f38", borderRadius: "999px", overflow: "hidden" }}>
+                  <div style={{ background: "#4ade80", width: `${(done / total) * 100}%`, height: "100%", borderRadius: "999px" }} />
                 </div>
-                <span style={{ color: "#4ade80″, fontSize: "18px", marginLeft: "8px" }}>{isOpen ? "−" : "+"}</span>
+                <span style={{ color: "#4ade80", fontSize: "18px", marginLeft: "8px" }}>{isOpen ? "−" : "+"}</span>
               </button>
               {isOpen && (
                 <div style={{ borderTop: "1px solid #1e3a5f" }}>
                   {cat.items.map((item, idx) => (
-                    <label key={item.label} style={{ display: "flex", alignItems: "flex-start", gap: "14px", padding: "16px 24px", borderBottom: idx < cat.items.length - 1 ? "1px solid #0d1f38″ : "none", cursor: "pointer" }}>
+                    <label key={item.label} style={{ display: "flex", alignItems: "flex-start", gap: "14px", padding: "16px 24px", borderBottom: idx < cat.items.length - 1 ? "1px solid #0d1f38" : "none", cursor: "pointer" }}>
                       <input type="checkbox" checked={item.checked} onChange={() => toggleItem(cat.id, idx)}
-                        style={{ marginTop: "3px", width: "16px", height: "16px", accentColor: "#4ade80″, cursor: "pointer", flexShrink: 0 }} />
+                        style={{ marginTop: "3px", width: "16px", height: "16px", accentColor: "#4ade80", cursor: "pointer", flexShrink: 0 }} />
                       <div>
                         <div style={{ fontWeight: item.checked ? 400 : 600, color: item.checked ? "#64748b" : "#fff", textDecoration: item.checked ? "line-through" : "none", fontSize: "15px" }}>{item.label}</div>
                         <div style={{ color: "#64748b", fontSize: "12px", marginTop: "3px" }}>{item.note}</div>
@@ -196,7 +196,7 @@ export default function HomeDocumentVault() {
       </div>
 
       {/* DFW-Specific Docs */}
-      <div style={{ background: "#0d1f38″, padding: "56px 24px" }}>
+      <div style={{ background: "#0d1f38", padding: "56px 24px" }}>
         <div style={{ maxWidth: "700px", margin: "0 auto" }}>
           <h2 style={{ fontSize: "24px", fontWeight: 700, marginBottom: "24px" }}>📍 DFW-Specific Documents to Keep</h2>
           <div style={{ display: "flex", flexDirection: "column", gap: "16px" }}>
@@ -205,9 +205,9 @@ export default function HomeDocumentVault() {
               { title: "Inspection Reports (Pre-Purchase)", why: "During a sale, buyers can request repairs based on inspection findings. Your pre-purchase inspection report documents the home's condition at closing — protecting you from claims that pre-existing issues are your responsibility." },
               { title: "Contractor Invoices for Capital Improvements", why: "Under IRS rules, documented capital improvements (roof, HVAC, foundation, additions) increase your home's cost basis and reduce taxable gain at sale. In high-appreciation DFW markets, this can save thousands in capital gains taxes." },
             ].map((item) => (
-              <div key={item.title} style={{ background: "#111d35″, borderRadius: "10px", padding: "20px 24px", border: "1px solid #1e3a5f" }}>
-                <div style={{ fontWeight: 700, color: "#4ade80″, marginBottom: "8px" }}>📌 {item.title}</div>
-                <p style={{ color: "#94a3b8″, fontSize: "14px", lineHeight: 1.6, margin: 0 }}>{item.why}</p>
+              <div key={item.title} style={{ background: "#111d35", borderRadius: "10px", padding: "20px 24px", border: "1px solid #1e3a5f" }}>
+                <div style={{ fontWeight: 700, color: "#4ade80", marginBottom: "8px" }}>📌 {item.title}</div>
+                <p style={{ color: "#94a3b8", fontSize: "14px", lineHeight: 1.6, margin: 0 }}>{item.why}</p>
               </div>
             ))}
           </div>
@@ -223,20 +223,20 @@ export default function HomeDocumentVault() {
             { icon: "☁️", title: "Cloud Scan Backup", desc: "Scan every document to PDF. Store in encrypted cloud (iCloud, Google Drive, or Dropbox with 2FA). One folder per category. Share access with spouse." },
             { icon: "🏛️", title: "ProLnk Document Vault", desc: "The Home Health Vault stores your home documents alongside service records, inspection photos, and contractor history — all in one searchable place that transfers at sale." },
           ].map((opt) => (
-            <div key={opt.title} style={{ background: "#111d35″, borderRadius: "12px", padding: "24px", flex: "1 1 200px", border: "1px solid #1e3a5f" }}>
+            <div key={opt.title} style={{ background: "#111d35", borderRadius: "12px", padding: "24px", flex: "1 1 200px", border: "1px solid #1e3a5f" }}>
               <div style={{ fontSize: "28px", marginBottom: "12px" }}>{opt.icon}</div>
               <div style={{ fontWeight: 700, fontSize: "16px", marginBottom: "8px" }}>{opt.title}</div>
-              <p style={{ color: "#94a3b8″, fontSize: "13px", lineHeight: 1.6, margin: 0 }}>{opt.desc}</p>
+              <p style={{ color: "#94a3b8", fontSize: "13px", lineHeight: 1.6, margin: 0 }}>{opt.desc}</p>
             </div>
           ))}
         </div>
       </div>
 
       {/* CTA */}
-      <div style={{ background: "#0d1f38″, textAlign: "center", padding: "64px 24px" }}>
+      <div style={{ background: "#0d1f38", textAlign: "center", padding: "64px 24px" }}>
         <h2 style={{ fontSize: "28px", fontWeight: 800, marginBottom: "14px" }}>Store Everything in the ProLnk Document Vault</h2>
-        <p style={{ color: "#94a3b8″, fontSize: "16px", marginBottom: "28px" }}>One secure place for every document, service record, and photo your home generates — organized and searchable forever.</p>
-        <a href="/trustypro/book" style={{ background: "#4ade80″, color: "#0A1628", padding: "16px 40px", borderRadius: "8px", fontWeight: 700, fontSize: "16px", textDecoration: "none", display: "inline-block" }}>
+        <p style={{ color: "#94a3b8", fontSize: "16px", marginBottom: "28px" }}>One secure place for every document, service record, and photo your home generates — organized and searchable forever.</p>
+        <a href="/trustypro/book" style={{ background: "#4ade80", color: "#0A1628", padding: "16px 40px", borderRadius: "8px", fontWeight: 700, fontSize: "16px", textDecoration: "none", display: "inline-block" }}>
           Get a Professional Assessment ↗
         </a>
       </div>

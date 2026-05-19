@@ -48,7 +48,7 @@ export default function DFWHVACCertificationGuide() {
           <h2 style={{ color: '#F5E642', fontSize: 20, fontWeight: 700, marginBottom: 16 }}>📋 Required vs Optional Certifications</h2>
           <div style={{ display: 'grid', gap: 12 }}>
             {certifications.map(cert => (
-              <div key={cert.name} style={{ background: '#131f35', borderRadius: 10, padding: '16px 20px', border: cert.required ? '1px solid #F5E642′ : '1px solid #1e3a5f' }}>
+              <div key={cert.name} style={{ background: '#131f35', borderRadius: 10, padding: '16px 20px', border: cert.required ? '1px solid #F5E642' : '1px solid #1e3a5f' }}>
                 <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', flexWrap: 'wrap', gap: 8 }}>
                   <div>
                     <span style={{ fontWeight: 700, fontSize: 15 }}>{cert.name}</span>
@@ -59,7 +59,7 @@ export default function DFWHVACCertificationGuide() {
                     <div style={{ color: '#64748b', fontSize: 12 }}>{cert.time}</div>
                   </div>
                 </div>
-                <p style={{ color: '#94a3b8', fontSize: 13, margin: '8px 0 0′ }}>{cert.description}</p>
+                <p style={{ color: '#94a3b8', fontSize: 13, margin: '8px 0 0' }}>{cert.description}</p>
                 {cert.incomeBoost > 0 && <div style={{ color: '#4ade80', fontSize: 13, marginTop: 6 }}>📈 +{cert.incomeBoost}% avg income boost</div>}
               </div>
             ))}
@@ -78,11 +78,11 @@ export default function DFWHVACCertificationGuide() {
           </div>
         </section>
 
-        <section style={{ background: '#131f35', borderRadius: 14, padding: 28, border: '1px solid #F5E642′ }}>
+        <section style={{ background: '#131f35', borderRadius: 14, padding: 28, border: '1px solid #F5E642' }}>
           <h2 style={{ color: '#F5E642', fontSize: 20, fontWeight: 700, marginBottom: 20 }}>🗺️ Your Certification Roadmap</h2>
           <div style={{ marginBottom: 16 }}>
             <label style={{ fontSize: 13, color: '#94a3b8', display: 'block', marginBottom: 6 }}>Years of HVAC experience</label>
-            <input type="number" value={years} onChange={e => setYears(e.target.value)} placeholder="e.g. 3″
+            <input type="number" value={years} onChange={e => setYears(e.target.value)} placeholder="e.g. 3"
               style={{ width: '100%', padding: '10px 14px', borderRadius: 8, border: '1px solid #1e3a5f', background: '#0A1628', color: '#fff', fontSize: 15, boxSizing: 'border-box' }} />
           </div>
           <div style={{ marginBottom: 20 }}>
@@ -91,7 +91,7 @@ export default function DFWHVACCertificationGuide() {
               {certifications.map(cert => (
                 <label key={cert.name} style={{ display: 'flex', alignItems: 'center', gap: 10, cursor: 'pointer' }}>
                   <input type="checkbox" checked={hasCerts.includes(cert.name)} onChange={() => toggleCert(cert.name)}
-                    style={{ width: 16, height: 16, accentColor: '#F5E642′ }} />
+                    style={{ width: 16, height: 16, accentColor: '#F5E642' }} />
                   <span style={{ fontSize: 14 }}>{cert.name}</span>
                 </label>
               ))}
@@ -103,9 +103,9 @@ export default function DFWHVACCertificationGuide() {
           </button>
           {roadmap && (
             <div style={{ marginTop: 24, padding: 20, background: '#0A1628', borderRadius: 10, border: '1px solid #1e3a5f' }}>
-              <div style={{ fontWeight: 700, fontSize: 16, marginBottom: 12, color: '#F5E642′ }}>Your Next Steps:</div>
+              <div style={{ fontWeight: 700, fontSize: 16, marginBottom: 12, color: '#F5E642' }}>Your Next Steps:</div>
               {roadmap.next.length === 0 ? (
-                <p style={{ color: '#4ade80′ }}>✅ You’re fully certified! Focus on NATE specialty areas to max income.</p>
+                <p style={{ color: '#4ade80' }}>✅ You're fully certified! Focus on NATE specialty areas to max income.</p>
               ) : (
                 <>
                   <ul style={{ color: '#e2e8f0', margin: '0 0 16px', paddingLeft: 20, lineHeight: 1.8 }}>

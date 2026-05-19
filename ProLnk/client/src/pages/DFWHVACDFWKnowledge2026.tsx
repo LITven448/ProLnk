@@ -60,9 +60,9 @@ export default function DFWHVACDFWKnowledge2026() {
               onClick={() => setSelected(t.id)}
               style={{
                 padding: '10px 18px', borderRadius: 8, border: '2px solid',
-                borderColor: selected === t.id ? '#F5E642′ : '#1E3A5F',
-                backgroundColor: selected === t.id ? '#F5E642′ : '#0F2340',
-                color: selected === t.id ? '#0A1628′ : '#CBD5E1',
+                borderColor: selected === t.id ? '#F5E642' : '#1E3A5F',
+                backgroundColor: selected === t.id ? '#F5E642' : '#0F2340',
+                color: selected === t.id ? '#0A1628' : '#CBD5E1',
                 fontWeight: 600, cursor: 'pointer', fontSize: 14,
               }}
             >
@@ -74,13 +74,13 @@ export default function DFWHVACDFWKnowledge2026() {
         <div style={{ backgroundColor: '#0F2340', borderRadius: 16, padding: 36, border: '1px solid #1E3A5F' }}>
           <h2 style={{ fontSize: 24, fontWeight: 700, color: '#F5E642', marginTop: 0 }}>{active.title}</h2>
           <p style={{ color: '#CBD5E1', fontSize: 16, lineHeight: 1.7, marginBottom: 24 }}>{active.status}</p>
-          <div style={{ backgroundColor: '#0A1628', borderRadius: 10, padding: '18px 22px', borderLeft: '4px solid #F5E642′ }}>
+          <div style={{ backgroundColor: '#0A1628', borderRadius: 10, padding: '18px 22px', borderLeft: '4px solid #F5E642' }}>
             <div style={{ fontSize: 12, color: '#F5E642', fontWeight: 700, textTransform: 'uppercase', marginBottom: 6 }}>Your 2026 Action</div>
             <p style={{ color: '#E2E8F0', margin: 0, fontSize: 15 }}>{active.action}</p>
           </div>
         </div>
 
-        <div style={{ marginTop: 40, textAlign: 'center', backgroundColor: '#0F2340', borderRadius: 12, padding: 28, border: '1px solid #F5E642′ }}>
+        <div style={{ marginTop: 40, textAlign: 'center', backgroundColor: '#0F2340', borderRadius: 12, padding: 28, border: '1px solid #F5E642' }}>
           <div style={{ fontSize: 20, fontWeight: 700, marginBottom: 10 }}>Get Matched with a Vetted DFW HVAC Pro</div>
           <p style={{ color: '#94A3B8', marginBottom: 20 }}>Free for homeowners. No pressure. Just licensed pros in your ZIP code.</p>
           <a href="https://prolnk.io" style={{ backgroundColor: '#F5E642', color: '#0A1628', padding: '14px 32px', borderRadius: 8, fontWeight: 700, textDecoration: 'none', fontSize: 16 }}>

@@ -49,7 +49,7 @@ export default function DFWProLnkGrowthSummary2026() {
               onClick={() => setSelected(a.id)}
               style={{
                 background: selected === a.id ? '#1a3a5c' : '#0f2037',
-                border: selected === a.id ? '2px solid #F5E642′ : '2px solid #1e3a5f',
+                border: selected === a.id ? '2px solid #F5E642' : '2px solid #1e3a5f',
                 borderRadius: 8, padding: '12px 16px', color: '#fff',
                 textAlign: 'left', cursor: 'pointer', fontSize: 15,
               }}

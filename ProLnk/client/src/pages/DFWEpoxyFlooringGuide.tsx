@@ -30,10 +30,10 @@ export default function DFWEpoxyFlooringGuide() {
         <div style={{ color: '#F5E642', fontSize: '0.85rem', fontWeight: 700, letterSpacing: 2, marginBottom: '0.5rem' }}>DFW HOME SERVICES GUIDE</div>
         <h1 style={{ fontSize: '2.2rem', fontWeight: 800, marginBottom: '0.5rem' }}>🏎️ DFW Epoxy Flooring Guide</h1>
         <p style={{ color: '#9BA3B5', marginBottom: '2rem', lineHeight: 1.7 }}>
-          DFW's 100°F+ summers create a problem most contractors won’t tell you about: standard epoxy gets soft in heat, and hot tires literally peel it off your garage floor. Polyurea and polyaspartic coatings solve this — and they’re now the DFW standard.
+          DFW's 100°F+ summers create a problem most contractors won't tell you about: standard epoxy gets soft in heat, and hot tires literally peel it off your garage floor. Polyurea and polyaspartic coatings solve this — and they're now the DFW standard.
         </p>
 
-        <div style={{ background: '#F5E642', borderRadius: 10, padding: '1.25rem', marginBottom: '2rem', color: '#0A1628′ }}>
+        <div style={{ background: '#F5E642', borderRadius: 10, padding: '1.25rem', marginBottom: '2rem', color: '#0A1628' }}>
           <div style={{ fontWeight: 800, fontSize: '1rem', marginBottom: 6 }}>⚠️ The DFW Hot Tire Warning</div>
           <div style={{ fontSize: '0.9rem', lineHeight: 1.6 }}>Standard water-based epoxy is rated to ~85°F. Your black asphalt driveway in DFW reaches 150°F+ in July. Hot tires parked on softened epoxy literally pull chunks off the floor when you drive away. Always specify polyurea or polyaspartic for DFW garages.</div>
         </div>
@@ -44,14 +44,14 @@ export default function DFWEpoxyFlooringGuide() {
             { label: '🎨 Metallic Epoxy', desc: 'Stunning 3D effect — DFW garage conversion trend, but requires AC during install.' },
             { label: '🔵 Chip/Flake Broadcast', desc: 'Most popular DFW residential — hides dirt, anti-slip, durable under trucks.' },
           ].map(c => (
-            <div key={c.label} style={{ background: '#111E35', borderRadius: 10, padding: '1.25rem', border: '1px solid #1E3050′ }}>
+            <div key={c.label} style={{ background: '#111E35', borderRadius: 10, padding: '1.25rem', border: '1px solid #1E3050' }}>
               <div style={{ fontWeight: 700, marginBottom: 6 }}>{c.label}</div>
               <div style={{ color: '#9BA3B5', fontSize: '0.9rem', lineHeight: 1.5 }}>{c.desc}</div>
             </div>
           ))}
         </div>
 
-        <div style={{ background: '#111E35', borderRadius: 12, padding: '1.75rem', marginBottom: '2rem', border: '1px solid #1E3050′ }}>
+        <div style={{ background: '#111E35', borderRadius: 12, padding: '1.75rem', marginBottom: '2rem', border: '1px solid #1E3050' }}>
           <h2 style={{ color: '#F5E642', fontSize: '1.15rem', fontWeight: 700, marginBottom: '1.25rem' }}>🔍 Coating Recommender</h2>
           <div style={{ display: 'grid', gap: '1rem', marginBottom: '1.25rem' }}>
             {[['Space Type', SPACE_TYPES, space, setSpace], ['Vehicle Type', VEHICLE_TYPES, vehicle, setVehicle], ['Style Preference', STYLE_PREFS, style, setStyle]].map(([label, opts, val, setter]: any) => (
@@ -65,7 +65,7 @@ export default function DFWEpoxyFlooringGuide() {
             ))}
           </div>
           {rec && (
-            <div style={{ background: '#0A1628', borderRadius: 10, padding: '1.25rem', border: '1px solid #F5E642′ }}>
+            <div style={{ background: '#0A1628', borderRadius: 10, padding: '1.25rem', border: '1px solid #F5E642' }}>
               <div style={{ color: '#F5E642', fontWeight: 700, marginBottom: 8 }}>✅ Recommended: {rec.coating}</div>
               <div style={{ color: '#9BA3B5', fontSize: '0.9rem', marginBottom: 4 }}>Estimated Cost: {rec.cost}</div>
               <div style={{ color: '#F5E642', fontSize: '0.9rem', marginBottom: 8 }}>DFW Heat Suitability: {rec.heat}</div>
@@ -74,7 +74,7 @@ export default function DFWEpoxyFlooringGuide() {
           )}
         </div>
 
-        <div style={{ background: '#111E35', borderRadius: 12, padding: '1.75rem', border: '1px solid #1E3050′ }}>
+        <div style={{ background: '#111E35', borderRadius: 12, padding: '1.75rem', border: '1px solid #1E3050' }}>
           <h2 style={{ color: '#F5E642', fontSize: '1.1rem', fontWeight: 700, marginBottom: '1rem' }}>📋 Hiring a DFW Epoxy Contractor</h2>
           {['Ask specifically: "Is this polyurea or polyaspartic?" — if they say standard epoxy, walk away for garages',
             'Confirm surface prep: diamond grinding required for proper adhesion (not just acid etching)',

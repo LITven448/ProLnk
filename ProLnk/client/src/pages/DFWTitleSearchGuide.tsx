@@ -48,7 +48,7 @@ const issues = [
   { key: 'encroachment', label: '🏗️ Survey Encroachment' },
 ];
 
-const severityColors = { low: '#D1FAE5', medium: '#FEF3C7', high: '#FEE2E2′ };
+const severityColors = { low: '#D1FAE5', medium: '#FEF3C7', high: '#FEE2E2' };
 const severityText = { low: '#065F46', medium: '#92400E', high: '#991B1B' };
 const severityLabel = { low: 'Low Risk', medium: 'Medium Risk', high: 'High Risk' };
 
@@ -61,7 +61,7 @@ export default function DFWTitleSearchGuide() {
       <div style={{ maxWidth: 800, margin: '0 auto' }}>
         <div style={{ marginBottom: '2rem' }}>
           <div style={{ fontSize: '2rem', marginBottom: '0.5rem' }}>🔍 DFW Title Search Guide</div>
-          <p style={{ fontSize: '1.05rem', color: '#374151′ }}>
+          <p style={{ fontSize: '1.05rem', color: '#374151' }}>
             A title search examines public records to confirm the seller has clear ownership and the property is free of undisclosed claims. In Texas, the title company does this as part of every purchase — but understanding what they find (and what insurance covers) protects you.
           </p>
         </div>
@@ -76,11 +76,11 @@ export default function DFWTitleSearchGuide() {
             ['👥', 'Potential heir claims', 'Estates, divorces, probate issues'],
             ['🖊️', 'Forgeries or fraud in chain', 'Rare but title insurance covers'],
           ].map(([icon, label, note], i) => (
-            <div key={i} style={{ display: 'flex', gap: '1rem', padding: '0.6rem 0', borderBottom: i < 5 ? '1px solid #F3F4F6′ : ’none', alignItems: 'flex-start' }}>
+            <div key={i} style={{ display: 'flex', gap: '1rem', padding: '0.6rem 0', borderBottom: i < 5 ? '1px solid #F3F4F6' : 'none', alignItems: 'flex-start' }}>
               <span style={{ fontSize: '1.2rem' }}>{icon}</span>
               <div>
                 <div style={{ fontWeight: 600, fontSize: '0.95rem' }}>{label}</div>
-                <div style={{ fontSize: '0.85rem', color: '#6B7280′ }}>{note}</div>
+                <div style={{ fontSize: '0.85rem', color: '#6B7280' }}>{note}</div>
               </div>
             </div>
           ))}
@@ -112,8 +112,8 @@ export default function DFWTitleSearchGuide() {
                 onClick={() => setSelected(selected === key ? null : key)}
                 style={{
                   padding: '0.6rem 1rem', borderRadius: 8, border: '2px solid',
-                  borderColor: selected === key ? '#F5E642′ : '#E5E7EB',
-                  backgroundColor: selected === key ? '#F5E642′ : '#fff',
+                  borderColor: selected === key ? '#F5E642' : '#E5E7EB',
+                  backgroundColor: selected === key ? '#F5E642' : '#fff',
                   color: '#0A1628', fontWeight: selected === key ? 700 : 400,
                   cursor: 'pointer', fontSize: '0.88rem',
                 }}
@@ -139,7 +139,7 @@ export default function DFWTitleSearchGuide() {
           )}
         </div>
 
-        <div style={{ backgroundColor: '#FEF9C3', borderRadius: 12, padding: '1.5rem', border: '1px solid #FDE047′ }}>
+        <div style={{ backgroundColor: '#FEF9C3', borderRadius: 12, padding: '1.5rem', border: '1px solid #FDE047' }}>
           <div style={{ fontWeight: 700, marginBottom: '0.5rem' }}>⚡ DFW Title Tips</div>
           <ul style={{ margin: 0, paddingLeft: '1.25rem', fontSize: '0.95rem', lineHeight: 1.8 }}>
             <li>DFW has many older subdivisions with deed restrictions that aren't HOA-enforced but are still binding</li>

@@ -101,9 +101,9 @@ export default function DFWKitchenPantryOrganization() {
             <div style={{ marginTop: 24, padding: 20, background: '#F9FAFB', borderRadius: 10 }}>
               <div style={{ fontWeight: 700, fontSize: 18, marginBottom: 4 }}>{result.name}</div>
               <div style={{ color: '#16a34a', fontWeight: 600, marginBottom: 14 }}>{result.cost}</div>
-              {result.items.map(i => <div key={i} style={{ padding: '5px 0', color: '#475569′ }}>✓ {i}</div>)}
+              {result.items.map(i => <div key={i} style={{ padding: '5px 0', color: '#475569' }}>✓ {i}</div>)}
               <div style={{ marginTop: 12, padding: 12, background: '#fef3c7', borderRadius: 8, fontSize: 13 }}>🌶️ Spice Tip: {result.spice}</div>
-              <div style={{ marginTop: 8, padding: 12, background: '#F5E642', borderRadius: 8, fontSize: 13, fontWeight: 600, color: '#0A1628′ }}>📦 Bulk: {result.bulk}</div>
+              <div style={{ marginTop: 8, padding: 12, background: '#F5E642', borderRadius: 8, fontSize: 13, fontWeight: 600, color: '#0A1628' }}>📦 Bulk: {result.bulk}</div>
             </div>
           )}
         </div>

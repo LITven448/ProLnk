@@ -11,15 +11,15 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { toast } from "sonner";
 
-const NAV = "#0A1628″;
-const NAV_CARD = "#0d1e38″;
-const ACCENT = "#F5E642″;
+const NAV = "#0A1628";
+const NAV_CARD = "#0d1e38";
+const ACCENT = "#F5E642";
 
 const STATUS_COLORS: Record<string, string> = {
-  paid: "bg-green-900/40 text-green-300″,
-  pending: "bg-yellow-900/40 text-yellow-300″,
-  processing: "bg-blue-900/40 text-blue-300″,
-  cancelled: "bg-red-900/40 text-red-300″,
+  paid: "bg-green-900/40 text-green-300",
+  pending: "bg-yellow-900/40 text-yellow-300",
+  processing: "bg-blue-900/40 text-blue-300",
+  cancelled: "bg-red-900/40 text-red-300",
 };
 
 const TYPE_LABELS: Record<string, string> = {
@@ -119,7 +119,7 @@ function MonthlyBarChart({ commissions }: { commissions: Array<{ createdAt?: str
         style={{
           fontSize: 12,
           fontWeight: 700,
-          color: "#94a3b8″,
+          color: "#94a3b8",
           textTransform: "uppercase",
           letterSpacing: "0.06em",
           marginBottom: 20,
@@ -136,7 +136,7 @@ function MonthlyBarChart({ commissions }: { commissions: Array<{ createdAt?: str
               key={m.key}
               style={{ flex: 1, display: "flex", flexDirection: "column", alignItems: "center", gap: 6 }}
             >
-              <span style={{ fontSize: 10, color: isEmpty ? "#334155″ : ACCENT, fontWeight: 700 }}>
+              <span style={{ fontSize: 10, color: isEmpty ? "#334155" : ACCENT, fontWeight: 700 }}>
                 {isEmpty ? "" : fmt(m.total)}
               </span>
               <div style={{ width: "100%", background: "#1e2e4a", borderRadius: 6, height: 80, display: "flex", alignItems: "flex-end", overflow: "hidden" }}>
@@ -175,7 +175,7 @@ function EarningsExplainer() {
           display: "flex",
           alignItems: "center",
           gap: 8,
-          color: "#94a3b8″,
+          color: "#94a3b8",
           fontSize: 13,
           fontWeight: 700,
           marginBottom: 16,
@@ -189,19 +189,19 @@ function EarningsExplainer() {
       <div style={{ display: "flex", flexDirection: "column", gap: 14 }}>
         {[
           {
-            stream: "Stream 1″,
+            stream: "Stream 1",
             title: "Direct Commission",
             desc: "Earn 7–25% of the job value every time a job closes in your network, based on your tier.",
             color: "#22c55e",
           },
           {
-            stream: "Stream 2″,
+            stream: "Stream 2",
             title: "Network Override",
             desc: "Earn 7% on jobs logged by your direct recruits, 4% on their recruits, 2% on level 3, and 1% on level 4.",
-            color: "#3b82f6″,
+            color: "#3b82f6",
           },
           {
-            stream: "Stream 3″,
+            stream: "Stream 3",
             title: "Subscription Override",
             desc: "Earn 12% recurring on monthly subscriptions from pros you referred directly, 6%/3%/1.5% down each level.",
             color: ACCENT,
@@ -213,7 +213,7 @@ function EarningsExplainer() {
               display: "flex",
               gap: 16,
               padding: "14px 16px",
-              background: "#0A1628″,
+              background: "#0A1628",
               borderRadius: 10,
               border: "1px solid #1e2e4a",
             }}
@@ -242,7 +242,7 @@ function EarningsExplainer() {
                 >
                   {item.stream}
                 </span>
-                <span style={{ fontSize: 13, fontWeight: 700, color: "#e2e8f0″ }}>
+                <span style={{ fontSize: 13, fontWeight: 700, color: "#e2e8f0" }}>
                   {item.title}
                 </span>
               </div>
@@ -454,13 +454,13 @@ export default function EarningsHistory() {
           const grandTotal = Object.values(byType).reduce((s, v) => s + v, 0) || 1;
           const typeColors: Record<string, string> = {
             direct: "#22c55e",
-            network_override: "#3b82f6″,
+            network_override: "#3b82f6",
             subscription_override: ACCENT,
-            origination: "#a855f7″,
+            origination: "#a855f7",
           };
           return (
             <div style={{ background: NAV_CARD, border: "1px solid #1e2e4a", borderRadius: 14, padding: 24, marginBottom: 28 }}>
-              <div style={{ fontSize: 12, fontWeight: 700, color: "#94a3b8″, textTransform: "uppercase", letterSpacing: "0.06em", marginBottom: 16 }}>
+              <div style={{ fontSize: 12, fontWeight: 700, color: "#94a3b8", textTransform: "uppercase", letterSpacing: "0.06em", marginBottom: 16 }}>
                 Commission Type Breakdown
               </div>
               <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
@@ -470,7 +470,7 @@ export default function EarningsHistory() {
                   return (
                     <div key={type}>
                       <div style={{ display: "flex", justifyContent: "space-between", marginBottom: 4 }}>
-                        <span style={{ fontSize: 12, color: "#94a3b8″, fontWeight: 600 }}>
+                        <span style={{ fontSize: 12, color: "#94a3b8", fontWeight: 600 }}>
                           {TYPE_LABELS[type] ?? type}
                         </span>
                         <span style={{ fontSize: 12, color, fontWeight: 700 }}>
@@ -509,7 +509,7 @@ export default function EarningsHistory() {
               gap: 10,
             }}
           >
-            <span style={{ color: "#94a3b8″, fontSize: 12, fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.06em" }}>
+            <span style={{ color: "#94a3b8", fontSize: 12, fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.06em" }}>
               Commission History
             </span>
             {types.length > 0 && (
@@ -526,7 +526,7 @@ export default function EarningsHistory() {
                       fontWeight: 600,
                       cursor: "pointer",
                       background: filterType === t ? ACCENT : "#1e2e4a",
-                      color: filterType === t ? NAV : "#94a3b8″,
+                      color: filterType === t ? NAV : "#94a3b8",
                       textTransform: "capitalize",
                     }}
                   >
@@ -616,7 +616,7 @@ export default function EarningsHistory() {
                             key={c.id ?? i}
                             style={{ borderBottom: "1px solid #111d2e" }}
                           >
-                            <td style={{ padding: "12px 16px", color: "#94a3b8″, whiteSpace: "nowrap" }}>
+                            <td style={{ padding: "12px 16px", color: "#94a3b8", whiteSpace: "nowrap" }}>
                               {c.createdAt ? new Date(c.createdAt).toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" }) : "—"}
                             </td>
                             <td style={{ padding: "12px 16px" }}>
@@ -627,14 +627,14 @@ export default function EarningsHistory() {
                                   padding: "3px 8px",
                                   borderRadius: 5,
                                   background: "#1e2e4a",
-                                  color: "#94a3b8″,
+                                  color: "#94a3b8",
                                   whiteSpace: "nowrap",
                                 }}
                               >
                                 {TYPE_LABELS[c.commissionType ?? ""] ?? (c.commissionType ?? "referral")}
                               </span>
                             </td>
-                            <td style={{ padding: "12px 16px", color: "#cbd5e1″, maxWidth: 240 }}>
+                            <td style={{ padding: "12px 16px", color: "#cbd5e1", maxWidth: 240 }}>
                               <span style={{ display: "block", overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>
                                 {c.description ?? "—"}
                               </span>
@@ -650,7 +650,7 @@ export default function EarningsHistory() {
                                   padding: "3px 10px",
                                   borderRadius: 5,
                                   background: isPaid ? "rgba(34,197,94,0.15)" : "rgba(234,179,8,0.15)",
-                                  color: isPaid ? "#4ade80″ : "#fbbf24",
+                                  color: isPaid ? "#4ade80" : "#fbbf24",
                                 }}
                               >
                                 {isPaid ? "Paid" : "Pending"}

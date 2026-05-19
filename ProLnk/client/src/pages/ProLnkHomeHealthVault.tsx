@@ -17,7 +17,7 @@ export default function ProLnkHomeHealthVault() {
   const [improvement, setImprovement] = useState(1);
 
   const docs = homeAge === 0 ? 12 : homeAge === 1 ? 28 : homeAge === 2 ? 45 : 60;
-  const valueImpact = improvement === 0 ? '$2,000–5,000′ : improvement === 1 ? '$5,000–12,000' : improvement === 2 ? '$12,000–25,000' : '$25,000–50,000';
+  const valueImpact = improvement === 0 ? '$2,000–5,000' : improvement === 1 ? '$5,000–12,000' : improvement === 2 ? '$12,000–25,000' : '$25,000–50,000';
   const saleAdvantage = improvement < 2 ? 'Buyers see verified maintenance — fewer inspection surprises = faster close' : 'Full renovation history = appraisal support + premium pricing confidence';
 
   return (
@@ -46,7 +46,7 @@ export default function ProLnkHomeHealthVault() {
             <div style={{ fontSize: 40 }}>💡</div>
             <div>
               <div style={{ color: '#22c55e', fontWeight: 700, marginBottom: 4 }}>Why This Matters at Sale</div>
-              <div style={{ color: '#94a3b8′ }}>Buyers pay more for homes with documented history. Lenders approve faster. Inspections become confirmations, not surprises. The Vault is the home’s resume.</div>
+              <div style={{ color: '#94a3b8' }}>Buyers pay more for homes with documented history. Lenders approve faster. Inspections become confirmations, not surprises. The Vault is the home's resume.</div>
             </div>
           </div>
         </div>
@@ -60,7 +60,7 @@ export default function ProLnkHomeHealthVault() {
                 {homeAges.map((h, i) => (
                   <button key={i} onClick={() => setHomeAge(i)}
                     style={{ padding: '8px 14px', borderRadius: 8, border: 'none', cursor: 'pointer', textAlign: 'left', fontWeight: 600, fontSize: 13,
-                      background: homeAge === i ? '#F5E642′ : '#1e3a5f', color: homeAge === i ? '#0A1628' : '#fff' }}>{h}</button>
+                      background: homeAge === i ? '#F5E642' : '#1e3a5f', color: homeAge === i ? '#0A1628' : '#fff' }}>{h}</button>
                 ))}
               </div>
             </div>
@@ -70,7 +70,7 @@ export default function ProLnkHomeHealthVault() {
                 {improvements.map((imp, i) => (
                   <button key={i} onClick={() => setImprovement(i)}
                     style={{ padding: '8px 14px', borderRadius: 8, border: 'none', cursor: 'pointer', textAlign: 'left', fontWeight: 600, fontSize: 13,
-                      background: improvement === i ? '#F5E642′ : '#1e3a5f', color: improvement === i ? '#0A1628' : '#fff' }}>{imp}</button>
+                      background: improvement === i ? '#F5E642' : '#1e3a5f', color: improvement === i ? '#0A1628' : '#fff' }}>{imp}</button>
                 ))}
               </div>
             </div>

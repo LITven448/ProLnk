@@ -20,7 +20,7 @@ export default function DFWRoofingManufacturerWarrantyVoid2026() {
         <div style={{ textAlign: 'center', marginBottom: '2rem' }}>
           <div style={{ fontSize: '3rem', marginBottom: '0.5rem' }}>🚫</div>
           <h1 style={{ color: '#F5E642', fontSize: '1.8rem', marginBottom: '0.5rem' }}>DFW Roofing Manufacturer Warranty Void Guide 2026</h1>
-          <p style={{ color: '#94a3b8′ }}>What voids your DFW roof warranty — and how to avoid it</p>
+          <p style={{ color: '#94a3b8' }}>What voids your DFW roof warranty — and how to avoid it</p>
         </div>
 
         <div style={{ backgroundColor: '#0d2137', borderRadius: '12px', padding: '1.5rem', marginBottom: '2rem', border: '1px solid #1e3a5f' }}>
@@ -29,19 +29,19 @@ export default function DFWRoofingManufacturerWarrantyVoid2026() {
             {Object.entries(voids).map(([k, v]) => (
               <button key={k} onClick={() => setConcern(k)}
                 style={{ padding: '0.75rem 1rem', borderRadius: '8px', textAlign: 'left',
-                  border: concern === k ? '2px solid #F5E642′ : '2px solid #1e3a5f',
+                  border: concern === k ? '2px solid #F5E642' : '2px solid #1e3a5f',
                   backgroundColor: concern === k ? '#1e3a5f' : '#0A1628',
-                  color: concern === k ? '#F5E642′ : '#94a3b8', cursor: ’pointer' }}>{v.label}</button>
+                  color: concern === k ? '#F5E642' : '#94a3b8', cursor: 'pointer' }}>{v.label}</button>
             ))}
           </div>
         </div>
 
         <div style={{ backgroundColor: '#0d2137', borderRadius: '12px', padding: '1.5rem', marginBottom: '2rem', border: '1px solid #1e3a5f' }}>
           <div style={{ marginBottom: '1rem' }}>
-            <span style={{ color: '#94a3b8′ }}>Void Risk</span>
+            <span style={{ color: '#94a3b8' }}>Void Risk</span>
             <div style={{ fontSize: '1.4rem', color: sel.riskColor, fontWeight: 'bold' }}>{sel.risk}</div>
           </div>
-          <div style={{ color: '#94a3b8', marginBottom: '1rem', lineHeight: '1.6′ }}>{sel.detail}</div>
+          <div style={{ color: '#94a3b8', marginBottom: '1rem', lineHeight: '1.6' }}>{sel.detail}</div>
           <div style={{ backgroundColor: '#0A1628', padding: '0.75rem', borderRadius: '8px', color: '#22c55e' }}>✅ Prevention: {sel.prevention}</div>
         </div>
 

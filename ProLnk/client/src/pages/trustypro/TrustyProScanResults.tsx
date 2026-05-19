@@ -64,7 +64,7 @@ export default function TrustyProScanResults() {
         <div style={{ display: 'flex', gap: '10px', flexWrap: 'wrap', marginBottom: '28px' }}>
           {zones.map((z, i) => (
             <button key={i} onClick={() => { setSelectedZone(i); setSelectedScore(0); }}
-              style={{ padding: '10px 16px', borderRadius: '10px', border: `2px solid ${selectedZone === i ? '#4F46E5' : '#1e2d45'}`, backgroundColor: selectedZone === i ? '#4F46E5′ : '#0d1f35', color: '#fff', cursor: ’pointer', fontSize: '0.9rem', fontWeight: 600 }}>
+              style={{ padding: '10px 16px', borderRadius: '10px', border: `2px solid ${selectedZone === i ? '#4F46E5' : '#1e2d45'}`, backgroundColor: selectedZone === i ? '#4F46E5' : '#0d1f35', color: '#fff', cursor: 'pointer', fontSize: '0.9rem', fontWeight: 600 }}>
               {z.icon} {z.label}
             </button>
           ))}
@@ -78,7 +78,7 @@ export default function TrustyProScanResults() {
           ))}
         </div>
         <div style={{ backgroundColor: '#0d1f35', borderRadius: '16px', padding: '32px', border: '1px solid #1e2d45', marginBottom: '32px' }}>
-          <h2 style={{ fontSize: '1.3rem', fontWeight: 700, marginBottom: '20px', color: '#FACC15′ }}>{zone.icon} {zone.label} — {result.score}</h2>
+          <h2 style={{ fontSize: '1.3rem', fontWeight: 700, marginBottom: '20px', color: '#FACC15' }}>{zone.icon} {zone.label} — {result.score}</h2>
           <div style={{ marginBottom: '20px' }}>
             <div style={{ color: '#64748b', fontSize: '0.8rem', marginBottom: '6px', textTransform: 'uppercase', letterSpacing: '0.05em' }}>What the AI Detected</div>
             <p style={{ color: '#cbd5e1', lineHeight: 1.7 }}>{result.meaning}</p>
@@ -92,7 +92,7 @@ export default function TrustyProScanResults() {
             <span style={{ color: '#FACC15', fontWeight: 800, fontSize: '1rem' }}>{result.cost}</span>
           </div>
         </div>
-        <div style={{ backgroundColor: '#0d1f35', borderRadius: '12px', padding: '20px', border: '1px solid #1e2d45′ }}>
+        <div style={{ backgroundColor: '#0d1f35', borderRadius: '12px', padding: '20px', border: '1px solid #1e2d45' }}>
           <p style={{ color: '#64748b', fontSize: '0.85rem', margin: 0 }}>
             TrustyPro scan results are AI-generated from photo analysis and are not a licensed home inspection. Always consult qualified professionals before making repair decisions.
           </p>

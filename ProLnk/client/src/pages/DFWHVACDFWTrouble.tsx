@@ -44,7 +44,7 @@ export default function DFWHVACDFWTrouble() {
     }
   }
 
-  const borderColor = severity === 'ok' ? '#22c55e' : severity === 'watch' ? '#f59e0b' : severity === 'problem' ? '#ef4444′ : severity === ’emergency' ? '#dc2626′ : '#2d5a8e';
+  const borderColor = severity === 'ok' ? '#22c55e' : severity === 'watch' ? '#f59e0b' : severity === 'problem' ? '#ef4444' : severity === 'emergency' ? '#dc2626' : '#2d5a8e';
   const inputStyle = { background: '#1e3a5f', border: '1px solid #2d5a8e', borderRadius: 8, padding: '10px 14px', color: 'white', fontSize: 15, width: '100%', boxSizing: 'border-box' as const };
   const labelStyle = { color: '#94a3b8', fontSize: 14, marginBottom: 6, display: 'block' };
 
@@ -54,7 +54,7 @@ export default function DFWHVACDFWTrouble() {
         <div style={{ color: '#F5E642', fontSize: 13, marginBottom: 8, letterSpacing: 1 }}>PROLNK · DFW HVAC GUIDE</div>
         <h1 style={{ fontSize: 32, fontWeight: 800, marginBottom: 8 }}>DFW HVAC Trouble Guide ⚠️</h1>
         <p style={{ color: '#94a3b8', fontSize: 16, lineHeight: 1.6, marginBottom: 24 }}>
-          DFW homeowners need DFW thresholds. National guidance says "call if the AC can't maintain setpoint" — but in a 105°F Texas summer, some struggle is expected. And if it can't maintain 78°F at 88°F outside, that’s an emergency. Know the difference.
+          DFW homeowners need DFW thresholds. National guidance says "call if the AC can't maintain setpoint" — but in a 105°F Texas summer, some struggle is expected. And if it can't maintain 78°F at 88°F outside, that's an emergency. Know the difference.
         </p>
 
         <div style={{ background: '#111f3a', borderRadius: 12, padding: 24, marginBottom: 24 }}>
@@ -78,9 +78,9 @@ export default function DFWHVACDFWTrouble() {
         <div style={{ background: '#111f3a', borderRadius: 12, padding: 24, marginBottom: 24 }}>
           <h2 style={{ color: '#F5E642', fontSize: 18, marginBottom: 20 }}>🌡️ Check Your Current Situation</h2>
           <div style={{ display: 'grid', gap: 16 }}>
-            <div><label style={labelStyle}>Outdoor temperature (°F) *</label><input style={inputStyle} placeholder="e.g. 98″ value={outdoor} onChange={e => setOutdoor(e.target.value)} /></div>
-            <div><label style={labelStyle}>Current indoor temperature (°F) *</label><input style={inputStyle} placeholder="e.g. 81″ value={indoor} onChange={e => setIndoor(e.target.value)} /></div>
-            <div><label style={labelStyle}>Your thermostat setpoint (°F, default 78)</label><input style={inputStyle} placeholder="e.g. 78″ value={setpoint} onChange={e => setSetpoint(e.target.value)} /></div>
+            <div><label style={labelStyle}>Outdoor temperature (°F) *</label><input style={inputStyle} placeholder="e.g. 98" value={outdoor} onChange={e => setOutdoor(e.target.value)} /></div>
+            <div><label style={labelStyle}>Current indoor temperature (°F) *</label><input style={inputStyle} placeholder="e.g. 81" value={indoor} onChange={e => setIndoor(e.target.value)} /></div>
+            <div><label style={labelStyle}>Your thermostat setpoint (°F, default 78)</label><input style={inputStyle} placeholder="e.g. 78" value={setpoint} onChange={e => setSetpoint(e.target.value)} /></div>
           </div>
           <button onClick={assess}
             style={{ marginTop: 20, background: '#F5E642', color: '#0A1628', border: 'none', borderRadius: 8, padding: '12px 28px', fontWeight: 700, fontSize: 15, cursor: 'pointer' }}>

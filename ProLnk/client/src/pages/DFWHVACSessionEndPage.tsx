@@ -51,7 +51,7 @@ export default function DFWHVACSessionEndPage() {
   const selected = situations.find(s => s.id === situation);
 
   return (
-    <div style={{ background: '#0A1628', minHeight: '100vh', padding: '32px 16px', fontFamily: 'sans-serif', color: '#E8EDF5′ }}>
+    <div style={{ background: '#0A1628', minHeight: '100vh', padding: '32px 16px', fontFamily: 'sans-serif', color: '#E8EDF5' }}>
       <div style={{ maxWidth: 760, margin: '0 auto' }}>
         <div style={{ fontSize: 40, marginBottom: 8 }}>🏆</div>
         <h1 style={{ color: '#F5E642', fontSize: 30, fontWeight: 700, marginBottom: 12 }}>
@@ -62,7 +62,7 @@ export default function DFWHVACSessionEndPage() {
         </p>
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12, marginBottom: 32 }}>
           {stats.map(stat => (
-            <div key={stat.label} style={{ background: '#1A2B45', borderRadius: 8, padding: 20, textAlign: 'center', borderTop: '3px solid #F5E642′ }}>
+            <div key={stat.label} style={{ background: '#1A2B45', borderRadius: 8, padding: 20, textAlign: 'center', borderTop: '3px solid #F5E642' }}>
               <div style={{ color: '#F5E642', fontSize: 28, fontWeight: 700 }}>{stat.number}</div>
               <div style={{ color: '#9AAFC4', fontSize: 13, marginTop: 4 }}>{stat.label}</div>
             </div>
@@ -87,10 +87,10 @@ export default function DFWHVACSessionEndPage() {
           {selected && (
             <div style={{ display: 'grid', gap: 12 }}>
               {selected.pages.map((page, i) => (
-                <div key={page.path} style={{ background: '#0A1628', borderRadius: 8, padding: 16, borderLeft: '3px solid #F5E642′ }}>
+                <div key={page.path} style={{ background: '#0A1628', borderRadius: 8, padding: 16, borderLeft: '3px solid #F5E642' }}>
                   <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 6 }}>
                     <div style={{ background: '#F5E642', color: '#0A1628', borderRadius: '50%', width: 24, height: 24, display: 'flex', alignItems: 'center', justifyContent: 'center', fontWeight: 700, fontSize: 13, flexShrink: 0 }}>{i + 1}</div>
-                    <div style={{ fontWeight: 700, color: '#F5E642′ }}>{page.title}</div>
+                    <div style={{ fontWeight: 700, color: '#F5E642' }}>{page.title}</div>
                   </div>
                   <div style={{ color: '#9AAFC4', fontSize: 14, lineHeight: 1.5 }}>{page.why}</div>
                 </div>
@@ -98,7 +98,7 @@ export default function DFWHVACSessionEndPage() {
             </div>
           )}
         </div>
-        <div style={{ background: 'linear-gradient(135deg, #1A2B45, #0D2137)', borderRadius: 12, padding: 28, textAlign: 'center', border: '1px solid #F5E64240′ }}>
+        <div style={{ background: 'linear-gradient(135deg, #1A2B45, #0D2137)', borderRadius: 12, padding: 28, textAlign: 'center', border: '1px solid #F5E64240' }}>
           <div style={{ fontSize: 28, marginBottom: 12 }}>🔗</div>
           <div style={{ color: '#F5E642', fontWeight: 700, fontSize: 20, marginBottom: 8 }}>ProLnk — Built for DFW</div>
           <div style={{ color: '#9AAFC4', fontSize: 15, lineHeight: 1.6 }}>

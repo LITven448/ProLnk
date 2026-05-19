@@ -113,13 +113,13 @@ export default function DFWAlarmSystemGuide() {
               </thead>
               <tbody>
                 {systems.map((s, i) => (
-                  <tr key={s.name} style={{ borderBottom: '1px solid #1E2D4A', background: i % 2 === 0 ? '#0A1628′ : ’transparent' }}>
+                  <tr key={s.name} style={{ borderBottom: '1px solid #1E2D4A', background: i % 2 === 0 ? '#0A1628' : 'transparent' }}>
                     <td style={{ padding: '10px 12px', color: '#E8EDF5', fontWeight: 600 }}>{s.name}</td>
-                    <td style={{ padding: '10px 12px', color: '#8A9AB5′ }}>{s.type}</td>
+                    <td style={{ padding: '10px 12px', color: '#8A9AB5' }}>{s.type}</td>
                     <td style={{ padding: '10px 12px', color: '#4ECDC4', fontWeight: 600 }}>{s.monthly}</td>
-                    <td style={{ padding: '10px 12px', color: '#FFB347′ }}>{s.upfront}</td>
-                    <td style={{ padding: '10px 12px', color: s.contract === 'None' || s.contract === 'Month-to-month' ? '#4ECDC4′ : '#FF6B6B' }}>{s.contract}</td>
-                    <td style={{ padding: '10px 12px', color: '#8A9AB5′ }}>{s.best}</td>
+                    <td style={{ padding: '10px 12px', color: '#FFB347' }}>{s.upfront}</td>
+                    <td style={{ padding: '10px 12px', color: s.contract === 'None' || s.contract === 'Month-to-month' ? '#4ECDC4' : '#FF6B6B' }}>{s.contract}</td>
+                    <td style={{ padding: '10px 12px', color: '#8A9AB5' }}>{s.best}</td>
                   </tr>
                 ))}
               </tbody>
@@ -127,7 +127,7 @@ export default function DFWAlarmSystemGuide() {
           </div>
         </div>
 
-        <div style={{ background: '#111E35', borderRadius: 12, padding: 28, border: '1px solid #F5E642′ }}>
+        <div style={{ background: '#111E35', borderRadius: 12, padding: 28, border: '1px solid #F5E642' }}>
           <h2 style={{ color: '#F5E642', fontSize: 20, fontWeight: 700, margin: '0 0 20px' }}>🔧 Get Your System Recommendation</h2>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: 16, marginBottom: 20 }}>
             <div>

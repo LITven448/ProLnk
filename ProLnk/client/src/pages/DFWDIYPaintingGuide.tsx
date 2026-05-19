@@ -4,7 +4,7 @@ const ROOMS = ['Living Room', 'Bedroom', 'Kitchen', 'Bathroom', 'Hallway', 'Dini
 const CONDITIONS = ['Good (minor scuffs)', 'Fair (some stains/damage)', 'Poor (holes, peeling, heavy damage)'];
 
 function getSupplyList(rooms: string[], condition: string) {
-  const base = ['Painter tape (2 rolls/room)', 'Drop cloths', '2″ angled brush', '9″ roller cover (eggshell)', 'Roller frame + extension pole', 'Paint tray', 'Sandpaper (120 grit)', 'Tack cloth'];
+  const base = ['Painter tape (2 rolls/room)', 'Drop cloths', '2" angled brush', '9" roller cover (eggshell)', 'Roller frame + extension pole', 'Paint tray', 'Sandpaper (120 grit)', 'Tack cloth'];
   if (condition.startsWith('Fair')) base.push('Spackling compound', 'Putty knife');
   if (condition.startsWith('Poor')) base.push('Drywall patch kit', 'Joint compound', 'Mesh tape', 'Primer (1 gal/room)');
   else base.push('Primer (1 gal per 2 rooms)');
@@ -34,8 +34,8 @@ export default function DFWDIYPaintingGuide() {
   const supplies = condition && selectedRooms.length > 0 ? getSupplyList(selectedRooms, condition) : [];
 
   return (
-    <div style={{ background: '#0A1628', minHeight: '100vh', color: '#fff', fontFamily: 'system-ui, sans-serif', padding: '0 0 60px 0′ }}>
-      <div style={{ background: 'linear-gradient(135deg, #0A1628 0%, #112240 100%)', padding: '48px 24px 36px', borderBottom: '2px solid #F5E642′ }}>
+    <div style={{ background: '#0A1628', minHeight: '100vh', color: '#fff', fontFamily: 'system-ui, sans-serif', padding: '0 0 60px 0' }}>
+      <div style={{ background: 'linear-gradient(135deg, #0A1628 0%, #112240 100%)', padding: '48px 24px 36px', borderBottom: '2px solid #F5E642' }}>
         <div style={{ maxWidth: 760, margin: '0 auto' }}>
           <div style={{ fontSize: 36, marginBottom: 8 }}>🖌️</div>
           <h1 style={{ fontSize: 32, fontWeight: 800, color: '#F5E642', margin: '0 0 10px' }}>DFW DIY Interior Painting Guide</h1>
@@ -103,7 +103,7 @@ export default function DFWDIYPaintingGuide() {
             <div style={{ color: '#cbd5e1', fontWeight: 600, marginBottom: 10 }}>Rooms to Paint</div>
             <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8 }}>
               {ROOMS.map(room => (
-                <button key={room} onClick={() => toggleRoom(room)} style={{ padding: '8px 16px', borderRadius: 20, border: '2px solid', borderColor: selectedRooms.includes(room) ? '#F5E642′ : '#334155', background: selectedRooms.includes(room) ? '#F5E642' : ’transparent', color: selectedRooms.includes(room) ? '#0A1628′ : '#94a3b8', fontWeight: 600, cursor: ’pointer', fontSize: 14 }}>
+                <button key={room} onClick={() => toggleRoom(room)} style={{ padding: '8px 16px', borderRadius: 20, border: '2px solid', borderColor: selectedRooms.includes(room) ? '#F5E642' : '#334155', background: selectedRooms.includes(room) ? '#F5E642' : 'transparent', color: selectedRooms.includes(room) ? '#0A1628' : '#94a3b8', fontWeight: 600, cursor: 'pointer', fontSize: 14 }}>
                   {room}
                 </button>
               ))}
@@ -114,7 +114,7 @@ export default function DFWDIYPaintingGuide() {
             <div style={{ color: '#cbd5e1', fontWeight: 600, marginBottom: 10 }}>Wall Condition</div>
             <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
               {CONDITIONS.map(c => (
-                <button key={c} onClick={() => setCondition(c)} style={{ padding: '10px 16px', borderRadius: 8, border: '2px solid', borderColor: condition === c ? '#F5E642′ : '#334155', background: condition === c ? '#F5E64220' : ’transparent', color: condition === c ? '#F5E642′ : '#94a3b8', textAlign: ’left', cursor: 'pointer', fontSize: 14 }}>
+                <button key={c} onClick={() => setCondition(c)} style={{ padding: '10px 16px', borderRadius: 8, border: '2px solid', borderColor: condition === c ? '#F5E642' : '#334155', background: condition === c ? '#F5E64220' : 'transparent', color: condition === c ? '#F5E642' : '#94a3b8', textAlign: 'left', cursor: 'pointer', fontSize: 14 }}>
                   {c}
                 </button>
               ))}
@@ -126,12 +126,12 @@ export default function DFWDIYPaintingGuide() {
           </button>
 
           {showResults && est && (
-            <div style={{ marginTop: 24, padding: 20, background: '#0A1628', borderRadius: 12, borderLeft: '4px solid #F5E642′ }}>
+            <div style={{ marginTop: 24, padding: 20, background: '#0A1628', borderRadius: 12, borderLeft: '4px solid #F5E642' }}>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12, marginBottom: 16 }}>
                 {[['🕐 Time', `${est.hours} hrs`], ['💰 Cost', `~$${est.cost}`], ['🎨 Paint', `${est.paintGal} gal`], ['🧱 Skill', est.skill]].map(([label, val]) => (
                   <div key={label} style={{ background: '#112240', borderRadius: 8, padding: 14, textAlign: 'center' }}>
                     <div style={{ fontSize: 12, color: '#94a3b8', marginBottom: 4 }}>{label}</div>
-                    <div style={{ fontSize: 22, fontWeight: 800, color: '#F5E642′ }}>{val}</div>
+                    <div style={{ fontSize: 22, fontWeight: 800, color: '#F5E642' }}>{val}</div>
                   </div>
                 ))}
               </div>

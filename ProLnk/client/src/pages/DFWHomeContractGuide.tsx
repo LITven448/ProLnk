@@ -32,7 +32,7 @@ export default function DFWHomeContractGuide() {
           {['forms', 'terms'].map(tab => (
             <button key={tab} onClick={() => { setActiveTab(tab); setSelected(null); }}
               style={{ padding: '10px 24px', borderRadius: 8, border: 'none', cursor: 'pointer', fontWeight: 600,
-                background: activeTab === tab ? '#F5E642′ : '#fff', color: activeTab === tab ? '#0A1628' : '#64748B' }}>
+                background: activeTab === tab ? '#F5E642' : '#fff', color: activeTab === tab ? '#0A1628' : '#64748B' }}>
               {tab === 'forms' ? '📄 TREC Forms' : '📖 Key Terms'}
             </button>
           ))}
@@ -45,7 +45,7 @@ export default function DFWHomeContractGuide() {
               {FORMS.map((f, i) => (
                 <div key={i} onClick={() => setSelected(selected === i ? null : i)}
                   style={{ background: '#fff', borderRadius: 10, padding: '1.2rem', cursor: 'pointer',
-                    border: selected === i ? '2px solid #F5E642′ : '2px solid transparent',
+                    border: selected === i ? '2px solid #F5E642' : '2px solid transparent',
                     boxShadow: '0 1px 4px rgba(0,0,0,0.06)' }}>
                   <div style={{ fontWeight: 600, color: '#0A1628', marginBottom: 4 }}>{f.situation}</div>
                   {selected === i && (

@@ -79,7 +79,7 @@ export default function DFWHomeSalePreparationGuide() {
         <div style={{ background: '#fff', borderRadius: 16, padding: 32, marginBottom: 32, boxShadow: '0 2px 12px rgba(0,0,0,0.07)' }}>
           <h2 style={{ fontSize: 20, fontWeight: 700, color: '#0A1628', marginBottom: 16 }}>📅 How many months until your target listing date?</h2>
           <div style={{ display: 'flex', alignItems: 'center', gap: 16 }}>
-            <input type="range" min={1} max={6} value={months} onChange={e => setMonths(Number(e.target.value))} style={{ flex: 1, accentColor: '#0A1628′ }} />
+            <input type="range" min={1} max={6} value={months} onChange={e => setMonths(Number(e.target.value))} style={{ flex: 1, accentColor: '#0A1628' }} />
             <span style={{ fontSize: 22, fontWeight: 700, color: '#0A1628', minWidth: 40 }}>{months}mo</span>
           </div>
           <p style={{ color: '#888', fontSize: 14, marginTop: 8 }}>Showing {visiblePhases} preparation phase{visiblePhases !== 1 ? 's' : ''} based on your timeline.</p>
@@ -87,7 +87,7 @@ export default function DFWHomeSalePreparationGuide() {
 
         <div style={{ display: 'flex', flexDirection: 'column', gap: 20, marginBottom: 40 }}>
           {phases.slice(0, visiblePhases).map((p, i) => (
-            <div key={i} style={{ background: '#fff', borderRadius: 14, padding: 28, boxShadow: '0 2px 10px rgba(0,0,0,0.06)', borderLeft: '5px solid #0A1628′ }}>
+            <div key={i} style={{ background: '#fff', borderRadius: 14, padding: 28, boxShadow: '0 2px 10px rgba(0,0,0,0.06)', borderLeft: '5px solid #0A1628' }}>
               <div style={{ fontWeight: 800, fontSize: 13, color: '#F5E642', background: '#0A1628', display: 'inline-block', padding: '3px 12px', borderRadius: 20, marginBottom: 10 }}>{p.phase} — {p.label}</div>
               <ul style={{ margin: 0, paddingLeft: 20 }}>
                 {p.tasks.map((t, j) => <li key={j} style={{ marginBottom: 6, color: '#333', fontSize: 15 }}>{t}</li>)}
@@ -109,7 +109,7 @@ export default function DFWHomeSalePreparationGuide() {
                 <tr key={i} style={{ borderBottom: '1px solid #f0f0ee' }}>
                   <td style={{ padding: '10px 14px', fontSize: 14, fontWeight: 600 }}>{r.repair}</td>
                   <td style={{ padding: '10px 14px', fontSize: 14 }}>{r.roi}</td>
-                  <td style={{ padding: '10px 14px', fontSize: 14, color: '#666′ }}>{r.note}</td>
+                  <td style={{ padding: '10px 14px', fontSize: 14, color: '#666' }}>{r.note}</td>
                 </tr>
               ))}
             </tbody>
@@ -118,7 +118,7 @@ export default function DFWHomeSalePreparationGuide() {
 
         <div style={{ textAlign: 'center', marginTop: 40, padding: 28, background: '#0A1628', borderRadius: 16 }}>
           <p style={{ color: '#F5E642', fontWeight: 700, fontSize: 18, margin: 0 }}>Ready to list your DFW home?</p>
-          <p style={{ color: '#aaa', fontSize: 14, margin: '8px 0 0′ }}>Connect with top DFW agents who know exactly what buyers want.</p>
+          <p style={{ color: '#aaa', fontSize: 14, margin: '8px 0 0' }}>Connect with top DFW agents who know exactly what buyers want.</p>
         </div>
       </div>
     </div>

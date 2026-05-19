@@ -45,23 +45,23 @@ export default function DFWOutdoorElectricalGuide2026() {
             {features.map(f => (
               <button key={f.id} onClick={() => setFeature(f.id === feature ? '' : f.id)}
                 style={{ padding: '14px', borderRadius: '8px', border: '2px solid', cursor: 'pointer', fontSize: '13px', fontWeight: '600', transition: 'all 0.2s',
-                  borderColor: feature === f.id ? '#F5E642′ : '#1e3a5f', backgroundColor: feature === f.id ? '#1a2e4a' : '#0d1f35', color: feature === f.id ? '#F5E642' : '#cbd5e1' }}>
+                  borderColor: feature === f.id ? '#F5E642' : '#1e3a5f', backgroundColor: feature === f.id ? '#1a2e4a' : '#0d1f35', color: feature === f.id ? '#F5E642' : '#cbd5e1' }}>
                 {f.label}
               </button>
             ))}
           </div>
           {selected && (
-            <div style={{ marginTop: '20px', backgroundColor: '#0d1f35', borderRadius: '10px', padding: '20px', borderLeft: '4px solid #F5E642′ }}>
+            <div style={{ marginTop: '20px', backgroundColor: '#0d1f35', borderRadius: '10px', padding: '20px', borderLeft: '4px solid #F5E642' }}>
               <h3 style={{ color: '#F5E642', margin: '0 0 12px', fontSize: '18px' }}>{selected.label}</h3>
-              <p style={{ color: '#cbd5e1', margin: '0 0 14px', lineHeight: '1.6′ }}>{selected.note}</p>
+              <p style={{ color: '#cbd5e1', margin: '0 0 14px', lineHeight: '1.6' }}>{selected.note}</p>
               <div style={{ display: 'flex', gap: '14px', flexWrap: 'wrap' }}>
-                <span style={{ padding: '5px 12px', borderRadius: '20px', fontWeight: '700', fontSize: '13px', backgroundColor: selected.gfci ? '#14532d' : '#2d1515', color: selected.gfci ? '#4ade80′ : '#ef4444' }}>
+                <span style={{ padding: '5px 12px', borderRadius: '20px', fontWeight: '700', fontSize: '13px', backgroundColor: selected.gfci ? '#14532d' : '#2d1515', color: selected.gfci ? '#4ade80' : '#ef4444' }}>
                   {selected.gfci ? '✅ GFCI Required' : '❌ No GFCI Required'}
                 </span>
-                <span style={{ padding: '5px 12px', borderRadius: '20px', fontWeight: '700', fontSize: '13px', backgroundColor: selected.permit ? '#1e3a5f' : '#2d1515', color: selected.permit ? '#60a5fa' : '#94a3b8′ }}>
+                <span style={{ padding: '5px 12px', borderRadius: '20px', fontWeight: '700', fontSize: '13px', backgroundColor: selected.permit ? '#1e3a5f' : '#2d1515', color: selected.permit ? '#60a5fa' : '#94a3b8' }}>
                   {selected.permit ? '📋 Permit Required' : '📋 Permit May Not Be Required'}
                 </span>
-                <span style={{ padding: '5px 12px', borderRadius: '20px', fontWeight: '700', fontSize: '13px', backgroundColor: '#1a2e1a', color: '#4ade80′ }}>
+                <span style={{ padding: '5px 12px', borderRadius: '20px', fontWeight: '700', fontSize: '13px', backgroundColor: '#1a2e1a', color: '#4ade80' }}>
                   💰 {selected.cost}
                 </span>
               </div>

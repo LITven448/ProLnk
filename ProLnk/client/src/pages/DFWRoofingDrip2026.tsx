@@ -46,7 +46,7 @@ export default function DFWRoofingDrip2026() {
 
         {guide && (
           <div style={{ background: '#0F2744', border: `2px solid ${guide.urgent ? '#FF4444' : '#F5E642'}`, borderRadius: '12px', padding: '1.5rem' }}>
-            <h2 style={{ fontSize: '1.15rem', color: guide.urgent ? '#FF4444′ : '#F5E642', marginBottom: '1rem' }}>{guide.urgent ? '🚨' : '✅'} {guide.title}</h2>
+            <h2 style={{ fontSize: '1.15rem', color: guide.urgent ? '#FF4444' : '#F5E642', marginBottom: '1rem' }}>{guide.urgent ? '🚨' : '✅'} {guide.title}</h2>
             <div style={{ display: 'grid', gap: '0.6rem', marginBottom: '1rem' }}>
               {guide.steps.map((step, i) => (
                 <div key={i} style={{ display: 'flex', gap: '0.75rem', alignItems: 'flex-start' }}>

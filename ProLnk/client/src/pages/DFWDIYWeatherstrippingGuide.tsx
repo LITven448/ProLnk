@@ -48,8 +48,8 @@ export default function DFWDIYWeatherstrippingGuide() {
   const est = ready ? getEstimate(selected, sizeIdx) : null;
 
   return (
-    <div style={{ background: '#0A1628', minHeight: '100vh', color: '#fff', fontFamily: 'system-ui, sans-serif', padding: '0 0 60px 0′ }}>
-      <div style={{ background: 'linear-gradient(135deg, #0A1628 0%, #112240 100%)', padding: '48px 24px 36px', borderBottom: '2px solid #F5E642′ }}>
+    <div style={{ background: '#0A1628', minHeight: '100vh', color: '#fff', fontFamily: 'system-ui, sans-serif', padding: '0 0 60px 0' }}>
+      <div style={{ background: 'linear-gradient(135deg, #0A1628 0%, #112240 100%)', padding: '48px 24px 36px', borderBottom: '2px solid #F5E642' }}>
         <div style={{ maxWidth: 760, margin: '0 auto' }}>
           <div style={{ fontSize: 36, marginBottom: 8 }}>{'wind'}</div>
           <h1 style={{ fontSize: 32, fontWeight: 800, color: '#F5E642', margin: '0 0 10px' }}>DFW DIY Weatherstripping Guide</h1>
@@ -102,7 +102,7 @@ export default function DFWDIYWeatherstrippingGuide() {
             <div style={{ color: '#cbd5e1', fontWeight: 600, marginBottom: 10 }}>Gap Locations to Fix</div>
             <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
               {GAP_LOCATIONS.map(loc => (
-                <button key={loc.id} onClick={() => toggle(loc.id)} style={{ padding: '12px 16px', borderRadius: 8, border: '2px solid', borderColor: selected.includes(loc.id) ? '#F5E642′ : '#334155', background: selected.includes(loc.id) ? '#F5E64215' : ’transparent', color: selected.includes(loc.id) ? '#F5E642′ : '#94a3b8', textAlign: ’left', cursor: 'pointer', fontSize: 14, fontWeight: 600 }}>
+                <button key={loc.id} onClick={() => toggle(loc.id)} style={{ padding: '12px 16px', borderRadius: 8, border: '2px solid', borderColor: selected.includes(loc.id) ? '#F5E642' : '#334155', background: selected.includes(loc.id) ? '#F5E64215' : 'transparent', color: selected.includes(loc.id) ? '#F5E642' : '#94a3b8', textAlign: 'left', cursor: 'pointer', fontSize: 14, fontWeight: 600 }}>
                   {loc.label}
                 </button>
               ))}
@@ -113,7 +113,7 @@ export default function DFWDIYWeatherstrippingGuide() {
             <div style={{ color: '#cbd5e1', fontWeight: 600, marginBottom: 10 }}>Home Size</div>
             <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
               {HOME_SIZES.map((s, i) => (
-                <button key={s.label} onClick={() => setSizeIdx(i)} style={{ padding: '10px 16px', borderRadius: 8, border: '2px solid', borderColor: sizeIdx === i ? '#F5E642′ : '#334155', background: sizeIdx === i ? '#F5E64215' : ’transparent', color: sizeIdx === i ? '#F5E642′ : '#94a3b8', textAlign: ’left', cursor: 'pointer', fontSize: 14 }}>
+                <button key={s.label} onClick={() => setSizeIdx(i)} style={{ padding: '10px 16px', borderRadius: 8, border: '2px solid', borderColor: sizeIdx === i ? '#F5E642' : '#334155', background: sizeIdx === i ? '#F5E64215' : 'transparent', color: sizeIdx === i ? '#F5E642' : '#94a3b8', textAlign: 'left', cursor: 'pointer', fontSize: 14 }}>
                   {s.label}
                 </button>
               ))}
@@ -134,7 +134,7 @@ export default function DFWDIYWeatherstrippingGuide() {
                 ].map(([label, val]) => (
                   <div key={label} style={{ background: '#0A1628', borderRadius: 8, padding: 14, textAlign: 'center' }}>
                     <div style={{ fontSize: 11, color: '#94a3b8', marginBottom: 4 }}>{label}</div>
-                    <div style={{ fontSize: 18, fontWeight: 800, color: '#F5E642′ }}>{val}</div>
+                    <div style={{ fontSize: 18, fontWeight: 800, color: '#F5E642' }}>{val}</div>
                   </div>
                 ))}
               </div>
@@ -146,7 +146,7 @@ export default function DFWDIYWeatherstrippingGuide() {
                 return (
                   <div key={id} style={{ background: '#0A1628', borderRadius: 8, padding: 14, marginBottom: 10 }}>
                     <div style={{ color: '#F5E642', fontWeight: 700, fontSize: 14, marginBottom: 6 }}>{loc?.label}</div>
-                    <div style={{ color: '#fff', fontSize: 14, marginBottom: 4 }}>Type: <span style={{ color: '#F5E642′ }}>{info.type}</span></div>
+                    <div style={{ color: '#fff', fontSize: 14, marginBottom: 4 }}>Type: <span style={{ color: '#F5E642' }}>{info.type}</span></div>
                     <div style={{ color: '#cbd5e1', fontSize: 13, marginBottom: 4 }}>Product: {info.product}</div>
                     <div style={{ color: '#94a3b8', fontSize: 13, marginBottom: 4 }}>Install: {info.install}</div>
                     <div style={{ color: '#64748b', fontSize: 12 }}>DFW lifespan: {info.lifespan}</div>

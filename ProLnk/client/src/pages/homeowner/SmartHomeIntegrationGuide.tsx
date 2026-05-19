@@ -37,7 +37,7 @@ export default function SmartHomeIntegrationGuide() {
 
   const filteredDevices = filterCategory === 'All' ? devices : devices.filter(d => d.category === filterCategory);
   const selectedDeviceData = devices.filter(d => selectedDevices.includes(d.name));
-  const available2026 = selectedDeviceData.filter(d => d.plannedYear === '2026′ && d.todayStatus !== ’Not Available');
+  const available2026 = selectedDeviceData.filter(d => d.plannedYear === '2026' && d.todayStatus !== 'Not Available');
   const comingSoon = selectedDeviceData.filter(d => d.todayStatus === 'Not Available' || d.plannedYear === '2027');
 
   return (
@@ -63,9 +63,9 @@ export default function SmartHomeIntegrationGuide() {
           <h2 style={{ fontSize: '28px', fontWeight: 700, color: '#ffffff', marginBottom: '32px' }}>⚙️ How TrustyPro Uses Smart Home Data</h2>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: '20px' }}>
             {[
-              { emoji: '🌡️', title: 'HVAC Runtime Analysis', desc: 'When your thermostat logs 18+ hours of runtime on a mild day, TrustyPro’s AI flags it as a potential refrigerant or filter issue — before your system fails.', status: '2026 Beta', color: '#818cf8′ },
-              { emoji: '💧', title: 'Leak Sensor Correlation', desc: 'Smart leak detectors feed real-time data. A detection event triggers an immediate alert + automatic contractor connection from your ProLnk network.', status: '2026 Beta', color: '#818cf8′ },
-              { emoji: '💦', title: 'Foundation Watering', desc: 'DFW foundations expand/contract with moisture. Smart irrigation schedule data helps TrustyPro calculate your foundation’s moisture consistency — critical for DFW clay soil.', status: '2026 Beta', color: '#818cf8′ },
+              { emoji: '🌡️', title: 'HVAC Runtime Analysis', desc: 'When your thermostat logs 18+ hours of runtime on a mild day, TrustyPro’s AI flags it as a potential refrigerant or filter issue — before your system fails.', status: '2026 Beta', color: '#818cf8' },
+              { emoji: '💧', title: 'Leak Sensor Correlation', desc: 'Smart leak detectors feed real-time data. A detection event triggers an immediate alert + automatic contractor connection from your ProLnk network.', status: '2026 Beta', color: '#818cf8' },
+              { emoji: '💦', title: 'Foundation Watering', desc: 'DFW foundations expand/contract with moisture. Smart irrigation schedule data helps TrustyPro calculate your foundation’s moisture consistency — critical for DFW clay soil.', status: '2026 Beta', color: '#818cf8' },
               { emoji: '🏠', title: 'Predictive Maintenance', desc: 'IoT data + AI = maintenance predictions before failures happen. Know your water heater is approaching end-of-life before the flood, not after.', status: '2027 Roadmap', color: '#f59e0b' },
             ].map((item, i) => (
               <div key={i} style={{ background: '#111827', border: '1px solid #1f2937', borderRadius: '12px', padding: '24px' }}>
@@ -83,7 +83,7 @@ export default function SmartHomeIntegrationGuide() {
         {/* Roadmap Timeline */}
         <section style={{ marginBottom: '60px' }}>
           <h2 style={{ fontSize: '28px', fontWeight: 700, color: '#ffffff', marginBottom: '32px' }}>🗓️ Integration Roadmap</h2>
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '0′ }}>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '0' }}>
             {[
               { year: 'Today', label: 'AI Photo Scans', desc: 'Manual exterior and interior photo uploads analyzed by TrustyPro AI. Identifies visible condition issues, aging systems, deferred maintenance.', color: '#22c55e', items: ['Photo-based AI condition scoring', 'Manual home data input', 'Home health vault data storage'] },
               { year: '2026', label: 'Smart Sensor Beta', desc: 'First wave of IoT integrations. Smart thermostat, leak detectors, and smart irrigation connect to TrustyPro dashboard.', color: '#818cf8', items: ['Nest/Ecobee thermostat integration', 'Leak detector real-time alerts', 'Alexa + Google Home voice commands', 'Smart irrigation foundation correlation'] },
@@ -92,9 +92,9 @@ export default function SmartHomeIntegrationGuide() {
               <div key={i} style={{ display: 'flex', gap: '24px', marginBottom: '8px' }}>
                 <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', minWidth: '80px' }}>
                   <div style={{ background: phase.color, color: '#000000', fontWeight: 700, fontSize: '13px', padding: '6px 12px', borderRadius: '999px', whiteSpace: 'nowrap' }}>{phase.year}</div>
-                  {i < 2 && <div style={{ width: '2px', flex: 1, background: '#1f2937', margin: '8px 0′ }} />}
+                  {i < 2 && <div style={{ width: '2px', flex: 1, background: '#1f2937', margin: '8px 0' }} />}
                 </div>
-                <div style={{ background: '#111827', border: '1px solid #1f2937', borderRadius: '12px', padding: '24px', flex: 1, marginBottom: i < 2 ? '0′ : '0' }}>
+                <div style={{ background: '#111827', border: '1px solid #1f2937', borderRadius: '12px', padding: '24px', flex: 1, marginBottom: i < 2 ? '0' : '0' }}>
                   <h3 style={{ fontSize: '18px', fontWeight: 700, color: '#ffffff', marginBottom: '6px' }}>{phase.label}</h3>
                   <p style={{ fontSize: '14px', color: '#9ca3af', marginBottom: '12px', lineHeight: 1.5 }}>{phase.desc}</p>
                   <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px' }}>
@@ -120,8 +120,8 @@ export default function SmartHomeIntegrationGuide() {
                 onClick={() => setFilterCategory(cat)}
                 style={{
                   padding: '8px 16px', borderRadius: '999px', border: '1px solid',
-                  borderColor: filterCategory === cat ? '#818cf8′ : '#374151',
-                  background: filterCategory === cat ? '#312e81′ : '#111827',
+                  borderColor: filterCategory === cat ? '#818cf8' : '#374151',
+                  background: filterCategory === cat ? '#312e81' : '#111827',
                   color: filterCategory === cat ? '#c7d2fe' : '#9ca3af',
                   cursor: 'pointer', fontSize: '13px', fontWeight: filterCategory === cat ? 700 : 400,
                 }}
@@ -151,7 +151,7 @@ export default function SmartHomeIntegrationGuide() {
                   </div>
                   <div style={{ fontSize: '14px', fontWeight: 600, color: '#ffffff', marginTop: '8px', marginBottom: '4px' }}>{device.name}</div>
                   <div style={{ fontSize: '11px', color: '#6b7280', marginBottom: '4px' }}>{device.category}</div>
-                  <div style={{ fontSize: '11px', color: device.todayStatus === 'Not Available' ? '#ef4444′ : '#22c55e' }}>
+                  <div style={{ fontSize: '11px', color: device.todayStatus === 'Not Available' ? '#ef4444' : '#22c55e' }}>
                     Today: {device.todayStatus}
                   </div>
                 </div>
@@ -204,7 +204,7 @@ export default function SmartHomeIntegrationGuide() {
           <div style={{ fontSize: '40px', marginBottom: '12px' }}>🤖</div>
           <h3 style={{ fontSize: '22px', fontWeight: 700, color: '#ffffff', marginBottom: '12px' }}>Join the TrustyPro Waitlist — Smart Home Beta Included</h3>
           <p style={{ fontSize: '15px', color: '#a5b4fc', maxWidth: '520px', margin: '0 auto 24px', lineHeight: 1.6 }}>
-            Waitlist members get priority access to the 2026 smart home beta integrations. Connect your home and let TrustyPro's AI start working while you’re on the list.
+            Waitlist members get priority access to the 2026 smart home beta integrations. Connect your home and let TrustyPro's AI start working while you're on the list.
           </p>
           <a
             href="/waitlist/homeowner"

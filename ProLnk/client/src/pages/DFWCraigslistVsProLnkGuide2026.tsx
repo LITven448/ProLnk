@@ -22,7 +22,7 @@ export default function DFWCraigslistVsProLnkGuide2026() {
       <div style={{ maxWidth: 860, margin: '0 auto' }}>
         <div style={{ textAlign: 'center', marginBottom: '2rem' }}>
           <span style={{ fontSize: '2.5rem' }}>⚠️</span>
-          <h1 style={{ color: '#F5E642', fontSize: '1.8rem', margin: '0.5rem 0′ }}>ProLnk vs Craigslist — DFW Contractor Safety 2026</h1>
+          <h1 style={{ color: '#F5E642', fontSize: '1.8rem', margin: '0.5rem 0' }}>ProLnk vs Craigslist — DFW Contractor Safety 2026</h1>
           <p style={{ color: '#94a3b8', maxWidth: 580, margin: '0 auto' }}>
             Craigslist contractors: no verification, no recourse, high scam rate. See the risk for your job.
           </p>
@@ -39,14 +39,14 @@ export default function DFWCraigslistVsProLnkGuide2026() {
           ))}
         </div>
 
-        <div style={{ background: '#1e293b', borderRadius: 12, padding: '1.5rem', border: '2px solid #F5E642′ }}>
+        <div style={{ background: '#1e293b', borderRadius: 12, padding: '1.5rem', border: '2px solid #F5E642' }}>
           <h3 style={{ color: '#F5E642', marginTop: 0 }}>🎯 Job-Specific Risk Assessment</h3>
           <div style={{ marginBottom: '1rem' }}>
             <p style={{ color: '#94a3b8', fontSize: '0.85rem', margin: '0 0 0.5rem' }}>Job Type:</p>
             <div style={{ display: 'flex', gap: '0.4rem', flexWrap: 'wrap' }}>
               {jobs.map((j) => (
                 <button key={j} onClick={() => setJob(j)}
-                  style={{ background: job === j ? '#F5E642′ : '#0f172a', color: job === j ? '#0A1628' : '#f1f5f9', border: '1px solid #334155', borderRadius: 8, padding: '0.4rem 0.8rem', cursor: ’pointer', fontWeight: 600, fontSize: '0.85rem' }}>{j}</button>
+                  style={{ background: job === j ? '#F5E642' : '#0f172a', color: job === j ? '#0A1628' : '#f1f5f9', border: '1px solid #334155', borderRadius: 8, padding: '0.4rem 0.8rem', cursor: 'pointer', fontWeight: 600, fontSize: '0.85rem' }}>{j}</button>
               ))}
             </div>
           </div>
@@ -55,7 +55,7 @@ export default function DFWCraigslistVsProLnkGuide2026() {
             <div style={{ display: 'flex', gap: '0.4rem', flexWrap: 'wrap' }}>
               {risks.map((r) => (
                 <button key={r} onClick={() => setRisk(r)}
-                  style={{ background: risk === r ? '#F5E642′ : '#0f172a', color: risk === r ? '#0A1628' : '#f1f5f9', border: '1px solid #334155', borderRadius: 8, padding: '0.4rem 0.8rem', cursor: ’pointer', fontWeight: 600, fontSize: '0.85rem' }}>{r}</button>
+                  style={{ background: risk === r ? '#F5E642' : '#0f172a', color: risk === r ? '#0A1628' : '#f1f5f9', border: '1px solid #334155', borderRadius: 8, padding: '0.4rem 0.8rem', cursor: 'pointer', fontWeight: 600, fontSize: '0.85rem' }}>{r}</button>
               ))}
             </div>
           </div>

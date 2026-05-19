@@ -63,11 +63,11 @@ export default function DFWAssessedVsMarketValue() {
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 14, marginBottom: 20 }}>
             <div>
               <label style={{ color: '#64748b', fontSize: 13, display: 'block', marginBottom: 6 }}>CAD Assessed Value ($)</label>
-              <input type='text' value={assessed} onChange={e => setAssessed(e.target.value)} placeholder='e.g. 380000′ style={{ width: '100%', padding: '10px 12px', background: '#f8fafc', border: '1px solid #e2e8f0', borderRadius: 8, color: '#0f172a', fontSize: 14, boxSizing: ’border-box' }} />
+              <input type='text' value={assessed} onChange={e => setAssessed(e.target.value)} placeholder='e.g. 380000' style={{ width: '100%', padding: '10px 12px', background: '#f8fafc', border: '1px solid #e2e8f0', borderRadius: 8, color: '#0f172a', fontSize: 14, boxSizing: 'border-box' }} />
             </div>
             <div>
               <label style={{ color: '#64748b', fontSize: 13, display: 'block', marginBottom: 6 }}>Estimated Market Value ($)</label>
-              <input type='text' value={market} onChange={e => setMarket(e.target.value)} placeholder='e.g. 450000′ style={{ width: '100%', padding: '10px 12px', background: '#f8fafc', border: '1px solid #e2e8f0', borderRadius: 8, color: '#0f172a', fontSize: 14, boxSizing: ’border-box' }} />
+              <input type='text' value={market} onChange={e => setMarket(e.target.value)} placeholder='e.g. 450000' style={{ width: '100%', padding: '10px 12px', background: '#f8fafc', border: '1px solid #e2e8f0', borderRadius: 8, color: '#0f172a', fontSize: 14, boxSizing: 'border-box' }} />
             </div>
             <div>
               <label style={{ color: '#64748b', fontSize: 13, display: 'block', marginBottom: 6 }}>County</label>

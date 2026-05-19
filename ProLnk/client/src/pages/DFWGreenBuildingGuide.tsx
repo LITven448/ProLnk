@@ -65,8 +65,8 @@ export default function DFWGreenBuildingGuide() {
               <div style={{ display: 'flex', flexWrap: 'wrap', gap: 6, marginBottom: 12 }}>
                 {c.levels.map(l => <span key={l} style={{ background: '#0A1628', color: '#F5E642', padding: '3px 10px', borderRadius: 20, fontSize: 12 }}>{l}</span>)}
               </div>
-              <div style={{ fontSize: 13, color: '#94A3B8′ }}><strong style={{ color: '#E8EDF5' }}>Cost:</strong> {c.cost}</div>
-              <div style={{ fontSize: 13, color: '#94A3B8', marginTop: 4 }}><strong style={{ color: '#E8EDF5′ }}>Best for:</strong> {c.bestFor}</div>
+              <div style={{ fontSize: 13, color: '#94A3B8' }}><strong style={{ color: '#E8EDF5' }}>Cost:</strong> {c.cost}</div>
+              <div style={{ fontSize: 13, color: '#94A3B8', marginTop: 4 }}><strong style={{ color: '#E8EDF5' }}>Best for:</strong> {c.bestFor}</div>
             </div>
           ))}
         </div>
@@ -89,7 +89,7 @@ export default function DFWGreenBuildingGuide() {
         <p style={{ color: '#94A3B8', marginBottom: 20 }}>Enter your green improvement budget and we'll prioritize upgrades by fastest payback.</p>
         <div style={{ background: '#1E2D45', borderRadius: 16, padding: 28, border: '1px solid #2A3F5C', maxWidth: 500 }}>
           <label style={{ color: '#94A3B8', fontSize: 14, display: 'block', marginBottom: 6 }}>Your Budget ($)</label>
-          <input type="number" value={budget} onChange={e => setBudget(e.target.value)} placeholder="e.g. 15000″
+          <input type="number" value={budget} onChange={e => setBudget(e.target.value)} placeholder="e.g. 15000"
             style={{ width: '100%', background: '#0A1628', border: '1px solid #2A3F5C', borderRadius: 8, padding: '10px 14px', color: '#E8EDF5', fontSize: 16, marginBottom: 16, boxSizing: 'border-box' }} />
           <button onClick={calculate} style={{ background: '#F5E642', color: '#0A1628', border: 'none', borderRadius: 10, padding: '12px 28px', fontWeight: 700, fontSize: 16, cursor: 'pointer', width: '100%' }}>
             Show My Green Upgrade Plan
@@ -114,9 +114,9 @@ export default function DFWGreenBuildingGuide() {
                   <span style={{ fontWeight: 600 }}>{u.name}</span>
                 </div>
                 <div style={{ display: 'flex', gap: 16, fontSize: 14 }}>
-                  <span style={{ color: '#94A3B8′ }}>Cost: <strong style={{ color: '#E8EDF5' }}>${u.cost.toLocaleString()}</strong></span>
-                  <span style={{ color: '#4ADE80′ }}>+${u.annualSavings}/yr</span>
-                  <span style={{ color: '#F5E642′ }}>{u.payback} yr payback</span>
+                  <span style={{ color: '#94A3B8' }}>Cost: <strong style={{ color: '#E8EDF5' }}>${u.cost.toLocaleString()}</strong></span>
+                  <span style={{ color: '#4ADE80' }}>+${u.annualSavings}/yr</span>
+                  <span style={{ color: '#F5E642' }}>{u.payback} yr payback</span>
                 </div>
               </div>
             ))}

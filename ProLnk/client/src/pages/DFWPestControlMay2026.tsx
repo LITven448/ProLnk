@@ -55,15 +55,15 @@ export default function DFWPestControlMay2026() {
   const [selected, setSelected] = useState<number | null>(null);
 
   return (
-    <div style={{ background: "#0A1628″, minHeight: "100vh", color: "#fff", fontFamily: "sans-serif", padding: "2rem" }}>
+    <div style={{ background: "#0A1628", minHeight: "100vh", color: "#fff", fontFamily: "sans-serif", padding: "2rem" }}>
       <div style={{ maxWidth: 780, margin: "0 auto" }}>
-        <div style={{ color: "#F5E642″, fontSize: "0.85rem", fontWeight: 700, letterSpacing: 2, marginBottom: "0.5rem" }}>
+        <div style={{ color: "#F5E642", fontSize: "0.85rem", fontWeight: 700, letterSpacing: 2, marginBottom: "0.5rem" }}>
           PROLNK SEASONAL GUIDE · DFW · MAY 2026
         </div>
         <h1 style={{ fontSize: "2rem", fontWeight: 800, marginBottom: "0.5rem" }}>
           🦟 DFW Pest Control — May 2026 Guide
         </h1>
-        <p style={{ color: "#94a3b8″, marginBottom: "2rem", lineHeight: 1.7 }}>
+        <p style={{ color: "#94a3b8", marginBottom: "2rem", lineHeight: 1.7 }}>
           May is peak pest season across the DFW Metroplex. Spring rain creates mosquito breeding habitat,
           termite swarmers emerge after warm evenings, fire ant colonies are at the surface,
           and scorpion activity increases as temperatures climb. Treat now before summer makes
@@ -72,28 +72,28 @@ export default function DFWPestControlMay2026() {
 
         <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "1rem", marginBottom: "2rem" }}>
           {[
-            { icon: "🐜", stat: "Top 5″, label: "DFW termite pressure nationally" },
+            { icon: "🐜", stat: "Top 5", label: "DFW termite pressure nationally" },
             { icon: "🦟", stat: "May-Oct", label: "Active mosquito season in DFW" },
-            { icon: "💰", stat: "$150-500″, label: "Annual pest protection cost" },
-            { icon: "🏠", stat: "1-in-3″, label: "DFW homes with termite activity" },
+            { icon: "💰", stat: "$150-500", label: "Annual pest protection cost" },
+            { icon: "🏠", stat: "1-in-3", label: "DFW homes with termite activity" },
           ].map((s) => (
-            <div key={s.stat} style={{ background: "#0F2444″, borderRadius: 10, padding: "1rem", textAlign: "center" }}>
+            <div key={s.stat} style={{ background: "#0F2444", borderRadius: 10, padding: "1rem", textAlign: "center" }}>
               <div style={{ fontSize: "1.4rem" }}>{s.icon}</div>
-              <div style={{ color: "#F5E642″, fontSize: "1.1rem", fontWeight: 800 }}>{s.stat}</div>
-              <div style={{ color: "#94a3b8″, fontSize: "0.78rem" }}>{s.label}</div>
+              <div style={{ color: "#F5E642", fontSize: "1.1rem", fontWeight: 800 }}>{s.stat}</div>
+              <div style={{ color: "#94a3b8", fontSize: "0.78rem" }}>{s.label}</div>
             </div>
           ))}
         </div>
 
-        <h2 style={{ color: "#F5E642″, marginBottom: "1rem" }}>Select Your Pest Concern</h2>
+        <h2 style={{ color: "#F5E642", marginBottom: "1rem" }}>Select Your Pest Concern</h2>
         <div style={{ display: "flex", flexDirection: "column", gap: "0.6rem", marginBottom: "2rem" }}>
           {pestConcerns.map((p, i) => (
             <button
               key={i}
               onClick={() => setSelected(i)}
               style={{
-                background: selected === i ? "#1a3a6b" : "#0F2444″,
-                border: selected === i ? "2px solid #F5E642″ : "2px solid transparent",
+                background: selected === i ? "#1a3a6b" : "#0F2444",
+                border: selected === i ? "2px solid #F5E642" : "2px solid transparent",
                 borderRadius: 8, padding: "0.8rem 1rem", color: "#fff",
                 textAlign: "left", cursor: "pointer", fontSize: "0.95rem",
               }}
@@ -104,18 +104,18 @@ export default function DFWPestControlMay2026() {
         </div>
 
         {selected !== null && (
-          <div style={{ background: "#0F2444″, borderRadius: 12, padding: "1.5rem", borderLeft: "4px solid #F5E642" }}>
+          <div style={{ background: "#0F2444", borderRadius: 12, padding: "1.5rem", borderLeft: "4px solid #F5E642" }}>
             <div style={{ fontWeight: 700, marginBottom: "1rem" }}>{pestConcerns[selected].priority}</div>
             <ul style={{ paddingLeft: "1.2rem", margin: 0 }}>
               {pestConcerns[selected].treatment.map((item, i) => (
-                <li key={i} style={{ color: "#cbd5e1″, marginBottom: "0.6rem", lineHeight: 1.6 }}>{item}</li>
+                <li key={i} style={{ color: "#cbd5e1", marginBottom: "0.6rem", lineHeight: 1.6 }}>{item}</li>
               ))}
             </ul>
           </div>
         )}
 
-        <div style={{ marginTop: "2.5rem", background: "#F5E642″, borderRadius: 12, padding: "1.5rem", textAlign: "center" }}>
-          <div style={{ color: "#0A1628″, fontWeight: 800, fontSize: "1.1rem", marginBottom: "0.4rem" }}>
+        <div style={{ marginTop: "2.5rem", background: "#F5E642", borderRadius: 12, padding: "1.5rem", textAlign: "center" }}>
+          <div style={{ color: "#0A1628", fontWeight: 800, fontSize: "1.1rem", marginBottom: "0.4rem" }}>
             🦟 Connect with a Licensed DFW Exterminator via ProLnk
           </div>
           <div style={{ color: "#1a3a6b", fontSize: "0.9rem" }}>TPCL-licensed · Background-checked · Free quotes · Termite warranties available</div>

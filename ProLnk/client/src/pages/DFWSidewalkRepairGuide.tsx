@@ -1,7 +1,7 @@
 import { useState } from 'react';
 
 const DAMAGE_TYPES = [
-  { id: 'trip', label: 'Trip Hazard (raised section > 1/2″)', repair: 'grinding', urgency: 'high' },
+  { id: 'trip', label: 'Trip Hazard (raised section > 1/2")', repair: 'grinding', urgency: 'high' },
   { id: 'tree_root', label: 'Tree Root Heave', repair: 'removal', urgency: 'high' },
   { id: 'clay_heave', label: 'Clay Soil Heave / Cracking', repair: 'mudjacking', urgency: 'medium' },
   { id: 'surface_crack', label: 'Surface Cracks (cosmetic)', repair: 'patch', urgency: 'low' },
@@ -15,7 +15,7 @@ const OWNERSHIP_TYPES = [
 ];
 
 const REPAIR_DETAILS = {
-  grinding: { label: 'Concrete Grinding', low: 150, high: 400, desc: 'Grind raised edge to eliminate trip hazard. Fast, permanent, most cost-effective for small elevation differences. ADA requires < 1/4″ vertical change after repair.' },
+  grinding: { label: 'Concrete Grinding', low: 150, high: 400, desc: 'Grind raised edge to eliminate trip hazard. Fast, permanent, most cost-effective for small elevation differences. ADA requires < 1/4" vertical change after repair.' },
   removal: { label: 'Full Section Replacement', low: 800, high: 2500, desc: 'Remove heaved section, cut roots or install root barrier, pour new concrete. Root barrier is essential — without it, heave recurs in 3–5 years.' },
   mudjacking: { label: 'Mudjacking / Foam Lifting', low: 400, high: 1200, desc: 'Pump slurry or expanding foam under settled slab to re-level. Effective on DFW clay if settled from moisture loss. Does not work on tree root heave.' },
   patch: { label: 'Crack Patching', low: 100, high: 350, desc: 'Fill cracks with concrete patch compound. Cosmetic repair — does not address underlying cause. Monitor for progression.' },
@@ -53,7 +53,7 @@ export default function DFWSidewalkRepairGuide() {
             { icon: '🏛️', title: 'City vs Homeowner — DFW Varies', desc: 'Dallas: homeowners responsible for adjacent sidewalks. Fort Worth: city repairs its sidewalks. Plano, McKinney, Frisco: check individually. Always verify before paying — some DFW cities have repair programs or cost-share arrangements.' },
             { icon: '🌍', title: 'Clay Heave — DFW Specific', desc: 'Blackland Prairie clay expands when wet and contracts when dry, lifting sidewalk panels seasonally. Unlike tree root heave, clay heave can sometimes be addressed with mudjacking and drainage improvements.' },
             { icon: '🌳', title: 'Tree Root Responsibility', desc: 'If a city street tree’s roots caused the damage, the city may be responsible. Document root-to-tree connection with photos before repair. DFW cities have settled sidewalk injury claims.' },
-            { icon: '♿', title: 'ADA Compliance', desc: 'Sidewalks adjacent to public ways must meet ADA standards: max 1/4″ vertical change at joints, 2% cross-slope max, 5% running slope max. Non-compliant repairs create liability.' },
+            { icon: '♿', title: 'ADA Compliance', desc: 'Sidewalks adjacent to public ways must meet ADA standards: max 1/4" vertical change at joints, 2% cross-slope max, 5% running slope max. Non-compliant repairs create liability.' },
           ].map(item => (
             <div key={item.title} style={{ background: '#112240', borderRadius: 10, padding: '16px 20px', border: '1px solid #1e3a5f', display: 'flex', gap: 16, alignItems: 'flex-start' }}>
               <span style={{ fontSize: 24 }}>{item.icon}</span>
@@ -66,7 +66,7 @@ export default function DFWSidewalkRepairGuide() {
         </div>
 
         <div style={{ background: '#112240', borderRadius: 12, padding: 24, border: '1px solid #1e3a5f', marginBottom: 24 }}>
-          <h2 style={{ fontSize: 20, fontWeight: 700, marginBottom: 20, color: '#F5E642′ }}>🧮 Repair Method Finder</h2>
+          <h2 style={{ fontSize: 20, fontWeight: 700, marginBottom: 20, color: '#F5E642' }}>🧮 Repair Method Finder</h2>
           <div style={{ display: 'grid', gap: 14 }}>
             <div>
               <label style={{ display: 'block', marginBottom: 6, fontWeight: 600, fontSize: 14 }}>Type of Damage</label>
@@ -89,9 +89,9 @@ export default function DFWSidewalkRepairGuide() {
               <div style={{ fontWeight: 700, color: '#F5E642', marginBottom: 4 }}>Recommended: {result.repair.label}</div>
               <div style={{ fontSize: 24, fontWeight: 800, color: '#fff', marginBottom: 12 }}>${result.repair.low.toLocaleString()} – ${result.repair.high.toLocaleString()}</div>
               <div style={{ color: '#94a3b8', fontSize: 14, marginBottom: 16, lineHeight: 1.6 }}>{result.repair.desc}</div>
-              {result.ada && <div style={{ background: '#7f1d1d', borderRadius: 8, padding: 12, marginBottom: 12, fontSize: 13, color: '#fca5a5′ }}>⚠️ {result.ada}</div>}
+              {result.ada && <div style={{ background: '#7f1d1d', borderRadius: 8, padding: 12, marginBottom: 12, fontSize: 13, color: '#fca5a5' }}>⚠️ {result.ada}</div>}
               <div style={{ background: '#112240', borderRadius: 8, padding: 14, fontSize: 14, color: '#94a3b8', lineHeight: 1.6 }}>
-                <strong style={{ color: '#F5E642′ }}>Responsibility: </strong>{result.responsibility}
+                <strong style={{ color: '#F5E642' }}>Responsibility: </strong>{result.responsibility}
               </div>
             </div>
           )}

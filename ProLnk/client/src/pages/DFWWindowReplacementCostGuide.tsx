@@ -43,7 +43,7 @@ export default function DFWWindowReplacementCostGuide() {
           Dallas–Fort Worth 2026 pricing — single, double &amp; triple pane, frame types, Low-E coatings, and DFW-specific energy savings.
         </p>
 
-        <div style={{ backgroundColor: '#112244', borderRadius: 12, padding: 24, marginBottom: 32, borderLeft: '4px solid #F5E642′ }}>
+        <div style={{ backgroundColor: '#112244', borderRadius: 12, padding: 24, marginBottom: 32, borderLeft: '4px solid #F5E642' }}>
           <div style={{ fontSize: 20, marginBottom: 4 }}>☀️ DFW Climate Factor</div>
           <p style={{ color: '#C8D4E8', margin: 0, lineHeight: 1.6 }}>
             DFW averages 234+ sunny days per year with summer temps exceeding 100°F. Solar heat gain is the #1 factor in window selection — prioritize Low-E coatings and SHGC ratings below 0.25 for south and west-facing windows.
@@ -54,21 +54,21 @@ export default function DFWWindowReplacementCostGuide() {
         <div style={{ overflowX: 'auto', marginBottom: 36 }}>
           <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: 14 }}>
             <thead>
-              <tr style={{ backgroundColor: '#1A2E50′ }}>
-                <th style={{ padding: '12px 16px', textAlign: 'left', color: '#F5E642′ }}>Type</th>
-                <th style={{ padding: '12px 16px', textAlign: 'left', color: '#F5E642′ }}>Per Window</th>
-                <th style={{ padding: '12px 16px', textAlign: 'left', color: '#F5E642′ }}>Full Home (15–20 windows)</th>
-                <th style={{ padding: '12px 16px', textAlign: 'left', color: '#F5E642′ }}>U-Factor</th>
-                <th style={{ padding: '12px 16px', textAlign: 'left', color: '#F5E642′ }}>DFW Notes</th>
+              <tr style={{ backgroundColor: '#1A2E50' }}>
+                <th style={{ padding: '12px 16px', textAlign: 'left', color: '#F5E642' }}>Type</th>
+                <th style={{ padding: '12px 16px', textAlign: 'left', color: '#F5E642' }}>Per Window</th>
+                <th style={{ padding: '12px 16px', textAlign: 'left', color: '#F5E642' }}>Full Home (15–20 windows)</th>
+                <th style={{ padding: '12px 16px', textAlign: 'left', color: '#F5E642' }}>U-Factor</th>
+                <th style={{ padding: '12px 16px', textAlign: 'left', color: '#F5E642' }}>DFW Notes</th>
               </tr>
             </thead>
             <tbody>
               {windowTypes.map((row, i) => (
-                <tr key={i} style={{ backgroundColor: i % 2 === 0 ? '#0D1E38′ : '#0A1628', borderBottom: '1px solid #1A2E50' }}>
+                <tr key={i} style={{ backgroundColor: i % 2 === 0 ? '#0D1E38' : '#0A1628', borderBottom: '1px solid #1A2E50' }}>
                   <td style={{ padding: '11px 16px', fontWeight: 600, color: '#FFFFFF' }}>{row.type}</td>
-                  <td style={{ padding: '11px 16px', color: '#C8D4E8′ }}>{row.perWindow}</td>
-                  <td style={{ padding: '11px 16px', color: '#C8D4E8′ }}>{row.fullHome}</td>
-                  <td style={{ padding: '11px 16px', color: '#F5E642′ }}>{row.uFactor}</td>
+                  <td style={{ padding: '11px 16px', color: '#C8D4E8' }}>{row.perWindow}</td>
+                  <td style={{ padding: '11px 16px', color: '#C8D4E8' }}>{row.fullHome}</td>
+                  <td style={{ padding: '11px 16px', color: '#F5E642' }}>{row.uFactor}</td>
                   <td style={{ padding: '11px 16px', color: '#A0ADBF', fontSize: 13 }}>{row.notes}</td>
                 </tr>
               ))}
@@ -124,7 +124,7 @@ export default function DFWWindowReplacementCostGuide() {
           {estimatedSavings !== null ? (
             <div style={{ backgroundColor: '#0A1628', borderRadius: 10, padding: 20, textAlign: 'center' }}>
               <div style={{ fontSize: 13, color: '#A0ADBF', marginBottom: 4 }}>ESTIMATED ANNUAL ENERGY SAVINGS AFTER UPGRADE</div>
-              <div style={{ fontSize: 44, fontWeight: 800, color: '#F5E642′ }}>${estimatedSavings}</div>
+              <div style={{ fontSize: 44, fontWeight: 800, color: '#F5E642' }}>${estimatedSavings}</div>
               <div style={{ color: '#C8D4E8', fontSize: 13, marginTop: 6 }}>Upgrading to double pane Low-E in a {homeSqft.toLocaleString()} sq ft DFW home</div>
             </div>
           ) : (

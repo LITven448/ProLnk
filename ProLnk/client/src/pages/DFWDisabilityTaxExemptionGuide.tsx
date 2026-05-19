@@ -9,10 +9,10 @@ const disabilityTypes = [
 ];
 
 const counties = [
-  { id: 'dallas', label: 'Dallas County', form: 'Form 50-114 or 50-116', contact: 'Dallas CAD · (214) 631-0910′ },
-  { id: 'tarrant', label: 'Tarrant County', form: 'Form 50-114', contact: 'Tarrant CAD · (817) 284-0024′ },
-  { id: 'collin', label: 'Collin County', form: 'Form 50-114', contact: 'Collin CAD · (469) 742-9200′ },
-  { id: 'denton', label: 'Denton County', form: 'Form 50-114', contact: 'Denton CAD · (940) 349-3800′ },
+  { id: 'dallas', label: 'Dallas County', form: 'Form 50-114 or 50-116', contact: 'Dallas CAD · (214) 631-0910' },
+  { id: 'tarrant', label: 'Tarrant County', form: 'Form 50-114', contact: 'Tarrant CAD · (817) 284-0024' },
+  { id: 'collin', label: 'Collin County', form: 'Form 50-114', contact: 'Collin CAD · (469) 742-9200' },
+  { id: 'denton', label: 'Denton County', form: 'Form 50-114', contact: 'Denton CAD · (940) 349-3800' },
 ];
 
 const docs: Record<string, string[]> = {
@@ -36,7 +36,7 @@ export default function DFWDisabilityTaxExemptionGuide() {
         <h1 style={{ fontSize: 28, fontWeight: 700, marginBottom: 8 }}>Disability Property Tax Exemption Guide</h1>
         <p style={{ color: '#64748B', marginBottom: 24, fontSize: 15 }}>Texas provides significant property tax exemptions for homeowners with qualifying disabilities. Understand what you qualify for, what documents you need, and how to apply at your county appraisal district.</p>
 
-        <div style={{ background: '#F5F3FF', border: '1px solid #DDD6FE', borderRadius: 10, padding: '14px 18px', marginBottom: 28, fontSize: 14, color: '#4C1D95′ }}>
+        <div style={{ background: '#F5F3FF', border: '1px solid #DDD6FE', borderRadius: 10, padding: '14px 18px', marginBottom: 28, fontSize: 14, color: '#4C1D95' }}>
           <strong>Key difference from over-65:</strong> The disability exemption applies to the $10,000 school exemption only (not a freeze). However, 100% VA-rated veterans get a full exemption across all tax portions. You cannot claim both the disability and over-65 school freeze simultaneously — use whichever benefits you more.
         </div>
 
@@ -72,7 +72,7 @@ export default function DFWDisabilityTaxExemptionGuide() {
             {(docs[disChosen.id] || []).map((doc, i) => (
               <div key={i} style={{ display: 'flex', gap: 8, fontSize: 14, color: '#374151', marginBottom: 8 }}><span style={{ color: '#7C3AED' }}>→</span>{doc}</div>
             ))}
-            <div style={{ marginTop: 16, background: '#F5F3FF', borderRadius: 8, padding: 12, fontSize: 13, color: '#4C1D95′ }}>
+            <div style={{ marginTop: 16, background: '#F5F3FF', borderRadius: 8, padding: 12, fontSize: 13, color: '#4C1D95' }}>
               💡 Estimated savings: $10,000 exemption = ~$250–$450/yr reduction in school taxes. 100% VA exemption = full bill eliminated (avg $4,000–$12,000/yr in DFW).
             </div>
           </div>

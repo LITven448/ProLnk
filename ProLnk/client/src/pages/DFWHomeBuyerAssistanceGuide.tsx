@@ -65,10 +65,10 @@ export default function DFWHomeBuyerAssistanceGuide() {
           <p style={{ color: '#CBD5E1', fontSize: 15, margin: 0 }}>Texas state and local programs that help DFW buyers get into a home with less out of pocket.</p>
         </div>
 
-        <div style={{ background: '#fff', borderRadius: 12, padding: 24, marginBottom: 24, border: '1px solid #E2E8F0′ }}>
+        <div style={{ background: '#fff', borderRadius: 12, padding: 24, marginBottom: 24, border: '1px solid #E2E8F0' }}>
           <h2 style={{ color: '#0A1628', fontSize: 18, fontWeight: 700, marginBottom: 16 }}>📋 Available Programs in DFW</h2>
           {programs.map(prog => (
-            <div key={prog.name} style={{ background: '#F9FAFB', borderRadius: 8, padding: 16, marginBottom: 12, border: '1px solid #E2E8F0′ }}>
+            <div key={prog.name} style={{ background: '#F9FAFB', borderRadius: 8, padding: 16, marginBottom: 12, border: '1px solid #E2E8F0' }}>
               <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: 6 }}>
                 <div style={{ color: '#0A1628', fontWeight: 700, fontSize: 15 }}>{prog.name}</div>
                 {prog.firstTime && <span style={{ background: '#0A1628', color: '#F5E642', borderRadius: 6, padding: '2px 8px', fontSize: 11, flexShrink: 0 }}>First-time only</span>}
@@ -87,18 +87,18 @@ export default function DFWHomeBuyerAssistanceGuide() {
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: 12, marginBottom: 12 }}>
             <div>
               <label style={{ color: '#CBD5E1', fontSize: 13, display: 'block', marginBottom: 4 }}>Household income ($)</label>
-              <input type="number" value={income} onChange={e => setIncome(e.target.value)} placeholder="e.g. 75000″ style={{ width: '100%', padding: '10px', borderRadius: 8, border: 'none', fontSize: 14, boxSizing: 'border-box' }} />
+              <input type="number" value={income} onChange={e => setIncome(e.target.value)} placeholder="e.g. 75000" style={{ width: '100%', padding: '10px', borderRadius: 8, border: 'none', fontSize: 14, boxSizing: 'border-box' }} />
             </div>
             <div>
               <label style={{ color: '#CBD5E1', fontSize: 13, display: 'block', marginBottom: 4 }}>Family size</label>
               <select value={familySize} onChange={e => setFamilySize(e.target.value)} style={{ width: '100%', padding: '10px', borderRadius: 8, border: 'none', fontSize: 14 }}>
                 <option value="">Select...</option>
-                {['1', '2', '3', '4', '5+'].map(n => <option key={n} value={n}>{n} {n === '1′ ? ’person' : 'people'}</option>)}
+                {['1', '2', '3', '4', '5+'].map(n => <option key={n} value={n}>{n} {n === '1' ? 'person' : 'people'}</option>)}
               </select>
             </div>
             <div>
               <label style={{ color: '#CBD5E1', fontSize: 13, display: 'block', marginBottom: 4 }}>Target home price ($)</label>
-              <input type="number" value={homePrice} onChange={e => setHomePrice(e.target.value)} placeholder="e.g. 320000″ style={{ width: '100%', padding: '10px', borderRadius: 8, border: 'none', fontSize: 14, boxSizing: 'border-box' }} />
+              <input type="number" value={homePrice} onChange={e => setHomePrice(e.target.value)} placeholder="e.g. 320000" style={{ width: '100%', padding: '10px', borderRadius: 8, border: 'none', fontSize: 14, boxSizing: 'border-box' }} />
             </div>
           </div>
           <button onClick={calculate} style={{ background: '#F5E642', color: '#0A1628', border: 'none', borderRadius: 8, padding: '12px 24px', fontWeight: 700, fontSize: 15, cursor: 'pointer', width: '100%' }}>Show Qualified Programs + Savings</button>

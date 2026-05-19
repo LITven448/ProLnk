@@ -28,7 +28,7 @@ export default function GroutRepairGuide() {
   const [activeType, setActiveType] = useState<number>(0);
 
   return (
-    <div style={{ background: '#0A1628', minHeight: '100vh', fontFamily: 'system-ui, sans-serif', color: '#e8eaf0′ }}>
+    <div style={{ background: '#0A1628', minHeight: '100vh', fontFamily: 'system-ui, sans-serif', color: '#e8eaf0' }}>
       <div style={{ maxWidth: 860, margin: '0 auto', padding: '48px 24px' }}>
 
         {/* Header */}
@@ -72,7 +72,7 @@ export default function GroutRepairGuide() {
               <button
                 key={g.name}
                 onClick={() => setActiveType(i)}
-                style={{ padding: '8px 16px', borderRadius: 8, border: 'none', cursor: 'pointer', fontWeight: 600, fontSize: 14, background: activeType === i ? '#F5C518′ : '#1e3048', color: activeType === i ? '#0A1628' : '#a0aec0' }}
+                style={{ padding: '8px 16px', borderRadius: 8, border: 'none', cursor: 'pointer', fontWeight: 600, fontSize: 14, background: activeType === i ? '#F5C518' : '#1e3048', color: activeType === i ? '#0A1628' : '#a0aec0' }}
               >
                 {g.name}
               </button>

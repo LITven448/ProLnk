@@ -37,7 +37,7 @@ export default function DFWAdhesiveGuide() {
           <h2 style={{ color: '#F5E642', fontSize: 18, marginBottom: 20 }}>⚠️ DFW Heat Warning</h2>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12 }}>
             {['Standard Liquid Nails: fails at 90°F in direct sun', 'Most foam adhesives: bubble and release at 95°F+', 'Gorilla Glue (original): expands uncontrollably in DFW heat', 'Epoxy putty sticks: short working time — work in shade'].map(w => (
-              <div key={w} style={{ backgroundColor: '#0A1628', borderRadius: 8, padding: 12, fontSize: 13, color: '#CBD5E1', borderLeft: '3px solid #F5A623′ }}>
+              <div key={w} style={{ backgroundColor: '#0A1628', borderRadius: 8, padding: 12, fontSize: 13, color: '#CBD5E1', borderLeft: '3px solid #F5A623' }}>
                 ⚡ {w}
               </div>
             ))}
@@ -75,7 +75,7 @@ export default function DFWAdhesiveGuide() {
         </div>
 
         {result && (
-          <div style={{ backgroundColor: '#112240', borderRadius: 12, padding: 24, borderLeft: '4px solid #F5E642′ }}>
+          <div style={{ backgroundColor: '#112240', borderRadius: 12, padding: 24, borderLeft: '4px solid #F5E642' }}>
             <h3 style={{ color: '#F5E642', marginBottom: 16 }}>✅ Recommended Product</h3>
             <div style={{ backgroundColor: '#0A1628', borderRadius: 8, padding: 16, marginBottom: 12 }}>
               <div style={{ fontSize: 17, fontWeight: 700, color: '#E8EDF5', marginBottom: 6 }}>🛒 {result.product}</div>

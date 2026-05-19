@@ -13,19 +13,19 @@ export default function DFWPoolCoverMotorGuide() {
       cover = 'Automatic Safety Cover';
       motor = 'Electric Motor (direct drive)';
       brand = 'Coverstar CS6000';
-      cost = size < 400 ? '$8,500–$12,000′ : '$12,000–$18,000';
+      cost = size < 400 ? '$8,500–$12,000' : '$12,000–$18,000';
       notes = 'Meets ASTM F1346 safety standard. Electric motors preferred for DFW—hydraulic lines can fail in 100°F+ heat.';
     } else if (priority === 'evaporation') {
       cover = 'Solar Safety Cover or Automatic Solid Cover';
       motor = 'Electric Motor (reel system)';
       brand = 'Covertech Grando';
-      cost = size < 400 ? '$6,000–$9,500′ : '$9,500–$15,000';
+      cost = size < 400 ? '$6,000–$9,500' : '$9,500–$15,000';
       notes = 'DFW pools lose 1–2 inches per week to evaporation in summer. A solid cover reduces loss by 95%. Saves 10,000–30,000 gallons/year.';
     } else {
       cover = 'Insulated Automatic Cover';
       motor = 'Hydraulic Motor (better torque in heat)';
       brand = 'Coverstar Atlantic';
-      cost = size < 400 ? '$9,000–$14,000′ : '$14,000–$22,000';
+      cost = size < 400 ? '$9,000–$14,000' : '$14,000–$22,000';
       notes = 'DFW pools can reach 95°F+ without cover. Insulated covers reduce solar gain by 75%. Hydraulic motors handle large covers better in heat.';
     }
     setResult({ cover, motor, brand, cost, notes });
@@ -60,9 +60,9 @@ export default function DFWPoolCoverMotorGuide() {
           <h2 style={{ color: '#F5E642', fontSize: 18, marginBottom: 16 }}>⚙️ Motor Type Comparison</h2>
           <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: 14 }}>
             <thead>
-              <tr style={{ borderBottom: '1px solid #1A3055′ }}>
+              <tr style={{ borderBottom: '1px solid #1A3055' }}>
                 {['Feature', 'Electric (Direct Drive)', 'Hydraulic'].map(h => (
-                  <th key={h} style={{ textAlign: 'left', padding: '8px 12px', color: '#9BAEC8′ }}>{h}</th>
+                  <th key={h} style={{ textAlign: 'left', padding: '8px 12px', color: '#9BAEC8' }}>{h}</th>
                 ))}
               </tr>
             </thead>
@@ -74,9 +74,9 @@ export default function DFWPoolCoverMotorGuide() {
                 ['Cost', '$800–$1,500', '$1,500–$3,000'],
                 ['Lifespan', '10–15 years', '12–20 years'],
               ].map(row => (
-                <tr key={row[0]} style={{ borderBottom: '1px solid #0A1628′ }}>
+                <tr key={row[0]} style={{ borderBottom: '1px solid #0A1628' }}>
                   {row.map((cell, i) => (
-                    <td key={i} style={{ padding: '10px 12px', color: i === 0 ? '#E8EDF5′ : '#9BAEC8' }}>{cell}</td>
+                    <td key={i} style={{ padding: '10px 12px', color: i === 0 ? '#E8EDF5' : '#9BAEC8' }}>{cell}</td>
                   ))}
                 </tr>
               ))}
@@ -88,7 +88,7 @@ export default function DFWPoolCoverMotorGuide() {
           <div style={{ display: 'grid', gap: 16 }}>
             <div>
               <label style={{ display: 'block', color: '#9BAEC8', marginBottom: 8, fontSize: 14 }}>Pool Surface Area (sq ft)</label>
-              <input type="number" placeholder="e.g. 400″ value={poolSize} onChange={e => setPoolSize(e.target.value)}
+              <input type="number" placeholder="e.g. 400" value={poolSize} onChange={e => setPoolSize(e.target.value)}
                 style={{ width: '100%', padding: '12px 16px', background: '#0A1628', border: '1px solid #1A3055', borderRadius: 8, color: '#E8EDF5', fontSize: 15, boxSizing: 'border-box' }} />
             </div>
             <div>
@@ -107,7 +107,7 @@ export default function DFWPoolCoverMotorGuide() {
             </button>
           </div>
           {result && (
-            <div style={{ marginTop: 24, background: '#0A1628', borderRadius: 10, padding: 20, borderLeft: '3px solid #F5E642′ }}>
+            <div style={{ marginTop: 24, background: '#0A1628', borderRadius: 10, padding: 20, borderLeft: '3px solid #F5E642' }}>
               <div style={{ display: 'grid', gap: 10 }}>
                 <div><span style={{ color: '#9BAEC8', fontSize: 13 }}>Cover Type</span><div style={{ color: '#F5E642', fontWeight: 700, fontSize: 17, marginTop: 2 }}>{result.cover}</div></div>
                 <div><span style={{ color: '#9BAEC8', fontSize: 13 }}>Motor Type</span><div style={{ color: '#E8EDF5', fontWeight: 600, marginTop: 2 }}>{result.motor}</div></div>

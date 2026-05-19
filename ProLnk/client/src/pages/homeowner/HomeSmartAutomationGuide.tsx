@@ -120,7 +120,7 @@ export default function HomeSmartAutomationGuide() {
               </button>
               {selected === i && (
                 <div style={{ padding: '0 24px 24px' }}>
-                  <div style={{ background: '#132038', borderRadius: 8, padding: 16, marginBottom: 16, borderLeft: '3px solid #3B82F6′ }}>
+                  <div style={{ background: '#132038', borderRadius: 8, padding: 16, marginBottom: 16, borderLeft: '3px solid #3B82F6' }}>
                     <div style={{ fontSize: 12, color: '#3B82F6', fontWeight: 700, marginBottom: 6, textTransform: 'uppercase' }}>DFW-Specific Value</div>
                     <p style={{ color: '#94A3B8', lineHeight: 1.7, margin: 0 }}>{device.dfwNote}</p>
                   </div>

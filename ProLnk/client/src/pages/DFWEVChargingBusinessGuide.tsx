@@ -67,13 +67,13 @@ export default function DFWEVChargingBusinessGuide() {
             </div>
           ))}
           <button onClick={() => setShowResult(true)} disabled={!parking || !zone}
-            style={{ width: '100%', background: parking && zone ? '#F5E642′ : '#1E3A5F', color: parking && zone ? '#0A1628' : '#4A6FA5', border: ’none', borderRadius: 8, padding: '12px 0', fontSize: 16, fontWeight: 700, cursor: parking && zone ? 'pointer' : 'default' }}>
+            style={{ width: '100%', background: parking && zone ? '#F5E642' : '#1E3A5F', color: parking && zone ? '#0A1628' : '#4A6FA5', border: 'none', borderRadius: 8, padding: '12px 0', fontSize: 16, fontWeight: 700, cursor: parking && zone ? 'pointer' : 'default' }}>
             Estimate My DFW EV Charging Income →
           </button>
         </div>
 
         {showResult && result && (
-          <div style={{ background: '#111D35', borderRadius: 12, padding: 24, border: '2px solid #F5E642′ }}>
+          <div style={{ background: '#111D35', borderRadius: 12, padding: 24, border: '2px solid #F5E642' }}>
             <h3 style={{ color: '#F5E642', fontSize: 20, marginBottom: 20 }}>💰 Your DFW EV Charging Business Plan</h3>
             {[
               ['✅', 'Demand Assessment', result.eligibility],

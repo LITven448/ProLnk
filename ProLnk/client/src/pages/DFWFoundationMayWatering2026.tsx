@@ -50,8 +50,8 @@ export default function DFWFoundationMayWatering2026() {
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: 10 }}>
             {scenarios.map(s => (
               <button key={s.id} onClick={() => setSelected(s.id)} style={{
-                background: selected === s.id ? '#F5E642′ : '#111D2E',
-                color: selected === s.id ? '#0A1628′ : '#fff',
+                background: selected === s.id ? '#F5E642' : '#111D2E',
+                color: selected === s.id ? '#0A1628' : '#fff',
                 border: '1px solid #F5E642', borderRadius: 8, padding: '10px 16px',
                 cursor: 'pointer', fontWeight: 600, fontSize: 13,
               }}>{s.label}</button>

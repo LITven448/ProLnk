@@ -27,7 +27,7 @@ export default function DFWRoofingHailSizeTracking2026() {
     }
     if (stage === 'A few hours after storm') {
       tips.push('🔍 Check frozen specimens in freezer — measure diameter at widest point with ruler');
-      tips.push('📊 1″ hail = dime size, 1.5″ = quarter size, 1.75″ = golf ball — insurance thresholds differ by carrier');
+      tips.push('📊 1" hail = dime size, 1.5" = quarter size, 1.75" = golf ball — insurance thresholds differ by carrier');
       tips.push('📸 Photograph damage to soft metals: gutters, downspouts, AC fins — these document hail size forensically');
     }
     if (stage === 'Next day — no specimens left') {
@@ -36,8 +36,8 @@ export default function DFWRoofingHailSizeTracking2026() {
       tips.push('🏠 Soft metal damage (AC fins, gutters, fascia) tells size story even without specimens');
     }
     if (stage === 'Filing insurance claim now') {
-      tips.push('📋 Class 4 shingles require 1.75″+ hail for impact damage — know your shingle class before claim');
-      tips.push('💰 Larger documented size = higher claim value — every 0.25″ matters for adjuster assessment');
+      tips.push('📋 Class 4 shingles require 1.75"+ hail for impact damage — know your shingle class before claim');
+      tips.push('💰 Larger documented size = higher claim value — every 0.25" matters for adjuster assessment');
       tips.push('🤝 Hire a public adjuster for DFW hail claims over $15K — they average 20-40% higher settlements');
     }
     tips.push('🔧 $5-10 hail measuring tool from hardware store — keep it in your storm kit permanently');
@@ -76,7 +76,7 @@ export default function DFWRoofingHailSizeTracking2026() {
         )}
 
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16, marginBottom: 20 }}>
-          {[['🪙 Size Reference', '1″=dime, 1.25″=nickel, 1.5″=quarter, 1.75″=golf ball threshold'],['❄️ Freeze Fast', 'DFW heat destroys specimens — freezer within 5 min of storm end'],['📱 Apps', 'iHail and HailTrace for real-time DFW hail size crowd-sourcing'],['🛡️ Class 4 Threshold', '1.75″+ hail required for Class 4 shingle impact claim in DFW']].map(([title, desc]) => (
+          {[['🪙 Size Reference', '1"=dime, 1.25"=nickel, 1.5"=quarter, 1.75"=golf ball threshold'],['❄️ Freeze Fast', 'DFW heat destroys specimens — freezer within 5 min of storm end'],['📱 Apps', 'iHail and HailTrace for real-time DFW hail size crowd-sourcing'],['🛡️ Class 4 Threshold', '1.75"+ hail required for Class 4 shingle impact claim in DFW']].map(([title, desc]) => (
             <div key={title} style={{ background: '#112240', borderRadius: 10, padding: 16 }}>
               <div style={{ fontWeight: 700, marginBottom: 6 }}>{title}</div>
               <div style={{ color: '#94a3b8', fontSize: 13 }}>{desc}</div>

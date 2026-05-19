@@ -1,7 +1,7 @@
 import { useState } from 'react';
 
 const categories = [
-  { label: '🔧 HVAC', value: 'hvac', count: 420, topics: 'Compression ratios, TXV failure, superheat/subcooling, burnout, contamination, seasonal prep, R-410A vs R-32′ },
+  { label: '🔧 HVAC', value: 'hvac', count: 420, topics: 'Compression ratios, TXV failure, superheat/subcooling, burnout, contamination, seasonal prep, R-410A vs R-32' },
   { label: '💧 Plumbing', value: 'plumbing', count: 380, topics: 'Slab leaks, water heater sizing, DFW hard water, tankless conversion, backflow, drain clearing' },
   { label: '⚡ Electrical', value: 'electrical', count: 290, topics: 'Panel upgrades, EV charger installs, GFCI/AFCI, aluminum wiring, generator hookup' },
   { label: '🏠 Foundation & Structure', value: 'foundation', count: 210, topics: 'DFW clay soil movement, pier leveling, crack evaluation, drainage systems, drainage grading' },
@@ -37,12 +37,12 @@ export default function DFWHomeResourceLibrary() {
           <div style={{ color: '#F5E642', fontWeight: 700, marginBottom: 16 }}>📂 Explore by Category</div>
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: 10 }}>
             {categories.map(c => (
-              <button key={c.value} onClick={() => setCategory(c)} style={{ padding: '10px 16px', borderRadius: 8, border: 'none', cursor: 'pointer', background: category.value === c.value ? '#F5E642′ : '#1e3a5f', color: category.value === c.value ? '#0A1628' : '#fff', fontWeight: 600 }}>{c.label} ({c.count})</button>
+              <button key={c.value} onClick={() => setCategory(c)} style={{ padding: '10px 16px', borderRadius: 8, border: 'none', cursor: 'pointer', background: category.value === c.value ? '#F5E642' : '#1e3a5f', color: category.value === c.value ? '#0A1628' : '#fff', fontWeight: 600 }}>{c.label} ({c.count})</button>
             ))}
           </div>
         </div>
 
-        <div style={{ background: '#111f3a', borderRadius: 12, padding: 24, marginBottom: 20, borderLeft: '4px solid #F5E642′ }}>
+        <div style={{ background: '#111f3a', borderRadius: 12, padding: 24, marginBottom: 20, borderLeft: '4px solid #F5E642' }}>
           <div style={{ fontWeight: 700, fontSize: 20, marginBottom: 6 }}>{category.label} — {category.count} Guides</div>
           <div style={{ color: '#94a3b8', lineHeight: 1.7 }}>Topics covered: {category.topics}</div>
         </div>
@@ -51,7 +51,7 @@ export default function DFWHomeResourceLibrary() {
           <div style={{ color: '#F5E642', fontWeight: 700, marginBottom: 16 }}>🎯 Your Situation — Where to Start</div>
           <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
             {situations.map(s => (
-              <button key={s.value} onClick={() => setSituation(s)} style={{ padding: '12px 16px', borderRadius: 8, border: 'none', cursor: 'pointer', textAlign: 'left', background: situation.value === s.value ? '#F5E642′ : '#1e3a5f', color: situation.value === s.value ? '#0A1628' : '#fff', fontWeight: 600 }}>{s.label}</button>
+              <button key={s.value} onClick={() => setSituation(s)} style={{ padding: '12px 16px', borderRadius: 8, border: 'none', cursor: 'pointer', textAlign: 'left', background: situation.value === s.value ? '#F5E642' : '#1e3a5f', color: situation.value === s.value ? '#0A1628' : '#fff', fontWeight: 600 }}>{s.label}</button>
             ))}
           </div>
           {situation && (

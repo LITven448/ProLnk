@@ -60,7 +60,7 @@ export default function DFWSidingMaintenanceGuide() {
         </div>
         <h1 style={{ fontSize: 32, fontWeight: 800, marginBottom: 8 }}>Siding Maintenance Guide</h1>
         <p style={{ color: '#94A3B8', fontSize: 16, marginBottom: 32 }}>
-          DFW's extreme heat, UV, and clay soil movement stress every siding type differently. Know your material’s maintenance cycle.
+          DFW's extreme heat, UV, and clay soil movement stress every siding type differently. Know your material's maintenance cycle.
         </p>
 
         <div style={{ display: 'grid', gap: 20, marginBottom: 36 }}>
@@ -80,11 +80,11 @@ export default function DFWSidingMaintenanceGuide() {
         </div>
 
         <div style={{ backgroundColor: '#111F3A', borderRadius: 16, padding: 28 }}>
-          <h2 style={{ fontSize: 20, fontWeight: 700, marginBottom: 20, color: '#F5E642′ }}>🧮 Siding Maintenance Calculator</h2>
+          <h2 style={{ fontSize: 20, fontWeight: 700, marginBottom: 20, color: '#F5E642' }}>🧮 Siding Maintenance Calculator</h2>
           <div style={{ display: 'grid', gap: 16, marginBottom: 20 }}>
             {[
               { label: 'Siding Type', state: sidingType, set: setSidingType, opts: sidingTypes, isSelect: true },
-              { label: 'Siding Age (Years)', state: sidingAge, set: setSidingAge, isSelect: false, ph: 'e.g. 18′ },
+              { label: 'Siding Age (Years)', state: sidingAge, set: setSidingAge, isSelect: false, ph: 'e.g. 18' },
               { label: 'Current Condition', state: condition, set: setCondition, opts: conditionOptions, isSelect: true },
             ].map(f => (
               <div key={f.label}>
@@ -112,7 +112,7 @@ export default function DFWSidingMaintenanceGuide() {
               ].map(r => (
                 <div key={r.label} style={{ backgroundColor: '#0A1628', borderRadius: 10, padding: 16 }}>
                   <div style={{ color: '#F5E642', fontSize: 12, fontWeight: 700, marginBottom: 4 }}>{r.label}</div>
-                  <div style={{ fontSize: 14, color: '#E2E8F0′ }}>{r.value}</div>
+                  <div style={{ fontSize: 14, color: '#E2E8F0' }}>{r.value}</div>
                 </div>
               ))}
             </div>

@@ -7,7 +7,7 @@ interface InspectionItem {
 }
 
 const inspectionItems: InspectionItem[] = [
-  { category: 'Insulation depth', whatToLookFor: 'Measure in multiple spots with a ruler', redFlag: 'Less than 13 inches of blown-in = below R-38′ },
+  { category: 'Insulation depth', whatToLookFor: 'Measure in multiple spots with a ruler', redFlag: 'Less than 13 inches of blown-in = below R-38' },
   { category: 'Air sealing', whatToLookFor: 'Gaps around light fixtures, plumbing penetrations', redFlag: 'Any visible light from below = major air leak' },
   { category: 'Ventilation', whatToLookFor: 'Soffit vents, ridge vent or gable vents', redFlag: 'No cross-ventilation path = trapped heat' },
   { category: 'Moisture / mold', whatToLookFor: 'Dark staining on decking or rafters', redFlag: 'Any black or green discoloration = active mold risk' },
@@ -29,7 +29,7 @@ export default function AtticGuide() {
   const [openFind, setOpenFind] = useState<number | null>(null);
 
   return (
-    <div style={{ background: '#0A1628', minHeight: '100vh', fontFamily: 'system-ui, sans-serif', color: '#e8eaf0′ }}>
+    <div style={{ background: '#0A1628', minHeight: '100vh', fontFamily: 'system-ui, sans-serif', color: '#e8eaf0' }}>
       <div style={{ maxWidth: 860, margin: '0 auto', padding: '48px 24px' }}>
 
         {/* Header */}
@@ -48,10 +48,10 @@ export default function AtticGuide() {
         {/* Key stats */}
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))', gap: 14, marginBottom: 40 }}>
           {[
-            { value: '150°F+', label: 'Peak attic temp in DFW summer', color: '#ef4444′ },
-            { value: 'R-49', label: 'Current recommended standard', color: '#F5C518′ },
-            { value: 'R-25', label: 'What most pre-2010 homes have', color: '#94a3b8′ },
-            { value: '30%', label: 'Federal tax credit through 2032', color: '#10b981′ },
+            { value: '150°F+', label: 'Peak attic temp in DFW summer', color: '#ef4444' },
+            { value: 'R-49', label: 'Current recommended standard', color: '#F5C518' },
+            { value: 'R-25', label: 'What most pre-2010 homes have', color: '#94a3b8' },
+            { value: '30%', label: 'Federal tax credit through 2032', color: '#10b981' },
           ].map((s) => (
             <div key={s.label} style={{ background: '#132035', borderRadius: 12, padding: '18px 16px' }}>
               <div style={{ fontSize: 28, fontWeight: 800, color: s.color, marginBottom: 6 }}>{s.value}</div>
@@ -95,7 +95,7 @@ export default function AtticGuide() {
                 </button>
                 {openItem === i && (
                   <div style={{ padding: '0 20px 16px 50px' }}>
-                    <div style={{ color: '#94a3b8', marginBottom: 10, lineHeight: 1.6 }}><strong style={{ color: '#cbd5e1′ }}>What to look for:</strong> {item.whatToLookFor}</div>
+                    <div style={{ color: '#94a3b8', marginBottom: 10, lineHeight: 1.6 }}><strong style={{ color: '#cbd5e1' }}>What to look for:</strong> {item.whatToLookFor}</div>
                     <div style={{ background: '#7f1d1d', borderRadius: 8, padding: '10px 14px', color: '#fca5a5', fontSize: 14 }}>
                       <strong>Red flag:</strong> {item.redFlag}
                     </div>

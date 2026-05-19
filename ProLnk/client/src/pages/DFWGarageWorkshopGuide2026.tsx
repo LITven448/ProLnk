@@ -42,20 +42,20 @@ export default function DFWGarageWorkshopGuide2026() {
         </div>
 
         <div style={{ background: '#112240', borderRadius: 12, padding: 24 }}>
-          <h2 style={{ fontSize: 18, fontWeight: 700, marginBottom: 16, color: '#F5E642′ }}>🔍 Get Your Workshop Plan</h2>
+          <h2 style={{ fontSize: 18, fontWeight: 700, marginBottom: 16, color: '#F5E642' }}>🔍 Get Your Workshop Plan</h2>
           <div style={{ marginBottom: 14 }}>
-            <div style={{ fontSize: 13, marginBottom: 8, color: '#94a3b8′ }}>Primary tool type:</div>
+            <div style={{ fontSize: 13, marginBottom: 8, color: '#94a3b8' }}>Primary tool type:</div>
             <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8 }}>
               {tools.map(t => (
-                <button key={t} onClick={() => setTool(t)} style={{ padding: '8px 14px', borderRadius: 8, border: 'none', cursor: 'pointer', background: tool === t ? '#F5E642′ : '#1e3a5f', color: tool === t ? '#0A1628' : '#fff', fontWeight: 600, fontSize: 13 }}>{t}</button>
+                <button key={t} onClick={() => setTool(t)} style={{ padding: '8px 14px', borderRadius: 8, border: 'none', cursor: 'pointer', background: tool === t ? '#F5E642' : '#1e3a5f', color: tool === t ? '#0A1628' : '#fff', fontWeight: 600, fontSize: 13 }}>{t}</button>
               ))}
             </div>
           </div>
           <div style={{ marginBottom: 14 }}>
-            <div style={{ fontSize: 13, marginBottom: 8, color: '#94a3b8′ }}>Garage type:</div>
+            <div style={{ fontSize: 13, marginBottom: 8, color: '#94a3b8' }}>Garage type:</div>
             <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8 }}>
               {situations.map(s => (
-                <button key={s} onClick={() => setSit(s)} style={{ padding: '8px 14px', borderRadius: 8, border: 'none', cursor: 'pointer', background: sit === s ? '#F5E642′ : '#1e3a5f', color: sit === s ? '#0A1628' : '#fff', fontWeight: 600, fontSize: 13 }}>{s}</button>
+                <button key={s} onClick={() => setSit(s)} style={{ padding: '8px 14px', borderRadius: 8, border: 'none', cursor: 'pointer', background: sit === s ? '#F5E642' : '#1e3a5f', color: sit === s ? '#0A1628' : '#fff', fontWeight: 600, fontSize: 13 }}>{s}</button>
               ))}
             </div>
           </div>

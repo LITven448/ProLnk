@@ -12,10 +12,10 @@ import { toast } from "sonner";
 import { Link } from "wouter";
 
 const CATEGORIES = [
-  { id: "leads", label: "Leads & Referrals", icon: "🤝", color: "text-green-400″, bg: "bg-green-500/10 border-green-500/20" },
-  { id: "tools", label: "Tools & Software", icon: "🔧", color: "text-blue-400″, bg: "bg-blue-500/10 border-blue-500/20" },
-  { id: "wins", label: "Success Stories", icon: "🏆", color: "text-amber-400″, bg: "bg-amber-500/10 border-amber-500/20" },
-  { id: "help", label: "Help & Support", icon: "🙋", color: "text-violet-400″, bg: "bg-violet-500/10 border-violet-500/20" },
+  { id: "leads", label: "Leads & Referrals", icon: "🤝", color: "text-green-400", bg: "bg-green-500/10 border-green-500/20" },
+  { id: "tools", label: "Tools & Software", icon: "🔧", color: "text-blue-400", bg: "bg-blue-500/10 border-blue-500/20" },
+  { id: "wins", label: "Success Stories", icon: "🏆", color: "text-amber-400", bg: "bg-amber-500/10 border-amber-500/20" },
+  { id: "help", label: "Help & Support", icon: "🙋", color: "text-violet-400", bg: "bg-violet-500/10 border-violet-500/20" },
 ];
 
 const SORT_OPTIONS = [
@@ -112,10 +112,10 @@ const MOCK_THREADS = [
 ];
 
 const TIER_COLORS: Record<string, string> = {
-  Starter: "bg-slate-500/20 text-slate-400″,
-  Silver: "bg-slate-400/20 text-slate-300″,
-  Gold: "bg-amber-500/20 text-amber-400″,
-  Platinum: "bg-violet-500/20 text-violet-400″,
+  Starter: "bg-slate-500/20 text-slate-400",
+  Silver: "bg-slate-400/20 text-slate-300",
+  Gold: "bg-amber-500/20 text-amber-400",
+  Platinum: "bg-violet-500/20 text-violet-400",
 };
 
 const EXPERT_QAS = [
@@ -232,40 +232,40 @@ export default function CommunityForum() {
 
   return (
     <PartnerLayout>
-      <div className="min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 p-6″>
+      <div className="min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 p-6">
         <div className="max-w-5xl mx-auto">
           {/* Header */}
           <div className="mb-6 flex items-center justify-between">
             <div>
-              <Link href="/dashboard" className="text-slate-400 hover:text-white text-sm inline-flex items-center gap-1″>← Dashboard</Link>
-              <h1 className="text-3xl font-bold text-white mt-2″>Partner Community</h1>
-              <p className="text-slate-400 text-sm mt-1″>Share wins, get help, and learn from 500+ contractors in the network</p>
+              <Link href="/dashboard" className="text-slate-400 hover:text-white text-sm inline-flex items-center gap-1">← Dashboard</Link>
+              <h1 className="text-3xl font-bold text-white mt-2">Partner Community</h1>
+              <p className="text-slate-400 text-sm mt-1">Share wins, get help, and learn from 500+ contractors in the network</p>
             </div>
             <Button onClick={() => setShowNewPost(true)} className="bg-violet-600 hover:bg-violet-500 text-white">
-              <Plus className="w-4 h-4 mr-2″ /> Start a Thread
+              <Plus className="w-4 h-4 mr-2" /> Start a Thread
             </Button>
           </div>
 
           {/* Featured Post */}
           {featuredThread && !activeCategory && !search && (
             <Card className="border-amber-500/40 bg-gradient-to-r from-amber-950/40 to-slate-800/60 mb-6 cursor-pointer hover:border-amber-400/60 transition-all">
-              <CardContent className="pt-4 pb-4″>
-                <div className="flex items-center gap-2 text-amber-400 text-xs font-semibold mb-2″>
-                  <Pin className="w-3.5 h-3.5″ /> Featured Post
+              <CardContent className="pt-4 pb-4">
+                <div className="flex items-center gap-2 text-amber-400 text-xs font-semibold mb-2">
+                  <Pin className="w-3.5 h-3.5" /> Featured Post
                 </div>
-                <div className="flex items-start justify-between gap-4″>
-                  <div className="flex-1″>
-                    <h3 className="text-white font-bold text-lg mb-1″>{featuredThread.title}</h3>
+                <div className="flex items-start justify-between gap-4">
+                  <div className="flex-1">
+                    <h3 className="text-white font-bold text-lg mb-1">{featuredThread.title}</h3>
                     <p className="text-slate-300 text-sm mb-3 leading-relaxed">{featuredThread.excerpt}</p>
-                    <div className="flex items-center gap-4 text-xs text-slate-400″>
-                      <span className="font-medium text-slate-300″>{featuredThread.author}</span>
-                      <span className="flex items-center gap-1″><MessageSquare className="w-3 h-3" />{featuredThread.replies} replies</span>
-                      <span className="flex items-center gap-1″><ThumbsUp className="w-3 h-3" />{featuredThread.likes} likes</span>
-                      <span className="flex items-center gap-1″><Eye className="w-3 h-3" />{featuredThread.views.toLocaleString()} views</span>
+                    <div className="flex items-center gap-4 text-xs text-slate-400">
+                      <span className="font-medium text-slate-300">{featuredThread.author}</span>
+                      <span className="flex items-center gap-1"><MessageSquare className="w-3 h-3" />{featuredThread.replies} replies</span>
+                      <span className="flex items-center gap-1"><ThumbsUp className="w-3 h-3" />{featuredThread.likes} likes</span>
+                      <span className="flex items-center gap-1"><Eye className="w-3 h-3" />{featuredThread.views.toLocaleString()} views</span>
                     </div>
                   </div>
                   <div className="shrink-0 flex items-center text-amber-400 text-sm font-medium">
-                    Read <ChevronRight className="w-4 h-4 ml-1″ />
+                    Read <ChevronRight className="w-4 h-4 ml-1" />
                   </div>
                 </div>
               </CardContent>
@@ -273,43 +273,43 @@ export default function CommunityForum() {
           )}
 
           {/* Weekly Challenge Banner */}
-          <div className="flex items-center gap-3 mb-6 px-5 py-3.5 rounded-xl border border-amber-500/40 bg-gradient-to-r from-amber-950/50 to-amber-900/20″>
-            <Zap className="w-5 h-5 text-amber-400 shrink-0″ />
-            <div className="flex-1 min-w-0″>
+          <div className="flex items-center gap-3 mb-6 px-5 py-3.5 rounded-xl border border-amber-500/40 bg-gradient-to-r from-amber-950/50 to-amber-900/20">
+            <Zap className="w-5 h-5 text-amber-400 shrink-0" />
+            <div className="flex-1 min-w-0">
               <span className="text-amber-400 font-semibold text-sm">This Week's Challenge: </span>
               <span className="text-slate-200 text-sm">Log 5 jobs this week = earn <span className="text-amber-300 font-bold">500 bonus points</span> toward your Gold tier</span>
             </div>
-            <Badge className="bg-amber-500/20 text-amber-300 border-amber-500/30 text-xs shrink-0″>5 days left</Badge>
+            <Badge className="bg-amber-500/20 text-amber-300 border-amber-500/30 text-xs shrink-0">5 days left</Badge>
           </div>
 
           {/* Ask an Expert */}
           {!activeCategory && !search && (
-            <div className="mb-6″>
-              <div className="flex items-center gap-3 mb-4″>
-                <HelpCircle className="w-5 h-5 text-violet-400″ />
+            <div className="mb-6">
+              <div className="flex items-center gap-3 mb-4">
+                <HelpCircle className="w-5 h-5 text-violet-400" />
                 <h2 className="text-lg font-bold text-white">Ask an Expert</h2>
-                <div className="flex-1 h-px bg-slate-700/60″ />
-                <span className="text-xs text-slate-500″>Answered by top partners</span>
+                <div className="flex-1 h-px bg-slate-700/60" />
+                <span className="text-xs text-slate-500">Answered by top partners</span>
               </div>
-              <div className="grid grid-cols-1 gap-4″>
+              <div className="grid grid-cols-1 gap-4">
                 {EXPERT_QAS.map(qa => (
                   <Card key={qa.id} className="bg-slate-800/50 border-slate-700 hover:border-violet-500/30 transition-all">
-                    <CardContent className="pt-4 pb-4″>
-                      <div className="flex items-start gap-3 mb-3″>
-                        <div className="w-7 h-7 rounded-full bg-violet-600/20 border border-violet-500/30 flex items-center justify-center shrink-0 mt-0.5″>
-                          <HelpCircle className="w-3.5 h-3.5 text-violet-400″ />
+                    <CardContent className="pt-4 pb-4">
+                      <div className="flex items-start gap-3 mb-3">
+                        <div className="w-7 h-7 rounded-full bg-violet-600/20 border border-violet-500/30 flex items-center justify-center shrink-0 mt-0.5">
+                          <HelpCircle className="w-3.5 h-3.5 text-violet-400" />
                         </div>
                         <div>
-                          <p className="text-white font-medium text-sm leading-snug mb-1″>{qa.question}</p>
-                          <span className="text-xs text-slate-500″>{qa.askedBy} · <Badge className={`text-xs inline-flex ${TIER_COLORS[qa.askedByTier] || ""}`}>{qa.askedByTier}</Badge></span>
+                          <p className="text-white font-medium text-sm leading-snug mb-1">{qa.question}</p>
+                          <span className="text-xs text-slate-500">{qa.askedBy} · <Badge className={`text-xs inline-flex ${TIER_COLORS[qa.askedByTier] || ""}`}>{qa.askedByTier}</Badge></span>
                         </div>
                       </div>
-                      <div className="ml-10 pl-3 border-l-2 border-teal-500/30″>
-                        <p className="text-slate-300 text-sm leading-relaxed mb-2″>{qa.answer}</p>
+                      <div className="ml-10 pl-3 border-l-2 border-teal-500/30">
+                        <p className="text-slate-300 text-sm leading-relaxed mb-2">{qa.answer}</p>
                         <div className="flex items-center justify-between">
                           <span className="text-xs text-teal-400 font-medium">{qa.answeredBy} · <Badge className={`text-xs inline-flex ${TIER_COLORS[qa.answeredByTier] || ""}`}>{qa.answeredByTier}</Badge></span>
-                          <span className="flex items-center gap-1 text-xs text-slate-500″>
-                            <ThumbsUp className="w-3 h-3″ />{qa.votes} helpful
+                          <span className="flex items-center gap-1 text-xs text-slate-500">
+                            <ThumbsUp className="w-3 h-3" />{qa.votes} helpful
                           </span>
                         </div>
                       </div>
@@ -322,43 +322,43 @@ export default function CommunityForum() {
 
           {/* Share Your Win button */}
           {!search && (
-            <div className="flex items-center gap-3 mb-6″>
-              <Trophy className="w-5 h-5 text-amber-400″ />
+            <div className="flex items-center gap-3 mb-6">
+              <Trophy className="w-5 h-5 text-amber-400" />
               <h2 className="text-lg font-bold text-white">Success Stories</h2>
-              <div className="flex-1 h-px bg-slate-700/60″ />
+              <div className="flex-1 h-px bg-slate-700/60" />
               <Button
                 onClick={() => setShowWinModal(true)}
                 className="bg-amber-600/20 hover:bg-amber-600/30 text-amber-300 border border-amber-500/30 text-sm"
                 variant="outline"
               >
-                <Star className="w-4 h-4 mr-2″ /> Share Your Win
+                <Star className="w-4 h-4 mr-2" /> Share Your Win
               </Button>
             </div>
           )}
 
           {/* Share Your Win Modal */}
           {showWinModal && (
-            <div className="fixed inset-0 z-50 flex items-center justify-center p-4″ style={{ backgroundColor: "rgba(0,0,0,0.7)" }}>
+            <div className="fixed inset-0 z-50 flex items-center justify-center p-4" style={{ backgroundColor: "rgba(0,0,0,0.7)" }}>
               <Card className="bg-slate-800 border-amber-500/40 w-full max-w-lg shadow-2xl">
-                <CardHeader className="pb-3″>
+                <CardHeader className="pb-3">
                   <div className="flex items-center justify-between">
-                    <CardTitle className="text-white flex items-center gap-2″>
-                      <Trophy className="w-5 h-5 text-amber-400″ /> Share Your Win
+                    <CardTitle className="text-white flex items-center gap-2">
+                      <Trophy className="w-5 h-5 text-amber-400" /> Share Your Win
                     </CardTitle>
                     <button onClick={() => setShowWinModal(false)} className="text-slate-400 hover:text-white transition-colors">
-                      <X className="w-5 h-5″ />
+                      <X className="w-5 h-5" />
                     </button>
                   </div>
-                  <p className="text-slate-400 text-sm mt-1″>Inspire the community with your success story</p>
+                  <p className="text-slate-400 text-sm mt-1">Inspire the community with your success story</p>
                 </CardHeader>
-                <CardContent className="space-y-4″>
+                <CardContent className="space-y-4">
                   <div>
                     <label className="text-xs font-medium text-slate-400 mb-1.5 block uppercase tracking-wider">Win Title</label>
                     <Input
                       placeholder="e.g. Hit $3K in overrides this month..."
                       value={winTitle}
                       onChange={e => setWinTitle(e.target.value)}
-                      className="bg-slate-700 border-slate-600 text-white placeholder:text-slate-500″
+                      className="bg-slate-700 border-slate-600 text-white placeholder:text-slate-500"
                     />
                   </div>
                   <div>
@@ -371,13 +371,13 @@ export default function CommunityForum() {
                       className="bg-slate-700 border-slate-600 text-white placeholder:text-slate-500 resize-none"
                     />
                   </div>
-                  <div className="flex gap-2 pt-1″>
+                  <div className="flex gap-2 pt-1">
                     <Button
                       onClick={handleWinSubmit}
                       disabled={winSubmitted}
-                      className="bg-amber-500 hover:bg-amber-400 text-white font-semibold flex-1″
+                      className="bg-amber-500 hover:bg-amber-400 text-white font-semibold flex-1"
                     >
-                      {winSubmitted ? <Loader2 className="w-4 h-4 animate-spin mr-2″ /> : <Trophy className="w-4 h-4 mr-2" />}
+                      {winSubmitted ? <Loader2 className="w-4 h-4 animate-spin mr-2" /> : <Trophy className="w-4 h-4 mr-2" />}
                       {winSubmitted ? "Posting..." : "Post My Win"}
                     </Button>
                     <Button variant="ghost" onClick={() => setShowWinModal(false)} className="text-slate-400 hover:text-white">
@@ -391,16 +391,16 @@ export default function CommunityForum() {
 
           {/* New Post Form */}
           {showNewPost && (
-            <Card className="bg-slate-800/80 border-violet-500/50 mb-6″>
+            <Card className="bg-slate-800/80 border-violet-500/50 mb-6">
               <CardHeader><CardTitle className="text-white">Start a Thread</CardTitle></CardHeader>
-              <CardContent className="space-y-4″>
+              <CardContent className="space-y-4">
                 <div className="flex gap-2 flex-wrap">
                   {CATEGORIES.map(c => (
                     <button
                       key={c.id}
                       onClick={() => setNewCategory(c.id)}
                       className={`px-3 py-1.5 rounded-full text-xs font-medium border transition-all ${
-                        newCategory === c.id ? "bg-violet-600 text-white border-violet-500″ : "bg-slate-700 text-slate-300 border-slate-600 hover:border-slate-500"
+                        newCategory === c.id ? "bg-violet-600 text-white border-violet-500" : "bg-slate-700 text-slate-300 border-slate-600 hover:border-slate-500"
                       }`}
                     >
                       {c.icon} {c.label}
@@ -411,7 +411,7 @@ export default function CommunityForum() {
                   placeholder="Thread title..."
                   value={newTitle}
                   onChange={e => setNewTitle(e.target.value)}
-                  className="bg-slate-700 border-slate-600 text-white placeholder:text-slate-500″
+                  className="bg-slate-700 border-slate-600 text-white placeholder:text-slate-500"
                 />
                 <Textarea
                   placeholder="Share your experience, tip, or question..."
@@ -420,13 +420,13 @@ export default function CommunityForum() {
                   rows={4}
                   className="bg-slate-700 border-slate-600 text-white placeholder:text-slate-500 resize-none"
                 />
-                <div className="flex gap-2″>
+                <div className="flex gap-2">
                   <Button
                     onClick={handlePost}
                     disabled={createPostMutation.isPending}
                     className="bg-violet-600 hover:bg-violet-500 text-white"
                   >
-                    {createPostMutation.isPending ? <Loader2 className="w-4 h-4 animate-spin mr-2″ /> : null}
+                    {createPostMutation.isPending ? <Loader2 className="w-4 h-4 animate-spin mr-2" /> : null}
                     Post Thread
                   </Button>
                   <Button variant="ghost" onClick={() => setShowNewPost(false)} className="text-slate-400 hover:text-white">Cancel</Button>
@@ -435,28 +435,28 @@ export default function CommunityForum() {
             </Card>
           )}
 
-          <div className="grid grid-cols-1 lg:grid-cols-4 gap-6″>
+          <div className="grid grid-cols-1 lg:grid-cols-4 gap-6">
             {/* Sidebar */}
-            <div className="space-y-4″>
+            <div className="space-y-4">
               {/* Search */}
               <div className="relative">
-                <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400″ />
+                <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400" />
                 <Input
                   placeholder="Search threads..."
                   value={search}
                   onChange={e => setSearch(e.target.value)}
-                  className="pl-9 bg-slate-800 border-slate-700 text-white placeholder:text-slate-500″
+                  className="pl-9 bg-slate-800 border-slate-700 text-white placeholder:text-slate-500"
                 />
               </div>
 
               {/* Categories */}
-              <Card className="bg-slate-800/50 border-slate-700″>
-                <CardContent className="pt-4 pb-3 space-y-1″>
-                  <p className="text-xs font-semibold text-slate-500 uppercase tracking-wider px-3 mb-2″>Categories</p>
+              <Card className="bg-slate-800/50 border-slate-700">
+                <CardContent className="pt-4 pb-3 space-y-1">
+                  <p className="text-xs font-semibold text-slate-500 uppercase tracking-wider px-3 mb-2">Categories</p>
                   <button
                     onClick={() => setActiveCategory(null)}
                     className={`w-full text-left px-3 py-2 rounded-lg text-sm transition-all ${
-                      !activeCategory ? "bg-violet-600/20 text-violet-300″ : "text-slate-400 hover:text-white hover:bg-slate-700"
+                      !activeCategory ? "bg-violet-600/20 text-violet-300" : "text-slate-400 hover:text-white hover:bg-slate-700"
                     }`}
                   >
                     All Threads
@@ -466,7 +466,7 @@ export default function CommunityForum() {
                       key={c.id}
                       onClick={() => setActiveCategory(c.id === activeCategory ? null : c.id)}
                       className={`w-full text-left px-3 py-2 rounded-lg text-sm transition-all flex items-center gap-2 ${
-                        activeCategory === c.id ? "bg-violet-600/20 text-violet-300″ : "text-slate-400 hover:text-white hover:bg-slate-700"
+                        activeCategory === c.id ? "bg-violet-600/20 text-violet-300" : "text-slate-400 hover:text-white hover:bg-slate-700"
                       }`}
                     >
                       <span>{c.icon}</span> {c.label}
@@ -476,23 +476,23 @@ export default function CommunityForum() {
               </Card>
 
               {/* Stats */}
-              <Card className="bg-slate-800/50 border-slate-700″>
-                <CardContent className="pt-4 pb-3 space-y-3″>
+              <Card className="bg-slate-800/50 border-slate-700">
+                <CardContent className="pt-4 pb-3 space-y-3">
                   <p className="text-xs font-semibold text-slate-500 uppercase tracking-wider">Community Stats</p>
                   <div className="flex items-center gap-2 text-slate-300 text-sm">
-                    <MessageSquare className="w-4 h-4 text-blue-400 shrink-0″ />
+                    <MessageSquare className="w-4 h-4 text-blue-400 shrink-0" />
                     <span>{MOCK_THREADS.length} active threads</span>
                   </div>
                   <div className="flex items-center gap-2 text-slate-300 text-sm">
-                    <TrendingUp className="w-4 h-4 text-green-400 shrink-0″ />
+                    <TrendingUp className="w-4 h-4 text-green-400 shrink-0" />
                     <span>{MOCK_THREADS.reduce((s, t) => s + t.replies, 0)} total replies</span>
                   </div>
                   <div className="flex items-center gap-2 text-slate-300 text-sm">
-                    <Award className="w-4 h-4 text-amber-400 shrink-0″ />
+                    <Award className="w-4 h-4 text-amber-400 shrink-0" />
                     <span>{MOCK_THREADS.reduce((s, t) => s + t.likes, 0)} total likes</span>
                   </div>
                   <div className="flex items-center gap-2 text-slate-300 text-sm">
-                    <Eye className="w-4 h-4 text-violet-400 shrink-0″ />
+                    <Eye className="w-4 h-4 text-violet-400 shrink-0" />
                     <span>{MOCK_THREADS.reduce((s, t) => s + t.views, 0).toLocaleString()} total views</span>
                   </div>
                 </CardContent>
@@ -500,10 +500,10 @@ export default function CommunityForum() {
             </div>
 
             {/* Thread List */}
-            <div className="lg:col-span-3 space-y-4″>
+            <div className="lg:col-span-3 space-y-4">
               {/* Sort Controls */}
-              <div className="flex items-center gap-2″>
-                <span className="text-slate-500 text-xs uppercase tracking-wider font-medium mr-1″>Sort:</span>
+              <div className="flex items-center gap-2">
+                <span className="text-slate-500 text-xs uppercase tracking-wider font-medium mr-1">Sort:</span>
                 {SORT_OPTIONS.map(s => {
                   const Icon = s.icon;
                   return (
@@ -511,10 +511,10 @@ export default function CommunityForum() {
                       key={s.id}
                       onClick={() => setActiveSort(s.id)}
                       className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-medium transition-all ${
-                        activeSort === s.id ? "bg-violet-600/20 text-violet-300 border border-violet-500/30″ : "text-slate-400 hover:text-white hover:bg-slate-700 border border-transparent"
+                        activeSort === s.id ? "bg-violet-600/20 text-violet-300 border border-violet-500/30" : "text-slate-400 hover:text-white hover:bg-slate-700 border border-transparent"
                       }`}
                     >
-                      <Icon className="w-3 h-3″ /> {s.label}
+                      <Icon className="w-3 h-3" /> {s.label}
                     </button>
                   );
                 })}
@@ -522,18 +522,18 @@ export default function CommunityForum() {
 
               {/* Live Threads from DB */}
               {isLoading && (
-                <div className="flex justify-center py-8″>
-                  <Loader2 className="w-7 h-7 animate-spin text-violet-400″ />
+                <div className="flex justify-center py-8">
+                  <Loader2 className="w-7 h-7 animate-spin text-violet-400" />
                 </div>
               )}
 
               {!isLoading && filtered.map(post => (
                 <Card key={`db-${post.id}`} className="bg-slate-800/50 border-slate-700 hover:border-slate-600 transition-all cursor-pointer">
-                  <CardContent className="pt-4″>
-                    <div className="flex items-start justify-between gap-3″>
-                      <div className="flex-1 min-w-0″>
+                  <CardContent className="pt-4">
+                    <div className="flex items-start justify-between gap-3">
+                      <div className="flex-1 min-w-0">
                         <div className="flex items-center gap-2 mb-2 flex-wrap">
-                          {post.pinned && <Pin className="w-3 h-3 text-amber-400 shrink-0″ />}
+                          {post.pinned && <Pin className="w-3 h-3 text-amber-400 shrink-0" />}
                           <Badge className={`text-xs bg-transparent border-current ${CATEGORIES.find(c => c.id === post.category)?.color || ""}`}>
                             {CATEGORIES.find(c => c.id === post.category)?.icon} {CATEGORIES.find(c => c.id === post.category)?.label}
                           </Badge>
@@ -541,21 +541,21 @@ export default function CommunityForum() {
                             <Badge className={`text-xs ${TIER_COLORS[post.authorTier] || ""}`}>{post.authorTier}</Badge>
                           )}
                         </div>
-                        <h3 className="text-white font-semibold text-base leading-snug mb-2″>{post.title}</h3>
-                        <p className="text-slate-400 text-sm line-clamp-2″>{post.body}</p>
-                        <div className="flex items-center gap-4 mt-3 text-xs text-slate-500″>
-                          <span className="font-medium text-slate-400″>{post.authorBusiness || "Partner"}</span>
-                          <span className="flex items-center gap-1″><Clock className="w-3 h-3" />{new Date(post.createdAt).toLocaleDateString()}</span>
-                          <span className="flex items-center gap-1″><MessageSquare className="w-3 h-3" />{Number(post.replyCount || 0)} replies</span>
+                        <h3 className="text-white font-semibold text-base leading-snug mb-2">{post.title}</h3>
+                        <p className="text-slate-400 text-sm line-clamp-2">{post.body}</p>
+                        <div className="flex items-center gap-4 mt-3 text-xs text-slate-500">
+                          <span className="font-medium text-slate-400">{post.authorBusiness || "Partner"}</span>
+                          <span className="flex items-center gap-1"><Clock className="w-3 h-3" />{new Date(post.createdAt).toLocaleDateString()}</span>
+                          <span className="flex items-center gap-1"><MessageSquare className="w-3 h-3" />{Number(post.replyCount || 0)} replies</span>
                         </div>
                       </div>
                       <button
                         onClick={() => handleLike(post.id)}
                         className={`flex flex-col items-center gap-1 p-2 rounded-lg transition-all shrink-0 ${
-                          likedPosts.has(post.id) ? "text-violet-400 bg-violet-500/10″ : "text-slate-500 hover:text-white hover:bg-slate-700"
+                          likedPosts.has(post.id) ? "text-violet-400 bg-violet-500/10" : "text-slate-500 hover:text-white hover:bg-slate-700"
                         }`}
                       >
-                        <ThumbsUp className="w-4 h-4″ />
+                        <ThumbsUp className="w-4 h-4" />
                         <span className="text-xs">{Number(post.likes || 0)}</span>
                       </button>
                     </div>
@@ -566,27 +566,27 @@ export default function CommunityForum() {
               {/* Mock Threads */}
               {sortedThreads.map(thread => (
                 <Card key={`mock-${thread.id}`} className="bg-slate-800/50 border-slate-700 hover:border-slate-600 transition-all cursor-pointer">
-                  <CardContent className="pt-4″>
-                    <div className="flex items-start justify-between gap-3″>
-                      <div className="flex-1 min-w-0″>
+                  <CardContent className="pt-4">
+                    <div className="flex items-start justify-between gap-3">
+                      <div className="flex-1 min-w-0">
                         <div className="flex items-center gap-2 mb-2 flex-wrap">
-                          {thread.pinned && <Pin className="w-3 h-3 text-amber-400 shrink-0″ />}
+                          {thread.pinned && <Pin className="w-3 h-3 text-amber-400 shrink-0" />}
                           <Badge className={`text-xs bg-transparent border-current ${CATEGORIES.find(c => c.id === thread.category)?.color || ""}`}>
                             {CATEGORIES.find(c => c.id === thread.category)?.icon} {CATEGORIES.find(c => c.id === thread.category)?.label}
                           </Badge>
                           <Badge className={`text-xs ${TIER_COLORS[thread.tier] || ""}`}>{thread.tier}</Badge>
                         </div>
-                        <h3 className="text-white font-semibold text-base leading-snug mb-2″>{thread.title}</h3>
-                        <p className="text-slate-400 text-sm line-clamp-2″>{thread.excerpt}</p>
-                        <div className="flex items-center gap-4 mt-3 text-xs text-slate-500″>
-                          <span className="font-medium text-slate-400″>{thread.author}</span>
-                          <span className="flex items-center gap-1″><Clock className="w-3 h-3" />{thread.lastActivity}</span>
-                          <span className="flex items-center gap-1″><MessageSquare className="w-3 h-3" />{thread.replies} replies</span>
-                          <span className="flex items-center gap-1″><Eye className="w-3 h-3" />{thread.views.toLocaleString()}</span>
+                        <h3 className="text-white font-semibold text-base leading-snug mb-2">{thread.title}</h3>
+                        <p className="text-slate-400 text-sm line-clamp-2">{thread.excerpt}</p>
+                        <div className="flex items-center gap-4 mt-3 text-xs text-slate-500">
+                          <span className="font-medium text-slate-400">{thread.author}</span>
+                          <span className="flex items-center gap-1"><Clock className="w-3 h-3" />{thread.lastActivity}</span>
+                          <span className="flex items-center gap-1"><MessageSquare className="w-3 h-3" />{thread.replies} replies</span>
+                          <span className="flex items-center gap-1"><Eye className="w-3 h-3" />{thread.views.toLocaleString()}</span>
                         </div>
                       </div>
-                      <div className="flex flex-col items-center gap-1 p-2 rounded-lg text-slate-500 shrink-0″>
-                        <ThumbsUp className="w-4 h-4″ />
+                      <div className="flex flex-col items-center gap-1 p-2 rounded-lg text-slate-500 shrink-0">
+                        <ThumbsUp className="w-4 h-4" />
                         <span className="text-xs">{thread.likes}</span>
                       </div>
                     </div>
@@ -595,11 +595,11 @@ export default function CommunityForum() {
               ))}
 
               {!isLoading && filtered.length === 0 && sortedThreads.length === 0 && (
-                <div className="text-center py-16 text-slate-500″>
-                  <MessageSquare className="w-12 h-12 mx-auto mb-3 opacity-30″ />
-                  <p className="mb-4″>No threads found. Be the first to post!</p>
+                <div className="text-center py-16 text-slate-500">
+                  <MessageSquare className="w-12 h-12 mx-auto mb-3 opacity-30" />
+                  <p className="mb-4">No threads found. Be the first to post!</p>
                   <Button onClick={() => setShowNewPost(true)} className="bg-violet-600 hover:bg-violet-500 text-white">
-                    <Plus className="w-4 h-4 mr-2″ /> Start a Thread
+                    <Plus className="w-4 h-4 mr-2" /> Start a Thread
                   </Button>
                 </div>
               )}

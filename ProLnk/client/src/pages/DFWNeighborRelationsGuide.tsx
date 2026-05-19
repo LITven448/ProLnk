@@ -56,7 +56,7 @@ export default function DFWNeighborRelationsGuide() {
           <h2 style={{ fontSize: 18, fontWeight: 700, marginBottom: 16 }}>What's your situation?</h2>
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: 10 }}>
             {issueList.map(i => (
-              <button key={i.key} onClick={() => setIssue(i.key)} style={{ padding: '10px 18px', borderRadius: 8, border: '2px solid', cursor: 'pointer', fontSize: 14, fontWeight: 600, borderColor: issue === i.key ? '#059669′ : '#E2E8F0', background: issue === i.key ? '#ECFDF5' : '#FFFFFF', color: issue === i.key ? '#059669' : '#64748B' }}>{i.label}</button>
+              <button key={i.key} onClick={() => setIssue(i.key)} style={{ padding: '10px 18px', borderRadius: 8, border: '2px solid', cursor: 'pointer', fontSize: 14, fontWeight: 600, borderColor: issue === i.key ? '#059669' : '#E2E8F0', background: issue === i.key ? '#ECFDF5' : '#FFFFFF', color: issue === i.key ? '#059669' : '#64748B' }}>{i.label}</button>
             ))}
           </div>
         </div>

@@ -108,7 +108,7 @@ export default function DFWPoolAutomationGuide() {
         </button>
 
         {result && (
-          <div style={{ background: '#1E2D45', borderRadius: 12, padding: 24, marginBottom: 28, border: '2px solid #F5E642′ }}>
+          <div style={{ background: '#1E2D45', borderRadius: 12, padding: 24, marginBottom: 28, border: '2px solid #F5E642' }}>
             <div style={{ fontSize: 12, color: '#F5E642', fontWeight: 700, marginBottom: 4 }}>RECOMMENDED FOR YOUR DFW POOL</div>
             <h3 style={{ fontSize: 22, fontWeight: 800, margin: '0 0 4px' }}>{result.emoji} {result.name}</h3>
             <p style={{ color: '#94A3B8', margin: '0 0 16px', fontSize: 13 }}>{result.dfwNote}</p>
@@ -131,14 +131,14 @@ export default function DFWPoolAutomationGuide() {
 
         <h2 style={{ fontSize: 18, fontWeight: 700, marginBottom: 16 }}>📊 DFW Feature Comparison</h2>
         <div style={{ background: '#1E2D45', borderRadius: 12, overflow: 'hidden' }}>
-          <div style={{ display: 'grid', gridTemplateColumns: '2fr 1fr 1fr 1fr', background: '#2D4060', padding: '10px 16px', fontSize: 12, fontWeight: 700, color: '#94A3B8′ }}>
+          <div style={{ display: 'grid', gridTemplateColumns: '2fr 1fr 1fr 1fr', background: '#2D4060', padding: '10px 16px', fontSize: 12, fontWeight: 700, color: '#94A3B8' }}>
             <div>FEATURE</div>
             <div style={{ textAlign: 'center' }}>PENTAIR</div>
             <div style={{ textAlign: 'center' }}>JANDY</div>
             <div style={{ textAlign: 'center' }}>HAYWARD</div>
           </div>
           {Object.values(featureMap).map((f, i) => (
-            <div key={f.label} style={{ display: 'grid', gridTemplateColumns: '2fr 1fr 1fr 1fr', padding: '12px 16px', background: i % 2 === 0 ? '#1E2D45′ : '#162236', borderBottom: '1px solid #2D4060' }}>
+            <div key={f.label} style={{ display: 'grid', gridTemplateColumns: '2fr 1fr 1fr 1fr', padding: '12px 16px', background: i % 2 === 0 ? '#1E2D45' : '#162236', borderBottom: '1px solid #2D4060' }}>
               <div style={{ fontSize: 13 }}>{f.label}</div>
               <div style={{ textAlign: 'center', fontSize: 13 }}>{f.pentair}</div>
               <div style={{ textAlign: 'center', fontSize: 13 }}>{f.jandy}</div>

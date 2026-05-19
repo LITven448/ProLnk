@@ -27,7 +27,7 @@ export default function DFWSelectingAgentGuide() {
   const agentCriteria = situation ? criteria[situation] : [];
 
   return (
-    <div style={{ background: '#F9FAFB', minHeight: '100vh', padding: '32px 16px', fontFamily: 'system-ui,sans-serif', color: '#0A1628′ }}>
+    <div style={{ background: '#F9FAFB', minHeight: '100vh', padding: '32px 16px', fontFamily: 'system-ui,sans-serif', color: '#0A1628' }}>
       <div style={{ maxWidth: 760, margin: '0 auto' }}>
         <div style={{ background: '#0A1628', borderRadius: 12, padding: '28px 24px', marginBottom: 28 }}>
           <div style={{ fontSize: 28 }}>🏡</div>
@@ -35,7 +35,7 @@ export default function DFWSelectingAgentGuide() {
           <p style={{ color: '#CBD5E1', margin: 0 }}>What separates top DFW agents — and how to verify their track record before signing anything.</p>
         </div>
 
-        <div style={{ background: '#fff', borderRadius: 10, padding: 20, marginBottom: 20, border: '1px solid #E2E8F0′ }}>
+        <div style={{ background: '#fff', borderRadius: 10, padding: 20, marginBottom: 20, border: '1px solid #E2E8F0' }}>
           <h2 style={{ fontSize: 16, fontWeight: 700, marginBottom: 12 }}>🔑 What Top DFW Agents Do Differently</h2>
           {[['📊 List Price Accuracy','They price to sell, not to impress. DFW top agents hit within 1-2% of list price consistently.'],['📅 Days on Market','Best agents average 18-28 DOM in DFW. Anything over 45 days is a signal of overpricing.'],['📸 Photography Standards','Professional HDR photography + drone + twilight shots are table stakes in DFW competitive submarkets.'],['🗺️ DFW Market Knowledge','They know which school districts move volume, which zip codes have appraisal gaps, and DFW seasonal patterns.'],['📈 Sell-to-List Ratio','Ask for their trailing 12-month ratio. Top DFW agents average 98-101% in normal market conditions.']].map(([title, desc]) => (
             <div key={title} style={{ background: '#F8FAFC', borderRadius: 8, padding: '10px 14px', marginBottom: 8 }}>
@@ -45,24 +45,24 @@ export default function DFWSelectingAgentGuide() {
           ))}
         </div>
 
-        <div style={{ background: '#fff', borderRadius: 10, padding: 20, marginBottom: 20, border: '1px solid #E2E8F0′ }}>
+        <div style={{ background: '#fff', borderRadius: 10, padding: 20, marginBottom: 20, border: '1px solid #E2E8F0' }}>
           <h2 style={{ fontSize: 16, fontWeight: 700, marginBottom: 12 }}>🚩 Red Flags — Walk Away If You See These</h2>
           {redFlags.map(f => (
-            <div key={f} style={{ display: 'flex', gap: 8, marginBottom: 6, fontSize: 13, color: '#0A1628′ }}>
+            <div key={f} style={{ display: 'flex', gap: 8, marginBottom: 6, fontSize: 13, color: '#0A1628' }}>
               <span style={{ color: '#EF4444', flexShrink: 0 }}>✕</span>{f}
             </div>
           ))}
         </div>
 
-        <div style={{ background: '#fff', borderRadius: 10, padding: 20, marginBottom: 20, border: '1px solid #E2E8F0′ }}>
+        <div style={{ background: '#fff', borderRadius: 10, padding: 20, marginBottom: 20, border: '1px solid #E2E8F0' }}>
           <h2 style={{ fontSize: 16, fontWeight: 700, marginBottom: 6 }}>🛠️ Your Situation → Agent Criteria</h2>
           <p style={{ fontSize: 13, color: '#64748B', marginBottom: 10 }}>Select your situation and DFW area to get tailored criteria.</p>
           <div style={{ display: 'flex', gap: 10, flexWrap: 'wrap', marginBottom: 12 }}>
-            <select value={situation} onChange={e => setSituation(e.target.value)} style={{ flex: 1, padding: '8px 10px', borderRadius: 6, border: '1px solid #CBD5E1', fontSize: 13, background: '#fff', color: '#0A1628′ }}>
+            <select value={situation} onChange={e => setSituation(e.target.value)} style={{ flex: 1, padding: '8px 10px', borderRadius: 6, border: '1px solid #CBD5E1', fontSize: 13, background: '#fff', color: '#0A1628' }}>
               <option value=''>Select your situation</option>
               {situations.map(s => <option key={s} value={s}>{s}</option>)}
             </select>
-            <select value={area} onChange={e => setArea(e.target.value)} style={{ flex: 1, padding: '8px 10px', borderRadius: 6, border: '1px solid #CBD5E1', fontSize: 13, background: '#fff', color: '#0A1628′ }}>
+            <select value={area} onChange={e => setArea(e.target.value)} style={{ flex: 1, padding: '8px 10px', borderRadius: 6, border: '1px solid #CBD5E1', fontSize: 13, background: '#fff', color: '#0A1628' }}>
               <option value=''>Select DFW area</option>
               {dfwAreas.map(a => <option key={a} value={a}>{a}</option>)}
             </select>
@@ -75,7 +75,7 @@ export default function DFWSelectingAgentGuide() {
           )}
         </div>
 
-        <div style={{ background: '#fff', borderRadius: 10, padding: 20, border: '1px solid #E2E8F0′ }}>
+        <div style={{ background: '#fff', borderRadius: 10, padding: 20, border: '1px solid #E2E8F0' }}>
           <h2 style={{ fontSize: 16, fontWeight: 700, marginBottom: 10 }}>❓ Interview Questions to Ask Every Agent</h2>
           {interviewQs.map((q, i) => (
             <div key={i} style={{ background: '#F1F5F9', borderRadius: 7, padding: '9px 12px', marginBottom: 6, fontSize: 13 }}>
@@ -84,7 +84,7 @@ export default function DFWSelectingAgentGuide() {
           ))}
           <div style={{ marginTop: 14 }}>
             <div style={{ fontWeight: 600, fontSize: 13, marginBottom: 6 }}>📋 Metrics to Request From Every Candidate</div>
-            {metrics.map(m => <div key={m} style={{ fontSize: 13, marginBottom: 4, color: '#334155′ }}>• {m}</div>)}
+            {metrics.map(m => <div key={m} style={{ fontSize: 13, marginBottom: 4, color: '#334155' }}>• {m}</div>)}
           </div>
         </div>
       </div>

@@ -76,7 +76,7 @@ export default function BrainTrustDashboard() {
     {
       id: "council",
       title: "Brain Trust Council",
-      icon: <Brain className="w-5 h-5 text-purple-400″ />,
+      icon: <Brain className="w-5 h-5 text-purple-400" />,
       description: "Full executive intelligence synthesis",
       onRun: () => { setAgents(prev => ({ ...prev, council: { loading: true, data: null, error: null } })); runCouncil.mutate(); },
       loading: runCouncil.isPending,
@@ -84,7 +84,7 @@ export default function BrainTrustDashboard() {
     {
       id: "ceo",
       title: "CEO Agent",
-      icon: <TrendingUp className="w-5 h-5 text-teal-400″ />,
+      icon: <TrendingUp className="w-5 h-5 text-teal-400" />,
       description: "Executive summary + weekly priority",
       onRun: () => { setAgents(prev => ({ ...prev, ceo: { loading: true, data: null, error: null } })); runCEO.mutate(); },
       loading: runCEO.isPending,
@@ -92,7 +92,7 @@ export default function BrainTrustDashboard() {
     {
       id: "cfo",
       title: "CFO Agent",
-      icon: <DollarSign className="w-5 h-5 text-green-400″ />,
+      icon: <DollarSign className="w-5 h-5 text-green-400" />,
       description: "Financial health + MRR analysis",
       onRun: () => { setAgents(prev => ({ ...prev, cfo: { loading: true, data: null, error: null } })); runCFO.mutate(); },
       loading: runCFO.isPending,
@@ -100,7 +100,7 @@ export default function BrainTrustDashboard() {
     {
       id: "cto",
       title: "CTO Agent",
-      icon: <Wrench className="w-5 h-5 text-orange-400″ />,
+      icon: <Wrench className="w-5 h-5 text-orange-400" />,
       description: "Technical health + critical bugs",
       onRun: () => { setAgents(prev => ({ ...prev, cto: { loading: true, data: null, error: null } })); runCTO.mutate(); },
       loading: runCTO.isPending,
@@ -108,7 +108,7 @@ export default function BrainTrustDashboard() {
     {
       id: "supremeCourt",
       title: "Supreme Court Agents",
-      icon: <Shield className="w-5 h-5 text-red-400″ />,
+      icon: <Shield className="w-5 h-5 text-red-400" />,
       description: "Privacy, brand safety, ethics review",
       onRun: () => { setAgents(prev => ({ ...prev, supremeCourt: { loading: true, data: null, error: null } })); runSupreme.mutate(); },
       loading: runSupreme.isPending,
@@ -116,7 +116,7 @@ export default function BrainTrustDashboard() {
     {
       id: "managing",
       title: "Managing Tier Agents",
-      icon: <Users className="w-5 h-5 text-blue-400″ />,
+      icon: <Users className="w-5 h-5 text-blue-400" />,
       description: "Partner lifecycle, homeowner acquisition, integrations",
       onRun: () => { setAgents(prev => ({ ...prev, managing: { loading: true, data: null, error: null } })); runManaging.mutate(); },
       loading: runManaging.isPending,
@@ -124,7 +124,7 @@ export default function BrainTrustDashboard() {
     {
       id: "media",
       title: "ProLnk Media Agents",
-      icon: <BarChart3 className="w-5 h-5 text-violet-400″ />,
+      icon: <BarChart3 className="w-5 h-5 text-violet-400" />,
       description: "Advertiser targeting, performance, retention",
       onRun: () => { setAgents(prev => ({ ...prev, media: { loading: true, data: null, error: null } })); runMedia.mutate(); },
       loading: runMedia.isPending,
@@ -135,20 +135,20 @@ export default function BrainTrustDashboard() {
 
   return (
     <AdminLayout>
-      <div className="space-y-6″>
+      <div className="space-y-6">
         <div className="flex items-center justify-between">
           <div>
-            <h1 className="text-2xl font-black text-white flex items-center gap-2″>
-              <Brain className="w-6 h-6 text-purple-400″ />
+            <h1 className="text-2xl font-black text-white flex items-center gap-2">
+              <Brain className="w-6 h-6 text-purple-400" />
               Brain Trust Council
             </h1>
-            <p className="text-gray-400 text-sm mt-1″>47 AI agents — strategic intelligence, compliance, and operations</p>
+            <p className="text-gray-400 text-sm mt-1">47 AI agents — strategic intelligence, compliance, and operations</p>
           </div>
-          <div className="flex gap-3″>
-            <Button size="sm" variant="outline" className="border-gray-700 text-gray-400″ onClick={() => runAudit.mutate()} disabled={runAudit.isPending}>
+          <div className="flex gap-3">
+            <Button size="sm" variant="outline" className="border-gray-700 text-gray-400" onClick={() => runAudit.mutate()} disabled={runAudit.isPending}>
               {runAudit.isPending ? <Loader2 className="w-4 h-4 animate-spin" /> : "Commission Audit"}
             </Button>
-            <Button size="sm" variant="outline" className="border-gray-700 text-gray-400″ onClick={() => runIntegrity.mutate()} disabled={runIntegrity.isPending}>
+            <Button size="sm" variant="outline" className="border-gray-700 text-gray-400" onClick={() => runIntegrity.mutate()} disabled={runIntegrity.isPending}>
               {runIntegrity.isPending ? <Loader2 className="w-4 h-4 animate-spin" /> : "Data Integrity"}
             </Button>
           </div>
@@ -156,27 +156,27 @@ export default function BrainTrustDashboard() {
 
         {/* Agent status overview */}
         {s && (
-          <div className="grid grid-cols-4 gap-4″>
-            <Card className="bg-gray-800 border-gray-700″>
-              <CardContent className="p-4″>
-                <div className="text-3xl font-black text-teal-400″>{s.implemented}</div>
+          <div className="grid grid-cols-4 gap-4">
+            <Card className="bg-gray-800 border-gray-700">
+              <CardContent className="p-4">
+                <div className="text-3xl font-black text-teal-400">{s.implemented}</div>
                 <div className="text-gray-400 text-xs">Implemented</div>
               </CardContent>
             </Card>
-            <Card className="bg-gray-800 border-gray-700″>
-              <CardContent className="p-4″>
-                <div className="text-3xl font-black text-yellow-400″>{s.scaffolded}</div>
+            <Card className="bg-gray-800 border-gray-700">
+              <CardContent className="p-4">
+                <div className="text-3xl font-black text-yellow-400">{s.scaffolded}</div>
                 <div className="text-gray-400 text-xs">Scaffolded</div>
               </CardContent>
             </Card>
-            <Card className="bg-gray-800 border-gray-700″>
-              <CardContent className="p-4″>
-                <div className="text-3xl font-black text-gray-500″>{s.documentedOnly}</div>
+            <Card className="bg-gray-800 border-gray-700">
+              <CardContent className="p-4">
+                <div className="text-3xl font-black text-gray-500">{s.documentedOnly}</div>
                 <div className="text-gray-400 text-xs">Docs Only</div>
               </CardContent>
             </Card>
-            <Card className="bg-gray-800 border-gray-700″>
-              <CardContent className="p-4″>
+            <Card className="bg-gray-800 border-gray-700">
+              <CardContent className="p-4">
                 <div className="text-3xl font-black text-white">{s.totalAgentsDefined}</div>
                 <div className="text-gray-400 text-xs">Total Defined</div>
               </CardContent>
@@ -185,25 +185,25 @@ export default function BrainTrustDashboard() {
         )}
 
         {/* Agent groups */}
-        <div className="space-y-3″>
+        <div className="space-y-3">
           {AGENT_GROUPS.map((group) => {
             const state = agents[group.id];
             const isExpanded = expanded.has(group.id);
             return (
-              <Card key={group.id} className="bg-gray-800 border-gray-700″>
-                <CardHeader className="border-b border-gray-700 pb-3″>
+              <Card key={group.id} className="bg-gray-800 border-gray-700">
+                <CardHeader className="border-b border-gray-700 pb-3">
                   <div className="flex items-center justify-between">
-                    <div className="flex items-center gap-3″>
+                    <div className="flex items-center gap-3">
                       {group.icon}
                       <div>
                         <div className="font-bold text-white text-sm">{group.title}</div>
                         <div className="text-gray-500 text-xs">{group.description}</div>
                       </div>
                     </div>
-                    <div className="flex items-center gap-2″>
+                    <div className="flex items-center gap-2">
                       {state?.data && (
                         <button onClick={() => toggleExpanded(group.id)} className="text-gray-500 hover:text-white">
-                          {isExpanded ? <ChevronUp className="w-4 h-4″ /> : <ChevronDown className="w-4 h-4" />}
+                          {isExpanded ? <ChevronUp className="w-4 h-4" /> : <ChevronDown className="w-4 h-4" />}
                         </button>
                       )}
                       <Button
@@ -213,20 +213,20 @@ export default function BrainTrustDashboard() {
                         onClick={group.onRun}
                         disabled={group.loading}
                       >
-                        {group.loading ? <><Loader2 className="w-3.5 h-3.5 animate-spin mr-1″ />Running...</> : "Run"}
+                        {group.loading ? <><Loader2 className="w-3.5 h-3.5 animate-spin mr-1" />Running...</> : "Run"}
                       </Button>
                     </div>
                   </div>
                 </CardHeader>
                 {state?.data && isExpanded && (
-                  <CardContent className="p-4″>
-                    <pre className="text-gray-300 text-xs leading-relaxed whitespace-pre-wrap overflow-auto max-h-96″>
+                  <CardContent className="p-4">
+                    <pre className="text-gray-300 text-xs leading-relaxed whitespace-pre-wrap overflow-auto max-h-96">
                       {JSON.stringify(state.data, null, 2)}
                     </pre>
                   </CardContent>
                 )}
                 {state?.error && (
-                  <CardContent className="p-4″>
+                  <CardContent className="p-4">
                     <div className="text-red-400 text-xs">{state.error}</div>
                   </CardContent>
                 )}

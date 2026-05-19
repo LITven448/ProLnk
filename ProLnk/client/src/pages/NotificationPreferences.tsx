@@ -59,8 +59,8 @@ const DEFAULT_PREFS: NotifPrefs = {
   smsEnabled: false,
   pushEnabled: true,
   quietHoursEnabled: false,
-  quietStart: "22:00″,
-  quietEnd: "08:00″,
+  quietStart: "22:00",
+  quietEnd: "08:00",
   leadValueThreshold: 0,
 };
 
@@ -69,7 +69,7 @@ const CATEGORIES: Category[] = [
     key: "leads",
     label: "Leads",
     description: "New leads available in your service area",
-    icon: <Zap className="w-4 h-4″ />,
+    icon: <Zap className="w-4 h-4" />,
     iconBg: "rgba(34,197,94,0.15)",
     iconColor: "#22c55e",
     urgency: "high",
@@ -78,25 +78,25 @@ const CATEGORIES: Category[] = [
     key: "jobs",
     label: "Jobs",
     description: "Job confirmations, updates, and reminders",
-    icon: <Briefcase className="w-4 h-4″ />,
+    icon: <Briefcase className="w-4 h-4" />,
     iconBg: "rgba(16,185,129,0.15)",
-    iconColor: "#10b981″,
+    iconColor: "#10b981",
     urgency: "high",
   },
   {
     key: "payments",
     label: "Payments",
     description: "Commission credits, payouts, and payment receipts",
-    icon: <DollarSign className="w-4 h-4″ />,
+    icon: <DollarSign className="w-4 h-4" />,
     iconBg: "rgba(245,230,66,0.15)",
-    iconColor: "#F5E642″,
+    iconColor: "#F5E642",
     urgency: "medium",
   },
   {
     key: "stormAlerts",
     label: "Storm Alerts",
     description: "Severe weather detected in your service area — leads auto-queue within minutes",
-    icon: <CloudLightning className="w-4 h-4″ />,
+    icon: <CloudLightning className="w-4 h-4" />,
     iconBg: "rgba(245,158,11,0.15)",
     iconColor: "#f59e0b",
     urgency: "high",
@@ -105,34 +105,34 @@ const CATEGORIES: Category[] = [
     key: "reviews",
     label: "Reviews",
     description: "New homeowner reviews for your business",
-    icon: <Star className="w-4 h-4″ />,
+    icon: <Star className="w-4 h-4" />,
     iconBg: "rgba(251,191,36,0.15)",
-    iconColor: "#fbbf24″,
+    iconColor: "#fbbf24",
     urgency: "medium",
   },
   {
     key: "tier",
     label: "Tier & Achievements",
     description: "Tier upgrades, milestone celebrations, and rank changes",
-    icon: <Trophy className="w-4 h-4″ />,
+    icon: <Trophy className="w-4 h-4" />,
     iconBg: "rgba(139,92,246,0.15)",
-    iconColor: "#8b5cf6″,
+    iconColor: "#8b5cf6",
     urgency: "medium",
   },
   {
     key: "network",
     label: "Network",
     description: "New referrals, team joins, and override earnings",
-    icon: <Network className="w-4 h-4″ />,
+    icon: <Network className="w-4 h-4" />,
     iconBg: "rgba(59,130,246,0.15)",
-    iconColor: "#3b82f6″,
+    iconColor: "#3b82f6",
     urgency: "low",
   },
   {
     key: "marketing",
     label: "Marketing & Tips",
     description: "Platform tips, feature announcements, and weekly digests",
-    icon: <Megaphone className="w-4 h-4″ />,
+    icon: <Megaphone className="w-4 h-4" />,
     iconBg: "rgba(107,114,128,0.15)",
     iconColor: "#9ca3af",
     urgency: "low",
@@ -140,7 +140,7 @@ const CATEGORIES: Category[] = [
 ];
 
 const URGENCY_CONFIG = {
-  high:   { label: "High Priority", bg: "rgba(239,68,68,0.1)",    color: "#ef4444″ },
+  high:   { label: "High Priority", bg: "rgba(239,68,68,0.1)",    color: "#ef4444" },
   medium: { label: "Medium",         bg: "rgba(245,158,11,0.1)",   color: "#f59e0b" },
   low:    { label: "Low",            bg: "rgba(107,114,128,0.1)",  color: "#9ca3af" },
 };
@@ -166,7 +166,7 @@ function ToggleSwitch({ checked, onChange, disabled }: { checked: boolean; onCha
       type="button"
       onClick={disabled ? undefined : onChange}
       disabled={disabled}
-      className="relative inline-flex h-5 w-9 rounded-full transition-colors flex-shrink-0″
+      className="relative inline-flex h-5 w-9 rounded-full transition-colors flex-shrink-0"
       style={{
         background: checked ? "#2dd4bf" : "rgba(255,255,255,0.12)",
         cursor: disabled ? "not-allowed" : "pointer",
@@ -193,7 +193,7 @@ function ChannelCheckbox({ checked, onChange, channel, disabled }: {
       className="flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg text-xs font-semibold transition-all"
       style={{
         background: checked ? "rgba(45,212,191,0.12)" : "rgba(255,255,255,0.04)",
-        color: checked ? "#2dd4bf" : "#6b7280″,
+        color: checked ? "#2dd4bf" : "#6b7280",
         border: checked ? "1px solid rgba(45,212,191,0.3)" : "1px solid rgba(255,255,255,0.08)",
         opacity: disabled ? 0.4 : 1,
         cursor: disabled ? "not-allowed" : "pointer",
@@ -204,7 +204,7 @@ function ChannelCheckbox({ checked, onChange, channel, disabled }: {
         : <Icon size={11} />
       }
       {meta.label}
-      {meta.coming && <span className="text-[9px] opacity-60″>(soon)</span>}
+      {meta.coming && <span className="text-[9px] opacity-60">(soon)</span>}
     </button>
   );
 }
@@ -239,8 +239,8 @@ export default function NotificationPreferences() {
         smsEnabled: serverPrefs.smsEnabled ?? false,
         pushEnabled: true,
         quietHoursEnabled: false,
-        quietStart: "22:00″,
-        quietEnd: "08:00″,
+        quietStart: "22:00",
+        quietEnd: "08:00",
         leadValueThreshold: 0,
       });
     }
@@ -300,7 +300,7 @@ export default function NotificationPreferences() {
   if (isLoading) {
     return (
       <PartnerLayout>
-        <div className="flex items-center justify-center h-64″>
+        <div className="flex items-center justify-center h-64">
           <Loader2 className="w-8 h-8 animate-spin" style={{ color: "#2dd4bf" }} />
         </div>
       </PartnerLayout>
@@ -309,20 +309,20 @@ export default function NotificationPreferences() {
 
   return (
     <PartnerLayout>
-      <div className="max-w-2xl space-y-5″>
+      <div className="max-w-2xl space-y-5">
 
         {/* Header */}
         <div className="flex items-start justify-between gap-4 flex-wrap">
-          <div className="flex items-center gap-3″>
+          <div className="flex items-center gap-3">
             <div
               className="w-10 h-10 rounded-xl flex items-center justify-center"
               style={{ background: "rgba(45,212,191,0.1)", border: "1px solid rgba(45,212,191,0.2)" }}
             >
-              <Bell className="w-5 h-5″ style={{ color: "#2dd4bf" }} />
+              <Bell className="w-5 h-5" style={{ color: "#2dd4bf" }} />
             </div>
             <div>
               <h1 className="text-2xl font-bold text-white">Notification Preferences</h1>
-              <p className="text-sm text-gray-400″>Control what you hear about and how.</p>
+              <p className="text-sm text-gray-400">Control what you hear about and how.</p>
             </div>
           </div>
           <button
@@ -331,13 +331,13 @@ export default function NotificationPreferences() {
             className="flex items-center gap-2 px-4 py-2 rounded-xl text-sm font-bold transition-all"
             style={
               isDirty
-                ? { background: "#2dd4bf", color: "#0A1628″ }
-                : { background: "rgba(255,255,255,0.06)", color: "#4b5563″, cursor: "default" }
+                ? { background: "#2dd4bf", color: "#0A1628" }
+                : { background: "rgba(255,255,255,0.06)", color: "#4b5563", cursor: "default" }
             }
           >
             {updatePrefs.isPending
               ? <><Loader2 className="w-4 h-4 animate-spin" /> Saving…</>
-              : <><Save className="w-4 h-4″ /> Save Changes</>
+              : <><Save className="w-4 h-4" /> Save Changes</>
             }
           </button>
         </div>
@@ -345,22 +345,22 @@ export default function NotificationPreferences() {
         {/* Summary */}
         <div className="flex items-center gap-3 px-4 py-3 rounded-xl"
           style={{ background: "rgba(45,212,191,0.06)", border: "1px solid rgba(45,212,191,0.15)" }}>
-          <Bell className="w-4 h-4 flex-shrink-0″ style={{ color: "#2dd4bf" }} />
-          <span className="text-sm text-gray-300″>
+          <Bell className="w-4 h-4 flex-shrink-0" style={{ color: "#2dd4bf" }} />
+          <span className="text-sm text-gray-300">
             <span className="font-bold text-white">{enabledCount}</span> of {CATEGORIES.length} categories enabled
-            {prefs.emailEnabled && <span className="ml-2 text-gray-400″>· Email on</span>}
-            {prefs.smsEnabled && <span className="ml-2 text-gray-400″>· SMS on</span>}
-            {prefs.pushEnabled && <span className="ml-2 text-gray-400″>· Push on</span>}
-            {prefs.quietHoursEnabled && <span className="ml-2 text-gray-400″>· Quiet hours on</span>}
+            {prefs.emailEnabled && <span className="ml-2 text-gray-400">· Email on</span>}
+            {prefs.smsEnabled && <span className="ml-2 text-gray-400">· SMS on</span>}
+            {prefs.pushEnabled && <span className="ml-2 text-gray-400">· Push on</span>}
+            {prefs.quietHoursEnabled && <span className="ml-2 text-gray-400">· Quiet hours on</span>}
           </span>
         </div>
 
         {/* Global channels */}
         <div className="rounded-2xl overflow-hidden"
           style={{ background: "rgba(255,255,255,0.03)", border: "1px solid rgba(255,255,255,0.08)" }}>
-          <div className="px-5 py-3″ style={{ borderBottom: "1px solid rgba(255,255,255,0.07)" }}>
+          <div className="px-5 py-3" style={{ borderBottom: "1px solid rgba(255,255,255,0.07)" }}>
             <h2 className="text-sm font-bold text-white">Delivery Channels</h2>
-            <p className="text-xs text-gray-500 mt-0.5″>Master toggles — disabling a channel silences all categories for it</p>
+            <p className="text-xs text-gray-500 mt-0.5">Master toggles — disabling a channel silences all categories for it</p>
           </div>
           <div className="divide-y" style={{ borderColor: "rgba(255,255,255,0.06)" }}>
             {(["emailEnabled", "smsEnabled", "pushEnabled"] as const).map((key) => {
@@ -368,11 +368,11 @@ export default function NotificationPreferences() {
               const meta = CHANNEL_META[channelKey];
               const Icon = meta.icon;
               return (
-                <div key={key} className="flex items-center justify-between px-5 py-3.5″>
-                  <div className="flex items-center gap-3″>
+                <div key={key} className="flex items-center justify-between px-5 py-3.5">
+                  <div className="flex items-center gap-3">
                     <div className="w-8 h-8 rounded-lg flex items-center justify-center"
                       style={{ background: "rgba(255,255,255,0.06)" }}>
-                      <Icon size={15} className="text-gray-400″ />
+                      <Icon size={15} className="text-gray-400" />
                     </div>
                     <div>
                       <p className="text-sm font-semibold text-white">
@@ -384,7 +384,7 @@ export default function NotificationPreferences() {
                           </span>
                         )}
                       </p>
-                      <p className="text-xs text-gray-500″>
+                      <p className="text-xs text-gray-500">
                         {channelKey === "email" && "Sent to your registered email address"}
                         {channelKey === "sms" && "Text alerts for urgent notifications"}
                         {channelKey === "push" && "In-app and browser push notifications"}
@@ -409,7 +409,7 @@ export default function NotificationPreferences() {
             style={{ borderBottom: "1px solid rgba(255,255,255,0.07)" }}>
             <div>
               <h2 className="text-sm font-bold text-white">Notification Categories</h2>
-              <p className="text-xs text-gray-500 mt-0.5″>Choose which channels to use per category</p>
+              <p className="text-xs text-gray-500 mt-0.5">Choose which channels to use per category</p>
             </div>
             <div className="hidden sm:flex items-center gap-1 text-[10px] font-semibold text-gray-600 uppercase tracking-widest">
               <span className="w-14 text-center">Email</span>
@@ -423,14 +423,14 @@ export default function NotificationPreferences() {
               const urgency = URGENCY_CONFIG[cat.urgency];
               const anyEnabled = catPrefs.email || catPrefs.sms || catPrefs.push;
               return (
-                <div key={cat.key} className="px-5 py-4″>
-                  <div className="flex items-start justify-between gap-3″>
-                    <div className="flex items-start gap-3 flex-1 min-w-0″>
-                      <div className="w-9 h-9 rounded-xl flex items-center justify-center flex-shrink-0 mt-0.5″
+                <div key={cat.key} className="px-5 py-4">
+                  <div className="flex items-start justify-between gap-3">
+                    <div className="flex items-start gap-3 flex-1 min-w-0">
+                      <div className="w-9 h-9 rounded-xl flex items-center justify-center flex-shrink-0 mt-0.5"
                         style={{ background: cat.iconBg, color: cat.iconColor }}>
                         {cat.icon}
                       </div>
-                      <div className="flex-1 min-w-0″>
+                      <div className="flex-1 min-w-0">
                         <div className="flex items-center gap-2 flex-wrap">
                           <span className={`text-sm font-semibold ${anyEnabled ? "text-white" : "text-gray-500"}`}>
                             {cat.label}
@@ -445,7 +445,7 @@ export default function NotificationPreferences() {
                     </div>
 
                     {/* Channel toggles */}
-                    <div className="flex items-center gap-1.5 flex-shrink-0 mt-1″>
+                    <div className="flex items-center gap-1.5 flex-shrink-0 mt-1">
                       {(["email", "sms", "push"] as Channel[]).map((ch) => (
                         <ChannelCheckbox
                           key={ch}
@@ -472,11 +472,11 @@ export default function NotificationPreferences() {
           >
             <div>
               <h2 className="text-sm font-bold text-white">Advanced Settings</h2>
-              <p className="text-xs text-gray-500 mt-0.5″>Quiet hours, lead value threshold</p>
+              <p className="text-xs text-gray-500 mt-0.5">Quiet hours, lead value threshold</p>
             </div>
             {showAdvanced
-              ? <ChevronUp size={16} className="text-gray-400″ />
-              : <ChevronDown size={16} className="text-gray-400″ />
+              ? <ChevronUp size={16} className="text-gray-400" />
+              : <ChevronDown size={16} className="text-gray-400" />
             }
           </button>
 
@@ -484,16 +484,16 @@ export default function NotificationPreferences() {
             <div className="border-t" style={{ borderColor: "rgba(255,255,255,0.07)" }}>
 
               {/* Quiet hours */}
-              <div className="px-5 py-4″ style={{ borderBottom: "1px solid rgba(255,255,255,0.06)" }}>
-                <div className="flex items-start justify-between gap-3 mb-3″>
-                  <div className="flex items-start gap-3″>
-                    <div className="w-9 h-9 rounded-xl flex items-center justify-center flex-shrink-0″
+              <div className="px-5 py-4" style={{ borderBottom: "1px solid rgba(255,255,255,0.06)" }}>
+                <div className="flex items-start justify-between gap-3 mb-3">
+                  <div className="flex items-start gap-3">
+                    <div className="w-9 h-9 rounded-xl flex items-center justify-center flex-shrink-0"
                       style={{ background: "rgba(99,102,241,0.15)" }}>
-                      <Moon size={16} style={{ color: "#6366f1″ }} />
+                      <Moon size={16} style={{ color: "#6366f1" }} />
                     </div>
                     <div>
                       <p className="text-sm font-semibold text-white">Quiet Hours</p>
-                      <p className="text-xs text-gray-500″>Pause non-urgent notifications during set hours</p>
+                      <p className="text-xs text-gray-500">Pause non-urgent notifications during set hours</p>
                     </div>
                   </div>
                   <ToggleSwitch
@@ -502,10 +502,10 @@ export default function NotificationPreferences() {
                   />
                 </div>
                 {prefs.quietHoursEnabled && (
-                  <div className="flex items-center gap-3 mt-3 ml-12″>
-                    <div className="flex items-center gap-2″>
-                      <Moon size={12} className="text-gray-500″ />
-                      <label className="text-xs text-gray-400″>From</label>
+                  <div className="flex items-center gap-3 mt-3 ml-12">
+                    <div className="flex items-center gap-2">
+                      <Moon size={12} className="text-gray-500" />
+                      <label className="text-xs text-gray-400">From</label>
                       <input
                         type="time"
                         value={prefs.quietStart}
@@ -514,9 +514,9 @@ export default function NotificationPreferences() {
                         style={{ background: "rgba(255,255,255,0.07)", border: "1px solid rgba(255,255,255,0.12)" }}
                       />
                     </div>
-                    <div className="flex items-center gap-2″>
-                      <Sun size={12} className="text-gray-500″ />
-                      <label className="text-xs text-gray-400″>To</label>
+                    <div className="flex items-center gap-2">
+                      <Sun size={12} className="text-gray-500" />
+                      <label className="text-xs text-gray-400">To</label>
                       <input
                         type="time"
                         value={prefs.quietEnd}
@@ -530,18 +530,18 @@ export default function NotificationPreferences() {
               </div>
 
               {/* Lead value threshold */}
-              <div className="px-5 py-4″>
-                <div className="flex items-start gap-3 mb-3″>
-                  <div className="w-9 h-9 rounded-xl flex items-center justify-center flex-shrink-0″
+              <div className="px-5 py-4">
+                <div className="flex items-start gap-3 mb-3">
+                  <div className="w-9 h-9 rounded-xl flex items-center justify-center flex-shrink-0"
                     style={{ background: "rgba(34,197,94,0.15)" }}>
                     <Zap size={16} style={{ color: "#22c55e" }} />
                   </div>
                   <div>
                     <p className="text-sm font-semibold text-white">Lead Urgency Threshold</p>
-                    <p className="text-xs text-gray-500″>Only notify me for leads above a minimum estimated value</p>
+                    <p className="text-xs text-gray-500">Only notify me for leads above a minimum estimated value</p>
                   </div>
                 </div>
-                <div className="flex gap-2 flex-wrap ml-12″>
+                <div className="flex gap-2 flex-wrap ml-12">
                   {LEAD_THRESHOLDS.map(({ value, label }) => (
                     <button
                       key={value}
@@ -549,7 +549,7 @@ export default function NotificationPreferences() {
                       className="px-3 py-1.5 rounded-lg text-xs font-semibold transition-all"
                       style={
                         prefs.leadValueThreshold === value
-                          ? { background: "#22c55e", color: "#0A1628″ }
+                          ? { background: "#22c55e", color: "#0A1628" }
                           : { background: "rgba(255,255,255,0.06)", color: "#9ca3af", border: "1px solid rgba(255,255,255,0.08)" }
                       }
                     >
@@ -558,7 +558,7 @@ export default function NotificationPreferences() {
                   ))}
                 </div>
                 {prefs.leadValueThreshold > 0 && (
-                  <p className="text-xs text-gray-500 mt-2 ml-12″>
+                  <p className="text-xs text-gray-500 mt-2 ml-12">
                     Leads estimated below ${prefs.leadValueThreshold.toLocaleString()} will not trigger notifications.
                     Storm alerts are always sent regardless of threshold.
                   </p>
@@ -569,16 +569,16 @@ export default function NotificationPreferences() {
         </div>
 
         {/* Test notification */}
-        <div className="rounded-2xl px-5 py-4 flex items-center justify-between gap-4″
+        <div className="rounded-2xl px-5 py-4 flex items-center justify-between gap-4"
           style={{ background: "rgba(255,255,255,0.03)", border: "1px solid rgba(255,255,255,0.08)" }}>
-          <div className="flex items-start gap-3″>
-            <div className="w-9 h-9 rounded-xl flex items-center justify-center flex-shrink-0″
+          <div className="flex items-start gap-3">
+            <div className="w-9 h-9 rounded-xl flex items-center justify-center flex-shrink-0"
               style={{ background: "rgba(45,212,191,0.1)" }}>
               <Volume2 size={16} style={{ color: "#2dd4bf" }} />
             </div>
             <div>
               <p className="text-sm font-semibold text-white">Test Notifications</p>
-              <p className="text-xs text-gray-500″>Send a test alert to verify your current settings are working</p>
+              <p className="text-xs text-gray-500">Send a test alert to verify your current settings are working</p>
             </div>
           </div>
           <button
@@ -597,9 +597,9 @@ export default function NotificationPreferences() {
         {/* In-app note */}
         <div className="flex items-start gap-3 px-4 py-3 rounded-xl"
           style={{ background: "rgba(45,212,191,0.04)", border: "1px solid rgba(45,212,191,0.12)" }}>
-          <Bell size={14} className="mt-0.5 flex-shrink-0″ style={{ color: "#2dd4bf" }} />
-          <p className="text-xs text-gray-400″>
-            <span className="font-semibold text-gray-300″>In-app notifications</span> are always enabled and
+          <Bell size={14} className="mt-0.5 flex-shrink-0" style={{ color: "#2dd4bf" }} />
+          <p className="text-xs text-gray-400">
+            <span className="font-semibold text-gray-300">In-app notifications</span> are always enabled and
             cannot be disabled. They appear in your notification bell in the dashboard header.
           </p>
         </div>
@@ -607,19 +607,19 @@ export default function NotificationPreferences() {
         {/* Save sticky footer */}
         {isDirty && (
           <div
-            className="fixed bottom-6 left-1/2 -translate-x-1/2 flex items-center gap-3 px-5 py-3 rounded-2xl shadow-2xl z-50″
-            style={{ background: "#0f1e35″, border: "1px solid rgba(45,212,191,0.3)" }}
+            className="fixed bottom-6 left-1/2 -translate-x-1/2 flex items-center gap-3 px-5 py-3 rounded-2xl shadow-2xl z-50"
+            style={{ background: "#0f1e35", border: "1px solid rgba(45,212,191,0.3)" }}
           >
-            <span className="text-sm text-gray-300″>You have unsaved changes</span>
+            <span className="text-sm text-gray-300">You have unsaved changes</span>
             <button
               onClick={handleSave}
               disabled={updatePrefs.isPending}
               className="flex items-center gap-2 px-4 py-2 rounded-xl text-sm font-bold transition-all"
-              style={{ background: "#2dd4bf", color: "#0A1628″ }}
+              style={{ background: "#2dd4bf", color: "#0A1628" }}
             >
               {updatePrefs.isPending
                 ? <><Loader2 className="w-4 h-4 animate-spin" /> Saving…</>
-                : <><Save className="w-4 h-4″ /> Save</>
+                : <><Save className="w-4 h-4" /> Save</>
               }
             </button>
           </div>

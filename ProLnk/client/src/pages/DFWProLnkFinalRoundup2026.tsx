@@ -70,7 +70,7 @@ export default function DFWProLnkFinalRoundup2026() {
           <p style={{ color: '#F5E642', fontWeight: 700, marginBottom: 12, fontSize: 14 }}>👤 SHOW ME WHAT'S NEXT FOR:</p>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 10 }}>
             {stakeholders.map(s => (
-              <button key={s.id} onClick={() => setStakeholder(s.id)} style={{ padding: '12px', borderRadius: 8, border: '2px solid', borderColor: stakeholder === s.id ? '#F5E642′ : '#334155', backgroundColor: stakeholder === s.id ? '#F5E64220' : '#0f2744', color: '#fff', cursor: ’pointer', fontWeight: 600 }}>
+              <button key={s.id} onClick={() => setStakeholder(s.id)} style={{ padding: '12px', borderRadius: 8, border: '2px solid', borderColor: stakeholder === s.id ? '#F5E642' : '#334155', backgroundColor: stakeholder === s.id ? '#F5E64220' : '#0f2744', color: '#fff', cursor: 'pointer', fontWeight: 600 }}>
                 {s.icon} {s.label}
               </button>
             ))}
@@ -82,7 +82,7 @@ export default function DFWProLnkFinalRoundup2026() {
             <h2 style={{ color: '#F5E642', fontSize: 18, marginBottom: 16 }}>📅 {guides[stakeholder].title}</h2>
             <div style={{ display: 'flex', flexDirection: 'column', gap: 14 }}>
               {guides[stakeholder].milestones.map((item, i) => (
-                <div key={i} style={{ backgroundColor: '#1e3a5f', borderRadius: 10, padding: 18, borderLeft: '4px solid', borderLeftColor: item.status === 'Complete' || item.status === 'Built' || item.status === 'Now Open' ? '#4ade80′ : item.status === ’Urgent' || item.status === 'In Progress' || item.status === 'Ready to Submit' || item.status === 'Building Now' || item.status === 'This Week' ? '#fbbf24′ : '#334155' }}>
+                <div key={i} style={{ backgroundColor: '#1e3a5f', borderRadius: 10, padding: 18, borderLeft: '4px solid', borderLeftColor: item.status === 'Complete' || item.status === 'Built' || item.status === 'Now Open' ? '#4ade80' : item.status === 'Urgent' || item.status === 'In Progress' || item.status === 'Ready to Submit' || item.status === 'Building Now' || item.status === 'This Week' ? '#fbbf24' : '#334155' }}>
                   <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 6 }}>
                     <span style={{ fontSize: 20 }}>{item.icon}</span>
                     <span style={{ fontSize: 11, fontWeight: 700, color: '#94a3b8', backgroundColor: '#0A1628', borderRadius: 4, padding: '3px 8px' }}>{item.status}</span>

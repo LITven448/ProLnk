@@ -45,7 +45,7 @@ export default function DFWStaircaseRailingGuide2026() {
         </div>
 
         <div style={{ background: '#162035', border: '1px solid #F5E64240', borderRadius: 10, padding: 16, marginBottom: 24, fontSize: 13, color: '#ccc' }}>
-          📏 <strong style={{ color: '#F5E642′ }}>DFW Code: </strong>{CODE}
+          📏 <strong style={{ color: '#F5E642' }}>DFW Code: </strong>{CODE}
         </div>
 
         <div style={{ marginBottom: 24 }}>
@@ -53,7 +53,7 @@ export default function DFWStaircaseRailingGuide2026() {
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: 10 }}>
             {styles.map((s) => (
               <button key={s.value} onClick={() => setStyle(s.value)}
-                style={{ background: style === s.value ? '#F5E642′ : '#162035', color: style === s.value ? '#0A1628' : '#fff', border: '1px solid #F5E642', borderRadius: 8, padding: '10px 18px', cursor: ’pointer', fontWeight: 600 }}>
+                style={{ background: style === s.value ? '#F5E642' : '#162035', color: style === s.value ? '#0A1628' : '#fff', border: '1px solid #F5E642', borderRadius: 8, padding: '10px 18px', cursor: 'pointer', fontWeight: 600 }}>
                 {s.label}
               </button>
             ))}
@@ -65,7 +65,7 @@ export default function DFWStaircaseRailingGuide2026() {
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: 10 }}>
             {budgets.map((b) => (
               <button key={b.value} onClick={() => setBudget(b.value)}
-                style={{ background: budget === b.value ? '#F5E642′ : '#162035', color: budget === b.value ? '#0A1628' : '#fff', border: '1px solid #F5E642', borderRadius: 8, padding: '10px 18px', cursor: ’pointer', fontWeight: 600 }}>
+                style={{ background: budget === b.value ? '#F5E642' : '#162035', color: budget === b.value ? '#0A1628' : '#fff', border: '1px solid #F5E642', borderRadius: 8, padding: '10px 18px', cursor: 'pointer', fontWeight: 600 }}>
                 {b.label}
               </button>
             ))}

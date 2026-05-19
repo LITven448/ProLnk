@@ -12,7 +12,7 @@ interface LandscapePackage {
 }
 
 function getPackage(lot: string, hasHOA: boolean, budget: string): LandscapePackage {
-  const highBudget = budget === '$12,000–$25,000′ || budget === '$25,000+';
+  const highBudget = budget === '$12,000–$25,000' || budget === '$25,000+';
   const midBudget = budget === '$6,000–$12,000';
   const isLarge = lot === '20,000–40,000 sqft' || lot === 'Over 40,000 sqft (1 acre+)';
 
@@ -75,7 +75,7 @@ export default function DFWLandscaperKeller() {
 
         <h1 style={{ fontSize: 42, fontWeight: 800, lineHeight: 1.15, marginBottom: 16 }}>
           Keller TX Landscapers —{' '}
-          <span style={{ color: '#F5E642′ }}>Upscale Suburb Specialists</span>
+          <span style={{ color: '#F5E642' }}>Upscale Suburb Specialists</span>
         </h1>
 
         <p style={{ fontSize: 18, color: '#94a3b8', lineHeight: 1.7, marginBottom: 40, maxWidth: 700 }}>
@@ -92,7 +92,7 @@ export default function DFWLandscaperKeller() {
           ].map(card => (
             <div key={card.title} style={{ background: '#111f3a', borderRadius: 12, padding: 24, border: '1px solid #1e3a5f' }}>
               <div style={{ fontSize: 32, marginBottom: 12 }}>{card.icon}</div>
-              <h3 style={{ fontSize: 17, fontWeight: 700, marginBottom: 8, color: '#F5E642′ }}>{card.title}</h3>
+              <h3 style={{ fontSize: 17, fontWeight: 700, marginBottom: 8, color: '#F5E642' }}>{card.title}</h3>
               <p style={{ fontSize: 14, color: '#94a3b8', lineHeight: 1.6 }}>{card.desc}</p>
             </div>
           ))}
@@ -106,7 +106,7 @@ export default function DFWLandscaperKeller() {
 
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 20, marginBottom: 20 }}>
             <div>
-              <label style={{ display: 'block', fontSize: 14, fontWeight: 600, marginBottom: 8, color: '#F5E642′ }}>Lot Size</label>
+              <label style={{ display: 'block', fontSize: 14, fontWeight: 600, marginBottom: 8, color: '#F5E642' }}>Lot Size</label>
               <select value={lotSize} onChange={e => setLotSize(e.target.value)}
                 style={{ width: '100%', padding: '12px 16px', background: '#0A1628', border: '1px solid #2d4a7a', borderRadius: 8, color: 'white', fontSize: 15 }}>
                 <option value="">Select lot size...</option>
@@ -114,7 +114,7 @@ export default function DFWLandscaperKeller() {
               </select>
             </div>
             <div>
-              <label style={{ display: 'block', fontSize: 14, fontWeight: 600, marginBottom: 8, color: '#F5E642′ }}>Budget Range</label>
+              <label style={{ display: 'block', fontSize: 14, fontWeight: 600, marginBottom: 8, color: '#F5E642' }}>Budget Range</label>
               <select value={budget} onChange={e => setBudget(e.target.value)}
                 style={{ width: '100%', padding: '12px 16px', background: '#0A1628', border: '1px solid #2d4a7a', borderRadius: 8, color: 'white', fontSize: 15 }}>
                 <option value="">Select budget...</option>
@@ -124,11 +124,11 @@ export default function DFWLandscaperKeller() {
           </div>
 
           <div style={{ marginBottom: 24 }}>
-            <label style={{ display: 'block', fontSize: 14, fontWeight: 600, marginBottom: 12, color: '#F5E642′ }}>HOA Community?</label>
+            <label style={{ display: 'block', fontSize: 14, fontWeight: 600, marginBottom: 12, color: '#F5E642' }}>HOA Community?</label>
             <div style={{ display: 'flex', gap: 12 }}>
               {[true, false].map(val => (
                 <button key={String(val)} onClick={() => setHasHOA(val)}
-                  style={{ padding: '10px 24px', borderRadius: 8, border: `2px solid ${hasHOA === val ? '#F5E642' : '#2d4a7a'}`, background: hasHOA === val ? '#F5E642′ : ’transparent', color: hasHOA === val ? '#0A1628′ : ’white', fontWeight: 700, cursor: 'pointer', fontSize: 15 }}>
+                  style={{ padding: '10px 24px', borderRadius: 8, border: `2px solid ${hasHOA === val ? '#F5E642' : '#2d4a7a'}`, background: hasHOA === val ? '#F5E642' : 'transparent', color: hasHOA === val ? '#0A1628' : 'white', fontWeight: 700, cursor: 'pointer', fontSize: 15 }}>
                   {val ? 'Yes, I have an HOA' : 'No HOA'}
                 </button>
               ))}
@@ -142,7 +142,7 @@ export default function DFWLandscaperKeller() {
               <div style={{ marginBottom: 16 }}>
                 {result.includes.map(item => (
                   <div key={item} style={{ fontSize: 14, color: '#cbd5e1', marginBottom: 6, paddingLeft: 16, position: 'relative' }}>
-                    <span style={{ position: 'absolute', left: 0, color: '#F5E642′ }}>✓</span> {item}
+                    <span style={{ position: 'absolute', left: 0, color: '#F5E642' }}>✓</span> {item}
                   </div>
                 ))}
               </div>
@@ -155,7 +155,7 @@ export default function DFWLandscaperKeller() {
           )}
         </div>
 
-        <div style={{ textAlign: 'center', background: '#111f3a', borderRadius: 16, padding: 40, border: '2px solid #F5E642′ }}>
+        <div style={{ textAlign: 'center', background: '#111f3a', borderRadius: 16, padding: 40, border: '2px solid #F5E642' }}>
           <div style={{ fontSize: 36, marginBottom: 12 }}>🌿</div>
           <h2 style={{ fontSize: 26, fontWeight: 800, marginBottom: 12 }}>Get Keller Landscaper Quotes Today</h2>
           <p style={{ color: '#94a3b8', marginBottom: 24 }}>ProLnk connects you with Keller-area landscapers who know HOA requirements and local plant conditions.</p>

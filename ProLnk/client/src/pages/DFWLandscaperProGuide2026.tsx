@@ -30,7 +30,7 @@ export default function DFWLandscaperProGuide2026() {
         <div style={{ color: '#F5E642', fontSize: 13, fontWeight: 700, letterSpacing: 2, marginBottom: 8 }}>PROLNK — DFW TRADE GUIDE 2026</div>
         <h1 style={{ fontSize: 32, fontWeight: 800, marginBottom: 8 }}>🌿 DFW Landscaper Pro Guide 2026</h1>
         <p style={{ color: '#a0aec0', fontSize: 16, marginBottom: 32 }}>
-          DFW homeowners spend an average of <strong style={{ color: '#F5E642′ }}>$2,400/yr</strong> on lawn care and landscaping.
+          DFW homeowners spend an average of <strong style={{ color: '#F5E642' }}>$2,400/yr</strong> on lawn care and landscaping.
           ProLnk matches you to recurring maintenance contracts, spring startups, and one-time irrigation installs
           across all 7 DFW counties — so your calendar stays full every season.
         </p>
@@ -39,10 +39,10 @@ export default function DFWLandscaperProGuide2026() {
           <div style={{ color: '#F5E642', fontWeight: 700, marginBottom: 12 }}>📅 DFW Landscaping Seasonality</div>
           <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
             {[
-              { season: 'Spring (Mar-May)', desc: 'Cleanup, mulching, planting, irrigation startup — busiest season', color: '#68d391′ },
-              { season: 'Summer (Jun-Sep)', desc: 'Weekly mow, turf management, drought response watering', color: '#f6ad55′ },
-              { season: 'Fall (Oct-Nov)', desc: 'Aeration, overseeding, leaf cleanup, winterization', color: '#b794f4′ },
-              { season: 'Winter (Dec-Feb)', desc: 'Holiday lighting, drainage work, landscape design planning', color: '#76e4f7′ },
+              { season: 'Spring (Mar-May)', desc: 'Cleanup, mulching, planting, irrigation startup — busiest season', color: '#68d391' },
+              { season: 'Summer (Jun-Sep)', desc: 'Weekly mow, turf management, drought response watering', color: '#f6ad55' },
+              { season: 'Fall (Oct-Nov)', desc: 'Aeration, overseeding, leaf cleanup, winterization', color: '#b794f4' },
+              { season: 'Winter (Dec-Feb)', desc: 'Holiday lighting, drainage work, landscape design planning', color: '#76e4f7' },
             ].map(({ season, desc, color }) => (
               <div key={season} style={{ background: '#1a2d45', borderRadius: 8, padding: '12px 16px', borderLeft: `4px solid ${color}` }}>
                 <div style={{ fontWeight: 700, color, fontSize: 14 }}>{season}</div>
@@ -57,7 +57,7 @@ export default function DFWLandscaperProGuide2026() {
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8, marginBottom: 16 }}>
             {serviceTypes.map((s, i) => (
               <button key={s.label} onClick={() => setSvcIdx(i)}
-                style={{ background: i === svcIdx ? '#F5E642′ : '#1a2d45', color: i === svcIdx ? '#0A1628' : '#fff',
+                style={{ background: i === svcIdx ? '#F5E642' : '#1a2d45', color: i === svcIdx ? '#0A1628' : '#fff',
                   border: 'none', borderRadius: 6, padding: '8px 14px', fontSize: 13, fontWeight: 600, cursor: 'pointer' }}>
                 {s.label}
               </button>
@@ -65,23 +65,23 @@ export default function DFWLandscaperProGuide2026() {
           </div>
           <div style={{ background: '#0A1628', borderRadius: 8, padding: 16 }}>
             <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: 8 }}>
-              <span style={{ color: '#a0aec0′ }}>Avg value per client/job</span>
+              <span style={{ color: '#a0aec0' }}>Avg value per client/job</span>
               <span style={{ fontWeight: 700 }}>${svc.avgMonthly.toLocaleString()}</span>
             </div>
             <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: 8 }}>
-              <span style={{ color: '#a0aec0′ }}>Peak season</span>
+              <span style={{ color: '#a0aec0' }}>Peak season</span>
               <span style={{ color: '#F5E642', fontWeight: 700 }}>{svc.season}</span>
             </div>
             <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: 8 }}>
-              <span style={{ color: '#a0aec0′ }}>Market demand</span>
+              <span style={{ color: '#a0aec0' }}>Market demand</span>
               <span style={{ color: demandColors[svc.demand], fontWeight: 700 }}>{svc.demand}</span>
             </div>
             <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: 8 }}>
-              <span style={{ color: '#a0aec0′ }}>Monthly ProLnk earnings</span>
-              <span style={{ fontWeight: 700, color: '#F5E642′ }}>${monthly.toLocaleString(undefined,{maximumFractionDigits:0})}</span>
+              <span style={{ color: '#a0aec0' }}>Monthly ProLnk earnings</span>
+              <span style={{ fontWeight: 700, color: '#F5E642' }}>${monthly.toLocaleString(undefined,{maximumFractionDigits:0})}</span>
             </div>
             <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-              <span style={{ color: '#a0aec0′ }}>Annual ProLnk earnings</span>
+              <span style={{ color: '#a0aec0' }}>Annual ProLnk earnings</span>
               <span style={{ fontWeight: 800, color: '#F5E642', fontSize: 20 }}>${annual.toLocaleString(undefined,{maximumFractionDigits:0})}</span>
             </div>
           </div>
@@ -90,7 +90,7 @@ export default function DFWLandscaperProGuide2026() {
         <div style={{ background: '#111d30', borderRadius: 12, padding: 20, marginBottom: 32 }}>
           <div style={{ color: '#F5E642', fontWeight: 700, marginBottom: 12 }}>🔄 Recurring Contract Value</div>
           <p style={{ color: '#cbd5e0', fontSize: 14, marginBottom: 8 }}>
-            The average DFW homeowner spends <strong style={{ color: '#F5E642′ }}>${recurringAnnual.toLocaleString()}/yr</strong> on recurring lawn care.
+            The average DFW homeowner spends <strong style={{ color: '#F5E642' }}>${recurringAnnual.toLocaleString()}/yr</strong> on recurring lawn care.
             ProLnk prioritizes matching landscapers with homeowners seeking ongoing contracts — not just one-time jobs.
           </p>
           <ul style={{ color: '#cbd5e0', lineHeight: 2, paddingLeft: 20, margin: 0 }}>

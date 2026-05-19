@@ -48,7 +48,7 @@ export default function DFWCloggedDrainGuide2026() {
               { method: 'Camera inspection', best: 'Main line / mystery clogs', cost: '$100-200 plumber' },
             ].map(r => (
               <div key={r.method} style={{ display: 'grid', gridTemplateColumns: '1fr 1fr auto', gap: 8, borderBottom: '1px solid #334155', paddingBottom: 10, alignItems: 'center' }}>
-                <span style={{ color: '#e2e8f0′ }}>{r.method}</span>
+                <span style={{ color: '#e2e8f0' }}>{r.method}</span>
                 <span style={{ color: '#94a3b8', fontSize: 13 }}>{r.best}</span>
                 <span style={{ color: '#F5E642', fontWeight: 700 }}>{r.cost}</span>
               </div>
@@ -59,9 +59,9 @@ export default function DFWCloggedDrainGuide2026() {
         <div style={{ background: '#1e293b', borderRadius: 12, padding: 24, marginBottom: 24 }}>
           <h2 style={{ color: '#F5E642', fontSize: 20, marginBottom: 20 }}>🔍 Get a Fix Recommendation</h2>
           <div style={{ marginBottom: 16 }}>
-            <label style={{ display: 'block', marginBottom: 8, color: '#94a3b8′ }}>Which drain is clogged?</label>
+            <label style={{ display: 'block', marginBottom: 8, color: '#94a3b8' }}>Which drain is clogged?</label>
             <select value={drainLocation} onChange={e => setDrainLocation(e.target.value)}
-              style={{ width: '100%', padding: '10px', borderRadius: 6, background: '#0A1628', color: '#fff', border: '1px solid #334155′ }}>
+              style={{ width: '100%', padding: '10px', borderRadius: 6, background: '#0A1628', color: '#fff', border: '1px solid #334155' }}>
               <option value="">Select drain...</option>
               <option value="kitchen">🍳 Kitchen sink</option>
               <option value="bathroom">🚿 Bathroom sink / tub / shower</option>
@@ -69,9 +69,9 @@ export default function DFWCloggedDrainGuide2026() {
             </select>
           </div>
           <div style={{ marginBottom: 16 }}>
-            <label style={{ display: 'block', marginBottom: 8, color: '#94a3b8′ }}>How severe?</label>
+            <label style={{ display: 'block', marginBottom: 8, color: '#94a3b8' }}>How severe?</label>
             <select value={severity} onChange={e => setSeverity(e.target.value)}
-              style={{ width: '100%', padding: '10px', borderRadius: 6, background: '#0A1628', color: '#fff', border: '1px solid #334155′ }}>
+              style={{ width: '100%', padding: '10px', borderRadius: 6, background: '#0A1628', color: '#fff', border: '1px solid #334155' }}>
               <option value="">Select severity...</option>
               <option value="slow">🐢 Draining slowly</option>
               <option value="blocked">🛑 Completely blocked</option>
@@ -82,7 +82,7 @@ export default function DFWCloggedDrainGuide2026() {
             Get Recommendation
           </button>
           {recommendation && (
-            <div style={{ marginTop: 20, background: '#0A1628', borderRadius: 8, padding: 16, borderLeft: '4px solid #F5E642', color: '#e2e8f0′ }}>
+            <div style={{ marginTop: 20, background: '#0A1628', borderRadius: 8, padding: 16, borderLeft: '4px solid #F5E642', color: '#e2e8f0' }}>
               {recommendation}
             </div>
           )}

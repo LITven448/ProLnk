@@ -83,11 +83,11 @@ export default function DFWHomeBusinessGuide() {
                 </div>
                 <div style={{ background: '#0A1628', borderRadius: 10, padding: 16 }}>
                   <div style={{ fontSize: 12, color: '#64748B', marginBottom: 8 }}>🏘️ HOA CONSIDERATION</div>
-                  <div style={{ fontSize: 13, color: '#E8EDF5′ }}>{result.hoa}</div>
+                  <div style={{ fontSize: 13, color: '#E8EDF5' }}>{result.hoa}</div>
                 </div>
                 <div style={{ background: '#0A1628', borderRadius: 10, padding: 16 }}>
                   <div style={{ fontSize: 12, color: '#64748B', marginBottom: 8 }}>🚗 PARKING RULES</div>
-                  <div style={{ fontSize: 13, color: '#E8EDF5′ }}>{result.parking}</div>
+                  <div style={{ fontSize: 13, color: '#E8EDF5' }}>{result.parking}</div>
                 </div>
               </div>
             </div>

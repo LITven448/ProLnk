@@ -35,7 +35,7 @@ export default function DFWFoundationPolyurethane2026() {
         <div style={{ background: '#0f2040', borderRadius: 12, padding: 20, marginBottom: 20 }}>
           <h2 style={{ color: '#F5E642', fontSize: 16, marginBottom: 16 }}>🔬 How the Process Works</h2>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12 }}>
-            {[['Small Ports','5/8″ holes drilled through concrete — nearly invisible when patched'],['Foam Injection','Two-part polyurethane injected under pressure — expands to fill voids'],['Precision Lift','Technician monitors lift in real-time and stops at target elevation'],['Fast Cure','Ready for traffic in 15-30 minutes — no waiting like mudjacking']].map(([title, desc]) => (
+            {[['Small Ports','5/8" holes drilled through concrete — nearly invisible when patched'],['Foam Injection','Two-part polyurethane injected under pressure — expands to fill voids'],['Precision Lift','Technician monitors lift in real-time and stops at target elevation'],['Fast Cure','Ready for traffic in 15-30 minutes — no waiting like mudjacking']].map(([title, desc]) => (
               <div key={title} style={{ background: '#1a2f50', borderRadius: 8, padding: 14 }}>
                 <div style={{ fontWeight: 700, color: '#F5E642', marginBottom: 4, fontSize: 14 }}>{title}</div>
                 <div style={{ color: '#94a3b8', fontSize: 13 }}>{desc}</div>

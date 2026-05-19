@@ -40,16 +40,16 @@ export default function ProLnkStream3SubscriptionOverride() {
         </div>
 
         <div style={{ background: '#111B2E', borderRadius: 12, padding: 20, marginBottom: 24 }}>
-          <div style={{ fontWeight: 700, marginBottom: 12, color: '#F5E642′ }}>💡 Why This Matters</div>
+          <div style={{ fontWeight: 700, marginBottom: 12, color: '#F5E642' }}>💡 Why This Matters</div>
           <p style={{ color: '#94A3B8', fontSize: 14, lineHeight: 1.7, margin: 0 }}>
             Subscription overrides are passive and recurring. A network of 160 active pros can generate $1,000+/mo without closing a single job. As the platform grows, this stream scales automatically — every new pro adds permanent recurring income to your stack.
           </p>
         </div>
 
         <div style={{ background: '#111B2E', borderRadius: 12, padding: 24 }}>
-          <div style={{ fontWeight: 700, marginBottom: 20, color: '#F5E642′ }}>📊 Subscription Override Calculator</div>
+          <div style={{ fontWeight: 700, marginBottom: 20, color: '#F5E642' }}>📊 Subscription Override Calculator</div>
           <div style={{ background: '#0A1628', borderRadius: 8, padding: '10px 14px', marginBottom: 20, display: 'flex', justifyContent: 'space-between' }}>
-            <span style={{ color: '#94A3B8′ }}>Pro Subscription Price</span>
+            <span style={{ color: '#94A3B8' }}>Pro Subscription Price</span>
             <span style={{ color: '#F5E642', fontWeight: 700 }}>${SUB_PRICE}/mo (locked)</span>
           </div>
 
@@ -58,7 +58,7 @@ export default function ProLnkStream3SubscriptionOverride() {
               <label style={{ display: 'block', color: '#94A3B8', fontSize: 13, marginBottom: 6 }}>{lv.emoji} Level {lv.level} Pros: {counts[i]}</label>
               <input type="range" min={0} max={300} value={counts[i]}
                 onChange={e => { const n = [...counts]; n[i] = +e.target.value; setCounts(n); }}
-                style={{ width: '100%', accentColor: '#F5E642′ }} />
+                style={{ width: '100%', accentColor: '#F5E642' }} />
             </div>
           ))}
 
@@ -71,11 +71,11 @@ export default function ProLnkStream3SubscriptionOverride() {
             ))}
             <div style={{ display: 'flex', justifyContent: 'space-between', marginTop: 12, borderTop: '1px solid #1E3A5F', paddingTop: 12 }}>
               <span style={{ fontWeight: 700, fontSize: 14 }}>Total Pros in Network</span>
-              <span style={{ fontWeight: 700, color: '#94A3B8′ }}>{totalPros}</span>
+              <span style={{ fontWeight: 700, color: '#94A3B8' }}>{totalPros}</span>
             </div>
             <div style={{ display: 'flex', justifyContent: 'space-between', marginTop: 8 }}>
               <span style={{ fontWeight: 700, fontSize: 16 }}>Monthly Subscription Override</span>
-              <span style={{ fontWeight: 800, fontSize: 20, color: '#F5E642′ }}>${total.toFixed(0)}/mo</span>
+              <span style={{ fontWeight: 800, fontSize: 20, color: '#F5E642' }}>${total.toFixed(0)}/mo</span>
             </div>
             <div style={{ textAlign: 'center', marginTop: 12, color: '#64748B', fontSize: 13 }}>
               Annual projection: ${(total * 12).toFixed(0)}

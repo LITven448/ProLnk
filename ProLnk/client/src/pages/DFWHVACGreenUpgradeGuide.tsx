@@ -50,7 +50,7 @@ export default function DFWHVACGreenUpgradeGuide() {
         </p>
 
         <div style={{ background: '#0F2040', borderRadius: 12, padding: 24, marginBottom: 24 }}>
-          <h2 style={{ fontSize: 18, fontWeight: 700, marginBottom: 16, color: '#F5E642′ }}>🌍 Green HVAC Principles for DFW</h2>
+          <h2 style={{ fontSize: 18, fontWeight: 700, marginBottom: 16, color: '#F5E642' }}>🌍 Green HVAC Principles for DFW</h2>
           {GREEN_PRINCIPLES.map(p => (
             <div key={p.title} style={{ display: 'flex', gap: 14, marginBottom: 16 }}>
               <div style={{ fontSize: 24, flexShrink: 0 }}>{p.icon}</div>
@@ -63,31 +63,31 @@ export default function DFWHVACGreenUpgradeGuide() {
         </div>
 
         <div style={{ background: '#0F2040', borderRadius: 12, padding: 24, marginBottom: 24 }}>
-          <h2 style={{ fontSize: 18, fontWeight: 700, marginBottom: 16, color: '#F5E642′ }}>📍 Your Situation</h2>
+          <h2 style={{ fontSize: 18, fontWeight: 700, marginBottom: 16, color: '#F5E642' }}>📍 Your Situation</h2>
           <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
             {SITUATIONS.map(s => (
-              <button key={s} onClick={() => setSituation(s)} style={{ background: situation === s ? '#F5E642′ : '#162030', color: situation === s ? '#0A1628' : '#fff', border: ’none', borderRadius: 8, padding: '12px 16px', textAlign: 'left', cursor: 'pointer', fontWeight: situation === s ? 700 : 400, fontSize: 14 }}>{s}</button>
+              <button key={s} onClick={() => setSituation(s)} style={{ background: situation === s ? '#F5E642' : '#162030', color: situation === s ? '#0A1628' : '#fff', border: 'none', borderRadius: 8, padding: '12px 16px', textAlign: 'left', cursor: 'pointer', fontWeight: situation === s ? 700 : 400, fontSize: 14 }}>{s}</button>
             ))}
           </div>
         </div>
 
         <div style={{ background: '#0F2040', borderRadius: 12, padding: 24, marginBottom: 24 }}>
-          <h2 style={{ fontSize: 18, fontWeight: 700, marginBottom: 16, color: '#F5E642′ }}>🎯 Your Green Priority</h2>
+          <h2 style={{ fontSize: 18, fontWeight: 700, marginBottom: 16, color: '#F5E642' }}>🎯 Your Green Priority</h2>
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8 }}>
             {PRIORITIES.map(p => (
-              <button key={p} onClick={() => setPriority(p)} style={{ background: priority === p ? '#F5E642′ : '#162030', color: priority === p ? '#0A1628' : '#fff', border: ’none', borderRadius: 8, padding: '10px 16px', cursor: 'pointer', fontWeight: priority === p ? 700 : 400, fontSize: 13 }}>{p}</button>
+              <button key={p} onClick={() => setPriority(p)} style={{ background: priority === p ? '#F5E642' : '#162030', color: priority === p ? '#0A1628' : '#fff', border: 'none', borderRadius: 8, padding: '10px 16px', cursor: 'pointer', fontWeight: priority === p ? 700 : 400, fontSize: 13 }}>{p}</button>
             ))}
           </div>
         </div>
 
         {reco && (
           <div style={{ background: '#0F2040', borderRadius: 12, padding: 24, marginBottom: 24 }}>
-            <h2 style={{ fontSize: 18, fontWeight: 700, marginBottom: 16, color: '#F5E642′ }}>✅ Your Green Upgrade Recommendation</h2>
+            <h2 style={{ fontSize: 18, fontWeight: 700, marginBottom: 16, color: '#F5E642' }}>✅ Your Green Upgrade Recommendation</h2>
             <div style={{ fontSize: 18, fontWeight: 700, marginBottom: 12 }}>{reco.title}</div>
             <p style={{ fontSize: 14, color: '#ddd', lineHeight: 1.7, marginBottom: 16 }}>{reco.description}</p>
             {[['🌱 Environmental Impact', reco.impact], ['💰 Estimated Cost', reco.cost], ['🏷️ Available Rebates', reco.rebate]].map(([label, value]) => (
               <div key={label} style={{ background: '#162030', borderRadius: 8, padding: 14, marginBottom: 10 }}>
-                <div style={{ fontWeight: 700, fontSize: 13, marginBottom: 6, color: '#F5E642′ }}>{label}</div>
+                <div style={{ fontWeight: 700, fontSize: 13, marginBottom: 6, color: '#F5E642' }}>{label}</div>
                 <div style={{ fontSize: 13, color: '#ddd', lineHeight: 1.6 }}>{value}</div>
               </div>
             ))}

@@ -41,14 +41,14 @@ export default function DFWRoofingProLnkAdvantage2026B() {
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '10px', marginBottom: '24px' }}>
           {concerns.map(c => (
             <button key={c.id} onClick={() => setRoofConcern(c.id)}
-              style={{ background: roofConcern === c.id ? '#F5E642′ : '#1e2d45', color: roofConcern === c.id ? '#0A1628' : '#fff', border: ’none', borderRadius: '10px', padding: '14px', cursor: 'pointer', fontWeight: 700, fontSize: '13px', textAlign: 'left' }}>
+              style={{ background: roofConcern === c.id ? '#F5E642' : '#1e2d45', color: roofConcern === c.id ? '#0A1628' : '#fff', border: 'none', borderRadius: '10px', padding: '14px', cursor: 'pointer', fontWeight: 700, fontSize: '13px', textAlign: 'left' }}>
               {c.label}
             </button>
           ))}
         </div>
 
         {selected && (
-          <div style={{ background: '#1e2d45', borderRadius: '14px', padding: '20px', marginBottom: '20px', borderLeft: '4px solid #F5E642′ }}>
+          <div style={{ background: '#1e2d45', borderRadius: '14px', padding: '20px', marginBottom: '20px', borderLeft: '4px solid #F5E642' }}>
             <p style={{ color: '#F5E642', fontWeight: 800, fontSize: '15px', marginBottom: '8px' }}>🏆 {selected.advantage}</p>
             <p style={{ color: '#cbd5e1', fontSize: '14px', margin: 0 }}>{selected.detail}</p>
           </div>

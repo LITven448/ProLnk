@@ -130,7 +130,7 @@ export default function DFWFoundationEngineerGuide() {
             {symptoms.map(f => (
               <label key={f.id} style={{ display: 'flex', alignItems: 'center', gap: 12, cursor: 'pointer', backgroundColor: selected.includes(f.id) ? '#1E3A5F' : '#132240', borderRadius: 8, padding: '12px 16px', border: `2px solid ${selected.includes(f.id) ? '#F5E642' : 'transparent'}`, transition: 'all 0.2s' }}>
                 <input type="checkbox" checked={selected.includes(f.id)} onChange={() => toggle(f.id)} style={{ display: 'none' }} />
-                <span style={{ width: 20, height: 20, borderRadius: 4, border: `2px solid ${selected.includes(f.id) ? '#F5E642' : '#4A5568'}`, backgroundColor: selected.includes(f.id) ? '#F5E642′ : ’transparent', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0, color: '#0A1628', fontWeight: 900, fontSize: 14 }}>{selected.includes(f.id) ? '✓' : ''}</span>
+                <span style={{ width: 20, height: 20, borderRadius: 4, border: `2px solid ${selected.includes(f.id) ? '#F5E642' : '#4A5568'}`, backgroundColor: selected.includes(f.id) ? '#F5E642' : 'transparent', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0, color: '#0A1628', fontWeight: 900, fontSize: 14 }}>{selected.includes(f.id) ? '✓' : ''}</span>
                 <span style={{ color: selected.includes(f.id) ? '#fff' : '#CBD5E1', fontSize: 15 }}>{f.label}</span>
               </label>
             ))}
@@ -141,8 +141,8 @@ export default function DFWFoundationEngineerGuide() {
               <div style={{ color: result.color, fontWeight: 800, fontSize: 20, marginBottom: 8 }}>{result.label}</div>
               <p style={{ color: '#CBD5E1', margin: '0 0 12px' }}>{result.rec}</p>
               <div style={{ display: 'grid', gap: 6 }}>
-                <div style={{ color: '#94A3B8', fontSize: 13 }}><strong style={{ color: '#F5E642′ }}>Estimated Cost:</strong> {result.cost}</div>
-                <div style={{ color: '#94A3B8', fontSize: 13 }}><strong style={{ color: '#F5E642′ }}>What to Expect:</strong> {result.expect}</div>
+                <div style={{ color: '#94A3B8', fontSize: 13 }}><strong style={{ color: '#F5E642' }}>Estimated Cost:</strong> {result.cost}</div>
+                <div style={{ color: '#94A3B8', fontSize: 13 }}><strong style={{ color: '#F5E642' }}>What to Expect:</strong> {result.expect}</div>
               </div>
             </div>
           )}

@@ -81,10 +81,10 @@ export default function PartnerFirst30Days() {
           </p>
         </div>
 
-        <div style={{ backgroundColor: '#fff', borderRadius: 12, padding: '16px 20px', marginBottom: 32, border: '1px solid #E2E8F0′ }}>
+        <div style={{ backgroundColor: '#fff', borderRadius: 12, padding: '16px 20px', marginBottom: 32, border: '1px solid #E2E8F0' }}>
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 8 }}>
-            <span style={{ fontWeight: 700, color: '#0A1628′ }}>Overall Progress</span>
-            <span style={{ fontWeight: 700, color: '#0A1628′ }}>{done}/{total} tasks · {pct}%</span>
+            <span style={{ fontWeight: 700, color: '#0A1628' }}>Overall Progress</span>
+            <span style={{ fontWeight: 700, color: '#0A1628' }}>{done}/{total} tasks · {pct}%</span>
           </div>
           <div style={{ height: 10, backgroundColor: '#E2E8F0', borderRadius: 99 }}>
             <div style={{ height: 10, backgroundColor: '#F5E642', borderRadius: 99, width: `${pct}%`, transition: 'width 0.3s' }} />
@@ -94,7 +94,7 @@ export default function PartnerFirst30Days() {
         {phases.map((phase, pi) => {
           const phaseDone = phase.tasks.filter((_, ti) => checked[`${pi}-${ti}`]).length;
           return (
-            <div key={pi} style={{ backgroundColor: '#fff', borderRadius: 12, padding: 24, marginBottom: 20, border: '1px solid #E2E8F0′ }}>
+            <div key={pi} style={{ backgroundColor: '#fff', borderRadius: 12, padding: 24, marginBottom: 20, border: '1px solid #E2E8F0' }}>
               <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 16 }}>
                 <div style={{ width: 12, height: 12, borderRadius: '50%', backgroundColor: phase.color, flexShrink: 0 }} />
                 <h2 style={{ fontSize: 17, fontWeight: 700, color: '#0A1628', margin: 0 }}>{phase.label}</h2>
@@ -111,7 +111,7 @@ export default function PartnerFirst30Days() {
                         onChange={() => toggle(key)}
                         style={{ marginTop: 2, accentColor: '#F5E642', width: 16, height: 16, flexShrink: 0 }}
                       />
-                      <span style={{ fontSize: 14, color: checked[key] ? '#94A3B8′ : '#0A1628', textDecoration: checked[key] ? ’line-through' : 'none' }}>
+                      <span style={{ fontSize: 14, color: checked[key] ? '#94A3B8' : '#0A1628', textDecoration: checked[key] ? 'line-through' : 'none' }}>
                         {task}
                       </span>
                     </label>

@@ -16,10 +16,10 @@ const deductions = [
 ];
 
 const quarters = [
-  { label: 'Q1', period: 'Jan 1 – Mar 31', due: 'April 15′ },
-  { label: 'Q2', period: 'Apr 1 – May 31', due: 'June 17′ },
-  { label: 'Q3', period: 'Jun 1 – Aug 31', due: 'September 16′ },
-  { label: 'Q4', period: 'Sep 1 – Dec 31', due: 'January 15′ },
+  { label: 'Q1', period: 'Jan 1 – Mar 31', due: 'April 15' },
+  { label: 'Q2', period: 'Apr 1 – May 31', due: 'June 17' },
+  { label: 'Q3', period: 'Jun 1 – Aug 31', due: 'September 16' },
+  { label: 'Q4', period: 'Sep 1 – Dec 31', due: 'January 15' },
 ];
 
 export default function PartnerTaxGuide() {
@@ -49,7 +49,7 @@ export default function PartnerTaxGuide() {
           </p>
         </div>
 
-        <div style={{ backgroundColor: '#fff', borderRadius: 12, padding: 24, marginBottom: 24, border: '1px solid #E2E8F0′ }}>
+        <div style={{ backgroundColor: '#fff', borderRadius: 12, padding: 24, marginBottom: 24, border: '1px solid #E2E8F0' }}>
           <h2 style={{ fontWeight: 700, color: '#0A1628', fontSize: 16, marginTop: 0, marginBottom: 12 }}>📋 How Your Income Is Classified</h2>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12 }}>
             {[
@@ -60,17 +60,17 @@ export default function PartnerTaxGuide() {
             ].map(({ label, value }) => (
               <div key={label} style={{ backgroundColor: '#F8FAFC', borderRadius: 8, padding: '12px 16px' }}>
                 <div style={{ fontSize: 12, color: '#64748B', marginBottom: 2 }}>{label}</div>
-                <div style={{ fontSize: 15, fontWeight: 700, color: '#0A1628′ }}>{value}</div>
+                <div style={{ fontSize: 15, fontWeight: 700, color: '#0A1628' }}>{value}</div>
               </div>
             ))}
           </div>
         </div>
 
-        <div style={{ backgroundColor: '#fff', borderRadius: 12, padding: 24, marginBottom: 24, border: '1px solid #E2E8F0′ }}>
+        <div style={{ backgroundColor: '#fff', borderRadius: 12, padding: 24, marginBottom: 24, border: '1px solid #E2E8F0' }}>
           <h2 style={{ fontWeight: 700, color: '#0A1628', fontSize: 16, marginTop: 0, marginBottom: 16 }}>💡 Top 12 Deductions for Partners</h2>
           <div style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
             {deductions.map(({ icon, title, detail }) => (
-              <div key={title} style={{ display: 'flex', gap: 12, padding: '10px 0', borderBottom: '1px solid #F1F5F9′ }}>
+              <div key={title} style={{ display: 'flex', gap: 12, padding: '10px 0', borderBottom: '1px solid #F1F5F9' }}>
                 <span style={{ fontSize: 20, flexShrink: 0 }}>{icon}</span>
                 <div>
                   <div style={{ fontWeight: 600, color: '#0A1628', fontSize: 14, marginBottom: 2 }}>{title}</div>
@@ -81,13 +81,13 @@ export default function PartnerTaxGuide() {
           </div>
         </div>
 
-        <div style={{ backgroundColor: '#fff', borderRadius: 12, padding: 24, marginBottom: 24, border: '1px solid #E2E8F0′ }}>
+        <div style={{ backgroundColor: '#fff', borderRadius: 12, padding: 24, marginBottom: 24, border: '1px solid #E2E8F0' }}>
           <h2 style={{ fontWeight: 700, color: '#0A1628', fontSize: 16, marginTop: 0, marginBottom: 16 }}>📅 Quarterly Estimated Tax Schedule</h2>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 10 }}>
             {quarters.map(q => (
               <div key={q.label} style={{ backgroundColor: '#0A1628', borderRadius: 10, padding: 14, textAlign: 'center' }}>
                 <div style={{ color: '#F5E642', fontWeight: 800, fontSize: 18 }}>{q.label}</div>
-                <div style={{ color: '#94A3B8', fontSize: 11, margin: '4px 0′ }}>{q.period}</div>
+                <div style={{ color: '#94A3B8', fontSize: 11, margin: '4px 0' }}>{q.period}</div>
                 <div style={{ color: '#fff', fontWeight: 700, fontSize: 12 }}>Due {q.due}</div>
               </div>
             ))}
@@ -97,22 +97,22 @@ export default function PartnerTaxGuide() {
           </p>
         </div>
 
-        <div style={{ backgroundColor: '#fff', borderRadius: 12, padding: 24, marginBottom: 24, border: '1px solid #E2E8F0′ }}>
+        <div style={{ backgroundColor: '#fff', borderRadius: 12, padding: 24, marginBottom: 24, border: '1px solid #E2E8F0' }}>
           <h2 style={{ fontWeight: 700, color: '#0A1628', fontSize: 16, marginTop: 0, marginBottom: 20 }}>🧮 Quarterly Tax Estimator</h2>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 20, marginBottom: 20 }}>
             <div>
               <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: 6 }}>
                 <label style={{ fontSize: 13, color: '#0A1628', fontWeight: 600 }}>Annual gross income</label>
-                <span style={{ fontSize: 13, fontWeight: 700, color: '#0A1628′ }}>{fmt(annualIncome)}</span>
+                <span style={{ fontSize: 13, fontWeight: 700, color: '#0A1628' }}>{fmt(annualIncome)}</span>
               </div>
-              <input type="range" min={600} max={500000} step={1000} value={annualIncome} onChange={e => setAnnualIncome(Number(e.target.value))} style={{ width: '100%', accentColor: '#F5E642′ }} />
+              <input type="range" min={600} max={500000} step={1000} value={annualIncome} onChange={e => setAnnualIncome(Number(e.target.value))} style={{ width: '100%', accentColor: '#F5E642' }} />
             </div>
             <div>
               <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: 6 }}>
                 <label style={{ fontSize: 13, color: '#0A1628', fontWeight: 600 }}>Business deductions</label>
-                <span style={{ fontSize: 13, fontWeight: 700, color: '#0A1628′ }}>{fmt(deductions_amount)}</span>
+                <span style={{ fontSize: 13, fontWeight: 700, color: '#0A1628' }}>{fmt(deductions_amount)}</span>
               </div>
-              <input type="range" min={0} max={annualIncome} step={500} value={deductions_amount} onChange={e => setDeductionsAmount(Number(e.target.value))} style={{ width: '100%', accentColor: '#F5E642′ }} />
+              <input type="range" min={0} max={annualIncome} step={500} value={deductions_amount} onChange={e => setDeductionsAmount(Number(e.target.value))} style={{ width: '100%', accentColor: '#F5E642' }} />
             </div>
           </div>
 
@@ -122,9 +122,9 @@ export default function PartnerTaxGuide() {
               { label: 'Est. Annual Tax', value: fmt(totalTax), sub: 'SE + income tax' },
               { label: 'Est. Quarterly Payment', value: fmt(quarterly), sub: 'pay 4x per year', highlight: true },
             ].map(({ label, value, sub, highlight }) => (
-              <div key={label} style={{ backgroundColor: highlight ? '#0A1628′ : '#F8FAFC', borderRadius: 10, padding: 16, textAlign: ’center' }}>
-                <div style={{ fontSize: 12, color: highlight ? '#94A3B8′ : '#64748B', marginBottom: 4 }}>{label}</div>
-                <div style={{ fontSize: 20, fontWeight: 800, color: highlight ? '#F5E642′ : '#0A1628' }}>{value}</div>
+              <div key={label} style={{ backgroundColor: highlight ? '#0A1628' : '#F8FAFC', borderRadius: 10, padding: 16, textAlign: 'center' }}>
+                <div style={{ fontSize: 12, color: highlight ? '#94A3B8' : '#64748B', marginBottom: 4 }}>{label}</div>
+                <div style={{ fontSize: 20, fontWeight: 800, color: highlight ? '#F5E642' : '#0A1628' }}>{value}</div>
                 <div style={{ fontSize: 11, color: highlight ? '#64748B' : '#94A3B8', marginTop: 2 }}>{sub}</div>
               </div>
             ))}
@@ -134,7 +134,7 @@ export default function PartnerTaxGuide() {
           </p>
         </div>
 
-        <div style={{ backgroundColor: '#fff', borderRadius: 12, padding: 24, border: '1px solid #E2E8F0′ }}>
+        <div style={{ backgroundColor: '#fff', borderRadius: 12, padding: 24, border: '1px solid #E2E8F0' }}>
           <h2 style={{ fontWeight: 700, color: '#0A1628', fontSize: 16, marginTop: 0, marginBottom: 12 }}>🏦 Retirement Options for Self-Employed Partners</h2>
           <div style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
             {[

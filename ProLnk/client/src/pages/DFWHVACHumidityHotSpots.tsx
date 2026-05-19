@@ -97,7 +97,7 @@ export default function DFWHVACHumidityHotSpots() {
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 10 }}>
             {humidRoomTypes.map(r => (
               <button key={r.id} onClick={() => setRoom(r.id)}
-                style={{ background: room === r.id ? '#F5E642′ : '#1A3060', color: room === r.id ? '#0A1628' : '#E2E8F0', border: ’none', borderRadius: 8, padding: '12px 16px', cursor: 'pointer', fontWeight: room === r.id ? 700 : 400, textAlign: 'left' }}>
+                style={{ background: room === r.id ? '#F5E642' : '#1A3060', color: room === r.id ? '#0A1628' : '#E2E8F0', border: 'none', borderRadius: 8, padding: '12px 16px', cursor: 'pointer', fontWeight: room === r.id ? 700 : 400, textAlign: 'left' }}>
                 {r.emoji} {r.label}
               </button>
             ))}
@@ -109,9 +109,9 @@ export default function DFWHVACHumidityHotSpots() {
             <div style={{ background: '#0F2040', borderRadius: 12, padding: 24, marginBottom: 16 }}>
               <h2 style={{ color: '#F5E642', fontSize: 18, marginBottom: 12 }}>🔍 Root Cause</h2>
               <p style={{ color: '#CBD5E1', lineHeight: 1.6, marginBottom: 16 }}>{result.cause}</p>
-              <div style={{ background: '#1A3060', borderRadius: 8, padding: 14, borderLeft: '4px solid #F5E642′ }}>
+              <div style={{ background: '#1A3060', borderRadius: 8, padding: 14, borderLeft: '4px solid #F5E642' }}>
                 <span style={{ color: '#F5E642', fontWeight: 700 }}>🌡️ DFW Factor: </span>
-                <span style={{ color: '#CBD5E1′ }}>{result.dfwFactor}</span>
+                <span style={{ color: '#CBD5E1' }}>{result.dfwFactor}</span>
               </div>
             </div>
 

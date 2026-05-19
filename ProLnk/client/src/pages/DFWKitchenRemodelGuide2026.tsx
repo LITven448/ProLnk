@@ -37,7 +37,7 @@ export default function DFWKitchenRemodelGuide2026() {
           {[
             { label: 'Countertops', detail: 'Quartz dominates 68% of DFW installs — durable in TX heat, low maintenance.' },
             { label: 'Cabinets', detail: 'Lead times 8–16 weeks. Order early. Two-tone finishes trending heavily.' },
-            { label: 'Appliances', detail: '36″ ranges and panel-ready fridges are the 2026 upgrade most requested.' },
+            { label: 'Appliances', detail: '36" ranges and panel-ready fridges are the 2026 upgrade most requested.' },
             { label: 'Layout Changes', detail: 'Wall removal to open kitchen to living adds $8K–$15K but top ROI driver.' },
           ].map((item) => (
             <div key={item.label} style={{ marginBottom: 14, paddingBottom: 14, borderBottom: '1px solid #1e3a5f' }}>
@@ -53,13 +53,13 @@ export default function DFWKitchenRemodelGuide2026() {
           <div style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
             {budgetTiers.map((tier, i) => (
               <button key={i} onClick={() => setSelected(i === selected ? null : i)}
-                style={{ background: selected === i ? '#F5E642′ : '#0A1628', color: selected === i ? '#0A1628' : '#fff', border: '1px solid #F5E642', borderRadius: 8, padding: '12px 16px', textAlign: ’left', cursor: 'pointer', fontWeight: 600 }}>
+                style={{ background: selected === i ? '#F5E642' : '#0A1628', color: selected === i ? '#0A1628' : '#fff', border: '1px solid #F5E642', borderRadius: 8, padding: '12px 16px', textAlign: 'left', cursor: 'pointer', fontWeight: 600 }}>
                 {tier.label}
               </button>
             ))}
           </div>
           {selected !== null && (
-            <div style={{ marginTop: 16, background: '#0A1628', borderRadius: 8, padding: 16, border: '1px solid #F5E642′ }}>
+            <div style={{ marginTop: 16, background: '#0A1628', borderRadius: 8, padding: 16, border: '1px solid #F5E642' }}>
               <div style={{ color: '#F5E642', fontWeight: 700, marginBottom: 6 }}>{budgetTiers[selected].label}</div>
               <div style={{ color: '#fff', fontSize: 15 }}>{budgetTiers[selected].scope}</div>
             </div>

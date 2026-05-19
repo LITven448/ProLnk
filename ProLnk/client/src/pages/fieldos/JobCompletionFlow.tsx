@@ -26,7 +26,7 @@ const TRADE_ICONS: Record<string, React.ReactNode> = {
 const JOB = {
   id: 4821,
   trade: "HVAC",
-  address: "2847 Maple Ridge Dr, Austin TX 78745″,
+  address: "2847 Maple Ridge Dr, Austin TX 78745",
   homeowner: "Sarah",
   service: "HVAC Tune-Up",
   gross: 1100,
@@ -66,7 +66,7 @@ export default function JobCompletionFlow() {
   if (completed) {
     return (
       <div
-        className="min-h-screen flex flex-col items-center justify-center px-4″
+        className="min-h-screen flex flex-col items-center justify-center px-4"
         style={{ background: FOS.bg, color: FOS.white }}
       >
         <div className="max-w-sm w-full flex flex-col items-center gap-6 text-center">
@@ -79,17 +79,17 @@ export default function JobCompletionFlow() {
           </div>
           <div>
             <p className="text-2xl font-black">Job Complete!</p>
-            <p className="text-sm mt-1″ style={{ color: FOS.muted }}>Job #{JOB.id} · {JOB.service}</p>
+            <p className="text-sm mt-1" style={{ color: FOS.muted }}>Job #{JOB.id} · {JOB.service}</p>
           </div>
           <div
-            className="w-full rounded-2xl p-5″
+            className="w-full rounded-2xl p-5"
             style={{ background: FOS.limeDim, border: "1px solid rgba(232,255,71,0.20)" }}
           >
-            <p className="text-xs uppercase tracking-widest font-semibold mb-2″ style={{ color: FOS.faint }}>
+            <p className="text-xs uppercase tracking-widest font-semibold mb-2" style={{ color: FOS.faint }}>
               Commission on the way 🎉
             </p>
             <p className="text-4xl font-black" style={{ color: FOS.lime }}>${commission}</p>
-            <p className="text-xs mt-1″ style={{ color: FOS.faint }}>
+            <p className="text-xs mt-1" style={{ color: FOS.faint }}>
               Arrives via Stripe in 2–3 business days
             </p>
           </div>
@@ -100,21 +100,21 @@ export default function JobCompletionFlow() {
               className="w-full rounded-2xl p-4 text-left"
               style={{ background: FOS.surface, border: `1px solid ${FOS.border}` }}
             >
-              <div className="flex items-start gap-3 mb-4″>
+              <div className="flex items-start gap-3 mb-4">
                 <div
-                  className="w-9 h-9 rounded-xl flex items-center justify-center shrink-0″
+                  className="w-9 h-9 rounded-xl flex items-center justify-center shrink-0"
                   style={{ background: FOS.tealDim }}
                 >
                   <Sparkles size={18} color={FOS.teal} />
                 </div>
                 <div>
                   <p className="text-sm font-bold">AI found 2 more opportunities</p>
-                  <p className="text-xs mt-0.5″ style={{ color: FOS.muted }}>
+                  <p className="text-xs mt-0.5" style={{ color: FOS.muted }}>
                     Detected at this home. Share with a colleague?
                   </p>
                 </div>
               </div>
-              <div className="flex gap-3″>
+              <div className="flex gap-3">
                 <button
                   onClick={() => setUpsellResponse("yes")}
                   className="flex-1 py-3 rounded-xl text-sm font-bold"
@@ -159,10 +159,10 @@ export default function JobCompletionFlow() {
     >
       {/* Header */}
       <div
-        className="sticky top-0 z-20 flex items-center justify-between px-4 py-3″
+        className="sticky top-0 z-20 flex items-center justify-between px-4 py-3"
         style={{ background: FOS.surface, borderBottom: `1px solid ${FOS.border}` }}
       >
-        <div className="flex items-center gap-2″>
+        <div className="flex items-center gap-2">
           {TRADE_ICONS[JOB.trade] ?? TRADE_ICONS.default}
           <span className="font-bold text-base">Complete Job #{JOB.id}</span>
         </div>
@@ -174,17 +174,17 @@ export default function JobCompletionFlow() {
         </span>
       </div>
 
-      <div className="flex flex-col gap-4 px-4 py-4 max-w-sm mx-auto w-full pb-28″>
+      <div className="flex flex-col gap-4 px-4 py-4 max-w-sm mx-auto w-full pb-28">
 
         {/* Address */}
-        <p className="text-xs px-1″ style={{ color: FOS.muted }}>{JOB.address}</p>
+        <p className="text-xs px-1" style={{ color: FOS.muted }}>{JOB.address}</p>
 
         {/* Checklist */}
         <div
-          className="rounded-2xl p-4 flex flex-col gap-1″
+          className="rounded-2xl p-4 flex flex-col gap-1"
           style={{ background: FOS.surface, border: `1px solid ${FOS.border}` }}
         >
-          <p className="text-xs font-semibold uppercase tracking-widest mb-3″ style={{ color: FOS.muted }}>
+          <p className="text-xs font-semibold uppercase tracking-widest mb-3" style={{ color: FOS.muted }}>
             Completion Checklist
           </p>
           {CHECKLIST.map((item) => (
@@ -213,13 +213,13 @@ export default function JobCompletionFlow() {
 
         {/* Photo upload mini-grid */}
         <div
-          className="rounded-2xl p-4″
+          className="rounded-2xl p-4"
           style={{ background: FOS.surface, border: `1px solid ${FOS.border}` }}
         >
-          <p className="text-xs font-semibold uppercase tracking-widest mb-3″ style={{ color: FOS.muted }}>
+          <p className="text-xs font-semibold uppercase tracking-widest mb-3" style={{ color: FOS.muted }}>
             Job Photos (3 required)
           </p>
-          <div className="grid grid-cols-3 gap-2″>
+          <div className="grid grid-cols-3 gap-2">
             {/* Slot 1 — filled */}
             <div
               className="aspect-square rounded-xl overflow-hidden relative"
@@ -250,7 +250,7 @@ export default function JobCompletionFlow() {
 
         {/* Summary to homeowner */}
         <div
-          className="rounded-2xl p-4 flex flex-col gap-3″
+          className="rounded-2xl p-4 flex flex-col gap-3"
           style={{ background: FOS.surface, border: `1px solid ${FOS.border}` }}
         >
           <p className="text-xs font-semibold uppercase tracking-widest" style={{ color: FOS.muted }}>
@@ -272,13 +272,13 @@ export default function JobCompletionFlow() {
 
         {/* Commission preview */}
         <div
-          className="rounded-2xl p-5″
+          className="rounded-2xl p-5"
           style={{ background: FOS.limeDim, border: "1px solid rgba(232,255,71,0.20)" }}
         >
-          <p className="text-xs uppercase tracking-widest font-semibold mb-1″ style={{ color: FOS.faint }}>
+          <p className="text-xs uppercase tracking-widest font-semibold mb-1" style={{ color: FOS.faint }}>
             Your Commission
           </p>
-          <p className="text-4xl font-black mb-2″ style={{ color: FOS.lime }}>
+          <p className="text-4xl font-black mb-2" style={{ color: FOS.lime }}>
             ${commission}
           </p>
           <div className="flex items-center gap-2 text-xs" style={{ color: FOS.faint }}>
@@ -287,7 +287,7 @@ export default function JobCompletionFlow() {
               Gross ${JOB.gross.toLocaleString()} × {JOB.ratePercent}% = ${commission}
             </span>
           </div>
-          <p className="text-xs mt-2″ style={{ color: FOS.faint }}>
+          <p className="text-xs mt-2" style={{ color: FOS.faint }}>
             Arrives via Stripe in 2–3 business days
           </p>
         </div>

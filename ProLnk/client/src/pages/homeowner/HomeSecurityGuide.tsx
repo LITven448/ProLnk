@@ -194,9 +194,9 @@ export default function HomeSecurityGuide() {
                     <button key={opt.value} onClick={() => setAnswer(q.id, opt.value)}
                       style={{
                         padding: '0.4rem 1rem', borderRadius: '20px', border: '1px solid',
-                        borderColor: answers[q.id] === opt.value ? '#F5E642′ : '#2d3f58',
-                        background: answers[q.id] === opt.value ? '#F5E642′ : ’transparent',
-                        color: answers[q.id] === opt.value ? '#0A1628′ : '#cbd5e1',
+                        borderColor: answers[q.id] === opt.value ? '#F5E642' : '#2d3f58',
+                        background: answers[q.id] === opt.value ? '#F5E642' : 'transparent',
+                        color: answers[q.id] === opt.value ? '#0A1628' : '#cbd5e1',
                         cursor: 'pointer', fontSize: '0.85rem',
                         fontWeight: answers[q.id] === opt.value ? 700 : 400,
                       }}>

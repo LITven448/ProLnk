@@ -59,7 +59,7 @@ export default function DFWShowingFeedbackGuide() {
   const data = selected ? interpretations[selected] : null;
 
   return (
-    <div style={{ background: '#F9FAFB', minHeight: '100vh', padding: '32px 16px', fontFamily: 'system-ui,sans-serif', color: '#0A1628′ }}>
+    <div style={{ background: '#F9FAFB', minHeight: '100vh', padding: '32px 16px', fontFamily: 'system-ui,sans-serif', color: '#0A1628' }}>
       <div style={{ maxWidth: 760, margin: '0 auto' }}>
         <div style={{ background: '#0A1628', borderRadius: 12, padding: '28px 24px', marginBottom: 28 }}>
           <div style={{ fontSize: 28 }}>💬</div>
@@ -67,12 +67,12 @@ export default function DFWShowingFeedbackGuide() {
           <p style={{ color: '#CBD5E1', margin: 0 }}>How to decode filtered feedback, what patterns actually mean, and when to act vs. ignore what buyers say.</p>
         </div>
 
-        <div style={{ background: '#fff', borderRadius: 10, padding: 20, marginBottom: 20, border: '1px solid #E2E8F0′ }}>
+        <div style={{ background: '#fff', borderRadius: 10, padding: 20, marginBottom: 20, border: '1px solid #E2E8F0' }}>
           <h2 style={{ fontSize: 16, fontWeight: 700, marginBottom: 8 }}>⚠️ Why Showing Feedback Is Often Filtered</h2>
-          <p style={{ fontSize: 13, color: '#475569', lineHeight: 1.6 }}>Buyer's agents in DFW routinely soften or omit real feedback to protect their client’s negotiating position. Common filters: "not quite right for them" (means price), "still looking" (means priced out), and "needs updating" (means they’ll offer low or skip). Your listing agent should push for specifics — vague feedback is almost always bad news dressed up.</p>
+          <p style={{ fontSize: 13, color: '#475569', lineHeight: 1.6 }}>Buyer's agents in DFW routinely soften or omit real feedback to protect their client's negotiating position. Common filters: "not quite right for them" (means price), "still looking" (means priced out), and "needs updating" (means they'll offer low or skip). Your listing agent should push for specifics — vague feedback is almost always bad news dressed up.</p>
         </div>
 
-        <div style={{ background: '#fff', borderRadius: 10, padding: 20, marginBottom: 20, border: '1px solid #E2E8F0′ }}>
+        <div style={{ background: '#fff', borderRadius: 10, padding: 20, marginBottom: 20, border: '1px solid #E2E8F0' }}>
           <h2 style={{ fontSize: 16, fontWeight: 700, marginBottom: 6 }}>🔍 Decode Your Feedback</h2>
           <p style={{ fontSize: 13, color: '#64748B', marginBottom: 10 }}>Select the feedback pattern you're seeing.</p>
           <select value={selected} onChange={e => setSelected(e.target.value)} style={{ width: '100%', padding: '9px 12px', borderRadius: 6, border: '1px solid #CBD5E1', fontSize: 13, background: '#fff', color: '#0A1628', marginBottom: 14 }}>
@@ -90,7 +90,7 @@ export default function DFWShowingFeedbackGuide() {
                 <div style={{ fontWeight: 600, fontSize: 13, marginBottom: 6 }}>✅ Recommended Action</div>
                 <p style={{ fontSize: 13, color: '#334155', margin: 0, lineHeight: 1.6 }}>{data.action}</p>
               </div>
-              <div style={{ background: data.reduce ? '#FFF1F2′ : '#F0FDF4', border: `1px solid ${data.reduce ? '#FECDD3' : '#BBF7D0'}`, borderRadius: 8, padding: 12 }}>
+              <div style={{ background: data.reduce ? '#FFF1F2' : '#F0FDF4', border: `1px solid ${data.reduce ? '#FECDD3' : '#BBF7D0'}`, borderRadius: 8, padding: 12 }}>
                 <div style={{ fontWeight: 600, fontSize: 13, color: data.reduce ? '#BE123C' : '#15803D' }}>
                   {data.reduce ? '📉 Price Reduction Likely Needed' : '⏳ Hold — Monitor Before Reducing Price'}
                 </div>

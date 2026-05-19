@@ -58,7 +58,7 @@ export default function DFWHOAMaintenanceGuide() {
 
   return (
     <div style={{ background: '#0A1628', minHeight: '100vh', color: '#E8EDF5', fontFamily: 'system-ui, sans-serif' }}>
-      <div style={{ background: 'linear-gradient(135deg, #0A1628 0%, #112240 100%)', padding: '48px 24px 32px', borderBottom: '2px solid #F5E642′ }}>
+      <div style={{ background: 'linear-gradient(135deg, #0A1628 0%, #112240 100%)', padding: '48px 24px 32px', borderBottom: '2px solid #F5E642' }}>
         <div style={{ maxWidth: '900px', margin: '0 auto' }}>
           <div style={{ fontSize: '13px', color: '#F5E642', letterSpacing: '2px', marginBottom: '12px' }}>🏘️ DFW HOA SERIES</div>
           <h1 style={{ fontSize: '36px', fontWeight: '800', color: '#FFFFFF', margin: '0 0 12px' }}>HOA Exterior Approval Guide</h1>
@@ -78,7 +78,7 @@ export default function DFWHOAMaintenanceGuide() {
                 <div style={{ flex: 1 }}>
                   <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '4px' }}>
                     <span style={{ fontSize: '14px', fontWeight: '600', color: '#FFFFFF' }}>{item.project}</span>
-                    <span style={{ fontSize: '12px', color: item.required ? '#F5E642′ : '#22C55E', fontWeight: '600' }}>
+                    <span style={{ fontSize: '12px', color: item.required ? '#F5E642' : '#22C55E', fontWeight: '600' }}>
                       {item.required ? item.typical : 'No approval needed'}
                     </span>
                   </div>
@@ -97,7 +97,7 @@ export default function DFWHOAMaintenanceGuide() {
                 <span style={{ fontSize: '20px' }}>🌱</span>
                 <div>
                   <div style={{ fontSize: '14px', fontWeight: '600', color: '#FFFFFF', marginBottom: '4px' }}>{ls.standard}</div>
-                  <div style={{ fontSize: '13px', color: '#94A3B8′ }}>{ls.note}</div>
+                  <div style={{ fontSize: '13px', color: '#94A3B8' }}>{ls.note}</div>
                 </div>
               </div>
             ))}
@@ -124,9 +124,9 @@ export default function DFWHOAMaintenanceGuide() {
             {projectOptions.map(p => (
               <button key={p.value} onClick={() => setSelectedProject(p.value)}
                 style={{ padding: '8px 16px', borderRadius: '8px', border: '1px solid', fontSize: '13px', cursor: 'pointer',
-                  background: selectedProject === p.value ? '#F5E642′ : ’transparent',
-                  color: selectedProject === p.value ? '#0A1628′ : '#94A3B8',
-                  borderColor: selectedProject === p.value ? '#F5E642′ : '#334155' }}>
+                  background: selectedProject === p.value ? '#F5E642' : 'transparent',
+                  color: selectedProject === p.value ? '#0A1628' : '#94A3B8',
+                  borderColor: selectedProject === p.value ? '#F5E642' : '#334155' }}>
                 {p.label}
               </button>
             ))}
@@ -142,12 +142,12 @@ export default function DFWHOAMaintenanceGuide() {
               <div style={{ fontSize: '20px', fontWeight: '700', color: '#F5E642', marginBottom: '16px' }}>Typical Timeline: {result.timeline}</div>
               {result.steps.map((s, i) => (
                 <div key={i} style={{ display: 'flex', gap: '10px', marginBottom: '8px' }}>
-                  <span style={{ color: '#F5E642', fontWeight: '700′ }}>{i + 1}.</span>
-                  <span style={{ fontSize: '14px', color: '#CBD5E1′ }}>{s}</span>
+                  <span style={{ color: '#F5E642', fontWeight: '700' }}>{i + 1}.</span>
+                  <span style={{ fontSize: '14px', color: '#CBD5E1' }}>{s}</span>
                 </div>
               ))}
               <div style={{ background: '#112240', borderRadius: '8px', padding: '12px 16px', fontSize: '13px', color: '#94A3B8', marginTop: '16px' }}>
-                💡 <strong style={{ color: '#F5E642′ }}>Speed Tip:</strong> {result.tip}
+                💡 <strong style={{ color: '#F5E642' }}>Speed Tip:</strong> {result.tip}
               </div>
             </div>
           )}

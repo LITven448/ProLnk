@@ -63,13 +63,13 @@ export default function DFWProLnkDFWEcosystem() {
       <div style={{ maxWidth: 800, margin: '0 auto' }}>
         <div style={{ textAlign: 'center', marginBottom: '2rem' }}>
           <div style={{ fontSize: '2.5rem' }}>🌐</div>
-          <h1 style={{ fontSize: '2rem', color: '#F5E642', margin: '0.5rem 0 0′ }}>DFW Home Services Ecosystem</h1>
+          <h1 style={{ fontSize: '2rem', color: '#F5E642', margin: '0.5rem 0 0' }}>DFW Home Services Ecosystem</h1>
           <p style={{ color: '#94A3B8', marginTop: '0.5rem' }}>How ProLnk fits into — and amplifies — the DFW professional landscape</p>
         </div>
 
         <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5rem', marginBottom: '1.5rem' }}>
           {professionalTypes.map(p => (
-            <button key={p.id} onClick={() => setSelected(p)} style={{ padding: '0.5rem 1rem', borderRadius: 6, border: `2px solid ${selected.id === p.id ? '#F5E642' : '#1E3A5F'}`, backgroundColor: selected.id === p.id ? '#1E3A5F' : 'transparent', color: selected.id === p.id ? '#F5E642′ : '#94A3B8', cursor: ’pointer', fontSize: '0.85rem' }}>
+            <button key={p.id} onClick={() => setSelected(p)} style={{ padding: '0.5rem 1rem', borderRadius: 6, border: `2px solid ${selected.id === p.id ? '#F5E642' : '#1E3A5F'}`, backgroundColor: selected.id === p.id ? '#1E3A5F' : 'transparent', color: selected.id === p.id ? '#F5E642' : '#94A3B8', cursor: 'pointer', fontSize: '0.85rem' }}>
               {p.label}
             </button>
           ))}
@@ -84,7 +84,7 @@ export default function DFWProLnkDFWEcosystem() {
           </ul>
         </div>
 
-        <div style={{ backgroundColor: '#0F2040', borderRadius: 8, padding: '1.25rem', border: '1px solid #F5E64240′ }}>
+        <div style={{ backgroundColor: '#0F2040', borderRadius: 8, padding: '1.25rem', border: '1px solid #F5E64240' }}>
           <div style={{ color: '#F5E642', fontWeight: 600, marginBottom: '0.4rem' }}>💡 Key Insight</div>
           <div style={{ color: '#94A3B8', lineHeight: 1.6 }}>{selected.note}</div>
         </div>

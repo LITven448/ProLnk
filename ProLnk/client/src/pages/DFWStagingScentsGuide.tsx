@@ -119,7 +119,7 @@ export default function DFWStagingScentsGuide() {
           <p style={{ color: '#CBD5E1', fontSize: 15, margin: 0 }}>DFW homes are newer and well-sealed — odors concentrate more than in older, draftier homes. Pet and smoke smells are the top two deal killers in the DFW market.</p>
         </div>
 
-        <div style={{ backgroundColor: '#fff', borderRadius: 12, padding: 24, marginBottom: 20, border: '1px solid #E2E8F0′ }}>
+        <div style={{ backgroundColor: '#fff', borderRadius: 12, padding: 24, marginBottom: 20, border: '1px solid #E2E8F0' }}>
           <h2 style={{ color: '#0A1628', fontSize: 18, fontWeight: 700, marginBottom: 16 }}>🐾 DFW Scent Reality</h2>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12 }}>
             {[
@@ -128,15 +128,15 @@ export default function DFWStagingScentsGuide() {
               ['Buyers decide in the first 30 seconds — scent is processed before vision', '⏱️'],
               ['Clean and neutral always beats scented — artificial fragrance signals cover-up', '✅'],
             ].map(([tip, icon], i) => (
-              <div key={i} style={{ backgroundColor: '#F8FAFC', borderRadius: 8, padding: 12, border: '1px solid #E2E8F0′ }}>
+              <div key={i} style={{ backgroundColor: '#F8FAFC', borderRadius: 8, padding: 12, border: '1px solid #E2E8F0' }}>
                 <span style={{ fontSize: 20 }}>{icon}</span>
-                <p style={{ color: '#475569', fontSize: 13, margin: '6px 0 0′ }}>{tip}</p>
+                <p style={{ color: '#475569', fontSize: 13, margin: '6px 0 0' }}>{tip}</p>
               </div>
             ))}
           </div>
         </div>
 
-        <div style={{ backgroundColor: '#fff', borderRadius: 12, padding: 24, marginBottom: 20, border: '1px solid #E2E8F0′ }}>
+        <div style={{ backgroundColor: '#fff', borderRadius: 12, padding: 24, marginBottom: 20, border: '1px solid #E2E8F0' }}>
           <h2 style={{ color: '#0A1628', fontSize: 18, fontWeight: 700, marginBottom: 16 }}>🔍 Get Your Scent Remediation Plan</h2>
           <div style={{ marginBottom: 20 }}>
             <label style={{ color: '#374151', fontSize: 14, fontWeight: 600, display: 'block', marginBottom: 6 }}>Current Scent Concern</label>
@@ -152,7 +152,7 @@ export default function DFWStagingScentsGuide() {
 
           {result && (
             <div style={{ display: 'grid', gap: 12 }}>
-              <div style={{ backgroundColor: '#F8FAFC', borderRadius: 8, padding: 12, border: '1px solid #E2E8F0', fontWeight: 600, color: '#0A1628′ }}>{result.severity}</div>
+              <div style={{ backgroundColor: '#F8FAFC', borderRadius: 8, padding: 12, border: '1px solid #E2E8F0', fontWeight: 600, color: '#0A1628' }}>{result.severity}</div>
               <div style={{ backgroundColor: '#EFF6FF', borderRadius: 8, padding: 16 }}>
                 <div style={{ color: '#1D4ED8', fontWeight: 700, marginBottom: 10 }}>🧹 Remediation Steps</div>
                 {result.remediation.map((r, i) => <div key={i} style={{ color: '#374151', fontSize: 13, marginBottom: 8 }}>• {r}</div>)}
@@ -167,7 +167,7 @@ export default function DFWStagingScentsGuide() {
                   {result.avoid.map((a, i) => <div key={i} style={{ color: '#374151', fontSize: 13, marginBottom: 6 }}>• {a}</div>)}
                 </div>
               </div>
-              <div style={{ backgroundColor: '#FEFCE8', borderRadius: 8, padding: 16, border: '1px solid #FDE047′ }}>
+              <div style={{ backgroundColor: '#FEFCE8', borderRadius: 8, padding: 16, border: '1px solid #FDE047' }}>
                 <div style={{ color: '#713F12', fontWeight: 700, marginBottom: 6 }}>⏰ Timeline</div>
                 <div style={{ color: '#374151', fontSize: 13 }}>{result.timeline}</div>
               </div>

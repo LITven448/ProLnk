@@ -44,15 +44,15 @@ export default function DFWMortgageForbearanceGuide() {
           <p style={{ color: '#CBD5E1', fontSize: 15, margin: 0 }}>Financial hardship options for Texas homeowners — what to do and what to expect.</p>
         </div>
 
-        <div style={{ background: '#fff', borderRadius: 12, padding: 24, marginBottom: 24, border: '1px solid #E2E8F0′ }}>
+        <div style={{ background: '#fff', borderRadius: 12, padding: 24, marginBottom: 24, border: '1px solid #E2E8F0' }}>
           <h2 style={{ color: '#0A1628', fontSize: 18, fontWeight: 700, marginBottom: 12 }}>📋 What Is Forbearance?</h2>
           <p style={{ color: '#374151', fontSize: 14, lineHeight: 1.6 }}>Forbearance is a temporary pause or reduction in mortgage payments, granted by your lender or servicer. In Texas, you can request forbearance directly from your loan servicer. Forbearance does not erase payments — it defers them to a later date. Your credit may be affected depending on how the servicer reports it.</p>
         </div>
 
-        <div style={{ background: '#fff', borderRadius: 12, padding: 24, marginBottom: 24, border: '1px solid #E2E8F0′ }}>
+        <div style={{ background: '#fff', borderRadius: 12, padding: 24, marginBottom: 24, border: '1px solid #E2E8F0' }}>
           <h2 style={{ color: '#0A1628', fontSize: 18, fontWeight: 700, marginBottom: 16 }}>🔄 Repayment Options After Forbearance</h2>
           {repaymentOptions.map(opt => (
-            <div key={opt.name} style={{ background: '#F9FAFB', borderRadius: 8, padding: 14, marginBottom: 10, border: '1px solid #E2E8F0′ }}>
+            <div key={opt.name} style={{ background: '#F9FAFB', borderRadius: 8, padding: 14, marginBottom: 10, border: '1px solid #E2E8F0' }}>
               <div style={{ color: '#0A1628', fontWeight: 700, fontSize: 15, marginBottom: 4 }}>{opt.name}</div>
               <div style={{ color: '#374151', fontSize: 13, marginBottom: 4 }}>{opt.desc}</div>
               <div style={{ color: '#64748B', fontSize: 12 }}>Best for: {opt.best}</div>
@@ -60,7 +60,7 @@ export default function DFWMortgageForbearanceGuide() {
           ))}
         </div>
 
-        <div style={{ background: '#fff', borderRadius: 12, padding: 24, marginBottom: 24, border: '1px solid #E2E8F0′ }}>
+        <div style={{ background: '#fff', borderRadius: 12, padding: 24, marginBottom: 24, border: '1px solid #E2E8F0' }}>
           <h2 style={{ color: '#0A1628', fontSize: 18, fontWeight: 700, marginBottom: 12 }}>🏠 DFW-Specific Resources</h2>
           {['HUD-approved housing counselors in Dallas and Fort Worth (free service)', 'Texas Homeowner Assistance Fund (HAF) — may cover missed payments', 'Texas Department of Housing and Community Affairs hardship programs', 'DFW-area nonprofit: CitySquare housing assistance'].map(pt => (
             <div key={pt} style={{ display: 'flex', gap: 10, marginBottom: 8 }}>
@@ -86,7 +86,7 @@ export default function DFWMortgageForbearanceGuide() {
             </div>
             <div>
               <label style={{ color: '#CBD5E1', fontSize: 13, display: 'block', marginBottom: 4 }}>Estimated hardship duration (months)</label>
-              <input type="number" value={timelineMo} onChange={e => setTimelineMo(e.target.value)} placeholder="e.g. 4″ style={{ width: '100%', padding: '10px', borderRadius: 8, border: 'none', fontSize: 14, boxSizing: 'border-box' }} />
+              <input type="number" value={timelineMo} onChange={e => setTimelineMo(e.target.value)} placeholder="e.g. 4" style={{ width: '100%', padding: '10px', borderRadius: 8, border: 'none', fontSize: 14, boxSizing: 'border-box' }} />
             </div>
           </div>
           <button onClick={recommend} style={{ background: '#F5E642', color: '#0A1628', border: 'none', borderRadius: 8, padding: '12px 24px', fontWeight: 700, fontSize: 15, cursor: 'pointer', width: '100%' }}>Get My Recommendation</button>

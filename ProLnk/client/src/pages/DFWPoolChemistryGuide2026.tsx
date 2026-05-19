@@ -64,7 +64,7 @@ export default function DFWPoolChemistryGuide2026() {
             {[['pH (e.g. 7.8)', ph, setPh],['Alkalinity ppm (e.g. 90)', alk, setAlk],['Calcium Hardness ppm (e.g. 350)', ch, setCh],['CYA ppm (e.g. 50)', cya, setCya]].map(([label, val, setter]) => (
               <div key={label as string}>
                 <label style={{ color: '#94a3b8', fontSize: 13, display: 'block', marginBottom: 6 }}>{label as string}</label>
-                <input type='number' value={val as string} onChange={e => (setter as (v: string) => void)(e.target.value)} placeholder='0′ style={{ width: '100%', background: '#0A1628', color: '#fff', border: '1px solid #334155', borderRadius: 6, padding: '8px 12px', boxSizing: ’border-box' }} />
+                <input type='number' value={val as string} onChange={e => (setter as (v: string) => void)(e.target.value)} placeholder='0' style={{ width: '100%', background: '#0A1628', color: '#fff', border: '1px solid #334155', borderRadius: 6, padding: '8px 12px', boxSizing: 'border-box' }} />
               </div>
             ))}
           </div>
@@ -76,7 +76,7 @@ export default function DFWPoolChemistryGuide2026() {
               <option value='salt'>Salt Water Pool</option>
             </select>
           </div>
-          <button onClick={analyze} disabled={!ph || !alk || !ch || !cya} style={{ background: ph && alk && ch && cya ? '#F5E642′ : '#334155', color: '#0A1628', fontWeight: 700, border: ’none', borderRadius: 8, padding: '12px 28px', cursor: ph && alk && ch && cya ? 'pointer' : 'not-allowed' }}>
+          <button onClick={analyze} disabled={!ph || !alk || !ch || !cya} style={{ background: ph && alk && ch && cya ? '#F5E642' : '#334155', color: '#0A1628', fontWeight: 700, border: 'none', borderRadius: 8, padding: '12px 28px', cursor: ph && alk && ch && cya ? 'pointer' : 'not-allowed' }}>
             Analyze My Water →
           </button>
         </div>

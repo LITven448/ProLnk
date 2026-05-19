@@ -62,7 +62,7 @@ export default function DFWBathroomVanityGuide() {
                     borderRadius: 10,
                     border: `2px solid ${selectedSize.label === s.label ? '#F5E642' : '#1E3A5F'}`,
                     background: selectedSize.label === s.label ? '#1A2E4A' : '#0D1A2E',
-                    color: selectedSize.label === s.label ? '#F5E642′ : '#94A3B8',
+                    color: selectedSize.label === s.label ? '#F5E642' : '#94A3B8',
                     cursor: 'pointer',
                     textAlign: 'left',
                     fontSize: 13,
@@ -92,13 +92,13 @@ export default function DFWBathroomVanityGuide() {
                   }}
                 >
                   <div style={{ fontSize: 28, marginBottom: 6 }}>{sc.icon}</div>
-                  <div style={{ fontWeight: 700, color: selectedSinks.name === sc.name ? '#F5E642′ : '#E8EDF5' }}>{sc.name}</div>
-                  <div style={{ fontSize: 12, color: '#94A3B8′ }}>Min width: {sc.minWidth}"</div>
+                  <div style={{ fontWeight: 700, color: selectedSinks.name === sc.name ? '#F5E642' : '#E8EDF5' }}>{sc.name}</div>
+                  <div style={{ fontSize: 12, color: '#94A3B8' }}>Min width: {sc.minWidth}"</div>
                 </button>
               ))}
             </div>
           </div>
-          <div style={{ padding: 20, background: '#0A1628', borderRadius: 12, border: '1px solid #F5E642′ }}>
+          <div style={{ padding: 20, background: '#0A1628', borderRadius: 12, border: '1px solid #F5E642' }}>
             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16 }}>
               <div>
                 <div style={{ color: '#94A3B8', fontSize: 13 }}>Recommended Vanity Size</div>
@@ -132,7 +132,7 @@ export default function DFWBathroomVanityGuide() {
                 }}
               >
                 <div style={{ fontSize: 32, marginBottom: 10 }}>{m.icon}</div>
-                <div style={{ fontWeight: 700, fontSize: 16, color: selectedMount.name === m.name ? '#F5E642′ : '#E8EDF5', marginBottom: 8 }}>{m.name}</div>
+                <div style={{ fontWeight: 700, fontSize: 16, color: selectedMount.name === m.name ? '#F5E642' : '#E8EDF5', marginBottom: 8 }}>{m.name}</div>
                 <div style={{ marginBottom: 8 }}>
                   {m.pros.map((p) => <div key={p} style={{ fontSize: 12, color: '#22C55E', marginBottom: 2 }}>+ {p}</div>)}
                   {m.cons.map((c) => <div key={c} style={{ fontSize: 12, color: '#EF4444', marginBottom: 2 }}>- {c}</div>)}
@@ -151,7 +151,7 @@ export default function DFWBathroomVanityGuide() {
           <div style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
             {MATERIALS.map((mat) => (
               <div key={mat.name} style={{ display: 'flex', alignItems: 'center', gap: 16, padding: 14, background: '#0A1628', borderRadius: 10, border: '1px solid #1E3A5F' }}>
-                <div style={{ width: 12, height: 12, borderRadius: '50%', background: mat.humidity === 'Low Risk' ? '#22C55E' : mat.humidity === 'Medium Risk' ? '#EAB308′ : '#EF4444', flexShrink: 0 }} />
+                <div style={{ width: 12, height: 12, borderRadius: '50%', background: mat.humidity === 'Low Risk' ? '#22C55E' : mat.humidity === 'Medium Risk' ? '#EAB308' : '#EF4444', flexShrink: 0 }} />
                 <div style={{ flex: 1 }}>
                   <div style={{ fontWeight: 700, color: '#E8EDF5', fontSize: 15 }}>{mat.name}</div>
                   <div style={{ color: '#94A3B8', fontSize: 13 }}>{mat.dfwNote}</div>
@@ -166,7 +166,7 @@ export default function DFWBathroomVanityGuide() {
           <h2 style={{ color: '#F5E642', fontSize: 22, marginBottom: 16 }}>Features Worth Paying For in DFW</h2>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12 }}>
             {[
-              { icon: '🔇', title: 'Soft-Close Hinges', text: 'Essential for family homes — standard in DFW master bath remodels 2024+, adds $50-150′ },
+              { icon: '🔇', title: 'Soft-Close Hinges', text: 'Essential for family homes — standard in DFW master bath remodels 2024+, adds $50-150' },
               { icon: '💧', title: 'Undermount Sink', text: 'Easier to clean countertop, popular with quartz and granite tops in DFW master baths' },
               { icon: '🪞', title: 'Integrated LED Mirror', text: 'DFW buyers expect lighted mirrors in master baths — adds $200-600, strong ROI' },
               { icon: '🧹', title: 'Dovetail Drawers', text: 'Indicates quality construction — look for this in DFW mid-range to luxury vanities' },
@@ -180,7 +180,7 @@ export default function DFWBathroomVanityGuide() {
           </div>
         </div>
 
-        <div style={{ textAlign: 'center', padding: 24, background: '#0F1F35', borderRadius: 16, border: '1px solid #F5E642′ }}>
+        <div style={{ textAlign: 'center', padding: 24, background: '#0F1F35', borderRadius: 16, border: '1px solid #F5E642' }}>
           <div style={{ fontSize: 32, marginBottom: 12 }}>🚿</div>
           <h3 style={{ color: '#F5E642', fontSize: 20, marginBottom: 8 }}>Get DFW Vanity Installation Quotes</h3>
           <p style={{ color: '#94A3B8', marginBottom: 20 }}>Connect with vetted DFW bathroom remodelers through ProLnk — free quotes, no commitment.</p>

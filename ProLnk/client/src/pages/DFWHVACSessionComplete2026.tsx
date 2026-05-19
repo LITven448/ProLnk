@@ -28,9 +28,9 @@ const roles = [
 ];
 
 const stats = [
-  { label: 'Pages Built', value: '3,308′ },
+  { label: 'Pages Built', value: '3,308' },
   { label: 'DFW Topics Covered', value: '180+' },
-  { label: 'AI Agents Running', value: '47′ },
+  { label: 'AI Agents Running', value: '47' },
   { label: 'Database Tables', value: '130+' },
 ];
 
@@ -93,8 +93,8 @@ export default function DFWHVACSessionComplete2026() {
               key={i}
               onClick={() => choose(i)}
               style={{
-                background: selected === i ? '#F5E642′ : '#1e3a5f',
-                color: selected === i ? '#0A1628′ : '#fff',
+                background: selected === i ? '#F5E642' : '#1e3a5f',
+                color: selected === i ? '#0A1628' : '#fff',
                 border: 'none', borderRadius: 12, padding: '20px 16px',
                 cursor: 'pointer', fontSize: 15, fontWeight: 600,
                 display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 8,

@@ -88,24 +88,24 @@ export default function DFWRealEstateNetworkGuide() {
   const selected = goalData[goal];
 
   return (
-    <div style={{ background: "#F8FAFC", minHeight: "100vh", color: "#0A1628″, fontFamily: "sans-serif", padding: "40px 20px" }}>
+    <div style={{ background: "#F8FAFC", minHeight: "100vh", color: "#0A1628", fontFamily: "sans-serif", padding: "40px 20px" }}>
       <div style={{ maxWidth: 860, margin: "0 auto" }}>
-        <div style={{ marginBottom: 8, color: "#1D4ED8″, fontSize: 13, fontWeight: 700, letterSpacing: 2 }}>PROLNK NETWORK GUIDE — DFW</div>
-        <h1 style={{ fontSize: 36, fontWeight: 800, marginBottom: 8, color: "#0A1628″ }}>Building Your DFW Real Estate Network 🤝</h1>
-        <p style={{ color: "#475569″, fontSize: 16, marginBottom: 40 }}>Agents, investors, lenders, and contractors — where to meet them and how to add value in the DFW market.</p>
+        <div style={{ marginBottom: 8, color: "#1D4ED8", fontSize: 13, fontWeight: 700, letterSpacing: 2 }}>PROLNK NETWORK GUIDE — DFW</div>
+        <h1 style={{ fontSize: 36, fontWeight: 800, marginBottom: 8, color: "#0A1628" }}>Building Your DFW Real Estate Network 🤝</h1>
+        <p style={{ color: "#475569", fontSize: 16, marginBottom: 40 }}>Agents, investors, lenders, and contractors — where to meet them and how to add value in the DFW market.</p>
 
         <div style={{ display: "grid", gap: 20, gridTemplateColumns: "1fr 1fr", marginBottom: 32 }}>
           {venues.map((v) => (
-            <div key={v.name} style={{ background: "#fff", borderRadius: 12, padding: 24, boxShadow: "0 2px 8px rgba(0,0,0,0.08)", border: "1px solid #E2E8F0″ }}>
+            <div key={v.name} style={{ background: "#fff", borderRadius: 12, padding: 24, boxShadow: "0 2px 8px rgba(0,0,0,0.08)", border: "1px solid #E2E8F0" }}>
               <div style={{ fontSize: 28, marginBottom: 10 }}>{v.emoji}</div>
               <div style={{ fontWeight: 800, fontSize: 16, marginBottom: 4 }}>{v.name}</div>
-              <div style={{ color: "#1D4ED8″, fontSize: 12, fontWeight: 600, marginBottom: 8 }}>{v.type}</div>
-              <div style={{ color: "#475569″, fontSize: 14 }}>{v.description}</div>
+              <div style={{ color: "#1D4ED8", fontSize: 12, fontWeight: 600, marginBottom: 8 }}>{v.type}</div>
+              <div style={{ color: "#475569", fontSize: 14 }}>{v.description}</div>
             </div>
           ))}
         </div>
 
-        <div style={{ background: "#fff", borderRadius: 12, padding: 28, marginBottom: 32, boxShadow: "0 2px 8px rgba(0,0,0,0.08)", border: "1px solid #E2E8F0″ }}>
+        <div style={{ background: "#fff", borderRadius: 12, padding: 28, marginBottom: 32, boxShadow: "0 2px 8px rgba(0,0,0,0.08)", border: "1px solid #E2E8F0" }}>
           <h2 style={{ fontSize: 20, fontWeight: 700, marginBottom: 8 }}>🧭 Universal DFW Networking Rules</h2>
           {[
             "DFW is relationship-driven — deals, referrals, and partnerships flow through trusted connections, not cold outreach",
@@ -114,17 +114,17 @@ export default function DFWRealEstateNetworkGuide() {
             "Off-market deals exist but require deep relationships — they never go to strangers",
             "The DFW market moves fast — your network is your early warning system for new opportunities",
           ].map((rule, i) => (
-            <div key={i} style={{ color: "#475569″, fontSize: 14, marginBottom: 10, paddingLeft: 12, borderLeft: "3px solid #1D4ED8" }}>{rule}</div>
+            <div key={i} style={{ color: "#475569", fontSize: 14, marginBottom: 10, paddingLeft: 12, borderLeft: "3px solid #1D4ED8" }}>{rule}</div>
           ))}
         </div>
 
-        <div style={{ background: "#fff", borderRadius: 12, padding: 28, boxShadow: "0 2px 8px rgba(0,0,0,0.08)", border: "1px solid #E2E8F0″ }}>
+        <div style={{ background: "#fff", borderRadius: 12, padding: 28, boxShadow: "0 2px 8px rgba(0,0,0,0.08)", border: "1px solid #E2E8F0" }}>
           <h2 style={{ fontSize: 20, fontWeight: 700, marginBottom: 8 }}>🎯 Your Personalized DFW Networking Strategy</h2>
-          <p style={{ color: "#475569″, fontSize: 14, marginBottom: 16 }}>What is your primary goal right now?</p>
+          <p style={{ color: "#475569", fontSize: 14, marginBottom: 16 }}>What is your primary goal right now?</p>
           <div style={{ display: "flex", gap: 12, flexWrap: "wrap", marginBottom: 20 }}>
             {goals.map((g) => (
               <button key={g.value} onClick={() => { setGoal(g.value); setShowGuide(true); }}
-                style={{ background: goal === g.value ? "#0A1628″ : "#F1F5F9", color: goal === g.value ? "#fff" : "#0A1628", border: "none", borderRadius: 8, padding: "10px 18px", cursor: "pointer", fontWeight: 600, fontSize: 14 }}>
+                style={{ background: goal === g.value ? "#0A1628" : "#F1F5F9", color: goal === g.value ? "#fff" : "#0A1628", border: "none", borderRadius: 8, padding: "10px 18px", cursor: "pointer", fontWeight: 600, fontSize: 14 }}>
                 {g.label}
               </button>
             ))}
@@ -132,12 +132,12 @@ export default function DFWRealEstateNetworkGuide() {
           {showGuide && selected && (
             <div style={{ display: "grid", gap: 20, gridTemplateColumns: "1fr 1fr" }}>
               <div>
-                <div style={{ color: "#1D4ED8″, fontWeight: 700, marginBottom: 10 }}>🧠 Best Approach for Your Goal</div>
-                {selected.approach.map((a, i) => <div key={i} style={{ color: "#475569″, fontSize: 13, marginBottom: 8 }}>• {a}</div>)}
+                <div style={{ color: "#1D4ED8", fontWeight: 700, marginBottom: 10 }}>🧠 Best Approach for Your Goal</div>
+                {selected.approach.map((a, i) => <div key={i} style={{ color: "#475569", fontSize: 13, marginBottom: 8 }}>• {a}</div>)}
               </div>
               <div>
-                <div style={{ color: "#1D4ED8″, fontWeight: 700, marginBottom: 10 }}>📍 Specific DFW Groups to Join</div>
-                {selected.groups.map((g, i) => <div key={i} style={{ color: "#475569″, fontSize: 13, marginBottom: 8 }}>• {g}</div>)}
+                <div style={{ color: "#1D4ED8", fontWeight: 700, marginBottom: 10 }}>📍 Specific DFW Groups to Join</div>
+                {selected.groups.map((g, i) => <div key={i} style={{ color: "#475569", fontSize: 13, marginBottom: 8 }}>• {g}</div>)}
               </div>
             </div>
           )}

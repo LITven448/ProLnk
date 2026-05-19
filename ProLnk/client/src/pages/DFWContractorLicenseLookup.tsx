@@ -63,13 +63,13 @@ export default function DFWContractorLicenseLookup() {
 
         {info && (
           <div style={{ display: 'grid', gap: 16 }}>
-            <div style={{ backgroundColor: '#162033', borderRadius: 12, padding: 24, border: '1px solid #2D3E55′ }}>
+            <div style={{ backgroundColor: '#162033', borderRadius: 12, padding: 24, border: '1px solid #2D3E55' }}>
               <div style={{ fontSize: 16, fontWeight: 700, color: '#F5E642', marginBottom: 12 }}>🏛️ Licensing Authority</div>
               <div style={{ fontWeight: 600, marginBottom: 4 }}>{info.authority}</div>
               <div style={{ color: '#60A5FA', fontSize: 14 }}>🌐 {info.website}</div>
             </div>
 
-            <div style={{ backgroundColor: '#162033', borderRadius: 12, padding: 24, border: '1px solid #2D3E55′ }}>
+            <div style={{ backgroundColor: '#162033', borderRadius: 12, padding: 24, border: '1px solid #2D3E55' }}>
               <div style={{ fontSize: 16, fontWeight: 700, color: '#F5E642', marginBottom: 12 }}>🔍 How to Verify — Step by Step</div>
               <div style={{ color: '#94A3B8', fontSize: 14, lineHeight: 1.8, whiteSpace: 'pre-line' }}>{info.lookupSteps}</div>
             </div>
@@ -79,7 +79,7 @@ export default function DFWContractorLicenseLookup() {
               <div style={{ color: '#94A3B8', fontSize: 14, lineHeight: 1.8 }}>{info.redFlags}</div>
             </div>
 
-            <div style={{ backgroundColor: '#162033', borderRadius: 12, padding: 20, border: '1px solid #2D3E55′ }}>
+            <div style={{ backgroundColor: '#162033', borderRadius: 12, padding: 20, border: '1px solid #2D3E55' }}>
               <div style={{ fontSize: 14, fontWeight: 700, color: '#F5E642', marginBottom: 8 }}>🗺️ DFW-Specific Note</div>
               <div style={{ color: '#94A3B8', fontSize: 14, lineHeight: 1.7 }}>{info.cityNote}</div>
             </div>
@@ -90,10 +90,10 @@ export default function DFWContractorLicenseLookup() {
           <div style={{ backgroundColor: '#162033', borderRadius: 12, padding: 24, border: '1px solid #2D3E55', color: '#94A3B8', fontSize: 15, lineHeight: 1.8 }}>
             <div style={{ fontWeight: 700, color: '#E2E8F0', marginBottom: 12 }}>📌 Key DFW Licensing Facts</div>
             <ul style={{ paddingLeft: 20, margin: 0, lineHeight: 2 }}>
-              <li>Texas has <strong style={{ color: '#F5E642′ }}>no state general contractor license</strong> — verify city registrations</li>
-              <li>HVAC and Electrical licensed through <strong style={{ color: '#F5E642′ }}>TDLR</strong> statewide</li>
-              <li>Plumbing licensed through <strong style={{ color: '#F5E642′ }}>TSBPE</strong> statewide</li>
-              <li>City registrations <strong style={{ color: '#F5E642′ }}>do not transfer</strong> between DFW municipalities</li>
+              <li>Texas has <strong style={{ color: '#F5E642' }}>no state general contractor license</strong> — verify city registrations</li>
+              <li>HVAC and Electrical licensed through <strong style={{ color: '#F5E642' }}>TDLR</strong> statewide</li>
+              <li>Plumbing licensed through <strong style={{ color: '#F5E642' }}>TSBPE</strong> statewide</li>
+              <li>City registrations <strong style={{ color: '#F5E642' }}>do not transfer</strong> between DFW municipalities</li>
               <li>Always verify insurance certificates independently — don't trust copies alone</li>
             </ul>
           </div>

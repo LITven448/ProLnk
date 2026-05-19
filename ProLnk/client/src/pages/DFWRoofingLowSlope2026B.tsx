@@ -58,14 +58,14 @@ export default function DFWRoofingLowSlope2026B() {
           <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap', marginBottom: 14 }}>
             {[{id:'heat',label:'Beat DFW Heat'},{id:'cost',label:'Lowest Cost'},{id:'proven',label:'Proven Track Record'},{id:'existing',label:'Existing Roof'}].map(p => (
               <button key={p.id} onClick={() => { setPriority(p.id); setSelected(priorityRec[p.id]); }}
-                style={{ background: priority === p.id ? '#F5E642′ : '#1e3a5f', color: priority === p.id ? '#0A1628' : '#fff', border: ’none', borderRadius: 20, padding: '7px 14px', fontSize: 13, cursor: 'pointer', fontWeight: 600 }}>
+                style={{ background: priority === p.id ? '#F5E642' : '#1e3a5f', color: priority === p.id ? '#0A1628' : '#fff', border: 'none', borderRadius: 20, padding: '7px 14px', fontSize: 13, cursor: 'pointer', fontWeight: 600 }}>
                 {p.label}
               </button>
             ))}
           </div>
           <div style={{ background: '#0A1628', borderRadius: 8, padding: 12 }}>
             <span style={{ color: '#F5E642', fontWeight: 700, fontSize: 14 }}>Recommended: {systems.find(s=>s.id===priorityRec[priority])?.name}</span>
-            <p style={{ color: '#94a3b8', fontSize: 13, margin: '4px 0 0′ }}>{systems.find(s=>s.id===priorityRec[priority])?.dfwNote}</p>
+            <p style={{ color: '#94a3b8', fontSize: 13, margin: '4px 0 0' }}>{systems.find(s=>s.id===priorityRec[priority])?.dfwNote}</p>
           </div>
         </div>
 

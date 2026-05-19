@@ -100,7 +100,7 @@ export default function DFWSmartWaterGuide() {
           {dfwRisks.map(r => (
             <div key={r.risk} style={{ background: '#111E35', borderRadius: 10, padding: 16, border: '1px solid #1E3A5F' }}>
               <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: 4 }}>
-                <span style={{ fontWeight: 700, color: '#E8EDF5′ }}>{r.risk}</span>
+                <span style={{ fontWeight: 700, color: '#E8EDF5' }}>{r.risk}</span>
                 <span style={{ color: '#F5E642', fontSize: 12 }}>{r.when}</span>
               </div>
               <div style={{ color: '#8A9BBE', fontSize: 13 }}>{r.detail}</div>
@@ -151,7 +151,7 @@ export default function DFWSmartWaterGuide() {
           </div>
           <button onClick={calculate} style={{ background: '#F5E642', color: '#0A1628', border: 'none', borderRadius: 10, padding: '12px 28px', fontWeight: 800, fontSize: 15, cursor: 'pointer' }}>Build My Water Protection Package</button>
           {result && (
-            <div style={{ marginTop: 20, background: '#0A1628', borderRadius: 10, padding: 20, border: '1px solid #F5E642′ }}>
+            <div style={{ marginTop: 20, background: '#0A1628', borderRadius: 10, padding: 20, border: '1px solid #F5E642' }}>
               <div style={{ fontSize: 20, fontWeight: 800, color: '#F5E642', marginBottom: 4 }}>{result.package}</div>
               <div style={{ color: '#F5E642', fontWeight: 700, marginBottom: 12 }}>Estimated Cost: {result.cost}</div>
               <div style={{ marginBottom: 12 }}>

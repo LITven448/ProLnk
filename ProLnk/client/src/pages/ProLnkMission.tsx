@@ -4,7 +4,7 @@ const stats = [
   { label: 'Homeowners on Waitlist', value: '5,000+' },
   { label: 'Skilled Pros Signed Up', value: '500+' },
   { label: 'Projected Match Value', value: '$2.1M' },
-  { label: 'Trades Represented', value: '28′ },
+  { label: 'Trades Represented', value: '28' },
 ];
 
 const values = [
@@ -36,7 +36,7 @@ export default function ProLnkMission() {
             <div style={{ fontSize: 40 }}>👷</div>
             <div>
               <h2 style={{ fontSize: 28, fontWeight: 700, color: '#1e3a5f', margin: 0 }}>The Problem I Lived</h2>
-              <p style={{ color: '#888', margin: '4px 0 0′ }}>Andrew Frakes, Co-Founder & CEO</p>
+              <p style={{ color: '#888', margin: '4px 0 0' }}>Andrew Frakes, Co-Founder & CEO</p>
             </div>
           </div>
           <p style={{ fontSize: 17, lineHeight: 1.8, color: '#333', marginBottom: 16 }}>
@@ -61,7 +61,7 @@ export default function ProLnkMission() {
               <p style={{ fontSize: 17, lineHeight: 1.8, color: '#333', marginBottom: 16 }}>
                 So I asked a different question: what if the people who helped build the network could also earn from it? What if a skilled pro who referred a homeowner, or recruited another great pro, received a residual income stream that reflected the value they created? That question became ProLnk.
               </p>
-              <p style={{ fontSize: 17, lineHeight: 1.8, color: '#333′ }}>
+              <p style={{ fontSize: 17, lineHeight: 1.8, color: '#333' }}>
                 ProLnk is not just a lead marketplace. It is a network income system designed so that every participant — pros, homeowners, and referrers — has a reason to make the platform better. When we get this right, we will have built something that genuinely serves the people who build, fix, and protect American homes.
               </p>
             </>

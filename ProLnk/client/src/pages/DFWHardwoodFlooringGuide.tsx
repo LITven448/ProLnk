@@ -61,7 +61,7 @@ export default function DFWHardwoodFlooringGuide() {
               <input
                 type="range" min={100} max={3000} step={50} value={sqft}
                 onChange={e => setSqft(Number(e.target.value))}
-                style={{ width: '100%', accentColor: '#F5E642′ }}
+                style={{ width: '100%', accentColor: '#F5E642' }}
               />
               <div style={{ color: '#FFFFFF', fontWeight: 700, marginTop: 4 }}>{sqft.toLocaleString()} sqft</div>
             </div>
@@ -71,7 +71,7 @@ export default function DFWHardwoodFlooringGuide() {
                 {Object.entries(WOOD_TYPES).map(([k, v]) => <option key={k} value={k}>{v.label}</option>)}
               </select>
               <div style={{ marginTop: 8 }}>
-                <span style={{ fontSize: 12, backgroundColor: wood.movementRisk === 'Low' ? '#166534′ : wood.movementRisk === ’Medium' ? '#92400E' : '#991B1B', color: '#FFFFFF', padding: '2px 8px', borderRadius: 4 }}>
+                <span style={{ fontSize: 12, backgroundColor: wood.movementRisk === 'Low' ? '#166534' : wood.movementRisk === 'Medium' ? '#92400E' : '#991B1B', color: '#FFFFFF', padding: '2px 8px', borderRadius: 4 }}>
                   Movement Risk: {wood.movementRisk}
                 </span>
               </div>
@@ -85,10 +85,10 @@ export default function DFWHardwoodFlooringGuide() {
               { label: 'Total Cost', value: `$${Math.round(totalCost).toLocaleString()}`, sub: `$${costPerSqft.toFixed(2)}/sqft`, highlight: true },
               { label: 'Annual Upkeep', value: `$${Math.round(annualMaintenance).toLocaleString()}`, sub: 'cleaning + refinish fund' },
             ].map(stat => (
-              <div key={stat.label} style={{ backgroundColor: stat.highlight ? '#F5E642′ : '#0A1628', borderRadius: 10, padding: 16, textAlign: ’center' }}>
-                <div style={{ color: stat.highlight ? '#0A1628′ : '#8A9BBE', fontSize: 12, marginBottom: 4 }}>{stat.label}</div>
-                <div style={{ color: stat.highlight ? '#0A1628′ : '#FFFFFF', fontSize: 20, fontWeight: 800 }}>{stat.value}</div>
-                <div style={{ color: stat.highlight ? '#0A162880′ : '#4A5B7A', fontSize: 11 }}>{stat.sub}</div>
+              <div key={stat.label} style={{ backgroundColor: stat.highlight ? '#F5E642' : '#0A1628', borderRadius: 10, padding: 16, textAlign: 'center' }}>
+                <div style={{ color: stat.highlight ? '#0A1628' : '#8A9BBE', fontSize: 12, marginBottom: 4 }}>{stat.label}</div>
+                <div style={{ color: stat.highlight ? '#0A1628' : '#FFFFFF', fontSize: 20, fontWeight: 800 }}>{stat.value}</div>
+                <div style={{ color: stat.highlight ? '#0A162880' : '#4A5B7A', fontSize: 11 }}>{stat.sub}</div>
               </div>
             ))}
           </div>

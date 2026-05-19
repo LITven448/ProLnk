@@ -69,7 +69,7 @@ export default function DFWHVACHeatPumpDFWCalc() {
             </select>
           </div>
           <button onClick={() => setShowCalc(true)} disabled={!homeSize || !currentSystem || !systemAge}
-            style={{ background: homeSize && currentSystem && systemAge ? '#F5E642′ : '#1e3a5f', color: homeSize && currentSystem && systemAge ? '#0A1628' : '#4a6080', border: ’none', borderRadius: 8, padding: '12px 28px', fontWeight: 700, fontSize: 15, cursor: homeSize && currentSystem && systemAge ? 'pointer' : 'not-allowed' }}>
+            style={{ background: homeSize && currentSystem && systemAge ? '#F5E642' : '#1e3a5f', color: homeSize && currentSystem && systemAge ? '#0A1628' : '#4a6080', border: 'none', borderRadius: 8, padding: '12px 28px', fontWeight: 700, fontSize: 15, cursor: homeSize && currentSystem && systemAge ? 'pointer' : 'not-allowed' }}>
             Calculate My ROI →
           </button>
         </div>
@@ -79,9 +79,9 @@ export default function DFWHVACHeatPumpDFWCalc() {
             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16, marginBottom: 16 }}>
               {[
                 { label: 'System + Install Cost', value: `$${systemCost.toLocaleString()}`, color: '#fff' },
-                { label: 'Federal 30% Tax Credit', value: `-$${taxCredit.toLocaleString()}`, color: '#a0d4a0′ },
-                { label: 'Oncor Rebate', value: `-$${oncorRebate}`, color: '#a0d4a0′ },
-                { label: 'Your Net Cost', value: `$${netCost.toLocaleString()}`, color: '#F5E642′ },
+                { label: 'Federal 30% Tax Credit', value: `-$${taxCredit.toLocaleString()}`, color: '#a0d4a0' },
+                { label: 'Oncor Rebate', value: `-$${oncorRebate}`, color: '#a0d4a0' },
+                { label: 'Your Net Cost', value: `$${netCost.toLocaleString()}`, color: '#F5E642' },
               ].map((item, i) => (
                 <div key={i} style={{ background: '#0d1f3c', borderRadius: 12, padding: 20, textAlign: 'center' }}>
                   <div style={{ color: '#8899aa', fontSize: 12, marginBottom: 6 }}>{item.label}</div>
@@ -90,14 +90,14 @@ export default function DFWHVACHeatPumpDFWCalc() {
               ))}
             </div>
             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16 }}>
-              <div style={{ background: '#0d1f3c', borderRadius: 12, padding: 20, textAlign: 'center', borderTop: '3px solid #F5E642′ }}>
+              <div style={{ background: '#0d1f3c', borderRadius: 12, padding: 20, textAlign: 'center', borderTop: '3px solid #F5E642' }}>
                 <div style={{ color: '#8899aa', fontSize: 12, marginBottom: 6 }}>Annual Savings vs {currentSystem}</div>
-                <div style={{ fontSize: 28, fontWeight: 800, color: '#F5E642′ }}>${annualSavings}/yr</div>
+                <div style={{ fontSize: 28, fontWeight: 800, color: '#F5E642' }}>${annualSavings}/yr</div>
                 <div style={{ color: '#8899aa', fontSize: 12, marginTop: 4 }}>Breakeven: {breakeven} years</div>
               </div>
-              <div style={{ background: '#0d1f3c', borderRadius: 12, padding: 20, textAlign: 'center', borderTop: '3px solid #a0d4a0′ }}>
+              <div style={{ background: '#0d1f3c', borderRadius: 12, padding: 20, textAlign: 'center', borderTop: '3px solid #a0d4a0' }}>
                 <div style={{ color: '#8899aa', fontSize: 12, marginBottom: 6 }}>10-Year Net Benefit</div>
-                <div style={{ fontSize: 28, fontWeight: 800, color: tenYearReturn >= 0 ? '#a0d4a0′ : '#ff6b6b' }}>
+                <div style={{ fontSize: 28, fontWeight: 800, color: tenYearReturn >= 0 ? '#a0d4a0' : '#ff6b6b' }}>
                   {tenYearReturn >= 0 ? '+' : ''}${Math.abs(tenYearReturn).toLocaleString()}
                 </div>
                 <div style={{ color: '#8899aa', fontSize: 12, marginTop: 4 }}>After all costs and savings</div>

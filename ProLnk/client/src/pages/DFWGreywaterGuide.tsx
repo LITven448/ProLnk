@@ -2,7 +2,7 @@ import { useState } from 'react';
 
 const feasibility: Record<string, Record<string, { feasible: string; system: string; cost: string; savings: string; notes: string }>> = {
   low: {
-    never: { feasible: '🟢 High Value', system: 'Laundry-to-landscape system: direct washer drain to outdoor irrigation via 3/4″ polyethylene tubing. No permit required in Texas for simple laundry greywater systems.', cost: '$50–$300 DIY or $200–$800 installed', savings: 'Save 20–30 gallons per laundry load. For 8 loads/week: ~10,000 gallons/year.', notes: 'Texas allows laundry greywater for subsurface drip or mulch basin irrigation without permit. Must stay 100 ft from water well.' },
+    never: { feasible: '🟢 High Value', system: 'Laundry-to-landscape system: direct washer drain to outdoor irrigation via 3/4" polyethylene tubing. No permit required in Texas for simple laundry greywater systems.', cost: '$50–$300 DIY or $200–$800 installed', savings: 'Save 20–30 gallons per laundry load. For 8 loads/week: ~10,000 gallons/year.', notes: 'Texas allows laundry greywater for subsurface drip or mulch basin irrigation without permit. Must stay 100 ft from water well.' },
     occasional: { feasible: '🟢 Excellent ROI', system: 'Laundry-to-landscape + optional sink greywater with branched drain system. Gravity-fed to mulch basins in landscape beds.', cost: '$300–$1,200 for branched drain system', savings: '15,000–25,000 gallons/yr saved. At DFW Tier 2 rates ($5–$8/1000 gal): $75–$200/yr.', notes: 'During occasional DFW restrictions, greywater irrigation stays permitted when outdoor hose use is banned.' },
     frequent: { feasible: '🟡 Essential During Restrictions', system: 'Full laundry + shower greywater system with surge tank and timer-controlled drip emitters.', cost: '$1,500–$4,000 for full system with surge tank', savings: '30,000–50,000 gallons/yr. At restricted-period pricing: $150–$400/yr savings.', notes: 'North Texas Water District frequent restrictions make greywater critical for landscape survival. System pays back in 5–8 years.' },
   },
@@ -74,7 +74,7 @@ export default function DFWGreywaterGuide() {
           </div>
 
           {result && (
-            <div style={{ backgroundColor: '#0A1628', borderRadius: 10, padding: 20, borderLeft: '4px solid #F5E642′ }}>
+            <div style={{ backgroundColor: '#0A1628', borderRadius: 10, padding: 20, borderLeft: '4px solid #F5E642' }}>
               <div style={{ color: '#F5E642', fontSize: 18, fontWeight: 800, marginBottom: 16 }}>{result.feasible}</div>
               {[
                 { label: 'RECOMMENDED SYSTEM', val: result.system },

@@ -39,7 +39,7 @@ export default function DFWLuxuryHousingGuide() {
           ].map((s, i) => (
             <div key={i} style={{ background: '#111f3d', borderRadius: 12, padding: '1.25rem', border: '1px solid #1e3a5f', textAlign: 'center' }}>
               <p style={{ color: '#94a3b8', fontSize: '0.875rem', marginBottom: '0.5rem' }}>{s.label}</p>
-              <p style={{ color: '#F5E642', fontSize: '1.5rem', fontWeight: 700, margin: '0.25rem 0′ }}>{s.value}</p>
+              <p style={{ color: '#F5E642', fontSize: '1.5rem', fontWeight: 700, margin: '0.25rem 0' }}>{s.value}</p>
               <p style={{ color: '#94a3b8', fontSize: '0.8rem' }}>{s.sub}</p>
             </div>
           ))}
@@ -91,7 +91,7 @@ export default function DFWLuxuryHousingGuide() {
         </div>
 
         {results.length > 0 && (
-          <div style={{ background: '#111f3d', borderRadius: 12, padding: '1.5rem', border: '2px solid #F5E642′ }}>
+          <div style={{ background: '#111f3d', borderRadius: 12, padding: '1.5rem', border: '2px solid #F5E642' }}>
             <h3 style={{ color: '#F5E642', marginBottom: '1rem' }}>💎 Recommended Luxury Submarkets</h3>
             {results.map((s, i) => (
               <div key={s.name} style={{ borderBottom: i < results.length - 1 ? '1px solid #1e3a5f' : 'none', paddingBottom: '1rem', marginBottom: '1rem' }}>
@@ -99,7 +99,7 @@ export default function DFWLuxuryHousingGuide() {
                   <span style={{ color: '#e2e8f0', fontWeight: 600, fontSize: '1.05rem' }}>{s.name}</span>
                   <span style={{ color: '#F5E642', fontWeight: 700 }}>From ${(s.minPrice / 1000000).toFixed(1)}M</span>
                 </div>
-                <p style={{ color: '#94a3b8', fontSize: '0.85rem', margin: '0.25rem 0′ }}>{s.vibe} · {s.dom} avg days on market · Schools: {s.schools}</p>
+                <p style={{ color: '#94a3b8', fontSize: '0.85rem', margin: '0.25rem 0' }}>{s.vibe} · {s.dom} avg days on market · Schools: {s.schools}</p>
                 <div style={{ display: 'flex', gap: '0.5rem', flexWrap: 'wrap', marginTop: '0.4rem' }}>
                   {s.features.map(f => <span key={f} style={{ background: '#1e3a5f', color: '#e2e8f0', padding: '0.2rem 0.6rem', borderRadius: 20, fontSize: '0.75rem' }}>{f}</span>)}
                 </div>

@@ -4,7 +4,7 @@ export default function DFWRoofingNewsBriefing2026() {
   const [situation, setSituation] = useState('');
 
   const stories = [
-    { emoji: '⛈️', title: 'April 2026 Hail Season Was Active — Check Your Roof Now', body: 'Multiple severe hail events hit north and east DFW in April 2026. Hailstones up to 2.5″ were reported in Plano, Garland, and Rowlett. If you haven\’t inspected your roof since April, now is the time.', tag: 'hail' },
+    { emoji: '⛈️', title: 'April 2026 Hail Season Was Active — Check Your Roof Now', body: 'Multiple severe hail events hit north and east DFW in April 2026. Hailstones up to 2.5" were reported in Plano, Garland, and Rowlett. If you haven\’t inspected your roof since April, now is the time.', tag: 'hail' },
     { emoji: '🏷️', title: 'Class 4 Insurance Discounts Now 25–30% with Most DFW Carriers', body: 'Impact-resistant Class 4 roofing now qualifies for 25–30% premium discounts with most major Texas carriers — up from 20% in 2024. Upgrading at next replacement pays back within 4–6 years for most DFW homeowners.', tag: 'insurance' },
     { emoji: '🚨', title: 'Storm Chaser Activity High Post-April Storms', body: 'Out-of-state contractors flooded DFW after April storms. Watch for door-knockers asking for insurance assignment of benefits. Always verify license and local references before signing anything.', tag: 'safety' },
     { emoji: '📋', title: 'Supplement Claims Taking Longer with Major Carriers', body: 'State Farm and Allstate DFW adjusters are backed up 4–6 weeks post-storm. A licensed public adjuster or roofing contractor experienced with supplements can significantly speed the process.', tag: 'insurance' },
@@ -37,7 +37,7 @@ export default function DFWRoofingNewsBriefing2026() {
             {[['', 'All News'], ['hail', '🌨️ Hail Damage'], ['insurance', '📄 Insurance Claim'], ['safety', '🚨 Contractor Safety']].map(([val, label]) => (
               <button key={val} onClick={() => setSituation(val)}
                 style={{ padding: '8px 14px', borderRadius: 8, border: 'none', cursor: 'pointer', fontSize: 13, fontWeight: 600,
-                  backgroundColor: situation === val ? '#F5E642′ : '#1a2d50', color: situation === val ? '#0A1628' : '#94a3b8' }}>
+                  backgroundColor: situation === val ? '#F5E642' : '#1a2d50', color: situation === val ? '#0A1628' : '#94a3b8' }}>
                 {label}
               </button>
             ))}
@@ -46,7 +46,7 @@ export default function DFWRoofingNewsBriefing2026() {
 
         <div style={{ display: 'flex', flexDirection: 'column', gap: 14, marginBottom: 32 }}>
           {filtered.map((s, i) => (
-            <div key={i} style={{ backgroundColor: '#111d35', borderRadius: 12, padding: 20, borderLeft: '4px solid #F5E642′ }}>
+            <div key={i} style={{ backgroundColor: '#111d35', borderRadius: 12, padding: 20, borderLeft: '4px solid #F5E642' }}>
               <div style={{ display: 'flex', gap: 12, alignItems: 'flex-start' }}>
                 <span style={{ fontSize: 28 }}>{s.emoji}</span>
                 <div>
@@ -58,7 +58,7 @@ export default function DFWRoofingNewsBriefing2026() {
           ))}
         </div>
 
-        <div style={{ backgroundColor: '#1a2d50', borderRadius: 12, padding: 24, textAlign: 'center', border: '2px solid #F5E642′ }}>
+        <div style={{ backgroundColor: '#1a2d50', borderRadius: 12, padding: 24, textAlign: 'center', border: '2px solid #F5E642' }}>
           <div style={{ fontSize: 32 }}>🛡️</div>
           <p style={{ fontSize: 17, fontWeight: 700, marginBottom: 8 }}>Get a Verified Charter Roofer — Not a Storm Chaser</p>
           <p style={{ color: '#94a3b8', fontSize: 14, marginBottom: 16 }}>

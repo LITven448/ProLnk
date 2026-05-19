@@ -76,7 +76,7 @@ export default function DFWElectricianFlowerMound() {
             <label style={{ display: 'block', color: '#F5E642', fontWeight: 600, marginBottom: 10 }}>Home vintage?</label>
             <div style={{ display: 'flex', flexWrap: 'wrap', gap: 10 }}>
               {homeVintages.map(v => (
-                <button key={v} onClick={() => setVintage(v)} style={{ padding: '10px 18px', borderRadius: 8, border: '2px solid', borderColor: vintage === v ? '#F5E642′ : '#1e3a5f', backgroundColor: vintage === v ? '#F5E642' : ’transparent', color: vintage === v ? '#0A1628′ : '#fff', fontWeight: vintage === v ? 700 : 400, cursor: ’pointer', fontSize: 14 }}>{v}</button>
+                <button key={v} onClick={() => setVintage(v)} style={{ padding: '10px 18px', borderRadius: 8, border: '2px solid', borderColor: vintage === v ? '#F5E642' : '#1e3a5f', backgroundColor: vintage === v ? '#F5E642' : 'transparent', color: vintage === v ? '#0A1628' : '#fff', fontWeight: vintage === v ? 700 : 400, cursor: 'pointer', fontSize: 14 }}>{v}</button>
               ))}
             </div>
           </div>
@@ -85,13 +85,13 @@ export default function DFWElectricianFlowerMound() {
             <label style={{ display: 'block', color: '#F5E642', fontWeight: 600, marginBottom: 10 }}>Service needed?</label>
             <div style={{ display: 'flex', flexWrap: 'wrap', gap: 10 }}>
               {serviceNeeds.map(s => (
-                <button key={s} onClick={() => setService(s)} style={{ padding: '10px 18px', borderRadius: 8, border: '2px solid', borderColor: service === s ? '#F5E642′ : '#1e3a5f', backgroundColor: service === s ? '#F5E642' : ’transparent', color: service === s ? '#0A1628′ : '#fff', fontWeight: service === s ? 700 : 400, cursor: ’pointer', fontSize: 14 }}>{s}</button>
+                <button key={s} onClick={() => setService(s)} style={{ padding: '10px 18px', borderRadius: 8, border: '2px solid', borderColor: service === s ? '#F5E642' : '#1e3a5f', backgroundColor: service === s ? '#F5E642' : 'transparent', color: service === s ? '#0A1628' : '#fff', fontWeight: service === s ? 700 : 400, cursor: 'pointer', fontSize: 14 }}>{s}</button>
               ))}
             </div>
           </div>
 
           {result && (
-            <div style={{ backgroundColor: '#0A1628', borderRadius: 12, padding: 24, borderLeft: '4px solid #F5E642′ }}>
+            <div style={{ backgroundColor: '#0A1628', borderRadius: 12, padding: 24, borderLeft: '4px solid #F5E642' }}>
               <div style={{ fontSize: 16, fontWeight: 700, marginBottom: 4 }}>{result.permit}</div>
               <div style={{ color: '#cbd5e1', marginBottom: 8, fontSize: 14 }}>{result.details}</div>
               <div style={{ color: '#fbbf24', marginBottom: 16, fontSize: 13 }}>💡 {result.note}</div>

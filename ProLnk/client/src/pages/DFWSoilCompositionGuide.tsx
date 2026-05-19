@@ -117,7 +117,7 @@ export default function DFWSoilCompositionGuide() {
           <div style={{ display: 'flex', gap: '0.5rem', flexWrap: 'wrap', marginBottom: '1.25rem' }}>
             {locations.map((l, i) => (
               <button key={l.name} onClick={() => setLocIdx(i)}
-                style={{ padding: '0.4rem 0.9rem', borderRadius: 20, border: i === locIdx ? '2px solid #F5E642′ : '2px solid #2d4a7a', background: i === locIdx ? '#F5E642' : ’transparent', color: i === locIdx ? '#0A1628′ : '#fff', fontWeight: 700, cursor: ’pointer', fontSize: '0.8rem' }}>
+                style={{ padding: '0.4rem 0.9rem', borderRadius: 20, border: i === locIdx ? '2px solid #F5E642' : '2px solid #2d4a7a', background: i === locIdx ? '#F5E642' : 'transparent', color: i === locIdx ? '#0A1628' : '#fff', fontWeight: 700, cursor: 'pointer', fontSize: '0.8rem' }}>
                 {l.name}
               </button>
             ))}

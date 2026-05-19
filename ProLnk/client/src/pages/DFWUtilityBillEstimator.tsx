@@ -68,7 +68,7 @@ export default function DFWUtilityBillEstimator() {
         </div>
 
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(5, 1fr)', gap: '0.6rem', marginBottom: '1.5rem' }}>
-          {[{ e: '⚡', label: 'Electric', val: electric, color: '#F5E642′ }, { e: '🔥', label: ’Gas', val: gas, color: '#fb923c' }, { e: '💧', label: 'Water', val: water, color: '#60a5fa' }, { e: '🗑️', label: 'Trash', val: trash, color: '#a3e635′ }, { e: '📡', label: ’Internet', val: internet, color: '#c084fc' }].map(item => (
+          {[{ e: '⚡', label: 'Electric', val: electric, color: '#F5E642' }, { e: '🔥', label: 'Gas', val: gas, color: '#fb923c' }, { e: '💧', label: 'Water', val: water, color: '#60a5fa' }, { e: '🗑️', label: 'Trash', val: trash, color: '#a3e635' }, { e: '📡', label: 'Internet', val: internet, color: '#c084fc' }].map(item => (
             <div key={item.label} style={{ background: '#1a2a44', borderRadius: 8, padding: '0.8rem', textAlign: 'center' }}>
               <div>{item.e}</div>
               <div style={{ color: item.color, fontWeight: 700, fontSize: '1.1rem' }}>${item.val}</div>
@@ -83,8 +83,8 @@ export default function DFWUtilityBillEstimator() {
             {SEASONAL.map((m, i) => {
               const h = Math.round(((Math.round(d.electricBase * em * sm * ELECTRIC_SEASON[i]) + Math.round(d.gasBase * em * sm * GAS_SEASON[i])) / barMax) * 56);
               return <div key={m} style={{ flex: 1, display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 2 }}>
-                <div style={{ width: '100%', height: h, background: i >= 5 && i <= 8 ? '#F5E642′ : '#3a5a84', borderRadius: 2 }} />
-                <div style={{ fontSize: '0.6rem', color: '#666′ }}>{m.slice(0,1)}</div>
+                <div style={{ width: '100%', height: h, background: i >= 5 && i <= 8 ? '#F5E642' : '#3a5a84', borderRadius: 2 }} />
+                <div style={{ fontSize: '0.6rem', color: '#666' }}>{m.slice(0,1)}</div>
               </div>;
             })}
           </div>

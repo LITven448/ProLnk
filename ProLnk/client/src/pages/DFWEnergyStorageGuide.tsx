@@ -15,21 +15,21 @@ const outageGoals = ['24-hour essentials only', '48-hour full home', 'ERCOT wint
 
 const sizingMap: Record<string, { kWh: string; units: string; cost: string; topPick: string }> = {
   'Under 1,500 sqft|24-hour essentials only':      { kWh: '10 kWh',    units: '2× Enphase IQ 5P',   cost: '$10,000',   topPick: 'Enphase IQ Battery 5P' },
-  'Under 1,500 sqft|48-hour full home':            { kWh: '15 kWh',    units: '1× Powerwall 3 + buffer', cost: '$13,000', topPick: 'Tesla Powerwall 3′ },
+  'Under 1,500 sqft|48-hour full home':            { kWh: '15 kWh',    units: '1× Powerwall 3 + buffer', cost: '$13,000', topPick: 'Tesla Powerwall 3' },
   'Under 1,500 sqft|ERCOT winter storm (5–7 days)': { kWh: '30 kWh',  units: '3× Enphase IQ 5P',   cost: '$25,000',   topPick: 'Enphase IQ Battery 5P' },
-  'Under 1,500 sqft|True grid independence':       { kWh: '40+ kWh',   units: '3× Powerwall 3',      cost: '$35,000+',  topPick: 'Tesla Powerwall 3′ },
-  '1,500–2,500 sqft|24-hour essentials only':      { kWh: '13.5 kWh',  units: '1× Powerwall 3',      cost: '$11,500',   topPick: 'Tesla Powerwall 3′ },
-  '1,500–2,500 sqft|48-hour full home':            { kWh: '20 kWh',    units: '2× Powerwall 3',      cost: '$23,000',   topPick: 'Tesla Powerwall 3′ },
+  'Under 1,500 sqft|True grid independence':       { kWh: '40+ kWh',   units: '3× Powerwall 3',      cost: '$35,000+',  topPick: 'Tesla Powerwall 3' },
+  '1,500–2,500 sqft|24-hour essentials only':      { kWh: '13.5 kWh',  units: '1× Powerwall 3',      cost: '$11,500',   topPick: 'Tesla Powerwall 3' },
+  '1,500–2,500 sqft|48-hour full home':            { kWh: '20 kWh',    units: '2× Powerwall 3',      cost: '$23,000',   topPick: 'Tesla Powerwall 3' },
   '1,500–2,500 sqft|ERCOT winter storm (5–7 days)': { kWh: '40 kWh',  units: '4× Enphase IQ 5P',   cost: '$35,000',   topPick: 'Enphase IQ Battery 5P' },
-  '1,500–2,500 sqft|True grid independence':       { kWh: '54+ kWh',   units: '4× Powerwall 3',      cost: '$46,000+',  topPick: 'Tesla Powerwall 3′ },
-  '2,500–3,500 sqft|24-hour essentials only':      { kWh: '20 kWh',    units: '2× LG ESS Home 8',    cost: '$17,000',   topPick: 'LG ESS Home 8′ },
-  '2,500–3,500 sqft|48-hour full home':            { kWh: '30 kWh',    units: '3× LG ESS Home 8',    cost: '$25,500',   topPick: 'LG ESS Home 8′ },
-  '2,500–3,500 sqft|ERCOT winter storm (5–7 days)': { kWh: '60 kWh',  units: '3× Powerwall 3 + LG', cost: '$50,000',   topPick: 'Franklin WH 10′ },
-  '2,500–3,500 sqft|True grid independence':       { kWh: '80+ kWh',   units: '6× Powerwall 3',      cost: '$70,000+',  topPick: 'Tesla Powerwall 3′ },
-  '3,500+ sqft|24-hour essentials only':           { kWh: '27 kWh',    units: '2× Franklin WH 10',   cost: '$19,000',   topPick: 'Franklin WH 10′ },
-  '3,500+ sqft|48-hour full home':                 { kWh: '40 kWh',    units: '4× Franklin WH 10',   cost: '$38,000',   topPick: 'Franklin WH 10′ },
-  '3,500+ sqft|ERCOT winter storm (5–7 days)':     { kWh: '80 kWh',    units: '8× Franklin WH 10',   cost: '$76,000',   topPick: 'Franklin WH 10′ },
-  '3,500+ sqft|True grid independence':            { kWh: '100+ kWh',  units: 'Custom microgrid',     cost: '$90,000+',  topPick: 'sonnen eco 10′ },
+  '1,500–2,500 sqft|True grid independence':       { kWh: '54+ kWh',   units: '4× Powerwall 3',      cost: '$46,000+',  topPick: 'Tesla Powerwall 3' },
+  '2,500–3,500 sqft|24-hour essentials only':      { kWh: '20 kWh',    units: '2× LG ESS Home 8',    cost: '$17,000',   topPick: 'LG ESS Home 8' },
+  '2,500–3,500 sqft|48-hour full home':            { kWh: '30 kWh',    units: '3× LG ESS Home 8',    cost: '$25,500',   topPick: 'LG ESS Home 8' },
+  '2,500–3,500 sqft|ERCOT winter storm (5–7 days)': { kWh: '60 kWh',  units: '3× Powerwall 3 + LG', cost: '$50,000',   topPick: 'Franklin WH 10' },
+  '2,500–3,500 sqft|True grid independence':       { kWh: '80+ kWh',   units: '6× Powerwall 3',      cost: '$70,000+',  topPick: 'Tesla Powerwall 3' },
+  '3,500+ sqft|24-hour essentials only':           { kWh: '27 kWh',    units: '2× Franklin WH 10',   cost: '$19,000',   topPick: 'Franklin WH 10' },
+  '3,500+ sqft|48-hour full home':                 { kWh: '40 kWh',    units: '4× Franklin WH 10',   cost: '$38,000',   topPick: 'Franklin WH 10' },
+  '3,500+ sqft|ERCOT winter storm (5–7 days)':     { kWh: '80 kWh',    units: '8× Franklin WH 10',   cost: '$76,000',   topPick: 'Franklin WH 10' },
+  '3,500+ sqft|True grid independence':            { kWh: '100+ kWh',  units: 'Custom microgrid',     cost: '$90,000+',  topPick: 'sonnen eco 10' },
 };
 
 export default function DFWEnergyStorageGuide() {
@@ -53,10 +53,10 @@ export default function DFWEnergyStorageGuide() {
 
         <div style={{ background: '#111D35', borderRadius: 12, padding: 24, marginBottom: 24, border: '1px solid #1E3A5F' }}>
           <h2 style={{ color: '#F5E642', fontSize: 18, marginBottom: 16 }}>🌨️ The DFW ERCOT Case for Storage</h2>
-          <p style={{ color: '#94A3B8', lineHeight: 1.7, marginBottom: 12 }}>February 2021: 4.5 million Texas homes lost power for up to 10 days. A typical DFW home uses 3–6 kWh/hour in winter, meaning a <strong style={{ color: '#F5E642′ }}>5-day outage requires 360–720 kWh</strong> — far beyond a single Powerwall.</p>
-          <div style={{ background: '#0A1628', borderRadius: 8, padding: 16, borderLeft: '3px solid #F5E642′ }}>
+          <p style={{ color: '#94A3B8', lineHeight: 1.7, marginBottom: 12 }}>February 2021: 4.5 million Texas homes lost power for up to 10 days. A typical DFW home uses 3–6 kWh/hour in winter, meaning a <strong style={{ color: '#F5E642' }}>5-day outage requires 360–720 kWh</strong> — far beyond a single Powerwall.</p>
+          <div style={{ background: '#0A1628', borderRadius: 8, padding: 16, borderLeft: '3px solid #F5E642' }}>
             <div style={{ color: '#F5E642', fontWeight: 700, marginBottom: 4 }}>ERCOT Winter Event Sizing Rule</div>
-            <div style={{ color: '#94A3B8', fontSize: 14 }}>Essentials only (heat, fridge, lights): 20–30 kWh minimum. Full home comfort for 5 days: 80–120 kWh. Most homeowners need <strong style={{ color: '#E8EDF5′ }}>2–4 battery units</strong> for real ERCOT resilience.</div>
+            <div style={{ color: '#94A3B8', fontSize: 14 }}>Essentials only (heat, fridge, lights): 20–30 kWh minimum. Full home comfort for 5 days: 80–120 kWh. Most homeowners need <strong style={{ color: '#E8EDF5' }}>2–4 battery units</strong> for real ERCOT resilience.</div>
           </div>
         </div>
 
@@ -90,13 +90,13 @@ export default function DFWEnergyStorageGuide() {
             </div>
           ))}
           <button onClick={() => setShowResult(true)} disabled={!homeSize || !outageGoal}
-            style={{ width: '100%', background: homeSize && outageGoal ? '#F5E642′ : '#1E3A5F', color: homeSize && outageGoal ? '#0A1628' : '#4A6FA5', border: ’none', borderRadius: 8, padding: '12px 0', fontSize: 16, fontWeight: 700, cursor: homeSize && outageGoal ? 'pointer' : 'default' }}>
+            style={{ width: '100%', background: homeSize && outageGoal ? '#F5E642' : '#1E3A5F', color: homeSize && outageGoal ? '#0A1628' : '#4A6FA5', border: 'none', borderRadius: 8, padding: '12px 0', fontSize: 16, fontWeight: 700, cursor: homeSize && outageGoal ? 'pointer' : 'default' }}>
             Size My DFW Battery System →
           </button>
         </div>
 
         {showResult && rec && topBattery && (
-          <div style={{ background: '#111D35', borderRadius: 12, padding: 24, border: '2px solid #F5E642′ }}>
+          <div style={{ background: '#111D35', borderRadius: 12, padding: 24, border: '2px solid #F5E642' }}>
             <h3 style={{ color: '#F5E642', fontSize: 20, marginBottom: 20 }}>🎯 Your DFW Battery Recommendation</h3>
             {[
               ['🔋', 'Recommended System', rec.units],

@@ -39,7 +39,7 @@ const locationTypes = [
     assessment: 'DFW suburban streets flood from overwhelmed storm drains. Sheet flooding across roads is common. Streets flood, not necessarily homes — but access matters.',
     resources: [
       'Research city drainage improvement bond programs — many DFW cities publish 5-year drainage plans.',
-      'Search "[city name] flooding 2022″ or 2023 on YouTube — residents post videos. Real footage, real data.',
+      'Search "[city name] flooding 2022" or 2023 on YouTube — residents post videos. Real footage, real data.',
       'Check NextDoor for the neighborhood — search "flood" in the local feed.',
       'Look at satellite imagery after recent rain events via Google Earth historical imagery.',
     ],
@@ -87,8 +87,8 @@ export default function DFWFloodRiskResearchGuide() {
             {locationTypes.map(l => (
               <button key={l.key} onClick={() => setSelected(l.key)}
                 style={{ textAlign: 'left', padding: '14px 20px', borderRadius: 10, border: '2px solid', cursor: 'pointer',
-                  borderColor: selected === l.key ? '#F5E642′ : '#E2E8F0',
-                  backgroundColor: selected === l.key ? '#FEFCE8′ : '#F9FAFB',
+                  borderColor: selected === l.key ? '#F5E642' : '#E2E8F0',
+                  backgroundColor: selected === l.key ? '#FEFCE8' : '#F9FAFB',
                   color: '#0A1628', fontWeight: 600, fontSize: 15 }}>
                 {l.label}
               </button>

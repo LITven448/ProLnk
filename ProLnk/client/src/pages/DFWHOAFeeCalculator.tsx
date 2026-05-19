@@ -49,17 +49,17 @@ export default function DFWHOAFeeCalculator() {
 
         <div style={{ background: '#fff', borderRadius: 12, padding: 24, boxShadow: '0 2px 12px rgba(0,0,0,0.08)', marginBottom: 20 }}>
           <label style={{ display: 'block', marginBottom: 16 }}>
-            <span style={{ fontWeight: 600, color: '#333′ }}>Monthly HOA Fee: {fmt(monthlyHOA)}</span>
+            <span style={{ fontWeight: 600, color: '#333' }}>Monthly HOA Fee: {fmt(monthlyHOA)}</span>
             <input type="range" min={50} max={1200} step={25} value={monthlyHOA}
               onChange={e => setMonthlyHOA(Number(e.target.value))}
               style={{ width: '100%', marginTop: 8, accentColor: '#2563eb' }} />
-            <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: 12, color: '#888′ }}>
+            <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: 12, color: '#888' }}>
               <span>$50</span><span>$1,200</span>
             </div>
           </label>
 
           <label style={{ display: 'block', marginBottom: 16 }}>
-            <span style={{ fontWeight: 600, color: '#333′ }}>Amenities Level</span>
+            <span style={{ fontWeight: 600, color: '#333' }}>Amenities Level</span>
             <select value={amenityLevel} onChange={e => { setAmenityLevel(Number(e.target.value)); setMonthlyHOA(AMENITY_LEVELS[Number(e.target.value)].typical); }}
               style={{ display: 'block', width: '100%', marginTop: 8, padding: '10px 12px', borderRadius: 8, border: '1px solid #ddd', fontSize: 16 }}>
               {AMENITY_LEVELS.map((a, i) => <option key={i} value={i}>{a.label} — ~{fmt(a.typical)}/mo</option>)}
@@ -67,17 +67,17 @@ export default function DFWHOAFeeCalculator() {
           </label>
 
           <label style={{ display: 'block', marginBottom: 16 }}>
-            <span style={{ fontWeight: 600, color: '#333′ }}>Home Price: {fmt(homePrice)}</span>
+            <span style={{ fontWeight: 600, color: '#333' }}>Home Price: {fmt(homePrice)}</span>
             <input type="range" min={200000} max={1500000} step={10000} value={homePrice}
               onChange={e => setHomePrice(Number(e.target.value))}
               style={{ width: '100%', marginTop: 8, accentColor: '#7c3aed' }} />
           </label>
 
           <label style={{ display: 'block' }}>
-            <span style={{ fontWeight: 600, color: '#333′ }}>Annual Income: {fmt(income)}</span>
+            <span style={{ fontWeight: 600, color: '#333' }}>Annual Income: {fmt(income)}</span>
             <input type="range" min={50000} max={500000} step={5000} value={income}
               onChange={e => setIncome(Number(e.target.value))}
-              style={{ width: '100%', marginTop: 8, accentColor: '#059669′ }} />
+              style={{ width: '100%', marginTop: 8, accentColor: '#059669' }} />
           </label>
         </div>
 
@@ -95,7 +95,7 @@ export default function DFWHOAFeeCalculator() {
 
         <div style={{ background: '#fff', borderRadius: 12, padding: 24, boxShadow: '0 2px 12px rgba(0,0,0,0.08)', marginBottom: 20 }}>
           <h2 style={{ fontSize: 16, fontWeight: 700, color: '#333', marginTop: 0 }}>💰 Buying Power Impact</h2>
-          <p style={{ color: '#555', fontSize: 14 }}>At {fmt(monthlyHOA)}/mo HOA, your effective purchasing power drops by <strong style={{ color: '#dc2626′ }}>{fmt(hoaReducesBuyingPower)}</strong></p>
+          <p style={{ color: '#555', fontSize: 14 }}>At {fmt(monthlyHOA)}/mo HOA, your effective purchasing power drops by <strong style={{ color: '#dc2626' }}>{fmt(hoaReducesBuyingPower)}</strong></p>
           <p style={{ color: '#555', fontSize: 14 }}>A {fmt(homePrice)} home with this HOA is equivalent in cost to a <strong style={{ color: '#7c3aed' }}>{fmt(effectivePurchasingPower)}</strong> home without one.</p>
         </div>
 

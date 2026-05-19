@@ -62,7 +62,7 @@ export default function DFWRoofingHailMap2026() {
           ].map(([n, step]) => (
             <div key={n} style={{ display: 'flex', gap: '0.75rem', marginBottom: '0.75rem', alignItems: 'flex-start' }}>
               <span style={{ background: '#F5E642', color: '#0A1628', borderRadius: '50%', width: 24, height: 24, display: 'flex', alignItems: 'center', justifyContent: 'center', fontWeight: 700, fontSize: '0.8rem', flexShrink: 0 }}>{n}</span>
-              <span style={{ color: '#cbd5e1′ }}>{step}</span>
+              <span style={{ color: '#cbd5e1' }}>{step}</span>
             </div>
           ))}
         </div>

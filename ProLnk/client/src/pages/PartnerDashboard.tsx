@@ -37,23 +37,23 @@ function AccountStandingBadge({ partner }: { partner: any }) {
   let desc: string;
 
   if (suspended) {
-    label = "Suspended"; color = "#EF4444″; bg = "#FEF2F2"; dot = "bg-red-500";
+    label = "Suspended"; color = "#EF4444"; bg = "#FEF2F2"; dot = "bg-red-500";
     desc = partner.suspensionReason || "Account suspended — contact support";
   } else if (strikes >= 2 || coiExpired) {
-    label = "Probation"; color = "#F59E0B"; bg = "#FFFBEB"; dot = "bg-amber-400″;
+    label = "Probation"; color = "#F59E0B"; bg = "#FFFBEB"; dot = "bg-amber-400";
     desc = coiExpired ? "COI expired — upload updated certificate" : `${strikes} strike${strikes > 1 ? "s" : ""} — one more triggers suspension`;
   } else if (strikes === 1) {
-    label = "1 Strike"; color = "#F97316″; bg = "#FFF7ED"; dot = "bg-orange-400";
+    label = "1 Strike"; color = "#F97316"; bg = "#FFF7ED"; dot = "bg-orange-400";
     desc = partner.lastStrikeReason || "Review your account for details";
   } else {
-    label = "Good Standing"; color = "#059669″; bg = "#ECFDF5"; dot = "bg-emerald-500";
+    label = "Good Standing"; color = "#059669"; bg = "#ECFDF5"; dot = "bg-emerald-500";
     desc = "All compliance checks passed";
   }
 
   return (
-    <div className="rounded-2xl border p-4″ style={{ backgroundColor: bg, borderColor: `${color}30` }}>
-      <div className="flex items-center justify-between mb-2″>
-        <div className="flex items-center gap-2″>
+    <div className="rounded-2xl border p-4" style={{ backgroundColor: bg, borderColor: `${color}30` }}>
+      <div className="flex items-center justify-between mb-2">
+        <div className="flex items-center gap-2">
           <div className={`w-2 h-2 rounded-full ${dot} ${label !== "Good Standing" ? "animate-pulse" : ""}`} />
           <span className="text-xs font-bold" style={{ color }}>Account Standing</span>
         </div>
@@ -61,7 +61,7 @@ function AccountStandingBadge({ partner }: { partner: any }) {
           {label}
         </span>
       </div>
-      <p className="text-xs text-gray-500″>{desc}</p>
+      <p className="text-xs text-gray-500">{desc}</p>
       {label !== "Good Standing" && (
         <a href="/dashboard/profile" className="mt-2 block text-xs font-semibold" style={{ color }}>
           Resolve now →
@@ -107,12 +107,12 @@ function OnboardingChecklist({ partner, hasJobs, hasReferrals }: {
 
   if (pct === 100) {
     return (
-      <div className="rounded-2xl border border-emerald-200 p-5 bg-gradient-to-br from-emerald-50 to-teal-50″>
+      <div className="rounded-2xl border border-emerald-200 p-5 bg-gradient-to-br from-emerald-50 to-teal-50">
         <div className="text-center">
-          <div className="text-3xl mb-2″>🎊</div>
-          <h3 className="font-bold text-emerald-800 text-sm mb-1″>Onboarding Complete!</h3>
-          <p className="text-xs text-emerald-600″>All partner features unlocked. Your profile is fully optimized.</p>
-          <p className="text-xs text-emerald-700 font-semibold mt-2″>PPS Bonus: +5 pts applied</p>
+          <div className="text-3xl mb-2">🎊</div>
+          <h3 className="font-bold text-emerald-800 text-sm mb-1">Onboarding Complete!</h3>
+          <p className="text-xs text-emerald-600">All partner features unlocked. Your profile is fully optimized.</p>
+          <p className="text-xs text-emerald-700 font-semibold mt-2">PPS Bonus: +5 pts applied</p>
         </div>
       </div>
     );
@@ -124,41 +124,41 @@ function OnboardingChecklist({ partner, hasJobs, hasReferrals }: {
   return (
     <div className="rounded-2xl border border-teal-100 p-5 overflow-hidden relative"
       style={{ background: "linear-gradient(135deg, #F0FDFD 0%, #E6F9F9 100%)" }}>
-      <div className="absolute top-0 right-0 w-24 h-24 rounded-full opacity-10″
+      <div className="absolute top-0 right-0 w-24 h-24 rounded-full opacity-10"
         style={{ background: "radial-gradient(circle, #0A1628, transparent)", transform: "translate(30%, -30%)" }} />
-      <div className="flex items-center gap-2 mb-3″>
+      <div className="flex items-center gap-2 mb-3">
         <Sparkles className="w-4 h-4 text-[#0A1628]" />
         <h3 className="font-semibold text-gray-800 text-sm">Getting Started</h3>
         <span className="ml-auto text-xs font-bold text-[#0A1628]">{completed}/{steps.length}</span>
       </div>
       <div className="h-2 bg-[#0A1628]/10 rounded-full mb-1 overflow-hidden">
-        <div className="h-full rounded-full transition-all duration-700″
+        <div className="h-full rounded-full transition-all duration-700"
           style={{ width: `${pct}%`, background: "linear-gradient(90deg, #00B5B8, #0A1628)" }} />
       </div>
-      <p className="text-xs text-gray-400 mb-4″>{pct}% complete · {steps.length - completed} step{steps.length - completed !== 1 ? "s" : ""} remaining</p>
-      <div className="space-y-1.5″>
+      <p className="text-xs text-gray-400 mb-4">{pct}% complete · {steps.length - completed} step{steps.length - completed !== 1 ? "s" : ""} remaining</p>
+      <div className="space-y-1.5">
         {doneSteps.slice(0, 2).map((step, i) => (
-          <div key={`done-${i}`} className="flex items-center gap-2.5 py-0.5″>
+          <div key={`done-${i}`} className="flex items-center gap-2.5 py-0.5">
             <CheckCircle className="w-4 h-4 flex-shrink-0 text-[#00B5B8]" />
             <span className="text-xs text-gray-400 line-through">{step.label}</span>
           </div>
         ))}
         {doneSteps.length > 2 && (
-          <p className="text-xs text-gray-400 pl-6″>+{doneSteps.length - 2} more completed</p>
+          <p className="text-xs text-gray-400 pl-6">+{doneSteps.length - 2} more completed</p>
         )}
         {incompleteSteps.map((step, i) => (
           step.href ? (
             <Link key={`todo-${i}`} href={step.href}>
               <div className="flex items-center gap-2.5 py-1.5 px-2 rounded-lg bg-white/60 hover:bg-white group cursor-pointer transition-colors">
-                <div className="w-4 h-4 rounded-full border-2 border-[#00B5B8]/40 flex-shrink-0″ />
+                <div className="w-4 h-4 rounded-full border-2 border-[#00B5B8]/40 flex-shrink-0" />
                 <span className="text-xs text-gray-700 group-hover:text-[#0A1628] font-medium">{step.label}</span>
                 <ArrowRight className="w-3 h-3 ml-auto text-[#00B5B8]/60 group-hover:text-[#00B5B8]" />
               </div>
             </Link>
           ) : (
-            <div key={`todo-${i}`} className="flex items-center gap-2.5 py-1.5 px-2 rounded-lg bg-white/60″>
-              <div className="w-4 h-4 rounded-full border-2 border-gray-200 flex-shrink-0″ />
-              <span className="text-xs text-gray-500″>{step.label}</span>
+            <div key={`todo-${i}`} className="flex items-center gap-2.5 py-1.5 px-2 rounded-lg bg-white/60">
+              <div className="w-4 h-4 rounded-full border-2 border-gray-200 flex-shrink-0" />
+              <span className="text-xs text-gray-500">{step.label}</span>
             </div>
           )
         ))}
@@ -168,20 +168,20 @@ function OnboardingChecklist({ partner, hasJobs, hasReferrals }: {
 }
 
 const TIER_CONFIG = {
-  scout:      { label: "Scout",      color: "text-slate-600″,  bg: "bg-slate-50 border-slate-200",   bar: "#94A3B8", icon: "[SEARCH]", keepRate: 0.40, next: "Pro",     monthlyFee: 0 },
-  pro:        { label: "Pro",        color: "text-[#0A1628]",   bg: "bg-[#F5E642]/10 border-[#0A1628]/20″,     bar: "#0A1628", icon: "",   keepRate: 0.55, next: "Crew",    monthlyFee: 29 },
-  crew:       { label: "Crew",       color: "text-indigo-600″, bg: "bg-indigo-50 border-indigo-200", bar: "#6366F1", icon: "",   keepRate: 0.65, next: "Company", monthlyFee: 79 },
-  company:    { label: "Company",    color: "text-amber-600″,  bg: "bg-amber-50 border-amber-200",   bar: "#F59E0B", icon: "",   keepRate: 0.72, next: "Enterprise", monthlyFee: 149 },
-  enterprise: { label: "Enterprise", color: "text-slate-100″,  bg: "bg-slate-900 border-slate-700",  bar: "#64748B", icon: "[AWARD]",   keepRate: 0.78, next: null,      monthlyFee: 299 },
+  scout:      { label: "Scout",      color: "text-slate-600",  bg: "bg-slate-50 border-slate-200",   bar: "#94A3B8", icon: "[SEARCH]", keepRate: 0.40, next: "Pro",     monthlyFee: 0 },
+  pro:        { label: "Pro",        color: "text-[#0A1628]",   bg: "bg-[#F5E642]/10 border-[#0A1628]/20",     bar: "#0A1628", icon: "",   keepRate: 0.55, next: "Crew",    monthlyFee: 29 },
+  crew:       { label: "Crew",       color: "text-indigo-600", bg: "bg-indigo-50 border-indigo-200", bar: "#6366F1", icon: "",   keepRate: 0.65, next: "Company", monthlyFee: 79 },
+  company:    { label: "Company",    color: "text-amber-600",  bg: "bg-amber-50 border-amber-200",   bar: "#F59E0B", icon: "",   keepRate: 0.72, next: "Enterprise", monthlyFee: 149 },
+  enterprise: { label: "Enterprise", color: "text-slate-100",  bg: "bg-slate-900 border-slate-700",  bar: "#64748B", icon: "[AWARD]",   keepRate: 0.78, next: null,      monthlyFee: 299 },
 };
 
 const STATUS_CONFIG: Record<string, { label: string; color: string; dot: string }> = {
-  pending:   { label: "Pending",   color: "bg-yellow-100 text-yellow-800″, dot: "bg-yellow-400" },
-  sent:      { label: "New Lead",  color: "bg-blue-100 text-blue-800″,     dot: "bg-blue-400" },
-  accepted:  { label: "Accepted",  color: "bg-green-100 text-green-800″,   dot: "bg-green-400" },
-  declined:  { label: "Declined",  color: "bg-red-100 text-red-800″,       dot: "bg-red-400" },
-  converted: { label: "Closed",    color: "bg-purple-100 text-purple-800″, dot: "bg-purple-400" },
-  expired:   { label: "Expired",   color: "bg-gray-100 text-gray-500″,     dot: "bg-gray-300" },
+  pending:   { label: "Pending",   color: "bg-yellow-100 text-yellow-800", dot: "bg-yellow-400" },
+  sent:      { label: "New Lead",  color: "bg-blue-100 text-blue-800",     dot: "bg-blue-400" },
+  accepted:  { label: "Accepted",  color: "bg-green-100 text-green-800",   dot: "bg-green-400" },
+  declined:  { label: "Declined",  color: "bg-red-100 text-red-800",       dot: "bg-red-400" },
+  converted: { label: "Closed",    color: "bg-purple-100 text-purple-800", dot: "bg-purple-400" },
+  expired:   { label: "Expired",   color: "bg-gray-100 text-gray-500",     dot: "bg-gray-300" },
 };
 
 // -- Stat Card -----------------------------------------------------------------
@@ -192,20 +192,20 @@ function StatCard({ label, value, sub, icon: Icon, color, trend, sparkline }: {
 }) {
   return (
     <div className="bg-white rounded-2xl border border-gray-100 p-5 hover:shadow-md transition-all duration-200 overflow-hidden relative group">
-      <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300″
+      <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
         style={{ background: `radial-gradient(circle at top right, ${color}08, transparent 60%)` }} />
       <div className="flex items-start justify-between mb-3 relative">
         <div>
           <p className="text-xs font-semibold text-gray-400 uppercase tracking-wider">{label}</p>
           {trend && (
-            <span className="inline-flex items-center gap-0.5 text-xs font-medium text-green-600 mt-0.5″>
-              <ArrowUpRight className="w-3 h-3″ />{trend}
+            <span className="inline-flex items-center gap-0.5 text-xs font-medium text-green-600 mt-0.5">
+              <ArrowUpRight className="w-3 h-3" />{trend}
             </span>
           )}
         </div>
-        <div className="w-9 h-9 rounded-xl flex items-center justify-center flex-shrink-0″
+        <div className="w-9 h-9 rounded-xl flex items-center justify-center flex-shrink-0"
           style={{ backgroundColor: `${color}15` }}>
-          <Icon className="w-4.5 h-4.5″ style={{ color, width: "1.125rem", height: "1.125rem" }} />
+          <Icon className="w-4.5 h-4.5" style={{ color, width: "1.125rem", height: "1.125rem" }} />
         </div>
       </div>
       <p className="text-3xl font-bold text-gray-900 mb-1 relative font-heading">{value}</p>
@@ -215,7 +215,7 @@ function StatCard({ label, value, sub, icon: Icon, color, trend, sparkline }: {
           <ResponsiveContainer width="100%" height="100%">
             <AreaChart data={sparkline} margin={{ top: 0, right: 0, bottom: 0, left: 0 }}>
               <defs>
-                <linearGradient id={`grad-${label}`} x1="0″ y1="0" x2="0" y2="1">
+                <linearGradient id={`grad-${label}`} x1="0" y1="0" x2="0" y2="1">
                   <stop offset="5%" stopColor={color} stopOpacity={0.25} />
                   <stop offset="95%" stopColor={color} stopOpacity={0} />
                 </linearGradient>
@@ -265,9 +265,9 @@ function HealthScoreCard({
   const trending = lastMonthDelta >= 0;
 
   const scoreColor =
-    currentScore >= 80 ? "#10B981″ :
+    currentScore >= 80 ? "#10B981" :
     currentScore >= 55 ? "#F59E0B" :
-    currentScore >= 30 ? "#3B82F6″ : "#EF4444";
+    currentScore >= 30 ? "#3B82F6" : "#EF4444";
 
   const scoreLabel =
     currentScore >= 80 ? "Excellent" :
@@ -275,9 +275,9 @@ function HealthScoreCard({
     currentScore >= 30 ? "Building" : "Getting Started";
 
   const segments = [
-    { label: "Profile", earned: profileScore, max: 25, color: "#8B5CF6″ },
-    { label: "Jobs",    earned: jobScore,     max: 30, color: "#10B981″ },
-    { label: "Network", earned: networkScore, max: 25, color: "#3B82F6″ },
+    { label: "Profile", earned: profileScore, max: 25, color: "#8B5CF6" },
+    { label: "Jobs",    earned: jobScore,     max: 30, color: "#10B981" },
+    { label: "Network", earned: networkScore, max: 25, color: "#3B82F6" },
     { label: "Payouts", earned: payoutScore,  max: 20, color: "#F59E0B" },
   ];
 
@@ -287,53 +287,53 @@ function HealthScoreCard({
   };
 
   return (
-    <div className="rounded-2xl border border-gray-100 bg-white shadow-sm overflow-hidden mb-8″>
+    <div className="rounded-2xl border border-gray-100 bg-white shadow-sm overflow-hidden mb-8">
       <div className="px-5 py-4 border-b border-gray-50 flex items-center justify-between">
-        <div className="flex items-center gap-3″>
+        <div className="flex items-center gap-3">
           <div className="w-9 h-9 rounded-xl flex items-center justify-center"
             style={{ background: `linear-gradient(135deg, ${scoreColor}22, ${scoreColor}44)` }}>
-            <Heart className="w-4.5 h-4.5″ style={{ color: scoreColor, width: "1.125rem", height: "1.125rem" }} />
+            <Heart className="w-4.5 h-4.5" style={{ color: scoreColor, width: "1.125rem", height: "1.125rem" }} />
           </div>
           <div>
             <h2 className="font-bold text-gray-900 text-sm">ProLnk Health Score</h2>
-            <p className="text-xs text-gray-400″>Composite score across 4 performance pillars</p>
+            <p className="text-xs text-gray-400">Composite score across 4 performance pillars</p>
           </div>
         </div>
-        <div className="flex flex-col items-end gap-0.5″>
-          <div className="flex items-center gap-1.5″>
+        <div className="flex flex-col items-end gap-0.5">
+          <div className="flex items-center gap-1.5">
             <span className="text-2xl font-black" style={{ color: scoreColor }}>{currentScore}</span>
-            <span className="text-sm font-semibold text-gray-300″>/100</span>
+            <span className="text-sm font-semibold text-gray-300">/100</span>
           </div>
           <div className="flex items-center gap-1 text-xs font-semibold"
-            style={{ color: trending ? "#10B981″ : "#EF4444" }}>
+            style={{ color: trending ? "#10B981" : "#EF4444" }}>
             {trending
-              ? <ArrowUpRight className="w-3 h-3″ />
-              : <ArrowDownRight className="w-3 h-3″ />}
+              ? <ArrowUpRight className="w-3 h-3" />
+              : <ArrowDownRight className="w-3 h-3" />}
             {Math.abs(lastMonthDelta)} pts vs last month
           </div>
         </div>
       </div>
-      <div className="p-5 space-y-4″>
+      <div className="p-5 space-y-4">
         {/* Score bar */}
         <div>
-          <div className="flex items-center justify-between text-xs mb-1.5″>
-            <span className="font-semibold text-gray-500″>Overall</span>
+          <div className="flex items-center justify-between text-xs mb-1.5">
+            <span className="font-semibold text-gray-500">Overall</span>
             <span className="font-bold px-2 py-0.5 rounded-full text-white text-[10px]"
               style={{ backgroundColor: scoreColor }}>{scoreLabel}</span>
           </div>
           <div className="h-3 rounded-full bg-gray-100 overflow-hidden">
-            <div className="h-full rounded-full transition-all duration-700″
+            <div className="h-full rounded-full transition-all duration-700"
               style={{ width: `${currentScore}%`, backgroundColor: scoreColor }} />
           </div>
         </div>
 
         {/* Pillar breakdown */}
-        <div className="grid grid-cols-2 sm:grid-cols-4 gap-3″>
+        <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
           {segments.map((seg) => {
             const pct = Math.round((seg.earned / seg.max) * 100);
             return (
-              <div key={seg.label} className="rounded-xl p-3 bg-gray-50 border border-gray-100″>
-                <p className="text-[10px] font-bold uppercase tracking-wider text-gray-400 mb-1″>{seg.label}</p>
+              <div key={seg.label} className="rounded-xl p-3 bg-gray-50 border border-gray-100">
+                <p className="text-[10px] font-bold uppercase tracking-wider text-gray-400 mb-1">{seg.label}</p>
                 <p className="text-lg font-black" style={{ color: seg.color }}>
                   {seg.earned}<span className="text-xs text-gray-300 font-normal">/{seg.max}</span>
                 </p>
@@ -347,13 +347,13 @@ function HealthScoreCard({
 
         {/* Best day badge */}
         {bestDay && bestDay.amount > 0 && (
-          <div className="flex items-center gap-3 rounded-xl bg-indigo-50 border border-indigo-100 px-4 py-3″>
-            <CalendarCheck className="w-5 h-5 text-indigo-500 flex-shrink-0″ />
+          <div className="flex items-center gap-3 rounded-xl bg-indigo-50 border border-indigo-100 px-4 py-3">
+            <CalendarCheck className="w-5 h-5 text-indigo-500 flex-shrink-0" />
             <div>
-              <p className="text-xs font-bold text-indigo-700″>
+              <p className="text-xs font-bold text-indigo-700">
                 {fullDayNames[bestDay.day] ?? bestDay.day} is your best day for jobs
               </p>
-              <p className="text-[10px] text-indigo-400 mt-0.5″>
+              <p className="text-[10px] text-indigo-400 mt-0.5">
                 ${bestDay.amount.toFixed(0)} average earned — schedule your biggest jobs then
               </p>
             </div>
@@ -481,10 +481,10 @@ export default function PartnerDashboard() {
   if (profileLoading) {
     return (
       <PartnerLayout>
-        <div className="flex items-center justify-center py-24″>
-          <div className="flex flex-col items-center gap-3″>
+        <div className="flex items-center justify-center py-24">
+          <div className="flex flex-col items-center gap-3">
             <div className="w-10 h-10 rounded-full border-2 border-[#0A1628] border-t-transparent animate-spin" />
-            <p className="text-sm text-gray-400″>Loading your dashboard...</p>
+            <p className="text-sm text-gray-400">Loading your dashboard...</p>
           </div>
         </div>
       </PartnerLayout>
@@ -495,7 +495,7 @@ export default function PartnerDashboard() {
     return (
       <PartnerLayout>
         <div className="max-w-lg mx-auto py-24 px-6 text-center">
-          <div className="w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-5″
+          <div className="w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-5"
             style={{ background: "linear-gradient(135deg, #E6F9F9, #CCF2F2)" }}>
             <Zap className="w-8 h-8 text-[#0A1628]" />
           </div>
@@ -503,7 +503,7 @@ export default function PartnerDashboard() {
           <p className="text-gray-500 mb-6 max-w-sm mx-auto text-sm">
             Apply to join the ProLnk network, or link your existing application to this account.
           </p>
-          <div className="flex flex-col sm:flex-row gap-3 justify-center mb-4″>
+          <div className="flex flex-col sm:flex-row gap-3 justify-center mb-4">
             <Link href="/apply">
               <Button className="text-white" style={{ background: "linear-gradient(135deg, #0A1628, #0A1628)" }}>
                 Apply to Join ProLnk
@@ -515,14 +515,14 @@ export default function PartnerDashboard() {
           </div>
           {showLinkForm && (
             <div className="mt-4 bg-white rounded-2xl border border-gray-200 p-6 w-full max-w-sm mx-auto text-left shadow-sm">
-              <p className="text-sm font-semibold text-gray-900 mb-3″>Enter the email you used to apply</p>
+              <p className="text-sm font-semibold text-gray-900 mb-3">Enter the email you used to apply</p>
               <input
                 ref={linkEmailRef}
                 type="email"
                 placeholder="you@yourbusiness.com"
                 value={linkEmail}
                 onChange={(e) => setLinkEmail(e.target.value)}
-                className="w-full border border-gray-200 rounded-xl px-3 py-2.5 text-sm mb-3 focus:outline-none focus:ring-2 focus:ring-teal-400″
+                className="w-full border border-gray-200 rounded-xl px-3 py-2.5 text-sm mb-3 focus:outline-none focus:ring-2 focus:ring-teal-400"
               />
               <Button
                 className="w-full text-white"
@@ -544,10 +544,10 @@ export default function PartnerDashboard() {
   if (partner.status === "pending") {
     return (
       <PartnerLayout>
-        <div className="flex flex-col items-center justify-center py-24 text-center px-6″>
-          <div className="w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-5″
+        <div className="flex flex-col items-center justify-center py-24 text-center px-6">
+          <div className="w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-5"
             style={{ background: "linear-gradient(135deg, #FFFBEB, #FEF3C7)" }}>
-            <Clock className="w-8 h-8 text-yellow-500″ />
+            <Clock className="w-8 h-8 text-yellow-500" />
           </div>
           <h2 className="text-2xl font-bold text-gray-900 mb-2 font-heading">Application Under Review</h2>
           <p className="text-gray-500 max-w-sm text-sm">
@@ -562,10 +562,10 @@ export default function PartnerDashboard() {
   if (partner.status === "rejected") {
     return (
       <PartnerLayout>
-        <div className="flex flex-col items-center justify-center py-24 text-center px-6″>
-          <div className="w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-5″
+        <div className="flex flex-col items-center justify-center py-24 text-center px-6">
+          <div className="w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-5"
             style={{ background: "linear-gradient(135deg, #FEF2F2, #FEE2E2)" }}>
-            <XCircle className="w-8 h-8 text-red-400″ />
+            <XCircle className="w-8 h-8 text-red-400" />
           </div>
           <h2 className="text-2xl font-bold text-gray-900 mb-2 font-heading">Application Not Approved</h2>
           <p className="text-gray-500 mb-6 max-w-sm text-sm">Contact us for more information about your application.</p>
@@ -611,8 +611,8 @@ export default function PartnerDashboard() {
 
   const isFoundingMember = !!(partner.isFoundingPartner || partner.isExempt);
   const foundingLabel = isFoundingMember ? "Founding Member" : "Partner";
-  const foundingColor = isFoundingMember ? "#10B981″ : "#6B7280";
-  const foundingBg = isFoundingMember ? "bg-emerald-50 border-emerald-200″ : "bg-gray-50 border-gray-200";
+  const foundingColor = isFoundingMember ? "#10B981" : "#6B7280";
+  const foundingBg = isFoundingMember ? "bg-emerald-50 border-emerald-200" : "bg-gray-50 border-gray-200";
 
   return (
     <PartnerLayout>
@@ -621,8 +621,8 @@ export default function PartnerDashboard() {
         {/* -- Trial Countdown Banner -------------------------------------------- */}
         {trialEndsAt && trialDaysLeft !== null && trialDaysLeft >= 0 && (
           <div className={`rounded-2xl border px-5 py-3.5 mb-5 flex items-center gap-3 ${trialDaysLeft > 14 ? "bg-emerald-50 border-emerald-200" : trialDaysLeft > 3 ? "bg-amber-50 border-amber-200" : "bg-red-50 border-red-200"}`}>
-            <span className="text-lg leading-none flex-shrink-0″>🎉</span>
-            <div className="flex-1 min-w-0″>
+            <span className="text-lg leading-none flex-shrink-0">🎉</span>
+            <div className="flex-1 min-w-0">
               <p className={`text-sm font-semibold ${trialDaysLeft > 14 ? "text-emerald-800" : trialDaysLeft > 3 ? "text-amber-800" : "text-red-800"}`}>
                 {trialDaysLeft > 0
                   ? `Your 90-day free trial is active — no credit card needed until ${trialEndsAt.toLocaleDateString("en-US", { month: "long", day: "numeric", year: "numeric" })}`
@@ -647,90 +647,90 @@ export default function PartnerDashboard() {
         {/* -- This Month Earnings Card ------------------------------------------ */}
         <div className="rounded-2xl mb-6 p-6 text-white overflow-hidden relative"
           style={{ background: "linear-gradient(135deg, #0A1628 0%, #0A3D4A 60%, #006E71 100%)" }}>
-          <div className="absolute inset-0 opacity-5″ style={{ backgroundImage: "radial-gradient(circle at 80% 20%, #00B5B8 0%, transparent 50%), radial-gradient(circle at 10% 80%, #1B4FD8 0%, transparent 40%)" }} />
-          <div className="relative flex flex-wrap items-start justify-between gap-4″>
+          <div className="absolute inset-0 opacity-5" style={{ backgroundImage: "radial-gradient(circle at 80% 20%, #00B5B8 0%, transparent 50%), radial-gradient(circle at 10% 80%, #1B4FD8 0%, transparent 40%)" }} />
+          <div className="relative flex flex-wrap items-start justify-between gap-4">
             <div>
-              <p className="text-xs font-semibold uppercase tracking-widest text-white/50 mb-1″>This Month</p>
+              <p className="text-xs font-semibold uppercase tracking-widest text-white/50 mb-1">This Month</p>
               <p className="text-4xl font-black font-heading tracking-tight">
                 ${earningsThisMonth.toFixed(0)}
               </p>
               {earningsThisMonth === 0 && (
-                <p className="text-xs text-white/50 mt-1″>Log your first job to start earning</p>
+                <p className="text-xs text-white/50 mt-1">Log your first job to start earning</p>
               )}
             </div>
             <div className="flex gap-6 flex-wrap">
               <div className="text-right">
-                <p className="text-xs text-white/50 uppercase tracking-wider mb-0.5″>Jobs Completed</p>
+                <p className="text-xs text-white/50 uppercase tracking-wider mb-0.5">Jobs Completed</p>
                 <p className="text-2xl font-bold text-white">{jobsCompletedThisMonth}</p>
               </div>
               <div className="text-right">
-                <p className="text-xs text-white/50 uppercase tracking-wider mb-0.5″>Commission</p>
+                <p className="text-xs text-white/50 uppercase tracking-wider mb-0.5">Commission</p>
                 <p className="text-2xl font-bold text-white">${directEarningsThisMonth.toFixed(0)}</p>
               </div>
               <div className="text-right">
-                <p className="text-xs text-white/50 uppercase tracking-wider mb-0.5″>Network</p>
-                <p className="text-2xl font-bold" style={{ color: "#00E5E8″ }}>${networkEarningsThisMonth.toFixed(0)}</p>
+                <p className="text-xs text-white/50 uppercase tracking-wider mb-0.5">Network</p>
+                <p className="text-2xl font-bold" style={{ color: "#00E5E8" }}>${networkEarningsThisMonth.toFixed(0)}</p>
               </div>
             </div>
           </div>
           <div className="relative mt-4 pt-4 border-t border-white/10 flex items-center justify-between gap-4 flex-wrap">
-            <div className="flex items-center gap-2 text-xs text-white/40″>
-              <TrendingUp className="w-3.5 h-3.5″ />
+            <div className="flex items-center gap-2 text-xs text-white/40">
+              <TrendingUp className="w-3.5 h-3.5" />
               <span>All-time total: <span className="text-white/70 font-semibold">${totalEarned.toFixed(0)}</span></span>
             </div>
             <Link href="/dashboard/commissions">
-              <button className="text-xs font-semibold text-white/60 hover:text-white transition-colors flex items-center gap-1″>
-                View all earnings <ArrowRight className="w-3 h-3″ />
+              <button className="text-xs font-semibold text-white/60 hover:text-white transition-colors flex items-center gap-1">
+                View all earnings <ArrowRight className="w-3 h-3" />
               </button>
             </Link>
           </div>
         </div>
 
         {/* -- Quick Stats Banner ------------------------------------------------- */}
-        <div className="flex flex-wrap gap-3 mb-6″>
+        <div className="flex flex-wrap gap-3 mb-6">
           <div className={`flex items-center gap-2 px-3 py-2 rounded-xl border text-xs font-semibold ${foundingBg}`} style={{ color: foundingColor }}>
-            <Award className="w-3.5 h-3.5″ />
+            <Award className="w-3.5 h-3.5" />
             {tierCfg.label} · {foundingLabel}
           </div>
           {trialDaysLeft !== null && (
             <div className={`flex items-center gap-2 px-3 py-2 rounded-xl border text-xs font-semibold ${trialDaysLeft > 14 ? "bg-green-50 border-green-200 text-green-700" : "bg-amber-50 border-amber-200 text-amber-700"}`}>
-              <Clock className="w-3.5 h-3.5″ />
+              <Clock className="w-3.5 h-3.5" />
               {trialDaysLeft > 0 ? `Trial: ${trialDaysLeft}d left` : "Trial ended"}
             </div>
           )}
           <div className="flex items-center gap-2 px-3 py-2 rounded-xl border bg-indigo-50 border-indigo-200 text-indigo-700 text-xs font-semibold">
-            <Globe className="w-3.5 h-3.5″ />
+            <Globe className="w-3.5 h-3.5" />
             Network depth: {networkDepth} level{networkDepth !== 1 ? "s" : ""}
           </div>
           <div className="flex items-center gap-2 px-3 py-2 rounded-xl border bg-emerald-50 border-emerald-200 text-emerald-700 text-xs font-semibold">
-            <DollarSign className="w-3.5 h-3.5″ />
+            <DollarSign className="w-3.5 h-3.5" />
             <span className="text-green-600 font-bold">${earningsThisMonth.toFixed(0)}</span>
             <span className="text-gray-500 font-normal">this month</span>
           </div>
           <div className="flex items-center gap-2 px-3 py-2 rounded-xl border bg-blue-50 border-blue-200 text-blue-700 text-xs font-semibold">
-            <Inbox className="w-3.5 h-3.5″ />
+            <Inbox className="w-3.5 h-3.5" />
             {leadsThisWeek} lead{leadsThisWeek !== 1 ? "s" : ""} this week
           </div>
           <div className="flex items-center gap-2 px-3 py-2 rounded-xl border bg-purple-50 border-purple-200 text-purple-700 text-xs font-semibold">
-            <CheckCircle className="w-3.5 h-3.5″ />
+            <CheckCircle className="w-3.5 h-3.5" />
             {jobsCompletedThisMonth} job{jobsCompletedThisMonth !== 1 ? "s" : ""} completed
           </div>
         </div>
 
         {/* -- Welcome Header ---------------------------------------------------- */}
-        <div className="flex items-start justify-between flex-wrap gap-4 mb-8″>
+        <div className="flex items-start justify-between flex-wrap gap-4 mb-8">
           <div>
             <h1 className="text-2xl font-bold text-gray-900 font-heading">
               Welcome back, {partner.contactName?.split(" ")[0] ?? "Partner"} 
             </h1>
             <p className="text-gray-500 mt-1 text-sm">
               {partner.businessName}
-              <span className="mx-2 text-gray-300″></span>
-              <span className="inline-flex items-center gap-1″>
+              <span className="mx-2 text-gray-300"></span>
+              <span className="inline-flex items-center gap-1">
                 <span className="text-lg">{tierCfg.icon}</span>
                 <span className={`font-semibold ${tierCfg.color}`}>{tierCfg.label}</span>
               </span>
-              <span className="mx-2 text-gray-300″></span>
+              <span className="mx-2 text-gray-300"></span>
               {partner.serviceArea}
             </p>
           </div>
@@ -738,11 +738,11 @@ export default function PartnerDashboard() {
             {/* Subscription plan badge with upgrade CTA */}
             <div className="flex items-center gap-2.5 px-3 py-2 rounded-xl border" style={{
               background: tier === "enterprise" ? "#0F172A" : tier === "scout" ? "#F8FAFC" : "#F0FDFD",
-              borderColor: tier === "enterprise" ? "#334155″ : tier === "scout" ? "#E2E8F0" : "#99E6E8"
+              borderColor: tier === "enterprise" ? "#334155" : tier === "scout" ? "#E2E8F0" : "#99E6E8"
             }}>
-              <Award className="w-4 h-4 flex-shrink-0″ style={{ color: tierCfg.bar }} />
+              <Award className="w-4 h-4 flex-shrink-0" style={{ color: tierCfg.bar }} />
               <div>
-                <p className="text-[10px] font-semibold uppercase tracking-wider" style={{ color: tier === "enterprise" ? "#94A3B8″ : "#6B7280" }}>Current Plan</p>
+                <p className="text-[10px] font-semibold uppercase tracking-wider" style={{ color: tier === "enterprise" ? "#94A3B8" : "#6B7280" }}>Current Plan</p>
                 <p className="text-sm font-bold leading-tight" style={{ color: tierCfg.bar }}>
                   {tierCfg.label}{tierCfg.monthlyFee > 0 ? ` · $${tierCfg.monthlyFee}/mo` : " · Free"}
                 </p>
@@ -759,7 +759,7 @@ export default function PartnerDashboard() {
             <Link href="/job/new">
               <Button className="text-white flex items-center gap-2 shadow-sm"
                 style={{ background: "linear-gradient(135deg, #0A1628, #0A1628)" }}>
-                <Camera className="w-4 h-4″ /> Log a Job
+                <Camera className="w-4 h-4" /> Log a Job
               </Button>
             </Link>
           </div>
@@ -767,10 +767,10 @@ export default function PartnerDashboard() {
 
         {/* -- Smart Alerts Banner -------------------------------------------- */}
         {(smartAlerts as any[]).length > 0 && (
-          <div className="mb-6 space-y-2″>
+          <div className="mb-6 space-y-2">
             {(smartAlerts as any[]).slice(0, 3).map((alert, i) => {
               const colors: Record<string, { bg: string; border: string; icon: string; text: string }> = {
-                milestone: { bg: "#F0FDF4″, border: "#86EFAC", icon: "🏆", text: "#166534" },
+                milestone: { bg: "#F0FDF4", border: "#86EFAC", icon: "🏆", text: "#166534" },
                 success:   { bg: "#EFF6FF", border: "#93C5FD", icon: "✅", text: "#1E40AF" },
                 warning:   { bg: "#FFFBEB", border: "#FCD34D", icon: "⚠️", text: "#92400E" },
                 info:      { bg: "#F0F9FF", border: "#7DD3FC", icon: "💡", text: "#0C4A6E" },
@@ -778,10 +778,10 @@ export default function PartnerDashboard() {
               const c = colors[alert.severity as string] ?? colors.info;
               return (
                 <div key={i} className="rounded-xl px-4 py-3 flex items-start gap-3 border" style={{ background: c.bg, borderColor: c.border }}>
-                  <span className="text-lg leading-none mt-0.5″>{c.icon}</span>
-                  <div className="flex-1 min-w-0″>
+                  <span className="text-lg leading-none mt-0.5">{c.icon}</span>
+                  <div className="flex-1 min-w-0">
                     <p className="text-sm font-bold" style={{ color: c.text }}>{alert.title}</p>
-                    <p className="text-xs mt-0.5″ style={{ color: c.text, opacity: 0.75 }}>{alert.body}</p>
+                    <p className="text-xs mt-0.5" style={{ color: c.text, opacity: 0.75 }}>{alert.body}</p>
                   </div>
                 </div>
               );
@@ -789,13 +789,13 @@ export default function PartnerDashboard() {
           </div>
         )}
         {/* -- Hero Stat Cards --------------------------------------------------- */}
-        <div className="grid grid-cols-2 lg:grid-cols-5 gap-4 mb-8″>
+        <div className="grid grid-cols-2 lg:grid-cols-5 gap-4 mb-8">
           <StatCard
             label="New Leads"
             value={newLeads.length}
             sub="Awaiting your response"
             icon={Inbox}
-            color="#3B82F6″
+            color="#3B82F6"
             trend={newLeads.length > 0 ? `${newLeads.length} pending` : undefined}
           />
           <StatCard
@@ -803,21 +803,21 @@ export default function PartnerDashboard() {
             value={activeJobs.length}
             sub="Accepted, in progress"
             icon={CheckCircle}
-            color="#10B981″
+            color="#10B981"
           />
           <StatCard
             label="Referrals Sent"
             value={referralCount}
             sub="Jobs your photos generated"
             icon={Send}
-            color="#8B5CF6″
+            color="#8B5CF6"
           />
           <StatCard
             label="Total Earned"
             value={`$${totalEarned.toFixed(0)}`}
             sub="From referrals closed"
             icon={DollarSign}
-            color="#0A1628″
+            color="#0A1628"
             sparkline={earningsSparkline}
           />
           <StatCard
@@ -825,18 +825,18 @@ export default function PartnerDashboard() {
             value={`$${forecastedEarnings.toLocaleString()}`}
             sub="Based on your run rate"
             icon={TrendingUp}
-            color="#059669″
+            color="#059669"
             trend={forecastedEarnings > 0 ? "↑ Next 30 days" : undefined}
           />
         </div>
 
         {/* -- Quick Actions ------------------------------------------------------ */}
-        <div className="grid grid-cols-2 gap-3 mb-8″>
+        <div className="grid grid-cols-2 gap-3 mb-8">
           {([
-            { icon: Camera,     label: "Log a Job",       sub: "Record a completed job",    href: "/log-job",             color: "#0A1628″ },
+            { icon: Camera,     label: "Log a Job",       sub: "Record a completed job",    href: "/log-job",             color: "#0A1628" },
             { icon: Share2,     label: "Share My Link",   sub: "Copy your referral link",   href: null,                   color: "#0A7A7C" },
-            { icon: BarChart3,  label: "View My Stats",   sub: "Analytics & performance",   href: "/dashboard/analytics", color: "#8B5CF6″ },
-            { icon: Megaphone,  label: "Get More Leads",  sub: "Browse job exchange",       href: "/exchange/jobs",       color: "#1B4FD8″ },
+            { icon: BarChart3,  label: "View My Stats",   sub: "Analytics & performance",   href: "/dashboard/analytics", color: "#8B5CF6" },
+            { icon: Megaphone,  label: "Get More Leads",  sub: "Browse job exchange",       href: "/exchange/jobs",       color: "#1B4FD8" },
           ] as const).map((a) => {
             const referralLink = `https://prolnk.io/join?ref=${partner.referralCode ?? partner.id}`;
             const handleClick = a.href === null
@@ -850,14 +850,14 @@ export default function PartnerDashboard() {
                 }
               : undefined;
             const inner = (
-              <div className="bg-white rounded-2xl border border-gray-100 p-5 hover:shadow-md hover:border-gray-200 transition-all cursor-pointer group flex items-center gap-4″>
-                <div className="w-11 h-11 rounded-xl flex items-center justify-center flex-shrink-0 transition-transform group-hover:scale-110″
+              <div className="bg-white rounded-2xl border border-gray-100 p-5 hover:shadow-md hover:border-gray-200 transition-all cursor-pointer group flex items-center gap-4">
+                <div className="w-11 h-11 rounded-xl flex items-center justify-center flex-shrink-0 transition-transform group-hover:scale-110"
                   style={{ backgroundColor: `${a.color}15` }}>
-                  <a.icon className="w-5 h-5″ style={{ color: a.color }} />
+                  <a.icon className="w-5 h-5" style={{ color: a.color }} />
                 </div>
-                <div className="min-w-0″>
+                <div className="min-w-0">
                   <div className="font-semibold text-gray-900 text-sm">{a.label}</div>
-                  <div className="text-xs text-gray-400 mt-0.5″>{a.sub}</div>
+                  <div className="text-xs text-gray-400 mt-0.5">{a.sub}</div>
                 </div>
                 <ArrowRight className="w-4 h-4 text-gray-200 group-hover:text-gray-400 ml-auto flex-shrink-0 transition-colors" />
               </div>
@@ -873,16 +873,16 @@ export default function PartnerDashboard() {
         </div>
 
         {/* -- Quick Actions Floating Card (mobile sticky) ----------------------- */}
-        <div className="md:hidden fixed bottom-0 left-0 right-0 z-50 px-4 pb-4 pt-2″
+        <div className="md:hidden fixed bottom-0 left-0 right-0 z-50 px-4 pb-4 pt-2"
           style={{ background: "linear-gradient(to top, rgba(255,255,255,0.98) 80%, transparent)" }}>
-          <div className="bg-white rounded-2xl border border-gray-200 shadow-xl p-3″>
-            <p className="text-[10px] font-bold text-gray-400 uppercase tracking-wider text-center mb-2″>Quick Actions</p>
-            <div className="grid grid-cols-4 gap-2″>
+          <div className="bg-white rounded-2xl border border-gray-200 shadow-xl p-3">
+            <p className="text-[10px] font-bold text-gray-400 uppercase tracking-wider text-center mb-2">Quick Actions</p>
+            <div className="grid grid-cols-4 gap-2">
               {([
-                { icon: Camera,    label: "Log Job",     href: "/log-job",             color: "#0A1628″ },
+                { icon: Camera,    label: "Log Job",     href: "/log-job",             color: "#0A1628" },
                 { icon: Share2,    label: "Share Link",  href: null,                   color: "#0A7A7C" },
-                { icon: BarChart3, label: "My Stats",    href: "/dashboard/analytics", color: "#8B5CF6″ },
-                { icon: Megaphone, label: "More Leads",  href: "/exchange/jobs",       color: "#1B4FD8″ },
+                { icon: BarChart3, label: "My Stats",    href: "/dashboard/analytics", color: "#8B5CF6" },
+                { icon: Megaphone, label: "More Leads",  href: "/exchange/jobs",       color: "#1B4FD8" },
               ] as const).map((a) => {
                 const referralLink = `https://prolnk.io/join?ref=${partner.referralCode ?? partner.id}`;
                 const handleTap = a.href === null
@@ -891,7 +891,7 @@ export default function PartnerDashboard() {
                 const content = (
                   <div className="flex flex-col items-center gap-1 p-2 rounded-xl hover:bg-gray-50 transition-colors cursor-pointer">
                     <div className="w-9 h-9 rounded-xl flex items-center justify-center" style={{ backgroundColor: `${a.color}15` }}>
-                      <a.icon className="w-4.5 h-4.5″ style={{ color: a.color, width: "1.125rem", height: "1.125rem" }} />
+                      <a.icon className="w-4.5 h-4.5" style={{ color: a.color, width: "1.125rem", height: "1.125rem" }} />
                     </div>
                     <span className="text-[10px] font-semibold text-gray-600 text-center leading-tight">{a.label}</span>
                   </div>
@@ -917,52 +917,52 @@ export default function PartnerDashboard() {
 
         {/* -- W48: Smart Insights -------------------------------------------- */}
         {(smartInsights.bestDay || smartInsights.topType || smartInsights.acceptRate > 0) && (
-          <div className="rounded-2xl border border-gray-100 bg-white shadow-sm overflow-hidden mb-8″>
+          <div className="rounded-2xl border border-gray-100 bg-white shadow-sm overflow-hidden mb-8">
             <div className="px-5 py-4 border-b border-gray-50 flex items-center justify-between">
-              <div className="flex items-center gap-3″>
+              <div className="flex items-center gap-3">
                 <div className="w-9 h-9 rounded-xl flex items-center justify-center" style={{ background: "linear-gradient(135deg, #0A1628, #1B4FD8)" }}>
                   <BarChart3 className="w-4.5 h-4.5 text-white" style={{ width: '1.125rem', height: '1.125rem' }} />
                 </div>
                 <div>
                   <h2 className="font-bold text-gray-900 text-sm">Smart Insights</h2>
-                  <p className="text-xs text-gray-400″>Personalized performance patterns from your data</p>
+                  <p className="text-xs text-gray-400">Personalized performance patterns from your data</p>
                 </div>
               </div>
             </div>
-            <div className="p-5 grid grid-cols-2 sm:grid-cols-4 gap-4″>
+            <div className="p-5 grid grid-cols-2 sm:grid-cols-4 gap-4">
               {smartInsights.bestDay && smartInsights.bestDay.amount > 0 && (
-                <div className="rounded-xl border border-indigo-100 bg-indigo-50 p-4″>
-                  <p className="text-xs text-indigo-500 font-semibold mb-1″>Best Day</p>
-                  <p className="text-xl font-black text-indigo-700″>{smartInsights.bestDay.day}</p>
-                  <p className="text-xs text-indigo-400 mt-1″>${smartInsights.bestDay.amount.toFixed(0)} earned</p>
+                <div className="rounded-xl border border-indigo-100 bg-indigo-50 p-4">
+                  <p className="text-xs text-indigo-500 font-semibold mb-1">Best Day</p>
+                  <p className="text-xl font-black text-indigo-700">{smartInsights.bestDay.day}</p>
+                  <p className="text-xs text-indigo-400 mt-1">${smartInsights.bestDay.amount.toFixed(0)} earned</p>
                 </div>
               )}
               {smartInsights.topType && (
-                <div className="rounded-xl border border-amber-100 bg-amber-50 p-4″>
-                  <p className="text-xs text-amber-500 font-semibold mb-1″>Top Lead Type</p>
+                <div className="rounded-xl border border-amber-100 bg-amber-50 p-4">
+                  <p className="text-xs text-amber-500 font-semibold mb-1">Top Lead Type</p>
                   <p className="text-sm font-black text-amber-700 leading-tight">{smartInsights.topType.type}</p>
-                  <p className="text-xs text-amber-400 mt-1″>{smartInsights.topType.count} referrals</p>
+                  <p className="text-xs text-amber-400 mt-1">{smartInsights.topType.count} referrals</p>
                 </div>
               )}
               {smartInsights.acceptRate >= 0 && (
                 <div className="bg-white rounded-xl border border-gray-100 p-4 text-center">
-                  <p className="text-xs text-gray-400 mb-1″>Response Rate</p>
-                  <p className="text-xl font-black text-blue-600″>{smartInsights.acceptRate}%</p>
-                  <p className="text-xs text-gray-400″>Lead acceptance</p>
+                  <p className="text-xs text-gray-400 mb-1">Response Rate</p>
+                  <p className="text-xl font-black text-blue-600">{smartInsights.acceptRate}%</p>
+                  <p className="text-xs text-gray-400">Lead acceptance</p>
                 </div>
               )}
               {smartInsights.acceptRate >= 0 && (
-                <div className="rounded-xl border border-emerald-100 bg-emerald-50 p-4″>
-                  <p className="text-xs text-emerald-500 font-semibold mb-1″>Accept Rate</p>
-                  <p className="text-xl font-black text-emerald-700″>{smartInsights.acceptRate}%</p>
-                  <p className="text-xs text-emerald-400 mt-1″>Of inbound leads</p>
+                <div className="rounded-xl border border-emerald-100 bg-emerald-50 p-4">
+                  <p className="text-xs text-emerald-500 font-semibold mb-1">Accept Rate</p>
+                  <p className="text-xl font-black text-emerald-700">{smartInsights.acceptRate}%</p>
+                  <p className="text-xs text-emerald-400 mt-1">Of inbound leads</p>
                 </div>
               )}
               {smartInsights.avgComm > 0 && (
-                <div className="rounded-xl border border-teal-100 bg-teal-50 p-4″>
-                  <p className="text-xs text-teal-500 font-semibold mb-1″>Avg Commission</p>
-                  <p className="text-xl font-black text-teal-700″>${smartInsights.avgComm.toFixed(0)}</p>
-                  <p className="text-xs text-teal-400 mt-1″>Per job logged</p>
+                <div className="rounded-xl border border-teal-100 bg-teal-50 p-4">
+                  <p className="text-xs text-teal-500 font-semibold mb-1">Avg Commission</p>
+                  <p className="text-xl font-black text-teal-700">${smartInsights.avgComm.toFixed(0)}</p>
+                  <p className="text-xs text-teal-400 mt-1">Per job logged</p>
                 </div>
               )}
             </div>
@@ -970,39 +970,39 @@ export default function PartnerDashboard() {
         )}
 
         {/* -- V6: Your AI is Working ------------------------------------------- */}
-        <div className="rounded-2xl border border-gray-100 bg-white shadow-sm overflow-hidden mb-8″>
+        <div className="rounded-2xl border border-gray-100 bg-white shadow-sm overflow-hidden mb-8">
           <div className="px-5 py-4 border-b border-gray-50 flex items-center justify-between">
-            <div className="flex items-center gap-3″>
+            <div className="flex items-center gap-3">
               <div className="w-9 h-9 rounded-xl flex items-center justify-center" style={{ background: "linear-gradient(135deg, #7C3AED, #3B82F6)" }}>
                 <Radar className="w-4.5 h-4.5 text-white" style={{ width: '1.125rem', height: '1.125rem' }} />
               </div>
               <div>
                 <h2 className="font-bold text-gray-900 text-sm">Your AI is Working</h2>
-                <p className="text-xs text-gray-400″>Photos you upload keep generating leads -- even months later</p>
+                <p className="text-xs text-gray-400">Photos you upload keep generating leads -- even months later</p>
               </div>
             </div>
-            <span className="text-[10px] font-bold px-2.5 py-1 rounded-full bg-green-50 text-green-600 flex items-center gap-1.5″>
+            <span className="text-[10px] font-bold px-2.5 py-1 rounded-full bg-green-50 text-green-600 flex items-center gap-1.5">
               <span className="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse" />
               Engine Active
             </span>
           </div>
-          <div className="p-5″>
-            <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-5″>
+          <div className="p-5">
+            <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-5">
               {[
-                { icon: Eye, label: "Photos Analyzed", value: String(myJobs?.length ?? 0), sub: "AI scanned for opportunities", color: "#3B82F6″ },
-                { icon: Zap, label: "Leads Generated", value: String(referralCount), sub: "From your photo library", color: "#8B5CF6″ },
-                { icon: Repeat, label: "Residual Leads", value: String(Math.max(0, referralCount - (newLeads.length + activeJobs.length))), sub: "From past photos, auto-detected", color: "#10B981″ },
+                { icon: Eye, label: "Photos Analyzed", value: String(myJobs?.length ?? 0), sub: "AI scanned for opportunities", color: "#3B82F6" },
+                { icon: Zap, label: "Leads Generated", value: String(referralCount), sub: "From your photo library", color: "#8B5CF6" },
+                { icon: Repeat, label: "Residual Leads", value: String(Math.max(0, referralCount - (newLeads.length + activeJobs.length))), sub: "From past photos, auto-detected", color: "#10B981" },
                 { icon: Shield, label: "Photo Impact Score", value: `${Math.min(100, Math.round((referralCount / Math.max(1, myJobs?.length ?? 1)) * 40 + 30))}`, sub: "Quality  lead conversion", color: "#F59E0B" },
               ].map((s, i) => (
-                <div key={i} className="rounded-xl p-4 bg-gray-50 border border-gray-100″>
-                  <div className="flex items-center gap-2 mb-2″>
+                <div key={i} className="rounded-xl p-4 bg-gray-50 border border-gray-100">
+                  <div className="flex items-center gap-2 mb-2">
                     <div className="w-7 h-7 rounded-lg flex items-center justify-center" style={{ backgroundColor: `${s.color}15` }}>
-                      <s.icon className="w-3.5 h-3.5″ style={{ color: s.color }} />
+                      <s.icon className="w-3.5 h-3.5" style={{ color: s.color }} />
                     </div>
                     <span className="text-[10px] font-semibold text-gray-400 uppercase tracking-wider">{s.label}</span>
                   </div>
-                  <p className="text-xl font-bold text-gray-900″>{s.value}</p>
-                  <p className="text-[10px] text-gray-400 mt-0.5″>{s.sub}</p>
+                  <p className="text-xl font-bold text-gray-900">{s.value}</p>
+                  <p className="text-[10px] text-gray-400 mt-0.5">{s.sub}</p>
                 </div>
               ))}
             </div>
@@ -1010,26 +1010,26 @@ export default function PartnerDashboard() {
             {/* Event-Driven Lead Feed */}
             <div className="rounded-xl border border-gray-100 overflow-hidden">
               <div className="px-4 py-3 bg-gray-50 border-b border-gray-100 flex items-center justify-between">
-                <span className="text-xs font-bold text-gray-600 flex items-center gap-2″>
-                  <CloudLightning className="w-3.5 h-3.5 text-blue-500″ />
+                <span className="text-xs font-bold text-gray-600 flex items-center gap-2">
+                  <CloudLightning className="w-3.5 h-3.5 text-blue-500" />
                   Predictive Lead Feed
                 </span>
-                <span className="text-[10px] text-gray-400″>Auto-generated from your photo library + external events</span>
+                <span className="text-[10px] text-gray-400">Auto-generated from your photo library + external events</span>
               </div>
-              <div className="divide-y divide-gray-50″>
+              <div className="divide-y divide-gray-50">
                 {[
-                  { type: "Storm Watch", desc: "Hail damage detected near 3 of your recent job sites -- roof inspection leads queued", time: "2h ago", color: "#3B82F6″, icon: CloudLightning },
+                  { type: "Storm Watch", desc: "Hail damage detected near 3 of your recent job sites -- roof inspection leads queued", time: "2h ago", color: "#3B82F6", icon: CloudLightning },
                   { type: "Asset Aging", desc: "Water heater in job #47 photo estimated at 12+ years -- replacement lead generated", time: "1d ago", color: "#F59E0B", icon: Clock },
-                  { type: "Photo Match", desc: "HVAC unit in your photo matched to a manufacturer recall -- safety lead created", time: "3d ago", color: "#EF4444″, icon: Shield },
+                  { type: "Photo Match", desc: "HVAC unit in your photo matched to a manufacturer recall -- safety lead created", time: "3d ago", color: "#EF4444", icon: Shield },
                 ].map((item, i) => (
                   <div key={i} className="px-4 py-3 flex items-start gap-3 hover:bg-gray-50/50 transition-colors">
-                    <div className="w-7 h-7 rounded-lg flex items-center justify-center flex-shrink-0 mt-0.5″ style={{ backgroundColor: `${item.color}15` }}>
-                      <item.icon className="w-3.5 h-3.5″ style={{ color: item.color }} />
+                    <div className="w-7 h-7 rounded-lg flex items-center justify-center flex-shrink-0 mt-0.5" style={{ backgroundColor: `${item.color}15` }}>
+                      <item.icon className="w-3.5 h-3.5" style={{ color: item.color }} />
                     </div>
-                    <div className="flex-1 min-w-0″>
-                      <div className="flex items-center gap-2″>
+                    <div className="flex-1 min-w-0">
+                      <div className="flex items-center gap-2">
                         <span className="text-[10px] font-bold px-2 py-0.5 rounded" style={{ backgroundColor: `${item.color}15`, color: item.color }}>{item.type}</span>
-                        <span className="text-[10px] text-gray-300″>{item.time}</span>
+                        <span className="text-[10px] text-gray-300">{item.time}</span>
                       </div>
                       <p className="text-xs text-gray-600 mt-1 leading-relaxed">{item.desc}</p>
                     </div>
@@ -1041,53 +1041,53 @@ export default function PartnerDashboard() {
         </div>
 
         {/* -- Main Content Grid -------------------------------------------------- */}
-        <div className="grid lg:grid-cols-3 gap-6″>
+        <div className="grid lg:grid-cols-3 gap-6">
 
           {/* Left: Leads + Jobs + Referrals */}
-          <div className="lg:col-span-2 space-y-6″>
+          <div className="lg:col-span-2 space-y-6">
 
             {/* Inbound Leads */}
             <div className="bg-white rounded-2xl border border-gray-100 shadow-sm overflow-hidden">
-              <div className="flex items-center justify-between px-5 py-4 border-b border-gray-50″>
-                <div className="flex items-center gap-2″>
+              <div className="flex items-center justify-between px-5 py-4 border-b border-gray-50">
+                <div className="flex items-center gap-2">
                   <div className="w-7 h-7 rounded-lg bg-blue-50 flex items-center justify-center">
-                    <Inbox className="w-3.5 h-3.5 text-blue-500″ />
+                    <Inbox className="w-3.5 h-3.5 text-blue-500" />
                   </div>
                   <h2 className="font-semibold text-gray-900 text-sm">Inbound Leads</h2>
                   {newLeads.length > 0 && (
-                    <span className="text-xs font-bold px-2 py-0.5 rounded-full bg-blue-100 text-blue-700″>
+                    <span className="text-xs font-bold px-2 py-0.5 rounded-full bg-blue-100 text-blue-700">
                       {newLeads.length} new
                     </span>
                   )}
                 </div>
                 <Link href="/dashboard/leads">
                   <span className="text-xs text-[#0A1628] hover:underline cursor-pointer flex items-center gap-1 font-medium">
-                    View all <ChevronRight className="w-3 h-3″ />
+                    View all <ChevronRight className="w-3 h-3" />
                   </span>
                 </Link>
               </div>
 
               {inboundLoading ? (
                 <div className="p-8 flex justify-center">
-                  <Loader2 className="w-5 h-5 animate-spin text-gray-300″ />
+                  <Loader2 className="w-5 h-5 animate-spin text-gray-300" />
                 </div>
               ) : newLeads.length === 0 ? (
                 <div className="p-10 text-center">
-                  <div className="w-12 h-12 rounded-2xl bg-gray-50 flex items-center justify-center mx-auto mb-3″>
-                    <Inbox className="w-6 h-6 text-gray-200″ />
+                  <div className="w-12 h-12 rounded-2xl bg-gray-50 flex items-center justify-center mx-auto mb-3">
+                    <Inbox className="w-6 h-6 text-gray-200" />
                   </div>
-                  <p className="text-sm font-medium text-gray-500″>No new leads right now.</p>
+                  <p className="text-sm font-medium text-gray-500">No new leads right now.</p>
                   <p className="text-xs text-gray-400 mt-1 max-w-xs mx-auto">
                     Log jobs to generate referrals for other partners -- they'll return the favor.
                   </p>
                 </div>
               ) : (
-                <div className="divide-y divide-gray-50″>
+                <div className="divide-y divide-gray-50">
                   {newLeads.slice(0, 5).map((opp) => (
                     <div key={opp.id} className="px-5 py-4 hover:bg-gray-50/50 transition-colors">
-                      <div className="flex items-start justify-between gap-3″>
-                        <div className="flex-1 min-w-0″>
-                          <div className="flex items-center gap-2 mb-1.5″>
+                      <div className="flex items-start justify-between gap-3">
+                        <div className="flex-1 min-w-0">
+                          <div className="flex items-center gap-2 mb-1.5">
                             <span className={`inline-flex items-center gap-1 text-xs font-semibold px-2 py-0.5 rounded-full ${STATUS_CONFIG[opp.status]?.color ?? "bg-gray-100 text-gray-600"}`}>
                               <span className={`w-1.5 h-1.5 rounded-full ${STATUS_CONFIG[opp.status]?.dot}`} />
                               {STATUS_CONFIG[opp.status]?.label ?? opp.status}
@@ -1097,17 +1097,17 @@ export default function PartnerDashboard() {
                             </span>
                           </div>
                           <p className="text-sm font-semibold text-gray-900 truncate">{opp.serviceAddress}</p>
-                          <p className="text-xs text-gray-400 mt-0.5 line-clamp-2″>{opp.description}</p>
+                          <p className="text-xs text-gray-400 mt-0.5 line-clamp-2">{opp.description}</p>
                           {opp.estimatedJobValue && (
-                            <p className="text-xs font-bold text-[#0A1628] mt-1.5″>
+                            <p className="text-xs font-bold text-[#0A1628] mt-1.5">
                               Est. value: ${Number(opp.estimatedJobValue).toLocaleString()}
                             </p>
                           )}
                           {opp.sourcePartnerName && (
-                            <p className="text-xs text-gray-300 mt-0.5″>Referred by {opp.sourcePartnerName}</p>
+                            <p className="text-xs text-gray-300 mt-0.5">Referred by {opp.sourcePartnerName}</p>
                           )}
                         </div>
-                        <div className="flex gap-2 flex-shrink-0″>
+                        <div className="flex gap-2 flex-shrink-0">
                           <Button
                             size="sm"
                             className="text-xs h-7 text-white shadow-sm"
@@ -1120,7 +1120,7 @@ export default function PartnerDashboard() {
                           <Button
                             size="sm"
                             variant="outline"
-                            className="text-xs h-7 text-gray-500″
+                            className="text-xs h-7 text-gray-500"
                             onClick={() => respondMutation.mutate({ opportunityId: opp.id, response: "declined" })}
                             disabled={respondMutation.isPending}
                           >
@@ -1137,55 +1137,55 @@ export default function PartnerDashboard() {
             {/* Active Jobs */}
             {activeJobs.length > 0 && (
               <div className="bg-white rounded-2xl border border-gray-100 shadow-sm overflow-hidden">
-                <div className="flex items-center gap-2 px-5 py-4 border-b border-gray-50″>
+                <div className="flex items-center gap-2 px-5 py-4 border-b border-gray-50">
                   <div className="w-7 h-7 rounded-lg bg-green-50 flex items-center justify-center">
-                    <CheckCircle className="w-3.5 h-3.5 text-green-500″ />
+                    <CheckCircle className="w-3.5 h-3.5 text-green-500" />
                   </div>
                   <h2 className="font-semibold text-gray-900 text-sm">Active Jobs</h2>
-                  <span className="text-xs font-bold px-2 py-0.5 rounded-full bg-green-100 text-green-700″>
+                  <span className="text-xs font-bold px-2 py-0.5 rounded-full bg-green-100 text-green-700">
                     {activeJobs.length}
                   </span>
                 </div>
-                <div className="divide-y divide-gray-50″>
+                <div className="divide-y divide-gray-50">
                   {activeJobs.map((opp) => (
                     <div key={opp.id} className="px-5 py-4 hover:bg-gray-50/50 transition-colors">
-                      <div className="flex items-start justify-between gap-3″>
-                        <div className="flex-1 min-w-0″>
-                          <p className="text-sm font-semibold text-gray-900″>{opp.serviceAddress}</p>
+                      <div className="flex items-start justify-between gap-3">
+                        <div className="flex-1 min-w-0">
+                          <p className="text-sm font-semibold text-gray-900">{opp.serviceAddress}</p>
                           <p className="text-xs text-gray-400 mt-0.5 capitalize">
                             {opp.opportunityType.replace(/_/g, " ")}  {opp.description}
                           </p>
                           {opp.estimatedJobValue && (
-                            <p className="text-xs font-bold text-[#0A1628] mt-1″>
+                            <p className="text-xs font-bold text-[#0A1628] mt-1">
                               Est. ${Number(opp.estimatedJobValue).toLocaleString()}
                             </p>
                           )}
                         </div>
                         {closingId === opp.id ? (
-                          <div className="flex items-center gap-2 flex-shrink-0″>
+                          <div className="flex items-center gap-2 flex-shrink-0">
                             <input
                               type="number"
                               placeholder="Actual $"
-                              className="w-24 text-xs border border-gray-200 rounded-lg px-2 py-1.5 focus:outline-none focus:ring-2 focus:ring-teal-400″
+                              className="w-24 text-xs border border-gray-200 rounded-lg px-2 py-1.5 focus:outline-none focus:ring-2 focus:ring-teal-400"
                               value={jobValueInput[opp.id] ?? ""}
                               onChange={(e) => setJobValueInput((prev) => ({ ...prev, [opp.id]: e.target.value }))}
                             />
                             <Button size="sm" className="text-xs h-7 text-white"
                               style={{ background: "linear-gradient(135deg, #0A1628, #0A1628)" }}
                               onClick={() => {
-                                const val = parseFloat(jobValueInput[opp.id] ?? "0″);
+                                const val = parseFloat(jobValueInput[opp.id] ?? "0");
                                 if (val > 0) closeJobMutation.mutate({ opportunityId: opp.id, actualJobValue: val });
                               }}
                               disabled={closeJobMutation.isPending}>
                               Confirm
                             </Button>
-                            <Button size="sm" variant="ghost" className="text-xs h-7″ onClick={() => setClosingId(null)}>
+                            <Button size="sm" variant="ghost" className="text-xs h-7" onClick={() => setClosingId(null)}>
                               Cancel
                             </Button>
                           </div>
                         ) : ((opp as any).isInsuranceJob ? (
                           <Button size="sm" variant="outline"
-                            className="text-xs h-7 border-blue-200 text-blue-700 hover:bg-blue-50 flex-shrink-0″
+                            className="text-xs h-7 border-blue-200 text-blue-700 hover:bg-blue-50 flex-shrink-0"
                             onClick={() => setInsuranceModalDeal({
                               dealId: opp.id,
                               homeownerName: undefined,
@@ -1193,12 +1193,12 @@ export default function PartnerDashboard() {
                               issueType: opp.opportunityType,
                               estimatedValue: opp.estimatedJobValue ? Number(opp.estimatedJobValue) : undefined,
                             })}>
-                            <Shield className="w-3 h-3 mr-1″ />
+                            <Shield className="w-3 h-3 mr-1" />
                             Insurance Close
                           </Button>
                         ) : (
                           <Button size="sm" variant="outline"
-                            className="text-xs h-7 border-green-200 text-green-700 hover:bg-green-50 flex-shrink-0″
+                            className="text-xs h-7 border-green-200 text-green-700 hover:bg-green-50 flex-shrink-0"
                             onClick={() => setClosingId(opp.id)}>
                             Mark Closed
                           </Button>
@@ -1212,46 +1212,46 @@ export default function PartnerDashboard() {
 
             {/* My Referrals */}
             <div className="bg-white rounded-2xl border border-gray-100 shadow-sm overflow-hidden">
-              <div className="flex items-center justify-between px-5 py-4 border-b border-gray-50″>
-                <div className="flex items-center gap-2″>
+              <div className="flex items-center justify-between px-5 py-4 border-b border-gray-50">
+                <div className="flex items-center gap-2">
                   <div className="w-7 h-7 rounded-lg bg-purple-50 flex items-center justify-center">
-                    <Send className="w-3.5 h-3.5 text-purple-500″ />
+                    <Send className="w-3.5 h-3.5 text-purple-500" />
                   </div>
                   <h2 className="font-semibold text-gray-900 text-sm">My Referrals</h2>
                 </div>
                 <Link href="/dashboard/referrals">
                   <span className="text-xs text-[#0A1628] hover:underline cursor-pointer flex items-center gap-1 font-medium">
-                    View all <ChevronRight className="w-3 h-3″ />
+                    View all <ChevronRight className="w-3 h-3" />
                   </span>
                 </Link>
               </div>
 
               {outboundLoading ? (
                 <div className="p-8 flex justify-center">
-                  <Loader2 className="w-5 h-5 animate-spin text-gray-300″ />
+                  <Loader2 className="w-5 h-5 animate-spin text-gray-300" />
                 </div>
               ) : !outboundRefs || outboundRefs.length === 0 ? (
                 <div className="p-10 text-center">
-                  <div className="w-12 h-12 rounded-2xl bg-gray-50 flex items-center justify-center mx-auto mb-3″>
-                    <Camera className="w-6 h-6 text-gray-200″ />
+                  <div className="w-12 h-12 rounded-2xl bg-gray-50 flex items-center justify-center mx-auto mb-3">
+                    <Camera className="w-6 h-6 text-gray-200" />
                   </div>
-                  <p className="text-sm font-medium text-gray-500″>No referrals yet.</p>
+                  <p className="text-sm font-medium text-gray-500">No referrals yet.</p>
                   <p className="text-xs text-gray-400 mt-1 max-w-xs mx-auto">
                     Log a job and upload photos -- the AI will find opportunities for your network.
                   </p>
                   <Link href="/job/new">
                     <Button size="sm" className="mt-4 text-xs text-white"
                       style={{ background: "linear-gradient(135deg, #0A1628, #0A1628)" }}>
-                      <Camera className="w-3 h-3 mr-1″ /> Log Your First Job
+                      <Camera className="w-3 h-3 mr-1" /> Log Your First Job
                     </Button>
                   </Link>
                 </div>
               ) : (
-                <div className="divide-y divide-gray-50″>
+                <div className="divide-y divide-gray-50">
                   {outboundRefs.slice(0, 5).map((opp) => (
                     <div key={opp.id} className="px-5 py-3.5 flex items-center justify-between gap-3 hover:bg-gray-50/50 transition-colors">
-                      <div className="flex-1 min-w-0″>
-                        <div className="flex items-center gap-2 mb-0.5″>
+                      <div className="flex-1 min-w-0">
+                        <div className="flex items-center gap-2 mb-0.5">
                           <span className={`inline-flex items-center gap-1 text-xs font-semibold px-2 py-0.5 rounded-full ${STATUS_CONFIG[opp.status]?.color ?? "bg-gray-100 text-gray-600"}`}>
                             <span className={`w-1.5 h-1.5 rounded-full ${STATUS_CONFIG[opp.status]?.dot}`} />
                             {STATUS_CONFIG[opp.status]?.label ?? opp.status}
@@ -1262,11 +1262,11 @@ export default function PartnerDashboard() {
                         </div>
                         <p className="text-sm text-gray-700 truncate">{opp.serviceAddress}</p>
                         {opp.receivingPartnerName && (
-                          <p className="text-xs text-gray-300″>Sent to {opp.receivingPartnerName}</p>
+                          <p className="text-xs text-gray-300">Sent to {opp.receivingPartnerName}</p>
                         )}
                       </div>
                       {opp.status === "converted" && opp.referralCommissionAmount && (
-                        <span className="text-xs font-bold text-[#0A1628] flex-shrink-0″>
+                        <span className="text-xs font-bold text-[#0A1628] flex-shrink-0">
                           +${Number(opp.referralCommissionAmount).toFixed(0)} earned
                         </span>
                       )}
@@ -1278,7 +1278,7 @@ export default function PartnerDashboard() {
           </div>
 
           {/* Right Sidebar */}
-          <div className="space-y-5″>
+          <div className="space-y-5">
 
             {/* Onboarding checklist */}
             <OnboardingChecklist
@@ -1297,27 +1297,27 @@ export default function PartnerDashboard() {
               const hasCOI = !!(partner.coiUrl || partner.coiVerifiedAt);
               const hasLicense = !!(partner.licenseNumber || partner.licenseVerifiedAt);
               const tiers = [
-                { name: "Bronze",   color: "#CD7F32″, bg: "#FDF6EE", border: "#E8C49A", emoji: "🥉", req: "Approved + COI + License on file", met: hasCOI && hasLicense },
+                { name: "Bronze",   color: "#CD7F32", bg: "#FDF6EE", border: "#E8C49A", emoji: "🥉", req: "Approved + COI + License on file", met: hasCOI && hasLicense },
                 { name: "Silver",   color: "#9CA3AF", bg: "#F9FAFB", border: "#D1D5DB", emoji: "🥈", req: "5+ jobs · 4.0+ rating · 3+ reviews", met: jobsDone >= 5 && rating >= 4.0 && reviews >= 3 },
                 { name: "Gold",     color: "#F59E0B", bg: "#FFFBEB", border: "#FCD34D", emoji: "🥇", req: "25+ jobs · 4.5+ rating · 10+ reviews · 3+ referrals", met: jobsDone >= 25 && rating >= 4.5 && reviews >= 10 && refs >= 3 },
-                { name: "Platinum", color: "#6366F1″, bg: "#EEF2FF", border: "#A5B4FC", emoji: "💎", req: "100+ jobs · 4.8+ rating · 25+ reviews · 10+ referrals", met: jobsDone >= 100 && rating >= 4.8 && reviews >= 25 && refs >= 10 },
+                { name: "Platinum", color: "#6366F1", bg: "#EEF2FF", border: "#A5B4FC", emoji: "💎", req: "100+ jobs · 4.8+ rating · 25+ reviews · 10+ referrals", met: jobsDone >= 100 && rating >= 4.8 && reviews >= 25 && refs >= 10 },
               ];
               const earnedIdx = tiers.reduce((acc: number, t, i) => t.met ? i : acc, -1);
               const currentBadge = earnedIdx >= 0 ? tiers[earnedIdx] : null;
               const nextBadge = tiers[earnedIdx + 1] ?? null;
               return (
-                <div className="rounded-2xl border p-4″ style={{ backgroundColor: currentBadge?.bg ?? "#F9FAFB", borderColor: currentBadge?.border ?? "#E5E7EB" }}>
-                  <div className="flex items-center justify-between mb-2″>
-                    <span className="text-xs font-bold uppercase tracking-wider" style={{ color: currentBadge?.color ?? "#6B7280″ }}>TrustyPro Badge</span>
+                <div className="rounded-2xl border p-4" style={{ backgroundColor: currentBadge?.bg ?? "#F9FAFB", borderColor: currentBadge?.border ?? "#E5E7EB" }}>
+                  <div className="flex items-center justify-between mb-2">
+                    <span className="text-xs font-bold uppercase tracking-wider" style={{ color: currentBadge?.color ?? "#6B7280" }}>TrustyPro Badge</span>
                     <span className="text-xl">{currentBadge?.emoji ?? "⬜"}</span>
                   </div>
-                  <p className="text-sm font-semibold text-gray-800 mb-1″>{currentBadge ? `${currentBadge.name} Partner` : "No Badge Yet"}</p>
+                  <p className="text-sm font-semibold text-gray-800 mb-1">{currentBadge ? `${currentBadge.name} Partner` : "No Badge Yet"}</p>
                   {nextBadge ? (
-                    <p className="text-xs text-gray-500″>Next: <span className="font-semibold">{nextBadge.emoji} {nextBadge.name}</span> — {nextBadge.req}</p>
+                    <p className="text-xs text-gray-500">Next: <span className="font-semibold">{nextBadge.emoji} {nextBadge.name}</span> — {nextBadge.req}</p>
                   ) : currentBadge ? (
                     <p className="text-xs font-semibold" style={{ color: currentBadge.color }}>🏆 Maximum badge achieved!</p>
                   ) : (
-                    <p className="text-xs text-gray-500″>Complete verification to earn Bronze — upload COI & license</p>
+                    <p className="text-xs text-gray-500">Complete verification to earn Bronze — upload COI & license</p>
                   )}
                 </div>
               );
@@ -1327,15 +1327,15 @@ export default function PartnerDashboard() {
               background: tier === "enterprise"
                 ? "linear-gradient(135deg, #0F172A, #1E293B)"
                 : "linear-gradient(135deg, #F0FDFD, #E6F9F9)",
-              borderColor: tier === "enterprise" ? "#334155″ : "#99E6E8"
+              borderColor: tier === "enterprise" ? "#334155" : "#99E6E8"
             }}>
-              <div className="absolute top-0 right-0 w-20 h-20 rounded-full opacity-10″
+              <div className="absolute top-0 right-0 w-20 h-20 rounded-full opacity-10"
                 style={{ background: `radial-gradient(circle, ${tierCfg.bar}, transparent)`, transform: "translate(30%, -30%)" }} />
-              <div className="flex items-center justify-between mb-4″>
+              <div className="flex items-center justify-between mb-4">
                 <div>
-                  <p className="text-xs font-semibold uppercase tracking-wider mb-1″
-                    style={{ color: tier === "enterprise" ? "#94A3B8″ : "#6B7280" }}>Your Tier</p>
-                  <div className="flex items-center gap-2″>
+                  <p className="text-xs font-semibold uppercase tracking-wider mb-1"
+                    style={{ color: tier === "enterprise" ? "#94A3B8" : "#6B7280" }}>Your Tier</p>
+                  <div className="flex items-center gap-2">
                     <span className="text-2xl">{tierCfg.icon}</span>
                     <span className="text-xl font-bold font-heading" style={{ color: tierCfg.bar }}>
                       {tierCfg.label}
@@ -1344,22 +1344,22 @@ export default function PartnerDashboard() {
                 </div>
                 <div className="w-10 h-10 rounded-xl flex items-center justify-center"
                   style={{ backgroundColor: `${tierCfg.bar}20` }}>
-                  <Award className="w-5 h-5″ style={{ color: tierCfg.bar }} />
+                  <Award className="w-5 h-5" style={{ color: tierCfg.bar }} />
                 </div>
               </div>
               {tierCfg.next && (
                 <div>
-                  <div className="flex justify-between text-xs mb-1.5″
+                  <div className="flex justify-between text-xs mb-1.5"
                     style={{ color: tier === "enterprise" ? "#64748B" : "#9CA3AF" }}>
                     <span>{tierCfg.label}</span>
                     <span>{tierCfg.next} (${TIER_CONFIG[tierCfg.next.toLowerCase() as keyof typeof TIER_CONFIG]?.monthlyFee}/mo)</span>
                   </div>
-                  <div className="h-1.5 rounded-full overflow-hidden mb-3″
-                    style={{ backgroundColor: tier === "enterprise" ? "#1E293B" : "#CCF2F2″ }}>
+                  <div className="h-1.5 rounded-full overflow-hidden mb-3"
+                    style={{ backgroundColor: tier === "enterprise" ? "#1E293B" : "#CCF2F2" }}>
                     <div className="h-full rounded-full" style={{ width: "35%", backgroundColor: tierCfg.bar }} />
                   </div>
                   <a href="/dashboard/upgrade"
-                    className="block text-center text-xs font-semibold py-2 px-3 rounded-xl transition-all hover:opacity-90″
+                    className="block text-center text-xs font-semibold py-2 px-3 rounded-xl transition-all hover:opacity-90"
                     style={{ backgroundColor: `${tierCfg.bar}20`, color: tierCfg.bar }}>
                     Upgrade to {tierCfg.next}
                   </a>
@@ -1369,32 +1369,32 @@ export default function PartnerDashboard() {
 
             {/* Commission rates */}
             <div className="bg-white rounded-2xl border border-gray-100 p-5 shadow-sm">
-              <h3 className="font-semibold text-gray-900 mb-4 text-sm flex items-center gap-2″>
+              <h3 className="font-semibold text-gray-900 mb-4 text-sm flex items-center gap-2">
                 <DollarSign className="w-4 h-4 text-[#0A1628]" />
                 Your Commission Rates
               </h3>
-              <div className="space-y-3″>
-                <div className="flex justify-between items-center p-3 rounded-xl bg-[#F5E642]/10″>
+              <div className="space-y-3">
+                <div className="flex justify-between items-center p-3 rounded-xl bg-[#F5E642]/10">
                   <div>
                     <p className="text-xs text-[#0A1628] font-medium">You Earn (Referrals Out)</p>
                     <p className="text-lg font-bold text-[#0A1628] font-heading">
                       {(Number(partner.referralCommissionRate) * 100).toFixed(0)}%
                     </p>
                   </div>
-                  <TrendingUp className="w-5 h-5 text-[#0A1628]/70″ />
+                  <TrendingUp className="w-5 h-5 text-[#0A1628]/70" />
                 </div>
-                <div className="flex justify-between items-center p-3 rounded-xl bg-gray-50″>
+                <div className="flex justify-between items-center p-3 rounded-xl bg-gray-50">
                   <div>
                     <p className="text-xs text-gray-500 font-medium">Platform Fee (Leads In)</p>
                     <p className="text-lg font-bold text-gray-700 font-heading">
                       {(Number(partner.platformFeeRate) * 100).toFixed(0)}%
                     </p>
                   </div>
-                  <DollarSign className="w-5 h-5 text-gray-300″ />
+                  <DollarSign className="w-5 h-5 text-gray-300" />
                 </div>
-                <div className="flex justify-between items-center px-3 pt-2″>
-                  <p className="text-xs text-gray-400″>Total Earned (all time)</p>
-                  <p className="text-sm font-bold text-gray-700″>
+                <div className="flex justify-between items-center px-3 pt-2">
+                  <p className="text-xs text-gray-400">Total Earned (all time)</p>
+                  <p className="text-sm font-bold text-gray-700">
                     ${Number(partner.totalCommissionEarned).toFixed(2)}
                   </p>
                 </div>
@@ -1410,15 +1410,15 @@ export default function PartnerDashboard() {
             {/* Network broadcasts */}
             {broadcasts && broadcasts.length > 0 && (
               <div className="bg-white rounded-2xl border border-gray-100 p-5 shadow-sm">
-                <h3 className="font-semibold text-gray-900 mb-3 text-sm flex items-center gap-2″>
+                <h3 className="font-semibold text-gray-900 mb-3 text-sm flex items-center gap-2">
                   <Activity className="w-4 h-4 text-[#0A1628]" />
                   Network Updates
                 </h3>
-                <div className="space-y-3″>
+                <div className="space-y-3">
                   {broadcasts.slice(0, 3).map((b) => (
-                    <div key={b.id} className="text-xs p-3 rounded-xl bg-gray-50″>
-                      <p className="font-semibold text-gray-700″>{b.subject}</p>
-                      <p className="text-gray-400 mt-0.5 line-clamp-2″>{b.message}</p>
+                    <div key={b.id} className="text-xs p-3 rounded-xl bg-gray-50">
+                      <p className="font-semibold text-gray-700">{b.subject}</p>
+                      <p className="text-gray-400 mt-0.5 line-clamp-2">{b.message}</p>
                     </div>
                   ))}
                 </div>
@@ -1428,7 +1428,7 @@ export default function PartnerDashboard() {
             {/* Log a job CTA */}
             <div className="rounded-2xl p-5 text-white overflow-hidden relative"
               style={{ background: "linear-gradient(135deg, #0A1628, #0A7A7C)" }}>
-              <div className="absolute top-0 right-0 w-24 h-24 rounded-full opacity-10″
+              <div className="absolute top-0 right-0 w-24 h-24 rounded-full opacity-10"
                 style={{ background: "radial-gradient(circle, #fff, transparent)", transform: "translate(30%, -30%)" }} />
               <Camera className="w-6 h-6 mb-3 opacity-80 relative" />
               <h3 className="font-bold text-base mb-1 relative font-heading">Log a Job</h3>
@@ -1437,7 +1437,7 @@ export default function PartnerDashboard() {
               </p>
               <Link href="/job/new">
                 <Button size="sm" className="bg-white text-[#0A1628] hover:bg-[#F5E642]/10 text-xs font-semibold w-full relative">
-                  Upload Photos <ArrowRight className="w-3 h-3 ml-1″ />
+                  Upload Photos <ArrowRight className="w-3 h-3 ml-1" />
                 </Button>
               </Link>
             </div>

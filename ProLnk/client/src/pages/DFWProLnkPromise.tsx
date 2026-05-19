@@ -60,7 +60,7 @@ export default function DFWProLnkPromise() {
         <div style={{ display: 'flex', gap: 10, marginBottom: 28 }}>
           {(Object.keys(LABELS) as Persona[]).map(p => (
             <button key={p} onClick={() => setPersona(p)}
-              style={{ flex: 1, padding: '11px 4px', borderRadius: 8, border: `2px solid ${persona === p ? '#F5E642' : '#1e3a5f'}`, background: persona === p ? '#1a2f50′ : '#0A1628', color: persona === p ? '#F5E642' : '#94a3b8', fontWeight: 700, fontSize: 13, cursor: ’pointer', transition: 'all 0.15s' }}>
+              style={{ flex: 1, padding: '11px 4px', borderRadius: 8, border: `2px solid ${persona === p ? '#F5E642' : '#1e3a5f'}`, background: persona === p ? '#1a2f50' : '#0A1628', color: persona === p ? '#F5E642' : '#94a3b8', fontWeight: 700, fontSize: 13, cursor: 'pointer', transition: 'all 0.15s' }}>
               {LABELS[p]}
             </button>
           ))}
@@ -77,10 +77,10 @@ export default function DFWProLnkPromise() {
             </div>
           ))}
         </div>
-        <div style={{ background: '#0f2039', borderRadius: 12, padding: 22, textAlign: 'center', borderTop: '3px solid #F5E642′ }}>
+        <div style={{ background: '#0f2039', borderRadius: 12, padding: 22, textAlign: 'center', borderTop: '3px solid #F5E642' }}>
           <div style={{ fontSize: 28, marginBottom: 8 }}>✊</div>
           <p style={{ color: '#F5E642', fontWeight: 700, fontSize: 16, margin: '0 0 8px' }}>These aren't marketing claims.</p>
-          <p style={{ color: '#94a3b8', fontSize: 14, margin: 0 }}>They're the commitments we build every feature around. If we ever fall short, tell us — and we’ll make it right.</p>
+          <p style={{ color: '#94a3b8', fontSize: 14, margin: 0 }}>They're the commitments we build every feature around. If we ever fall short, tell us — and we'll make it right.</p>
         </div>
       </div>
     </div>

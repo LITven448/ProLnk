@@ -1,6 +1,6 @@
 import { Link } from "wouter";
 
-const INDIGO = "#4F46E5″;
+const INDIGO = "#4F46E5";
 const AMBER  = "#F59E0B";
 const LIGHT  = "#F8FAFC";
 
@@ -12,15 +12,15 @@ const stats = [
 ];
 
 const steps = [
-  { n: "01″, title: "Share Your Home's Story", body: "Hail damage? Drainage running toward your slab? New enough that you’re starting the first maintenance cycle? Tell us — we know Burleson." },
-  { n: "02″, title: "Get Matched Fast", body: "Our AI surfaces South Tarrant County pros who understand Cedar Hill escarpment drainage, southwest approach hail patterns, and 2000s-era construction." },
-  { n: "03″, title: "Approve & Get It Done", body: "Compare vetted quotes, book your pro, and follow progress in real-time — no chasing, no surprises." },
+  { n: "01", title: "Share Your Home's Story", body: "Hail damage? Drainage running toward your slab? New enough that you're starting the first maintenance cycle? Tell us — we know Burleson." },
+  { n: "02", title: "Get Matched Fast", body: "Our AI surfaces South Tarrant County pros who understand Cedar Hill escarpment drainage, southwest approach hail patterns, and 2000s-era construction." },
+  { n: "03", title: "Approve & Get It Done", body: "Compare vetted quotes, book your pro, and follow progress in real-time — no chasing, no surprises." },
 ];
 
 const pros = [
-  { name: "Dana P.", trade: "Roofing & Hail Damage", rating: "4.9″, jobs: 257, note: "South Tarrant County's top hail damage inspector — knows the southwest approach patterns cold." },
-  { name: "Ray S.", trade: "Drainage & Foundation", rating: "4.8″, jobs: 192, note: "Designs drainage solutions for Cedar Hill escarpment runoff and clay-soil lots." },
-  { name: "Mia C.", trade: "HVAC & Home Systems", rating: "4.9″, jobs: 178, note: "Specializes in first-maintenance-cycle tune-ups for 2000s–2010s Burleson builds." },
+  { name: "Dana P.", trade: "Roofing & Hail Damage", rating: "4.9", jobs: 257, note: "South Tarrant County's top hail damage inspector — knows the southwest approach patterns cold." },
+  { name: "Ray S.", trade: "Drainage & Foundation", rating: "4.8", jobs: 192, note: "Designs drainage solutions for Cedar Hill escarpment runoff and clay-soil lots." },
+  { name: "Mia C.", trade: "HVAC & Home Systems", rating: "4.9", jobs: 178, note: "Specializes in first-maintenance-cycle tune-ups for 2000s–2010s Burleson builds." },
 ];
 
 const testimonials = [
@@ -66,10 +66,10 @@ export default function TrustyProBurleson() {
       </section>
 
       {/* Stats Bar */}
-      <section style={{ background: "#fff", borderBottom: "1px solid #E2E8F0″ }}>
+      <section style={{ background: "#fff", borderBottom: "1px solid #E2E8F0" }}>
         <div style={{ maxWidth: 900, margin: "0 auto", display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(180px, 1fr))", padding: "0 24px" }}>
           {stats.map(s => (
-            <div key={s.label} style={{ textAlign: "center", padding: "28px 16px", borderRight: "1px solid #E2E8F0″ }}>
+            <div key={s.label} style={{ textAlign: "center", padding: "28px 16px", borderRight: "1px solid #E2E8F0" }}>
               <div style={{ fontSize: 28, fontWeight: 800, color: INDIGO }}>{s.value}</div>
               <div style={{ fontSize: 12, color: "#64748B", marginTop: 4, lineHeight: 1.4 }}>{s.label}</div>
             </div>
@@ -85,7 +85,7 @@ export default function TrustyProBurleson() {
             <div key={s.n} style={{ background: "#fff", borderRadius: 16, padding: 32, boxShadow: "0 2px 12px rgba(0,0,0,0.06)" }}>
               <div style={{ fontSize: 40, fontWeight: 900, color: INDIGO, opacity: 0.15, lineHeight: 1 }}>{s.n}</div>
               <h3 style={{ fontSize: 18, fontWeight: 700, margin: "8px 0 10px" }}>{s.title}</h3>
-              <p style={{ fontSize: 14, color: "#475569″, lineHeight: 1.7, margin: 0 }}>{s.body}</p>
+              <p style={{ fontSize: 14, color: "#475569", lineHeight: 1.7, margin: 0 }}>{s.body}</p>
             </div>
           ))}
         </div>
@@ -110,7 +110,7 @@ export default function TrustyProBurleson() {
                   <span style={{ fontSize: 13, fontWeight: 600, color: AMBER }}>★ {p.rating}</span>
                   <span style={{ fontSize: 13, color: "#64748B" }}>{p.jobs} jobs</span>
                 </div>
-                <p style={{ fontSize: 13, color: "#475569″, lineHeight: 1.6, margin: 0 }}>{p.note}</p>
+                <p style={{ fontSize: 13, color: "#475569", lineHeight: 1.6, margin: 0 }}>{p.note}</p>
               </div>
             ))}
           </div>
@@ -124,7 +124,7 @@ export default function TrustyProBurleson() {
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))", gap: 24 }}>
             {testimonials.map(t => (
               <div key={t.name} style={{ background: "#fff", borderRadius: 16, padding: 28, boxShadow: "0 2px 12px rgba(0,0,0,0.06)", borderTop: `4px solid ${INDIGO}` }}>
-                <p style={{ fontSize: 15, fontStyle: "italic", lineHeight: 1.7, marginBottom: 16, color: "#334155″ }}>"{t.quote}"</p>
+                <p style={{ fontSize: 15, fontStyle: "italic", lineHeight: 1.7, marginBottom: 16, color: "#334155" }}>"{t.quote}"</p>
                 <div style={{ fontWeight: 700, fontSize: 14 }}>{t.name}</div>
                 <div style={{ fontSize: 12, color: "#64748B" }}>{t.area}</div>
               </div>
@@ -141,7 +141,7 @@ export default function TrustyProBurleson() {
             {faqs.map(f => (
               <div key={f.q} style={{ borderLeft: `4px solid ${INDIGO}`, paddingLeft: 20 }}>
                 <div style={{ fontWeight: 700, fontSize: 16, marginBottom: 6 }}>{f.q}</div>
-                <div style={{ fontSize: 14, color: "#475569″, lineHeight: 1.7 }}>{f.a}</div>
+                <div style={{ fontSize: 14, color: "#475569", lineHeight: 1.7 }}>{f.a}</div>
               </div>
             ))}
           </div>

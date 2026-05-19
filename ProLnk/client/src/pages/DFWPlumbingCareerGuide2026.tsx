@@ -37,7 +37,7 @@ export default function DFWPlumbingCareerGuide2026() {
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 12 }}>
             {[['$72K', 'Avg Journeyman Salary'], ['$120K+', 'Top Master Plumber Earnings'], ['2,800+', 'DFW Plumbing Job Openings']].map(([val, lbl], i) => (
               <div key={i} style={{ textAlign: 'center', background: '#0A1628', borderRadius: 8, padding: '14px 8px' }}>
-                <div style={{ fontSize: 22, fontWeight: 800, color: '#F5E642′ }}>{val}</div>
+                <div style={{ fontSize: 22, fontWeight: 800, color: '#F5E642' }}>{val}</div>
                 <div style={{ color: '#8fa3c0', fontSize: 12, marginTop: 4 }}>{lbl}</div>
               </div>
             ))}
@@ -48,14 +48,14 @@ export default function DFWPlumbingCareerGuide2026() {
           <div style={{ fontSize: 18, fontWeight: 700, color: '#fff', marginBottom: 16 }}>🗺️ Your DFW Plumbing Career Path</div>
           <div style={{ display: 'flex', gap: 10, flexWrap: 'wrap', marginBottom: 20 }}>
             {paths.map((p, i) => (
-              <button key={i} onClick={() => setSelected(i)} style={{ padding: '8px 16px', borderRadius: 20, border: 'none', cursor: 'pointer', fontSize: 13, fontWeight: 600, background: selected === i ? '#F5E642′ : '#1e3a5f', color: selected === i ? '#0A1628' : '#fff' }}>{p.label}</button>
+              <button key={i} onClick={() => setSelected(i)} style={{ padding: '8px 16px', borderRadius: 20, border: 'none', cursor: 'pointer', fontSize: 13, fontWeight: 600, background: selected === i ? '#F5E642' : '#1e3a5f', color: selected === i ? '#0A1628' : '#fff' }}>{p.label}</button>
             ))}
           </div>
           <div style={{ display: 'flex', gap: 8, alignItems: 'center', flexWrap: 'wrap' }}>
             {paths[selected].steps.map((s, i) => (
               <div key={i} style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
                 <div style={{ background: '#0A1628', borderRadius: 8, padding: '8px 14px', color: '#F5E642', fontWeight: 600, fontSize: 13 }}>{s}</div>
-                {i < paths[selected].steps.length - 1 && <span style={{ color: '#F5E642′ }}>→</span>}
+                {i < paths[selected].steps.length - 1 && <span style={{ color: '#F5E642' }}>→</span>}
               </div>
             ))}
           </div>

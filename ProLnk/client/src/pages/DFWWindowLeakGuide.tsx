@@ -23,7 +23,7 @@ const SYMPTOMS = [
     repairType: 'Weatherstrip Replacement',
     costRange: '$15–60 DIY · $80–180 pro',
     timeframe: 'Fix before summer — every gap adds to cooling load',
-    notes: 'DFW summer air leaks are expensive. One 1/8″ gap around a window is equivalent to a 2.4″ diameter hole in your wall.',
+    notes: 'DFW summer air leaks are expensive. One 1/8" gap around a window is equivalent to a 2.4" diameter hole in your wall.',
   },
   {
     id: 'water_infiltration',
@@ -103,7 +103,7 @@ export default function DFWWindowLeakGuide() {
               <div key={s.id}
                 onClick={() => setSelectedSymptom(s.id)}
                 style={{
-                  background: selectedSymptom === s.id ? '#131F33′ : '#0A1628',
+                  background: selectedSymptom === s.id ? '#131F33' : '#0A1628',
                   border: `2px solid ${selectedSymptom === s.id ? '#F5E642' : '#2D3F57'}`,
                   borderRadius: 10, padding: 14, cursor: 'pointer'
                 }}>
@@ -151,7 +151,7 @@ export default function DFWWindowLeakGuide() {
           <div style={{ overflowX: 'auto' }}>
             <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: 14 }}>
               <thead>
-                <tr style={{ color: '#94A3B8', borderBottom: '1px solid #2D3F57′ }}>
+                <tr style={{ color: '#94A3B8', borderBottom: '1px solid #2D3F57' }}>
                   {['Condition', 'Recommendation', 'Reasoning'].map(h => (
                     <th key={h} style={{ textAlign: 'left', paddingBottom: 10, paddingRight: 16 }}>{h}</th>
                   ))}
@@ -167,7 +167,7 @@ export default function DFWWindowLeakGuide() {
                 ].map(row => (
                   <tr key={row[0]} style={{ borderBottom: '1px solid #16213A' }}>
                     {row.map((cell, i) => (
-                      <td key={i} style={{ padding: '10px 16px 10px 0', color: i === 0 ? '#E8EDF4′ : '#94A3B8', lineHeight: 1.4 }}>{cell}</td>
+                      <td key={i} style={{ padding: '10px 16px 10px 0', color: i === 0 ? '#E8EDF4' : '#94A3B8', lineHeight: 1.4 }}>{cell}</td>
                     ))}
                   </tr>
                 ))}

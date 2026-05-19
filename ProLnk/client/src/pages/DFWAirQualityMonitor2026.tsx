@@ -36,14 +36,14 @@ export default function DFWAirQualityMonitor2026() {
   const active = concerns.find(c => c.id === selected);
 
   return (
-    <div style={{ background: '#0A1628', minHeight: '100vh', padding: '32px 24px', fontFamily: 'system-ui, sans-serif', color: '#E8EDF5′ }}>
+    <div style={{ background: '#0A1628', minHeight: '100vh', padding: '32px 24px', fontFamily: 'system-ui, sans-serif', color: '#E8EDF5' }}>
       <div style={{ maxWidth: 720, margin: '0 auto' }}>
         <div style={{ background: '#F5E642', color: '#0A1628', borderRadius: 8, padding: '6px 14px', display: 'inline-block', fontSize: 12, fontWeight: 700, marginBottom: 16 }}>DFW HOME HEALTH 2026</div>
         <h1 style={{ fontSize: 28, fontWeight: 800, marginBottom: 8 }}>📡 DFW Air Quality Monitor Guide</h1>
-        <p style={{ color: '#8899BB', marginBottom: 32 }}>You can't fix what you can’t measure. DFW homes face unique threats — cedar pollen, ozone, wildfire smoke drift, and radon in slab foundations. A $150–300 monitor gives you real-time data to act on.</p>
+        <p style={{ color: '#8899BB', marginBottom: 32 }}>You can't fix what you can't measure. DFW homes face unique threats — cedar pollen, ozone, wildfire smoke drift, and radon in slab foundations. A $150–300 monitor gives you real-time data to act on.</p>
 
         <div style={{ background: '#111E35', borderRadius: 10, padding: 24, marginBottom: 24 }}>
-          <h2 style={{ fontSize: 16, fontWeight: 700, marginBottom: 16, color: '#F5E642′ }}>📊 What to Measure — Key Thresholds</h2>
+          <h2 style={{ fontSize: 16, fontWeight: 700, marginBottom: 16, color: '#F5E642' }}>📊 What to Measure — Key Thresholds</h2>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 10 }}>
             {metrics.map(m => (
               <div key={m.name} style={{ background: '#0A1628', borderRadius: 8, padding: 14, textAlign: 'center' }}>
@@ -58,21 +58,21 @@ export default function DFWAirQualityMonitor2026() {
         </div>
 
         <div style={{ background: '#111E35', borderRadius: 10, padding: 24, marginBottom: 32 }}>
-          <h2 style={{ fontSize: 18, fontWeight: 700, marginBottom: 16, color: '#F5E642′ }}>🎯 My Concern → Monitor + Action Thresholds</h2>
+          <h2 style={{ fontSize: 18, fontWeight: 700, marginBottom: 16, color: '#F5E642' }}>🎯 My Concern → Monitor + Action Thresholds</h2>
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: 10, marginBottom: 20 }}>
             {concerns.map(c => (
               <button key={c.id} onClick={() => setSelected(c.id === selected ? null : c.id)}
-                style={{ background: selected === c.id ? '#F5E642′ : '#1C2E4A', color: selected === c.id ? '#0A1628' : '#E8EDF5', border: ’none', borderRadius: 8, padding: '10px 16px', cursor: 'pointer', fontWeight: 600 }}>
+                style={{ background: selected === c.id ? '#F5E642' : '#1C2E4A', color: selected === c.id ? '#0A1628' : '#E8EDF5', border: 'none', borderRadius: 8, padding: '10px 16px', cursor: 'pointer', fontWeight: 600 }}>
                 {c.label}
               </button>
             ))}
           </div>
           {active && (
             <div style={{ background: '#0A1628', borderRadius: 8, padding: 16 }}>
-              <div style={{ fontWeight: 700, marginBottom: 10, color: '#F5E642′ }}>Recommended monitors:</div>
-              {active.monitors.map((m, i) => <div key={i} style={{ fontSize: 14, marginBottom: 6, paddingLeft: 12, borderLeft: '2px solid #F5E642′ }}>📦 {m}</div>)}
-              <div style={{ fontWeight: 700, margin: '16px 0 10px', color: '#F5E642′ }}>Action thresholds:</div>
-              {active.thresholds.map((t, i) => <div key={i} style={{ fontSize: 14, marginBottom: 6, paddingLeft: 12, borderLeft: '2px solid #E57373', color: '#E8EDF5′ }}>{t}</div>)}
+              <div style={{ fontWeight: 700, marginBottom: 10, color: '#F5E642' }}>Recommended monitors:</div>
+              {active.monitors.map((m, i) => <div key={i} style={{ fontSize: 14, marginBottom: 6, paddingLeft: 12, borderLeft: '2px solid #F5E642' }}>📦 {m}</div>)}
+              <div style={{ fontWeight: 700, margin: '16px 0 10px', color: '#F5E642' }}>Action thresholds:</div>
+              {active.thresholds.map((t, i) => <div key={i} style={{ fontSize: 14, marginBottom: 6, paddingLeft: 12, borderLeft: '2px solid #E57373', color: '#E8EDF5' }}>{t}</div>)}
             </div>
           )}
         </div>

@@ -1,9 +1,9 @@
 import { useState } from 'react';
 
 const militaryBases = [
-  { name: 'NAS Fort Worth JRB', branch: 'Navy/Air Force', city: 'Fort Worth', bah: '$1,847′ },
-  { name: 'Dyess AFB', branch: 'Air Force', city: 'Abilene (2hr)', bah: '$1,654′ },
-  { name: 'Sheppard AFB', branch: 'Air Force', city: 'Wichita Falls (2hr)', bah: '$1,512′ },
+  { name: 'NAS Fort Worth JRB', branch: 'Navy/Air Force', city: 'Fort Worth', bah: '$1,847' },
+  { name: 'Dyess AFB', branch: 'Air Force', city: 'Abilene (2hr)', bah: '$1,654' },
+  { name: 'Sheppard AFB', branch: 'Air Force', city: 'Wichita Falls (2hr)', bah: '$1,512' },
 ];
 
 const stayLengths = ['Under 1 year', '1–2 years', '3+ years (stable orders)'];
@@ -40,7 +40,7 @@ export default function DFWMilitaryFamilyHomeGuide() {
       <div style={{ maxWidth: 820, margin: '0 auto' }}>
         <div style={{ textAlign: 'center', marginBottom: '2.5rem' }}>
           <div style={{ fontSize: '3rem' }}>🎖️</div>
-          <h1 style={{ fontSize: '2.2rem', color: '#F5E642', margin: '0.5rem 0′ }}>DFW Military Family Home Guide</h1>
+          <h1 style={{ fontSize: '2.2rem', color: '#F5E642', margin: '0.5rem 0' }}>DFW Military Family Home Guide</h1>
           <p style={{ color: '#8A9BB5', fontSize: '1.05rem' }}>Serving those who serve — VA loans, base proximity, and DFW military community resources</p>
         </div>
 
@@ -74,11 +74,11 @@ export default function DFWMilitaryFamilyHomeGuide() {
             </div>
           </div>
           {result && (
-            <div style={{ marginTop: '1.5rem', background: '#0A1628', borderRadius: 10, padding: '1.2rem', borderLeft: '4px solid #F5E642′ }}>
+            <div style={{ marginTop: '1.5rem', background: '#0A1628', borderRadius: 10, padding: '1.2rem', borderLeft: '4px solid #F5E642' }}>
               <div style={{ fontSize: '1.1rem', fontWeight: 700, color: '#F5E642', marginBottom: '0.8rem' }}>📋 Recommendation: {result.action}</div>
-              <div style={{ marginBottom: 8 }}><span style={{ color: '#5BA4F5′ }}>🏛️ VA Loan: </span>{result.vaDetail}</div>
-              <div style={{ marginBottom: 8 }}><span style={{ color: '#5BA4F5′ }}>📍 DFW Neighborhoods: </span>{result.neighborhoods}</div>
-              <div><span style={{ color: '#5BA4F5′ }}>🤝 Resources: </span>{result.resources}</div>
+              <div style={{ marginBottom: 8 }}><span style={{ color: '#5BA4F5' }}>🏛️ VA Loan: </span>{result.vaDetail}</div>
+              <div style={{ marginBottom: 8 }}><span style={{ color: '#5BA4F5' }}>📍 DFW Neighborhoods: </span>{result.neighborhoods}</div>
+              <div><span style={{ color: '#5BA4F5' }}>🤝 Resources: </span>{result.resources}</div>
             </div>
           )}
         </div>
@@ -87,7 +87,7 @@ export default function DFWMilitaryFamilyHomeGuide() {
           <h2 style={{ color: '#F5E642', marginTop: 0, fontSize: '1.1rem' }}>⭐ DFW Military Community Facts</h2>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0.8rem' }}>
             {['TX waives property tax up to 100% for disabled veterans', 'Hazlewood Act: free college for veterans + dependents', 'SCRA protects active duty from foreclosure & lease breaks', 'DFW has 200,000+ veterans — strong military community', 'VA loans: no PMI, 0% down, competitive rates', 'Fort Worth JRB serves Navy Reserve + Reserve units'].map(f => (
-              <div key={f} style={{ background: '#0A1628', borderRadius: 8, padding: '0.7rem', fontSize: '0.85rem', color: '#8A9BB5′ }}>✅ {f}</div>
+              <div key={f} style={{ background: '#0A1628', borderRadius: 8, padding: '0.7rem', fontSize: '0.85rem', color: '#8A9BB5' }}>✅ {f}</div>
             ))}
           </div>
         </div>

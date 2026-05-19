@@ -53,10 +53,10 @@ export default function DFWRefinanceBreakEvenTool() {
 
         <div style={{ background: '#fff', borderRadius: 12, padding: 24, boxShadow: '0 2px 8px rgba(0,0,0,0.08)', marginBottom: 24 }}>
           {[
-            { label: 'Current Interest Rate (%)', value: currentRate, set: setCurrentRate, placeholder: '7.25′ },
-            { label: 'New Interest Rate (%)', value: newRate, set: setNewRate, placeholder: '6.50′ },
-            { label: 'Remaining Loan Balance ($)', value: loanBalance, set: setLoanBalance, placeholder: '320,000′ },
-            { label: 'Estimated Closing Costs ($)', value: closingCosts, set: setClosingCosts, placeholder: '8,500′ },
+            { label: 'Current Interest Rate (%)', value: currentRate, set: setCurrentRate, placeholder: '7.25' },
+            { label: 'New Interest Rate (%)', value: newRate, set: setNewRate, placeholder: '6.50' },
+            { label: 'Remaining Loan Balance ($)', value: loanBalance, set: setLoanBalance, placeholder: '320,000' },
+            { label: 'Estimated Closing Costs ($)', value: closingCosts, set: setClosingCosts, placeholder: '8,500' },
           ].map(({ label, value, set, placeholder }) => (
             <div key={label} style={{ marginBottom: 16 }}>
               <label style={{ display: 'block', fontWeight: 600, marginBottom: 6, fontSize: 14 }}>{label}</label>
@@ -79,7 +79,7 @@ export default function DFWRefinanceBreakEvenTool() {
 
         {results && (
           <div style={{ background: '#fff', borderRadius: 12, padding: 24, boxShadow: '0 2px 8px rgba(0,0,0,0.08)' }}>
-            <div style={{ background: results.monthlySavings > 0 ? '#F0FDF4′ : '#FEF2F2', borderRadius: 8, padding: '12px 16px', marginBottom: 20, fontWeight: 600, fontSize: 15 }}>
+            <div style={{ background: results.monthlySavings > 0 ? '#F0FDF4' : '#FEF2F2', borderRadius: 8, padding: '12px 16px', marginBottom: 20, fontWeight: 600, fontSize: 15 }}>
               {results.recommendation}
             </div>
             {[
@@ -89,9 +89,9 @@ export default function DFWRefinanceBreakEvenTool() {
               { label: 'Break-Even Point', value: results.breakEvenMonths < 999 ? `${results.breakEvenMonths} months` : 'N/A' },
               { label: '5-Year Net Savings', value: fmt(results.fiveYearSavings), highlight: results.fiveYearSavings > 0 },
             ].map(({ label, value, highlight }) => (
-              <div key={label} style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '10px 0', borderBottom: '1px solid #F3F4F6′ }}>
+              <div key={label} style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '10px 0', borderBottom: '1px solid #F3F4F6' }}>
                 <span style={{ fontWeight: 500 }}>{label}</span>
-                <span style={{ fontWeight: 700, fontSize: 17, background: highlight ? '#F5E642′ : ’transparent', padding: highlight ? '2px 8px' : '0', borderRadius: 4 }}>{value}</span>
+                <span style={{ fontWeight: 700, fontSize: 17, background: highlight ? '#F5E642' : 'transparent', padding: highlight ? '2px 8px' : '0', borderRadius: 4 }}>{value}</span>
               </div>
             ))}
           </div>

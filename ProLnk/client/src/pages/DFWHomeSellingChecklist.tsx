@@ -122,7 +122,7 @@ export default function DFWHomeSellingChecklist() {
             <div style={{ background: '#F5E642', borderRadius: 99, height: 12, width: `${overallPct}%`, transition: 'width 0.4s' }} />
           </div>
           {overallPct === 100 && (
-            <p style={{ color: '#059669', fontWeight: 700, textAlign: 'center', margin: '10px 0 0′ }}>
+            <p style={{ color: '#059669', fontWeight: 700, textAlign: 'center', margin: '10px 0 0' }}>
               Ready to list — time to sell!
             </p>
           )}
@@ -139,7 +139,7 @@ export default function DFWHomeSellingChecklist() {
                   background: activePhase === phase.label ? phase.color : '#fff',
                   border: `2px solid ${activePhase === phase.label ? phase.color : '#dde3ea'}`,
                   borderRadius: 8, padding: '7px 12px', cursor: 'pointer',
-                  color: activePhase === phase.label ? '#0A1628′ : '#5a6a7a',
+                  color: activePhase === phase.label ? '#0A1628' : '#5a6a7a',
                   fontWeight: 700, fontSize: 12,
                 }}
               >
@@ -150,7 +150,7 @@ export default function DFWHomeSellingChecklist() {
         </div>
 
         <div style={{ background: '#fff', borderRadius: 12, padding: 20, boxShadow: '0 2px 8px rgba(0,0,0,0.08)' }}>
-          <h2 style={{ margin: '0 0 4px', fontSize: 18, fontWeight: 800, color: '#0A1628′ }}>
+          <h2 style={{ margin: '0 0 4px', fontSize: 18, fontWeight: 800, color: '#0A1628' }}>
             {currentPhase.emoji} {currentPhase.label}
           </h2>
           <p style={{ margin: '0 0 12px', color: '#5a6a7a', fontSize: 13 }}>{currentPhase.desc}</p>
@@ -173,7 +173,7 @@ export default function DFWHomeSellingChecklist() {
                 }}>
                   {checked[key] ? '✓' : ''}
                 </div>
-                <span style={{ fontSize: 14, color: checked[key] ? '#9aabb8′ : '#1a2a3a', textDecoration: checked[key] ? ’line-through' : 'none', lineHeight: 1.5 }}>
+                <span style={{ fontSize: 14, color: checked[key] ? '#9aabb8' : '#1a2a3a', textDecoration: checked[key] ? 'line-through' : 'none', lineHeight: 1.5 }}>
                   {task}
                 </span>
               </div>
@@ -181,7 +181,7 @@ export default function DFWHomeSellingChecklist() {
           })}
 
           {phaseDone === currentPhase.tasks.length && (
-            <p style={{ color: '#059669', fontWeight: 700, textAlign: 'center', margin: '14px 0 0′ }}>
+            <p style={{ color: '#059669', fontWeight: 700, textAlign: 'center', margin: '14px 0 0' }}>
               {currentPhase.emoji} Phase complete!
             </p>
           )}

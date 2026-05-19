@@ -17,7 +17,7 @@ export default function DFWHomeAuditGuide() {
   const yearsSince = lastAudit ? new Date().getFullYear() - parseInt(lastAudit) : 99;
 
   const urgency = yearsSince > 2 ? 'HIGH' : yearsSince > 1 ? 'MODERATE' : 'ROUTINE';
-  const urgencyColor = urgency === 'HIGH' ? '#ef4444′ : urgency === ’MODERATE' ? '#f59e0b' : '#22c55e';
+  const urgencyColor = urgency === 'HIGH' ? '#ef4444' : urgency === 'MODERATE' ? '#f59e0b' : '#22c55e';
 
   const priorityItems: string[] = [];
   if (age > 20) priorityItems.push('🔴 Electrical panel inspection — 20+ year home');
@@ -42,11 +42,11 @@ export default function DFWHomeAuditGuide() {
           <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap' }}>
             <div style={{ flex: 1, minWidth: 140 }}>
               <label style={{ color: '#94a3b8', fontSize: 13, display: 'block', marginBottom: 6 }}>HOME AGE (years)</label>
-              <input type="number" value={homeAge} onChange={e => setHomeAge(e.target.value)} placeholder="e.g. 18″ style={{ backgroundColor: '#0A1628', color: '#fff', border: '1px solid #1e3a5f', borderRadius: 8, padding: '8px 12px', width: '100%', boxSizing: 'border-box' }} />
+              <input type="number" value={homeAge} onChange={e => setHomeAge(e.target.value)} placeholder="e.g. 18" style={{ backgroundColor: '#0A1628', color: '#fff', border: '1px solid #1e3a5f', borderRadius: 8, padding: '8px 12px', width: '100%', boxSizing: 'border-box' }} />
             </div>
             <div style={{ flex: 1, minWidth: 140 }}>
               <label style={{ color: '#94a3b8', fontSize: 13, display: 'block', marginBottom: 6 }}>LAST AUDIT YEAR</label>
-              <input type="number" value={lastAudit} onChange={e => setLastAudit(e.target.value)} placeholder="e.g. 2023″ style={{ backgroundColor: '#0A1628', color: '#fff', border: '1px solid #1e3a5f', borderRadius: 8, padding: '8px 12px', width: '100%', boxSizing: 'border-box' }} />
+              <input type="number" value={lastAudit} onChange={e => setLastAudit(e.target.value)} placeholder="e.g. 2023" style={{ backgroundColor: '#0A1628', color: '#fff', border: '1px solid #1e3a5f', borderRadius: 8, padding: '8px 12px', width: '100%', boxSizing: 'border-box' }} />
             </div>
           </div>
           {(homeAge || lastAudit) && (
@@ -76,8 +76,8 @@ export default function DFWHomeAuditGuide() {
               {section.items.map(item => {
                 const key = `${section.id}-${item}`;
                 return (
-                  <div key={key} onClick={() => toggle(key)} style={{ display: 'flex', gap: 10, alignItems: 'center', padding: '6px 0', cursor: 'pointer', borderBottom: '1px solid #0A1628′ }}>
-                    <div style={{ width: 18, height: 18, borderRadius: 4, border: '2px solid #F5E642', backgroundColor: checked.has(key) ? '#F5E642′ : ’transparent', flexShrink: 0, display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 12, color: '#0A1628', fontWeight: 700 }}>{checked.has(key) ? '✓' : ''}</div>
+                  <div key={key} onClick={() => toggle(key)} style={{ display: 'flex', gap: 10, alignItems: 'center', padding: '6px 0', cursor: 'pointer', borderBottom: '1px solid #0A1628' }}>
+                    <div style={{ width: 18, height: 18, borderRadius: 4, border: '2px solid #F5E642', backgroundColor: checked.has(key) ? '#F5E642' : 'transparent', flexShrink: 0, display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 12, color: '#0A1628', fontWeight: 700 }}>{checked.has(key) ? '✓' : ''}</div>
                     <span style={{ color: checked.has(key) ? '#64748b' : '#e2e8f0', fontSize: 14, textDecoration: checked.has(key) ? 'line-through' : 'none' }}>{item}</span>
                   </div>
                 );

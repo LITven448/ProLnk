@@ -24,9 +24,9 @@ export default function DFWProLnkOvernightSummary2026() {
 
   const stats = [
     { label: 'Total Pages', value: '5,000+' },
-    { label: 'Added Overnight', value: '228′ },
-    { label: 'Batches Completed', value: '38′ },
-    { label: 'Charter Applications', value: '~450′ },
+    { label: 'Added Overnight', value: '228' },
+    { label: 'Batches Completed', value: '38' },
+    { label: 'Charter Applications', value: '~450' },
   ];
 
   return (
@@ -38,23 +38,23 @@ export default function DFWProLnkOvernightSummary2026() {
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: 12, marginBottom: 32 }}>
           {stats.map(s => (
             <div key={s.label} style={{ background: '#0f1f38', borderRadius: 12, padding: 20, border: '1px solid #1e3a5f', textAlign: 'center' }}>
-              <div style={{ fontSize: 32, fontWeight: 900, color: '#F5E642′ }}>{s.value}</div>
+              <div style={{ fontSize: 32, fontWeight: 900, color: '#F5E642' }}>{s.value}</div>
               <div style={{ fontSize: 12, color: '#94a3b8', marginTop: 4 }}>{s.label}</div>
             </div>
           ))}
         </div>
         <div style={{ background: '#0f1f38', borderRadius: 12, padding: 24, border: '1px solid #1e3a5f', marginBottom: 24 }}>
-          <div style={{ fontWeight: 700, marginBottom: 16, color: '#F5E642′ }}>👤 View summary for your role</div>
+          <div style={{ fontWeight: 700, marginBottom: 16, color: '#F5E642' }}>👤 View summary for your role</div>
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8, marginBottom: 16 }}>
             {[['investor', '📈 Investor'], ['pro', '🔧 Service Pro'], ['homeowner', '🏡 Homeowner'], ['team', '⚙️ Team']].map(([v, l]) => (
-              <button key={v} onClick={() => setRole(v)} style={{ padding: '8px 16px', borderRadius: 20, border: '1px solid #1e3a5f', background: role === v ? '#F5E642′ : '#0A1628', color: role === v ? '#0A1628' : '#fff', cursor: ’pointer', fontWeight: 600, fontSize: 13 }}>
+              <button key={v} onClick={() => setRole(v)} style={{ padding: '8px 16px', borderRadius: 20, border: '1px solid #1e3a5f', background: role === v ? '#F5E642' : '#0A1628', color: role === v ? '#0A1628' : '#fff', cursor: 'pointer', fontWeight: 600, fontSize: 13 }}>
                 {l}
               </button>
             ))}
           </div>
           {role && summaries[role] && (
-            <div style={{ padding: 16, background: '#0A1628', borderRadius: 8, border: '1px solid #F5E642′ }}>
-              <div style={{ fontWeight: 700, marginBottom: 12, color: '#F5E642′ }}>{summaries[role].headline}</div>
+            <div style={{ padding: 16, background: '#0A1628', borderRadius: 8, border: '1px solid #F5E642' }}>
+              <div style={{ fontWeight: 700, marginBottom: 12, color: '#F5E642' }}>{summaries[role].headline}</div>
               <ul style={{ margin: 0, paddingLeft: 18, color: '#cbd5e1', lineHeight: 1.9 }}>
                 {summaries[role].points.map((p, i) => <li key={i}>{p}</li>)}
               </ul>

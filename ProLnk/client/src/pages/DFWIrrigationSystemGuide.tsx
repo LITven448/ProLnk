@@ -69,13 +69,13 @@ export default function DFWIrrigationSystemGuide() {
               <div style={{ fontSize: 28, marginBottom: 8 }}>{s.icon}</div>
               <h3 style={{ color: '#F5E642', fontSize: 16, fontWeight: 700, marginBottom: 8 }}>{s.type}</h3>
               <div style={{ fontSize: 13, color: '#94A3B8', marginBottom: 6 }}>
-                <span style={{ color: '#4ADE80′ }}>Efficiency:</span> {s.efficiency}
+                <span style={{ color: '#4ADE80' }}>Efficiency:</span> {s.efficiency}
               </div>
               <div style={{ fontSize: 13, color: '#94A3B8', marginBottom: 6 }}>
                 <span style={{ color: '#60A5FA' }}>Best for:</span> {s.bestFor}
               </div>
               <div style={{ fontSize: 13, color: '#94A3B8', marginBottom: 6 }}>
-                <span style={{ color: '#F5E642′ }}>Cost:</span> {s.cost}
+                <span style={{ color: '#F5E642' }}>Cost:</span> {s.cost}
               </div>
               <div style={{ fontSize: 12, color: '#4ADE80', marginTop: 8, padding: '4px 8px', background: '#0A1628', borderRadius: 6 }}>
                 💧 Saves: {s.waterSavings}
@@ -99,7 +99,7 @@ export default function DFWIrrigationSystemGuide() {
           </div>
         </div>
 
-        <div style={{ background: '#1E2D45', borderRadius: 12, padding: 24, marginBottom: 32, borderLeft: '4px solid #F87171′ }}>
+        <div style={{ background: '#1E2D45', borderRadius: 12, padding: 24, marginBottom: 32, borderLeft: '4px solid #F87171' }}>
           <h2 style={{ color: '#F87171', marginBottom: 16, fontSize: 20 }}>❄️ Winterization — Critical for DFW</h2>
           <p style={{ color: '#CBD5E1', marginBottom: 16, lineHeight: 1.7 }}>
             DFW's winter freezes (especially February ice storms like Winter Storm Uri) can burst irrigation lines 
@@ -110,7 +110,7 @@ export default function DFWIrrigationSystemGuide() {
               <div key={i} style={{ background: '#0A1628', borderRadius: 8, padding: 14, display: 'flex', gap: 12, alignItems: 'flex-start' }}>
                 <span style={{ background: '#F87171', color: '#0A1628', borderRadius: '50%', width: 24, height: 24, display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 12, fontWeight: 800, flexShrink: 0 }}>{i + 1}</span>
                 <div>
-                  <div style={{ fontWeight: 600, color: '#E8EDF5′ }}>{s.step}</div>
+                  <div style={{ fontWeight: 600, color: '#E8EDF5' }}>{s.step}</div>
                   <div style={{ fontSize: 13, color: '#64748B', marginTop: 3 }}>{s.detail}</div>
                 </div>
               </div>
@@ -124,18 +124,18 @@ export default function DFWIrrigationSystemGuide() {
             <table style={{ width: '100%', borderCollapse: 'collapse' }}>
               <thead>
                 <tr>
-                  <th style={{ textAlign: 'left', padding: '10px 14px', color: '#94A3B8', borderBottom: '2px solid #0A1628′ }}>Repair Type</th>
-                  <th style={{ textAlign: 'right', padding: '10px 14px', color: '#F5E642', borderBottom: '2px solid #0A1628′ }}>Cost Estimate</th>
-                  <th style={{ textAlign: 'right', padding: '10px 14px', color: '#94A3B8', borderBottom: '2px solid #0A1628′ }}>Urgency</th>
+                  <th style={{ textAlign: 'left', padding: '10px 14px', color: '#94A3B8', borderBottom: '2px solid #0A1628' }}>Repair Type</th>
+                  <th style={{ textAlign: 'right', padding: '10px 14px', color: '#F5E642', borderBottom: '2px solid #0A1628' }}>Cost Estimate</th>
+                  <th style={{ textAlign: 'right', padding: '10px 14px', color: '#94A3B8', borderBottom: '2px solid #0A1628' }}>Urgency</th>
                 </tr>
               </thead>
               <tbody>
                 {repairCosts.map((r, i) => (
-                  <tr key={i} style={{ borderBottom: '1px solid #0A1628′ }}>
-                    <td style={{ padding: '10px 14px', color: '#CBD5E1′ }}>{r.repair}</td>
+                  <tr key={i} style={{ borderBottom: '1px solid #0A1628' }}>
+                    <td style={{ padding: '10px 14px', color: '#CBD5E1' }}>{r.repair}</td>
                     <td style={{ padding: '10px 14px', textAlign: 'right', color: '#4ADE80', fontWeight: 600 }}>{r.cost}</td>
                     <td style={{ padding: '10px 14px', textAlign: 'right' }}>
-                      <span style={{ background: r.urgency === 'Critical' ? '#7F1D1D' : r.urgency === 'High' ? '#7C2D12′ : '#1E2D45', color: r.urgency === ’Critical' ? '#FCA5A5′ : r.urgency === ’High' ? '#FDBA74′ : '#94A3B8', padding: '3px 10px', borderRadius: 20, fontSize: 12 }}>
+                      <span style={{ background: r.urgency === 'Critical' ? '#7F1D1D' : r.urgency === 'High' ? '#7C2D12' : '#1E2D45', color: r.urgency === 'Critical' ? '#FCA5A5' : r.urgency === 'High' ? '#FDBA74' : '#94A3B8', padding: '3px 10px', borderRadius: 20, fontSize: 12 }}>
                         {r.urgency}
                       </span>
                     </td>
@@ -155,18 +155,18 @@ export default function DFWIrrigationSystemGuide() {
               { label: 'Min/Zone', value: minutesPerZone, setter: setMinutesPerZone, min: 5, max: 60, step: 5 },
             ].map((ctrl, i) => (
               <div key={i}>
-                <label style={{ display: 'block', color: '#94A3B8', marginBottom: 8, fontSize: 14 }}>{ctrl.label}: <strong style={{ color: '#F5E642′ }}>{ctrl.value}</strong></label>
+                <label style={{ display: 'block', color: '#94A3B8', marginBottom: 8, fontSize: 14 }}>{ctrl.label}: <strong style={{ color: '#F5E642' }}>{ctrl.value}</strong></label>
                 <input type="range" min={ctrl.min} max={ctrl.max} step={ctrl.step} value={ctrl.value}
                   onChange={e => ctrl.setter(Number(e.target.value))}
-                  style={{ width: '100%', accentColor: '#F5E642′ }} />
+                  style={{ width: '100%', accentColor: '#F5E642' }} />
               </div>
             ))}
           </div>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(150px, 1fr))', gap: 14 }}>
             {[
               { label: 'Weekly Usage', value: weeklyGallons.toLocaleString(undefined, { maximumFractionDigits: 0 }), unit: 'gallons/wk', color: '#60A5FA' },
-              { label: 'Annual Cost', value: `$${annualCost.toFixed(0)}`, unit: 'per year', color: '#F87171′ },
-              { label: 'Smart Upgrade Saves', value: `$${annualSavings.toFixed(0)}`, unit: '25% reduction', color: '#4ADE80′ },
+              { label: 'Annual Cost', value: `$${annualCost.toFixed(0)}`, unit: 'per year', color: '#F87171' },
+              { label: 'Smart Upgrade Saves', value: `$${annualSavings.toFixed(0)}`, unit: '25% reduction', color: '#4ADE80' },
             ].map((stat, i) => (
               <div key={i} style={{ background: '#0A1628', borderRadius: 10, padding: 16, textAlign: 'center' }}>
                 <div style={{ fontSize: 22, fontWeight: 800, color: stat.color }}>{stat.value}</div>

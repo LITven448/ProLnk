@@ -25,10 +25,10 @@ const JOB = {
   id: 4821,
   status: "In Progress",
   trade: "Plumbing",
-  address: "2847 Maple Ridge Dr, Austin TX 78745″,
+  address: "2847 Maple Ridge Dr, Austin TX 78745",
   homeowner: "Sarah M.",
   service: "Water Heater Replacement",
-  priceRange: "$950 – $1,250″,
+  priceRange: "$950 – $1,250",
   notes: "Water heater is 14 years old, making loud popping noises. Located in garage on south wall. Prefer morning start.",
   currentStep: 2,
   eta: "12 min away",
@@ -51,10 +51,10 @@ export default function FieldJobDetails() {
     >
       {/* Header */}
       <div
-        className="sticky top-0 z-20 flex items-center justify-between px-4 py-3″
+        className="sticky top-0 z-20 flex items-center justify-between px-4 py-3"
         style={{ background: FOS.surface, borderBottom: `1px solid ${FOS.border}` }}
       >
-        <div className="flex items-center gap-2″>
+        <div className="flex items-center gap-2">
           {TRADE_ICONS[JOB.trade] ?? TRADE_ICONS.default}
           <span className="font-bold text-base">Job #{JOB.id}</span>
         </div>
@@ -66,18 +66,18 @@ export default function FieldJobDetails() {
         </span>
       </div>
 
-      <div className="flex flex-col gap-4 px-4 py-4 max-w-sm mx-auto w-full pb-24″>
+      <div className="flex flex-col gap-4 px-4 py-4 max-w-sm mx-auto w-full pb-24">
 
         {/* Job Summary Card */}
-        <div className="rounded-2xl p-4 flex flex-col gap-3″ style={{ background: FOS.surface, border: `1px solid ${FOS.border}` }}>
-          <div className="flex items-start gap-2″>
-            <MapPin size={15} color={FOS.teal} className="mt-0.5 shrink-0″ />
+        <div className="rounded-2xl p-4 flex flex-col gap-3" style={{ background: FOS.surface, border: `1px solid ${FOS.border}` }}>
+          <div className="flex items-start gap-2">
+            <MapPin size={15} color={FOS.teal} className="mt-0.5 shrink-0" />
             <div>
               <p className="text-sm font-semibold">{JOB.address}</p>
-              <p className="text-xs mt-0.5″ style={{ color: FOS.muted }}>{JOB.homeowner} · {JOB.service}</p>
+              <p className="text-xs mt-0.5" style={{ color: FOS.muted }}>{JOB.homeowner} · {JOB.service}</p>
             </div>
           </div>
-          <div className="flex items-center gap-2″>
+          <div className="flex items-center gap-2">
             <DollarSign size={14} color={FOS.lime} />
             <span className="text-sm font-bold" style={{ color: FOS.lime }}>{JOB.priceRange}</span>
           </div>
@@ -91,7 +91,7 @@ export default function FieldJobDetails() {
 
         {/* Navigation */}
         <div className="rounded-2xl p-4 flex items-center justify-between" style={{ background: FOS.surface, border: `1px solid ${FOS.border}` }}>
-          <div className="flex items-center gap-2″>
+          <div className="flex items-center gap-2">
             <Clock size={15} color={FOS.amber} />
             <span className="text-sm font-semibold" style={{ color: FOS.amber }}>{JOB.eta}</span>
           </div>
@@ -108,8 +108,8 @@ export default function FieldJobDetails() {
         </div>
 
         {/* Progress Timeline */}
-        <div className="rounded-2xl p-4″ style={{ background: FOS.surface, border: `1px solid ${FOS.border}` }}>
-          <p className="text-xs font-semibold uppercase tracking-widest mb-4″ style={{ color: FOS.muted }}>Progress</p>
+        <div className="rounded-2xl p-4" style={{ background: FOS.surface, border: `1px solid ${FOS.border}` }}>
+          <p className="text-xs font-semibold uppercase tracking-widest mb-4" style={{ color: FOS.muted }}>Progress</p>
           <div className="relative flex items-start">
             {/* connector line */}
             <div
@@ -124,7 +124,7 @@ export default function FieldJobDetails() {
               const done = i < JOB.currentStep;
               const active = i === JOB.currentStep;
               return (
-                <div key={s.key} className="flex-1 flex flex-col items-center gap-1.5 relative z-10″>
+                <div key={s.key} className="flex-1 flex flex-col items-center gap-1.5 relative z-10">
                   <div
                     className="w-7 h-7 rounded-full flex items-center justify-center"
                     style={{
@@ -153,9 +153,9 @@ export default function FieldJobDetails() {
         </div>
 
         {/* Photo Upload */}
-        <div className="rounded-2xl p-4″ style={{ background: FOS.surface, border: `1px solid ${FOS.border}` }}>
-          <p className="text-xs font-semibold uppercase tracking-widest mb-3″ style={{ color: FOS.muted }}>Job Photos</p>
-          <div className="grid grid-cols-3 gap-2 mb-3″>
+        <div className="rounded-2xl p-4" style={{ background: FOS.surface, border: `1px solid ${FOS.border}` }}>
+          <p className="text-xs font-semibold uppercase tracking-widest mb-3" style={{ color: FOS.muted }}>Job Photos</p>
+          <div className="grid grid-cols-3 gap-2 mb-3">
             {photos.map((_, i) => (
               <div
                 key={i}
@@ -176,7 +176,7 @@ export default function FieldJobDetails() {
         </div>
 
         {/* Check-in Form */}
-        <div className="rounded-2xl p-4 flex flex-col gap-3″ style={{ background: FOS.surface, border: `1px solid ${FOS.border}` }}>
+        <div className="rounded-2xl p-4 flex flex-col gap-3" style={{ background: FOS.surface, border: `1px solid ${FOS.border}` }}>
           <p className="text-xs font-semibold uppercase tracking-widest" style={{ color: FOS.muted }}>Site Check-In</p>
           <textarea
             value={siteNotes}
@@ -211,9 +211,9 @@ export default function FieldJobDetails() {
         </div>
 
         {/* Contact Homeowner */}
-        <div className="rounded-2xl p-4″ style={{ background: FOS.surface, border: `1px solid ${FOS.border}` }}>
-          <p className="text-xs font-semibold uppercase tracking-widest mb-3″ style={{ color: FOS.muted }}>Contact {JOB.homeowner}</p>
-          <div className="flex gap-3″>
+        <div className="rounded-2xl p-4" style={{ background: FOS.surface, border: `1px solid ${FOS.border}` }}>
+          <p className="text-xs font-semibold uppercase tracking-widest mb-3" style={{ color: FOS.muted }}>Contact {JOB.homeowner}</p>
+          <div className="flex gap-3">
             <button
               className="flex-1 py-3 rounded-xl flex items-center justify-center gap-2 text-sm font-semibold"
               style={{ background: FOS.card, border: `1px solid ${FOS.border}`, color: FOS.white }}
@@ -237,9 +237,9 @@ export default function FieldJobDetails() {
           style={{ background: FOS.limeDim, border: `1px solid rgba(232,255,71,0.20)` }}
         >
           <div>
-            <p className="text-xs font-semibold uppercase tracking-widest mb-1″ style={{ color: FOS.faint }}>Estimated Earnings</p>
+            <p className="text-xs font-semibold uppercase tracking-widest mb-1" style={{ color: FOS.faint }}>Estimated Earnings</p>
             <p className="text-2xl font-black" style={{ color: FOS.lime }}>${estimated}</p>
-            <p className="text-xs mt-0.5″ style={{ color: FOS.faint }}>
+            <p className="text-xs mt-0.5" style={{ color: FOS.faint }}>
               ${JOB.gross.toLocaleString()} gross × {JOB.ratePercent}%
             </p>
           </div>

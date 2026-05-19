@@ -32,15 +32,15 @@ function getTargets(ambient: number, refrigerant: string, system: string): Refri
   return {
     superheat: `${shBase - 2}–${shBase + 3}°F`,
     subcooling: `${scBase - 2}–${scBase + 4}°F`,
-    notes: refrigerant === 'r22′ ? ’Legacy R-22 — use R-22 PT chart. Recharge adds 410A adapter cost.' : refrigerant === 'r454b' ? 'R-454B (new install) — use manufacturer PT chart. A2L mildly flammable.' : 'R-410A standard. Use 410A PT chart.'
+    notes: refrigerant === 'r22' ? 'Legacy R-22 — use R-22 PT chart. Recharge adds 410A adapter cost.' : refrigerant === 'r454b' ? 'R-454B (new install) — use manufacturer PT chart. A2L mildly flammable.' : 'R-410A standard. Use 410A PT chart.'
   };
 }
 
 function diagDeviation(shHigh: boolean, scHigh: boolean): DiagResult {
-  if (shHigh && !scHigh) return { diagnosis: 'Likely Undercharged', explanation: 'High superheat + normal/low subcooling = insufficient refrigerant or inlet restriction. Add refrigerant after verifying no leak.', color: '#EF4444′ };
+  if (shHigh && !scHigh) return { diagnosis: 'Likely Undercharged', explanation: 'High superheat + normal/low subcooling = insufficient refrigerant or inlet restriction. Add refrigerant after verifying no leak.', color: '#EF4444' };
   if (!shHigh && scHigh) return { diagnosis: 'Likely Overcharged', explanation: 'Low superheat + high subcooling = too much refrigerant in system. Recover excess charge carefully.', color: '#F59E0B' };
-  if (shHigh && scHigh) return { diagnosis: 'Liquid Line Restriction', explanation: 'High on both sides = restriction between condenser and metering device. Check filter drier, liquid line valve.', color: '#EF4444′ };
-  return { diagnosis: 'Within Normal Range', explanation: 'Both readings normal for ambient conditions. System operating correctly.', color: '#10B981′ };
+  if (shHigh && scHigh) return { diagnosis: 'Liquid Line Restriction', explanation: 'High on both sides = restriction between condenser and metering device. Check filter drier, liquid line valve.', color: '#EF4444' };
+  return { diagnosis: 'Within Normal Range', explanation: 'Both readings normal for ambient conditions. System operating correctly.', color: '#10B981' };
 }
 
 export default function DFWHVACSuperheatSubcooling() {
@@ -61,24 +61,24 @@ export default function DFWHVACSuperheatSubcooling() {
           <p style={{ color: '#94A3B8', fontSize: 15 }}>The two key refrigerant diagnostic measurements every DFW HVAC tech relies on — adjusted for Texas heat</p>
         </div>
         {sections.map((s) => (
-          <div key={s.title} style={{ background: '#0F2140', borderRadius: 12, padding: 20, marginBottom: 16, borderLeft: '4px solid #F5E642′ }}>
+          <div key={s.title} style={{ background: '#0F2140', borderRadius: 12, padding: 20, marginBottom: 16, borderLeft: '4px solid #F5E642' }}>
             <div style={{ fontSize: 24, marginBottom: 8 }}>{s.emoji}</div>
             <h2 style={{ color: '#F5E642', fontSize: 17, fontWeight: 600, margin: '0 0 8px' }}>{s.title}</h2>
             <p style={{ color: '#CBD5E1', fontSize: 14, lineHeight: 1.6, margin: 0 }}>{s.body}</p>
           </div>
         ))}
-        <div style={{ background: '#0F2140', borderRadius: 12, padding: 24, border: '2px solid #F5E642′ }}>
+        <div style={{ background: '#0F2140', borderRadius: 12, padding: 24, border: '2px solid #F5E642' }}>
           <h2 style={{ color: '#F5E642', fontSize: 18, fontWeight: 700, margin: '0 0 20px' }}>🔧 DFW Target Range Calculator</h2>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: 16, marginBottom: 16 }}>
             <div>
               <label style={{ color: '#94A3B8', fontSize: 13, display: 'block', marginBottom: 6 }}>Ambient Temp: {ambient}°F</label>
-              <input type="range" min={65} max={110} value={ambient} onChange={e => setAmbient(Number(e.target.value))} style={{ width: '100%', accentColor: '#F5E642′ }} />
+              <input type="range" min={65} max={110} value={ambient} onChange={e => setAmbient(Number(e.target.value))} style={{ width: '100%', accentColor: '#F5E642' }} />
             </div>
             <div>
               <label style={{ color: '#94A3B8', fontSize: 13, display: 'block', marginBottom: 6 }}>Refrigerant Type</label>
               <select value={refrigerant} onChange={e => setRefrigerant(e.target.value)} style={{ width: '100%', background: '#1E3A5F', color: '#E2E8F0', border: '1px solid #334155', borderRadius: 8, padding: '8px 12px', fontSize: 14 }}>
                 <option value="r410a">R-410A (most common)</option>
-                <option value="r22″>R-22 (legacy)</option>
+                <option value="r22">R-22 (legacy)</option>
                 <option value="r454b">R-454B (new installs)</option>
               </select>
             </div>

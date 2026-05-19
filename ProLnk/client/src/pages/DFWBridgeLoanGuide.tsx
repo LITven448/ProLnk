@@ -62,15 +62,15 @@ export default function DFWBridgeLoanGuide() {
           <div style={{ display: 'grid', gap: '0.75rem', marginBottom: '1rem' }}>
             {[['Current Home Value ($)', homeValue, setHomeValue], ['Your Equity ($)', equity, setEquity], ['Target Purchase Price ($)', purchasePrice, setPurchasePrice]].map(([label, val, setter]: any) => (
               <div key={label}>
-                <label style={{ display: 'block', fontSize: '0.9rem', fontWeight: 600, marginBottom: '0.25rem', color: '#374151′ }}>{label}</label>
-                <input type="number" value={val} onChange={e => setter(e.target.value)} style={{ width: '100%', padding: '0.6rem', borderRadius: '8px', border: '1px solid #d1d5db', fontSize: '1rem', boxSizing: 'border-box' }} placeholder="0″ />
+                <label style={{ display: 'block', fontSize: '0.9rem', fontWeight: 600, marginBottom: '0.25rem', color: '#374151' }}>{label}</label>
+                <input type="number" value={val} onChange={e => setter(e.target.value)} style={{ width: '100%', padding: '0.6rem', borderRadius: '8px', border: '1px solid #d1d5db', fontSize: '1rem', boxSizing: 'border-box' }} placeholder="0" />
               </div>
             ))}
           </div>
           <button onClick={calculate} style={{ backgroundColor: '#F5E642', color: '#1e3a5f', border: 'none', padding: '0.75rem 1.5rem', borderRadius: '8px', fontWeight: 700, fontSize: '1rem', cursor: 'pointer' }}>Calculate Feasibility</button>
           {result && (
-            <div style={{ marginTop: '1rem', padding: '1rem', backgroundColor: result.feasible ? '#ecfdf5′ : '#fef2f2', borderRadius: '8px' }}>
-              <p style={{ fontWeight: 700, color: result.feasible ? '#065f46′ : '#991b1b' }}>{result.feasible ? '✅ Bridge Loan Likely Feasible' : '❌ Bridge Loan May Not Be Approved'}</p>
+            <div style={{ marginTop: '1rem', padding: '1rem', backgroundColor: result.feasible ? '#ecfdf5' : '#fef2f2', borderRadius: '8px' }}>
+              <p style={{ fontWeight: 700, color: result.feasible ? '#065f46' : '#991b1b' }}>{result.feasible ? '✅ Bridge Loan Likely Feasible' : '❌ Bridge Loan May Not Be Approved'}</p>
               <p>Estimated Loan Amount: <strong>${result.loanAmount.toLocaleString('en-US', { maximumFractionDigits: 0 })}</strong></p>
               <p>Est. Monthly Interest Cost: <strong>${result.monthlyCost.toLocaleString('en-US', { maximumFractionDigits: 0 })}/mo</strong></p>
               <p>Risk Level: <strong>{result.risk}</strong></p>

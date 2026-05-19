@@ -46,7 +46,7 @@ export default function DFWFoundationRepairProGuide2026() {
           <h2 style={{ color: '#F5E642', fontSize: 16, fontWeight: 700, margin: '0 0 16px' }}>🗺️ Service Area Market Opportunity</h2>
           <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap', marginBottom: 20 }}>
             {Object.entries(areas).map(([key, val]) => (
-              <button key={key} onClick={() => setArea(key)} style={{ padding: '7px 14px', borderRadius: 8, border: 'none', cursor: 'pointer', fontWeight: 600, fontSize: 12, backgroundColor: area === key ? '#F5E642′ : '#1e3a5f', color: area === key ? '#0A1628' : '#94a3b8' }}>
+              <button key={key} onClick={() => setArea(key)} style={{ padding: '7px 14px', borderRadius: 8, border: 'none', cursor: 'pointer', fontWeight: 600, fontSize: 12, backgroundColor: area === key ? '#F5E642' : '#1e3a5f', color: area === key ? '#0A1628' : '#94a3b8' }}>
                 {val.label}
               </button>
             ))}
@@ -70,7 +70,7 @@ export default function DFWFoundationRepairProGuide2026() {
             </div>
             <div style={{ marginTop: 12, display: 'flex', alignItems: 'center', gap: 8 }}>
               <span style={{ color: '#94a3b8', fontSize: 12 }}>Soil Expansion Risk:</span>
-              <span style={{ color: a.soilRisk === 'Very High' ? '#ef4444′ : '#f59e0b', fontWeight: 700, fontSize: 13 }}>{a.soilRisk}</span>
+              <span style={{ color: a.soilRisk === 'Very High' ? '#ef4444' : '#f59e0b', fontWeight: 700, fontSize: 13 }}>{a.soilRisk}</span>
             </div>
           </div>
         </div>

@@ -10,9 +10,9 @@ const RECOMMENDATIONS: Record<string, Record<string, MulchRec>> = {
     'Full sun (6+ hrs)': {
       type: 'Cedar bark or hardwood shredded mulch',
       depth: '3 inches — critical for DFW summer moisture retention',
-      rate: '1 cubic yard covers ~100 sq ft at 3″ depth',
+      rate: '1 cubic yard covers ~100 sq ft at 3" depth',
       refresh: 'Top-dress annually each spring (March–April) — DFW heat breaks down mulch faster than northern climates',
-      tips: ['Keep mulch 2–3″ away from shrub stems to prevent rot', 'In full DFW sun, mulch can drop soil temps 10–15°F', 'Cedar repels termites and insects — valuable in DFW', 'Budget $40–$80/cubic yard delivered in DFW market'],
+      tips: ['Keep mulch 2–3" away from shrub stems to prevent rot', 'In full DFW sun, mulch can drop soil temps 10–15°F', 'Cedar repels termites and insects — valuable in DFW', 'Budget $40–$80/cubic yard delivered in DFW market'],
     },
     'Partial sun (3–6 hrs)': {
       type: 'Cedar bark — moisture retention less critical, but still recommended',
@@ -24,7 +24,7 @@ const RECOMMENDATIONS: Record<string, Record<string, MulchRec>> = {
     'Full shade (<3 hrs)': {
       type: 'Pine bark nuggets or pine straw — shade beds have different needs',
       depth: '2 inches only — full shade retains moisture naturally',
-      rate: '1 cubic yard covers ~150 sq ft at 2″',
+      rate: '1 cubic yard covers ~150 sq ft at 2"',
       refresh: 'Every 18–24 months in full shade',
       tips: ['Avoid over-mulching in shade — leads to root rot and fungal issues', 'Pine straw is ideal for azaleas and acid-lovers in DFW shade', 'Shaded DFW beds stay cooler — moisture retention less critical'],
     },
@@ -35,7 +35,7 @@ const RECOMMENDATIONS: Record<string, Record<string, MulchRec>> = {
       depth: '3–4 inches in the ring, never touching bark',
       rate: 'Tree ring radius = 1.5x canopy drip line',
       refresh: 'Top-dress each spring — DFW heat degrades faster',
-      tips: ['CRITICAL: Keep mulch 6″ away from tree trunk — "mulch volcanoes" kill DFW trees', 'Mulch ring should extend to drip line for best results', 'DFW clay causes root-circling — mulch softens soil and helps', 'Never use rubber mulch around trees — traps heat and harbors pests'],
+      tips: ['CRITICAL: Keep mulch 6" away from tree trunk — "mulch volcanoes" kill DFW trees', 'Mulch ring should extend to drip line for best results', 'DFW clay causes root-circling — mulch softens soil and helps', 'Never use rubber mulch around trees — traps heat and harbors pests'],
     },
     'Partial sun (3–6 hrs)': {
       type: 'Shredded hardwood — good moisture balance',
@@ -156,7 +156,7 @@ export default function DFWMulchGuide() {
             <div>
               <div style={{ color: '#F5E642', fontSize: 13, fontWeight: 600, marginBottom: 8 }}>📌 DFW-Specific Tips</div>
               {rec.tips.map((tip, i) => (
-                <div key={i} style={{ color: '#cbd5e1', fontSize: 13, marginBottom: 8, paddingLeft: 12, borderLeft: '2px solid #F5E642′ }}>{tip}</div>
+                <div key={i} style={{ color: '#cbd5e1', fontSize: 13, marginBottom: 8, paddingLeft: 12, borderLeft: '2px solid #F5E642' }}>{tip}</div>
               ))}
             </div>
           </div>
@@ -164,7 +164,7 @@ export default function DFWMulchGuide() {
 
         <div style={{ background: '#112240', borderRadius: 12, padding: 20 }}>
           <h2 style={{ color: '#F5E642', fontSize: 16, marginBottom: 12 }}>💰 DFW Mulch Pricing Guide</h2>
-          {[['Cedar bark (bulk)', '$35–$55/cubic yard delivered'], ['Hardwood shredded (bulk)', '$30–$45/cubic yard delivered'], ['Pine bark nuggets', '$40–$60/cubic yard delivered'], ['Rubber mulch', '$100–$150/cubic yard — avoid near trees'], ['Pine straw (bales)', '$5–$8/bale (covers ~30 sq ft at 2″)']].map(([type, price]) => (
+          {[['Cedar bark (bulk)', '$35–$55/cubic yard delivered'], ['Hardwood shredded (bulk)', '$30–$45/cubic yard delivered'], ['Pine bark nuggets', '$40–$60/cubic yard delivered'], ['Rubber mulch', '$100–$150/cubic yard — avoid near trees'], ['Pine straw (bales)', '$5–$8/bale (covers ~30 sq ft at 2")']].map(([type, price]) => (
             <div key={type} style={{ display: 'flex', justifyContent: 'space-between', marginBottom: 8, borderBottom: '1px solid #1e3a5f', paddingBottom: 8 }}>
               <span style={{ color: '#cbd5e1', fontSize: 14 }}>{type}</span>
               <span style={{ color: '#F5E642', fontSize: 14, fontWeight: 600 }}>{price}</span>

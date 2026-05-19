@@ -68,7 +68,7 @@ export default function DFWRenovationROIByZip() {
   const tier = NEIGHBORHOOD_TIERS[selectedTier];
 
   return (
-    <div style={{ background: '#0A1628', minHeight: '100vh', fontFamily: 'system-ui, sans-serif', color: '#e8e8e8′ }}>
+    <div style={{ background: '#0A1628', minHeight: '100vh', fontFamily: 'system-ui, sans-serif', color: '#e8e8e8' }}>
       <div style={{ maxWidth: 900, margin: '0 auto', padding: '48px 24px' }}>
 
         <div style={{ marginBottom: 40 }}>
@@ -105,7 +105,7 @@ export default function DFWRenovationROIByZip() {
           <h2 style={{ fontSize: 18, fontWeight: 700, color: '#fff', marginTop: 0, marginBottom: 6 }}>{tier.tier}</h2>
           <p style={{ color: '#99a', lineHeight: 1.7, margin: '0 0 12px' }}>{tier.note}</p>
           <div style={{ background: 'rgba(245,230,66,0.1)', borderRadius: 8, padding: 14, fontSize: 14, color: '#ccd' }}>
-            <strong style={{ color: '#F5E642′ }}>Real Example:</strong> {tier.liftedExample}
+            <strong style={{ color: '#F5E642' }}>Real Example:</strong> {tier.liftedExample}
           </div>
         </section>
 
@@ -131,11 +131,11 @@ export default function DFWRenovationROIByZip() {
 
         <section style={{ background: 'rgba(245,230,66,0.08)', border: '2px solid #F5E642', borderRadius: 14, padding: 28 }}>
           <h2 style={{ fontSize: 22, fontWeight: 700, marginTop: 0, marginBottom: 20, color: '#fff' }}>🧮 Renovation ROI Calculator</h2>
-          <div style={{ marginBottom: 14, fontSize: 14, color: '#99a' }}>Selected tier: <strong style={{ color: '#F5E642′ }}>{tier.label}</strong> — click a tier above to change</div>
+          <div style={{ marginBottom: 14, fontSize: 14, color: '#99a' }}>Selected tier: <strong style={{ color: '#F5E642' }}>{tier.label}</strong> — click a tier above to change</div>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 14, marginBottom: 18 }}>
             <div>
               <label style={{ fontWeight: 600, fontSize: 14, display: 'block', marginBottom: 6 }}>Current Home Value</label>
-              <input value={homeValue} onChange={e => setHomeValue(e.target.value)} placeholder="e.g. 285000″ style={{ width: '100%', padding: '10px 14px', borderRadius: 8, border: '1px solid rgba(255,255,255,0.2)', background: '#162040', color: '#fff', fontSize: 15, boxSizing: 'border-box' }} />
+              <input value={homeValue} onChange={e => setHomeValue(e.target.value)} placeholder="e.g. 285000" style={{ width: '100%', padding: '10px 14px', borderRadius: 8, border: '1px solid rgba(255,255,255,0.2)', background: '#162040', color: '#fff', fontSize: 15, boxSizing: 'border-box' }} />
             </div>
             <div>
               <label style={{ fontWeight: 600, fontSize: 14, display: 'block', marginBottom: 6 }}>Renovation Scope</label>
@@ -149,10 +149,10 @@ export default function DFWRenovationROIByZip() {
             <div style={{ marginTop: 22, background: 'rgba(0,0,0,0.35)', borderRadius: 10, padding: 22 }}>
               <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 14 }}>
                 {[
-                  { label: 'Reno Cost', value: fmt(result.renovCost), color: '#e88′ },
-                  { label: 'Value Lift', value: fmt(result.lift), color: '#F5E642′ },
+                  { label: 'Reno Cost', value: fmt(result.renovCost), color: '#e88' },
+                  { label: 'Value Lift', value: fmt(result.lift), color: '#F5E642' },
                   { label: 'New Value', value: fmt(result.newValue), color: '#6bf' },
-                  { label: 'Net Profit', value: fmt(result.profit), color: result.profit > 0 ? '#8f8′ : '#e88' },
+                  { label: 'Net Profit', value: fmt(result.profit), color: result.profit > 0 ? '#8f8' : '#e88' },
                 ].map(item => (
                   <div key={item.label} style={{ textAlign: 'center' }}>
                     <div style={{ fontSize: 12, color: '#778', marginBottom: 4 }}>{item.label}</div>
@@ -161,7 +161,7 @@ export default function DFWRenovationROIByZip() {
                 ))}
               </div>
               <div style={{ marginTop: 16, textAlign: 'center', fontSize: 15 }}>
-                Net ROI on renovation capital: <strong style={{ color: result.roi > 0 ? '#8f8′ : '#e88', fontSize: 20 }}>{result.roi}%</strong>
+                Net ROI on renovation capital: <strong style={{ color: result.roi > 0 ? '#8f8' : '#e88', fontSize: 20 }}>{result.roi}%</strong>
               </div>
             </div>
           )}

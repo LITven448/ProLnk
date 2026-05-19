@@ -35,7 +35,7 @@ export default function DFWHomeInventoryGuide() {
         <div style={{ background: '#111D35', borderRadius: 12, padding: 24, marginBottom: 24 }}>
           <h2 style={{ fontSize: 18, fontWeight: 700, color: '#F5E642', marginBottom: 12 }}>⚡ Why DFW Is Urgent</h2>
           {[['Hail is the #1 property claim in DFW', 'March through September is active season — prepare before it starts.'],['Insurers require proof of ownership', 'Without inventory, they estimate low. With inventory, you negotiate from facts.'],['Disasters happen fast', 'A tornado or house fire gives you zero time to document. It must already be done.'],['Claims adjuster visits once', 'You need your documentation ready before they arrive — not after.']].map(([t, d]) => (
-            <div key={t} style={{ borderBottom: '1px solid #1E2D4A', padding: '10px 0′ }}>
+            <div key={t} style={{ borderBottom: '1px solid #1E2D4A', padding: '10px 0' }}>
               <div style={{ fontWeight: 600, color: '#F5E642', fontSize: 14 }}>{t}</div>
               <div style={{ color: '#94A3B8', fontSize: 13 }}>{d}</div>
             </div>
@@ -47,29 +47,29 @@ export default function DFWHomeInventoryGuide() {
           <label style={{ fontWeight: 600, display: 'block', marginBottom: 8 }}>Home Size</label>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 10, marginBottom: 16 }}>
             {sizes.map(s => (
-              <button key={s.key} onClick={() => { setSize(s.key); setResult(approaches[s.key]); }} style={{ background: size === s.key ? '#F5E642′ : '#0A1628', color: size === s.key ? '#0A1628' : '#E8EDF5', border: '1px solid #1E2D4A', borderRadius: 8, padding: '10px 12px', cursor: ’pointer', fontSize: 13, textAlign: 'left', fontWeight: size === s.key ? 700 : 400 }}>{s.label}</button>
+              <button key={s.key} onClick={() => { setSize(s.key); setResult(approaches[s.key]); }} style={{ background: size === s.key ? '#F5E642' : '#0A1628', color: size === s.key ? '#0A1628' : '#E8EDF5', border: '1px solid #1E2D4A', borderRadius: 8, padding: '10px 12px', cursor: 'pointer', fontSize: 13, textAlign: 'left', fontWeight: size === s.key ? 700 : 400 }}>{s.label}</button>
             ))}
           </div>
           <label style={{ fontWeight: 600, display: 'block', marginBottom: 8 }}>High-Value Items (check all that apply)</label>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 8, marginBottom: 8 }}>
             {valuableTypes.map(v => (
-              <button key={v} onClick={() => toggle(v)} style={{ background: hasValuables.includes(v) ? '#F5E642′ : '#0A1628', color: hasValuables.includes(v) ? '#0A1628' : '#E8EDF5', border: '1px solid #1E2D4A', borderRadius: 8, padding: '8px 12px', cursor: ’pointer', fontSize: 12, textAlign: 'left' }}>{v}</button>
+              <button key={v} onClick={() => toggle(v)} style={{ background: hasValuables.includes(v) ? '#F5E642' : '#0A1628', color: hasValuables.includes(v) ? '#0A1628' : '#E8EDF5', border: '1px solid #1E2D4A', borderRadius: 8, padding: '8px 12px', cursor: 'pointer', fontSize: 12, textAlign: 'left' }}>{v}</button>
             ))}
           </div>
-          {hasValuables.length > 0 && <div style={{ background: '#0A1628', borderRadius: 8, padding: 12, marginTop: 8, borderLeft: '3px solid #EF4444′ }}><strong style={{ color: '#EF4444' }}>Note:</strong> <span style={{ color: '#94A3B8', fontSize: 14 }}>High-value items often exceed standard policy limits (,000–2,500 cap per category). Ask your agent about a scheduled personal property rider.</span></div>}
+          {hasValuables.length > 0 && <div style={{ background: '#0A1628', borderRadius: 8, padding: 12, marginTop: 8, borderLeft: '3px solid #EF4444' }}><strong style={{ color: '#EF4444' }}>Note:</strong> <span style={{ color: '#94A3B8', fontSize: 14 }}>High-value items often exceed standard policy limits (,000–2,500 cap per category). Ask your agent about a scheduled personal property rider.</span></div>}
         </div>
 
         {result && (
           <div style={{ background: '#111D35', borderRadius: 12, padding: 24 }}>
-            <div style={{ background: '#0A1628', borderRadius: 8, padding: 12, marginBottom: 16, borderLeft: '4px solid #F5E642′ }}>
-              <div style={{ fontWeight: 700, color: '#F5E642′ }}>⏱️ Estimated Time: {result.time}</div>
+            <div style={{ background: '#0A1628', borderRadius: 8, padding: 12, marginBottom: 16, borderLeft: '4px solid #F5E642' }}>
+              <div style={{ fontWeight: 700, color: '#F5E642' }}>⏱️ Estimated Time: {result.time}</div>
             </div>
             <h3 style={{ color: '#F5E642', fontSize: 16, fontWeight: 700, marginBottom: 8 }}>📹 Approach</h3>
             <p style={{ color: '#E8EDF5', marginBottom: 16 }}>{result.method}</p>
             <h3 style={{ color: '#F5E642', fontSize: 16, fontWeight: 700, marginBottom: 8 }}>📱 Recommended Apps</h3>
-            <ul style={{ paddingLeft: 20, marginBottom: 16 }}>{result.apps.map((a, i) => <li key={i} style={{ marginBottom: 6, color: '#E8EDF5′ }}>{a}</li>)}</ul>
+            <ul style={{ paddingLeft: 20, marginBottom: 16 }}>{result.apps.map((a, i) => <li key={i} style={{ marginBottom: 6, color: '#E8EDF5' }}>{a}</li>)}</ul>
             <h3 style={{ color: '#F5E642', fontSize: 16, fontWeight: 700, marginBottom: 8 }}>💡 DFW-Specific Tips</h3>
-            <ul style={{ paddingLeft: 20 }}>{result.tips.map((t, i) => <li key={i} style={{ marginBottom: 6, color: '#E8EDF5′ }}>{t}</li>)}</ul>
+            <ul style={{ paddingLeft: 20 }}>{result.tips.map((t, i) => <li key={i} style={{ marginBottom: 6, color: '#E8EDF5' }}>{t}</li>)}</ul>
           </div>
         )}
       </div>

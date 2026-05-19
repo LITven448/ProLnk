@@ -65,9 +65,9 @@ export default function DFWExtensionCordSafety() {
             {useOptions.map(o => <option key={o.value} value={o.value}>{o.label}</option>)}
           </select>
           {result && (
-            <div style={{ marginTop: 20, background: '#0A1628', borderRadius: 10, padding: 18, borderLeft: '4px solid #F5E642′ }}>
-              <div style={{ marginBottom: 10 }}><strong style={{ color: '#F5E642′ }}>Recommended Cord:</strong> <span>{result.gauge}</span></div>
-              <div style={{ marginBottom: 10 }}><strong style={{ color: '#FF9944′ }}>Warning:</strong> {result.warning}</div>
+            <div style={{ marginTop: 20, background: '#0A1628', borderRadius: 10, padding: 18, borderLeft: '4px solid #F5E642' }}>
+              <div style={{ marginBottom: 10 }}><strong style={{ color: '#F5E642' }}>Recommended Cord:</strong> <span>{result.gauge}</span></div>
+              <div style={{ marginBottom: 10 }}><strong style={{ color: '#FF9944' }}>Warning:</strong> {result.warning}</div>
               <div><strong style={{ color: '#44BBFF' }}>Better Alternative:</strong> {result.alternative}</div>
             </div>
           )}
@@ -82,7 +82,7 @@ export default function DFWExtensionCordSafety() {
           ].map(item => (
             <div key={item.title} style={{ display: 'flex', gap: 14, marginBottom: 16 }}>
               <span style={{ fontSize: 22, flexShrink: 0 }}>{item.icon}</span>
-              <div><strong style={{ color: '#E8EDF5′ }}>{item.title}:</strong> <span style={{ color: '#8FA3BF' }}>{item.body}</span></div>
+              <div><strong style={{ color: '#E8EDF5' }}>{item.title}:</strong> <span style={{ color: '#8FA3BF' }}>{item.body}</span></div>
             </div>
           ))}
         </div>

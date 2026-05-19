@@ -43,7 +43,7 @@ export default function PartnerBrandingGuide() {
 
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 14, marginBottom: 28 }}>
           {pillars.map((p, i) => (
-            <div key={i} style={{ background: '#fff', borderRadius: 10, padding: '18px', border: '1px solid #E2E8F0′ }}>
+            <div key={i} style={{ background: '#fff', borderRadius: 10, padding: '18px', border: '1px solid #E2E8F0' }}>
               <div style={{ fontSize: 22, marginBottom: 8 }}>{p.icon}</div>
               <div style={{ color: '#0A1628', fontWeight: 700, marginBottom: 6, fontSize: 14 }}>{p.title}</div>
               <div style={{ color: '#64748B', fontSize: 13 }}>{p.desc}</div>
@@ -51,7 +51,7 @@ export default function PartnerBrandingGuide() {
           ))}
         </div>
 
-        <div style={{ background: '#fff', borderRadius: 12, padding: 24, marginBottom: 24, border: '1px solid #E2E8F0′ }}>
+        <div style={{ background: '#fff', borderRadius: 12, padding: 24, marginBottom: 24, border: '1px solid #E2E8F0' }}>
           <h3 style={{ color: '#0A1628', margin: '0 0 14px' }}>✍️ DFW Content Ideas That Build Trust</h3>
           {contentIdeas.map((idea, i) => (
             <div key={i} style={{ display: 'flex', gap: 10, marginBottom: 10, alignItems: 'flex-start' }}>
@@ -64,13 +64,13 @@ export default function PartnerBrandingGuide() {
           ))}
         </div>
 
-        <div style={{ background: '#fff', borderRadius: 12, padding: 24, border: '1px solid #E2E8F0′ }}>
+        <div style={{ background: '#fff', borderRadius: 12, padding: 24, border: '1px solid #E2E8F0' }}>
           <h3 style={{ color: '#0A1628', margin: '0 0 14px' }}>🧭 Your Brand Positioning Statement</h3>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 14, marginBottom: 16 }}>
             <div>
               <label style={{ display: 'block', color: '#374151', fontWeight: 600, marginBottom: 6, fontSize: 14 }}>Your Background</label>
               <select value={background} onChange={e => setBackground(e.target.value)}
-                style={{ width: '100%', padding: '10px 14px', borderRadius: 8, border: '1px solid #CBD5E1', fontSize: 15, color: '#0A1628′ }}>
+                style={{ width: '100%', padding: '10px 14px', borderRadius: 8, border: '1px solid #CBD5E1', fontSize: 15, color: '#0A1628' }}>
                 <option value=''>Select background...</option>
                 <option value='contractor'>Contractor / Trade Pro</option>
                 <option value='homeowner'>Homeowner</option>
@@ -81,7 +81,7 @@ export default function PartnerBrandingGuide() {
             <div>
               <label style={{ display: 'block', color: '#374151', fontWeight: 600, marginBottom: 6, fontSize: 14 }}>Local Online Presence</label>
               <select value={presence} onChange={e => setPresence(e.target.value)}
-                style={{ width: '100%', padding: '10px 14px', borderRadius: 8, border: '1px solid #CBD5E1', fontSize: 15, color: '#0A1628′ }}>
+                style={{ width: '100%', padding: '10px 14px', borderRadius: 8, border: '1px solid #CBD5E1', fontSize: 15, color: '#0A1628' }}>
                 <option value=''>Select level...</option>
                 <option value='high'>High — active on social already</option>
                 <option value='medium'>Medium — some followers, occasional posts</option>

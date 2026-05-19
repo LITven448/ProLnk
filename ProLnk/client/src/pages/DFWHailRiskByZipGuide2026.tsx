@@ -21,14 +21,14 @@ export default function DFWHailRiskByZipGuide2026() {
         <div style={{ background: '#112240', borderRadius: 12, padding: '1.5rem', marginBottom: '2rem' }}>
           <h2 style={{ color: '#F5E642', fontSize: '1.1rem', marginBottom: '0.75rem' }}>🌩️ Typical DFW Storm Track</h2>
           <div style={{ background: '#0A1628', borderRadius: 8, padding: '1rem', color: '#cbd5e1', lineHeight: 1.7 }}>
-            Storms typically enter from the <strong style={{ color: '#F5E642′ }}>southwest</strong> (toward Weatherford/Granbury) and track <strong style={{ color: '#F5E642' }}>northeast</strong> through Fort Worth, Arlington, Dallas, and into the northeast suburbs. Tarrant County sits directly in the primary corridor. Understanding this path helps predict which neighborhoods face maximum exposure each storm season.
+            Storms typically enter from the <strong style={{ color: '#F5E642' }}>southwest</strong> (toward Weatherford/Granbury) and track <strong style={{ color: '#F5E642' }}>northeast</strong> through Fort Worth, Arlington, Dallas, and into the northeast suburbs. Tarrant County sits directly in the primary corridor. Understanding this path helps predict which neighborhoods face maximum exposure each storm season.
           </div>
         </div>
 
-        <h2 style={{ fontSize: '1.1rem', fontWeight: 700, marginBottom: '1rem', color: '#F5E642′ }}>Select your county for hail risk profile:</h2>
+        <h2 style={{ fontSize: '1.1rem', fontWeight: 700, marginBottom: '1rem', color: '#F5E642' }}>Select your county for hail risk profile:</h2>
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0.75rem', marginBottom: '1.5rem' }}>
           {counties.map(c => (
-            <button key={c.id} onClick={() => setSelected(selected === c.id ? null : c.id)} style={{ background: selected === c.id ? '#F5E642′ : '#112240', color: selected === c.id ? '#0A1628' : '#fff', border: ’none', borderRadius: 10, padding: '0.9rem', cursor: 'pointer', textAlign: 'left', fontWeight: 600, fontSize: '0.9rem', transition: 'all 0.2s' }}>{c.label}</button>
+            <button key={c.id} onClick={() => setSelected(selected === c.id ? null : c.id)} style={{ background: selected === c.id ? '#F5E642' : '#112240', color: selected === c.id ? '#0A1628' : '#fff', border: 'none', borderRadius: 10, padding: '0.9rem', cursor: 'pointer', textAlign: 'left', fontWeight: 600, fontSize: '0.9rem', transition: 'all 0.2s' }}>{c.label}</button>
           ))}
         </div>
 
@@ -41,12 +41,12 @@ export default function DFWHailRiskByZipGuide2026() {
             <p style={{ color: '#cbd5e1', lineHeight: 1.7, marginBottom: '1rem' }}>{active.desc}</p>
             <div style={{ background: '#0A1628', borderRadius: 8, padding: '1rem' }}>
               <span style={{ color: '#F5E642', fontWeight: 700 }}>💡 Guidance: </span>
-              <span style={{ color: '#94a3b8′ }}>{active.guidance}</span>
+              <span style={{ color: '#94a3b8' }}>{active.guidance}</span>
             </div>
           </div>
         )}
 
-        <div style={{ background: '#112240', borderRadius: 12, padding: '1.5rem', borderLeft: '4px solid #F5E642′ }}>
+        <div style={{ background: '#112240', borderRadius: 12, padding: '1.5rem', borderLeft: '4px solid #F5E642' }}>
           <h3 style={{ color: '#F5E642', marginBottom: '0.5rem' }}>🔧 Hail Damage? Get ProLnk-Vetted Roofers</h3>
           <p style={{ color: '#94a3b8', lineHeight: 1.6, margin: 0 }}>After a hail event, out-of-state contractors flood DFW neighborhoods. ProLnk only sends licensed, locally-based roofing professionals — no storm chasers, guaranteed.</p>
         </div>

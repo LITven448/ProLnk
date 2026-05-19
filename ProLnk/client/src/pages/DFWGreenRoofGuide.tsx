@@ -40,12 +40,12 @@ export default function DFWGreenRoofGuide() {
       <div style={{ maxWidth: '800px', margin: '0 auto' }}>
         <div style={{ marginBottom: '8px', color: '#F5E642', fontSize: '13px' }}>🏠 ProLnk DFW Roofing Guides</div>
         <h1 style={{ fontSize: '28px', fontWeight: 700, color: '#F5E642', marginBottom: '8px' }}>Green Roof Guide — Dallas/Fort Worth</h1>
-        <p style={{ color: '#9BA3B8', marginBottom: '24px', lineHeight: '1.6′ }}>
+        <p style={{ color: '#9BA3B8', marginBottom: '24px', lineHeight: '1.6' }}>
           Living roofs (green roofs) face unique DFW challenges: intense summer heat, drought stress, heavy rainfall events, and irrigation demands. Where they work in DFW — urban flat roofs in shaded or north-facing areas with irrigation access — they provide excellent stormwater management and urban heat island mitigation.
         </p>
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '16px', marginBottom: '24px' }}>
-          {[{ label: '🌱 Extensive System', val: '2-6″ growing media, sedum only' }, { label: '🌳 Intensive System', val: '6-24″ growing media, full plants' }, { label: '💧 Stormwater', val: 'Retains 50-80% of rainfall' }, { label: '🌡️ DFW Challenge', val: 'Irrigation required May-Sept' }].map(({ label, val }) => (
-            <div key={label} style={{ background: '#111E35', borderRadius: '10px', padding: '16px', border: '1px solid #1E2D47′ }}>
+          {[{ label: '🌱 Extensive System', val: '2-6" growing media, sedum only' }, { label: '🌳 Intensive System', val: '6-24" growing media, full plants' }, { label: '💧 Stormwater', val: 'Retains 50-80% of rainfall' }, { label: '🌡️ DFW Challenge', val: 'Irrigation required May-Sept' }].map(({ label, val }) => (
+            <div key={label} style={{ background: '#111E35', borderRadius: '10px', padding: '16px', border: '1px solid #1E2D47' }}>
               <div style={{ color: '#F5E642', fontSize: '13px', marginBottom: '4px' }}>{label}</div>
               <div style={{ fontWeight: 600', fontSize: '13px' }}>{val}</div>
             </div>
@@ -70,20 +70,20 @@ export default function DFWGreenRoofGuide() {
             </div>
           </div>
           {result && (
-            <div style={{ background: '#0A1628', borderRadius: '10px', padding: '20px', border: '1px solid #F5E642′ }}>
+            <div style={{ background: '#0A1628', borderRadius: '10px', padding: '20px', border: '1px solid #F5E642' }}>
               <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '16px' }}>
                 <div style={{ color: '#F5E642', fontWeight: 700, fontSize: '18px' }}>Feasibility: {result.feasibility}</div>
-                <div style={{ background: result.score >= 60 ? '#166534′ : result.score >= 40 ? '#854D0E' : '#7F1D1D', padding: '4px 12px', borderRadius: '20px', fontSize: '14px', fontWeight: 600 }}>Score: {result.score}/100</div>
+                <div style={{ background: result.score >= 60 ? '#166534' : result.score >= 40 ? '#854D0E' : '#7F1D1D', padding: '4px 12px', borderRadius: '20px', fontSize: '14px', fontWeight: 600 }}>Score: {result.score}/100</div>
               </div>
-              <div style={{ marginBottom: '10px' }}><span style={{ color: '#F5E642′ }}>Assessment: </span>{result.notes}</div>
-              <div style={{ marginBottom: '10px' }}><span style={{ color: '#F5E642′ }}>Cost: </span>{result.cost}</div>
-              <div><span style={{ color: '#F5E642′ }}>DFW Considerations: </span>{result.considerations}</div>
+              <div style={{ marginBottom: '10px' }}><span style={{ color: '#F5E642' }}>Assessment: </span>{result.notes}</div>
+              <div style={{ marginBottom: '10px' }}><span style={{ color: '#F5E642' }}>Cost: </span>{result.cost}</div>
+              <div><span style={{ color: '#F5E642' }}>DFW Considerations: </span>{result.considerations}</div>
             </div>
           )}
         </div>
-        <div style={{ background: '#111E35', borderRadius: '10px', padding: '16px', border: '1px solid #1E2D47′ }}>
+        <div style={{ background: '#111E35', borderRadius: '10px', padding: '16px', border: '1px solid #1E2D47' }}>
           <div style={{ color: '#F5E642', fontWeight: 600, marginBottom: '8px' }}>🌱 DFW Plant Recommendations</div>
-          <p style={{ color: '#9BA3B8', fontSize: '14px', margin: 0, lineHeight: '1.6′ }}>Best DFW green roof plants: Sedum (drought-tolerant, shallow roots), Prairie dropseed grass, Texas sage, Black-eyed Susan, Inland sea oats (shade). Avoid high-water plants that cannot survive DFW summer without daily irrigation. Native DFW prairie species are always the best choice for extensive systems.</p>
+          <p style={{ color: '#9BA3B8', fontSize: '14px', margin: 0, lineHeight: '1.6' }}>Best DFW green roof plants: Sedum (drought-tolerant, shallow roots), Prairie dropseed grass, Texas sage, Black-eyed Susan, Inland sea oats (shade). Avoid high-water plants that cannot survive DFW summer without daily irrigation. Native DFW prairie species are always the best choice for extensive systems.</p>
         </div>
       </div>
     </div>

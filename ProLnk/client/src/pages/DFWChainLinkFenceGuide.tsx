@@ -61,7 +61,7 @@ export default function DFWChainLinkFenceGuide() {
             <div>
               <label style={{ color: '#94A3B8', fontSize: 13, display: 'block', marginBottom: 6 }}>Linear Feet</label>
               <input type="range" min={30} max={600} value={linearFeet} onChange={e => setLinearFeet(+e.target.value)}
-                style={{ width: '100%', accentColor: '#F5E642′ }} />
+                style={{ width: '100%', accentColor: '#F5E642' }} />
               <span style={{ color: '#F5E642', fontSize: 15, fontWeight: 700 }}>{linearFeet} ft</span>
             </div>
             <div>

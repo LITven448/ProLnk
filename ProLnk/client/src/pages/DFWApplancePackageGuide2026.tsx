@@ -14,8 +14,8 @@ export default function DFWApplancePackageGuide2026() {
   ];
 
   const budgets = [
-    { id: 'entry', label: '💰 Under $3,500′ },
-    { id: 'mid', label: '💰💰 $3,500–$6,000′ },
+    { id: 'entry', label: '💰 Under $3,500' },
+    { id: 'mid', label: '💰💰 $3,500–$6,000' },
     { id: 'premium', label: '💰💰💰 $6,000+' },
   ];
 
@@ -44,18 +44,18 @@ export default function DFWApplancePackageGuide2026() {
       <div style={{ maxWidth: 800, margin: '0 auto' }}>
         <div style={{ textAlign: 'center', marginBottom: '2rem' }}>
           <span style={{ fontSize: '3rem' }}>🍽️</span>
-          <h1 style={{ color: '#F5E642', fontSize: '1.8rem', margin: '.5rem 0′ }}>DFW Kitchen Appliance Package Guide 2026</h1>
-          <p style={{ color: '#94a3b8′ }}>Best appliance suites for DFW kitchens — package savings, Energy Star for DFW electricity rates, delivery timing.</p>
+          <h1 style={{ color: '#F5E642', fontSize: '1.8rem', margin: '.5rem 0' }}>DFW Kitchen Appliance Package Guide 2026</h1>
+          <p style={{ color: '#94a3b8' }}>Best appliance suites for DFW kitchens — package savings, Energy Star for DFW electricity rates, delivery timing.</p>
         </div>
 
-        <div style={{ background: '#1e3a5f', borderRadius: 10, padding: '1rem', marginBottom: '1.5rem', border: '1px solid #F5E642′ }}>
+        <div style={{ background: '#1e3a5f', borderRadius: 10, padding: '1rem', marginBottom: '1.5rem', border: '1px solid #F5E642' }}>
           <p style={{ color: '#F5E642', fontWeight: 600, marginBottom: '.5rem' }}>💡 DFW Package Deal Tip</p>
           <p style={{ color: '#94a3b8', fontSize: '.9rem', lineHeight: 1.6 }}>Buy all appliances together at Best Buy, Lowes, or Home Depot DFW locations for 10–20% bundle discounts. DFW Oncor rebates available for Energy Star appliances — save $50–$200 per unit.</p>
         </div>
 
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(220px, 1fr))', gap: '1rem', marginBottom: '2rem' }}>
           {brands.map(b => (
-            <div key={b.name} style={{ background: '#1e3a5f', borderRadius: 10, padding: '1rem', border: '1px solid #334155′ }}>
+            <div key={b.name} style={{ background: '#1e3a5f', borderRadius: 10, padding: '1rem', border: '1px solid #334155' }}>
               <div style={{ fontSize: '1.5rem', marginBottom: '.25rem' }}>{b.icon}</div>
               <div style={{ color: '#F5E642', fontWeight: 700 }}>{b.name}</div>
               <div style={{ color: '#64748b', fontSize: '.75rem', marginBottom: '.5rem' }}>{b.tier} {b.energyStar ? '· ⭐ Energy Star' : ''}</div>
@@ -71,7 +71,7 @@ export default function DFWApplancePackageGuide2026() {
             <p style={{ color: '#94a3b8', marginBottom: '.5rem', fontSize: '.9rem' }}>Package Budget:</p>
             <div style={{ display: 'flex', gap: '.5rem' }}>
               {budgets.map(b => (
-                <button key={b.id} onClick={() => setBudget(b.id)} style={{ flex: 1, background: budget === b.id ? '#F5E642′ : '#0d2137', color: budget === b.id ? '#0A1628' : '#fff', border: '1px solid #334155', borderRadius: 8, padding: '.6rem', cursor: ’pointer', fontSize: '.8rem', fontWeight: budget === b.id ? 700 : 400 }}>{b.label}</button>
+                <button key={b.id} onClick={() => setBudget(b.id)} style={{ flex: 1, background: budget === b.id ? '#F5E642' : '#0d2137', color: budget === b.id ? '#0A1628' : '#fff', border: '1px solid #334155', borderRadius: 8, padding: '.6rem', cursor: 'pointer', fontSize: '.8rem', fontWeight: budget === b.id ? 700 : 400 }}>{b.label}</button>
               ))}
             </div>
           </div>
@@ -79,7 +79,7 @@ export default function DFWApplancePackageGuide2026() {
             <p style={{ color: '#94a3b8', marginBottom: '.5rem', fontSize: '.9rem' }}>Top Priority:</p>
             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '.5rem' }}>
               {priorities.map(p => (
-                <button key={p.id} onClick={() => setPriority(p.id)} style={{ background: priority === p.id ? '#F5E642′ : '#0d2137', color: priority === p.id ? '#0A1628' : '#fff', border: '1px solid #334155', borderRadius: 8, padding: '.6rem', cursor: ’pointer', fontSize: '.85rem', fontWeight: priority === p.id ? 700 : 400 }}>{p.label}</button>
+                <button key={p.id} onClick={() => setPriority(p.id)} style={{ background: priority === p.id ? '#F5E642' : '#0d2137', color: priority === p.id ? '#0A1628' : '#fff', border: '1px solid #334155', borderRadius: 8, padding: '.6rem', cursor: 'pointer', fontSize: '.85rem', fontWeight: priority === p.id ? 700 : 400 }}>{p.label}</button>
               ))}
             </div>
           </div>

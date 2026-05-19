@@ -21,7 +21,7 @@ export default function DFWIntercomSystemGuide() {
   const rec = result ? systems[result as keyof typeof systems] : null;
 
   return (
-    <div style={{ background: '#0A1628', minHeight: '100vh', padding: '32px 24px', fontFamily: 'sans-serif', color: '#E8EDF5′ }}>
+    <div style={{ background: '#0A1628', minHeight: '100vh', padding: '32px 24px', fontFamily: 'sans-serif', color: '#E8EDF5' }}>
       <div style={{ maxWidth: 720, margin: '0 auto' }}>
         <div style={{ marginBottom: 8, fontSize: 13, color: '#F5E642', fontWeight: 700, letterSpacing: 1 }}>DFW HOME SECURITY</div>
         <h1 style={{ fontSize: 28, fontWeight: 800, marginBottom: 8 }}>📟 Home Intercom System Guide</h1>
@@ -33,7 +33,7 @@ export default function DFWIntercomSystemGuide() {
           {Object.entries(systems).map(([k, s]) => (
             <div key={k} style={{ background: '#111E35', borderRadius: 12, padding: 18, border: '1px solid #1E3A5F' }}>
               <div style={{ fontSize: 26, marginBottom: 6 }}>{s.icon}</div>
-              <div style={{ fontWeight: 700, fontSize: 14, marginBottom: 4, color: '#F5E642′ }}>{s.label}</div>
+              <div style={{ fontWeight: 700, fontSize: 14, marginBottom: 4, color: '#F5E642' }}>{s.label}</div>
               <div style={{ color: '#4ADE80', fontSize: 12, fontWeight: 600, marginBottom: 8 }}>{s.cost}</div>
               <div style={{ color: '#9EAFC2', fontSize: 12, marginBottom: 8 }}>{s.description}</div>
               <div style={{ background: '#1E3A5F', borderRadius: 6, padding: 8, fontSize: 11, color: '#F5E642', marginBottom: 8 }}>🌡️ {s.dfwNote}</div>
@@ -42,12 +42,12 @@ export default function DFWIntercomSystemGuide() {
           ))}
         </div>
         <div style={{ background: '#111E35', borderRadius: 12, padding: 24, border: '1px solid #1E3A5F', marginBottom: 24 }}>
-          <h2 style={{ fontSize: 18, fontWeight: 700, marginBottom: 16, color: '#F5E642′ }}>🎯 Find Your System</h2>
+          <h2 style={{ fontSize: 18, fontWeight: 700, marginBottom: 16, color: '#F5E642' }}>🎯 Find Your System</h2>
           <div style={{ marginBottom: 16 }}>
             <label style={{ display: 'block', fontSize: 13, color: '#9EAFC2', marginBottom: 8 }}>Home Type</label>
             <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap' }}>
               {[['single', 'Single story'], ['multistory', 'Multi-story'], ['gated', 'Gated property']].map(([v, l]) => (
-                <button key={v} onClick={() => setHomeType(v)} style={{ padding: '8px 16px', borderRadius: 8, border: 'none', cursor: 'pointer', background: homeType === v ? '#F5E642′ : '#1E3A5F', color: homeType === v ? '#0A1628' : '#E8EDF5', fontWeight: 600, fontSize: 13 }}>{l}</button>
+                <button key={v} onClick={() => setHomeType(v)} style={{ padding: '8px 16px', borderRadius: 8, border: 'none', cursor: 'pointer', background: homeType === v ? '#F5E642' : '#1E3A5F', color: homeType === v ? '#0A1628' : '#E8EDF5', fontWeight: 600, fontSize: 13 }}>{l}</button>
               ))}
             </div>
           </div>
@@ -55,14 +55,14 @@ export default function DFWIntercomSystemGuide() {
             <label style={{ display: 'block', fontSize: 13, color: '#9EAFC2', marginBottom: 8 }}>Primary Need</label>
             <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap' }}>
               {[['family', 'Family communication'], ['delivery', 'Delivery management'], ['visitors', 'Visitor entry control']].map(([v, l]) => (
-                <button key={v} onClick={() => setNeed(v)} style={{ padding: '8px 16px', borderRadius: 8, border: 'none', cursor: 'pointer', background: need === v ? '#F5E642′ : '#1E3A5F', color: need === v ? '#0A1628' : '#E8EDF5', fontWeight: 600, fontSize: 13 }}>{l}</button>
+                <button key={v} onClick={() => setNeed(v)} style={{ padding: '8px 16px', borderRadius: 8, border: 'none', cursor: 'pointer', background: need === v ? '#F5E642' : '#1E3A5F', color: need === v ? '#0A1628' : '#E8EDF5', fontWeight: 600, fontSize: 13 }}>{l}</button>
               ))}
             </div>
           </div>
           <button onClick={getRecommendation} style={{ background: '#F5E642', color: '#0A1628', border: 'none', borderRadius: 8, padding: '12px 24px', fontWeight: 700, cursor: 'pointer', fontSize: 14 }}>Get Recommendation →</button>
         </div>
         {rec && (
-          <div style={{ background: '#0F2940', borderRadius: 12, padding: 24, border: '2px solid #F5E642′ }}>
+          <div style={{ background: '#0F2940', borderRadius: 12, padding: 24, border: '2px solid #F5E642' }}>
             <div style={{ fontSize: 24, marginBottom: 8 }}>{rec.icon}</div>
             <div style={{ fontWeight: 700, fontSize: 18, color: '#F5E642', marginBottom: 4 }}>Recommended: {rec.label}</div>
             <div style={{ color: '#4ADE80', fontWeight: 700, marginBottom: 8 }}>{rec.cost}</div>

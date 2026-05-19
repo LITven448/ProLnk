@@ -37,7 +37,7 @@ const TRADE_CATEGORIES: TradeCategory[] = [
     label: "HVAC",
     icon: Thermometer,
     color: "teal",
-    typicalRange: "$150 – $8,200″,
+    typicalRange: "$150 – $8,200",
     topJob: "AC replacement",
     jobs: [
       { job: "AC tune-up / maintenance", low: 85, typical: 140, high: 210, unit: "per visit" },
@@ -54,7 +54,7 @@ const TRADE_CATEGORIES: TradeCategory[] = [
     label: "Roofing",
     icon: Home,
     color: "amber",
-    typicalRange: "$400 – $22,000″,
+    typicalRange: "$400 – $22,000",
     topJob: "Roof replacement",
     jobs: [
       { job: "Roof inspection", low: 150, typical: 250, high: 400, unit: "per visit" },
@@ -71,7 +71,7 @@ const TRADE_CATEGORIES: TradeCategory[] = [
     label: "Plumbing",
     icon: Droplets,
     color: "blue",
-    typicalRange: "$150 – $6,500″,
+    typicalRange: "$150 – $6,500",
     topJob: "Water heater replacement",
     jobs: [
       { job: "Drain cleaning", low: 150, typical: 250, high: 450, unit: "per drain" },
@@ -88,7 +88,7 @@ const TRADE_CATEGORIES: TradeCategory[] = [
     label: "Electrical",
     icon: Zap,
     color: "yellow",
-    typicalRange: "$100 – $4,800″,
+    typicalRange: "$100 – $4,800",
     topJob: "Panel upgrade",
     jobs: [
       { job: "Outlet / switch replacement", low: 100, typical: 180, high: 300, unit: "per outlet" },
@@ -105,7 +105,7 @@ const TRADE_CATEGORIES: TradeCategory[] = [
     label: "Foundation",
     icon: Building2,
     color: "orange",
-    typicalRange: "$800 – $15,000″,
+    typicalRange: "$800 – $15,000",
     topJob: "Pier & beam leveling",
     jobs: [
       { job: "Foundation inspection", low: 200, typical: 350, high: 600, unit: "per visit" },
@@ -121,7 +121,7 @@ const TRADE_CATEGORIES: TradeCategory[] = [
     label: "Painting",
     icon: PaintBucket,
     color: "violet",
-    typicalRange: "$350 – $8,000″,
+    typicalRange: "$350 – $8,000",
     topJob: "Exterior repaint",
     jobs: [
       { job: "Single room interior", low: 350, typical: 650, high: 1200, unit: "per room" },
@@ -153,7 +153,7 @@ const TRADE_CATEGORIES: TradeCategory[] = [
     label: "Pest Control",
     icon: Bug,
     color: "red",
-    typicalRange: "$100 – $2,500″,
+    typicalRange: "$100 – $2,500",
     topJob: "Termite treatment",
     jobs: [
       { job: "General pest inspection", low: 75, typical: 130, high: 220, unit: "per visit" },
@@ -185,13 +185,13 @@ const WHY_VARIES = [
 ];
 
 const COLOR_MAP: Record<string, { bg: string; text: string; border: string; bar: string }> = {
-  teal:   { bg: "bg-teal-400/10″,   text: "text-teal-400",   border: "border-teal-400/30",   bar: "bg-teal-400" },
-  amber:  { bg: "bg-amber-400/10″,  text: "text-amber-400",  border: "border-amber-400/30",  bar: "bg-amber-400" },
-  blue:   { bg: "bg-blue-400/10″,   text: "text-blue-400",   border: "border-blue-400/30",   bar: "bg-blue-400" },
-  yellow: { bg: "bg-yellow-400/10″, text: "text-yellow-400", border: "border-yellow-400/30", bar: "bg-yellow-400" },
-  orange: { bg: "bg-orange-400/10″, text: "text-orange-400", border: "border-orange-400/30", bar: "bg-orange-400" },
-  violet: { bg: "bg-violet-400/10″, text: "text-violet-400", border: "border-violet-400/30", bar: "bg-violet-400" },
-  red:    { bg: "bg-red-400/10″,    text: "text-red-400",    border: "border-red-400/30",    bar: "bg-red-400" },
+  teal:   { bg: "bg-teal-400/10",   text: "text-teal-400",   border: "border-teal-400/30",   bar: "bg-teal-400" },
+  amber:  { bg: "bg-amber-400/10",  text: "text-amber-400",  border: "border-amber-400/30",  bar: "bg-amber-400" },
+  blue:   { bg: "bg-blue-400/10",   text: "text-blue-400",   border: "border-blue-400/30",   bar: "bg-blue-400" },
+  yellow: { bg: "bg-yellow-400/10", text: "text-yellow-400", border: "border-yellow-400/30", bar: "bg-yellow-400" },
+  orange: { bg: "bg-orange-400/10", text: "text-orange-400", border: "border-orange-400/30", bar: "bg-orange-400" },
+  violet: { bg: "bg-violet-400/10", text: "text-violet-400", border: "border-violet-400/30", bar: "bg-violet-400" },
+  red:    { bg: "bg-red-400/10",    text: "text-red-400",    border: "border-red-400/30",    bar: "bg-red-400" },
 };
 
 function fmt(n: number) {
@@ -210,40 +210,40 @@ function SearchResultCard({ job, apiResult }: { job: PriceRow | null; apiResult:
   const typPct = Math.round(((typical - low) / totalRange) * 100);
 
   return (
-    <div className="bg-slate-800 border border-slate-700 rounded-xl p-5 space-y-5″>
-      <div className="flex items-start justify-between gap-2″>
+    <div className="bg-slate-800 border border-slate-700 rounded-xl p-5 space-y-5">
+      <div className="flex items-start justify-between gap-2">
         <div>
           <h2 className="text-white font-semibold text-lg capitalize">{label}</h2>
-          <p className="text-slate-400 text-sm flex items-center gap-1 mt-0.5″><MapPin className="w-3 h-3" /> DFW Metro pricing</p>
+          <p className="text-slate-400 text-sm flex items-center gap-1 mt-0.5"><MapPin className="w-3 h-3" /> DFW Metro pricing</p>
         </div>
         <Badge className="bg-teal-400/10 text-teal-400 border border-teal-400/30 text-xs whitespace-nowrap">
-          <Star className="w-3 h-3 mr-1″ /> Verified Data
+          <Star className="w-3 h-3 mr-1" /> Verified Data
         </Badge>
       </div>
 
-      <div className="grid grid-cols-3 gap-3″>
+      <div className="grid grid-cols-3 gap-3">
         <div className="bg-green-500/10 border border-green-500/20 rounded-lg p-3 text-center">
-          <div className="flex items-center justify-center gap-1 text-xs text-slate-400 mb-1″>
-            <TrendingDown className="w-3 h-3″ /> Low
+          <div className="flex items-center justify-center gap-1 text-xs text-slate-400 mb-1">
+            <TrendingDown className="w-3 h-3" /> Low
           </div>
-          <div className="text-xl font-bold text-green-400″>{fmt(low)}</div>
+          <div className="text-xl font-bold text-green-400">{fmt(low)}</div>
         </div>
         <div className="bg-teal-500/15 border-2 border-teal-400/40 rounded-lg p-3 text-center">
-          <div className="flex items-center justify-center gap-1 text-xs text-slate-300 mb-1″>
-            <Minus className="w-3 h-3″ /> Typical
+          <div className="flex items-center justify-center gap-1 text-xs text-slate-300 mb-1">
+            <Minus className="w-3 h-3" /> Typical
           </div>
-          <div className="text-xl font-bold text-teal-300″>{fmt(typical)}</div>
+          <div className="text-xl font-bold text-teal-300">{fmt(typical)}</div>
         </div>
         <div className="bg-orange-500/10 border border-orange-500/20 rounded-lg p-3 text-center">
-          <div className="flex items-center justify-center gap-1 text-xs text-slate-400 mb-1″>
-            <TrendingUp className="w-3 h-3″ /> High
+          <div className="flex items-center justify-center gap-1 text-xs text-slate-400 mb-1">
+            <TrendingUp className="w-3 h-3" /> High
           </div>
-          <div className="text-xl font-bold text-orange-400″>{fmt(high)}</div>
+          <div className="text-xl font-bold text-orange-400">{fmt(high)}</div>
         </div>
       </div>
 
-      <div className="space-y-1.5″>
-        <div className="flex justify-between text-xs text-slate-500″>
+      <div className="space-y-1.5">
+        <div className="flex justify-between text-xs text-slate-500">
           <span>{fmt(low)}</span>
           <span>Typical: {fmt(typical)}</span>
           <span>{fmt(high)}</span>
@@ -251,23 +251,23 @@ function SearchResultCard({ job, apiResult }: { job: PriceRow | null; apiResult:
         <div className="h-2 bg-slate-700 rounded-full relative overflow-hidden">
           <div className="h-full bg-gradient-to-r from-green-500 via-teal-400 to-orange-500 rounded-full" style={{ width: "100%" }} />
           <div
-            className="absolute top-0 h-full w-0.5 bg-white/80″
+            className="absolute top-0 h-full w-0.5 bg-white/80"
             style={{ left: `${typPct}%` }}
           />
         </div>
       </div>
 
-      {unit && <p className="text-xs text-slate-400″>Per: {unit}</p>}
-      {notes && <p className="text-sm text-slate-300″>{notes}</p>}
+      {unit && <p className="text-xs text-slate-400">Per: {unit}</p>}
+      {notes && <p className="text-sm text-slate-300">{notes}</p>}
 
-      <div className="flex gap-2″>
+      <div className="flex gap-2">
         <Badge className="bg-teal-400/10 text-teal-400 text-xs">High confidence</Badge>
         <Badge className="bg-slate-700 text-slate-300 text-xs">Updated Q2 2026</Badge>
       </div>
 
       <Link href="/trustypro/book">
         <Button className="w-full bg-teal-500 hover:bg-teal-400 text-slate-900 font-semibold">
-          Get Free Quote from Vetted Pros <ArrowRight className="w-4 h-4 ml-1″ />
+          Get Free Quote from Vetted Pros <ArrowRight className="w-4 h-4 ml-1" />
         </Button>
       </Link>
     </div>
@@ -312,36 +312,36 @@ export default function TrueCostGuide() {
   return (
     <HomeownerLayout>
       <div className="min-h-screen bg-[#0A1628]">
-        <div className="max-w-4xl mx-auto px-4 py-8 space-y-8″>
+        <div className="max-w-4xl mx-auto px-4 py-8 space-y-8">
 
           {/* Header */}
           <div>
             <h1 className="text-3xl font-bold text-white">True Cost Guide</h1>
-            <p className="text-slate-400 mt-1″>Real DFW pricing — no surprises. Based on 2,000+ completed jobs in 2025-2026.</p>
+            <p className="text-slate-400 mt-1">Real DFW pricing — no surprises. Based on 2,000+ completed jobs in 2025-2026.</p>
           </div>
 
           {/* Search */}
-          <div className="space-y-3″>
-            <div className="flex gap-2″>
-              <div className="relative flex-1″>
-                <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-500″ />
+          <div className="space-y-3">
+            <div className="flex gap-2">
+              <div className="relative flex-1">
+                <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-500" />
                 <Input
                   placeholder="Search a job — e.g. 'AC replacement', 'roof repair'..."
                   value={query}
                   onChange={e => setQuery(e.target.value)}
                   onKeyDown={e => e.key === "Enter" && handleSearch()}
-                  className="pl-10 bg-slate-800 border-slate-700 text-white placeholder:text-slate-500 focus:border-teal-400″
+                  className="pl-10 bg-slate-800 border-slate-700 text-white placeholder:text-slate-500 focus:border-teal-400"
                 />
               </div>
               <Button
                 onClick={handleSearch}
                 disabled={isLoading || query.trim().length < 2}
-                className="bg-teal-500 hover:bg-teal-400 text-slate-900 font-semibold px-5″
+                className="bg-teal-500 hover:bg-teal-400 text-slate-900 font-semibold px-5"
               >
-                {isLoading ? <Loader2 className="w-4 h-4 animate-spin" /> : <Search className="w-4 h-4″ />}
+                {isLoading ? <Loader2 className="w-4 h-4 animate-spin" /> : <Search className="w-4 h-4" />}
               </Button>
             </div>
-            <div className="flex flex-wrap gap-2″>
+            <div className="flex flex-wrap gap-2">
               {POPULAR_CHIPS.map(chip => (
                 <button
                   key={chip}
@@ -356,8 +356,8 @@ export default function TrueCostGuide() {
 
           {/* Search result card */}
           {showSearchResult && (isLoading ? (
-            <div className="bg-slate-800 border border-slate-700 rounded-xl p-8 flex items-center justify-center gap-3 text-slate-400″>
-              <Loader2 className="w-5 h-5 animate-spin text-teal-400″ />
+            <div className="bg-slate-800 border border-slate-700 rounded-xl p-8 flex items-center justify-center gap-3 text-slate-400">
+              <Loader2 className="w-5 h-5 animate-spin text-teal-400" />
               Looking up DFW pricing...
             </div>
           ) : hasResult ? (
@@ -365,15 +365,15 @@ export default function TrueCostGuide() {
           ) : (
             <div className="bg-slate-800 border border-slate-700 rounded-xl p-6 text-center">
               <p className="text-slate-300 font-medium">No exact match for "{search}"</p>
-              <p className="text-slate-500 text-sm mt-1″>Try a category below or use a more general term.</p>
+              <p className="text-slate-500 text-sm mt-1">Try a category below or use a more general term.</p>
             </div>
           ))}
 
           {/* Trade categories grid */}
           {!showSearchResult && (
             <div>
-              <h2 className="text-white font-semibold mb-4″>Browse by Trade</h2>
-              <div className="grid grid-cols-2 sm:grid-cols-4 gap-3″>
+              <h2 className="text-white font-semibold mb-4">Browse by Trade</h2>
+              <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
                 {TRADE_CATEGORIES.map(cat => {
                   const colors = COLOR_MAP[cat.color];
                   const Icon = cat.icon;
@@ -385,14 +385,14 @@ export default function TrueCostGuide() {
                       className={`text-left p-4 rounded-xl border transition-all ${
                         isActive
                           ? `${colors.bg} ${colors.border} border-2`
-                          : "bg-slate-800 border-slate-700 hover:border-slate-600″
+                          : "bg-slate-800 border-slate-700 hover:border-slate-600"
                       }`}
                     >
                       <div className={`w-8 h-8 rounded-lg ${colors.bg} flex items-center justify-center mb-2`}>
                         <Icon className={`w-4 h-4 ${colors.text}`} />
                       </div>
                       <div className="font-medium text-white text-sm">{cat.label}</div>
-                      <div className="text-xs text-slate-400 mt-0.5″>{cat.typicalRange}</div>
+                      <div className="text-xs text-slate-400 mt-0.5">{cat.typicalRange}</div>
                       <div className="text-xs text-slate-500 mt-1 truncate">{cat.topJob}</div>
                     </button>
                   );
@@ -405,7 +405,7 @@ export default function TrueCostGuide() {
           {activeTradeData && (
             <div className="bg-slate-800 border border-slate-700 rounded-xl overflow-hidden">
               <div className="px-5 py-4 border-b border-slate-700 flex items-center justify-between">
-                <div className="flex items-center gap-2″>
+                <div className="flex items-center gap-2">
                   <activeTradeData.icon className={`w-5 h-5 ${COLOR_MAP[activeTradeData.color].text}`} />
                   <h3 className="text-white font-semibold">{activeTradeData.label} — Common Jobs</h3>
                 </div>
@@ -414,7 +414,7 @@ export default function TrueCostGuide() {
               <div className="overflow-x-auto">
                 <table className="w-full text-sm">
                   <thead>
-                    <tr className="border-b border-slate-700″>
+                    <tr className="border-b border-slate-700">
                       <th className="text-left px-5 py-2.5 text-slate-400 font-medium">Job</th>
                       <th className="text-right px-3 py-2.5 text-green-400 font-medium">Low</th>
                       <th className="text-right px-3 py-2.5 text-teal-400 font-medium">Typical</th>
@@ -426,17 +426,17 @@ export default function TrueCostGuide() {
                       <tr
                         key={i}
                         className={`border-b border-slate-700/50 last:border-0 hover:bg-slate-700/30 transition-colors ${
-                          row.priority === "critical" ? "border-l-2 border-l-amber-500/60″ : ""
+                          row.priority === "critical" ? "border-l-2 border-l-amber-500/60" : ""
                         }`}
                       >
-                        <td className="px-5 py-3″>
-                          <div className="flex items-center gap-2″>
+                        <td className="px-5 py-3">
+                          <div className="flex items-center gap-2">
                             {row.priority === "critical" && (
-                              <AlertTriangle className="w-3 h-3 text-amber-400 flex-shrink-0″ />
+                              <AlertTriangle className="w-3 h-3 text-amber-400 flex-shrink-0" />
                             )}
-                            <span className="text-slate-200″>{row.job}</span>
+                            <span className="text-slate-200">{row.job}</span>
                           </div>
-                          <div className="text-xs text-slate-500 mt-0.5″>{row.unit}</div>
+                          <div className="text-xs text-slate-500 mt-0.5">{row.unit}</div>
                         </td>
                         <td className="text-right px-3 py-3 text-green-400 font-mono font-medium">{fmt(row.low)}</td>
                         <td className="text-right px-3 py-3 text-teal-300 font-mono font-semibold">{fmt(row.typical)}</td>
@@ -446,10 +446,10 @@ export default function TrueCostGuide() {
                   </tbody>
                 </table>
               </div>
-              <div className="px-5 py-3 bg-slate-900/50″>
+              <div className="px-5 py-3 bg-slate-900/50">
                 <Link href="/trustypro/book">
                   <Button size="sm" className="bg-teal-500 hover:bg-teal-400 text-slate-900 font-semibold">
-                    Get {activeTradeData.label} Quotes <ArrowRight className="w-3.5 h-3.5 ml-1″ />
+                    Get {activeTradeData.label} Quotes <ArrowRight className="w-3.5 h-3.5 ml-1" />
                   </Button>
                 </Link>
               </div>
@@ -458,12 +458,12 @@ export default function TrueCostGuide() {
 
           {/* Why prices vary */}
           <div>
-            <h2 className="text-white font-semibold mb-4″>Why prices vary</h2>
-            <div className="grid grid-cols-2 sm:grid-cols-4 gap-3″>
+            <h2 className="text-white font-semibold mb-4">Why prices vary</h2>
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
               {WHY_VARIES.map(item => (
-                <div key={item.title} className="bg-slate-800 border border-slate-700 rounded-xl p-4″>
-                  <div className="text-2xl mb-2″>{item.icon}</div>
-                  <div className="text-white font-medium text-sm mb-1″>{item.title}</div>
+                <div key={item.title} className="bg-slate-800 border border-slate-700 rounded-xl p-4">
+                  <div className="text-2xl mb-2">{item.icon}</div>
+                  <div className="text-white font-medium text-sm mb-1">{item.title}</div>
                   <div className="text-slate-400 text-xs leading-relaxed">{item.desc}</div>
                 </div>
               ))}
@@ -472,21 +472,21 @@ export default function TrueCostGuide() {
 
           {/* Recent DFW quotes */}
           <div>
-            <h2 className="text-white font-semibold mb-4″>Recent DFW Quotes</h2>
-            <div className="space-y-3″>
+            <h2 className="text-white font-semibold mb-4">Recent DFW Quotes</h2>
+            <div className="space-y-3">
               {RECENT_QUOTES.map((q, i) => (
-                <div key={i} className="bg-slate-800 border border-slate-700 rounded-xl px-5 py-4 flex items-center justify-between gap-4″>
-                  <div className="min-w-0″>
-                    <div className="flex items-center gap-2 mb-0.5″>
+                <div key={i} className="bg-slate-800 border border-slate-700 rounded-xl px-5 py-4 flex items-center justify-between gap-4">
+                  <div className="min-w-0">
+                    <div className="flex items-center gap-2 mb-0.5">
                       <Badge className="bg-teal-400/10 text-teal-400 border-teal-400/30 text-xs">{q.trade}</Badge>
-                      <span className="text-slate-500 text-xs flex items-center gap-1″>
-                        <MapPin className="w-3 h-3″ /> {q.neighborhood}
+                      <span className="text-slate-500 text-xs flex items-center gap-1">
+                        <MapPin className="w-3 h-3" /> {q.neighborhood}
                       </span>
                     </div>
                     <p className="text-slate-200 text-sm truncate">{q.job}</p>
-                    <p className="text-slate-500 text-xs mt-0.5″>{q.when}</p>
+                    <p className="text-slate-500 text-xs mt-0.5">{q.when}</p>
                   </div>
-                  <div className="text-right flex-shrink-0″>
+                  <div className="text-right flex-shrink-0">
                     <div className="text-teal-400 font-bold text-lg">${q.amount.toLocaleString()}</div>
                     <div className="text-slate-500 text-xs">paid</div>
                   </div>

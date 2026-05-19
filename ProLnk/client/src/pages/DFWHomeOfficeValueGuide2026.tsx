@@ -59,50 +59,50 @@ export default function DFWHomeOfficeValueGuide2026() {
   const adjustedPremium = office ? Math.round(office.premium * market.multiplier) : null;
 
   return (
-    <div style={{ background: "#0A1628″, minHeight: "100vh", color: "#fff", fontFamily: "sans-serif", padding: "2rem" }}>
+    <div style={{ background: "#0A1628", minHeight: "100vh", color: "#fff", fontFamily: "sans-serif", padding: "2rem" }}>
       <div style={{ maxWidth: 720, margin: "0 auto" }}>
         <div style={{ textAlign: "center", marginBottom: "2rem" }}>
           <div style={{ fontSize: "3rem" }}>💼</div>
-          <h1 style={{ color: "#F5E642″, fontSize: "1.8rem", margin: "0.5rem 0" }}>DFW Home Office Value Guide 2026</h1>
-          <p style={{ color: "#94a3b8″ }}>Post-COVID dedicated home office premiums across DFW</p>
+          <h1 style={{ color: "#F5E642", fontSize: "1.8rem", margin: "0.5rem 0" }}>DFW Home Office Value Guide 2026</h1>
+          <p style={{ color: "#94a3b8" }}>Post-COVID dedicated home office premiums across DFW</p>
         </div>
 
         <div style={{ background: "#0f1f3d", borderRadius: 12, padding: "1.5rem", marginBottom: "1.5rem" }}>
-          <h2 style={{ color: "#F5E642″, fontSize: "1.1rem", marginBottom: "1rem" }}>🏡 Home Base Value</h2>
+          <h2 style={{ color: "#F5E642", fontSize: "1.1rem", marginBottom: "1rem" }}>🏡 Home Base Value</h2>
           <input
             type="range" min={300000} max={1500000} step={25000} value={homeValue}
             onChange={e => setHomeValue(Number(e.target.value))}
-            style={{ width: "100%", accentColor: "#F5E642″ }}
+            style={{ width: "100%", accentColor: "#F5E642" }}
           />
-          <p style={{ color: "#F5E642″, fontSize: "1.4rem", fontWeight: "bold", margin: "0.5rem 0 0" }}>
+          <p style={{ color: "#F5E642", fontSize: "1.4rem", fontWeight: "bold", margin: "0.5rem 0 0" }}>
             ${homeValue.toLocaleString()}
           </p>
         </div>
 
         <div style={{ background: "#0f1f3d", borderRadius: 12, padding: "1.5rem", marginBottom: "1.5rem" }}>
-          <h2 style={{ color: "#F5E642″, fontSize: "1.1rem", marginBottom: "1rem" }}>📍 DFW Sub-Market</h2>
+          <h2 style={{ color: "#F5E642", fontSize: "1.1rem", marginBottom: "1rem" }}>📍 DFW Sub-Market</h2>
           <select
             value={marketIdx}
             onChange={e => setMarketIdx(Number(e.target.value))}
-            style={{ width: "100%", background: "#162035″, color: "#fff", border: "1px solid #1e3a5f", borderRadius: 8, padding: "0.75rem", fontSize: "1rem" }}
+            style={{ width: "100%", background: "#162035", color: "#fff", border: "1px solid #1e3a5f", borderRadius: 8, padding: "0.75rem", fontSize: "1rem" }}
           >
             {markets.map((m, i) => <option key={i} value={i}>{m.name}</option>)}
           </select>
         </div>
 
         <div style={{ background: "#0f1f3d", borderRadius: 12, padding: "1.5rem", marginBottom: "1.5rem" }}>
-          <h2 style={{ color: "#F5E642″, fontSize: "1.1rem", marginBottom: "1rem" }}>🖥️ Home Office Configuration</h2>
+          <h2 style={{ color: "#F5E642", fontSize: "1.1rem", marginBottom: "1rem" }}>🖥️ Home Office Configuration</h2>
           <div style={{ display: "grid", gap: "0.75rem" }}>
             {officeTypes.map((o, i) => (
               <button key={i} onClick={() => setOfficeIdx(i)}
                 style={{
-                  background: officeIdx === i ? "#F5E642″ : "#162035",
-                  color: officeIdx === i ? "#0A1628″ : "#fff",
+                  background: officeIdx === i ? "#F5E642" : "#162035",
+                  color: officeIdx === i ? "#0A1628" : "#fff",
                   border: "1px solid #1e3a5f", borderRadius: 8, padding: "0.75rem 1rem",
                   textAlign: "left", cursor: "pointer", display: "flex", justifyContent: "space-between", alignItems: "center"
                 }}>
                 <span>{o.icon} {o.label}</span>
-                <span style={{ fontWeight: "bold", color: officeIdx === i ? "#0A1628″ : "#22c55e" }}>
+                <span style={{ fontWeight: "bold", color: officeIdx === i ? "#0A1628" : "#22c55e" }}>
                   +${(o.premium / 1000).toFixed(0)}K
                 </span>
               </button>
@@ -113,10 +113,10 @@ export default function DFWHomeOfficeValueGuide2026() {
         {office && adjustedPremium !== null && (
           <div style={{ background: "#0f2d1a", border: "1px solid #22c55e", borderRadius: 12, padding: "1.5rem", marginBottom: "1.5rem" }}>
             <h3 style={{ color: "#22c55e", margin: "0 0 0.5rem" }}>📊 DFW Home Office Premium</h3>
-            <p style={{ fontSize: "2rem", color: "#F5E642″, fontWeight: "bold", margin: "0.25rem 0" }}>
+            <p style={{ fontSize: "2rem", color: "#F5E642", fontWeight: "bold", margin: "0.25rem 0" }}>
               +${adjustedPremium.toLocaleString()}
             </p>
-            <p style={{ color: "#94a3b8″ }}>{office.note}</p>
+            <p style={{ color: "#94a3b8" }}>{office.note}</p>
             <p style={{ color: "#64748b", marginTop: "0.5rem" }}>
               Market multiplier: {market.multiplier}x — {market.name}
             </p>
@@ -127,8 +127,8 @@ export default function DFWHomeOfficeValueGuide2026() {
         )}
 
         <div style={{ background: "#0f1f3d", borderRadius: 12, padding: "1.5rem" }}>
-          <h2 style={{ color: "#F5E642″, fontSize: "1rem", marginBottom: "0.75rem" }}>📌 DFW Home Office Insights 2026</h2>
-          <ul style={{ color: "#94a3b8″, paddingLeft: "1.25rem", lineHeight: "1.8" }}>
+          <h2 style={{ color: "#F5E642", fontSize: "1rem", marginBottom: "0.75rem" }}>📌 DFW Home Office Insights 2026</h2>
+          <ul style={{ color: "#94a3b8", paddingLeft: "1.25rem", lineHeight: "1.8" }}>
             <li>WFH is permanent for 40%+ of DFW knowledge workers — office matters</li>
             <li>Plano/Richardson tech corridor buyers rank home office in top 3 features</li>
             <li>Fiber + wiring infrastructure separates premium office listings in 2026</li>
@@ -137,7 +137,7 @@ export default function DFWHomeOfficeValueGuide2026() {
           </ul>
         </div>
 
-        <div style={{ textAlign: "center", marginTop: "2rem", color: "#475569″, fontSize: "0.8rem" }}>
+        <div style={{ textAlign: "center", marginTop: "2rem", color: "#475569", fontSize: "0.8rem" }}>
           🏠 ProLnk Home Health Vault — DFW Home Office Intelligence 2026
         </div>
       </div>

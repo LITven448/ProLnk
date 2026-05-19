@@ -32,14 +32,14 @@ export default function DFWHVACCostHistory() {
         <div style={{ fontSize: 13, color: '#F5E642', marginBottom: 8, letterSpacing: 1, textTransform: 'uppercase' }}>DFW HVAC Guide</div>
         <h1 style={{ fontSize: 28, fontWeight: 700, marginBottom: 8 }}>📈 DFW HVAC Cost History</h1>
         <p style={{ color: '#94a3b8', marginBottom: 32, lineHeight: 1.6 }}>
-          DFW HVAC costs have risen 60–120% since 2019. Here's what’s driving it — and what you should expect to pay today.
+          DFW HVAC costs have risen 60–120% since 2019. Here's what's driving it — and what you should expect to pay today.
         </p>
 
         <div style={{ marginBottom: 28 }}>
           <div style={{ fontSize: 14, color: '#94a3b8', marginBottom: 10 }}>Select your DFW project type:</div>
           <div style={{ display: 'flex', gap: 10, flexWrap: 'wrap' }}>
             {(Object.entries(costs) as [ProjectType, CostData][]).map(([k, v]) => (
-              <button key={k} onClick={() => setProject(k)} style={{ padding: '8px 14px', borderRadius: 8, border: `2px solid ${project === k ? '#F5E642' : '#1e3a5f'}`, background: project === k ? '#F5E642′ : ’transparent', color: project === k ? '#0A1628′ : '#fff', cursor: ’pointer', fontWeight: 600, fontSize: 13 }}>{v.label}</button>
+              <button key={k} onClick={() => setProject(k)} style={{ padding: '8px 14px', borderRadius: 8, border: `2px solid ${project === k ? '#F5E642' : '#1e3a5f'}`, background: project === k ? '#F5E642' : 'transparent', color: project === k ? '#0A1628' : '#fff', cursor: 'pointer', fontWeight: 600, fontSize: 13 }}>{v.label}</button>
             ))}
           </div>
         </div>
@@ -65,7 +65,7 @@ export default function DFWHVACCostHistory() {
             </div>
           </>
         ) : (
-          <div style={{ background: '#0f2236', borderRadius: 12, padding: 32, textAlign: 'center', color: '#94a3b8′ }}>Select a project type to see cost history</div>
+          <div style={{ background: '#0f2236', borderRadius: 12, padding: 32, textAlign: 'center', color: '#94a3b8' }}>Select a project type to see cost history</div>
         )}
 
         <div style={{ marginTop: 32, background: '#F5E642', borderRadius: 12, padding: 20, color: '#0A1628', fontWeight: 600, textAlign: 'center' }}>

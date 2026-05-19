@@ -88,10 +88,10 @@ export default function DFWInternetOutageGuide() {
             { name: 'AT&T Mobile Hotspot', cost: '$35-60/mo', note: 'Good downtown DFW, thinner in outer suburbs' },
             { name: 'Starlink Portability', cost: '$120/mo + hardware', note: 'Best for rural DFW fringe — overkill for suburbs with 4G' },
           ].map(opt => (
-            <div key={opt.name} style={{ marginBottom: 16, paddingBottom: 16, borderBottom: '1px solid #334155′ }}>
+            <div key={opt.name} style={{ marginBottom: 16, paddingBottom: 16, borderBottom: '1px solid #334155' }}>
               <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: 4 }}>
                 <span style={{ color: '#fff', fontWeight: 600 }}>{opt.name}</span>
-                <span style={{ color: '#F5E642′ }}>{opt.cost}</span>
+                <span style={{ color: '#F5E642' }}>{opt.cost}</span>
               </div>
               <div style={{ color: '#94A3B8', fontSize: 14 }}>{opt.note}</div>
             </div>

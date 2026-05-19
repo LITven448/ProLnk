@@ -12,15 +12,15 @@ export default function MesquiteHomeownerGuide2026() {
   const priorities = typeMap[homeType] || [];
 
   return (
-    <div style={{ backgroundColor: "#0A1628″, minHeight: "100vh", color: "#fff", fontFamily: "sans-serif", padding: "40px 24px" }}>
+    <div style={{ backgroundColor: "#0A1628", minHeight: "100vh", color: "#fff", fontFamily: "sans-serif", padding: "40px 24px" }}>
       <div style={{ maxWidth: 760, margin: "0 auto" }}>
-        <div style={{ color: "#F5E642″, fontSize: 13, fontWeight: 700, letterSpacing: 2, marginBottom: 8 }}>
+        <div style={{ color: "#F5E642", fontSize: 13, fontWeight: 700, letterSpacing: 2, marginBottom: 8 }}>
           MESQUITE, TX — HOMEOWNER GUIDE 2026
         </div>
         <h1 style={{ fontSize: 36, fontWeight: 800, marginBottom: 16, lineHeight: 1.2 }}>
           Mesquite Homeowner Guide 2026
         </h1>
-        <p style={{ color: "#94A3B8″, fontSize: 16, lineHeight: 1.7, marginBottom: 32 }}>
+        <p style={{ color: "#94A3B8", fontSize: 16, lineHeight: 1.7, marginBottom: 32 }}>
           Mesquite is a working-class city east of Dallas with solid 1970s–1990s housing stock built to last.
           Many homes feature pier-and-beam foundations — durable but requiring periodic releveling.
           HVAC systems installed during the building boom are now 25–40 years old and overdue for replacement.
@@ -35,8 +35,8 @@ export default function MesquiteHomeownerGuide2026() {
           ].map((stat) => (
             <div key={stat.label} style={{ backgroundColor: "#0F1F3D", borderRadius: 12, padding: 20, textAlign: "center" }}>
               <div style={{ fontSize: 28, marginBottom: 8 }}>{stat.icon}</div>
-              <div style={{ color: "#F5E642″, fontSize: 20, fontWeight: 700 }}>{stat.value}</div>
-              <div style={{ color: "#94A3B8″, fontSize: 12 }}>{stat.label}</div>
+              <div style={{ color: "#F5E642", fontSize: 20, fontWeight: 700 }}>{stat.value}</div>
+              <div style={{ color: "#94A3B8", fontSize: 12 }}>{stat.label}</div>
             </div>
           ))}
         </div>
@@ -48,7 +48,7 @@ export default function MesquiteHomeownerGuide2026() {
           <select
             value={homeType}
             onChange={(e) => setHomeType(e.target.value)}
-            style={{ width: "100%", padding: "14px 16px", borderRadius: 10, backgroundColor: "#162035″, color: "#fff", border: "1px solid #1E3A5F", fontSize: 16, marginBottom: 20 }}
+            style={{ width: "100%", padding: "14px 16px", borderRadius: 10, backgroundColor: "#162035", color: "#fff", border: "1px solid #1E3A5F", fontSize: 16, marginBottom: 20 }}
           >
             <option value="">Select your home type...</option>
             <option value="slab">Slab Foundation</option>
@@ -58,8 +58,8 @@ export default function MesquiteHomeownerGuide2026() {
           {priorities.length > 0 && (
             <div>
               {priorities.map((item, i) => (
-                <div key={i} style={{ display: "flex", alignItems: "center", gap: 12, padding: "14px 0″, borderBottom: i < priorities.length - 1 ? "1px solid #1E3A5F" : "none" }}>
-                  <div style={{ width: 32, height: 32, borderRadius: "50%", backgroundColor: "#F5E642″, color: "#0A1628", display: "flex", alignItems: "center", justifyContent: "center", fontWeight: 800, fontSize: 14, flexShrink: 0 }}>{i + 1}</div>
+                <div key={i} style={{ display: "flex", alignItems: "center", gap: 12, padding: "14px 0", borderBottom: i < priorities.length - 1 ? "1px solid #1E3A5F" : "none" }}>
+                  <div style={{ width: 32, height: 32, borderRadius: "50%", backgroundColor: "#F5E642", color: "#0A1628", display: "flex", alignItems: "center", justifyContent: "center", fontWeight: 800, fontSize: 14, flexShrink: 0 }}>{i + 1}</div>
                   <span style={{ fontSize: 15, lineHeight: 1.5 }}>{item}</span>
                 </div>
               ))}
@@ -67,14 +67,14 @@ export default function MesquiteHomeownerGuide2026() {
           )}
         </div>
 
-        <div style={{ backgroundColor: "#F5E642″, borderRadius: 16, padding: 28, textAlign: "center" }}>
-          <div style={{ fontSize: 22, fontWeight: 800, color: "#0A1628″, marginBottom: 8 }}>
+        <div style={{ backgroundColor: "#F5E642", borderRadius: 16, padding: 28, textAlign: "center" }}>
+          <div style={{ fontSize: 22, fontWeight: 800, color: "#0A1628", marginBottom: 8 }}>
             Mesquite Homeowners Get Fast Matches
           </div>
-          <div style={{ color: "#0A1628″, fontSize: 15, marginBottom: 16 }}>
+          <div style={{ color: "#0A1628", fontSize: 15, marginBottom: 16 }}>
             ProLnk finds licensed, affordable Mesquite trade pros — no referral fees, no runaround.
           </div>
-          <button style={{ backgroundColor: "#0A1628″, color: "#F5E642", border: "none", borderRadius: 10, padding: "14px 32px", fontSize: 16, fontWeight: 700, cursor: "pointer" }}>
+          <button style={{ backgroundColor: "#0A1628", color: "#F5E642", border: "none", borderRadius: 10, padding: "14px 32px", fontSize: 16, fontWeight: 700, cursor: "pointer" }}>
             Find a Pro →
           </button>
         </div>

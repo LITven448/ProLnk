@@ -80,9 +80,9 @@ export default function DFWElectricianSelectionGuide() {
             {projectTypes.map((p, i) => (
               <button key={i} onClick={() => setSelected(selected === i ? null : i)}
                 style={{ padding: '8px 16px', borderRadius: 8, border: '2px solid', cursor: 'pointer', fontSize: 14, fontWeight: 600,
-                  borderColor: selected === i ? '#F5E642′ : '#2d3f6b',
-                  backgroundColor: selected === i ? '#F5E642′ : ’transparent',
-                  color: selected === i ? '#0A1628′ : '#94a3b8' }}>
+                  borderColor: selected === i ? '#F5E642' : '#2d3f6b',
+                  backgroundColor: selected === i ? '#F5E642' : 'transparent',
+                  color: selected === i ? '#0A1628' : '#94a3b8' }}>
                 {p.label}
               </button>
             ))}

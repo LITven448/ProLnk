@@ -27,7 +27,7 @@ export default function DFWHVACSystemsMap() {
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(200px, 1fr))', gap: 12, marginBottom: 28 }}>
           {components.map(c => (
             <button key={c.id} onClick={() => setSelected(selected === c.id ? null : c.id)}
-              style={{ background: selected === c.id ? '#1E3A5F' : '#0F2237', border: `2px solid ${selected === c.id ? '#F5E642' : '#1E3A5F'}`, borderRadius: 10, padding: '14px 12px', cursor: 'pointer', color: selected === c.id ? '#F5E642′ : '#CBD5E1', fontSize: 14, fontWeight: 600, textAlign: ’left', transition: 'all 0.2s' }}>
+              style={{ background: selected === c.id ? '#1E3A5F' : '#0F2237', border: `2px solid ${selected === c.id ? '#F5E642' : '#1E3A5F'}`, borderRadius: 10, padding: '14px 12px', cursor: 'pointer', color: selected === c.id ? '#F5E642' : '#CBD5E1', fontSize: 14, fontWeight: 600, textAlign: 'left', transition: 'all 0.2s' }}>
               {c.label}
             </button>
           ))}

@@ -58,7 +58,7 @@ export default function DFWHerbGardenGuide() {
               <div key={f.label} style={{ background: '#0A1628', borderRadius: 8, padding: 12 }}>
                 <div style={{ fontSize: 22 }}>{f.icon}</div>
                 <div style={{ fontSize: 13, color: '#F5E642', fontWeight: 600 }}>{f.label}</div>
-                <div style={{ fontSize: 12, color: '#94a3b8′ }}>{f.val}</div>
+                <div style={{ fontSize: 12, color: '#94a3b8' }}>{f.val}</div>
               </div>
             ))}
           </div>
@@ -66,12 +66,12 @@ export default function DFWHerbGardenGuide() {
 
         <div style={{ background: '#0F2040', borderRadius: 12, padding: 24, marginBottom: 24 }}>
           <h2 style={{ fontSize: 17, color: '#F5E642', marginBottom: 16 }}>🔍 Find Your Herb Match</h2>
-          <label style={{ display: 'block', marginBottom: 8, fontSize: 14, color: '#94a3b8′ }}>Select your herb goal and growing space:</label>
+          <label style={{ display: 'block', marginBottom: 8, fontSize: 14, color: '#94a3b8' }}>Select your herb goal and growing space:</label>
           <select value={goal} onChange={(e) => { setGoal(e.target.value); setSubmitted(false); }} style={{ width: '100%', padding: '10px 12px', borderRadius: 8, border: '1px solid #1e3a5f', background: '#0A1628', color: '#fff', fontSize: 14, marginBottom: 16 }}>
             <option value=>-- Choose your setup --</option>
             {goalOptions.map((o) => <option key={o} value={o}>{goalLabels[o]}</option>)}
           </select>
-          <button onClick={() => setSubmitted(true)} disabled={!goal} style={{ width: '100%', padding: '12px', background: goal ? '#F5E642′ : '#1e3a5f', color: goal ? '#0A1628' : '#4a6080', borderRadius: 8, border: ’none', fontWeight: 700, fontSize: 15, cursor: goal ? 'pointer' : 'not-allowed' }}>
+          <button onClick={() => setSubmitted(true)} disabled={!goal} style={{ width: '100%', padding: '12px', background: goal ? '#F5E642' : '#1e3a5f', color: goal ? '#0A1628' : '#4a6080', borderRadius: 8, border: 'none', fontWeight: 700, fontSize: 15, cursor: goal ? 'pointer' : 'not-allowed' }}>
             Show My Herb Recommendations 🌿
           </button>
         </div>
@@ -84,11 +84,11 @@ export default function DFWHerbGardenGuide() {
             </div>
             <div style={{ background: '#0A1628', borderRadius: 8, padding: 14, marginBottom: 12 }}>
               <div style={{ color: '#F5E642', fontWeight: 600, marginBottom: 6 }}>📅 DFW Planting Calendar</div>
-              <div style={{ fontSize: 13, color: '#94a3b8′ }}>{result.calendar}</div>
+              <div style={{ fontSize: 13, color: '#94a3b8' }}>{result.calendar}</div>
             </div>
             <div style={{ background: '#0A1628', borderRadius: 8, padding: 14 }}>
               <div style={{ color: '#F5E642', fontWeight: 600, marginBottom: 6 }}>💡 Care Tips</div>
-              <div style={{ fontSize: 13, color: '#94a3b8′ }}>{result.careTips}</div>
+              <div style={{ fontSize: 13, color: '#94a3b8' }}>{result.careTips}</div>
             </div>
           </div>
         )}

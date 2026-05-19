@@ -45,20 +45,20 @@ export default function FairviewTexasHomeownerGuide2026() {
   const [selected, setSelected] = useState<string | null>(null);
 
   return (
-    <div style={{ backgroundColor: "#0A1628″, minHeight: "100vh", color: "#fff", fontFamily: "sans-serif", padding: "2rem" }}>
+    <div style={{ backgroundColor: "#0A1628", minHeight: "100vh", color: "#fff", fontFamily: "sans-serif", padding: "2rem" }}>
       <div style={{ maxWidth: 720, margin: "0 auto" }}>
-        <div style={{ color: "#F5E642″, fontSize: "0.85rem", marginBottom: "0.5rem", letterSpacing: "0.1em" }}>
+        <div style={{ color: "#F5E642", fontSize: "0.85rem", marginBottom: "0.5rem", letterSpacing: "0.1em" }}>
           COLLIN COUNTY · FAIRVIEW, TX
         </div>
         <h1 style={{ fontSize: "2rem", fontWeight: 700, marginBottom: "0.5rem" }}>
           Fairview TX Homeowner Guide 2026
         </h1>
-        <p style={{ color: "#94a3b8″, marginBottom: "2rem", lineHeight: 1.7 }}>
+        <p style={{ color: "#94a3b8", marginBottom: "2rem", lineHeight: 1.7 }}>
           Fairview is a small, affluent Collin County enclave tucked between Allen and McKinney. Custom homes on large lots, top-rated schools, and active HOAs define this market. As neighborhoods mature, ongoing maintenance demands increase — especially for homes now in their 15-25 year range.
         </p>
 
         <div style={{ backgroundColor: "#111f3c", borderRadius: 12, padding: "1.5rem", marginBottom: "2rem" }}>
-          <h2 style={{ color: "#F5E642″, fontSize: "1.1rem", marginBottom: "1rem" }}>🏠 Select Your Home Age</h2>
+          <h2 style={{ color: "#F5E642", fontSize: "1.1rem", marginBottom: "1rem" }}>🏠 Select Your Home Age</h2>
           <div style={{ display: "flex", gap: "0.75rem", flexWrap: "wrap" }}>
             {homeAges.map((a) => (
               <button
@@ -69,8 +69,8 @@ export default function FairviewTexasHomeownerGuide2026() {
                   borderRadius: 8,
                   border: "none",
                   cursor: "pointer",
-                  backgroundColor: selected === a ? "#F5E642″ : "#1e3a5f",
-                  color: selected === a ? "#0A1628″ : "#fff",
+                  backgroundColor: selected === a ? "#F5E642" : "#1e3a5f",
+                  color: selected === a ? "#0A1628" : "#fff",
                   fontWeight: 600,
                 }}
               >
@@ -82,12 +82,12 @@ export default function FairviewTexasHomeownerGuide2026() {
 
         {selected && (
           <div style={{ backgroundColor: "#111f3c", borderRadius: 12, padding: "1.5rem", marginBottom: "2rem" }}>
-            <h2 style={{ color: "#F5E642″, fontSize: "1.1rem", marginBottom: "1rem" }}>
+            <h2 style={{ color: "#F5E642", fontSize: "1.1rem", marginBottom: "1rem" }}>
               🔧 Fairview Maintenance Guide — {selected}
             </h2>
             <ul style={{ listStyle: "none", padding: 0, margin: 0 }}>
               {guides[selected].map((item, i) => (
-                <li key={i} style={{ padding: "0.6rem 0″, borderBottom: "1px solid #1e3a5f", color: "#cbd5e1" }}>
+                <li key={i} style={{ padding: "0.6rem 0", borderBottom: "1px solid #1e3a5f", color: "#cbd5e1" }}>
                   {item}
                 </li>
               ))}
@@ -96,12 +96,12 @@ export default function FairviewTexasHomeownerGuide2026() {
         )}
 
         <div style={{ backgroundColor: "#111f3c", borderRadius: 12, padding: "1.5rem" }}>
-          <h2 style={{ color: "#F5E642″, fontSize: "1rem", marginBottom: "0.75rem" }}>📍 Fairview TX Fast Facts</h2>
+          <h2 style={{ color: "#F5E642", fontSize: "1rem", marginBottom: "0.75rem" }}>📍 Fairview TX Fast Facts</h2>
           <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "0.75rem" }}>
             {[["County", "Collin"], ["Home Style", "Custom — large lots"], ["Median Home Value", "~$650K+"], ["HOA", "Active in most communities"], ["Schools", "Lovejoy ISD / Allen ISD"], ["Character", "Affluent suburban enclave"]].map(([k, v]) => (
-              <div key={k} style={{ backgroundColor: "#0A1628″, borderRadius: 8, padding: "0.75rem" }}>
-                <div style={{ color: "#94a3b8″, fontSize: "0.75rem" }}>{k}</div>
-                <div style={{ color: "#F5E642″, fontWeight: 600 }}>{v}</div>
+              <div key={k} style={{ backgroundColor: "#0A1628", borderRadius: 8, padding: "0.75rem" }}>
+                <div style={{ color: "#94a3b8", fontSize: "0.75rem" }}>{k}</div>
+                <div style={{ color: "#F5E642", fontWeight: 600 }}>{v}</div>
               </div>
             ))}
           </div>

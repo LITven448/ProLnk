@@ -38,14 +38,14 @@ export default function DFWPestControlCostGuide() {
   const pill = (label: string, val: string, current: string, set: (v: string) => void) => (
     <button key={val} onClick={() => set(val)} style={{
       padding: '8px 16px', borderRadius: 20, border: '2px solid',
-      borderColor: current === val ? '#F5E642′ : '#2A3A5C',
-      background: current === val ? '#F5E642′ : ’transparent',
-      color: current === val ? '#0A1628′ : '#CBD5E1',
+      borderColor: current === val ? '#F5E642' : '#2A3A5C',
+      background: current === val ? '#F5E642' : 'transparent',
+      color: current === val ? '#0A1628' : '#CBD5E1',
       cursor: 'pointer', fontWeight: 600, fontSize: 13, margin: '4px 6px 4px 0'
     }}>{label}</button>
   );
 
-  const urgencyColor = (u: string) => u === 'High' ? '#F97316′ : u.startsWith(’Medium-High') ? '#F59E0B' : u.startsWith('Medium') ? '#F5E642′ : '#22C55E';
+  const urgencyColor = (u: string) => u === 'High' ? '#F97316' : u.startsWith('Medium-High') ? '#F59E0B' : u.startsWith('Medium') ? '#F5E642' : '#22C55E';
 
   return (
     <div style={{ background: '#0A1628', minHeight: '100vh', color: '#CBD5E1', fontFamily: 'system-ui, sans-serif', padding: '40px 20px' }}>
@@ -63,9 +63,9 @@ export default function DFWPestControlCostGuide() {
               {Object.entries(PEST_DATA).map(([key, d]) => (
                 <button key={key} onClick={() => togglePest(key)} style={{
                   padding: '10px 14px', borderRadius: 8, border: '2px solid',
-                  borderColor: selectedPests.includes(key) ? '#F5E642′ : '#2A3A5C',
-                  background: selectedPests.includes(key) ? '#1a1500′ : '#0A1628',
-                  color: selectedPests.includes(key) ? '#F5E642′ : '#CBD5E1',
+                  borderColor: selectedPests.includes(key) ? '#F5E642' : '#2A3A5C',
+                  background: selectedPests.includes(key) ? '#1a1500' : '#0A1628',
+                  color: selectedPests.includes(key) ? '#F5E642' : '#CBD5E1',
                   cursor: 'pointer', textAlign: 'left', fontSize: 13, fontWeight: selectedPests.includes(key) ? 700 : 400
                 }}>
                   <div>{d.label}</div>
@@ -78,7 +78,7 @@ export default function DFWPestControlCostGuide() {
             <label style={{ display: 'block', fontWeight: 700, color: '#F1F5F9', marginBottom: 8 }}>Property Size</label>
             <div>{[['Under 1,500 sq ft', 'small'], ['1,500–3,000 sq ft', 'medium'], ['3,000+ sq ft', 'large']].map(([l, v]) => pill(l, v, propertySize, setPropertySize))}</div>
           </div>
-          <button onClick={estimate} disabled={selectedPests.length === 0} style={{ width: '100%', padding: '14px', borderRadius: 8, background: selectedPests.length > 0 ? '#F5E642′ : '#2A3A5C', color: '#0A1628', fontWeight: 800, fontSize: 16, border: ’none', cursor: selectedPests.length > 0 ? 'pointer' : 'default' }}>
+          <button onClick={estimate} disabled={selectedPests.length === 0} style={{ width: '100%', padding: '14px', borderRadius: 8, background: selectedPests.length > 0 ? '#F5E642' : '#2A3A5C', color: '#0A1628', fontWeight: 800, fontSize: 16, border: 'none', cursor: selectedPests.length > 0 ? 'pointer' : 'default' }}>
             Compare My Options →
           </button>
         </div>
@@ -87,11 +87,11 @@ export default function DFWPestControlCostGuide() {
           <>
             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: 12, marginBottom: 20 }}>
               {[
-                { label: 'DIY Annual Cost', value: `$${result.diyTotal.toLocaleString()}`, note: 'Materials only, your labor', color: '#94A3B8′ },
-                { label: 'Quarterly Plan (est.)', value: `$${result.quarterlyTotal.toLocaleString()}/yr`, note: '4 treatments per year', color: '#F5E642′ },
+                { label: 'DIY Annual Cost', value: `$${result.diyTotal.toLocaleString()}`, note: 'Materials only, your labor', color: '#94A3B8' },
+                { label: 'Quarterly Plan (est.)', value: `$${result.quarterlyTotal.toLocaleString()}/yr`, note: '4 treatments per year', color: '#F5E642' },
                 { label: 'Monthly Plan (est.)', value: `$${result.monthlyTotal.toLocaleString()}/yr`, note: '12 treatments per year', color: '#22C55E' },
               ].map(item => (
-                <div key={item.label} style={{ background: '#0F1F3D', borderRadius: 10, padding: 16, textAlign: 'center', border: item.value.includes(result.bestValue.includes('Quarterly') ? '/yr' : 'Monthly') ? '2px solid #F5E642′ : '2px solid transparent' }}>
+                <div key={item.label} style={{ background: '#0F1F3D', borderRadius: 10, padding: 16, textAlign: 'center', border: item.value.includes(result.bestValue.includes('Quarterly') ? '/yr' : 'Monthly') ? '2px solid #F5E642' : '2px solid transparent' }}>
                   <div style={{ fontSize: 11, color: '#94A3B8', marginBottom: 4 }}>{item.label}</div>
                   <div style={{ fontSize: 20, fontWeight: 800, color: item.color }}>{item.value}</div>
                   <div style={{ fontSize: 11, color: '#64748B', marginTop: 4 }}>{item.note}</div>
@@ -100,14 +100,14 @@ export default function DFWPestControlCostGuide() {
             </div>
             <div style={{ background: '#0F1F3D', border: '2px solid #22C55E', borderRadius: 12, padding: 16, marginBottom: 20 }}>
               <strong style={{ color: '#22C55E' }}>✅ Best Value for DFW: {result.bestValue}</strong>
-              <p style={{ color: '#94A3B8', fontSize: 13, margin: '8px 0 0′ }}>Professional plans in DFW include re-treatment guarantees — if pests return between scheduled visits, they come back free. DIY lacks this protection.</p>
+              <p style={{ color: '#94A3B8', fontSize: 13, margin: '8px 0 0' }}>Professional plans in DFW include re-treatment guarantees — if pests return between scheduled visits, they come back free. DIY lacks this protection.</p>
             </div>
             <div style={{ background: '#0F1F3D', borderRadius: 12, padding: 24, marginBottom: 20 }}>
               <h3 style={{ color: '#F5E642', fontWeight: 700, marginBottom: 16, marginTop: 0 }}>DFW Notes for Your Selected Pests</h3>
               {result.pestDetails.map(p => (
                 <div key={p.key} style={{ padding: '12px 0', borderBottom: '1px solid #2A3A5C' }}>
                   <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: 4 }}>
-                    <strong style={{ color: '#F1F5F9′ }}>{p.label}</strong>
+                    <strong style={{ color: '#F1F5F9' }}>{p.label}</strong>
                     <span style={{ fontSize: 12, color: urgencyColor(p.urgency) }}>Urgency: {p.urgency}</span>
                   </div>
                   <div style={{ color: '#94A3B8', fontSize: 13, lineHeight: 1.6 }}>{p.dfwNote}</div>

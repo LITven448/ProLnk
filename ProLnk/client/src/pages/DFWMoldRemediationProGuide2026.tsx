@@ -45,7 +45,7 @@ export default function DFWMoldRemediationProGuide2026() {
           <h2 style={{ color: '#F5E642', fontSize: 16, fontWeight: 700, margin: '0 0 16px' }}>💰 Job Type Revenue Projector</h2>
           <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap', marginBottom: 20 }}>
             {Object.entries(jobs).map(([key, val]) => (
-              <button key={key} onClick={() => setJobType(key)} style={{ padding: '7px 14px', borderRadius: 8, border: 'none', cursor: 'pointer', fontWeight: 600, fontSize: 12, backgroundColor: jobType === key ? '#F5E642′ : '#1e3a5f', color: jobType === key ? '#0A1628' : '#94a3b8' }}>
+              <button key={key} onClick={() => setJobType(key)} style={{ padding: '7px 14px', borderRadius: 8, border: 'none', cursor: 'pointer', fontWeight: 600, fontSize: 12, backgroundColor: jobType === key ? '#F5E642' : '#1e3a5f', color: jobType === key ? '#0A1628' : '#94a3b8' }}>
                 {val.label}
               </button>
             ))}

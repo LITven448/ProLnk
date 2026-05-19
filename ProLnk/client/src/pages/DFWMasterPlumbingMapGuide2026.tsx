@@ -35,7 +35,7 @@ export default function DFWMasterPlumbingMapGuide2026() {
         <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap', marginBottom: 24 }}>
           {sections.map(s => (
             <button key={s.id} onClick={() => setActiveSection(s.id)}
-              style={{ background: activeSection === s.id ? '#F5E642′ : '#1e2d4a', color: activeSection === s.id ? '#0A1628' : '#fff', border: ’none', borderRadius: 8, padding: '8px 14px', cursor: 'pointer', fontWeight: 600, fontSize: 13 }}>
+              style={{ background: activeSection === s.id ? '#F5E642' : '#1e2d4a', color: activeSection === s.id ? '#0A1628' : '#fff', border: 'none', borderRadius: 8, padding: '8px 14px', cursor: 'pointer', fontWeight: 600, fontSize: 13 }}>
               {s.label}
             </button>
           ))}
@@ -53,15 +53,15 @@ export default function DFWMasterPlumbingMapGuide2026() {
           <div style={{ display: 'flex', gap: 10, marginBottom: 16 }}>
             {['slab', 'twostory', 'pier'].map(t => (
               <button key={t} onClick={() => setHomeType(t)}
-                style={{ background: homeType === t ? '#F5E642′ : '#0A1628', color: homeType === t ? '#0A1628' : '#fff', border: '1px solid #2d4a6e', borderRadius: 8, padding: '8px 16px', cursor: ’pointer', fontWeight: 600, textTransform: 'capitalize' }}>
+                style={{ background: homeType === t ? '#F5E642' : '#0A1628', color: homeType === t ? '#0A1628' : '#fff', border: '1px solid #2d4a6e', borderRadius: 8, padding: '8px 16px', cursor: 'pointer', fontWeight: 600, textTransform: 'capitalize' }}>
                 {t === 'twostory' ? 'Two-Story' : t.charAt(0).toUpperCase() + t.slice(1)}
               </button>
             ))}
           </div>
           {guide && guide.map((tip, i) => (
             <div key={i} onClick={() => toggle(`guide-${i}`)}
-              style={{ display: 'flex', gap: 10, alignItems: 'flex-start', padding: '8px 0', cursor: 'pointer', borderBottom: '1px solid #0A1628′ }}>
-              <span style={{ color: checked.includes(`guide-${i}`) ? '#F5E642′ : '#2d4a6e', fontSize: 18 }}>
+              style={{ display: 'flex', gap: 10, alignItems: 'flex-start', padding: '8px 0', cursor: 'pointer', borderBottom: '1px solid #0A1628' }}>
+              <span style={{ color: checked.includes(`guide-${i}`) ? '#F5E642' : '#2d4a6e', fontSize: 18 }}>
                 {checked.includes(`guide-${i}`) ? '✅' : '⬜'}
               </span>
               <span style={{ color: '#cbd5e1', fontSize: 14 }}>{tip}</span>

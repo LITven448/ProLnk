@@ -6,8 +6,8 @@ export default function DFWACUpgradeGuide2026() {
   const [repairCost, setRepairCost] = useState(1200);
   const [seer, setSeer] = useState(13);
 
-  const shouldUpgrade = sysAge >= 10 || refrigerant === 'r22′ || repairCost >= 1500 || seer < 14;
-  const urgency = refrigerant === 'r22′ ? ’Urgent' : sysAge >= 15 ? 'High' : repairCost >= 1500 ? 'High' : 'Recommended';
+  const shouldUpgrade = sysAge >= 10 || refrigerant === 'r22' || repairCost >= 1500 || seer < 14;
+  const urgency = refrigerant === 'r22' ? 'Urgent' : sysAge >= 15 ? 'High' : repairCost >= 1500 ? 'High' : 'Recommended';
   const urgencyColor = urgency === 'Urgent' ? '#7f1d1d' : urgency === 'High' ? '#92400e' : '#1e3a5f';
 
   return (
@@ -38,12 +38,12 @@ export default function DFWACUpgradeGuide2026() {
             <div>
               <label style={{ display: 'block', color: '#94a3b8', marginBottom: 6 }}>System Age: {sysAge} years</label>
               <input type="range" min={1} max={25} value={sysAge} onChange={e => setSysAge(Number(e.target.value))}
-                style={{ width: '100%', accentColor: '#F5E642′ }} />
+                style={{ width: '100%', accentColor: '#F5E642' }} />
             </div>
             <div>
               <label style={{ display: 'block', color: '#94a3b8', marginBottom: 6 }}>Current SEER: {seer}</label>
               <input type="range" min={8} max={22} value={seer} onChange={e => setSeer(Number(e.target.value))}
-                style={{ width: '100%', accentColor: '#F5E642′ }} />
+                style={{ width: '100%', accentColor: '#F5E642' }} />
             </div>
           </div>
           <div style={{ marginBottom: 16 }}>
@@ -52,7 +52,7 @@ export default function DFWACUpgradeGuide2026() {
               {[{id: 'r22', label: 'R-22 (Old)'}, {id: 'r410a', label: 'R-410A'}, {id: 'r454b', label: 'R-454B (New)'}].map(r => (
                 <button key={r.id} onClick={() => setRefrigerant(r.id)}
                   style={{ flex: 1, padding: '8px', borderRadius: 8, border: 'none', cursor: 'pointer', fontWeight: 600,
-                    backgroundColor: refrigerant === r.id ? '#F5E642′ : '#0A1628', color: refrigerant === r.id ? '#0A1628' : '#fff' }}>
+                    backgroundColor: refrigerant === r.id ? '#F5E642' : '#0A1628', color: refrigerant === r.id ? '#0A1628' : '#fff' }}>
                   {r.label}
                 </button>
               ))}
@@ -61,7 +61,7 @@ export default function DFWACUpgradeGuide2026() {
           <div style={{ marginBottom: 20 }}>
             <label style={{ display: 'block', color: '#94a3b8', marginBottom: 6 }}>Quoted Repair Cost: ${repairCost.toLocaleString()}</label>
             <input type="range" min={0} max={5000} step={100} value={repairCost} onChange={e => setRepairCost(Number(e.target.value))}
-              style={{ width: '100%', accentColor: '#F5E642′ }} />
+              style={{ width: '100%', accentColor: '#F5E642' }} />
           </div>
           <div style={{ backgroundColor: urgencyColor, borderRadius: 8, padding: 20, textAlign: 'center' }}>
             <div style={{ fontSize: 28, marginBottom: 4 }}>{shouldUpgrade ? '🔄' : '✅'}</div>

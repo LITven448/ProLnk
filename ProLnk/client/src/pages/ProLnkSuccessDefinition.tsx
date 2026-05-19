@@ -90,9 +90,9 @@ export default function ProLnkSuccessDefinition() {
           {userTypes.map(u => (
             <button key={u} onClick={() => setSelected(u)} style={{
               padding: '8px 20px', borderRadius: 24, border: '2px solid',
-              borderColor: selected === u ? '#F5E642′ : '#334155',
-              background: selected === u ? '#F5E642′ : ’transparent',
-              color: selected === u ? '#0A1628′ : '#94A3B8',
+              borderColor: selected === u ? '#F5E642' : '#334155',
+              background: selected === u ? '#F5E642' : 'transparent',
+              color: selected === u ? '#0A1628' : '#94A3B8',
               fontWeight: 700, cursor: 'pointer', textTransform: 'capitalize', fontSize: 14,
             }}>{u}</button>
           ))}
@@ -107,7 +107,7 @@ export default function ProLnkSuccessDefinition() {
             {(['definition', 'measure', 'obstacles'] as const).map(t => (
               <button key={t} onClick={() => setTab(t)} style={{
                 padding: '6px 14px', borderRadius: 20, border: 'none', cursor: 'pointer', fontSize: 13, fontWeight: 600,
-                background: tab === t ? '#F5E642′ : '#1E3A5F', color: tab === t ? '#0A1628' : '#94A3B8',
+                background: tab === t ? '#F5E642' : '#1E3A5F', color: tab === t ? '#0A1628' : '#94A3B8',
               }}>{t.charAt(0).toUpperCase() + t.slice(1)}</button>
             ))}
           </div>
@@ -120,7 +120,7 @@ export default function ProLnkSuccessDefinition() {
 
         <div style={{ background: '#F5E642', borderRadius: 12, padding: '16px 20px' }}>
           <p style={{ color: '#0A1628', fontSize: 13, margin: 0, fontWeight: 600 }}>
-            🎯 Success at ProLnk is measurable, not vague. If you can't track it, it doesn’t count.
+            🎯 Success at ProLnk is measurable, not vague. If you can't track it, it doesn't count.
           </p>
         </div>
       </div>

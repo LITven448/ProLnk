@@ -54,7 +54,7 @@ export default function DFWSeasonalMaintenanceFAQ() {
             {months.map(m => (
               <button key={m} onClick={() => setSelectedMonth(selectedMonth === m ? null : m)}
                 style={{ padding: '8px 14px', borderRadius: 8, border: 'none', cursor: 'pointer', fontSize: 13, fontWeight: 600,
-                  background: selectedMonth === m ? '#F5E642′ : '#1e3a5f', color: selectedMonth === m ? '#0A1628' : '#94a3b8' }}>
+                  background: selectedMonth === m ? '#F5E642' : '#1e3a5f', color: selectedMonth === m ? '#0A1628' : '#94a3b8' }}>
                 {m}
               </button>
             ))}
@@ -74,7 +74,7 @@ export default function DFWSeasonalMaintenanceFAQ() {
         <h2 style={{ color: '#F5E642', fontSize: 20, fontWeight: 700, marginBottom: 16 }}>Seasonal Timing FAQ</h2>
         <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
           {faqs.map((faq, i) => (
-            <div key={i} style={{ background: '#112240', borderRadius: 10, overflow: 'hidden', border: open === i ? '1px solid #F5E642′ : '1px solid #1e3a5f' }}>
+            <div key={i} style={{ background: '#112240', borderRadius: 10, overflow: 'hidden', border: open === i ? '1px solid #F5E642' : '1px solid #1e3a5f' }}>
               <button onClick={() => setOpen(open === i ? null : i)}
                 style={{ width: '100%', textAlign: 'left', padding: '14px 18px', background: 'none', border: 'none', cursor: 'pointer', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
                 <span style={{ color: '#e2e8f0', fontSize: 14, fontWeight: 600 }}>{faq.q}</span>

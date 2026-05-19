@@ -65,7 +65,7 @@ export default function DFWCabinetRefacingGuide() {
           Dallas–Fort Worth 2026 pricing for cabinet painting, refacing, and replacement — DFW humidity effects on wood cabinets, popular finishes, and interactive cost comparison.
         </p>
 
-        <div style={{ backgroundColor: '#112244', borderRadius: 12, padding: 24, marginBottom: 32, borderLeft: '4px solid #F5E642′ }}>
+        <div style={{ backgroundColor: '#112244', borderRadius: 12, padding: 24, marginBottom: 32, borderLeft: '4px solid #F5E642' }}>
           <div style={{ fontSize: 20, marginBottom: 4 }}>💧 DFW Humidity &amp; Wood Cabinets</div>
           <p style={{ color: '#C8D4E8', margin: 0, lineHeight: 1.6 }}>
             DFW kitchens experience 40–80% humidity swings year-round. MDF cabinet doors absorb moisture and swell at seams. Particleboard under-sink boxes are especially vulnerable. Before investing in refacing, inspect all boxes for water damage, swelling, and delamination. Refacing a structurally compromised cabinet box is money wasted.
@@ -82,8 +82,8 @@ export default function DFWCabinetRefacingGuide() {
                 onClick={() => setKitchenSize(s)}
                 style={{
                   padding: '10px 20px', borderRadius: 8, fontSize: 14, fontWeight: 600, cursor: 'pointer',
-                  backgroundColor: kitchenSize === s ? '#F5E642′ : '#0A1628',
-                  color: kitchenSize === s ? '#0A1628′ : '#C8D4E8',
+                  backgroundColor: kitchenSize === s ? '#F5E642' : '#0A1628',
+                  color: kitchenSize === s ? '#0A1628' : '#C8D4E8',
                   border: `2px solid ${kitchenSize === s ? '#F5E642' : '#2A3E5C'}`
                 }}
               >
@@ -94,7 +94,7 @@ export default function DFWCabinetRefacingGuide() {
 
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 16 }}>
             {serviceLevels.map((svc, i) => (
-              <div key={i} style={{ backgroundColor: '#0A1628', borderRadius: 12, padding: 20, border: i === 1 ? '2px solid #F5E642′ : '1px solid #1A2E50' }}>
+              <div key={i} style={{ backgroundColor: '#0A1628', borderRadius: 12, padding: 20, border: i === 1 ? '2px solid #F5E642' : '1px solid #1A2E50' }}>
                 {i === 1 && <div style={{ backgroundColor: '#F5E642', color: '#0A1628', fontSize: 11, fontWeight: 700, padding: '3px 10px', borderRadius: 4, display: 'inline-block', marginBottom: 10 }}>MOST POPULAR</div>}
                 <div style={{ fontWeight: 700, color: '#FFFFFF', fontSize: 15, marginBottom: 4 }}>{svc.name}</div>
                 <div style={{ fontSize: 28, fontWeight: 800, color: '#F5E642', marginBottom: 4 }}>${getCost(svc).toLocaleString()}</div>

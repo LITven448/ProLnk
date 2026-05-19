@@ -1,12 +1,12 @@
 import { useState } from 'react';
 
 const SYSTEMS = [
-  { id: 'hvac', label: '❄️ HVAC', color: '#3B82F6′ },
-  { id: 'plumbing', label: '🔧 Plumbing', color: '#10B981′ },
+  { id: 'hvac', label: '❄️ HVAC', color: '#3B82F6' },
+  { id: 'plumbing', label: '🔧 Plumbing', color: '#10B981' },
   { id: 'electrical', label: '⚡ Electrical', color: '#F59E0B' },
-  { id: 'roofing', label: '🏠 Roofing', color: '#EF4444′ },
-  { id: 'foundation', label: '🏗️ Foundation', color: '#8B5CF6′ },
-  { id: 'pest', label: '🐛 Pest Control', color: '#EC4899′ },
+  { id: 'roofing', label: '🏠 Roofing', color: '#EF4444' },
+  { id: 'foundation', label: '🏗️ Foundation', color: '#8B5CF6' },
+  { id: 'pest', label: '🐛 Pest Control', color: '#EC4899' },
 ];
 
 const CALENDAR: Record<string, Record<string, string>> = {
@@ -32,14 +32,14 @@ export default function DFWHVACAllSystemsCalendar() {
     <div style={{ minHeight: '100vh', background: '#0A1628', color: '#fff', fontFamily: 'system-ui,sans-serif', padding: '2rem' }}>
       <div style={{ maxWidth: 1100, margin: '0 auto' }}>
         <div style={{ textAlign: 'center', marginBottom: '2rem' }}>
-          <div style={{ fontSize: '2.5rem', fontWeight: 800, color: '#F5E642′ }}>🏠 DFW Annual Home Systems Calendar</div>
+          <div style={{ fontSize: '2.5rem', fontWeight: 800, color: '#F5E642' }}>🏠 DFW Annual Home Systems Calendar</div>
           <div style={{ color: '#94A3B8', marginTop: '.5rem' }}>12-month care plan for all 6 major systems — built for North Texas conditions</div>
         </div>
 
         <div style={{ display: 'flex', gap: '.75rem', flexWrap: 'wrap', justifyContent: 'center', marginBottom: '2rem' }}>
           {SYSTEMS.map(s => (
             <button key={s.id} onClick={() => setActiveSystem(activeSystem === s.id ? null : s.id)}
-              style={{ padding: '.5rem 1.25rem', borderRadius: 999, border: , background: activeSystem === s.id ? s.color + '22′ : '#0F2035', color: '#fff', cursor: ’pointer', fontWeight: 600, fontSize: '.9rem' }}>
+              style={{ padding: '.5rem 1.25rem', borderRadius: 999, border: , background: activeSystem === s.id ? s.color + '22' : '#0F2035', color: '#fff', cursor: 'pointer', fontWeight: 600, fontSize: '.9rem' }}>
               {s.label}
             </button>
           ))}
@@ -52,14 +52,14 @@ export default function DFWHVACAllSystemsCalendar() {
               {SYSTEMS.filter(s => !activeSystem || s.id === activeSystem).map(s => (
                 <div key={s.id} style={{ display: 'flex', gap: '.5rem', marginBottom: '.4rem', opacity: activeSystem && activeSystem !== s.id ? 0.3 : 1 }}>
                   <span style={{ fontSize: '.75rem', color: s.color, fontWeight: 700, minWidth: 80 }}>{s.label.split(' ')[1]}</span>
-                  <span style={{ fontSize: '.78rem', color: '#CBD5E1′ }}>{CALENDAR[month][s.id]}</span>
+                  <span style={{ fontSize: '.78rem', color: '#CBD5E1' }}>{CALENDAR[month][s.id]}</span>
                 </div>
               ))}
             </div>
           ))}
         </div>
 
-        <div style={{ textAlign: 'center', marginTop: '2rem', padding: '1rem', background: '#0F2035', borderRadius: 12, border: '1px solid #F5E642′ }}>
+        <div style={{ textAlign: 'center', marginTop: '2rem', padding: '1rem', background: '#0F2035', borderRadius: 12, border: '1px solid #F5E642' }}>
           <span style={{ color: '#F5E642', fontWeight: 700 }}>🔗 ProLnk Tip:</span>
           <span style={{ color: '#CBD5E1', marginLeft: '.5rem' }}>Tap any month task to instantly match with a vetted DFW pro on ProLnk.</span>
         </div>

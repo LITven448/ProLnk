@@ -121,7 +121,7 @@ export default function DFWHomeAutomationSceneGuide() {
               <div style={{ display: 'grid', gap: 4, marginBottom: 12 }}>
                 {s.actions.map((a, i) => (
                   <div key={i} style={{ color: '#CBD5E1', fontSize: 13, display: 'flex', gap: 8 }}>
-                    <span style={{ color: '#F5E642′ }}>→</span>
+                    <span style={{ color: '#F5E642' }}>→</span>
                     <span>{a}</span>
                   </div>
                 ))}
@@ -132,12 +132,12 @@ export default function DFWHomeAutomationSceneGuide() {
         </div>
 
         <div style={{ background: '#0D1F35', borderRadius: 12, padding: '28px', border: '1px solid #1E3A5F', marginBottom: 32 }}>
-          <h2 style={{ fontSize: 20, fontWeight: 700, marginBottom: 20, color: '#F5E642′ }}>🔧 Get Your Scene Recommendations</h2>
+          <h2 style={{ fontSize: 20, fontWeight: 700, marginBottom: 20, color: '#F5E642' }}>🔧 Get Your Scene Recommendations</h2>
           <div style={{ marginBottom: 16 }}>
             <label style={{ display: 'block', color: '#CBD5E1', fontSize: 13, marginBottom: 8 }}>Your Lifestyle</label>
             <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap' }}>
               {lifestyles.map(l => (
-                <button key={l} onClick={() => setLifestyle(l)} style={{ padding: '8px 16px', borderRadius: 8, border: `2px solid ${lifestyle === l ? '#F5E642' : '#1E3A5F'}`, background: lifestyle === l ? '#F5E64220′ : ’transparent', color: lifestyle === l ? '#F5E642′ : '#94A3B8', cursor: ’pointer', fontWeight: 600, fontSize: 12 }}>
+                <button key={l} onClick={() => setLifestyle(l)} style={{ padding: '8px 16px', borderRadius: 8, border: `2px solid ${lifestyle === l ? '#F5E642' : '#1E3A5F'}`, background: lifestyle === l ? '#F5E64220' : 'transparent', color: lifestyle === l ? '#F5E642' : '#94A3B8', cursor: 'pointer', fontWeight: 600, fontSize: 12 }}>
                   {l}
                 </button>
               ))}
@@ -147,7 +147,7 @@ export default function DFWHomeAutomationSceneGuide() {
             <label style={{ display: 'block', color: '#CBD5E1', fontSize: 13, marginBottom: 8 }}>DFW Season Focus</label>
             <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap' }}>
               {[['summer', '☀️ Summer'], ['winter', '❄️ Winter'], ['spring', '⛈️ Storm Season'], ['all', '🔄 All Year']].map(([v, l]) => (
-                <button key={v} onClick={() => setSeason(v)} style={{ padding: '8px 16px', borderRadius: 8, border: `2px solid ${season === v ? '#F5E642' : '#1E3A5F'}`, background: season === v ? '#F5E64220′ : ’transparent', color: season === v ? '#F5E642′ : '#94A3B8', cursor: ’pointer', fontWeight: 600, fontSize: 12 }}>
+                <button key={v} onClick={() => setSeason(v)} style={{ padding: '8px 16px', borderRadius: 8, border: `2px solid ${season === v ? '#F5E642' : '#1E3A5F'}`, background: season === v ? '#F5E64220' : 'transparent', color: season === v ? '#F5E642' : '#94A3B8', cursor: 'pointer', fontWeight: 600, fontSize: 12 }}>
                   {l}
                 </button>
               ))}

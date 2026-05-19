@@ -1,10 +1,10 @@
 import { useState } from 'react';
 
 const symptoms = [
-  { id: 'hissing', label: '🔊 Constant hissing sound', cause: 'Fill valve failure or calcium buildup', fix: 'Replace fill valve ($8-15 at Home Depot). DFW hard water clogs valve seat — flush with white vinegar first.', parts: 'Fluidmaster 400A fill valve kit', diy: '$12-25', plumber: '$95-150′ },
-  { id: 'running', label: '💧 Water runs intermittently', cause: 'Worn flapper (DFW hard water accelerates deterioration)', fix: 'Replace flapper ($4-8). DFW chloramines degrade rubber 2x faster — use Korky 100BP chloramine-resistant flapper.', parts: 'Korky 100BP chloramine-resistant flapper', diy: '$5-10', plumber: '$85-130′ },
-  { id: 'ghost', label: '👻 Toilet refills without flushing', cause: 'Slow flapper leak — water loses pressure until fill valve kicks on', fix: 'Add food coloring to tank. If bowl turns colored in 15min — replace flapper immediately.', parts: 'Korky flapper + float adjustment', diy: '$8-15', plumber: '$90-140′ },
-  { id: 'overflow', label: '🚽 Water spills into overflow tube', cause: 'Float set too high or fill valve stuck open', fix: 'Adjust float arm downward or replace fill valve. Water should sit 1 inch below overflow tube.', parts: 'Replacement fill valve', diy: '$12-20', plumber: '$95-150′ },
+  { id: 'hissing', label: '🔊 Constant hissing sound', cause: 'Fill valve failure or calcium buildup', fix: 'Replace fill valve ($8-15 at Home Depot). DFW hard water clogs valve seat — flush with white vinegar first.', parts: 'Fluidmaster 400A fill valve kit', diy: '$12-25', plumber: '$95-150' },
+  { id: 'running', label: '💧 Water runs intermittently', cause: 'Worn flapper (DFW hard water accelerates deterioration)', fix: 'Replace flapper ($4-8). DFW chloramines degrade rubber 2x faster — use Korky 100BP chloramine-resistant flapper.', parts: 'Korky 100BP chloramine-resistant flapper', diy: '$5-10', plumber: '$85-130' },
+  { id: 'ghost', label: '👻 Toilet refills without flushing', cause: 'Slow flapper leak — water loses pressure until fill valve kicks on', fix: 'Add food coloring to tank. If bowl turns colored in 15min — replace flapper immediately.', parts: 'Korky flapper + float adjustment', diy: '$8-15', plumber: '$90-140' },
+  { id: 'overflow', label: '🚽 Water spills into overflow tube', cause: 'Float set too high or fill valve stuck open', fix: 'Adjust float arm downward or replace fill valve. Water should sit 1 inch below overflow tube.', parts: 'Replacement fill valve', diy: '$12-20', plumber: '$95-150' },
 ];
 
 export default function DFWToiletRunningGuide() {
@@ -15,8 +15,8 @@ export default function DFWToiletRunningGuide() {
     <div style={{ background: '#0A1628', minHeight: '100vh', color: '#e2e8f0', fontFamily: 'system-ui, sans-serif', padding: '32px 16px' }}>
       <div style={{ maxWidth: 720, margin: '0 auto' }}>
         <div style={{ marginBottom: 8, color: '#F5E642', fontSize: 13, fontWeight: 600, letterSpacing: 1 }}>DFW PLUMBING GUIDE</div>
-        <h1 style={{ fontSize: 28, fontWeight: 700, marginBottom: 8, lineHeight: 1.2 }}>🚽 Running Toilet Troubleshooting<br /><span style={{ color: '#F5E642′ }}>Dallas-Fort Worth Guide</span></h1>
-        <p style={{ color: '#94a3b8', marginBottom: 24, fontSize: 15 }}>Running toilets are the #1 plumbing complaint in DFW — DFW hard water (8-12 grains hardness) destroys rubber flappers and clogs fill valves faster than anywhere in Texas. A running toilet wastes 200+ gallons/day, spiking your DFW water bill by <strong style={{ color: '#F5E642′ }}>$40-90/month</strong>.</p>
+        <h1 style={{ fontSize: 28, fontWeight: 700, marginBottom: 8, lineHeight: 1.2 }}>🚽 Running Toilet Troubleshooting<br /><span style={{ color: '#F5E642' }}>Dallas-Fort Worth Guide</span></h1>
+        <p style={{ color: '#94a3b8', marginBottom: 24, fontSize: 15 }}>Running toilets are the #1 plumbing complaint in DFW — DFW hard water (8-12 grains hardness) destroys rubber flappers and clogs fill valves faster than anywhere in Texas. A running toilet wastes 200+ gallons/day, spiking your DFW water bill by <strong style={{ color: '#F5E642' }}>$40-90/month</strong>.</p>
 
         <div style={{ background: '#1e2d47', borderRadius: 12, padding: 20, marginBottom: 24 }}>
           <div style={{ fontSize: 13, color: '#F5E642', fontWeight: 600, marginBottom: 12 }}>💸 DFW WATER COST REALITY</div>
@@ -32,7 +32,7 @@ export default function DFWToiletRunningGuide() {
         </div>
 
         <div style={{ marginBottom: 24 }}>
-          <div style={{ fontSize: 14, fontWeight: 600, marginBottom: 12, color: '#cbd5e1′ }}>SELECT YOUR SYMPTOM</div>
+          <div style={{ fontSize: 14, fontWeight: 600, marginBottom: 12, color: '#cbd5e1' }}>SELECT YOUR SYMPTOM</div>
           <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
             {symptoms.map(s => (
               <button key={s.id} onClick={() => setSelected(s.id === selected ? null : s.id)}
@@ -44,7 +44,7 @@ export default function DFWToiletRunningGuide() {
         </div>
 
         {symptom && (
-          <div style={{ background: '#1e2d47', borderRadius: 12, padding: 24, border: '1px solid #F5E642′ }}>
+          <div style={{ background: '#1e2d47', borderRadius: 12, padding: 24, border: '1px solid #F5E642' }}>
             <div style={{ color: '#F5E642', fontWeight: 700, fontSize: 16, marginBottom: 8 }}>🔍 Diagnosis: {symptom.cause}</div>
             <p style={{ color: '#cbd5e1', marginBottom: 16 }}>{symptom.fix}</p>
             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: 10 }}>

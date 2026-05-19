@@ -62,13 +62,13 @@ export default function DFWRoofingLifetimeCost2026() {
         <div style={{ background: '#F5E642', color: '#0A1628', display: 'inline-block', padding: '4px 14px', borderRadius: 4, fontSize: 12, fontWeight: 700, marginBottom: 16, letterSpacing: 1 }}>DFW HOMEOWNER GUIDE · 2026</div>
         <h1 style={{ fontSize: 28, fontWeight: 800, marginBottom: 8, lineHeight: 1.2 }}>DFW Roofing Lifetime Cost Analysis 2026</h1>
         <p style={{ color: '#8FA3BF', marginBottom: 16, fontSize: 15 }}>50-year total cost of roofing ownership in DFW — the cheapest shingle today is rarely the cheapest roof over your lifetime.</p>
-        <div style={{ background: '#132238', borderRadius: 8, padding: '12px 16px', marginBottom: 28, borderLeft: '4px solid #F5E642′ }}>
+        <div style={{ background: '#132238', borderRadius: 8, padding: '12px 16px', marginBottom: 28, borderLeft: '4px solid #F5E642' }}>
           <span style={{ color: '#F5E642', fontWeight: 700, fontSize: 13 }}>📍 DFW Context: </span>
           <span style={{ color: '#C2D3E8', fontSize: 13 }}>North Texas averages 8–12 significant hail events per year. DFW homeowners replace roofs 40–60% more frequently than the national average. Material choice here has outsized impact.</span>
         </div>
         <div style={{ display: 'flex', gap: 10, flexWrap: 'wrap', marginBottom: 28 }}>
           {materials.map(x => (
-            <button key={x.id} onClick={() => setActive(x.id)} style={{ background: active === x.id ? '#F5E642′ : '#132238', color: active === x.id ? '#0A1628' : '#E8EDF5', border: ’none', borderRadius: 8, padding: '10px 16px', cursor: 'pointer', fontWeight: 700, fontSize: 13 }}>
+            <button key={x.id} onClick={() => setActive(x.id)} style={{ background: active === x.id ? '#F5E642' : '#132238', color: active === x.id ? '#0A1628' : '#E8EDF5', border: 'none', borderRadius: 8, padding: '10px 16px', cursor: 'pointer', fontWeight: 700, fontSize: 13 }}>
               {x.icon} {x.label}
             </button>
           ))}
@@ -86,12 +86,12 @@ export default function DFWRoofingLifetimeCost2026() {
                 <div style={{ fontWeight: 600, fontSize: 14 }}>{row.label}</div>
                 <div style={{ color: '#8FA3BF', fontSize: 12 }}>{row.note}</div>
               </div>
-              <div style={{ fontWeight: 800, fontSize: 17, color: row.val < 0 ? '#4ADE80′ : '#E8EDF5' }}>{row.val < 0 ? '-' + fmt(-row.val) : fmt(row.val)}</div>
+              <div style={{ fontWeight: 800, fontSize: 17, color: row.val < 0 ? '#4ADE80' : '#E8EDF5' }}>{row.val < 0 ? '-' + fmt(-row.val) : fmt(row.val)}</div>
             </div>
           ))}
-          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '16px 0 0′ }}>
+          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '16px 0 0' }}>
             <div style={{ fontWeight: 800, fontSize: 17 }}>💰 Net 50-Year Cost</div>
-            <div style={{ fontWeight: 900, fontSize: 26, color: '#F5E642′ }}>{fmt(net)}</div>
+            <div style={{ fontWeight: 900, fontSize: 26, color: '#F5E642' }}>{fmt(net)}</div>
           </div>
         </div>
         <div style={{ background: '#132238', borderRadius: 10, padding: 20 }}>
@@ -102,7 +102,7 @@ export default function DFWRoofingLifetimeCost2026() {
               return (
                 <div key={x.id} style={{ display: 'flex', justifyContent: 'space-between', padding: '8px 12px', background: x.id === active ? '#1E3A5F' : '#0D1F36', borderRadius: 6 }}>
                   <span style={{ fontSize: 14 }}>{x.icon} {x.label}</span>
-                  <span style={{ fontWeight: 700, color: x.id === active ? '#F5E642′ : '#C2D3E8' }}>{fmt(xNet)}</span>
+                  <span style={{ fontWeight: 700, color: x.id === active ? '#F5E642' : '#C2D3E8' }}>{fmt(xNet)}</span>
                 </div>
               );
             }).sort((a, b) => 0)}

@@ -53,12 +53,12 @@ export default function DFWHVACDFWExpect2026() {
 
         <div style={{ display: 'flex', flexWrap: 'wrap', gap: 10, justifyContent: 'center', marginBottom: 36 }}>
           {services.map(s => (
-            <button key={s.id} onClick={() => setSelected(s.id)} style={{ padding: '10px 18px', borderRadius: 8, border: '2px solid', borderColor: selected === s.id ? '#F5E642′ : '#1E3A5F', backgroundColor: selected === s.id ? '#F5E642' : '#0F2340', color: selected === s.id ? '#0A1628' : '#CBD5E1', fontWeight: 600, cursor: ’pointer', fontSize: 14 }}>{s.label}</button>
+            <button key={s.id} onClick={() => setSelected(s.id)} style={{ padding: '10px 18px', borderRadius: 8, border: '2px solid', borderColor: selected === s.id ? '#F5E642' : '#1E3A5F', backgroundColor: selected === s.id ? '#F5E642' : '#0F2340', color: selected === s.id ? '#0A1628' : '#CBD5E1', fontWeight: 600, cursor: 'pointer', fontSize: 14 }}>{s.label}</button>
           ))}
         </div>
 
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 20, marginBottom: 24 }}>
-          {[{ label: '📞 Traditional Contractor', data: active.traditional, accent: '#334155′ }, { label: '🔗 With ProLnk', data: active.prolnk, accent: '#F5E642' }].map(col => (
+          {[{ label: '📞 Traditional Contractor', data: active.traditional, accent: '#334155' }, { label: '🔗 With ProLnk', data: active.prolnk, accent: '#F5E642' }].map(col => (
             <div key={col.label} style={{ backgroundColor: '#0F2340', borderRadius: 14, padding: 28, border: `2px solid ${col.accent}` }}>
               <div style={{ fontSize: 14, fontWeight: 700, color: col.accent, marginBottom: 18 }}>{col.label}</div>
               {[['⏱️ Wait Time', col.data.wait], ['💵 Pricing', col.data.price], ['✅ Quality', col.data.quality]].map(([k, v]) => (
@@ -76,7 +76,7 @@ export default function DFWHVACDFWExpect2026() {
           <p style={{ color: '#CBD5E1', margin: 0, fontSize: 15, lineHeight: 1.6 }}>{active.insight}</p>
         </div>
 
-        <div style={{ textAlign: 'center', backgroundColor: '#0F2340', borderRadius: 12, padding: 28, border: '1px solid #F5E642′ }}>
+        <div style={{ textAlign: 'center', backgroundColor: '#0F2340', borderRadius: 12, padding: 28, border: '1px solid #F5E642' }}>
           <div style={{ fontSize: 20, fontWeight: 700, marginBottom: 10 }}>Set the Right Expectations — Before You Need Service</div>
           <p style={{ color: '#94A3B8', marginBottom: 20 }}>Free for homeowners. Vetted pros. Transparent quotes.</p>
           <a href="https://prolnk.io" style={{ backgroundColor: '#F5E642', color: '#0A1628', padding: '14px 32px', borderRadius: 8, fontWeight: 700, textDecoration: 'none', fontSize: 16 }}>Join ProLnk Free</a>

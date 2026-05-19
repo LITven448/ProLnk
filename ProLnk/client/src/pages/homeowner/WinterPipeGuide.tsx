@@ -32,7 +32,7 @@ export default function WinterPipeGuide() {
   const sqftFactor = homeSqft > 3000 ? 3 : homeSqft > 1500 ? 2 : 1;
   const riskScore = insulationType.riskMultiplier * ageFactor * sqftFactor;
   const riskLevel = riskScore >= 9 ? 'High' : riskScore >= 4 ? 'Moderate' : 'Low';
-  const riskColor = riskLevel === 'High' ? '#ef4444′ : riskLevel === ’Moderate' ? '#f59e0b' : '#22c55e';
+  const riskColor = riskLevel === 'High' ? '#ef4444' : riskLevel === 'Moderate' ? '#f59e0b' : '#22c55e';
 
   const prepSteps =
     riskLevel === 'High'
@@ -49,7 +49,7 @@ export default function WinterPipeGuide() {
           <h1 style={{ fontSize: '2rem', fontWeight: 700, color: '#F5E642', marginBottom: '0.5rem' }}>
             DFW Pipe Freeze Prevention Guide
           </h1>
-          <p style={{ color: '#94a3b8′ }}>The February 2021 freeze cost Texas homeowners $4.5B in pipe damage. Don’t get caught again.</p>
+          <p style={{ color: '#94a3b8' }}>The February 2021 freeze cost Texas homeowners $4.5B in pipe damage. Don't get caught again.</p>
         </div>
 
         <div style={{ background: '#F5E642', color: '#0A1628', borderRadius: 12, padding: '1rem 1.5rem', marginBottom: '2rem', display: 'flex', gap: '1rem', alignItems: 'center' }}>
@@ -71,7 +71,7 @@ export default function WinterPipeGuide() {
                   <div style={{ color: '#94a3b8', fontSize: '0.875rem' }}>{p.action}</div>
                 </div>
                 <span style={{
-                  background: p.risk === 'Extreme' ? '#ef4444′ : p.risk === ’High' ? '#f59e0b' : p.risk === 'Medium' ? '#3b82f6′ : '#22c55e',
+                  background: p.risk === 'Extreme' ? '#ef4444' : p.risk === 'High' ? '#f59e0b' : p.risk === 'Medium' ? '#3b82f6' : '#22c55e',
                   color: '#fff', borderRadius: 6, padding: '2px 10px', fontSize: '0.8rem', fontWeight: 700, whiteSpace: 'nowrap',
                 }}>{p.risk}</span>
               </div>
@@ -93,11 +93,11 @@ export default function WinterPipeGuide() {
               <div style={{ color: '#94a3b8', fontSize: '0.8rem' }}>Cost to drip 48 hrs</div>
             </div>
             <div>
-              <div style={{ fontSize: '1.75rem', fontWeight: 700, color: '#ef4444′ }}>$2,800</div>
+              <div style={{ fontSize: '1.75rem', fontWeight: 700, color: '#ef4444' }}>$2,800</div>
               <div style={{ color: '#94a3b8', fontSize: '0.8rem' }}>Avg burst pipe repair</div>
             </div>
             <div>
-              <div style={{ fontSize: '1.75rem', fontWeight: 700, color: '#F5E642′ }}>7,368x</div>
+              <div style={{ fontSize: '1.75rem', fontWeight: 700, color: '#F5E642' }}>7,368x</div>
               <div style={{ color: '#94a3b8', fontSize: '0.8rem' }}>Return on dripping</div>
             </div>
           </div>
@@ -123,7 +123,7 @@ export default function WinterPipeGuide() {
               <div style={{ display: 'flex', gap: '0.4rem', marginTop: 4, flexWrap: 'wrap' }}>
                 {insulationTypes.map(i => (
                   <button key={i.type} onClick={() => setInsulation(i.type)}
-                    style={{ background: insulation === i.type ? '#F5E642′ : '#1e3a5f', color: insulation === i.type ? '#0A1628' : '#fff', border: ’none', borderRadius: 8, padding: '0.4rem 0.75rem', cursor: 'pointer', fontWeight: 600, fontSize: '0.8rem' }}>
+                    style={{ background: insulation === i.type ? '#F5E642' : '#1e3a5f', color: insulation === i.type ? '#0A1628' : '#fff', border: 'none', borderRadius: 8, padding: '0.4rem 0.75rem', cursor: 'pointer', fontWeight: 600, fontSize: '0.8rem' }}>
                     {i.type}
                   </button>
                 ))}
@@ -135,7 +135,7 @@ export default function WinterPipeGuide() {
             <div style={{ color: '#94a3b8', fontSize: '0.875rem', marginTop: '0.25rem' }}>Based on size, age, and insulation level</div>
           </div>
           <div>
-            <div style={{ fontWeight: 600, marginBottom: '0.5rem', color: '#F5E642′ }}>Recommended Prep Steps:</div>
+            <div style={{ fontWeight: 600, marginBottom: '0.5rem', color: '#F5E642' }}>Recommended Prep Steps:</div>
             <ul style={{ paddingLeft: '1.25rem', margin: 0, display: 'flex', flexDirection: 'column', gap: '0.4rem' }}>
               {prepSteps.map(s => <li key={s} style={{ color: '#94a3b8', fontSize: '0.875rem' }}>{s}</li>)}
             </ul>

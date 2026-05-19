@@ -50,7 +50,7 @@ export default function DFWLoadBearingWallGuide() {
       <div style={{ maxWidth: 720, margin: '0 auto' }}>
         <div style={{ marginBottom: 8, color: '#F5E642', fontWeight: 700, fontSize: 13, letterSpacing: 2, textTransform: 'uppercase' }}>🏠 DFW Home Health Vault</div>
         <h1 style={{ fontSize: 32, fontWeight: 800, color: '#F5E642', marginBottom: 8 }}>Load Bearing Wall Guide</h1>
-        <p style={{ color: '#9BA3B5', marginBottom: 32, lineHeight: 1.6 }}>Removing the wrong wall in a DFW home is one of the most expensive mistakes a homeowner can make. DFW's clay soil foundation movement has often redistributed original load paths in ways that don’t match typical rules of thumb.</p>
+        <p style={{ color: '#9BA3B5', marginBottom: 32, lineHeight: 1.6 }}>Removing the wrong wall in a DFW home is one of the most expensive mistakes a homeowner can make. DFW's clay soil foundation movement has often redistributed original load paths in ways that don't match typical rules of thumb.</p>
 
         <section style={{ marginBottom: 28 }}>
           <h2 style={{ color: '#F5E642', fontSize: 20, marginBottom: 12 }}>⚠️ Why DFW Is Different</h2>
@@ -81,9 +81,9 @@ export default function DFWLoadBearingWallGuide() {
           {result && (
             <div style={{ background: '#0A1628', borderRadius: 8, padding: 20 }}>
               <div style={{ marginBottom: 10 }}><span style={{ color: '#F5E642', fontWeight: 700 }}>Load-Bearing Likelihood: </span><span style={{ fontWeight: 700 }}>{result.likelihood}</span></div>
-              <div style={{ marginBottom: 10 }}><span style={{ color: '#F5E642', fontWeight: 700 }}>Engineer Needed: </span><span style={{ color: '#FACC15′ }}>{result.engineerNeeded}</span></div>
-              <div style={{ marginBottom: 10 }}><span style={{ color: '#F5E642', fontWeight: 700 }}>Consequence of Incorrect Removal: </span><span style={{ color: '#F87171′ }}>{result.consequence}</span></div>
-              <div><span style={{ color: '#F5E642', fontWeight: 700 }}>Visual Indicators: </span><span style={{ color: '#C5CAD8′ }}>{result.indicators}</span></div>
+              <div style={{ marginBottom: 10 }}><span style={{ color: '#F5E642', fontWeight: 700 }}>Engineer Needed: </span><span style={{ color: '#FACC15' }}>{result.engineerNeeded}</span></div>
+              <div style={{ marginBottom: 10 }}><span style={{ color: '#F5E642', fontWeight: 700 }}>Consequence of Incorrect Removal: </span><span style={{ color: '#F87171' }}>{result.consequence}</span></div>
+              <div><span style={{ color: '#F5E642', fontWeight: 700 }}>Visual Indicators: </span><span style={{ color: '#C5CAD8' }}>{result.indicators}</span></div>
             </div>
           )}
         </div>

@@ -38,7 +38,7 @@ export default function DFWHomesteadExemptionGuide2026() {
       <div style={{ maxWidth: 760, margin: '0 auto' }}>
         <div style={{ textAlign: 'center', marginBottom: '2rem' }}>
           <div style={{ fontSize: '3rem' }}>🏡✅</div>
-          <h1 style={{ fontSize: '2rem', fontWeight: 800, color: '#F5E642', margin: '0.5rem 0′ }}>DFW Homestead Exemption Guide 2026</h1>
+          <h1 style={{ fontSize: '2rem', fontWeight: 800, color: '#F5E642', margin: '0.5rem 0' }}>DFW Homestead Exemption Guide 2026</h1>
           <p style={{ color: '#94a3b8', fontSize: '1.05rem' }}>Save $1,500–$3,000/yr. File by April 30 if you bought your home in 2025 or 2026.</p>
         </div>
 
@@ -47,7 +47,7 @@ export default function DFWHomesteadExemptionGuide2026() {
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3,1fr)', gap: '0.75rem' }}>
             {[['School District','\K off','Appraised value'],['Over-65 Bonus','\K extra','Off school taxes'],['Value Cap','10% max','Annual increase']].map(([label, val, sub]) => (
               <div key={label} style={{ background: '#0A1628', borderRadius: 8, padding: '1rem', textAlign: 'center' }}>
-                <div style={{ fontSize: '1.3rem', fontWeight: 800, color: '#F5E642′ }}>{val}</div>
+                <div style={{ fontSize: '1.3rem', fontWeight: 800, color: '#F5E642' }}>{val}</div>
                 <div style={{ fontSize: '0.8rem', color: '#e2e8f0', marginTop: 2 }}>{label}</div>
                 <div style={{ fontSize: '0.75rem', color: '#64748b' }}>{sub}</div>
               </div>
@@ -67,12 +67,12 @@ export default function DFWHomesteadExemptionGuide2026() {
           </div>
           <div style={{ display: 'flex', gap: '0.5rem', marginTop: '1rem', flexWrap: 'wrap' }}>
             {['Dallas','Tarrant','Collin','Denton'].map(c => (
-              <button key={c} onClick={() => setCounty(c)} style={{ background: county === c ? '#F5E642′ : '#0A1628', color: county === c ? '#0A1628' : '#94a3b8', border: '1px solid #1e3a5f', borderRadius: 6, padding: '0.4rem 1rem', cursor: ’pointer', fontWeight: county === c ? 700 : 400 }}>{c}</button>
+              <button key={c} onClick={() => setCounty(c)} style={{ background: county === c ? '#F5E642' : '#0A1628', color: county === c ? '#0A1628' : '#94a3b8', border: '1px solid #1e3a5f', borderRadius: 6, padding: '0.4rem 1rem', cursor: 'pointer', fontWeight: county === c ? 700 : 400 }}>{c}</button>
             ))}
           </div>
         </div>
 
-        <div style={{ background: '#0f2035', borderRadius: 12, padding: '1.5rem', border: '1px solid #F5E642′ }}>
+        <div style={{ background: '#0f2035', borderRadius: 12, padding: '1.5rem', border: '1px solid #F5E642' }}>
           <h2 style={{ color: '#F5E642', marginTop: 0, fontSize: '1.2rem' }}>🧮 Savings Calculator</h2>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
             <div>
@@ -97,8 +97,8 @@ export default function DFWHomesteadExemptionGuide2026() {
             <div style={{ marginTop: '1rem', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
               {[['Annual Tax Savings', '$' + Math.round(result.totalSavings).toLocaleString()],['Taxable Value', '$' + Math.round(result.taxableValue).toLocaleString()]].map(([label, val]) => (
                 <div key={label} style={{ background: '#0A1628', borderRadius: 8, padding: '1rem', textAlign: 'center' }}>
-                  <div style={{ fontSize: '1.5rem', fontWeight: 800, color: '#F5E642′ }}>{val}</div>
-                  <div style={{ fontSize: '0.8rem', color: '#94a3b8′ }}>{label}</div>
+                  <div style={{ fontSize: '1.5rem', fontWeight: 800, color: '#F5E642' }}>{val}</div>
+                  <div style={{ fontSize: '0.8rem', color: '#94a3b8' }}>{label}</div>
                 </div>
               ))}
             </div>

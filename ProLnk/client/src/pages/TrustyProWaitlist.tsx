@@ -19,7 +19,7 @@ import {
 // ---------------------------------------------------------------------------
 // Deep 7-Step Homeowner Waitlist Modal
 // ---------------------------------------------------------------------------
-const ACCENT = "#4F46E5″;
+const ACCENT = "#4F46E5";
 
 const HOME_TYPES = ["single_family", "townhouse", "condo", "multi_family", "mobile"] as const;
 const HOME_TYPE_LABELS: Record<string, string> = {
@@ -116,14 +116,14 @@ const STEP_TITLES = [
 
 function ProgressBar({ step, total }: { step: number; total: number }) {
   return (
-    <div className="mb-6″>
-      <div className="flex justify-between items-center mb-2″>
-        <span className="text-xs font-semibold text-indigo-600″>Step {step} of {total}</span>
-        <span className="text-xs text-gray-400″>{STEP_TITLES[step - 1]}</span>
+    <div className="mb-6">
+      <div className="flex justify-between items-center mb-2">
+        <span className="text-xs font-semibold text-indigo-600">Step {step} of {total}</span>
+        <span className="text-xs text-gray-400">{STEP_TITLES[step - 1]}</span>
       </div>
       <div className="h-1.5 bg-gray-100 rounded-full overflow-hidden">
         <div
-          className="h-full rounded-full transition-all duration-500″
+          className="h-full rounded-full transition-all duration-500"
           style={{ width: `${(step / total) * 100}%`, backgroundColor: ACCENT }}
         />
       </div>
@@ -141,8 +141,8 @@ function Toggle({ checked, onChange, label, sublabel }: { checked: boolean; onCh
         <span className={`absolute top-0.5 left-0.5 w-5 h-5 bg-white rounded-full shadow transition-transform duration-200 ${checked ? "translate-x-5" : ""}`} />
       </div>
       <div>
-        <p className="text-sm font-medium text-gray-800″>{label}</p>
-        {sublabel && <p className="text-xs text-gray-400 mt-0.5″>{sublabel}</p>}
+        <p className="text-sm font-medium text-gray-800">{label}</p>
+        {sublabel && <p className="text-xs text-gray-400 mt-0.5">{sublabel}</p>}
       </div>
     </label>
   );
@@ -152,7 +152,7 @@ function MultiSelect({ options, selected, onChange }: { options: string[]; selec
   const toggle = (opt: string) =>
     onChange(selected.includes(opt) ? selected.filter(x => x !== opt) : [...selected, opt]);
   return (
-    <div className="flex flex-wrap gap-2″>
+    <div className="flex flex-wrap gap-2">
       {options.map(opt => (
         <button
           key={opt}
@@ -160,8 +160,8 @@ function MultiSelect({ options, selected, onChange }: { options: string[]; selec
           onClick={() => toggle(opt)}
           className={`px-3 py-1.5 rounded-full text-xs font-medium border transition-all ${
             selected.includes(opt)
-              ? "bg-indigo-600 text-white border-indigo-600″
-              : "bg-white text-gray-600 border-gray-200 hover:border-indigo-300″
+              ? "bg-indigo-600 text-white border-indigo-600"
+              : "bg-white text-gray-600 border-gray-200 hover:border-indigo-300"
           }`}
         >
           {opt}
@@ -221,32 +221,32 @@ function HomeWaitlistModal({ onClose }: { onClose: () => void }) {
   };
 
   return (
-    <div className="fixed inset-0 z-[999] flex items-center justify-center bg-black/60 backdrop-blur-sm p-4″>
+    <div className="fixed inset-0 z-[999] flex items-center justify-center bg-black/60 backdrop-blur-sm p-4">
       <div className="bg-white rounded-2xl shadow-2xl w-full max-w-lg max-h-[90vh] overflow-y-auto relative">
         {/* Header */}
-        <div className="sticky top-0 bg-white z-10 px-6 pt-6 pb-4 border-b border-gray-100″>
+        <div className="sticky top-0 bg-white z-10 px-6 pt-6 pb-4 border-b border-gray-100">
           <button onClick={onClose} className="absolute top-4 right-4 text-gray-400 hover:text-gray-700 transition-colors">
-            <X className="w-5 h-5″ />
+            <X className="w-5 h-5" />
           </button>
-          <div className="flex items-center gap-2 mb-1″>
+          <div className="flex items-center gap-2 mb-1">
             <div className="w-7 h-7 rounded-full flex items-center justify-center" style={{ backgroundColor: ACCENT }}>
               <CheckCircle className="w-4 h-4 text-white" />
             </div>
             <span className="text-xs font-semibold text-indigo-600 uppercase tracking-wide">TrustyPro Waitlist</span>
           </div>
-          <h2 className="text-xl font-bold text-gray-900″>Build Your Home Profile</h2>
-          <p className="text-xs text-gray-500 mt-0.5″>The more you share, the better we can match you with the right pros when we launch.</p>
+          <h2 className="text-xl font-bold text-gray-900">Build Your Home Profile</h2>
+          <p className="text-xs text-gray-500 mt-0.5">The more you share, the better we can match you with the right pros when we launch.</p>
         </div>
 
-        <div className="px-6 py-5″>
+        <div className="px-6 py-5">
           {done ? (
-            <div className="text-center py-8″>
-              <div className="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4″ style={{ backgroundColor: "#EEF2FF" }}>
-                <CheckCircle className="w-8 h-8 text-indigo-600″ />
+            <div className="text-center py-8">
+              <div className="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4" style={{ backgroundColor: "#EEF2FF" }}>
+                <CheckCircle className="w-8 h-8 text-indigo-600" />
               </div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-2″>You're on the list!</h3>
-              <p className="text-gray-500 text-sm mb-2″>Your home profile has been saved. We'll reach out as soon as TrustyPro opens in your area.</p>
-              <p className="text-xs text-gray-400 mb-6″>We'll only contact you through the channels you approved.</p>
+              <h3 className="text-2xl font-bold text-gray-900 mb-2">You're on the list!</h3>
+              <p className="text-gray-500 text-sm mb-2">Your home profile has been saved. We'll reach out as soon as TrustyPro opens in your area.</p>
+              <p className="text-xs text-gray-400 mb-6">We'll only contact you through the channels you approved.</p>
               <button onClick={onClose} className="px-8 py-3 rounded-full text-sm font-semibold text-white" style={{ backgroundColor: ACCENT }}>
                 Close
               </button>
@@ -257,24 +257,24 @@ function HomeWaitlistModal({ onClose }: { onClose: () => void }) {
 
               {/* Step 1 — Contact Info */}
               {step === 1 && (
-                <div className="space-y-3″>
-                  <div className="grid grid-cols-2 gap-3″>
+                <div className="space-y-3">
+                  <div className="grid grid-cols-2 gap-3">
                     <input placeholder="First name *" value={form.firstName} onChange={set("firstName")} className={inp} />
                     <input placeholder="Last name" value={form.lastName} onChange={set("lastName")} className={inp} />
                   </div>
                   <input placeholder="Email address *" type="email" value={form.email} onChange={set("email")} className={inp} />
                   <input placeholder="Phone number (optional)" value={form.phone} onChange={set("phone")} className={inp} />
-                  <p className="text-xs text-gray-400 pt-1″>* Required fields. Your information is never sold or shared with third parties.</p>
+                  <p className="text-xs text-gray-400 pt-1">* Required fields. Your information is never sold or shared with third parties.</p>
                 </div>
               )}
 
               {/* Step 2 — Communication Consent */}
               {step === 2 && (
-                <div className="space-y-4″>
-                  <p className="text-sm text-gray-600 mb-1″>
+                <div className="space-y-4">
+                  <p className="text-sm text-gray-600 mb-1">
                     Before we go further, we want your explicit permission to communicate with you. You control exactly how we reach out.
                   </p>
-                  <div className="bg-indigo-50 rounded-xl p-4 space-y-4 border border-indigo-100″>
+                  <div className="bg-indigo-50 rounded-xl p-4 space-y-4 border border-indigo-100">
                     <Toggle
                       checked={form.consentTerms}
                       onChange={v => setForm(p => ({ ...p, consentTerms: v }))}
@@ -313,7 +313,7 @@ function HomeWaitlistModal({ onClose }: { onClose: () => void }) {
                     />
                   </div>
                   <div>
-                    <label className="block text-xs font-semibold text-gray-600 mb-1.5″>Preferred way to reach you</label>
+                    <label className="block text-xs font-semibold text-gray-600 mb-1.5">Preferred way to reach you</label>
                     <select value={form.preferredContact} onChange={set("preferredContact")} className={sel}>
                       <option value="">No preference</option>
                       <option value="email">Email</option>
@@ -322,13 +322,13 @@ function HomeWaitlistModal({ onClose }: { onClose: () => void }) {
                       <option value="any">Any — whatever is fastest</option>
                     </select>
                   </div>
-                  <p className="text-xs text-gray-400″>You can update your preferences at any time. We will never contact you without your permission.</p>
+                  <p className="text-xs text-gray-400">You can update your preferences at any time. We will never contact you without your permission.</p>
                 </div>
               )}
 
               {/* Step 3 — Property Basics */}
               {step === 3 && (
-                <div className="space-y-3″>
+                <div className="space-y-3">
                   <AddressAutofill
                     value={form.address}
                     onAddressSelect={addr => {
@@ -353,17 +353,17 @@ function HomeWaitlistModal({ onClose }: { onClose: () => void }) {
                       }));
                     }}
                   />
-                  <div className="grid grid-cols-2 gap-3″>
+                  <div className="grid grid-cols-2 gap-3">
                     <input placeholder="City *" value={form.city} onChange={set("city")} className={inp} />
                     <input placeholder="ZIP code *" value={form.zipCode} onChange={set("zipCode")} className={inp} />
                   </div>
-                  <div className="grid grid-cols-2 gap-3″>
+                  <div className="grid grid-cols-2 gap-3">
                     <div>
-                      <label className="block text-xs font-semibold text-gray-500 mb-1″>State</label>
+                      <label className="block text-xs font-semibold text-gray-500 mb-1">State</label>
                       <input placeholder="TX" value={form.state} onChange={set("state")} className={inp} maxLength={2} />
                     </div>
                     <div>
-                      <label className="block text-xs font-semibold text-gray-500 mb-1″>Ownership</label>
+                      <label className="block text-xs font-semibold text-gray-500 mb-1">Ownership</label>
                       <select value={form.ownershipStatus} onChange={set("ownershipStatus")} className={sel}>
                         <option value="own">I own this home</option>
                         <option value="rent">I rent this home</option>
@@ -371,68 +371,68 @@ function HomeWaitlistModal({ onClose }: { onClose: () => void }) {
                     </div>
                   </div>
                   <div>
-                    <label className="block text-xs font-semibold text-gray-500 mb-1″>Home Type</label>
+                    <label className="block text-xs font-semibold text-gray-500 mb-1">Home Type</label>
                     <select value={form.homeType} onChange={set("homeType")} className={sel}>
                       {HOME_TYPES.map(t => <option key={t} value={t}>{HOME_TYPE_LABELS[t]}</option>)}
                     </select>
                   </div>
-                  <div className="grid grid-cols-2 gap-3″>
+                  <div className="grid grid-cols-2 gap-3">
                     <div>
-                      <label className="block text-xs font-semibold text-gray-500 mb-1″>Year Built</label>
-                      <input placeholder="e.g. 1998″ value={form.yearBuilt} onChange={set("yearBuilt")} className={inp} type="number" min="1800" max="2025" />
+                      <label className="block text-xs font-semibold text-gray-500 mb-1">Year Built</label>
+                      <input placeholder="e.g. 1998" value={form.yearBuilt} onChange={set("yearBuilt")} className={inp} type="number" min="1800" max="2025" />
                     </div>
                     <div>
-                      <label className="block text-xs font-semibold text-gray-500 mb-1″>Sq Footage</label>
-                      <input placeholder="e.g. 2400″ value={form.squareFootage} onChange={set("squareFootage")} className={inp} type="number" />
+                      <label className="block text-xs font-semibold text-gray-500 mb-1">Sq Footage</label>
+                      <input placeholder="e.g. 2400" value={form.squareFootage} onChange={set("squareFootage")} className={inp} type="number" />
                     </div>
                   </div>
-                  <div className="grid grid-cols-3 gap-3″>
+                  <div className="grid grid-cols-3 gap-3">
                     <div>
-                      <label className="block text-xs font-semibold text-gray-500 mb-1″>Bedrooms</label>
+                      <label className="block text-xs font-semibold text-gray-500 mb-1">Bedrooms</label>
                       <select value={form.bedrooms} onChange={set("bedrooms")} className={sel}>
                         <option value="">—</option>
-                        {["1″,"2","3","4","5","6+"].map(n => <option key={n} value={n}>{n}</option>)}
+                        {["1","2","3","4","5","6+"].map(n => <option key={n} value={n}>{n}</option>)}
                       </select>
                     </div>
                     <div>
-                      <label className="block text-xs font-semibold text-gray-500 mb-1″>Bathrooms</label>
+                      <label className="block text-xs font-semibold text-gray-500 mb-1">Bathrooms</label>
                       <select value={form.bathrooms} onChange={set("bathrooms")} className={sel}>
                         <option value="">—</option>
-                        {["1″,"1.5","2","2.5","3","3.5","4+"].map(n => <option key={n} value={n}>{n}</option>)}
+                        {["1","1.5","2","2.5","3","3.5","4+"].map(n => <option key={n} value={n}>{n}</option>)}
                       </select>
                     </div>
                     <div>
-                      <label className="block text-xs font-semibold text-gray-500 mb-1″>Stories</label>
+                      <label className="block text-xs font-semibold text-gray-500 mb-1">Stories</label>
                       <select value={form.stories} onChange={set("stories")} className={sel}>
                         <option value="">—</option>
-                        {["1″,"2","3"].map(n => <option key={n} value={n}>{n}</option>)}
+                        {["1","2","3"].map(n => <option key={n} value={n}>{n}</option>)}
                       </select>
                     </div>
                   </div>
-                  <div className="grid grid-cols-2 gap-3″>
+                  <div className="grid grid-cols-2 gap-3">
                     <div>
-                      <label className="block text-xs font-semibold text-gray-500 mb-1″>Garage Spaces</label>
+                      <label className="block text-xs font-semibold text-gray-500 mb-1">Garage Spaces</label>
                       <select value={form.garageSpaces} onChange={set("garageSpaces")} className={sel}>
                         <option value="">—</option>
-                        {["0″,"1","2","3","4+"].map(n => <option key={n} value={n}>{n}</option>)}
+                        {["0","1","2","3","4+"].map(n => <option key={n} value={n}>{n}</option>)}
                       </select>
                     </div>
                     <div>
-                      <label className="block text-xs font-semibold text-gray-500 mb-1″>Lot Size (sq ft)</label>
-                      <input placeholder="e.g. 8500″ value={form.lotSizeSqFt} onChange={set("lotSizeSqFt")} className={inp} type="number" />
+                      <label className="block text-xs font-semibold text-gray-500 mb-1">Lot Size (sq ft)</label>
+                      <input placeholder="e.g. 8500" value={form.lotSizeSqFt} onChange={set("lotSizeSqFt")} className={inp} type="number" />
                     </div>
                   </div>
-                  <div className="flex gap-6 pt-1″>
-                    <label className="flex items-center gap-2 cursor-pointer text-sm text-gray-700″>
-                      <input type="checkbox" checked={form.hasPool} onChange={e => setForm(p => ({ ...p, hasPool: e.target.checked }))} className="w-4 h-4 accent-indigo-600″ />
+                  <div className="flex gap-6 pt-1">
+                    <label className="flex items-center gap-2 cursor-pointer text-sm text-gray-700">
+                      <input type="checkbox" checked={form.hasPool} onChange={e => setForm(p => ({ ...p, hasPool: e.target.checked }))} className="w-4 h-4 accent-indigo-600" />
                       Pool / Spa
                     </label>
-                    <label className="flex items-center gap-2 cursor-pointer text-sm text-gray-700″>
-                      <input type="checkbox" checked={form.hasBasement} onChange={e => setForm(p => ({ ...p, hasBasement: e.target.checked }))} className="w-4 h-4 accent-indigo-600″ />
+                    <label className="flex items-center gap-2 cursor-pointer text-sm text-gray-700">
+                      <input type="checkbox" checked={form.hasBasement} onChange={e => setForm(p => ({ ...p, hasBasement: e.target.checked }))} className="w-4 h-4 accent-indigo-600" />
                       Basement
                     </label>
-                    <label className="flex items-center gap-2 cursor-pointer text-sm text-gray-700″>
-                      <input type="checkbox" checked={form.hasAttic} onChange={e => setForm(p => ({ ...p, hasAttic: e.target.checked }))} className="w-4 h-4 accent-indigo-600″ />
+                    <label className="flex items-center gap-2 cursor-pointer text-sm text-gray-700">
+                      <input type="checkbox" checked={form.hasAttic} onChange={e => setForm(p => ({ ...p, hasAttic: e.target.checked }))} className="w-4 h-4 accent-indigo-600" />
                       Attic
                     </label>
                   </div>
@@ -441,10 +441,10 @@ function HomeWaitlistModal({ onClose }: { onClose: () => void }) {
 
               {/* Step 4 — Condition & History */}
               {step === 4 && (
-                <div className="space-y-4″>
+                <div className="space-y-4">
                   <div>
-                    <label className="block text-xs font-semibold text-gray-600 mb-2″>Overall Home Condition</label>
-                    <div className="grid grid-cols-1 gap-2″>
+                    <label className="block text-xs font-semibold text-gray-600 mb-2">Overall Home Condition</label>
+                    <div className="grid grid-cols-1 gap-2">
                       {CONDITIONS.map(c => (
                         <button
                           key={c}
@@ -453,7 +453,7 @@ function HomeWaitlistModal({ onClose }: { onClose: () => void }) {
                           className={`text-left px-4 py-3 rounded-xl border text-sm transition-all ${
                             form.overallCondition === c
                               ? "border-indigo-500 bg-indigo-50 text-indigo-700 font-medium"
-                              : "border-gray-200 text-gray-600 hover:border-indigo-200″
+                              : "border-gray-200 text-gray-600 hover:border-indigo-200"
                           }`}
                         >
                           {CONDITION_LABELS[c]}
@@ -462,14 +462,14 @@ function HomeWaitlistModal({ onClose }: { onClose: () => void }) {
                     </div>
                   </div>
                   <div>
-                    <label className="block text-xs font-semibold text-gray-600 mb-1″>Years Owned (or lived here)</label>
-                    <input placeholder="e.g. 5″ value={form.yearsOwned} onChange={set("yearsOwned")} className={inp} type="number" min="0" />
+                    <label className="block text-xs font-semibold text-gray-600 mb-1">Years Owned (or lived here)</label>
+                    <input placeholder="e.g. 5" value={form.yearsOwned} onChange={set("yearsOwned")} className={inp} type="number" min="0" />
                   </div>
                   <div>
-                    <label className="block text-xs font-semibold text-gray-600 mb-1″>Recent Improvements</label>
-                    <p className="text-xs text-gray-400 mb-1.5″>List any major work done in the last 5 years, separated by commas.</p>
+                    <label className="block text-xs font-semibold text-gray-600 mb-1">Recent Improvements</label>
+                    <p className="text-xs text-gray-400 mb-1.5">List any major work done in the last 5 years, separated by commas.</p>
                     <textarea
-                      placeholder="e.g. New roof 2022, HVAC replaced 2021, Kitchen remodel 2023″
+                      placeholder="e.g. New roof 2022, HVAC replaced 2021, Kitchen remodel 2023"
                       value={form.recentImprovements}
                       onChange={set("recentImprovements")}
                       rows={3}
@@ -481,13 +481,13 @@ function HomeWaitlistModal({ onClose }: { onClose: () => void }) {
 
               {/* Step 5 — Home Systems */}
               {step === 5 && (
-                <div className="space-y-3″>
-                  <p className="text-xs text-gray-500 mb-2″>
-                    Tell us about your home's major systems. This helps us match you with the right specialists. Leave blank if you’re unsure.
+                <div className="space-y-3">
+                  <p className="text-xs text-gray-500 mb-2">
+                    Tell us about your home's major systems. This helps us match you with the right specialists. Leave blank if you're unsure.
                   </p>
                   {SYSTEM_FIELDS.map(({ key, label, placeholder }) => (
                     <div key={key}>
-                      <label className="block text-xs font-semibold text-gray-600 mb-1″>{label}</label>
+                      <label className="block text-xs font-semibold text-gray-600 mb-1">{label}</label>
                       <input
                         placeholder={placeholder}
                         value={form.homeSystems[key] || ""}
@@ -501,10 +501,10 @@ function HomeWaitlistModal({ onClose }: { onClose: () => void }) {
 
               {/* Step 6 — Projects & Goals */}
               {step === 6 && (
-                <div className="space-y-4″>
+                <div className="space-y-4">
                   <div>
-                    <label className="block text-xs font-semibold text-gray-600 mb-2″>Projects You're Interested In *</label>
-                    <p className="text-xs text-gray-400 mb-2″>Select all that apply.</p>
+                    <label className="block text-xs font-semibold text-gray-600 mb-2">Projects You're Interested In *</label>
+                    <p className="text-xs text-gray-400 mb-2">Select all that apply.</p>
                     <MultiSelect
                       options={DESIRED_PROJECT_OPTIONS}
                       selected={form.desiredProjects}
@@ -512,8 +512,8 @@ function HomeWaitlistModal({ onClose }: { onClose: () => void }) {
                     />
                   </div>
                   <div>
-                    <label className="block text-xs font-semibold text-gray-600 mb-2″>Project Timeline</label>
-                    <div className="space-y-2″>
+                    <label className="block text-xs font-semibold text-gray-600 mb-2">Project Timeline</label>
+                    <div className="space-y-2">
                       {TIMELINES.map(t => (
                         <button
                           key={t}
@@ -522,7 +522,7 @@ function HomeWaitlistModal({ onClose }: { onClose: () => void }) {
                           className={`w-full text-left px-4 py-2.5 rounded-xl border text-sm transition-all ${
                             form.projectTimeline === t
                               ? "border-indigo-500 bg-indigo-50 text-indigo-700 font-medium"
-                              : "border-gray-200 text-gray-600 hover:border-indigo-200″
+                              : "border-gray-200 text-gray-600 hover:border-indigo-200"
                           }`}
                         >
                           {TIMELINE_LABELS[t]}
@@ -531,14 +531,14 @@ function HomeWaitlistModal({ onClose }: { onClose: () => void }) {
                     </div>
                   </div>
                   <div>
-                    <label className="block text-xs font-semibold text-gray-600 mb-1″>Estimated Budget</label>
+                    <label className="block text-xs font-semibold text-gray-600 mb-1">Estimated Budget</label>
                     <select value={form.estimatedBudget} onChange={set("estimatedBudget")} className={sel}>
                       <option value="">Select a range</option>
                       {BUDGETS.map(b => <option key={b} value={b}>{b}</option>)}
                     </select>
                   </div>
                   <div>
-                    <label className="block text-xs font-semibold text-gray-600 mb-1″>Biggest Pain Point</label>
+                    <label className="block text-xs font-semibold text-gray-600 mb-1">Biggest Pain Point</label>
                     <select value={form.primaryPainPoint} onChange={set("primaryPainPoint")} className={sel}>
                       <option value="">Select one</option>
                       <option value="finding_trusted_pros">Finding trusted, reliable contractors</option>
@@ -555,16 +555,16 @@ function HomeWaitlistModal({ onClose }: { onClose: () => void }) {
 
               {/* Step 7 — Final Details */}
               {step === 7 && (
-                <div className="space-y-4″>
+                <div className="space-y-4">
                   <div>
-                    <label className="block text-xs font-semibold text-gray-600 mb-1″>How did you hear about TrustyPro?</label>
+                    <label className="block text-xs font-semibold text-gray-600 mb-1">How did you hear about TrustyPro?</label>
                     <select value={form.hearAboutUs} onChange={set("hearAboutUs")} className={sel}>
                       <option value="">Select one</option>
                       {HEAR_ABOUT_OPTIONS.map(o => <option key={o} value={o}>{o}</option>)}
                     </select>
                   </div>
                   <div>
-                    <label className="block text-xs font-semibold text-gray-600 mb-1″>Anything else you'd like us to know?</label>
+                    <label className="block text-xs font-semibold text-gray-600 mb-1">Anything else you'd like us to know?</label>
                     <textarea
                       placeholder="Special circumstances, specific projects in mind, questions about the platform..."
                       value={form.additionalNotes}
@@ -574,43 +574,43 @@ function HomeWaitlistModal({ onClose }: { onClose: () => void }) {
                     />
                   </div>
                   {/* Summary card */}
-                  <div className="bg-gray-50 rounded-xl p-4 border border-gray-100 text-xs text-gray-600 space-y-1″>
-                    <p className="font-semibold text-gray-800 mb-2″>Profile Summary</p>
-                    <p><span className="text-gray-400″>Name:</span> {form.firstName} {form.lastName}</p>
-                    <p><span className="text-gray-400″>Email:</span> {form.email}</p>
-                    <p><span className="text-gray-400″>Address:</span> {form.address}, {form.city}, {form.state} {form.zipCode}</p>
-                    <p><span className="text-gray-400″>Home:</span> {HOME_TYPE_LABELS[form.homeType]} · {form.squareFootage ? `${form.squareFootage} sq ft · ` : ""}{form.bedrooms ? `${form.bedrooms}bd ` : ""}{form.bathrooms ? `${form.bathrooms}ba` : ""}</p>
-                    <p><span className="text-gray-400″>Projects:</span> {form.desiredProjects.length > 0 ? form.desiredProjects.slice(0, 3).join(", ") + (form.desiredProjects.length > 3 ? ` +${form.desiredProjects.length - 3} more` : "") : "None selected"}</p>
-                    <p><span className="text-gray-400″>Timeline:</span> {TIMELINE_LABELS[form.projectTimeline]}</p>
-                    <p><span className="text-gray-400″>Notifications:</span> {[form.consentEmail && "Email", form.consentSms && "SMS", form.consentPush && "Push"].filter(Boolean).join(", ") || "None selected"}</p>
+                  <div className="bg-gray-50 rounded-xl p-4 border border-gray-100 text-xs text-gray-600 space-y-1">
+                    <p className="font-semibold text-gray-800 mb-2">Profile Summary</p>
+                    <p><span className="text-gray-400">Name:</span> {form.firstName} {form.lastName}</p>
+                    <p><span className="text-gray-400">Email:</span> {form.email}</p>
+                    <p><span className="text-gray-400">Address:</span> {form.address}, {form.city}, {form.state} {form.zipCode}</p>
+                    <p><span className="text-gray-400">Home:</span> {HOME_TYPE_LABELS[form.homeType]} · {form.squareFootage ? `${form.squareFootage} sq ft · ` : ""}{form.bedrooms ? `${form.bedrooms}bd ` : ""}{form.bathrooms ? `${form.bathrooms}ba` : ""}</p>
+                    <p><span className="text-gray-400">Projects:</span> {form.desiredProjects.length > 0 ? form.desiredProjects.slice(0, 3).join(", ") + (form.desiredProjects.length > 3 ? ` +${form.desiredProjects.length - 3} more` : "") : "None selected"}</p>
+                    <p><span className="text-gray-400">Timeline:</span> {TIMELINE_LABELS[form.projectTimeline]}</p>
+                    <p><span className="text-gray-400">Notifications:</span> {[form.consentEmail && "Email", form.consentSms && "SMS", form.consentPush && "Push"].filter(Boolean).join(", ") || "None selected"}</p>
                   </div>
                 </div>
               )}
 
               {/* Navigation */}
-              <div className="flex gap-3 mt-6″>
+              <div className="flex gap-3 mt-6">
                 {step > 1 && (
                   <button
                     type="button"
                     onClick={() => setStep(s => s - 1)}
                     className="flex items-center gap-1.5 px-4 py-2.5 rounded-xl border border-gray-200 text-sm font-medium text-gray-600 hover:bg-gray-50 transition-colors"
                   >
-                    <ChevronLeft className="w-4 h-4″ /> Back
+                    <ChevronLeft className="w-4 h-4" /> Back
                   </button>
                 )}
                 <button
                   type="button"
                   onClick={next}
                   disabled={join.isPending}
-                  className="flex-1 flex items-center justify-center gap-2 py-2.5 rounded-xl text-sm font-semibold text-white transition-opacity hover:opacity-90 disabled:opacity-50″
+                  className="flex-1 flex items-center justify-center gap-2 py-2.5 rounded-xl text-sm font-semibold text-white transition-opacity hover:opacity-90 disabled:opacity-50"
                   style={{ backgroundColor: ACCENT }}
                 >
                   {join.isPending ? (
                     <><Loader2 className="w-4 h-4 animate-spin" /> Submitting...</>
                   ) : step === TOTAL ? (
-                    <><CheckCircle className="w-4 h-4″ /> Submit My Home Profile</>
+                    <><CheckCircle className="w-4 h-4" /> Submit My Home Profile</>
                   ) : (
-                    <>Continue <ChevronRight className="w-4 h-4″ /></>
+                    <>Continue <ChevronRight className="w-4 h-4" /></>
                   )}
                 </button>
               </div>
@@ -657,12 +657,12 @@ const SERVICES = [
 
 // --- Projects ------------------------------------------------------------------
 const PROJECTS = [
-  { cat: "Kitchen Remodel",   year: "2025″, title: "Modern Kitchen Transformation",   desc: "Full gut renovation with quartz countertops and custom cabinetry in Frisco.", img: CDN.projectKitchen },
-  { cat: "Exterior",          year: "2025″, title: "Luxury Curb Appeal Upgrade",       desc: "Complete exterior renovation with new siding, windows, and landscaping.", img: CDN.heroExterior },
-  { cat: "Bathroom",          year: "2025″, title: "Master Bath Spa Retreat",          desc: "Walk-in shower, soaking tub, and heated floors in a Plano home.", img: CDN.projectBath },
-  { cat: "Flooring",          year: "2025″, title: "Hardwood Throughout",              desc: "3,200 sq ft of white oak hardwood installed in a Frisco home.", img: CDN.projectFloor },
-  { cat: "Landscaping",       year: "2025″, title: "Backyard Oasis",                   desc: "Full landscaping with pergola, turf, and outdoor lighting in Allen.", img: CDN.projectLand },
-  { cat: "Painting",          year: "2025″, title: "Interior Refresh",                 desc: "Full interior repaint with premium Sherwin-Williams paint in McKinney.", img: CDN.projectPaint },
+  { cat: "Kitchen Remodel",   year: "2025", title: "Modern Kitchen Transformation",   desc: "Full gut renovation with quartz countertops and custom cabinetry in Frisco.", img: CDN.projectKitchen },
+  { cat: "Exterior",          year: "2025", title: "Luxury Curb Appeal Upgrade",       desc: "Complete exterior renovation with new siding, windows, and landscaping.", img: CDN.heroExterior },
+  { cat: "Bathroom",          year: "2025", title: "Master Bath Spa Retreat",          desc: "Walk-in shower, soaking tub, and heated floors in a Plano home.", img: CDN.projectBath },
+  { cat: "Flooring",          year: "2025", title: "Hardwood Throughout",              desc: "3,200 sq ft of white oak hardwood installed in a Frisco home.", img: CDN.projectFloor },
+  { cat: "Landscaping",       year: "2025", title: "Backyard Oasis",                   desc: "Full landscaping with pergola, turf, and outdoor lighting in Allen.", img: CDN.projectLand },
+  { cat: "Painting",          year: "2025", title: "Interior Refresh",                 desc: "Full interior repaint with premium Sherwin-Williams paint in McKinney.", img: CDN.projectPaint },
 ];
 
 // --- Benefits ------------------------------------------------------------------
@@ -825,9 +825,9 @@ function BeforeAfterSlider({ before, after }: { before: string; after: string })
       <div className="absolute inset-0 overflow-hidden" style={{ width: `${pos}%` }}>
         <img src={before} alt="Before" className="absolute inset-0 h-full object-cover" style={{ width: `${10000/pos}%`, maxWidth: "none" }} draggable={false} />
       </div>
-      <div className="absolute top-0 bottom-0 w-0.5 bg-white shadow-xl z-10″ style={{ left: `${pos}%`, transform: "translateX(-50%)" }}>
+      <div className="absolute top-0 bottom-0 w-0.5 bg-white shadow-xl z-10" style={{ left: `${pos}%`, transform: "translateX(-50%)" }}>
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-white shadow-2xl flex items-center justify-center">
-          <ChevronLeft size={12} className="text-gray-600″ /><ChevronRight size={12} className="text-gray-600" />
+          <ChevronLeft size={12} className="text-gray-600" /><ChevronRight size={12} className="text-gray-600" />
         </div>
       </div>
       <div className="absolute top-3 left-3 z-10 px-2.5 py-1 bg-black/60 text-white text-xs font-bold uppercase tracking-widest">BEFORE</div>
@@ -842,9 +842,9 @@ const SCAN_TABS = [
     label: "Interior",
     img: "https://pub-ee8fee527ee84997b9eae6e57cd17168.r2.dev/trustypro-hero-interior_21ad489c.webp",
     issues: [
-      { label: "Water Damage", color: "#ef4444″ },
+      { label: "Water Damage", color: "#ef4444" },
       { label: "Floor Refinishing", color: "#f59e0b" },
-      { label: "Foundation Check", color: "#6366f1″ },
+      { label: "Foundation Check", color: "#6366f1" },
     ],
     count: 3,
   },
@@ -852,9 +852,9 @@ const SCAN_TABS = [
     label: "Front Yard",
     img: "https://pub-ee8fee527ee84997b9eae6e57cd17168.r2.dev/trustypro-frontyard-damage-scan-v2-D9sW97trHmaDoMH7jXUN8A.webp",
     issues: [
-      { label: "Driveway Crack", color: "#ef4444″ },
+      { label: "Driveway Crack", color: "#ef4444" },
       { label: "Gutter Sagging", color: "#f59e0b" },
-      { label: "Exterior Paint Fading", color: "#6366f1″ },
+      { label: "Exterior Paint Fading", color: "#6366f1" },
     ],
     count: 3,
   },
@@ -862,9 +862,9 @@ const SCAN_TABS = [
     label: "Back Yard",
     img: "https://pub-ee8fee527ee84997b9eae6e57cd17168.r2.dev/trustypro-backyard-damage-scan-iNiCrAstyruUq9w9XysU59.webp",
     issues: [
-      { label: "Fence Damage", color: "#ef4444″ },
+      { label: "Fence Damage", color: "#ef4444" },
       { label: "Deck Wear", color: "#f59e0b" },
-      { label: "Drainage Issue", color: "#10b981″ },
+      { label: "Drainage Issue", color: "#10b981" },
     ],
     count: 3,
   },
@@ -874,15 +874,15 @@ function ScanDemoCarousel() {
   const [active, setActive] = useState(0);
   const tab = SCAN_TABS[active];
   return (
-    <div className="rounded-3xl overflow-hidden shadow-2xl border border-gray-100″>
+    <div className="rounded-3xl overflow-hidden shadow-2xl border border-gray-100">
       {/* Tab row */}
-      <div className="flex bg-gray-950″>
+      <div className="flex bg-gray-950">
         {SCAN_TABS.map((t, i) => (
           <button
             key={t.label}
             onClick={() => setActive(i)}
             className={`flex-1 py-3 text-sm font-bold transition-colors ${
-              i === active ? "text-white border-b-2″ : "text-gray-400 hover:text-gray-200"
+              i === active ? "text-white border-b-2" : "text-gray-400 hover:text-gray-200"
             }`}
             style={i === active ? { borderBottomColor: ACCENT } : {}}
           >
@@ -906,9 +906,9 @@ function ScanDemoCarousel() {
       {/* Caption strip */}
       <div className="bg-gray-950 px-6 py-4 flex flex-wrap gap-4 items-center justify-between">
         <p className="text-white text-sm font-semibold">AI identified {tab.count} issues in this {tab.label.toLowerCase()} scan</p>
-        <div className="flex flex-wrap gap-2″>
+        <div className="flex flex-wrap gap-2">
           {tab.issues.map((tag) => (
-            <span key={tag.label} className="px-3 py-1 rounded-full text-xs font-bold" style={{ backgroundColor: tag.color + "22″, border: `1px solid ${tag.color}`, color: tag.color }}>
+            <span key={tag.label} className="px-3 py-1 rounded-full text-xs font-bold" style={{ backgroundColor: tag.color + "22", border: `1px solid ${tag.color}`, color: tag.color }}>
               {tag.label}
             </span>
           ))}
@@ -1000,7 +1000,7 @@ export default function TrustyProHome() {
       <AnimatePresence>
         {intakeOpen && (
           <motion.div
-            className="fixed inset-0 z-[100] flex items-center justify-center p-4″
+            className="fixed inset-0 z-[100] flex items-center justify-center p-4"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
@@ -1016,34 +1016,34 @@ export default function TrustyProHome() {
               transition={{ duration: 0.35, ease: EASE }}
             >
               {/* Header */}
-              <div className="px-8 pt-8 pb-5 border-b border-gray-100″>
+              <div className="px-8 pt-8 pb-5 border-b border-gray-100">
                 <button onClick={closeIntake} className="absolute top-5 right-5 w-8 h-8 rounded-full bg-gray-100 flex items-center justify-center hover:bg-gray-200 transition-colors">
-                  <X className="w-4 h-4 text-gray-600″ />
+                  <X className="w-4 h-4 text-gray-600" />
                 </button>
                 {intakeStep < 3 ? (
                   <>
-                    <div className="flex items-center gap-2 mb-3″>
+                    <div className="flex items-center gap-2 mb-3">
                       <span className="inline-block px-3 py-1 rounded-full text-xs font-bold text-white" style={{ backgroundColor: ACCENT }}>Free</span>
                       <span className="text-xs text-gray-400 font-medium">No credit card required</span>
                     </div>
-                    <h2 className="text-2xl font-black text-gray-950″>
+                    <h2 className="text-2xl font-black text-gray-950">
                       {intakeStep === 1 ? "Tell us about yourself" : "Describe your project"}
                     </h2>
-                    <p className="text-sm text-gray-500 mt-1″>
+                    <p className="text-sm text-gray-500 mt-1">
                       {intakeStep === 1 ? "We'll match you with a verified local pro in your area." : "The more detail you share, the better we can match you."}
                     </p>
                     {/* Step indicator */}
-                    <div className="flex gap-2 mt-4″>
+                    <div className="flex gap-2 mt-4">
                       <div className="h-1 flex-1 rounded-full" style={{ backgroundColor: intakeStep >= 1 ? ACCENT : "#E5E7EB" }} />
                       <div className="h-1 flex-1 rounded-full" style={{ backgroundColor: intakeStep >= 2 ? ACCENT : "#E5E7EB" }} />
                     </div>
                   </>
                 ) : (
-                  <div className="text-center py-4″>
-                    <div className="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4″ style={{ backgroundColor: ACCENT_LIGHT }}>
-                      <CheckCircle className="w-8 h-8″ style={{ color: ACCENT }} />
+                  <div className="text-center py-4">
+                    <div className="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4" style={{ backgroundColor: ACCENT_LIGHT }}>
+                      <CheckCircle className="w-8 h-8" style={{ color: ACCENT }} />
                     </div>
-                    <h2 className="text-2xl font-black text-gray-950″>You're on the list!</h2>
+                    <h2 className="text-2xl font-black text-gray-950">You're on the list!</h2>
                     <p className="text-gray-500 mt-2 text-sm">We received your request and will match you with a verified DFW pro within a few hours. Check your email for updates.</p>
                   </div>
                 )}
@@ -1051,44 +1051,44 @@ export default function TrustyProHome() {
 
               {/* Body */}
               {intakeStep === 1 && (
-                <div className="px-8 py-6 space-y-4″>
-                  <div className="grid grid-cols-2 gap-4″>
+                <div className="px-8 py-6 space-y-4">
+                  <div className="grid grid-cols-2 gap-4">
                     <div>
-                      <label className="block text-xs font-bold text-gray-700 mb-1″>Full Name *</label>
+                      <label className="block text-xs font-bold text-gray-700 mb-1">Full Name *</label>
                       <input
                         type="text" placeholder="Jane Smith"
                         value={intakeForm.name}
                         onChange={e => setIntakeForm(f => ({ ...f, name: e.target.value }))}
-                        className="w-full px-4 py-2.5 rounded-xl border border-gray-200 text-sm focus:outline-none focus:ring-2 text-gray-900″
+                        className="w-full px-4 py-2.5 rounded-xl border border-gray-200 text-sm focus:outline-none focus:ring-2 text-gray-900"
                         style={{ focusRingColor: ACCENT } as CSSProperties}
                       />
                     </div>
                     <div>
-                      <label className="block text-xs font-bold text-gray-700 mb-1″>Phone</label>
+                      <label className="block text-xs font-bold text-gray-700 mb-1">Phone</label>
                       <input
-                        type="tel" placeholder="(214) 555-0100″
+                        type="tel" placeholder="(214) 555-0100"
                         value={intakeForm.phone}
                         onChange={e => setIntakeForm(f => ({ ...f, phone: e.target.value }))}
-                        className="w-full px-4 py-2.5 rounded-xl border border-gray-200 text-sm focus:outline-none focus:ring-2 text-gray-900″
+                        className="w-full px-4 py-2.5 rounded-xl border border-gray-200 text-sm focus:outline-none focus:ring-2 text-gray-900"
                       />
                     </div>
                   </div>
                   <div>
-                    <label className="block text-xs font-bold text-gray-700 mb-1″>Email Address *</label>
+                    <label className="block text-xs font-bold text-gray-700 mb-1">Email Address *</label>
                     <input
                       type="email" placeholder="jane@example.com"
                       value={intakeForm.email}
                       onChange={e => setIntakeForm(f => ({ ...f, email: e.target.value }))}
-                      className="w-full px-4 py-2.5 rounded-xl border border-gray-200 text-sm focus:outline-none focus:ring-2 text-gray-900″
+                      className="w-full px-4 py-2.5 rounded-xl border border-gray-200 text-sm focus:outline-none focus:ring-2 text-gray-900"
                     />
                   </div>
                   <div>
-                    <label className="block text-xs font-bold text-gray-700 mb-1″>Home Address *</label>
+                    <label className="block text-xs font-bold text-gray-700 mb-1">Home Address *</label>
                     <input
-                      type="text" placeholder="123 Main St, Frisco, TX 75034″
+                      type="text" placeholder="123 Main St, Frisco, TX 75034"
                       value={intakeForm.address}
                       onChange={e => setIntakeForm(f => ({ ...f, address: e.target.value }))}
-                      className="w-full px-4 py-2.5 rounded-xl border border-gray-200 text-sm focus:outline-none focus:ring-2 text-gray-900″
+                      className="w-full px-4 py-2.5 rounded-xl border border-gray-200 text-sm focus:outline-none focus:ring-2 text-gray-900"
                     />
                   </div>
                   <button
@@ -1101,22 +1101,22 @@ export default function TrustyProHome() {
                     className="w-full py-3 rounded-xl text-sm font-bold text-white hover:opacity-90 transition-opacity"
                     style={{ backgroundColor: ACCENT }}
                   >
-                    Next -- Describe Your Project <ArrowRight className="inline w-4 h-4 ml-1″ />
+                    Next -- Describe Your Project <ArrowRight className="inline w-4 h-4 ml-1" />
                   </button>
                 </div>
               )}
 
               {intakeStep === 2 && (
-                <div className="px-8 py-6 space-y-4″>
+                <div className="px-8 py-6 space-y-4">
                   <div>
-                    <label className="block text-xs font-bold text-gray-700 mb-2″>What type of project? *</label>
-                    <div className="flex flex-wrap gap-2″>
+                    <label className="block text-xs font-bold text-gray-700 mb-2">What type of project? *</label>
+                    <div className="flex flex-wrap gap-2">
                       {SERVICE_TYPES.map(s => (
                         <button
                           key={s}
                           onClick={() => setIntakeForm(f => ({ ...f, serviceType: s }))}
                           className="px-3 py-1.5 rounded-full text-xs font-semibold border transition-all"
-                          style={intakeForm.serviceType === s ? { backgroundColor: ACCENT, color: "white", borderColor: ACCENT } : { backgroundColor: "white", color: "#374151″, borderColor: "#E5E7EB" }}
+                          style={intakeForm.serviceType === s ? { backgroundColor: ACCENT, color: "white", borderColor: ACCENT } : { backgroundColor: "white", color: "#374151", borderColor: "#E5E7EB" }}
                         >
                           {s}
                         </button>
@@ -1124,7 +1124,7 @@ export default function TrustyProHome() {
                     </div>
                   </div>
                   <div>
-                    <label className="block text-xs font-bold text-gray-700 mb-1″>Describe what you need *</label>
+                    <label className="block text-xs font-bold text-gray-700 mb-1">Describe what you need *</label>
                     <textarea
                       rows={3} placeholder="e.g. My kitchen cabinets need replacing and I'd like new countertops too..."
                       value={intakeForm.description}
@@ -1133,21 +1133,21 @@ export default function TrustyProHome() {
                     />
                   </div>
                   <div>
-                    <label className="block text-xs font-bold text-gray-700 mb-2″>How urgent is this?</label>
-                    <div className="flex gap-2″>
+                    <label className="block text-xs font-bold text-gray-700 mb-2">How urgent is this?</label>
+                    <div className="flex gap-2">
                       {(["urgent","moderate","low"] as const).map(u => (
                         <button
                           key={u}
                           onClick={() => setIntakeForm(f => ({ ...f, urgency: u }))}
                           className="flex-1 py-2 rounded-xl text-xs font-semibold border capitalize transition-all"
-                          style={intakeForm.urgency === u ? { backgroundColor: ACCENT, color: "white", borderColor: ACCENT } : { backgroundColor: "white", color: "#374151″, borderColor: "#E5E7EB" }}
+                          style={intakeForm.urgency === u ? { backgroundColor: ACCENT, color: "white", borderColor: ACCENT } : { backgroundColor: "white", color: "#374151", borderColor: "#E5E7EB" }}
                         >
                           {u === "urgent" ? " Urgent" : u === "moderate" ? " Moderate" : " No Rush"}
                         </button>
                       ))}
                     </div>
                   </div>
-                  <div className="flex gap-3″>
+                  <div className="flex gap-3">
                     <button
                       onClick={() => setIntakeStep(1)}
                       className="flex-1 py-3 rounded-xl text-sm font-bold text-gray-600 bg-gray-100 hover:bg-gray-200 transition-colors"
@@ -1157,7 +1157,7 @@ export default function TrustyProHome() {
                     <button
                       onClick={handleIntakeSubmit}
                       disabled={submitLead.isPending}
-                      className="flex-1 py-3 rounded-xl text-sm font-bold text-white hover:opacity-90 transition-opacity disabled:opacity-60 flex items-center justify-center gap-2″
+                      className="flex-1 py-3 rounded-xl text-sm font-bold text-white hover:opacity-90 transition-opacity disabled:opacity-60 flex items-center justify-center gap-2"
                       style={{ backgroundColor: ACCENT }}
                     >
                       {submitLead.isPending ? <><Loader2 className="w-4 h-4 animate-spin" /> Submitting...</> : "Get Matched -- It's Free"}
@@ -1168,15 +1168,15 @@ export default function TrustyProHome() {
 
               {intakeStep === 3 && (
                 <div className="px-8 py-6 text-center">
-                  <div className="w-14 h-14 rounded-full bg-green-100 flex items-center justify-center mx-auto mb-4″>
-                    <CheckCircle className="w-7 h-7 text-green-600″ />
+                  <div className="w-14 h-14 rounded-full bg-green-100 flex items-center justify-center mx-auto mb-4">
+                    <CheckCircle className="w-7 h-7 text-green-600" />
                   </div>
-                  <h3 className="text-xl font-bold text-gray-900 mb-2″>You're All Set!</h3>
+                  <h3 className="text-xl font-bold text-gray-900 mb-2">You're All Set!</h3>
                   <div className="bg-indigo-50 border border-indigo-200 rounded-lg px-4 py-3 mb-4 inline-block">
                     <p className="text-indigo-900 font-bold text-lg">Position: #{submitLead.data?.position ?? '...'}</p>
-                    <p className="text-indigo-700 text-xs mt-1″>You're #{submitLead.data?.position ?? '...'} in the queue.</p>
+                    <p className="text-indigo-700 text-xs mt-1">You're #{submitLead.data?.position ?? '...'} in the queue.</p>
                   </div>
-                  <p className="text-gray-600 text-sm mb-6″>We'll match you with vetted pros. Check your email for updates!</p>
+                  <p className="text-gray-600 text-sm mb-6">We'll match you with vetted pros. Check your email for updates!</p>
                   <button
                     onClick={closeIntake}
                     className="w-full py-3 rounded-xl text-sm font-bold text-white hover:opacity-90 transition-opacity"
@@ -1192,23 +1192,23 @@ export default function TrustyProHome() {
       </AnimatePresence>
 
       {/* -- NAV --------------------------------------------------------------- */}
-      <nav className="sticky top-0 z-50 bg-white/95 backdrop-blur-sm border-b border-gray-100″>
+      <nav className="sticky top-0 z-50 bg-white/95 backdrop-blur-sm border-b border-gray-100">
         <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
           <Link href="/trustypro">
             <TrustyProLogo height={52} />
           </Link>
-          <div className="hidden md:flex items-center gap-8″>
+          <div className="hidden md:flex items-center gap-8">
             {[["about","About Us"],["services","Services"],["how-it-works","How It Works"],["benefits","Why TrustyPro"],["contact","Contact"]].map(([id,label]) => (
               <button key={id} onClick={() => scrollTo(id)} className="text-sm font-medium text-gray-600 hover:text-gray-900 transition-colors">{label}</button>
             ))}
           </div>
-          <div className="hidden md:flex items-center gap-3″>
+          <div className="hidden md:flex items-center gap-3">
             <button onClick={goToWizard} className="text-sm font-medium text-gray-600 hover:text-gray-900 transition-colors">Scan My Home</button>
             <button onClick={goToWizard} className="px-5 py-2 rounded-full text-sm font-semibold text-white hover:opacity-90 transition-opacity" style={{ backgroundColor: ACCENT }}>
               Get Started
             </button>
           </div>
-          <button className="md:hidden p-2″ onClick={() => setMobileOpen(!mobileOpen)}><Menu className="w-5 h-5" /></button>
+          <button className="md:hidden p-2" onClick={() => setMobileOpen(!mobileOpen)}><Menu className="w-5 h-5" /></button>
         </div>
         <AnimatePresence>
           {mobileOpen && (
@@ -1220,9 +1220,9 @@ export default function TrustyProHome() {
               className="md:hidden bg-white border-t border-gray-100 px-6 py-4 flex flex-col gap-4 overflow-hidden"
             >
               {[["about","About Us"],["services","Services"],["how-it-works","How It Works"],["benefits","Why TrustyPro"],["contact","Contact"]].map(([id,label]) => (
-                <button key={id} onClick={() => scrollTo(id)} className="text-left text-sm font-medium text-gray-600″>{label}</button>
+                <button key={id} onClick={() => scrollTo(id)} className="text-left text-sm font-medium text-gray-600">{label}</button>
               ))}
-              <button onClick={goToWizard} className="text-left text-sm font-medium text-gray-600″>Scan My Home</button>
+              <button onClick={goToWizard} className="text-left text-sm font-medium text-gray-600">Scan My Home</button>
               <button onClick={goToWizard} className="px-5 py-2 rounded-full text-sm font-semibold text-white w-fit" style={{ backgroundColor: ACCENT }}>Get Started</button>
             </motion.div>
           )}
@@ -1235,19 +1235,19 @@ export default function TrustyProHome() {
 
           {/* FREE badge -- first thing they see */}
           <motion.div
-            className="inline-flex items-center gap-2 px-4 py-2 rounded-full mb-6″
-            style={{ backgroundColor: "#dcfce7″, border: "1.5px solid #86efac" }}
+            className="inline-flex items-center gap-2 px-4 py-2 rounded-full mb-6"
+            style={{ backgroundColor: "#dcfce7", border: "1.5px solid #86efac" }}
             initial={{ opacity: 0, scale: 0.85 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.5, ease: EASE }}
           >
             <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
-            <span className="text-sm font-bold text-green-700″>100% Free for Homeowners -- No Catch. No Credit Card.</span>
+            <span className="text-sm font-bold text-green-700">100% Free for Homeowners -- No Catch. No Credit Card.</span>
           </motion.div>
 
           {/* Headline -- lead with the difference */}
           <motion.h1
-            className="text-5xl md:text-7xl font-black text-gray-950 leading-[1.05] tracking-tight mb-5″
+            className="text-5xl md:text-7xl font-black text-gray-950 leading-[1.05] tracking-tight mb-5"
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: EASE, delay: 0.1 }}
@@ -1278,7 +1278,7 @@ export default function TrustyProHome() {
 
           {/* CTA + trust signals */}
           <motion.div
-            className="flex flex-col items-center gap-4″
+            className="flex flex-col items-center gap-4"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, ease: EASE, delay: 0.42 }}
@@ -1288,19 +1288,19 @@ export default function TrustyProHome() {
               className="inline-flex items-center gap-2 px-10 py-4 rounded-full text-base font-black text-white hover:opacity-90 transition-opacity shadow-xl"
               style={{ backgroundColor: ACCENT }}
             >
-              Scan My Home -- It's Free <ArrowRight className="w-5 h-5″ />
+              Scan My Home -- It's Free <ArrowRight className="w-5 h-5" />
             </button>
             <div className="flex flex-wrap items-center justify-center gap-4 text-xs text-gray-400 font-medium">
-              <span className="flex items-center gap-1″><CheckCircle className="w-3.5 h-3.5 text-green-500" /> No credit card required</span>
-              <span className="flex items-center gap-1″><Shield className="w-3.5 h-3.5" style={{ color: ACCENT }} /> Every pro is background-checked</span>
-              <span className="flex items-center gap-1″><Clock className="w-3.5 h-3.5" style={{ color: ACCENT }} /> Matched in hours, not days</span>
+              <span className="flex items-center gap-1"><CheckCircle className="w-3.5 h-3.5 text-green-500" /> No credit card required</span>
+              <span className="flex items-center gap-1"><Shield className="w-3.5 h-3.5" style={{ color: ACCENT }} /> Every pro is background-checked</span>
+              <span className="flex items-center gap-1"><Clock className="w-3.5 h-3.5" style={{ color: ACCENT }} /> Matched in hours, not days</span>
             </div>
           </motion.div>
         </div>
 
         {/* Hero image -- house model on hand, centered, large */}
         <motion.div
-          className="mt-12 max-w-3xl mx-auto px-6″
+          className="mt-12 max-w-3xl mx-auto px-6"
           initial={{ opacity: 0, y: 56 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, ease: EASE, delay: 0.5 }}
@@ -1323,7 +1323,7 @@ export default function TrustyProHome() {
           <div className="flex animate-marquee-tp whitespace-nowrap">
             {[...MARQUEE, ...MARQUEE].map((item, i) => (
               <span key={i} className="mx-8 text-sm font-medium text-white/70 uppercase tracking-widest">
-                {item} <span className="text-white/30 mx-4″></span>
+                {item} <span className="text-white/30 mx-4"></span>
               </span>
             ))}
           </div>
@@ -1331,14 +1331,14 @@ export default function TrustyProHome() {
       </section>
 
       {/* -- ABOUT ------------------------------------------------------------- */}
-      <section id="about" className="bg-gray-50 py-20″>
-        <div className="max-w-7xl mx-auto px-6″>
-          <div className="grid md:grid-cols-2 gap-12 items-start mb-12″>
+      <section id="about" className="bg-gray-50 py-20">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="grid md:grid-cols-2 gap-12 items-start mb-12">
             <AnimSection variants={fadeLeft}>
               <h2 className="text-4xl md:text-5xl font-black text-gray-950 leading-tight">Experts in Improving Living Spaces</h2>
             </AnimSection>
             <AnimSection variants={fadeRight}>
-              <div className="pt-2″>
+              <div className="pt-2">
                 <p className="text-lg text-gray-600 leading-relaxed">
                   At TrustyPro, we bring skill and care to every detail. We connect DFW homeowners with verified, background-checked professionals who turn ordinary rooms into beautiful, functional spaces that feel like home. Whether it's a small upgrade or a complete renovation, we make every improvement count.
                 </p>
@@ -1349,7 +1349,7 @@ export default function TrustyProHome() {
                 whileHover={{ scale: 1.04 }}
                 whileTap={{ scale: 0.97 }}
               >
-                Scan My Home Free <ArrowRight className="w-4 h-4″ />
+                Scan My Home Free <ArrowRight className="w-4 h-4" />
               </motion.button>
               </div>
             </AnimSection>
@@ -1357,17 +1357,17 @@ export default function TrustyProHome() {
           <AnimSection variants={scaleIn}>
             <ParallaxImage src={CDN.aboutWide} alt="Beautiful living space" className="w-full h-[300px] md:h-[440px] rounded-2xl shadow-sm" />
           </AnimSection>
-          <AnimSection variants={scaleIn} className="mt-4″>
+          <AnimSection variants={scaleIn} className="mt-4">
             <ParallaxImage src={CDN.aboutWide2} alt="Modern kitchen" className="w-full h-[240px] md:h-[340px] rounded-2xl shadow-sm" />
           </AnimSection>
         </div>
       </section>
 
       {/* -- STATS ------------------------------------------------------------- */}
-      <section className="bg-white py-20″>
-        <div className="max-w-7xl mx-auto px-6″>
+      <section className="bg-white py-20">
+        <div className="max-w-7xl mx-auto px-6">
           <motion.div
-            className="grid grid-cols-2 md:grid-cols-4 gap-8″
+            className="grid grid-cols-2 md:grid-cols-4 gap-8"
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, margin: "-80px" }}
@@ -1381,7 +1381,7 @@ export default function TrustyProHome() {
             ].map((s, i) => (
               <motion.div key={i} ref={s.r as React.RefObject<HTMLDivElement>} className="text-center md:text-left" variants={staggerItem}>
                 <div className="text-5xl md:text-6xl font-black text-gray-950 leading-none">{s.c.toLocaleString()}{s.suffix}</div>
-                <div className="mt-2 text-sm font-bold text-gray-900″>{s.label}</div>
+                <div className="mt-2 text-sm font-bold text-gray-900">{s.label}</div>
                 <div className="mt-1 text-xs text-gray-500 leading-relaxed">{s.desc}</div>
               </motion.div>
             ))}
@@ -1390,15 +1390,15 @@ export default function TrustyProHome() {
       </section>
 
       {/* -- PROJECTS ---------------------------------------------------------- */}
-      <section id="projects" className="bg-gray-50 py-20″>
-        <div className="max-w-7xl mx-auto px-6″>
-          <AnimSection variants={fadeUp} className="text-center mb-12″>
-            <span className="inline-block px-4 py-1.5 rounded-full text-sm font-semibold text-white mb-4″ style={{ backgroundColor: ACCENT }}>Projects</span>
-            <h2 className="text-4xl md:text-5xl font-black text-gray-950″>Our Work Speaks for Itself</h2>
+      <section id="projects" className="bg-gray-50 py-20">
+        <div className="max-w-7xl mx-auto px-6">
+          <AnimSection variants={fadeUp} className="text-center mb-12">
+            <span className="inline-block px-4 py-1.5 rounded-full text-sm font-semibold text-white mb-4" style={{ backgroundColor: ACCENT }}>Projects</span>
+            <h2 className="text-4xl md:text-5xl font-black text-gray-950">Our Work Speaks for Itself</h2>
             <p className="mt-3 text-gray-500 text-lg">See how we bring quality, clarity, and comfort to every DFW home.</p>
           </AnimSection>
           <motion.div
-            className="grid md:grid-cols-2 gap-6″
+            className="grid md:grid-cols-2 gap-6"
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, margin: "-60px" }}
@@ -1421,18 +1421,18 @@ export default function TrustyProHome() {
                     transition={{ duration: 0.6, ease: EASE }}
                   />
                 </div>
-                <div className="p-5″>
-                  <div className="flex items-center justify-between mb-2″>
+                <div className="p-5">
+                  <div className="flex items-center justify-between mb-2">
                     <span className="px-3 py-1 rounded-full text-xs font-semibold text-white" style={{ backgroundColor: ACCENT }}>{p.cat}</span>
-                    <span className="text-xs text-gray-400″>{p.year}</span>
+                    <span className="text-xs text-gray-400">{p.year}</span>
                   </div>
-                  <h3 className="text-lg font-bold text-gray-900″>{p.title}</h3>
-                  <p className="mt-1 text-sm text-gray-500″>{p.desc}</p>
+                  <h3 className="text-lg font-bold text-gray-900">{p.title}</h3>
+                  <p className="mt-1 text-sm text-gray-500">{p.desc}</p>
                 </div>
               </motion.div>
             ))}
           </motion.div>
-          <AnimSection variants={fadeUp} className="text-center mt-10″>
+          <AnimSection variants={fadeUp} className="text-center mt-10">
                 <motion.button
                 onClick={() => window.location.href = "/trustypro/gallery"}
                 className="px-8 py-3 rounded-full text-sm font-semibold text-white hover:opacity-90 transition-opacity"
@@ -1447,11 +1447,11 @@ export default function TrustyProHome() {
       </section>
 
       {/* -- SERVICES ACCORDION ------------------------------------------------ */}
-      <section id="services" className="bg-white py-20″>
-        <div className="max-w-7xl mx-auto px-6″>
-          <AnimSection variants={fadeUp} className="text-center mb-12″>
-            <span className="inline-block px-4 py-1.5 rounded-full text-sm font-semibold text-white mb-4″ style={{ backgroundColor: ACCENT }}>Services</span>
-            <h2 className="text-4xl md:text-5xl font-black text-gray-950″>Experts in Transforming Living Spaces</h2>
+      <section id="services" className="bg-white py-20">
+        <div className="max-w-7xl mx-auto px-6">
+          <AnimSection variants={fadeUp} className="text-center mb-12">
+            <span className="inline-block px-4 py-1.5 rounded-full text-sm font-semibold text-white mb-4" style={{ backgroundColor: ACCENT }}>Services</span>
+            <h2 className="text-4xl md:text-5xl font-black text-gray-950">Experts in Transforming Living Spaces</h2>
             <p className="mt-3 text-gray-500 text-lg">Home improvements designed to enhance your space with style and lasting quality.</p>
           </AnimSection>
           <div className="grid md:grid-cols-2 gap-8 items-start">
@@ -1459,19 +1459,19 @@ export default function TrustyProHome() {
             <AnimSection variants={fadeLeft}>
               <div>
                 {SERVICES.map((svc, i) => (
-                  <div key={i} className="border-b border-gray-100″>
+                  <div key={i} className="border-b border-gray-100">
                     <button className="w-full flex items-center justify-between py-5 text-left group" onClick={() => setActiveService(i)}>
-                      <div className="flex items-center gap-4″>
-                        <span className="text-xs font-bold text-gray-400 w-6″>0{i + 1}</span>
+                      <div className="flex items-center gap-4">
+                        <span className="text-xs font-bold text-gray-400 w-6">0{i + 1}</span>
                         <span className={`text-base font-bold transition-colors ${activeService === i ? "text-gray-950" : "text-gray-600 group-hover:text-gray-900"}`}>{svc.title}</span>
                       </div>
                       <motion.div
-                        className="w-7 h-7 rounded-full flex items-center justify-center flex-shrink-0″
-                        style={{ backgroundColor: activeService === i ? ACCENT : "#F3F4F6″ }}
+                        className="w-7 h-7 rounded-full flex items-center justify-center flex-shrink-0"
+                        style={{ backgroundColor: activeService === i ? ACCENT : "#F3F4F6" }}
                         animate={{ rotate: activeService === i ? 45 : 0 }}
                         transition={{ duration: 0.25 }}
                       >
-                        <Plus className="w-3.5 h-3.5″ style={{ color: activeService === i ? "white" : "#6B7280" }} />
+                        <Plus className="w-3.5 h-3.5" style={{ color: activeService === i ? "white" : "#6B7280" }} />
                       </motion.div>
                     </button>
                     <AnimatePresence initial={false}>
@@ -1494,7 +1494,7 @@ export default function TrustyProHome() {
             </AnimSection>
             {/* Photo with crossfade */}
             <AnimSection variants={fadeRight}>
-              <div className="sticky top-24″>
+              <div className="sticky top-24">
                 <div className="w-full h-[400px] rounded-2xl overflow-hidden shadow-lg relative">
                   <AnimatePresence mode="wait">
                     <motion.img
@@ -1516,11 +1516,11 @@ export default function TrustyProHome() {
       </section>
 
       {/* -- BEFORE / AFTER ---------------------------------------------------- */}
-      <section className="bg-gray-50 py-20″>
-        <div className="max-w-7xl mx-auto px-6″>
-          <AnimSection variants={fadeUp} className="text-center mb-10″>
-            <span className="inline-block px-4 py-1.5 rounded-full text-sm font-semibold text-white mb-4″ style={{ backgroundColor: ACCENT }}>Results</span>
-            <h2 className="text-4xl md:text-5xl font-black text-gray-950″>See the Transformation</h2>
+      <section className="bg-gray-50 py-20">
+        <div className="max-w-7xl mx-auto px-6">
+          <AnimSection variants={fadeUp} className="text-center mb-10">
+            <span className="inline-block px-4 py-1.5 rounded-full text-sm font-semibold text-white mb-4" style={{ backgroundColor: ACCENT }}>Results</span>
+            <h2 className="text-4xl md:text-5xl font-black text-gray-950">See the Transformation</h2>
             <p className="mt-3 text-gray-500 text-lg">Drag the slider to see before and after results from real TrustyPro projects.</p>
           </AnimSection>
           <AnimSection variants={scaleIn}>
@@ -1532,16 +1532,16 @@ export default function TrustyProHome() {
       </section>
 
       {/* -- BENEFITS ---------------------------------------------------------- */}
-      <section id="benefits" className="bg-white py-20″>
-        <div className="max-w-7xl mx-auto px-6″>
+      <section id="benefits" className="bg-white py-20">
+        <div className="max-w-7xl mx-auto px-6">
           <div className="grid md:grid-cols-2 gap-12 items-start">
             <AnimSection variants={fadeLeft}>
-              <span className="inline-block px-4 py-1.5 rounded-full text-sm font-semibold text-white mb-4″ style={{ backgroundColor: ACCENT }}>Benefits</span>
+              <span className="inline-block px-4 py-1.5 rounded-full text-sm font-semibold text-white mb-4" style={{ backgroundColor: ACCENT }}>Benefits</span>
               <h2 className="text-4xl md:text-5xl font-black text-gray-950 leading-tight">Why Choose TrustyPro</h2>
               <p className="mt-4 text-gray-500 text-lg leading-relaxed">We combine AI technology, verified professionals, and a seamless process to transform everyday spaces into lasting impressions.</p>
             </AnimSection>
             <motion.div
-              className="space-y-4″
+              className="space-y-4"
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true, margin: "-60px" }}
@@ -1555,11 +1555,11 @@ export default function TrustyProHome() {
                   whileHover={{ x: 4 }}
                   transition={{ duration: 0.25 }}
                 >
-                  <div className="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0″ style={{ backgroundColor: ACCENT_LIGHT }}>
-                    <b.icon className="w-5 h-5″ style={{ color: ACCENT }} />
+                  <div className="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0" style={{ backgroundColor: ACCENT_LIGHT }}>
+                    <b.icon className="w-5 h-5" style={{ color: ACCENT }} />
                   </div>
                   <div>
-                    <h3 className="font-bold text-gray-900″>{b.title}</h3>
+                    <h3 className="font-bold text-gray-900">{b.title}</h3>
                     <p className="mt-1 text-sm text-gray-500 leading-relaxed">{b.desc}</p>
                   </div>
                 </motion.div>
@@ -1571,17 +1571,17 @@ export default function TrustyProHome() {
 
       {/* -- TESTIMONIALS ------------------------------------------------------ */}
       <section className="bg-gray-50 py-20 overflow-hidden">
-        <div className="max-w-7xl mx-auto px-6″>
-          <AnimSection variants={fadeUp} className="text-center mb-12″>
-            <span className="inline-block px-4 py-1.5 rounded-full text-sm font-semibold text-white mb-4″ style={{ backgroundColor: ACCENT }}>Reviews</span>
-            <h2 className="text-4xl md:text-5xl font-black text-gray-950″>What DFW Homeowners Say</h2>
+        <div className="max-w-7xl mx-auto px-6">
+          <AnimSection variants={fadeUp} className="text-center mb-12">
+            <span className="inline-block px-4 py-1.5 rounded-full text-sm font-semibold text-white mb-4" style={{ backgroundColor: ACCENT }}>Reviews</span>
+            <h2 className="text-4xl md:text-5xl font-black text-gray-950">What DFW Homeowners Say</h2>
             <p className="mt-3 text-gray-500 text-lg">Real reviews from real homeowners across the DFW Metroplex.</p>
           </AnimSection>
           {/* Staggered 2-column layout like Estatia -- cards come at you from different heights */}
-          <div className="grid md:grid-cols-2 gap-6″>
+          <div className="grid md:grid-cols-2 gap-6">
             {/* Left column -- offset down */}
             <motion.div
-              className="flex flex-col gap-6 md:mt-10″
+              className="flex flex-col gap-6 md:mt-10"
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true, margin: "-60px" }}
@@ -1594,12 +1594,12 @@ export default function TrustyProHome() {
                   variants={{ hidden: { opacity: 0, y: 48, rotate: -1 }, visible: { opacity: 1, y: 0, rotate: 0, transition: { duration: 0.7, ease: EASE } } }}
                   whileHover={{ y: -4 }}
                 >
-                  <div className="flex gap-1 mb-3″>{Array.from({ length: t.rating }).map((_, j) => <Star key={j} className="w-4 h-4 fill-yellow-400 text-yellow-400" />)}</div>
-                  <p className="text-gray-700 text-sm leading-relaxed mb-4″>"{t.text}"</p>
+                  <div className="flex gap-1 mb-3">{Array.from({ length: t.rating }).map((_, j) => <Star key={j} className="w-4 h-4 fill-yellow-400 text-yellow-400" />)}</div>
+                  <p className="text-gray-700 text-sm leading-relaxed mb-4">"{t.text}"</p>
                   <div className="flex items-center justify-between">
                     <div>
                       <div className="font-bold text-gray-900 text-sm">{t.name}</div>
-                      <div className="text-xs text-gray-400″>{t.loc}</div>
+                      <div className="text-xs text-gray-400">{t.loc}</div>
                     </div>
                     <span className="px-2 py-1 rounded-full text-xs font-medium text-white" style={{ backgroundColor: ACCENT }}>{t.proj}</span>
                   </div>
@@ -1608,7 +1608,7 @@ export default function TrustyProHome() {
             </motion.div>
             {/* Right column -- offset up */}
             <motion.div
-              className="flex flex-col gap-6 md:-mt-10″
+              className="flex flex-col gap-6 md:-mt-10"
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true, margin: "-60px" }}
@@ -1621,12 +1621,12 @@ export default function TrustyProHome() {
                   variants={{ hidden: { opacity: 0, y: 48, rotate: 1 }, visible: { opacity: 1, y: 0, rotate: 0, transition: { duration: 0.7, ease: EASE } } }}
                   whileHover={{ y: -4 }}
                 >
-                  <div className="flex gap-1 mb-3″>{Array.from({ length: t.rating }).map((_, j) => <Star key={j} className="w-4 h-4 fill-yellow-400 text-yellow-400" />)}</div>
-                  <p className="text-gray-700 text-sm leading-relaxed mb-4″>"{t.text}"</p>
+                  <div className="flex gap-1 mb-3">{Array.from({ length: t.rating }).map((_, j) => <Star key={j} className="w-4 h-4 fill-yellow-400 text-yellow-400" />)}</div>
+                  <p className="text-gray-700 text-sm leading-relaxed mb-4">"{t.text}"</p>
                   <div className="flex items-center justify-between">
                     <div>
                       <div className="font-bold text-gray-900 text-sm">{t.name}</div>
-                      <div className="text-xs text-gray-400″>{t.loc}</div>
+                      <div className="text-xs text-gray-400">{t.loc}</div>
                     </div>
                     <span className="px-2 py-1 rounded-full text-xs font-medium text-white" style={{ backgroundColor: ACCENT }}>{t.proj}</span>
                   </div>
@@ -1638,18 +1638,18 @@ export default function TrustyProHome() {
       </section>
 
       {/* -- HOW IT WORKS ------------------------------------------------------ */}
-      <section id="how-it-works" className="bg-white py-24″>
-        <div className="max-w-5xl mx-auto px-6″>
-          <AnimSection variants={fadeUp} className="text-center mb-16″>
-            <span className="inline-block px-4 py-1.5 rounded-full text-sm font-semibold text-white mb-4″ style={{ backgroundColor: ACCENT }}>How It Works</span>
+      <section id="how-it-works" className="bg-white py-24">
+        <div className="max-w-5xl mx-auto px-6">
+          <AnimSection variants={fadeUp} className="text-center mb-16">
+            <span className="inline-block px-4 py-1.5 rounded-full text-sm font-semibold text-white mb-4" style={{ backgroundColor: ACCENT }}>How It Works</span>
             <h2 className="text-4xl md:text-6xl font-black text-gray-950 leading-tight">From Photo to Pro<br />in 3 Simple Steps</h2>
             <p className="mt-4 text-gray-500 text-lg max-w-xl mx-auto">No calls. No guessing. No wasted time. Just upload a few photos and let us do the work.</p>
           </AnimSection>
           <div className="relative">
             {/* Vertical connector line on desktop */}
-            <div className="hidden md:block absolute left-[39px] top-12 bottom-12 w-0.5 bg-gradient-to-b from-indigo-200 via-indigo-400 to-indigo-200″ />
+            <div className="hidden md:block absolute left-[39px] top-12 bottom-12 w-0.5 bg-gradient-to-b from-indigo-200 via-indigo-400 to-indigo-200" />
             <motion.div
-              className="space-y-10″
+              className="space-y-10"
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true, margin: "-60px" }}
@@ -1657,21 +1657,21 @@ export default function TrustyProHome() {
             >
               {[
                 {
-                  n: "01″,
+                  n: "01",
                   icon: Camera,
                   title: "Snap a Few Photos of Your Home",
                   desc: "Take photos of any area you're curious about -- exterior, kitchen, bathroom, yard, roof. No special equipment needed. Your phone camera is all it takes.",
                   detail: "Takes less than 2 minutes"
                 },
                 {
-                  n: "02″,
+                  n: "02",
                   icon: Shield,
                   title: "Our AI Identifies What Needs Attention",
                   desc: "TrustyPro's AI scans your photos and flags issues -- cracked paint, aging gutters, worn flooring, overgrown landscaping, and 50+ more. You get a clear, honest report of what your home actually needs.",
                   detail: "Results in under 60 seconds"
                 },
                 {
-                  n: "03″,
+                  n: "03",
                   icon: CheckCircle,
                   title: "We Match You with a Verified Local Pro",
                   desc: "Based on your home's needs and your zip code, we connect you with a background-checked, insured professional who specializes in exactly that type of work. No middlemen. No bidding wars. Just the right pro.",
@@ -1684,18 +1684,18 @@ export default function TrustyProHome() {
                   variants={{ hidden: { opacity: 0, x: -40 }, visible: { opacity: 1, x: 0, transition: { duration: 0.7, ease: EASE } } }}
                 >
                   {/* Step circle */}
-                  <div className="relative flex-shrink-0″>
+                  <div className="relative flex-shrink-0">
                     <div className="w-20 h-20 rounded-2xl flex flex-col items-center justify-center shadow-lg z-10 relative" style={{ backgroundColor: ACCENT }}>
-                      <step.icon className="w-7 h-7 text-white mb-1″ />
-                      <span className="text-xs font-black text-white/70″>{step.n}</span>
+                      <step.icon className="w-7 h-7 text-white mb-1" />
+                      <span className="text-xs font-black text-white/70">{step.n}</span>
                     </div>
                   </div>
                   {/* Content */}
-                  <div className="pt-2 flex-1″>
-                    <h3 className="text-xl md:text-2xl font-black text-gray-950 mb-2″>{step.title}</h3>
-                    <p className="text-gray-500 leading-relaxed mb-3″>{step.desc}</p>
+                  <div className="pt-2 flex-1">
+                    <h3 className="text-xl md:text-2xl font-black text-gray-950 mb-2">{step.title}</h3>
+                    <p className="text-gray-500 leading-relaxed mb-3">{step.desc}</p>
                     <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold" style={{ backgroundColor: ACCENT_LIGHT, color: ACCENT }}>
-                      <CheckCircle className="w-3 h-3″ /> {step.detail}
+                      <CheckCircle className="w-3 h-3" /> {step.detail}
                     </span>
                   </div>
                 </motion.div>
@@ -1703,11 +1703,11 @@ export default function TrustyProHome() {
             </motion.div>
           </div>
           {/* -- AI Detection Demo Carousel -- */}
-          <AnimSection variants={fadeUp} className="mt-14″>
+          <AnimSection variants={fadeUp} className="mt-14">
             <ScanDemoCarousel />
           </AnimSection>
 
-          <AnimSection variants={fadeUp} className="text-center mt-10″>
+          <AnimSection variants={fadeUp} className="text-center mt-10">
             <motion.button
               onClick={goToWizard}
               className="inline-flex items-center gap-2 px-8 py-4 rounded-full text-base font-bold text-white hover:opacity-90 transition-opacity shadow-lg"
@@ -1715,7 +1715,7 @@ export default function TrustyProHome() {
               whileHover={{ scale: 1.04 }}
               whileTap={{ scale: 0.97 }}
             >
-              Try It Free -- Scan My Home <ArrowRight className="w-4 h-4″ />
+              Try It Free -- Scan My Home <ArrowRight className="w-4 h-4" />
             </motion.button>
           </AnimSection>
         </div>
@@ -1723,19 +1723,19 @@ export default function TrustyProHome() {
 
       {/* -- DIFFERENTIATOR ---------------------------------------------------- */}
       <section className="py-24 overflow-hidden" style={{ backgroundColor: "#0a0f1e" }}>
-        <div className="max-w-5xl mx-auto px-6″>
-          <AnimSection variants={fadeUp} className="mb-16″>
-            <span className="inline-block px-4 py-1.5 rounded-full text-sm font-semibold mb-6″ style={{ backgroundColor: "rgba(79,70,229,0.2)", color: "#818cf8" }}>Why TrustyPro Is Different</span>
-            <h2 className="text-4xl md:text-6xl font-black text-white leading-tight mb-6″>
+        <div className="max-w-5xl mx-auto px-6">
+          <AnimSection variants={fadeUp} className="mb-16">
+            <span className="inline-block px-4 py-1.5 rounded-full text-sm font-semibold mb-6" style={{ backgroundColor: "rgba(79,70,229,0.2)", color: "#818cf8" }}>Why TrustyPro Is Different</span>
+            <h2 className="text-4xl md:text-6xl font-black text-white leading-tight mb-6">
               They used to knock on your door.<br />
-              <span style={{ color: "#818cf8″ }}>Now you knock on theirs.</span>
+              <span style={{ color: "#818cf8" }}>Now you knock on theirs.</span>
             </h2>
             <p className="text-gray-400 text-lg leading-relaxed max-w-2xl">
               For years, homeowners had to deal with door-to-door salespeople, pushy contractors, and cold calls from companies they never asked to hear from. TrustyPro flips that model completely.
             </p>
           </AnimSection>
           <motion.div
-            className="grid md:grid-cols-2 gap-6 mb-12″
+            className="grid md:grid-cols-2 gap-6 mb-12"
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, margin: "-60px" }}
@@ -1745,7 +1745,7 @@ export default function TrustyProHome() {
               {
                 label: "The Old Way",
                 icon: "",
-                color: "#ef4444″,
+                color: "#ef4444",
                 bg: "rgba(239,68,68,0.08)",
                 border: "rgba(239,68,68,0.2)",
                 points: [
@@ -1759,7 +1759,7 @@ export default function TrustyProHome() {
               {
                 label: "The TrustyPro Way",
                 icon: "",
-                color: "#818cf8″,
+                color: "#818cf8",
                 bg: "rgba(79,70,229,0.08)",
                 border: "rgba(79,70,229,0.3)",
                 points: [
@@ -1777,13 +1777,13 @@ export default function TrustyProHome() {
                 style={{ backgroundColor: col.bg, borderColor: col.border }}
                 variants={{ hidden: { opacity: 0, y: 40 }, visible: { opacity: 1, y: 0, transition: { duration: 0.7, ease: EASE } } }}
               >
-                <div className="flex items-center gap-3 mb-5″>
+                <div className="flex items-center gap-3 mb-5">
                   <span className="text-2xl font-black" style={{ color: col.color }}>{col.icon}</span>
                   <span className="font-black text-white text-lg">{col.label}</span>
                 </div>
-                <ul className="space-y-3″>
+                <ul className="space-y-3">
                   {col.points.map((pt, j) => (
-                    <li key={j} className="flex items-start gap-3″>
+                    <li key={j} className="flex items-start gap-3">
                       <span className="mt-0.5 flex-shrink-0 text-sm font-bold" style={{ color: col.color }}>{col.icon}</span>
                       <span className="text-gray-300 text-sm leading-relaxed">{pt}</span>
                     </li>
@@ -1794,7 +1794,7 @@ export default function TrustyProHome() {
           </motion.div>
           <AnimSection variants={fadeUp}>
             <div className="rounded-2xl p-8 text-center" style={{ backgroundColor: "rgba(79,70,229,0.12)", border: "1px solid rgba(79,70,229,0.25)" }}>
-              <p className="text-2xl md:text-3xl font-black text-white leading-snug mb-2″>
+              <p className="text-2xl md:text-3xl font-black text-white leading-snug mb-2">
                 "We don't sell you anything. We find what your home needs -- and connect you with someone who can fix it."
               </p>
               <p className="text-gray-500 text-sm">-- The TrustyPro Promise</p>
@@ -1804,8 +1804,8 @@ export default function TrustyProHome() {
       </section>
 
       {/* -- FAQ --------------------------------------------------------------- */}
-      <section className="bg-gray-50 py-20″>
-        <div className="max-w-7xl mx-auto px-6″>
+      <section className="bg-gray-50 py-20">
+        <div className="max-w-7xl mx-auto px-6">
           <div className="grid md:grid-cols-2 gap-12 items-start">
             <AnimSection variants={fadeLeft}>
               <h2 className="text-4xl md:text-5xl font-black text-gray-950 leading-tight">Frequently Asked Questions</h2>
@@ -1823,16 +1823,16 @@ export default function TrustyProHome() {
             <AnimSection variants={fadeRight}>
               <div>
                 {FAQS.map((faq, i) => (
-                  <div key={i} className="border-b border-gray-200″>
+                  <div key={i} className="border-b border-gray-200">
                     <button className="w-full flex items-center justify-between py-5 text-left" onClick={() => setOpenFaq(openFaq === i ? null : i)}>
                       <span className="font-medium text-gray-900 pr-4 text-sm">{faq.q}</span>
                       <motion.div
-                        className="w-7 h-7 rounded-full flex items-center justify-center flex-shrink-0″
-                        style={{ backgroundColor: openFaq === i ? ACCENT : "#F3F4F6″ }}
+                        className="w-7 h-7 rounded-full flex items-center justify-center flex-shrink-0"
+                        style={{ backgroundColor: openFaq === i ? ACCENT : "#F3F4F6" }}
                         animate={{ rotate: openFaq === i ? 45 : 0 }}
                         transition={{ duration: 0.25 }}
                       >
-                        <Plus className="w-3.5 h-3.5″ style={{ color: openFaq === i ? "white" : "#6B7280" }} />
+                        <Plus className="w-3.5 h-3.5" style={{ color: openFaq === i ? "white" : "#6B7280" }} />
                       </motion.div>
                     </button>
                     <AnimatePresence initial={false}>
@@ -1861,7 +1861,7 @@ export default function TrustyProHome() {
       <section id="contact" className="bg-gray-950 py-20 overflow-hidden">
         <div className="max-w-7xl mx-auto px-6 text-center">
           <motion.h2
-            className="text-4xl md:text-6xl font-black text-white leading-tight mb-6″
+            className="text-4xl md:text-6xl font-black text-white leading-tight mb-6"
             initial={{ opacity: 0, y: 48 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -1870,7 +1870,7 @@ export default function TrustyProHome() {
             Ready to Transform Your Home?
           </motion.h2>
           <motion.p
-            className="text-gray-400 text-lg max-w-2xl mx-auto mb-10″
+            className="text-gray-400 text-lg max-w-2xl mx-auto mb-10"
             initial={{ opacity: 0, y: 32 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -1907,32 +1907,32 @@ export default function TrustyProHome() {
       </section>
 
       {/* -- FOOTER ------------------------------------------------------------ */}
-      <footer className="bg-gray-950 border-t border-white/10 py-12″>
-        <div className="max-w-7xl mx-auto px-6″>
-          <div className="grid md:grid-cols-4 gap-8 mb-10″>
-            <div className="md:col-span-2″>
+      <footer className="bg-gray-950 border-t border-white/10 py-12">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="grid md:grid-cols-4 gap-8 mb-10">
+            <div className="md:col-span-2">
               <TrustyProLogo height={34} variant="dark" />
               <p className="mt-4 text-sm text-gray-400 leading-relaxed max-w-xs">At TrustyPro, we transform DFW homes with verified professionals who blend style, function, and lasting quality into every project.</p>
             </div>
             <div>
-              <div className="text-xs font-bold text-gray-500 uppercase tracking-widest mb-4″>Menu</div>
-              <div className="space-y-2″>
+              <div className="text-xs font-bold text-gray-500 uppercase tracking-widest mb-4">Menu</div>
+              <div className="space-y-2">
                 {[["about","About Us"],["projects","Projects"],["services","Services"],["benefits","Benefits"]].map(([id,label]) => (
                   <button key={id} onClick={() => scrollTo(id)} className="block text-sm text-gray-400 hover:text-white transition-colors">{label}</button>
                 ))}
               </div>
             </div>
             <div>
-              <div className="text-xs font-bold text-gray-500 uppercase tracking-widest mb-4″>Contact</div>
-              <div className="space-y-2″>
-                <div className="flex items-center gap-2 text-sm text-gray-400″><Mail className="w-3.5 h-3.5" /> support@trustypro.com</div>
-                <div className="flex items-center gap-2 text-sm text-gray-400″><MapPin className="w-3.5 h-3.5" /> DFW Metroplex, TX</div>
+              <div className="text-xs font-bold text-gray-500 uppercase tracking-widest mb-4">Contact</div>
+              <div className="space-y-2">
+                <div className="flex items-center gap-2 text-sm text-gray-400"><Mail className="w-3.5 h-3.5" /> support@trustypro.com</div>
+                <div className="flex items-center gap-2 text-sm text-gray-400"><MapPin className="w-3.5 h-3.5" /> DFW Metroplex, TX</div>
               </div>
             </div>
           </div>
-          <div className="border-t border-white/10 pt-6 flex flex-col md:flex-row items-center justify-between gap-4″>
-            <p className="text-xs text-gray-500″>TrustyPro 2026. All Rights Reserved.</p>
-            <div className="flex gap-6″>
+          <div className="border-t border-white/10 pt-6 flex flex-col md:flex-row items-center justify-between gap-4">
+            <p className="text-xs text-gray-500">TrustyPro 2026. All Rights Reserved.</p>
+            <div className="flex gap-6">
               <a href="/privacy" className="text-xs text-gray-500 hover:text-white transition-colors">Privacy Policy</a>
               <a href="/terms" className="text-xs text-gray-500 hover:text-white transition-colors">Terms of Service</a>
               <a href="/ccpa" className="text-xs text-gray-500 hover:text-white transition-colors">CCPA Rights</a>

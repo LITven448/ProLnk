@@ -37,21 +37,21 @@ const DESIGN_STYLES = [
 
 // ── Color Palettes ───────────────────────────────────────────────────────────
 const COLOR_PALETTES = [
-  { value: "neutral_warm", label: "Warm Neutrals", colors: ["#F5F0E8″, "#D4B896", "#8B6F47", "#3D2B1F"] },
-  { value: "neutral_cool", label: "Cool Grays", colors: ["#F0F2F5″, "#B0BEC5", "#607D8B", "#263238"] },
-  { value: "earth_tones", label: "Earth Tones", colors: ["#E8D5B7″, "#A0785A", "#6B4226", "#2C1810"] },
-  { value: "navy_gold", label: "Navy & Gold", colors: ["#F8F6F0″, "#C9A84C", "#1B3A6B", "#0A1628"] },
-  { value: "sage_cream", label: "Sage & Cream", colors: ["#F9F5EE", "#B5C9B7″, "#7A9E7E", "#3D5A40"] },
-  { value: "blush_white", label: "Blush & White", colors: ["#FFF8F6″, "#F4B8B0", "#D4847A", "#8B4A44"] },
-  { value: "charcoal_white", label: "Charcoal & White", colors: ["#FFFFFF", "#E0E0E0″, "#616161", "#212121"] },
-  { value: "bold_jewel", label: "Jewel Tones", colors: ["#F0EBF8″, "#9C6BB5", "#5B2D8E", "#2D1557"] },
+  { value: "neutral_warm", label: "Warm Neutrals", colors: ["#F5F0E8", "#D4B896", "#8B6F47", "#3D2B1F"] },
+  { value: "neutral_cool", label: "Cool Grays", colors: ["#F0F2F5", "#B0BEC5", "#607D8B", "#263238"] },
+  { value: "earth_tones", label: "Earth Tones", colors: ["#E8D5B7", "#A0785A", "#6B4226", "#2C1810"] },
+  { value: "navy_gold", label: "Navy & Gold", colors: ["#F8F6F0", "#C9A84C", "#1B3A6B", "#0A1628"] },
+  { value: "sage_cream", label: "Sage & Cream", colors: ["#F9F5EE", "#B5C9B7", "#7A9E7E", "#3D5A40"] },
+  { value: "blush_white", label: "Blush & White", colors: ["#FFF8F6", "#F4B8B0", "#D4847A", "#8B4A44"] },
+  { value: "charcoal_white", label: "Charcoal & White", colors: ["#FFFFFF", "#E0E0E0", "#616161", "#212121"] },
+  { value: "bold_jewel", label: "Jewel Tones", colors: ["#F0EBF8", "#9C6BB5", "#5B2D8E", "#2D1557"] },
 ];
 
 // ── Budget Ranges ────────────────────────────────────────────────────────────
 const BUDGET_RANGES = [
-  { value: "under_5k", label: "Under $5,000″, desc: "Refresh with paint, accessories & small furniture" },
-  { value: "5k_15k", label: "$5,000 – $15,000″, desc: "New furniture, lighting, and flooring updates" },
-  { value: "15k_30k", label: "$15,000 – $30,000″, desc: "Full room renovation with custom pieces" },
+  { value: "under_5k", label: "Under $5,000", desc: "Refresh with paint, accessories & small furniture" },
+  { value: "5k_15k", label: "$5,000 – $15,000", desc: "New furniture, lighting, and flooring updates" },
+  { value: "15k_30k", label: "$15,000 – $30,000", desc: "Full room renovation with custom pieces" },
   { value: "30k_plus", label: "$30,000+", desc: "Complete transformation with premium materials" },
 ];
 
@@ -211,26 +211,26 @@ export default function RoomMakeover() {
 
   return (
     <HomeownerLayout>
-      <div className="max-w-2xl mx-auto px-4 py-6 space-y-6″>
+      <div className="max-w-2xl mx-auto px-4 py-6 space-y-6">
         {/* Header */}
         <div>
-          <h1 className="text-2xl font-bold text-gray-900 flex items-center gap-2″>
-            <Sparkles className="w-6 h-6 text-purple-600″ />
+          <h1 className="text-2xl font-bold text-gray-900 flex items-center gap-2">
+            <Sparkles className="w-6 h-6 text-purple-600" />
             AI Room Makeover
           </h1>
-          <p className="text-sm text-gray-500 mt-1″>
+          <p className="text-sm text-gray-500 mt-1">
             Upload photos of your room and our AI will generate a stunning redesign based on your style preferences.
           </p>
         </div>
 
         {/* Progress Bar */}
         {step !== "generating" && step !== "result" && (
-          <div className="flex gap-1.5″>
+          <div className="flex gap-1.5">
             {STEPS.map((s, i) => (
               <div
                 key={s}
                 className={`flex-1 h-1.5 rounded-full transition-all ${
-                  i <= stepIdx ? "bg-purple-600″ : "bg-gray-200"
+                  i <= stepIdx ? "bg-purple-600" : "bg-gray-200"
                 }`}
               />
             ))}
@@ -244,8 +244,8 @@ export default function RoomMakeover() {
               <CardTitle className="text-lg">What room are we redesigning?</CardTitle>
               <CardDescription>This helps the AI understand the space and its purpose.</CardDescription>
             </CardHeader>
-            <CardContent className="space-y-4″>
-              <div className="grid grid-cols-2 sm:grid-cols-4 gap-3″>
+            <CardContent className="space-y-4">
+              <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
                 {ROOM_TYPES.map(rt => {
                   const Icon = rt.icon;
                   return (
@@ -255,10 +255,10 @@ export default function RoomMakeover() {
                       className={`flex flex-col items-center gap-2 p-4 rounded-xl border-2 transition-all ${
                         form.roomType === rt.value
                           ? "bg-purple-600 border-purple-600 text-white"
-                          : "border-gray-200 hover:border-purple-300 hover:bg-purple-50″
+                          : "border-gray-200 hover:border-purple-300 hover:bg-purple-50"
                       }`}
                     >
-                      <Icon className="w-6 h-6″ />
+                      <Icon className="w-6 h-6" />
                       <span className="text-xs font-medium text-center">{rt.label}</span>
                     </button>
                   );
@@ -269,7 +269,7 @@ export default function RoomMakeover() {
                 disabled={!form.roomType}
                 onClick={() => setStep("photos")}
               >
-                Next: Add Photos <ChevronRight className="w-4 h-4 ml-1″ />
+                Next: Add Photos <ChevronRight className="w-4 h-4 ml-1" />
               </Button>
             </CardContent>
           </Card>
@@ -284,11 +284,11 @@ export default function RoomMakeover() {
                 Upload 1–4 photos from different angles. The more photos, the better the AI understands your space.
               </CardDescription>
             </CardHeader>
-            <CardContent className="space-y-4″>
+            <CardContent className="space-y-4">
               {/* Photo Tips */}
-              <div className="bg-purple-50 rounded-lg p-3 border border-purple-200″>
-                <p className="text-xs font-semibold text-purple-800 mb-1.5 flex items-center gap-1″>
-                  <Camera className="w-3.5 h-3.5″ /> Tips for best results
+              <div className="bg-purple-50 rounded-lg p-3 border border-purple-200">
+                <p className="text-xs font-semibold text-purple-800 mb-1.5 flex items-center gap-1">
+                  <Camera className="w-3.5 h-3.5" /> Tips for best results
                 </p>
                 <ul className="text-xs text-purple-700 space-y-0.5 list-disc list-inside">
                   <li>Take photos in good natural lighting</li>
@@ -299,17 +299,17 @@ export default function RoomMakeover() {
               </div>
 
               {/* Photo Grid */}
-              <div className="grid grid-cols-2 gap-3″>
+              <div className="grid grid-cols-2 gap-3">
                 {photoPreviewUrls.map((url, i) => (
-                  <div key={i} className="relative aspect-video rounded-xl overflow-hidden border-2 border-gray-200 bg-gray-100″>
+                  <div key={i} className="relative aspect-video rounded-xl overflow-hidden border-2 border-gray-200 bg-gray-100">
                     <img src={url} alt={`Room photo ${i + 1}`} className="w-full h-full object-cover" />
                     <button
                       onClick={() => removePhoto(i)}
-                      className="absolute top-1.5 right-1.5 bg-black/60 rounded-full p-1 hover:bg-black/80″
+                      className="absolute top-1.5 right-1.5 bg-black/60 rounded-full p-1 hover:bg-black/80"
                     >
                       <X className="w-3.5 h-3.5 text-white" />
                     </button>
-                    <div className="absolute bottom-1.5 left-1.5 bg-black/50 rounded-md px-1.5 py-0.5″>
+                    <div className="absolute bottom-1.5 left-1.5 bg-black/50 rounded-md px-1.5 py-0.5">
                       <span className="text-white text-xs">Photo {i + 1}</span>
                     </div>
                   </div>
@@ -319,9 +319,9 @@ export default function RoomMakeover() {
                     onClick={() => fileInputRef.current?.click()}
                     className="aspect-video rounded-xl border-2 border-dashed border-gray-300 flex flex-col items-center justify-center gap-2 hover:border-purple-400 hover:bg-purple-50 transition-colors"
                   >
-                    <Upload className="w-6 h-6 text-gray-400″ />
-                    <span className="text-sm text-gray-500″>Add Photo</span>
-                    <span className="text-xs text-gray-400″>{photoPreviewUrls.length}/4</span>
+                    <Upload className="w-6 h-6 text-gray-400" />
+                    <span className="text-sm text-gray-500">Add Photo</span>
+                    <span className="text-xs text-gray-400">{photoPreviewUrls.length}/4</span>
                   </button>
                 )}
               </div>
@@ -334,16 +334,16 @@ export default function RoomMakeover() {
                 onChange={handlePhotoAdd}
               />
 
-              <div className="flex gap-3″>
-                <Button variant="outline" onClick={() => setStep("room_type")} className="flex-1″>
-                  <ChevronLeft className="w-4 h-4 mr-1″ /> Back
+              <div className="flex gap-3">
+                <Button variant="outline" onClick={() => setStep("room_type")} className="flex-1">
+                  <ChevronLeft className="w-4 h-4 mr-1" /> Back
                 </Button>
                 <Button
                   className="flex-1 bg-purple-600 hover:bg-purple-700 text-white"
                   disabled={photoPreviewUrls.length === 0}
                   onClick={() => setStep("style")}
                 >
-                  Next: Choose Style <ChevronRight className="w-4 h-4 ml-1″ />
+                  Next: Choose Style <ChevronRight className="w-4 h-4 ml-1" />
                 </Button>
               </div>
             </CardContent>
@@ -357,11 +357,11 @@ export default function RoomMakeover() {
               <CardTitle className="text-lg">Choose your design style</CardTitle>
               <CardDescription>The AI will use this to guide the aesthetic of your makeover.</CardDescription>
             </CardHeader>
-            <CardContent className="space-y-5″>
+            <CardContent className="space-y-5">
               {/* Design Style */}
               <div>
                 <label className="text-sm font-semibold text-gray-700 mb-2 block">Design Style *</label>
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-2″>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
                   {DESIGN_STYLES.map(s => (
                     <button
                       key={s.value}
@@ -369,7 +369,7 @@ export default function RoomMakeover() {
                       className={`flex flex-col items-start p-3 rounded-xl border-2 text-left transition-all ${
                         form.designStyle === s.value
                           ? "bg-purple-600 border-purple-600 text-white"
-                          : "border-gray-200 hover:border-purple-300″
+                          : "border-gray-200 hover:border-purple-300"
                       }`}
                     >
                       <span className="font-semibold text-sm">{s.label}</span>
@@ -382,36 +382,36 @@ export default function RoomMakeover() {
               {/* Color Palette */}
               <div>
                 <label className="text-sm font-semibold text-gray-700 mb-2 block">Color Palette *</label>
-                <div className="grid grid-cols-2 sm:grid-cols-4 gap-2″>
+                <div className="grid grid-cols-2 sm:grid-cols-4 gap-2">
                   {COLOR_PALETTES.map(p => (
                     <button
                       key={p.value}
                       onClick={() => setForm(f => ({ ...f, colorPalette: p.value }))}
                       className={`p-2.5 rounded-xl border-2 transition-all ${
-                        form.colorPalette === p.value ? "border-purple-600 ring-2 ring-purple-300″ : "border-gray-200 hover:border-purple-300"
+                        form.colorPalette === p.value ? "border-purple-600 ring-2 ring-purple-300" : "border-gray-200 hover:border-purple-300"
                       }`}
                     >
-                      <div className="flex gap-1 mb-1.5″>
+                      <div className="flex gap-1 mb-1.5">
                         {p.colors.map((c, i) => (
                           <div key={i} className="flex-1 h-4 rounded-sm" style={{ backgroundColor: c }} />
                         ))}
                       </div>
-                      <span className="text-xs font-medium text-gray-700″>{p.label}</span>
+                      <span className="text-xs font-medium text-gray-700">{p.label}</span>
                     </button>
                   ))}
                 </div>
               </div>
 
-              <div className="flex gap-3″>
-                <Button variant="outline" onClick={() => setStep("photos")} className="flex-1″>
-                  <ChevronLeft className="w-4 h-4 mr-1″ /> Back
+              <div className="flex gap-3">
+                <Button variant="outline" onClick={() => setStep("photos")} className="flex-1">
+                  <ChevronLeft className="w-4 h-4 mr-1" /> Back
                 </Button>
                 <Button
                   className="flex-1 bg-purple-600 hover:bg-purple-700 text-white"
                   disabled={!form.designStyle || !form.colorPalette}
                   onClick={() => setStep("details")}
                 >
-                  Next: Final Details <ChevronRight className="w-4 h-4 ml-1″ />
+                  Next: Final Details <ChevronRight className="w-4 h-4 ml-1" />
                 </Button>
               </div>
             </CardContent>
@@ -425,11 +425,11 @@ export default function RoomMakeover() {
               <CardTitle className="text-lg">Final details</CardTitle>
               <CardDescription>Help the AI understand your priorities and budget.</CardDescription>
             </CardHeader>
-            <CardContent className="space-y-5″>
+            <CardContent className="space-y-5">
               {/* Budget */}
               <div>
                 <label className="text-sm font-semibold text-gray-700 mb-2 block">Budget Range</label>
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-2″>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
                   {BUDGET_RANGES.map(b => (
                     <button
                       key={b.value}
@@ -437,7 +437,7 @@ export default function RoomMakeover() {
                       className={`flex flex-col items-start p-3 rounded-xl border-2 text-left transition-all ${
                         form.budgetRange === b.value
                           ? "bg-purple-600 border-purple-600 text-white"
-                          : "border-gray-200 hover:border-purple-300″
+                          : "border-gray-200 hover:border-purple-300"
                       }`}
                     >
                       <span className="font-semibold text-sm">{b.label}</span>
@@ -450,7 +450,7 @@ export default function RoomMakeover() {
               {/* Priority Features */}
               <div>
                 <label className="text-sm font-semibold text-gray-700 mb-2 block">What matters most to you? (pick all that apply)</label>
-                <div className="flex flex-wrap gap-2″>
+                <div className="flex flex-wrap gap-2">
                   {PRIORITY_FEATURES.map(f => (
                     <button
                       key={f}
@@ -458,7 +458,7 @@ export default function RoomMakeover() {
                       className={`px-3 py-1.5 rounded-full border text-sm font-medium transition-all ${
                         form.priorityFeatures.includes(f)
                           ? "bg-purple-600 border-purple-600 text-white"
-                          : "border-gray-300 text-gray-600 hover:border-purple-400″
+                          : "border-gray-300 text-gray-600 hover:border-purple-400"
                       }`}
                     >
                       {f}
@@ -479,23 +479,23 @@ export default function RoomMakeover() {
                   rows={3}
                   maxLength={500}
                 />
-                <p className="text-xs text-gray-400 mt-1″>{form.additionalNotes.length}/500</p>
+                <p className="text-xs text-gray-400 mt-1">{form.additionalNotes.length}/500</p>
               </div>
 
               {/* Summary */}
               <div className="bg-gray-50 rounded-xl p-4 space-y-2 text-sm border">
-                <p className="font-semibold text-gray-700″>Ready to generate your makeover:</p>
-                <div className="grid grid-cols-2 gap-1″>
-                  <span className="text-gray-500″>Room</span><span className="font-medium capitalize">{form.roomType.replace("_", " ")}</span>
-                  <span className="text-gray-500″>Photos</span><span className="font-medium">{photoPreviewUrls.length} uploaded</span>
-                  <span className="text-gray-500″>Style</span><span className="font-medium capitalize">{form.designStyle.replace("_", " ")}</span>
-                  <span className="text-gray-500″>Colors</span><span className="font-medium">{COLOR_PALETTES.find(p => p.value === form.colorPalette)?.label ?? "—"}</span>
+                <p className="font-semibold text-gray-700">Ready to generate your makeover:</p>
+                <div className="grid grid-cols-2 gap-1">
+                  <span className="text-gray-500">Room</span><span className="font-medium capitalize">{form.roomType.replace("_", " ")}</span>
+                  <span className="text-gray-500">Photos</span><span className="font-medium">{photoPreviewUrls.length} uploaded</span>
+                  <span className="text-gray-500">Style</span><span className="font-medium capitalize">{form.designStyle.replace("_", " ")}</span>
+                  <span className="text-gray-500">Colors</span><span className="font-medium">{COLOR_PALETTES.find(p => p.value === form.colorPalette)?.label ?? "—"}</span>
                 </div>
               </div>
 
-              <div className="flex gap-3″>
-                <Button variant="outline" onClick={() => setStep("style")} className="flex-1″>
-                  <ChevronLeft className="w-4 h-4 mr-1″ /> Back
+              <div className="flex gap-3">
+                <Button variant="outline" onClick={() => setStep("style")} className="flex-1">
+                  <ChevronLeft className="w-4 h-4 mr-1" /> Back
                 </Button>
                 <Button
                   className="flex-1 bg-purple-600 hover:bg-purple-700 text-white"
@@ -505,7 +505,7 @@ export default function RoomMakeover() {
                   {uploading ? (
                     <><Loader2 className="w-4 h-4 mr-2 animate-spin" /> Uploading photos...</>
                   ) : (
-                    <><Wand2 className="w-4 h-4 mr-2″ /> Generate My Makeover</>
+                    <><Wand2 className="w-4 h-4 mr-2" /> Generate My Makeover</>
                   )}
                 </Button>
               </div>
@@ -519,12 +519,12 @@ export default function RoomMakeover() {
             <CardContent className="py-16 flex flex-col items-center gap-6 text-center">
               <div className="relative">
                 <div className="w-24 h-24 rounded-full bg-purple-100 flex items-center justify-center">
-                  <Sparkles className="w-12 h-12 text-purple-600″ />
+                  <Sparkles className="w-12 h-12 text-purple-600" />
                 </div>
                 <div className="absolute inset-0 rounded-full border-4 border-purple-300 border-t-purple-600 animate-spin" />
               </div>
               <div>
-                <h2 className="text-xl font-bold text-gray-900 mb-2″>Designing your makeover...</h2>
+                <h2 className="text-xl font-bold text-gray-900 mb-2">Designing your makeover...</h2>
                 <p className="text-gray-500 text-sm max-w-sm">
                   Our AI is analyzing your photos and creating a personalized room design. This usually takes 20–40 seconds.
                 </p>
@@ -536,8 +536,8 @@ export default function RoomMakeover() {
                   "Selecting furniture and color scheme",
                   "Rendering your new room design",
                 ].map((msg, i) => (
-                  <div key={i} className="flex items-center gap-2″>
-                    <Loader2 className="w-3.5 h-3.5 text-purple-400 animate-spin flex-shrink-0″ />
+                  <div key={i} className="flex items-center gap-2">
+                    <Loader2 className="w-3.5 h-3.5 text-purple-400 animate-spin flex-shrink-0" />
                     <span>{msg}</span>
                   </div>
                 ))}
@@ -548,11 +548,11 @@ export default function RoomMakeover() {
 
         {/* Result */}
         {step === "result" && resultImageUrl && (
-          <div className="space-y-4″>
+          <div className="space-y-4">
             <Card className="overflow-hidden border-0 shadow-lg">
               <div className="relative">
                 <img src={resultImageUrl} alt="AI Room Makeover" className="w-full object-cover" />
-                <div className="absolute top-3 right-3″>
+                <div className="absolute top-3 right-3">
                   <Badge className="bg-purple-600 text-white px-3 py-1 text-sm">
                     <Sparkles className="w-3.5 h-3.5 mr-1 inline" /> AI Generated
                   </Badge>
@@ -566,7 +566,7 @@ export default function RoomMakeover() {
                 <CardTitle className="text-base">Your Original Photos</CardTitle>
               </CardHeader>
               <CardContent>
-                <div className="grid grid-cols-2 gap-2″>
+                <div className="grid grid-cols-2 gap-2">
                   {photoPreviewUrls.map((url, i) => (
                     <img key={i} src={url} alt={`Before ${i + 1}`} className="rounded-lg object-cover aspect-video w-full" />
                   ))}
@@ -585,9 +585,9 @@ export default function RoomMakeover() {
                 <div><span className="text-gray-500 block text-xs">Color Palette</span><span className="font-medium">{COLOR_PALETTES.find(p => p.value === form.colorPalette)?.label ?? "—"}</span></div>
                 <div><span className="text-gray-500 block text-xs">Budget</span><span className="font-medium">{BUDGET_RANGES.find(b => b.value === form.budgetRange)?.label ?? "Not specified"}</span></div>
                 {form.priorityFeatures.length > 0 && (
-                  <div className="col-span-2″>
-                    <span className="text-gray-500 block text-xs mb-1″>Priorities</span>
-                    <div className="flex flex-wrap gap-1″>
+                  <div className="col-span-2">
+                    <span className="text-gray-500 block text-xs mb-1">Priorities</span>
+                    <div className="flex flex-wrap gap-1">
                       {form.priorityFeatures.map(f => (
                         <Badge key={f} variant="outline" className="text-xs">{f}</Badge>
                       ))}
@@ -597,10 +597,10 @@ export default function RoomMakeover() {
               </CardContent>
             </Card>
 
-            <div className="flex gap-3″>
+            <div className="flex gap-3">
               <Button
                 variant="outline"
-                className="flex-1″
+                className="flex-1"
                 onClick={() => {
                   setStep("room_type");
                   setPhotoFiles([]);
@@ -627,13 +627,13 @@ export default function RoomMakeover() {
 
             {/* CTA to find a pro */}
             <Card className="bg-gradient-to-r from-blue-600 to-purple-600 border-0 text-white">
-              <CardContent className="py-5 flex flex-col sm:flex-row items-center gap-4″>
-                <div className="flex-1″>
+              <CardContent className="py-5 flex flex-col sm:flex-row items-center gap-4">
+                <div className="flex-1">
                   <p className="font-bold text-lg">Ready to make it real?</p>
-                  <p className="text-blue-100 text-sm mt-0.5″>Connect with vetted TrustyPro partners who can bring your design to life.</p>
+                  <p className="text-blue-100 text-sm mt-0.5">Connect with vetted TrustyPro partners who can bring your design to life.</p>
                 </div>
                 <Button
-                  className="bg-white text-blue-700 hover:bg-blue-50 flex-shrink-0″
+                  className="bg-white text-blue-700 hover:bg-blue-50 flex-shrink-0"
                   onClick={() => window.location.href = "/my-home/quick-quote"}
                 >
                   Get Free Quotes

@@ -61,7 +61,7 @@ export default function ProLnkHomeownerProtection() {
           ].map((item) => (
             <div key={item.title} style={{ background: '#fff', borderRadius: 12, padding: 20, textAlign: 'center', boxShadow: '0 1px 6px rgba(0,0,0,0.08)' }}>
               <div style={{ fontSize: 32, marginBottom: 8 }}>{item.icon}</div>
-              <div style={{ fontWeight: 700, fontSize: 15, marginBottom: 6, color: '#0A1628′ }}>{item.title}</div>
+              <div style={{ fontWeight: 700, fontSize: 15, marginBottom: 6, color: '#0A1628' }}>{item.title}</div>
               <div style={{ color: '#555', fontSize: 13, lineHeight: 1.6 }}>{item.desc}</div>
             </div>
           ))}
@@ -75,12 +75,12 @@ export default function ProLnkHomeownerProtection() {
         </div>
 
         <div style={{ background: '#fff', borderRadius: 16, padding: 32, boxShadow: '0 1px 6px rgba(0,0,0,0.08)' }}>
-          <h2 style={{ fontSize: 22, fontWeight: 700, marginBottom: 8, color: '#0A1628′ }}>🛠 What Happens in Your Scenario?</h2>
+          <h2 style={{ fontSize: 22, fontWeight: 700, marginBottom: 8, color: '#0A1628' }}>🛠 What Happens in Your Scenario?</h2>
           <p style={{ color: '#555', fontSize: 15, marginBottom: 20 }}>Select a situation to see what ProLnk does, what you should do, and what falls outside ProLnk's scope.</p>
 
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: 10, marginBottom: 24 }}>
             {scenarios.map((s, i) => (
-              <button key={s.label} onClick={() => setSelected(i)} style={{ padding: '10px 18px', borderRadius: 8, border: selected === i ? '2px solid #F5E642′ : '2px solid #ddd', background: selected === i ? '#0A1628' : '#fff', color: selected === i ? '#F5E642' : '#333', fontWeight: 600, cursor: ’pointer', fontSize: 13 }}>
+              <button key={s.label} onClick={() => setSelected(i)} style={{ padding: '10px 18px', borderRadius: 8, border: selected === i ? '2px solid #F5E642' : '2px solid #ddd', background: selected === i ? '#0A1628' : '#fff', color: selected === i ? '#F5E642' : '#333', fontWeight: 600, cursor: 'pointer', fontSize: 13 }}>
                 {s.icon} {s.label}
               </button>
             ))}
@@ -89,7 +89,7 @@ export default function ProLnkHomeownerProtection() {
           {selected !== null && (
             <div style={{ display: 'flex', flexDirection: 'column', gap: 14 }}>
               <div style={{ background: '#f0fff4', borderRadius: 12, padding: 18 }}>
-                <div style={{ fontWeight: 700, fontSize: 14, marginBottom: 6, color: '#27ae60′ }}>✅ What ProLnk Does</div>
+                <div style={{ fontWeight: 700, fontSize: 14, marginBottom: 6, color: '#27ae60' }}>✅ What ProLnk Does</div>
                 <div style={{ color: '#333', fontSize: 14, lineHeight: 1.6 }}>{scenarios[selected].prolnk}</div>
               </div>
               <div style={{ background: '#e8f4fd', borderRadius: 12, padding: 18 }}>
@@ -97,7 +97,7 @@ export default function ProLnkHomeownerProtection() {
                 <div style={{ color: '#333', fontSize: 14, lineHeight: 1.6 }}>{scenarios[selected].you}</div>
               </div>
               <div style={{ background: '#fff3cd', borderRadius: 12, padding: 18 }}>
-                <div style={{ fontWeight: 700, fontSize: 14, marginBottom: 6, color: '#e67e22′ }}>⚠️ What Falls Outside ProLnk Scope</div>
+                <div style={{ fontWeight: 700, fontSize: 14, marginBottom: 6, color: '#e67e22' }}>⚠️ What Falls Outside ProLnk Scope</div>
                 <div style={{ color: '#333', fontSize: 14, lineHeight: 1.6 }}>{scenarios[selected].outside}</div>
               </div>
             </div>

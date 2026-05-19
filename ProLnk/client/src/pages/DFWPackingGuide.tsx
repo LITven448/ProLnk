@@ -53,15 +53,15 @@ export default function DFWPackingGuide() {
             { emoji: '⚖️', label: 'Box Weight Limit', note: 'Under 50 lbs per box — movers can refuse heavier' },
             { emoji: '🏷️', label: 'Label Every Box', note: 'Room + contents + FRAGILE on top AND sides' },
           ].map(card => (
-            <div key={card.label} style={{ backgroundColor: '#131F35', borderRadius: 12, padding: 20, border: '1px solid #1E2D45′ }}>
+            <div key={card.label} style={{ backgroundColor: '#131F35', borderRadius: 12, padding: 20, border: '1px solid #1E2D45' }}>
               <div style={{ fontSize: 28, marginBottom: 8 }}>{card.emoji}</div>
               <div style={{ fontWeight: 700, color: '#F5E642', marginBottom: 6 }}>{card.label}</div>
-              <div style={{ fontSize: 13, color: '#9BA3B8′ }}>{card.note}</div>
+              <div style={{ fontSize: 13, color: '#9BA3B8' }}>{card.note}</div>
             </div>
           ))}
         </div>
 
-        <div style={{ backgroundColor: '#131F35', borderRadius: 16, padding: 28, marginBottom: 32, border: '1px solid #1E2D45′ }}>
+        <div style={{ backgroundColor: '#131F35', borderRadius: 16, padding: 28, marginBottom: 32, border: '1px solid #1E2D45' }}>
           <h2 style={{ color: '#FFFFFF', fontSize: 20, fontWeight: 700, marginBottom: 6 }}>📋 Packing Supply Calculator</h2>
           <p style={{ color: '#9BA3B8', fontSize: 14, marginBottom: 20 }}>Enter your room count and special items to get a full supply list and cost estimate.</p>
 
@@ -77,7 +77,7 @@ export default function DFWPackingGuide() {
               <label style={{ color: '#9BA3B8', fontSize: 13, display: 'block', marginBottom: 8 }}>Special Items</label>
               <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8 }}>
                 {SPECIAL_ITEMS.map(item => (
-                  <button key={item} onClick={() => toggle(item)} style={{ padding: '6px 12px', borderRadius: 16, border: 'none', cursor: 'pointer', fontWeight: 600, fontSize: 12, backgroundColor: specialItems.includes(item) ? '#F5E642′ : '#1E2D45', color: specialItems.includes(item) ? '#0A1628' : '#9BA3B8' }}>
+                  <button key={item} onClick={() => toggle(item)} style={{ padding: '6px 12px', borderRadius: 16, border: 'none', cursor: 'pointer', fontWeight: 600, fontSize: 12, backgroundColor: specialItems.includes(item) ? '#F5E642' : '#1E2D45', color: specialItems.includes(item) ? '#0A1628' : '#9BA3B8' }}>
                     {item}
                   </button>
                 ))}
@@ -86,7 +86,7 @@ export default function DFWPackingGuide() {
           </div>
 
           {heatWarnings.length > 0 && (
-            <div style={{ backgroundColor: '#2A1010', borderRadius: 12, padding: 16, marginBottom: 20, border: '1px solid #EF444440′ }}>
+            <div style={{ backgroundColor: '#2A1010', borderRadius: 12, padding: 16, marginBottom: 20, border: '1px solid #EF444440' }}>
               <div style={{ fontWeight: 700, color: '#FCA5A5', marginBottom: 10 }}>🔥 Texas Heat Warnings for Your Items</div>
               {heatWarnings.map(item => (
                 <div key={item} style={{ marginBottom: 8 }}>
@@ -102,7 +102,7 @@ export default function DFWPackingGuide() {
               <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 12, marginBottom: 20 }}>
                 <div style={{ backgroundColor: '#0A1628', borderRadius: 12, padding: 16, border: '2px solid #F5E642', textAlign: 'center' }}>
                   <div style={{ color: '#9BA3B8', fontSize: 12 }}>Total Boxes Needed</div>
-                  <div style={{ fontSize: 36, fontWeight: 800, color: '#F5E642′ }}>{totalBoxes}</div>
+                  <div style={{ fontSize: 36, fontWeight: 800, color: '#F5E642' }}>{totalBoxes}</div>
                 </div>
                 <div style={{ backgroundColor: '#0A1628', borderRadius: 12, padding: 16, border: '1px solid #2A3A55', textAlign: 'center' }}>
                   <div style={{ color: '#9BA3B8', fontSize: 12 }}>Est. Supply Cost</div>
@@ -117,7 +117,7 @@ export default function DFWPackingGuide() {
                 <div style={{ color: '#9BA3B8', fontSize: 13, marginBottom: 10 }}>Full Supply List:</div>
                 {Object.entries(supplies).map(([item, qty]) => (
                   <div key={item} style={{ display: 'flex', justifyContent: 'space-between', padding: '8px 0', borderBottom: '1px solid #1E2D45', fontSize: 14 }}>
-                    <span style={{ color: '#CBD2E0′ }}>{item}</span>
+                    <span style={{ color: '#CBD2E0' }}>{item}</span>
                     <span style={{ color: '#F5E642', fontWeight: 700 }}>× {qty} (~${Math.round(SUPPLY_COSTS[item] * qty)})</span>
                   </div>
                 ))}
@@ -127,7 +127,7 @@ export default function DFWPackingGuide() {
         </div>
 
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 20 }}>
-          <div style={{ backgroundColor: '#131F35', borderRadius: 16, padding: 24, border: '1px solid #1E2D45′ }}>
+          <div style={{ backgroundColor: '#131F35', borderRadius: 16, padding: 24, border: '1px solid #1E2D45' }}>
             <h2 style={{ color: '#FFFFFF', fontSize: 18, fontWeight: 700, marginBottom: 16 }}>🏷️ Labeling System</h2>
             {[['Room Name', 'Kitchen, Master BR, Office — in big letters'], ['Contents', 'Quick list of what\’s inside (e.g. "books, cables")'], ['Priority', 'OPEN FIRST for essentials box, LAST for storage'], ['Fragile', 'Mark on top AND all 4 sides — movers stack boxes'], ['Weight', 'Mark HEAVY on anything over 40 lbs']].map(([label, desc]) => (
               <div key={label} style={{ marginBottom: 12 }}>
@@ -136,7 +136,7 @@ export default function DFWPackingGuide() {
               </div>
             ))}
           </div>
-          <div style={{ backgroundColor: '#131F35', borderRadius: 16, padding: 24, border: '1px solid #1E2D45′ }}>
+          <div style={{ backgroundColor: '#131F35', borderRadius: 16, padding: 24, border: '1px solid #1E2D45' }}>
             <h2 style={{ color: '#FFFFFF', fontSize: 18, fontWeight: 700, marginBottom: 16 }}>🖼️ Specialty Item Packing</h2>
             {[['Flat-screen TVs', 'Original box is best. Otherwise: TV box kit (~$25) + foam corners'], ['Mirrors & Artwork', 'Mirror boxes, corner protectors, bundle vertically — never flat'], ['Dishes', 'Wrap each plate in paper, pack vertically like records — never flat'], ['Clothes', 'Use wardrobe boxes — saves folding and moving hangers'], ['Mattresses', 'Mattress bag ($10) protects against dirt and moisture']].map(([item, tip]) => (
               <div key={item} style={{ marginBottom: 12 }}>

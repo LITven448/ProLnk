@@ -8,7 +8,7 @@ import {
 import { Link } from "wouter";
 
 const NAVY = "#0B1F3A";
-const YELLOW = "#F5C842″;
+const YELLOW = "#F5C842";
 const YELLOW_BG = "rgba(245,200,66,0.10)";
 const YELLOW_BORDER = "rgba(245,200,66,0.30)";
 
@@ -58,10 +58,10 @@ function StreamCard({ number, title, icon: Icon, how, math, timeline, extra, acc
       </div>
       <div style={{ padding: "24px 28px" }}>
         <div style={{ marginBottom: 16 }}>
-          <div style={{ color: "#6B7280″, fontSize: 11, fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.06em", marginBottom: 6 }}>
+          <div style={{ color: "#6B7280", fontSize: 11, fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.06em", marginBottom: 6 }}>
             How It Works
           </div>
-          <p style={{ color: "#374151″, fontSize: 14, lineHeight: 1.7, margin: 0 }}>{how}</p>
+          <p style={{ color: "#374151", fontSize: 14, lineHeight: 1.7, margin: 0 }}>{how}</p>
         </div>
         <div style={{
           background: YELLOW_BG,
@@ -76,7 +76,7 @@ function StreamCard({ number, title, icon: Icon, how, math, timeline, extra, acc
           <p style={{ color: "#92400E", fontSize: 14, fontWeight: 600, margin: 0, lineHeight: 1.6 }}>{math}</p>
         </div>
         {timeline && (
-          <div style={{ color: "#6B7280″, fontSize: 12, marginTop: 12, lineHeight: 1.5 }}>
+          <div style={{ color: "#6B7280", fontSize: 12, marginTop: 12, lineHeight: 1.5 }}>
             {timeline}
           </div>
         )}
@@ -89,15 +89,15 @@ function StreamCard({ number, title, icon: Icon, how, math, timeline, extra, acc
 function NetworkTree() {
   return (
     <div style={{ marginTop: 8 }}>
-      <div style={{ color: "#6B7280″, fontSize: 11, fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.06em", marginBottom: 12 }}>
+      <div style={{ color: "#6B7280", fontSize: 11, fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.06em", marginBottom: 12 }}>
         Your Override Network (2,125 positions)
       </div>
       {[
         { label: "You", sub: "7% of their commissions", bg: YELLOW, color: NAVY, count: "—" },
-        { label: "Your 8 Direct Recruits (L1)", sub: "7% of their commissions", bg: NAVY, color: "#fff", count: "8″ },
-        { label: "L2 — Their Recruits", sub: "4% of their commissions", bg: "#1E3A5F", color: "#D1D5DB", count: "64″ },
-        { label: "L3 — L2's Recruits", sub: "2% of their commissions", bg: "#243B55″, color: "#9CA3AF", count: "512" },
-        { label: "L4 — Deepest Level", sub: "1% of their commissions", bg: "#2D3748″, color: "#6B7280", count: "1,541" },
+        { label: "Your 8 Direct Recruits (L1)", sub: "7% of their commissions", bg: NAVY, color: "#fff", count: "8" },
+        { label: "L2 — Their Recruits", sub: "4% of their commissions", bg: "#1E3A5F", color: "#D1D5DB", count: "64" },
+        { label: "L3 — L2's Recruits", sub: "2% of their commissions", bg: "#243B55", color: "#9CA3AF", count: "512" },
+        { label: "L4 — Deepest Level", sub: "1% of their commissions", bg: "#2D3748", color: "#6B7280", count: "1,541" },
       ].map((row, i) => (
         <div key={i} style={{
           display: "flex", alignItems: "center", gap: 12,
@@ -168,7 +168,7 @@ function IncomeSlider() {
       <div style={{ borderTop: "1px solid rgba(255,255,255,0.1)", paddingTop: 16 }}>
         <div style={{ color: "#9CA3AF", fontSize: 11, textTransform: "uppercase", letterSpacing: "0.06em", marginBottom: 4 }}>Est. Monthly Total</div>
         <div style={{ fontSize: 36, fontWeight: 900, color: YELLOW }}>${total.toLocaleString()}/mo</div>
-        <div style={{ color: "#6B7280″, fontSize: 11, marginTop: 4 }}>Based on $1,000 avg job value, 10% platform fee, $149/mo subscriptions</div>
+        <div style={{ color: "#6B7280", fontSize: 11, marginTop: 4 }}>Based on $1,000 avg job value, 10% platform fee, $149/mo subscriptions</div>
       </div>
     </div>
   );
@@ -182,7 +182,7 @@ export default function NetworkIncomeSystem() {
         <meta name="description" content="Discover the 5 income streams available to ProLnk partners: job commissions, network overrides, subscription income, per-lead fees, and permanent home origination rights." />
       </Helmet>
 
-      <div style={{ minHeight: "100vh", background: "#FAFAF9″, color: NAVY, fontFamily: "'Inter', sans-serif" }}>
+      <div style={{ minHeight: "100vh", background: "#FAFAF9", color: NAVY, fontFamily: "'Inter', sans-serif" }}>
 
         {/* Hero */}
         <div style={{ background: NAVY, color: "#fff", padding: "60px 20px 56px", textAlign: "center" }}>
@@ -202,7 +202,7 @@ export default function NetworkIncomeSystem() {
             <span style={{ color: YELLOW }}>5 Ways Your Business Works For You</span>
           </h1>
           <p style={{
-            color: "#94A3B8″, fontSize: 16, maxWidth: 620,
+            color: "#94A3B8", fontSize: 16, maxWidth: 620,
             margin: "0 auto 32px", lineHeight: 1.7,
           }}>
             Traditional contractors trade time for money. ProLnk partners build systems that generate income whether they're on a job or not.
@@ -235,11 +235,11 @@ export default function NetworkIncomeSystem() {
         <div style={{ background: "#fff", borderBottom: "1px solid #E5E7EB", padding: "20px 20px" }}>
           <div style={{ maxWidth: 980, margin: "0 auto", display: "flex", justifyContent: "center", gap: 8, flexWrap: "wrap" }}>
             {[
-              { label: "Stream 1″, desc: "Job Commission (72%)" },
-              { label: "Stream 2″, desc: "Network Override (4 levels)" },
-              { label: "Stream 3″, desc: "Subscription Override" },
-              { label: "Stream 4″, desc: "Per-Lead Homeowner Fee" },
-              { label: "Stream 5″, desc: "Home Origination Rights" },
+              { label: "Stream 1", desc: "Job Commission (72%)" },
+              { label: "Stream 2", desc: "Network Override (4 levels)" },
+              { label: "Stream 3", desc: "Subscription Override" },
+              { label: "Stream 4", desc: "Per-Lead Homeowner Fee" },
+              { label: "Stream 5", desc: "Home Origination Rights" },
             ].map((s, i) => (
               <div key={i} style={{
                 display: "flex", alignItems: "center", gap: 8,
@@ -247,7 +247,7 @@ export default function NetworkIncomeSystem() {
                 border: "1px solid #E5E7EB", fontSize: 13,
               }}>
                 <span style={{ color: YELLOW, fontWeight: 800, fontSize: 11 }}>{s.label}</span>
-                <span style={{ color: "#6B7280″ }}>{s.desc}</span>
+                <span style={{ color: "#6B7280" }}>{s.desc}</span>
               </div>
             ))}
           </div>
@@ -258,7 +258,7 @@ export default function NetworkIncomeSystem() {
           <div style={{ display: "flex", flexDirection: "column", gap: 24 }}>
 
             <StreamCard
-              number="1″
+              number="1"
               title="Job Commission (72% Keep)"
               icon={DollarSign}
               how="Upload photos of your work to your profile → AI detects service opportunities at that home → homeowner requests a quote → you book the job → ProLnk charges a 10% platform fee → you keep 72% of that fee directly."
@@ -268,17 +268,17 @@ export default function NetworkIncomeSystem() {
             />
 
             <StreamCard
-              number="2″
+              number="2"
               title="Network Override (4 Levels, 7/4/2/1%)"
               icon={Users}
               how="Recruit another licensed pro into ProLnk. Every time they complete a job, you automatically earn a percentage of their commission — without doing any work on that job."
               math="Your L1 recruit earns $604.80 on a job → you earn 7% = $42.34 passively. 12 active recruits each doing 4 jobs/month = $2,040.48/month in override income from L1 alone."
               extra={<NetworkTree />}
-              accentColor="#3B82F6″
+              accentColor="#3B82F6"
             />
 
             <StreamCard
-              number="3″
+              number="3"
               title="Subscription Override (Recurring Monthly)"
               icon={RefreshCw}
               how="Every pro you recruit pays a $149/month platform subscription. You earn a percentage of their subscription fee every month for as long as they remain active — with no cap."
@@ -288,23 +288,23 @@ export default function NetworkIncomeSystem() {
             />
 
             <StreamCard
-              number="4″
+              number="4"
               title="Per-Lead Homeowner Fee ($25–100)"
               icon={Home}
               how="Bring homeowners to the TrustyPro platform and earn a per-lead fee when they qualify. No recruiting required — just connect homeowners who need services with the platform."
               math="$25–$100 per qualified homeowner. Qualifies when: they complete their property profile AND book their first service. 20 homeowners/month at $60 avg = $1,200/month in lead fees."
               timeline="Lead fee paid within 7 days of homeowner's first job completion. Fee amount negotiated in your partner agreement."
-              accentColor="#A855F7″
+              accentColor="#A855F7"
             />
 
             <StreamCard
-              number="5″
+              number="5"
               title="Home Origination Rights (Permanent Revenue)"
               icon={Zap}
               how="Available to Charter and Founding tier members only. When you add a home to the Home Health Vault — by documenting a job there — you claim permanent origination rights to that property."
               math="100 homes × avg 2 jobs/year × $1,000 avg fee × 1.5% origination = $3,000/year in permanent passive income. These rights never expire. A home you originate in 2026 pays you in 2031."
               timeline="Rights are recorded permanently in the Vault the moment you document the first job at that property. Origination income compounds as more jobs occur at your originated homes."
-              accentColor="#EC4899″
+              accentColor="#EC4899"
             />
 
           </div>
@@ -315,7 +315,7 @@ export default function NetworkIncomeSystem() {
               <h2 style={{ fontSize: 26, fontWeight: 800, color: NAVY, margin: "0 0 10px" }}>
                 Calculate Your Potential
               </h2>
-              <p style={{ color: "#6B7280″, fontSize: 14, margin: 0 }}>
+              <p style={{ color: "#6B7280", fontSize: 14, margin: 0 }}>
                 Slide to your volume and see estimated income across all 5 streams
               </p>
             </div>
@@ -341,7 +341,7 @@ export default function NetworkIncomeSystem() {
             <h3 style={{ fontSize: 24, fontWeight: 900, color: "#fff", margin: "0 0 10px" }}>
               Ready to Build Your Own System?
             </h3>
-            <p style={{ color: "#94A3B8″, fontSize: 14, margin: "0 0 24px", maxWidth: 460, marginLeft: "auto", marginRight: "auto" }}>
+            <p style={{ color: "#94A3B8", fontSize: 14, margin: "0 0 24px", maxWidth: 460, marginLeft: "auto", marginRight: "auto" }}>
               Founding Members lock in the $149/month rate, access all 5 income streams from day one, and receive priority placement in the matching algorithm.
             </p>
             <Link href="/apply">

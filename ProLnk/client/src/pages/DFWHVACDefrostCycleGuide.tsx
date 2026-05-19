@@ -26,11 +26,11 @@ const sections = [
 type DefrostResult = { status: string; detail: string; color: string };
 
 function assessDefrost(tempF: number, frequency: string, duration: string): DefrostResult {
-  if (duration === 'over20') return { status: 'Abnormal — Defrost Too Long', detail: 'Cycles over 20 min indicate sensor failure, refrigerant issue, or stuck reversing valve. Service call needed.', color: '#EF4444′ };
-  if (frequency === 'every30') return { status: 'Abnormal — Defrost Too Frequent', detail: 'Cycling every 30–60 min suggests defrost board or sensor fault. Not normal even in cold weather.', color: '#EF4444′ };
+  if (duration === 'over20') return { status: 'Abnormal — Defrost Too Long', detail: 'Cycles over 20 min indicate sensor failure, refrigerant issue, or stuck reversing valve. Service call needed.', color: '#EF4444' };
+  if (frequency === 'every30') return { status: 'Abnormal — Defrost Too Frequent', detail: 'Cycling every 30–60 min suggests defrost board or sensor fault. Not normal even in cold weather.', color: '#EF4444' };
   if (tempF <= 25 && frequency === 'several') return { status: 'Monitor — Edge of Normal', detail: 'At extreme temps defrost frequency increases. Watch for ice accumulation that does not clear.', color: '#F59E0B' };
   if (tempF >= 40) return { status: 'Possible Issue', detail: 'Defrost at 40°F+ is unusual. May indicate defrost sensor stuck or board failure.', color: '#F59E0B' };
-  return { status: 'Normal Operation', detail: 'Periodic defrost at these temps and duration is expected. System working correctly.', color: '#10B981′ };
+  return { status: 'Normal Operation', detail: 'Periodic defrost at these temps and duration is expected. System working correctly.', color: '#10B981' };
 }
 
 export default function DFWHVACDefrostCycleGuide() {
@@ -48,25 +48,25 @@ export default function DFWHVACDefrostCycleGuide() {
           <p style={{ color: '#94A3B8', fontSize: 15 }}>Understanding why heat pumps temporarily blow warm air in winter — and when to call a tech</p>
         </div>
         {sections.map((s) => (
-          <div key={s.title} style={{ background: '#0F2140', borderRadius: 12, padding: 20, marginBottom: 16, borderLeft: '4px solid #F5E642′ }}>
+          <div key={s.title} style={{ background: '#0F2140', borderRadius: 12, padding: 20, marginBottom: 16, borderLeft: '4px solid #F5E642' }}>
             <div style={{ fontSize: 24, marginBottom: 8 }}>{s.emoji}</div>
             <h2 style={{ color: '#F5E642', fontSize: 17, fontWeight: 600, margin: '0 0 8px' }}>{s.title}</h2>
             <p style={{ color: '#CBD5E1', fontSize: 14, lineHeight: 1.6, margin: 0 }}>{s.body}</p>
           </div>
         ))}
-        <div style={{ background: '#0F2140', borderRadius: 12, padding: 24, border: '2px solid #F5E642′ }}>
+        <div style={{ background: '#0F2140', borderRadius: 12, padding: 24, border: '2px solid #F5E642' }}>
           <h2 style={{ color: '#F5E642', fontSize: 18, fontWeight: 700, margin: '0 0 20px' }}>🔍 Defrost Behavior Checker</h2>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: 16, marginBottom: 20 }}>
             <div>
               <label style={{ color: '#94A3B8', fontSize: 13, display: 'block', marginBottom: 6 }}>Outdoor Temp: {temp}°F</label>
-              <input type="range" min={15} max={55} value={temp} onChange={e => setTemp(Number(e.target.value))} style={{ width: '100%', accentColor: '#F5E642′ }} />
+              <input type="range" min={15} max={55} value={temp} onChange={e => setTemp(Number(e.target.value))} style={{ width: '100%', accentColor: '#F5E642' }} />
             </div>
             <div>
               <label style={{ color: '#94A3B8', fontSize: 13, display: 'block', marginBottom: 6 }}>Defrost Frequency</label>
               <select value={frequency} onChange={e => setFrequency(e.target.value)} style={{ width: '100%', background: '#1E3A5F', color: '#E2E8F0', border: '1px solid #334155', borderRadius: 8, padding: '8px 12px', fontSize: 14 }}>
                 <option value="once">Once per day</option>
                 <option value="several">2–4 times per day</option>
-                <option value="every30″>Every 30–60 minutes</option>
+                <option value="every30">Every 30–60 minutes</option>
               </select>
             </div>
             <div>
@@ -74,7 +74,7 @@ export default function DFWHVACDefrostCycleGuide() {
               <select value={duration} onChange={e => setDuration(e.target.value)} style={{ width: '100%', background: '#1E3A5F', color: '#E2E8F0', border: '1px solid #334155', borderRadius: 8, padding: '8px 12px', fontSize: 14 }}>
                 <option value="normal">Under 15 minutes</option>
                 <option value="long">15–20 minutes</option>
-                <option value="over20″>Over 20 minutes</option>
+                <option value="over20">Over 20 minutes</option>
               </select>
             </div>
           </div>

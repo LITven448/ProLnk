@@ -55,47 +55,47 @@ export default function DFWHVACNoiseMap() {
   const result = noiseType && sourceLocation ? NOISE_GUIDANCE[noiseType]?.[sourceLocation] : null;
 
   return (
-    <div style={{ background: "#0A1628″, minHeight: "100vh", color: "#fff", fontFamily: "sans-serif", padding: "32px 16px" }}>
+    <div style={{ background: "#0A1628", minHeight: "100vh", color: "#fff", fontFamily: "sans-serif", padding: "32px 16px" }}>
       <div style={{ maxWidth: 720, margin: "0 auto" }}>
-        <div style={{ color: "#F5E642″, fontSize: 13, fontWeight: 700, letterSpacing: 2, marginBottom: 8 }}>PROLNK · DFW HVAC RESOURCE</div>
+        <div style={{ color: "#F5E642", fontSize: 13, fontWeight: 700, letterSpacing: 2, marginBottom: 8 }}>PROLNK · DFW HVAC RESOURCE</div>
         <h1 style={{ fontSize: 28, fontWeight: 800, marginBottom: 8 }}>DFW HVAC Noise Source Map 🔊</h1>
-        <p style={{ color: "#94a3b8″, fontSize: 15, marginBottom: 32 }}>
+        <p style={{ color: "#94a3b8", fontSize: 15, marginBottom: 32 }}>
           Which parts of your DFW HVAC make which noises — outdoor unit, indoor unit, and ductwork mapped with diagnosis, fix, and urgency rating.
         </p>
 
-        <div style={{ background: "#0f2040″, borderRadius: 12, padding: 24, marginBottom: 24 }}>
-          <h2 style={{ color: "#F5E642″, fontSize: 16, fontWeight: 700, marginBottom: 16 }}>🎧 Noise Diagnosis Tool</h2>
+        <div style={{ background: "#0f2040", borderRadius: 12, padding: 24, marginBottom: 24 }}>
+          <h2 style={{ color: "#F5E642", fontSize: 16, fontWeight: 700, marginBottom: 16 }}>🎧 Noise Diagnosis Tool</h2>
           <div style={{ marginBottom: 16 }}>
-            <label style={{ color: "#94a3b8″, fontSize: 13, display: "block", marginBottom: 6 }}>Noise Type</label>
-            <select value={noiseType} onChange={e => setNoiseType(e.target.value)} style={{ width: "100%", padding: "10px 12px", borderRadius: 8, background: "#0A1628″, color: "#fff", border: "1px solid #1e3a5f", fontSize: 14 }}>
+            <label style={{ color: "#94a3b8", fontSize: 13, display: "block", marginBottom: 6 }}>Noise Type</label>
+            <select value={noiseType} onChange={e => setNoiseType(e.target.value)} style={{ width: "100%", padding: "10px 12px", borderRadius: 8, background: "#0A1628", color: "#fff", border: "1px solid #1e3a5f", fontSize: 14 }}>
               <option value="">Select noise type...</option>
               {NOISE_TYPES.map(n => <option key={n} value={n}>{n}</option>)}
             </select>
           </div>
           <div style={{ marginBottom: 16 }}>
-            <label style={{ color: "#94a3b8″, fontSize: 13, display: "block", marginBottom: 6 }}>Sound Source Location</label>
-            <select value={sourceLocation} onChange={e => setSourceLocation(e.target.value)} style={{ width: "100%", padding: "10px 12px", borderRadius: 8, background: "#0A1628″, color: "#fff", border: "1px solid #1e3a5f", fontSize: 14 }}>
+            <label style={{ color: "#94a3b8", fontSize: 13, display: "block", marginBottom: 6 }}>Sound Source Location</label>
+            <select value={sourceLocation} onChange={e => setSourceLocation(e.target.value)} style={{ width: "100%", padding: "10px 12px", borderRadius: 8, background: "#0A1628", color: "#fff", border: "1px solid #1e3a5f", fontSize: 14 }}>
               <option value="">Select location...</option>
               {SOURCE_LOCATIONS.map(l => <option key={l} value={l}>{l}</option>)}
             </select>
           </div>
           {result && (
-            <div style={{ background: "#0A1628″, borderRadius: 8, padding: 20, borderLeft: "4px solid #F5E642" }}>
+            <div style={{ background: "#0A1628", borderRadius: 8, padding: 20, borderLeft: "4px solid #F5E642" }}>
               <div style={{ fontSize: 15, fontWeight: 700, marginBottom: 10 }}>{result.urgency}</div>
-              <div style={{ color: "#F5E642″, fontWeight: 700, fontSize: 14, marginBottom: 6 }}>🔍 Diagnosis</div>
-              <p style={{ color: "#e2e8f0″, fontSize: 14, marginBottom: 14 }}>{result.diagnosis}</p>
-              <div style={{ color: "#F5E642″, fontWeight: 700, fontSize: 14, marginBottom: 6 }}>🔧 Fix</div>
-              <p style={{ color: "#e2e8f0″, fontSize: 14 }}>{result.fix}</p>
+              <div style={{ color: "#F5E642", fontWeight: 700, fontSize: 14, marginBottom: 6 }}>🔍 Diagnosis</div>
+              <p style={{ color: "#e2e8f0", fontSize: 14, marginBottom: 14 }}>{result.diagnosis}</p>
+              <div style={{ color: "#F5E642", fontWeight: 700, fontSize: 14, marginBottom: 6 }}>🔧 Fix</div>
+              <p style={{ color: "#e2e8f0", fontSize: 14 }}>{result.fix}</p>
             </div>
           )}
         </div>
 
-        <div style={{ background: "#0f2040″, borderRadius: 10, padding: 20 }}>
-          <div style={{ color: "#F5E642″, fontWeight: 700, fontSize: 14, marginBottom: 12 }}>🌡️ Why DFW HVAC Is Noisier</div>
-          <p style={{ color: "#94a3b8″, fontSize: 14, lineHeight: 1.6 }}>DFW HVAC systems run 10–14 hours/day in summer — more than nearly any US metro. This accelerates bearing wear, contactor pitting, capacitor failure, and thermal expansion noise. A noise that would wait weeks in a northern climate may indicate imminent failure in DFW&apos;s aggressive run cycle.</p>
+        <div style={{ background: "#0f2040", borderRadius: 10, padding: 20 }}>
+          <div style={{ color: "#F5E642", fontWeight: 700, fontSize: 14, marginBottom: 12 }}>🌡️ Why DFW HVAC Is Noisier</div>
+          <p style={{ color: "#94a3b8", fontSize: 14, lineHeight: 1.6 }}>DFW HVAC systems run 10–14 hours/day in summer — more than nearly any US metro. This accelerates bearing wear, contactor pitting, capacitor failure, and thermal expansion noise. A noise that would wait weeks in a northern climate may indicate imminent failure in DFW&apos;s aggressive run cycle.</p>
         </div>
 
-        <div style={{ marginTop: 32, textAlign: "center", color: "#475569″, fontSize: 12 }}>
+        <div style={{ marginTop: 32, textAlign: "center", color: "#475569", fontSize: 12 }}>
           ProLnk connects DFW homeowners with HVAC diagnostic pros. © 2026 ProLnk
         </div>
       </div>

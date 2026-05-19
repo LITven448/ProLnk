@@ -70,7 +70,7 @@ export default function DFWSeniorDownsizingPracticalGuide2026() {
         </div>
 
         <div style={{ background: '#F5E64220', border: '1px solid #F5E642', borderRadius: 8, padding: '1rem', marginBottom: '2rem' }}>
-          <p style={{ margin: 0, fontSize: '0.9rem', color: '#F5E642′ }}>
+          <p style={{ margin: 0, fontSize: '0.9rem', color: '#F5E642' }}>
             📊 <strong>DFW Market 2026:</strong> Median home price in DFW has risen 40%+ since 2020. Seniors who bought before 2015 are sitting on major equity — a well-executed downsize can free $200K-$500K+ in tax-advantaged capital.
           </p>
         </div>
@@ -85,8 +85,8 @@ export default function DFWSeniorDownsizingPracticalGuide2026() {
               key={s.id}
               onClick={() => setSelected(selected === s.id ? null : s.id)}
               style={{
-                background: selected === s.id ? '#F5E642′ : '#1e2d45',
-                color: selected === s.id ? '#0A1628′ : '#fff',
+                background: selected === s.id ? '#F5E642' : '#1e2d45',
+                color: selected === s.id ? '#0A1628' : '#fff',
                 border: '1px solid #334155',
                 borderRadius: 8,
                 padding: '0.9rem 1.2rem',

@@ -83,7 +83,7 @@ export default function DFWRentPriceIndexGuide() {
             </div>
             <div>
               <label style={{ color: '#94a3b8', fontSize: 12, display: 'block', marginBottom: 6 }}>CURRENT MONTHLY RENT ($)</label>
-              <input type='number' value={currentRent} onChange={(e) => setCurrentRent(e.target.value)} placeholder='e.g. 1800′ style={{ width: '100%', background: '#0A1628', border: '1px solid #1e3a5f', borderRadius: 8, color: '#fff', padding: '10px 12px', fontSize: 14, boxSizing: ’border-box' }} />
+              <input type='number' value={currentRent} onChange={(e) => setCurrentRent(e.target.value)} placeholder='e.g. 1800' style={{ width: '100%', background: '#0A1628', border: '1px solid #1e3a5f', borderRadius: 8, color: '#fff', padding: '10px 12px', fontSize: 14, boxSizing: 'border-box' }} />
             </div>
           </div>
           <button onClick={calculate} style={{ background: '#F5E642', color: '#0A1628', border: 'none', borderRadius: 8, padding: '12px 28px', fontWeight: 700, fontSize: 14, cursor: 'pointer' }}>Analyze My Rent</button>

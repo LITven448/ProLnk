@@ -88,8 +88,8 @@ export default function DFWInsuranceAfterRepairsGuide() {
   return (
     <div style={{ minHeight: '100vh', backgroundColor: '#f8f9fa', color: '#1a1a2e', fontFamily: 'system-ui, sans-serif', padding: '2rem 1rem' }}>
       <div style={{ maxWidth: 740, margin: '0 auto' }}>
-        <div style={{ marginBottom: '0.5rem', fontSize: '0.85rem', color: '#666′ }}>ProLnk Guide · DFW Homeowners</div>
-        <h1 style={{ fontSize: '2rem', fontWeight: 700, marginBottom: '0.5rem', color: '#0A1628′ }}>
+        <div style={{ marginBottom: '0.5rem', fontSize: '0.85rem', color: '#666' }}>ProLnk Guide · DFW Homeowners</div>
+        <h1 style={{ fontSize: '2rem', fontWeight: 700, marginBottom: '0.5rem', color: '#0A1628' }}>
           🔧 Insurance Updates After DFW Home Repairs
         </h1>
         <p style={{ color: '#555', marginBottom: '2rem', lineHeight: 1.6 }}>
@@ -101,11 +101,11 @@ export default function DFWInsuranceAfterRepairsGuide() {
         </div>
 
         <div style={{ background: '#fff', borderRadius: 12, padding: '1.5rem', marginBottom: '1.5rem', boxShadow: '0 2px 8px rgba(0,0,0,0.07)' }}>
-          <h2 style={{ fontSize: '1.2rem', fontWeight: 700, marginBottom: '0.75rem', color: '#0A1628′ }}>📋 What Did You Complete?</h2>
+          <h2 style={{ fontSize: '1.2rem', fontWeight: 700, marginBottom: '0.75rem', color: '#0A1628' }}>📋 What Did You Complete?</h2>
           <p style={{ color: '#666', fontSize: '0.875rem', marginBottom: '1rem' }}>Select all repairs or renovations completed in the last 12 months:</p>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0.5rem', marginBottom: '1rem' }}>
             {repairTypes.map(r => (
-              <button key={r.id} onClick={() => toggle(r.id)} style={{ background: selected[r.id] ? '#0A1628′ : '#f5f5f5', color: selected[r.id] ? '#F5E642' : '#333', border: '1px solid ' + (selected[r.id] ? '#0A1628' : '#ddd'), borderRadius: 8, padding: '0.5rem 0.75rem', cursor: ’pointer', textAlign: 'left', fontSize: '0.875rem', fontWeight: 600 }}>
+              <button key={r.id} onClick={() => toggle(r.id)} style={{ background: selected[r.id] ? '#0A1628' : '#f5f5f5', color: selected[r.id] ? '#F5E642' : '#333', border: '1px solid ' + (selected[r.id] ? '#0A1628' : '#ddd'), borderRadius: 8, padding: '0.5rem 0.75rem', cursor: 'pointer', textAlign: 'left', fontSize: '0.875rem', fontWeight: 600 }}>
                 {r.icon} {r.label}
               </button>
             ))}
@@ -120,8 +120,8 @@ export default function DFWInsuranceAfterRepairsGuide() {
                   {mustNotify.map(r => (
                     <div key={r.id} style={{ background: '#fff5f5', border: '1px solid #f5c6cb', borderRadius: 8, padding: '0.875rem', marginBottom: '0.6rem' }}>
                       <div style={{ fontWeight: 700 }}>{r.icon} {r.label}</div>
-                      <div style={{ fontSize: '0.85rem', color: '#666', margin: '0.25rem 0′ }}>Notify: <strong>{r.urgency}</strong> · Premium impact: <strong>{r.premiumImpact}</strong></div>
-                      <div style={{ fontSize: '0.85rem', color: '#444′ }}>{r.notes}</div>
+                      <div style={{ fontSize: '0.85rem', color: '#666', margin: '0.25rem 0' }}>Notify: <strong>{r.urgency}</strong> · Premium impact: <strong>{r.premiumImpact}</strong></div>
+                      <div style={{ fontSize: '0.85rem', color: '#444' }}>{r.notes}</div>
                     </div>
                   ))}
                 </div>
@@ -132,8 +132,8 @@ export default function DFWInsuranceAfterRepairsGuide() {
                   {optional.map(r => (
                     <div key={r.id} style={{ background: '#f0fff4', border: '1px solid #c3e6cb', borderRadius: 8, padding: '0.875rem', marginBottom: '0.6rem' }}>
                       <div style={{ fontWeight: 700 }}>{r.icon} {r.label}</div>
-                      <div style={{ fontSize: '0.85rem', color: '#666', margin: '0.25rem 0′ }}>Timing: <strong>{r.urgency}</strong> · Impact: <strong>{r.premiumImpact}</strong></div>
-                      <div style={{ fontSize: '0.85rem', color: '#444′ }}>{r.notes}</div>
+                      <div style={{ fontSize: '0.85rem', color: '#666', margin: '0.25rem 0' }}>Timing: <strong>{r.urgency}</strong> · Impact: <strong>{r.premiumImpact}</strong></div>
+                      <div style={{ fontSize: '0.85rem', color: '#444' }}>{r.notes}</div>
                     </div>
                   ))}
                 </div>
@@ -147,7 +147,7 @@ export default function DFWInsuranceAfterRepairsGuide() {
 
         <div style={{ background: '#0A1628', color: '#fff', borderRadius: 12, padding: '1.25rem', textAlign: 'center' }}>
           <div style={{ fontSize: '0.9rem', marginBottom: '0.25rem', opacity: 0.8 }}>Planning your next DFW home project?</div>
-          <strong style={{ color: '#F5E642′ }}>ProLnk connects you with vetted contractors for every trade — from roofing to electrical to pools.</strong>
+          <strong style={{ color: '#F5E642' }}>ProLnk connects you with vetted contractors for every trade — from roofing to electrical to pools.</strong>
         </div>
       </div>
     </div>

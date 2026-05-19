@@ -39,7 +39,7 @@ export default function DFWDryerMaintenanceDFW2026() {
             ['🐦', 'Bird Guard Inspection', 'Check exterior vent cap every March and September. DFW starlings actively nest in dryer vents causing complete blockage and fire hazard.'],
             ['📅', 'Annual Duct Cleaning', 'Hire duct cleaning pro annually. DFW dust + lint accumulates in flex duct faster than rigid metal. Use rigid duct if possible — flex kinks reduce airflow.'],
           ] as [string, string, string][]).map(([icon, title, desc]) => (
-            <div key={title} style={{ background: '#0f2040', borderRadius: 10, padding: 18, borderLeft: '3px solid #F5E642′ }}>
+            <div key={title} style={{ background: '#0f2040', borderRadius: 10, padding: 18, borderLeft: '3px solid #F5E642' }}>
               <div style={{ fontSize: 24, marginBottom: 8 }}>{icon}</div>
               <div style={{ fontWeight: 700, marginBottom: 6 }}>{title}</div>
               <div style={{ color: '#94a3b8', fontSize: 14 }}>{desc}</div>
@@ -84,7 +84,7 @@ export default function DFWDryerMaintenanceDFW2026() {
           </div>
         </div>
 
-        <div style={{ background: '#0f2040', borderRadius: 10, padding: 18, borderLeft: '3px solid #F5E642′ }}>
+        <div style={{ background: '#0f2040', borderRadius: 10, padding: 18, borderLeft: '3px solid #F5E642' }}>
           <div style={{ fontWeight: 700, marginBottom: 6 }}>🏠 Need a DFW Dryer Pro?</div>
           <div style={{ color: '#94a3b8', fontSize: 14, marginBottom: 10 }}>ProLnk connects you with vetted DFW appliance technicians for dryer vent cleaning and repair.</div>
           <a href="/" style={{ color: '#F5E642', fontWeight: 700, textDecoration: 'none', fontSize: 15 }}>Get Free Quotes →</a>

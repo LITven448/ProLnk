@@ -76,14 +76,14 @@ export default function DFWHVACEmergencyShutoff() {
       <div style={{ maxWidth: 760, margin: '0 auto' }}>
         <div style={{ textAlign: 'center', marginBottom: '2rem' }}>
           <div style={{ fontSize: '2.5rem' }}>🚨</div>
-          <h1 style={{ color: '#F5E642', fontSize: '1.8rem', margin: '0.5rem 0′ }}>DFW HVAC Emergency Shutoff Guide</h1>
+          <h1 style={{ color: '#F5E642', fontSize: '1.8rem', margin: '0.5rem 0' }}>DFW HVAC Emergency Shutoff Guide</h1>
           <p style={{ color: '#9BB0CC', margin: 0 }}>Select your emergency — get exact steps for DFW</p>
         </div>
 
         <div style={{ display: 'flex', gap: '0.75rem', flexWrap: 'wrap', marginBottom: '2rem', justifyContent: 'center' }}>
           {emergencies.map((e) => (
             <button key={e.id} onClick={() => setSelected(e.id)}
-              style={{ padding: '0.6rem 1.2rem', borderRadius: 8, border: '2px solid', borderColor: selected === e.id ? e.severityColor : '#1E3A5F', background: selected === e.id ? e.severityColor : '#112240', color: selected === e.id ? '#0A1628′ : '#fff', fontWeight: 700, cursor: ’pointer' }}>
+              style={{ padding: '0.6rem 1.2rem', borderRadius: 8, border: '2px solid', borderColor: selected === e.id ? e.severityColor : '#1E3A5F', background: selected === e.id ? e.severityColor : '#112240', color: selected === e.id ? '#0A1628' : '#fff', fontWeight: 700, cursor: 'pointer' }}>
               {e.emoji} {e.label}
             </button>
           ))}

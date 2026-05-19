@@ -22,7 +22,7 @@ export default function DFWFreezeSensorGuide() {
           <h1 style={{ color: '#F5E642', fontSize: '2rem', fontWeight: 700, marginBottom: '0.5rem' }}>
             DFW Freeze Sensor Guide for Irrigation
           </h1>
-          <p style={{ color: '#94a3b8′ }}>
+          <p style={{ color: '#94a3b8' }}>
             DFW freeze sensors shut off irrigation when temperatures drop below 37°F — preventing icy walkways, pipe bursts, and wasted water in winter storms.
           </p>
         </div>
@@ -35,8 +35,8 @@ export default function DFWFreezeSensorGuide() {
                 key={l.city}
                 onClick={() => setSelCity(l.city === selCity ? null : l.city)}
                 style={{
-                  background: selCity === l.city ? '#F5E642′ : '#1e3a5f',
-                  color: selCity === l.city ? '#0A1628′ : '#fff',
+                  background: selCity === l.city ? '#F5E642' : '#1e3a5f',
+                  color: selCity === l.city ? '#0A1628' : '#fff',
                   border: 'none', borderRadius: 8, padding: '0.75rem',
                   cursor: 'pointer', fontWeight: 600, fontSize: '0.85rem', transition: 'all 0.2s'
                 }}
@@ -48,7 +48,7 @@ export default function DFWFreezeSensorGuide() {
         </div>
 
         {match && (
-          <div style={{ background: '#112240', borderRadius: 12, padding: '1.5rem', marginBottom: '1.5rem', borderLeft: '4px solid #F5E642′ }}>
+          <div style={{ background: '#112240', borderRadius: 12, padding: '1.5rem', marginBottom: '1.5rem', borderLeft: '4px solid #F5E642' }}>
             <h3 style={{ color: '#F5E642', marginBottom: '1rem' }}>Freeze Sensor Recommendation — {match.city}</h3>
             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
               {[
@@ -84,7 +84,7 @@ export default function DFWFreezeSensorGuide() {
         </div>
 
         <div style={{ background: '#112240', borderRadius: 12, padding: '1.5rem' }}>
-          <div style={{ background: '#0A1628', borderRadius: 8, padding: '1rem', borderLeft: '4px solid #F5E642′ }}>
+          <div style={{ background: '#0A1628', borderRadius: 8, padding: '1rem', borderLeft: '4px solid #F5E642' }}>
             <div style={{ color: '#F5E642', fontWeight: 700, marginBottom: '0.5rem' }}>February 2021 Uri Lesson</div>
             <div style={{ color: '#94a3b8', fontSize: '0.9rem' }}>DFW freeze sensors would not have prevented Uri pipe bursts (temps hit single digits) but they prevent the far more common 28–36°F events that crack emitter heads, freeze above-ground backflow preventers, and create ice on sidewalks from overnight irrigation runs.</div>
           </div>

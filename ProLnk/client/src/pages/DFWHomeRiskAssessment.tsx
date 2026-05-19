@@ -32,7 +32,7 @@ export default function DFWHomeRiskAssessment() {
   const maxScore = totalWeight * 3;
   const riskPct = Math.round((rawScore / maxScore) * 100);
   const riskLabel = riskPct >= 65 ? 'High Risk' : riskPct >= 35 ? 'Moderate Risk' : 'Lower Risk';
-  const riskColor = riskPct >= 65 ? '#ef4444′ : riskPct >= 35 ? '#f97316' : '#22c55e';
+  const riskColor = riskPct >= 65 ? '#ef4444' : riskPct >= 35 ? '#f97316' : '#22c55e';
 
   const topRisks = QUESTIONS
     .filter(q => answers[q.id] === 0)
@@ -46,8 +46,8 @@ export default function DFWHomeRiskAssessment() {
       <div style={{ maxWidth: 720, margin: '0 auto' }}>
         <div style={{ textAlign: 'center', marginBottom: '2rem' }}>
           <div style={{ fontSize: '2.5rem' }}>🛡️</div>
-          <h1 style={{ color: '#F5E642', fontSize: '1.8rem', margin: '0.5rem 0′ }}>DFW Home Risk Assessment</h1>
-          <p style={{ color: '#94a3b8′ }}>15 questions covering location, structural, systems, and maintenance risk</p>
+          <h1 style={{ color: '#F5E642', fontSize: '1.8rem', margin: '0.5rem 0' }}>DFW Home Risk Assessment</h1>
+          <p style={{ color: '#94a3b8' }}>15 questions covering location, structural, systems, and maintenance risk</p>
         </div>
 
         {!submitted ? (
@@ -61,7 +61,7 @@ export default function DFWHomeRiskAssessment() {
                     <div style={{ display: 'flex', flexDirection: 'column', gap: 6 }}>
                       {q.options.map((opt, i) => (
                         <button key={i} onClick={() => setAnswer(q.id, i)}
-                          style={{ textAlign: 'left', padding: '0.6rem 1rem', borderRadius: 8, border: `1px solid ${answers[q.id] === i ? '#F5E642' : '#1e3a5f'}`, background: answers[q.id] === i ? '#1a2d4a' : 'transparent', color: answers[q.id] === i ? '#F5E642′ : '#94a3b8', cursor: ’pointer', fontSize: '0.9rem' }}>
+                          style={{ textAlign: 'left', padding: '0.6rem 1rem', borderRadius: 8, border: `1px solid ${answers[q.id] === i ? '#F5E642' : '#1e3a5f'}`, background: answers[q.id] === i ? '#1a2d4a' : 'transparent', color: answers[q.id] === i ? '#F5E642' : '#94a3b8', cursor: 'pointer', fontSize: '0.9rem' }}>
                           {opt}
                         </button>
                       ))}
@@ -72,7 +72,7 @@ export default function DFWHomeRiskAssessment() {
             ))}
             <button onClick={() => { if (totalAnswered >= QUESTIONS.length) setSubmitted(true); }}
               disabled={totalAnswered < QUESTIONS.length}
-              style={{ width: '100%', padding: '1rem', borderRadius: 10, background: totalAnswered >= QUESTIONS.length ? '#F5E642′ : '#1e3a5f', color: '#0A1628', fontWeight: 700, fontSize: '1.1rem', border: ’none', cursor: totalAnswered >= QUESTIONS.length ? 'pointer' : 'not-allowed' }}>
+              style={{ width: '100%', padding: '1rem', borderRadius: 10, background: totalAnswered >= QUESTIONS.length ? '#F5E642' : '#1e3a5f', color: '#0A1628', fontWeight: 700, fontSize: '1.1rem', border: 'none', cursor: totalAnswered >= QUESTIONS.length ? 'pointer' : 'not-allowed' }}>
               {totalAnswered < QUESTIONS.length ? `Answer ${QUESTIONS.length - totalAnswered} more question(s)` : 'See My Risk Score →'}
             </button>
           </>
@@ -82,7 +82,7 @@ export default function DFWHomeRiskAssessment() {
               <div style={{ color: '#94a3b8', marginBottom: 8 }}>Your DFW Home Risk Score</div>
               <div style={{ color: riskColor, fontSize: '3.5rem', fontWeight: 700 }}>{riskPct}%</div>
               <div style={{ color: riskColor, fontSize: '1.3rem', fontWeight: 700 }}>{riskLabel}</div>
-              <div style={{ height: 12, background: '#1e3a5f', borderRadius: 6, margin: '1rem 0′ }}>
+              <div style={{ height: 12, background: '#1e3a5f', borderRadius: 6, margin: '1rem 0' }}>
                 <div style={{ height: '100%', width: `${riskPct}%`, background: riskColor, borderRadius: 6 }} />
               </div>
               <div style={{ color: '#94a3b8', fontSize: '0.85rem' }}>DFW Average: 42% (Moderate)</div>

@@ -72,7 +72,7 @@ export default function DFWSellFastGuide() {
         <div style={{ background: '#132036', borderRadius: 16, padding: 32 }}>
           <h2 style={{ fontSize: 20, fontWeight: 700, color: '#F5E642', marginBottom: 24 }}>🏆 Top 5 DFW Speed Strategies — Ranked</h2>
           {speedStrategies.map((s, i) => (
-            <div key={i} style={{ display: 'flex', gap: 20, padding: '16px 0', borderBottom: i < speedStrategies.length - 1 ? '1px solid #1e3050′ : ’none' }}>
+            <div key={i} style={{ display: 'flex', gap: 20, padding: '16px 0', borderBottom: i < speedStrategies.length - 1 ? '1px solid #1e3050' : 'none' }}>
               <div style={{ background: '#F5E642', color: '#0A1628', fontWeight: 800, width: 32, height: 32, borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0, fontSize: 15 }}>{s.rank}</div>
               <div>
                 <div style={{ fontWeight: 700, fontSize: 16, color: '#fff', marginBottom: 6 }}>{s.action}</div>

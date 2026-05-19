@@ -105,7 +105,7 @@ export default function ProLnkCareers() {
                   <div style={{ fontSize: 36 }}>{role.emoji}</div>
                   <div>
                     <h3 style={{ fontSize: 20, fontWeight: 700, color: '#1e3a5f', margin: '0 0 4px' }}>{role.title}</h3>
-                    <div style={{ display: 'flex', gap: 16, fontSize: 14, color: '#888′ }}>
+                    <div style={{ display: 'flex', gap: 16, fontSize: 14, color: '#888' }}>
                       <span>{role.team}</span>
                       <span>·</span>
                       <span>{role.type}</span>
@@ -119,7 +119,7 @@ export default function ProLnkCareers() {
               </div>
 
               {openRole === i && (
-                <div style={{ padding: '0 32px 32px', borderTop: '1px solid #f1f5f9′ }}>
+                <div style={{ padding: '0 32px 32px', borderTop: '1px solid #f1f5f9' }}>
                   <p style={{ fontSize: 16, color: '#444', lineHeight: 1.7, margin: '24px 0 20px' }}>{role.desc}</p>
 
                   <h4 style={{ fontSize: 16, fontWeight: 700, color: '#1e3a5f', marginBottom: 12 }}>What We Are Looking For</h4>

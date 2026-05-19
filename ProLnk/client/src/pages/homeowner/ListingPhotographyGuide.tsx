@@ -45,7 +45,7 @@ export default function ListingPhotographyGuide() {
           <strong style={{ color: '#f8fafc' }}>90% of buyers tour properties they found online first.</strong> Bad photos mean fewer showings — and fewer showings mean longer days on market and lower offers. Here's how to get it right.
         </p>
 
-        <div style={{ backgroundColor: '#1e293b', borderRadius: 12, padding: 28, marginBottom: 32, border: '1px solid #334155′ }}>
+        <div style={{ backgroundColor: '#1e293b', borderRadius: 12, padding: 28, marginBottom: 32, border: '1px solid #334155' }}>
           <h2 style={{ fontSize: 20, fontWeight: 700, marginBottom: 20, color: '#f8fafc' }}>💰 What Does Professional Photography Cost?</h2>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: 16 }}>
             {[
@@ -62,7 +62,7 @@ export default function ListingPhotographyGuide() {
           </div>
         </div>
 
-        <div style={{ backgroundColor: '#1e293b', borderRadius: 12, padding: 28, marginBottom: 32, border: '1px solid #334155′ }}>
+        <div style={{ backgroundColor: '#1e293b', borderRadius: 12, padding: 28, marginBottom: 32, border: '1px solid #334155' }}>
           <h2 style={{ fontSize: 20, fontWeight: 700, marginBottom: 16, color: '#f8fafc' }}>📷 What Professional Photos Do That iPhone Can't</h2>
           <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
             {[
@@ -82,7 +82,7 @@ export default function ListingPhotographyGuide() {
           </div>
         </div>
 
-        <div style={{ backgroundColor: '#1e293b', borderRadius: 12, padding: 28, marginBottom: 32, border: '1px solid #334155′ }}>
+        <div style={{ backgroundColor: '#1e293b', borderRadius: 12, padding: 28, marginBottom: 32, border: '1px solid #334155' }}>
           <h2 style={{ fontSize: 20, fontWeight: 700, marginBottom: 16, color: '#f8fafc' }}>🤔 When to Use Which Type</h2>
           <div style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
             {[
@@ -90,30 +90,30 @@ export default function ListingPhotographyGuide() {
               ['📱 iPhone / DIY DSLR', 'Acceptable for rentals under $1,200/mo or bare land listings where interior photos aren’t the selling point.', false],
               ['🚁 Drone', 'Always for lots over 1 acre, homes with pools, scenic views, or acreage listings. Adds perceived value.', true],
             ].map(([label, desc, recommended]) => (
-              <div key={String(label)} style={{ padding: 16, borderRadius: 8, border: `1px solid ${recommended ? '#166534' : '#334155'}`, backgroundColor: recommended ? '#0c2118′ : '#0f172a' }}>
-                <div style={{ fontWeight: 700, color: recommended ? '#4ade80′ : '#94a3b8', fontSize: 14, marginBottom: 4 }}>{label}</div>
+              <div key={String(label)} style={{ padding: 16, borderRadius: 8, border: `1px solid ${recommended ? '#166534' : '#334155'}`, backgroundColor: recommended ? '#0c2118' : '#0f172a' }}>
+                <div style={{ fontWeight: 700, color: recommended ? '#4ade80' : '#94a3b8', fontSize: 14, marginBottom: 4 }}>{label}</div>
                 <div style={{ fontSize: 14, color: '#94a3b8', lineHeight: 1.6 }}>{desc}</div>
               </div>
             ))}
           </div>
         </div>
 
-        <div style={{ backgroundColor: '#1e293b', borderRadius: 12, padding: 28, marginBottom: 32, border: '1px solid #334155′ }}>
+        <div style={{ backgroundColor: '#1e293b', borderRadius: 12, padding: 28, marginBottom: 32, border: '1px solid #334155' }}>
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 20, flexWrap: 'wrap', gap: 12 }}>
             <h2 style={{ fontSize: 20, fontWeight: 700, color: '#f8fafc', margin: 0 }}>✅ Pre-Shoot Checklist</h2>
             <div style={{ textAlign: 'right' }}>
-              <div style={{ fontSize: 22, fontWeight: 800, color: progress === 100 ? '#4ade80′ : '#38bdf8' }}>{progress}%</div>
+              <div style={{ fontSize: 22, fontWeight: 800, color: progress === 100 ? '#4ade80' : '#38bdf8' }}>{progress}%</div>
               <div style={{ fontSize: 12, color: '#64748b' }}>{checked.size}/{CHECKLIST_ITEMS.length} complete</div>
             </div>
           </div>
           <div style={{ height: 6, backgroundColor: '#334155', borderRadius: 3, marginBottom: 20 }}>
-            <div style={{ height: '100%', backgroundColor: progress === 100 ? '#4ade80′ : '#38bdf8', borderRadius: 3, width: `${progress}%`, transition: ’width 0.3s' }} />
+            <div style={{ height: '100%', backgroundColor: progress === 100 ? '#4ade80' : '#38bdf8', borderRadius: 3, width: `${progress}%`, transition: 'width 0.3s' }} />
           </div>
           <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
             {CHECKLIST_ITEMS.map(item => (
               <label
                 key={item.id}
-                style={{ display: 'flex', alignItems: 'flex-start', gap: 12, padding: '12px 14px', borderRadius: 8, cursor: 'pointer', backgroundColor: checked.has(item.id) ? '#0c2118′ : '#0f172a', border: `1px solid ${checked.has(item.id) ? '#166534' : '#1e3a5f'}`, transition: ’all 0.2s' }}
+                style={{ display: 'flex', alignItems: 'flex-start', gap: 12, padding: '12px 14px', borderRadius: 8, cursor: 'pointer', backgroundColor: checked.has(item.id) ? '#0c2118' : '#0f172a', border: `1px solid ${checked.has(item.id) ? '#166534' : '#1e3a5f'}`, transition: 'all 0.2s' }}
               >
                 <input
                   type="checkbox"
@@ -122,7 +122,7 @@ export default function ListingPhotographyGuide() {
                   style={{ marginTop: 2, accentColor: '#4ade80', width: 16, height: 16, flexShrink: 0 }}
                 />
                 <div>
-                  <div style={{ fontSize: 14, color: checked.has(item.id) ? '#4ade80′ : '#f1f5f9', textDecoration: checked.has(item.id) ? ’line-through' : 'none', lineHeight: 1.5 }}>{item.label}</div>
+                  <div style={{ fontSize: 14, color: checked.has(item.id) ? '#4ade80' : '#f1f5f9', textDecoration: checked.has(item.id) ? 'line-through' : 'none', lineHeight: 1.5 }}>{item.label}</div>
                   <div style={{ fontSize: 11, color: '#475569', marginTop: 2 }}>{item.category}</div>
                 </div>
               </label>
@@ -131,7 +131,7 @@ export default function ListingPhotographyGuide() {
           {progress === 100 && (
             <div style={{ marginTop: 20, padding: 16, backgroundColor: '#0c2118', borderRadius: 8, border: '1px solid #4ade80', textAlign: 'center' }}>
               <div style={{ fontSize: 24, marginBottom: 4 }}>🎉</div>
-              <div style={{ fontWeight: 700, color: '#4ade80′ }}>Your home is photo-ready! Call your photographer.</div>
+              <div style={{ fontWeight: 700, color: '#4ade80' }}>Your home is photo-ready! Call your photographer.</div>
             </div>
           )}
         </div>

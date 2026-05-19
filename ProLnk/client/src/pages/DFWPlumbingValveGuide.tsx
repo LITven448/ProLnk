@@ -50,13 +50,13 @@ export default function DFWPlumbingValveGuide() {
         <div style={{ background: '#111F3A', borderRadius: 12, padding: 24, marginBottom: 32 }}>
           <div style={{ display: 'grid', gap: 10, marginBottom: 16 }}>
             {emergencies.map((e, i) => (
-              <button key={i} onClick={() => setEmergency(e)} style={{ background: emergency?.label === e.label ? '#F5E642′ : '#0A1628', color: emergency?.label === e.label ? '#0A1628' : '#E8EDF5', border: '1px solid #1E3A5F', borderRadius: 8, padding: '12px 16px', textAlign: ’left', cursor: 'pointer', fontWeight: 600, fontSize: 14 }}>
+              <button key={i} onClick={() => setEmergency(e)} style={{ background: emergency?.label === e.label ? '#F5E642' : '#0A1628', color: emergency?.label === e.label ? '#0A1628' : '#E8EDF5', border: '1px solid #1E3A5F', borderRadius: 8, padding: '12px 16px', textAlign: 'left', cursor: 'pointer', fontWeight: 600, fontSize: 14 }}>
                 {e.label}
               </button>
             ))}
           </div>
           {emergency && (
-            <div style={{ padding: 16, background: '#0A1628', borderRadius: 8, borderLeft: '3px solid #F5E642′ }}>
+            <div style={{ padding: 16, background: '#0A1628', borderRadius: 8, borderLeft: '3px solid #F5E642' }}>
               <div style={{ fontWeight: 700, marginBottom: 8 }}>
                 Shut: {emergency.valves.map(vid => valves.find(v => v.id === vid)?.label).join(' + ')}
               </div>

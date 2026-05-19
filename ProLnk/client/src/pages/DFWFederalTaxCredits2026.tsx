@@ -40,7 +40,7 @@ export default function DFWFederalTaxCredits2026() {
       <div style={{ maxWidth: 760, margin: '0 auto' }}>
         <div style={{ textAlign: 'center', marginBottom: '2rem' }}>
           <div style={{ fontSize: '3rem' }}>⚡🏛️</div>
-          <h1 style={{ fontSize: '2rem', fontWeight: 800, color: '#F5E642', margin: '0.5rem 0′ }}>DFW Federal Home Tax Credits 2026</h1>
+          <h1 style={{ fontSize: '2rem', fontWeight: 800, color: '#F5E642', margin: '0.5rem 0' }}>DFW Federal Home Tax Credits 2026</h1>
           <p style={{ color: '#94a3b8', fontSize: '1.05rem' }}>IRA Inflation Reduction Act credits still available through 2032 — up to 30% back on eligible upgrades.</p>
         </div>
 
@@ -68,7 +68,7 @@ export default function DFWFederalTaxCredits2026() {
           </div>
         </div>
 
-        <div style={{ background: '#0f2035', borderRadius: 12, padding: '1.5rem', border: '1px solid #F5E642′ }}>
+        <div style={{ background: '#0f2035', borderRadius: 12, padding: '1.5rem', border: '1px solid #F5E642' }}>
           <h2 style={{ color: '#F5E642', marginTop: 0, fontSize: '1.2rem' }}>🧮 Tax Credit Calculator</h2>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
             <div>
@@ -86,9 +86,9 @@ export default function DFWFederalTaxCredits2026() {
           </div>
           <button onClick={calculate} style={{ background: '#F5E642', color: '#0A1628', border: 'none', borderRadius: 8, padding: '0.75rem 2rem', fontWeight: 800, fontSize: '1rem', cursor: 'pointer', width: '100%' }}>Calculate My Credit</button>
           {result && (
-            <div style={{ marginTop: '1rem', background: '#0A1628', borderRadius: 8, padding: '1.25rem', border: '1px solid #F5E642′ }}>
-              <div style={{ fontSize: '2rem', fontWeight: 900, color: '#F5E642′ }}>💰 ${Math.round(result.credit).toLocaleString()} Credit</div>
-              <div style={{ color: '#94a3b8', fontSize: '0.85rem', margin: '0.25rem 0′ }}>Annual cap: {result.cap}</div>
+            <div style={{ marginTop: '1rem', background: '#0A1628', borderRadius: 8, padding: '1.25rem', border: '1px solid #F5E642' }}>
+              <div style={{ fontSize: '2rem', fontWeight: 900, color: '#F5E642' }}>💰 ${Math.round(result.credit).toLocaleString()} Credit</div>
+              <div style={{ color: '#94a3b8', fontSize: '0.85rem', margin: '0.25rem 0' }}>Annual cap: {result.cap}</div>
               <div style={{ color: '#cbd5e1', fontSize: '0.9rem', marginTop: '0.5rem' }}>{result.note}</div>
             </div>
           )}

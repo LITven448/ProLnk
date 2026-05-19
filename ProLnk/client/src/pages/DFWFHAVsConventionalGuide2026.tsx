@@ -21,7 +21,7 @@ export default function DFWFHAVsConventionalGuide2026() {
   const convEligible = downPct >= 3;
 
   const recommendation = creditScore >= 720 && downPct >= 10 ? 'CONVENTIONAL' : creditScore < 660 || downPct < 5 ? 'FHA' : 'EITHER';
-  const recColor = recommendation === 'CONVENTIONAL' ? '#34D399′ : recommendation === ’FHA' ? '#60A5FA' : '#F5E642';
+  const recColor = recommendation === 'CONVENTIONAL' ? '#34D399' : recommendation === 'FHA' ? '#60A5FA' : '#F5E642';
 
   return (
     <div style={{ background: '#0A1628', minHeight: '100vh', color: '#fff', fontFamily: 'sans-serif', padding: '32px 24px' }}>
@@ -36,7 +36,7 @@ export default function DFWFHAVsConventionalGuide2026() {
             {[['Credit Score', creditScore, 580, 850, 10, setCreditScore], ['Down Payment %', downPct, 3, 25, 0.5, setDownPct], ['Home Price $K', homePrice / 1000, 200, 700, 5, (v: number) => setHomePrice(v * 1000)]].map(([label, val, min, max, step, setter]) => (
               <div key={label as string}>
                 <label style={{ color: '#94A3B8', fontSize: 12, display: 'block', marginBottom: 6 }}>{label as string}</label>
-                <input type="range" min={min as number} max={max as number} step={step as number} value={val as number} onChange={e => (setter as Function)(+e.target.value)} style={{ width: '100%', accentColor: '#F5E642′ }} />
+                <input type="range" min={min as number} max={max as number} step={step as number} value={val as number} onChange={e => (setter as Function)(+e.target.value)} style={{ width: '100%', accentColor: '#F5E642' }} />
                 <div style={{ color: '#F5E642', fontWeight: 700, fontSize: 18 }}>{label === 'Down Payment %' ? `${val}%` : label === 'Home Price $K' ? `$${val}K` : val}</div>
               </div>
             ))}
@@ -44,7 +44,7 @@ export default function DFWFHAVsConventionalGuide2026() {
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16 }}>
             {[
               { type: 'FHA Loan', eligible: fhaEligible, payment: fhaPayment, rate: fhaRate, extra: mip, extraLabel: 'MIP/mo', extraNote: 'Lasts full 30 yrs', color: '#60A5FA' },
-              { type: 'Conventional', eligible: convEligible, payment: convPayment, rate: convRate, extra: convPmi, extraLabel: 'PMI/mo', extraNote: downPct >= 20 ? 'No PMI!' : 'Drops at 80% LTV', color: '#34D399′ },
+              { type: 'Conventional', eligible: convEligible, payment: convPayment, rate: convRate, extra: convPmi, extraLabel: 'PMI/mo', extraNote: downPct >= 20 ? 'No PMI!' : 'Drops at 80% LTV', color: '#34D399' },
             ].map(({ type, eligible, payment, rate, extra, extraLabel, extraNote, color }) => (
               <div key={type} style={{ background: '#0A1628', borderRadius: 10, padding: 20, border: `2px solid ${eligible ? color : '#374151'}`, opacity: eligible ? 1 : 0.5 }}>
                 <div style={{ color, fontWeight: 800, fontSize: 16, marginBottom: 12 }}>{type}</div>
@@ -79,7 +79,7 @@ export default function DFWFHAVsConventionalGuide2026() {
             <div key={feat} style={{ display: 'grid', gridTemplateColumns: '1.2fr 1fr 1fr', gap: 8, marginBottom: 8, fontSize: 13 }}>
               <div style={{ color: '#64748B' }}>{feat}</div>
               <div style={{ color: '#60A5FA' }}>{fha}</div>
-              <div style={{ color: '#34D399′ }}>{conv}</div>
+              <div style={{ color: '#34D399' }}>{conv}</div>
             </div>
           ))}
         </div>

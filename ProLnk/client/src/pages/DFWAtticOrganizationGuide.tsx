@@ -100,7 +100,7 @@ export default function DFWAtticOrganizationGuide() {
                 <div style={{ background: '#fee2e2', borderRadius: 8, padding: 12, fontSize: 13 }}><strong>Cons:</strong> {result.shelving.cons}</div>
               </div>
               <div style={{ fontWeight: 600, marginBottom: 8 }}>Shopping List:</div>
-              {result.items.map(i => <div key={i} style={{ padding: '4px 0', color: '#475569′ }}>• {i}</div>)}
+              {result.items.map(i => <div key={i} style={{ padding: '4px 0', color: '#475569' }}>• {i}</div>)}
               <div style={{ marginTop: 16, padding: 14, background: '#F5E642', borderRadius: 8, fontSize: 14, color: '#0A1628', fontWeight: 600 }}>🌡️ Climate: {result.climate}</div>
             </div>
           )}

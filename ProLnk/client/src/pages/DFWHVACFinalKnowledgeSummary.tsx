@@ -3,8 +3,8 @@ import { useState } from 'react';
 type HomeProfile = 'small_older' | 'medium_standard' | 'large_new' | 'large_pool_ev';
 
 const profiles: Record<HomeProfile, { label: string; emoji: string; sqft: string; built: string }> = {
-  small_older: { label: 'Small Older Home', emoji: '🏚️', sqft: '< 1,500 sq ft', built: 'Built pre-2000′ },
-  medium_standard: { label: 'Medium Standard', emoji: '🏠', sqft: '1,500–2,500 sq ft', built: 'Built 2000–2015′ },
+  small_older: { label: 'Small Older Home', emoji: '🏚️', sqft: '< 1,500 sq ft', built: 'Built pre-2000' },
+  medium_standard: { label: 'Medium Standard', emoji: '🏠', sqft: '1,500–2,500 sq ft', built: 'Built 2000–2015' },
   large_new: { label: 'Large New Build', emoji: '🏡', sqft: '2,500–4,000 sq ft', built: 'Built 2015+' },
   large_pool_ev: { label: 'Large + Pool + EV', emoji: '🏰', sqft: '3,000+ sq ft', built: 'Any age' },
 };
@@ -63,17 +63,17 @@ export default function DFWHVACFinalKnowledgeSummary() {
     <div style={{ minHeight: '100vh', backgroundColor: '#F8FAFC', color: '#1E293B', fontFamily: 'system-ui, sans-serif', padding: '32px 16px' }}>
       <div style={{ maxWidth: '760px', margin: '0 auto' }}>
         <div style={{ marginBottom: '8px', fontSize: '13px', color: '#0A1628', letterSpacing: '0.08em', textTransform: 'uppercase', fontWeight: 700 }}>🏆 DFW HVAC Master Reference</div>
-        <h1 style={{ fontSize: '26px', fontWeight: 800, marginBottom: '8px', color: '#0A1628′ }}>Final Knowledge Summary</h1>
+        <h1 style={{ fontSize: '26px', fontWeight: 800, marginBottom: '8px', color: '#0A1628' }}>Final Knowledge Summary</h1>
         <p style={{ color: '#64748B', marginBottom: '28px', fontSize: '15px' }}>Everything a DFW homeowner needs to know — organized by what matters most for your home.</p>
 
         <div style={{ marginBottom: '20px' }}>
           <div style={{ fontSize: '12px', color: '#64748B', fontWeight: 700, marginBottom: '10px' }}>YOUR HOME PROFILE</div>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '10px' }}>
             {(Object.keys(profiles) as HomeProfile[]).map(p => (
-              <button key={p} onClick={() => setProfile(p)} style={{ padding: '14px', borderRadius: '12px', border: profile === p ? '2px solid #0A1628′ : '2px solid #E2E8F0', cursor: ’pointer', backgroundColor: profile === p ? '#0A1628′ : '#FFFFFF', textAlign: ’left' }}>
+              <button key={p} onClick={() => setProfile(p)} style={{ padding: '14px', borderRadius: '12px', border: profile === p ? '2px solid #0A1628' : '2px solid #E2E8F0', cursor: 'pointer', backgroundColor: profile === p ? '#0A1628' : '#FFFFFF', textAlign: 'left' }}>
                 <div style={{ fontSize: '20px', marginBottom: '4px' }}>{profiles[p].emoji}</div>
-                <div style={{ fontSize: '13px', fontWeight: 700, color: profile === p ? '#F5E642′ : '#1E293B', marginBottom: '2px' }}>{profiles[p].label}</div>
-                <div style={{ fontSize: '11px', color: profile === p ? '#94A3B8′ : '#64748B' }}>{profiles[p].sqft} · {profiles[p].built}</div>
+                <div style={{ fontSize: '13px', fontWeight: 700, color: profile === p ? '#F5E642' : '#1E293B', marginBottom: '2px' }}>{profiles[p].label}</div>
+                <div style={{ fontSize: '11px', color: profile === p ? '#94A3B8' : '#64748B' }}>{profiles[p].sqft} · {profiles[p].built}</div>
               </button>
             ))}
           </div>
@@ -97,15 +97,15 @@ export default function DFWHVACFinalKnowledgeSummary() {
         ))}
 
         <div style={{ backgroundColor: '#F5E642', borderRadius: '12px', padding: '16px', marginBottom: '24px' }}>
-          <div style={{ fontSize: '14px', fontWeight: 700, color: '#0A1628′ }}>{summary.tip}</div>
+          <div style={{ fontSize: '14px', fontWeight: 700, color: '#0A1628' }}>{summary.tip}</div>
         </div>
 
         <div style={{ backgroundColor: '#FFFFFF', border: '1px solid #E2E8F0', borderRadius: '14px', padding: '20px' }}>
           <div style={{ fontSize: '13px', fontWeight: 700, color: '#0A1628', marginBottom: '14px' }}>📋 Key Facts Every DFW Homeowner Needs</div>
           {keyFacts.map((item, i) => (
-            <div key={i} style={{ display: 'flex', gap: '12px', padding: '10px 0', borderBottom: i < keyFacts.length - 1 ? '1px solid #F1F5F9′ : ’none' }}>
-              <div style={{ minWidth: '140px', fontSize: '12px', fontWeight: 700, color: '#0A1628′ }}>{item.fact}</div>
-              <div style={{ fontSize: '13px', color: '#475569′ }}>{item.detail}</div>
+            <div key={i} style={{ display: 'flex', gap: '12px', padding: '10px 0', borderBottom: i < keyFacts.length - 1 ? '1px solid #F1F5F9' : 'none' }}>
+              <div style={{ minWidth: '140px', fontSize: '12px', fontWeight: 700, color: '#0A1628' }}>{item.fact}</div>
+              <div style={{ fontSize: '13px', color: '#475569' }}>{item.detail}</div>
             </div>
           ))}
         </div>

@@ -15,7 +15,7 @@ const zoneStrikeRisk: Record<string, string> = {
 
 function getRecommendation(size: string, electronics: string, zone: string) {
   const isLarge = size === 'Over 4,000 sq ft' || size === '2,500–4,000 sq ft';
-  const highElectronics = electronics === 'Over $40,000′ || electronics === '$15,000–$40,000';
+  const highElectronics = electronics === 'Over $40,000' || electronics === '$15,000–$40,000';
 
   const baseItems = [
     'Point-of-use surge protectors (MOV type) on all electronics: $15–$50 each',
@@ -43,8 +43,8 @@ function getRecommendation(size: string, electronics: string, zone: string) {
     strikeRisk: zoneStrikeRisk[zone] || 'High',
     items: [...baseItems, ...premiumItems, ...largeHomeItems],
     pointOfUseCost: '$200–$600',
-    wholehomeCost: size === 'Over 4,000 sq ft' ? '$800–$2,000′ : '$300–$700',
-    lightningRodCost: isLarge ? '$2,000–$6,000′ : ’Not cost-effective for this home size',
+    wholehomeCost: size === 'Over 4,000 sq ft' ? '$800–$2,000' : '$300–$700',
+    lightningRodCost: isLarge ? '$2,000–$6,000' : 'Not cost-effective for this home size',
     insuranceNote: highElectronics ? 'Document electronics with serial numbers and receipts. Full replacement value rider often adds only $15–$40/mo.' : 'Standard homeowner policy covers direct lightning strike — surge damage exclusions are common.',
   };
 }
@@ -78,7 +78,7 @@ export default function DFWLightningProtectionGuide() {
           ].map(([risk, solution, desc]) => (
             <div key={risk} style={{ marginBottom: '1rem', paddingBottom: '0.75rem', borderBottom: '1px solid #1e3a5f' }}>
               <div style={{ display: 'flex', gap: '0.5rem', marginBottom: '0.25rem' }}>
-                <span style={{ color: '#F5E642′ }}>{risk}</span>
+                <span style={{ color: '#F5E642' }}>{risk}</span>
                 <span style={{ color: '#e2e8f0', fontWeight: 600 }}>→ {solution}</span>
               </div>
               <div style={{ color: '#94a3b8', fontSize: '0.88rem', paddingLeft: '1rem' }}>{desc}</div>
@@ -110,7 +110,7 @@ export default function DFWLightningProtectionGuide() {
 
         {result && (
           <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
-            <div style={{ background: '#0f2040', borderRadius: 8, padding: '1.5rem', border: '1px solid #F5E642′ }}>
+            <div style={{ background: '#0f2040', borderRadius: 8, padding: '1.5rem', border: '1px solid #F5E642' }}>
               <div style={{ fontWeight: 700, color: '#F5E642', marginBottom: '0.5rem' }}>📍 Your Zone Strike Risk</div>
               <div style={{ color: '#e2e8f0', marginBottom: '1rem' }}>{result.strikeRisk}</div>
               <div style={{ fontWeight: 700, color: '#F5E642', marginBottom: '1rem' }}>⚡ Recommended Protection Steps</div>
@@ -123,9 +123,9 @@ export default function DFWLightningProtectionGuide() {
             </div>
             <div style={{ display: 'flex', flexWrap: 'wrap', gap: '1rem' }}>
               {[
-                { label: 'Point-of-Use Surge Cost', value: result.pointOfUseCost, color: '#F5E642′ },
-                { label: 'Whole-Home Surge Cost', value: result.wholehomeCost, color: '#F5E642′ },
-                { label: 'Lightning Rod System', value: result.lightningRodCost, color: '#94a3b8′ },
+                { label: 'Point-of-Use Surge Cost', value: result.pointOfUseCost, color: '#F5E642' },
+                { label: 'Whole-Home Surge Cost', value: result.wholehomeCost, color: '#F5E642' },
+                { label: 'Lightning Rod System', value: result.lightningRodCost, color: '#94a3b8' },
               ].map(({ label, value, color }) => (
                 <div key={label} style={{ background: '#0f2040', borderRadius: 8, padding: '1rem', flex: 1, minWidth: 160 }}>
                   <div style={{ color: '#94a3b8', fontSize: '0.8rem', marginBottom: '0.25rem' }}>{label}</div>
@@ -133,7 +133,7 @@ export default function DFWLightningProtectionGuide() {
                 </div>
               ))}
             </div>
-            <div style={{ background: '#0f2040', borderRadius: 8, padding: '1rem', border: '1px solid #334155′ }}>
+            <div style={{ background: '#0f2040', borderRadius: 8, padding: '1rem', border: '1px solid #334155' }}>
               <div style={{ color: '#94a3b8', fontSize: '0.85rem' }}>📋 Insurance Note</div>
               <div style={{ color: '#e2e8f0', marginTop: '0.25rem', fontSize: '0.92rem' }}>{result.insuranceNote}</div>
             </div>

@@ -19,26 +19,26 @@ export default function DFWRoofingManufacturerCert2026() {
         <div style={{ textAlign: 'center', marginBottom: '2rem' }}>
           <div style={{ fontSize: '3rem', marginBottom: '0.5rem' }}>🏆</div>
           <h1 style={{ color: '#F5E642', fontSize: '1.8rem', marginBottom: '0.5rem' }}>DFW Roofing Manufacturer Certification Guide 2026</h1>
-          <p style={{ color: '#94a3b8′ }}>Why certification level determines your warranty coverage</p>
+          <p style={{ color: '#94a3b8' }}>Why certification level determines your warranty coverage</p>
         </div>
 
         <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5rem', marginBottom: '2rem' }}>
           {Object.entries(certs).map(([k, v]) => (
             <button key={k} onClick={() => setCertLevel(k)}
               style={{ padding: '0.5rem 0.75rem', borderRadius: '6px', fontSize: '0.85rem',
-                border: certLevel === k ? '2px solid #F5E642′ : '2px solid #1e3a5f',
+                border: certLevel === k ? '2px solid #F5E642' : '2px solid #1e3a5f',
                 backgroundColor: certLevel === k ? '#1e3a5f' : '#0d2137',
-                color: certLevel === k ? '#F5E642′ : '#94a3b8', cursor: ’pointer' }}>{v.name}</button>
+                color: certLevel === k ? '#F5E642' : '#94a3b8', cursor: 'pointer' }}>{v.name}</button>
           ))}
         </div>
 
         <div style={{ backgroundColor: '#0d2137', borderRadius: '12px', padding: '1.5rem', marginBottom: '2rem', border: '1px solid #1e3a5f' }}>
           <h2 style={{ color: '#F5E642', marginBottom: '1rem' }}>{sel.name}</h2>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
-            <div><span style={{ color: '#94a3b8′ }}>Brand</span><div style={{ color: '#fff' }}>{sel.brand}</div></div>
-            <div><span style={{ color: '#94a3b8′ }}>Tier</span><div style={{ color: '#F5E642' }}>{sel.tier}</div></div>
-            <div><span style={{ color: '#94a3b8′ }}>Warranty</span><div style={{ color: '#fff', fontSize: '0.9rem' }}>{sel.warranty}</div></div>
-            <div><span style={{ color: '#94a3b8′ }}>Labor Covered</span><div style={{ color: '#22c55e' }}>{sel.labor}</div></div>
+            <div><span style={{ color: '#94a3b8' }}>Brand</span><div style={{ color: '#fff' }}>{sel.brand}</div></div>
+            <div><span style={{ color: '#94a3b8' }}>Tier</span><div style={{ color: '#F5E642' }}>{sel.tier}</div></div>
+            <div><span style={{ color: '#94a3b8' }}>Warranty</span><div style={{ color: '#fff', fontSize: '0.9rem' }}>{sel.warranty}</div></div>
+            <div><span style={{ color: '#94a3b8' }}>Labor Covered</span><div style={{ color: '#22c55e' }}>{sel.labor}</div></div>
           </div>
           <div style={{ backgroundColor: '#0A1628', padding: '0.75rem', borderRadius: '8px', color: '#94a3b8', fontSize: '0.9rem', marginBottom: '0.5rem' }}>🔍 Verify at: {sel.verify}</div>
           <div style={{ color: '#94a3b8', fontSize: '0.9rem' }}>{sel.note}</div>

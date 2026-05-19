@@ -77,8 +77,8 @@ export default function DFWRoofingLeakDiagnosis2026() {
                 <label style={{ color: '#94A3B8', fontSize: 13, display: 'block', marginBottom: 8 }}>{s.label}</label>
                 <div style={{ display: 'flex', flexDirection: 'column', gap: 6 }}>
                   {s.options.map(opt => (
-                    <label key={opt} style={{ display: 'flex', alignItems: 'center', gap: 10, cursor: 'pointer', padding: '8px 12px', background: answers[s.id] === opt ? '#F5E64211′ : '#0A1628', border: `1px solid ${answers[s.id] === opt ? '#F5E642' : '#1E3A5F'}`, borderRadius: 8 }}>
-                      <input type="radio" name={s.id} value={opt} checked={answers[s.id] === opt} onChange={() => setAnswers(a => ({ ...a, [s.id]: opt }))} style={{ accentColor: '#F5E642′ }} />
+                    <label key={opt} style={{ display: 'flex', alignItems: 'center', gap: 10, cursor: 'pointer', padding: '8px 12px', background: answers[s.id] === opt ? '#F5E64211' : '#0A1628', border: `1px solid ${answers[s.id] === opt ? '#F5E642' : '#1E3A5F'}`, borderRadius: 8 }}>
+                      <input type="radio" name={s.id} value={opt} checked={answers[s.id] === opt} onChange={() => setAnswers(a => ({ ...a, [s.id]: opt }))} style={{ accentColor: '#F5E642' }} />
                       <span style={{ fontSize: 14 }}>{opt}</span>
                     </label>
                   ))}
@@ -94,7 +94,7 @@ export default function DFWRoofingLeakDiagnosis2026() {
             <div style={{ marginTop: 20, background: '#0A1628', borderRadius: 10, padding: 20 }}>
               <div style={{ color: '#F5E642', fontWeight: 700, marginBottom: 10 }}>🔎 Diagnosis Result</div>
               <div style={{ background: '#112240', borderRadius: 8, padding: 14, color: '#E8EDF5', fontSize: 14, lineHeight: 1.6 }}>{diagnosis}</div>
-              <div style={{ marginTop: 14, padding: '12px 14px', background: '#1E3A5F', borderRadius: 8, fontSize: 13, color: '#94A3B8′ }}>
+              <div style={{ marginTop: 14, padding: '12px 14px', background: '#1E3A5F', borderRadius: 8, fontSize: 13, color: '#94A3B8' }}>
                 🛠️ DIY tip: Before calling a roofer, go into the attic with a flashlight after rain and look for water stains on rafters — trace them uphill toward the peak to find the actual entry point.
               </div>
             </div>

@@ -67,7 +67,7 @@ export default function DFWSouthlakeVsColleyvilleGuide() {
         <div style={{ overflowX: 'auto', marginBottom: 36 }}>
           <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: 13 }}>
             <thead>
-              <tr style={{ background: '#F5E642', color: '#0A1628′ }}>
+              <tr style={{ background: '#F5E642', color: '#0A1628' }}>
                 {['Category', 'Southlake', 'Colleyville', 'Edge'].map(h => (
                   <th key={h} style={{ padding: '9px 12px', textAlign: 'left', fontWeight: 700 }}>{h}</th>
                 ))}
@@ -76,8 +76,8 @@ export default function DFWSouthlakeVsColleyvilleGuide() {
             <tbody>
               {metrics.map((row, i) => (
                 <tr key={row.label} style={{ background: i % 2 === 0 ? 'rgba(255,255,255,0.04)' : 'transparent', borderBottom: '1px solid rgba(255,255,255,0.07)' }}>
-                  <td style={{ padding: '8px 12px', color: '#94a3b8′ }}>{row.label}</td>
-                  <td style={{ padding: '8px 12px', fontWeight: row.edge === 'southlake' ? 700 : 400, color: row.edge === 'southlake' ? '#a855f7′ : '#fff' }}>{row.sl}</td>
+                  <td style={{ padding: '8px 12px', color: '#94a3b8' }}>{row.label}</td>
+                  <td style={{ padding: '8px 12px', fontWeight: row.edge === 'southlake' ? 700 : 400, color: row.edge === 'southlake' ? '#a855f7' : '#fff' }}>{row.sl}</td>
                   <td style={{ padding: '8px 12px', fontWeight: row.edge === 'colleyville' ? 700 : 400, color: row.edge === 'colleyville' ? '#22c55e' : '#fff' }}>{row.cv}</td>
                   <td style={{ padding: '8px 12px', color: row.edge === 'tie' ? '#64748b' : '#F5E642', fontWeight: 600, fontSize: 12 }}>{row.edge === 'tie' ? '— Tie' : row.edge === 'southlake' ? '→ Southlake' : '→ Colleyville'}</td>
                 </tr>
@@ -91,7 +91,7 @@ export default function DFWSouthlakeVsColleyvilleGuide() {
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 16, marginBottom: 24 }}>
             <div>
               <label style={{ display: 'block', marginBottom: 8, color: '#94a3b8', fontSize: 13 }}>Your Budget</label>
-              <input type="range" min={600000} max={2000000} step={25000} value={budget} onChange={e => setBudget(Number(e.target.value))} style={{ width: '100%', accentColor: '#F5E642′ }} />
+              <input type="range" min={600000} max={2000000} step={25000} value={budget} onChange={e => setBudget(Number(e.target.value))} style={{ width: '100%', accentColor: '#F5E642' }} />
               <div style={{ color: '#F5E642', fontWeight: 700 }}>${budget.toLocaleString()}</div>
             </div>
             <div>

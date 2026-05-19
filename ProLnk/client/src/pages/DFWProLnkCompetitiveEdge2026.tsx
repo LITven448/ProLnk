@@ -58,7 +58,7 @@ export default function DFWProLnkCompetitiveEdge2026() {
           <p style={{ color: '#F5E642', fontWeight: 700, marginBottom: 12, fontSize: 14 }}>❓ WHAT DO YOU WANT TO UNDERSTAND?</p>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 10 }}>
             {concerns.map(c => (
-              <button key={c.id} onClick={() => setConcern(c.id)} style={{ padding: '12px', borderRadius: 8, border: '2px solid', borderColor: concern === c.id ? '#F5E642′ : '#334155', backgroundColor: concern === c.id ? '#F5E64220' : '#0f2744', color: '#fff', cursor: ’pointer', fontWeight: 600 }}>
+              <button key={c.id} onClick={() => setConcern(c.id)} style={{ padding: '12px', borderRadius: 8, border: '2px solid', borderColor: concern === c.id ? '#F5E642' : '#334155', backgroundColor: concern === c.id ? '#F5E64220' : '#0f2744', color: '#fff', cursor: 'pointer', fontWeight: 600 }}>
                 {c.icon} {c.label}
               </button>
             ))}
@@ -70,11 +70,11 @@ export default function DFWProLnkCompetitiveEdge2026() {
             <h2 style={{ color: '#F5E642', fontSize: 18, marginBottom: 16 }}>⚡ {guides[concern].title}</h2>
             <div style={{ display: 'flex', flexDirection: 'column', gap: 14 }}>
               {guides[concern].items.map((item, i) => (
-                <div key={i} style={{ backgroundColor: '#1e3a5f', borderRadius: 10, padding: 18, borderLeft: '4px solid #F5E642′ }}>
+                <div key={i} style={{ backgroundColor: '#1e3a5f', borderRadius: 10, padding: 18, borderLeft: '4px solid #F5E642' }}>
                   <div style={{ fontSize: 22, marginBottom: 6 }}>{item.icon}</div>
                   <div style={{ fontWeight: 700, color: '#F5E642', marginBottom: 4 }}>{item.point}</div>
                   <div style={{ color: '#cbd5e1', fontSize: 14, marginBottom: 6 }}>{item.detail}</div>
-                  <div style={{ backgroundColor: '#0A1628', borderRadius: 6, padding: '8px 12px', fontSize: 13, color: '#4ade80′ }}>🏆 {item.edge}</div>
+                  <div style={{ backgroundColor: '#0A1628', borderRadius: 6, padding: '8px 12px', fontSize: 13, color: '#4ade80' }}>🏆 {item.edge}</div>
                 </div>
               ))}
             </div>

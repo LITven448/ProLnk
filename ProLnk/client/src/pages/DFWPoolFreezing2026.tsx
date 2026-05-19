@@ -15,14 +15,14 @@ export default function DFWPoolFreezing2026() {
       <div style={{ maxWidth: 820, margin: '0 auto' }}>
         <div style={{ textAlign: 'center', marginBottom: '2rem' }}>
           <div style={{ fontSize: '3rem' }}>❄️</div>
-          <h1 style={{ color: '#F5E642', fontSize: '2rem', margin: '0.5rem 0′ }}>DFW Pool Freeze Protection Guide 2026</h1>
+          <h1 style={{ color: '#F5E642', fontSize: '2rem', margin: '0.5rem 0' }}>DFW Pool Freeze Protection Guide 2026</h1>
           <p style={{ color: '#94a3b8', maxWidth: 600, margin: '0 auto' }}>
             DFW freezes are rare but catastrophic. Most pool owners are caught unprepared because it happens
             once every few years. Know your plan before temps drop.
           </p>
         </div>
 
-        <div style={{ background: '#7f1d1d', borderRadius: 12, padding: '1.25rem', marginBottom: '2rem', border: '1px solid #ef4444′ }}>
+        <div style={{ background: '#7f1d1d', borderRadius: 12, padding: '1.25rem', marginBottom: '2rem', border: '1px solid #ef4444' }}>
           <div style={{ color: '#fca5a5', fontWeight: 700, fontSize: '1rem', marginBottom: '0.5rem' }}>⚠️ Critical: Do NOT Drain During a Freeze</div>
           <div style={{ color: '#fecaca', fontSize: '0.875rem' }}>Draining a pool during a freeze event causes hydrostatic pressure from groundwater to lift and crack the shell. A cracked plaster or fiberglass shell costs $10,000-30,000 to repair. Keep water in the pool — flowing water is your protection.</div>
         </div>
@@ -47,7 +47,7 @@ export default function DFWPoolFreezing2026() {
           <div style={{ display: 'flex', gap: '0.75rem', flexWrap: 'wrap', marginBottom: '1rem' }}>
             {equipmentTypes.map(e => (
               <button key={e.id} onClick={() => setSelected(e.id === selected ? null : e.id)}
-                style={{ padding: '0.5rem 1rem', borderRadius: 8, border: '2px solid', borderColor: selected === e.id ? '#F5E642′ : '#2d4a7a', background: selected === e.id ? '#F5E642' : '#0A1628', color: selected === e.id ? '#0A1628' : '#fff', cursor: ’pointer', fontWeight: 600 }}>
+                style={{ padding: '0.5rem 1rem', borderRadius: 8, border: '2px solid', borderColor: selected === e.id ? '#F5E642' : '#2d4a7a', background: selected === e.id ? '#F5E642' : '#0A1628', color: selected === e.id ? '#0A1628' : '#fff', cursor: 'pointer', fontWeight: 600 }}>
                 {e.label}
               </button>
             ))}
@@ -57,7 +57,7 @@ export default function DFWPoolFreezing2026() {
               {plan.map(p => <li key={p} style={{ color: '#e2e8f0', marginBottom: '0.5rem' }}>{p}</li>)}
             </ul>
           )}
-          {!selected && <p style={{ color: '#94a3b8′ }}>Select your equipment type above to see your personalized DFW freeze protection plan.</p>}
+          {!selected && <p style={{ color: '#94a3b8' }}>Select your equipment type above to see your personalized DFW freeze protection plan.</p>}
         </div>
       </div>
     </div>

@@ -18,9 +18,9 @@ export default function DFWHVACQualityScore2026() {
   const finalScore = prolnkCharter ? Math.max(score, 8) : score;
 
   const rating = finalScore >= 9 ? { label: 'Elite', color: '#22c55e' }
-    : finalScore >= 7 ? { label: 'Qualified', color: '#F5E642′ }
-    : finalScore >= 5 ? { label: 'Acceptable', color: '#f97316′ }
-    : { label: 'Avoid', color: '#ef4444′ };
+    : finalScore >= 7 ? { label: 'Qualified', color: '#F5E642' }
+    : finalScore >= 5 ? { label: 'Acceptable', color: '#f97316' }
+    : { label: 'Avoid', color: '#ef4444' };
 
   const checks = [
     { label: '🏛️ TDLR License (required by TX law)', value: tdlr, set: setTdlr, pts: 2 },
@@ -34,7 +34,7 @@ export default function DFWHVACQualityScore2026() {
   ];
 
   return (
-    <div style={{ background: '#0A1628', minHeight: '100vh', padding: '2rem', fontFamily: 'sans-serif', color: '#e2e8f0′ }}>
+    <div style={{ background: '#0A1628', minHeight: '100vh', padding: '2rem', fontFamily: 'sans-serif', color: '#e2e8f0' }}>
       <div style={{ maxWidth: '680px', margin: '0 auto' }}>
         <div style={{ textAlign: 'center', marginBottom: '2rem' }}>
           <h1 style={{ color: '#F5E642', fontSize: '1.6rem', fontWeight: 700, marginBottom: '0.5rem' }}>
@@ -47,7 +47,7 @@ export default function DFWHVACQualityScore2026() {
           {checks.map((c, i) => (
             <label key={i} style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', padding: '0.6rem 0', borderBottom: '1px solid #1e2d47', cursor: 'pointer' }}>
               <input type="checkbox" checked={c.value} onChange={e => c.set(e.target.checked)}
-                style={{ width: '18px', height: '18px', accentColor: '#F5E642′ }} />
+                style={{ width: '18px', height: '18px', accentColor: '#F5E642' }} />
               <span style={{ flex: 1, fontSize: '0.9rem' }}>{c.label}</span>
               <span style={{ color: '#F5E642', fontWeight: 600, fontSize: '0.85rem' }}>+{c.pts} pts</span>
             </label>
@@ -57,7 +57,7 @@ export default function DFWHVACQualityScore2026() {
         <div style={{ background: '#111e36', borderRadius: '12px', padding: '1.5rem', marginBottom: '1rem' }}>
           <label style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', cursor: 'pointer' }}>
             <input type="checkbox" checked={prolnkCharter} onChange={e => setProlnkCharter(e.target.checked)}
-              style={{ width: '18px', height: '18px', accentColor: '#F5E642′ }} />
+              style={{ width: '18px', height: '18px', accentColor: '#F5E642' }} />
             <span style={{ fontSize: '0.9rem' }}>🏆 ProLnk Charter Member (auto 8+ floor)</span>
           </label>
         </div>
@@ -67,7 +67,7 @@ export default function DFWHVACQualityScore2026() {
           <div style={{ fontSize: '0.75rem', color: '#64748b', marginBottom: '0.25rem' }}>out of 10</div>
           <div style={{ fontSize: '1.2rem', fontWeight: 700, color: rating.color }}>{rating.label}</div>
           {prolnkCharter && score < 8 && (
-            <div style={{ marginTop: '0.75rem', fontSize: '0.8rem', color: '#F5E642′ }}>
+            <div style={{ marginTop: '0.75rem', fontSize: '0.8rem', color: '#F5E642' }}>
               ⬆️ Score elevated to 8 by ProLnk Charter membership
             </div>
           )}

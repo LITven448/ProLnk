@@ -61,7 +61,7 @@ export default function DFWZoningGuide() {
         {useInfo && (
           <div style={{ display: 'grid', gap: 16, marginBottom: 20 }}>
             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16 }}>
-              <div style={{ backgroundColor: '#162033', borderRadius: 12, padding: 20, border: '1px solid #2D3E55′ }}>
+              <div style={{ backgroundColor: '#162033', borderRadius: 12, padding: 20, border: '1px solid #2D3E55' }}>
                 <div style={{ fontSize: 14, fontWeight: 700, color: '#F5E642', marginBottom: 10 }}>✅ What's Allowed</div>
                 <ul style={{ paddingLeft: 16, margin: 0, color: '#94A3B8', fontSize: 13, lineHeight: 1.9 }}>
                   {useInfo.allows.map(a => <li key={a}>{a}</li>)}
@@ -74,9 +74,9 @@ export default function DFWZoningGuide() {
                 </ul>
               </div>
             </div>
-            <div style={{ backgroundColor: '#162033', borderRadius: 12, padding: 20, border: '1px solid #2D3E55′ }}>
+            <div style={{ backgroundColor: '#162033', borderRadius: 12, padding: 20, border: '1px solid #2D3E55' }}>
               <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 8 }}>
-                <span style={{ fontSize: 14, fontWeight: 700, color: '#F5E642′ }}>📋 Likely Zoning Designation</span>
+                <span style={{ fontSize: 14, fontWeight: 700, color: '#F5E642' }}>📋 Likely Zoning Designation</span>
                 <span style={{ backgroundColor: '#0A1628', padding: '2px 10px', borderRadius: 12, fontSize: 12, fontWeight: 600 }}>{useInfo.designation}</span>
                 {useInfo.variance && <span style={{ backgroundColor: '#7f1d1d', color: '#FCA5A5', padding: '2px 10px', borderRadius: 12, fontSize: 12, fontWeight: 600 }}>Variance May Be Required</span>}
               </div>

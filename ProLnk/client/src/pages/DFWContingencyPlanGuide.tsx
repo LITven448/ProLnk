@@ -71,7 +71,7 @@ export default function DFWContingencyPlanGuide() {
       <div style={{ maxWidth: 760, margin: '0 auto' }}>
         <div style={{ color: '#F5E642', fontSize: 13, fontWeight: 700, letterSpacing: 2, marginBottom: 12 }}>PROLNK GUIDE</div>
         <h1 style={{ fontSize: 32, fontWeight: 800, marginBottom: 8, lineHeight: 1.2 }}>⚡ DFW Contractor Contingency Plan</h1>
-        <p style={{ color: '#8A9BB5', fontSize: 16, marginBottom: 32 }}>DFW's booming construction market means contractor problems happen. Here’s your playbook for the most common situations.</p>
+        <p style={{ color: '#8A9BB5', fontSize: 16, marginBottom: 32 }}>DFW's booming construction market means contractor problems happen. Here's your playbook for the most common situations.</p>
 
         <div style={{ background: '#111E35', borderRadius: 12, padding: 24, marginBottom: 24 }}>
           <h2 style={{ color: '#F5E642', fontSize: 18, marginBottom: 16 }}>📋 Select Your Situation</h2>
@@ -79,7 +79,7 @@ export default function DFWContingencyPlanGuide() {
             {Object.entries(plans).map(([key, val]) => (
               <button key={key} onClick={() => setSituation(key)}
                 style={{ padding: '14px 16px', borderRadius: 10, border: 'none', cursor: 'pointer', fontWeight: 600, fontSize: 14, textAlign: 'left',
-                  background: situation === key ? '#F5E642′ : '#1E2F4A', color: situation === key ? '#0A1628' : '#8A9BB5' }}>
+                  background: situation === key ? '#F5E642' : '#1E2F4A', color: situation === key ? '#0A1628' : '#8A9BB5' }}>
                 {val.headline}
               </button>
             ))}
@@ -99,7 +99,7 @@ export default function DFWContingencyPlanGuide() {
         </div>
 
         {plan.prolnk && (
-          <div style={{ background: '#111E35', borderRadius: 12, padding: 24, borderLeft: '4px solid #F5E642′ }}>
+          <div style={{ background: '#111E35', borderRadius: 12, padding: 24, borderLeft: '4px solid #F5E642' }}>
             <div style={{ color: '#F5E642', fontWeight: 700, marginBottom: 8 }}>🔗 ProLnk Can Help Right Now</div>
             <div style={{ color: '#8A9BB5', fontSize: 14, marginBottom: 16 }}>Post your job on ProLnk and get matched with a licensed, vetted DFW contractor — often within hours. ProLnk pros know they're competing for the slot, so response times are fast.</div>
             <div style={{ display: 'flex', gap: 12 }}>
@@ -119,8 +119,8 @@ export default function DFWContingencyPlanGuide() {
           <h2 style={{ color: '#F5E642', fontSize: 18, marginBottom: 16 }}>📞 DFW Emergency Resources</h2>
           {[['Texas TDLR (Contractor Licensing)', '512-463-6599 / tdlr.texas.gov'], ['Texas Attorney General Consumer Protection', '800-621-0508'], ['Better Business Bureau DFW', 'bbb.org/local/0714'], ['FEMA Disaster Assistance', 'DisasterAssistance.gov']].map(([name, contact]) => (
             <div key={name} style={{ padding: '10px 0', borderBottom: '1px solid #1E2F4A', display: 'flex', justifyContent: 'space-between', fontSize: 14 }}>
-              <span style={{ color: '#C8D8E8′ }}>{name}</span>
-              <span style={{ color: '#F5E642′ }}>{contact}</span>
+              <span style={{ color: '#C8D8E8' }}>{name}</span>
+              <span style={{ color: '#F5E642' }}>{contact}</span>
             </div>
           ))}
         </div>

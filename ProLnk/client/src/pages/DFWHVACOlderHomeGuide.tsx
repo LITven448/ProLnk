@@ -27,7 +27,7 @@ const vintages = [
     electrical: '100-amp panels becoming more common but still marginal; aluminum wiring in some homes (requires anti-oxidant treatment at connections)',
     materials: 'Asbestos less common than pre-1960 but still present in some duct wrap; fiberglass duct lining degraded to dust',
     priorities: [
-      'Static pressure test — values above 0.5″ WC indicate duct restriction',
+      'Static pressure test — values above 0.5" WC indicate duct restriction',
       'Duct leakage test — 1960s homes average 30–40% duct leakage to unconditioned attic',
       'Verify panel capacity before adding variable-speed equipment',
       'Consider trunk line replacement vs. patch-and-go economics',
@@ -92,8 +92,8 @@ export default function DFWHVACOlderHomeGuide() {
               onClick={() => setSelected(v)}
               style={{
                 padding: '10px 20px', borderRadius: 8, border: `2px solid ${selected.era === v.era ? '#F5E642' : '#1e3a5f'}`,
-                background: selected.era === v.era ? '#F5E642′ : '#0d2137',
-                color: selected.era === v.era ? '#0A1628′ : '#94a3b8',
+                background: selected.era === v.era ? '#F5E642' : '#0d2137',
+                color: selected.era === v.era ? '#0A1628' : '#94a3b8',
                 fontWeight: 600, cursor: 'pointer', fontSize: 14,
               }}
             >

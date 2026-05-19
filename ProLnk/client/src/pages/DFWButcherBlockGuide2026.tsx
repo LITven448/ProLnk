@@ -17,11 +17,11 @@ export default function DFWButcherBlockGuide2026() {
   const [situation, setSituation] = useState("");
 
   return (
-    <div style={{ background: "#0A1628″, minHeight: "100vh", color: "#fff", fontFamily: "sans-serif", padding: "2rem" }}>
+    <div style={{ background: "#0A1628", minHeight: "100vh", color: "#fff", fontFamily: "sans-serif", padding: "2rem" }}>
       <div style={{ maxWidth: 860, margin: "0 auto" }}>
-        <div style={{ color: "#F5E642″, fontSize: "0.85rem", marginBottom: "0.5rem" }}>🏡 DFW HOME GUIDE 2026</div>
+        <div style={{ color: "#F5E642", fontSize: "0.85rem", marginBottom: "0.5rem" }}>🏡 DFW HOME GUIDE 2026</div>
         <h1 style={{ fontSize: "2rem", marginBottom: "0.25rem" }}>DFW Butcher Block Countertop Guide 2026</h1>
-        <p style={{ color: "#94a3b8″, marginBottom: "2rem" }}>Butcher block brings warmth to DFW kitchens — but DFW humidity swings demand consistent oiling and smart placement. Here is what works.</p>
+        <p style={{ color: "#94a3b8", marginBottom: "2rem" }}>Butcher block brings warmth to DFW kitchens — but DFW humidity swings demand consistent oiling and smart placement. Here is what works.</p>
 
         <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "1rem", marginBottom: "2rem" }}>
           {[
@@ -30,49 +30,49 @@ export default function DFWButcherBlockGuide2026() {
             { icon: "🚿", title: "Keep It Dry Near Sinks", body: "Constant moisture exposure near sinks causes black mold in wood joints — a DFW humidity nightmare. Use a secondary countertop material within 12 inches of any sink." },
             { icon: "🪵", title: "Renewable Surface", body: "Unlike stone, butcher block can be sanded and refinished when scratched or stained. This is a major long-term advantage in busy DFW households." },
           ].map((c) => (
-            <div key={c.title} style={{ background: "#1a2744″, borderRadius: 10, padding: "1.25rem" }}>
+            <div key={c.title} style={{ background: "#1a2744", borderRadius: 10, padding: "1.25rem" }}>
               <div style={{ fontSize: "1.5rem", marginBottom: "0.5rem" }}>{c.icon}</div>
-              <div style={{ color: "#F5E642″, fontWeight: 600, marginBottom: "0.4rem" }}>{c.title}</div>
-              <div style={{ color: "#94a3b8″, fontSize: "0.9rem" }}>{c.body}</div>
+              <div style={{ color: "#F5E642", fontWeight: 600, marginBottom: "0.4rem" }}>{c.title}</div>
+              <div style={{ color: "#94a3b8", fontSize: "0.9rem" }}>{c.body}</div>
             </div>
           ))}
         </div>
 
-        <h2 style={{ color: "#F5E642″, fontSize: "1.25rem", marginBottom: "1rem" }}>DFW Oiling Schedule</h2>
+        <h2 style={{ color: "#F5E642", fontSize: "1.25rem", marginBottom: "1rem" }}>DFW Oiling Schedule</h2>
         <div style={{ display: "flex", flexDirection: "column", gap: "0.75rem", marginBottom: "2rem" }}>
           {oilSchedule.map((s, i) => (
-            <div key={i} style={{ background: "#1a2744″, borderRadius: 10, padding: "1rem", display: "flex", gap: "1rem", alignItems: "flex-start" }}>
-              <div style={{ color: "#F5E642″, fontSize: "1.5rem", minWidth: 36 }}>🫙</div>
+            <div key={i} style={{ background: "#1a2744", borderRadius: 10, padding: "1rem", display: "flex", gap: "1rem", alignItems: "flex-start" }}>
+              <div style={{ color: "#F5E642", fontSize: "1.5rem", minWidth: 36 }}>🫙</div>
               <div>
                 <div style={{ fontWeight: 600, marginBottom: "0.25rem" }}>{s.frequency}</div>
-                <div style={{ color: "#94a3b8″, fontSize: "0.9rem" }}>{s.reason}</div>
+                <div style={{ color: "#94a3b8", fontSize: "0.9rem" }}>{s.reason}</div>
               </div>
             </div>
           ))}
         </div>
 
-        <h2 style={{ color: "#F5E642″, fontSize: "1.25rem", marginBottom: "1rem" }}>🎯 Is Butcher Block Right for Your DFW Home?</h2>
-        <div style={{ background: "#1a2744″, borderRadius: 12, padding: "1.5rem" }}>
-          <label style={{ color: "#94a3b8″, fontSize: "0.85rem" }}>DESCRIBE YOUR DFW HOME SITUATION</label>
+        <h2 style={{ color: "#F5E642", fontSize: "1.25rem", marginBottom: "1rem" }}>🎯 Is Butcher Block Right for Your DFW Home?</h2>
+        <div style={{ background: "#1a2744", borderRadius: 12, padding: "1.5rem" }}>
+          <label style={{ color: "#94a3b8", fontSize: "0.85rem" }}>DESCRIBE YOUR DFW HOME SITUATION</label>
           <select
             value={situation}
             onChange={(e) => setSituation(e.target.value)}
-            style={{ display: "block", width: "100%", marginTop: "0.5rem", padding: "0.75rem", borderRadius: 8, background: "#0A1628″, color: "#fff", border: "1px solid #2d3f6b", fontSize: "1rem", marginBottom: "1rem" }}
+            style={{ display: "block", width: "100%", marginTop: "0.5rem", padding: "0.75rem", borderRadius: 8, background: "#0A1628", color: "#fff", border: "1px solid #2d3f6b", fontSize: "1rem", marginBottom: "1rem" }}
           >
             <option value="">— Select your situation —</option>
             {Object.keys(situationGuide).map((k) => <option key={k} value={k}>{k}</option>)}
           </select>
           {situation && (
-            <div style={{ background: "#0A1628″, borderRadius: 8, padding: "1rem", borderLeft: "4px solid #F5E642" }}>
-              <div style={{ color: "#F5E642″, fontWeight: 700, marginBottom: "0.4rem" }}>{situationGuide[situation].verdict}</div>
-              <div style={{ color: "#94a3b8″, fontSize: "0.9rem" }}>{situationGuide[situation].advice}</div>
+            <div style={{ background: "#0A1628", borderRadius: 8, padding: "1rem", borderLeft: "4px solid #F5E642" }}>
+              <div style={{ color: "#F5E642", fontWeight: 700, marginBottom: "0.4rem" }}>{situationGuide[situation].verdict}</div>
+              <div style={{ color: "#94a3b8", fontSize: "0.9rem" }}>{situationGuide[situation].advice}</div>
             </div>
           )}
         </div>
 
-        <div style={{ marginTop: "2rem", background: "#1a2744″, borderRadius: 10, padding: "1.25rem", borderLeft: "4px solid #F5E642" }}>
+        <div style={{ marginTop: "2rem", background: "#1a2744", borderRadius: 10, padding: "1.25rem", borderLeft: "4px solid #F5E642" }}>
           <div style={{ fontWeight: 600, marginBottom: "0.4rem" }}>🔑 DFW Pro Tip</div>
-          <div style={{ color: "#94a3b8″, fontSize: "0.9rem" }}>End-grain butcher block is denser and more moisture-resistant than edge-grain — worth the 20% price premium in DFW humid conditions. Ask your DFW fabricator for end-grain if near a sink area is unavoidable.</div>
+          <div style={{ color: "#94a3b8", fontSize: "0.9rem" }}>End-grain butcher block is denser and more moisture-resistant than edge-grain — worth the 20% price premium in DFW humid conditions. Ask your DFW fabricator for end-grain if near a sink area is unavoidable.</div>
         </div>
       </div>
     </div>

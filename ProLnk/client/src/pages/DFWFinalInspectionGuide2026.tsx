@@ -45,34 +45,34 @@ export default function DFWFinalInspectionGuide2026() {
   const done = items.filter(i => checked[i.label]).length;
 
   return (
-    <div style={{ backgroundColor: "#0A1628″, minHeight: "100vh", color: "#fff", fontFamily: "system-ui, sans-serif", padding: "24px" }}>
+    <div style={{ backgroundColor: "#0A1628", minHeight: "100vh", color: "#fff", fontFamily: "system-ui, sans-serif", padding: "24px" }}>
       <div style={{ maxWidth: "860px", margin: "0 auto" }}>
         <div style={{ marginBottom: "32px" }}>
           <span style={{ fontSize: "32px" }}>🔍</span>
-          <h1 style={{ fontSize: "28px", fontWeight: "800″, color: "#F5E642", marginTop: "8px" }}>DFW Final Inspection Guide 2026</h1>
-          <p style={{ color: "#94a3b8″, marginTop: "8px" }}>Know exactly what DFW inspectors check at each stage — electrical, plumbing, framing, insulation, and final. Prepare properly to avoid failed inspections and re-inspection fees.</p>
+          <h1 style={{ fontSize: "28px", fontWeight: "800", color: "#F5E642", marginTop: "8px" }}>DFW Final Inspection Guide 2026</h1>
+          <p style={{ color: "#94a3b8", marginTop: "8px" }}>Know exactly what DFW inspectors check at each stage — electrical, plumbing, framing, insulation, and final. Prepare properly to avoid failed inspections and re-inspection fees.</p>
         </div>
 
         <div style={{ marginBottom: "20px" }}>
-          <label style={{ color: "#94a3b8″, fontSize: "13px", display: "block", marginBottom: "6px" }}>Project Type</label>
-          <select value={projectType} onChange={e => { setProjectType(e.target.value); setChecked({}); }} style={{ padding: "10px 12px", backgroundColor: "#1e293b", border: "1px solid #334155″, borderRadius: "8px", color: "#fff", fontSize: "14px", minWidth: "240px" }}>
+          <label style={{ color: "#94a3b8", fontSize: "13px", display: "block", marginBottom: "6px" }}>Project Type</label>
+          <select value={projectType} onChange={e => { setProjectType(e.target.value); setChecked({}); }} style={{ padding: "10px 12px", backgroundColor: "#1e293b", border: "1px solid #334155", borderRadius: "8px", color: "#fff", fontSize: "14px", minWidth: "240px" }}>
             {Object.keys(checklists).map(k => <option key={k}>{k}</option>)}
           </select>
         </div>
 
         <div style={{ backgroundColor: "#1e293b", borderRadius: "12px", padding: "20px", marginBottom: "24px" }}>
           <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "16px" }}>
-            <h2 style={{ color: "#F5E642″, fontWeight: "700" }}>Inspection Checklist — {projectType}</h2>
-            <span style={{ backgroundColor: done === items.length ? "#16a34a" : "#334155″, color: "#fff", borderRadius: "20px", padding: "4px 12px", fontSize: "13px" }}>{done}/{items.length} Ready</span>
+            <h2 style={{ color: "#F5E642", fontWeight: "700" }}>Inspection Checklist — {projectType}</h2>
+            <span style={{ backgroundColor: done === items.length ? "#16a34a" : "#334155", color: "#fff", borderRadius: "20px", padding: "4px 12px", fontSize: "13px" }}>{done}/{items.length} Ready</span>
           </div>
           <div style={{ display: "flex", flexDirection: "column", gap: "12px" }}>
             {items.map(item => (
               <div key={item.label} onClick={() => toggle(item.label)} style={{ cursor: "pointer", backgroundColor: checked[item.label] ? "#0f2a1a" : "#0f172a", border: `1px solid ${checked[item.label] ? "#16a34a" : "#334155"}`, borderRadius: "8px", padding: "14px" }}>
                 <div style={{ display: "flex", alignItems: "center", gap: "10px" }}>
                   <span style={{ fontSize: "18px" }}>{checked[item.label] ? "✅" : "⬜"}</span>
-                  <span style={{ fontWeight: "600″, color: checked[item.label] ? "#4ade80" : "#e2e8f0" }}>{item.label}</span>
+                  <span style={{ fontWeight: "600", color: checked[item.label] ? "#4ade80" : "#e2e8f0" }}>{item.label}</span>
                 </div>
-                <p style={{ color: "#94a3b8″, fontSize: "13px", marginTop: "6px", marginLeft: "28px" }}>{item.detail}</p>
+                <p style={{ color: "#94a3b8", fontSize: "13px", marginTop: "6px", marginLeft: "28px" }}>{item.detail}</p>
               </div>
             ))}
           </div>
@@ -86,8 +86,8 @@ export default function DFWFinalInspectionGuide2026() {
           ].map(({ icon, title, body }) => (
             <div key={title} style={{ backgroundColor: "#1e293b", borderRadius: "12px", padding: "16px" }}>
               <div style={{ fontSize: "24px", marginBottom: "8px" }}>{icon}</div>
-              <h3 style={{ color: "#F5E642″, fontWeight: "700", marginBottom: "6px", fontSize: "14px" }}>{title}</h3>
-              <p style={{ color: "#94a3b8″, fontSize: "13px", lineHeight: "1.5" }}>{body}</p>
+              <h3 style={{ color: "#F5E642", fontWeight: "700", marginBottom: "6px", fontSize: "14px" }}>{title}</h3>
+              <p style={{ color: "#94a3b8", fontSize: "13px", lineHeight: "1.5" }}>{body}</p>
             </div>
           ))}
         </div>

@@ -1,10 +1,10 @@
 import { useState } from 'react';
 
 const doorTypes = [
-  { name: 'Steel', pros: 'Durable, low maintenance, insulates well', cons: 'Can dent, may rust without coating', cost: '$800–$1,800′ },
-  { name: 'Wood', pros: 'Classic look, customizable', cons: 'High maintenance, warps in DFW humidity', cost: '$1,200–$4,000′ },
-  { name: 'Aluminum', pros: 'Rust-proof, lightweight', cons: 'Dents easily, poor insulation', cost: '$700–$2,000′ },
-  { name: 'Glass', pros: 'Modern aesthetic, natural light', cons: 'No privacy, expensive', cost: '$1,500–$4,500′ },
+  { name: 'Steel', pros: 'Durable, low maintenance, insulates well', cons: 'Can dent, may rust without coating', cost: '$800–$1,800' },
+  { name: 'Wood', pros: 'Classic look, customizable', cons: 'High maintenance, warps in DFW humidity', cost: '$1,200–$4,000' },
+  { name: 'Aluminum', pros: 'Rust-proof, lightweight', cons: 'Dents easily, poor insulation', cost: '$700–$2,000' },
+  { name: 'Glass', pros: 'Modern aesthetic, natural light', cons: 'No privacy, expensive', cost: '$1,500–$4,500' },
 ];
 
 const motorTypes = [
@@ -56,7 +56,7 @@ export default function GarageDoorGuide() {
           <h2 style={{ color: '#F5E642', fontSize: '1.4rem', marginBottom: '1rem' }}>🌡️ R-Value & DFW Heat</h2>
           <div style={{ background: '#1e2d45', borderRadius: '12px', padding: '1.5rem' }}>
             <p style={{ color: '#cbd5e1', lineHeight: 1.7 }}>
-              DFW summers routinely hit <strong style={{ color: '#F5E642′ }}>105°F+</strong>. An uninsulated garage door lets brutal heat into your attached garage, raising AC costs by up to 20%. The industry measures insulation with <strong style={{ color: '#F5E642' }}>R-value</strong> — the higher, the better.
+              DFW summers routinely hit <strong style={{ color: '#F5E642' }}>105°F+</strong>. An uninsulated garage door lets brutal heat into your attached garage, raising AC costs by up to 20%. The industry measures insulation with <strong style={{ color: '#F5E642' }}>R-value</strong> — the higher, the better.
             </p>
             <div style={{ display: 'flex', gap: '1rem', marginTop: '1rem', flexWrap: 'wrap' }}>
               {[['R-0 to R-6', 'Basic / No insulation', '#ef4444'], ['R-7 to R-12', 'Good for DFW', '#f59e0b'], ['R-13 to R-18', 'Excellent for DFW heat', '#22c55e'], ['R-19+', 'Premium, max savings', '#3b82f6']].map(([r, label, color]) => (
@@ -74,15 +74,15 @@ export default function GarageDoorGuide() {
           <div style={{ overflowX: 'auto' }}>
             <table style={{ width: '100%', borderCollapse: 'collapse' }}>
               <thead>
-                <tr style={{ background: '#1e2d45′ }}>
+                <tr style={{ background: '#1e2d45' }}>
                   {['Material', 'Pros', 'Cons', 'Typical Cost'].map(h => (
-                    <th key={h} style={{ padding: '0.75rem 1rem', textAlign: 'left', color: '#F5E642', borderBottom: '1px solid #2d3f58′ }}>{h}</th>
+                    <th key={h} style={{ padding: '0.75rem 1rem', textAlign: 'left', color: '#F5E642', borderBottom: '1px solid #2d3f58' }}>{h}</th>
                   ))}
                 </tr>
               </thead>
               <tbody>
                 {doorTypes.map((d, i) => (
-                  <tr key={d.name} style={{ background: i % 2 === 0 ? '#111f36′ : '#0A1628' }}>
+                  <tr key={d.name} style={{ background: i % 2 === 0 ? '#111f36' : '#0A1628' }}>
                     <td style={{ padding: '0.75rem 1rem', color: '#fff', fontWeight: 600 }}>{d.name}</td>
                     <td style={{ padding: '0.75rem 1rem', color: '#86efac', fontSize: '0.9rem' }}>{d.pros}</td>
                     <td style={{ padding: '0.75rem 1rem', color: '#fca5a5', fontSize: '0.9rem' }}>{d.cons}</td>
@@ -139,7 +139,7 @@ export default function GarageDoorGuide() {
                 type="number"
                 value={age}
                 onChange={e => setAge(e.target.value)}
-                placeholder="e.g. 12″
+                placeholder="e.g. 12"
                 style={{ background: '#0A1628', border: '1px solid #2d3f58', borderRadius: '6px', padding: '0.5rem 0.75rem', color: '#fff', width: '120px' }}
               />
             </div>
@@ -154,9 +154,9 @@ export default function GarageDoorGuide() {
                       padding: '0.4rem 0.9rem',
                       borderRadius: '20px',
                       border: '1px solid',
-                      borderColor: selectedSymptoms.includes(s) ? '#F5E642′ : '#2d3f58',
-                      background: selectedSymptoms.includes(s) ? '#F5E642′ : ’transparent',
-                      color: selectedSymptoms.includes(s) ? '#0A1628′ : '#cbd5e1',
+                      borderColor: selectedSymptoms.includes(s) ? '#F5E642' : '#2d3f58',
+                      background: selectedSymptoms.includes(s) ? '#F5E642' : 'transparent',
+                      color: selectedSymptoms.includes(s) ? '#0A1628' : '#cbd5e1',
                       cursor: 'pointer',
                       fontSize: '0.85rem',
                       fontWeight: selectedSymptoms.includes(s) ? 700 : 400,

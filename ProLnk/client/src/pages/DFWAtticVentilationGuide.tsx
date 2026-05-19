@@ -42,7 +42,7 @@ export default function DFWAtticVentilationGuide() {
               <div style={{ fontSize: 12, color: '#94A3B8', fontWeight: 700, letterSpacing: 1, marginBottom: 8 }}>{label}</div>
               <div style={{ display: 'flex', flexDirection: 'column', gap: 6 }}>
                 {opts.map(o => (
-                  <button key={o} onClick={() => set(o)} style={{ background: val === o ? '#F5E642′ : '#1A2D4A', color: val === o ? '#0A1628' : '#E8EDF5', border: ’none', borderRadius: 8, padding: '10px 14px', cursor: 'pointer', fontWeight: val === o ? 700 : 400, fontSize: 13, textAlign: 'left', transition: 'all 0.15s' }}>{o}</button>
+                  <button key={o} onClick={() => set(o)} style={{ background: val === o ? '#F5E642' : '#1A2D4A', color: val === o ? '#0A1628' : '#E8EDF5', border: 'none', borderRadius: 8, padding: '10px 14px', cursor: 'pointer', fontWeight: val === o ? 700 : 400, fontSize: 13, textAlign: 'left', transition: 'all 0.15s' }}>{o}</button>
                 ))}
               </div>
             </div>
@@ -70,7 +70,7 @@ export default function DFWAtticVentilationGuide() {
             {assessment.warning && <div style={{ color: '#FCD34D', fontSize: 13, lineHeight: 1.6, borderTop: '1px solid #2D4A6A', paddingTop: 16 }}>⚠️ {assessment.warning}</div>}
           </div>
         ) : (
-          <div style={{ background: '#1A2D4A', borderRadius: 12, padding: 28, textAlign: 'center', color: '#94A3B8′ }}>Select your attic size and current vent types to get your ventilation assessment.</div>
+          <div style={{ background: '#1A2D4A', borderRadius: 12, padding: 28, textAlign: 'center', color: '#94A3B8' }}>Select your attic size and current vent types to get your ventilation assessment.</div>
         )}
         <div style={{ marginTop: 32, display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16 }}>
           {[{ icon: '🌡️', title: '150°F Attic Reality', text: 'DFW attics without ventilation reach extreme temperatures. Every degree above 130°F dramatically accelerates shingle granule loss and reduces HVAC life. Ventilation is maintenance, not upgrade.' }, { icon: '💧', title: 'Moisture in Shoulder Seasons', text: 'Spring and fall in DFW create temperature inversions where warm humid air meets cooler attic decking, condensing moisture. Good ventilation prevents mold and deck rot.' }, { icon: '🏠', title: 'Insulation Baffles', text: 'Soffit vents must have baffles (rafter channels) installed to keep blown insulation from blocking airflow. The #1 reason properly installed vent systems underperform in DFW.' }, { icon: '💰', title: 'Energy Savings', text: 'Properly ventilated DFW attics reduce cooling loads 10–15%. On a $300/month summer electric bill, that is $30–$45 per month. Full payback on ventilation upgrade in 3–5 years.' }].map(({ icon, title, text }) => (

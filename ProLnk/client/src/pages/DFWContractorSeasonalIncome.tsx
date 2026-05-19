@@ -69,7 +69,7 @@ const defaultRec: SeasonalRec = {
   prolnkRole: 'ProLnk provides consistent lead flow throughout the year by matching you with homeowners in your service area who are actively seeking your trade. During slow months, ProLnk surfaces planned project leads — homeowners who are budgeting for future work. Your consistent availability on ProLnk keeps income flowing year-round.',
 };
 
-const levelColors: Record<string, string> = { Peak: '#22c55e', High: '#84cc16', Moderate: '#eab308', Slow: '#ef4444′ };
+const levelColors: Record<string, string> = { Peak: '#22c55e', High: '#84cc16', Moderate: '#eab308', Slow: '#ef4444' };
 
 export default function DFWContractorSeasonalIncome() {
   const [trade, setTrade] = useState('');
@@ -110,20 +110,20 @@ export default function DFWContractorSeasonalIncome() {
                       <div style={{ background: '#0A1628', borderRadius: '4px', height: '80px', display: 'flex', alignItems: 'flex-end', justifyContent: 'center', marginBottom: '4px', border: '1px solid #1e3a5f', overflow: 'hidden' }}>
                         <div style={{ width: '100%', height: `${m.index}%`, background: levelColors[m.level], transition: 'height 0.3s' }} />
                       </div>
-                      <div style={{ fontSize: '0.7rem', color: '#94a3b8′ }}>{m.month}</div>
+                      <div style={{ fontSize: '0.7rem', color: '#94a3b8' }}>{m.month}</div>
                       <div style={{ fontSize: '0.65rem', color: levelColors[m.level], fontWeight: 700 }}>{m.level}</div>
                     </div>
                   ))}
                 </div>
                 <div style={{ display: 'flex', gap: '1rem', marginTop: '0.75rem', flexWrap: 'wrap' }}>
-                  {Object.entries(levelColors).map(([level, color]) => <div key={level} style={{ display: 'flex', alignItems: 'center', gap: '0.35rem', fontSize: '0.8rem', color: '#94a3b8′ }}><div style={{ width: '12px', height: '12px', background: color, borderRadius: '2px' }} />{level}</div>)}
+                  {Object.entries(levelColors).map(([level, color]) => <div key={level} style={{ display: 'flex', alignItems: 'center', gap: '0.35rem', fontSize: '0.8rem', color: '#94a3b8' }}><div style={{ width: '12px', height: '12px', background: color, borderRadius: '2px' }} />{level}</div>)}
                 </div>
               </div>
               <div style={{ marginBottom: '1.25rem' }}>
                 <div style={{ color: '#94a3b8', fontSize: '0.85rem', marginBottom: '0.5rem' }}>HOW TO PREPARE FOR SLOW MONTHS</div>
                 {result.slowPrep.map((tip) => <div key={tip} style={{ color: '#e2e8f0', fontSize: '0.9rem', padding: '0.4rem 0', borderBottom: '1px solid #1e3a5f' }}>💡 {tip}</div>)}
               </div>
-              <div style={{ background: '#0d1f3c', borderRadius: '6px', padding: '1rem', border: '1px solid #F5E642′ }}>
+              <div style={{ background: '#0d1f3c', borderRadius: '6px', padding: '1rem', border: '1px solid #F5E642' }}>
                 <div style={{ color: '#F5E642', fontWeight: 700, fontSize: '0.85rem', marginBottom: '0.4rem' }}>🔗 PROLNK'S ROLE IN YOUR INCOME</div>
                 <div style={{ color: '#94a3b8', fontSize: '0.9rem', lineHeight: 1.7 }}>{result.prolnkRole}</div>
               </div>
@@ -144,7 +144,7 @@ export default function DFWContractorSeasonalIncome() {
           </div>
         </div>
 
-        <div style={{ background: '#0d1f3c', borderRadius: '8px', padding: '1.25rem', border: '1px solid #F5E642′ }}>
+        <div style={{ background: '#0d1f3c', borderRadius: '8px', padding: '1.25rem', border: '1px solid #F5E642' }}>
           <div style={{ color: '#F5E642', fontWeight: 700, marginBottom: '0.5rem' }}>💡 ProLnk Pro Tip</div>
           <div style={{ color: '#94a3b8', fontSize: '0.9rem', lineHeight: 1.7 }}>ProLnk pros who maintain an active profile year-round — even during slow months — receive 67% more leads than pros who go inactive. Homeowners plan ahead. The pro they find in December for a March project is already booked when the season starts. Stay visible, stay booked.</div>
         </div>

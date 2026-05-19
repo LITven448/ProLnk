@@ -45,8 +45,8 @@ export default function DFWCarbonMonoxideGuide2026() {
           {[['🔥', 'TX CO Law', '2022 mandate for gas homes'],['🏘️', 'DFW Gas Homes', '85% use natural gas'],['⏱️', 'Detector Life', '5–7 years typical']].map(([icon, title, sub]) => (
             <div key={title} style={{ background: '#1a2744', borderRadius: 10, padding: 16, textAlign: 'center' }}>
               <div style={{ fontSize: 24 }}>{icon}</div>
-              <div style={{ fontWeight: 700, fontSize: 14, color: '#F5E642′ }}>{title}</div>
-              <div style={{ fontSize: 12, color: '#94a3b8′ }}>{sub}</div>
+              <div style={{ fontWeight: 700, fontSize: 14, color: '#F5E642' }}>{title}</div>
+              <div style={{ fontSize: 12, color: '#94a3b8' }}>{sub}</div>
             </div>
           ))}
         </div>
@@ -63,7 +63,7 @@ export default function DFWCarbonMonoxideGuide2026() {
           </select>
           {result && (
             <div>
-              <div style={{ background: '#0A1628', borderRadius: 8, padding: 14, marginBottom: 12, borderLeft: '4px solid #F5E642′ }}>
+              <div style={{ background: '#0A1628', borderRadius: 8, padding: 14, marginBottom: 12, borderLeft: '4px solid #F5E642' }}>
                 <div style={{ fontWeight: 700, marginBottom: 4 }}>Risk Level</div>
                 <div style={{ color: '#94a3b8', fontSize: 14 }}>{result.risk}</div>
               </div>
@@ -78,7 +78,7 @@ export default function DFWCarbonMonoxideGuide2026() {
           {[['🛏️','Sleeping Areas','Within 10 ft of every bedroom door'],['🔧','Mechanical Rooms','Near furnace, water heater, boiler'],['🚗','Attached Garages','CO from vehicles enters living space'],['🏠','Multi-Story','One detector per floor minimum']].map(([icon, title, desc]) => (
             <div key={title} style={{ display: 'flex', gap: 12, marginBottom: 14 }}>
               <div style={{ fontSize: 22 }}>{icon}</div>
-              <div><div style={{ fontWeight: 600, fontSize: 14 }}>{title}</div><div style={{ fontSize: 13, color: '#94a3b8′ }}>{desc}</div></div>
+              <div><div style={{ fontWeight: 600, fontSize: 14 }}>{title}</div><div style={{ fontSize: 13, color: '#94a3b8' }}>{desc}</div></div>
             </div>
           ))}
         </div>

@@ -61,7 +61,7 @@ export default function CharterMembershipPage() {
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: '12px', textAlign: 'center' }}>
             {[
               { label: 'Direct (Charter 25%)', val: directEarnings, color: '#f59e0b' },
-              { label: 'Team Override (7%)', val: teamEarnings, color: '#34d399′ },
+              { label: 'Team Override (7%)', val: teamEarnings, color: '#34d399' },
               { label: 'vs Standard (12%)', val: -advantage, color: '#ef4444', prefix: '-$' },
             ].map((row, i) => (
               <div key={i} style={{ background: '#0a0f1e', borderRadius: '10px', padding: '16px' }}>

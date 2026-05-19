@@ -31,9 +31,9 @@ export default function HasletHomeownerGuide2026() {
               key={y.id}
               onClick={() => setSelected(y.id === selected ? null : y.id)}
               style={{
-                background: selected === y.id ? '#F5E642′ : '#111f38',
-                color: selected === y.id ? '#0A1628′ : '#fff',
-                border: '2px solid' + (selected === y.id ? ' #F5E642′ : ' #1e3a5f'),
+                background: selected === y.id ? '#F5E642' : '#111f38',
+                color: selected === y.id ? '#0A1628' : '#fff',
+                border: '2px solid' + (selected === y.id ? ' #F5E642' : ' #1e3a5f'),
                 borderRadius: 10, padding: '10px 18px', cursor: 'pointer', fontWeight: 700, fontSize: 15,
                 transition: 'all 0.15s',
               }}
@@ -44,7 +44,7 @@ export default function HasletHomeownerGuide2026() {
         </div>
 
         {active && (
-          <div style={{ background: '#111f38', borderRadius: 14, padding: '24px', borderLeft: '4px solid #F5E642′ }}>
+          <div style={{ background: '#111f38', borderRadius: 14, padding: '24px', borderLeft: '4px solid #F5E642' }}>
             <h2 style={{ color: '#F5E642', marginBottom: 18, fontSize: 20 }}>
               {active.label} — Haslet Maintenance Checklist
             </h2>

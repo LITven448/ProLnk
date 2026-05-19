@@ -29,7 +29,7 @@ export default function HomeInspectionCostGuide() {
           DFW Home Inspection Cost Guide
         </h1>
         <p style={{ fontSize: 18, color: '#94a3b8', maxWidth: 580, margin: '0 auto' }}>
-          What You'll Pay and What You’ll Get
+          What You'll Pay and What You'll Get
         </p>
       </div>
 
@@ -40,11 +40,11 @@ export default function HomeInspectionCostGuide() {
           <h2 style={{ fontSize: 22, fontWeight: 700, color: '#4ade80', margin: '0 0 20px' }}>📋 Standard Inspection Costs</h2>
           <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
             {[
-              { label: 'Basic general inspection (2,000–3,000 sqft)', cost: '$350–550′ },
-              { label: 'Large home (4,000+ sqft)', cost: '$550–750′ },
-              { label: 'Older home (pre-1960)', cost: '+$100–200′ },
-              { label: 'Condo inspection', cost: '$250–400′ },
-              { label: 'New construction', cost: '$350–500′ },
+              { label: 'Basic general inspection (2,000–3,000 sqft)', cost: '$350–550' },
+              { label: 'Large home (4,000+ sqft)', cost: '$550–750' },
+              { label: 'Older home (pre-1960)', cost: '+$100–200' },
+              { label: 'Condo inspection', cost: '$250–400' },
+              { label: 'New construction', cost: '$350–500' },
             ].map(item => (
               <div key={item.label} style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', background: '#0f172a', borderRadius: 10, padding: '14px 20px' }}>
                 <span style={{ color: '#cbd5e1', fontSize: 15 }}>{item.label}</span>
@@ -95,7 +95,7 @@ export default function HomeInspectionCostGuide() {
                   <div style={{ fontWeight: 700, color: '#f1f5f9', marginBottom: 4 }}>{item.home}</div>
                   <div style={{ color: '#64748b', fontSize: 14 }}>{item.detail}</div>
                 </div>
-                <div style={{ fontSize: 22, fontWeight: 800, color: '#4ade80′ }}>{item.range}</div>
+                <div style={{ fontSize: 22, fontWeight: 800, color: '#4ade80' }}>{item.range}</div>
               </div>
             ))}
           </div>
@@ -121,16 +121,16 @@ export default function HomeInspectionCostGuide() {
           <div style={{ display: 'flex', flexDirection: 'column', gap: 24 }}>
             <div>
               <label style={{ display: 'block', color: '#94a3b8', marginBottom: 8, fontWeight: 600 }}>
-                Home size: <span style={{ color: '#4ade80′ }}>{sqft.toLocaleString()} sqft</span>
+                Home size: <span style={{ color: '#4ade80' }}>{sqft.toLocaleString()} sqft</span>
               </label>
-              <input type="range" min={800} max={6000} step={100} value={sqft} onChange={e => setSqft(Number(e.target.value))} style={{ width: '100%', accentColor: '#4ade80′ }} />
+              <input type="range" min={800} max={6000} step={100} value={sqft} onChange={e => setSqft(Number(e.target.value))} style={{ width: '100%', accentColor: '#4ade80' }} />
             </div>
 
             <div>
               <label style={{ display: 'block', color: '#94a3b8', marginBottom: 8, fontWeight: 600 }}>
-                Year built: <span style={{ color: '#4ade80′ }}>{yearBuilt}</span>
+                Year built: <span style={{ color: '#4ade80' }}>{yearBuilt}</span>
               </label>
-              <input type="range" min={1920} max={2025} value={yearBuilt} onChange={e => setYearBuilt(Number(e.target.value))} style={{ width: '100%', accentColor: '#4ade80′ }} />
+              <input type="range" min={1920} max={2025} value={yearBuilt} onChange={e => setYearBuilt(Number(e.target.value))} style={{ width: '100%', accentColor: '#4ade80' }} />
             </div>
 
             <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
@@ -150,7 +150,7 @@ export default function HomeInspectionCostGuide() {
 
             <div style={{ background: 'linear-gradient(135deg, #166534, #14532d)', borderRadius: 14, padding: '24px 28px', textAlign: 'center', marginTop: 8 }}>
               <div style={{ color: '#86efac', fontSize: 14, marginBottom: 6 }}>Estimated Total</div>
-              <div style={{ fontSize: 40, fontWeight: 900, color: '#4ade80′ }}>${total.toLocaleString()}</div>
+              <div style={{ fontSize: 40, fontWeight: 900, color: '#4ade80' }}>${total.toLocaleString()}</div>
               <div style={{ color: '#86efac', fontSize: 13, marginTop: 6 }}>Midpoint estimate — actual bids may vary ±15%</div>
             </div>
           </div>

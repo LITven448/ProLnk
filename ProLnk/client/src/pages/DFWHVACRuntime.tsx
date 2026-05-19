@@ -36,7 +36,7 @@ export default function DFWHVACRuntime() {
   }
 
   return (
-    <div style={{ background: '#0A1628', minHeight: '100vh', padding: '32px 16px', fontFamily: 'sans-serif', color: '#E8EDF5′ }}>
+    <div style={{ background: '#0A1628', minHeight: '100vh', padding: '32px 16px', fontFamily: 'sans-serif', color: '#E8EDF5' }}>
       <div style={{ maxWidth: 760, margin: '0 auto' }}>
         <div style={{ fontSize: 36, marginBottom: 8 }}>⏱️</div>
         <h1 style={{ color: '#F5E642', fontSize: 28, fontWeight: 700, marginBottom: 8 }}>
@@ -61,7 +61,7 @@ export default function DFWHVACRuntime() {
         <h2 style={{ color: '#F5E642', fontSize: 18, marginBottom: 16 }}>Estimate Your Home's Annual Runtime</h2>
         <div style={{ background: '#1A2B45', borderRadius: 8, padding: 24, marginBottom: 24 }}>
           <label style={{ display: 'block', marginBottom: 16 }}>
-            <div style={{ marginBottom: 6, fontSize: 14, color: '#9AAFC4′ }}>DFW home size</div>
+            <div style={{ marginBottom: 6, fontSize: 14, color: '#9AAFC4' }}>DFW home size</div>
             <select value={size} onChange={e => setSize(e.target.value)}
               style={{ width: '100%', padding: '10px', borderRadius: 6, background: '#0A1628', color: '#E8EDF5', border: '1px solid #2A4A6B' }}>
               <option value="">Select home size</option>
@@ -69,7 +69,7 @@ export default function DFWHVACRuntime() {
             </select>
           </label>
           <label style={{ display: 'block', marginBottom: 20 }}>
-            <div style={{ marginBottom: 6, fontSize: 14, color: '#9AAFC4′ }}>AC efficiency rating</div>
+            <div style={{ marginBottom: 6, fontSize: 14, color: '#9AAFC4' }}>AC efficiency rating</div>
             <select value={efficiency} onChange={e => setEfficiency(e.target.value)}
               style={{ width: '100%', padding: '10px', borderRadius: 6, background: '#0A1628', color: '#E8EDF5', border: '1px solid #2A4A6B' }}>
               <option value="">Select efficiency</option>
@@ -83,7 +83,7 @@ export default function DFWHVACRuntime() {
           {result && (
             <div style={{ marginTop: 20, background: '#0A1628', borderRadius: 8, padding: 20 }}>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12, marginBottom: 16 }}>
-                <div style={{ background: '#1A2B45', borderRadius: 8, padding: 14, textAlign: 'center', gridColumn: '1 / -1′ }}>
+                <div style={{ background: '#1A2B45', borderRadius: 8, padding: 14, textAlign: 'center', gridColumn: '1 / -1' }}>
                   <div style={{ color: '#9AAFC4', fontSize: 13 }}>Estimated Annual Runtime</div>
                   <div style={{ color: '#F5E642', fontSize: 32, fontWeight: 700 }}>{result.annual.toLocaleString()} hrs/yr</div>
                 </div>
@@ -99,7 +99,7 @@ export default function DFWHVACRuntime() {
                   </div>
                 ))}
               </div>
-              <div style={{ background: '#1A2B45', borderRadius: 8, padding: 12, fontSize: 14, color: '#9AAFC4′ }}>
+              <div style={{ background: '#1A2B45', borderRadius: 8, padding: 12, fontSize: 14, color: '#9AAFC4' }}>
                 ⚙️ Component wear: {result.wearRate}
               </div>
             </div>

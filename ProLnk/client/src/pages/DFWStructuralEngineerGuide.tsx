@@ -4,32 +4,32 @@ const styles = {
   page: { backgroundColor: '#0A1628', minHeight: '100vh', color: '#ffffff', fontFamily: 'system-ui, sans-serif', padding: '32px 24px' },
   container: { maxWidth: '860px', margin: '0 auto' },
   badge: { backgroundColor: '#1a2d4a', color: '#F5E642', padding: '4px 12px', borderRadius: '20px', fontSize: '12px', fontWeight: '700', display: 'inline-block', marginBottom: '16px' },
-  h1: { fontSize: '36px', fontWeight: '800', marginBottom: '12px', lineHeight: '1.2′ },
-  accent: { color: '#F5E642′ },
-  lead: { color: '#94a3b8', fontSize: '18px', marginBottom: '40px', lineHeight: '1.6′ },
+  h1: { fontSize: '36px', fontWeight: '800', marginBottom: '12px', lineHeight: '1.2' },
+  accent: { color: '#F5E642' },
+  lead: { color: '#94a3b8', fontSize: '18px', marginBottom: '40px', lineHeight: '1.6' },
   card: { backgroundColor: '#111f38', border: '1px solid #1e3a5f', borderRadius: '12px', padding: '24px', marginBottom: '24px' },
   cardTitle: { fontSize: '20px', fontWeight: '700', marginBottom: '16px', display: 'flex', alignItems: 'center', gap: '10px' },
   grid2: { display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '16px', marginBottom: '24px' },
   statBox: { backgroundColor: '#0d1a2e', borderRadius: '10px', padding: '20px', textAlign: 'center' as const },
-  statNum: { fontSize: '32px', fontWeight: '800', color: '#F5E642′ },
+  statNum: { fontSize: '32px', fontWeight: '800', color: '#F5E642' },
   statLabel: { color: '#94a3b8', fontSize: '13px', marginTop: '4px' },
   list: { listStyle: 'none', padding: 0, margin: 0 },
   listItem: { padding: '10px 0', borderBottom: '1px solid #1e3a5f', color: '#cbd5e1', display: 'flex', gap: '10px', fontSize: '14px' },
   label: { color: '#94a3b8', fontSize: '14px', marginBottom: '8px', display: 'block' },
   select: { width: '100%', backgroundColor: '#0d1a2e', color: '#ffffff', border: '1px solid #1e3a5f', borderRadius: '8px', padding: '10px 14px', fontSize: '14px', marginBottom: '16px' },
   btn: { backgroundColor: '#F5E642', color: '#0A1628', border: 'none', borderRadius: '8px', padding: '12px 28px', fontSize: '15px', fontWeight: '700', cursor: 'pointer', width: '100%' },
-  result: { backgroundColor: '#0d1a2e', borderRadius: '10px', padding: '20px', marginTop: '16px', border: '2px solid #F5E642′ },
+  result: { backgroundColor: '#0d1a2e', borderRadius: '10px', padding: '20px', marginTop: '16px', border: '2px solid #F5E642' },
   warnNote: { backgroundColor: '#2d1000', border: '1px solid #9a3412', borderRadius: '8px', padding: '14px 18px', color: '#fdba74', fontSize: '14px', marginTop: '16px' },
   greenNote: { backgroundColor: '#0d2e1a', border: '1px solid #166534', borderRadius: '8px', padding: '14px 18px', color: '#86efac', fontSize: '14px', marginTop: '16px' },
   roleRow: { display: 'flex', gap: '16px', marginBottom: '16px' },
   roleBox: { flex: 1, backgroundColor: '#0d1a2e', borderRadius: '10px', padding: '16px' },
   roleTitle: { fontWeight: '700', marginBottom: '10px', fontSize: '14px' },
-  reportItem: { backgroundColor: '#0d1a2e', borderRadius: '8px', padding: '14px', marginBottom: '10px', borderLeft: '3px solid #F5E642′ },
-  reportTitle: { fontWeight: '700', fontSize: '14px', marginBottom: '4px', color: '#F5E642′ },
+  reportItem: { backgroundColor: '#0d1a2e', borderRadius: '8px', padding: '14px', marginBottom: '10px', borderLeft: '3px solid #F5E642' },
+  reportTitle: { fontWeight: '700', fontSize: '14px', marginBottom: '4px', color: '#F5E642' },
   reportDesc: { color: '#94a3b8', fontSize: '13px' },
   needTag: { fontSize: '22px', fontWeight: '800', marginBottom: '8px' },
   needYes: { color: '#22c55e' },
-  needNo: { color: '#94a3b8′ },
+  needNo: { color: '#94a3b8' },
   needMaybe: { color: '#f59e0b' },
 };
 
@@ -96,7 +96,7 @@ export default function DFWStructuralEngineerGuide() {
             {whenToHire.map((item, i) => (
               <li key={i} style={{ ...styles.listItem, flexDirection: 'column' as const, gap: '4px' }}>
                 <div style={{ fontWeight: '700', color: '#ffffff' }}>{item.icon} {item.reason}</div>
-                <div style={{ color: '#94a3b8′ }}>{item.detail}</div>
+                <div style={{ color: '#94a3b8' }}>{item.detail}</div>
               </li>
             ))}
           </ul>
@@ -156,7 +156,7 @@ export default function DFWStructuralEngineerGuide() {
             <div style={styles.result}>
               <div style={{ ...(result.need === 'yes' ? styles.needYes : result.need === 'maybe' ? styles.needMaybe : styles.needNo), ...styles.needTag }}>{result.label}</div>
               {result.cost !== 'N/A' && <div style={{ color: '#86efac', fontWeight: '700', fontSize: '15px', marginBottom: '12px' }}>💰 Typical Cost: {result.cost}</div>}
-              <div style={{ color: '#94a3b8', fontSize: '14px', lineHeight: '1.6′ }}><strong style={{ color: '#F5E642' }}>What to expect:</strong> {result.expect}</div>
+              <div style={{ color: '#94a3b8', fontSize: '14px', lineHeight: '1.6' }}><strong style={{ color: '#F5E642' }}>What to expect:</strong> {result.expect}</div>
               {result.need === 'yes' && <div style={styles.warnNote}>⚠️ Do not proceed with construction or repairs until you have a PE report in hand. Permits cannot be issued without stamped drawings where required.</div>}
             </div>
           )}

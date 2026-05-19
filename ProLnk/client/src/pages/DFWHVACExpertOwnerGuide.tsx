@@ -67,8 +67,8 @@ export default function DFWHVACExpertOwnerGuide() {
                 key={m.id}
                 onClick={() => setSelected(m.id)}
                 style={{
-                  background: selected === m.id ? '#F5E642′ : '#1a2f55',
-                  color: selected === m.id ? '#0A1628′ : '#fff',
+                  background: selected === m.id ? '#F5E642' : '#1a2f55',
+                  color: selected === m.id ? '#0A1628' : '#fff',
                   border: 'none', borderRadius: 8, padding: '1rem', cursor: 'pointer',
                   fontWeight: 600, textAlign: 'left',
                 }}

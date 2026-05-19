@@ -47,9 +47,9 @@ export default function DFWProLnkPartnerDay1() {
             {backgrounds.map(b => (
               <button key={b} onClick={() => setBg(b)}
                 style={{ padding: '10px 14px', borderRadius: 8, border: '2px solid',
-                  borderColor: bg === b ? '#F5E642′ : '#1e3a5f',
+                  borderColor: bg === b ? '#F5E642' : '#1e3a5f',
                   background: bg === b ? 'rgba(245,230,66,0.12)' : 'transparent',
-                  color: bg === b ? '#F5E642′ : '#94a3b8', cursor: ’pointer', fontSize: 13, textAlign: 'left' }}>
+                  color: bg === b ? '#F5E642' : '#94a3b8', cursor: 'pointer', fontSize: 13, textAlign: 'left' }}>
                 {b}
               </button>
             ))}
@@ -62,9 +62,9 @@ export default function DFWProLnkPartnerDay1() {
             {networkSizes.map(n => (
               <button key={n} onClick={() => setNetwork(n)}
                 style={{ padding: '10px 14px', borderRadius: 8, border: '2px solid',
-                  borderColor: network === n ? '#F5E642′ : '#1e3a5f',
+                  borderColor: network === n ? '#F5E642' : '#1e3a5f',
                   background: network === n ? 'rgba(245,230,66,0.12)' : 'transparent',
-                  color: network === n ? '#F5E642′ : '#94a3b8', cursor: ’pointer', fontSize: 13 }}>
+                  color: network === n ? '#F5E642' : '#94a3b8', cursor: 'pointer', fontSize: 13 }}>
                 {n}
               </button>
             ))}
@@ -77,9 +77,9 @@ export default function DFWProLnkPartnerDay1() {
             {dfwAreas.map(a => (
               <button key={a} onClick={() => setArea(a)}
                 style={{ padding: '10px 14px', borderRadius: 8, border: '2px solid',
-                  borderColor: area === a ? '#F5E642′ : '#1e3a5f',
+                  borderColor: area === a ? '#F5E642' : '#1e3a5f',
                   background: area === a ? 'rgba(245,230,66,0.12)' : 'transparent',
-                  color: area === a ? '#F5E642′ : '#94a3b8', cursor: ’pointer', fontSize: 13 }}>
+                  color: area === a ? '#F5E642' : '#94a3b8', cursor: 'pointer', fontSize: 13 }}>
                 {a}
               </button>
             ))}
@@ -87,8 +87,8 @@ export default function DFWProLnkPartnerDay1() {
         </div>
 
         <button onClick={() => setGenerated(true)} disabled={!ready}
-          style={{ width: '100%', padding: '16px', background: ready ? '#F5E642′ : '#1e3a5f',
-            color: ready ? '#0A1628′ : '#4a6080', border: ’none', borderRadius: 12,
+          style={{ width: '100%', padding: '16px', background: ready ? '#F5E642' : '#1e3a5f',
+            color: ready ? '#0A1628' : '#4a6080', border: 'none', borderRadius: 12,
             fontWeight: 700, fontSize: 16, cursor: ready ? 'pointer' : 'not-allowed' }}>
           {ready ? 'Generate My Day 1 Plan →' : 'Answer all 3 questions to continue'}
         </button>
@@ -97,7 +97,7 @@ export default function DFWProLnkPartnerDay1() {
           <div style={{ marginTop: 24 }}>
             <div style={{ background: '#0f1f3a', borderRadius: 16, padding: 24, marginBottom: 16 }}>
               <div style={{ color: '#F5E642', fontWeight: 700, marginBottom: 16 }}>🌟 Your Personalized Day 1 Plan — {area}</div>
-              <div style={{ background: 'rgba(245,230,66,0.1)', borderRadius: 10, padding: '12px 16px', marginBottom: 20, fontSize: 14, color: '#F5E642′ }}>
+              <div style={{ background: 'rgba(245,230,66,0.1)', borderRadius: 10, padding: '12px 16px', marginBottom: 20, fontSize: 14, color: '#F5E642' }}>
                 💡 {bgActions[bg] || bgActions['Other']}
               </div>
               {baseActions.map((a, i) => (
@@ -105,14 +105,14 @@ export default function DFWProLnkPartnerDay1() {
                   <div style={{ fontSize: 24, flexShrink: 0 }}>{a.icon}</div>
                   <div>
                     <div style={{ fontWeight: 700, marginBottom: 4 }}>{a.title}</div>
-                    <div style={{ fontSize: 13, color: '#94a3b8′ }}>{a.desc}</div>
+                    <div style={{ fontSize: 13, color: '#94a3b8' }}>{a.desc}</div>
                   </div>
                 </div>
               ))}
             </div>
             <div style={{ background: '#0f1f3a', borderRadius: 12, padding: '16px 20px' }}>
               <div style={{ fontWeight: 700, color: '#F5E642', marginBottom: 8 }}>🎯 Your Day 1 Target</div>
-              <div style={{ fontSize: 14, color: '#cbd5e1′ }}>
+              <div style={{ fontSize: 14, color: '#cbd5e1' }}>
                 With a {network} network in {area}, aim to identify <strong style={{ color: 'white' }}>3 homeowner prospects</strong> today.
                 Even one referral in week 1 puts you ahead of 80% of new partners.
               </div>

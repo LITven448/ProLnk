@@ -18,7 +18,7 @@ function getStrategy(price: string, finding: string) {
   if (finding === 'none') return { action: 'Proceed to closing', savings: '$0', note: 'Clean inspection — no leverage needed. Consider waiving repair requests to strengthen goodwill.' };
   if (finding === 'minor') return { action: 'Request repair credit', savings: '$500–$3,000', note: 'Minor items rarely justify full renegotiation. Ask for closing cost credit instead of repairs.' };
   if (finding === 'moderate') {
-    const amt = price === 'under400′ ? '$5,000–$12,000' : price === '400to600' ? '$8,000–$18,000' : '$12,000–$25,000';
+    const amt = price === 'under400' ? '$5,000–$12,000' : price === '400to600' ? '$8,000–$18,000' : '$12,000–$25,000';
     return { action: 'Negotiate price reduction or repair credit', savings: amt, note: 'Get contractor bids during option period. Use documented estimates as negotiation leverage.' };
   }
   return { action: 'Terminate or renegotiate significantly', savings: 'Varies — potentially $30,000+', note: 'Major structural issues in DFW often justify termination. You lose only the option fee ($100–$300 typical). Keep your earnest money.' };
@@ -52,11 +52,11 @@ export default function DFWOptionPeriodGuide() {
         </div>
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 20, marginBottom: 28 }}>
           <div style={{ background: '#fff', border: '1px solid #ddd', borderRadius: 12, padding: 24 }}>
-            <h3 style={{ fontSize: 17, fontWeight: 700, marginBottom: 12, color: '#0A1628′ }}>💰 Option Fee</h3>
+            <h3 style={{ fontSize: 17, fontWeight: 700, marginBottom: 12, color: '#0A1628' }}>💰 Option Fee</h3>
             <p style={{ color: '#444', lineHeight: 1.7, fontSize: 14 }}>Typically $100–$300 in DFW. Non-refundable regardless of outcome. Buys you the right to terminate for any reason during the option period. Negotiate this amount — it can go higher in competitive markets.</p>
           </div>
           <div style={{ background: '#fff', border: '1px solid #ddd', borderRadius: 12, padding: 24 }}>
-            <h3 style={{ fontSize: 17, fontWeight: 700, marginBottom: 12, color: '#0A1628′ }}>🏦 Earnest Money</h3>
+            <h3 style={{ fontSize: 17, fontWeight: 700, marginBottom: 12, color: '#0A1628' }}>🏦 Earnest Money</h3>
             <p style={{ color: '#444', lineHeight: 1.7, fontSize: 14 }}>Typically $2,000–$10,000+ in DFW. Held by title company. Protected during option period — if you terminate before expiration, you get it back. At risk after option period expires.</p>
           </div>
         </div>
@@ -77,14 +77,14 @@ export default function DFWOptionPeriodGuide() {
           </div>
         </div>
         <div style={{ background: '#0A1628', borderRadius: 12, padding: 28, marginBottom: 28, color: '#fff' }}>
-          <h2 style={{ fontSize: 20, fontWeight: 700, marginBottom: 16, color: '#F5E642′ }}>🧮 Negotiation Strategy Calculator</h2>
+          <h2 style={{ fontSize: 20, fontWeight: 700, marginBottom: 16, color: '#F5E642' }}>🧮 Negotiation Strategy Calculator</h2>
           <p style={{ color: '#ccc', marginBottom: 20 }}>Offer price plus inspection findings → negotiation strategy and potential savings</p>
           <div style={{ marginBottom: 20 }}>
             <label style={{ display: 'block', fontWeight: 600, marginBottom: 10 }}>Offer Price Range</label>
             <div style={{ display: 'flex', flexWrap: 'wrap', gap: 10 }}>
               {offerPrices.map(p => (
                 <button key={p.id} onClick={() => { setPrice(p.id); setShowResult(false); }}
-                  style={{ padding: '8px 16px', borderRadius: 8, border: '2px solid', borderColor: price === p.id ? '#F5E642′ : '#444', background: price === p.id ? '#F5E642' : ’transparent', color: price === p.id ? '#0A1628′ : '#fff', fontWeight: 600, cursor: ’pointer' }}>
+                  style={{ padding: '8px 16px', borderRadius: 8, border: '2px solid', borderColor: price === p.id ? '#F5E642' : '#444', background: price === p.id ? '#F5E642' : 'transparent', color: price === p.id ? '#0A1628' : '#fff', fontWeight: 600, cursor: 'pointer' }}>
                   {p.label}
                 </button>
               ))}
@@ -95,14 +95,14 @@ export default function DFWOptionPeriodGuide() {
             <div style={{ display: 'flex', flexWrap: 'wrap', gap: 10 }}>
               {findings.map(f => (
                 <button key={f.id} onClick={() => { setFinding(f.id); setShowResult(false); }}
-                  style={{ padding: '8px 16px', borderRadius: 8, border: '2px solid', borderColor: finding === f.id ? '#F5E642′ : '#444', background: finding === f.id ? '#F5E642' : ’transparent', color: finding === f.id ? '#0A1628′ : '#fff', fontWeight: 600, cursor: ’pointer' }}>
+                  style={{ padding: '8px 16px', borderRadius: 8, border: '2px solid', borderColor: finding === f.id ? '#F5E642' : '#444', background: finding === f.id ? '#F5E642' : 'transparent', color: finding === f.id ? '#0A1628' : '#fff', fontWeight: 600, cursor: 'pointer' }}>
                   {f.label}
                 </button>
               ))}
             </div>
           </div>
           <button onClick={() => setShowResult(true)} disabled={!price || !finding}
-            style={{ background: price && finding ? '#F5E642′ : '#333', color: '#0A1628', border: ’none', borderRadius: 8, padding: '12px 28px', fontWeight: 700, cursor: price && finding ? 'pointer' : 'not-allowed', fontSize: 16 }}>
+            style={{ background: price && finding ? '#F5E642' : '#333', color: '#0A1628', border: 'none', borderRadius: 8, padding: '12px 28px', fontWeight: 700, cursor: price && finding ? 'pointer' : 'not-allowed', fontSize: 16 }}>
             Get My Strategy →
           </button>
           {showResult && result && (
@@ -115,7 +115,7 @@ export default function DFWOptionPeriodGuide() {
         </div>
         <div style={{ background: '#fff', border: '1px solid #ddd', borderRadius: 12, padding: 28 }}>
           <h2 style={{ fontSize: 18, fontWeight: 700, marginBottom: 12 }}>⚡ DFW-Specific Option Period Tips</h2>
-          <ul style={{ paddingLeft: 20, lineHeight: 2, color: '#444′ }}>
+          <ul style={{ paddingLeft: 20, lineHeight: 2, color: '#444' }}>
             <li>DFW clay soil causes foundation movement — <strong>always get a foundation specialist</strong></li>
             <li>HVAC systems in DFW run hard — check age and service history every time</li>
             <li>Pool equipment inspection is separate — do not skip if the home has a pool</li>

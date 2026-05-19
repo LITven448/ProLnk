@@ -69,13 +69,13 @@ export default function DFWSmartHVACControlGuide() {
       <div style={{ maxWidth: 800, margin: '0 auto' }}>
         <div style={{ textAlign: 'center', marginBottom: '2rem' }}>
           <div style={{ fontSize: '2.5rem' }}>🌡️</div>
-          <h1 style={{ color: '#F5E642', fontSize: '1.8rem', margin: '0.5rem 0′ }}>DFW Smart HVAC Control Guide</h1>
+          <h1 style={{ color: '#F5E642', fontSize: '1.8rem', margin: '0.5rem 0' }}>DFW Smart HVAC Control Guide</h1>
           <p style={{ color: '#94A3B8', margin: 0 }}>Beat ERCOT peak pricing and DFW heat with intelligent climate control</p>
         </div>
 
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: '1rem', marginBottom: '2rem' }}>
           {FEATURES.map(f => (
-            <div key={f.title} style={{ background: '#0F2240', borderRadius: 10, padding: '1rem', borderTop: '3px solid #F5E642′ }}>
+            <div key={f.title} style={{ background: '#0F2240', borderRadius: 10, padding: '1rem', borderTop: '3px solid #F5E642' }}>
               <div style={{ fontSize: '1.4rem', marginBottom: '0.4rem' }}>{f.icon}</div>
               <div style={{ fontWeight: 700, color: '#F5E642', fontSize: '0.88rem', marginBottom: '0.3rem' }}>{f.title}</div>
               <div style={{ color: '#94A3B8', fontSize: '0.82rem' }}>{f.desc}</div>
@@ -91,9 +91,9 @@ export default function DFWSmartHVACControlGuide() {
             {HVAC_SETUPS.map(s => (
               <button key={s} onClick={() => setSetup(s)} style={{
                 padding: '0.4rem 0.9rem', borderRadius: 20, border: '2px solid',
-                borderColor: setup === s ? '#F5E642′ : '#1E3A5F',
-                background: setup === s ? '#F5E642′ : ’transparent',
-                color: setup === s ? '#0A1628′ : '#94A3B8',
+                borderColor: setup === s ? '#F5E642' : '#1E3A5F',
+                background: setup === s ? '#F5E642' : 'transparent',
+                color: setup === s ? '#0A1628' : '#94A3B8',
                 cursor: 'pointer', fontSize: '0.85rem', fontWeight: 600,
               }}>{s}</button>
             ))}
@@ -104,23 +104,23 @@ export default function DFWSmartHVACControlGuide() {
             {SCHEDULES.map(s => (
               <button key={s} onClick={() => setSchedule(s)} style={{
                 padding: '0.4rem 0.9rem', borderRadius: 20, border: '2px solid',
-                borderColor: schedule === s ? '#F5E642′ : '#1E3A5F',
-                background: schedule === s ? '#F5E642′ : ’transparent',
-                color: schedule === s ? '#0A1628′ : '#94A3B8',
+                borderColor: schedule === s ? '#F5E642' : '#1E3A5F',
+                background: schedule === s ? '#F5E642' : 'transparent',
+                color: schedule === s ? '#0A1628' : '#94A3B8',
                 cursor: 'pointer', fontSize: '0.85rem', fontWeight: 600,
               }}>{s}</button>
             ))}
           </div>
 
           <button onClick={() => setShowPlan(true)} disabled={!ready} style={{
-            background: ready ? '#F5E642′ : '#1E3A5F', color: '#0A1628',
+            background: ready ? '#F5E642' : '#1E3A5F', color: '#0A1628',
             border: 'none', borderRadius: 8, padding: '0.75rem 2rem',
             fontWeight: 700, fontSize: '1rem', cursor: ready ? 'pointer' : 'not-allowed',
           }}>Get My HVAC Plan →</button>
         </div>
 
         {showPlan && plan && (
-          <div style={{ background: '#0F2240', borderRadius: 12, padding: '1.5rem', marginBottom: '1.5rem', borderLeft: '4px solid #F5E642′ }}>
+          <div style={{ background: '#0F2240', borderRadius: 12, padding: '1.5rem', marginBottom: '1.5rem', borderLeft: '4px solid #F5E642' }}>
             <h3 style={{ color: '#F5E642', marginTop: 0 }}>Your DFW Smart HVAC Setup</h3>
             <div style={{ marginBottom: '0.75rem' }}>
               <span style={{ color: '#94A3B8', fontSize: '0.85rem' }}>Recommended Thermostat</span>

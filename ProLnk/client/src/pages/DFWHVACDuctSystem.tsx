@@ -15,7 +15,7 @@ const issues = [
   { issue: 'Air leaks at joints', priority: 'HIGH', repair: 'Apply mastic sealant to all joints. Do not use standard duct tape — it fails in DFW attic heat.', cost: '$300–$900 whole system' },
   { issue: 'Inadequate insulation on ducts', priority: 'MEDIUM', repair: 'Upgrade to R-8 insulation wrap minimum. R-11 recommended for DFW attic runs over 10 feet.', cost: '$500–$2,000 whole system' },
   { issue: 'Undersized duct for room CFM need', priority: 'MEDIUM', repair: 'Manual D calculation needed. Upsize duct or add parallel branch run.', cost: '$400–$1,200 per zone' },
-  { issue: 'Condensation on duct exterior', priority: 'LOW', repair: 'Inspect insulation integrity. Condensation indicates vapor barrier failure — common after DFW hail damage.', cost: '$200–$600′ },
+  { issue: 'Condensation on duct exterior', priority: 'LOW', repair: 'Inspect insulation integrity. Condensation indicates vapor barrier failure — common after DFW hail damage.', cost: '$200–$600' },
 ];
 
 export default function DFWHVACDuctSystem() {
@@ -24,7 +24,7 @@ export default function DFWHVACDuctSystem() {
   const [issueIdx, setIssueIdx] = useState<number | null>(null);
 
   const selected = ductTypes.find(d => d.id === activeType);
-  const priorityColor = (p: string) => p === 'URGENT' ? '#FF4444′ : p === ’HIGH' ? '#FF8C00′ : p === ’MEDIUM' ? '#F5E642′ : '#4ADE80';
+  const priorityColor = (p: string) => p === 'URGENT' ? '#FF4444' : p === 'HIGH' ? '#FF8C00' : p === 'MEDIUM' ? '#F5E642' : '#4ADE80';
 
   return (
     <div style={{ minHeight: '100vh', background: '#0A1628', color: '#E8EDF5', fontFamily: 'system-ui, sans-serif', padding: '2rem' }}>
@@ -38,7 +38,7 @@ export default function DFWHVACDuctSystem() {
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))', gap: '1rem', marginBottom: '2rem' }}>
           {ductTypes.map(d => (
             <button key={d.id} onClick={() => setActiveType(activeType === d.id ? null : d.id)}
-              style={{ background: activeType === d.id ? '#F5E642′ : '#0F2140', border: `2px solid ${activeType === d.id ? '#F5E642' : '#1E3A5F'}`, borderRadius: 12, padding: '1.25rem 1rem', cursor: ’pointer', textAlign: 'left', color: activeType === d.id ? '#0A1628′ : '#E8EDF5' }}>
+              style={{ background: activeType === d.id ? '#F5E642' : '#0F2140', border: `2px solid ${activeType === d.id ? '#F5E642' : '#1E3A5F'}`, borderRadius: 12, padding: '1.25rem 1rem', cursor: 'pointer', textAlign: 'left', color: activeType === d.id ? '#0A1628' : '#E8EDF5' }}>
               <div style={{ fontSize: '2rem', marginBottom: '0.5rem' }}>{d.icon}</div>
               <div style={{ fontWeight: 700, fontSize: '0.9rem' }}>{d.name}</div>
             </button>
@@ -57,7 +57,7 @@ export default function DFWHVACDuctSystem() {
         )}
 
         <div style={{ marginBottom: '2rem' }}>
-          <label style={{ display: 'block', fontWeight: 600, marginBottom: '0.5rem', color: '#CBD5E1′ }}>Your DFW Location</label>
+          <label style={{ display: 'block', fontWeight: 600, marginBottom: '0.5rem', color: '#CBD5E1' }}>Your DFW Location</label>
           <select value={location} onChange={e => setLocation(e.target.value)}
             style={{ width: '100%', background: '#0F2140', border: '1px solid #1E3A5F', borderRadius: 8, padding: '0.75rem 1rem', color: '#E8EDF5', fontSize: '1rem' }}>
             <option value="">Select your area...</option>
@@ -75,12 +75,12 @@ export default function DFWHVACDuctSystem() {
               style={{ background: '#0F2140', border: `1px solid ${issueIdx === i ? '#F5E642' : '#1E3A5F'}`, borderRadius: 10, padding: '1rem 1.25rem', cursor: 'pointer' }}>
               <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
                 <span style={{ background: priorityColor(issue.priority), color: '#0A1628', fontSize: '0.7rem', fontWeight: 800, padding: '0.2rem 0.5rem', borderRadius: 4 }}>{issue.priority}</span>
-                <span style={{ fontWeight: 600, color: issueIdx === i ? '#F5E642′ : '#E8EDF5' }}>{issue.issue}</span>
+                <span style={{ fontWeight: 600, color: issueIdx === i ? '#F5E642' : '#E8EDF5' }}>{issue.issue}</span>
               </div>
               {issueIdx === i && (
                 <div style={{ marginTop: '0.75rem', fontSize: '0.9rem', lineHeight: 1.6 }}>
                   <div style={{ color: '#CBD5E1', marginBottom: '0.4rem' }}><span style={{ color: '#F5E642', fontWeight: 700 }}>Repair: </span>{issue.repair}</div>
-                  <div style={{ color: '#F5E642', fontWeight: 600 }}>Cost: <span style={{ color: '#94A3B8′ }}>{issue.cost}</span></div>
+                  <div style={{ color: '#F5E642', fontWeight: 600 }}>Cost: <span style={{ color: '#94A3B8' }}>{issue.cost}</span></div>
                 </div>
               )}
             </div>

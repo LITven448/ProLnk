@@ -28,12 +28,12 @@ export default function DFWIceMakerWaterLineGuide() {
         <p style={{ color: '#8B9CC8', marginBottom: 32, fontSize: 16 }}>DFW hard water destroys ice makers without filtration. The right line + filter extends ice maker life by years.</p>
 
         <div style={{ background: '#111E35', borderRadius: 12, padding: 24, marginBottom: 24, border: '1px solid #1E2D4A' }}>
-          <h2 style={{ fontSize: 18, fontWeight: 700, marginBottom: 16, color: '#F5E642′ }}>⚠️ DFW Ice Maker Facts</h2>
+          <h2 style={{ fontSize: 18, fontWeight: 700, marginBottom: 16, color: '#F5E642' }}>⚠️ DFW Ice Maker Facts</h2>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12 }}>
             {[['🧊 Hard Water Damage', 'DFW calcium scales ice maker coils — shortens life from 10yr to 3yr'],['🔗 Line Type Matters', 'Plastic lines crack; copper corrodes — braided stainless is safest in DFW'],['🔧 Shutoff Required', 'Always install angle stop shutoff valve — required for service access'],['💧 Filtration Critical', 'DFW water with 300+ mg/L hardness must be filtered at source']].map(([label, val]) => (
               <div key={label} style={{ background: '#0A1628', borderRadius: 8, padding: 14 }}>
                 <div style={{ fontSize: 13, fontWeight: 700, color: '#F5E642', marginBottom: 4 }}>{label}</div>
-                <div style={{ fontSize: 13, color: '#8B9CC8′ }}>{val}</div>
+                <div style={{ fontSize: 13, color: '#8B9CC8' }}>{val}</div>
               </div>
             ))}
           </div>
@@ -78,7 +78,7 @@ export default function DFWIceMakerWaterLineGuide() {
         )}
 
         <div style={{ background: '#111E35', borderRadius: 12, padding: 24, border: '1px solid #1E2D4A' }}>
-          <h2 style={{ fontSize: 16, fontWeight: 700, marginBottom: 12, color: '#F5E642′ }}>💡 DFW Pro Tips</h2>
+          <h2 style={{ fontSize: 16, fontWeight: 700, marginBottom: 12, color: '#F5E642' }}>💡 DFW Pro Tips</h2>
           {['Cloudy or small ice cubes = DFW hard water scaling — filter now before full failure','Never use the saddle valve that comes in ice maker kits — they fail and leak in DFW','Turn off ice maker water line before DFW freeze events — water in line can freeze','Replace braided line every 5 years regardless — small insurance against big leak'].map(tip => (
             <div key={tip} style={{ display: 'flex', gap: 10, marginBottom: 10, alignItems: 'flex-start' }}>
               <span style={{ color: '#F5E642', flexShrink: 0 }}>→</span>

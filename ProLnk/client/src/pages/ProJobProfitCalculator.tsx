@@ -41,7 +41,7 @@ export default function ProJobProfitCalculator() {
   };
 
   const cardStyle = (highlight: boolean) => ({
-    background: highlight ? '#1A2035′ : '#FFFFFF',
+    background: highlight ? '#1A2035' : '#FFFFFF',
     border: `1px solid ${highlight ? '#1A2035' : '#E2E2DC'}`,
     borderRadius: '12px',
     padding: '20px',
@@ -85,9 +85,9 @@ export default function ProJobProfitCalculator() {
               type="range" min={500} max={20000} step={100}
               value={jobValue}
               onChange={e => setJobValue(Number(e.target.value))}
-              style={{ width: '100%', accentColor: '#1A2035′ }}
+              style={{ width: '100%', accentColor: '#1A2035' }}
             />
-            <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '11px', color: '#94A3B8′ }}>
+            <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '11px', color: '#94A3B8' }}>
               <span>$500</span><span>$20,000</span>
             </div>
           </div>
@@ -157,15 +157,15 @@ export default function ProJobProfitCalculator() {
               SOLO (NO PROLNK)
             </div>
             <div style={{ marginBottom: '8px' }}>
-              <div style={{ fontSize: '13px', color: '#94A3B8′ }}>Gross</div>
-              <div style={{ fontSize: '20px', fontWeight: '700', color: '#1A2035′ }}>${jobValue.toLocaleString()}</div>
+              <div style={{ fontSize: '13px', color: '#94A3B8' }}>Gross</div>
+              <div style={{ fontSize: '20px', fontWeight: '700', color: '#1A2035' }}>${jobValue.toLocaleString()}</div>
             </div>
             <div style={{ marginBottom: '8px' }}>
-              <div style={{ fontSize: '13px', color: '#94A3B8′ }}>All costs</div>
-              <div style={{ fontSize: '16px', color: '#DC2626′ }}>-${totalCosts.toLocaleString()}</div>
+              <div style={{ fontSize: '13px', color: '#94A3B8' }}>All costs</div>
+              <div style={{ fontSize: '16px', color: '#DC2626' }}>-${totalCosts.toLocaleString()}</div>
             </div>
             <div style={{ borderTop: '1px solid #E2E2DC', paddingTop: '10px' }}>
-              <div style={{ fontSize: '13px', color: '#94A3B8′ }}>Net profit</div>
+              <div style={{ fontSize: '13px', color: '#94A3B8' }}>Net profit</div>
               <div style={{ fontSize: '26px', fontWeight: '800', color: netColor(netWithoutProLnk) }}>
                 ${netWithoutProLnk.toLocaleString()}
               </div>
@@ -180,16 +180,16 @@ export default function ProJobProfitCalculator() {
               WITH PROLNK ⚡
             </div>
             <div style={{ marginBottom: '8px' }}>
-              <div style={{ fontSize: '13px', color: '#94A3B8′ }}>You keep (72%)</div>
-              <div style={{ fontSize: '20px', fontWeight: '700', color: '#F1F5F9′ }}>${proKeeps.toLocaleString()}</div>
+              <div style={{ fontSize: '13px', color: '#94A3B8' }}>You keep (72%)</div>
+              <div style={{ fontSize: '20px', fontWeight: '700', color: '#F1F5F9' }}>${proKeeps.toLocaleString()}</div>
             </div>
             <div style={{ marginBottom: '8px' }}>
-              <div style={{ fontSize: '13px', color: '#94A3B8′ }}>All costs</div>
-              <div style={{ fontSize: '16px', color: '#F87171′ }}>-${totalCosts.toLocaleString()}</div>
+              <div style={{ fontSize: '13px', color: '#94A3B8' }}>All costs</div>
+              <div style={{ fontSize: '16px', color: '#F87171' }}>-${totalCosts.toLocaleString()}</div>
             </div>
             <div style={{ borderTop: '1px solid #2D4A6A', paddingTop: '10px' }}>
-              <div style={{ fontSize: '13px', color: '#94A3B8′ }}>Net profit</div>
-              <div style={{ fontSize: '26px', fontWeight: '800', color: netWithProLnk >= 0 ? '#34D399′ : '#F87171' }}>
+              <div style={{ fontSize: '13px', color: '#94A3B8' }}>Net profit</div>
+              <div style={{ fontSize: '26px', fontWeight: '800', color: netWithProLnk >= 0 ? '#34D399' : '#F87171' }}>
                 ${netWithProLnk.toLocaleString()}
               </div>
             </div>
@@ -223,13 +223,13 @@ export default function ProJobProfitCalculator() {
           borderRadius: '12px',
           padding: '24px',
         }}>
-          <h2 style={{ margin: '0 0 16px', fontSize: '18px', fontWeight: '700', color: '#1A2035′ }}>
+          <h2 style={{ margin: '0 0 16px', fontSize: '18px', fontWeight: '700', color: '#1A2035' }}>
             Break-Even Calculator
           </h2>
           <div style={{ marginBottom: '16px' }}>
             <label style={labelStyle}>TARGET MONTHLY NET INCOME</label>
             <div style={{ display: 'flex', gap: '12px', alignItems: 'center' }}>
-              <span style={{ fontWeight: '700', color: '#1A2035′ }}>$</span>
+              <span style={{ fontWeight: '700', color: '#1A2035' }}>$</span>
               <input
                 type="number" value={targetMonthlyNet}
                 onChange={e => setTargetMonthlyNet(Number(e.target.value))}

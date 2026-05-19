@@ -42,11 +42,11 @@ const auditData: Record<string, Record<string, { riskLevel: string; issues: stri
 };
 
 const riskColors: Record<string, { bg: string; text: string }> = {
-  'Low': { bg: '#065F46', text: '#6EE7B7′ },
-  'Low-Medium': { bg: '#1E3A5F', text: '#F5E642′ },
+  'Low': { bg: '#065F46', text: '#6EE7B7' },
+  'Low-Medium': { bg: '#1E3A5F', text: '#F5E642' },
   'Medium': { bg: '#374151', text: '#D1D5DB' },
   'High': { bg: '#7C2D12', text: '#FED7AA' },
-  'Very High': { bg: '#5F1E1E', text: '#FCA5A5′ },
+  'Very High': { bg: '#5F1E1E', text: '#FCA5A5' },
   'Extreme': { bg: '#3D0000', text: '#FF6B6B' },
 };
 
@@ -59,7 +59,7 @@ export default function DFWBuildingScienceGuide() {
   return (
     <div style={{ background: '#0A1628', minHeight: '100vh', color: '#E2E8F0', fontFamily: 'system-ui, sans-serif', padding: '2rem' }}>
       <div style={{ maxWidth: 800, margin: '0 auto' }}>
-        <div style={{ marginBottom: '0.5rem', fontSize: '0.875rem', color: '#94A3B8′ }}>🏠 DFW Building Science</div>
+        <div style={{ marginBottom: '0.5rem', fontSize: '0.875rem', color: '#94A3B8' }}>🏠 DFW Building Science</div>
         <h1 style={{ fontSize: '2rem', fontWeight: 700, color: '#F5E642', marginBottom: '0.5rem' }}>
           Building Science Guide for DFW Homeowners
         </h1>
@@ -72,8 +72,8 @@ export default function DFWBuildingScienceGuide() {
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0.75rem', marginBottom: '1.25rem' }}>
             {homeAges.map(opt => (
               <button key={opt.value} onClick={() => setHomeAge(opt.value)} style={{
-                background: homeAge === opt.value ? '#F5E642′ : '#1E3A5F',
-                color: homeAge === opt.value ? '#0A1628′ : '#E2E8F0',
+                background: homeAge === opt.value ? '#F5E642' : '#1E3A5F',
+                color: homeAge === opt.value ? '#0A1628' : '#E2E8F0',
                 border: 'none', borderRadius: 8, padding: '0.75rem', cursor: 'pointer', fontWeight: 600, fontSize: '0.8rem', textAlign: 'left',
               }}>{opt.label}</button>
             ))}
@@ -82,8 +82,8 @@ export default function DFWBuildingScienceGuide() {
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0.75rem' }}>
             {recentImprovements.map(opt => (
               <button key={opt.value} onClick={() => setImprovement(opt.value)} style={{
-                background: improvement === opt.value ? '#F5E642′ : '#1E3A5F',
-                color: improvement === opt.value ? '#0A1628′ : '#E2E8F0',
+                background: improvement === opt.value ? '#F5E642' : '#1E3A5F',
+                color: improvement === opt.value ? '#0A1628' : '#E2E8F0',
                 border: 'none', borderRadius: 8, padding: '0.75rem', cursor: 'pointer', fontWeight: 600, fontSize: '0.8rem', textAlign: 'left',
               }}>{opt.label}</button>
             ))}
@@ -99,19 +99,19 @@ export default function DFWBuildingScienceGuide() {
           <h3 style={{ color: '#FCA5A5', fontSize: '0.95rem', marginBottom: '0.75rem' }}>🚨 Potential Issues to Watch</h3>
           <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem', marginBottom: '1.25rem' }}>
             {data.issues.map((issue, i) => (
-              <div key={i} style={{ background: '#1A0A0A', borderRadius: 8, padding: '0.75rem', fontSize: '0.875rem', color: '#FED7AA', borderLeft: '3px solid #7C2D12′ }}>{issue}</div>
+              <div key={i} style={{ background: '#1A0A0A', borderRadius: 8, padding: '0.75rem', fontSize: '0.875rem', color: '#FED7AA', borderLeft: '3px solid #7C2D12' }}>{issue}</div>
             ))}
           </div>
 
           <h3 style={{ color: '#6EE7B7', fontSize: '0.95rem', marginBottom: '0.75rem' }}>✅ What to Check Now</h3>
           <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
             {data.checks.map((check, i) => (
-              <div key={i} style={{ background: '#0A1628', borderRadius: 8, padding: '0.75rem', fontSize: '0.875rem', color: '#E2E8F0′ }}>🔍 {check}</div>
+              <div key={i} style={{ background: '#0A1628', borderRadius: 8, padding: '0.75rem', fontSize: '0.875rem', color: '#E2E8F0' }}>🔍 {check}</div>
             ))}
           </div>
         </div>
 
-        <div style={{ background: '#F5E642', borderRadius: 12, padding: '1.25rem', color: '#0A1628′ }}>
+        <div style={{ background: '#F5E642', borderRadius: 12, padding: '1.25rem', color: '#0A1628' }}>
           <div style={{ fontWeight: 700, marginBottom: '0.25rem' }}>🌡️ DFW Building Science Rule</div>
           <div style={{ fontSize: '0.9rem', lineHeight: 1.6 }}>Seal-Ventilate-Insulate -- in that order. Air seal first, then add mechanical ventilation to compensate for tightness, then insulate. Reversing this order is the most common DFW mistake and causes moisture damage that costs far more to fix than the original upgrade. When in doubt, hire a RESNET or BPI certified energy auditor.</div>
         </div>

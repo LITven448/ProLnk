@@ -88,7 +88,7 @@ export default function DFWProLnkDFWBuildComplete2026() {
           <p style={{ color: '#F5E642', fontSize: '13px', fontWeight: '700', margin: '0 0 8px' }}>
             2026 MILESTONE — DEFINITIVE DFW BUILD REPORT
           </p>
-          <p style={{ color: '#94a3b8', fontSize: '15px', margin: '0′ }}>
+          <p style={{ color: '#94a3b8', fontSize: '15px', margin: '0' }}>
             36 hours. 5,500+ pages. Every DFW home service category covered. The most comprehensive DFW homeowner resource in existence — staged and ready to deploy.
           </p>
         </div>
@@ -110,8 +110,8 @@ export default function DFWProLnkDFWBuildComplete2026() {
                 key={s.id}
                 onClick={() => setSelected(s.id)}
                 style={{
-                  background: selected === s.id ? '#F5E642′ : '#1e3a5f',
-                  color: selected === s.id ? '#0A1628′ : '#e2e8f0',
+                  background: selected === s.id ? '#F5E642' : '#1e3a5f',
+                  color: selected === s.id ? '#0A1628' : '#e2e8f0',
                   border: 'none', borderRadius: '8px', padding: '14px 16px',
                   textAlign: 'left', cursor: 'pointer', fontSize: '14px', fontWeight: '600'
                 }}
@@ -128,8 +128,8 @@ export default function DFWProLnkDFWBuildComplete2026() {
             <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
               {active.points.map((pt, i) => (
                 <div key={i} style={{ display: 'flex', gap: '10px', alignItems: 'flex-start' }}>
-                  <span style={{ color: '#F5E642′ }}>✓</span>
-                  <span style={{ color: '#94a3b8', fontSize: '14px', lineHeight: '1.5′ }}>{pt}</span>
+                  <span style={{ color: '#F5E642' }}>✓</span>
+                  <span style={{ color: '#94a3b8', fontSize: '14px', lineHeight: '1.5' }}>{pt}</span>
                 </div>
               ))}
             </div>

@@ -47,7 +47,7 @@ export default function DFWSprinklerSystemStages2026() {
             </select>
           </div>
           {guide && (
-            <div style={{ background: '#162035', borderRadius: 10, padding: 20, borderLeft: '4px solid #F5E642′ }}>
+            <div style={{ background: '#162035', borderRadius: 10, padding: 20, borderLeft: '4px solid #F5E642' }}>
               <div style={{ color: '#F5E642', fontWeight: 800, fontSize: 16, marginBottom: 12 }}>📐 Staging Plan — {selected}</div>
               <div style={{ marginBottom: 12 }}>
                 {guide.zones.map((z, i) => (
@@ -57,8 +57,8 @@ export default function DFWSprinklerSystemStages2026() {
                   </div>
                 ))}
               </div>
-              <div style={{ color: '#94A3B8', fontSize: 13, marginBottom: 6 }}>🎛️ <strong style={{ color: '#E8EAF6′ }}>Controller:</strong> {guide.controller}</div>
-              <div style={{ color: '#94A3B8', fontSize: 13 }}>💡 <strong style={{ color: '#E8EAF6′ }}>DFW Tip:</strong> {guide.tip}</div>
+              <div style={{ color: '#94A3B8', fontSize: 13, marginBottom: 6 }}>🎛️ <strong style={{ color: '#E8EAF6' }}>Controller:</strong> {guide.controller}</div>
+              <div style={{ color: '#94A3B8', fontSize: 13 }}>💡 <strong style={{ color: '#E8EAF6' }}>DFW Tip:</strong> {guide.tip}</div>
             </div>
           )}
         </div>

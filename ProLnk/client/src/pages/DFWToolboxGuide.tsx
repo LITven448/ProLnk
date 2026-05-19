@@ -7,7 +7,7 @@ const toolsByAge = {
     invest: '$620–$940'
   },
   '1980-2005': {
-    essential: ['HVAC filter gauge', 'Cordless drill', 'Stud finder', 'Pressure gauge', 'Level (48″)', 'Utility knife set', 'Adjustable wrench', 'Voltage tester'],
+    essential: ['HVAC filter gauge', 'Cordless drill', 'Stud finder', 'Pressure gauge', 'Level (48")', 'Utility knife set', 'Adjustable wrench', 'Voltage tester'],
     rent: ['Pressure washer', 'Tile saw', 'Drywall lift', 'Concrete grinder'],
     invest: '$480–$720'
   },
@@ -43,7 +43,7 @@ export default function DFWToolboxGuide() {
             {[['🌡️ Foundation Moisture Meter','Clay soil expansion damages slabs — monitor monthly'],['⏱️ Water Pressure Gauge','DFW pressure spikes bust supply lines'],['🔧 HVAC Filter Gauge','Tracks static pressure; DFW dust clogs fast'],['💧 Leak Sensor Set','Humidity swings cause hidden leaks under sinks']].map(([icon, desc]) => (
               <div key={icon} style={{ background: '#0A1628', borderRadius: 8, padding: 12 }}>
                 <div style={{ fontSize: 14, fontWeight: 700, marginBottom: 4 }}>{icon}</div>
-                <div style={{ fontSize: 12, color: '#94A3B8′ }}>{desc}</div>
+                <div style={{ fontSize: 12, color: '#94A3B8' }}>{desc}</div>
               </div>
             ))}
           </div>
@@ -55,7 +55,7 @@ export default function DFWToolboxGuide() {
             <label style={{ display: 'block', color: '#94A3B8', fontSize: 13, marginBottom: 8 }}>Home Age</label>
             <div style={{ display: 'flex', gap: 8 }}>
               {(['pre-1980','1980-2005','post-2005'] as const).map(a => (
-                <button key={a} onClick={() => setAge(a)} style={{ padding: '8px 14px', borderRadius: 8, border: 'none', cursor: 'pointer', fontSize: 13, background: age === a ? '#F5E642′ : '#1E3A5F', color: age === a ? '#0A1628' : '#E8EDF5' }}>{a}</button>
+                <button key={a} onClick={() => setAge(a)} style={{ padding: '8px 14px', borderRadius: 8, border: 'none', cursor: 'pointer', fontSize: 13, background: age === a ? '#F5E642' : '#1E3A5F', color: age === a ? '#0A1628' : '#E8EDF5' }}>{a}</button>
               ))}
             </div>
           </div>
@@ -63,7 +63,7 @@ export default function DFWToolboxGuide() {
             <label style={{ display: 'block', color: '#94A3B8', fontSize: 13, marginBottom: 8 }}>DIY Comfort Level</label>
             <div style={{ display: 'flex', gap: 8 }}>
               {(['beginner','intermediate','advanced'] as const).map(c => (
-                <button key={c} onClick={() => setComfort(c)} style={{ padding: '8px 14px', borderRadius: 8, border: 'none', cursor: 'pointer', fontSize: 13, background: comfort === c ? '#F5E642′ : '#1E3A5F', color: comfort === c ? '#0A1628' : '#E8EDF5', textTransform: ’capitalize' }}>{c}</button>
+                <button key={c} onClick={() => setComfort(c)} style={{ padding: '8px 14px', borderRadius: 8, border: 'none', cursor: 'pointer', fontSize: 13, background: comfort === c ? '#F5E642' : '#1E3A5F', color: comfort === c ? '#0A1628' : '#E8EDF5', textTransform: 'capitalize' }}>{c}</button>
               ))}
             </div>
           </div>

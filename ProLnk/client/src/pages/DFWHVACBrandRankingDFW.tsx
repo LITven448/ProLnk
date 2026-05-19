@@ -39,12 +39,12 @@ export default function DFWHVACBrandRankingDFW() {
           <h2 style={{ color: '#F5E642', fontSize: 16, marginBottom: 14 }}>🎯 Rank by What Matters Most to You</h2>
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: 10 }}>
             {priorities.map(p => (
-              <button key={p.id} onClick={() => setPriority(priority === p.id ? null : p.id)} style={{ background: priority === p.id ? '#F5E642′ : '#1e3a5f', color: priority === p.id ? '#0A1628' : '#fff', border: ’none', borderRadius: 8, padding: '10px 16px', cursor: 'pointer', fontWeight: 600, fontSize: 13 }}>{p.label}</button>
+              <button key={p.id} onClick={() => setPriority(priority === p.id ? null : p.id)} style={{ background: priority === p.id ? '#F5E642' : '#1e3a5f', color: priority === p.id ? '#0A1628' : '#fff', border: 'none', borderRadius: 8, padding: '10px 16px', cursor: 'pointer', fontWeight: 600, fontSize: 13 }}>{p.label}</button>
             ))}
           </div>
           {priority && (
-            <div style={{ marginTop: 16, background: '#0A1628', borderRadius: 8, padding: 16, borderLeft: '4px solid #F5E642′ }}>
-              <strong style={{ color: '#F5E642′ }}>Top Pick: </strong>
+            <div style={{ marginTop: 16, background: '#0A1628', borderRadius: 8, padding: 16, borderLeft: '4px solid #F5E642' }}>
+              <strong style={{ color: '#F5E642' }}>Top Pick: </strong>
               <span style={{ color: '#fff' }}>{topBrand.name} (Score: {(topBrand as any)[priority]}/100) — {topBrand.verdict}</span>
             </div>
           )}
@@ -57,15 +57,15 @@ export default function DFWHVACBrandRankingDFW() {
                 <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
                   <span style={{ fontSize: 24 }}>{brand.icon}</span>
                   <div>
-                    <div style={{ fontWeight: 700, fontSize: 16, color: i === 0 && priority ? '#F5E642′ : '#fff' }}>{brand.name}</div>
+                    <div style={{ fontWeight: 700, fontSize: 16, color: i === 0 && priority ? '#F5E642' : '#fff' }}>{brand.name}</div>
                     <div style={{ fontSize: 12, color: '#64748b' }}>{brand.price} • DFW Rank #{priority ? i + 1 : brand.dfwRank}</div>
                   </div>
                 </div>
                 <div style={{ display: 'flex', gap: 16 }}>
                   {(['heat', 'service', 'warranty', 'efficiency'] as const).map(cat => (
                     <div key={cat} style={{ textAlign: 'center' }}>
-                      <div style={{ fontSize: 16, fontWeight: 700, color: priority === cat ? '#F5E642′ : '#94a3b8' }}>{(brand as any)[cat]}</div>
-                      <div style={{ fontSize: 10, color: '#475569′ }}>{cat}</div>
+                      <div style={{ fontSize: 16, fontWeight: 700, color: priority === cat ? '#F5E642' : '#94a3b8' }}>{(brand as any)[cat]}</div>
+                      <div style={{ fontSize: 10, color: '#475569' }}>{cat}</div>
                     </div>
                   ))}
                 </div>

@@ -8,7 +8,7 @@
 
 import React, { useState } from "react";
 
-const INDIGO = "#4F46E5″;
+const INDIGO = "#4F46E5";
 const AMBER = "#F59E0B";
 
 const pros = [
@@ -34,10 +34,10 @@ export default function TrustyProGarland() {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
 
   return (
-    <div style={{ fontFamily: "system-ui, sans-serif", color: "#1F2937″, backgroundColor: "#F9FAFB", minHeight: "100vh" }}>
+    <div style={{ fontFamily: "system-ui, sans-serif", color: "#1F2937", backgroundColor: "#F9FAFB", minHeight: "100vh" }}>
       {/* Hero */}
       <div style={{ backgroundColor: "#1E1B4B", color: "white", padding: "80px 24px 64px", textAlign: "center" }}>
-        <div style={{ display: "inline-block", backgroundColor: AMBER, color: "#1F2937″, borderRadius: "9999px", padding: "4px 16px", fontSize: "13px", fontWeight: 700, marginBottom: "20px", textTransform: "uppercase", letterSpacing: "0.05em" }}>
+        <div style={{ display: "inline-block", backgroundColor: AMBER, color: "#1F2937", borderRadius: "9999px", padding: "4px 16px", fontSize: "13px", fontWeight: 700, marginBottom: "20px", textTransform: "uppercase", letterSpacing: "0.05em" }}>
           Garland, TX — AI Home Intelligence
         </div>
         <h1 style={{ fontSize: "clamp(26px, 4.5vw, 48px)", fontWeight: 800, lineHeight: 1.1, maxWidth: "820px", margin: "0 auto 20px" }}>
@@ -47,7 +47,7 @@ export default function TrustyProGarland() {
           Garland homes average 41 years old. 65% of our AI scans detect aging electrical, plumbing,
           or foundation issues — most homeowners had no idea.
         </p>
-        <a href="/waitlist/homeowner" style={{ display: "inline-block", backgroundColor: AMBER, color: "#1F2937″, fontWeight: 800, fontSize: "18px", padding: "16px 40px", borderRadius: "12px", textDecoration: "none", boxShadow: "0 4px 20px rgba(245,158,11,0.4)" }}>
+        <a href="/waitlist/homeowner" style={{ display: "inline-block", backgroundColor: AMBER, color: "#1F2937", fontWeight: 800, fontSize: "18px", padding: "16px 40px", borderRadius: "12px", textDecoration: "none", boxShadow: "0 4px 20px rgba(245,158,11,0.4)" }}>
           Get My Free Health Score →
         </a>
       </div>
@@ -58,7 +58,7 @@ export default function TrustyProGarland() {
           {[
             { stat: "41 yrs", label: "Avg Garland Home Age" },
             { stat: "65%", label: "Scans Detect Aging Systems" },
-            { stat: "#1″, label: "Issue: Electrical Panels" },
+            { stat: "#1", label: "Issue: Electrical Panels" },
             { stat: "380 PPM", label: "Hard Water Mineral Load" },
           ].map((s) => (
             <div key={s.stat} style={{ textAlign: "center", minWidth: "140px" }}>
@@ -72,17 +72,17 @@ export default function TrustyProGarland() {
       {/* Risk Categories */}
       <div style={{ padding: "72px 24px", maxWidth: "900px", margin: "0 auto" }}>
         <h2 style={{ fontSize: "32px", fontWeight: 800, textAlign: "center", marginBottom: "12px" }}>The 3 Biggest Risks in Garland Homes</h2>
-        <p style={{ textAlign: "center", color: "#6B7280″, marginBottom: "48px" }}>Identified across thousands of homes built in the 1970s-1980s</p>
+        <p style={{ textAlign: "center", color: "#6B7280", marginBottom: "48px" }}>Identified across thousands of homes built in the 1970s-1980s</p>
         <div style={{ display: "flex", flexWrap: "wrap", gap: "24px", justifyContent: "center" }}>
           {[
-            { icon: "⚡", title: "Electrical Panels", desc: "Federal Pacific and Zinsco panels installed before 1990 are fire hazards. Aluminum wiring requires arc-fault protection. Panel upgrades are the #1 job we see in Garland.", color: "#FEF3C7″ },
+            { icon: "⚡", title: "Electrical Panels", desc: "Federal Pacific and Zinsco panels installed before 1990 are fire hazards. Aluminum wiring requires arc-fault protection. Panel upgrades are the #1 job we see in Garland.", color: "#FEF3C7" },
             { icon: "🔧", title: "Galvanized Plumbing", desc: "1970s homes used galvanized steel supply lines. They corrode internally, reduce water pressure, and can fail without warning. Most need replacement by age 40-50.", color: "#EEF2FF" },
-            { icon: "🏠", title: "Foundation Movement", desc: "40+ years of clay soil expansion and contraction creates cumulative slab stress. Stair-step cracks, sloping floors, and sticky doors are early warning signs.", color: "#ECFDF5″ },
+            { icon: "🏠", title: "Foundation Movement", desc: "40+ years of clay soil expansion and contraction creates cumulative slab stress. Stair-step cracks, sloping floors, and sticky doors are early warning signs.", color: "#ECFDF5" },
           ].map((r) => (
             <div key={r.title} style={{ flex: "1 1 240px", maxWidth: "280px", backgroundColor: r.color, borderRadius: "16px", padding: "28px 24px" }}>
               <div style={{ fontSize: "36px", marginBottom: "12px" }}>{r.icon}</div>
               <h3 style={{ fontSize: "18px", fontWeight: 700, marginBottom: "10px" }}>{r.title}</h3>
-              <p style={{ fontSize: "14px", color: "#374151″, lineHeight: 1.6 }}>{r.desc}</p>
+              <p style={{ fontSize: "14px", color: "#374151", lineHeight: 1.6 }}>{r.desc}</p>
             </div>
           ))}
         </div>
@@ -92,16 +92,16 @@ export default function TrustyProGarland() {
       <div style={{ backgroundColor: "white", padding: "72px 24px" }}>
         <div style={{ maxWidth: "900px", margin: "0 auto" }}>
           <h2 style={{ fontSize: "32px", fontWeight: 800, textAlign: "center", marginBottom: "8px" }}>Top-Rated Garland Pros</h2>
-          <p style={{ textAlign: "center", color: "#6B7280″, marginBottom: "48px" }}>Background-checked, licensed, and rated by real Garland homeowners</p>
+          <p style={{ textAlign: "center", color: "#6B7280", marginBottom: "48px" }}>Background-checked, licensed, and rated by real Garland homeowners</p>
           <div style={{ display: "flex", flexWrap: "wrap", gap: "24px", justifyContent: "center" }}>
             {pros.map((p) => (
               <div key={p.name} style={{ flex: "1 1 240px", maxWidth: "280px", border: "1px solid #E5E7EB", borderRadius: "16px", padding: "28px 24px", backgroundColor: "#FAFAFA" }}>
                 <div style={{ width: "56px", height: "56px", borderRadius: "50%", backgroundColor: INDIGO, color: "white", display: "flex", alignItems: "center", justifyContent: "center", fontWeight: 800, fontSize: "18px", marginBottom: "16px" }}>{p.img}</div>
                 <div style={{ fontWeight: 700, fontSize: "17px" }}>{p.name}</div>
-                <div style={{ color: "#6B7280″, fontSize: "14px", marginBottom: "12px" }}>{p.trade}</div>
+                <div style={{ color: "#6B7280", fontSize: "14px", marginBottom: "12px" }}>{p.trade}</div>
                 <div style={{ display: "flex", gap: "12px", flexWrap: "wrap" }}>
                   <span style={{ backgroundColor: "#EEF2FF", color: INDIGO, borderRadius: "8px", padding: "4px 10px", fontSize: "13px", fontWeight: 600 }}>★ {p.rating} ({p.reviews})</span>
-                  <span style={{ backgroundColor: "#FEF3C7″, color: "#92400E", borderRadius: "8px", padding: "4px 10px", fontSize: "13px", fontWeight: 600 }}>{p.response}</span>
+                  <span style={{ backgroundColor: "#FEF3C7", color: "#92400E", borderRadius: "8px", padding: "4px 10px", fontSize: "13px", fontWeight: 600 }}>{p.response}</span>
                 </div>
               </div>
             ))}
@@ -115,9 +115,9 @@ export default function TrustyProGarland() {
         <div style={{ display: "flex", flexWrap: "wrap", gap: "24px", justifyContent: "center" }}>
           {testimonials.map((t) => (
             <div key={t.name} style={{ flex: "1 1 260px", maxWidth: "290px", backgroundColor: "white", border: "1px solid #E5E7EB", borderRadius: "16px", padding: "28px 24px" }}>
-              <p style={{ fontSize: "15px", lineHeight: 1.7, color: "#374151″, marginBottom: "20px", fontStyle: "italic" }}>"{t.text}"</p>
+              <p style={{ fontSize: "15px", lineHeight: 1.7, color: "#374151", marginBottom: "20px", fontStyle: "italic" }}>"{t.text}"</p>
               <div style={{ fontWeight: 700, fontSize: "14px" }}>{t.name}</div>
-              <div style={{ color: "#6B7280″, fontSize: "13px" }}>{t.city}</div>
+              <div style={{ color: "#6B7280", fontSize: "13px" }}>{t.city}</div>
             </div>
           ))}
         </div>
@@ -129,11 +129,11 @@ export default function TrustyProGarland() {
           <h2 style={{ fontSize: "32px", fontWeight: 800, textAlign: "center", marginBottom: "48px" }}>Frequently Asked Questions</h2>
           {faqs.map((faq, i) => (
             <div key={i} style={{ borderBottom: "1px solid #E5E7EB", paddingBottom: "20px", marginBottom: "20px" }}>
-              <button onClick={() => setOpenFaq(openFaq === i ? null : i)} style={{ width: "100%", textAlign: "left", background: "none", border: "none", cursor: "pointer", fontSize: "16px", fontWeight: 700, color: "#111827″, padding: "4px 0", display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+              <button onClick={() => setOpenFaq(openFaq === i ? null : i)} style={{ width: "100%", textAlign: "left", background: "none", border: "none", cursor: "pointer", fontSize: "16px", fontWeight: 700, color: "#111827", padding: "4px 0", display: "flex", justifyContent: "space-between", alignItems: "center" }}>
                 {faq.q}
                 <span style={{ color: INDIGO, fontSize: "20px", marginLeft: "12px" }}>{openFaq === i ? "−" : "+"}</span>
               </button>
-              {openFaq === i && <p style={{ marginTop: "12px", fontSize: "15px", color: "#6B7280″, lineHeight: 1.7 }}>{faq.a}</p>}
+              {openFaq === i && <p style={{ marginTop: "12px", fontSize: "15px", color: "#6B7280", lineHeight: 1.7 }}>{faq.a}</p>}
             </div>
           ))}
         </div>
@@ -143,7 +143,7 @@ export default function TrustyProGarland() {
       <div style={{ backgroundColor: "#1E1B4B", color: "white", padding: "80px 24px", textAlign: "center" }}>
         <h2 style={{ fontSize: "36px", fontWeight: 800, marginBottom: "16px" }}>Don't Let a 40-Year-Old Problem Surprise You</h2>
         <p style={{ fontSize: "18px", opacity: 0.8, maxWidth: "520px", margin: "0 auto 36px" }}>Free AI health score. Know exactly where your Garland home stands.</p>
-        <a href="/waitlist/homeowner" style={{ display: "inline-block", backgroundColor: AMBER, color: "#1F2937″, fontWeight: 800, fontSize: "18px", padding: "16px 40px", borderRadius: "12px", textDecoration: "none" }}>
+        <a href="/waitlist/homeowner" style={{ display: "inline-block", backgroundColor: AMBER, color: "#1F2937", fontWeight: 800, fontSize: "18px", padding: "16px 40px", borderRadius: "12px", textDecoration: "none" }}>
           Join the Waitlist — It's Free →
         </a>
       </div>

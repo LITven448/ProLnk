@@ -86,7 +86,7 @@ export default function DFWHVACHeatPumpDefrost2026() {
             'Annual HVAC tune-up includes checking defrost board and sensors ($89-150 in DFW)',
           ].map((tip, i) => (
             <div key={i} style={{ display: 'flex', gap: 10, marginBottom: 8 }}>
-              <span style={{ color: '#F5E642′ }}>✓</span>
+              <span style={{ color: '#F5E642' }}>✓</span>
               <span style={{ color: '#cbd5e1', fontSize: 14 }}>{tip}</span>
             </div>
           ))}

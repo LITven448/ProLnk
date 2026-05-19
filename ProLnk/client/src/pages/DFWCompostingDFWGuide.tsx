@@ -34,7 +34,7 @@ export default function DFWCompostingDFWGuide() {
         <div style={{ color: '#F5E642', fontSize: 13, marginBottom: 8 }}>♻️ DFW COMPOSTING GUIDE</div>
         <h1 style={{ fontSize: 28, fontWeight: 700, marginBottom: 8 }}>Composting in DFW</h1>
         <p style={{ color: '#94a3b8', marginBottom: 24 }}>
-          DFW's intense heat is a composting superpower. What takes 6 months in northern climates finishes in 6–8 weeks in a Dallas summer. Here’s how to make the most of it.
+          DFW's intense heat is a composting superpower. What takes 6 months in northern climates finishes in 6–8 weeks in a Dallas summer. Here's how to make the most of it.
         </p>
 
         <div style={{ background: '#0f2040', borderRadius: 12, padding: 20, marginBottom: 20 }}>
@@ -55,7 +55,7 @@ export default function DFWCompostingDFWGuide() {
             <div style={{ color: '#94a3b8', fontSize: 13, marginBottom: 8 }}>Yard size:</div>
             <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8 }}>
               {yardSizes.map(s => (
-                <button key={s} onClick={() => setYardSize(s)} style={{ background: yardSize === s ? '#F5E642′ : '#1e3a5f', color: yardSize === s ? '#0A1628' : '#fff', border: ’none', borderRadius: 8, padding: '8px 14px', cursor: 'pointer', fontSize: 13 }}>{s}</button>
+                <button key={s} onClick={() => setYardSize(s)} style={{ background: yardSize === s ? '#F5E642' : '#1e3a5f', color: yardSize === s ? '#0A1628' : '#fff', border: 'none', borderRadius: 8, padding: '8px 14px', cursor: 'pointer', fontSize: 13 }}>{s}</button>
               ))}
             </div>
           </div>
@@ -63,7 +63,7 @@ export default function DFWCompostingDFWGuide() {
             <div style={{ color: '#94a3b8', fontSize: 13, marginBottom: 8 }}>Primary goal:</div>
             <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8 }}>
               {goals.map(g => (
-                <button key={g} onClick={() => setGoal(g)} style={{ background: goal === g ? '#F5E642′ : '#1e3a5f', color: goal === g ? '#0A1628' : '#fff', border: ’none', borderRadius: 8, padding: '8px 14px', cursor: 'pointer', fontSize: 13 }}>{g}</button>
+                <button key={g} onClick={() => setGoal(g)} style={{ background: goal === g ? '#F5E642' : '#1e3a5f', color: goal === g ? '#0A1628' : '#fff', border: 'none', borderRadius: 8, padding: '8px 14px', cursor: 'pointer', fontSize: 13 }}>{g}</button>
               ))}
             </div>
           </div>
@@ -71,7 +71,7 @@ export default function DFWCompostingDFWGuide() {
         </div>
 
         {showResults && binRec && (
-          <div style={{ background: '#0f2040', borderRadius: 12, padding: 20, marginBottom: 20, borderLeft: '4px solid #F5E642′ }}>
+          <div style={{ background: '#0f2040', borderRadius: 12, padding: 20, marginBottom: 20, borderLeft: '4px solid #F5E642' }}>
             <div style={{ color: '#F5E642', fontWeight: 700, fontSize: 16, marginBottom: 4 }}>✅ Recommended: {binRec.bin}</div>
             <div style={{ color: '#94a3b8', fontSize: 12, marginBottom: 12 }}>Cost: {binRec.cost}</div>
             <p style={{ color: '#cbd5e1', marginBottom: 12 }}>{binRec.desc}</p>

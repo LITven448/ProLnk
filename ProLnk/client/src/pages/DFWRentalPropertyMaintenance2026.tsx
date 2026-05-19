@@ -33,7 +33,7 @@ export default function DFWRentalPropertyMaintenance2026() {
           <h2 style={{ color: '#F5E642', fontSize: 17, marginBottom: 16 }}>📊 Portfolio Size → Annual Maintenance Budget</h2>
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8, marginBottom: 20 }}>
             {unitOptions.map((u, i) => (
-              <button key={u.count} onClick={() => setSelected(i)} style={{ background: selected === i ? '#F5E642′ : '#1e3a5f', color: selected === i ? '#0A1628' : '#fff', border: ’none', borderRadius: 8, padding: '8px 14px', fontSize: 13, cursor: 'pointer', fontWeight: selected === i ? 700 : 400 }}>
+              <button key={u.count} onClick={() => setSelected(i)} style={{ background: selected === i ? '#F5E642' : '#1e3a5f', color: selected === i ? '#0A1628' : '#fff', border: 'none', borderRadius: 8, padding: '8px 14px', fontSize: 13, cursor: 'pointer', fontWeight: selected === i ? 700 : 400 }}>
                 {u.count}
               </button>
             ))}
@@ -46,7 +46,7 @@ export default function DFWRentalPropertyMaintenance2026() {
             {opt.breakdown.map(([item, cost]) => (
               <div key={item} style={{ display: 'flex', justifyContent: 'space-between', color: '#cbd5e1', fontSize: 13, marginBottom: 7 }}>
                 <span>🔧 {item}</span>
-                <span style={{ color: '#F5E642′ }}>{cost}</span>
+                <span style={{ color: '#F5E642' }}>{cost}</span>
               </div>
             ))}
           </div>

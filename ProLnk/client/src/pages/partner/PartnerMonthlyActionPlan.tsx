@@ -111,7 +111,7 @@ export default function PartnerMonthlyActionPlan() {
   const weekLabels = ['Week 1 — Pipeline Check', 'Week 2 — New Outreach', 'Week 3 — Follow-Up & Conversion', 'Week 4 — Network Activation'];
 
   return (
-    <div style={{ backgroundColor: '#F9FAFB', minHeight: '100vh', fontFamily: 'system-ui, sans-serif', color: '#0A1628′ }}>
+    <div style={{ backgroundColor: '#F9FAFB', minHeight: '100vh', fontFamily: 'system-ui, sans-serif', color: '#0A1628' }}>
       <div style={{ maxWidth: 800, margin: '0 auto', padding: '40px 20px' }}>
         <div style={{ marginBottom: 32 }}>
           <div style={{ fontSize: 36, marginBottom: 8 }}>📅</div>
@@ -128,7 +128,7 @@ export default function PartnerMonthlyActionPlan() {
             <div style={{ display: 'flex', flexDirection: 'column', gap: 6 }}>
               {networkSizes.map(n => (
                 <button key={n.key} onClick={() => setNetworkSize(n.key)}
-                  style={{ padding: '10px 14px', borderRadius: 8, border: '2px solid', borderColor: networkSize === n.key ? '#F5E642′ : '#E5E7EB', backgroundColor: networkSize === n.key ? '#FEFCE8' : '#F9FAFB', cursor: ’pointer', textAlign: 'left', fontSize: 13, color: '#0A1628', fontWeight: networkSize === n.key ? 700 : 400 }}>
+                  style={{ padding: '10px 14px', borderRadius: 8, border: '2px solid', borderColor: networkSize === n.key ? '#F5E642' : '#E5E7EB', backgroundColor: networkSize === n.key ? '#FEFCE8' : '#F9FAFB', cursor: 'pointer', textAlign: 'left', fontSize: 13, color: '#0A1628', fontWeight: networkSize === n.key ? 700 : 400 }}>
                   {n.label}
                 </button>
               ))}
@@ -139,7 +139,7 @@ export default function PartnerMonthlyActionPlan() {
             <div style={{ display: 'flex', flexDirection: 'column', gap: 6 }}>
               {growthGoals.map(g => (
                 <button key={g.key} onClick={() => setGrowthGoal(g.key)}
-                  style={{ padding: '10px 14px', borderRadius: 8, border: '2px solid', borderColor: growthGoal === g.key ? '#F5E642′ : '#E5E7EB', backgroundColor: growthGoal === g.key ? '#FEFCE8' : '#F9FAFB', cursor: ’pointer', textAlign: 'left', fontSize: 13, color: '#0A1628', fontWeight: growthGoal === g.key ? 700 : 400 }}>
+                  style={{ padding: '10px 14px', borderRadius: 8, border: '2px solid', borderColor: growthGoal === g.key ? '#F5E642' : '#E5E7EB', backgroundColor: growthGoal === g.key ? '#FEFCE8' : '#F9FAFB', cursor: 'pointer', textAlign: 'left', fontSize: 13, color: '#0A1628', fontWeight: growthGoal === g.key ? 700 : 400 }}>
                   {g.label}
                 </button>
               ))}
@@ -153,7 +153,7 @@ export default function PartnerMonthlyActionPlan() {
                   <p style={{ fontWeight: 700, color: '#0369A1', marginBottom: 8, fontSize: 14 }}>{weekLabels[i]}</p>
                   <ul style={{ paddingLeft: 18, margin: 0 }}>
                     {(plan[week as keyof typeof plan] as string[]).map((item: string) => (
-                      <li key={item} style={{ fontSize: 13, marginBottom: 6, color: '#374151′ }}>{item}</li>
+                      <li key={item} style={{ fontSize: 13, marginBottom: 6, color: '#374151' }}>{item}</li>
                     ))}
                   </ul>
                 </div>

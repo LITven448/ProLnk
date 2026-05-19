@@ -72,7 +72,7 @@ export default function WylieTXHomeownerGuide2026() {
 
         <div style={{ background: '#0f2044', borderRadius: 12, padding: 24, marginBottom: 28 }}>
           <h2 style={{ color: '#F5E642', fontSize: 16, marginBottom: 16 }}>📍 Wylie Snapshot</h2>
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12, fontSize: 14, color: '#cbd5e1′ }}>
+          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12, fontSize: 14, color: '#cbd5e1' }}>
             <div>📈 Population: 60K+ and growing rapidly</div>
             <div>🏗️ New construction: 40%+ built after 2010</div>
             <div>🏫 Wylie ISD: drives high homeownership demand</div>
@@ -89,8 +89,8 @@ export default function WylieTXHomeownerGuide2026() {
               key={c.id}
               onClick={() => setSelected(c.id)}
               style={{
-                background: selected === c.id ? '#F5E642′ : '#1e3a5f',
-                color: selected === c.id ? '#0A1628′ : '#fff',
+                background: selected === c.id ? '#F5E642' : '#1e3a5f',
+                color: selected === c.id ? '#0A1628' : '#fff',
                 border: 'none', borderRadius: 10, padding: '14px 12px',
                 cursor: 'pointer', fontWeight: 600, fontSize: 14,
               }}
@@ -105,7 +105,7 @@ export default function WylieTXHomeownerGuide2026() {
             <h3 style={{ color: '#F5E642', marginBottom: 16 }}>{guides[selected].title}</h3>
             <ul style={{ listStyle: 'none', padding: 0, margin: 0 }}>
               {guides[selected].items.map((item, i) => (
-                <li key={i} style={{ padding: '10px 0', borderBottom: '1px solid #1e3a5f', fontSize: 14, color: '#e2e8f0′ }}>
+                <li key={i} style={{ padding: '10px 0', borderBottom: '1px solid #1e3a5f', fontSize: 14, color: '#e2e8f0' }}>
                   {item}
                 </li>
               ))}

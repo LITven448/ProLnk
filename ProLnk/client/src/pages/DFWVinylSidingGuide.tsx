@@ -35,7 +35,7 @@ export default function DFWVinylSidingGuide() {
         <h1 style={{ fontSize: 32, fontWeight: 800, marginBottom: 8 }}>🏘️ Vinyl Siding Guide — DFW</h1>
         <p style={{ color: '#9BA3B5', fontSize: 15, marginBottom: 32 }}>Vinyl siding is less common in DFW than brick or stucco, but found in 1990s–2000s subdivisions. DFW's extreme UV and heat create unique challenges that make fiber cement the preferred replacement.</p>
 
-        <div style={{ background: '#111D35', borderRadius: 12, padding: 20, marginBottom: 24, borderLeft: '4px solid #F5E642′ }}>
+        <div style={{ background: '#111D35', borderRadius: 12, padding: 20, marginBottom: 24, borderLeft: '4px solid #F5E642' }}>
           <div style={{ color: '#F5E642', fontWeight: 700, marginBottom: 12 }}>⚠️ DFW Vinyl Warning: The South/West Rule</div>
           <p style={{ color: '#9BA3B5', fontSize: 14 }}>South and west-facing vinyl siding in DFW receives intense afternoon sun at 100°F+ ambient temperatures. Vinyl can reach 160–180°F surface temperature, causing permanent warping in 7–12 years regardless of thickness or brand.</p>
         </div>
@@ -55,7 +55,7 @@ export default function DFWVinylSidingGuide() {
         </div>
 
         <div style={{ background: '#111D35', borderRadius: 16, padding: 28, marginBottom: 24 }}>
-          <h2 style={{ fontSize: 18, fontWeight: 700, marginBottom: 20, color: '#F5E642′ }}>🔍 Keep vs. Replace Decision Tool</h2>
+          <h2 style={{ fontSize: 18, fontWeight: 700, marginBottom: 20, color: '#F5E642' }}>🔍 Keep vs. Replace Decision Tool</h2>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: 16, marginBottom: 20 }}>
             {[
               { label: 'VINYL AGE', value: age, setter: setAge, options: ageOptions },
@@ -72,11 +72,11 @@ export default function DFWVinylSidingGuide() {
             ))}
           </div>
           {result && (
-            <div style={{ background: '#0A1628', borderRadius: 12, padding: 20, borderLeft: '4px solid #F5E642′ }}>
+            <div style={{ background: '#0A1628', borderRadius: 12, padding: 20, borderLeft: '4px solid #F5E642' }}>
               <div style={{ fontSize: 18, fontWeight: 700, marginBottom: 12 }}>{result.decision}</div>
               <div style={{ color: '#9BA3B5', fontSize: 12, fontWeight: 700, marginBottom: 8 }}>OPTIONS</div>
               {result.options.map(o => <div key={o} style={{ fontSize: 14, marginBottom: 6 }}>→ {o}</div>)}
-              <div style={{ marginTop: 12, padding: '10px 14px', background: '#111D35', borderRadius: 8, fontSize: 13, color: '#9BA3B5′ }}>{result.note}</div>
+              <div style={{ marginTop: 12, padding: '10px 14px', background: '#111D35', borderRadius: 8, fontSize: 13, color: '#9BA3B5' }}>{result.note}</div>
             </div>
           )}
         </div>
@@ -86,8 +86,8 @@ export default function DFWVinylSidingGuide() {
           {[['Fiber Cement', '$8–$15/sq ft', '50 years', '⭐⭐⭐⭐⭐'], ['Engineered Wood', '$6–$12/sq ft', '30 years', '⭐⭐⭐⭐'], ['Premium Vinyl', '$4–$8/sq ft', '15–20 years', '⭐⭐⭐'], ['Standard Vinyl', '$2–$5/sq ft', '10–15 years', '⭐⭐']].map(([mat, cost, life, rating]) => (
             <div key={mat} style={{ display: 'grid', gridTemplateColumns: '2fr 1fr 1fr 1fr', gap: 8, padding: '8px 0', borderBottom: '1px solid #1E3A5F', fontSize: 13 }}>
               <div style={{ fontWeight: 600 }}>{mat}</div>
-              <div style={{ color: '#F5E642′ }}>{cost}</div>
-              <div style={{ color: '#9BA3B5′ }}>{life}</div>
+              <div style={{ color: '#F5E642' }}>{cost}</div>
+              <div style={{ color: '#9BA3B5' }}>{life}</div>
               <div>{rating}</div>
             </div>
           ))}

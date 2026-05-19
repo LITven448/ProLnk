@@ -49,14 +49,14 @@ export default function DFWHomeGoalSettingGuide() {
           <h2 style={{ color: '#F5E642', fontSize: 16, marginBottom: 16 }}>📌 Select Your 2026 Home Goals</h2>
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8, marginBottom: 20 }}>
             {goalOptions.map(g => (
-              <button key={g.id} onClick={() => toggle(g.id)} style={{ backgroundColor: selected.includes(g.id) ? '#F5E642′ : '#0A1628', color: selected.includes(g.id) ? '#0A1628' : '#94a3b8', border: '1px solid #1e3a5f', borderRadius: 8, padding: '8px 14px', cursor: ’pointer', fontSize: 13, fontWeight: selected.includes(g.id) ? 700 : 400 }}>{g.label}</button>
+              <button key={g.id} onClick={() => toggle(g.id)} style={{ backgroundColor: selected.includes(g.id) ? '#F5E642' : '#0A1628', color: selected.includes(g.id) ? '#0A1628' : '#94a3b8', border: '1px solid #1e3a5f', borderRadius: 8, padding: '8px 14px', cursor: 'pointer', fontSize: 13, fontWeight: selected.includes(g.id) ? 700 : 400 }}>{g.label}</button>
             ))}
           </div>
           <div>
             <label style={{ color: '#94a3b8', fontSize: 13, display: 'block', marginBottom: 8 }}>ANNUAL BUDGET</label>
             <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap' }}>
               {budgetTiers.map(b => (
-                <button key={b.label} onClick={() => setBudget(b.label)} style={{ backgroundColor: budget === b.label ? '#F5E642′ : '#0A1628', color: budget === b.label ? '#0A1628' : '#94a3b8', border: '1px solid #1e3a5f', borderRadius: 8, padding: '6px 12px', cursor: ’pointer', fontSize: 13 }}>{b.label}</button>
+                <button key={b.label} onClick={() => setBudget(b.label)} style={{ backgroundColor: budget === b.label ? '#F5E642' : '#0A1628', color: budget === b.label ? '#0A1628' : '#94a3b8', border: '1px solid #1e3a5f', borderRadius: 8, padding: '6px 12px', cursor: 'pointer', fontSize: 13 }}>{b.label}</button>
               ))}
             </div>
           </div>

@@ -50,7 +50,7 @@ export default function DFWVAHomeLoanGuide2026() {
             ))}
           </div>
           <div style={{ background: current.eligible?'#052e16':'#450a0a', borderRadius: 10, padding: 20, borderLeft: `4px solid ${current.eligible?'#22c55e':'#ef4444'}` }}>
-            <div style={{ fontWeight: 700, fontSize: 16, color: current.eligible?'#4ade80':'#f87171′ }}>{current.eligible ? '✅ VA Eligible' : '❌ Not Eligible'}</div>
+            <div style={{ fontWeight: 700, fontSize: 16, color: current.eligible?'#4ade80':'#f87171' }}>{current.eligible ? '✅ VA Eligible' : '❌ Not Eligible'}</div>
             <div style={{ color: '#cbd5e1', marginTop: 8 }}>{current.benefit}</div>
             <div style={{ color: '#94a3b8', fontSize: 13, marginTop: 4 }}>{current.notes}</div>
           </div>

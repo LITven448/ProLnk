@@ -49,7 +49,7 @@ function getInspectionItems(year: number): InspectionItem[] {
       { item: 'Roof inspection (post-hail season)', urgency: '🔴 Urgent', why: 'DFW hail damage not always visible from ground; inspect after every major storm' },
       { item: 'HVAC refrigerant check + coil inspection', urgency: '🟡 High', why: 'Year 3–5 leaks show up; catch before compressor fails' },
       { item: 'Foundation monitoring (annual measurement)', urgency: '🟡 High', why: 'Peak movement period still active in clay soils' },
-      { item: 'Water heater anode rod replacement', urgency: '🟡 High', why: 'DFW hard water degrades anode fast; replace yr 4–5′ },
+      { item: 'Water heater anode rod replacement', urgency: '🟡 High', why: 'DFW hard water degrades anode fast; replace yr 4–5' },
       { item: 'Exterior caulking + paint (if Hardie plank)', urgency: '🟡 High', why: 'Hardie needs repaint at 5–7 yrs in DFW UV' },
       { item: 'Irrigation head adjustment + controller programming', urgency: '🟢 Standard', why: 'Landscape matures; adjust zones for established plants' },
     );
@@ -102,8 +102,8 @@ export default function DFWFriscoStarGuide() {
         <h1 style={{ fontSize: 30, fontWeight: 800, marginBottom: 8 }}>Frisco Star District Area</h1>
         <h2 style={{ fontSize: 18, fontWeight: 400, color: '#a0b0c8', marginBottom: 24 }}>New Home Warranty & Maintenance Guide (2018–2026 Builds)</h2>
 
-        <div style={{ backgroundColor: '#0f2040', borderRadius: 12, padding: 20, marginBottom: 28, borderLeft: '4px solid #F5E642′ }}>
-          <p style={{ margin: 0, lineHeight: 1.7, color: '#c8d8e8′ }}>
+        <div style={{ backgroundColor: '#0f2040', borderRadius: 12, padding: 20, marginBottom: 28, borderLeft: '4px solid #F5E642' }}>
+          <p style={{ margin: 0, lineHeight: 1.7, color: '#c8d8e8' }}>
             The Frisco Star and Hall Park corridor contains some of DFW's newest residential development — homes built from <strong style={{ color: '#F5E642' }}>2018 through 2026</strong>. New construction comes with warranties, but also with unique first-decade issues: clay soil settlement, HVAC sizing errors, grading problems, and builder shortcuts that only show up after year 1. Know your warranty status and what to inspect now.
           </p>
         </div>
@@ -112,7 +112,7 @@ export default function DFWFriscoStarGuide() {
           <label style={{ display: 'block', marginBottom: 10, color: '#F5E642', fontWeight: 600, fontSize: 14 }}>📅 Select Your Build Year</label>
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: 10 }}>
             {buildYears.map(y => (
-              <button key={y} onClick={() => setBuildYear(y)} style={{ padding: '10px 18px', borderRadius: 8, border: `2px solid ${buildYear === y ? '#F5E642' : '#1e3a5f'}`, backgroundColor: buildYear === y ? '#1a2e4a' : '#0f2040', color: buildYear === y ? '#F5E642′ : '#c8d8e8', fontWeight: buildYear === y ? 700 : 400, cursor: ’pointer', fontSize: 15 }}>
+              <button key={y} onClick={() => setBuildYear(y)} style={{ padding: '10px 18px', borderRadius: 8, border: `2px solid ${buildYear === y ? '#F5E642' : '#1e3a5f'}`, backgroundColor: buildYear === y ? '#1a2e4a' : '#0f2040', color: buildYear === y ? '#F5E642' : '#c8d8e8', fontWeight: buildYear === y ? 700 : 400, cursor: 'pointer', fontSize: 15 }}>
                 {y}
               </button>
             ))}
@@ -145,7 +145,7 @@ export default function DFWFriscoStarGuide() {
                   <div style={{ fontWeight: 600, fontSize: 15 }}>{item.item}</div>
                   <div style={{ fontSize: 13 }}>{item.urgency}</div>
                 </div>
-                <div style={{ fontSize: 13, color: '#a0b0c8′ }}>→ {item.why}</div>
+                <div style={{ fontSize: 13, color: '#a0b0c8' }}>→ {item.why}</div>
               </div>
             ))}
 
@@ -156,7 +156,7 @@ export default function DFWFriscoStarGuide() {
                   <div>
                     <div style={{ fontWeight: 600, marginBottom: 3 }}>{issue.issue}</div>
                     <div style={{ fontSize: 12, color: '#a0b0c8', marginBottom: 4 }}>{issue.type}</div>
-                    <div style={{ fontSize: 13, color: '#c8d8e8′ }}>✅ {issue.action}</div>
+                    <div style={{ fontSize: 13, color: '#c8d8e8' }}>✅ {issue.action}</div>
                   </div>
                 </div>
               ))}

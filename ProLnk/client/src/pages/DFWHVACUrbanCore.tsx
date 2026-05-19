@@ -52,7 +52,7 @@ export default function DFWHVACUrbanCore() {
   return (
     <div style={{ minHeight: '100vh', background: '#0A1628', color: '#fff', fontFamily: 'sans-serif', padding: '2rem' }}>
       <div style={{ maxWidth: 820, margin: '0 auto' }}>
-        <div style={{ marginBottom: '0.5rem', fontSize: '0.85rem', color: '#F5E642′ }}>🏠 DFW HVAC Guide — Urban Core</div>
+        <div style={{ marginBottom: '0.5rem', fontSize: '0.85rem', color: '#F5E642' }}>🏠 DFW HVAC Guide — Urban Core</div>
         <h1 style={{ fontSize: '2rem', fontWeight: 700, marginBottom: '0.5rem' }}>DFW Urban Core HVAC Guide</h1>
         <p style={{ color: '#94a3b8', marginBottom: '2rem', lineHeight: 1.6 }}>
           Uptown, Deep Ellum, Knox-Henderson, and downtown Fort Worth present unique HVAC challenges: HOA-controlled
@@ -76,7 +76,7 @@ export default function DFWHVACUrbanCore() {
           </div>
         </div>
 
-        <h2 style={{ fontSize: '1.2rem', fontWeight: 600, marginBottom: '1rem', color: '#F5E642′ }}>
+        <h2 style={{ fontSize: '1.2rem', fontWeight: 600, marginBottom: '1rem', color: '#F5E642' }}>
           🗺️ Select Your Urban Area
         </h2>
         <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.75rem', marginBottom: '2rem' }}>
@@ -88,8 +88,8 @@ export default function DFWHVACUrbanCore() {
                 padding: '0.6rem 1.2rem',
                 borderRadius: 8,
                 border: `2px solid ${selected === a.name ? '#F5E642' : '#1e3a5f'}`,
-                background: selected === a.name ? '#F5E642′ : '#0F2040',
-                color: selected === a.name ? '#0A1628′ : '#fff',
+                background: selected === a.name ? '#F5E642' : '#0F2040',
+                color: selected === a.name ? '#0A1628' : '#fff',
                 cursor: 'pointer',
                 fontWeight: 600,
                 fontSize: '0.9rem',
@@ -113,8 +113,8 @@ export default function DFWHVACUrbanCore() {
                       padding: '0.4rem 0.9rem',
                       borderRadius: 6,
                       border: `2px solid ${housingType === ht ? '#F5E642' : '#2a4a6f'}`,
-                      background: housingType === ht ? '#F5E64222′ : ’transparent',
-                      color: housingType === ht ? '#F5E642′ : '#94a3b8',
+                      background: housingType === ht ? '#F5E64222' : 'transparent',
+                      color: housingType === ht ? '#F5E642' : '#94a3b8',
                       cursor: 'pointer',
                       fontSize: '0.85rem',
                     }}
@@ -139,7 +139,7 @@ export default function DFWHVACUrbanCore() {
                   </div>
                 ))}
               </div>
-              <div style={{ background: '#1a2f50', borderRadius: 8, padding: '1rem', color: '#cbd5e1′ }}>
+              <div style={{ background: '#1a2f50', borderRadius: 8, padding: '1rem', color: '#cbd5e1' }}>
                 🏙️ {profile.notes}
               </div>
             </div>

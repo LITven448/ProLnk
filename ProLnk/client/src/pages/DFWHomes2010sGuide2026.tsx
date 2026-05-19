@@ -26,12 +26,12 @@ export default function DFWHomes2010sGuide2026() {
         <p style={{ color: '#94a3b8', fontSize: 15, marginBottom: 32 }}>Built after the 2009 energy code update — better insulated, PEX plumbing standard, 200A panels. Now hitting the 10–15 year maintenance window where major systems need attention.</p>
 
         <div style={{ background: '#0f2040', borderRadius: 12, padding: 24, marginBottom: 24 }}>
-          <h2 style={{ fontSize: 17, fontWeight: 700, marginBottom: 6, color: '#F5E642′ }}>📅 Select Your Build Year</h2>
+          <h2 style={{ fontSize: 17, fontWeight: 700, marginBottom: 6, color: '#F5E642' }}>📅 Select Your Build Year</h2>
           <p style={{ color: '#94a3b8', fontSize: 13, marginBottom: 16 }}>Choose the year your home was built to see priority maintenance tasks for 2026.</p>
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: 10 }}>
             {years.map(y => (
               <button key={y} onClick={() => setSelectedYear(y)}
-                style={{ padding: '10px 18px', borderRadius: 8, border: `2px solid ${selectedYear === y ? '#F5E642' : '#1e3a5f'}`, background: selectedYear === y ? '#F5E642′ : '#0A1628', color: selectedYear === y ? '#0A1628' : '#fff', fontWeight: 700, cursor: ’pointer', fontSize: 14 }}>
+                style={{ padding: '10px 18px', borderRadius: 8, border: `2px solid ${selectedYear === y ? '#F5E642' : '#1e3a5f'}`, background: selectedYear === y ? '#F5E642' : '#0A1628', color: selectedYear === y ? '#0A1628' : '#fff', fontWeight: 700, cursor: 'pointer', fontSize: 14 }}>
                 {y}
               </button>
             ))}
@@ -48,7 +48,7 @@ export default function DFWHomes2010sGuide2026() {
               {result.items.map((item, i) => (
                 <li key={i} style={{ display: 'flex', gap: 12, padding: '10px 0', borderBottom: i < result.items.length - 1 ? '1px solid #1e3a5f' : 'none', fontSize: 14, lineHeight: 1.5 }}>
                   <span style={{ color: '#F5E642', flexShrink: 0 }}>→</span>
-                  <span style={{ color: '#cbd5e1′ }}>{item}</span>
+                  <span style={{ color: '#cbd5e1' }}>{item}</span>
                 </li>
               ))}
             </ul>
@@ -61,7 +61,7 @@ export default function DFWHomes2010sGuide2026() {
             {[['Insulation', 'R-38 attic (2009 IECC)'], ['Plumbing', 'PEX throughout — no copper'], ['Electrical', '200A panel standard'], ['HVAC', '13 SEER minimum (2006 federal)'], ['Foundation', 'Post-tension slab on clay'], ['Windows', 'Dual-pane low-E standard']].map(([label, val]) => (
               <div key={label} style={{ background: '#0A1628', borderRadius: 8, padding: 12 }}>
                 <div style={{ fontSize: 11, color: '#64748b', marginBottom: 4 }}>{label}</div>
-                <div style={{ fontSize: 13, fontWeight: 600, color: '#e2e8f0′ }}>{val}</div>
+                <div style={{ fontSize: 13, fontWeight: 600, color: '#e2e8f0' }}>{val}</div>
               </div>
             ))}
           </div>

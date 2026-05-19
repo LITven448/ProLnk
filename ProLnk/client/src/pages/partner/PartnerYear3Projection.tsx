@@ -60,15 +60,15 @@ export default function PartnerYear3Projection() {
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: 16 }}>
             <div>
               <label style={{ fontSize: 13, color: '#6B7280', display: 'block', marginBottom: 6 }}>Y1 Total Matches: {y1Matches}</label>
-              <input type="range" min={10} max={400} value={y1Matches} onChange={e => setY1Matches(Number(e.target.value))} style={{ width: '100%', accentColor: '#F5E642′ }} />
+              <input type="range" min={10} max={400} value={y1Matches} onChange={e => setY1Matches(Number(e.target.value))} style={{ width: '100%', accentColor: '#F5E642' }} />
             </div>
             <div>
               <label style={{ fontSize: 13, color: '#6B7280', display: 'block', marginBottom: 6 }}>Y1 Network Size: {y1NetworkSize}</label>
-              <input type="range" min={0} max={50} value={y1NetworkSize} onChange={e => setY1NetworkSize(Number(e.target.value))} style={{ width: '100%', accentColor: '#F5E642′ }} />
+              <input type="range" min={0} max={50} value={y1NetworkSize} onChange={e => setY1NetworkSize(Number(e.target.value))} style={{ width: '100%', accentColor: '#F5E642' }} />
             </div>
             <div>
               <label style={{ fontSize: 13, color: '#6B7280', display: 'block', marginBottom: 6 }}>Y1 Homes Added: {y1Homes}</label>
-              <input type="range" min={0} max={100} value={y1Homes} onChange={e => setY1Homes(Number(e.target.value))} style={{ width: '100%', accentColor: '#F5E642′ }} />
+              <input type="range" min={0} max={100} value={y1Homes} onChange={e => setY1Homes(Number(e.target.value))} style={{ width: '100%', accentColor: '#F5E642' }} />
             </div>
           </div>
         </div>
@@ -79,7 +79,7 @@ export default function PartnerYear3Projection() {
             <div key={i} style={{ marginBottom: 20 }}>
               <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: 8 }}>
                 <span style={{ fontWeight: 600, color: '#0A1628', fontSize: 14 }}>{s.icon} {s.label}</span>
-                <span style={{ fontSize: 13, color: '#6B7280′ }}>Y3: <strong style={{ color: s.color }}>${s.y3.toLocaleString()}</strong></span>
+                <span style={{ fontSize: 13, color: '#6B7280' }}>Y3: <strong style={{ color: s.color }}>${s.y3.toLocaleString()}</strong></span>
               </div>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: 8 }}>
                 {['Y1', 'Y2', 'Y3'].map((yr, yi) => {
@@ -103,9 +103,9 @@ export default function PartnerYear3Projection() {
 
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: 16, marginBottom: 24 }}>
           {['Year 1', 'Year 2', 'Year 3'].map((yr, i) => (
-            <div key={yr} style={{ background: i === 2 ? '#0A1628′ : ’white', borderRadius: 12, padding: 20, border: i === 2 ? 'none' : '1px solid #E5E7EB', textAlign: 'center' }}>
-              <div style={{ fontSize: 13, color: i === 2 ? '#94A3B8′ : '#6B7280', marginBottom: 6 }}>{yr} Total</div>
-              <div style={{ fontSize: 28, fontWeight: 800, color: i === 2 ? '#F5E642′ : '#0A1628' }}>${totals[i].toLocaleString()}</div>
+            <div key={yr} style={{ background: i === 2 ? '#0A1628' : 'white', borderRadius: 12, padding: 20, border: i === 2 ? 'none' : '1px solid #E5E7EB', textAlign: 'center' }}>
+              <div style={{ fontSize: 13, color: i === 2 ? '#94A3B8' : '#6B7280', marginBottom: 6 }}>{yr} Total</div>
+              <div style={{ fontSize: 28, fontWeight: 800, color: i === 2 ? '#F5E642' : '#0A1628' }}>${totals[i].toLocaleString()}</div>
               {i > 0 && (
                 <div style={{ fontSize: 12, color: '#059669', marginTop: 4 }}>+{i === 1 ? growth2 : growth3}% vs Y1</div>
               )}
@@ -115,7 +115,7 @@ export default function PartnerYear3Projection() {
 
         <div style={{ background: '#F0FDF4', border: '1px solid #BBF7D0', borderRadius: 12, padding: 20, marginBottom: 16 }}>
           <div style={{ fontWeight: 700, color: '#065F46', marginBottom: 10 }}>🔑 Why Year 3 Is the Inflection Point</div>
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12, fontSize: 13, color: '#047857′ }}>
+          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12, fontSize: 13, color: '#047857' }}>
             {['Your network partners have built their own networks', 'Origination rights accumulate across 3 years of homes', 'Match fees compound as pros earn more on the platform', 'Subscription overrides grow as your downline retains'].map((pt, i) => (
               <div key={i} style={{ display: 'flex', gap: 8 }}><span>✅</span><span>{pt}</span></div>
             ))}

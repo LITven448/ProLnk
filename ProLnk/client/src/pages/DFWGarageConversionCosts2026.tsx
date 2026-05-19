@@ -23,7 +23,7 @@ export default function DFWGarageConversionCosts2026() {
   ];
 
   return (
-    <div style={{ background: '#0A1628', minHeight: '100vh', padding: '32px 24px', fontFamily: 'sans-serif', color: '#E8EAF0′ }}>
+    <div style={{ background: '#0A1628', minHeight: '100vh', padding: '32px 24px', fontFamily: 'sans-serif', color: '#E8EAF0' }}>
       <div style={{ maxWidth: 680, margin: '0 auto' }}>
         <div style={{ color: '#F5E642', fontSize: 13, fontWeight: 700, textTransform: 'uppercase', letterSpacing: 2, marginBottom: 8 }}>DFW Home Cost Guide 2026</div>
         <h1 style={{ fontSize: 30, fontWeight: 800, color: '#FFFFFF', margin: '0 0 8px' }}>🏗️ Garage Conversion Cost Guide</h1>
@@ -32,7 +32,7 @@ export default function DFWGarageConversionCosts2026() {
         <div style={{ background: '#111D33', borderRadius: 12, padding: 24, marginBottom: 24 }}>
           <h2 style={{ color: '#F5E642', fontSize: 16, margin: '0 0 16px' }}>📊 Cost Breakdown by Line Item</h2>
           {lineItems.map((item) => (
-            <div key={item.label} style={{ display: 'flex', justifyContent: 'space-between', padding: '10px 0', borderBottom: '1px solid #1E2D45′ }}>
+            <div key={item.label} style={{ display: 'flex', justifyContent: 'space-between', padding: '10px 0', borderBottom: '1px solid #1E2D45' }}>
               <span style={{ fontSize: 14 }}>{item.label}</span>
               <span style={{ color: '#F5E642', fontWeight: 700, fontSize: 14 }}>${item.low.toLocaleString()} – ${item.high.toLocaleString()}</span>
             </div>
@@ -58,14 +58,14 @@ export default function DFWGarageConversionCosts2026() {
               <option value="luxury">Luxury</option>
             </select>
           </div>
-          <div style={{ background: '#0A1628', borderRadius: 10, padding: 20, border: '1px solid #F5E642′ }}>
+          <div style={{ background: '#0A1628', borderRadius: 10, padding: 20, border: '1px solid #F5E642' }}>
             <div style={{ fontSize: 13, color: '#8892A4', marginBottom: 4 }}>Estimated Total Investment</div>
-            <div style={{ fontSize: 28, fontWeight: 800, color: '#F5E642′ }}>${estimate.low.toLocaleString()} – ${estimate.high.toLocaleString()}</div>
+            <div style={{ fontSize: 28, fontWeight: 800, color: '#F5E642' }}>${estimate.low.toLocaleString()} – ${estimate.high.toLocaleString()}</div>
             <div style={{ fontSize: 12, color: '#8892A4', marginTop: 4 }}>Based on 2026 DFW contractor rates</div>
           </div>
         </div>
 
-        <div style={{ background: '#111D33', borderRadius: 12, padding: 20, border: '1px solid #1E2D45′ }}>
+        <div style={{ background: '#111D33', borderRadius: 12, padding: 20, border: '1px solid #1E2D45' }}>
           <p style={{ fontSize: 13, color: '#8892A4', margin: 0 }}>💡 <strong style={{ color: '#FFFFFF' }}>ProLnk Tip:</strong> Get 3 competing bids from DFW contractors on ProLnk. Average homeowners save 18% vs. calling one contractor directly.</p>
         </div>
       </div>

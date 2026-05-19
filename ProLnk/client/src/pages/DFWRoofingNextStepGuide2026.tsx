@@ -89,15 +89,15 @@ export default function DFWRoofingNextStepGuide2026() {
           <p style={{ color: '#94a3b8', fontSize: 14 }}>Select your situation for a personalized action plan</p>
         </div>
 
-        <div style={{ background: '#132039', border: '1px solid #F5E64244', borderRadius: 10, padding: '12px 16px', marginBottom: 24, fontSize: 13, color: '#94a3b8′ }}>
-          ⚠️ <strong style={{ color: '#F5E642′ }}>DFW Fact:</strong> DFW is in the highest hail-risk zone in North America. Average of 14 hail events per year — more roof claims than any U.S. metro.
+        <div style={{ background: '#132039', border: '1px solid #F5E64244', borderRadius: 10, padding: '12px 16px', marginBottom: 24, fontSize: 13, color: '#94a3b8' }}>
+          ⚠️ <strong style={{ color: '#F5E642' }}>DFW Fact:</strong> DFW is in the highest hail-risk zone in North America. Average of 14 hail events per year — more roof claims than any U.S. metro.
         </div>
 
         <div style={{ display: 'grid', gap: 12, marginBottom: 28 }}>
           {situations.map(s => (
             <button key={s.id} onClick={() => setSelected(s.id)}
-              style={{ background: selected === s.id ? '#F5E642′ : '#132039', color: selected === s.id ? '#0A1628' : '#fff',
-                border: '1px solid ' + (selected === s.id ? '#F5E642′ : '#1e3a5f'), borderRadius: 10,
+              style={{ background: selected === s.id ? '#F5E642' : '#132039', color: selected === s.id ? '#0A1628' : '#fff',
+                border: '1px solid ' + (selected === s.id ? '#F5E642' : '#1e3a5f'), borderRadius: 10,
                 padding: '14px 18px', textAlign: 'left', fontSize: 15, fontWeight: 600, cursor: 'pointer' }}>
               {s.label}
             </button>
@@ -117,7 +117,7 @@ export default function DFWRoofingNextStepGuide2026() {
                 </div>
               ))}
             </div>
-            <div style={{ background: '#F5E642', borderRadius: 10, padding: '14px 18px', color: '#0A1628′ }}>
+            <div style={{ background: '#F5E642', borderRadius: 10, padding: '14px 18px', color: '#0A1628' }}>
               <strong>📞 When to Call ProLnk:</strong> {guide.callProLnk}
               <div style={{ marginTop: 10 }}>
                 <a href="https://prolnk.io" style={{ background: '#0A1628', color: '#F5E642', padding: '8px 18px',

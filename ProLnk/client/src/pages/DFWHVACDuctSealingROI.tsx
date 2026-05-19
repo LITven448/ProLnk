@@ -86,7 +86,7 @@ export default function DFWHVACDuctSealingROI() {
           <div style={{ marginBottom: 20, display: 'flex', gap: 12 }}>
             {(['aeroseal', 'manual'] as const).map(m => (
               <button key={m} onClick={() => { setMethod(m); setShowResult(false); }}
-                style={{ flex: 1, padding: '10px 0', borderRadius: 8, border: '2px solid', borderColor: method === m ? '#F5E642′ : '#1E3A5F', background: method === m ? '#F5E642' : ’transparent', color: method === m ? '#0A1628′ : '#9BA4B4', fontWeight: 700, cursor: ’pointer', fontSize: 14 }}>
+                style={{ flex: 1, padding: '10px 0', borderRadius: 8, border: '2px solid', borderColor: method === m ? '#F5E642' : '#1E3A5F', background: method === m ? '#F5E642' : 'transparent', color: method === m ? '#0A1628' : '#9BA4B4', fontWeight: 700, cursor: 'pointer', fontSize: 14 }}>
                 {m === 'aeroseal' ? 'Aeroseal' : 'Manual Mastic'}
               </button>
             ))}
@@ -96,7 +96,7 @@ export default function DFWHVACDuctSealingROI() {
             Calculate My ROI →
           </button>
           {showResult && (
-            <div style={{ marginTop: 20, background: '#0A1628', borderRadius: 10, padding: 20, borderLeft: '4px solid #F5E642′ }}>
+            <div style={{ marginTop: 20, background: '#0A1628', borderRadius: 10, padding: 20, borderLeft: '4px solid #F5E642' }}>
               <div style={{ fontWeight: 700, color: '#F5E642', marginBottom: 12, fontSize: 16 }}>📊 ROI Summary</div>
               <div style={{ color: '#CBD2E0', marginBottom: 6 }}><strong>Estimated duct leakage:</strong> ~{Math.round(home.leakPct * age.multiplier)}% of conditioned air</div>
               <div style={{ color: '#CBD2E0', marginBottom: 6 }}><strong>Project cost:</strong> ${cost.toLocaleString()}</div>

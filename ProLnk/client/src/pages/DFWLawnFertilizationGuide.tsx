@@ -70,7 +70,7 @@ export default function DFWLawnFertilizationGuide() {
             'Soil test before adding phosphorus — DFW soil is usually not deficient',
             'Stop all fertilization 6–8 weeks before first frost (typically November)',
           ].map((rule, i) => (
-            <div key={i} style={{ color: '#cbd5e1', fontSize: 14, marginBottom: 8, paddingLeft: 12, borderLeft: '2px solid #ef4444′ }}>⚠️ {rule}</div>
+            <div key={i} style={{ color: '#cbd5e1', fontSize: 14, marginBottom: 8, paddingLeft: 12, borderLeft: '2px solid #ef4444' }}>⚠️ {rule}</div>
           ))}
         </div>
 

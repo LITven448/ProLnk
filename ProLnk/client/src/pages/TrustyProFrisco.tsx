@@ -78,7 +78,7 @@ export default function TrustyProFrisco() {
           <h2 style={{ textAlign: 'center', fontSize: 28, fontWeight: 700, marginBottom: 48 }}>Frisco by the Numbers</h2>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: 24 }}>
             {[
-              { label: 'Avg Home Value', value: '$485K', sub: 'Frisco metro 2025′ },
+              { label: 'Avg Home Value', value: '$485K', sub: 'Frisco metro 2025' },
               { label: 'Foundation Risk', value: '67%', sub: 'of homes on clay soil' },
               { label: 'Hail Events / Year', value: '4.2 avg', sub: 'DFW north corridor' },
               { label: 'HVAC Issues Found', value: '34%', sub: 'of TrustyPro scans' },

@@ -36,15 +36,15 @@ export default function DFWHVACRebatesCalc2026() {
         </p>
 
         <div style={{ background: '#0F2040', borderRadius: 12, padding: 24, marginBottom: 24 }}>
-          <h2 style={{ fontSize: 16, fontWeight: 700, marginBottom: 6, color: '#F5E642′ }}>📋 Federal IRA 25C Credit — 2026 Amounts</h2>
+          <h2 style={{ fontSize: 16, fontWeight: 700, marginBottom: 6, color: '#F5E642' }}>📋 Federal IRA 25C Credit — 2026 Amounts</h2>
           <p style={{ color: '#8899AA', fontSize: 13, marginBottom: 0, lineHeight: 1.6 }}>30% of cost, capped per category. Heat pumps get the highest cap at $2,000. Standard efficiency equipment is capped at $600. These are nonrefundable tax credits — you must owe federal taxes to benefit.</p>
         </div>
 
         <div style={{ background: '#0F2040', borderRadius: 12, padding: 24, marginBottom: 24 }}>
-          <h2 style={{ fontSize: 18, fontWeight: 700, marginBottom: 16, color: '#F5E642′ }}>Step 1: Equipment Type</h2>
+          <h2 style={{ fontSize: 18, fontWeight: 700, marginBottom: 16, color: '#F5E642' }}>Step 1: Equipment Type</h2>
           <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
             {EQUIPMENT_TYPES.map(e => (
-              <button key={e.id} onClick={() => setEquipmentId(e.id)} style={{ background: equipmentId === e.id ? '#F5E642′ : '#162030', color: equipmentId === e.id ? '#0A1628' : '#fff', border: ’none', borderRadius: 8, padding: '12px 16px', textAlign: 'left', cursor: 'pointer', fontWeight: equipmentId === e.id ? 700 : 400, fontSize: 14 }}>
+              <button key={e.id} onClick={() => setEquipmentId(e.id)} style={{ background: equipmentId === e.id ? '#F5E642' : '#162030', color: equipmentId === e.id ? '#0A1628' : '#fff', border: 'none', borderRadius: 8, padding: '12px 16px', textAlign: 'left', cursor: 'pointer', fontWeight: equipmentId === e.id ? 700 : 400, fontSize: 14 }}>
                 {e.label}
               </button>
             ))}
@@ -52,10 +52,10 @@ export default function DFWHVACRebatesCalc2026() {
         </div>
 
         <div style={{ background: '#0F2040', borderRadius: 12, padding: 24, marginBottom: 24 }}>
-          <h2 style={{ fontSize: 18, fontWeight: 700, marginBottom: 16, color: '#F5E642′ }}>Step 2: Project Cost</h2>
+          <h2 style={{ fontSize: 18, fontWeight: 700, marginBottom: 16, color: '#F5E642' }}>Step 2: Project Cost</h2>
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8 }}>
             {COST_RANGES.map(c => (
-              <button key={c.label} onClick={() => { setCostValue(c.value); setCostLabel(c.label); }} style={{ background: costLabel === c.label ? '#F5E642′ : '#162030', color: costLabel === c.label ? '#0A1628' : '#fff', border: ’none', borderRadius: 8, padding: '10px 16px', cursor: 'pointer', fontWeight: costLabel === c.label ? 700 : 400, fontSize: 13 }}>
+              <button key={c.label} onClick={() => { setCostValue(c.value); setCostLabel(c.label); }} style={{ background: costLabel === c.label ? '#F5E642' : '#162030', color: costLabel === c.label ? '#0A1628' : '#fff', border: 'none', borderRadius: 8, padding: '10px 16px', cursor: 'pointer', fontWeight: costLabel === c.label ? 700 : 400, fontSize: 13 }}>
                 {c.label}
               </button>
             ))}
@@ -64,13 +64,13 @@ export default function DFWHVACRebatesCalc2026() {
 
         {equipment && costValue > 0 && (
           <div style={{ background: '#0F2040', borderRadius: 12, padding: 24, marginBottom: 24 }}>
-            <h2 style={{ fontSize: 18, fontWeight: 700, marginBottom: 20, color: '#F5E642′ }}>💰 Your Rebate Breakdown</h2>
+            <h2 style={{ fontSize: 18, fontWeight: 700, marginBottom: 20, color: '#F5E642' }}>💰 Your Rebate Breakdown</h2>
             {[
               ['Federal IRA 25C Credit', `$${equipment.federal.toLocaleString()}`, 'Apply when filing federal taxes (Form 5695)'],
               ['Oncor Utility Rebate', `$${equipment.oncor.toLocaleString()}`, 'Submit within 90 days of installation at Oncor.com'],
               ['Manufacturer Rebate (est.)', `$${equipment.mfr.toLocaleString()}`, 'Submit manufacturer rebate form within 30 days'],
             ].map(([label, amount, timing]) => (
-              <div key={label} style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', padding: '12px 0', borderBottom: '1px solid #1e3050′ }}>
+              <div key={label} style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', padding: '12px 0', borderBottom: '1px solid #1e3050' }}>
                 <div>
                   <div style={{ fontWeight: 700, fontSize: 14 }}>{label}</div>
                   <div style={{ fontSize: 12, color: '#8899AA', marginTop: 4 }}>{timing}</div>

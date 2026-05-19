@@ -33,7 +33,7 @@ export default function DFWHVACFinancingGuide2026() {
               <div style={{ fontSize: 20, marginBottom: 6 }}>{item.emoji}</div>
               <div style={{ fontWeight: 700, marginBottom: 4, fontSize: 14 }}>{item.label}</div>
               <div style={{ color: '#94a3b8', fontSize: 12, marginBottom: 8 }}>{item.detail}</div>
-              <div style={{ background: '#1e3a5f', borderRadius: 4, padding: '3px 8px', fontSize: 11, display: 'inline-block', color: '#F5E642′ }}>{item.tag}</div>
+              <div style={{ background: '#1e3a5f', borderRadius: 4, padding: '3px 8px', fontSize: 11, display: 'inline-block', color: '#F5E642' }}>{item.tag}</div>
             </div>
           ))}
         </div>
@@ -47,18 +47,18 @@ export default function DFWHVACFinancingGuide2026() {
           <div style={{ color: '#F5E642', fontWeight: 700, marginBottom: 16 }}>🧮 Find Your Best Option</div>
           <div style={{ marginBottom: 12 }}>
             <div style={{ color: '#94a3b8', fontSize: 13, marginBottom: 8 }}>Replacement cost ($):</div>
-            <input type="number" placeholder="e.g. 6500″ value={cost} onChange={e => setCost(e.target.value)} style={{ background: '#1e3a5f', border: 'none', borderRadius: 8, padding: '10px 14px', color: '#fff', fontSize: 16, width: '100%', boxSizing: 'border-box' }} />
+            <input type="number" placeholder="e.g. 6500" value={cost} onChange={e => setCost(e.target.value)} style={{ background: '#1e3a5f', border: 'none', borderRadius: 8, padding: '10px 14px', color: '#fff', fontSize: 16, width: '100%', boxSizing: 'border-box' }} />
           </div>
           <div>
             <div style={{ color: '#94a3b8', fontSize: 13, marginBottom: 8 }}>Credit score range:</div>
             <div style={{ display: 'flex', gap: 10 }}>
-              {[{ v: 'excellent', l: '720+' }, { v: 'good', l: '650–719′ }, { v: ’fair', l: 'Below 650′ }].map(c => (
-                <button key={c.v} onClick={() => setCreditScore(c.v)} style={{ padding: '8px 16px', borderRadius: 8, border: 'none', cursor: 'pointer', fontWeight: 700, background: creditScore === c.v ? '#F5E642′ : '#1e3a5f', color: creditScore === c.v ? '#0A1628' : '#fff' }}>{c.l}</button>
+              {[{ v: 'excellent', l: '720+' }, { v: 'good', l: '650–719' }, { v: 'fair', l: 'Below 650' }].map(c => (
+                <button key={c.v} onClick={() => setCreditScore(c.v)} style={{ padding: '8px 16px', borderRadius: 8, border: 'none', cursor: 'pointer', fontWeight: 700, background: creditScore === c.v ? '#F5E642' : '#1e3a5f', color: creditScore === c.v ? '#0A1628' : '#fff' }}>{c.l}</button>
               ))}
             </div>
           </div>
           {rec && (
-            <div style={{ marginTop: 16, background: '#0d2240', borderRadius: 8, padding: 16, borderLeft: '4px solid #F5E642′ }}>
+            <div style={{ marginTop: 16, background: '#0d2240', borderRadius: 8, padding: 16, borderLeft: '4px solid #F5E642' }}>
               <div style={{ fontWeight: 700, fontSize: 16, marginBottom: 6 }}>{rec.emoji} {rec.option}</div>
               <p style={{ color: '#94a3b8', fontSize: 14, marginBottom: 6 }}>{rec.detail}</p>
               <div style={{ color: '#F5E642', fontSize: 13, fontWeight: 700 }}>{rec.monthly}</div>

@@ -44,15 +44,15 @@ export default function DFWWaterPressureBoosterGuide2026() {
             <option value="outside">Outdoor / irrigation</option>
           </select>
           <button onClick={diagnose} style={{ background: '#F5E642', color: '#0A1628', border: 'none', borderRadius: '6px', padding: '0.7rem 1.5rem', fontWeight: 700, cursor: 'pointer' }}>Get My Solution</button>
-          {result && <div style={{ marginTop: '1rem', background: '#0A1628', borderRadius: '6px', padding: '1rem', color: '#e2e8f0′ }}>{result}</div>}
+          {result && <div style={{ marginTop: '1rem', background: '#0A1628', borderRadius: '6px', padding: '1rem', color: '#e2e8f0' }}>{result}</div>}
         </div>
 
         <div style={{ background: '#1e293b', borderRadius: '10px', padding: '1.5rem' }}>
           <h3 style={{ color: '#F5E642', marginBottom: '1rem' }}>⚠️ DFW-Specific Pressure Issues</h3>
           {['City pressure varies widely — Dallas city limits vs. suburbs can differ by 20+ PSI','PRVs typically last 10–15 years; many 2000s-era DFW homes are overdue','Hard water deposits narrow pipe interiors 10–20% over 20 years','Booster pumps require dedicated 120V outlet near main line — factor into install cost'].map((s,i)=>(
             <div key={i} style={{ display: 'flex', gap: '0.7rem', marginBottom: '0.6rem' }}>
-              <span style={{ color: '#F5E642′ }}>›</span>
-              <span style={{ color: '#cbd5e1′ }}>{s}</span>
+              <span style={{ color: '#F5E642' }}>›</span>
+              <span style={{ color: '#cbd5e1' }}>{s}</span>
             </div>
           ))}
         </div>

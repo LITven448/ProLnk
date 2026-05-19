@@ -37,15 +37,15 @@ export default function DFWRoofingDFWHistoryGuide2026() {
   const [selected, setSelected] = useState(0);
 
   return (
-    <div style={{ background: "#0A1628″, minHeight: "100vh", padding: "40px 24px", fontFamily: "system-ui, sans-serif", color: "#fff" }}>
+    <div style={{ background: "#0A1628", minHeight: "100vh", padding: "40px 24px", fontFamily: "system-ui, sans-serif", color: "#fff" }}>
       <div style={{ maxWidth: 860, margin: "0 auto" }}>
         <div style={{ textAlign: "center", marginBottom: 40 }}>
           <div style={{ fontSize: 48 }}>🏚️</div>
-          <h1 style={{ fontSize: 32, fontWeight: 800, color: "#F5E642″, margin: "12px 0 8px" }}>DFW Roofing History Guide 2026</h1>
-          <p style={{ color: "#94a3b8″, fontSize: 16 }}>How Dallas-Fort Worth became the storm roofing capital of America</p>
+          <h1 style={{ fontSize: 32, fontWeight: 800, color: "#F5E642", margin: "12px 0 8px" }}>DFW Roofing History Guide 2026</h1>
+          <p style={{ color: "#94a3b8", fontSize: 16 }}>How Dallas-Fort Worth became the storm roofing capital of America</p>
         </div>
 
-        <div style={{ background: "#F5E642″, borderRadius: 12, padding: "20px 24px", marginBottom: 36, color: "#0A1628" }}>
+        <div style={{ background: "#F5E642", borderRadius: 12, padding: "20px 24px", marginBottom: 36, color: "#0A1628" }}>
           <strong>Key Insight:</strong> DFW averages 4-6 significant hail events per year. The 2012 superstorm alone caused $2.4B in insured losses. Storm chasers exploited the chaos — ProLnk was built to fix this trust gap permanently.
         </div>
 
@@ -55,8 +55,8 @@ export default function DFWRoofingDFWHistoryGuide2026() {
               key={i}
               onClick={() => setSelected(i)}
               style={{
-                background: selected === i ? "#F5E642″ : "#1e2d45",
-                color: selected === i ? "#0A1628″ : "#94a3b8",
+                background: selected === i ? "#F5E642" : "#1e2d45",
+                color: selected === i ? "#0A1628" : "#94a3b8",
                 border: "none", borderRadius: 8, padding: "8px 14px",
                 cursor: "pointer", fontWeight: 600, fontSize: 13,
               }}
@@ -66,18 +66,18 @@ export default function DFWRoofingDFWHistoryGuide2026() {
           ))}
         </div>
 
-        <div style={{ background: "#1e2d45″, borderRadius: 16, padding: 32 }}>
+        <div style={{ background: "#1e2d45", borderRadius: 16, padding: 32 }}>
           <div style={{ fontSize: 40, marginBottom: 12 }}>{eras[selected].icon}</div>
-          <h2 style={{ fontSize: 22, fontWeight: 700, color: "#F5E642″, margin: "0 0 16px" }}>{eras[selected].era}</h2>
-          <p style={{ color: "#cbd5e1″, lineHeight: 1.7, fontSize: 15, marginBottom: 20 }}>{eras[selected].desc}</p>
-          <div style={{ background: "#0A1628″, borderRadius: 8, padding: "12px 18px" }}>
-            <span style={{ color: "#F5E642″, fontWeight: 700, fontSize: 14 }}>⚡ {eras[selected].fact}</span>
+          <h2 style={{ fontSize: 22, fontWeight: 700, color: "#F5E642", margin: "0 0 16px" }}>{eras[selected].era}</h2>
+          <p style={{ color: "#cbd5e1", lineHeight: 1.7, fontSize: 15, marginBottom: 20 }}>{eras[selected].desc}</p>
+          <div style={{ background: "#0A1628", borderRadius: 8, padding: "12px 18px" }}>
+            <span style={{ color: "#F5E642", fontWeight: 700, fontSize: 14 }}>⚡ {eras[selected].fact}</span>
           </div>
         </div>
 
-        <div style={{ marginTop: 32, background: "#1e2d45″, borderRadius: 12, padding: 24 }}>
-          <h3 style={{ color: "#F5E642″, fontWeight: 700, marginTop: 0 }}>🎯 ProLnk's Roofing Solution</h3>
-          <p style={{ color: "#94a3b8″, lineHeight: 1.6, margin: 0 }}>
+        <div style={{ marginTop: 32, background: "#1e2d45", borderRadius: 12, padding: 24 }}>
+          <h3 style={{ color: "#F5E642", fontWeight: 700, marginTop: 0 }}>🎯 ProLnk's Roofing Solution</h3>
+          <p style={{ color: "#94a3b8", lineHeight: 1.6, margin: 0 }}>
             ProLnk pre-vetted DFW roofing professionals are licensed, insured, and locally accountable. No storm chasers. No out-of-state crews. Every job tracked in the Home Health Vault — giving homeowners documentation that follows the home forever.
           </p>
         </div>

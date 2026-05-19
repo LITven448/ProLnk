@@ -76,7 +76,7 @@ export default function DFWHousingInventoryGuide2026() {
             { label: 'Balanced Market', value: '5–6 mo', icon: '⚖️' },
             { label: 'Inventory Gap', value: '-68%', icon: '📉' },
           ].map(s => (
-            <div key={s.label} style={{ background: '#132040', borderRadius: 12, padding: 20, border: '1px solid #1E3060′ }}>
+            <div key={s.label} style={{ background: '#132040', borderRadius: 12, padding: 20, border: '1px solid #1E3060' }}>
               <div style={{ fontSize: 28 }}>{s.icon}</div>
               <div style={{ fontSize: 24, fontWeight: 800, color: '#F5E642', margin: '8px 0 4px' }}>{s.value}</div>
               <div style={{ color: '#8899BB', fontSize: 13 }}>{s.label}</div>
@@ -84,10 +84,10 @@ export default function DFWHousingInventoryGuide2026() {
           ))}
         </div>
 
-        <div style={{ background: '#132040', borderRadius: 12, padding: 24, marginBottom: 24, border: '1px solid #1E3060′ }}>
+        <div style={{ background: '#132040', borderRadius: 12, padding: 24, marginBottom: 24, border: '1px solid #1E3060' }}>
           <h2 style={{ fontSize: 18, fontWeight: 700, marginBottom: 16 }}>🔍 Why Is Inventory So Low?</h2>
           {inventoryReasons.map(r => (
-            <div key={r.reason} style={{ display: 'flex', gap: 16, padding: '12px 0', borderBottom: '1px solid #1E3060′ }}>
+            <div key={r.reason} style={{ display: 'flex', gap: 16, padding: '12px 0', borderBottom: '1px solid #1E3060' }}>
               <span style={{ fontSize: 24 }}>{r.emoji}</span>
               <div>
                 <div style={{ fontWeight: 600, marginBottom: 4 }}>{r.reason}</div>
@@ -97,18 +97,18 @@ export default function DFWHousingInventoryGuide2026() {
           ))}
         </div>
 
-        <div style={{ background: '#132040', borderRadius: 12, padding: 24, border: '1px solid #F5E642′ }}>
+        <div style={{ background: '#132040', borderRadius: 12, padding: 24, border: '1px solid #F5E642' }}>
           <h2 style={{ fontSize: 20, fontWeight: 700, marginBottom: 16 }}>🔍 Your Market Navigation Strategy</h2>
           <div style={{ display: 'flex', gap: 8, marginBottom: 20, flexWrap: 'wrap' }}>
             {([['firstTime','First-Time Buyer'],['moveUp','Move-Up Buyer'],['investor','Investor'],['relocating','Relocating']] as const).map(([k,label]) => (
               <button key={k} onClick={()=>setBuyerType(k)}
-                style={{ padding: '8px 16px', borderRadius: 8, border: 'none', cursor: 'pointer', background: buyerType===k ? '#F5E642′ : '#1E3060', color: buyerType===k ? '#0A1628' : '#fff', fontWeight: 700 }}>{label}</button>
+                style={{ padding: '8px 16px', borderRadius: 8, border: 'none', cursor: 'pointer', background: buyerType===k ? '#F5E642' : '#1E3060', color: buyerType===k ? '#0A1628' : '#fff', fontWeight: 700 }}>{label}</button>
             ))}
           </div>
           <div style={{ background: '#0A1628', borderRadius: 8, padding: 20 }}>
             <div style={{ fontSize: 22, fontWeight: 800, color: '#F5E642', marginBottom: 12 }}>{strat.emoji} {strat.title}</div>
             {strat.tactics.map((t,i) => <div key={i} style={{ color: '#8899BB', marginBottom: 8, paddingLeft: 16 }}>• {t}</div>)}
-            <div style={{ marginTop: 16, padding: 12, background: '#132040', borderRadius: 8, borderLeft: '3px solid #F5E642′ }}>
+            <div style={{ marginTop: 16, padding: 12, background: '#132040', borderRadius: 8, borderLeft: '3px solid #F5E642' }}>
               <span style={{ color: '#F5E642', fontWeight: 700 }}>Outlook: </span>
               <span style={{ color: '#8899BB' }}>{strat.outlook}</span>
             </div>

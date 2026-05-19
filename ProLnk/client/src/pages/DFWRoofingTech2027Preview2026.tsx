@@ -1,10 +1,10 @@
 import { useState } from 'react';
 
 const technologies = [
-  { id: 'drone', icon: '🚁', title: 'Drone Post-Storm Assessment', desc: 'Full roof documented before you get home — automated dispatch after hail events', eta: 'Q1 2027′ },
-  { id: 'class5', icon: '🛡️', title: 'Class 5 Impact Shingles', desc: 'Beyond current Class 4 — next-gen impact resistance arriving in DFW market', eta: 'Q3 2027′ },
-  { id: 'solar', icon: '☀️', title: 'Integrated Solar Shingles', desc: 'Installed cost dropping toward conventional roofing — DFW sun economics work', eta: 'Q2 2027′ },
-  { id: 'ai', icon: '🤖', title: 'AI Damage Assessment', desc: 'Upload photos — instant damage estimate before the adjuster arrives', eta: 'Q1 2027′ },
+  { id: 'drone', icon: '🚁', title: 'Drone Post-Storm Assessment', desc: 'Full roof documented before you get home — automated dispatch after hail events', eta: 'Q1 2027' },
+  { id: 'class5', icon: '🛡️', title: 'Class 5 Impact Shingles', desc: 'Beyond current Class 4 — next-gen impact resistance arriving in DFW market', eta: 'Q3 2027' },
+  { id: 'solar', icon: '☀️', title: 'Integrated Solar Shingles', desc: 'Installed cost dropping toward conventional roofing — DFW sun economics work', eta: 'Q2 2027' },
+  { id: 'ai', icon: '🤖', title: 'AI Damage Assessment', desc: 'Upload photos — instant damage estimate before the adjuster arrives', eta: 'Q1 2027' },
   { id: 'vault', icon: '🏠', title: 'ProLnk Vault Hail Event Documentation', desc: 'Automatic hail event records tied to your address — forever', eta: 'Live Now' },
 ];
 
@@ -35,7 +35,7 @@ export default function DFWRoofingTech2027Preview2026() {
         <div style={{ display: 'flex', flexWrap: 'wrap', gap: '.75rem', marginBottom: '2rem' }}>
           {interests.map(i => (
             <button key={i.label} onClick={() => handleInterest(i)}
-              style={{ background: selected === i.label ? '#F5E642′ : '#1e3a5f', color: selected === i.label ? '#0A1628' : '#fff', border: ’none', borderRadius: 8, padding: '.6rem 1.1rem', cursor: 'pointer', fontWeight: 600 }}>
+              style={{ background: selected === i.label ? '#F5E642' : '#1e3a5f', color: selected === i.label ? '#0A1628' : '#fff', border: 'none', borderRadius: 8, padding: '.6rem 1.1rem', cursor: 'pointer', fontWeight: 600 }}>
               {i.label}
             </button>
           ))}
@@ -46,7 +46,7 @@ export default function DFWRoofingTech2027Preview2026() {
             <h2 style={{ color: '#F5E642', marginBottom: '1rem' }}>Your 2027 Roofing Technology Preview</h2>
             <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
               {result.map(t => (
-                <div key={t.id} style={{ background: '#1e3a5f', borderRadius: 10, padding: '1.2rem', borderLeft: '4px solid #F5E642′ }}>
+                <div key={t.id} style={{ background: '#1e3a5f', borderRadius: 10, padding: '1.2rem', borderLeft: '4px solid #F5E642' }}>
                   <div style={{ fontSize: '1.5rem' }}>{t.icon}</div>
                   <div style={{ fontWeight: 700, marginTop: '.4rem' }}>{t.title}</div>
                   <div style={{ color: '#94a3b8', fontSize: '.9rem', marginTop: '.3rem' }}>{t.desc}</div>
@@ -54,7 +54,7 @@ export default function DFWRoofingTech2027Preview2026() {
                 </div>
               ))}
             </div>
-            <div style={{ marginTop: '1.5rem', background: '#F5E64220', borderRadius: 10, padding: '1rem', color: '#F5E642′ }}>
+            <div style={{ marginTop: '1.5rem', background: '#F5E64220', borderRadius: 10, padding: '1rem', color: '#F5E642' }}>
               🏠 ProLnk Vault records every hail event at your address automatically — your roof history builds itself.
             </div>
           </div>

@@ -27,9 +27,9 @@ const CHANGELOG: ChangelogEntry[] = [
   {
     id: "exchange-marketplace",
     month: "May",
-    year: "2026″,
+    year: "2026",
     icon: ShoppingBag,
-    color: "#F5E642″,
+    color: "#F5E642",
     tag: "New",
     title: "Exchange marketplace live",
     detail:
@@ -39,7 +39,7 @@ const CHANGELOG: ChangelogEntry[] = [
   {
     id: "trustypro-dashboard",
     month: "May",
-    year: "2026″,
+    year: "2026",
     icon: Network,
     color: "#22c55e",
     tag: "New",
@@ -51,9 +51,9 @@ const CHANGELOG: ChangelogEntry[] = [
   {
     id: "faq-howitworks",
     month: "May",
-    year: "2026″,
+    year: "2026",
     icon: Sparkles,
-    color: "#3b82f6″,
+    color: "#3b82f6",
     tag: "Update",
     title: "FAQ + How It Works pages",
     detail:
@@ -65,9 +65,9 @@ const CHANGELOG: ChangelogEntry[] = [
   {
     id: "mobile-nav",
     month: "Apr",
-    year: "2026″,
+    year: "2026",
     icon: Smartphone,
-    color: "#8b5cf6″,
+    color: "#8b5cf6",
     tag: "Update",
     title: "Mobile bottom navigation",
     detail:
@@ -76,7 +76,7 @@ const CHANGELOG: ChangelogEntry[] = [
   {
     id: "commission-calculator",
     month: "Apr",
-    year: "2026″,
+    year: "2026",
     icon: Calculator,
     color: "#f59e0b",
     tag: "Update",
@@ -88,9 +88,9 @@ const CHANGELOG: ChangelogEntry[] = [
   {
     id: "ai-matching",
     month: "Apr",
-    year: "2026″,
+    year: "2026",
     icon: Brain,
-    color: "#ec4899″,
+    color: "#ec4899",
     tag: "New",
     title: "AI opportunity matching",
     detail:
@@ -102,9 +102,9 @@ const CHANGELOG: ChangelogEntry[] = [
   {
     id: "storm-alerts",
     month: "Mar",
-    year: "2026″,
+    year: "2026",
     icon: Cloud,
-    color: "#06b6d4″,
+    color: "#06b6d4",
     tag: "New",
     title: "Weather storm alerts",
     detail:
@@ -113,9 +113,9 @@ const CHANGELOG: ChangelogEntry[] = [
   {
     id: "referral-funnel",
     month: "Mar",
-    year: "2026″,
+    year: "2026",
     icon: GitMerge,
-    color: "#10b981″,
+    color: "#10b981",
     tag: "New",
     title: "Referral funnel tracker",
     detail:
@@ -127,9 +127,9 @@ const CHANGELOG: ChangelogEntry[] = [
   {
     id: "home-health-vault",
     month: "Feb",
-    year: "2026″,
+    year: "2026",
     icon: Shield,
-    color: "#6366f1″,
+    color: "#6366f1",
     tag: "New",
     title: "Home Health Vault",
     detail:
@@ -139,9 +139,9 @@ const CHANGELOG: ChangelogEntry[] = [
   {
     id: "photo-scan-ai",
     month: "Feb",
-    year: "2026″,
+    year: "2026",
     icon: Camera,
-    color: "#f97316″,
+    color: "#f97316",
     tag: "New",
     title: "Photo scan AI",
     detail:
@@ -163,10 +163,10 @@ type Release = {
 
 const RELEASES: Release[] = [
   {
-    version: "v2.4″,
+    version: "v2.4",
     label: "This week",
-    date: "May 12, 2026″,
-    color: "#F5E642″,
+    date: "May 12, 2026",
+    color: "#F5E642",
     isNew: true,
     highlights: [
       "AI Photo Scan improvements — faster model, better fixture detection",
@@ -175,9 +175,9 @@ const RELEASES: Release[] = [
     ],
   },
   {
-    version: "v2.3″,
+    version: "v2.3",
     label: "Last week",
-    date: "May 5, 2026″,
+    date: "May 5, 2026",
     color: "#22c55e",
     highlights: [
       "TrueCostGuide rebuild — side-by-side material + labor estimates",
@@ -186,10 +186,10 @@ const RELEASES: Release[] = [
     ],
   },
   {
-    version: "v2.2″,
+    version: "v2.2",
     label: "2 weeks ago",
-    date: "Apr 28, 2026″,
-    color: "#3b82f6″,
+    date: "Apr 28, 2026",
+    color: "#3b82f6",
     highlights: [
       "InsuranceClaimAssistant wizard — step-by-step claim documentation",
       "ContractorComparison badges — differentiate licensed vs unlicensed",
@@ -197,10 +197,10 @@ const RELEASES: Release[] = [
     ],
   },
   {
-    version: "v2.1″,
+    version: "v2.1",
     label: "3 weeks ago",
-    date: "Apr 21, 2026″,
-    color: "#8b5cf6″,
+    date: "Apr 21, 2026",
+    color: "#8b5cf6",
     highlights: [
       "Inngest background jobs wired — async job processing at scale",
       "Stripe payouts live — weekly payout batch now automated",
@@ -208,10 +208,10 @@ const RELEASES: Release[] = [
     ],
   },
   {
-    version: "v2.0″,
+    version: "v2.0",
     label: "1 month ago",
-    date: "Apr 14, 2026″,
-    color: "#f97316″,
+    date: "Apr 14, 2026",
+    color: "#f97316",
     highlights: [
       "Full dark theme rollout — every page, every component",
       "TrustyPro integration — licensed pros now in same platform",
@@ -225,24 +225,24 @@ const RELEASES: Release[] = [
 const COMING_SOON = [
   {
     icon: ShoppingBag,
-    color: "#F5E642″,
+    color: "#F5E642",
     title: "Exchange B2B Marketplace",
     description: "Trade origination rights, portfolio bundles, and territory packages with other pros.",
-    eta: "Q3 2026″,
+    eta: "Q3 2026",
   },
   {
     icon: Smartphone,
     color: "#22c55e",
     title: "Mobile App (iOS & Android)",
     description: "Native push notifications, offline job logs, and GPS-based territory management.",
-    eta: "Q3 2026″,
+    eta: "Q3 2026",
   },
   {
     icon: Brain,
-    color: "#3b82f6″,
-    title: "AI Matching v2″,
+    color: "#3b82f6",
+    title: "AI Matching v2",
     description: "Self-learning model trained on your past wins — surfaces the jobs you're most likely to win.",
-    eta: "Q4 2026″,
+    eta: "Q4 2026",
   },
 ];
 
@@ -250,8 +250,8 @@ const COMING_SOON = [
 
 const TAG_STYLES: Record<string, { bg: string; color: string }> = {
   "New":             { bg: "rgba(34,197,94,0.15)",    color: "#22c55e" },
-  "Update":          { bg: "rgba(59,130,246,0.15)",   color: "#3b82f6″ },
-  "Live Now":        { bg: "rgba(245,230,66,0.15)",   color: "#F5E642″ },
+  "Update":          { bg: "rgba(59,130,246,0.15)",   color: "#3b82f6" },
+  "Live Now":        { bg: "rgba(245,230,66,0.15)",   color: "#F5E642" },
   "Action Required": { bg: "rgba(245,158,11,0.15)",   color: "#f59e0b" },
 };
 
@@ -279,18 +279,18 @@ function ChangelogCard({ entry }: { entry: ChangelogEntry }) {
 
   return (
     <div
-      className="rounded-2xl p-5 flex flex-col gap-3″
+      className="rounded-2xl p-5 flex flex-col gap-3"
       style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)" }}
     >
-      <div className="flex items-start justify-between gap-3″>
+      <div className="flex items-start justify-between gap-3">
         <div
-          className="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0″
+          className="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0"
           style={{ background: `${color}18` }}
         >
           <Icon size={20} style={{ color }} />
         </div>
         <span
-          className="text-[10px] font-bold px-2.5 py-1 rounded-full flex-shrink-0″
+          className="text-[10px] font-bold px-2.5 py-1 rounded-full flex-shrink-0"
           style={{
             background: tagStyle.bg,
             color: tagStyle.color,
@@ -337,23 +337,23 @@ function ChangelogCard({ entry }: { entry: ChangelogEntry }) {
 // ─── Version Timeline ─────────────────────────────────────────────────────────
 
 function VersionTimeline() {
-  const [expanded, setExpanded] = useState<string | null>("v2.4″);
+  const [expanded, setExpanded] = useState<string | null>("v2.4");
 
   return (
     <div
-      className="rounded-2xl p-6″
+      className="rounded-2xl p-6"
       style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)" }}
     >
-      <div className="flex items-center gap-3 mb-5″>
+      <div className="flex items-center gap-3 mb-5">
         <div
-          className="w-9 h-9 rounded-xl flex items-center justify-center flex-shrink-0″
+          className="w-9 h-9 rounded-xl flex items-center justify-center flex-shrink-0"
           style={{ background: "rgba(245,230,66,0.12)" }}
         >
-          <Package size={18} style={{ color: "#F5E642″ }} />
+          <Package size={18} style={{ color: "#F5E642" }} />
         </div>
         <div>
           <h2 className="text-sm font-bold text-white">Version Timeline</h2>
-          <p className="text-xs text-gray-400″>Release history — tap to expand</p>
+          <p className="text-xs text-gray-400">Release history — tap to expand</p>
         </div>
       </div>
 
@@ -364,7 +364,7 @@ function VersionTimeline() {
           style={{ background: "rgba(255,255,255,0.08)" }}
         />
 
-        <div className="space-y-2″>
+        <div className="space-y-2">
           {RELEASES.map((release) => {
             const isOpen = expanded === release.version;
             return (
@@ -378,7 +378,7 @@ function VersionTimeline() {
                     className="relative z-10 w-9 h-9 rounded-full flex items-center justify-center flex-shrink-0 text-xs font-bold transition-all"
                     style={{
                       background: isOpen ? release.color : "rgba(255,255,255,0.06)",
-                      color: isOpen ? "#0A1628″ : release.color,
+                      color: isOpen ? "#0A1628" : release.color,
                       border: `2px solid ${release.color}40`,
                       boxShadow: isOpen ? `0 0 12px ${release.color}60` : "none",
                     }}
@@ -386,7 +386,7 @@ function VersionTimeline() {
                     {release.version.replace("v", "")}
                   </div>
 
-                  <div className="flex-1 min-w-0 py-2″>
+                  <div className="flex-1 min-w-0 py-2">
                     <div className="flex items-center gap-2 flex-wrap">
                       <span className="text-sm font-bold text-white">{release.version}</span>
                       {release.isNew && (
@@ -394,7 +394,7 @@ function VersionTimeline() {
                           className="text-[10px] font-bold px-2 py-0.5 rounded-full"
                           style={{
                             background: "rgba(245,230,66,0.15)",
-                            color: "#F5E642″,
+                            color: "#F5E642",
                             border: "1px solid rgba(245,230,66,0.3)",
                             animation: "pulse 2s ease-in-out infinite",
                           }}
@@ -402,22 +402,22 @@ function VersionTimeline() {
                           NEW
                         </span>
                       )}
-                      <span className="text-xs text-gray-500″>{release.label} · {release.date}</span>
+                      <span className="text-xs text-gray-500">{release.label} · {release.date}</span>
                     </div>
                   </div>
 
-                  <div className="flex-shrink-0 text-gray-500″>
+                  <div className="flex-shrink-0 text-gray-500">
                     {isOpen ? <ChevronUp size={14} /> : <ChevronDown size={14} />}
                   </div>
                 </button>
 
                 {isOpen && (
-                  <div className="ml-[52px] pb-3″>
-                    <ul className="space-y-1.5″>
+                  <div className="ml-[52px] pb-3">
+                    <ul className="space-y-1.5">
                       {release.highlights.map((h, i) => (
-                        <li key={i} className="flex items-start gap-2″>
+                        <li key={i} className="flex items-start gap-2">
                           <div
-                            className="w-1.5 h-1.5 rounded-full mt-1.5 flex-shrink-0″
+                            className="w-1.5 h-1.5 rounded-full mt-1.5 flex-shrink-0"
                             style={{ background: release.color }}
                           />
                           <span className="text-xs text-gray-300 leading-relaxed">{h}</span>
@@ -446,15 +446,15 @@ function FeatureSpotlightCard() {
         border: "1px solid rgba(245,230,66,0.2)",
       }}
     >
-      <div className="p-6″>
-        <div className="flex items-center gap-2 mb-4″>
+      <div className="p-6">
+        <div className="flex items-center gap-2 mb-4">
           <div
             className="w-7 h-7 rounded-lg flex items-center justify-center"
             style={{ background: "rgba(245,230,66,0.15)" }}
           >
-            <Star size={14} style={{ color: "#F5E642″ }} />
+            <Star size={14} style={{ color: "#F5E642" }} />
           </div>
-          <span className="text-xs font-bold uppercase tracking-widest" style={{ color: "#F5E642″ }}>
+          <span className="text-xs font-bold uppercase tracking-widest" style={{ color: "#F5E642" }}>
             Feature Spotlight
           </span>
         </div>
@@ -469,25 +469,25 @@ function FeatureSpotlightCard() {
           }}
         >
           <div className="text-center">
-            <Camera size={32} className="mx-auto mb-2 text-gray-600″ />
-            <p className="text-xs text-gray-600″>AI Photo Scan — v2.4 Preview</p>
+            <Camera size={32} className="mx-auto mb-2 text-gray-600" />
+            <p className="text-xs text-gray-600">AI Photo Scan — v2.4 Preview</p>
           </div>
         </div>
 
-        <h3 className="text-base font-bold text-white mb-2″>
+        <h3 className="text-base font-bold text-white mb-2">
           AI Photo Scan 2.0 — Instant Fixture Recognition
         </h3>
-        <p className="text-xs text-gray-400 leading-relaxed mb-4″>
+        <p className="text-xs text-gray-400 leading-relaxed mb-4">
           Point your phone at any HVAC unit, water heater, or electrical panel. The upgraded AI model identifies
           make, model, serial number, and estimated install year in under 3 seconds. No barcode scanning required —
           just a photo. Automatically logs to the Home Health Vault and stakes your origination rights.
         </p>
 
-        <div className="flex items-center gap-3″>
+        <div className="flex items-center gap-3">
           <Link href="/photo-upload">
             <span
               className="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl text-xs font-bold"
-              style={{ background: "#F5E642″, color: "#0A1628" }}
+              style={{ background: "#F5E642", color: "#0A1628" }}
             >
               Try Photo Scan <ArrowUpRight size={12} />
             </span>
@@ -507,18 +507,18 @@ function FeatureSpotlightCard() {
 
 function ComingSoonSection() {
   return (
-    <div className="space-y-4″>
-      <div className="flex items-center gap-3″>
+    <div className="space-y-4">
+      <div className="flex items-center gap-3">
         <div
           className="px-3 py-1 rounded-full text-xs font-bold"
-          style={{ background: "rgba(139,92,246,0.1)", color: "#8b5cf6″, border: "1px solid rgba(139,92,246,0.2)" }}
+          style={{ background: "rgba(139,92,246,0.1)", color: "#8b5cf6", border: "1px solid rgba(139,92,246,0.2)" }}
         >
           Coming Soon
         </div>
         <div className="flex-1 h-px" style={{ background: "rgba(255,255,255,0.06)" }} />
       </div>
 
-      <div className="grid sm:grid-cols-3 gap-4″>
+      <div className="grid sm:grid-cols-3 gap-4">
         {COMING_SOON.map((feature) => {
           const Icon = feature.icon;
           return (
@@ -532,24 +532,24 @@ function ComingSoonSection() {
             >
               {/* Blur overlay */}
               <div
-                className="absolute inset-0 backdrop-blur-[1px] rounded-2xl flex flex-col items-center justify-center gap-2 z-10″
+                className="absolute inset-0 backdrop-blur-[1px] rounded-2xl flex flex-col items-center justify-center gap-2 z-10"
                 style={{ background: "rgba(10,22,40,0.65)" }}
               >
-                <Lock size={16} className="text-gray-500″ />
+                <Lock size={16} className="text-gray-500" />
                 <span className="text-[10px] font-bold text-gray-500 uppercase tracking-wider">
                   ETA {feature.eta}
                 </span>
               </div>
 
               {/* Blurred content behind */}
-              <div className="opacity-40″>
+              <div className="opacity-40">
                 <div
-                  className="w-10 h-10 rounded-xl flex items-center justify-center mb-3″
+                  className="w-10 h-10 rounded-xl flex items-center justify-center mb-3"
                   style={{ background: `${feature.color}18` }}
                 >
                   <Icon size={20} style={{ color: feature.color }} />
                 </div>
-                <h3 className="text-sm font-bold text-white mb-1″>{feature.title}</h3>
+                <h3 className="text-sm font-bold text-white mb-1">{feature.title}</h3>
                 <p className="text-xs text-gray-400 leading-relaxed">{feature.description}</p>
               </div>
             </div>
@@ -579,19 +579,19 @@ function FeedbackWidget() {
       {submitted ? (
         <div>
           <div
-            className="w-10 h-10 rounded-xl flex items-center justify-center mx-auto mb-3″
+            className="w-10 h-10 rounded-xl flex items-center justify-center mx-auto mb-3"
             style={{ background: "rgba(34,197,94,0.12)" }}
           >
             <Sparkles size={20} style={{ color: "#22c55e" }} />
           </div>
           <p className="text-sm font-bold text-white">Thanks for the feedback!</p>
-          <p className="text-xs text-gray-500 mt-1″>Your input shapes what we build next.</p>
+          <p className="text-xs text-gray-500 mt-1">Your input shapes what we build next.</p>
         </div>
       ) : (
         <>
-          <p className="text-sm font-semibold text-white mb-1″>Rate this update</p>
-          <p className="text-xs text-gray-500 mb-4″>How useful was v2.4?</p>
-          <div className="flex items-center justify-center gap-2 mb-4″>
+          <p className="text-sm font-semibold text-white mb-1">Rate this update</p>
+          <p className="text-xs text-gray-500 mb-4">How useful was v2.4?</p>
+          <div className="flex items-center justify-center gap-2 mb-4">
             {[1, 2, 3, 4, 5].map((n) => (
               <button
                 key={n}
@@ -603,8 +603,8 @@ function FeedbackWidget() {
                 <Star
                   size={28}
                   style={{
-                    color: n <= (hovered || rating) ? "#F5E642″ : "rgba(255,255,255,0.15)",
-                    fill: n <= (hovered || rating) ? "#F5E642″ : "transparent",
+                    color: n <= (hovered || rating) ? "#F5E642" : "rgba(255,255,255,0.15)",
+                    fill: n <= (hovered || rating) ? "#F5E642" : "transparent",
                     transition: "color 0.15s, fill 0.15s",
                   }}
                 />
@@ -614,10 +614,10 @@ function FeedbackWidget() {
           <button
             onClick={handleSubmit}
             disabled={rating === 0}
-            className="px-5 py-2 rounded-xl text-xs font-bold transition-all disabled:opacity-40″
+            className="px-5 py-2 rounded-xl text-xs font-bold transition-all disabled:opacity-40"
             style={{
-              background: rating > 0 ? "#F5E642″ : "rgba(255,255,255,0.08)",
-              color: rating > 0 ? "#0A1628″ : "#6b7280",
+              background: rating > 0 ? "#F5E642" : "rgba(255,255,255,0.08)",
+              color: rating > 0 ? "#0A1628" : "#6b7280",
             }}
           >
             Submit Rating
@@ -635,43 +635,43 @@ function NewThisWeekBanner() {
 
   return (
     <div
-      className="rounded-2xl p-4 flex items-center gap-4″
+      className="rounded-2xl p-4 flex items-center gap-4"
       style={{
         background: "linear-gradient(135deg, rgba(245,230,66,0.12), rgba(245,230,66,0.04))",
         border: "1px solid rgba(245,230,66,0.25)",
       }}
     >
-      <div className="relative flex-shrink-0″>
+      <div className="relative flex-shrink-0">
         <div
           className="w-10 h-10 rounded-xl flex items-center justify-center"
           style={{ background: "rgba(245,230,66,0.15)" }}
         >
-          <Bell size={18} style={{ color: "#F5E642″ }} />
+          <Bell size={18} style={{ color: "#F5E642" }} />
         </div>
         {/* Pulsing badge */}
         <div
           className="absolute -top-1.5 -right-1.5 w-5 h-5 rounded-full flex items-center justify-center text-[10px] font-bold"
           style={{
-            background: "#F5E642″,
-            color: "#0A1628″,
+            background: "#F5E642",
+            color: "#0A1628",
             animation: "pulse 2s ease-in-out infinite",
           }}
         >
           {newCount}
         </div>
       </div>
-      <div className="flex-1 min-w-0″>
+      <div className="flex-1 min-w-0">
         <p className="text-sm font-bold text-white">
           {newCount} new features shipped this week
         </p>
-        <p className="text-xs text-gray-400 mt-0.5″>
+        <p className="text-xs text-gray-400 mt-0.5">
           v2.4 is live — AI Photo Scan improvements, Storm Alert upgrades, BookPro booking flow
         </p>
       </div>
       <a
         href="#timeline"
-        className="flex-shrink-0 text-xs font-semibold flex items-center gap-1″
-        style={{ color: "#F5E642″ }}
+        className="flex-shrink-0 text-xs font-semibold flex items-center gap-1"
+        style={{ color: "#F5E642" }}
       >
         View <ChevronRight size={12} />
       </a>
@@ -685,16 +685,16 @@ export default function WhatsNew() {
   const groups = groupByMonth(CHANGELOG);
 
   return (
-    <div className="min-h-screen" style={{ background: "#0A1628″ }}>
-      <div className="max-w-3xl mx-auto px-4 py-8 space-y-8″>
+    <div className="min-h-screen" style={{ background: "#0A1628" }}>
+      <div className="max-w-3xl mx-auto px-4 py-8 space-y-8">
 
         {/* Header */}
-        <div className="flex items-center gap-3″>
+        <div className="flex items-center gap-3">
           <div
-            className="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0″
+            className="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0"
             style={{ background: "rgba(245,230,66,0.12)" }}
           >
-            <Sparkles size={20} style={{ color: "#F5E642″ }} />
+            <Sparkles size={20} style={{ color: "#F5E642" }} />
           </div>
           <div>
             <h1 className="text-2xl font-bold text-white">What's New</h1>
@@ -715,12 +715,12 @@ export default function WhatsNew() {
 
         {/* Changelog grouped by month */}
         {groups.map(({ key, label, items }) => (
-          <div key={key} className="space-y-4″>
+          <div key={key} className="space-y-4">
             {/* Month divider */}
-            <div className="flex items-center gap-3″>
+            <div className="flex items-center gap-3">
               <div
                 className="px-3 py-1 rounded-full text-xs font-bold"
-                style={{ background: "rgba(245,230,66,0.1)", color: "#F5E642″, border: "1px solid rgba(245,230,66,0.2)" }}
+                style={{ background: "rgba(245,230,66,0.1)", color: "#F5E642", border: "1px solid rgba(245,230,66,0.2)" }}
               >
                 {label}
               </div>
@@ -728,7 +728,7 @@ export default function WhatsNew() {
             </div>
 
             {/* Cards grid */}
-            <div className="grid sm:grid-cols-2 gap-4″>
+            <div className="grid sm:grid-cols-2 gap-4">
               {items.map((entry) => (
                 <ChangelogCard key={entry.id} entry={entry} />
               ))}
@@ -743,7 +743,7 @@ export default function WhatsNew() {
         <FeedbackWidget />
 
         {/* Footer */}
-        <p className="text-xs text-gray-600 text-center pb-4″>
+        <p className="text-xs text-gray-600 text-center pb-4">
           New features are posted here as they ship. Check back weekly.
         </p>
 

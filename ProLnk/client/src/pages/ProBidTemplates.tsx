@@ -301,7 +301,7 @@ export default function ProBidTemplates() {
                     </pre>
                     <button
                       onClick={() => handleCopy(idx, t.template)}
-                      style={{ marginTop: 12, background: copied === idx ? '#4CAF50′ : '#1E3A5F', color: '#fff', border: ’none', borderRadius: 8, padding: '10px 22px', cursor: 'pointer', fontFamily: 'sans-serif', fontWeight: 600, fontSize: 14, transition: 'background 0.2s' }}
+                      style={{ marginTop: 12, background: copied === idx ? '#4CAF50' : '#1E3A5F', color: '#fff', border: 'none', borderRadius: 8, padding: '10px 22px', cursor: 'pointer', fontFamily: 'sans-serif', fontWeight: 600, fontSize: 14, transition: 'background 0.2s' }}
                     >
                       {copied === idx ? '✓ Copied!' : 'Copy Template'}
                     </button>

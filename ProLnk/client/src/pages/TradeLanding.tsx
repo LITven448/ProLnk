@@ -303,7 +303,7 @@ export default function TradeLanding() {
 
   if (!data) {
     return (
-      <div className="min-h-screen bg-gray-950 flex flex-col items-center justify-center text-white gap-4″>
+      <div className="min-h-screen bg-gray-950 flex flex-col items-center justify-center text-white gap-4">
         <div className="text-2xl font-bold">Trade not found</div>
         <Button onClick={() => navigate("/trades")} variant="outline">View All Trades</Button>
       </div>
@@ -326,7 +326,7 @@ export default function TradeLanding() {
         <button onClick={() => navigate("/")} className="focus:outline-none">
           <ProLnkLogo height={32} />
         </button>
-        <div className="flex items-center gap-3″>
+        <div className="flex items-center gap-3">
           <button
             onClick={() => navigate("/trades")}
             className="text-sm text-gray-400 hover:text-white transition-colors"
@@ -335,7 +335,7 @@ export default function TradeLanding() {
           </button>
           <Button
             onClick={() => navigate("/founding-partner")}
-            className="bg-yellow-400 hover:bg-yellow-300 text-gray-900 font-bold text-sm px-5″
+            className="bg-yellow-400 hover:bg-yellow-300 text-gray-900 font-bold text-sm px-5"
           >
             Join Founding Network
           </Button>
@@ -344,23 +344,23 @@ export default function TradeLanding() {
 
       {/* Hero */}
       <section className="max-w-4xl mx-auto px-6 pt-14 pb-12 text-center">
-        <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-yellow-400/10 border border-yellow-400/20 text-yellow-400 text-xs font-semibold mb-5″>
-          <Clock className="w-3.5 h-3.5″ />
+        <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-yellow-400/10 border border-yellow-400/20 text-yellow-400 text-xs font-semibold mb-5">
+          <Clock className="w-3.5 h-3.5" />
           {data.partners} DFW {data.label}s in the Founding Network
         </div>
-        <h1 className="text-5xl md:text-6xl font-black text-white leading-tight mb-4″>
+        <h1 className="text-5xl md:text-6xl font-black text-white leading-tight mb-4">
           ProLnk for {data.label}s<br />
-          <span className="text-yellow-400″>in DFW</span>
+          <span className="text-yellow-400">in DFW</span>
         </h1>
         <p className="text-xl text-gray-300 mb-3 max-w-2xl mx-auto">{data.tagline}</p>
         <p className="text-gray-400 text-base mb-8 max-w-xl mx-auto">{data.focus}</p>
 
         {/* Avg Job Value callout */}
-        <div className="inline-flex items-center gap-3 bg-gray-900 border border-gray-700 rounded-2xl px-7 py-4 mb-10″>
-          <DollarSign className="w-6 h-6 text-yellow-400″ />
+        <div className="inline-flex items-center gap-3 bg-gray-900 border border-gray-700 rounded-2xl px-7 py-4 mb-10">
+          <DollarSign className="w-6 h-6 text-yellow-400" />
           <div className="text-left">
             <div className="text-2xl font-black text-white">{fmtCurrency(data.avgJob)}</div>
-            <div className="text-xs text-gray-400″>avg {data.label.toLowerCase()} job value in DFW</div>
+            <div className="text-xs text-gray-400">avg {data.label.toLowerCase()} job value in DFW</div>
           </div>
         </div>
 
@@ -368,15 +368,15 @@ export default function TradeLanding() {
           <Button
             onClick={() => navigate("/founding-partner")}
             size="lg"
-            className="bg-yellow-400 hover:bg-yellow-300 text-gray-900 font-black text-base px-8 h-14″
+            className="bg-yellow-400 hover:bg-yellow-300 text-gray-900 font-black text-base px-8 h-14"
           >
-            Join the Founding Network <ArrowRight className="ml-2 w-5 h-5″ />
+            Join the Founding Network <ArrowRight className="ml-2 w-5 h-5" />
           </Button>
           <Button
             onClick={() => navigate("/trades")}
             size="lg"
             variant="outline"
-            className="border-gray-600 text-gray-300 hover:bg-gray-800 h-14″
+            className="border-gray-600 text-gray-300 hover:bg-gray-800 h-14"
           >
             Browse All Trades
           </Button>
@@ -384,20 +384,20 @@ export default function TradeLanding() {
       </section>
 
       {/* Benefits */}
-      <section className="max-w-5xl mx-auto px-6 py-16″>
-        <h2 className="text-3xl font-black text-white text-center mb-2″>
+      <section className="max-w-5xl mx-auto px-6 py-16">
+        <h2 className="text-3xl font-black text-white text-center mb-2">
           Why {data.label}s Choose ProLnk
         </h2>
-        <p className="text-gray-400 text-center mb-10″>
+        <p className="text-gray-400 text-center mb-10">
           Built for the realities of running a {data.label.toLowerCase()} business in DFW
         </p>
-        <div className="grid md:grid-cols-2 gap-5″>
+        <div className="grid md:grid-cols-2 gap-5">
           {data.benefits.map((b, i) => (
             <div
               key={i}
-              className="flex items-start gap-4 bg-gray-900 border border-gray-800 rounded-xl p-5″
+              className="flex items-start gap-4 bg-gray-900 border border-gray-800 rounded-xl p-5"
             >
-              <CheckCircle className="w-5 h-5 text-yellow-400 mt-0.5 shrink-0″ />
+              <CheckCircle className="w-5 h-5 text-yellow-400 mt-0.5 shrink-0" />
               <p className="text-gray-200 text-sm leading-relaxed">{b}</p>
             </div>
           ))}
@@ -405,23 +405,23 @@ export default function TradeLanding() {
       </section>
 
       {/* Testimonials */}
-      <section className="max-w-5xl mx-auto px-6 py-12″>
-        <h2 className="text-3xl font-black text-white text-center mb-2″>
+      <section className="max-w-5xl mx-auto px-6 py-12">
+        <h2 className="text-3xl font-black text-white text-center mb-2">
           From {data.label}s in the Network
         </h2>
-        <p className="text-gray-400 text-center mb-10″>Real results from DFW contractors</p>
-        <div className="grid md:grid-cols-3 gap-6″>
+        <p className="text-gray-400 text-center mb-10">Real results from DFW contractors</p>
+        <div className="grid md:grid-cols-3 gap-6">
           {data.testimonials.map((t, i) => (
             <div
               key={i}
-              className="bg-gray-900 border border-gray-800 rounded-2xl p-6 flex flex-col gap-4″
+              className="bg-gray-900 border border-gray-800 rounded-2xl p-6 flex flex-col gap-4"
             >
-              <div className="flex gap-0.5″>
+              <div className="flex gap-0.5">
                 {Array.from({ length: 5 }).map((_, s) => (
-                  <Star key={s} className="w-4 h-4 fill-yellow-400 text-yellow-400″ />
+                  <Star key={s} className="w-4 h-4 fill-yellow-400 text-yellow-400" />
                 ))}
               </div>
-              <p className="text-gray-300 text-sm leading-relaxed flex-1″>"{t.quote}"</p>
+              <p className="text-gray-300 text-sm leading-relaxed flex-1">"{t.quote}"</p>
               <div>
                 <div className="text-white font-semibold text-sm">{t.name}</div>
                 <div className="text-gray-500 text-xs">{t.city} · {t.years} yrs in {data.label.toLowerCase()}</div>
@@ -432,18 +432,18 @@ export default function TradeLanding() {
       </section>
 
       {/* Comparison */}
-      <section className="max-w-5xl mx-auto px-6 py-14″>
-        <h2 className="text-3xl font-black text-white text-center mb-2″>
+      <section className="max-w-5xl mx-auto px-6 py-14">
+        <h2 className="text-3xl font-black text-white text-center mb-2">
           ProLnk vs. Angi & HomeAdvisor
         </h2>
-        <p className="text-gray-400 text-center mb-10″>
+        <p className="text-gray-400 text-center mb-10">
           Why {data.label.toLowerCase()}s are switching
         </p>
         <div className="overflow-x-auto">
           <table className="w-full text-sm">
             <thead>
-              <tr className="border-b border-gray-800″>
-                <th className="text-left py-3 px-4 text-gray-400 font-medium w-1/3″>Feature</th>
+              <tr className="border-b border-gray-800">
+                <th className="text-left py-3 px-4 text-gray-400 font-medium w-1/3">Feature</th>
                 <th className="py-3 px-4 text-center">
                   <span className="text-yellow-400 font-bold">ProLnk</span>
                 </th>
@@ -461,8 +461,8 @@ export default function TradeLanding() {
                 [`Avg ${data.label.toLowerCase()} job routing`, true, false, false],
                 ["Fixed $149/mo — no per-lead fees", true, false, false],
               ].map(([label, prolnk, angi, ha], i) => (
-                <tr key={i} className="border-b border-gray-800/50″>
-                  <td className="py-3 px-4 text-gray-300″>{label as string}</td>
+                <tr key={i} className="border-b border-gray-800/50">
+                  <td className="py-3 px-4 text-gray-300">{label as string}</td>
                   <td className="py-3 px-4 text-center">
                     {prolnk ? (
                       <CheckCircle className="w-5 h-5 text-green-400 mx-auto" />
@@ -492,21 +492,21 @@ export default function TradeLanding() {
       </section>
 
       {/* Income streams callout */}
-      <section className="max-w-4xl mx-auto px-6 py-12″>
-        <div className="bg-gray-900 border border-yellow-400/20 rounded-2xl p-8 md:p-10″>
-          <div className="flex items-center gap-3 mb-5″>
-            <TrendingUp className="w-6 h-6 text-yellow-400″ />
+      <section className="max-w-4xl mx-auto px-6 py-12">
+        <div className="bg-gray-900 border border-yellow-400/20 rounded-2xl p-8 md:p-10">
+          <div className="flex items-center gap-3 mb-5">
+            <TrendingUp className="w-6 h-6 text-yellow-400" />
             <h3 className="text-2xl font-black text-white">5 Income Streams — Not Just One</h3>
           </div>
-          <div className="grid md:grid-cols-2 gap-4 mb-6″>
+          <div className="grid md:grid-cols-2 gap-4 mb-6">
             {[
-              { icon: <DollarSign className="w-4 h-4 text-yellow-400″ />, label: "Direct Commissions", desc: "72% of every job you close" },
-              { icon: <Users className="w-4 h-4 text-yellow-400″ />, label: "Network Override", desc: "Earn on jobs your referrals close" },
-              { icon: <Zap className="w-4 h-4 text-yellow-400″ />, label: "Subscription Override", desc: "Recurring % when your referred pros pay monthly" },
-              { icon: <Shield className="w-4 h-4 text-yellow-400″ />, label: "Homeowner Origination", desc: "Permanent share of platform fees from homes you bring in" },
+              { icon: <DollarSign className="w-4 h-4 text-yellow-400" />, label: "Direct Commissions", desc: "72% of every job you close" },
+              { icon: <Users className="w-4 h-4 text-yellow-400" />, label: "Network Override", desc: "Earn on jobs your referrals close" },
+              { icon: <Zap className="w-4 h-4 text-yellow-400" />, label: "Subscription Override", desc: "Recurring % when your referred pros pay monthly" },
+              { icon: <Shield className="w-4 h-4 text-yellow-400" />, label: "Homeowner Origination", desc: "Permanent share of platform fees from homes you bring in" },
             ].map((item, i) => (
-              <div key={i} className="flex items-start gap-3″>
-                <div className="mt-0.5″>{item.icon}</div>
+              <div key={i} className="flex items-start gap-3">
+                <div className="mt-0.5">{item.icon}</div>
                 <div>
                   <div className="text-white font-semibold text-sm">{item.label}</div>
                   <div className="text-gray-400 text-xs">{item.desc}</div>
@@ -522,28 +522,28 @@ export default function TradeLanding() {
 
       {/* Final CTA */}
       <section className="max-w-3xl mx-auto px-6 py-16 text-center">
-        <h2 className="text-4xl font-black text-white mb-3″>
+        <h2 className="text-4xl font-black text-white mb-3">
           Join the Founding Network for {data.label}s
         </h2>
-        <p className="text-gray-400 mb-8″>
+        <p className="text-gray-400 mb-8">
           {data.partners} DFW {data.label.toLowerCase()}s are already in. Charter spots lock at $149/mo forever.
           Waitlist closes at 500 applications.
         </p>
         <Button
           onClick={() => navigate("/founding-partner")}
           size="lg"
-          className="bg-yellow-400 hover:bg-yellow-300 text-gray-900 font-black text-lg px-10 h-16″
+          className="bg-yellow-400 hover:bg-yellow-300 text-gray-900 font-black text-lg px-10 h-16"
         >
-          Join the Founding Network <ArrowRight className="ml-2 w-5 h-5″ />
+          Join the Founding Network <ArrowRight className="ml-2 w-5 h-5" />
         </Button>
-        <p className="text-gray-600 text-xs mt-4″>No long-term contract. Cancel anytime.</p>
+        <p className="text-gray-600 text-xs mt-4">No long-term contract. Cancel anytime.</p>
       </section>
 
       {/* Footer */}
-      <footer className="border-t border-gray-800 py-8 px-6″>
-        <div className="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4″>
+      <footer className="border-t border-gray-800 py-8 px-6">
+        <div className="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
           <ProLnkLogo height={24} />
-          <div className="flex gap-6 text-xs text-gray-500″>
+          <div className="flex gap-6 text-xs text-gray-500">
             <button onClick={() => navigate("/privacy")} className="hover:text-gray-300 transition-colors">Privacy</button>
             <button onClick={() => navigate("/terms")} className="hover:text-gray-300 transition-colors">Terms</button>
             <button onClick={() => navigate("/trades")} className="hover:text-gray-300 transition-colors">All Trades</button>

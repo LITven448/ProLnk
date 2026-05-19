@@ -76,7 +76,7 @@ export default function DFWPropertyManagerVsPrivateLandlord2026() {
           </div>
           <div style={{ display: 'flex', gap: 10 }}>
             <span>🔑</span>
-            <span style={{ fontSize: 14, color: '#E8EAF0′ }}>What PMs do: tenant screening, lease execution, maintenance coordination, rent collection, legal compliance, and evictions. The key question: is their fee worth your time saved?</span>
+            <span style={{ fontSize: 14, color: '#E8EAF0' }}>What PMs do: tenant screening, lease execution, maintenance coordination, rent collection, legal compliance, and evictions. The key question: is their fee worth your time saved?</span>
           </div>
         </div>
 
@@ -101,7 +101,7 @@ export default function DFWPropertyManagerVsPrivateLandlord2026() {
               {guide.reasoning.map(r => (
                 <div key={r} style={{ display: 'flex', gap: 10, marginBottom: 8 }}>
                   <span>➡️</span>
-                  <span style={{ fontSize: 14, color: '#E8EAF0′ }}>{r}</span>
+                  <span style={{ fontSize: 14, color: '#E8EAF0' }}>{r}</span>
                 </div>
               ))}
             </div>
@@ -110,7 +110,7 @@ export default function DFWPropertyManagerVsPrivateLandlord2026() {
               <h2 style={{ color: '#F5E642', fontSize: 17, fontWeight: 700, marginBottom: 8 }}>🔗 ProLnk Role for Your Portfolio</h2>
               <div style={{ display: 'flex', gap: 10 }}>
                 <span>⭐</span>
-                <span style={{ fontSize: 14, color: '#E8EAF0′ }}>{guide.prolnkRole}</span>
+                <span style={{ fontSize: 14, color: '#E8EAF0' }}>{guide.prolnkRole}</span>
               </div>
             </div>
           </>

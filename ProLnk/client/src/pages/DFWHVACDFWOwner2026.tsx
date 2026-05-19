@@ -75,7 +75,7 @@ export default function DFWHVACDFWOwner2026() {
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))', gap: 12, marginBottom: 32 }}>
           {[
             { emoji: '🌡️', label: 'DFW Summer Reality', sub: '100°F+ for 60+ days/year' },
-            { emoji: '🔄', label: 'Refrigerant Shift', sub: 'R-410A → R-454B in 2026′ },
+            { emoji: '🔄', label: 'Refrigerant Shift', sub: 'R-410A → R-454B in 2026' },
             { emoji: '💡', label: 'Energy Costs Up', sub: '+12% avg in North Texas' },
             { emoji: '🏗️', label: 'Aging Stock', sub: '40% of DFW homes have 10+ yr systems' },
           ].map((item) => (
@@ -97,10 +97,10 @@ export default function DFWHVACDFWOwner2026() {
                 key={i}
                 onClick={() => setSelected(i)}
                 style={{
-                  backgroundColor: selected === i ? '#F5E642′ : '#0f172a',
-                  color: selected === i ? '#0A1628′ : '#fff',
+                  backgroundColor: selected === i ? '#F5E642' : '#0f172a',
+                  color: selected === i ? '#0A1628' : '#fff',
                   border: '2px solid',
-                  borderColor: selected === i ? '#F5E642′ : '#334155',
+                  borderColor: selected === i ? '#F5E642' : '#334155',
                   borderRadius: 10,
                   padding: '14px 18px',
                   textAlign: 'left',
@@ -123,7 +123,7 @@ export default function DFWHVACDFWOwner2026() {
                   <li key={j} style={{ padding: '6px 0', fontSize: 14, color: '#e2e8f0', lineHeight: 1.6 }}>{g}</li>
                 ))}
               </ul>
-              <div style={{ backgroundColor: '#1e293b', borderRadius: 8, padding: 14, borderLeft: '3px solid #F5E642′ }}>
+              <div style={{ backgroundColor: '#1e293b', borderRadius: 8, padding: 14, borderLeft: '3px solid #F5E642' }}>
                 <p style={{ color: '#F5E642', fontSize: 13, margin: 0, fontStyle: 'italic' }}>
                   💡 {ownerSituations[selected].resource}
                 </p>
@@ -134,7 +134,7 @@ export default function DFWHVACDFWOwner2026() {
 
         <div style={{ backgroundColor: '#F5E642', borderRadius: 16, padding: 28, textAlign: 'center' }}>
           <div style={{ fontSize: 28 }}>🔑</div>
-          <h3 style={{ color: '#0A1628', fontSize: 20, fontWeight: 800, margin: '8px 0′ }}>
+          <h3 style={{ color: '#0A1628', fontSize: 20, fontWeight: 800, margin: '8px 0' }}>
             2026 DFW HVAC ownership starts with ProLnk
           </h3>
           <p style={{ color: '#1e293b', fontSize: 14, lineHeight: 1.6 }}>

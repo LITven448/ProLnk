@@ -8,7 +8,7 @@ const STRATEGY_SECTIONS = [
   { id: 'timing', label: '⏰ Timing Your DFW Purchase', content: 'November and December have the least buyer competition in DFW — sellers who list then are motivated. January brings new listings for spring market — move fast. July-August competition drops 15-20% as families settle into school routines. Avoid March-May for buyer leverage.' },
 ];
 
-type BudgetRange = 'under300′ | '300to500' | '500to750' | ’over750′ | '';
+type BudgetRange = 'under300' | '300to500' | '500to750' | 'over750' | '';
 type DFWArea = 'urban' | 'suburban' | 'emerging' | '';
 type Situation = 'firsttime' | 'moving' | 'investor' | '';
 
@@ -59,7 +59,7 @@ export default function DFWHousingCrunchGuide() {
             <div key={s.id}>
               <button
                 onClick={() => setActive(active === s.id ? null : s.id)}
-                style={{ width: '100%', textAlign: 'left', background: active === s.id ? '#1E3A5F' : '#0F2340', border: '1px solid', borderColor: active === s.id ? '#F5E642′ : '#1E3A5F', borderRadius: 10, padding: '14px 18px', color: '#E8EDF5', fontSize: 15, fontWeight: 600, cursor: ’pointer' }}
+                style={{ width: '100%', textAlign: 'left', background: active === s.id ? '#1E3A5F' : '#0F2340', border: '1px solid', borderColor: active === s.id ? '#F5E642' : '#1E3A5F', borderRadius: 10, padding: '14px 18px', color: '#E8EDF5', fontSize: 15, fontWeight: 600, cursor: 'pointer' }}
               >
                 {s.label}
               </button>
@@ -81,7 +81,7 @@ export default function DFWHousingCrunchGuide() {
             <p style={{ color: '#8A9BB5', fontSize: 13, margin: '0 0 10px' }}>Budget:</p>
             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 8 }}>
               {([['under300', 'Under $300K'], ['300to500', '$300K-$500K'], ['500to750', '$500K-$750K'], ['over750', '$750K+']] as const).map(([key, label]) => (
-                <button key={key} onClick={() => setBudget(key)} style={{ padding: '10px 8px', background: budget === key ? '#F5E642′ : '#1E3A5F', color: budget === key ? '#0A1628' : '#E8EDF5', border: ’none', borderRadius: 8, fontWeight: 700, fontSize: 13, cursor: 'pointer' }}>
+                <button key={key} onClick={() => setBudget(key)} style={{ padding: '10px 8px', background: budget === key ? '#F5E642' : '#1E3A5F', color: budget === key ? '#0A1628' : '#E8EDF5', border: 'none', borderRadius: 8, fontWeight: 700, fontSize: 13, cursor: 'pointer' }}>
                   {label}
                 </button>
               ))}
@@ -92,7 +92,7 @@ export default function DFWHousingCrunchGuide() {
             <p style={{ color: '#8A9BB5', fontSize: 13, margin: '0 0 10px' }}>Target DFW Area:</p>
             <div style={{ display: 'flex', gap: 8 }}>
               {([['urban', '🏙️ Urban Core'], ['suburban', '🏡 Suburbs'], ['emerging', '🌱 Emerging']] as const).map(([key, label]) => (
-                <button key={key} onClick={() => setArea(key)} style={{ flex: 1, padding: '10px 4px', background: area === key ? '#F5E642′ : '#1E3A5F', color: area === key ? '#0A1628' : '#E8EDF5', border: ’none', borderRadius: 8, fontWeight: 700, fontSize: 12, cursor: 'pointer' }}>
+                <button key={key} onClick={() => setArea(key)} style={{ flex: 1, padding: '10px 4px', background: area === key ? '#F5E642' : '#1E3A5F', color: area === key ? '#0A1628' : '#E8EDF5', border: 'none', borderRadius: 8, fontWeight: 700, fontSize: 12, cursor: 'pointer' }}>
                   {label}
                 </button>
               ))}
@@ -103,7 +103,7 @@ export default function DFWHousingCrunchGuide() {
             <p style={{ color: '#8A9BB5', fontSize: 13, margin: '0 0 10px' }}>Buyer Situation:</p>
             <div style={{ display: 'flex', gap: 8 }}>
               {([['firsttime', '🌟 First-Time'], ['moving', '🔄 Moving Up'], ['investor', '💼 Investor']] as const).map(([key, label]) => (
-                <button key={key} onClick={() => setSituation(key)} style={{ flex: 1, padding: '10px 4px', background: situation === key ? '#F5E642′ : '#1E3A5F', color: situation === key ? '#0A1628' : '#E8EDF5', border: ’none', borderRadius: 8, fontWeight: 700, fontSize: 12, cursor: 'pointer' }}>
+                <button key={key} onClick={() => setSituation(key)} style={{ flex: 1, padding: '10px 4px', background: situation === key ? '#F5E642' : '#1E3A5F', color: situation === key ? '#0A1628' : '#E8EDF5', border: 'none', borderRadius: 8, fontWeight: 700, fontSize: 12, cursor: 'pointer' }}>
                   {label}
                 </button>
               ))}

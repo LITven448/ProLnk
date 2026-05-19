@@ -7,39 +7,39 @@ import {
   DollarSign, TrendingUp,
 } from "lucide-react";
 
-const NAVY = "#0A1628″;
-const NAVY2 = "#0f1e35″;
-const TEAL = "#14b8a6″;
+const NAVY = "#0A1628";
+const NAVY2 = "#0f1e35";
+const TEAL = "#14b8a6";
 const TEAL_DIM = "rgba(20,184,166,0.12)";
-const YELLOW = "#F5E642″;
-const TEXT = "#e2e8f0″;
-const MUTED = "#94a3b8″;
+const YELLOW = "#F5E642";
+const TEXT = "#e2e8f0";
+const MUTED = "#94a3b8";
 const BORDER = "rgba(255,255,255,0.08)";
 
 const PRO_STEPS = [
   {
-    num: "01″,
+    num: "01",
     icon: UserPlus,
     title: "Join the Network",
     body: "Create your contractor profile in minutes. Set your trade, service area, and availability. Founding Network members lock in $149/mo with a 90-day free trial — no charge until day 91.",
     tag: "90-day free trial",
   },
   {
-    num: "02″,
+    num: "02",
     icon: Zap,
     title: "Get Matched",
     body: "Our AI matches homeowner job requests to your trade and location in real time. Leads appear directly in your Lead Inbox — no bidding wars, no cold calling, no chasing down referrals.",
     tag: "AI-powered matching",
   },
   {
-    num: "03″,
+    num: "03",
     icon: Briefcase,
     title: "Win the Job",
     body: "Review the homeowner's request, upload photos, and send your quote through the platform. Close the deal, do the work, and receive your payout on the 1st of the month. You keep 72%.",
     tag: "72% yours to keep",
   },
   {
-    num: "04″,
+    num: "04",
     icon: Network,
     title: "Build Your Network",
     body: "Recruit other contractors to ProLnk and earn override income from their jobs — forever. 5 active recruits averaging $5K/mo in jobs adds $1,750/mo to your check with no extra work from you.",
@@ -49,21 +49,21 @@ const PRO_STEPS = [
 
 const HOMEOWNER_STEPS = [
   {
-    num: "01″,
+    num: "01",
     icon: Camera,
     title: "Scan or Submit",
     body: "Upload photos through TrustyPro for an instant AI home health scan, or fill out a quick job request form describing the work needed. No account required to get started.",
     tag: "Free, no account needed",
   },
   {
-    num: "02″,
+    num: "02",
     icon: Users,
     title: "Get Matched",
     body: "Our AI matches your request to verified, licensed contractors in your area. Up to 3 vetted pros receive your lead and will contact you within 24 hours. Urgent jobs are prioritized.",
     tag: "Within 24 hours",
   },
   {
-    num: "03″,
+    num: "03",
     icon: CheckCircle,
     title: "Choose the Best",
     body: "Compare quotes from multiple contractors, review their verification status and history, and choose the pro you trust most. You're never pressured — take the time you need.",
@@ -148,7 +148,7 @@ export default function HowItWorks() {
             <Link href="/commission-calculator"><span style={{ color: MUTED, fontSize: 14, cursor: "pointer" }}>Calculator</span></Link>
             <Link href="/join">
               <span style={{
-                background: TEAL, color: "#000″, fontWeight: 700, fontSize: 13,
+                background: TEAL, color: "#000", fontWeight: 700, fontSize: 13,
                 padding: "8px 18px", borderRadius: 8, cursor: "pointer",
               }}>Join Network</span>
             </Link>
@@ -307,7 +307,7 @@ export default function HowItWorks() {
               <Link href="/join">
                 <span style={{
                   display: "inline-flex", alignItems: "center", gap: 8,
-                  background: TEAL, color: "#000″, fontWeight: 700, fontSize: 14,
+                  background: TEAL, color: "#000", fontWeight: 700, fontSize: 14,
                   padding: "12px 24px", borderRadius: 10, cursor: "pointer",
                 }}>
                   Claim Your Spot <ArrowRight size={16} />

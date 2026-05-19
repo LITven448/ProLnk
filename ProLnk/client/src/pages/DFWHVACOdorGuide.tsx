@@ -59,8 +59,8 @@ const diagnostics: Record<string, Record<string, DiagEntry>> = {
 const urgencyStyle: Record<string, { bg: string; color: string }> = {
   'EMERGENCY': { bg: '#EF4444', color: '#fff' },
   'URGENT': { bg: '#F97316', color: '#fff' },
-  'SOON': { bg: '#F5E642', color: '#0A1628′ },
-  'ROUTINE': { bg: '#60A5FA', color: '#0A1628′ },
+  'SOON': { bg: '#F5E642', color: '#0A1628' },
+  'ROUTINE': { bg: '#60A5FA', color: '#0A1628' },
 };
 
 export default function DFWHVACOdorGuide() {
@@ -82,7 +82,7 @@ export default function DFWHVACOdorGuide() {
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 10 }}>
             {odorTypes.map(o => (
               <button key={o.id} onClick={() => setOdor(o.id)}
-                style={{ background: odor === o.id ? '#F5E642′ : '#1A3060', color: odor === o.id ? '#0A1628' : '#E2E8F0', border: ’none', borderRadius: 8, padding: '12px 16px', cursor: 'pointer', fontWeight: odor === o.id ? 700 : 400, textAlign: 'left' }}>
+                style={{ background: odor === o.id ? '#F5E642' : '#1A3060', color: odor === o.id ? '#0A1628' : '#E2E8F0', border: 'none', borderRadius: 8, padding: '12px 16px', cursor: 'pointer', fontWeight: odor === o.id ? 700 : 400, textAlign: 'left' }}>
                 {o.emoji} {o.label}
               </button>
             ))}
@@ -94,7 +94,7 @@ export default function DFWHVACOdorGuide() {
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 10 }}>
             {locations.map(l => (
               <button key={l.id} onClick={() => setLoc(l.id)}
-                style={{ background: loc === l.id ? '#F5E642′ : '#1A3060', color: loc === l.id ? '#0A1628' : '#E2E8F0', border: ’none', borderRadius: 8, padding: '12px 16px', cursor: 'pointer', fontWeight: loc === l.id ? 700 : 400 }}>
+                style={{ background: loc === l.id ? '#F5E642' : '#1A3060', color: loc === l.id ? '#0A1628' : '#E2E8F0', border: 'none', borderRadius: 8, padding: '12px 16px', cursor: 'pointer', fontWeight: loc === l.id ? 700 : 400 }}>
                 {l.label}
               </button>
             ))}
@@ -109,15 +109,15 @@ export default function DFWHVACOdorGuide() {
             <div style={{ background: '#0F2040', borderRadius: 12, padding: 24, marginBottom: 16 }}>
               <h2 style={{ color: '#F5E642', fontSize: 18, marginBottom: 12 }}>🔍 Diagnosis</h2>
               <p style={{ color: '#CBD5E1', lineHeight: 1.6, marginBottom: 16 }}>{result.diagnosis}</p>
-              <div style={{ background: '#1A3060', borderRadius: 8, padding: 14, borderLeft: '4px solid #F5E642′ }}>
+              <div style={{ background: '#1A3060', borderRadius: 8, padding: 14, borderLeft: '4px solid #F5E642' }}>
                 <span style={{ color: '#F5E642', fontWeight: 700 }}>🌡️ DFW Note: </span>
-                <span style={{ color: '#CBD5E1′ }}>{result.dfwNote}</span>
+                <span style={{ color: '#CBD5E1' }}>{result.dfwNote}</span>
               </div>
             </div>
             <div style={{ background: '#0F2040', borderRadius: 12, padding: 24 }}>
               <h2 style={{ color: '#F5E642', fontSize: 18, marginBottom: 12 }}>✅ Action Steps</h2>
               {result.action.map((a, i) => (
-                <div key={i} style={{ background: '#1A3060', borderRadius: 8, padding: 14, marginBottom: 8, color: '#E2E8F0′ }}>
+                <div key={i} style={{ background: '#1A3060', borderRadius: 8, padding: 14, marginBottom: 8, color: '#E2E8F0' }}>
                   {i + 1}. {a}
                 </div>
               ))}

@@ -173,7 +173,7 @@ export default function ContractorWarrantyGuide() {
             Understanding Contractor Warranties
           </h1>
           <p style={{ fontSize: 18, color: '#94A3B8', lineHeight: 1.7 }}>
-            A warranty is only as good as the paper it's written on — and most homeowners never ask for the right one. Here’s what you should know before any job starts.
+            A warranty is only as good as the paper it's written on — and most homeowners never ask for the right one. Here's what you should know before any job starts.
           </p>
         </div>
 
@@ -195,9 +195,9 @@ export default function ContractorWarrantyGuide() {
               </p>
             </div>
           </div>
-          <div style={{ backgroundColor: '#1a1a00', borderRadius: 10, padding: '18px 22px', marginTop: 16, border: '1px solid #4a4a00′ }}>
-            <strong style={{ color: '#F5E642′ }}>Critical:</strong>
-            <span style={{ color: '#CBD5E1′ }}> Poor installation can void your manufacturer warranty. Always verify your contractor is factory-authorized for the brand they’re installing.</span>
+          <div style={{ backgroundColor: '#1a1a00', borderRadius: 10, padding: '18px 22px', marginTop: 16, border: '1px solid #4a4a00' }}>
+            <strong style={{ color: '#F5E642' }}>Critical:</strong>
+            <span style={{ color: '#CBD5E1' }}> Poor installation can void your manufacturer warranty. Always verify your contractor is factory-authorized for the brand they're installing.</span>
           </div>
         </section>
 
@@ -211,9 +211,9 @@ export default function ContractorWarrantyGuide() {
             'Damage from events not covered (storms, acts of God — read the exclusions)',
             'Not registering the product with the manufacturer within the required window',
           ].map(item => (
-            <div key={item} style={{ display: 'flex', gap: 12, padding: '10px 0', borderBottom: '1px solid #1E2D45′ }}>
-              <span style={{ color: '#f87171′ }}>✕</span>
-              <span style={{ color: '#CBD5E1′ }}>{item}</span>
+            <div key={item} style={{ display: 'flex', gap: 12, padding: '10px 0', borderBottom: '1px solid #1E2D45' }}>
+              <span style={{ color: '#f87171' }}>✕</span>
+              <span style={{ color: '#CBD5E1' }}>{item}</span>
             </div>
           ))}
         </section>
@@ -245,9 +245,9 @@ export default function ContractorWarrantyGuide() {
                 onClick={() => setSelected(opt.value)}
                 style={{
                   padding: '12px 16px', borderRadius: 8, border: '2px solid',
-                  borderColor: selected === opt.value ? '#F5E642′ : '#1E3A5F',
-                  backgroundColor: selected === opt.value ? '#1a1a00′ : ’transparent',
-                  color: selected === opt.value ? '#F5E642′ : '#94A3B8',
+                  borderColor: selected === opt.value ? '#F5E642' : '#1E3A5F',
+                  backgroundColor: selected === opt.value ? '#1a1a00' : 'transparent',
+                  color: selected === opt.value ? '#F5E642' : '#94A3B8',
                   cursor: 'pointer', fontSize: 13, fontWeight: 600, textAlign: 'left',
                 }}
               >
@@ -272,7 +272,7 @@ export default function ContractorWarrantyGuide() {
               <div style={{ marginBottom: 20 }}>
                 <div style={{ color: '#FFFFFF', fontWeight: 700, marginBottom: 12 }}>Questions to ask before hiring:</div>
                 {data.questions.map((q, i) => (
-                  <div key={i} style={{ display: 'flex', gap: 10, padding: '8px 0', borderBottom: '1px solid #1E2D45′ }}>
+                  <div key={i} style={{ display: 'flex', gap: 10, padding: '8px 0', borderBottom: '1px solid #1E2D45' }}>
                     <span style={{ color: '#F5E642', fontWeight: 700 }}>{i + 1}.</span>
                     <span style={{ color: '#CBD5E1', fontSize: 14 }}>{q}</span>
                   </div>
@@ -282,8 +282,8 @@ export default function ContractorWarrantyGuide() {
               <div style={{ marginBottom: 20 }}>
                 <div style={{ color: '#f87171', fontWeight: 700, marginBottom: 12 }}>⚠️ Red flags to watch for:</div>
                 {data.redFlags.map((r, i) => (
-                  <div key={i} style={{ display: 'flex', gap: 10, padding: '8px 0', borderBottom: '1px solid #1E2D45′ }}>
-                    <span style={{ color: '#f87171′ }}>✕</span>
+                  <div key={i} style={{ display: 'flex', gap: 10, padding: '8px 0', borderBottom: '1px solid #1E2D45' }}>
+                    <span style={{ color: '#f87171' }}>✕</span>
                     <span style={{ color: '#CBD5E1', fontSize: 14 }}>{r}</span>
                   </div>
                 ))}
@@ -292,8 +292,8 @@ export default function ContractorWarrantyGuide() {
               <div>
                 <div style={{ color: '#4ade80', fontWeight: 700, marginBottom: 12 }}>📋 Require in writing at project completion:</div>
                 {data.requireInWriting.map((r, i) => (
-                  <div key={i} style={{ display: 'flex', gap: 10, padding: '8px 0', borderBottom: '1px solid #1E2D45′ }}>
-                    <span style={{ color: '#4ade80′ }}>✓</span>
+                  <div key={i} style={{ display: 'flex', gap: 10, padding: '8px 0', borderBottom: '1px solid #1E2D45' }}>
+                    <span style={{ color: '#4ade80' }}>✓</span>
                     <span style={{ color: '#CBD5E1', fontSize: 14 }}>{r}</span>
                   </div>
                 ))}

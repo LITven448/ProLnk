@@ -19,7 +19,7 @@ const USE_CASES = [
   {
     use: '💧 Detect a possible water leak (via usage)',
     steps: ['Turn off ALL water in home (no drips, no ice maker)', 'Check smart meter reading on Oncor app — no change should occur', 'If usage continues at constant small rate = slab or line leak', 'File leak credit with your REP (most honor 1x/yr)'],
-    insight: 'Slab leaks in DFW are common due to clay soil movement. A 1/8″ slab leak = 17,000 gallons/month lost.',
+    insight: 'Slab leaks in DFW are common due to clay soil movement. A 1/8" slab leak = 17,000 gallons/month lost.',
   },
   {
     use: '⏰ Optimize time-of-use rates',
@@ -42,18 +42,18 @@ export default function DFWSmartMeterGuide2026() {
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: 12, marginBottom: 28 }}>
           {[['95%', 'DFW smart meter penetration'], ['15 min', 'Data interval resolution'], ['24 mo', 'History available'], ['Free', 'SmartMeterTexas.com access'], ['4cp', 'Peak periods (Jun–Sep)'], ['2024', 'Latest meter gen deployed']].map(([stat, label]) => (
             <div key={stat as string} style={{ background: '#0f2040', borderRadius: 8, padding: 12, textAlign: 'center' }}>
-              <div style={{ fontSize: 18, fontWeight: 800, color: '#F5E642′ }}>{stat}</div>
+              <div style={{ fontSize: 18, fontWeight: 800, color: '#F5E642' }}>{stat}</div>
               <div style={{ fontSize: 11, color: '#64748b', marginTop: 4 }}>{label}</div>
             </div>
           ))}
         </div>
 
         <div style={{ background: '#0f2040', borderRadius: 12, padding: 24, marginBottom: 24 }}>
-          <h2 style={{ fontSize: 17, fontWeight: 700, marginBottom: 16, color: '#F5E642′ }}>🎯 What do you want to do with your smart meter data?</h2>
+          <h2 style={{ fontSize: 17, fontWeight: 700, marginBottom: 16, color: '#F5E642' }}>🎯 What do you want to do with your smart meter data?</h2>
           <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
             {USE_CASES.map((u, i) => (
               <button key={i} onClick={() => setSelected(i)}
-                style={{ padding: '12px 16px', borderRadius: 8, border: `2px solid ${selected === i ? '#F5E642' : '#1e3a5f'}`, background: '#0A1628', color: selected === i ? '#F5E642′ : '#e2e8f0', cursor: ’pointer', textAlign: 'left', fontSize: 14, fontWeight: selected === i ? 700 : 400 }}>
+                style={{ padding: '12px 16px', borderRadius: 8, border: `2px solid ${selected === i ? '#F5E642' : '#1e3a5f'}`, background: '#0A1628', color: selected === i ? '#F5E642' : '#e2e8f0', cursor: 'pointer', textAlign: 'left', fontSize: 14, fontWeight: selected === i ? 700 : 400 }}>
                 {u.use}
               </button>
             ))}

@@ -73,7 +73,7 @@ export default function ProLnkWaitlistStatusPage() {
                   </div>
                   <div style={{ textAlign: 'right' }}>
                     <div style={{ fontSize: 22, fontWeight: 800, color: '#fff' }}>{t.filled} / {t.max}</div>
-                    <div style={{ fontSize: 12, color: '#94a3b8′ }}>spots filled</div>
+                    <div style={{ fontSize: 12, color: '#94a3b8' }}>spots filled</div>
                   </div>
                 </div>
                 <div style={{ background: '#0A1628', borderRadius: 8, height: 10, marginBottom: 12, overflow: 'hidden' }}>
@@ -96,8 +96,8 @@ export default function ProLnkWaitlistStatusPage() {
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: 10, marginBottom: 24 }}>
             {tierActions.map((a, i) => (
               <button key={i} onClick={() => setSelected(i)} style={{
-                padding: '10px 18px', borderRadius: 8, border: selected === i ? '2px solid #F5E642′ : '1px solid #1e3a5f',
-                background: selected === i ? '#F5E642′ : '#0A1628', color: selected === i ? '#0A1628' : '#fff',
+                padding: '10px 18px', borderRadius: 8, border: selected === i ? '2px solid #F5E642' : '1px solid #1e3a5f',
+                background: selected === i ? '#F5E642' : '#0A1628', color: selected === i ? '#0A1628' : '#fff',
                 cursor: 'pointer', fontWeight: 600, fontSize: 13,
               }}>{a.tier} — {a.position}</button>
             ))}

@@ -104,7 +104,7 @@ export default function DFWFoundationDecadeGuide() {
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8 }}>
             {areas.map((a, i) => (
               <button key={i} onClick={() => setArea(i)}
-                style={{ padding: '8px 14px', borderRadius: 6, border: `2px solid ${area === i ? '#F5E642' : '#1E3A5F'}`, background: area === i ? '#1E3A5F' : '#0F2645', color: area === i ? '#F5E642′ : '#94A3B8', fontWeight: 600, cursor: ’pointer', fontSize: 12 }}>
+                style={{ padding: '8px 14px', borderRadius: 6, border: `2px solid ${area === i ? '#F5E642' : '#1E3A5F'}`, background: area === i ? '#1E3A5F' : '#0F2645', color: area === i ? '#F5E642' : '#94A3B8', fontWeight: 600, cursor: 'pointer', fontSize: 12 }}>
                 {a}
               </button>
             ))}
@@ -113,7 +113,7 @@ export default function DFWFoundationDecadeGuide() {
         <div style={{ display: 'flex', flexWrap: 'wrap', gap: 12, marginBottom: 32 }}>
           {decades.map((d, i) => (
             <button key={i} onClick={() => setSelected(i === selected ? null : i)}
-              style={{ padding: '10px 18px', borderRadius: 8, border: `2px solid ${selected === i ? '#F5E642' : '#1E3A5F'}`, background: selected === i ? '#F5E642′ : '#0F2645', color: selected === i ? '#0A1628' : '#E8EAF0', fontWeight: 700, cursor: ’pointer', fontSize: 14 }}>
+              style={{ padding: '10px 18px', borderRadius: 8, border: `2px solid ${selected === i ? '#F5E642' : '#1E3A5F'}`, background: selected === i ? '#F5E642' : '#0F2645', color: selected === i ? '#0A1628' : '#E8EAF0', fontWeight: 700, cursor: 'pointer', fontSize: 14 }}>
               {d.label}
             </button>
           ))}
@@ -133,7 +133,7 @@ export default function DFWFoundationDecadeGuide() {
               {active.monitoring.map((item, i) => <div key={i} style={{ marginBottom: 4, paddingLeft: 12 }}>• {item}</div>)}
             </div>
             <div style={{ marginBottom: 16 }}><span style={{ color: '#F5E642', fontWeight: 700 }}>💰 Budget Range: </span>{active.budget}</div>
-            <div style={{ background: '#0A1628', borderRadius: 8, padding: 16, fontSize: 14, color: '#94A3B8′ }}>{active.note}</div>
+            <div style={{ background: '#0A1628', borderRadius: 8, padding: 16, fontSize: 14, color: '#94A3B8' }}>{active.note}</div>
           </div>
         )}
         {!active && <div style={{ color: '#4A6080', textAlign: 'center', padding: 40, fontSize: 16 }}>👆 Select a decade above to see your foundation profile</div>}

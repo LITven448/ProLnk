@@ -25,10 +25,10 @@ const FEATURED = {
     "The part that still surprises me: I'm not even close to the ceiling. I haven't touched L2 or L3 yet. When my 12 recruits start recruiting their own people, the override compounds again at the next level. The system is designed to grow while you sleep.",
   ],
   stats: [
-    { icon: Users, label: "Active L1 recruits", value: "12″, color: "#22c55e" },
-    { icon: DollarSign, label: "Network overrides / quarter", value: "$8,400″, color: "#f59e0b" },
-    { icon: TrendingUp, label: "Commission rate (Charter)", value: "25%", color: "#3b82f6″ },
-    { icon: Award, label: "Homes originated", value: "47″, color: "#a855f7" },
+    { icon: Users, label: "Active L1 recruits", value: "12", color: "#22c55e" },
+    { icon: DollarSign, label: "Network overrides / quarter", value: "$8,400", color: "#f59e0b" },
+    { icon: TrendingUp, label: "Commission rate (Charter)", value: "25%", color: "#3b82f6" },
+    { icon: Award, label: "Homes originated", value: "47", color: "#a855f7" },
   ],
   tags: ["HVAC", "Charter Member", "DFW", "Network Income", "90-Day Results"],
 };
@@ -48,8 +48,8 @@ const STORIES = [
     ],
     quote: "HomeAdvisor gave my lead to 4 other roofers. I paid $60 and lost to someone $200 cheaper. ProLnk changed the math — I'm competing on quality now, not price.",
     highlight: "Tier 3 · 8 months",
-    highlightColor: "#3b82f6″,
-    avatar: "#3b82f6″,
+    highlightColor: "#3b82f6",
+    avatar: "#3b82f6",
     months: "8 months",
   },
   {
@@ -102,8 +102,8 @@ const STORIES = [
     ],
     quote: "I was spending $1,400/month on Angi and closing maybe 30%. Fixed cost at $149 and zero competing bids has taken my close rate over 70%. My margin went from 28% to 51% in two months.",
     highlight: "Tier 2 · 3 months",
-    highlightColor: "#a855f7″,
-    avatar: "#a855f7″,
+    highlightColor: "#a855f7",
+    avatar: "#a855f7",
     months: "3 months",
   },
   {
@@ -120,8 +120,8 @@ const STORIES = [
     ],
     quote: "The home origination right concept is what nobody talks about enough. Every home I service and log is a permanent asset. 34 properties where I get a slice — forever.",
     highlight: "Charter · 4 months",
-    highlightColor: "#ec4899″,
-    avatar: "#ec4899″,
+    highlightColor: "#ec4899",
+    avatar: "#ec4899",
     months: "4 months",
   },
   {
@@ -164,13 +164,13 @@ export default function SuccessStoriesPage() {
         <meta name="description" content="Real stories from ProLnk partners who built $2,000–$8,400/month in income. Learn how Charter Members, HVAC techs, and general contractors are earning passive override income." />
       </Helmet>
 
-      <div style={{ minHeight: "100vh", background: "#0f1117″, color: "#e5e7eb", fontFamily: "sans-serif" }}>
+      <div style={{ minHeight: "100vh", background: "#0f1117", color: "#e5e7eb", fontFamily: "sans-serif" }}>
         <div style={{ maxWidth: 960, margin: "0 auto", padding: "32px 20px 64px" }}>
 
           {/* Breadcrumb */}
           <div style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: 12 }}>
-            <Link href="/resources" style={{ color: "#6b7280″, fontSize: 13, textDecoration: "none" }}>Resources</Link>
-            <span style={{ color: "#374151″ }}>›</span>
+            <Link href="/resources" style={{ color: "#6b7280", fontSize: 13, textDecoration: "none" }}>Resources</Link>
+            <span style={{ color: "#374151" }}>›</span>
             <span style={{ color: "#e5e7eb", fontSize: 13 }}>Success Stories</span>
           </div>
 
@@ -198,10 +198,10 @@ export default function SuccessStoriesPage() {
               <h2 style={{ fontSize: 18, fontWeight: 700, color: "#fff", margin: 0 }}>Featured Story</h2>
             </div>
 
-            <div style={{ background: "#1a1d27″, borderRadius: 18, border: "1px solid #1e2330", overflow: "hidden" }}>
+            <div style={{ background: "#1a1d27", borderRadius: 18, border: "1px solid #1e2330", overflow: "hidden" }}>
               <div style={{
                 background: "linear-gradient(135deg, rgba(34,197,94,0.15) 0%, rgba(59,130,246,0.08) 100%)",
-                padding: "28px 32px", borderBottom: "1px solid #1e2330″,
+                padding: "28px 32px", borderBottom: "1px solid #1e2330",
               }}>
                 <div style={{ display: "flex", alignItems: "flex-start", gap: 20, flexWrap: "wrap" }}>
                   <div style={{
@@ -216,10 +216,10 @@ export default function SuccessStoriesPage() {
                     </div>
                     <h3 style={{ fontSize: 22, fontWeight: 800, color: "#fff", margin: "0 0 6px" }}>{FEATURED.headline}</h3>
                     <div style={{ display: "flex", gap: 12, flexWrap: "wrap", alignItems: "center" }}>
-                      <span style={{ color: "#6b7280″, fontSize: 13 }}>{FEATURED.name} · {FEATURED.trade}</span>
+                      <span style={{ color: "#6b7280", fontSize: 13 }}>{FEATURED.name} · {FEATURED.trade}</span>
                       <div style={{ display: "flex", alignItems: "center", gap: 4 }}>
-                        <MapPin size={12} color="#6b7280″ />
-                        <span style={{ color: "#6b7280″, fontSize: 13 }}>{FEATURED.location}</span>
+                        <MapPin size={12} color="#6b7280" />
+                        <span style={{ color: "#6b7280", fontSize: 13 }}>{FEATURED.location}</span>
                       </div>
                       <span style={{
                         fontSize: 11, fontWeight: 700, color: FEATURED.tierColor,
@@ -230,17 +230,17 @@ export default function SuccessStoriesPage() {
                 </div>
               </div>
 
-              <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(140px,1fr))", borderBottom: "1px solid #1e2330″ }}>
+              <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(140px,1fr))", borderBottom: "1px solid #1e2330" }}>
                 {FEATURED.stats.map((s, i) => {
                   const Icon = s.icon;
                   return (
                     <div key={i} style={{
-                      padding: "16px 20px", borderRight: i < FEATURED.stats.length - 1 ? "1px solid #1e2330″ : "none",
+                      padding: "16px 20px", borderRight: i < FEATURED.stats.length - 1 ? "1px solid #1e2330" : "none",
                       textAlign: "center",
                     }}>
                       <Icon size={16} color={s.color} style={{ marginBottom: 6 }} />
                       <div style={{ fontSize: 22, fontWeight: 800, color: s.color }}>{s.value}</div>
-                      <div style={{ color: "#6b7280″, fontSize: 11, marginTop: 3 }}>{s.label}</div>
+                      <div style={{ color: "#6b7280", fontSize: 11, marginTop: 3 }}>{s.label}</div>
                     </div>
                   );
                 })}
@@ -253,8 +253,8 @@ export default function SuccessStoriesPage() {
                 <div style={{ display: "flex", gap: 8, flexWrap: "wrap", marginTop: 20 }}>
                   {FEATURED.tags.map((tag, i) => (
                     <span key={i} style={{
-                      background: "rgba(255,255,255,0.05)", border: "1px solid #1e2330″,
-                      borderRadius: 6, padding: "3px 10px", fontSize: 11, color: "#6b7280″,
+                      background: "rgba(255,255,255,0.05)", border: "1px solid #1e2330",
+                      borderRadius: 6, padding: "3px 10px", fontSize: 11, color: "#6b7280",
                     }}>{tag}</span>
                   ))}
                 </div>
@@ -267,12 +267,12 @@ export default function SuccessStoriesPage() {
             <h2 style={{ fontSize: 18, fontWeight: 700, color: "#fff", marginBottom: 16 }}>Video Testimonials</h2>
             <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(260px,1fr))", gap: 12 }}>
               {[
-                { name: "Carlos M.", trade: "HVAC · Dallas", duration: "4:12″ },
-                { name: "Jeff W.", trade: "Plumbing · Fort Worth", duration: "3:47″ },
-                { name: "Daniela R.", trade: "Roofing · Arlington", duration: "5:01″ },
+                { name: "Carlos M.", trade: "HVAC · Dallas", duration: "4:12" },
+                { name: "Jeff W.", trade: "Plumbing · Fort Worth", duration: "3:47" },
+                { name: "Daniela R.", trade: "Roofing · Arlington", duration: "5:01" },
               ].map((v, i) => (
                 <div key={i} style={{
-                  background: "#1a1d27″, border: "1px solid #1e2330", borderRadius: 14,
+                  background: "#1a1d27", border: "1px solid #1e2330", borderRadius: 14,
                   overflow: "hidden", cursor: "pointer", position: "relative",
                 }}>
                   <div style={{
@@ -294,12 +294,12 @@ export default function SuccessStoriesPage() {
                   </div>
                   <div style={{ padding: "14px 16px" }}>
                     <div style={{ fontSize: 14, fontWeight: 700, color: "#fff" }}>{v.name}</div>
-                    <div style={{ fontSize: 12, color: "#6b7280″ }}>{v.trade}</div>
+                    <div style={{ fontSize: 12, color: "#6b7280" }}>{v.trade}</div>
                   </div>
                 </div>
               ))}
             </div>
-            <p style={{ color: "#4b5563″, fontSize: 12, marginTop: 12, textAlign: "center" }}>
+            <p style={{ color: "#4b5563", fontSize: 12, marginTop: 12, textAlign: "center" }}>
               Video library launching at platform go-live. Testimonials recorded and ready.
             </p>
           </section>
@@ -309,13 +309,13 @@ export default function SuccessStoriesPage() {
             <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: 16, flexWrap: "wrap", gap: 12 }}>
               <h2 style={{ fontSize: 18, fontWeight: 700, color: "#fff", margin: 0 }}>Partner Stories</h2>
               <div style={{ display: "flex", alignItems: "center", gap: 8, flexWrap: "wrap" }}>
-                <Filter size={14} color="#6b7280″ />
+                <Filter size={14} color="#6b7280" />
                 {TRADES.map(trade => (
                   <button key={trade} onClick={() => setActiveTrade(trade)} style={{
-                    background: activeTrade === trade ? "rgba(34,197,94,0.15)" : "#1a1d27″,
+                    background: activeTrade === trade ? "rgba(34,197,94,0.15)" : "#1a1d27",
                     border: `1px solid ${activeTrade === trade ? "rgba(34,197,94,0.4)" : "#1e2330"}`,
                     borderRadius: 8, padding: "5px 12px",
-                    color: activeTrade === trade ? "#22c55e" : "#6b7280″,
+                    color: activeTrade === trade ? "#22c55e" : "#6b7280",
                     fontSize: 11, fontWeight: activeTrade === trade ? 700 : 500,
                     cursor: "pointer",
                   }}>{trade}</button>
@@ -325,8 +325,8 @@ export default function SuccessStoriesPage() {
 
             <div style={{ display: "flex", flexDirection: "column", gap: 20 }}>
               {filtered.map((s, i) => (
-                <div key={i} style={{ background: "#1a1d27″, border: "1px solid #1e2330", borderRadius: 16, overflow: "hidden" }}>
-                  <div style={{ padding: "22px 26px 20px", borderBottom: "1px solid #1e2330″ }}>
+                <div key={i} style={{ background: "#1a1d27", border: "1px solid #1e2330", borderRadius: 16, overflow: "hidden" }}>
+                  <div style={{ padding: "22px 26px 20px", borderBottom: "1px solid #1e2330" }}>
                     <div style={{ display: "flex", alignItems: "flex-start", gap: 14, flexWrap: "wrap" }}>
                       <div style={{
                         width: 48, height: 48, borderRadius: "50%", flexShrink: 0,
@@ -340,8 +340,8 @@ export default function SuccessStoriesPage() {
                         </div>
                         <h3 style={{ color: "#fff", fontSize: 16, fontWeight: 800, margin: "0 0 6px" }}>{s.headline}</h3>
                         <div style={{ display: "flex", gap: 10, flexWrap: "wrap", alignItems: "center" }}>
-                          <span style={{ color: "#6b7280″, fontSize: 12 }}>{s.name} · {s.trade}</span>
-                          <div style={{ display: "flex", alignItems: "center", gap: 3, color: "#6b7280″, fontSize: 12 }}>
+                          <span style={{ color: "#6b7280", fontSize: 12 }}>{s.name} · {s.trade}</span>
+                          <div style={{ display: "flex", alignItems: "center", gap: 3, color: "#6b7280", fontSize: 12 }}>
                             <MapPin size={11} /> {s.location}
                           </div>
                           <span style={{
@@ -352,15 +352,15 @@ export default function SuccessStoriesPage() {
                       </div>
                       <div style={{ textAlign: "right", flexShrink: 0 }}>
                         <div style={{ fontSize: 22, fontWeight: 900, color: s.avatar }}>{s.stat}</div>
-                        <div style={{ fontSize: 10, color: "#6b7280″ }}>{s.statLabel}</div>
+                        <div style={{ fontSize: 10, color: "#6b7280" }}>{s.statLabel}</div>
                       </div>
                     </div>
                   </div>
                   <div style={{ padding: "20px 26px" }}>
                     <div style={{
                       display: "inline-block", background: "rgba(255,255,255,0.04)",
-                      border: "1px solid #1e2330″, borderRadius: 8, padding: "4px 12px",
-                      fontSize: 10, color: "#6b7280″, fontWeight: 600,
+                      border: "1px solid #1e2330", borderRadius: 8, padding: "4px 12px",
+                      fontSize: 10, color: "#6b7280", fontWeight: 600,
                       textTransform: "uppercase", letterSpacing: "0.05em", marginBottom: 12,
                     }}>From First Job to First Recruit</div>
                     {s.arc.map((para, pi) => (
@@ -368,12 +368,12 @@ export default function SuccessStoriesPage() {
                     ))}
                     <div style={{
                       background: "rgba(255,255,255,0.03)", borderLeft: `3px solid ${s.avatar}`,
-                      padding: "12px 16px", borderRadius: "0 8px 8px 0″, marginTop: 16,
+                      padding: "12px 16px", borderRadius: "0 8px 8px 0", marginTop: 16,
                     }}>
                       <p style={{ color: "#d1d5db", fontSize: 13, fontStyle: "italic", lineHeight: 1.6, margin: 0 }}>
                         "{s.quote}"
                       </p>
-                      <div style={{ color: "#6b7280″, fontSize: 11, marginTop: 8 }}>— {s.name}, {s.trade} · {s.months} on platform</div>
+                      <div style={{ color: "#6b7280", fontSize: 11, marginTop: 8 }}>— {s.name}, {s.trade} · {s.months} on platform</div>
                     </div>
                   </div>
                 </div>
@@ -383,20 +383,20 @@ export default function SuccessStoriesPage() {
 
           {/* Submit Story */}
           <section style={{ marginBottom: 40 }}>
-            <div style={{ background: "#1a1d27″, border: "1px solid #1e2330", borderRadius: 16, padding: "28px 32px" }}>
+            <div style={{ background: "#1a1d27", border: "1px solid #1e2330", borderRadius: 16, padding: "28px 32px" }}>
               <div style={{ display: "flex", alignItems: "flex-start", gap: 16, flexWrap: "wrap" }}>
                 <div style={{ flex: 1, minWidth: 240 }}>
                   <h2 style={{ fontSize: 20, fontWeight: 800, color: "#fff", margin: "0 0 8px" }}>Share Your Story</h2>
-                  <p style={{ color: "#6b7280″, fontSize: 14, margin: 0, lineHeight: 1.6 }}>
+                  <p style={{ color: "#6b7280", fontSize: 14, margin: 0, lineHeight: 1.6 }}>
                     Earned your first override check? Hit a tier milestone? Recruited 10 pros? We feature one partner story per month and include your stats in the public partner leaderboard.
                   </p>
                 </div>
                 <div style={{ flex: 1, minWidth: 280 }}>
                   {submit.sent ? (
-                    <div style={{ display: "flex", flexDirection: "column", alignItems: "center", textAlign: "center", padding: "20px 0″ }}>
+                    <div style={{ display: "flex", flexDirection: "column", alignItems: "center", textAlign: "center", padding: "20px 0" }}>
                       <CheckCircle size={32} color="#22c55e" style={{ marginBottom: 10 }} />
                       <div style={{ fontSize: 16, fontWeight: 700, color: "#fff", marginBottom: 6 }}>Story submitted!</div>
-                      <div style={{ fontSize: 13, color: "#6b7280″ }}>We'll review it and reach out within 3 business days.</div>
+                      <div style={{ fontSize: 13, color: "#6b7280" }}>We'll review it and reach out within 3 business days.</div>
                     </div>
                   ) : (
                     <form onSubmit={handleSubmit} style={{ display: "flex", flexDirection: "column", gap: 12 }}>
@@ -404,13 +404,13 @@ export default function SuccessStoriesPage() {
                         type="text" placeholder="Your name and trade (e.g. Carlos M., HVAC)"
                         value={submit.name} onChange={e => setSubmit(s => ({ ...s, name: e.target.value }))}
                         required
-                        style={{ background: "#141720″, border: "1px solid #1e2330", borderRadius: 9, padding: "11px 14px", color: "#fff", fontSize: 13, outline: "none", width: "100%", boxSizing: "border-box" }}
+                        style={{ background: "#141720", border: "1px solid #1e2330", borderRadius: 9, padding: "11px 14px", color: "#fff", fontSize: 13, outline: "none", width: "100%", boxSizing: "border-box" }}
                       />
                       <textarea
                         placeholder="Share your results — what changed for you with ProLnk?"
                         value={submit.story} onChange={e => setSubmit(s => ({ ...s, story: e.target.value }))}
                         required rows={4}
-                        style={{ background: "#141720″, border: "1px solid #1e2330", borderRadius: 9, padding: "11px 14px", color: "#fff", fontSize: 13, outline: "none", resize: "vertical", fontFamily: "sans-serif", width: "100%", boxSizing: "border-box" }}
+                        style={{ background: "#141720", border: "1px solid #1e2330", borderRadius: 9, padding: "11px 14px", color: "#fff", fontSize: 13, outline: "none", resize: "vertical", fontFamily: "sans-serif", width: "100%", boxSizing: "border-box" }}
                       />
                       <button type="submit" style={{
                         background: "#22c55e", color: "#fff", border: "none", borderRadius: 9,
@@ -448,7 +448,7 @@ export default function SuccessStoriesPage() {
               <Link href="/resources/academy">
                 <button style={{
                   background: "transparent", color: "#9ca3af",
-                  border: "1px solid #374151″, borderRadius: 10,
+                  border: "1px solid #374151", borderRadius: 10,
                   padding: "13px 28px", fontSize: 14, fontWeight: 600, cursor: "pointer",
                   display: "flex", alignItems: "center", gap: 8,
                 }}>

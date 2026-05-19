@@ -39,7 +39,7 @@ export default function DFWTreeMaintenanceGuide() {
     if (issue === 'Too Close to Foundation') return foundationWarning.map(f => `${f.distance}: ${f.risk} risk — ${f.action}`);
     if (issue === 'Disease/Pest Signs') return ['Contact a certified ISA arborist — oak wilt spreads rapidly', 'Do NOT prune during April–July oak wilt season', 'Check for fungal mats under bark (oak wilt indicator)', 'Treat for oak wilt via fungicide injection (professional only)'];
     if (issue === 'Storm Damage') return ['Remove hanging branches immediately — call arborist for large limbs', 'Paint all fresh cuts with latex paint', 'Assess lean — a 15°+ lean toward structure needs professional evaluation', 'File insurance claim if large limbs caused property damage'];
-    return [`Prune during: ${selectedTree.pruneWindow}`, selectedTree.restricted ? '⚠️ OAK WILT RISK: Never prune April 1 – July 1′ : ’No seasonal pruning restrictions', 'Never remove more than 25% of canopy in one season', 'Hire ISA-certified arborist for limbs over 3 inches diameter', 'Water mature trees deeply (1 inch/week) during DFW drought'];
+    return [`Prune during: ${selectedTree.pruneWindow}`, selectedTree.restricted ? '⚠️ OAK WILT RISK: Never prune April 1 – July 1' : 'No seasonal pruning restrictions', 'Never remove more than 25% of canopy in one season', 'Hire ISA-certified arborist for limbs over 3 inches diameter', 'Water mature trees deeply (1 inch/week) during DFW drought'];
   };
 
   const currentMonth = new Date().getMonth() + 1;
@@ -55,7 +55,7 @@ export default function DFWTreeMaintenanceGuide() {
         </div>
 
         {oakWiltActive && (
-          <div style={{ background: '#3a1a1a', borderRadius: '12px', padding: '16px', marginBottom: '24px', border: '2px solid #ef4444′ }}>
+          <div style={{ background: '#3a1a1a', borderRadius: '12px', padding: '16px', marginBottom: '24px', border: '2px solid #ef4444' }}>
             <div style={{ color: '#ef4444', fontWeight: 700, fontSize: '1rem' }}>⚠️ OAK WILT SEASON ACTIVE (April 1 – July 1)</div>
             <div style={{ color: '#fca5a5', fontSize: '0.9rem', marginTop: '6px' }}>Do NOT prune live oaks or red oaks during this period. Beetles are actively spreading oak wilt spores through fresh cuts.</div>
           </div>
@@ -67,7 +67,7 @@ export default function DFWTreeMaintenanceGuide() {
             <div key={t.name} style={{ padding: '12px 0', borderBottom: '1px solid #2d3f5e' }}>
               <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start' }}>
                 <div>
-                  <div style={{ fontWeight: 700, color: t.restricted ? '#fbbf24′ : '#e2e8f0' }}>{t.name} {t.restricted ? '⚠️' : ''}</div>
+                  <div style={{ fontWeight: 700, color: t.restricted ? '#fbbf24' : '#e2e8f0' }}>{t.name} {t.restricted ? '⚠️' : ''}</div>
                   <div style={{ fontSize: '0.85rem', color: '#94a3b8', marginTop: '2px' }}>{t.notes}</div>
                 </div>
                 <div style={{ fontSize: '0.8rem', color: '#4ade80', textAlign: 'right', minWidth: '160px' }}>✅ {t.pruneWindow}</div>
@@ -79,7 +79,7 @@ export default function DFWTreeMaintenanceGuide() {
         <div style={{ background: '#1e2d45', borderRadius: '12px', padding: '20px', marginBottom: '24px', border: '1px solid #2d3f5e' }}>
           <h2 style={{ color: '#F5E642', fontSize: '1.1rem', fontWeight: 700, marginBottom: '12px' }}>🍄 Oak Wilt Prevention — DFW Critical Info</h2>
           {oakWiltFacts.map((f, i) => (
-            <div key={i} style={{ padding: '8px 0', borderBottom: '1px solid #2d3f5e', fontSize: '0.9rem', color: '#e2e8f0′ }}>
+            <div key={i} style={{ padding: '8px 0', borderBottom: '1px solid #2d3f5e', fontSize: '0.9rem', color: '#e2e8f0' }}>
               {i === 0 ? '🚫' : '⚠️'} {f}
             </div>
           ))}
@@ -103,14 +103,14 @@ export default function DFWTreeMaintenanceGuide() {
               </select>
             </div>
           </div>
-          <button onClick={() => setShowAdvice(true)} disabled={!treeType || !issue} style={{ background: treeType && issue ? '#F5E642′ : '#2d3f5e', color: treeType && issue ? '#0A1628' : '#64748b', border: ’none', borderRadius: '8px', padding: '12px 24px', fontWeight: 700, cursor: treeType && issue ? 'pointer' : 'not-allowed' }}>
+          <button onClick={() => setShowAdvice(true)} disabled={!treeType || !issue} style={{ background: treeType && issue ? '#F5E642' : '#2d3f5e', color: treeType && issue ? '#0A1628' : '#64748b', border: 'none', borderRadius: '8px', padding: '12px 24px', fontWeight: 700, cursor: treeType && issue ? 'pointer' : 'not-allowed' }}>
             Get Maintenance Advice
           </button>
           {showAdvice && treeType && issue && (
-            <div style={{ marginTop: '16px', background: '#0A1628', borderRadius: '8px', padding: '16px', border: '1px solid #F5E642′ }}>
+            <div style={{ marginTop: '16px', background: '#0A1628', borderRadius: '8px', padding: '16px', border: '1px solid #F5E642' }}>
               <div style={{ color: '#F5E642', fontWeight: 700, marginBottom: '10px' }}>🌳 {treeType} — {issue} Guidance</div>
               {getAdvice().map((item, i) => (
-                <div key={i} style={{ padding: '6px 0', fontSize: '0.9rem', color: '#e2e8f0', borderBottom: '1px solid #1e2d45′ }}>{item}</div>
+                <div key={i} style={{ padding: '6px 0', fontSize: '0.9rem', color: '#e2e8f0', borderBottom: '1px solid #1e2d45' }}>{item}</div>
               ))}
               <div style={{ marginTop: '12px', fontSize: '0.8rem', color: '#64748b' }}>For large trees, always hire an ISA-certified arborist. ProLnk connects you with vetted tree care professionals in DFW.</div>
             </div>

@@ -9,7 +9,7 @@ const pathway = [
 
 const dfwDemand = [
   { stat: '12,000+', label: 'Annual DFW residential permits' },
-  { stat: '23%', label: 'Projected growth 2024-2034′ },
+  { stat: '23%', label: 'Projected growth 2024-2034' },
   { stat: '$34/hr', label: 'Avg journeyman rate DFW' },
   { stat: '4,200', label: 'Open electrical jobs DFW (2024)' },
 ];
@@ -76,7 +76,7 @@ export default function DFWElectricalLicensingGuide() {
           </div>
         </section>
 
-        <section style={{ background: '#131f35', borderRadius: 14, padding: 28, border: '1px solid #F5E642′ }}>
+        <section style={{ background: '#131f35', borderRadius: 14, padding: 28, border: '1px solid #F5E642' }}>
           <h2 style={{ color: '#F5E642', fontSize: 20, fontWeight: 700, marginBottom: 20 }}>📊 Your Progress Calculator</h2>
           <div style={{ display: 'grid', gap: 16, marginBottom: 20 }}>
             <div>
@@ -89,7 +89,7 @@ export default function DFWElectricalLicensingGuide() {
             </div>
             <div>
               <label style={{ fontSize: 13, color: '#94a3b8', display: 'block', marginBottom: 6 }}>Hours worked under license (approx)</label>
-              <input type="number" value={currentHours} onChange={e => setCurrentHours(e.target.value)} placeholder="e.g. 4500″
+              <input type="number" value={currentHours} onChange={e => setCurrentHours(e.target.value)} placeholder="e.g. 4500"
                 style={{ width: '100%', padding: '10px 14px', borderRadius: 8, border: '1px solid #1e3a5f', background: '#0A1628', color: '#fff', fontSize: 15, boxSizing: 'border-box' }} />
             </div>
           </div>

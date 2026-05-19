@@ -33,7 +33,7 @@ export default function DFWSolarPanelCostGuide() {
 
   return (
     <div style={{ background: '#0A1628', minHeight: '100vh', color: '#fff', fontFamily: 'system-ui, sans-serif', padding: '0 0 60px' }}>
-      <div style={{ background: 'linear-gradient(135deg, #0A1628 0%, #112240 100%)', padding: '48px 24px 40px', textAlign: 'center', borderBottom: '3px solid #F5E642′ }}>
+      <div style={{ background: 'linear-gradient(135deg, #0A1628 0%, #112240 100%)', padding: '48px 24px 40px', textAlign: 'center', borderBottom: '3px solid #F5E642' }}>
         <div style={{ fontSize: 48 }}>☀️</div>
         <h1 style={{ fontSize: 32, fontWeight: 800, color: '#F5E642', margin: '12px 0 8px' }}>DFW Solar Panel Cost Guide 2026</h1>
         <p style={{ color: '#94a3b8', fontSize: 16, maxWidth: 640, margin: '0 auto' }}>DFW gets 5.5 sun hours per day — one of the best solar markets in the US. Calculate your system cost, incentives, and lifetime savings.</p>
@@ -65,7 +65,7 @@ export default function DFWSolarPanelCostGuide() {
             <p style={{ color: '#cbd5e1', fontSize: 14, marginBottom: 10, fontWeight: 600 }}>Average monthly electric bill?</p>
             <div style={{ display: 'flex', gap: 10, flexWrap: 'wrap' }}>
               {billRanges.map((b, i) => (
-                <button key={b} onClick={() => { setSelBill(i); setShowResult(false); }} style={{ padding: '10px 18px', borderRadius: 8, border: `2px solid ${selBill === i ? '#F5E642' : '#1e3a5f'}`, background: selBill === i ? '#F5E642′ : '#0A1628', color: selBill === i ? '#0A1628' : '#94a3b8', fontWeight: 700, cursor: ’pointer', fontSize: 13 }}>{b}</button>
+                <button key={b} onClick={() => { setSelBill(i); setShowResult(false); }} style={{ padding: '10px 18px', borderRadius: 8, border: `2px solid ${selBill === i ? '#F5E642' : '#1e3a5f'}`, background: selBill === i ? '#F5E642' : '#0A1628', color: selBill === i ? '#0A1628' : '#94a3b8', fontWeight: 700, cursor: 'pointer', fontSize: 13 }}>{b}</button>
               ))}
             </div>
           </div>
@@ -74,7 +74,7 @@ export default function DFWSolarPanelCostGuide() {
             <p style={{ color: '#cbd5e1', fontSize: 14, marginBottom: 10, fontWeight: 600 }}>Usable roof space?</p>
             <div style={{ display: 'flex', gap: 10, flexWrap: 'wrap' }}>
               {roofSizes.map((r, i) => (
-                <button key={r} onClick={() => { setSelRoof(i); setShowResult(false); }} style={{ padding: '10px 18px', borderRadius: 8, border: `2px solid ${selRoof === i ? '#F5E642' : '#1e3a5f'}`, background: selRoof === i ? '#F5E642′ : '#0A1628', color: selRoof === i ? '#0A1628' : '#94a3b8', fontWeight: 700, cursor: ’pointer', fontSize: 13 }}>{r}</button>
+                <button key={r} onClick={() => { setSelRoof(i); setShowResult(false); }} style={{ padding: '10px 18px', borderRadius: 8, border: `2px solid ${selRoof === i ? '#F5E642' : '#1e3a5f'}`, background: selRoof === i ? '#F5E642' : '#0A1628', color: selRoof === i ? '#0A1628' : '#94a3b8', fontWeight: 700, cursor: 'pointer', fontSize: 13 }}>{r}</button>
               ))}
             </div>
           </div>
@@ -95,7 +95,7 @@ export default function DFWSolarPanelCostGuide() {
                 ].map((stat) => (
                   <div key={stat.label} style={{ background: '#0A1628', borderRadius: 12, padding: 16, border: `2px solid ${stat.highlight ? '#F5E642' : '#1e3a5f'}`, textAlign: 'center' }}>
                     <p style={{ color: '#64748b', fontSize: 11, marginBottom: 4 }}>{stat.label}</p>
-                    <p style={{ color: stat.highlight ? '#F5E642′ : '#fff', fontSize: 20, fontWeight: 800, margin: '0 0 4px' }}>{stat.value}</p>
+                    <p style={{ color: stat.highlight ? '#F5E642' : '#fff', fontSize: 20, fontWeight: 800, margin: '0 0 4px' }}>{stat.value}</p>
                     <p style={{ color: '#64748b', fontSize: 11 }}>{stat.sub}</p>
                   </div>
                 ))}

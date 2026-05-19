@@ -65,9 +65,9 @@ export default function DFWHVACEfficiencyDrop() {
               {group.items.map((item, i) => (
                 <button key={i} onClick={() => group.set(i)}
                   style={{ padding: '10px 14px', borderRadius: 8, border: '2px solid', cursor: 'pointer', textAlign: 'left',
-                    borderColor: group.idx === i ? '#F5E642′ : '#1e3a5f',
-                    background: group.idx === i ? '#F5E64222′ : ’transparent',
-                    color: group.idx === i ? '#F5E642′ : '#94a3b8', fontSize: 13 }}>
+                    borderColor: group.idx === i ? '#F5E642' : '#1e3a5f',
+                    background: group.idx === i ? '#F5E64222' : 'transparent',
+                    color: group.idx === i ? '#F5E642' : '#94a3b8', fontSize: 13 }}>
                   {item.label}
                 </button>
               ))}
@@ -81,9 +81,9 @@ export default function DFWHVACEfficiencyDrop() {
             {annualCosts.map((cost, i) => (
               <button key={i} onClick={() => setBillIdx(i)}
                 style={{ flex: 1, padding: '10px 4px', borderRadius: 8, border: '2px solid', cursor: 'pointer',
-                  borderColor: billIdx === i ? '#F5E642′ : '#1e3a5f',
-                  background: billIdx === i ? '#F5E64222′ : ’transparent',
-                  color: billIdx === i ? '#F5E642′ : '#94a3b8', fontSize: 13 }}>
+                  borderColor: billIdx === i ? '#F5E642' : '#1e3a5f',
+                  background: billIdx === i ? '#F5E64222' : 'transparent',
+                  color: billIdx === i ? '#F5E642' : '#94a3b8', fontSize: 13 }}>
                 ${cost.toLocaleString()}
               </button>
             ))}

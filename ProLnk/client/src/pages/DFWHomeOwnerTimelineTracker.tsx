@@ -54,9 +54,9 @@ export default function DFWHomeOwnerTimelineTracker() {
           {ENTRY_TYPES.map(t => (
             <button key={t} onClick={() => setSelectedType(t)}
               style={{ padding: '7px 14px', borderRadius: 20, border: '2px solid', cursor: 'pointer', fontWeight: 700, fontSize: 12,
-                borderColor: selectedType === t ? '#F5E642′ : '#1E3A5F',
-                background: selectedType === t ? '#F5E642′ : ’transparent',
-                color: selectedType === t ? '#0A1628′ : '#8CA4C0' }}>
+                borderColor: selectedType === t ? '#F5E642' : '#1E3A5F',
+                background: selectedType === t ? '#F5E642' : 'transparent',
+                color: selectedType === t ? '#0A1628' : '#8CA4C0' }}>
               {t}
             </button>
           ))}
@@ -91,7 +91,7 @@ export default function DFWHomeOwnerTimelineTracker() {
 
         {showForm && (
           <div style={{ background: '#0F2037', borderRadius: 12, padding: 24, marginBottom: 20 }}>
-            <h3 style={{ fontSize: 16, fontWeight: 700, marginBottom: 14, color: '#F5E642′ }}>New {selectedType} Event</h3>
+            <h3 style={{ fontSize: 16, fontWeight: 700, marginBottom: 14, color: '#F5E642' }}>New {selectedType} Event</h3>
             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12, marginBottom: 12 }}>
               <div>
                 <div style={{ fontSize: 12, color: '#8CA4C0', marginBottom: 4 }}>Date</div>
@@ -100,7 +100,7 @@ export default function DFWHomeOwnerTimelineTracker() {
               </div>
               <div>
                 <div style={{ fontSize: 12, color: '#8CA4C0', marginBottom: 4 }}>Cost / Value</div>
-                <input value={form.cost} onChange={e => setForm(f => ({ ...f, cost: e.target.value }))} placeholder="$0″
+                <input value={form.cost} onChange={e => setForm(f => ({ ...f, cost: e.target.value }))} placeholder="$0"
                   style={{ width: '100%', background: '#1E3A5F', border: '1px solid #2A4F7A', borderRadius: 8, padding: '10px 12px', color: '#fff', fontSize: 14, boxSizing: 'border-box' }} />
               </div>
             </div>
@@ -125,7 +125,7 @@ export default function DFWHomeOwnerTimelineTracker() {
           <div style={{ position: 'absolute', left: 10, top: 0, bottom: 0, width: 2, background: '#1E3A5F' }} />
           {entries.map((e, i) => (
             <div key={i} style={{ position: 'relative', marginBottom: 18 }}>
-              <div style={{ position: 'absolute', left: -24, top: 16, width: 14, height: 14, borderRadius: '50%', background: '#F5E642', border: '3px solid #0A1628′ }} />
+              <div style={{ position: 'absolute', left: -24, top: 16, width: 14, height: 14, borderRadius: '50%', background: '#F5E642', border: '3px solid #0A1628' }} />
               <div style={{ background: '#0F2037', borderRadius: 12, padding: 18 }}>
                 <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: 4 }}>
                   <div>

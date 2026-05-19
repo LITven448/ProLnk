@@ -34,14 +34,14 @@ export default function PartnerWeekOneGuide() {
           {days.map((d, i) => (
             <button key={i} onClick={() => setActiveDay(i)}
               style={{ padding: '8px 14px', borderRadius: 8, border: 'none', cursor: 'pointer',
-                background: activeDay === i ? '#F5E642′ : '#E2E8F0',
-                color: activeDay === i ? '#0A1628′ : '#475569', fontWeight: 600, fontSize: 13 }}>
+                background: activeDay === i ? '#F5E642' : '#E2E8F0',
+                color: activeDay === i ? '#0A1628' : '#475569', fontWeight: 600, fontSize: 13 }}>
               {d.day}
             </button>
           ))}
         </div>
 
-        <div style={{ background: '#fff', borderRadius: 12, padding: 24, marginBottom: 24, border: '1px solid #E2E8F0′ }}>
+        <div style={{ background: '#fff', borderRadius: 12, padding: 24, marginBottom: 24, border: '1px solid #E2E8F0' }}>
           <h2 style={{ color: '#0A1628', margin: '0 0 16px' }}>{days[activeDay].day}: {days[activeDay].title}</h2>
           {days[activeDay].tasks.map((t, i) => (
             <div key={i} style={{ display: 'flex', alignItems: 'flex-start', gap: 10, marginBottom: 10 }}>
@@ -54,11 +54,11 @@ export default function PartnerWeekOneGuide() {
           ))}
         </div>
 
-        <div style={{ background: '#fff', borderRadius: 12, padding: 24, border: '1px solid #E2E8F0′ }}>
+        <div style={{ background: '#fff', borderRadius: 12, padding: 24, border: '1px solid #E2E8F0' }}>
           <h3 style={{ color: '#0A1628', margin: '0 0 14px' }}>🎯 Personalized Plan for DFW</h3>
           <select value={trade} onChange={e => setTrade(e.target.value)}
             style={{ width: '100%', padding: '10px 14px', borderRadius: 8, border: '1px solid #CBD5E1',
-              fontSize: 15, marginBottom: 16, color: '#0A1628′ }}>
+              fontSize: 15, marginBottom: 16, color: '#0A1628' }}>
             <option value=''>Select your trade background...</option>
             <option value='plumber'>Plumbing</option>
             <option value='electrician'>Electrical</option>

@@ -35,7 +35,7 @@ export default function DFWPestSummaryFinal() {
             { icon: '📅', title: 'Quarterly vs Monthly Plans', body: 'Quarterly ($35–$55/mo): sufficient for new homes in low-pressure areas. Monthly ($55–$85/mo): recommended for wooded lots, older homes, pier-and-beam, or previous infestations. Annual contracts typically include free re-treatment between visits.' },
             { icon: '🔍', title: 'Vetting Pest Companies', body: 'Require: TX Dept of Agriculture license (TPCL), liability insurance, written warranty. Ask: what chemicals, how often, what\’s included in re-treatment policy. Avoid: door-to-door, no written contract, pressure to sign same day. Get 3 quotes.' },
           ].map(c => (
-            <div key={c.title} style={{ background: '#111d35', borderRadius: 12, padding: 20, borderLeft: '3px solid #F5E642′ }}>
+            <div key={c.title} style={{ background: '#111d35', borderRadius: 12, padding: 20, borderLeft: '3px solid #F5E642' }}>
               <div style={{ fontSize: 24, marginBottom: 8 }}>{c.icon}</div>
               <div style={{ fontWeight: 700, marginBottom: 6 }}>{c.title}</div>
               <div style={{ color: '#94a3b8', fontSize: 14, lineHeight: 1.6 }}>{c.body}</div>
@@ -48,7 +48,7 @@ export default function DFWPestSummaryFinal() {
           <p style={{ color: '#94a3b8', marginBottom: 20, fontSize: 14 }}>Select your DFW location and home type:</p>
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: 10, marginBottom: 24 }}>
             {profiles.map(p => (
-              <button key={p.id} onClick={() => setSelected(p.id)} style={{ padding: '10px 18px', borderRadius: 8, border: `2px solid ${selected === p.id ? '#F5E642' : '#1e3a5f'}`, background: selected === p.id ? '#F5E642′ : ’transparent', color: selected === p.id ? '#0A1628′ : '#fff', cursor: ’pointer', fontWeight: 600, fontSize: 14 }}>{p.label}</button>
+              <button key={p.id} onClick={() => setSelected(p.id)} style={{ padding: '10px 18px', borderRadius: 8, border: `2px solid ${selected === p.id ? '#F5E642' : '#1e3a5f'}`, background: selected === p.id ? '#F5E642' : 'transparent', color: selected === p.id ? '#0A1628' : '#fff', cursor: 'pointer', fontWeight: 600, fontSize: 14 }}>{p.label}</button>
             ))}
           </div>
           {selected && (

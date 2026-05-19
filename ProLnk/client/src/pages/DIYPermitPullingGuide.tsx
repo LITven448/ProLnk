@@ -70,7 +70,7 @@ export default function DIYPermitPullingGuide() {
           <div style={{ fontSize: 13, color: '#1D4ED8', fontWeight: 700, letterSpacing: 2, textTransform: 'uppercase', marginBottom: 12 }}>
             📋 ProLnk Homeowner Guide
           </div>
-          <h1 style={{ fontSize: 38, fontWeight: 800, lineHeight: 1.15, marginBottom: 16, color: '#0A1628′ }}>
+          <h1 style={{ fontSize: 38, fontWeight: 800, lineHeight: 1.15, marginBottom: 16, color: '#0A1628' }}>
             Owner-Builder Permit Guide for DFW Homeowners
           </h1>
           <p style={{ fontSize: 18, color: '#475569', lineHeight: 1.7 }}>
@@ -90,7 +90,7 @@ export default function DIYPermitPullingGuide() {
             'You are liable for ensuring all work meets code',
           ].map(item => (
             <div key={item} style={{ display: 'flex', gap: 10, padding: '8px 0', borderBottom: '1px solid #BFDBFE' }}>
-              <span style={{ color: '#1D4ED8′ }}>✓</span>
+              <span style={{ color: '#1D4ED8' }}>✓</span>
               <span style={{ color: '#334155', fontSize: 14 }}>{item}</span>
             </div>
           ))}
@@ -104,7 +104,7 @@ export default function DIYPermitPullingGuide() {
             ['Safety liability', 'If a sub you hire under your owner-builder permit is injured on-site, you may be personally liable in the absence of workers\’ comp coverage.'],
             ['12-month resale rule', 'If you sell within 12 months of owner-builder completion, the Texas AG can presume you were acting as a contractor, which may trigger contractor licensing requirements.'],
           ].map(([risk, detail]) => (
-            <div key={risk as string} style={{ backgroundColor: '#FEF9C3', borderRadius: 10, padding: '16px 20px', marginBottom: 10, border: '1px solid #FDE047′ }}>
+            <div key={risk as string} style={{ backgroundColor: '#FEF9C3', borderRadius: 10, padding: '16px 20px', marginBottom: 10, border: '1px solid #FDE047' }}>
               <div style={{ color: '#92400E', fontWeight: 700, marginBottom: 6 }}>⚠️ {risk}</div>
               <div style={{ color: '#713F12', fontSize: 14, lineHeight: 1.6 }}>{detail}</div>
             </div>
@@ -123,9 +123,9 @@ export default function DIYPermitPullingGuide() {
             'You are responsible for scheduling inspections after each trade completes their scope',
             'Keep a written log of every payment, inspection result, and communication',
           ].map(item => (
-            <div key={item} style={{ display: 'flex', gap: 12, padding: '10px 0', borderBottom: '1px solid #E2E8F0′ }}>
-              <span style={{ color: '#1D4ED8′ }}>✓</span>
-              <span style={{ color: '#334155′ }}>{item}</span>
+            <div key={item} style={{ display: 'flex', gap: 12, padding: '10px 0', borderBottom: '1px solid #E2E8F0' }}>
+              <span style={{ color: '#1D4ED8' }}>✓</span>
+              <span style={{ color: '#334155' }}>{item}</span>
             </div>
           ))}
         </section>
@@ -143,9 +143,9 @@ export default function DIYPermitPullingGuide() {
                   onClick={() => { setCity(c.value); setShowResult(false); }}
                   style={{
                     padding: '10px 20px', borderRadius: 8, border: '2px solid',
-                    borderColor: city === c.value ? '#F5E642′ : '#1E3A5F',
-                    backgroundColor: city === c.value ? '#1a1a00′ : ’transparent',
-                    color: city === c.value ? '#F5E642′ : '#94A3B8',
+                    borderColor: city === c.value ? '#F5E642' : '#1E3A5F',
+                    backgroundColor: city === c.value ? '#1a1a00' : 'transparent',
+                    color: city === c.value ? '#F5E642' : '#94A3B8',
                     cursor: 'pointer', fontSize: 14, fontWeight: 600,
                   }}
                 >
@@ -164,9 +164,9 @@ export default function DIYPermitPullingGuide() {
                   onClick={() => { setProject(p.value); setShowResult(false); }}
                   style={{
                     padding: '10px 20px', borderRadius: 8, border: '2px solid',
-                    borderColor: project === p.value ? '#F5E642′ : '#1E3A5F',
-                    backgroundColor: project === p.value ? '#1a1a00′ : ’transparent',
-                    color: project === p.value ? '#F5E642′ : '#94A3B8',
+                    borderColor: project === p.value ? '#F5E642' : '#1E3A5F',
+                    backgroundColor: project === p.value ? '#1a1a00' : 'transparent',
+                    color: project === p.value ? '#F5E642' : '#94A3B8',
                     cursor: 'pointer', fontSize: 14, fontWeight: 600,
                   }}
                 >
@@ -180,8 +180,8 @@ export default function DIYPermitPullingGuide() {
             onClick={handleCheck}
             disabled={!city || !project}
             style={{
-              backgroundColor: city && project ? '#F5E642′ : '#1E2D45',
-              color: city && project ? '#0A1628′ : '#475569',
+              backgroundColor: city && project ? '#F5E642' : '#1E2D45',
+              color: city && project ? '#0A1628' : '#475569',
               border: 'none', borderRadius: 8, padding: '14px 28px',
               fontWeight: 700, fontSize: 15, cursor: city && project ? 'pointer' : 'not-allowed', marginBottom: 24,
             }}
@@ -193,7 +193,7 @@ export default function DIYPermitPullingGuide() {
             <div style={{ backgroundColor: '#081525', borderRadius: 12, padding: '24px' }}>
               <div style={{
                 fontSize: 20, fontWeight: 800, marginBottom: 16,
-                color: result.allowed ? '#4ade80′ : '#f87171',
+                color: result.allowed ? '#4ade80' : '#f87171',
               }}>
                 {result.allowed ? '✅ Yes — you can pull this permit as owner-builder' : '❌ No — this permit requires a licensed contractor'}
               </div>
@@ -207,8 +207,8 @@ export default function DIYPermitPullingGuide() {
                 <div style={{ marginBottom: 20 }}>
                   <div style={{ color: '#64748B', fontSize: 12, fontWeight: 700, marginBottom: 8 }}>REQUIRED INSPECTIONS</div>
                   {result.inspections.map((insp, i) => (
-                    <div key={i} style={{ display: 'flex', gap: 10, padding: '8px 0', borderBottom: '1px solid #1E2D45′ }}>
-                      <span style={{ color: '#F5E642′ }}>{i + 1}.</span>
+                    <div key={i} style={{ display: 'flex', gap: 10, padding: '8px 0', borderBottom: '1px solid #1E2D45' }}>
+                      <span style={{ color: '#F5E642' }}>{i + 1}.</span>
                       <span style={{ color: '#CBD5E1', fontSize: 14 }}>{insp}</span>
                     </div>
                   ))}

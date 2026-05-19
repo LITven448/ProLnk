@@ -21,14 +21,14 @@ import { toast } from "sonner";
 
 // ─── Stage Config ─────────────────────────────────────────────────────────────
 const STAGES = [
-  { key: "draft",         label: "Draft",     color: "#94A3B8″, bg: "#F8FAFC", icon: Clock        },
-  { key: "sent",          label: "Sent",      color: "#3B82F6″, bg: "#EFF6FF", icon: Send         },
-  { key: "viewed",        label: "Viewed",    color: "#8B5CF6″, bg: "#F5F3FF", icon: Eye          },
-  { key: "scheduled",     label: "Scheduled", color: "#10B981″, bg: "#ECFDF5", icon: Calendar     },
+  { key: "draft",         label: "Draft",     color: "#94A3B8", bg: "#F8FAFC", icon: Clock        },
+  { key: "sent",          label: "Sent",      color: "#3B82F6", bg: "#EFF6FF", icon: Send         },
+  { key: "viewed",        label: "Viewed",    color: "#8B5CF6", bg: "#F5F3FF", icon: Eye          },
+  { key: "scheduled",     label: "Scheduled", color: "#10B981", bg: "#ECFDF5", icon: Calendar     },
   { key: "estimate_done", label: "Quoted",    color: "#F59E0B", bg: "#FFFBEB", icon: DollarSign   },
-  { key: "accepted",      label: "Accepted",  color: "#059669″, bg: "#D1FAE5", icon: CheckCircle },
-  { key: "job_closed",    label: "Closed",    color: "#00B5B8″, bg: "#E0FAFA", icon: TrendingUp   },
-  { key: "declined",      label: "Declined",  color: "#EF4444″, bg: "#FEF2F2", icon: XCircle      },
+  { key: "accepted",      label: "Accepted",  color: "#059669", bg: "#D1FAE5", icon: CheckCircle },
+  { key: "job_closed",    label: "Closed",    color: "#00B5B8", bg: "#E0FAFA", icon: TrendingUp   },
+  { key: "declined",      label: "Declined",  color: "#EF4444", bg: "#FEF2F2", icon: XCircle      },
 ] as const;
 
 type StageKey = typeof STAGES[number]["key"];
@@ -47,7 +47,7 @@ function InlineValueEditor({ deal, onSave }: { deal: any; onSave: (token: string
         onClick={e => { e.stopPropagation(); setEditing(true); }}
         className="flex items-center gap-1 text-xs text-emerald-600 font-semibold hover:text-emerald-800 group"
       >
-        <DollarSign className="w-3 h-3″ />
+        <DollarSign className="w-3 h-3" />
         {estLow && estHigh
           ? `${estLow.toLocaleString()}–${estHigh.toLocaleString()}`
           : "Set value"}
@@ -57,14 +57,14 @@ function InlineValueEditor({ deal, onSave }: { deal: any; onSave: (token: string
   }
 
   return (
-    <div className="flex items-center gap-1″ onClick={e => e.stopPropagation()}>
+    <div className="flex items-center gap-1" onClick={e => e.stopPropagation()}>
       <input
         className="w-16 text-xs border border-gray-200 rounded px-1 py-0.5 focus:outline-none focus:ring-1 focus:ring-[#00B5B8]"
         placeholder="Low"
         value={low}
         onChange={e => setLow(e.target.value)}
       />
-      <span className="text-xs text-gray-400″>–</span>
+      <span className="text-xs text-gray-400">–</span>
       <input
         className="w-16 text-xs border border-gray-200 rounded px-1 py-0.5 focus:outline-none focus:ring-1 focus:ring-[#00B5B8]"
         placeholder="High"
@@ -73,12 +73,12 @@ function InlineValueEditor({ deal, onSave }: { deal: any; onSave: (token: string
       />
       <button
         onClick={() => { onSave(deal.token, Number(low) || 0, Number(high) || 0); setEditing(false); }}
-        className="p-0.5 rounded text-emerald-600 hover:bg-emerald-50″
+        className="p-0.5 rounded text-emerald-600 hover:bg-emerald-50"
       >
-        <Check className="w-3 h-3″ />
+        <Check className="w-3 h-3" />
       </button>
-      <button onClick={() => setEditing(false)} className="p-0.5 rounded text-gray-400 hover:bg-gray-50″>
-        <XIcon className="w-3 h-3″ />
+      <button onClick={() => setEditing(false)} className="p-0.5 rounded text-gray-400 hover:bg-gray-50">
+        <XIcon className="w-3 h-3" />
       </button>
     </div>
   );
@@ -102,23 +102,23 @@ function DealCard({
       draggable
       onDragStart={e => onDragStart(e, deal)}
       className={`bg-white rounded-xl border shadow-sm p-3 cursor-grab active:cursor-grabbing hover:shadow-md transition-all ${
-        selected ? "border-[#00B5B8] ring-1 ring-[#00B5B8]" : "border-gray-100″
+        selected ? "border-[#00B5B8] ring-1 ring-[#00B5B8]" : "border-gray-100"
       }`}
     >
       {/* Select + issue type */}
-      <div className="flex items-start justify-between gap-2 mb-2″>
-        <div className="flex items-center gap-1.5 min-w-0″>
+      <div className="flex items-start justify-between gap-2 mb-2">
+        <div className="flex items-center gap-1.5 min-w-0">
           <button
             onClick={e => { e.stopPropagation(); onSelect(deal.id); }}
             className="flex-shrink-0 text-gray-300 hover:text-[#00B5B8] transition-colors"
           >
-            {selected ? <CheckSquare className="w-3.5 h-3.5 text-[#00B5B8]" /> : <Square className="w-3.5 h-3.5″ />}
+            {selected ? <CheckSquare className="w-3.5 h-3.5 text-[#00B5B8]" /> : <Square className="w-3.5 h-3.5" />}
           </button>
-          <Sparkles className="w-3.5 h-3.5 text-[#00B5B8] flex-shrink-0″ />
+          <Sparkles className="w-3.5 h-3.5 text-[#00B5B8] flex-shrink-0" />
           <span className="text-xs font-semibold text-gray-800 truncate">{deal.issueType}</span>
         </div>
         {deal.aiConfidence && (
-          <span className="text-xs font-bold text-[#00B5B8] flex-shrink-0″>{deal.aiConfidence}%</span>
+          <span className="text-xs font-bold text-[#00B5B8] flex-shrink-0">{deal.aiConfidence}%</span>
         )}
       </div>
 
@@ -128,55 +128,55 @@ function DealCard({
       </p>
 
       {/* Partners */}
-      <div className="text-xs text-gray-400 mb-2 space-y-0.5″>
+      <div className="text-xs text-gray-400 mb-2 space-y-0.5">
         {deal.referringPartnerName && <p className="truncate">📤 {deal.referringPartnerName}</p>}
         {deal.receivingPartnerName && <p className="truncate">🔧 {deal.receivingPartnerName}</p>}
       </div>
 
       {/* Inline value editor */}
-      <div className="mb-2″>
+      <div className="mb-2">
         <InlineValueEditor deal={deal} onSave={onSaveValue} />
       </div>
 
       {/* Views + date */}
-      <div className="flex items-center justify-between text-xs text-gray-300 mb-2″>
-        <span className="flex items-center gap-1″><Eye className="w-3 h-3" />{deal.viewCount || 0}</span>
+      <div className="flex items-center justify-between text-xs text-gray-300 mb-2">
+        <span className="flex items-center gap-1"><Eye className="w-3 h-3" />{deal.viewCount || 0}</span>
         <span>{deal.createdAt ? new Date(deal.createdAt).toLocaleDateString() : ""}</span>
       </div>
 
       {/* Actions */}
-      <div className="flex items-center gap-1.5″>
+      <div className="flex items-center gap-1.5">
         <button
           onClick={() => onCopyLink(deal.token)}
-          className="flex-1 text-xs py-1 rounded-lg border border-gray-200 text-gray-500 hover:bg-gray-50 flex items-center justify-center gap-1″
+          className="flex-1 text-xs py-1 rounded-lg border border-gray-200 text-gray-500 hover:bg-gray-50 flex items-center justify-center gap-1"
         >
-          <Copy className="w-3 h-3″ /> Copy
+          <Copy className="w-3 h-3" /> Copy
         </button>
         {deal.status === "draft" && (
           <button
             onClick={() => onSend(deal.token)}
-            className="flex-1 text-xs py-1 rounded-lg text-white flex items-center justify-center gap-1″
-            style={{ backgroundColor: "#00B5B8″ }}
+            className="flex-1 text-xs py-1 rounded-lg text-white flex items-center justify-center gap-1"
+            style={{ backgroundColor: "#00B5B8" }}
           >
-            <Send className="w-3 h-3″ /> Send
+            <Send className="w-3 h-3" /> Send
           </button>
         )}
         {deal.status === "accepted" && (
           <button
             onClick={() => onClose(deal.token)}
-            className="flex-1 text-xs py-1 rounded-lg text-white flex items-center justify-center gap-1″
-            style={{ backgroundColor: "#059669″ }}
+            className="flex-1 text-xs py-1 rounded-lg text-white flex items-center justify-center gap-1"
+            style={{ backgroundColor: "#059669" }}
           >
-            <CheckCircle className="w-3 h-3″ /> Close
+            <CheckCircle className="w-3 h-3" /> Close
           </button>
         )}
         <a
           href={`/job/${deal.token}`}
           target="_blank"
           rel="noreferrer"
-          className="p-1 rounded-lg border border-gray-200 text-gray-400 hover:bg-gray-50″
+          className="p-1 rounded-lg border border-gray-200 text-gray-400 hover:bg-gray-50"
         >
-          <ExternalLink className="w-3 h-3″ />
+          <ExternalLink className="w-3 h-3" />
         </a>
       </div>
     </div>
@@ -212,13 +212,13 @@ function KanbanColumn({
     >
       <div className="px-3 py-2.5 flex items-center justify-between border-b"
         style={{ borderColor: `${stage.color}30` }}>
-        <div className="flex items-center gap-2″>
-          <Icon className="w-3.5 h-3.5″ style={{ color: stage.color }} />
-          <span className="text-xs font-bold text-gray-700″>{stage.label}</span>
+        <div className="flex items-center gap-2">
+          <Icon className="w-3.5 h-3.5" style={{ color: stage.color }} />
+          <span className="text-xs font-bold text-gray-700">{stage.label}</span>
         </div>
-        <div className="flex items-center gap-1.5″>
+        <div className="flex items-center gap-1.5">
           {totalValue > 0 && (
-            <span className="text-xs text-gray-400″>${(totalValue / 1000).toFixed(0)}k</span>
+            <span className="text-xs text-gray-400">${(totalValue / 1000).toFixed(0)}k</span>
           )}
           <span className="text-xs font-bold px-1.5 py-0.5 rounded-full text-white"
             style={{ backgroundColor: stage.color }}>
@@ -228,7 +228,7 @@ function KanbanColumn({
       </div>
       <div className="flex-1 p-2 space-y-2 overflow-y-auto" style={{ maxHeight: "calc(100vh - 280px)" }}>
         {deals.length === 0 ? (
-          <div className="text-center py-8 text-xs text-gray-300″>No deals</div>
+          <div className="text-center py-8 text-xs text-gray-300">No deals</div>
         ) : (
           deals.map(deal => (
             <DealCard
@@ -382,14 +382,14 @@ export default function DealPipelineKanban() {
       <div className="flex flex-col h-full">
         {/* Header */}
         <div className="px-6 pt-6 pb-4 border-b border-gray-100 bg-white">
-          <div className="flex items-center justify-between mb-4″>
+          <div className="flex items-center justify-between mb-4">
             <div>
               <h1 className="text-xl font-bold text-[#0A1628]">Deal Pipeline</h1>
-              <p className="text-sm text-gray-500 mt-0.5″>Drag cards between stages · click checkboxes to bulk-act</p>
+              <p className="text-sm text-gray-500 mt-0.5">Drag cards between stages · click checkboxes to bulk-act</p>
             </div>
-            <div className="flex items-center gap-2″>
-              <Button variant="outline" size="sm" onClick={() => setShowFilters(f => !f)} className="gap-1.5″>
-                <Filter className="w-3.5 h-3.5″ />
+            <div className="flex items-center gap-2">
+              <Button variant="outline" size="sm" onClick={() => setShowFilters(f => !f)} className="gap-1.5">
+                <Filter className="w-3.5 h-3.5" />
                 Filters
                 {(stageFilter !== "all" || partnerFilter) && (
                   <span className="w-4 h-4 rounded-full bg-[#00B5B8] text-white text-[10px] flex items-center justify-center">
@@ -397,30 +397,30 @@ export default function DealPipelineKanban() {
                   </span>
                 )}
               </Button>
-              <Button variant="outline" size="sm" onClick={() => refetch()} className="gap-1.5″>
-                <RefreshCw className="w-3.5 h-3.5″ /> Refresh
+              <Button variant="outline" size="sm" onClick={() => refetch()} className="gap-1.5">
+                <RefreshCw className="w-3.5 h-3.5" /> Refresh
               </Button>
             </div>
           </div>
 
           {/* Stats */}
-          <div className="grid grid-cols-4 gap-3 mb-4″>
+          <div className="grid grid-cols-4 gap-3 mb-4">
             {[
-              { label: "Total Deals",    value: totalDeals,                            color: "#0A1628″ },
-              { label: "Pipeline Value", value: `$${(totalValue / 1000).toFixed(0)}k`, color: "#00B5B8″ },
-              { label: "Closed Value",   value: `$${(closedValue / 1000).toFixed(0)}k`,color: "#059669″ },
+              { label: "Total Deals",    value: totalDeals,                            color: "#0A1628" },
+              { label: "Pipeline Value", value: `$${(totalValue / 1000).toFixed(0)}k`, color: "#00B5B8" },
+              { label: "Closed Value",   value: `$${(closedValue / 1000).toFixed(0)}k`,color: "#059669" },
               { label: "Conv. Rate",     value: `${convRate}%`,                        color: "#F59E0B" },
             ].map(({ label, value, color }) => (
-              <div key={label} className="bg-gray-50 rounded-xl px-3 py-2.5″>
-                <p className="text-xs text-gray-400″>{label}</p>
-                <p className="text-lg font-bold mt-0.5″ style={{ color }}>{value}</p>
+              <div key={label} className="bg-gray-50 rounded-xl px-3 py-2.5">
+                <p className="text-xs text-gray-400">{label}</p>
+                <p className="text-lg font-bold mt-0.5" style={{ color }}>{value}</p>
               </div>
             ))}
           </div>
 
           {/* Search */}
-          <div className="relative mb-3″>
-            <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400″ />
+          <div className="relative mb-3">
+            <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400" />
             <input
               className="w-full pl-9 pr-4 py-2 border border-gray-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-[#00B5B8]"
               placeholder="Search by issue type, homeowner, or partner..."
@@ -431,8 +431,8 @@ export default function DealPipelineKanban() {
 
           {/* Expanded filters */}
           {showFilters && (
-            <div className="flex items-center gap-3 py-3 border-t border-gray-100″>
-              <div className="flex items-center gap-2″>
+            <div className="flex items-center gap-3 py-3 border-t border-gray-100">
+              <div className="flex items-center gap-2">
                 <label className="text-xs text-gray-500 font-medium">Stage:</label>
                 <select
                   className="text-xs border border-gray-200 rounded-lg px-2 py-1.5 focus:outline-none focus:ring-1 focus:ring-[#00B5B8]"
@@ -443,10 +443,10 @@ export default function DealPipelineKanban() {
                   {STAGES.map(s => <option key={s.key} value={s.key}>{s.label}</option>)}
                 </select>
               </div>
-              <div className="flex items-center gap-2″>
+              <div className="flex items-center gap-2">
                 <label className="text-xs text-gray-500 font-medium">Partner:</label>
                 <input
-                  className="text-xs border border-gray-200 rounded-lg px-2 py-1.5 focus:outline-none focus:ring-1 focus:ring-[#00B5B8] w-40″
+                  className="text-xs border border-gray-200 rounded-lg px-2 py-1.5 focus:outline-none focus:ring-1 focus:ring-[#00B5B8] w-40"
                   placeholder="Filter by partner name..."
                   value={partnerFilter}
                   onChange={e => setPartnerFilter(e.target.value)}
@@ -454,7 +454,7 @@ export default function DealPipelineKanban() {
               </div>
               {(stageFilter !== "all" || partnerFilter) && (
                 <button
-                  className="text-xs text-red-500 hover:text-red-700″
+                  className="text-xs text-red-500 hover:text-red-700"
                   onClick={() => { setStageFilter("all"); setPartnerFilter(""); }}
                 >
                   Clear filters
@@ -465,24 +465,24 @@ export default function DealPipelineKanban() {
 
           {/* Bulk action bar */}
           {selected.size > 0 && (
-            <div className="flex items-center gap-3 py-2.5 px-3 bg-[#0A1628] rounded-xl mt-2″>
+            <div className="flex items-center gap-3 py-2.5 px-3 bg-[#0A1628] rounded-xl mt-2">
               <span className="text-xs text-white font-semibold">{selected.size} selected</span>
               <div className="flex items-center gap-2 ml-auto">
                 <Button
                   size="sm"
                   variant="outline"
-                  className="h-7 text-xs gap-1.5 bg-white/10 border-white/20 text-white hover:bg-white/20″
+                  className="h-7 text-xs gap-1.5 bg-white/10 border-white/20 text-white hover:bg-white/20"
                   onClick={handleBulkSend}
                 >
-                  <Send className="w-3 h-3″ /> Send All Drafts
+                  <Send className="w-3 h-3" /> Send All Drafts
                 </Button>
                 <Button
                   size="sm"
                   variant="outline"
-                  className="h-7 text-xs gap-1.5 bg-white/10 border-white/20 text-white hover:bg-white/20″
+                  className="h-7 text-xs gap-1.5 bg-white/10 border-white/20 text-white hover:bg-white/20"
                   onClick={handleBulkExport}
                 >
-                  <Download className="w-3 h-3″ /> Export CSV
+                  <Download className="w-3 h-3" /> Export CSV
                 </Button>
                 <button
                   className="text-xs text-white/60 hover:text-white"
@@ -496,14 +496,14 @@ export default function DealPipelineKanban() {
 
           {/* Select all row */}
           {filteredDeals.length > 0 && (
-            <div className="flex items-center gap-2 mt-2″>
+            <div className="flex items-center gap-2 mt-2">
               <button
                 onClick={handleSelectAll}
                 className="flex items-center gap-1.5 text-xs text-gray-500 hover:text-[#00B5B8] transition-colors"
               >
                 {selected.size === filteredDeals.length && filteredDeals.length > 0
                   ? <CheckSquare className="w-3.5 h-3.5 text-[#00B5B8]" />
-                  : <Square className="w-3.5 h-3.5″ />
+                  : <Square className="w-3.5 h-3.5" />
                 }
                 {selected.size === filteredDeals.length && filteredDeals.length > 0
                   ? "Deselect all"
@@ -514,7 +514,7 @@ export default function DealPipelineKanban() {
                   onClick={handleBulkExport}
                   className="flex items-center gap-1 text-xs text-gray-400 hover:text-gray-600 ml-auto"
                 >
-                  <Download className="w-3 h-3″ /> Export all
+                  <Download className="w-3 h-3" /> Export all
                 </button>
               )}
             </div>
@@ -524,13 +524,13 @@ export default function DealPipelineKanban() {
         {/* Kanban board */}
         {isLoading ? (
           <div className="flex-1 flex items-center justify-center">
-            <div className="text-center space-y-2″>
+            <div className="text-center space-y-2">
               <div className="w-10 h-10 rounded-full border-4 border-[#00B5B8] border-t-transparent animate-spin mx-auto" />
-              <p className="text-sm text-gray-400″>Loading pipeline...</p>
+              <p className="text-sm text-gray-400">Loading pipeline...</p>
             </div>
           </div>
         ) : (
-          <div className="flex-1 overflow-x-auto px-6 py-4″>
+          <div className="flex-1 overflow-x-auto px-6 py-4">
             <div className="flex gap-3 h-full" style={{ minWidth: `${STAGES.length * 272}px` }}>
               {visibleStages.map(stage => (
                 <KanbanColumn

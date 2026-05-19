@@ -40,13 +40,13 @@ export default function DFWHomeAppGuide2026() {
           <h2 style={{ color: '#F5E642', fontSize: 16, marginBottom: 12 }}>🎯 What do you need help with?</h2>
           <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
             {needs.map((n, i) => (
-              <button key={i} onClick={() => setSelected(i)} style={{ background: selected === i ? '#F5E642′ : '#1e3a5f', color: selected === i ? '#0A1628' : '#e2e8f0', border: ’none', borderRadius: 8, padding: '10px 14px', textAlign: 'left', cursor: 'pointer', fontWeight: 600, fontSize: 13 }}>
+              <button key={i} onClick={() => setSelected(i)} style={{ background: selected === i ? '#F5E642' : '#1e3a5f', color: selected === i ? '#0A1628' : '#e2e8f0', border: 'none', borderRadius: 8, padding: '10px 14px', textAlign: 'left', cursor: 'pointer', fontWeight: 600, fontSize: 13 }}>
                 {n.icon} {n.label}
               </button>
             ))}
           </div>
           {rec && (
-            <div style={{ marginTop: 14, background: '#0A1628', borderRadius: 10, padding: 16, borderLeft: '4px solid #F5E642′ }}>
+            <div style={{ marginTop: 14, background: '#0A1628', borderRadius: 10, padding: 16, borderLeft: '4px solid #F5E642' }}>
               <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 8 }}>
                 <span style={{ color: '#F5E642', fontWeight: 700, fontSize: 16 }}>{rec.icon} {rec.app}</span>
                 <span style={{ background: '#1e3a5f', color: '#22c55e', borderRadius: 6, padding: '2px 8px', fontSize: 12, fontWeight: 600 }}>{rec.cost}</span>

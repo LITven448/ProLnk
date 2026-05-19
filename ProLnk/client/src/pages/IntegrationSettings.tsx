@@ -64,8 +64,8 @@ const INTEGRATIONS: IntegrationDef[] = [
     source: "jobber",
     name: "Jobber",
     description: "Sync completed jobs, customers, and photos from Jobber automatically when jobs close.",
-    icon: <Briefcase className="w-5 h-5″ />,
-    color: "bg-green-600″,
+    icon: <Briefcase className="w-5 h-5" />,
+    color: "bg-green-600",
     category: "Field Service Management",
     requiresApiKey: true,
     apiKeyLabel: "Jobber Client Secret",
@@ -87,8 +87,8 @@ const INTEGRATIONS: IntegrationDef[] = [
     source: "housecall_pro",
     name: "Housecall Pro",
     description: "Pull completed job photos from Housecall Pro. Great for residential services, cleaning, and HVAC.",
-    icon: <Home className="w-5 h-5″ />,
-    color: "bg-blue-600″,
+    icon: <Home className="w-5 h-5" />,
+    color: "bg-blue-600",
     category: "Field Service Management",
     requiresApiKey: true,
     apiKeyLabel: "Housecall Pro API Key",
@@ -109,8 +109,8 @@ const INTEGRATIONS: IntegrationDef[] = [
     source: "servicetitan",
     name: "ServiceTitan",
     description: "Enterprise integration for HVAC, plumbing, and electrical contractors. Requires ServiceTitan Marketplace approval.",
-    icon: <Building2 className="w-5 h-5″ />,
-    color: "bg-purple-600″,
+    icon: <Building2 className="w-5 h-5" />,
+    color: "bg-purple-600",
     category: "Field Service Management",
     requiresApiKey: true,
     apiKeyLabel: "ServiceTitan App Key",
@@ -128,8 +128,8 @@ const INTEGRATIONS: IntegrationDef[] = [
     source: "workiz",
     name: "Workiz",
     description: "Sync jobs and scheduling from Workiz. Ideal for on-demand home service companies.",
-    icon: <Zap className="w-5 h-5″ />,
-    color: "bg-orange-500″,
+    icon: <Zap className="w-5 h-5" />,
+    color: "bg-orange-500",
     category: "Field Service Management",
     requiresApiKey: true,
     apiKeyLabel: "Workiz API Token",
@@ -150,8 +150,8 @@ const INTEGRATIONS: IntegrationDef[] = [
     source: "companycam",
     name: "CompanyCam",
     description: "Automatically pull job photos from CompanyCam projects. Works alongside Jobber, Housecall Pro, and ServiceTitan.",
-    icon: <Camera className="w-5 h-5″ />,
-    color: "bg-orange-600″,
+    icon: <Camera className="w-5 h-5" />,
+    color: "bg-orange-600",
     category: "Photo Management",
     requiresApiKey: true,
     apiKeyLabel: "CompanyCam API Key",
@@ -172,7 +172,7 @@ const INTEGRATIONS: IntegrationDef[] = [
     source: "field_app",
     name: "ProLnk Field OS",
     description: "Use the ProLnk mobile app to log jobs and upload photos directly from the field. No other software needed.",
-    icon: <Smartphone className="w-5 h-5″ />,
+    icon: <Smartphone className="w-5 h-5" />,
     color: "bg-[#0A1628]",
     category: "ProLnk Native",
     requiresApiKey: false,
@@ -215,23 +215,23 @@ function SectionCard({
         onClick={() => setOpen(!open)}
         className="w-full flex items-center justify-between px-5 py-4 text-left hover:bg-white/5 transition-colors"
       >
-        <div className="flex items-center gap-3″>
+        <div className="flex items-center gap-3">
           <div className="w-8 h-8 rounded-lg bg-teal-400/10 flex items-center justify-center">
-            <Icon className="w-4 h-4 text-teal-400″ />
+            <Icon className="w-4 h-4 text-teal-400" />
           </div>
           <div>
             <p className="text-sm font-semibold text-white">{title}</p>
-            {subtitle && <p className="text-xs text-white/50″>{subtitle}</p>}
+            {subtitle && <p className="text-xs text-white/50">{subtitle}</p>}
           </div>
         </div>
         {open ? (
-          <ChevronUp className="w-4 h-4 text-white/40″ />
+          <ChevronUp className="w-4 h-4 text-white/40" />
         ) : (
-          <ChevronDown className="w-4 h-4 text-white/40″ />
+          <ChevronDown className="w-4 h-4 text-white/40" />
         )}
       </button>
       {open && (
-        <div className="px-5 pb-5 pt-1 border-t border-white/10″>
+        <div className="px-5 pb-5 pt-1 border-t border-white/10">
           {children}
         </div>
       )}
@@ -259,34 +259,34 @@ function IntegrationCard({
 
   return (
     <div className={`rounded-2xl border overflow-hidden transition-colors ${
-      connected ? "border-teal-400/30 bg-teal-400/5″ : "border-white/10 bg-white/5"
+      connected ? "border-teal-400/30 bg-teal-400/5" : "border-white/10 bg-white/5"
     }`}>
-      <div className="p-4″>
-        <div className="flex items-start gap-4″>
+      <div className="p-4">
+        <div className="flex items-start gap-4">
           <div className={`${def.color} text-white rounded-xl p-2.5 flex-shrink-0`}>
             {def.icon}
           </div>
 
-          <div className="flex-1 min-w-0″>
+          <div className="flex-1 min-w-0">
             <div className="flex items-center gap-2 flex-wrap">
               <h3 className="font-semibold text-white text-sm">{def.name}</h3>
               {def.comingSoon && (
-                <span className="text-xs font-semibold px-2 py-0.5 rounded-full bg-white/10 text-white/40″>
+                <span className="text-xs font-semibold px-2 py-0.5 rounded-full bg-white/10 text-white/40">
                   Coming Soon
                 </span>
               )}
               {connected && (
-                <span className="flex items-center gap-1 text-xs font-semibold px-2 py-0.5 rounded-full bg-teal-400/10 text-teal-400″>
-                  <CheckCircle className="w-3 h-3″ /> Connected
+                <span className="flex items-center gap-1 text-xs font-semibold px-2 py-0.5 rounded-full bg-teal-400/10 text-teal-400">
+                  <CheckCircle className="w-3 h-3" /> Connected
                 </span>
               )}
             </div>
-            <p className="text-xs text-white/50 mt-1″>{def.description}</p>
+            <p className="text-xs text-white/50 mt-1">{def.description}</p>
           </div>
 
-          <div className="flex-shrink-0 flex items-center gap-2″>
+          <div className="flex-shrink-0 flex items-center gap-2">
             {def.comingSoon ? (
-              <span className="text-xs text-white/30″>—</span>
+              <span className="text-xs text-white/30">—</span>
             ) : connected ? (
               <>
                 <button
@@ -294,29 +294,29 @@ function IntegrationCard({
                   className="text-xs font-medium text-white/50 hover:text-teal-400 transition-colors"
                   title="Test connection"
                 >
-                  <RefreshCw className="w-3.5 h-3.5″ />
+                  <RefreshCw className="w-3.5 h-3.5" />
                 </button>
                 <button
                   onClick={() => setShowSync(!showSync)}
                   className="text-xs font-medium text-white/50 hover:text-teal-400 transition-colors"
                   title="Sync settings"
                 >
-                  <Settings className="w-3.5 h-3.5″ />
+                  <Settings className="w-3.5 h-3.5" />
                 </button>
                 <button
                   onClick={onDisconnect}
-                  className="text-xs font-semibold px-2.5 py-1.5 rounded-lg border border-red-400/30 text-red-400 hover:bg-red-400/10 transition-colors flex items-center gap-1″
+                  className="text-xs font-semibold px-2.5 py-1.5 rounded-lg border border-red-400/30 text-red-400 hover:bg-red-400/10 transition-colors flex items-center gap-1"
                 >
-                  <Unlink className="w-3 h-3″ />
+                  <Unlink className="w-3 h-3" />
                   Disconnect
                 </button>
               </>
             ) : (
               <button
                 onClick={onConnect}
-                className="text-xs font-semibold px-3 py-1.5 rounded-lg bg-teal-400/10 border border-teal-400/20 text-teal-400 hover:bg-teal-400/20 transition-colors flex items-center gap-1″
+                className="text-xs font-semibold px-3 py-1.5 rounded-lg bg-teal-400/10 border border-teal-400/20 text-teal-400 hover:bg-teal-400/20 transition-colors flex items-center gap-1"
               >
-                <Link2 className="w-3 h-3″ />
+                <Link2 className="w-3 h-3" />
                 Connect
               </button>
             )}
@@ -325,24 +325,24 @@ function IntegrationCard({
 
         {/* Sync settings expander */}
         {connected && showSync && def.syncOptions.length > 0 && (
-          <div className="mt-4 pt-4 border-t border-white/10″>
-            <p className="text-xs font-semibold text-white/50 uppercase tracking-wider mb-3″>Sync Settings</p>
-            <div className="space-y-2″>
+          <div className="mt-4 pt-4 border-t border-white/10">
+            <p className="text-xs font-semibold text-white/50 uppercase tracking-wider mb-3">Sync Settings</p>
+            <div className="space-y-2">
               {def.syncOptions.map((opt) => (
                 <div key={opt.key} className="flex items-center justify-between">
                   <div>
                     <p className="text-xs font-medium text-white">{opt.label}</p>
-                    <p className="text-xs text-white/40″>{opt.desc}</p>
+                    <p className="text-xs text-white/40">{opt.desc}</p>
                   </div>
                   <button
                     onClick={() => setSyncOptions((s) => ({ ...s, [opt.key]: !s[opt.key] }))}
                     className={`relative w-9 h-5 rounded-full transition-colors flex-shrink-0 ${
-                      syncOptions[opt.key] ? "bg-teal-400″ : "bg-white/20"
+                      syncOptions[opt.key] ? "bg-teal-400" : "bg-white/20"
                     }`}
                   >
                     <span
                       className={`absolute top-0.5 w-4 h-4 bg-white rounded-full shadow transition-transform ${
-                        syncOptions[opt.key] ? "translate-x-4″ : "translate-x-0.5"
+                        syncOptions[opt.key] ? "translate-x-4" : "translate-x-0.5"
                       }`}
                     />
                   </button>
@@ -351,7 +351,7 @@ function IntegrationCard({
             </div>
             <button
               onClick={() => { setShowSync(false); toast.success("Sync settings saved"); }}
-              className="mt-3 text-xs font-semibold text-teal-400 hover:text-teal-300″
+              className="mt-3 text-xs font-semibold text-teal-400 hover:text-teal-300"
             >
               Save sync settings →
             </button>
@@ -434,28 +434,28 @@ export default function IntegrationSettings() {
 
   return (
     <PartnerLayout>
-      <div className="min-h-screen bg-[#0A1628] p-4 sm:p-6″>
-        <div className="max-w-4xl mx-auto space-y-6″>
+      <div className="min-h-screen bg-[#0A1628] p-4 sm:p-6">
+        <div className="max-w-4xl mx-auto space-y-6">
           {/* Header */}
           <div>
             <h1 className="text-2xl font-bold text-white">Integration Settings</h1>
-            <p className="text-white/50 text-sm mt-1″>
+            <p className="text-white/50 text-sm mt-1">
               Connect your field service software to automatically sync jobs and photos — no extra steps in your workflow.
             </p>
           </div>
 
           {/* Queue stats */}
           {queueStats && (
-            <div className="grid grid-cols-2 sm:grid-cols-4 gap-3″>
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
               {[
                 { label: "Photos Received", value: queueStats.total, color: "text-white" },
-                { label: "Pending Analysis", value: queueStats.pending, color: "text-amber-400″ },
-                { label: "Analyzed", value: queueStats.completed, color: "text-teal-400″ },
-                { label: "Failed", value: queueStats.failed, color: "text-red-400″ },
+                { label: "Pending Analysis", value: queueStats.pending, color: "text-amber-400" },
+                { label: "Analyzed", value: queueStats.completed, color: "text-teal-400" },
+                { label: "Failed", value: queueStats.failed, color: "text-red-400" },
               ].map((stat) => (
                 <div key={stat.label} className="rounded-2xl border border-white/10 bg-white/5 p-4 text-center">
                   <div className={`text-2xl font-bold ${stat.color}`}>{stat.value}</div>
-                  <div className="text-xs text-white/40 mt-1″>{stat.label}</div>
+                  <div className="text-xs text-white/40 mt-1">{stat.label}</div>
                 </div>
               ))}
             </div>
@@ -464,7 +464,7 @@ export default function IntegrationSettings() {
           {/* Integration Groups */}
           {Object.entries(groupedIntegrations).map(([category, integrations]) => (
             <SectionCard key={category} title={category} icon={Link2} defaultOpen={true}>
-              <div className="space-y-3 mt-3″>
+              <div className="space-y-3 mt-3">
                 {integrations.map((def) => {
                   const connected = getConnected(def.source);
                   return (
@@ -484,10 +484,10 @@ export default function IntegrationSettings() {
 
           {/* Webhook Endpoints */}
           <SectionCard title="Webhook Endpoints" subtitle="ProLnk webhook URLs for your FSM push events" icon={Globe} defaultOpen={false}>
-            <div className="space-y-3 mt-3″>
+            <div className="space-y-3 mt-3">
               {WEBHOOK_ENDPOINTS.map((ep) => (
-                <div key={ep.path} className="rounded-xl border border-white/10 bg-white/5 p-3″>
-                  <div className="flex items-center justify-between mb-1″>
+                <div key={ep.path} className="rounded-xl border border-white/10 bg-white/5 p-3">
+                  <div className="flex items-center justify-between mb-1">
                     <p className="text-sm font-semibold text-white">{ep.label}</p>
                     <button
                       onClick={() => {
@@ -496,16 +496,16 @@ export default function IntegrationSettings() {
                       }}
                       className="text-white/40 hover:text-teal-400 transition-colors"
                     >
-                      <Copy className="w-3.5 h-3.5″ />
+                      <Copy className="w-3.5 h-3.5" />
                     </button>
                   </div>
                   <code className="text-xs font-mono text-teal-400/80 block truncate">
                     {BASE_WEBHOOK_URL}{ep.path}
                   </code>
-                  <p className="text-xs text-white/40 mt-1″>{ep.desc}</p>
+                  <p className="text-xs text-white/40 mt-1">{ep.desc}</p>
                 </div>
               ))}
-              <p className="text-xs text-white/40 pt-1″>
+              <p className="text-xs text-white/40 pt-1">
                 Add these URLs as webhook endpoints in your FSM's notification settings. All events are authenticated via HMAC signature.
               </p>
             </div>
@@ -513,38 +513,38 @@ export default function IntegrationSettings() {
 
           {/* API Keys */}
           <SectionCard title="ProLnk API Keys" subtitle="Direct API access for custom integrations" icon={Key} defaultOpen={false}>
-            <div className="space-y-4 mt-3″>
-              <div className="rounded-xl border border-white/10 bg-white/5 p-4″>
-                <div className="flex items-center justify-between mb-2″>
+            <div className="space-y-4 mt-3">
+              <div className="rounded-xl border border-white/10 bg-white/5 p-4">
+                <div className="flex items-center justify-between mb-2">
                   <div>
                     <p className="text-sm font-semibold text-white">Live API Key</p>
-                    <p className="text-xs text-white/40″>Created May 6, 2026</p>
+                    <p className="text-xs text-white/40">Created May 6, 2026</p>
                   </div>
-                  <span className="text-xs font-semibold px-2 py-0.5 rounded-full bg-teal-400/10 text-teal-400″>Active</span>
+                  <span className="text-xs font-semibold px-2 py-0.5 rounded-full bg-teal-400/10 text-teal-400">Active</span>
                 </div>
-                <div className="flex items-center gap-2 bg-white/5 rounded-lg px-3 py-2″>
+                <div className="flex items-center gap-2 bg-white/5 rounded-lg px-3 py-2">
                   <code className="flex-1 text-xs font-mono text-teal-400 truncate">
-                    {proLnkKeyVisible ? "plnk_live_a8f2c9b4d1e7f3a5c8b2d9e4f7a1c5b3″ : PROLNK_API_KEY}
+                    {proLnkKeyVisible ? "plnk_live_a8f2c9b4d1e7f3a5c8b2d9e4f7a1c5b3" : PROLNK_API_KEY}
                   </code>
                   <button
                     onClick={() => setProLnkKeyVisible(!proLnkKeyVisible)}
                     className="text-white/40 hover:text-white/70 transition-colors"
                   >
-                    {proLnkKeyVisible ? <EyeOff className="w-3.5 h-3.5″ /> : <Eye className="w-3.5 h-3.5" />}
+                    {proLnkKeyVisible ? <EyeOff className="w-3.5 h-3.5" /> : <Eye className="w-3.5 h-3.5" />}
                   </button>
                   <button
                     onClick={() => {
-                      navigator.clipboard.writeText("plnk_live_a8f2c9b4d1e7f3a5c8b2d9e4f7a1c5b3″);
+                      navigator.clipboard.writeText("plnk_live_a8f2c9b4d1e7f3a5c8b2d9e4f7a1c5b3");
                       toast.success("API key copied");
                     }}
                     className="text-white/40 hover:text-teal-400 transition-colors"
                   >
-                    <Copy className="w-3.5 h-3.5″ />
+                    <Copy className="w-3.5 h-3.5" />
                   </button>
                 </div>
               </div>
-              <div className="flex items-start gap-2.5 p-3 rounded-xl bg-amber-400/5 border border-amber-400/20″>
-                <AlertCircle className="w-4 h-4 text-amber-400 mt-0.5 flex-shrink-0″ />
+              <div className="flex items-start gap-2.5 p-3 rounded-xl bg-amber-400/5 border border-amber-400/20">
+                <AlertCircle className="w-4 h-4 text-amber-400 mt-0.5 flex-shrink-0" />
                 <p className="text-xs text-amber-400/80 leading-relaxed">
                   Never share your API key. If compromised, regenerate it immediately. Keys are scoped to your partner account only.
                 </p>
@@ -555,7 +555,7 @@ export default function IntegrationSettings() {
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-1.5 text-xs text-teal-400 hover:text-teal-300 font-medium"
               >
-                View API documentation <ExternalLink className="w-3 h-3″ />
+                View API documentation <ExternalLink className="w-3 h-3" />
               </a>
             </div>
           </SectionCard>
@@ -572,15 +572,15 @@ export default function IntegrationSettings() {
                     <span className={`${def.color} text-white rounded-lg p-1.5`}>{def.icon}</span>
                     Connect {def.name}
                   </DialogTitle>
-                  <DialogDescription className="text-white/50″>{def.description}</DialogDescription>
+                  <DialogDescription className="text-white/50">{def.description}</DialogDescription>
                 </DialogHeader>
 
-                <div className="space-y-4 py-2″>
-                  <div className="bg-white/5 rounded-xl p-4 space-y-2″>
+                <div className="space-y-4 py-2">
+                  <div className="bg-white/5 rounded-xl p-4 space-y-2">
                     <p className="text-xs font-semibold text-white/50 uppercase tracking-wider">Setup Steps</p>
                     {def.setupSteps.map((step, i) => (
-                      <div key={i} className="flex items-start gap-2 text-sm text-white/70″>
-                        <span className="flex-shrink-0 w-5 h-5 rounded-full bg-teal-400/10 text-teal-400 text-xs flex items-center justify-center font-bold mt-0.5″>
+                      <div key={i} className="flex items-start gap-2 text-sm text-white/70">
+                        <span className="flex-shrink-0 w-5 h-5 rounded-full bg-teal-400/10 text-teal-400 text-xs flex items-center justify-center font-bold mt-0.5">
                           {i + 1}
                         </span>
                         {step}
@@ -589,8 +589,8 @@ export default function IntegrationSettings() {
                   </div>
 
                   {def.requiresApiKey && (
-                    <div className="space-y-1.5″>
-                      <Label htmlFor="apiKey" className="text-white/70″>{def.apiKeyLabel}</Label>
+                    <div className="space-y-1.5">
+                      <Label htmlFor="apiKey" className="text-white/70">{def.apiKeyLabel}</Label>
                       <div className="relative">
                         <Input
                           id="apiKey"
@@ -598,17 +598,17 @@ export default function IntegrationSettings() {
                           placeholder={def.apiKeyPlaceholder}
                           value={apiKeyInput}
                           onChange={(e) => setApiKeyInput(e.target.value)}
-                          className="bg-white/5 border-white/10 text-white placeholder:text-white/30 focus:border-teal-400 pr-10″
+                          className="bg-white/5 border-white/10 text-white placeholder:text-white/30 focus:border-teal-400 pr-10"
                         />
                         <button
                           type="button"
                           onClick={() => setShowApiKey(!showApiKey)}
-                          className="absolute right-3 top-1/2 -translate-y-1/2 text-white/40 hover:text-white/70″
+                          className="absolute right-3 top-1/2 -translate-y-1/2 text-white/40 hover:text-white/70"
                         >
-                          {showApiKey ? <EyeOff className="w-4 h-4″ /> : <Eye className="w-4 h-4" />}
+                          {showApiKey ? <EyeOff className="w-4 h-4" /> : <Eye className="w-4 h-4" />}
                         </button>
                       </div>
-                      <p className="text-xs text-white/30″>
+                      <p className="text-xs text-white/30">
                         Stored encrypted. Used only to receive photos and job data on your behalf.
                       </p>
                     </div>
@@ -620,7 +620,7 @@ export default function IntegrationSettings() {
                     rel="noopener noreferrer"
                     className="flex items-center gap-1 text-xs text-teal-400 hover:underline"
                   >
-                    View {def.name} documentation <ChevronRight className="w-3 h-3″ />
+                    View {def.name} documentation <ChevronRight className="w-3 h-3" />
                   </a>
                 </div>
 
@@ -628,7 +628,7 @@ export default function IntegrationSettings() {
                   <Button
                     variant="outline"
                     onClick={() => { setConnectingSource(null); setApiKeyInput(""); }}
-                    className="border-white/10 text-white/70 hover:bg-white/10″
+                    className="border-white/10 text-white/70 hover:bg-white/10"
                   >
                     Cancel
                   </Button>
@@ -640,7 +640,7 @@ export default function IntegrationSettings() {
                     {connectMutation.isPending ? (
                       <><RefreshCw className="w-3 h-3 mr-1.5 animate-spin" /> Connecting...</>
                     ) : (
-                      <><Link2 className="w-3 h-3 mr-1.5″ /> Connect {def.name}</>
+                      <><Link2 className="w-3 h-3 mr-1.5" /> Connect {def.name}</>
                     )}
                   </Button>
                 </DialogFooter>
@@ -654,11 +654,11 @@ export default function IntegrationSettings() {
           <Dialog open onOpenChange={() => setDisconnectingId(null)}>
             <DialogContent className="bg-[#0d1f38] border-white/10 text-white">
               <DialogHeader>
-                <DialogTitle className="flex items-center gap-2 text-red-400″>
-                  <AlertCircle className="w-5 h-5″ />
+                <DialogTitle className="flex items-center gap-2 text-red-400">
+                  <AlertCircle className="w-5 h-5" />
                   Disconnect Integration
                 </DialogTitle>
-                <DialogDescription className="text-white/50″>
+                <DialogDescription className="text-white/50">
                   This will stop ProLnk from receiving data from this integration. You can reconnect at any time.
                 </DialogDescription>
               </DialogHeader>
@@ -666,7 +666,7 @@ export default function IntegrationSettings() {
                 <Button
                   variant="outline"
                   onClick={() => setDisconnectingId(null)}
-                  className="border-white/10 text-white/70 hover:bg-white/10″
+                  className="border-white/10 text-white/70 hover:bg-white/10"
                 >
                   Cancel
                 </Button>

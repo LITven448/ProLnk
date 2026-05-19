@@ -87,7 +87,7 @@ export default function DFWHVACUVLightGuide() {
             Get UV Recommendation
           </button>
           {result && (
-            <div style={{ marginTop: '1.25rem', background: '#0A1628', borderRadius: 10, padding: '1.25rem', borderLeft: '3px solid #F5E642′ }}>
+            <div style={{ marginTop: '1.25rem', background: '#0A1628', borderRadius: 10, padding: '1.25rem', borderLeft: '3px solid #F5E642' }}>
               <div style={{ marginBottom: '0.5rem' }}>🔬 <strong>System Type:</strong> {result.type}</div>
               <div style={{ marginBottom: '0.5rem' }}>📍 <strong>Placement:</strong> {result.placement}</div>
               <div style={{ marginBottom: '0.5rem' }}>💰 <strong>Cost:</strong> {result.cost}</div>
@@ -98,7 +98,7 @@ export default function DFWHVACUVLightGuide() {
 
         <div style={{ background: '#0F2040', borderRadius: 12, padding: '1.25rem' }}>
           <p style={{ color: '#9BA8BB', fontSize: '0.9rem', margin: 0 }}>
-            🏠 <strong style={{ color: '#F5E642′ }}>ProLnk Tip:</strong> Replace UV bulbs every 12 months — UV output degrades significantly before the lamp visually burns out.
+            🏠 <strong style={{ color: '#F5E642' }}>ProLnk Tip:</strong> Replace UV bulbs every 12 months — UV output degrades significantly before the lamp visually burns out.
           </p>
         </div>
       </div>

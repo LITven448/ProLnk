@@ -100,7 +100,7 @@ export default function DFWHomeSellingTimeline() {
             </h2>
             <div style={{ background: phase.bg, border: `1px solid ${phase.border}`, borderRadius: 12, overflow: 'hidden' }}>
               {phase.steps.map((step, i) => (
-                <div key={step.when} style={{ display: 'flex', gap: 16, padding: '16px 20px', borderBottom: i < phase.steps.length - 1 ? '1px solid #1e2d40′ : ’none' }}>
+                <div key={step.when} style={{ display: 'flex', gap: 16, padding: '16px 20px', borderBottom: i < phase.steps.length - 1 ? '1px solid #1e2d40' : 'none' }}>
                   <div style={{ minWidth: 110, fontSize: 12, fontWeight: 700, color: phase.color, paddingTop: 2 }}>{step.when}</div>
                   <div style={{ fontSize: 14, color: '#cbd5e1', lineHeight: 1.6 }}>{step.action}</div>
                 </div>
@@ -117,7 +117,7 @@ export default function DFWHomeSellingTimeline() {
               <div key={s.name} style={{ background: '#111827', border: '1px solid #1e3a5f', borderRadius: 12, padding: 20 }}>
                 <div style={{ fontSize: 32, marginBottom: 8 }}>{s.icon}</div>
                 <div style={{ fontWeight: 700, color: '#e2e8f0', marginBottom: 4 }}>{s.name}</div>
-                <div style={{ fontSize: 12, fontWeight: 700, color: s.label === 'Best' ? '#4ade80′ : s.label === ’Good' ? '#60a5fa' : '#fbbf24', marginBottom: 8 }}>{s.label}</div>
+                <div style={{ fontSize: 12, fontWeight: 700, color: s.label === 'Best' ? '#4ade80' : s.label === 'Good' ? '#60a5fa' : '#fbbf24', marginBottom: 8 }}>{s.label}</div>
                 <div style={{ fontSize: 13, color: '#94a3b8', lineHeight: 1.5 }}>{s.desc}</div>
               </div>
             ))}
@@ -163,7 +163,7 @@ export default function DFWHomeSellingTimeline() {
               <div>
                 {timeline.map((item, i) => (
                   <div key={i} style={{ display: 'flex', justifyContent: 'space-between', padding: '10px 0', borderBottom: '1px solid #1e2d40', flexWrap: 'wrap', gap: 8 }}>
-                    <span style={{ fontSize: 14, color: '#e2e8f0′ }}>{item.label}</span>
+                    <span style={{ fontSize: 14, color: '#e2e8f0' }}>{item.label}</span>
                     <span style={{ fontSize: 14, color: '#a78bfa', fontWeight: 600 }}>{item.date}</span>
                   </div>
                 ))}

@@ -44,16 +44,16 @@ export default function DFWCaulkingGuide2026() {
         <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem', marginBottom: '2rem' }}>
           {areas.map(i => (
             <button key={i.id} onClick={() => setSelected(i.id === selected ? null : i.id)}
-              style={{ background: selected === i.id ? '#F5E642′ : '#162032', color: selected === i.id ? '#0A1628' : '#fff', border: ’none', borderRadius: 8, padding: '1rem 1.25rem', textAlign: 'left', cursor: 'pointer', fontWeight: 600, fontSize: '1rem' }}>
+              style={{ background: selected === i.id ? '#F5E642' : '#162032', color: selected === i.id ? '#0A1628' : '#fff', border: 'none', borderRadius: 8, padding: '1rem 1.25rem', textAlign: 'left', cursor: 'pointer', fontWeight: 600, fontSize: '1rem' }}>
               {i.label}
             </button>
           ))}
         </div>
 
         {guide && (
-          <div style={{ background: '#162032', borderRadius: 12, padding: '1.5rem', borderLeft: '4px solid #F5E642′ }}>
+          <div style={{ background: '#162032', borderRadius: 12, padding: '1.5rem', borderLeft: '4px solid #F5E642' }}>
             <h3 style={{ color: '#F5E642', marginBottom: '0.75rem' }}>{guide.label} — Caulking Guide</h3>
-            <p style={{ lineHeight: 1.7, color: '#d0dce8′ }}>{guide.guide}</p>
+            <p style={{ lineHeight: 1.7, color: '#d0dce8' }}>{guide.guide}</p>
           </div>
         )}
 

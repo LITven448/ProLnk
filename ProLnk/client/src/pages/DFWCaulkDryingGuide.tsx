@@ -50,7 +50,7 @@ export default function DFWCaulkDryingGuide() {
         <div style={{ backgroundColor: '#0f1f3d', borderRadius: 12, padding: 24, marginBottom: 24 }}>
           <h2 style={{ color: '#F5E642', fontSize: 18, marginBottom: 16 }}>⚠️ Dry vs Cured — The Critical Difference</h2>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12 }}>
-            <div style={{ backgroundColor: '#0A1628', borderRadius: 8, padding: 16, borderTop: '3px solid #F5E642′ }}>
+            <div style={{ backgroundColor: '#0A1628', borderRadius: 8, padding: 16, borderTop: '3px solid #F5E642' }}>
               <div style={{ fontWeight: 800, fontSize: 16, marginBottom: 8 }}>Surface Dry</div>
               <div style={{ color: '#94a3b8', fontSize: 14 }}>Touch-dry, won't smear. Usually 30 min–2 hrs. NOT ready for water or flexing — can be painted in some cases</div>
             </div>
@@ -85,27 +85,27 @@ export default function DFWCaulkDryingGuide() {
             <div>
               <label style={{ fontSize: 13, color: '#94a3b8', display: 'block', marginBottom: 8 }}>CAULK TYPE</label>
               {caulkOptions.map(opt => (
-                <button key={opt.val} onClick={() => setCaulkType(opt.val)} style={{ display: 'block', width: '100%', padding: '10px 14px', marginBottom: 8, borderRadius: 8, border: `2px solid ${caulkType === opt.val ? '#F5E642' : '#1e3a5f'}`, backgroundColor: caulkType === opt.val ? '#F5E642′ : ’transparent', color: caulkType === opt.val ? '#0A1628′ : '#fff', cursor: ’pointer', textAlign: 'left', fontSize: 13 }}>{opt.label}<div style={{ fontSize: 11, opacity: 0.7 }}>{opt.desc}</div></button>
+                <button key={opt.val} onClick={() => setCaulkType(opt.val)} style={{ display: 'block', width: '100%', padding: '10px 14px', marginBottom: 8, borderRadius: 8, border: `2px solid ${caulkType === opt.val ? '#F5E642' : '#1e3a5f'}`, backgroundColor: caulkType === opt.val ? '#F5E642' : 'transparent', color: caulkType === opt.val ? '#0A1628' : '#fff', cursor: 'pointer', textAlign: 'left', fontSize: 13 }}>{opt.label}<div style={{ fontSize: 11, opacity: 0.7 }}>{opt.desc}</div></button>
               ))}
             </div>
             <div>
               <label style={{ fontSize: 13, color: '#94a3b8', display: 'block', marginBottom: 8 }}>DFW SEASON</label>
               {[{ val: 'summer', label: '☀️ Summer (May–Sep)' }, { val: 'mild', label: '🌤️ Spring / Fall' }, { val: 'winter', label: '❄️ Winter (Dec–Feb)' }].map(opt => (
-                <button key={opt.val} onClick={() => setSeason(opt.val)} style={{ display: 'block', width: '100%', padding: '10px 14px', marginBottom: 8, borderRadius: 8, border: `2px solid ${season === opt.val ? '#F5E642' : '#1e3a5f'}`, backgroundColor: season === opt.val ? '#F5E642′ : ’transparent', color: season === opt.val ? '#0A1628′ : '#fff', cursor: ’pointer', textAlign: 'left', fontSize: 14 }}>{opt.label}</button>
+                <button key={opt.val} onClick={() => setSeason(opt.val)} style={{ display: 'block', width: '100%', padding: '10px 14px', marginBottom: 8, borderRadius: 8, border: `2px solid ${season === opt.val ? '#F5E642' : '#1e3a5f'}`, backgroundColor: season === opt.val ? '#F5E642' : 'transparent', color: season === opt.val ? '#0A1628' : '#fff', cursor: 'pointer', textAlign: 'left', fontSize: 14 }}>{opt.label}</button>
               ))}
             </div>
           </div>
           <button onClick={calculate} style={{ backgroundColor: '#F5E642', color: '#0A1628', border: 'none', borderRadius: 8, padding: '14px 32px', fontSize: 16, fontWeight: 700, cursor: 'pointer' }}>Get My Timeline →</button>
 
           {result && (
-            <div style={{ marginTop: 24, backgroundColor: '#0A1628', borderRadius: 10, padding: 20, borderLeft: '4px solid #F5E642′ }}>
+            <div style={{ marginTop: 24, backgroundColor: '#0A1628', borderRadius: 10, padding: 20, borderLeft: '4px solid #F5E642' }}>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12, marginBottom: 16 }}>
                 <div><div style={{ color: '#94a3b8', fontSize: 12, marginBottom: 4 }}>SURFACE DRY</div><div style={{ fontWeight: 700, fontSize: 16 }}>{result.dryTime}</div></div>
                 <div><div style={{ color: '#94a3b8', fontSize: 12, marginBottom: 4 }}>FULLY CURED</div><div style={{ fontWeight: 700, fontSize: 16 }}>{result.cureTime}</div></div>
                 <div><div style={{ color: '#94a3b8', fontSize: 12, marginBottom: 4 }}>SAFE TO PAINT</div><div style={{ fontWeight: 700, fontSize: 16 }}>{result.paintReady}</div></div>
                 <div><div style={{ color: '#94a3b8', fontSize: 12, marginBottom: 4 }}>WATERPROOF</div><div style={{ fontWeight: 700, fontSize: 16 }}>{result.waterproof}</div></div>
               </div>
-              <div style={{ backgroundColor: '#0f1f3d', borderRadius: 8, padding: 12 }}><span style={{ color: '#F5E642′ }}>💡 DFW Tip: </span><span style={{ color: '#94a3b8', fontSize: 14 }}>{result.tip}</span></div>
+              <div style={{ backgroundColor: '#0f1f3d', borderRadius: 8, padding: 12 }}><span style={{ color: '#F5E642' }}>💡 DFW Tip: </span><span style={{ color: '#94a3b8', fontSize: 14 }}>{result.tip}</span></div>
             </div>
           )}
         </div>

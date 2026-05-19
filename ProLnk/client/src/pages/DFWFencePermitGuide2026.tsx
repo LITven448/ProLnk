@@ -27,7 +27,7 @@ export default function DFWFencePermitGuide2026() {
           <p style={{ color: '#F5E642', fontWeight: 700, marginBottom: 12, fontSize: 14 }}>📏 GENERAL DFW FENCE RULES</p>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 10 }}>
             {['Permit required in all DFW cities','Front yard max typically 4ft','Side/rear max typically 6-8ft','Corner visibility triangle required','HOA approval is separate from city','Property survey recommended first'].map(r => (
-              <div key={r} style={{ background: '#1a2f50', borderRadius: 8, padding: '8px 12px', fontSize: 13, color: '#cbd5e1′ }}>📋 {r}</div>
+              <div key={r} style={{ background: '#1a2f50', borderRadius: 8, padding: '8px 12px', fontSize: 13, color: '#cbd5e1' }}>📋 {r}</div>
             ))}
           </div>
         </div>
@@ -37,7 +37,7 @@ export default function DFWFencePermitGuide2026() {
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(110px, 1fr))', gap: 8 }}>
             {cities.map(c => (
               <button key={c.name} onClick={() => setSelected(c.name)}
-                style={{ background: selected === c.name ? '#F5E642′ : '#1a2f50', color: selected === c.name ? '#0A1628' : '#fff', border: '1px solid #2a4070', borderRadius: 8, padding: '10px 8px', cursor: ’pointer', fontWeight: 600, fontSize: 13 }}>
+                style={{ background: selected === c.name ? '#F5E642' : '#1a2f50', color: selected === c.name ? '#0A1628' : '#fff', border: '1px solid #2a4070', borderRadius: 8, padding: '10px 8px', cursor: 'pointer', fontWeight: 600, fontSize: 13 }}>
                 {c.name}
               </button>
             ))}
@@ -45,7 +45,7 @@ export default function DFWFencePermitGuide2026() {
         </div>
 
         {city && (
-          <div style={{ background: '#0f2040', borderRadius: 12, padding: 24, border: '2px solid #F5E642′ }}>
+          <div style={{ background: '#0f2040', borderRadius: 12, padding: 24, border: '2px solid #F5E642' }}>
             <h2 style={{ color: '#F5E642', fontSize: 20, fontWeight: 800, marginBottom: 16 }}>🚧 {city.name} — Fence Permit Guide</h2>
             <div style={{ display: 'grid', gap: 12 }}>
               <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3,1fr)', gap: 10 }}>

@@ -8,7 +8,7 @@ const ISLAND_TYPES = [
 ];
 
 const EDGE_STYLES = [
-  { name: 'Waterfall', trend: true, costAdd: 800, description: 'Countertop cascades down the sides — dominant DFW trend 2024-2026′ },
+  { name: 'Waterfall', trend: true, costAdd: 800, description: 'Countertop cascades down the sides — dominant DFW trend 2024-2026' },
   { name: 'Standard Overhang', trend: false, costAdd: 0, description: 'Classic overhang for seating, timeless and practical' },
   { name: 'Flush/Inset', trend: false, costAdd: 200, description: 'Clean modern look, no overhang' },
   { name: 'Live Edge', trend: false, costAdd: 1200, description: 'Natural wood slab edge, rustic-modern aesthetic' },
@@ -61,7 +61,7 @@ export default function DFWKitchenIslandGuide() {
                     borderRadius: 10,
                     border: `2px solid ${selectedSize.label === s.label ? '#F5E642' : '#1E3A5F'}`,
                     background: selectedSize.label === s.label ? '#1A2E4A' : '#0D1A2E',
-                    color: selectedSize.label === s.label ? '#F5E642′ : '#94A3B8',
+                    color: selectedSize.label === s.label ? '#F5E642' : '#94A3B8',
                     cursor: 'pointer',
                     textAlign: 'left',
                     fontSize: 13,
@@ -81,7 +81,7 @@ export default function DFWKitchenIslandGuide() {
             <div style={{ color: '#94A3B8', fontSize: 14 }}>
               {selectedSize.canFit
                 ? `Recommended island size: ${selectedSize.maxIsland}. Maintain 40" clearance on all sides per NKBA guidelines.`
-                : 'Your kitchen is under 150 sq ft. Adding an island would restrict movement below the required 40″ clearance. Consider a rolling cart instead.'}
+                : 'Your kitchen is under 150 sq ft. Adding an island would restrict movement below the required 40" clearance. Consider a rolling cart instead.'}
             </div>
           </div>
         </div>
@@ -106,8 +106,8 @@ export default function DFWKitchenIslandGuide() {
                   }}
                 >
                   <div style={{ fontSize: 24, marginBottom: 6 }}>{t.icon}</div>
-                  <div style={{ fontWeight: 700, color: selectedType.type === t.type ? '#F5E642′ : '#E8EDF5', marginBottom: 4 }}>{t.type}</div>
-                  <div style={{ fontSize: 12, color: '#94A3B8′ }}>{t.description}</div>
+                  <div style={{ fontWeight: 700, color: selectedType.type === t.type ? '#F5E642' : '#E8EDF5', marginBottom: 4 }}>{t.type}</div>
+                  <div style={{ fontSize: 12, color: '#94A3B8' }}>{t.description}</div>
                 </button>
               ))}
             </div>
@@ -133,7 +133,7 @@ export default function DFWKitchenIslandGuide() {
                   }}
                 >
                   <div>
-                    <span style={{ fontWeight: 600, color: selectedEdge.name === e.name ? '#F5E642′ : '#E8EDF5' }}>{e.name}</span>
+                    <span style={{ fontWeight: 600, color: selectedEdge.name === e.name ? '#F5E642' : '#E8EDF5' }}>{e.name}</span>
                     {e.trend && <span style={{ marginLeft: 8, background: '#F5E642', color: '#0A1628', fontSize: 10, padding: '2px 6px', borderRadius: 8, fontWeight: 700 }}>TRENDING</span>}
                     <div style={{ fontSize: 12, color: '#94A3B8', marginTop: 2 }}>{e.description}</div>
                   </div>
@@ -147,11 +147,11 @@ export default function DFWKitchenIslandGuide() {
           <div style={{ marginBottom: 16 }}>
             <label style={{ display: 'block', color: '#94A3B8', marginBottom: 12, fontSize: 14 }}>Add-ons (require permit)</label>
             <div style={{ display: 'flex', gap: 16 }}>
-              <label style={{ display: 'flex', alignItems: 'center', gap: 8, cursor: 'pointer', color: '#CBD5E1′ }}>
+              <label style={{ display: 'flex', alignItems: 'center', gap: 8, cursor: 'pointer', color: '#CBD5E1' }}>
                 <input type="checkbox" checked={hasPlumbing} onChange={(e) => setHasPlumbing(e.target.checked)} style={{ accentColor: '#F5E642', width: 18, height: 18 }} />
                 Plumbing (sink) +$2,500
               </label>
-              <label style={{ display: 'flex', alignItems: 'center', gap: 8, cursor: 'pointer', color: '#CBD5E1′ }}>
+              <label style={{ display: 'flex', alignItems: 'center', gap: 8, cursor: 'pointer', color: '#CBD5E1' }}>
                 <input type="checkbox" checked={hasElectric} onChange={(e) => setHasElectric(e.target.checked)} style={{ accentColor: '#F5E642', width: 18, height: 18 }} />
                 Electrical (outlets) +$800
               </label>
@@ -163,7 +163,7 @@ export default function DFWKitchenIslandGuide() {
               <div style={{ color: '#94A3B8', fontSize: 13, marginTop: 4 }}>Adding plumbing or electrical to a kitchen island requires a permit from your city (Dallas, Fort Worth, Plano, etc.). Budget $150-$500 for permits and allow 2-4 weeks for inspection scheduling.</div>
             </div>
           )}
-          <div style={{ padding: 20, background: '#0A1628', borderRadius: 12, border: '1px solid #F5E642′ }}>
+          <div style={{ padding: 20, background: '#0A1628', borderRadius: 12, border: '1px solid #F5E642' }}>
             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: 16 }}>
               <div>
                 <div style={{ color: '#94A3B8', fontSize: 13 }}>Estimated Cost</div>
@@ -187,7 +187,7 @@ export default function DFWKitchenIslandGuide() {
           <h2 style={{ color: '#F5E642', fontSize: 22, marginBottom: 16 }}>DFW Island Design Notes</h2>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16 }}>
             {[
-              { icon: '📏', title: '40″ Rule', text: 'NKBA standard requires 40″ clearance on all sides of the island — critical in DFW open floor plans' },
+              { icon: '📏', title: '40" Rule', text: 'NKBA standard requires 40" clearance on all sides of the island — critical in DFW open floor plans' },
               { icon: '🌊', title: 'Waterfall Edge', text: 'White quartz waterfall edges dominate DFW kitchen remodels in 2024-2026. Adds $600-$1,200 but increases resale appeal' },
               { icon: '🏠', title: 'Resale Impact', text: 'Kitchen islands consistently rank as top ROI upgrades in DFW — Frisco, Southlake, and Plano buyers expect them' },
               { icon: '🔧', title: 'Slab Homes', text: 'DFW homes on slab foundations make adding plumbing to island more complex — expect higher plumbing costs vs. pier-and-beam' },
@@ -201,7 +201,7 @@ export default function DFWKitchenIslandGuide() {
           </div>
         </div>
 
-        <div style={{ textAlign: 'center', padding: 24, background: '#0F1F35', borderRadius: 16, border: '1px solid #F5E642′ }}>
+        <div style={{ textAlign: 'center', padding: 24, background: '#0F1F35', borderRadius: 16, border: '1px solid #F5E642' }}>
           <div style={{ fontSize: 32, marginBottom: 12 }}>🏝️</div>
           <h3 style={{ color: '#F5E642', fontSize: 20, marginBottom: 8 }}>Get Island Installation Quotes</h3>
           <p style={{ color: '#94A3B8', marginBottom: 20 }}>Connect with DFW kitchen contractors through ProLnk — free quotes from vetted pros.</p>

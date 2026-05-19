@@ -28,13 +28,13 @@ export default function DFWFoundationPiersGuide2026() {
             { label: '💰 Cost Per Pier', desc: '$400-600 per pier installed. Typical DFW job: 10-20 piers = $5,000-12,000 total.' },
           ].map((c) => (
             <div key={c.label} style={{ background: '#112240', borderRadius: 8, padding: 20, border: '1px solid #1e3a5f' }}>
-              <div style={{ fontWeight: 700, marginBottom: 8, color: '#F5E642′ }}>{c.label}</div>
+              <div style={{ fontWeight: 700, marginBottom: 8, color: '#F5E642' }}>{c.label}</div>
               <div style={{ color: '#94a3b8', fontSize: 14 }}>{c.desc}</div>
             </div>
           ))}
         </div>
 
-        <div style={{ background: '#112240', borderRadius: 8, padding: 24, marginBottom: 24, border: '1px solid #F5E642′ }}>
+        <div style={{ background: '#112240', borderRadius: 8, padding: 24, marginBottom: 24, border: '1px solid #F5E642' }}>
           <h2 style={{ fontSize: 18, fontWeight: 700, marginBottom: 4 }}>⚠️ Lifetime Warranty Matters</h2>
           <p style={{ color: '#94a3b8', fontSize: 14 }}>Only accept a transferable lifetime warranty. DFW clay never stops moving. Any company unwilling to offer lifetime coverage is a red flag.</p>
         </div>
@@ -54,7 +54,7 @@ export default function DFWFoundationPiersGuide2026() {
             <option value="moisture">Moisture-driven movement</option>
           </select>
           {rec && (
-            <div style={{ background: '#0A1628', borderRadius: 6, padding: 16, border: '1px solid #F5E642′ }}>
+            <div style={{ background: '#0A1628', borderRadius: 6, padding: 16, border: '1px solid #F5E642' }}>
               <div style={{ color: '#F5E642', fontWeight: 700, marginBottom: 8 }}>Recommended: {rec.type}</div>
               <div style={{ color: '#94a3b8', fontSize: 13 }}>Depth: {rec.depth} · Cost: {rec.cost}</div>
               <div style={{ color: '#cbd5e1', fontSize: 13, marginTop: 8 }}>{rec.best}</div>

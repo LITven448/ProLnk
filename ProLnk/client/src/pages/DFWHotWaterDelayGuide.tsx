@@ -22,15 +22,15 @@ export default function DFWHotWaterDelayGuide() {
     <div style={{ background: '#0A1628', minHeight: '100vh', color: '#e2e8f0', fontFamily: 'system-ui, sans-serif', padding: '32px 16px' }}>
       <div style={{ maxWidth: 720, margin: '0 auto' }}>
         <div style={{ marginBottom: 8, color: '#F5E642', fontSize: 13, fontWeight: 600, letterSpacing: 1 }}>DFW PLUMBING GUIDE</div>
-        <h1 style={{ fontSize: 28, fontWeight: 700, marginBottom: 8 }}>🔥 Hot Water Delay<br /><span style={{ color: '#F5E642′ }}>Dallas-Fort Worth Guide</span></h1>
-        <p style={{ color: '#94a3b8', marginBottom: 24, fontSize: 15 }}>DFW homes average 2,500-4,500 sq ft — larger than the national average. Long pipe runs from water heater to master bath can mean <strong style={{ color: '#F5E642′ }}>2-5 minute waits</strong> for hot water. DFW hard water sediment reduces water heater efficiency by 20-30%, making the problem worse over time.</p>
+        <h1 style={{ fontSize: 28, fontWeight: 700, marginBottom: 8 }}>🔥 Hot Water Delay<br /><span style={{ color: '#F5E642' }}>Dallas-Fort Worth Guide</span></h1>
+        <p style={{ color: '#94a3b8', marginBottom: 24, fontSize: 15 }}>DFW homes average 2,500-4,500 sq ft — larger than the national average. Long pipe runs from water heater to master bath can mean <strong style={{ color: '#F5E642' }}>2-5 minute waits</strong> for hot water. DFW hard water sediment reduces water heater efficiency by 20-30%, making the problem worse over time.</p>
 
         <div style={{ background: '#1e2d47', borderRadius: 12, padding: 20, marginBottom: 24 }}>
           <div style={{ fontSize: 13, color: '#F5E642', fontWeight: 600, marginBottom: 12 }}>🏠 WHY DFW HOMES WAIT LONGER</div>
           {[['📏 Large Homes', 'DFW avg home 2,800 sq ft — long pipe runs from water heater'],['🧂 Hard Water', 'Sediment builds up in heater tank, reducing output temp by 10-15°F'],['☀️ Attic Pipes', 'Uninsulated pipes in 140°F DFW attics cool between uses']].map(([icon, desc]) => (
             <div key={icon} style={{ display: 'flex', gap: 12, marginBottom: 8, alignItems: 'flex-start' }}>
               <div style={{ fontSize: 18 }}>{icon.split(' ')[0]}</div>
-              <div style={{ color: '#94a3b8', fontSize: 14 }}><strong style={{ color: '#e2e8f0′ }}>{icon.split(' ').slice(1).join(' ')}</strong> — {desc}</div>
+              <div style={{ color: '#94a3b8', fontSize: 14 }}><strong style={{ color: '#e2e8f0' }}>{icon.split(' ').slice(1).join(' ')}</strong> — {desc}</div>
             </div>
           ))}
         </div>
@@ -56,7 +56,7 @@ export default function DFWHotWaterDelayGuide() {
         </div>
 
         {result && (
-          <div style={{ background: '#1e2d47', borderRadius: 12, padding: 24, border: '2px solid #F5E642′ }}>
+          <div style={{ background: '#1e2d47', borderRadius: 12, padding: 24, border: '2px solid #F5E642' }}>
             <div style={{ color: '#F5E642', fontWeight: 700, fontSize: 18, marginBottom: 8 }}>{result.solution}</div>
             <p style={{ color: '#cbd5e1', marginBottom: 16 }}>{result.notes}</p>
             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 10 }}>

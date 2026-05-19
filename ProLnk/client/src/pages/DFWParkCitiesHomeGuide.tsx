@@ -133,7 +133,7 @@ const budgetData: Record<string, Record<string, BudgetItem[]>> = {
     '3,000–5,000': [
       { category: 'HVAC (2–3 zones)', annual: '$1,500–$3,500/yr', note: 'Multi-zone; ensure balanced airflow' },
       { category: 'Foundation', annual: '$1,200–$3,500/yr avg', note: 'Annual check; add French drain if grading issues' },
-      { category: 'Roof reserve', annual: '$2,500–$5,500/yr reserve', note: 'Budget for full replacement around year 25–30′ },
+      { category: 'Roof reserve', annual: '$2,500–$5,500/yr reserve', note: 'Budget for full replacement around year 25–30' },
       { category: 'Plumbing maintenance', annual: '$800–$2,500/yr', note: 'Modern materials; inspect water heater' },
       { category: 'Exterior (stucco, brick, Hardie)', annual: '$1,800–$4,000/yr', note: 'Stucco cracks if not sealed; Hardie needs paint' },
       { category: 'Landscape', annual: '$5,000–$10,000/yr', note: 'Established gardens; irrigation system service' },
@@ -188,7 +188,7 @@ const budgetData: Record<string, Record<string, BudgetItem[]>> = {
     ],
     'Over 8,000': [
       { category: 'HVAC estate (5–8 zones)', annual: '$4,000–$10,000/yr', note: 'Full service contracts for all units' },
-      { category: 'Foundation estate (active monitoring)', annual: '$2,500–$7,000/yr avg', note: 'New large slab settles significantly year 1–5′ },
+      { category: 'Foundation estate (active monitoring)', annual: '$2,500–$7,000/yr avg', note: 'New large slab settles significantly year 1–5' },
       { category: 'Smart home estate maintenance', annual: '$5,000–$12,000/yr', note: 'Crestron annual calibration + hardware updates' },
       { category: 'Estate landscape maturation', annual: '$18,000–$40,000/yr', note: 'Significant investment to reach PC standards' },
       { category: 'Estate exterior maintenance', annual: '$10,000–$22,000/yr', note: 'Stone, stucco, trim — premium painters' },
@@ -216,9 +216,9 @@ export default function DFWParkCitiesHomeGuide() {
         <h1 style={{ fontSize: 30, fontWeight: 800, marginBottom: 8 }}>Park Cities</h1>
         <h2 style={{ fontSize: 18, fontWeight: 400, color: '#a0b0c8', marginBottom: 24 }}>University Park & Highland Park — Annual Maintenance Budget Guide</h2>
 
-        <div style={{ backgroundColor: '#0f2040', borderRadius: 12, padding: 20, marginBottom: 28, borderLeft: '4px solid #F5E642′ }}>
-          <p style={{ margin: 0, lineHeight: 1.7, color: '#c8d8e8′ }}>
-            The Park Cities are among Texas's most prestigious ZIP codes. Homes range from 1930s estates to brand-new custom builds — all in a pocket city with underground utilities, strict HOA standards, and <strong style={{ color: '#F5E642' }}>the highest contractor expectations in DFW</strong>. Select your home’s decade and size to get a realistic annual maintenance budget with Park Cities pricing premiums built in.
+        <div style={{ backgroundColor: '#0f2040', borderRadius: 12, padding: 20, marginBottom: 28, borderLeft: '4px solid #F5E642' }}>
+          <p style={{ margin: 0, lineHeight: 1.7, color: '#c8d8e8' }}>
+            The Park Cities are among Texas's most prestigious ZIP codes. Homes range from 1930s estates to brand-new custom builds — all in a pocket city with underground utilities, strict HOA standards, and <strong style={{ color: '#F5E642' }}>the highest contractor expectations in DFW</strong>. Select your home's decade and size to get a realistic annual maintenance budget with Park Cities pricing premiums built in.
           </p>
         </div>
 
@@ -251,12 +251,12 @@ export default function DFWParkCitiesHomeGuide() {
               <div key={i} style={{ backgroundColor: '#0f2040', borderRadius: 10, padding: '14px 18px', marginBottom: 10, display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', flexWrap: 'wrap', gap: 8 }}>
                 <div style={{ flex: 1 }}>
                   <div style={{ fontWeight: 600, marginBottom: 4 }}>{item.category}</div>
-                  <div style={{ fontSize: 13, color: '#a0b0c8′ }}>💡 {item.note}</div>
+                  <div style={{ fontSize: 13, color: '#a0b0c8' }}>💡 {item.note}</div>
                 </div>
                 <div style={{ color: '#F5E642', fontWeight: 700, fontSize: 14, whiteSpace: 'nowrap', textAlign: 'right' }}>{item.annual}</div>
               </div>
             ))}
-            <div style={{ backgroundColor: '#0f2040', borderRadius: 10, padding: 16, marginTop: 8, fontSize: 13, color: '#a0b0c8′ }}>
+            <div style={{ backgroundColor: '#0f2040', borderRadius: 10, padding: 16, marginTop: 8, fontSize: 13, color: '#a0b0c8' }}>
               ⭐ Park Cities contractors charge 30–80% above standard DFW rates. Budget these figures as minimum — actual costs may be higher depending on material choices and project complexity.
             </div>
           </div>

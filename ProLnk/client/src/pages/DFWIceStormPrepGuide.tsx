@@ -54,7 +54,7 @@ export default function DFWIceStormPrepGuide() {
             <div key={title} style={{ marginBottom: '0.85rem', display: 'flex', gap: '0.75rem' }}>
               <span>{emoji}</span>
               <div>
-                <div style={{ fontWeight: 600, color: '#e2e8f0′ }}>{title}</div>
+                <div style={{ fontWeight: 600, color: '#e2e8f0' }}>{title}</div>
                 <div style={{ color: '#94a3b8', fontSize: '0.9rem' }}>{desc}</div>
               </div>
             </div>
@@ -87,24 +87,24 @@ export default function DFWIceStormPrepGuide() {
 
         {result && (
           <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
-            <div style={{ background: '#0f2040', borderRadius: 8, padding: '1.5rem', border: '1px solid #F5E642′ }}>
+            <div style={{ background: '#0f2040', borderRadius: 8, padding: '1.5rem', border: '1px solid #F5E642' }}>
               <div style={{ fontWeight: 700, color: '#F5E642', marginBottom: '1rem' }}>🛡️ Priority Prep Investments</div>
               {result.priority.map((item, i) => (
                 <div key={i} style={{ display: 'flex', gap: '0.5rem', marginBottom: '0.5rem' }}>
-                  <span style={{ color: '#F5E642′ }}>▸</span>
-                  <span style={{ color: '#e2e8f0′ }}>{item}</span>
+                  <span style={{ color: '#F5E642' }}>▸</span>
+                  <span style={{ color: '#e2e8f0' }}>{item}</span>
                 </div>
               ))}
               <div style={{ marginTop: '1rem', background: '#1e3a5f', borderRadius: 6, padding: '0.75rem', color: '#F5E642', fontWeight: 600 }}>
                 💰 Estimated Cost: {result.cost}
               </div>
             </div>
-            <div style={{ background: '#0f2040', borderRadius: 8, padding: '1.5rem', border: '1px solid #334155′ }}>
+            <div style={{ background: '#0f2040', borderRadius: 8, padding: '1.5rem', border: '1px solid #334155' }}>
               <div style={{ fontWeight: 700, color: '#F5E642', marginBottom: '1rem' }}>⏱️ When Storm is 48 Hours Out</div>
               {result.next48.map((item, i) => (
                 <div key={i} style={{ display: 'flex', gap: '0.5rem', marginBottom: '0.5rem' }}>
                   <span style={{ color: '#22c55e' }}>✓</span>
-                  <span style={{ color: '#e2e8f0′ }}>{item}</span>
+                  <span style={{ color: '#e2e8f0' }}>{item}</span>
                 </div>
               ))}
             </div>

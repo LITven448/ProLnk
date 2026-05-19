@@ -69,9 +69,9 @@ export default function DFWHVACFinalKnowledgeMap() {
               key={area.stage}
               onClick={() => setActiveStage(area.stage === activeStage ? null : area.stage)}
               style={{
-                background: activeStage === area.stage ? '#F5E642′ : '#0f2035',
-                color: activeStage === area.stage ? '#0A1628′ : '#fff',
-                border: '2px solid ' + (activeStage === area.stage ? '#F5E642′ : '#1e3a5f'),
+                background: activeStage === area.stage ? '#F5E642' : '#0f2035',
+                color: activeStage === area.stage ? '#0A1628' : '#fff',
+                border: '2px solid ' + (activeStage === area.stage ? '#F5E642' : '#1e3a5f'),
                 borderRadius: 12,
                 padding: '18px 8px',
                 cursor: 'pointer',
@@ -88,7 +88,7 @@ export default function DFWHVACFinalKnowledgeMap() {
         </div>
 
         {active ? (
-          <div style={{ background: '#0f2035', borderRadius: 16, padding: 32, border: '2px solid #F5E642′ }}>
+          <div style={{ background: '#0f2035', borderRadius: 16, padding: 32, border: '2px solid #F5E642' }}>
             <div style={{ fontSize: 36, marginBottom: 8 }}>{active.icon}</div>
             <h2 style={{ color: '#F5E642', marginBottom: 20 }}>{active.stage}</h2>
             <div style={{ marginBottom: 20 }}>

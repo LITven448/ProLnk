@@ -82,7 +82,7 @@ export default function DFWProLnkJoinTodayFinal2026() {
         </div>
 
         <div style={{ background: '#1e2d47', borderRadius: 12, padding: 20, marginBottom: 28 }}>
-          <label style={{ fontSize: 12, color: '#94a3b8′ }}>👤 I am joining as a...</label>
+          <label style={{ fontSize: 12, color: '#94a3b8' }}>👤 I am joining as a...</label>
           <select value={role} onChange={e => setRole(e.target.value)} style={{ display: 'block', marginTop: 8, width: '100%', background: '#0A1628', color: '#fff', border: '1px solid #334155', borderRadius: 8, padding: '12px', fontSize: 15 }}>
             <option value="homeowner">DFW Homeowner</option>
             <option value="pro">Service Professional (Plumber, HVAC, Electrician, etc.)</option>
@@ -104,12 +104,12 @@ export default function DFWProLnkJoinTodayFinal2026() {
                 <span style={{ fontSize: 22, flexShrink: 0 }}>{s.icon}</span>
                 <div>
                   <div style={{ fontWeight: 700, marginBottom: 4 }}>{s.action}</div>
-                  <div style={{ fontSize: 13, color: '#94a3b8′ }}>{s.detail}</div>
+                  <div style={{ fontSize: 13, color: '#94a3b8' }}>{s.detail}</div>
                 </div>
               </div>
             ))}
 
-            <div style={{ marginTop: 20, background: '#1e2d47', borderRadius: 12, padding: 20, borderLeft: '4px solid #F5E642′ }}>
+            <div style={{ marginTop: 20, background: '#1e2d47', borderRadius: 12, padding: 20, borderLeft: '4px solid #F5E642' }}>
               <div style={{ fontWeight: 700, marginBottom: 6 }}>💡 Your Key Benefit</div>
               <div style={{ color: '#94a3b8', fontSize: 14 }}>{guide.benefit}</div>
             </div>

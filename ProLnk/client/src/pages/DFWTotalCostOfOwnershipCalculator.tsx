@@ -61,18 +61,18 @@ export default function DFWTotalCostOfOwnershipCalculator() {
 
         <div style={{ background: '#fff', borderRadius: 12, padding: 24, boxShadow: '0 2px 12px rgba(0,0,0,0.08)', marginBottom: 20 }}>
           <label style={{ display: 'block', marginBottom: 16 }}>
-            <span style={{ fontWeight: 600, color: '#333′ }}>Home Price: {fmt(homePrice)}</span>
+            <span style={{ fontWeight: 600, color: '#333' }}>Home Price: {fmt(homePrice)}</span>
             <input type="range" min={200000} max={2000000} step={10000} value={homePrice}
               onChange={e => setHomePrice(Number(e.target.value))}
               style={{ width: '100%', marginTop: 8, accentColor: '#2563eb' }} />
           </label>
 
           <label style={{ display: 'block', marginBottom: 16 }}>
-            <span style={{ fontWeight: 600, color: '#333′ }}>Down Payment: {downPct}% ({fmt(downPayment)})</span>
+            <span style={{ fontWeight: 600, color: '#333' }}>Down Payment: {downPct}% ({fmt(downPayment)})</span>
             <input type="range" min={3} max={50} step={1} value={downPct}
               onChange={e => setDownPct(Number(e.target.value))}
               style={{ width: '100%', marginTop: 8, accentColor: '#7c3aed' }} />
-            <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: 12, color: '#888′ }}>
+            <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: 12, color: '#888' }}>
               <span>3% (FHA)</span><span>20% (conventional)</span><span>50%</span>
             </div>
           </label>
@@ -89,7 +89,7 @@ export default function DFWTotalCostOfOwnershipCalculator() {
               <span style={{ fontWeight: 600, color: '#333', fontSize: 14 }}>Monthly HOA: {fmt(monthlyHOA)}</span>
               <input type="range" min={0} max={800} step={25} value={monthlyHOA}
                 onChange={e => setMonthlyHOA(Number(e.target.value))}
-                style={{ width: '100%', marginTop: 14, accentColor: '#059669′ }} />
+                style={{ width: '100%', marginTop: 14, accentColor: '#059669' }} />
             </label>
           </div>
 
@@ -101,7 +101,7 @@ export default function DFWTotalCostOfOwnershipCalculator() {
 
         <div style={{ background: '#1e3a5f', borderRadius: 12, padding: 24, marginBottom: 20, textAlign: 'center' }}>
           <div style={{ fontSize: 13, color: '#93c5fd', marginBottom: 4 }}>TRUE Monthly Cost of Ownership</div>
-          <div style={{ fontSize: 40, fontWeight: 700, color: '#F5E642′ }}>{fmt(totalMonthly)}</div>
+          <div style={{ fontSize: 40, fontWeight: 700, color: '#F5E642' }}>{fmt(totalMonthly)}</div>
           <div style={{ fontSize: 14, color: '#93c5fd', marginTop: 4 }}>vs. mortgage-only: {fmt(monthlyPI)} ({Math.round((totalMonthly / monthlyPI - 1) * 100)}% more than P&I)</div>
         </div>
 
@@ -109,12 +109,12 @@ export default function DFWTotalCostOfOwnershipCalculator() {
           <h2 style={{ fontSize: 16, fontWeight: 700, color: '#333', marginTop: 0 }}>📊 Monthly Cost Breakdown</h2>
           {breakdown.map(([label, amount]) => (
             <div key={label as string} style={{ display: 'flex', justifyContent: 'space-between', padding: '8px 0', borderBottom: '1px solid #f1f5f9', fontSize: 14 }}>
-              <span style={{ color: '#555′ }}>{label}</span>
+              <span style={{ color: '#555' }}>{label}</span>
               <strong style={{ color: '#1e3a5f' }}>{fmt(amount as number)}</strong>
             </div>
           ))}
           <div style={{ display: 'flex', justifyContent: 'space-between', padding: '12px 0', fontSize: 15 }}>
-            <strong style={{ color: '#333′ }}>Total Monthly</strong>
+            <strong style={{ color: '#333' }}>Total Monthly</strong>
             <strong style={{ color: '#2563eb', fontSize: 18 }}>{fmt(totalMonthly)}</strong>
           </div>
         </div>
@@ -135,7 +135,7 @@ export default function DFWTotalCostOfOwnershipCalculator() {
           <h2 style={{ fontSize: 16, fontWeight: 700, color: '#333', marginTop: 0 }}>📈 Net 5-Year Cost After Appreciation</h2>
           <p style={{ color: '#555', fontSize: 14 }}>At 4.5% annual DFW appreciation, your home reaches <strong>{fmt(appreciatedValue5)}</strong> in 5 years</p>
           <p style={{ color: '#555', fontSize: 14 }}>10-year projected value: <strong>{fmt(appreciatedValue10)}</strong></p>
-          <p style={{ fontWeight: 700, color: netCost5 > 0 ? '#dc2626′ : '#059669', fontSize: 15 }}>
+          <p style={{ fontWeight: 700, color: netCost5 > 0 ? '#dc2626' : '#059669', fontSize: 15 }}>
             {netCost5 > 0 ? `Net cost after appreciation: ${fmt(netCost5)}` : `Net gain after 5 years: ${fmt(Math.abs(netCost5))}`}
           </p>
           <p style={{ color: '#888', fontSize: 12, marginBottom: 0 }}>* Rate at 7.0%, DFW avg appreciation 4.5%. Actual rates vary. PMI not included if &lt;20% down.</p>

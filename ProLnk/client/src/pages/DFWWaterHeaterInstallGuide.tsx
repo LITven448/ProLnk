@@ -5,7 +5,7 @@ type HeaterType = 'tank-gas' | 'tank-electric' | 'tankless-gas' | 'tankless-elec
 const HEATER_DATA: Record<HeaterType, { name: string; lifespan: string; monthlyCost: string; install: string; rebate: string; pros: string[]; cons: string[]; icon: string }> = {
   'tank-gas': { name: 'Gas Tank Water Heater', lifespan: '8–10 yrs (DFW hard water)', monthlyCost: '$18–28', install: '$900–1,600', rebate: 'None typically', icon: '🔥', pros: ['Lowest upfront cost', 'Works during power outage', 'Fast recovery rate — ideal for large families', 'Widely serviceable in DFW'], cons: ['DFW hard water cuts lifespan by 20%', 'Standby heat loss wastes energy', 'Requires gas line and venting', 'Takes floor space'] },
   'tank-electric': { name: 'Electric Tank Water Heater', lifespan: '10–12 yrs', monthlyCost: '$35–55', install: '$700–1,200', rebate: 'None typically', icon: '⚡', pros: ['Cheapest to install', 'No gas line needed', 'Safe — no combustion risk'], cons: ['Highest monthly operating cost', 'Slow recovery in large families', 'DFW electricity rates make this expensive long-term'] },
-  'tankless-gas': { name: 'Gas Tankless (On-Demand)', lifespan: '20+ yrs', monthlyCost: '$12–20', install: '$2,200–4,000', rebate: '$50–200 (Atmos/CenterPoint)', icon: '♾️', pros: ['Endless hot water', 'Lasts 20+ years — beats DFW hard water with maintenance', '30–40% more efficient than tank', 'Space-saving wall mount', 'Qualifies for 30% federal tax credit (energy efficient models)'], cons: ['High upfront cost', 'Requires larger gas line (3/4″)', 'Annual descaling needed in DFW (hard water)'] },
+  'tankless-gas': { name: 'Gas Tankless (On-Demand)', lifespan: '20+ yrs', monthlyCost: '$12–20', install: '$2,200–4,000', rebate: '$50–200 (Atmos/CenterPoint)', icon: '♾️', pros: ['Endless hot water', 'Lasts 20+ years — beats DFW hard water with maintenance', '30–40% more efficient than tank', 'Space-saving wall mount', 'Qualifies for 30% federal tax credit (energy efficient models)'], cons: ['High upfront cost', 'Requires larger gas line (3/4")', 'Annual descaling needed in DFW (hard water)'] },
   'tankless-electric': { name: 'Electric Tankless', lifespan: '15–20 yrs', monthlyCost: '$28–45', install: '$1,500–2,800', rebate: 'Oncor: up to $100', icon: '⚡♾️', pros: ['Space-saving', 'No gas line needed', 'Endless hot water'], cons: ['DFW electricity rates make monthly costs high', 'Requires 200A electrical panel', 'May need panel upgrade (+$1,500)'] },
   'heat-pump': { name: 'Heat Pump Water Heater', lifespan: '12–15 yrs', monthlyCost: '$8–15', install: '$1,800–3,200', rebate: 'Oncor: up to $300 | Federal: 30% tax credit', icon: '🌡️', pros: ['Lowest monthly operating cost', 'Oncor rebate available', '30% federal tax credit', 'DFW climate ideal — works best in warm air'], cons: ['Needs 750+ sq ft of unconditioned space (garage, attic)', 'Slower recovery than gas tank', 'Makes some noise', 'Takes heat from room — may increase A/C load slightly'] },
 };
@@ -13,7 +13,7 @@ const HEATER_DATA: Record<HeaterType, { name: string; lifespan: string; monthlyC
 function getSizeRecommendation(people: number, showers: string) {
   const base = people <= 2 ? 40 : people <= 4 ? 50 : 80;
   const demandAdj = showers === 'long' ? 10 : 0;
-  return { tankGal: base + demandAdj, tanklessGPM: people <= 2 ? '6′ : people <= 4 ? '8' : '10+' };
+  return { tankGal: base + demandAdj, tanklessGPM: people <= 2 ? '6' : people <= 4 ? '8' : '10+' };
 }
 
 function getRecommendedType(people: number, showers: string, budget: string): HeaterType {
@@ -36,10 +36,10 @@ export default function DFWWaterHeaterInstallGuide() {
 
   return (
     <div style={{ background: '#0A1628', minHeight: '100vh', color: '#E8EDF5', fontFamily: 'system-ui, sans-serif', padding: '0 0 60px' }}>
-      <div style={{ background: 'linear-gradient(135deg, #0A1628 0%, #112240 100%)', padding: '48px 24px 40px', borderBottom: '2px solid #F5E642′ }}>
+      <div style={{ background: 'linear-gradient(135deg, #0A1628 0%, #112240 100%)', padding: '48px 24px 40px', borderBottom: '2px solid #F5E642' }}>
         <div style={{ maxWidth: 860, margin: '0 auto' }}>
           <div style={{ color: '#F5E642', fontSize: 13, fontWeight: 700, letterSpacing: 2, marginBottom: 12 }}>🚿 DFW WATER HEATER GUIDE</div>
-          <h1 style={{ fontSize: 'clamp(26px, 5vw, 44px)', fontWeight: 900, margin: '0 0 16px', lineHeight: 1.15 }}>Water Heater Installation Guide<br /><span style={{ color: '#F5E642′ }}>for DFW Homeowners</span></h1>
+          <h1 style={{ fontSize: 'clamp(26px, 5vw, 44px)', fontWeight: 900, margin: '0 0 16px', lineHeight: 1.15 }}>Water Heater Installation Guide<br /><span style={{ color: '#F5E642' }}>for DFW Homeowners</span></h1>
           <p style={{ fontSize: 16, color: '#8BA3C7', maxWidth: 620, margin: 0 }}>DFW's hard water shortens water heater life by 20–30% vs the national average. Choosing the right type — and maintaining it — makes the difference between 8 years and 20 years of service.</p>
         </div>
       </div>
@@ -62,7 +62,7 @@ export default function DFWWaterHeaterInstallGuide() {
             <p style={{ color: '#C0D0E8', lineHeight: 1.7, margin: '0 0 12px' }}>All DFW cities require a permit for water heater replacement. Unlicensed installation voids your homeowner's insurance for water damage claims. Inspections are mandatory in: Dallas, Fort Worth, Plano, Frisco, McKinney, Allen, Garland, Irving, and all surrounding municipalities.</p>
             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 10 }}>
               {[['Permit fee', '$40–120 depending on city'], ['Inspection required', 'Yes — within 30 days'], ['Licensed plumber required', 'Yes (TSBPE licensed)'], ['Permit pulls inspection', 'Plumber schedules it']].map(([k, v]) => (
-                <div key={k} style={{ fontSize: 13 }}><span style={{ color: '#8BA3C7′ }}>{k}: </span><span style={{ color: '#E8EDF5' }}>{v}</span></div>
+                <div key={k} style={{ fontSize: 13 }}><span style={{ color: '#8BA3C7' }}>{k}: </span><span style={{ color: '#E8EDF5' }}>{v}</span></div>
               ))}
             </div>
           </div>
@@ -73,7 +73,7 @@ export default function DFWWaterHeaterInstallGuide() {
           <div style={{ overflowX: 'auto' }}>
             <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: 13 }}>
               <thead>
-                <tr style={{ background: '#F5E642', color: '#0A1628′ }}>
+                <tr style={{ background: '#F5E642', color: '#0A1628' }}>
                   {['Type', 'Install Cost', 'Monthly Cost', 'DFW Lifespan', 'Rebates Available'].map(h => (
                     <th key={h} style={{ padding: '10px 12px', textAlign: 'left', fontWeight: 800 }}>{h}</th>
                   ))}
@@ -81,7 +81,7 @@ export default function DFWWaterHeaterInstallGuide() {
               </thead>
               <tbody>
                 {(Object.entries(HEATER_DATA) as [HeaterType, typeof HEATER_DATA[HeaterType]][]).map(([key, d], i) => (
-                  <tr key={key} style={{ background: i % 2 === 0 ? '#0E1E35′ : '#112240' }}>
+                  <tr key={key} style={{ background: i % 2 === 0 ? '#0E1E35' : '#112240' }}>
                     <td style={{ padding: '10px 12px', color: '#F5E642', borderBottom: '1px solid #1E3A5F', fontWeight: 700 }}>{d.icon} {d.name}</td>
                     <td style={{ padding: '10px 12px', color: '#C0D0E8', borderBottom: '1px solid #1E3A5F' }}>{d.install}</td>
                     <td style={{ padding: '10px 12px', color: '#C0D0E8', borderBottom: '1px solid #1E3A5F' }}>{d.monthlyCost}</td>
@@ -125,14 +125,14 @@ export default function DFWWaterHeaterInstallGuide() {
           </button>
           {showResult && (
             <div style={{ display: 'grid', gap: 14 }}>
-              <div style={{ background: '#0A1628', borderRadius: 10, padding: 20, border: '1px solid #F5E642′ }}>
+              <div style={{ background: '#0A1628', borderRadius: 10, padding: 20, border: '1px solid #F5E642' }}>
                 <div style={{ fontSize: 13, color: '#8BA3C7', marginBottom: 4 }}>RECOMMENDED FOR YOUR HOME</div>
                 <div style={{ fontSize: 22, fontWeight: 900, color: '#F5E642', marginBottom: 6 }}>{recData.icon} {recData.name}</div>
                 <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 12, marginBottom: 14 }}>
                   {[['Install Cost', recData.install], ['Monthly', recData.monthlyCost], ['Lifespan', recData.lifespan]].map(([label, val]) => (
                     <div key={label} style={{ textAlign: 'center' }}>
                       <div style={{ fontSize: 11, color: '#8BA3C7', marginBottom: 2 }}>{label}</div>
-                      <div style={{ fontWeight: 700, color: '#E8EDF5′ }}>{val}</div>
+                      <div style={{ fontWeight: 700, color: '#E8EDF5' }}>{val}</div>
                     </div>
                   ))}
                 </div>
@@ -140,7 +140,7 @@ export default function DFWWaterHeaterInstallGuide() {
                   {recData.pros.map((p, i) => <div key={i} style={{ color: '#4ECDC4', fontSize: 13, marginBottom: 4 }}>✓ {p}</div>)}
                 </div>
                 <div style={{ color: '#F5E642', fontSize: 13, fontWeight: 700 }}>Tank size: {size.tankGal} gal | Tankless: {size.tanklessGPM} GPM</div>
-                {recData.rebate !== 'None typically' && <div style={{ marginTop: 8, background: '#1E3A5F', borderRadius: 6, padding: '8px 12px', fontSize: 13, color: '#4ECDC4′ }}>💰 Rebates available: {recData.rebate}</div>}
+                {recData.rebate !== 'None typically' && <div style={{ marginTop: 8, background: '#1E3A5F', borderRadius: 6, padding: '8px 12px', fontSize: 13, color: '#4ECDC4' }}>💰 Rebates available: {recData.rebate}</div>}
               </div>
             </div>
           )}

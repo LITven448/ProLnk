@@ -5,7 +5,7 @@ const symptoms = [
   { id: 'hot', label: '🌡️ System runs but home stays hot', diagnosis: 'Restricted duct or frozen coil increasing pressure drop. Check evaporator coil for frost and duct dampers.' },
   { id: 'noisy', label: '📢 Loud whistling from vents', diagnosis: 'Excessive static pressure — system pushing against restriction. Likely undersized return or severely clogged filter.' },
   { id: 'freeze', label: '🧊 Ice on refrigerant line', diagnosis: 'Frozen coil dramatically increases coil pressure drop. Shut system off, let thaw, then replace filter before restart.' },
-  { id: 'high', label: '⚡ High electric bill, poor cooling', diagnosis: 'System working overtime against high static. Check total external static pressure — should be under 0.5″ w.c. for most DFW units.' },
+  { id: 'high', label: '⚡ High electric bill, poor cooling', diagnosis: 'System working overtime against high static. Check total external static pressure — should be under 0.5" w.c. for most DFW units.' },
 ];
 
 export default function DFWHVACPressureDropGuide2026() {
@@ -31,7 +31,7 @@ export default function DFWHVACPressureDropGuide2026() {
           {(['guide', 'tool'] as const).map(t => (
             <button key={t} onClick={() => setTab(t)} style={{
               padding: '0.5rem 1.2rem', borderRadius: '0.5rem', border: 'none', cursor: 'pointer', fontWeight: 700, fontSize: '0.85rem',
-              background: tab === t ? '#F5E642′ : '#1e3a5f', color: tab === t ? '#0A1628' : '#94a3b8'
+              background: tab === t ? '#F5E642' : '#1e3a5f', color: tab === t ? '#0A1628' : '#94a3b8'
             }}>{t === 'guide' ? '📖 Guide' : '🔧 Diagnose'}</button>
           ))}
         </div>
@@ -39,13 +39,13 @@ export default function DFWHVACPressureDropGuide2026() {
         {tab === 'guide' && (
           <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
             {[
-              { icon: '🔲', title: 'Filter Pressure Drop', body: 'A clean 1″ filter adds ~0.1″ w.c. pressure drop. A dirty filter can spike to 0.4–0.8″ w.c., starving the blower and cutting airflow 30–50%. DFW dust loads are high — change every 60–90 days.' },
-              { icon: '❄️', title: 'Evaporator Coil Drop', body: 'Clean coil: ~0.2″ w.c. drop. A partially frozen coil can exceed 0.6″ w.c., triggering cascade failure. Ice means low airflow, which causes more ice — a common DFW summer emergency.' },
-              { icon: '🪈', title: 'Duct Restriction', body: 'Long duct runs, sharp bends, and undersized returns add cumulative static. DFW slab homes often have duct runs exceeding 40 feet — each 90-degree bend adds ~0.05″ w.c.' },
-              { icon: '📊', title: 'Total External Static Pressure (TESP)', body: 'TESP = filter drop + coil drop + supply duct + return duct. Most residential units are rated for 0.5″ w.c. max TESP. Exceed this and the system strains, efficiency drops, and lifespan shortens.' },
+              { icon: '🔲', title: 'Filter Pressure Drop', body: 'A clean 1" filter adds ~0.1" w.c. pressure drop. A dirty filter can spike to 0.4–0.8" w.c., starving the blower and cutting airflow 30–50%. DFW dust loads are high — change every 60–90 days.' },
+              { icon: '❄️', title: 'Evaporator Coil Drop', body: 'Clean coil: ~0.2" w.c. drop. A partially frozen coil can exceed 0.6" w.c., triggering cascade failure. Ice means low airflow, which causes more ice — a common DFW summer emergency.' },
+              { icon: '🪈', title: 'Duct Restriction', body: 'Long duct runs, sharp bends, and undersized returns add cumulative static. DFW slab homes often have duct runs exceeding 40 feet — each 90-degree bend adds ~0.05" w.c.' },
+              { icon: '📊', title: 'Total External Static Pressure (TESP)', body: 'TESP = filter drop + coil drop + supply duct + return duct. Most residential units are rated for 0.5" w.c. max TESP. Exceed this and the system strains, efficiency drops, and lifespan shortens.' },
               { icon: '🏠', title: 'DFW Specific Context', body: 'DFW summers push systems to 100% runtime. High static pressure during peak load is especially damaging. Annual duct pressure testing is recommended before each cooling season.' },
             ].map(card => (
-              <div key={card.title} style={{ background: '#132240', borderRadius: '0.75rem', padding: '1.25rem', borderLeft: '4px solid #F5E642′ }}>
+              <div key={card.title} style={{ background: '#132240', borderRadius: '0.75rem', padding: '1.25rem', borderLeft: '4px solid #F5E642' }}>
                 <div style={{ fontWeight: 700, marginBottom: '0.4rem', fontSize: '1rem' }}>{card.icon} {card.title}</div>
                 <div style={{ color: '#94a3b8', fontSize: '0.9rem', lineHeight: 1.6 }}>{card.body}</div>
               </div>
@@ -59,16 +59,16 @@ export default function DFWHVACPressureDropGuide2026() {
             <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem', marginBottom: '1.5rem' }}>
               {symptoms.map(s => (
                 <button key={s.id} onClick={() => setSelected(s.id)} style={{
-                  background: selected === s.id ? '#1e3a5f' : '#132240', border: selected === s.id ? '2px solid #F5E642′ : '2px solid transparent',
+                  background: selected === s.id ? '#1e3a5f' : '#132240', border: selected === s.id ? '2px solid #F5E642' : '2px solid transparent',
                   borderRadius: '0.75rem', padding: '0.9rem 1.2rem', color: '#e2e8f0', cursor: 'pointer', textAlign: 'left', fontSize: '0.9rem', fontWeight: 600
                 }}>{s.label}</button>
               ))}
             </div>
             {match && (
-              <div style={{ background: '#132240', borderRadius: '0.75rem', padding: '1.25rem', borderLeft: '4px solid #F5E642′ }}>
+              <div style={{ background: '#132240', borderRadius: '0.75rem', padding: '1.25rem', borderLeft: '4px solid #F5E642' }}>
                 <div style={{ fontWeight: 700, color: '#F5E642', marginBottom: '0.5rem' }}>🔍 Diagnosis</div>
                 <div style={{ color: '#e2e8f0', lineHeight: 1.7, fontSize: '0.95rem' }}>{match.diagnosis}</div>
-                <div style={{ marginTop: '1rem', padding: '0.8rem', background: '#0A1628', borderRadius: '0.5rem', fontSize: '0.85rem', color: '#94a3b8′ }}>
+                <div style={{ marginTop: '1rem', padding: '0.8rem', background: '#0A1628', borderRadius: '0.5rem', fontSize: '0.85rem', color: '#94a3b8' }}>
                   📞 Get a DFW HVAC pro through ProLnk for accurate static pressure testing.
                 </div>
               </div>

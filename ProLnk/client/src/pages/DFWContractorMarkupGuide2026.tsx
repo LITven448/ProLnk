@@ -35,7 +35,7 @@ export default function DFWContractorMarkupGuide2026() {
     roofing: [
       { label: 'Material (shingles, underlayment)', pct: '30–40%', example: '$3,000–5,000', note: 'DFW average 30yr architectural shingles; hail-resistant class 4 add 15–20%' },
       { label: 'Material Markup', pct: '20–35%', example: '+$900–1,750', note: 'Post-hail season markups can reach 40% due to material scarcity' },
-      { label: 'Labor (tear-off + install)', pct: '25–35%', example: '$2,500–4,000', note: 'DFW 2,000 sq ft average roof; 1.5–2 days crew of 4′ },
+      { label: 'Labor (tear-off + install)', pct: '25–35%', example: '$2,500–4,000', note: 'DFW 2,000 sq ft average roof; 1.5–2 days crew of 4' },
       { label: 'Overhead (insurance, dump fees)', pct: '10–15%', example: '$800–1,200', note: '$2M+ liability required; dumpster + haul-off $300–500 bundled' },
       { label: 'Profit Margin', pct: '10–20%', example: '$900–1,800', note: 'Storm chasers cut margin to win jobs, then cut corners — get 3 quotes' },
     ],
@@ -53,7 +53,7 @@ export default function DFWContractorMarkupGuide2026() {
           <p style={{ color: '#94a3b8', fontSize: 15 }}>Understanding what you're actually paying for — and why the cheapest bid can cost more</p>
         </div>
 
-        <div style={{ background: '#1e2d45', borderRadius: 10, padding: 16, marginBottom: 32, borderLeft: '4px solid #ef4444′ }}>
+        <div style={{ background: '#1e2d45', borderRadius: 10, padding: 16, marginBottom: 32, borderLeft: '4px solid #ef4444' }}>
           <p style={{ color: '#cbd5e1', margin: 0, fontSize: 14 }}>
             ⚠️ The lowest bid is often the most expensive: unlicensed contractors save on insurance, licensing, and permits — until something goes wrong and you pay twice.
           </p>
@@ -63,10 +63,10 @@ export default function DFWContractorMarkupGuide2026() {
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12, marginBottom: 32 }}>
           {trades.map(t => (
             <button key={t.id} onClick={() => setTrade(t.id === trade ? null : t.id)}
-              style={{ background: trade === t.id ? '#F5E642′ : '#1e2d45', border: '2px solid',
-                borderColor: trade === t.id ? '#F5E642′ : '#2d3f5a', borderRadius: 10,
+              style={{ background: trade === t.id ? '#F5E642' : '#1e2d45', border: '2px solid',
+                borderColor: trade === t.id ? '#F5E642' : '#2d3f5a', borderRadius: 10,
                 padding: 20, cursor: 'pointer', textAlign: 'center',
-                color: trade === t.id ? '#0A1628′ : '#fff' }}>
+                color: trade === t.id ? '#0A1628' : '#fff' }}>
               <div style={{ fontSize: 32 }}>{t.icon}</div>
               <div style={{ fontWeight: 700, fontSize: 15, marginTop: 8 }}>{t.label}</div>
             </button>
@@ -75,7 +75,7 @@ export default function DFWContractorMarkupGuide2026() {
 
         {selected && tradeItem && (
           <div style={{ marginBottom: 32 }}>
-            <h3 style={{ color: '#F5E642′ }}>{tradeItem.icon} {tradeItem.label} Pricing Breakdown</h3>
+            <h3 style={{ color: '#F5E642' }}>{tradeItem.icon} {tradeItem.label} Pricing Breakdown</h3>
             <div style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
               {selected.map((row, i) => (
                 <div key={i} style={{ background: '#1e2d45', borderRadius: 10, padding: 16 }}>

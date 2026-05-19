@@ -40,7 +40,7 @@ export default function DFWWarrantyTrackerTool() {
     setResult({ expDate: exp.toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' }), daysLeft });
   }
 
-  const urgency = result ? (result.daysLeft < 90 ? '#FF4444′ : result.daysLeft < 365 ? '#F5A623' : '#22C55E') : '#F5E642';
+  const urgency = result ? (result.daysLeft < 90 ? '#FF4444' : result.daysLeft < 365 ? '#F5A623' : '#22C55E') : '#F5E642';
 
   return (
     <div style={{ background: '#0A1628', minHeight: '100vh', color: '#fff', fontFamily: 'sans-serif', padding: '32px 24px' }}>
@@ -50,14 +50,14 @@ export default function DFWWarrantyTrackerTool() {
         <p style={{ color: '#8CA4C0', marginBottom: 28 }}>Track every warranty covering your DFW home — never miss an expiration again.</p>
 
         <div style={{ background: '#0F2037', borderRadius: 12, padding: 24, marginBottom: 24 }}>
-          <h2 style={{ fontSize: 18, fontWeight: 700, marginBottom: 16, color: '#F5E642′ }}>Select Warranty Type</h2>
+          <h2 style={{ fontSize: 18, fontWeight: 700, marginBottom: 16, color: '#F5E642' }}>Select Warranty Type</h2>
           <div style={{ display: 'flex', gap: 10, flexWrap: 'wrap', marginBottom: 24 }}>
             {WARRANTY_TYPES.map(t => (
               <button key={t} onClick={() => { setType(t); setResult(null); }}
                 style={{ padding: '8px 16px', borderRadius: 20, border: '2px solid', cursor: 'pointer', fontWeight: 700, fontSize: 13,
-                  borderColor: type === t ? '#F5E642′ : '#1E3A5F',
-                  background: type === t ? '#F5E642′ : ’transparent',
-                  color: type === t ? '#0A1628′ : '#8CA4C0' }}>
+                  borderColor: type === t ? '#F5E642' : '#1E3A5F',
+                  background: type === t ? '#F5E642' : 'transparent',
+                  color: type === t ? '#0A1628' : '#8CA4C0' }}>
                 {t}
               </button>
             ))}
@@ -71,7 +71,7 @@ export default function DFWWarrantyTrackerTool() {
             </div>
             <div>
               <div style={{ fontSize: 12, color: '#8CA4C0', marginBottom: 6 }}>Warranty Duration (years)</div>
-              <input type="number" min="0.5″ max="25" step="0.5" value={duration} onChange={e => setDuration(e.target.value)} placeholder="e.g. 10"
+              <input type="number" min="0.5" max="25" step="0.5" value={duration} onChange={e => setDuration(e.target.value)} placeholder="e.g. 10"
                 style={{ width: '100%', background: '#1E3A5F', border: '1px solid #2A4F7A', borderRadius: 8, padding: '10px 12px', color: '#fff', fontSize: 14, boxSizing: 'border-box' }} />
             </div>
           </div>
@@ -90,7 +90,7 @@ export default function DFWWarrantyTrackerTool() {
             </div>
             <div style={{ color: '#8CA4C0', fontSize: 15 }}>Expires: <span style={{ color: '#fff', fontWeight: 700 }}>{result.expDate}</span></div>
             {result.daysLeft < 365 && result.daysLeft > 0 && (
-              <div style={{ marginTop: 12, background: '#1E3A5F', borderRadius: 8, padding: 12, fontSize: 14, color: '#F5A623′ }}>
+              <div style={{ marginTop: 12, background: '#1E3A5F', borderRadius: 8, padding: 12, fontSize: 14, color: '#F5A623' }}>
                 ⚠️ Within 1 year — schedule any warranty work now before expiration.
               </div>
             )}
@@ -107,7 +107,7 @@ export default function DFWWarrantyTrackerTool() {
         </div>
 
         <div style={{ background: '#0F2037', borderRadius: 12, padding: 20 }}>
-          <h2 style={{ fontSize: 16, fontWeight: 700, marginBottom: 12, color: '#F5E642′ }}>💡 DFW Warranty Tips</h2>
+          <h2 style={{ fontSize: 16, fontWeight: 700, marginBottom: 12, color: '#F5E642' }}>💡 DFW Warranty Tips</h2>
           {['Foundation warranties are transferable in TX — get docs at closing.', 'Roof warranties void if different contractor does repairs without manufacturer approval.', 'Home warranty plans renew annually — set a calendar reminder 30 days before renewal.', 'Builder warranty: submit issues in writing before 11 months post-closing.'].map((tip, i) => (
             <div key={i} style={{ fontSize: 14, color: '#8CA4C0', padding: '8px 0', borderBottom: i < 3 ? '1px solid #1E3A5F' : 'none' }}>✅ {tip}</div>
           ))}

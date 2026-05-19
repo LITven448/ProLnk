@@ -42,7 +42,7 @@ export default function DFWHomeHealthReportGuide() {
     if (homeAge === 'pre1978') {
       items.push({ priority: '🔴 Priority', item: 'Lead Paint & Asbestos Screening', note: 'Pre-1978 homes require EPA-certified testing. Lead paint common in trim, windows. Asbestos in floor tiles, insulation, HVAC duct tape.' });
     }
-    if (homeAge === 'pre1990′ || homeAge === ’pre1978') {
+    if (homeAge === 'pre1990' || homeAge === 'pre1978') {
       items.push({ priority: '🔴 Priority', item: 'Electrical Panel & Wiring', note: 'Federal Pacific and Zinsco panels common in DFW homes through 1990s — known fire hazards. Aluminum wiring on 15/20A circuits also an issue.' });
     }
     if (selectedConcerns.includes('foundation')) {
@@ -109,7 +109,7 @@ export default function DFWHomeHealthReportGuide() {
             <label style={{ display: 'block', color: '#94a3b8', fontSize: '0.8rem', marginBottom: 8 }}>CONCERNS (select all that apply)</label>
             <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8 }}>
               {concerns.map(c => (
-                <button key={c.id} onClick={() => toggleConcern(c.id)} style={{ padding: '0.4rem 0.9rem', borderRadius: 20, border: '1px solid', borderColor: selectedConcerns.includes(c.id) ? '#F5E642′ : '#1e3a5f', background: selectedConcerns.includes(c.id) ? '#F5E642' : ’transparent', color: selectedConcerns.includes(c.id) ? '#0A1628′ : '#fff', cursor: ’pointer', fontSize: '0.85rem', fontWeight: 600 }}>
+                <button key={c.id} onClick={() => toggleConcern(c.id)} style={{ padding: '0.4rem 0.9rem', borderRadius: 20, border: '1px solid', borderColor: selectedConcerns.includes(c.id) ? '#F5E642' : '#1e3a5f', background: selectedConcerns.includes(c.id) ? '#F5E642' : 'transparent', color: selectedConcerns.includes(c.id) ? '#0A1628' : '#fff', cursor: 'pointer', fontSize: '0.85rem', fontWeight: 600 }}>
                   {c.label}
                 </button>
               ))}
@@ -124,7 +124,7 @@ export default function DFWHomeHealthReportGuide() {
                 <div key={i} style={{ background: '#0A1628', borderRadius: 8, padding: '0.875rem 1rem', border: '1px solid #1e3a5f' }}>
                   <div style={{ display: 'flex', gap: '0.75rem', marginBottom: 4, flexWrap: 'wrap' }}>
                     <span>{item.priority}</span>
-                    <span style={{ fontWeight: 700, color: '#e2e8f0′ }}>{item.item}</span>
+                    <span style={{ fontWeight: 700, color: '#e2e8f0' }}>{item.item}</span>
                   </div>
                   <div style={{ color: '#94a3b8', fontSize: '0.875rem' }}>{item.note}</div>
                 </div>

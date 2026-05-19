@@ -45,7 +45,7 @@ export default function DFWHVACOzoneGeneratorGuide() {
           remediation situations — but dangerous if used incorrectly. This guide covers safe DFW use cases and protocols.
         </p>
 
-        <div style={{ background: '#7F1D1D', borderRadius: 12, padding: '1.5rem', marginBottom: '1.5rem', border: '1px solid #EF4444′ }}>
+        <div style={{ background: '#7F1D1D', borderRadius: 12, padding: '1.5rem', marginBottom: '1.5rem', border: '1px solid #EF4444' }}>
           <h2 style={{ color: '#FCA5A5', fontSize: '1.1rem', marginBottom: '0.75rem' }}>🚨 Critical Safety Rules — DFW & Everywhere</h2>
           <ul style={{ color: '#FECACA', lineHeight: 2, paddingLeft: '1.25rem', margin: 0 }}>
             <li><strong>NEVER run an ozone generator while occupied.</strong> Ozone damages lungs at high concentrations.</li>
@@ -91,7 +91,7 @@ export default function DFWHVACOzoneGeneratorGuide() {
             Is Ozone Right for Me?
           </button>
           {result && (
-            <div style={{ marginTop: '1.25rem', background: '#0A1628', borderRadius: 10, padding: '1.25rem', borderLeft: '3px solid #F5E642′ }}>
+            <div style={{ marginTop: '1.25rem', background: '#0A1628', borderRadius: 10, padding: '1.25rem', borderLeft: '3px solid #F5E642' }}>
               <div style={{ marginBottom: '0.5rem' }}>✅ <strong>Appropriate?</strong> {result.appropriate}</div>
               <div style={{ marginBottom: '0.5rem' }}>📋 <strong>Protocol:</strong> {result.protocol}</div>
               <div style={{ marginBottom: '0.5rem' }}>⏱️ <strong>Wait Time:</strong> {result.waitTime}</div>
@@ -102,7 +102,7 @@ export default function DFWHVACOzoneGeneratorGuide() {
 
         <div style={{ background: '#0F2040', borderRadius: 12, padding: '1.25rem' }}>
           <p style={{ color: '#9BA8BB', fontSize: '0.9rem', margin: 0 }}>
-            🏠 <strong style={{ color: '#F5E642′ }}>ProLnk Tip:</strong> For water damage mold in DFW, hire a certified mold remediator first — ozone alone won’t remove existing mold mass, only surface contamination.
+            🏠 <strong style={{ color: '#F5E642' }}>ProLnk Tip:</strong> For water damage mold in DFW, hire a certified mold remediator first — ozone alone won't remove existing mold mass, only surface contamination.
           </p>
         </div>
       </div>

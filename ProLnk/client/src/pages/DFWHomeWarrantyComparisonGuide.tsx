@@ -79,7 +79,7 @@ export default function DFWHomeWarrantyComparisonGuide() {
         <div style={{ maxWidth: 860, margin: '0 auto' }}>
           <div style={{ color: '#F5E642', fontSize: 13, fontWeight: 700, letterSpacing: 2, marginBottom: 10 }}>DFW HOME GUIDE</div>
           <h1 style={{ fontSize: 32, fontWeight: 800, margin: '0 0 12px', lineHeight: 1.2 }}>🏡 Home Warranty Comparison for DFW</h1>
-          <p style={{ color: '#94A3B8', margin: 0, fontSize: 15 }}>DFW's extreme heat, hard water, and storm activity drive higher claim rates than the national average. Here’s how the top 4 providers stack up for North Texas homeowners.</p>
+          <p style={{ color: '#94A3B8', margin: 0, fontSize: 15 }}>DFW's extreme heat, hard water, and storm activity drive higher claim rates than the national average. Here's how the top 4 providers stack up for North Texas homeowners.</p>
         </div>
       </div>
 
@@ -111,7 +111,7 @@ export default function DFWHomeWarrantyComparisonGuide() {
                   {p.cons.map(c => <div key={c} style={{ color: '#94A3B8', fontSize: 12, marginBottom: 2 }}>• {c}</div>)}
                 </div>
               </div>
-              <div style={{ backgroundColor: '#0A1628', borderRadius: 8, padding: '8px 12px', fontSize: 12, color: '#F5E642′ }}>Best for: {p.bestFor}</div>
+              <div style={{ backgroundColor: '#0A1628', borderRadius: 8, padding: '8px 12px', fontSize: 12, color: '#F5E642' }}>Best for: {p.bestFor}</div>
             </div>
           ))}
         </div>
@@ -134,7 +134,7 @@ export default function DFWHomeWarrantyComparisonGuide() {
           </div>
           <button onClick={evaluate} style={{ backgroundColor: '#F5E642', color: '#0A1628', border: 'none', borderRadius: 8, padding: '12px 28px', fontSize: 15, fontWeight: 700, cursor: 'pointer' }}>Get Recommendation →</button>
           {result && (
-            <div style={{ marginTop: 20, backgroundColor: '#0A1628', borderRadius: 10, padding: 20, borderLeft: '4px solid #F5E642′ }}>
+            <div style={{ marginTop: 20, backgroundColor: '#0A1628', borderRadius: 10, padding: 20, borderLeft: '4px solid #F5E642' }}>
               <div style={{ fontSize: 18, fontWeight: 800, marginBottom: 4 }}>Recommended: {result.provider} — {result.plan}</div>
               <p style={{ color: '#CBD5E1', margin: 0, lineHeight: 1.7, fontSize: 14 }}>{result.why}</p>
             </div>

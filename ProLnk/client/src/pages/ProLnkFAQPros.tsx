@@ -32,46 +32,46 @@ export default function ProLnkFAQPros() {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   return (
-    <div style={{ minHeight: "100vh", background: "#0A1628″, color: "#fff", fontFamily: "system-ui, sans-serif", padding: "40px 20px" }}>
+    <div style={{ minHeight: "100vh", background: "#0A1628", color: "#fff", fontFamily: "system-ui, sans-serif", padding: "40px 20px" }}>
       <div style={{ maxWidth: 760, margin: "0 auto" }}>
         <div style={{ textAlign: "center", marginBottom: 40 }}>
           <div style={{ fontSize: 48, marginBottom: 12 }}>🔧</div>
-          <h1 style={{ fontSize: 32, fontWeight: 800, color: "#F5E642″, marginBottom: 8 }}>Pro FAQ</h1>
-          <p style={{ color: "#94A3B8″, fontSize: 16 }}>Everything service professionals need to know about ProLnk</p>
+          <h1 style={{ fontSize: 32, fontWeight: 800, color: "#F5E642", marginBottom: 8 }}>Pro FAQ</h1>
+          <p style={{ color: "#94A3B8", fontSize: 16 }}>Everything service professionals need to know about ProLnk</p>
         </div>
         <div style={{ display: "flex", gap: 10, flexWrap: "wrap", marginBottom: 32, justifyContent: "center" }}>
           {categories.map((cat) => (
             <button key={cat} onClick={() => { setActiveCategory(cat); setOpenIndex(null); }}
               style={{ padding: "8px 18px", borderRadius: 20, border: "none", cursor: "pointer", fontWeight: 600, fontSize: 13,
-                background: activeCategory === cat ? "#F5E642″ : "#1E2D45", color: activeCategory === cat ? "#0A1628" : "#94A3B8" }}>
+                background: activeCategory === cat ? "#F5E642" : "#1E2D45", color: activeCategory === cat ? "#0A1628" : "#94A3B8" }}>
               {cat}
             </button>
           ))}
         </div>
         <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
           {(faqs[activeCategory] || []).map((item, i) => (
-            <div key={i} style={{ background: "#1E2D45″, borderRadius: 12, overflow: "hidden" }}>
+            <div key={i} style={{ background: "#1E2D45", borderRadius: 12, overflow: "hidden" }}>
               <button onClick={() => setOpenIndex(openIndex === i ? null : i)}
                 style={{ width: "100%", padding: "18px 20px", background: "none", border: "none", cursor: "pointer",
                   display: "flex", justifyContent: "space-between", alignItems: "center", color: "#fff", fontSize: 15, fontWeight: 600 }}>
                 <span style={{ textAlign: "left" }}>❓ {item.q}</span>
-                <span style={{ color: "#F5E642″, fontSize: 20 }}>{openIndex === i ? "▲" : "▼"}</span>
+                <span style={{ color: "#F5E642", fontSize: 20 }}>{openIndex === i ? "▲" : "▼"}</span>
               </button>
               {openIndex === i && (
-                <div style={{ padding: "0 20px 18px", color: "#94A3B8″, fontSize: 14, lineHeight: 1.7, borderTop: "1px solid #2D3F5A" }}>
+                <div style={{ padding: "0 20px 18px", color: "#94A3B8", fontSize: 14, lineHeight: 1.7, borderTop: "1px solid #2D3F5A" }}>
                   ✅ {item.a}
                 </div>
               )}
             </div>
           ))}
         </div>
-        <div style={{ marginTop: 48, background: "#1E2D45″, borderRadius: 16, padding: 28, display: "flex", gap: 20, alignItems: "center", flexWrap: "wrap" }}>
+        <div style={{ marginTop: 48, background: "#1E2D45", borderRadius: 16, padding: 28, display: "flex", gap: 20, alignItems: "center", flexWrap: "wrap" }}>
           <div style={{ fontSize: 40 }}>💰</div>
           <div style={{ flex: 1 }}>
-            <p style={{ fontWeight: 700, color: "#F5E642″, marginBottom: 4 }}>Charter Membership — $149/mo locked forever</p>
-            <p style={{ color: "#94A3B8″, fontSize: 13 }}>Join before waitlist closes at 500 Charter members</p>
+            <p style={{ fontWeight: 700, color: "#F5E642", marginBottom: 4 }}>Charter Membership — $149/mo locked forever</p>
+            <p style={{ color: "#94A3B8", fontSize: 13 }}>Join before waitlist closes at 500 Charter members</p>
           </div>
-          <button style={{ background: "#F5E642″, color: "#0A1628", border: "none", borderRadius: 8, padding: "12px 24px", fontWeight: 700, cursor: "pointer" }}>
+          <button style={{ background: "#F5E642", color: "#0A1628", border: "none", borderRadius: 8, padding: "12px 24px", fontWeight: 700, cursor: "pointer" }}>
             Join Now
           </button>
         </div>

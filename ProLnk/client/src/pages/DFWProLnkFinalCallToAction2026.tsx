@@ -99,7 +99,7 @@ export default function DFWProLnkFinalCallToAction2026() {
           <div style={{ display: 'flex', gap: 10, marginBottom: 24, flexWrap: 'wrap' }}>
             {stakeholders.map(s => (
               <button key={s.id} onClick={() => setSelected(s.id === selected ? null : s.id)}
-                style={{ background: selected === s.id ? '#F5E642′ : '#111D35', color: selected === s.id ? '#0A1628' : '#E8F0FF', border: '1px solid #1E3A5F', borderRadius: 8, padding: '10px 18px', cursor: ’pointer', fontWeight: 600, fontSize: 14 }}>
+                style={{ background: selected === s.id ? '#F5E642' : '#111D35', color: selected === s.id ? '#0A1628' : '#E8F0FF', border: '1px solid #1E3A5F', borderRadius: 8, padding: '10px 18px', cursor: 'pointer', fontWeight: 600, fontSize: 14 }}>
                 {s.label}
               </button>
             ))}

@@ -72,15 +72,15 @@ export default function DFWNetZeroHomeGuide2026() {
         <div style={{ backgroundColor: '#1e3a5f', borderRadius: '12px', padding: '24px', marginBottom: '24px' }}>
           <h2 style={{ color: '#F5E642', fontSize: '18px', marginBottom: '16px' }}>\ud83e\uddee DFW Net Zero Cost Estimator</h2>
           <label style={{ color: '#94a3b8', fontSize: '14px', display: 'block', marginBottom: '8px' }}>\ud83c\udfe0 Home Size (sq ft)</label>
-          <input type='number' placeholder='e.g. 2200′ value={sqft} onChange={e => setSqft(e.target.value)} style={{ width: '100%', backgroundColor: '#0A1628', border: '2px solid #F5E642', borderRadius: '8px', padding: '12px', color: '#fff', fontSize: '16px', boxSizing: ’border-box', marginBottom: '16px' }} />
+          <input type='number' placeholder='e.g. 2200' value={sqft} onChange={e => setSqft(e.target.value)} style={{ width: '100%', backgroundColor: '#0A1628', border: '2px solid #F5E642', borderRadius: '8px', padding: '12px', color: '#fff', fontSize: '16px', boxSizing: 'border-box', marginBottom: '16px' }} />
           {result && (
             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '10px' }}>
               {[
-                { label: 'Solar System (' + result.solarKW + ' kW)', val: '$' + result.solarCost.toLocaleString(), color: '#f97316′ },
-                { label: 'Battery Backup', val: '$' + result.batteryCost.toLocaleString(), color: '#f97316′ },
-                { label: 'Heat Pump HVAC', val: '$' + result.hpHVAC.toLocaleString(), color: '#f97316′ },
+                { label: 'Solar System (' + result.solarKW + ' kW)', val: '$' + result.solarCost.toLocaleString(), color: '#f97316' },
+                { label: 'Battery Backup', val: '$' + result.batteryCost.toLocaleString(), color: '#f97316' },
+                { label: 'Heat Pump HVAC', val: '$' + result.hpHVAC.toLocaleString(), color: '#f97316' },
                 { label: 'Federal Tax Credit (30%)', val: '-$' + result.taxCredit.toLocaleString(), color: '#22c55e' },
-                { label: 'Net Cost After Credits', val: '$' + result.netCost.toLocaleString(), color: '#F5E642′ },
+                { label: 'Net Cost After Credits', val: '$' + result.netCost.toLocaleString(), color: '#F5E642' },
                 { label: 'Annual Savings', val: '$' + result.annualSavings.toLocaleString() + '/yr', color: '#22c55e' },
               ].map(item => (
                 <div key={item.label} style={{ backgroundColor: '#0A1628', borderRadius: '8px', padding: '12px' }}>

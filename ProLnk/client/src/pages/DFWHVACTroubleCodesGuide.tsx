@@ -66,7 +66,7 @@ export default function DFWHVACTroubleCodesGuide() {
           <div style={{ display: 'flex', gap: 10, flexWrap: 'wrap' }}>
             {brands.map(b => (
               <button key={b} onClick={() => { setBrand(b); setSelectedCode(null); }}
-                style={{ background: brand === b ? '#F5E642′ : '#0F2237', color: brand === b ? '#0A1628' : '#CBD5E1', border: `2px solid ${brand === b ? '#F5E642' : '#1E3A5F'}`, borderRadius: 8, padding: '8px 18px', cursor: ’pointer', fontWeight: 700, fontSize: 14 }}>
+                style={{ background: brand === b ? '#F5E642' : '#0F2237', color: brand === b ? '#0A1628' : '#CBD5E1', border: `2px solid ${brand === b ? '#F5E642' : '#1E3A5F'}`, borderRadius: 8, padding: '8px 18px', cursor: 'pointer', fontWeight: 700, fontSize: 14 }}>
                 {b}
               </button>
             ))}
@@ -78,7 +78,7 @@ export default function DFWHVACTroubleCodesGuide() {
           <div style={{ display: 'flex', gap: 10, flexWrap: 'wrap' }}>
             {codes[brand].map(c => (
               <button key={c.code} onClick={() => setSelectedCode(selectedCode === c.code ? null : c.code)}
-                style={{ background: selectedCode === c.code ? '#1E3A5F' : '#0F2237', border: `2px solid ${selectedCode === c.code ? '#F5E642' : urgencyStyles[c.urgency].color}`, borderRadius: 8, padding: '8px 16px', cursor: 'pointer', color: selectedCode === c.code ? '#F5E642′ : urgencyStyles[c.urgency].color, fontWeight: 700, fontSize: 13 }}>
+                style={{ background: selectedCode === c.code ? '#1E3A5F' : '#0F2237', border: `2px solid ${selectedCode === c.code ? '#F5E642' : urgencyStyles[c.urgency].color}`, borderRadius: 8, padding: '8px 16px', cursor: 'pointer', color: selectedCode === c.code ? '#F5E642' : urgencyStyles[c.urgency].color, fontWeight: 700, fontSize: 13 }}>
                 Code {c.code}
               </button>
             ))}

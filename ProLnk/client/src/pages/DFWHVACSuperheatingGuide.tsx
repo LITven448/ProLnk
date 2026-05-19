@@ -44,26 +44,26 @@ export default function DFWHVACSuperheatingGuide() {
           <div style={{ color: '#F5E642', fontWeight: 700, marginBottom: 16 }}>⚙️ System Type</div>
           <div style={{ display: 'flex', gap: 10, flexWrap: 'wrap' }}>
             {systemTypes.map(s => (
-              <button key={s.value} onClick={() => setSystem(s)} style={{ padding: '10px 16px', borderRadius: 8, border: 'none', cursor: 'pointer', background: system.value === s.value ? '#F5E642′ : '#1e3a5f', color: system.value === s.value ? '#0A1628' : '#fff', fontWeight: 600 }}>{s.label}</button>
+              <button key={s.value} onClick={() => setSystem(s)} style={{ padding: '10px 16px', borderRadius: 8, border: 'none', cursor: 'pointer', background: system.value === s.value ? '#F5E642' : '#1e3a5f', color: system.value === s.value ? '#0A1628' : '#fff', fontWeight: 600 }}>{s.label}</button>
             ))}
           </div>
 
           <div style={{ color: '#F5E642', fontWeight: 700, marginBottom: 16, marginTop: 20 }}>🌤️ DFW Season / Ambient</div>
           <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
             {seasons.map(s => (
-              <button key={s.value} onClick={() => setSeason(s)} style={{ padding: '10px 16px', borderRadius: 8, border: 'none', cursor: 'pointer', textAlign: 'left', background: season.value === s.value ? '#F5E642′ : '#1e3a5f', color: season.value === s.value ? '#0A1628' : '#fff', fontWeight: 600 }}>{s.label}</button>
+              <button key={s.value} onClick={() => setSeason(s)} style={{ padding: '10px 16px', borderRadius: 8, border: 'none', cursor: 'pointer', textAlign: 'left', background: season.value === s.value ? '#F5E642' : '#1e3a5f', color: season.value === s.value ? '#0A1628' : '#fff', fontWeight: 600 }}>{s.label}</button>
             ))}
           </div>
 
           <div style={{ color: '#F5E642', fontWeight: 700, marginBottom: 16, marginTop: 20 }}>🩺 What Are Readings Showing?</div>
           <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
             {deviations.map(d => (
-              <button key={d.value} onClick={() => setDeviation(d)} style={{ padding: '10px 16px', borderRadius: 8, border: 'none', cursor: 'pointer', textAlign: 'left', background: deviation.value === d.value ? '#F5E642′ : '#1e3a5f', color: deviation.value === d.value ? '#0A1628' : '#fff', fontWeight: 600 }}>{d.label}</button>
+              <button key={d.value} onClick={() => setDeviation(d)} style={{ padding: '10px 16px', borderRadius: 8, border: 'none', cursor: 'pointer', textAlign: 'left', background: deviation.value === d.value ? '#F5E642' : '#1e3a5f', color: deviation.value === d.value ? '#0A1628' : '#fff', fontWeight: 600 }}>{d.label}</button>
             ))}
           </div>
         </div>
 
-        <div style={{ background: '#111f3a', borderRadius: 12, padding: 24, marginBottom: 20, borderLeft: '4px solid #F5E642′ }}>
+        <div style={{ background: '#111f3a', borderRadius: 12, padding: 24, marginBottom: 20, borderLeft: '4px solid #F5E642' }}>
           <div style={{ fontWeight: 700, fontSize: 18, marginBottom: 8 }}>📊 For {system.label} — {season.label}</div>
           <div style={{ color: '#F5E642', marginBottom: 4 }}>Target Superheat: {season.superheatRange} &nbsp;|&nbsp; Target Subcooling: {season.subcoolRange}</div>
           <div style={{ color: '#cbd5e1', marginTop: 8 }}>{deviation.meaning}</div>

@@ -76,7 +76,7 @@ export default function DFWSmartHubGuide() {
             <div key={h.name} style={{ background: '#0D1F35', borderRadius: 10, padding: '20px 24px', border: '1px solid #1E3A5F' }}>
               <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: 8 }}>
                 <div style={{ fontWeight: 700, fontSize: 18 }}>{h.name}</div>
-                <div style={{ background: h.local ? '#16A34A20′ : '#DC262620', color: h.local ? '#4ADE80' : '#F87171', fontSize: 12, padding: '3px 10px', borderRadius: 99, fontWeight: 600 }}>
+                <div style={{ background: h.local ? '#16A34A20' : '#DC262620', color: h.local ? '#4ADE80' : '#F87171', fontSize: 12, padding: '3px 10px', borderRadius: 99, fontWeight: 600 }}>
                   {h.local ? '🏠 Local Processing' : '☁️ Cloud Dependent'}
                 </div>
               </div>
@@ -89,7 +89,7 @@ export default function DFWSmartHubGuide() {
         </div>
 
         <div style={{ background: '#0D1F35', borderRadius: 12, padding: '28px', border: '1px solid #1E3A5F', marginBottom: 32 }}>
-          <h2 style={{ fontSize: 20, fontWeight: 700, marginBottom: 20, color: '#F5E642′ }}>🔧 Get Your Hub Recommendation</h2>
+          <h2 style={{ fontSize: 20, fontWeight: 700, marginBottom: 20, color: '#F5E642' }}>🔧 Get Your Hub Recommendation</h2>
           <div style={{ marginBottom: 16 }}>
             <label style={{ display: 'block', color: '#CBD5E1', fontSize: 13, marginBottom: 6 }}>Existing Smart Devices (optional)</label>
             <input
@@ -106,7 +106,7 @@ export default function DFWSmartHubGuide() {
                 <button
                   key={p}
                   onClick={() => setPriority(p)}
-                  style={{ padding: '8px 18px', borderRadius: 8, border: `2px solid ${priority === p ? '#F5E642' : '#1E3A5F'}`, background: priority === p ? '#F5E64220′ : ’transparent', color: priority === p ? '#F5E642′ : '#94A3B8', cursor: ’pointer', fontWeight: 600, fontSize: 13, textTransform: 'capitalize' }}
+                  style={{ padding: '8px 18px', borderRadius: 8, border: `2px solid ${priority === p ? '#F5E642' : '#1E3A5F'}`, background: priority === p ? '#F5E64220' : 'transparent', color: priority === p ? '#F5E642' : '#94A3B8', cursor: 'pointer', fontWeight: 600, fontSize: 13, textTransform: 'capitalize' }}
                 >
                   {p === 'reliability' ? '⚡ Reliability' : p === 'features' ? '🔧 Features' : p === 'privacy' ? '🔒 Privacy' : '💵 Cost'}
                 </button>

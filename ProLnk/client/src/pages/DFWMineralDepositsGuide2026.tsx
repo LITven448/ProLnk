@@ -40,7 +40,7 @@ export default function DFWMineralDepositsGuide2026() {
           <div style={{ color: '#F5E642', fontWeight: 700, marginBottom: '1rem' }}>🔍 Fixture → Descaling Guide</div>
           <div style={{ marginBottom: '1rem' }}>
             <div style={{ color: '#8899AA', fontSize: '0.85rem', marginBottom: '0.4rem' }}>Select Fixture</div>
-            <select value={fixture} onChange={(e) => setFixture(e.target.value)} style={{ background: '#0A1628', border: '1px solid #2A3A55', borderRadius: '8px', padding: '0.5rem 1rem', color: '#E8EDF5′ }}>
+            <select value={fixture} onChange={(e) => setFixture(e.target.value)} style={{ background: '#0A1628', border: '1px solid #2A3A55', borderRadius: '8px', padding: '0.5rem 1rem', color: '#E8EDF5' }}>
               {fixtures.map((f) => <option key={f}>{f}</option>)}
             </select>
           </div>

@@ -29,11 +29,11 @@ export default function DFWNewDevelopmentGuide2026B() {
         </div>
 
         <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap', justifyContent: 'center', marginBottom: 24 }}>
-          <button onClick={() => setFilter('')} style={{ padding: '7px 14px', borderRadius: 8, border: 'none', cursor: 'pointer', fontSize: 13, fontWeight: 600, background: !filter ? '#F5E642′ : '#1e3a5f', color: !filter ? '#0A1628' : '#94a3b8' }}>All</button>
+          <button onClick={() => setFilter('')} style={{ padding: '7px 14px', borderRadius: 8, border: 'none', cursor: 'pointer', fontSize: 13, fontWeight: 600, background: !filter ? '#F5E642' : '#1e3a5f', color: !filter ? '#0A1628' : '#94a3b8' }}>All</button>
           {lifestyleOptions.map(l => (
             <button key={l.id} onClick={() => setFilter(l.id)}
               style={{ padding: '7px 14px', borderRadius: 8, border: 'none', cursor: 'pointer', fontSize: 13, fontWeight: 600,
-                background: filter === l.id ? '#F5E642′ : '#1e3a5f', color: filter === l.id ? '#0A1628' : '#94a3b8' }}>
+                background: filter === l.id ? '#F5E642' : '#1e3a5f', color: filter === l.id ? '#0A1628' : '#94a3b8' }}>
               {l.emoji} {l.label}
             </button>
           ))}
@@ -45,12 +45,12 @@ export default function DFWNewDevelopmentGuide2026B() {
               <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: 12 }}>
                 <div>
                   <h2 style={{ fontSize: 19, fontWeight: 700, color: '#F5E642', margin: 0 }}>{c.emoji} {c.name}</h2>
-                  <p style={{ color: '#94a3b8', fontSize: 13, margin: '2px 0′ }}>{c.city}, TX</p>
+                  <p style={{ color: '#94a3b8', fontSize: 13, margin: '2px 0' }}>{c.city}, TX</p>
                 </div>
                 <span style={{ background: '#0A1628', color: '#F5E642', padding: '4px 10px', borderRadius: 6, fontSize: 13, fontWeight: 700 }}>{c.price}</span>
               </div>
               {c.features.map((f, i) => (
-                <div key={i} style={{ fontSize: 14, color: '#cbd5e1', padding: '4px 0′ }}>• {f}</div>
+                <div key={i} style={{ fontSize: 14, color: '#cbd5e1', padding: '4px 0' }}>• {f}</div>
               ))}
             </div>
           ))}

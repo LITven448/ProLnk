@@ -40,12 +40,12 @@ export default function DFWAugmentedRealityHomeGuide() {
           <p style={{ color: '#94a3b8', fontSize: 14, marginBottom: 20 }}>Select your use case to see the right AR tool, DFW availability, and cost:</p>
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: 10, marginBottom: 24 }}>
             {useCases.map(u => (
-              <button key={u.id} onClick={() => setSelected(u.id)} style={{ padding: '10px 18px', borderRadius: 8, border: '2px solid', borderColor: selected === u.id ? '#F5E642′ : '#1e3a5f', background: selected === u.id ? '#F5E642' : ’transparent', color: selected === u.id ? '#0A1628′ : '#94a3b8', fontWeight: 700, cursor: ’pointer', fontSize: 13 }}>{u.label}</button>
+              <button key={u.id} onClick={() => setSelected(u.id)} style={{ padding: '10px 18px', borderRadius: 8, border: '2px solid', borderColor: selected === u.id ? '#F5E642' : '#1e3a5f', background: selected === u.id ? '#F5E642' : 'transparent', color: selected === u.id ? '#0A1628' : '#94a3b8', fontWeight: 700, cursor: 'pointer', fontSize: 13 }}>{u.label}</button>
             ))}
           </div>
           <div style={{ background: '#0A1628', borderRadius: 12, padding: 20, marginBottom: 16 }}>
             <div style={{ color: '#F5E642', fontWeight: 700, fontSize: 16, marginBottom: 4 }}>🥽 {uc.tool}</div>
-            <div style={{ display: 'flex', gap: 12, margin: '12px 0′ }}>
+            <div style={{ display: 'flex', gap: 12, margin: '12px 0' }}>
               <div style={{ background: '#003d1a', borderRadius: 8, padding: '6px 14px', fontSize: 12, color: '#22c55e', fontWeight: 700 }}>📍 {uc.dfwAvail}</div>
             </div>
             <div style={{ color: '#94a3b8', fontSize: 14, lineHeight: 1.7, marginBottom: 12 }}>{uc.desc}</div>

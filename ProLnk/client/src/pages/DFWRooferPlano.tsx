@@ -1,9 +1,9 @@
 import { useState } from 'react';
 
 const stats = [
-  { label: 'Avg Hail Events / Year', value: '4-6′ },
+  { label: 'Avg Hail Events / Year', value: '4-6' },
   { label: 'Insurance Claims Filed', value: '12,000+' },
-  { label: 'Avg Roof Replacement Cost', value: '$8,500′ },
+  { label: 'Avg Roof Replacement Cost', value: '$8,500' },
   { label: 'Homes in Plano', value: '100,000+' },
 ];
 
@@ -61,7 +61,7 @@ export default function DFWRooferPlano() {
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))', gap: 16, marginBottom: 32 }}>
           {stats.map(s => (
             <div key={s.label} style={{ backgroundColor: '#1E2D45', borderRadius: 10, padding: 20, textAlign: 'center' }}>
-              <div style={{ fontSize: 28, fontWeight: 800, color: '#F5E642′ }}>{s.value}</div>
+              <div style={{ fontSize: 28, fontWeight: 800, color: '#F5E642' }}>{s.value}</div>
               <div style={{ fontSize: 13, color: '#94A3B8', marginTop: 6 }}>{s.label}</div>
             </div>
           ))}

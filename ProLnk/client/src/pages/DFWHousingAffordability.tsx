@@ -97,7 +97,7 @@ export default function DFWHousingAffordability() {
             </div>
             <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8, marginBottom: 20 }}>
               {selected.cities.map((c) => (
-                <span key={c} style={{ background: '#f4f4f4', padding: '6px 14px', borderRadius: 20, fontSize: 14, fontWeight: 500, color: '#333′ }}>{c}</span>
+                <span key={c} style={{ background: '#f4f4f4', padding: '6px 14px', borderRadius: 20, fontSize: 14, fontWeight: 500, color: '#333' }}>{c}</span>
               ))}
             </div>
             <div style={{ background: '#f9f9f9', borderRadius: 10, padding: '14px 16px' }}>

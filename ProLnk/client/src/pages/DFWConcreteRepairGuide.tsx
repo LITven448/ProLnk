@@ -1,19 +1,19 @@
 import { useState } from 'react';
 
 const repairMethods = [
-  { method: 'Crack Injection / Filling', bestFor: 'Hairline to 1/4″ cracks', costPerSqft: '$3–$6', longevity: '5–10 years', dfwNote: 'Fast fix for clay soil surface cracking' },
+  { method: 'Crack Injection / Filling', bestFor: 'Hairline to 1/4" cracks', costPerSqft: '$3–$6', longevity: '5–10 years', dfwNote: 'Fast fix for clay soil surface cracking' },
   { method: 'Resurfacing / Overlay', bestFor: 'Surface spalling, minor cracks', costPerSqft: '$3–$8', longevity: '7–12 years', dfwNote: 'Good for DFW driveways showing weathering' },
   { method: 'Mudjacking / Slabjacking', bestFor: 'Sunken, uneven slabs', costPerSqft: '$3–$8', longevity: '5–10 years', dfwNote: 'Common in DFW clay — pumps slurry under slab' },
   { method: 'Polyurethane Foam Lifting', bestFor: 'Sunken slabs, trip hazards', costPerSqft: '$5–$14', longevity: '10–15 years', dfwNote: 'More durable than mudjacking in expansive soil' },
   { method: 'Partial Slab Replacement', bestFor: 'Heavily damaged sections', costPerSqft: '$8–$18', longevity: '25–30 years', dfwNote: 'Best when >30% of slab is compromised' },
-  { method: 'Full Driveway Replacement', bestFor: 'Extensive structural failure', costPerSqft: '$6–$12', longevity: '30–40 years', dfwNote: 'Standard 4″ reinforced with rebar for DFW clay' },
+  { method: 'Full Driveway Replacement', bestFor: 'Extensive structural failure', costPerSqft: '$6–$12', longevity: '30–40 years', dfwNote: 'Standard 4" reinforced with rebar for DFW clay' },
 ];
 
 const crackSeverity = [
-  { level: 'Hairline', width: '< 1/16″', cause: 'Normal curing shrinkage or thermal', action: 'Monitor or seal with crack filler', urgent: false },
-  { level: 'Moderate', width: '1/16″–1/4″', cause: 'Clay soil movement or freeze-thaw', action: 'Seal or inject epoxy filler', urgent: false },
-  { level: 'Wide', width: '1/4″–1″', cause: 'Significant clay heave or subsidence', action: 'Mudjacking or polyurethane lift', urgent: true },
-  { level: 'Structural', width: '> 1″ or vertical displacement', cause: 'Soil failure or drainage issue', action: 'Professional assessment + possible replacement', urgent: true },
+  { level: 'Hairline', width: '< 1/16"', cause: 'Normal curing shrinkage or thermal', action: 'Monitor or seal with crack filler', urgent: false },
+  { level: 'Moderate', width: '1/16"–1/4"', cause: 'Clay soil movement or freeze-thaw', action: 'Seal or inject epoxy filler', urgent: false },
+  { level: 'Wide', width: '1/4"–1"', cause: 'Significant clay heave or subsidence', action: 'Mudjacking or polyurethane lift', urgent: true },
+  { level: 'Structural', width: '> 1" or vertical displacement', cause: 'Soil failure or drainage issue', action: 'Professional assessment + possible replacement', urgent: true },
 ];
 
 const areaSizes = [500, 1000, 1500, 2000];
@@ -45,7 +45,7 @@ export default function DFWConcreteRepairGuide() {
           Dallas–Fort Worth 2026 pricing for driveway and sidewalk concrete repair — clay soil movement, mudjacking vs replacement, freeze-thaw effects, and cost by severity.
         </p>
 
-        <div style={{ backgroundColor: '#112244', borderRadius: 12, padding: 24, marginBottom: 32, borderLeft: '4px solid #F5E642′ }}>
+        <div style={{ backgroundColor: '#112244', borderRadius: 12, padding: 24, marginBottom: 32, borderLeft: '4px solid #F5E642' }}>
           <div style={{ fontSize: 20, marginBottom: 4 }}>🏔️ DFW Clay Soil: The Root Cause</div>
           <p style={{ color: '#C8D4E8', margin: 0, lineHeight: 1.6 }}>
             DFW sits on expansive black clay (Blackland Prairie soil) that swells when wet and shrinks when dry. This movement cracks concrete, lifts slabs, and creates trip hazards on sidewalks and driveways — often within 3–5 years of installation. Managing moisture (irrigation, drainage) is the #1 way to extend concrete life in DFW.
@@ -57,7 +57,7 @@ export default function DFWConcreteRepairGuide() {
           {crackSeverity.map((c, i) => (
             <div key={i} style={{ backgroundColor: '#112244', borderRadius: 10, padding: 18, display: 'grid', gridTemplateColumns: '1fr 1fr 1fr 2fr', gap: 12, alignItems: 'center' }}>
               <div>
-                <div style={{ fontWeight: 700, color: c.urgent ? '#EF4444′ : '#FFFFFF', fontSize: 14 }}>{c.level}</div>
+                <div style={{ fontWeight: 700, color: c.urgent ? '#EF4444' : '#FFFFFF', fontSize: 14 }}>{c.level}</div>
                 <div style={{ color: '#A0ADBF', fontSize: 12 }}>{c.width}</div>
               </div>
               <div style={{ color: '#C8D4E8', fontSize: 12 }}>{c.cause}</div>
@@ -112,19 +112,19 @@ export default function DFWConcreteRepairGuide() {
         <div style={{ overflowX: 'auto', marginBottom: 36 }}>
           <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: 13 }}>
             <thead>
-              <tr style={{ backgroundColor: '#1A2E50′ }}>
+              <tr style={{ backgroundColor: '#1A2E50' }}>
                 {['Method', 'Best For', 'Cost/sq ft', 'Longevity', 'DFW Clay Note'].map((h) => (
-                  <th key={h} style={{ padding: '11px 14px', textAlign: 'left', color: '#F5E642′ }}>{h}</th>
+                  <th key={h} style={{ padding: '11px 14px', textAlign: 'left', color: '#F5E642' }}>{h}</th>
                 ))}
               </tr>
             </thead>
             <tbody>
               {repairMethods.map((r, i) => (
-                <tr key={i} style={{ backgroundColor: i % 2 === 0 ? '#0D1E38′ : '#0A1628', borderBottom: '1px solid #1A2E50' }}>
+                <tr key={i} style={{ backgroundColor: i % 2 === 0 ? '#0D1E38' : '#0A1628', borderBottom: '1px solid #1A2E50' }}>
                   <td style={{ padding: '10px 14px', color: '#FFFFFF', fontWeight: 600 }}>{r.method}</td>
-                  <td style={{ padding: '10px 14px', color: '#C8D4E8′ }}>{r.bestFor}</td>
-                  <td style={{ padding: '10px 14px', color: '#F5E642′ }}>{r.costPerSqft}</td>
-                  <td style={{ padding: '10px 14px', color: '#C8D4E8′ }}>{r.longevity}</td>
+                  <td style={{ padding: '10px 14px', color: '#C8D4E8' }}>{r.bestFor}</td>
+                  <td style={{ padding: '10px 14px', color: '#F5E642' }}>{r.costPerSqft}</td>
+                  <td style={{ padding: '10px 14px', color: '#C8D4E8' }}>{r.longevity}</td>
                   <td style={{ padding: '10px 14px', color: '#A0ADBF' }}>{r.dfwNote}</td>
                 </tr>
               ))}

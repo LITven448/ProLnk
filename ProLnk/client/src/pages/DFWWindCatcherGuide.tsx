@@ -49,7 +49,7 @@ export default function DFWWindCatcherGuide() {
   return (
     <div style={{ background: '#0A1628', minHeight: '100vh', color: '#E2E8F0', fontFamily: 'system-ui, sans-serif', padding: '2rem' }}>
       <div style={{ maxWidth: 800, margin: '0 auto' }}>
-        <div style={{ marginBottom: '0.5rem', fontSize: '0.875rem', color: '#94A3B8′ }}>🏠 DFW Building Science</div>
+        <div style={{ marginBottom: '0.5rem', fontSize: '0.875rem', color: '#94A3B8' }}>🏠 DFW Building Science</div>
         <h1 style={{ fontSize: '2rem', fontWeight: 700, color: '#F5E642', marginBottom: '0.5rem' }}>
           Natural Ventilation Guide for DFW
         </h1>
@@ -62,8 +62,8 @@ export default function DFWWindCatcherGuide() {
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0.75rem', marginBottom: '1.25rem' }}>
             {layouts.map(opt => (
               <button key={opt.value} onClick={() => setLayout(opt.value)} style={{
-                background: layout === opt.value ? '#F5E642′ : '#1E3A5F',
-                color: layout === opt.value ? '#0A1628′ : '#E2E8F0',
+                background: layout === opt.value ? '#F5E642' : '#1E3A5F',
+                color: layout === opt.value ? '#0A1628' : '#E2E8F0',
                 border: 'none', borderRadius: 8, padding: '0.75rem', cursor: 'pointer', fontWeight: 600, fontSize: '0.8rem', textAlign: 'left',
               }}>{opt.label}</button>
             ))}
@@ -72,30 +72,30 @@ export default function DFWWindCatcherGuide() {
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0.75rem' }}>
             {seasons.map(opt => (
               <button key={opt.value} onClick={() => setSeason(opt.value)} style={{
-                background: season === opt.value ? '#F5E642′ : '#1E3A5F',
-                color: season === opt.value ? '#0A1628′ : '#E2E8F0',
+                background: season === opt.value ? '#F5E642' : '#1E3A5F',
+                color: season === opt.value ? '#0A1628' : '#E2E8F0',
                 border: 'none', borderRadius: 8, padding: '0.75rem', cursor: 'pointer', fontWeight: 600, fontSize: '0.8rem', textAlign: 'left',
               }}>{opt.label}</button>
             ))}
           </div>
         </div>
 
-        <div style={{ background: data.works ? '#0F2040′ : '#1A0A0A', borderRadius: 12, padding: '1.5rem', border: , marginBottom: '1.5rem' }}>
+        <div style={{ background: data.works ? '#0F2040' : '#1A0A0A', borderRadius: 12, padding: '1.5rem', border: , marginBottom: '1.5rem' }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', marginBottom: '1rem' }}>
             <span style={{ fontSize: '1.5rem' }}>{data.works ? '✅' : '🚫'}</span>
             <div>
-              <div style={{ fontWeight: 700, color: data.works ? '#6EE7B7′ : '#FCA5A5', fontSize: '1rem' }}>{data.works ? ’Natural Ventilation Works This Season' : 'Natural Ventilation Limited This Season'}</div>
+              <div style={{ fontWeight: 700, color: data.works ? '#6EE7B7' : '#FCA5A5', fontSize: '1rem' }}>{data.works ? 'Natural Ventilation Works This Season' : 'Natural Ventilation Limited This Season'}</div>
               <div style={{ color: '#94A3B8', fontSize: '0.85rem', marginTop: '0.2rem' }}>{data.note}</div>
             </div>
           </div>
           <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
             {data.methods.map((m, i) => (
-              <div key={i} style={{ background: '#1E3A5F', borderRadius: 8, padding: '0.75rem', fontSize: '0.9rem', color: '#E2E8F0′ }}>💨 {m}</div>
+              <div key={i} style={{ background: '#1E3A5F', borderRadius: 8, padding: '0.75rem', fontSize: '0.9rem', color: '#E2E8F0' }}>💨 {m}</div>
             ))}
           </div>
         </div>
 
-        <div style={{ background: '#F5E642', borderRadius: 12, padding: '1.25rem', color: '#0A1628′ }}>
+        <div style={{ background: '#F5E642', borderRadius: 12, padding: '1.25rem', color: '#0A1628' }}>
           <div style={{ fontWeight: 700, marginBottom: '0.25rem' }}>🌬️ DFW Whole-House Fan Rule</div>
           <div style={{ fontSize: '0.9rem', lineHeight: 1.6 }}>A whole-house fan is the highest-ROI ventilation upgrade for DFW. It flushes 4,000-6,000 CFM through your home in minutes, dropping indoor temp by 10F overnight during spring and fall shoulder seasons. Cost: -,500 installed. Payback: 2-3 years.</div>
         </div>

@@ -4,10 +4,10 @@ const dogSizes = ['Small (under 25 lbs)', 'Medium (25–60 lbs)', 'Large (60–1
 const yardConstraints = ['Small yard (<1,500 sqft)', 'Medium yard (1,500–4,000 sqft)', 'Large yard (4,000+ sqft)', 'HOA restrictions', 'Sloped terrain', 'DFW clay soil issues'];
 
 const runSpecs: Record<string, { dimensions: string; surface: string; cooling: string; cost: string }> = {
-  'Small (under 25 lbs)': { dimensions: '6ft × 10ft minimum', surface: 'Decomposed granite or artificial turf', cooling: 'Shade structure + water bowl station', cost: '$800–$2,500′ },
-  'Medium (25–60 lbs)': { dimensions: '10ft × 20ft minimum', surface: 'Artificial turf with drainage layer', cooling: 'Shade sail + misting system', cost: '$2,000–$5,000′ },
-  'Large (60–100 lbs)': { dimensions: '15ft × 30ft minimum', surface: 'Artificial turf with sub-base drainage', cooling: 'Covered structure + misting fan system', cost: '$4,000–$9,000′ },
-  'XL/Giant (100+ lbs)': { dimensions: '20ft × 40ft+ minimum', surface: 'Artificial turf (extra thick) or large pea gravel', cooling: 'Full covered structure + misting system essential', cost: '$6,000–$15,000′ },
+  'Small (under 25 lbs)': { dimensions: '6ft × 10ft minimum', surface: 'Decomposed granite or artificial turf', cooling: 'Shade structure + water bowl station', cost: '$800–$2,500' },
+  'Medium (25–60 lbs)': { dimensions: '10ft × 20ft minimum', surface: 'Artificial turf with drainage layer', cooling: 'Shade sail + misting system', cost: '$2,000–$5,000' },
+  'Large (60–100 lbs)': { dimensions: '15ft × 30ft minimum', surface: 'Artificial turf with sub-base drainage', cooling: 'Covered structure + misting fan system', cost: '$4,000–$9,000' },
+  'XL/Giant (100+ lbs)': { dimensions: '20ft × 40ft+ minimum', surface: 'Artificial turf (extra thick) or large pea gravel', cooling: 'Full covered structure + misting system essential', cost: '$6,000–$15,000' },
 };
 
 export default function DFWDogRunGuide() {
@@ -62,7 +62,7 @@ export default function DFWDogRunGuide() {
         </div>
 
         <div style={{ backgroundColor: '#112240', borderRadius: '16px', padding: '28px', marginBottom: '32px' }}>
-          <h2 style={{ fontSize: '22px', fontWeight: 700, marginBottom: '20px', color: '#F5E642′ }}>
+          <h2 style={{ fontSize: '22px', fontWeight: 700, marginBottom: '20px', color: '#F5E642' }}>
             📐 Dog Run Size Calculator
           </h2>
 
@@ -72,8 +72,8 @@ export default function DFWDogRunGuide() {
               {dogSizes.map(s => (
                 <button key={s} onClick={() => { setDogSize(s); setShowResults(false); }}
                   style={{ padding: '10px 16px', borderRadius: '8px', border: 'none', cursor: 'pointer', fontSize: '13px',
-                    backgroundColor: dogSize === s ? '#F5E642′ : '#1E3A5F',
-                    color: dogSize === s ? '#0A1628′ : '#E8EAF0', fontWeight: 600 }}>
+                    backgroundColor: dogSize === s ? '#F5E642' : '#1E3A5F',
+                    color: dogSize === s ? '#0A1628' : '#E8EAF0', fontWeight: 600 }}>
                   {s}
                 </button>
               ))}
@@ -86,8 +86,8 @@ export default function DFWDogRunGuide() {
               {yardConstraints.map(c => (
                 <button key={c} onClick={() => toggleConstraint(c)}
                   style={{ padding: '8px 14px', borderRadius: '8px', border: '2px solid',
-                    borderColor: selectedConstraints.includes(c) ? '#F5E642′ : '#1E3A5F',
-                    backgroundColor: selectedConstraints.includes(c) ? '#F5E64220′ : ’transparent',
+                    borderColor: selectedConstraints.includes(c) ? '#F5E642' : '#1E3A5F',
+                    backgroundColor: selectedConstraints.includes(c) ? '#F5E64220' : 'transparent',
                     color: '#E8EAF0', cursor: 'pointer', fontSize: '13px' }}>
                   {c}
                 </button>

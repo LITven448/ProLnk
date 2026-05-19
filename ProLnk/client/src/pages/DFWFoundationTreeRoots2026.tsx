@@ -41,20 +41,20 @@ export default function DFWFoundationTreeRoots2026() {
             <label style={{ color: '#94a3b8', fontSize: 13, display: 'block', marginBottom: 8 }}>Tree Size</label>
             <div style={{ display: 'flex', gap: 8 }}>
               {(['small', 'medium', 'large'] as const).map(s => (
-                <button key={s} onClick={() => setTreeSize(s)} style={{ flex: 1, padding: '8px 0', borderRadius: 8, border: 'none', background: treeSize === s ? '#F5E642′ : '#1e3a5f', color: treeSize === s ? '#0A1628' : '#fff', fontWeight: 700, cursor: ’pointer', textTransform: 'capitalize' }}>{s}</button>
+                <button key={s} onClick={() => setTreeSize(s)} style={{ flex: 1, padding: '8px 0', borderRadius: 8, border: 'none', background: treeSize === s ? '#F5E642' : '#1e3a5f', color: treeSize === s ? '#0A1628' : '#fff', fontWeight: 700, cursor: 'pointer', textTransform: 'capitalize' }}>{s}</button>
               ))}
             </div>
           </div>
           <div style={{ marginBottom: 20 }}>
             <label style={{ color: '#94a3b8', fontSize: 13, display: 'block', marginBottom: 6 }}>
-              Distance from Foundation: <strong style={{ color: '#F5E642′ }}>{proximity} ft</strong>
+              Distance from Foundation: <strong style={{ color: '#F5E642' }}>{proximity} ft</strong>
             </label>
-            <input type="range" min={2} max={40} value={proximity} onChange={e => setProximity(Number(e.target.value))} style={{ width: '100%', accentColor: '#F5E642′ }} />
+            <input type="range" min={2} max={40} value={proximity} onChange={e => setProximity(Number(e.target.value))} style={{ width: '100%', accentColor: '#F5E642' }} />
             <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: 11, color: '#64748b' }}>
               <span>2 ft</span><span>40 ft</span>
             </div>
           </div>
-          <div style={{ background: '#0A1628', borderRadius: 8, padding: 16, borderLeft: '3px solid #F5E642′ }}>
+          <div style={{ background: '#0A1628', borderRadius: 8, padding: 16, borderLeft: '3px solid #F5E642' }}>
             <div style={{ fontWeight: 700, marginBottom: 6 }}>{impact.label}</div>
             <div style={{ color: '#cbd5e1', fontSize: 13, lineHeight: 1.6 }}>{impact.detail}</div>
           </div>

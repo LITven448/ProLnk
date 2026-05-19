@@ -7,7 +7,7 @@ export default function DFWSmartDoorlockGuide2026B() {
   const getRec = () => {
     const recs: Record<string, Record<string, { lock: string; protocol: string; install: string; autoLock: string; tip: string }>> = {
       standard: {
-        amazon: { lock: 'Schlage Encode Plus (Matter/Wi-Fi)', protocol: 'Wi-Fi + Matter', install: '30 min DIY — replaces deadbolt, no wiring', autoLock: 'Set 5-min auto-lock for DFW security', tip: 'Check deadbolt backset: 2-3/8″ or 2-3/4″ before ordering' },
+        amazon: { lock: 'Schlage Encode Plus (Matter/Wi-Fi)', protocol: 'Wi-Fi + Matter', install: '30 min DIY — replaces deadbolt, no wiring', autoLock: 'Set 5-min auto-lock for DFW security', tip: 'Check deadbolt backset: 2-3/8" or 2-3/4" before ordering' },
         apple: { lock: 'Schlage Encode Plus (HomeKit)', protocol: 'Wi-Fi + Matter', install: '30 min DIY', autoLock: 'Works with Apple Home automation', tip: 'HomeKit requires Apple Home hub (HomePod or Apple TV) for remote access' },
         google: { lock: 'Yale Assure Lock 2 (Matter)', protocol: 'Matter over Wi-Fi', install: '45 min DIY', autoLock: 'Set via Google Home app', tip: 'Yale has the slimmest profile — good for DFW interior doors' },
         zwave: { lock: 'Schlage BE469ZP (Z-Wave)', protocol: 'Z-Wave 700', install: '45 min DIY', autoLock: 'Set via SmartThings or Hubitat', tip: 'Z-Wave locks most reliable for home automation triggers' },
@@ -25,7 +25,7 @@ export default function DFWSmartDoorlockGuide2026B() {
   const rec = getRec();
 
   return (
-    <div style={{ background: '#0A1628', minHeight: '100vh', padding: '32px 24px', fontFamily: 'system-ui, sans-serif', color: '#e2e8f0′ }}>
+    <div style={{ background: '#0A1628', minHeight: '100vh', padding: '32px 24px', fontFamily: 'system-ui, sans-serif', color: '#e2e8f0' }}>
       <div style={{ maxWidth: 720, margin: '0 auto' }}>
         <div style={{ textAlign: 'center', marginBottom: 32 }}>
           <div style={{ fontSize: 48, marginBottom: 12 }}>🔐</div>
@@ -87,7 +87,7 @@ export default function DFWSmartDoorlockGuide2026B() {
         </div>
 
         <div style={{ background: '#112240', borderRadius: 12, padding: 20, textAlign: 'center' }}>
-          <p style={{ color: '#94a3b8', fontSize: 13, margin: 0 }}>Need a DFW locksmith or smart home pro to install your smart lock? <span style={{ color: '#F5E642′ }}>ProLnk connects you with vetted local pros.</span></p>
+          <p style={{ color: '#94a3b8', fontSize: 13, margin: 0 }}>Need a DFW locksmith or smart home pro to install your smart lock? <span style={{ color: '#F5E642' }}>ProLnk connects you with vetted local pros.</span></p>
         </div>
       </div>
     </div>

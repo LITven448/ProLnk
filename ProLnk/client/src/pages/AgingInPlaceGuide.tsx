@@ -24,37 +24,37 @@ const modifications: Record<string, Record<string, { items: string[]; costs: str
   },
   'Uses cane/walker': {
     'Single story': {
-      items: ['36″ doorway widening (2 doors)', 'Walk-in shower conversion', 'Grab bars (full set)', 'Non-slip flooring', 'Comfort-height toilet'],
+      items: ['36" doorway widening (2 doors)', 'Walk-in shower conversion', 'Grab bars (full set)', 'Non-slip flooring', 'Comfort-height toilet'],
       costs: ['$1,500-4,000', '$3,000-8,000', '$600-1,200', '$500-1,500', '$200-500'],
     },
     'Two story - bedroom upstairs': {
-      items: ['First-floor bedroom conversion', '36″ doorway widening', 'Walk-in shower conversion', 'Grab bars (full set)', 'Non-slip flooring'],
+      items: ['First-floor bedroom conversion', '36" doorway widening', 'Walk-in shower conversion', 'Grab bars (full set)', 'Non-slip flooring'],
       costs: ['$5,000-15,000', '$1,500-4,000', '$3,000-8,000', '$600-1,200', '$500-1,500'],
     },
     'Two story - all upstairs': {
-      items: ['First-floor living conversion', 'Stair lift (interim)', '36″ doorway widening', 'Walk-in shower conversion', 'Grab bars (full set)'],
+      items: ['First-floor living conversion', 'Stair lift (interim)', '36" doorway widening', 'Walk-in shower conversion', 'Grab bars (full set)'],
       costs: ['$8,000-20,000', '$3,000-6,000', '$1,500-4,000', '$3,000-8,000', '$600-1,200'],
     },
     'Split level': {
-      items: ['Ramp for level changes', '36″ doorway widening', 'Walk-in shower conversion', 'Grab bars (full set)', 'Non-slip flooring'],
+      items: ['Ramp for level changes', '36" doorway widening', 'Walk-in shower conversion', 'Grab bars (full set)', 'Non-slip flooring'],
       costs: ['$1,500-5,000', '$1,500-4,000', '$3,000-8,000', '$600-1,200', '$500-1,500'],
     },
   },
   'Uses wheelchair': {
     'Single story': {
-      items: ['36″ doorway widening throughout', 'Roll-in shower installation', 'Exterior ramp', 'Grab bars and ADA fixtures', 'Raised outlets/lowered switches'],
+      items: ['36" doorway widening throughout', 'Roll-in shower installation', 'Exterior ramp', 'Grab bars and ADA fixtures', 'Raised outlets/lowered switches'],
       costs: ['$6,000-15,000', '$5,000-12,000', '$2,000-6,000', '$1,000-2,500', '$1,500-3,000'],
     },
     'Two story - bedroom upstairs': {
-      items: ['Full first-floor living suite', '36″ doorway widening', 'Roll-in shower installation', 'Exterior ramp', 'Grab bars and ADA fixtures'],
+      items: ['Full first-floor living suite', '36" doorway widening', 'Roll-in shower installation', 'Exterior ramp', 'Grab bars and ADA fixtures'],
       costs: ['$15,000-40,000', '$6,000-15,000', '$5,000-12,000', '$2,000-6,000', '$1,000-2,500'],
     },
     'Two story - all upstairs': {
-      items: ['Residential elevator or lift', '36″ doorway widening', 'Roll-in shower installation', 'Exterior ramp', 'Full ADA kitchen adaptation'],
+      items: ['Residential elevator or lift', '36" doorway widening', 'Roll-in shower installation', 'Exterior ramp', 'Full ADA kitchen adaptation'],
       costs: ['$15,000-35,000', '$6,000-15,000', '$5,000-12,000', '$2,000-6,000', '$8,000-20,000'],
     },
     'Split level': {
-      items: ['Level transition ramps', '36″ doorway widening', 'Roll-in shower installation', 'Exterior ramp', 'Grab bars and ADA fixtures'],
+      items: ['Level transition ramps', '36" doorway widening', 'Roll-in shower installation', 'Exterior ramp', 'Grab bars and ADA fixtures'],
       costs: ['$3,000-8,000', '$6,000-15,000', '$5,000-12,000', '$2,000-6,000', '$1,000-2,500'],
     },
   },
@@ -106,7 +106,7 @@ export default function AgingInPlaceGuide() {
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: 16 }}>
             {[
               { icon: '🚿', title: 'Bathroom Safety', desc: 'Walk-in shower/tub, grab bars, non-slip floors, comfort-height toilet' },
-              { icon: '🚪', title: 'Doorway Widening', desc: '36″ minimum for wheelchair access, lever door handles throughout' },
+              { icon: '🚪', title: 'Doorway Widening', desc: '36" minimum for wheelchair access, lever door handles throughout' },
               { icon: '🪜', title: 'Stair Solutions', desc: 'Stair lifts ($3K-6K), ramps, first-floor living conversion' },
               { icon: '💡', title: 'Smart Lighting', desc: 'Motion sensors, voice control, no-trip lighting at night' },
             ].map((c) => (
@@ -162,7 +162,7 @@ export default function AgingInPlaceGuide() {
             <div>
               <h3 style={{ color: '#F5E642', marginBottom: 16 }}>Your Top 5 Recommended Modifications</h3>
               {result.items.map((item, i) => (
-                <div key={i} style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '12px 0', borderBottom: '1px solid #334155′ }}>
+                <div key={i} style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '12px 0', borderBottom: '1px solid #334155' }}>
                   <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
                     <span style={{ background: '#F5E642', color: '#0A1628', borderRadius: '50%', width: 28, height: 28, display: 'flex', alignItems: 'center', justifyContent: 'center', fontWeight: 800, fontSize: 13, flexShrink: 0 }}>{i + 1}</span>
                     <span>{item}</span>

@@ -48,13 +48,13 @@ export default function DFWProLnkPartnerQuarter1() {
               </select>
             </div>
           </div>
-          <button onClick={() => setShown(true)} disabled={!trade || !network} style={{ marginTop: 16, background: trade && network ? '#F5E642′ : '#1E3A5F', color: trade && network ? '#0A1628' : '#445566', border: ’none', borderRadius: 8, padding: '12px 24px', fontWeight: 700, fontSize: 15, cursor: trade && network ? 'pointer' : 'not-allowed', width: '100%' }}>
+          <button onClick={() => setShown(true)} disabled={!trade || !network} style={{ marginTop: 16, background: trade && network ? '#F5E642' : '#1E3A5F', color: trade && network ? '#0A1628' : '#445566', border: 'none', borderRadius: 8, padding: '12px 24px', fontWeight: 700, fontSize: 15, cursor: trade && network ? 'pointer' : 'not-allowed', width: '100%' }}>
             Generate My 90-Day Milestones →
           </button>
         </div>
 
         {MILESTONES.map((m, i) => (
-          <div key={i} style={{ background: '#0D1F38', borderRadius: 12, padding: 24, marginBottom: 16, borderLeft: '4px solid #F5E642′ }}>
+          <div key={i} style={{ background: '#0D1F38', borderRadius: 12, padding: 24, marginBottom: 16, borderLeft: '4px solid #F5E642' }}>
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 12 }}>
               <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
                 <span style={{ fontSize: 24 }}>{m.icon}</span>
@@ -67,7 +67,7 @@ export default function DFWProLnkPartnerQuarter1() {
             </div>
             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 8 }}>
               {m.targets.map((t, j) => (
-                <div key={j} style={{ background: '#0A1628', borderRadius: 6, padding: '8px 12px', fontSize: 13, color: '#C8D8E8′ }}>✓ {t}</div>
+                <div key={j} style={{ background: '#0A1628', borderRadius: 6, padding: '8px 12px', fontSize: 13, color: '#C8D8E8' }}>✓ {t}</div>
               ))}
             </div>
           </div>

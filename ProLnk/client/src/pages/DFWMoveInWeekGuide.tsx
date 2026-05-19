@@ -78,7 +78,7 @@ export default function DFWMoveInWeekGuide() {
           <label key={t.task} style={{ display: 'flex', gap: 12, marginBottom: 12, cursor: 'pointer', alignItems: 'flex-start' }}>
             <input type="checkbox" checked={checked.includes(t.task)} onChange={() => toggleCheck(t.task)} style={{ marginTop: 3, flexShrink: 0 }} />
             <div>
-              <div style={{ fontSize: 14, fontWeight: checked.includes(t.task) ? 400 : 600, color: checked.includes(t.task) ? '#94a3b8′ : '#0A1628', textDecoration: checked.includes(t.task) ? ’line-through' : 'none' }}>{t.task}</div>
+              <div style={{ fontSize: 14, fontWeight: checked.includes(t.task) ? 400 : 600, color: checked.includes(t.task) ? '#94a3b8' : '#0A1628', textDecoration: checked.includes(t.task) ? 'line-through' : 'none' }}>{t.task}</div>
               <div style={{ fontSize: 12, color: '#64748b', marginTop: 2 }}>💡 {t.why}</div>
             </div>
           </label>
@@ -93,14 +93,14 @@ export default function DFWMoveInWeekGuide() {
         <div style={{ background: '#0A1628', borderRadius: 12, padding: '28px 32px', marginBottom: 32 }}>
           <div style={{ fontSize: 13, color: '#F5E642', fontWeight: 600, marginBottom: 6 }}>DFW MOVE-IN WEEK GUIDE</div>
           <h1 style={{ fontSize: 28, fontWeight: 700, color: '#fff', margin: 0 }}>📦 Your First Week in Your DFW Home</h1>
-          <p style={{ color: '#94a3b8', margin: '8px 0 0′ }}>Done: {done}/{total} tasks · The first week sets up the next 30 years.</p>
+          <p style={{ color: '#94a3b8', margin: '8px 0 0' }}>Done: {done}/{total} tasks · The first week sets up the next 30 years.</p>
         </div>
 
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16, marginBottom: 24 }}>
           <div style={{ background: '#fff', borderRadius: 12, padding: 20, boxShadow: '0 1px 4px rgba(0,0,0,0.08)' }}>
             <div style={{ fontWeight: 700, marginBottom: 12 }}>🏠 Home Age</div>
             {homeAges.map(a => (
-              <button key={a} onClick={() => setAge(a === age ? '' : a)} style={{ display: 'block', width: '100%', textAlign: 'left', padding: '8px 12px', borderRadius: 8, border: age === a ? '2px solid #F5E642′ : '1px solid #e2e8f0', background: age === a ? '#0A1628' : '#F9FAFB', color: age === a ? '#F5E642' : '#0A1628', fontWeight: age === a ? 700 : 400, cursor: ’pointer', fontSize: 14, marginBottom: 6 }}>
+              <button key={a} onClick={() => setAge(a === age ? '' : a)} style={{ display: 'block', width: '100%', textAlign: 'left', padding: '8px 12px', borderRadius: 8, border: age === a ? '2px solid #F5E642' : '1px solid #e2e8f0', background: age === a ? '#0A1628' : '#F9FAFB', color: age === a ? '#F5E642' : '#0A1628', fontWeight: age === a ? 700 : 400, cursor: 'pointer', fontSize: 14, marginBottom: 6 }}>
                 {a}
               </button>
             ))}
@@ -108,7 +108,7 @@ export default function DFWMoveInWeekGuide() {
           <div style={{ background: '#fff', borderRadius: 12, padding: 20, boxShadow: '0 1px 4px rgba(0,0,0,0.08)' }}>
             <div style={{ fontWeight: 700, marginBottom: 12 }}>✨ Your Home Has (select all)</div>
             {features.map(f => (
-              <button key={f} onClick={() => toggleFeature(f)} style={{ display: 'block', width: '100%', textAlign: 'left', padding: '8px 12px', borderRadius: 8, border: selectedFeatures.includes(f) ? '2px solid #F5E642′ : '1px solid #e2e8f0', background: selectedFeatures.includes(f) ? '#0A1628' : '#F9FAFB', color: selectedFeatures.includes(f) ? '#F5E642' : '#0A1628', fontWeight: selectedFeatures.includes(f) ? 700 : 400, cursor: ’pointer', fontSize: 14, marginBottom: 6 }}>
+              <button key={f} onClick={() => toggleFeature(f)} style={{ display: 'block', width: '100%', textAlign: 'left', padding: '8px 12px', borderRadius: 8, border: selectedFeatures.includes(f) ? '2px solid #F5E642' : '1px solid #e2e8f0', background: selectedFeatures.includes(f) ? '#0A1628' : '#F9FAFB', color: selectedFeatures.includes(f) ? '#F5E642' : '#0A1628', fontWeight: selectedFeatures.includes(f) ? 700 : 400, cursor: 'pointer', fontSize: 14, marginBottom: 6 }}>
                 {f}
               </button>
             ))}

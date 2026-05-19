@@ -61,7 +61,7 @@ export default function DFWBrickMasonryGuide() {
           {BRICK_TYPES.map(b => (
             <div key={b.type} style={{ background: '#111E35', border: '1px solid #1E3A5F', borderRadius: '8px', padding: '1rem' }}>
               <div style={{ color: '#F5E642', fontWeight: 700, fontSize: '0.9rem' }}>{b.type}</div>
-              <div style={{ color: '#8899AA', fontSize: '0.75rem', margin: '0.25rem 0′ }}>Era: {b.era}</div>
+              <div style={{ color: '#8899AA', fontSize: '0.75rem', margin: '0.25rem 0' }}>Era: {b.era}</div>
               <div style={{ color: '#C5D3E0', fontSize: '0.8rem', lineHeight: 1.5 }}>{b.desc}</div>
             </div>
           ))}

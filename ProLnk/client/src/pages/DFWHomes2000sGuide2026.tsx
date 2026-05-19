@@ -35,7 +35,7 @@ export default function DFWHomes2000sGuide2026() {
   const [showGuide, setShowGuide] = useState(false);
 
   return (
-    <div style={{ background: '#0A1628', minHeight: '100vh', padding: '32px 16px', fontFamily: 'system-ui, sans-serif', color: '#E8EDF5′ }}>
+    <div style={{ background: '#0A1628', minHeight: '100vh', padding: '32px 16px', fontFamily: 'system-ui, sans-serif', color: '#E8EDF5' }}>
       <div style={{ maxWidth: 720, margin: '0 auto' }}>
         <div style={{ background: '#F5E642', color: '#0A1628', borderRadius: 12, padding: '24px', marginBottom: 32 }}>
           <div style={{ fontSize: 36 }}>🏗️</div>
@@ -49,7 +49,7 @@ export default function DFWHomes2000sGuide2026() {
           <div style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
             {decades.map(d => (
               <div key={d.id} onClick={() => { setSelected(d.id); setShowGuide(false); }}
-                style={{ background: selected === d.id ? '#1A2E50′ : '#0D1E38', border: `2px solid ${selected === d.id ? '#F5E642' : '#1E3A5F'}`, borderRadius: 10, padding: '14px 16px', cursor: ’pointer', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                style={{ background: selected === d.id ? '#1A2E50' : '#0D1E38', border: `2px solid ${selected === d.id ? '#F5E642' : '#1E3A5F'}`, borderRadius: 10, padding: '14px 16px', cursor: 'pointer', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
                 <div>
                   <div style={{ fontWeight: 600, fontSize: 15 }}>{d.label}</div>
                   <div style={{ color: '#9EB0CC', fontSize: 13 }}>{d.desc}</div>
@@ -76,7 +76,7 @@ export default function DFWHomes2000sGuide2026() {
               { label: '🧱 Stucco/Exterior', val: guide[selected].stucco },
               { label: '🏗️ Foundation', val: guide[selected].foundation },
             ].map(item => (
-              <div key={item.label} style={{ background: '#0D1E38', borderRadius: 10, padding: 14, marginBottom: 10, borderLeft: '4px solid #F5E642′ }}>
+              <div key={item.label} style={{ background: '#0D1E38', borderRadius: 10, padding: 14, marginBottom: 10, borderLeft: '4px solid #F5E642' }}>
                 <div style={{ fontWeight: 700, marginBottom: 4 }}>{item.label}</div>
                 <div style={{ color: '#9EB0CC', fontSize: 13 }}>{item.val}</div>
               </div>

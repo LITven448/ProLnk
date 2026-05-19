@@ -111,7 +111,7 @@ export default function DFWSmartCircuitGuide() {
           </div>
           <button onClick={calculate} style={{ background: '#F5E642', color: '#0A1628', border: 'none', borderRadius: 10, padding: '12px 28px', fontWeight: 800, fontSize: 15, cursor: 'pointer' }}>Get My Monitor Recommendation</button>
           {result && (
-            <div style={{ marginTop: 20, background: '#0A1628', borderRadius: 10, padding: 20, border: '1px solid #F5E642′ }}>
+            <div style={{ marginTop: 20, background: '#0A1628', borderRadius: 10, padding: 20, border: '1px solid #F5E642' }}>
               {!result.compatible && (
                 <div style={{ background: '#3A1A1A', borderRadius: 8, padding: 12, marginBottom: 12, color: '#FF8A8A', fontSize: 13 }}>
                   Warning: Federal Pacific panels should be replaced before adding smart monitoring - these panels have known safety issues common in pre-1990 DFW homes.

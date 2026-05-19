@@ -12,26 +12,26 @@ export default function DFWAirConditionerBrand2026() {
     const sq = parseInt(homeSize);
     if (priority === 'reliability') {
       if (budget === 'value') {
-        brand = 'Lennox'; model = 'Merit Series ML14XC1'; seer = '14–16 SEER2'; cost = sq < 2000 ? '$4,500–$6,500′ : '$6,500–$9,000';
+        brand = 'Lennox'; model = 'Merit Series ML14XC1'; seer = '14–16 SEER2'; cost = sq < 2000 ? '$4,500–$6,500' : '$6,500–$9,000';
         warranty = '5-year parts, 10-year compressor';
         notes = 'Lennox has the largest DFW dealer network — critical for warranty service. ML14 runs 3,000+ hours/year in DFW, proven track record.';
       } else {
-        brand = 'Trane'; model = 'XR15 or XV20i'; seer = '15–22 SEER2'; cost = sq < 2000 ? '$6,000–$9,000′ : '$9,000–$14,000';
+        brand = 'Trane'; model = 'XR15 or XV20i'; seer = '15–22 SEER2'; cost = sq < 2000 ? '$6,000–$9,000' : '$9,000–$14,000';
         warranty = '10-year registered parts + compressor';
         notes = 'Trane "Nothing Stops a Trane" reputation holds in DFW. XV20i variable-speed handles continuous DFW summer operation without cycling stress.';
       }
     } else if (priority === 'efficiency') {
       if (budget === 'value') {
-        brand = 'Carrier'; model = 'Performance 16 (24ACC6)'; seer = '16 SEER2'; cost = sq < 2000 ? '$5,000–$7,500′ : '$7,500–$10,500';
+        brand = 'Carrier'; model = 'Performance 16 (24ACC6)'; seer = '16 SEER2'; cost = sq < 2000 ? '$5,000–$7,500' : '$7,500–$10,500';
         warranty = '5-year parts, 10-year compressor';
         notes = 'Carrier offers best efficiency at mid-price. At DFW 100°F+, SEER2 ratings drop — a 16 SEER2 unit performs like 13–14 in peak summer. Still top-tier at this budget.';
       } else {
-        brand = 'Daikin'; model = 'DX20VC (variable capacity)'; seer = '21–24.5 SEER2'; cost = sq < 2000 ? '$7,500–$11,000′ : '$11,000–$16,000';
+        brand = 'Daikin'; model = 'DX20VC (variable capacity)'; seer = '21–24.5 SEER2'; cost = sq < 2000 ? '$7,500–$11,000' : '$11,000–$16,000';
         warranty = '12-year parts + labor via Daikin Comfort Pro';
         notes = 'Daikin variable-capacity excels in DFW — modulates 25–100% output so it never short-cycles. Best humidity control in DFW summer. Growing dealer network in Metroplex.';
       }
     } else {
-      brand = 'Carrier'; model = 'Infinity 24 with Infinity Control'; seer = '21 SEER2'; cost = sq < 2000 ? '$8,000–$12,000′ : '$12,000–$18,000';
+      brand = 'Carrier'; model = 'Infinity 24 with Infinity Control'; seer = '21 SEER2'; cost = sq < 2000 ? '$8,000–$12,000' : '$12,000–$18,000';
       warranty = '10-year parts + compressor (registered)';
       notes = 'Infinity Control is best-in-class smart thermostat integration. Works with Alexa, Google, Apple Home. Predictive scheduling for DFW pre-cooling before peak rate hours (3–7pm).';
     }
@@ -60,19 +60,19 @@ export default function DFWAirConditionerBrand2026() {
           <div style={{ overflowX: 'auto' }}>
             <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: 13 }}>
               <thead>
-                <tr style={{ borderBottom: '1px solid #1A3055′ }}>
+                <tr style={{ borderBottom: '1px solid #1A3055' }}>
                   {['Brand', 'DFW Score', 'Local Service', 'Heat Rating', 'DFW Notes'].map(h => (
-                    <th key={h} style={{ textAlign: 'left', padding: '8px 10px', color: '#F5E642′ }}>{h}</th>
+                    <th key={h} style={{ textAlign: 'left', padding: '8px 10px', color: '#F5E642' }}>{h}</th>
                   ))}
                 </tr>
               </thead>
               <tbody>
                 {brands.map(b => (
-                  <tr key={b.brand} style={{ borderBottom: '1px solid #0A1628′ }}>
+                  <tr key={b.brand} style={{ borderBottom: '1px solid #0A1628' }}>
                     <td style={{ padding: '9px 10px', color: '#E8EDF5', fontWeight: 700 }}>{b.brand}</td>
                     <td style={{ padding: '9px 10px', color: '#F5E642', fontWeight: 700 }}>{b.dfwScore}</td>
-                    <td style={{ padding: '9px 10px', color: '#9BAEC8′ }}>{b.service}</td>
-                    <td style={{ padding: '9px 10px', color: '#9BAEC8′ }}>{b.heat}</td>
+                    <td style={{ padding: '9px 10px', color: '#9BAEC8' }}>{b.service}</td>
+                    <td style={{ padding: '9px 10px', color: '#9BAEC8' }}>{b.heat}</td>
                     <td style={{ padding: '9px 10px', color: '#9BAEC8', fontSize: 12 }}>{b.note}</td>
                   </tr>
                 ))}
@@ -94,7 +94,7 @@ export default function DFWAirConditionerBrand2026() {
             </div>
             <div>
               <label style={{ display: 'block', color: '#9BAEC8', marginBottom: 8, fontSize: 14 }}>Home Size (sq ft)</label>
-              <input type="number" placeholder="e.g. 2200″ value={homeSize} onChange={e => setHomeSize(e.target.value)}
+              <input type="number" placeholder="e.g. 2200" value={homeSize} onChange={e => setHomeSize(e.target.value)}
                 style={{ width: '100%', padding: '12px 16px', background: '#0A1628', border: '1px solid #1A3055', borderRadius: 8, color: '#E8EDF5', fontSize: 15, boxSizing: 'border-box' }} />
             </div>
             <div>
@@ -113,7 +113,7 @@ export default function DFWAirConditionerBrand2026() {
             </button>
           </div>
           {result && (
-            <div style={{ marginTop: 24, background: '#0A1628', borderRadius: 10, padding: 20, borderLeft: '3px solid #F5E642′ }}>
+            <div style={{ marginTop: 24, background: '#0A1628', borderRadius: 10, padding: 20, borderLeft: '3px solid #F5E642' }}>
               <div style={{ display: 'grid', gap: 10 }}>
                 <div><span style={{ color: '#9BAEC8', fontSize: 13 }}>Recommended Brand</span><div style={{ color: '#F5E642', fontWeight: 700, fontSize: 20, marginTop: 2 }}>{result.brand}</div></div>
                 <div><span style={{ color: '#9BAEC8', fontSize: 13 }}>Model</span><div style={{ color: '#E8EDF5', fontWeight: 600, marginTop: 2 }}>{result.model}</div></div>

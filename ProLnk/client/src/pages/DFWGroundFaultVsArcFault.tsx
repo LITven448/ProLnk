@@ -58,13 +58,13 @@ export default function DFWGroundFaultVsArcFault() {
           <div style={{ background: '#0F2040', borderRadius: 12, padding: '1.25rem' }}>
             <h2 style={{ color: '#F5E642', fontSize: '1rem', marginBottom: '0.75rem' }}>⚡ GFCI — Shock Prevention</h2>
             {[['Threat', 'Current flowing through your body to ground'], ['How it Works', 'Compares hot and neutral current — 5mA difference trips it'], ['Speed', '1/40th second — before cardiac arrest risk'], ['Where Required', 'Bathrooms, kitchens, garages, outdoors, basements, pools']].map(([l, v]) => (
-              <div key={l} style={{ marginBottom: '0.5rem', fontSize: '0.88rem' }}><span style={{ color: '#94A3B8′ }}>{l}: </span>{v}</div>
+              <div key={l} style={{ marginBottom: '0.5rem', fontSize: '0.88rem' }}><span style={{ color: '#94A3B8' }}>{l}: </span>{v}</div>
             ))}
           </div>
           <div style={{ background: '#0F2040', borderRadius: 12, padding: '1.25rem' }}>
             <h2 style={{ color: '#F5E642', fontSize: '1rem', marginBottom: '0.75rem' }}>🔥 AFCI — Fire Prevention</h2>
             {[['Threat', 'Electrical arcing in wiring igniting insulation or wood'], ['How it Works', 'Detects arc waveform signature — not just overcurrent'], ['Speed', 'Milliseconds — before temperature ignites material'], ['Where Required', 'Bedrooms, living areas, hallways, all 15/20A circuits (2023 NEC)']].map(([l, v]) => (
-              <div key={l} style={{ marginBottom: '0.5rem', fontSize: '0.88rem' }}><span style={{ color: '#94A3B8′ }}>{l}: </span>{v}</div>
+              <div key={l} style={{ marginBottom: '0.5rem', fontSize: '0.88rem' }}><span style={{ color: '#94A3B8' }}>{l}: </span>{v}</div>
             ))}
           </div>
         </div>
@@ -91,9 +91,9 @@ export default function DFWGroundFaultVsArcFault() {
           {result && (
             <div style={{ marginTop: '1.25rem', background: '#1A3050', borderRadius: 10, padding: '1.25rem' }}>
               <div style={{ fontSize: '1.1rem', fontWeight: 700, marginBottom: '0.75rem' }}>{result.protection}</div>
-              <div style={{ marginBottom: '0.5rem' }}><span style={{ color: '#F5E642′ }}>Why: </span>{result.why}</div>
-              <div style={{ marginBottom: '0.5rem' }}><span style={{ color: '#F5E642′ }}>DFW Factor: </span>{result.dfwFactor}</div>
-              <div><span style={{ color: '#F5E642′ }}>Installation Cost: </span>{result.cost}</div>
+              <div style={{ marginBottom: '0.5rem' }}><span style={{ color: '#F5E642' }}>Why: </span>{result.why}</div>
+              <div style={{ marginBottom: '0.5rem' }}><span style={{ color: '#F5E642' }}>DFW Factor: </span>{result.dfwFactor}</div>
+              <div><span style={{ color: '#F5E642' }}>Installation Cost: </span>{result.cost}</div>
             </div>
           )}
         </div>

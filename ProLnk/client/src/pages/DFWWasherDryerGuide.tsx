@@ -2,10 +2,10 @@ import { useState } from 'react';
 
 const SYMPTOMS: Record<string, { washer: string; dryer: string }> = {
   'Not draining / wet clothes': { washer: '$120–$280', dryer: 'N/A' },
-  'Loud banging or vibrating': { washer: '$80–$200', dryer: '$90–$220′ },
+  'Loud banging or vibrating': { washer: '$80–$200', dryer: '$90–$220' },
   'Not spinning': { washer: '$150–$350', dryer: 'N/A' },
-  'Not heating': { washer: 'N/A', dryer: '$100–$250′ },
-  'Not starting': { washer: '$100–$300', dryer: '$100–$300′ },
+  'Not heating': { washer: 'N/A', dryer: '$100–$250' },
+  'Not starting': { washer: '$100–$300', dryer: '$100–$300' },
   'Leaking water': { washer: '$80–$250', dryer: 'N/A' },
   'Long dry time': { washer: 'N/A', dryer: '$80–$180 (often vent cleaning)' },
 };
@@ -100,12 +100,12 @@ export default function DFWWasherDryerGuide() {
             </div>
             <div>
               <label style={{ display: 'block', color: '#94A3B8', fontSize: 13, marginBottom: 6 }}>Appliance Age (years)</label>
-              <input type="number" value={age} onChange={e => setAge(e.target.value)} placeholder="e.g. 8″ style={{ width: '100%', backgroundColor: '#0A1628', border: '1px solid #1E3A5F', borderRadius: 8, padding: '10px 12px', color: '#F1F5F9', fontSize: 14, boxSizing: 'border-box' }} />
+              <input type="number" value={age} onChange={e => setAge(e.target.value)} placeholder="e.g. 8" style={{ width: '100%', backgroundColor: '#0A1628', border: '1px solid #1E3A5F', borderRadius: 8, padding: '10px 12px', color: '#F1F5F9', fontSize: 14, boxSizing: 'border-box' }} />
             </div>
           </div>
           <button onClick={evaluate} style={{ backgroundColor: '#F5E642', color: '#0A1628', border: 'none', borderRadius: 8, padding: '12px 28px', fontSize: 15, fontWeight: 700, cursor: 'pointer' }}>Analyze →</button>
           {result && (
-            <div style={{ marginTop: 20, backgroundColor: '#0A1628', borderRadius: 10, padding: 20, borderLeft: '4px solid #F5E642′ }}>
+            <div style={{ marginTop: 20, backgroundColor: '#0A1628', borderRadius: 10, padding: 20, borderLeft: '4px solid #F5E642' }}>
               <div style={{ fontSize: 20, fontWeight: 800, marginBottom: 8 }}>{result.verdict}</div>
               <div style={{ display: 'flex', gap: 24, marginBottom: 10, flexWrap: 'wrap' }}>
                 <span style={{ color: '#94A3B8', fontSize: 13 }}>Repair estimate: <span style={{ color: '#F5E642', fontWeight: 700 }}>{result.repairRange}</span></span>

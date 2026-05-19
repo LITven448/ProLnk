@@ -32,7 +32,7 @@ export default function DFWRichardsonHomeownerGuide2026() {
         <div style={{ display: 'flex', flexDirection: 'column', gap: 10, marginBottom: 28 }}>
           {decades.map(d => (
             <button key={d.id} onClick={() => setSelected(d.id === selected ? null : d.id)}
-              style={{ background: selected === d.id ? '#F5E642′ : '#111f35', color: selected === d.id ? '#0A1628' : '#fff', border: ’none', borderRadius: 10, padding: '14px 18px', textAlign: 'left', cursor: 'pointer', fontWeight: 600, fontSize: 15 }}>
+              style={{ background: selected === d.id ? '#F5E642' : '#111f35', color: selected === d.id ? '#0A1628' : '#fff', border: 'none', borderRadius: 10, padding: '14px 18px', textAlign: 'left', cursor: 'pointer', fontWeight: 600, fontSize: 15 }}>
               {d.label}
             </button>
           ))}

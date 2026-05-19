@@ -66,7 +66,7 @@ export default function DFWTileGroutGuide2026() {
           <div>
             <h3 style={{ color: '#F5E642', marginBottom: '1rem' }}>✅ Recommended Grout</h3>
             {result.map(r => (
-              <div key={r.id} style={{ background: '#132035', borderRadius: 10, padding: '1rem', marginBottom: '0.75rem', borderLeft: '3px solid #F5E642′ }}>
+              <div key={r.id} style={{ background: '#132035', borderRadius: 10, padding: '1rem', marginBottom: '0.75rem', borderLeft: '3px solid #F5E642' }}>
                 <div style={{ fontWeight: 700, marginBottom: 4 }}>{r.label}</div>
                 <div style={{ color: '#94a3b8', fontSize: '0.9rem' }}>{r.desc}</div>
               </div>
@@ -78,7 +78,7 @@ export default function DFWTileGroutGuide2026() {
           <h3 style={{ color: '#F5E642', marginBottom: '0.75rem' }}>📅 DFW Grout Sealing Schedule</h3>
           {[['New cement grout', 'Seal within 72 hours of install'],['Annual re-seal', 'Every 12 months in DFW hard water zones'],['Grout color tip', 'Lighter = shows DFW mineral deposits faster; choose mid-tone']].map(([k,v]) => (
             <div key={k} style={{ display: 'flex', justifyContent: 'space-between', padding: '0.5rem 0', borderBottom: '1px solid #1e3a5f', fontSize: '0.9rem' }}>
-              <span style={{ color: '#94a3b8′ }}>{k}</span><span style={{ color: '#F5E642' }}>{v}</span>
+              <span style={{ color: '#94a3b8' }}>{k}</span><span style={{ color: '#F5E642' }}>{v}</span>
             </div>
           ))}
         </div>

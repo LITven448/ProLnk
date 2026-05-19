@@ -20,7 +20,7 @@ export default function DFWThumbtackVsProLnkGuide2026() {
       <div style={{ maxWidth: 860, margin: '0 auto' }}>
         <div style={{ textAlign: 'center', marginBottom: '2rem' }}>
           <span style={{ fontSize: '2.5rem' }}>📊</span>
-          <h1 style={{ color: '#F5E642', fontSize: '1.8rem', margin: '0.5rem 0′ }}>ProLnk vs Thumbtack — DFW 2026</h1>
+          <h1 style={{ color: '#F5E642', fontSize: '1.8rem', margin: '0.5rem 0' }}>ProLnk vs Thumbtack — DFW 2026</h1>
           <p style={{ color: '#94a3b8', maxWidth: 580, margin: '0 auto' }}>
             Stop paying $15–50 per quote. See how ProLnk's flat model saves DFW pros thousands annually.
           </p>
@@ -40,7 +40,7 @@ export default function DFWThumbtackVsProLnkGuide2026() {
           ))}
         </div>
 
-        <div style={{ background: '#1e293b', borderRadius: 12, padding: '1.5rem', border: '2px solid #F5E642′ }}>
+        <div style={{ background: '#1e293b', borderRadius: 12, padding: '1.5rem', border: '2px solid #F5E642' }}>
           <h3 style={{ color: '#F5E642', marginTop: 0 }}>💸 Monthly Cost Calculator</h3>
           <p style={{ color: '#94a3b8', fontSize: '0.9rem' }}>How many quotes do you send per month on Thumbtack?</p>
           <input type="range" min={5} max={60} value={jobs} onChange={(e) => setJobs(Number(e.target.value))}

@@ -13,11 +13,11 @@ export default function DFWFoundationSteelAnchor2026() {
   ];
 
   const results: Record<string, { verdict: string; detail: string; color: string }> = {
-    bow_basement: { verdict: 'Wall Anchors Apply — With Caveats', detail: 'Bowing basement walls are rare in DFW (most homes are slab). Where basements exist, helical wall anchors driven horizontally into stable soil can halt movement. Carbon fiber strips handle minor bowing under 2 inches. Engineer assessment mandatory.', color: '#F5E642′ },
+    bow_basement: { verdict: 'Wall Anchors Apply — With Caveats', detail: 'Bowing basement walls are rare in DFW (most homes are slab). Where basements exist, helical wall anchors driven horizontally into stable soil can halt movement. Carbon fiber strips handle minor bowing under 2 inches. Engineer assessment mandatory.', color: '#F5E642' },
     retaining: { verdict: 'Wall Anchors Highly Applicable', detail: 'DFW retaining walls commonly fail due to expansive clay soil pressure after heavy rain. Helical wall anchors driven perpendicular to wall into deadman anchors are standard repair. Tieback anchors used for taller retaining walls.', color: '#22c55e' },
-    crack_horizontal: { verdict: 'Immediate Engineering Assessment', detail: 'Horizontal cracks in foundation walls indicate lateral soil pressure — the most serious crack type. Wall anchors may be needed but structural engineer must assess immediately. Do not delay — horizontal cracks can lead to wall collapse.', color: '#ef4444′ },
-    crack_vertical: { verdict: 'Wall Anchors Likely NOT Needed', detail: 'Vertical cracks typically indicate settlement, not lateral pressure. Wall anchors address lateral force — they do not stabilize settlement. Vertical cracks in DFW are usually addressed with underpinning (piers), not wall anchors.', color: '#3b82f6′ },
-    slab: { verdict: 'Wall Anchors Do Not Apply', detail: 'Steel wall anchors are for vertical foundation walls (basement or retaining walls). DFW slab foundations have no basement walls to anchor. Foundation issues on slabs are addressed with pier systems (helical, steel push, or bell-bottom).', color: '#94a3b8′ },
+    crack_horizontal: { verdict: 'Immediate Engineering Assessment', detail: 'Horizontal cracks in foundation walls indicate lateral soil pressure — the most serious crack type. Wall anchors may be needed but structural engineer must assess immediately. Do not delay — horizontal cracks can lead to wall collapse.', color: '#ef4444' },
+    crack_vertical: { verdict: 'Wall Anchors Likely NOT Needed', detail: 'Vertical cracks typically indicate settlement, not lateral pressure. Wall anchors address lateral force — they do not stabilize settlement. Vertical cracks in DFW are usually addressed with underpinning (piers), not wall anchors.', color: '#3b82f6' },
+    slab: { verdict: 'Wall Anchors Do Not Apply', detail: 'Steel wall anchors are for vertical foundation walls (basement or retaining walls). DFW slab foundations have no basement walls to anchor. Foundation issues on slabs are addressed with pier systems (helical, steel push, or bell-bottom).', color: '#94a3b8' },
   };
 
   const handleCheck = () => {
@@ -53,12 +53,12 @@ export default function DFWFoundationSteelAnchor2026() {
           <p style={{ color: '#94a3b8', marginBottom: '1rem', fontSize: '0.9rem' }}>Select your wall situation:</p>
           <div style={{ display: 'grid', gap: '0.5rem', marginBottom: '1rem' }}>
             {situations.map(s => (
-              <button key={s.id} onClick={() => setWallSituation(s.id)} style={{ padding: '0.65rem 1rem', borderRadius: '8px', border: '1px solid', borderColor: wallSituation === s.id ? '#F5E642′ : '#1e3a5f', background: wallSituation === s.id ? '#1a2f4a' : '#0A1628', color: '#fff', textAlign: ’left', cursor: 'pointer', fontSize: '0.9rem' }}>{s.label}</button>
+              <button key={s.id} onClick={() => setWallSituation(s.id)} style={{ padding: '0.65rem 1rem', borderRadius: '8px', border: '1px solid', borderColor: wallSituation === s.id ? '#F5E642' : '#1e3a5f', background: wallSituation === s.id ? '#1a2f4a' : '#0A1628', color: '#fff', textAlign: 'left', cursor: 'pointer', fontSize: '0.9rem' }}>{s.label}</button>
             ))}
           </div>
           <button onClick={handleCheck} style={{ background: '#F5E642', color: '#0A1628', border: 'none', borderRadius: '8px', padding: '0.75rem 1.5rem', fontWeight: 700, cursor: 'pointer', fontSize: '0.95rem' }}>Check Applicability</button>
           {result && results[result] && (
-            <div style={{ marginTop: '1.25rem', padding: '1rem', borderRadius: '8px', borderLeft: `4px solid ${results[result].color}`, background: '#0A1628′ }}>
+            <div style={{ marginTop: '1.25rem', padding: '1rem', borderRadius: '8px', borderLeft: `4px solid ${results[result].color}`, background: '#0A1628' }}>
               <div style={{ color: results[result].color, fontWeight: 700, marginBottom: '0.4rem' }}>{results[result].verdict}</div>
               <div style={{ color: '#94a3b8', fontSize: '0.9rem' }}>{results[result].detail}</div>
             </div>

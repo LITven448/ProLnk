@@ -49,8 +49,8 @@ export default function DFWProLnkRenderCredits2026() {
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: 10 }}>
             {roles.map(r => (
               <button key={r.id} onClick={() => setSelected(r.id)} style={{
-                background: selected === r.id ? '#F5E642′ : '#111D2E',
-                color: selected === r.id ? '#0A1628′ : '#fff',
+                background: selected === r.id ? '#F5E642' : '#111D2E',
+                color: selected === r.id ? '#0A1628' : '#fff',
                 border: '1px solid #F5E642', borderRadius: 8, padding: '10px 16px',
                 cursor: 'pointer', fontWeight: 600, fontSize: 13,
               }}>{r.label}</button>

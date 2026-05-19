@@ -90,7 +90,7 @@ export default function DFWProLnkFuture2027Preview() {
         <p style={{ color: '#F5E642', fontWeight: 700, marginBottom: '1rem' }}>Which 2027 feature are you most excited about?</p>
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1.5rem' }}>
           {featureTypes.map(f => (
-            <button key={f.id} onClick={() => setSelected(f.id)} style={{ background: selected === f.id ? '#F5E642′ : '#1e3a5f', color: selected === f.id ? '#0A1628' : '#fff', border: ’none', borderRadius: 10, padding: '1rem', cursor: 'pointer', textAlign: 'left' }}>
+            <button key={f.id} onClick={() => setSelected(f.id)} style={{ background: selected === f.id ? '#F5E642' : '#1e3a5f', color: selected === f.id ? '#0A1628' : '#fff', border: 'none', borderRadius: 10, padding: '1rem', cursor: 'pointer', textAlign: 'left' }}>
               <div style={{ fontWeight: 700 }}>{f.label}</div>
               <div style={{ fontSize: '.85rem', opacity: .8, marginTop: '.25rem' }}>{f.desc}</div>
             </button>
@@ -106,7 +106,7 @@ export default function DFWProLnkFuture2027Preview() {
             <p style={{ color: '#cbd5e1', fontSize: '.9rem', marginBottom: '1rem' }}>{preview.desc}</p>
             {preview.features.map((f,i)=>(
               <div key={i} style={{ display: 'flex', gap: '.75rem', marginBottom: '.5rem' }}>
-                <span style={{ color: '#F5E642′ }}>→</span>
+                <span style={{ color: '#F5E642' }}>→</span>
                 <span style={{ color: '#cbd5e1', fontSize: '.9rem' }}>{f}</span>
               </div>
             ))}

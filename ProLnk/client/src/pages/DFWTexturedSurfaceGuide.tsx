@@ -32,7 +32,7 @@ export default function DFWTexturedSurfaceGuide() {
       <div style={{ maxWidth: 760, margin: '0 auto' }}>
         <div style={{ marginBottom: '2rem' }}>
           <span style={{ background: '#F5E642', color: '#0A1628', padding: '4px 12px', borderRadius: 4, fontSize: 12, fontWeight: 700 }}>DFW ACCESSIBILITY</span>
-          <h1 style={{ fontSize: '2rem', fontWeight: 800, margin: '1rem 0 0.5rem', color: '#F5E642′ }}>🛡️ Non-Slip & Textured Surface Guide — DFW</h1>
+          <h1 style={{ fontSize: '2rem', fontWeight: 800, margin: '1rem 0 0.5rem', color: '#F5E642' }}>🛡️ Non-Slip & Textured Surface Guide — DFW</h1>
           <p style={{ color: '#8A9BB5', lineHeight: 1.6 }}>DFW's pool culture and afternoon thunderstorms create serious slip hazards. Wet travertine and smooth concrete are among the most dangerous surfaces for older adults. Solutions range from $20 strips to full resurfacing.</p>
         </div>
 
@@ -45,7 +45,7 @@ export default function DFWTexturedSurfaceGuide() {
           ].map(c => (
             <div key={c.label} style={{ background: '#0F2035', borderRadius: 8, padding: '1rem', border: '1px solid #1E3A5F' }}>
               <div style={{ fontSize: 13, color: '#8A9BB5', marginBottom: 4 }}>{c.label}</div>
-              <div style={{ fontWeight: 600, color: '#E8EDF5′ }}>{c.val}</div>
+              <div style={{ fontWeight: 600, color: '#E8EDF5' }}>{c.val}</div>
             </div>
           ))}
         </div>
@@ -55,10 +55,10 @@ export default function DFWTexturedSurfaceGuide() {
           {SOLUTIONS.map(s => (
             <div key={s.surface} style={{ background: '#0F2035', borderRadius: 10, padding: '1rem', marginBottom: '0.75rem', border: '1px solid #1E3A5F' }}>
               <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: 6 }}>
-                <span style={{ fontWeight: 700, color: '#E8EDF5′ }}>{s.surface}</span>
-                <span style={{ background: s.severity === 'Very High' ? '#F8717120′ : s.severity === ’High' ? '#F5E64220′ : '#4ADE8020', color: s.severity === ’Very High' ? '#F87171′ : s.severity === ’High' ? '#F5E642′ : '#4ADE80', padding: '2px 10px', borderRadius: 12, fontSize: 12, fontWeight: 700 }}>{s.severity} Risk</span>
+                <span style={{ fontWeight: 700, color: '#E8EDF5' }}>{s.surface}</span>
+                <span style={{ background: s.severity === 'Very High' ? '#F8717120' : s.severity === 'High' ? '#F5E64220' : '#4ADE8020', color: s.severity === 'Very High' ? '#F87171' : s.severity === 'High' ? '#F5E642' : '#4ADE80', padding: '2px 10px', borderRadius: 12, fontSize: 12, fontWeight: 700 }}>{s.severity} Risk</span>
               </div>
-              {s.options.map(o => <div key={o} style={{ color: '#8A9BB5', fontSize: 13, padding: '2px 0′ }}>• {o}</div>)}
+              {s.options.map(o => <div key={o} style={{ color: '#8A9BB5', fontSize: 13, padding: '2px 0' }}>• {o}</div>)}
             </div>
           ))}
         </div>
@@ -89,7 +89,7 @@ export default function DFWTexturedSurfaceGuide() {
         </div>
 
         {result && (
-          <div style={{ background: '#0F2035', borderRadius: 12, padding: '1.5rem', border: '2px solid #F5E642′ }}>
+          <div style={{ background: '#0F2035', borderRadius: 12, padding: '1.5rem', border: '2px solid #F5E642' }}>
             <h3 style={{ color: '#F5E642', marginBottom: '1rem' }}>✅ Recommended Solution</h3>
             {[['Solution', result.solution], ['Risk Level', result.riskLevel], ['DIY Friendly', result.diyFriendly ? 'Yes — no contractor needed' : 'Professional install recommended'], ['DFW Note', result.dfwNote]].map(([k, v]) => (
               <div key={String(k)} style={{ display: 'flex', justifyContent: 'space-between', padding: '0.5rem 0', borderBottom: '1px solid #1E3A5F' }}>

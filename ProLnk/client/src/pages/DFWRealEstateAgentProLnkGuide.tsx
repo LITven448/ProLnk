@@ -49,7 +49,7 @@ export default function DFWRealEstateAgentProLnkGuide() {
 
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))', gap: 16, marginBottom: 32 }}>
           {streams.map((s) => (
-            <div key={s.title} style={{ background: '#fff', borderRadius: 12, padding: 20, boxShadow: '0 2px 12px rgba(0,0,0,0.06)', borderTop: '3px solid #F5E642′ }}>
+            <div key={s.title} style={{ background: '#fff', borderRadius: 12, padding: 20, boxShadow: '0 2px 12px rgba(0,0,0,0.06)', borderTop: '3px solid #F5E642' }}>
               <div style={{ fontSize: 28, marginBottom: 8 }}>{s.icon}</div>
               <div style={{ fontWeight: 700, fontSize: 15, marginBottom: 6 }}>{s.title}</div>
               <div style={{ color: '#64748b', fontSize: 13, lineHeight: 1.5 }}>{s.desc}</div>
@@ -63,13 +63,13 @@ export default function DFWRealEstateAgentProLnkGuide() {
             <div>
               <label style={{ fontWeight: 600, fontSize: 14, display: 'block', marginBottom: 6 }}>Annual Closings</label>
               <input type="range" min={5} max={150} value={closings} onChange={(e) => setClosings(Number(e.target.value))}
-                style={{ width: '100%', accentColor: '#F5E642′ }} />
+                style={{ width: '100%', accentColor: '#F5E642' }} />
               <div style={{ textAlign: 'center', fontWeight: 700, color: '#0A1628', fontSize: 20 }}>{closings}</div>
             </div>
             <div>
               <label style={{ fontWeight: 600, fontSize: 14, display: 'block', marginBottom: 6 }}>Avg Home Value</label>
               <input type="range" min={200000} max={1500000} step={25000} value={avgHomeValue} onChange={(e) => setAvgHomeValue(Number(e.target.value))}
-                style={{ width: '100%', accentColor: '#F5E642′ }} />
+                style={{ width: '100%', accentColor: '#F5E642' }} />
               <div style={{ textAlign: 'center', fontWeight: 700, color: '#0A1628', fontSize: 20 }}>${(avgHomeValue / 1000).toFixed(0)}K</div>
             </div>
           </div>
@@ -81,8 +81,8 @@ export default function DFWRealEstateAgentProLnkGuide() {
             ].map((item) => (
               <div key={item.label} style={{ background: '#f8f9fb', borderRadius: 10, padding: 16, textAlign: 'center' }}>
                 <div style={{ fontSize: 13, color: '#64748b', marginBottom: 4 }}>{item.label}</div>
-                <div style={{ fontSize: 22, fontWeight: 800, color: '#0A1628′ }}>{item.value}</div>
-                <div style={{ fontSize: 12, color: '#94a3b8′ }}>{item.sub}</div>
+                <div style={{ fontSize: 22, fontWeight: 800, color: '#0A1628' }}>{item.value}</div>
+                <div style={{ fontSize: 12, color: '#94a3b8' }}>{item.sub}</div>
               </div>
             ))}
           </div>
@@ -96,9 +96,9 @@ export default function DFWRealEstateAgentProLnkGuide() {
         <div style={{ background: '#fff', borderRadius: 16, padding: 32, marginBottom: 32, boxShadow: '0 2px 16px rgba(0,0,0,0.07)' }}>
           <h2 style={{ fontSize: 20, fontWeight: 700, marginBottom: 16 }}>❓ Frequently Asked Questions</h2>
           {faqs.map((faq, i) => (
-            <div key={i} style={{ borderBottom: i < faqs.length - 1 ? '1px solid #e2e8f0′ : ’none', paddingBottom: 16, marginBottom: 16 }}>
+            <div key={i} style={{ borderBottom: i < faqs.length - 1 ? '1px solid #e2e8f0' : 'none', paddingBottom: 16, marginBottom: 16 }}>
               <button onClick={() => setOpenFaq(openFaq === i ? null : i)}
-                style={{ background: 'none', border: 'none', cursor: 'pointer', textAlign: 'left', fontWeight: 700, fontSize: 15, width: '100%', padding: 0, color: '#1a2233′ }}>
+                style={{ background: 'none', border: 'none', cursor: 'pointer', textAlign: 'left', fontWeight: 700, fontSize: 15, width: '100%', padding: 0, color: '#1a2233' }}>
                 {openFaq === i ? '▼' : '▶'} {faq.q}
               </button>
               {openFaq === i && <p style={{ margin: '10px 0 0 20px', color: '#4a5568', lineHeight: 1.6 }}>{faq.a}</p>}

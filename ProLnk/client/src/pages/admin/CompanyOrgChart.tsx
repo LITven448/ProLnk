@@ -65,7 +65,7 @@ interface ActivityEntry {
 const AGENTS: Agent[] = [
   // ── Supreme Court Layer (3 agents) ──────────────────────────────────────────
   {
-    id: "sc-gpt4″,
+    id: "sc-gpt4",
     name: "GPT-4o Judge",
     role: "Supreme Court — Reasoning Validator",
     company: "ProLnk OS",
@@ -76,7 +76,7 @@ const AGENTS: Agent[] = [
     lastAction: "Validated decision: partner tier upgrade policy — approved",
     llm: "GPT-4o",
     llmReason: "GPT-4o excels at structured reasoning, logical consistency checks, and multi-step decision validation.",
-    color: "#FFD700″,
+    color: "#FFD700",
     icon: Gavel,
     description: "Reviews all high-stakes decisions. Cross-validates reasoning with Claude and Gemini before any irreversible action is taken.",
     selfLearns: true,
@@ -93,7 +93,7 @@ const AGENTS: Agent[] = [
     lastAction: "Ethics check: partner commission rate change — approved",
     llm: "Claude 3.5 Sonnet",
     llmReason: "Claude 3.5 Sonnet is the industry leader for nuanced ethical reasoning, risk analysis, and identifying unintended consequences.",
-    color: "#FFD700″,
+    color: "#FFD700",
     icon: Scale,
     description: "Provides ethical and risk analysis on all major decisions. Flags potential legal, reputational, or financial risks before execution.",
     selfLearns: true,
@@ -110,7 +110,7 @@ const AGENTS: Agent[] = [
     lastAction: "Data verification: revenue projection model — confirmed",
     llm: "Gemini 1.5 Pro",
     llmReason: "Gemini 1.5 Pro has the largest context window (1M tokens) and excels at cross-referencing large datasets for statistical verification.",
-    color: "#FFD700″,
+    color: "#FFD700",
     icon: Star,
     description: "Verifies data integrity and statistical accuracy of all reports and projections. Third vote in the Supreme Court consensus system.",
     selfLearns: true,
@@ -149,7 +149,7 @@ const AGENTS: Agent[] = [
     lastAction: "Coordinated lead routing + partner payout batch",
     llm: "Claude 3.5 Sonnet",
     llmReason: "Claude 3.5 Sonnet is best for coordinating complex multi-agent workflows, structured planning, and partner relationship management.",
-    color: "#17C1E8″,
+    color: "#17C1E8",
     icon: Brain,
     reportsTo: "orch-main",
     manages: ["spec-photo", "spec-lead-router", "spec-partner-health", "spec-storm"],
@@ -168,7 +168,7 @@ const AGENTS: Agent[] = [
     lastAction: "Processed 8 home scans — 24 issues flagged",
     llm: "Claude 3.5 Sonnet",
     llmReason: "Claude 3.5 Sonnet handles nuanced homeowner data, issue categorization, and pro matching logic with high accuracy.",
-    color: "#82D616″,
+    color: "#82D616",
     icon: Shield,
     reportsTo: "orch-main",
     manages: ["spec-scan", "spec-vault", "spec-homeowner-crm", "spec-tp-match"],
@@ -187,7 +187,7 @@ const AGENTS: Agent[] = [
     lastAction: "Campaign performance report generated for 8 advertisers",
     llm: "Gemini 1.5 Pro",
     llmReason: "Gemini 1.5 Pro excels at processing large volumes of campaign data, ad performance metrics, and multi-advertiser analytics.",
-    color: "#FBB140″,
+    color: "#FBB140",
     icon: Megaphone,
     reportsTo: "orch-main",
     manages: ["spec-ad-placement", "spec-campaign-opt", "spec-media-crm"],
@@ -206,7 +206,7 @@ const AGENTS: Agent[] = [
     lastAction: "Payout batch: $4,368 to Apex Roofing — confirmed",
     llm: "Claude 3 Opus",
     llmReason: "Claude 3 Opus is the most reliable model for financial reasoning, compliance checks, and high-stakes numerical accuracy.",
-    color: "#82D616″,
+    color: "#82D616",
     icon: DollarSign,
     reportsTo: "orch-main",
     manages: ["spec-payout", "spec-commission", "spec-invoice", "spec-tax"],
@@ -260,10 +260,10 @@ const AGENTS: Agent[] = [
     status: "active",
     actionsToday: 156,
     successRate: 97.4,
-    lastAction: "Waitlist campaign: 4 new signups — ZIP 75034″,
+    lastAction: "Waitlist campaign: 4 new signups — ZIP 75034",
     llm: "Claude 3.5 Sonnet",
     llmReason: "Claude 3.5 Sonnet is best for growth strategy, campaign planning, and synthesizing multi-channel marketing performance data.",
-    color: "#FF6B35″,
+    color: "#FF6B35",
     icon: Radar,
     reportsTo: "orch-main",
     manages: ["spec-waitlist", "spec-seo", "spec-social", "spec-referral"],
@@ -304,7 +304,7 @@ const AGENTS: Agent[] = [
     lastAction: "12 photos processed — 9 opportunities detected",
     llm: "GPT-4o Vision",
     llmReason: "GPT-4o Vision is the leading multimodal model for analyzing construction/home photos and identifying specific trade opportunities.",
-    color: "#17C1E8″,
+    color: "#17C1E8",
     icon: Camera,
     reportsTo: "mgr-prolnk",
     description: "Analyzes partner job photos to detect upsell opportunities for adjacent home services. Core IP of ProLnk.",
@@ -322,7 +322,7 @@ const AGENTS: Agent[] = [
     lastAction: "7 leads matched — avg response 4.2 min",
     llm: "Claude 3.5 Sonnet",
     llmReason: "Claude 3.5 Sonnet excels at structured matching logic — evaluating trade type, location, partner tier, and capacity simultaneously.",
-    color: "#17C1E8″,
+    color: "#17C1E8",
     icon: GitBranch,
     reportsTo: "mgr-prolnk",
     description: "Routes detected leads to the best-matched partner based on trade, location, tier, and capacity.",
@@ -340,7 +340,7 @@ const AGENTS: Agent[] = [
     lastAction: "Churn risk flagged: DFW Plumbing Pro — 14 days inactive",
     llm: "GPT-4o",
     llmReason: "GPT-4o is best for behavioral pattern analysis and generating personalized re-engagement messages for at-risk partners.",
-    color: "#17C1E8″,
+    color: "#17C1E8",
     icon: Activity,
     reportsTo: "mgr-prolnk",
     description: "Monitors partner engagement, flags churn risks, and triggers re-engagement workflows automatically.",
@@ -358,7 +358,7 @@ const AGENTS: Agent[] = [
     lastAction: "Storm alert: ZIP 75034 — hail risk — 3 partners notified",
     llm: "Rule-based + Weather API",
     llmReason: "Storm detection is deterministic — rule-based logic processes weather API data with no LLM needed for core alerts.",
-    color: "#17C1E8″,
+    color: "#17C1E8",
     icon: CloudLightning,
     reportsTo: "mgr-prolnk",
     description: "Monitors weather data to detect storm events and proactively alert partners and homeowners in affected areas.",
@@ -378,7 +378,7 @@ const AGENTS: Agent[] = [
     lastAction: "5-room scan: 4 issues detected — roof wear, HVAC filter",
     llm: "GPT-4o Vision",
     llmReason: "GPT-4o Vision is the most accurate model for identifying home condition issues from photos across 100+ categories.",
-    color: "#82D616″,
+    color: "#82D616",
     icon: Camera,
     reportsTo: "mgr-tp",
     description: "Analyzes homeowner-submitted photos to identify property issues, maintenance needs, and improvement opportunities.",
@@ -396,7 +396,7 @@ const AGENTS: Agent[] = [
     lastAction: "12 new Home Health records written to vault",
     llm: "Rule-based",
     llmReason: "Vault operations are deterministic CRUD — no LLM needed for structured data storage and retrieval.",
-    color: "#82D616″,
+    color: "#82D616",
     icon: Shield,
     reportsTo: "mgr-tp",
     description: "Manages the Home Health Vault — stores, organizes, and retrieves homeowner property data securely.",
@@ -414,7 +414,7 @@ const AGENTS: Agent[] = [
     lastAction: "Follow-up sent: 8 homeowners with pending scans",
     llm: "GPT-4o",
     llmReason: "GPT-4o generates the most empathetic, personalized homeowner communications — critical for trust-based relationships.",
-    color: "#82D616″,
+    color: "#82D616",
     icon: Users,
     reportsTo: "mgr-tp",
     description: "Manages homeowner relationships, follow-ups, scan reminders, and satisfaction surveys.",
@@ -429,10 +429,10 @@ const AGENTS: Agent[] = [
     status: "active",
     actionsToday: 28,
     successRate: 97.2,
-    lastAction: "3 pro matches sent for roof wear — ZIP 75034″,
+    lastAction: "3 pro matches sent for roof wear — ZIP 75034",
     llm: "Claude 3.5 Sonnet",
     llmReason: "Claude 3.5 Sonnet handles multi-criteria matching (trade, location, ratings, availability) with high precision.",
-    color: "#82D616″,
+    color: "#82D616",
     icon: GitBranch,
     reportsTo: "mgr-tp",
     description: "Matches homeowner issues to the best ProLnk partner based on trade, location, and ratings.",
@@ -452,7 +452,7 @@ const AGENTS: Agent[] = [
     lastAction: "A/B test: Apex Insurance — variant B winning (4.8% CTR)",
     llm: "Gemini 1.5 Pro",
     llmReason: "Gemini 1.5 Pro processes large ad performance datasets and multi-variant test results with superior speed and accuracy.",
-    color: "#FBB140″,
+    color: "#FBB140",
     icon: Megaphone,
     reportsTo: "mgr-media",
     description: "Optimizes ad placement across the ProLnk platform. Runs A/B tests and adjusts placement based on performance data.",
@@ -470,7 +470,7 @@ const AGENTS: Agent[] = [
     lastAction: "Campaign report: State Farm DFW — 4.2x ROI confirmed",
     llm: "Gemini 1.5 Pro",
     llmReason: "Gemini 1.5 Pro's data analysis capabilities make it ideal for multi-advertiser ROI calculations and budget optimization.",
-    color: "#FBB140″,
+    color: "#FBB140",
     icon: BarChart3,
     reportsTo: "mgr-media",
     description: "Monitors and optimizes advertiser campaign performance. Generates ROI reports and recommends budget adjustments.",
@@ -488,7 +488,7 @@ const AGENTS: Agent[] = [
     lastAction: "Renewal reminder sent: 4 contracts expiring in 30 days",
     llm: "GPT-4o",
     llmReason: "GPT-4o writes the most compelling advertiser renewal and upsell communications.",
-    color: "#FBB140″,
+    color: "#FBB140",
     icon: Users,
     reportsTo: "mgr-media",
     description: "Manages advertiser relationships, renewal reminders, contract tracking, and satisfaction surveys.",
@@ -508,7 +508,7 @@ const AGENTS: Agent[] = [
     lastAction: "Payout batch: $4,368 to Apex Roofing — confirmed",
     llm: "Claude 3 Opus",
     llmReason: "Claude 3 Opus provides the highest accuracy for financial transaction validation and error detection.",
-    color: "#82D616″,
+    color: "#82D616",
     icon: DollarSign,
     reportsTo: "mgr-finance",
     description: "Processes all partner commission payouts via Stripe. Handles batch payments, retries, and payout confirmations.",
@@ -526,7 +526,7 @@ const AGENTS: Agent[] = [
     lastAction: "Commission: Job #4821 — $8,400 gross, $689 commission",
     llm: "Claude 3 Opus",
     llmReason: "Claude 3 Opus handles complex tier-based commission calculations with the highest numerical accuracy.",
-    color: "#82D616″,
+    color: "#82D616",
     icon: BarChart3,
     reportsTo: "mgr-finance",
     description: "Tracks all job completions and calculates partner commissions in real time. Handles tier-based rate adjustments.",
@@ -544,7 +544,7 @@ const AGENTS: Agent[] = [
     lastAction: "Invoice batch: $3,600 sent to 4 media advertisers",
     llm: "Rule-based",
     llmReason: "Invoice generation is template-driven and deterministic — no LLM needed.",
-    color: "#82D616″,
+    color: "#82D616",
     icon: DollarSign,
     reportsTo: "mgr-finance",
     description: "Generates and sends invoices to advertisers and subscription partners. Tracks payment status and sends reminders.",
@@ -562,7 +562,7 @@ const AGENTS: Agent[] = [
     lastAction: "Q1 tax summary generated — ready for review",
     llm: "Claude 3 Opus",
     llmReason: "Claude 3 Opus is the most reliable model for tax compliance, 1099 preparation, and IRS regulation interpretation.",
-    color: "#82D616″,
+    color: "#82D616",
     icon: Scale,
     reportsTo: "mgr-finance",
     description: "Prepares tax summaries, 1099s for partners, and quarterly financial reports. Ensures compliance with IRS requirements.",
@@ -730,7 +730,7 @@ const AGENTS: Agent[] = [
     lastAction: "4 new signups — welcome sequence triggered",
     llm: "GPT-4o",
     llmReason: "GPT-4o personalizes welcome sequences and referral nudges based on signup source and profile data.",
-    color: "#FF6B35″,
+    color: "#FF6B35",
     icon: Users,
     reportsTo: "mgr-growth",
     description: "Manages waitlist signups for ProLnk and TrustyPro. Triggers welcome sequences and tracks conversion to active users.",
@@ -748,7 +748,7 @@ const AGENTS: Agent[] = [
     lastAction: "Weekly SEO report: +12% organic traffic",
     llm: "Claude 3.5 Sonnet",
     llmReason: "Claude 3.5 Sonnet produces the highest-quality SEO content and keyword strategy recommendations.",
-    color: "#FF6B35″,
+    color: "#FF6B35",
     icon: Radar,
     reportsTo: "mgr-growth",
     description: "Monitors and optimizes SEO performance across all ProLnk OS websites. Generates content recommendations and tracks rankings.",
@@ -766,7 +766,7 @@ const AGENTS: Agent[] = [
     lastAction: "Instagram post scheduled: ProLnk partner spotlight",
     llm: "GPT-4o",
     llmReason: "GPT-4o creates the most engaging, platform-native social content for Instagram, LinkedIn, and Facebook.",
-    color: "#FF6B35″,
+    color: "#FF6B35",
     icon: Megaphone,
     reportsTo: "mgr-growth",
     description: "Creates and schedules social media content for ProLnk and TrustyPro. Monitors engagement and responds to comments.",
@@ -784,7 +784,7 @@ const AGENTS: Agent[] = [
     lastAction: "Referral credit: $50 to partner P-112 — 2 new signups",
     llm: "Rule-based",
     llmReason: "Referral tracking and credit issuance are deterministic — rule-based logic handles all calculations reliably.",
-    color: "#FF6B35″,
+    color: "#FF6B35",
     icon: ArrowRight,
     reportsTo: "mgr-growth",
     description: "Manages partner and homeowner referral programs. Tracks referrals, issues credits, and optimizes referral incentives.",
@@ -997,29 +997,29 @@ const AGENTS: Agent[] = [
 // ─── Mock Activity History ─────────────────────────────────────────────────────
 
 const ACTIVITY_HISTORY: ActivityEntry[] = [
-  { id: "a1″,  agentId: "spec-photo",         agentName: "Photo AI",              company: "ProLnk Residential", action: "12 photos processed — 9 upsell opportunities detected (roofing, gutters, HVAC)",                outcome: "success", timestamp: "2 min ago",  color: "#17C1E8" },
-  { id: "a2″,  agentId: "spec-lead-router",   agentName: "Lead Router",           company: "ProLnk Residential", action: "Roofing lead matched to Apex Roofing (ZIP 75034) — response time 3.8 min",                    outcome: "success", timestamp: "4 min ago",  color: "#17C1E8" },
-  { id: "a3″,  agentId: "mgr-finance",        agentName: "Head of Finance",       company: "ProLnk OS",          action: "Payout batch approved: $4,368 to Apex Roofing — Stripe transfer initiated",                   outcome: "success", timestamp: "8 min ago",  color: "#82D616" },
-  { id: "a4″,  agentId: "spec-scan",          agentName: "Home Scan AI",          company: "TrustyPro",          action: "5-room scan complete: 4 issues flagged — roof wear (high), HVAC filter (medium), 2 cosmetic",  outcome: "success", timestamp: "11 min ago", color: "#82D616" },
-  { id: "a5″,  agentId: "spec-email",         agentName: "Email Agent",           company: "ProLnk OS",          action: "Weekly partner digest sent to 112 partners — 94% open rate, 23% click-through",                outcome: "success", timestamp: "15 min ago", color: "#EC407A" },
-  { id: "a6″,  agentId: "spec-partner-health",agentName: "Partner Health Agent",  company: "ProLnk Residential", action: "Churn risk flagged: DFW Plumbing Pro — 14 days inactive — re-engagement sequence triggered",    outcome: "success", timestamp: "22 min ago", color: "#17C1E8" },
-  { id: "a7″,  agentId: "sc-claude",          agentName: "Claude Arbiter",        company: "ProLnk OS",          action: "Ethics check: partner commission rate change from 8% to 9% — risk assessment: LOW — approved",   outcome: "success", timestamp: "28 min ago", color: "#FFD700" },
-  { id: "a8″,  agentId: "spec-ad-placement",  agentName: "Ad Placement Agent",    company: "ProLnk Media",       action: "A/B test concluded: Apex Insurance variant B wins (4.8% CTR vs 3.1%) — variant B deployed",     outcome: "success", timestamp: "35 min ago", color: "#FBB140" },
-  { id: "a9″,  agentId: "spec-waitlist",      agentName: "Waitlist Agent",        company: "ProLnk OS",          action: "4 new waitlist signups (2 ProLnk, 2 TrustyPro) — welcome sequences triggered",                 outcome: "success", timestamp: "41 min ago", color: "#FF6B35" },
-  { id: "a10″, agentId: "spec-error-handler", agentName: "Error Handler",         company: "ProLnk OS",          action: "Payout retry for partner #P-284 — Stripe timeout — retry #2 succeeded",                       outcome: "success", timestamp: "48 min ago", color: "#7928CA" },
-  { id: "a11″, agentId: "spec-storm",         agentName: "Storm Watch Agent",     company: "ProLnk Residential", action: "Hail alert: ZIP 75034 — 3 roofing partners notified via SMS",                                 outcome: "success", timestamp: "1 hr ago",   color: "#17C1E8" },
-  { id: "a12″, agentId: "spec-ml-train",      agentName: "ML Training Agent",     company: "ProLnk OS",          action: "Photo AI model retrained on 284 new labeled examples — accuracy improved from 94.2% to 95.4%", outcome: "success", timestamp: "2 hr ago",   color: "#26C6DA" },
-  { id: "a13″, agentId: "spec-tp-match",      agentName: "TrustyPro Match Agent", company: "TrustyPro",          action: "3 pro matches sent for roof wear (ZIP 75034) — homeowner accepted match #2 within 12 min",     outcome: "success", timestamp: "2 hr ago",   color: "#82D616" },
-  { id: "a14″, agentId: "util-audit",         agentName: "Audit Agent",           company: "ProLnk OS",          action: "Audit log checkpoint: 1,247 agent actions recorded — 0 anomalies",                            outcome: "success", timestamp: "3 hr ago",   color: "#AEAEAE" },
-  { id: "a15″, agentId: "spec-commission",    agentName: "Commission Tracker",    company: "ProLnk OS",          action: "Commission calculated: Job #4821 — $8,400 gross, 8.2% tier rate, $689 commission",             outcome: "success", timestamp: "3 hr ago",   color: "#82D616" },
+  { id: "a1",  agentId: "spec-photo",         agentName: "Photo AI",              company: "ProLnk Residential", action: "12 photos processed — 9 upsell opportunities detected (roofing, gutters, HVAC)",                outcome: "success", timestamp: "2 min ago",  color: "#17C1E8" },
+  { id: "a2",  agentId: "spec-lead-router",   agentName: "Lead Router",           company: "ProLnk Residential", action: "Roofing lead matched to Apex Roofing (ZIP 75034) — response time 3.8 min",                    outcome: "success", timestamp: "4 min ago",  color: "#17C1E8" },
+  { id: "a3",  agentId: "mgr-finance",        agentName: "Head of Finance",       company: "ProLnk OS",          action: "Payout batch approved: $4,368 to Apex Roofing — Stripe transfer initiated",                   outcome: "success", timestamp: "8 min ago",  color: "#82D616" },
+  { id: "a4",  agentId: "spec-scan",          agentName: "Home Scan AI",          company: "TrustyPro",          action: "5-room scan complete: 4 issues flagged — roof wear (high), HVAC filter (medium), 2 cosmetic",  outcome: "success", timestamp: "11 min ago", color: "#82D616" },
+  { id: "a5",  agentId: "spec-email",         agentName: "Email Agent",           company: "ProLnk OS",          action: "Weekly partner digest sent to 112 partners — 94% open rate, 23% click-through",                outcome: "success", timestamp: "15 min ago", color: "#EC407A" },
+  { id: "a6",  agentId: "spec-partner-health",agentName: "Partner Health Agent",  company: "ProLnk Residential", action: "Churn risk flagged: DFW Plumbing Pro — 14 days inactive — re-engagement sequence triggered",    outcome: "success", timestamp: "22 min ago", color: "#17C1E8" },
+  { id: "a7",  agentId: "sc-claude",          agentName: "Claude Arbiter",        company: "ProLnk OS",          action: "Ethics check: partner commission rate change from 8% to 9% — risk assessment: LOW — approved",   outcome: "success", timestamp: "28 min ago", color: "#FFD700" },
+  { id: "a8",  agentId: "spec-ad-placement",  agentName: "Ad Placement Agent",    company: "ProLnk Media",       action: "A/B test concluded: Apex Insurance variant B wins (4.8% CTR vs 3.1%) — variant B deployed",     outcome: "success", timestamp: "35 min ago", color: "#FBB140" },
+  { id: "a9",  agentId: "spec-waitlist",      agentName: "Waitlist Agent",        company: "ProLnk OS",          action: "4 new waitlist signups (2 ProLnk, 2 TrustyPro) — welcome sequences triggered",                 outcome: "success", timestamp: "41 min ago", color: "#FF6B35" },
+  { id: "a10", agentId: "spec-error-handler", agentName: "Error Handler",         company: "ProLnk OS",          action: "Payout retry for partner #P-284 — Stripe timeout — retry #2 succeeded",                       outcome: "success", timestamp: "48 min ago", color: "#7928CA" },
+  { id: "a11", agentId: "spec-storm",         agentName: "Storm Watch Agent",     company: "ProLnk Residential", action: "Hail alert: ZIP 75034 — 3 roofing partners notified via SMS",                                 outcome: "success", timestamp: "1 hr ago",   color: "#17C1E8" },
+  { id: "a12", agentId: "spec-ml-train",      agentName: "ML Training Agent",     company: "ProLnk OS",          action: "Photo AI model retrained on 284 new labeled examples — accuracy improved from 94.2% to 95.4%", outcome: "success", timestamp: "2 hr ago",   color: "#26C6DA" },
+  { id: "a13", agentId: "spec-tp-match",      agentName: "TrustyPro Match Agent", company: "TrustyPro",          action: "3 pro matches sent for roof wear (ZIP 75034) — homeowner accepted match #2 within 12 min",     outcome: "success", timestamp: "2 hr ago",   color: "#82D616" },
+  { id: "a14", agentId: "util-audit",         agentName: "Audit Agent",           company: "ProLnk OS",          action: "Audit log checkpoint: 1,247 agent actions recorded — 0 anomalies",                            outcome: "success", timestamp: "3 hr ago",   color: "#AEAEAE" },
+  { id: "a15", agentId: "spec-commission",    agentName: "Commission Tracker",    company: "ProLnk OS",          action: "Commission calculated: Job #4821 — $8,400 gross, 8.2% tier rate, $689 commission",             outcome: "success", timestamp: "3 hr ago",   color: "#82D616" },
 ];
 
 // ─── Status Colors ─────────────────────────────────────────────────────────────
 
 const STATUS_COLOR: Record<AgentStatus, string> = {
-  active:  "#82D616″,
-  idle:    "#FBB140″,
-  warning: "#EA0606″,
+  active:  "#82D616",
+  idle:    "#FBB140",
+  warning: "#EA0606",
   offline: "#AEAEAE",
 };
 
@@ -1039,17 +1039,17 @@ const LAYER_LABEL: Record<string, string> = {
   "utility":       "Utility Agents",
 };
 const LAYER_COLOR: Record<string, string> = {
-  "supreme-court": "#FFD700″,
+  "supreme-court": "#FFD700",
   "orchestrator":  "#00D4FF",
-  "manager":       "#17C1E8″,
-  "specialist":    "#82D616″,
+  "manager":       "#17C1E8",
+  "specialist":    "#82D616",
   "utility":       "#AEAEAE",
 };
 
 const COMPANY_CONFIG = [
-  { id: "ProLnk Residential", label: "ProLnk Residential", color: "#17C1E8″, icon: Home },
-  { id: "TrustyPro",          label: "TrustyPro",          color: "#82D616″, icon: Shield },
-  { id: "ProLnk Media",       label: "ProLnk Media",       color: "#FBB140″, icon: Film },
+  { id: "ProLnk Residential", label: "ProLnk Residential", color: "#17C1E8", icon: Home },
+  { id: "TrustyPro",          label: "TrustyPro",          color: "#82D616", icon: Shield },
+  { id: "ProLnk Media",       label: "ProLnk Media",       color: "#FBB140", icon: Film },
   { id: "ProLnk OS",          label: "ProLnk OS (Shared)", color: "#00D4FF", icon: Globe },
 ];
 
@@ -1074,9 +1074,9 @@ function AgentCard({ agent, onClick, isSelected }: { agent: Agent; onClick: () =
     >
       <div className="relative">
         <div className="w-9 h-9 rounded-full flex items-center justify-center" style={{ background: `${agent.color}22` }}>
-          <Icon className="w-4 h-4″ style={{ color: agent.color }} />
+          <Icon className="w-4 h-4" style={{ color: agent.color }} />
         </div>
-        <span className="absolute -bottom-0.5 -right-0.5 w-2.5 h-2.5 rounded-full border-2″ style={{ background: statusColor, borderColor: D.card }} />
+        <span className="absolute -bottom-0.5 -right-0.5 w-2.5 h-2.5 rounded-full border-2" style={{ background: statusColor, borderColor: D.card }} />
       </div>
       <span className="text-xs font-semibold leading-tight" style={{ color: D.text }}>{agent.name}</span>
       <span className="text-[10px]" style={{ color: D.muted }}>{agent.llm}</span>
@@ -1091,28 +1091,28 @@ function AgentDetailPanel({ agent, onClose }: { agent: Agent; onClose: () => voi
   const Icon = agent.icon;
   return (
     <div className="fixed right-0 top-0 h-full w-80 z-50 flex flex-col shadow-2xl overflow-y-auto" style={{ background: D.card, borderLeft: `1px solid ${D.border}` }}>
-      <div className="flex items-center justify-between p-4″ style={{ borderBottom: `1px solid ${D.border}` }}>
-        <div className="flex items-center gap-3″>
+      <div className="flex items-center justify-between p-4" style={{ borderBottom: `1px solid ${D.border}` }}>
+        <div className="flex items-center gap-3">
           <div className="w-10 h-10 rounded-full flex items-center justify-center" style={{ background: `${agent.color}22` }}>
-            <Icon className="w-5 h-5″ style={{ color: agent.color }} />
+            <Icon className="w-5 h-5" style={{ color: agent.color }} />
           </div>
           <div>
             <div className="font-bold text-sm" style={{ color: D.text }}>{agent.name}</div>
             <div className="text-xs" style={{ color: D.muted }}>{agent.company}</div>
           </div>
         </div>
-        <button onClick={onClose} className="p-1 rounded hover:bg-gray-100″><X className="w-4 h-4" style={{ color: D.muted }} /></button>
+        <button onClick={onClose} className="p-1 rounded hover:bg-gray-100"><X className="w-4 h-4" style={{ color: D.muted }} /></button>
       </div>
 
-      <div className="p-4 space-y-4″>
+      <div className="p-4 space-y-4">
         <div className="flex items-center gap-2 flex-wrap">
           <span className="px-2 py-0.5 rounded-full text-xs font-bold" style={{ background: `${STATUS_COLOR[agent.status]}22`, color: STATUS_COLOR[agent.status] }}>{STATUS_LABEL[agent.status]}</span>
-          {agent.selfLearns && <span className="px-2 py-0.5 rounded-full text-xs font-bold" style={{ background: "#FFD70022″, color: "#FFD700" }}>Self-Learning</span>}
+          {agent.selfLearns && <span className="px-2 py-0.5 rounded-full text-xs font-bold" style={{ background: "#FFD70022", color: "#FFD700" }}>Self-Learning</span>}
         </div>
 
         <p className="text-sm leading-relaxed" style={{ color: D.muted }}>{agent.description}</p>
 
-        <div className="grid grid-cols-2 gap-3″>
+        <div className="grid grid-cols-2 gap-3">
           {[
             { label: "Actions Today", value: agent.actionsToday.toLocaleString() },
             { label: "Success Rate",  value: `${agent.successRate}%` },
@@ -1127,34 +1127,34 @@ function AgentDetailPanel({ agent, onClose }: { agent: Agent; onClose: () => voi
         </div>
 
         {/* Why this LLM */}
-        <div className="p-3 rounded-lg" style={{ background: "#17C1E811″, border: "1px solid #17C1E833" }}>
-          <div className="text-xs font-semibold mb-1″ style={{ color: "#17C1E8" }}>WHY {agent.llm.toUpperCase()}</div>
+        <div className="p-3 rounded-lg" style={{ background: "#17C1E811", border: "1px solid #17C1E833" }}>
+          <div className="text-xs font-semibold mb-1" style={{ color: "#17C1E8" }}>WHY {agent.llm.toUpperCase()}</div>
           <div className="text-xs leading-relaxed" style={{ color: D.muted }}>{agent.llmReason}</div>
         </div>
 
         <div className="p-3 rounded-lg" style={{ background: D.bg }}>
-          <div className="text-xs font-semibold mb-1″ style={{ color: D.muted }}>LAST ACTION</div>
+          <div className="text-xs font-semibold mb-1" style={{ color: D.muted }}>LAST ACTION</div>
           <div className="text-sm" style={{ color: D.text }}>{agent.lastAction}</div>
         </div>
 
         {agent.reportsTo && (
           <div>
-            <div className="text-xs font-semibold mb-1″ style={{ color: D.muted }}>REPORTS TO</div>
+            <div className="text-xs font-semibold mb-1" style={{ color: D.muted }}>REPORTS TO</div>
             <div className="text-sm font-medium" style={{ color: agent.color }}>{AGENTS.find(a => a.id === agent.reportsTo)?.name ?? agent.reportsTo}</div>
           </div>
         )}
 
         {agent.manages && agent.manages.length > 0 && (
           <div>
-            <div className="text-xs font-semibold mb-2″ style={{ color: D.muted }}>MANAGES ({agent.manages.length})</div>
-            <div className="space-y-1″>
+            <div className="text-xs font-semibold mb-2" style={{ color: D.muted }}>MANAGES ({agent.manages.length})</div>
+            <div className="space-y-1">
               {agent.manages.map(id => {
                 const sub = AGENTS.find(a => a.id === id);
                 if (!sub) return null;
                 const SubIcon = sub.icon;
                 return (
                   <div key={id} className="flex items-center gap-2 p-1.5 rounded" style={{ background: D.bg }}>
-                    <SubIcon className="w-3 h-3″ style={{ color: sub.color }} />
+                    <SubIcon className="w-3 h-3" style={{ color: sub.color }} />
                     <span className="text-xs" style={{ color: D.text }}>{sub.name}</span>
                     <span className="ml-auto text-[10px]" style={{ color: D.muted }}>{sub.llm}</span>
                   </div>
@@ -1166,12 +1166,12 @@ function AgentDetailPanel({ agent, onClose }: { agent: Agent; onClose: () => voi
 
         {/* Recent activity for this agent */}
         <div>
-          <div className="text-xs font-semibold mb-2″ style={{ color: D.muted }}>RECENT ACTIVITY</div>
-          <div className="space-y-1″>
+          <div className="text-xs font-semibold mb-2" style={{ color: D.muted }}>RECENT ACTIVITY</div>
+          <div className="space-y-1">
             {ACTIVITY_HISTORY.filter(a => a.agentId === agent.id).slice(0, 3).map(a => (
               <div key={a.id} className="p-2 rounded text-xs" style={{ background: D.bg }}>
-                <div className="flex items-center justify-between mb-0.5″>
-                  <span className="font-medium" style={{ color: a.outcome === "success" ? "#82D616″ : "#EA0606" }}>{a.outcome === "success" ? "✓" : "✗"} {a.timestamp}</span>
+                <div className="flex items-center justify-between mb-0.5">
+                  <span className="font-medium" style={{ color: a.outcome === "success" ? "#82D616" : "#EA0606" }}>{a.outcome === "success" ? "✓" : "✗"} {a.timestamp}</span>
                 </div>
                 <div style={{ color: D.muted }}>{a.action}</div>
               </div>
@@ -1190,33 +1190,33 @@ function AgentDetailPanel({ agent, onClose }: { agent: Agent; onClose: () => voi
 
 function SelfLearningLoop() {
   const steps = [
-    { icon: Bot,         label: "Agent Acts",       color: "#17C1E8″ },
-    { icon: CheckCircle, label: "Outcome Logged",   color: "#82D616″ },
+    { icon: Bot,         label: "Agent Acts",       color: "#17C1E8" },
+    { icon: CheckCircle, label: "Outcome Logged",   color: "#82D616" },
     { icon: Brain,       label: "ML Training",      color: "#26C6DA" },
-    { icon: RotateCcw,   label: "Model Retrained",  color: "#FBB140″ },
+    { icon: RotateCcw,   label: "Model Retrained",  color: "#FBB140" },
     { icon: Zap,         label: "Agent Improves",   color: "#EC407A" },
   ];
   return (
-    <div className="p-4 rounded-xl mb-6″ style={{ background: D.card, border: `1px solid ${D.border}` }}>
-      <div className="text-xs font-bold uppercase tracking-wider mb-3″ style={{ color: D.muted }}>Self-Learning Feedback Loop — ProLnk OS</div>
+    <div className="p-4 rounded-xl mb-6" style={{ background: D.card, border: `1px solid ${D.border}` }}>
+      <div className="text-xs font-bold uppercase tracking-wider mb-3" style={{ color: D.muted }}>Self-Learning Feedback Loop — ProLnk OS</div>
       <div className="flex items-center gap-2 flex-wrap">
         {steps.map((s, i) => {
           const Icon = s.icon;
           return (
-            <div key={s.label} className="flex items-center gap-2″>
-              <div className="flex flex-col items-center gap-1″>
+            <div key={s.label} className="flex items-center gap-2">
+              <div className="flex flex-col items-center gap-1">
                 <div className="w-8 h-8 rounded-full flex items-center justify-center" style={{ background: `${s.color}22` }}>
-                  <Icon className="w-4 h-4″ style={{ color: s.color }} />
+                  <Icon className="w-4 h-4" style={{ color: s.color }} />
                 </div>
                 <span className="text-xs text-center" style={{ color: D.muted, maxWidth: 64 }}>{s.label}</span>
               </div>
-              {i < steps.length - 1 && <ChevronRight className="w-4 h-4 flex-shrink-0″ style={{ color: D.dim }} />}
+              {i < steps.length - 1 && <ChevronRight className="w-4 h-4 flex-shrink-0" style={{ color: D.dim }} />}
             </div>
           );
         })}
-        <div className="flex items-center gap-1 ml-1″>
-          <RotateCcw className="w-4 h-4″ style={{ color: "#FFD700" }} />
-          <span className="text-xs font-bold" style={{ color: "#FFD700″ }}>Continuous Loop</span>
+        <div className="flex items-center gap-1 ml-1">
+          <RotateCcw className="w-4 h-4" style={{ color: "#FFD700" }} />
+          <span className="text-xs font-bold" style={{ color: "#FFD700" }}>Continuous Loop</span>
         </div>
       </div>
     </div>
@@ -1227,19 +1227,19 @@ function SelfLearningLoop() {
 
 function PerCompanyView({ onSelectAgent, selectedAgent }: { onSelectAgent: (a: Agent | null) => void; selectedAgent: Agent | null }) {
   return (
-    <div className="space-y-8″>
+    <div className="space-y-8">
       {/* Shared ProLnk OS layer at top */}
       <div>
-        <div className="flex items-center gap-3 mb-4″>
-          <div className="h-px flex-1″ style={{ background: "#00D4FF44" }} />
-          <span className="px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider" style={{ background: "#00D4FF22″, color: "#00D4FF" }}>
+        <div className="flex items-center gap-3 mb-4">
+          <div className="h-px flex-1" style={{ background: "#00D4FF44" }} />
+          <span className="px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider" style={{ background: "#00D4FF22", color: "#00D4FF" }}>
             ProLnk OS — Shared Intelligence Layer
           </span>
-          <div className="h-px flex-1″ style={{ background: "#00D4FF44" }} />
+          <div className="h-px flex-1" style={{ background: "#00D4FF44" }} />
         </div>
         {/* Supreme Court */}
-        <div className="p-4 rounded-xl mb-4″ style={{ background: "#FFD70011", border: "1.5px dashed #FFD70066" }}>
-          <div className="text-xs font-bold mb-3 text-center" style={{ color: "#FFD700″ }}>
+        <div className="p-4 rounded-xl mb-4" style={{ background: "#FFD70011", border: "1.5px dashed #FFD70066" }}>
+          <div className="text-xs font-bold mb-3 text-center" style={{ color: "#FFD700" }}>
             Supreme Court — 2-of-3 consensus required before any high-stakes action
           </div>
           <div className="flex justify-center gap-4 flex-wrap">
@@ -1249,7 +1249,7 @@ function PerCompanyView({ onSelectAgent, selectedAgent }: { onSelectAgent: (a: A
           </div>
         </div>
         {/* Orchestrator */}
-        <div className="flex justify-center mb-2″>
+        <div className="flex justify-center mb-2">
           {AGENTS.filter(a => a.layer === "orchestrator").map(a => (
             <AgentCard key={a.id} agent={a} onClick={() => onSelectAgent(selectedAgent?.id === a.id ? null : a)} isSelected={selectedAgent?.id === a.id} />
           ))}
@@ -1257,15 +1257,15 @@ function PerCompanyView({ onSelectAgent, selectedAgent }: { onSelectAgent: (a: A
       </div>
 
       {/* Per-company columns */}
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-6″>
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
         {COMPANY_CONFIG.filter(c => c.id !== "ProLnk OS").map(company => {
           const companyAgents = AGENTS.filter(a => a.company === company.id);
           const CIcon = company.icon;
           return (
             <div key={company.id} className="rounded-xl overflow-hidden" style={{ border: `1.5px solid ${company.color}44` }}>
               {/* Company header */}
-              <div className="flex items-center gap-2 px-4 py-3″ style={{ background: `${company.color}11` }}>
-                <CIcon className="w-4 h-4″ style={{ color: company.color }} />
+              <div className="flex items-center gap-2 px-4 py-3" style={{ background: `${company.color}11` }}>
+                <CIcon className="w-4 h-4" style={{ color: company.color }} />
                 <span className="text-sm font-bold" style={{ color: company.color }}>{company.label}</span>
                 <span className="ml-auto text-xs" style={{ color: D.muted }}>{companyAgents.length} agents</span>
               </div>
@@ -1275,7 +1275,7 @@ function PerCompanyView({ onSelectAgent, selectedAgent }: { onSelectAgent: (a: A
                   <AgentCard key={a.id} agent={a} onClick={() => onSelectAgent(selectedAgent?.id === a.id ? null : a)} isSelected={selectedAgent?.id === a.id} />
                 ))}
                 {companyAgents.length === 0 && (
-                  <div className="text-xs py-4″ style={{ color: D.dim }}>No dedicated agents</div>
+                  <div className="text-xs py-4" style={{ color: D.dim }}>No dedicated agents</div>
                 )}
               </div>
             </div>
@@ -1285,12 +1285,12 @@ function PerCompanyView({ onSelectAgent, selectedAgent }: { onSelectAgent: (a: A
 
       {/* ProLnk OS shared agents */}
       <div>
-        <div className="flex items-center gap-3 mb-4″>
-          <div className="h-px flex-1″ style={{ background: "#00D4FF22" }} />
-          <span className="px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider" style={{ background: "#00D4FF11″, color: "#00D4FF" }}>
+        <div className="flex items-center gap-3 mb-4">
+          <div className="h-px flex-1" style={{ background: "#00D4FF22" }} />
+          <span className="px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider" style={{ background: "#00D4FF11", color: "#00D4FF" }}>
             ProLnk OS Shared Agents ({AGENTS.filter(a => a.company === "ProLnk OS" && a.layer !== "supreme-court" && a.layer !== "orchestrator").length})
           </span>
-          <div className="h-px flex-1″ style={{ background: "#00D4FF22" }} />
+          <div className="h-px flex-1" style={{ background: "#00D4FF22" }} />
         </div>
         <div className="flex flex-wrap gap-3 justify-center">
           {AGENTS.filter(a => a.company === "ProLnk OS" && a.layer !== "supreme-court" && a.layer !== "orchestrator").map(a => (
@@ -1310,7 +1310,7 @@ function ActivityHistoryView() {
 
   return (
     <div>
-      <div className="flex items-center gap-3 mb-4″>
+      <div className="flex items-center gap-3 mb-4">
         <select
           value={filterCompany}
           onChange={e => setFilterCompany(e.target.value)}
@@ -1324,11 +1324,11 @@ function ActivityHistoryView() {
         <span className="text-xs" style={{ color: D.muted }}>{filtered.length} entries</span>
       </div>
 
-      <div className="space-y-2″>
+      <div className="space-y-2">
         {filtered.map(entry => (
           <div key={entry.id} className="flex items-start gap-3 p-3 rounded-xl" style={{ background: D.card, border: `1px solid ${D.border}` }}>
-            <div className="w-2 h-2 rounded-full mt-1.5 flex-shrink-0″ style={{ background: entry.outcome === "success" ? "#82D616" : "#EA0606" }} />
-            <div className="flex-1 min-w-0″>
+            <div className="w-2 h-2 rounded-full mt-1.5 flex-shrink-0" style={{ background: entry.outcome === "success" ? "#82D616" : "#EA0606" }} />
+            <div className="flex-1 min-w-0">
               <div className="flex items-center gap-2 mb-0.5 flex-wrap">
                 <span className="text-xs font-bold" style={{ color: entry.color }}>{entry.agentName}</span>
                 <span className="text-[10px] px-1.5 py-0.5 rounded-full" style={{ background: `${entry.color}22`, color: entry.color }}>{entry.company}</span>
@@ -1336,7 +1336,7 @@ function ActivityHistoryView() {
               </div>
               <p className="text-xs leading-relaxed" style={{ color: D.muted }}>{entry.action}</p>
             </div>
-            <span className="text-[10px] font-bold flex-shrink-0″ style={{ color: entry.outcome === "success" ? "#82D616" : "#EA0606" }}>
+            <span className="text-[10px] font-bold flex-shrink-0" style={{ color: entry.outcome === "success" ? "#82D616" : "#EA0606" }}>
               {entry.outcome === "success" ? "✓ OK" : "✗ FAIL"}
             </span>
           </div>
@@ -1359,10 +1359,10 @@ function AccountabilityView({ onSelectAgent, selectedAgent, filterCompany }: { o
   })).filter(g => g.agents.length > 0);
 
   return (
-    <div className="space-y-8″>
+    <div className="space-y-8">
       <div className="p-4 rounded-xl" style={{ background: D.card, border: `1px solid ${D.border}` }}>
-        <div className="flex items-center gap-2 mb-2″>
-          <Target className="w-4 h-4″ style={{ color: "#00D4FF" }} />
+        <div className="flex items-center gap-2 mb-2">
+          <Target className="w-4 h-4" style={{ color: "#00D4FF" }} />
           <span className="text-sm font-bold" style={{ color: D.text }}>Accountability Chart</span>
         </div>
         <p className="text-xs" style={{ color: D.muted }}>Each agent's ownership area, KPIs, and current performance. Click any agent for details.</p>
@@ -1372,8 +1372,8 @@ function AccountabilityView({ onSelectAgent, selectedAgent, filterCompany }: { o
         const CIcon = company.icon;
         return (
           <div key={company.id}>
-            <div className="flex items-center gap-2 mb-4″>
-              <CIcon className="w-4 h-4″ style={{ color: company.color }} />
+            <div className="flex items-center gap-2 mb-4">
+              <CIcon className="w-4 h-4" style={{ color: company.color }} />
               <span className="text-sm font-bold" style={{ color: company.color }}>{company.label}</span>
               <span className="text-xs" style={{ color: D.muted }}>({company.agents.length} agents)</span>
             </div>
@@ -1402,23 +1402,23 @@ function AccountabilityView({ onSelectAgent, selectedAgent, filterCompany }: { o
                         className="cursor-pointer transition-all"
                         style={{ background: isSelected ? `${agent.color}11` : "transparent" }}
                       >
-                        <td className="px-3 py-2.5″ style={{ borderBottom: `1px solid ${D.border}` }}>
-                          <div className="flex items-center gap-2″>
+                        <td className="px-3 py-2.5" style={{ borderBottom: `1px solid ${D.border}` }}>
+                          <div className="flex items-center gap-2">
                             <div className="w-6 h-6 rounded-full flex items-center justify-center" style={{ background: `${agent.color}22` }}>
-                              <Icon className="w-3 h-3″ style={{ color: agent.color }} />
+                              <Icon className="w-3 h-3" style={{ color: agent.color }} />
                             </div>
                             <span className="font-bold" style={{ color: D.text }}>{agent.name}</span>
                           </div>
                         </td>
-                        <td className="px-3 py-2.5″ style={{ color: D.muted, borderBottom: `1px solid ${D.border}` }}>{agent.role}</td>
-                        <td className="px-3 py-2.5″ style={{ borderBottom: `1px solid ${D.border}` }}>
+                        <td className="px-3 py-2.5" style={{ color: D.muted, borderBottom: `1px solid ${D.border}` }}>{agent.role}</td>
+                        <td className="px-3 py-2.5" style={{ borderBottom: `1px solid ${D.border}` }}>
                           <span className="px-1.5 py-0.5 rounded text-[10px] font-bold" style={{ background: `${agent.color}22`, color: agent.color }}>{agent.llm}</span>
                         </td>
                         <td className="px-3 py-2.5 text-center" style={{ borderBottom: `1px solid ${D.border}` }}>
                           <span className="w-2 h-2 rounded-full inline-block" style={{ background: STATUS_COLOR[agent.status] }} />
                         </td>
                         <td className="px-3 py-2.5 text-right font-mono font-bold" style={{ color: D.text, borderBottom: `1px solid ${D.border}` }}>{agent.actionsToday.toLocaleString()}</td>
-                        <td className="px-3 py-2.5 text-right font-mono" style={{ color: agent.successRate >= 98 ? "#82D616″ : agent.successRate >= 90 ? "#FBB140" : "#EA0606", borderBottom: `1px solid ${D.border}` }}>{agent.successRate}%</td>
+                        <td className="px-3 py-2.5 text-right font-mono" style={{ color: agent.successRate >= 98 ? "#82D616" : agent.successRate >= 90 ? "#FBB140" : "#EA0606", borderBottom: `1px solid ${D.border}` }}>{agent.successRate}%</td>
                         <td className="px-3 py-2.5 max-w-[250px] truncate" style={{ color: D.muted, borderBottom: `1px solid ${D.border}` }}>{agent.lastAction}</td>
                       </tr>
                     );
@@ -1456,10 +1456,10 @@ function DependabilityView({ onSelectAgent, selectedAgent, filterCompany }: { on
   })).filter(g => g.agents.length > 0);
 
   return (
-    <div className="space-y-8″>
+    <div className="space-y-8">
       <div className="p-4 rounded-xl" style={{ background: D.card, border: `1px solid ${D.border}` }}>
-        <div className="flex items-center gap-2 mb-2″>
-          <Link2 className="w-4 h-4″ style={{ color: "#17C1E8" }} />
+        <div className="flex items-center gap-2 mb-2">
+          <Link2 className="w-4 h-4" style={{ color: "#17C1E8" }} />
           <span className="text-sm font-bold" style={{ color: D.text }}>Dependability Map</span>
         </div>
         <p className="text-xs" style={{ color: D.muted }}>Shows upstream (reports to) and downstream (manages) dependencies for every agent. Reveals single points of failure and critical chains.</p>
@@ -1469,12 +1469,12 @@ function DependabilityView({ onSelectAgent, selectedAgent, filterCompany }: { on
         const CIcon = company.icon;
         return (
           <div key={company.id}>
-            <div className="flex items-center gap-2 mb-4″>
-              <CIcon className="w-4 h-4″ style={{ color: company.color }} />
+            <div className="flex items-center gap-2 mb-4">
+              <CIcon className="w-4 h-4" style={{ color: company.color }} />
               <span className="text-sm font-bold" style={{ color: company.color }}>{company.label}</span>
             </div>
 
-            <div className="space-y-2″>
+            <div className="space-y-2">
               {company.agents.map(agent => {
                 const Icon = agent.icon;
                 const upstream = getUpstream(agent);
@@ -1488,26 +1488,26 @@ function DependabilityView({ onSelectAgent, selectedAgent, filterCompany }: { on
                     className="p-3 rounded-xl cursor-pointer transition-all"
                     style={{ background: D.card, border: `1.5px solid ${isSelected ? agent.color : D.border}` }}
                   >
-                    <div className="flex items-center justify-between mb-2″>
-                      <div className="flex items-center gap-2″>
+                    <div className="flex items-center justify-between mb-2">
+                      <div className="flex items-center gap-2">
                         <div className="w-7 h-7 rounded-full flex items-center justify-center" style={{ background: `${agent.color}22` }}>
-                          <Icon className="w-3.5 h-3.5″ style={{ color: agent.color }} />
+                          <Icon className="w-3.5 h-3.5" style={{ color: agent.color }} />
                         </div>
                         <div>
                           <span className="text-xs font-bold" style={{ color: D.text }}>{agent.name}</span>
-                          <span className="text-[10px] ml-2″ style={{ color: D.muted }}>{agent.role}</span>
+                          <span className="text-[10px] ml-2" style={{ color: D.muted }}>{agent.role}</span>
                         </div>
                       </div>
-                      <div className="flex items-center gap-3″>
-                        <span className="text-[10px] font-bold" style={{ color: agent.successRate >= 98 ? "#82D616″ : "#FBB140" }}>{agent.successRate}%</span>
+                      <div className="flex items-center gap-3">
+                        <span className="text-[10px] font-bold" style={{ color: agent.successRate >= 98 ? "#82D616" : "#FBB140" }}>{agent.successRate}%</span>
                         <span className="w-2 h-2 rounded-full" style={{ background: STATUS_COLOR[agent.status] }} />
                       </div>
                     </div>
 
                     <div className="flex items-center gap-4 text-[10px]">
                       {/* Upstream */}
-                      <div className="flex items-center gap-1″>
-                        <ArrowRight className="w-3 h-3 rotate-180″ style={{ color: "#7928CA" }} />
+                      <div className="flex items-center gap-1">
+                        <ArrowRight className="w-3 h-3 rotate-180" style={{ color: "#7928CA" }} />
                         <span style={{ color: D.muted }}>Reports to:</span>
                         {upstream ? (
                           <span className="font-bold" style={{ color: upstream.color }}>{upstream.name}</span>
@@ -1519,7 +1519,7 @@ function DependabilityView({ onSelectAgent, selectedAgent, filterCompany }: { on
                       {/* Downstream */}
                       {downstream.length > 0 && (
                         <div className="flex items-center gap-1 flex-wrap">
-                          <ArrowRight className="w-3 h-3″ style={{ color: "#82D616" }} />
+                          <ArrowRight className="w-3 h-3" style={{ color: "#82D616" }} />
                           <span style={{ color: D.muted }}>Manages:</span>
                           {downstream.slice(0, 5).map(d => (
                             <span key={d.id} className="px-1.5 py-0.5 rounded" style={{ background: `${d.color}15`, color: d.color, fontWeight: 700 }}>{d.name}</span>
@@ -1531,8 +1531,8 @@ function DependabilityView({ onSelectAgent, selectedAgent, filterCompany }: { on
 
                     {/* Critical chain warning */}
                     {downstream.length >= 5 && (
-                      <div className="mt-2 flex items-center gap-1.5 text-[10px] px-2 py-1 rounded" style={{ background: "#FBB14022″, color: "#FBB140" }}>
-                        <AlertTriangle className="w-3 h-3″ />
+                      <div className="mt-2 flex items-center gap-1.5 text-[10px] px-2 py-1 rounded" style={{ background: "#FBB14022", color: "#FBB140" }}>
+                        <AlertTriangle className="w-3 h-3" />
                         <span className="font-bold">Critical node — manages {downstream.length} agents. Failure here cascades.</span>
                       </div>
                     )}
@@ -1569,13 +1569,13 @@ export default function CompanyOrgChart() {
       <div className="flex flex-col h-full overflow-hidden" style={{ background: D.bg }}>
 
         {/* ── Top Bar ── */}
-        <div className="flex items-center justify-between px-6 py-3 flex-shrink-0″ style={{ background: D.card, borderBottom: `1px solid ${D.border}` }}>
-          <div className="flex items-center gap-6″>
+        <div className="flex items-center justify-between px-6 py-3 flex-shrink-0" style={{ background: D.card, borderBottom: `1px solid ${D.border}` }}>
+          <div className="flex items-center gap-6">
             {[
-              { label: "Total Agents",  value: "47″,                              color: "#00D4FF" },
-              { label: "Active Now",    value: `${activeCount}`,                  color: "#82D616″ },
-              { label: "Actions Today", value: totalActions.toLocaleString(),     color: "#FBB140″ },
-              { label: "Avg Success",   value: `${avgSuccess}%`,                  color: "#17C1E8″ },
+              { label: "Total Agents",  value: "47",                              color: "#00D4FF" },
+              { label: "Active Now",    value: `${activeCount}`,                  color: "#82D616" },
+              { label: "Actions Today", value: totalActions.toLocaleString(),     color: "#FBB140" },
+              { label: "Avg Success",   value: `${avgSuccess}%`,                  color: "#17C1E8" },
             ].map(s => (
               <div key={s.label} className="text-center">
                 <div className="text-lg font-bold" style={{ color: s.color }}>{s.value}</div>
@@ -1584,7 +1584,7 @@ export default function CompanyOrgChart() {
             ))}
           </div>
 
-          <div className="flex items-center gap-3″>
+          <div className="flex items-center gap-3">
             {view !== "company" && view !== "history" && (
               <select
                 value={filterCompany}
@@ -1613,7 +1613,7 @@ export default function CompanyOrgChart() {
                     className="flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium transition-all"
                     style={{ background: view === v.id ? "#00D4FF" : D.bg, color: view === v.id ? "#fff" : D.muted }}
                   >
-                    <VIcon className="w-3 h-3″ />
+                    <VIcon className="w-3 h-3" />
                     {v.label}
                   </button>
                 );
@@ -1623,7 +1623,7 @@ export default function CompanyOrgChart() {
         </div>
 
         {/* ── Content ── */}
-        <div className="flex-1 overflow-y-auto p-6″>
+        <div className="flex-1 overflow-y-auto p-6">
           <SelfLearningLoop />
 
           {view === "company" && (
@@ -1631,22 +1631,22 @@ export default function CompanyOrgChart() {
           )}
 
           {view === "org" && (
-            <div className="space-y-8″>
+            <div className="space-y-8">
               {LAYER_ORDER.map(layer => {
                 const layerAgents = filteredAgents.filter(a => a.layer === layer);
                 if (layerAgents.length === 0) return null;
                 return (
                   <div key={layer}>
-                    <div className="flex items-center gap-3 mb-4″>
-                      <div className="h-px flex-1″ style={{ background: `${LAYER_COLOR[layer]}44` }} />
+                    <div className="flex items-center gap-3 mb-4">
+                      <div className="h-px flex-1" style={{ background: `${LAYER_COLOR[layer]}44` }} />
                       <span className="px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider" style={{ background: `${LAYER_COLOR[layer]}22`, color: LAYER_COLOR[layer] }}>
                         {LAYER_LABEL[layer]} ({layerAgents.length})
                       </span>
-                      <div className="h-px flex-1″ style={{ background: `${LAYER_COLOR[layer]}44` }} />
+                      <div className="h-px flex-1" style={{ background: `${LAYER_COLOR[layer]}44` }} />
                     </div>
                     {layer === "supreme-court" && (
-                      <div className="p-4 rounded-xl mb-2″ style={{ background: "#FFD70011", border: "1.5px dashed #FFD70066" }}>
-                        <div className="text-xs font-bold mb-3 text-center" style={{ color: "#FFD700″ }}>
+                      <div className="p-4 rounded-xl mb-2" style={{ background: "#FFD70011", border: "1.5px dashed #FFD70066" }}>
+                        <div className="text-xs font-bold mb-3 text-center" style={{ color: "#FFD700" }}>
                           Multi-LLM Consensus Required — 2 of 3 must agree before any high-stakes action executes
                         </div>
                         <div className="flex justify-center gap-4 flex-wrap">
@@ -1670,7 +1670,7 @@ export default function CompanyOrgChart() {
           )}
 
           {view === "grid" && (
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4″>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
               {filteredAgents.map(agent => {
                 const Icon = agent.icon;
                 return (
@@ -1680,10 +1680,10 @@ export default function CompanyOrgChart() {
                     className="text-left p-4 rounded-xl transition-all"
                     style={{ background: D.card, border: `1.5px solid ${selectedAgent?.id === agent.id ? agent.color : D.border}` }}
                   >
-                    <div className="flex items-start justify-between mb-3″>
-                      <div className="flex items-center gap-2″>
+                    <div className="flex items-start justify-between mb-3">
+                      <div className="flex items-center gap-2">
                         <div className="w-8 h-8 rounded-full flex items-center justify-center" style={{ background: `${agent.color}22` }}>
-                          <Icon className="w-4 h-4″ style={{ color: agent.color }} />
+                          <Icon className="w-4 h-4" style={{ color: agent.color }} />
                         </div>
                         <div>
                           <div className="text-sm font-bold" style={{ color: D.text }}>{agent.name}</div>
@@ -1694,7 +1694,7 @@ export default function CompanyOrgChart() {
                         {STATUS_LABEL[agent.status]}
                       </span>
                     </div>
-                    <div className="grid grid-cols-3 gap-2 mb-2″>
+                    <div className="grid grid-cols-3 gap-2 mb-2">
                       <div className="p-1.5 rounded" style={{ background: D.bg }}>
                         <div className="text-[10px]" style={{ color: D.muted }}>Actions</div>
                         <div className="text-xs font-bold" style={{ color: D.text }}>{agent.actionsToday.toLocaleString()}</div>
@@ -1703,12 +1703,12 @@ export default function CompanyOrgChart() {
                         <div className="text-[10px]" style={{ color: D.muted }}>Success</div>
                         <div className="text-xs font-bold" style={{ color: D.text }}>{agent.successRate}%</div>
                       </div>
-                      <div className="p-1.5 rounded col-span-1″ style={{ background: D.bg }}>
+                      <div className="p-1.5 rounded col-span-1" style={{ background: D.bg }}>
                         <div className="text-[10px]" style={{ color: D.muted }}>LLM</div>
                         <div className="text-[10px] font-bold truncate" style={{ color: agent.color }}>{agent.llm}</div>
                       </div>
                     </div>
-                    <p className="text-xs line-clamp-2″ style={{ color: D.muted }}>{agent.lastAction}</p>
+                    <p className="text-xs line-clamp-2" style={{ color: D.muted }}>{agent.lastAction}</p>
                   </button>
                 );
               })}

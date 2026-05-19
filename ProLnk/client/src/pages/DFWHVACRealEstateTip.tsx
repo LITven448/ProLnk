@@ -104,10 +104,10 @@ export default function DFWHVACRealEstateTip() {
               key={r.id}
               onClick={() => { setSelected(r.id); setExpanded(null); }}
               style={{
-                background: selected === r.id ? '#F5E642′ : '#0f2040',
-                color: selected === r.id ? '#0A1628′ : '#fff',
+                background: selected === r.id ? '#F5E642' : '#0f2040',
+                color: selected === r.id ? '#0A1628' : '#fff',
                 border: '2px solid',
-                borderColor: selected === r.id ? '#F5E642′ : '#1e3a5f',
+                borderColor: selected === r.id ? '#F5E642' : '#1e3a5f',
                 borderRadius: 12,
                 padding: '20px 12px',
                 cursor: 'pointer',
@@ -126,7 +126,7 @@ export default function DFWHVACRealEstateTip() {
             {role.tips.map((tip, i) => (
               <div
                 key={i}
-                style={{ background: '#0f2040', borderRadius: 12, marginBottom: 10, border: '1px solid', borderColor: expanded === i ? '#F5E642′ : '#1e3a5f', overflow: ’hidden' }}
+                style={{ background: '#0f2040', borderRadius: 12, marginBottom: 10, border: '1px solid', borderColor: expanded === i ? '#F5E642' : '#1e3a5f', overflow: 'hidden' }}
               >
                 <button
                   onClick={() => setExpanded(expanded === i ? null : i)}

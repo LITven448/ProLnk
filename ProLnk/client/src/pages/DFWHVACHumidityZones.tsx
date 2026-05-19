@@ -46,7 +46,7 @@ export default function DFWHVACHumidityZones() {
           <h2 style={{ color: '#F5E642', marginBottom: '1rem', fontSize: '1rem', fontWeight: 600 }}>📍 Select Your DFW Area</h2>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '0.75rem' }}>
             {zones.map((z, i) => (
-              <button key={i} onClick={() => setSelectedArea(i)} style={{ backgroundColor: selectedArea === i ? '#F5E642′ : '#1A2E4A', color: selectedArea === i ? '#0A1628' : '#E8EDF2', border: ’none', borderRadius: '8px', padding: '0.75rem 1rem', cursor: 'pointer', fontWeight: 600, fontSize: '0.85rem', textAlign: 'left', transition: 'all 0.2s' }}>
+              <button key={i} onClick={() => setSelectedArea(i)} style={{ backgroundColor: selectedArea === i ? '#F5E642' : '#1A2E4A', color: selectedArea === i ? '#0A1628' : '#E8EDF2', border: 'none', borderRadius: '8px', padding: '0.75rem 1rem', cursor: 'pointer', fontWeight: 600, fontSize: '0.85rem', textAlign: 'left', transition: 'all 0.2s' }}>
                 {z.area}
               </button>
             ))}
@@ -57,19 +57,19 @@ export default function DFWHVACHumidityZones() {
           <h2 style={{ color: '#F5E642', marginBottom: '1rem', fontSize: '1rem', fontWeight: 600 }}>🌤️ Select Season</h2>
           <div style={{ display: 'flex', gap: '0.75rem', flexWrap: 'wrap' }}>
             {seasons.map(s => (
-              <button key={s} onClick={() => setSelectedSeason(s)} style={{ backgroundColor: selectedSeason === s ? '#F5E642′ : '#1A2E4A', color: selectedSeason === s ? '#0A1628' : '#E8EDF2', border: ’none', borderRadius: '8px', padding: '0.6rem 1.25rem', cursor: 'pointer', fontWeight: 600, fontSize: '0.9rem', textTransform: 'capitalize', transition: 'all 0.2s' }}>
+              <button key={s} onClick={() => setSelectedSeason(s)} style={{ backgroundColor: selectedSeason === s ? '#F5E642' : '#1A2E4A', color: selectedSeason === s ? '#0A1628' : '#E8EDF2', border: 'none', borderRadius: '8px', padding: '0.6rem 1.25rem', cursor: 'pointer', fontWeight: 600, fontSize: '0.9rem', textTransform: 'capitalize', transition: 'all 0.2s' }}>
                 {s}
               </button>
             ))}
           </div>
         </div>
 
-        <div style={{ backgroundColor: '#1A2E4A', borderRadius: '12px', padding: '1.75rem', marginBottom: '1.5rem', border: '1px solid #F5E642′ }}>
+        <div style={{ backgroundColor: '#1A2E4A', borderRadius: '12px', padding: '1.75rem', marginBottom: '1.5rem', border: '1px solid #F5E642' }}>
           <h2 style={{ color: '#F5E642', fontSize: '1.3rem', fontWeight: 700, marginBottom: '0.5rem' }}>{zone.area}</h2>
           <p style={{ color: '#94A3B8', fontSize: '0.9rem', marginBottom: '1rem', textTransform: 'capitalize' }}>Season: {selectedSeason}</p>
           <div style={{ backgroundColor: '#0A1628', borderRadius: '8px', padding: '1rem', marginBottom: '1rem' }}>
             <div style={{ fontSize: '0.85rem', color: '#94A3B8', marginBottom: '0.25rem' }}>Typical Humidity Range</div>
-            <div style={{ fontSize: '1.5rem', fontWeight: 700, color: '#F5E642′ }}>{humidityLevel}</div>
+            <div style={{ fontSize: '1.5rem', fontWeight: 700, color: '#F5E642' }}>{humidityLevel}</div>
           </div>
           <div style={{ fontSize: '0.95rem', color: '#E8EDF2', lineHeight: 1.6 }}>
             <span style={{ color: '#F5E642', fontWeight: 600 }}>HVAC Implication: </span>{zone.implications}

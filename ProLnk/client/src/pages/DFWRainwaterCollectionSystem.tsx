@@ -53,7 +53,7 @@ export default function DFWRainwaterCollectionSystem() {
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16, marginBottom: 20 }}>
             <div>
               <label style={{ color: '#A0AABB', fontSize: 13, display: 'block', marginBottom: 6 }}>Roof Collection Area (sq ft)</label>
-              <input type="number" value={roofArea} onChange={e => setRoofArea(e.target.value)} placeholder="e.g. 2000″ style={{ width: '100%', padding: '10px 12px', backgroundColor: '#0A1628', border: '1px solid #1E3A5F', borderRadius: 8, color: '#E8EAF0', fontSize: 14, boxSizing: 'border-box' }} />
+              <input type="number" value={roofArea} onChange={e => setRoofArea(e.target.value)} placeholder="e.g. 2000" style={{ width: '100%', padding: '10px 12px', backgroundColor: '#0A1628', border: '1px solid #1E3A5F', borderRadius: 8, color: '#E8EAF0', fontSize: 14, boxSizing: 'border-box' }} />
               <div style={{ color: '#555F7A', fontSize: 12, marginTop: 4 }}>Tip: use ~80% of total roof area for collection</div>
             </div>
             <div>
@@ -66,7 +66,7 @@ export default function DFWRainwaterCollectionSystem() {
           </div>
 
           {result && (
-            <div style={{ backgroundColor: '#0A1628', borderRadius: 10, padding: 20, borderLeft: '4px solid #F5E642′ }}>
+            <div style={{ backgroundColor: '#0A1628', borderRadius: 10, padding: 20, borderLeft: '4px solid #F5E642' }}>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: 16 }}>
                 {[
                   { label: 'ANNUAL COLLECTION', val: `${result.annualGallons.toLocaleString()} gallons`, sub: 'Based on 85% collection efficiency' },
@@ -88,7 +88,7 @@ export default function DFWRainwaterCollectionSystem() {
           <h2 style={{ color: '#F5E642', fontSize: 18, marginBottom: 16 }}>🔧 System Components</h2>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12 }}>
             {[
-              { label: 'First Flush Diverter', desc: 'Discards first 1/8″ of rain per 100 sq ft to remove roof debris. Required for any potable or toilet-flush use.' },
+              { label: 'First Flush Diverter', desc: 'Discards first 1/8" of rain per 100 sq ft to remove roof debris. Required for any potable or toilet-flush use.' },
               { label: 'Collection Tank', desc: '250–10,000 gal polyethylene tanks. Slimline tanks available for HOA-restricted properties. Must be opaque to prevent algae.' },
               { label: 'Overflow Management', desc: 'Overflow must discharge away from foundation. Size overflow outlet for max DFW rainfall intensity (5–7 in/hr storm events).' },
               { label: 'Pump + Distribution', desc: '12V DC pump for gravity-fed systems. 120V submersible for pressurized systems. Backflow preventer required.' },

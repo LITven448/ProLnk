@@ -89,7 +89,7 @@ export default function DFWCommunityGardeningGuide() {
             <div style={{ background: '#0D1F35', borderRadius: 12, padding: 24, marginBottom: 24 }}>
               <h3 style={{ color: '#F5E642', marginBottom: 16 }}>📍 Community Gardens Near You</h3>
               {filteredGardens.length === 0 ? <p style={{ color: '#8899AA' }}>No gardens found — try starting one! (See guide below)</p> : filteredGardens.map(g => (
-                <div key={g.name} style={{ borderBottom: '1px solid #1E3A5F', padding: '12px 0′ }}>
+                <div key={g.name} style={{ borderBottom: '1px solid #1E3A5F', padding: '12px 0' }}>
                   <div style={{ fontWeight: 700 }}>{g.name} <span style={{ color: '#8899AA', fontWeight: 400, fontSize: 14 }}>— {g.area}</span></div>
                   <div style={{ color: '#8899AA', fontSize: 13 }}>🏷️ {g.type} · 📏 {g.size} · 🌐 {g.contact}</div>
                 </div>
@@ -98,7 +98,7 @@ export default function DFWCommunityGardeningGuide() {
             <div style={{ background: '#0D1F35', borderRadius: 12, padding: 24, marginBottom: 24 }}>
               <h3 style={{ color: '#F5E642', marginBottom: 16 }}>🗓️ {season} Planting Guide for DFW</h3>
               {plantingCalendar[season].map(p => (
-                <div key={p.plant} style={{ display: 'flex', justifyContent: 'space-between', borderBottom: '1px solid #1E3A5F', padding: '10px 0′ }}>
+                <div key={p.plant} style={{ display: 'flex', justifyContent: 'space-between', borderBottom: '1px solid #1E3A5F', padding: '10px 0' }}>
                   <div><span style={{ fontWeight: 700 }}>{p.plant}</span> <span style={{ color: '#8899AA', fontSize: 13 }}>· Plant: {p.start}</span></div>
                   <div style={{ color: '#AAB8C2', fontSize: 13, maxWidth: 300, textAlign: 'right' }}>{p.notes}</div>
                 </div>
@@ -106,7 +106,7 @@ export default function DFWCommunityGardeningGuide() {
             </div>
             <div style={{ background: '#0D1F35', borderRadius: 12, padding: 24 }}>
               <h3 style={{ color: '#F5E642', marginBottom: 12 }}>♻️ Free Compost in DFW</h3>
-              <p style={{ color: '#AAB8C2′ }}>Dallas residents can pick up free compost at <strong>McCommas Bluff Landfill</strong> (5000 Youngblood Rd) — bring your own containers. Fort Worth offers similar pickup at <strong>Brennan Recycling Center</strong>. Most DFW suburbs have curbside organics programs starting in 2025.</p>
+              <p style={{ color: '#AAB8C2' }}>Dallas residents can pick up free compost at <strong>McCommas Bluff Landfill</strong> (5000 Youngblood Rd) — bring your own containers. Fort Worth offers similar pickup at <strong>Brennan Recycling Center</strong>. Most DFW suburbs have curbside organics programs starting in 2025.</p>
             </div>
           </>
         )}

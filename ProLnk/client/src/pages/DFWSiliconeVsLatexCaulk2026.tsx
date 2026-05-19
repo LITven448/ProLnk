@@ -25,7 +25,7 @@ export default function DFWSiliconeVsLatexCaulk2026() {
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: 10, marginBottom: 24 }}>
           {[
             { type: '🔵 Silicone', pros: 'Wet areas, exterior, UV resistant', cons: 'Cannot be painted, harder to apply', color: '#1e3a5f' },
-            { type: '🟡 Latex', pros: 'Paintable, easy cleanup with water', cons: 'Not waterproof, degrades in wet zones', color: '#3f3100′ },
+            { type: '🟡 Latex', pros: 'Paintable, easy cleanup with water', cons: 'Not waterproof, degrades in wet zones', color: '#3f3100' },
             { type: '🟢 Hybrid', pros: 'Paintable + waterproof, DFW versatile', cons: 'Costs more than basic latex', color: '#1a3a1a' },
           ].map(c => (
             <div key={c.type} style={{ background: c.color, borderRadius: 10, padding: 14 }}>
@@ -39,21 +39,21 @@ export default function DFWSiliconeVsLatexCaulk2026() {
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12, marginBottom: 28 }}>
           {applications.map(a => (
             <button key={a.id} onClick={() => setSelected(a.id)}
-              style={{ background: selected === a.id ? '#F5E642′ : '#1e293b', color: selected === a.id ? '#0A1628' : '#fff', border: '2px solid ' + (selected === a.id ? '#F5E642' : '#334155'), borderRadius: 10, padding: '14px 12px', cursor: ’pointer', fontWeight: 600, fontSize: 14, textAlign: 'left' }}>
+              style={{ background: selected === a.id ? '#F5E642' : '#1e293b', color: selected === a.id ? '#0A1628' : '#fff', border: '2px solid ' + (selected === a.id ? '#F5E642' : '#334155'), borderRadius: 10, padding: '14px 12px', cursor: 'pointer', fontWeight: 600, fontSize: 14, textAlign: 'left' }}>
               {a.label}
-              <div style={{ fontSize: 12, fontWeight: 400, marginTop: 4, color: selected === a.id ? '#0A1628′ : '#94a3b8' }}>Best: {a.winner}</div>
+              <div style={{ fontSize: 12, fontWeight: 400, marginTop: 4, color: selected === a.id ? '#0A1628' : '#94a3b8' }}>Best: {a.winner}</div>
             </button>
           ))}
         </div>
 
         {app && (
-          <div style={{ background: '#1e293b', borderRadius: 14, padding: 24, border: '1px solid #334155′ }}>
+          <div style={{ background: '#1e293b', borderRadius: 14, padding: 24, border: '1px solid #334155' }}>
             <h2 style={{ color: '#F5E642', fontSize: 20, margin: '0 0 6px' }}>{app.label}</h2>
             <div style={{ background: '#0f172a', borderRadius: 8, padding: 14, marginBottom: 14 }}>
               <div style={{ color: '#F5E642', fontWeight: 700, marginBottom: 4 }}>✅ Use: {app.winner}</div>
               <div style={{ color: '#e2e8f0', fontSize: 14 }}>{app.reason}</div>
             </div>
-            <div style={{ background: '#1a1a2e', borderRadius: 8, padding: 14, border: '1px solid #3b82f6′ }}>
+            <div style={{ background: '#1a1a2e', borderRadius: 8, padding: 14, border: '1px solid #3b82f6' }}>
               <div style={{ color: '#93c5fd', fontWeight: 700, fontSize: 13, marginBottom: 4 }}>💡 DFW Note</div>
               <div style={{ color: '#e2e8f0', fontSize: 14 }}>{app.notes}</div>
             </div>
@@ -61,7 +61,7 @@ export default function DFWSiliconeVsLatexCaulk2026() {
         )}
 
         {!app && (
-          <div style={{ background: '#1e293b', borderRadius: 14, padding: 24, textAlign: 'center', color: '#94a3b8′ }}>
+          <div style={{ background: '#1e293b', borderRadius: 14, padding: 24, textAlign: 'center', color: '#94a3b8' }}>
             <div style={{ fontSize: 36, marginBottom: 8 }}>👆</div>
             <p>Select your application above to get the right caulk recommendation.</p>
           </div>

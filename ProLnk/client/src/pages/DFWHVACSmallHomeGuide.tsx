@@ -42,7 +42,7 @@ export default function DFWHVACSmallHomeGuide() {
         <div style={{ color: '#F5E642', fontSize: 13, fontWeight: 700, letterSpacing: 2, marginBottom: 8 }}>DFW HVAC GUIDE</div>
         <h1 style={{ fontSize: 32, fontWeight: 800, marginBottom: 8 }}>Small Homes Under 1,500 Sq Ft</h1>
         <p style={{ color: '#94a3b8', fontSize: 15, marginBottom: 32, lineHeight: 1.7 }}>
-          Oversizing is the #1 HVAC mistake in small DFW homes. A system that's too large short-cycles, drives up humidity, and costs more to run. In DFW’s humid subtropical climate, right-sizing is not optional — it’s critical for comfort and home health.
+          Oversizing is the #1 HVAC mistake in small DFW homes. A system that's too large short-cycles, drives up humidity, and costs more to run. In DFW's humid subtropical climate, right-sizing is not optional — it's critical for comfort and home health.
         </p>
 
         <div style={{ background: '#F5E642', color: '#0A1628', borderRadius: 8, padding: '14px 18px', marginBottom: 28, fontSize: 14, fontWeight: 600 }}>
@@ -50,12 +50,12 @@ export default function DFWHVACSmallHomeGuide() {
         </div>
 
         <div style={{ background: '#0f1f3d', borderRadius: 12, padding: 24, marginBottom: 24 }}>
-          <h2 style={{ fontSize: 18, fontWeight: 700, marginBottom: 16, color: '#F5E642′ }}>🏠 Get Your Recommendation</h2>
+          <h2 style={{ fontSize: 18, fontWeight: 700, marginBottom: 16, color: '#F5E642' }}>🏠 Get Your Recommendation</h2>
           <div style={{ marginBottom: 16 }}>
             <label style={{ color: '#94a3b8', fontSize: 13, display: 'block', marginBottom: 6 }}>HOME SIZE</label>
             <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8 }}>
               {sizes.map(s => (
-                <button key={s} onClick={() => setSize(s)} style={{ padding: '8px 16px', borderRadius: 6, border: '2px solid', borderColor: size === s ? '#F5E642′ : '#1e3a5f', background: size === s ? '#F5E642' : ’transparent', color: size === s ? '#0A1628′ : '#fff', cursor: ’pointer', fontWeight: 600, fontSize: 13 }}>{s}</button>
+                <button key={s} onClick={() => setSize(s)} style={{ padding: '8px 16px', borderRadius: 6, border: '2px solid', borderColor: size === s ? '#F5E642' : '#1e3a5f', background: size === s ? '#F5E642' : 'transparent', color: size === s ? '#0A1628' : '#fff', cursor: 'pointer', fontWeight: 600, fontSize: 13 }}>{s}</button>
               ))}
             </div>
           </div>
@@ -63,12 +63,12 @@ export default function DFWHVACSmallHomeGuide() {
             <label style={{ color: '#94a3b8', fontSize: 13, display: 'block', marginBottom: 6 }}>YOUR SITUATION</label>
             <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8 }}>
               {situations.map(s => (
-                <button key={s} onClick={() => setSituation(s)} style={{ padding: '8px 16px', borderRadius: 6, border: '2px solid', borderColor: situation === s ? '#F5E642′ : '#1e3a5f', background: situation === s ? '#F5E642' : ’transparent', color: situation === s ? '#0A1628′ : '#fff', cursor: ’pointer', fontWeight: 600, fontSize: 13 }}>{s}</button>
+                <button key={s} onClick={() => setSituation(s)} style={{ padding: '8px 16px', borderRadius: 6, border: '2px solid', borderColor: situation === s ? '#F5E642' : '#1e3a5f', background: situation === s ? '#F5E642' : 'transparent', color: situation === s ? '#0A1628' : '#fff', cursor: 'pointer', fontWeight: 600, fontSize: 13 }}>{s}</button>
               ))}
             </div>
           </div>
           {result && (
-            <div style={{ background: '#1e3a5f', borderRadius: 8, padding: 16, borderLeft: '4px solid #F5E642′ }}>
+            <div style={{ background: '#1e3a5f', borderRadius: 8, padding: 16, borderLeft: '4px solid #F5E642' }}>
               <div style={{ fontWeight: 700, color: '#F5E642', marginBottom: 6 }}>Recommendation</div>
               <div style={{ color: '#e2e8f0', fontSize: 14, lineHeight: 1.7 }}>{result}</div>
             </div>

@@ -75,7 +75,7 @@ export default function DFWFebruaryHomeMaintenanceGuide() {
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: 10, marginBottom: 20 }}>
             {Object.keys(actions).map((k) => (
               <button key={k} onClick={() => setSelected(k)}
-                style={{ background: selected === k ? '#F5E642′ : '#1e3a5f', color: selected === k ? '#0A1628' : '#fff', border: ’none', borderRadius: 8, padding: '8px 14px', cursor: 'pointer', fontWeight: 600, fontSize: 13 }}>
+                style={{ background: selected === k ? '#F5E642' : '#1e3a5f', color: selected === k ? '#0A1628' : '#fff', border: 'none', borderRadius: 8, padding: '8px 14px', cursor: 'pointer', fontWeight: 600, fontSize: 13 }}>
                 {k}
               </button>
             ))}
@@ -88,7 +88,7 @@ export default function DFWFebruaryHomeMaintenanceGuide() {
         </div>
 
         <div style={{ textAlign: 'center', marginTop: 32, background: '#F5E642', borderRadius: 12, padding: 20 }}>
-          <div style={{ fontSize: 20, fontWeight: 700, color: '#0A1628′ }}>Don’t wait until the next freeze warning.</div>
+          <div style={{ fontSize: 20, fontWeight: 700, color: '#0A1628' }}>Don't wait until the next freeze warning.</div>
           <div style={{ color: '#0A1628', marginTop: 6 }}>ProLnk connects DFW homeowners with licensed pros before the rush.</div>
         </div>
       </div>

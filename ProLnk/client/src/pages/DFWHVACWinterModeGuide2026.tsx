@@ -97,8 +97,8 @@ export default function DFWHVACWinterModeGuide2026() {
               ].map(o => (
                 <button key={o.v} onClick={() => setSystemType(o.v)}
                   style={{ padding: '12px 8px', borderRadius: 8, border: '2px solid', cursor: 'pointer',
-                    borderColor: systemType === o.v ? '#F5E642′ : '#1e3a5f',
-                    backgroundColor: systemType === o.v ? '#F5E64220′ : '#0d1f3c',
+                    borderColor: systemType === o.v ? '#F5E642' : '#1e3a5f',
+                    backgroundColor: systemType === o.v ? '#F5E64220' : '#0d1f3c',
                     color: '#fff', fontSize: 13 }}>
                   {o.l}
                 </button>
@@ -116,8 +116,8 @@ export default function DFWHVACWinterModeGuide2026() {
               ].map(o => (
                 <button key={o.v} onClick={() => setWinterSituation(o.v)}
                   style={{ padding: '10px 16px', borderRadius: 8, border: '2px solid', cursor: 'pointer',
-                    borderColor: winterSituation === o.v ? '#F5E642′ : '#1e3a5f',
-                    backgroundColor: winterSituation === o.v ? '#F5E64220′ : '#0d1f3c',
+                    borderColor: winterSituation === o.v ? '#F5E642' : '#1e3a5f',
+                    backgroundColor: winterSituation === o.v ? '#F5E64220' : '#0d1f3c',
                     color: '#fff', fontSize: 14 }}>
                   {o.l}
                 </button>
@@ -135,7 +135,7 @@ export default function DFWHVACWinterModeGuide2026() {
           </div>
         )}
 
-        <div style={{ marginTop: 32, backgroundColor: '#F5E64215', borderRadius: 12, padding: 20, textAlign: 'center', border: '1px solid #F5E64240′ }}>
+        <div style={{ marginTop: 32, backgroundColor: '#F5E64215', borderRadius: 12, padding: 20, textAlign: 'center', border: '1px solid #F5E64240' }}>
           <p style={{ color: '#F5E642', fontWeight: 600, margin: '0 0 4px' }}>🔗 ProLnk Winter HVAC Specialists — DFW</p>
           <p style={{ color: '#94a3b8', fontSize: 13, margin: 0 }}>Fast connections to certified DFW heating pros when winter hits.</p>
         </div>

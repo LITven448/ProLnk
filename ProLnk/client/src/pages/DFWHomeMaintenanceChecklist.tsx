@@ -153,7 +153,7 @@ export default function DFWHomeMaintenanceChecklist() {
                     }}>
                       {checked[key] ? '✓' : ''}
                     </div>
-                    <span style={{ fontSize: 14, color: checked[key] ? '#556677′ : '#cdd9e5', textDecoration: checked[key] ? ’line-through' : 'none', lineHeight: 1.5 }}>
+                    <span style={{ fontSize: 14, color: checked[key] ? '#556677' : '#cdd9e5', textDecoration: checked[key] ? 'line-through' : 'none', lineHeight: 1.5 }}>
                       {task}
                     </span>
                   </div>

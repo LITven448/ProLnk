@@ -26,14 +26,14 @@ const sections = [
 type ModeResult = { mode: string; explanation: string; verdict: string; color: string };
 
 function assessMode(tempF: number, symptom: string): ModeResult {
-  if (symptom === 'blowing-cold-heat') return { mode: 'Reversing Valve Issue', explanation: 'System may be stuck in cooling mode during a heating call.', verdict: 'Service call needed — reversing valve or thermostat wiring fault.', color: '#EF4444′ };
+  if (symptom === 'blowing-cold-heat') return { mode: 'Reversing Valve Issue', explanation: 'System may be stuck in cooling mode during a heating call.', verdict: 'Service call needed — reversing valve or thermostat wiring fault.', color: '#EF4444' };
   if (symptom === 'aux-only') {
-    if (tempF <= 30) return { mode: 'Aux Heat Normal', explanation: 'Below balance point — aux heat running alone is expected.', verdict: 'Operating correctly for these conditions.', color: '#10B981′ };
-    return { mode: 'Heat Pump Not Engaging', explanation: 'Above balance point but only aux heat running — possible heat pump fault.', verdict: 'Service call recommended — heat pump should be carrying the load.', color: '#EF4444′ };
+    if (tempF <= 30) return { mode: 'Aux Heat Normal', explanation: 'Below balance point — aux heat running alone is expected.', verdict: 'Operating correctly for these conditions.', color: '#10B981' };
+    return { mode: 'Heat Pump Not Engaging', explanation: 'Above balance point but only aux heat running — possible heat pump fault.', verdict: 'Service call recommended — heat pump should be carrying the load.', color: '#EF4444' };
   }
   if (tempF <= 20) return { mode: 'Aux Heat + Heat Pump', explanation: 'Near heat pump efficiency floor — both systems running together is correct.', verdict: 'Normal for these extreme temps (rare in DFW).', color: '#F59E0B' };
-  if (tempF <= 35) return { mode: 'Heat Pump + Possible Aux', explanation: 'Near balance point — aux heat may cycle on briefly.', verdict: 'Normal DFW winter operation.', color: '#3B82F6′ };
-  return { mode: 'Heat Pump Only', explanation: 'Well above balance point — heat pump should carry all load efficiently.', verdict: 'No aux heat expected. System operating correctly.', color: '#10B981′ };
+  if (tempF <= 35) return { mode: 'Heat Pump + Possible Aux', explanation: 'Near balance point — aux heat may cycle on briefly.', verdict: 'Normal DFW winter operation.', color: '#3B82F6' };
+  return { mode: 'Heat Pump Only', explanation: 'Well above balance point — heat pump should carry all load efficiently.', verdict: 'No aux heat expected. System operating correctly.', color: '#10B981' };
 }
 
 export default function DFWHeatPumpReverseCycleGuide() {
@@ -50,18 +50,18 @@ export default function DFWHeatPumpReverseCycleGuide() {
           <p style={{ color: '#94A3B8', fontSize: 15 }}>How heat pumps provide both cooling and heating — and why DFW winters are perfect for them</p>
         </div>
         {sections.map((s) => (
-          <div key={s.title} style={{ background: '#0F2140', borderRadius: 12, padding: 20, marginBottom: 16, borderLeft: '4px solid #F5E642′ }}>
+          <div key={s.title} style={{ background: '#0F2140', borderRadius: 12, padding: 20, marginBottom: 16, borderLeft: '4px solid #F5E642' }}>
             <div style={{ fontSize: 24, marginBottom: 8 }}>{s.emoji}</div>
             <h2 style={{ color: '#F5E642', fontSize: 17, fontWeight: 600, margin: '0 0 8px' }}>{s.title}</h2>
             <p style={{ color: '#CBD5E1', fontSize: 14, lineHeight: 1.6, margin: 0 }}>{s.body}</p>
           </div>
         ))}
-        <div style={{ background: '#0F2140', borderRadius: 12, padding: 24, border: '2px solid #F5E642′ }}>
+        <div style={{ background: '#0F2140', borderRadius: 12, padding: 24, border: '2px solid #F5E642' }}>
           <h2 style={{ color: '#F5E642', fontSize: 18, fontWeight: 700, margin: '0 0 20px' }}>🌡️ Operating Mode Checker</h2>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 20, marginBottom: 20 }}>
             <div>
               <label style={{ color: '#94A3B8', fontSize: 13, display: 'block', marginBottom: 6 }}>Outdoor Temp: {temp}°F</label>
-              <input type="range" min={10} max={65} value={temp} onChange={e => setTemp(Number(e.target.value))} style={{ width: '100%', accentColor: '#F5E642′ }} />
+              <input type="range" min={10} max={65} value={temp} onChange={e => setTemp(Number(e.target.value))} style={{ width: '100%', accentColor: '#F5E642' }} />
             </div>
             <div>
               <label style={{ color: '#94A3B8', fontSize: 13, display: 'block', marginBottom: 6 }}>What You Are Observing</label>

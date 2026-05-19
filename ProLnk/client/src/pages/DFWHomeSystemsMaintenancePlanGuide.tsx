@@ -46,7 +46,7 @@ export default function DFWHomeSystemsMaintenancePlanGuide() {
         </div>
 
         <div style={{ background: 'rgba(255,255,255,0.06)', borderRadius: 16, padding: 28, marginBottom: 24 }}>
-          <h2 style={{ fontSize: 18, fontWeight: 700, marginBottom: 20, color: '#F5E642′ }}>🔧 Plan Cost Estimator</h2>
+          <h2 style={{ fontSize: 18, fontWeight: 700, marginBottom: 20, color: '#F5E642' }}>🔧 Plan Cost Estimator</h2>
           <div style={{ display: 'grid', gap: 16 }}>
             {[
               { label: 'Home Size', value: size, setter: setSize, options: homeSizes },
@@ -54,7 +54,7 @@ export default function DFWHomeSystemsMaintenancePlanGuide() {
               { label: 'Number of Systems', value: systems, setter: setSystems, options: systemCounts },
             ].map(({ label, value, setter, options }) => (
               <div key={label}>
-                <label style={{ display: 'block', fontSize: 13, fontWeight: 600, marginBottom: 6, color: '#cbd5e1′ }}>{label}</label>
+                <label style={{ display: 'block', fontSize: 13, fontWeight: 600, marginBottom: 6, color: '#cbd5e1' }}>{label}</label>
                 <select value={value} onChange={e => setter(e.target.value)} style={{ width: '100%', padding: '10px 14px', borderRadius: 8, border: '1.5px solid #334155', fontSize: 15, background: '#0f2040', color: '#fff' }}>
                   {options.map(o => <option key={o}>{o}</option>)}
                 </select>
@@ -65,8 +65,8 @@ export default function DFWHomeSystemsMaintenancePlanGuide() {
 
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: 16, marginBottom: 24 }}>
           {[
-            { label: 'Bundled Plan Est.', value: `$${bundledTotal.toLocaleString()}/yr`, color: '#F5E642′ },
-            { label: 'Individual Service Est.', value: `$${individualTotal.toLocaleString()}/yr`, color: '#94a3b8′ },
+            { label: 'Bundled Plan Est.', value: `$${bundledTotal.toLocaleString()}/yr`, color: '#F5E642' },
+            { label: 'Individual Service Est.', value: `$${individualTotal.toLocaleString()}/yr`, color: '#94a3b8' },
             { label: 'Bundle Savings', value: `$${savings.toLocaleString()}/yr`, color: '#22c55e' },
           ].map(({ label, value, color }) => (
             <div key={label} style={{ background: 'rgba(255,255,255,0.05)', borderRadius: 12, padding: 18, textAlign: 'center' }}>
@@ -77,7 +77,7 @@ export default function DFWHomeSystemsMaintenancePlanGuide() {
         </div>
 
         <div style={{ background: 'rgba(255,255,255,0.04)', borderRadius: 16, padding: 24, marginBottom: 24 }}>
-          <h2 style={{ fontSize: 16, fontWeight: 700, marginBottom: 16, color: '#F5E642′ }}>📅 DFW Annual Maintenance Checklist</h2>
+          <h2 style={{ fontSize: 16, fontWeight: 700, marginBottom: 16, color: '#F5E642' }}>📅 DFW Annual Maintenance Checklist</h2>
           {dfwServices.map((s, i) => {
             const adj = Math.round(((s.bundled[0] + s.bundled[1]) / 2) * combined);
             return (
@@ -90,8 +90,8 @@ export default function DFWHomeSystemsMaintenancePlanGuide() {
                   </div>
                 </div>
                 <div style={{ textAlign: 'right' }}>
-                  <div style={{ fontWeight: 700, color: '#F5E642′ }}>~${adj}/yr</div>
-                  <div style={{ fontSize: 11, color: '#475569′ }}>bundled est.</div>
+                  <div style={{ fontWeight: 700, color: '#F5E642' }}>~${adj}/yr</div>
+                  <div style={{ fontSize: 11, color: '#475569' }}>bundled est.</div>
                 </div>
               </div>
             );

@@ -7,7 +7,7 @@ export default function DallasDesignDistrictHomeownerGuide2026() {
     {
       id: 'conversion-loft', label: '🏭 Commercial Conversion Loft', desc: 'Former warehouse or commercial space',
       hvac: 'Often rooftop RTU or mini-split systems — require commercial-licensed HVAC tech',
-      plumbing: 'Exposed industrial pipes — check original commercial drain sizes (2″ min for residential)',
+      plumbing: 'Exposed industrial pipes — check original commercial drain sizes (2" min for residential)',
       electrical: 'May have 3-phase wiring — needs residential re-configuration for modern loads',
       tips: ['Concrete floors hide plumbing — document all pipe locations before any renovation', 'High ceilings increase HVAC costs dramatically — zone with mini-splits', 'Loading dock doors may not be insulated — upgrade seals']
     },
@@ -51,7 +51,7 @@ export default function DallasDesignDistrictHomeownerGuide2026() {
           <div style={{ display: 'grid', gap: 12 }}>
             {buildingTypes.map(b => (
               <button key={b.id} onClick={() => setBuildingType(b.id)}
-                style={{ background: buildingType === b.id ? '#F5E642′ : '#0f1f3d', color: buildingType === b.id ? '#0A1628' : '#fff', border: '1px solid #334155', borderRadius: 8, padding: '14px 18px', textAlign: ’left', cursor: 'pointer', fontSize: 15, fontWeight: 600 }}>
+                style={{ background: buildingType === b.id ? '#F5E642' : '#0f1f3d', color: buildingType === b.id ? '#0A1628' : '#fff', border: '1px solid #334155', borderRadius: 8, padding: '14px 18px', textAlign: 'left', cursor: 'pointer', fontSize: 15, fontWeight: 600 }}>
                 {b.label} <span style={{ fontWeight: 400, fontSize: 13, opacity: 0.75 }}>— {b.desc}</span>
               </button>
             ))}

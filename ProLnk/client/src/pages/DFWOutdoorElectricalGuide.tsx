@@ -43,13 +43,13 @@ export default function DFWOutdoorElectricalGuide() {
           <p style={{ color: '#8899BB', marginTop: 12, fontSize: 16 }}>Outdoor kitchens, pools, landscape lighting, and EV chargers — DFW electrical requirements</p>
         </div>
 
-        <div style={{ background: '#0F2040', borderRadius: 12, padding: 28, marginBottom: 24, border: '1px solid #1A3060′ }}>
+        <div style={{ background: '#0F2040', borderRadius: 12, padding: 28, marginBottom: 24, border: '1px solid #1A3060' }}>
           <h2 style={{ color: '#F5E642', marginTop: 0 }}>☀️ DFW Outdoor Living Reality</h2>
           <p style={{ color: '#C8D8EE', lineHeight: 1.7 }}>DFW homeowners invest heavily in outdoor living — covered patios, outdoor kitchens, pools, and landscape lighting are standard in neighborhoods from Southlake to Frisco to Lake Highlands. All of it needs code-compliant electrical. The DFW climate means outdoor electrical is exposed to heat extremes, hail, and heavy rain — weatherproofing requirements are not optional.</p>
           <p style={{ color: '#C8D8EE', lineHeight: 1.7 }}>Most DFW cities (Dallas, Fort Worth, Plano, Frisco, Allen, McKinney, Arlington) require permits for new outdoor electrical circuits. Unpermitted work becomes your problem at sale or insurance claim time.</p>
         </div>
 
-        <div style={{ background: '#0F2040', borderRadius: 12, padding: 28, marginBottom: 24, border: '1px solid #1A3060′ }}>
+        <div style={{ background: '#0F2040', borderRadius: 12, padding: 28, marginBottom: 24, border: '1px solid #1A3060' }}>
           <h2 style={{ color: '#F5E642', marginTop: 0 }}>⚠️ Universal Outdoor Electrical Rules in DFW</h2>
           <ul style={{ color: '#C8D8EE', lineHeight: 2 }}>
             <li>All outdoor outlets must be GFCI-protected</li>
@@ -60,12 +60,12 @@ export default function DFWOutdoorElectricalGuide() {
           </ul>
         </div>
 
-        <div style={{ background: '#0F2040', borderRadius: 12, padding: 28, marginBottom: 24, border: '1px solid #1A3060′ }}>
+        <div style={{ background: '#0F2040', borderRadius: 12, padding: 28, marginBottom: 24, border: '1px solid #1A3060' }}>
           <h2 style={{ color: '#F5E642', marginTop: 0 }}>🧮 Outdoor Feature Requirements Calculator</h2>
           <label style={{ color: '#8899BB', display: 'block', marginBottom: 10 }}>Select outdoor features you are planning (choose all that apply)</label>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 10, marginBottom: 20 }}>
             {features.map(f => (
-              <button key={f.id} onClick={() => toggle(f.id)} style={{ padding: '12px 16px', borderRadius: 8, border: `2px solid ${selected.includes(f.id) ? '#F5E642' : '#2A4070'}`, background: selected.includes(f.id) ? '#1A3060′ : '#0A1628', color: '#E8EDF5', fontSize: 14, cursor: ’pointer', textAlign: 'left', fontWeight: selected.includes(f.id) ? 700 : 400 }}>{f.label}</button>
+              <button key={f.id} onClick={() => toggle(f.id)} style={{ padding: '12px 16px', borderRadius: 8, border: `2px solid ${selected.includes(f.id) ? '#F5E642' : '#2A4070'}`, background: selected.includes(f.id) ? '#1A3060' : '#0A1628', color: '#E8EDF5', fontSize: 14, cursor: 'pointer', textAlign: 'left', fontWeight: selected.includes(f.id) ? 700 : 400 }}>{f.label}</button>
             ))}
           </div>
           <button onClick={assess} style={{ background: '#F5E642', color: '#0A1628', border: 'none', padding: '12px 28px', borderRadius: 8, fontWeight: 700, fontSize: 15, cursor: 'pointer', width: '100%' }}>Show Requirements & Costs →</button>

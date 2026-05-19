@@ -116,8 +116,8 @@ export default function DFWElectricityBillGuide() {
                 { name: 'Variable Rate (10.8¢)', cost: result.variable, highlight: false },
                 { name: 'Time-of-Use (8.9¢)', cost: result.tou, highlight: true },
               ].map(r => (
-                <div key={r.name} style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '10px 12px', borderRadius: '8px', marginBottom: '8px', background: r.highlight ? '#1A3A20′ : '#0F1E35', border: r.highlight ? '1px solid #48BB78' : '1px solid transparent' }}>
-                  <span style={{ color: r.highlight ? '#68D391′ : '#CBD5E0', fontSize: '14px' }}>{r.highlight ? '✅ ' : ''}{r.name}</span>
+                <div key={r.name} style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '10px 12px', borderRadius: '8px', marginBottom: '8px', background: r.highlight ? '#1A3A20' : '#0F1E35', border: r.highlight ? '1px solid #48BB78' : '1px solid transparent' }}>
+                  <span style={{ color: r.highlight ? '#68D391' : '#CBD5E0', fontSize: '14px' }}>{r.highlight ? '✅ ' : ''}{r.name}</span>
                   <span style={{ color: '#FFF', fontWeight: 700 }}>${r.cost.toFixed(0)}/yr</span>
                 </div>
               ))}
@@ -131,8 +131,8 @@ export default function DFWElectricityBillGuide() {
           )}
         </div>
 
-        <div style={{ ...section, borderLeft: '3px solid #F5E642′ }}>
-          <div style={{ fontSize: '14px', color: '#CBD5E0′ }}>💡 <strong style={{ color: '#F5E642' }}>Pro tip:</strong> Always compare "Energy Charge Only" rates on PowerToChoose.org — the advertised rate often includes TDU pass-through fees that make plans look cheaper than they are.</div>
+        <div style={{ ...section, borderLeft: '3px solid #F5E642' }}>
+          <div style={{ fontSize: '14px', color: '#CBD5E0' }}>💡 <strong style={{ color: '#F5E642' }}>Pro tip:</strong> Always compare "Energy Charge Only" rates on PowerToChoose.org — the advertised rate often includes TDU pass-through fees that make plans look cheaper than they are.</div>
         </div>
       </div>
     </div>

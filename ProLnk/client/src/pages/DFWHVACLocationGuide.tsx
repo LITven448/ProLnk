@@ -98,10 +98,10 @@ export default function DFWHVACLocationGuide() {
               key={l.id}
               onClick={() => setSelected(l.id)}
               style={{
-                background: selected === l.id ? '#F5E642′ : '#0f2040',
-                color: selected === l.id ? '#0A1628′ : '#fff',
+                background: selected === l.id ? '#F5E642' : '#0f2040',
+                color: selected === l.id ? '#0A1628' : '#fff',
                 border: '2px solid',
-                borderColor: selected === l.id ? '#F5E642′ : '#1e3a5f',
+                borderColor: selected === l.id ? '#F5E642' : '#1e3a5f',
                 borderRadius: 12,
                 padding: '16px',
                 cursor: 'pointer',
@@ -128,7 +128,7 @@ export default function DFWHVACLocationGuide() {
               <div style={{ color: '#94a3b8', fontSize: 12, fontWeight: 700, marginBottom: 10, letterSpacing: 1 }}>DFW IMPLICATIONS</div>
               {loc.implications.map((imp, i) => (
                 <div key={i} style={{ display: 'flex', gap: 8, marginBottom: 8, fontSize: 14 }}>
-                  <span style={{ color: '#F5E642′ }}>⚡</span>
+                  <span style={{ color: '#F5E642' }}>⚡</span>
                   <span>{imp}</span>
                 </div>
               ))}
@@ -137,7 +137,7 @@ export default function DFWHVACLocationGuide() {
               <div style={{ color: '#94a3b8', fontSize: 12, fontWeight: 700, marginBottom: 10, letterSpacing: 1 }}>IMPROVEMENT OPTIONS</div>
               {loc.improvements.map((imp, i) => (
                 <div key={i} style={{ display: 'flex', gap: 8, marginBottom: 8, fontSize: 14 }}>
-                  <span style={{ color: '#34d399′ }}>✓</span>
+                  <span style={{ color: '#34d399' }}>✓</span>
                   <span>{imp}</span>
                 </div>
               ))}

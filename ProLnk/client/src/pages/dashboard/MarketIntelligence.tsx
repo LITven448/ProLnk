@@ -56,92 +56,92 @@ const TOP_SERVICES: Record<string, { service: string; requests: number; trend: s
 
 const PRICE_GUIDES: Record<string, { job: string; low: string; market: string; premium: string }[]> = {
   HVAC: [
-    { job: "AC Tune-Up", low: "$79″, market: "$129", premium: "$189" },
-    { job: "AC Diagnostic", low: "$89″, market: "$149", premium: "$225" },
-    { job: "Thermostat Install", low: "$125″, market: "$195", premium: "$295" },
-    { job: "Refrigerant Recharge (R-410A)", low: "$150″, market: "$275", premium: "$400" },
-    { job: "Capacitor Replacement", low: "$120″, market: "$220", premium: "$320" },
-    { job: "Contactor Replacement", low: "$130″, market: "$230", premium: "$330" },
-    { job: "Blower Motor Replacement", low: "$350″, market: "$550", premium: "$850" },
-    { job: "Compressor Replacement", low: "$800″, market: "$1,400", premium: "$2,200" },
-    { job: "New HVAC System (3-ton)", low: "$4,200″, market: "$6,500", premium: "$10,000" },
-    { job: "Ductwork Sealing", low: "$300″, market: "$550", premium: "$900" },
-    { job: "Air Handler Service", low: "$150″, market: "$250", premium: "$375" },
-    { job: "Coil Cleaning", low: "$100″, market: "$175", premium: "$275" },
-    { job: "Filter Replacement (media)", low: "$45″, market: "$85", premium: "$150" },
-    { job: "UV Air Purifier Install", low: "$250″, market: "$450", premium: "$750" },
-    { job: "Mini-Split Install", low: "$1,200″, market: "$2,000", premium: "$3,500" },
-    { job: "Heat Pump Service", low: "$130″, market: "$220", premium: "$350" },
-    { job: "Annual Maintenance Plan", low: "$129″, market: "$189", premium: "$299" },
-    { job: "Duct Leak Test", low: "$150″, market: "$275", premium: "$450" },
-    { job: "Zone Control Install", low: "$800″, market: "$1,500", premium: "$2,800" },
-    { job: "Emergency After-Hours Call", low: "$195″, market: "$299", premium: "$450" },
+    { job: "AC Tune-Up", low: "$79", market: "$129", premium: "$189" },
+    { job: "AC Diagnostic", low: "$89", market: "$149", premium: "$225" },
+    { job: "Thermostat Install", low: "$125", market: "$195", premium: "$295" },
+    { job: "Refrigerant Recharge (R-410A)", low: "$150", market: "$275", premium: "$400" },
+    { job: "Capacitor Replacement", low: "$120", market: "$220", premium: "$320" },
+    { job: "Contactor Replacement", low: "$130", market: "$230", premium: "$330" },
+    { job: "Blower Motor Replacement", low: "$350", market: "$550", premium: "$850" },
+    { job: "Compressor Replacement", low: "$800", market: "$1,400", premium: "$2,200" },
+    { job: "New HVAC System (3-ton)", low: "$4,200", market: "$6,500", premium: "$10,000" },
+    { job: "Ductwork Sealing", low: "$300", market: "$550", premium: "$900" },
+    { job: "Air Handler Service", low: "$150", market: "$250", premium: "$375" },
+    { job: "Coil Cleaning", low: "$100", market: "$175", premium: "$275" },
+    { job: "Filter Replacement (media)", low: "$45", market: "$85", premium: "$150" },
+    { job: "UV Air Purifier Install", low: "$250", market: "$450", premium: "$750" },
+    { job: "Mini-Split Install", low: "$1,200", market: "$2,000", premium: "$3,500" },
+    { job: "Heat Pump Service", low: "$130", market: "$220", premium: "$350" },
+    { job: "Annual Maintenance Plan", low: "$129", market: "$189", premium: "$299" },
+    { job: "Duct Leak Test", low: "$150", market: "$275", premium: "$450" },
+    { job: "Zone Control Install", low: "$800", market: "$1,500", premium: "$2,800" },
+    { job: "Emergency After-Hours Call", low: "$195", market: "$299", premium: "$450" },
   ],
   Plumbing: [
-    { job: "Drain Cleaning (snake)", low: "$95″, market: "$149", premium: "$225" },
-    { job: "Leak Detection", low: "$150″, market: "$275", premium: "$450" },
-    { job: "Toilet Replacement", low: "$250″, market: "$400", premium: "$650" },
-    { job: "Faucet Replacement", low: "$120″, market: "$220", premium: "$375" },
-    { job: "Water Heater Replacement (40gal)", low: "$900″, market: "$1,400", premium: "$2,200" },
-    { job: "Garbage Disposal Install", low: "$150″, market: "$250", premium: "$400" },
-    { job: "Pipe Repair (section)", low: "$200″, market: "$450", premium: "$800" },
-    { job: "Sewer Line Camera", low: "$200″, market: "$350", premium: "$550" },
-    { job: "Water Pressure Regulator", low: "$200″, market: "$350", premium: "$550" },
-    { job: "Shut-Off Valve Replacement", low: "$125″, market: "$225", premium: "$375" },
-    { job: "Tankless Water Heater Install", low: "$1,200″, market: "$2,200", premium: "$3,800" },
-    { job: "Hose Bib Replacement", low: "$95″, market: "$165", premium: "$275" },
-    { job: "Sump Pump Install", low: "$400″, market: "$700", premium: "$1,100" },
-    { job: "Whole-House Re-pipe (partial)", low: "$2,500″, market: "$5,000", premium: "$9,000" },
-    { job: "Gas Line Leak Check", low: "$175″, market: "$295", premium: "$475" },
-    { job: "Water Softener Install", low: "$600″, market: "$1,100", premium: "$2,000" },
-    { job: "Backflow Preventer Test", low: "$75″, market: "$125", premium: "$200" },
-    { job: "Bathtub Drain Repair", low: "$95″, market: "$175", premium: "$300" },
-    { job: "Sewer Line Repair (spot)", low: "$800″, market: "$1,800", premium: "$3,500" },
-    { job: "Emergency After-Hours Call", low: "$195″, market: "$299", premium: "$450" },
+    { job: "Drain Cleaning (snake)", low: "$95", market: "$149", premium: "$225" },
+    { job: "Leak Detection", low: "$150", market: "$275", premium: "$450" },
+    { job: "Toilet Replacement", low: "$250", market: "$400", premium: "$650" },
+    { job: "Faucet Replacement", low: "$120", market: "$220", premium: "$375" },
+    { job: "Water Heater Replacement (40gal)", low: "$900", market: "$1,400", premium: "$2,200" },
+    { job: "Garbage Disposal Install", low: "$150", market: "$250", premium: "$400" },
+    { job: "Pipe Repair (section)", low: "$200", market: "$450", premium: "$800" },
+    { job: "Sewer Line Camera", low: "$200", market: "$350", premium: "$550" },
+    { job: "Water Pressure Regulator", low: "$200", market: "$350", premium: "$550" },
+    { job: "Shut-Off Valve Replacement", low: "$125", market: "$225", premium: "$375" },
+    { job: "Tankless Water Heater Install", low: "$1,200", market: "$2,200", premium: "$3,800" },
+    { job: "Hose Bib Replacement", low: "$95", market: "$165", premium: "$275" },
+    { job: "Sump Pump Install", low: "$400", market: "$700", premium: "$1,100" },
+    { job: "Whole-House Re-pipe (partial)", low: "$2,500", market: "$5,000", premium: "$9,000" },
+    { job: "Gas Line Leak Check", low: "$175", market: "$295", premium: "$475" },
+    { job: "Water Softener Install", low: "$600", market: "$1,100", premium: "$2,000" },
+    { job: "Backflow Preventer Test", low: "$75", market: "$125", premium: "$200" },
+    { job: "Bathtub Drain Repair", low: "$95", market: "$175", premium: "$300" },
+    { job: "Sewer Line Repair (spot)", low: "$800", market: "$1,800", premium: "$3,500" },
+    { job: "Emergency After-Hours Call", low: "$195", market: "$299", premium: "$450" },
   ],
   Roofing: [
-    { job: "Roof Inspection", low: "$Free", market: "$150″, premium: "$300" },
-    { job: "Shingle Repair (per square)", low: "$150″, market: "$275", premium: "$450" },
-    { job: "Ridge Cap Replacement", low: "$300″, market: "$550", premium: "$900" },
-    { job: "Flashing Repair", low: "$200″, market: "$375", premium: "$600" },
-    { job: "Gutter Cleaning", low: "$95″, market: "$175", premium: "$275" },
-    { job: "Gutter Guard Install (linear ft)", low: "$5″, market: "$10", premium: "$18" },
-    { job: "Skylight Repair / Reseal", low: "$200″, market: "$400", premium: "$700" },
-    { job: "Full Roof Replacement (2,000 sq ft)", low: "$6,500″, market: "$12,000", premium: "$20,000" },
-    { job: "Storm Damage Assessment", low: "$Free", market: "$200″, premium: "$450" },
-    { job: "Chimney Cap Repair", low: "$150″, market: "$300", premium: "$550" },
-    { job: "Flat Roof Patch", low: "$300″, market: "$650", premium: "$1,200" },
-    { job: "Underlayment Replacement", low: "$500″, market: "$950", premium: "$1,800" },
-    { job: "Ventilation Upgrade", low: "$350″, market: "$700", premium: "$1,300" },
-    { job: "Soffit & Fascia Repair", low: "$400″, market: "$800", premium: "$1,600" },
-    { job: "Drip Edge Install", low: "$200″, market: "$375", premium: "$650" },
+    { job: "Roof Inspection", low: "$Free", market: "$150", premium: "$300" },
+    { job: "Shingle Repair (per square)", low: "$150", market: "$275", premium: "$450" },
+    { job: "Ridge Cap Replacement", low: "$300", market: "$550", premium: "$900" },
+    { job: "Flashing Repair", low: "$200", market: "$375", premium: "$600" },
+    { job: "Gutter Cleaning", low: "$95", market: "$175", premium: "$275" },
+    { job: "Gutter Guard Install (linear ft)", low: "$5", market: "$10", premium: "$18" },
+    { job: "Skylight Repair / Reseal", low: "$200", market: "$400", premium: "$700" },
+    { job: "Full Roof Replacement (2,000 sq ft)", low: "$6,500", market: "$12,000", premium: "$20,000" },
+    { job: "Storm Damage Assessment", low: "$Free", market: "$200", premium: "$450" },
+    { job: "Chimney Cap Repair", low: "$150", market: "$300", premium: "$550" },
+    { job: "Flat Roof Patch", low: "$300", market: "$650", premium: "$1,200" },
+    { job: "Underlayment Replacement", low: "$500", market: "$950", premium: "$1,800" },
+    { job: "Ventilation Upgrade", low: "$350", market: "$700", premium: "$1,300" },
+    { job: "Soffit & Fascia Repair", low: "$400", market: "$800", premium: "$1,600" },
+    { job: "Drip Edge Install", low: "$200", market: "$375", premium: "$650" },
     { job: "Roof Coating (flat)", low: "$1.50/sqft", market: "$2.50/sqft", premium: "$4/sqft" },
-    { job: "Ice & Water Shield Upgrade", low: "$400″, market: "$750", premium: "$1,400" },
-    { job: "Decking Replacement (partial)", low: "$350″, market: "$650", premium: "$1,100" },
-    { job: "Attic Insulation (blown-in)", low: "$1,200″, market: "$2,200", premium: "$3,800" },
-    { job: "Emergency Tarp Service", low: "$250″, market: "$450", premium: "$750" },
+    { job: "Ice & Water Shield Upgrade", low: "$400", market: "$750", premium: "$1,400" },
+    { job: "Decking Replacement (partial)", low: "$350", market: "$650", premium: "$1,100" },
+    { job: "Attic Insulation (blown-in)", low: "$1,200", market: "$2,200", premium: "$3,800" },
+    { job: "Emergency Tarp Service", low: "$250", market: "$450", premium: "$750" },
   ],
   General: [
-    { job: "HVAC Tune-Up", low: "$79″, market: "$129", premium: "$189" },
-    { job: "Drain Cleaning", low: "$95″, market: "$149", premium: "$225" },
-    { job: "Roof Inspection", low: "$Free", market: "$150″, premium: "$300" },
-    { job: "Electrical Panel Inspection", low: "$150″, market: "$250", premium: "$450" },
-    { job: "Interior Painting (room)", low: "$350″, market: "$600", premium: "$1,100" },
-    { job: "Fence Repair (section)", low: "$200″, market: "$375", premium: "$700" },
-    { job: "Pressure Washing (exterior)", low: "$200″, market: "$400", premium: "$700" },
-    { job: "Deck Staining", low: "$350″, market: "$650", premium: "$1,200" },
-    { job: "Garage Door Tune-Up", low: "$75″, market: "$135", premium: "$225" },
-    { job: "Ceiling Fan Install", low: "$85″, market: "$150", premium: "$275" },
-    { job: "Toilet Repair", low: "$95″, market: "$175", premium: "$300" },
-    { job: "Window Screen Repair", low: "$45″, market: "$85", premium: "$150" },
-    { job: "Attic Insulation Check", low: "$Free", market: "$150″, premium: "$300" },
-    { job: "Smoke Detector Install", low: "$45″, market: "$85", premium: "$150" },
-    { job: "Door Lock Replacement", low: "$85″, market: "$165", premium: "$300" },
-    { job: "Gutter Cleaning", low: "$95″, market: "$175", premium: "$275" },
-    { job: "Sprinkler Inspection", low: "$85″, market: "$150", premium: "$275" },
-    { job: "Drywall Patch (small)", low: "$150″, market: "$275", premium: "$500" },
-    { job: "Caulking (bath/kitchen)", low: "$95″, market: "$175", premium: "$325" },
-    { job: "Emergency After-Hours Call", low: "$195″, market: "$299", premium: "$450" },
+    { job: "HVAC Tune-Up", low: "$79", market: "$129", premium: "$189" },
+    { job: "Drain Cleaning", low: "$95", market: "$149", premium: "$225" },
+    { job: "Roof Inspection", low: "$Free", market: "$150", premium: "$300" },
+    { job: "Electrical Panel Inspection", low: "$150", market: "$250", premium: "$450" },
+    { job: "Interior Painting (room)", low: "$350", market: "$600", premium: "$1,100" },
+    { job: "Fence Repair (section)", low: "$200", market: "$375", premium: "$700" },
+    { job: "Pressure Washing (exterior)", low: "$200", market: "$400", premium: "$700" },
+    { job: "Deck Staining", low: "$350", market: "$650", premium: "$1,200" },
+    { job: "Garage Door Tune-Up", low: "$75", market: "$135", premium: "$225" },
+    { job: "Ceiling Fan Install", low: "$85", market: "$150", premium: "$275" },
+    { job: "Toilet Repair", low: "$95", market: "$175", premium: "$300" },
+    { job: "Window Screen Repair", low: "$45", market: "$85", premium: "$150" },
+    { job: "Attic Insulation Check", low: "$Free", market: "$150", premium: "$300" },
+    { job: "Smoke Detector Install", low: "$45", market: "$85", premium: "$150" },
+    { job: "Door Lock Replacement", low: "$85", market: "$165", premium: "$300" },
+    { job: "Gutter Cleaning", low: "$95", market: "$175", premium: "$275" },
+    { job: "Sprinkler Inspection", low: "$85", market: "$150", premium: "$275" },
+    { job: "Drywall Patch (small)", low: "$150", market: "$275", premium: "$500" },
+    { job: "Caulking (bath/kitchen)", low: "$95", market: "$175", premium: "$325" },
+    { job: "Emergency After-Hours Call", low: "$195", market: "$299", premium: "$450" },
   ],
 };
 
@@ -172,7 +172,7 @@ const TRADES = ["HVAC", "Plumbing", "Roofing", "Electrical", "Painting", "Landsc
 function scoreColor(score: number): string {
   if (score >= 80) return "#22c55e";
   if (score >= 60) return "#f59e0b";
-  return "#ef4444″;
+  return "#ef4444";
 }
 
 function scoreLabel(score: number): string {
@@ -204,21 +204,21 @@ export default function MarketIntelligence() {
   }));
 
   return (
-    <div style={{ minHeight: "100vh", background: "#0f1117″, color: "#e5e7eb", fontFamily: "sans-serif", padding: "32px 24px" }}>
+    <div style={{ minHeight: "100vh", background: "#0f1117", color: "#e5e7eb", fontFamily: "sans-serif", padding: "32px 24px" }}>
       {/* Header */}
       <div style={{ maxWidth: 1100, margin: "0 auto" }}>
         <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 6 }}>
-          <Link href="/dashboard" style={{ color: "#6b7280″, fontSize: 13, textDecoration: "none" }}>
+          <Link href="/dashboard" style={{ color: "#6b7280", fontSize: 13, textDecoration: "none" }}>
             Dashboard
           </Link>
-          <ChevronRight size={14} color="#6b7280″ />
+          <ChevronRight size={14} color="#6b7280" />
           <span style={{ color: "#e5e7eb", fontSize: 13 }}>Market Intelligence</span>
         </div>
 
         <div style={{ display: "flex", alignItems: "flex-start", justifyContent: "space-between", flexWrap: "wrap", gap: 16, marginBottom: 28 }}>
           <div>
             <h1 style={{ fontSize: 26, fontWeight: 700, color: "#fff", margin: 0 }}>DFW Market Intelligence</h1>
-            <p style={{ color: "#9ca3af", fontSize: 14, margin: "4px 0 0″ }}>
+            <p style={{ color: "#9ca3af", fontSize: 14, margin: "4px 0 0" }}>
               Real-time demand signals and pricing data for the Dallas-Fort Worth metro
             </p>
           </div>
@@ -233,7 +233,7 @@ export default function MarketIntelligence() {
                   padding: "6px 14px",
                   borderRadius: 20,
                   border: "1px solid",
-                  borderColor: trade === t ? "#22c55e" : "#374151″,
+                  borderColor: trade === t ? "#22c55e" : "#374151",
                   background: trade === t ? "rgba(34,197,94,0.12)" : "transparent",
                   color: trade === t ? "#22c55e" : "#9ca3af",
                   fontSize: 13,
@@ -262,11 +262,11 @@ export default function MarketIntelligence() {
               accent="#22c55e"
             />
             <StatCard
-              icon={<TrendingUp size={18} color="#3b82f6″ />}
+              icon={<TrendingUp size={18} color="#3b82f6" />}
               label="Monthly Service Requests"
               value={fmt(area.monthlyRequests)}
               sub={`${trade} in DFW this month`}
-              accent="#3b82f6″
+              accent="#3b82f6"
             />
             <StatCard
               icon={<DollarSign size={18} color="#f59e0b" />}
@@ -276,11 +276,11 @@ export default function MarketIntelligence() {
               accent="#f59e0b"
             />
             <StatCard
-              icon={<Users size={18} color="#8b5cf6″ />}
+              icon={<Users size={18} color="#8b5cf6" />}
               label="Active Competitors"
               value={String(area.competitionDensity)}
               sub="Licensed pros in your trade/area"
-              accent="#8b5cf6″
+              accent="#8b5cf6"
             />
           </div>
         </section>
@@ -288,7 +288,7 @@ export default function MarketIntelligence() {
         {/* ── Row 2: Opportunity Score + Seasonal Demand ───────────────────── */}
         <div style={{ display: "grid", gridTemplateColumns: "280px 1fr", gap: 20, marginBottom: 28, flexWrap: "wrap" as any }}>
           {/* Opportunity Score */}
-          <div style={{ background: "#1a1d27″, borderRadius: 14, border: "1px solid #1e2330", padding: "24px", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", gap: 12 }}>
+          <div style={{ background: "#1a1d27", borderRadius: 14, border: "1px solid #1e2330", padding: "24px", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", gap: 12 }}>
             <div style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: 4 }}>
               <Zap size={16} color="#f59e0b" />
               <span style={{ color: "#9ca3af", fontSize: 13, fontWeight: 500 }}>Job Opportunity Score</span>
@@ -296,13 +296,13 @@ export default function MarketIntelligence() {
 
             {/* Score ring */}
             <div style={{ position: "relative", width: 130, height: 130 }}>
-              <svg width="130″ height="130" viewBox="0 0 130 130" style={{ transform: "rotate(-90deg)" }}>
-                <circle cx="65″ cy="65" r="55" fill="none" stroke="#1e2330" strokeWidth="12" />
+              <svg width="130" height="130" viewBox="0 0 130 130" style={{ transform: "rotate(-90deg)" }}>
+                <circle cx="65" cy="65" r="55" fill="none" stroke="#1e2330" strokeWidth="12" />
                 <circle
-                  cx="65″ cy="65" r="55"
+                  cx="65" cy="65" r="55"
                   fill="none"
                   stroke={sColor}
-                  strokeWidth="12″
+                  strokeWidth="12"
                   strokeDasharray={`${2 * Math.PI * 55}`}
                   strokeDashoffset={`${2 * Math.PI * 55 * (1 - score / 100)}`}
                   strokeLinecap="round"
@@ -310,7 +310,7 @@ export default function MarketIntelligence() {
               </svg>
               <div style={{ position: "absolute", inset: 0, display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center" }}>
                 <span style={{ fontSize: 34, fontWeight: 800, color: sColor }}>{score}</span>
-                <span style={{ fontSize: 11, color: "#6b7280″ }}>/ 100</span>
+                <span style={{ fontSize: 11, color: "#6b7280" }}>/ 100</span>
               </div>
             </div>
 
@@ -318,7 +318,7 @@ export default function MarketIntelligence() {
               {scoreLabel(score)}
             </div>
 
-            <p style={{ color: "#6b7280″, fontSize: 12, textAlign: "center", margin: 0, lineHeight: 1.5 }}>
+            <p style={{ color: "#6b7280", fontSize: 12, textAlign: "center", margin: 0, lineHeight: 1.5 }}>
               {score >= 80
                 ? "High demand, low competition. Now is the best time to take on more jobs."
                 : score >= 60
@@ -328,21 +328,21 @@ export default function MarketIntelligence() {
           </div>
 
           {/* Seasonal Demand Chart */}
-          <div style={{ background: "#1a1d27″, borderRadius: 14, border: "1px solid #1e2330", padding: "24px" }}>
+          <div style={{ background: "#1a1d27", borderRadius: 14, border: "1px solid #1e2330", padding: "24px" }}>
             <div style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: 6 }}>
-              <BarChart2 size={16} color="#3b82f6″ />
+              <BarChart2 size={16} color="#3b82f6" />
               <span style={{ color: "#d1d5db", fontSize: 14, fontWeight: 600 }}>Seasonal Demand Index — {trade}</span>
             </div>
-            <p style={{ color: "#6b7280″, fontSize: 12, margin: "0 0 16px" }}>
+            <p style={{ color: "#6b7280", fontSize: 12, margin: "0 0 16px" }}>
               Monthly demand intensity (100 = peak). Texas-calibrated for DFW weather patterns.
             </p>
             <ResponsiveContainer width="100%" height={180}>
               <BarChart data={chartData} barSize={22}>
-                <CartesianGrid strokeDasharray="3 3″ stroke="#1e2330" />
-                <XAxis dataKey="month" tick={{ fill: "#6b7280″, fontSize: 11 }} axisLine={false} tickLine={false} />
-                <YAxis tick={{ fill: "#6b7280″, fontSize: 11 }} axisLine={false} tickLine={false} domain={[0, 110]} />
+                <CartesianGrid strokeDasharray="3 3" stroke="#1e2330" />
+                <XAxis dataKey="month" tick={{ fill: "#6b7280", fontSize: 11 }} axisLine={false} tickLine={false} />
+                <YAxis tick={{ fill: "#6b7280", fontSize: 11 }} axisLine={false} tickLine={false} domain={[0, 110]} />
                 <Tooltip
-                  contentStyle={{ background: "#1a1d27″, border: "1px solid #374151", borderRadius: 8, fontSize: 12 }}
+                  contentStyle={{ background: "#1a1d27", border: "1px solid #374151", borderRadius: 8, fontSize: 12 }}
                   labelStyle={{ color: "#e5e7eb" }}
                   itemStyle={{ color: "#9ca3af" }}
                   formatter={(v: any) => [`${v} / 100`, "Demand Index"]}
@@ -351,13 +351,13 @@ export default function MarketIntelligence() {
                   {chartData.map((entry, idx) => (
                     <Cell
                       key={idx}
-                      fill={entry.isCurrent ? "#22c55e" : idx === currentMonth - 1 || idx === currentMonth + 1 ? "#3b82f6″ : "#1e3a5f"}
+                      fill={entry.isCurrent ? "#22c55e" : idx === currentMonth - 1 || idx === currentMonth + 1 ? "#3b82f6" : "#1e3a5f"}
                     />
                   ))}
                 </Bar>
               </BarChart>
             </ResponsiveContainer>
-            <p style={{ color: "#4b5563″, fontSize: 11, margin: "8px 0 0", textAlign: "center" }}>
+            <p style={{ color: "#4b5563", fontSize: 11, margin: "8px 0 0", textAlign: "center" }}>
               Green bar = current month
             </p>
           </div>
@@ -368,7 +368,7 @@ export default function MarketIntelligence() {
           <h2 style={{ fontSize: 16, fontWeight: 600, color: "#d1d5db", margin: "0 0 14px" }}>
             Top Requested Services This Week · {trade}
           </h2>
-          <div style={{ background: "#1a1d27″, borderRadius: 14, border: "1px solid #1e2330", overflow: "hidden" }}>
+          <div style={{ background: "#1a1d27", borderRadius: 14, border: "1px solid #1e2330", overflow: "hidden" }}>
             {services.map((s, i) => (
               <div
                 key={i}
@@ -377,7 +377,7 @@ export default function MarketIntelligence() {
                   alignItems: "center",
                   justifyContent: "space-between",
                   padding: "14px 20px",
-                  borderBottom: i < services.length - 1 ? "1px solid #1e2330″ : "none",
+                  borderBottom: i < services.length - 1 ? "1px solid #1e2330" : "none",
                 }}
               >
                 <div style={{ display: "flex", alignItems: "center", gap: 14 }}>
@@ -386,14 +386,14 @@ export default function MarketIntelligence() {
                     background: i === 0 ? "rgba(34,197,94,0.15)" : "rgba(59,130,246,0.1)",
                     display: "flex", alignItems: "center", justifyContent: "center",
                     fontSize: 12, fontWeight: 700,
-                    color: i === 0 ? "#22c55e" : "#3b82f6″,
+                    color: i === 0 ? "#22c55e" : "#3b82f6",
                   }}>
                     {i + 1}
                   </span>
                   <span style={{ color: "#e5e7eb", fontSize: 14 }}>{s.service}</span>
                 </div>
                 <div style={{ display: "flex", alignItems: "center", gap: 16 }}>
-                  <span style={{ color: "#6b7280″, fontSize: 13 }}>{s.requests.toLocaleString()} requests</span>
+                  <span style={{ color: "#6b7280", fontSize: 13 }}>{s.requests.toLocaleString()} requests</span>
                   <span style={{
                     background: "rgba(34,197,94,0.1)", color: "#22c55e",
                     border: "1px solid rgba(34,197,94,0.25)",
@@ -415,15 +415,15 @@ export default function MarketIntelligence() {
               "What Should I Charge?" — DFW Price Guide · {trade}
             </h2>
           </div>
-          <div style={{ background: "#1a1d27″, borderRadius: 14, border: "1px solid #1e2330", overflow: "hidden" }}>
+          <div style={{ background: "#1a1d27", borderRadius: 14, border: "1px solid #1e2330", overflow: "hidden" }}>
             <div style={{
               display: "grid", gridTemplateColumns: "1fr 100px 100px 100px",
               padding: "10px 20px",
-              background: "#141720″,
-              borderBottom: "1px solid #1e2330″,
+              background: "#141720",
+              borderBottom: "1px solid #1e2330",
             }}>
-              <span style={{ color: "#6b7280″, fontSize: 12, fontWeight: 600, textTransform: "uppercase", letterSpacing: "0.05em" }}>Job Type</span>
-              <span style={{ color: "#6b7280″, fontSize: 12, fontWeight: 600, textTransform: "uppercase", letterSpacing: "0.05em", textAlign: "right" }}>Low</span>
+              <span style={{ color: "#6b7280", fontSize: 12, fontWeight: 600, textTransform: "uppercase", letterSpacing: "0.05em" }}>Job Type</span>
+              <span style={{ color: "#6b7280", fontSize: 12, fontWeight: 600, textTransform: "uppercase", letterSpacing: "0.05em", textAlign: "right" }}>Low</span>
               <span style={{ color: "#22c55e", fontSize: 12, fontWeight: 600, textTransform: "uppercase", letterSpacing: "0.05em", textAlign: "right" }}>Market</span>
               <span style={{ color: "#f59e0b", fontSize: 12, fontWeight: 600, textTransform: "uppercase", letterSpacing: "0.05em", textAlign: "right" }}>Premium</span>
             </div>
@@ -434,7 +434,7 @@ export default function MarketIntelligence() {
                   display: "grid",
                   gridTemplateColumns: "1fr 100px 100px 100px",
                   padding: "11px 20px",
-                  borderBottom: i < prices.length - 1 ? "1px solid #1e2330″ : "none",
+                  borderBottom: i < prices.length - 1 ? "1px solid #1e2330" : "none",
                   background: i % 2 === 0 ? "transparent" : "rgba(255,255,255,0.015)",
                 }}
               >
@@ -445,7 +445,7 @@ export default function MarketIntelligence() {
               </div>
             ))}
           </div>
-          <p style={{ color: "#4b5563″, fontSize: 12, margin: "8px 0 0" }}>
+          <p style={{ color: "#4b5563", fontSize: 12, margin: "8px 0 0" }}>
             <AlertCircle size={11} style={{ display: "inline", verticalAlign: "middle", marginRight: 4 }} />
             Prices reflect DFW market averages. Premium pricing applies to verified pros with 4.8+ star ratings.
           </p>
@@ -466,9 +466,9 @@ function StatCard({ icon, label, value, sub, accent }: {
 }) {
   return (
     <div style={{
-      background: "#1a1d27″,
+      background: "#1a1d27",
       borderRadius: 14,
-      border: "1px solid #1e2330″,
+      border: "1px solid #1e2330",
       padding: "20px",
     }}>
       <div style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: 12 }}>
@@ -476,7 +476,7 @@ function StatCard({ icon, label, value, sub, accent }: {
         <span style={{ color: "#9ca3af", fontSize: 12, fontWeight: 500 }}>{label}</span>
       </div>
       <div style={{ fontSize: 28, fontWeight: 800, color: accent, lineHeight: 1 }}>{value}</div>
-      <div style={{ color: "#4b5563″, fontSize: 12, marginTop: 6 }}>{sub}</div>
+      <div style={{ color: "#4b5563", fontSize: 12, marginTop: 6 }}>{sub}</div>
     </div>
   );
 }

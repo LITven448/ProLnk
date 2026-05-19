@@ -137,14 +137,14 @@ export default function PartnerLeadQualityGuide() {
           </p>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(160px, 1fr))', gap: 12, marginTop: 16 }}>
             {[
-              { label: 'PPS 90-100', desc: 'Gold leads first', color: '#059669′ },
+              { label: 'PPS 90-100', desc: 'Gold leads first', color: '#059669' },
               { label: 'PPS 75-89', desc: 'Silver priority', color: '#F59E0B' },
               { label: 'PPS 60-74', desc: 'Bronze & Standard', color: '#EA580C' },
-              { label: 'PPS <60', desc: 'Review required', color: '#DC2626′ },
+              { label: 'PPS <60', desc: 'Review required', color: '#DC2626' },
             ].map(s => (
               <div key={s.label} style={{ background: '#FFFFFF', border: '1px solid #DBEAFE', borderRadius: 10, padding: 14, textAlign: 'center' }}>
                 <div style={{ fontSize: 14, fontWeight: 700, color: s.color, marginBottom: 4 }}>{s.label}</div>
-                <div style={{ fontSize: 12, color: '#6B7280′ }}>{s.desc}</div>
+                <div style={{ fontSize: 12, color: '#6B7280' }}>{s.desc}</div>
               </div>
             ))}
           </div>
@@ -202,15 +202,15 @@ export default function PartnerLeadQualityGuide() {
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 16, background: '#F8FAFF', borderRadius: 12, padding: 20 }}>
             <div style={{ textAlign: 'center' }}>
               <div style={{ fontSize: 28, fontWeight: 800, color: '#1E40AF' }}>{closedJobs}</div>
-              <div style={{ fontSize: 12, color: '#6B7280′ }}>Closed Jobs/Mo</div>
+              <div style={{ fontSize: 12, color: '#6B7280' }}>Closed Jobs/Mo</div>
             </div>
             <div style={{ textAlign: 'center' }}>
-              <div style={{ fontSize: 28, fontWeight: 800, color: '#059669′ }}>${monthlyCommission.toLocaleString()}</div>
-              <div style={{ fontSize: 12, color: '#6B7280′ }}>Est. Monthly Commission</div>
+              <div style={{ fontSize: 28, fontWeight: 800, color: '#059669' }}>${monthlyCommission.toLocaleString()}</div>
+              <div style={{ fontSize: 12, color: '#6B7280' }}>Est. Monthly Commission</div>
             </div>
             <div style={{ textAlign: 'center' }}>
               <div style={{ fontSize: 28, fontWeight: 800, color: '#7C3AED' }}>${(monthlyCommission * 12).toLocaleString()}</div>
-              <div style={{ fontSize: 12, color: '#6B7280′ }}>Annual Projection</div>
+              <div style={{ fontSize: 12, color: '#6B7280' }}>Annual Projection</div>
             </div>
           </div>
           <div style={{ fontSize: 11, color: '#9CA3AF', marginTop: 12, textAlign: 'center' }}>

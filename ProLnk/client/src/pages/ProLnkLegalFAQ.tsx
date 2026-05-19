@@ -87,14 +87,14 @@ export default function ProLnkLegalFAQ() {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   return (
-    <div style={{ minHeight: '100vh', background: '#0f172a', fontFamily: 'system-ui, sans-serif', color: '#e2e8f0′ }}>
+    <div style={{ minHeight: '100vh', background: '#0f172a', fontFamily: 'system-ui, sans-serif', color: '#e2e8f0' }}>
       <div style={{ maxWidth: 800, margin: '0 auto', padding: '48px 24px' }}>
         <div style={{ marginBottom: 12 }}>
           <span style={{ background: '#1e293b', color: '#94a3b8', padding: '4px 12px', borderRadius: 20, fontSize: 13, fontWeight: 600 }}>
             ⚖️ Legal & Policy
           </span>
         </div>
-        <h1 style={{ fontSize: 40, fontWeight: 800, margin: '12px 0 8px', lineHeight: 1.2, color: '#f1f5f9′ }}>
+        <h1 style={{ fontSize: 40, fontWeight: 800, margin: '12px 0 8px', lineHeight: 1.2, color: '#f1f5f9' }}>
           ProLnk Legal & Policy FAQ
         </h1>
         <p style={{ fontSize: 18, color: '#94a3b8', marginBottom: 40 }}>
@@ -117,8 +117,8 @@ export default function ProLnkLegalFAQ() {
                 <span style={{ fontSize: 18, color: '#64748b', flexShrink: 0, transform: openIndex === i ? 'rotate(180deg)' : 'none', transition: 'transform 0.2s' }}>▼</span>
               </button>
               {openIndex === i && (
-                <div style={{ padding: '0 24px 20px', borderTop: '1px solid #334155′ }}>
-                  <p style={{ fontSize: 15, color: '#94a3b8', lineHeight: 1.7, margin: '16px 0 0′ }}>{faq.a}</p>
+                <div style={{ padding: '0 24px 20px', borderTop: '1px solid #334155' }}>
+                  <p style={{ fontSize: 15, color: '#94a3b8', lineHeight: 1.7, margin: '16px 0 0' }}>{faq.a}</p>
                 </div>
               )}
             </div>

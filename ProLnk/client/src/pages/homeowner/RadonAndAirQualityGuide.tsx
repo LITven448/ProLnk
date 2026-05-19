@@ -52,13 +52,13 @@ export default function RadonAndAirQualityGuide() {
           Radon, VOCs, and Allergens
         </p>
         <p style={{ fontSize: 16, color: '#94a3b8', marginBottom: 48, lineHeight: 1.7 }}>
-          Most DFW homeowners never think about indoor air quality — until someone gets sick. Here's what’s actually in your home’s air and what to do about it.
+          Most DFW homeowners never think about indoor air quality — until someone gets sick. Here's what's actually in your home's air and what to do about it.
         </p>
 
         <h2 style={{ fontSize: 24, fontWeight: 700, marginBottom: 20, color: '#ffffff' }}>☢️ Radon in DFW: Should You Worry?</h2>
         <div style={{ background: '#111827', borderRadius: 16, padding: 24, marginBottom: 16 }}>
           <p style={{ color: '#94a3b8', lineHeight: 1.7, marginBottom: 16 }}>
-            Texas generally has lower radon levels than northern states, but it's not zero. Radon is a naturally occurring radioactive gas that seeps from soil and rock. It’s the second leading cause of lung cancer in the US after smoking.
+            Texas generally has lower radon levels than northern states, but it's not zero. Radon is a naturally occurring radioactive gas that seeps from soil and rock. It's the second leading cause of lung cancer in the US after smoking.
           </p>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: 12, marginBottom: 16 }}>
             <div style={{ background: '#1e2a1e', border: '1px solid #166534', borderRadius: 10, padding: 16 }}>
@@ -118,7 +118,7 @@ export default function RadonAndAirQualityGuide() {
 
           <div style={{ marginTop: 16, background: '#1e293b', borderRadius: 10, padding: 16 }}>
             <p style={{ color: '#facc15', fontWeight: 600, marginBottom: 4 }}>Mitigation Cost</p>
-            <p style={{ color: '#94a3b8', fontSize: 14 }}>Standard sub-slab depressurization system: <strong style={{ color: '#f0f0f0′ }}>$700–$1,500</strong>. Works by drawing radon from below the foundation and venting it outside. Effective in 95%+ of cases.</p>
+            <p style={{ color: '#94a3b8', fontSize: 14 }}>Standard sub-slab depressurization system: <strong style={{ color: '#f0f0f0' }}>$700–$1,500</strong>. Works by drawing radon from below the foundation and venting it outside. Effective in 95%+ of cases.</p>
           </div>
         </div>
 

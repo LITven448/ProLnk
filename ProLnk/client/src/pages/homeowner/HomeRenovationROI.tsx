@@ -24,8 +24,8 @@ const BASE_PROJECTS: Project[] = [
 ];
 
 const WORST = [
-  { name: "Pool", cost: "$50,000″, value: "$10,000", note: "Pools add less than 20% of install cost in DFW" },
-  { name: "Sunroom / Patio cover", cost: "$30,000″, value: "Negative ROI", note: "Texas heat makes enclosed additions unappealing to buyers" },
+  { name: "Pool", cost: "$50,000", value: "$10,000", note: "Pools add less than 20% of install cost in DFW" },
+  { name: "Sunroom / Patio cover", cost: "$30,000", value: "Negative ROI", note: "Texas heat makes enclosed additions unappealing to buyers" },
 ];
 
 export default function HomeRenovationROI() {
@@ -49,7 +49,7 @@ export default function HomeRenovationROI() {
 
   return (
     <HomeownerLayout>
-      <div style={{ minHeight: "100vh", background: "#0A1628″, color: "#e5e7eb", fontFamily: "sans-serif" }}>
+      <div style={{ minHeight: "100vh", background: "#0A1628", color: "#e5e7eb", fontFamily: "sans-serif" }}>
         <div style={{ maxWidth: 900, margin: "0 auto", padding: "40px 20px 72px" }}>
 
           {/* Hero */}
@@ -57,7 +57,7 @@ export default function HomeRenovationROI() {
             <div style={{
               display: "inline-flex", alignItems: "center", gap: 6,
               background: "rgba(20,184,166,0.1)", border: "1px solid rgba(20,184,166,0.25)",
-              borderRadius: 20, padding: "5px 14px", fontSize: 12, color: "#14b8a6″,
+              borderRadius: 20, padding: "5px 14px", fontSize: 12, color: "#14b8a6",
               fontWeight: 600, marginBottom: 16,
             }}>
               <TrendingUp size={12} /> DFW Renovation ROI
@@ -77,8 +77,8 @@ export default function HomeRenovationROI() {
               style={{
                 display: "flex", alignItems: "center", gap: 8,
                 background: sortByROI ? "rgba(20,184,166,0.15)" : "#141c2e",
-                border: sortByROI ? "1px solid rgba(20,184,166,0.4)" : "1px solid #1e2c45″,
-                color: sortByROI ? "#14b8a6″ : "#9ca3af",
+                border: sortByROI ? "1px solid rgba(20,184,166,0.4)" : "1px solid #1e2c45",
+                color: sortByROI ? "#14b8a6" : "#9ca3af",
                 borderRadius: 10, padding: "9px 18px", fontSize: 13, fontWeight: 600, cursor: "pointer",
               }}
             >
@@ -91,10 +91,10 @@ export default function HomeRenovationROI() {
           <div style={{ display: "flex", flexDirection: "column", gap: 12, marginBottom: 40 }}>
             {displayed.map(project => {
               const m = multipliers[project.name] ?? 1;
-              const roiColor = project.roi >= 100 ? "#22c55e" : project.roi >= 70 ? "#14b8a6″ : "#f59e0b";
+              const roiColor = project.roi >= 100 ? "#22c55e" : project.roi >= 70 ? "#14b8a6" : "#f59e0b";
               return (
                 <div key={project.name} style={{
-                  background: "#141c2e", borderRadius: 14, border: "1px solid #1e2c45″,
+                  background: "#141c2e", borderRadius: 14, border: "1px solid #1e2c45",
                   padding: "20px 22px",
                 }}>
                   <div style={{ display: "flex", alignItems: "flex-start", justifyContent: "space-between", gap: 12, flexWrap: "wrap", marginBottom: 14 }}>
@@ -115,15 +115,15 @@ export default function HomeRenovationROI() {
                     </div>
                     <div style={{ display: "flex", gap: 20, alignItems: "center", flexWrap: "wrap" }}>
                       <div style={{ textAlign: "right" }}>
-                        <div style={{ fontSize: 11, color: "#6b7280″, marginBottom: 2 }}>Investment</div>
+                        <div style={{ fontSize: 11, color: "#6b7280", marginBottom: 2 }}>Investment</div>
                         <div style={{ fontSize: 16, fontWeight: 700, color: "#e5e7eb" }}>{fmt(project.cost)}</div>
                       </div>
                       <div style={{ textAlign: "right" }}>
-                        <div style={{ fontSize: 11, color: "#6b7280″, marginBottom: 2 }}>Value Added</div>
-                        <div style={{ fontSize: 16, fontWeight: 700, color: "#14b8a6″ }}>{fmt(project.value)}</div>
+                        <div style={{ fontSize: 11, color: "#6b7280", marginBottom: 2 }}>Value Added</div>
+                        <div style={{ fontSize: 16, fontWeight: 700, color: "#14b8a6" }}>{fmt(project.value)}</div>
                       </div>
                       <div style={{ textAlign: "right" }}>
-                        <div style={{ fontSize: 11, color: "#6b7280″, marginBottom: 2 }}>ROI</div>
+                        <div style={{ fontSize: 11, color: "#6b7280", marginBottom: 2 }}>ROI</div>
                         <div style={{ fontSize: 20, fontWeight: 800, color: roiColor }}>{project.roi}%</div>
                       </div>
                     </div>
@@ -131,13 +131,13 @@ export default function HomeRenovationROI() {
                   {/* Slider */}
                   <div>
                     <div style={{ display: "flex", justifyContent: "space-between", marginBottom: 6 }}>
-                      <span style={{ color: "#6b7280″, fontSize: 12 }}>Adjust investment scale</span>
-                      <span style={{ color: "#14b8a6″, fontSize: 12, fontWeight: 700 }}>{Math.round(m * 100)}% of baseline</span>
+                      <span style={{ color: "#6b7280", fontSize: 12 }}>Adjust investment scale</span>
+                      <span style={{ color: "#14b8a6", fontSize: 12, fontWeight: 700 }}>{Math.round(m * 100)}% of baseline</span>
                     </div>
                     <input
                       type="range" min={0.5} max={2} step={0.05} value={m}
                       onChange={e => setMultipliers(prev => ({ ...prev, [project.name]: Number(e.target.value) }))}
-                      style={{ width: "100%", accentColor: "#14b8a6″ }}
+                      style={{ width: "100%", accentColor: "#14b8a6" }}
                     />
                   </div>
                 </div>
@@ -147,24 +147,24 @@ export default function HomeRenovationROI() {
 
           {/* Worst money spent */}
           <div style={{ background: "#141c2e", borderRadius: 16, border: "1px solid rgba(239,68,68,0.25)", padding: "22px 26px", marginBottom: 36 }}>
-            <h2 style={{ margin: "0 0 16px", fontSize: 17, fontWeight: 700, color: "#ef4444″ }}>
+            <h2 style={{ margin: "0 0 16px", fontSize: 17, fontWeight: 700, color: "#ef4444" }}>
               Worst Money Spent in DFW
             </h2>
             <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(240px,1fr))", gap: 14 }}>
               {WORST.map(w => (
-                <div key={w.name} style={{ background: "#0A1628″, borderRadius: 12, padding: "16px 18px", border: "1px solid #1e2c45" }}>
+                <div key={w.name} style={{ background: "#0A1628", borderRadius: 12, padding: "16px 18px", border: "1px solid #1e2c45" }}>
                   <div style={{ fontSize: 15, fontWeight: 700, color: "#fff", marginBottom: 8 }}>{w.name}</div>
                   <div style={{ display: "flex", gap: 16, marginBottom: 8 }}>
                     <div>
-                      <div style={{ fontSize: 11, color: "#6b7280″ }}>Cost</div>
-                      <div style={{ fontSize: 16, fontWeight: 700, color: "#ef4444″ }}>{w.cost}</div>
+                      <div style={{ fontSize: 11, color: "#6b7280" }}>Cost</div>
+                      <div style={{ fontSize: 16, fontWeight: 700, color: "#ef4444" }}>{w.cost}</div>
                     </div>
                     <div>
-                      <div style={{ fontSize: 11, color: "#6b7280″ }}>Value Add</div>
+                      <div style={{ fontSize: 11, color: "#6b7280" }}>Value Add</div>
                       <div style={{ fontSize: 16, fontWeight: 700, color: "#f59e0b" }}>{w.value}</div>
                     </div>
                   </div>
-                  <div style={{ fontSize: 12, color: "#6b7280″, lineHeight: 1.5 }}>{w.note}</div>
+                  <div style={{ fontSize: 12, color: "#6b7280", lineHeight: 1.5 }}>{w.note}</div>
                 </div>
               ))}
             </div>
@@ -177,7 +177,7 @@ export default function HomeRenovationROI() {
             </p>
             <Link href="/homeowner-signup">
               <button style={{
-                background: "#14b8a6″, color: "#fff", border: "none",
+                background: "#14b8a6", color: "#fff", border: "none",
                 borderRadius: 10, padding: "14px 32px", fontSize: 15,
                 fontWeight: 700, cursor: "pointer",
                 display: "inline-flex", alignItems: "center", gap: 8,

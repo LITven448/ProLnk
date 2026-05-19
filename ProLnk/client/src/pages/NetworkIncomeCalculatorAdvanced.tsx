@@ -90,7 +90,7 @@ export default function NetworkIncomeCalculatorAdvanced() {
             <button
               key={key}
               onClick={() => applyScenario(key)}
-              style={{ padding: '10px 24px', borderRadius: 8, border: '2px solid', cursor: 'pointer', fontWeight: 700, fontSize: 14, borderColor: scenario === key ? '#6366f1′ : '#e2e8f0', background: scenario === key ? '#6366f1' : '#fff', color: scenario === key ? '#fff' : '#64748b', transition: ’all 0.2s' }}
+              style={{ padding: '10px 24px', borderRadius: 8, border: '2px solid', cursor: 'pointer', fontWeight: 700, fontSize: 14, borderColor: scenario === key ? '#6366f1' : '#e2e8f0', background: scenario === key ? '#6366f1' : '#fff', color: scenario === key ? '#fff' : '#64748b', transition: 'all 0.2s' }}
             >
               {SCENARIOS[key].label}
             </button>
@@ -111,7 +111,7 @@ export default function NetworkIncomeCalculatorAdvanced() {
               <div key={label}>
                 <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: 8 }}>
                   <label style={{ fontSize: 13, color: '#64748b', fontWeight: 500 }}>{label}</label>
-                  <span style={{ fontSize: 14, fontWeight: 700, color: '#6366f1′ }}>{fmt(val)}</span>
+                  <span style={{ fontSize: 14, fontWeight: 700, color: '#6366f1' }}>{fmt(val)}</span>
                 </div>
                 <input
                   type="range"
@@ -119,7 +119,7 @@ export default function NetworkIncomeCalculatorAdvanced() {
                   max={max}
                   value={val}
                   onChange={e => set(Number(e.target.value))}
-                  style={{ width: '100%', accentColor: '#6366f1′ }}
+                  style={{ width: '100%', accentColor: '#6366f1' }}
                 />
               </div>
             ))}
@@ -135,9 +135,9 @@ export default function NetworkIncomeCalculatorAdvanced() {
                 <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: 4 }}>
                   <div>
                     <div style={{ fontSize: 14, fontWeight: 600, color: '#1a202c' }}>{st.label}</div>
-                    <div style={{ fontSize: 12, color: '#94a3b8′ }}>{st.desc}</div>
+                    <div style={{ fontSize: 12, color: '#94a3b8' }}>{st.desc}</div>
                   </div>
-                  <div style={{ fontSize: 18, fontWeight: 800, color: '#6366f1′ }}>${Math.round(st.val).toLocaleString()}</div>
+                  <div style={{ fontSize: 18, fontWeight: 800, color: '#6366f1' }}>${Math.round(st.val).toLocaleString()}</div>
                 </div>
                 <div style={{ background: '#f1f5f9', borderRadius: 4, height: 6, overflow: 'hidden' }}>
                   <div style={{ height: '100%', background: '#6366f1', width: `${monthly.total > 0 ? Math.min(100, (st.val / monthly.total) * 100) : 0}%`, borderRadius: 4 }} />
@@ -147,7 +147,7 @@ export default function NetworkIncomeCalculatorAdvanced() {
           </div>
           <div style={{ borderTop: '2px solid #e2e8f0', marginTop: 20, paddingTop: 20, display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
             <span style={{ fontSize: 16, fontWeight: 700 }}>Total Monthly Income</span>
-            <span style={{ fontSize: 28, fontWeight: 800, color: '#6366f1′ }}>${Math.round(monthly.total).toLocaleString()}</span>
+            <span style={{ fontSize: 28, fontWeight: 800, color: '#6366f1' }}>${Math.round(monthly.total).toLocaleString()}</span>
           </div>
         </div>
 
@@ -162,7 +162,7 @@ export default function NetworkIncomeCalculatorAdvanced() {
               return (
                 <div key={i} style={{ flex: 1, display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 4 }}>
                   <div style={{ width: '100%', background: '#6366f1', borderRadius: '4px 4px 0 0', height: `${pct}%`, minHeight: 4 }} />
-                  <span style={{ fontSize: 10, color: '#94a3b8′ }}>M{i + 1}</span>
+                  <span style={{ fontSize: 10, color: '#94a3b8' }}>M{i + 1}</span>
                 </div>
               );
             })}
@@ -182,19 +182,19 @@ export default function NetworkIncomeCalculatorAdvanced() {
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: 16 }}>
             <div style={{ textAlign: 'center' }}>
               <div style={{ fontSize: 28, fontWeight: 800, color: '#16a34a' }}>{recruits}</div>
-              <div style={{ fontSize: 12, color: '#166534′ }}>Your direct recruits</div>
+              <div style={{ fontSize: 12, color: '#166534' }}>Your direct recruits</div>
             </div>
             <div style={{ textAlign: 'center' }}>
               <div style={{ fontSize: 28, fontWeight: 800, color: '#16a34a' }}>{compoundY1}</div>
-              <div style={{ fontSize: 12, color: '#166534′ }}>Level 2 network</div>
+              <div style={{ fontSize: 12, color: '#166534' }}>Level 2 network</div>
             </div>
             <div style={{ textAlign: 'center' }}>
               <div style={{ fontSize: 28, fontWeight: 800, color: '#16a34a' }}>{compoundY2}</div>
-              <div style={{ fontSize: 12, color: '#166534′ }}>Level 3 network</div>
+              <div style={{ fontSize: 12, color: '#166534' }}>Level 3 network</div>
             </div>
           </div>
           <div style={{ textAlign: 'center', marginTop: 16, padding: '14px', background: '#dcfce7', borderRadius: 10 }}>
-            <div style={{ fontSize: 13, color: '#166534′ }}>Potential monthly income with full network active</div>
+            <div style={{ fontSize: 13, color: '#166534' }}>Potential monthly income with full network active</div>
             <div style={{ fontSize: 26, fontWeight: 800, color: '#15803d' }}>${Math.round(compoundIncome.total).toLocaleString()}/mo</div>
           </div>
         </div>

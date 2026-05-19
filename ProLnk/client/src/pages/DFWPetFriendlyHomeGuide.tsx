@@ -82,7 +82,7 @@ export default function DFWPetFriendlyHomeGuide() {
         </div>
 
         <div style={{ backgroundColor: '#112240', borderRadius: '16px', padding: '28px', marginBottom: '32px' }}>
-          <h2 style={{ fontSize: '22px', fontWeight: 700, marginBottom: '20px', color: '#F5E642′ }}>
+          <h2 style={{ fontSize: '22px', fontWeight: 700, marginBottom: '20px', color: '#F5E642' }}>
             🔧 Pet-Proofing Priority Calculator
           </h2>
 
@@ -92,8 +92,8 @@ export default function DFWPetFriendlyHomeGuide() {
               {petTypes.map(p => (
                 <button key={p} onClick={() => { setSelectedPet(p); setShowResults(false); }}
                   style={{ padding: '10px 20px', borderRadius: '8px', border: 'none', cursor: 'pointer',
-                    backgroundColor: selectedPet === p ? '#F5E642′ : '#1E3A5F',
-                    color: selectedPet === p ? '#0A1628′ : '#E8EAF0', fontWeight: 600 }}>
+                    backgroundColor: selectedPet === p ? '#F5E642' : '#1E3A5F',
+                    color: selectedPet === p ? '#0A1628' : '#E8EAF0', fontWeight: 600 }}>
                   {p}
                 </button>
               ))}
@@ -106,8 +106,8 @@ export default function DFWPetFriendlyHomeGuide() {
               {homeFeatures.map(f => (
                 <button key={f} onClick={() => toggleFeature(f)}
                   style={{ padding: '8px 16px', borderRadius: '8px', border: '2px solid',
-                    borderColor: selectedFeatures.includes(f) ? '#F5E642′ : '#1E3A5F',
-                    backgroundColor: selectedFeatures.includes(f) ? '#F5E64220′ : ’transparent',
+                    borderColor: selectedFeatures.includes(f) ? '#F5E642' : '#1E3A5F',
+                    backgroundColor: selectedFeatures.includes(f) ? '#F5E64220' : 'transparent',
                     color: '#E8EAF0', cursor: 'pointer', fontSize: '14px' }}>
                   {f}
                 </button>
@@ -139,7 +139,7 @@ export default function DFWPetFriendlyHomeGuide() {
             {priorities.map((item, i) => (
               <div key={i} style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '14px 0', borderBottom: i < priorities.length - 1 ? '1px solid #1E3A5F' : 'none' }}>
                 <div>
-                  <span style={{ color: item.urgency === 'Critical' ? '#FF4444′ : item.urgency === ’High' ? '#F5E642′ : '#94A3B8', fontWeight: 700, fontSize: '12px', marginRight: '10px' }}>
+                  <span style={{ color: item.urgency === 'Critical' ? '#FF4444' : item.urgency === 'High' ? '#F5E642' : '#94A3B8', fontWeight: 700, fontSize: '12px', marginRight: '10px' }}>
                     {item.urgency.toUpperCase()}
                   </span>
                   <span style={{ fontSize: '15px' }}>{item.priority}</span>

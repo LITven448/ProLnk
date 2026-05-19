@@ -40,7 +40,7 @@ export default function DFWDeckPermitGuide2026() {
                 <span style={{ fontSize: 16, flexShrink: 0 }}>{t.permit ? '🔴' : '🟢'}</span>
                 <div>
                   <p style={{ color: '#e2e8f0', fontSize: 14, fontWeight: 600, margin: 0 }}>{t.label}</p>
-                  <p style={{ color: '#64748b', fontSize: 12, margin: '2px 0 0′ }}>{t.reason}</p>
+                  <p style={{ color: '#64748b', fontSize: 12, margin: '2px 0 0' }}>{t.reason}</p>
                 </div>
               </div>
             ))}
@@ -52,7 +52,7 @@ export default function DFWDeckPermitGuide2026() {
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(110px, 1fr))', gap: 8 }}>
             {cities.map(c => (
               <button key={c.name} onClick={() => setSelectedCity(c.name)}
-                style={{ background: selectedCity === c.name ? '#F5E642′ : '#1a2f50', color: selectedCity === c.name ? '#0A1628' : '#fff', border: '1px solid #2a4070', borderRadius: 8, padding: '10px 8px', cursor: ’pointer', fontWeight: 600, fontSize: 13 }}>
+                style={{ background: selectedCity === c.name ? '#F5E642' : '#1a2f50', color: selectedCity === c.name ? '#0A1628' : '#fff', border: '1px solid #2a4070', borderRadius: 8, padding: '10px 8px', cursor: 'pointer', fontWeight: 600, fontSize: 13 }}>
                 {c.name}
               </button>
             ))}
@@ -60,7 +60,7 @@ export default function DFWDeckPermitGuide2026() {
         </div>
 
         {city && (
-          <div style={{ background: '#0f2040', borderRadius: 12, padding: 24, border: '2px solid #F5E642′ }}>
+          <div style={{ background: '#0f2040', borderRadius: 12, padding: 24, border: '2px solid #F5E642' }}>
             <h2 style={{ color: '#F5E642', fontSize: 20, fontWeight: 800, marginBottom: 16 }}>🪵 {city.name} — Deck Permit Details</h2>
             <div style={{ display: 'grid', gap: 12 }}>
               <div style={{ background: '#1a2f50', borderRadius: 8, padding: 14 }}>

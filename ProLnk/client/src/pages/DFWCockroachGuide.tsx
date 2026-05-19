@@ -50,7 +50,7 @@ const RECS: Record<string, Record<string, { treatment: string; exclusion: string
     garage: {
       treatment: 'Perimeter spray exterior at foundation. Seal garage door sweep. American roaches enter from outside — focus on exterior.',
       exclusion: 'Seal all gaps in garage walls, especially where utilities enter. Check for mulch piled against foundation — prime habitat.',
-      tip: 'Mulch beds touching the house are a top American roach harborage in DFW. Move mulch 12″ from foundation.',
+      tip: 'Mulch beds touching the house are a top American roach harborage in DFW. Move mulch 12" from foundation.',
     },
     widespread: {
       treatment: 'Multiple entry points — do a full exterior perimeter inspection. Spray exterior with residual + seal all gaps found.',

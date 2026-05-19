@@ -36,7 +36,7 @@ export default function DFWHVACKnowledgeBank() {
         <div style={{ color: '#F5E642', fontSize: 13, marginBottom: 8, letterSpacing: 1 }}>PROLNK · DFW HVAC GUIDE</div>
         <h1 style={{ fontSize: 32, fontWeight: 800, marginBottom: 8 }}>DFW HVAC Knowledge Bank 🧠</h1>
         <p style={{ color: '#94a3b8', fontSize: 16, lineHeight: 1.6, marginBottom: 32 }}>
-          DFW homeowners generate more HVAC knowledge than almost anywhere in the country — because DFW systems work harder. The problem isn't lack of information. It’s where that information lives when you need it.
+          DFW homeowners generate more HVAC knowledge than almost anywhere in the country — because DFW systems work harder. The problem isn't lack of information. It's where that information lives when you need it.
         </p>
 
         <div style={{ background: '#111f3a', borderRadius: 12, padding: 24, marginBottom: 24 }}>

@@ -62,11 +62,11 @@ export default function DFWDustStormGuide() {
             <div>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
                 <div style={{ background: result.color + '22', border: `2px solid ${result.color}`, borderRadius: '8px', padding: '1rem', textAlign: 'center' }}>
-                  <div style={{ fontSize: '0.875rem', color: '#94A3B8′ }}>Expected Frequency</div>
+                  <div style={{ fontSize: '0.875rem', color: '#94A3B8' }}>Expected Frequency</div>
                   <div style={{ fontSize: '1.5rem', fontWeight: 700, color: result.color }}>{result.frequency}</div>
                 </div>
                 <div style={{ background: '#1E40AF22', border: '2px solid #3B82F6', borderRadius: '8px', padding: '1rem', textAlign: 'center' }}>
-                  <div style={{ fontSize: '0.875rem', color: '#94A3B8′ }}>Filter Change Interval</div>
+                  <div style={{ fontSize: '0.875rem', color: '#94A3B8' }}>Filter Change Interval</div>
                   <div style={{ fontSize: '1rem', fontWeight: 700, color: '#60A5FA' }}>{result.hvacInterval}</div>
                 </div>
               </div>

@@ -116,7 +116,7 @@ export default function PartnerLeadGenerationGuide() {
           <div style={{ display: 'flex', alignItems: 'center', gap: 20, flexWrap: 'wrap' }}>
             <div style={{ flex: 1, minWidth: 200 }}>
               <label style={{ color: '#94A3B8', fontSize: 13, fontWeight: 600, display: 'block', marginBottom: 8 }}>
-                HOURS PER WEEK ON OUTREACH: <span style={{ color: '#F5E642′ }}>{hoursPerWeek}h</span>
+                HOURS PER WEEK ON OUTREACH: <span style={{ color: '#F5E642' }}>{hoursPerWeek}h</span>
               </label>
               <input
                 type="range"
@@ -124,7 +124,7 @@ export default function PartnerLeadGenerationGuide() {
                 max={40}
                 value={hoursPerWeek}
                 onChange={e => setHoursPerWeek(Number(e.target.value))}
-                style={{ width: '100%', accentColor: '#F5E642′ }}
+                style={{ width: '100%', accentColor: '#F5E642' }}
               />
             </div>
             <div style={{ display: 'flex', gap: 16 }}>
@@ -138,7 +138,7 @@ export default function PartnerLeadGenerationGuide() {
               </div>
             </div>
           </div>
-          <p style={{ color: '#475569', fontSize: 12, margin: '12px 0 0′ }}>
+          <p style={{ color: '#475569', fontSize: 12, margin: '12px 0 0' }}>
             Based on avg $45 per qualified homeowner lead. Actual results vary by market and follow-through.
           </p>
         </div>
@@ -155,7 +155,7 @@ export default function PartnerLeadGenerationGuide() {
                   borderRadius: 14,
                   padding: 20,
                   cursor: 'pointer',
-                  border: isOpen ? '2px solid #F5E642′ : '2px solid transparent',
+                  border: isOpen ? '2px solid #F5E642' : '2px solid transparent',
                   boxShadow: '0 2px 10px rgba(0,0,0,0.06)',
                   transition: 'all 0.2s',
                 }}

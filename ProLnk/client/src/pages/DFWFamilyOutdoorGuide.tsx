@@ -72,7 +72,7 @@ export default function DFWFamilyOutdoorGuide() {
             { stat: '10 months', label: 'With proper shade & misting' },
           ].map((s, i) => (
             <div key={i} style={{ backgroundColor: '#112240', borderRadius: '12px', padding: '20px', textAlign: 'center' }}>
-              <div style={{ fontSize: '28px', fontWeight: 700, color: '#F5E642′ }}>{s.stat}</div>
+              <div style={{ fontSize: '28px', fontWeight: 700, color: '#F5E642' }}>{s.stat}</div>
               <div style={{ fontSize: '12px', color: '#94A3B8', marginTop: '4px' }}>{s.label}</div>
             </div>
           ))}
@@ -80,13 +80,13 @@ export default function DFWFamilyOutdoorGuide() {
 
         <div style={{ backgroundColor: '#F5E64210', border: '1px solid #F5E642', borderRadius: '12px', padding: '20px', marginBottom: '32px' }}>
           <div style={{ fontWeight: 700, marginBottom: '8px' }}>💡 The DFW Outdoor Formula</div>
-          <p style={{ margin: 0, lineHeight: 1.6, fontSize: '14px', color: '#E8EAF0′ }}>
+          <p style={{ margin: 0, lineHeight: 1.6, fontSize: '14px', color: '#E8EAF0' }}>
             100% shade coverage + misting system = outdoor space you can use in July. Skip either one and your investment sits unused during the hottest months. Start with these two before anything else.
           </p>
         </div>
 
         <div style={{ backgroundColor: '#112240', borderRadius: '16px', padding: '28px', marginBottom: '32px' }}>
-          <h2 style={{ fontSize: '22px', fontWeight: 700, marginBottom: '20px', color: '#F5E642′ }}>
+          <h2 style={{ fontSize: '22px', fontWeight: 700, marginBottom: '20px', color: '#F5E642' }}>
             🏡 Outdoor Zone Planner
           </h2>
 
@@ -101,8 +101,8 @@ export default function DFWFamilyOutdoorGuide() {
                 {group.options.map(o => (
                   <button key={o} onClick={() => { group.setter(o); setShowResults(false); }}
                     style={{ padding: '10px 16px', borderRadius: '8px', border: 'none', cursor: 'pointer', fontSize: '13px',
-                      backgroundColor: group.selected === o ? '#F5E642′ : '#1E3A5F',
-                      color: group.selected === o ? '#0A1628′ : '#E8EAF0', fontWeight: 600 }}>
+                      backgroundColor: group.selected === o ? '#F5E642' : '#1E3A5F',
+                      color: group.selected === o ? '#0A1628' : '#E8EAF0', fontWeight: 600 }}>
                     {o}
                   </button>
                 ))}
@@ -125,8 +125,8 @@ export default function DFWFamilyOutdoorGuide() {
                 <span style={{ fontSize: '24px' }}>{zone.icon}</span>
                 <span style={{ fontWeight: 700, fontSize: '16px' }}>{zone.zone}</span>
                 <span style={{ fontSize: '11px', padding: '2px 8px', borderRadius: '4px', fontWeight: 700,
-                  backgroundColor: zone.priority === 'Critical' ? '#FF444430′ : zone.priority === ’High' ? '#F5E64220′ : '#1E3A5F',
-                  color: zone.priority === 'Critical' ? '#FF7777′ : zone.priority === ’High' ? '#F5E642′ : '#94A3B8' }}>
+                  backgroundColor: zone.priority === 'Critical' ? '#FF444430' : zone.priority === 'High' ? '#F5E64220' : '#1E3A5F',
+                  color: zone.priority === 'Critical' ? '#FF7777' : zone.priority === 'High' ? '#F5E642' : '#94A3B8' }}>
                   {zone.priority.toUpperCase()}
                 </span>
               </div>

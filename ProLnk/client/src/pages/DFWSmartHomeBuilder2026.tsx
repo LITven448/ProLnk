@@ -27,7 +27,7 @@ export default function DFWSmartHomeBuilder2026() {
             { icon: '📡', title: 'Conduit Sleeves', desc: 'Empty conduit lets you pull new cable in 10 years without opening walls.' },
             { icon: '🔌', title: 'Structured Media', desc: 'Central wiring closet with patch panel. All CAT6 terminates here, not random boxes.' },
           ].map((item) => (
-            <div key={item.title} style={{ background: '#1e2d45', borderRadius: 12, padding: 18, borderLeft: '3px solid #F5E642′ }}>
+            <div key={item.title} style={{ background: '#1e2d45', borderRadius: 12, padding: 18, borderLeft: '3px solid #F5E642' }}>
               <div style={{ fontSize: 24, marginBottom: 6 }}>{item.icon}</div>
               <div style={{ fontWeight: 700, color: '#F5E642', fontSize: 14, marginBottom: 4 }}>{item.title}</div>
               <div style={{ color: '#94a3b8', fontSize: 12 }}>{item.desc}</div>
@@ -39,7 +39,7 @@ export default function DFWSmartHomeBuilder2026() {
           <h2 style={{ color: '#F5E642', marginBottom: 20 }}>🔍 Compare DFW Builder Smart Packages</h2>
           <div style={{ marginBottom: 20 }}>
             <label style={{ color: '#94a3b8', display: 'block', marginBottom: 8 }}>Your DFW Builder</label>
-            <select value={builderType} onChange={(e) => setBuilderType(e.target.value)} style={{ width: '100%', padding: 12, borderRadius: 8, background: '#0A1628', color: '#fff', border: '1px solid #334155′ }}>
+            <select value={builderType} onChange={(e) => setBuilderType(e.target.value)} style={{ width: '100%', padding: 12, borderRadius: 8, background: '#0A1628', color: '#fff', border: '1px solid #334155' }}>
               <option value=''>Select your builder...</option>
               <option value='drhorton'>DR Horton (Express, Freedom, Emerald)</option>
               <option value='highland'>Highland Homes</option>
@@ -48,7 +48,7 @@ export default function DFWSmartHomeBuilder2026() {
             </select>
           </div>
           <button onClick={() => setResult(packages[builderType] || '')} style={{ background: '#F5E642', color: '#0A1628', border: 'none', borderRadius: 8, padding: '12px 28px', fontWeight: 700, fontSize: 15, cursor: 'pointer' }}>Show Package Breakdown 🏠</button>
-          {result && <div style={{ marginTop: 20, background: '#0A1628', borderRadius: 10, padding: 20, color: '#e2e8f0', lineHeight: 1.8, borderLeft: '3px solid #F5E642′ }}>{result}</div>}
+          {result && <div style={{ marginTop: 20, background: '#0A1628', borderRadius: 10, padding: 20, color: '#e2e8f0', lineHeight: 1.8, borderLeft: '3px solid #F5E642' }}>{result}</div>}
         </div>
 
         <div style={{ background: '#1e2d45', borderRadius: 12, padding: 24, textAlign: 'center' }}>

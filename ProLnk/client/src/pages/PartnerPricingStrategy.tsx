@@ -66,7 +66,7 @@ export default function PartnerPricingStrategy() {
         <div style={{ background: '#ffffff', border: '1px solid #e2e8f0', borderRadius: 16, overflow: 'hidden', marginBottom: 40 }}>
           <table style={{ width: '100%', borderCollapse: 'collapse' }}>
             <thead>
-              <tr style={{ background: '#f1f5f9′ }}>
+              <tr style={{ background: '#f1f5f9' }}>
                 <th style={{ padding: '14px 20px', textAlign: 'left', color: '#475569', fontWeight: 700, fontSize: 14 }}>Trade</th>
                 <th style={{ padding: '14px 20px', textAlign: 'center', color: '#475569', fontWeight: 700, fontSize: 14 }}>Low</th>
                 <th style={{ padding: '14px 20px', textAlign: 'center', color: '#475569', fontWeight: 700, fontSize: 14 }}>High</th>
@@ -132,7 +132,7 @@ export default function PartnerPricingStrategy() {
                 type="number"
                 value={jobCost}
                 onChange={e => setJobCost(e.target.value)}
-                placeholder="e.g. 800″
+                placeholder="e.g. 800"
                 style={{ width: '100%', background: '#f8fafc', border: '1px solid #e2e8f0', borderRadius: 8, padding: '10px 14px', fontSize: 16, color: '#1e293b', boxSizing: 'border-box' }}
               />
             </div>
@@ -144,18 +144,18 @@ export default function PartnerPricingStrategy() {
                 onChange={e => setMarkup(Number(e.target.value))}
                 style={{ width: '100%', marginTop: 8 }}
               />
-              <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: 12, color: '#94a3b8′ }}>
+              <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: 12, color: '#94a3b8' }}>
                 <span>20%</span><span>80%</span>
               </div>
             </div>
           </div>
 
           <div style={{ display: 'flex', gap: 16, marginBottom: 24 }}>
-            <label style={{ display: 'flex', alignItems: 'center', gap: 8, cursor: 'pointer', background: isStorm ? '#fef3c7′ : '#f8fafc', border: `1px solid ${isStorm ? '#fcd34d' : '#e2e8f0'}`, borderRadius: 8, padding: '10px 16px' }}>
+            <label style={{ display: 'flex', alignItems: 'center', gap: 8, cursor: 'pointer', background: isStorm ? '#fef3c7' : '#f8fafc', border: `1px solid ${isStorm ? '#fcd34d' : '#e2e8f0'}`, borderRadius: 8, padding: '10px 16px' }}>
               <input type="checkbox" checked={isStorm} onChange={e => setIsStorm(e.target.checked)} />
               <span style={{ fontWeight: 600, color: '#92400e' }}>🌩️ Storm lead (+30%)</span>
             </label>
-            <label style={{ display: 'flex', alignItems: 'center', gap: 8, cursor: 'pointer', background: isEmergency ? '#fef2f2′ : '#f8fafc', border: `1px solid ${isEmergency ? '#fca5a5' : '#e2e8f0'}`, borderRadius: 8, padding: '10px 16px' }}>
+            <label style={{ display: 'flex', alignItems: 'center', gap: 8, cursor: 'pointer', background: isEmergency ? '#fef2f2' : '#f8fafc', border: `1px solid ${isEmergency ? '#fca5a5' : '#e2e8f0'}`, borderRadius: 8, padding: '10px 16px' }}>
               <input type="checkbox" checked={isEmergency} onChange={e => setIsEmergency(e.target.checked)} />
               <span style={{ fontWeight: 600, color: '#991b1b' }}>🚨 Emergency (+100%)</span>
             </label>
@@ -166,8 +166,8 @@ export default function PartnerPricingStrategy() {
               <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(160px, 1fr))', gap: 16 }}>
                 {[
                   { label: 'Base Quote', value: `$${basePrice.toFixed(0)}`, color: '#1e293b' },
-                  { label: 'Final Price', value: `$${finalPrice.toFixed(0)}`, color: '#1d4ed8′ },
-                  { label: 'ProLnk Commission (8%)', value: `-$${prolnkCommission.toFixed(0)}`, color: '#dc2626′ },
+                  { label: 'Final Price', value: `$${finalPrice.toFixed(0)}`, color: '#1d4ed8' },
+                  { label: 'ProLnk Commission (8%)', value: `-$${prolnkCommission.toFixed(0)}`, color: '#dc2626' },
                   { label: 'Your Take-Home', value: `$${takeHome.toFixed(0)}`, color: '#16a34a' },
                 ].map(r => (
                   <div key={r.label} style={{ textAlign: 'center' }}>

@@ -21,7 +21,7 @@ export default function DFWCarrierVsYorkGuide2026() {
         <p style={{ color: '#94a3b8', marginBottom: 32 }}>Premium vs value. Both SEER2 compliant. Which fits your DFW home?</p>
 
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16, marginBottom: 32 }}>
-          <div style={{ background: '#111f3a', borderRadius: 12, padding: 20, borderTop: '3px solid #3b82f6′ }}>
+          <div style={{ background: '#111f3a', borderRadius: 12, padding: 20, borderTop: '3px solid #3b82f6' }}>
             <div style={{ fontSize: 22, marginBottom: 8 }}>🔵 Carrier</div>
             <ul style={{ color: '#94a3b8', lineHeight: 1.8, paddingLeft: 16, fontSize: 14 }}>
               <li>Premium brand, strong brand equity</li>
@@ -32,7 +32,7 @@ export default function DFWCarrierVsYorkGuide2026() {
               <li>10-year parts warranty</li>
             </ul>
           </div>
-          <div style={{ background: '#111f3a', borderRadius: 12, padding: 20, borderTop: '3px solid #10b981′ }}>
+          <div style={{ background: '#111f3a', borderRadius: 12, padding: 20, borderTop: '3px solid #10b981' }}>
             <div style={{ fontSize: 22, marginBottom: 8 }}>🟢 York</div>
             <ul style={{ color: '#94a3b8', lineHeight: 1.8, paddingLeft: 16, fontSize: 14 }}>
               <li>Best value in its tier</li>
@@ -56,7 +56,7 @@ export default function DFWCarrierVsYorkGuide2026() {
             <div style={{ color: '#94a3b8', fontSize: 13, marginBottom: 8 }}>Home size:</div>
             <div style={{ display: 'flex', gap: 10 }}>
               {['small', 'medium', 'large'].map(s => (
-                <button key={s} onClick={() => setHomeSize(s)} style={{ padding: '8px 16px', borderRadius: 8, border: 'none', cursor: 'pointer', fontWeight: 700, textTransform: 'capitalize', background: homeSize === s ? '#F5E642′ : '#1e3a5f', color: homeSize === s ? '#0A1628' : '#fff' }}>{s}</button>
+                <button key={s} onClick={() => setHomeSize(s)} style={{ padding: '8px 16px', borderRadius: 8, border: 'none', cursor: 'pointer', fontWeight: 700, textTransform: 'capitalize', background: homeSize === s ? '#F5E642' : '#1e3a5f', color: homeSize === s ? '#0A1628' : '#fff' }}>{s}</button>
               ))}
             </div>
           </div>
@@ -64,12 +64,12 @@ export default function DFWCarrierVsYorkGuide2026() {
             <div style={{ color: '#94a3b8', fontSize: 13, marginBottom: 8 }}>Budget flexibility:</div>
             <div style={{ display: 'flex', gap: 10 }}>
               {['tight', 'moderate', 'flexible'].map(b => (
-                <button key={b} onClick={() => setBudget(b)} style={{ padding: '8px 16px', borderRadius: 8, border: 'none', cursor: 'pointer', fontWeight: 700, textTransform: 'capitalize', background: budget === b ? '#F5E642′ : '#1e3a5f', color: budget === b ? '#0A1628' : '#fff' }}>{b}</button>
+                <button key={b} onClick={() => setBudget(b)} style={{ padding: '8px 16px', borderRadius: 8, border: 'none', cursor: 'pointer', fontWeight: 700, textTransform: 'capitalize', background: budget === b ? '#F5E642' : '#1e3a5f', color: budget === b ? '#0A1628' : '#fff' }}>{b}</button>
               ))}
             </div>
           </div>
           {rec && (
-            <div style={{ marginTop: 16, background: '#0d2240', borderRadius: 8, padding: 16, borderLeft: '4px solid #F5E642′ }}>
+            <div style={{ marginTop: 16, background: '#0d2240', borderRadius: 8, padding: 16, borderLeft: '4px solid #F5E642' }}>
               <div style={{ fontWeight: 700, marginBottom: 6 }}>{rec.emoji} Recommendation: {rec.brand}</div>
               <p style={{ color: '#94a3b8', fontSize: 14 }}>{rec.reason}</p>
             </div>

@@ -50,12 +50,12 @@ export default function DFWHVACDesignConditionsGuide() {
           </p>
         </div>
 
-        <div style={{ background: '#0f1f3d', borderRadius: '12px', padding: '1.5rem', marginBottom: '1.5rem', borderLeft: '4px solid #F5E642′ }}>
+        <div style={{ background: '#0f1f3d', borderRadius: '12px', padding: '1.5rem', marginBottom: '1.5rem', borderLeft: '4px solid #F5E642' }}>
           <div style={{ fontWeight: 'bold', color: '#F5E642', marginBottom: '0.75rem' }}>📖 What Design Conditions Mean</div>
           <ul style={{ color: '#94a3b8', paddingLeft: '1.5rem' }}>
-            <li style={{ marginBottom: '0.4rem' }}><strong style={{ color: '#e2e8f0′ }}>Summer DB (Dry Bulb):</strong> Peak outdoor air temperature equipment must overcome — exceeded only 1% of summer hours</li>
-            <li style={{ marginBottom: '0.4rem' }}><strong style={{ color: '#e2e8f0′ }}>Summer WB (Wet Bulb):</strong> Determines latent (humidity) load — high WB = more moisture to remove</li>
-            <li style={{ marginBottom: '0.4rem' }}><strong style={{ color: '#e2e8f0′ }}>Winter DB:</strong> Coldest design temperature — heat system must overcome this without auxiliary heat backup</li>
+            <li style={{ marginBottom: '0.4rem' }}><strong style={{ color: '#e2e8f0' }}>Summer DB (Dry Bulb):</strong> Peak outdoor air temperature equipment must overcome — exceeded only 1% of summer hours</li>
+            <li style={{ marginBottom: '0.4rem' }}><strong style={{ color: '#e2e8f0' }}>Summer WB (Wet Bulb):</strong> Determines latent (humidity) load — high WB = more moisture to remove</li>
+            <li style={{ marginBottom: '0.4rem' }}><strong style={{ color: '#e2e8f0' }}>Winter DB:</strong> Coldest design temperature — heat system must overcome this without auxiliary heat backup</li>
             <li>Equipment capacity is rated at standard conditions (95°F summer, 47°F winter) — DFW conditions significantly derate this capacity</li>
           </ul>
         </div>
@@ -65,7 +65,7 @@ export default function DFWHVACDesignConditionsGuide() {
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5rem' }}>
             {counties.map(c => (
               <button key={c} onClick={() => setCounty(c)}
-                style={{ padding: '0.5rem 1.25rem', borderRadius: '8px', border: 'none', cursor: 'pointer', background: county === c ? '#F5E642′ : '#1e3a5f', color: county === c ? '#0A1628' : '#e2e8f0', fontWeight: county === c ? ’bold' : 'normal', fontSize: '1rem' }}>
+                style={{ padding: '0.5rem 1.25rem', borderRadius: '8px', border: 'none', cursor: 'pointer', background: county === c ? '#F5E642' : '#1e3a5f', color: county === c ? '#0A1628' : '#e2e8f0', fontWeight: county === c ? 'bold' : 'normal', fontSize: '1rem' }}>
                 {c}
               </button>
             ))}
@@ -78,9 +78,9 @@ export default function DFWHVACDesignConditionsGuide() {
               <div style={{ fontWeight: 'bold', color: '#F5E642', marginBottom: '1rem', fontSize: '1.1rem' }}>📊 {county} County Design Conditions</div>
               <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '1rem', marginBottom: '1rem' }}>
                 {[
-                  { label: 'Summer Design Temp', value: `${data.summerDB}°F`, sub: 'Dry Bulb', color: '#ef4444′ },
-                  { label: 'Summer Wet Bulb', value: `${data.summerWB}°F`, sub: 'Latent Load Driver', color: '#f97316′ },
-                  { label: 'Winter Design Temp', value: `${data.winterDB}°F`, sub: 'Dry Bulb', color: '#3b82f6′ },
+                  { label: 'Summer Design Temp', value: `${data.summerDB}°F`, sub: 'Dry Bulb', color: '#ef4444' },
+                  { label: 'Summer Wet Bulb', value: `${data.summerWB}°F`, sub: 'Latent Load Driver', color: '#f97316' },
+                  { label: 'Winter Design Temp', value: `${data.winterDB}°F`, sub: 'Dry Bulb', color: '#3b82f6' },
                 ].map(card => (
                   <div key={card.label} style={{ background: '#0A1628', borderRadius: '8px', padding: '1rem', textAlign: 'center' }}>
                     <div style={{ color: '#94a3b8', fontSize: '0.75rem', marginBottom: '0.25rem' }}>{card.label}</div>
@@ -90,13 +90,13 @@ export default function DFWHVACDesignConditionsGuide() {
                 ))}
               </div>
               <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', marginBottom: '0.75rem' }}>
-                <span style={{ color: '#94a3b8′ }}>Summer Humidity:</span>
-                <span style={{ background: data.humidity.includes('Very') ? '#ef4444′ : data.humidity.includes(’High') ? '#f97316′ : '#F5E642', color: '#0A1628', padding: '0.2rem 0.75rem', borderRadius: '999px', fontWeight: ’bold', fontSize: '0.85rem' }}>{data.humidity}</span>
+                <span style={{ color: '#94a3b8' }}>Summer Humidity:</span>
+                <span style={{ background: data.humidity.includes('Very') ? '#ef4444' : data.humidity.includes('High') ? '#f97316' : '#F5E642', color: '#0A1628', padding: '0.2rem 0.75rem', borderRadius: '999px', fontWeight: 'bold', fontSize: '0.85rem' }}>{data.humidity}</span>
               </div>
               <p style={{ color: '#94a3b8', fontSize: '0.9rem', borderTop: '1px solid #1e3a5f', paddingTop: '0.75rem' }}>📌 {data.note}</p>
             </div>
 
-            <div style={{ background: '#0f1f3d', borderRadius: '12px', padding: '1.5rem', borderLeft: '4px solid #F5E642′ }}>
+            <div style={{ background: '#0f1f3d', borderRadius: '12px', padding: '1.5rem', borderLeft: '4px solid #F5E642' }}>
               <div style={{ fontWeight: 'bold', color: '#F5E642', marginBottom: '0.75rem' }}>⚙️ Equipment Selection Implications</div>
               <ul style={{ color: '#94a3b8', paddingLeft: '1.5rem' }}>
                 {implications.map((item, i) => <li key={i} style={{ marginBottom: '0.4rem' }}>{item}</li>)}

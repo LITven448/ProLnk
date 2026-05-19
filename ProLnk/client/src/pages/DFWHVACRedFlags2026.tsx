@@ -68,7 +68,7 @@ export default function DFWHVACRedFlags2026() {
         <div style={{ display: 'grid', gap: 10, marginBottom: 24 }}>
           {redFlags.map(f => (
             <button key={f.id} onClick={() => setSelected(f.id)}
-              style={{ background: selected === f.id ? '#F5E642′ : '#112240', color: selected === f.id ? '#0A1628' : '#fff', border: '2px solid ' + (selected === f.id ? '#F5E642' : '#1e3a5f'), borderRadius: 8, padding: '12px 16px', cursor: ’pointer', textAlign: 'left', fontWeight: 600, fontSize: 15 }}>
+              style={{ background: selected === f.id ? '#F5E642' : '#112240', color: selected === f.id ? '#0A1628' : '#fff', border: '2px solid ' + (selected === f.id ? '#F5E642' : '#1e3a5f'), borderRadius: 8, padding: '12px 16px', cursor: 'pointer', textAlign: 'left', fontWeight: 600, fontSize: 15 }}>
               {f.label}
             </button>
           ))}

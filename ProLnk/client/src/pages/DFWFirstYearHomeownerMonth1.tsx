@@ -58,7 +58,7 @@ export default function DFWFirstYearHomeownerMonth1() {
           <div>
             <h2 style={{ color: '#F5E642', fontSize: 18, marginBottom: 16 }}>{icons[homeType]} Your Month 1 Priority List</h2>
             {priorities[homeType].map((item, i) => (
-              <div key={i} style={{ background: '#1e2d45', borderRadius: 10, padding: '14px 18px', marginBottom: 10, fontSize: 15, borderLeft: '3px solid #F5E642′ }}>
+              <div key={i} style={{ background: '#1e2d45', borderRadius: 10, padding: '14px 18px', marginBottom: 10, fontSize: 15, borderLeft: '3px solid #F5E642' }}>
                 {item}
               </div>
             ))}

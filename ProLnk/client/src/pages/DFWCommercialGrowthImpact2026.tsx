@@ -66,12 +66,12 @@ export default function DFWCommercialGrowthImpact2026() {
           <h2 style={{ color: '#F5E642', fontSize: 18, marginBottom: 16 }}>🔍 What Development Is Near Your Home?</h2>
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: 10, marginBottom: 20 }}>
             {Object.keys(devTypes).map(d => (
-              <button key={d} onClick={() => setSelected(d)} style={{ padding: '10px 16px', borderRadius: 8, border: 'none', cursor: 'pointer', background: selected === d ? '#F5E642′ : '#1A2E48', color: selected === d ? '#0A1628' : '#E8EAF0', fontWeight: 600, fontSize: 13 }}>{d}</button>
+              <button key={d} onClick={() => setSelected(d)} style={{ padding: '10px 16px', borderRadius: 8, border: 'none', cursor: 'pointer', background: selected === d ? '#F5E642' : '#1A2E48', color: selected === d ? '#0A1628' : '#E8EAF0', fontWeight: 600, fontSize: 13 }}>{d}</button>
             ))}
           </div>
           {result && (
             <div>
-              <div style={{ background: '#0A1628', borderRadius: 10, padding: 14, marginBottom: 12, border: '1px solid #F5E642′ }}>
+              <div style={{ background: '#0A1628', borderRadius: 10, padding: 14, marginBottom: 12, border: '1px solid #F5E642' }}>
                 <span style={{ color: '#F5E642', fontWeight: 700 }}>💰 Value Impact: </span>{result.valueImpact}
               </div>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12, marginBottom: 12 }}>
@@ -92,8 +92,8 @@ export default function DFWCommercialGrowthImpact2026() {
                   ))}
                 </div>
               </div>
-              <div style={{ background: '#1A2E48', borderRadius: 8, padding: 14, fontSize: 13, color: '#9BA3B2', borderLeft: '3px solid #F5E642′ }}>
-                <span style={{ color: '#F5E642′ }}>📍 DFW Examples: </span>{result.examples}
+              <div style={{ background: '#1A2E48', borderRadius: 8, padding: 14, fontSize: 13, color: '#9BA3B2', borderLeft: '3px solid #F5E642' }}>
+                <span style={{ color: '#F5E642' }}>📍 DFW Examples: </span>{result.examples}
               </div>
             </div>
           )}

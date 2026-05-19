@@ -79,8 +79,8 @@ export default function DFWHVACOwnerJourney() {
                 key={s.id}
                 onClick={() => setSelected(s.id)}
                 style={{
-                  background: selected === s.id ? '#F5E642′ : '#1a2f55',
-                  color: selected === s.id ? '#0A1628′ : '#fff',
+                  background: selected === s.id ? '#F5E642' : '#1a2f55',
+                  color: selected === s.id ? '#0A1628' : '#fff',
                   border: 'none', borderRadius: 8, padding: '1rem', cursor: 'pointer',
                   fontWeight: 600, textAlign: 'left',
                 }}

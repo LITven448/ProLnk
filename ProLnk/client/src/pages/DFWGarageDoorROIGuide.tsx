@@ -88,10 +88,10 @@ export default function DFWGarageDoorROIGuide() {
             <div>
               <label style={styles.label}>Current Door Age (years)</label>
               <select style={styles.select} value={doorAge} onChange={e => setDoorAge(e.target.value)}>
-                <option value="5″>Under 5</option>
-                <option value="10″>5–10</option>
-                <option value="15″>10–15</option>
-                <option value="20″>15–20+</option>
+                <option value="5">Under 5</option>
+                <option value="10">5–10</option>
+                <option value="15">10–15</option>
+                <option value="20">15–20+</option>
               </select>
             </div>
           </div>

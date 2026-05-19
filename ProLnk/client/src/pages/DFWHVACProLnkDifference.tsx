@@ -47,7 +47,7 @@ export default function DFWHVACProLnkDifference() {
   const chosen = painPoints.find(p => p.id === selected);
 
   return (
-    <div style={{ background: '#0A1628', minHeight: '100vh', padding: '40px 20px', fontFamily: 'system-ui, sans-serif', color: '#E8EDF5′ }}>
+    <div style={{ background: '#0A1628', minHeight: '100vh', padding: '40px 20px', fontFamily: 'system-ui, sans-serif', color: '#E8EDF5' }}>
       <div style={{ maxWidth: 780, margin: '0 auto' }}>
         <div style={{ textAlign: 'center', marginBottom: 40 }}>
           <div style={{ fontSize: 48, marginBottom: 12 }}>⚡</div>
@@ -72,7 +72,7 @@ export default function DFWHVACProLnkDifference() {
           <div style={{ display: 'grid', gap: 10, marginBottom: 24 }}>
             {painPoints.map(p => (
               <button key={p.id} onClick={() => setSelected(p.id)}
-                style={{ background: selected === p.id ? '#F5E642′ : '#0A1628', color: selected === p.id ? '#0A1628' : '#E8EDF5', border: '1px solid #1E3A5F', borderRadius: 10, padding: '12px 16px', cursor: ’pointer', textAlign: 'left', fontWeight: 600, fontSize: 14 }}>
+                style={{ background: selected === p.id ? '#F5E642' : '#0A1628', color: selected === p.id ? '#0A1628' : '#E8EDF5', border: '1px solid #1E3A5F', borderRadius: 10, padding: '12px 16px', cursor: 'pointer', textAlign: 'left', fontWeight: 600, fontSize: 14 }}>
                 {p.label}
               </button>
             ))}

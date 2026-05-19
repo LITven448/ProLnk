@@ -12,12 +12,12 @@ const milestoneOptions = [
 ];
 
 const equityTable = [
-  { years: 1, avg: 5, equity: '~$17,500′ },
-  { years: 3, avg: 16, equity: '~$56,000′ },
-  { years: 5, avg: 27, equity: '~$94,500′ },
-  { years: 8, avg: 45, equity: '~$157,500′ },
-  { years: 12, avg: 71, equity: '~$248,500′ },
-  { years: 15, avg: 92, equity: '~$322,000′ },
+  { years: 1, avg: 5, equity: '~$17,500' },
+  { years: 3, avg: 16, equity: '~$56,000' },
+  { years: 5, avg: 27, equity: '~$94,500' },
+  { years: 8, avg: 45, equity: '~$157,500' },
+  { years: 12, avg: 71, equity: '~$248,500' },
+  { years: 15, avg: 92, equity: '~$322,000' },
 ];
 
 const nextSteps: Record<string, string[]> = {

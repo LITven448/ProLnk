@@ -128,7 +128,7 @@ export default function DFWHVACCompleteJourney() {
           <h2 style={{ color: '#F5E642', marginBottom: '1rem', fontSize: '1rem', fontWeight: 600 }}>📍 Where Are You on the Journey?</h2>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(140px, 1fr))', gap: '0.75rem' }}>
             {journeyStages.map((s, i) => (
-              <button key={i} onClick={() => setSelected(i)} style={{ backgroundColor: selected === i ? '#F5E642′ : '#1A2E4A', color: selected === i ? '#0A1628' : '#E8EDF2', border: ’none', borderRadius: '8px', padding: '0.75rem 0.75rem', cursor: 'pointer', fontWeight: 600, fontSize: '0.82rem', textAlign: 'center', transition: 'all 0.2s' }}>
+              <button key={i} onClick={() => setSelected(i)} style={{ backgroundColor: selected === i ? '#F5E642' : '#1A2E4A', color: selected === i ? '#0A1628' : '#E8EDF2', border: 'none', borderRadius: '8px', padding: '0.75rem 0.75rem', cursor: 'pointer', fontWeight: 600, fontSize: '0.82rem', textAlign: 'center', transition: 'all 0.2s' }}>
                 <div style={{ fontSize: '1.4rem' }}>{s.icon}</div>
                 <div style={{ marginTop: '0.3rem' }}>{s.stage}</div>
                 <div style={{ fontSize: '0.72rem', opacity: 0.75, marginTop: '0.15rem', fontWeight: 400 }}>{s.years}</div>
@@ -137,7 +137,7 @@ export default function DFWHVACCompleteJourney() {
           </div>
         </div>
 
-        <div style={{ backgroundColor: '#1A2E4A', borderRadius: '12px', padding: '1.75rem', marginBottom: '1.5rem', border: '1px solid #F5E642′ }}>
+        <div style={{ backgroundColor: '#1A2E4A', borderRadius: '12px', padding: '1.75rem', marginBottom: '1.5rem', border: '1px solid #F5E642' }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', marginBottom: '0.5rem' }}>
             <span style={{ fontSize: '2rem' }}>{current.icon}</span>
             <div>
@@ -150,7 +150,7 @@ export default function DFWHVACCompleteJourney() {
           <div style={{ marginBottom: '1.25rem' }}>
             <h3 style={{ color: '#E8EDF2', fontSize: '0.95rem', fontWeight: 600, marginBottom: '0.5rem' }}>What Happens at This Stage</h3>
             {current.whatHappens.map((w, i) => (
-              <div key={i} style={{ display: 'flex', gap: '0.5rem', padding: '0.4rem 0', fontSize: '0.9rem', color: '#CBD5E1′ }}>
+              <div key={i} style={{ display: 'flex', gap: '0.5rem', padding: '0.4rem 0', fontSize: '0.9rem', color: '#CBD5E1' }}>
                 <span style={{ color: '#94A3B8', flexShrink: 0 }}>→</span>{w}
               </div>
             ))}
@@ -159,7 +159,7 @@ export default function DFWHVACCompleteJourney() {
           <div style={{ backgroundColor: '#0A1628', borderRadius: '8px', padding: '1rem', marginBottom: '0.75rem' }}>
             <div style={{ color: '#F5E642', fontWeight: 600, fontSize: '0.9rem', marginBottom: '0.5rem' }}>What ProLnk Provides</div>
             {current.proLnkProvides.map((p, i) => (
-              <div key={i} style={{ display: 'flex', gap: '0.5rem', padding: '0.3rem 0', fontSize: '0.9rem', color: '#E8EDF2′ }}>
+              <div key={i} style={{ display: 'flex', gap: '0.5rem', padding: '0.3rem 0', fontSize: '0.9rem', color: '#E8EDF2' }}>
                 <span style={{ color: '#F5E642', flexShrink: 0 }}>✓</span>{p}
               </div>
             ))}

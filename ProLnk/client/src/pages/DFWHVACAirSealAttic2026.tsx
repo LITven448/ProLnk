@@ -31,7 +31,7 @@ export default function DFWHVACAirSealAttic2026() {
           🌡️ Attic Air Sealing for HVAC Efficiency
         </h1>
         <p style={{ color: '#9BAEC8', marginBottom: '28px', lineHeight: 1.6 }}>
-          In a typical DFW home, top plates and penetrations leak <strong style={{ color: '#F5E642′ }}>40%+ of conditioned air</strong> into the attic before insulation even matters. Sealing first is non-negotiable.
+          In a typical DFW home, top plates and penetrations leak <strong style={{ color: '#F5E642' }}>40%+ of conditioned air</strong> into the attic before insulation even matters. Sealing first is non-negotiable.
         </p>
 
         {[
@@ -40,14 +40,14 @@ export default function DFWHVACAirSealAttic2026() {
           { icon: '🔌', title: 'Wiring Penetrations', desc: 'Every wire through top plates is a hole. Spray foam each one — takes 20 minutes but stops significant leakage.' },
           { icon: '🚪', title: 'Attic Hatch & Fan Openings', desc: 'Attic hatches are rarely weatherstripped. Whole-house fan openings are often completely open to attic 24/7.' },
         ].map((item) => (
-          <div key={item.title} style={{ backgroundColor: '#111D35', borderRadius: '10px', padding: '16px', marginBottom: '12px', borderLeft: '3px solid #F5E642′ }}>
+          <div key={item.title} style={{ backgroundColor: '#111D35', borderRadius: '10px', padding: '16px', marginBottom: '12px', borderLeft: '3px solid #F5E642' }}>
             <div style={{ fontWeight: 700, marginBottom: '4px' }}>{item.icon} {item.title}</div>
             <div style={{ color: '#9BAEC8', fontSize: '14px' }}>{item.desc}</div>
           </div>
         ))}
 
         <div style={{ backgroundColor: '#111D35', borderRadius: '12px', padding: '24px', marginTop: '28px' }}>
-          <div style={{ fontWeight: 700, marginBottom: '16px', color: '#F5E642′ }}>🔍 Attic Type → Air Sealing Priority</div>
+          <div style={{ fontWeight: 700, marginBottom: '16px', color: '#F5E642' }}>🔍 Attic Type → Air Sealing Priority</div>
           <select
             value={atticType}
             onChange={(e) => { setAtticType(e.target.value); setResult(''); }}
@@ -69,7 +69,7 @@ export default function DFWHVACAirSealAttic2026() {
           )}
         </div>
 
-        <div style={{ marginTop: '28px', backgroundColor: '#111D35', borderRadius: '10px', padding: '16px', borderTop: '2px solid #F5E642′ }}>
+        <div style={{ marginTop: '28px', backgroundColor: '#111D35', borderRadius: '10px', padding: '16px', borderTop: '2px solid #F5E642' }}>
           <div style={{ fontWeight: 700, marginBottom: '6px' }}>💰 DFW Payback Reality</div>
           <div style={{ color: '#9BAEC8', fontSize: '14px' }}>Air sealing a DFW attic costs $800–$2,200 professionally. With summer electric bills averaging $320+/mo, proper sealing typically pays back in 2–3 DFW summers.</div>
         </div>

@@ -72,10 +72,10 @@ export default function DFWHVACElectrifyGuide2026() {
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12, marginBottom: 32 }}>
           {appliances.map(a => (
             <button key={a.id} onClick={() => setSelected(a.id === selected ? null : a.id)}
-              style={{ background: selected === a.id ? '#F5E642′ : '#1e2d45', border: '2px solid',
-                borderColor: selected === a.id ? '#F5E642′ : '#2d3f5a', borderRadius: 10,
+              style={{ background: selected === a.id ? '#F5E642' : '#1e2d45', border: '2px solid',
+                borderColor: selected === a.id ? '#F5E642' : '#2d3f5a', borderRadius: 10,
                 padding: '16px', cursor: 'pointer', textAlign: 'left',
-                color: selected === a.id ? '#0A1628′ : '#fff' }}>
+                color: selected === a.id ? '#0A1628' : '#fff' }}>
               <div style={{ fontSize: 28 }}>{a.icon}</div>
               <div style={{ fontWeight: 700, fontSize: 14 }}>{a.gas}</div>
               <div style={{ fontSize: 12, opacity: 0.75 }}>→ {a.electric}</div>
@@ -84,7 +84,7 @@ export default function DFWHVACElectrifyGuide2026() {
         </div>
 
         {item && (
-          <div style={{ background: '#1e2d45', borderRadius: 12, padding: 24, marginBottom: 32, borderLeft: '4px solid #F5E642′ }}>
+          <div style={{ background: '#1e2d45', borderRadius: 12, padding: 24, marginBottom: 32, borderLeft: '4px solid #F5E642' }}>
             <h3 style={{ color: '#F5E642', marginTop: 0 }}>{item.icon} {item.gas} → {item.electric}</h3>
             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: 16, marginBottom: 16 }}>
               {[{l:'Install Cost',v:item.cost},{l:'Annual Savings',v:item.savings},{l:'Timeline',v:item.timeline}].map(r => (

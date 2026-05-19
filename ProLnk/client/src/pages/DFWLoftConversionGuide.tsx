@@ -48,9 +48,9 @@ export default function DFWLoftConversionGuide() {
       <div style={{ maxWidth: 820, margin: '0 auto' }}>
         <div style={{ marginBottom: '0.5rem', color: '#F5E642', fontSize: '0.85rem', fontWeight: 700, letterSpacing: 2 }}>DFW REMODEL GUIDES</div>
         <h1 style={{ fontSize: '2rem', fontWeight: 800, marginBottom: '0.5rem' }}>Bonus Room & Loft Conversion Guide 🏠</h1>
-        <p style={{ color: '#94a3b8', marginBottom: '2rem' }}>DFW homes often have large bonus rooms above the garage. The biggest challenge isn't the conversion — it’s the heat.</p>
+        <p style={{ color: '#94a3b8', marginBottom: '2rem' }}>DFW homes often have large bonus rooms above the garage. The biggest challenge isn't the conversion — it's the heat.</p>
 
-        <div style={{ background: '#2a1a0a', border: '1px solid #F5E642', borderRadius: 8, padding: '0.75rem 1rem', marginBottom: '2rem', fontSize: '0.88rem', color: '#fbbf24′ }}>
+        <div style={{ background: '#2a1a0a', border: '1px solid #F5E642', borderRadius: 8, padding: '0.75rem 1rem', marginBottom: '2rem', fontSize: '0.88rem', color: '#fbbf24' }}>
           🌡️ <strong>DFW Heat Warning:</strong> Bonus rooms above garages can reach 110°F+ in July. HVAC upgrade is always part of the budget — plan for it first.
         </div>
 
@@ -78,7 +78,7 @@ export default function DFWLoftConversionGuide() {
                 <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5rem' }}>
                   {opts.map(o => (
                     <button key={o} onClick={() => { set(o); setShowPlan(false); }}
-                      style={{ padding: '0.4rem 0.9rem', borderRadius: 6, border: `1px solid ${val === o ? '#F5E642' : '#2a3a55'}`, background: val === o ? '#F5E642′ : ’transparent', color: val === o ? '#0A1628′ : '#fff', cursor: ’pointer', fontSize: '0.82rem', fontWeight: val === o ? 700 : 400 }}>
+                      style={{ padding: '0.4rem 0.9rem', borderRadius: 6, border: `1px solid ${val === o ? '#F5E642' : '#2a3a55'}`, background: val === o ? '#F5E642' : 'transparent', color: val === o ? '#0A1628' : '#fff', cursor: 'pointer', fontSize: '0.82rem', fontWeight: val === o ? 700 : 400 }}>
                       {o}
                     </button>
                   ))}
@@ -87,24 +87,24 @@ export default function DFWLoftConversionGuide() {
             ))}
           </div>
           <button onClick={() => setShowPlan(true)} disabled={!canGenerate}
-            style={{ marginTop: '1.5rem', padding: '0.75rem 2rem', background: canGenerate ? '#F5E642′ : '#2a3a55', color: canGenerate ? '#0A1628' : '#64748b', borderRadius: 8, border: ’none', fontWeight: 800, cursor: canGenerate ? 'pointer' : 'not-allowed', fontSize: '1rem' }}>
+            style={{ marginTop: '1.5rem', padding: '0.75rem 2rem', background: canGenerate ? '#F5E642' : '#2a3a55', color: canGenerate ? '#0A1628' : '#64748b', borderRadius: 8, border: 'none', fontWeight: 800, cursor: canGenerate ? 'pointer' : 'not-allowed', fontSize: '1rem' }}>
             Generate My Conversion Plan →
           </button>
         </div>
 
         {showPlan && current && target && size && (
-          <div style={{ background: '#132035', borderRadius: 12, padding: '1.5rem', border: '1px solid #F5E642′ }}>
+          <div style={{ background: '#132035', borderRadius: 12, padding: '1.5rem', border: '1px solid #F5E642' }}>
             <h3 style={{ color: '#F5E642', marginBottom: '1rem' }}>📋 Your Bonus Room Conversion Plan</h3>
             <div style={{ display: 'grid', gap: '0.75rem' }}>
               {EGRESS_REQUIRED[target] && (
-                <div style={{ background: '#2a1a0a', padding: '1rem', borderRadius: 8, border: '1px solid #f97316′ }}>
+                <div style={{ background: '#2a1a0a', padding: '1rem', borderRadius: 8, border: '1px solid #f97316' }}>
                   <div style={{ color: '#f97316', fontWeight: 700, marginBottom: '0.3rem' }}>⚠️ Egress Window Required</div>
                   <div style={{ color: '#94a3b8', fontSize: '0.88rem' }}>Converting to a legal bedroom requires a code-compliant egress window. Budget $2K–$5K for window installation and framing.</div>
                 </div>
               )}
               <div style={{ background: '#0A1628', padding: '1rem', borderRadius: 8 }}>
                 <div style={{ color: '#F5E642', fontWeight: 700, marginBottom: '0.3rem' }}>🌡️ HVAC Needs for {size}</div>
-                <div style={{ color: '#94a3b8′ }}>{HVAC_NOTES[size]}</div>
+                <div style={{ color: '#94a3b8' }}>{HVAC_NOTES[size]}</div>
               </div>
               <div style={{ background: '#0A1628', padding: '1rem', borderRadius: 8 }}>
                 <div style={{ color: '#F5E642', fontWeight: 700, marginBottom: '0.3rem' }}>Estimated Cost</div>

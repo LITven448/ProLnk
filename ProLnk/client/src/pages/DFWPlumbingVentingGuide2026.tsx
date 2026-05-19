@@ -54,7 +54,7 @@ export default function DFWPlumbingVentingGuide2026() {
 
         <div style={{ marginTop: 32, padding: '20px', background: '#132035', borderRadius: 12, textAlign: 'center' }}>
           <div style={{ color: '#F5E642', fontWeight: 700, marginBottom: 8 }}>Need a DFW plumber to inspect your venting?</div>
-          <div style={{ color: '#94A3B8′ }}>ProLnk connects you with licensed DFW plumbers — free quotes, no obligation.</div>
+          <div style={{ color: '#94A3B8' }}>ProLnk connects you with licensed DFW plumbers — free quotes, no obligation.</div>
         </div>
       </div>
     </div>

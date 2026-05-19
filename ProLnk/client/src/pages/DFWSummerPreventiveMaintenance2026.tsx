@@ -61,7 +61,7 @@ export default function DFWSummerPreventiveMaintenance2026() {
               ['🏠 Attic Insulated', atticInsulated, setAtticInsulated],
             ].map(([label, val, setter]) => (
               <button key={label as string} onClick={() => (setter as (v: boolean) => void)(!val as boolean)}
-                style={{ padding: '10px', background: val ? '#F5E642′ : '#1A2A45', color: val ? '#0A1628' : '#fff',
+                style={{ padding: '10px', background: val ? '#F5E642' : '#1A2A45', color: val ? '#0A1628' : '#fff',
                   border: 'none', borderRadius: 8, cursor: 'pointer', fontWeight: 700, fontSize: 13 }}>
                 {label as string}: {val ? 'Yes' : 'No'}
               </button>
@@ -69,7 +69,7 @@ export default function DFWSummerPreventiveMaintenance2026() {
           </div>
           <div style={{ color: '#F5E642', fontWeight: 700, marginBottom: 8 }}>HVAC Age: {hvacAge} years</div>
           <input type="range" min={1} max={25} value={hvacAge} onChange={e => setHvacAge(+e.target.value)}
-            style={{ width: '100%', accentColor: '#F5E642′ }} />
+            style={{ width: '100%', accentColor: '#F5E642' }} />
           <div style={{ display: 'flex', justifyContent: 'space-between', color: '#8899BB', fontSize: 12 }}><span>New</span><span>25 yrs</span></div>
         </div>
 

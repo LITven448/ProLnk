@@ -62,16 +62,16 @@ export default function DFWHomePhotoGuide() {
             { icon: '🏙️', label: 'Drone Shots', value: '+12% Interest', sub: 'For DFW lots over 0.25 acre' },
             { icon: '🌆', label: 'Twilight Photos', value: 'Top Performer', sub: 'Most saved listing photo in DFW' },
           ].map(s => (
-            <div key={s.label} style={{ backgroundColor: '#1a2a40', borderRadius: 12, padding: 24, textAlign: 'center', border: '1px solid #2a3a50′ }}>
+            <div key={s.label} style={{ backgroundColor: '#1a2a40', borderRadius: 12, padding: 24, textAlign: 'center', border: '1px solid #2a3a50' }}>
               <div style={{ fontSize: 32, marginBottom: 8 }}>{s.icon}</div>
               <div style={{ fontWeight: 700, color: '#9aa5b4', fontSize: 13, marginBottom: 4 }}>{s.label}</div>
               <div style={{ fontSize: 20, fontWeight: 800, color: '#F5E642', marginBottom: 4 }}>{s.value}</div>
-              <div style={{ fontSize: 12, color: '#9aa5b4′ }}>{s.sub}</div>
+              <div style={{ fontSize: 12, color: '#9aa5b4' }}>{s.sub}</div>
             </div>
           ))}
         </div>
 
-        <div style={{ backgroundColor: '#1a2a40', borderRadius: 16, padding: 28, marginBottom: 48, border: '1px solid #2a3a50′ }}>
+        <div style={{ backgroundColor: '#1a2a40', borderRadius: 16, padding: 28, marginBottom: 48, border: '1px solid #2a3a50' }}>
           <h2 style={{ fontSize: 20, fontWeight: 700, color: '#F5E642', marginBottom: 16 }}>⚠️ What Photographers Can't Fix</h2>
           <p style={{ color: '#9aa5b4', marginBottom: 16, fontSize: 14 }}>No matter how good the photographer, prep work matters. Shoot day mistakes cost deals.</p>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12 }}>
@@ -90,8 +90,8 @@ export default function DFWHomePhotoGuide() {
           </div>
         </div>
 
-        <div style={{ backgroundColor: '#1a2a40', borderRadius: 16, padding: 32, marginBottom: 32, border: '1px solid #2a3a50′ }}>
-          <h2 style={{ fontSize: 22, fontWeight: 700, marginBottom: 20, color: '#F5E642′ }}>📦 Photography Package Finder</h2>
+        <div style={{ backgroundColor: '#1a2a40', borderRadius: 16, padding: 32, marginBottom: 32, border: '1px solid #2a3a50' }}>
+          <h2 style={{ fontSize: 22, fontWeight: 700, marginBottom: 20, color: '#F5E642' }}>📦 Photography Package Finder</h2>
 
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 20, marginBottom: 20 }}>
             <div>
@@ -133,13 +133,13 @@ export default function DFWHomePhotoGuide() {
                 <div style={{ color: '#9aa5b4', fontSize: 13, marginBottom: 8 }}>PACKAGE INCLUDES:</div>
                 {result.includes.map(item => (
                   <div key={item} style={{ display: 'flex', gap: 8, marginBottom: 6, alignItems: 'center' }}>
-                    <span style={{ color: '#4ade80′ }}>✓</span>
+                    <span style={{ color: '#4ade80' }}>✓</span>
                     <span style={{ color: '#ccc', fontSize: 14 }}>{item}</span>
                   </div>
                 ))}
               </div>
-              <div style={{ padding: 16, backgroundColor: '#1a2a40', borderRadius: 8, borderLeft: '4px solid #F5E642′ }}>
-                <strong style={{ color: '#F5E642′ }}>💡 DFW Pro Tip: </strong>
+              <div style={{ padding: 16, backgroundColor: '#1a2a40', borderRadius: 8, borderLeft: '4px solid #F5E642' }}>
+                <strong style={{ color: '#F5E642' }}>💡 DFW Pro Tip: </strong>
                 <span style={{ color: '#ccc', fontSize: 14 }}>{result.tip}</span>
               </div>
             </div>

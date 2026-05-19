@@ -7,8 +7,8 @@ const cityRules: Record<TinyCity, { status: string; minSqft: number; adus: boole
   dallas: { status: 'Allowed on SF lots', minSqft: 500, adus: true, notes: 'SB 2 ADU allowances apply; must connect to city utilities', color: '#22C55E' },
   fortworth: { status: 'Limited — HOA dependent', minSqft: 800, adus: true, notes: 'ADUs allowed in most zones per SB 2; TWH restricted', color: '#F59E0B' },
   denton: { status: 'Allowed with permit', minSqft: 400, adus: true, notes: 'University town; progressive zoning; active ADU community', color: '#22C55E' },
-  plano: { status: 'Restricted', minSqft: 1200, adus: false, notes: 'High minimum sq ft; HOA restrictions common; no TWH in city limits', color: '#EF4444′ },
-  frisco: { status: 'Restricted', minSqft: 1400, adus: false, notes: 'Suburban codes restrict very small homes; ADU rules evolving', color: '#EF4444′ },
+  plano: { status: 'Restricted', minSqft: 1200, adus: false, notes: 'High minimum sq ft; HOA restrictions common; no TWH in city limits', color: '#EF4444' },
+  frisco: { status: 'Restricted', minSqft: 1400, adus: false, notes: 'Suburban codes restrict very small homes; ADU rules evolving', color: '#EF4444' },
   arlington: { status: 'Case-by-case', minSqft: 600, adus: true, notes: 'ADUs allowed in some zones; contact planning dept first', color: '#F59E0B' },
   garland: { status: 'Allowed with permit', minSqft: 500, adus: true, notes: 'More permissive; ADU-friendly due to housing pressure', color: '#22C55E' },
   mckinney: { status: 'Restricted in most HOAs', minSqft: 1000, adus: true, notes: 'City allows ADUs but most lots are HOA-restricted', color: '#F59E0B' },
@@ -42,7 +42,7 @@ export default function DFWTinyHomeGuide() {
       </div>
 
       <div style={{ maxWidth: 860, margin: '0 auto', padding: '0 24px' }}>
-        <div style={{ background: '#112240', borderRadius: 12, padding: '20px 24px', margin: '32px 0', borderLeft: '4px solid #F5E642′ }}>
+        <div style={{ background: '#112240', borderRadius: 12, padding: '20px 24px', margin: '32px 0', borderLeft: '4px solid #F5E642' }}>
           <h3 style={{ color: '#F5E642', margin: '0 0 8px', fontSize: 16 }}>⚖️ Texas SB 2 (2023) — What It Changed</h3>
           <p style={{ color: '#94A3B8', margin: 0, fontSize: 14, lineHeight: 1.6 }}>Senate Bill 2 prohibits Texas cities from banning ADUs on single-family lots where they would otherwise be permitted by the zoning code. Cities cannot require owner-occupancy or minimum lot sizes beyond what's standard. This opened significant new opportunities across DFW.</p>
         </div>
@@ -54,7 +54,7 @@ export default function DFWTinyHomeGuide() {
             { icon: '🏘️', title: 'HOA Is King', desc: 'Even if the city allows tiny homes, your HOA CC&Rs likely prohibit them. Check both.' },
             { icon: '❄️', title: 'DFW Climate', desc: 'Small structures with poor insulation are unlivable in summer. Spray foam required.' },
           ].map(card => (
-            <div key={card.title} style={{ background: '#112240', borderRadius: 12, padding: 22, borderLeft: '4px solid #F5E642′ }}>
+            <div key={card.title} style={{ background: '#112240', borderRadius: 12, padding: 22, borderLeft: '4px solid #F5E642' }}>
               <div style={{ fontSize: 28, marginBottom: 8 }}>{card.icon}</div>
               <h3 style={{ color: '#F5E642', margin: '0 0 6px', fontSize: 14 }}>{card.title}</h3>
               <p style={{ color: '#94A3B8', margin: 0, fontSize: 13, lineHeight: 1.5 }}>{card.desc}</p>
@@ -102,7 +102,7 @@ export default function DFWTinyHomeGuide() {
             </div>
             <div>
               <label style={{ color: '#94A3B8', fontSize: 13, display: 'block', marginBottom: 6 }}>Lot Size: {lotSqft.toLocaleString()} sq ft</label>
-              <input type="range" min={3000} max={20000} step={500} value={lotSqft} onChange={e => { setLotSqft(+e.target.value); setShowResults(false); }} style={{ width: '100%', accentColor: '#F5E642′ }} />
+              <input type="range" min={3000} max={20000} step={500} value={lotSqft} onChange={e => { setLotSqft(+e.target.value); setShowResults(false); }} style={{ width: '100%', accentColor: '#F5E642' }} />
             </div>
           </div>
           <button onClick={() => setShowResults(true)} style={{ background: '#F5E642', color: '#0A1628', border: 'none', borderRadius: 10, padding: '12px 28px', fontWeight: 700, fontSize: 15, cursor: 'pointer' }}>Check Feasibility →</button>
@@ -115,9 +115,9 @@ export default function DFWTinyHomeGuide() {
                 <div style={{ background: '#0A1628', borderRadius: 10, padding: 16 }}><div style={{ color: '#94A3B8', fontSize: 12 }}>Utility Connection</div><div style={{ color: '#F5E642', fontSize: 20, fontWeight: 700 }}>${totalUtility.toLocaleString()}</div></div>
               </div>
               <div style={{ background: '#0A1628', borderRadius: 10, padding: 18 }}>
-                <p style={{ color: '#94A3B8', margin: '0 0 8px', fontSize: 13 }}><strong style={{ color: '#F5E642′ }}>Home Type:</strong> {typeInfo.desc}</p>
-                <p style={{ color: '#94A3B8', margin: '0 0 8px', fontSize: 13 }}><strong style={{ color: '#F5E642′ }}>Permits:</strong> {typeInfo.permittable}</p>
-                <p style={{ color: '#94A3B8', margin: 0, fontSize: 13 }}><strong style={{ color: '#F5E642′ }}>City Notes:</strong> {rules.notes}</p>
+                <p style={{ color: '#94A3B8', margin: '0 0 8px', fontSize: 13 }}><strong style={{ color: '#F5E642' }}>Home Type:</strong> {typeInfo.desc}</p>
+                <p style={{ color: '#94A3B8', margin: '0 0 8px', fontSize: 13 }}><strong style={{ color: '#F5E642' }}>Permits:</strong> {typeInfo.permittable}</p>
+                <p style={{ color: '#94A3B8', margin: 0, fontSize: 13 }}><strong style={{ color: '#F5E642' }}>City Notes:</strong> {rules.notes}</p>
               </div>
             </div>
           )}

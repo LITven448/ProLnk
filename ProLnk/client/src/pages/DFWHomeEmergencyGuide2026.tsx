@@ -46,7 +46,7 @@ export default function DFWHomeEmergencyGuide2026() {
           {emergencies.map((e) => (
             <button key={e.id} onClick={() => setSelected(e.id)}
               style={{ padding: '12px 16px', borderRadius: 10, border: `2px solid ${selected === e.id ? '#F5E642' : '#1e3a5f'}`,
-                background: selected === e.id ? '#F5E642′ : '#111e35', color: selected === e.id ? '#0A1628' : '#fff',
+                background: selected === e.id ? '#F5E642' : '#111e35', color: selected === e.id ? '#0A1628' : '#fff',
                 fontWeight: 700, cursor: 'pointer', fontSize: 13, display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 4, minWidth: 100 }}>
               <span style={{ fontSize: 24 }}>{e.icon}</span>
               <span>{e.title.split(' ')[0]}</span>

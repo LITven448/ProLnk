@@ -44,12 +44,12 @@ export default function DFWGutterCleaningGuide() {
       <div style={{ maxWidth: 800, margin: '0 auto', padding: '0 24px' }}>
         <div style={{ marginTop: 48 }}>
           <h2 style={{ fontSize: 24, fontWeight: 700, color: '#F5E642', marginBottom: 8 }}>🏗️ The DFW Foundation Connection</h2>
-          <div style={{ background: '#111E33', borderRadius: 12, padding: 24, marginBottom: 32, border: '1px solid #1E3054′ }}>
+          <div style={{ background: '#111E33', borderRadius: 12, padding: 24, marginBottom: 32, border: '1px solid #1E3054' }}>
             <p style={{ color: '#94A3B8', lineHeight: 1.7, margin: '0 0 12px' }}>
               DFW sits on expansive clay soil (Blackland Prairie) that swells when wet and shrinks when dry. Foundation repair in DFW costs $5,000–$25,000. Clogged gutters that overflow near your foundation accelerate this cycle and are one of the top causes of foundation movement.
             </p>
             <p style={{ color: '#94A3B8', lineHeight: 1.7, margin: 0 }}>
-              <strong style={{ color: '#F5E642′ }}>Minimum recommended:</strong> Clean gutters twice yearly — once in late November after fall leaves, and once in late March after spring pollen and seed pods.
+              <strong style={{ color: '#F5E642' }}>Minimum recommended:</strong> Clean gutters twice yearly — once in late November after fall leaves, and once in late March after spring pollen and seed pods.
             </p>
           </div>
 
@@ -63,13 +63,13 @@ export default function DFWGutterCleaningGuide() {
             ].map(item => (
               <div key={item.title} style={{ background: '#111E33', border: '1px solid #1E3054', borderRadius: 10, padding: 18 }}>
                 <div style={{ fontSize: 28, marginBottom: 8 }}>{item.icon}</div>
-                <div style={{ fontWeight: 700, fontSize: 14, marginBottom: 6, color: '#E8EDF5′ }}>{item.title}</div>
+                <div style={{ fontWeight: 700, fontSize: 14, marginBottom: 6, color: '#E8EDF5' }}>{item.title}</div>
                 <div style={{ color: '#94A3B8', fontSize: 13, lineHeight: 1.5 }}>{item.desc}</div>
               </div>
             ))}
           </div>
 
-          <div style={{ background: '#111E33', borderRadius: 12, padding: 24, marginBottom: 32, border: '1px solid #1E3054′ }}>
+          <div style={{ background: '#111E33', borderRadius: 12, padding: 24, marginBottom: 32, border: '1px solid #1E3054' }}>
             <h3 style={{ color: '#E8EDF5', fontSize: 18, fontWeight: 700, marginBottom: 12 }}>📏 Downspout Extensions</h3>
             <p style={{ color: '#94A3B8', lineHeight: 1.7, margin: '0 0 8px' }}>
               Downspouts should discharge water at least 4–6 feet from the foundation. In DFW, many pros recommend 6–10 feet given clay soil conditions. Splash blocks alone are rarely sufficient.
@@ -88,9 +88,9 @@ export default function DFWGutterCleaningGuide() {
               {homeSizes.map(h => (
                 <button key={h.id} onClick={() => setHomeSize(h.id)} style={{
                   textAlign: 'left', padding: '10px 16px', borderRadius: 8, border: '2px solid',
-                  borderColor: homeSize === h.id ? '#F5E642′ : '#1E3054',
+                  borderColor: homeSize === h.id ? '#F5E642' : '#1E3054',
                   background: homeSize === h.id ? 'rgba(245,230,66,0.1)' : 'transparent',
-                  color: homeSize === h.id ? '#F5E642′ : '#94A3B8', fontWeight: 600, fontSize: 14, cursor: ’pointer'
+                  color: homeSize === h.id ? '#F5E642' : '#94A3B8', fontWeight: 600, fontSize: 14, cursor: 'pointer'
                 }}>{h.label}</button>
               ))}
             </div>
@@ -102,28 +102,28 @@ export default function DFWGutterCleaningGuide() {
               {treeLevels.map(t => (
                 <button key={t.id} onClick={() => setTreeLevel(t.id)} style={{
                   textAlign: 'left', padding: '10px 16px', borderRadius: 8, border: '2px solid',
-                  borderColor: treeLevel === t.id ? '#F5E642′ : '#1E3054',
+                  borderColor: treeLevel === t.id ? '#F5E642' : '#1E3054',
                   background: treeLevel === t.id ? 'rgba(245,230,66,0.1)' : 'transparent',
-                  color: treeLevel === t.id ? '#F5E642′ : '#94A3B8', fontWeight: 600, fontSize: 14, cursor: ’pointer'
+                  color: treeLevel === t.id ? '#F5E642' : '#94A3B8', fontWeight: 600, fontSize: 14, cursor: 'pointer'
                 }}>{t.label}</button>
               ))}
             </div>
           </div>
 
           {annualCost && trees && guardCost && (
-            <div style={{ background: '#0A1628', borderRadius: 10, padding: 20, border: '1px solid #1E3054′ }}>
+            <div style={{ background: '#0A1628', borderRadius: 10, padding: 20, border: '1px solid #1E3054' }}>
               <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(140px, 1fr))', gap: 16, marginBottom: 16 }}>
                 <div>
                   <div style={{ fontSize: 12, color: '#94A3B8', marginBottom: 4 }}>Cleanings Per Year</div>
-                  <div style={{ fontSize: 28, fontWeight: 800, color: '#F5E642′ }}>{trees.cleans}x</div>
+                  <div style={{ fontSize: 28, fontWeight: 800, color: '#F5E642' }}>{trees.cleans}x</div>
                 </div>
                 <div>
                   <div style={{ fontSize: 12, color: '#94A3B8', marginBottom: 4 }}>Annual Cost</div>
-                  <div style={{ fontSize: 28, fontWeight: 800, color: '#F5E642′ }}>${annualCost}</div>
+                  <div style={{ fontSize: 28, fontWeight: 800, color: '#F5E642' }}>${annualCost}</div>
                 </div>
                 <div>
                   <div style={{ fontSize: 12, color: '#94A3B8', marginBottom: 4 }}>Gutter Guards Install</div>
-                  <div style={{ fontSize: 28, fontWeight: 800, color: '#E8EDF5′ }}>${guardCost}</div>
+                  <div style={{ fontSize: 28, fontWeight: 800, color: '#E8EDF5' }}>${guardCost}</div>
                 </div>
               </div>
               <div style={{ borderTop: '1px solid #1E3054', paddingTop: 14 }}>

@@ -26,7 +26,7 @@ export default function DFWSportCourtGuide2026() {
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(160px, 1fr))', gap: 14, marginBottom: 32 }}>
           {courts.map(c => (
             <button key={c.sport} onClick={() => setSelected(c.sport === selected ? null : c.sport)}
-              style={{ background: selected === c.sport ? '#F5E642′ : '#1a2a42', border: '2px solid', borderColor: selected === c.sport ? '#F5E642' : '#2a3a55', borderRadius: 10, padding: '18px 10px', cursor: ’pointer', color: selected === c.sport ? '#0A1628′ : '#fff', fontWeight: 700, fontSize: 14, transition: ’all .2s' }}>
+              style={{ background: selected === c.sport ? '#F5E642' : '#1a2a42', border: '2px solid', borderColor: selected === c.sport ? '#F5E642' : '#2a3a55', borderRadius: 10, padding: '18px 10px', cursor: 'pointer', color: selected === c.sport ? '#0A1628' : '#fff', fontWeight: 700, fontSize: 14, transition: 'all .2s' }}>
               <div style={{ fontSize: 28, marginBottom: 6 }}>{c.icon}</div>
               {c.sport}
               <div style={{ fontSize: 11, marginTop: 6, opacity: 0.8 }}>Min {c.minSqFt.toLocaleString()} sq ft</div>
@@ -35,7 +35,7 @@ export default function DFWSportCourtGuide2026() {
         </div>
 
         {active && (
-          <div style={{ background: '#1a2a42', borderRadius: 12, padding: 28, borderLeft: '4px solid #F5E642′ }}>
+          <div style={{ background: '#1a2a42', borderRadius: 12, padding: 28, borderLeft: '4px solid #F5E642' }}>
             <h2 style={{ color: '#F5E642', marginTop: 0 }}>{active.icon} {active.sport} Court — DFW Feasibility Guide</h2>
             <ul style={{ paddingLeft: 20, lineHeight: 2 }}>
               {active.tips.map((t, i) => <li key={i} style={{ color: '#dde' }}>{t}</li>)}

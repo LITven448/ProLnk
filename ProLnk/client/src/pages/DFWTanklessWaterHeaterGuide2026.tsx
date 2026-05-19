@@ -11,7 +11,7 @@ export default function DFWTanklessWaterHeaterGuide2026() {
     const simultaneous = usage === 'high' ? hh : Math.ceil(hh / 2);
     const gpm = simultaneous <= 1 ? '6–8 GPM' : simultaneous <= 2 ? '8–10 GPM' : '10–12 GPM';
     const type = 'Gas tankless (recommended for DFW — low gas rates make gas 40% cheaper to operate)';
-    const cost = hh <= 2 ? '$1,200–1,800′ : hh <= 4 ? '$1,600–2,400' : '$2,200–3,500';
+    const cost = hh <= 2 ? '$1,200–1,800' : hh <= 4 ? '$1,600–2,400' : '$2,200–3,500';
     setResult(`⚡ Recommended: ${gpm} whole-home gas tankless. ${type}. Installed cost: ${cost}. Note: DFW hard water (15–20 GPG) requires annual descaling to maintain warranty.`);
   };
 
@@ -30,22 +30,22 @@ export default function DFWTanklessWaterHeaterGuide2026() {
           ].map((c, i) => (
             <div key={i} style={{ background: '#0f2035', borderRadius: '10px', padding: '1.2rem' }}>
               <div style={{ fontSize: '1.8rem', marginBottom: '0.5rem' }}>{c.icon}</div>
-              <div style={{ fontWeight: 700, marginBottom: '0.4rem', color: '#F5E642′ }}>{c.title}</div>
+              <div style={{ fontWeight: 700, marginBottom: '0.4rem', color: '#F5E642' }}>{c.title}</div>
               <div style={{ color: '#94a3b8', fontSize: '0.88rem' }}>{c.desc}</div>
             </div>
           ))}
         </div>
 
         <div style={{ background: '#0f2035', borderRadius: '12px', padding: '1.5rem', marginBottom: '1.5rem' }}>
-          <h2 style={{ fontWeight: 700, marginBottom: '1rem', color: '#F5E642′ }}>📐 Sizing Calculator</h2>
+          <h2 style={{ fontWeight: 700, marginBottom: '1rem', color: '#F5E642' }}>📐 Sizing Calculator</h2>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
             <div>
               <label style={{ display: 'block', marginBottom: '0.4rem', color: '#94a3b8', fontSize: '0.88rem' }}>Household Size</label>
               <select value={household} onChange={e => setHousehold(e.target.value)} style={{ width: '100%', background: '#0A1628', color: '#fff', border: '1px solid #1e3a5f', borderRadius: '6px', padding: '0.5rem 1rem', fontSize: '0.95rem' }}>
                 <option value="">Select size</option>
-                <option value="2″>1–2 people</option>
-                <option value="4″>3–4 people</option>
-                <option value="6″>5–6+ people</option>
+                <option value="2">1–2 people</option>
+                <option value="4">3–4 people</option>
+                <option value="6">5–6+ people</option>
               </select>
             </div>
             <div>
@@ -58,7 +58,7 @@ export default function DFWTanklessWaterHeaterGuide2026() {
             </div>
           </div>
           <button onClick={calculate} style={{ background: '#F5E642', color: '#0A1628', border: 'none', borderRadius: '8px', padding: '0.7rem 1.5rem', fontWeight: 700, cursor: 'pointer' }}>Get Sizing Guide →</button>
-          {result && <div style={{ marginTop: '1rem', background: '#0A1628', borderRadius: '8px', padding: '1rem', borderLeft: '4px solid #F5E642', color: '#e2e8f0′ }}>{result}</div>}
+          {result && <div style={{ marginTop: '1rem', background: '#0A1628', borderRadius: '8px', padding: '1rem', borderLeft: '4px solid #F5E642', color: '#e2e8f0' }}>{result}</div>}
         </div>
 
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1.5rem' }}>
@@ -74,7 +74,7 @@ export default function DFWTanklessWaterHeaterGuide2026() {
           ))}
         </div>
 
-        <div style={{ background: '#F5E642', borderRadius: '10px', padding: '1.2rem', color: '#0A1628′ }}>
+        <div style={{ background: '#F5E642', borderRadius: '10px', padding: '1.2rem', color: '#0A1628' }}>
           <strong>💡 DFW Pro Tip:</strong> Pair your tankless heater with a water softener — DFW hard water is the #1 cause of early tankless failure. Combo installs save 15% on labor.
         </div>
       </div>

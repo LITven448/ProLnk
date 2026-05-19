@@ -46,7 +46,7 @@ export default function ReferralNetworkCalculator() {
           </p>
         </div>
 
-        <div style={{ background: '#f8fafc', borderRadius: '12px', padding: '1.5rem', marginBottom: '2rem', border: '1px solid #e2e8f0′ }}>
+        <div style={{ background: '#f8fafc', borderRadius: '12px', padding: '1.5rem', marginBottom: '2rem', border: '1px solid #e2e8f0' }}>
           <h2 style={{ fontSize: '1.1rem', fontWeight: 700, color: '#0A1628', marginBottom: '1rem' }}>📖 How It Works</h2>
           <p style={{ color: '#475569', fontSize: '0.9rem', lineHeight: 1.7, marginBottom: '0.75rem' }}>
             When sub-partners you recruit earn income on the platform, you earn a <strong>network override</strong> — a percentage of the commission they keep (72% of job value). Overrides cascade 4 levels deep:
@@ -68,12 +68,12 @@ export default function ReferralNetworkCalculator() {
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '1rem', marginBottom: '1.2rem' }}>
             <div>
               <label style={{ color: '#475569', display: 'block', marginBottom: '0.4rem', fontSize: '0.85rem', fontWeight: 600 }}>Avg jobs/month (per partner):</label>
-              <input type="number" value={jobsPerMonth} onChange={e => setJobsPerMonth(e.target.value)} placeholder="e.g. 8″
+              <input type="number" value={jobsPerMonth} onChange={e => setJobsPerMonth(e.target.value)} placeholder="e.g. 8"
                 style={{ border: '1px solid #e2e8f0', borderRadius: '6px', padding: '0.5rem 0.75rem', color: '#0A1628', width: '100%', fontSize: '0.95rem' }} />
             </div>
             <div>
               <label style={{ color: '#475569', display: 'block', marginBottom: '0.4rem', fontSize: '0.85rem', fontWeight: 600 }}>Avg job value ($):</label>
-              <input type="number" value={jobValue} onChange={e => setJobValue(e.target.value)} placeholder="e.g. 350″
+              <input type="number" value={jobValue} onChange={e => setJobValue(e.target.value)} placeholder="e.g. 350"
                 style={{ border: '1px solid #e2e8f0', borderRadius: '6px', padding: '0.5rem 0.75rem', color: '#0A1628', width: '100%', fontSize: '0.95rem' }} />
             </div>
           </div>
@@ -85,7 +85,7 @@ export default function ReferralNetworkCalculator() {
                 <label style={{ color: LEVEL_COLORS[i], display: 'block', marginBottom: '0.3rem', fontSize: '0.85rem', fontWeight: 600 }}>
                   {label} ({(RATES[i] * 100).toFixed(0)}%):
                 </label>
-                <input type="number" value={partners[i]} onChange={e => updatePartner(i, e.target.value)} placeholder="0″
+                <input type="number" value={partners[i]} onChange={e => updatePartner(i, e.target.value)} placeholder="0"
                   style={{ border: `2px solid ${LEVEL_COLORS[i]}`, borderRadius: '6px', padding: '0.5rem 0.75rem', color: '#0A1628', width: '100%', fontSize: '0.95rem' }} />
               </div>
             ))}
@@ -110,7 +110,7 @@ export default function ReferralNetworkCalculator() {
                     <div key={i} style={{ background: '#f8fafc', borderRadius: '10px', padding: '1rem', border: `1px solid #e2e8f0` }}>
                       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '0.5rem' }}>
                         <div>
-                          <span style={{ fontWeight: 700, color: '#0A1628′ }}>{label}</span>
+                          <span style={{ fontWeight: 700, color: '#0A1628' }}>{label}</span>
                           <span style={{ color: '#64748b', fontSize: '0.85rem', marginLeft: '0.5rem' }}>{count} partners × {(RATES[i] * 100).toFixed(0)}% override</span>
                         </div>
                         <span style={{ fontWeight: 700, color: LEVEL_COLORS[i], fontSize: '1.1rem' }}>${earning.toLocaleString(undefined, { maximumFractionDigits: 0 })}/mo</span>
@@ -156,7 +156,7 @@ export default function ReferralNetworkCalculator() {
           </>
         )}
 
-        <div style={{ textAlign: 'center', padding: '1.5rem', background: '#f8fafc', borderRadius: '12px', border: '1px solid #e2e8f0′ }}>
+        <div style={{ textAlign: 'center', padding: '1.5rem', background: '#f8fafc', borderRadius: '12px', border: '1px solid #e2e8f0' }}>
           <div style={{ fontSize: '1.5rem', marginBottom: '0.5rem' }}>🚀</div>
           <p style={{ color: '#0A1628', fontWeight: 700, marginBottom: '0.25rem' }}>Ready to build your ProLnk partner network?</p>
           <p style={{ color: '#64748b', fontSize: '0.9rem' }}>Join as a Charter Partner and lock in your position in the network</p>

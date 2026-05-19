@@ -66,7 +66,7 @@ export default function DFWRoofMaintenanceGuide() {
         </div>
 
         <div style={{ backgroundColor: '#111F3A', borderRadius: 16, padding: 28 }}>
-          <h2 style={{ fontSize: 20, fontWeight: 700, marginBottom: 20, color: '#F5E642′ }}>🧮 Roof Maintenance Calculator</h2>
+          <h2 style={{ fontSize: 20, fontWeight: 700, marginBottom: 20, color: '#F5E642' }}>🧮 Roof Maintenance Calculator</h2>
           <div style={{ display: 'grid', gap: 16, marginBottom: 20 }}>
             {[
               { label: 'Roof Material', state: material, set: setMaterial, opts: roofMaterials, isSelect: true },
@@ -99,7 +99,7 @@ export default function DFWRoofMaintenanceGuide() {
               {[{ label: '📅 Inspection Schedule', value: result.schedule }, { label: '💰 Cost Estimate', value: result.cost }].map(r => (
                 <div key={r.label} style={{ backgroundColor: '#0A1628', borderRadius: 10, padding: 16 }}>
                   <div style={{ color: '#F5E642', fontSize: 12, fontWeight: 700, marginBottom: 4 }}>{r.label}</div>
-                  <div style={{ fontSize: 14, color: '#E2E8F0′ }}>{r.value}</div>
+                  <div style={{ fontSize: 14, color: '#E2E8F0' }}>{r.value}</div>
                 </div>
               ))}
             </div>

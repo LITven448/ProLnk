@@ -61,13 +61,13 @@ export default function DFWCondoMaintenanceGuide() {
           <h2 style={{ fontSize: '24px', fontWeight: '700', color: '#1E3A5F', marginBottom: '20px' }}>🏠 Owner vs HOA Responsibility</h2>
           <div style={{ background: '#FFFFFF', borderRadius: '12px', overflow: 'hidden', boxShadow: '0 1px 3px rgba(0,0,0,0.1)' }}>
             <div style={{ display: 'grid', gridTemplateColumns: '1fr 80px 80px', background: '#1E3A5F', padding: '12px 20px' }}>
-              <span style={{ fontSize: '13px', fontWeight: '600', color: '#F5E642′ }}>Item</span>
+              <span style={{ fontSize: '13px', fontWeight: '600', color: '#F5E642' }}>Item</span>
               <span style={{ fontSize: '13px', fontWeight: '600', color: '#F5E642', textAlign: 'center' }}>Owner</span>
               <span style={{ fontSize: '13px', fontWeight: '600', color: '#F5E642', textAlign: 'center' }}>HOA</span>
             </div>
             {OWNER_VS_HOA.map((row, i) => (
               <div key={i} style={{ display: 'grid', gridTemplateColumns: '1fr 80px 80px', padding: '12px 20px', borderBottom: '1px solid #F1F5F9', background: i % 2 === 0 ? '#FFFFFF' : '#F8FAFC' }}>
-                <span style={{ fontSize: '14px', color: '#374151′ }}>{row.item}</span>
+                <span style={{ fontSize: '14px', color: '#374151' }}>{row.item}</span>
                 <span style={{ textAlign: 'center', fontSize: '16px' }}>{row.owner ? '✅' : ''}</span>
                 <span style={{ textAlign: 'center', fontSize: '16px' }}>{row.hoa ? '✅' : ''}</span>
               </div>
@@ -83,11 +83,11 @@ export default function DFWCondoMaintenanceGuide() {
                 <div style={{ fontSize: '13px', fontWeight: '700', color: '#1E3A5F' }}>{row.category}</div>
                 <div>
                   <div style={{ fontSize: '11px', color: '#64748B', marginBottom: '4px' }}>Your HO-6</div>
-                  <div style={{ fontSize: '13px', color: '#374151′ }}>{row.ho6}</div>
+                  <div style={{ fontSize: '13px', color: '#374151' }}>{row.ho6}</div>
                 </div>
                 <div>
                   <div style={{ fontSize: '11px', color: '#64748B', marginBottom: '4px' }}>HOA Master Policy</div>
-                  <div style={{ fontSize: '13px', color: '#374151′ }}>{row.master}</div>
+                  <div style={{ fontSize: '13px', color: '#374151' }}>{row.master}</div>
                 </div>
               </div>
             ))}
@@ -110,17 +110,17 @@ export default function DFWCondoMaintenanceGuide() {
           <h2 style={{ fontSize: '24px', fontWeight: '700', color: '#1E3A5F', marginBottom: '8px' }}>🧮 Annual Maintenance Cost Estimator</h2>
           <p style={{ fontSize: '14px', color: '#64748B', marginBottom: '24px' }}>Enter your condo age and HOA fee to estimate your annual owner-responsibility costs.</p>
 
-          <label style={{ display: 'block', marginBottom: '8px', fontSize: '14px', color: '#374151′ }}>
+          <label style={{ display: 'block', marginBottom: '8px', fontSize: '14px', color: '#374151' }}>
             Condo Age: <strong style={{ color: '#1E3A5F' }}>{condoAge} years old</strong>
           </label>
           <input type="range" min={1} max={40} step={1} value={condoAge} onChange={e => setCondoAge(Number(e.target.value))}
-            style={{ width: '100%', marginBottom: '20px', accentColor: '#F5E642′ }} />
+            style={{ width: '100%', marginBottom: '20px', accentColor: '#F5E642' }} />
 
-          <label style={{ display: 'block', marginBottom: '8px', fontSize: '14px', color: '#374151′ }}>
+          <label style={{ display: 'block', marginBottom: '8px', fontSize: '14px', color: '#374151' }}>
             Monthly HOA Fee: <strong style={{ color: '#1E3A5F' }}>${hoaFee}/mo</strong>
           </label>
           <input type="range" min={150} max={800} step={25} value={hoaFee} onChange={e => setHoaFee(Number(e.target.value))}
-            style={{ width: '100%', marginBottom: '24px', accentColor: '#F5E642′ }} />
+            style={{ width: '100%', marginBottom: '24px', accentColor: '#F5E642' }} />
 
           <button onClick={() => setResult(estimateCosts(condoAge, hoaFee))}
             style={{ background: '#1E3A5F', color: '#F5E642', border: 'none', borderRadius: '8px', padding: '12px 28px', fontSize: '15px', fontWeight: '700', cursor: 'pointer' }}>
@@ -128,7 +128,7 @@ export default function DFWCondoMaintenanceGuide() {
           </button>
 
           {result && (
-            <div style={{ marginTop: '24px', padding: '20px', background: '#F8FAFC', borderRadius: '10px', border: '1px solid #E2E8F0′ }}>
+            <div style={{ marginTop: '24px', padding: '20px', background: '#F8FAFC', borderRadius: '10px', border: '1px solid #E2E8F0' }}>
               <div style={{ fontSize: '28px', fontWeight: '800', color: '#1E3A5F', marginBottom: '16px' }}>
                 ~${result.annualOwner.toLocaleString()}/year your responsibility
               </div>

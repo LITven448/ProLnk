@@ -116,7 +116,7 @@ export default function DFWHVACWarrantyGuide() {
         </p>
 
         <div style={{ background: '#0F2040', borderRadius: 12, padding: 24, marginBottom: 24 }}>
-          <h2 style={{ fontSize: 20, fontWeight: 700, marginBottom: 16, color: '#F5E642′ }}>Two Types of HVAC Warranty</h2>
+          <h2 style={{ fontSize: 20, fontWeight: 700, marginBottom: 16, color: '#F5E642' }}>Two Types of HVAC Warranty</h2>
           <div style={{ display: 'grid', gap: 12 }}>
             {[
               ['Manufacturer Parts Warranty', '10 years on parts when registered within 60 days of install. Covers compressor, coils, heat exchanger. Does NOT cover labor.'],
@@ -133,7 +133,7 @@ export default function DFWHVACWarrantyGuide() {
         </div>
 
         <div style={{ background: '#0F2040', borderRadius: 12, padding: 24, marginBottom: 24 }}>
-          <h2 style={{ fontSize: 20, fontWeight: 700, marginBottom: 16, color: '#F5E642′ }}>Check Your Coverage</h2>
+          <h2 style={{ fontSize: 20, fontWeight: 700, marginBottom: 16, color: '#F5E642' }}>Check Your Coverage</h2>
           <div style={{ display: 'grid', gap: 12, marginBottom: 16 }}>
             <div>
               <label style={{ display: 'block', fontSize: 13, color: '#94A3B8', marginBottom: 6 }}>System age</label>

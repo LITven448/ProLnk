@@ -67,7 +67,7 @@ export default function DFWHomeDocumentationGuide2026() {
         <p style={{ color: '#F5E642', fontWeight: 700, marginBottom: '1rem' }}>Which document type do you need?</p>
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1.5rem' }}>
           {docTypes.map(d => (
-            <button key={d.id} onClick={() => setSelected(d.id)} style={{ background: selected === d.id ? '#F5E642′ : '#1e3a5f', color: selected === d.id ? '#0A1628' : '#fff', border: ’none', borderRadius: 10, padding: '1rem', cursor: 'pointer', textAlign: 'left' }}>
+            <button key={d.id} onClick={() => setSelected(d.id)} style={{ background: selected === d.id ? '#F5E642' : '#1e3a5f', color: selected === d.id ? '#0A1628' : '#fff', border: 'none', borderRadius: 10, padding: '1rem', cursor: 'pointer', textAlign: 'left' }}>
               <div style={{ fontWeight: 700 }}>{d.label}</div>
               <div style={{ fontSize: '.85rem', opacity: .8, marginTop: '.25rem' }}>{d.desc}</div>
             </button>
@@ -80,7 +80,7 @@ export default function DFWHomeDocumentationGuide2026() {
             {guide.items.map((item, i) => (
               <div key={i} style={{ background: '#0A1628', borderRadius: 8, padding: '1rem', marginBottom: '.75rem' }}>
                 <div style={{ color: '#F5E642', fontWeight: 700 }}>{item.name}</div>
-                <div style={{ color: '#94a3b8', fontSize: '.85rem', margin: '.25rem 0′ }}>📍 {item.where}</div>
+                <div style={{ color: '#94a3b8', fontSize: '.85rem', margin: '.25rem 0' }}>📍 {item.where}</div>
                 <div style={{ color: '#cbd5e1', fontSize: '.9rem' }}>💡 {item.why}</div>
               </div>
             ))}

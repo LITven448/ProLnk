@@ -36,9 +36,9 @@ export default function DFWPoolFilterTypes2026() {
   };
 
   const filterComparison = [
-    { type: 'Sand', microns: '20-40', backwash: 'Yes (200-300 gal)', maintenance: 'Low', cost: '$300-600′ },
-    { type: 'Cartridge', microns: '10-15', backwash: 'No', maintenance: 'Medium', cost: '$400-800′ },
-    { type: 'DE', microns: '3-5', backwash: 'Yes + DE powder', maintenance: 'High', cost: '$600-1200′ },
+    { type: 'Sand', microns: '20-40', backwash: 'Yes (200-300 gal)', maintenance: 'Low', cost: '$300-600' },
+    { type: 'Cartridge', microns: '10-15', backwash: 'No', maintenance: 'Medium', cost: '$400-800' },
+    { type: 'DE', microns: '3-5', backwash: 'Yes + DE powder', maintenance: 'High', cost: '$600-1200' },
   ];
 
   return (

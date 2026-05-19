@@ -52,7 +52,7 @@ export default function DFWProLnkIncomeProjector() {
             <div key={label} style={{ background: '#1a2a44', borderRadius: 8, padding: '1rem' }}>
               <label style={{ color: '#F5E642', fontSize: '0.82rem', fontWeight: 600 }}>{label}: {fmt(val)}</label>
               <input type="range" min={min} max={max} step={step || 1} value={val} onChange={e => set(Number(e.target.value))}
-                style={{ width: '100%', marginTop: 8, accentColor: '#F5E642′ }} />
+                style={{ width: '100%', marginTop: 8, accentColor: '#F5E642' }} />
             </div>
           ))}
         </div>
@@ -62,9 +62,9 @@ export default function DFWProLnkIncomeProjector() {
             <div key={s.label} style={{ background: '#1a2a44', borderRadius: 8, padding: '0.8rem 1rem', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
               <div>
                 <div style={{ fontWeight: 600 }}>{s.label}</div>
-                <div style={{ fontSize: '0.75rem', color: '#888′ }}>{s.desc}</div>
+                <div style={{ fontSize: '0.75rem', color: '#888' }}>{s.desc}</div>
               </div>
-              <div style={{ fontWeight: 700, fontSize: '1.2rem', color: '#F5E642′ }}>${s.val.toLocaleString()}</div>
+              <div style={{ fontWeight: 700, fontSize: '1.2rem', color: '#F5E642' }}>${s.val.toLocaleString()}</div>
             </div>
           ))}
         </div>
@@ -75,8 +75,8 @@ export default function DFWProLnkIncomeProjector() {
             {months.map(m => {
               const h = Math.round((m.income / maxIncome) * 64);
               return <div key={m.month} style={{ flex: 1, display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 2 }}>
-                <div style={{ width: '100%', height: h, background: m.month === 12 ? '#F5E642′ : '#3a6aaa', borderRadius: 2 }} />
-                <div style={{ fontSize: '0.6rem', color: '#666′ }}>{m.label.slice(0,1)}</div>
+                <div style={{ width: '100%', height: h, background: m.month === 12 ? '#F5E642' : '#3a6aaa', borderRadius: 2 }} />
+                <div style={{ fontSize: '0.6rem', color: '#666' }}>{m.label.slice(0,1)}</div>
               </div>;
             })}
           </div>

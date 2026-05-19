@@ -66,7 +66,7 @@ export default function DFWStairLiftGuide() {
           <div style={{ display: 'flex', gap: 8, marginBottom: 16 }}>
             {(['buy', 'rent'] as const).map((m) => (
               <button key={m} onClick={() => setRentMode(m)}
-                style={{ flex: 1, padding: '10px 0', borderRadius: 8, border: 'none', fontWeight: 700, fontSize: 15, cursor: 'pointer', background: rentMode === m ? '#F5E642′ : '#0A1628', color: rentMode === m ? '#0A1628' : '#fff' }}>
+                style={{ flex: 1, padding: '10px 0', borderRadius: 8, border: 'none', fontWeight: 700, fontSize: 15, cursor: 'pointer', background: rentMode === m ? '#F5E642' : '#0A1628', color: rentMode === m ? '#0A1628' : '#fff' }}>
                 {m === 'buy' ? '🏠 Purchase' : '📅 Rent'}
               </button>
             ))}
@@ -90,7 +90,7 @@ export default function DFWStairLiftGuide() {
                 <div style={{ fontWeight: 700 }}>{b.name}</div>
                 <div style={{ color: '#F5E642', fontWeight: 700 }}>Starting at {b.startingAt}</div>
               </div>
-              <div style={{ fontSize: 13, marginBottom: 4 }}>{b.rating} — <span style={{ color: '#94a3b8′ }}>{b.best}</span></div>
+              <div style={{ fontSize: 13, marginBottom: 4 }}>{b.rating} — <span style={{ color: '#94a3b8' }}>{b.best}</span></div>
               <div style={{ color: '#94a3b8', fontSize: 12 }}>{b.notes}</div>
             </div>
           ))}
@@ -113,7 +113,7 @@ export default function DFWStairLiftGuide() {
                 {weightOptions.map((o) => <option key={o} value={o}>{o}</option>)}
               </select>
             </div>
-            <div style={{ gridColumn: '1 / -1′ }}>
+            <div style={{ gridColumn: '1 / -1' }}>
               <label style={{ display: 'block', marginBottom: 8, fontWeight: 600 }}>Budget</label>
               <select value={budget} onChange={(e) => setBudget(e.target.value)} style={{ width: '100%', padding: '10px 12px', background: '#0A1628', color: '#fff', border: '1px solid #334155', borderRadius: 8, fontSize: 15 }}>
                 <option value="">Select budget range...</option>

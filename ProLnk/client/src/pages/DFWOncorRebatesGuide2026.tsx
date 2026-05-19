@@ -72,7 +72,7 @@ export default function DFWOncorRebatesGuide2026() {
                 { label: 'TX State Credit', value: 'None (no state income tax)' },
               ].map(item => (
                 <div key={item.label} style={{ background: '#0A1628', borderRadius: 8, padding: 12, textAlign: 'center' }}>
-                  <div style={{ fontSize: 16, fontWeight: 700, color: '#F5E642′ }}>{item.value}</div>
+                  <div style={{ fontSize: 16, fontWeight: 700, color: '#F5E642' }}>{item.value}</div>
                   <div style={{ fontSize: 11, color: '#94a3b8', marginTop: 4 }}>{item.label}</div>
                 </div>
               ))}

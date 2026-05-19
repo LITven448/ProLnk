@@ -45,7 +45,7 @@ export default function DFWPropertyLineGuide() {
         </div>
       </div>
 
-      <div style={{ maxWidth: 760, margin: '0 auto', padding: '32px 24px 0′ }}>
+      <div style={{ maxWidth: 760, margin: '0 auto', padding: '32px 24px 0' }}>
         <div style={{ background: '#FFFBEB', border: '2px solid #F5E642', borderRadius: 10, padding: 16, marginBottom: 28 }}>
           <strong style={{ color: '#92400E' }}>📌 Texas Key Fact:</strong> <span style={{ color: '#78350F', fontSize: 14 }}>Survey costs $400–$1,200 and is the only legally defensible way to establish your property line. Everything else is reference only.</span>
         </div>
@@ -53,9 +53,9 @@ export default function DFWPropertyLineGuide() {
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: 12, marginBottom: 32 }}>
           {CONCERNS.map((c, i) => (
             <button key={i} onClick={() => setSelected(selected === i ? null : i)}
-              style={{ background: selected === i ? '#0A1628′ : '#FFFFFF', border: `2px solid ${selected === i ? '#F5E642' : '#E5E7EB'}`, borderRadius: 10, padding: '16px', cursor: ’pointer', textAlign: 'left', boxShadow: '0 1px 4px rgba(0,0,0,0.06)' }}>
+              style={{ background: selected === i ? '#0A1628' : '#FFFFFF', border: `2px solid ${selected === i ? '#F5E642' : '#E5E7EB'}`, borderRadius: 10, padding: '16px', cursor: 'pointer', textAlign: 'left', boxShadow: '0 1px 4px rgba(0,0,0,0.06)' }}>
               <div style={{ fontSize: 24, marginBottom: 6 }}>{c.icon}</div>
-              <div style={{ fontSize: 14, fontWeight: 700, color: selected === i ? '#F5E642′ : '#1A2B3C' }}>{c.type}</div>
+              <div style={{ fontSize: 14, fontWeight: 700, color: selected === i ? '#F5E642' : '#1A2B3C' }}>{c.type}</div>
             </button>
           ))}
         </div>
@@ -63,7 +63,7 @@ export default function DFWPropertyLineGuide() {
         {concern && (
           <div style={{ background: '#FFFFFF', border: '1px solid #E5E7EB', borderRadius: 14, padding: 28, boxShadow: '0 2px 12px rgba(0,0,0,0.06)' }}>
             <h2 style={{ fontSize: 20, fontWeight: 700, color: '#0A1628', marginBottom: 16 }}>{concern.icon} {concern.type}</h2>
-            <p style={{ fontSize: 14, color: '#374151', lineHeight: 1.7, marginBottom: 20, background: '#F0F4FF', padding: 16, borderRadius: 8, borderLeft: '3px solid #0A1628′ }}>{concern.action}</p>
+            <p style={{ fontSize: 14, color: '#374151', lineHeight: 1.7, marginBottom: 20, background: '#F0F4FF', padding: 16, borderRadius: 8, borderLeft: '3px solid #0A1628' }}>{concern.action}</p>
             <h3 style={{ fontSize: 13, fontWeight: 700, color: '#374151', letterSpacing: 1, marginBottom: 12 }}>DOCUMENTS TO OBTAIN</h3>
             <ul style={{ paddingLeft: 20, margin: '0 0 20px' }}>
               {concern.documents.map((d, i) => <li key={i} style={{ fontSize: 14, color: '#4B5563', marginBottom: 8 }}>{d}</li>)}

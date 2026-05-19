@@ -65,7 +65,7 @@ export default function DFWHVACInverterTechGuide() {
           <h3 style={{ color: '#F5E642', fontWeight: 800, marginBottom: '0.75rem', fontSize: '0.9rem', letterSpacing: 1 }}>WHY INVERTER MATTERS MORE IN DFW</h3>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(220px, 1fr))', gap: '0.75rem' }}>
             {[
-              { icon: '☀️', stat: '3,000+', desc: 'Cooling hours per year in DFW vs national average of 1,200′ },
+              { icon: '☀️', stat: '3,000+', desc: 'Cooling hours per year in DFW vs national average of 1,200' },
               { icon: '💧', stat: '65-75%', desc: 'Typical outdoor relative humidity May-September in DFW' },
               { icon: '⚡', stat: '25-40%', desc: 'Average energy savings vs single-stage in continuous DFW use' },
               { icon: '🌀', stat: '90%', desc: 'Reduction in compressor start cycles vs single-stage system' },
@@ -83,7 +83,7 @@ export default function DFWHVACInverterTechGuide() {
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(160px, 1fr))', gap: '0.75rem', marginBottom: '2rem' }}>
           {problems.map(p => (
             <button key={p.id} onClick={() => setSelected(p.id === selected ? null : p.id)}
-              style={{ background: selected === p.id ? '#F5E642′ : '#0f2240', color: selected === p.id ? '#0A1628' : '#fff', border: '1px solid', borderColor: selected === p.id ? '#F5E642' : '#1e3a5f', borderRadius: 10, padding: '1rem 0.75rem', cursor: ’pointer', textAlign: 'left', fontWeight: 700, fontSize: '0.85rem' }}>
+              style={{ background: selected === p.id ? '#F5E642' : '#0f2240', color: selected === p.id ? '#0A1628' : '#fff', border: '1px solid', borderColor: selected === p.id ? '#F5E642' : '#1e3a5f', borderRadius: 10, padding: '1rem 0.75rem', cursor: 'pointer', textAlign: 'left', fontWeight: 700, fontSize: '0.85rem' }}>
               <div style={{ fontSize: '1.5rem', marginBottom: '0.4rem' }}>{p.icon}</div>
               {p.label}
             </button>

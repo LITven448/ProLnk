@@ -25,14 +25,14 @@ export default function DFWHVACStagedCoolingGuide() {
         <div style={{ marginBottom: 8, fontSize: 13, color: '#F5E642', letterSpacing: 1 }}>DFW HVAC GUIDE</div>
         <h1 style={{ fontSize: 28, fontWeight: 800, color: '#FFFFFF', marginBottom: 8 }}>🌡️ Two-Stage vs Single-Stage Cooling</h1>
         <p style={{ color: '#8BA0B8', fontSize: 15, marginBottom: 32, lineHeight: 1.6 }}>
-          DFW's climate — extreme heat plus significant humidity — makes this decision more impactful than almost anywhere in the US. A two-stage system isn’t just comfort, it’s humidity control that matters 7 months a year.
+          DFW's climate — extreme heat plus significant humidity — makes this decision more impactful than almost anywhere in the US. A two-stage system isn't just comfort, it's humidity control that matters 7 months a year.
         </p>
 
         <div style={{ background: '#0F2240', borderRadius: 12, padding: 24, marginBottom: 24 }}>
           <h2 style={{ color: '#F5E642', fontSize: 18, marginBottom: 16 }}>🔄 Why DFW Favors Two-Stage</h2>
           <ul style={{ color: '#C8D8E8', lineHeight: 2, paddingLeft: 20 }}>
-            <li><strong style={{ color: '#E8EFF8′ }}>Single-stage:</strong> 100% capacity or off. Short cycles = poor dehumidification</li>
-            <li><strong style={{ color: '#E8EFF8′ }}>Two-stage low (67%):</strong> Runs longer at lower cost, removing more moisture</li>
+            <li><strong style={{ color: '#E8EFF8' }}>Single-stage:</strong> 100% capacity or off. Short cycles = poor dehumidification</li>
+            <li><strong style={{ color: '#E8EFF8' }}>Two-stage low (67%):</strong> Runs longer at lower cost, removing more moisture</li>
             <li>DFW humidity averages 70–80% in summer — dehumidification matters as much as cooling</li>
             <li>Longer low-stage run times = better air circulation and filtration</li>
             <li>Variable speed (top tier): near-continuous operation, best humidity control</li>
@@ -45,17 +45,17 @@ export default function DFWHVACStagedCoolingGuide() {
             <table style={{ width: '100%', borderCollapse: 'collapse', color: '#C8D8E8', fontSize: 14 }}>
               <thead>
                 <tr style={{ borderBottom: '1px solid #1E3A5F' }}>
-                  <th style={{ textAlign: 'left', padding: '8px 12px', color: '#F5E642′ }}>Feature</th>
-                  <th style={{ textAlign: 'center', padding: '8px 12px', color: '#F5E642′ }}>Single</th>
-                  <th style={{ textAlign: 'center', padding: '8px 12px', color: '#F5E642′ }}>Two-Stage</th>
+                  <th style={{ textAlign: 'left', padding: '8px 12px', color: '#F5E642' }}>Feature</th>
+                  <th style={{ textAlign: 'center', padding: '8px 12px', color: '#F5E642' }}>Single</th>
+                  <th style={{ textAlign: 'center', padding: '8px 12px', color: '#F5E642' }}>Two-Stage</th>
                 </tr>
               </thead>
               <tbody>
                 {[['Humidity control', 'Poor', 'Good'], ['Energy use', 'Higher', 'Lower 15-25%'], ['Upfront cost', 'Lower', '+$600–$1,400'], ['DFW summers', 'Works', 'Recommended']].map(([f, s, t]) => (
-                  <tr key={f} style={{ borderBottom: '1px solid #0A1628′ }}>
+                  <tr key={f} style={{ borderBottom: '1px solid #0A1628' }}>
                     <td style={{ padding: '10px 12px' }}>{f}</td>
                     <td style={{ textAlign: 'center', padding: '10px 12px' }}>{s}</td>
-                    <td style={{ textAlign: 'center', padding: '10px 12px', color: '#F5E642′ }}>{t}</td>
+                    <td style={{ textAlign: 'center', padding: '10px 12px', color: '#F5E642' }}>{t}</td>
                   </tr>
                 ))}
               </tbody>
@@ -85,12 +85,12 @@ export default function DFWHVACStagedCoolingGuide() {
         </div>
 
         {result && (
-          <div style={{ background: '#0F2240', borderRadius: 12, padding: 24, borderLeft: '4px solid #F5E642′ }}>
+          <div style={{ background: '#0F2240', borderRadius: 12, padding: 24, borderLeft: '4px solid #F5E642' }}>
             <h3 style={{ color: '#F5E642', marginBottom: 16 }}>✅ DFW System Recommendation</h3>
             <div style={{ marginBottom: 12 }}><span style={{ color: '#8BA0B8', fontSize: 13 }}>RECOMMENDATION: </span><span style={{ color: '#E8EFF8', fontWeight: 700 }}>{result.recommendation}</span></div>
-            <div style={{ marginBottom: 12 }}><span style={{ color: '#8BA0B8', fontSize: 13 }}>HUMIDITY IMPROVEMENT: </span><span style={{ color: '#E8EFF8′ }}>{result.humidityImprovement}</span></div>
-            <div style={{ marginBottom: 12 }}><span style={{ color: '#8BA0B8', fontSize: 13 }}>COST PREMIUM: </span><span style={{ color: '#E8EFF8′ }}>{result.costPremium}</span></div>
-            <div style={{ marginBottom: 12 }}><span style={{ color: '#8BA0B8', fontSize: 13 }}>PAYBACK PERIOD: </span><span style={{ color: '#E8EFF8′ }}>{result.payback}</span></div>
+            <div style={{ marginBottom: 12 }}><span style={{ color: '#8BA0B8', fontSize: 13 }}>HUMIDITY IMPROVEMENT: </span><span style={{ color: '#E8EFF8' }}>{result.humidityImprovement}</span></div>
+            <div style={{ marginBottom: 12 }}><span style={{ color: '#8BA0B8', fontSize: 13 }}>COST PREMIUM: </span><span style={{ color: '#E8EFF8' }}>{result.costPremium}</span></div>
+            <div style={{ marginBottom: 12 }}><span style={{ color: '#8BA0B8', fontSize: 13 }}>PAYBACK PERIOD: </span><span style={{ color: '#E8EFF8' }}>{result.payback}</span></div>
             <div style={{ marginTop: 16, padding: 16, background: '#0A1628', borderRadius: 8, color: '#C8D8E8', lineHeight: 1.6, fontSize: 14 }}>{result.dfwAdvantage}</div>
           </div>
         )}

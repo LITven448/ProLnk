@@ -5,7 +5,7 @@ const COMMUNITIES = [
   { name: 'Windsong Ranch', city: 'Prosper', hoaFee: '$160-200/mo', school: 'Prosper ISD', amenities: ['Lagoon-style pool', '10mi trails', 'Canoe launch', 'Dog park'], type: 'Premium family', medianPrice: '$650K', note: 'Award-winning amenity package; Prosper ISD rated among top 10 in Texas' },
   { name: 'Hollyhock', city: 'Frisco', hoaFee: '$120-160/mo', school: 'Frisco ISD', amenities: ['Lazy river', 'Splash pad', 'Event lawn', 'Fitness club'], type: 'Family community', medianPrice: '$520K', note: 'Near PGA of America HQ; Frisco ISD consistently rated among best in state' },
   { name: 'Artavia', city: 'Conroe/N. DFW', hoaFee: '$95-130/mo', school: 'Conroe ISD', amenities: ['Activity center', 'Community pond', 'Nature trails', 'Yoga lawn'], type: 'Value-oriented MPC', medianPrice: '$380K', note: 'Newer entrant; MUD district taxes add $150-250/mo to effective cost' },
-  { name: 'Light Farms', city: 'Celina', hoaFee: '$135-175/mo', school: 'Prosper ISD', amenities: ['5 pools', 'Restaurant on-site', '13mi trails', 'Tennis'], type: 'Lifestyle-focused', medianPrice: '$480K', note: 'One of DFW largest MPCs; retail and dining built in from day 1′ },
+  { name: 'Light Farms', city: 'Celina', hoaFee: '$135-175/mo', school: 'Prosper ISD', amenities: ['5 pools', 'Restaurant on-site', '13mi trails', 'Tennis'], type: 'Lifestyle-focused', medianPrice: '$480K', note: 'One of DFW largest MPCs; retail and dining built in from day 1' },
 ];
 
 const RESALE_COMPARISON = [
@@ -71,7 +71,7 @@ export default function DFWMasterPlannedCommunityGuide() {
 
   return (
     <div style={{ background: '#0A1628', minHeight: '100vh', color: '#E8EDF5', fontFamily: 'system-ui, sans-serif' }}>
-      <div style={{ background: 'linear-gradient(135deg, #0A1628 0%, #112240 100%)', padding: '48px 24px 32px', borderBottom: '2px solid #F5E642′ }}>
+      <div style={{ background: 'linear-gradient(135deg, #0A1628 0%, #112240 100%)', padding: '48px 24px 32px', borderBottom: '2px solid #F5E642' }}>
         <div style={{ maxWidth: '960px', margin: '0 auto' }}>
           <div style={{ fontSize: '13px', color: '#F5E642', letterSpacing: '2px', marginBottom: '12px' }}>🏙️ DFW COMMUNITY GUIDE</div>
           <h1 style={{ fontSize: '36px', fontWeight: '800', color: '#FFFFFF', margin: '0 0 12px' }}>Master-Planned Communities in DFW</h1>
@@ -94,18 +94,18 @@ export default function DFWMasterPlannedCommunityGuide() {
                     <div style={{ fontSize: '13px', color: '#64748B' }}>{c.city} • {c.type}</div>
                   </div>
                   <div style={{ textAlign: 'right' }}>
-                    <div style={{ fontSize: '18px', fontWeight: '700', color: '#F5E642′ }}>{c.medianPrice}</div>
+                    <div style={{ fontSize: '18px', fontWeight: '700', color: '#F5E642' }}>{c.medianPrice}</div>
                     <div style={{ fontSize: '12px', color: '#64748B' }}>median price</div>
                   </div>
                 </div>
                 <div style={{ display: 'flex', gap: '24px', marginBottom: '12px', flexWrap: 'wrap' }}>
                   <div>
                     <div style={{ fontSize: '11px', color: '#94A3B8', marginBottom: '2px' }}>HOA FEE</div>
-                    <div style={{ fontSize: '14px', color: '#CBD5E1', fontWeight: '600′ }}>{c.hoaFee}</div>
+                    <div style={{ fontSize: '14px', color: '#CBD5E1', fontWeight: '600' }}>{c.hoaFee}</div>
                   </div>
                   <div>
                     <div style={{ fontSize: '11px', color: '#94A3B8', marginBottom: '2px' }}>SCHOOL DISTRICT</div>
-                    <div style={{ fontSize: '14px', color: '#CBD5E1', fontWeight: '600′ }}>{c.school}</div>
+                    <div style={{ fontSize: '14px', color: '#CBD5E1', fontWeight: '600' }}>{c.school}</div>
                   </div>
                 </div>
                 <div style={{ display: 'flex', flexWrap: 'wrap', gap: '6px', marginBottom: '10px' }}>
@@ -123,14 +123,14 @@ export default function DFWMasterPlannedCommunityGuide() {
           <h2 style={{ fontSize: '24px', fontWeight: '700', color: '#F5E642', marginBottom: '20px' }}>📈 MPC vs Non-MPC Resale Comparison</h2>
           <div style={{ background: '#112240', borderRadius: '12px', overflow: 'hidden' }}>
             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', background: '#0A1628', padding: '12px 20px' }}>
-              <span style={{ fontSize: '13px', fontWeight: '600', color: '#94A3B8′ }}>Metric</span>
-              <span style={{ fontSize: '13px', fontWeight: '600', color: '#F5E642′ }}>Master-Planned</span>
-              <span style={{ fontSize: '13px', fontWeight: '600', color: '#94A3B8′ }}>Standard Subdivision</span>
+              <span style={{ fontSize: '13px', fontWeight: '600', color: '#94A3B8' }}>Metric</span>
+              <span style={{ fontSize: '13px', fontWeight: '600', color: '#F5E642' }}>Master-Planned</span>
+              <span style={{ fontSize: '13px', fontWeight: '600', color: '#94A3B8' }}>Standard Subdivision</span>
             </div>
             {RESALE_COMPARISON.map((row, i) => (
-              <div key={i} style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', padding: '14px 20px', borderBottom: '1px solid #0A1628′ }}>
-                <span style={{ fontSize: '13px', color: '#94A3B8′ }}>{row.metric}</span>
-                <span style={{ fontSize: '13px', color: '#CBD5E1', fontWeight: '600′ }}>{row.mpc}</span>
+              <div key={i} style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', padding: '14px 20px', borderBottom: '1px solid #0A1628' }}>
+                <span style={{ fontSize: '13px', color: '#94A3B8' }}>{row.metric}</span>
+                <span style={{ fontSize: '13px', color: '#CBD5E1', fontWeight: '600' }}>{row.mpc}</span>
                 <span style={{ fontSize: '13px', color: '#64748B' }}>{row.nonMpc}</span>
               </div>
             ))}
@@ -145,9 +145,9 @@ export default function DFWMasterPlannedCommunityGuide() {
             {priorityOptions.map(p => (
               <button key={p.value} onClick={() => togglePriority(p.value)}
                 style={{ padding: '10px 20px', borderRadius: '8px', border: '2px solid', fontSize: '14px', cursor: 'pointer',
-                  background: priorities.includes(p.value) ? '#F5E642′ : ’transparent',
-                  color: priorities.includes(p.value) ? '#0A1628′ : '#94A3B8',
-                  borderColor: priorities.includes(p.value) ? '#F5E642′ : '#334155' }}>
+                  background: priorities.includes(p.value) ? '#F5E642' : 'transparent',
+                  color: priorities.includes(p.value) ? '#0A1628' : '#94A3B8',
+                  borderColor: priorities.includes(p.value) ? '#F5E642' : '#334155' }}>
                 {p.label}
               </button>
             ))}
@@ -155,7 +155,7 @@ export default function DFWMasterPlannedCommunityGuide() {
 
           <button onClick={() => priorities.length > 0 && setResult(getRecommendations(priorities))}
             disabled={priorities.length === 0}
-            style={{ background: priorities.length > 0 ? '#F5E642′ : '#334155', color: '#0A1628', border: ’none', borderRadius: '8px', padding: '12px 28px', fontSize: '15px', fontWeight: '700', cursor: priorities.length > 0 ? 'pointer' : 'not-allowed' }}>
+            style={{ background: priorities.length > 0 ? '#F5E642' : '#334155', color: '#0A1628', border: 'none', borderRadius: '8px', padding: '12px 28px', fontSize: '15px', fontWeight: '700', cursor: priorities.length > 0 ? 'pointer' : 'not-allowed' }}>
             Get My Top 5 Recommendations
           </button>
 
@@ -166,7 +166,7 @@ export default function DFWMasterPlannedCommunityGuide() {
                   <div style={{ background: '#F5E642', color: '#0A1628', borderRadius: '50%', width: '28px', height: '28px', display: 'flex', alignItems: 'center', justifyContent: 'center', fontWeight: '800', fontSize: '14px', flexShrink: 0 }}>{i + 1}</div>
                   <div>
                     <div style={{ fontSize: '15px', fontWeight: '700', color: '#FFFFFF', marginBottom: '4px' }}>{r.name}</div>
-                    <div style={{ fontSize: '13px', color: '#94A3B8′ }}>{r.why}</div>
+                    <div style={{ fontSize: '13px', color: '#94A3B8' }}>{r.why}</div>
                   </div>
                 </div>
               ))}

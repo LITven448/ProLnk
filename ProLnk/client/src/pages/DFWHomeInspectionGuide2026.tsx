@@ -13,20 +13,20 @@ export default function DFWHomeInspectionGuide2026() {
   const [selected, setSelected] = useState<string | null>(null);
 
   const active = findings.find(f => f.id === selected);
-  const severityColor = (s: string) => s === "critical" ? "#FF4444″ : s === "high" ? "#F5E642" : s === "medium" ? "#88AAFF" : "#66BB6A";
+  const severityColor = (s: string) => s === "critical" ? "#FF4444" : s === "high" ? "#F5E642" : s === "medium" ? "#88AAFF" : "#66BB6A";
 
   return (
-    <div style={{ background: "#0A1628″, minHeight: "100vh", padding: "32px 16px", fontFamily: "system-ui, sans-serif", color: "#E8EAF0" }}>
+    <div style={{ background: "#0A1628", minHeight: "100vh", padding: "32px 16px", fontFamily: "system-ui, sans-serif", color: "#E8EAF0" }}>
       <div style={{ maxWidth: 700, margin: "0 auto" }}>
         <div style={{ textAlign: "center", marginBottom: 32 }}>
           <div style={{ fontSize: 48 }}>🔍</div>
-          <h1 style={{ fontSize: 28, fontWeight: 800, color: "#F5E642″, margin: "8px 0 4px" }}>DFW Home Inspection Guide 2026</h1>
-          <p style={{ color: "#8892A4″, fontSize: 15 }}>Tap a finding to get your DFW-specific negotiation strategy.</p>
+          <h1 style={{ fontSize: 28, fontWeight: 800, color: "#F5E642", margin: "8px 0 4px" }}>DFW Home Inspection Guide 2026</h1>
+          <p style={{ color: "#8892A4", fontSize: 15 }}>Tap a finding to get your DFW-specific negotiation strategy.</p>
         </div>
 
         <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 10, marginBottom: 24 }}>
           {findings.map(f => (
-            <div key={f.id} onClick={() => setSelected(selected === f.id ? null : f.id)} style={{ background: selected === f.id ? "#1A2E50″ : "#111E35", border: `2px solid ${selected === f.id ? "#F5E642" : "#1E2D45"}`, borderRadius: 10, padding: "14px 16px", cursor: "pointer", transition: "all 0.15s" }}>
+            <div key={f.id} onClick={() => setSelected(selected === f.id ? null : f.id)} style={{ background: selected === f.id ? "#1A2E50" : "#111E35", border: `2px solid ${selected === f.id ? "#F5E642" : "#1E2D45"}`, borderRadius: 10, padding: "14px 16px", cursor: "pointer", transition: "all 0.15s" }}>
               <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
                 <span style={{ fontSize: 28 }}>{f.icon}</span>
                 <div>
@@ -39,27 +39,27 @@ export default function DFWHomeInspectionGuide2026() {
         </div>
 
         {active && (
-          <div style={{ background: "#111E35″, borderRadius: 12, padding: 24, border: `2px solid ${severityColor(active.severity)}`, marginBottom: 20 }}>
+          <div style={{ background: "#111E35", borderRadius: 12, padding: 24, border: `2px solid ${severityColor(active.severity)}`, marginBottom: 20 }}>
             <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 16 }}>
               <span style={{ fontSize: 36 }}>{active.icon}</span>
-              <h2 style={{ fontSize: 20, fontWeight: 800, color: "#F5E642″, margin: 0 }}>{active.label}</h2>
+              <h2 style={{ fontSize: 20, fontWeight: 800, color: "#F5E642", margin: 0 }}>{active.label}</h2>
             </div>
             <div style={{ marginBottom: 14 }}>
-              <div style={{ fontSize: 13, color: "#8892A4″, fontWeight: 700, textTransform: "uppercase", marginBottom: 6 }}>What It Means in DFW</div>
+              <div style={{ fontSize: 13, color: "#8892A4", fontWeight: 700, textTransform: "uppercase", marginBottom: 6 }}>What It Means in DFW</div>
               <p style={{ margin: 0, lineHeight: 1.6, fontSize: 15 }}>{active.strategy}</p>
             </div>
-            <div style={{ background: "#0A1628″, borderRadius: 8, padding: 14, borderLeft: "3px solid #F5E642" }}>
-              <div style={{ fontSize: 13, color: "#F5E642″, fontWeight: 700, marginBottom: 4 }}>💡 Negotiation Move</div>
-              <p style={{ margin: 0, fontSize: 14, color: "#C8D0E0″ }}>{active.negotiation}</p>
+            <div style={{ background: "#0A1628", borderRadius: 8, padding: 14, borderLeft: "3px solid #F5E642" }}>
+              <div style={{ fontSize: 13, color: "#F5E642", fontWeight: 700, marginBottom: 4 }}>💡 Negotiation Move</div>
+              <p style={{ margin: 0, fontSize: 14, color: "#C8D0E0" }}>{active.negotiation}</p>
             </div>
           </div>
         )}
 
-        <div style={{ background: "#111E35″, borderRadius: 12, padding: 20, borderLeft: "4px solid #F5E642" }}>
+        <div style={{ background: "#111E35", borderRadius: 12, padding: 20, borderLeft: "4px solid #F5E642" }}>
           <div style={{ fontSize: 16, fontWeight: 700 }}>🔧 Got inspection items? ProLnk gets you 3 contractor bids fast — before your option period ends.</div>
-          <button style={{ marginTop: 12, background: "#F5E642″, color: "#0A1628", border: "none", borderRadius: 8, padding: "10px 24px", fontWeight: 800, fontSize: 15, cursor: "pointer" }}>Get Repair Quotes →</button>
+          <button style={{ marginTop: 12, background: "#F5E642", color: "#0A1628", border: "none", borderRadius: 8, padding: "10px 24px", fontWeight: 800, fontSize: 15, cursor: "pointer" }}>Get Repair Quotes →</button>
         </div>
-        <div style={{ textAlign: "center", marginTop: 20, color: "#4A5568″, fontSize: 13 }}>© 2026 ProLnk · DFW Home Services Marketplace</div>
+        <div style={{ textAlign: "center", marginTop: 20, color: "#4A5568", fontSize: 13 }}>© 2026 ProLnk · DFW Home Services Marketplace</div>
       </div>
     </div>
   );

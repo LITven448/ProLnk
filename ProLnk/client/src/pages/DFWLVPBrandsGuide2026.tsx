@@ -44,13 +44,13 @@ export default function DFWLVPBrandsGuide2026() {
       <div style={{ maxWidth: 800, margin: '0 auto' }}>
         <div style={{ textAlign: 'center', marginBottom: '2rem' }}>
           <span style={{ fontSize: '3rem' }}>🏆</span>
-          <h1 style={{ color: '#F5E642', fontSize: '1.8rem', margin: '.5rem 0′ }}>DFW LVP Brand Guide 2026</h1>
-          <p style={{ color: '#94a3b8′ }}>The best luxury vinyl plank brands for North Texas homes — 12 mil+ wear layer minimum for DFW pets and kids.</p>
+          <h1 style={{ color: '#F5E642', fontSize: '1.8rem', margin: '.5rem 0' }}>DFW LVP Brand Guide 2026</h1>
+          <p style={{ color: '#94a3b8' }}>The best luxury vinyl plank brands for North Texas homes — 12 mil+ wear layer minimum for DFW pets and kids.</p>
         </div>
 
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(220px, 1fr))', gap: '1rem', marginBottom: '2rem' }}>
           {brands.map(b => (
-            <div key={b.name} style={{ background: '#1e3a5f', borderRadius: 10, padding: '1rem', border: '1px solid #334155′ }}>
+            <div key={b.name} style={{ background: '#1e3a5f', borderRadius: 10, padding: '1rem', border: '1px solid #334155' }}>
               <div style={{ fontSize: '1.5rem', marginBottom: '.25rem' }}>{b.icon}</div>
               <div style={{ color: '#F5E642', fontWeight: 700, fontSize: '1rem' }}>{b.name}</div>
               <div style={{ color: '#64748b', fontSize: '.75rem', marginBottom: '.5rem' }}>{b.tier} · Wear: {b.wear}</div>
@@ -66,7 +66,7 @@ export default function DFWLVPBrandsGuide2026() {
             <p style={{ color: '#94a3b8', marginBottom: '.5rem', fontSize: '.9rem' }}>Primary Use Case:</p>
             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '.5rem' }}>
               {useCases.map(u => (
-                <button key={u.id} onClick={() => setUseCase(u.id)} style={{ background: useCase === u.id ? '#F5E642′ : '#0d2137', color: useCase === u.id ? '#0A1628' : '#fff', border: '1px solid #334155', borderRadius: 8, padding: '.6rem', cursor: ’pointer', fontSize: '.85rem', fontWeight: useCase === u.id ? 700 : 400 }}>{u.label}</button>
+                <button key={u.id} onClick={() => setUseCase(u.id)} style={{ background: useCase === u.id ? '#F5E642' : '#0d2137', color: useCase === u.id ? '#0A1628' : '#fff', border: '1px solid #334155', borderRadius: 8, padding: '.6rem', cursor: 'pointer', fontSize: '.85rem', fontWeight: useCase === u.id ? 700 : 400 }}>{u.label}</button>
               ))}
             </div>
           </div>
@@ -74,7 +74,7 @@ export default function DFWLVPBrandsGuide2026() {
             <p style={{ color: '#94a3b8', marginBottom: '.5rem', fontSize: '.9rem' }}>Budget (material only):</p>
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '.5rem' }}>
               {budgets.map(b => (
-                <button key={b.id} onClick={() => setBudget(b.id)} style={{ background: budget === b.id ? '#F5E642′ : '#0d2137', color: budget === b.id ? '#0A1628' : '#fff', border: '1px solid #334155', borderRadius: 8, padding: '.6rem', cursor: ’pointer', fontSize: '.8rem', fontWeight: budget === b.id ? 700 : 400 }}>{b.label}</button>
+                <button key={b.id} onClick={() => setBudget(b.id)} style={{ background: budget === b.id ? '#F5E642' : '#0d2137', color: budget === b.id ? '#0A1628' : '#fff', border: '1px solid #334155', borderRadius: 8, padding: '.6rem', cursor: 'pointer', fontSize: '.8rem', fontWeight: budget === b.id ? 700 : 400 }}>{b.label}</button>
               ))}
             </div>
           </div>

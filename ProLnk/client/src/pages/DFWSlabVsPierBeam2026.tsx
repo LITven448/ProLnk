@@ -39,7 +39,7 @@ export default function DFWSlabVsPierBeam2026() {
         <p style={{ color: '#94a3b8', marginBottom: 32 }}>90% of DFW homes have slab foundations. Pier & beam is common in older neighborhoods (pre-1975). Repair approach differs dramatically.</p>
 
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16, marginBottom: 32 }}>
-          <div style={{ background: '#112240', borderRadius: 8, padding: 20, border: '2px solid #F5E642′ }}>
+          <div style={{ background: '#112240', borderRadius: 8, padding: 20, border: '2px solid #F5E642' }}>
             <div style={{ fontWeight: 800, fontSize: 18, marginBottom: 8 }}>🏗️ Slab Foundation</div>
             <div style={{ color: '#94a3b8', fontSize: 13, lineHeight: 1.7 }}>
               90% of DFW homes. Poured concrete sits directly on grade. Moves with clay soil. Requires piers when soil loses moisture. Plumbing runs under slab — leaks are costly to access.
@@ -77,7 +77,7 @@ export default function DFWSlabVsPierBeam2026() {
           </select>
           {guide && (
             <div>
-              <div style={{ background: '#0A1628', borderRadius: 6, padding: 16, marginBottom: 12, border: '1px solid #F5E642′ }}>
+              <div style={{ background: '#0A1628', borderRadius: 6, padding: 16, marginBottom: 12, border: '1px solid #F5E642' }}>
                 <div style={{ color: '#F5E642', fontWeight: 700, marginBottom: 10 }}>Your Maintenance Checklist:</div>
                 <ul style={{ paddingLeft: 20, color: '#cbd5e1', fontSize: 13, lineHeight: 1.9 }}>
                   {guide.maintenance.map((m, i) => <li key={i}>{m}</li>)}

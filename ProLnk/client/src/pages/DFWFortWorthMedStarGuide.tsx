@@ -1,7 +1,7 @@
 import { useState } from 'react';
 
 const homeAges = [
-  { label: 'Pre-1950 (Original Neighborhood Stock)', value: 'pre1950′ },
+  { label: 'Pre-1950 (Original Neighborhood Stock)', value: 'pre1950' },
   { label: '1950s-1970s (Post-War Expansion)', value: '1950s' },
   { label: '1980s-2000s (Medical Professional Era)', value: '1980s' },
 ];
@@ -39,13 +39,13 @@ export default function DFWFortWorthMedStarGuide() {
       <div style={{ maxWidth: 760, margin: '0 auto' }}>
         <div style={{ color: '#F5E642', fontSize: 13, letterSpacing: 2, textTransform: 'uppercase', marginBottom: 8 }}>DFW Homeowner Series</div>
         <h1 style={{ fontSize: 32, fontWeight: 800, marginBottom: 8 }}>🏥 Fort Worth Medical District Homeowner Guide</h1>
-        <p style={{ color: '#94A3B8', marginBottom: 24, lineHeight: 1.7 }}>Texas Health Harris Methodist, JPS Health Network, and Cook Children's anchor one of Fort Worth’s most stable employment corridors. Surrounding neighborhoods range from original 1920s stock to 1990s medical professional housing.</p>
+        <p style={{ color: '#94A3B8', marginBottom: 24, lineHeight: 1.7 }}>Texas Health Harris Methodist, JPS Health Network, and Cook Children's anchor one of Fort Worth's most stable employment corridors. Surrounding neighborhoods range from original 1920s stock to 1990s medical professional housing.</p>
 
         <div style={{ background: '#111D30', borderRadius: 12, padding: 20, marginBottom: 14 }}>
           <div style={{ color: '#F5E642', fontWeight: 700, marginBottom: 10 }}>🏗️ Home Age</div>
           <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
             {homeAges.map(a => (
-              <button key={a.value} onClick={() => setAge(a.value)} style={{ background: age === a.value ? '#F5E642′ : '#1E2D45', color: age === a.value ? '#0A1628' : '#fff', border: ’none', borderRadius: 8, padding: '10px 14px', textAlign: 'left', cursor: 'pointer', fontWeight: 600, fontSize: 13 }}>{a.label}</button>
+              <button key={a.value} onClick={() => setAge(a.value)} style={{ background: age === a.value ? '#F5E642' : '#1E2D45', color: age === a.value ? '#0A1628' : '#fff', border: 'none', borderRadius: 8, padding: '10px 14px', textAlign: 'left', cursor: 'pointer', fontWeight: 600, fontSize: 13 }}>{a.label}</button>
             ))}
           </div>
         </div>
@@ -54,7 +54,7 @@ export default function DFWFortWorthMedStarGuide() {
           <div style={{ color: '#F5E642', fontWeight: 700, marginBottom: 10 }}>🏠 Home Type</div>
           <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
             {homeTypes.map(t => (
-              <button key={t.value} onClick={() => setType(t.value)} style={{ background: type === t.value ? '#F5E642′ : '#1E2D45', color: type === t.value ? '#0A1628' : '#fff', border: ’none', borderRadius: 8, padding: '10px 14px', textAlign: 'left', cursor: 'pointer', fontWeight: 600, fontSize: 13 }}>{t.label}</button>
+              <button key={t.value} onClick={() => setType(t.value)} style={{ background: type === t.value ? '#F5E642' : '#1E2D45', color: type === t.value ? '#0A1628' : '#fff', border: 'none', borderRadius: 8, padding: '10px 14px', textAlign: 'left', cursor: 'pointer', fontWeight: 600, fontSize: 13 }}>{t.label}</button>
             ))}
           </div>
         </div>
@@ -63,7 +63,7 @@ export default function DFWFortWorthMedStarGuide() {
           <div style={{ display: 'flex', flexDirection: 'column', gap: 14 }}>
             <div style={{ background: '#111D30', borderRadius: 12, padding: 20 }}>
               <div style={{ color: '#F5E642', fontWeight: 700, marginBottom: 10 }}>🔧 Maintenance Priorities</div>
-              {result.maintenance.map((m, i) => <div key={i} style={{ color: '#CBD5E1', marginBottom: 6, paddingLeft: 14, borderLeft: '3px solid #F5E642′ }}>{m}</div>)}
+              {result.maintenance.map((m, i) => <div key={i} style={{ color: '#CBD5E1', marginBottom: 6, paddingLeft: 14, borderLeft: '3px solid #F5E642' }}>{m}</div>)}
             </div>
             <div style={{ background: '#111D30', borderRadius: 12, padding: 20 }}>
               <div style={{ color: '#F5E642', fontWeight: 700, marginBottom: 10 }}>📍 Neighborhood-Specific Considerations</div>

@@ -30,7 +30,7 @@ export default function DFWHVACFilterSchedule2026() {
       <div style={{ maxWidth: 700, margin: '0 auto' }}>
         <div style={{ textAlign: 'center', marginBottom: '2rem' }}>
           <div style={{ fontSize: '2.5rem' }}>❄️🔥</div>
-          <h1 style={{ color: '#F5E642', fontSize: '1.8rem', margin: '0.5rem 0′ }}>DFW HVAC Filter Change Schedule 2026</h1>
+          <h1 style={{ color: '#F5E642', fontSize: '1.8rem', margin: '0.5rem 0' }}>DFW HVAC Filter Change Schedule 2026</h1>
           <p style={{ color: '#94a3b8', fontSize: '0.95rem' }}>DFW minimum: MERV-11. Cedar + summer heat demand it.</p>
         </div>
 
@@ -72,7 +72,7 @@ export default function DFWHVACFilterSchedule2026() {
         </div>
 
         <div style={{ background: '#132040', borderRadius: 12, padding: '1.25rem', textAlign: 'center' }}>
-          <p style={{ color: '#94a3b8', fontSize: '0.9rem', margin: 0 }}>🏠 <strong style={{ color: '#F5E642′ }}>ProLnk Vault</strong> auto-logs every filter change with date, brand, and MERV rating — no spreadsheet needed.</p>
+          <p style={{ color: '#94a3b8', fontSize: '0.9rem', margin: 0 }}>🏠 <strong style={{ color: '#F5E642' }}>ProLnk Vault</strong> auto-logs every filter change with date, brand, and MERV rating — no spreadsheet needed.</p>
         </div>
       </div>
     </div>

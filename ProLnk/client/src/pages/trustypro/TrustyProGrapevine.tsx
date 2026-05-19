@@ -4,13 +4,13 @@ const stats = [
   { label: "Avg Home Value", value: "$480K", sub: "Premium market" },
   { label: "Lake Humidity", value: "High", sub: "Grapevine Lake effect" },
   { label: "Active Pros", value: "95+", sub: "Verified in Grapevine" },
-  { label: "Home Vintage", value: "1980–2010″, sub: "Mixed housing era" },
+  { label: "Home Vintage", value: "1980–2010", sub: "Mixed housing era" },
 ];
 
 const steps = [
-  { n: "1″, title: "Profile Your Home", body: "Tell us your Grapevine address, home era, and whether you're near the lake or historic downtown. We calibrate your risk profile instantly." },
-  { n: "2″, title: "Get Matched", body: "Our algorithm surfaces pros who understand lake-adjacent humidity, 1980s HVAC systems, and the premium expectations of Grapevine's $480K+ market." },
-  { n: "3″, title: "Permanent Record", body: "Every service gets logged in your Home Health Vault — documentation that matters when you sell in Grapevine's competitive market." },
+  { n: "1", title: "Profile Your Home", body: "Tell us your Grapevine address, home era, and whether you're near the lake or historic downtown. We calibrate your risk profile instantly." },
+  { n: "2", title: "Get Matched", body: "Our algorithm surfaces pros who understand lake-adjacent humidity, 1980s HVAC systems, and the premium expectations of Grapevine's $480K+ market." },
+  { n: "3", title: "Permanent Record", body: "Every service gets logged in your Home Health Vault — documentation that matters when you sell in Grapevine's competitive market." },
 ];
 
 const pros = [
@@ -36,7 +36,7 @@ export default function TrustyProGrapevine() {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
 
   return (
-    <div style={{ fontFamily: "system-ui, sans-serif", background: "#f9fafb", minHeight: "100vh", color: "#111827″ }}>
+    <div style={{ fontFamily: "system-ui, sans-serif", background: "#f9fafb", minHeight: "100vh", color: "#111827" }}>
 
       {/* Nav */}
       <nav style={{ background: "#fff", borderBottom: "1px solid #e5e7eb", padding: "0 24px", display: "flex", alignItems: "center", justifyContent: "space-between", height: 60 }}>
@@ -47,10 +47,10 @@ export default function TrustyProGrapevine() {
       {/* Hero */}
       <section style={{ background: "linear-gradient(135deg, #eef2ff 0%, #fff 100%)", padding: "72px 24px 60px", textAlign: "center" }}>
         <div style={{ display: "inline-block", background: "#eef2ff", color: "#4338ca", fontWeight: 700, fontSize: 13, padding: "6px 14px", borderRadius: 20, marginBottom: 20 }}>Grapevine, TX · Lake-Zone Home Intelligence</div>
-        <h1 style={{ fontSize: "clamp(28px, 5vw, 48px)", fontWeight: 900, lineHeight: 1.15, maxWidth: 760, margin: "0 auto 20px", color: "#111827″ }}>
+        <h1 style={{ fontSize: "clamp(28px, 5vw, 48px)", fontWeight: 900, lineHeight: 1.15, maxWidth: 760, margin: "0 auto 20px", color: "#111827" }}>
           Grapevine TX: Historic City, Modern Home Challenges
         </h1>
-        <p style={{ fontSize: 18, color: "#6b7280″, maxWidth: 600, margin: "0 auto 36px", lineHeight: 1.7 }}>
+        <p style={{ fontSize: 18, color: "#6b7280", maxWidth: 600, margin: "0 auto 36px", lineHeight: 1.7 }}>
           Grapevine Lake humidity, mixed-era housing from 1980 to 2010, and a $480K market that demands premium maintenance. Your home deserves intelligence that matches.
         </p>
         <a href="/waitlist/homeowner" style={{ background: "#f59e0b", color: "#fff", padding: "16px 36px", borderRadius: 10, fontWeight: 800, fontSize: 17, textDecoration: "none", display: "inline-block", boxShadow: "0 4px 14px rgba(245,158,11,0.35)" }}>
@@ -64,7 +64,7 @@ export default function TrustyProGrapevine() {
           {stats.map((s, i) => (
             <div key={i} style={{ padding: "32px 24px", textAlign: "center", borderRight: i < stats.length - 1 ? "1px solid #e5e7eb" : "none" }}>
               <div style={{ fontSize: 34, fontWeight: 900, color: "#4338ca" }}>{s.value}</div>
-              <div style={{ fontWeight: 700, fontSize: 14, color: "#111827″, marginTop: 4 }}>{s.label}</div>
+              <div style={{ fontWeight: 700, fontSize: 14, color: "#111827", marginTop: 4 }}>{s.label}</div>
               <div style={{ fontSize: 13, color: "#9ca3af", marginTop: 2 }}>{s.sub}</div>
             </div>
           ))}
@@ -79,14 +79,14 @@ export default function TrustyProGrapevine() {
             <div key={s.n} style={{ background: "#fff", borderRadius: 16, padding: 32, boxShadow: "0 1px 4px rgba(0,0,0,0.07)", border: "1px solid #e5e7eb" }}>
               <div style={{ width: 44, height: 44, borderRadius: "50%", background: "#4338ca", color: "#fff", fontWeight: 900, fontSize: 18, display: "flex", alignItems: "center", justifyContent: "center", marginBottom: 16 }}>{s.n}</div>
               <h3 style={{ fontSize: 17, fontWeight: 700, marginBottom: 10 }}>{s.title}</h3>
-              <p style={{ fontSize: 14, color: "#6b7280″, lineHeight: 1.65 }}>{s.body}</p>
+              <p style={{ fontSize: 14, color: "#6b7280", lineHeight: 1.65 }}>{s.body}</p>
             </div>
           ))}
         </div>
       </section>
 
       {/* Pro Cards */}
-      <section style={{ background: "#f3f4f6″, padding: "64px 24px" }}>
+      <section style={{ background: "#f3f4f6", padding: "64px 24px" }}>
         <div style={{ maxWidth: 900, margin: "0 auto" }}>
           <h2 style={{ fontSize: 28, fontWeight: 800, textAlign: "center", marginBottom: 40 }}>Top-Rated Grapevine Pros</h2>
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))", gap: 24 }}>
@@ -94,7 +94,7 @@ export default function TrustyProGrapevine() {
               <div key={i} style={{ background: "#fff", borderRadius: 14, padding: 28, boxShadow: "0 1px 4px rgba(0,0,0,0.07)", border: "1px solid #e5e7eb" }}>
                 <div style={{ width: 52, height: 52, borderRadius: "50%", background: "#eef2ff", display: "flex", alignItems: "center", justifyContent: "center", fontSize: 22, fontWeight: 800, color: "#4338ca", marginBottom: 14 }}>{p.name[0]}</div>
                 <div style={{ fontWeight: 700, fontSize: 16 }}>{p.name}</div>
-                <div style={{ color: "#6b7280″, fontSize: 13, marginBottom: 10 }}>{p.trade}</div>
+                <div style={{ color: "#6b7280", fontSize: 13, marginBottom: 10 }}>{p.trade}</div>
                 <div style={{ display: "flex", gap: 12, fontSize: 13, marginBottom: 12 }}>
                   <span style={{ color: "#f59e0b", fontWeight: 700 }}>★ {p.rating}</span>
                   <span style={{ color: "#9ca3af" }}>{p.jobs} jobs</span>
@@ -113,8 +113,8 @@ export default function TrustyProGrapevine() {
           {testimonials.map((t, i) => (
             <div key={i} style={{ background: "#fff", borderRadius: 14, padding: 28, border: "1px solid #e5e7eb", boxShadow: "0 1px 4px rgba(0,0,0,0.06)" }}>
               <div style={{ fontSize: 28, color: "#4338ca", lineHeight: 1, marginBottom: 12 }}>"</div>
-              <p style={{ fontSize: 15, color: "#374151″, lineHeight: 1.7, marginBottom: 16 }}>{t.text}</p>
-              <div style={{ fontSize: 13, fontWeight: 600, color: "#6b7280″ }}>— {t.author}</div>
+              <p style={{ fontSize: 15, color: "#374151", lineHeight: 1.7, marginBottom: 16 }}>{t.text}</p>
+              <div style={{ fontSize: 13, fontWeight: 600, color: "#6b7280" }}>— {t.author}</div>
             </div>
           ))}
         </div>
@@ -127,11 +127,11 @@ export default function TrustyProGrapevine() {
           {faqs.map((f, i) => (
             <div key={i} style={{ background: "#fff", borderRadius: 12, marginBottom: 12, border: "1px solid #e5e7eb", overflow: "hidden" }}>
               <button onClick={() => setOpenFaq(openFaq === i ? null : i)}
-                style={{ width: "100%", textAlign: "left", padding: "20px 24px", background: "none", border: "none", cursor: "pointer", display: "flex", justifyContent: "space-between", alignItems: "center", fontWeight: 600, fontSize: 15, color: "#111827″ }}>
+                style={{ width: "100%", textAlign: "left", padding: "20px 24px", background: "none", border: "none", cursor: "pointer", display: "flex", justifyContent: "space-between", alignItems: "center", fontWeight: 600, fontSize: 15, color: "#111827" }}>
                 {f.q}
                 <span style={{ color: "#4338ca", fontSize: 20, fontWeight: 700 }}>{openFaq === i ? "−" : "+"}</span>
               </button>
-              {openFaq === i && <div style={{ padding: "0 24px 20px", fontSize: 14, color: "#6b7280″, lineHeight: 1.7 }}>{f.a}</div>}
+              {openFaq === i && <div style={{ padding: "0 24px 20px", fontSize: 14, color: "#6b7280", lineHeight: 1.7 }}>{f.a}</div>}
             </div>
           ))}
         </div>
@@ -147,8 +147,8 @@ export default function TrustyProGrapevine() {
       </section>
 
       {/* Footer */}
-      <footer style={{ background: "#111827″, padding: "28px 24px", textAlign: "center", color: "#6b7280", fontSize: 13 }}>
-        <span style={{ color: "#4338ca", fontWeight: 700 }}>TrustyPro</span> · Grapevine, TX · <a href="/privacy" style={{ color: "#6b7280″ }}>Privacy</a> · <a href="/terms" style={{ color: "#6b7280" }}>Terms</a>
+      <footer style={{ background: "#111827", padding: "28px 24px", textAlign: "center", color: "#6b7280", fontSize: 13 }}>
+        <span style={{ color: "#4338ca", fontWeight: 700 }}>TrustyPro</span> · Grapevine, TX · <a href="/privacy" style={{ color: "#6b7280" }}>Privacy</a> · <a href="/terms" style={{ color: "#6b7280" }}>Terms</a>
       </footer>
     </div>
   );

@@ -9,10 +9,10 @@ const CONTENT_TYPES = [
 ];
 
 const PLATFORMS = [
-  { name: 'TikTok', emoji: '🎵', strategy: '15–30 second clips. Trending audio. Fast cuts. Educational or shocking content performs best with DFW homeowners under 45.', color: '#ff2d55′ },
+  { name: 'TikTok', emoji: '🎵', strategy: '15–30 second clips. Trending audio. Fast cuts. Educational or shocking content performs best with DFW homeowners under 45.', color: '#ff2d55' },
   { name: 'Instagram Reels', emoji: '📸', strategy: 'Same format as TikTok but your followers see it plus algorithm sharing. Cross-post directly from TikTok.', color: '#e1306c' },
-  { name: 'YouTube Shorts', emoji: '▶️', strategy: '60 seconds or less. Long-term SEO value makes this essential — YouTube is the #2 search engine.', color: '#ff0000′ },
-  { name: 'Facebook', emoji: '👥', strategy: 'Longer content okay (2–3 min). Best platform for the older DFW homeowner demographic who owns larger homes.', color: '#1877f2′ },
+  { name: 'YouTube Shorts', emoji: '▶️', strategy: '60 seconds or less. Long-term SEO value makes this essential — YouTube is the #2 search engine.', color: '#ff0000' },
+  { name: 'Facebook', emoji: '👥', strategy: 'Longer content okay (2–3 min). Best platform for the older DFW homeowner demographic who owns larger homes.', color: '#1877f2' },
 ];
 
 const TRADES = ['HVAC', 'Plumbing', 'Roofing', 'Foundation', 'Electrical', 'Landscaping', 'General Contractor'];
@@ -119,7 +119,7 @@ export default function PartnerVideoMarketingGuide() {
         </div>
 
         {/* Equipment */}
-        <div style={{ background: '#f0fdf4', border: '1px solid #bbf7d0', borderRadius: 16, padding: 28, margin: '40px 0′ }}>
+        <div style={{ background: '#f0fdf4', border: '1px solid #bbf7d0', borderRadius: 16, padding: 28, margin: '40px 0' }}>
           <h2 style={{ fontSize: 20, fontWeight: 700, color: '#166534', margin: '0 0 12px' }}>📱 Equipment You Already Have</h2>
           <p style={{ color: '#374151', lineHeight: 1.8, margin: 0 }}>
             Your phone (especially iPhone 15/Samsung S24) is <strong>professional-quality</strong>. The most common mistake is not shooting <strong>horizontally for Reels</strong>.
@@ -170,7 +170,7 @@ export default function PartnerVideoMarketingGuide() {
                 {calendar.map((item, i) => (
                   <div key={i} style={{ background: '#f8faff', border: '1px solid #e0e9ff', borderRadius: 8, padding: '12px 16px', display: 'flex', gap: 12 }}>
                     <div style={{ fontSize: 13, fontWeight: 700, color: '#1e3a5f', minWidth: 20 }}>{i + 1}.</div>
-                    <div style={{ fontSize: 14, color: '#374151′ }}>{item}</div>
+                    <div style={{ fontSize: 14, color: '#374151' }}>{item}</div>
                   </div>
                 ))}
               </div>

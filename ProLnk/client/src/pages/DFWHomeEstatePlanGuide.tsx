@@ -147,7 +147,7 @@ export default function DFWHomeEstatePlanGuide() {
             { tool: 'Community Property Survivorship', desc: 'Converts community property to survivorship — spouse gets home automatically.', texas: 'YES' },
             { tool: 'Revocable Living Trust', desc: 'Controls all assets, incapacity planning, handles multiple properties.', texas: 'YES' },
           ].map(({ tool, desc, texas }) => (
-            <div key={tool} style={{ display: 'flex', gap: 12, alignItems: 'flex-start', marginBottom: 12, paddingBottom: 12, borderBottom: '1px solid #E8EEF4′ }}>
+            <div key={tool} style={{ display: 'flex', gap: 12, alignItems: 'flex-start', marginBottom: 12, paddingBottom: 12, borderBottom: '1px solid #E8EEF4' }}>
               <div style={{ flex: 1 }}>
                 <div style={{ color: '#1A2A4A', fontWeight: 700, fontSize: 13, fontFamily: 'system-ui, sans-serif' }}>{tool}</div>
                 <div style={{ color: '#5A6A8A', fontSize: 12, marginTop: 2, fontFamily: 'system-ui, sans-serif' }}>{desc}</div>

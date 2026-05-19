@@ -42,8 +42,8 @@ export default function DFWCommunityGardenStartGuide() {
   }
 
   return (
-    <div style={{ background: '#0A1628', minHeight: '100vh', color: '#e2e8f0', fontFamily: 'system-ui, sans-serif', padding: '0′ }}>
-      <div style={{ background: 'linear-gradient(135deg, #0A1628 0%, #112240 100%)', padding: '48px 24px 32px', borderBottom: '2px solid #F5E642′ }}>
+    <div style={{ background: '#0A1628', minHeight: '100vh', color: '#e2e8f0', fontFamily: 'system-ui, sans-serif', padding: '0' }}>
+      <div style={{ background: 'linear-gradient(135deg, #0A1628 0%, #112240 100%)', padding: '48px 24px 32px', borderBottom: '2px solid #F5E642' }}>
         <div style={{ maxWidth: '900px', margin: '0 auto' }}>
           <div style={{ fontSize: '40px', marginBottom: '12px' }}>🥬</div>
           <h1 style={{ fontSize: '2.2rem', fontWeight: '800', color: '#F5E642', margin: '0 0 12px' }}>Starting a Community Garden in DFW</h1>
@@ -58,7 +58,7 @@ export default function DFWCommunityGardenStartGuide() {
               <div key={p.city} style={{ background: '#0A1628', borderRadius: '12px', padding: '16px', border: '1px solid #1e3a5f' }}>
                 <div style={{ color: '#F5E642', fontWeight: '700', marginBottom: '4px' }}>{p.city}</div>
                 <div style={{ fontSize: '0.82rem', color: '#60a5fa', marginBottom: '8px' }}>{p.program}</div>
-                <div style={{ fontSize: '0.82rem', color: '#94a3b8′ }}>{p.note}</div>
+                <div style={{ fontSize: '0.82rem', color: '#94a3b8' }}>{p.note}</div>
               </div>
             ))}
           </div>
@@ -75,7 +75,7 @@ export default function DFWCommunityGardenStartGuide() {
             </div>
           ))}
         </div>
-        <div style={{ background: '#112240', borderRadius: '16px', padding: '32px', border: '1px solid #F5E642′ }}>
+        <div style={{ background: '#112240', borderRadius: '16px', padding: '32px', border: '1px solid #F5E642' }}>
           <h2 style={{ color: '#F5E642', fontSize: '1.4rem', marginBottom: '24px' }}>🔍 Get Your Startup Guide</h2>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '16px', marginBottom: '20px' }}>
             <div>
@@ -95,11 +95,11 @@ export default function DFWCommunityGardenStartGuide() {
           </div>
           <button onClick={generate} style={{ background: '#F5E642', color: '#0A1628', border: 'none', borderRadius: '10px', padding: '12px 28px', fontWeight: '700', fontSize: '1rem', cursor: 'pointer', width: '100%' }}>Get My Community Garden Guide</button>
           {guide && (
-            <div style={{ marginTop: '24px', background: '#0A1628', borderRadius: '12px', padding: '20px', border: '1px solid #F5E642′ }}>
+            <div style={{ marginTop: '24px', background: '#0A1628', borderRadius: '12px', padding: '20px', border: '1px solid #F5E642' }}>
               <div style={{ color: '#F5E642', fontWeight: '700', marginBottom: '12px' }}>📋 Your Startup Steps:</div>
               {guide.steps.map((s, i) => <div key={i} style={{ color: '#94a3b8', fontSize: '0.88rem', marginBottom: '8px', paddingLeft: '12px' }}>Step {i + 1}: {s}</div>)}
-              <div style={{ marginTop: '14px' }}><span style={{ color: '#F5E642', fontWeight: '600′ }}>🏙️ City Resource: </span><span style={{ color: '#94a3b8' }}>{guide.resource}</span></div>
-              <div style={{ marginTop: '10px' }}><span style={{ color: '#F5E642', fontWeight: '600′ }}>🌱 First Crop Recommendation: </span><span style={{ color: '#94a3b8' }}>{guide.firstCrop}</span></div>
+              <div style={{ marginTop: '14px' }}><span style={{ color: '#F5E642', fontWeight: '600' }}>🏙️ City Resource: </span><span style={{ color: '#94a3b8' }}>{guide.resource}</span></div>
+              <div style={{ marginTop: '10px' }}><span style={{ color: '#F5E642', fontWeight: '600' }}>🌱 First Crop Recommendation: </span><span style={{ color: '#94a3b8' }}>{guide.firstCrop}</span></div>
             </div>
           )}
         </div>

@@ -71,7 +71,7 @@ export default function DFWHVACSmartControlsGuide() {
                 onClick={() => setSelected(selected === i ? null : i)}
                 style={{
                   background: selected === i ? '#1A3A6B' : '#0F2040',
-                  border: selected === i ? '2px solid #F5E642′ : `2px solid ${g.warning ? '#7F1D1D' : '#1E3A5F'}`,
+                  border: selected === i ? '2px solid #F5E642' : `2px solid ${g.warning ? '#7F1D1D' : '#1E3A5F'}`,
                   borderRadius: 12,
                   padding: '18px 24px',
                   color: '#E8EDF5',

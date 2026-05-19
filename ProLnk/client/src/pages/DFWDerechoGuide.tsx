@@ -57,7 +57,7 @@ export default function DFWDerechoGuide() {
           {result && (
             <div>
               <div style={{ background: result.color + '22', border: `2px solid ${result.color}`, borderRadius: '8px', padding: '1rem', marginBottom: '1rem', textAlign: 'center' }}>
-                <div style={{ fontSize: '0.875rem', color: '#94A3B8′ }}>Your Derecho Risk Level</div>
+                <div style={{ fontSize: '0.875rem', color: '#94A3B8' }}>Your Derecho Risk Level</div>
                 <div style={{ fontSize: '2rem', fontWeight: 700, color: result.color }}>{result.risk}</div>
               </div>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: '1rem' }}>

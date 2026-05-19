@@ -42,7 +42,7 @@ export default function DFWHVACCapacitorTest2026() {
             ].map(([n, text]) => (
               <div key={n} style={{ display: 'flex', gap: '0.75rem', alignItems: 'flex-start' }}>
                 <span style={{ background: '#F5E642', color: '#0A1628', borderRadius: '50%', width: 24, height: 24, display: 'flex', alignItems: 'center', justifyContent: 'center', fontWeight: 700, fontSize: '0.8rem', flexShrink: 0 }}>{n}</span>
-                <span style={{ color: '#cbd5e1′ }}>{text}</span>
+                <span style={{ color: '#cbd5e1' }}>{text}</span>
               </div>
             ))}
           </div>
@@ -74,14 +74,14 @@ export default function DFWHVACCapacitorTest2026() {
             </div>
             <div>
               <label style={{ color: '#94a3b8', fontSize: '0.85rem' }}>Rated µF (from label)</label>
-              <input type='number' value={rated} onChange={e => setRated(e.target.value)} placeholder='e.g. 45′ style={{ display: ’block', width: '100%', marginTop: 4, background: '#1a3058', border: '1px solid #2d4a7a', borderRadius: 6, color: '#fff', padding: '0.5rem', boxSizing: 'border-box' }} />
+              <input type='number' value={rated} onChange={e => setRated(e.target.value)} placeholder='e.g. 45' style={{ display: 'block', width: '100%', marginTop: 4, background: '#1a3058', border: '1px solid #2d4a7a', borderRadius: 6, color: '#fff', padding: '0.5rem', boxSizing: 'border-box' }} />
             </div>
             <div>
               <label style={{ color: '#94a3b8', fontSize: '0.85rem' }}>Actual Measured µF</label>
-              <input type='number' value={microfarads} onChange={e => setMicrofarads(e.target.value)} placeholder='e.g. 41′ style={{ display: ’block', width: '100%', marginTop: 4, background: '#1a3058', border: '1px solid #2d4a7a', borderRadius: 6, color: '#fff', padding: '0.5rem', boxSizing: 'border-box' }} />
+              <input type='number' value={microfarads} onChange={e => setMicrofarads(e.target.value)} placeholder='e.g. 41' style={{ display: 'block', width: '100%', marginTop: 4, background: '#1a3058', border: '1px solid #2d4a7a', borderRadius: 6, color: '#fff', padding: '0.5rem', boxSizing: 'border-box' }} />
             </div>
             <button onClick={assess} style={{ background: '#F5E642', color: '#0A1628', border: 'none', borderRadius: 6, padding: '0.75rem', fontWeight: 700, cursor: 'pointer', fontSize: '1rem' }}>Assess Capacitor</button>
-            {result && <div style={{ background: '#1a3058', borderRadius: 6, padding: '1rem', color: '#F5E642′ }}>{result}</div>}
+            {result && <div style={{ background: '#1a3058', borderRadius: 6, padding: '1rem', color: '#F5E642' }}>{result}</div>}
           </div>
         </div>
 

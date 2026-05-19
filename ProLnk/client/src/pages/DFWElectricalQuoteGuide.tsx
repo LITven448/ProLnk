@@ -51,11 +51,11 @@ export default function DFWElectricalQuoteGuide() {
 
         <h2 style={{ color: '#F5E642', fontSize: 18, fontWeight: 700, marginBottom: 12 }}>🔑 Universal DFW Electrical Quote Rules</h2>
         <ul style={{ color: '#9BA8B8', fontSize: 15, lineHeight: 1.8, marginBottom: 32, paddingLeft: 20 }}>
-          <li><strong style={{ color: '#E8ECF0′ }}>TECL license required</strong> — Texas Electrical Contractor License. Verify at tdlr.texas.gov before any work begins.</li>
-          <li><strong style={{ color: '#E8ECF0′ }}>Permit pulled by contractor</strong> — if the contractor suggests you pull it as homeowner, walk away. DFW cities do not allow homeowner electrical permits on non-owner-occupied work.</li>
-          <li><strong style={{ color: '#E8ECF0′ }}>Wire gauge must be specified</strong> — "14-gauge wire" vs "12-gauge wire" is the difference between a 15A and 20A circuit. It must be in writing.</li>
-          <li><strong style={{ color: '#E8ECF0′ }}>Breaker brand matters</strong> — Square D, Siemens, and Eaton are code-compliant. Off-brand breakers void insurance and cause fires.</li>
-          <li><strong style={{ color: '#E8ECF0′ }}>Inspection included</strong> — final inspection by the city is required for permitted work. Any contractor who skips it is leaving you with unpermitted work.</li>
+          <li><strong style={{ color: '#E8ECF0' }}>TECL license required</strong> — Texas Electrical Contractor License. Verify at tdlr.texas.gov before any work begins.</li>
+          <li><strong style={{ color: '#E8ECF0' }}>Permit pulled by contractor</strong> — if the contractor suggests you pull it as homeowner, walk away. DFW cities do not allow homeowner electrical permits on non-owner-occupied work.</li>
+          <li><strong style={{ color: '#E8ECF0' }}>Wire gauge must be specified</strong> — "14-gauge wire" vs "12-gauge wire" is the difference between a 15A and 20A circuit. It must be in writing.</li>
+          <li><strong style={{ color: '#E8ECF0' }}>Breaker brand matters</strong> — Square D, Siemens, and Eaton are code-compliant. Off-brand breakers void insurance and cause fires.</li>
+          <li><strong style={{ color: '#E8ECF0' }}>Inspection included</strong> — final inspection by the city is required for permitted work. Any contractor who skips it is leaving you with unpermitted work.</li>
         </ul>
 
         <h2 style={{ color: '#F5E642', fontSize: 18, fontWeight: 700, marginBottom: 12 }}>🚩 Common DFW Electrical Upsell Tactics</h2>
@@ -79,7 +79,7 @@ export default function DFWElectricalQuoteGuide() {
           </div>
           {selected && (
             <>
-              <div style={{ marginBottom: 12, padding: 12, background: '#0A1628', borderRadius: 8, borderLeft: '3px solid #F5E642′ }}>
+              <div style={{ marginBottom: 12, padding: 12, background: '#0A1628', borderRadius: 8, borderLeft: '3px solid #F5E642' }}>
                 <div style={{ fontSize: 13, color: '#4CAF50', fontWeight: 700 }}>DFW market range: {selected.range}</div>
               </div>
               <div style={{ marginBottom: 12 }}>
@@ -104,7 +104,7 @@ export default function DFWElectricalQuoteGuide() {
           )}
         </div>
 
-        <div style={{ background: '#F5E642', borderRadius: 12, padding: 20, color: '#0A1628′ }}>
+        <div style={{ background: '#F5E642', borderRadius: 12, padding: 20, color: '#0A1628' }}>
           <div style={{ fontWeight: 800, fontSize: 15, marginBottom: 4 }}>💡 ProLnk Tip</div>
           <div style={{ fontSize: 14 }}>Every electrician on ProLnk has verified TECL license, pulls permits as standard, and uses code-compliant breakers. License numbers displayed on every profile.</div>
         </div>

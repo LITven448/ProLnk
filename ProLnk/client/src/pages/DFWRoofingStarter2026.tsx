@@ -6,7 +6,7 @@ const concerns = [
     label: '💨 Shingles Blowing Up at Edge',
     diagnosis: 'Missing or improperly installed starter strip at eaves/rakes.',
     cause: 'Without starter strip, shingles at the edge have no self-seal bond to the layer below. DFW wind events (50–70 mph gusts) exploit this gap.',
-    fix: ['Remove first course of shingles at affected edge', 'Install starter strip with adhesive bead facing down toward the drip edge', 'Reinstall first course — it now bonds to the starter beneath', 'Nail 1″ from edge and every 12″ across'],
+    fix: ['Remove first course of shingles at affected edge', 'Install starter strip with adhesive bead facing down toward the drip edge', 'Reinstall first course — it now bonds to the starter beneath', 'Nail 1" from edge and every 12" across'],
     dfwNote: 'DFW tornado-prone zone: IRC requires 6-nail pattern in high-wind areas. Starter strip is first line of defense.',
   },
   {
@@ -15,7 +15,7 @@ const concerns = [
     diagnosis: 'Missing starter strip or reversed starter strip orientation.',
     cause: 'Water wicks under the first shingle course if there is no sealed layer below. Starter strip with adhesive facing up (wrong way) also fails.',
     fix: ['Inspect from attic with a flashlight during/after rain to find entry point', 'Check starter strip orientation — adhesive must face down/out toward eave', 'If missing: remove first shingle course, add starter, reinstall', 'Inspect drip edge — should be under felt at eave, over felt at rake'],
-    dfwNote: 'DFW gets 38″ of rain annually with intense storm events. Eave leaks are one of the top 3 roof-related insurance claims in North Texas.',
+    dfwNote: 'DFW gets 38" of rain annually with intense storm events. Eave leaks are one of the top 3 roof-related insurance claims in North Texas.',
   },
   {
     id: 'new_roof',
@@ -44,7 +44,7 @@ export default function DFWRoofingStarter2026() {
       <div style={{ maxWidth: 700, margin: '0 auto' }}>
         <div style={{ textAlign: 'center', marginBottom: '2rem' }}>
           <div style={{ fontSize: '3rem' }}>🏠</div>
-          <h1 style={{ color: '#F5E642', fontSize: '1.6rem', margin: '0.5rem 0′ }}>DFW Roofing Starter Strip Guide 2026</h1>
+          <h1 style={{ color: '#F5E642', fontSize: '1.6rem', margin: '0.5rem 0' }}>DFW Roofing Starter Strip Guide 2026</h1>
           <p style={{ color: '#94a3b8', margin: 0 }}>The most skipped component in DFW roofing — and the one that fails first in wind events</p>
         </div>
 
@@ -79,7 +79,7 @@ export default function DFWRoofingStarter2026() {
               <div style={{ color: '#4ade80', fontWeight: 700, marginBottom: '0.5rem' }}>✅ Fix Steps</div>
               {concern.fix.map((step, i) => <div key={i} style={{ color: '#cbd5e1', padding: '0.3rem 0', borderBottom: '1px solid #1e3a5f', fontSize: '0.9rem' }}>{i + 1}. {step}</div>)}
             </div>
-            <div style={{ background: '#1e3a5f', borderRadius: 8, padding: '1rem', borderLeft: '3px solid #F5E642′ }}>
+            <div style={{ background: '#1e3a5f', borderRadius: 8, padding: '1rem', borderLeft: '3px solid #F5E642' }}>
               <div style={{ color: '#F5E642', fontWeight: 700, marginBottom: '0.3rem' }}>🌪️ DFW Note</div>
               <div style={{ color: '#cbd5e1', fontSize: '0.85rem' }}>{concern.dfwNote}</div>
             </div>

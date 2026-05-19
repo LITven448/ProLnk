@@ -60,7 +60,7 @@ export default function DFWHOAApprovalProcess2026() {
         "Submit panel layout showing roof placement",
         "HOA may require panels not visible from street (rear placement)",
         "HOA cannot add requirements that increase cost over 10%",
-        "If HOA denies improperly, cite TX Property Code 202.010″,
+        "If HOA denies improperly, cite TX Property Code 202.010",
         "Consult a TX HOA attorney if denial seems improper"
       ]
     },
@@ -97,33 +97,33 @@ export default function DFWHOAApprovalProcess2026() {
   ];
 
   const appealSteps = [
-    { step: "1″, text: "Request the specific CC&R or rule section that justifies the denial" },
-    { step: "2″, text: "Submit a written appeal to the full HOA board within 30 days" },
-    { step: "3″, text: "Request to speak at the next board meeting — Texas Open Meetings Act applies" },
-    { step: "4″, text: "Bring photos of similar approved projects in your community" },
-    { step: "5″, text: "If still denied, consult a Texas HOA attorney — review may be warranted" }
+    { step: "1", text: "Request the specific CC&R or rule section that justifies the denial" },
+    { step: "2", text: "Submit a written appeal to the full HOA board within 30 days" },
+    { step: "3", text: "Request to speak at the next board meeting — Texas Open Meetings Act applies" },
+    { step: "4", text: "Bring photos of similar approved projects in your community" },
+    { step: "5", text: "If still denied, consult a Texas HOA attorney — review may be warranted" }
   ];
 
   return (
-    <div style={{ background: "#0A1628″, minHeight: "100vh", color: "#fff", fontFamily: "sans-serif", padding: "32px 20px" }}>
+    <div style={{ background: "#0A1628", minHeight: "100vh", color: "#fff", fontFamily: "sans-serif", padding: "32px 20px" }}>
       <div style={{ maxWidth: 800, margin: "0 auto" }}>
         <div style={{ textAlign: "center", marginBottom: 32 }}>
           <div style={{ fontSize: 48 }}>✅</div>
-          <h1 style={{ color: "#F5E642″, fontSize: 28, margin: "8px 0" }}>DFW HOA Architectural Approval Guide 2026</h1>
-          <p style={{ color: "#94a3b8″, fontSize: 15 }}>Get it approved before you build — avoid costly fines and forced removal</p>
+          <h1 style={{ color: "#F5E642", fontSize: 28, margin: "8px 0" }}>DFW HOA Architectural Approval Guide 2026</h1>
+          <p style={{ color: "#94a3b8", fontSize: 15 }}>Get it approved before you build — avoid costly fines and forced removal</p>
         </div>
 
-        <div style={{ background: "#1e2d45″, borderRadius: 8, padding: 16, marginBottom: 28, display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 12, textAlign: "center" }}>
-          <div><div style={{ color: "#F5E642″, fontSize: 20, fontWeight: 700 }}>30–60 days</div><div style={{ color: "#94a3b8", fontSize: 12 }}>Typical review timeline</div></div>
-          <div><div style={{ color: "#F5E642″, fontSize: 20, fontWeight: 700 }}>Written only</div><div style={{ color: "#94a3b8", fontSize: 12 }}>Always get approval in writing</div></div>
-          <div><div style={{ color: "#F5E642″, fontSize: 20, fontWeight: 700 }}>Before permit</div><div style={{ color: "#94a3b8", fontSize: 12 }}>HOA approval first, then city</div></div>
+        <div style={{ background: "#1e2d45", borderRadius: 8, padding: 16, marginBottom: 28, display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 12, textAlign: "center" }}>
+          <div><div style={{ color: "#F5E642", fontSize: 20, fontWeight: 700 }}>30–60 days</div><div style={{ color: "#94a3b8", fontSize: 12 }}>Typical review timeline</div></div>
+          <div><div style={{ color: "#F5E642", fontSize: 20, fontWeight: 700 }}>Written only</div><div style={{ color: "#94a3b8", fontSize: 12 }}>Always get approval in writing</div></div>
+          <div><div style={{ color: "#F5E642", fontSize: 20, fontWeight: 700 }}>Before permit</div><div style={{ color: "#94a3b8", fontSize: 12 }}>HOA approval first, then city</div></div>
         </div>
 
-        <h2 style={{ color: "#F5E642″, marginBottom: 16 }}>Project Type → Approval Checklist</h2>
+        <h2 style={{ color: "#F5E642", marginBottom: 16 }}>Project Type → Approval Checklist</h2>
         <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 10, marginBottom: 28 }}>
           {projects.map(p => (
             <button key={p.type} onClick={() => setProject(project === p.type ? null : p.type)}
-              style={{ background: project === p.type ? "#F5E642″ : "#1e2d45", border: "none", borderRadius: 8, padding: 14, cursor: "pointer", color: project === p.type ? "#0A1628" : "#fff", textAlign: "center" }}>
+              style={{ background: project === p.type ? "#F5E642" : "#1e2d45", border: "none", borderRadius: 8, padding: 14, cursor: "pointer", color: project === p.type ? "#0A1628" : "#fff", textAlign: "center" }}>
               <div style={{ fontSize: 26 }}>{p.icon}</div>
               <div style={{ fontWeight: 700, fontSize: 13, marginTop: 4 }}>{p.type}</div>
               <div style={{ fontSize: 11, opacity: 0.7 }}>{p.timeline}</div>
@@ -134,22 +134,22 @@ export default function DFWHOAApprovalProcess2026() {
         {project && (() => {
           const p = projects.find(x => x.type === project)!;
           return (
-            <div style={{ background: "#1e2d45″, borderRadius: 10, padding: 24, marginBottom: 28, borderLeft: "4px solid #F5E642" }}>
-              <h3 style={{ color: "#F5E642″, margin: "0 0 4px" }}>{p.icon} {p.type} — Approval Checklist</h3>
-              <p style={{ color: "#94a3b8″, marginBottom: 16, fontSize: 13 }}>Status: {p.approval} • Timeline: {p.timeline}</p>
+            <div style={{ background: "#1e2d45", borderRadius: 10, padding: 24, marginBottom: 28, borderLeft: "4px solid #F5E642" }}>
+              <h3 style={{ color: "#F5E642", margin: "0 0 4px" }}>{p.icon} {p.type} — Approval Checklist</h3>
+              <p style={{ color: "#94a3b8", marginBottom: 16, fontSize: 13 }}>Status: {p.approval} • Timeline: {p.timeline}</p>
               <ol style={{ paddingLeft: 20, margin: 0 }}>
-                {p.checklist.map((item, i) => <li key={i} style={{ color: "#cbd5e1″, marginBottom: 7 }}>{item}</li>)}
+                {p.checklist.map((item, i) => <li key={i} style={{ color: "#cbd5e1", marginBottom: 7 }}>{item}</li>)}
               </ol>
             </div>
           );
         })()}
 
-        <h2 style={{ color: "#F5E642″, marginBottom: 16 }}>Appeal Process If Denied</h2>
+        <h2 style={{ color: "#F5E642", marginBottom: 16 }}>Appeal Process If Denied</h2>
         <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
           {appealSteps.map((s, i) => (
-            <div key={i} style={{ background: "#1e2d45″, borderRadius: 8, padding: "14px 18px", display: "flex", gap: 14, alignItems: "flex-start" }}>
-              <span style={{ background: "#F5E642″, color: "#0A1628", borderRadius: "50%", width: 28, height: 28, display: "flex", alignItems: "center", justifyContent: "center", fontWeight: 700, flexShrink: 0, fontSize: 13 }}>{s.step}</span>
-              <span style={{ color: "#cbd5e1″, fontSize: 14 }}>{s.text}</span>
+            <div key={i} style={{ background: "#1e2d45", borderRadius: 8, padding: "14px 18px", display: "flex", gap: 14, alignItems: "flex-start" }}>
+              <span style={{ background: "#F5E642", color: "#0A1628", borderRadius: "50%", width: 28, height: 28, display: "flex", alignItems: "center", justifyContent: "center", fontWeight: 700, flexShrink: 0, fontSize: 13 }}>{s.step}</span>
+              <span style={{ color: "#cbd5e1", fontSize: 14 }}>{s.text}</span>
             </div>
           ))}
         </div>

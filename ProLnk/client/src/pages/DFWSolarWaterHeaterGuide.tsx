@@ -32,10 +32,10 @@ export default function DFWSolarWaterHeaterGuide() {
 
         <div style={{ background: '#132240', borderRadius: 12, padding: '1.5rem', marginBottom: '1.5rem' }}>
           <h2 style={{ color: '#F5E642', fontSize: '1.1rem' }}>DFW's Solar Advantage</h2>
-          <p style={{ lineHeight: 1.7, color: '#c8d8f0′ }}>
-            DFW receives <strong style={{ color: '#F5E642′ }}>220+ sunny days per year</strong> — among the highest in the continental US.
+          <p style={{ lineHeight: 1.7, color: '#c8d8f0' }}>
+            DFW receives <strong style={{ color: '#F5E642' }}>220+ sunny days per year</strong> — among the highest in the continental US.
             Solar water heaters can offset 50–80% of your water heating costs, and the federal tax credit covers 30% of total system cost.
-            The key challenge in DFW: <strong style={{ color: '#F5E642′ }}>freeze protection</strong> — glycol closed-loop systems are required.
+            The key challenge in DFW: <strong style={{ color: '#F5E642' }}>freeze protection</strong> — glycol closed-loop systems are required.
           </p>
         </div>
 
@@ -72,7 +72,7 @@ export default function DFWSolarWaterHeaterGuide() {
             <div>
               <label style={{ color: '#c8d8f0', display: 'block', marginBottom: '0.4rem' }}>Roof Sun Exposure</label>
               <select value={sun} onChange={e => setSun(e.target.value)}
-                style={{ width: '100%', padding: '0.6rem', borderRadius: 8, background: '#0d1e38', color: '#fff', border: '1px solid #F5E642′ }}>
+                style={{ width: '100%', padding: '0.6rem', borderRadius: 8, background: '#0d1e38', color: '#fff', border: '1px solid #F5E642' }}>
                 <option value=''>Select exposure...</option>
                 {sunExposure.map(s => <option key={s} value={s}>{s}</option>)}
               </select>
@@ -80,7 +80,7 @@ export default function DFWSolarWaterHeaterGuide() {
             <div>
               <label style={{ color: '#c8d8f0', display: 'block', marginBottom: '0.4rem' }}>Your Situation</label>
               <select value={situation} onChange={e => setSituation(e.target.value)}
-                style={{ width: '100%', padding: '0.6rem', borderRadius: 8, background: '#0d1e38', color: '#fff', border: '1px solid #F5E642′ }}>
+                style={{ width: '100%', padding: '0.6rem', borderRadius: 8, background: '#0d1e38', color: '#fff', border: '1px solid #F5E642' }}>
                 <option value=''>Select situation...</option>
                 {situations.map(s => <option key={s} value={s}>{s}</option>)}
               </select>
@@ -91,7 +91,7 @@ export default function DFWSolarWaterHeaterGuide() {
             </button>
           </div>
           {result && (
-            <div style={{ marginTop: '1.25rem', background: '#0d1e38', borderRadius: 10, padding: '1.25rem', borderLeft: '4px solid #F5E642′ }}>
+            <div style={{ marginTop: '1.25rem', background: '#0d1e38', borderRadius: 10, padding: '1.25rem', borderLeft: '4px solid #F5E642' }}>
               <div style={{ fontSize: '1.4rem', fontWeight: 700, color: '#F5E642', marginBottom: '0.5rem' }}>
                 {result.score}% Solar Feasibility Score
               </div>
@@ -99,7 +99,7 @@ export default function DFWSolarWaterHeaterGuide() {
                 <div>🔧 Recommended System: <strong style={{ color: '#fff' }}>{result.system}</strong></div>
                 <div>💰 Estimated Cost: <strong style={{ color: '#fff' }}>{result.cost}</strong></div>
                 <div>📈 Annual Savings: <strong style={{ color: '#fff' }}>{result.savings}</strong></div>
-                <div style={{ marginTop: '0.75rem', color: '#F5E642′ }}>{result.note}</div>
+                <div style={{ marginTop: '0.75rem', color: '#F5E642' }}>{result.note}</div>
               </div>
             </div>
           )}

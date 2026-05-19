@@ -6,8 +6,8 @@ const roofAges = ['Under 5 years', '5-10 years', '10-15 years', '15+ years'];
 function getAssessment(condition: string, age: string) {
   const failed = condition.includes('Failed') || age.includes('15+');
   const cracking = condition.includes('Cracking') || age.includes('10-15');
-  if (failed) return { urgency: 'Replace Immediately', diy: 'Hire Roofer', cost: '$150–$400 per boot', color: '#FF4444′ };
-  if (cracking) return { urgency: 'Replace This Season', diy: 'DIY Possible', cost: '$80–$200 per boot', color: '#F5A623′ };
+  if (failed) return { urgency: 'Replace Immediately', diy: 'Hire Roofer', cost: '$150–$400 per boot', color: '#FF4444' };
+  if (cracking) return { urgency: 'Replace This Season', diy: 'DIY Possible', cost: '$80–$200 per boot', color: '#F5A623' };
   return { urgency: 'Inspect Annually', diy: 'Monitor Only', cost: 'No cost now', color: '#22C55E' };
 }
 
@@ -66,7 +66,7 @@ export default function DFWRoofBootGuide() {
             <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px' }}>
               {bootConditions.map(c => (
                 <button key={c} onClick={() => setCondition(c)} style={{
-                  background: condition === c ? '#F5E642′ : '#162035', color: condition === c ? '#0A1628' : '#CBD5E1',
+                  background: condition === c ? '#F5E642' : '#162035', color: condition === c ? '#0A1628' : '#CBD5E1',
                   border: 'none', borderRadius: '6px', padding: '8px 14px', fontSize: '13px', cursor: 'pointer', fontWeight: condition === c ? 700 : 400
                 }}>{c}</button>
               ))}
@@ -77,7 +77,7 @@ export default function DFWRoofBootGuide() {
             <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px' }}>
               {roofAges.map(a => (
                 <button key={a} onClick={() => setAge(a)} style={{
-                  background: age === a ? '#F5E642′ : '#162035', color: age === a ? '#0A1628' : '#CBD5E1',
+                  background: age === a ? '#F5E642' : '#162035', color: age === a ? '#0A1628' : '#CBD5E1',
                   border: 'none', borderRadius: '6px', padding: '8px 14px', fontSize: '13px', cursor: 'pointer', fontWeight: age === a ? 700 : 400
                 }}>{a}</button>
               ))}
@@ -86,7 +86,7 @@ export default function DFWRoofBootGuide() {
           {result && (
             <div style={{ background: '#0A1628', borderRadius: '10px', padding: '18px', borderLeft: `4px solid ${result.color}` }}>
               <div style={{ color: result.color, fontSize: '15px', fontWeight: 700, marginBottom: '8px' }}>{result.urgency}</div>
-              <div style={{ color: '#CBD5E1', fontSize: '14px', marginBottom: '4px' }}>Recommendation: <span style={{ color: '#F5E642′ }}>{result.diy}</span></div>
+              <div style={{ color: '#CBD5E1', fontSize: '14px', marginBottom: '4px' }}>Recommendation: <span style={{ color: '#F5E642' }}>{result.diy}</span></div>
               <div style={{ color: '#CBD5E1', fontSize: '14px' }}>Estimated Cost: <span style={{ color: '#FFFFFF', fontWeight: 600 }}>{result.cost}</span></div>
             </div>
           )}

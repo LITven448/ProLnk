@@ -85,8 +85,8 @@ export default function DFWRooferVetting() {
           <div style={{ color: '#C5CAD8', fontSize: 15 }}>{verdict.desc}</div>
         </div>
 
-        <div style={{ padding: '16px 20px', background: '#111E33', borderRadius: 12, borderLeft: '4px solid #F5E642′ }}>
-          <strong style={{ color: '#F5E642′ }}>Always verify independently:</strong>
+        <div style={{ padding: '16px 20px', background: '#111E33', borderRadius: 12, borderLeft: '4px solid #F5E642' }}>
+          <strong style={{ color: '#F5E642' }}>Always verify independently:</strong>
           <span style={{ color: '#9AA3B4', marginLeft: 8 }}>
             Call the manufacturer (GAF: 800-766-3411, Owens Corning: 800-438-7465) to confirm contractor certification status — not just the certificate they show you.
           </span>

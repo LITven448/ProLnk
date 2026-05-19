@@ -77,15 +77,15 @@ export default function DFWMistletoeGuide() {
             <div style={{ marginTop: '1.25rem', background: '#0A1628', borderRadius: 10, padding: '1.25rem', borderLeft: `4px solid ${result.color}` }}>
               <p style={{ color: result.color, fontWeight: 700, fontSize: '1.1rem', marginBottom: '0.5rem' }}>Severity: {result.severity}</p>
               <p style={{ color: '#e2e8f0', marginBottom: '0.5rem' }}><strong>Action:</strong> {result.action}</p>
-              <p style={{ color: '#F5E642′ }}><strong>Removal Method:</strong> {result.method}</p>
+              <p style={{ color: '#F5E642' }}><strong>Removal Method:</strong> {result.method}</p>
             </div>
           )}
         </div>
         <div style={{ background: '#1e3a5f', borderRadius: 10, padding: '1rem', color: '#94a3b8', fontSize: '0.85rem', marginBottom: '1rem' }}>
-          <strong style={{ color: '#F5E642′ }}>Important:</strong> Mistletoe regrows from haustorium tissue embedded in the branch. Pulling mistletoe without pruning the branch only delays regrowth by 1-2 years. The only permanent solution is to remove the entire affected branch.
+          <strong style={{ color: '#F5E642' }}>Important:</strong> Mistletoe regrows from haustorium tissue embedded in the branch. Pulling mistletoe without pruning the branch only delays regrowth by 1-2 years. The only permanent solution is to remove the entire affected branch.
         </div>
         <div style={{ background: '#1e3a5f', borderRadius: 10, padding: '1rem', color: '#94a3b8', fontSize: '0.85rem' }}>
-          <strong style={{ color: '#F5E642′ }}>ProLnk Note:</strong> For heavy mistletoe infestations or trees over 20 feet, hire a licensed arborist. DIY pruning of large limbs risks injury and property damage. ProLnk connects DFW homeowners with certified tree care professionals.
+          <strong style={{ color: '#F5E642' }}>ProLnk Note:</strong> For heavy mistletoe infestations or trees over 20 feet, hire a licensed arborist. DIY pruning of large limbs risks injury and property damage. ProLnk connects DFW homeowners with certified tree care professionals.
         </div>
       </div>
     </div>

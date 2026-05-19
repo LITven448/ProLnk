@@ -64,7 +64,7 @@ export default function DFWAsbestosLeadGuide() {
           <div style={{ display: 'flex', gap: 14, flexWrap: 'wrap' }}>
             {[
               { year: 'Before 1978', risk: '⚠️ Lead Paint Risk', desc: 'Lead-based paint was banned for residential use in 1978. Any home built before this date — especially trim, windows, and exterior — may contain lead paint. Disturbing it requires EPA RRP protocols.', color: '#f59e0b' },
-              { year: 'Before 1980', risk: '☣️ Asbestos Risk', desc: 'Asbestos was widely used in insulation, floor tiles (9″×9″ vinyl), popcorn ceilings, joint compound, roof shingles, and pipe wrap. Not banned until 1989 (some uses), but mostly phased out by 1980 in homes.', color: '#ef4444′ },
+              { year: 'Before 1980', risk: '☣️ Asbestos Risk', desc: 'Asbestos was widely used in insulation, floor tiles (9"×9" vinyl), popcorn ceilings, joint compound, roof shingles, and pipe wrap. Not banned until 1989 (some uses), but mostly phased out by 1980 in homes.', color: '#ef4444' },
             ].map(item => (
               <div key={item.year} style={{ flex: '1 1 280px', backgroundColor: '#1a2d4a', borderRadius: 10, padding: 18, borderLeft: `4px solid ${item.color}` }}>
                 <div style={{ color: item.color, fontWeight: 700, fontSize: 18, marginBottom: 4 }}>{item.year}</div>
@@ -80,7 +80,7 @@ export default function DFWAsbestosLeadGuide() {
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: 10 }}>
             {[
               ['🏠', 'Popcorn / textured ceilings (pre-1980)'],
-              ['🔲', '9″×9″ floor tiles and black mastic adhesive'],
+              ['🔲', '9"×9" floor tiles and black mastic adhesive'],
               ['🌡️', 'Pipe and duct insulation wrap'],
               ['🪟', 'Window glazing compound (pre-1978)'],
               ['🧱', 'Joint compound / drywall texture (pre-1980)'],
@@ -100,9 +100,9 @@ export default function DFWAsbestosLeadGuide() {
           <h2 style={{ fontSize: 20, fontWeight: 600, color: '#F5E642', marginBottom: 16 }}>🏛️ DFW City Requirements</h2>
           <div style={{ backgroundColor: '#1a2d4a', borderRadius: 8, padding: 16 }}>
             <p style={{ color: '#cbd5e1', fontSize: 14, lineHeight: 1.7, margin: 0 }}>
-              <strong style={{ color: '#e2e8f0′ }}>EPA RRP Rule</strong>: Any contractor disturbing 6+ sq ft of painted interior or 20+ sq ft of exterior on pre-1978 homes must be EPA RRP certified. Always ask your contractor for proof of certification. <br /><br />
-              <strong style={{ color: '#e2e8f0′ }}>Dallas / Fort Worth / Arlington</strong>: Building permits for renovation projects in pre-1978 homes may require documentation of lead/asbestos testing or certified contractor use before permit issuance. Check with your specific city’s building department — rules vary. <br /><br />
-              <strong style={{ color: '#e2e8f0′ }}>Disposal</strong>: Asbestos-containing material requires disposal at an approved DFW landfill (Trinity East, McCommas Bluff). Illegal dumping carries $25,000+ fines.
+              <strong style={{ color: '#e2e8f0' }}>EPA RRP Rule</strong>: Any contractor disturbing 6+ sq ft of painted interior or 20+ sq ft of exterior on pre-1978 homes must be EPA RRP certified. Always ask your contractor for proof of certification. <br /><br />
+              <strong style={{ color: '#e2e8f0' }}>Dallas / Fort Worth / Arlington</strong>: Building permits for renovation projects in pre-1978 homes may require documentation of lead/asbestos testing or certified contractor use before permit issuance. Check with your specific city's building department — rules vary. <br /><br />
+              <strong style={{ color: '#e2e8f0' }}>Disposal</strong>: Asbestos-containing material requires disposal at an approved DFW landfill (Trinity East, McCommas Bluff). Illegal dumping carries $25,000+ fines.
             </p>
           </div>
         </div>
@@ -114,7 +114,7 @@ export default function DFWAsbestosLeadGuide() {
             <label style={{ color: '#94a3b8', fontSize: 13, display: 'block', marginBottom: 8 }}>Year Home Was Built</label>
             <input
               type="number"
-              placeholder="e.g. 1965″
+              placeholder="e.g. 1965"
               value={builtYear}
               onChange={e => { setBuiltYear(e.target.value); setShowResult(false); }}
               style={{ width: '100%', backgroundColor: '#1a2d4a', border: '2px solid #334155', borderRadius: 8, padding: '12px 16px', color: '#e2e8f0', fontSize: 15, boxSizing: 'border-box' }}
@@ -126,7 +126,7 @@ export default function DFWAsbestosLeadGuide() {
             <div style={{ display: 'flex', gap: 8 }}>
               {[['cosmetic', 'Cosmetic (paint, floors)'], ['structural', 'Structural (walls, windows)'], ['hvac', 'HVAC / Mechanical']].map(([v, l]) => (
                 <button key={v} onClick={() => { setRenovationType(v); setShowResult(false); }}
-                  style={{ flex: 1, padding: '10px 4px', borderRadius: 8, border: '2px solid', borderColor: renovationType === v ? '#F5E642′ : '#1a2d4a', backgroundColor: renovationType === v ? '#F5E642' : '#1a2d4a', color: renovationType === v ? '#0A1628' : '#cbd5e1', fontWeight: 600, cursor: ’pointer', fontSize: 12 }}>
+                  style={{ flex: 1, padding: '10px 4px', borderRadius: 8, border: '2px solid', borderColor: renovationType === v ? '#F5E642' : '#1a2d4a', backgroundColor: renovationType === v ? '#F5E642' : '#1a2d4a', color: renovationType === v ? '#0A1628' : '#cbd5e1', fontWeight: 600, cursor: 'pointer', fontSize: 12 }}>
                   {l}
                 </button>
               ))}
@@ -134,7 +134,7 @@ export default function DFWAsbestosLeadGuide() {
           </div>
 
           <button onClick={() => setShowResult(true)} disabled={!builtYear}
-            style={{ width: '100%', backgroundColor: builtYear ? '#F5E642′ : '#334155', color: builtYear ? '#0A1628' : '#64748b', border: ’none', borderRadius: 8, padding: '12px 0', fontWeight: 700, fontSize: 15, cursor: builtYear ? 'pointer' : 'not-allowed' }}>
+            style={{ width: '100%', backgroundColor: builtYear ? '#F5E642' : '#334155', color: builtYear ? '#0A1628' : '#64748b', border: 'none', borderRadius: 8, padding: '12px 0', fontWeight: 700, fontSize: 15, cursor: builtYear ? 'pointer' : 'not-allowed' }}>
             {builtYear ? 'Check My Risk Level →' : 'Enter your home\’s build year above'}
           </button>
 
@@ -143,10 +143,10 @@ export default function DFWAsbestosLeadGuide() {
               <div style={{ marginBottom: 16 }}>
                 <div style={{ fontWeight: 700, color: '#e2e8f0', marginBottom: 8, fontSize: 16 }}>Risk Profile for {builtYear} Home:</div>
                 <div style={{ display: 'flex', gap: 10, flexWrap: 'wrap', marginBottom: 12 }}>
-                  <span style={{ backgroundColor: hasLeadRisk ? '#f59e0b20′ : '#22c55e20', color: hasLeadRisk ? '#f59e0b' : '#22c55e', padding: '4px 12px', borderRadius: 20, fontSize: 13, fontWeight: 600 }}>
+                  <span style={{ backgroundColor: hasLeadRisk ? '#f59e0b20' : '#22c55e20', color: hasLeadRisk ? '#f59e0b' : '#22c55e', padding: '4px 12px', borderRadius: 20, fontSize: 13, fontWeight: 600 }}>
                     {hasLeadRisk ? '⚠️ Lead Paint Risk' : '✅ Lead: Low Risk'}
                   </span>
-                  <span style={{ backgroundColor: hasAsbestosRisk ? '#ef444420′ : '#22c55e20', color: hasAsbestosRisk ? '#ef4444' : '#22c55e', padding: '4px 12px', borderRadius: 20, fontSize: 13, fontWeight: 600 }}>
+                  <span style={{ backgroundColor: hasAsbestosRisk ? '#ef444420' : '#22c55e20', color: hasAsbestosRisk ? '#ef4444' : '#22c55e', padding: '4px 12px', borderRadius: 20, fontSize: 13, fontWeight: 600 }}>
                     {hasAsbestosRisk ? '☣️ Asbestos Risk' : '✅ Asbestos: Low Risk'}
                   </span>
                   {riskInfo.permit && <span style={{ backgroundColor: '#8b5cf620', color: '#a78bfa', padding: '4px 12px', borderRadius: 20, fontSize: 13, fontWeight: 600 }}>📋 Permit Likely Required</span>}
@@ -158,12 +158,12 @@ export default function DFWAsbestosLeadGuide() {
                   <div style={{ marginBottom: 12 }}>
                     <div style={{ color: '#F5E642', fontWeight: 600, marginBottom: 6 }}>Materials to Check ({renovationType} renovation):</div>
                     {[...(hasAsbestosRisk ? riskInfo.asbestos : []), ...(hasLeadRisk ? riskInfo.lead : [])].map((item, i) => (
-                      <div key={i} style={{ color: '#94a3b8', fontSize: 13, padding: '4px 0′ }}>• {item}</div>
+                      <div key={i} style={{ color: '#94a3b8', fontSize: 13, padding: '4px 0' }}>• {item}</div>
                     ))}
                   </div>
-                  <div style={{ color: '#94a3b8', fontSize: 13, marginBottom: 8 }}>🧪 <strong style={{ color: '#e2e8f0′ }}>Testing:</strong> {riskInfo.testing}</div>
-                  <div style={{ color: '#94a3b8', fontSize: 13, marginBottom: 8 }}>💰 <strong style={{ color: '#e2e8f0′ }}>Test Cost:</strong> {getTestCost()}</div>
-                  <div style={{ color: '#94a3b8', fontSize: 13 }}>🔨 <strong style={{ color: '#e2e8f0′ }}>Abatement if Positive:</strong> {getAbatementCost()}</div>
+                  <div style={{ color: '#94a3b8', fontSize: 13, marginBottom: 8 }}>🧪 <strong style={{ color: '#e2e8f0' }}>Testing:</strong> {riskInfo.testing}</div>
+                  <div style={{ color: '#94a3b8', fontSize: 13, marginBottom: 8 }}>💰 <strong style={{ color: '#e2e8f0' }}>Test Cost:</strong> {getTestCost()}</div>
+                  <div style={{ color: '#94a3b8', fontSize: 13 }}>🔨 <strong style={{ color: '#e2e8f0' }}>Abatement if Positive:</strong> {getAbatementCost()}</div>
                 </>
               )}
 

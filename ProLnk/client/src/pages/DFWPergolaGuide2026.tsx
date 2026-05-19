@@ -31,17 +31,17 @@ export default function DFWPergolaGuide2026() {
         </div>
 
         <div style={{ background: '#F5E64220', border: '1px solid #F5E642', borderRadius: '8px', padding: '16px', marginBottom: '24px' }}>
-          <p style={{ margin: 0, color: '#F5E642′ }}>⚡ DFW Key Fact: Louvered aluminum pergolas handle spring storms and summer UV better than any other material — and require zero maintenance.</p>
+          <p style={{ margin: 0, color: '#F5E642' }}>⚡ DFW Key Fact: Louvered aluminum pergolas handle spring storms and summer UV better than any other material — and require zero maintenance.</p>
         </div>
 
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: '16px', marginBottom: '28px' }}>
           {materials.map(m => (
-            <div key={m.name} style={{ background: '#111d30', borderRadius: '8px', padding: '16px', border: '1px solid #1e3050′ }}>
+            <div key={m.name} style={{ background: '#111d30', borderRadius: '8px', padding: '16px', border: '1px solid #1e3050' }}>
               <div style={{ fontSize: '28px', marginBottom: '8px' }}>{m.icon}</div>
               <div style={{ fontWeight: 700, color: '#F5E642', marginBottom: '6px' }}>{m.name}</div>
               <div style={{ fontSize: '0.8rem', color: '#8899aa', marginBottom: '4px' }}>🔧 {m.maint}</div>
               <div style={{ fontSize: '0.8rem', color: '#8899aa', marginBottom: '4px' }}>⏱️ {m.life}</div>
-              <div style={{ fontSize: '0.8rem', color: '#F5E642′ }}>🌞 {m.dfwNote}</div>
+              <div style={{ fontSize: '0.8rem', color: '#F5E642' }}>🌞 {m.dfwNote}</div>
             </div>
           ))}
         </div>
@@ -66,7 +66,7 @@ export default function DFWPergolaGuide2026() {
               </select>
             </div>
           </div>
-          <div style={{ background: '#0A1628', borderRadius: '8px', padding: '16px', border: '1px solid #F5E642′ }}>
+          <div style={{ background: '#0A1628', borderRadius: '8px', padding: '16px', border: '1px solid #F5E642' }}>
             <div style={{ color: '#F5E642', fontWeight: 700, fontSize: '1.1rem', marginBottom: '6px' }}>Recommended: {guide.rec}</div>
             <div style={{ color: '#8899aa', fontSize: '0.85rem', marginBottom: '4px' }}>Estimated cost: {guide.cost}</div>
             <div style={{ color: '#ccc', fontSize: '0.9rem' }}>{guide.note}</div>

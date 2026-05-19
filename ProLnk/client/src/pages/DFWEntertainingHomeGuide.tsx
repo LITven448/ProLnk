@@ -41,12 +41,12 @@ export default function DFWEntertainingHomeGuide() {
         <p style={{ color: '#94a3b8', marginBottom: 32 }}>DFW has one of the strongest entertaining cultures in the country. 9 months of outdoor weather + large homes = the perfect setup. These upgrades pay back.</p>
 
         <div style={{ background: '#1e293b', borderRadius: 10, padding: '16px 20px', marginBottom: 32, display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: 16, textAlign: 'center' }}>
-          <div><div style={{ fontSize: 24, marginBottom: 4 }}>🌞</div><div style={{ fontWeight: 700 }}>9 Months</div><div style={{ fontSize: 12, color: '#94a3b8′ }}>Outdoor season in DFW</div></div>
-          <div><div style={{ fontSize: 24, marginBottom: 4 }}>📈</div><div style={{ fontWeight: 700 }}>8% Premium</div><div style={{ fontSize: 12, color: '#94a3b8′ }}>For indoor-outdoor flow homes</div></div>
-          <div><div style={{ fontSize: 24, marginBottom: 4 }}>🏠</div><div style={{ fontWeight: 700 }}>2,500+ sqft</div><div style={{ fontSize: 12, color: '#94a3b8′ }}>Avg DFW home size</div></div>
+          <div><div style={{ fontSize: 24, marginBottom: 4 }}>🌞</div><div style={{ fontWeight: 700 }}>9 Months</div><div style={{ fontSize: 12, color: '#94a3b8' }}>Outdoor season in DFW</div></div>
+          <div><div style={{ fontSize: 24, marginBottom: 4 }}>📈</div><div style={{ fontWeight: 700 }}>8% Premium</div><div style={{ fontSize: 12, color: '#94a3b8' }}>For indoor-outdoor flow homes</div></div>
+          <div><div style={{ fontSize: 24, marginBottom: 4 }}>🏠</div><div style={{ fontWeight: 700 }}>2,500+ sqft</div><div style={{ fontSize: 12, color: '#94a3b8' }}>Avg DFW home size</div></div>
         </div>
 
-        <h2 style={{ fontSize: 20, fontWeight: 700, marginBottom: 16, color: '#F5E642′ }}>🎯 Top Entertaining Upgrades (DFW)</h2>
+        <h2 style={{ fontSize: 20, fontWeight: 700, marginBottom: 16, color: '#F5E642' }}>🎯 Top Entertaining Upgrades (DFW)</h2>
         <div style={{ display: 'grid', gap: 10, marginBottom: 36 }}>
           {upgrades.map(u => (
             <div key={u.name} style={{ background: '#1e293b', borderRadius: 10, padding: '14px 18px', border: '1px solid #334155', display: 'flex', alignItems: 'flex-start', gap: 14 }}>
@@ -57,21 +57,21 @@ export default function DFWEntertainingHomeGuide() {
                   <span style={{ color: '#F5E642', fontWeight: 600, fontSize: 13 }}>{u.cost}</span>
                 </div>
                 <div style={{ fontSize: 13, color: '#94a3b8', marginBottom: 4 }}>{u.impact}</div>
-                <div style={{ fontSize: 12, color: '#4ade80′ }}>ROI at resale: {u.roi}</div>
+                <div style={{ fontSize: 12, color: '#4ade80' }}>ROI at resale: {u.roi}</div>
               </div>
             </div>
           ))}
         </div>
 
-        <h2 style={{ fontSize: 20, fontWeight: 700, marginBottom: 16, color: '#F5E642′ }}>🧮 Entertaining Investment Calculator</h2>
+        <h2 style={{ fontSize: 20, fontWeight: 700, marginBottom: 16, color: '#F5E642' }}>🧮 Entertaining Investment Calculator</h2>
         <div style={{ background: '#1e293b', borderRadius: 12, padding: '24px', marginBottom: 24 }}>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16, marginBottom: 16 }}>
             <div>
-              <label style={{ display: 'block', marginBottom: 6, fontSize: 14, color: '#94a3b8′ }}>Home Size (sqft)</label>
+              <label style={{ display: 'block', marginBottom: 6, fontSize: 14, color: '#94a3b8' }}>Home Size (sqft)</label>
               <input type="number" value={homeSqft} onChange={e => setHomeSqft(e.target.value)} style={{ width: '100%', padding: '10px 14px', background: '#0A1628', border: '1px solid #334155', borderRadius: 8, color: '#fff', fontSize: 15, boxSizing: 'border-box' }} />
             </div>
             <div>
-              <label style={{ display: 'block', marginBottom: 6, fontSize: 14, color: '#94a3b8′ }}>Entertaining Frequency</label>
+              <label style={{ display: 'block', marginBottom: 6, fontSize: 14, color: '#94a3b8' }}>Entertaining Frequency</label>
               <select value={frequency} onChange={e => setFrequency(e.target.value)} style={{ width: '100%', padding: '10px 14px', background: '#0A1628', border: '1px solid #334155', borderRadius: 8, color: '#fff', fontSize: 15 }}>
                 <option value="weekly">Weekly (active host)</option>
                 <option value="monthly">Monthly (regular)</option>
@@ -80,7 +80,7 @@ export default function DFWEntertainingHomeGuide() {
             </div>
           </div>
           <div style={{ marginBottom: 20 }}>
-            <label style={{ display: 'block', marginBottom: 6, fontSize: 14, color: '#94a3b8′ }}>Entertaining Style</label>
+            <label style={{ display: 'block', marginBottom: 6, fontSize: 14, color: '#94a3b8' }}>Entertaining Style</label>
             <select value={style} onChange={e => setStyle(e.target.value)} style={{ width: '100%', padding: '10px 14px', background: '#0A1628', border: '1px solid #334155', borderRadius: 8, color: '#fff', fontSize: 15 }}>
               <option value="indoor-outdoor">Both (maximize DFW season)</option>
               <option value="outdoor">Outdoor focused</option>
@@ -93,11 +93,11 @@ export default function DFWEntertainingHomeGuide() {
         </div>
 
         {result && (
-          <div style={{ background: '#1e293b', borderRadius: 12, padding: '24px', border: '1px solid #F5E642′ }}>
+          <div style={{ background: '#1e293b', borderRadius: 12, padding: '24px', border: '1px solid #F5E642' }}>
             <h3 style={{ color: '#F5E642', marginBottom: 16, fontWeight: 700 }}>🎉 Your DFW Entertaining Plan</h3>
             <div style={{ marginBottom: 16 }}>{result.topUpgrades.map(u => (
               <div key={u.name} style={{ padding: '10px 0', borderBottom: '1px solid #334155', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                <span>{u.icon} {u.name}</span><span style={{ color: '#F5E642′ }}>{u.cost}</span>
+                <span>{u.icon} {u.name}</span><span style={{ color: '#F5E642' }}>{u.cost}</span>
               </div>
             ))}</div>
             <div style={{ background: '#0A1628', borderRadius: 8, padding: '12px 16px', marginBottom: 12 }}>

@@ -66,11 +66,11 @@ export default function DFW5050RuleGuide() {
             </div>
             <div>
               <label style={{ fontSize: 13, color: '#64748B', fontWeight: 600, display: 'block', marginBottom: 4 }}>Current Age (years)</label>
-              <input type="number" value={age} onChange={e => setAge(e.target.value)} placeholder="e.g. 10″ style={{ width: '100%', padding: '10px 12px', borderRadius: 8, border: '1px solid #CBD5E1', fontSize: 14, boxSizing: 'border-box' }} />
+              <input type="number" value={age} onChange={e => setAge(e.target.value)} placeholder="e.g. 10" style={{ width: '100%', padding: '10px 12px', borderRadius: 8, border: '1px solid #CBD5E1', fontSize: 14, boxSizing: 'border-box' }} />
             </div>
             <div>
               <label style={{ fontSize: 13, color: '#64748B', fontWeight: 600, display: 'block', marginBottom: 4 }}>Repair Quote ($)</label>
-              <input type="number" value={repairCost} onChange={e => setRepairCost(e.target.value)} placeholder="e.g. 2500″ style={{ width: '100%', padding: '10px 12px', borderRadius: 8, border: '1px solid #CBD5E1', fontSize: 14, boxSizing: 'border-box' }} />
+              <input type="number" value={repairCost} onChange={e => setRepairCost(e.target.value)} placeholder="e.g. 2500" style={{ width: '100%', padding: '10px 12px', borderRadius: 8, border: '1px solid #CBD5E1', fontSize: 14, boxSizing: 'border-box' }} />
             </div>
             <div>
               <label style={{ fontSize: 13, color: '#64748B', fontWeight: 600, display: 'block', marginBottom: 4 }}>Replacement Cost ($) <span style={{ color: '#94A3B8', fontWeight: 400 }}>(leave blank to use DFW avg: ${SYSTEMS[system].avgCost.toLocaleString()})</span></label>
@@ -81,12 +81,12 @@ export default function DFW5050RuleGuide() {
         </div>
 
         {result && (
-          <div style={{ background: result.replace ? '#FEF2F2′ : '#F0FDF4', border: `2px solid ${result.replace ? '#FECACA' : '#BBF7D0'}`, borderRadius: 12, padding: 24 }}>
+          <div style={{ background: result.replace ? '#FEF2F2' : '#F0FDF4', border: `2px solid ${result.replace ? '#FECACA' : '#BBF7D0'}`, borderRadius: 12, padding: 24 }}>
             <div style={{ fontSize: 28, marginBottom: 8 }}>{result.replace ? '🔄' : '🔨'}</div>
             <h3 style={{ color: '#0A1628', fontSize: 18, fontWeight: 700, margin: '0 0 8px' }}>{result.replace ? 'Replace It' : 'Repair It'}</h3>
             <p style={{ color: '#475569', fontSize: 14, margin: 0, lineHeight: 1.7 }}>{result.msg}</p>
             <div style={{ marginTop: 14, background: '#fff', borderRadius: 8, padding: '10px 14px', fontSize: 13, color: '#64748B' }}>
-              Repair-to-replacement ratio: <strong style={{ color: '#0A1628′ }}>{result.ratio.toFixed(1)}%</strong> — threshold is 50%
+              Repair-to-replacement ratio: <strong style={{ color: '#0A1628' }}>{result.ratio.toFixed(1)}%</strong> — threshold is 50%
             </div>
           </div>
         )}

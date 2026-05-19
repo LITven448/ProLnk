@@ -54,7 +54,7 @@ export default function DFWSummerProofingGuide2026() {
         <div style={{ background: '#132035', borderRadius: 10, padding: 24 }}>
           <div style={{ color: '#F5E642', fontWeight: 700, marginBottom: 12 }}>☀️ DFW Summer Key Facts</div>
           {['AC tune-up in March costs ~40% less than May/June emergency calls','ERCOT peak hours (3-7pm) have highest grid stress — pre-cool to 74°F by 2pm','Cedar season Feb-Mar demands MERV-11+ to protect AC coil from debris','Solar screens on west windows cut cooling load by 25-30%','Foundation watering during summer prevents $15K+ slab repairs'].map((f,i) => (
-            <div key={i} style={{ display: 'flex', gap: 10, marginBottom: 8 }}><span style={{ color: '#F5E642′ }}>▸</span><span style={{ color: '#cbd5e1', fontSize: 14 }}>{f}</span></div>
+            <div key={i} style={{ display: 'flex', gap: 10, marginBottom: 8 }}><span style={{ color: '#F5E642' }}>▸</span><span style={{ color: '#cbd5e1', fontSize: 14 }}>{f}</span></div>
           ))}
         </div>
       </div>

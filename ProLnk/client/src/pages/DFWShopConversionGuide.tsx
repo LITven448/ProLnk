@@ -22,7 +22,7 @@ const plans: Record<string, Record<string, ConversionPlan>> = {
       electrical: 'Upgrade to 200A sub-panel from main. Add 240V circuits for table saw, dust collector, and compressor. Multiple 20A 120V circuits for tools. DFW code requires permit.',
       cooling: 'Mini-split essential — DFW garages hit 120°F+ in summer. 1.5–2-ton mini-split for 2-car garage. Run when working, not 24/7. Budget $3,500–$6,000 installed.',
       insulation: 'R-19 in walls, R-38 in ceiling minimum for DFW. Spray foam on ceiling edges best. Insulated garage door upgrade ($800–$1,500) dramatically helps.',
-      dust: 'CRITICAL in DFW heat: sawdust near hot surfaces is a fire risk. Dedicated dust collector + 4″ ducted system. Never run dust collector in a hot closed shop — exhaust outside.',
+      dust: 'CRITICAL in DFW heat: sawdust near hot surfaces is a fire risk. Dedicated dust collector + 4" ducted system. Never run dust collector in a hot closed shop — exhaust outside.',
       flooring: 'Epoxy-coated concrete for woodworking — easy cleanup. Anti-fatigue mats at tool stations. Avoid rubber interlocking — sawdust traps underneath.',
       permits: 'DFW sub-panel requires electrical permit. Structural changes require building permit. Mini-split typically inspection required.',
       cost: '$18,000–$35,000 fully equipped (electrical, mini-split, insulation, dust collection, lighting)',
@@ -113,7 +113,7 @@ export default function DFWShopConversionGuide() {
           ))}
 
           {result && (
-            <div style={{ background: '#0A1628', borderRadius: 10, padding: 20, marginTop: 8, border: '2px solid #F5E642′ }}>
+            <div style={{ background: '#0A1628', borderRadius: 10, padding: 20, marginTop: 8, border: '2px solid #F5E642' }}>
               {[
                 { label: '📋 Conversion Scope', value: result.scope },
                 { label: '⚡ Electrical Requirements', value: result.electrical },

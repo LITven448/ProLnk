@@ -31,16 +31,16 @@ export default function DFWHVACDFWClimateAdapt2026() {
   const [selected, setSelected] = useState(0);
 
   return (
-    <div style={{ background: "#0A1628″, minHeight: "100vh", padding: "40px 24px", fontFamily: "system-ui, sans-serif", color: "#fff" }}>
+    <div style={{ background: "#0A1628", minHeight: "100vh", padding: "40px 24px", fontFamily: "system-ui, sans-serif", color: "#fff" }}>
       <div style={{ maxWidth: 860, margin: "0 auto" }}>
         <div style={{ textAlign: "center", marginBottom: 40 }}>
           <div style={{ fontSize: 48 }}>🌡️</div>
-          <h1 style={{ fontSize: 32, fontWeight: 800, color: "#F5E642″, margin: "12px 0 8px" }}>DFW HVAC Climate Adaptation Guide 2026</h1>
-          <p style={{ color: "#94a3b8″, fontSize: 16 }}>How DFW HVAC has evolved to meet an increasingly demanding climate</p>
+          <h1 style={{ fontSize: 32, fontWeight: 800, color: "#F5E642", margin: "12px 0 8px" }}>DFW HVAC Climate Adaptation Guide 2026</h1>
+          <p style={{ color: "#94a3b8", fontSize: 16 }}>How DFW HVAC has evolved to meet an increasingly demanding climate</p>
         </div>
 
-        <div style={{ background: "#F5E642″, borderRadius: 12, padding: "20px 24px", marginBottom: 36, color: "#0A1628" }}>
-          <strong>The Reality:</strong> DFW's climate is changing faster than most US metros. Longer cooling seasons, more extreme heat days, and grid strain events are driving rapid HVAC technology adoption — and a surge in system upgrades. ProLnk’s timing is perfect.
+        <div style={{ background: "#F5E642", borderRadius: 12, padding: "20px 24px", marginBottom: 36, color: "#0A1628" }}>
+          <strong>The Reality:</strong> DFW's climate is changing faster than most US metros. Longer cooling seasons, more extreme heat days, and grid strain events are driving rapid HVAC technology adoption — and a surge in system upgrades. ProLnk's timing is perfect.
         </div>
 
         <div style={{ display: "flex", gap: 8, flexWrap: "wrap", marginBottom: 28 }}>
@@ -49,8 +49,8 @@ export default function DFWHVACDFWClimateAdapt2026() {
               key={i}
               onClick={() => setSelected(i)}
               style={{
-                background: selected === i ? "#F5E642″ : "#1e2d45",
-                color: selected === i ? "#0A1628″ : "#94a3b8",
+                background: selected === i ? "#F5E642" : "#1e2d45",
+                color: selected === i ? "#0A1628" : "#94a3b8",
                 border: "none", borderRadius: 8, padding: "8px 14px",
                 cursor: "pointer", fontWeight: 600, fontSize: 13,
               }}
@@ -60,19 +60,19 @@ export default function DFWHVACDFWClimateAdapt2026() {
           ))}
         </div>
 
-        <div style={{ background: "#1e2d45″, borderRadius: 16, padding: 32 }}>
+        <div style={{ background: "#1e2d45", borderRadius: 16, padding: 32 }}>
           <div style={{ fontSize: 40, marginBottom: 12 }}>{concerns[selected].icon}</div>
-          <h2 style={{ fontSize: 22, fontWeight: 700, color: "#F5E642″, margin: "0 0 16px" }}>{concerns[selected].label}</h2>
-          <p style={{ color: "#cbd5e1″, lineHeight: 1.7, fontSize: 15, marginBottom: 20 }}>{concerns[selected].detail}</p>
-          <div style={{ background: "#0A1628″, borderRadius: 8, padding: "14px 18px", borderLeft: "4px solid #F5E642" }}>
-            <span style={{ color: "#F5E642″, fontWeight: 600, fontSize: 14 }}>🔧 Adaptation: </span>
-            <span style={{ color: "#cbd5e1″, fontSize: 14 }}>{concerns[selected].adapt}</span>
+          <h2 style={{ fontSize: 22, fontWeight: 700, color: "#F5E642", margin: "0 0 16px" }}>{concerns[selected].label}</h2>
+          <p style={{ color: "#cbd5e1", lineHeight: 1.7, fontSize: 15, marginBottom: 20 }}>{concerns[selected].detail}</p>
+          <div style={{ background: "#0A1628", borderRadius: 8, padding: "14px 18px", borderLeft: "4px solid #F5E642" }}>
+            <span style={{ color: "#F5E642", fontWeight: 600, fontSize: 14 }}>🔧 Adaptation: </span>
+            <span style={{ color: "#cbd5e1", fontSize: 14 }}>{concerns[selected].adapt}</span>
           </div>
         </div>
 
-        <div style={{ marginTop: 32, background: "#1e2d45″, borderRadius: 12, padding: 24 }}>
-          <h3 style={{ color: "#F5E642″, fontWeight: 700, marginTop: 0 }}>🏆 ProLnk's Climate Advantage</h3>
-          <p style={{ color: "#94a3b8″, lineHeight: 1.6, margin: 0 }}>
+        <div style={{ marginTop: 32, background: "#1e2d45", borderRadius: 12, padding: 24 }}>
+          <h3 style={{ color: "#F5E642", fontWeight: 700, marginTop: 0 }}>🏆 ProLnk's Climate Advantage</h3>
+          <p style={{ color: "#94a3b8", lineHeight: 1.6, margin: 0 }}>
             Climate adaptation is driving a DFW HVAC upgrade cycle unlike anything since central air first arrived in the 1970s. ProLnk connects homeowners with the certified specialists who understand DFW-specific climate challenges — variable-speed, dehumidification, demand-response, and grid-resilient systems.
           </p>
         </div>

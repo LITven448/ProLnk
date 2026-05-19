@@ -36,7 +36,7 @@ export default function DFWHouseFirePrepGuide() {
         <div style={{ background: '#1e3a5f', borderRadius: 12, padding: 24, marginBottom: 24 }}>
           <h2 style={{ color: '#F5E642', fontSize: 20, marginBottom: 16 }}>🚨 Smoke Detector Placement (Exact Locations)</h2>
           {[['Every bedroom', 'Inside each bedroom — smoke often starts at night when you\’re asleep'], ['Outside sleeping areas', 'In hallway immediately outside every bedroom door'], ['Every floor', 'Including basement and attic if there\’s a living space or HVAC equipment'], ['Kitchen area', '10 feet from stove — closer causes nuisance alarms from cooking steam'], ['Garage', 'If attached, CO and smoke detector inside garage near door to home'], ['Interconnected', 'When one alarm sounds, all sound — required for new construction in Texas']].map(([loc, desc]) => (
-            <div key={loc} style={{ display: 'flex', gap: 14, padding: '9px 0', borderBottom: '1px solid #0A1628′ }}>
+            <div key={loc} style={{ display: 'flex', gap: 14, padding: '9px 0', borderBottom: '1px solid #0A1628' }}>
               <span style={{ color: '#F5E642', fontWeight: 700, minWidth: 160, fontSize: 13 }}>{loc}</span>
               <span style={{ color: '#94a3b8', fontSize: 13 }}>{desc}</span>
             </div>
@@ -46,7 +46,7 @@ export default function DFWHouseFirePrepGuide() {
         <div style={{ background: '#1e3a5f', borderRadius: 12, padding: 24, marginBottom: 24 }}>
           <h2 style={{ color: '#F5E642', fontSize: 20, marginBottom: 16 }}>🧯 Fire Extinguisher by Room</h2>
           {[['Kitchen', 'Class K (wet chemical) for grease fires OR Class ABC rated for general use — mount within 30 feet of stove, NOT above it'], ['Garage', 'Class ABC — covers wood, fuel, and electrical fires from car, tools, and stored items'], ['Master bedroom', 'Class ABC — keep one accessible for nighttime fires when escape may be blocked'], ['Workshop / Hobby room', 'Class ABC — power tools and flammable liquids present'], ['Fireplace room', 'Class ABC nearby — chimney sparks can ignite area rugs and furniture']].map(([room, note]) => (
-            <div key={room} style={{ display: 'flex', gap: 14, padding: '9px 0', borderBottom: '1px solid #0A1628′ }}>
+            <div key={room} style={{ display: 'flex', gap: 14, padding: '9px 0', borderBottom: '1px solid #0A1628' }}>
               <span style={{ color: '#F5E642', fontWeight: 700, minWidth: 140, fontSize: 13 }}>{room}</span>
               <span style={{ color: '#94a3b8', fontSize: 13 }}>{note}</span>
             </div>
@@ -56,7 +56,7 @@ export default function DFWHouseFirePrepGuide() {
         <div style={{ background: '#1e3a5f', borderRadius: 12, padding: 24, marginBottom: 24 }}>
           <h2 style={{ color: '#F5E642', fontSize: 20, marginBottom: 20 }}>🔍 Fire Risk & Escape Plan Assessment</h2>
           <div style={{ marginBottom: 16 }}>
-            <label style={{ display: 'block', marginBottom: 8, color: '#94a3b8′ }}>Lot Location</label>
+            <label style={{ display: 'block', marginBottom: 8, color: '#94a3b8' }}>Lot Location</label>
             <select value={location} onChange={e => setLocation(e.target.value)} style={{ width: '100%', padding: 12, borderRadius: 8, background: '#0A1628', color: '#e2e8f0', border: '1px solid #334155', fontSize: 15 }}>
               <option value="">Select location...</option>
               <option value="urban-infill">Urban / Infill (inside LBJ/635 loop area)</option>
@@ -65,7 +65,7 @@ export default function DFWHouseFirePrepGuide() {
             </select>
           </div>
           <div style={{ marginBottom: 20 }}>
-            <label style={{ display: 'block', marginBottom: 8, color: '#94a3b8′ }}>Home Type</label>
+            <label style={{ display: 'block', marginBottom: 8, color: '#94a3b8' }}>Home Type</label>
             <select value={homeType} onChange={e => setHomeType(e.target.value)} style={{ width: '100%', padding: 12, borderRadius: 8, background: '#0A1628', color: '#e2e8f0', border: '1px solid #334155', fontSize: 15 }}>
               <option value="">Select home type...</option>
               <option value="attached">Attached / Townhome (shares wall with neighbor)</option>

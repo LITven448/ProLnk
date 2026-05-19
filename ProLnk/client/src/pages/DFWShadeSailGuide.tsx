@@ -3,9 +3,9 @@ import { useState } from 'react';
 type SailPlan = { config: string; mounting: string; cost: string; uv: string; tip: string; anchoring: string };
 
 const sailPlans: Record<string, SailPlan> = {
-  'small-low': { config: '1 triangle sail (12×12 ft)', mounting: 'Wall-mount 2 corners + 1 steel post', cost: '$300–$600 installed', uv: '90–95% UV block (darker color)', tip: 'Fastest install option. Overlapping sails create full coverage.', anchoring: '4×4 steel post in concrete footing (24″ deep minimum for DFW wind load)' },
+  'small-low': { config: '1 triangle sail (12×12 ft)', mounting: 'Wall-mount 2 corners + 1 steel post', cost: '$300–$600 installed', uv: '90–95% UV block (darker color)', tip: 'Fastest install option. Overlapping sails create full coverage.', anchoring: '4×4 steel post in concrete footing (24" deep minimum for DFW wind load)' },
   'small-high': { config: '1 triangle sail (12×12 ft) — heavy-duty hardware', mounting: '3 steel posts or wall-mount all corners', cost: '$500–$1,000 installed', uv: '90–95% UV block', tip: 'In DFW wind zones, use turnbuckles for tensioning and remove sail during storm warnings.', anchoring: 'Heavy-gauge galvanized hardware rated for 80+ MPH wind loads' },
-  'medium-low': { config: '2 overlapping triangles or 1 rectangle (14×18 ft)', mounting: '3–4 steel posts or mixed wall/post', cost: '$700–$1,400 installed', uv: '90–95% UV block', tip: 'Rectangle sails cover more area with less hardware. Overlap triangles for flexible configurations.', anchoring: '4″ steel posts, minimum 30″ concrete footing per DFW soil conditions' },
+  'medium-low': { config: '2 overlapping triangles or 1 rectangle (14×18 ft)', mounting: '3–4 steel posts or mixed wall/post', cost: '$700–$1,400 installed', uv: '90–95% UV block', tip: 'Rectangle sails cover more area with less hardware. Overlap triangles for flexible configurations.', anchoring: '4" steel posts, minimum 30" concrete footing per DFW soil conditions' },
   'medium-high': { config: '2 overlapping triangles + heavy tensioning system', mounting: '4 steel posts (engineered for DFW wind)', cost: '$1,200–$2,200 installed', uv: '95%+ UV block (HDPE fabric)', tip: 'Get post footings engineered if on expansive clay — DFW soil movement can loosen footings over time.', anchoring: 'Engineer-specified footings for DFW clay expansion. Critical.' },
   'large-low': { config: '3+ triangles or 2 rectangles — modular system', mounting: '5–8 posts or structure attachment points', cost: '$1,500–$3,000 installed', uv: '90–95% UV block', tip: 'Modular design lets you adjust coverage seasonally. Remove panels you don\’t need in winter.', anchoring: 'Professional layout required for multi-sail post placement to maintain equal tension' },
   'large-high': { config: 'Full engineered shade system — multiple sails with shared posts', mounting: 'Structural engineering required', cost: '$3,000–$7,000 installed', uv: '95%+ UV block', tip: 'At this scale, consider a permanent pergola with shade fabric — often similar cost with more structure.', anchoring: 'Engineered post system with DFW wind load calculations (90 MPH design load)' },
@@ -27,9 +27,9 @@ export default function DFWShadeSailGuide() {
         </div>
         <h1 style={{ fontSize: 32, fontWeight: 800, marginBottom: 8 }}>Shade Sails for DFW Outdoor Spaces</h1>
         <p style={{ color: '#94A3B8', marginBottom: 8 }}>
-          Faster and cheaper than a pergola, shade sails give you flexible coverage. But in DFW's severe storm environment, proper anchoring isn’t optional.
+          Faster and cheaper than a pergola, shade sails give you flexible coverage. But in DFW's severe storm environment, proper anchoring isn't optional.
         </p>
-        <div style={{ background: '#7F1D1D', borderRadius: 8, padding: '0.75rem 1rem', marginBottom: 28, border: '1px solid #EF4444′ }}>
+        <div style={{ background: '#7F1D1D', borderRadius: 8, padding: '0.75rem 1rem', marginBottom: 28, border: '1px solid #EF4444' }}>
           <span style={{ color: '#FCA5A5', fontWeight: 700 }}>⚠️ DFW Wind Warning: </span>
           <span style={{ color: '#FCA5A5', fontSize: 14 }}>Unsecured or improperly anchored shade sails become projectiles in DFW thunderstorms. Proper post depth and hardware is critical.</span>
         </div>
@@ -50,11 +50,11 @@ export default function DFWShadeSailGuide() {
         </div>
 
         <div style={{ background: '#1E2D45', borderRadius: 12, padding: '1.5rem', marginBottom: 24 }}>
-          <h2 style={{ fontSize: 18, fontWeight: 700, marginBottom: 12, color: '#F5E642′ }}>🔩 DFW Anchoring Requirements</h2>
+          <h2 style={{ fontSize: 18, fontWeight: 700, marginBottom: 12, color: '#F5E642' }}>🔩 DFW Anchoring Requirements</h2>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16 }}>
             <div>
               <div style={{ fontWeight: 700, marginBottom: 8 }}>Post Mounting</div>
-              {['Minimum 24″ concrete footing (30″ preferred)', 'DFW clay expands — use bell-bottom footing', '4×4 or 4×6 steel post (not wood)', 'Post must extend 8–10 ft above ground', 'Galvanized or powder-coated for weather'].map(t => <div key={t} style={{ color: '#94A3B8', fontSize: 13, marginBottom: 4 }}>• {t}</div>)}
+              {['Minimum 24" concrete footing (30" preferred)', 'DFW clay expands — use bell-bottom footing', '4×4 or 4×6 steel post (not wood)', 'Post must extend 8–10 ft above ground', 'Galvanized or powder-coated for weather'].map(t => <div key={t} style={{ color: '#94A3B8', fontSize: 13, marginBottom: 4 }}>• {t}</div>)}
             </div>
             <div>
               <div style={{ fontWeight: 700, marginBottom: 8 }}>Wall Mounting</div>
@@ -64,7 +64,7 @@ export default function DFWShadeSailGuide() {
         </div>
 
         <div style={{ background: '#1E2D45', borderRadius: 12, padding: '1.5rem', marginBottom: 24 }}>
-          <h2 style={{ fontSize: 18, fontWeight: 700, marginBottom: 16, color: '#F5E642′ }}>🔍 Shade Sail Planner</h2>
+          <h2 style={{ fontSize: 18, fontWeight: 700, marginBottom: 16, color: '#F5E642' }}>🔍 Shade Sail Planner</h2>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16, marginBottom: 16 }}>
             <div>
               <label style={{ fontSize: 13, color: '#94A3B8', display: 'block', marginBottom: 6 }}>Space Dimensions</label>
@@ -87,13 +87,13 @@ export default function DFWShadeSailGuide() {
           </button>
           {showPlan && plan && (
             <div style={{ marginTop: 20 }}>
-              <div style={{ background: '#0A1628', borderRadius: 8, padding: '1rem', marginBottom: 12, borderLeft: '4px solid #F5E642′ }}>
+              <div style={{ background: '#0A1628', borderRadius: 8, padding: '1rem', marginBottom: 12, borderLeft: '4px solid #F5E642' }}>
                 <div style={{ fontWeight: 700, color: '#F5E642', marginBottom: 4 }}>Config: {plan.config}</div>
                 <div style={{ color: '#94A3B8', fontSize: 13 }}>Mounting: {plan.mounting} · UV Block: {plan.uv} · Cost: {plan.cost}</div>
               </div>
               <div style={{ background: '#162032', borderRadius: 8, padding: '0.75rem 1rem', marginBottom: 8, fontSize: 14 }}>
                 <div style={{ fontWeight: 700, color: '#F5E642', marginBottom: 4 }}>⚠️ Anchoring Requirement</div>
-                <div style={{ color: '#94A3B8′ }}>{plan.anchoring}</div>
+                <div style={{ color: '#94A3B8' }}>{plan.anchoring}</div>
               </div>
               <div style={{ background: '#162032', borderRadius: 8, padding: '0.75rem 1rem', color: '#94A3B8', fontSize: 14 }}>💡 {plan.tip}</div>
             </div>

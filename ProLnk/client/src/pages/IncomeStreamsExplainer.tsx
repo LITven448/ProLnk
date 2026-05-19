@@ -2,18 +2,18 @@ import { DollarSign, Users, CreditCard, Target, Home, ArrowRight } from "lucide-
 import { Link } from "wouter";
 
 const D = {
-  bg: "#0A1628″,
-  surface: "#0F1D35″,
-  card: "#162035″,
+  bg: "#0A1628",
+  surface: "#0F1D35",
+  card: "#162035",
   border: "#1E2D4A",
   text: "#F0F4FF",
   muted: "#7B8BAA",
-  teal: "#00C2A8″,
+  teal: "#00C2A8",
   green: "#22C55E",
   amber: "#F59E0B",
-  blue: "#3B82F6″,
-  purple: "#A855F7″,
-  orange: "#FF6B35″,
+  blue: "#3B82F6",
+  purple: "#A855F7",
+  orange: "#FF6B35",
 };
 
 const STREAMS = [
@@ -26,7 +26,7 @@ const STREAMS = [
     description: "Earn 72% of ProLnk's commission on every job you refer to the platform.",
     example: "$8,400 job → $840 ProLnk fee →",
     result: "$605 to you",
-    calc: "72% of $840″,
+    calc: "72% of $840",
   },
   {
     num: 2,
@@ -103,7 +103,7 @@ export default function IncomeStreamsExplainer() {
       </div>
 
       {/* Stream Cards */}
-      <div style={{ maxWidth: 860, margin: "0 auto", padding: "48px 24px 0″ }}>
+      <div style={{ maxWidth: 860, margin: "0 auto", padding: "48px 24px 0" }}>
         <div style={{ display: "flex", flexDirection: "column", gap: 20 }}>
           {STREAMS.map((s) => {
             const Icon = s.icon;
@@ -169,7 +169,7 @@ export default function IncomeStreamsExplainer() {
           <Link href="/apply">
             <a style={{
               display: "inline-flex", alignItems: "center", gap: 10,
-              background: D.teal, color: "#000″,
+              background: D.teal, color: "#000",
               fontWeight: 700, fontSize: 17, padding: "16px 36px",
               borderRadius: 10, textDecoration: "none",
             }}>

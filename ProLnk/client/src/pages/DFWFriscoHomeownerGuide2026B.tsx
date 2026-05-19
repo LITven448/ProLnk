@@ -69,7 +69,7 @@ export default function DFWFriscoHomeownerGuide2026B() {
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8, marginBottom: 16 }}>
             {areas.map(a => (
               <button key={a} onClick={() => setSelected(a === selected ? null : a)}
-                style={{ padding: '8px 14px', borderRadius: 8, border: 'none', cursor: 'pointer', fontWeight: 600, fontSize: 13, background: selected === a ? '#F5E642′ : '#1e2f4a', color: selected === a ? '#0A1628' : '#fff' }}>
+                style={{ padding: '8px 14px', borderRadius: 8, border: 'none', cursor: 'pointer', fontWeight: 600, fontSize: 13, background: selected === a ? '#F5E642' : '#1e2f4a', color: selected === a ? '#0A1628' : '#fff' }}>
                 {a}
               </button>
             ))}

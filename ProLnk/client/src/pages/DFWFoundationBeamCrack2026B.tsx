@@ -2,9 +2,9 @@ import { useState } from 'react';
 
 const crackTypes = [
   { type: "Hairline (<1/16\")", severity: "Low", color: "#22c55e", action: "Monitor quarterly. Mark with pencil and date to track movement." },
-  { type: "Moderate (1/16\"-1/4\")", severity: "Medium", color: "#eab308″, action: "Structural evaluation recommended within 60 days. Check for ceiling cracks directly above." },
-  { type: "Wide (>1/4\")", severity: "High", color: "#ef4444″, action: "Urgent - load transfer issue likely. Get structural engineer evaluation before pier bids." },
-  { type: "Stair-step pattern", severity: "High", color: "#ef4444″, action: "Classic interior beam differential settlement. Multiple piers likely needed. Do not delay." },
+  { type: "Moderate (1/16\"-1/4\")", severity: "Medium", color: "#eab308", action: "Structural evaluation recommended within 60 days. Check for ceiling cracks directly above." },
+  { type: "Wide (>1/4\")", severity: "High", color: "#ef4444", action: "Urgent - load transfer issue likely. Get structural engineer evaluation before pier bids." },
+  { type: "Stair-step pattern", severity: "High", color: "#ef4444", action: "Classic interior beam differential settlement. Multiple piers likely needed. Do not delay." },
 ];
 
 const scenarios = [
@@ -30,40 +30,40 @@ export default function DFWFoundationBeamCrack2026B() {
   const [result, setResult] = useState("");
 
   return (
-    <div style={{ background: "#0A1628″, minHeight: "100vh", color: "#fff", fontFamily: "sans-serif", padding: "32px 24px" }}>
+    <div style={{ background: "#0A1628", minHeight: "100vh", color: "#fff", fontFamily: "sans-serif", padding: "32px 24px" }}>
       <div style={{ maxWidth: 720, margin: "0 auto" }}>
-        <div style={{ color: "#F5E642″, fontSize: 13, marginBottom: 8 }}>PROLNK - DFW FOUNDATION GUIDE 2026 (PART 2)</div>
+        <div style={{ color: "#F5E642", fontSize: 13, marginBottom: 8 }}>PROLNK - DFW FOUNDATION GUIDE 2026 (PART 2)</div>
         <h1 style={{ fontSize: 28, fontWeight: 700, marginBottom: 8 }}>🏚️ DFW Foundation Interior Beam Crack Guide 2026</h1>
-        <p style={{ color: "#94a3b8″, marginBottom: 32 }}>Interior grade beam cracks are often more serious than perimeter cracks. They run beneath load-bearing walls and carry the weight of your home's interior structure.</p>
+        <p style={{ color: "#94a3b8", marginBottom: 32 }}>Interior grade beam cracks are often more serious than perimeter cracks. They run beneath load-bearing walls and carry the weight of your home's interior structure.</p>
 
-        <div style={{ background: "#0F2040″, borderRadius: 12, padding: 20, marginBottom: 24 }}>
-          <h2 style={{ color: "#F5E642″, fontSize: 15, marginBottom: 10 }}>📐 What Are Interior Grade Beams?</h2>
-          <p style={{ color: "#94a3b8″, fontSize: 13, lineHeight: 1.7 }}>DFW post-tension and conventional slabs include interior grade beams - thickened concrete ribs that run beneath load-bearing interior walls. When these beams crack, the walls above can rack, causing ceiling cracks, sticking doors, and in severe cases, structural deflection. Interior pier work often requires tunneling or drilling through the slab - more invasive and expensive than perimeter work.</p>
+        <div style={{ background: "#0F2040", borderRadius: 12, padding: 20, marginBottom: 24 }}>
+          <h2 style={{ color: "#F5E642", fontSize: 15, marginBottom: 10 }}>📐 What Are Interior Grade Beams?</h2>
+          <p style={{ color: "#94a3b8", fontSize: 13, lineHeight: 1.7 }}>DFW post-tension and conventional slabs include interior grade beams - thickened concrete ribs that run beneath load-bearing interior walls. When these beams crack, the walls above can rack, causing ceiling cracks, sticking doors, and in severe cases, structural deflection. Interior pier work often requires tunneling or drilling through the slab - more invasive and expensive than perimeter work.</p>
         </div>
 
         <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 14, marginBottom: 32 }}>
           {crackTypes.map(c => (
-            <div key={c.type} style={{ background: "#0F2040″, borderRadius: 10, padding: 16, borderLeft: `4px solid ${c.color}` }}>
+            <div key={c.type} style={{ background: "#0F2040", borderRadius: 10, padding: 16, borderLeft: `4px solid ${c.color}` }}>
               <div style={{ fontWeight: 700, marginBottom: 4, fontSize: 13 }}>{c.type}</div>
               <div style={{ color: c.color, fontSize: 11, fontWeight: 700, marginBottom: 8 }}>SEVERITY: {c.severity}</div>
-              <div style={{ color: "#94a3b8″, fontSize: 12, lineHeight: 1.5 }}>{c.action}</div>
+              <div style={{ color: "#94a3b8", fontSize: 12, lineHeight: 1.5 }}>{c.action}</div>
             </div>
           ))}
         </div>
 
-        <div style={{ background: "#0F2040″, borderRadius: 12, padding: 24, marginBottom: 24 }}>
-          <h2 style={{ color: "#F5E642″, fontSize: 16, marginBottom: 16 }}>🔍 Interior Crack → Severity Assessment</h2>
+        <div style={{ background: "#0F2040", borderRadius: 12, padding: 24, marginBottom: 24 }}>
+          <h2 style={{ color: "#F5E642", fontSize: 16, marginBottom: 16 }}>🔍 Interior Crack → Severity Assessment</h2>
           <div style={{ marginBottom: 16 }}>
-            <label style={{ color: "#94a3b8″, fontSize: 13, display: "block", marginBottom: 6 }}>Describe your situation</label>
-            <select value={scenario} onChange={e => { setScenario(e.target.value); setResult(answers[e.target.value] || ""); }} style={{ width: "100%", background: "#0A1628″, color: "#fff", border: "1px solid #1e3a5f", borderRadius: 6, padding: "10px 12px", fontSize: 14 }}>
+            <label style={{ color: "#94a3b8", fontSize: 13, display: "block", marginBottom: 6 }}>Describe your situation</label>
+            <select value={scenario} onChange={e => { setScenario(e.target.value); setResult(answers[e.target.value] || ""); }} style={{ width: "100%", background: "#0A1628", color: "#fff", border: "1px solid #1e3a5f", borderRadius: 6, padding: "10px 12px", fontSize: 14 }}>
               <option value="">Select scenario...</option>
               {scenarios.map(s => <option key={s} value={s}>{s}</option>)}
             </select>
           </div>
-          {result && <div style={{ background: "#0A1628″, borderRadius: 8, padding: 16, color: "#F5E642", fontSize: 14, lineHeight: 1.6 }}>{result}</div>}
+          {result && <div style={{ background: "#0A1628", borderRadius: 8, padding: 16, color: "#F5E642", fontSize: 14, lineHeight: 1.6 }}>{result}</div>}
         </div>
 
-        <div style={{ textAlign: "center", color: "#64748b", fontSize: 13 }}>ProLnk connects DFW homeowners with vetted foundation engineers · <span style={{ color: "#F5E642″ }}>prolnk.io</span></div>
+        <div style={{ textAlign: "center", color: "#64748b", fontSize: 13 }}>ProLnk connects DFW homeowners with vetted foundation engineers · <span style={{ color: "#F5E642" }}>prolnk.io</span></div>
       </div>
     </div>
   );

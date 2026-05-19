@@ -23,8 +23,8 @@ export default function DFWGeneralContractorProGuide2026() {
         <h1 style={{ fontSize: 32, fontWeight: 800, marginBottom: 8 }}>🏗️ DFW General Contractor Pro Guide 2026</h1>
         <p style={{ color: '#a0aec0', fontSize: 16, marginBottom: 32 }}>
           DFW is in a construction boom with no end in sight. Kitchen remodels average
-          <strong style={{ color: '#F5E642′ }}> $45K</strong>, additions run
-          <strong style={{ color: '#F5E642′ }}> $180/sqft</strong>. Charter tier GCs get first access to high-ticket jobs as soon as they post.
+          <strong style={{ color: '#F5E642' }}> $45K</strong>, additions run
+          <strong style={{ color: '#F5E642' }}> $180/sqft</strong>. Charter tier GCs get first access to high-ticket jobs as soon as they post.
         </p>
 
         <div style={{ background: '#111d30', borderRadius: 12, padding: 20, marginBottom: 24 }}>
@@ -49,7 +49,7 @@ export default function DFWGeneralContractorProGuide2026() {
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8, marginBottom: 16 }}>
             {projectTypes.map((p, i) => (
               <button key={p.label} onClick={() => setProjIdx(i)}
-                style={{ background: i === projIdx ? '#F5E642′ : '#1a2d45', color: i === projIdx ? '#0A1628' : '#fff',
+                style={{ background: i === projIdx ? '#F5E642' : '#1a2d45', color: i === projIdx ? '#0A1628' : '#fff',
                   border: 'none', borderRadius: 6, padding: '8px 14px', fontSize: 13, fontWeight: 600, cursor: 'pointer' }}>
                 {p.label}
               </button>
@@ -57,19 +57,19 @@ export default function DFWGeneralContractorProGuide2026() {
           </div>
           <div style={{ background: '#0A1628', borderRadius: 8, padding: 16 }}>
             <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: 8 }}>
-              <span style={{ color: '#a0aec0′ }}>DFW market avg</span>
+              <span style={{ color: '#a0aec0' }}>DFW market avg</span>
               <span style={{ fontWeight: 700 }}>${project.avgJob.toLocaleString()} — {project.desc}</span>
             </div>
             <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: 8 }}>
-              <span style={{ color: '#a0aec0′ }}>Est. jobs/month</span>
+              <span style={{ color: '#a0aec0' }}>Est. jobs/month</span>
               <span style={{ fontWeight: 700 }}>{jobsPerMonth}</span>
             </div>
             <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: 8 }}>
-              <span style={{ color: '#a0aec0′ }}>Monthly ProLnk commission</span>
-              <span style={{ fontWeight: 700, color: '#F5E642′ }}>${monthly.toLocaleString(undefined,{maximumFractionDigits:0})}</span>
+              <span style={{ color: '#a0aec0' }}>Monthly ProLnk commission</span>
+              <span style={{ fontWeight: 700, color: '#F5E642' }}>${monthly.toLocaleString(undefined,{maximumFractionDigits:0})}</span>
             </div>
             <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-              <span style={{ color: '#a0aec0′ }}>Annual ProLnk earnings</span>
+              <span style={{ color: '#a0aec0' }}>Annual ProLnk earnings</span>
               <span style={{ fontWeight: 800, color: '#F5E642', fontSize: 20 }}>${annual.toLocaleString(undefined,{maximumFractionDigits:0})}</span>
             </div>
           </div>

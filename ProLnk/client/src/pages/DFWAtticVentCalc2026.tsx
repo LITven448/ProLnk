@@ -21,7 +21,7 @@ export default function DFWAtticVentCalc2026() {
     setResult({ ratio: `1:${ratio}`, required, intake: half, exhaust: half, intakeGap, exhaustGap, status });
   };
 
-  const statusColor = result?.status === 'Compliant' ? '#22c55e' : result?.status === 'Minor Deficit' ? '#F5E642′ : '#ef4444';
+  const statusColor = result?.status === 'Compliant' ? '#22c55e' : result?.status === 'Minor Deficit' ? '#F5E642' : '#ef4444';
 
   return (
     <div style={{ background: '#0A1628', minHeight: '100vh', color: '#fff', fontFamily: 'system-ui, sans-serif', padding: '24px' }}>
@@ -57,21 +57,21 @@ export default function DFWAtticVentCalc2026() {
           <h2 style={{ color: '#F5E642', marginTop: 0 }}>📊 Calculate Your Needs</h2>
           <div style={{ marginBottom: 16 }}>
             <label style={{ color: '#94a3b8', fontSize: 14 }}>Attic Square Footage</label>
-            <input type="number" value={sqft} onChange={e => setSqft(e.target.value)} placeholder="e.g. 1800″ style={{ display: 'block', width: '100%', marginTop: 6, padding: '10px', background: '#0A1628', border: '1px solid #2a3a5c', borderRadius: 8, color: '#fff', fontSize: 16, boxSizing: 'border-box' }} />
+            <input type="number" value={sqft} onChange={e => setSqft(e.target.value)} placeholder="e.g. 1800" style={{ display: 'block', width: '100%', marginTop: 6, padding: '10px', background: '#0A1628', border: '1px solid #2a3a5c', borderRadius: 8, color: '#fff', fontSize: 16, boxSizing: 'border-box' }} />
           </div>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12, marginBottom: 16 }}>
             <div>
               <label style={{ color: '#94a3b8', fontSize: 14 }}>Existing Intake NFA (sq in)</label>
-              <input type="number" value={existingIntake} onChange={e => setExistingIntake(e.target.value)} placeholder="0″ style={{ display: 'block', width: '100%', marginTop: 6, padding: '10px', background: '#0A1628', border: '1px solid #2a3a5c', borderRadius: 8, color: '#fff', fontSize: 16, boxSizing: 'border-box' }} />
+              <input type="number" value={existingIntake} onChange={e => setExistingIntake(e.target.value)} placeholder="0" style={{ display: 'block', width: '100%', marginTop: 6, padding: '10px', background: '#0A1628', border: '1px solid #2a3a5c', borderRadius: 8, color: '#fff', fontSize: 16, boxSizing: 'border-box' }} />
             </div>
             <div>
               <label style={{ color: '#94a3b8', fontSize: 14 }}>Existing Exhaust NFA (sq in)</label>
-              <input type="number" value={existingExhaust} onChange={e => setExistingExhaust(e.target.value)} placeholder="0″ style={{ display: 'block', width: '100%', marginTop: 6, padding: '10px', background: '#0A1628', border: '1px solid #2a3a5c', borderRadius: 8, color: '#fff', fontSize: 16, boxSizing: 'border-box' }} />
+              <input type="number" value={existingExhaust} onChange={e => setExistingExhaust(e.target.value)} placeholder="0" style={{ display: 'block', width: '100%', marginTop: 6, padding: '10px', background: '#0A1628', border: '1px solid #2a3a5c', borderRadius: 8, color: '#fff', fontSize: 16, boxSizing: 'border-box' }} />
             </div>
           </div>
           <label style={{ display: 'flex', alignItems: 'center', gap: 8, cursor: 'pointer', marginBottom: 16 }}>
-            <input type="checkbox" checked={hasVaporBarrier} onChange={e => setHasVaporBarrier(e.target.checked)} style={{ width: 18, height: 18, accentColor: '#F5E642′ }} />
-            <span style={{ color: '#cbd5e1′ }}>Attic has qualifying vapor barrier (use 1:300 ratio)</span>
+            <input type="checkbox" checked={hasVaporBarrier} onChange={e => setHasVaporBarrier(e.target.checked)} style={{ width: 18, height: 18, accentColor: '#F5E642' }} />
+            <span style={{ color: '#cbd5e1' }}>Attic has qualifying vapor barrier (use 1:300 ratio)</span>
           </label>
           <button onClick={calculate} disabled={!sqft} style={{ width: '100%', padding: 14, background: '#F5E642', color: '#0A1628', border: 'none', borderRadius: 8, fontWeight: 700, fontSize: 16, cursor: sqft ? 'pointer' : 'not-allowed', opacity: sqft ? 1 : 0.5 }}>Calculate Ventilation Needs</button>
         </div>

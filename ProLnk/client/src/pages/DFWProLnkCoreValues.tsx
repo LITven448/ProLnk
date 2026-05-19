@@ -73,7 +73,7 @@ export default function DFWProLnkCoreValues() {
           {(['homeowner', 'contractor', 'partner'] as Stakeholder[]).map(s => (
             <button key={s} onClick={() => setStakeholder(s)}
               style={{ padding: '10px 22px', borderRadius: 8, border: 'none', cursor: 'pointer', fontWeight: 700, fontSize: 14,
-                background: stakeholder === s ? '#F5E642′ : '#1e3a5f', color: stakeholder === s ? '#0A1628' : '#94a3b8' }}>
+                background: stakeholder === s ? '#F5E642' : '#1e3a5f', color: stakeholder === s ? '#0A1628' : '#94a3b8' }}>
               {label[s]}
             </button>
           ))}
@@ -81,7 +81,7 @@ export default function DFWProLnkCoreValues() {
 
         <div style={{ display: 'flex', flexDirection: 'column', gap: 20 }}>
           {VALUES.map(v => (
-            <div key={v.title} style={{ background: '#112240', borderRadius: 12, padding: 24, borderLeft: '4px solid #F5E642′ }}>
+            <div key={v.title} style={{ background: '#112240', borderRadius: 12, padding: 24, borderLeft: '4px solid #F5E642' }}>
               <div style={{ fontSize: 32, marginBottom: 8 }}>{v.emoji}</div>
               <h2 style={{ fontSize: 20, fontWeight: 700, color: '#F5E642', margin: '0 0 6px' }}>{v.title}</h2>
               <p style={{ color: '#94a3b8', fontSize: 14, margin: '0 0 12px' }}>{v.description}</p>

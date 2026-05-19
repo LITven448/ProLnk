@@ -101,7 +101,7 @@ export default function DFWHVACInsuranceGuide() {
           {damageTypes.map(type => (
             <button key={type} onClick={() => setActiveType(type)}
               style={{ padding: '9px 16px', borderRadius: 10, border: 'none', cursor: 'pointer', fontWeight: 600, fontSize: 13,
-                background: activeType === type ? '#F5E642′ : '#1e2d45', color: activeType === type ? '#0A1628' : '#94a3b8' }}>
+                background: activeType === type ? '#F5E642' : '#1e2d45', color: activeType === type ? '#0A1628' : '#94a3b8' }}>
               {type}
             </button>
           ))}
@@ -113,7 +113,7 @@ export default function DFWHVACInsuranceGuide() {
               <div style={{ fontSize: 36 }}>{data.covered ? '✅' : '❌'}</div>
               <div>
                 <div style={{ color: data.covered ? '#86efac' : '#fca5a5', fontWeight: 800, fontSize: 18 }}>{data.label}</div>
-                <div style={{ color: data.covered ? '#4ade80′ : '#f87171', fontSize: 13, marginTop: 4 }}>{activeType}</div>
+                <div style={{ color: data.covered ? '#4ade80' : '#f87171', fontSize: 13, marginTop: 4 }}>{activeType}</div>
               </div>
             </div>
 

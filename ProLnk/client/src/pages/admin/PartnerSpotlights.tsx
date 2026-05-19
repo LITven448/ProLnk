@@ -75,10 +75,10 @@ const QUEUE_COLS = [
 ];
 
 const QUEUE_ROWS = [
-  { partner: "Derek Moss",   start: "May 19″,  duration: "14 days", views: "3,200",  status: <StatusBadge status="pending" /> },
-  { partner: "Lisa Yamada",  start: "May 22″,  duration: "7 days",  views: "1,800",  status: <StatusBadge status="pending" /> },
-  { partner: "Omar Khalil",  start: "Jun 1″,   duration: "30 days", views: "6,400",  status: <StatusBadge status="inactive" /> },
-  { partner: "Renee Dupont", start: "Jun 8″,   duration: "14 days", views: "3,100",  status: <StatusBadge status="inactive" /> },
+  { partner: "Derek Moss",   start: "May 19",  duration: "14 days", views: "3,200",  status: <StatusBadge status="pending" /> },
+  { partner: "Lisa Yamada",  start: "May 22",  duration: "7 days",  views: "1,800",  status: <StatusBadge status="pending" /> },
+  { partner: "Omar Khalil",  start: "Jun 1",   duration: "30 days", views: "6,400",  status: <StatusBadge status="inactive" /> },
+  { partner: "Renee Dupont", start: "Jun 8",   duration: "14 days", views: "3,100",  status: <StatusBadge status="inactive" /> },
 ];
 
 const UPLIFT_DATA = [
@@ -104,7 +104,7 @@ interface AddForm {
 export default function PartnerSpotlights() {
   const [cards, setCards] = useState<SpotlightCard[]>(FEATURED);
   const [showForm, setShowForm] = useState(false);
-  const [form, setForm] = useState<AddForm>({ partner: "", duration: "14″, type: "Homepage" });
+  const [form, setForm] = useState<AddForm>({ partner: "", duration: "14", type: "Homepage" });
 
   const handleRemove = (id: number) => {
     setCards(prev => prev.filter(c => c.id !== id));
@@ -119,39 +119,39 @@ export default function PartnerSpotlights() {
     if (!form.partner) { toast.error("Select a partner"); return; }
     toast.success(`Spotlight queued: ${form.partner} · ${form.duration} days · ${form.type}`);
     setShowForm(false);
-    setForm({ partner: "", duration: "14″, type: "Homepage" });
+    setForm({ partner: "", duration: "14", type: "Homepage" });
   };
 
   return (
     <AdminLayout>
-      <div className="space-y-6″ style={{ background: D.bg, minHeight: "100vh" }}>
+      <div className="space-y-6" style={{ background: D.bg, minHeight: "100vh" }}>
 
         {/* Header */}
         <div className="flex items-center justify-between">
           <div>
             <h1 className="text-2xl font-black" style={{ color: D.text }}>Partner Spotlights</h1>
-            <p className="text-sm mt-1″ style={{ color: D.muted }}>Featured success stories across the platform and marketing channels</p>
+            <p className="text-sm mt-1" style={{ color: D.muted }}>Featured success stories across the platform and marketing channels</p>
           </div>
           <button
             onClick={() => setShowForm(v => !v)}
             className="flex items-center gap-2 px-4 py-2 rounded-xl text-sm font-semibold transition-all"
             style={{ background: `${D.cyan}20`, color: D.cyan, border: `1px solid ${D.cyan}40` }}
           >
-            <Plus className="w-4 h-4″ /> Add Spotlight
+            <Plus className="w-4 h-4" /> Add Spotlight
           </button>
         </div>
 
         {/* Inline Add Form */}
         {showForm && (
           <DCard>
-            <div className="flex items-center justify-between mb-4″>
+            <div className="flex items-center justify-between mb-4">
               <h3 className="text-sm font-bold" style={{ color: D.text }}>New Spotlight</h3>
               <button onClick={() => setShowForm(false)} style={{ color: D.muted }}>
-                <X className="w-4 h-4″ />
+                <X className="w-4 h-4" />
               </button>
             </div>
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4″>
-              <div className="flex flex-col gap-1″>
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+              <div className="flex flex-col gap-1">
                 <label className="text-xs" style={{ color: D.muted }}>Partner</label>
                 <select
                   value={form.partner}
@@ -165,7 +165,7 @@ export default function PartnerSpotlights() {
                   ))}
                 </select>
               </div>
-              <div className="flex flex-col gap-1″>
+              <div className="flex flex-col gap-1">
                 <label className="text-xs" style={{ color: D.muted }}>Duration</label>
                 <select
                   value={form.duration}
@@ -173,12 +173,12 @@ export default function PartnerSpotlights() {
                   className="rounded-lg px-3 py-2 text-sm"
                   style={{ background: D.surface, border: `1px solid ${D.border}`, color: D.text }}
                 >
-                  <option value="7″>7 days</option>
-                  <option value="14″>14 days</option>
-                  <option value="30″>30 days</option>
+                  <option value="7">7 days</option>
+                  <option value="14">14 days</option>
+                  <option value="30">30 days</option>
                 </select>
               </div>
-              <div className="flex flex-col gap-1″>
+              <div className="flex flex-col gap-1">
                 <label className="text-xs" style={{ color: D.muted }}>Spotlight Type</label>
                 <select
                   value={form.type}
@@ -205,39 +205,39 @@ export default function PartnerSpotlights() {
         )}
 
         {/* Metric Cards */}
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4″>
-          <MetricCard label="Active Spotlights" value="8″    sub="Across homepage + email"         color={D.amber}  icon={<Star className="w-4 h-4" />}       trend={14} />
-          <MetricCard label="Avg Profile Views"  value="2,400″ sub="Per spotlight per week"          color={D.cyan}   icon={<Eye className="w-4 h-4" />}        trend={9}  />
-          <MetricCard label="Spotlight Boost"    value="+34%" sub="More leads vs non-spotlighted"  color={D.green}  icon={<Star className="w-4 h-4″ />}       trend={4}  />
-          <MetricCard label="Next Rotation"      value="3 days" sub="4 new spotlights queued"       color={D.purple} icon={<RotateCcw className="w-4 h-4″ />}  />
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
+          <MetricCard label="Active Spotlights" value="8"    sub="Across homepage + email"         color={D.amber}  icon={<Star className="w-4 h-4" />}       trend={14} />
+          <MetricCard label="Avg Profile Views"  value="2,400" sub="Per spotlight per week"          color={D.cyan}   icon={<Eye className="w-4 h-4" />}        trend={9}  />
+          <MetricCard label="Spotlight Boost"    value="+34%" sub="More leads vs non-spotlighted"  color={D.green}  icon={<Star className="w-4 h-4" />}       trend={4}  />
+          <MetricCard label="Next Rotation"      value="3 days" sub="4 new spotlights queued"       color={D.purple} icon={<RotateCcw className="w-4 h-4" />}  />
         </div>
 
         {/* Featured Cards Grid */}
         <DCard>
           <SectionHeader title="Featured Partners" subtitle="Currently live on platform" />
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4″>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             {cards.map(c => (
               <div
                 key={c.id}
-                className="rounded-xl p-4 flex flex-col gap-3″
+                className="rounded-xl p-4 flex flex-col gap-3"
                 style={{ background: D.surface, border: `1px solid ${D.border}` }}
               >
-                <div className="flex items-start justify-between gap-2″>
+                <div className="flex items-start justify-between gap-2">
                   <div>
-                    <div className="flex items-center gap-2″>
+                    <div className="flex items-center gap-2">
                       <span className="text-sm font-bold" style={{ color: D.text }}>{c.name}</span>
                       <span className="text-xs px-2 py-0.5 rounded-full" style={{ background: `${D.amber}20`, color: D.amber }}>{c.trade}</span>
                     </div>
-                    <div className="flex items-center gap-1 mt-1″>
+                    <div className="flex items-center gap-1 mt-1">
                       {Array.from({ length: 5 }).map((_, i) => (
                         <Star
                           key={i}
-                          className="w-3 h-3″
+                          className="w-3 h-3"
                           style={{ color: i < Math.round(c.rating) ? D.amber : D.dim }}
                           fill={i < Math.round(c.rating) ? D.amber : "transparent"}
                         />
                       ))}
-                      <span className="text-xs ml-1″ style={{ color: D.muted }}>{c.rating}</span>
+                      <span className="text-xs ml-1" style={{ color: D.muted }}>{c.rating}</span>
                     </div>
                   </div>
                   <StatusBadge status={c.status} />
@@ -247,20 +247,20 @@ export default function PartnerSpotlights() {
                   "{c.quote}"
                 </p>
 
-                <div className="grid grid-cols-3 gap-2 pt-1″>
+                <div className="grid grid-cols-3 gap-2 pt-1">
                   {[
                     { label: "Jobs",     val: c.jobs.toString() },
                     { label: "Revenue",  val: c.revenue },
                     { label: "Rating",   val: c.customerRating },
                   ].map(s => (
-                    <div key={s.label} className="text-center rounded-lg py-2″ style={{ background: D.card }}>
+                    <div key={s.label} className="text-center rounded-lg py-2" style={{ background: D.card }}>
                       <div className="text-sm font-black" style={{ color: D.text }}>{s.val}</div>
                       <div className="text-[10px]" style={{ color: D.dim }}>{s.label}</div>
                     </div>
                   ))}
                 </div>
 
-                <div className="flex gap-2 pt-1″>
+                <div className="flex gap-2 pt-1">
                   <button
                     onClick={() => handleEdit(c.name)}
                     className="flex-1 py-1.5 rounded-lg text-xs font-semibold"
@@ -282,7 +282,7 @@ export default function PartnerSpotlights() {
         </DCard>
 
         {/* Queue + Chart */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6″>
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
           <DCard>
             <SectionHeader title="Spotlight Queue" subtitle="Next 4 upcoming spotlights" />
             <DataTable columns={QUEUE_COLS} rows={QUEUE_ROWS} />

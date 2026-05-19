@@ -31,10 +31,10 @@ export default function DFWDrainCleaningGuide() {
 
   return (
     <div style={{ background: '#0A1628', minHeight: '100vh', color: '#E8EDF5', fontFamily: 'system-ui, sans-serif', padding: '0 0 60px' }}>
-      <div style={{ background: 'linear-gradient(135deg, #0A1628 0%, #112240 100%)', padding: '48px 24px 40px', borderBottom: '2px solid #F5E642′ }}>
+      <div style={{ background: 'linear-gradient(135deg, #0A1628 0%, #112240 100%)', padding: '48px 24px 40px', borderBottom: '2px solid #F5E642' }}>
         <div style={{ maxWidth: 860, margin: '0 auto' }}>
           <div style={{ color: '#F5E642', fontSize: 13, fontWeight: 700, letterSpacing: 2, marginBottom: 12 }}>🌀 DFW DRAIN SERVICES</div>
-          <h1 style={{ fontSize: 'clamp(26px, 5vw, 44px)', fontWeight: 900, margin: '0 0 16px', lineHeight: 1.15 }}>Drain Cleaning Guide<br /><span style={{ color: '#F5E642′ }}>for DFW Homeowners</span></h1>
+          <h1 style={{ fontSize: 'clamp(26px, 5vw, 44px)', fontWeight: 900, margin: '0 0 16px', lineHeight: 1.15 }}>Drain Cleaning Guide<br /><span style={{ color: '#F5E642' }}>for DFW Homeowners</span></h1>
           <p style={{ fontSize: 16, color: '#8BA3C7', maxWidth: 620, margin: 0 }}>DFW's live oaks, hard water scale, and aging clay sewer lines make drain problems extremely common. Know when to DIY and when to call a pro — and which method actually solves the problem.</p>
         </div>
       </div>
@@ -45,7 +45,7 @@ export default function DFWDrainCleaningGuide() {
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: 14 }}>
             {[
               { icon: '🌳', title: 'Live Oak Root Intrusion', desc: 'DFW live oaks have aggressive root systems that infiltrate clay sewer pipes. Root calls are the #1 reason DFW homeowners need hydro-jetting.' },
-              { icon: '🪨', title: 'Hard Water Scale', desc: 'At 14–18 GPG, DFW water deposits calcium inside drain pipes. Over time, 4″ pipes narrow to 2″ effective diameter.' },
+              { icon: '🪨', title: 'Hard Water Scale', desc: 'At 14–18 GPG, DFW water deposits calcium inside drain pipes. Over time, 4" pipes narrow to 2" effective diameter.' },
               { icon: '🍳', title: 'Grease Buildup', desc: 'Texas cooking style — frying, BBQ, bacon grease — means kitchen drain grease problems more common here than national average.' },
               { icon: '🏗️', title: 'Aging Clay Sewer Lines', desc: 'DFW homes built before 1980 often have clay tile sewer lines that crack and settle, creating debris-catching belly sections.' },
             ].map(item => (
@@ -63,7 +63,7 @@ export default function DFWDrainCleaningGuide() {
           <div style={{ overflowX: 'auto' }}>
             <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: 14 }}>
               <thead>
-                <tr style={{ background: '#F5E642', color: '#0A1628′ }}>
+                <tr style={{ background: '#F5E642', color: '#0A1628' }}>
                   {['Frequency', 'Task', 'Why It Matters in DFW', 'DIY Cost'].map(h => (
                     <th key={h} style={{ padding: '10px 14px', textAlign: 'left', fontWeight: 800 }}>{h}</th>
                   ))}
@@ -77,9 +77,9 @@ export default function DFWDrainCleaningGuide() {
                   ['Annually', 'Main sewer line camera inspection (if trees nearby)', 'Catches root intrusion early — before emergency', '$200–400'],
                   ['Every 3–5 yrs', 'Professional hydro-jetting of main line', 'Full pipe wall cleaning, removes scale and debris', '$300–600'],
                 ].map((row, i) => (
-                  <tr key={i} style={{ background: i % 2 === 0 ? '#0E1E35′ : '#112240' }}>
+                  <tr key={i} style={{ background: i % 2 === 0 ? '#0E1E35' : '#112240' }}>
                     {row.map((cell, j) => (
-                      <td key={j} style={{ padding: '10px 14px', color: j === 0 ? '#F5E642′ : '#C0D0E8', borderBottom: '1px solid #1E3A5F' }}>{cell}</td>
+                      <td key={j} style={{ padding: '10px 14px', color: j === 0 ? '#F5E642' : '#C0D0E8', borderBottom: '1px solid #1E3A5F' }}>{cell}</td>
                     ))}
                   </tr>
                 ))}
@@ -125,8 +125,8 @@ export default function DFWDrainCleaningGuide() {
                     </div>
                     <div style={{ color: '#8BA3C7', fontSize: 13, lineHeight: 1.6, marginBottom: 8 }}>{m.desc}</div>
                     <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap' }}>
-                      <span style={{ background: '#112240', borderRadius: 6, padding: '4px 10px', fontSize: 12, color: '#4ECDC4′ }}>DIY: {m.diy}</span>
-                      {m.best.map(b => <span key={b} style={{ background: '#112240', borderRadius: 6, padding: '4px 10px', fontSize: 12, color: '#8BA3C7′ }}>{b}</span>)}
+                      <span style={{ background: '#112240', borderRadius: 6, padding: '4px 10px', fontSize: 12, color: '#4ECDC4' }}>DIY: {m.diy}</span>
+                      {m.best.map(b => <span key={b} style={{ background: '#112240', borderRadius: 6, padding: '4px 10px', fontSize: 12, color: '#8BA3C7' }}>{b}</span>)}
                     </div>
                   </div>
                 ))}

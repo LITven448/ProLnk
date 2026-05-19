@@ -9,7 +9,7 @@ const pathway = [
 
 const dfwOutlook = [
   { metric: '$68/hr', label: 'Avg master plumber billing rate' },
-  { metric: '18%', label: 'DFW growth forecast 2025-2030′ },
+  { metric: '18%', label: 'DFW growth forecast 2025-2030' },
   { metric: '3,400', label: 'Open plumbing jobs DFW (2024)' },
   { metric: '62%', label: 'Jobs from ProLnk in DFW plumbing' },
 ];
@@ -68,8 +68,8 @@ export default function DFWPlumberLicensingGuide() {
                   <p style={{ color: '#94a3b8', fontSize: 13, margin: '0 0 10px' }}>{p.description}</p>
                   <div style={{ display: 'flex', gap: 20, flexWrap: 'wrap' }}>
                     {p.years > 0 && <div style={{ fontSize: 12, color: '#60a5fa' }}>⏱️ {p.years} yrs experience</div>}
-                    {p.bond > 0 && <div style={{ fontSize: 12, color: '#fbbf24′ }}>🔒 ${p.bond.toLocaleString()} bond</div>}
-                    {p.exam && <div style={{ fontSize: 12, color: '#f87171′ }}>📝 Written exam required</div>}
+                    {p.bond > 0 && <div style={{ fontSize: 12, color: '#fbbf24' }}>🔒 ${p.bond.toLocaleString()} bond</div>}
+                    {p.exam && <div style={{ fontSize: 12, color: '#f87171' }}>📝 Written exam required</div>}
                   </div>
                 </div>
               </div>
@@ -77,7 +77,7 @@ export default function DFWPlumberLicensingGuide() {
           </div>
         </section>
 
-        <section style={{ background: '#131f35', borderRadius: 14, padding: 28, border: '1px solid #F5E642′ }}>
+        <section style={{ background: '#131f35', borderRadius: 14, padding: 28, border: '1px solid #F5E642' }}>
           <h2 style={{ color: '#F5E642', fontSize: 20, fontWeight: 700, marginBottom: 20 }}>🗺️ Your Timeline to Master Plumber</h2>
           <div style={{ display: 'grid', gap: 16, marginBottom: 20 }}>
             <div>
@@ -90,7 +90,7 @@ export default function DFWPlumberLicensingGuide() {
             </div>
             <div>
               <label style={{ fontSize: 13, color: '#94a3b8', display: 'block', marginBottom: 6 }}>Total years of plumbing experience</label>
-              <input type="number" value={expYears} onChange={e => setExpYears(e.target.value)} placeholder="e.g. 3.5″
+              <input type="number" value={expYears} onChange={e => setExpYears(e.target.value)} placeholder="e.g. 3.5"
                 style={{ width: '100%', padding: '10px 14px', borderRadius: 8, border: '1px solid #1e3a5f', background: '#0A1628', color: '#fff', fontSize: 15, boxSizing: 'border-box' }} />
             </div>
           </div>

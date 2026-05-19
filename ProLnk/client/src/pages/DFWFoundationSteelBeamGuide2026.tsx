@@ -35,9 +35,9 @@ export default function DFWFoundationSteelBeamGuide2026() {
           <div style={{ overflowX: 'auto' }}>
             <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: 13 }}>
               <thead>
-                <tr style={{ background: '#0d2137′ }}>
+                <tr style={{ background: '#0d2137' }}>
                   {['Factor', 'Piers Only', 'Steel Beam'].map(h => (
-                    <th key={h} style={{ padding: '8px 12px', textAlign: 'left', color: '#F5E642′ }}>{h}</th>
+                    <th key={h} style={{ padding: '8px 12px', textAlign: 'left', color: '#F5E642' }}>{h}</th>
                   ))}
                 </tr>
               </thead>
@@ -50,9 +50,9 @@ export default function DFWFoundationSteelBeamGuide2026() {
                   ['Clay movement', 'Good', 'Excellent'],
                 ].map(([f, p, s]) => (
                   <tr key={f} style={{ borderBottom: '1px solid #1e3a5f' }}>
-                    <td style={{ padding: '8px 12px', color: '#94a3b8′ }}>{f}</td>
-                    <td style={{ padding: '8px 12px', color: '#e2e8f0′ }}>{p}</td>
-                    <td style={{ padding: '8px 12px', color: '#e2e8f0′ }}>{s}</td>
+                    <td style={{ padding: '8px 12px', color: '#94a3b8' }}>{f}</td>
+                    <td style={{ padding: '8px 12px', color: '#e2e8f0' }}>{p}</td>
+                    <td style={{ padding: '8px 12px', color: '#e2e8f0' }}>{s}</td>
                   </tr>
                 ))}
               </tbody>
@@ -93,7 +93,7 @@ export default function DFWFoundationSteelBeamGuide2026() {
             'Get engineer sign-off letter after completion for future sale disclosure',
           ].map((tip, i) => (
             <div key={i} style={{ display: 'flex', gap: 10, marginBottom: 8 }}>
-              <span style={{ color: '#F5E642′ }}>⚠️</span>
+              <span style={{ color: '#F5E642' }}>⚠️</span>
               <span style={{ color: '#cbd5e1', fontSize: 14 }}>{tip}</span>
             </div>
           ))}

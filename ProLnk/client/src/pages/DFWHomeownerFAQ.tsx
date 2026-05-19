@@ -41,14 +41,14 @@ export default function DFWHomeownerFAQ() {
           {categories.map(cat => (
             <button key={cat} onClick={() => { setActiveCategory(cat); setOpen(null); }}
               style={{ padding: '6px 14px', borderRadius: 20, border: 'none', cursor: 'pointer', fontSize: 13, fontWeight: 600,
-                background: activeCategory === cat ? '#F5E642′ : '#1e3a5f', color: activeCategory === cat ? '#0A1628' : '#94a3b8' }}>
+                background: activeCategory === cat ? '#F5E642' : '#1e3a5f', color: activeCategory === cat ? '#0A1628' : '#94a3b8' }}>
               {cat}
             </button>
           ))}
         </div>
         <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
           {filtered.map((faq, i) => (
-            <div key={i} style={{ background: '#112240', borderRadius: 10, overflow: 'hidden', border: open === i ? '1px solid #F5E642′ : '1px solid #1e3a5f' }}>
+            <div key={i} style={{ background: '#112240', borderRadius: 10, overflow: 'hidden', border: open === i ? '1px solid #F5E642' : '1px solid #1e3a5f' }}>
               <button onClick={() => setOpen(open === i ? null : i)}
                 style={{ width: '100%', textAlign: 'left', padding: '16px 20px', background: 'none', border: 'none', cursor: 'pointer', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
                 <div>

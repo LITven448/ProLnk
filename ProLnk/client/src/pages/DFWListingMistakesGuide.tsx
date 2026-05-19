@@ -23,10 +23,10 @@ export default function DFWListingMistakesGuide() {
     ? ALL_MISTAKES.filter(m => selected.length === 0 || selected.includes(m.id))
     : [];
 
-  const sevColor = (s: string) => s === 'critical' ? '#eb5757′ : s === ’high' ? '#f2994a' : '#f2c94c';
+  const sevColor = (s: string) => s === 'critical' ? '#eb5757' : s === 'high' ? '#f2994a' : '#f2c94c';
 
   return (
-    <div style={{ background: '#0A1628', minHeight: '100vh', fontFamily: "'Inter', system-ui, sans-serif", color: '#e8e8e8′ }}>
+    <div style={{ background: '#0A1628', minHeight: '100vh', fontFamily: "'Inter', system-ui, sans-serif", color: '#e8e8e8' }}>
       <div style={{ maxWidth: 860, margin: '0 auto', padding: '48px 24px' }}>
         <div style={{ marginBottom: 8, fontSize: 13, letterSpacing: 2, textTransform: 'uppercase', color: '#F5E642', fontWeight: 600 }}>DFW Seller Guide</div>
         <h1 style={{ fontSize: 38, fontWeight: 700, margin: '0 0 12px', lineHeight: 1.2, color: '#fff' }}>
@@ -37,7 +37,7 @@ export default function DFWListingMistakesGuide() {
         </p>
 
         <div style={{ background: 'rgba(255,255,255,0.04)', borderRadius: 16, padding: '32px', border: '1px solid rgba(255,255,255,0.08)', marginBottom: 40 }}>
-          <h2 style={{ fontSize: 20, fontWeight: 700, margin: '0 0 20px', color: '#F5E642′ }}>Select situations that apply to you:</h2>
+          <h2 style={{ fontSize: 20, fontWeight: 700, margin: '0 0 20px', color: '#F5E642' }}>Select situations that apply to you:</h2>
           <div style={{ display: 'grid', gap: 10, marginBottom: 24 }}>
             {ALL_MISTAKES.map(m => (
               <label key={m.id} style={{ display: 'flex', alignItems: 'center', gap: 12, cursor: 'pointer', padding: '12px 16px', background: selected.includes(m.id) ? 'rgba(245,230,66,0.1)' : 'rgba(255,255,255,0.03)', borderRadius: 10, border: `1.5px solid ${selected.includes(m.id) ? '#F5E642' : 'rgba(255,255,255,0.08)'}`, transition: 'all 0.15s' }}>
@@ -83,7 +83,7 @@ export default function DFWListingMistakesGuide() {
                   </div>
                 </div>
                 <p style={{ fontSize: 14, color: '#aaa', lineHeight: 1.7, margin: '0 0 14px' }}>{m.detail}</p>
-                <div style={{ padding: '12px 16px', background: 'rgba(245,230,66,0.08)', borderRadius: 8, borderLeft: '3px solid #F5E642′ }}>
+                <div style={{ padding: '12px 16px', background: 'rgba(245,230,66,0.08)', borderRadius: 8, borderLeft: '3px solid #F5E642' }}>
                   <div style={{ fontSize: 12, fontWeight: 700, color: '#F5E642', marginBottom: 4 }}>HOW TO AVOID</div>
                   <div style={{ fontSize: 14, color: '#ccc', lineHeight: 1.6 }}>{m.fix}</div>
                 </div>

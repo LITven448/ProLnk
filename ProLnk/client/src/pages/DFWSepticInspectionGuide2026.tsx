@@ -22,7 +22,7 @@ export default function DFWSepticInspectionGuide2026() {
           <p style={{ color: '#94a3b8', fontSize: 15 }}>Outer DFW counties — what you must inspect before buying</p>
         </div>
 
-        <div style={{ background: '#112240', borderRadius: 12, padding: 20, marginBottom: 20, borderLeft: '4px solid #ef4444′ }}>
+        <div style={{ background: '#112240', borderRadius: 12, padding: 20, marginBottom: 20, borderLeft: '4px solid #ef4444' }}>
           <h2 style={{ color: '#ef4444', fontSize: 16, margin: '0 0 10px' }}>⚠️ Septic Replacement Cost: $8,000–25,000</h2>
           <p style={{ color: '#cbd5e1', fontSize: 14, margin: 0 }}>A failed septic system is not a minor repair. Texas OSSF (On-Site Sewage Facility) regulations are strict — a failing system can require complete replacement of tank and drain field. Negotiate hard or walk.</p>
         </div>
@@ -30,9 +30,9 @@ export default function DFWSepticInspectionGuide2026() {
         <div style={{ background: '#112240', borderRadius: 12, padding: 20, marginBottom: 20 }}>
           <h2 style={{ color: '#F5E642', fontSize: 16, margin: '0 0 14px' }}>🔎 Inspection Types Explained</h2>
           {[
-            { type: '👁️ Visual Inspection', desc: 'Inspector locates tank, checks lids, looks for surfacing effluent. Minimum — does NOT tell you if drain field is failing.', cost: '$150–250′ },
-            { type: '🚰 Pump Test', desc: 'Tank pumped, interior inspected for cracks, baffles checked. Reveals tank condition clearly.', cost: '$300–500′ },
-            { type: '🧫 Bacterial/Load Test', desc: 'System loaded with water to simulate use, monitored for backup or slow drain. Best indicator of drain field health.', cost: '$400–700′ },
+            { type: '👁️ Visual Inspection', desc: 'Inspector locates tank, checks lids, looks for surfacing effluent. Minimum — does NOT tell you if drain field is failing.', cost: '$150–250' },
+            { type: '🚰 Pump Test', desc: 'Tank pumped, interior inspected for cracks, baffles checked. Reveals tank condition clearly.', cost: '$300–500' },
+            { type: '🧫 Bacterial/Load Test', desc: 'System loaded with water to simulate use, monitored for backup or slow drain. Best indicator of drain field health.', cost: '$400–700' },
           ].map((item, i) => (
             <div key={i} style={{ background: '#0d1e36', borderRadius: 10, padding: 14, marginBottom: 10 }}>
               <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 6 }}>
@@ -69,14 +69,14 @@ export default function DFWSepticInspectionGuide2026() {
             {Object.keys(countyReqs).map(c => (
               <button key={c} onClick={() => setCounty(c)}
                 style={{ padding: '8px 12px', borderRadius: 8, border: '1px solid', cursor: 'pointer', fontSize: 12,
-                  borderColor: county === c ? '#F5E642′ : '#334155', background: county === c ? '#F5E642' : ’transparent',
-                  color: county === c ? '#0A1628′ : '#94a3b8', fontWeight: county === c ? 700 : 400 }}>
+                  borderColor: county === c ? '#F5E642' : '#334155', background: county === c ? '#F5E642' : 'transparent',
+                  color: county === c ? '#0A1628' : '#94a3b8', fontWeight: county === c ? 700 : 400 }}>
                 {c}
               </button>
             ))}
           </div>
           {county && (
-            <div style={{ background: '#0d1e36', borderRadius: 10, padding: 16, borderLeft: '4px solid #F5E642′ }}>
+            <div style={{ background: '#0d1e36', borderRadius: 10, padding: 16, borderLeft: '4px solid #F5E642' }}>
               <div style={{ color: '#F5E642', fontWeight: 700, marginBottom: 8 }}>{county}</div>
               <div style={{ color: '#cbd5e1', fontSize: 13, marginBottom: 4 }}>📋 Requirement: {countyReqs[county].req}</div>
               <div style={{ color: '#cbd5e1', fontSize: 13, marginBottom: 4 }}>🔎 Inspection Type: {countyReqs[county].type}</div>

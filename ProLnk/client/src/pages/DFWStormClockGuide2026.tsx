@@ -22,21 +22,21 @@ export default function DFWStormClockGuide2026() {
     setChecked(next);
   };
 
-  const risk = totalScore >= 20 ? { label: "HIGH SCAM RISK", color: "#ef4444″ } : totalScore >= 10 ? { label: "MODERATE RISK", color: "#f97316" } : { label: "LOW RISK", color: "#22c55e" };
+  const risk = totalScore >= 20 ? { label: "HIGH SCAM RISK", color: "#ef4444" } : totalScore >= 10 ? { label: "MODERATE RISK", color: "#f97316" } : { label: "LOW RISK", color: "#22c55e" };
 
   return (
-    <div style={{ minHeight: "100vh", background: "#0A1628″, color: "#fff", fontFamily: "sans-serif", padding: "32px 16px" }}>
+    <div style={{ minHeight: "100vh", background: "#0A1628", color: "#fff", fontFamily: "sans-serif", padding: "32px 16px" }}>
       <div style={{ maxWidth: 680, margin: "0 auto" }}>
         <div style={{ textAlign: "center", marginBottom: 32 }}>
           <div style={{ fontSize: 48 }}>🚨</div>
-          <h1 style={{ color: "#F5E642″, fontSize: 26, fontWeight: 800, margin: "8px 0 4px" }}>
+          <h1 style={{ color: "#F5E642", fontSize: 26, fontWeight: 800, margin: "8px 0 4px" }}>
             DFW Storm Chaser Avoidance Guide 2026
           </h1>
-          <p style={{ color: "#94a3b8″, fontSize: 14 }}>Check every red flag you have seen — get a scam risk score</p>
+          <p style={{ color: "#94a3b8", fontSize: 14 }}>Check every red flag you have seen — get a scam risk score</p>
         </div>
 
-        <div style={{ background: "#132240″, border: `2px solid ${risk.color}`, borderRadius: 14, padding: "14px 20px", marginBottom: 24, textAlign: "center" }}>
-          <div style={{ color: "#94a3b8″, fontSize: 12, marginBottom: 4 }}>Current Scam Risk Score: {totalScore}</div>
+        <div style={{ background: "#132240", border: `2px solid ${risk.color}`, borderRadius: 14, padding: "14px 20px", marginBottom: 24, textAlign: "center" }}>
+          <div style={{ color: "#94a3b8", fontSize: 12, marginBottom: 4 }}>Current Scam Risk Score: {totalScore}</div>
           <div style={{ color: risk.color, fontWeight: 800, fontSize: 20 }}>{risk.label}</div>
         </div>
 
@@ -46,7 +46,7 @@ export default function DFWStormClockGuide2026() {
               key={i}
               onClick={() => { toggle(i); setSelected(i === selected ? null : i); }}
               style={{
-                background: checked.has(i) ? "#1a0a0a" : "#0f1e38″,
+                background: checked.has(i) ? "#1a0a0a" : "#0f1e38",
                 border: `2px solid ${checked.has(i) ? "#ef4444" : "#1e3a5f"}`,
                 borderRadius: 12, padding: "12px 16px", cursor: "pointer",
                 display: "flex", alignItems: "center", gap: 12, textAlign: "left", width: "100%",
@@ -55,17 +55,17 @@ export default function DFWStormClockGuide2026() {
               <span style={{ fontSize: 22 }}>{checked.has(i) ? "☑️" : "⬜"}</span>
               <span style={{ fontSize: 22 }}>{f.emoji}</span>
               <div style={{ flex: 1 }}>
-                <div style={{ color: "#e2e8f0″, fontWeight: 600, fontSize: 14 }}>{f.label}</div>
-                {selected === i && <div style={{ color: "#94a3b8″, fontSize: 12, marginTop: 4 }}>{f.detail}</div>}
+                <div style={{ color: "#e2e8f0", fontWeight: 600, fontSize: 14 }}>{f.label}</div>
+                {selected === i && <div style={{ color: "#94a3b8", fontSize: 12, marginTop: 4 }}>{f.detail}</div>}
               </div>
-              <span style={{ color: "#ef4444″, fontWeight: 800, fontSize: 14 }}>+{f.score}</span>
+              <span style={{ color: "#ef4444", fontWeight: 800, fontSize: 14 }}>+{f.score}</span>
             </button>
           ))}
         </div>
 
-        <div style={{ background: "#132240″, borderRadius: 14, padding: 20, border: "1px solid #1e3a5f" }}>
-          <div style={{ color: "#F5E642″, fontWeight: 700, fontSize: 15, marginBottom: 8 }}>🛡️ ProLnk Eliminates This Risk</div>
-          <p style={{ color: "#94a3b8″, fontSize: 13, margin: 0 }}>Every ProLnk DFW contractor is pre-verified: TX license confirmed, insurance on file, local address verified, zero AOB pressure. Get matched in minutes after a storm.</p>
+        <div style={{ background: "#132240", borderRadius: 14, padding: 20, border: "1px solid #1e3a5f" }}>
+          <div style={{ color: "#F5E642", fontWeight: 700, fontSize: 15, marginBottom: 8 }}>🛡️ ProLnk Eliminates This Risk</div>
+          <p style={{ color: "#94a3b8", fontSize: 13, margin: 0 }}>Every ProLnk DFW contractor is pre-verified: TX license confirmed, insurance on file, local address verified, zero AOB pressure. Get matched in minutes after a storm.</p>
         </div>
       </div>
     </div>

@@ -54,7 +54,7 @@ export default function DFWPavingMaterialsGuide2026() {
             <label style={{ color: '#94a3b8', fontSize: 13, display: 'block', marginBottom: 6 }}>Area Type</label>
             <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap' }}>
               {['Driveway', 'Patio', 'Pool Deck', 'Walkway'].map(t => (
-                <button key={t} onClick={() => setAreaType(t)} style={{ padding: '8px 16px', borderRadius: 8, border: 'none', cursor: 'pointer', background: areaType === t ? '#F5E642′ : '#162842', color: areaType === t ? '#0A1628' : '#fff', fontWeight: 600, fontSize: 13 }}>{t}</button>
+                <button key={t} onClick={() => setAreaType(t)} style={{ padding: '8px 16px', borderRadius: 8, border: 'none', cursor: 'pointer', background: areaType === t ? '#F5E642' : '#162842', color: areaType === t ? '#0A1628' : '#fff', fontWeight: 600, fontSize: 13 }}>{t}</button>
               ))}
             </div>
           </div>
@@ -62,12 +62,12 @@ export default function DFWPavingMaterialsGuide2026() {
             <label style={{ color: '#94a3b8', fontSize: 13, display: 'block', marginBottom: 6 }}>Budget Range</label>
             <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap' }}>
               {['Budget', 'Mid-Range', 'Premium'].map(b => (
-                <button key={b} onClick={() => setBudget(b)} style={{ padding: '8px 16px', borderRadius: 8, border: 'none', cursor: 'pointer', background: budget === b ? '#F5E642′ : '#162842', color: budget === b ? '#0A1628' : '#fff', fontWeight: 600, fontSize: 13 }}>{b}</button>
+                <button key={b} onClick={() => setBudget(b)} style={{ padding: '8px 16px', borderRadius: 8, border: 'none', cursor: 'pointer', background: budget === b ? '#F5E642' : '#162842', color: budget === b ? '#0A1628' : '#fff', fontWeight: 600, fontSize: 13 }}>{b}</button>
               ))}
             </div>
           </div>
           {result && (
-            <div style={{ background: '#162842', borderRadius: 12, padding: 20, borderLeft: '4px solid #F5E642′ }}>
+            <div style={{ background: '#162842', borderRadius: 12, padding: 20, borderLeft: '4px solid #F5E642' }}>
               <div style={{ fontSize: 32, marginBottom: 8 }}>{result.icon}</div>
               <div style={{ color: '#F5E642', fontSize: 20, fontWeight: 700, marginBottom: 8 }}>{result.name}</div>
               <div style={{ color: '#e2e8f0', fontSize: 14, lineHeight: 1.6 }}>{result.note}</div>

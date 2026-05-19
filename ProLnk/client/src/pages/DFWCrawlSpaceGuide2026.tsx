@@ -40,7 +40,7 @@ export default function DFWCrawlSpaceGuide2026() {
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 10, marginBottom: 24 }}>
           {issues.map(i => (
             <button key={i.id} onClick={() => setSelected(i.id === selected ? null : i.id)}
-              style={{ background: selected === i.id ? '#F5E642′ : '#111d30', color: selected === i.id ? '#0A1628' : '#fff', border: ’none', borderRadius: 8, padding: '14px', cursor: 'pointer', fontWeight: 600, fontSize: 14, textAlign: 'left' }}>
+              style={{ background: selected === i.id ? '#F5E642' : '#111d30', color: selected === i.id ? '#0A1628' : '#fff', border: 'none', borderRadius: 8, padding: '14px', cursor: 'pointer', fontWeight: 600, fontSize: 14, textAlign: 'left' }}>
               {i.label}
             </button>
           ))}
@@ -61,7 +61,7 @@ export default function DFWCrawlSpaceGuide2026() {
         <div style={{ background: '#111d30', borderRadius: 10, padding: 20 }}>
           <div style={{ color: '#F5E642', fontWeight: 700, marginBottom: 8 }}>📅 DFW Crawl Space Inspection Schedule</div>
           {['March–April: Pre-summer moisture check before humidity peaks', 'October: Post-summer damage assessment, pest activity check', 'After any heavy rain event: Check for standing water', 'After earthquake or severe storm: Check pier connections'].map((tip, i) => (
-            <div key={i} style={{ color: '#94a3b8', fontSize: 13, marginBottom: 6, paddingLeft: 12, borderLeft: '2px solid #F5E642′ }}>{tip}</div>
+            <div key={i} style={{ color: '#94a3b8', fontSize: 13, marginBottom: 6, paddingLeft: 12, borderLeft: '2px solid #F5E642' }}>{tip}</div>
           ))}
         </div>
       </div>

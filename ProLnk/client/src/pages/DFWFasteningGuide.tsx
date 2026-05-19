@@ -85,7 +85,7 @@ export default function DFWFasteningGuide() {
           ))}
         </div>
 
-        <div style={{ background: '#0F2040', borderRadius: 16, padding: 28, border: '1px solid #F5E642′ }}>
+        <div style={{ background: '#0F2040', borderRadius: 16, padding: 28, border: '1px solid #F5E642' }}>
           <h2 style={{ fontSize: 18, fontWeight: 700, color: '#F5E642', marginBottom: 20 }}>🔍 Fastener Recommendation Tool</h2>
           <div style={{ marginBottom: 16 }}>
             <label style={{ display: 'block', color: '#8899BB', fontSize: 13, marginBottom: 8 }}>Project type</label>

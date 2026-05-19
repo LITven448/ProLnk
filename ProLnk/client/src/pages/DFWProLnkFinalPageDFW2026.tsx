@@ -54,43 +54,43 @@ export default function DFWProLnkFinalPageDFW2026() {
   const active = roles.find(r => r.id === selected);
 
   return (
-    <div style={{ background: "#0A1628″, minHeight: "100vh", color: "#fff", fontFamily: "system-ui, sans-serif", padding: "32px 16px" }}>
+    <div style={{ background: "#0A1628", minHeight: "100vh", color: "#fff", fontFamily: "system-ui, sans-serif", padding: "32px 16px" }}>
       <div style={{ maxWidth: 860, margin: "0 auto" }}>
         <div style={{ textAlign: "center", marginBottom: 44 }}>
           <div style={{ fontSize: 52, marginBottom: 14 }}>🔗</div>
-          <h1 style={{ fontSize: 30, fontWeight: 800, color: "#F5E642″, marginBottom: 10 }}>ProLnk — The Complete DFW Home Services Platform</h1>
-          <p style={{ color: "#94a3b8″, fontSize: 16, maxWidth: 600, margin: "0 auto" }}>Everything you need to know about ProLnk in one place — for homeowners, for pros, and for anyone who wants to understand why DFW is the center of it all</p>
+          <h1 style={{ fontSize: 30, fontWeight: 800, color: "#F5E642", marginBottom: 10 }}>ProLnk — The Complete DFW Home Services Platform</h1>
+          <p style={{ color: "#94a3b8", fontSize: 16, maxWidth: 600, margin: "0 auto" }}>Everything you need to know about ProLnk in one place — for homeowners, for pros, and for anyone who wants to understand why DFW is the center of it all</p>
         </div>
         <div style={{ display: "grid", gridTemplateColumns: "repeat(3,1fr)", gap: 16, marginBottom: 36 }}>
           {roles.map(r => (
             <button key={r.id} onClick={() => setSelected(selected === r.id ? null : r.id)}
-              style={{ background: selected === r.id ? "#1a2744″ : "#0f1f3d", border: `2px solid ${selected === r.id ? "#F5E642" : "#1e3a5f"}`, borderRadius: 12, padding: 24, textAlign: "center", cursor: "pointer", color: "#fff", transition: "all 0.2s" }}>
+              style={{ background: selected === r.id ? "#1a2744" : "#0f1f3d", border: `2px solid ${selected === r.id ? "#F5E642" : "#1e3a5f"}`, borderRadius: 12, padding: 24, textAlign: "center", cursor: "pointer", color: "#fff", transition: "all 0.2s" }}>
               <div style={{ fontSize: 36, marginBottom: 10 }}>{r.icon}</div>
-              <div style={{ fontWeight: 700, fontSize: 15, color: selected === r.id ? "#F5E642″ : "#fff" }}>{r.label}</div>
+              <div style={{ fontWeight: 700, fontSize: 15, color: selected === r.id ? "#F5E642" : "#fff" }}>{r.label}</div>
             </button>
           ))}
         </div>
         {active && (
-          <div style={{ background: "#1a2744″, border: "2px solid #F5E642", borderRadius: 16, padding: 32 }}>
-            <h2 style={{ color: "#F5E642″, fontSize: 22, marginBottom: 24, lineHeight: 1.4 }}>{active.icon} {active.headline}</h2>
+          <div style={{ background: "#1a2744", border: "2px solid #F5E642", borderRadius: 16, padding: 32 }}>
+            <h2 style={{ color: "#F5E642", fontSize: 22, marginBottom: 24, lineHeight: 1.4 }}>{active.icon} {active.headline}</h2>
             <div style={{ display: "grid", gap: 20, marginBottom: 24 }}>
               {active.sections.map((s, i) => (
-                <div key={i} style={{ background: "#0A1628″, borderRadius: 10, padding: 20 }}>
+                <div key={i} style={{ background: "#0A1628", borderRadius: 10, padding: 20 }}>
                   <div style={{ fontWeight: 700, fontSize: 16, marginBottom: 8 }}>{s.icon} {s.title}</div>
-                  <p style={{ color: "#94a3b8″, lineHeight: 1.7, margin: 0 }}>{s.body}</p>
+                  <p style={{ color: "#94a3b8", lineHeight: 1.7, margin: 0 }}>{s.body}</p>
                 </div>
               ))}
             </div>
             <div style={{ textAlign: "center" }}>
-              <a href={active.ctaUrl} style={{ background: "#F5E642″, color: "#0A1628", fontWeight: 800, padding: "14px 36px", borderRadius: 8, textDecoration: "none", fontSize: 16 }}>{active.cta} — prolnk.io</a>
+              <a href={active.ctaUrl} style={{ background: "#F5E642", color: "#0A1628", fontWeight: 800, padding: "14px 36px", borderRadius: 8, textDecoration: "none", fontSize: 16 }}>{active.cta} — prolnk.io</a>
             </div>
           </div>
         )}
         {!active && <div style={{ textAlign: "center", color: "#64748b", marginTop: 24, fontSize: 15 }}>Select your role above to see your complete ProLnk guide</div>}
         <div style={{ textAlign: "center", marginTop: 48, borderTop: "1px solid #1e3a5f", paddingTop: 28 }}>
-          <div style={{ color: "#F5E642″, fontWeight: 800, fontSize: 18, marginBottom: 8 }}>Ready to join the DFW home services revolution?</div>
-          <a href="https://prolnk.io" style={{ background: "#F5E642″, color: "#0A1628", fontWeight: 800, padding: "14px 36px", borderRadius: 8, textDecoration: "none", fontSize: 16 }}>Visit prolnk.io</a>
-          <div style={{ marginTop: 20, color: "#475569″, fontSize: 13 }}>ProLnk.io · Dallas-Fort Worth · 2026 · Homeowners + Pros + Platform</div>
+          <div style={{ color: "#F5E642", fontWeight: 800, fontSize: 18, marginBottom: 8 }}>Ready to join the DFW home services revolution?</div>
+          <a href="https://prolnk.io" style={{ background: "#F5E642", color: "#0A1628", fontWeight: 800, padding: "14px 36px", borderRadius: 8, textDecoration: "none", fontSize: 16 }}>Visit prolnk.io</a>
+          <div style={{ marginTop: 20, color: "#475569", fontSize: 13 }}>ProLnk.io · Dallas-Fort Worth · 2026 · Homeowners + Pros + Platform</div>
         </div>
       </div>
     </div>

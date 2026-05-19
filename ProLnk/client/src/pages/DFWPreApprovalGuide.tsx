@@ -60,8 +60,8 @@ export default function DFWPreApprovalGuide() {
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3,1fr)', gap: '1rem', marginBottom: '1.5rem' }}>
           {[
             { label: 'Pre-Qualification', icon: '📄', desc: 'Basic income/asset check, no doc verification. DFW sellers don\’t trust these.', strength: 'Weak', color: '#e74c3c' },
-            { label: 'Pre-Approval', icon: '✅', desc: 'Docs verified, credit pulled. Standard in DFW — required minimum to write offers.', strength: 'Good', color: '#e67e22′ },
-            { label: 'Underwritten', icon: '🏆', desc: 'Full underwriting done — file is approved pending appraisal only. Sellers love this.', strength: 'Gold Standard', color: '#27ae60′ },
+            { label: 'Pre-Approval', icon: '✅', desc: 'Docs verified, credit pulled. Standard in DFW — required minimum to write offers.', strength: 'Good', color: '#e67e22' },
+            { label: 'Underwritten', icon: '🏆', desc: 'Full underwriting done — file is approved pending appraisal only. Sellers love this.', strength: 'Gold Standard', color: '#27ae60' },
           ].map((item, i) => (
             <div key={i} style={{ backgroundColor: '#fff', borderRadius: '10px', padding: '1.25rem', boxShadow: '0 2px 8px rgba(0,0,0,0.08)', borderTop: `4px solid ${item.color}` }}>
               <div style={{ fontSize: '1.8rem', marginBottom: '0.4rem' }}>{item.icon}</div>
@@ -76,7 +76,7 @@ export default function DFWPreApprovalGuide() {
           <h2 style={{ fontSize: '1.1rem', fontWeight: 700, color: '#1a2744', marginBottom: '1rem' }}>📁 Documents You Need</h2>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0.5rem' }}>
             {['Last 2 years W-2s or 1099s', 'Last 2 years tax returns', 'Last 30 days pay stubs', 'Last 60 days bank statements (all accounts)', '2 months investment/retirement statements', 'Photo ID + Social Security number', 'Rental history if applicable', 'Gift letter if using gifted funds'].map((doc, i) => (
-              <div key={i} style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', padding: '0.5rem', backgroundColor: '#f8f9fa', borderRadius: '6px', fontSize: '0.9rem', color: '#444′ }}>
+              <div key={i} style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', padding: '0.5rem', backgroundColor: '#f8f9fa', borderRadius: '6px', fontSize: '0.9rem', color: '#444' }}>
                 <span>📎</span><span>{doc}</span>
               </div>
             ))}
@@ -87,10 +87,10 @@ export default function DFWPreApprovalGuide() {
           <h2 style={{ fontSize: '1.1rem', fontWeight: 700, color: '#1a2744', marginBottom: '1rem' }}>🧮 Estimate Your Purchase Power</h2>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
             {[
-              { label: 'Annual Gross Income ($)', value: income, set: setIncome, placeholder: 'e.g. 120000′ },
-              { label: 'Credit Score', value: creditScore, set: setCreditScore, placeholder: 'e.g. 740′ },
+              { label: 'Annual Gross Income ($)', value: income, set: setIncome, placeholder: 'e.g. 120000' },
+              { label: 'Credit Score', value: creditScore, set: setCreditScore, placeholder: 'e.g. 740' },
               { label: 'Monthly Debt Payments ($)', value: debt, set: setDebt, placeholder: 'e.g. 400 (car, student loans)' },
-              { label: 'Available Down Payment ($)', value: downPayment, set: setDownPayment, placeholder: 'e.g. 60000′ },
+              { label: 'Available Down Payment ($)', value: downPayment, set: setDownPayment, placeholder: 'e.g. 60000' },
             ].map((field, i) => (
               <div key={i}>
                 <label style={{ display: 'block', fontSize: '0.85rem', fontWeight: 600, color: '#444', marginBottom: '0.4rem' }}>{field.label}</label>
@@ -103,7 +103,7 @@ export default function DFWPreApprovalGuide() {
               <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '1rem', flexWrap: 'wrap', gap: '0.5rem' }}>
                 <div>
                   <div style={{ fontSize: '0.8rem', color: '#aaa' }}>Estimated Purchase Power</div>
-                  <div style={{ fontSize: '2rem', fontWeight: 800, color: '#F5E642′ }}>${result.purchasePower.toLocaleString()}</div>
+                  <div style={{ fontSize: '2rem', fontWeight: 800, color: '#F5E642' }}>${result.purchasePower.toLocaleString()}</div>
                 </div>
                 <div>
                   <div style={{ fontSize: '0.8rem', color: '#aaa' }}>Max Loan Amount</div>
@@ -118,7 +118,7 @@ export default function DFWPreApprovalGuide() {
                 <div style={{ fontWeight: 700, color: result.approvalColor, marginBottom: '0.3rem' }}>🏆 {result.approvalType}</div>
                 <div style={{ fontSize: '0.9rem', color: '#ccc' }}>{result.approvalNote}</div>
               </div>
-              <div style={{ marginTop: '0.75rem', fontSize: '0.8rem', color: '#666′ }}>⚠️ Estimates only — get official pre-approval from a licensed DFW lender. Pre-approvals valid 90 days.</div>
+              <div style={{ marginTop: '0.75rem', fontSize: '0.8rem', color: '#666' }}>⚠️ Estimates only — get official pre-approval from a licensed DFW lender. Pre-approvals valid 90 days.</div>
             </div>
           )}
         </div>

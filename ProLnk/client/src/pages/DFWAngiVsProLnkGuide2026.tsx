@@ -42,7 +42,7 @@ export default function DFWAngiVsProLnkGuide2026() {
       <div style={{ maxWidth: 860, margin: '0 auto' }}>
         <div style={{ textAlign: 'center', marginBottom: '2rem' }}>
           <span style={{ fontSize: '2.5rem' }}>⚔️</span>
-          <h1 style={{ color: '#F5E642', fontSize: '1.8rem', margin: '0.5rem 0′ }}>ProLnk vs Angi / HomeAdvisor — DFW 2026</h1>
+          <h1 style={{ color: '#F5E642', fontSize: '1.8rem', margin: '0.5rem 0' }}>ProLnk vs Angi / HomeAdvisor — DFW 2026</h1>
           <p style={{ color: '#94a3b8', maxWidth: 600, margin: '0 auto' }}>
             The definitive comparison for DFW service professionals choosing the right lead platform.
           </p>
@@ -50,8 +50,8 @@ export default function DFWAngiVsProLnkGuide2026() {
 
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1.5rem', marginBottom: '2rem' }}>
           {platforms.map((p) => (
-            <div key={p.name} style={{ background: '#1e293b', borderRadius: 12, padding: '1.5rem', border: p.name === 'ProLnk' ? '2px solid #F5E642′ : '1px solid #334155' }}>
-              <h2 style={{ color: p.name === 'ProLnk' ? '#F5E642′ : '#f1f5f9', fontSize: '1.1rem', marginTop: 0 }}>{p.name}</h2>
+            <div key={p.name} style={{ background: '#1e293b', borderRadius: 12, padding: '1.5rem', border: p.name === 'ProLnk' ? '2px solid #F5E642' : '1px solid #334155' }}>
+              <h2 style={{ color: p.name === 'ProLnk' ? '#F5E642' : '#f1f5f9', fontSize: '1.1rem', marginTop: 0 }}>{p.name}</h2>
               {Object.entries(p).filter(([k]) => k !== 'name').map(([k, v]) => (
                 <div key={k} style={{ marginBottom: '0.6rem' }}>
                   <span style={{ color: '#94a3b8', fontSize: '0.75rem', textTransform: 'uppercase' }}>{k.replace(/([A-Z])/g, ' $1')}</span>
@@ -62,13 +62,13 @@ export default function DFWAngiVsProLnkGuide2026() {
           ))}
         </div>
 
-        <div style={{ background: '#1e293b', borderRadius: 12, padding: '1.5rem', border: '1px solid #334155′ }}>
+        <div style={{ background: '#1e293b', borderRadius: 12, padding: '1.5rem', border: '1px solid #334155' }}>
           <h3 style={{ color: '#F5E642', marginTop: 0 }}>💰 Annual Cost Calculator by Trade</h3>
           <p style={{ color: '#94a3b8', fontSize: '0.9rem' }}>Select your trade to see estimated annual platform spend:</p>
           <div style={{ display: 'flex', gap: '0.5rem', flexWrap: 'wrap', marginBottom: '1rem' }}>
             {Object.keys(tradeData).map((t) => (
               <button key={t} onClick={() => setTrade(t)}
-                style={{ background: trade === t ? '#F5E642′ : '#0f172a', color: trade === t ? '#0A1628' : '#f1f5f9', border: '1px solid #334155', borderRadius: 8, padding: '0.4rem 0.9rem', cursor: ’pointer', fontWeight: 600 }}>
+                style={{ background: trade === t ? '#F5E642' : '#0f172a', color: trade === t ? '#0A1628' : '#f1f5f9', border: '1px solid #334155', borderRadius: 8, padding: '0.4rem 0.9rem', cursor: 'pointer', fontWeight: 600 }}>
                 {t}
               </button>
             ))}

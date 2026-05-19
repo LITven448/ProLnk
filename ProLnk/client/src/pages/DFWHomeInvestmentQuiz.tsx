@@ -47,7 +47,7 @@ export default function DFWHomeInvestmentQuiz() {
       <div style={{ maxWidth: 680, margin: '0 auto' }}>
         <div style={{ textAlign: 'center', marginBottom: '2rem' }}>
           <div style={{ fontSize: '2rem' }}>📈</div>
-          <h1 style={{ color: '#F5E642', fontSize: '1.6rem', margin: '0.5rem 0 0′ }}>DFW Real Estate Investor Quiz</h1>
+          <h1 style={{ color: '#F5E642', fontSize: '1.6rem', margin: '0.5rem 0 0' }}>DFW Real Estate Investor Quiz</h1>
           <p style={{ color: '#94a3b8', marginTop: '.5rem' }}>12 questions to assess your DFW investment readiness and strategy fit</p>
         </div>
 
@@ -55,7 +55,7 @@ export default function DFWHomeInvestmentQuiz() {
           <div style={{ background: '#0f2040', borderRadius: 12, padding: '1.5rem' }}>
             <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '1rem' }}>
               <span style={{ color: '#F5E642', fontWeight: 700 }}>Q{current + 1} of {questions.length}</span>
-              <span style={{ color: '#94a3b8′ }}>{answers.filter(Boolean).length} correct</span>
+              <span style={{ color: '#94a3b8' }}>{answers.filter(Boolean).length} correct</span>
             </div>
             <div style={{ background: '#1e3a5f', borderRadius: 6, height: 6, marginBottom: '1.5rem' }}>
               <div style={{ background: '#F5E642', height: 6, borderRadius: 6, width: `${(current / questions.length) * 100}%`, transition: 'width .3s' }} />
@@ -83,7 +83,7 @@ export default function DFWHomeInvestmentQuiz() {
           <div style={{ background: '#0f2040', borderRadius: 12, padding: '2rem', textAlign: 'center' }}>
             <div style={{ fontSize: '3rem', marginBottom: '.5rem' }}>🎯</div>
             <h2 style={{ color: '#F5E642', fontSize: '1.4rem' }}>Your Investment Strategy Match</h2>
-            <div style={{ fontSize: '3.5rem', fontWeight: 800, color: '#F5E642', margin: '1rem 0′ }}>{pct}%</div>
+            <div style={{ fontSize: '3.5rem', fontWeight: 800, color: '#F5E642', margin: '1rem 0' }}>{pct}%</div>
             <p style={{ color: '#94a3b8', marginBottom: '1.5rem' }}>{score} of {questions.length} aligned</p>
             <div style={{ background: '#0A1628', borderRadius: 12, padding: '1.5rem', textAlign: 'left' }}>
               <div style={{ color: '#F5E642', fontWeight: 700, fontSize: '1.1rem', marginBottom: '.5rem' }}>{match.strategy}</div>

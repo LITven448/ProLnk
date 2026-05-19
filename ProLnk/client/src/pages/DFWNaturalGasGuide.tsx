@@ -89,7 +89,7 @@ export default function DFWNaturalGasGuide() {
             ].map(opt => (
               <label key={opt.label} style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '8px', cursor: 'pointer' }}>
                 <input type="checkbox" checked={opt.val} onChange={e => opt.set(e.target.checked)}
-                  style={{ width: '16px', height: '16px', accentColor: '#F5E642′ }} />
+                  style={{ width: '16px', height: '16px', accentColor: '#F5E642' }} />
                 <span style={{ color: '#CBD5E0', fontSize: '14px' }}>{opt.label}</span>
               </label>
             ))}
@@ -105,8 +105,8 @@ export default function DFWNaturalGasGuide() {
                 {[
                   { label: 'Est. Monthly Gas Bill', val: `$${result.monthly.toFixed(0)}`, color: '#FBD38D' },
                   { label: 'Est. Annual Gas Cost', val: `$${result.annual.toFixed(0)}`, color: '#FBD38D' },
-                  { label: 'Same Load — All Electric', val: `$${result.electricCost.toFixed(0)}/yr`, color: '#A0AEC0′ },
-                  { label: 'Electric Conversion ROI', val: `${result.roi.toFixed(1)} years`, color: result.roi < 5 ? '#68D391′ : '#FC8181' },
+                  { label: 'Same Load — All Electric', val: `$${result.electricCost.toFixed(0)}/yr`, color: '#A0AEC0' },
+                  { label: 'Electric Conversion ROI', val: `${result.roi.toFixed(1)} years`, color: result.roi < 5 ? '#68D391' : '#FC8181' },
                 ].map(r => (
                   <div key={r.label} style={{ background: '#0F1E35', borderRadius: '8px', padding: '12px' }}>
                     <div style={{ color: '#718096', fontSize: '12px', marginBottom: '4px' }}>{r.label}</div>
@@ -114,7 +114,7 @@ export default function DFWNaturalGasGuide() {
                   </div>
                 ))}
               </div>
-              <div style={{ background: '#1A2F50', borderRadius: '8px', padding: '12px', fontSize: '13px', color: '#A0AEC0′ }}>
+              <div style={{ background: '#1A2F50', borderRadius: '8px', padding: '12px', fontSize: '13px', color: '#A0AEC0' }}>
                 💡 ROI assumes ~$3,200 conversion cost per appliance. Gas is typically 30–60% cheaper for heating in DFW.
               </div>
             </div>

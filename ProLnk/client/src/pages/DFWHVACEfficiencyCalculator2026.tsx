@@ -52,9 +52,9 @@ export default function DFWHVACEfficiencyCalculator2026() {
         </div>
         <div style={{ background: '#0f2039', borderRadius: 12, padding: 24, marginBottom: 24 }}>
           {[
-            { label: '🌡️ Current SEER Rating', val: currentSeer, set: setCurrentSeer, placeholder: 'e.g. 13′ },
-            { label: '✨ New SEER2 Rating', val: newSeer, set: setNewSeer, placeholder: 'e.g. 18′ },
-            { label: '🏠 System Size (tons)', val: homeTons, set: setHomeTons, placeholder: 'e.g. 3′ },
+            { label: '🌡️ Current SEER Rating', val: currentSeer, set: setCurrentSeer, placeholder: 'e.g. 13' },
+            { label: '✨ New SEER2 Rating', val: newSeer, set: setNewSeer, placeholder: 'e.g. 18' },
+            { label: '🏠 System Size (tons)', val: homeTons, set: setHomeTons, placeholder: 'e.g. 3' },
           ].map(({ label, val, set, placeholder }) => (
             <label key={label} style={{ display: 'block', marginBottom: 16 }}>
               <span style={{ color: '#F5E642', fontSize: 13 }}>{label}</span>

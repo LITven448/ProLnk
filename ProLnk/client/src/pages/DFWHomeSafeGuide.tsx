@@ -8,15 +8,15 @@ function getRecommendation(valuables: string[], qty: string) {
   const hasDocuments = valuables.includes('Documents');
   const largeQty = qty === '50+ items' || qty === '21-50 items';
   if (hasFirearms && hasDocuments) {
-    return { type: 'Combination Gun + Document Safe', size: largeQty ? '2.5+ cu ft' : '1.5 cu ft', fireRating: 'UL 350°F / 1 hr minimum', waterRating: 'ETL Verified', cost: largeQty ? '$1,800–$3,500′ : '$900–$1,800', anchor: ’Bolt to slab — required in DFW homes on pier-and-beam or slab' };
+    return { type: 'Combination Gun + Document Safe', size: largeQty ? '2.5+ cu ft' : '1.5 cu ft', fireRating: 'UL 350°F / 1 hr minimum', waterRating: 'ETL Verified', cost: largeQty ? '$1,800–$3,500' : '$900–$1,800', anchor: 'Bolt to slab — required in DFW homes on pier-and-beam or slab' };
   }
   if (hasFirearms) {
-    return { type: 'Gun Safe', size: largeQty ? '40+ gun capacity' : '12–24 gun capacity', fireRating: 'UL RSC Rated', waterRating: 'Not required unless near flood zone', cost: largeQty ? '$1,200–$3,000′ : '$500–$1,200', anchor: ’Bolt to concrete slab — critical in DFW tornado risk areas' };
+    return { type: 'Gun Safe', size: largeQty ? '40+ gun capacity' : '12–24 gun capacity', fireRating: 'UL RSC Rated', waterRating: 'Not required unless near flood zone', cost: largeQty ? '$1,200–$3,000' : '$500–$1,200', anchor: 'Bolt to concrete slab — critical in DFW tornado risk areas' };
   }
   if (hasDocuments) {
-    return { type: 'Fireproof Document Safe', size: largeQty ? '1.0 cu ft' : '0.5 cu ft', fireRating: 'UL 350°F / 1 hr — protects paper', waterRating: 'ETL Verified flood-resistant', cost: largeQty ? '$300–$700′ : '$150–$300', anchor: ’Floor-mount or wall-mount recommended' };
+    return { type: 'Fireproof Document Safe', size: largeQty ? '1.0 cu ft' : '0.5 cu ft', fireRating: 'UL 350°F / 1 hr — protects paper', waterRating: 'ETL Verified flood-resistant', cost: largeQty ? '$300–$700' : '$150–$300', anchor: 'Floor-mount or wall-mount recommended' };
   }
-  return { type: 'General Home Safe', size: largeQty ? '2.0+ cu ft' : '0.5–1.0 cu ft', fireRating: 'UL 350°F / 30 min minimum', waterRating: 'Sealed lid preferred', cost: largeQty ? '$400–$1,000′ : '$200–$500', anchor: ’Anchor to interior closet floor for concealment' };
+  return { type: 'General Home Safe', size: largeQty ? '2.0+ cu ft' : '0.5–1.0 cu ft', fireRating: 'UL 350°F / 30 min minimum', waterRating: 'Sealed lid preferred', cost: largeQty ? '$400–$1,000' : '$200–$500', anchor: 'Anchor to interior closet floor for concealment' };
 }
 
 export default function DFWHomeSafeGuide() {
@@ -52,7 +52,7 @@ export default function DFWHomeSafeGuide() {
             { icon: '🌪️', title: 'Tornado & Storm Risk', body: 'DFW averages 30+ tornadoes annually. A safe anchored to your slab can survive structural collapse and protect documents that insurance adjusters require post-disaster.' },
             { icon: '🔥', title: 'Fire Ratings Explained', body: 'UL 350°F/1 hr means the interior stays below 350°F for one hour in a 1,700°F fire. Paper chars at 451°F — this rating protects documents. For digital media, you need UL 125°F.' },
             { icon: '💧', title: 'Flood Resistance', body: 'DFW sits in Flash Flood Alley. ETL-verified water-resistant safes survive brief submersion. Standard fireproof safes are NOT waterproof — fire retardant materials absorb water.' },
-            { icon: '🔩', title: 'Anchoring to DFW Slab', body: '85% of DFW homes are slab-on-grade — ideal for concrete anchor bolts. Use 3/8″ x 3″ concrete anchors minimum. An unanchored 500-lb safe can be removed by two people in under 4 minutes.' },
+            { icon: '🔩', title: 'Anchoring to DFW Slab', body: '85% of DFW homes are slab-on-grade — ideal for concrete anchor bolts. Use 3/8" x 3" concrete anchors minimum. An unanchored 500-lb safe can be removed by two people in under 4 minutes.' },
             { icon: '🔫', title: 'Gun Safes vs Document Safes', body: 'Gun safes prioritize pry resistance (steel gauge, locking bolts). Document safes prioritize fire insulation (thicker walls, drywall composite). Combined units sacrifice some of each — budget accordingly.' },
             { icon: '💰', title: 'Cost Tiers', body: '$200–$500: Basic fireproof box. $500–$1,200: Solid gun or document safe. $1,200–$3,000: Premium RSC-rated gun safe. $3,000–$5,000+: TL-15 rated high-security vault.' },
           ].map(card => (
@@ -71,7 +71,7 @@ export default function DFWHomeSafeGuide() {
             <div style={{ color: '#94a3b8', fontSize: '0.85rem', marginBottom: '0.6rem', fontWeight: 600 }}>WHAT ARE YOU PROTECTING? (select all that apply)</div>
             <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5rem' }}>
               {VALUABLES_OPTIONS.map(v => (
-                <button key={v} onClick={() => toggleValuable(v)} style={{ padding: '0.45rem 1rem', borderRadius: '20px', border: '1.5px solid', borderColor: selectedValuables.includes(v) ? '#F5E642′ : '#1e3a5f', backgroundColor: selectedValuables.includes(v) ? '#F5E642' : ’transparent', color: selectedValuables.includes(v) ? '#0A1628′ : '#94a3b8', fontWeight: 600, fontSize: '0.85rem', cursor: ’pointer' }}>{v}</button>
+                <button key={v} onClick={() => toggleValuable(v)} style={{ padding: '0.45rem 1rem', borderRadius: '20px', border: '1.5px solid', borderColor: selectedValuables.includes(v) ? '#F5E642' : '#1e3a5f', backgroundColor: selectedValuables.includes(v) ? '#F5E642' : 'transparent', color: selectedValuables.includes(v) ? '#0A1628' : '#94a3b8', fontWeight: 600, fontSize: '0.85rem', cursor: 'pointer' }}>{v}</button>
               ))}
             </div>
           </div>
@@ -80,7 +80,7 @@ export default function DFWHomeSafeGuide() {
             <div style={{ color: '#94a3b8', fontSize: '0.85rem', marginBottom: '0.6rem', fontWeight: 600 }}>APPROXIMATE QUANTITY</div>
             <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5rem' }}>
               {QTY_OPTIONS.map(q => (
-                <button key={q} onClick={() => { setQty(q); setResult(null); }} style={{ padding: '0.45rem 1rem', borderRadius: '20px', border: '1.5px solid', borderColor: qty === q ? '#F5E642′ : '#1e3a5f', backgroundColor: qty === q ? '#F5E642' : ’transparent', color: qty === q ? '#0A1628′ : '#94a3b8', fontWeight: 600, fontSize: '0.85rem', cursor: ’pointer' }}>{q}</button>
+                <button key={q} onClick={() => { setQty(q); setResult(null); }} style={{ padding: '0.45rem 1rem', borderRadius: '20px', border: '1.5px solid', borderColor: qty === q ? '#F5E642' : '#1e3a5f', backgroundColor: qty === q ? '#F5E642' : 'transparent', color: qty === q ? '#0A1628' : '#94a3b8', fontWeight: 600, fontSize: '0.85rem', cursor: 'pointer' }}>{q}</button>
               ))}
             </div>
           </div>
@@ -93,7 +93,7 @@ export default function DFWHomeSafeGuide() {
               {[['📦 Size', result.size], ['🔥 Fire Rating', result.fireRating], ['💧 Water Rating', result.waterRating], ['💰 Cost Range', result.cost], ['🔩 Anchoring', result.anchor]].map(([label, val]) => (
                 <div key={label as string} style={{ display: 'flex', gap: '0.75rem', marginBottom: '0.5rem', fontSize: '0.88rem' }}>
                   <span style={{ color: '#94a3b8', minWidth: '120px' }}>{label}</span>
-                  <span style={{ color: '#e2e8f0′ }}>{val}</span>
+                  <span style={{ color: '#e2e8f0' }}>{val}</span>
                 </div>
               ))}
             </div>

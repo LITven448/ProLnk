@@ -46,7 +46,7 @@ export default function DFWLandlordChecklistDFW2026() {
             <div style={{ marginTop: 12 }}>
               {ageMap[age].map(r => (
                 <div key={r} style={{ display: 'flex', alignItems: 'flex-start', gap: 8, marginBottom: 6 }}>
-                  <span style={{ color: '#F5E642′ }}>⚠️</span>
+                  <span style={{ color: '#F5E642' }}>⚠️</span>
                   <span style={{ color: '#E8EAF0', fontSize: 14 }}>{r}</span>
                 </div>
               ))}
@@ -60,9 +60,9 @@ export default function DFWLandlordChecklistDFW2026() {
             {cat.items.map(item => {
               const key = cat.category + item;
               return (
-                <div key={item} onClick={() => toggle(key)} style={{ display: 'flex', alignItems: 'flex-start', gap: 12, padding: '8px 0', cursor: 'pointer', borderBottom: '1px solid #0A1628′ }}>
+                <div key={item} onClick={() => toggle(key)} style={{ display: 'flex', alignItems: 'flex-start', gap: 12, padding: '8px 0', cursor: 'pointer', borderBottom: '1px solid #0A1628' }}>
                   <span style={{ fontSize: 18, marginTop: 1 }}>{checked[key] ? '✅' : '⬜'}</span>
-                  <span style={{ color: checked[key] ? '#6B7A90′ : '#E8EAF0', fontSize: 14, textDecoration: checked[key] ? ’line-through' : 'none' }}>{item}</span>
+                  <span style={{ color: checked[key] ? '#6B7A90' : '#E8EAF0', fontSize: 14, textDecoration: checked[key] ? 'line-through' : 'none' }}>{item}</span>
                 </div>
               );
             })}

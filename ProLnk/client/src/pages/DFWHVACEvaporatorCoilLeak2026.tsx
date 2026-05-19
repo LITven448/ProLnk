@@ -17,8 +17,8 @@ export default function DFWHVACEvaporatorCoilLeak2026() {
   return (
     <div style={{ backgroundColor: '#0A1628', minHeight: '100vh', color: '#ffffff', fontFamily: 'system-ui, sans-serif', padding: '24px' }}>
       <div style={{ maxWidth: '800px', margin: '0 auto' }}>
-        <div style={{ marginBottom: '8px', color: '#F5E642', fontSize: '14px', fontWeight: '600′ }}>🌡️ DFW HVAC GUIDE 2026</div>
-        <h1 style={{ fontSize: '32px', fontWeight: '800', marginBottom: '12px', lineHeight: '1.2′ }}>AC Evaporator Coil Leaks in DFW</h1>
+        <div style={{ marginBottom: '8px', color: '#F5E642', fontSize: '14px', fontWeight: '600' }}>🌡️ DFW HVAC GUIDE 2026</div>
+        <h1 style={{ fontSize: '32px', fontWeight: '800', marginBottom: '12px', lineHeight: '1.2' }}>AC Evaporator Coil Leaks in DFW</h1>
         <p style={{ color: '#94a3b8', fontSize: '16px', marginBottom: '32px' }}>The evaporator coil is the most common refrigerant leak location in DFW HVAC systems — and DFW's unique climate makes it worse.</p>
 
         <div style={{ backgroundColor: '#1e3a5f', borderRadius: '12px', padding: '24px', marginBottom: '24px' }}>
@@ -57,23 +57,23 @@ export default function DFWHVACEvaporatorCoilLeak2026() {
             <select value={refrigerant} onChange={e => setRefrigerant(e.target.value)}
               style={{ width: '100%', padding: '10px 14px', backgroundColor: '#0A1628', border: '1px solid #334155', borderRadius: '8px', color: '#fff', fontSize: '14px' }}>
               <option value="">Select refrigerant type</option>
-              <option value="r22″>R-22 (older systems, pre-2010)</option>
+              <option value="r22">R-22 (older systems, pre-2010)</option>
               <option value="r410a">R-410A (common 2010–2022)</option>
-              <option value="r32″>R-32 or R-454B (newer systems)</option>
+              <option value="r32">R-32 or R-454B (newer systems)</option>
             </select>
           </div>
           <button onClick={getRecommendation}
             style={{ backgroundColor: '#F5E642', color: '#0A1628', border: 'none', borderRadius: '8px', padding: '12px 24px', fontSize: '15px', fontWeight: '700', cursor: 'pointer', width: '100%' }}>
             Get My Recommendation →
           </button>
-          {result && <div style={{ marginTop: '16px', backgroundColor: '#0A1628', borderRadius: '8px', padding: '16px', color: '#cbd5e1', fontSize: '15px', lineHeight: '1.6′ }}>{result}</div>}
+          {result && <div style={{ marginTop: '16px', backgroundColor: '#0A1628', borderRadius: '8px', padding: '16px', color: '#cbd5e1', fontSize: '15px', lineHeight: '1.6' }}>{result}</div>}
         </div>
 
         <div style={{ backgroundColor: '#1e3a5f', borderRadius: '12px', padding: '24px' }}>
           <h2 style={{ color: '#F5E642', fontSize: '18px', fontWeight: '700', marginBottom: '12px' }}>💰 DFW Cost Benchmarks (2026)</h2>
           {[['Evaporator coil replacement (R-410A, 3-ton)','$1,200 – $2,800'],['Refrigerant recharge only (leak still present)','$300 – $600 (temporary)'],['Full system replacement (3-ton, 15 SEER2)','$4,500 – $8,000'],['Leak detection + UV dye test','$150 – $250']].map(([item, cost]) => (
             <div key={item} style={{ display: 'flex', justifyContent: 'space-between', padding: '10px 0', borderBottom: '1px solid #334155', fontSize: '14px' }}>
-              <span style={{ color: '#cbd5e1′ }}>{item}</span>
+              <span style={{ color: '#cbd5e1' }}>{item}</span>
               <span style={{ color: '#F5E642', fontWeight: '700', whiteSpace: 'nowrap', marginLeft: '16px' }}>{cost}</span>
             </div>
           ))}

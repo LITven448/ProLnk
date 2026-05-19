@@ -76,8 +76,8 @@ export default function DFWHomeLegacyGuide() {
               key={s.id}
               onClick={() => setSelected(s.id)}
               style={{
-                backgroundColor: selected === s.id ? '#F5E642′ : '#1e2d45',
-                color: selected === s.id ? '#0A1628′ : '#fff',
+                backgroundColor: selected === s.id ? '#F5E642' : '#1e2d45',
+                color: selected === s.id ? '#0A1628' : '#fff',
                 border: 'none',
                 borderRadius: 10,
                 padding: '14px 10px',

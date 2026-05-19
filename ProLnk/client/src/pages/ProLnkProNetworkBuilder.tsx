@@ -60,10 +60,10 @@ export default function ProLnkProNetworkBuilder() {
 
         <div style={{ background: '#0F2040', borderRadius: 12, padding: 24, marginBottom: 20 }}>
           <label style={{ color: '#8899AA', fontSize: 12, display: 'block', marginBottom: 8 }}>
-            YOUR CURRENT L1 RECRUITS: <span style={{ color: '#F5E642′ }}>{networkSize} pros</span>
+            YOUR CURRENT L1 RECRUITS: <span style={{ color: '#F5E642' }}>{networkSize} pros</span>
           </label>
           <input type="range" min={0} max={100} value={networkSize}
-            onChange={e => setNetworkSize(+e.target.value)} style={{ width: '100%', accentColor: '#F5E642′ }} />
+            onChange={e => setNetworkSize(+e.target.value)} style={{ width: '100%', accentColor: '#F5E642' }} />
           <div style={{ display: 'flex', justifyContent: 'space-between', color: '#8899AA', fontSize: 11, marginTop: 4 }}>
             <span>0</span>
             <span>Next milestone: {nextMilestone} pros</span>
@@ -71,7 +71,7 @@ export default function ProLnkProNetworkBuilder() {
           </div>
         </div>
 
-        <div style={{ background: '#1A2E4A', borderRadius: 12, padding: 20, marginBottom: 20, border: '2px solid #F5E642′ }}>
+        <div style={{ background: '#1A2E4A', borderRadius: 12, padding: 20, marginBottom: 20, border: '2px solid #F5E642' }}>
           <div style={{ fontSize: 24 }}>{current.icon}</div>
           <h3 style={{ color: '#F5E642', margin: '8px 0 12px', fontSize: 16 }}>{current.title}</h3>
           {current.steps.map((step, i) => (

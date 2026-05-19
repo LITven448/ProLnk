@@ -72,7 +72,7 @@ export default function DFWHVACSystemMapDFW() {
         </div>
         {selected && (
           <div style={{ background: '#0f1f35', border: '2px solid #F5E642', borderRadius: 12, padding: '1.5rem' }}>
-            <h2 style={{ fontSize: 20, fontWeight: 700, marginBottom: '1rem', color: '#F5E642′ }}>{selected.label}</h2>
+            <h2 style={{ fontSize: 20, fontWeight: 700, marginBottom: '1rem', color: '#F5E642' }}>{selected.label}</h2>
             <div style={{ marginBottom: '1rem' }}>
               <div style={{ fontSize: 12, color: '#64748b', textTransform: 'uppercase', letterSpacing: 1, marginBottom: 4 }}>What It Is</div>
               <p style={{ color: '#e2e8f0', lineHeight: 1.6 }}>{selected.what}</p>

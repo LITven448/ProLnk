@@ -10,18 +10,18 @@ import { Input } from "@/components/ui/input";
 import { toast } from "sonner";
 
 const STATS = [
-  { label: "Neighbors Referred", value: "3″,  icon: Users,   color: "#67E8F9" },
-  { label: "Credits Earned",     value: "$75″, icon: Gift,    color: "#22C55E" },
-  { label: "Credits Available",  value: "$25″, icon: Zap,     color: "#F59E0B" },
+  { label: "Neighbors Referred", value: "3",  icon: Users,   color: "#67E8F9" },
+  { label: "Credits Earned",     value: "$75", icon: Gift,    color: "#22C55E" },
+  { label: "Credits Available",  value: "$25", icon: Zap,     color: "#F59E0B" },
 ];
 
 const STEPS = [
   { num: 1, icon: Share2,       label: "Share your link",         desc: "Send your unique referral link to a neighbor via text, email, or social media." },
   { num: 2, icon: Users,        label: "Neighbor signs up",       desc: "They create a free TrustyPro account using your referral link." },
-  { num: 3, icon: CheckCircle,  label: "You both earn $25″,       desc: "Once their first job is booked, you each receive a $25 service credit automatically." },
+  { num: 3, icon: CheckCircle,  label: "You both earn $25",       desc: "Once their first job is booked, you each receive a $25 service credit automatically." },
 ];
 
-const REFERRAL_URL = "trustypro.io/join?ref=homeowner123″;
+const REFERRAL_URL = "trustypro.io/join?ref=homeowner123";
 
 interface Referral {
   name: string;
@@ -32,14 +32,14 @@ interface Referral {
 }
 
 const MOCK_REFERRALS: Referral[] = [
-  { name: "Sarah M.",   city: "Allen, TX",    date: "May 3, 2026″,  status: "First Job Booked", credit: 25 },
-  { name: "James T.",   city: "Frisco, TX",   date: "May 8, 2026″,  status: "Signed Up",        credit: null },
-  { name: "Linda K.",   city: "McKinney, TX", date: "May 11, 2026″, status: "Pending",           credit: null },
+  { name: "Sarah M.",   city: "Allen, TX",    date: "May 3, 2026",  status: "First Job Booked", credit: 25 },
+  { name: "James T.",   city: "Frisco, TX",   date: "May 8, 2026",  status: "Signed Up",        credit: null },
+  { name: "Linda K.",   city: "McKinney, TX", date: "May 11, 2026", status: "Pending",           credit: null },
 ];
 
 const STATUS_STYLE: Record<string, { bg: string; color: string; border: string }> = {
   "First Job Booked": { bg: "rgba(34,197,94,0.10)",  color: "#22C55E", border: "rgba(34,197,94,0.25)"  },
-  "Signed Up":        { bg: "rgba(103,232,249,0.10)", color: "#67E8F9″, border: "rgba(103,232,249,0.25)" },
+  "Signed Up":        { bg: "rgba(103,232,249,0.10)", color: "#67E8F9", border: "rgba(103,232,249,0.25)" },
   "Pending":          { bg: "rgba(245,158,11,0.10)",  color: "#F59E0B", border: "rgba(245,158,11,0.25)"  },
 };
 
@@ -79,8 +79,8 @@ export default function HomeownerReferralProgram() {
 
   return (
     <HomeownerLayout>
-      <div style={{ minHeight: "100vh", background: "#0A1628″, fontFamily: "'Inter', system-ui, sans-serif", paddingBottom: 48 }}>
-        <div style={{ maxWidth: 680, margin: "0 auto", padding: "32px 20px 0″ }}>
+      <div style={{ minHeight: "100vh", background: "#0A1628", fontFamily: "'Inter', system-ui, sans-serif", paddingBottom: 48 }}>
+        <div style={{ maxWidth: 680, margin: "0 auto", padding: "32px 20px 0" }}>
 
           {/* Header */}
           <div style={{ textAlign: "center", marginBottom: 32 }}>
@@ -89,7 +89,7 @@ export default function HomeownerReferralProgram() {
               display: "flex", alignItems: "center", justifyContent: "center", margin: "0 auto 16px",
               border: "1px solid rgba(103,232,249,0.20)",
             }}>
-              <Gift size={26} color="#67E8F9″ />
+              <Gift size={26} color="#67E8F9" />
             </div>
             <h1 style={{ fontSize: 28, fontWeight: 800, color: "#F0F4FF", margin: "0 0 8px" }}>
               Refer Neighbors, Earn Rewards
@@ -117,7 +117,7 @@ export default function HomeownerReferralProgram() {
                   <Icon size={17} color={color} />
                 </div>
                 <div style={{ fontSize: 22, fontWeight: 800, color: "#F0F4FF" }}>{value}</div>
-                <div style={{ fontSize: 11, color: "#6B7280″, marginTop: 3 }}>{label}</div>
+                <div style={{ fontSize: 11, color: "#6B7280", marginTop: 3 }}>{label}</div>
               </div>
             ))}
           </div>
@@ -141,18 +141,18 @@ export default function HomeownerReferralProgram() {
                       background: "rgba(103,232,249,0.12)", border: "1px solid rgba(103,232,249,0.25)",
                       display: "flex", alignItems: "center", justifyContent: "center",
                     }}>
-                      <Icon size={16} color="#67E8F9″ />
+                      <Icon size={16} color="#67E8F9" />
                     </div>
                     {i < STEPS.length - 1 && (
-                      <div style={{ width: 1, flex: 1, background: "rgba(103,232,249,0.12)", margin: "4px 0″ }} />
+                      <div style={{ width: 1, flex: 1, background: "rgba(103,232,249,0.12)", margin: "4px 0" }} />
                     )}
                   </div>
                   <div style={{ paddingBottom: i < STEPS.length - 1 ? 16 : 0 }}>
                     <div style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: 3 }}>
-                      <span style={{ fontSize: 10, fontWeight: 700, color: "#67E8F9″, textTransform: "uppercase", letterSpacing: "0.07em" }}>Step {num}</span>
+                      <span style={{ fontSize: 10, fontWeight: 700, color: "#67E8F9", textTransform: "uppercase", letterSpacing: "0.07em" }}>Step {num}</span>
                     </div>
                     <div style={{ fontWeight: 700, color: "#E5E7EB", fontSize: 13 }}>{label}</div>
-                    <div style={{ fontSize: 12, color: "#6B7280″, marginTop: 2, lineHeight: 1.5 }}>{desc}</div>
+                    <div style={{ fontSize: 12, color: "#6B7280", marginTop: 2, lineHeight: 1.5 }}>{desc}</div>
                   </div>
                 </div>
               ))}
@@ -166,7 +166,7 @@ export default function HomeownerReferralProgram() {
             borderRadius: 16, padding: 20, marginBottom: 20,
           }}>
             <div style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: 14 }}>
-              <QrCode size={15} color="#67E8F9″ />
+              <QrCode size={15} color="#67E8F9" />
               <span style={{ color: "#F0F4FF", fontWeight: 700, fontSize: 14 }}>Your Referral Link</span>
             </div>
             <div style={{ display: "flex", gap: 8, marginBottom: 12 }}>
@@ -201,8 +201,8 @@ export default function HomeownerReferralProgram() {
               background: "rgba(255,255,255,0.05)", border: "1px solid rgba(255,255,255,0.09)",
               display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", gap: 6,
             }}>
-              <QrCode size={28} color="#4B5563″ />
-              <span style={{ fontSize: 9, color: "#4B5563″, fontWeight: 600, textTransform: "uppercase" }}>QR Code</span>
+              <QrCode size={28} color="#4B5563" />
+              <span style={{ fontSize: 9, color: "#4B5563", fontWeight: 600, textTransform: "uppercase" }}>QR Code</span>
             </div>
           </div>
 
@@ -224,13 +224,13 @@ export default function HomeownerReferralProgram() {
                 }}
               >
                 <div style={{ width: 36, height: 36, borderRadius: 10, background: "rgba(103,232,249,0.12)", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
-                  <MessageSquare size={16} color="#67E8F9″ />
+                  <MessageSquare size={16} color="#67E8F9" />
                 </div>
                 <div>
                   <div style={{ fontWeight: 700, color: "#E5E7EB", fontSize: 13 }}>Share via Text</div>
-                  <div style={{ fontSize: 11, color: "#6B7280″ }}>Pre-composed message ready to send</div>
+                  <div style={{ fontSize: 11, color: "#6B7280" }}>Pre-composed message ready to send</div>
                 </div>
-                <ArrowRight size={14} color="#4B5563″ style={{ marginLeft: "auto" }} />
+                <ArrowRight size={14} color="#4B5563" style={{ marginLeft: "auto" }} />
               </button>
 
               <button
@@ -247,9 +247,9 @@ export default function HomeownerReferralProgram() {
                 </div>
                 <div>
                   <div style={{ fontWeight: 700, color: "#E5E7EB", fontSize: 13 }}>Share via Email</div>
-                  <div style={{ fontSize: 11, color: "#6B7280″ }}>Opens your mail app with a friendly note</div>
+                  <div style={{ fontSize: 11, color: "#6B7280" }}>Opens your mail app with a friendly note</div>
                 </div>
-                <ArrowRight size={14} color="#4B5563″ style={{ marginLeft: "auto" }} />
+                <ArrowRight size={14} color="#4B5563" style={{ marginLeft: "auto" }} />
               </button>
 
               <button
@@ -266,9 +266,9 @@ export default function HomeownerReferralProgram() {
                 </div>
                 <div>
                   <div style={{ fontWeight: 700, color: "#E5E7EB", fontSize: 13 }}>Copy Link</div>
-                  <div style={{ fontSize: 11, color: "#6B7280″ }}>Paste anywhere — Nextdoor, iMessage, etc.</div>
+                  <div style={{ fontSize: 11, color: "#6B7280" }}>Paste anywhere — Nextdoor, iMessage, etc.</div>
                 </div>
-                <ArrowRight size={14} color="#4B5563″ style={{ marginLeft: "auto" }} />
+                <ArrowRight size={14} color="#4B5563" style={{ marginLeft: "auto" }} />
               </button>
             </div>
           </div>
@@ -289,7 +289,7 @@ export default function HomeownerReferralProgram() {
                     key={i}
                     style={{
                       display: "flex", alignItems: "center", gap: 12,
-                      padding: "11px 0″,
+                      padding: "11px 0",
                       borderBottom: i < MOCK_REFERRALS.length - 1 ? "1px solid rgba(255,255,255,0.06)" : "none",
                     }}
                   >
@@ -301,7 +301,7 @@ export default function HomeownerReferralProgram() {
                     }}>{r.name[0]}</div>
                     <div style={{ flex: 1, minWidth: 0 }}>
                       <div style={{ fontWeight: 600, color: "#E5E7EB", fontSize: 13 }}>{r.name}</div>
-                      <div style={{ fontSize: 11, color: "#6B7280″ }}>{r.city} · {r.date}</div>
+                      <div style={{ fontSize: 11, color: "#6B7280" }}>{r.city} · {r.date}</div>
                     </div>
                     <div style={{ display: "flex", flexDirection: "column", alignItems: "flex-end", gap: 4 }}>
                       <span style={{
@@ -333,7 +333,7 @@ export default function HomeownerReferralProgram() {
                 width: 36, height: 36, borderRadius: 10,
                 background: "rgba(103,232,249,0.12)", display: "flex", alignItems: "center", justifyContent: "center",
               }}>
-                <Zap size={17} color="#67E8F9″ />
+                <Zap size={17} color="#67E8F9" />
               </div>
               <div>
                 <div style={{ fontWeight: 700, color: "#F0F4FF", fontSize: 14 }}>Bonus Milestone</div>
@@ -342,14 +342,14 @@ export default function HomeownerReferralProgram() {
             </div>
             <div style={{ marginBottom: 6 }}>
               <div style={{ display: "flex", justifyContent: "space-between", marginBottom: 5 }}>
-                <span style={{ fontSize: 12, color: "#6B7280″ }}>Progress</span>
-                <span style={{ fontSize: 12, fontWeight: 700, color: "#67E8F9″ }}>3 / 5</span>
+                <span style={{ fontSize: 12, color: "#6B7280" }}>Progress</span>
+                <span style={{ fontSize: 12, fontWeight: 700, color: "#67E8F9" }}>3 / 5</span>
               </div>
               <div style={{ height: 7, background: "rgba(255,255,255,0.08)", borderRadius: 99, overflow: "hidden" }}>
                 <div style={{ height: "100%", width: "60%", background: "linear-gradient(90deg, #67E8F9, #22C55E)", borderRadius: 99 }} />
               </div>
             </div>
-            <div style={{ fontSize: 11, color: "#6B7280″ }}>2 more referrals to unlock free Premium!</div>
+            <div style={{ fontSize: 11, color: "#6B7280" }}>2 more referrals to unlock free Premium!</div>
           </div>
 
           {/* Invite from Contacts */}
@@ -364,11 +364,11 @@ export default function HomeownerReferralProgram() {
               transition: "background 0.12s",
             }}
           >
-            <BookUser size={18} color="#6B7280″ />
+            <BookUser size={18} color="#6B7280" />
             Invite from Contacts
           </button>
 
-          <p style={{ textAlign: "center", fontSize: 11, color: "#374151″, marginTop: 20 }}>
+          <p style={{ textAlign: "center", fontSize: 11, color: "#374151", marginTop: 20 }}>
             Credits are applied automatically to your next service booking. No expiration.
           </p>
         </div>

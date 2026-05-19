@@ -1,10 +1,10 @@
 import { useState } from 'react';
 
 const technologies = [
-  { id: 'ai', icon: '🤖', title: 'AI Predictive Maintenance', desc: 'Detects failure before it happens — sensors flag anomalies weeks early', eta: 'Q1 2027′ },
-  { id: 'ercot', icon: '⚡', title: 'ERCOT Demand Response', desc: 'Auto-participates in grid programs during peak events, earns bill credits', eta: 'Q2 2027′ },
-  { id: 'co2', icon: '🌿', title: 'CO₂ Refrigerant Systems', desc: 'Ultra-low GWP refrigerant replacing R-410A across DFW installs', eta: 'Q3 2027′ },
-  { id: 'hpwh', icon: '💧', title: 'Heat Pump Water Heater Integration', desc: 'HVAC and water heat unified under one smart controller', eta: 'Q2 2027′ },
+  { id: 'ai', icon: '🤖', title: 'AI Predictive Maintenance', desc: 'Detects failure before it happens — sensors flag anomalies weeks early', eta: 'Q1 2027' },
+  { id: 'ercot', icon: '⚡', title: 'ERCOT Demand Response', desc: 'Auto-participates in grid programs during peak events, earns bill credits', eta: 'Q2 2027' },
+  { id: 'co2', icon: '🌿', title: 'CO₂ Refrigerant Systems', desc: 'Ultra-low GWP refrigerant replacing R-410A across DFW installs', eta: 'Q3 2027' },
+  { id: 'hpwh', icon: '💧', title: 'Heat Pump Water Heater Integration', desc: 'HVAC and water heat unified under one smart controller', eta: 'Q2 2027' },
   { id: 'vault', icon: '🏠', title: 'ProLnk Vault Performance Tracking', desc: 'Every system reading logged automatically — one source of truth', eta: 'Live Now' },
 ];
 
@@ -35,7 +35,7 @@ export default function DFWHVACTech2027Preview2026() {
         <div style={{ display: 'flex', flexWrap: 'wrap', gap: '.75rem', marginBottom: '2rem' }}>
           {priorities.map(p => (
             <button key={p.label} onClick={() => handlePriority(p)}
-              style={{ background: selected === p.label ? '#F5E642′ : '#1e3a5f', color: selected === p.label ? '#0A1628' : '#fff', border: ’none', borderRadius: 8, padding: '.6rem 1.1rem', cursor: 'pointer', fontWeight: 600 }}>
+              style={{ background: selected === p.label ? '#F5E642' : '#1e3a5f', color: selected === p.label ? '#0A1628' : '#fff', border: 'none', borderRadius: 8, padding: '.6rem 1.1rem', cursor: 'pointer', fontWeight: 600 }}>
               {p.label}
             </button>
           ))}
@@ -46,7 +46,7 @@ export default function DFWHVACTech2027Preview2026() {
             <h2 style={{ color: '#F5E642', marginBottom: '1rem' }}>Your 2027 HVAC Technology Preview</h2>
             <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
               {result.map(t => (
-                <div key={t.id} style={{ background: '#1e3a5f', borderRadius: 10, padding: '1.2rem', borderLeft: '4px solid #F5E642′ }}>
+                <div key={t.id} style={{ background: '#1e3a5f', borderRadius: 10, padding: '1.2rem', borderLeft: '4px solid #F5E642' }}>
                   <div style={{ fontSize: '1.5rem' }}>{t.icon}</div>
                   <div style={{ fontWeight: 700, marginTop: '.4rem' }}>{t.title}</div>
                   <div style={{ color: '#94a3b8', fontSize: '.9rem', marginTop: '.3rem' }}>{t.desc}</div>
@@ -54,7 +54,7 @@ export default function DFWHVACTech2027Preview2026() {
                 </div>
               ))}
             </div>
-            <div style={{ marginTop: '1.5rem', background: '#F5E64220', borderRadius: 10, padding: '1rem', color: '#F5E642′ }}>
+            <div style={{ marginTop: '1.5rem', background: '#F5E64220', borderRadius: 10, padding: '1rem', color: '#F5E642' }}>
               🏠 ProLnk Vault logs every HVAC performance reading automatically — your 2027-ready data starts today.
             </div>
           </div>

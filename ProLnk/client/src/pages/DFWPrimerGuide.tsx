@@ -57,7 +57,7 @@ export default function DFWPrimerGuide() {
         </div>
 
         <div style={{ background: '#0f2030', borderRadius: 12, padding: '1.5rem', marginBottom: '1.5rem' }}>
-          <h2 style={{ fontSize: '1.1rem', fontWeight: 600, marginBottom: '1rem', color: '#F5E642′ }}>🎯 DFW Primer Selector</h2>
+          <h2 style={{ fontSize: '1.1rem', fontWeight: 600, marginBottom: '1rem', color: '#F5E642' }}>🎯 DFW Primer Selector</h2>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
             <div>
               <label style={{ color: '#94a3b8', fontSize: '0.85rem', display: 'block', marginBottom: '0.4rem' }}>Painting Situation</label>
@@ -81,10 +81,10 @@ export default function DFWPrimerGuide() {
             </div>
           </div>
           {result && (
-            <div style={{ background: '#0A1628', borderRadius: 8, padding: '1rem', borderLeft: '3px solid #F5E642′ }}>
-              <div style={{ marginBottom: '0.5rem' }}><span style={{ color: '#F5E642′ }}>Primer Type:</span> <span style={{ color: '#fff' }}>{result.primerType}</span></div>
-              <div style={{ marginBottom: '0.5rem' }}><span style={{ color: '#F5E642′ }}>Coats:</span> <span style={{ color: '#fff' }}>{result.coats}</span></div>
-              <div><span style={{ color: '#F5E642′ }}>DFW Notes:</span> <span style={{ color: '#94a3b8', fontSize: '0.9rem' }}>{result.notes}</span></div>
+            <div style={{ background: '#0A1628', borderRadius: 8, padding: '1rem', borderLeft: '3px solid #F5E642' }}>
+              <div style={{ marginBottom: '0.5rem' }}><span style={{ color: '#F5E642' }}>Primer Type:</span> <span style={{ color: '#fff' }}>{result.primerType}</span></div>
+              <div style={{ marginBottom: '0.5rem' }}><span style={{ color: '#F5E642' }}>Coats:</span> <span style={{ color: '#fff' }}>{result.coats}</span></div>
+              <div><span style={{ color: '#F5E642' }}>DFW Notes:</span> <span style={{ color: '#94a3b8', fontSize: '0.9rem' }}>{result.notes}</span></div>
             </div>
           )}
         </div>

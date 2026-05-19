@@ -11,7 +11,7 @@ const insuranceDiscounts: Record<string, string> = {
 };
 
 const vulnerabilityScores: Record<string, { score: number; label: string; measures: string[]; upgradeCost: string }> = {
-  'Asphalt shingle roof (standard)': { score: 75, label: 'High', measures: ['Upgrade to Class 4 impact-resistant shingles (UL 2218)', 'Add ridge vent protection caps', 'Screen HVAC condenser with hail guard', 'Install hail-rated skylights if any exist', 'Document roof with photos before each storm season'], upgradeCost: '$8,000–$18,000′ },
+  'Asphalt shingle roof (standard)': { score: 75, label: 'High', measures: ['Upgrade to Class 4 impact-resistant shingles (UL 2218)', 'Add ridge vent protection caps', 'Screen HVAC condenser with hail guard', 'Install hail-rated skylights if any exist', 'Document roof with photos before each storm season'], upgradeCost: '$8,000–$18,000' },
   'Skylights present': { score: 90, label: 'Very High', measures: ['Replace standard skylights with hail-rated tempered glass', 'Install exterior skylight screens', 'Consider closing off skylights not essential to ventilation', 'Keep interior protection (shades) to limit glass spray', 'Insure skylights separately if high-value'], upgradeCost: '$1,500–$4,000 per skylight' },
   'Solar panels installed': { score: 85, label: 'Very High', measures: ['Ensure panels are rated for 1-inch hail at 50mph (most commercial panels are)', 'Confirm installer warranty covers hail damage', 'Add monitoring alerts to detect panel output drops post-storm', 'Photograph panels before and after each major hail event', 'Review if homeowner policy covers panels or if separate rider needed'], upgradeCost: '$0 if properly rated — verify with installer' },
   'Metal roof': { score: 20, label: 'Low', measures: ['Inspect panel fasteners annually for loosening', 'Check ridge caps and flashing — most vulnerable points', 'Dent assessment after large hail (cosmetic vs structural)', 'Ensure gutters are secured — impact can loosen brackets', 'Vehicle protection remains top priority even with metal roof'], upgradeCost: '$200–$800 maintenance' },
@@ -19,7 +19,7 @@ const vulnerabilityScores: Record<string, { score: number; label: string; measur
 };
 
 function getAssessment(feature: string) {
-  return vulnerabilityScores[feature] || { score: 60, label: 'Moderate', measures: ['Inspect roof annually and after every hail event', 'Ensure all skylights are rated for impact', 'Protect HVAC condenser with a hail guard', 'Cover vehicles during hail alerts', 'Review insurance policy for hail coverage limits'], upgradeCost: '$2,000–$8,000′ };
+  return vulnerabilityScores[feature] || { score: 60, label: 'Moderate', measures: ['Inspect roof annually and after every hail event', 'Ensure all skylights are rated for impact', 'Protect HVAC condenser with a hail guard', 'Cover vehicles during hail alerts', 'Review insurance policy for hail coverage limits'], upgradeCost: '$2,000–$8,000' };
 }
 
 export default function DFWHailDamagePreventionGuide() {
@@ -31,7 +31,7 @@ export default function DFWHailDamagePreventionGuide() {
     setResult(getAssessment(feature));
   }
 
-  const scoreColor = (score: number) => score >= 80 ? '#ef4444′ : score >= 60 ? '#f97316' : score >= 40 ? '#eab308' : '#22c55e';
+  const scoreColor = (score: number) => score >= 80 ? '#ef4444' : score >= 60 ? '#f97316' : score >= 40 ? '#eab308' : '#22c55e';
 
   return (
     <div style={{ background: '#0A1628', minHeight: '100vh', color: '#fff', fontFamily: 'sans-serif', padding: '2rem' }}>
@@ -76,7 +76,7 @@ export default function DFWHailDamagePreventionGuide() {
           <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
             <div style={{ background: '#0f2040', borderRadius: 8, padding: '1.5rem', border: `1px solid ${scoreColor(result.score)}` }}>
               <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1rem' }}>
-                <div style={{ fontWeight: 700, color: '#F5E642′ }}>🎯 Vulnerability Score</div>
+                <div style={{ fontWeight: 700, color: '#F5E642' }}>🎯 Vulnerability Score</div>
                 <div style={{ fontWeight: 800, fontSize: '1.5rem', color: scoreColor(result.score) }}>{result.score}/100 — {result.label}</div>
               </div>
               <div style={{ background: '#1e3a5f', borderRadius: 6, height: 12, marginBottom: '1rem' }}>
@@ -84,8 +84,8 @@ export default function DFWHailDamagePreventionGuide() {
               </div>
               {result.measures.map((m, i) => (
                 <div key={i} style={{ display: 'flex', gap: '0.5rem', marginBottom: '0.5rem' }}>
-                  <span style={{ color: '#F5E642′ }}>▸</span>
-                  <span style={{ color: '#e2e8f0′ }}>{m}</span>
+                  <span style={{ color: '#F5E642' }}>▸</span>
+                  <span style={{ color: '#e2e8f0' }}>{m}</span>
                 </div>
               ))}
               <div style={{ marginTop: '1rem', display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>

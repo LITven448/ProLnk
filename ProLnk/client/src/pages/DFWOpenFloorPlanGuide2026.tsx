@@ -2,7 +2,7 @@ import { useState } from 'react';
 
 const guides: Record<string, Record<string, string>> = {
   open: {
-    'add-definition': 'DFW tip: Add definition with half-walls (36″ knee walls), columns, or ceiling treatment changes. Preserves open feel while creating functional zones. No permit needed for non-structural partitions.',
+    'add-definition': 'DFW tip: Add definition with half-walls (36" knee walls), columns, or ceiling treatment changes. Preserves open feel while creating functional zones. No permit needed for non-structural partitions.',
     'add-walls': 'Adding non-load-bearing walls requires permit in most DFW cities. Contact city building department. Framing + drywall typically $80-140/linear ft installed. Consider HVAC zoning cost — open plans harder to cool in Texas heat.',
     'zone-cooling': 'Texas heat problem: open plans create single HVAC zone. Solution: ceiling fans at zone intersections, mini-split in specific areas, smart thermostat with multiple sensors. Zoning can cut cooling costs 15-25%.',
   },
@@ -36,8 +36,8 @@ export default function DFWOpenFloorPlanGuide2026() {
       <div style={{ maxWidth: 800, margin: '0 auto' }}>
         <div style={{ textAlign: 'center', marginBottom: '2.5rem' }}>
           <div style={{ fontSize: '3rem' }}>🏗️</div>
-          <h1 style={{ color: '#F5E642', fontSize: '2rem', margin: '0.5rem 0′ }}>DFW Open vs Closed Floor Plan Guide 2026</h1>
-          <p style={{ color: '#94a3b8′ }}>Texas-specific considerations for floor plan changes</p>
+          <h1 style={{ color: '#F5E642', fontSize: '2rem', margin: '0.5rem 0' }}>DFW Open vs Closed Floor Plan Guide 2026</h1>
+          <p style={{ color: '#94a3b8' }}>Texas-specific considerations for floor plan changes</p>
         </div>
 
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '2rem' }}>
@@ -56,15 +56,15 @@ export default function DFWOpenFloorPlanGuide2026() {
           <div style={{ marginBottom: '1rem' }}>
             <div style={{ color: '#94a3b8', fontSize: '0.85rem', marginBottom: '0.5rem' }}>Current Layout</div>
             <div style={{ display: 'flex', gap: '0.75rem' }}>
-              <button onClick={() => { setLayout('open'); setGoal(''); }} style={{ background: layout === 'open' ? '#F5E642′ : '#1a3050', color: layout === ’open' ? '#0A1628′ : '#e2e8f0', border: ’none', borderRadius: 8, padding: '0.6rem 1.25rem', cursor: 'pointer', fontWeight: 600 }}>🏠 Open Concept</button>
-              <button onClick={() => { setLayout('closed'); setGoal(''); }} style={{ background: layout === 'closed' ? '#F5E642′ : '#1a3050', color: layout === ’closed' ? '#0A1628′ : '#e2e8f0', border: ’none', borderRadius: 8, padding: '0.6rem 1.25rem', cursor: 'pointer', fontWeight: 600 }}>🏚️ Closed/Traditional</button>
+              <button onClick={() => { setLayout('open'); setGoal(''); }} style={{ background: layout === 'open' ? '#F5E642' : '#1a3050', color: layout === 'open' ? '#0A1628' : '#e2e8f0', border: 'none', borderRadius: 8, padding: '0.6rem 1.25rem', cursor: 'pointer', fontWeight: 600 }}>🏠 Open Concept</button>
+              <button onClick={() => { setLayout('closed'); setGoal(''); }} style={{ background: layout === 'closed' ? '#F5E642' : '#1a3050', color: layout === 'closed' ? '#0A1628' : '#e2e8f0', border: 'none', borderRadius: 8, padding: '0.6rem 1.25rem', cursor: 'pointer', fontWeight: 600 }}>🏚️ Closed/Traditional</button>
             </div>
           </div>
           {layout && (
             <div style={{ marginBottom: '1.25rem' }}>
               <div style={{ color: '#94a3b8', fontSize: '0.85rem', marginBottom: '0.5rem' }}>What's Your Goal?</div>
               <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5rem' }}>
-                {validGoals.map(g => <button key={g} onClick={() => setGoal(g)} style={{ background: goal === g ? '#F5E642′ : '#1a3050', color: goal === g ? '#0A1628' : '#e2e8f0', border: ’none', borderRadius: 6, padding: '0.5rem 0.75rem', cursor: 'pointer', fontSize: '0.82rem', fontWeight: 600 }}>{goalLabels[g]}</button>)}
+                {validGoals.map(g => <button key={g} onClick={() => setGoal(g)} style={{ background: goal === g ? '#F5E642' : '#1a3050', color: goal === g ? '#0A1628' : '#e2e8f0', border: 'none', borderRadius: 6, padding: '0.5rem 0.75rem', cursor: 'pointer', fontSize: '0.82rem', fontWeight: 600 }}>{goalLabels[g]}</button>)}
               </div>
             </div>
           )}

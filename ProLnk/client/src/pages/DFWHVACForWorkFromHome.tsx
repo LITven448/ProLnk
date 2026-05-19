@@ -94,10 +94,10 @@ export default function DFWHVACForWorkFromHome() {
           </p>
         </div>
 
-        <div style={{ backgroundColor: '#0f2040', borderRadius: 12, padding: '24px', marginBottom: 24, borderLeft: '4px solid #F5E642′ }}>
+        <div style={{ backgroundColor: '#0f2040', borderRadius: 12, padding: '24px', marginBottom: 24, borderLeft: '4px solid #F5E642' }}>
           <h2 style={{ color: '#F5E642', fontSize: 18, fontWeight: 700, margin: '0 0 12px' }}>📊 The WFH HVAC Math for DFW</h2>
           <p style={{ color: '#cbd5e1', lineHeight: 1.7, margin: 0 }}>
-            Pre-WFH, your home was empty 40–50 hours/week. Now it's occupied. DFW electricity averages <strong style={{ color: '#F5E642' }}>$0.14/kWh</strong>, and a typical AC system draws 3–5 kW. That’s $150–250/month extra in summer for a medium home. Smart HVAC optimization cuts that by 30–45%.
+            Pre-WFH, your home was empty 40–50 hours/week. Now it's occupied. DFW electricity averages <strong style={{ color: '#F5E642' }}>$0.14/kWh</strong>, and a typical AC system draws 3–5 kW. That's $150–250/month extra in summer for a medium home. Smart HVAC optimization cuts that by 30–45%.
           </p>
         </div>
 

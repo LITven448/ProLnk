@@ -102,7 +102,7 @@ export default function DFWHomeAutomationGuide() {
         </div>
 
         <div style={{ background: '#0F2140', borderRadius: 12, padding: 24, marginBottom: 24, border: '1px solid #1E3A5F' }}>
-          <h2 style={{ fontSize: 20, fontWeight: 700, marginBottom: 8, color: '#F5E642′ }}>🌞 Why DFW Is the Best Market for Home Automation ROI</h2>
+          <h2 style={{ fontSize: 20, fontWeight: 700, marginBottom: 8, color: '#F5E642' }}>🌞 Why DFW Is the Best Market for Home Automation ROI</h2>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12 }}>
             {[
               { stat: '$2,400–$4,800', label: 'Average DFW annual electricity bill (vs $1,500 national avg)' },
@@ -112,7 +112,7 @@ export default function DFWHomeAutomationGuide() {
             ].map(item => (
               <div key={item.label} style={{ background: '#0A1628', borderRadius: 8, padding: 16 }}>
                 <div style={{ color: '#F5E642', fontWeight: 800, fontSize: 22, marginBottom: 4 }}>{item.stat}</div>
-                <div style={{ fontSize: 13, color: '#94A3B8′ }}>{item.label}</div>
+                <div style={{ fontSize: 13, color: '#94A3B8' }}>{item.label}</div>
               </div>
             ))}
           </div>
@@ -131,43 +131,43 @@ export default function DFWHomeAutomationGuide() {
                 </div>
                 <div style={{ background: '#0A1628', padding: '4px 12px', borderRadius: 20, fontSize: 13, fontWeight: 700, color: '#F5E642', whiteSpace: 'nowrap' }}>{cat.cost}</div>
               </div>
-              <div style={{ fontSize: 13, color: '#94A3B8', marginBottom: 8 }}><strong style={{ color: '#E8EDF5′ }}>Top Devices:</strong> {cat.devices}</div>
-              <div style={{ background: '#0A1628', borderRadius: 6, padding: '10px 14px', fontSize: 13, color: '#F5E642', borderLeft: '3px solid #F5E642′ }}>
+              <div style={{ fontSize: 13, color: '#94A3B8', marginBottom: 8 }}><strong style={{ color: '#E8EDF5' }}>Top Devices:</strong> {cat.devices}</div>
+              <div style={{ background: '#0A1628', borderRadius: 6, padding: '10px 14px', fontSize: 13, color: '#F5E642', borderLeft: '3px solid #F5E642' }}>
                 📍 DFW Tip: {cat.dfwNote}
               </div>
             </div>
           ))}
         </div>
 
-        <div style={{ background: '#0F2140', borderRadius: 12, padding: 24, border: '2px solid #F5E642′ }}>
-          <h2 style={{ fontSize: 20, fontWeight: 700, marginBottom: 20, color: '#F5E642′ }}>🎯 Build Your DFW Automation Priority List</h2>
+        <div style={{ background: '#0F2140', borderRadius: 12, padding: 24, border: '2px solid #F5E642' }}>
+          <h2 style={{ fontSize: 20, fontWeight: 700, marginBottom: 20, color: '#F5E642' }}>🎯 Build Your DFW Automation Priority List</h2>
           <div style={{ marginBottom: 20 }}>
             <div style={{ fontSize: 14, fontWeight: 600, marginBottom: 10 }}>Select your automation goals (choose all that apply):</div>
             <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8 }}>
               {GOAL_OPTIONS.map(g => (
                 <button key={g.value} onClick={() => toggleGoal(g.value)}
-                  style={{ padding: '10px 16px', borderRadius: 20, border: `2px solid ${selectedGoals.includes(g.value) ? '#F5E642' : '#1E3A5F'}`, background: selectedGoals.includes(g.value) ? '#F5E642′ : ’transparent', color: selectedGoals.includes(g.value) ? '#0A1628′ : '#E8EDF5', cursor: ’pointer', fontSize: 13, fontWeight: 600 }}>
+                  style={{ padding: '10px 16px', borderRadius: 20, border: `2px solid ${selectedGoals.includes(g.value) ? '#F5E642' : '#1E3A5F'}`, background: selectedGoals.includes(g.value) ? '#F5E642' : 'transparent', color: selectedGoals.includes(g.value) ? '#0A1628' : '#E8EDF5', cursor: 'pointer', fontSize: 13, fontWeight: 600 }}>
                   {g.label}
                 </button>
               ))}
             </div>
           </div>
           <button onClick={() => setShowResult(true)} disabled={selectedGoals.length === 0}
-            style={{ background: selectedGoals.length > 0 ? '#F5E642′ : '#1E3A5F', color: selectedGoals.length > 0 ? '#0A1628' : '#64748B', border: ’none', padding: '12px 32px', borderRadius: 8, fontWeight: 700, fontSize: 16, cursor: selectedGoals.length > 0 ? 'pointer' : 'not-allowed', width: '100%' }}>
+            style={{ background: selectedGoals.length > 0 ? '#F5E642' : '#1E3A5F', color: selectedGoals.length > 0 ? '#0A1628' : '#64748B', border: 'none', padding: '12px 32px', borderRadius: 8, fontWeight: 700, fontSize: 16, cursor: selectedGoals.length > 0 ? 'pointer' : 'not-allowed', width: '100%' }}>
             Generate My Automation Plan →
           </button>
           {showResult && recommendations.length > 0 && (
             <div style={{ marginTop: 20 }}>
               <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 16 }}>
-                <div style={{ fontWeight: 700, fontSize: 16, color: '#F5E642′ }}>Your Priority Automation List</div>
-                <div style={{ background: '#0A1628', padding: '6px 14px', borderRadius: 20, fontSize: 13, fontWeight: 700, color: '#F5E642′ }}>Total: {getTotalCost()}</div>
+                <div style={{ fontWeight: 700, fontSize: 16, color: '#F5E642' }}>Your Priority Automation List</div>
+                <div style={{ background: '#0A1628', padding: '6px 14px', borderRadius: 20, fontSize: 13, fontWeight: 700, color: '#F5E642' }}>Total: {getTotalCost()}</div>
               </div>
               {recommendations.map((rec, i) => (
                 <div key={rec.name} style={{ display: 'flex', gap: 12, padding: '12px 0', borderBottom: '1px solid #1E3A5F' }}>
                   <div style={{ width: 28, height: 28, background: '#F5E642', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#0A1628', fontWeight: 700, fontSize: 13, flexShrink: 0 }}>{i + 1}</div>
                   <div>
                     <div style={{ fontWeight: 600 }}>{rec.icon} {rec.name}</div>
-                    <div style={{ fontSize: 13, color: '#94A3B8′ }}>{rec.cost} · {rec.benefit}</div>
+                    <div style={{ fontSize: 13, color: '#94A3B8' }}>{rec.cost} · {rec.benefit}</div>
                   </div>
                 </div>
               ))}

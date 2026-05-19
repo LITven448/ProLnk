@@ -91,7 +91,7 @@ export default function HomeInspectionGuide() {
             ].map((s) => (
               <div key={s.label} style={{ background: 'rgba(255,255,255,0.06)', border: '1px solid rgba(255,255,255,0.1)', borderRadius: 10, padding: '18px 16px', textAlign: 'center' }}>
                 <div style={{ fontSize: 26, fontWeight: 800, color: '#F5C842', marginBottom: 4 }}>{s.num}</div>
-                <div style={{ fontSize: 13, color: '#94A3B8′ }}>{s.label}</div>
+                <div style={{ fontSize: 13, color: '#94A3B8' }}>{s.label}</div>
               </div>
             ))}
           </div>
@@ -174,7 +174,7 @@ export default function HomeInspectionGuide() {
                 <div style={{ width: 24, height: 24, background: '#DC2626', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#fff', fontWeight: 700, fontSize: 12, flexShrink: 0, marginTop: 1 }}>{i + 1}</div>
                 <div>
                   <div style={{ fontWeight: 600, color: '#FCA5A5', marginBottom: 4, fontSize: 14 }}>{item.flag}</div>
-                  <div style={{ color: '#94A3B8', fontSize: 13, lineHeight: 1.6 }}><strong style={{ color: '#CBD5E0′ }}>Action:</strong> {item.action}</div>
+                  <div style={{ color: '#94A3B8', fontSize: 13, lineHeight: 1.6 }}><strong style={{ color: '#CBD5E0' }}>Action:</strong> {item.action}</div>
                 </div>
               </div>
             ))}

@@ -25,17 +25,17 @@ export default function ProLnkStream4HomeownerOverride() {
 
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12, marginBottom: 32 }}>
           <div style={{ background: '#111B2E', border: '2px solid #1E3A5F', borderRadius: 10, padding: 20, textAlign: 'center' }}>
-            <div style={{ fontSize: 32, fontWeight: 800, color: '#F5E642′ }}>$25</div>
+            <div style={{ fontSize: 32, fontWeight: 800, color: '#F5E642' }}>$25</div>
             <div style={{ color: '#94A3B8', fontSize: 13 }}>Minimum per qualified HO</div>
           </div>
           <div style={{ background: '#111B2E', border: '2px solid #F5E642', borderRadius: 10, padding: 20, textAlign: 'center' }}>
-            <div style={{ fontSize: 32, fontWeight: 800, color: '#F5E642′ }}>$100</div>
+            <div style={{ fontSize: 32, fontWeight: 800, color: '#F5E642' }}>$100</div>
             <div style={{ color: '#94A3B8', fontSize: 13 }}>Maximum per premium HO</div>
           </div>
         </div>
 
         <div style={{ background: '#111B2E', borderRadius: 12, padding: 20, marginBottom: 24 }}>
-          <div style={{ fontWeight: 700, marginBottom: 16, color: '#F5E642′ }}>📣 How to Source Homeowners</div>
+          <div style={{ fontWeight: 700, marginBottom: 16, color: '#F5E642' }}>📣 How to Source Homeowners</div>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 8 }}>
             {SOURCES.map(s => (
               <div key={s.method} style={{ background: '#0A1628', borderRadius: 8, padding: '12px 14px' }}>
@@ -48,28 +48,28 @@ export default function ProLnkStream4HomeownerOverride() {
         </div>
 
         <div style={{ background: '#111B2E', borderRadius: 12, padding: 24 }}>
-          <div style={{ fontWeight: 700, marginBottom: 20, color: '#F5E642′ }}>📊 Stream 4 Income Calculator</div>
+          <div style={{ fontWeight: 700, marginBottom: 20, color: '#F5E642' }}>📊 Stream 4 Income Calculator</div>
 
           <div style={{ marginBottom: 16 }}>
             <label style={{ display: 'block', color: '#94A3B8', fontSize: 13, marginBottom: 6 }}>Homeowners Sourced Per Month: {monthlyHO}</label>
             <input type="range" min={0} max={200} value={monthlyHO} onChange={e => setMonthlyHO(+e.target.value)}
-              style={{ width: '100%', accentColor: '#F5E642′ }} />
+              style={{ width: '100%', accentColor: '#F5E642' }} />
           </div>
 
           <div style={{ marginBottom: 20 }}>
             <label style={{ display: 'block', color: '#94A3B8', fontSize: 13, marginBottom: 6 }}>Your Negotiated Fee Per HO: ${feePerHO}</label>
             <input type="range" min={25} max={100} step={5} value={feePerHO} onChange={e => setFeePerHO(+e.target.value)}
-              style={{ width: '100%', accentColor: '#F5E642′ }} />
+              style={{ width: '100%', accentColor: '#F5E642' }} />
           </div>
 
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12 }}>
             <div style={{ background: '#0A1628', borderRadius: 10, padding: 20, textAlign: 'center' }}>
               <div style={{ fontSize: 11, color: '#64748B', marginBottom: 4 }}>Monthly Income</div>
-              <div style={{ fontSize: 28, fontWeight: 800, color: '#F5E642′ }}>${monthly.toLocaleString()}</div>
+              <div style={{ fontSize: 28, fontWeight: 800, color: '#F5E642' }}>${monthly.toLocaleString()}</div>
             </div>
             <div style={{ background: '#0A1628', borderRadius: 10, padding: 20, textAlign: 'center' }}>
               <div style={{ fontSize: 11, color: '#64748B', marginBottom: 4 }}>Annual Income</div>
-              <div style={{ fontSize: 28, fontWeight: 800, color: '#10B981′ }}>${annual.toLocaleString()}</div>
+              <div style={{ fontSize: 28, fontWeight: 800, color: '#10B981' }}>${annual.toLocaleString()}</div>
             </div>
           </div>
 

@@ -96,12 +96,12 @@ export default function DFWContractorDisputeGuide() {
         <h1 style={{ fontSize: 40, fontWeight: 800, color: '#0A1628', marginBottom: 12, lineHeight: 1.1 }}>Contractor Dispute Resolution Guide — DFW</h1>
         <p style={{ fontSize: 18, color: '#4A5568', marginBottom: 48, maxWidth: 680 }}>When work is substandard, unfinished, or overpriced — here's every option available to DFW homeowners, from demand letters to court.</p>
 
-        <div style={{ background: '#FFF3E0', borderRadius: 16, padding: 28, marginBottom: 40, borderLeft: '4px solid #E65100′ }}>
+        <div style={{ background: '#FFF3E0', borderRadius: 16, padding: 28, marginBottom: 40, borderLeft: '4px solid #E65100' }}>
           <h2 style={{ color: '#E65100', fontSize: 20, fontWeight: 700, marginBottom: 16 }}>⚖️ Texas RCLA — Critical Before You Sue</h2>
           <p style={{ color: '#4A5568', lineHeight: 1.7, marginBottom: 16 }}>The Texas Residential Construction Liability Act (RCLA) requires homeowners to send a formal written notice of construction defects to the contractor <strong>at least 60 days before filing a lawsuit</strong>. Skipping this step can get your case dismissed.</p>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16 }}>
             <div style={{ background: '#FFFFFF', borderRadius: 10, padding: 16 }}><div style={{ color: '#E65100', fontWeight: 700, marginBottom: 8 }}>RCLA Applies To</div><div style={{ color: '#4A5568', fontSize: 14, lineHeight: 1.7 }}>Structural defects · Plumbing/electrical failures · Foundation issues · Roof defects · Code violations</div></div>
-            <div style={{ background: '#FFFFFF', borderRadius: 10, padding: 16 }}><div style={{ color: '#E65100', fontWeight: 700, marginBottom: 8 }}>Contractor's Rights Under RCLA</div><div style={{ color: '#4A5568', fontSize: 14, lineHeight: 1.7 }}>60 days to inspect · Make written repair offer · If offer reasonable and refused, limits homeowner’s damages</div></div>
+            <div style={{ background: '#FFFFFF', borderRadius: 10, padding: 16 }}><div style={{ color: '#E65100', fontWeight: 700, marginBottom: 8 }}>Contractor's Rights Under RCLA</div><div style={{ color: '#4A5568', fontSize: 14, lineHeight: 1.7 }}>60 days to inspect · Make written repair offer · If offer reasonable and refused, limits homeowner's damages</div></div>
           </div>
         </div>
 
@@ -134,7 +134,7 @@ export default function DFWContractorDisputeGuide() {
         <div style={{ background: '#FFFFFF', borderRadius: 16, padding: 32, marginBottom: 40, boxShadow: '0 2px 12px rgba(0,0,0,0.06)' }}>
           <h2 style={{ color: '#0A1628', fontSize: 22, fontWeight: 700, marginBottom: 20 }}>📬 What to Include in Your Demand Letter</h2>
           {demandLetter.map((item, i) => (
-            <div key={i} style={{ display: 'flex', gap: 12, padding: '12px 0', borderBottom: i < demandLetter.length - 1 ? '1px solid #E2E8F0′ : ’none', alignItems: 'flex-start' }}>
+            <div key={i} style={{ display: 'flex', gap: 12, padding: '12px 0', borderBottom: i < demandLetter.length - 1 ? '1px solid #E2E8F0' : 'none', alignItems: 'flex-start' }}>
               <div style={{ background: '#0A1628', color: '#F5E642', borderRadius: 50, width: 28, height: 28, display: 'flex', alignItems: 'center', justifyContent: 'center', fontWeight: 800, fontSize: 13, flexShrink: 0 }}>{i + 1}</div>
               <div style={{ color: '#1A2640', fontSize: 15, lineHeight: 1.6 }}>{item}</div>
             </div>
@@ -163,11 +163,11 @@ export default function DFWContractorDisputeGuide() {
           <button onClick={calculate} style={{ background: '#0A1628', color: '#F5E642', border: 'none', borderRadius: 10, padding: '14px 32px', fontWeight: 800, fontSize: 16, cursor: 'pointer', width: '100%', marginBottom: 24 }}>Get Recommended Resolution Path →</button>
           {result && (
             <div style={{ background: '#F8F9FA', borderRadius: 12, padding: 24, display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: 20 }}>
-              <div style={{ gridColumn: '1 / -1′ }}><div style={{ color: '#718096', fontSize: 13, marginBottom: 4 }}>Primary Recommendation</div><div style={{ color: '#0A1628', fontWeight: 800, fontSize: 16 }}>{result.primary}</div></div>
-              <div style={{ gridColumn: '1 / -1′ }}><div style={{ color: '#718096', fontSize: 13, marginBottom: 4 }}>Secondary Option</div><div style={{ color: '#1A2640', fontWeight: 600 }}>{result.secondary}</div></div>
+              <div style={{ gridColumn: '1 / -1' }}><div style={{ color: '#718096', fontSize: 13, marginBottom: 4 }}>Primary Recommendation</div><div style={{ color: '#0A1628', fontWeight: 800, fontSize: 16 }}>{result.primary}</div></div>
+              <div style={{ gridColumn: '1 / -1' }}><div style={{ color: '#718096', fontSize: 13, marginBottom: 4 }}>Secondary Option</div><div style={{ color: '#1A2640', fontWeight: 600 }}>{result.secondary}</div></div>
               <div><div style={{ color: '#718096', fontSize: 13, marginBottom: 4 }}>Expected Timeline</div><div style={{ color: '#0A1628', fontWeight: 700 }}>{result.timeline}</div></div>
               <div><div style={{ color: '#718096', fontSize: 13, marginBottom: 4 }}>RCLA Notice Required?</div><div style={{ color: '#1A2640', fontSize: 14 }}>{result.rcla}</div></div>
-              <div style={{ gridColumn: '1 / -1', background: '#FFFFFF', borderRadius: 10, padding: 16, borderLeft: '3px solid #0A1628′ }}><div style={{ color: '#718096', fontSize: 13, marginBottom: 4 }}>Key Tip</div><div style={{ color: '#1A2640', fontSize: 14, lineHeight: 1.7 }}>{result.tip}</div></div>
+              <div style={{ gridColumn: '1 / -1', background: '#FFFFFF', borderRadius: 10, padding: 16, borderLeft: '3px solid #0A1628' }}><div style={{ color: '#718096', fontSize: 13, marginBottom: 4 }}>Key Tip</div><div style={{ color: '#1A2640', fontSize: 14, lineHeight: 1.7 }}>{result.tip}</div></div>
             </div>
           )}
         </div>

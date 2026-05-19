@@ -42,17 +42,17 @@ export default function DFWPropertyTaxCalculator() {
 
         <div style={{ background: '#fff', borderRadius: 12, padding: 24, boxShadow: '0 2px 12px rgba(0,0,0,0.08)', marginBottom: 20 }}>
           <label style={{ display: 'block', marginBottom: 16 }}>
-            <span style={{ fontWeight: 600, color: '#333′ }}>Home Value: {fmt(homeValue)}</span>
+            <span style={{ fontWeight: 600, color: '#333' }}>Home Value: {fmt(homeValue)}</span>
             <input type="range" min={100000} max={2000000} step={10000} value={homeValue}
               onChange={e => setHomeValue(Number(e.target.value))}
               style={{ width: '100%', marginTop: 8, accentColor: '#2563eb' }} />
-            <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: 12, color: '#888′ }}>
+            <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: 12, color: '#888' }}>
               <span>$100K</span><span>$2M</span>
             </div>
           </label>
 
           <label style={{ display: 'block', marginBottom: 16 }}>
-            <span style={{ fontWeight: 600, color: '#333′ }}>County</span>
+            <span style={{ fontWeight: 600, color: '#333' }}>County</span>
             <select value={county} onChange={e => setCounty(e.target.value)}
               style={{ display: 'block', width: '100%', marginTop: 8, padding: '10px 12px', borderRadius: 8, border: '1px solid #ddd', fontSize: 16 }}>
               {Object.keys(COUNTY_RATES).map(c => <option key={c}>{c}</option>)}
@@ -87,7 +87,7 @@ export default function DFWPropertyTaxCalculator() {
           <h2 style={{ fontSize: 16, fontWeight: 700, color: '#333', marginTop: 0 }}>📊 DFW vs National Average</h2>
           <p style={{ color: '#555', fontSize: 14 }}>National avg rate: {NATIONAL_AVERAGE}% → {fmt(nationalTax)}/yr</p>
           <p style={{ color: '#555', fontSize: 14 }}>{county} County rate: {rate}% → {fmt(annualTax)}/yr</p>
-          <p style={{ fontWeight: 700, color: dfwPremium > 0 ? '#dc2626′ : '#059669', fontSize: 15 }}>
+          <p style={{ fontWeight: 700, color: dfwPremium > 0 ? '#dc2626' : '#059669', fontSize: 15 }}>
             {dfwPremium > 0 ? `⚠️ You pay ${fmt(dfwPremium)}/yr more than the national average` : `✅ You save ${fmt(Math.abs(dfwPremium))}/yr vs national average`}
           </p>
           <p style={{ color: '#888', fontSize: 12, marginBottom: 0 }}>* Rates approximate. Consult your county appraisal district for exact figures.</p>

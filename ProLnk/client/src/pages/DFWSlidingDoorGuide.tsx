@@ -63,7 +63,7 @@ export default function DFWSlidingDoorGuide() {
           <div style={{ overflowX: 'auto' }}>
             <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: 14 }}>
               <thead>
-                <tr style={{ color: '#94A3B8', borderBottom: '1px solid #2D3F57′ }}>
+                <tr style={{ color: '#94A3B8', borderBottom: '1px solid #2D3F57' }}>
                   {['Type', 'Space Needed', 'Seal Quality', 'Cost / Linear Ft', 'Best For'].map(h => (
                     <th key={h} style={{ textAlign: 'left', paddingBottom: 10, paddingRight: 16 }}>{h}</th>
                   ))}
@@ -77,7 +77,7 @@ export default function DFWSlidingDoorGuide() {
                 ].map(row => (
                   <tr key={row[0]} style={{ borderBottom: '1px solid #16213A' }}>
                     {row.map((cell, i) => (
-                      <td key={i} style={{ padding: '10px 16px 10px 0', color: i === 0 ? '#E8EDF4′ : '#94A3B8' }}>{cell}</td>
+                      <td key={i} style={{ padding: '10px 16px 10px 0', color: i === 0 ? '#E8EDF4' : '#94A3B8' }}>{cell}</td>
                     ))}
                   </tr>
                 ))}
@@ -114,10 +114,10 @@ export default function DFWSlidingDoorGuide() {
           </div>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 12 }}>
             {[
-              { label: 'Total Installed Cost', value: `$${totalCost.toLocaleString()}`, color: '#F5E642′ },
+              { label: 'Total Installed Cost', value: `$${totalCost.toLocaleString()}`, color: '#F5E642' },
               { label: 'Effective SHGC', value: effectiveSHGC, color: parseFloat(effectiveSHGC) <= 0.20 ? '#22C55E' : '#F59E0B' },
               { label: 'Solar Heat Blocked', value: `${heatBlock}%`, color: '#22C55E' },
-              { label: 'Est. Annual Savings', value: `$${annualSavings}`, color: '#F5E642′ },
+              { label: 'Est. Annual Savings', value: `$${annualSavings}`, color: '#F5E642' },
             ].map(stat => (
               <div key={stat.label} style={{ background: '#0A1628', borderRadius: 10, padding: 16, textAlign: 'center' }}>
                 <div style={{ color: '#94A3B8', fontSize: 11, marginBottom: 6 }}>{stat.label}</div>

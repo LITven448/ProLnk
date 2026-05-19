@@ -48,7 +48,7 @@ export default function DFWFoundationWateringGuide2026() {
             { label: '📱 Smart Irrigation', desc: 'Rachio, RainBird, or Hunter smart controllers with soil sensors are worth every penny in DFW.' },
           ].map((c) => (
             <div key={c.label} style={{ background: '#112240', borderRadius: 8, padding: 20, border: '1px solid #1e3a5f' }}>
-              <div style={{ fontWeight: 700, marginBottom: 8, color: '#F5E642′ }}>{c.label}</div>
+              <div style={{ fontWeight: 700, marginBottom: 8, color: '#F5E642' }}>{c.label}</div>
               <div style={{ color: '#94a3b8', fontSize: 14 }}>{c.desc}</div>
             </div>
           ))}
@@ -80,7 +80,7 @@ export default function DFWFoundationWateringGuide2026() {
             </div>
           </div>
           {schedule && (
-            <div style={{ background: '#0A1628', borderRadius: 6, padding: 16, border: '1px solid #F5E642′ }}>
+            <div style={{ background: '#0A1628', borderRadius: 6, padding: 16, border: '1px solid #F5E642' }}>
               <div style={{ color: '#F5E642', fontWeight: 700, marginBottom: 8 }}>Your Recommended Schedule:</div>
               <div style={{ color: '#cbd5e1', fontSize: 14 }}>{schedule}</div>
             </div>

@@ -54,7 +54,7 @@ export default function DFWRentalRateCalculator() {
             ))}
             <div>
               <label style={{ display: 'block', fontSize: 13, fontWeight: 600, color: '#444', marginBottom: 4 }}>Square Footage (optional)</label>
-              <input value={sqft} onChange={e => setSqft(e.target.value)} placeholder='e.g. 2000′ style={{ width: '100%', padding: '8px 12px', borderRadius: 8, border: '1.5px solid #ddd', fontSize: 14, boxSizing: ’border-box' }} />
+              <input value={sqft} onChange={e => setSqft(e.target.value)} placeholder='e.g. 2000' style={{ width: '100%', padding: '8px 12px', borderRadius: 8, border: '1.5px solid #ddd', fontSize: 14, boxSizing: 'border-box' }} />
             </div>
           </div>
         </div>
@@ -74,7 +74,7 @@ export default function DFWRentalRateCalculator() {
         </button>
         {result && (
           <div style={{ background: '#1a3a5c', borderRadius: 12, padding: '1.5rem', color: '#fff' }}>
-            <h3 style={{ margin: '0 0 1rem', color: '#F5E642′ }}>📊 DFW Market Rent Estimate</h3>
+            <h3 style={{ margin: '0 0 1rem', color: '#F5E642' }}>📊 DFW Market Rent Estimate</h3>
             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
               {[['Rent Low', , '#acd'], ['Market Rate', , '#F5E642'], ['Rent High', , '#f9a']].map(([label, val, color]) => (
                 <div key={label} style={{ background: 'rgba(255,255,255,0.1)', borderRadius: 8, padding: '1rem', textAlign: 'center' }}>
@@ -84,8 +84,8 @@ export default function DFWRentalRateCalculator() {
               ))}
             </div>
             <div style={{ background: 'rgba(245,230,66,0.15)', borderRadius: 8, padding: '0.75rem', fontSize: 13 }}>
-              📅 Annual revenue at market rate: <strong style={{ color: '#F5E642′ }}>${result.annual.toLocaleString()}</strong>
-              {result.yield && <span> &nbsp;|&nbsp; Estimated gross yield: <strong style={{ color: '#F5E642′ }}>{result.yield.toFixed(1)}%</strong></span>}
+              📅 Annual revenue at market rate: <strong style={{ color: '#F5E642' }}>${result.annual.toLocaleString()}</strong>
+              {result.yield && <span> &nbsp;|&nbsp; Estimated gross yield: <strong style={{ color: '#F5E642' }}>{result.yield.toFixed(1)}%</strong></span>}
             </div>
           </div>
         )}

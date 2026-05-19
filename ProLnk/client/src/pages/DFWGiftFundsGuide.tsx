@@ -30,7 +30,7 @@ export default function DFWGiftFundsGuide() {
   const stillNeeded = Math.max(0, totalNeeded - giftAmount);
 
   return (
-    <div style={{ background: '#F9FAFB', minHeight: '100vh', padding: '2rem', fontFamily: 'sans-serif', color: '#0A1628′ }}>
+    <div style={{ background: '#F9FAFB', minHeight: '100vh', padding: '2rem', fontFamily: 'sans-serif', color: '#0A1628' }}>
       <div style={{ maxWidth: 720, margin: '0 auto' }}>
         <div style={{ background: '#0A1628', borderRadius: 12, padding: '2rem', marginBottom: '2rem', color: '#fff' }}>
           <div style={{ fontSize: 30, marginBottom: 8 }}>🎁 DFW Gift Funds Guide</div>
@@ -49,13 +49,13 @@ export default function DFWGiftFundsGuide() {
               <div key={i} onClick={() => setLoanTypeIdx(i)} style={{
                 border: `2px solid ${loanTypeIdx === i ? '#F5E642' : '#e2e8f0'}`,
                 borderRadius: 8, padding: '0.75rem', cursor: 'pointer',
-                background: loanTypeIdx === i ? '#fefce8′ : '#fff', fontWeight: loanTypeIdx === i ? 700 : 400
+                background: loanTypeIdx === i ? '#fefce8' : '#fff', fontWeight: loanTypeIdx === i ? 700 : 400
               }}>{t.label}</div>
             ))}
           </div>
           <div style={{ background: '#f8fafc', borderRadius: 8, padding: '1rem' }}>
             <div style={{ fontWeight: 600, marginBottom: 4 }}>{loan.label} Gift Rules</div>
-            <div style={{ fontSize: 14, color: '#475569′ }}>{loan.giftRules}</div>
+            <div style={{ fontSize: 14, color: '#475569' }}>{loan.giftRules}</div>
             <div style={{ marginTop: 8, fontWeight: 600, color: '#22c55e', fontSize: 13 }}>Max Gift Allowed: {loan.maxGift}</div>
           </div>
         </div>
@@ -79,7 +79,7 @@ export default function DFWGiftFundsGuide() {
             { label: 'Gift Covers', val: Math.min(giftAmount, totalNeeded) },
           ].map((r, i) => (
             <div key={i} style={{ display: 'flex', justifyContent: 'space-between', padding: '0.6rem 0', borderBottom: '1px solid #f1f5f9', fontWeight: i === 3 ? 700 : 400 }}>
-              <span>{r.label}</span><span style={{ color: i === 3 ? '#22c55e' : '#0A1628′ }}>${Math.round(r.val).toLocaleString()}</span>
+              <span>{r.label}</span><span style={{ color: i === 3 ? '#22c55e' : '#0A1628' }}>${Math.round(r.val).toLocaleString()}</span>
             </div>
           ))}
           {stillNeeded > 0 && <div style={{ marginTop: 12, background: '#fef3c7', borderRadius: 8, padding: '0.75rem', fontSize: 14 }}>⚠️ You still need ${Math.round(stillNeeded).toLocaleString()} from your own funds after the gift.</div>}
@@ -97,7 +97,7 @@ export default function DFWGiftFundsGuide() {
         </div>
 
         <div style={{ background: '#0A1628', borderRadius: 12, padding: '1.5rem', color: '#fff' }}>
-          <h2 style={{ marginTop: 0, color: '#F5E642′ }}>🚨 Red Flags That Kill Gift Fund Deals</h2>
+          <h2 style={{ marginTop: 0, color: '#F5E642' }}>🚨 Red Flags That Kill Gift Fund Deals</h2>
           {RED_FLAGS.map((r, i) => (
             <div key={i} style={{ background: '#7c2d12', borderRadius: 8, padding: '0.75rem', marginBottom: 8 }}>
               <div style={{ fontWeight: 700, color: '#fed7aa' }}>⚠️ {r.flag}</div>

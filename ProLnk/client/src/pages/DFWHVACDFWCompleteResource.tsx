@@ -69,7 +69,7 @@ export default function DFWHVACDFWCompleteResource() {
             { num: '5', label: 'Income Streams' },
           ].map((item) => (
             <div key={item.label} style={{ backgroundColor: '#1e293b', borderRadius: 12, padding: '16px 8px', textAlign: 'center' }}>
-              <div style={{ fontSize: 22, fontWeight: 800, color: '#F5E642′ }}>{item.num}</div>
+              <div style={{ fontSize: 22, fontWeight: 800, color: '#F5E642' }}>{item.num}</div>
               <div style={{ fontSize: 11, color: '#94a3b8', marginTop: 4 }}>{item.label}</div>
             </div>
           ))}
@@ -85,10 +85,10 @@ export default function DFWHVACDFWCompleteResource() {
                 key={i}
                 onClick={() => { setSelected(i); setExpandedCategory(null); }}
                 style={{
-                  backgroundColor: selected === i ? '#F5E642′ : '#0f172a',
-                  color: selected === i ? '#0A1628′ : '#fff',
+                  backgroundColor: selected === i ? '#F5E642' : '#0f172a',
+                  color: selected === i ? '#0A1628' : '#fff',
                   border: '2px solid',
-                  borderColor: selected === i ? '#F5E642′ : '#334155',
+                  borderColor: selected === i ? '#F5E642' : '#334155',
                   borderRadius: 10,
                   padding: '16px 12px',
                   textAlign: 'center',
@@ -130,13 +130,13 @@ export default function DFWHVACDFWCompleteResource() {
                     >
                       <span>{cat.emoji}</span>
                       <span>{cat.category}</span>
-                      <span style={{ marginLeft: 'auto', color: '#F5E642′ }}>{expandedCategory === ci ? '▲' : '▼'}</span>
+                      <span style={{ marginLeft: 'auto', color: '#F5E642' }}>{expandedCategory === ci ? '▲' : '▼'}</span>
                     </button>
                     {expandedCategory === ci && (
                       <div style={{ backgroundColor: '#1e293b', borderRadius: '0 0 8px 8px', padding: '12px 16px' }}>
                         <ul style={{ listStyle: 'none', padding: 0, margin: 0 }}>
                           {cat.items.map((item, ii) => (
-                            <li key={ii} style={{ padding: '5px 0', fontSize: 13, color: '#e2e8f0', borderBottom: ii < cat.items.length - 1 ? '1px solid #0A1628′ : ’none' }}>
+                            <li key={ii} style={{ padding: '5px 0', fontSize: 13, color: '#e2e8f0', borderBottom: ii < cat.items.length - 1 ? '1px solid #0A1628' : 'none' }}>
                               • {item}
                             </li>
                           ))}
@@ -152,7 +152,7 @@ export default function DFWHVACDFWCompleteResource() {
 
         <div style={{ backgroundColor: '#F5E642', borderRadius: 16, padding: 28, textAlign: 'center' }}>
           <div style={{ fontSize: 28 }}>🏆</div>
-          <h3 style={{ color: '#0A1628', fontSize: 20, fontWeight: 800, margin: '8px 0′ }}>
+          <h3 style={{ color: '#0A1628', fontSize: 20, fontWeight: 800, margin: '8px 0' }}>
             ProLnk: The Complete DFW HVAC Platform
           </h3>
           <p style={{ color: '#1e293b', fontSize: 14, lineHeight: 1.6 }}>

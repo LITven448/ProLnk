@@ -2,8 +2,8 @@ import CompanyDashboard, { CompanyDashboardConfig } from "../CompanyDashboard";
 import { D } from "@/components/DashboardShared";
 
 const BASE = "/admin/tp";
-const COLOR = "#82D616″;
-const ACCENT = "#17C1E8″;
+const COLOR = "#82D616";
+const ACCENT = "#17C1E8";
 
 const SCAN_DATA = [12, 18, 14, 24, 31, 42, 38, 47, 52, 61, 74, 89];
 
@@ -11,10 +11,10 @@ function makeConfig(tab: CompanyDashboardConfig["tab"]): CompanyDashboardConfig 
   const configs: Record<string, Partial<CompanyDashboardConfig["metrics"]>> = {
     executive: {
       primary: [
-        { label: "Homeowners Scanned",  value: "512″,   sub: "Total Home Health scans",  trend: 22.4 },
-        { label: "Issues Detected",     value: "1,847″, sub: "Across all properties",    trend: 18.7 },
-        { label: "Pros Matched",        value: "284″,   sub: "Homeowner → Pro matches",  trend: 14.2 },
-        { label: "Avg Issues/Home",     value: "3.6″,   sub: "Identified per scan",      trend: 2.1  },
+        { label: "Homeowners Scanned",  value: "512",   sub: "Total Home Health scans",  trend: 22.4 },
+        { label: "Issues Detected",     value: "1,847", sub: "Across all properties",    trend: 18.7 },
+        { label: "Pros Matched",        value: "284",   sub: "Homeowner → Pro matches",  trend: 14.2 },
+        { label: "Avg Issues/Home",     value: "3.6",   sub: "Identified per scan",      trend: 2.1  },
       ],
       donut: [
         { label: "Roofing",      value: 34, color: COLOR  },
@@ -27,16 +27,16 @@ function makeConfig(tab: CompanyDashboardConfig["tab"]): CompanyDashboardConfig 
         { label: "Top Issue Category",  value: "Roof wear (34%)",   color: COLOR  },
         { label: "Avg Scan Time",       value: "8.4 minutes",       color: D.text },
         { label: "Scan Accuracy",       value: "95.4%",             color: ACCENT },
-        { label: "Homeowner NPS",       value: "81″,                color: D.green },
+        { label: "Homeowner NPS",       value: "81",                color: D.green },
         { label: "Waitlist Size",       value: "423 homeowners",    color: D.amber },
       ],
       goals: [
         { label: "Scan Target: 1,000 homes",    value: 512, max: 1000, color: COLOR  },
         { label: "Match Rate: 80%",             value: 55,  max: 80,   color: ACCENT },
-        { label: "Issues/Home Target: 5″,       value: 3.6, max: 5,    color: D.amber },
+        { label: "Issues/Home Target: 5",       value: 3.6, max: 5,    color: D.amber },
       ],
       activities: [
-        { time: "12:00 PM", type: "success", message: "4 new homeowner scans processed — ZIP 75034″ },
+        { time: "12:00 PM", type: "success", message: "4 new homeowner scans processed — ZIP 75034" },
         { time: "11:45 AM", type: "success", message: "Roof wear detected: 2 properties — Frisco — matched to Apex Roofing" },
         { time: "11:30 AM", type: "info",    message: "Home Health Vault updated: 12 new records added" },
         { time: "11:00 AM", type: "success", message: "Homeowner onboarded: 5-room scan complete — 4 issues found" },
@@ -45,9 +45,9 @@ function makeConfig(tab: CompanyDashboardConfig["tab"]): CompanyDashboardConfig 
     },
     operations: {
       primary: [
-        { label: "Scans In Queue",    value: "34″,  sub: "Pending AI analysis",    trend: 12.4 },
+        { label: "Scans In Queue",    value: "34",  sub: "Pending AI analysis",    trend: 12.4 },
         { label: "Avg Analysis Time", value: "2.1m",sub: "Per photo batch",        trend: -8.2 },
-        { label: "Vault Records",     value: "512″, sub: "Home Health profiles",   trend: 22.4 },
+        { label: "Vault Records",     value: "512", sub: "Home Health profiles",   trend: 22.4 },
         { label: "Photo Quality",     value: "94%", sub: "Usable for analysis",    trend: 1.8  },
       ],
       donut: [
@@ -74,10 +74,10 @@ function makeConfig(tab: CompanyDashboardConfig["tab"]): CompanyDashboardConfig 
     },
     sales: {
       primary: [
-        { label: "New Homeowners",   value: "89″,   sub: "Signed up this month",   trend: 31.4 },
+        { label: "New Homeowners",   value: "89",   sub: "Signed up this month",   trend: 31.4 },
         { label: "Scan Conversion",  value: "72%",  sub: "Signup → completed scan",trend: 4.2  },
-        { label: "Pro Matches",      value: "284″,  sub: "Homeowner → Pro",        trend: 14.2 },
-        { label: "Revenue/Scan",     value: "$28″,  sub: "Avg per homeowner scan", trend: 8.7  },
+        { label: "Pro Matches",      value: "284",  sub: "Homeowner → Pro",        trend: 14.2 },
+        { label: "Revenue/Scan",     value: "$28",  sub: "Avg per homeowner scan", trend: 8.7  },
       ],
       donut: [
         { label: "Organic",   value: 52, color: D.green  },
@@ -90,22 +90,22 @@ function makeConfig(tab: CompanyDashboardConfig["tab"]): CompanyDashboardConfig 
         { label: "Avg LTV",          value: "$340/homeowner",        color: D.text },
       ],
       goals: [
-        { label: "Monthly Signups: 150″,  value: 89,  max: 150, color: COLOR  },
+        { label: "Monthly Signups: 150",  value: 89,  max: 150, color: COLOR  },
         { label: "Conversion: 80%",       value: 72,  max: 80,  color: ACCENT },
         { label: "Pro Matches: 500/mo",   value: 284, max: 500, color: D.amber },
       ],
       activities: [
-        { time: "12:00 PM", type: "success", message: "4 new homeowner signups — ZIP 75034, 75035″ },
+        { time: "12:00 PM", type: "success", message: "4 new homeowner signups — ZIP 75034, 75035" },
         { time: "11:30 AM", type: "success", message: "Scan completed: 5-room home — 4 issues → 3 pro matches" },
         { time: "11:00 AM", type: "info",    message: "Referral: 2 homeowners from ProLnk partner Apex Roofing" },
       ],
     },
     marketing: {
       primary: [
-        { label: "Waitlist Signups",  value: "423″,  sub: "Homeowners pre-launch",  trend: 28.4 },
+        { label: "Waitlist Signups",  value: "423",  sub: "Homeowners pre-launch",  trend: 28.4 },
         { label: "Email Open Rate",   value: "71%",  sub: "Homeowner emails",       trend: 6.2  },
         { label: "Social Reach",      value: "8.4K", sub: "Monthly impressions",    trend: 22.1 },
-        { label: "Brand Mentions",    value: "47″,   sub: "Social + press",         trend: 14.3 },
+        { label: "Brand Mentions",    value: "47",   sub: "Social + press",         trend: 14.3 },
       ],
       donut: [
         { label: "Organic",   value: 48, color: D.green  },
@@ -119,9 +119,9 @@ function makeConfig(tab: CompanyDashboardConfig["tab"]): CompanyDashboardConfig 
         { label: "Avg CTR",        value: "4.8%",                     color: D.text },
       ],
       goals: [
-        { label: "Waitlist: 1,000″,   value: 423, max: 1000, color: COLOR  },
+        { label: "Waitlist: 1,000",   value: 423, max: 1000, color: COLOR  },
         { label: "Social: 20K reach", value: 8400, max: 20000, color: ACCENT },
-        { label: "Email List: 500″,   value: 312, max: 500,  color: D.amber },
+        { label: "Email List: 500",   value: 312, max: 500,  color: D.amber },
       ],
       activities: [
         { time: "12:00 PM", type: "success", message: "4 new homeowner waitlist signups" },
@@ -131,10 +131,10 @@ function makeConfig(tab: CompanyDashboardConfig["tab"]): CompanyDashboardConfig 
     },
     support: {
       primary: [
-        { label: "Open Tickets",    value: "4″,    sub: "Homeowner support",      trend: -25.0 },
+        { label: "Open Tickets",    value: "4",    sub: "Homeowner support",      trend: -25.0 },
         { label: "Avg Resolution",  value: "2.8h", sub: "Time to close",          trend: -12.4 },
-        { label: "CSAT Score",      value: "4.9″,  sub: "Out of 5.0",             trend: 2.1   },
-        { label: "Escalations",     value: "0″,    sub: "All resolved",           trend: -100  },
+        { label: "CSAT Score",      value: "4.9",  sub: "Out of 5.0",             trend: 2.1   },
+        { label: "Escalations",     value: "0",    sub: "All resolved",           trend: -100  },
       ],
       donut: [
         { label: "Resolved",    value: 92, color: D.green },
@@ -142,24 +142,24 @@ function makeConfig(tab: CompanyDashboardConfig["tab"]): CompanyDashboardConfig 
       ],
       topItems: [
         { label: "Top Issue",      value: "Photo quality (42%)",  color: D.amber },
-        { label: "Homeowner NPS",  value: "81″,                   color: D.green },
+        { label: "Homeowner NPS",  value: "81",                   color: D.green },
         { label: "Retry Rate",     value: "6.2%",                 color: COLOR   },
       ],
       goals: [
-        { label: "CSAT: 5.0″,       value: 4.9, max: 5,  color: D.green },
+        { label: "CSAT: 5.0",       value: 4.9, max: 5,  color: D.green },
         { label: "Resolution < 2h", value: 2.8, max: 2,  color: D.amber },
         { label: "Zero Escalations",value: 0,   max: 0.1, color: D.green },
       ],
       activities: [
         { time: "12:00 PM", type: "success", message: "Ticket #T-112 resolved — photo upload issue — homeowner satisfied" },
-        { time: "11:00 AM", type: "success", message: "CSAT: 5/5 from homeowner in ZIP 75034″ },
+        { time: "11:00 AM", type: "success", message: "CSAT: 5/5 from homeowner in ZIP 75034" },
         { time: "10:30 AM", type: "info",    message: "FAQ updated: photo quality tips added to onboarding flow" },
       ],
     },
     financial: {
       primary: [
         { label: "Monthly Revenue",  value: "$24K",  sub: "TrustyPro sources",     trend: 28.4 },
-        { label: "Revenue/Scan",     value: "$28″,   sub: "Avg per homeowner",     trend: 8.7  },
+        { label: "Revenue/Scan",     value: "$28",   sub: "Avg per homeowner",     trend: 8.7  },
         { label: "Pro Match Fees",   value: "$8.4K", sub: "Referral commissions",  trend: 14.2 },
         { label: "ARR Projection",   value: "$288K", sub: "Current trajectory",    trend: 22.1 },
       ],
@@ -169,10 +169,10 @@ function makeConfig(tab: CompanyDashboardConfig["tab"]): CompanyDashboardConfig 
         { label: "Vault Subs",  value: 7,  color: D.amber },
       ],
       topItems: [
-        { label: "MRR",              value: "$24,000″,  color: D.green },
+        { label: "MRR",              value: "$24,000",  color: D.green },
         { label: "Net Margin",       value: "41%",      color: COLOR   },
         { label: "CAC",              value: "$12/user", color: D.text  },
-        { label: "LTV",              value: "$340″,     color: ACCENT  },
+        { label: "LTV",              value: "$340",     color: ACCENT  },
       ],
       goals: [
         { label: "Monthly Revenue: $50K",  value: 24, max: 50,  color: COLOR  },
@@ -180,16 +180,16 @@ function makeConfig(tab: CompanyDashboardConfig["tab"]): CompanyDashboardConfig 
         { label: "ARR: $600K",             value: 288, max: 600, color: D.amber },
       ],
       activities: [
-        { time: "12:00 PM", type: "success", message: "Scan fee collected: $28 — homeowner #H-512″ },
-        { time: "11:30 AM", type: "success", message: "Match fee: $42 — 3 pro referrals from ZIP 75034″ },
+        { time: "12:00 PM", type: "success", message: "Scan fee collected: $28 — homeowner #H-512" },
+        { time: "11:30 AM", type: "success", message: "Match fee: $42 — 3 pro referrals from ZIP 75034" },
         { time: "11:00 AM", type: "info",    message: "Monthly revenue milestone: $24K — new record" },
       ],
     },
     agents: {
       primary: [
-        { label: "TrustyPro Agent",  value: "89″,    sub: "Actions today",         trend: 14.2 },
-        { label: "Photo AI",         value: "284″,   sub: "Photos analyzed",       trend: 22.4 },
-        { label: "Comms Agent",      value: "47″,    sub: "Homeowner messages",    trend: 8.7  },
+        { label: "TrustyPro Agent",  value: "89",    sub: "Actions today",         trend: 14.2 },
+        { label: "Photo AI",         value: "284",   sub: "Photos analyzed",       trend: 22.4 },
+        { label: "Comms Agent",      value: "47",    sub: "Homeowner messages",    trend: 8.7  },
         { label: "Success Rate",     value: "95.4%", sub: "All TP agents",         trend: 0.4  },
       ],
       donut: [
@@ -204,9 +204,9 @@ function makeConfig(tab: CompanyDashboardConfig["tab"]): CompanyDashboardConfig 
         { label: "Needs Review", value: "TrustyPro (95.4%)",   color: D.amber  },
       ],
       goals: [
-        { label: "Daily Scans: 100″,    value: 89,  max: 100, color: COLOR    },
+        { label: "Daily Scans: 100",    value: 89,  max: 100, color: COLOR    },
         { label: "Success Rate: 98%",   value: 95,  max: 98,  color: D.green  },
-        { label: "Photo Queue < 20″,    value: 34,  max: 20,  color: D.amber  },
+        { label: "Photo Queue < 20",    value: 34,  max: 20,  color: D.amber  },
       ],
       activities: [
         { time: "12:00 PM", type: "success", message: "[TrustyPro Agent] 4 scans processed — 9 issues flagged" },

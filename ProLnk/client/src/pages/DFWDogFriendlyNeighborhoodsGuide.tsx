@@ -100,7 +100,7 @@ export default function DFWDogFriendlyNeighborhoodsGuide() {
     setSearched(true);
   }
 
-  const heatColor = (lvl: string) => lvl === 'high' ? '#ef4444′ : lvl === ’moderate' ? '#f59e0b' : '#4ade80';
+  const heatColor = (lvl: string) => lvl === 'high' ? '#ef4444' : lvl === 'moderate' ? '#f59e0b' : '#4ade80';
 
   return (
     <div style={{ background: '#0A1628', minHeight: '100vh', color: '#fff', fontFamily: 'sans-serif', padding: '32px 24px' }}>
@@ -108,10 +108,10 @@ export default function DFWDogFriendlyNeighborhoodsGuide() {
         <div style={{ marginBottom: 8, color: '#F5E642', fontSize: 13, letterSpacing: 2, textTransform: 'uppercase' }}>🐕 DFW Dog Owner Guide</div>
         <h1 style={{ fontSize: 32, fontWeight: 800, marginBottom: 8 }}>DFW's Most Dog-Friendly Neighborhoods</h1>
         <p style={{ color: '#94a3b8', marginBottom: 24, lineHeight: 1.6 }}>
-          Frisco has 220+ miles of trails — more than most US cities. But DFW heat is real: pavement reaches 150°F+ in summer. The 7-second test — hold the back of your hand to pavement for 7 seconds. If you can't hold it, your dog can’t walk it.
+          Frisco has 220+ miles of trails — more than most US cities. But DFW heat is real: pavement reaches 150°F+ in summer. The 7-second test — hold the back of your hand to pavement for 7 seconds. If you can't hold it, your dog can't walk it.
         </p>
 
-        <div style={{ background: '#3b1515', borderRadius: 12, padding: 16, marginBottom: 24, borderLeft: '4px solid #ef4444′ }}>
+        <div style={{ background: '#3b1515', borderRadius: 12, padding: 16, marginBottom: 24, borderLeft: '4px solid #ef4444' }}>
           <h3 style={{ color: '#ef4444', marginBottom: 6, fontSize: 15 }}>🌡️ DFW Summer Heat Warning</h3>
           <p style={{ color: '#fca5a5', margin: 0, fontSize: 14 }}>
             July/August temps regularly hit 105°F. Walk dogs before 8am or after 8pm. Asphalt in direct sun can reach 150°F and cause paw burns in 60 seconds. Always carry water. Never leave dogs in parked cars.
@@ -126,9 +126,9 @@ export default function DFWDogFriendlyNeighborhoodsGuide() {
             {['small', 'large', 'any'].map(s => (
               <button key={s} onClick={() => setDogSize(s)}
                 style={{ padding: '8px 18px', borderRadius: 8, border: '1px solid', cursor: 'pointer',
-                  borderColor: dogSize === s ? '#F5E642′ : '#1e3a5f',
-                  background: dogSize === s ? '#F5E642′ : ’transparent',
-                  color: dogSize === s ? '#0A1628′ : '#94a3b8' }}>
+                  borderColor: dogSize === s ? '#F5E642' : '#1e3a5f',
+                  background: dogSize === s ? '#F5E642' : 'transparent',
+                  color: dogSize === s ? '#0A1628' : '#94a3b8' }}>
                 {s === 'small' ? '🐩 Small' : s === 'large' ? '🐕 Large' : '🐾 Any'}
               </button>
             ))}
@@ -139,9 +139,9 @@ export default function DFWDogFriendlyNeighborhoodsGuide() {
             {['low', 'medium', 'high'].map(a => (
               <button key={a} onClick={() => setActivityLevel(a)}
                 style={{ padding: '8px 18px', borderRadius: 8, border: '1px solid', cursor: 'pointer',
-                  borderColor: activityLevel === a ? '#F5E642′ : '#1e3a5f',
-                  background: activityLevel === a ? '#F5E642′ : ’transparent',
-                  color: activityLevel === a ? '#0A1628′ : '#94a3b8' }}>
+                  borderColor: activityLevel === a ? '#F5E642' : '#1e3a5f',
+                  background: activityLevel === a ? '#F5E642' : 'transparent',
+                  color: activityLevel === a ? '#0A1628' : '#94a3b8' }}>
                 {a === 'low' ? '🛋️ Low' : a === 'medium' ? '🚶 Medium' : '🏃 High'}
               </button>
             ))}
@@ -151,7 +151,7 @@ export default function DFWDogFriendlyNeighborhoodsGuide() {
           <div style={{ display: 'flex', alignItems: 'center', gap: 16, marginBottom: 24 }}>
             <input type="range" min={200000} max={700000} step={10000} value={budget}
               onChange={e => setBudget(Number(e.target.value))}
-              style={{ flex: 1, accentColor: '#F5E642′ }} />
+              style={{ flex: 1, accentColor: '#F5E642' }} />
             <span style={{ color: '#F5E642', fontWeight: 700 }}>${budget.toLocaleString()}</span>
           </div>
 
@@ -165,7 +165,7 @@ export default function DFWDogFriendlyNeighborhoodsGuide() {
           <div>
             <h2 style={{ marginBottom: 16 }}>🐾 Top {results.length} Picks for You</h2>
             {results.map(n => (
-              <div key={n.name} style={{ background: '#111e35', borderRadius: 12, padding: 20, marginBottom: 16, borderLeft: '4px solid #F5E642′ }}>
+              <div key={n.name} style={{ background: '#111e35', borderRadius: 12, padding: 20, marginBottom: 16, borderLeft: '4px solid #F5E642' }}>
                 <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 8 }}>
                   <h3 style={{ margin: 0, fontSize: 20 }}>{n.name}</h3>
                   <span style={{ fontSize: 12, padding: '4px 10px', borderRadius: 20, background: '#1a2a1a', color: heatColor(n.heatWarning) }}>

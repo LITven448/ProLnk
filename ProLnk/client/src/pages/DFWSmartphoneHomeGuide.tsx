@@ -57,7 +57,7 @@ export default function DFWSmartphoneHomeGuide() {
           <h2 style={{ color: '#F5E642', fontSize: 18, marginBottom: 16 }}>🔍 What features does your home have?</h2>
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8 }}>
             {features.map(f => (
-              <button key={f.key} onClick={() => setSelected(f.key)} style={{ padding: '10px 16px', borderRadius: 8, border: 'none', cursor: 'pointer', fontSize: 14, background: selected === f.key ? '#F5E642′ : '#1E3A5F', color: selected === f.key ? '#0A1628' : '#E8EDF5', fontWeight: selected === f.key ? 700 : 400 }}>{f.label}</button>
+              <button key={f.key} onClick={() => setSelected(f.key)} style={{ padding: '10px 16px', borderRadius: 8, border: 'none', cursor: 'pointer', fontSize: 14, background: selected === f.key ? '#F5E642' : '#1E3A5F', color: selected === f.key ? '#0A1628' : '#E8EDF5', fontWeight: selected === f.key ? 700 : 400 }}>{f.label}</button>
             ))}
           </div>
         </div>

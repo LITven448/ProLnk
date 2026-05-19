@@ -45,7 +45,7 @@ interface Template {
 
 const TEMPLATES: Template[] = [
   {
-    id: "t1″,
+    id: "t1",
     name: "Welcome, New Partner!",
     type: "Email",
     category: "Welcome",
@@ -57,7 +57,7 @@ const TEMPLATES: Template[] = [
     active: true,
   },
   {
-    id: "t2″,
+    id: "t2",
     name: "New Lead Available – Urgent!",
     type: "SMS",
     category: "Lead Notifications",
@@ -69,7 +69,7 @@ const TEMPLATES: Template[] = [
     active: true,
   },
   {
-    id: "t3″,
+    id: "t3",
     name: "Storm Alert – Action Required",
     type: "Email+SMS",
     category: "Storm Alerts",
@@ -81,7 +81,7 @@ const TEMPLATES: Template[] = [
     active: true,
   },
   {
-    id: "t4″,
+    id: "t4",
     name: "Payment Confirmed",
     type: "Email",
     category: "Payment",
@@ -93,7 +93,7 @@ const TEMPLATES: Template[] = [
     active: true,
   },
   {
-    id: "t5″,
+    id: "t5",
     name: "Your Commission is Ready",
     type: "SMS",
     category: "Payment",
@@ -105,7 +105,7 @@ const TEMPLATES: Template[] = [
     active: true,
   },
   {
-    id: "t6″,
+    id: "t6",
     name: "Weekly Performance Digest",
     type: "Email",
     category: "Weekly Digest",
@@ -117,7 +117,7 @@ const TEMPLATES: Template[] = [
     active: true,
   },
   {
-    id: "t7″,
+    id: "t7",
     name: "Complete Your Profile",
     type: "Email",
     category: "Partner",
@@ -129,7 +129,7 @@ const TEMPLATES: Template[] = [
     active: false,
   },
   {
-    id: "t8″,
+    id: "t8",
     name: "A Homeowner Rated You ★★★★★",
     type: "Email",
     category: "Homeowner",
@@ -154,10 +154,10 @@ const CATEGORIES: TemplateCategory[] = [
 
 function TypeBadge({ type }: { type: TemplateType }) {
   const styles: Record<TemplateType, string> = {
-    Email: "bg-blue-900/40 text-blue-300 border-blue-700/40″,
-    SMS: "bg-green-900/40 text-green-300 border-green-700/40″,
-    "Email+SMS": "bg-purple-900/40 text-purple-300 border-purple-700/40″,
-    Push: "bg-orange-900/40 text-orange-300 border-orange-700/40″,
+    Email: "bg-blue-900/40 text-blue-300 border-blue-700/40",
+    SMS: "bg-green-900/40 text-green-300 border-green-700/40",
+    "Email+SMS": "bg-purple-900/40 text-purple-300 border-purple-700/40",
+    Push: "bg-orange-900/40 text-orange-300 border-orange-700/40",
   };
   const icons: Record<TemplateType, typeof Mail> = {
     Email: Mail,
@@ -168,7 +168,7 @@ function TypeBadge({ type }: { type: TemplateType }) {
   const Icon = icons[type];
   return (
     <span className={`inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-xs font-semibold border ${styles[type]}`}>
-      <Icon className="w-3 h-3″ />
+      <Icon className="w-3 h-3" />
       {type}
     </span>
   );
@@ -187,10 +187,10 @@ function TemplateCard({
 }) {
   return (
     <div className={`bg-slate-800/60 border rounded-xl p-5 transition-all ${template.active ? "border-slate-700/60" : "border-slate-700/30 opacity-60"}`}>
-      <div className="flex items-start justify-between gap-3 mb-3″>
-        <div className="flex-1 min-w-0″>
+      <div className="flex items-start justify-between gap-3 mb-3">
+        <div className="flex-1 min-w-0">
           <p className="font-semibold text-white text-sm truncate">{template.name}</p>
-          <div className="flex items-center gap-2 mt-1.5″>
+          <div className="flex items-center gap-2 mt-1.5">
             <TypeBadge type={template.type} />
           </div>
         </div>
@@ -200,45 +200,45 @@ function TemplateCard({
           title={template.active ? "Pause template" : "Activate template"}
         >
           {template.active ? (
-            <ToggleRight className="w-6 h-6 text-teal-400″ />
+            <ToggleRight className="w-6 h-6 text-teal-400" />
           ) : (
-            <ToggleLeft className="w-6 h-6″ />
+            <ToggleLeft className="w-6 h-6" />
           )}
         </button>
       </div>
 
-      <div className="flex items-center gap-4 mb-4″>
-        <div className="flex items-center gap-1.5 text-xs text-slate-400″>
-          <Clock className="w-3 h-3″ />
+      <div className="flex items-center gap-4 mb-4">
+        <div className="flex items-center gap-1.5 text-xs text-slate-400">
+          <Clock className="w-3 h-3" />
           <span>{template.lastUsed}</span>
         </div>
         {template.openRate !== undefined && (
-          <div className="flex items-center gap-1.5 text-xs text-emerald-400″>
-            <TrendingUp className="w-3 h-3″ />
+          <div className="flex items-center gap-1.5 text-xs text-emerald-400">
+            <TrendingUp className="w-3 h-3" />
             <span>{template.openRate}% open rate</span>
           </div>
         )}
         {template.ctr !== undefined && (
-          <div className="flex items-center gap-1.5 text-xs text-emerald-400″>
-            <TrendingUp className="w-3 h-3″ />
+          <div className="flex items-center gap-1.5 text-xs text-emerald-400">
+            <TrendingUp className="w-3 h-3" />
             <span>{template.ctr}% CTR</span>
           </div>
         )}
       </div>
 
-      <div className="flex items-center gap-2″>
+      <div className="flex items-center gap-2">
         <button
           onClick={() => onPreview(template.id)}
           className="flex-1 flex items-center justify-center gap-1.5 px-3 py-2 rounded-lg text-xs font-semibold bg-slate-700 text-slate-300 hover:bg-slate-600 hover:text-white transition-colors"
         >
-          <Eye className="w-3.5 h-3.5″ />
+          <Eye className="w-3.5 h-3.5" />
           Preview
         </button>
         <button
           onClick={() => onEdit(template.id)}
           className="flex-1 flex items-center justify-center gap-1.5 px-3 py-2 rounded-lg text-xs font-semibold bg-teal-500/20 text-teal-300 hover:bg-teal-500/30 border border-teal-500/30 transition-colors"
         >
-          <Edit3 className="w-3.5 h-3.5″ />
+          <Edit3 className="w-3.5 h-3.5" />
           Edit
         </button>
       </div>
@@ -265,20 +265,20 @@ function InlineEditor({
   }
 
   return (
-    <div className="bg-slate-800 border border-teal-500/30 rounded-2xl p-6 space-y-5″>
+    <div className="bg-slate-800 border border-teal-500/30 rounded-2xl p-6 space-y-5">
       <div className="flex items-center justify-between">
-        <div className="flex items-center gap-2″>
-          <Edit3 className="w-4 h-4 text-teal-400″ />
+        <div className="flex items-center gap-2">
+          <Edit3 className="w-4 h-4 text-teal-400" />
           <h3 className="font-bold text-white">{template.name}</h3>
         </div>
         <button onClick={onClose} className="text-slate-400 hover:text-white transition-colors">
-          <X className="w-5 h-5″ />
+          <X className="w-5 h-5" />
         </button>
       </div>
 
       {template.type !== "SMS" && (
         <div>
-          <label className="block text-xs font-semibold text-slate-400 uppercase tracking-wider mb-1.5″>Subject Line</label>
+          <label className="block text-xs font-semibold text-slate-400 uppercase tracking-wider mb-1.5">Subject Line</label>
           <input
             value={subject}
             onChange={(e) => setSubject(e.target.value)}
@@ -289,7 +289,7 @@ function InlineEditor({
       )}
 
       <div>
-        <label className="block text-xs font-semibold text-slate-400 uppercase tracking-wider mb-1.5″>Body</label>
+        <label className="block text-xs font-semibold text-slate-400 uppercase tracking-wider mb-1.5">Body</label>
         <textarea
           value={body}
           onChange={(e) => setBody(e.target.value)}
@@ -300,8 +300,8 @@ function InlineEditor({
       </div>
 
       <div>
-        <label className="block text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2″>Available Variables</label>
-        <div className="flex flex-wrap gap-2″>
+        <label className="block text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2">Available Variables</label>
+        <div className="flex flex-wrap gap-2">
           {template.variables.map((v) => (
             <span
               key={v}
@@ -309,26 +309,26 @@ function InlineEditor({
               onClick={() => setBody((prev) => prev + v)}
               title="Click to insert"
             >
-              <Variable className="w-3 h-3″ />
+              <Variable className="w-3 h-3" />
               {v}
             </span>
           ))}
         </div>
       </div>
 
-      <div className="flex items-center gap-3 pt-1″>
+      <div className="flex items-center gap-3 pt-1">
         <button
           onClick={handleSendTest}
           className="flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-semibold bg-slate-700 text-white hover:bg-slate-600 transition-colors"
         >
-          {testSent ? <Check className="w-4 h-4 text-green-400″ /> : <Send className="w-4 h-4" />}
+          {testSent ? <Check className="w-4 h-4 text-green-400" /> : <Send className="w-4 h-4" />}
           {testSent ? "Test Sent!" : "Send Test"}
         </button>
         <button
           onClick={() => onSave(template.id, subject, body)}
           className="flex items-center gap-2 px-5 py-2 rounded-lg text-sm font-bold bg-teal-500 text-[#0A1628] hover:bg-teal-400 transition-colors"
         >
-          <Check className="w-4 h-4″ />
+          <Check className="w-4 h-4" />
           Save Template
         </button>
         <button onClick={onClose} className="ml-auto text-sm text-slate-400 hover:text-white transition-colors">
@@ -343,35 +343,35 @@ function PreviewModal({ template, onClose }: { template: Template; onClose: () =
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm">
       <div className="bg-slate-900 border border-slate-700 rounded-2xl w-full max-w-lg shadow-2xl">
-        <div className="flex items-center justify-between px-6 py-4 border-b border-slate-700″>
-          <div className="flex items-center gap-2″>
-            <Eye className="w-4 h-4 text-slate-400″ />
+        <div className="flex items-center justify-between px-6 py-4 border-b border-slate-700">
+          <div className="flex items-center gap-2">
+            <Eye className="w-4 h-4 text-slate-400" />
             <span className="font-bold text-white text-sm">{template.name}</span>
           </div>
           <button onClick={onClose} className="text-slate-400 hover:text-white transition-colors">
-            <X className="w-5 h-5″ />
+            <X className="w-5 h-5" />
           </button>
         </div>
-        <div className="p-6 space-y-4″>
+        <div className="p-6 space-y-4">
           {template.type !== "SMS" && template.subject && (
             <div>
-              <p className="text-xs font-semibold text-slate-500 uppercase tracking-wider mb-1″>Subject</p>
+              <p className="text-xs font-semibold text-slate-500 uppercase tracking-wider mb-1">Subject</p>
               <p className="text-sm font-semibold text-white">{template.subject}</p>
             </div>
           )}
           <div>
-            <p className="text-xs font-semibold text-slate-500 uppercase tracking-wider mb-2″>Body</p>
+            <p className="text-xs font-semibold text-slate-500 uppercase tracking-wider mb-2">Body</p>
             <div className="bg-slate-800 rounded-xl p-4 text-sm text-slate-200 whitespace-pre-wrap leading-relaxed font-mono">
               {template.body}
             </div>
           </div>
-          <div className="flex items-center gap-2 pt-1″>
+          <div className="flex items-center gap-2 pt-1">
             <TypeBadge type={template.type} />
             {template.openRate !== undefined && (
-              <span className="text-xs text-emerald-400″>{template.openRate}% open rate</span>
+              <span className="text-xs text-emerald-400">{template.openRate}% open rate</span>
             )}
             {template.ctr !== undefined && (
-              <span className="text-xs text-emerald-400″>{template.ctr}% CTR</span>
+              <span className="text-xs text-emerald-400">{template.ctr}% CTR</span>
             )}
           </div>
         </div>
@@ -420,26 +420,26 @@ export default function EmailTemplateLibrary() {
         <PreviewModal template={previewTemplate} onClose={() => setPreviewId(null)} />
       )}
 
-      <div className="space-y-6″>
+      <div className="space-y-6">
         {/* Header */}
-        <div className="flex items-start justify-between gap-4″>
-          <div className="flex items-center gap-3″>
+        <div className="flex items-start justify-between gap-4">
+          <div className="flex items-center gap-3">
             <div className="w-10 h-10 rounded-xl bg-blue-900/40 flex items-center justify-center">
-              <Mail className="w-5 h-5 text-blue-400″ />
+              <Mail className="w-5 h-5 text-blue-400" />
             </div>
             <div>
               <h1 className="text-2xl font-bold text-white">Template Library</h1>
-              <p className="text-sm text-slate-400″>Every message your platform sends</p>
+              <p className="text-sm text-slate-400">Every message your platform sends</p>
             </div>
           </div>
 
           {/* Benchmark stat */}
-          <div className="hidden sm:flex items-center gap-2 bg-emerald-900/20 border border-emerald-700/30 rounded-xl px-4 py-3″>
-            <BarChart2 className="w-4 h-4 text-emerald-400 shrink-0″ />
-            <p className="text-xs text-emerald-300″>
-              Your emails average <strong className="text-emerald-200″>{avgOpenRate}% open rate</strong>
+          <div className="hidden sm:flex items-center gap-2 bg-emerald-900/20 border border-emerald-700/30 rounded-xl px-4 py-3">
+            <BarChart2 className="w-4 h-4 text-emerald-400 shrink-0" />
+            <p className="text-xs text-emerald-300">
+              Your emails average <strong className="text-emerald-200">{avgOpenRate}% open rate</strong>
               {" "}vs industry avg{" "}
-              <strong className="text-emerald-200″>28%</strong>
+              <strong className="text-emerald-200">28%</strong>
             </p>
           </div>
         </div>
@@ -453,7 +453,7 @@ export default function EmailTemplateLibrary() {
               className={`px-3 py-1.5 rounded-lg text-xs font-semibold transition-all ${
                 activeCategory === cat
                   ? "bg-teal-500 text-[#0A1628]"
-                  : "bg-slate-800 text-slate-400 hover:text-white hover:bg-slate-700″
+                  : "bg-slate-800 text-slate-400 hover:text-white hover:bg-slate-700"
               }`}
             >
               {cat}
@@ -471,7 +471,7 @@ export default function EmailTemplateLibrary() {
         )}
 
         {/* Template cards grid */}
-        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4″>
+        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
           {filtered.map((template) => (
             <TemplateCard
               key={template.id}
@@ -491,8 +491,8 @@ export default function EmailTemplateLibrary() {
 
         {filtered.length === 0 && (
           <div className="bg-slate-800 rounded-xl p-12 text-center">
-            <Mail className="w-10 h-10 text-slate-600 mx-auto mb-3″ />
-            <p className="text-slate-400″>No templates in this category yet.</p>
+            <Mail className="w-10 h-10 text-slate-600 mx-auto mb-3" />
+            <p className="text-slate-400">No templates in this category yet.</p>
           </div>
         )}
       </div>

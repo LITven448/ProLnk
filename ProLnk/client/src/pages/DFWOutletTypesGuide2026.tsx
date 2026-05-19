@@ -81,7 +81,7 @@ export default function DFWOutletTypesGuide2026() {
           ))}
         </div>
 
-        <div style={{ background: '#1e293b', borderRadius: 10, padding: 14, borderLeft: '3px solid #F5E642′ }}>
+        <div style={{ background: '#1e293b', borderRadius: 10, padding: 14, borderLeft: '3px solid #F5E642' }}>
           <p style={{ color: '#94a3b8', fontSize: 13, margin: 0 }}>💡 DFW adopted the 2020 NEC with local amendments. AFCI protection is now required in almost all living spaces — not just bedrooms. Check with your city permit office before adding outlets.</p>
         </div>
       </div>

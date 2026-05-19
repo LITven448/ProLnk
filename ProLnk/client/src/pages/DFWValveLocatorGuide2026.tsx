@@ -28,7 +28,7 @@ export default function DFWValveLocatorGuide2026() {
           <h2 style={{ color: '#F5E642', marginTop: '0', fontSize: '1.1rem' }}>🗺 Universal Shutoff Locations</h2>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0.75rem' }}>
             {['💧 Main at meter: street level, requires meter key or wrench', '🏠 Main inside: garage, utility closet, or near water heater', '🚰 Supply stops: under every sink and behind every toilet', '🧺 Washing machine: two valves (hot + cold) on wall behind unit', '🔥 Water heater: cold-supply ball valve on inlet pipe at top', '🗓 Best practice: label each shutoff with a laminated tag'].map((tip, i) => (
-              <div key={i} style={{ background: '#1a3a5c', borderRadius: '8px', padding: '0.75rem', fontSize: '0.9rem', lineHeight: '1.5′ }}>{tip}</div>
+              <div key={i} style={{ background: '#1a3a5c', borderRadius: '8px', padding: '0.75rem', fontSize: '0.9rem', lineHeight: '1.5' }}>{tip}</div>
             ))}
           </div>
         </div>
@@ -38,7 +38,7 @@ export default function DFWValveLocatorGuide2026() {
           <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
             {homeTypes.map(h => (
               <button key={h.id} onClick={() => setSelected(h.id === selected ? null : h.id)}
-                style={{ background: selected === h.id ? '#F5E642′ : '#1a3a5c', color: selected === h.id ? '#0A1628' : '#e2e8f0', border: ’none', borderRadius: '8px', padding: '0.75rem 1.25rem', cursor: 'pointer', fontWeight: '700', fontSize: '0.95rem' }}>
+                style={{ background: selected === h.id ? '#F5E642' : '#1a3a5c', color: selected === h.id ? '#0A1628' : '#e2e8f0', border: 'none', borderRadius: '8px', padding: '0.75rem 1.25rem', cursor: 'pointer', fontWeight: '700', fontSize: '0.95rem' }}>
                 {h.label}
               </button>
             ))}
@@ -47,10 +47,10 @@ export default function DFWValveLocatorGuide2026() {
 
         {match && (
           <div style={{ background: '#0f2040', borderRadius: '12px', padding: '1.5rem', marginBottom: '1.5rem' }}>
-            <h3 style={{ color: '#F5E642', marginTop: '0′ }}>Shutoff Checklist — {match.label}</h3>
+            <h3 style={{ color: '#F5E642', marginTop: '0' }}>Shutoff Checklist — {match.label}</h3>
             <ul style={{ margin: '0', paddingLeft: '1.25rem' }}>
               {match.shutoffs.map((s, i) => (
-                <li key={i} style={{ marginBottom: '0.6rem', lineHeight: '1.6′ }}>{s}</li>
+                <li key={i} style={{ marginBottom: '0.6rem', lineHeight: '1.6' }}>{s}</li>
               ))}
             </ul>
           </div>

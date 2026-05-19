@@ -50,40 +50,40 @@ export default function DFWElectricalVocabularyGuide2026() {
   const active = electricalConcerns[activeIndex];
 
   return (
-    <div style={{ minHeight: "100vh", background: "#0A1628″, color: "#fff", fontFamily: "system-ui, sans-serif", padding: "32px 16px" }}>
+    <div style={{ minHeight: "100vh", background: "#0A1628", color: "#fff", fontFamily: "system-ui, sans-serif", padding: "32px 16px" }}>
       <div style={{ maxWidth: 760, margin: "0 auto" }}>
         <div style={{ textAlign: "center", marginBottom: 36 }}>
           <div style={{ fontSize: 40, marginBottom: 8 }}>⚡</div>
-          <h1 style={{ fontSize: 28, fontWeight: 800, color: "#F5E642″, margin: "0 0 8px" }}>DFW Electrical Vocabulary Guide 2026</h1>
-          <p style={{ color: "#94a3b8″, fontSize: 15, margin: 0 }}>Electrical terms every DFW homeowner needs before calling an electrician</p>
+          <h1 style={{ fontSize: 28, fontWeight: 800, color: "#F5E642", margin: "0 0 8px" }}>DFW Electrical Vocabulary Guide 2026</h1>
+          <p style={{ color: "#94a3b8", fontSize: 15, margin: 0 }}>Electrical terms every DFW homeowner needs before calling an electrician</p>
         </div>
 
         <div style={{ display: "flex", flexWrap: "wrap", gap: 10, marginBottom: 28, justifyContent: "center" }}>
           {electricalConcerns.map((ec, i) => (
             <button key={i} onClick={() => { setActiveIndex(i); setActiveTerm(null); }}
               style={{ padding: "8px 18px", borderRadius: 20, border: "none", cursor: "pointer", fontWeight: 600, fontSize: 14,
-                background: activeIndex === i ? "#F5E642″ : "#1e2d45", color: activeIndex === i ? "#0A1628" : "#cbd5e1" }}>
+                background: activeIndex === i ? "#F5E642" : "#1e2d45", color: activeIndex === i ? "#0A1628" : "#cbd5e1" }}>
               {ec.concern}
             </button>
           ))}
         </div>
 
-        <div style={{ background: "#111e35″, borderRadius: 14, padding: 24, border: "1px solid #1e3a5f" }}>
-          <h2 style={{ fontSize: 18, fontWeight: 700, color: "#F5E642″, marginTop: 0, marginBottom: 18 }}>{active.concern} Terms</h2>
+        <div style={{ background: "#111e35", borderRadius: 14, padding: 24, border: "1px solid #1e3a5f" }}>
+          <h2 style={{ fontSize: 18, fontWeight: 700, color: "#F5E642", marginTop: 0, marginBottom: 18 }}>{active.concern} Terms</h2>
           {active.terms.map((term, i) => (
             <div key={i} onClick={() => setActiveTerm(activeTerm === i ? null : i)}
-              style={{ background: activeTerm === i ? "#1a2d48″ : "#0d1b2e", border: `1px solid ${activeTerm === i ? "#F5E642" : "#1e3a5f"}`,
+              style={{ background: activeTerm === i ? "#1a2d48" : "#0d1b2e", border: `1px solid ${activeTerm === i ? "#F5E642" : "#1e3a5f"}`,
                 borderRadius: 10, padding: "14px 18px", marginBottom: 10, cursor: "pointer" }}>
               <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
-                <span style={{ fontWeight: 700, color: activeTerm === i ? "#F5E642″ : "#e2e8f0", fontSize: 16 }}>{term.word}</span>
-                <span style={{ color: "#F5E642″, fontSize: 18 }}>{activeTerm === i ? "▲" : "▼"}</span>
+                <span style={{ fontWeight: 700, color: activeTerm === i ? "#F5E642" : "#e2e8f0", fontSize: 16 }}>{term.word}</span>
+                <span style={{ color: "#F5E642", fontSize: 18 }}>{activeTerm === i ? "▲" : "▼"}</span>
               </div>
-              {activeTerm === i && <p style={{ color: "#94a3b8″, fontSize: 14, margin: "10px 0 0", lineHeight: 1.6 }}>{term.def}</p>}
+              {activeTerm === i && <p style={{ color: "#94a3b8", fontSize: 14, margin: "10px 0 0", lineHeight: 1.6 }}>{term.def}</p>}
             </div>
           ))}
         </div>
 
-        <p style={{ textAlign: "center", color: "#475569″, fontSize: 13, marginTop: 28 }}>© 2026 ProLnk · DFW Home Services Platform</p>
+        <p style={{ textAlign: "center", color: "#475569", fontSize: 13, marginTop: 28 }}>© 2026 ProLnk · DFW Home Services Platform</p>
       </div>
     </div>
   );

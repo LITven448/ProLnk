@@ -47,7 +47,7 @@ export default function DFWBuyerRepresentationGuide() {
   const recommended = situationMap[situation] || '';
 
   return (
-    <div style={{ background: '#F9FAFB', minHeight: '100vh', fontFamily: 'system-ui, sans-serif', color: '#0A1628′ }}>
+    <div style={{ background: '#F9FAFB', minHeight: '100vh', fontFamily: 'system-ui, sans-serif', color: '#0A1628' }}>
       <div style={{ background: '#0A1628', padding: '40px 24px', textAlign: 'center' }}>
         <div style={{ fontSize: 48 }}>⚖️</div>
         <h1 style={{ color: '#F5E642', fontSize: 28, fontWeight: 700, margin: '12px 0 8px' }}>DFW Buyer Representation Guide</h1>
@@ -78,7 +78,7 @@ export default function DFWBuyerRepresentationGuide() {
         {recommended && (
           <div style={{ background: '#DCFCE7', border: '2px solid #16A34A', borderRadius: 10, padding: 16, marginBottom: 24 }}>
             <p style={{ margin: 0, fontWeight: 700 }}>✅ Recommended for your situation: <span style={{ color: '#16A34A' }}>{options.find(o => o.key === recommended)?.label}</span></p>
-            <p style={{ margin: '4px 0 0', fontSize: 13, color: '#166534′ }}>Click below to see full details, costs, and what to watch for.</p>
+            <p style={{ margin: '4px 0 0', fontSize: 13, color: '#166534' }}>Click below to see full details, costs, and what to watch for.</p>
           </div>
         )}
 
@@ -102,11 +102,11 @@ export default function DFWBuyerRepresentationGuide() {
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 20, marginBottom: 16 }}>
                 <div>
                   <p style={{ fontWeight: 700, fontSize: 13, color: '#16A34A', marginBottom: 8 }}>✅ Pros</p>
-                  {opt.pros.map((p, i) => <div key={i} style={{ fontSize: 13, padding: '4px 0', borderBottom: '1px solid #F1F5F9′ }}>{p}</div>)}
+                  {opt.pros.map((p, i) => <div key={i} style={{ fontSize: 13, padding: '4px 0', borderBottom: '1px solid #F1F5F9' }}>{p}</div>)}
                 </div>
                 <div>
                   <p style={{ fontWeight: 700, fontSize: 13, color: '#DC2626', marginBottom: 8 }}>❌ Cons</p>
-                  {opt.cons.map((c, i) => <div key={i} style={{ fontSize: 13, padding: '4px 0', borderBottom: '1px solid #F1F5F9′ }}>{c}</div>)}
+                  {opt.cons.map((c, i) => <div key={i} style={{ fontSize: 13, padding: '4px 0', borderBottom: '1px solid #F1F5F9' }}>{c}</div>)}
                 </div>
               </div>
               <div style={{ background: '#F1F5F9', borderRadius: 8, padding: 12 }}>

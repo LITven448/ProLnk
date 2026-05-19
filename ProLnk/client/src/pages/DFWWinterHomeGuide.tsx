@@ -30,7 +30,7 @@ export default function DFWWinterHomeGuide() {
 
   const riskScore = pipes.length + (homeType === 'old' ? 2 : homeType === 'pier' ? 1 : 0) + (pipes.includes('pier') ? 2 : 0) + (pipes.includes('outdoor') ? 2 : 0);
 
-  const riskLabel = riskScore >= 6 ? { label: 'HIGH RISK', color: '#ef4444′ } : riskScore >= 3 ? { label: ’MODERATE RISK', color: '#f59e0b' } : { label: 'LOW RISK', color: '#22c55e' };
+  const riskLabel = riskScore >= 6 ? { label: 'HIGH RISK', color: '#ef4444' } : riskScore >= 3 ? { label: 'MODERATE RISK', color: '#f59e0b' } : { label: 'LOW RISK', color: '#22c55e' };
 
   const checklist = [
     'Insulate all exposed pipes with foam pipe sleeves (hardware store, ~$2/ft)',
@@ -49,13 +49,13 @@ export default function DFWWinterHomeGuide() {
 
   return (
     <div style={{ background: '#0A1628', minHeight: '100vh', color: '#fff', fontFamily: 'system-ui, sans-serif', padding: '0 0 60px' }}>
-      <div style={{ background: 'linear-gradient(135deg, #0A1628 0%, #1a2d4a 100%)', padding: '48px 24px 40px', textAlign: 'center', borderBottom: '2px solid #F5E642′ }}>
+      <div style={{ background: 'linear-gradient(135deg, #0A1628 0%, #1a2d4a 100%)', padding: '48px 24px 40px', textAlign: 'center', borderBottom: '2px solid #F5E642' }}>
         <div style={{ fontSize: 48, marginBottom: 12 }}>❄️</div>
         <h1 style={{ fontSize: 32, fontWeight: 800, color: '#F5E642', margin: '0 0 8px' }}>DFW Winter Home Guide</h1>
         <p style={{ color: '#94a3b8', fontSize: 16, margin: 0 }}>Freeze Preparation — The Feb 2021 Lesson</p>
       </div>
 
-      <div style={{ maxWidth: 720, margin: '0 auto', padding: '32px 24px 0′ }}>
+      <div style={{ maxWidth: 720, margin: '0 auto', padding: '32px 24px 0' }}>
         <div style={{ background: '#ef4444', color: '#fff', borderRadius: 10, padding: '14px 20px', marginBottom: 28, fontWeight: 700, fontSize: 15 }}>
           🧊 Feb 2021: Over 4.5 million Texas homes lost water due to burst pipes. DFW homes are NOT built for extended freezes. Prepare every year.
         </div>

@@ -62,13 +62,13 @@ export default function DFWComparableSalesGuide() {
   const fmt = (n: number) => '$' + n.toLocaleString();
 
   return (
-    <div style={{ background: '#0A1628', minHeight: '100vh', fontFamily: 'system-ui, sans-serif', color: '#e8e8e8′ }}>
+    <div style={{ background: '#0A1628', minHeight: '100vh', fontFamily: 'system-ui, sans-serif', color: '#e8e8e8' }}>
       <div style={{ maxWidth: 880, margin: '0 auto', padding: '48px 24px' }}>
 
         <div style={{ marginBottom: 40 }}>
           <div style={{ fontSize: 13, fontWeight: 700, color: '#F5E642', letterSpacing: 2, textTransform: 'uppercase', marginBottom: 12 }}>DFW Valuation Resource</div>
           <h1 style={{ fontSize: 38, fontWeight: 800, lineHeight: 1.2, margin: '0 0 16px', color: '#fff' }}>Understanding Comparable Sales in DFW</h1>
-          <p style={{ fontSize: 18, color: '#aab', lineHeight: 1.7 }}>Comps are the foundation of every home valuation in DFW — but DFW's rapid growth creates unique challenges. Here’s how to read them like a pro.</p>
+          <p style={{ fontSize: 18, color: '#aab', lineHeight: 1.7 }}>Comps are the foundation of every home valuation in DFW — but DFW's rapid growth creates unique challenges. Here's how to read them like a pro.</p>
         </div>
 
         <section style={{ background: 'rgba(255,255,255,0.05)', borderRadius: 12, padding: 24, marginBottom: 28 }}>
@@ -97,9 +97,9 @@ export default function DFWComparableSalesGuide() {
             <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: 14 }}>
               <thead>
                 <tr style={{ background: 'rgba(245,230,66,0.15)' }}>
-                  <th style={{ padding: '12px 16px', textAlign: 'left', color: '#F5E642′ }}>Factor</th>
-                  <th style={{ padding: '12px 16px', textAlign: 'left', color: '#F5E642′ }}>Typical DFW Adjustment</th>
-                  <th style={{ padding: '12px 16px', textAlign: 'left', color: '#F5E642′ }}>Notes</th>
+                  <th style={{ padding: '12px 16px', textAlign: 'left', color: '#F5E642' }}>Factor</th>
+                  <th style={{ padding: '12px 16px', textAlign: 'left', color: '#F5E642' }}>Typical DFW Adjustment</th>
+                  <th style={{ padding: '12px 16px', textAlign: 'left', color: '#F5E642' }}>Notes</th>
                 </tr>
               </thead>
               <tbody>
@@ -154,14 +154,14 @@ export default function DFWComparableSalesGuide() {
           <div style={{ marginBottom: 18 }}>
             <label style={{ fontWeight: 600, fontSize: 14, display: 'block', marginBottom: 6 }}>Pool?</label>
             <div style={{ display: 'flex', gap: 10 }}>
-              {POOLS.map(p => <button key={p.label} onClick={() => setPool(p.adj)} style={{ padding: '8px 20px', borderRadius: 8, border: '2px solid', borderColor: pool === p.adj ? '#F5E642′ : ’rgba(255,255,255,0.2)', background: pool === p.adj ? '#F5E642′ : ’transparent', color: pool === p.adj ? '#0A1628′ : '#fff', fontWeight: 700, cursor: ’pointer' }}>{p.label}</button>)}
+              {POOLS.map(p => <button key={p.label} onClick={() => setPool(p.adj)} style={{ padding: '8px 20px', borderRadius: 8, border: '2px solid', borderColor: pool === p.adj ? '#F5E642' : 'rgba(255,255,255,0.2)', background: pool === p.adj ? '#F5E642' : 'transparent', color: pool === p.adj ? '#0A1628' : '#fff', fontWeight: 700, cursor: 'pointer' }}>{p.label}</button>)}
             </div>
           </div>
           <button onClick={calculate} style={{ background: '#F5E642', color: '#0A1628', border: 'none', borderRadius: 8, padding: '12px 28px', fontSize: 16, fontWeight: 800, cursor: 'pointer' }}>Estimate Value Range</button>
           {result && (
             <div style={{ marginTop: 20, background: 'rgba(0,0,0,0.3)', borderRadius: 10, padding: 18, display: 'flex', gap: 30 }}>
-              <div><div style={{ fontSize: 13, color: '#99a', marginBottom: 4 }}>Estimated Low</div><div style={{ fontSize: 26, fontWeight: 800, color: '#F5E642′ }}>{fmt(result.low)}</div></div>
-              <div><div style={{ fontSize: 13, color: '#99a', marginBottom: 4 }}>Estimated High</div><div style={{ fontSize: 26, fontWeight: 800, color: '#F5E642′ }}>{fmt(result.high)}</div></div>
+              <div><div style={{ fontSize: 13, color: '#99a', marginBottom: 4 }}>Estimated Low</div><div style={{ fontSize: 26, fontWeight: 800, color: '#F5E642' }}>{fmt(result.low)}</div></div>
+              <div><div style={{ fontSize: 13, color: '#99a', marginBottom: 4 }}>Estimated High</div><div style={{ fontSize: 26, fontWeight: 800, color: '#F5E642' }}>{fmt(result.high)}</div></div>
             </div>
           )}
         </section>

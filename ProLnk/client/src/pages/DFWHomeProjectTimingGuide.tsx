@@ -46,7 +46,7 @@ export default function DFWHomeProjectTimingGuide() {
             <div key={s.month} style={{ background: '#0D1F3A', border: '1px solid #1E3A5F', borderRadius: 10, padding: '1rem 1.25rem' }}>
               <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 6 }}>
                 <span style={{ fontSize: 22 }}>{s.icon}</span>
-                <h2 style={{ fontSize: '1rem', fontWeight: 700, margin: 0, color: '#F5E642′ }}>{s.month}</h2>
+                <h2 style={{ fontSize: '1rem', fontWeight: 700, margin: 0, color: '#F5E642' }}>{s.month}</h2>
                 <div style={{ marginLeft: 'auto', display: 'flex', gap: 4 }}>
                   {s.trades.map(t => <span key={t} style={{ background: '#1E3A5F', borderRadius: 4, padding: '2px 8px', fontSize: 11, color: '#8FA3BF' }}>{t}</span>)}
                 </div>
@@ -74,7 +74,7 @@ export default function DFWHomeProjectTimingGuide() {
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8, marginBottom: '1rem' }}>
             {PROJECTS.map(p => (
               <button key={p} onClick={() => toggle(p)}
-                style={{ background: selected.includes(p) ? '#F5E642′ : ’rgba(255,255,255,0.07)', color: selected.includes(p) ? '#0A1628′ : '#E8EDF5', border: '1px solid #1E3A5F', borderRadius: 6, padding: '6px 12px', fontSize: 13, cursor: ’pointer' }}>
+                style={{ background: selected.includes(p) ? '#F5E642' : 'rgba(255,255,255,0.07)', color: selected.includes(p) ? '#0A1628' : '#E8EDF5', border: '1px solid #1E3A5F', borderRadius: 6, padding: '6px 12px', fontSize: 13, cursor: 'pointer' }}>
                 {p}
               </button>
             ))}

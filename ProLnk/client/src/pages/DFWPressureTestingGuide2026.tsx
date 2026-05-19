@@ -48,14 +48,14 @@ export default function DFWPressureTestingGuide2026() {
       <div style={{ maxWidth: 720, margin: '0 auto' }}>
         <div style={{ textAlign: 'center', marginBottom: '2rem' }}>
           <div style={{ fontSize: '3rem' }}>📊</div>
-          <h1 style={{ color: '#F5E642', fontSize: '1.8rem', margin: '0.5rem 0′ }}>DFW Plumbing Pressure Testing Guide 2026</h1>
-          <p style={{ color: '#94a3b8′ }}>Know your PSI — pressure testing plumbing in DFW homes</p>
+          <h1 style={{ color: '#F5E642', fontSize: '1.8rem', margin: '0.5rem 0' }}>DFW Plumbing Pressure Testing Guide 2026</h1>
+          <p style={{ color: '#94a3b8' }}>Know your PSI — pressure testing plumbing in DFW homes</p>
         </div>
 
         <div style={{ background: '#1e293b', borderRadius: 12, padding: '1.5rem', marginBottom: '1.5rem' }}>
           <h2 style={{ color: '#F5E642', marginTop: 0 }}>💡 DFW Pressure Basics</h2>
           <ul style={{ color: '#cbd5e1', lineHeight: 1.8, paddingLeft: '1.2rem' }}>
-            <li>Normal DFW water supply pressure: <strong style={{ color: '#F5E642′ }}>60–80 PSI</strong></li>
+            <li>Normal DFW water supply pressure: <strong style={{ color: '#F5E642' }}>60–80 PSI</strong></li>
             <li>Above 80 PSI: pressure reducing valve (PRV) required — common DFW issue</li>
             <li>Below 40 PSI: low pressure issue — check for galvanized restriction or PRV failure</li>
             <li>Pressure drop during hold test = active leak — find it before finishing work</li>
@@ -67,13 +67,13 @@ export default function DFWPressureTestingGuide2026() {
           <div style={{ display: 'grid', gap: '0.75rem', marginBottom: '1rem' }}>
             {situations.map(s => (
               <button key={s.id} onClick={() => setSelected(selected === s.id ? null : s.id)}
-                style={{ background: selected === s.id ? '#F5E642′ : '#0f172a', color: selected === s.id ? '#0A1628' : '#fff', border: '1px solid #334155', borderRadius: 8, padding: '0.75rem 1rem', textAlign: ’left', cursor: 'pointer', fontSize: '0.95rem' }}>
+                style={{ background: selected === s.id ? '#F5E642' : '#0f172a', color: selected === s.id ? '#0A1628' : '#fff', border: '1px solid #334155', borderRadius: 8, padding: '0.75rem 1rem', textAlign: 'left', cursor: 'pointer', fontSize: '0.95rem' }}>
                 {s.emoji} {s.label}
               </button>
             ))}
           </div>
           {guide && (
-            <div style={{ background: '#0f172a', borderRadius: 8, padding: '1.25rem', borderLeft: '4px solid #F5E642′ }}>
+            <div style={{ background: '#0f172a', borderRadius: 8, padding: '1.25rem', borderLeft: '4px solid #F5E642' }}>
               <div style={{ color: '#F5E642', fontWeight: 700, fontSize: '1.05rem', marginBottom: '0.75rem' }}>🧪 {guide.test}</div>
               <ol style={{ color: '#cbd5e1', paddingLeft: '1.2rem', lineHeight: 1.8, margin: '0 0 0.75rem' }}>
                 {guide.steps.map((step, i) => <li key={i}>{step}</li>)}

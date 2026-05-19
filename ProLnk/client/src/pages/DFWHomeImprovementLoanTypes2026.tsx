@@ -42,7 +42,7 @@ export default function DFWHomeImprovementLoanTypes2026() {
         <div style={{ background: '#1e2d47', borderRadius: 12, padding: 24, marginBottom: 28 }}>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16, marginBottom: 20 }}>
             <div>
-              <label style={{ fontSize: 12, color: '#94a3b8′ }}>🔨 Project Size</label>
+              <label style={{ fontSize: 12, color: '#94a3b8' }}>🔨 Project Size</label>
               <select value={projectSize} onChange={e => setProjectSize(e.target.value)} style={{ display: 'block', marginTop: 6, width: '100%', background: '#0A1628', color: '#fff', border: '1px solid #334155', borderRadius: 8, padding: '10px', fontSize: 14 }}>
                 <option value="small">Small — Under $15K</option>
                 <option value="medium">Medium — $15K to $60K</option>
@@ -50,7 +50,7 @@ export default function DFWHomeImprovementLoanTypes2026() {
               </select>
             </div>
             <div>
-              <label style={{ fontSize: 12, color: '#94a3b8′ }}>🏦 Home Equity</label>
+              <label style={{ fontSize: 12, color: '#94a3b8' }}>🏦 Home Equity</label>
               <select value={equityLevel} onChange={e => setEquityLevel(e.target.value)} style={{ display: 'block', marginTop: 6, width: '100%', background: '#0A1628', color: '#fff', border: '1px solid #334155', borderRadius: 8, padding: '10px', fontSize: 14 }}>
                 <option value="none">None / Very Little</option>
                 <option value="some">Some (10-20%)</option>
@@ -59,7 +59,7 @@ export default function DFWHomeImprovementLoanTypes2026() {
             </div>
           </div>
           {rec && (
-            <div style={{ background: '#F5E642', borderRadius: 10, padding: 20, color: '#0A1628′ }}>
+            <div style={{ background: '#F5E642', borderRadius: 10, padding: 20, color: '#0A1628' }}>
               <div style={{ fontSize: 11, fontWeight: 700 }}>⭐ BEST FIT FOR YOUR SITUATION</div>
               <div style={{ fontSize: 22, fontWeight: 800, marginTop: 4 }}>{rec.icon} {rec.type}</div>
               <div style={{ fontSize: 13, marginTop: 4 }}>{rec.why}</div>
@@ -80,15 +80,15 @@ export default function DFWHomeImprovementLoanTypes2026() {
                 <span style={{ fontSize: 22 }}>{l.icon}</span>
                 <div>
                   <div style={{ fontWeight: 700 }}>{l.name}</div>
-                  <div style={{ fontSize: 12, color: '#F5E642′ }}>{l.rate}</div>
+                  <div style={{ fontSize: 12, color: '#F5E642' }}>{l.rate}</div>
                 </div>
               </div>
-              <div style={{ textAlign: 'right', fontSize: 12, color: '#94a3b8′ }}>
+              <div style={{ textAlign: 'right', fontSize: 12, color: '#94a3b8' }}>
                 <div>Best: {l.best}</div>
                 <div>Equity: {l.equity}</div>
               </div>
             </div>
-            <div style={{ fontSize: 13, color: '#94a3b8′ }}>{l.desc}</div>
+            <div style={{ fontSize: 13, color: '#94a3b8' }}>{l.desc}</div>
           </div>
         ))}
       </div>

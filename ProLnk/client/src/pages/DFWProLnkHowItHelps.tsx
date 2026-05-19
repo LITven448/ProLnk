@@ -33,12 +33,12 @@ export default function DFWProLnkHowItHelps() {
     <div style={{ background: '#0A1628', minHeight: '100vh', color: '#E8EDF5', fontFamily: 'system-ui, sans-serif', padding: '40px 20px' }}>
       <div style={{ maxWidth: 800, margin: '0 auto' }}>
         <div style={{ color: '#F5E642', fontSize: 13, fontWeight: 700, letterSpacing: 2, textTransform: 'uppercase', marginBottom: 12 }}>FOR DFW HOMEOWNERS</div>
-        <h1 style={{ fontSize: 34, fontWeight: 800, margin: '0 0 14px' }}>7 Ways ProLnk Makes DFW Homeownership <span style={{ color: '#F5E642′ }}>Better</span></h1>
-        <p style={{ color: '#8FA3BF', fontSize: 15, lineHeight: 1.7, marginBottom: 36 }}>ProLnk was built for the DFW homeowner who's tired of spam calls, inflated quotes, unlicensed contractors, and zero paper trail. Here’s what we actually do differently.</p>
+        <h1 style={{ fontSize: 34, fontWeight: 800, margin: '0 0 14px' }}>7 Ways ProLnk Makes DFW Homeownership <span style={{ color: '#F5E642' }}>Better</span></h1>
+        <p style={{ color: '#8FA3BF', fontSize: 15, lineHeight: 1.7, marginBottom: 36 }}>ProLnk was built for the DFW homeowner who's tired of spam calls, inflated quotes, unlicensed contractors, and zero paper trail. Here's what we actually do differently.</p>
 
         <div style={{ display: 'grid', gap: 14, marginBottom: 36 }}>
           {BENEFITS.map(b => (
-            <div key={b.id} style={{ background: highlighted === b.id ? '#1A3A5C' : '#111E35', borderRadius: 14, padding: 22, border: highlighted === b.id ? '2px solid #F5E642′ : '2px solid transparent', transition: ’all 0.2s' }}>
+            <div key={b.id} style={{ background: highlighted === b.id ? '#1A3A5C' : '#111E35', borderRadius: 14, padding: 22, border: highlighted === b.id ? '2px solid #F5E642' : '2px solid transparent', transition: 'all 0.2s' }}>
               <div style={{ display: 'flex', alignItems: 'flex-start', gap: 14 }}>
                 <span style={{ fontSize: 28 }}>{b.emoji}</span>
                 <div>
@@ -64,7 +64,7 @@ export default function DFWProLnkHowItHelps() {
           </select>
           <button onClick={showFeature} style={{ background: '#F5E642', color: '#0A1628', border: 'none', borderRadius: 8, padding: '13px 28px', fontWeight: 800, fontSize: 15, cursor: 'pointer', width: '100%' }}>Show Me the ProLnk Solution</button>
           {highlighted && (
-            <div style={{ marginTop: 16, padding: 16, background: '#0A1628', borderRadius: 10, borderLeft: '4px solid #F5E642', fontSize: 14, color: '#C5D5E8′ }}>
+            <div style={{ marginTop: 16, padding: 16, background: '#0A1628', borderRadius: 10, borderLeft: '4px solid #F5E642', fontSize: 14, color: '#C5D5E8' }}>
               ✅ <strong>{BENEFITS.find(b => b.id === highlighted)?.title}</strong> — {BENEFITS.find(b => b.id === highlighted)?.detail}
             </div>
           )}

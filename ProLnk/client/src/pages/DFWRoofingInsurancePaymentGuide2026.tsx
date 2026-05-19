@@ -27,16 +27,16 @@ export default function DFWRoofingInsurancePaymentGuide2026() {
   return (
     <div style={{ backgroundColor: '#0A1628', minHeight: '100vh', color: '#ffffff', fontFamily: 'system-ui, sans-serif', padding: '24px' }}>
       <div style={{ maxWidth: '800px', margin: '0 auto' }}>
-        <div style={{ marginBottom: '8px', color: '#F5E642', fontSize: '14px', fontWeight: '600′ }}>🏠 DFW ROOFING INSURANCE GUIDE 2026</div>
-        <h1 style={{ fontSize: '32px', fontWeight: '800', marginBottom: '12px', lineHeight: '1.2′ }}>How Insurance Pays for DFW Roof Replacement</h1>
+        <div style={{ marginBottom: '8px', color: '#F5E642', fontSize: '14px', fontWeight: '600' }}>🏠 DFW ROOFING INSURANCE GUIDE 2026</div>
+        <h1 style={{ fontSize: '32px', fontWeight: '800', marginBottom: '12px', lineHeight: '1.2' }}>How Insurance Pays for DFW Roof Replacement</h1>
         <p style={{ color: '#94a3b8', fontSize: '16px', marginBottom: '32px' }}>Most DFW homeowners leave thousands on the table by not understanding the two-check insurance payment process.</p>
 
         <div style={{ backgroundColor: '#1e3a5f', borderRadius: '12px', padding: '24px', marginBottom: '24px' }}>
           <h2 style={{ color: '#F5E642', fontSize: '20px', fontWeight: '700', marginBottom: '16px' }}>💰 The Two-Check Process Explained</h2>
           {[['Check 1: ACV (Actual Cash Value)','Issued after adjuster inspection. This is the depreciated value of your old roof — NOT the full replacement cost. Depreciation is withheld.','🔵'],['Check 2: RCV Supplement (Recoverable Depreciation)','Issued after roof is complete and you submit proof. This is the withheld depreciation — often $2,000–$8,000+ on DFW roofs. YOU MUST CLAIM THIS.','🟢'],].map(([title, desc, icon]) => (
-            <div key={title} style={{ backgroundColor: '#0A1628', borderRadius: '8px', padding: '16px', marginBottom: '12px', borderLeft: '4px solid #F5E642′ }}>
+            <div key={title} style={{ backgroundColor: '#0A1628', borderRadius: '8px', padding: '16px', marginBottom: '12px', borderLeft: '4px solid #F5E642' }}>
               <div style={{ fontWeight: '700', marginBottom: '8px', fontSize: '16px' }}>{icon} {title}</div>
-              <div style={{ color: '#94a3b8', fontSize: '14px', lineHeight: '1.6′ }}>{desc}</div>
+              <div style={{ color: '#94a3b8', fontSize: '14px', lineHeight: '1.6' }}>{desc}</div>
             </div>
           ))}
         </div>
@@ -45,8 +45,8 @@ export default function DFWRoofingInsurancePaymentGuide2026() {
           <h2 style={{ color: '#F5E642', fontSize: '20px', fontWeight: '700', marginBottom: '16px' }}>🏦 The Mortgage Company Complication</h2>
           {['If you have a mortgage, your lender is a co-insured — their name appears on the insurance check','You CANNOT cash the check without their endorsement (signature)','Most mortgage companies have a draw process — they hold funds in escrow and release in draws as work progresses','Call your mortgage servicer\’s insurance loss department as soon as you receive the ACV check','Ask about their inspection requirements before they release final draw funds'].map((s, i) => (
             <div key={i} style={{ display: 'flex', gap: '10px', marginBottom: '10px', alignItems: 'flex-start' }}>
-              <span style={{ color: '#F5E642', minWidth: '20px', fontWeight: '700′ }}>{i + 1}.</span>
-              <span style={{ color: '#cbd5e1', fontSize: '14px', lineHeight: '1.5′ }}>{s}</span>
+              <span style={{ color: '#F5E642', minWidth: '20px', fontWeight: '700' }}>{i + 1}.</span>
+              <span style={{ color: '#cbd5e1', fontSize: '14px', lineHeight: '1.5' }}>{s}</span>
             </div>
           ))}
         </div>
@@ -76,12 +76,12 @@ export default function DFWRoofingInsurancePaymentGuide2026() {
             style={{ backgroundColor: '#F5E642', color: '#0A1628', border: 'none', borderRadius: '8px', padding: '12px 24px', fontSize: '15px', fontWeight: '700', cursor: 'pointer', width: '100%' }}>
             Get My Action Plan →
           </button>
-          {result && <div style={{ marginTop: '16px', backgroundColor: '#0A1628', borderRadius: '8px', padding: '16px', color: '#cbd5e1', fontSize: '15px', lineHeight: '1.7′ }}>{result}</div>}
+          {result && <div style={{ marginTop: '16px', backgroundColor: '#0A1628', borderRadius: '8px', padding: '16px', color: '#cbd5e1', fontSize: '15px', lineHeight: '1.7' }}>{result}</div>}
         </div>
 
         <div style={{ backgroundColor: '#1e3a5f', borderRadius: '12px', padding: '20px' }}>
           <div style={{ color: '#F5E642', fontWeight: '700', marginBottom: '8px' }}>⚠️ DFW Storm Contractor Warning</div>
-          <div style={{ color: '#94a3b8', fontSize: '14px', lineHeight: '1.6′ }}>After major DFW hailstorms, out-of-state storm chasers flood the market. Always verify: Texas contractor license, local physical address, liability insurance certificate, and manufacturer warranty registration ability. ProLnk vets all roofing pros on the platform.</div>
+          <div style={{ color: '#94a3b8', fontSize: '14px', lineHeight: '1.6' }}>After major DFW hailstorms, out-of-state storm chasers flood the market. Always verify: Texas contractor license, local physical address, liability insurance certificate, and manufacturer warranty registration ability. ProLnk vets all roofing pros on the platform.</div>
         </div>
       </div>
     </div>

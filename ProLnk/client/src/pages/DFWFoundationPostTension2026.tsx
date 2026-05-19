@@ -26,7 +26,7 @@ export default function DFWFoundationPostTension2026() {
   };
 
   const facts = [
-    { icon: '📅', label: 'Adoption Era', value: 'DFW standard since ~1990′ },
+    { icon: '📅', label: 'Adoption Era', value: 'DFW standard since ~1990' },
     { icon: '⚡', label: 'Cable Tension', value: '33,000 lbs per cable' },
     { icon: '📏', label: 'Cable Spacing', value: 'Typically 4–5 ft apart' },
     { icon: '🔧', label: 'Scan Tool', value: 'Detensiometer (GPR)' },
@@ -67,7 +67,7 @@ export default function DFWFoundationPostTension2026() {
           <div style={{ display: 'flex', flexDirection: 'column', gap: '8px', marginBottom: '16px' }}>
             {concerns.map(c => (
               <button key={c.key} onClick={() => handleConcern(c.key)}
-                style={{ background: concern === c.key ? '#F5E642′ : '#1E3A5F', color: concern === c.key ? '#0A1628' : '#E8EAF0', border: ’none', borderRadius: '8px', padding: '12px 16px', cursor: 'pointer', textAlign: 'left', fontSize: '14px', fontWeight: '600', transition: 'all 0.2s' }}>
+                style={{ background: concern === c.key ? '#F5E642' : '#1E3A5F', color: concern === c.key ? '#0A1628' : '#E8EAF0', border: 'none', borderRadius: '8px', padding: '12px 16px', cursor: 'pointer', textAlign: 'left', fontSize: '14px', fontWeight: '600', transition: 'all 0.2s' }}>
                 {c.label}
               </button>
             ))}
@@ -91,7 +91,7 @@ export default function DFWFoundationPostTension2026() {
             ].map(s => (
               <div key={s.step} style={{ display: 'flex', gap: '12px', alignItems: 'flex-start' }}>
                 <div style={{ background: '#F5E642', color: '#0A1628', borderRadius: '50%', width: '24px', height: '24px', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '12px', fontWeight: '800', flexShrink: 0 }}>{s.step}</div>
-                <p style={{ color: '#94A3B8', fontSize: '14px', margin: 0, lineHeight: '1.5′ }}>{s.text}</p>
+                <p style={{ color: '#94A3B8', fontSize: '14px', margin: 0, lineHeight: '1.5' }}>{s.text}</p>
               </div>
             ))}
           </div>

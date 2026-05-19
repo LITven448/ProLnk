@@ -39,14 +39,14 @@ export default function DFWSlabFoundationPierPattern2026() {
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: 10, marginBottom: 20 }}>
             {homeSizes.map((h, i) => (
               <button key={i} onClick={() => setSizeIdx(i)}
-                style={{ padding: '12px', borderRadius: 8, border: sizeIdx === i ? '2px solid #F5E642′ : '2px solid #334155',
-                  backgroundColor: sizeIdx === i ? '#0A1628′ : '#0F2340', color: sizeIdx === i ? '#F5E642' : '#CBD5E1',
+                style={{ padding: '12px', borderRadius: 8, border: sizeIdx === i ? '2px solid #F5E642' : '2px solid #334155',
+                  backgroundColor: sizeIdx === i ? '#0A1628' : '#0F2340', color: sizeIdx === i ? '#F5E642' : '#CBD5E1',
                   cursor: 'pointer', fontSize: 13, fontWeight: 600 }}>
                 {h.label}
               </button>
             ))}
           </div>
-          <div style={{ backgroundColor: '#0A1628', borderRadius: 8, padding: 16, borderLeft: '4px solid #F5E642′ }}>
+          <div style={{ backgroundColor: '#0A1628', borderRadius: 8, padding: 16, borderLeft: '4px solid #F5E642' }}>
             <p style={{ color: '#F5E642', fontWeight: 700, marginBottom: 6 }}>Estimated: {homeSizes[sizeIdx].piers}</p>
             <p style={{ color: '#CBD5E1', fontSize: 14, lineHeight: 1.7 }}>{homeSizes[sizeIdx].pattern}</p>
           </div>

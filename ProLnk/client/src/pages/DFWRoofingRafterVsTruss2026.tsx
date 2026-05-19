@@ -54,14 +54,14 @@ export default function DFWRoofingRafterVsTruss2026() {
         '🌤️ Any skylight in DFW: hail-rated glass required — Class 4 impact resistance',
         '🌤️ DFW permit required for all skylights — confirm with your city building department',
       ],
-      note: 'DFW hail regularly exceeds 1″ diameter — standard skylight glass fails and leaks after major hail events.',
+      note: 'DFW hail regularly exceeds 1" diameter — standard skylight glass fails and leaks after major hail events.',
     },
   ];
 
   const selected_item = roofTypes.find(r => r.id === selected);
 
   return (
-    <div style={{ background: '#0A1628', minHeight: '100vh', padding: '32px 16px', fontFamily: 'system-ui, sans-serif', color: '#E8EDF5′ }}>
+    <div style={{ background: '#0A1628', minHeight: '100vh', padding: '32px 16px', fontFamily: 'system-ui, sans-serif', color: '#E8EDF5' }}>
       <div style={{ maxWidth: 720, margin: '0 auto' }}>
         <div style={{ textAlign: 'center', marginBottom: 32 }}>
           <div style={{ fontSize: 48 }}>🏠</div>
@@ -76,7 +76,7 @@ export default function DFWRoofingRafterVsTruss2026() {
         <div style={{ background: '#0F1E35', borderRadius: 12, padding: 20, marginBottom: 24, border: '1px solid #1A2E4A' }}>
           <h2 style={{ color: '#F5E642', fontSize: 16, margin: '0 0 12px' }}>🔩 Rafters vs Trusses: Key Differences</h2>
           <p style={{ color: '#B0BFDA', fontSize: 14, lineHeight: 1.6, margin: '0 0 12px' }}>
-            DFW homes built before ~1985 typically have <strong style={{ color: '#F5E642′ }}>cut rafters</strong> — site-built, modifiable. Homes built after 1985 almost always have <strong style={{ color: '#F5E642' }}>engineered trusses</strong> — prefabricated, cannot be modified without engineering drawings.
+            DFW homes built before ~1985 typically have <strong style={{ color: '#F5E642' }}>cut rafters</strong> — site-built, modifiable. Homes built after 1985 almost always have <strong style={{ color: '#F5E642' }}>engineered trusses</strong> — prefabricated, cannot be modified without engineering drawings.
           </p>
           <div style={{ display: 'flex', gap: 10, flexWrap: 'wrap' }}>
             {[['🔧 Rafters', 'Older homes, flexible, modifiable'], ['⚠️ Trusses', 'Post-1985, engineered, no cuts'], ['📋 Check First', 'Always identify before any attic work']].map(([label, desc]) => (
@@ -92,7 +92,7 @@ export default function DFWRoofingRafterVsTruss2026() {
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 10, marginBottom: 24 }}>
           {roofTypes.map(r => (
             <button key={r.id} onClick={() => setSelected(selected === r.id ? null : r.id)}
-              style={{ background: selected === r.id ? '#F5E642′ : '#0F1E35', color: selected === r.id ? '#0A1628' : '#E8EDF5', border: '1px solid', borderColor: selected === r.id ? '#F5E642' : '#1A2E4A', borderRadius: 10, padding: '12px 14px', fontSize: 13, fontWeight: 600, cursor: ’pointer', textAlign: 'left' }}>
+              style={{ background: selected === r.id ? '#F5E642' : '#0F1E35', color: selected === r.id ? '#0A1628' : '#E8EDF5', border: '1px solid', borderColor: selected === r.id ? '#F5E642' : '#1A2E4A', borderRadius: 10, padding: '12px 14px', fontSize: 13, fontWeight: 600, cursor: 'pointer', textAlign: 'left' }}>
               {r.label}
             </button>
           ))}

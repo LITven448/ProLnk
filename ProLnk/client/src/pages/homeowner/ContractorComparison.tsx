@@ -32,10 +32,10 @@ const MOCK_CONTRACTORS = [
     name: "ProFix Plumbing",
     trade: "Plumber",
     avatar: "P",
-    color: "#06b6d4″,
+    color: "#06b6d4",
     rating: 4.9,
     reviews: 312,
-    priceRange: "$180–$250″,
+    priceRange: "$180–$250",
     priceRaw: 215,
     responseTime: "< 2 hrs",
     availability: "This Week",
@@ -47,7 +47,7 @@ const MOCK_CONTRACTORS = [
     certifications: ["Master Plumber", "Gas Certified"],
     jobsCompleted: 1240,
     specialties: ["Emergency Repairs", "Repiping", "Water Heaters"],
-    phone: "555-0101″,
+    phone: "555-0101",
     bestValue: true,
     highestRated: false,
     fastestResponse: false,
@@ -58,10 +58,10 @@ const MOCK_CONTRACTORS = [
     name: "Apex Home Services",
     trade: "Plumber",
     avatar: "A",
-    color: "#8b5cf6″,
+    color: "#8b5cf6",
     rating: 4.7,
     reviews: 198,
-    priceRange: "$200–$300″,
+    priceRange: "$200–$300",
     priceRaw: 250,
     responseTime: "2–4 hrs",
     availability: "Tomorrow",
@@ -73,7 +73,7 @@ const MOCK_CONTRACTORS = [
     certifications: ["Licensed Plumber"],
     jobsCompleted: 780,
     specialties: ["Drain Cleaning", "Water Heaters", "Fixture Install"],
-    phone: "555-0202″,
+    phone: "555-0202",
     bestValue: false,
     highestRated: false,
     fastestResponse: false,
@@ -84,10 +84,10 @@ const MOCK_CONTRACTORS = [
     name: "FastFlow Plumbing",
     trade: "Plumber",
     avatar: "F",
-    color: "#10b981″,
+    color: "#10b981",
     rating: 4.6,
     reviews: 89,
-    priceRange: "$240–$350″,
+    priceRange: "$240–$350",
     priceRaw: 295,
     responseTime: "Same day",
     availability: "Today",
@@ -99,7 +99,7 @@ const MOCK_CONTRACTORS = [
     certifications: ["Journeyman Plumber"],
     jobsCompleted: 340,
     specialties: ["Emergency", "Drain Unclogging"],
-    phone: "555-0303″,
+    phone: "555-0303",
     bestValue: false,
     highestRated: false,
     fastestResponse: true,
@@ -126,10 +126,10 @@ function TrustBadge({ label, icon: Icon, active }: { label: string; icon: typeof
   return (
     <span className={`inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-[10px] font-bold border ${
       active
-        ? "bg-teal-500/10 text-teal-400 border-teal-500/20″
-        : "bg-slate-800 text-slate-600 border-slate-700 line-through opacity-50″
+        ? "bg-teal-500/10 text-teal-400 border-teal-500/20"
+        : "bg-slate-800 text-slate-600 border-slate-700 line-through opacity-50"
     }`}>
-      <Icon className="w-2.5 h-2.5″ />
+      <Icon className="w-2.5 h-2.5" />
       {label}
     </span>
   );
@@ -137,14 +137,14 @@ function TrustBadge({ label, icon: Icon, active }: { label: string; icon: typeof
 
 function ProCard({ contractor, onRemove, onRequest }: { contractor: Contractor; onRemove: () => void; onRequest: () => void }) {
   const [expanded, setExpanded] = useState(false);
-  const badge = contractor.bestValue ? { label: "Best Value", color: "bg-teal-500″ }
-    : contractor.highestRated ? { label: "Highest Rated", color: "bg-amber-500″ }
-    : contractor.fastestResponse ? { label: "Fastest Response", color: "bg-purple-500″ }
+  const badge = contractor.bestValue ? { label: "Best Value", color: "bg-teal-500" }
+    : contractor.highestRated ? { label: "Highest Rated", color: "bg-amber-500" }
+    : contractor.fastestResponse ? { label: "Fastest Response", color: "bg-purple-500" }
     : null;
 
   return (
     <div className={`relative bg-slate-900 rounded-2xl border-2 overflow-hidden transition-all ${
-      badge ? "border-teal-500/40″ : "border-slate-700"
+      badge ? "border-teal-500/40" : "border-slate-700"
     }`}>
       {badge && (
         <div className={`absolute top-0 left-0 right-0 ${badge.color} text-center py-1`}>
@@ -153,56 +153,56 @@ function ProCard({ contractor, onRemove, onRequest }: { contractor: Contractor; 
       )}
       <div className={`p-4 ${badge ? "pt-7" : ""}`}>
         <button onClick={onRemove}
-          className="absolute top-2 right-2 w-6 h-6 rounded-full bg-slate-800 flex items-center justify-center text-slate-500 hover:text-slate-300 z-10″>
-          <X className="w-3 h-3″ />
+          className="absolute top-2 right-2 w-6 h-6 rounded-full bg-slate-800 flex items-center justify-center text-slate-500 hover:text-slate-300 z-10">
+          <X className="w-3 h-3" />
         </button>
 
-        <div className="flex flex-col items-center text-center gap-2 mb-3″>
+        <div className="flex flex-col items-center text-center gap-2 mb-3">
           <div className="w-14 h-14 rounded-2xl flex items-center justify-center text-white font-black text-xl"
             style={{ backgroundColor: contractor.color }}>
             {contractor.avatar}
           </div>
           <div>
             <p className="font-bold text-white text-sm leading-tight">{contractor.name}</p>
-            <p className="text-xs text-slate-500″>{contractor.trade}</p>
+            <p className="text-xs text-slate-500">{contractor.trade}</p>
           </div>
-          <div className="flex items-center gap-1.5″>
-            <Star className="w-3.5 h-3.5 fill-amber-400 text-amber-400″ />
+          <div className="flex items-center gap-1.5">
+            <Star className="w-3.5 h-3.5 fill-amber-400 text-amber-400" />
             <span className="text-sm font-bold text-white">{contractor.rating}</span>
-            <span className="text-xs text-slate-600″>({contractor.reviews})</span>
+            <span className="text-xs text-slate-600">({contractor.reviews})</span>
           </div>
         </div>
 
-        <div className="text-center mb-3″>
+        <div className="text-center mb-3">
           <span className="text-lg font-black text-white">{contractor.priceRange}</span>
-          <p className="text-[10px] text-slate-500 mt-0.5″>Estimated for your job</p>
+          <p className="text-[10px] text-slate-500 mt-0.5">Estimated for your job</p>
         </div>
 
-        <div className="flex flex-wrap gap-1 justify-center mb-3″>
+        <div className="flex flex-wrap gap-1 justify-center mb-3">
           <TrustBadge label="Verified" icon={CheckCircle} active={contractor.verified} />
           <TrustBadge label="Insured" icon={Shield} active={contractor.insured} />
           <TrustBadge label="Licensed" icon={Award} active={contractor.licensed} />
           <TrustBadge label="BG Check" icon={Shield} active={contractor.backgroundCheck} />
         </div>
 
-        <div className="flex items-center justify-center gap-1 text-xs text-slate-500 mb-3″>
-          <Clock className="w-3 h-3″ />
+        <div className="flex items-center justify-center gap-1 text-xs text-slate-500 mb-3">
+          <Clock className="w-3 h-3" />
           <span>Responds in {contractor.responseTime}</span>
         </div>
 
         {expanded && (
-          <div className="space-y-2 mb-3 pt-3 border-t border-slate-700/50″>
+          <div className="space-y-2 mb-3 pt-3 border-t border-slate-700/50">
             <div>
-              <p className="text-[10px] font-semibold text-slate-500 uppercase tracking-wide mb-1″>Certifications</p>
-              <div className="flex flex-wrap gap-1″>
+              <p className="text-[10px] font-semibold text-slate-500 uppercase tracking-wide mb-1">Certifications</p>
+              <div className="flex flex-wrap gap-1">
                 {contractor.certifications.map(c => (
                   <span key={c} className="text-[10px] bg-slate-800 text-slate-400 px-2 py-0.5 rounded-md">{c}</span>
                 ))}
               </div>
             </div>
             <div>
-              <p className="text-[10px] font-semibold text-slate-500 uppercase tracking-wide mb-1″>Specialties</p>
-              <div className="flex flex-wrap gap-1″>
+              <p className="text-[10px] font-semibold text-slate-500 uppercase tracking-wide mb-1">Specialties</p>
+              <div className="flex flex-wrap gap-1">
                 {contractor.specialties.map(s => (
                   <span key={s} className="text-[10px] bg-slate-800 text-slate-400 px-2 py-0.5 rounded-md">{s}</span>
                 ))}
@@ -210,7 +210,7 @@ function ProCard({ contractor, onRemove, onRequest }: { contractor: Contractor; 
             </div>
             {contractor.recentReview && (
               <div>
-                <p className="text-[10px] font-semibold text-slate-500 uppercase tracking-wide mb-1″>Recent Review</p>
+                <p className="text-[10px] font-semibold text-slate-500 uppercase tracking-wide mb-1">Recent Review</p>
                 <p className="text-xs text-slate-400 italic">"{contractor.recentReview}"</p>
               </div>
             )}
@@ -219,7 +219,7 @@ function ProCard({ contractor, onRemove, onRequest }: { contractor: Contractor; 
 
         <button onClick={() => setExpanded(!expanded)}
           className="w-full flex items-center justify-center gap-1 text-[11px] text-slate-500 hover:text-slate-300 mb-3 transition-colors">
-          {expanded ? <ChevronUp className="w-3 h-3″ /> : <ChevronDown className="w-3 h-3" />}
+          {expanded ? <ChevronUp className="w-3 h-3" /> : <ChevronDown className="w-3 h-3" />}
           {expanded ? "Show less" : "Show more"}
         </button>
 
@@ -227,20 +227,20 @@ function ProCard({ contractor, onRemove, onRequest }: { contractor: Contractor; 
           className={`w-full py-2.5 rounded-xl font-bold text-sm transition-all ${
             badge
               ? "bg-teal-500 hover:bg-teal-400 text-white"
-              : "bg-slate-800 hover:bg-slate-700 text-white border border-slate-600″
+              : "bg-slate-800 hover:bg-slate-700 text-white border border-slate-600"
           }`}>
           Book This Pro
         </button>
 
-        <div className="flex gap-2 mt-2″>
+        <div className="flex gap-2 mt-2">
           {contractor.phone && (
             <a href={`tel:${contractor.phone}`}
               className="flex-1 flex items-center justify-center gap-1.5 py-2 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-400 text-xs font-medium transition-colors">
-              <Phone className="w-3.5 h-3.5″ /> Call
+              <Phone className="w-3.5 h-3.5" /> Call
             </a>
           )}
           <button className="flex-1 flex items-center justify-center gap-1.5 py-2 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-400 text-xs font-medium transition-colors">
-            <MessageSquare className="w-3.5 h-3.5″ /> Message
+            <MessageSquare className="w-3.5 h-3.5" /> Message
           </button>
         </div>
       </div>
@@ -277,7 +277,7 @@ export default function ContractorComparison() {
     return (
       <HomeownerLayout>
         <div className="min-h-screen bg-[#0A1628] flex items-center justify-center">
-          <Loader2 className="h-8 w-8 animate-spin text-teal-400″ />
+          <Loader2 className="h-8 w-8 animate-spin text-teal-400" />
         </div>
       </HomeownerLayout>
     );
@@ -286,16 +286,16 @@ export default function ContractorComparison() {
   return (
     <HomeownerLayout>
       <div className="min-h-screen bg-[#0A1628]">
-        <div className="max-w-5xl mx-auto p-4 pb-20 space-y-6″>
+        <div className="max-w-5xl mx-auto p-4 pb-20 space-y-6">
 
-          <div className="pt-2″>
-            <div className="flex items-center gap-3 mb-1″>
+          <div className="pt-2">
+            <div className="flex items-center gap-3 mb-1">
               <div className="w-12 h-12 rounded-2xl bg-purple-500/10 border border-purple-500/20 flex items-center justify-center">
-                <GitCompare className="w-6 h-6 text-purple-400″ />
+                <GitCompare className="w-6 h-6 text-purple-400" />
               </div>
               <div>
                 <h1 className="text-2xl font-black text-white tracking-tight">Compare Pros</h1>
-                <p className="text-sm text-slate-400″>
+                <p className="text-sm text-slate-400">
                   {serviceType} · {selected.length} contractor{selected.length !== 1 ? "s" : ""} selected
                 </p>
               </div>
@@ -303,14 +303,14 @@ export default function ContractorComparison() {
           </div>
 
           <div>
-            <p className="text-xs font-semibold text-slate-500 uppercase tracking-wide mb-2″>Comparing for</p>
+            <p className="text-xs font-semibold text-slate-500 uppercase tracking-wide mb-2">Comparing for</p>
             <div className="flex gap-2 overflow-x-auto pb-1 scrollbar-hide">
               {SERVICE_TYPES.map(s => (
                 <button key={s} onClick={() => setServiceType(s)}
                   className={`flex-shrink-0 px-4 py-2 rounded-xl text-sm font-semibold transition-all ${
                     serviceType === s
-                      ? "bg-purple-500/20 text-purple-300 border border-purple-500/30″
-                      : "bg-slate-900 text-slate-500 border border-slate-700 hover:border-slate-600″
+                      ? "bg-purple-500/20 text-purple-300 border border-purple-500/30"
+                      : "bg-slate-900 text-slate-500 border border-slate-700 hover:border-slate-600"
                   }`}>
                   {s}
                 </button>
@@ -319,8 +319,8 @@ export default function ContractorComparison() {
           </div>
 
           {priceRange && (
-            <div className="bg-slate-800/60 border border-slate-700 rounded-2xl p-4 flex items-center gap-3″>
-              <TrendingUp className="w-5 h-5 text-teal-400 flex-shrink-0″ />
+            <div className="bg-slate-800/60 border border-slate-700 rounded-2xl p-4 flex items-center gap-3">
+              <TrendingUp className="w-5 h-5 text-teal-400 flex-shrink-0" />
               <div>
                 <p className="text-xs text-slate-500 font-semibold uppercase tracking-wide">Typical price range — {serviceType}</p>
                 <p className="text-white font-bold">${priceRange.low.toLocaleString()} – ${priceRange.high.toLocaleString()} <span className="text-slate-500 font-normal text-sm">{priceRange.unit}</span></p>
@@ -329,10 +329,10 @@ export default function ContractorComparison() {
           )}
 
           <div className="flex items-center justify-between">
-            <p className="text-xs text-slate-500″>
+            <p className="text-xs text-slate-500">
               {selected.length > 0 ? `Comparing ${selected.length} pro${selected.length !== 1 ? "s" : ""}` : "Select pros to compare"}
             </p>
-            <div className="flex items-center gap-1 bg-slate-900 rounded-xl p-1 border border-slate-700″>
+            <div className="flex items-center gap-1 bg-slate-900 rounded-xl p-1 border border-slate-700">
               <button onClick={() => setTableView(false)}
                 className={`px-3 py-1.5 rounded-lg text-xs font-semibold transition-all ${!tableView ? "bg-slate-700 text-white" : "text-slate-500"}`}>
                 Cards
@@ -345,30 +345,30 @@ export default function ContractorComparison() {
           </div>
 
           {hasLiveData ? (
-            <div className="space-y-4″>
+            <div className="space-y-4">
               {(quotes as any[]).map((q: any) => {
                 const isBest = q.quotedAmount === Math.min(...(quotes as any[]).map((x: any) => x.quotedAmount ?? Infinity));
                 return (
                   <div key={q.id}
                     className={`bg-slate-900 rounded-2xl border-2 p-5 transition-all ${
-                      isBest ? "border-teal-500/40″ : "border-slate-700"
+                      isBest ? "border-teal-500/40" : "border-slate-700"
                     }`}>
                     {isBest && (
-                      <div className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-teal-500/15 text-teal-400 text-[11px] font-bold mb-3″>
-                        <CheckCircle className="w-3 h-3″ /> Best Value
+                      <div className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-teal-500/15 text-teal-400 text-[11px] font-bold mb-3">
+                        <CheckCircle className="w-3 h-3" /> Best Value
                       </div>
                     )}
-                    <div className="flex items-start justify-between gap-3″>
-                      <div className="flex-1″>
+                    <div className="flex items-start justify-between gap-3">
+                      <div className="flex-1">
                         <p className="font-bold text-white">{q.businessName}</p>
-                        <p className="text-xs text-slate-500″>{q.trade}</p>
+                        <p className="text-xs text-slate-500">{q.trade}</p>
                         {q.averageRating && (
-                          <div className="flex items-center gap-1 mt-1″>
-                            <Star className="h-3 w-3 fill-amber-400 text-amber-400″ />
-                            <span className="text-xs text-slate-400″>{Number(q.averageRating).toFixed(1)} ({q.reviewCount})</span>
+                          <div className="flex items-center gap-1 mt-1">
+                            <Star className="h-3 w-3 fill-amber-400 text-amber-400" />
+                            <span className="text-xs text-slate-400">{Number(q.averageRating).toFixed(1)} ({q.reviewCount})</span>
                           </div>
                         )}
-                        <p className="text-xs text-slate-600 mt-1″>{q.serviceCategory} · {new Date(q.createdAt).toLocaleDateString()}</p>
+                        <p className="text-xs text-slate-600 mt-1">{q.serviceCategory} · {new Date(q.createdAt).toLocaleDateString()}</p>
                       </div>
                       <div className="text-right">
                         <p className="text-2xl font-black text-white">${Number(q.quotedAmount).toLocaleString()}</p>
@@ -385,16 +385,16 @@ export default function ContractorComparison() {
             </div>
           ) : selected.length === 0 ? (
             <div className="bg-slate-900 rounded-2xl border border-slate-700 p-12 text-center">
-              <div className="w-16 h-16 rounded-2xl bg-purple-500/10 flex items-center justify-center mx-auto mb-4″>
-                <GitCompare className="h-8 w-8 text-purple-400″ />
+              <div className="w-16 h-16 rounded-2xl bg-purple-500/10 flex items-center justify-center mx-auto mb-4">
+                <GitCompare className="h-8 w-8 text-purple-400" />
               </div>
-              <p className="font-bold text-white text-lg mb-2″>No pros to compare yet</p>
+              <p className="font-bold text-white text-lg mb-2">No pros to compare yet</p>
               <p className="text-sm text-slate-500 mb-6 max-w-xs mx-auto">
                 Request quotes from multiple pros to compare them side-by-side here.
               </p>
               <Link href="/my-home/quick-quote">
                 <button className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-purple-500/20 hover:bg-purple-500/30 text-purple-300 font-semibold transition-colors">
-                  Request Quotes <ArrowRight className="w-4 h-4″ />
+                  Request Quotes <ArrowRight className="w-4 h-4" />
                 </button>
               </Link>
             </div>
@@ -402,8 +402,8 @@ export default function ContractorComparison() {
             <div>
               <div className={`grid gap-4 ${
                 selected.length === 1 ? "grid-cols-1 max-w-sm mx-auto" :
-                selected.length === 2 ? "grid-cols-2″ :
-                "grid-cols-3″
+                selected.length === 2 ? "grid-cols-2" :
+                "grid-cols-3"
               }`}>
                 {selected.map(contractor => (
                   <ProCard
@@ -416,7 +416,7 @@ export default function ContractorComparison() {
                 {selected.length < 3 && (
                   <button onClick={addContractor}
                     className="flex flex-col items-center justify-center gap-3 p-6 rounded-2xl border-2 border-dashed border-slate-700 hover:border-teal-500/30 text-slate-600 hover:text-teal-400 transition-all min-h-[200px]">
-                    <Plus className="w-8 h-8″ />
+                    <Plus className="w-8 h-8" />
                     <span className="text-sm font-semibold">Add Pro</span>
                   </button>
                 )}
@@ -424,8 +424,8 @@ export default function ContractorComparison() {
             </div>
           ) : (
             <div className="bg-slate-900 rounded-2xl border border-slate-700 overflow-hidden">
-              <div className="grid border-b border-slate-700″ style={{ gridTemplateColumns: `180px repeat(${selected.length}, 1fr)` }}>
-                <div className="p-4″ />
+              <div className="grid border-b border-slate-700" style={{ gridTemplateColumns: `180px repeat(${selected.length}, 1fr)` }}>
+                <div className="p-4" />
                 {selected.map(c => {
                   const badge = c.bestValue ? "Best Value" : c.highestRated ? "Highest Rated" : c.fastestResponse ? "Fastest" : null;
                   return (
@@ -438,9 +438,9 @@ export default function ContractorComparison() {
                         {c.avatar}
                       </div>
                       <p className="text-xs font-bold text-white leading-tight">{c.name}</p>
-                      <div className="flex items-center justify-center gap-1 mt-1″>
-                        <Star className="w-3 h-3 fill-amber-400 text-amber-400″ />
-                        <span className="text-xs text-slate-400″>{c.rating}</span>
+                      <div className="flex items-center justify-center gap-1 mt-1">
+                        <Star className="w-3 h-3 fill-amber-400 text-amber-400" />
+                        <span className="text-xs text-slate-400">{c.rating}</span>
                       </div>
                     </div>
                   );
@@ -450,9 +450,9 @@ export default function ContractorComparison() {
               {COMPARE_ROWS.map((row, i) => (
                 <div key={row.key} className={`grid border-b border-slate-700 ${i % 2 === 0 ? "" : "bg-slate-800/30"}`}
                   style={{ gridTemplateColumns: `180px repeat(${selected.length}, 1fr)` }}>
-                  <div className="p-3.5 flex items-center gap-2″>
-                    <row.icon className="w-3.5 h-3.5 text-slate-600 flex-shrink-0″ />
-                    <span className="text-xs font-semibold text-slate-500″>{row.label}</span>
+                  <div className="p-3.5 flex items-center gap-2">
+                    <row.icon className="w-3.5 h-3.5 text-slate-600 flex-shrink-0" />
+                    <span className="text-xs font-semibold text-slate-500">{row.label}</span>
                   </div>
                   {selected.map(c => {
                     const value = row.format(c);
@@ -461,8 +461,8 @@ export default function ContractorComparison() {
                     return (
                       <div key={c.id} className={`p-3.5 border-l border-slate-700 text-center ${c.bestValue ? "bg-teal-500/5" : ""}`}>
                         <span className={`text-xs font-semibold ${
-                          isBoolTrue ? "text-teal-400″ :
-                          isBoolFalse ? "text-slate-600″ :
+                          isBoolTrue ? "text-teal-400" :
+                          isBoolFalse ? "text-slate-600" :
                           "text-white"
                         }`}>
                           {value}
@@ -474,14 +474,14 @@ export default function ContractorComparison() {
               ))}
 
               <div className="grid" style={{ gridTemplateColumns: `180px repeat(${selected.length}, 1fr)` }}>
-                <div className="p-4″ />
+                <div className="p-4" />
                 {selected.map(c => (
                   <div key={c.id} className={`p-4 border-l border-slate-700 ${c.bestValue ? "bg-teal-500/5" : ""}`}>
                     <button
                       onClick={() => handleRequest(c.id)}
                       className={`w-full py-2 rounded-xl text-xs font-bold transition-all ${
                         requestedId === c.id
-                          ? "bg-teal-500/20 text-teal-400″
+                          ? "bg-teal-500/20 text-teal-400"
                           : c.bestValue
                             ? "bg-teal-500 hover:bg-teal-400 text-white"
                             : "bg-slate-800 hover:bg-slate-700 text-white"
@@ -494,10 +494,10 @@ export default function ContractorComparison() {
             </div>
           )}
 
-          <div className="text-center pt-2″>
+          <div className="text-center pt-2">
             <Link href="/my-home/directory">
               <button className="inline-flex items-center gap-2 text-sm font-semibold text-teal-400 hover:text-teal-300 transition-colors">
-                See more pros in your area <ArrowRight className="w-4 h-4″ />
+                See more pros in your area <ArrowRight className="w-4 h-4" />
               </button>
             </Link>
           </div>

@@ -4,7 +4,7 @@ const marketTypes = ['Seller\’s market (low inventory, fast sales)','Balanced 
 
 const domBands = [
   { range: '0-14 days', label: 'Fresh Listing', buyerSignal: 'Buyers see a new listing — normal interest, no concern.', sellerAction: 'Hold steady. Do not reduce or negotiate below ask unless offer is strong.', color: '#15803D' },
-  { range: '15-28 days', label: 'Normal Market Pace', buyerSignal: 'DFW buyers see this as standard. No stigma. Home is in active consideration.', sellerAction: 'Evaluate feedback patterns. If 10+ showings with no offer, begin price conversation.', color: '#1D4ED8′ },
+  { range: '15-28 days', label: 'Normal Market Pace', buyerSignal: 'DFW buyers see this as standard. No stigma. Home is in active consideration.', sellerAction: 'Evaluate feedback patterns. If 10+ showings with no offer, begin price conversation.', color: '#1D4ED8' },
   { range: '29-45 days', label: 'Starting to Raise Questions', buyerSignal: 'Sophisticated buyers (and their agents) begin to wonder — is there something wrong? Is there an inspection issue? Savvy buyers will use DOM as leverage.', sellerAction: 'Proactive price reduction of 2-3% needed. Consider staging refresh, new photography, or open house push to generate activity.', color: '#92400E' },
   { range: '46-60 days', label: 'Stigma Setting In', buyerSignal: 'Most DFW buyers at this DOM assume either overpriced or defective. Agents will advise clients to make low offers. Your negotiating position is weakening.', sellerAction: 'Significant price reset (4-6%) or strategic relist. Withdrawal + fresh MLS entry resets the DOM clock and removes the stigma.', color: '#C2410C' },
   { range: '60+ days', label: 'Distressed Signal', buyerSignal: 'Buyers see a problem. Even if the home is perfect, 60+ DOM in DFW signals that something is wrong. Agents routinely skip showing these to clients without a compelling reason to look.', sellerAction: 'Pull from market. Rest 10-14 days. Relist at a price that reflects current comps — not your original expectations.', color: '#BE123C' },
@@ -35,7 +35,7 @@ export default function DFWDaysOnMarketGuide() {
   });
 
   return (
-    <div style={{ background: '#F9FAFB', minHeight: '100vh', padding: '32px 16px', fontFamily: 'system-ui,sans-serif', color: '#0A1628′ }}>
+    <div style={{ background: '#F9FAFB', minHeight: '100vh', padding: '32px 16px', fontFamily: 'system-ui,sans-serif', color: '#0A1628' }}>
       <div style={{ maxWidth: 760, margin: '0 auto' }}>
         <div style={{ background: '#0A1628', borderRadius: 12, padding: '28px 24px', marginBottom: 28 }}>
           <div style={{ fontSize: 28 }}>📆</div>
@@ -43,7 +43,7 @@ export default function DFWDaysOnMarketGuide() {
           <p style={{ color: '#CBD5E1', margin: 0 }}>What different DOM numbers signal in DFW, how market conditions change the math, and how to handle the stigma of high DOM.</p>
         </div>
 
-        <div style={{ background: '#fff', borderRadius: 10, padding: 20, marginBottom: 20, border: '1px solid #E2E8F0′ }}>
+        <div style={{ background: '#fff', borderRadius: 10, padding: 20, marginBottom: 20, border: '1px solid #E2E8F0' }}>
           <h2 style={{ fontSize: 16, fontWeight: 700, marginBottom: 12 }}>📊 DFW DOM Signal Chart</h2>
           {domBands.map(b => (
             <div key={b.range} style={{ borderLeft: `4px solid ${b.color}`, paddingLeft: 12, marginBottom: 14 }}>
@@ -52,21 +52,21 @@ export default function DFWDaysOnMarketGuide() {
                 <span style={{ fontWeight: 600, fontSize: 13 }}>{b.label}</span>
               </div>
               <div style={{ fontSize: 12, color: '#64748B', marginBottom: 2 }}>👁️ Buyer view: {b.buyerSignal}</div>
-              <div style={{ fontSize: 12, color: '#334155′ }}>✅ Seller action: {b.sellerAction}</div>
+              <div style={{ fontSize: 12, color: '#334155' }}>✅ Seller action: {b.sellerAction}</div>
             </div>
           ))}
         </div>
 
-        <div style={{ background: '#fff', borderRadius: 10, padding: 20, marginBottom: 20, border: '1px solid #E2E8F0′ }}>
+        <div style={{ background: '#fff', borderRadius: 10, padding: 20, marginBottom: 20, border: '1px solid #E2E8F0' }}>
           <h2 style={{ fontSize: 16, fontWeight: 700, marginBottom: 6 }}>🎯 Your Current DOM + Market Type</h2>
           <div style={{ display: 'flex', gap: 10, flexWrap: 'wrap', marginBottom: 14 }}>
             <div style={{ flex: 1, minWidth: 160 }}>
               <label style={{ fontSize: 12, color: '#64748B', display: 'block', marginBottom: 4 }}>Current Days on Market</label>
-              <input type='number' value={currentDom} onChange={e => setCurrentDom(e.target.value)} placeholder='e.g. 38′ style={{ width: '100%', padding: '8px 10px', borderRadius: 6, border: '1px solid #CBD5E1', fontSize: 13, boxSizing: ’border-box' }} />
+              <input type='number' value={currentDom} onChange={e => setCurrentDom(e.target.value)} placeholder='e.g. 38' style={{ width: '100%', padding: '8px 10px', borderRadius: 6, border: '1px solid #CBD5E1', fontSize: 13, boxSizing: 'border-box' }} />
             </div>
             <div style={{ flex: 1, minWidth: 200 }}>
               <label style={{ fontSize: 12, color: '#64748B', display: 'block', marginBottom: 4 }}>DFW Market Type</label>
-              <select value={marketType} onChange={e => setMarketType(e.target.value)} style={{ width: '100%', padding: '8px 10px', borderRadius: 6, border: '1px solid #CBD5E1', fontSize: 13, background: '#fff', color: '#0A1628′ }}>
+              <select value={marketType} onChange={e => setMarketType(e.target.value)} style={{ width: '100%', padding: '8px 10px', borderRadius: 6, border: '1px solid #CBD5E1', fontSize: 13, background: '#fff', color: '#0A1628' }}>
                 <option value=''>Select market type</option>
                 {marketTypes.map(m => <option key={m} value={m}>{m}</option>)}
               </select>
@@ -82,12 +82,12 @@ export default function DFWDaysOnMarketGuide() {
           {marketType && (
             <div style={{ background: '#FFFBEA', border: '1px solid #F5E642', borderRadius: 8, padding: 12 }}>
               <div style={{ fontWeight: 600, fontSize: 13, marginBottom: 4 }}>Market adjustment for {marketType}:</div>
-              <div style={{ fontSize: 13, color: '#334155′ }}>{marketAdjustments[marketType]}</div>
+              <div style={{ fontSize: 13, color: '#334155' }}>{marketAdjustments[marketType]}</div>
             </div>
           )}
         </div>
 
-        <div style={{ background: '#fff', borderRadius: 10, padding: 20, border: '1px solid #E2E8F0′ }}>
+        <div style={{ background: '#fff', borderRadius: 10, padding: 20, border: '1px solid #E2E8F0' }}>
           <h2 style={{ fontSize: 16, fontWeight: 700, marginBottom: 10 }}>🗣️ How to Reframe High DOM Narrative</h2>
           {reframeScripts.map(([situation, script]) => (
             <div key={situation} style={{ background: '#F8FAFC', borderRadius: 8, padding: '10px 14px', marginBottom: 8 }}>

@@ -28,13 +28,13 @@ export default function DFWSprayCoolSystemGuide2026() {
       <div style={{ maxWidth: '820px', margin: '0 auto' }}>
         <div style={{ textAlign: 'center', marginBottom: '2rem' }}>
           <div style={{ fontSize: '3rem' }}>💧</div>
-          <h1 style={{ color: '#F5E642', fontSize: '2rem', fontWeight: 700, margin: '0.5rem 0′ }}>DFW Roof Spray Cooling System Guide 2026</h1>
+          <h1 style={{ color: '#F5E642', fontSize: '2rem', fontWeight: 700, margin: '0.5rem 0' }}>DFW Roof Spray Cooling System Guide 2026</h1>
           <p style={{ color: '#94a3b8', fontSize: '1.1rem' }}>Evaporative misting systems for DFW residential roofs</p>
         </div>
 
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '1.5rem', marginBottom: '2rem' }}>
           {[{icon:'🌡️',label:'Surface Temp Reduction',val:'30–40°F',sub:'With active misting during peak heat'},{icon:'💧',label:'Water Use',val:'~25 gal/hr',sub:'Typical residential misting system'},{icon:'🏗️',label:'Install Cost',val:'$800–$2,500',sub:'Connected to existing irrigation'},{icon:'⚠️',label:'DFW Stage 2',val:'Restricted',sub:'Verify water authority rules before install'}].map((s,i) => (
-            <div key={i} style={{ backgroundColor: '#1a2744', borderRadius: '12px', padding: '1.25rem', borderTop: '3px solid #F5E642′ }}>
+            <div key={i} style={{ backgroundColor: '#1a2744', borderRadius: '12px', padding: '1.25rem', borderTop: '3px solid #F5E642' }}>
               <div style={{ fontSize: '2rem' }}>{s.icon}</div>
               <div style={{ color: '#94a3b8', fontSize: '0.8rem', marginTop: '0.5rem' }}>{s.label}</div>
               <div style={{ color: '#F5E642', fontSize: '1.4rem', fontWeight: 700 }}>{s.val}</div>

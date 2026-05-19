@@ -47,14 +47,14 @@ const PRIORITIES: Priority[] = [
 ];
 
 const URGENCY_CFG = {
-  red:    { color: "#EF4444″, bg: "rgba(239,68,68,0.1)",   border: "rgba(239,68,68,0.25)",   dot: "#EF4444" },
+  red:    { color: "#EF4444", bg: "rgba(239,68,68,0.1)",   border: "rgba(239,68,68,0.25)",   dot: "#EF4444" },
   yellow: { color: "#F59E0B", bg: "rgba(245,158,11,0.1)",  border: "rgba(245,158,11,0.25)",  dot: "#F59E0B" },
-  green:  { color: "#10B981″, bg: "rgba(16,185,129,0.1)",  border: "rgba(16,185,129,0.25)",  dot: "#10B981" },
-  blue:   { color: "#3B82F6″, bg: "rgba(59,130,246,0.1)",  border: "rgba(59,130,246,0.25)",  dot: "#3B82F6" },
+  green:  { color: "#10B981", bg: "rgba(16,185,129,0.1)",  border: "rgba(16,185,129,0.25)",  dot: "#10B981" },
+  blue:   { color: "#3B82F6", bg: "rgba(59,130,246,0.1)",  border: "rgba(59,130,246,0.25)",  dot: "#3B82F6" },
 };
 
 const TRENDS: TrendCard[] = [
-  { label: "Jobs this week",    value: "5″,      change: "↑ 20% vs last week", up: true },
+  { label: "Jobs this week",    value: "5",      change: "↑ 20% vs last week", up: true },
   { label: "Avg response time", value: "38 min", change: "↓ 15% (improving)",  up: true },
   { label: "Rating",            value: "4.8★",   change: "↑ 0.1★ this month",  up: true },
 ];
@@ -77,7 +77,7 @@ export default function DailyBriefing() {
   }
 
   return (
-    <div style={{ minHeight: "100vh", background: "#0A1628″, padding: "24px 16px 48px" }}>
+    <div style={{ minHeight: "100vh", background: "#0A1628", padding: "24px 16px 48px" }}>
       <div style={{ maxWidth: 720, margin: "0 auto" }}>
 
         {/* Header */}
@@ -99,7 +99,7 @@ export default function DailyBriefing() {
 
         {/* Yesterday Summary */}
         <div style={{
-          background: "#1E293B", border: "1px solid #334155″,
+          background: "#1E293B", border: "1px solid #334155",
           borderRadius: 14, padding: "16px 20px", marginBottom: 16,
         }}>
           <div style={{ fontSize: 12, fontWeight: 700, color: "#64748B", textTransform: "uppercase", letterSpacing: "0.05em", marginBottom: 12 }}>
@@ -107,13 +107,13 @@ export default function DailyBriefing() {
           </div>
           <div style={{ display: "flex", gap: 20 }}>
             {[
-              { icon: CheckCircle, val: "2″,    label: "Jobs completed", color: "#10B981" },
-              { icon: DollarSign, val: "$624″,  label: "Commission earned", color: "#00B5B8" },
-              { icon: Zap,        val: "3″,     label: "New leads received", color: "#F59E0B" },
+              { icon: CheckCircle, val: "2",    label: "Jobs completed", color: "#10B981" },
+              { icon: DollarSign, val: "$624",  label: "Commission earned", color: "#00B5B8" },
+              { icon: Zap,        val: "3",     label: "New leads received", color: "#F59E0B" },
             ].map(({ icon: Icon, val, label, color }) => (
               <div key={label} style={{ flex: 1, textAlign: "center" as const }}>
                 <Icon size={16} color={color} style={{ marginBottom: 4 }} />
-                <div style={{ fontSize: 20, fontWeight: 800, color: "#F1F5F9″ }}>{val}</div>
+                <div style={{ fontSize: 20, fontWeight: 800, color: "#F1F5F9" }}>{val}</div>
                 <div style={{ fontSize: 11, color: "#64748B", lineHeight: 1.3 }}>{label}</div>
               </div>
             ))}
@@ -132,7 +132,7 @@ export default function DailyBriefing() {
             <span style={{ fontSize: 14, fontWeight: 700, color: "#FED7AA" }}>
               High of 98°F today
             </span>
-            <span style={{ fontSize: 13, color: "#FDBA74″, marginLeft: 8 }}>
+            <span style={{ fontSize: 13, color: "#FDBA74", marginLeft: 8 }}>
               — HVAC calls will peak. Be ready to accept.
             </span>
           </div>
@@ -141,7 +141,7 @@ export default function DailyBriefing() {
         {/* Market Intel */}
         <div style={{
           background: "linear-gradient(135deg, #1E3A5F, #1D4ED8)",
-          border: "1px solid #3B82F6″, borderRadius: 14,
+          border: "1px solid #3B82F6", borderRadius: 14,
           padding: "16px 20px", marginBottom: 20,
         }}>
           <div style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: 6 }}>
@@ -156,7 +156,7 @@ export default function DailyBriefing() {
 
         {/* Today's Priorities */}
         <div style={{ marginBottom: 20 }}>
-          <h2 style={{ fontSize: 16, fontWeight: 700, color: "#F1F5F9″, marginBottom: 12 }}>Today's priorities</h2>
+          <h2 style={{ fontSize: 16, fontWeight: 700, color: "#F1F5F9", marginBottom: 12 }}>Today's priorities</h2>
           <div style={{ display: "flex", flexDirection: "column" as const, gap: 10 }}>
             {PRIORITIES.map((p, i) => {
               if (dismissed.has(i)) return null;
@@ -172,7 +172,7 @@ export default function DailyBriefing() {
                     background: cfg.dot, minWidth: 10,
                     boxShadow: `0 0 6px ${cfg.dot}`,
                   }} />
-                  <span style={{ flex: 1, fontSize: 14, color: "#E2E8F0″, lineHeight: 1.4 }}>
+                  <span style={{ flex: 1, fontSize: 14, color: "#E2E8F0", lineHeight: 1.4 }}>
                     {p.title}
                   </span>
                   <div style={{ display: "flex", gap: 8, alignItems: "center" }}>
@@ -185,7 +185,7 @@ export default function DailyBriefing() {
                     </a>
                     <button
                       onClick={() => dismiss(i)}
-                      style={{ background: "none", border: "none", color: "#475569″, cursor: "pointer", fontSize: 18, lineHeight: 1 }}
+                      style={{ background: "none", border: "none", color: "#475569", cursor: "pointer", fontSize: 18, lineHeight: 1 }}
                     >×</button>
                   </div>
                 </div>
@@ -196,20 +196,20 @@ export default function DailyBriefing() {
 
         {/* Performance vs Last Week */}
         <div style={{ marginBottom: 20 }}>
-          <h2 style={{ fontSize: 16, fontWeight: 700, color: "#F1F5F9″, marginBottom: 12 }}>
+          <h2 style={{ fontSize: 16, fontWeight: 700, color: "#F1F5F9", marginBottom: 12 }}>
             Your performance vs. last week
           </h2>
           <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: 10 }}>
             {TRENDS.map(t => (
               <div key={t.label} style={{
-                background: "#1E293B", border: "1px solid #334155″,
+                background: "#1E293B", border: "1px solid #334155",
                 borderRadius: 12, padding: "14px 16px",
               }}>
-                <div style={{ fontSize: 20, fontWeight: 800, color: "#F1F5F9″, marginBottom: 4 }}>{t.value}</div>
+                <div style={{ fontSize: 20, fontWeight: 800, color: "#F1F5F9", marginBottom: 4 }}>{t.value}</div>
                 <div style={{ fontSize: 11, color: "#64748B", marginBottom: 6, lineHeight: 1.3 }}>{t.label}</div>
                 <div style={{
                   fontSize: 11, fontWeight: 700,
-                  color: t.up ? "#34D399″ : "#F87171",
+                  color: t.up ? "#34D399" : "#F87171",
                 }}>{t.change}</div>
               </div>
             ))}
@@ -218,7 +218,7 @@ export default function DailyBriefing() {
 
         {/* Network Update */}
         <div style={{
-          background: "#1E293B", border: "1px solid #334155″,
+          background: "#1E293B", border: "1px solid #334155",
           borderRadius: 14, padding: "16px 20px", marginBottom: 16,
           display: "flex", alignItems: "center", gap: 14,
         }}>
@@ -227,16 +227,16 @@ export default function DailyBriefing() {
             background: "rgba(0,181,184,0.12)",
             display: "flex", alignItems: "center", justifyContent: "center", minWidth: 40,
           }}>
-            <Users size={18} color="#00B5B8″ />
+            <Users size={18} color="#00B5B8" />
           </div>
           <div style={{ flex: 1 }}>
-            <div style={{ fontSize: 13, fontWeight: 700, color: "#E2E8F0″, marginBottom: 2 }}>Network Update</div>
-            <div style={{ fontSize: 13, color: "#94A3B8″, lineHeight: 1.5 }}>
-              Your recruit <strong style={{ color: "#E2E8F0″ }}>Marcus</strong> completed 3 jobs yesterday —
-              you earned <strong style={{ color: "#00B5B8″ }}>$63</strong> in network income.
+            <div style={{ fontSize: 13, fontWeight: 700, color: "#E2E8F0", marginBottom: 2 }}>Network Update</div>
+            <div style={{ fontSize: 13, color: "#94A3B8", lineHeight: 1.5 }}>
+              Your recruit <strong style={{ color: "#E2E8F0" }}>Marcus</strong> completed 3 jobs yesterday —
+              you earned <strong style={{ color: "#00B5B8" }}>$63</strong> in network income.
             </div>
           </div>
-          <ChevronRight size={16} color="#475569″ />
+          <ChevronRight size={16} color="#475569" />
         </div>
 
         {/* Tip of the Day */}

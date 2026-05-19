@@ -48,7 +48,7 @@ export default function DFWProLnkLastPage() {
         <div style={{ textAlign: 'center', marginBottom: 40 }}>
           <div style={{ fontSize: 48 }}>🤝</div>
           <h1 style={{ color: '#F5E642', fontSize: 32, fontWeight: 800, margin: '16px 0 10px' }}>Thank You, DFW</h1>
-          <p style={{ color: '#8B9BB4', fontSize: 16, maxWidth: 480, margin: '0 auto', lineHeight: 1.6 }}>You trusted ProLnk with your home. That means everything to us. DFW homeowners deserve a platform that's actually on their side — and that’s what we built.</p>
+          <p style={{ color: '#8B9BB4', fontSize: 16, maxWidth: 480, margin: '0 auto', lineHeight: 1.6 }}>You trusted ProLnk with your home. That means everything to us. DFW homeowners deserve a platform that's actually on their side — and that's what we built.</p>
         </div>
 
         <div style={{ background: '#111E35', borderRadius: 16, padding: 28, marginBottom: 28 }}>
@@ -66,7 +66,7 @@ export default function DFWProLnkLastPage() {
           <p style={{ color: '#8B9BB4', fontSize: 13, marginBottom: 14, textTransform: 'uppercase', letterSpacing: 1 }}>How long have you been reading today?</p>
           <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap', marginBottom: 24 }}>
             {timeRanges.map(t => (
-              <button key={t.id} onClick={() => setTimeRange(t.id)} style={{ padding: '9px 16px', borderRadius: 8, border: 'none', cursor: 'pointer', fontWeight: 600, fontSize: 13, background: timeRange === t.id ? '#F5E642′ : '#1A2E4A', color: timeRange === t.id ? '#0A1628' : '#8B9BB4' }}>{t.label}</button>
+              <button key={t.id} onClick={() => setTimeRange(t.id)} style={{ padding: '9px 16px', borderRadius: 8, border: 'none', cursor: 'pointer', fontWeight: 600, fontSize: 13, background: timeRange === t.id ? '#F5E642' : '#1A2E4A', color: timeRange === t.id ? '#0A1628' : '#8B9BB4' }}>{t.label}</button>
             ))}
           </div>
           <h2 style={{ color: '#F5E642', fontSize: 15, fontWeight: 700, marginBottom: 16 }}>📚 Top Resources For Your Journey</h2>
@@ -81,7 +81,7 @@ export default function DFWProLnkLastPage() {
           ))}
         </div>
 
-        <div style={{ background: 'linear-gradient(135deg, #1A2E4A 0%, #0A1628 100%)', borderRadius: 16, padding: 32, textAlign: 'center', border: '2px solid #F5E642′ }}>
+        <div style={{ background: 'linear-gradient(135deg, #1A2E4A 0%, #0A1628 100%)', borderRadius: 16, padding: 32, textAlign: 'center', border: '2px solid #F5E642' }}>
           <div style={{ fontSize: 36, marginBottom: 12 }}>🏠</div>
           <h2 style={{ color: '#F5E642', fontSize: 22, fontWeight: 800, marginBottom: 10 }}>Ready to Get Quotes?</h2>
           <p style={{ color: '#8B9BB4', fontSize: 14, marginBottom: 20, lineHeight: 1.6 }}>Tell us what you need. We'll match you with vetted DFW contractors in minutes. No fees. No spam. No pressure.</p>

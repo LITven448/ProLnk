@@ -31,12 +31,12 @@ export default function DFWToiletModelGuide() {
         <p style={{ color: '#8B9CC8', marginBottom: 32, fontSize: 16 }}>DFW hard water demands the right toilet. Standard rough-in is 12 inches — confirm before buying.</p>
 
         <div style={{ background: '#111E35', borderRadius: 12, padding: 24, marginBottom: 24, border: '1px solid #1E2D4A' }}>
-          <h2 style={{ fontSize: 18, fontWeight: 700, marginBottom: 16, color: '#F5E642′ }}>⚠️ DFW Hard Water Facts</h2>
+          <h2 style={{ fontSize: 18, fontWeight: 700, marginBottom: 16, color: '#F5E642' }}>⚠️ DFW Hard Water Facts</h2>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12 }}>
             {[['💧 Water Hardness', '200–400 mg/L in DFW — causes mineral buildup in trapway'],['📐 Standard Rough-In', '12 inches — always measure before purchasing'],['🌊 WaterSense Required', '1.28 GPF max — DFW water conservation rebates available'],['🪑 Comfort Height', '17–19 inches — most popular in DFW new construction']].map(([label, val]) => (
               <div key={label} style={{ background: '#0A1628', borderRadius: 8, padding: 14 }}>
                 <div style={{ fontSize: 13, fontWeight: 700, color: '#F5E642', marginBottom: 4 }}>{label}</div>
-                <div style={{ fontSize: 13, color: '#8B9CC8′ }}>{val}</div>
+                <div style={{ fontSize: 13, color: '#8B9CC8' }}>{val}</div>
               </div>
             ))}
           </div>
@@ -71,17 +71,17 @@ export default function DFWToiletModelGuide() {
             <h3 style={{ fontSize: 22, fontWeight: 800, marginBottom: 8 }}>{result.type}</h3>
             <p style={{ color: '#8B9CC8', marginBottom: 16 }}>{result.note}</p>
             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: 12 }}>
-              <div style={{ background: '#0A1628', borderRadius: 8, padding: 12, textAlign: 'center' }}><div style={{ fontSize: 20, fontWeight: 800, color: '#F5E642′ }}>{result.gpf}</div><div style={{ fontSize: 11, color: '#8B9CC8' }}>GPF</div></div>
-              <div style={{ background: '#0A1628', borderRadius: 8, padding: 12, textAlign: 'center' }}><div style={{ fontSize: 20, fontWeight: 800, color: '#F5E642′ }}>{result.savings}</div><div style={{ fontSize: 11, color: '#8B9CC8' }}>Water Savings</div></div>
-              <div style={{ background: '#0A1628', borderRadius: 8, padding: 12, textAlign: 'center' }}><div style={{ fontSize: 13, fontWeight: 700, color: '#F5E642′ }}>12″</div><div style={{ fontSize: 11, color: '#8B9CC8' }}>Rough-In</div></div>
+              <div style={{ background: '#0A1628', borderRadius: 8, padding: 12, textAlign: 'center' }}><div style={{ fontSize: 20, fontWeight: 800, color: '#F5E642' }}>{result.gpf}</div><div style={{ fontSize: 11, color: '#8B9CC8' }}>GPF</div></div>
+              <div style={{ background: '#0A1628', borderRadius: 8, padding: 12, textAlign: 'center' }}><div style={{ fontSize: 20, fontWeight: 800, color: '#F5E642' }}>{result.savings}</div><div style={{ fontSize: 11, color: '#8B9CC8' }}>Water Savings</div></div>
+              <div style={{ background: '#0A1628', borderRadius: 8, padding: 12, textAlign: 'center' }}><div style={{ fontSize: 13, fontWeight: 700, color: '#F5E642' }}>12"</div><div style={{ fontSize: 11, color: '#8B9CC8' }}>Rough-In</div></div>
             </div>
             <div style={{ marginTop: 12, padding: 12, background: '#0A1628', borderRadius: 8 }}><span style={{ color: '#8B9CC8', fontSize: 13 }}>Popular brands: </span><span style={{ color: '#E8EAF0', fontSize: 13, fontWeight: 600 }}>{result.brands}</span></div>
           </div>
         )}
 
         <div style={{ background: '#111E35', borderRadius: 12, padding: 24, border: '1px solid #1E2D4A' }}>
-          <h2 style={{ fontSize: 16, fontWeight: 700, marginBottom: 12, color: '#F5E642′ }}>💡 DFW Pro Tips</h2>
-          {['Check for DFW city water conservation rebates (up to $100 for WaterSense toilets)','Always verify 12″ rough-in — older DFW homes may have 10″ or 14″','Hard water = get a toilet with a wide trapway to prevent clogs','TOTO and Kohler ceramic glaze resists DFW mineral staining best'].map(tip => (
+          <h2 style={{ fontSize: 16, fontWeight: 700, marginBottom: 12, color: '#F5E642' }}>💡 DFW Pro Tips</h2>
+          {['Check for DFW city water conservation rebates (up to $100 for WaterSense toilets)','Always verify 12" rough-in — older DFW homes may have 10" or 14"','Hard water = get a toilet with a wide trapway to prevent clogs','TOTO and Kohler ceramic glaze resists DFW mineral staining best'].map(tip => (
             <div key={tip} style={{ display: 'flex', gap: 10, marginBottom: 10, alignItems: 'flex-start' }}>
               <span style={{ color: '#F5E642', flexShrink: 0 }}>→</span>
               <span style={{ color: '#8B9CC8', fontSize: 14 }}>{tip}</span>

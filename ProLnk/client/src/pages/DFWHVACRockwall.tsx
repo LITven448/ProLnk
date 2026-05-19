@@ -8,7 +8,7 @@ function getUrgency(age: string, sqft: string): { label: string; color: string; 
   if (age === 'Under 5 years') return { label: 'Low Urgency — Maintain Regularly', color: '#22c55e', detail: 'Your system is relatively new. Schedule annual tune-ups and replace filters every 60-90 days in Rockwall humidity.', cost: '$150–$300/yr maintenance' };
   if (age === '5-9 years') return { label: 'Monitor — Mid-Life Stage', color: '#22c55e', detail: 'Rockwall lake humidity accelerates coil corrosion. Get a full coil inspection and check refrigerant levels this season.', cost: '$200–$500 tune-up + inspection' };
   if (age === '10-14 years') {
-    if (isLarge) return { label: 'Plan Replacement Soon', color: '#F5E642', detail: 'Large homes in Rockwall run HVAC hard year-round. At 10+ years on a larger system, efficiency drops significantly.', cost: 'Budget $12,000–$22,000′ };
+    if (isLarge) return { label: 'Plan Replacement Soon', color: '#F5E642', detail: 'Large homes in Rockwall run HVAC hard year-round. At 10+ years on a larger system, efficiency drops significantly.', cost: 'Budget $12,000–$22,000' };
     return { label: 'Watch Closely', color: '#F5E642', detail: 'Approaching the 15-year mark where most Rockwall systems fail. Get an efficiency audit — cooling costs may justify early replacement.', cost: '$8,000–$16,000 to replace' };
   }
   if (age === '15-19 years') return { label: 'Replace This Season', color: '#f97316', detail: 'Rockwall homes built in the 2000s-2010s boom are hitting this window now. R-22 refrigerant is obsolete. Replace before peak summer.', cost: '$9,000–$18,000 installed' };
@@ -32,7 +32,7 @@ export default function DFWHVACRockwall() {
 
         <h1 style={{ fontSize: 42, fontWeight: 800, lineHeight: 1.15, marginBottom: 16 }}>
           Rockwall TX HVAC —{' '}
-          <span style={{ color: '#F5E642′ }}>Lakeside Community Specialists</span>
+          <span style={{ color: '#F5E642' }}>Lakeside Community Specialists</span>
         </h1>
 
         <p style={{ fontSize: 18, color: '#94a3b8', lineHeight: 1.7, marginBottom: 40, maxWidth: 700 }}>
@@ -49,7 +49,7 @@ export default function DFWHVACRockwall() {
           ].map(card => (
             <div key={card.title} style={{ background: '#111f3a', borderRadius: 12, padding: 24, border: '1px solid #1e3a5f' }}>
               <div style={{ fontSize: 32, marginBottom: 12 }}>{card.icon}</div>
-              <h3 style={{ fontSize: 17, fontWeight: 700, marginBottom: 8, color: '#F5E642′ }}>{card.title}</h3>
+              <h3 style={{ fontSize: 17, fontWeight: 700, marginBottom: 8, color: '#F5E642' }}>{card.title}</h3>
               <p style={{ fontSize: 14, color: '#94a3b8', lineHeight: 1.6 }}>{card.desc}</p>
             </div>
           ))}
@@ -63,7 +63,7 @@ export default function DFWHVACRockwall() {
 
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 20, marginBottom: 24 }}>
             <div>
-              <label style={{ display: 'block', fontSize: 14, fontWeight: 600, marginBottom: 8, color: '#F5E642′ }}>
+              <label style={{ display: 'block', fontSize: 14, fontWeight: 600, marginBottom: 8, color: '#F5E642' }}>
                 System Age
               </label>
               <select
@@ -76,7 +76,7 @@ export default function DFWHVACRockwall() {
               </select>
             </div>
             <div>
-              <label style={{ display: 'block', fontSize: 14, fontWeight: 600, marginBottom: 8, color: '#F5E642′ }}>
+              <label style={{ display: 'block', fontSize: 14, fontWeight: 600, marginBottom: 8, color: '#F5E642' }}>
                 Home Size
               </label>
               <select
@@ -113,7 +113,7 @@ export default function DFWHVACRockwall() {
             ].map(item => (
               <div key={item.service} style={{ background: '#0A1628', borderRadius: 10, padding: 18 }}>
                 <div style={{ fontSize: 13, color: '#94a3b8', marginBottom: 4 }}>{item.service}</div>
-                <div style={{ fontSize: 20, fontWeight: 800, color: '#F5E642′ }}>{item.range}</div>
+                <div style={{ fontSize: 20, fontWeight: 800, color: '#F5E642' }}>{item.range}</div>
                 <div style={{ fontSize: 12, color: '#64748b', marginTop: 4 }}>{item.note}</div>
               </div>
             ))}
@@ -128,7 +128,7 @@ export default function DFWHVACRockwall() {
           </p>
         </div>
 
-        <div style={{ textAlign: 'center', background: '#111f3a', borderRadius: 16, padding: 40, border: '2px solid #F5E642′ }}>
+        <div style={{ textAlign: 'center', background: '#111f3a', borderRadius: 16, padding: 40, border: '2px solid #F5E642' }}>
           <div style={{ fontSize: 36, marginBottom: 12 }}>❄️</div>
           <h2 style={{ fontSize: 26, fontWeight: 800, marginBottom: 12 }}>Get Rockwall HVAC Quotes Today</h2>
           <p style={{ color: '#94a3b8', marginBottom: 24 }}>Compare bids from Rockwall-area HVAC pros before the summer heat hits. ProLnk makes it fast.</p>

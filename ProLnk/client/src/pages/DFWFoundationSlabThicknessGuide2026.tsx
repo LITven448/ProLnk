@@ -39,13 +39,13 @@ export default function DFWFoundationSlabThicknessGuide2026() {
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 10, marginBottom: 16 }}>
             {slabSituations.map(s => (
               <button key={s.id} onClick={() => setSelected(s.id)}
-                style={{ background: selected === s.id ? '#F5E642′ : '#1a3a5c', color: selected === s.id ? '#0A1628' : '#fff', border: ’none', borderRadius: 8, padding: '12px 10px', cursor: 'pointer', fontWeight: 600, fontSize: 13, textAlign: 'left' }}>
+                style={{ background: selected === s.id ? '#F5E642' : '#1a3a5c', color: selected === s.id ? '#0A1628' : '#fff', border: 'none', borderRadius: 8, padding: '12px 10px', cursor: 'pointer', fontWeight: 600, fontSize: 13, textAlign: 'left' }}>
                 {s.label}
               </button>
             ))}
           </div>
           {match && (
-            <div style={{ background: '#0A1628', borderRadius: 8, padding: 16, borderLeft: '4px solid #F5E642′ }}>
+            <div style={{ background: '#0A1628', borderRadius: 8, padding: 16, borderLeft: '4px solid #F5E642' }}>
               <p style={{ color: '#F5E642', fontWeight: 700, marginBottom: 6 }}>Assessment Guide:</p>
               <p style={{ color: '#cbd5e0', lineHeight: 1.7 }}>{match.guide}</p>
             </div>

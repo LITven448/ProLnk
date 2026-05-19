@@ -6,7 +6,7 @@ const currentColors = ['Beige/Tan', 'Gray', 'White', 'Brick red', 'Dark brown', 
 
 const trendingPalettes = [
   { name: 'Warm Greige', accent: '#C4B49A', bg: '#E8DDD0', trim: '#FFFFFF' },
-  { name: 'Deep Slate', accent: '#4A5568', bg: '#718096', trim: '#F5E642′ },
+  { name: 'Deep Slate', accent: '#4A5568', bg: '#718096', trim: '#F5E642' },
   { name: 'Coastal Sage', accent: '#68856C', bg: '#A8BFA9', trim: '#FFFFFF' },
   { name: 'Warm Terracotta', accent: '#C17A5A', bg: '#D4956E', trim: '#2D2D2D' },
 ];
@@ -33,13 +33,13 @@ export default function DFWExteriorColorConsultGuide() {
   return (
     <div style={{ backgroundColor: '#0A1628', minHeight: '100vh', color: '#E2E8F0', fontFamily: 'system-ui, sans-serif', padding: '32px 20px' }}>
       <div style={{ maxWidth: '760px', margin: '0 auto' }}>
-        <div style={{ marginBottom: '8px', fontSize: '14px', color: '#F5E642′ }}>🎨 DFW Exterior Guides</div>
+        <div style={{ marginBottom: '8px', fontSize: '14px', color: '#F5E642' }}>🎨 DFW Exterior Guides</div>
         <h1 style={{ fontSize: '28px', fontWeight: '700', color: '#FFFFFF', marginBottom: '8px' }}>Exterior Color Consultation Guide — DFW</h1>
-        <p style={{ color: '#94A3B8', marginBottom: '32px', lineHeight: '1.6′ }}>Colors that look perfect in a paint store can look completely different under Texas sun. Here’s how to get it right.</p>
+        <p style={{ color: '#94A3B8', marginBottom: '32px', lineHeight: '1.6' }}>Colors that look perfect in a paint store can look completely different under Texas sun. Here's how to get it right.</p>
 
         <div style={{ backgroundColor: '#0F2040', borderRadius: '12px', padding: '24px', marginBottom: '24px' }}>
           <h2 style={{ color: '#F5E642', fontSize: '18px', marginBottom: '16px' }}>⚠️ The DFW Sunlight Problem</h2>
-          <p style={{ color: '#CBD5E1', lineHeight: '1.7′ }}>DFW receives 230+ sunny days per year. UV intensity and heat cause colors to shift dramatically compared to how they appear in store lighting or on cloudy days. Always test paint patches (at least 12″×12″) on multiple walls and observe at dawn, midday, and dusk before committing. Warm tones can turn orange; cool grays can look purple. This step alone prevents most costly color mistakes.</p>
+          <p style={{ color: '#CBD5E1', lineHeight: '1.7' }}>DFW receives 230+ sunny days per year. UV intensity and heat cause colors to shift dramatically compared to how they appear in store lighting or on cloudy days. Always test paint patches (at least 12"×12") on multiple walls and observe at dawn, midday, and dusk before committing. Warm tones can turn orange; cool grays can look purple. This step alone prevents most costly color mistakes.</p>
         </div>
 
         <div style={{ backgroundColor: '#0F2040', borderRadius: '12px', padding: '24px', marginBottom: '24px' }}>
@@ -75,7 +75,7 @@ export default function DFWExteriorColorConsultGuide() {
         {result && (
           <div style={{ backgroundColor: '#0F2040', borderRadius: '12px', padding: '24px', marginBottom: '24px' }}>
             <h2 style={{ color: '#F5E642', fontSize: '18px', marginBottom: '12px' }}>✅ Your Recommendation</h2>
-            <p style={{ color: '#CBD5E1', marginBottom: '16px', lineHeight: '1.7′ }}>{result.rec}</p>
+            <p style={{ color: '#CBD5E1', marginBottom: '16px', lineHeight: '1.7' }}>{result.rec}</p>
             <div style={{ backgroundColor: '#1E3A5F', borderRadius: '8px', padding: '16px', marginBottom: '20px' }}>
               <div style={{ color: '#94A3B8', fontSize: '13px', marginBottom: '4px' }}>Estimated Cost</div>
               <div style={{ color: '#F5E642', fontWeight: '700', fontSize: '18px' }}>{result.cost}</div>
@@ -85,7 +85,7 @@ export default function DFWExteriorColorConsultGuide() {
               {result.palettes.map(p => (
                 <div key={p.name} style={{ backgroundColor: '#1E3A5F', borderRadius: '8px', padding: '12px', textAlign: 'center' }}>
                   <div style={{ width: '100%', height: '40px', borderRadius: '6px', backgroundColor: p.bg, marginBottom: '8px' }} />
-                  <div style={{ color: '#E2E8F0', fontSize: '13px', fontWeight: '600′ }}>{p.name}</div>
+                  <div style={{ color: '#E2E8F0', fontSize: '13px', fontWeight: '600' }}>{p.name}</div>
                 </div>
               ))}
             </div>
@@ -94,7 +94,7 @@ export default function DFWExteriorColorConsultGuide() {
 
         <div style={{ backgroundColor: '#0F2040', borderRadius: '12px', padding: '24px' }}>
           <h2 style={{ color: '#F5E642', fontSize: '18px', marginBottom: '12px' }}>💡 Pro Tip: DIY vs Professional</h2>
-          <p style={{ color: '#CBD5E1', lineHeight: '1.7′ }}>A certified color consultant costs $300–$800 but prevents a $4,000–$12,000 repaint mistake. Most DFW painting contractors do not offer color consultation — they paint what you pick. Invest in a Color Consultant (look for IACC-certified professionals) before you ever open a paint can.</p>
+          <p style={{ color: '#CBD5E1', lineHeight: '1.7' }}>A certified color consultant costs $300–$800 but prevents a $4,000–$12,000 repaint mistake. Most DFW painting contractors do not offer color consultation — they paint what you pick. Invest in a Color Consultant (look for IACC-certified professionals) before you ever open a paint can.</p>
         </div>
       </div>
     </div>

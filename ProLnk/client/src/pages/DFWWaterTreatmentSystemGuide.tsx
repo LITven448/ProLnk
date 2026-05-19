@@ -52,10 +52,10 @@ export default function DFWWaterTreatmentSystemGuide() {
 
         <div style={{ background: '#132240', borderRadius: 12, padding: '1.5rem', marginBottom: '1.5rem' }}>
           <h2 style={{ color: '#F5E642', fontSize: '1.1rem' }}>DFW's Water Challenges</h2>
-          <p style={{ lineHeight: 1.7, color: '#c8d8f0′ }}>
-            DFW water has three main issues: <strong style={{ color: '#F5E642′ }}>hardness</strong> (scale on everything),
-            <strong style={{ color: '#F5E642′ }}> chloramine</strong> (harder to remove than chlorine — needs special filters),
-            and <strong style={{ color: '#F5E642′ }}>sediment</strong> in some supply areas. The right system depends on
+          <p style={{ lineHeight: 1.7, color: '#c8d8f0' }}>
+            DFW water has three main issues: <strong style={{ color: '#F5E642' }}>hardness</strong> (scale on everything),
+            <strong style={{ color: '#F5E642' }}> chloramine</strong> (harder to remove than chlorine — needs special filters),
+            and <strong style={{ color: '#F5E642' }}>sediment</strong> in some supply areas. The right system depends on
             which problems matter most to you.
           </p>
         </div>
@@ -86,7 +86,7 @@ export default function DFWWaterTreatmentSystemGuide() {
             <div>
               <label style={{ color: '#c8d8f0', display: 'block', marginBottom: '0.4rem' }}>DFW City</label>
               <select value={city} onChange={e => setCity(e.target.value)}
-                style={{ width: '100%', padding: '0.6rem', borderRadius: 8, background: '#0d1e38', color: '#fff', border: '1px solid #F5E642′ }}>
+                style={{ width: '100%', padding: '0.6rem', borderRadius: 8, background: '#0d1e38', color: '#fff', border: '1px solid #F5E642' }}>
                 <option value=''>Select city...</option>
                 {Object.keys(cityWaterProfiles).map(c => <option key={c} value={c}>{c}</option>)}
               </select>
@@ -99,7 +99,7 @@ export default function DFWWaterTreatmentSystemGuide() {
             <div>
               <label style={{ color: '#c8d8f0', display: 'block', marginBottom: '0.4rem' }}>Primary Water Concern</label>
               <select value={concern} onChange={e => setConcern(e.target.value)}
-                style={{ width: '100%', padding: '0.6rem', borderRadius: 8, background: '#0d1e38', color: '#fff', border: '1px solid #F5E642′ }}>
+                style={{ width: '100%', padding: '0.6rem', borderRadius: 8, background: '#0d1e38', color: '#fff', border: '1px solid #F5E642' }}>
                 <option value=''>Select concern...</option>
                 {concerns.map(c => <option key={c} value={c}>{c}</option>)}
               </select>
@@ -110,12 +110,12 @@ export default function DFWWaterTreatmentSystemGuide() {
             </button>
           </div>
           {result && (
-            <div style={{ marginTop: '1.25rem', background: '#0d1e38', borderRadius: 10, padding: '1.25rem', borderLeft: '4px solid #F5E642′ }}>
+            <div style={{ marginTop: '1.25rem', background: '#0d1e38', borderRadius: 10, padding: '1.25rem', borderLeft: '4px solid #F5E642' }}>
               <div style={{ color: '#F5E642', fontWeight: 700, fontSize: '1.1rem', marginBottom: '0.5rem' }}>Recommended: {result.system}</div>
               <div style={{ color: '#c8d8f0', lineHeight: 1.9 }}>
                 <div>💰 Install Cost: <strong style={{ color: '#fff' }}>{result.cost}</strong></div>
                 <div>🔧 Annual Maintenance: <strong style={{ color: '#fff' }}>{result.maintenance}</strong></div>
-                <div style={{ marginTop: '0.75rem', color: '#F5E642′ }}>{result.note}</div>
+                <div style={{ marginTop: '0.75rem', color: '#F5E642' }}>{result.note}</div>
               </div>
             </div>
           )}

@@ -25,36 +25,36 @@ export default function DFWHVACFilterDrierGuide2026() {
       <div style={{ maxWidth: '800px', margin: '0 auto' }}>
         <div style={{ textAlign: 'center', marginBottom: '2rem' }}>
           <div style={{ fontSize: '3rem' }}>🔵</div>
-          <h1 style={{ color: '#F5E642', fontSize: '1.8rem', margin: '0.5rem 0′ }}>DFW HVAC Filter Drier Guide 2026</h1>
-          <p style={{ color: '#94a3b8′ }}>The $50 part that prevents $2,000 compressor failures</p>
+          <h1 style={{ color: '#F5E642', fontSize: '1.8rem', margin: '0.5rem 0' }}>DFW HVAC Filter Drier Guide 2026</h1>
+          <p style={{ color: '#94a3b8' }}>The $50 part that prevents $2,000 compressor failures</p>
         </div>
 
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '2rem' }}>
           {facts.map((f, i) => (
-            <div key={i} style={{ background: '#1e293b', borderRadius: '0.75rem', padding: '1.25rem', border: '1px solid #334155′ }}>
+            <div key={i} style={{ background: '#1e293b', borderRadius: '0.75rem', padding: '1.25rem', border: '1px solid #334155' }}>
               <div style={{ fontSize: '1.8rem', marginBottom: '0.4rem' }}>{f.icon}</div>
               <div style={{ fontWeight: '700', color: '#F5E642', marginBottom: '0.5rem', fontSize: '0.95rem' }}>{f.title}</div>
-              <div style={{ color: '#cbd5e1', fontSize: '0.85rem', lineHeight: '1.5′ }}>{f.body}</div>
+              <div style={{ color: '#cbd5e1', fontSize: '0.85rem', lineHeight: '1.5' }}>{f.body}</div>
             </div>
           ))}
         </div>
 
-        <div style={{ background: '#1e293b', borderRadius: '1rem', padding: '1.5rem', border: '1px solid #334155′ }}>
+        <div style={{ background: '#1e293b', borderRadius: '1rem', padding: '1.5rem', border: '1px solid #334155' }}>
           <h2 style={{ color: '#F5E642', marginTop: 0, marginBottom: '1rem' }}>📋 Situation → Service Guide</h2>
           <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem', marginBottom: '1rem' }}>
             {situations.map(s => (
               <button key={s.id} onClick={() => setSituation(situation === s.id ? null : s.id)}
-                style={{ background: situation === s.id ? '#F5E642′ : '#0f172a', color: situation === s.id ? '#0A1628' : '#e2e8f0',
-                  border: '1px solid' + (situation === s.id ? ' #F5E642′ : ' #334155'), borderRadius: '0.5rem',
+                style={{ background: situation === s.id ? '#F5E642' : '#0f172a', color: situation === s.id ? '#0A1628' : '#e2e8f0',
+                  border: '1px solid' + (situation === s.id ? ' #F5E642' : ' #334155'), borderRadius: '0.5rem',
                   padding: '0.75rem 1rem', cursor: 'pointer', textAlign: 'left', fontSize: '0.9rem' }}>
                 {s.label}
               </button>
             ))}
           </div>
           {sel && (
-            <div style={{ background: '#0f172a', borderRadius: '0.5rem', padding: '1rem', borderLeft: '4px solid #4ade80′ }}>
+            <div style={{ background: '#0f172a', borderRadius: '0.5rem', padding: '1rem', borderLeft: '4px solid #4ade80' }}>
               <div style={{ color: '#4ade80', fontWeight: '700', marginBottom: '0.5rem' }}>✅ Recommended Action</div>
-              <div style={{ color: '#cbd5e1', fontSize: '0.9rem', lineHeight: '1.6′ }}>{sel.guide}</div>
+              <div style={{ color: '#cbd5e1', fontSize: '0.9rem', lineHeight: '1.6' }}>{sel.guide}</div>
             </div>
           )}
         </div>

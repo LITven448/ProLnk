@@ -62,7 +62,7 @@ export default function DFWInterestRateImpactGuide() {
 
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))', gap: 16, marginBottom: 28 }}>
           {[
-            { icon: '🏠', label: 'DFW Median Price 2026', value: '$420,000', note: 'Up from $310K in 2020′ },
+            { icon: '🏠', label: 'DFW Median Price 2026', value: '$420,000', note: 'Up from $310K in 2020' },
             { icon: '📉', label: '1% Rate Change Impact', value: '~$230/mo', note: 'At $420K, 20% down' },
             { icon: '💪', label: 'Buying Power Shift', value: '~$38,000', note: 'Per 1% rate difference' },
             { icon: '🔒', label: 'Lock Window', value: '30-60 days', note: 'Standard in DFW market' },
@@ -71,7 +71,7 @@ export default function DFWInterestRateImpactGuide() {
               <div style={{ fontSize: 24, marginBottom: 8 }}>{icon}</div>
               <div style={{ fontSize: 11, color: '#94A3B8', marginBottom: 4, textTransform: 'uppercase', letterSpacing: 1 }}>{label}</div>
               <div style={{ fontSize: 18, fontWeight: 700, color: '#1E5FA8', marginBottom: 4 }}>{value}</div>
-              <div style={{ fontSize: 12, color: '#94A3B8′ }}>{note}</div>
+              <div style={{ fontSize: 12, color: '#94A3B8' }}>{note}</div>
             </div>
           ))}
         </div>
@@ -110,11 +110,11 @@ export default function DFWInterestRateImpactGuide() {
                   const isSelected = r === rate;
                   const isBetter = diff < 0;
                   return (
-                    <div key={r} style={{ display: 'flex', alignItems: 'center', gap: 12, padding: '10px 14px', background: isSelected ? '#EFF6FF' : '#F8FAFC', borderRadius: 8, border: isSelected ? '1.5px solid #1E5FA8′ : '1px solid #E2E8F0' }}>
-                      <div style={{ minWidth: 50, fontSize: 14, fontWeight: 700, color: '#1E5FA8′ }}>{r}</div>
+                    <div key={r} style={{ display: 'flex', alignItems: 'center', gap: 12, padding: '10px 14px', background: isSelected ? '#EFF6FF' : '#F8FAFC', borderRadius: 8, border: isSelected ? '1.5px solid #1E5FA8' : '1px solid #E2E8F0' }}>
+                      <div style={{ minWidth: 50, fontSize: 14, fontWeight: 700, color: '#1E5FA8' }}>{r}</div>
                       <div style={{ flex: 1, fontSize: 15, fontWeight: 600, color: '#0F172A' }}>${Math.round(pmt).toLocaleString()}/mo</div>
                       {!isSelected && (
-                        <div style={{ fontSize: 13, fontWeight: 600, color: isBetter ? '#16A34A' : '#DC2626′ }}>
+                        <div style={{ fontSize: 13, fontWeight: 600, color: isBetter ? '#16A34A' : '#DC2626' }}>
                           {isBetter ? '↓' : '↑'} ${Math.abs(Math.round(diff)).toLocaleString()}/mo
                         </div>
                       )}
@@ -132,8 +132,8 @@ export default function DFWInterestRateImpactGuide() {
           <div style={{ display: 'grid', gap: 12 }}>
             {[
               { period: '2020-2021 (rates 2.5-3.5%)', impact: 'DFW prices surged 25-35%. Low rates + remote work migration created demand shock. $310K median → $420K peak.', color: '#16A34A' },
-              { period: '2022-2023 (rates 6.5-7.5%)', impact: 'DFW prices corrected 5-10% in some submarkets but never crashed. Population growth absorbed rate shock better than most metros.', color: '#D97706′ },
-              { period: '2024-2025 (rates 6.0-7.0%)', impact: 'Stabilization. Inventory rose in exurbs (Celina, Prosper) as builders competed. DFW core remained resilient near $420K median.', color: '#1E5FA8′ },
+              { period: '2022-2023 (rates 6.5-7.5%)', impact: 'DFW prices corrected 5-10% in some submarkets but never crashed. Population growth absorbed rate shock better than most metros.', color: '#D97706' },
+              { period: '2024-2025 (rates 6.0-7.0%)', impact: 'Stabilization. Inventory rose in exurbs (Celina, Prosper) as builders competed. DFW core remained resilient near $420K median.', color: '#1E5FA8' },
               { period: '2026 Outlook (rates 6.0-6.5%)', impact: 'Corporate relocations continue providing demand floor. Sub-6% rates would likely re-accelerate prices 8-12% in growth corridors.', color: '#7C3AED' },
             ].map(({ period, impact, color }) => (
               <div key={period} style={{ padding: 14, background: '#F8FAFC', borderRadius: 8, borderLeft: `4px solid ${color}` }}>

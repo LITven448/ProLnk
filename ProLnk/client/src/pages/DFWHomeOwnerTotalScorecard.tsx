@@ -34,14 +34,14 @@ const QUESTIONS = [
 ];
 
 const CATS = ['Maintenance','Safety','Efficiency','Documentation','Financial','DFW Specific','ProLnk Ready'];
-const CAT_COLORS: Record<string,string> = { Maintenance:'#3B82F6', Safety:'#EF4444', Efficiency:'#10B981', Documentation:'#8B5CF6', Financial:'#F59E0B', 'DFW Specific':'#EC4899', 'ProLnk Ready':'#F5E642′ };
+const CAT_COLORS: Record<string,string> = { Maintenance:'#3B82F6', Safety:'#EF4444', Efficiency:'#10B981', Documentation:'#8B5CF6', Financial:'#F59E0B', 'DFW Specific':'#EC4899', 'ProLnk Ready':'#F5E642' };
 
 function grade(score: number) {
-  if (score >= 27) return { letter: 'A+', label: 'Elite DFW Homeowner', color: '#10B981′ };
-  if (score >= 24) return { letter: 'A', label: 'Excellent', color: '#10B981′ };
-  if (score >= 21) return { letter: 'B', label: 'Good — a few gaps', color: '#3B82F6′ };
+  if (score >= 27) return { letter: 'A+', label: 'Elite DFW Homeowner', color: '#10B981' };
+  if (score >= 24) return { letter: 'A', label: 'Excellent', color: '#10B981' };
+  if (score >= 21) return { letter: 'B', label: 'Good — a few gaps', color: '#3B82F6' };
   if (score >= 15) return { letter: 'C', label: 'Average — needs work', color: '#F59E0B' };
-  return { letter: 'D', label: 'At Risk — act now', color: '#EF4444′ };
+  return { letter: 'D', label: 'At Risk — act now', color: '#EF4444' };
 }
 
 export default function DFWHomeOwnerTotalScorecard() {
@@ -54,7 +54,7 @@ export default function DFWHomeOwnerTotalScorecard() {
     <div style={{ minHeight: '100vh', background: '#0A1628', color: '#fff', fontFamily: 'system-ui,sans-serif', padding: '2rem' }}>
       <div style={{ maxWidth: 800, margin: '0 auto' }}>
         <div style={{ textAlign: 'center', marginBottom: '2rem' }}>
-          <div style={{ fontSize: '2.2rem', fontWeight: 800, color: '#F5E642′ }}>📋 DFW Homeowner Total Scorecard</div>
+          <div style={{ fontSize: '2.2rem', fontWeight: 800, color: '#F5E642' }}>📋 DFW Homeowner Total Scorecard</div>
           <div style={{ color: '#94A3B8', marginTop: '.5rem' }}>30-question assessment — get your grade + personalized action plan</div>
         </div>
 
@@ -66,7 +66,7 @@ export default function DFWHomeOwnerTotalScorecard() {
                 {QUESTIONS.filter(q => q.cat === cat).map(q => (
                   <label key={q.id} style={{ display: 'flex', alignItems: 'center', gap: '.75rem', marginBottom: '.5rem', cursor: 'pointer' }}>
                     <input type="checkbox" checked={!!answers[q.id]} onChange={e => setAnswers(a => ({ ...a, [q.id]: e.target.checked }))}
-                      style={{ width: 18, height: 18, accentColor: '#F5E642′ }} />
+                      style={{ width: 18, height: 18, accentColor: '#F5E642' }} />
                     <span style={{ color: '#CBD5E1', fontSize: '.9rem' }}>{q.q}</span>
                   </label>
                 ))}
@@ -84,7 +84,7 @@ export default function DFWHomeOwnerTotalScorecard() {
             <div style={{ fontSize: '5rem', fontWeight: 900, color: result.color }}>{result.letter}</div>
             <div style={{ fontSize: '1.4rem', color: result.color, fontWeight: 700 }}>{result.label}</div>
             <div style={{ fontSize: '1.1rem', color: '#94A3B8', marginTop: '.5rem' }}>{score} / 30 complete</div>
-            <div style={{ background: '#0F2035', borderRadius: 12, padding: '1.5rem', marginTop: '1.5rem', border: '1px solid #F5E642′ }}>
+            <div style={{ background: '#0F2035', borderRadius: 12, padding: '1.5rem', marginTop: '1.5rem', border: '1px solid #F5E642' }}>
               <div style={{ color: '#F5E642', fontWeight: 700, marginBottom: '.75rem' }}>Your DFW Action Plan</div>
               {QUESTIONS.filter(q => !answers[q.id]).slice(0,8).map(q => (
                 <div key={q.id} style={{ color: '#CBD5E1', fontSize: '.85rem', marginBottom: '.4rem' }}>⚠️ {q.q}</div>

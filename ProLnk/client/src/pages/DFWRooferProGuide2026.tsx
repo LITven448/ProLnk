@@ -22,7 +22,7 @@ export default function DFWRooferProGuide2026() {
         <h1 style={{ fontSize: 32, fontWeight: 800, marginBottom: 8 }}>🏠 DFW Roofer Pro Guide 2026</h1>
         <p style={{ color: '#a0aec0', fontSize: 16, marginBottom: 32 }}>
           Hail storms in DFW are a gold rush for roofing contractors. Average roof replacement:
-          <strong style={{ color: '#F5E642′ }}> $18,000</strong>. ProLnk connects you to homeowners
+          <strong style={{ color: '#F5E642' }}> $18,000</strong>. ProLnk connects you to homeowners
           immediately after storm events — before the competition knocks on their door.
         </p>
 
@@ -48,7 +48,7 @@ export default function DFWRooferProGuide2026() {
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8, marginBottom: 16 }}>
             {crewSizes.map((c, i) => (
               <button key={c.label} onClick={() => setCrewIdx(i)}
-                style={{ background: i === crewIdx ? '#F5E642′ : '#1a2d45', color: i === crewIdx ? '#0A1628' : '#fff',
+                style={{ background: i === crewIdx ? '#F5E642' : '#1a2d45', color: i === crewIdx ? '#0A1628' : '#fff',
                   border: 'none', borderRadius: 6, padding: '8px 14px', fontSize: 13, fontWeight: 600, cursor: 'pointer' }}>
                 {c.label}
               </button>
@@ -56,19 +56,19 @@ export default function DFWRooferProGuide2026() {
           </div>
           <div style={{ background: '#0A1628', borderRadius: 8, padding: 16 }}>
             <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: 8 }}>
-              <span style={{ color: '#a0aec0′ }}>Avg roof replacement</span>
+              <span style={{ color: '#a0aec0' }}>Avg roof replacement</span>
               <span style={{ fontWeight: 700 }}>$18,000</span>
             </div>
             <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: 8 }}>
-              <span style={{ color: '#a0aec0′ }}>Est. jobs/month with ProLnk</span>
+              <span style={{ color: '#a0aec0' }}>Est. jobs/month with ProLnk</span>
               <span style={{ fontWeight: 700 }}>{crew.jobsPerMonth}</span>
             </div>
             <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: 8 }}>
-              <span style={{ color: '#a0aec0′ }}>Monthly ProLnk commission</span>
-              <span style={{ fontWeight: 700, color: '#F5E642′ }}>${monthly.toLocaleString(undefined,{maximumFractionDigits:0})}</span>
+              <span style={{ color: '#a0aec0' }}>Monthly ProLnk commission</span>
+              <span style={{ fontWeight: 700, color: '#F5E642' }}>${monthly.toLocaleString(undefined,{maximumFractionDigits:0})}</span>
             </div>
             <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-              <span style={{ color: '#a0aec0′ }}>Annual ProLnk earnings</span>
+              <span style={{ color: '#a0aec0' }}>Annual ProLnk earnings</span>
               <span style={{ fontWeight: 800, color: '#F5E642', fontSize: 20 }}>${annual.toLocaleString(undefined,{maximumFractionDigits:0})}</span>
             </div>
           </div>

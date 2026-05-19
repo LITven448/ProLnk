@@ -16,7 +16,7 @@ export default function DFWFoundationSoilType2026() {
   const [active, setActive] = useState<string | null>(null);
 
   return (
-    <div style={{ background: '#0A1628', minHeight: '100vh', padding: '32px 20px', fontFamily: 'system-ui, sans-serif', color: '#E8EEF7′ }}>
+    <div style={{ background: '#0A1628', minHeight: '100vh', padding: '32px 20px', fontFamily: 'system-ui, sans-serif', color: '#E8EEF7' }}>
       <div style={{ maxWidth: 720, margin: '0 auto' }}>
         <div style={{ textAlign: 'center', marginBottom: 32 }}>
           <div style={{ fontSize: 48 }}>🗺️</div>
@@ -43,7 +43,7 @@ export default function DFWFoundationSoilType2026() {
                 <div style={{ background: '#0F2137', border: '1px solid #1E3A5F', borderTop: 'none', borderRadius: '0 0 10px 10px', padding: '16px 18px' }}>
                   <div style={{ color: '#F5E642', fontWeight: 800, fontSize: 15, marginBottom: 4 }}>{s.type}</div>
                   <div style={{ color: '#94A3B8', fontSize: 12, marginBottom: 10 }}>{s.pi} · {s.location}</div>
-                  <div style={{ display: 'inline-block', background: s.risk === 'Highest' ? '#450A0A' : s.risk === 'Moderate' ? '#7C2D12′ : '#064E3B', color: '#F5E642', borderRadius: 6, padding: '2px 10px', fontSize: 12, fontWeight: 700, marginBottom: 12 }}>Foundation Risk: {s.risk}</div>
+                  <div style={{ display: 'inline-block', background: s.risk === 'Highest' ? '#450A0A' : s.risk === 'Moderate' ? '#7C2D12' : '#064E3B', color: '#F5E642', borderRadius: 6, padding: '2px 10px', fontSize: 12, fontWeight: 700, marginBottom: 12 }}>Foundation Risk: {s.risk}</div>
                   <p style={{ color: '#CBD5E1', fontSize: 14, lineHeight: 1.6, marginBottom: 10 }}>{s.detail}</p>
                   <div style={{ background: '#0A1628', borderRadius: 8, padding: '10px 14px' }}>
                     <span style={{ color: '#F5E642', fontWeight: 700, fontSize: 12 }}>Recommended Action: </span>

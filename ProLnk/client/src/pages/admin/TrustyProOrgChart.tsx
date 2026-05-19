@@ -38,10 +38,10 @@ const DEPARTMENTS: Department[] = [
     name: "Scan Operations",
     head: "AI Agent",
     initials: "SO",
-    color: "#0d9488″,
+    color: "#0d9488",
     icon: Camera,
     responsibilities: ["Photo capture workflows", "AI scan quality control", "Defect detection pipeline"],
-    keyMetric: { label: "Scans / Month", value: "341″ },
+    keyMetric: { label: "Scans / Month", value: "341" },
     agents: ["Photo Analysis Agent", "Quality Control Agent"],
     members: [
       { name: "AI Agent", role: "Scan Coordinator", isAI: true },
@@ -101,10 +101,10 @@ const DEPARTMENTS: Department[] = [
 ];
 
 const PLATFORM_STATS = [
-  { label: "Active Pros", value: "147″, icon: Shield, gradient: BADGE_GRADIENTS.blue },
-  { label: "Homeowners Served", value: "2,840″, icon: Home, gradient: BADGE_GRADIENTS.green },
+  { label: "Active Pros", value: "147", icon: Shield, gradient: BADGE_GRADIENTS.blue },
+  { label: "Homeowners Served", value: "2,840", icon: Home, gradient: BADGE_GRADIENTS.green },
   { label: "Avg Rating", value: "4.8★", icon: Star, gradient: BADGE_GRADIENTS.orange },
-  { label: "AI Roles", value: "9 / 12″, icon: Bot, gradient: BADGE_GRADIENTS.cyan },
+  { label: "AI Roles", value: "9 / 12", icon: Bot, gradient: BADGE_GRADIENTS.cyan },
 ];
 
 function AvatarCircle({ initials, color, isAI }: { initials: string; color: string; isAI: boolean }) {
@@ -137,7 +137,7 @@ function AvatarCircle({ initials, color, isAI }: { initials: string; color: stri
             width: 15,
             height: 15,
             borderRadius: "50%",
-            background: "#0d9488″,
+            background: "#0d9488",
             display: "flex",
             alignItems: "center",
             justifyContent: "center",
@@ -240,7 +240,7 @@ function DeptCard({ dept }: { dept: Department }) {
               >
                 <AvatarCircle
                   initials={m.name === "TBD" ? "?" : m.role.slice(0, 2).toUpperCase()}
-                  color={m.isAI ? "#0d9488″ : T.blue}
+                  color={m.isAI ? "#0d9488" : T.blue}
                   isAI={m.isAI}
                 />
                 <div>
@@ -263,8 +263,8 @@ function DeptCard({ dept }: { dept: Department }) {
                   display: "inline-flex",
                   alignItems: "center",
                   gap: 4,
-                  background: "#0d948818″,
-                  color: "#0d9488″,
+                  background: "#0d948818",
+                  color: "#0d9488",
                   fontSize: 11,
                   fontWeight: 700,
                   fontFamily: FONT,
@@ -315,7 +315,7 @@ export default function TrustyProOrgChart() {
         {/* Header */}
         <div style={{ marginBottom: 28 }}>
           <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 4 }}>
-            <Network style={{ width: 22, height: 22, color: "#0d9488″ }} />
+            <Network style={{ width: 22, height: 22, color: "#0d9488" }} />
             <h1 style={{ fontFamily: FONT, fontWeight: 800, fontSize: 22, color: T.text, margin: 0 }}>
               TrustyPro — Org Chart
             </h1>

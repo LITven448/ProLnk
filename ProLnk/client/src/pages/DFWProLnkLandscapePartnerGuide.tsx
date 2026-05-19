@@ -39,7 +39,7 @@ export default function DFWProLnkLandscapePartnerGuide() {
           ))}
         </div>
 
-        <h2 style={{ fontSize: 20, fontWeight: 700, marginBottom: 16, color: '#F5E642′ }}>Select Your Landscape Business Type</h2>
+        <h2 style={{ fontSize: 20, fontWeight: 700, marginBottom: 16, color: '#F5E642' }}>Select Your Landscape Business Type</h2>
         <div style={{ display: 'grid', gap: 12, marginBottom: 32 }}>
           {businessTypes.map((b, i) => (
             <div key={i} onClick={() => setSelected(i === selected ? null : i)}

@@ -78,7 +78,7 @@ export default function DFWSumpPumpGuide() {
           </div>
 
           {result && (
-            <div style={{ backgroundColor: '#0A1628', borderRadius: 10, padding: 20, borderLeft: '4px solid #F5E642′ }}>
+            <div style={{ backgroundColor: '#0A1628', borderRadius: 10, padding: 20, borderLeft: '4px solid #F5E642' }}>
               {[
                 { label: 'RECOMMENDED PUMP TYPE', val: result.pumpType },
                 { label: 'BACKUP RECOMMENDATION', val: result.backup },

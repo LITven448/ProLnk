@@ -42,7 +42,7 @@ export default function DFWGolfSimulatorGuide() {
 
         <div style={{ background: '#0F2040', borderRadius: 12, padding: '1.5rem', marginBottom: '1.5rem' }}>
           <div style={{ color: '#F5E642', fontWeight: 700, marginBottom: '1rem' }}>📏 Core Requirements</div>
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0.75rem', color: '#CBD5E1′ }}>
+          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0.75rem', color: '#CBD5E1' }}>
             <div>Min ceiling: <strong style={{ color: '#fff' }}>10 ft (11 ft preferred)</strong></div>
             <div>Min room width: <strong style={{ color: '#fff' }}>15 ft</strong></div>
             <div>Min room depth: <strong style={{ color: '#fff' }}>20 ft (25 ft ideal)</strong></div>
@@ -73,11 +73,11 @@ export default function DFWGolfSimulatorGuide() {
             </div>
             <div>
               <div style={{ color: '#94A3B8', fontSize: '0.85rem', marginBottom: '0.4rem' }}>Ceiling Height (ft)</div>
-              <input value={ceiling} onChange={e => setCeiling(e.target.value)} placeholder="e.g. 10.5″ style={{ width: '100%', padding: '0.6rem', borderRadius: 8, border: '1px solid #2D4A6E', background: '#0A1628', color: '#fff', boxSizing: 'border-box' }} />
+              <input value={ceiling} onChange={e => setCeiling(e.target.value)} placeholder="e.g. 10.5" style={{ width: '100%', padding: '0.6rem', borderRadius: 8, border: '1px solid #2D4A6E', background: '#0A1628', color: '#fff', boxSizing: 'border-box' }} />
             </div>
             <div>
               <div style={{ color: '#94A3B8', fontSize: '0.85rem', marginBottom: '0.4rem' }}>Total Budget ($)</div>
-              <input value={budget} onChange={e => setBudget(e.target.value)} placeholder="e.g. 15000″ style={{ width: '100%', padding: '0.6rem', borderRadius: 8, border: '1px solid #2D4A6E', background: '#0A1628', color: '#fff', boxSizing: 'border-box' }} />
+              <input value={budget} onChange={e => setBudget(e.target.value)} placeholder="e.g. 15000" style={{ width: '100%', padding: '0.6rem', borderRadius: 8, border: '1px solid #2D4A6E', background: '#0A1628', color: '#fff', boxSizing: 'border-box' }} />
             </div>
           </div>
           <button onClick={calculate} style={{ background: '#F5E642', color: '#0A1628', fontWeight: 700, padding: '0.75rem 2rem', borderRadius: 8, border: 'none', cursor: 'pointer', fontSize: '1rem' }}>Get Recommendation</button>

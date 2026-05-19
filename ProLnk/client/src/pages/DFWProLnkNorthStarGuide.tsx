@@ -65,12 +65,12 @@ export default function DFWProLnkNorthStarGuide() {
           ))}
         </div>
 
-        <div style={{ background: '#112240', borderRadius: 12, padding: 28, borderTop: '4px solid #F5E642′ }}>
+        <div style={{ background: '#112240', borderRadius: 12, padding: 28, borderTop: '4px solid #F5E642' }}>
           <div style={{ display: 'flex', gap: 10, marginBottom: 24 }}>
             {(['homeowner', 'contractor', 'partner'] as Stakeholder[]).map(s => (
               <button key={s} onClick={() => setStakeholder(s)}
                 style={{ padding: '8px 18px', borderRadius: 8, border: 'none', cursor: 'pointer', fontWeight: 700, fontSize: 13,
-                  background: stakeholder === s ? '#F5E642′ : '#0A1628', color: stakeholder === s ? '#0A1628' : '#94a3b8' }}>
+                  background: stakeholder === s ? '#F5E642' : '#0A1628', color: stakeholder === s ? '#0A1628' : '#94a3b8' }}>
                 {labels[s]}
               </button>
             ))}

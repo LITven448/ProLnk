@@ -13,9 +13,9 @@ export default function DFWProLnkCharterScarcity2026() {
 
   const charterStats = [
     { label: 'Charter Rate', value: '$149/mo', note: 'Locked forever' },
-    { label: 'Founding Rate', value: '$199/mo', note: 'Opens at 501′ },
+    { label: 'Founding Rate', value: '$199/mo', note: 'Opens at 501' },
     { label: 'Direct Commission', value: '12%', note: 'vs 7% Founding' },
-    { label: 'Charter Cap', value: '500′  , note: ’Total across all trades' },
+    { label: 'Charter Cap', value: '500'  , note: 'Total across all trades' },
   ];
 
   return (
@@ -30,9 +30,9 @@ export default function DFWProLnkCharterScarcity2026() {
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0.75rem', marginBottom: '1.5rem' }}>
           {charterStats.map((stat, i) => (
             <div key={i} style={{ background: '#111D35', borderRadius: 10, padding: '1rem', border: '1px solid #1E2D4A', textAlign: 'center' }}>
-              <div style={{ fontSize: '1.4rem', fontWeight: 700, color: '#F5E642′ }}>{stat.value}</div>
+              <div style={{ fontSize: '1.4rem', fontWeight: 700, color: '#F5E642' }}>{stat.value}</div>
               <div style={{ fontSize: '0.8rem', color: '#E8EAF0', fontWeight: 600 }}>{stat.label}</div>
-              <div style={{ fontSize: '0.75rem', color: '#6B7A99′ }}>{stat.note}</div>
+              <div style={{ fontSize: '0.75rem', color: '#6B7A99' }}>{stat.note}</div>
             </div>
           ))}
         </div>
@@ -42,7 +42,7 @@ export default function DFWProLnkCharterScarcity2026() {
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0.75rem' }}>
             {situations.map(s => (
               <button key={s.id} onClick={() => setSelected(s.id === selected ? null : s.id)}
-                style={{ background: selected === s.id ? '#F5E642′ : '#1A2A45', color: selected === s.id ? '#0A1628' : '#E8EAF0', border: '2px solid' + (selected === s.id ? ' #F5E642' : ' #2A3A55'), borderRadius: 8, padding: '0.75rem', cursor: ’pointer', fontSize: '0.85rem', fontWeight: 600, textAlign: 'left' }}>
+                style={{ background: selected === s.id ? '#F5E642' : '#1A2A45', color: selected === s.id ? '#0A1628' : '#E8EAF0', border: '2px solid' + (selected === s.id ? ' #F5E642' : ' #2A3A55'), borderRadius: 8, padding: '0.75rem', cursor: 'pointer', fontSize: '0.85rem', fontWeight: 600, textAlign: 'left' }}>
                 {s.label}
               </button>
             ))}

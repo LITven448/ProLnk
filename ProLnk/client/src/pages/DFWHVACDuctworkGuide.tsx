@@ -11,7 +11,7 @@ const styles = {
   label: { display: 'block', color: '#94a3b8', fontSize: '0.85rem', marginBottom: '6px', marginTop: '16px' },
   select: { width: '100%', padding: '10px 12px', backgroundColor: '#0A1628', border: '1px solid #1e3a5f', borderRadius: '8px', color: '#fff', fontSize: '0.95rem' },
   btn: { marginTop: '20px', width: '100%', padding: '14px', backgroundColor: '#F5E642', color: '#0A1628', fontWeight: 800, fontSize: '1rem', border: 'none', borderRadius: '10px', cursor: 'pointer' },
-  result: { backgroundColor: '#0A1628', borderRadius: '10px', padding: '20px', marginTop: '16px', border: '1px solid #F5E642′ },
+  result: { backgroundColor: '#0A1628', borderRadius: '10px', padding: '20px', marginTop: '16px', border: '1px solid #F5E642' },
   resultTitle: { color: '#F5E642', fontWeight: 700, fontSize: '1.1rem', marginBottom: '12px' },
   row: { display: 'flex', justifyContent: 'space-between', borderBottom: '1px solid #1e3a5f', padding: '8px 0', color: '#cbd5e1', fontSize: '0.9rem' },
   badge: { display: 'inline-block', backgroundColor: '#1e3a5f', borderRadius: '6px', padding: '4px 10px', color: '#F5E642', fontSize: '0.8rem', marginRight: '8px', marginBottom: '8px' },
@@ -89,10 +89,10 @@ export default function DFWHVACDuctworkGuide() {
           <label style={styles.label}>Home age</label>
           <select style={styles.select} value={homeAge} onChange={e => setHomeAge(e.target.value)}>
             <option value="">Select age</option>
-            <option value="8″>Under 10 years</option>
-            <option value="15″>10–20 years</option>
-            <option value="25″>20–30 years</option>
-            <option value="35″>30+ years</option>
+            <option value="8">Under 10 years</option>
+            <option value="15">10–20 years</option>
+            <option value="25">20–30 years</option>
+            <option value="35">30+ years</option>
           </select>
           <label style={styles.label}>Duct type</label>
           <select style={styles.select} value={ductType} onChange={e => setDuctType(e.target.value)}>

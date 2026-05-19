@@ -89,10 +89,10 @@ export default function DFWvs() {
           <div style={{ background: '#fff', border: '1px solid #E2E8F0', borderRadius: 12, overflow: 'auto' }}>
             <table style={{ width: '100%', borderCollapse: 'collapse', minWidth: 620 }}>
               <thead>
-                <tr style={{ background: '#0A1628′ }}>
+                <tr style={{ background: '#0A1628' }}>
                   <th style={{ textAlign: 'left', padding: '14px 18px', color: '#94A3B8', fontWeight: 600, fontSize: 13 }}>Factor</th>
                   {cities.map((city) => (
-                    <th key={city} style={{ textAlign: 'center', padding: '14px 12px', color: city === 'DFW' ? '#F5C842′ : '#fff', fontWeight: 700, fontSize: 13 }}>
+                    <th key={city} style={{ textAlign: 'center', padding: '14px 12px', color: city === 'DFW' ? '#F5C842' : '#fff', fontWeight: 700, fontSize: 13 }}>
                       {city}
                     </th>
                   ))}
@@ -100,7 +100,7 @@ export default function DFWvs() {
               </thead>
               <tbody>
                 {rows.map((row, ri) => (
-                  <tr key={row.label} style={{ borderBottom: '1px solid #E2E8F0', background: ri % 2 === 0 ? '#FAFAF9′ : '#fff' }}>
+                  <tr key={row.label} style={{ borderBottom: '1px solid #E2E8F0', background: ri % 2 === 0 ? '#FAFAF9' : '#fff' }}>
                     <td style={{ padding: '13px 18px', fontWeight: 600, color: '#0A1628', fontSize: 13 }}>{row.label}</td>
                     {row.values.map((val, vi) => (
                       <td key={vi} style={{
@@ -108,8 +108,8 @@ export default function DFWvs() {
                         textAlign: 'center',
                         fontSize: 12,
                         fontWeight: vi === 0 ? 700 : 500,
-                        color: vi === 0 ? '#DC2626′ : '#4A5568',
-                        background: vi === 0 ? '#FEF2F2′ : ’transparent',
+                        color: vi === 0 ? '#DC2626' : '#4A5568',
+                        background: vi === 0 ? '#FEF2F2' : 'transparent',
                       }}>
                         {val}
                       </td>

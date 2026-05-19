@@ -26,7 +26,7 @@ const dataTypes: Record<string, { level: string; color: string; details: string[
 const pillars = [
   { icon: '🔐', label: 'AES-256', desc: 'Encryption at rest for all stored data' },
   { icon: '🔒', label: 'TLS 1.3', desc: 'Industry-best encryption in transit' },
-  { icon: '📋', label: 'SOC2 Roadmap', desc: 'Compliance audit scheduled for Q4 2026′ },
+  { icon: '📋', label: 'SOC2 Roadmap', desc: 'Compliance audit scheduled for Q4 2026' },
   { icon: '🚫', label: 'No Data Sales', desc: 'Your data is never monetized externally' },
 ];
 
@@ -50,7 +50,7 @@ export default function ProLnkDataSecurityPage() {
             <div key={i} style={{ background: '#0f1f3d', border: '1px solid #1e3a5f', borderRadius: 12, padding: 20, textAlign: 'center' }}>
               <div style={{ fontSize: 28, marginBottom: 10 }}>{p.icon}</div>
               <div style={{ fontWeight: 800, color: '#F5E642', marginBottom: 4, fontSize: 16 }}>{p.label}</div>
-              <div style={{ fontSize: 12, color: '#94a3b8′ }}>{p.desc}</div>
+              <div style={{ fontSize: 12, color: '#94a3b8' }}>{p.desc}</div>
             </div>
           ))}
         </div>
@@ -62,7 +62,7 @@ export default function ProLnkDataSecurityPage() {
             {Object.keys(dataTypes).map(d => (
               <button key={d} onClick={() => setSelected(d)}
                 style={{ padding: '10px 16px', borderRadius: 8, border: 'none', cursor: 'pointer', fontWeight: 700, fontSize: 13,
-                  background: selected === d ? '#F5E642′ : '#1e3a5f', color: selected === d ? '#0A1628' : '#fff' }}>
+                  background: selected === d ? '#F5E642' : '#1e3a5f', color: selected === d ? '#0A1628' : '#fff' }}>
                 {d}
               </button>
             ))}
@@ -74,7 +74,7 @@ export default function ProLnkDataSecurityPage() {
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: 10 }}>
               {current.details.map((d, i) => (
                 <div key={i} style={{ background: '#0f1f3d', borderRadius: 8, padding: 14, borderLeft: '3px solid ' + current.color }}>
-                  <span style={{ fontSize: 13, color: '#cbd5e1′ }}>✅ {d}</span>
+                  <span style={{ fontSize: 13, color: '#cbd5e1' }}>✅ {d}</span>
                 </div>
               ))}
             </div>

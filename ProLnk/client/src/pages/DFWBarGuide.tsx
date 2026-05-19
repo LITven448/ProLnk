@@ -28,9 +28,9 @@ const entertainingRecs: Record<string, string> = {
 };
 
 const costMap: Record<string, Record<string, string>> = {
-  small: { dry: '$4,000–$9,000', wet: '$9,000–$18,000', outdoor: '$12,000–$22,000′ },
-  medium: { dry: '$7,000–$14,000', wet: '$14,000–$28,000', outdoor: '$20,000–$38,000′ },
-  large: { dry: '$12,000–$22,000', wet: '$22,000–$45,000', outdoor: '$30,000–$60,000′ },
+  small: { dry: '$4,000–$9,000', wet: '$9,000–$18,000', outdoor: '$12,000–$22,000' },
+  medium: { dry: '$7,000–$14,000', wet: '$14,000–$28,000', outdoor: '$20,000–$38,000' },
+  large: { dry: '$12,000–$22,000', wet: '$22,000–$45,000', outdoor: '$30,000–$60,000' },
 };
 
 export default function DFWBarGuide() {
@@ -76,7 +76,7 @@ export default function DFWBarGuide() {
             <div style={{ display: 'flex', gap: 10, flexWrap: 'wrap' }}>
               {[['small','📦 Compact (under 80 sq ft)'],['medium','🏠 Medium (80–200 sq ft)'],['large','🏢 Large (200+ sq ft)']].map(([key, label]) => (
                 <button key={key} onClick={() => setSpace(key)}
-                  style={{ padding: '8px 16px', borderRadius: 8, border: '2px solid', borderColor: space === key ? '#F5E642′ : '#1E3A5F', backgroundColor: space === key ? '#F5E6421A' : ’transparent', color: space === key ? '#F5E642′ : '#9AA5B4', cursor: ’pointer', fontSize: 13 }}>
+                  style={{ padding: '8px 16px', borderRadius: 8, border: '2px solid', borderColor: space === key ? '#F5E642' : '#1E3A5F', backgroundColor: space === key ? '#F5E6421A' : 'transparent', color: space === key ? '#F5E642' : '#9AA5B4', cursor: 'pointer', fontSize: 13 }}>
                   {label}
                 </button>
               ))}
@@ -88,7 +88,7 @@ export default function DFWBarGuide() {
             <div style={{ display: 'flex', gap: 10, flexWrap: 'wrap' }}>
               {[['dry','🍾 Dry Bar'],['wet','🚿 Full Wet Bar'],['outdoor','🌿 Outdoor Bar']].map(([key, label]) => (
                 <button key={key} onClick={() => setBarType(key)}
-                  style={{ padding: '8px 16px', borderRadius: 8, border: '2px solid', borderColor: barType === key ? '#F5E642′ : '#1E3A5F', backgroundColor: barType === key ? '#F5E6421A' : ’transparent', color: barType === key ? '#F5E642′ : '#9AA5B4', cursor: ’pointer', fontSize: 13 }}>
+                  style={{ padding: '8px 16px', borderRadius: 8, border: '2px solid', borderColor: barType === key ? '#F5E642' : '#1E3A5F', backgroundColor: barType === key ? '#F5E6421A' : 'transparent', color: barType === key ? '#F5E642' : '#9AA5B4', cursor: 'pointer', fontSize: 13 }}>
                   {label}
                 </button>
               ))}
@@ -100,7 +100,7 @@ export default function DFWBarGuide() {
             <div style={{ display: 'flex', gap: 10, flexWrap: 'wrap' }}>
               {[['casual','🎉 Casual / Family'],['entertainer','🏈 Serious Entertainer'],['collector','🍷 Wine / Spirits Collector']].map(([key, label]) => (
                 <button key={key} onClick={() => setEntertaining(key)}
-                  style={{ padding: '8px 16px', borderRadius: 8, border: '2px solid', borderColor: entertaining === key ? '#F5E642′ : '#1E3A5F', backgroundColor: entertaining === key ? '#F5E6421A' : ’transparent', color: entertaining === key ? '#F5E642′ : '#9AA5B4', cursor: ’pointer', fontSize: 13 }}>
+                  style={{ padding: '8px 16px', borderRadius: 8, border: '2px solid', borderColor: entertaining === key ? '#F5E642' : '#1E3A5F', backgroundColor: entertaining === key ? '#F5E6421A' : 'transparent', color: entertaining === key ? '#F5E642' : '#9AA5B4', cursor: 'pointer', fontSize: 13 }}>
                   {label}
                 </button>
               ))}
@@ -114,7 +114,7 @@ export default function DFWBarGuide() {
         </div>
 
         {result && (
-          <div style={{ backgroundColor: '#1E3A5F', borderRadius: 12, padding: 24, border: '2px solid #F5E642′ }}>
+          <div style={{ backgroundColor: '#1E3A5F', borderRadius: 12, padding: 24, border: '2px solid #F5E642' }}>
             <h3 style={{ color: '#F5E642', marginBottom: 16 }}>🍷 Your DFW Bar Plan</h3>
             {[['🏗️ Bar Configuration', result.description],['🔧 Configuration Recommendation', result.rec],['🚿 Plumbing Requirements', result.plumbing],['📋 Permit Requirements', result.permit],['🌡️ DFW Storage Solution', result.storage],['💵 Estimated DFW Cost', result.cost]].map(([label, value]) => (
               <div key={label as string} style={{ marginBottom: 14 }}>

@@ -7,7 +7,7 @@ const situations = [
   { id: 'ok', label: '✅ Chimney Appears Normal', severity: 'LOW', assessment: 'Great — but DFW chimneys need regular monitoring due to clay soil movement.', steps: ['Annual chimney sweep (Level 1 inspection)', 'Check gap at chimney-to-wall junction each spring', 'Ensure chimney cap is in place and intact', 'Waterproof masonry every 5–7 years', 'Monitor after prolonged drought or heavy rain events'], cost: '$150–$400/year for maintenance' },
 ];
 
-const colors: Record<string,string> = { HIGH: '#f87171', MEDIUM: '#fbbf24', LOW: '#4ade80′ };
+const colors: Record<string,string> = { HIGH: '#f87171', MEDIUM: '#fbbf24', LOW: '#4ade80' };
 
 export default function DFWFoundationChimney2026() {
   const [selected, setSelected] = useState<string | null>(null);
@@ -18,11 +18,11 @@ export default function DFWFoundationChimney2026() {
       <div style={{ maxWidth: 700, margin: '0 auto' }}>
         <div style={{ textAlign: 'center', marginBottom: '2rem' }}>
           <div style={{ fontSize: '3rem' }}>🧱</div>
-          <h1 style={{ color: '#F5E642', fontSize: '1.6rem', margin: '0.5rem 0′ }}>DFW Foundation and Chimney Guide 2026</h1>
+          <h1 style={{ color: '#F5E642', fontSize: '1.6rem', margin: '0.5rem 0' }}>DFW Foundation and Chimney Guide 2026</h1>
           <p style={{ color: '#94a3b8', margin: 0 }}>DFW clay soil moves independently under chimneys — the most misunderstood foundation issue in North Texas</p>
         </div>
 
-        <div style={{ background: '#0f2233', borderRadius: 10, padding: '1rem', marginBottom: '1.5rem', borderLeft: '3px solid #F5E642′ }}>
+        <div style={{ background: '#0f2233', borderRadius: 10, padding: '1rem', marginBottom: '1.5rem', borderLeft: '3px solid #F5E642' }}>
           <div style={{ color: '#F5E642', fontWeight: 700 }}>Why DFW Chimneys Separate</div>
           <div style={{ color: '#94a3b8', fontSize: '0.9rem', marginTop: '0.5rem' }}>Chimneys have their own footing separate from the main slab. DFW expansive clay causes the chimney footing to move at a different rate than the house, creating separation at the junction wall.</div>
         </div>

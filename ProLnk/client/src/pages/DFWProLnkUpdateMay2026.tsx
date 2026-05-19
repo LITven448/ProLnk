@@ -86,10 +86,10 @@ export default function DFWProLnkUpdateMay2026() {
               key={m.id}
               onClick={() => setSelected(selected === m.id ? null : m.id)}
               style={{
-                background: selected === m.id ? '#F5E642′ : '#0F2040',
-                color: selected === m.id ? '#0A1628′ : '#fff',
+                background: selected === m.id ? '#F5E642' : '#0F2040',
+                color: selected === m.id ? '#0A1628' : '#fff',
                 border: '1px solid',
-                borderColor: selected === m.id ? '#F5E642′ : '#1E3A5F',
+                borderColor: selected === m.id ? '#F5E642' : '#1E3A5F',
                 borderRadius: 12,
                 padding: '16px 18px',
                 textAlign: 'left',

@@ -30,7 +30,7 @@ export default function DFWHVACDuctSealingGuide2026() {
         </div>
         <h1 style={{ fontSize: 28, fontWeight: 800, marginBottom: 8 }}>💨 Duct Sealing Guide — DFW</h1>
         <p style={{ color: '#94a3b8', marginBottom: 12, lineHeight: 1.6 }}>
-          Average DFW home loses <strong style={{ color: '#F5E642′ }}>20–30% of conditioned air</strong> through leaky ducts — paying to air condition your attic. Sealing ducts is the highest-ROI HVAC upgrade in DFW.
+          Average DFW home loses <strong style={{ color: '#F5E642' }}>20–30% of conditioned air</strong> through leaky ducts — paying to air condition your attic. Sealing ducts is the highest-ROI HVAC upgrade in DFW.
         </p>
         <div style={{ background: '#1E2D45', borderRadius: 8, padding: '12px 16px', marginBottom: 28, color: '#94a3b8', fontSize: 13 }}>
           📊 DFW average duct leakage: 25% | Average annual waste: $400–$900 | Payback period after sealing: 1–3 years
@@ -38,7 +38,7 @@ export default function DFWHVACDuctSealingGuide2026() {
         <h2 style={{ color: '#F5E642', fontSize: 18, marginBottom: 16 }}>🛠️ Sealing Methods</h2>
         <div style={{ display: 'flex', flexDirection: 'column', gap: 14, marginBottom: 32 }}>
           {methods.map(m => (
-            <div key={m.name} style={{ background: '#1E2D45', borderRadius: 10, padding: '16px 20px', borderLeft: '4px solid #F5E642′ }}>
+            <div key={m.name} style={{ background: '#1E2D45', borderRadius: 10, padding: '16px 20px', borderLeft: '4px solid #F5E642' }}>
               <div style={{ fontWeight: 700, fontSize: 15, marginBottom: 4 }}>{m.icon} {m.name}</div>
               <div style={{ color: '#94a3b8', fontSize: 13, marginBottom: 6 }}>💰 {m.cost} &nbsp;|&nbsp; ⏳ {m.life}</div>
               <div style={{ color: '#cbd5e1', fontSize: 13, lineHeight: 1.6 }}>{m.detail}</div>
@@ -64,7 +64,7 @@ export default function DFWHVACDuctSealingGuide2026() {
           {result && <div style={{ marginTop: 16, background: '#0A1628', borderRadius: 8, padding: 16, color: '#F5E642', fontWeight: 600, fontSize: 13, lineHeight: 1.7 }}>{result}</div>}
         </div>
         <div style={{ background: '#1E2D45', borderRadius: 10, padding: '16px 20px', color: '#94a3b8', fontSize: 13, lineHeight: 1.7 }}>
-          💡 <strong style={{ color: '#F5E642′ }}>Pro tip:</strong> Get a blower door + duct leakage test before sealing to baseline your numbers. Most DFW HVAC pros include this in a full tune-up. ProLnk connects you with certified duct sealing specialists.
+          💡 <strong style={{ color: '#F5E642' }}>Pro tip:</strong> Get a blower door + duct leakage test before sealing to baseline your numbers. Most DFW HVAC pros include this in a full tune-up. ProLnk connects you with certified duct sealing specialists.
         </div>
       </div>
     </div>

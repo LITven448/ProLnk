@@ -134,9 +134,9 @@ export default function DFWBathroomUpdateROIGuide() {
         <div style={styles.card}>
           <h2 style={styles.h2}>💡 DFW Buyer Expectations by Tier</h2>
           <div style={styles.tip}>
-            <strong style={{ color: '#F5E642′ }}>Entry ($200K–$350K):</strong> Clean, functional, no outdated fixtures. Buyers forgive cosmetics if nothing is broken.{'\n\n'}
-            <strong style={{ color: '#F5E642′ }}>Mid-Range ($350K–$600K):</strong> Updated vanity, quartz or granite counters, frameless or semi-frameless shower expected. Dated tile is a negotiation point.{'\n\n'}
-            <strong style={{ color: '#F5E642′ }}>Luxury ($600K+):</strong> Spa experience expected. Frameless glass shower, soaking tub, large format tile, heated floors, designer fixtures. Buyers in this tier walk for dated bathrooms.
+            <strong style={{ color: '#F5E642' }}>Entry ($200K–$350K):</strong> Clean, functional, no outdated fixtures. Buyers forgive cosmetics if nothing is broken.{'\n\n'}
+            <strong style={{ color: '#F5E642' }}>Mid-Range ($350K–$600K):</strong> Updated vanity, quartz or granite counters, frameless or semi-frameless shower expected. Dated tile is a negotiation point.{'\n\n'}
+            <strong style={{ color: '#F5E642' }}>Luxury ($600K+):</strong> Spa experience expected. Frameless glass shower, soaking tub, large format tile, heated floors, designer fixtures. Buyers in this tier walk for dated bathrooms.
           </div>
         </div>
       </div>

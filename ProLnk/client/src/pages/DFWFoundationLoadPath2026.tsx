@@ -42,25 +42,25 @@ export default function DFWFoundationLoadPath2026() {
   const result = guides.find(g => g.home === home && g.concern === concern);
 
   return (
-    <div style={{ background: "#0A1628″, minHeight: "100vh", color: "#fff", fontFamily: "sans-serif", padding: "2rem" }}>
+    <div style={{ background: "#0A1628", minHeight: "100vh", color: "#fff", fontFamily: "sans-serif", padding: "2rem" }}>
       <div style={{ maxWidth: 760, margin: "0 auto" }}>
-        <div style={{ background: "#F5E642″, color: "#0A1628", padding: "0.4rem 1rem", borderRadius: 6, display: "inline-block", fontSize: 13, fontWeight: 700, marginBottom: "1rem" }}>
+        <div style={{ background: "#F5E642", color: "#0A1628", padding: "0.4rem 1rem", borderRadius: 6, display: "inline-block", fontSize: 13, fontWeight: 700, marginBottom: "1rem" }}>
           🏗️ DFW FOUNDATION INTELLIGENCE 2026
         </div>
         <h1 style={{ fontSize: "1.9rem", fontWeight: 800, marginBottom: "0.5rem" }}>Foundation Load Path Guide</h1>
-        <p style={{ color: "#94a3b8″, marginBottom: "2rem", lineHeight: 1.6 }}>
+        <p style={{ color: "#94a3b8", marginBottom: "2rem", lineHeight: 1.6 }}>
           Every load in a DFW home travels from roof to soil through a specific path. Understanding this path determines where piers go, why cracks form, and which repairs actually address the root cause.
         </p>
 
         <div style={{ background: "#111f3c", borderRadius: 10, padding: "1.5rem", marginBottom: "1.5rem" }}>
-          <h2 style={{ fontSize: "1.1rem", fontWeight: 700, color: "#F5E642″, marginBottom: "1.25rem" }}>🔍 Diagnose Your Home</h2>
+          <h2 style={{ fontSize: "1.1rem", fontWeight: 700, color: "#F5E642", marginBottom: "1.25rem" }}>🔍 Diagnose Your Home</h2>
 
           <div style={{ marginBottom: "1rem" }}>
-            <div style={{ color: "#94a3b8″, fontSize: 13, fontWeight: 600, marginBottom: "0.5rem" }}>FOUNDATION TYPE</div>
+            <div style={{ color: "#94a3b8", fontSize: 13, fontWeight: 600, marginBottom: "0.5rem" }}>FOUNDATION TYPE</div>
             <div style={{ display: "flex", gap: "0.75rem" }}>
               {[{ id: "slab", label: "🏠 Concrete Slab" }, { id: "pier-beam", label: "🏚️ Pier & Beam" }].map(h => (
                 <button key={h.id} onClick={() => setHome(h.id)}
-                  style={{ background: home === h.id ? "#F5E642″ : "#1e3a5f", color: home === h.id ? "#0A1628" : "#fff", border: "none", borderRadius: 8, padding: "0.6rem 1.2rem", cursor: "pointer", fontWeight: 600, fontSize: 14 }}>
+                  style={{ background: home === h.id ? "#F5E642" : "#1e3a5f", color: home === h.id ? "#0A1628" : "#fff", border: "none", borderRadius: 8, padding: "0.6rem 1.2rem", cursor: "pointer", fontWeight: 600, fontSize: 14 }}>
                   {h.label}
                 </button>
               ))}
@@ -68,11 +68,11 @@ export default function DFWFoundationLoadPath2026() {
           </div>
 
           <div>
-            <div style={{ color: "#94a3b8″, fontSize: 13, fontWeight: 600, marginBottom: "0.5rem" }}>PRIMARY CONCERN</div>
+            <div style={{ color: "#94a3b8", fontSize: 13, fontWeight: 600, marginBottom: "0.5rem" }}>PRIMARY CONCERN</div>
             <div style={{ display: "flex", gap: "0.75rem" }}>
               {[{ id: "pier", label: "📍 Pier Placement" }, { id: "crack", label: "🔍 Crack Analysis" }].map(c => (
                 <button key={c.id} onClick={() => setConcern(c.id)}
-                  style={{ background: concern === c.id ? "#F5E642″ : "#1e3a5f", color: concern === c.id ? "#0A1628" : "#fff", border: "none", borderRadius: 8, padding: "0.6rem 1.2rem", cursor: "pointer", fontWeight: 600, fontSize: 14 }}>
+                  style={{ background: concern === c.id ? "#F5E642" : "#1e3a5f", color: concern === c.id ? "#0A1628" : "#fff", border: "none", borderRadius: 8, padding: "0.6rem 1.2rem", cursor: "pointer", fontWeight: 600, fontSize: 14 }}>
                   {c.label}
                 </button>
               ))}
@@ -83,23 +83,23 @@ export default function DFWFoundationLoadPath2026() {
         {result && (
           <>
             <div style={{ background: "#111f3c", borderRadius: 10, padding: "1.5rem", marginBottom: "1.5rem" }}>
-              <div style={{ fontWeight: 700, color: "#F5E642″, fontSize: "1.1rem", marginBottom: "1rem" }}>{result.title}</div>
-              <div style={{ background: "#0A1628″, borderRadius: 8, padding: "1rem", marginBottom: "1rem", fontFamily: "monospace", fontSize: 13, color: "#94a3b8", lineHeight: 1.8 }}>
+              <div style={{ fontWeight: 700, color: "#F5E642", fontSize: "1.1rem", marginBottom: "1rem" }}>{result.title}</div>
+              <div style={{ background: "#0A1628", borderRadius: 8, padding: "1rem", marginBottom: "1rem", fontFamily: "monospace", fontSize: 13, color: "#94a3b8", lineHeight: 1.8 }}>
                 {result.path}
               </div>
-              <p style={{ color: "#cbd5e1″, fontSize: 14, lineHeight: 1.7, margin: 0 }}>{result.insight}</p>
+              <p style={{ color: "#cbd5e1", fontSize: 14, lineHeight: 1.7, margin: 0 }}>{result.insight}</p>
             </div>
 
             <div style={{ background: "#111f3c", borderRadius: 10, padding: "1.5rem" }}>
-              <div style={{ color: "#F5E642″, fontWeight: 700, marginBottom: "0.75rem" }}>📍 Key Load Points</div>
-              <ul style={{ color: "#94a3b8″, fontSize: 14, paddingLeft: "1.2rem", lineHeight: 2, margin: 0 }}>
+              <div style={{ color: "#F5E642", fontWeight: 700, marginBottom: "0.75rem" }}>📍 Key Load Points</div>
+              <ul style={{ color: "#94a3b8", fontSize: 14, paddingLeft: "1.2rem", lineHeight: 2, margin: 0 }}>
                 {result.bearingWalls.map(w => <li key={w}>{w}</li>)}
               </ul>
             </div>
           </>
         )}
 
-        <div style={{ textAlign: "center", marginTop: "2rem", color: "#475569″, fontSize: 13 }}>
+        <div style={{ textAlign: "center", marginTop: "2rem", color: "#475569", fontSize: 13 }}>
           ProLnk · DFW Foundation Intelligence · 2026
         </div>
       </div>

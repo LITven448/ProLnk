@@ -40,13 +40,13 @@ export default function DFWRoofSlateGuide() {
       <div style={{ maxWidth: '800px', margin: '0 auto' }}>
         <div style={{ marginBottom: '8px', color: '#F5E642', fontSize: '13px' }}>🏠 ProLnk DFW Roofing Guides</div>
         <h1 style={{ fontSize: '28px', fontWeight: 700, color: '#F5E642', marginBottom: '8px' }}>Slate Roofing Guide — Dallas/Fort Worth</h1>
-        <p style={{ color: '#9BA3B8', marginBottom: '24px', lineHeight: '1.6′ }}>
+        <p style={{ color: '#9BA3B8', marginBottom: '24px', lineHeight: '1.6' }}>
           Slate roofing is rare in DFW but found in historic Dallas neighborhoods like Lakewood, Swiss Avenue, and Preston Hollow estates.
           Natural slate lasts 100+ years but requires skilled repair and structural support. Single slate replacements are feasible and always preferred over full replacement.
         </p>
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '16px', marginBottom: '24px' }}>
           {[{ label: '⏳ Lifespan', val: '100-150+ years' }, { label: '💰 Cost Range', val: '-55/sq ft installed' }, { label: '⚖️ Weight', val: '800-1,500 lbs per square' }, { label: '🌨️ Hail Rating', val: 'Class 4 — Highest rated' }].map(({ label, val }) => (
-            <div key={label} style={{ background: '#111E35', borderRadius: '10px', padding: '16px', border: '1px solid #1E2D47′ }}>
+            <div key={label} style={{ background: '#111E35', borderRadius: '10px', padding: '16px', border: '1px solid #1E2D47' }}>
               <div style={{ color: '#F5E642', fontSize: '13px', marginBottom: '4px' }}>{label}</div>
               <div style={{ fontWeight: 600 }}>{val}</div>
             </div>
@@ -71,16 +71,16 @@ export default function DFWRoofSlateGuide() {
             </div>
           </div>
           {result && (
-            <div style={{ background: '#0A1628', borderRadius: '10px', padding: '20px', border: '1px solid #F5E642′ }}>
+            <div style={{ background: '#0A1628', borderRadius: '10px', padding: '20px', border: '1px solid #F5E642' }}>
               <div style={{ marginBottom: '12px' }}><span style={{ color: '#F5E642', fontWeight: 600 }}>Recommended Action: </span>{result.action}</div>
               <div style={{ marginBottom: '12px' }}><span style={{ color: '#F5E642', fontWeight: 600 }}>Estimated Cost: </span>{result.cost}</div>
               <div><span style={{ color: '#F5E642', fontWeight: 600 }}>Specialist: </span>{result.specialist}</div>
             </div>
           )}
         </div>
-        <div style={{ background: '#111E35', borderRadius: '10px', padding: '16px', border: '1px solid #1E2D47′ }}>
+        <div style={{ background: '#111E35', borderRadius: '10px', padding: '16px', border: '1px solid #1E2D47' }}>
           <div style={{ color: '#F5E642', fontWeight: 600, marginBottom: '8px' }}>⚠️ DFW Structural Note</div>
-          <p style={{ color: '#9BA3B8', fontSize: '14px', margin: 0, lineHeight: '1.6′ }}>Most DFW homes built after 1980 are not structurally designed to support natural slate weight. Always get a structural engineer assessment before any slate installation or replacement. Synthetic slate alternatives weigh 40% less and are increasingly popular in DFW.</p>
+          <p style={{ color: '#9BA3B8', fontSize: '14px', margin: 0, lineHeight: '1.6' }}>Most DFW homes built after 1980 are not structurally designed to support natural slate weight. Always get a structural engineer assessment before any slate installation or replacement. Synthetic slate alternatives weigh 40% less and are increasingly popular in DFW.</p>
         </div>
       </div>
     </div>

@@ -47,7 +47,7 @@ export default function DFWHomeRenovationFinancingOptions() {
           <div style={{ overflowX: 'auto' }}>
             <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: 14 }}>
               <thead>
-                <tr style={{ borderBottom: '1px solid #334155′ }}>
+                <tr style={{ borderBottom: '1px solid #334155' }}>
                   {['Option', 'Rate', 'Type', 'Best For', 'Min Credit'].map(h => (
                     <th key={h} style={{ padding: '10px 12px', textAlign: 'left', color: '#F5E642', fontWeight: 700, whiteSpace: 'nowrap' }}>{h}</th>
                   ))}
@@ -57,10 +57,10 @@ export default function DFWHomeRenovationFinancingOptions() {
                 {options.map(o => (
                   <tr key={o.name} style={{ borderBottom: '1px solid #1e3a5f' }}>
                     <td style={{ padding: '12px', fontWeight: 700 }}>{o.name}</td>
-                    <td style={{ padding: '12px', color: '#F5E642′ }}>{o.rate}</td>
-                    <td style={{ padding: '12px', color: '#94a3b8′ }}>{o.type}</td>
+                    <td style={{ padding: '12px', color: '#F5E642' }}>{o.rate}</td>
+                    <td style={{ padding: '12px', color: '#94a3b8' }}>{o.type}</td>
                     <td style={{ padding: '12px', color: '#cbd5e1', lineHeight: 1.4 }}>{o.best}</td>
-                    <td style={{ padding: '12px', color: '#94a3b8′ }}>{o.minCredit}</td>
+                    <td style={{ padding: '12px', color: '#94a3b8' }}>{o.minCredit}</td>
                   </tr>
                 ))}
               </tbody>
@@ -72,29 +72,29 @@ export default function DFWHomeRenovationFinancingOptions() {
           <h2 style={{ fontSize: 22, fontWeight: 700, marginBottom: 20 }}>🔍 Find My Best Options</h2>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: 16, marginBottom: 20 }}>
             <div>
-              <label style={{ fontSize: 13, fontWeight: 700, display: 'block', marginBottom: 6, color: '#F5E642′ }}>Renovation Amount</label>
-              <input value={amount} onChange={e => setAmount(e.target.value)} placeholder='e.g. $45,000′ style={{ width: '100%', padding: '10px 12px', borderRadius: 8, border: '1px solid #334155', background: '#0d1f3c', color: '#fff', fontSize: 15, boxSizing: ’border-box' }} />
+              <label style={{ fontSize: 13, fontWeight: 700, display: 'block', marginBottom: 6, color: '#F5E642' }}>Renovation Amount</label>
+              <input value={amount} onChange={e => setAmount(e.target.value)} placeholder='e.g. $45,000' style={{ width: '100%', padding: '10px 12px', borderRadius: 8, border: '1px solid #334155', background: '#0d1f3c', color: '#fff', fontSize: 15, boxSizing: 'border-box' }} />
             </div>
             <div>
-              <label style={{ fontSize: 13, fontWeight: 700, display: 'block', marginBottom: 6, color: '#F5E642′ }}>Available Equity ($)</label>
-              <input value={equity} onChange={e => setEquity(e.target.value)} placeholder='e.g. $80,000′ style={{ width: '100%', padding: '10px 12px', borderRadius: 8, border: '1px solid #334155', background: '#0d1f3c', color: '#fff', fontSize: 15, boxSizing: ’border-box' }} />
+              <label style={{ fontSize: 13, fontWeight: 700, display: 'block', marginBottom: 6, color: '#F5E642' }}>Available Equity ($)</label>
+              <input value={equity} onChange={e => setEquity(e.target.value)} placeholder='e.g. $80,000' style={{ width: '100%', padding: '10px 12px', borderRadius: 8, border: '1px solid #334155', background: '#0d1f3c', color: '#fff', fontSize: 15, boxSizing: 'border-box' }} />
             </div>
             <div>
-              <label style={{ fontSize: 13, fontWeight: 700, display: 'block', marginBottom: 6, color: '#F5E642′ }}>Credit Score</label>
-              <input value={credit} onChange={e => setCredit(e.target.value)} placeholder='e.g. 720′ style={{ width: '100%', padding: '10px 12px', borderRadius: 8, border: '1px solid #334155', background: '#0d1f3c', color: '#fff', fontSize: 15, boxSizing: ’border-box' }} />
+              <label style={{ fontSize: 13, fontWeight: 700, display: 'block', marginBottom: 6, color: '#F5E642' }}>Credit Score</label>
+              <input value={credit} onChange={e => setCredit(e.target.value)} placeholder='e.g. 720' style={{ width: '100%', padding: '10px 12px', borderRadius: 8, border: '1px solid #334155', background: '#0d1f3c', color: '#fff', fontSize: 15, boxSizing: 'border-box' }} />
             </div>
           </div>
           <button onClick={findOptions} style={{ background: '#F5E642', color: '#0d1f3c', border: 'none', borderRadius: 8, padding: '12px 28px', fontSize: 15, fontWeight: 800, cursor: 'pointer' }}>Find Best Financing</button>
           {results.length > 0 && (
             <div style={{ marginTop: 24 }}>
-              <div style={{ fontWeight: 700, fontSize: 16, marginBottom: 12, color: '#F5E642′ }}>Top {results.length} Recommended Options:</div>
+              <div style={{ fontWeight: 700, fontSize: 16, marginBottom: 12, color: '#F5E642' }}>Top {results.length} Recommended Options:</div>
               {results.map((r, i) => (
                 <div key={r.name} style={{ background: '#0d1f3c', borderRadius: 8, padding: 16, marginBottom: 10 }}>
                   <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: 4 }}>
                     <span style={{ fontWeight: 700, fontSize: 16 }}>#{i + 1} {r.name}</span>
                     <span style={{ color: '#F5E642', fontWeight: 700 }}>{r.rate}</span>
                   </div>
-                  <div style={{ fontSize: 14, color: '#94a3b8′ }}>{r.best}</div>
+                  <div style={{ fontSize: 14, color: '#94a3b8' }}>{r.best}</div>
                 </div>
               ))}
             </div>

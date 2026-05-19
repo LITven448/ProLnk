@@ -39,7 +39,7 @@ export default function DFWGiftOfEquityGuide() {
   ];
 
   return (
-    <div style={{ background: '#F9FAFB', minHeight: '100vh', fontFamily: 'system-ui, sans-serif', color: '#0A1628′ }}>
+    <div style={{ background: '#F9FAFB', minHeight: '100vh', fontFamily: 'system-ui, sans-serif', color: '#0A1628' }}>
       <div style={{ background: '#0A1628', padding: '48px 24px', textAlign: 'center' }}>
         <div style={{ fontSize: 36 }}>🎁</div>
         <h1 style={{ color: '#F5E642', fontSize: 28, fontWeight: 800, margin: '12px 0 8px' }}>
@@ -51,14 +51,14 @@ export default function DFWGiftOfEquityGuide() {
       </div>
 
       <div style={{ maxWidth: 860, margin: '0 auto', padding: '40px 24px' }}>
-        <div style={{ background: '#fff3cd', borderRadius: 12, padding: 20, marginBottom: 32, borderLeft: '4px solid #F5E642′ }}>
+        <div style={{ background: '#fff3cd', borderRadius: 12, padding: 20, marginBottom: 32, borderLeft: '4px solid #F5E642' }}>
           <h3 style={{ fontSize: 15, fontWeight: 700, marginBottom: 8 }}>💡 What is a Gift of Equity?</h3>
           <p style={{ fontSize: 14, color: '#475569', margin: 0 }}>
             A gift of equity occurs when a family member sells their home to a relative below market value. The difference between market value and sale price is the "gift of equity." In Texas, this is an efficient way to transfer wealth — no cash changes hands, and the buyer gets immediate home equity. Lenders treat it as part of the down payment.
           </p>
         </div>
 
-        <div style={{ background: '#fff', borderRadius: 12, padding: 24, marginBottom: 32, border: '1px solid #e2e8f0′ }}>
+        <div style={{ background: '#fff', borderRadius: 12, padding: 24, marginBottom: 32, border: '1px solid #e2e8f0' }}>
           <h3 style={{ fontSize: 16, fontWeight: 700, marginBottom: 16 }}>📋 How It Works — Step by Step</h3>
           {steps.map(step => (
             <div key={step.num} style={{ display: 'flex', gap: 16, marginBottom: 16, alignItems: 'flex-start' }}>
@@ -124,11 +124,11 @@ export default function DFWGiftOfEquityGuide() {
             </div>
           </div>
 
-          <div style={{ background: exceedsAnnualExclusion ? '#fef3c7′ : '#dcfce7', borderRadius: 10, padding: 16, border: `1px solid ${exceedsAnnualExclusion ? '#fcd34d' : '#86efac'}` }}>
-            <div style={{ fontWeight: 700, fontSize: 14, marginBottom: 4, color: exceedsAnnualExclusion ? '#92400e' : '#166534′ }}>
+          <div style={{ background: exceedsAnnualExclusion ? '#fef3c7' : '#dcfce7', borderRadius: 10, padding: 16, border: `1px solid ${exceedsAnnualExclusion ? '#fcd34d' : '#86efac'}` }}>
+            <div style={{ fontWeight: 700, fontSize: 14, marginBottom: 4, color: exceedsAnnualExclusion ? '#92400e' : '#166534' }}>
               {exceedsAnnualExclusion ? '⚠️ Gift Tax Form 709 Required' : '✅ Within Annual Gift Tax Exclusion'}
             </div>
-            <div style={{ fontSize: 13, color: '#475569′ }}>{giftTaxOwed}</div>
+            <div style={{ fontSize: 13, color: '#475569' }}>{giftTaxOwed}</div>
             {exceedsAnnualExclusion && (
               <div style={{ fontSize: 12, color: '#92400e', marginTop: 6 }}>
                 Tip: Spread gift over 2 calendar years to stay within exclusion limits per giver.
@@ -138,9 +138,9 @@ export default function DFWGiftOfEquityGuide() {
           </div>
         </div>
 
-        <div style={{ background: '#fff', borderRadius: 12, padding: 24, border: '1px solid #e2e8f0′ }}>
+        <div style={{ background: '#fff', borderRadius: 12, padding: 24, border: '1px solid #e2e8f0' }}>
           <h3 style={{ fontSize: 16, fontWeight: 700, marginBottom: 12 }}>🏦 Lender Requirements for Gift of Equity</h3>
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 8, fontSize: 13, color: '#475569′ }}>
+          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 8, fontSize: 13, color: '#475569' }}>
             {[
               '📝 Signed gift letter (no repayment required)',
               '🏠 Appraisal at full market value',

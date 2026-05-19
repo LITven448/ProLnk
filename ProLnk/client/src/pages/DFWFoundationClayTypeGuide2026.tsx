@@ -25,7 +25,7 @@ export default function DFWFoundationClayTypeGuide2026() {
           <div style={{ color: '#F5E642', fontWeight: 700, marginBottom: 16 }}>📍 Select Your DFW Area</div>
           <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap' }}>
             {zones.map(z => (
-              <button key={z} onClick={() => setZone(z)} style={{ background: zone === z ? '#F5E642′ : '#1A2F50', color: zone === z ? '#0A1628' : '#E8EAF0', border: ’none', borderRadius: 8, padding: '8px 14px', cursor: 'pointer', fontWeight: 600, fontSize: 13 }}>{z}</button>
+              <button key={z} onClick={() => setZone(z)} style={{ background: zone === z ? '#F5E642' : '#1A2F50', color: zone === z ? '#0A1628' : '#E8EAF0', border: 'none', borderRadius: 8, padding: '8px 14px', cursor: 'pointer', fontWeight: 600, fontSize: 13 }}>{z}</button>
             ))}
           </div>
         </div>
@@ -62,9 +62,9 @@ export default function DFWFoundationClayTypeGuide2026() {
 
         <div style={{ background: '#0F2040', borderRadius: 12, padding: 20 }}>
           <div style={{ color: '#F5E642', fontWeight: 700, marginBottom: 12 }}>🏗️ Foundation Maintenance by Clay Type</div>
-          {['Water consistently within 18″ of foundation perimeter year-round', 'Install soaker hose system before first DFW summer drought', 'Check for gaps at door frames and windows after dry spells', 'Tree roots + clay = high-risk combo — keep trees 15ft+ from slab', 'ProLnk charter pros perform annual foundation moisture assessments'].map((f, i) => (
+          {['Water consistently within 18" of foundation perimeter year-round', 'Install soaker hose system before first DFW summer drought', 'Check for gaps at door frames and windows after dry spells', 'Tree roots + clay = high-risk combo — keep trees 15ft+ from slab', 'ProLnk charter pros perform annual foundation moisture assessments'].map((f, i) => (
             <div key={i} style={{ display: 'flex', gap: 10, marginBottom: 8 }}>
-              <span style={{ color: '#F5E642′ }}>✓</span>
+              <span style={{ color: '#F5E642' }}>✓</span>
               <span style={{ color: '#CBD5E1', fontSize: 14 }}>{f}</span>
             </div>
           ))}

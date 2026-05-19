@@ -48,9 +48,9 @@ export default function TrustyProVsZillow2026() {
             { label: 'Zillow Condition Visibility', value: 'None', sub: 'cannot see inside the home', warn: true },
             { label: 'TrustyPro Condition Visibility', value: 'Full', sub: 'system age, wear, risk scoring', warn: false },
           ].map((s) => (
-            <div key={s.label} style={{ background: '#111c2e', borderRadius: 12, padding: '20px 24px', border: s.warn ? '1px solid #4a1010′ : '1px solid #1e3a1e' }}>
+            <div key={s.label} style={{ background: '#111c2e', borderRadius: 12, padding: '20px 24px', border: s.warn ? '1px solid #4a1010' : '1px solid #1e3a1e' }}>
               <div style={{ fontSize: 12, color: '#64748b', marginBottom: 6 }}>{s.label}</div>
-              <div style={{ fontSize: 20, fontWeight: 800, color: s.warn ? '#f87171′ : '#4ade80' }}>{s.value}</div>
+              <div style={{ fontSize: 20, fontWeight: 800, color: s.warn ? '#f87171' : '#4ade80' }}>{s.value}</div>
               <div style={{ fontSize: 12, color: '#64748b', marginTop: 4 }}>{s.sub}</div>
             </div>
           ))}
@@ -64,13 +64,13 @@ export default function TrustyProVsZillow2026() {
                 key={g.id}
                 onClick={() => setActive(g)}
                 style={{ padding: '8px 18px', borderRadius: 8, border: 'none', cursor: 'pointer', fontWeight: 600, fontSize: 13,
-                  background: active.id === g.id ? '#F5E642′ : '#1e2d45', color: active.id === g.id ? '#0A1628' : '#94a3b8' }}>
+                  background: active.id === g.id ? '#F5E642' : '#1e2d45', color: active.id === g.id ? '#0A1628' : '#94a3b8' }}>
                 {g.label}
               </button>
             ))}
           </div>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 20 }}>
-            <div style={{ background: '#1a0a0a', borderRadius: 10, padding: 20, border: '1px solid #4a1010′ }}>
+            <div style={{ background: '#1a0a0a', borderRadius: 10, padding: 20, border: '1px solid #4a1010' }}>
               <div style={{ fontSize: 12, color: '#f87171', marginBottom: 10, fontWeight: 700 }}>🏠 ZILLOW</div>
               <p style={{ margin: 0, color: '#cbd5e1', lineHeight: 1.6 }}>{active.zillow}</p>
             </div>

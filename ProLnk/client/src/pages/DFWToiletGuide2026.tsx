@@ -39,7 +39,7 @@ export default function DFWToiletGuide2026() {
         </div>
 
         <div style={{ background: '#1a2840', borderRadius: 16, padding: 28, marginBottom: 28 }}>
-          <h2 style={{ fontSize: 20, fontWeight: 700, marginBottom: 20, color: '#F5E642′ }}>Find Your DFW Toilet</h2>
+          <h2 style={{ fontSize: 20, fontWeight: 700, marginBottom: 20, color: '#F5E642' }}>Find Your DFW Toilet</h2>
           <div style={{ marginBottom: 20 }}>
             <label style={{ display: 'block', marginBottom: 8, fontWeight: 600 }}>Top Priority</label>
             <select value={priority} onChange={e => setPriority(e.target.value)} style={{ width: '100%', padding: 12, background: '#0A1628', color: '#fff', border: '1px solid #334155', borderRadius: 8, fontSize: 15 }}>

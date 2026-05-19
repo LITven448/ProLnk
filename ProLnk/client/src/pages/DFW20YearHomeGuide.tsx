@@ -25,13 +25,13 @@ export default function DFW20YearHomeGuide() {
       <div style={{ maxWidth: 720, margin: '0 auto' }}>
         <div style={{ textAlign: 'center', marginBottom: '2rem' }}>
           <div style={{ fontSize: '2.5rem' }}>📅</div>
-          <h1 style={{ color: '#F5E642', fontSize: '1.8rem', margin: '0.5rem 0′ }}>DFW 20-Year Home Planning Guide</h1>
-          <p style={{ color: '#94a3b8′ }}>Know every major capital expense coming your way — and start saving now</p>
+          <h1 style={{ color: '#F5E642', fontSize: '1.8rem', margin: '0.5rem 0' }}>DFW 20-Year Home Planning Guide</h1>
+          <p style={{ color: '#94a3b8' }}>Know every major capital expense coming your way — and start saving now</p>
         </div>
 
         <div style={{ background: '#0f2040', borderRadius: 12, padding: '1.5rem', marginBottom: '1.5rem' }}>
           <label style={{ display: 'block', color: '#F5E642', marginBottom: 8, fontWeight: 600 }}>🏠 How Old Is Your Home? (years)</label>
-          <input type="number" min={0} max={50} placeholder="e.g. 8″ value={homeAge} onChange={e => setHomeAge(e.target.value)}
+          <input type="number" min={0} max={50} placeholder="e.g. 8" value={homeAge} onChange={e => setHomeAge(e.target.value)}
             style={{ width: '100%', padding: '0.75rem', borderRadius: 8, border: '1px solid #1e3a5f', background: '#0A1628', color: '#fff', fontSize: '1rem', boxSizing: 'border-box' }} />
         </div>
 
@@ -48,13 +48,13 @@ export default function DFW20YearHomeGuide() {
 
         {upcoming.length > 0 && (
           <div style={{ marginBottom: '1.5rem' }}>
-            <h2 style={{ color: '#F5E642′ }}>⏳ Upcoming Milestones for Your Home</h2>
+            <h2 style={{ color: '#F5E642' }}>⏳ Upcoming Milestones for Your Home</h2>
             {upcoming.map(m => (
               <div key={m.year} style={{ background: '#0f2040', borderRadius: 12, padding: '1.25rem', marginBottom: '1rem' }}>
                 <div style={{ color: '#F5E642', fontWeight: 700, marginBottom: 8 }}>🗓️ {m.label}</div>
                 {m.items.map(item => (
                   <div key={item.name} style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '0.5rem 0', borderBottom: '1px solid #1e3a5f' }}>
-                    <span style={{ color: '#e2e8f0′ }}>{item.name}</span>
+                    <span style={{ color: '#e2e8f0' }}>{item.name}</span>
                     <div style={{ textAlign: 'right' }}>
                       <div style={{ color: '#F5E642', fontWeight: 600 }}>{fmt(item.cost)}</div>
                       <div style={{ color: '#94a3b8', fontSize: '0.8rem' }}>{fmt(item.monthly)}/mo to save</div>
@@ -73,7 +73,7 @@ export default function DFW20YearHomeGuide() {
               <div key={m.year} style={{ background: '#0f2040', borderRadius: 12, padding: '1rem', marginBottom: '0.75rem', opacity: 0.7 }}>
                 <div style={{ color: '#22c55e', fontWeight: 700, marginBottom: 6 }}>✓ {m.label}</div>
                 {m.items.map(item => (
-                  <div key={item.name} style={{ display: 'flex', justifyContent: 'space-between', color: '#94a3b8', fontSize: '0.9rem', padding: '0.25rem 0′ }}>
+                  <div key={item.name} style={{ display: 'flex', justifyContent: 'space-between', color: '#94a3b8', fontSize: '0.9rem', padding: '0.25rem 0' }}>
                     <span>{item.name}</span><span>{fmt(item.cost)}</span>
                   </div>
                 ))}

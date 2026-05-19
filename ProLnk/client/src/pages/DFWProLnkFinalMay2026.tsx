@@ -14,7 +14,7 @@ export default function DFWProLnkFinalMay2026() {
   const result = roles.find(r => r.id === selected);
 
   return (
-    <div style={{ background: '#0A1628', minHeight: '100vh', color: '#fff', fontFamily: 'system-ui, sans-serif', padding: '0′ }}>
+    <div style={{ background: '#0A1628', minHeight: '100vh', color: '#fff', fontFamily: 'system-ui, sans-serif', padding: '0' }}>
       <div style={{ maxWidth: 720, margin: '0 auto', padding: '48px 24px' }}>
         <div style={{ color: '#F5E642', fontSize: 13, fontWeight: 700, letterSpacing: 2, textTransform: 'uppercase', marginBottom: 16 }}>
           🔗 ProLnk · May 2026 Status
@@ -53,8 +53,8 @@ export default function DFWProLnkFinalMay2026() {
                 key={r.id}
                 onClick={() => setSelected(r.id)}
                 style={{
-                  background: selected === r.id ? '#F5E642′ : '#1a3050',
-                  color: selected === r.id ? '#0A1628′ : '#fff',
+                  background: selected === r.id ? '#F5E642' : '#1a3050',
+                  color: selected === r.id ? '#0A1628' : '#fff',
                   border: 'none', borderRadius: 10, padding: '14px 18px',
                   textAlign: 'left', cursor: 'pointer', fontSize: 14, fontWeight: 500,
                   transition: 'all 0.15s',
@@ -65,7 +65,7 @@ export default function DFWProLnkFinalMay2026() {
             ))}
           </div>
           {result && (
-            <div style={{ background: '#0A1628', borderRadius: 12, padding: '20px 24px', borderLeft: '4px solid #F5E642′ }}>
+            <div style={{ background: '#0A1628', borderRadius: 12, padding: '20px 24px', borderLeft: '4px solid #F5E642' }}>
               <div style={{ color: '#F5E642', fontWeight: 700, fontSize: 13, marginBottom: 8 }}>YOUR NEXT STEP</div>
               <div style={{ color: '#e2e8f0', fontSize: 15, lineHeight: 1.7 }}>{result.status}</div>
             </div>

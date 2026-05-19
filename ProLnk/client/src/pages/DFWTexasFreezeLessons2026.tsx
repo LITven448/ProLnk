@@ -59,7 +59,7 @@ export default function DFWTexasFreezeLessons2026() {
 
         {homeIdx !== null && (
           <div style={{ background: '#111C30', borderRadius: 12, padding: '1.5rem', borderLeft: '4px solid #F5E642', textAlign: 'center' }}>
-            <div style={{ fontSize: '3rem', fontWeight: 900, color: '#F5E642′ }}>{score}/100</div>
+            <div style={{ fontSize: '3rem', fontWeight: 900, color: '#F5E642' }}>{score}/100</div>
             <div style={{ fontSize: '1.2rem', fontWeight: 700, marginTop: 4 }}>{grade}</div>
             <p style={{ color: '#94A3B8', fontSize: '0.9rem', marginTop: 8 }}>Connect with DFW insulation, generator, or plumbing pros on ProLnk to boost your score.</p>
           </div>

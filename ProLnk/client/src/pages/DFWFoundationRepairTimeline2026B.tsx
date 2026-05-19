@@ -73,8 +73,8 @@ export default function DFWFoundationRepairTimeline2026B() {
         <div style={{ display: 'flex', gap: 10, flexWrap: 'wrap', marginBottom: 24, justifyContent: 'center' }}>
           {stages.map((s, i) => (
             <button key={i} onClick={() => setActive(i)}
-              style={{ padding: '10px 16px', borderRadius: 8, border: active === i ? '2px solid #F5E642′ : '2px solid #334155',
-                backgroundColor: active === i ? '#1E2D45′ : '#0F2340', color: active === i ? '#F5E642' : '#94A3B8',
+              style={{ padding: '10px 16px', borderRadius: 8, border: active === i ? '2px solid #F5E642' : '2px solid #334155',
+                backgroundColor: active === i ? '#1E2D45' : '#0F2340', color: active === i ? '#F5E642' : '#94A3B8',
                 cursor: 'pointer', fontSize: 13, fontWeight: 600 }}>
               {s.icon} {s.stage}
             </button>

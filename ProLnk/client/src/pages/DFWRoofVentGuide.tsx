@@ -4,10 +4,10 @@ const ventTypes = ['Static Vent', 'Turbine Vent', 'Power Vent', 'Ridge Vent'];
 const dfwIssues = ['No airflow / hot attic', 'Rusting or seized', 'Noisy in wind', 'Visible damage', 'Multiple vents failing'];
 
 function getVentAssessment(vent: string, issue: string) {
-  if (issue.includes('Rusting') || issue.includes('seized')) return { action: 'Replace Unit', cost: '$150–$400', note: 'Seized turbines trap heat — DFW attics hit 160°F without airflow', color: '#FF4444′ };
-  if (issue.includes('Noisy') && vent.includes('Turbine')) return { action: 'Lubricate or Replace Bearing', cost: '$50–$150', note: 'DFW wind of 15–30 mph is ideal for turbine vents — noise means bearing failure', color: '#F5A623′ };
-  if (issue.includes('No airflow') && vent.includes('Static')) return { action: 'Add Ridge Vent or Turbine', cost: '$300–$800', note: 'Static vents underperform in DFW — consider turbine or ridge upgrade', color: '#F5A623′ };
-  if (issue.includes('Multiple')) return { action: 'Full Vent System Audit', cost: '$500–$2,000', note: 'Systemic failure — hire a DFW roofer for full attic ventilation redesign', color: '#FF4444′ };
+  if (issue.includes('Rusting') || issue.includes('seized')) return { action: 'Replace Unit', cost: '$150–$400', note: 'Seized turbines trap heat — DFW attics hit 160°F without airflow', color: '#FF4444' };
+  if (issue.includes('Noisy') && vent.includes('Turbine')) return { action: 'Lubricate or Replace Bearing', cost: '$50–$150', note: 'DFW wind of 15–30 mph is ideal for turbine vents — noise means bearing failure', color: '#F5A623' };
+  if (issue.includes('No airflow') && vent.includes('Static')) return { action: 'Add Ridge Vent or Turbine', cost: '$300–$800', note: 'Static vents underperform in DFW — consider turbine or ridge upgrade', color: '#F5A623' };
+  if (issue.includes('Multiple')) return { action: 'Full Vent System Audit', cost: '$500–$2,000', note: 'Systemic failure — hire a DFW roofer for full attic ventilation redesign', color: '#FF4444' };
   return { action: 'Inspect and Monitor', cost: 'No immediate cost', note: 'Annual inspection recommended for all DFW vent types', color: '#22C55E' };
 }
 
@@ -63,7 +63,7 @@ export default function DFWRoofVentGuide() {
             <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px' }}>
               {ventTypes.map(v => (
                 <button key={v} onClick={() => setVent(v)} style={{
-                  background: vent === v ? '#F5E642′ : '#162035', color: vent === v ? '#0A1628' : '#CBD5E1',
+                  background: vent === v ? '#F5E642' : '#162035', color: vent === v ? '#0A1628' : '#CBD5E1',
                   border: 'none', borderRadius: '6px', padding: '8px 14px', fontSize: '13px', cursor: 'pointer', fontWeight: vent === v ? 700 : 400
                 }}>{v}</button>
               ))}
@@ -74,7 +74,7 @@ export default function DFWRoofVentGuide() {
             <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px' }}>
               {dfwIssues.map(i => (
                 <button key={i} onClick={() => setIssue(i)} style={{
-                  background: issue === i ? '#F5E642′ : '#162035', color: issue === i ? '#0A1628' : '#CBD5E1',
+                  background: issue === i ? '#F5E642' : '#162035', color: issue === i ? '#0A1628' : '#CBD5E1',
                   border: 'none', borderRadius: '6px', padding: '8px 14px', fontSize: '13px', cursor: 'pointer', fontWeight: issue === i ? 700 : 400
                 }}>{i}</button>
               ))}

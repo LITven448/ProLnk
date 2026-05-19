@@ -101,10 +101,10 @@ export default function DFWHVACInverterDriveGuide() {
             </div>
           </div>
           {result && (
-            <div style={{ background: '#162035', borderRadius: 10, padding: '1.2rem', borderLeft: '4px solid #F5E642′ }}>
+            <div style={{ background: '#162035', borderRadius: 10, padding: '1.2rem', borderLeft: '4px solid #F5E642' }}>
               <div style={{ color: '#F5E642', fontWeight: 700, fontSize: '0.85rem', marginBottom: '0.5rem' }}>INVERTER BENEFIT FOR YOUR SITUATION</div>
               <p style={{ color: '#CBD5E0', fontSize: '0.92rem', lineHeight: 1.7, marginBottom: '0.75rem' }}>{result.benefit}</p>
-              <div style={{ color: '#A0AEC0', fontSize: '0.82rem' }}>💰 <strong style={{ color: '#F5E642′ }}>Typical installed cost:</strong> {result.cost}</div>
+              <div style={{ color: '#A0AEC0', fontSize: '0.82rem' }}>💰 <strong style={{ color: '#F5E642' }}>Typical installed cost:</strong> {result.cost}</div>
             </div>
           )}
         </div>

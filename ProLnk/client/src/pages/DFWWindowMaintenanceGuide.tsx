@@ -54,7 +54,7 @@ export default function DFWWindowMaintenanceGuide() {
         </div>
         <h1 style={{ fontSize: 32, fontWeight: 800, marginBottom: 8 }}>Window Maintenance Guide</h1>
         <p style={{ color: '#94A3B8', fontSize: 16, marginBottom: 32 }}>
-          DFW's UV intensity, extreme heat, and dust cycles punish windows faster than most US markets. Here’s what to check and when.
+          DFW's UV intensity, extreme heat, and dust cycles punish windows faster than most US markets. Here's what to check and when.
         </p>
 
         <div style={{ display: 'grid', gap: 20, marginBottom: 36 }}>
@@ -74,7 +74,7 @@ export default function DFWWindowMaintenanceGuide() {
         </div>
 
         <div style={{ backgroundColor: '#111F3A', borderRadius: 16, padding: 28 }}>
-          <h2 style={{ fontSize: 20, fontWeight: 700, marginBottom: 20, color: '#F5E642′ }}>🧮 Window Assessment Calculator</h2>
+          <h2 style={{ fontSize: 20, fontWeight: 700, marginBottom: 20, color: '#F5E642' }}>🧮 Window Assessment Calculator</h2>
           <div style={{ display: 'grid', gap: 16, marginBottom: 20 }}>
             {[
               { label: 'Window Type', state: windowType, set: setWindowType, opts: windowTypes, isSelect: true },
@@ -111,7 +111,7 @@ export default function DFWWindowMaintenanceGuide() {
               ].map(r => (
                 <div key={r.label} style={{ backgroundColor: '#0A1628', borderRadius: 10, padding: 16 }}>
                   <div style={{ color: '#F5E642', fontSize: 12, fontWeight: 700, marginBottom: 4 }}>{r.label}</div>
-                  <div style={{ fontSize: 14, color: '#E2E8F0′ }}>{r.value}</div>
+                  <div style={{ fontSize: 14, color: '#E2E8F0' }}>{r.value}</div>
                 </div>
               ))}
             </div>

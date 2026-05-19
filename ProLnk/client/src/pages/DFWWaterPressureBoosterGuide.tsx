@@ -66,11 +66,11 @@ export default function DFWWaterPressureBoosterGuide() {
 
         <div style={{ background: '#132240', borderRadius: 12, padding: '1.5rem', marginBottom: '1.5rem' }}>
           <h2 style={{ color: '#F5E642', fontSize: '1.1rem' }}>When DFW Homes Have Low Pressure</h2>
-          <p style={{ lineHeight: 1.7, color: '#c8d8f0′ }}>
+          <p style={{ lineHeight: 1.7, color: '#c8d8f0' }}>
             Low water pressure in DFW is often misdiagnosed. The most common culprit is a
-            <strong style={{ color: '#F5E642′ }}> PRV set too low</strong> or a partially closed valve — both fixable for $0–$300.
+            <strong style={{ color: '#F5E642' }}> PRV set too low</strong> or a partially closed valve — both fixable for $0–$300.
             True low municipal supply pressure (homes at the end of long distribution lines in fast-growing suburbs)
-            does require a booster pump. <strong style={{ color: '#F5E642′ }}>Always diagnose before you buy a pump.</strong>
+            does require a booster pump. <strong style={{ color: '#F5E642' }}>Always diagnose before you buy a pump.</strong>
           </p>
         </div>
 
@@ -98,7 +98,7 @@ export default function DFWWaterPressureBoosterGuide() {
               {causes[pressure].map(c => <li key={c}>{c}</li>)}
             </ul>
           )}
-          {!pressure && <p style={{ color: '#c8d8f0′ }}>Select your pressure level below to see likely causes.</p>}
+          {!pressure && <p style={{ color: '#c8d8f0' }}>Select your pressure level below to see likely causes.</p>}
         </div>
 
         <div style={{ background: '#132240', borderRadius: 12, padding: '1.5rem', marginBottom: '1.5rem' }}>
@@ -107,7 +107,7 @@ export default function DFWWaterPressureBoosterGuide() {
             <div>
               <label style={{ color: '#c8d8f0', display: 'block', marginBottom: '0.4rem' }}>Current Water Pressure (use a gauge or check your bill)</label>
               <select value={pressure} onChange={e => setPressure(e.target.value)}
-                style={{ width: '100%', padding: '0.6rem', borderRadius: 8, background: '#0d1e38', color: '#fff', border: '1px solid #F5E642′ }}>
+                style={{ width: '100%', padding: '0.6rem', borderRadius: 8, background: '#0d1e38', color: '#fff', border: '1px solid #F5E642' }}>
                 <option value=''>Select pressure level...</option>
                 {pressureLevels.map(p => <option key={p} value={p}>{p}</option>)}
               </select>
@@ -115,7 +115,7 @@ export default function DFWWaterPressureBoosterGuide() {
             <div>
               <label style={{ color: '#c8d8f0', display: 'block', marginBottom: '0.4rem' }}>DFW Home Type</label>
               <select value={homeType} onChange={e => setHomeType(e.target.value)}
-                style={{ width: '100%', padding: '0.6rem', borderRadius: 8, background: '#0d1e38', color: '#fff', border: '1px solid #F5E642′ }}>
+                style={{ width: '100%', padding: '0.6rem', borderRadius: 8, background: '#0d1e38', color: '#fff', border: '1px solid #F5E642' }}>
                 <option value=''>Select home type...</option>
                 {homeTypes.map(t => <option key={t} value={t}>{t}</option>)}
               </select>
@@ -127,13 +127,13 @@ export default function DFWWaterPressureBoosterGuide() {
           </div>
           {result && (
             <div style={{ marginTop: '1.25rem', background: '#0d1e38', borderRadius: 10, padding: '1.25rem', borderLeft: `4px solid ${result.needed ? '#F5E642' : '#4CAF50'}` }}>
-              <div style={{ fontSize: '1.2rem', fontWeight: 700, color: result.needed ? '#F5E642′ : '#4CAF50', marginBottom: '0.5rem' }}>
+              <div style={{ fontSize: '1.2rem', fontWeight: 700, color: result.needed ? '#F5E642' : '#4CAF50', marginBottom: '0.5rem' }}>
                 {result.action}
               </div>
               <div style={{ color: '#c8d8f0', lineHeight: 1.9 }}>
                 {result.needed && <div>⚡ Pump Size: <strong style={{ color: '#fff' }}>{result.hp}</strong></div>}
                 <div>💰 Installed Cost: <strong style={{ color: '#fff' }}>{result.cost}</strong></div>
-                <div style={{ marginTop: '0.75rem', color: '#F5E642′ }}>{result.note}</div>
+                <div style={{ marginTop: '0.75rem', color: '#F5E642' }}>{result.note}</div>
               </div>
             </div>
           )}

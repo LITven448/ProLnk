@@ -33,7 +33,7 @@ export default function DFWHVACEfficiencyGuide() {
         </p>
 
         <div style={{ background: '#0F2040', borderRadius: 12, padding: 24, marginBottom: 24 }}>
-          <h2 style={{ fontSize: 20, fontWeight: 700, marginBottom: 16, color: '#F5E642′ }}>Understanding SEER2 Ratings</h2>
+          <h2 style={{ fontSize: 20, fontWeight: 700, marginBottom: 16, color: '#F5E642' }}>Understanding SEER2 Ratings</h2>
           <div style={{ display: 'grid', gap: 12 }}>
             {[
               ['SEER2 vs SEER', 'SEER2 is the new standard as of 2023. It uses a more realistic test pressure. A SEER2 14 is roughly equivalent to the old SEER 15.'],
@@ -50,16 +50,16 @@ export default function DFWHVACEfficiencyGuide() {
         </div>
 
         <div style={{ background: '#0F2040', borderRadius: 12, padding: 24, marginBottom: 24 }}>
-          <h2 style={{ fontSize: 20, fontWeight: 700, marginBottom: 16, color: '#F5E642′ }}>Calculate Your Upgrade Savings</h2>
+          <h2 style={{ fontSize: 20, fontWeight: 700, marginBottom: 16, color: '#F5E642' }}>Calculate Your Upgrade Savings</h2>
           <div style={{ display: 'grid', gap: 12, marginBottom: 16 }}>
             <div>
               <label style={{ display: 'block', fontSize: 13, color: '#94A3B8', marginBottom: 6 }}>Home size (square feet)</label>
               <select value={sqft} onChange={e => setSqft(e.target.value)}
                 style={{ width: '100%', background: '#0A1628', border: '1px solid #1E3A5F', borderRadius: 8, padding: '10px 12px', color: '#E8EDF5', fontSize: 15 }}>
                 <option value="">Select home size</option>
-                <option value="1500″>Under 2,000 sq ft</option>
-                <option value="2500″>2,000 - 3,000 sq ft</option>
-                <option value="3500″>Over 3,000 sq ft</option>
+                <option value="1500">Under 2,000 sq ft</option>
+                <option value="2500">2,000 - 3,000 sq ft</option>
+                <option value="3500">Over 3,000 sq ft</option>
               </select>
             </div>
             <div>
@@ -67,9 +67,9 @@ export default function DFWHVACEfficiencyGuide() {
               <select value={currentSeer} onChange={e => setCurrentSeer(e.target.value)}
                 style={{ width: '100%', background: '#0A1628', border: '1px solid #1E3A5F', borderRadius: 8, padding: '10px 12px', color: '#E8EDF5', fontSize: 15 }}>
                 <option value="">Select current SEER</option>
-                <option value="10″>SEER 10-12 (older system, pre-2006)</option>
-                <option value="14″>SEER 13-15 (standard efficiency)</option>
-                <option value="18″>SEER 16-19 (high efficiency)</option>
+                <option value="10">SEER 10-12 (older system, pre-2006)</option>
+                <option value="14">SEER 13-15 (standard efficiency)</option>
+                <option value="18">SEER 16-19 (high efficiency)</option>
               </select>
             </div>
           </div>
@@ -85,11 +85,11 @@ export default function DFWHVACEfficiencyGuide() {
             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: 12, marginBottom: 16 }}>
               <div style={{ background: '#0A1628', borderRadius: 8, padding: 14, textAlign: 'center' }}>
                 <div style={{ fontSize: 11, color: '#94A3B8', marginBottom: 4 }}>RECOMMENDED</div>
-                <div style={{ fontSize: 20, fontWeight: 800, color: '#F5E642′ }}>{result.rec}</div>
+                <div style={{ fontSize: 20, fontWeight: 800, color: '#F5E642' }}>{result.rec}</div>
               </div>
               <div style={{ background: '#0A1628', borderRadius: 8, padding: 14, textAlign: 'center' }}>
                 <div style={{ fontSize: 11, color: '#94A3B8', marginBottom: 4 }}>ANNUAL SAVINGS</div>
-                <div style={{ fontSize: 20, fontWeight: 800, color: '#6EE7B7′ }}>{result.annualSavings}</div>
+                <div style={{ fontSize: 20, fontWeight: 800, color: '#6EE7B7' }}>{result.annualSavings}</div>
               </div>
               <div style={{ background: '#0A1628', borderRadius: 8, padding: 14, textAlign: 'center' }}>
                 <div style={{ fontSize: 11, color: '#94A3B8', marginBottom: 4 }}>PAYBACK</div>
@@ -101,7 +101,7 @@ export default function DFWHVACEfficiencyGuide() {
         )}
 
         <div style={{ background: '#0F2040', borderRadius: 12, padding: 24, marginTop: 24 }}>
-          <h2 style={{ fontSize: 18, fontWeight: 700, marginBottom: 12, color: '#F5E642′ }}>DFW Efficiency Quick Reference</h2>
+          <h2 style={{ fontSize: 18, fontWeight: 700, marginBottom: 12, color: '#F5E642' }}>DFW Efficiency Quick Reference</h2>
           <div style={{ display: 'grid', gap: 8 }}>
             {[
               ['SEER2 14', 'Federal minimum for DFW/Texas', '#64748B'],

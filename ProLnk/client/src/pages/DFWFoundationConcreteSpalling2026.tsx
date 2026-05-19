@@ -24,12 +24,12 @@ export default function DFWFoundationConcreteSpalling2026() {
         {[{ icon: '❄️', title: 'Freeze-Thaw Spalling', desc: 'Rare but real in north DFW. Water expands when freezing, flakes concrete surface. Single-digit temperatures in DFW winters can trigger this.' },
           { icon: '🔬', title: 'Reactive Aggregate (ASR)', desc: 'Silica in aggregate reacts with cement alkalis, forming gel that expands. Causes map cracking and surface pop-outs. Common in DFW limestone-aggregate mixes.' },
           { icon: '🌫️', title: 'Carbonation Spalling', desc: 'CO2 penetrates concrete over decades, lowers pH, corrodes rebar. Rust expansion causes chunks to fall. Older DFW foundations most at risk.' },
-          { icon: '🚨', title: 'When to Worry', desc: 'Spalling with exposed rebar, large chunks falling, or cracks wider than 1/4″ indicate structural concern. Get engineer assessment immediately.' }
+          { icon: '🚨', title: 'When to Worry', desc: 'Spalling with exposed rebar, large chunks falling, or cracks wider than 1/4" indicate structural concern. Get engineer assessment immediately.' }
         ].map((item, i) => (
-          <div key={i} style={{ backgroundColor: '#112240', borderRadius: '12px', padding: '20px', marginBottom: '16px', borderLeft: '4px solid #F5E642′ }}>
+          <div key={i} style={{ backgroundColor: '#112240', borderRadius: '12px', padding: '20px', marginBottom: '16px', borderLeft: '4px solid #F5E642' }}>
             <div style={{ fontSize: '24px', marginBottom: '8px' }}>{item.icon}</div>
             <h3 style={{ color: '#F5E642', fontSize: '17px', marginBottom: '6px' }}>{item.title}</h3>
-            <p style={{ color: '#cbd5e1', fontSize: '14px', lineHeight: '1.6′ }}>{item.desc}</p>
+            <p style={{ color: '#cbd5e1', fontSize: '14px', lineHeight: '1.6' }}>{item.desc}</p>
           </div>
         ))}
 
@@ -46,7 +46,7 @@ export default function DFWFoundationConcreteSpalling2026() {
             </select>
           </div>
           <button onClick={assess} style={{ backgroundColor: '#F5E642', color: '#0A1628', padding: '12px 28px', borderRadius: '8px', fontWeight: '700', fontSize: '15px', border: 'none', cursor: 'pointer', width: '100%' }}>Get Assessment</button>
-          {result && <div style={{ marginTop: '16px', padding: '14px', backgroundColor: '#1e3a5f', borderRadius: '8px', color: '#F5E642', fontSize: '14px', lineHeight: '1.6′ }}>{result}</div>}
+          {result && <div style={{ marginTop: '16px', padding: '14px', backgroundColor: '#1e3a5f', borderRadius: '8px', color: '#F5E642', fontSize: '14px', lineHeight: '1.6' }}>{result}</div>}
         </div>
 
         <p style={{ textAlign: 'center', color: '#475569', fontSize: '12px', marginTop: '24px' }}>ProLnk — DFW Foundation Specialists 2026</p>

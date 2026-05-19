@@ -10,11 +10,11 @@ const anchorData: Record<string, Record<string, { anchor: string; limit: string;
     'DFW concrete block': { anchor: 'Sleeve anchor or wedge anchor', limit: '50–200 lbs', steps: '1. Hammer drill required. 2. Drill to depth. 3. Insert anchor. 4. Tighten nut until snug — do not over-torque.' },
   },
   '50–100 lbs': {
-    'Standard drywall': { anchor: 'Toggle bolt (spring or strap)', limit: '50–100 lbs per anchor', steps: '1. Drill 1/2″ hole. 2. Fold wings, insert. 3. Pull back firmly before tightening. DFW tip: use 2 anchors side by side for TVs.' },
+    'Standard drywall': { anchor: 'Toggle bolt (spring or strap)', limit: '50–100 lbs per anchor', steps: '1. Drill 1/2" hole. 2. Fold wings, insert. 3. Pull back firmly before tightening. DFW tip: use 2 anchors side by side for TVs.' },
     'DFW concrete block': { anchor: 'Wedge anchor or epoxy anchor', limit: '100–500 lbs', steps: '1. Hammer drill + masonry bit. 2. Clean hole. 3. For epoxy: inject, insert rod, wait full cure (24h in DFW heat). 4. Strongest option available.' },
   },
   '100+ lbs': {
-    'Standard drywall': { anchor: 'Find the stud', limit: 'Stud: 200+ lbs', steps: 'For 100+ lbs, anchors alone are not reliable — find the stud with a stud finder. DFW homes: studs at 16″ or 24″ OC. Lag into stud for TVs, heavy shelving, gym equipment.' },
+    'Standard drywall': { anchor: 'Find the stud', limit: 'Stud: 200+ lbs', steps: 'For 100+ lbs, anchors alone are not reliable — find the stud with a stud finder. DFW homes: studs at 16" or 24" OC. Lag into stud for TVs, heavy shelving, gym equipment.' },
     'DFW concrete block': { anchor: 'Epoxy anchor system', limit: '500+ lbs', steps: '1. Hammer drill, clean hole. 2. Two-part epoxy injection. 3. Insert all-thread rod. 4. Allow 24h minimum cure in DFW summer heat. Rate drops 30% above 90°F — work early morning.' },
   },
 };
@@ -57,7 +57,7 @@ export default function DFWAnchorGuide() {
         </div>
 
         <div style={{ background: '#0f2030', borderRadius: 12, padding: '1.5rem', marginBottom: '1.5rem' }}>
-          <h2 style={{ fontSize: '1.1rem', fontWeight: 600, marginBottom: '1rem', color: '#F5E642′ }}>🎯 DFW Anchor Selector</h2>
+          <h2 style={{ fontSize: '1.1rem', fontWeight: 600, marginBottom: '1rem', color: '#F5E642' }}>🎯 DFW Anchor Selector</h2>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
             <div>
               <label style={{ color: '#94a3b8', fontSize: '0.85rem', display: 'block', marginBottom: '0.4rem' }}>Weight to Hang</label>
@@ -81,10 +81,10 @@ export default function DFWAnchorGuide() {
             </div>
           </div>
           {result && (
-            <div style={{ background: '#0A1628', borderRadius: 8, padding: '1rem', borderLeft: '3px solid #F5E642′ }}>
-              <div style={{ marginBottom: '0.5rem' }}><span style={{ color: '#F5E642′ }}>Anchor Type:</span> <span style={{ color: '#fff' }}>{result.anchor}</span></div>
-              <div style={{ marginBottom: '0.5rem' }}><span style={{ color: '#F5E642′ }}>Weight Limit:</span> <span style={{ color: '#fff' }}>{result.limit}</span></div>
-              <div><span style={{ color: '#F5E642′ }}>Steps:</span> <span style={{ color: '#94a3b8', fontSize: '0.9rem' }}>{result.steps}</span></div>
+            <div style={{ background: '#0A1628', borderRadius: 8, padding: '1rem', borderLeft: '3px solid #F5E642' }}>
+              <div style={{ marginBottom: '0.5rem' }}><span style={{ color: '#F5E642' }}>Anchor Type:</span> <span style={{ color: '#fff' }}>{result.anchor}</span></div>
+              <div style={{ marginBottom: '0.5rem' }}><span style={{ color: '#F5E642' }}>Weight Limit:</span> <span style={{ color: '#fff' }}>{result.limit}</span></div>
+              <div><span style={{ color: '#F5E642' }}>Steps:</span> <span style={{ color: '#94a3b8', fontSize: '0.9rem' }}>{result.steps}</span></div>
             </div>
           )}
         </div>

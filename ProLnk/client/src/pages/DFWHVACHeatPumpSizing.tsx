@@ -93,13 +93,13 @@ export default function DFWHVACHeatPumpSizing() {
             </div>
           </div>
           <button onClick={() => setShowResult(true)} disabled={!zone || !size || !orientation || !insulation}
-            style={{ background: zone && size && orientation && insulation ? '#F5E642′ : '#1e3a5f', color: zone && size && orientation && insulation ? '#0A1628' : '#4a6080', border: ’none', borderRadius: 8, padding: '12px 28px', fontWeight: 700, fontSize: 15, cursor: zone && size && orientation && insulation ? 'pointer' : 'not-allowed' }}>
+            style={{ background: zone && size && orientation && insulation ? '#F5E642' : '#1e3a5f', color: zone && size && orientation && insulation ? '#0A1628' : '#4a6080', border: 'none', borderRadius: 8, padding: '12px 28px', fontWeight: 700, fontSize: 15, cursor: zone && size && orientation && insulation ? 'pointer' : 'not-allowed' }}>
             Get Size Recommendation →
           </button>
         </div>
 
         {showResult && (
-          <div style={{ background: '#0d1f3c', borderRadius: 12, padding: 24, marginBottom: 24, borderLeft: '4px solid #F5E642′ }}>
+          <div style={{ background: '#0d1f3c', borderRadius: 12, padding: 24, marginBottom: 24, borderLeft: '4px solid #F5E642' }}>
             <div style={{ color: '#F5E642', fontWeight: 700, fontSize: 14, marginBottom: 8 }}>✅ Recommended Heat Pump Size</div>
             <div style={{ fontSize: 28, fontWeight: 800, marginBottom: 8 }}>{recommendation}</div>
             <div style={{ color: '#8899aa', fontSize: 14 }}>{note}</div>

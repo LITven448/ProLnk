@@ -73,7 +73,7 @@ export default function PartnerInsuranceRequirementsGuide() {
           Protect Your Business — Unlock More Leads
         </p>
         <p style={{ fontSize: '16px', color: '#6b7280', maxWidth: '620px', margin: '0 auto' }}>
-          Proper insurance isn't just a legal requirement — it’s how you access higher-value ProLnk leads, win more homeowner trust, and protect everything you’ve built.
+          Proper insurance isn't just a legal requirement — it's how you access higher-value ProLnk leads, win more homeowner trust, and protect everything you've built.
         </p>
       </div>
 
@@ -154,7 +154,7 @@ export default function PartnerInsuranceRequirementsGuide() {
                   <div style={{ fontSize: '32px' }}>{ins.emoji}</div>
                   <div style={{ flex: 1, minWidth: '200px' }}>
                     <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '6px' }}>
-                      <h3 style={{ fontSize: '18px', fontWeight: 700, color: '#111827′ }}>{ins.name}</h3>
+                      <h3 style={{ fontSize: '18px', fontWeight: 700, color: '#111827' }}>{ins.name}</h3>
                       {ins.required && (
                         <span style={{ background: '#dcfce7', color: '#16a34a', fontSize: '11px', fontWeight: 700, padding: '2px 8px', borderRadius: '999px', textTransform: 'uppercase' }}>
                           ProLnk Required
@@ -198,7 +198,7 @@ export default function PartnerInsuranceRequirementsGuide() {
                 <div style={{ fontSize: '28px', marginBottom: '8px' }}>{provider.emoji}</div>
                 <h3 style={{ fontSize: '15px', fontWeight: 700, color: '#111827', marginBottom: '4px' }}>{provider.name}</h3>
                 <div style={{ fontSize: '11px', color: '#16a34a', fontWeight: 600, marginBottom: '6px', textTransform: 'uppercase' }}>{provider.tag}</div>
-                <p style={{ fontSize: '12px', color: '#6b7280′ }}>{provider.note}</p>
+                <p style={{ fontSize: '12px', color: '#6b7280' }}>{provider.note}</p>
               </div>
             ))}
           </div>
@@ -228,9 +228,9 @@ export default function PartnerInsuranceRequirementsGuide() {
                   onChange={e => setEmployees(e.target.value)}
                   style={{ width: '100%', padding: '12px', border: '1px solid #d1d5db', borderRadius: '8px', fontSize: '15px', color: '#111827', background: '#ffffff' }}
                 >
-                  <option value="0″>Just me (sole proprietor)</option>
-                  <option value="1-3″>1–3 employees</option>
-                  <option value="4-10″>4–10 employees</option>
+                  <option value="0">Just me (sole proprietor)</option>
+                  <option value="1-3">1–3 employees</option>
+                  <option value="4-10">4–10 employees</option>
                   <option value="10+">10+ employees</option>
                 </select>
               </div>
@@ -245,19 +245,19 @@ export default function PartnerInsuranceRequirementsGuide() {
             {result && (
               <div style={{ marginTop: '28px' }}>
                 <h3 style={{ fontSize: '18px', fontWeight: 700, color: '#111827', marginBottom: '16px' }}>
-                  Coverage Requirements for {selectedTrade}{employees !== '0′ ? ` with ${employees} employees` : ' (Sole Proprietor)'}
+                  Coverage Requirements for {selectedTrade}{employees !== '0' ? ` with ${employees} employees` : ' (Sole Proprietor)'}
                 </h3>
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
                   {result.types.map((type, i) => (
                     <div key={i} style={{ background: '#ffffff', border: `1px solid ${type.required ? '#16a34a' : '#e5e7eb'}`, borderRadius: '8px', padding: '16px', display: 'flex', gap: '16px', flexWrap: 'wrap', alignItems: 'flex-start' }}>
                       <div style={{ flex: 1, minWidth: '200px' }}>
                         <div style={{ display: 'flex', gap: '8px', alignItems: 'center', marginBottom: '4px' }}>
-                          <span style={{ fontSize: '14px', fontWeight: 700, color: '#111827′ }}>{type.name}</span>
-                          <span style={{ fontSize: '11px', fontWeight: 700, padding: '2px 8px', borderRadius: '999px', background: type.required ? '#dcfce7′ : '#f3f4f6', color: type.required ? '#16a34a' : '#6b7280' }}>
+                          <span style={{ fontSize: '14px', fontWeight: 700, color: '#111827' }}>{type.name}</span>
+                          <span style={{ fontSize: '11px', fontWeight: 700, padding: '2px 8px', borderRadius: '999px', background: type.required ? '#dcfce7' : '#f3f4f6', color: type.required ? '#16a34a' : '#6b7280' }}>
                             {type.required ? 'Required' : 'Recommended'}
                           </span>
                         </div>
-                        <p style={{ fontSize: '13px', color: '#6b7280′ }}>{type.reason}</p>
+                        <p style={{ fontSize: '13px', color: '#6b7280' }}>{type.reason}</p>
                       </div>
                       <div style={{ fontSize: '16px', fontWeight: 700, color: '#16a34a', whiteSpace: 'nowrap' }}>{type.cost}</div>
                     </div>

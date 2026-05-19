@@ -23,7 +23,7 @@ export default function DFWRoofingPostInstallCheck2026() {
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(220px, 1fr))', gap: '12px', marginBottom: '28px' }}>
           {concerns.map(c => (
             <button key={c.id} onClick={() => setSelected(selected === c.id ? null : c.id)}
-              style={{ padding: '14px 16px', borderRadius: '10px', border: '2px solid', borderColor: selected === c.id ? '#F5E642′ : '#1e3a5f', backgroundColor: selected === c.id ? '#F5E64220' : '#0d1f3c', color: '#ffffff', cursor: ’pointer', textAlign: 'left', fontSize: '14px', fontWeight: 600, transition: 'all 0.2s' }}>
+              style={{ padding: '14px 16px', borderRadius: '10px', border: '2px solid', borderColor: selected === c.id ? '#F5E642' : '#1e3a5f', backgroundColor: selected === c.id ? '#F5E64220' : '#0d1f3c', color: '#ffffff', cursor: 'pointer', textAlign: 'left', fontSize: '14px', fontWeight: 600, transition: 'all 0.2s' }}>
               🏠 {c.label}
             </button>
           ))}
@@ -38,10 +38,10 @@ export default function DFWRoofingPostInstallCheck2026() {
         )}
 
         <div style={{ backgroundColor: '#0d1f3c', borderRadius: '12px', padding: '24px', marginBottom: '28px' }}>
-          <h2 style={{ fontSize: '18px', marginBottom: '16px', color: '#F5E642′ }}>✅ DFW Post-Install Checklist</h2>
+          <h2 style={{ fontSize: '18px', marginBottom: '16px', color: '#F5E642' }}>✅ DFW Post-Install Checklist</h2>
           {['Magnetic sweep confirmed (no nails in yard)','Gutters cleaned of debris (granules normal)','New pipe boots on all penetrations','Ridge cap complete — all ridges and hips','Drip edge at all eaves and rakes','Permit inspection passed and card received'].map((item, i) => (
             <div key={i} style={{ display: 'flex', gap: '10px', marginBottom: '10px' }}>
-              <span style={{ color: '#F5E642′ }}>✅</span>
+              <span style={{ color: '#F5E642' }}>✅</span>
               <span style={{ color: '#cbd5e1', fontSize: '14px' }}>{item}</span>
             </div>
           ))}

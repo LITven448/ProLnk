@@ -41,7 +41,7 @@ export default function DFWNeighborDisputeGuide() {
 
   return (
     <div style={{ background: '#0A1628', minHeight: '100vh', color: '#E8EAF0', fontFamily: 'system-ui, sans-serif', padding: '0 0 60px' }}>
-      <div style={{ background: 'linear-gradient(135deg, #0A1628 0%, #112040 100%)', padding: '48px 24px 36px', borderBottom: '2px solid #F5E642′ }}>
+      <div style={{ background: 'linear-gradient(135deg, #0A1628 0%, #112040 100%)', padding: '48px 24px 36px', borderBottom: '2px solid #F5E642' }}>
         <div style={{ maxWidth: 760, margin: '0 auto' }}>
           <div style={{ fontSize: 13, color: '#F5E642', fontWeight: 700, letterSpacing: 2, marginBottom: 12 }}>DFW HOMEOWNER GUIDE</div>
           <h1 style={{ fontSize: 32, fontWeight: 800, color: '#FFFFFF', margin: '0 0 12px' }}>Neighbor Dispute Resolution</h1>
@@ -49,14 +49,14 @@ export default function DFWNeighborDisputeGuide() {
         </div>
       </div>
 
-      <div style={{ maxWidth: 760, margin: '0 auto', padding: '32px 24px 0′ }}>
+      <div style={{ maxWidth: 760, margin: '0 auto', padding: '32px 24px 0' }}>
         <p style={{ fontSize: 14, color: '#F5E642', fontWeight: 600, marginBottom: 16 }}>Select your dispute type:</p>
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: 12, marginBottom: 32 }}>
           {DISPUTES.map((d, i) => (
             <button key={i} onClick={() => setSelected(selected === i ? null : i)}
-              style={{ background: selected === i ? '#F5E642′ : '#112040', border: `2px solid ${selected === i ? '#F5E642' : '#1E3A5F'}`, borderRadius: 10, padding: '16px', cursor: ’pointer', textAlign: 'left', transition: 'all 0.2s' }}>
+              style={{ background: selected === i ? '#F5E642' : '#112040', border: `2px solid ${selected === i ? '#F5E642' : '#1E3A5F'}`, borderRadius: 10, padding: '16px', cursor: 'pointer', textAlign: 'left', transition: 'all 0.2s' }}>
               <div style={{ fontSize: 24, marginBottom: 6 }}>{d.icon}</div>
-              <div style={{ fontSize: 14, fontWeight: 700, color: selected === i ? '#0A1628′ : '#E8EAF0' }}>{d.type}</div>
+              <div style={{ fontSize: 14, fontWeight: 700, color: selected === i ? '#0A1628' : '#E8EAF0' }}>{d.type}</div>
             </button>
           ))}
         </div>
@@ -64,7 +64,7 @@ export default function DFWNeighborDisputeGuide() {
         {dispute && (
           <div style={{ background: '#112040', border: '1px solid #1E3A5F', borderRadius: 14, padding: 28 }}>
             <h2 style={{ fontSize: 20, fontWeight: 700, color: '#F5E642', marginBottom: 16 }}>{dispute.icon} {dispute.type} — Legal Framework</h2>
-            <p style={{ fontSize: 14, color: '#CBD5E0', lineHeight: 1.7, marginBottom: 20, background: '#0A1628', padding: 16, borderRadius: 8, borderLeft: '3px solid #F5E642′ }}>{dispute.framework}</p>
+            <p style={{ fontSize: 14, color: '#CBD5E0', lineHeight: 1.7, marginBottom: 20, background: '#0A1628', padding: 16, borderRadius: 8, borderLeft: '3px solid #F5E642' }}>{dispute.framework}</p>
             <h3 style={{ fontSize: 13, fontWeight: 700, color: '#F5E642', letterSpacing: 1, marginBottom: 12 }}>ESCALATION STEPS</h3>
             <ol style={{ paddingLeft: 20, margin: '0 0 20px' }}>
               {dispute.steps.map((s, i) => <li key={i} style={{ fontSize: 14, color: '#CBD5E0', marginBottom: 8, lineHeight: 1.5 }}>{s}</li>)}

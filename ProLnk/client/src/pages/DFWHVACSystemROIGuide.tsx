@@ -57,7 +57,7 @@ export default function DFWHVACSystemROIGuide() {
       reason = `A ${age}-year system is a marketing asset. Highlight brand, SEER rating, and remaining life in your listing. DFW buyers specifically ask about HVAC age.`;
     }
 
-    const annualSavings = homeSize === 'under2000′ ? 480 : homeSize === '2001-3000' ? 720 : homeSize === '3001-4000' ? 960 : 1400;
+    const annualSavings = homeSize === 'under2000' ? 480 : homeSize === '2001-3000' ? 720 : homeSize === '3001-4000' ? 960 : 1400;
     setResult({ decision, cost: avgCost, valueImpact, annualSavings, reason });
   }
 
@@ -100,10 +100,10 @@ export default function DFWHVACSystemROIGuide() {
             <div>
               <label style={styles.label}>Home Square Footage</label>
               <select style={styles.select} value={homeSize} onChange={e => setHomeSize(e.target.value)}>
-                <option value="under2000″>Under 2,000 sq ft</option>
-                <option value="2001-3000″>2,001–3,000 sq ft</option>
-                <option value="3001-4000″>3,001–4,000 sq ft</option>
-                <option value="over4000″>Over 4,000 sq ft</option>
+                <option value="under2000">Under 2,000 sq ft</option>
+                <option value="2001-3000">2,001–3,000 sq ft</option>
+                <option value="3001-4000">3,001–4,000 sq ft</option>
+                <option value="over4000">Over 4,000 sq ft</option>
               </select>
             </div>
           </div>
@@ -111,11 +111,11 @@ export default function DFWHVACSystemROIGuide() {
             <div>
               <label style={styles.label}>Home Price Range ($K)</label>
               <select style={styles.select} value={homePrice} onChange={e => setHomePrice(e.target.value)}>
-                <option value="250″>$200–$300K</option>
-                <option value="400″>$350–$450K</option>
-                <option value="550″>$500–$600K</option>
-                <option value="750″>$700K–$850K</option>
-                <option value="1000″>$900K+</option>
+                <option value="250">$200–$300K</option>
+                <option value="400">$350–$450K</option>
+                <option value="550">$500–$600K</option>
+                <option value="750">$700K–$850K</option>
+                <option value="1000">$900K+</option>
               </select>
             </div>
             <div>

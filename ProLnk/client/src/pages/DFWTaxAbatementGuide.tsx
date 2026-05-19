@@ -42,12 +42,12 @@ export default function DFWTaxAbatementGuide() {
   const match = scenarios.find(s => s.id === selected);
 
   return (
-    <div style={{ minHeight: '100vh', background: '#0A1628', fontFamily: 'system-ui, sans-serif', color: '#e8eaf0′ }}>
+    <div style={{ minHeight: '100vh', background: '#0A1628', fontFamily: 'system-ui, sans-serif', color: '#e8eaf0' }}>
       <div style={{ maxWidth: 820, margin: '0 auto', padding: '40px 20px' }}>
 
-        <div style={{ background: '#111f3a', borderRadius: 12, padding: 32, marginBottom: 24, border: '1px solid #1e3560′ }}>
+        <div style={{ background: '#111f3a', borderRadius: 12, padding: 32, marginBottom: 24, border: '1px solid #1e3560' }}>
           <div style={{ fontSize: 32, marginBottom: 8 }}>💰 🏛️ 📉</div>
-          <h1 style={{ fontSize: 28, fontWeight: 800, margin: '0 0 8px', color: '#F5E642′ }}>DFW Tax Abatement & Incentive Guide</h1>
+          <h1 style={{ fontSize: 28, fontWeight: 800, margin: '0 0 8px', color: '#F5E642' }}>DFW Tax Abatement & Incentive Guide</h1>
           <p style={{ margin: 0, color: '#a0aec0', fontSize: 15, lineHeight: 1.6 }}>
             Texas has some of the highest property tax rates in the US — but also meaningful exemptions and economic development incentives. Knowing what applies to your property can save thousands annually.
           </p>
@@ -60,20 +60,20 @@ export default function DFWTaxAbatementGuide() {
             { icon: '🏚️', title: 'Historic Preservation Credits', body: 'The Texas Historic Preservation Tax Credit (25%) applies to certified historic structures undergoing substantial rehabilitation. In DFW, this covers parts of downtown Dallas, Sundance Square in Fort Worth, and designated neighborhood historic districts.' },
             { icon: '🏠', title: 'Don\’t Miss Your Homestead Exemption', body: 'The most valuable and most commonly missed exemption: Texas homestead. As of 2023, it removes $100,000 from your assessed value for school taxes — saving roughly $1,300–$2,500/year. File by April 30 of the year after you move in. Late applications can be filed for up to 2 years back.' },
           ].map(card => (
-            <div key={card.title} style={{ background: '#111f3a', borderRadius: 10, padding: 20, border: '1px solid #1e3560′ }}>
+            <div key={card.title} style={{ background: '#111f3a', borderRadius: 10, padding: 20, border: '1px solid #1e3560' }}>
               <div style={{ fontSize: 22, marginBottom: 6 }}>{card.icon}</div>
-              <h3 style={{ margin: '0 0 6px', fontSize: 16, fontWeight: 700, color: '#F5E642′ }}>{card.title}</h3>
+              <h3 style={{ margin: '0 0 6px', fontSize: 16, fontWeight: 700, color: '#F5E642' }}>{card.title}</h3>
               <p style={{ margin: 0, color: '#a0aec0', fontSize: 14, lineHeight: 1.6 }}>{card.body}</p>
             </div>
           ))}
         </div>
 
-        <div style={{ background: '#111f3a', borderRadius: 12, padding: 28, border: '1px solid #1e3560′ }}>
-          <h2 style={{ margin: '0 0 16px', fontSize: 20, fontWeight: 700, color: '#F5E642′ }}>🎯 Your Situation → Available Programs</h2>
+        <div style={{ background: '#111f3a', borderRadius: 12, padding: 28, border: '1px solid #1e3560' }}>
+          <h2 style={{ margin: '0 0 16px', fontSize: 20, fontWeight: 700, color: '#F5E642' }}>🎯 Your Situation → Available Programs</h2>
           <div style={{ display: 'flex', flexDirection: 'column', gap: 10, marginBottom: 20 }}>
             {scenarios.map(s => (
               <button key={s.id} onClick={() => setSelected(s.id)}
-                style={{ padding: '12px 16px', borderRadius: 8, border: `2px solid ${selected === s.id ? '#F5E642' : '#1e3560'}`, background: selected === s.id ? 'rgba(245,230,66,0.1)' : '#0d1a30', cursor: 'pointer', textAlign: 'left', fontWeight: 600, fontSize: 14, color: '#e8eaf0′ }}>
+                style={{ padding: '12px 16px', borderRadius: 8, border: `2px solid ${selected === s.id ? '#F5E642' : '#1e3560'}`, background: selected === s.id ? 'rgba(245,230,66,0.1)' : '#0d1a30', cursor: 'pointer', textAlign: 'left', fontWeight: 600, fontSize: 14, color: '#e8eaf0' }}>
                 {s.label}
               </button>
             ))}
@@ -81,7 +81,7 @@ export default function DFWTaxAbatementGuide() {
           {match && (
             <div>
               {match.programs.map((prog, i) => (
-                <div key={i} style={{ background: '#0d1a30', borderRadius: 8, padding: 16, marginBottom: 12, borderLeft: '3px solid #F5E642′ }}>
+                <div key={i} style={{ background: '#0d1a30', borderRadius: 8, padding: 16, marginBottom: 12, borderLeft: '3px solid #F5E642' }}>
                   <div style={{ fontWeight: 700, fontSize: 15, marginBottom: 6 }}>{prog.name}</div>
                   <div style={{ color: '#F5E642', fontSize: 13, marginBottom: 4 }}>💵 {prog.benefit}</div>
                   <div style={{ color: '#a0aec0', fontSize: 13, marginBottom: 4 }}>📋 Apply: {prog.apply}</div>

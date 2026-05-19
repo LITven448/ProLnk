@@ -30,17 +30,17 @@ export default function DFWHVACBrandLogoGuide2026() {
         <p style={{ color: '#94a3b8', fontSize: 15, marginBottom: 32 }}>Identify your HVAC brand from the label on your outdoor unit. Find the model number to check your warranty status instantly.</p>
 
         <div style={{ background: '#0f2040', borderRadius: 12, padding: 24, marginBottom: 24 }}>
-          <h2 style={{ fontSize: 17, fontWeight: 700, marginBottom: 16, color: '#F5E642′ }}>🏷️ Select Your Brand</h2>
+          <h2 style={{ fontSize: 17, fontWeight: 700, marginBottom: 16, color: '#F5E642' }}>🏷️ Select Your Brand</h2>
           <div style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
             {BRANDS.map(b => (
               <button key={b.name} onClick={() => setSelected(b.name)}
-                style={{ display: 'flex', alignItems: 'center', gap: 14, padding: '12px 16px', borderRadius: 8, border: `2px solid ${selected === b.name ? '#F5E642' : '#1e3a5f'}`, background: selected === b.name ? '#0A1628′ : '#0A1628', cursor: ’pointer', textAlign: 'left' }}>
+                style={{ display: 'flex', alignItems: 'center', gap: 14, padding: '12px 16px', borderRadius: 8, border: `2px solid ${selected === b.name ? '#F5E642' : '#1e3a5f'}`, background: selected === b.name ? '#0A1628' : '#0A1628', cursor: 'pointer', textAlign: 'left' }}>
                 <span style={{ fontSize: 24 }}>{b.emoji}</span>
                 <div>
-                  <div style={{ fontSize: 15, fontWeight: 700, color: selected === b.name ? '#F5E642′ : '#e2e8f0' }}>{b.name}</div>
+                  <div style={{ fontSize: 15, fontWeight: 700, color: selected === b.name ? '#F5E642' : '#e2e8f0' }}>{b.name}</div>
                   <div style={{ fontSize: 12, color: '#64748b' }}>Logo: {b.logo}</div>
                 </div>
-                <span style={{ marginLeft: 'auto', fontSize: 12, padding: '4px 10px', borderRadius: 99, background: '#1e3a5f', color: '#94a3b8′ }}>{b.tier}</span>
+                <span style={{ marginLeft: 'auto', fontSize: 12, padding: '4px 10px', borderRadius: 99, background: '#1e3a5f', color: '#94a3b8' }}>{b.tier}</span>
               </button>
             ))}
           </div>
@@ -50,15 +50,15 @@ export default function DFWHVACBrandLogoGuide2026() {
           <div style={{ background: '#0f2040', borderRadius: 12, padding: 24, marginBottom: 24 }}>
             <h3 style={{ fontSize: 17, fontWeight: 700, color: '#F5E642', marginBottom: 12 }}>{brand.emoji} {brand.name} Details</h3>
             <div style={{ fontSize: 14, color: '#cbd5e1', lineHeight: 1.7, marginBottom: 16 }}>
-              <strong style={{ color: '#e2e8f0′ }}>Warranty:</strong> {brand.warranty}<br />
-              <strong style={{ color: '#e2e8f0′ }}>Finding Your Model #:</strong> {brand.tip}
+              <strong style={{ color: '#e2e8f0' }}>Warranty:</strong> {brand.warranty}<br />
+              <strong style={{ color: '#e2e8f0' }}>Finding Your Model #:</strong> {brand.tip}
             </div>
             <div style={{ background: '#0A1628', borderRadius: 8, padding: 16 }}>
               <div style={{ fontSize: 13, color: '#F5E642', fontWeight: 700, marginBottom: 10 }}>📅 How old is your system?</div>
               <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8 }}>
                 {Object.keys(MODEL_AGE).map(a => (
                   <button key={a} onClick={() => setAge(a)}
-                    style={{ padding: '8px 14px', borderRadius: 8, border: `2px solid ${age === a ? '#F5E642' : '#1e3a5f'}`, background: age === a ? '#F5E642′ : '#0A1628', color: age === a ? '#0A1628' : '#fff', fontWeight: 600, cursor: ’pointer', fontSize: 13 }}>
+                    style={{ padding: '8px 14px', borderRadius: 8, border: `2px solid ${age === a ? '#F5E642' : '#1e3a5f'}`, background: age === a ? '#F5E642' : '#0A1628', color: age === a ? '#0A1628' : '#fff', fontWeight: 600, cursor: 'pointer', fontSize: 13 }}>
                     {a} yrs
                   </button>
                 ))}

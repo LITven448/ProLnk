@@ -51,7 +51,7 @@ export default function DFWWDOInspectionGuide() {
         <div style={{ backgroundColor: '#0D1F3C', borderRadius: 12, padding: 24, marginBottom: 24 }}>
           <h2 style={{ color: '#F5E642', fontSize: 18, fontWeight: 700, margin: '0 0 16px' }}>🏠 Why WDO Inspections Matter in DFW</h2>
           <p style={{ color: '#CBD5E1', lineHeight: 1.7, margin: '0 0 12px' }}>North Texas is one of the highest-risk termite zones in the United States. Subterranean termites thrive in DFW's clay soil and humid summers. A standard TREC home inspection does not include a WDO inspection — it must be ordered separately.</p>
-          <p style={{ color: '#CBD5E1', lineHeight: 1.7, margin: 0 }}><strong style={{ color: '#F5E642′ }}>VA and FHA loans require</strong> a WDO report before closing. Conventional buyers are not required to order one, but most real estate professionals recommend it on any DFW home.</p>
+          <p style={{ color: '#CBD5E1', lineHeight: 1.7, margin: 0 }}><strong style={{ color: '#F5E642' }}>VA and FHA loans require</strong> a WDO report before closing. Conventional buyers are not required to order one, but most real estate professionals recommend it on any DFW home.</p>
         </div>
 
         <div style={{ backgroundColor: '#0D1F3C', borderRadius: 12, padding: 24, marginBottom: 24 }}>
@@ -104,7 +104,7 @@ export default function DFWWDOInspectionGuide() {
             {riskFactors.map(f => (
               <label key={f.id} style={{ display: 'flex', alignItems: 'center', gap: 12, cursor: 'pointer', backgroundColor: selected.includes(f.id) ? '#1E3A5F' : '#132240', borderRadius: 8, padding: '12px 16px', border: `2px solid ${selected.includes(f.id) ? '#F5E642' : 'transparent'}`, transition: 'all 0.2s' }}>
                 <input type="checkbox" checked={selected.includes(f.id)} onChange={() => toggle(f.id)} style={{ display: 'none' }} />
-                <span style={{ width: 20, height: 20, borderRadius: 4, border: `2px solid ${selected.includes(f.id) ? '#F5E642' : '#4A5568'}`, backgroundColor: selected.includes(f.id) ? '#F5E642′ : ’transparent', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0, color: '#0A1628', fontWeight: 900, fontSize: 14 }}>{selected.includes(f.id) ? '✓' : ''}</span>
+                <span style={{ width: 20, height: 20, borderRadius: 4, border: `2px solid ${selected.includes(f.id) ? '#F5E642' : '#4A5568'}`, backgroundColor: selected.includes(f.id) ? '#F5E642' : 'transparent', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0, color: '#0A1628', fontWeight: 900, fontSize: 14 }}>{selected.includes(f.id) ? '✓' : ''}</span>
                 <span style={{ color: selected.includes(f.id) ? '#fff' : '#CBD5E1', fontSize: 15 }}>{f.label}</span>
               </label>
             ))}

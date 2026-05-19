@@ -30,7 +30,7 @@ export default function DFWHVACHomeEquityGuide() {
   const hvacImpact = hvacObj && homeObj ? Math.round(homeObj.base * (1 - hvacObj.multiplier)) : null;
 
   return (
-    <div style={{ background: '#0A1628', minHeight: '100vh', padding: '40px 20px', fontFamily: 'system-ui, sans-serif', color: '#E8EDF5′ }}>
+    <div style={{ background: '#0A1628', minHeight: '100vh', padding: '40px 20px', fontFamily: 'system-ui, sans-serif', color: '#E8EDF5' }}>
       <div style={{ maxWidth: 780, margin: '0 auto' }}>
         <div style={{ textAlign: 'center', marginBottom: 40 }}>
           <div style={{ fontSize: 48, marginBottom: 12 }}>🏠</div>
@@ -54,11 +54,11 @@ export default function DFWHVACHomeEquityGuide() {
           <h2 style={{ fontSize: 20, fontWeight: 700, color: '#F5E642', marginBottom: 20 }}>📉 Calculate Your HVAC Equity Impact</h2>
 
           <div style={{ marginBottom: 20 }}>
-            <div style={{ fontWeight: 600, marginBottom: 10, color: '#CBD5E1′ }}>Your HVAC system age:</div>
+            <div style={{ fontWeight: 600, marginBottom: 10, color: '#CBD5E1' }}>Your HVAC system age:</div>
             <div style={{ display: 'grid', gap: 8 }}>
               {hvacAges.map(h => (
                 <button key={h.id} onClick={() => setHvac(h.id)}
-                  style={{ background: hvac === h.id ? '#F5E642′ : '#0A1628', color: hvac === h.id ? '#0A1628' : '#E8EDF5', border: '1px solid #1E3A5F', borderRadius: 8, padding: '10px 14px', cursor: ’pointer', textAlign: 'left', fontWeight: 600 }}>
+                  style={{ background: hvac === h.id ? '#F5E642' : '#0A1628', color: hvac === h.id ? '#0A1628' : '#E8EDF5', border: '1px solid #1E3A5F', borderRadius: 8, padding: '10px 14px', cursor: 'pointer', textAlign: 'left', fontWeight: 600 }}>
                   {h.label}
                 </button>
               ))}
@@ -66,11 +66,11 @@ export default function DFWHVACHomeEquityGuide() {
           </div>
 
           <div style={{ marginBottom: 20 }}>
-            <div style={{ fontWeight: 600, marginBottom: 10, color: '#CBD5E1′ }}>Estimated home value:</div>
+            <div style={{ fontWeight: 600, marginBottom: 10, color: '#CBD5E1' }}>Estimated home value:</div>
             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 8 }}>
               {homeValues.map(v => (
                 <button key={v.id} onClick={() => setHomeVal(v.id)}
-                  style={{ background: homeVal === v.id ? '#F5E642′ : '#0A1628', color: homeVal === v.id ? '#0A1628' : '#E8EDF5', border: '1px solid #1E3A5F', borderRadius: 8, padding: '10px 14px', cursor: ’pointer', fontWeight: 600 }}>
+                  style={{ background: homeVal === v.id ? '#F5E642' : '#0A1628', color: homeVal === v.id ? '#0A1628' : '#E8EDF5', border: '1px solid #1E3A5F', borderRadius: 8, padding: '10px 14px', cursor: 'pointer', fontWeight: 600 }}>
                   {v.label}
                 </button>
               ))}
@@ -80,7 +80,7 @@ export default function DFWHVACHomeEquityGuide() {
           {hvacImpact !== null && hvacObj && (
             <div style={{ background: '#0A1628', border: '1px solid #F5E642', borderRadius: 10, padding: 20 }}>
               <div style={{ fontWeight: 700, color: '#F5E642', fontSize: 18, marginBottom: 8 }}>
-                Estimated equity risk: <span style={{ color: hvacImpact > 20000 ? '#FF6B6B' : '#F5E642′ }}>${hvacImpact.toLocaleString()}</span>
+                Estimated equity risk: <span style={{ color: hvacImpact > 20000 ? '#FF6B6B' : '#F5E642' }}>${hvacImpact.toLocaleString()}</span>
               </div>
               <div style={{ color: '#CBD5E1', lineHeight: 1.6 }}>{hvacObj.note}</div>
             </div>

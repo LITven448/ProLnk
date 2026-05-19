@@ -35,15 +35,15 @@ export default function DFWFoundationDrainageSystems2026() {
             <div key={item.method} style={{ background: '#1e2d4a', borderRadius: 8, padding: '16px' }}>
               <div style={{ fontWeight: 700, fontSize: 14, color: '#F5E642', marginBottom: 4 }}>{item.method}</div>
               <div style={{ fontSize: 13, color: '#e2e8f0', marginBottom: 4 }}>💰 {item.cost}</div>
-              <div style={{ fontSize: 12, color: '#94a3b8′ }}>Best for: {item.best}</div>
+              <div style={{ fontSize: 12, color: '#94a3b8' }}>Best for: {item.best}</div>
             </div>
           ))}
         </div>
 
-        <h2 style={{ fontSize: 17, fontWeight: 700, marginBottom: 14, color: '#F5E642′ }}>🔍 Drainage Problem Solver</h2>
+        <h2 style={{ fontSize: 17, fontWeight: 700, marginBottom: 14, color: '#F5E642' }}>🔍 Drainage Problem Solver</h2>
         <div style={{ display: 'flex', flexDirection: 'column', gap: 8, marginBottom: 20 }}>
           {problems.map(p => (
-            <button key={p.label} onClick={() => handleSelect(p)} style={{ background: problem === p.label ? '#F5E642′ : '#1e2d4a', color: problem === p.label ? '#0A1628' : '#fff', border: ’none', borderRadius: 6, padding: '12px 16px', textAlign: 'left', cursor: 'pointer', fontWeight: 600, fontSize: 14 }}>{p.label}</button>
+            <button key={p.label} onClick={() => handleSelect(p)} style={{ background: problem === p.label ? '#F5E642' : '#1e2d4a', color: problem === p.label ? '#0A1628' : '#fff', border: 'none', borderRadius: 6, padding: '12px 16px', textAlign: 'left', cursor: 'pointer', fontWeight: 600, fontSize: 14 }}>{p.label}</button>
           ))}
         </div>
         {solution && (

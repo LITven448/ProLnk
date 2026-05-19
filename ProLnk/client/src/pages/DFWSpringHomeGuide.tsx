@@ -41,13 +41,13 @@ export default function DFWSpringHomeGuide() {
 
   return (
     <div style={{ background: '#0A1628', minHeight: '100vh', color: '#fff', fontFamily: 'system-ui, sans-serif', padding: '0 0 60px' }}>
-      <div style={{ background: 'linear-gradient(135deg, #0A1628 0%, #1a2d4a 100%)', padding: '48px 24px 40px', textAlign: 'center', borderBottom: '2px solid #F5E642′ }}>
+      <div style={{ background: 'linear-gradient(135deg, #0A1628 0%, #1a2d4a 100%)', padding: '48px 24px 40px', textAlign: 'center', borderBottom: '2px solid #F5E642' }}>
         <div style={{ fontSize: 48, marginBottom: 12 }}>🌸</div>
         <h1 style={{ fontSize: 32, fontWeight: 800, color: '#F5E642', margin: '0 0 8px' }}>DFW Spring Home Guide</h1>
         <p style={{ color: '#94a3b8', fontSize: 16, margin: 0 }}>March – May Preparation Checklist</p>
       </div>
 
-      <div style={{ maxWidth: 720, margin: '0 auto', padding: '32px 24px 0′ }}>
+      <div style={{ maxWidth: 720, margin: '0 auto', padding: '32px 24px 0' }}>
         <div style={{ background: '#F5E642', color: '#0A1628', borderRadius: 10, padding: '14px 20px', marginBottom: 28, fontWeight: 700, fontSize: 15 }}>
           🚨 DFW LAW: It is illegal to prune oak trees April 1 – July 1 due to oak wilt disease spread via sap beetles. Violations risk killing your tree and your neighbors'.
         </div>
@@ -101,22 +101,22 @@ export default function DFWSpringHomeGuide() {
         </button>
 
         {showResults && (
-          <div style={{ background: '#111f35', borderRadius: 12, padding: '24px', border: '2px solid #F5E642′ }}>
+          <div style={{ background: '#111f35', borderRadius: 12, padding: '24px', border: '2px solid #F5E642' }}>
             <h3 style={{ color: '#F5E642', fontSize: 18, margin: '0 0 16px' }}>Your Spring Task List</h3>
             {tasks.length === 0 ? (
-              <p style={{ color: '#94a3b8′ }}>Select home features above to generate your list.</p>
+              <p style={{ color: '#94a3b8' }}>Select home features above to generate your list.</p>
             ) : (
               <>
                 {tasks.map((t, i) => (
                   <div key={t.id} style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', padding: '10px 0', borderBottom: i < tasks.length - 1 ? '1px solid #1e3a5f' : 'none' }}>
                     <span style={{ color: '#cbd5e1', fontSize: 14, flex: 1, paddingRight: 12 }}>{i + 1}. {t.spring}</span>
-                    <span style={{ color: t.cost === 0 ? '#94a3b8′ : '#F5E642', fontWeight: 600, whiteSpace: ’nowrap' }}>{t.cost === 0 ? 'FREE' : `~$${t.cost}`}</span>
+                    <span style={{ color: t.cost === 0 ? '#94a3b8' : '#F5E642', fontWeight: 600, whiteSpace: 'nowrap' }}>{t.cost === 0 ? 'FREE' : `~$${t.cost}`}</span>
                   </div>
                 ))}
                 {totalCost > 0 && (
                   <div style={{ marginTop: 16, paddingTop: 16, borderTop: '2px solid #F5E642', display: 'flex', justifyContent: 'space-between', fontWeight: 700, fontSize: 16 }}>
                     <span>Estimated Total</span>
-                    <span style={{ color: '#F5E642′ }}>${totalCost.toLocaleString()}</span>
+                    <span style={{ color: '#F5E642' }}>${totalCost.toLocaleString()}</span>
                   </div>
                 )}
               </>

@@ -42,7 +42,7 @@ export default function DFWHVACWeatherford() {
           ].map(s => (
             <div key={s.label} style={{ background: '#112240', borderRadius: 10, padding: 20, textAlign: 'center' }}>
               <div style={{ fontSize: 28, marginBottom: 6 }}>{s.icon}</div>
-              <div style={{ fontSize: 15, fontWeight: 700, color: '#F5E642′ }}>{s.value}</div>
+              <div style={{ fontSize: 15, fontWeight: 700, color: '#F5E642' }}>{s.value}</div>
               <div style={{ color: '#aaa', fontSize: 13, marginTop: 4 }}>{s.label}</div>
             </div>
           ))}
@@ -123,14 +123,14 @@ export default function DFWHVACWeatherford() {
             {['✅ Dual-fuel heat pump installation', '✅ Propane & all-electric system expertise',
               '✅ Large-home zoned system design', '✅ Parker County permit-ready installs',
               '✅ Rural property service calls', '✅ Emergency HVAC service'].map(s => (
-              <div key={s} style={{ color: '#ccc', fontSize: 14, padding: '8px 0′ }}>{s}</div>
+              <div key={s} style={{ color: '#ccc', fontSize: 14, padding: '8px 0' }}>{s}</div>
             ))}
           </div>
         </div>
 
         <div style={{ textAlign: 'center', background: '#F5E642', borderRadius: 12, padding: 32 }}>
           <div style={{ fontSize: 28 }}>📞</div>
-          <h2 style={{ color: '#0A1628', fontSize: 22, fontWeight: 700, margin: '8px 0′ }}>Get a Free HVAC Quote in Weatherford</h2>
+          <h2 style={{ color: '#0A1628', fontSize: 22, fontWeight: 700, margin: '8px 0' }}>Get a Free HVAC Quote in Weatherford</h2>
           <p style={{ color: '#333', marginBottom: 16 }}>Rural HVAC experts, propane-certified, same-week scheduling</p>
           <button style={{ background: '#0A1628', color: '#F5E642', border: 'none', borderRadius: 8, padding: '14px 32px', fontSize: 16, fontWeight: 700, cursor: 'pointer' }}>
             Request Free Quote →

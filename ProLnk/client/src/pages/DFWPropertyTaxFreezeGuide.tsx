@@ -19,7 +19,7 @@ export default function DFWPropertyTaxFreezeGuide() {
       <div style={{ maxWidth: 760, margin: '0 auto' }}>
         <div style={{ marginBottom: 8, fontSize: 13, color: '#2563EB', fontWeight: 600 }}>🏛️ DFW Property Tax</div>
         <h1 style={{ fontSize: 28, fontWeight: 700, marginBottom: 8 }}>Property Tax Freeze Guide — Seniors 65+</h1>
-        <p style={{ color: '#64748B', marginBottom: 24, fontSize: 15 }}>Texas law allows homeowners age 65+ to freeze their school district property taxes. Understand what's frozen, what isn’t, and how to apply at your county appraisal district.</p>
+        <p style={{ color: '#64748B', marginBottom: 24, fontSize: 15 }}>Texas law allows homeowners age 65+ to freeze their school district property taxes. Understand what's frozen, what isn't, and how to apply at your county appraisal district.</p>
 
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12, marginBottom: 28 }}>
           <div style={{ background: '#F0FDF4', border: '1px solid #BBF7D0', borderRadius: 10, padding: 16 }}>
@@ -37,7 +37,7 @@ export default function DFWPropertyTaxFreezeGuide() {
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16, marginBottom: 16 }}>
             <div>
               <label style={{ fontSize: 13, fontWeight: 600, color: '#374151', display: 'block', marginBottom: 6 }}>Your Age</label>
-              <input type="number" value={age} onChange={e => setAge(e.target.value)} placeholder="e.g. 67″ style={{ width: '100%', padding: '10px 12px', border: '1px solid #CBD5E1', borderRadius: 8, fontSize: 15, boxSizing: 'border-box' }} />
+              <input type="number" value={age} onChange={e => setAge(e.target.value)} placeholder="e.g. 67" style={{ width: '100%', padding: '10px 12px', border: '1px solid #CBD5E1', borderRadius: 8, fontSize: 15, boxSizing: 'border-box' }} />
             </div>
             <div>
               <label style={{ fontSize: 13, fontWeight: 600, color: '#374151', display: 'block', marginBottom: 6 }}>DFW County</label>
@@ -48,7 +48,7 @@ export default function DFWPropertyTaxFreezeGuide() {
             </div>
           </div>
           {age && county && (
-            <div style={{ background: eligible ? '#F0FDF4′ : '#FFF7ED', border: `1px solid ${eligible ? '#BBF7D0' : '#FED7AA'}`, borderRadius: 10, padding: 14, fontSize: 15, fontWeight: 600, color: eligible ? '#16A34A' : '#EA580C' }}>
+            <div style={{ background: eligible ? '#F0FDF4' : '#FFF7ED', border: `1px solid ${eligible ? '#BBF7D0' : '#FED7AA'}`, borderRadius: 10, padding: 14, fontSize: 15, fontWeight: 600, color: eligible ? '#16A34A' : '#EA580C' }}>
               {eligible ? '✅ You qualify for the Over-65 school tax freeze!' : '⚠️ Must be age 65+ to qualify for the freeze.'}
             </div>
           )}

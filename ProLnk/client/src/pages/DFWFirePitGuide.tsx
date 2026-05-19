@@ -38,7 +38,7 @@ export default function DFWFirePitGuide() {
         <div style={{ fontSize: '2.2rem', fontWeight: 800, color: '#F5E642', marginBottom: '0.25rem' }}>🔥 DFW Fire Pit Guide</div>
         <div style={{ color: '#94A3B8', marginBottom: '2rem' }}>Navigate DFW burn bans and wind — choose the right fire feature</div>
 
-        <div style={{ background: '#7F1D1D', borderRadius: 12, padding: '1.25rem', marginBottom: '1.5rem', border: '1px solid #EF4444′ }}>
+        <div style={{ background: '#7F1D1D', borderRadius: 12, padding: '1.25rem', marginBottom: '1.5rem', border: '1px solid #EF4444' }}>
           <div style={{ color: '#FCA5A5', fontWeight: 700, marginBottom: '0.5rem' }}>🚨 DFW Burn Ban Reality</div>
           <div style={{ color: '#FEE2E2', lineHeight: 1.7 }}>
             DFW counties issue burn bans 30–80 days per year during drought conditions. <strong>Wood-burning fire pits are prohibited during burn bans.</strong> Propane and natural gas fire pits are legal even during most burn bans because they produce no airborne embers. If you want a year-round fire feature in DFW, gas is the only reliable option.
@@ -80,17 +80,17 @@ export default function DFWFirePitGuide() {
             </div>
             <div>
               <div style={{ color: '#94A3B8', fontSize: '0.85rem', marginBottom: '0.4rem' }}>Patio Size (sq ft)</div>
-              <input value={patio} onChange={e => setPatio(e.target.value)} placeholder="e.g. 300″ style={{ width: '100%', padding: '0.6rem', borderRadius: 8, border: '1px solid #2D4A6E', background: '#0A1628', color: '#fff', boxSizing: 'border-box' }} />
+              <input value={patio} onChange={e => setPatio(e.target.value)} placeholder="e.g. 300" style={{ width: '100%', padding: '0.6rem', borderRadius: 8, border: '1px solid #2D4A6E', background: '#0A1628', color: '#fff', boxSizing: 'border-box' }} />
             </div>
           </div>
           <button onClick={calculate} style={{ background: '#F5E642', color: '#0A1628', fontWeight: 700, padding: '0.75rem 2rem', borderRadius: 8, border: 'none', cursor: 'pointer', fontSize: '1rem' }}>Get Recommendation</button>
           {result && (
-            <div style={{ marginTop: '1.25rem', background: '#0A1628', borderRadius: 10, padding: '1.25rem', border: '1px solid #F5E642′ }}>
+            <div style={{ marginTop: '1.25rem', background: '#0A1628', borderRadius: 10, padding: '1.25rem', border: '1px solid #F5E642' }}>
               <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
                 <div style={{ color: '#F5E642', fontWeight: 700 }}>{result.label}</div>
                 <div style={{ background: result.banSafe ? '#14532D' : '#7F1D1D', color: result.banSafe ? '#86EFAC' : '#FCA5A5', borderRadius: 6, padding: '0.15rem 0.5rem', fontSize: '0.8rem' }}>{result.banSafe ? '✅ Burn Ban Safe' : '⚠️ Banned During Restrictions'}</div>
               </div>
-              <div style={{ color: '#CBD5E1′ }}>Cost: {result.cost}</div>
+              <div style={{ color: '#CBD5E1' }}>Cost: {result.cost}</div>
               <div style={{ color: '#CBD5E1', marginTop: '0.25rem' }}>Safety Clearances: {result.clearance}</div>
               <div style={{ color: '#94A3B8', marginTop: '0.5rem', fontSize: '0.85rem' }}>💨 Wind tip: {result.windTip}</div>
               <div style={{ color: '#94A3B8', marginTop: '0.5rem', fontSize: '0.85rem' }}>🏘️ HOA: {result.hoa}</div>

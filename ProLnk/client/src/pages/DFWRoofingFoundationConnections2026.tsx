@@ -29,7 +29,7 @@ export default function DFWRoofingFoundationConnections2026() {
         <h1 style={{ fontSize: 28, fontWeight: 800, marginBottom: 8 }}>DFW Roof and Foundation Connection Guide 2026</h1>
         <p style={{ color: '#94a3b8', marginBottom: 32 }}>How DFW roofing and foundation systems are linked — and why fixing one without the other fails.</p>
 
-        <div style={{ background: '#112240', borderRadius: 12, padding: 20, marginBottom: 24, borderLeft: '4px solid #F5E642′ }}>
+        <div style={{ background: '#112240', borderRadius: 12, padding: 20, marginBottom: 24, borderLeft: '4px solid #F5E642' }}>
           <div style={{ fontWeight: 700, color: '#F5E642', marginBottom: 8 }}>💧 The Water Cycle That Destroys DFW Homes</div>
           <div style={{ color: '#94a3b8', fontSize: 14, lineHeight: 1.7 }}>
             Roof leak → water penetrates exterior → saturates soil at foundation perimeter → DFW clay expands (heave) → floor becomes uneven → interior doors stick → cracks appear in drywall. This cascade is fully preventable with coordinated roof and foundation maintenance.
@@ -53,12 +53,12 @@ export default function DFWRoofingFoundationConnections2026() {
         </div>
 
         <div style={{ background: '#112240', borderRadius: 16, padding: 24, marginBottom: 24 }}>
-          <h2 style={{ fontSize: 18, fontWeight: 700, marginBottom: 16, color: '#F5E642′ }}>🔍 Dual System Interaction Guide</h2>
+          <h2 style={{ fontSize: 18, fontWeight: 700, marginBottom: 16, color: '#F5E642' }}>🔍 Dual System Interaction Guide</h2>
           <p style={{ color: '#94a3b8', marginBottom: 16, fontSize: 14 }}>What is your concern?</p>
           <div style={{ display: 'flex', flexDirection: 'column', gap: 10, marginBottom: 20 }}>
             {concerns.map(c => (
               <button key={c.id} onClick={() => { setConcern(c.id); setResult(''); }}
-                style={{ background: concern === c.id ? '#F5E642′ : '#1e3a5f', color: concern === c.id ? '#0A1628' : '#fff', border: ’none', borderRadius: 8, padding: '12px 16px', cursor: 'pointer', textAlign: 'left', fontWeight: 600 }}>
+                style={{ background: concern === c.id ? '#F5E642' : '#1e3a5f', color: concern === c.id ? '#0A1628' : '#fff', border: 'none', borderRadius: 8, padding: '12px 16px', cursor: 'pointer', textAlign: 'left', fontWeight: 600 }}>
                 {c.label}
               </button>
             ))}
@@ -68,7 +68,7 @@ export default function DFWRoofingFoundationConnections2026() {
             Show System Interaction Guide →
           </button>
           {result && (
-            <div style={{ marginTop: 20, background: '#0A1628', borderRadius: 10, padding: 18, borderLeft: '4px solid #F5E642′ }}>
+            <div style={{ marginTop: 20, background: '#0A1628', borderRadius: 10, padding: 18, borderLeft: '4px solid #F5E642' }}>
               <p style={{ color: '#fff', lineHeight: 1.6 }}>{result}</p>
             </div>
           )}

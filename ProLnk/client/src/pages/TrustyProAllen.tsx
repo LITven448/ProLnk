@@ -88,9 +88,9 @@ export default function TrustyProAllen() {
           <h2 style={{ textAlign: 'center', fontSize: 28, fontWeight: 700, marginBottom: 48 }}>Allen 75002 by the Numbers</h2>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: 24 }}>
             {[
-              { label: 'Avg Home Value',         value: '$450K', sub: 'Allen 75002 2025′ },
+              { label: 'Avg Home Value',         value: '$450K', sub: 'Allen 75002 2025' },
               { label: 'Undetected Storm Damage', value: '28%',  sub: 'of Allen homeowners' },
-              { label: 'Hail Events (24 months)', value: '2',    sub: 'significant events in 75002′ },
+              { label: 'Hail Events (24 months)', value: '2',    sub: 'significant events in 75002' },
               { label: 'Emergency Response',      value: '38 min', sub: 'avg for Allen pros' },
             ].map(s => (
               <div key={s.label} style={{ background: '#fff', border: '1px solid #e5e7eb', borderRadius: 16, padding: 28, textAlign: 'center', boxShadow: '0 1px 4px rgba(0,0,0,0.06)' }}>

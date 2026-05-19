@@ -49,34 +49,34 @@ export default function DFWFireCodeHomeGuide2026() {
   const required = requirements.filter(r => r.status === "Required").length;
 
   return (
-    <div style={{ backgroundColor: "#0A1628″, minHeight: "100vh", color: "#fff", fontFamily: "system-ui, sans-serif", padding: "24px" }}>
+    <div style={{ backgroundColor: "#0A1628", minHeight: "100vh", color: "#fff", fontFamily: "system-ui, sans-serif", padding: "24px" }}>
       <div style={{ maxWidth: "860px", margin: "0 auto" }}>
         <div style={{ marginBottom: "32px" }}>
           <span style={{ fontSize: "32px" }}>🔥</span>
-          <h1 style={{ fontSize: "28px", fontWeight: "800″, color: "#F5E642", marginTop: "8px" }}>DFW Home Fire Code Guide 2026</h1>
-          <p style={{ color: "#94a3b8″, marginTop: "8px" }}>Texas follows the International Residential Code for residential fire safety. DFW cities enforce smoke and CO detector requirements on all homes. Know what is required for your home type.</p>
+          <h1 style={{ fontSize: "28px", fontWeight: "800", color: "#F5E642", marginTop: "8px" }}>DFW Home Fire Code Guide 2026</h1>
+          <p style={{ color: "#94a3b8", marginTop: "8px" }}>Texas follows the International Residential Code for residential fire safety. DFW cities enforce smoke and CO detector requirements on all homes. Know what is required for your home type.</p>
         </div>
 
         <div style={{ marginBottom: "20px" }}>
-          <label style={{ color: "#94a3b8″, fontSize: "13px", display: "block", marginBottom: "6px" }}>Home Type</label>
-          <select value={homeType} onChange={e => setHomeType(e.target.value)} style={{ padding: "10px 12px", backgroundColor: "#1e293b", border: "1px solid #334155″, borderRadius: "8px", color: "#fff", fontSize: "14px", minWidth: "280px" }}>
+          <label style={{ color: "#94a3b8", fontSize: "13px", display: "block", marginBottom: "6px" }}>Home Type</label>
+          <select value={homeType} onChange={e => setHomeType(e.target.value)} style={{ padding: "10px 12px", backgroundColor: "#1e293b", border: "1px solid #334155", borderRadius: "8px", color: "#fff", fontSize: "14px", minWidth: "280px" }}>
             {Object.keys(fireData).map(k => <option key={k}>{k}</option>)}
           </select>
         </div>
 
         <div style={{ backgroundColor: "#1e293b", borderRadius: "12px", padding: "20px", marginBottom: "24px" }}>
           <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "16px" }}>
-            <h2 style={{ color: "#F5E642″, fontWeight: "700" }}>Fire Code Compliance — {homeType}</h2>
+            <h2 style={{ color: "#F5E642", fontWeight: "700" }}>Fire Code Compliance — {homeType}</h2>
             <span style={{ backgroundColor: "#991b1b", color: "#fff", borderRadius: "20px", padding: "4px 12px", fontSize: "13px" }}>{required} Items Required by Law</span>
           </div>
           <div style={{ display: "flex", flexDirection: "column", gap: "10px" }}>
             {requirements.map(req => (
               <div key={req.label} style={{ backgroundColor: "#0f172a", border: `1px solid ${req.status === "Required" ? "#ef4444" : req.status.startsWith("Not") ? "#334155" : "#F5E642"}`, borderRadius: "8px", padding: "14px" }}>
                 <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", gap: "12px" }}>
-                  <span style={{ fontWeight: "600″, color: "#e2e8f0", fontSize: "14px" }}>{req.label}</span>
-                  <span style={{ backgroundColor: req.status === "Required" ? "#991b1b" : req.status.startsWith("Not") ? "#1e293b" : "#713f12″, color: req.status === "Required" ? "#fca5a5" : "#94a3b8", borderRadius: "12px", padding: "2px 8px", fontSize: "11px", whiteSpace: "nowrap", fontWeight: "700" }}>{req.status}</span>
+                  <span style={{ fontWeight: "600", color: "#e2e8f0", fontSize: "14px" }}>{req.label}</span>
+                  <span style={{ backgroundColor: req.status === "Required" ? "#991b1b" : req.status.startsWith("Not") ? "#1e293b" : "#713f12", color: req.status === "Required" ? "#fca5a5" : "#94a3b8", borderRadius: "12px", padding: "2px 8px", fontSize: "11px", whiteSpace: "nowrap", fontWeight: "700" }}>{req.status}</span>
                 </div>
-                <p style={{ color: "#94a3b8″, fontSize: "13px", marginTop: "6px" }}>{req.detail}</p>
+                <p style={{ color: "#94a3b8", fontSize: "13px", marginTop: "6px" }}>{req.detail}</p>
               </div>
             ))}
           </div>
@@ -90,8 +90,8 @@ export default function DFWFireCodeHomeGuide2026() {
           ].map(({ icon, title, body }) => (
             <div key={title} style={{ backgroundColor: "#1e293b", borderRadius: "12px", padding: "16px" }}>
               <div style={{ fontSize: "24px", marginBottom: "8px" }}>{icon}</div>
-              <h3 style={{ color: "#F5E642″, fontWeight: "700", marginBottom: "6px", fontSize: "14px" }}>{title}</h3>
-              <p style={{ color: "#94a3b8″, fontSize: "13px", lineHeight: "1.5" }}>{body}</p>
+              <h3 style={{ color: "#F5E642", fontWeight: "700", marginBottom: "6px", fontSize: "14px" }}>{title}</h3>
+              <p style={{ color: "#94a3b8", fontSize: "13px", lineHeight: "1.5" }}>{body}</p>
             </div>
           ))}
         </div>

@@ -40,7 +40,7 @@ export default function DFWBiophilicDesignGuide2026() {
               {['condo','townhome','house'].map(t => (
                 <button key={t} onClick={() => setType(type === t ? '' : t)}
                   style={{ marginRight: 8, padding: '6px 14px', borderRadius: 20, border: 'none', cursor: 'pointer',
-                    background: type === t ? '#F5E642′ : '#1C2D4A', color: type === t ? '#0A1628' : '#fff', fontWeight: 600, fontSize: 13 }}>
+                    background: type === t ? '#F5E642' : '#1C2D4A', color: type === t ? '#0A1628' : '#fff', fontWeight: 600, fontSize: 13 }}>
                   {t.charAt(0).toUpperCase() + t.slice(1)}
                 </button>
               ))}
@@ -50,7 +50,7 @@ export default function DFWBiophilicDesignGuide2026() {
               {['low','mid','high'].map(b => (
                 <button key={b} onClick={() => setBudget(budget === b ? '' : b)}
                   style={{ marginRight: 8, padding: '6px 14px', borderRadius: 20, border: 'none', cursor: 'pointer',
-                    background: budget === b ? '#F5E642′ : '#1C2D4A', color: budget === b ? '#0A1628' : '#fff', fontWeight: 600, fontSize: 13 }}>
+                    background: budget === b ? '#F5E642' : '#1C2D4A', color: budget === b ? '#0A1628' : '#fff', fontWeight: 600, fontSize: 13 }}>
                   {b.charAt(0).toUpperCase() + b.slice(1)}
                 </button>
               ))}

@@ -99,7 +99,7 @@ export default function DFWHVACNewNeighborhood() {
               style={{
                 background: '#0f2040',
                 border: '2px solid',
-                borderColor: selected === n.id ? '#F5E642′ : '#1e3a5f',
+                borderColor: selected === n.id ? '#F5E642' : '#1e3a5f',
                 borderRadius: 12,
                 padding: '14px 18px',
                 cursor: 'pointer',

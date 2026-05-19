@@ -48,17 +48,17 @@ export default function DFWHVACERVvsHRVGuide() {
   return (
     <div style={{ background: '#0A1628', minHeight: '100vh', color: '#fff', fontFamily: 'sans-serif', padding: '2rem' }}>
       <div style={{ maxWidth: '800px', margin: '0 auto' }}>
-        <div style={{ marginBottom: '0.5rem', fontSize: '0.85rem', color: '#F5E642′ }}>🌬️ DFW HVAC GUIDE</div>
+        <div style={{ marginBottom: '0.5rem', fontSize: '0.85rem', color: '#F5E642' }}>🌬️ DFW HVAC GUIDE</div>
         <h1 style={{ fontSize: '2rem', fontWeight: 800, marginBottom: '0.75rem' }}>
           ERV vs HRV for DFW Homes
         </h1>
         <p style={{ color: '#94a3b8', marginBottom: '0.75rem', lineHeight: 1.7 }}>
-          DFW's mixed-humid climate makes this choice straightforward: ERV almost always wins. Here’s why — and when
+          DFW's mixed-humid climate makes this choice straightforward: ERV almost always wins. Here's why — and when
           an HRV might actually make sense for a DFW home.
         </p>
 
-        <div style={{ background: '#1a2f55', borderRadius: '10px', padding: '1rem', marginBottom: '2rem', border: '1px solid #2a4080′ }}>
-          <div style={{ fontWeight: 700, marginBottom: '0.4rem', color: '#F5E642′ }}>🔑 DFW Bottom Line</div>
+        <div style={{ background: '#1a2f55', borderRadius: '10px', padding: '1rem', marginBottom: '2rem', border: '1px solid #2a4080' }}>
+          <div style={{ fontWeight: 700, marginBottom: '0.4rem', color: '#F5E642' }}>🔑 DFW Bottom Line</div>
           <div style={{ color: '#94a3b8', fontSize: '0.9rem', lineHeight: 1.6 }}>
             ERV transfers both heat AND moisture. HRV transfers only heat. In DFW winters, ventilating with an HRV
             dumps dry 20–35% RH outdoor air into your home, killing your indoor humidity. ERV transfers moisture
@@ -71,7 +71,7 @@ export default function DFWHVACERVvsHRVGuide() {
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0.75rem', marginBottom: '1rem' }}>
             {concerns.map(c => (
               <button key={c.id} onClick={() => setConcern(c.id)}
-                style={{ background: concern === c.id ? '#F5E642′ : '#1a2f55', color: concern === c.id ? '#0A1628' : '#fff',
+                style={{ background: concern === c.id ? '#F5E642' : '#1a2f55', color: concern === c.id ? '#0A1628' : '#fff',
                   padding: '0.75rem', borderRadius: '8px', border: '1px solid #2a4080', cursor: 'pointer',
                   fontWeight: concern === c.id ? 700 : 400, textAlign: 'left', fontSize: '0.9rem' }}>
                 {c.label}
@@ -85,7 +85,7 @@ export default function DFWHVACERVvsHRVGuide() {
         </div>
 
         {rec && (
-          <div style={{ background: '#0f1f3d', borderRadius: '12px', padding: '1.5rem', marginBottom: '2rem', border: '1px solid #F5E642′ }}>
+          <div style={{ background: '#0f1f3d', borderRadius: '12px', padding: '1.5rem', marginBottom: '2rem', border: '1px solid #F5E642' }}>
             <h3 style={{ color: '#F5E642', marginBottom: '0.5rem' }}>✅ Best for DFW: {rec.type}</h3>
             <p style={{ color: '#94a3b8', marginBottom: '1rem', fontSize: '0.9rem', lineHeight: 1.6 }}>{rec.reason}</p>
             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
@@ -95,7 +95,7 @@ export default function DFWHVACERVvsHRVGuide() {
           </div>
         )}
 
-        <h2 style={{ fontSize: '1.2rem', fontWeight: 700, marginBottom: '1rem', color: '#F5E642′ }}>📊 ERV vs HRV Side by Side</h2>
+        <h2 style={{ fontSize: '1.2rem', fontWeight: 700, marginBottom: '1rem', color: '#F5E642' }}>📊 ERV vs HRV Side by Side</h2>
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '2rem' }}>
           {[
             { label: 'ERV', points: ['Transfers heat + moisture', 'Prevents winter RH drop', 'Reduces summer latent load', 'Best for DFW mixed-humid climate', 'Slight extra cost ($100–200 more)'] },

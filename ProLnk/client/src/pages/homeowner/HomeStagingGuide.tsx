@@ -48,7 +48,7 @@ export default function HomeStagingGuide() {
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: 20, margin: '48px 0 40px' }}>
           {[['73%', 'faster to sell'], ['6%', 'higher sale price'], ['$1 = $3', 'staging ROI']].map(([stat, label], i) => (
             <div key={i} style={{ background: 'rgba(245,200,66,0.08)', border: '1px solid rgba(245,200,66,0.2)', borderRadius: 12, padding: 24, textAlign: 'center' }}>
-              <div style={{ fontSize: 32, fontWeight: 800, color: '#F5C842′ }}>{stat}</div>
+              <div style={{ fontSize: 32, fontWeight: 800, color: '#F5C842' }}>{stat}</div>
               <div style={{ color: 'rgba(255,255,255,0.6)', fontSize: 13, marginTop: 4 }}>{label}</div>
             </div>
           ))}
@@ -76,7 +76,7 @@ export default function HomeStagingGuide() {
               >
                 <div style={{
                   width: 24, height: 24, borderRadius: 6, border: checked[item.id] ? 'none' : '2px solid rgba(255,255,255,0.2)',
-                  background: checked[item.id] ? '#F5C842′ : ’transparent', display: 'flex', alignItems: 'center', justifyContent: 'center',
+                  background: checked[item.id] ? '#F5C842' : 'transparent', display: 'flex', alignItems: 'center', justifyContent: 'center',
                   flexShrink: 0, marginTop: 2, transition: 'all 0.2s',
                 }}>
                   {checked[item.id] && <span style={{ color: '#0A1628', fontSize: 14, fontWeight: 800 }}>✓</span>}

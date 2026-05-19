@@ -34,25 +34,25 @@ function CompletionRing({ done, total }: { done: number; total: number }) {
   const offset = circ * (1 - pct);
 
   return (
-    <svg width="140″ height="140" viewBox="0 0 140 140">
-      <circle cx="70″ cy="70" r={r} fill="none" stroke="#1A1E2A" strokeWidth="12" />
+    <svg width="140" height="140" viewBox="0 0 140 140">
+      <circle cx="70" cy="70" r={r} fill="none" stroke="#1A1E2A" strokeWidth="12" />
       <circle
-        cx="70″
-        cy="70″
+        cx="70"
+        cy="70"
         r={r}
         fill="none"
-        stroke={done === total ? "#22C55E" : "#A855F7″}
-        strokeWidth="12″
+        stroke={done === total ? "#22C55E" : "#A855F7"}
+        strokeWidth="12"
         strokeDasharray={circ}
         strokeDashoffset={offset}
         strokeLinecap="round"
         transform="rotate(-90 70 70)"
         style={{ transition: "stroke-dashoffset 0.4s ease, stroke 0.4s ease" }}
       />
-      <text x="70″ y="66" textAnchor="middle" fill="#fff" fontSize="26" fontWeight="700" fontFamily="Inter, system-ui, sans-serif">
+      <text x="70" y="66" textAnchor="middle" fill="#fff" fontSize="26" fontWeight="700" fontFamily="Inter, system-ui, sans-serif">
         {done}
       </text>
-      <text x="70″ y="86" textAnchor="middle" fill="#8B91A8" fontSize="13" fontFamily="Inter, system-ui, sans-serif">
+      <text x="70" y="86" textAnchor="middle" fill="#8B91A8" fontSize="13" fontFamily="Inter, system-ui, sans-serif">
         of {total}
       </text>
     </svg>
@@ -63,7 +63,7 @@ function Confetti() {
   const pieces = Array.from({ length: 30 }, (_, i) => ({
     id: i,
     x: Math.random() * 100,
-    color: ["#A855F7″, "#22C55E", "#F59E0B", "#3B82F6", "#EC4899"][i % 5],
+    color: ["#A855F7", "#22C55E", "#F59E0B", "#3B82F6", "#EC4899"][i % 5],
     delay: Math.random() * 0.8,
     dur: 1.2 + Math.random() * 0.8,
   }));
@@ -116,33 +116,33 @@ export default function MorningChecklist() {
   }
 
   return (
-    <div className="min-h-screen bg-[#0A1628] px-4 py-8 md:px-8″ style={{ fontFamily: "'Inter', system-ui, sans-serif" }}>
+    <div className="min-h-screen bg-[#0A1628] px-4 py-8 md:px-8" style={{ fontFamily: "'Inter', system-ui, sans-serif" }}>
       {showConfetti && <Confetti />}
 
       {/* Header */}
-      <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-8″>
-        <div className="flex items-center gap-3″>
+      <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-8">
+        <div className="flex items-center gap-3">
           <div
             className="w-10 h-10 rounded-xl flex items-center justify-center"
-            style={{ background: "linear-gradient(135deg, #F59E0B22, #F59E0B44)", border: "1px solid #F59E0B30″ }}
+            style={{ background: "linear-gradient(135deg, #F59E0B22, #F59E0B44)", border: "1px solid #F59E0B30" }}
           >
-            <Sun className="w-5 h-5 text-amber-400″ />
+            <Sun className="w-5 h-5 text-amber-400" />
           </div>
           <div>
             <h1 className="text-2xl font-bold text-white">Morning Checklist</h1>
-            <p className="text-sm" style={{ color: "#8B91A8″ }}>{today}</p>
+            <p className="text-sm" style={{ color: "#8B91A8" }}>{today}</p>
           </div>
         </div>
         <div className="flex items-center gap-2 px-4 py-2 rounded-xl" style={{ background: "#13161E", border: "1px solid #252A3A" }}>
-          <Flame className="w-4 h-4 text-orange-400″ />
+          <Flame className="w-4 h-4 text-orange-400" />
           <span className="text-sm font-bold text-white">7-day streak</span>
           <span className="text-lg">🔥</span>
         </div>
       </div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-6″>
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
         {/* Left: ring + stats */}
-        <div className="flex flex-col gap-5″>
+        <div className="flex flex-col gap-5">
           {/* Ring card */}
           <div
             className="rounded-2xl p-6 flex flex-col items-center"
@@ -150,7 +150,7 @@ export default function MorningChecklist() {
           >
             <p className="text-sm font-semibold mb-4 text-white">Good morning, Marcus!</p>
             <CompletionRing done={done} total={total} />
-            <p className="mt-4 text-sm font-medium" style={{ color: "#8B91A8″ }}>
+            <p className="mt-4 text-sm font-medium" style={{ color: "#8B91A8" }}>
               {allDone
                 ? "Day started right! +50 XP 🎉"
                 : `${total - done} task${total - done === 1 ? "" : "s"} remaining`}
@@ -158,7 +158,7 @@ export default function MorningChecklist() {
             {allDone && (
               <div
                 className="mt-3 w-full text-center rounded-xl py-2.5 text-sm font-bold"
-                style={{ background: "#22C55E20″, color: "#22C55E", border: "1px solid #22C55E30" }}
+                style={{ background: "#22C55E20", color: "#22C55E", border: "1px solid #22C55E30" }}
               >
                 Day started right! +50 XP
               </div>
@@ -167,17 +167,17 @@ export default function MorningChecklist() {
 
           {/* Streak */}
           <div
-            className="rounded-2xl p-5″
+            className="rounded-2xl p-5"
             style={{ background: "#13161E", border: "1px solid #252A3A" }}
           >
-            <div className="flex items-center gap-2 mb-2″>
-              <Flame className="w-4 h-4 text-orange-400″ />
+            <div className="flex items-center gap-2 mb-2">
+              <Flame className="w-4 h-4 text-orange-400" />
               <span className="text-sm font-bold text-white">7-Day Streak</span>
             </div>
-            <p className="text-xs" style={{ color: "#8B91A8″ }}>
+            <p className="text-xs" style={{ color: "#8B91A8" }}>
               You've completed your morning checklist <strong className="text-white">7 days in a row</strong> 🔥
             </p>
-            <div className="flex gap-1 mt-3″>
+            <div className="flex gap-1 mt-3">
               {Array.from({ length: 7 }, (_, i) => (
                 <div
                   key={i}
@@ -190,18 +190,18 @@ export default function MorningChecklist() {
 
           {/* Yesterday */}
           <div
-            className="rounded-2xl p-5″
+            className="rounded-2xl p-5"
             style={{ background: "#13161E", border: "1px solid #252A3A" }}
           >
-            <p className="text-sm font-bold text-white mb-3″>Yesterday's Quick Look</p>
+            <p className="text-sm font-bold text-white mb-3">Yesterday's Quick Look</p>
             <div className="space-y-2 text-sm">
               {[
-                { label: "Jobs completed", val: "2″, color: "#14B8A6" },
-                { label: "Earnings", val: "$624″, color: "#22C55E" },
-                { label: "New recruits", val: "1″, color: "#A855F7" },
+                { label: "Jobs completed", val: "2", color: "#14B8A6" },
+                { label: "Earnings", val: "$624", color: "#22C55E" },
+                { label: "New recruits", val: "1", color: "#A855F7" },
               ].map(({ label, val, color }) => (
                 <div key={label} className="flex justify-between">
-                  <span style={{ color: "#8B91A8″ }}>{label}</span>
+                  <span style={{ color: "#8B91A8" }}>{label}</span>
                   <span className="font-bold" style={{ color }}>{val}</span>
                 </div>
               ))}
@@ -210,18 +210,18 @@ export default function MorningChecklist() {
         </div>
 
         {/* Right: task list */}
-        <div className="lg:col-span-2″>
+        <div className="lg:col-span-2">
           <div
-            className="rounded-2xl p-6″
+            className="rounded-2xl p-6"
             style={{ background: "#13161E", border: "1px solid #252A3A" }}
           >
-            <div className="flex items-center justify-between mb-5″>
+            <div className="flex items-center justify-between mb-5">
               <h2 className="text-base font-bold text-white">Daily Tasks</h2>
-              <span className="text-xs font-semibold px-3 py-1 rounded-full" style={{ background: "#A855F720″, color: "#A855F7" }}>
+              <span className="text-xs font-semibold px-3 py-1 rounded-full" style={{ background: "#A855F720", color: "#A855F7" }}>
                 {done}/{total} complete
               </span>
             </div>
-            <div className="space-y-2″>
+            <div className="space-y-2">
               {TASKS.map((task) => {
                 const isChecked = checked.has(task.id);
                 const Icon = task.icon;
@@ -237,11 +237,11 @@ export default function MorningChecklist() {
                     onClick={() => toggle(task.id)}
                   >
                     {isChecked
-                      ? <CheckCircle className="w-5 h-5 flex-shrink-0 text-green-400″ />
-                      : <Circle className="w-5 h-5 flex-shrink-0″ style={{ color: "#555B72" }} />
+                      ? <CheckCircle className="w-5 h-5 flex-shrink-0 text-green-400" />
+                      : <Circle className="w-5 h-5 flex-shrink-0" style={{ color: "#555B72" }} />
                     }
-                    <Icon className="w-4 h-4 flex-shrink-0″ style={{ color: isChecked ? "#22C55E" : "#8B91A8" }} />
-                    <div className="flex-1 min-w-0″>
+                    <Icon className="w-4 h-4 flex-shrink-0" style={{ color: isChecked ? "#22C55E" : "#8B91A8" }} />
+                    <div className="flex-1 min-w-0">
                       <span
                         className="text-sm font-medium"
                         style={{
@@ -252,7 +252,7 @@ export default function MorningChecklist() {
                         {task.label}
                       </span>
                       {task.sub && !isChecked && (
-                        <span className="ml-2 text-xs font-semibold px-2 py-0.5 rounded-full" style={{ background: "#3B82F620″, color: "#3B82F6" }}>
+                        <span className="ml-2 text-xs font-semibold px-2 py-0.5 rounded-full" style={{ background: "#3B82F620", color: "#3B82F6" }}>
                           {task.sub}
                         </span>
                       )}
@@ -260,8 +260,8 @@ export default function MorningChecklist() {
                     {task.link && !isChecked && (
                       <Link href={task.link}>
                         <span
-                          className="text-xs font-semibold px-2 py-1 rounded-lg flex-shrink-0″
-                          style={{ background: "#A855F720″, color: "#A855F7" }}
+                          className="text-xs font-semibold px-2 py-1 rounded-lg flex-shrink-0"
+                          style={{ background: "#A855F720", color: "#A855F7" }}
                           onClick={e => e.stopPropagation()}
                         >
                           Go →

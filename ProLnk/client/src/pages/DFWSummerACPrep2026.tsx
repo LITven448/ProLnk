@@ -80,7 +80,7 @@ export default function DFWSummerACPrep2026() {
               <button
                 key={key}
                 onClick={() => setAgeKey(key)}
-                style={{ padding: '10px 16px', background: ageKey === key ? '#F5E642′ : '#0d1f35', color: ageKey === key ? '#0A1628' : '#e2e8f0', border: '1px solid #1e3a5f', borderRadius: 8, cursor: ’pointer', fontWeight: 600 }}
+                style={{ padding: '10px 16px', background: ageKey === key ? '#F5E642' : '#0d1f35', color: ageKey === key ? '#0A1628' : '#e2e8f0', border: '1px solid #1e3a5f', borderRadius: 8, cursor: 'pointer', fontWeight: 600 }}
               >
                 {label}
               </button>

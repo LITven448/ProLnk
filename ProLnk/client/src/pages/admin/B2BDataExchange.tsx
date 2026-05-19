@@ -77,9 +77,9 @@ const EXPORT_SCHEMAS = [
 ];
 
 const STATUS_CONFIG = {
-  configured: { label: "Active", color: "bg-emerald-100 text-emerald-700″, icon: CheckCircle },
-  pending: { label: "Pending Setup", color: "bg-amber-100 text-amber-700″, icon: Clock },
-  available: { label: "Available", color: "bg-blue-100 text-blue-700″, icon: Info },
+  configured: { label: "Active", color: "bg-emerald-100 text-emerald-700", icon: CheckCircle },
+  pending: { label: "Pending Setup", color: "bg-amber-100 text-amber-700", icon: Clock },
+  available: { label: "Available", color: "bg-blue-100 text-blue-700", icon: Info },
 };
 
 export default function B2BDataExchange() {
@@ -99,14 +99,14 @@ export default function B2BDataExchange() {
 
   return (
     <AdminLayout>
-      <div className="max-w-6xl mx-auto px-4 py-8 space-y-6″>
+      <div className="max-w-6xl mx-auto px-4 py-8 space-y-6">
         {/* Header */}
         <div className="flex items-start justify-between">
           <div>
-            <h1 className="text-2xl font-heading font-bold text-gray-900 flex items-center gap-3″>
+            <h1 className="text-2xl font-heading font-bold text-gray-900 flex items-center gap-3">
               <Database className="w-6 h-6 text-[#0A1628]" />B2B Data Exchange
             </h1>
-            <p className="text-sm text-gray-500 mt-1″>
+            <p className="text-sm text-gray-500 mt-1">
               Manage inbound data partnerships and outbound data exports for analytics, integrations, and business intelligence.
             </p>
           </div>
@@ -114,19 +114,19 @@ export default function B2BDataExchange() {
         </div>
 
         {/* Stats Row */}
-        <div className="grid grid-cols-2 sm:grid-cols-4 gap-4″>
+        <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
           {[
-            { label: "Total Partners", value: stats?.totalPartners ?? "—", icon: Building2, color: "text-blue-600″ },
-            { label: "Total Jobs", value: stats?.totalJobs ?? "—", icon: BarChart3, color: "text-emerald-600″ },
-            { label: "Data Records", value: "155M+", icon: Database, color: "text-purple-600″ },
-            { label: "Export Schemas", value: EXPORT_SCHEMAS.length, icon: FileText, color: "text-amber-600″ },
+            { label: "Total Partners", value: stats?.totalPartners ?? "—", icon: Building2, color: "text-blue-600" },
+            { label: "Total Jobs", value: stats?.totalJobs ?? "—", icon: BarChart3, color: "text-emerald-600" },
+            { label: "Data Records", value: "155M+", icon: Database, color: "text-purple-600" },
+            { label: "Export Schemas", value: EXPORT_SCHEMAS.length, icon: FileText, color: "text-amber-600" },
           ].map((s) => (
-            <Card key={s.label} className="border border-gray-200″>
-              <CardContent className="p-4 flex items-center gap-3″>
+            <Card key={s.label} className="border border-gray-200">
+              <CardContent className="p-4 flex items-center gap-3">
                 <s.icon className={`w-8 h-8 ${s.color} opacity-80`} />
                 <div>
-                  <div className="text-xl font-bold text-gray-900″>{s.value}</div>
-                  <div className="text-xs text-gray-500″>{s.label}</div>
+                  <div className="text-xl font-bold text-gray-900">{s.value}</div>
+                  <div className="text-xs text-gray-500">{s.label}</div>
                 </div>
               </CardContent>
             </Card>
@@ -134,7 +134,7 @@ export default function B2BDataExchange() {
         </div>
 
         {/* Tab Toggle */}
-        <div className="flex gap-2 border-b border-gray-200″>
+        <div className="flex gap-2 border-b border-gray-200">
           {(["inbound", "outbound"] as const).map((tab) => (
             <button
               key={tab}
@@ -142,10 +142,10 @@ export default function B2BDataExchange() {
               className={`flex items-center gap-2 px-4 py-2.5 text-sm font-medium border-b-2 transition-colors capitalize ${
                 activeTab === tab
                   ? "border-[#0A1628] text-[#0A1628]"
-                  : "border-transparent text-gray-500 hover:text-gray-700″
+                  : "border-transparent text-gray-500 hover:text-gray-700"
               }`}
             >
-              {tab === "inbound" ? <ArrowLeft className="w-4 h-4″ /> : <ArrowRight className="w-4 h-4" />}
+              {tab === "inbound" ? <ArrowLeft className="w-4 h-4" /> : <ArrowRight className="w-4 h-4" />}
               {tab === "inbound" ? "Inbound Data Partners" : "Outbound Exports"}
             </button>
           ))}
@@ -153,8 +153,8 @@ export default function B2BDataExchange() {
 
         {/* Inbound Data Partners */}
         {activeTab === "inbound" && (
-          <div className="space-y-4″>
-            <p className="text-sm text-gray-600″>
+          <div className="space-y-4">
+            <p className="text-sm text-gray-600">
               Connect external data providers to enrich homeowner profiles, improve AI routing accuracy, and power risk-based partner matching.
             </p>
             {DATA_PARTNERS.map((partner) => {
@@ -162,44 +162,44 @@ export default function B2BDataExchange() {
               const StatusIcon = statusCfg.icon;
               return (
                 <Card key={partner.id} className="border border-gray-200 hover:shadow-sm transition-shadow">
-                  <CardContent className="p-5″>
-                    <div className="flex items-start justify-between gap-4″>
-                      <div className="flex items-start gap-4 flex-1″>
+                  <CardContent className="p-5">
+                    <div className="flex items-start justify-between gap-4">
+                      <div className="flex items-start gap-4 flex-1">
                         <div className="text-3xl">{partner.logo}</div>
-                        <div className="flex-1 min-w-0″>
+                        <div className="flex-1 min-w-0">
                           <div className="flex items-center gap-2 flex-wrap">
-                            <h3 className="font-semibold text-gray-900″>{partner.name}</h3>
+                            <h3 className="font-semibold text-gray-900">{partner.name}</h3>
                             <Badge className={`${statusCfg.color} text-xs flex items-center gap-1`}>
-                              <StatusIcon className="w-3 h-3″ />{statusCfg.label}
+                              <StatusIcon className="w-3 h-3" />{statusCfg.label}
                             </Badge>
                             <Badge className="bg-gray-100 text-gray-600 text-xs">{partner.category}</Badge>
                           </div>
-                          <p className="text-sm text-gray-600 mt-1″>{partner.description}</p>
-                          <div className="flex flex-wrap gap-1.5 mt-2″>
+                          <p className="text-sm text-gray-600 mt-1">{partner.description}</p>
+                          <div className="flex flex-wrap gap-1.5 mt-2">
                             {partner.dataTypes.map((dt) => (
                               <span key={dt} className="text-xs bg-gray-100 text-gray-600 px-2 py-0.5 rounded-full">{dt}</span>
                             ))}
                           </div>
-                          <div className="flex items-center gap-4 mt-3 text-xs text-gray-500″>
-                            <span className="flex items-center gap-1″><RefreshCw className="w-3 h-3" />{partner.syncFrequency}</span>
-                            <span className="flex items-center gap-1″><Database className="w-3 h-3" />{partner.recordsAvailable}</span>
-                            <span className="flex items-center gap-1″><Clock className="w-3 h-3" />Last sync: {partner.lastSync}</span>
+                          <div className="flex items-center gap-4 mt-3 text-xs text-gray-500">
+                            <span className="flex items-center gap-1"><RefreshCw className="w-3 h-3" />{partner.syncFrequency}</span>
+                            <span className="flex items-center gap-1"><Database className="w-3 h-3" />{partner.recordsAvailable}</span>
+                            <span className="flex items-center gap-1"><Clock className="w-3 h-3" />Last sync: {partner.lastSync}</span>
                           </div>
                         </div>
                       </div>
-                      <div className="flex flex-col gap-2 flex-shrink-0″>
+                      <div className="flex flex-col gap-2 flex-shrink-0">
                         {partner.status === "configured" ? (
                           <Button size="sm" variant="outline" className="text-xs">
-                            <RefreshCw className="w-3 h-3 mr-1″ />Sync Now
+                            <RefreshCw className="w-3 h-3 mr-1" />Sync Now
                           </Button>
                         ) : (
                           <Button size="sm" className="bg-[#0A1628] text-white hover:bg-[#0A1628]/90 text-xs">
-                            <Zap className="w-3 h-3 mr-1″ />Configure
+                            <Zap className="w-3 h-3 mr-1" />Configure
                           </Button>
                         )}
                         <a href={partner.docsUrl} target="_blank" rel="noopener noreferrer">
                           <Button size="sm" variant="outline" className="text-xs w-full">
-                            <Globe className="w-3 h-3 mr-1″ />Docs
+                            <Globe className="w-3 h-3 mr-1" />Docs
                           </Button>
                         </a>
                       </div>
@@ -213,26 +213,26 @@ export default function B2BDataExchange() {
 
         {/* Outbound Exports */}
         {activeTab === "outbound" && (
-          <div className="space-y-4″>
+          <div className="space-y-4">
             <div className="flex items-start gap-3 p-4 bg-blue-50 border border-blue-200 rounded-xl">
-              <Info className="w-5 h-5 text-blue-600 mt-0.5 shrink-0″ />
-              <div className="text-sm text-blue-800″>
+              <Info className="w-5 h-5 text-blue-600 mt-0.5 shrink-0" />
+              <div className="text-sm text-blue-800">
                 <strong>Data exports are GDPR and CCPA compliant.</strong> All exports are logged, and homeowner PII is anonymized by default. Enable full PII exports only for authorized integrations with signed DPAs.
               </div>
             </div>
             {EXPORT_SCHEMAS.map((schema) => (
-              <Card key={schema.id} className="border border-gray-200″>
-                <CardContent className="p-5 flex items-center justify-between gap-4″>
-                  <div className="flex-1 min-w-0″>
-                    <div className="flex items-center gap-2″>
-                      <FileText className="w-4 h-4 text-gray-500″ />
+              <Card key={schema.id} className="border border-gray-200">
+                <CardContent className="p-5 flex items-center justify-between gap-4">
+                  <div className="flex-1 min-w-0">
+                    <div className="flex items-center gap-2">
+                      <FileText className="w-4 h-4 text-gray-500" />
                       <h3 className="font-semibold text-gray-900 text-sm">{schema.name}</h3>
                       <Badge className="bg-gray-100 text-gray-600 text-xs">{schema.format}</Badge>
                     </div>
-                    <p className="text-xs text-gray-500 mt-1″>{schema.description}</p>
-                    <p className="text-xs text-gray-400 mt-1″>{schema.fields} fields</p>
+                    <p className="text-xs text-gray-500 mt-1">{schema.description}</p>
+                    <p className="text-xs text-gray-400 mt-1">{schema.fields} fields</p>
                   </div>
-                  <div className="flex gap-2 flex-shrink-0″>
+                  <div className="flex gap-2 flex-shrink-0">
                     <Button
                       size="sm"
                       variant="outline"
@@ -243,12 +243,12 @@ export default function B2BDataExchange() {
                       {exportLoading === schema.id ? (
                         <RefreshCw className="w-3 h-3 mr-1 animate-spin" />
                       ) : (
-                        <Download className="w-3 h-3 mr-1″ />
+                        <Download className="w-3 h-3 mr-1" />
                       )}
                       Export CSV
                     </Button>
                     <Button size="sm" className="bg-[#0A1628] text-white hover:bg-[#0A1628]/90 text-xs">
-                      <Upload className="w-3 h-3 mr-1″ />Webhook
+                      <Upload className="w-3 h-3 mr-1" />Webhook
                     </Button>
                   </div>
                 </CardContent>

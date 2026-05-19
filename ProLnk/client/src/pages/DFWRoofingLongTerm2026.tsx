@@ -35,13 +35,13 @@ export default function DFWRoofingLongTerm2026() {
           <h2 style={{ color: '#F5E642', fontSize: 16, marginBottom: 16 }}>🔍 Current Roof Age</h2>
           <select value={roofAge} onChange={e => { setRoofAge(e.target.value); setPlan(false); }} style={{ width: '100%', background: '#0A1628', color: '#fff', border: '1px solid #F5E642', borderRadius: 8, padding: '10px', fontSize: 14, marginBottom: 16 }}>
             <option value="">-- Select current roof age --</option>
-            <option value="0to5″>0–5 years (new roof)</option>
-            <option value="5to10″>5–10 years</option>
-            <option value="10to15″>10–15 years</option>
-            <option value="15to20″>15–20 years</option>
-            <option value="over20″>Over 20 years</option>
+            <option value="0to5">0–5 years (new roof)</option>
+            <option value="5to10">5–10 years</option>
+            <option value="10to15">10–15 years</option>
+            <option value="15to20">15–20 years</option>
+            <option value="over20">Over 20 years</option>
           </select>
-          <button onClick={() => setPlan(true)} disabled={!roofAge} style={{ background: roofAge ? '#F5E642′ : '#334155', color: '#0A1628', border: ’none', borderRadius: 8, padding: '12px 28px', fontWeight: 700, fontSize: 15, cursor: roofAge ? 'pointer' : 'default' }}>
+          <button onClick={() => setPlan(true)} disabled={!roofAge} style={{ background: roofAge ? '#F5E642' : '#334155', color: '#0A1628', border: 'none', borderRadius: 8, padding: '12px 28px', fontWeight: 700, fontSize: 15, cursor: roofAge ? 'pointer' : 'default' }}>
             Show My 25-Year Plan →
           </button>
         </div>
@@ -67,8 +67,8 @@ export default function DFWRoofingLongTerm2026() {
 
         <div style={{ background: '#1e2d45', borderRadius: 12, padding: 20, marginTop: 8 }}>
           <h3 style={{ color: '#F5E642', fontSize: 14, marginBottom: 10 }}>🌩️ DFW Hail Facts</h3>
-          {['DFW averages 2–4 hail events per year', '1″ hail = functional damage to standard shingles', 'Insurance claims window: typically 12 months post-storm', 'Class 4 shingles = up to 30% insurance premium reduction'].map((f, i) => (
-            <div key={i} style={{ fontSize: 13, color: '#cbd5e1', padding: '6px 0', borderBottom: i < 3 ? '1px solid #334155′ : ’none' }}>📍 {f}</div>
+          {['DFW averages 2–4 hail events per year', '1" hail = functional damage to standard shingles', 'Insurance claims window: typically 12 months post-storm', 'Class 4 shingles = up to 30% insurance premium reduction'].map((f, i) => (
+            <div key={i} style={{ fontSize: 13, color: '#cbd5e1', padding: '6px 0', borderBottom: i < 3 ? '1px solid #334155' : 'none' }}>📍 {f}</div>
           ))}
         </div>
       </div>

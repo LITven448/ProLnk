@@ -8,7 +8,7 @@ type ResultMap = Record<string, Record<string, Result>>;
 
 const results: ResultMap = {
   'Crawl Space': {
-    'Encapsulation / Sealing': { requirement: '20-mil polyethylene vapor barrier (full encapsulation)', placement: 'Ground surface + walls, warm-side up. Lap seams 12″ and tape. Seal to piers and foundation walls.', warnings: ['DFW crawl spaces are humid — do NOT leave any soil exposed after encapsulation', 'Install dehumidifier if sealing to conditioned space', 'Encapsulation requires proper venting or conditioning — do not seal without addressing air exchange'] },
+    'Encapsulation / Sealing': { requirement: '20-mil polyethylene vapor barrier (full encapsulation)', placement: 'Ground surface + walls, warm-side up. Lap seams 12" and tape. Seal to piers and foundation walls.', warnings: ['DFW crawl spaces are humid — do NOT leave any soil exposed after encapsulation', 'Install dehumidifier if sealing to conditioned space', 'Encapsulation requires proper venting or conditioning — do not seal without addressing air exchange'] },
     'New Construction': { requirement: '6-mil poly minimum (10–20 mil preferred)', placement: 'Ground surface only for vented crawl; full encapsulation for conditioned crawl space.', warnings: ['DFW clay soil retains moisture — vapor barrier is non-negotiable in new construction', 'Specify mil thickness in contract; 6-mil is code minimum but 10–20 mil performs far better'] },
     'Renovation / Upgrade': { requirement: '10–20 mil reinforced poly', placement: 'Remove old barrier first. Install new over clean, graded ground. Warm side = ground side in DFW.', warnings: ['Older homes often have inadequate 4–6 mil barriers that have failed', 'Check for standing water before installing — address drainage first'] },
     'Moisture Problem Investigation': { requirement: 'Inspect existing barrier before specifying', placement: 'Check for tears, pooling, condensation under joists, and mold on wood.', warnings: ['In DFW, crawl space moisture problems are common in spring and after heavy rains', 'Mold remediation must precede any new vapor barrier installation', 'Grade exterior soil away from foundation first'] },
@@ -27,7 +27,7 @@ const results: ResultMap = {
   },
   'Basement / Slab Edge': {
     'Encapsulation / Sealing': { requirement: 'Slab-edge vapor barrier (6-mil min under slab)', placement: 'Under concrete slab, continuous with foundation wall barrier.', warnings: ['DFW has few basements but slab-on-grade is dominant — ensure under-slab poly is spec\’d in all new construction', 'DFW expansive clay causes slab movement — use thick reinforced poly (10-mil+)'] },
-    'New Construction': { requirement: '10-mil poly under slab, continuous', placement: 'Lay over compacted gravel base, lap 12″ at seams, tape all laps.', warnings: ['DFW clay soil holds moisture — under-slab barrier is critical', 'Spec crushed stone capillary break layer under poly'] },
+    'New Construction': { requirement: '10-mil poly under slab, continuous', placement: 'Lay over compacted gravel base, lap 12" at seams, tape all laps.', warnings: ['DFW clay soil holds moisture — under-slab barrier is critical', 'Spec crushed stone capillary break layer under poly'] },
     'Renovation / Upgrade': { requirement: 'Interior drainage mat + vapor barrier if retrofitting', placement: 'Install against interior wall face if adding interior moisture management.', warnings: ['Retrofitting slab vapor barriers is impractical — focus on drainage and interior coatings', 'Address grading and downspout extensions before interior moisture control'] },
     'Moisture Problem Investigation': { requirement: 'Test slab moisture emission rate before flooring installation', placement: 'N/A — use calcium chloride or RH probe test.', warnings: ['DFW slabs frequently show high moisture emission in spring — test before installing hardwood or LVP', 'High readings (>3 lb/24hr) require topical moisture mitigation before flooring'] },
   },
@@ -49,13 +49,13 @@ export default function DFWVaporBarrierGuide() {
     <div style={{ backgroundColor: '#0A1628', minHeight: '100vh', color: '#E8EDF5', fontFamily: 'system-ui, sans-serif', padding: '32px 16px' }}>
       <div style={{ maxWidth: '760px', margin: '0 auto' }}>
         <div style={{ marginBottom: '8px', fontSize: '13px', color: '#F5E642', letterSpacing: '0.08em', textTransform: 'uppercase' }}>💧 DFW Moisture Guide</div>
-        <h1 style={{ fontSize: '28px', fontWeight: '700', marginBottom: '12px', lineHeight: '1.25′ }}>Vapor Barrier Guide for DFW Homes</h1>
-        <p style={{ color: '#94A3B8', marginBottom: '28px', lineHeight: '1.6′ }}>
+        <h1 style={{ fontSize: '28px', fontWeight: '700', marginBottom: '12px', lineHeight: '1.25' }}>Vapor Barrier Guide for DFW Homes</h1>
+        <p style={{ color: '#94A3B8', marginBottom: '28px', lineHeight: '1.6' }}>
           DFW is a mixed-humid climate (IECC Zone 3). Unlike northern states, vapor barriers belong on the warm side — which is almost always the exterior or ground side, not interior walls. Installing poly on interior walls in DFW is one of the most common moisture mistakes and causes rot, mold, and structural damage.
         </p>
 
         <div style={{ backgroundColor: '#111E35', borderRadius: '12px', padding: '24px', marginBottom: '24px', border: '1px solid #1E3A5F' }}>
-          <h2 style={{ fontSize: '16px', fontWeight: '600', marginBottom: '16px', color: '#F5E642′ }}>⚙️ Get Your DFW Vapor Barrier Requirement</h2>
+          <h2 style={{ fontSize: '16px', fontWeight: '600', marginBottom: '16px', color: '#F5E642' }}>⚙️ Get Your DFW Vapor Barrier Requirement</h2>
           <div style={{ display: 'grid', gap: '16px' }}>
             <div>
               <label style={{ display: 'block', fontSize: '13px', color: '#94A3B8', marginBottom: '6px' }}>Home Area</label>
@@ -75,14 +75,14 @@ export default function DFWVaporBarrierGuide() {
         </div>
 
         {result && (
-          <div style={{ backgroundColor: '#0D2137', borderRadius: '12px', padding: '24px', marginBottom: '24px', border: '1px solid #F5E642′ }}>
+          <div style={{ backgroundColor: '#0D2137', borderRadius: '12px', padding: '24px', marginBottom: '24px', border: '1px solid #F5E642' }}>
             <div style={{ fontSize: '13px', color: '#F5E642', marginBottom: '8px', textTransform: 'uppercase', letterSpacing: '0.06em' }}>✅ Requirement & Placement</div>
             <div style={{ fontSize: '18px', fontWeight: '700', marginBottom: '8px' }}>{result.requirement}</div>
             <p style={{ color: '#94A3B8', lineHeight: '1.6', fontSize: '14px', marginBottom: '16px' }}>{result.placement}</p>
             <div style={{ borderTop: '1px solid #1E3A5F', paddingTop: '14px' }}>
               <div style={{ fontSize: '13px', color: '#F5E642', marginBottom: '8px' }}>⚠️ DFW-Specific Warnings</div>
               {result.warnings.map((w, i) => (
-                <div key={i} style={{ fontSize: '13px', color: '#94A3B8', marginBottom: '6px', paddingLeft: '12px', borderLeft: '2px solid #F5E642′ }}>{w}</div>
+                <div key={i} style={{ fontSize: '13px', color: '#94A3B8', marginBottom: '6px', paddingLeft: '12px', borderLeft: '2px solid #F5E642' }}>{w}</div>
               ))}
             </div>
           </div>

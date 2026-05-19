@@ -36,14 +36,14 @@ export default function DFWTexasPropertyRights2026() {
         </div>
 
         {selected !== null && (
-          <div style={{ background: '#111C30', borderRadius: 12, padding: '1.5rem', borderLeft: '4px solid #F5E642′ }}>
+          <div style={{ background: '#111C30', borderRadius: 12, padding: '1.5rem', borderLeft: '4px solid #F5E642' }}>
             <div style={{ color: '#F5E642', fontWeight: 700, marginBottom: 8 }}>📋 Texas Property Rights Guide</div>
             <p style={{ color: '#CBD5E1', margin: 0, lineHeight: 1.7, fontSize: '0.95rem' }}>{issues[selected].guide}</p>
-            <p style={{ color: '#64748B', fontSize: '0.85rem', marginTop: 12, margin: '1rem 0 0′ }}>⚠️ This is general information, not legal advice. Consult a Texas property attorney for disputes involving significant property value.</p>
+            <p style={{ color: '#64748B', fontSize: '0.85rem', marginTop: 12, margin: '1rem 0 0' }}>⚠️ This is general information, not legal advice. Consult a Texas property attorney for disputes involving significant property value.</p>
           </div>
         )}
 
-        <div style={{ background: '#111C30', borderRadius: 12, padding: '1.25rem', marginTop: '1.5rem', borderTop: '2px solid #F5E642′ }}>
+        <div style={{ background: '#111C30', borderRadius: 12, padding: '1.25rem', marginTop: '1.5rem', borderTop: '2px solid #F5E642' }}>
           <div style={{ color: '#F5E642', fontWeight: 700, marginBottom: 6 }}>🔗 ProLnk Tip</div>
           <p style={{ color: '#94A3B8', fontSize: '0.9rem', margin: 0 }}>Many property disputes involve structural work — fences, drainage, tree removal. ProLnk connects DFW homeowners with licensed contractors who can provide documentation-quality work for dispute resolution.</p>
         </div>

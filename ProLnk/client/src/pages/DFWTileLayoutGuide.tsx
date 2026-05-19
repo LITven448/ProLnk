@@ -9,7 +9,7 @@ const layoutMatrix: Record<string, Record<string, { pattern: string; why: string
     'Visual Activity/Interest': { pattern: 'Diagonal 45-degree', why: 'Diagonal layout adds dynamism to kitchens without the complexity of herringbone. Hides DFW slab movement better than straight grid.', considerations: 'Requires more cuts and waste. Budget 15% extra tile for DFW kitchens.' },
     'Concealing Dirt': { pattern: 'Running Bond (horizontal)', why: 'Horizontal lines draw the eye along the floor rather than down into grout joints. DFW clay hides better in flowing layouts.', considerations: 'Match grout color to tile for best dirt concealment.' },
     'Resale Value': { pattern: 'Classic Grid (straight stack)', why: 'Most universally appealing to DFW buyers. Timeless and expected in kitchens.', considerations: 'Use rectified tiles for tight joints. Minimizes future grout maintenance.' },
-    'Small Space': { pattern: 'Large Format Diagonal', why: 'Large tiles on diagonal visually expand small DFW kitchens and reduce grout lines.', considerations: 'Requires very flat substrate. DFW slabs must be level within 1/8″ per 10ft.' },
+    'Small Space': { pattern: 'Large Format Diagonal', why: 'Large tiles on diagonal visually expand small DFW kitchens and reduce grout lines.', considerations: 'Requires very flat substrate. DFW slabs must be level within 1/8" per 10ft.' },
   },
   'Bathroom Floor': {
     'Slab Movement Cracks': { pattern: 'Mosaic (1x1 or 2x2)', why: 'Tiny tiles have hundreds of grout lines -- DFW slab flex is absorbed across all of them. Almost never cracks the tile itself.', considerations: 'More grout lines means more sealing maintenance. Use epoxy grout for DFW hard water resistance.' },
@@ -40,7 +40,7 @@ const layoutMatrix: Record<string, Record<string, { pattern: string; why: string
     'Small Space': { pattern: 'Continuous Floor Into Adjacent Room', why: 'Extending the same tile from entry into hallway or living room expands perceived DFW foyer size dramatically.', considerations: 'No threshold needed. Use transition strip only at carpet.' },
   },
   'Outdoor Patio': {
-    'Slab Movement Cracks': { pattern: 'Paver-Style Grid with Wide Joints (3/8″)', why: 'DFW outdoor slabs move constantly with moisture and heat. Wide joints allow movement without cracking tile. Pavers beat monolithic slab here.', considerations: 'Use flexible polymer-modified mortar. Standard thinset cracks in DFW outdoor conditions.' },
+    'Slab Movement Cracks': { pattern: 'Paver-Style Grid with Wide Joints (3/8")', why: 'DFW outdoor slabs move constantly with moisture and heat. Wide joints allow movement without cracking tile. Pavers beat monolithic slab here.', considerations: 'Use flexible polymer-modified mortar. Standard thinset cracks in DFW outdoor conditions.' },
     'Visual Activity/Interest': { pattern: 'Herringbone Paver', why: 'Interlocking herringbone pattern for DFW patios is visually striking and structurally distributes load.', considerations: 'Works best with rectangular pavers (4x8 or similar). Clay brick does real herringbone best.' },
     'Concealing Dirt': { pattern: 'Textured Dark Porcelain Grid', why: 'DFW outdoor surfaces collect pollen, red clay, and soot. Textured dark surfaces hide everything between pressure washing.', considerations: 'Use Class 4 slip-resistance or better. DFW pool/wet areas require Class 5.' },
     'Resale Value': { pattern: 'Large Format Porcelain (24x24) Straight', why: 'Modern DFW patios with large format tile command premium. Looks expensive and is easy to clean.', considerations: 'Frost rating not critical in DFW but buy Class 4 minimum for UV durability.' },
@@ -62,13 +62,13 @@ export default function DFWTileLayoutGuide() {
           <div>
             <div style={{ color: '#F5E642', fontWeight: 700, marginBottom: '0.5rem', fontSize: '0.85rem', textTransform: 'uppercase', letterSpacing: 1 }}>Space Type</div>
             {SPACE_TYPES.map(s => (
-              <button key={s} onClick={() => setSpace(s)} style={{ display: 'block', width: '100%', marginBottom: '0.5rem', padding: '0.6rem 1rem', background: space === s ? '#F5E642′ : '#0D1E3A', color: space === s ? '#0A1628' : '#CDD5E0', border: '1px solid', borderColor: space === s ? '#F5E642' : '#1C2E4A', borderRadius: 8, cursor: ’pointer', textAlign: 'left', fontWeight: space === s ? 700 : 400, transition: 'all 0.2s' }}>{s}</button>
+              <button key={s} onClick={() => setSpace(s)} style={{ display: 'block', width: '100%', marginBottom: '0.5rem', padding: '0.6rem 1rem', background: space === s ? '#F5E642' : '#0D1E3A', color: space === s ? '#0A1628' : '#CDD5E0', border: '1px solid', borderColor: space === s ? '#F5E642' : '#1C2E4A', borderRadius: 8, cursor: 'pointer', textAlign: 'left', fontWeight: space === s ? 700 : 400, transition: 'all 0.2s' }}>{s}</button>
             ))}
           </div>
           <div>
             <div style={{ color: '#F5E642', fontWeight: 700, marginBottom: '0.5rem', fontSize: '0.85rem', textTransform: 'uppercase', letterSpacing: 1 }}>Primary DFW Concern</div>
             {DFW_CONCERNS.map(c => (
-              <button key={c} onClick={() => setConcern(c)} style={{ display: 'block', width: '100%', marginBottom: '0.5rem', padding: '0.6rem 1rem', background: concern === c ? '#F5E642′ : '#0D1E3A', color: concern === c ? '#0A1628' : '#CDD5E0', border: '1px solid', borderColor: concern === c ? '#F5E642' : '#1C2E4A', borderRadius: 8, cursor: ’pointer', textAlign: 'left', fontWeight: concern === c ? 700 : 400, transition: 'all 0.2s' }}>{c}</button>
+              <button key={c} onClick={() => setConcern(c)} style={{ display: 'block', width: '100%', marginBottom: '0.5rem', padding: '0.6rem 1rem', background: concern === c ? '#F5E642' : '#0D1E3A', color: concern === c ? '#0A1628' : '#CDD5E0', border: '1px solid', borderColor: concern === c ? '#F5E642' : '#1C2E4A', borderRadius: 8, cursor: 'pointer', textAlign: 'left', fontWeight: concern === c ? 700 : 400, transition: 'all 0.2s' }}>{c}</button>
             ))}
           </div>
         </div>
@@ -86,7 +86,7 @@ export default function DFWTileLayoutGuide() {
         <div style={{ background: '#0D1E3A', borderRadius: 12, padding: '1.25rem', border: '1px solid #1C2E4A' }}>
           <div style={{ color: '#F5E642', fontWeight: 700, marginBottom: '0.75rem' }}>🏗️ DFW Slab Movement Rules</div>
           {['DFW clay soil expands up to 6 inches vertically in wet season -- tile must accommodate this.', 'Never install tile directly on a DFW slab without crack isolation membrane (Ditra or similar).', 'Expansion joints every 20-25 feet are not optional -- they are code in DFW tile work.', 'Diagonal layouts distribute slab stress better than straight grid -- especially on older DFW slabs.', 'If slab has existing cracks, use uncoupling membrane -- do not fill and tile over cracks.'].map((tip, i) => (
-            <div key={i} style={{ color: '#8899BB', fontSize: '0.875rem', marginBottom: '0.4rem', paddingLeft: '0.5rem', borderLeft: '2px solid #F5E642′ }}>{tip}</div>
+            <div key={i} style={{ color: '#8899BB', fontSize: '0.875rem', marginBottom: '0.4rem', paddingLeft: '0.5rem', borderLeft: '2px solid #F5E642' }}>{tip}</div>
           ))}
         </div>
       </div>

@@ -83,8 +83,8 @@ export default function DFWAcronymGuide() {
             >
               <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
                 <div style={{ display: 'flex', gap: 12, alignItems: 'baseline' }}>
-                  <span style={{ fontSize: 18, fontWeight: 800, color: '#F5E642′ }}>{a.acronym}</span>
-                  <span style={{ fontSize: 13, color: '#94A3B8′ }}>{a.full}</span>
+                  <span style={{ fontSize: 18, fontWeight: 800, color: '#F5E642' }}>{a.acronym}</span>
+                  <span style={{ fontSize: 13, color: '#94A3B8' }}>{a.full}</span>
                 </div>
                 <span style={{ color: '#F5E642', fontSize: 18 }}>{expanded === a.acronym ? '▲' : '▼'}</span>
               </div>
@@ -93,7 +93,7 @@ export default function DFWAcronymGuide() {
                   <div style={{ color: '#CBD5E1', fontSize: 14, lineHeight: 1.6, marginBottom: 10 }}>{a.meaning}</div>
                   <div style={{ display: 'flex', gap: 8, alignItems: 'flex-start' }}>
                     <span style={{ fontSize: 15 }}>📅</span>
-                    <span style={{ color: '#64748B', fontSize: 13 }}><strong style={{ color: '#94A3B8′ }}>When you’ll see it:</strong> {a.when}</span>
+                    <span style={{ color: '#64748B', fontSize: 13 }}><strong style={{ color: '#94A3B8' }}>When you'll see it:</strong> {a.when}</span>
                   </div>
                 </div>
               )}

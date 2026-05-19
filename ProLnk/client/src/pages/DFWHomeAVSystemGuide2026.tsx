@@ -7,19 +7,19 @@ export default function DFWHomeAVSystemGuide2026() {
   const getRec = () => {
     const recs: Record<string, Record<string, { system: string; speakers: string; display: string; audio: string; tip: string }>> = {
       living: {
-        budget: { system: '2.1 Soundbar + Subwoofer', speakers: 'Sonos Arc + Sub Mini', display: '65″ 4K TV', audio: 'Dolby Atmos via soundbar', tip: 'Soundbar is best for DFW living rooms — no speaker wiring needed' },
-        mid: { system: '5.1 Surround Sound', speakers: '5 in-ceiling/floor speakers + subwoofer', display: '75″ 4K QLED TV', audio: 'Dolby 5.1 via AVR', tip: 'AVR (audio-video receiver) is the hub — buy for future channels' },
-        high: { system: '7.1.2 Dolby Atmos', speakers: '7 speakers + 2 ceiling + subwoofer', display: '85″ 8K Mini-LED TV', audio: 'Dolby Atmos + DTS:X', tip: 'Hire DFW AV installer for ceiling speaker placement for true Atmos' },
+        budget: { system: '2.1 Soundbar + Subwoofer', speakers: 'Sonos Arc + Sub Mini', display: '65" 4K TV', audio: 'Dolby Atmos via soundbar', tip: 'Soundbar is best for DFW living rooms — no speaker wiring needed' },
+        mid: { system: '5.1 Surround Sound', speakers: '5 in-ceiling/floor speakers + subwoofer', display: '75" 4K QLED TV', audio: 'Dolby 5.1 via AVR', tip: 'AVR (audio-video receiver) is the hub — buy for future channels' },
+        high: { system: '7.1.2 Dolby Atmos', speakers: '7 speakers + 2 ceiling + subwoofer', display: '85" 8K Mini-LED TV', audio: 'Dolby Atmos + DTS:X', tip: 'Hire DFW AV installer for ceiling speaker placement for true Atmos' },
       },
       media: {
-        budget: { system: '5.1 Dedicated Theater', speakers: 'Tower L/R + center + surround + sub', display: '100″ projector screen', audio: 'Dolby 5.1', tip: 'Projector needs blacked-out room — common in DFW media rooms' },
-        mid: { system: '7.1 Immersive Theater', speakers: '7 speakers + dual subwoofers', display: '120″ ALR projector screen', audio: 'Dolby 7.1 + 4K laser projector', tip: 'Dual subs eliminate bass dead zones — worth the cost in large DFW media rooms' },
-        high: { system: '7.1.4 Atmos Cinema', speakers: '7 floor + 4 ceiling Atmos + dual subs', display: '150″ CinemaScope screen + 4K laser', audio: 'Full Dolby Atmos + Auro-3D', tip: 'Hire certified THX installer for calibration in DFW' },
+        budget: { system: '5.1 Dedicated Theater', speakers: 'Tower L/R + center + surround + sub', display: '100" projector screen', audio: 'Dolby 5.1', tip: 'Projector needs blacked-out room — common in DFW media rooms' },
+        mid: { system: '7.1 Immersive Theater', speakers: '7 speakers + dual subwoofers', display: '120" ALR projector screen', audio: 'Dolby 7.1 + 4K laser projector', tip: 'Dual subs eliminate bass dead zones — worth the cost in large DFW media rooms' },
+        high: { system: '7.1.4 Atmos Cinema', speakers: '7 floor + 4 ceiling Atmos + dual subs', display: '150" CinemaScope screen + 4K laser', audio: 'Full Dolby Atmos + Auro-3D', tip: 'Hire certified THX installer for calibration in DFW' },
       },
       patio: {
         budget: { system: 'Outdoor Stereo Pair', speakers: '2 weather-resistant outdoor speakers', display: 'N/A', audio: 'Stereo via Sonos outdoor amp', tip: 'IP55 or higher rated speakers for DFW humidity and heat' },
-        mid: { system: 'Outdoor 5.1 Patio System', speakers: '4 outdoor speakers + outdoor sub', display: '55″ outdoor weatherproof TV', audio: 'Sonos or Denon HEOS multi-room', tip: 'Bury sub-woofer conduit during landscaping to avoid digging later' },
-        high: { system: 'Whole-Home Outdoor Audio', speakers: '8+ landscape speakers + outdoor AV', display: '65″ outdoor MicroLED TV', audio: 'Whole-home Denon HEOS or Sonos', tip: 'License outdoor speakers to HOA before install in DFW communities' },
+        mid: { system: 'Outdoor 5.1 Patio System', speakers: '4 outdoor speakers + outdoor sub', display: '55" outdoor weatherproof TV', audio: 'Sonos or Denon HEOS multi-room', tip: 'Bury sub-woofer conduit during landscaping to avoid digging later' },
+        high: { system: 'Whole-Home Outdoor Audio', speakers: '8+ landscape speakers + outdoor AV', display: '65" outdoor MicroLED TV', audio: 'Whole-home Denon HEOS or Sonos', tip: 'License outdoor speakers to HOA before install in DFW communities' },
       },
     };
     return recs[roomType]?.[budget] || recs.living.mid;
@@ -28,7 +28,7 @@ export default function DFWHomeAVSystemGuide2026() {
   const rec = getRec();
 
   return (
-    <div style={{ background: '#0A1628', minHeight: '100vh', padding: '32px 24px', fontFamily: 'system-ui, sans-serif', color: '#e2e8f0′ }}>
+    <div style={{ background: '#0A1628', minHeight: '100vh', padding: '32px 24px', fontFamily: 'system-ui, sans-serif', color: '#e2e8f0' }}>
       <div style={{ maxWidth: 720, margin: '0 auto' }}>
         <div style={{ textAlign: 'center', marginBottom: 32 }}>
           <div style={{ fontSize: 48, marginBottom: 12 }}>🎵</div>
@@ -93,7 +93,7 @@ export default function DFWHomeAVSystemGuide2026() {
         </div>
 
         <div style={{ background: '#112240', borderRadius: 12, padding: 20, textAlign: 'center' }}>
-          <p style={{ color: '#94a3b8', fontSize: 13, margin: 0 }}>Need a DFW AV installer for speakers, screens, or whole-home audio? <span style={{ color: '#F5E642′ }}>ProLnk connects you with vetted local AV pros.</span></p>
+          <p style={{ color: '#94a3b8', fontSize: 13, margin: 0 }}>Need a DFW AV installer for speakers, screens, or whole-home audio? <span style={{ color: '#F5E642' }}>ProLnk connects you with vetted local AV pros.</span></p>
         </div>
       </div>
     </div>

@@ -5,34 +5,34 @@ const ageRanges = ['Pre-1980', '1980-1995', '1996-2010', '2011-Present'];
 
 const assessments: Record<string, Record<string, { assessment: string; repair: string; cost: string }>> = {
   'Cracks': {
-    'Pre-1980': { assessment: 'Significant foundation settlement likely — structural eval needed', repair: 'Tuckpointing + foundation inspection', cost: '$800–$3,500′ },
-    '1980-1995': { assessment: 'Common in clay soil DFW — likely seasonal movement cracks', repair: 'Tuckpointing + flexible sealant', cost: '$400–$1,200′ },
-    '1996-2010': { assessment: 'Foundation movement or thermal expansion — monitor width', repair: 'Crack injection + repointing', cost: '$300–$900′ },
-    '2011-Present': { assessment: 'Early-stage movement — likely cosmetic if hairline', repair: 'Flexible sealant + monitoring', cost: '$150–$500′ },
+    'Pre-1980': { assessment: 'Significant foundation settlement likely — structural eval needed', repair: 'Tuckpointing + foundation inspection', cost: '$800–$3,500' },
+    '1980-1995': { assessment: 'Common in clay soil DFW — likely seasonal movement cracks', repair: 'Tuckpointing + flexible sealant', cost: '$400–$1,200' },
+    '1996-2010': { assessment: 'Foundation movement or thermal expansion — monitor width', repair: 'Crack injection + repointing', cost: '$300–$900' },
+    '2011-Present': { assessment: 'Early-stage movement — likely cosmetic if hairline', repair: 'Flexible sealant + monitoring', cost: '$150–$500' },
   },
   'Efflorescence': {
-    'Pre-1980': { assessment: 'Deep mineral migration — long-term moisture intrusion', repair: 'Efflorescence remover + waterproof sealer', cost: '$500–$1,500′ },
-    '1980-1995': { assessment: 'Moderate salt deposit — drainage issue likely', repair: 'Dry brush + masonry cleaner + drainage fix', cost: '$300–$800′ },
-    '1996-2010': { assessment: 'Recent moisture event — check flashing and grading', repair: 'Surface treatment + source correction', cost: '$200–$600′ },
-    '2011-Present': { assessment: 'New construction bleed — often self-resolving', repair: 'Dry brush + monitor 1 season', cost: '$100–$300′ },
+    'Pre-1980': { assessment: 'Deep mineral migration — long-term moisture intrusion', repair: 'Efflorescence remover + waterproof sealer', cost: '$500–$1,500' },
+    '1980-1995': { assessment: 'Moderate salt deposit — drainage issue likely', repair: 'Dry brush + masonry cleaner + drainage fix', cost: '$300–$800' },
+    '1996-2010': { assessment: 'Recent moisture event — check flashing and grading', repair: 'Surface treatment + source correction', cost: '$200–$600' },
+    '2011-Present': { assessment: 'New construction bleed — often self-resolving', repair: 'Dry brush + monitor 1 season', cost: '$100–$300' },
   },
   'Spalling': {
-    'Pre-1980': { assessment: 'Freeze-thaw and age damage — replacement likely needed', repair: 'Brick replacement + repointing', cost: '$1,200–$4,000′ },
-    '1980-1995': { assessment: 'Moisture cycling damage — targeted replacement', repair: 'Selective brick replacement', cost: '$600–$2,000′ },
-    '1996-2010': { assessment: 'Poor quality brick or coating failure', repair: 'Replace affected units + reseal', cost: '$400–$1,400′ },
-    '2011-Present': { assessment: 'Manufacturing defect or impact damage', repair: 'Warranty claim + targeted replacement', cost: '$200–$800′ },
+    'Pre-1980': { assessment: 'Freeze-thaw and age damage — replacement likely needed', repair: 'Brick replacement + repointing', cost: '$1,200–$4,000' },
+    '1980-1995': { assessment: 'Moisture cycling damage — targeted replacement', repair: 'Selective brick replacement', cost: '$600–$2,000' },
+    '1996-2010': { assessment: 'Poor quality brick or coating failure', repair: 'Replace affected units + reseal', cost: '$400–$1,400' },
+    '2011-Present': { assessment: 'Manufacturing defect or impact damage', repair: 'Warranty claim + targeted replacement', cost: '$200–$800' },
   },
   'Mortar Deterioration': {
-    'Pre-1980': { assessment: 'Full repointing likely needed — mortar life is 25-30 years', repair: 'Full tuckpointing', cost: '$1,500–$6,000′ },
-    '1980-1995': { assessment: 'Partial repointing needed on weathered sections', repair: 'Selective tuckpointing', cost: '$800–$2,500′ },
-    '1996-2010': { assessment: 'Spot repointing — check south and west faces first', repair: 'Spot repointing', cost: '$300–$900′ },
-    '2011-Present': { assessment: 'Premature failure — check mortar mix and drainage', repair: 'Spot repair + root cause fix', cost: '$150–$500′ },
+    'Pre-1980': { assessment: 'Full repointing likely needed — mortar life is 25-30 years', repair: 'Full tuckpointing', cost: '$1,500–$6,000' },
+    '1980-1995': { assessment: 'Partial repointing needed on weathered sections', repair: 'Selective tuckpointing', cost: '$800–$2,500' },
+    '1996-2010': { assessment: 'Spot repointing — check south and west faces first', repair: 'Spot repointing', cost: '$300–$900' },
+    '2011-Present': { assessment: 'Premature failure — check mortar mix and drainage', repair: 'Spot repair + root cause fix', cost: '$150–$500' },
   },
   'Water Staining': {
-    'Pre-1980': { assessment: 'Deep penetration — cleaning may not fully resolve', repair: 'Masonry cleaner + sealer application', cost: '$400–$1,200′ },
-    '1980-1995': { assessment: 'Iron or rust leaching — treat with oxalic acid', repair: 'Specialized masonry cleaner', cost: '$300–$800′ },
-    '1996-2010': { assessment: 'Surface staining — likely cleanable', repair: 'Pressure wash + masonry cleaner', cost: '$200–$500′ },
-    '2011-Present': { assessment: 'Fresh staining — address source and clean', repair: 'Source fix + surface clean', cost: '$100–$300′ },
+    'Pre-1980': { assessment: 'Deep penetration — cleaning may not fully resolve', repair: 'Masonry cleaner + sealer application', cost: '$400–$1,200' },
+    '1980-1995': { assessment: 'Iron or rust leaching — treat with oxalic acid', repair: 'Specialized masonry cleaner', cost: '$300–$800' },
+    '1996-2010': { assessment: 'Surface staining — likely cleanable', repair: 'Pressure wash + masonry cleaner', cost: '$200–$500' },
+    '2011-Present': { assessment: 'Fresh staining — address source and clean', repair: 'Source fix + surface clean', cost: '$100–$300' },
   },
 };
 
@@ -64,7 +64,7 @@ export default function DFWBrickHouseGuide() {
         </div>
 
         <div style={{ background: '#111D35', borderRadius: 16, padding: 28, marginBottom: 24 }}>
-          <h2 style={{ fontSize: 18, fontWeight: 700, marginBottom: 20, color: '#F5E642′ }}>🔍 Brick Issue Assessor</h2>
+          <h2 style={{ fontSize: 18, fontWeight: 700, marginBottom: 20, color: '#F5E642' }}>🔍 Brick Issue Assessor</h2>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16, marginBottom: 20 }}>
             <div>
               <label style={{ display: 'block', color: '#9BA3B5', fontSize: 12, fontWeight: 700, marginBottom: 8 }}>ISSUE TYPE</label>
@@ -82,12 +82,12 @@ export default function DFWBrickHouseGuide() {
             </div>
           </div>
           {result && (
-            <div style={{ background: '#0A1628', borderRadius: 12, padding: 20, borderLeft: '4px solid #F5E642′ }}>
+            <div style={{ background: '#0A1628', borderRadius: 12, padding: 20, borderLeft: '4px solid #F5E642' }}>
               <div style={{ color: '#F5E642', fontWeight: 700, fontSize: 13, marginBottom: 12 }}>ASSESSMENT</div>
               <p style={{ marginBottom: 12, fontSize: 14 }}>{result.assessment}</p>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12 }}>
                 <div><div style={{ color: '#9BA3B5', fontSize: 11, fontWeight: 700, marginBottom: 4 }}>RECOMMENDED REPAIR</div><div style={{ fontSize: 14 }}>{result.repair}</div></div>
-                <div><div style={{ color: '#9BA3B5', fontSize: 11, fontWeight: 700, marginBottom: 4 }}>ESTIMATED COST</div><div style={{ fontSize: 14, color: '#F5E642′ }}>{result.cost}</div></div>
+                <div><div style={{ color: '#9BA3B5', fontSize: 11, fontWeight: 700, marginBottom: 4 }}>ESTIMATED COST</div><div style={{ fontSize: 14, color: '#F5E642' }}>{result.cost}</div></div>
               </div>
             </div>
           )}

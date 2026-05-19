@@ -41,7 +41,7 @@ export default function DFWHVACPreCooling() {
         </p>
 
         <div style={{ background: '#111D35', borderRadius: 16, padding: 28, marginBottom: 24 }}>
-          <h2 style={{ fontSize: 18, fontWeight: 700, marginBottom: 20, color: '#F5E642′ }}>
+          <h2 style={{ fontSize: 18, fontWeight: 700, marginBottom: 20, color: '#F5E642' }}>
             🔢 Pre-Cool Strategy Calculator
           </h2>
           <div style={{ marginBottom: 20 }}>
@@ -74,7 +74,7 @@ export default function DFWHVACPreCooling() {
             )}
           </div>
           <div style={{ background: '#0A1628', borderRadius: 12, padding: 20, textAlign: 'center' }}>
-            <div style={{ fontSize: 46, fontWeight: 900, color: '#4ade80′ }}>
+            <div style={{ fontSize: 46, fontWeight: 900, color: '#4ade80' }}>
               {preCoolSavings === 0 ? '—' : `$${preCoolSavings}`}
             </div>
             <div style={{ fontSize: 14, color: '#94A3B8', marginTop: 4 }}>

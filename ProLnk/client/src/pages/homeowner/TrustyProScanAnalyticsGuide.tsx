@@ -111,11 +111,11 @@ export default function TrustyProScanAnalyticsGuide() {
           <h2 style={{ fontSize: 22, fontWeight: 700, color: '#f8fafc', marginBottom: 24 }}>🏠 What Each System Category Means</h2>
           <div style={{ display: 'grid', gap: 12 }}>
             {[
-              { label: 'Structural', weight: 'Highest Weight', desc: 'Foundation, framing, roofline. Problems here affect the safety and insurability of the entire home. Every other finding is secondary.', color: '#ef4444′ },
-              { label: 'Mechanical', weight: 'Second Highest', desc: 'HVAC, plumbing, and visible electrical components. In DFW, HVAC runs nearly year-round — mechanical wear is faster here than most markets.', color: '#f97316′ },
-              { label: 'Envelope', weight: 'Third Highest', desc: 'Roof, windows, doors, and siding. Moisture barrier integrity. A compromised envelope leads to structural damage over time.', color: '#eab308′ },
+              { label: 'Structural', weight: 'Highest Weight', desc: 'Foundation, framing, roofline. Problems here affect the safety and insurability of the entire home. Every other finding is secondary.', color: '#ef4444' },
+              { label: 'Mechanical', weight: 'Second Highest', desc: 'HVAC, plumbing, and visible electrical components. In DFW, HVAC runs nearly year-round — mechanical wear is faster here than most markets.', color: '#f97316' },
+              { label: 'Envelope', weight: 'Third Highest', desc: 'Roof, windows, doors, and siding. Moisture barrier integrity. A compromised envelope leads to structural damage over time.', color: '#eab308' },
               { label: 'Site', weight: 'Supporting', desc: 'Drainage, grading, and landscaping impact on the home. The most preventable damage category — most drainage issues are fixable for under $2,000.', color: '#22c55e' },
-              { label: 'Interior', weight: 'Observable Only', desc: 'Floors, walls, ceilings, and visible systems. The AI can only assess what’s visible — interior findings often point to underlying issues in other categories.', color: '#38bdf8′ },
+              { label: 'Interior', weight: 'Observable Only', desc: 'Floors, walls, ceilings, and visible systems. The AI can only assess what’s visible — interior findings often point to underlying issues in other categories.', color: '#38bdf8' },
             ].map(item => (
               <div key={item.label} style={{ background: '#0f1a24', border: `1px solid ${item.color}33`, borderRadius: 10, padding: 18, display: 'flex', gap: 16 }}>
                 <div style={{ width: 10, height: 10, borderRadius: '50%', background: item.color, marginTop: 5, flexShrink: 0 }} />

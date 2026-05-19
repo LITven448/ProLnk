@@ -65,7 +65,7 @@ export default function DFWIrrigationTroubleShoot2026() {
           <h2 style={{ color: '#F5E642', marginTop: '0', fontSize: '1.1rem' }}>🧰 DFW Irrigation Diagnostic Quick Checks</h2>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0.75rem' }}>
             {['🌧 Rain sensor: small disc on fascia or fence — bypass it to test if holding system off', '⚡ Controller power: listen for transformer hum — dead transformers are common', '💧 Water pressure: DFW target is 45–65 PSI — too low or too high causes head problems', '🕳 Clay soil: DFW black clay causes pipes to shift — re-check lines after dry summers', '🌿 Head height: should sit flush to grade — sunken heads are DFW’s #1 complaint', '📡 Wifi controllers: AT&T U-verse and 5GHz-only routers can drop irrigation controllers'].map((item, i) => (
-              <div key={i} style={{ background: '#1a3a5c', borderRadius: '8px', padding: '0.75rem', fontSize: '0.9rem', lineHeight: '1.5′ }}>{item}</div>
+              <div key={i} style={{ background: '#1a3a5c', borderRadius: '8px', padding: '0.75rem', fontSize: '0.9rem', lineHeight: '1.5' }}>{item}</div>
             ))}
           </div>
         </div>
@@ -75,7 +75,7 @@ export default function DFWIrrigationTroubleShoot2026() {
           <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
             {problems.map(p => (
               <button key={p.id} onClick={() => setSelected(p.id === selected ? null : p.id)}
-                style={{ background: selected === p.id ? '#F5E642′ : '#1a3a5c', color: selected === p.id ? '#0A1628' : '#e2e8f0', border: ’none', borderRadius: '8px', padding: '0.75rem 1.25rem', cursor: 'pointer', fontWeight: '700', fontSize: '0.95rem' }}>
+                style={{ background: selected === p.id ? '#F5E642' : '#1a3a5c', color: selected === p.id ? '#0A1628' : '#e2e8f0', border: 'none', borderRadius: '8px', padding: '0.75rem 1.25rem', cursor: 'pointer', fontWeight: '700', fontSize: '0.95rem' }}>
                 {p.label}
               </button>
             ))}
@@ -84,10 +84,10 @@ export default function DFWIrrigationTroubleShoot2026() {
 
         {match && (
           <div style={{ background: '#0f2040', borderRadius: '12px', padding: '1.5rem', marginBottom: '1.5rem' }}>
-            <h3 style={{ color: '#F5E642', marginTop: '0′ }}>Diagnosis Steps: {match.label}</h3>
+            <h3 style={{ color: '#F5E642', marginTop: '0' }}>Diagnosis Steps: {match.label}</h3>
             <ol style={{ margin: '0', paddingLeft: '1.25rem' }}>
               {match.steps.map((step, i) => (
-                <li key={i} style={{ marginBottom: '0.6rem', lineHeight: '1.6′ }}>{step}</li>
+                <li key={i} style={{ marginBottom: '0.6rem', lineHeight: '1.6' }}>{step}</li>
               ))}
             </ol>
           </div>

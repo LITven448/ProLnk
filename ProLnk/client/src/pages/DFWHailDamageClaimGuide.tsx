@@ -63,11 +63,11 @@ export default function DFWHailDamageClaimGuide() {
           Filing a Hail Damage Roof Claim in DFW
         </h1>
         <p style={{ color: '#9AA3B4', fontSize: 16, marginBottom: 12 }}>
-          Step-by-step playbook for North Texas homeowners. Average DFW hail claim: <strong style={{ color: '#F5E642′ }}>$8,500</strong>.
+          Step-by-step playbook for North Texas homeowners. Average DFW hail claim: <strong style={{ color: '#F5E642' }}>$8,500</strong>.
         </p>
         <div style={{ display: 'flex', gap: 16, marginBottom: 32, flexWrap: 'wrap' }}>
           {['⏱️ Avg timeline: 3-6 weeks', '💸 Avg payout: $8,500', '📍 TX law: adjuster in 15 days'].map(tag => (
-            <span key={tag} style={{ background: '#111E33', borderRadius: 20, padding: '6px 14px', fontSize: 13, color: '#9AA3B4′ }}>{tag}</span>
+            <span key={tag} style={{ background: '#111E33', borderRadius: 20, padding: '6px 14px', fontSize: 13, color: '#9AA3B4' }}>{tag}</span>
           ))}
         </div>
 
@@ -98,7 +98,7 @@ export default function DFWHailDamageClaimGuide() {
             border: `1px solid ${shouldFile ? '#1A5C35' : '#5C3A1A'}`,
             borderRadius: 12, padding: '16px 20px'
           }}>
-            <div style={{ fontSize: 20, fontWeight: 800, color: shouldFile ? '#4ADE80′ : '#FBBF24', marginBottom: 4 }}>
+            <div style={{ fontSize: 20, fontWeight: 800, color: shouldFile ? '#4ADE80' : '#FBBF24', marginBottom: 4 }}>
               {shouldFile ? '✅ File the Claim' : '⚠️ Consider Paying Out of Pocket'}
             </div>
             <div style={{ color: '#C5CAD8', fontSize: 15 }}>
@@ -113,9 +113,9 @@ export default function DFWHailDamageClaimGuide() {
         <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap', marginBottom: 20 }}>
           {steps.map((s, i) => (
             <button key={i} onClick={() => setActiveStep(i)} style={{
-              padding: '8px 14px', borderRadius: 8, border: activeStep === i ? '2px solid #F5E642′ : '2px solid #1E2D45',
-              background: activeStep === i ? '#F5E642′ : '#111E33',
-              color: activeStep === i ? '#0A1628′ : '#9AA3B4', fontWeight: 700, fontSize: 13, cursor: ’pointer',
+              padding: '8px 14px', borderRadius: 8, border: activeStep === i ? '2px solid #F5E642' : '2px solid #1E2D45',
+              background: activeStep === i ? '#F5E642' : '#111E33',
+              color: activeStep === i ? '#0A1628' : '#9AA3B4', fontWeight: 700, fontSize: 13, cursor: 'pointer',
             }}>{s.phase}</button>
           ))}
         </div>
@@ -125,7 +125,7 @@ export default function DFWHailDamageClaimGuide() {
           <p style={{ color: '#C5CAD8', lineHeight: 1.6, marginBottom: 14 }}>{steps[activeStep].detail}</p>
           <div style={{ background: '#2A1A0D', border: '1px solid #5C3A1A', borderRadius: 8, padding: '12px 16px' }}>
             <span style={{ color: '#FBBF24', fontWeight: 700 }}>⚠️ Watch out: </span>
-            <span style={{ color: '#C5CAD8′ }}>{steps[activeStep].risk}</span>
+            <span style={{ color: '#C5CAD8' }}>{steps[activeStep].risk}</span>
           </div>
         </div>
       </div>

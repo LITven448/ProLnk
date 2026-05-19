@@ -12,7 +12,7 @@ import { toast } from "sonner";
 
 const JOBBER_STATS = [
   { label: "Contractors on Jobber", value: "200,000+", icon: Users },
-  { label: "Avg Job Value (Lawn/Pest)", value: "$150-$400″, icon: TrendingUp },
+  { label: "Avg Job Value (Lawn/Pest)", value: "$150-$400", icon: TrendingUp },
   { label: "OAuth Setup Time", value: "~5 min", icon: Clock },
   { label: "Webhook Latency", value: "< 2 sec", icon: Zap },
 ];
@@ -58,30 +58,30 @@ export default function JobberIntegration() {
 
   return (
     <AdminLayout>
-      <div className="p-6 max-w-5xl mx-auto space-y-6″>
+      <div className="p-6 max-w-5xl mx-auto space-y-6">
         {/* Header */}
         <div className="flex items-start justify-between">
-          <div className="flex items-center gap-3″>
+          <div className="flex items-center gap-3">
             <div className="w-10 h-10 rounded-xl bg-green-100 flex items-center justify-center">
-              <Zap className="h-5 w-5 text-green-600″ />
+              <Zap className="h-5 w-5 text-green-600" />
             </div>
             <div>
-              <h1 className="text-2xl font-bold text-gray-900″>Jobber Integration</h1>
+              <h1 className="text-2xl font-bold text-gray-900">Jobber Integration</h1>
               <p className="text-gray-500 text-sm">Deep OAuth + webhook integration for the largest DFW partner segment</p>
             </div>
           </div>
-          <Badge className="bg-green-100 text-green-700 text-sm px-3 py-1″>Tier 1 Priority  5 Day Build</Badge>
+          <Badge className="bg-green-100 text-green-700 text-sm px-3 py-1">Tier 1 Priority  5 Day Build</Badge>
         </div>
 
         {/* Stats */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4″>
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
           {JOBBER_STATS.map((stat) => (
             <Card key={stat.label}>
-              <CardContent className="p-4 flex items-center gap-3″>
-                <stat.icon className="h-8 w-8 text-green-500 shrink-0″ />
+              <CardContent className="p-4 flex items-center gap-3">
+                <stat.icon className="h-8 w-8 text-green-500 shrink-0" />
                 <div>
-                  <div className="text-lg font-bold text-gray-800″>{stat.value}</div>
-                  <div className="text-xs text-gray-500″>{stat.label}</div>
+                  <div className="text-lg font-bold text-gray-800">{stat.value}</div>
+                  <div className="text-xs text-gray-500">{stat.label}</div>
                 </div>
               </CardContent>
             </Card>
@@ -89,10 +89,10 @@ export default function JobberIntegration() {
         </div>
 
         {/* Why Jobber First */}
-        <Card className="border-green-200 bg-green-50″>
-          <CardContent className="p-5″>
-            <p className="font-semibold text-green-800 mb-1″>Why Jobber is the #1 DFW Integration</p>
-            <p className="text-sm text-green-700″>
+        <Card className="border-green-200 bg-green-50">
+          <CardContent className="p-5">
+            <p className="font-semibold text-green-800 mb-1">Why Jobber is the #1 DFW Integration</p>
+            <p className="text-sm text-green-700">
               Jobber dominates the lawn care, pest control, cleaning, and pet waste segments -- exactly the partner categories ProLnk is launching with in DFW. 
               200,000+ contractors use Jobber. Every Jobber partner who connects ProLnk becomes a zero-friction photo source. 
               The OAuth flow takes 30 seconds for the partner. The webhook fires automatically on every completed job. 
@@ -103,22 +103,22 @@ export default function JobberIntegration() {
 
         {/* Setup Steps */}
         <Card>
-          <CardHeader className="pb-3″>
+          <CardHeader className="pb-3">
             <CardTitle className="text-base">Setup Checklist (Admin Actions Required)</CardTitle>
           </CardHeader>
-          <CardContent className="space-y-4″>
+          <CardContent className="space-y-4">
             {SETUP_STEPS.map((s, idx) => (
               <div key={s.step}>
-                <div className="flex items-start gap-4″>
+                <div className="flex items-start gap-4">
                   <div className={`w-7 h-7 rounded-full flex items-center justify-center shrink-0 mt-0.5 ${s.done ? "bg-green-500" : "bg-gray-200"}`}>
-                    {s.done ? <CheckCircle className="h-4 w-4 text-white" /> : <span className="text-xs font-bold text-gray-600″>{s.step}</span>}
+                    {s.done ? <CheckCircle className="h-4 w-4 text-white" /> : <span className="text-xs font-bold text-gray-600">{s.step}</span>}
                   </div>
-                  <div className="flex-1″>
-                    <p className="font-semibold text-gray-800 text-sm mb-1″>{s.title}</p>
-                    <p className="text-sm text-gray-500″>{s.desc}</p>
+                  <div className="flex-1">
+                    <p className="font-semibold text-gray-800 text-sm mb-1">{s.title}</p>
+                    <p className="text-sm text-gray-500">{s.desc}</p>
                   </div>
                 </div>
-                {idx < SETUP_STEPS.length - 1 && <Separator className="mt-4″ />}
+                {idx < SETUP_STEPS.length - 1 && <Separator className="mt-4" />}
               </div>
             ))}
           </CardContent>
@@ -126,21 +126,21 @@ export default function JobberIntegration() {
 
         {/* Webhook Events */}
         <Card>
-          <CardHeader className="pb-3″>
-            <CardTitle className="text-base flex items-center gap-2″>
-              <Zap className="h-4 w-4 text-yellow-500″ />
+          <CardHeader className="pb-3">
+            <CardTitle className="text-base flex items-center gap-2">
+              <Zap className="h-4 w-4 text-yellow-500" />
               Webhook Events
             </CardTitle>
           </CardHeader>
-          <CardContent className="space-y-3″>
+          <CardContent className="space-y-3">
             {WEBHOOK_EVENTS.map((w) => (
-              <div key={w.event} className="flex items-start gap-3 p-3 rounded-lg bg-gray-50″>
-                <code className="text-xs bg-white border px-2 py-1 rounded font-mono text-gray-700 shrink-0″>{w.event}</code>
-                <div className="flex-1″>
-                  <p className="text-xs font-medium text-gray-700″>{w.trigger}</p>
-                  <p className="text-xs text-gray-500 mt-0.5″>{w.action}</p>
+              <div key={w.event} className="flex items-start gap-3 p-3 rounded-lg bg-gray-50">
+                <code className="text-xs bg-white border px-2 py-1 rounded font-mono text-gray-700 shrink-0">{w.event}</code>
+                <div className="flex-1">
+                  <p className="text-xs font-medium text-gray-700">{w.trigger}</p>
+                  <p className="text-xs text-gray-500 mt-0.5">{w.action}</p>
                 </div>
-                {w.critical && <Badge className="bg-red-100 text-red-700 text-xs shrink-0″>Critical</Badge>}
+                {w.critical && <Badge className="bg-red-100 text-red-700 text-xs shrink-0">Critical</Badge>}
               </div>
             ))}
           </CardContent>
@@ -148,22 +148,22 @@ export default function JobberIntegration() {
 
         {/* Integration Flow */}
         <Card>
-          <CardHeader className="pb-3″>
-            <CardTitle className="text-base flex items-center gap-2″>
-              <ArrowRight className="h-4 w-4 text-blue-500″ />
+          <CardHeader className="pb-3">
+            <CardTitle className="text-base flex items-center gap-2">
+              <ArrowRight className="h-4 w-4 text-blue-500" />
               Data Flow (Zero Partner Behavior Change)
             </CardTitle>
           </CardHeader>
           <CardContent>
-            <div className="flex items-center gap-2 flex-wrap text-sm mb-4″>
+            <div className="flex items-center gap-2 flex-wrap text-sm mb-4">
               <div className="bg-green-100 text-green-700 px-3 py-1.5 rounded-lg font-medium">Partner completes job in Jobber</div>
-              <ArrowRight className="h-4 w-4 text-gray-400″ />
+              <ArrowRight className="h-4 w-4 text-gray-400" />
               <div className="bg-blue-100 text-blue-700 px-3 py-1.5 rounded-lg font-medium">JOB_COMPLETED fires</div>
-              <ArrowRight className="h-4 w-4 text-gray-400″ />
+              <ArrowRight className="h-4 w-4 text-gray-400" />
               <div className="bg-purple-100 text-purple-700 px-3 py-1.5 rounded-lg font-medium">ProLnk pulls photos via API</div>
-              <ArrowRight className="h-4 w-4 text-gray-400″ />
+              <ArrowRight className="h-4 w-4 text-gray-400" />
               <div className="bg-teal-100 text-teal-700 px-3 py-1.5 rounded-lg font-medium">AI scans for opportunities</div>
-              <ArrowRight className="h-4 w-4 text-gray-400″ />
+              <ArrowRight className="h-4 w-4 text-gray-400" />
               <div className="bg-orange-100 text-orange-700 px-3 py-1.5 rounded-lg font-medium">Lead routed + commission tracked</div>
             </div>
           </CardContent>
@@ -171,14 +171,14 @@ export default function JobberIntegration() {
 
         {/* Code Preview */}
         <Card>
-          <CardHeader className="pb-3″>
+          <CardHeader className="pb-3">
             <div className="flex items-center justify-between">
-              <CardTitle className="text-base flex items-center gap-2″>
-                <Code2 className="h-4 w-4 text-purple-500″ />
+              <CardTitle className="text-base flex items-center gap-2">
+                <Code2 className="h-4 w-4 text-purple-500" />
                 Webhook Handler (Already Built)
               </CardTitle>
               <Button size="sm" variant="outline" onClick={copyCode} className="gap-1.5 text-xs">
-                {copied ? <><CheckCheck className="h-3 w-3″ /> Copied</> : <><Copy className="h-3 w-3" /> Copy</>}
+                {copied ? <><CheckCheck className="h-3 w-3" /> Copied</> : <><Copy className="h-3 w-3" /> Copy</>}
               </Button>
             </div>
           </CardHeader>
@@ -191,29 +191,29 @@ export default function JobberIntegration() {
 
         {/* OAuth Scopes */}
         <Card>
-          <CardHeader className="pb-3″>
-            <CardTitle className="text-base flex items-center gap-2″>
-              <Shield className="h-4 w-4 text-blue-500″ />
+          <CardHeader className="pb-3">
+            <CardTitle className="text-base flex items-center gap-2">
+              <Shield className="h-4 w-4 text-blue-500" />
               Required OAuth Scopes
             </CardTitle>
           </CardHeader>
           <CardContent>
-            <div className="flex flex-wrap gap-2″>
+            <div className="flex flex-wrap gap-2">
               {["read:jobs", "read:visits", "read:clients", "read:invoices", "read:quotes", "read:attachments"].map(scope => (
-                <code key={scope} className="text-xs bg-blue-50 text-blue-700 px-2 py-1 rounded font-mono border border-blue-100″>{scope}</code>
+                <code key={scope} className="text-xs bg-blue-50 text-blue-700 px-2 py-1 rounded font-mono border border-blue-100">{scope}</code>
               ))}
             </div>
           </CardContent>
         </Card>
 
         {/* CTA */}
-        <div className="flex gap-3″>
-          <a href="https://developer.getjobber.com" target="_blank" rel="noopener noreferrer" className="flex-1″>
-            <Button className="w-full gap-2 bg-green-600 hover:bg-green-700″>
-              Open Jobber Developer Portal <ExternalLink className="h-4 w-4″ />
+        <div className="flex gap-3">
+          <a href="https://developer.getjobber.com" target="_blank" rel="noopener noreferrer" className="flex-1">
+            <Button className="w-full gap-2 bg-green-600 hover:bg-green-700">
+              Open Jobber Developer Portal <ExternalLink className="h-4 w-4" />
             </Button>
           </a>
-          <Button variant="outline" className="flex-1″ onClick={() => toast.success("Jobber integration marked as priority -- added to build queue")}>
+          <Button variant="outline" className="flex-1" onClick={() => toast.success("Jobber integration marked as priority -- added to build queue")}>
             Add to Build Queue
           </Button>
         </div>

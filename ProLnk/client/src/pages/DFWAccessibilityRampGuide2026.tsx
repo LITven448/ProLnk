@@ -1,9 +1,9 @@
 import { useState } from 'react';
 
 const riseOptions = [
-  { label: '1–2 Steps (6″–14″)', rampLength: '6–14 ft', material: 'Modular aluminum or wood', cost: '$1,500–$2,500', permit: 'Usually not required for portable/modular ramps in DFW.' },
-  { label: '3–4 Steps (18″–28″)', rampLength: '18–28 ft', material: 'Aluminum modular or concrete', cost: '$2,500–$4,000', permit: 'Permit required for permanent ramps in most DFW municipalities.' },
-  { label: '5–6 Steps (30″–42″)', rampLength: '30–42 ft', material: 'Concrete with handrails or switchback design', cost: '$4,000–$7,000', permit: 'Permit required. Switchback design may be needed to fit property.' },
+  { label: '1–2 Steps (6"–14")', rampLength: '6–14 ft', material: 'Modular aluminum or wood', cost: '$1,500–$2,500', permit: 'Usually not required for portable/modular ramps in DFW.' },
+  { label: '3–4 Steps (18"–28")', rampLength: '18–28 ft', material: 'Aluminum modular or concrete', cost: '$2,500–$4,000', permit: 'Permit required for permanent ramps in most DFW municipalities.' },
+  { label: '5–6 Steps (30"–42")', rampLength: '30–42 ft', material: 'Concrete with handrails or switchback design', cost: '$4,000–$7,000', permit: 'Permit required. Switchback design may be needed to fit property.' },
 ];
 
 export default function DFWAccessibilityRampGuide2026() {
@@ -31,40 +31,40 @@ export default function DFWAccessibilityRampGuide2026() {
           {[{ label: 'ADA Slope Standard', value: '1:12', icon: '📐' }, { label: 'DFW Avg Cost', value: '$1.5K–$5K', icon: '💰' }, { label: 'Permit (Permanent)', value: 'Required', icon: '📋' }, { label: 'Modular Permit', value: 'Usually No', icon: '✅' }].map(s => (
             <div key={s.label} style={{ background: '#132036', borderRadius: 10, padding: '1.2rem', textAlign: 'center' }}>
               <div style={{ fontSize: 28 }}>{s.icon}</div>
-              <div style={{ fontSize: '1.5rem', fontWeight: 800, color: '#F5E642′ }}>{s.value}</div>
+              <div style={{ fontSize: '1.5rem', fontWeight: 800, color: '#F5E642' }}>{s.value}</div>
               <div style={{ fontSize: 12, color: '#94A3B8', marginTop: 4 }}>{s.label}</div>
             </div>
           ))}
         </div>
 
-        <h2 style={{ fontSize: '1.1rem', fontWeight: 700, marginBottom: '0.75rem', color: '#F5E642′ }}>How many steps do you need to overcome?</h2>
+        <h2 style={{ fontSize: '1.1rem', fontWeight: 700, marginBottom: '0.75rem', color: '#F5E642' }}>How many steps do you need to overcome?</h2>
         <div style={{ display: 'flex', gap: '0.75rem', flexWrap: 'wrap', marginBottom: '1.5rem' }}>
           {riseOptions.map((r, i) => (
             <button key={i} onClick={() => setRiseIdx(i === riseIdx ? null : i)}
-              style={{ background: riseIdx === i ? '#F5E642′ : '#132036', color: riseIdx === i ? '#0A1628' : '#fff', border: ’none', borderRadius: 8, padding: '0.65rem 1.1rem', cursor: 'pointer', fontWeight: 600, fontSize: 14 }}>
+              style={{ background: riseIdx === i ? '#F5E642' : '#132036', color: riseIdx === i ? '#0A1628' : '#fff', border: 'none', borderRadius: 8, padding: '0.65rem 1.1rem', cursor: 'pointer', fontWeight: 600, fontSize: 14 }}>
               {r.label}
             </button>
           ))}
         </div>
 
         {riseIdx !== null && (
-          <div style={{ background: '#132036', borderRadius: 10, padding: '1.5rem', marginBottom: '1.5rem', borderLeft: '4px solid #F5E642′ }}>
+          <div style={{ background: '#132036', borderRadius: 10, padding: '1.5rem', marginBottom: '1.5rem', borderLeft: '4px solid #F5E642' }}>
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(160px, 1fr))', gap: '1rem' }}>
               {[['Ramp Length Needed', riseOptions[riseIdx].rampLength], ['Recommended Material', riseOptions[riseIdx].material], ['Estimated Cost', riseOptions[riseIdx].cost]].map(([k, v]) => (
-                <div key={k}><div style={{ fontSize: 12, color: '#94A3B8′ }}>{k}</div><div style={{ fontWeight: 700, color: '#F5E642', marginTop: 4 }}>{v}</div></div>
+                <div key={k}><div style={{ fontSize: 12, color: '#94A3B8' }}>{k}</div><div style={{ fontWeight: 700, color: '#F5E642', marginTop: 4 }}>{v}</div></div>
               ))}
             </div>
             <p style={{ color: '#94A3B8', fontSize: 13, marginTop: '1rem' }}>{riseOptions[riseIdx].permit}</p>
           </div>
         )}
 
-        <h2 style={{ fontSize: '1.1rem', fontWeight: 700, marginBottom: '0.75rem', color: '#F5E642′ }}>Compare Ramp Materials</h2>
+        <h2 style={{ fontSize: '1.1rem', fontWeight: 700, marginBottom: '0.75rem', color: '#F5E642' }}>Compare Ramp Materials</h2>
         <div style={{ display: 'grid', gap: '0.75rem', marginBottom: '2rem' }}>
           {materials.map((m, i) => (
             <button key={i} onClick={() => setMatIdx(matIdx === i ? null : i)}
-              style={{ background: matIdx === i ? '#1a3a60′ : '#132036', color: '#fff', border: matIdx === i ? '2px solid #F5E642' : '2px solid transparent', borderRadius: 10, padding: '1rem', cursor: ’pointer', textAlign: 'left' }}>
+              style={{ background: matIdx === i ? '#1a3a60' : '#132036', color: '#fff', border: matIdx === i ? '2px solid #F5E642' : '2px solid transparent', borderRadius: 10, padding: '1rem', cursor: 'pointer', textAlign: 'left' }}>
               <div style={{ fontWeight: 700, marginBottom: matIdx === i ? 8 : 0 }}>{m.name}</div>
-              {matIdx === i && <div style={{ fontSize: 13, color: '#94A3B8', lineHeight: 1.6 }}><strong style={{ color: '#4ade80′ }}>Pros:</strong> {m.pros}<br /><strong style={{ color: '#f87171' }}>Cons:</strong> {m.cons}</div>}
+              {matIdx === i && <div style={{ fontSize: 13, color: '#94A3B8', lineHeight: 1.6 }}><strong style={{ color: '#4ade80' }}>Pros:</strong> {m.pros}<br /><strong style={{ color: '#f87171' }}>Cons:</strong> {m.cons}</div>}
             </button>
           ))}
         </div>

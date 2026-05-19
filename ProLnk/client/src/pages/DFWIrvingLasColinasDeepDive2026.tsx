@@ -81,7 +81,7 @@ export default function DFWIrvingLasColinasDeepDive2026() {
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12, marginBottom: 32 }}>
           {PROPERTY_TYPES.map(pt => (
             <button key={pt.id} onClick={() => setSelected(pt.id)}
-              style={{ background: selected === pt.id ? '#F5E642′ : '#0f2035', color: selected === pt.id ? '#0A1628' : '#fff', border: '1px solid', borderColor: selected === pt.id ? '#F5E642' : '#1e3a5f', borderRadius: 10, padding: '14px 10px', fontWeight: 600, fontSize: 14, cursor: ’pointer', textAlign: 'left' }}>
+              style={{ background: selected === pt.id ? '#F5E642' : '#0f2035', color: selected === pt.id ? '#0A1628' : '#fff', border: '1px solid', borderColor: selected === pt.id ? '#F5E642' : '#1e3a5f', borderRadius: 10, padding: '14px 10px', fontWeight: 600, fontSize: 14, cursor: 'pointer', textAlign: 'left' }}>
               {pt.label}
             </button>
           ))}

@@ -41,7 +41,7 @@ export default function DFWFlooringGuide2026() {
             'LVP with 6mm+ wear layer handles DFW heat without warping.',
             'Never install hardwood directly on slab — moisture barrier required.',
           ].map((note) => (
-            <div key={note} style={{ color: '#fff', fontSize: 14, marginBottom: 10, paddingLeft: 12, borderLeft: '3px solid #F5E642′ }}>{note}</div>
+            <div key={note} style={{ color: '#fff', fontSize: 14, marginBottom: 10, paddingLeft: 12, borderLeft: '3px solid #F5E642' }}>{note}</div>
           ))}
         </div>
 
@@ -50,13 +50,13 @@ export default function DFWFlooringGuide2026() {
           <div style={{ display: 'flex', flexDirection: 'column', gap: 10, marginTop: 12 }}>
             {rooms.map((item, i) => (
               <button key={i} onClick={() => setSelected(i === selected ? null : i)}
-                style={{ background: selected === i ? '#F5E642′ : '#0A1628', color: selected === i ? '#0A1628' : '#fff', border: '1px solid #F5E642', borderRadius: 8, padding: '12px 16px', textAlign: ’left', cursor: 'pointer', fontWeight: 600 }}>
+                style={{ background: selected === i ? '#F5E642' : '#0A1628', color: selected === i ? '#0A1628' : '#fff', border: '1px solid #F5E642', borderRadius: 8, padding: '12px 16px', textAlign: 'left', cursor: 'pointer', fontWeight: 600 }}>
                 {item.room}
               </button>
             ))}
           </div>
           {selected !== null && (
-            <div style={{ marginTop: 16, background: '#0A1628', borderRadius: 8, padding: 16, border: '1px solid #F5E642′ }}>
+            <div style={{ marginTop: 16, background: '#0A1628', borderRadius: 8, padding: 16, border: '1px solid #F5E642' }}>
               <div style={{ color: '#F5E642', fontWeight: 700, marginBottom: 4 }}>{rooms[selected].rec}</div>
               <div style={{ color: '#94a3b8', fontSize: 13, marginBottom: 6 }}>{rooms[selected].cost}</div>
               <div style={{ color: '#fff', fontSize: 14 }}>{rooms[selected].why}</div>

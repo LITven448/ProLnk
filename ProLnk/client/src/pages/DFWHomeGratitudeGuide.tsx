@@ -76,8 +76,8 @@ export default function DFWHomeGratitudeGuide() {
               key={s.id}
               onClick={() => setSelected(s.id)}
               style={{
-                backgroundColor: selected === s.id ? '#0A1628′ : '#e2e8f0',
-                color: selected === s.id ? '#F5E642′ : '#0A1628',
+                backgroundColor: selected === s.id ? '#0A1628' : '#e2e8f0',
+                color: selected === s.id ? '#F5E642' : '#0A1628',
                 border: 'none',
                 borderRadius: 10,
                 padding: '14px 10px',

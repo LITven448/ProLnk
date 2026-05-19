@@ -6,11 +6,11 @@ const soilTypes = ['Expansive Black Clay (most of DFW)', 'Sandy Loam (East DFW)'
 type SolutionData = { recommendation: string; who: string; cost: string; timeline: string; steps: string[] };
 const solutions: Record<string, Record<string, SolutionData>> = {
   'Water pooling against foundation': {
-    'Expansive Black Clay (most of DFW)': { recommendation: 'Re-grade soil away from foundation + install French drain', who: 'Landscape contractor + foundation company review', cost: '$2,500-$6,000', timeline: '2-4 days', steps: ['Get foundation company to confirm no active movement', 'Hire landscape contractor for re-grade (6″ drop over 10 feet)', 'Install French drain to move water to street or detention', 'Add downspout extensions to push roof water 6 feet from foundation'] },
-    'Sandy Loam (East DFW)': { recommendation: 'Re-grade and add drainage swale', who: 'Landscape contractor', cost: '$1,500-$3,500', timeline: '1-2 days', steps: ['Re-grade soil 6″ drop over 10 feet', 'Install drainage swale along property edge', 'Add gravel or sod to stabilize graded area', 'Extend downspouts and check quarterly'] },
+    'Expansive Black Clay (most of DFW)': { recommendation: 'Re-grade soil away from foundation + install French drain', who: 'Landscape contractor + foundation company review', cost: '$2,500-$6,000', timeline: '2-4 days', steps: ['Get foundation company to confirm no active movement', 'Hire landscape contractor for re-grade (6" drop over 10 feet)', 'Install French drain to move water to street or detention', 'Add downspout extensions to push roof water 6 feet from foundation'] },
+    'Sandy Loam (East DFW)': { recommendation: 'Re-grade and add drainage swale', who: 'Landscape contractor', cost: '$1,500-$3,500', timeline: '1-2 days', steps: ['Re-grade soil 6" drop over 10 feet', 'Install drainage swale along property edge', 'Add gravel or sod to stabilize graded area', 'Extend downspouts and check quarterly'] },
   },
   'Standing water in yard after rain': {
-    'Expansive Black Clay (most of DFW)': { recommendation: 'French drain system with pop-up emitter or dry creek bed', who: 'Landscape contractor (no engineer needed under 1 acre)', cost: '$3,000-$8,000', timeline: '2-3 days', steps: ['Map water flow pattern after rain event', 'Design French drain from low point to street or easement', 'Install perforated pipe 18-24″ deep in gravel bed', 'Add pop-up emitters at street — check city permit requirements'] },
+    'Expansive Black Clay (most of DFW)': { recommendation: 'French drain system with pop-up emitter or dry creek bed', who: 'Landscape contractor (no engineer needed under 1 acre)', cost: '$3,000-$8,000', timeline: '2-3 days', steps: ['Map water flow pattern after rain event', 'Design French drain from low point to street or easement', 'Install perforated pipe 18-24" deep in gravel bed', 'Add pop-up emitters at street — check city permit requirements'] },
     'Mixed Clay-Sandy (North DFW suburbs)': { recommendation: 'Dry creek bed or detention basin', who: 'Landscape contractor', cost: '$2,500-$7,000', timeline: '2-4 days', steps: ['Install dry creek bed to direct water flow', 'Add river rock for erosion control', 'Create shallow detention area in low corner if space permits', 'Verify HOA allows visible drainage features'] },
   },
   'Water entering garage or crawlspace': {
@@ -59,7 +59,7 @@ export default function DFWGradeAndDrainageGuide() {
               </select>
             </div>
           </div>
-          <button onClick={() => setShowResults(true)} disabled={!problem || !soil} style={{ backgroundColor: problem && soil ? '#F5E642′ : '#1E3A5F', color: problem && soil ? '#0A1628' : '#4A5568', padding: '12px 28px', borderRadius: 8, border: ’none', fontWeight: 700, fontSize: 15, cursor: problem && soil ? 'pointer' : 'default' }}>
+          <button onClick={() => setShowResults(true)} disabled={!problem || !soil} style={{ backgroundColor: problem && soil ? '#F5E642' : '#1E3A5F', color: problem && soil ? '#0A1628' : '#4A5568', padding: '12px 28px', borderRadius: 8, border: 'none', fontWeight: 700, fontSize: 15, cursor: problem && soil ? 'pointer' : 'default' }}>
             Get My Solution →
           </button>
         </div>
@@ -87,7 +87,7 @@ export default function DFWGradeAndDrainageGuide() {
             <div style={{ backgroundColor: '#112240', borderRadius: 12, padding: 20 }}>
               <div style={{ color: '#F5E642', fontWeight: 700, marginBottom: 12 }}>📋 Implementation Steps</div>
               <ol style={{ padding: '0 0 0 20px', margin: 0 }}>
-                {result.steps.map((step, i) => <li key={i} style={{ color: '#CBD5E1', fontSize: 14, padding: '6px 0′ }}>{step}</li>)}
+                {result.steps.map((step, i) => <li key={i} style={{ color: '#CBD5E1', fontSize: 14, padding: '6px 0' }}>{step}</li>)}
               </ol>
             </div>
           </div>

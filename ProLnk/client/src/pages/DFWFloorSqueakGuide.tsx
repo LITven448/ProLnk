@@ -14,13 +14,13 @@ const homeTypes = [
 
 const guide: Record<string, Record<string, { cause: string; diy: string; concern: string; cost: string }>> = {
   center: {
-    pb: { cause: 'Subfloor separated from joist; DFW humidity cycling loosened nails', diy: 'From below: drive 2.5″ screws at angle into joist every 8″. Use construction adhesive in gap.', concern: 'If squeak is NEW and getting worse → joist may be cracking; get inspection', cost: '$50–$200 DIY / $300–$700 pro' },
+    pb: { cause: 'Subfloor separated from joist; DFW humidity cycling loosened nails', diy: 'From below: drive 2.5" screws at angle into joist every 8". Use construction adhesive in gap.', concern: 'If squeak is NEW and getting worse → joist may be cracking; get inspection', cost: '$50–$200 DIY / $300–$700 pro' },
     slab: { cause: 'Hardwood or laminate rubbing at subfloor seams; expansion from DFW heat', diy: 'Inject powdered graphite or wax between boards. Screw subfloor if accessible.', concern: 'Slab homes rarely have structural squeak concerns — mostly cosmetic', cost: '$20–$100 DIY / $200–$500 pro' },
     twostory: { cause: 'I-joist or subfloor separation; common in DFW after first 5 dry summers', diy: 'From below (ceiling): locate joist, drive Squeeeeek No More screw kit', concern: 'Multiple new squeaks in same area = moisture event; check for roof or plumbing leak', cost: '$40–$150 DIY / $400–$900 pro' },
   },
   wall: {
     pb: { cause: 'Joist end bearing on sill plate shifted; DFW clay moved perimeter piers', diy: 'Limited DIY access near walls; shim between joist and sill plate if reachable', concern: 'Wall-edge squeaks + sloping floor = foundation settlement; call specialist', cost: '$300–$1,200 pro' },
-    slab: { cause: 'Flooring expansion pushing against baseboard; no room to move', diy: 'Remove baseboard, add 1/4″ expansion gap, replace base', concern: 'Structural concern is low for slab; thermal expansion is primary cause in DFW', cost: '$100–$400 DIY' },
+    slab: { cause: 'Flooring expansion pushing against baseboard; no room to move', diy: 'Remove baseboard, add 1/4" expansion gap, replace base', concern: 'Structural concern is low for slab; thermal expansion is primary cause in DFW', cost: '$100–$400 DIY' },
     twostory: { cause: 'Top plate flex or stair stringer movement; seasonal DFW wood movement', diy: 'Screw through floor into joist from above using long trim head screws + fill holes', concern: 'If wall squeak accompanies cracked drywall → settling; needs engineer', cost: '$200–$600 pro' },
   },
   stair: {
@@ -50,10 +50,10 @@ export default function DFWFloorSqueakGuide() {
         <section style={{ marginBottom: 28 }}>
           <h2 style={{ color: '#F5E642', fontSize: 20, marginBottom: 12 }}>📐 What Causes Floor Squeaks</h2>
           <ul style={{ color: '#C5CAD8', lineHeight: 2, paddingLeft: 20 }}>
-            <li><strong style={{ color: '#E8EAF0′ }}>Subfloor separation:</strong> Panels lift off joists during humid seasons, squeak when stepped on</li>
-            <li><strong style={{ color: '#E8EAF0′ }}>Nail pullout:</strong> Ring-shank nails loosen after years of DFW thermal cycling</li>
-            <li><strong style={{ color: '#E8EAF0′ }}>Seasonal wood expansion:</strong> DFW summer heat pushes boards against each other</li>
-            <li><strong style={{ color: '#E8EAF0′ }}>Joist crown reversal:</strong> Joists installed crown-up that flatten under load create gap</li>
+            <li><strong style={{ color: '#E8EAF0' }}>Subfloor separation:</strong> Panels lift off joists during humid seasons, squeak when stepped on</li>
+            <li><strong style={{ color: '#E8EAF0' }}>Nail pullout:</strong> Ring-shank nails loosen after years of DFW thermal cycling</li>
+            <li><strong style={{ color: '#E8EAF0' }}>Seasonal wood expansion:</strong> DFW summer heat pushes boards against each other</li>
+            <li><strong style={{ color: '#E8EAF0' }}>Joist crown reversal:</strong> Joists installed crown-up that flatten under load create gap</li>
           </ul>
         </section>
 
@@ -61,7 +61,7 @@ export default function DFWFloorSqueakGuide() {
           <h2 style={{ color: '#F5E642', fontSize: 20, marginBottom: 12 }}>🛠️ DIY Fix Methods Ranked</h2>
           <div style={{ display: 'grid', gap: 12 }}>
             {[
-              { title: '1. Screw From Above (Easiest)', desc: 'Drive 2.5″ trim-head screws through finished floor into joist. Fill holes with wood filler. Works on most DFW subfloor squeaks.' },
+              { title: '1. Screw From Above (Easiest)', desc: 'Drive 2.5" trim-head screws through finished floor into joist. Fill holes with wood filler. Works on most DFW subfloor squeaks.' },
               { title: '2. Squeeeeek No More Kit (Best)', desc: 'Special screw designed to pull subfloor to joist then snap off below surface. Use from below in crawl space. $20 kit at home improvement stores.' },
               { title: '3. Shim From Below', desc: 'Slide thin wood shim into gap between subfloor and joist. Add construction adhesive. No-drill option for accessible crawl spaces.' },
               { title: '4. Powdered Graphite / Wax', desc: 'Temporary fix only. Works for board-to-board rubbing on hardwood. Does not address structural separation.' },
@@ -92,10 +92,10 @@ export default function DFWFloorSqueakGuide() {
           </div>
           {result && (
             <div style={{ background: '#0A1628', borderRadius: 8, padding: 20 }}>
-              <div style={{ marginBottom: 10 }}><span style={{ color: '#F5E642', fontWeight: 700 }}>Likely Cause: </span><span style={{ color: '#C5CAD8′ }}>{result.cause}</span></div>
-              <div style={{ marginBottom: 10 }}><span style={{ color: '#F5E642', fontWeight: 700 }}>DIY Fix: </span><span style={{ color: '#C5CAD8′ }}>{result.diy}</span></div>
-              <div style={{ marginBottom: 10 }}><span style={{ color: '#F5E642', fontWeight: 700 }}>When to Be Concerned: </span><span style={{ color: '#FACC15′ }}>{result.concern}</span></div>
-              <div><span style={{ color: '#F5E642', fontWeight: 700 }}>Typical Cost: </span><span style={{ color: '#4ADE80′ }}>{result.cost}</span></div>
+              <div style={{ marginBottom: 10 }}><span style={{ color: '#F5E642', fontWeight: 700 }}>Likely Cause: </span><span style={{ color: '#C5CAD8' }}>{result.cause}</span></div>
+              <div style={{ marginBottom: 10 }}><span style={{ color: '#F5E642', fontWeight: 700 }}>DIY Fix: </span><span style={{ color: '#C5CAD8' }}>{result.diy}</span></div>
+              <div style={{ marginBottom: 10 }}><span style={{ color: '#F5E642', fontWeight: 700 }}>When to Be Concerned: </span><span style={{ color: '#FACC15' }}>{result.concern}</span></div>
+              <div><span style={{ color: '#F5E642', fontWeight: 700 }}>Typical Cost: </span><span style={{ color: '#4ADE80' }}>{result.cost}</span></div>
             </div>
           )}
         </div>

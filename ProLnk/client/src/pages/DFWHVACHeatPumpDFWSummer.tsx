@@ -66,7 +66,7 @@ export default function DFWHVACHeatPumpDFWSummer() {
             <div style={{ color: '#94a3b8', fontSize: 13, marginBottom: 8 }}>DFW Cooling Need:</div>
             <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8 }}>
               {coolingNeeds.map(n => (
-                <button key={n.id} onClick={() => setNeed(n.id)} style={{ background: need === n.id ? '#F5E642′ : '#1e3a5f', color: need === n.id ? '#0A1628' : '#fff', border: ’none', borderRadius: 8, padding: '9px 14px', cursor: 'pointer', fontWeight: 600, fontSize: 12 }}>{n.label}</button>
+                <button key={n.id} onClick={() => setNeed(n.id)} style={{ background: need === n.id ? '#F5E642' : '#1e3a5f', color: need === n.id ? '#0A1628' : '#fff', border: 'none', borderRadius: 8, padding: '9px 14px', cursor: 'pointer', fontWeight: 600, fontSize: 12 }}>{n.label}</button>
               ))}
             </div>
           </div>
@@ -74,16 +74,16 @@ export default function DFWHVACHeatPumpDFWSummer() {
             <div style={{ color: '#94a3b8', fontSize: 13, marginBottom: 8 }}>Heat Pump Type:</div>
             <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8 }}>
               {pumpTypes.map(p => (
-                <button key={p.id} onClick={() => setPump(p.id)} style={{ background: pump === p.id ? '#F5E642′ : '#1e3a5f', color: pump === p.id ? '#0A1628' : '#fff', border: ’none', borderRadius: 8, padding: '9px 14px', cursor: 'pointer', fontWeight: 600, fontSize: 12 }}>{p.label}</button>
+                <button key={p.id} onClick={() => setPump(p.id)} style={{ background: pump === p.id ? '#F5E642' : '#1e3a5f', color: pump === p.id ? '#0A1628' : '#fff', border: 'none', borderRadius: 8, padding: '9px 14px', cursor: 'pointer', fontWeight: 600, fontSize: 12 }}>{p.label}</button>
               ))}
             </div>
           </div>
           {result && (
-            <div style={{ background: '#0A1628', borderRadius: 10, padding: 20, borderLeft: '4px solid #F5E642′ }}>
+            <div style={{ background: '#0A1628', borderRadius: 10, padding: 20, borderLeft: '4px solid #F5E642' }}>
               <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 12, marginBottom: 14 }}>
                 {[{ label: 'EER at Peak', value: result.eer }, { label: 'SEER2 Rating', value: result.seer2 }, { label: 'Capacity at 100°F', value: result.capacity }].map(m => (
                   <div key={m.label} style={{ textAlign: 'center' }}>
-                    <div style={{ fontSize: 20, fontWeight: 800, color: '#F5E642′ }}>{m.value}</div>
+                    <div style={{ fontSize: 20, fontWeight: 800, color: '#F5E642' }}>{m.value}</div>
                     <div style={{ fontSize: 11, color: '#64748b' }}>{m.label}</div>
                   </div>
                 ))}

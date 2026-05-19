@@ -29,13 +29,13 @@ export default function DFWSECOProgramsGuide2026() {
   return (
     <div style={{ minHeight: '100vh', backgroundColor: '#0A1628', color: '#e2e8f0', fontFamily: 'sans-serif', padding: '2rem' }}>
       <div style={{ maxWidth: '720px', margin: '0 auto' }}>
-        <div style={{ marginBottom: '0.5rem', fontSize: '0.85rem', color: '#F5E642′ }}>🌱 Texas SECO Programs · DFW 2026</div>
+        <div style={{ marginBottom: '0.5rem', fontSize: '0.85rem', color: '#F5E642' }}>🌱 Texas SECO Programs · DFW 2026</div>
         <h1 style={{ fontSize: '2rem', fontWeight: 700, color: '#F5E642', marginBottom: '0.5rem' }}>Texas SECO Energy Programs Guide 2026</h1>
         <p style={{ color: '#94a3b8', marginBottom: '2rem' }}>State Energy Conservation Office programs available to DFW homeowners, low-income households, nonprofits, and rural Texans. Select your type to see relevant programs.</p>
 
         <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5rem', marginBottom: '2rem' }}>
           {ownerTypes.map(o => (
-            <button key={o.id} onClick={() => setSelected(o.id)} style={{ padding: '0.5rem 1.1rem', borderRadius: '999px', border: 'none', cursor: 'pointer', backgroundColor: selected === o.id ? '#F5E642′ : '#1e3a5f', color: selected === o.id ? '#0A1628' : '#e2e8f0', fontWeight: 600 }}>{o.label}</button>
+            <button key={o.id} onClick={() => setSelected(o.id)} style={{ padding: '0.5rem 1.1rem', borderRadius: '999px', border: 'none', cursor: 'pointer', backgroundColor: selected === o.id ? '#F5E642' : '#1e3a5f', color: selected === o.id ? '#0A1628' : '#e2e8f0', fontWeight: 600 }}>{o.label}</button>
           ))}
         </div>
 
@@ -53,7 +53,7 @@ export default function DFWSECOProgramsGuide2026() {
 
         <div style={{ marginTop: '2rem', backgroundColor: '#0f2340', borderRadius: '12px', padding: '1.25rem' }}>
           <div style={{ fontWeight: 700, color: '#F5E642', marginBottom: '0.5rem' }}>🔗 Access SECO Programs</div>
-          <div style={{ color: '#94a3b8', fontSize: '0.9rem', lineHeight: 1.5 }}>Visit <span style={{ color: '#F5E642′ }}>seco.cpa.state.tx.us</span> or call SECO at (512) 463-1931. For WAP and income-based programs, contact the Community Council of Greater Dallas (214-871-5065) or Tarrant County Community Development (817-531-5632).</div>
+          <div style={{ color: '#94a3b8', fontSize: '0.9rem', lineHeight: 1.5 }}>Visit <span style={{ color: '#F5E642' }}>seco.cpa.state.tx.us</span> or call SECO at (512) 463-1931. For WAP and income-based programs, contact the Community Council of Greater Dallas (214-871-5065) or Tarrant County Community Development (817-531-5632).</div>
         </div>
       </div>
     </div>

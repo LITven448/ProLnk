@@ -66,8 +66,8 @@ export default function ProLnkHomeHealthVaultFeature() {
               key={i}
               onClick={() => setSelected(i)}
               style={{
-                background: selected === i ? '#F5E642′ : '#111e35',
-                color: selected === i ? '#0A1628′ : '#ccc',
+                background: selected === i ? '#F5E642' : '#111e35',
+                color: selected === i ? '#0A1628' : '#ccc',
                 border: '1px solid #1e3a5f',
                 borderRadius: 8,
                 padding: '12px 10px',

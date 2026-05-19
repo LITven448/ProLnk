@@ -41,7 +41,7 @@ export default function DFWTexasPoolCultureGuide() {
       <div style={{ maxWidth: 720, margin: '0 auto' }}>
         <div style={{ fontSize: 36, marginBottom: 8 }}>🏊 DFW Texas Pool Culture Guide</div>
         <p style={{ color: '#94a3b8', marginBottom: 8, fontSize: 16 }}>
-          A pool in DFW isn't just a pool — it’s your social infrastructure for 7+ months of Texas summer.
+          A pool in DFW isn't just a pool — it's your social infrastructure for 7+ months of Texas summer.
         </p>
         <p style={{ color: '#F5E642', fontSize: 13, marginBottom: 32 }}>You are now the neighborhood hub. Here's how to own it responsibly. 🤠</p>
 
@@ -50,7 +50,7 @@ export default function DFWTexasPoolCultureGuide() {
             <label style={{ color: '#94a3b8', fontSize: 14, display: 'block', marginBottom: 10 }}>Pool type</label>
             <div style={{ display: 'flex', gap: 10 }}>
               {(['Inground', 'Above Ground'] as const).map(p => (
-                <button key={p} onClick={() => setPoolType(p)} style={{ flex: 1, background: poolType === p ? '#F5E642′ : '#0A1628', color: poolType === p ? '#0A1628' : '#fff', border: '1px solid #1e3a5f', borderRadius: 8, padding: '12px', fontWeight: 600, cursor: ’pointer' }}>
+                <button key={p} onClick={() => setPoolType(p)} style={{ flex: 1, background: poolType === p ? '#F5E642' : '#0A1628', color: poolType === p ? '#0A1628' : '#fff', border: '1px solid #1e3a5f', borderRadius: 8, padding: '12px', fontWeight: 600, cursor: 'pointer' }}>
                   {p === 'Inground' ? '🏊 In-Ground Pool' : '🛁 Above-Ground Pool'}
                 </button>
               ))}
@@ -60,7 +60,7 @@ export default function DFWTexasPoolCultureGuide() {
             <label style={{ color: '#94a3b8', fontSize: 14, display: 'block', marginBottom: 10 }}>Neighborhood type</label>
             <div style={{ display: 'flex', gap: 10 }}>
               {(['HOA Neighborhood', 'No HOA / Rural Lot'] as const).map(n => (
-                <button key={n} onClick={() => setNeighborhood(n)} style={{ flex: 1, background: neighborhood === n ? '#F5E642′ : '#0A1628', color: neighborhood === n ? '#0A1628' : '#fff', border: '1px solid #1e3a5f', borderRadius: 8, padding: '12px', fontWeight: 600, cursor: ’pointer', fontSize: 13 }}>
+                <button key={n} onClick={() => setNeighborhood(n)} style={{ flex: 1, background: neighborhood === n ? '#F5E642' : '#0A1628', color: neighborhood === n ? '#0A1628' : '#fff', border: '1px solid #1e3a5f', borderRadius: 8, padding: '12px', fontWeight: 600, cursor: 'pointer', fontSize: 13 }}>
                   {n === 'HOA Neighborhood' ? '🏘️ HOA Community' : '🌾 No HOA / Rural'}
                 </button>
               ))}
@@ -73,7 +73,7 @@ export default function DFWTexasPoolCultureGuide() {
             <div style={{ background: '#112240', borderRadius: 12, padding: 20, marginBottom: 16 }}>
               <div style={{ color: '#F5E642', fontWeight: 700, fontSize: 16, marginBottom: 4 }}>🔧 Your Setup</div>
               <div style={{ color: '#64748b', fontSize: 13, marginBottom: 14, fontStyle: 'italic' }}>{result.social}</div>
-              {result.setup.map((s, i) => <div key={i} style={{ color: '#e2e8f0', fontSize: 14, marginBottom: 8, paddingLeft: 16, borderLeft: '2px solid #F5E642′ }}>{s}</div>)}
+              {result.setup.map((s, i) => <div key={i} style={{ color: '#e2e8f0', fontSize: 14, marginBottom: 8, paddingLeft: 16, borderLeft: '2px solid #F5E642' }}>{s}</div>)}
             </div>
             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16 }}>
               <div style={{ background: '#112240', borderRadius: 12, padding: 20 }}>

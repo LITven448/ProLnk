@@ -22,7 +22,7 @@ const energyData: EnergyData = {
     requirements: [
       { label: "Attic Insulation", value: "R-38 if accessible", note: "Applies to attic areas disturbed during renovation scope." },
       { label: "Wall Insulation", value: "R-13 if walls opened", note: "Any wall opened during scope must be insulated to current code." },
-      { label: "Windows (replaced)", value: "U-0.30 / SHGC-0.25″, note: "Any window replaced as part of permitted scope must meet 2021 IECC." },
+      { label: "Windows (replaced)", value: "U-0.30 / SHGC-0.25", note: "Any window replaced as part of permitted scope must meet 2021 IECC." },
       { label: "HVAC (replaced)", value: "SEER2 14.3 min", note: "New equipment must meet minimum efficiency. Sized per Manual J." },
       { label: "Air Sealing", value: "Best effort", note: "Blower door test not always required for renovations but encouraged." },
       { label: "Duct Work (replaced)", value: "4% max leakage", note: "Replaced duct sections must be tested and sealed per IECC." },
@@ -59,38 +59,38 @@ export default function DFWEnergyCodeGuide2026() {
   const { applies, requirements } = energyData[projectType];
 
   return (
-    <div style={{ backgroundColor: "#0A1628″, minHeight: "100vh", color: "#fff", fontFamily: "system-ui, sans-serif", padding: "24px" }}>
+    <div style={{ backgroundColor: "#0A1628", minHeight: "100vh", color: "#fff", fontFamily: "system-ui, sans-serif", padding: "24px" }}>
       <div style={{ maxWidth: "860px", margin: "0 auto" }}>
         <div style={{ marginBottom: "32px" }}>
           <span style={{ fontSize: "32px" }}>⚡</span>
-          <h1 style={{ fontSize: "28px", fontWeight: "800″, color: "#F5E642", marginTop: "8px" }}>DFW Energy Code Guide 2026</h1>
-          <p style={{ color: "#94a3b8″, marginTop: "8px" }}>Texas adopted IECC 2021 for new construction and major renovations. DFW is in Climate Zone 3 — hot summers drive strict window and air sealing requirements. Know what applies to your project before permitting.</p>
+          <h1 style={{ fontSize: "28px", fontWeight: "800", color: "#F5E642", marginTop: "8px" }}>DFW Energy Code Guide 2026</h1>
+          <p style={{ color: "#94a3b8", marginTop: "8px" }}>Texas adopted IECC 2021 for new construction and major renovations. DFW is in Climate Zone 3 — hot summers drive strict window and air sealing requirements. Know what applies to your project before permitting.</p>
         </div>
 
         <div style={{ marginBottom: "24px" }}>
-          <label style={{ color: "#94a3b8″, fontSize: "13px", display: "block", marginBottom: "6px" }}>Project Type</label>
-          <select value={projectType} onChange={e => setProjectType(e.target.value)} style={{ padding: "10px 12px", backgroundColor: "#1e293b", border: "1px solid #334155″, borderRadius: "8px", color: "#fff", fontSize: "14px", minWidth: "300px" }}>
+          <label style={{ color: "#94a3b8", fontSize: "13px", display: "block", marginBottom: "6px" }}>Project Type</label>
+          <select value={projectType} onChange={e => setProjectType(e.target.value)} style={{ padding: "10px 12px", backgroundColor: "#1e293b", border: "1px solid #334155", borderRadius: "8px", color: "#fff", fontSize: "14px", minWidth: "300px" }}>
             {Object.keys(energyData).map(k => <option key={k}>{k}</option>)}
           </select>
         </div>
 
         <div style={{ backgroundColor: applies ? "#0f2a1a" : "#1e293b", borderRadius: "8px", padding: "12px 16px", marginBottom: "20px", border: `1px solid ${applies ? "#16a34a" : "#334155"}`, display: "flex", alignItems: "center", gap: "10px" }}>
           <span style={{ fontSize: "20px" }}>{applies ? "⚠️" : "✅"}</span>
-          <p style={{ color: applies ? "#4ade80″ : "#94a3b8", fontWeight: "600" }}>
+          <p style={{ color: applies ? "#4ade80" : "#94a3b8", fontWeight: "600" }}>
             {applies ? "IECC 2021 Energy Code APPLIES to this project type" : "Energy Code NOT triggered for this project type"}
           </p>
         </div>
 
         <div style={{ backgroundColor: "#1e293b", borderRadius: "12px", padding: "20px", marginBottom: "24px" }}>
-          <h2 style={{ color: "#F5E642″, fontWeight: "700", marginBottom: "16px" }}>Energy Requirements — {projectType}</h2>
+          <h2 style={{ color: "#F5E642", fontWeight: "700", marginBottom: "16px" }}>Energy Requirements — {projectType}</h2>
           <div style={{ display: "flex", flexDirection: "column", gap: "10px" }}>
             {requirements.map(req => (
               <div key={req.label} style={{ backgroundColor: "#0f172a", borderRadius: "8px", padding: "14px", display: "grid", gridTemplateColumns: "1fr auto", gap: "12px", alignItems: "start" }}>
                 <div>
-                  <p style={{ fontWeight: "600″, color: "#e2e8f0", fontSize: "14px", marginBottom: "4px" }}>{req.label}</p>
-                  <p style={{ color: "#94a3b8″, fontSize: "13px" }}>{req.note}</p>
+                  <p style={{ fontWeight: "600", color: "#e2e8f0", fontSize: "14px", marginBottom: "4px" }}>{req.label}</p>
+                  <p style={{ color: "#94a3b8", fontSize: "13px" }}>{req.note}</p>
                 </div>
-                <div style={{ backgroundColor: "#F5E642″, color: "#0A1628", borderRadius: "8px", padding: "6px 12px", fontSize: "12px", fontWeight: "800", textAlign: "center", whiteSpace: "nowrap" }}>{req.value}</div>
+                <div style={{ backgroundColor: "#F5E642", color: "#0A1628", borderRadius: "8px", padding: "6px 12px", fontSize: "12px", fontWeight: "800", textAlign: "center", whiteSpace: "nowrap" }}>{req.value}</div>
               </div>
             ))}
           </div>
@@ -98,14 +98,14 @@ export default function DFWEnergyCodeGuide2026() {
 
         <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: "16px" }}>
           {[
-            { icon: "🌡️", title: "DFW Climate Zone 3″, body: "Hot-humid climate means windows and air sealing are critical. SHGC limits protect against intense summer sun." },
+            { icon: "🌡️", title: "DFW Climate Zone 3", body: "Hot-humid climate means windows and air sealing are critical. SHGC limits protect against intense summer sun." },
             { icon: "💰", title: "Energy Savings", body: "Proper insulation and air sealing can cut DFW cooling bills 20-40%. Code minimums are the floor, not the target." },
             { icon: "🔍", title: "Who Enforces It", body: "Building departments verify compliance at permit and inspection. Energy code violations can delay CO issuance." },
           ].map(({ icon, title, body }) => (
             <div key={title} style={{ backgroundColor: "#1e293b", borderRadius: "12px", padding: "16px" }}>
               <div style={{ fontSize: "24px", marginBottom: "8px" }}>{icon}</div>
-              <h3 style={{ color: "#F5E642″, fontWeight: "700", marginBottom: "6px", fontSize: "14px" }}>{title}</h3>
-              <p style={{ color: "#94a3b8″, fontSize: "13px", lineHeight: "1.5" }}>{body}</p>
+              <h3 style={{ color: "#F5E642", fontWeight: "700", marginBottom: "6px", fontSize: "14px" }}>{title}</h3>
+              <p style={{ color: "#94a3b8", fontSize: "13px", lineHeight: "1.5" }}>{body}</p>
             </div>
           ))}
         </div>

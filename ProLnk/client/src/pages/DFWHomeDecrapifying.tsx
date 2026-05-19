@@ -83,7 +83,7 @@ export default function DFWHomeDecrapifying() {
             <div style={{ marginTop: 24, padding: 20, background: '#F9FAFB', borderRadius: 10 }}>
               <div style={{ fontWeight: 700, marginBottom: 12 }}>⏱ Estimated Time: {result.hours} hours total</div>
               <div style={{ fontWeight: 600, marginBottom: 8 }}>Priority Order:</div>
-              {result.rooms.map((r, i) => <div key={r} style={{ padding: '6px 0', color: '#475569′ }}>{i + 1}. {r}</div>)}
+              {result.rooms.map((r, i) => <div key={r} style={{ padding: '6px 0', color: '#475569' }}>{i + 1}. {r}</div>)}
               <div style={{ marginTop: 16, padding: 14, background: '#F5E642', borderRadius: 8, fontSize: 14, color: '#0A1628', fontWeight: 600 }}>{result.tip}</div>
             </div>
           )}

@@ -98,7 +98,7 @@ export default function DFWCounterofferGuide() {
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: 16 }}>
           {[['1-2', 'Typical counteroffer rounds in DFW before acceptance or walk'],['24hr', 'Maximum time to leave a counter open — urgency drives decisions'],['TREC', 'Texas contract forms used for all residential counteroffers']].map(([stat, desc]) => (
             <div key={stat as string} style={{ background: '#1A2B3C', color: '#F8F6F1', borderRadius: 4, padding: 20, textAlign: 'center' }}>
-              <div style={{ fontSize: 24, fontWeight: 700, marginBottom: 8, color: '#F5E642′ }}>{stat}</div>
+              <div style={{ fontSize: 24, fontWeight: 700, marginBottom: 8, color: '#F5E642' }}>{stat}</div>
               <div style={{ fontSize: 13, color: '#CBD5E0', lineHeight: 1.5 }}>{desc}</div>
             </div>
           ))}

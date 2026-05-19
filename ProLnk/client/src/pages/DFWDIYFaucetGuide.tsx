@@ -39,8 +39,8 @@ export default function DFWDIYFaucetGuide() {
   const rec = ready ? getRecommendation(faucetType, hardness, experience) : null;
 
   return (
-    <div style={{ background: '#0A1628', minHeight: '100vh', color: '#fff', fontFamily: 'system-ui, sans-serif', padding: '0 0 60px 0′ }}>
-      <div style={{ background: 'linear-gradient(135deg, #0A1628 0%, #112240 100%)', padding: '48px 24px 36px', borderBottom: '2px solid #F5E642′ }}>
+    <div style={{ background: '#0A1628', minHeight: '100vh', color: '#fff', fontFamily: 'system-ui, sans-serif', padding: '0 0 60px 0' }}>
+      <div style={{ background: 'linear-gradient(135deg, #0A1628 0%, #112240 100%)', padding: '48px 24px 36px', borderBottom: '2px solid #F5E642' }}>
         <div style={{ maxWidth: 760, margin: '0 auto' }}>
           <div style={{ fontSize: 36, marginBottom: 8 }}>🚰</div>
           <h1 style={{ fontSize: 32, fontWeight: 800, color: '#F5E642', margin: '0 0 10px' }}>DFW DIY Faucet Repair & Replacement Guide</h1>
@@ -81,7 +81,7 @@ export default function DFWDIYFaucetGuide() {
 
         <div style={{ background: '#112240', borderRadius: 12, padding: 24, marginBottom: 24 }}>
           <h2 style={{ color: '#F5E642', fontSize: 20, margin: '0 0 14px' }}>🛑 When to Call a Plumber</h2>
-          <p style={{ color: '#cbd5e1', lineHeight: 1.7, margin: 0 }}>Call a pro if: shutoff valves won't close or are corroded, supply lines are corroded copper (DFW pre-1985 homes), the faucet base is cracked or corroded through, you discover water damage inside the cabinet, or you’re replacing a kitchen faucet with different hole configuration.</p>
+          <p style={{ color: '#cbd5e1', lineHeight: 1.7, margin: 0 }}>Call a pro if: shutoff valves won't close or are corroded, supply lines are corroded copper (DFW pre-1985 homes), the faucet base is cracked or corroded through, you discover water damage inside the cabinet, or you're replacing a kitchen faucet with different hole configuration.</p>
         </div>
 
         <div style={{ background: '#112240', borderRadius: 12, padding: 24 }}>
@@ -91,7 +91,7 @@ export default function DFWDIYFaucetGuide() {
             <div style={{ color: '#cbd5e1', fontWeight: 600, marginBottom: 10 }}>Faucet Type</div>
             <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
               {FAUCET_TYPES.map(f => (
-                <button key={f} onClick={() => setFaucetType(f)} style={{ padding: '10px 16px', borderRadius: 8, border: '2px solid', borderColor: faucetType === f ? '#F5E642′ : '#334155', background: faucetType === f ? '#F5E64215' : ’transparent', color: faucetType === f ? '#F5E642′ : '#94a3b8', textAlign: ’left', cursor: 'pointer', fontSize: 14 }}>
+                <button key={f} onClick={() => setFaucetType(f)} style={{ padding: '10px 16px', borderRadius: 8, border: '2px solid', borderColor: faucetType === f ? '#F5E642' : '#334155', background: faucetType === f ? '#F5E64215' : 'transparent', color: faucetType === f ? '#F5E642' : '#94a3b8', textAlign: 'left', cursor: 'pointer', fontSize: 14 }}>
                   {f}
                 </button>
               ))}
@@ -102,7 +102,7 @@ export default function DFWDIYFaucetGuide() {
             <div style={{ color: '#cbd5e1', fontWeight: 600, marginBottom: 10 }}>Your DFW Water Hardness</div>
             <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
               {HARDNESS_LEVELS.map(h => (
-                <button key={h.value} onClick={() => setHardness(h.value)} style={{ padding: '10px 16px', borderRadius: 8, border: '2px solid', borderColor: hardness === h.value ? '#F5E642′ : '#334155', background: hardness === h.value ? '#F5E64215' : ’transparent', color: hardness === h.value ? '#F5E642′ : '#94a3b8', textAlign: ’left', cursor: 'pointer', fontSize: 14 }}>
+                <button key={h.value} onClick={() => setHardness(h.value)} style={{ padding: '10px 16px', borderRadius: 8, border: '2px solid', borderColor: hardness === h.value ? '#F5E642' : '#334155', background: hardness === h.value ? '#F5E64215' : 'transparent', color: hardness === h.value ? '#F5E642' : '#94a3b8', textAlign: 'left', cursor: 'pointer', fontSize: 14 }}>
                   {h.label}
                 </button>
               ))}
@@ -113,7 +113,7 @@ export default function DFWDIYFaucetGuide() {
             <div style={{ color: '#cbd5e1', fontWeight: 600, marginBottom: 10 }}>DIY Experience Level</div>
             <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
               {EXPERIENCE.map(e => (
-                <button key={e} onClick={() => setExperience(e)} style={{ padding: '10px 16px', borderRadius: 8, border: '2px solid', borderColor: experience === e ? '#F5E642′ : '#334155', background: experience === e ? '#F5E64215' : ’transparent', color: experience === e ? '#F5E642′ : '#94a3b8', textAlign: ’left', cursor: 'pointer', fontSize: 14 }}>
+                <button key={e} onClick={() => setExperience(e)} style={{ padding: '10px 16px', borderRadius: 8, border: '2px solid', borderColor: experience === e ? '#F5E642' : '#334155', background: experience === e ? '#F5E64215' : 'transparent', color: experience === e ? '#F5E642' : '#94a3b8', textAlign: 'left', cursor: 'pointer', fontSize: 14 }}>
                   {e}
                 </button>
               ))}
@@ -125,15 +125,15 @@ export default function DFWDIYFaucetGuide() {
           </button>
 
           {showResults && rec && (
-            <div style={{ marginTop: 24, padding: 20, background: '#0A1628', borderRadius: 12, borderLeft: '4px solid ' + (rec.callPro ? '#f87171′ : '#4ade80') }}>
-              <div style={{ fontWeight: 800, fontSize: 18, marginBottom: 14, color: rec.callPro ? '#f87171′ : '#4ade80' }}>
+            <div style={{ marginTop: 24, padding: 20, background: '#0A1628', borderRadius: 12, borderLeft: '4px solid ' + (rec.callPro ? '#f87171' : '#4ade80') }}>
+              <div style={{ fontWeight: 800, fontSize: 18, marginBottom: 14, color: rec.callPro ? '#f87171' : '#4ade80' }}>
                 {rec.callPro ? '📞 Consider calling a plumber — DFW hard water + first-time plumbing is a risky combo' : `✅ ${rec.action === 'replace' ? 'Replace the faucet' : 'Repair the cartridge/valve'} — you can handle this`}
               </div>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 10, marginBottom: 16 }}>
                 {[['🕐 Time', `${rec.hours} hrs`], ['💰 Parts Cost', `~$${rec.cost}`]].map(([label, val]) => (
                   <div key={label} style={{ background: '#112240', borderRadius: 8, padding: 14, textAlign: 'center' }}>
                     <div style={{ fontSize: 12, color: '#94a3b8', marginBottom: 4 }}>{label}</div>
-                    <div style={{ fontSize: 20, fontWeight: 800, color: '#F5E642′ }}>{val}</div>
+                    <div style={{ fontSize: 20, fontWeight: 800, color: '#F5E642' }}>{val}</div>
                   </div>
                 ))}
               </div>

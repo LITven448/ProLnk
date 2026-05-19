@@ -20,7 +20,7 @@ const guidance: Record<string, Record<string, { diagnosis: string; action: strin
     'Not sure which type': { diagnosis: '🔍 Check airflow direction first. Then apply appropriate fix for supply or return.', action: 'Paper test to determine type. Tighten frame as first step regardless of type.', warning: '⚠️ Airflow noise increases with higher static pressure — address system-wide balance if multiple registers rattle.' },
   },
   'Weak airflow from ceiling register': {
-    'Supply register (adjustable louvers — air comes out)': { diagnosis: '🔴 Check louver position first — partially closed louvers are often the simplest fix. If fully open and still weak: kinked flex duct, disconnected duct, or undersized branch duct.', action: 'Open louvers fully. If still weak: access attic and inspect flex duct run to that register for kinks, sags, or disconnections. Check that duct is properly sized (6″ duct for 100–150 CFM, 8″ for 200–250 CFM).', warning: '⚠️ In DFW, kinked flex duct from HVAC tech foot traffic is the #1 cause of suddenly weak registers. Inspect after any attic work.' },
+    'Supply register (adjustable louvers — air comes out)': { diagnosis: '🔴 Check louver position first — partially closed louvers are often the simplest fix. If fully open and still weak: kinked flex duct, disconnected duct, or undersized branch duct.', action: 'Open louvers fully. If still weak: access attic and inspect flex duct run to that register for kinks, sags, or disconnections. Check that duct is properly sized (6" duct for 100–150 CFM, 8" for 200–250 CFM).', warning: '⚠️ In DFW, kinked flex duct from HVAC tech foot traffic is the #1 cause of suddenly weak registers. Inspect after any attic work.' },
     'Return grille (no louvers — air goes in)': { diagnosis: '⚠️ Weak return pull is usually a clogged filter, undersized return grille, or disconnected return duct in attic.', action: 'Replace filter first. Measure return grille — rule of thumb is 1 sq ft of return grille per 400 CFM of system airflow. A 3-ton system (1,200 CFM) needs 3 sq ft minimum of return grille area.', warning: '⚠️ Undersized returns are the most common design flaw in DFW tract homes. Adding a return is often more impactful than adding supply.' },
     'Not sure which type': { diagnosis: '🔍 Determine direction first. Weak supply vs weak return have completely different solutions.', action: 'Paper test. If supply is weak: check duct. If return is weak: check filter and return sizing.', warning: '⚠️ Do not confuse weak supply with strong return pull — they can feel similar but require opposite approaches.' },
   },
@@ -50,7 +50,7 @@ export default function DFWRegisterAndGrilleGuide() {
           <div style={{ color: '#cbd5e1', lineHeight: 2 }}>
             <div>💨 <strong>Supply register:</strong> Air blows OUT. Has adjustable louvers. Controls direction and volume of conditioned air delivery.</div>
             <div>🔄 <strong>Return grille:</strong> Air is drawn IN. No adjustable louvers. Brings room air back to the system for reconditioning.</div>
-            <div style={{ marginTop: 8, color: '#F5E642′ }}>Quick test: Hold a tissue near the register. Blows away = supply. Gets sucked in = return.</div>
+            <div style={{ marginTop: 8, color: '#F5E642' }}>Quick test: Hold a tissue near the register. Blows away = supply. Gets sucked in = return.</div>
           </div>
         </div>
 
@@ -69,7 +69,7 @@ export default function DFWRegisterAndGrilleGuide() {
         </div>
 
         {result && (
-          <div style={{ background: '#132035', borderRadius: 12, padding: 20, borderLeft: '4px solid #F5E642′ }}>
+          <div style={{ background: '#132035', borderRadius: 12, padding: 20, borderLeft: '4px solid #F5E642' }}>
             <p style={{ color: '#cbd5e1', lineHeight: 1.7, marginBottom: 12 }}>{result.diagnosis}</p>
             <p style={{ color: '#cbd5e1', lineHeight: 1.7, marginBottom: 12 }}><strong>Action:</strong> {result.action}</p>
             <div style={{ color: '#F5E642', fontWeight: 600 }}>{result.warning}</div>

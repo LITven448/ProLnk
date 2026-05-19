@@ -46,7 +46,7 @@ export default function DFWMoveInCostCalculator() {
   }
 
   return (
-    <div style={{ background: '#F9FAFB', minHeight: '100vh', padding: '32px 16px', fontFamily: 'system-ui, sans-serif', color: '#0A1628′ }}>
+    <div style={{ background: '#F9FAFB', minHeight: '100vh', padding: '32px 16px', fontFamily: 'system-ui, sans-serif', color: '#0A1628' }}>
       <div style={{ maxWidth: 700, margin: '0 auto' }}>
         <div style={{ background: '#0A1628', borderRadius: 12, padding: '28px 32px', marginBottom: 28 }}>
           <div style={{ fontSize: 32 }}>🚛🏠</div>
@@ -63,12 +63,12 @@ export default function DFWMoveInCostCalculator() {
             <label style={{ display: 'flex', flexDirection: 'column', gap: 6, fontSize: 14 }}>
               Home purchase price ($)
               <input type="number" value={homePrice} onChange={e => setHomePrice(e.target.value)}
-                style={{ padding: '10px 14px', borderRadius: 8, border: '1.5px solid #E2E8F0', fontSize: 15 }} placeholder="e.g. 425000″ />
+                style={{ padding: '10px 14px', borderRadius: 8, border: '1.5px solid #E2E8F0', fontSize: 15 }} placeholder="e.g. 425000" />
             </label>
             <label style={{ display: 'flex', flexDirection: 'column', gap: 6, fontSize: 14 }}>
               Home size (sq ft)
               <input type="number" value={sqft} onChange={e => setSqft(e.target.value)}
-                style={{ padding: '10px 14px', borderRadius: 8, border: '1.5px solid #E2E8F0', fontSize: 15 }} placeholder="e.g. 2400″ />
+                style={{ padding: '10px 14px', borderRadius: 8, border: '1.5px solid #E2E8F0', fontSize: 15 }} placeholder="e.g. 2400" />
             </label>
             <label style={{ display: 'flex', flexDirection: 'column', gap: 6, fontSize: 14 }}>
               Home condition (as-purchased)
@@ -102,14 +102,14 @@ export default function DFWMoveInCostCalculator() {
             {result.items.map((item, i) => (
               <div key={i} style={{ display: 'flex', justifyContent: 'space-between', padding: '9px 0', borderBottom: '1px solid #F1F5F9', fontSize: 14 }}>
                 <span>{item.label}</span>
-                <span style={{ fontWeight: 600, color: '#475569′ }}>
+                <span style={{ fontWeight: 600, color: '#475569' }}>
                   {item.low === item.high ? `$${item.low.toLocaleString()}` : `$${item.low.toLocaleString()} – $${item.high.toLocaleString()}`}
                 </span>
               </div>
             ))}
             <div style={{ display: 'flex', justifyContent: 'space-between', marginTop: 16, padding: '14px 0', borderTop: '2.5px solid #0A1628', fontWeight: 800 }}>
               <span style={{ fontSize: 16 }}>Total Move-In Budget</span>
-              <span style={{ fontSize: 18, color: '#0A1628′ }}>${result.total.low.toLocaleString()} – ${result.total.high.toLocaleString()}</span>
+              <span style={{ fontSize: 18, color: '#0A1628' }}>${result.total.low.toLocaleString()} – ${result.total.high.toLocaleString()}</span>
             </div>
             <div style={{ marginTop: 16, padding: 14, background: '#EFF6FF', borderRadius: 8, fontSize: 13, color: '#1E40AF' }}>
               💡 Keep this cash liquid — don't use it for closing. Request seller concessions or negotiate closing cost credits to preserve your move-in budget.

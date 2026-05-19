@@ -65,7 +65,7 @@ export default function DFWFoundationConcreteAge2026() {
               value={vintage}
               onChange={e => setVintage(e.target.value)}
               type="number"
-              placeholder="e.g. 1985″
+              placeholder="e.g. 1985"
               style={{ background: '#1a2f50', border: '1px solid #2d4a7a', borderRadius: 8, padding: '10px 14px', color: '#fff', width: '100%', fontSize: 14 }}
             />
           </div>

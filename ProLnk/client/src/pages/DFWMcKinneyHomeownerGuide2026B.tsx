@@ -52,10 +52,10 @@ export default function DFWMcKinneyHomeownerGuide2026B() {
       <div style={{ maxWidth: 780, margin: '0 auto' }}>
         <div style={{ color: '#F5E642', fontSize: 13, fontWeight: 700, letterSpacing: 2, marginBottom: 8 }}>PROLNK · McKINNEY TX · PART 2 OF 2</div>
         <h1 style={{ fontSize: 28, fontWeight: 800, marginBottom: 8 }}>McKinney TX Homeowner Deep Dive 2026</h1>
-        <p style={{ color: '#94a3b8', marginBottom: 24 }}>Collin County's historic gem blends 1920s downtown charm with explosive suburban growth and Adriatica’s European-style new construction. Your neighborhood defines your maintenance reality.</p>
+        <p style={{ color: '#94a3b8', marginBottom: 24 }}>Collin County's historic gem blends 1920s downtown charm with explosive suburban growth and Adriatica's European-style new construction. Your neighborhood defines your maintenance reality.</p>
 
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: 12, marginBottom: 28 }}>
-          {[{ icon: '🏛️', label: 'Downtown Vintage', val: '1920s–1970s historic district' }, { icon: '🌍', label: 'Adriatica Village', val: 'European-style 2005–2015′ }, { icon: '🏠', label: ’Median Home Price', val: '$450K (2026)' }, { icon: '📈', label: 'Population', val: '210K+ (Collin County seat)' }].map(c => (
+          {[{ icon: '🏛️', label: 'Downtown Vintage', val: '1920s–1970s historic district' }, { icon: '🌍', label: 'Adriatica Village', val: 'European-style 2005–2015' }, { icon: '🏠', label: 'Median Home Price', val: '$450K (2026)' }, { icon: '📈', label: 'Population', val: '210K+ (Collin County seat)' }].map(c => (
             <div key={c.label} style={{ background: '#111e35', borderRadius: 10, padding: 16 }}>
               <div style={{ fontSize: 22 }}>{c.icon}</div>
               <div style={{ fontSize: 12, color: '#94a3b8', marginTop: 4 }}>{c.label}</div>
@@ -69,7 +69,7 @@ export default function DFWMcKinneyHomeownerGuide2026B() {
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8, marginBottom: 16 }}>
             {neighborhoods.map(n => (
               <button key={n} onClick={() => setSelected(n === selected ? null : n)}
-                style={{ padding: '8px 14px', borderRadius: 8, border: 'none', cursor: 'pointer', fontWeight: 600, fontSize: 13, background: selected === n ? '#F5E642′ : '#1e2f4a', color: selected === n ? '#0A1628' : '#fff' }}>
+                style={{ padding: '8px 14px', borderRadius: 8, border: 'none', cursor: 'pointer', fontWeight: 600, fontSize: 13, background: selected === n ? '#F5E642' : '#1e2f4a', color: selected === n ? '#0A1628' : '#fff' }}>
                 {n}
               </button>
             ))}

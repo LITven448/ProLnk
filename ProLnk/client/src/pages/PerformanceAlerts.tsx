@@ -12,10 +12,10 @@ import { toast } from "sonner";
 
 // --- Alert severity config ----------------------------------------------------
 const SEVERITY_CONFIG = {
-  info:      { icon: <Info size={16} />,          bg: "bg-blue-50″,    border: "border-blue-100",   text: "text-blue-700",    badge: "bg-blue-100 text-blue-700" },
-  warning:   { icon: <AlertTriangle size={16} />, bg: "bg-amber-50″,   border: "border-amber-100",  text: "text-amber-700",   badge: "bg-amber-100 text-amber-700" },
-  success:   { icon: <CheckCircle size={16} />,   bg: "bg-green-50″,   border: "border-green-100",  text: "text-green-700",   badge: "bg-green-100 text-green-700" },
-  milestone: { icon: <Trophy size={16} />,         bg: "bg-purple-50″,  border: "border-purple-100", text: "text-purple-700",  badge: "bg-purple-100 text-purple-700" },
+  info:      { icon: <Info size={16} />,          bg: "bg-blue-50",    border: "border-blue-100",   text: "text-blue-700",    badge: "bg-blue-100 text-blue-700" },
+  warning:   { icon: <AlertTriangle size={16} />, bg: "bg-amber-50",   border: "border-amber-100",  text: "text-amber-700",   badge: "bg-amber-100 text-amber-700" },
+  success:   { icon: <CheckCircle size={16} />,   bg: "bg-green-50",   border: "border-green-100",  text: "text-green-700",   badge: "bg-green-100 text-green-700" },
+  milestone: { icon: <Trophy size={16} />,         bg: "bg-purple-50",  border: "border-purple-100", text: "text-purple-700",  badge: "bg-purple-100 text-purple-700" },
 };
 
 // --- Alert type  CTA ---------------------------------------------------------
@@ -108,10 +108,10 @@ export default function PerformanceAlerts() {
 
   return (
     <PartnerLayout>
-      <div className="space-y-6″>
+      <div className="space-y-6">
         {/* Header */}
         <div className="flex items-center justify-between">
-          <div className="flex items-center gap-3″>
+          <div className="flex items-center gap-3">
             <div className="w-10 h-10 rounded-xl bg-[#F5E642]/10 flex items-center justify-center relative">
               <Bell className="w-5 h-5 text-[#0A1628]" />
               {unreadCount > 0 && (
@@ -121,15 +121,15 @@ export default function PerformanceAlerts() {
               )}
             </div>
             <div>
-              <h1 className="text-2xl font-bold text-gray-900″>Performance Alerts</h1>
-              <p className="text-sm text-gray-500″>Smart notifications about your account and milestones</p>
+              <h1 className="text-2xl font-bold text-gray-900">Performance Alerts</h1>
+              <p className="text-sm text-gray-500">Smart notifications about your account and milestones</p>
             </div>
           </div>
           {!isLive && <Badge className="bg-amber-100 text-amber-700 border-0 text-xs">Demo Data</Badge>}
         </div>
 
         {/* Filter tabs */}
-        <div className="flex gap-2″>
+        <div className="flex gap-2">
           {[
             { id: "all" as const, label: "All Alerts", count: displayAlerts.filter(a => !dismissed.has(a.id)).length },
             { id: "unread" as const, label: "Unread", count: unreadCount },
@@ -141,13 +141,13 @@ export default function PerformanceAlerts() {
               className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-sm font-medium transition-colors ${
                 filter === tab.id
                   ? "bg-[#0A1628]/10 text-[#0A1628]"
-                  : "bg-white border border-gray-200 text-gray-600 hover:bg-gray-50″
+                  : "bg-white border border-gray-200 text-gray-600 hover:bg-gray-50"
               }`}
             >
               {tab.label}
               {tab.count > 0 && (
                 <span className={`text-xs px-1.5 py-0.5 rounded-full font-semibold ${
-                  filter === tab.id ? "bg-[#0A1628]/20 text-teal-800″ : "bg-gray-100 text-gray-500"
+                  filter === tab.id ? "bg-[#0A1628]/20 text-teal-800" : "bg-gray-100 text-gray-500"
                 }`}>
                   {tab.count}
                 </span>
@@ -158,17 +158,17 @@ export default function PerformanceAlerts() {
 
         {/* Alert list */}
         {isLoading ? (
-          <div className="flex items-center justify-center py-16 text-gray-400 gap-2″>
+          <div className="flex items-center justify-center py-16 text-gray-400 gap-2">
             <Bell size={16} className="animate-pulse" /> Loading alerts...
           </div>
         ) : visible.length === 0 ? (
-          <div className="flex flex-col items-center justify-center py-16 text-gray-400 bg-white rounded-2xl border border-gray-100″>
-            <CheckCircle size={32} className="mb-2 opacity-30″ />
+          <div className="flex flex-col items-center justify-center py-16 text-gray-400 bg-white rounded-2xl border border-gray-100">
+            <CheckCircle size={32} className="mb-2 opacity-30" />
             <p className="text-sm font-medium">You're all caught up!</p>
-            <p className="text-xs mt-1″>No alerts match your current filter.</p>
+            <p className="text-xs mt-1">No alerts match your current filter.</p>
           </div>
         ) : (
-          <div className="space-y-3″>
+          <div className="space-y-3">
             {visible.map(alert => {
               const cfg = SEVERITY_CONFIG[alert.severity as keyof typeof SEVERITY_CONFIG] ?? SEVERITY_CONFIG.info;
               const cta = ALERT_CTA[alert.alertType];
@@ -177,18 +177,18 @@ export default function PerformanceAlerts() {
                   key={alert.id}
                   className={`${cfg.bg} ${cfg.border} border rounded-2xl p-4 transition-all ${!alert.isRead ? "shadow-sm" : "opacity-75"}`}
                 >
-                  <div className="flex items-start gap-3″>
+                  <div className="flex items-start gap-3">
                     {/* Icon */}
                     <div className={`w-8 h-8 rounded-full flex items-center justify-center shrink-0 ${cfg.text} bg-white/60`}>
                       {cfg.icon}
                     </div>
 
                     {/* Content */}
-                    <div className="flex-1 min-w-0″>
+                    <div className="flex-1 min-w-0">
                       <div className="flex items-center gap-2 flex-wrap">
                         <span className={`text-sm font-semibold ${cfg.text}`}>{alert.title}</span>
                         {!alert.isRead && (
-                          <span className="w-2 h-2 rounded-full bg-red-500 shrink-0″ />
+                          <span className="w-2 h-2 rounded-full bg-red-500 shrink-0" />
                         )}
                         <span className={`text-xs px-1.5 py-0.5 rounded-full font-medium capitalize ${cfg.badge}`}>
                           {alert.severity}
@@ -218,7 +218,7 @@ export default function PerformanceAlerts() {
                     {/* Dismiss */}
                     <button
                       onClick={() => handleDismiss(alert.id)}
-                      className="p-1 rounded-lg text-gray-300 hover:text-gray-500 hover:bg-white/60 transition-colors shrink-0″
+                      className="p-1 rounded-lg text-gray-300 hover:text-gray-500 hover:bg-white/60 transition-colors shrink-0"
                     >
                       <X size={14} />
                     </button>
@@ -230,25 +230,25 @@ export default function PerformanceAlerts() {
         )}
 
         {/* Alert preferences section */}
-        <div className="bg-white rounded-2xl border border-gray-100 p-5″>
-          <div className="flex items-center gap-2 mb-4″>
-            <Bell size={16} className="text-gray-500″ />
-            <p className="text-sm font-semibold text-gray-900″>Alert Preferences</p>
+        <div className="bg-white rounded-2xl border border-gray-100 p-5">
+          <div className="flex items-center gap-2 mb-4">
+            <Bell size={16} className="text-gray-500" />
+            <p className="text-sm font-semibold text-gray-900">Alert Preferences</p>
           </div>
-          <div className="space-y-3″>
+          <div className="space-y-3">
             {[
-              { label: "Inbound lead alerts", desc: "Get notified when you receive a new lead", icon: <Zap size={14} className="text-purple-500″ />, enabled: true },
-              { label: "Commission milestones", desc: "Celebrate when you hit payout thresholds", icon: <DollarSign size={14} className="text-green-500″ />, enabled: true },
-              { label: "Tier upgrade notifications", desc: "Know when you qualify for the next tier", icon: <TrendingUp size={14} className="text-blue-500″ />, enabled: true },
-              { label: "Response time warnings", desc: "Alert when a lead is about to expire", icon: <Clock size={14} className="text-amber-500″ />, enabled: true },
-              { label: "Milestone celebrations", desc: "Celebrate job and referral milestones", icon: <Trophy size={14} className="text-purple-500″ />, enabled: true },
+              { label: "Inbound lead alerts", desc: "Get notified when you receive a new lead", icon: <Zap size={14} className="text-purple-500" />, enabled: true },
+              { label: "Commission milestones", desc: "Celebrate when you hit payout thresholds", icon: <DollarSign size={14} className="text-green-500" />, enabled: true },
+              { label: "Tier upgrade notifications", desc: "Know when you qualify for the next tier", icon: <TrendingUp size={14} className="text-blue-500" />, enabled: true },
+              { label: "Response time warnings", desc: "Alert when a lead is about to expire", icon: <Clock size={14} className="text-amber-500" />, enabled: true },
+              { label: "Milestone celebrations", desc: "Celebrate job and referral milestones", icon: <Trophy size={14} className="text-purple-500" />, enabled: true },
             ].map(pref => (
-              <div key={pref.label} className="flex items-center justify-between py-2 border-b border-gray-50 last:border-0″>
-                <div className="flex items-center gap-2.5″>
+              <div key={pref.label} className="flex items-center justify-between py-2 border-b border-gray-50 last:border-0">
+                <div className="flex items-center gap-2.5">
                   <div className="w-7 h-7 rounded-lg bg-gray-50 flex items-center justify-center">{pref.icon}</div>
                   <div>
-                    <p className="text-sm font-medium text-gray-800″>{pref.label}</p>
-                    <p className="text-xs text-gray-400″>{pref.desc}</p>
+                    <p className="text-sm font-medium text-gray-800">{pref.label}</p>
+                    <p className="text-xs text-gray-400">{pref.desc}</p>
                   </div>
                 </div>
                 <div
@@ -260,7 +260,7 @@ export default function PerformanceAlerts() {
               </div>
             ))}
           </div>
-          <p className="text-xs text-gray-400 mt-3″>Email and SMS notifications require Resend + Twilio credentials to be configured.</p>
+          <p className="text-xs text-gray-400 mt-3">Email and SMS notifications require Resend + Twilio credentials to be configured.</p>
         </div>
       </div>
     </PartnerLayout>

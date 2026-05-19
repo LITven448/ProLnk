@@ -28,7 +28,7 @@ export default function DFWRooferRowlett() {
   }
 
   return (
-    <div style={{ background: '#0A1628', minHeight: '100vh', color: '#E8EDF5', fontFamily: 'system-ui, sans-serif', padding: '0′ }}>
+    <div style={{ background: '#0A1628', minHeight: '100vh', color: '#E8EDF5', fontFamily: 'system-ui, sans-serif', padding: '0' }}>
       <div style={{ background: 'linear-gradient(135deg, #0A1628 0%, #0F2040 100%)', padding: '48px 24px 32px', textAlign: 'center' }}>
         <div style={{ fontSize: '36px', marginBottom: '8px' }}>🌊🏠</div>
         <h1 style={{ fontSize: '28px', fontWeight: '800', color: '#F5E642', margin: '0 0 8px' }}>Rowlett TX Roofers</h1>
@@ -38,7 +38,7 @@ export default function DFWRooferRowlett() {
       </div>
 
       <div style={{ maxWidth: '720px', margin: '0 auto', padding: '32px 24px' }}>
-        <div style={{ background: '#0F2040', borderRadius: '12px', padding: '24px', marginBottom: '24px', border: '1px solid #1A3060′ }}>
+        <div style={{ background: '#0F2040', borderRadius: '12px', padding: '24px', marginBottom: '24px', border: '1px solid #1A3060' }}>
           <h2 style={{ color: '#F5E642', fontSize: '18px', margin: '0 0 16px' }}>⚠️ Why Rowlett Roofs Face Unique Risks</h2>
           <div style={{ display: 'grid', gap: '12px' }}>
             {[
@@ -57,7 +57,7 @@ export default function DFWRooferRowlett() {
           </div>
         </div>
 
-        <div style={{ background: '#0F2040', borderRadius: '12px', padding: '24px', marginBottom: '24px', border: '1px solid #1A3060′ }}>
+        <div style={{ background: '#0F2040', borderRadius: '12px', padding: '24px', marginBottom: '24px', border: '1px solid #1A3060' }}>
           <h2 style={{ color: '#F5E642', fontSize: '18px', margin: '0 0 16px' }}>🔍 Storm Risk + Inspection Urgency Calculator</h2>
           <div style={{ display: 'grid', gap: '16px', marginBottom: '16px' }}>
             <div>
@@ -68,9 +68,9 @@ export default function DFWRooferRowlett() {
                 style={{ width: '100%', background: '#0A1628', border: '1px solid #2A4080', borderRadius: '8px', padding: '10px 12px', color: '#E8EDF5', fontSize: '14px' }}
               >
                 <option value="">Select era...</option>
-                <option value="pre1980″>Before 1980 (45+ years old)</option>
-                <option value="1980to2000″>1980–2000 (25–45 years old)</option>
-                <option value="post2000″>After 2000 (under 25 years old)</option>
+                <option value="pre1980">Before 1980 (45+ years old)</option>
+                <option value="1980to2000">1980–2000 (25–45 years old)</option>
+                <option value="post2000">After 2000 (under 25 years old)</option>
               </select>
             </div>
             <div>
@@ -90,13 +90,13 @@ export default function DFWRooferRowlett() {
           <button
             onClick={assess}
             disabled={!homeAge || !proximity}
-            style={{ width: '100%', background: homeAge && proximity ? '#F5E642′ : '#2A4080', color: homeAge && proximity ? '#0A1628' : '#4A6080', border: ’none', borderRadius: '8px', padding: '12px', fontSize: '15px', fontWeight: '700', cursor: homeAge && proximity ? 'pointer' : 'not-allowed' }}
+            style={{ width: '100%', background: homeAge && proximity ? '#F5E642' : '#2A4080', color: homeAge && proximity ? '#0A1628' : '#4A6080', border: 'none', borderRadius: '8px', padding: '12px', fontSize: '15px', fontWeight: '700', cursor: homeAge && proximity ? 'pointer' : 'not-allowed' }}
           >
             Assess My Storm Risk
           </button>
           {result && (
             <div style={{ marginTop: '16px', background: '#0A1628', borderRadius: '8px', padding: '16px', border: `1px solid ${result.risk === 'Critical' ? '#FF4444' : result.risk === 'High' ? '#FF8C00' : '#F5E642'}` }}>
-              <div style={{ fontWeight: '800', fontSize: '18px', color: result.risk === 'Critical' ? '#FF4444′ : result.risk === ’High' ? '#FF8C00′ : '#F5E642', marginBottom: '4px' }}>{result.risk} Risk</div>
+              <div style={{ fontWeight: '800', fontSize: '18px', color: result.risk === 'Critical' ? '#FF4444' : result.risk === 'High' ? '#FF8C00' : '#F5E642', marginBottom: '4px' }}>{result.risk} Risk</div>
               <div style={{ color: '#E8EDF5', fontWeight: '600', fontSize: '14px', marginBottom: '6px' }}>🕐 {result.urgency}</div>
               <div style={{ color: '#8898AA', fontSize: '13px' }}>{result.notes}</div>
             </div>

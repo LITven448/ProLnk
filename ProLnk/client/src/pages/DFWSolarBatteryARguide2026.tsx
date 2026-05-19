@@ -26,12 +26,12 @@ export default function DFWSolarBatteryARguide2026() {
         </div>
 
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 14, marginBottom: 28 }}>
-          <div style={{ background: '#112240', borderRadius: 10, padding: 16, borderLeft: '4px solid #F5E642′ }}>
+          <div style={{ background: '#112240', borderRadius: 10, padding: 16, borderLeft: '4px solid #F5E642' }}>
             <div style={{ fontSize: 28 }}>❄️</div>
             <div style={{ color: '#F5E642', fontWeight: 700, margin: '6px 0 4px' }}>Uri 2021 Changed Everything</div>
             <div style={{ color: '#94a3b8', fontSize: 13 }}>4.5M Texas homes lost power. DFW solar+battery installs jumped 340% in 2022-2025.</div>
           </div>
-          <div style={{ background: '#112240', borderRadius: 10, padding: 16, borderLeft: '4px solid #F5E642′ }}>
+          <div style={{ background: '#112240', borderRadius: 10, padding: 16, borderLeft: '4px solid #F5E642' }}>
             <div style={{ fontSize: 28 }}>💰</div>
             <div style={{ color: '#F5E642', fontWeight: 700, margin: '6px 0 4px' }}>30% Federal Tax Credit</div>
             <div style={{ color: '#94a3b8', fontSize: 13 }}>ITC through 2032. $11K Powerwall = $3,300 back. $35K solar+battery = $10,500 back.</div>
@@ -56,7 +56,7 @@ export default function DFWSolarBatteryARguide2026() {
         <div style={{ display: 'flex', flexWrap: 'wrap', gap: 10, marginBottom: 20 }}>
           {loads.map(l => (
             <button key={l.label} onClick={() => setSelected(l.label)}
-              style={{ background: selected === l.label ? '#F5E642′ : '#1e3a5f', color: selected === l.label ? '#0A1628' : '#fff', border: ’none', borderRadius: 8, padding: '10px 18px', cursor: 'pointer', fontWeight: 600, fontSize: 13 }}>
+              style={{ background: selected === l.label ? '#F5E642' : '#1e3a5f', color: selected === l.label ? '#0A1628' : '#fff', border: 'none', borderRadius: 8, padding: '10px 18px', cursor: 'pointer', fontWeight: 600, fontSize: 13 }}>
               {l.label}
             </button>
           ))}

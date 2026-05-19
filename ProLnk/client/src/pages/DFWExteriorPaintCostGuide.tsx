@@ -67,7 +67,7 @@ export default function DFWExteriorPaintCostGuide() {
               <input
                 type="range" min={800} max={6000} step={100} value={homeSqft}
                 onChange={e => setHomeSqft(Number(e.target.value))}
-                style={{ width: '100%', accentColor: '#F5E642′ }}
+                style={{ width: '100%', accentColor: '#F5E642' }}
               />
               <div style={{ color: '#FFFFFF', fontWeight: 700, marginTop: 4 }}>{homeSqft.toLocaleString()} sqft</div>
             </div>
@@ -75,7 +75,7 @@ export default function DFWExteriorPaintCostGuide() {
               <label style={{ color: '#8A9BBE', fontSize: 13, display: 'block', marginBottom: 8 }}>Stories</label>
               <div style={{ display: 'flex', gap: 8 }}>
                 {['1', '2', '3'].map(s => (
-                  <button key={s} onClick={() => setStories(s)} style={{ flex: 1, padding: '10px 0', borderRadius: 8, border: 'none', cursor: 'pointer', fontWeight: 700, fontSize: 16, backgroundColor: stories === s ? '#F5E642′ : '#1E2D4A', color: stories === s ? '#0A1628' : '#8A9BBE' }}>
+                  <button key={s} onClick={() => setStories(s)} style={{ flex: 1, padding: '10px 0', borderRadius: 8, border: 'none', cursor: 'pointer', fontWeight: 700, fontSize: 16, backgroundColor: stories === s ? '#F5E642' : '#1E2D4A', color: stories === s ? '#0A1628' : '#8A9BBE' }}>
                     {s}
                   </button>
                 ))}
@@ -96,10 +96,10 @@ export default function DFWExteriorPaintCostGuide() {
               { label: 'Total Project', value: `$${Math.round(totalCost).toLocaleString()}`, sub: 'full exterior job', highlight: true },
               { label: 'Annual Cost', value: `$${Math.round(annualCost).toLocaleString()}/yr`, sub: `over ${paintData.lifespan} yrs` },
             ].map(stat => (
-              <div key={stat.label} style={{ backgroundColor: stat.highlight ? '#F5E642′ : '#0A1628', borderRadius: 10, padding: 16, textAlign: ’center' }}>
-                <div style={{ color: stat.highlight ? '#0A1628′ : '#8A9BBE', fontSize: 12, marginBottom: 4 }}>{stat.label}</div>
-                <div style={{ color: stat.highlight ? '#0A1628′ : '#FFFFFF', fontSize: 20, fontWeight: 800 }}>{stat.value}</div>
-                <div style={{ color: stat.highlight ? '#0A162880′ : '#4A5B7A', fontSize: 11 }}>{stat.sub}</div>
+              <div key={stat.label} style={{ backgroundColor: stat.highlight ? '#F5E642' : '#0A1628', borderRadius: 10, padding: 16, textAlign: 'center' }}>
+                <div style={{ color: stat.highlight ? '#0A1628' : '#8A9BBE', fontSize: 12, marginBottom: 4 }}>{stat.label}</div>
+                <div style={{ color: stat.highlight ? '#0A1628' : '#FFFFFF', fontSize: 20, fontWeight: 800 }}>{stat.value}</div>
+                <div style={{ color: stat.highlight ? '#0A162880' : '#4A5B7A', fontSize: 11 }}>{stat.sub}</div>
               </div>
             ))}
           </div>

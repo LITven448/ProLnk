@@ -1,7 +1,7 @@
 import { useState } from 'react';
 
 export default function DFWHomeEnergyScoreGuide() {
-  const [vintage, setVintage] = useState<'pre1980′ | '1980s' | '1990s' | '2000s' | '2010s' | '2020s'>('1990s');
+  const [vintage, setVintage] = useState<'pre1980' | '1980s' | '1990s' | '2000s' | '2010s' | '2020s'>('1990s');
   const [insulation, setInsulation] = useState<'poor' | 'average' | 'good'>('average');
   const [hvacAge, setHvacAge] = useState(12);
   const [windows, setWindows] = useState<'single' | 'double' | 'triple'>('double');
@@ -22,12 +22,12 @@ export default function DFWHomeEnergyScoreGuide() {
     else if (hvacAge > 10) score -= 1;
     else if (hvacAge < 5) score += 1;
     score = Math.max(1, Math.min(10, score));
-    const label = score <= 3 ? 'Below Average — Major upgrades needed' : score <= 5 ? 'Average — Moderate improvements available' : score <= 7 ? 'Above Average — DFW median is 5–6′ : ’High Performer — Top 20% of DFW homes';
+    const label = score <= 3 ? 'Below Average — Major upgrades needed' : score <= 5 ? 'Average — Moderate improvements available' : score <= 7 ? 'Above Average — DFW median is 5–6' : 'High Performer — Top 20% of DFW homes';
     const improvements: { name: string; impact: string; cost: string; scoreGain: number }[] = [];
     if (insulation === 'poor') improvements.push({ name: '🧱 Air Sealing + Insulation Upgrade', impact: 'Largest single energy impact in DFW', cost: '$2,500–$5,000', scoreGain: 2 });
     if (hvacAge > 10) improvements.push({ name: '❄️ Replace HVAC System (18+ SEER2)', impact: 'Critical in DFW — HVAC is 45–55% of bill', cost: '$5,000–$12,000', scoreGain: 2 });
     if (windows === 'single') improvements.push({ name: '🪟 Window Replacement (Low-E Double Pane)', impact: 'Reduces solar heat gain in DFW summers', cost: '$400–$800/window', scoreGain: 1 });
-    if (vintage === 'pre1980′ || vintage === '1980s') improvements.push({ name: '🔌 Electrical + Duct Sealing', impact: ’Older DFW homes have significant duct leakage', cost: '$1,500–$3,000', scoreGain: 1 });
+    if (vintage === 'pre1980' || vintage === '1980s') improvements.push({ name: '🔌 Electrical + Duct Sealing', impact: 'Older DFW homes have significant duct leakage', cost: '$1,500–$3,000', scoreGain: 1 });
     improvements.push({ name: '💡 Smart Thermostat + Scheduling', impact: 'Easy win — 8–12% savings with proper setup', cost: '$150–$300 installed', scoreGain: 0 });
     setResult({ score, label, improvements: improvements.slice(0, 3) });
   }
@@ -50,10 +50,10 @@ export default function DFWHomeEnergyScoreGuide() {
           <h2 style={{ fontSize: '17px', fontWeight: 700, color: '#F5E642', marginBottom: '12px' }}>📊 What the 1–10 Score Means</h2>
           <div style={{ display: 'flex', gap: '0', marginBottom: '12px', borderRadius: '8px', overflow: 'hidden' }}>
             {[
-              { range: '1–3', label: 'Poor', color: '#FC8181′ },
+              { range: '1–3', label: 'Poor', color: '#FC8181' },
               { range: '4–6', label: 'Average', color: '#FBD38D' },
-              { range: '7–9', label: 'Good', color: '#68D391′ },
-              { range: '10', label: 'Best', color: '#F5E642′ },
+              { range: '7–9', label: 'Good', color: '#68D391' },
+              { range: '10', label: 'Best', color: '#F5E642' },
             ].map(b => (
               <div key={b.range} style={{ flex: 1, background: b.color, padding: '10px', textAlign: 'center' }}>
                 <div style={{ color: '#0A1628', fontWeight: 700, fontSize: '16px' }}>{b.range}</div>
@@ -100,7 +100,7 @@ export default function DFWHomeEnergyScoreGuide() {
               <div style={{ color: '#A0AEC0', fontSize: '13px', marginBottom: '4px' }}>Home Built</div>
               <select value={vintage} onChange={e => setVintage(e.target.value as typeof vintage)}
                 style={{ width: '100%', background: '#1A2F50', border: '1px solid #2D4A70', borderRadius: '8px', color: '#FFF', padding: '10px', fontSize: '14px', boxSizing: 'border-box' }}>
-                <option value="pre1980″>Before 1980</option>
+                <option value="pre1980">Before 1980</option>
                 <option value="1980s">1980–1989</option>
                 <option value="1990s">1990–1999</option>
                 <option value="2000s">2000–2009</option>

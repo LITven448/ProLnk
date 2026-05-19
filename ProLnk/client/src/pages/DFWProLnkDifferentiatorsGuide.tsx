@@ -68,7 +68,7 @@ export default function DFWProLnkDifferentiatorsGuide() {
             {(Object.keys(CONCERN_LABELS) as Concern[]).map(c => (
               <button key={c} onClick={() => setConcern(c)}
                 style={{ padding: '10px 18px', borderRadius: 8, border: 'none', cursor: 'pointer', fontWeight: 600, fontSize: 13,
-                  background: concern === c ? '#F5E642′ : '#1e3a5f', color: concern === c ? '#0A1628' : '#94a3b8' }}>
+                  background: concern === c ? '#F5E642' : '#1e3a5f', color: concern === c ? '#0A1628' : '#94a3b8' }}>
                 {CONCERN_LABELS[c]}
               </button>
             ))}
@@ -79,7 +79,7 @@ export default function DFWProLnkDifferentiatorsGuide() {
           <div style={{ color: '#F5E642', fontWeight: 700, fontSize: 16, marginBottom: 16 }}>Differentiators that address this →</div>
           <div style={{ display: 'flex', flexDirection: 'column', gap: 16 }}>
             {relevant.map(d => (
-              <div key={d.title} style={{ background: '#112240', borderRadius: 12, padding: 24, borderLeft: '4px solid #F5E642′ }}>
+              <div key={d.title} style={{ background: '#112240', borderRadius: 12, padding: 24, borderLeft: '4px solid #F5E642' }}>
                 <div style={{ fontSize: 32, marginBottom: 8 }}>{d.emoji}</div>
                 <div style={{ fontWeight: 800, color: '#F5E642', fontSize: 17, marginBottom: 4 }}>{d.title}</div>
                 <div style={{ color: '#e2e8f0', fontStyle: 'italic', fontSize: 14, marginBottom: 12 }}>{d.tagline}</div>

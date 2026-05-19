@@ -23,7 +23,7 @@ export default function DFWEnergyRebateStackingGuide() {
   return (
     <div style={{ background: '#0A1628', minHeight: '100vh', color: '#E8ECF0', fontFamily: 'system-ui,sans-serif', padding: '32px 16px' }}>
       <div style={{ maxWidth: 800, margin: '0 auto' }}>
-        <div style={{ marginBottom: 8, fontSize: 13, color: '#F5E642′ }}>💰 DFW Energy Programs</div>
+        <div style={{ marginBottom: 8, fontSize: 13, color: '#F5E642' }}>💰 DFW Energy Programs</div>
         <h1 style={{ fontSize: 28, fontWeight: 700, marginBottom: 8 }}>Energy Rebate Stacking Guide — DFW</h1>
         <p style={{ color: '#9BA8B8', marginBottom: 32, fontSize: 15 }}>Maximize your savings by combining Oncor utility rebates, federal IRA credits, city programs, and manufacturer offers.</p>
 
@@ -36,7 +36,7 @@ export default function DFWEnergyRebateStackingGuide() {
           ))}
         </div>
 
-        <h2 style={{ fontSize: 16, fontWeight: 600, marginBottom: 14, color: '#F5E642′ }}>🔧 Select Your Planned Improvements</h2>
+        <h2 style={{ fontSize: 16, fontWeight: 600, marginBottom: 14, color: '#F5E642' }}>🔧 Select Your Planned Improvements</h2>
         <div style={{ display: 'flex', flexDirection: 'column', gap: 10, marginBottom: 32 }}>
           {projects.map(p => (
             <div key={p.id} onClick={() => toggle(p.id)} style={{ background: sel.includes(p.id) ? 'rgba(245,230,66,0.08)' : '#111D2E', border: `1px solid ${sel.includes(p.id) ? '#F5E642' : '#1E2D42'}`, borderRadius: 10, padding: '14px 16px', cursor: 'pointer' }}>
@@ -56,16 +56,16 @@ export default function DFWEnergyRebateStackingGuide() {
 
         {chosen.length > 0 && (
           <div style={{ background: '#111D2E', border: '1px solid #1E2D42', borderRadius: 12, padding: 24 }}>
-            <h3 style={{ fontSize: 16, fontWeight: 600, marginBottom: 16, color: '#F5E642′ }}>📊 Stacked Rebate Calculation</h3>
+            <h3 style={{ fontSize: 16, fontWeight: 600, marginBottom: 16, color: '#F5E642' }}>📊 Stacked Rebate Calculation</h3>
             {[{label:'Oncor Utility Rebates',val:totals.oncor,color:'#F5E642'},{label:'Federal IRA Tax Credits',val:totals.ira,color:'#4ADE80'},{label:'City Program Rebates',val:totals.city,color:'#60A5FA'},{label:'Manufacturer Rebates',val:totals.mfr,color:'#C084FC'}].map(row => row.val > 0 && (
               <div key={row.label} style={{ display: 'flex', justifyContent: 'space-between', padding: '8px 0', borderBottom: '1px solid #1E2D42', fontSize: 14 }}>
-                <span style={{ color: '#9BA8B8′ }}>{row.label}</span><span style={{ color: row.color, fontWeight: 600 }}>${row.val.toLocaleString()}</span>
+                <span style={{ color: '#9BA8B8' }}>{row.label}</span><span style={{ color: row.color, fontWeight: 600 }}>${row.val.toLocaleString()}</span>
               </div>
             ))}
             <div style={{ marginTop: 16, display: 'flex', justifyContent: 'space-between', fontWeight: 700, fontSize: 20 }}>
-              <span>Total Stacked Savings</span><span style={{ color: '#F5E642′ }}>${grand.toLocaleString()}</span>
+              <span>Total Stacked Savings</span><span style={{ color: '#F5E642' }}>${grand.toLocaleString()}</span>
             </div>
-            <div style={{ marginTop: 12, background: 'rgba(74,222,128,0.08)', borderRadius: 8, padding: 12, fontSize: 13, color: '#4ADE80′ }}>
+            <div style={{ marginTop: 12, background: 'rgba(74,222,128,0.08)', borderRadius: 8, padding: 12, fontSize: 13, color: '#4ADE80' }}>
               ✅ Apply for Oncor rebates through your contractor, then claim IRA credits on your tax return — these are independent programs and do not reduce each other.
             </div>
           </div>

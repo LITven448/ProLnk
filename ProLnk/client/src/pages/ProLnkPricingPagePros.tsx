@@ -81,9 +81,9 @@ export default function ProLnkPricingPagePros() {
           <div style={{ fontSize: 13, color: '#F5E642', marginBottom: 12 }}>⏰ CHARTER TIER CLOSES AT 500 SPOTS</div>
           <div style={{ fontSize: 28, fontWeight: 700 }}>{remaining} spots remaining</div>
           <input type='range' min={0} max={600} value={spotsUsed} onChange={e => setSpotsUsed(Number(e.target.value))}
-            style={{ width: '80%', marginTop: 16, accentColor: '#F5E642′ }} />
+            style={{ width: '80%', marginTop: 16, accentColor: '#F5E642' }} />
           <div style={{ marginTop: 12, fontSize: 14, color: '#ccc' }}>
-            If you join now ({spotsUsed} pros already in): <strong style={{ color: '#F5E642′ }}>{yourTier.name} Tier — ${yourTier.price}/mo</strong>
+            If you join now ({spotsUsed} pros already in): <strong style={{ color: '#F5E642' }}>{yourTier.name} Tier — ${yourTier.price}/mo</strong>
           </div>
         </div>
 
@@ -97,7 +97,7 @@ export default function ProLnkPricingPagePros() {
               <div style={{ fontSize: 28 }}>{t.badge}</div>
               <div style={{ fontSize: 11, color: '#F5E642', letterSpacing: 2, marginTop: 8 }}>{t.tag}</div>
               <h2 style={{ fontSize: 22, fontWeight: 800, margin: '8px 0 4px' }}>{t.name}</h2>
-              <div style={{ fontSize: 28, fontWeight: 700, color: '#F5E642′ }}>${t.price}<span style={{ fontSize: 14, fontWeight: 400, color: '#aaa' }}>/mo</span></div>
+              <div style={{ fontSize: 28, fontWeight: 700, color: '#F5E642' }}>${t.price}<span style={{ fontSize: 14, fontWeight: 400, color: '#aaa' }}>/mo</span></div>
               <div style={{ marginTop: 16, fontSize: 12, color: '#aaa', lineHeight: 1.8 }}>
                 <div>🎯 {t.matchPriority}</div>
                 <div>💰 {t.directCommission}</div>

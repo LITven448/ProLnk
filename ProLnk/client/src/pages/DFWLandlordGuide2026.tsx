@@ -43,7 +43,7 @@ export default function DFWLandlordGuide2026() {
           <h2 style={{ color: '#F5E642', fontSize: 17, marginBottom: 16 }}>📅 Maintenance Calendar by Property Type</h2>
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8, marginBottom: 16 }}>
             {propertyTypes.map((pt, i) => (
-              <button key={pt.label} onClick={() => setSelected(i)} style={{ background: selected === i ? '#F5E642′ : '#1e3a5f', color: selected === i ? '#0A1628' : '#fff', border: ’none', borderRadius: 8, padding: '8px 14px', fontSize: 13, cursor: 'pointer', fontWeight: selected === i ? 700 : 400 }}>
+              <button key={pt.label} onClick={() => setSelected(i)} style={{ background: selected === i ? '#F5E642' : '#1e3a5f', color: selected === i ? '#0A1628' : '#fff', border: 'none', borderRadius: 8, padding: '8px 14px', fontSize: 13, cursor: 'pointer', fontWeight: selected === i ? 700 : 400 }}>
                 {pt.label}
               </button>
             ))}

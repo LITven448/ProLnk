@@ -34,10 +34,10 @@ const CONTENT_TYPE_ICONS: Record<string, React.ElementType> = {
 };
 
 const CONTENT_TYPE_COLORS: Record<string, string> = {
-  announcement: "bg-blue-100 text-blue-800 border-blue-200″,
-  playbook_tip: "bg-green-100 text-green-800 border-green-200″,
-  training_module: "bg-purple-100 text-purple-800 border-purple-200″,
-  resource_link: "bg-orange-100 text-orange-800 border-orange-200″,
+  announcement: "bg-blue-100 text-blue-800 border-blue-200",
+  playbook_tip: "bg-green-100 text-green-800 border-green-200",
+  training_module: "bg-purple-100 text-purple-800 border-purple-200",
+  resource_link: "bg-orange-100 text-orange-800 border-orange-200",
 };
 
 type ContentType = "announcement" | "playbook_tip" | "training_module" | "resource_link";
@@ -135,30 +135,30 @@ export default function AdminPartnerContent() {
 
   return (
     <AdminLayout>
-      <div className="p-6 space-y-6″>
+      <div className="p-6 space-y-6">
         {/* Header */}
-        <div className="flex items-center justify-between flex-wrap gap-4″>
+        <div className="flex items-center justify-between flex-wrap gap-4">
           <div>
             <h1 className="text-2xl font-bold">Partner Content</h1>
-            <p className="text-muted-foreground text-sm mt-1″>
+            <p className="text-muted-foreground text-sm mt-1">
               Manage announcements, upsell tips, training modules, and resource links shown to partners.
             </p>
           </div>
-          <Button onClick={() => setShowNew(true)} className="gap-2″>
-            <Plus className="w-4 h-4″ /> New Item
+          <Button onClick={() => setShowNew(true)} className="gap-2">
+            <Plus className="w-4 h-4" /> New Item
           </Button>
         </div>
 
         {/* Stats */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4″>
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
           {[
-            { label: "Total Items", value: items.length, icon: FileText, color: "text-slate-500″ },
-            { label: "Published", value: publishedCount, icon: Eye, color: "text-green-500″ },
-            { label: "Drafts", value: draftCount, icon: EyeOff, color: "text-amber-500″ },
-            { label: "Content Types", value: 4, icon: Megaphone, color: "text-blue-500″ },
+            { label: "Total Items", value: items.length, icon: FileText, color: "text-slate-500" },
+            { label: "Published", value: publishedCount, icon: Eye, color: "text-green-500" },
+            { label: "Drafts", value: draftCount, icon: EyeOff, color: "text-amber-500" },
+            { label: "Content Types", value: 4, icon: Megaphone, color: "text-blue-500" },
           ].map(({ label, value, icon: Icon, color }) => (
             <Card key={label}>
-              <CardContent className="p-4 flex items-center gap-3″>
+              <CardContent className="p-4 flex items-center gap-3">
                 <Icon className={`w-8 h-8 ${color}`} />
                 <div>
                   <div className="text-2xl font-bold">{value}</div>
@@ -172,14 +172,14 @@ export default function AdminPartnerContent() {
         {/* New Item Form */}
         {showNew && (
           <Card className="border-primary">
-            <CardHeader className="pb-3″>
+            <CardHeader className="pb-3">
               <CardTitle className="text-base flex items-center justify-between">
                 Create New Content Item
-                <Button variant="ghost" size="icon" onClick={() => setShowNew(false)}><X className="w-4 h-4″ /></Button>
+                <Button variant="ghost" size="icon" onClick={() => setShowNew(false)}><X className="w-4 h-4" /></Button>
               </CardTitle>
             </CardHeader>
-            <CardContent className="space-y-3″>
-              <div className="grid grid-cols-2 gap-3″>
+            <CardContent className="space-y-3">
+              <div className="grid grid-cols-2 gap-3">
                 <div>
                   <label className="text-xs font-medium mb-1 block">Type *</label>
                   <Select value={newForm.contentType} onValueChange={v => setNewForm(f => ({ ...f, contentType: v as ContentType }))}>
@@ -208,12 +208,12 @@ export default function AdminPartnerContent() {
                 <label className="text-xs font-medium mb-1 block">URL (optional — for resource links)</label>
                 <Input placeholder="https://..." value={newForm.url} onChange={e => setNewForm(f => ({ ...f, url: e.target.value }))} />
               </div>
-              <div className="flex gap-2 pt-1″>
+              <div className="flex gap-2 pt-1">
                 <Button
                   onClick={() => createMutation.mutate(newForm)}
                   disabled={!newForm.title.trim() || createMutation.isPending}
                 >
-                  <Save className="w-4 h-4 mr-1″ />
+                  <Save className="w-4 h-4 mr-1" />
                   {createMutation.isPending ? "Saving..." : "Save as Draft"}
                 </Button>
                 <Button variant="outline" onClick={() => setShowNew(false)}>Cancel</Button>
@@ -226,10 +226,10 @@ export default function AdminPartnerContent() {
         <div className="flex gap-3 items-center flex-wrap">
           <div className="relative flex-1 min-w-[200px] max-w-sm">
             <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground" />
-            <Input className="pl-9″ placeholder="Search content..." value={search} onChange={e => setSearch(e.target.value)} />
+            <Input className="pl-9" placeholder="Search content..." value={search} onChange={e => setSearch(e.target.value)} />
           </div>
           <Select value={filterType} onValueChange={setFilterType}>
-            <SelectTrigger className="w-48″><SelectValue placeholder="All types" /></SelectTrigger>
+            <SelectTrigger className="w-48"><SelectValue placeholder="All types" /></SelectTrigger>
             <SelectContent>
               <SelectItem value="all">All Types</SelectItem>
               {Object.entries(CONTENT_TYPE_LABELS).map(([v, l]) => (
@@ -245,21 +245,21 @@ export default function AdminPartnerContent() {
         ) : filtered.length === 0 ? (
           <Card>
             <CardContent className="py-12 text-center text-muted-foreground">
-              <FileText className="w-10 h-10 mx-auto mb-3 opacity-30″ />
+              <FileText className="w-10 h-10 mx-auto mb-3 opacity-30" />
               <p className="font-medium">No content items yet</p>
-              <p className="text-sm mt-1″>Click "New Item" to create your first announcement, tip, or resource.</p>
+              <p className="text-sm mt-1">Click "New Item" to create your first announcement, tip, or resource.</p>
             </CardContent>
           </Card>
         ) : (
-          <div className="space-y-3″>
+          <div className="space-y-3">
             {filtered.map(item => {
               const TypeIcon = CONTENT_TYPE_ICONS[item.contentType] ?? FileText;
               return (
                 <Card key={item.id} className={editingId === item.id ? "border-primary" : ""}>
-                  <CardContent className="p-4″>
+                  <CardContent className="p-4">
                     {editingId === item.id ? (
-                      <div className="space-y-3″>
-                        <div className="grid grid-cols-2 gap-3″>
+                      <div className="space-y-3">
+                        <div className="grid grid-cols-2 gap-3">
                           <div>
                             <label className="text-xs font-medium mb-1 block">Type</label>
                             <Select value={editForm.contentType} onValueChange={v => setEditForm(f => ({ ...f, contentType: v as ContentType }))}>
@@ -279,20 +279,20 @@ export default function AdminPartnerContent() {
                         <Input value={editForm.title ?? ""} onChange={e => setEditForm(f => ({ ...f, title: e.target.value }))} placeholder="Title" />
                         <Textarea value={editForm.body ?? ""} onChange={e => setEditForm(f => ({ ...f, body: e.target.value }))} rows={3} placeholder="Body" />
                         <Input value={editForm.url ?? ""} onChange={e => setEditForm(f => ({ ...f, url: e.target.value }))} placeholder="URL (optional)" />
-                        <div className="flex gap-2″>
+                        <div className="flex gap-2">
                           <Button size="sm" onClick={saveEdit} disabled={updateMutation.isPending}>
-                            <Save className="w-3 h-3 mr-1″ /> {updateMutation.isPending ? "Saving..." : "Save"}
+                            <Save className="w-3 h-3 mr-1" /> {updateMutation.isPending ? "Saving..." : "Save"}
                           </Button>
                           <Button size="sm" variant="outline" onClick={() => setEditingId(null)}>Cancel</Button>
                         </div>
                       </div>
                     ) : (
-                      <div className="flex items-start justify-between gap-4″>
-                        <div className="flex items-start gap-3 flex-1 min-w-0″>
+                      <div className="flex items-start justify-between gap-4">
+                        <div className="flex items-start gap-3 flex-1 min-w-0">
                           <div className={`p-2 rounded-lg border ${CONTENT_TYPE_COLORS[item.contentType]} shrink-0`}>
-                            <TypeIcon className="w-4 h-4″ />
+                            <TypeIcon className="w-4 h-4" />
                           </div>
-                          <div className="flex-1 min-w-0″>
+                          <div className="flex-1 min-w-0">
                             <div className="flex items-center gap-2 mb-1 flex-wrap">
                               <span className="text-xs font-medium text-muted-foreground">
                                 {CONTENT_TYPE_LABELS[item.contentType]}
@@ -303,31 +303,31 @@ export default function AdminPartnerContent() {
                               </Badge>
                             </div>
                             <p className="font-medium truncate">{item.title}</p>
-                            {item.body && <p className="text-sm text-muted-foreground mt-1 line-clamp-2″>{item.body}</p>}
+                            {item.body && <p className="text-sm text-muted-foreground mt-1 line-clamp-2">{item.body}</p>}
                             {item.url && (
                               <a href={item.url} target="_blank" rel="noreferrer" className="text-xs text-primary hover:underline mt-1 block truncate">
                                 {item.url}
                               </a>
                             )}
-                            <p className="text-xs text-muted-foreground mt-2″>
+                            <p className="text-xs text-muted-foreground mt-2">
                               Created {new Date(item.createdAt).toLocaleDateString()}
                               {item.publishedAt && ` · Published ${new Date(item.publishedAt).toLocaleDateString()}`}
                             </p>
                           </div>
                         </div>
-                        <div className="flex items-center gap-1 shrink-0″>
+                        <div className="flex items-center gap-1 shrink-0">
                           <Button
                             size="sm"
                             variant={item.isPublished ? "outline" : "default"}
                             onClick={() => togglePublish(item)}
                             disabled={updateMutation.isPending}
-                            className="gap-1″
+                            className="gap-1"
                           >
-                            {item.isPublished ? <EyeOff className="w-3 h-3″ /> : <Eye className="w-3 h-3" />}
+                            {item.isPublished ? <EyeOff className="w-3 h-3" /> : <Eye className="w-3 h-3" />}
                             {item.isPublished ? "Unpublish" : "Publish"}
                           </Button>
                           <Button size="icon" variant="ghost" onClick={() => startEdit(item)}>
-                            <Edit className="w-4 h-4″ />
+                            <Edit className="w-4 h-4" />
                           </Button>
                           <Button
                             size="icon"
@@ -339,7 +339,7 @@ export default function AdminPartnerContent() {
                               }
                             }}
                           >
-                            <Trash2 className="w-4 h-4″ />
+                            <Trash2 className="w-4 h-4" />
                           </Button>
                         </div>
                       </div>

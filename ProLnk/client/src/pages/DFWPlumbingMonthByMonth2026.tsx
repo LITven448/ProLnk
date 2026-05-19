@@ -23,7 +23,7 @@ export default function DFWPlumbingMonthByMonth2026() {
           <h2 style={{ color: '#F5E642', fontSize: '1.1rem', marginBottom: '1rem' }}>💧 DFW Plumbing Seasonal Risks</h2>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0.75rem' }}>
             {[['Winter Freeze', 'Burst pipe risk at 20°F or below', '❄️'], ['Spring', 'Irrigation startup + backflow', '🌱'], ['Summer', 'Condensate drain clogs', '💦'], ['Fall', 'Irrigation taper + drain prep', '🍂']].map(([season, risk, icon]) => (
-              <div key={season} style={{ background: '#0A1628', borderRadius: 8, padding: '0.75rem', borderLeft: '3px solid #F5E642′ }}>
+              <div key={season} style={{ background: '#0A1628', borderRadius: 8, padding: '0.75rem', borderLeft: '3px solid #F5E642' }}>
                 <div style={{ fontSize: '1.2rem' }}>{icon} <span style={{ color: '#F5E642', fontWeight: 700 }}>{season}</span></div>
                 <div style={{ fontSize: '0.85rem', color: '#C5CAD8', marginTop: '0.25rem' }}>{risk}</div>
               </div>
@@ -35,13 +35,13 @@ export default function DFWPlumbingMonthByMonth2026() {
           <h2 style={{ color: '#F5E642', fontSize: '1.1rem', marginBottom: '1rem' }}>📅 Select Your Month → Plumbing Action Guide</h2>
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5rem', marginBottom: '1rem' }}>
             {months.map(m => (
-              <button key={m.id} onClick={() => setSelected(m.id)} style={{ background: selected === m.id ? '#F5E642′ : '#0A1628', color: selected === m.id ? '#0A1628' : '#E8EAF0', border: '1px solid #F5E642', borderRadius: 8, padding: '0.5rem 1rem', cursor: ’pointer', fontWeight: 700, fontSize: '0.9rem' }}>{m.label}</button>
+              <button key={m.id} onClick={() => setSelected(m.id)} style={{ background: selected === m.id ? '#F5E642' : '#0A1628', color: selected === m.id ? '#0A1628' : '#E8EAF0', border: '1px solid #F5E642', borderRadius: 8, padding: '0.5rem 1rem', cursor: 'pointer', fontWeight: 700, fontSize: '0.9rem' }}>{m.label}</button>
             ))}
           </div>
           {month && (
             <div style={{ background: '#0A1628', borderRadius: 8, padding: '1rem' }}>
               <div style={{ color: '#F5E642', fontWeight: 700, marginBottom: '0.75rem' }}>🔧 {month.label} Plumbing Actions</div>
-              <ul style={{ margin: 0, paddingLeft: '1.2rem', lineHeight: 2, color: '#C5CAD8′ }}>
+              <ul style={{ margin: 0, paddingLeft: '1.2rem', lineHeight: 2, color: '#C5CAD8' }}>
                 {month.actions.map((a, i) => <li key={i}>{a}</li>)}
               </ul>
             </div>
@@ -50,7 +50,7 @@ export default function DFWPlumbingMonthByMonth2026() {
 
         <div style={{ background: '#111E35', borderRadius: 12, padding: '1.5rem', marginBottom: '1.5rem' }}>
           <h2 style={{ color: '#F5E642', fontSize: '1.1rem', marginBottom: '0.75rem' }}>🚨 Call a Plumber Immediately If</h2>
-          <ul style={{ margin: 0, paddingLeft: '1.2rem', lineHeight: 2, color: '#C5CAD8′ }}>
+          <ul style={{ margin: 0, paddingLeft: '1.2rem', lineHeight: 2, color: '#C5CAD8' }}>
             <li>Water pressure suddenly drops across entire house</li>
             <li>You hear running water with all fixtures off</li>
             <li>Sewer odor indoors (potential vent or drain issue)</li>

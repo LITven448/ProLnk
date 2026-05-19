@@ -37,7 +37,7 @@ export default function DFWHighlandParkGuide2026() {
         <div style={{ display: 'flex', flexDirection: 'column', gap: 10, marginBottom: 28 }}>
           {eras.map(e => (
             <button key={e.id} onClick={() => setSelected(e.id === selected ? null : e.id)}
-              style={{ background: selected === e.id ? '#F5E642′ : '#111f35', color: selected === e.id ? '#0A1628' : '#fff', border: ’none', borderRadius: 10, padding: '14px 18px', textAlign: 'left', cursor: 'pointer', fontWeight: 600, fontSize: 15 }}>
+              style={{ background: selected === e.id ? '#F5E642' : '#111f35', color: selected === e.id ? '#0A1628' : '#fff', border: 'none', borderRadius: 10, padding: '14px 18px', textAlign: 'left', cursor: 'pointer', fontWeight: 600, fontSize: 15 }}>
               {e.label}
             </button>
           ))}

@@ -42,11 +42,11 @@ export default function DFWFurnaceGuide() {
         <div style={{ background: '#112240', borderRadius: 12, padding: '1.5rem', marginBottom: '1.5rem' }}>
           <div style={{ color: '#F5E642', fontWeight: 700, marginBottom: '1rem' }}>📋 DFW Furnace Facts</div>
           <ul style={{ color: '#ccc', lineHeight: 1.8, paddingLeft: '1.2rem' }}>
-            <li>DFW furnaces typically run only <strong style={{ color: '#F5E642′ }}>3–4 months</strong> per year (Nov–Feb)</li>
-            <li>Best maintenance window: <strong style={{ color: '#F5E642′ }}>October</strong>, before first cold front</li>
+            <li>DFW furnaces typically run only <strong style={{ color: '#F5E642' }}>3–4 months</strong> per year (Nov–Feb)</li>
+            <li>Best maintenance window: <strong style={{ color: '#F5E642' }}>October</strong>, before first cold front</li>
             <li>Short cycling in mild weather cracks heat exchangers faster than continuous use</li>
             <li>Common DFW issue: carbon monoxide leaks from cracked heat exchangers</li>
-            <li>Average furnace lifespan in DFW: <strong style={{ color: '#F5E642′ }}>18–22 years</strong> (less wear than northern climates)</li>
+            <li>Average furnace lifespan in DFW: <strong style={{ color: '#F5E642' }}>18–22 years</strong> (less wear than northern climates)</li>
           </ul>
         </div>
 
@@ -72,7 +72,7 @@ export default function DFWFurnaceGuide() {
           <div style={{ display: 'grid', gap: '1rem', marginBottom: '1rem' }}>
             <div>
               <label style={{ color: '#aaa', fontSize: '0.9rem' }}>Furnace Age (years)</label>
-              <input type="number" value={age} onChange={e => setAge(e.target.value)} placeholder="e.g. 12″
+              <input type="number" value={age} onChange={e => setAge(e.target.value)} placeholder="e.g. 12"
                 style={{ width: '100%', marginTop: 6, padding: '0.6rem', borderRadius: 6, border: '1px solid #334', background: '#0A1628', color: '#fff', boxSizing: 'border-box' }} />
             </div>
             <div>

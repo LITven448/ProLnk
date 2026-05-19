@@ -93,7 +93,7 @@ export default function DFWHVACDehumidStrategy2026() {
           <button
             onClick={handleAnalyze}
             disabled={!complaint}
-            style={{ background: complaint ? '#F5E642′ : '#334155', color: '#0A1628', border: ’none', borderRadius: 8, padding: '12px 28px', fontWeight: 700, fontSize: 15, cursor: complaint ? 'pointer' : 'default' }}
+            style={{ background: complaint ? '#F5E642' : '#334155', color: '#0A1628', border: 'none', borderRadius: 8, padding: '12px 28px', fontWeight: 700, fontSize: 15, cursor: complaint ? 'pointer' : 'default' }}
           >
             Get My Dehumidification Strategy →
           </button>
@@ -107,7 +107,7 @@ export default function DFWHVACDehumidStrategy2026() {
                 <li key={i} style={{ background: '#0A1628', borderRadius: 8, padding: '10px 14px', marginBottom: 8, fontSize: 14 }}>{s}</li>
               ))}
             </ul>
-            <div style={{ background: '#0f2040', borderLeft: '3px solid #F5E642', padding: '12px 16px', borderRadius: 4, fontSize: 13, color: '#94a3b8′ }}>
+            <div style={{ background: '#0f2040', borderLeft: '3px solid #F5E642', padding: '12px 16px', borderRadius: 4, fontSize: 13, color: '#94a3b8' }}>
               💡 {result.note}
             </div>
           </div>
@@ -116,7 +116,7 @@ export default function DFWHVACDehumidStrategy2026() {
         <div style={{ background: '#1e2d45', borderRadius: 12, padding: 20 }}>
           <h3 style={{ color: '#F5E642', fontSize: 15, marginBottom: 12 }}>🏆 DFW Dehumidification Hierarchy</h3>
           {['1. Fan AUTO (not ON) — free, immediate, critical', '2. Lower setpoint 1-2°F — extends run time', '3. Variable speed system — best long-term solution', '4. Whole-home dehumidifier — for severe cases', '5. Standalone dehumidifier — targeted room fix'].map((t, i) => (
-            <div key={i} style={{ display: 'flex', alignItems: 'center', gap: 10, padding: '8px 0', borderBottom: i < 4 ? '1px solid #334155′ : ’none', fontSize: 13, color: '#cbd5e1′ }}>{t}</div>
+            <div key={i} style={{ display: 'flex', alignItems: 'center', gap: 10, padding: '8px 0', borderBottom: i < 4 ? '1px solid #334155' : 'none', fontSize: 13, color: '#cbd5e1' }}>{t}</div>
           ))}
         </div>
       </div>

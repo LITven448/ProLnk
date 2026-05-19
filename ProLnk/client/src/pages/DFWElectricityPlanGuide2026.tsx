@@ -48,13 +48,13 @@ export default function DFWElectricityPlanGuide2026() {
           <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
             {usage.map(u => (
               <button key={u.value} onClick={() => setSelected(u.value)}
-                style={{ background: selected === u.value ? '#F5E642′ : '#1e3a5f', color: selected === u.value ? '#0A1628' : '#fff', border: ’none', borderRadius: 8, padding: '10px 16px', cursor: 'pointer', textAlign: 'left', fontSize: 14, fontWeight: selected === u.value ? 700 : 400 }}>
+                style={{ background: selected === u.value ? '#F5E642' : '#1e3a5f', color: selected === u.value ? '#0A1628' : '#fff', border: 'none', borderRadius: 8, padding: '10px 16px', cursor: 'pointer', textAlign: 'left', fontSize: 14, fontWeight: selected === u.value ? 700 : 400 }}>
                 {u.label}
               </button>
             ))}
           </div>
           {result && (
-            <div style={{ marginTop: 20, background: '#0A1628', borderRadius: 12, padding: 16, borderLeft: '4px solid #F5E642′ }}>
+            <div style={{ marginTop: 20, background: '#0A1628', borderRadius: 12, padding: 16, borderLeft: '4px solid #F5E642' }}>
               <div style={{ color: '#F5E642', fontWeight: 700, fontSize: 16 }}>Recommended: {result.rec}</div>
               <div style={{ color: '#cbd5e1', fontSize: 13, marginTop: 6 }}>{result.tip}</div>
             </div>

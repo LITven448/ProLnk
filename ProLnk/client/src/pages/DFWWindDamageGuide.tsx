@@ -66,7 +66,7 @@ export default function DFWWindDamageGuide() {
 
         <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap', marginBottom: 28 }}>
           {['🌪️ Avg 45 wind events/year', '🏚️ $2.1B storm damage in DFW (2023)', '⚡ #1 cause: straight-line winds'].map(tag => (
-            <span key={tag} style={{ background: '#111E33', borderRadius: 20, padding: '6px 14px', fontSize: 13, color: '#9AA3B4′ }}>{tag}</span>
+            <span key={tag} style={{ background: '#111E33', borderRadius: 20, padding: '6px 14px', fontSize: 13, color: '#9AA3B4' }}>{tag}</span>
           ))}
         </div>
 
@@ -74,9 +74,9 @@ export default function DFWWindDamageGuide() {
         <div style={{ display: 'flex', gap: 10, flexWrap: 'wrap', marginBottom: 24 }}>
           {damageTypes.map(d => (
             <button key={d.id} onClick={() => setSelected(d.id)} style={{
-              padding: '10px 18px', borderRadius: 10, border: selected === d.id ? '2px solid #F5E642′ : '2px solid #1E2D45',
-              background: selected === d.id ? '#F5E642′ : '#111E33',
-              color: selected === d.id ? '#0A1628′ : '#9AA3B4', fontWeight: 700, fontSize: 14, cursor: ’pointer',
+              padding: '10px 18px', borderRadius: 10, border: selected === d.id ? '2px solid #F5E642' : '2px solid #1E2D45',
+              background: selected === d.id ? '#F5E642' : '#111E33',
+              color: selected === d.id ? '#0A1628' : '#9AA3B4', fontWeight: 700, fontSize: 14, cursor: 'pointer',
             }}>{d.label}</button>
           ))}
         </div>
@@ -85,7 +85,7 @@ export default function DFWWindDamageGuide() {
           <h3 style={{ color: '#F5E642', fontWeight: 700, fontSize: 22, marginBottom: 8 }}>{type.label} Damage</h3>
           <div style={{ background: '#2A0D0D', border: '1px solid #7C1A1A', borderRadius: 10, padding: '12px 16px', marginBottom: 20 }}>
             <span style={{ color: '#F87171', fontWeight: 700 }}>⏰ Urgency: </span>
-            <span style={{ color: '#C5CAD8′ }}>{type.urgency}</span>
+            <span style={{ color: '#C5CAD8' }}>{type.urgency}</span>
           </div>
 
           <h4 style={{ color: '#fff', fontWeight: 700, marginBottom: 10 }}>🚨 Emergency Action Steps</h4>
@@ -101,7 +101,7 @@ export default function DFWWindDamageGuide() {
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16, marginBottom: 20 }}>
             <div style={{ background: '#0A1628', borderRadius: 10, padding: '14px 16px' }}>
               <div style={{ fontSize: 12, color: '#6B7A99', marginBottom: 4 }}>💰 Typical Cost Range</div>
-              <div style={{ fontSize: 18, fontWeight: 700, color: '#F5E642′ }}>{type.costRange}</div>
+              <div style={{ fontSize: 18, fontWeight: 700, color: '#F5E642' }}>{type.costRange}</div>
             </div>
             <div style={{ background: '#0A1628', borderRadius: 10, padding: '14px 16px' }}>
               <div style={{ fontSize: 12, color: '#6B7A99', marginBottom: 4 }}>📞 Who to Call</div>
@@ -111,12 +111,12 @@ export default function DFWWindDamageGuide() {
 
           <div style={{ background: '#1A1A0D', border: '1px solid #5C5A1A', borderRadius: 10, padding: '12px 16px' }}>
             <span style={{ color: '#FBBF24', fontWeight: 700 }}>🚩 DFW Scam Alert: </span>
-            <span style={{ color: '#C5CAD8′ }}>{type.scamAlert}</span>
+            <span style={{ color: '#C5CAD8' }}>{type.scamAlert}</span>
           </div>
         </div>
 
-        <div style={{ padding: '16px 20px', background: '#111E33', borderRadius: 12, borderLeft: '4px solid #F5E642′ }}>
-          <strong style={{ color: '#F5E642′ }}>Texas Assignment of Benefits Warning:</strong>
+        <div style={{ padding: '16px 20px', background: '#111E33', borderRadius: 12, borderLeft: '4px solid #F5E642' }}>
+          <strong style={{ color: '#F5E642' }}>Texas Assignment of Benefits Warning:</strong>
           <span style={{ color: '#9AA3B4', marginLeft: 8 }}>
             Never sign an "Assignment of Benefits" form. This transfers your insurance rights to the contractor and removes your ability to negotiate your own claim.
           </span>

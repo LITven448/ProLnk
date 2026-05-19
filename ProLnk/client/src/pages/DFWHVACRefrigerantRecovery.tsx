@@ -23,28 +23,28 @@ export default function DFWHVACRefrigerantRecovery() {
         <h1 style={{ fontSize: '2rem', fontWeight: 800, marginBottom: '0.5rem', lineHeight: 1.2 }}>Refrigerant Recovery Guide</h1>
         <p style={{ color: '#9AA5B8', marginBottom: '2rem', fontSize: '1rem' }}>What DFW HVAC techs are legally required to do with your refrigerant — and how to verify compliance.</p>
 
-        <div style={{ background: '#F5E64220', border: '1px solid #F5E64280', borderRadius: '10px', padding: '1rem 1.25rem', marginBottom: '2rem', fontSize: '0.9rem', color: '#F5E642′ }}>
+        <div style={{ background: '#F5E64220', border: '1px solid #F5E64280', borderRadius: '10px', padding: '1rem 1.25rem', marginBottom: '2rem', fontSize: '0.9rem', color: '#F5E642' }}>
           ⚖️ EPA Section 608 requires all HVAC techs to recover refrigerant before opening any system containing more than 5 lbs of refrigerant. Venting refrigerant is illegal and carries federal fines up to $44,539 per day per violation.
         </div>
 
-        <h2 style={{ fontSize: '1.2rem', fontWeight: 700, marginBottom: '1rem', color: '#F5E642′ }}>📋 Compliance Rules by Service Type</h2>
+        <h2 style={{ fontSize: '1.2rem', fontWeight: 700, marginBottom: '1rem', color: '#F5E642' }}>📋 Compliance Rules by Service Type</h2>
         <div style={{ display: 'grid', gap: '1rem', marginBottom: '2.5rem' }}>
           {serviceTypes.map(s => (
             <div key={s.id} style={{ background: '#0F2040', borderRadius: '10px', padding: '1.25rem', border: '1px solid #1E3A5F' }}>
               <div style={{ fontWeight: 700, fontSize: '1rem', marginBottom: '0.4rem' }}>{s.icon} {s.label}</div>
               <div style={{ fontSize: '0.875rem', color: '#9AA5B8', marginBottom: '0.5rem' }}>{s.refrigerantRule}</div>
-              <div style={{ fontSize: '0.82rem', color: '#F5E642′ }}>🌡️ DFW Note: {s.dfwNote}</div>
+              <div style={{ fontSize: '0.82rem', color: '#F5E642' }}>🌡️ DFW Note: {s.dfwNote}</div>
             </div>
           ))}
         </div>
 
-        <h2 style={{ fontSize: '1.2rem', fontWeight: 700, marginBottom: '1rem', color: '#F5E642′ }}>🔍 Verify Your Tech Is Compliant</h2>
+        <h2 style={{ fontSize: '1.2rem', fontWeight: 700, marginBottom: '1rem', color: '#F5E642' }}>🔍 Verify Your Tech Is Compliant</h2>
         <div style={{ background: '#0F2040', borderRadius: '12px', padding: '1.5rem', border: '1px solid #1E3A5F', marginBottom: '2rem' }}>
           <div style={{ marginBottom: '1.25rem' }}>
             <label style={{ fontSize: '0.9rem', color: '#9AA5B8', display: 'block', marginBottom: '0.5rem' }}>What service is being done?</label>
             <div style={{ display: 'flex', gap: '0.7rem', flexWrap: 'wrap' }}>
               {serviceTypes.map(s => (
-                <button key={s.id} onClick={() => setSelected(s.id)} style={{ padding: '0.5rem 1rem', borderRadius: '8px', border: selected === s.id ? '2px solid #F5E642′ : '1px solid #1E3A5F', background: selected === s.id ? '#F5E64220' : '#0A1628', color: selected === s.id ? '#F5E642' : '#E8EDF5', cursor: ’pointer', fontSize: '0.88rem' }}>{s.icon} {s.label}</button>
+                <button key={s.id} onClick={() => setSelected(s.id)} style={{ padding: '0.5rem 1rem', borderRadius: '8px', border: selected === s.id ? '2px solid #F5E642' : '1px solid #1E3A5F', background: selected === s.id ? '#F5E64220' : '#0A1628', color: selected === s.id ? '#F5E642' : '#E8EDF5', cursor: 'pointer', fontSize: '0.88rem' }}>{s.icon} {s.label}</button>
               ))}
             </div>
           </div>
@@ -52,7 +52,7 @@ export default function DFWHVACRefrigerantRecovery() {
         </div>
 
         {result && (
-          <div style={{ background: '#0F2040', borderRadius: '12px', padding: '1.5rem', border: '2px solid #F5E642′ }}>
+          <div style={{ background: '#0F2040', borderRadius: '12px', padding: '1.5rem', border: '2px solid #F5E642' }}>
             <div style={{ fontWeight: 800, fontSize: '1.1rem', color: '#F5E642', marginBottom: '0.75rem' }}>{result.icon} Compliance Checklist: {result.label}</div>
             <div style={{ fontSize: '0.9rem', color: '#9AA5B8', marginBottom: '1rem' }}>{result.refrigerantRule}</div>
             <div style={{ fontWeight: 600, marginBottom: '0.5rem' }}>Ask your tech to verify:</div>
@@ -62,7 +62,7 @@ export default function DFWHVACRefrigerantRecovery() {
                 <span>{step}</span>
               </div>
             ))}
-            <div style={{ marginTop: '1rem', background: '#F5E64215', borderRadius: '8px', padding: '0.75rem', fontSize: '0.85rem', color: '#F5E642′ }}>🌡️ DFW Context: {result.dfwNote}</div>
+            <div style={{ marginTop: '1rem', background: '#F5E64215', borderRadius: '8px', padding: '0.75rem', fontSize: '0.85rem', color: '#F5E642' }}>🌡️ DFW Context: {result.dfwNote}</div>
           </div>
         )}
 

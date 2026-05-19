@@ -29,7 +29,7 @@ export default function DFWHomeownerAllSystems2026() {
         <div style={{ display: 'flex', flexWrap: 'wrap', gap: '.5rem', marginBottom: '1.5rem' }}>
           {months.map(m => (
             <button key={m} onClick={() => setMonth(m)}
-              style={{ background: month === m ? '#F5E642′ : '#1e3a5f', color: month === m ? '#0A1628' : '#fff', border: ’none', borderRadius: 8, padding: '.4rem .85rem', cursor: 'pointer', fontWeight: 600, fontSize: '.85rem' }}>
+              style={{ background: month === m ? '#F5E642' : '#1e3a5f', color: month === m ? '#0A1628' : '#fff', border: 'none', borderRadius: 8, padding: '.4rem .85rem', cursor: 'pointer', fontWeight: 600, fontSize: '.85rem' }}>
               {m}
             </button>
           ))}
@@ -39,7 +39,7 @@ export default function DFWHomeownerAllSystems2026() {
         <div style={{ display: 'flex', flexWrap: 'wrap', gap: '.5rem', marginBottom: '2rem' }}>
           {homeTypes.map(h => (
             <button key={h} onClick={() => setHomeType(h)}
-              style={{ background: homeType === h ? '#F5E642′ : '#1e3a5f', color: homeType === h ? '#0A1628' : '#fff', border: ’none', borderRadius: 8, padding: '.4rem .85rem', cursor: 'pointer', fontWeight: 600, fontSize: '.85rem' }}>
+              style={{ background: homeType === h ? '#F5E642' : '#1e3a5f', color: homeType === h ? '#0A1628' : '#fff', border: 'none', borderRadius: 8, padding: '.4rem .85rem', cursor: 'pointer', fontWeight: 600, fontSize: '.85rem' }}>
               {h}
             </button>
           ))}
@@ -50,7 +50,7 @@ export default function DFWHomeownerAllSystems2026() {
             <h2 style={{ color: '#F5E642', marginBottom: '1rem' }}>{month} All-Systems Check — {homeType}</h2>
             <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
               {systems.map(s => (
-                <div key={s.name} style={{ background: '#1e3a5f', borderRadius: 10, padding: '1.2rem', borderLeft: '4px solid #F5E642′ }}>
+                <div key={s.name} style={{ background: '#1e3a5f', borderRadius: 10, padding: '1.2rem', borderLeft: '4px solid #F5E642' }}>
                   <div style={{ fontSize: '1.4rem' }}>{s.icon} <strong>{s.name}</strong></div>
                   <ul style={{ margin: '.5rem 0 0 1rem', color: '#94a3b8', fontSize: '.9rem', lineHeight: 1.7 }}>
                     {s.checks.map(c => <li key={c}>{c}</li>)}
@@ -58,14 +58,14 @@ export default function DFWHomeownerAllSystems2026() {
                 </div>
               ))}
             </div>
-            <div style={{ marginTop: '1.5rem', background: '#F5E64220', borderRadius: 10, padding: '1rem', color: '#F5E642′ }}>
+            <div style={{ marginTop: '1.5rem', background: '#F5E64220', borderRadius: 10, padding: '1rem', color: '#F5E642' }}>
               🏠 ProLnk Vault records every check you log — building your permanent home health record automatically.
             </div>
           </div>
         )}
 
         {!ready && (
-          <div style={{ background: '#1e3a5f', borderRadius: 10, padding: '1.5rem', textAlign: 'center', color: '#94a3b8′ }}>
+          <div style={{ background: '#1e3a5f', borderRadius: 10, padding: '1.5rem', textAlign: 'center', color: '#94a3b8' }}>
             Select a month and home type to get your personalized all-systems check guide.
           </div>
         )}

@@ -67,21 +67,21 @@ export default function DFWShortSaleGuide() {
   return (
     <div style={{ minHeight: '100vh', backgroundColor: '#0A1628', color: '#e5e7eb', fontFamily: 'system-ui, sans-serif', padding: '2rem' }}>
       <div style={{ maxWidth: '800px', margin: '0 auto' }}>
-        <h1 style={{ fontSize: '2rem', fontWeight: 800, marginBottom: '0.5rem', color: '#F5E642′ }}>Short Sale Guide — DFW</h1>
+        <h1 style={{ fontSize: '2rem', fontWeight: 800, marginBottom: '0.5rem', color: '#F5E642' }}>Short Sale Guide — DFW</h1>
         <p style={{ fontSize: '1.1rem', color: '#9ca3af', marginBottom: '2rem' }}>When you owe more than your DFW home is worth: your options, process, and outcomes</p>
         {sections.map((s, i) => (
           <div key={i} style={{ backgroundColor: '#0f2137', borderRadius: '12px', padding: '1.5rem', marginBottom: '1rem', border: '1px solid #1e3a5f' }}>
-            <h2 style={{ fontSize: '1.1rem', fontWeight: 700, marginBottom: '0.5rem', color: '#F5E642′ }}>{s.icon} {s.heading}</h2>
+            <h2 style={{ fontSize: '1.1rem', fontWeight: 700, marginBottom: '0.5rem', color: '#F5E642' }}>{s.icon} {s.heading}</h2>
             <p style={{ color: '#d1d5db', lineHeight: 1.7, whiteSpace: 'pre-line' }}>{s.body}</p>
           </div>
         ))}
         <div style={{ backgroundColor: '#0f2137', borderRadius: '12px', padding: '1.5rem', border: '1px solid #1e3a5f' }}>
-          <h2 style={{ fontSize: '1.2rem', fontWeight: 700, marginBottom: '1rem', color: '#F5E642′ }}>🧮 Short Sale vs. Foreclosure Comparison</h2>
+          <h2 style={{ fontSize: '1.2rem', fontWeight: 700, marginBottom: '1rem', color: '#F5E642' }}>🧮 Short Sale vs. Foreclosure Comparison</h2>
           <div style={{ display: 'grid', gap: '0.75rem', marginBottom: '1rem' }}>
             {[['Home Value ($)', homeValue, setHomeValue], ['Mortgage Balance ($)', mortgage, setMortgage]].map(([label, val, setter]: any) => (
               <div key={label}>
                 <label style={{ display: 'block', fontSize: '0.9rem', fontWeight: 600, marginBottom: '0.25rem', color: '#9ca3af' }}>{label}</label>
-                <input type="number" value={val} onChange={e => setter(e.target.value)} style={{ width: '100%', padding: '0.6rem', borderRadius: '8px', border: '1px solid #374151', backgroundColor: '#1a2e4a', color: '#e5e7eb', fontSize: '1rem', boxSizing: 'border-box' }} placeholder="0″ />
+                <input type="number" value={val} onChange={e => setter(e.target.value)} style={{ width: '100%', padding: '0.6rem', borderRadius: '8px', border: '1px solid #374151', backgroundColor: '#1a2e4a', color: '#e5e7eb', fontSize: '1rem', boxSizing: 'border-box' }} placeholder="0" />
               </div>
             ))}
             <div>
@@ -94,21 +94,21 @@ export default function DFWShortSaleGuide() {
           </div>
           <button onClick={calculate} style={{ backgroundColor: '#F5E642', color: '#0A1628', border: 'none', padding: '0.75rem 1.5rem', borderRadius: '8px', fontWeight: 700, fontSize: '1rem', cursor: 'pointer' }}>Compare Options</button>
           {result && (
-            <div style={{ marginTop: '1rem', padding: '1rem', backgroundColor: '#1a2e4a', borderRadius: '8px', border: '1px solid #374151′ }}>
+            <div style={{ marginTop: '1rem', padding: '1rem', backgroundColor: '#1a2e4a', borderRadius: '8px', border: '1px solid #374151' }}>
               {result.shortfall === 0 ? (
                 <p style={{ color: '#4ade80', fontWeight: 700 }}>✅ {result.recommendation}</p>
               ) : (
                 <>
-                  <p>Mortgage Shortfall: <strong style={{ color: '#f87171′ }}>${result.shortfall.toLocaleString(’en-US', { maximumFractionDigits: 0 })}</strong></p>
+                  <p>Mortgage Shortfall: <strong style={{ color: '#f87171' }}>${result.shortfall.toLocaleString('en-US', { maximumFractionDigits: 0 })}</strong></p>
                   <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0.75rem', marginTop: '0.75rem' }}>
                     <div style={{ padding: '0.75rem', backgroundColor: '#052e16', borderRadius: '8px' }}>
-                      <p style={{ fontWeight: 700, color: '#4ade80′ }}>Short Sale</p>
+                      <p style={{ fontWeight: 700, color: '#4ade80' }}>Short Sale</p>
                       <p>Timeline: {result.ssTl}</p>
                       <p>Credit Drop: ~125 pts</p>
                       <p>Buy Again: 2–4 yrs</p>
                     </div>
                     <div style={{ padding: '0.75rem', backgroundColor: '#3b0000', borderRadius: '8px' }}>
-                      <p style={{ fontWeight: 700, color: '#f87171′ }}>Foreclosure</p>
+                      <p style={{ fontWeight: 700, color: '#f87171' }}>Foreclosure</p>
                       <p>Timeline: {result.fcTl}</p>
                       <p>Credit Drop: ~175 pts</p>
                       <p>Buy Again: 7 yrs</p>

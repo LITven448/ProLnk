@@ -36,10 +36,10 @@ export default function DFWPropertyTaxProtest2026B() {
         </div>
 
         <div style={{ background: 'rgba(255,255,255,0.05)', borderRadius: 16, padding: 28, marginBottom: 24 }}>
-          <h2 style={{ fontSize: 20, fontWeight: 700, marginBottom: 20, color: '#F5E642′ }}>🧮 Your Protest Strategy Calculator</h2>
+          <h2 style={{ fontSize: 20, fontWeight: 700, marginBottom: 20, color: '#F5E642' }}>🧮 Your Protest Strategy Calculator</h2>
           <div style={{ display: 'grid', gap: 20 }}>
             <label style={{ display: 'flex', flexDirection: 'column', gap: 6 }}>
-              <span style={{ fontSize: 14, color: '#94a3b8′ }}>County</span>
+              <span style={{ fontSize: 14, color: '#94a3b8' }}>County</span>
               <select value={county} onChange={e => setCounty(e.target.value)} style={{ background: '#1e3a5f', color: '#fff', border: '1px solid rgba(245,230,66,0.3)', borderRadius: 8, padding: '10px 12px', fontSize: 14 }}>
                 <option value="dallas">Dallas County</option>
                 <option value="tarrant">Tarrant County</option>
@@ -49,12 +49,12 @@ export default function DFWPropertyTaxProtest2026B() {
               </select>
             </label>
             <label style={{ display: 'flex', flexDirection: 'column', gap: 6 }}>
-              <span style={{ fontSize: 14, color: '#94a3b8′ }}>Your Estimated Market Value: <strong style={{ color: '#fff' }}>${homeValue.toLocaleString()}</strong></span>
-              <input type="range" min={100000} max={2000000} step={10000} value={homeValue} onChange={e => setHomeValue(+e.target.value)} style={{ accentColor: '#F5E642′ }} />
+              <span style={{ fontSize: 14, color: '#94a3b8' }}>Your Estimated Market Value: <strong style={{ color: '#fff' }}>${homeValue.toLocaleString()}</strong></span>
+              <input type="range" min={100000} max={2000000} step={10000} value={homeValue} onChange={e => setHomeValue(+e.target.value)} style={{ accentColor: '#F5E642' }} />
             </label>
             <label style={{ display: 'flex', flexDirection: 'column', gap: 6 }}>
-              <span style={{ fontSize: 14, color: '#94a3b8′ }}>DCAD/CAD Appraised Value: <strong style={{ color: '#fff' }}>${appraisedValue.toLocaleString()}</strong></span>
-              <input type="range" min={100000} max={2000000} step={10000} value={appraisedValue} onChange={e => setAppraisedValue(+e.target.value)} style={{ accentColor: '#F5E642′ }} />
+              <span style={{ fontSize: 14, color: '#94a3b8' }}>DCAD/CAD Appraised Value: <strong style={{ color: '#fff' }}>${appraisedValue.toLocaleString()}</strong></span>
+              <input type="range" min={100000} max={2000000} step={10000} value={appraisedValue} onChange={e => setAppraisedValue(+e.target.value)} style={{ accentColor: '#F5E642' }} />
             </label>
           </div>
 
@@ -66,7 +66,7 @@ export default function DFWPropertyTaxProtest2026B() {
             ].map((item) => (
               <div key={item.label} style={{ background: 'rgba(255,255,255,0.06)', borderRadius: 10, padding: '14px 12px', textAlign: 'center' }}>
                 <div style={{ fontSize: 11, color: '#94a3b8', marginBottom: 4 }}>{item.label}</div>
-                <div style={{ fontWeight: 800, fontSize: 20, color: '#F5E642′ }}>{item.val}</div>
+                <div style={{ fontWeight: 800, fontSize: 20, color: '#F5E642' }}>{item.val}</div>
               </div>
             ))}
           </div>

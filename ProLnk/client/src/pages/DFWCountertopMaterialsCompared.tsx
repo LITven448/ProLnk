@@ -128,7 +128,7 @@ export default function DFWCountertopMaterialsCompared() {
         <div style={{ background: '#1a1020', borderRadius: 12, padding: 16, marginBottom: 24, display: 'flex', alignItems: 'center', gap: 12 }}>
           <span style={{ fontSize: 24 }}>💧</span>
           <div>
-            <div style={{ fontWeight: 600, color: '#F5E642′ }}>DFW Hard Water Reality</div>
+            <div style={{ fontWeight: 600, color: '#F5E642' }}>DFW Hard Water Reality</div>
             <div style={{ color: '#94a3b8', fontSize: 13 }}>DFW water averages 200–400 mg/L of hardness (very hard). Fort Worth area water reaches 500+ mg/L. This etches marble, spots granite, and stains concrete — but quartz wipes clean easily.</div>
           </div>
         </div>
@@ -172,10 +172,10 @@ export default function DFWCountertopMaterialsCompared() {
           <div style={{ fontSize: 20, fontWeight: 700 }}>{materials.find(m => m.id === rec)?.emoji} {materials.find(m => m.id === rec)?.name}</div>
           <div style={{ color: '#94a3b8', fontSize: 14, marginTop: 4 }}>{materials.find(m => m.id === rec)?.dfwNote}</div>
           <div style={{ display: 'flex', gap: 12, marginTop: 10 }}>
-            <div style={{ background: materials.find(m => m.id === rec)?.sealingRequired ? '#2a1010′ : '#0f3020', borderRadius: 6, padding: '4px 10px', fontSize: 12, color: materials.find(m => m.id === rec)?.sealingRequired ? '#f87171' : '#4ade80' }}>
+            <div style={{ background: materials.find(m => m.id === rec)?.sealingRequired ? '#2a1010' : '#0f3020', borderRadius: 6, padding: '4px 10px', fontSize: 12, color: materials.find(m => m.id === rec)?.sealingRequired ? '#f87171' : '#4ade80' }}>
               {materials.find(m => m.id === rec)?.sealingRequired ? '⚠️ Sealing required' : '✅ No sealing needed'}
             </div>
-            <div style={{ background: materials.find(m => m.id === rec)?.heatResistant ? '#0f3020′ : '#2a1020', borderRadius: 6, padding: '4px 10px', fontSize: 12, color: materials.find(m => m.id === rec)?.heatResistant ? '#4ade80' : '#fbbf24' }}>
+            <div style={{ background: materials.find(m => m.id === rec)?.heatResistant ? '#0f3020' : '#2a1020', borderRadius: 6, padding: '4px 10px', fontSize: 12, color: materials.find(m => m.id === rec)?.heatResistant ? '#4ade80' : '#fbbf24' }}>
               {materials.find(m => m.id === rec)?.heatResistant ? '🔥 Heat resistant' : '⚠️ Use trivets'}
             </div>
           </div>
@@ -184,7 +184,7 @@ export default function DFWCountertopMaterialsCompared() {
         <div style={{ display: 'grid', gap: 12 }}>
           {materials.map(m => (
             <div key={m.id} onClick={() => setSelected(selected === m.id ? null : m.id)}
-              style={{ background: selected === m.id ? '#0f2040′ : '#0f1e35', border: `1px solid ${m.id === rec ? '#F5E642' : '#1e3a5f'}`, borderRadius: 12, padding: 20, cursor: ’pointer' }}>
+              style={{ background: selected === m.id ? '#0f2040' : '#0f1e35', border: `1px solid ${m.id === rec ? '#F5E642' : '#1e3a5f'}`, borderRadius: 12, padding: 20, cursor: 'pointer' }}>
               <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
                 <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
                   <span style={{ fontSize: 24 }}>{m.emoji}</span>
@@ -194,7 +194,7 @@ export default function DFWCountertopMaterialsCompared() {
                   </div>
                 </div>
                 <div style={{ textAlign: 'right' }}>
-                  <div style={{ fontSize: 12, color: m.hardWaterRating === 'Excellent' ? '#4ade80′ : m.hardWaterRating === ’Medium' ? '#fbbf24′ : '#f87171' }}>💧 {m.hardWaterRating}</div>
+                  <div style={{ fontSize: 12, color: m.hardWaterRating === 'Excellent' ? '#4ade80' : m.hardWaterRating === 'Medium' ? '#fbbf24' : '#f87171' }}>💧 {m.hardWaterRating}</div>
                   <div style={{ color: '#64748b', fontSize: 11 }}>hard water</div>
                 </div>
               </div>
@@ -208,7 +208,7 @@ export default function DFWCountertopMaterialsCompared() {
                     </div>
                     <div style={{ background: '#0A1628', borderRadius: 8, padding: 10 }}>
                       <div style={{ color: '#64748b', fontSize: 12 }}>Stain Resistant</div>
-                      <div style={{ fontWeight: 600, fontSize: 14, color: m.stainResistant ? '#4ade80′ : '#f87171' }}>{m.stainResistant ? ’Yes' : 'No'}</div>
+                      <div style={{ fontWeight: 600, fontSize: 14, color: m.stainResistant ? '#4ade80' : '#f87171' }}>{m.stainResistant ? 'Yes' : 'No'}</div>
                     </div>
                   </div>
                 </div>

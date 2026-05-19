@@ -26,13 +26,13 @@ export default function ProLnkProfileOptimizationGuide() {
           {elements.map((el, i) => (
             <div key={i} onClick={() => setSelected(selected === i ? null : i)} style={{
               background: selected === i ? '#1A2F4A' : '#0F2035',
-              border: selected === i ? '1.5px solid #F5E642′ : '1.5px solid transparent',
+              border: selected === i ? '1.5px solid #F5E642' : '1.5px solid transparent',
               borderRadius: 12, padding: '18px 24px', cursor: 'pointer', transition: 'all 0.2s'
             }}>
               <div style={{ display: 'flex', alignItems: 'center', gap: 14 }}>
                 <span style={{ fontSize: 28 }}>{el.icon}</span>
                 <span style={{ fontWeight: 700, fontSize: 15 }}>{el.label}</span>
-                <span style={{ marginLeft: 'auto', color: '#F5E642′ }}>{selected === i ? '▲' : '▼'}</span>
+                <span style={{ marginLeft: 'auto', color: '#F5E642' }}>{selected === i ? '▲' : '▼'}</span>
               </div>
               {selected === i && (
                 <div style={{ marginTop: 14, color: '#B0C4D8', fontSize: 14, lineHeight: 1.7, paddingLeft: 42 }}>
@@ -46,7 +46,7 @@ export default function ProLnkProfileOptimizationGuide() {
         <div style={{ background: '#0F2035', borderRadius: 12, padding: 24, textAlign: 'center' }}>
           <div style={{ color: '#F5E642', fontWeight: 700, fontSize: 16, marginBottom: 8 }}>📈 Profile Completion Score</div>
           <div style={{ color: '#8899AA', fontSize: 14 }}>
-            Pros with 100% complete profiles earn <span style={{ color: '#F5E642′ }}>2.7x more</span> per month than incomplete profiles.
+            Pros with 100% complete profiles earn <span style={{ color: '#F5E642' }}>2.7x more</span> per month than incomplete profiles.
           </div>
         </div>
       </div>

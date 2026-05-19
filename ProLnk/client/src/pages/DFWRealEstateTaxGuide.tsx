@@ -38,7 +38,7 @@ export default function DFWRealEstateTaxGuide() {
         </div>
 
         <div style={{ background: '#e8f5e9', borderRadius: 12, padding: 24, marginBottom: 24 }}>
-          <h2 style={{ margin: '0 0 12px', fontSize: 20, color: '#2e7d32′ }}>🌟 Texas Tax Advantages</h2>
+          <h2 style={{ margin: '0 0 12px', fontSize: 20, color: '#2e7d32' }}>🌟 Texas Tax Advantages</h2>
           <div style={{ display: 'grid', gap: 10 }}>
             {[
               { label: 'State Income Tax', value: '/bin/zsh', note: 'Texas has NO state income tax on capital gains from home sales' },
@@ -47,10 +47,10 @@ export default function DFWRealEstateTaxGuide() {
             ].map(item => (
               <div key={item.label} style={{ background: '#fff', borderRadius: 8, padding: 14, display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
                 <div>
-                  <div style={{ fontWeight: 600, color: '#333′ }}>{item.label}</div>
+                  <div style={{ fontWeight: 600, color: '#333' }}>{item.label}</div>
                   <div style={{ fontSize: 13, color: '#666', marginTop: 2 }}>{item.note}</div>
                 </div>
-                <div style={{ fontSize: 24, fontWeight: 800, color: '#2e7d32′ }}>{item.value}</div>
+                <div style={{ fontSize: 24, fontWeight: 800, color: '#2e7d32' }}>{item.value}</div>
               </div>
             ))}
           </div>
@@ -68,7 +68,7 @@ export default function DFWRealEstateTaxGuide() {
             ].map(item => (
               <div key={item.name} style={{ background: '#f8f9fa', borderRadius: 8, padding: 14 }}>
                 <div style={{ fontWeight: 600, color: '#1a3a5c', marginBottom: 4 }}>{item.name}</div>
-                <div style={{ fontSize: 14, color: '#555′ }}>{item.detail}</div>
+                <div style={{ fontSize: 14, color: '#555' }}>{item.detail}</div>
               </div>
             ))}
           </div>
@@ -77,22 +77,22 @@ export default function DFWRealEstateTaxGuide() {
         <div style={{ background: '#fff', borderRadius: 12, padding: 28, marginBottom: 24, boxShadow: '0 2px 8px rgba(0,0,0,0.06)' }}>
           <h2 style={{ margin: '0 0 16px', fontSize: 18, color: '#1a3a5c' }}>🧮 Estimate Your Transaction Costs</h2>
           <div style={{ marginBottom: 16 }}>
-            <label style={{ display: 'block', fontWeight: 600, marginBottom: 8, color: '#333′ }}>Transaction Type</label>
+            <label style={{ display: 'block', fontWeight: 600, marginBottom: 8, color: '#333' }}>Transaction Type</label>
             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: 10 }}>
               {txTypes.map(t => (
                 <button key={t.value} onClick={() => setTxType(t.value)}
-                  style={{ padding: '10px 14px', borderRadius: 8, border: txType === t.value ? '2px solid #1a3a5c' : '2px solid #e0e0e0', background: txType === t.value ? '#e8f0fb' : '#fff', cursor: 'pointer', fontSize: 13, fontWeight: txType === t.value ? 700 : 400, color: '#333′ }}>
+                  style={{ padding: '10px 14px', borderRadius: 8, border: txType === t.value ? '2px solid #1a3a5c' : '2px solid #e0e0e0', background: txType === t.value ? '#e8f0fb' : '#fff', cursor: 'pointer', fontSize: 13, fontWeight: txType === t.value ? 700 : 400, color: '#333' }}>
                   {t.label}
                 </button>
               ))}
             </div>
           </div>
           <div>
-            <label style={{ display: 'block', fontWeight: 600, marginBottom: 8, color: '#333′ }}>Sale / Purchase Price</label>
+            <label style={{ display: 'block', fontWeight: 600, marginBottom: 8, color: '#333' }}>Sale / Purchase Price</label>
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(5,1fr)', gap: 8 }}>
               {prices.map(p => (
                 <button key={p} onClick={() => setPrice(p)}
-                  style={{ padding: '10px 4px', borderRadius: 8, border: price === p ? '2px solid #1a3a5c' : '2px solid #e0e0e0', background: price === p ? '#e8f0fb' : '#fff', cursor: 'pointer', fontSize: 12, fontWeight: price === p ? 700 : 400, color: '#333′ }}>
+                  style={{ padding: '10px 4px', borderRadius: 8, border: price === p ? '2px solid #1a3a5c' : '2px solid #e0e0e0', background: price === p ? '#e8f0fb' : '#fff', cursor: 'pointer', fontSize: 12, fontWeight: price === p ? 700 : 400, color: '#333' }}>
                   {formatMoney(p)}
                 </button>
               ))}
@@ -111,12 +111,12 @@ export default function DFWRealEstateTaxGuide() {
             ].map(item => (
               <div key={item.label} style={{ display: 'flex', justifyContent: 'space-between', padding: '10px 0', borderBottom: '1px solid rgba(255,255,255,0.15)' }}>
                 <span>{item.label}</span>
-                <span style={{ fontWeight: 700, color: item.value === 0 ? '#4caf50′ : '#F5E642' }}>{item.value === 0 ? '✅ /bin/zsh' : formatMoney(item.value)}</span>
+                <span style={{ fontWeight: 700, color: item.value === 0 ? '#4caf50' : '#F5E642' }}>{item.value === 0 ? '✅ /bin/zsh' : formatMoney(item.value)}</span>
               </div>
             ))}
             <div style={{ display: 'flex', justifyContent: 'space-between', padding: '16px 0 0', marginTop: 4 }}>
               <span style={{ fontWeight: 700, fontSize: 18 }}>Estimated Total (excl. lender fees)</span>
-              <span style={{ fontWeight: 800, fontSize: 20, color: '#F5E642′ }}>{formatMoney(taxes.totalEstimate)}</span>
+              <span style={{ fontWeight: 800, fontSize: 20, color: '#F5E642' }}>{formatMoney(taxes.totalEstimate)}</span>
             </div>
             <p style={{ margin: '12px 0 0', fontSize: 12, opacity: 0.7 }}>Estimates only. Actual costs vary by lender, title company, and contract terms. Does not include agent commissions or lender origination fees.</p>
           </div>

@@ -42,14 +42,14 @@ export default function DFWDrainCleaningGuide2026() {
           ].map((c, i) => (
             <div key={i} style={{ background: '#0f2035', borderRadius: '10px', padding: '1.2rem' }}>
               <div style={{ fontSize: '1.8rem', marginBottom: '0.5rem' }}>{c.icon}</div>
-              <div style={{ fontWeight: 700, marginBottom: '0.4rem', color: '#F5E642′ }}>{c.title}</div>
+              <div style={{ fontWeight: 700, marginBottom: '0.4rem', color: '#F5E642' }}>{c.title}</div>
               <div style={{ color: '#94a3b8', fontSize: '0.88rem' }}>{c.desc}</div>
             </div>
           ))}
         </div>
 
         <div style={{ background: '#0f2035', borderRadius: '12px', padding: '1.5rem', marginBottom: '1.5rem' }}>
-          <h2 style={{ fontWeight: 700, marginBottom: '1rem', color: '#F5E642′ }}>🔧 Find Your Drain Solution</h2>
+          <h2 style={{ fontWeight: 700, marginBottom: '1rem', color: '#F5E642' }}>🔧 Find Your Drain Solution</h2>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
             <div>
               <label style={{ display: 'block', marginBottom: '0.4rem', color: '#94a3b8', fontSize: '0.88rem' }}>Drain Type</label>
@@ -71,10 +71,10 @@ export default function DFWDrainCleaningGuide2026() {
             </div>
           </div>
           <button onClick={recommend} style={{ background: '#F5E642', color: '#0A1628', border: 'none', borderRadius: '8px', padding: '0.7rem 1.5rem', fontWeight: 700, cursor: 'pointer' }}>Get My Solution →</button>
-          {solution && <div style={{ marginTop: '1rem', background: '#0A1628', borderRadius: '8px', padding: '1rem', borderLeft: '4px solid #F5E642', color: '#e2e8f0′ }}>{solution}</div>}
+          {solution && <div style={{ marginTop: '1rem', background: '#0A1628', borderRadius: '8px', padding: '1rem', borderLeft: '4px solid #F5E642', color: '#e2e8f0' }}>{solution}</div>}
         </div>
 
-        <div style={{ background: '#F5E642', borderRadius: '10px', padding: '1.2rem', color: '#0A1628′ }}>
+        <div style={{ background: '#F5E642', borderRadius: '10px', padding: '1.2rem', color: '#0A1628' }}>
           <strong>💡 DFW Pro Tip:</strong> Never use chemical drain openers (Drano, etc.) in older DFW homes — they accelerate corrosion in cast iron pipes. Enzyme cleaners and hydro-jetting are always safer.
         </div>
       </div>

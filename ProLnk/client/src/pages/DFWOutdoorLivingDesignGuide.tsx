@@ -126,7 +126,7 @@ export default function DFWOutdoorLivingDesignGuide() {
           ].map(tip => (
             <div key={tip.title} style={{ background: '#0F2040', borderRadius: 10, padding: 20, border: '1px solid #1E3A5F' }}>
               <div style={{ fontSize: 24, marginBottom: 10 }}>{tip.icon}</div>
-              <div style={{ fontWeight: 700, marginBottom: 6, color: '#F5E642′ }}>{tip.title}</div>
+              <div style={{ fontWeight: 700, marginBottom: 6, color: '#F5E642' }}>{tip.title}</div>
               <div style={{ fontSize: 13, color: '#8B9DC3', lineHeight: 1.5 }}>{tip.note}</div>
             </div>
           ))}
@@ -138,7 +138,7 @@ export default function DFWOutdoorLivingDesignGuide() {
             <p style={{ color: '#8B9DC3', marginBottom: 12, fontSize: 14, fontWeight: 600 }}>Step 1: Select your outdoor lifestyle:</p>
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: 10 }}>
               {lifestyles.map(l => (
-                <button key={l.id} onClick={() => setLifestyle(l.id)} style={{ background: lifestyle === l.id ? '#F5E642′ : '#0A1628', color: lifestyle === l.id ? '#0A1628' : '#E8EAF0', border: '2px solid', borderColor: lifestyle === l.id ? '#F5E642' : '#1E3A5F', borderRadius: 8, padding: '12px 16px', cursor: ’pointer', textAlign: 'left', fontWeight: 600, fontSize: 13 }}>
+                <button key={l.id} onClick={() => setLifestyle(l.id)} style={{ background: lifestyle === l.id ? '#F5E642' : '#0A1628', color: lifestyle === l.id ? '#0A1628' : '#E8EAF0', border: '2px solid', borderColor: lifestyle === l.id ? '#F5E642' : '#1E3A5F', borderRadius: 8, padding: '12px 16px', cursor: 'pointer', textAlign: 'left', fontWeight: 600, fontSize: 13 }}>
                   {l.label}
                 </button>
               ))}
@@ -148,31 +148,31 @@ export default function DFWOutdoorLivingDesignGuide() {
             <p style={{ color: '#8B9DC3', marginBottom: 12, fontSize: 14, fontWeight: 600 }}>Step 2: Select your outdoor space size:</p>
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: 10 }}>
               {sizeTiers.map(s => (
-                <button key={s.id} onClick={() => setSize(s.id)} style={{ background: size === s.id ? '#F5E642′ : '#0A1628', color: size === s.id ? '#0A1628' : '#E8EAF0', border: '2px solid', borderColor: size === s.id ? '#F5E642' : '#1E3A5F', borderRadius: 8, padding: '12px 16px', cursor: ’pointer', textAlign: 'left', fontWeight: 600, fontSize: 13 }}>
+                <button key={s.id} onClick={() => setSize(s.id)} style={{ background: size === s.id ? '#F5E642' : '#0A1628', color: size === s.id ? '#0A1628' : '#E8EAF0', border: '2px solid', borderColor: size === s.id ? '#F5E642' : '#1E3A5F', borderRadius: 8, padding: '12px 16px', cursor: 'pointer', textAlign: 'left', fontWeight: 600, fontSize: 13 }}>
                   {s.label}
                 </button>
               ))}
             </div>
           </div>
           {design && (
-            <div style={{ background: '#0A1628', borderRadius: 10, padding: 24, border: '1px solid #F5E642′ }}>
-              <div style={{ fontWeight: 800, fontSize: 20, marginBottom: 20, color: '#F5E642′ }}>
+            <div style={{ background: '#0A1628', borderRadius: 10, padding: 24, border: '1px solid #F5E642' }}>
+              <div style={{ fontWeight: 800, fontSize: 20, marginBottom: 20, color: '#F5E642' }}>
                 {lifestyles.find(l => l.id === lifestyle)?.label} — {sizeTiers.find(s => s.id === size)?.label}
               </div>
               <div style={{ marginBottom: 16 }}>
-                <div style={{ fontWeight: 700, fontSize: 14, marginBottom: 8, color: '#E8EAF0′ }}>🎯 Design Concept</div>
+                <div style={{ fontWeight: 700, fontSize: 14, marginBottom: 8, color: '#E8EAF0' }}>🎯 Design Concept</div>
                 <p style={{ fontSize: 13, color: '#8B9DC3', lineHeight: 1.7 }}>{design.concept}</p>
               </div>
               <div style={{ marginBottom: 16 }}>
-                <div style={{ fontWeight: 700, fontSize: 14, marginBottom: 8, color: '#E8EAF0′ }}>🏗️ Material Recommendations</div>
+                <div style={{ fontWeight: 700, fontSize: 14, marginBottom: 8, color: '#E8EAF0' }}>🏗️ Material Recommendations</div>
                 {design.materials.map((m, i) => (
                   <div key={i} style={{ fontSize: 13, color: '#8B9DC3', marginBottom: 6, paddingLeft: 16, position: 'relative', lineHeight: 1.5 }}>
-                    <span style={{ position: 'absolute', left: 0, color: '#F5E642′ }}>→</span>{m}
+                    <span style={{ position: 'absolute', left: 0, color: '#F5E642' }}>→</span>{m}
                   </div>
                 ))}
               </div>
               <div style={{ background: '#0F2040', borderRadius: 8, padding: 14, marginBottom: 14, border: '1px solid #2A4A6F' }}>
-                <div style={{ fontWeight: 700, fontSize: 14, marginBottom: 6, color: '#F5E642′ }}>☀️ DFW Shade Strategy</div>
+                <div style={{ fontWeight: 700, fontSize: 14, marginBottom: 6, color: '#F5E642' }}>☀️ DFW Shade Strategy</div>
                 <div style={{ fontSize: 13, color: '#8B9DC3', lineHeight: 1.6 }}>{design.shadeNote}</div>
               </div>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12 }}>

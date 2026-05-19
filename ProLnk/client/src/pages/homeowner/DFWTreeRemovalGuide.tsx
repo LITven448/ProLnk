@@ -19,7 +19,7 @@ export default function DFWTreeRemovalGuide() {
     const stumpHigh = d < 12 ? 125 : d < 24 ? 200 : 250;
 
     const needsPermit = d >= 8;
-    const permitCities = d >= 8 ? ['Dallas (Urban Forest Management)', 'Frisco (Tree Preservation Ordinance)', 'Plano (12″+ DBH approval required)'] : [];
+    const permitCities = d >= 8 ? ['Dallas (Urban Forest Management)', 'Frisco (Tree Preservation Ordinance)', 'Plano (12"+ DBH approval required)'] : [];
 
     return { low, high, stumpLow, stumpHigh, needsPermit, permitCities, totalLow: low + stumpLow, totalHigh: high + stumpHigh };
   };
@@ -27,7 +27,7 @@ export default function DFWTreeRemovalGuide() {
   const estimate = getEstimate();
 
   return (
-    <div style={{ background: '#0f172a', minHeight: '100vh', fontFamily: "'Inter', sans-serif", color: '#f1f5f9′ }}>
+    <div style={{ background: '#0f172a', minHeight: '100vh', fontFamily: "'Inter', sans-serif", color: '#f1f5f9' }}>
       <div style={{ maxWidth: 860, margin: '0 auto', padding: '60px 24px' }}>
 
         <div style={{ textAlign: 'center', marginBottom: 48 }}>
@@ -41,8 +41,8 @@ export default function DFWTreeRemovalGuide() {
         </div>
 
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16, marginBottom: 32 }}>
-          <div style={{ background: '#1e293b', borderRadius: 16, padding: 24, border: '1px solid #ef4444′ }}>
-            <h2 style={{ fontSize: 20, fontWeight: 700, marginBottom: 16, color: '#f87171′ }}>
+          <div style={{ background: '#1e293b', borderRadius: 16, padding: 24, border: '1px solid #ef4444' }}>
+            <h2 style={{ fontSize: 20, fontWeight: 700, marginBottom: 16, color: '#f87171' }}>
               ✂️ When to REMOVE
             </h2>
             {[
@@ -59,7 +59,7 @@ export default function DFWTreeRemovalGuide() {
             ))}
           </div>
           <div style={{ background: '#1e293b', borderRadius: 16, padding: 24, border: '1px solid #22c55e' }}>
-            <h2 style={{ fontSize: 20, fontWeight: 700, marginBottom: 16, color: '#4ade80′ }}>
+            <h2 style={{ fontSize: 20, fontWeight: 700, marginBottom: 16, color: '#4ade80' }}>
               🛑 When NOT to Remove
             </h2>
             {[
@@ -76,17 +76,17 @@ export default function DFWTreeRemovalGuide() {
         </div>
 
         <div style={{ background: '#1e293b', borderRadius: 16, padding: 32, marginBottom: 32, border: '1px solid #f59e0b' }}>
-          <h2 style={{ fontSize: 22, fontWeight: 700, marginBottom: 16, color: '#fbbf24′ }}>
+          <h2 style={{ fontSize: 22, fontWeight: 700, marginBottom: 16, color: '#fbbf24' }}>
             📋 DFW Permit Requirements
           </h2>
           <p style={{ color: '#94a3b8', marginBottom: 16, lineHeight: 1.7 }}>
-            Most DFW cities require permits for removing trees 8 inches or larger in diameter (measured at breast height, 4.5 feet from ground). Penalty for unpermitted removal: <strong style={{ color: '#f1f5f9′ }}>$500–$5,000</strong>. Always check before you cut.
+            Most DFW cities require permits for removing trees 8 inches or larger in diameter (measured at breast height, 4.5 feet from ground). Penalty for unpermitted removal: <strong style={{ color: '#f1f5f9' }}>$500–$5,000</strong>. Always check before you cut.
           </p>
           <div style={{ display: 'grid', gap: 12 }}>
             {[
               { city: 'Dallas', rule: 'Dallas Urban Forest Management requires permit for "significant trees"' },
               { city: 'Frisco', rule: 'Tree Preservation Ordinance — permit required for removal of any "protected tree"' },
-              { city: 'Plano', rule: 'City approval required for trees 12″ DBH or larger' },
+              { city: 'Plano', rule: 'City approval required for trees 12" DBH or larger' },
               { city: 'Other DFW cities', rule: 'Verify with your city’s planning/development department before removal' },
             ].map(c => (
               <div key={c.city} style={{ display: 'flex', gap: 12, padding: 14, background: '#0f172a', borderRadius: 10 }}>
@@ -102,14 +102,14 @@ export default function DFWTreeRemovalGuide() {
             💰 Cost Guide — DFW Tree Removal
           </h2>
           {[
-            { size: 'Small tree (under 20 ft)', low: '$300', high: '$700′ },
-            { size: 'Medium tree (20–40 ft)', low: '$700', high: '$1,500′ },
-            { size: 'Large tree (40–60 ft)', low: '$1,500', high: '$3,000′ },
-            { size: 'Very large tree (60 ft+)', low: '$3,000', high: '$10,000′ },
-            { size: 'Emergency / storm-fallen', low: '$500', high: '$2,000′ },
-            { size: 'Stump grinding (add-on)', low: '$75', high: '$250′ },
+            { size: 'Small tree (under 20 ft)', low: '$300', high: '$700' },
+            { size: 'Medium tree (20–40 ft)', low: '$700', high: '$1,500' },
+            { size: 'Large tree (40–60 ft)', low: '$1,500', high: '$3,000' },
+            { size: 'Very large tree (60 ft+)', low: '$3,000', high: '$10,000' },
+            { size: 'Emergency / storm-fallen', low: '$500', high: '$2,000' },
+            { size: 'Stump grinding (add-on)', low: '$75', high: '$250' },
           ].map(c => (
-            <div key={c.size} style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '14px 0', borderBottom: '1px solid #334155′ }}>
+            <div key={c.size} style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '14px 0', borderBottom: '1px solid #334155' }}>
               <div style={{ color: '#cbd5e0', fontSize: 15 }}>{c.size}</div>
               <div style={{ fontWeight: 700, color: '#60a5fa', fontSize: 15 }}>{c.low} – {c.high}</div>
             </div>
@@ -127,7 +127,7 @@ export default function DFWTreeRemovalGuide() {
                 type="number"
                 value={height}
                 onChange={e => setHeight(e.target.value)}
-                placeholder="e.g. 45″
+                placeholder="e.g. 45"
                 style={{ width: '100%', padding: '14px 16px', borderRadius: 10, border: '2px solid #334155', background: '#0f172a', color: '#f1f5f9', fontSize: 16, boxSizing: 'border-box' }}
               />
             </div>
@@ -137,14 +137,14 @@ export default function DFWTreeRemovalGuide() {
                 type="number"
                 value={diameter}
                 onChange={e => setDiameter(e.target.value)}
-                placeholder="e.g. 14″
+                placeholder="e.g. 14"
                 style={{ width: '100%', padding: '14px 16px', borderRadius: 10, border: '2px solid #334155', background: '#0f172a', color: '#f1f5f9', fontSize: 16, boxSizing: 'border-box' }}
               />
             </div>
           </div>
 
           {estimate && (
-            <div style={{ background: '#0f172a', borderRadius: 12, padding: 24, border: '2px solid #3b82f6′ }}>
+            <div style={{ background: '#0f172a', borderRadius: 12, padding: 24, border: '2px solid #3b82f6' }}>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16, marginBottom: 20 }}>
                 <div style={{ textAlign: 'center', padding: 16, background: '#1e293b', borderRadius: 10 }}>
                   <div style={{ color: '#94a3b8', fontSize: 13, marginBottom: 4 }}>Removal</div>
@@ -155,7 +155,7 @@ export default function DFWTreeRemovalGuide() {
                   <div style={{ fontWeight: 800, fontSize: 22, color: '#60a5fa' }}>${estimate.stumpLow}–${estimate.stumpHigh}</div>
                 </div>
               </div>
-              <div style={{ textAlign: 'center', padding: 16, background: '#1e3a5f', borderRadius: 10, marginBottom: 16, border: '1px solid #3b82f6′ }}>
+              <div style={{ textAlign: 'center', padding: 16, background: '#1e3a5f', borderRadius: 10, marginBottom: 16, border: '1px solid #3b82f6' }}>
                 <div style={{ color: '#94a3b8', fontSize: 14, marginBottom: 4 }}>Estimated Total</div>
                 <div style={{ fontWeight: 800, fontSize: 28, color: '#60a5fa' }}>${estimate.totalLow.toLocaleString()}–${estimate.totalHigh.toLocaleString()}</div>
               </div>
@@ -163,7 +163,7 @@ export default function DFWTreeRemovalGuide() {
                 <div style={{ background: '#451a03', border: '1px solid #f59e0b', borderRadius: 10, padding: 16 }}>
                   <div style={{ fontWeight: 700, color: '#fbbf24', marginBottom: 8 }}>⚠️ Permit Likely Required</div>
                   <p style={{ color: '#fcd34d', fontSize: 14, margin: 0 }}>
-                    Trunk is {diameter}" DBH — most DFW cities require permits for trees 8″+ diameter. Verify with your city before removal. Unpermitted removal: $500–$5,000 fine.
+                    Trunk is {diameter}" DBH — most DFW cities require permits for trees 8"+ diameter. Verify with your city before removal. Unpermitted removal: $500–$5,000 fine.
                   </p>
                 </div>
               )}

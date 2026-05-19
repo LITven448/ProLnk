@@ -25,14 +25,14 @@ export default function DFWSprayHeadVsRotorDFW2026() {
 
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 16, marginBottom: 24 }}>
           {[
-            { label: 'Fixed Spray', precip: '1.5–2.0 in/hr', best: 'Small areas', icon: '💦', color: '#3B82F6′ },
-            { label: 'Rotor', precip: '0.5–1.0 in/hr', best: 'Large lawns', icon: '🔄', color: '#10B981′ },
-            { label: 'MP Rotator', precip: '0.4–0.6 in/hr', best: 'Slopes / DFW', icon: '🏔️', color: '#F5E642′ },
+            { label: 'Fixed Spray', precip: '1.5–2.0 in/hr', best: 'Small areas', icon: '💦', color: '#3B82F6' },
+            { label: 'Rotor', precip: '0.5–1.0 in/hr', best: 'Large lawns', icon: '🔄', color: '#10B981' },
+            { label: 'MP Rotator', precip: '0.4–0.6 in/hr', best: 'Slopes / DFW', icon: '🏔️', color: '#F5E642' },
           ].map(h => (
             <div key={h.label} style={{ background: '#0F2040', borderRadius: 12, padding: 18, borderTop: `3px solid ${h.color}`, textAlign: 'center' }}>
               <div style={{ fontSize: 32, marginBottom: 8 }}>{h.icon}</div>
               <div style={{ color: '#FFFFFF', fontWeight: 800, fontSize: 15 }}>{h.label}</div>
-              <div style={{ color: '#F5E642', fontSize: 13, margin: '4px 0′ }}>{h.precip}</div>
+              <div style={{ color: '#F5E642', fontSize: 13, margin: '4px 0' }}>{h.precip}</div>
               <div style={{ color: '#94A3B8', fontSize: 12 }}>Best for: {h.best}</div>
             </div>
           ))}
@@ -46,7 +46,7 @@ export default function DFWSprayHeadVsRotorDFW2026() {
             {zoneTypes.map(z => <option key={z}>{z}</option>)}
           </select>
           {guide && (
-            <div style={{ background: '#162035', borderRadius: 10, padding: 20, borderLeft: '4px solid #F5E642′ }}>
+            <div style={{ background: '#162035', borderRadius: 10, padding: 20, borderLeft: '4px solid #F5E642' }}>
               <div style={{ fontSize: 28, marginBottom: 6 }}>{guide.icon}</div>
               <div style={{ color: '#F5E642', fontWeight: 800, fontSize: 18, marginBottom: 4 }}>Recommended: {guide.type}</div>
               <div style={{ color: '#94A3B8', fontSize: 13, marginBottom: 14 }}>Precipitation rate: {guide.precip}</div>

@@ -20,14 +20,14 @@ export default function DFWLightingGuide2026() {
   const active = rooms.find(r => r.id === selected);
 
   return (
-    <div style={{ background: '#0A1628', minHeight: '100vh', padding: '32px 24px', fontFamily: 'system-ui, sans-serif', color: '#E8EDF5′ }}>
+    <div style={{ background: '#0A1628', minHeight: '100vh', padding: '32px 24px', fontFamily: 'system-ui, sans-serif', color: '#E8EDF5' }}>
       <div style={{ maxWidth: 720, margin: '0 auto' }}>
         <div style={{ background: '#F5E642', color: '#0A1628', borderRadius: 8, padding: '6px 14px', display: 'inline-block', fontSize: 12, fontWeight: 700, marginBottom: 16 }}>DFW HOME HEALTH 2026</div>
         <h1 style={{ fontSize: 28, fontWeight: 800, marginBottom: 8 }}>💡 DFW Home Lighting Guide 2026</h1>
         <p style={{ color: '#8899BB', marginBottom: 32 }}>Texas gets 230+ sunny days per year. That sun is both an asset (natural light, vitamin D) and a liability (UV damage to floors and furniture, heat gain, glare). Smart lighting strategy addresses both.</p>
 
         <div style={{ background: '#111E35', borderRadius: 10, padding: 24, marginBottom: 24 }}>
-          <h2 style={{ fontSize: 16, fontWeight: 700, marginBottom: 16, color: '#F5E642′ }}>🌞 UV Damage Timeline — DFW Homes</h2>
+          <h2 style={{ fontSize: 16, fontWeight: 700, marginBottom: 16, color: '#F5E642' }}>🌞 UV Damage Timeline — DFW Homes</h2>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12 }}>
             {uvFacts.map((f, i) => (
               <div key={i} style={{ background: '#0A1628', borderRadius: 8, padding: 14 }}>
@@ -41,18 +41,18 @@ export default function DFWLightingGuide2026() {
         </div>
 
         <div style={{ background: '#111E35', borderRadius: 10, padding: 24, marginBottom: 32 }}>
-          <h2 style={{ fontSize: 18, fontWeight: 700, marginBottom: 16, color: '#F5E642′ }}>🏠 Room Type → Lighting Strategy</h2>
+          <h2 style={{ fontSize: 18, fontWeight: 700, marginBottom: 16, color: '#F5E642' }}>🏠 Room Type → Lighting Strategy</h2>
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: 10, marginBottom: 20 }}>
             {rooms.map(r => (
               <button key={r.id} onClick={() => setSelected(r.id === selected ? null : r.id)}
-                style={{ background: selected === r.id ? '#F5E642′ : '#1C2E4A', color: selected === r.id ? '#0A1628' : '#E8EDF5', border: ’none', borderRadius: 8, padding: '10px 16px', cursor: 'pointer', fontWeight: 600 }}>
+                style={{ background: selected === r.id ? '#F5E642' : '#1C2E4A', color: selected === r.id ? '#0A1628' : '#E8EDF5', border: 'none', borderRadius: 8, padding: '10px 16px', cursor: 'pointer', fontWeight: 600 }}>
                 {r.label}
               </button>
             ))}
           </div>
           {active && (
             <div style={{ background: '#0A1628', borderRadius: 8, padding: 16 }}>
-              <div style={{ fontWeight: 700, marginBottom: 12, color: '#F5E642′ }}>Lighting tips for {active.label}:</div>
+              <div style={{ fontWeight: 700, marginBottom: 12, color: '#F5E642' }}>Lighting tips for {active.label}:</div>
               {active.tips.map((tip, i) => (
                 <div key={i} style={{ display: 'flex', gap: 10, marginBottom: 10, alignItems: 'flex-start' }}>
                   <span style={{ color: '#F5E642', flexShrink: 0, marginTop: 1 }}>→</span>

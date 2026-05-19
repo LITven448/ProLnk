@@ -94,7 +94,7 @@ export default function DFWFencingPermitGuide() {
             ))}
           </div>
           <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 16 }}>
-            <input type="checkbox" id="hoa" checked={hasHOA} onChange={e => setHasHOA(e.target.checked)} style={{ width: 18, height: 18, accentColor: '#F5E642′ }} />
+            <input type="checkbox" id="hoa" checked={hasHOA} onChange={e => setHasHOA(e.target.checked)} style={{ width: 18, height: 18, accentColor: '#F5E642' }} />
             <label htmlFor="hoa" style={{ color: '#cbd5e1', cursor: 'pointer' }}>My property is in an HOA</label>
           </div>
           <button onClick={() => setShowResult(true)} style={{ background: '#F5E642', color: '#0A1628', border: 'none', borderRadius: 8, padding: '12px 24px', fontWeight: 800, cursor: 'pointer', width: '100%', fontSize: 16 }}>
@@ -102,7 +102,7 @@ export default function DFWFencingPermitGuide() {
           </button>
           {showResult && (
             <div style={{ background: '#0A1628', borderRadius: 10, padding: 16, marginTop: 14, border: `2px solid ${permitNeeded ? '#ef4444' : '#22c55e'}` }}>
-              <div style={{ fontWeight: 800, fontSize: 18, color: permitNeeded ? '#ef4444′ : '#22c55e', marginBottom: 8 }}>
+              <div style={{ fontWeight: 800, fontSize: 18, color: permitNeeded ? '#ef4444' : '#22c55e', marginBottom: 8 }}>
                 {permitNeeded ? '⚠️ Permit Required' : '✅ Likely No Permit Required'}
               </div>
               {permitNeeded && <div style={{ color: '#cbd5e1', fontSize: 14 }}>In {selectedCity.name}, your {height.label} fence requires a permit. Estimated fee: {selectedCity.fee}. Setback: {selectedCity.setback}.</div>}

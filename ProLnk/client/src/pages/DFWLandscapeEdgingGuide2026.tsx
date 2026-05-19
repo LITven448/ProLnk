@@ -75,7 +75,7 @@ export default function DFWLandscapeEdgingGuide2026() {
           <p style={{ color: '#94a3b8', fontSize: 15 }}>DFW Bermuda grass is aggressive — edge every 2 weeks or contain it permanently. Here's your guide.</p>
         </div>
 
-        <div style={{ background: '#0f2040', borderRadius: 12, padding: 20, marginBottom: 16, borderLeft: '4px solid #F5E642′ }}>
+        <div style={{ background: '#0f2040', borderRadius: 12, padding: 20, marginBottom: 16, borderLeft: '4px solid #F5E642' }}>
           <span style={{ color: '#F5E642', fontWeight: 700 }}>⚡ DFW Bermuda Fact:</span>
           <span style={{ color: '#94a3b8', fontSize: 14, marginLeft: 8 }}>Bermuda runners travel 6–12 inches per month in summer. Without hard edging, beds disappear in one season.</span>
         </div>
@@ -86,9 +86,9 @@ export default function DFWLandscapeEdgingGuide2026() {
             {answers.map(a => (
               <button key={a.id} onClick={() => toggle(a.id)}
                 style={{ padding: '8px 16px', borderRadius: 20, border: '2px solid', cursor: 'pointer', fontSize: 13, fontWeight: 600,
-                  borderColor: selected.includes(a.id) ? '#F5E642′ : '#1e3a5f',
-                  background: selected.includes(a.id) ? '#F5E642′ : '#0A1628',
-                  color: selected.includes(a.id) ? '#0A1628′ : '#94a3b8' }}>
+                  borderColor: selected.includes(a.id) ? '#F5E642' : '#1e3a5f',
+                  background: selected.includes(a.id) ? '#F5E642' : '#0A1628',
+                  color: selected.includes(a.id) ? '#0A1628' : '#94a3b8' }}>
                 {a.icon} {a.label}
               </button>
             ))}
@@ -99,7 +99,7 @@ export default function DFWLandscapeEdgingGuide2026() {
           {recommended.map(e => (
             <div key={e.id} onClick={() => setActiveCard(activeCard === e.id ? null : e.id)}
               style={{ background: '#0f2040', borderRadius: 12, padding: 20, cursor: 'pointer', border: '2px solid',
-                borderColor: activeCard === e.id ? '#F5E642′ : '#1e3a5f' }}>
+                borderColor: activeCard === e.id ? '#F5E642' : '#1e3a5f' }}>
               <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
                 <div>
                   <span style={{ fontSize: 24, marginRight: 10 }}>{e.icon}</span>
@@ -110,7 +110,7 @@ export default function DFWLandscapeEdgingGuide2026() {
                   <div style={{ color: '#94a3b8', fontSize: 12 }}>{e.lifespan}</div>
                 </div>
               </div>
-              <p style={{ color: '#94a3b8', fontSize: 13, margin: '8px 0 0′ }}>{e.looks}</p>
+              <p style={{ color: '#94a3b8', fontSize: 13, margin: '8px 0 0' }}>{e.looks}</p>
               {activeCard === e.id && (
                 <div style={{ marginTop: 14 }}>
                   <div style={{ background: '#0A1628', borderRadius: 8, padding: 12, marginBottom: 10 }}>

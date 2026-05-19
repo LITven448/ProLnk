@@ -103,15 +103,15 @@ export default function DFWRoofingWarrantyGuide() {
           DFW Roofing Warranties Explained
         </h1>
         <p style={{ color: '#9AA3B4', fontSize: 16, marginBottom: 32 }}>
-          Not all roofing warranties are equal. DFW's heat, UV, and hail environment exposes gaps in standard coverage that homeowners rarely discover until it’s too late.
+          Not all roofing warranties are equal. DFW's heat, UV, and hail environment exposes gaps in standard coverage that homeowners rarely discover until it's too late.
         </p>
 
         <div style={{ display: 'flex', gap: 10, flexWrap: 'wrap', marginBottom: 28 }}>
           {warrantyTypes.map(w => (
             <button key={w.id} onClick={() => setSelected(w.id)} style={{
-              padding: '10px 16px', borderRadius: 10, border: selected === w.id ? '2px solid #F5E642′ : '2px solid #1E2D45',
-              background: selected === w.id ? '#F5E642′ : '#111E33',
-              color: selected === w.id ? '#0A1628′ : '#9AA3B4', fontWeight: 700, fontSize: 13, cursor: ’pointer',
+              padding: '10px 16px', borderRadius: 10, border: selected === w.id ? '2px solid #F5E642' : '2px solid #1E2D45',
+              background: selected === w.id ? '#F5E642' : '#111E33',
+              color: selected === w.id ? '#0A1628' : '#9AA3B4', fontWeight: 700, fontSize: 13, cursor: 'pointer',
             }}>{w.label}</button>
           ))}
         </div>
@@ -123,8 +123,8 @@ export default function DFWRoofingWarrantyGuide() {
               <div style={{ color: '#6B7A99', fontSize: 14 }}>Program: {w.program}</div>
             </div>
             <div style={{ background: '#0A1628', borderRadius: 10, padding: '10px 18px', textAlign: 'center' }}>
-              <div style={{ fontSize: 11, color: '#6B7A99′ }}>DURATION</div>
-              <div style={{ fontSize: 18, fontWeight: 800, color: '#4ADE80′ }}>{w.duration}</div>
+              <div style={{ fontSize: 11, color: '#6B7A99' }}>DURATION</div>
+              <div style={{ fontSize: 18, fontWeight: 800, color: '#4ADE80' }}>{w.duration}</div>
             </div>
           </div>
 
@@ -170,8 +170,8 @@ export default function DFWRoofingWarrantyGuide() {
           ))}
         </div>
 
-        <div style={{ padding: '16px 20px', background: '#111E33', borderRadius: 12, borderLeft: '4px solid #F5E642′ }}>
-          <strong style={{ color: '#F5E642′ }}>Bottom Line:</strong>
+        <div style={{ padding: '16px 20px', background: '#111E33', borderRadius: 12, borderLeft: '4px solid #F5E642' }}>
+          <strong style={{ color: '#F5E642' }}>Bottom Line:</strong>
           <span style={{ color: '#9AA3B4', marginLeft: 8 }}>
             In DFW, a GAF System Plus or OC Platinum warranty from a certified local contractor is worth 10-15% extra upfront — both have corporate backing and survive contractor bankruptcy. Read every exclusion before signing.
           </span>

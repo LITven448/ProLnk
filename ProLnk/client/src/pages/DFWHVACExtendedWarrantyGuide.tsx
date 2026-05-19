@@ -52,7 +52,7 @@ export default function DFWHVACExtendedWarrantyGuide() {
   const [selected, setSelected] = useState<string | null>(null);
 
   return (
-    <div style={{ background: '#0A1628', minHeight: '100vh', padding: '40px 20px', fontFamily: 'system-ui, sans-serif', color: '#E8EDF4′ }}>
+    <div style={{ background: '#0A1628', minHeight: '100vh', padding: '40px 20px', fontFamily: 'system-ui, sans-serif', color: '#E8EDF4' }}>
       <div style={{ maxWidth: 820, margin: '0 auto' }}>
         <div style={{ textAlign: 'center', marginBottom: 40 }}>
           <div style={{ fontSize: 48, marginBottom: 12 }}>🛡️</div>
@@ -86,7 +86,7 @@ export default function DFWHVACExtendedWarrantyGuide() {
               onClick={() => setSelected(selected === s.id ? null : s.id)}
               style={{
                 background: selected === s.id ? '#1A3A6E' : '#0F2040',
-                border: selected === s.id ? '2px solid #F5E642′ : '1px solid #1E3A5F',
+                border: selected === s.id ? '2px solid #F5E642' : '1px solid #1E3A5F',
                 borderRadius: 10, padding: '16px 20px', cursor: 'pointer',
                 textAlign: 'left', color: '#E8EDF4', fontSize: 15, fontWeight: 600,
                 transition: 'all 0.2s', width: '100%',

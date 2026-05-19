@@ -118,7 +118,7 @@ export default function DFWChimneySweepGuide() {
           NFPA 211 requires annual chimney inspection regardless of use frequency.
         </p>
         <div style={{ background: '#162844', borderRadius: 10, padding: '14px 18px', marginBottom: 28 }}>
-          <strong style={{ color: '#F5E642′ }}>Why DFW Chimneys Need Annual Inspection:</strong>
+          <strong style={{ color: '#F5E642' }}>Why DFW Chimneys Need Annual Inspection:</strong>
           <ul style={{ color: '#8FA3BF', marginTop: 8, paddingLeft: 20, lineHeight: 1.8 }}>
             <li>DFW squirrels, raccoons, and starlings commonly nest in chimney flues during summer months.</li>
             <li>North Texas hailstorms damage chimney caps and crowns, allowing water intrusion that accelerates masonry deterioration.</li>
@@ -140,9 +140,9 @@ export default function DFWChimneySweepGuide() {
           {result && (
             <div style={{ marginTop: 20, background: '#0A1628', borderRadius: 10, padding: 18, borderLeft: `4px solid ${result.color}` }}>
               <div style={{ color: result.color, fontWeight: 700, marginBottom: 10 }}>{result.urgency}</div>
-              <div style={{ marginBottom: 8 }}><strong style={{ color: '#F5E642′ }}>Inspection Timing:</strong> <span style={{ color: '#8FA3BF' }}>{result.timing}</span></div>
-              <div style={{ marginBottom: 12 }}><strong style={{ color: '#F5E642′ }}>Estimated DFW Cost:</strong> <span style={{ color: '#8FA3BF' }}>{result.cost}</span></div>
-              <strong style={{ color: '#F5E642′ }}>What Is Included:</strong>
+              <div style={{ marginBottom: 8 }}><strong style={{ color: '#F5E642' }}>Inspection Timing:</strong> <span style={{ color: '#8FA3BF' }}>{result.timing}</span></div>
+              <div style={{ marginBottom: 12 }}><strong style={{ color: '#F5E642' }}>Estimated DFW Cost:</strong> <span style={{ color: '#8FA3BF' }}>{result.cost}</span></div>
+              <strong style={{ color: '#F5E642' }}>What Is Included:</strong>
               <ul style={{ paddingLeft: 20, color: '#8FA3BF', lineHeight: 1.8, marginTop: 8 }}>
                 {result.included.map((item, i) => <li key={i}>{item}</li>)}
               </ul>
@@ -162,7 +162,7 @@ export default function DFWChimneySweepGuide() {
           ].map(item => (
             <div key={item.title} style={{ display: 'flex', gap: 14, marginBottom: 16 }}>
               <span style={{ fontSize: 22, flexShrink: 0 }}>{item.icon}</span>
-              <div><strong style={{ color: '#E8EDF5′ }}>{item.title}:</strong> <span style={{ color: '#8FA3BF' }}>{item.body}</span></div>
+              <div><strong style={{ color: '#E8EDF5' }}>{item.title}:</strong> <span style={{ color: '#8FA3BF' }}>{item.body}</span></div>
             </div>
           ))}
         </div>

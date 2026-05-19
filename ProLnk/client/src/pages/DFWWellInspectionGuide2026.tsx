@@ -25,7 +25,7 @@ export default function DFWWellInspectionGuide2026() {
           <p style={{ color: '#94a3b8', fontSize: 15 }}>Due diligence for well water properties in DFW outer counties</p>
         </div>
 
-        <div style={{ background: '#112240', borderRadius: 12, padding: 20, marginBottom: 20, borderLeft: '4px solid #38bdf8′ }}>
+        <div style={{ background: '#112240', borderRadius: 12, padding: 20, marginBottom: 20, borderLeft: '4px solid #38bdf8' }}>
           <h2 style={{ color: '#38bdf8', fontSize: 16, margin: '0 0 10px' }}>🌊 Texas Groundwater Rights</h2>
           <p style={{ color: '#cbd5e1', fontSize: 14, margin: 0 }}>Texas follows the "rule of capture" — landowners generally own groundwater beneath their property. However, Groundwater Conservation Districts (GCDs) regulate drilling and pumping in most DFW outer counties. Verify GCD rules and any existing well permits before closing.</p>
         </div>
@@ -75,7 +75,7 @@ export default function DFWWellInspectionGuide2026() {
               {['Under 10 yrs', '10-20 yrs', '20+ yrs', '30+ yrs'].map(opt => (
                 <button key={opt} onClick={() => setWellAge(opt)}
                   style={{ display: 'block', width: '100%', textAlign: 'left', padding: '8px 12px', marginBottom: 6, borderRadius: 8, cursor: 'pointer', border: '1px solid', fontSize: 13,
-                    borderColor: wellAge === opt ? '#F5E642′ : '#334155', background: wellAge === opt ? '#F5E642' : ’transparent', color: wellAge === opt ? '#0A1628′ : '#94a3b8', fontWeight: wellAge === opt ? 700 : 400 }}>
+                    borderColor: wellAge === opt ? '#F5E642' : '#334155', background: wellAge === opt ? '#F5E642' : 'transparent', color: wellAge === opt ? '#0A1628' : '#94a3b8', fontWeight: wellAge === opt ? 700 : 400 }}>
                   {opt}
                 </button>
               ))}
@@ -85,7 +85,7 @@ export default function DFWWellInspectionGuide2026() {
               {['Residential Subdivision', 'Agriculture Nearby', 'Outer County', 'Wooded/Rural'].map(opt => (
                 <button key={opt} onClick={() => setLocation(opt)}
                   style={{ display: 'block', width: '100%', textAlign: 'left', padding: '8px 12px', marginBottom: 6, borderRadius: 8, cursor: 'pointer', border: '1px solid', fontSize: 13,
-                    borderColor: location === opt ? '#F5E642′ : '#334155', background: location === opt ? '#F5E642' : ’transparent', color: location === opt ? '#0A1628′ : '#94a3b8', fontWeight: location === opt ? 700 : 400 }}>
+                    borderColor: location === opt ? '#F5E642' : '#334155', background: location === opt ? '#F5E642' : 'transparent', color: location === opt ? '#0A1628' : '#94a3b8', fontWeight: location === opt ? 700 : 400 }}>
                   {opt}
                 </button>
               ))}

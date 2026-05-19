@@ -60,7 +60,7 @@ export default function ProLnkPressPage() {
         <h2 style={{ fontSize: 20, fontWeight: 700, color: '#F5E642', marginBottom: 16 }}>What type of media are you?</h2>
         <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap', marginBottom: 24 }}>
           {mediaTypes.map((m, i) => (
-            <button key={i} onClick={() => setMediaIdx(mediaIdx === i ? null : i)} style={{ background: mediaIdx === i ? '#F5E642′ : '#132040', color: mediaIdx === i ? '#0A1628' : '#fff', border: '1px solid #F5E642', borderRadius: 8, padding: '10px 16px', cursor: ’pointer', fontWeight: 600, fontSize: 13 }}>
+            <button key={i} onClick={() => setMediaIdx(mediaIdx === i ? null : i)} style={{ background: mediaIdx === i ? '#F5E642' : '#132040', color: mediaIdx === i ? '#0A1628' : '#fff', border: '1px solid #F5E642', borderRadius: 8, padding: '10px 16px', cursor: 'pointer', fontWeight: 600, fontSize: 13 }}>
               {m.label}
             </button>
           ))}

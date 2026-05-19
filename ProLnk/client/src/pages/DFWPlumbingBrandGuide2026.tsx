@@ -60,7 +60,7 @@ export default function DFWPlumbingBrandGuide2026() {
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8, marginBottom: 16 }}>
             {Object.keys(fixtureGuide).map(f => (
               <button key={f} onClick={() => setFixture(f)}
-                style={{ background: fixture === f ? '#F5E642′ : '#0A1628', color: fixture === f ? '#0A1628' : '#94a3b8', border: '1px solid #1e3a5f', borderRadius: 8, padding: '6px 14px', cursor: ’pointer', fontSize: 13, fontWeight: 600 }}>
+                style={{ background: fixture === f ? '#F5E642' : '#0A1628', color: fixture === f ? '#0A1628' : '#94a3b8', border: '1px solid #1e3a5f', borderRadius: 8, padding: '6px 14px', cursor: 'pointer', fontSize: 13, fontWeight: 600 }}>
                 {f}
               </button>
             ))}

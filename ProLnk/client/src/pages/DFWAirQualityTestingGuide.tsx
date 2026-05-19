@@ -18,11 +18,11 @@ const symptoms = [
 ];
 
 const remediation = [
-  { pollutant: 'VOCs', solution: 'Ventilation, low-VOC products, air purifier with activated carbon', cost: '$100–$800′ },
-  { pollutant: 'Radon', solution: 'Sub-slab depressurization system', cost: '$800–$2,500′ },
-  { pollutant: 'Carbon Monoxide', solution: 'Detector (required), HVAC service, vent check', cost: '$30–$300′ },
-  { pollutant: 'Formaldehyde', solution: 'HEPA + carbon filter, ventilation, low-VOC sealer on cabinets', cost: '$200–$1,000′ },
-  { pollutant: 'PM2.5', solution: 'MERV-13 HVAC filter, air purifier, seal penetrations', cost: '$50–$600′ },
+  { pollutant: 'VOCs', solution: 'Ventilation, low-VOC products, air purifier with activated carbon', cost: '$100–$800' },
+  { pollutant: 'Radon', solution: 'Sub-slab depressurization system', cost: '$800–$2,500' },
+  { pollutant: 'Carbon Monoxide', solution: 'Detector (required), HVAC service, vent check', cost: '$30–$300' },
+  { pollutant: 'Formaldehyde', solution: 'HEPA + carbon filter, ventilation, low-VOC sealer on cabinets', cost: '$200–$1,000' },
+  { pollutant: 'PM2.5', solution: 'MERV-13 HVAC filter, air purifier, seal penetrations', cost: '$50–$600' },
   { pollutant: 'Mold', solution: 'HVAC cleaning, dehumidifier, remediation contractor', cost: '$500–$5,000+' },
 ];
 
@@ -69,7 +69,7 @@ export default function DFWAirQualityTestingGuide() {
         <div style={{ overflowX: 'auto', marginBottom: '2.5rem' }}>
           <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: '0.9rem' }}>
             <thead>
-              <tr style={{ background: '#0f2340′ }}>
+              <tr style={{ background: '#0f2340' }}>
                 {['Pollutant', 'Solution', 'Est. Cost'].map(h => (
                   <th key={h} style={{ padding: '0.75rem 1rem', textAlign: 'left', color: '#F5E642', borderBottom: '1px solid #1e3a5f' }}>{h}</th>
                 ))}
@@ -79,8 +79,8 @@ export default function DFWAirQualityTestingGuide() {
               {remediation.map((r, i) => (
                 <tr key={i} style={{ borderBottom: '1px solid #1e3a5f' }}>
                   <td style={{ padding: '0.75rem 1rem', fontWeight: 600 }}>{r.pollutant}</td>
-                  <td style={{ padding: '0.75rem 1rem', color: '#94a3b8′ }}>{r.solution}</td>
-                  <td style={{ padding: '0.75rem 1rem', color: '#4ade80′ }}>{r.cost}</td>
+                  <td style={{ padding: '0.75rem 1rem', color: '#94a3b8' }}>{r.solution}</td>
+                  <td style={{ padding: '0.75rem 1rem', color: '#4ade80' }}>{r.cost}</td>
                 </tr>
               ))}
             </tbody>
@@ -112,7 +112,7 @@ export default function DFWAirQualityTestingGuide() {
             <label style={{ display: 'block', color: '#94a3b8', fontSize: '0.8rem', marginBottom: 8 }}>SYMPTOMS (select all that apply)</label>
             <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8 }}>
               {symptoms.map(s => (
-                <button key={s.id} onClick={() => toggleSymptom(s.id)} style={{ padding: '0.4rem 0.9rem', borderRadius: 20, border: '1px solid', borderColor: selectedSymptoms.includes(s.id) ? '#F5E642′ : '#1e3a5f', background: selectedSymptoms.includes(s.id) ? '#F5E642' : ’transparent', color: selectedSymptoms.includes(s.id) ? '#0A1628′ : '#fff', cursor: ’pointer', fontSize: '0.85rem', fontWeight: 600 }}>
+                <button key={s.id} onClick={() => toggleSymptom(s.id)} style={{ padding: '0.4rem 0.9rem', borderRadius: 20, border: '1px solid', borderColor: selectedSymptoms.includes(s.id) ? '#F5E642' : '#1e3a5f', background: selectedSymptoms.includes(s.id) ? '#F5E642' : 'transparent', color: selectedSymptoms.includes(s.id) ? '#0A1628' : '#fff', cursor: 'pointer', fontSize: '0.85rem', fontWeight: 600 }}>
                   {s.label}
                 </button>
               ))}
@@ -122,7 +122,7 @@ export default function DFWAirQualityTestingGuide() {
             Get Priority List →
           </button>
           {showResults && (
-            <div style={{ marginTop: '1.25rem', background: '#0A1628', borderRadius: 8, padding: '1rem', border: '1px solid #F5E642′ }}>
+            <div style={{ marginTop: '1.25rem', background: '#0A1628', borderRadius: 8, padding: '1rem', border: '1px solid #F5E642' }}>
               <div style={{ fontWeight: 700, color: '#F5E642', marginBottom: 8 }}>Your IAQ Action Plan:</div>
               {getPriorities().map((r, i) => <div key={i} style={{ color: '#e2e8f0', marginBottom: 6, fontSize: '0.95rem' }}>{r}</div>)}
               <div style={{ marginTop: 12, color: '#94a3b8', fontSize: '0.85rem' }}>Testing cost estimate: $50–$500 depending on panel and whether you use a pro inspector.</div>

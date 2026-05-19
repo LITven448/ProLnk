@@ -71,7 +71,7 @@ export default function DFWHVACFinalSummaryAll() {
           <div style={{ fontWeight: 700, fontSize: 18, color: '#F5E642', marginBottom: 16 }}>🎯 Your Homeowner Type → Your Top 5 Actions</div>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: 10, marginBottom: 20 }}>
             {homeownerTypes.map(h => (
-              <button key={h.id} onClick={() => setHomeType(h.id)} style={{ background: homeType === h.id ? '#F5E642′ : '#162840', color: homeType === h.id ? '#0A1628' : '#E8EDF5', border: '1px solid #2A4A6B', borderRadius: 8, padding: '12px 14px', cursor: ’pointer', fontWeight: homeType === h.id ? 700 : 400, fontSize: 14, textAlign: 'left' }}>
+              <button key={h.id} onClick={() => setHomeType(h.id)} style={{ background: homeType === h.id ? '#F5E642' : '#162840', color: homeType === h.id ? '#0A1628' : '#E8EDF5', border: '1px solid #2A4A6B', borderRadius: 8, padding: '12px 14px', cursor: 'pointer', fontWeight: homeType === h.id ? 700 : 400, fontSize: 14, textAlign: 'left' }}>
                 {h.label}
               </button>
             ))}
@@ -89,7 +89,7 @@ export default function DFWHVACFinalSummaryAll() {
           )}
         </div>
 
-        <div style={{ background: '#0F2140', borderRadius: 12, padding: 24, borderTop: '3px solid #F5E642′ }}>
+        <div style={{ background: '#0F2140', borderRadius: 12, padding: 24, borderTop: '3px solid #F5E642' }}>
           <div style={{ fontWeight: 700, color: '#F5E642', marginBottom: 8 }}>🔗 ProLnk: DFW Home Services, Done Right</div>
           <div style={{ color: '#8FA3BF', fontSize: 14, lineHeight: 1.6 }}>ProLnk connects DFW homeowners with vetted, background-checked HVAC pros — no spam, no middlemen, transparent pricing. Join the ProLnk homeowner waitlist and get matched when we launch.</div>
         </div>

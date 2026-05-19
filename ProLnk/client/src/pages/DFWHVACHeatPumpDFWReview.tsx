@@ -39,7 +39,7 @@ export default function DFWHVACHeatPumpDFWReview() {
   }
 
   return (
-    <div style={{ background: '#0A1628', minHeight: '100vh', padding: '32px 16px', fontFamily: 'sans-serif', color: '#E8EDF5′ }}>
+    <div style={{ background: '#0A1628', minHeight: '100vh', padding: '32px 16px', fontFamily: 'sans-serif', color: '#E8EDF5' }}>
       <div style={{ maxWidth: 760, margin: '0 auto' }}>
         <div style={{ fontSize: 36, marginBottom: 8 }}>🔍</div>
         <h1 style={{ color: '#F5E642', fontSize: 28, fontWeight: 700, marginBottom: 8 }}>
@@ -51,7 +51,7 @@ export default function DFWHVACHeatPumpDFWReview() {
         <h2 style={{ color: '#F5E642', fontSize: 18, marginBottom: 12 }}>DFW Performance Benchmarks by Season</h2>
         <div style={{ display: 'grid', gap: 12, marginBottom: 32 }}>
           {seasons.map(s => (
-            <div key={s.label} style={{ background: '#1A2B45', borderRadius: 8, padding: 16, borderLeft: '3px solid #F5E642′ }}>
+            <div key={s.label} style={{ background: '#1A2B45', borderRadius: 8, padding: 16, borderLeft: '3px solid #F5E642' }}>
               <div style={{ fontWeight: 600, marginBottom: 4 }}>{s.label}</div>
               <div style={{ color: '#9AAFC4', fontSize: 14 }}>Outside: {s.tempRange} → Target indoor: {s.targetIndoor}</div>
             </div>
@@ -74,7 +74,7 @@ export default function DFWHVACHeatPumpDFWReview() {
             { label: 'Unusual noises (grinding, banging, screeching)?', val: noise, set: setNoise, opts: [['', 'Select'], ['no', 'No unusual noises'], ['yes', 'Yes — abnormal sounds']] },
           ].map(({ label, val, set, opts }) => (
             <label key={label} style={{ display: 'block', marginBottom: 16 }}>
-              <div style={{ marginBottom: 6, fontSize: 14, color: '#9AAFC4′ }}>{label}</div>
+              <div style={{ marginBottom: 6, fontSize: 14, color: '#9AAFC4' }}>{label}</div>
               <select value={val} onChange={e => set(e.target.value)}
                 style={{ width: '100%', padding: '10px', borderRadius: 6, background: '#0A1628', color: '#E8EDF5', border: '1px solid #2A4A6B' }}>
                 {opts.map(([v, l]) => <option key={v} value={v}>{l}</option>)}

@@ -30,10 +30,10 @@ export default function ProLnkNetworkIncomeMath() {
 
         <div style={{ marginBottom: 32 }}>
           <label style={{ display: 'block', marginBottom: 8, fontSize: 16, fontWeight: 600 }}>
-            Pros you directly recruit: <span style={{ color: '#F5E642′ }}>{recruits}</span>
+            Pros you directly recruit: <span style={{ color: '#F5E642' }}>{recruits}</span>
           </label>
           <input type="range" min={1} max={25} value={recruits} onChange={e => setRecruits(+e.target.value)}
-            style={{ width: '100%', accentColor: '#F5E642′ }} />
+            style={{ width: '100%', accentColor: '#F5E642' }} />
         </div>
 
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16, marginBottom: 32 }}>
@@ -57,7 +57,7 @@ export default function ProLnkNetworkIncomeMath() {
 
         <div style={{ background: '#111d2e', borderRadius: 12, padding: 28, textAlign: 'center', marginBottom: 24 }}>
           <div style={{ color: '#94a3b8', fontSize: 16, marginBottom: 8 }}>Total Monthly Network Income</div>
-          <div style={{ fontSize: 56, fontWeight: 900, color: '#F5E642′ }}>${total.toLocaleString()}</div>
+          <div style={{ fontSize: 56, fontWeight: 900, color: '#F5E642' }}>${total.toLocaleString()}</div>
           <div style={{ color: '#64748b', fontSize: 13 }}>assuming avg $850 job value, 8 jobs/mo per pro</div>
         </div>
 

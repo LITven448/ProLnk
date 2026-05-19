@@ -29,8 +29,8 @@ export default function DFWBlowerMotorGuide2026() {
             { icon: '🔋', title: 'Capacitor Failure', body: 'The run capacitor gives the blower motor the electrical boost to start and maintain speed. DFW heat degrades capacitors 2-3x faster than moderate climates. Symptoms: motor hums but does not spin, or spins slowly. Capacitor replacement ($150-250) is a common, inexpensive fix that restores full motor function.' },
             { icon: '💰', title: 'Motor vs System Replacement', body: 'Motor replacement costs $400-700 including labor. If your system is 12+ years old and needs a motor, get a full system quote too. A new 16-SEER system with variable-speed blower may pencil out better than a $600 repair on aging equipment — especially given DFW energy costs.' },
           ].map(card => (
-            <div key={card.title} style={{ background: '#0F2040', borderRadius: 10, padding: '18px 20px', borderLeft: '3px solid #F5E642′ }}>
-              <div style={{ fontSize: 22, marginBottom: 6 }}>{card.icon} <span style={{ fontSize: 16, fontWeight: 700, color: '#F5E642′ }}>{card.title}</span></div>
+            <div key={card.title} style={{ background: '#0F2040', borderRadius: 10, padding: '18px 20px', borderLeft: '3px solid #F5E642' }}>
+              <div style={{ fontSize: 22, marginBottom: 6 }}>{card.icon} <span style={{ fontSize: 16, fontWeight: 700, color: '#F5E642' }}>{card.title}</span></div>
               <p style={{ color: '#B0B8CC', fontSize: 14, margin: 0, lineHeight: 1.6 }}>{card.body}</p>
             </div>
           ))}
@@ -41,13 +41,13 @@ export default function DFWBlowerMotorGuide2026() {
           <p style={{ color: '#9BA3B4', fontSize: 14, marginBottom: 16 }}>Select your symptom for a blower motor diagnosis:</p>
           <div style={{ display: 'flex', flexDirection: 'column', gap: 10, marginBottom: 18 }}>
             {symptoms.map(s => (
-              <button key={s.id} onClick={() => setSelected(s.id)} style={{ background: selected === s.id ? '#F5E642′ : '#162035', color: selected === s.id ? '#0A1628' : '#E8EAF0', border: ’none', borderRadius: 8, padding: '12px 16px', textAlign: 'left', cursor: 'pointer', fontWeight: 600, fontSize: 14 }}>
+              <button key={s.id} onClick={() => setSelected(s.id)} style={{ background: selected === s.id ? '#F5E642' : '#162035', color: selected === s.id ? '#0A1628' : '#E8EAF0', border: 'none', borderRadius: 8, padding: '12px 16px', textAlign: 'left', cursor: 'pointer', fontWeight: 600, fontSize: 14 }}>
                 {s.label}
               </button>
             ))}
           </div>
           {result && (
-            <div style={{ background: '#162035', borderRadius: 8, padding: 16, borderLeft: '3px solid #F5E642′ }}>
+            <div style={{ background: '#162035', borderRadius: 8, padding: 16, borderLeft: '3px solid #F5E642' }}>
               <p style={{ color: '#E8EAF0', fontSize: 14, margin: 0, lineHeight: 1.7 }}>{result.diagnosis}</p>
             </div>
           )}

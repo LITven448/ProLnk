@@ -32,7 +32,7 @@ export default function DFWHVACSessionThankYou() {
             <div key={i} style={{ background: '#112240', borderRadius: 12, padding: 24, textAlign: 'center' }}>
               <div style={{ fontSize: 32, marginBottom: 8 }}>{stat.icon}</div>
               <div style={{ fontSize: 28, fontWeight: 800, color: '#F5E642', marginBottom: 4 }}>{stat.label}</div>
-              <div style={{ fontSize: 12, color: '#94a3b8′ }}>{stat.sub}</div>
+              <div style={{ fontSize: 12, color: '#94a3b8' }}>{stat.sub}</div>
             </div>
           ))}
         </div>
@@ -45,13 +45,13 @@ export default function DFWHVACSessionThankYou() {
           <p style={{ color: '#cbd5e1', marginBottom: 20, fontSize: 15 }}>What was your contribution today?</p>
           <div style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
             {contributions.map(c => (
-              <button key={c.id} onClick={() => setSelected(c.id)} style={{ background: selected === c.id ? '#F5E642′ : '#1e3a5f', color: selected === c.id ? '#0A1628' : '#fff', border: ’none', borderRadius: 10, padding: '14px 20px', cursor: 'pointer', textAlign: 'left', fontSize: 15, fontWeight: 600, transition: 'all 0.2s' }}>
+              <button key={c.id} onClick={() => setSelected(c.id)} style={{ background: selected === c.id ? '#F5E642' : '#1e3a5f', color: selected === c.id ? '#0A1628' : '#fff', border: 'none', borderRadius: 10, padding: '14px 20px', cursor: 'pointer', textAlign: 'left', fontSize: 15, fontWeight: 600, transition: 'all 0.2s' }}>
                 {c.label}
               </button>
             ))}
           </div>
           {result && (
-            <div style={{ marginTop: 24, background: '#0A1628', borderRadius: 10, padding: 20, borderLeft: '4px solid #F5E642′ }}>
+            <div style={{ marginTop: 24, background: '#0A1628', borderRadius: 10, padding: 20, borderLeft: '4px solid #F5E642' }}>
               <div style={{ fontSize: 15, color: '#e2e8f0', lineHeight: 1.8 }}>{result.message}</div>
             </div>
           )}
@@ -59,7 +59,7 @@ export default function DFWHVACSessionThankYou() {
 
         <div style={{ background: '#F5E642', borderRadius: 12, padding: '28px 32px', textAlign: 'center' }}>
           <div style={{ fontSize: 22, fontWeight: 800, color: '#0A1628', marginBottom: 8 }}>Until Next Time</div>
-          <div style={{ fontSize: 15, color: '#0A1628′ }}>ProLnk will be here — growing, improving, and protecting DFW homes. See you on the other side of launch.</div>
+          <div style={{ fontSize: 15, color: '#0A1628' }}>ProLnk will be here — growing, improving, and protecting DFW homes. See you on the other side of launch.</div>
         </div>
       </div>
     </div>

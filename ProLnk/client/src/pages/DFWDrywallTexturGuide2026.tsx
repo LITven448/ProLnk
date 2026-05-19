@@ -23,9 +23,9 @@ export default function DFWDrywallTexturGuide2026() {
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12, marginBottom: 28 }}>
           {textures.map(t => (
             <button key={t.id} onClick={() => setSelected(t.id)}
-              style={{ background: selected === t.id ? '#F5E642′ : '#1e293b', color: selected === t.id ? '#0A1628' : '#fff', border: '2px solid ' + (selected === t.id ? '#F5E642' : '#334155'), borderRadius: 10, padding: '14px 12px', cursor: ’pointer', fontWeight: 600, fontSize: 14, textAlign: 'left' }}>
+              style={{ background: selected === t.id ? '#F5E642' : '#1e293b', color: selected === t.id ? '#0A1628' : '#fff', border: '2px solid ' + (selected === t.id ? '#F5E642' : '#334155'), borderRadius: 10, padding: '14px 12px', cursor: 'pointer', fontWeight: 600, fontSize: 14, textAlign: 'left' }}>
               {t.label}
-              <div style={{ fontSize: 12, fontWeight: 400, marginTop: 4, color: selected === t.id ? '#0A1628′ : '#94a3b8' }}>
+              <div style={{ fontSize: 12, fontWeight: 400, marginTop: 4, color: selected === t.id ? '#0A1628' : '#94a3b8' }}>
                 Difficulty: {t.difficulty} {t.dfwCommon ? '· ⭐ Common in DFW' : ''}
               </div>
             </button>
@@ -33,7 +33,7 @@ export default function DFWDrywallTexturGuide2026() {
         </div>
 
         {tex && (
-          <div style={{ background: '#1e293b', borderRadius: 14, padding: 24, border: '1px solid #334155′ }}>
+          <div style={{ background: '#1e293b', borderRadius: 14, padding: 24, border: '1px solid #334155' }}>
             <h2 style={{ color: '#F5E642', fontSize: 20, margin: '0 0 6px' }}>{tex.label}</h2>
             <p style={{ color: '#94a3b8', marginBottom: 16, fontSize: 14 }}>{tex.desc}</p>
             {!tex.diy && (
@@ -50,7 +50,7 @@ export default function DFWDrywallTexturGuide2026() {
         )}
 
         {!tex && (
-          <div style={{ background: '#1e293b', borderRadius: 14, padding: 24, textAlign: 'center', color: '#94a3b8′ }}>
+          <div style={{ background: '#1e293b', borderRadius: 14, padding: 24, textAlign: 'center', color: '#94a3b8' }}>
             <div style={{ fontSize: 36, marginBottom: 8 }}>👆</div>
             <p>Select your existing texture type above to see the matching guide.</p>
           </div>

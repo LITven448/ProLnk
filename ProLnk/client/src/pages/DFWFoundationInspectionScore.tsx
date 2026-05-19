@@ -1,7 +1,7 @@
 import { useState } from 'react';
 
 const questions = [
-  { id: 'cracks', label: 'Visible wall/floor cracks?', options: ['None', 'Hairline only', 'Moderate (<1/4″)', 'Wide (>1/4″)'] },
+  { id: 'cracks', label: 'Visible wall/floor cracks?', options: ['None', 'Hairline only', 'Moderate (<1/4")', 'Wide (>1/4")'] },
   { id: 'pattern', label: 'Crack pattern type?', options: ['None', 'Vertical', 'Diagonal/Stair-step', 'Horizontal'] },
   { id: 'movement', label: 'Differential movement observed?', options: ['None', 'Slight', 'Moderate', 'Severe'] },
   { id: 'doors', label: 'Doors/windows sticking or misaligned?', options: ['Never', 'Occasionally', 'Frequently', 'Always'] },
@@ -33,7 +33,7 @@ export default function DFWFoundationInspectionScore() {
     const risk = total <= 10 ? 'Low DFW Clay Risk' : total <= 25 ? 'Moderate Clay Expansion Risk' : 'High Structural Risk — Clay Soil Alert';
     const actions: string[] = [];
     if (answers['watering'] >= 2) actions.push('Install soaker hose system — DFW clay requires consistent moisture year-round');
-    if (answers['drainage'] >= 2) actions.push('Regrade soil to ensure 6″ drop in first 10ft from foundation');
+    if (answers['drainage'] >= 2) actions.push('Regrade soil to ensure 6" drop in first 10ft from foundation');
     if (answers['trees'] >= 2) actions.push('Root barrier installation or tree removal consultation needed');
     if (answers['cracks'] >= 2) actions.push('Schedule licensed foundation inspector within 30 days');
     if (answers['plumbing'] >= 2) actions.push('Slab leak detection test — common DFW cause of foundation failure');
@@ -57,9 +57,9 @@ export default function DFWFoundationInspectionScore() {
               {q.options.map((opt, oi) => (
                 <button key={opt} onClick={() => setAnswers(a => ({ ...a, [q.id]: weights[oi] }))}
                   style={{ padding: '10px 14px', borderRadius: 8, border: '2px solid',
-                    borderColor: answers[q.id] === weights[oi] ? '#F5E642′ : '#1e3a5f',
+                    borderColor: answers[q.id] === weights[oi] ? '#F5E642' : '#1e3a5f',
                     background: answers[q.id] === weights[oi] ? 'rgba(245,230,66,0.12)' : 'transparent',
-                    color: answers[q.id] === weights[oi] ? '#F5E642′ : '#94a3b8',
+                    color: answers[q.id] === weights[oi] ? '#F5E642' : '#94a3b8',
                     cursor: 'pointer', fontSize: 13, textAlign: 'left' }}>
                   {opt}
                 </button>
@@ -69,8 +69,8 @@ export default function DFWFoundationInspectionScore() {
         ))}
 
         <button onClick={calculate} disabled={!allAnswered}
-          style={{ width: '100%', padding: '16px', background: allAnswered ? '#F5E642′ : '#1e3a5f',
-            color: allAnswered ? '#0A1628′ : '#4a6080', border: ’none', borderRadius: 12,
+          style={{ width: '100%', padding: '16px', background: allAnswered ? '#F5E642' : '#1e3a5f',
+            color: allAnswered ? '#0A1628' : '#4a6080', border: 'none', borderRadius: 12,
             fontWeight: 700, fontSize: 16, cursor: allAnswered ? 'pointer' : 'not-allowed', marginTop: 8 }}>
           {allAnswered ? 'Calculate Foundation Score →' : `Answer ${questions.length - Object.keys(answers).length} more question(s)`}
         </button>
@@ -78,7 +78,7 @@ export default function DFWFoundationInspectionScore() {
         {result && (
           <div style={{ marginTop: 24, background: '#0f1f3a', borderRadius: 16, padding: 24 }}>
             <div style={{ textAlign: 'center', marginBottom: 24 }}>
-              <div style={{ fontSize: 72, fontWeight: 800, color: result.score >= 70 ? '#22c55e' : result.score >= 45 ? '#f59e0b' : '#ef4444′ }}>
+              <div style={{ fontSize: 72, fontWeight: 800, color: result.score >= 70 ? '#22c55e' : result.score >= 45 ? '#f59e0b' : '#ef4444' }}>
                 {result.score}
               </div>
               <div style={{ fontSize: 16, fontWeight: 600, marginBottom: 8 }}>Foundation Health Score</div>
@@ -87,7 +87,7 @@ export default function DFWFoundationInspectionScore() {
               </div>
             </div>
             <div>
-              <div style={{ fontWeight: 700, marginBottom: 12, color: '#F5E642′ }}>🔧 Priority Actions</div>
+              <div style={{ fontWeight: 700, marginBottom: 12, color: '#F5E642' }}>🔧 Priority Actions</div>
               {result.actions.map((a, i) => (
                 <div key={i} style={{ display: 'flex', gap: 10, marginBottom: 8, color: '#cbd5e1', fontSize: 14 }}>
                   <span style={{ color: '#F5E642', flexShrink: 0 }}>{i + 1}.</span>{a}

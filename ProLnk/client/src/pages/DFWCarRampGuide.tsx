@@ -35,25 +35,25 @@ export default function DFWCarRampGuide() {
         </p>
 
         <div style={{ background: '#111E35', borderRadius: 12, padding: 24, marginBottom: 24 }}>
-          <h2 style={{ fontSize: 16, fontWeight: 700, marginBottom: 8, color: '#F5E642′ }}>⚠️ Why DFW Driveways Fail at the Street</h2>
+          <h2 style={{ fontSize: 16, fontWeight: 700, marginBottom: 8, color: '#F5E642' }}>⚠️ Why DFW Driveways Fail at the Street</h2>
           <p style={{ fontSize: 13, color: '#8A9BC0', marginBottom: 0 }}>
             DFW sits on expansive black clay soil (Blackland Prairie). This soil swells when wet and shrinks when dry — causing driveway edges to heave upward, crack, or create lips that catch car bumpers. Summer drought (June–September) causes major shrinkage; winter rains cause swelling. Expansion joints and proper sub-base are critical.
           </p>
         </div>
 
         <div style={{ background: '#111E35', borderRadius: 12, padding: 24, marginBottom: 24 }}>
-          <h2 style={{ fontSize: 16, fontWeight: 700, marginBottom: 16, color: '#F5E642′ }}>🔩 Material Comparison</h2>
+          <h2 style={{ fontSize: 16, fontWeight: 700, marginBottom: 16, color: '#F5E642' }}>🔩 Material Comparison</h2>
           {MATERIAL_COMPARE.map((m) => (
             <div key={m.material} style={{ background: '#0A1628', borderRadius: 8, padding: 14, marginBottom: 10 }}>
               <div style={{ fontWeight: 700, fontSize: 14, marginBottom: 6 }}>{m.material} <span style={{ color: '#F5E642', fontSize: 13, fontWeight: 400 }}>— {m.cost}</span></div>
               <div style={{ fontSize: 12, color: '#4ADE80', marginBottom: 2 }}>✅ {m.pros}</div>
-              <div style={{ fontSize: 12, color: '#F87171′ }}>⚠️ {m.cons}</div>
+              <div style={{ fontSize: 12, color: '#F87171' }}>⚠️ {m.cons}</div>
             </div>
           ))}
         </div>
 
         <div style={{ background: '#111E35', borderRadius: 12, padding: 24, marginBottom: 24 }}>
-          <h2 style={{ fontSize: 16, fontWeight: 700, marginBottom: 16, color: '#F5E642′ }}>🔧 Diagnose Your Issue</h2>
+          <h2 style={{ fontSize: 16, fontWeight: 700, marginBottom: 16, color: '#F5E642' }}>🔧 Diagnose Your Issue</h2>
           <div style={{ display: 'flex', flexDirection: 'column', gap: 14 }}>
             <div>
               <label style={{ fontSize: 13, color: '#8A9BC0', display: 'block', marginBottom: 6 }}>Current Issue</label>
@@ -76,11 +76,11 @@ export default function DFWCarRampGuide() {
             </button>
           </div>
           {result && (
-            <div style={{ marginTop: 20, background: '#0A1628', borderRadius: 10, padding: 20, borderLeft: '4px solid #F5E642′ }}>
+            <div style={{ marginTop: 20, background: '#0A1628', borderRadius: 10, padding: 20, borderLeft: '4px solid #F5E642' }}>
               <div style={{ fontWeight: 700, fontSize: 15, marginBottom: 8 }}>🔩 {result.fix}</div>
               <div style={{ fontSize: 13, color: '#8A9BC0', marginBottom: 4 }}>🌧️ Cause: {result.cause}</div>
               <div style={{ fontSize: 13, color: '#F5E642', marginBottom: 4 }}>💰 Est. Cost: {result.cost}</div>
-              <div style={{ fontSize: 13, color: '#6B7FA0′ }}>📋 Permit: {result.permit}</div>
+              <div style={{ fontSize: 13, color: '#6B7FA0' }}>📋 Permit: {result.permit}</div>
               {city && <div style={{ fontSize: 12, color: '#4ADE80', marginTop: 10 }}>📍 {city}: Check city public works or permitting portal for curb cut spec requirements before work begins.</div>}
             </div>
           )}

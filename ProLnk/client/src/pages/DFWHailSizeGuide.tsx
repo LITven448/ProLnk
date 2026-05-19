@@ -96,7 +96,7 @@ export default function DFWHailSizeGuide() {
             >
               <div style={{ fontSize: '1.8rem' }}>{h.emoji}</div>
               <div>{h.name}</div>
-              <div style={{ fontSize: '0.8rem', color: '#cbd5e1′ }}>{h.diameter}</div>
+              <div style={{ fontSize: '0.8rem', color: '#cbd5e1' }}>{h.diameter}</div>
             </button>
           ))}
         </div>
@@ -109,21 +109,21 @@ export default function DFWHailSizeGuide() {
             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
               <div style={{ background: '#0A1628', borderRadius: '10px', padding: '1rem' }}>
                 <div style={{ color: '#F5E642', fontWeight: 700, marginBottom: '0.5rem' }}>🚗 Vehicle Damage</div>
-                <div style={{ color: '#e2e8f0′ }}>{info.carDamage}</div>
+                <div style={{ color: '#e2e8f0' }}>{info.carDamage}</div>
               </div>
               <div style={{ background: '#0A1628', borderRadius: '10px', padding: '1rem' }}>
                 <div style={{ color: '#F5E642', fontWeight: 700, marginBottom: '0.5rem' }}>🏠 Home Damage</div>
-                <div style={{ color: '#e2e8f0′ }}>{info.homeDamage}</div>
+                <div style={{ color: '#e2e8f0' }}>{info.homeDamage}</div>
               </div>
               <div style={{ background: '#0A1628', borderRadius: '10px', padding: '1rem' }}>
                 <div style={{ color: '#F5E642', fontWeight: 700, marginBottom: '0.5rem' }}>🔍 What to Inspect</div>
-                <ul style={{ margin: 0, paddingLeft: '1rem', color: '#e2e8f0′ }}>
+                <ul style={{ margin: 0, paddingLeft: '1rem', color: '#e2e8f0' }}>
                   {info.inspect.map((item) => <li key={item}>{item}</li>)}
                 </ul>
               </div>
               <div style={{ background: '#0A1628', borderRadius: '10px', padding: '1rem' }}>
                 <div style={{ color: '#F5E642', fontWeight: 700, marginBottom: '0.5rem' }}>📋 Insurance Guidance</div>
-                <div style={{ color: '#e2e8f0′ }}>{info.insurance}</div>
+                <div style={{ color: '#e2e8f0' }}>{info.insurance}</div>
               </div>
             </div>
           </div>

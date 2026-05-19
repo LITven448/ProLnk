@@ -46,7 +46,7 @@ export default function DFWWinterPreparationGuide2026() {
   const earnedScore = items.reduce((sum, item, i) => sum + (checked[i] ? item.score : 0), 0);
   const pct = totalScore > 0 ? Math.round((earnedScore / totalScore) * 100) : 0;
 
-  const scoreColor = pct >= 80 ? '#22c55e' : pct >= 50 ? '#F5E642′ : '#ef4444';
+  const scoreColor = pct >= 80 ? '#22c55e' : pct >= 50 ? '#F5E642' : '#ef4444';
   const scoreLabel = pct >= 80 ? '✅ Freeze Ready' : pct >= 50 ? '⚠️ Getting There' : '🚨 At Risk';
 
   return (
@@ -73,7 +73,7 @@ export default function DFWWinterPreparationGuide2026() {
           <div style={{ fontWeight: 600, marginBottom: '0.75rem' }}>🏠 What type of home do you have?</div>
           <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
             {(Object.keys(homeTypes) as ('slab' | 'pier' | 'mobile')[]).map(k => (
-              <button key={k} onClick={() => { setHomeType(k); setChecked({}); }} style={{ padding: '0.7rem 1.2rem', borderRadius: 8, border: '2px solid', borderColor: homeType === k ? '#F5E642′ : '#1e3a5f', background: homeType === k ? '#F5E642' : '#0f2040', color: homeType === k ? '#0A1628' : '#fff', fontWeight: 600, cursor: ’pointer', textAlign: 'left' }}>
+              <button key={k} onClick={() => { setHomeType(k); setChecked({}); }} style={{ padding: '0.7rem 1.2rem', borderRadius: 8, border: '2px solid', borderColor: homeType === k ? '#F5E642' : '#1e3a5f', background: homeType === k ? '#F5E642' : '#0f2040', color: homeType === k ? '#0A1628' : '#fff', fontWeight: 600, cursor: 'pointer', textAlign: 'left' }}>
                 {homeTypes[k].label}
               </button>
             ))}

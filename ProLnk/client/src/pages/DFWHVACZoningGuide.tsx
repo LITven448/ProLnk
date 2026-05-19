@@ -63,7 +63,7 @@ export default function DFWHVACZoningGuide() {
         </p>
 
         <div style={{ background: '#0F2040', borderRadius: 12, padding: 24, marginBottom: 24 }}>
-          <h2 style={{ fontSize: 20, fontWeight: 700, marginBottom: 16, color: '#F5E642′ }}>How Zoning Works</h2>
+          <h2 style={{ fontSize: 20, fontWeight: 700, marginBottom: 16, color: '#F5E642' }}>How Zoning Works</h2>
           <div style={{ display: 'grid', gap: 12 }}>
             {[
               ['Motorized Dampers', 'Metal dampers inside your ductwork open and close to route air to the right zone at the right time.'],
@@ -80,7 +80,7 @@ export default function DFWHVACZoningGuide() {
         </div>
 
         <div style={{ background: '#0F2040', borderRadius: 12, padding: 24, marginBottom: 24 }}>
-          <h2 style={{ fontSize: 20, fontWeight: 700, marginBottom: 16, color: '#F5E642′ }}>Check Your Zoning Feasibility</h2>
+          <h2 style={{ fontSize: 20, fontWeight: 700, marginBottom: 16, color: '#F5E642' }}>Check Your Zoning Feasibility</h2>
           <div style={{ display: 'grid', gap: 12, marginBottom: 16 }}>
             <div>
               <label style={{ display: 'block', fontSize: 13, color: '#94A3B8', marginBottom: 6 }}>Home layout type</label>
@@ -114,7 +114,7 @@ export default function DFWHVACZoningGuide() {
         {result && (
           <div style={{ background: '#0F2040', borderRadius: 12, padding: 24 }}>
             <div style={{ display: 'flex', gap: 16, marginBottom: 16, alignItems: 'flex-start' }}>
-              <div style={{ background: result.feasibility === 'High' ? '#065F46′ : result.feasibility === ’Medium' ? '#78350F' : '#3B1F1F', borderRadius: 8, padding: '6px 14px', fontSize: 13, fontWeight: 700, color: result.feasibility === 'High' ? '#6EE7B7′ : result.feasibility === ’Medium' ? '#FCD34D' : '#FCA5A5', whiteSpace: 'nowrap' }}>
+              <div style={{ background: result.feasibility === 'High' ? '#065F46' : result.feasibility === 'Medium' ? '#78350F' : '#3B1F1F', borderRadius: 8, padding: '6px 14px', fontSize: 13, fontWeight: 700, color: result.feasibility === 'High' ? '#6EE7B7' : result.feasibility === 'Medium' ? '#FCD34D' : '#FCA5A5', whiteSpace: 'nowrap' }}>
                 {result.feasibility} Feasibility
               </div>
               <div style={{ background: '#1E3A5F', borderRadius: 8, padding: '6px 14px', fontSize: 13, fontWeight: 700 }}>
@@ -123,7 +123,7 @@ export default function DFWHVACZoningGuide() {
             </div>
             <p style={{ fontSize: 14, color: '#94A3B8', marginBottom: 16, lineHeight: 1.6 }}>{result.reason}</p>
             {complaintText && (
-              <div style={{ background: '#0A1628', borderRadius: 8, padding: 14, marginBottom: 16, borderLeft: '3px solid #F5E642′ }}>
+              <div style={{ background: '#0A1628', borderRadius: 8, padding: 14, marginBottom: 16, borderLeft: '3px solid #F5E642' }}>
                 <div style={{ fontSize: 13, color: '#94A3B8', marginBottom: 4 }}>ABOUT YOUR COMPLAINT</div>
                 <div style={{ fontSize: 14 }}>{complaintText}</div>
               </div>

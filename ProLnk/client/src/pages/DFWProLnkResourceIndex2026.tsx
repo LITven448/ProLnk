@@ -29,7 +29,7 @@ export default function DFWProLnkResourceIndex2026() {
           <div style={{ color: '#F5E642', fontSize: 12, marginBottom: 8 }}>🗂️ SELECT YOUR TOPIC</div>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 8 }}>
             {topics.map(t => (
-              <button key={t} onClick={() => setSelected(t)} style={{ background: selected === t ? '#F5E642′ : '#132035', color: selected === t ? '#0A1628' : '#fff', border: '1px solid #2d4a6e', borderRadius: 6, padding: '10px 8px', cursor: ’pointer', fontWeight: 700, fontSize: 13 }}>{t}</button>
+              <button key={t} onClick={() => setSelected(t)} style={{ background: selected === t ? '#F5E642' : '#132035', color: selected === t ? '#0A1628' : '#fff', border: '1px solid #2d4a6e', borderRadius: 6, padding: '10px 8px', cursor: 'pointer', fontWeight: 700, fontSize: 13 }}>{t}</button>
             ))}
           </div>
         </div>
@@ -44,7 +44,7 @@ export default function DFWProLnkResourceIndex2026() {
             <div style={{ color: '#F5E642', fontSize: 12, marginBottom: 8 }}>FEATURED GUIDES IN THIS CATEGORY:</div>
             {res.examples.map((ex, i) => (
               <div key={i} style={{ display: 'flex', gap: 10, padding: '8px 0', borderBottom: '1px solid #1e3a5f' }}>
-                <span style={{ color: '#F5E642′ }}>▸</span>
+                <span style={{ color: '#F5E642' }}>▸</span>
                 <span style={{ color: '#cbd5e1', fontSize: 14 }}>{ex}</span>
               </div>
             ))}
@@ -54,7 +54,7 @@ export default function DFWProLnkResourceIndex2026() {
         <div style={{ background: '#132035', borderRadius: 10, padding: 24 }}>
           <div style={{ color: '#F5E642', fontWeight: 700, marginBottom: 12 }}>📚 About This Index</div>
           {['4,700+ pages covering every major DFW homeowner topic','Content written specifically for DFW climate, soil, and storm patterns','ProLnk connects you to vetted pros for every category above','All guides updated for 2026 — reflects current DFW market conditions','New guides added weekly based on homeowner questions'].map((f,i) => (
-            <div key={i} style={{ display: 'flex', gap: 10, marginBottom: 8 }}><span style={{ color: '#F5E642′ }}>▸</span><span style={{ color: '#cbd5e1', fontSize: 14 }}>{f}</span></div>
+            <div key={i} style={{ display: 'flex', gap: 10, marginBottom: 8 }}><span style={{ color: '#F5E642' }}>▸</span><span style={{ color: '#cbd5e1', fontSize: 14 }}>{f}</span></div>
           ))}
         </div>
       </div>

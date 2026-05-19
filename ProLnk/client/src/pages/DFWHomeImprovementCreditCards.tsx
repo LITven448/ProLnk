@@ -33,7 +33,7 @@ export default function DFWHomeImprovementCreditCards() {
     <div style={{ background: '#F9FAFB', minHeight: '100vh', fontFamily: 'system-ui, sans-serif', color: '#0A1628', padding: '2rem' }}>
       <div style={{ maxWidth: 780, margin: '0 auto' }}>
         <div style={{ background: '#0A1628', borderRadius: 12, padding: '1.5rem 2rem', marginBottom: '2rem' }}>
-          <div style={{ fontSize: 28, fontWeight: 800, color: '#F5E642′ }}>💳 Home Improvement Credit Cards</div>
+          <div style={{ fontSize: 28, fontWeight: 800, color: '#F5E642' }}>💳 Home Improvement Credit Cards</div>
           <div style={{ color: '#CBD5E1', marginTop: 6 }}>DFW Homeowner Strategy Guide — 0% APR, Rewards & Risk</div>
         </div>
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1.5rem' }}>
@@ -50,10 +50,10 @@ export default function DFWHomeImprovementCreditCards() {
           <div style={{ fontWeight: 700, fontSize: 16, marginBottom: 10 }}>🃏 Top Cards for DFW Home Improvement</div>
           <div style={{ display: 'grid', gap: '0.75rem' }}>
             {cards.map(c => (
-              <div key={c.name} style={{ background: '#fff', borderRadius: 8, padding: '1rem', border: '1px solid #E2E8F0′ }}>
+              <div key={c.name} style={{ background: '#fff', borderRadius: 8, padding: '1rem', border: '1px solid #E2E8F0' }}>
                 <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start' }}>
                   <div>
-                    <div style={{ fontWeight: 700, fontSize: 14 }}>{c.name} <span style={{ background: '#F5E642', borderRadius: 4, padding: '1px 6px', fontSize: 11, fontWeight: 600, color: '#0A1628′ }}>{c.type}</span></div>
+                    <div style={{ fontWeight: 700, fontSize: 14 }}>{c.name} <span style={{ background: '#F5E642', borderRadius: 4, padding: '1px 6px', fontSize: 11, fontWeight: 600, color: '#0A1628' }}>{c.type}</span></div>
                     <div style={{ fontSize: 13, color: '#64748B', marginTop: 4 }}>{c.apy}</div>
                     <div style={{ fontSize: 13, color: '#16A34A', marginTop: 2 }}>🎁 {c.reward}</div>
                   </div>
@@ -63,7 +63,7 @@ export default function DFWHomeImprovementCreditCards() {
             ))}
           </div>
         </div>
-        <div style={{ background: '#fff', borderRadius: 10, padding: '1.5rem', marginBottom: '1.5rem', border: '1px solid #E2E8F0′ }}>
+        <div style={{ background: '#fff', borderRadius: 10, padding: '1.5rem', marginBottom: '1.5rem', border: '1px solid #E2E8F0' }}>
           <div style={{ fontWeight: 700, fontSize: 16, marginBottom: 14 }}>🔢 Strategy Calculator</div>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
             {[
@@ -73,31 +73,31 @@ export default function DFWHomeImprovementCreditCards() {
               { label: 'Alt Loan Term (months)', value: months, set: setMonths, min: 12, max: 84, step: 12 },
             ].map(f => (
               <div key={f.label}>
-                <div style={{ fontSize: 13, fontWeight: 600, marginBottom: 4 }}>{f.label}: <span style={{ color: '#6366F1′ }}>{f.value.toLocaleString()}</span></div>
+                <div style={{ fontSize: 13, fontWeight: 600, marginBottom: 4 }}>{f.label}: <span style={{ color: '#6366F1' }}>{f.value.toLocaleString()}</span></div>
                 <input type="range" min={f.min} max={f.max} step={f.step} value={f.value} onChange={e => f.set(Number(e.target.value))} style={{ width: '100%' }} />
               </div>
             ))}
           </div>
         </div>
         <div style={{ background: '#0A1628', borderRadius: 10, padding: '1.5rem', color: '#fff' }}>
-          <div style={{ fontWeight: 700, fontSize: 16, marginBottom: 12, color: '#F5E642′ }}>📊 Your Results</div>
+          <div style={{ fontWeight: 700, fontSize: 16, marginBottom: 12, color: '#F5E642' }}>📊 Your Results</div>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: 12 }}>
             <div style={{ background: 'rgba(255,255,255,0.08)', borderRadius: 8, padding: '1rem' }}>
               <div style={{ fontWeight: 700, marginBottom: 6 }}>💳 Credit Card Strategy</div>
-              <div style={{ fontSize: 13, color: '#94A3B8′ }}>0% eligible: <span style={{ color: res.eligible0 ? '#4ADE80' : '#F87171', fontWeight: 700 }}>{res.eligible0 ? ’Yes' : 'No (score too low)'}</span></div>
-              <div style={{ fontSize: 13, color: '#94A3B8′ }}>0% window: <span style={{ color: '#F5E642', fontWeight: 700 }}>{res.zeroAprEnd} months</span></div>
-              <div style={{ fontSize: 13, color: '#94A3B8′ }}>Rewards earned: <span style={{ color: '#F5E642', fontWeight: 700 }}>${res.rewards.toFixed(0)}</span></div>
-              <div style={{ fontSize: 13, color: '#94A3B8′ }}>Total cost: <span style={{ color: '#F5E642', fontWeight: 700 }}>${res.cardTotal.toFixed(0)}</span></div>
+              <div style={{ fontSize: 13, color: '#94A3B8' }}>0% eligible: <span style={{ color: res.eligible0 ? '#4ADE80' : '#F87171', fontWeight: 700 }}>{res.eligible0 ? 'Yes' : 'No (score too low)'}</span></div>
+              <div style={{ fontSize: 13, color: '#94A3B8' }}>0% window: <span style={{ color: '#F5E642', fontWeight: 700 }}>{res.zeroAprEnd} months</span></div>
+              <div style={{ fontSize: 13, color: '#94A3B8' }}>Rewards earned: <span style={{ color: '#F5E642', fontWeight: 700 }}>${res.rewards.toFixed(0)}</span></div>
+              <div style={{ fontSize: 13, color: '#94A3B8' }}>Total cost: <span style={{ color: '#F5E642', fontWeight: 700 }}>${res.cardTotal.toFixed(0)}</span></div>
             </div>
             <div style={{ background: 'rgba(255,255,255,0.08)', borderRadius: 8, padding: '1rem' }}>
               <div style={{ fontWeight: 700, marginBottom: 6 }}>🏦 Personal Loan Alternative</div>
-              <div style={{ fontSize: 13, color: '#94A3B8′ }}>Monthly payment: <span style={{ color: '#F5E642', fontWeight: 700 }}>${res.loanMonthly.toFixed(0)}</span></div>
-              <div style={{ fontSize: 13, color: '#94A3B8′ }}>Total cost: <span style={{ color: '#F5E642', fontWeight: 700 }}>${res.loanTotal.toFixed(0)}</span></div>
-              <div style={{ fontSize: 13, color: '#94A3B8′ }}>Predictable fixed payments</div>
+              <div style={{ fontSize: 13, color: '#94A3B8' }}>Monthly payment: <span style={{ color: '#F5E642', fontWeight: 700 }}>${res.loanMonthly.toFixed(0)}</span></div>
+              <div style={{ fontSize: 13, color: '#94A3B8' }}>Total cost: <span style={{ color: '#F5E642', fontWeight: 700 }}>${res.loanTotal.toFixed(0)}</span></div>
+              <div style={{ fontSize: 13, color: '#94A3B8' }}>Predictable fixed payments</div>
             </div>
           </div>
           <div style={{ background: cardWins ? 'rgba(74,222,128,0.15)' : 'rgba(248,113,113,0.15)', borderRadius: 8, padding: '0.75rem', textAlign: 'center' }}>
-            <span style={{ color: cardWins ? '#4ADE80′ : '#F87171', fontWeight: 700 }}>
+            <span style={{ color: cardWins ? '#4ADE80' : '#F87171', fontWeight: 700 }}>
               {cardWins ? `✅ Credit card strategy saves $${(res.loanTotal - res.cardTotal).toFixed(0)} — pay off within ${timeline} months` : `⚠️ Personal loan wins by $${(res.cardTotal - res.loanTotal).toFixed(0)} — timeline too long for 0% card`}
             </span>
           </div>

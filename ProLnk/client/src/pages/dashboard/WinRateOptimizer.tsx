@@ -10,34 +10,34 @@ import {
 } from "lucide-react";
 
 const WIN_TREND = [
-  { week: "Mar 24″, rate: 54 },
-  { week: "Apr 1″,  rate: 57 },
-  { week: "Apr 8″,  rate: 61 },
-  { week: "Apr 14″, rate: 59 },
-  { week: "Apr 21″, rate: 63 },
-  { week: "Apr 28″, rate: 66 },
-  { week: "May 5″,  rate: 65 },
-  { week: "May 12″, rate: 68 },
+  { week: "Mar 24", rate: 54 },
+  { week: "Apr 1",  rate: 57 },
+  { week: "Apr 8",  rate: 61 },
+  { week: "Apr 14", rate: 59 },
+  { week: "Apr 21", rate: 63 },
+  { week: "Apr 28", rate: 66 },
+  { week: "May 5",  rate: 65 },
+  { week: "May 12", rate: 68 },
 ];
 
 const FACTORS = [
-  { label: "Response time <4 min",   win: 82, color: "#00E676″ },
+  { label: "Response time <4 min",   win: 82, color: "#00E676" },
   { label: "Photos included",         win: 78, color: "#00D4FF" },
-  { label: "Personalized message",    win: 71, color: "#A855F7″ },
-  { label: "Standard bid",            win: 61, color: "#FFB300″ },
-  { label: "Late response (>10 min)", win: 31, color: "#FF4444″ },
+  { label: "Personalized message",    win: 71, color: "#A855F7" },
+  { label: "Standard bid",            win: 61, color: "#FFB300" },
+  { label: "Late response (>10 min)", win: 31, color: "#FF4444" },
 ];
 
 const QUICK_WINS = [
   { icon: Bell,           title: "Enable instant push notifications",            impact: "+8%",  color: "#00D4FF" },
-  { icon: Camera,         title: "Always attach 2+ photos to bids",              impact: "+12%", color: "#A855F7″ },
-  { icon: MessageSquare,  title: "Use homeowner's first name in first message",  impact: "+7%",  color: "#00E676″ },
+  { icon: Camera,         title: "Always attach 2+ photos to bids",              impact: "+12%", color: "#A855F7" },
+  { icon: MessageSquare,  title: "Use homeowner's first name in first message",  impact: "+7%",  color: "#00E676" },
 ];
 
 const LOST_REASONS = [
-  { reason: "Responded after 10 min",  count: 12, color: "#FF4444″ },
-  { reason: "No photos attached",       count: 8,  color: "#FFB300″ },
-  { reason: "Generic message",          count: 6,  color: "#8B91A8″ },
+  { reason: "Responded after 10 min",  count: 12, color: "#FF4444" },
+  { reason: "No photos attached",       count: 8,  color: "#FFB300" },
+  { reason: "Generic message",          count: 6,  color: "#8B91A8" },
 ];
 
 const MOCK_LEAD = {
@@ -45,7 +45,7 @@ const MOCK_LEAD = {
   address: "2847 Oak Lane, Austin TX",
   service: "HVAC Inspection",
   urgency: "This week",
-  budget: "$150–$250″,
+  budget: "$150–$250",
 };
 
 export default function WinRateOptimizer() {
@@ -53,43 +53,43 @@ export default function WinRateOptimizer() {
   const [bid, setBid] = useState("");
 
   return (
-    <div style={{ background: "#0A1628″, minHeight: "100vh", padding: "32px 24px", fontFamily: "'Inter',system-ui,sans-serif" }}>
+    <div style={{ background: "#0A1628", minHeight: "100vh", padding: "32px 24px", fontFamily: "'Inter',system-ui,sans-serif" }}>
 
       {/* Header */}
       <div style={{ marginBottom: 28 }}>
         <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 6 }}>
-          <div style={{ width: 44, height: 44, borderRadius: 12, background: "linear-gradient(135deg,#00D4FF22,#00D4FF44)", border: "1px solid #00D4FF40″, display: "flex", alignItems: "center", justifyContent: "center" }}>
+          <div style={{ width: 44, height: 44, borderRadius: 12, background: "linear-gradient(135deg,#00D4FF22,#00D4FF44)", border: "1px solid #00D4FF40", display: "flex", alignItems: "center", justifyContent: "center" }}>
             <Target size={22} color="#00D4FF" />
           </div>
           <div>
             <h1 style={{ fontSize: 26, fontWeight: 800, color: "#F0F2FF", margin: 0 }}>Win Rate Optimizer</h1>
-            <p style={{ fontSize: 13, color: "#8B91A8″, margin: 0 }}>Win more without lowering your prices</p>
+            <p style={{ fontSize: 13, color: "#8B91A8", margin: 0 }}>Win more without lowering your prices</p>
           </div>
         </div>
       </div>
 
       {/* Win rate hero card */}
-      <div style={{ background: "linear-gradient(135deg,#00D4FF12,#00D4FF22)", border: "1px solid #00D4FF30″, borderRadius: 16, padding: 24, marginBottom: 20, display: "flex", alignItems: "center", gap: 24 }}>
+      <div style={{ background: "linear-gradient(135deg,#00D4FF12,#00D4FF22)", border: "1px solid #00D4FF30", borderRadius: 16, padding: 24, marginBottom: 20, display: "flex", alignItems: "center", gap: 24 }}>
         <div style={{ textAlign: "center" }}>
           <div style={{ fontSize: 64, fontWeight: 900, color: "#00D4FF", lineHeight: 1 }}>68%</div>
-          <div style={{ fontSize: 12, color: "#8B91A8″, marginTop: 4 }}>Your Win Rate</div>
+          <div style={{ fontSize: 12, color: "#8B91A8", marginTop: 4 }}>Your Win Rate</div>
         </div>
         <div style={{ width: 1, height: 80, background: "#252A3A" }} />
         <div>
           <div style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: 8 }}>
-            <TrendingUp size={16} color="#00E676″ />
-            <span style={{ fontSize: 14, color: "#00E676″, fontWeight: 600 }}>14% above DFW average</span>
+            <TrendingUp size={16} color="#00E676" />
+            <span style={{ fontSize: 14, color: "#00E676", fontWeight: 600 }}>14% above DFW average</span>
           </div>
-          <div style={{ fontSize: 13, color: "#8B91A8″ }}>DFW average win rate: <strong style={{ color: "#F0F2FF" }}>54%</strong></div>
-          <div style={{ fontSize: 13, color: "#8B91A8″, marginTop: 4 }}>You won <strong style={{ color: "#F0F2FF" }}>68 of 100</strong> bids this month</div>
+          <div style={{ fontSize: 13, color: "#8B91A8" }}>DFW average win rate: <strong style={{ color: "#F0F2FF" }}>54%</strong></div>
+          <div style={{ fontSize: 13, color: "#8B91A8", marginTop: 4 }}>You won <strong style={{ color: "#F0F2FF" }}>68 of 100</strong> bids this month</div>
         </div>
       </div>
 
       {/* Win Rate by Factor */}
       <div style={{ background: "#13161E", borderRadius: 16, border: "1px solid #252A3A", padding: 20, marginBottom: 20 }}>
         <div style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: 16 }}>
-          <BarChart2 size={16} color="#8B91A8″ />
-          <p style={{ fontSize: 11, fontWeight: 700, letterSpacing: "0.1em", color: "#8B91A8″, textTransform: "uppercase", margin: 0 }}>Win Rate by Factor</p>
+          <BarChart2 size={16} color="#8B91A8" />
+          <p style={{ fontSize: 11, fontWeight: 700, letterSpacing: "0.1em", color: "#8B91A8", textTransform: "uppercase", margin: 0 }}>Win Rate by Factor</p>
         </div>
         <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
           {FACTORS.map((f) => (
@@ -109,15 +109,15 @@ export default function WinRateOptimizer() {
       {/* Losing Bid Analysis */}
       <div style={{ background: "#13161E", borderRadius: 16, border: "1px solid #252A3A", padding: 20, marginBottom: 20 }}>
         <div style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: 4 }}>
-          <AlertTriangle size={16} color="#FF4444″ />
-          <p style={{ fontSize: 11, fontWeight: 700, letterSpacing: "0.1em", color: "#8B91A8″, textTransform: "uppercase", margin: 0 }}>Losing Bid Analysis</p>
+          <AlertTriangle size={16} color="#FF4444" />
+          <p style={{ fontSize: 11, fontWeight: 700, letterSpacing: "0.1em", color: "#8B91A8", textTransform: "uppercase", margin: 0 }}>Losing Bid Analysis</p>
         </div>
-        <p style={{ fontSize: 12, color: "#8B91A8″, marginBottom: 14 }}>You lost 32% of bids. Top reasons:</p>
+        <p style={{ fontSize: 12, color: "#8B91A8", marginBottom: 14 }}>You lost 32% of bids. Top reasons:</p>
         <div style={{ display: "flex", gap: 12 }}>
           {LOST_REASONS.map((l) => (
             <div key={l.reason} style={{ flex: 1, padding: "12px 14px", borderRadius: 10, background: "#1A1E2A", textAlign: "center" }}>
               <div style={{ fontSize: 26, fontWeight: 800, color: l.color }}>{l.count}</div>
-              <div style={{ fontSize: 11, color: "#8B91A8″, marginTop: 3, lineHeight: 1.4 }}>{l.reason}</div>
+              <div style={{ fontSize: 11, color: "#8B91A8", marginTop: 3, lineHeight: 1.4 }}>{l.reason}</div>
             </div>
           ))}
         </div>
@@ -125,7 +125,7 @@ export default function WinRateOptimizer() {
 
       {/* Quick Wins */}
       <div style={{ background: "#13161E", borderRadius: 16, border: "1px solid #252A3A", padding: 20, marginBottom: 20 }}>
-        <p style={{ fontSize: 11, fontWeight: 700, letterSpacing: "0.1em", color: "#8B91A8″, textTransform: "uppercase", marginBottom: 14 }}>Quick Wins</p>
+        <p style={{ fontSize: 11, fontWeight: 700, letterSpacing: "0.1em", color: "#8B91A8", textTransform: "uppercase", marginBottom: 14 }}>Quick Wins</p>
         <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
           {QUICK_WINS.map((q) => {
             const Icon = q.icon;
@@ -135,8 +135,8 @@ export default function WinRateOptimizer() {
                   <Icon size={16} color={q.color} />
                 </div>
                 <span style={{ flex: 1, fontSize: 13, color: "#F0F2FF" }}>{q.title}</span>
-                <span style={{ fontSize: 14, fontWeight: 800, color: "#00E676″ }}>{q.impact}</span>
-                <ChevronRight size={14} color="#555B72″ />
+                <span style={{ fontSize: 14, fontWeight: 800, color: "#00E676" }}>{q.impact}</span>
+                <ChevronRight size={14} color="#555B72" />
               </div>
             );
           })}
@@ -145,15 +145,15 @@ export default function WinRateOptimizer() {
 
       {/* Win Rate Trend */}
       <div style={{ background: "#13161E", borderRadius: 16, border: "1px solid #252A3A", padding: 20, marginBottom: 20 }}>
-        <p style={{ fontSize: 11, fontWeight: 700, letterSpacing: "0.1em", color: "#8B91A8″, textTransform: "uppercase", marginBottom: 16 }}>Win Rate — Last 8 Weeks</p>
+        <p style={{ fontSize: 11, fontWeight: 700, letterSpacing: "0.1em", color: "#8B91A8", textTransform: "uppercase", marginBottom: 16 }}>Win Rate — Last 8 Weeks</p>
         <ResponsiveContainer width="100%" height={160}>
           <LineChart data={WIN_TREND} margin={{ top: 4, right: 4, bottom: 0, left: -10 }}>
-            <CartesianGrid strokeDasharray="3 3″ stroke="#252A3A" />
-            <XAxis dataKey="week" tick={{ fill: "#555B72″, fontSize: 10 }} axisLine={false} tickLine={false} />
-            <YAxis domain={[45, 75]} tick={{ fill: "#555B72″, fontSize: 10 }} axisLine={false} tickLine={false} />
+            <CartesianGrid strokeDasharray="3 3" stroke="#252A3A" />
+            <XAxis dataKey="week" tick={{ fill: "#555B72", fontSize: 10 }} axisLine={false} tickLine={false} />
+            <YAxis domain={[45, 75]} tick={{ fill: "#555B72", fontSize: 10 }} axisLine={false} tickLine={false} />
             <Tooltip
               contentStyle={{ background: "#1A1E2A", border: "1px solid #252A3A", borderRadius: 8, fontSize: 12 }}
-              labelStyle={{ color: "#8B91A8″ }}
+              labelStyle={{ color: "#8B91A8" }}
               itemStyle={{ color: "#00D4FF" }}
               formatter={(v: number) => [`${v}%`, "Win Rate"]}
             />
@@ -163,11 +163,11 @@ export default function WinRateOptimizer() {
       </div>
 
       {/* Competitor Benchmark */}
-      <div style={{ display: "flex", gap: 12, padding: 16, borderRadius: 12, background: "#A855F712″, border: "1px solid #A855F730", marginBottom: 20, alignItems: "center" }}>
-        <Trophy size={20} color="#A855F7″ style={{ flexShrink: 0 }} />
+      <div style={{ display: "flex", gap: 12, padding: 16, borderRadius: 12, background: "#A855F712", border: "1px solid #A855F730", marginBottom: 20, alignItems: "center" }}>
+        <Trophy size={20} color="#A855F7" style={{ flexShrink: 0 }} />
         <div>
-          <p style={{ fontSize: 13, fontWeight: 700, color: "#A855F7″, margin: "0 0 3px" }}>Competitor Benchmark</p>
-          <p style={{ fontSize: 12, color: "#8B91A8″, margin: 0 }}>Top 10% of DFW HVAC pros win <strong style={{ color: "#F0F2FF" }}>89%</strong> of bids. Gap to close: <strong style={{ color: "#FFB300" }}>21%</strong></p>
+          <p style={{ fontSize: 13, fontWeight: 700, color: "#A855F7", margin: "0 0 3px" }}>Competitor Benchmark</p>
+          <p style={{ fontSize: 12, color: "#8B91A8", margin: 0 }}>Top 10% of DFW HVAC pros win <strong style={{ color: "#F0F2FF" }}>89%</strong> of bids. Gap to close: <strong style={{ color: "#FFB300" }}>21%</strong></p>
         </div>
       </div>
 
@@ -181,7 +181,7 @@ export default function WinRateOptimizer() {
         </button>
       ) : (
         <div style={{ background: "#13161E", borderRadius: 16, border: "1px solid #252A3A", padding: 20 }}>
-          <p style={{ fontSize: 11, fontWeight: 700, letterSpacing: "0.1em", color: "#8B91A8″, textTransform: "uppercase", marginBottom: 14 }}>Practice Bid</p>
+          <p style={{ fontSize: 11, fontWeight: 700, letterSpacing: "0.1em", color: "#8B91A8", textTransform: "uppercase", marginBottom: 14 }}>Practice Bid</p>
           <div style={{ background: "#1A1E2A", borderRadius: 10, padding: 14, marginBottom: 14 }}>
             <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 8 }}>
               {[
@@ -192,7 +192,7 @@ export default function WinRateOptimizer() {
                 ["Budget",    MOCK_LEAD.budget],
               ].map(([k, v]) => (
                 <div key={k}>
-                  <span style={{ fontSize: 10, color: "#555B72″, textTransform: "uppercase" }}>{k}</span>
+                  <span style={{ fontSize: 10, color: "#555B72", textTransform: "uppercase" }}>{k}</span>
                   <div style={{ fontSize: 13, color: "#F0F2FF", fontWeight: 600 }}>{v}</div>
                 </div>
               ))}
@@ -206,10 +206,10 @@ export default function WinRateOptimizer() {
             style={{ width: "100%", background: "#1A1E2A", border: "1px solid #252A3A", borderRadius: 8, padding: "10px 12px", color: "#F0F2FF", fontSize: 13, resize: "vertical", boxSizing: "border-box" }}
           />
           <div style={{ display: "flex", gap: 10, marginTop: 12 }}>
-            <button onClick={() => { setBid(""); setPractice(false); }} style={{ flex: 1, padding: "10px", borderRadius: 8, background: "#1A1E2A", color: "#8B91A8″, fontSize: 13, fontWeight: 600, border: "1px solid #252A3A", cursor: "pointer" }}>
+            <button onClick={() => { setBid(""); setPractice(false); }} style={{ flex: 1, padding: "10px", borderRadius: 8, background: "#1A1E2A", color: "#8B91A8", fontSize: 13, fontWeight: 600, border: "1px solid #252A3A", cursor: "pointer" }}>
               Cancel
             </button>
-            <button style={{ flex: 2, padding: "10px", borderRadius: 8, background: "#00D4FF", color: "#0A1628″, fontSize: 13, fontWeight: 700, border: "none", cursor: "pointer" }}>
+            <button style={{ flex: 2, padding: "10px", borderRadius: 8, background: "#00D4FF", color: "#0A1628", fontSize: 13, fontWeight: 700, border: "none", cursor: "pointer" }}>
               Submit Practice Bid
             </button>
           </div>

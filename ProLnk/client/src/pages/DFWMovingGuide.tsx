@@ -21,7 +21,7 @@ const movingOutChecklist = [
 const movingCosts = [
   { route: 'Within DFW (local)', low: '$800', high: '$1,500', note: 'Standard 2-3 bedroom home, full-service' },
   { route: 'Out of state (inbound)', low: '$2,500', high: '$5,000', note: 'Varies heavily by origin and load size' },
-  { route: 'DFW → Austin', low: '$1,800', high: '$2,600', note: 'Off-peak can dip to $1,400′ },
+  { route: 'DFW → Austin', low: '$1,800', high: '$2,600', note: 'Off-peak can dip to $1,400' },
   { route: 'DFW → Houston', low: '$1,500', high: '$2,200', note: 'Shorter drive, lower avg cost' },
   { route: 'DFW → Nationwide', low: '$3,500', high: '$8,000+', note: 'Long haul; get 4+ quotes' },
 ];
@@ -115,17 +115,17 @@ export default function DFWMovingGuide() {
         <div style={{ overflowX: 'auto', marginBottom: 48 }}>
           <table style={{ width: '100%', borderCollapse: 'collapse', background: '#FFFFFF', borderRadius: 12, overflow: 'hidden', boxShadow: '0 1px 4px rgba(0,0,0,.08)' }}>
             <thead>
-              <tr style={{ background: '#F3F4F6′ }}>
-                <th style={{ padding: '14px 20px', textAlign: 'left', fontSize: 13, fontWeight: 700, color: '#374151′ }}>Route</th>
-                <th style={{ padding: '14px 20px', textAlign: 'right', fontSize: 13, fontWeight: 700, color: '#374151′ }}>Low</th>
-                <th style={{ padding: '14px 20px', textAlign: 'right', fontSize: 13, fontWeight: 700, color: '#374151′ }}>High</th>
-                <th style={{ padding: '14px 20px', textAlign: 'left', fontSize: 13, fontWeight: 700, color: '#374151′ }}>Notes</th>
+              <tr style={{ background: '#F3F4F6' }}>
+                <th style={{ padding: '14px 20px', textAlign: 'left', fontSize: 13, fontWeight: 700, color: '#374151' }}>Route</th>
+                <th style={{ padding: '14px 20px', textAlign: 'right', fontSize: 13, fontWeight: 700, color: '#374151' }}>Low</th>
+                <th style={{ padding: '14px 20px', textAlign: 'right', fontSize: 13, fontWeight: 700, color: '#374151' }}>High</th>
+                <th style={{ padding: '14px 20px', textAlign: 'left', fontSize: 13, fontWeight: 700, color: '#374151' }}>Notes</th>
               </tr>
             </thead>
             <tbody>
               {movingCosts.map((row, i) => (
-                <tr key={i} style={{ borderTop: '1px solid #F3F4F6′ }}>
-                  <td style={{ padding: '14px 20px', fontWeight: 600, color: '#111827′ }}>{row.route}</td>
+                <tr key={i} style={{ borderTop: '1px solid #F3F4F6' }}>
+                  <td style={{ padding: '14px 20px', fontWeight: 600, color: '#111827' }}>{row.route}</td>
                   <td style={{ padding: '14px 20px', textAlign: 'right', color: '#10B981', fontWeight: 700 }}>{row.low}</td>
                   <td style={{ padding: '14px 20px', textAlign: 'right', color: '#EF4444', fontWeight: 700 }}>{row.high}</td>
                   <td style={{ padding: '14px 20px', color: '#6B7280', fontSize: 13 }}>{row.note}</td>

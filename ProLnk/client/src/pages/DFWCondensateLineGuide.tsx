@@ -11,7 +11,7 @@ const styles = {
   label: { display: 'block', color: '#94a3b8', fontSize: '0.85rem', marginBottom: '6px', marginTop: '16px' },
   select: { width: '100%', padding: '10px 12px', backgroundColor: '#0A1628', border: '1px solid #1e3a5f', borderRadius: '8px', color: '#fff', fontSize: '0.95rem' },
   btn: { marginTop: '20px', width: '100%', padding: '14px', backgroundColor: '#F5E642', color: '#0A1628', fontWeight: 800, fontSize: '1rem', border: 'none', borderRadius: '10px', cursor: 'pointer' },
-  result: { backgroundColor: '#0A1628', borderRadius: '10px', padding: '20px', marginTop: '16px', border: '1px solid #F5E642′ },
+  result: { backgroundColor: '#0A1628', borderRadius: '10px', padding: '20px', marginTop: '16px', border: '1px solid #F5E642' },
   resultTitle: { color: '#F5E642', fontWeight: 700, fontSize: '1.1rem', marginBottom: '12px' },
   row: { display: 'flex', justifyContent: 'space-between', borderBottom: '1px solid #1e3a5f', padding: '8px 0', color: '#cbd5e1', fontSize: '0.9rem' },
   warn: { backgroundColor: '#2d1b00', border: '1px solid #f59e0b', borderRadius: '8px', padding: '12px 16px', color: '#fbbf24', fontSize: '0.9rem', marginBottom: '12px' },
@@ -74,17 +74,17 @@ export default function DFWCondensateLineGuide() {
           <label style={styles.label}>Number of AC systems in your home</label>
           <select style={styles.select} value={systems} onChange={e => setSystems(e.target.value)}>
             <option value="">Select count</option>
-            <option value="1″>1 system</option>
-            <option value="2″>2 systems</option>
-            <option value="3″>3+ systems</option>
+            <option value="1">1 system</option>
+            <option value="2">2 systems</option>
+            <option value="3">3+ systems</option>
           </select>
           <label style={styles.label}>System age (years)</label>
           <select style={styles.select} value={age} onChange={e => setAge(e.target.value)}>
             <option value="">Select age</option>
-            <option value="5″>Under 5 years</option>
-            <option value="8″>5–10 years</option>
-            <option value="12″>10–15 years</option>
-            <option value="18″>15+ years</option>
+            <option value="5">Under 5 years</option>
+            <option value="8">5–10 years</option>
+            <option value="12">10–15 years</option>
+            <option value="18">15+ years</option>
           </select>
           <button style={styles.btn} onClick={calculate}>Generate My Checklist →</button>
           {result && (

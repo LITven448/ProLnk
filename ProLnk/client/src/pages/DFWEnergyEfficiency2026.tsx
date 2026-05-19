@@ -42,7 +42,7 @@ export default function DFWEnergyEfficiency2026() {
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3,1fr)', gap: 10, marginBottom: 24 }}>
           {profiles.map(p => (
             <div key={p.type} onClick={() => setSelected(p)}
-              style={{ background: selected.type === p.type ? '#1a2f52′ : '#111c35', border: `1px solid ${selected.type === p.type ? '#F5E642' : '#1e3a5f'}`, borderRadius: 10, padding: 14, cursor: ’pointer', textAlign: 'center', transition: 'all 0.2s' }}>
+              style={{ background: selected.type === p.type ? '#1a2f52' : '#111c35', border: `1px solid ${selected.type === p.type ? '#F5E642' : '#1e3a5f'}`, borderRadius: 10, padding: 14, cursor: 'pointer', textAlign: 'center', transition: 'all 0.2s' }}>
               <div style={{ fontSize: 26, marginBottom: 6 }}>{p.icon}</div>
               <div style={{ fontSize: 11, color: '#94a3b8', lineHeight: 1.3 }}>{p.type}</div>
               <div style={{ color: '#f87171', fontWeight: 700, marginTop: 6 }}>${p.bill}/mo avg</div>
@@ -58,9 +58,9 @@ export default function DFWEnergyEfficiency2026() {
                 <span style={{ fontWeight: 700 }}>#{i + 1} {p.item}</span>
                 <span style={{ color: '#4ade80', fontWeight: 700 }}>{p.savings}</span>
               </div>
-              <div style={{ display: 'flex', gap: 16, fontSize: 13, color: '#94a3b8′ }}>
-                <span>💰 Cost: <span style={{ color: '#cbd5e1′ }}>{p.cost}</span></span>
-                <span>🎁 Rebate: <span style={{ color: '#F5E642′ }}>{p.rebate}</span></span>
+              <div style={{ display: 'flex', gap: 16, fontSize: 13, color: '#94a3b8' }}>
+                <span>💰 Cost: <span style={{ color: '#cbd5e1' }}>{p.cost}</span></span>
+                <span>🎁 Rebate: <span style={{ color: '#F5E642' }}>{p.rebate}</span></span>
               </div>
             </div>
           ))}

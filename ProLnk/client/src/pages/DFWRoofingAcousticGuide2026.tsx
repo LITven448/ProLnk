@@ -39,7 +39,7 @@ export default function DFWRoofingAcousticGuide2026() {
         <div style={{ background: '#112240', borderRadius: 12, padding: 20, marginBottom: 16 }}>
           <h2 style={{ color: '#F5E642', fontSize: 16, marginBottom: 12 }}>🏠 DFW Roofing Noise Facts</h2>
           {['Architectural shingles absorb 15-20% more noise than 3-tab due to extra mass and irregular surface','Metal roofs amplify DFW hail and rain — closed-cell foam underside application is the fix','Mass loaded vinyl (MLV) underlayment is the best single acoustic upgrade during any reroofing','R-49 attic insulation is the most cost-effective noise fix regardless of roof material','DFW averages 5 hail events over 1 inch annually — Class 4 shingles are both quieter and insurance-favorable'].map((f, i) => (
-            <div key={i} style={{ display: 'flex', gap: 10, marginBottom: 8, color: '#c8d8ec', fontSize: 14 }}><span style={{ color: '#F5E642′ }}>🔈</span>{f}</div>
+            <div key={i} style={{ display: 'flex', gap: 10, marginBottom: 8, color: '#c8d8ec', fontSize: 14 }}><span style={{ color: '#F5E642' }}>🔈</span>{f}</div>
           ))}
         </div>
 
@@ -60,7 +60,7 @@ export default function DFWRoofingAcousticGuide2026() {
             <option value="tile">Concrete or Clay Tile</option>
           </select>
           <button onClick={getGuide} style={{ background: '#F5E642', color: '#0A1628', fontWeight: 700, border: 'none', borderRadius: 8, padding: '11px 24px', cursor: 'pointer', fontSize: 15 }}>Get Acoustic Guide 🔇</button>
-          {guide && <div style={{ marginTop: 16, background: '#0A1628', borderRadius: 8, padding: 16, color: '#c8d8ec', fontSize: 14, lineHeight: 1.6, borderLeft: '3px solid #F5E642′ }}>{guide}</div>}
+          {guide && <div style={{ marginTop: 16, background: '#0A1628', borderRadius: 8, padding: 16, color: '#c8d8ec', fontSize: 14, lineHeight: 1.6, borderLeft: '3px solid #F5E642' }}>{guide}</div>}
         </div>
 
         <div style={{ textAlign: 'center', color: '#4a6080', fontSize: 12, marginTop: 24 }}>ProLnk DFW Home Intelligence · Roofing Acoustic Guide 2026</div>

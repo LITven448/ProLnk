@@ -35,7 +35,7 @@ export default function DFWContractorVerification() {
       <div style={{ maxWidth: 680, margin: '0 auto' }}>
         <div style={{ marginBottom: '1.5rem' }}>
           <div style={{ fontSize: 36, marginBottom: 8 }}>🔎</div>
-          <h1 style={{ margin: 0, fontSize: 28, fontWeight: 700, color: '#F5E642′ }}>DFW Contractor Verification</h1>
+          <h1 style={{ margin: 0, fontSize: 28, fontWeight: 700, color: '#F5E642' }}>DFW Contractor Verification</h1>
           <p style={{ margin: '0.5rem 0 0', color: '#8899bb', fontSize: 14 }}>Verify any DFW contractor before you hire — step-by-step checklist</p>
         </div>
         {!started ? (
@@ -62,14 +62,14 @@ export default function DFWContractorVerification() {
                 <div style={{ color: '#8899bb', fontSize: 13 }}>{trade} • DFW Verification</div>
               </div>
               <div style={{ textAlign: 'right' }}>
-                <div style={{ fontSize: 22, fontWeight: 700, color: score === checks.length ? '#4ade80′ : '#F5E642' }}>{score}/{checks.length}</div>
+                <div style={{ fontSize: 22, fontWeight: 700, color: score === checks.length ? '#4ade80' : '#F5E642' }}>{score}/{checks.length}</div>
                 <div style={{ fontSize: 11, color: '#8899bb' }}>checks done</div>
               </div>
             </div>
             {checks.map((check, i) => (
-              <div key={i} style={{ background: checked[i] ? '#0f2a1a' : '#132035', borderRadius: 10, padding: '1.25rem', marginBottom: '0.75rem', border: checked[i] ? '1.5px solid #4ade80′ : '1.5px solid #1e3a5c' }}>
+              <div key={i} style={{ background: checked[i] ? '#0f2a1a' : '#132035', borderRadius: 10, padding: '1.25rem', marginBottom: '0.75rem', border: checked[i] ? '1.5px solid #4ade80' : '1.5px solid #1e3a5c' }}>
                 <div style={{ display: 'flex', gap: '0.75rem', alignItems: 'flex-start' }}>
-                  <div style={{ width: 28, height: 28, borderRadius: '50%', background: checked[i] ? '#4ade80′ : '#2a3a50', display: ’flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0, fontSize: 14, fontWeight: 700, color: checked[i] ? '#000′ : '#888' }}>{checked[i] ? '✓' : i+1}</div>
+                  <div style={{ width: 28, height: 28, borderRadius: '50%', background: checked[i] ? '#4ade80' : '#2a3a50', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0, fontSize: 14, fontWeight: 700, color: checked[i] ? '#000' : '#888' }}>{checked[i] ? '✓' : i+1}</div>
                   <div style={{ flex: 1 }}>
                     <div style={{ fontWeight: 700, color: '#fff', marginBottom: 4, fontSize: 14 }}>{check.title}</div>
                     <div style={{ fontSize: 13, color: '#8899bb', marginBottom: '0.5rem' }}>{check.desc}</div>

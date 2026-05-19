@@ -69,18 +69,18 @@ function fmtLastSync(ms: number | null): string {
 
 // --- Platform icons -----------------------------------------------------------
 const PLATFORM_ICON: Record<Platform, React.ReactNode> = {
-  CompanyCam:     <Camera size={14} className="text-blue-500″ />,
-  Jobber:         <Wrench size={14} className="text-orange-500″ />,
-  "Housecall Pro": <Home size={14} className="text-green-500″ />,
-  ServiceTitan:   <Zap size={14} className="text-purple-500″ />,
-  None:           <WifiOff size={14} className="text-gray-400″ />,
+  CompanyCam:     <Camera size={14} className="text-blue-500" />,
+  Jobber:         <Wrench size={14} className="text-orange-500" />,
+  "Housecall Pro": <Home size={14} className="text-green-500" />,
+  ServiceTitan:   <Zap size={14} className="text-purple-500" />,
+  None:           <WifiOff size={14} className="text-gray-400" />,
 };
 
 const STATUS_CONFIG: Record<SyncStatus, { label: string; color: string; icon: React.ReactNode }> = {
   healthy:      { label: "Healthy",      color: "#22c55e", icon: <CheckCircle size={14} /> },
   degraded:     { label: "Degraded",     color: "#f59e0b", icon: <AlertTriangle size={14} /> },
-  disconnected: { label: "Disconnected", color: "#ef4444″, icon: <XCircle size={14} /> },
-  never:        { label: "Not Connected",color: "#94a3b8″, icon: <WifiOff size={14} /> },
+  disconnected: { label: "Disconnected", color: "#ef4444", icon: <XCircle size={14} /> },
+  never:        { label: "Not Connected",color: "#94a3b8", icon: <WifiOff size={14} /> },
 };
 
 // --- Summary stat card --------------------------------------------------------
@@ -88,7 +88,7 @@ function StatCard({ label, value, sub, color }: { label: string; value: number |
   return (
     <div style={{ background: "#fff", border: "1px solid #E9ECEF", borderRadius: 12, padding: "16px 20px", minWidth: 140 }}>
       <div style={{ fontSize: 28, fontWeight: 700, color, fontFamily: "'Oswald', sans-serif" }}>{value}</div>
-      <div style={{ fontSize: 13, fontWeight: 600, color: "#344767″, marginTop: 2 }}>{label}</div>
+      <div style={{ fontSize: 13, fontWeight: 600, color: "#344767", marginTop: 2 }}>{label}</div>
       {sub && <div style={{ fontSize: 11, color: "#7B809A", marginTop: 2 }}>{sub}</div>}
     </div>
   );
@@ -222,12 +222,12 @@ export default function PartnerIntegrationHealth() {
         <div style={{ display: "flex", alignItems: "flex-start", justifyContent: "space-between", marginBottom: 28, flexWrap: "wrap", gap: 12 }}>
           <div>
             <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 4 }}>
-              <Activity size={22} color="#17C1E8″ />
-              <h1 style={{ fontSize: 22, fontWeight: 700, color: "#344767″, margin: 0, fontFamily: "'Oswald', sans-serif", letterSpacing: 0.5 }}>
+              <Activity size={22} color="#17C1E8" />
+              <h1 style={{ fontSize: 22, fontWeight: 700, color: "#344767", margin: 0, fontFamily: "'Oswald', sans-serif", letterSpacing: 0.5 }}>
                 Partner Integration Health
               </h1>
               {summary.alerts > 0 && (
-                <span style={{ background: "#ef4444″, color: "#fff", fontSize: 11, fontWeight: 700, padding: "2px 8px", borderRadius: 20, display: "flex", alignItems: "center", gap: 4 }}>
+                <span style={{ background: "#ef4444", color: "#fff", fontSize: 11, fontWeight: 700, padding: "2px 8px", borderRadius: 20, display: "flex", alignItems: "center", gap: 4 }}>
                   <Bell size={11} /> {summary.alerts} Alert{summary.alerts !== 1 ? "s" : ""}
                 </span>
               )}
@@ -244,12 +244,12 @@ export default function PartnerIntegrationHealth() {
 
         {/* -- Summary Bar -- */}
         <div style={{ display: "flex", gap: 12, flexWrap: "wrap", marginBottom: 24 }}>
-          <StatCard label="Total Partners" value={summary.total} color="#344767″ />
-          <StatCard label="Connected" value={summary.connected} sub={`${Math.round(summary.connected / summary.total * 100)}% of network`} color="#17C1E8″ />
+          <StatCard label="Total Partners" value={summary.total} color="#344767" />
+          <StatCard label="Connected" value={summary.connected} sub={`${Math.round(summary.connected / summary.total * 100)}% of network`} color="#17C1E8" />
           <StatCard label="Healthy" value={summary.healthy} color="#22c55e" />
           <StatCard label="Degraded" value={summary.degraded} color="#f59e0b" />
-          <StatCard label="Disconnected" value={summary.disconnected} color="#ef4444″ />
-          <StatCard label="Alerts" value={summary.alerts} sub="Silent 48h+" color="#ef4444″ />
+          <StatCard label="Disconnected" value={summary.disconnected} color="#ef4444" />
+          <StatCard label="Alerts" value={summary.alerts} sub="Silent 48h+" color="#ef4444" />
         </div>
 
         {/* -- Platform Breakdown -- */}
@@ -257,7 +257,7 @@ export default function PartnerIntegrationHealth() {
           {(["CompanyCam", "Jobber", "Housecall Pro", "ServiceTitan"] as Platform[]).map(p => (
             <div key={p} style={{ background: "#fff", border: "1px solid #E9ECEF", borderRadius: 8, padding: "8px 14px", display: "flex", alignItems: "center", gap: 8, fontSize: 13 }}>
               {PLATFORM_ICON[p]}
-              <span style={{ fontWeight: 600, color: "#344767″ }}>{p}</span>
+              <span style={{ fontWeight: 600, color: "#344767" }}>{p}</span>
               <span style={{ color: "#7B809A" }}>{summary.byPlatform[p as keyof typeof summary.byPlatform]} partners</span>
             </div>
           ))}
@@ -360,7 +360,7 @@ export default function PartnerIntegrationHealth() {
                         display: "grid",
                         gridTemplateColumns: "2fr 1fr 1fr 1fr 80px 80px 80px 100px",
                         padding: "12px 20px",
-                        borderBottom: "1px solid #F0F2F5″,
+                        borderBottom: "1px solid #F0F2F5",
                         alignItems: "center",
                         gap: 8,
                         background: row.alertFlag ? "rgba(239,68,68,0.03)" : idx % 2 === 0 ? "#fff" : "#FAFBFC",
@@ -372,8 +372,8 @@ export default function PartnerIntegrationHealth() {
                       {/* Partner name + tier */}
                       <div>
                         <div style={{ display: "flex", alignItems: "center", gap: 6 }}>
-                          {row.alertFlag && <Bell size={11} color="#ef4444″ />}
-                          <span style={{ fontSize: 13, fontWeight: 600, color: "#344767″ }}>{row.businessName}</span>
+                          {row.alertFlag && <Bell size={11} color="#ef4444" />}
+                          <span style={{ fontSize: 13, fontWeight: 600, color: "#344767" }}>{row.businessName}</span>
                         </div>
                         <div style={{ fontSize: 11, color: "#7B809A", marginTop: 1 }}>
                           {row.tier}  {row.serviceArea}
@@ -381,7 +381,7 @@ export default function PartnerIntegrationHealth() {
                       </div>
 
                       {/* Platform */}
-                      <div style={{ display: "flex", alignItems: "center", gap: 5, fontSize: 12, color: "#344767″ }}>
+                      <div style={{ display: "flex", alignItems: "center", gap: 5, fontSize: 12, color: "#344767" }}>
                         {PLATFORM_ICON[row.platform]}
                         <span>{row.platform === "None" ? "--" : row.platform}</span>
                       </div>
@@ -399,17 +399,17 @@ export default function PartnerIntegrationHealth() {
                       </div>
 
                       {/* Photos */}
-                      <div style={{ fontSize: 13, fontWeight: 600, color: row.photosLast7d > 0 ? "#344767″ : "#AEAEAE", textAlign: "center" }}>
+                      <div style={{ fontSize: 13, fontWeight: 600, color: row.photosLast7d > 0 ? "#344767" : "#AEAEAE", textAlign: "center" }}>
                         {row.photosLast7d > 0 ? row.photosLast7d : "--"}
                       </div>
 
                       {/* Jobs */}
-                      <div style={{ fontSize: 13, fontWeight: 600, color: row.jobsLast7d > 0 ? "#344767″ : "#AEAEAE", textAlign: "center" }}>
+                      <div style={{ fontSize: 13, fontWeight: 600, color: row.jobsLast7d > 0 ? "#344767" : "#AEAEAE", textAlign: "center" }}>
                         {row.jobsLast7d > 0 ? row.jobsLast7d : "--"}
                       </div>
 
                       {/* Errors */}
-                      <div style={{ fontSize: 13, fontWeight: 600, color: row.errorCount24h > 0 ? "#ef4444″ : "#AEAEAE", textAlign: "center" }}>
+                      <div style={{ fontSize: 13, fontWeight: 600, color: row.errorCount24h > 0 ? "#ef4444" : "#AEAEAE", textAlign: "center" }}>
                         {row.errorCount24h > 0 ? row.errorCount24h : "--"}
                       </div>
 
@@ -438,32 +438,32 @@ export default function PartnerIntegrationHealth() {
                         <div style={{ display: "flex", gap: 24, flexWrap: "wrap", fontSize: 12 }}>
                           <div>
                             <span style={{ color: "#7B809A" }}>Webhook:</span>{" "}
-                            <span style={{ color: row.webhookActive ? "#22c55e" : "#ef4444″, fontWeight: 600 }}>
+                            <span style={{ color: row.webhookActive ? "#22c55e" : "#ef4444", fontWeight: 600 }}>
                               {row.webhookActive ? "Active" : "Inactive"}
                             </span>
                           </div>
                           <div>
                             <span style={{ color: "#7B809A" }}>Tier:</span>{" "}
-                            <span style={{ fontWeight: 600, color: "#344767″ }}>{row.tier}</span>
+                            <span style={{ fontWeight: 600, color: "#344767" }}>{row.tier}</span>
                           </div>
                           <div>
                             <span style={{ color: "#7B809A" }}>Service Area:</span>{" "}
-                            <span style={{ fontWeight: 600, color: "#344767″ }}>{row.serviceArea}</span>
+                            <span style={{ fontWeight: 600, color: "#344767" }}>{row.serviceArea}</span>
                           </div>
                           <div>
                             <span style={{ color: "#7B809A" }}>Photos (7d):</span>{" "}
-                            <span style={{ fontWeight: 600, color: "#344767″ }}>{row.photosLast7d}</span>
+                            <span style={{ fontWeight: 600, color: "#344767" }}>{row.photosLast7d}</span>
                           </div>
                           <div>
                             <span style={{ color: "#7B809A" }}>Jobs (7d):</span>{" "}
-                            <span style={{ fontWeight: 600, color: "#344767″ }}>{row.jobsLast7d}</span>
+                            <span style={{ fontWeight: 600, color: "#344767" }}>{row.jobsLast7d}</span>
                           </div>
                           <div>
                             <span style={{ color: "#7B809A" }}>Errors (24h):</span>{" "}
-                            <span style={{ fontWeight: 600, color: row.errorCount24h > 0 ? "#ef4444″ : "#344767" }}>{row.errorCount24h}</span>
+                            <span style={{ fontWeight: 600, color: row.errorCount24h > 0 ? "#ef4444" : "#344767" }}>{row.errorCount24h}</span>
                           </div>
                           {row.alertFlag && (
-                            <div style={{ color: "#ef4444″, fontWeight: 600, display: "flex", alignItems: "center", gap: 4 }}>
+                            <div style={{ color: "#ef4444", fontWeight: 600, display: "flex", alignItems: "center", gap: 4 }}>
                               <Bell size={12} /> Partner has been silent for 48+ hours -- consider outreach
                             </div>
                           )}
@@ -486,7 +486,7 @@ export default function PartnerIntegrationHealth() {
         {/* -- Setup Docs Reference -- */}
         <Card style={{ marginTop: 24, border: "1px solid #E9ECEF" }}>
           <CardHeader style={{ paddingBottom: 8 }}>
-            <CardTitle style={{ fontSize: 14, color: "#344767″ }}>Integration Setup Reference</CardTitle>
+            <CardTitle style={{ fontSize: 14, color: "#344767" }}>Integration Setup Reference</CardTitle>
           </CardHeader>
           <CardContent>
             <div style={{ display: "flex", gap: 12, flexWrap: "wrap" }}>
@@ -506,7 +506,7 @@ export default function PartnerIntegrationHealth() {
                     transition: "border-color 0.15s",
                   }}
                 >
-                  <span style={{ fontSize: 13, fontWeight: 600, color: "#344767″ }}>{doc.name} Docs</span>
+                  <span style={{ fontSize: 13, fontWeight: 600, color: "#344767" }}>{doc.name} Docs</span>
                   <span style={{ fontSize: 11, color: "#7B809A" }}>{doc.desc}</span>
                 </a>
               ))}

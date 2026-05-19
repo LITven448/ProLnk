@@ -30,23 +30,23 @@ export default function DFWHurricaneHarveyLessons2026() {
         <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem', marginBottom: '1.5rem' }}>
           {floodZones.map((z, i) => (
             <button key={i} onClick={() => setSelected(i)} style={{ background: selected === i ? '#1E3A5F' : '#111C30', border: `2px solid ${selected === i ? '#F5E642' : '#1E3A5F'}`, borderRadius: 10, padding: '0.9rem 1.2rem', color: '#E8EAF6', cursor: 'pointer', textAlign: 'left', fontWeight: 600 }}>
-              {z.label} — <span style={{ color: '#F5E642′ }}>{z.risk} Risk</span>
+              {z.label} — <span style={{ color: '#F5E642' }}>{z.risk} Risk</span>
             </button>
           ))}
         </div>
 
         {selected !== null && (
-          <div style={{ background: '#111C30', borderRadius: 12, padding: '1.5rem', borderLeft: '4px solid #F5E642′ }}>
+          <div style={{ background: '#111C30', borderRadius: 12, padding: '1.5rem', borderLeft: '4px solid #F5E642' }}>
             <div style={{ color: '#F5E642', fontWeight: 700, marginBottom: '0.75rem' }}>🛡️ Your Flood Prep Priorities</div>
             {floodZones[selected].tips.map((t, i) => (
-              <div key={i} style={{ display: 'flex', alignItems: 'flex-start', gap: 8, marginBottom: 8, color: '#CBD5E1′ }}>
-                <span style={{ color: '#F5E642′ }}>✓</span>{t}
+              <div key={i} style={{ display: 'flex', alignItems: 'flex-start', gap: 8, marginBottom: 8, color: '#CBD5E1' }}>
+                <span style={{ color: '#F5E642' }}>✓</span>{t}
               </div>
             ))}
           </div>
         )}
 
-        <div style={{ background: '#111C30', borderRadius: 12, padding: '1.5rem', marginTop: '2rem', borderTop: '2px solid #F5E642′ }}>
+        <div style={{ background: '#111C30', borderRadius: 12, padding: '1.5rem', marginTop: '2rem', borderTop: '2px solid #F5E642' }}>
           <div style={{ color: '#F5E642', fontWeight: 700, marginBottom: 8 }}>🔗 ProLnk Connects You Fast</div>
           <p style={{ color: '#94A3B8', fontSize: '0.9rem', margin: 0 }}>After a flood event, finding a trusted plumber, waterproofing pro, or restoration contractor is the hardest part. ProLnk matches DFW homeowners with vetted local pros — no call centers, no guesswork.</p>
         </div>

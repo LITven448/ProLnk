@@ -85,7 +85,7 @@ export default function DFWCorporateRelocationImpact() {
           Corporate Relocation Impact on DFW Housing
         </h1>
         <p style={{ color: '#94A3B8', fontSize: 16, marginBottom: 32, lineHeight: 1.6 }}>
-          DFW has absorbed more Fortune 500 headquarters relocations than any US metro since 2017. These aren't just companies — they’re demand engines that permanently reshape their surrounding real estate markets.
+          DFW has absorbed more Fortune 500 headquarters relocations than any US metro since 2017. These aren't just companies — they're demand engines that permanently reshape their surrounding real estate markets.
         </p>
 
         <div style={{ background: '#0F2040', borderRadius: 12, padding: 24, marginBottom: 24, border: '1px solid #1E3A5F' }}>
@@ -95,7 +95,7 @@ export default function DFWCorporateRelocationImpact() {
               <div key={company} style={{ background: '#0A1628', borderRadius: 8, padding: 16, display: 'flex', gap: 16 }}>
                 <div style={{ minWidth: 50, textAlign: 'center' }}>
                   <div style={{ fontSize: 11, color: '#64748B', marginBottom: 2 }}>SINCE</div>
-                  <div style={{ fontSize: 18, fontWeight: 800, color: '#F5E642′ }}>{year}</div>
+                  <div style={{ fontSize: 18, fontWeight: 800, color: '#F5E642' }}>{year}</div>
                 </div>
                 <div style={{ flex: 1 }}>
                   <div style={{ fontSize: 15, fontWeight: 700, color: '#FFFFFF', marginBottom: 4 }}>{company}</div>
@@ -140,7 +140,7 @@ export default function DFWCorporateRelocationImpact() {
                 <div style={{ fontSize: 12, color: '#64748B', fontWeight: 700, textTransform: 'uppercase', letterSpacing: 1, marginBottom: 6 }}>Future Outlook</div>
                 <div style={{ fontSize: 14, color: '#94A3B8', lineHeight: 1.6 }}>{result.futureOutlook}</div>
               </div>
-              <div style={{ padding: 14, background: '#F5E64215', borderRadius: 8, borderLeft: '3px solid #F5E642′ }}>
+              <div style={{ padding: 14, background: '#F5E64215', borderRadius: 8, borderLeft: '3px solid #F5E642' }}>
                 <div style={{ fontSize: 12, color: '#F5E642', fontWeight: 700, textTransform: 'uppercase', letterSpacing: 1, marginBottom: 6 }}>Action Advice</div>
                 <div style={{ fontSize: 14, color: '#E8EDF5', lineHeight: 1.6 }}>{result.actionAdvice}</div>
               </div>
@@ -151,7 +151,7 @@ export default function DFWCorporateRelocationImpact() {
         <div style={{ background: '#0F2040', borderRadius: 12, padding: 24, border: '1px solid #1E3A5F' }}>
           <h2 style={{ fontSize: 18, fontWeight: 700, color: '#F5E642', marginBottom: 12 }}>🔭 What's Coming Next</h2>
           <p style={{ fontSize: 14, color: '#94A3B8', lineHeight: 1.7 }}>
-            DFW remains the #1 target for corporate relocations out of high-tax states. Texas enterprise tax environment, Dallas Fort Worth airport connectivity (direct flights to every major city), and a growing tech/finance talent pool make the trend self-reinforcing. Watch <strong style={{ color: '#E8EDF5′ }}>insurance, healthcare, and fintech</strong> sectors — those are the next wave arriving 2026-2028.
+            DFW remains the #1 target for corporate relocations out of high-tax states. Texas enterprise tax environment, Dallas Fort Worth airport connectivity (direct flights to every major city), and a growing tech/finance talent pool make the trend self-reinforcing. Watch <strong style={{ color: '#E8EDF5' }}>insurance, healthcare, and fintech</strong> sectors — those are the next wave arriving 2026-2028.
           </p>
         </div>
       </div>

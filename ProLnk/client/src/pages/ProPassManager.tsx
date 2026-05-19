@@ -15,19 +15,19 @@ import { toast } from "sonner";
 import { User, Plus, Shield, CheckCircle, Clock, QrCode, AlertTriangle } from "lucide-react";
 
 const CLEARANCE_COLORS: Record<string, string> = {
-  residential: "bg-blue-500/10 text-blue-400″,
-  commercial: "bg-indigo-500/10 text-indigo-400″,
-  school: "bg-purple-500/10 text-purple-400″,
-  healthcare: "bg-pink-500/10 text-pink-400″,
-  government: "bg-red-500/10 text-red-400″,
+  residential: "bg-blue-500/10 text-blue-400",
+  commercial: "bg-indigo-500/10 text-indigo-400",
+  school: "bg-purple-500/10 text-purple-400",
+  healthcare: "bg-pink-500/10 text-pink-400",
+  government: "bg-red-500/10 text-red-400",
 };
 
 const BG_STATUS_COLORS: Record<string, string> = {
-  not_submitted: "text-gray-500″,
-  pending: "text-yellow-400″,
-  clear: "text-green-400″,
-  consider: "text-orange-400″,
-  suspended: "text-red-400″,
+  not_submitted: "text-gray-500",
+  pending: "text-yellow-400",
+  clear: "text-green-400",
+  consider: "text-orange-400",
+  suspended: "text-red-400",
 };
 
 export default function ProPassManager() {
@@ -55,20 +55,20 @@ export default function ProPassManager() {
 
   return (
     <PartnerLayout>
-      <div className="max-w-3xl mx-auto space-y-6″>
+      <div className="max-w-3xl mx-auto space-y-6">
         <div className="flex items-center justify-between">
           <div>
             <h1 className="text-2xl font-black text-white">Pro Passes</h1>
-            <p className="text-gray-400 text-sm mt-1″>Digital credentials for your team members</p>
+            <p className="text-gray-400 text-sm mt-1">Digital credentials for your team members</p>
           </div>
-          <div className="flex items-center gap-4″>
+          <div className="flex items-center gap-4">
             <div className="text-right text-sm">
               <span className="text-white font-bold">{used}/{limit}</span>
-              <span className="text-gray-500 ml-1″>passes used</span>
+              <span className="text-gray-500 ml-1">passes used</span>
             </div>
             {used < limit && (
-              <Button onClick={() => setShowNewForm(true)} className="bg-teal-500 hover:bg-teal-400 text-white gap-2″>
-                <Plus className="w-4 h-4″ /> Add Pass
+              <Button onClick={() => setShowNewForm(true)} className="bg-teal-500 hover:bg-teal-400 text-white gap-2">
+                <Plus className="w-4 h-4" /> Add Pass
               </Button>
             )}
           </div>
@@ -76,9 +76,9 @@ export default function ProPassManager() {
 
         {/* New pass form */}
         {showNewForm && (
-          <div className="bg-gray-800 rounded-2xl p-6 border border-teal-500/30 space-y-4″>
+          <div className="bg-gray-800 rounded-2xl p-6 border border-teal-500/30 space-y-4">
             <h3 className="font-bold text-white">New Pro Pass</h3>
-            <div className="grid grid-cols-2 gap-3″>
+            <div className="grid grid-cols-2 gap-3">
               <Input placeholder="First name *" value={newPass.firstName} onChange={e => setNewPass(p => ({ ...p, firstName: e.target.value }))} className="bg-gray-700 border-gray-600 text-white" />
               <Input placeholder="Last name *" value={newPass.lastName} onChange={e => setNewPass(p => ({ ...p, lastName: e.target.value }))} className="bg-gray-700 border-gray-600 text-white" />
               <Input type="email" placeholder="Email" value={newPass.email} onChange={e => setNewPass(p => ({ ...p, email: e.target.value }))} className="bg-gray-700 border-gray-600 text-white" />
@@ -98,47 +98,47 @@ export default function ProPassManager() {
                 <option value="owner">Owner</option>
               </select>
             </div>
-            <div className="flex gap-3″>
+            <div className="flex gap-3">
               <Button className="flex-1 bg-teal-500 hover:bg-teal-400 text-white font-bold" disabled={!newPass.firstName || !newPass.lastName || createPass.isPending} onClick={() => createPass.mutate(newPass)}>
                 {createPass.isPending ? "Creating..." : "Create Pro Pass"}
               </Button>
-              <Button variant="outline" className="border-gray-600 text-gray-400″ onClick={() => setShowNewForm(false)}>Cancel</Button>
+              <Button variant="outline" className="border-gray-600 text-gray-400" onClick={() => setShowNewForm(false)}>Cancel</Button>
             </div>
           </div>
         )}
 
         {/* Pass list */}
         {isLoading ? (
-          <div className="text-center py-12 text-gray-500″>Loading...</div>
+          <div className="text-center py-12 text-gray-500">Loading...</div>
         ) : passes.length === 0 ? (
-          <div className="text-center py-16″>
-            <User className="w-16 h-16 text-gray-600 mx-auto mb-4″ />
-            <h3 className="text-white font-bold mb-2″>No Pro Passes yet</h3>
-            <p className="text-gray-500 text-sm mb-6″>Add your first team member to get started</p>
-            <Button onClick={() => setShowNewForm(true)} className="bg-teal-500 hover:bg-teal-400 text-white gap-2″>
-              <Plus className="w-4 h-4″ /> Add First Pass
+          <div className="text-center py-16">
+            <User className="w-16 h-16 text-gray-600 mx-auto mb-4" />
+            <h3 className="text-white font-bold mb-2">No Pro Passes yet</h3>
+            <p className="text-gray-500 text-sm mb-6">Add your first team member to get started</p>
+            <Button onClick={() => setShowNewForm(true)} className="bg-teal-500 hover:bg-teal-400 text-white gap-2">
+              <Plus className="w-4 h-4" /> Add First Pass
             </Button>
           </div>
         ) : (
-          <div className="space-y-3″>
+          <div className="space-y-3">
             {passes.map((pass: any) => (
               <div key={pass.id} className="bg-gray-800 rounded-xl p-4 border border-gray-700 hover:border-gray-600 transition-all">
-                <div className="flex items-center gap-4″>
+                <div className="flex items-center gap-4">
                   <div className="w-10 h-10 bg-gray-700 rounded-full flex items-center justify-center text-white font-bold">
                     {pass.firstName?.[0]}{pass.lastName?.[0]}
                   </div>
-                  <div className="flex-1 min-w-0″>
+                  <div className="flex-1 min-w-0">
                     <div className="font-semibold text-white">{pass.firstName} {pass.lastName}</div>
-                    <div className="text-gray-400 text-xs mt-0.5″>
+                    <div className="text-gray-400 text-xs mt-0.5">
                       {pass.role || "Team member"} · {pass.primaryTrade || "General"}
                     </div>
                   </div>
-                  <div className="flex items-center gap-2″>
+                  <div className="flex items-center gap-2">
                     <Badge className={`text-xs ${CLEARANCE_COLORS[pass.clearanceLevel] ?? ""}`}>
                       {pass.clearanceLevel}
                     </Badge>
                     <div className={`flex items-center gap-1 text-xs ${BG_STATUS_COLORS[pass.backgroundCheckStatus] ?? "text-gray-500"}`}>
-                      <Shield className="w-3 h-3″ />
+                      <Shield className="w-3 h-3" />
                       {pass.backgroundCheckStatus === "clear" ? "Clear" :
                        pass.backgroundCheckStatus === "pending" ? "Pending" :
                        pass.backgroundCheckStatus === "not_submitted" ? "No BG check" : pass.backgroundCheckStatus}
@@ -149,7 +149,7 @@ export default function ProPassManager() {
                     <div className="text-gray-500 text-xs">score</div>
                   </div>
                   <Button size="sm" variant="ghost" className="text-gray-400 hover:text-white" onClick={() => window.open(`/pass/${pass.passCode}`, "_blank")}>
-                    <QrCode className="w-4 h-4″ />
+                    <QrCode className="w-4 h-4" />
                   </Button>
                 </div>
               </div>
@@ -159,9 +159,9 @@ export default function ProPassManager() {
 
         {used >= limit && (
           <div className="bg-yellow-500/10 border border-yellow-500/20 rounded-xl p-4 text-center">
-            <AlertTriangle className="w-5 h-5 text-yellow-400 mx-auto mb-2″ />
+            <AlertTriangle className="w-5 h-5 text-yellow-400 mx-auto mb-2" />
             <p className="text-yellow-400 font-semibold text-sm">Pro Pass Limit Reached</p>
-            <p className="text-gray-400 text-xs mt-1″>Your plan includes {limit} Pro Pass{limit === 1 ? "" : "es"}. Upgrade your plan to add more team members.</p>
+            <p className="text-gray-400 text-xs mt-1">Your plan includes {limit} Pro Pass{limit === 1 ? "" : "es"}. Upgrade your plan to add more team members.</p>
             <Button size="sm" className="mt-3 bg-yellow-500 hover:bg-yellow-400 text-black font-bold" onClick={() => window.location.href = "/dashboard/tier"}>
               Upgrade Plan
             </Button>

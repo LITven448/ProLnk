@@ -52,7 +52,7 @@ export default function DFWHVACVentilationStandards() {
   return (
     <div style={{ background: '#0A1628', minHeight: '100vh', color: '#fff', fontFamily: 'sans-serif', padding: '2rem' }}>
       <div style={{ maxWidth: '800px', margin: '0 auto' }}>
-        <div style={{ marginBottom: '0.5rem', fontSize: '0.85rem', color: '#F5E642′ }}>🌬️ DFW HVAC GUIDE</div>
+        <div style={{ marginBottom: '0.5rem', fontSize: '0.85rem', color: '#F5E642' }}>🌬️ DFW HVAC GUIDE</div>
         <h1 style={{ fontSize: '2rem', fontWeight: 800, marginBottom: '0.75rem' }}>
           HVAC Ventilation Standards for DFW Homes
         </h1>
@@ -62,8 +62,8 @@ export default function DFWHVACVentilationStandards() {
           Here's how much fresh air your DFW home needs — and the most energy-efficient way to deliver it.
         </p>
 
-        <div style={{ background: '#1a2f55', borderRadius: '10px', padding: '1rem', marginBottom: '2rem', border: '1px solid #2a4080′ }}>
-          <div style={{ fontWeight: 700, marginBottom: '0.4rem', color: '#F5E642′ }}>📏 ASHRAE 62.2 Formula</div>
+        <div style={{ background: '#1a2f55', borderRadius: '10px', padding: '1rem', marginBottom: '2rem', border: '1px solid #2a4080' }}>
+          <div style={{ fontWeight: 700, marginBottom: '0.4rem', color: '#F5E642' }}>📏 ASHRAE 62.2 Formula</div>
           <div style={{ color: '#94a3b8', fontFamily: 'monospace', fontSize: '0.95rem', lineHeight: 1.8 }}>
             Required CFM = (0.03 × sq ft) + (7.5 × [bedrooms + 1])<br/>
             DFW credit for leaky homes: subtract ACH-based natural infiltration rate
@@ -75,18 +75,18 @@ export default function DFWHVACVentilationStandards() {
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
             <div>
               <label style={{ display: 'block', marginBottom: '0.4rem', color: '#94a3b8', fontSize: '0.85rem' }}>SQUARE FOOTAGE</label>
-              <input type="number" value={sqft} onChange={e => setSqft(e.target.value)} placeholder="e.g. 2500″
-                style={{ width: '100%', padding: '0.6rem', borderRadius: '8px', background: '#1a2f55', color: '#fff', border: '1px solid #2a4080′ }} />
+              <input type="number" value={sqft} onChange={e => setSqft(e.target.value)} placeholder="e.g. 2500"
+                style={{ width: '100%', padding: '0.6rem', borderRadius: '8px', background: '#1a2f55', color: '#fff', border: '1px solid #2a4080' }} />
             </div>
             <div>
               <label style={{ display: 'block', marginBottom: '0.4rem', color: '#94a3b8', fontSize: '0.85rem' }}>BEDROOMS</label>
-              <input type="number" value={bedrooms} onChange={e => setBedrooms(e.target.value)} placeholder="e.g. 4″
-                style={{ width: '100%', padding: '0.6rem', borderRadius: '8px', background: '#1a2f55', color: '#fff', border: '1px solid #2a4080′ }} />
+              <input type="number" value={bedrooms} onChange={e => setBedrooms(e.target.value)} placeholder="e.g. 4"
+                style={{ width: '100%', padding: '0.6rem', borderRadius: '8px', background: '#1a2f55', color: '#fff', border: '1px solid #2a4080' }} />
             </div>
             <div>
               <label style={{ display: 'block', marginBottom: '0.4rem', color: '#94a3b8', fontSize: '0.85rem' }}>HOME TIGHTNESS</label>
               <select value={tightness} onChange={e => setTightness(e.target.value)}
-                style={{ width: '100%', padding: '0.6rem', borderRadius: '8px', background: '#1a2f55', color: '#fff', border: '1px solid #2a4080′ }}>
+                style={{ width: '100%', padding: '0.6rem', borderRadius: '8px', background: '#1a2f55', color: '#fff', border: '1px solid #2a4080' }}>
                 <option value="">Select</option>
                 <option value="tight">Tight — new construction 2015+</option>
                 <option value="moderate">Moderate — 2000–2015 build</option>
@@ -101,7 +101,7 @@ export default function DFWHVACVentilationStandards() {
         </div>
 
         {result && sol && (
-          <div style={{ background: '#0f1f3d', borderRadius: '12px', padding: '1.5rem', marginBottom: '2rem', border: '1px solid #F5E642′ }}>
+          <div style={{ background: '#0f1f3d', borderRadius: '12px', padding: '1.5rem', marginBottom: '2rem', border: '1px solid #F5E642' }}>
             <h3 style={{ color: '#F5E642', marginBottom: '0.25rem' }}>📊 Your DFW Home Needs: {result.cfm} CFM</h3>
             <p style={{ color: '#94a3b8', fontSize: '0.85rem', marginBottom: '1rem' }}>Tightness: {getTightnessLabel(tightness)}</p>
             <h4 style={{ marginBottom: '0.5rem' }}>✅ Recommended Solution: {sol.name}</h4>
@@ -113,14 +113,14 @@ export default function DFWHVACVentilationStandards() {
           </div>
         )}
 
-        <h2 style={{ fontSize: '1.2rem', fontWeight: 700, marginBottom: '1rem', color: '#F5E642′ }}>📋 All DFW Ventilation Solutions</h2>
+        <h2 style={{ fontSize: '1.2rem', fontWeight: 700, marginBottom: '1rem', color: '#F5E642' }}>📋 All DFW Ventilation Solutions</h2>
         {Object.values(solutions).map(s => (
           <div key={s.name} style={{ background: '#0f1f3d', borderRadius: '10px', padding: '1rem', marginBottom: '0.75rem' }}>
             <div style={{ fontWeight: 600, marginBottom: '0.3rem' }}>🌀 {s.name}</div>
             <p style={{ color: '#94a3b8', fontSize: '0.85rem', marginBottom: '0.5rem' }}>{s.notes}</p>
             <div style={{ display: 'flex', gap: '2rem', fontSize: '0.85rem' }}>
-              <div><span style={{ color: '#F5E642′ }}>Capacity: </span>{s.cfm}</div>
-              <div><span style={{ color: '#F5E642′ }}>Cost: </span>{s.cost}</div>
+              <div><span style={{ color: '#F5E642' }}>Capacity: </span>{s.cfm}</div>
+              <div><span style={{ color: '#F5E642' }}>Cost: </span>{s.cost}</div>
             </div>
           </div>
         ))}

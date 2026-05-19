@@ -60,7 +60,7 @@ export default function DFWLiveOakGuide() {
                 <span style={{ fontWeight: 600 }}>{f.label}</span>
                 <span style={{ color: '#F5E642', fontWeight: 700 }}>{f.value}</span>
               </div>
-              <div style={{ fontSize: '0.85rem', color: '#94a3b8′ }}>{f.note}</div>
+              <div style={{ fontSize: '0.85rem', color: '#94a3b8' }}>{f.note}</div>
             </div>
           ))}
         </div>
@@ -71,8 +71,8 @@ export default function DFWLiveOakGuide() {
             {gutterSchedule.map(g => (
               <div key={g.month} style={{ background: '#0A1628', borderRadius: '8px', padding: '12px', border: `1px solid ${g.priority === 'High' ? '#F5E642' : '#2d3f5e'}` }}>
                 <div style={{ color: '#F5E642', fontWeight: 700, marginBottom: '4px' }}>{g.month}</div>
-                <div style={{ fontSize: '0.85rem', color: '#e2e8f0′ }}>{g.task}</div>
-                <div style={{ fontSize: '0.75rem', color: g.priority === 'High' ? '#fbbf24′ : '#64748b', marginTop: '4px' }}>{g.priority} Priority</div>
+                <div style={{ fontSize: '0.85rem', color: '#e2e8f0' }}>{g.task}</div>
+                <div style={{ fontSize: '0.75rem', color: g.priority === 'High' ? '#fbbf24' : '#64748b', marginTop: '4px' }}>{g.priority} Priority</div>
               </div>
             ))}
           </div>
@@ -85,7 +85,7 @@ export default function DFWLiveOakGuide() {
               <div style={{ background: f.color, borderRadius: '4px', padding: '2px 8px', fontSize: '0.75rem', fontWeight: 700, color: '#0A1628', minWidth: '70px', textAlign: 'center' }}>{f.risk}</div>
               <div>
                 <div style={{ fontWeight: 600, marginBottom: '2px' }}>{f.distance}</div>
-                <div style={{ fontSize: '0.85rem', color: '#94a3b8′ }}>{f.action}</div>
+                <div style={{ fontSize: '0.85rem', color: '#94a3b8' }}>{f.action}</div>
               </div>
             </div>
           ))}
@@ -109,14 +109,14 @@ export default function DFWLiveOakGuide() {
               </select>
             </div>
           </div>
-          <button onClick={() => setShowAdvice(true)} disabled={!situation} style={{ background: situation ? '#F5E642′ : '#2d3f5e', color: situation ? '#0A1628' : '#64748b', border: ’none', borderRadius: '8px', padding: '12px 24px', fontWeight: 700, cursor: situation ? 'pointer' : 'not-allowed' }}>
+          <button onClick={() => setShowAdvice(true)} disabled={!situation} style={{ background: situation ? '#F5E642' : '#2d3f5e', color: situation ? '#0A1628' : '#64748b', border: 'none', borderRadius: '8px', padding: '12px 24px', fontWeight: 700, cursor: situation ? 'pointer' : 'not-allowed' }}>
             Get My Live Oak Advice
           </button>
           {showAdvice && situation && (
-            <div style={{ marginTop: '16px', background: '#0A1628', borderRadius: '8px', padding: '16px', border: '1px solid #F5E642′ }}>
+            <div style={{ marginTop: '16px', background: '#0A1628', borderRadius: '8px', padding: '16px', border: '1px solid #F5E642' }}>
               <div style={{ color: '#F5E642', fontWeight: 700, marginBottom: '10px' }}>🌿 {situation} — Maintenance Approach</div>
               {getMaintenanceAdvice().map((item, i) => (
-                <div key={i} style={{ padding: '6px 0', fontSize: '0.9rem', color: '#e2e8f0', borderBottom: '1px solid #1e2d45′ }}>✅ {item}</div>
+                <div key={i} style={{ padding: '6px 0', fontSize: '0.9rem', color: '#e2e8f0', borderBottom: '1px solid #1e2d45' }}>✅ {item}</div>
               ))}
             </div>
           )}

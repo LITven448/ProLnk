@@ -64,11 +64,11 @@ export default function DFWEnergyIndependenceScore() {
 
         {questions.map((q, qi) => (
           <div key={q.id} style={{ background: '#111D35', borderRadius: 12, padding: 20, marginBottom: 16, border: `1px solid ${answers[q.id] !== undefined ? '#F5E642' : '#1E3A5F'}` }}>
-            <div style={{ fontWeight: 700, fontSize: 16, marginBottom: 14, color: answers[q.id] !== undefined ? '#F5E642′ : '#E8EDF5' }}>{qi + 1}. {q.text}</div>
+            <div style={{ fontWeight: 700, fontSize: 16, marginBottom: 14, color: answers[q.id] !== undefined ? '#F5E642' : '#E8EDF5' }}>{qi + 1}. {q.text}</div>
             <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
               {q.options.map(opt => (
                 <button key={opt.label} onClick={() => setAnswer(q.id, opt.points)}
-                  style={{ textAlign: 'left', padding: '10px 14px', borderRadius: 8, border: `1px solid ${answers[q.id] === opt.points ? '#F5E642' : '#1E3A5F'}`, background: answers[q.id] === opt.points ? '#1E3A5F' : '#0A1628', color: answers[q.id] === opt.points ? '#F5E642′ : '#E8EDF5', cursor: ’pointer', fontSize: 14 }}>
+                  style={{ textAlign: 'left', padding: '10px 14px', borderRadius: 8, border: `1px solid ${answers[q.id] === opt.points ? '#F5E642' : '#1E3A5F'}`, background: answers[q.id] === opt.points ? '#1E3A5F' : '#0A1628', color: answers[q.id] === opt.points ? '#F5E642' : '#E8EDF5', cursor: 'pointer', fontSize: 14 }}>
                   {answers[q.id] === opt.points ? '✓ ' : ''}{opt.label}
                 </button>
               ))}

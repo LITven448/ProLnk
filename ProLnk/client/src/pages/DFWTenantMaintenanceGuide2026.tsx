@@ -47,7 +47,7 @@ export default function DFWTenantMaintenanceGuide2026() {
               {data.responsible.map(r => (
                 <div key={r} style={{ display: 'flex', gap: 10, marginBottom: 8 }}>
                   <span>🔹</span>
-                  <span style={{ fontSize: 14, color: '#E8EAF0′ }}>{r}</span>
+                  <span style={{ fontSize: 14, color: '#E8EAF0' }}>{r}</span>
                 </div>
               ))}
             </div>
@@ -57,7 +57,7 @@ export default function DFWTenantMaintenanceGuide2026() {
               {data.landlord.map(r => (
                 <div key={r} style={{ display: 'flex', gap: 10, marginBottom: 8 }}>
                   <span>🔸</span>
-                  <span style={{ fontSize: 14, color: '#E8EAF0′ }}>{r}</span>
+                  <span style={{ fontSize: 14, color: '#E8EAF0' }}>{r}</span>
                 </div>
               ))}
             </div>
@@ -67,7 +67,7 @@ export default function DFWTenantMaintenanceGuide2026() {
               {data.tips.map(r => (
                 <div key={r} style={{ display: 'flex', gap: 10, marginBottom: 8 }}>
                   <span>⭐</span>
-                  <span style={{ fontSize: 14, color: '#E8EAF0′ }}>{r}</span>
+                  <span style={{ fontSize: 14, color: '#E8EAF0' }}>{r}</span>
                 </div>
               ))}
             </div>

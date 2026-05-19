@@ -42,13 +42,13 @@ export default function DFWHVACSummerSavings2026() {
           <div style={{ fontWeight: 700, fontSize: 18, color: '#F5E642', marginBottom: 16 }}>🎯 Your DFW Situation → Your Strategy</div>
           <div style={{ display: 'grid', gap: 10, marginBottom: 20 }}>
             {situations.map(s => (
-              <button key={s.id} onClick={() => setSelected(s.id)} style={{ background: selected === s.id ? '#F5E642′ : '#162840', color: selected === s.id ? '#0A1628' : '#E8EDF5', border: '1px solid #2A4A6B', borderRadius: 8, padding: '12px 16px', textAlign: ’left', cursor: 'pointer', fontWeight: selected === s.id ? 700 : 400, fontSize: 15 }}>
+              <button key={s.id} onClick={() => setSelected(s.id)} style={{ background: selected === s.id ? '#F5E642' : '#162840', color: selected === s.id ? '#0A1628' : '#E8EDF5', border: '1px solid #2A4A6B', borderRadius: 8, padding: '12px 16px', textAlign: 'left', cursor: 'pointer', fontWeight: selected === s.id ? 700 : 400, fontSize: 15 }}>
                 {s.label}
               </button>
             ))}
           </div>
           {match && (
-            <div style={{ background: '#0A1628', borderRadius: 10, padding: 20, borderLeft: '4px solid #F5E642′ }}>
+            <div style={{ background: '#0A1628', borderRadius: 10, padding: 20, borderLeft: '4px solid #F5E642' }}>
               <div style={{ fontWeight: 700, color: '#FFFFFF', marginBottom: 6 }}>Recommended Strategy</div>
               <div style={{ color: '#C8D8E8', fontSize: 15, lineHeight: 1.7, marginBottom: 10 }}>{match.strategy}</div>
               <div style={{ color: '#F5E642', fontWeight: 800, fontSize: 16 }}>Expected Annual Savings: {match.savings}</div>
@@ -56,7 +56,7 @@ export default function DFWHVACSummerSavings2026() {
           )}
         </div>
 
-        <div style={{ background: '#0F2140', borderRadius: 12, padding: 24, borderTop: '3px solid #F5E642′ }}>
+        <div style={{ background: '#0F2140', borderRadius: 12, padding: 24, borderTop: '3px solid #F5E642' }}>
           <div style={{ fontWeight: 700, color: '#F5E642', marginBottom: 8 }}>🔗 ProLnk connects DFW homeowners with vetted HVAC pros</div>
           <div style={{ color: '#8FA3BF', fontSize: 14 }}>Get competitive quotes for AC tune-ups, system upgrades, and solar screen installation from background-checked North Texas pros — no spam, no pressure.</div>
         </div>

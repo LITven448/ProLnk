@@ -19,7 +19,7 @@ export default function DFWHVACManufacturerRegistration2026() {
         <h1 style={{ fontSize: 28, fontWeight: 700, marginBottom: 8 }}>📋 HVAC Registration Guide</h1>
         <p style={{ color: '#94a3b8', marginBottom: 32 }}>Registering your DFW HVAC doubles your warranty coverage — from 5 years to 10 years parts — for free. Most homeowners skip this and lose thousands.</p>
 
-        <div style={{ background: '#F5E642', borderRadius: 12, padding: 20, marginBottom: 24, color: '#0A1628′ }}>
+        <div style={{ background: '#F5E642', borderRadius: 12, padding: 20, marginBottom: 24, color: '#0A1628' }}>
           <div style={{ fontWeight: 700, fontSize: 16, marginBottom: 8 }}>⚡ The Free Upgrade You Probably Skipped</div>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16 }}>
             <div style={{ background: 'rgba(10,22,40,0.12)', borderRadius: 8, padding: 12 }}>
@@ -36,7 +36,7 @@ export default function DFWHVACManufacturerRegistration2026() {
         </div>
 
         <div style={{ background: '#132035', borderRadius: 12, padding: 24, marginBottom: 24 }}>
-          <div style={{ fontWeight: 700, fontSize: 16, marginBottom: 16, color: '#F5E642′ }}>🏷️ Select Your HVAC Brand</div>
+          <div style={{ fontWeight: 700, fontSize: 16, marginBottom: 16, color: '#F5E642' }}>🏷️ Select Your HVAC Brand</div>
           <div style={{ display: 'flex', gap: 10, flexWrap: 'wrap', marginBottom: 24 }}>
             {brands.map(b => (
               <button key={b.id} onClick={() => setSelected(b.id)} style={{ padding: '10px 18px', borderRadius: 10, border: `2px solid ${selected === b.id ? '#F5E642' : 'transparent'}`, background: selected === b.id ? '#1e3a5f' : '#0A1628', color: '#fff', cursor: 'pointer', fontWeight: 600, fontSize: 14 }}>{b.logo} {b.name}</button>
@@ -53,28 +53,28 @@ export default function DFWHVACManufacturerRegistration2026() {
           </div>
 
           <div style={{ background: '#0A1628', borderRadius: 10, padding: 16 }}>
-            <div style={{ fontWeight: 700, fontSize: 14, marginBottom: 12, color: '#F5E642′ }}>📝 What You Need to Register</div>
+            <div style={{ fontWeight: 700, fontSize: 14, marginBottom: 12, color: '#F5E642' }}>📝 What You Need to Register</div>
             {brand.info.map(i => (
               <div key={i} style={{ display: 'flex', gap: 10, marginBottom: 8 }}>
-                <span style={{ color: '#F5E642′ }}>›</span><span style={{ color: '#cbd5e1', fontSize: 14 }}>{i}</span>
+                <span style={{ color: '#F5E642' }}>›</span><span style={{ color: '#cbd5e1', fontSize: 14 }}>{i}</span>
               </div>
             ))}
-            <div style={{ marginTop: 16, padding: '12px 16px', background: '#132035', borderRadius: 8, fontSize: 14, color: '#94a3b8′ }}>
+            <div style={{ marginTop: 16, padding: '12px 16px', background: '#132035', borderRadius: 8, fontSize: 14, color: '#94a3b8' }}>
               Register at: <span style={{ color: '#F5E642', fontWeight: 700 }}>{brand.url}</span>
             </div>
           </div>
         </div>
 
         <div style={{ background: '#132035', borderRadius: 12, padding: 20, marginBottom: 24 }}>
-          <div style={{ fontWeight: 700, fontSize: 15, marginBottom: 12, color: '#F5E642′ }}>⏰ DFW Homeowner Checklist</div>
+          <div style={{ fontWeight: 700, fontSize: 15, marginBottom: 12, color: '#F5E642' }}>⏰ DFW Homeowner Checklist</div>
           {['Day 1: Take photo of model/serial plate on outdoor unit', 'Day 3: Ask contractor for install invoice with their license #', 'Day 7: Register at manufacturer website (takes 5 min)', 'Day 7: Save confirmation email to Home Health Vault', 'Year 1: Schedule annual maintenance to maintain warranty'].map(t => (
             <div key={t} style={{ display: 'flex', gap: 10, marginBottom: 10 }}>
-              <span style={{ color: '#F5E642′ }}>✓</span><span style={{ color: '#cbd5e1', fontSize: 14 }}>{t}</span>
+              <span style={{ color: '#F5E642' }}>✓</span><span style={{ color: '#cbd5e1', fontSize: 14 }}>{t}</span>
             </div>
           ))}
         </div>
 
-        <div style={{ background: '#F5E642', borderRadius: 12, padding: 20, textAlign: 'center', color: '#0A1628′ }}>
+        <div style={{ background: '#F5E642', borderRadius: 12, padding: 20, textAlign: 'center', color: '#0A1628' }}>
           <div style={{ fontWeight: 700, fontSize: 16, marginBottom: 8 }}>🏠 Store Your Registration in Home Health Vault</div>
           <div style={{ fontSize: 13 }}>ProLnk tracks your HVAC registration, warranty dates, and service history automatically.</div>
         </div>

@@ -5,14 +5,14 @@ export default function ProLnkDFW4000PagesMilestone() {
   const [recommendation, setRecommendation] = useState('');
 
   const categories = [
-    { icon: '❄️', name: 'HVAC', count: '680+', color: '#3b82f6′ },
-    { icon: '🏚️', name: 'Foundation', count: '520+', color: '#f97316′ },
-    { icon: '🏠', name: 'Roofing', count: '490+', color: '#ef4444′ },
-    { icon: '🔧', name: 'Plumbing', count: '440+', color: '#06b6d4′ },
-    { icon: '⚡', name: 'Electrical', count: '380+', color: '#F5E642′ },
-    { icon: '🏙️', name: 'City Guides', count: '320+', color: '#a855f7′ },
+    { icon: '❄️', name: 'HVAC', count: '680+', color: '#3b82f6' },
+    { icon: '🏚️', name: 'Foundation', count: '520+', color: '#f97316' },
+    { icon: '🏠', name: 'Roofing', count: '490+', color: '#ef4444' },
+    { icon: '🔧', name: 'Plumbing', count: '440+', color: '#06b6d4' },
+    { icon: '⚡', name: 'Electrical', count: '380+', color: '#F5E642' },
+    { icon: '🏙️', name: 'City Guides', count: '320+', color: '#a855f7' },
     { icon: '📅', name: 'Seasonal', count: '280+', color: '#22c55e' },
-    { icon: '👷', name: 'Pro Guides', count: '190+', color: '#ec4899′ },
+    { icon: '👷', name: 'Pro Guides', count: '190+', color: '#ec4899' },
   ];
 
   const situationMap: Record<string, string> = {

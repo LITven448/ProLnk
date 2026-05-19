@@ -6,7 +6,7 @@ const projects = [
   { type: 'Neighborhood Beautification', owner: 'HOA or City Keep Beautiful', timeline: '1-6 months', effort: 'Low', note: 'Keep Dallas Beautiful / Keep Fort Worth Beautiful provide free supplies and volunteer coordination' },
   { type: 'Sidewalk Repair', owner: 'City (usually)', timeline: '6-24 months', effort: 'Medium', note: 'Submit via 311; document with photos; organize neighbors to submit same issue for priority' },
   { type: 'Park Improvements', owner: 'City Parks Dept', timeline: '1-3 years', effort: 'High', note: 'Community input meetings required; easier with organized neighborhood association or HOA backing' },
-  { type: 'Alley Cleanup', owner: 'City Sanitation + Neighbors', timeline: '1-3 months', effort: 'Low', note: 'Most DFW cities provide free bulk pickup for organized alley cleanups when coordinated through 311′ },
+  { type: 'Alley Cleanup', owner: 'City Sanitation + Neighbors', timeline: '1-3 months', effort: 'Low', note: 'Most DFW cities provide free bulk pickup for organized alley cleanups when coordinated through 311' },
 ];
 
 const improvements = ['Street trees / greenery', 'Traffic calming / speeding', 'Sidewalk repair', 'Park or green space', 'Beautification / murals', 'Alley or common area cleanup'];
@@ -49,8 +49,8 @@ export default function DFWNeighborhoodImprovementGuide() {
   }
 
   return (
-    <div style={{ background: '#0A1628', minHeight: '100vh', color: '#e2e8f0', fontFamily: 'system-ui, sans-serif', padding: '0′ }}>
-      <div style={{ background: 'linear-gradient(135deg, #0A1628 0%, #112240 100%)', padding: '48px 24px 32px', borderBottom: '2px solid #F5E642′ }}>
+    <div style={{ background: '#0A1628', minHeight: '100vh', color: '#e2e8f0', fontFamily: 'system-ui, sans-serif', padding: '0' }}>
+      <div style={{ background: 'linear-gradient(135deg, #0A1628 0%, #112240 100%)', padding: '48px 24px 32px', borderBottom: '2px solid #F5E642' }}>
         <div style={{ maxWidth: '900px', margin: '0 auto' }}>
           <div style={{ fontSize: '40px', marginBottom: '12px' }}>🏘️</div>
           <h1 style={{ fontSize: '2.2rem', fontWeight: '800', color: '#F5E642', margin: '0 0 12px' }}>DFW Neighborhood Improvement Guide</h1>
@@ -65,7 +65,7 @@ export default function DFWNeighborhoodImprovementGuide() {
               <div key={p.type} style={{ background: '#0A1628', borderRadius: '12px', padding: '16px', border: '1px solid #1e3a5f' }}>
                 <div style={{ color: '#F5E642', fontWeight: '700', marginBottom: '6px' }}>{p.type}</div>
                 <div style={{ fontSize: '0.8rem', color: '#64748b', marginBottom: '8px' }}>Owner: {p.owner} | Timeline: {p.timeline}</div>
-                <div style={{ fontSize: '0.82rem', color: '#94a3b8′ }}>{p.note}</div>
+                <div style={{ fontSize: '0.82rem', color: '#94a3b8' }}>{p.note}</div>
               </div>
             ))}
           </div>
@@ -79,7 +79,7 @@ export default function DFWNeighborhoodImprovementGuide() {
             </div>
           ))}
         </div>
-        <div style={{ background: '#112240', borderRadius: '16px', padding: '32px', border: '1px solid #F5E642′ }}>
+        <div style={{ background: '#112240', borderRadius: '16px', padding: '32px', border: '1px solid #F5E642' }}>
           <h2 style={{ color: '#F5E642', fontSize: '1.4rem', marginBottom: '24px' }}>🔍 Get Your Improvement Plan</h2>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '16px', marginBottom: '20px' }}>
             <div>
@@ -99,11 +99,11 @@ export default function DFWNeighborhoodImprovementGuide() {
           </div>
           <button onClick={generate} style={{ background: '#F5E642', color: '#0A1628', border: 'none', borderRadius: '10px', padding: '12px 28px', fontWeight: '700', fontSize: '1rem', cursor: 'pointer', width: '100%' }}>Get My Improvement Plan</button>
           {guide && (
-            <div style={{ marginTop: '24px', background: '#0A1628', borderRadius: '12px', padding: '20px', border: '1px solid #F5E642′ }}>
-              <div style={{ marginBottom: '10px' }}><span style={{ color: '#F5E642', fontWeight: '600′ }}>📞 Who to contact: </span><span style={{ color: '#94a3b8' }}>{guide.who}</span></div>
-              <div style={{ marginBottom: '10px' }}><span style={{ color: '#F5E642', fontWeight: '600′ }}>📋 How to make it happen: </span><span style={{ color: '#94a3b8' }}>{guide.how}</span></div>
-              <div style={{ marginBottom: '10px' }}><span style={{ color: '#F5E642', fontWeight: '600′ }}>⏱️ Expected timeline: </span><span style={{ color: '#94a3b8' }}>{guide.timeline}</span></div>
-              <div><span style={{ color: '#F5E642', fontWeight: '600′ }}>📱 Nextdoor tip: </span><span style={{ color: '#94a3b8' }}>{guide.nextdoor}</span></div>
+            <div style={{ marginTop: '24px', background: '#0A1628', borderRadius: '12px', padding: '20px', border: '1px solid #F5E642' }}>
+              <div style={{ marginBottom: '10px' }}><span style={{ color: '#F5E642', fontWeight: '600' }}>📞 Who to contact: </span><span style={{ color: '#94a3b8' }}>{guide.who}</span></div>
+              <div style={{ marginBottom: '10px' }}><span style={{ color: '#F5E642', fontWeight: '600' }}>📋 How to make it happen: </span><span style={{ color: '#94a3b8' }}>{guide.how}</span></div>
+              <div style={{ marginBottom: '10px' }}><span style={{ color: '#F5E642', fontWeight: '600' }}>⏱️ Expected timeline: </span><span style={{ color: '#94a3b8' }}>{guide.timeline}</span></div>
+              <div><span style={{ color: '#F5E642', fontWeight: '600' }}>📱 Nextdoor tip: </span><span style={{ color: '#94a3b8' }}>{guide.nextdoor}</span></div>
             </div>
           )}
         </div>

@@ -55,7 +55,7 @@ export default function DFWFlashFloodPreventionGuide() {
 
         <div style={{ background: '#0f2040', borderRadius: 8, padding: '1.5rem', marginBottom: '1.5rem' }}>
           <div style={{ fontWeight: 600, color: '#F5E642', marginBottom: '1rem' }}>💡 DFW Flash Flood Facts</div>
-          {[['🌧️', 'Speed', 'DFW can get 2–4″ of rain in under 1 hour during severe storms'],
+          {[['🌧️', 'Speed', 'DFW can get 2–4" of rain in under 1 hour during severe storms'],
             ['🏠', 'Foundation first', 'Any water against your foundation for 6+ hours causes cumulative damage'],
             ['🚗', 'Turn around', '"Turn around, don\’t drown" — 12 inches of moving water can float a car'],
             ['💧', 'Backflow risk', 'Heavy rain can push sewage backwards into homes without a backflow preventer'],
@@ -96,15 +96,15 @@ export default function DFWFlashFloodPreventionGuide() {
         </div>
 
         {result && (
-          <div style={{ background: '#0f2040', borderRadius: 8, padding: '1.5rem', border: '1px solid #F5E642′ }}>
+          <div style={{ background: '#0f2040', borderRadius: 8, padding: '1.5rem', border: '1px solid #F5E642' }}>
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1rem', flexWrap: 'wrap', gap: '0.5rem' }}>
-              <div style={{ fontWeight: 700, color: '#F5E642′ }}>🛡️ Flood Prevention Measures</div>
+              <div style={{ fontWeight: 700, color: '#F5E642' }}>🛡️ Flood Prevention Measures</div>
               <div style={{ fontWeight: 700 }}>{result.urgency}</div>
             </div>
             {result.measures.map((m, i) => (
               <div key={i} style={{ display: 'flex', gap: '0.5rem', marginBottom: '0.5rem' }}>
-                <span style={{ color: '#F5E642′ }}>▸</span>
-                <span style={{ color: '#e2e8f0′ }}>{m}</span>
+                <span style={{ color: '#F5E642' }}>▸</span>
+                <span style={{ color: '#e2e8f0' }}>{m}</span>
               </div>
             ))}
             <div style={{ marginTop: '1rem', background: '#1e3a5f', borderRadius: 6, padding: '0.75rem', color: '#F5E642', fontWeight: 600 }}>

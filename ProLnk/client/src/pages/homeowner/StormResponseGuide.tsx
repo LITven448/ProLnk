@@ -9,8 +9,8 @@ const phases = [
       { id: 's1', text: 'Stay inside until storm fully passes — Texas severe weather can spawn multiple cells' },
       { id: 's2', text: 'Check for obvious structural damage before entering outbuildings' },
       { id: 's3', text: 'VIDEO walk your entire property BEFORE any cleanup — document everything' },
-      { id: 's4', text: 'Check for gas odors — if detected, evacuate and call Atmos 800-460-3030′ },
-      { id: 's5', text: 'Check for downed power lines — stay 30+ feet away, call Oncor 888-313-4747′ },
+      { id: 's4', text: 'Check for gas odors — if detected, evacuate and call Atmos 800-460-3030' },
+      { id: 's5', text: 'Check for downed power lines — stay 30+ feet away, call Oncor 888-313-4747' },
     ],
   },
   {
@@ -64,8 +64,8 @@ export default function StormResponseGuide() {
           <p style={{ fontSize: 18, color: '#94a3b8', margin: 0 }}>
             DFW Homeowner's Hour-by-Hour Response Checklist
           </p>
-          <div style={{ marginTop: 20, padding: '16px 20px', background: '#2d1a1a', borderRadius: 10, borderLeft: '4px solid #f87171′ }}>
-            <strong style={{ color: '#f87171′ }}>Critical:</strong>
+          <div style={{ marginTop: 20, padding: '16px 20px', background: '#2d1a1a', borderRadius: 10, borderLeft: '4px solid #f87171' }}>
+            <strong style={{ color: '#f87171' }}>Critical:</strong>
             <span style={{ color: '#fca5a5', marginLeft: 8 }}>
               Do NOT sign anything with a contractor until you have your insurance claim number and at least 2–3 estimates.
               Storm chasers target DFW neighborhoods within hours of major events.
@@ -80,7 +80,7 @@ export default function StormResponseGuide() {
             <span style={{ color: '#e2e8f0', fontWeight: 700 }}>{done}/{total} completed</span>
           </div>
           <div style={{ background: '#1e293b', borderRadius: 6, height: 8 }}>
-            <div style={{ background: done === total ? '#34d399′ : '#6366f1', height: 8, borderRadius: 6, width: `${(done / total) * 100}%`, transition: ’width 0.3s' }} />
+            <div style={{ background: done === total ? '#34d399' : '#6366f1', height: 8, borderRadius: 6, width: `${(done / total) * 100}%`, transition: 'width 0.3s' }} />
           </div>
           {done === total && (
             <div style={{ color: '#34d399', fontWeight: 600, marginTop: 10, textAlign: 'center' }}>
@@ -117,7 +117,7 @@ export default function StormResponseGuide() {
                 >
                   <div style={{
                     width: 22, height: 22, borderRadius: '50%', flexShrink: 0, marginTop: 2,
-                    background: completed[item.id] ? '#34d399′ : ’transparent',
+                    background: completed[item.id] ? '#34d399' : 'transparent',
                     border: `2px solid ${completed[item.id] ? '#34d399' : '#334155'}`,
                     display: 'flex', alignItems: 'center', justifyContent: 'center',
                     color: '#0a0a0f', fontSize: 13, fontWeight: 900,

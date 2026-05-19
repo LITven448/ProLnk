@@ -28,7 +28,7 @@ export default function DFWFutureTechHomeGuide2026() {
           <p style={{ color: '#94a3b8', fontSize: 15 }}>What is coming to DFW homes 2026–2030 and how to get ready</p>
         </div>
 
-        <div style={{ background: '#112240', borderRadius: 12, padding: 20, marginBottom: 28, borderLeft: '4px solid #F5E642′ }}>
+        <div style={{ background: '#112240', borderRadius: 12, padding: 20, marginBottom: 28, borderLeft: '4px solid #F5E642' }}>
           <h2 style={{ color: '#F5E642', margin: '0 0 8px', fontSize: 16 }}>📍 Why DFW Leads Texas in Home Tech Adoption</h2>
           <p style={{ color: '#cbd5e1', fontSize: 14, margin: 0 }}>DFW adds 100,000+ residents per year. New construction in Frisco, McKinney, and Celina is built smart-home-ready. Older homes in Plano, Richardson, and Garland are retrofitting fast. DFW consistently ranks top 3 in US smart home adoption per capita.</p>
         </div>
@@ -41,7 +41,7 @@ export default function DFWFutureTechHomeGuide2026() {
                 <span style={{ fontSize: 26 }}>{t.icon}</span>
                 <div>
                   <span style={{ color: '#F5E642', fontWeight: 700, fontSize: 15 }}>{t.name}</span>
-                  <span style={{ marginLeft: 10, background: t.status === 'Available Now' ? '#166534′ : '#1e3a5f', color: t.status === ’Available Now' ? '#86efac' : '#93c5fd', fontSize: 11, padding: '2px 8px', borderRadius: 4, fontWeight: 600 }}>{t.status}</span>
+                  <span style={{ marginLeft: 10, background: t.status === 'Available Now' ? '#166534' : '#1e3a5f', color: t.status === 'Available Now' ? '#86efac' : '#93c5fd', fontSize: 11, padding: '2px 8px', borderRadius: 4, fontWeight: 600 }}>{t.status}</span>
                 </div>
               </div>
               <div style={{ color: '#94a3b8', fontSize: 13 }}>{t.desc}</div>
@@ -55,7 +55,7 @@ export default function DFWFutureTechHomeGuide2026() {
         <div style={{ display: 'flex', flexWrap: 'wrap', gap: 10, marginBottom: 20 }}>
           {interests.map(i => (
             <button key={i.label} onClick={() => setSelected(i.label)}
-              style={{ background: selected === i.label ? '#F5E642′ : '#1e3a5f', color: selected === i.label ? '#0A1628' : '#fff', border: ’none', borderRadius: 8, padding: '10px 18px', cursor: 'pointer', fontWeight: 600, fontSize: 13 }}>
+              style={{ background: selected === i.label ? '#F5E642' : '#1e3a5f', color: selected === i.label ? '#0A1628' : '#fff', border: 'none', borderRadius: 8, padding: '10px 18px', cursor: 'pointer', fontWeight: 600, fontSize: 13 }}>
               {i.label}
             </button>
           ))}

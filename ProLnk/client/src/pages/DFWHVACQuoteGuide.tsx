@@ -1,10 +1,10 @@
 import { useState } from 'react';
 
 const homeSizes = [
-  { label: 'Under 1,500 sq ft', tonRange: '2–2.5 tons', seer: 'SEER 16+ minimum for DFW climate', estRange: '$4,500–$7,500′ },
-  { label: '1,500–2,500 sq ft', tonRange: '3–3.5 tons', seer: 'SEER 16–18 recommended', estRange: '$6,500–$11,000′ },
-  { label: '2,500–4,000 sq ft', tonRange: '4–5 tons', seer: 'SEER 18+ for efficiency in DFW summers', estRange: '$9,000–$16,000′ },
-  { label: 'Over 4,000 sq ft', tonRange: 'Dual system or 5+ tons', seer: 'SEER 18+ or variable-speed recommended', estRange: '$15,000–$28,000′ },
+  { label: 'Under 1,500 sq ft', tonRange: '2–2.5 tons', seer: 'SEER 16+ minimum for DFW climate', estRange: '$4,500–$7,500' },
+  { label: '1,500–2,500 sq ft', tonRange: '3–3.5 tons', seer: 'SEER 16–18 recommended', estRange: '$6,500–$11,000' },
+  { label: '2,500–4,000 sq ft', tonRange: '4–5 tons', seer: 'SEER 18+ for efficiency in DFW summers', estRange: '$9,000–$16,000' },
+  { label: 'Over 4,000 sq ft', tonRange: 'Dual system or 5+ tons', seer: 'SEER 18+ or variable-speed recommended', estRange: '$15,000–$28,000' },
 ];
 
 const systemTypes = [
@@ -42,12 +42,12 @@ export default function DFWHVACQuoteGuide() {
 
         <h2 style={{ color: '#F5E642', fontSize: 18, fontWeight: 700, marginBottom: 12 }}>🔑 Non-Negotiable Quote Elements for DFW</h2>
         <ul style={{ color: '#9BA8B8', fontSize: 15, lineHeight: 1.8, marginBottom: 32, paddingLeft: 20 }}>
-          <li><strong style={{ color: '#E8ECF0′ }}>Manual J load calculation</strong> — sizing by square footage alone is wrong. DFW homes need attic insulation, window direction, and ceiling height factored in.</li>
-          <li><strong style={{ color: '#E8ECF0′ }}>Equipment brand + exact model number</strong> — "16 SEER unit" is not a spec.</li>
-          <li><strong style={{ color: '#E8ECF0′ }}>SEER rating of 15.2 minimum</strong> — federal law since Jan 2023 for DFW’s climate zone.</li>
-          <li><strong style={{ color: '#E8ECF0′ }}>Permit pulled by contractor</strong> — all DFW cities require it. Homeowner permits create liability.</li>
-          <li><strong style={{ color: '#E8ECF0′ }}>Separate labor and equipment warranties</strong> — equipment warranty (10 years if registered) does NOT cover labor.</li>
-          <li><strong style={{ color: '#E8ECF0′ }}>Refrigerant type</strong> — R-410A systems being phased out. Ask about R-454B (Puron Advance).</li>
+          <li><strong style={{ color: '#E8ECF0' }}>Manual J load calculation</strong> — sizing by square footage alone is wrong. DFW homes need attic insulation, window direction, and ceiling height factored in.</li>
+          <li><strong style={{ color: '#E8ECF0' }}>Equipment brand + exact model number</strong> — "16 SEER unit" is not a spec.</li>
+          <li><strong style={{ color: '#E8ECF0' }}>SEER rating of 15.2 minimum</strong> — federal law since Jan 2023 for DFW's climate zone.</li>
+          <li><strong style={{ color: '#E8ECF0' }}>Permit pulled by contractor</strong> — all DFW cities require it. Homeowner permits create liability.</li>
+          <li><strong style={{ color: '#E8ECF0' }}>Separate labor and equipment warranties</strong> — equipment warranty (10 years if registered) does NOT cover labor.</li>
+          <li><strong style={{ color: '#E8ECF0' }}>Refrigerant type</strong> — R-410A systems being phased out. Ask about R-454B (Puron Advance).</li>
         </ul>
 
         <h2 style={{ color: '#F5E642', fontSize: 18, fontWeight: 700, marginBottom: 12 }}>🚩 HVAC Red Flags in DFW Quotes</h2>
@@ -81,9 +81,9 @@ export default function DFWHVACQuoteGuide() {
             </div>
           </div>
           {selectedSize && (
-            <div style={{ marginBottom: 14, padding: 14, background: '#0A1628', borderRadius: 8, borderLeft: '3px solid #F5E642′ }}>
-              <div style={{ fontWeight: 700, marginBottom: 4 }}>{selectedSize.label} — Expected System Size: <span style={{ color: '#F5E642′ }}>{selectedSize.tonRange}</span></div>
-              <div style={{ fontSize: 13, color: '#9BA8B8′ }}>{selectedSize.seer}</div>
+            <div style={{ marginBottom: 14, padding: 14, background: '#0A1628', borderRadius: 8, borderLeft: '3px solid #F5E642' }}>
+              <div style={{ fontWeight: 700, marginBottom: 4 }}>{selectedSize.label} — Expected System Size: <span style={{ color: '#F5E642' }}>{selectedSize.tonRange}</span></div>
+              <div style={{ fontSize: 13, color: '#9BA8B8' }}>{selectedSize.seer}</div>
               <div style={{ fontSize: 13, color: '#4CAF50', marginTop: 4 }}>DFW market range: {selectedSize.estRange}</div>
             </div>
           )}
@@ -105,7 +105,7 @@ export default function DFWHVACQuoteGuide() {
           )}
         </div>
 
-        <div style={{ background: '#F5E642', borderRadius: 12, padding: 20, color: '#0A1628′ }}>
+        <div style={{ background: '#F5E642', borderRadius: 12, padding: 20, color: '#0A1628' }}>
           <div style={{ fontWeight: 800, fontSize: 15, marginBottom: 4 }}>💡 ProLnk Tip</div>
           <div style={{ fontSize: 14 }}>ProLnk matches you with licensed DFW HVAC contractors who include Manual J load calcs and pull permits. No upsells, no generic equipment.</div>
         </div>

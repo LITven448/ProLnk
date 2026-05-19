@@ -27,7 +27,7 @@ const GUIDES: Record<string, { title: string; items: string[] }> = {
       '🧱 Crack mapping: PE photos and classifies all visible cracks',
       '🔧 Remediation scope: how many piers, where, what depth',
       '📄 Report becomes your contractor bid spec — apples-to-apples',
-      '⚠️ DFW clay: 2-3″ of seasonal movement is normal; 4″+ needs action',
+      '⚠️ DFW clay: 2-3" of seasonal movement is normal; 4"+ needs action',
     ],
   },
   'permit': {
@@ -80,8 +80,8 @@ export default function DFWFoundationEngineerReport2026() {
                 key={s.id}
                 onClick={() => setSelected(s.id)}
                 style={{
-                  background: selected === s.id ? '#F5E642′ : '#1e3a5f',
-                  color: selected === s.id ? '#0A1628′ : '#fff',
+                  background: selected === s.id ? '#F5E642' : '#1e3a5f',
+                  color: selected === s.id ? '#0A1628' : '#fff',
                   border: 'none', borderRadius: '8px', padding: '0.75rem',
                   fontWeight: 700, cursor: 'pointer', fontSize: '0.95rem',
                 }}
@@ -97,7 +97,7 @@ export default function DFWFoundationEngineerReport2026() {
             <h3 style={{ color: '#F5E642', fontWeight: 800, marginBottom: '1rem' }}>{GUIDES[selected].title}</h3>
             <ul style={{ listStyle: 'none', padding: 0, margin: 0 }}>
               {GUIDES[selected].items.map((item, i) => (
-                <li key={i} style={{ padding: '0.75rem', borderBottom: '1px solid #1e3a5f', lineHeight: 1.5, color: '#cbd5e1′ }}>
+                <li key={i} style={{ padding: '0.75rem', borderBottom: '1px solid #1e3a5f', lineHeight: 1.5, color: '#cbd5e1' }}>
                   {item}
                 </li>
               ))}

@@ -14,10 +14,10 @@ const QUESTIONS = [
 ];
 
 const LEVELS = [
-  { min: 10, title: 'DFW Homeowner Legend', badge: '🏆', color: '#F5E642′ },
-  { min: 8, title: 'DFW Property Expert', badge: '🥇', color: '#ffd700′ },
-  { min: 6, title: 'DFW Homeowner Pro', badge: '🥈', color: '#c0c0c0′ },
-  { min: 4, title: 'DFW Homeowner Apprentice', badge: '🥉', color: '#cd7f32′ },
+  { min: 10, title: 'DFW Homeowner Legend', badge: '🏆', color: '#F5E642' },
+  { min: 8, title: 'DFW Property Expert', badge: '🥇', color: '#ffd700' },
+  { min: 6, title: 'DFW Homeowner Pro', badge: '🥈', color: '#c0c0c0' },
+  { min: 4, title: 'DFW Homeowner Apprentice', badge: '🥉', color: '#cd7f32' },
   { min: 0, title: 'DFW Homeowner Rookie', badge: '🏠', color: '#8899bb' },
 ];
 
@@ -47,7 +47,7 @@ export default function DFWHomeOwnershipCertificate() {
     <div style={{ background: '#0A1628', minHeight: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '2rem', fontFamily: 'system-ui, sans-serif' }}>
       <div style={{ maxWidth: 480, width: '100%', textAlign: 'center' }}>
         <div style={{ fontSize: 56, marginBottom: 16 }}>🏠</div>
-        <h1 style={{ margin: '0 0 0.5rem', fontSize: 28, fontWeight: 800, color: '#F5E642′ }}>DFW Homeowner Certificate</h1>
+        <h1 style={{ margin: '0 0 0.5rem', fontSize: 28, fontWeight: 800, color: '#F5E642' }}>DFW Homeowner Certificate</h1>
         <p style={{ color: '#8899bb', fontSize: 15, marginBottom: '2rem' }}>Answer 10 questions about DFW real estate and earn your official Homeowner Knowledge Certificate!</p>
         <div style={{ background: '#132035', borderRadius: 12, padding: '1.5rem' }}>
           <label style={{ display: 'block', fontSize: 14, fontWeight: 600, color: '#ccc', marginBottom: 8, textAlign: 'left' }}>Your Name (for the certificate)</label>
@@ -72,11 +72,11 @@ export default function DFWHomeOwnershipCertificate() {
           <div style={{ fontSize: 26, fontWeight: 800, color: level.color, marginBottom: '1.5rem' }}>{level.title}</div>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1.5rem' }}>
             <div style={{ background: 'rgba(255,255,255,0.08)', borderRadius: 10, padding: '1rem' }}>
-              <div style={{ fontSize: 36, fontWeight: 900, color: '#F5E642′ }}>{score}/10</div>
+              <div style={{ fontSize: 36, fontWeight: 900, color: '#F5E642' }}>{score}/10</div>
               <div style={{ fontSize: 13, color: '#8899bb' }}>Questions Correct</div>
             </div>
             <div style={{ background: 'rgba(255,255,255,0.08)', borderRadius: 10, padding: '1rem' }}>
-              <div style={{ fontSize: 36, fontWeight: 900, color: '#4ade80′ }}>{score * 10}%</div>
+              <div style={{ fontSize: 36, fontWeight: 900, color: '#4ade80' }}>{score * 10}%</div>
               <div style={{ fontSize: 13, color: '#8899bb' }}>Mastery Score</div>
             </div>
           </div>

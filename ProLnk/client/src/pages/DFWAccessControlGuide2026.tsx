@@ -28,7 +28,7 @@ export default function DFWAccessControlGuide2026() {
             { icon: '🚗', title: 'Gate Systems', desc: 'LiftMaster myQ for existing gates. Linear for new installs. DFW HOA-approved options available.' },
             { icon: '📋', title: 'Access Logs', desc: 'Every entry timestamped. Export to CSV for landlords and property managers. Critical for DFW contractor coordination.' },
           ].map((item) => (
-            <div key={item.title} style={{ background: '#1e2d45', borderRadius: 12, padding: 20, borderLeft: '3px solid #F5E642′ }}>
+            <div key={item.title} style={{ background: '#1e2d45', borderRadius: 12, padding: 20, borderLeft: '3px solid #F5E642' }}>
               <div style={{ fontSize: 28, marginBottom: 8 }}>{item.icon}</div>
               <div style={{ fontWeight: 700, color: '#F5E642', marginBottom: 6 }}>{item.title}</div>
               <div style={{ color: '#94a3b8', fontSize: 14 }}>{item.desc}</div>
@@ -41,7 +41,7 @@ export default function DFWAccessControlGuide2026() {
           <p style={{ color: '#94a3b8', fontSize: 14, marginBottom: 20 }}>ProLnk coordinates secure contractor access — know who entered and when</p>
           <div style={{ marginBottom: 20 }}>
             <label style={{ color: '#94a3b8', display: 'block', marginBottom: 8 }}>Primary Access Need</label>
-            <select value={accessNeed} onChange={(e) => setAccessNeed(e.target.value)} style={{ width: '100%', padding: 12, borderRadius: 8, background: '#0A1628', color: '#fff', border: '1px solid #334155′ }}>
+            <select value={accessNeed} onChange={(e) => setAccessNeed(e.target.value)} style={{ width: '100%', padding: 12, borderRadius: 8, background: '#0A1628', color: '#fff', border: '1px solid #334155' }}>
               <option value=''>Select your situation...</option>
               <option value='contractor'>Temporary contractor / service pro access</option>
               <option value='gate'>Driveway gate or community gate access</option>
@@ -51,7 +51,7 @@ export default function DFWAccessControlGuide2026() {
             </select>
           </div>
           <button onClick={() => setResult(recs[accessNeed] || '')} style={{ background: '#F5E642', color: '#0A1628', border: 'none', borderRadius: 8, padding: '12px 28px', fontWeight: 700, fontSize: 15, cursor: 'pointer' }}>Get My Access Recommendation 🔐</button>
-          {result && <div style={{ marginTop: 20, background: '#0A1628', borderRadius: 10, padding: 20, color: '#e2e8f0', lineHeight: 1.8, borderLeft: '3px solid #F5E642′ }}>{result}</div>}
+          {result && <div style={{ marginTop: 20, background: '#0A1628', borderRadius: 10, padding: 20, color: '#e2e8f0', lineHeight: 1.8, borderLeft: '3px solid #F5E642' }}>{result}</div>}
         </div>
 
         <div style={{ background: '#1e2d45', borderRadius: 12, padding: 24, textAlign: 'center' }}>

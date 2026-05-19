@@ -47,7 +47,7 @@ export default function DFWHVACBrandGuide2026() {
 
         <div style={{ background: '#111E35', borderRadius: 12, padding: 20, marginBottom: 24 }}>
           <div style={{ fontSize: 13, color: '#9BA3B8', marginBottom: 12 }}>🔍 2024–2025 MARKET SHIFTS</div>
-          <ul style={{ margin: 0, padding: '0 0 0 18px', lineHeight: 2, color: '#C8D0E0′ }}>
+          <ul style={{ margin: 0, padding: '0 0 0 18px', lineHeight: 2, color: '#C8D0E0' }}>
             <li>Carrier acquired Bryant — now operates as Residential Systems Group (RSG)</li>
             <li>Lennox restructured dealer network; some DFW markets underserved briefly</li>
             <li>Daikin (Goodman parent) expanded DFW distribution — most stocked brand</li>
@@ -60,9 +60,9 @@ export default function DFWHVACBrandGuide2026() {
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 10 }}>
             {(['reliability', 'price', 'efficiency', 'warranty'] as Priority[]).map(p => (
               <button key={p} onClick={() => setPriority(p)} style={{
-                background: priority === p ? '#F5E642′ : '#111E35',
-                color: priority === p ? '#0A1628′ : '#E8EAF0',
-                border: '1px solid ' + (priority === p ? '#F5E642′ : '#1E2D45'),
+                background: priority === p ? '#F5E642' : '#111E35',
+                color: priority === p ? '#0A1628' : '#E8EAF0',
+                border: '1px solid ' + (priority === p ? '#F5E642' : '#1E2D45'),
                 borderRadius: 8, padding: '12px 16px', cursor: 'pointer', fontWeight: 700, fontSize: 14, textAlign: 'left', textTransform: 'uppercase', letterSpacing: 1,
               }}>
                 {p === 'reliability' ? '🛡️' : p === 'price' ? '💰' : p === 'efficiency' ? '🌿' : '📋'} {p}

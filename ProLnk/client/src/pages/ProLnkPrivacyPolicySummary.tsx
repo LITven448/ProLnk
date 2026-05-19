@@ -71,8 +71,8 @@ export default function ProLnkPrivacyPolicySummary() {
           {concerns.map(c => (
             <button key={c} onClick={() => setSelected(c)} style={{
               padding: '8px 18px', borderRadius: 24, border: '2px solid',
-              borderColor: selected === c ? '#0A1628′ : '#CBD5E1',
-              background: selected === c ? '#0A1628′ : ’white',
+              borderColor: selected === c ? '#0A1628' : '#CBD5E1',
+              background: selected === c ? '#0A1628' : 'white',
               color: selected === c ? 'white' : '#0A1628',
               fontWeight: 700, cursor: 'pointer', fontSize: 13, textTransform: 'capitalize',
             }}>{c}</button>
@@ -84,9 +84,9 @@ export default function ProLnkPrivacyPolicySummary() {
             <span style={{ fontSize: 28 }}>{s.emoji}</span>
             <h2 style={{ fontSize: 18, fontWeight: 700, color: '#0A1628', margin: 0 }}>{s.summary}</h2>
           </div>
-          <ul style={{ listStyle: 'none', padding: 0, margin: '0 0 20px 0′ }}>
+          <ul style={{ listStyle: 'none', padding: 0, margin: '0 0 20px 0' }}>
             {s.details.map((d, i) => (
-              <li key={i} style={{ padding: '10px 0', borderBottom: i < s.details.length - 1 ? '1px solid #F1F5F9′ : ’none', color: '#1E293B', fontSize: 15 }}>{d}</li>
+              <li key={i} style={{ padding: '10px 0', borderBottom: i < s.details.length - 1 ? '1px solid #F1F5F9' : 'none', color: '#1E293B', fontSize: 15 }}>{d}</li>
             ))}
           </ul>
           <div style={{ background: '#F0FDF4', borderRadius: 10, padding: '12px 16px', borderLeft: '4px solid #22C55E' }}>

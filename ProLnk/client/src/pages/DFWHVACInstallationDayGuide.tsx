@@ -48,14 +48,14 @@ export default function DFWHVACInstallationDayGuide() {
         <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap', marginBottom: 24 }}>
           {phases.map(p => (
             <button key={p.id} onClick={() => setActivePhase(p.id)}
-              style={{ background: activePhase === p.id ? '#F5E642′ : '#132035', color: activePhase === p.id ? '#0A1628' : '#fff', border: ’none', borderRadius: 8, padding: '8px 14px', cursor: 'pointer', fontWeight: 600, fontSize: 13 }}>
+              style={{ background: activePhase === p.id ? '#F5E642' : '#132035', color: activePhase === p.id ? '#0A1628' : '#fff', border: 'none', borderRadius: 8, padding: '8px 14px', cursor: 'pointer', fontWeight: 600, fontSize: 13 }}>
               {p.icon} {p.label}
             </button>
           ))}
         </div>
 
         <div style={{ background: '#132035', borderRadius: 12, padding: 24 }}>
-          <h2 style={{ fontSize: 20, fontWeight: 800, marginBottom: 20, color: '#F5E642′ }}>{phase.icon} {phase.label}</h2>
+          <h2 style={{ fontSize: 20, fontWeight: 800, marginBottom: 20, color: '#F5E642' }}>{phase.icon} {phase.label}</h2>
 
           <div style={{ marginBottom: 20 }}>
             <h3 style={{ fontSize: 15, color: '#4ADE80', marginBottom: 10 }}>✅ What Good Installers Do</h3>

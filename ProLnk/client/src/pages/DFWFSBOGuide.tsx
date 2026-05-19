@@ -35,7 +35,7 @@ export default function DFWFSBOGuide() {
   return (
     <div style={{ background: '#f8f6f0', minHeight: '100vh', fontFamily: 'Georgia, serif', color: '#1a1a2e' }}>
       <div style={{ maxWidth: 860, margin: '0 auto', padding: '48px 24px' }}>
-        <div style={{ marginBottom: 8, fontSize: 13, letterSpacing: 2, textTransform: 'uppercase', color: '#888′ }}>DFW Seller Guide</div>
+        <div style={{ marginBottom: 8, fontSize: 13, letterSpacing: 2, textTransform: 'uppercase', color: '#888' }}>DFW Seller Guide</div>
         <h1 style={{ fontSize: 38, fontWeight: 700, margin: '0 0 12px', lineHeight: 1.2 }}>
           🏡 For Sale By Owner in DFW
         </h1>
@@ -68,7 +68,7 @@ export default function DFWFSBOGuide() {
                 type="text"
                 value={homePrice}
                 onChange={e => setHomePrice(e.target.value)}
-                placeholder="e.g. 450,000″
+                placeholder="e.g. 450,000"
                 style={{ width: '100%', padding: '10px 14px', borderRadius: 8, border: '1.5px solid #ddd', fontSize: 15, boxSizing: 'border-box' }}
               />
             </div>

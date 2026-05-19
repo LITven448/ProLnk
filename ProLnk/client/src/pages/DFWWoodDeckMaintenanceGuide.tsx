@@ -58,11 +58,11 @@ export default function DFWWoodDeckMaintenanceGuide() {
         </div>
 
         <div style={{ backgroundColor: '#111F3A', borderRadius: 16, padding: 28 }}>
-          <h2 style={{ fontSize: 20, fontWeight: 700, marginBottom: 20, color: '#F5E642′ }}>🧮 Deck Treatment Calculator</h2>
+          <h2 style={{ fontSize: 20, fontWeight: 700, marginBottom: 20, color: '#F5E642' }}>🧮 Deck Treatment Calculator</h2>
           <div style={{ display: 'grid', gap: 16, marginBottom: 20 }}>
             <div>
               <label style={{ fontSize: 13, color: '#94A3B8', display: 'block', marginBottom: 6 }}>Deck Square Footage</label>
-              <input value={sqft} onChange={e => setSqft(e.target.value)} placeholder="e.g. 320″ style={{ width: '100%', backgroundColor: '#0A1628', border: '1px solid #1E3A5F', borderRadius: 8, padding: '10px 14px', color: '#fff', fontSize: 15 }} />
+              <input value={sqft} onChange={e => setSqft(e.target.value)} placeholder="e.g. 320" style={{ width: '100%', backgroundColor: '#0A1628', border: '1px solid #1E3A5F', borderRadius: 8, padding: '10px 14px', color: '#fff', fontSize: 15 }} />
             </div>
             <div>
               <label style={{ fontSize: 13, color: '#94A3B8', display: 'block', marginBottom: 6 }}>Wood Type</label>
@@ -73,7 +73,7 @@ export default function DFWWoodDeckMaintenanceGuide() {
             </div>
             <div>
               <label style={{ fontSize: 13, color: '#94A3B8', display: 'block', marginBottom: 6 }}>Years Since Last Treatment</label>
-              <input value={lastTreated} onChange={e => setLastTreated(e.target.value)} placeholder="e.g. 2″ style={{ width: '100%', backgroundColor: '#0A1628', border: '1px solid #1E3A5F', borderRadius: 8, padding: '10px 14px', color: '#fff', fontSize: 15 }} />
+              <input value={lastTreated} onChange={e => setLastTreated(e.target.value)} placeholder="e.g. 2" style={{ width: '100%', backgroundColor: '#0A1628', border: '1px solid #1E3A5F', borderRadius: 8, padding: '10px 14px', color: '#fff', fontSize: 15 }} />
             </div>
           </div>
           <button onClick={calculate} style={{ backgroundColor: '#F5E642', color: '#0A1628', fontWeight: 700, fontSize: 15, padding: '12px 28px', borderRadius: 8, border: 'none', cursor: 'pointer', width: '100%' }}>
@@ -84,7 +84,7 @@ export default function DFWWoodDeckMaintenanceGuide() {
               {[{ label: '📅 Schedule', value: result.schedule }, { label: '🛢️ Product', value: result.product }, { label: '💰 Estimated Cost', value: result.cost }].map(r => (
                 <div key={r.label} style={{ backgroundColor: '#0A1628', borderRadius: 10, padding: 16 }}>
                   <div style={{ color: '#F5E642', fontSize: 12, fontWeight: 700, marginBottom: 4 }}>{r.label}</div>
-                  <div style={{ fontSize: 14, color: '#E2E8F0′ }}>{r.value}</div>
+                  <div style={{ fontSize: 14, color: '#E2E8F0' }}>{r.value}</div>
                 </div>
               ))}
             </div>

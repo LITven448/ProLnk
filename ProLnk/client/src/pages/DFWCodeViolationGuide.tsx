@@ -42,7 +42,7 @@ export default function DFWCodeViolationGuide() {
 
   return (
     <div style={{ background: '#0A1628', minHeight: '100vh', color: '#E8EAF0', fontFamily: 'system-ui, sans-serif', padding: '0 0 60px' }}>
-      <div style={{ background: 'linear-gradient(135deg, #0A1628 0%, #112040 100%)', padding: '48px 24px 36px', borderBottom: '2px solid #F5E642′ }}>
+      <div style={{ background: 'linear-gradient(135deg, #0A1628 0%, #112040 100%)', padding: '48px 24px 36px', borderBottom: '2px solid #F5E642' }}>
         <div style={{ maxWidth: 760, margin: '0 auto' }}>
           <div style={{ fontSize: 13, color: '#F5E642', fontWeight: 700, letterSpacing: 2, marginBottom: 12 }}>DFW HOMEOWNER GUIDE</div>
           <h1 style={{ fontSize: 32, fontWeight: 800, color: '#FFFFFF', margin: '0 0 12px' }}>Code Violation Guide</h1>
@@ -50,12 +50,12 @@ export default function DFWCodeViolationGuide() {
         </div>
       </div>
 
-      <div style={{ maxWidth: 760, margin: '0 auto', padding: '32px 24px 0′ }}>
+      <div style={{ maxWidth: 760, margin: '0 auto', padding: '32px 24px 0' }}>
         <div style={{ marginBottom: 24 }}>
           <label style={{ fontSize: 13, color: '#F5E642', fontWeight: 600, marginRight: 12 }}>Your DFW City:</label>
           {['Dallas', 'Fort Worth', 'Plano', 'Arlington'].map(c => (
             <button key={c} onClick={() => setCity(c)}
-              style={{ marginRight: 8, padding: '6px 14px', borderRadius: 20, border: `2px solid ${city === c ? '#F5E642' : '#1E3A5F'}`, background: city === c ? '#F5E642′ : ’transparent', color: city === c ? '#0A1628′ : '#CBD5E0', fontWeight: 700, fontSize: 13, cursor: ’pointer' }}>
+              style={{ marginRight: 8, padding: '6px 14px', borderRadius: 20, border: `2px solid ${city === c ? '#F5E642' : '#1E3A5F'}`, background: city === c ? '#F5E642' : 'transparent', color: city === c ? '#0A1628' : '#CBD5E0', fontWeight: 700, fontSize: 13, cursor: 'pointer' }}>
               {c}
             </button>
           ))}
@@ -65,9 +65,9 @@ export default function DFWCodeViolationGuide() {
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: 12, marginBottom: 32 }}>
           {VIOLATIONS.map((v, i) => (
             <button key={i} onClick={() => setSelected(selected === i ? null : i)}
-              style={{ background: selected === i ? '#F5E642′ : '#112040', border: `2px solid ${selected === i ? '#F5E642' : '#1E3A5F'}`, borderRadius: 10, padding: '16px', cursor: ’pointer', textAlign: 'left' }}>
+              style={{ background: selected === i ? '#F5E642' : '#112040', border: `2px solid ${selected === i ? '#F5E642' : '#1E3A5F'}`, borderRadius: 10, padding: '16px', cursor: 'pointer', textAlign: 'left' }}>
               <div style={{ fontSize: 24, marginBottom: 6 }}>{v.icon}</div>
-              <div style={{ fontSize: 13, fontWeight: 700, color: selected === i ? '#0A1628′ : '#E8EAF0' }}>{v.type}</div>
+              <div style={{ fontSize: 13, fontWeight: 700, color: selected === i ? '#0A1628' : '#E8EAF0' }}>{v.type}</div>
             </button>
           ))}
         </div>
@@ -75,7 +75,7 @@ export default function DFWCodeViolationGuide() {
         {item && (
           <div style={{ background: '#112040', border: '1px solid #1E3A5F', borderRadius: 14, padding: 28 }}>
             <h2 style={{ fontSize: 20, fontWeight: 700, color: '#F5E642', marginBottom: 8 }}>{item.icon} {item.type}</h2>
-            <div style={{ background: '#0A1628', borderRadius: 8, padding: 12, marginBottom: 20, borderLeft: '3px solid #F5E642′ }}>
+            <div style={{ background: '#0A1628', borderRadius: 8, padding: 12, marginBottom: 20, borderLeft: '3px solid #F5E642' }}>
               <div style={{ fontSize: 12, fontWeight: 700, color: '#F5E642', marginBottom: 4 }}>📍 {city} — FINE STRUCTURE</div>
               <p style={{ fontSize: 13, color: '#CBD5E0', margin: 0 }}>{(item.cities as Record<string, string>)[city]}</p>
             </div>

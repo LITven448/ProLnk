@@ -15,7 +15,7 @@ export default function DFWSpaHotTubGuide2026() {
       <div style={{ maxWidth: 820, margin: '0 auto' }}>
         <div style={{ textAlign: 'center', marginBottom: '2rem' }}>
           <div style={{ fontSize: '3rem' }}>♨️</div>
-          <h1 style={{ color: '#F5E642', fontSize: '2rem', margin: '0.5rem 0′ }}>DFW Spa & Hot Tub Guide 2026</h1>
+          <h1 style={{ color: '#F5E642', fontSize: '2rem', margin: '0.5rem 0' }}>DFW Spa & Hot Tub Guide 2026</h1>
           <p style={{ color: '#94a3b8', maxWidth: 600, margin: '0 auto' }}>
             DFW's 9-month outdoor season means your spa works overtime. High heat, hard water, and rare freezes
             create unique maintenance demands. Know what to expect.
@@ -39,7 +39,7 @@ export default function DFWSpaHotTubGuide2026() {
 
         <div style={{ background: '#1e3a5f', borderRadius: 12, padding: '1.5rem', marginBottom: '2rem', border: '1px solid #2d4a7a' }}>
           <h2 style={{ color: '#F5E642', marginTop: 0 }}>🔧 Salt Water Spas in DFW</h2>
-          <p style={{ color: '#94a3b8′ }}>Salt water systems are growing in popularity — but DFW hard water creates unique challenges for salt cells. Calcium deposits on the cell can reduce chlorine output within weeks if ignored. Clean the cell with diluted muriatic acid quarterly and monitor output with a test strip.</p>
+          <p style={{ color: '#94a3b8' }}>Salt water systems are growing in popularity — but DFW hard water creates unique challenges for salt cells. Calcium deposits on the cell can reduce chlorine output within weeks if ignored. Clean the cell with diluted muriatic acid quarterly and monitor output with a test strip.</p>
         </div>
 
         <div style={{ background: '#1e3a5f', borderRadius: 12, padding: '1.5rem', border: '1px solid #2d4a7a' }}>
@@ -47,7 +47,7 @@ export default function DFWSpaHotTubGuide2026() {
           <div style={{ display: 'flex', gap: '0.75rem', flexWrap: 'wrap', marginBottom: '1rem' }}>
             {spaTypes.map(s => (
               <button key={s.id} onClick={() => setSelected(s.id === selected ? null : s.id)}
-                style={{ padding: '0.5rem 1rem', borderRadius: 8, border: '2px solid', borderColor: selected === s.id ? '#F5E642′ : '#2d4a7a', background: selected === s.id ? '#F5E642' : '#0A1628', color: selected === s.id ? '#0A1628' : '#fff', cursor: ’pointer', fontWeight: 600 }}>
+                style={{ padding: '0.5rem 1rem', borderRadius: 8, border: '2px solid', borderColor: selected === s.id ? '#F5E642' : '#2d4a7a', background: selected === s.id ? '#F5E642' : '#0A1628', color: selected === s.id ? '#0A1628' : '#fff', cursor: 'pointer', fontWeight: 600 }}>
                 {s.label}
               </button>
             ))}
@@ -57,7 +57,7 @@ export default function DFWSpaHotTubGuide2026() {
               {tips.map(t => <li key={t} style={{ color: '#e2e8f0', marginBottom: '0.5rem' }}>{t}</li>)}
             </ul>
           )}
-          {!selected && <p style={{ color: '#94a3b8′ }}>Select a spa type above to see your DFW-specific maintenance checklist.</p>}
+          {!selected && <p style={{ color: '#94a3b8' }}>Select a spa type above to see your DFW-specific maintenance checklist.</p>}
         </div>
       </div>
     </div>

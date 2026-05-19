@@ -40,13 +40,13 @@ export default function DFWPlumbingHealthScore2026() {
           <>
             {QUESTIONS.map((q, i) => (
               <div key={i} style={{ background: '#0f2040', borderRadius: 10, padding: '1rem 1.25rem', marginBottom: '.75rem' }}>
-                <div style={{ fontWeight: 'bold', marginBottom: '.6rem', color: '#F5E642′ }}>{q.icon} {q.label}</div>
+                <div style={{ fontWeight: 'bold', marginBottom: '.6rem', color: '#F5E642' }}>{q.icon} {q.label}</div>
                 <div style={{ display: 'flex', flexWrap: 'wrap', gap: '.4rem' }}>
                   {q.options.map(o => (
                     <button key={o.label} onClick={() => setAnswers(a => ({ ...a, [i]: o.pts }))}
                       style={{ padding: '.45rem .9rem', borderRadius: 6, border: 'none', cursor: 'pointer',
-                        background: answers[i] === o.pts ? '#F5E642′ : '#1e3a5f',
-                        color: answers[i] === o.pts ? '#0A1628′ : '#fff', fontWeight: '600', fontSize: '.85rem' }}>
+                        background: answers[i] === o.pts ? '#F5E642' : '#1e3a5f',
+                        color: answers[i] === o.pts ? '#0A1628' : '#fff', fontWeight: '600', fontSize: '.85rem' }}>
                       {o.label}
                     </button>
                   ))}
@@ -54,7 +54,7 @@ export default function DFWPlumbingHealthScore2026() {
               </div>
             ))}
             <button onClick={() => setSubmitted(true)} disabled={!allAnswered}
-              style={{ width: '100%', padding: '1rem', background: allAnswered ? '#F5E642′ : '#1e3a5f',
+              style={{ width: '100%', padding: '1rem', background: allAnswered ? '#F5E642' : '#1e3a5f',
                 color: '#0A1628', border: 'none', borderRadius: 10, fontSize: '1.1rem', fontWeight: 'bold', cursor: allAnswered ? 'pointer' : 'not-allowed' }}>
               Score My Plumbing →
             </button>
@@ -63,7 +63,7 @@ export default function DFWPlumbingHealthScore2026() {
           <div style={{ textAlign: 'center' }}>
             <div style={{ fontSize: '5rem', fontWeight: 'bold', color: g.color }}>{g.letter}</div>
             <div style={{ color: '#94a3b8', marginBottom: '1rem' }}>{total} / {MAX_PTS} points</div>
-            <div style={{ background: '#0f2040', borderRadius: 10, padding: '1.25rem', marginBottom: '1.25rem', color: '#e2e8f0′ }}>{g.action}</div>
+            <div style={{ background: '#0f2040', borderRadius: 10, padding: '1.25rem', marginBottom: '1.25rem', color: '#e2e8f0' }}>{g.action}</div>
             <button onClick={() => { setAnswers({}); setSubmitted(false); }}
               style={{ padding: '.75rem 2rem', background: '#F5E642', color: '#0A1628', border: 'none', borderRadius: 8, fontWeight: 'bold', cursor: 'pointer', fontSize: '1rem' }}>
               Retake Assessment

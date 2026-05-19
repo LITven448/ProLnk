@@ -42,7 +42,7 @@ export default function DFWHomeReplacementCostGuide() {
           🏠 DFW Home Replacement Cost Guide
         </div>
         <p style={{ color: '#94A3B8', marginBottom: '1.5rem' }}>
-          In DFW, your home's market value (what you’d sell for) and replacement cost (what it costs to rebuild) can differ by 30-60%. Most DFW homeowners are significantly underinsured — especially after DFW home values surged.
+          In DFW, your home's market value (what you'd sell for) and replacement cost (what it costs to rebuild) can differ by 30-60%. Most DFW homeowners are significantly underinsured — especially after DFW home values surged.
         </p>
         <div style={{ background: '#1E2D45', borderRadius: 10, padding: '1.2rem', marginBottom: '1.2rem' }}>
           <div style={{ fontWeight: 600, color: '#F5E642', marginBottom: '0.8rem' }}>💡 Market Value vs Replacement Cost in DFW</div>
@@ -81,7 +81,7 @@ export default function DFWHomeReplacementCostGuide() {
                 type="number"
                 value={currentCoverage}
                 onChange={e => setCurrentCoverage(e.target.value)}
-                placeholder="e.g. 350000″
+                placeholder="e.g. 350000"
                 style={{ background: '#0A1628', color: '#E8EDF5', border: '1px solid #2D4060', borderRadius: 6, padding: '0.5rem', width: 130 }}
               />
             </div>

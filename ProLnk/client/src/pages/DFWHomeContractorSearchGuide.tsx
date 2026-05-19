@@ -85,7 +85,7 @@ export default function DFWHomeContractorSearchGuide() {
               </div>
               <div style={{ fontWeight: 700, fontSize: 14, marginBottom: 4 }}>{s.name}</div>
               <div style={{ fontSize: 12, color: '#8FA3BF', marginBottom: 4 }}>{s.desc}</div>
-              <div style={{ fontSize: 11, color: '#F5E642′ }}>{s.url}</div>
+              <div style={{ fontSize: 11, color: '#F5E642' }}>{s.url}</div>
             </div>
           ))}
         </div>

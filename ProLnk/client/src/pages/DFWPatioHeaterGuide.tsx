@@ -78,7 +78,7 @@ export default function DFWPatioHeaterGuide() {
               <label style={{ color: '#94a3b8', fontSize: 13, display: 'block', marginBottom: 8 }}>{label}</label>
               <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap' }}>
                 {options.map(([val, text]) => (
-                  <button key={val} onClick={() => setter(val)} style={{ padding: '8px 14px', borderRadius: 8, border: '1px solid', borderColor: value === val ? '#F5E642′ : '#1e3a5f', background: value === val ? '#F5E642' : ’transparent', color: value === val ? '#0A1628′ : '#94a3b8', cursor: ’pointer', fontSize: 13, fontWeight: value === val ? 700 : 400 }}>{text}</button>
+                  <button key={val} onClick={() => setter(val)} style={{ padding: '8px 14px', borderRadius: 8, border: '1px solid', borderColor: value === val ? '#F5E642' : '#1e3a5f', background: value === val ? '#F5E642' : 'transparent', color: value === val ? '#0A1628' : '#94a3b8', cursor: 'pointer', fontSize: 13, fontWeight: value === val ? 700 : 400 }}>{text}</button>
                 ))}
               </div>
             </div>

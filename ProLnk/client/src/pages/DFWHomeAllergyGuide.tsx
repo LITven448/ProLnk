@@ -65,7 +65,7 @@ export default function DFWHomeAllergyGuide() {
 
   return (
     <div style={{ backgroundColor: '#0A1628', minHeight: '100vh', color: '#E8EDF5', fontFamily: 'system-ui, sans-serif', padding: '0 0 60px' }}>
-      <div style={{ background: 'linear-gradient(135deg, #0A1628 0%, #112240 100%)', padding: '60px 24px 40px', borderBottom: '3px solid #F5E642′ }}>
+      <div style={{ background: 'linear-gradient(135deg, #0A1628 0%, #112240 100%)', padding: '60px 24px 40px', borderBottom: '3px solid #F5E642' }}>
         <div style={{ maxWidth: 860, margin: '0 auto' }}>
           <div style={{ fontSize: 40, marginBottom: 12 }}>🤧</div>
           <h1 style={{ fontSize: 38, fontWeight: 800, color: '#F5E642', margin: '0 0 12px' }}>DFW Home Allergy Modification Guide</h1>
@@ -76,7 +76,7 @@ export default function DFWHomeAllergyGuide() {
       </div>
 
       <div style={{ maxWidth: 860, margin: '0 auto', padding: '0 24px' }}>
-        <div style={{ background: '#112240', border: '1px solid #2D5016', borderRadius: 12, padding: 20, margin: '32px 0′ }}>
+        <div style={{ background: '#112240', border: '1px solid #2D5016', borderRadius: 12, padding: 20, margin: '32px 0' }}>
           <h3 style={{ color: '#F5E642', fontSize: 16, fontWeight: 700, margin: '0 0 12px' }}>📅 DFW Allergy Calendar</h3>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))', gap: 10 }}>
             {[
@@ -109,7 +109,7 @@ export default function DFWHomeAllergyGuide() {
           ))}
         </div>
 
-        <div style={{ background: '#112240', borderRadius: 16, padding: 32, border: '2px solid #F5E642′ }}>
+        <div style={{ background: '#112240', borderRadius: 16, padding: 32, border: '2px solid #F5E642' }}>
           <h2 style={{ color: '#F5E642', fontSize: 22, fontWeight: 700, margin: '0 0 6px' }}>🧮 Allergy Modification Planner</h2>
           <p style={{ color: '#A8B8D0', fontSize: 14, margin: '0 0 24px' }}>Get a prioritized modification list with cost estimate and expected relief percentage</p>
 
@@ -123,7 +123,7 @@ export default function DFWHomeAllergyGuide() {
               <div style={{ display: 'flex', flexWrap: 'wrap', gap: 10 }}>
                 {options.map((opt: string) => (
                   <button key={opt} onClick={() => { (setter as (v: string) => void)(opt); setShowResults(false); }}
-                    style={{ padding: '8px 14px', borderRadius: 8, border: `2px solid ${value === opt ? '#F5E642' : '#1E3A5F'}`, background: value === opt ? '#F5E642′ : '#0D1B33', color: value === opt ? '#0A1628' : '#E8EDF5', fontWeight: 600, cursor: ’pointer', fontSize: 13 }}>
+                    style={{ padding: '8px 14px', borderRadius: 8, border: `2px solid ${value === opt ? '#F5E642' : '#1E3A5F'}`, background: value === opt ? '#F5E642' : '#0D1B33', color: value === opt ? '#0A1628' : '#E8EDF5', fontWeight: 600, cursor: 'pointer', fontSize: 13 }}>
                     {opt}
                   </button>
                 ))}
@@ -137,7 +137,7 @@ export default function DFWHomeAllergyGuide() {
           </button>
 
           {showResults && result && (
-            <div style={{ marginTop: 28, background: '#0A1628', borderRadius: 12, padding: 24, border: '2px solid #F5E642′ }}>
+            <div style={{ marginTop: 28, background: '#0A1628', borderRadius: 12, padding: 24, border: '2px solid #F5E642' }}>
               <h3 style={{ color: '#F5E642', margin: '0 0 6px', fontSize: 20 }}>Your DFW Allergy Modification Plan</h3>
               <div style={{ display: 'flex', gap: 32, marginBottom: 20, flexWrap: 'wrap' }}>
                 <div>

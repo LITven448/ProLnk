@@ -74,13 +74,13 @@ export default function DFWHVACWarrantyRegistration2026() {
           {Object.keys(brands).map(b => (
             <button key={b} onClick={() => setBrand(b)}
               style={{ padding: '10px 20px', borderRadius: 8, border: 'none', cursor: 'pointer', fontWeight: 700, fontSize: 14,
-                background: brand === b ? '#F5E642′ : '#1e2d45', color: brand === b ? '#0A1628' : '#94a3b8' }}>
+                background: brand === b ? '#F5E642' : '#1e2d45', color: brand === b ? '#0A1628' : '#94a3b8' }}>
               {b}
             </button>
           ))}
         </div>
 
-        <div style={{ background: '#1e2d45', borderRadius: 12, padding: '18px 20px', marginBottom: 20, borderLeft: '4px solid #F5E642′ }}>
+        <div style={{ background: '#1e2d45', borderRadius: 12, padding: '18px 20px', marginBottom: 20, borderLeft: '4px solid #F5E642' }}>
           <div style={{ color: '#F5E642', fontWeight: 700, fontSize: 14 }}>⏰ Deadline: {info.deadline}</div>
           <div style={{ color: '#94a3b8', fontSize: 13, marginTop: 4 }}>🎁 Coverage upgrade: {info.upgrade}</div>
         </div>

@@ -33,7 +33,7 @@ export default function DFWFoundationNewsBriefing2026() {
             {[['all', 'All News', ''], ['settlement', 'Settlement / Sinking', 'settlement'], ['repair', 'Need Repair', 'repair'], ['insurance', 'Insurance Claim', 'insurance']].map(([, label, val]) => (
               <button key={val} onClick={() => setConcern(val)}
                 style={{ padding: '8px 14px', borderRadius: 8, border: 'none', cursor: 'pointer', fontSize: 13, fontWeight: 600,
-                  backgroundColor: concern === val ? '#F5E642′ : '#1a2d50', color: concern === val ? '#0A1628' : '#94a3b8' }}>
+                  backgroundColor: concern === val ? '#F5E642' : '#1a2d50', color: concern === val ? '#0A1628' : '#94a3b8' }}>
                 {label}
               </button>
             ))}
@@ -48,7 +48,7 @@ export default function DFWFoundationNewsBriefing2026() {
 
         <div style={{ display: 'flex', flexDirection: 'column', gap: 14 }}>
           {filtered.map((s, i) => (
-            <div key={i} style={{ backgroundColor: '#111d35', borderRadius: 12, padding: 20, borderLeft: '4px solid #F5E642′ }}>
+            <div key={i} style={{ backgroundColor: '#111d35', borderRadius: 12, padding: 20, borderLeft: '4px solid #F5E642' }}>
               <div style={{ display: 'flex', gap: 12, alignItems: 'flex-start' }}>
                 <span style={{ fontSize: 28 }}>{s.emoji}</span>
                 <div>
@@ -60,7 +60,7 @@ export default function DFWFoundationNewsBriefing2026() {
           ))}
         </div>
 
-        <div style={{ marginTop: 32, backgroundColor: '#1a2d50', borderRadius: 12, padding: 24, textAlign: 'center', border: '2px solid #F5E642′ }}>
+        <div style={{ marginTop: 32, backgroundColor: '#1a2d50', borderRadius: 12, padding: 24, textAlign: 'center', border: '2px solid #F5E642' }}>
           <div style={{ fontSize: 32 }}>🛡️</div>
           <p style={{ fontSize: 17, fontWeight: 700, marginBottom: 8 }}>Get Matched with a Charter Foundation Pro</p>
           <p style={{ color: '#94a3b8', fontSize: 14, marginBottom: 16 }}>

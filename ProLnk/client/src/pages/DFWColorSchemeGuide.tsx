@@ -54,7 +54,7 @@ export default function DFWColorSchemeGuide() {
     <div style={{ minHeight: '100vh', background: '#F5F2EB', color: '#1A1A2E', fontFamily: 'system-ui, sans-serif', padding: '40px 20px' }}>
       <div style={{ maxWidth: 820, margin: '0 auto' }}>
         <div style={{ marginBottom: 8, color: '#8B6914', fontSize: 13, fontWeight: 700, letterSpacing: 2, textTransform: 'uppercase' }}>🎨 DFW Home Seller Guide</div>
-        <h1 style={{ fontSize: 36, fontWeight: 800, marginBottom: 8, lineHeight: 1.2, color: '#0A1628′ }}>Color Scheme Guide<br />for DFW Homes 2026</h1>
+        <h1 style={{ fontSize: 36, fontWeight: 800, marginBottom: 8, lineHeight: 1.2, color: '#0A1628' }}>Color Scheme Guide<br />for DFW Homes 2026</h1>
         <p style={{ color: '#5A6280', marginBottom: 40, fontSize: 16, lineHeight: 1.7 }}>
           DFW buyers have clear color preferences shaped by Texas light, HOA requirements, hail-resistance needs, and neighborhood norms. The wrong color scheme can cost you buyers before they walk in the door.
         </p>
@@ -68,18 +68,18 @@ export default function DFWColorSchemeGuide() {
           ].map(tip => (
             <div key={tip.title} style={{ background: '#FFFFFF', borderRadius: 10, padding: 20, border: '1px solid #E0D9CC', boxShadow: '0 2px 8px rgba(0,0,0,0.06)' }}>
               <div style={{ fontSize: 24, marginBottom: 10 }}>{tip.icon}</div>
-              <div style={{ fontWeight: 700, marginBottom: 6, color: '#0A1628′ }}>{tip.title}</div>
+              <div style={{ fontWeight: 700, marginBottom: 6, color: '#0A1628' }}>{tip.title}</div>
               <div style={{ fontSize: 13, color: '#5A6280', lineHeight: 1.5 }}>{tip.note}</div>
             </div>
           ))}
         </div>
 
         <div style={{ background: '#FFFFFF', borderRadius: 12, padding: 28, marginBottom: 32, border: '1px solid #E0D9CC', boxShadow: '0 2px 8px rgba(0,0,0,0.06)' }}>
-          <h2 style={{ fontSize: 18, fontWeight: 700, marginBottom: 20, color: '#0A1628′ }}>🔍 Color Palette Recommender</h2>
+          <h2 style={{ fontSize: 18, fontWeight: 700, marginBottom: 20, color: '#0A1628' }}>🔍 Color Palette Recommender</h2>
           <p style={{ color: '#5A6280', marginBottom: 16, fontSize: 14 }}>Select your home style to get DFW-optimized color recommendations:</p>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))', gap: 12, marginBottom: 24 }}>
             {homeStyles.map(s => (
-              <button key={s.id} onClick={() => setSelected(s.id)} style={{ background: selected === s.id ? '#0A1628′ : '#F5F2EB', color: selected === s.id ? '#F5E642' : '#1A1A2E', border: '2px solid', borderColor: selected === s.id ? '#0A1628' : '#E0D9CC', borderRadius: 8, padding: '14px 16px', cursor: ’pointer', fontWeight: 700, fontSize: 15 }}>
+              <button key={s.id} onClick={() => setSelected(s.id)} style={{ background: selected === s.id ? '#0A1628' : '#F5F2EB', color: selected === s.id ? '#F5E642' : '#1A1A2E', border: '2px solid', borderColor: selected === s.id ? '#0A1628' : '#E0D9CC', borderRadius: 8, padding: '14px 16px', cursor: 'pointer', fontWeight: 700, fontSize: 15 }}>
                 {s.label}
               </button>
             ))}
@@ -95,11 +95,11 @@ export default function DFWColorSchemeGuide() {
                     <div style={{ fontWeight: 700, marginBottom: 12, color: '#0A1628', borderBottom: '2px solid #E0D9CC', paddingBottom: 8 }}>🏠 Interior Palette</div>
                     <div style={{ marginBottom: 8 }}>
                       <div style={{ fontSize: 11, color: '#8B6914', fontWeight: 700, letterSpacing: 1, textTransform: 'uppercase', marginBottom: 4 }}>Main Color</div>
-                      <div style={{ fontSize: 14, fontWeight: 600, color: '#0A1628′ }}>{pal.interiorMain}</div>
+                      <div style={{ fontSize: 14, fontWeight: 600, color: '#0A1628' }}>{pal.interiorMain}</div>
                     </div>
                     <div style={{ marginBottom: 12 }}>
                       <div style={{ fontSize: 11, color: '#8B6914', fontWeight: 700, letterSpacing: 1, textTransform: 'uppercase', marginBottom: 4 }}>Accent</div>
-                      <div style={{ fontSize: 14, fontWeight: 600, color: '#0A1628′ }}>{pal.interiorAccent}</div>
+                      <div style={{ fontSize: 14, fontWeight: 600, color: '#0A1628' }}>{pal.interiorAccent}</div>
                     </div>
                     <div style={{ fontSize: 13, color: '#5A6280', lineHeight: 1.6 }}>{pal.interiorNotes}</div>
                   </div>
@@ -107,11 +107,11 @@ export default function DFWColorSchemeGuide() {
                     <div style={{ fontWeight: 700, marginBottom: 12, color: '#0A1628', borderBottom: '2px solid #E0D9CC', paddingBottom: 8 }}>🏡 Exterior Palette</div>
                     <div style={{ marginBottom: 8 }}>
                       <div style={{ fontSize: 11, color: '#8B6914', fontWeight: 700, letterSpacing: 1, textTransform: 'uppercase', marginBottom: 4 }}>Body Color</div>
-                      <div style={{ fontSize: 14, fontWeight: 600, color: '#0A1628′ }}>{pal.exteriorBody}</div>
+                      <div style={{ fontSize: 14, fontWeight: 600, color: '#0A1628' }}>{pal.exteriorBody}</div>
                     </div>
                     <div style={{ marginBottom: 12 }}>
                       <div style={{ fontSize: 11, color: '#8B6914', fontWeight: 700, letterSpacing: 1, textTransform: 'uppercase', marginBottom: 4 }}>Trim Color</div>
-                      <div style={{ fontSize: 14, fontWeight: 600, color: '#0A1628′ }}>{pal.exteriorTrim}</div>
+                      <div style={{ fontSize: 14, fontWeight: 600, color: '#0A1628' }}>{pal.exteriorTrim}</div>
                     </div>
                     <div style={{ fontSize: 13, color: '#5A6280', lineHeight: 1.6 }}>{pal.exteriorNotes}</div>
                   </div>
@@ -125,8 +125,8 @@ export default function DFWColorSchemeGuide() {
           )}
         </div>
 
-        <div style={{ background: '#0A1628', borderRadius: 12, padding: 28, color: '#E8EAF0′ }}>
-          <h2 style={{ fontSize: 16, fontWeight: 700, marginBottom: 16, color: '#F5E642′ }}>💡 Universal DFW Color Rules</h2>
+        <div style={{ background: '#0A1628', borderRadius: 12, padding: 28, color: '#E8EAF0' }}>
+          <h2 style={{ fontSize: 16, fontWeight: 700, marginBottom: 16, color: '#F5E642' }}>💡 Universal DFW Color Rules</h2>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12 }}>
             {[
               'Test paint chips in DFW light — morning and 4pm sun read very differently',

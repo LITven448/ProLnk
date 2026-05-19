@@ -94,7 +94,7 @@ export default function DFWHomeOwnerPeaceOfMind() {
           🏡 DFW Homeowner Peace of Mind
         </h1>
         <p style={{ color: '#94a3b8', marginBottom: 28, lineHeight: 1.6 }}>
-          Peace of mind as a DFW homeowner isn't luck — it’s a system. Four pillars protect 
+          Peace of mind as a DFW homeowner isn't luck — it's a system. Four pillars protect 
           your home, your finances, and your family when North Texas weather gets serious.
         </p>
 
@@ -131,8 +131,8 @@ export default function DFWHomeOwnerPeaceOfMind() {
                       cursor: 'pointer',
                       fontWeight: 600,
                       fontSize: 13,
-                      background: situation[field.key as keyof Situation] === val ? '#F5E642′ : '#1e3a5f',
-                      color: situation[field.key as keyof Situation] === val ? '#0A1628′ : '#94a3b8',
+                      background: situation[field.key as keyof Situation] === val ? '#F5E642' : '#1e3a5f',
+                      color: situation[field.key as keyof Situation] === val ? '#0A1628' : '#94a3b8',
                     }}
                   >
                     {val === 'yes' ? '✅ Yes' : val === 'no' ? '❌ No' : '🟡 Partial'}
@@ -153,22 +153,22 @@ export default function DFWHomeOwnerPeaceOfMind() {
 
         {showPlan && (
           <div style={{ background: '#0f2040', borderRadius: 12, padding: 24, marginBottom: 24 }}>
-            <h2 style={{ fontSize: 18, fontWeight: 700, marginBottom: 16, color: '#F5E642′ }}>
+            <h2 style={{ fontSize: 18, fontWeight: 700, marginBottom: 16, color: '#F5E642' }}>
               {gapKeys.length === 0 ? '🏆 You Are Fully Protected!' : `🎯 Your Action Plan (${gapKeys.length} Gap${gapKeys.length > 1 ? 's' : ''})`}
             </h2>
             {gapKeys.length === 0 ? (
-              <p style={{ color: '#94a3b8′ }}>You have all four protection pillars in place. You are one of the most prepared DFW homeowners. Share ProLnk with a neighbor who isn’t there yet.</p>
+              <p style={{ color: '#94a3b8' }}>You have all four protection pillars in place. You are one of the most prepared DFW homeowners. Share ProLnk with a neighbor who isn't there yet.</p>
             ) : (
               gapKeys.map(key => (
                 <div key={key} style={{ marginBottom: 20 }}>
-                  <div style={{ fontWeight: 700, marginBottom: 8, color: '#F5E642′ }}>
+                  <div style={{ fontWeight: 700, marginBottom: 8, color: '#F5E642' }}>
                     {key === 'hasVettedContractors' ? '🔧 Get Vetted Contractors' :
                      key === 'hasMaintenance' ? '🛠️ Start Preventive Maintenance' :
                      key === 'hasInsurance' ? '📋 Fix Your Insurance Gaps' :
                      '📁 Build Your Documentation'}
                   </div>
                   {actionMap[key].map((action, i) => (
-                    <div key={i} style={{ fontSize: 14, padding: '4px 0', color: '#cbd5e1′ }}>{action}</div>
+                    <div key={i} style={{ fontSize: 14, padding: '4px 0', color: '#cbd5e1' }}>{action}</div>
                   ))}
                 </div>
               ))
@@ -183,7 +183,7 @@ export default function DFWHomeOwnerPeaceOfMind() {
               <div style={{ fontWeight: 600, marginBottom: 4, fontSize: 14 }}>{item.item}</div>
               <div style={{ display: 'flex', gap: 16, flexWrap: 'wrap' }}>
                 <span style={{ background: '#F5E642', color: '#0A1628', borderRadius: 6, padding: '2px 8px', fontSize: 12, fontWeight: 700 }}>{item.cost}</span>
-                <span style={{ fontSize: 13, color: '#94a3b8′ }}>→ {item.impact}</span>
+                <span style={{ fontSize: 13, color: '#94a3b8' }}>→ {item.impact}</span>
               </div>
             </div>
           ))}

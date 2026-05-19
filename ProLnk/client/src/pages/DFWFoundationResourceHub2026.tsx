@@ -57,7 +57,7 @@ export default function DFWFoundationResourceHub2026() {
           </p>
         </div>
 
-        <div style={{ background: '#1e3a5f', borderRadius: 12, padding: 16, marginBottom: 28, border: '1px solid #F5E642′ }}>
+        <div style={{ background: '#1e3a5f', borderRadius: 12, padding: 16, marginBottom: 28, border: '1px solid #F5E642' }}>
           <p style={{ color: '#F5E642', fontWeight: 700, margin: '0 0 4px', fontSize: 14 }}>⚠️ DFW Foundation Alert</p>
           <p style={{ color: '#94a3b8', margin: 0, fontSize: 14 }}>
             North Texas black clay soil (Vertisols) expands and contracts dramatically with moisture — the #1 cause of DFW foundation issues. Consistent watering is your best prevention.
@@ -71,7 +71,7 @@ export default function DFWFoundationResourceHub2026() {
               onClick={() => setActive(c.id)}
               style={{
                 padding: '10px 20px', borderRadius: 24, border: 'none', cursor: 'pointer', fontWeight: 700, fontSize: 14,
-                background: active === c.id ? '#F5E642′ : '#1e3a5f', color: active === c.id ? '#0A1628' : '#94a3b8',
+                background: active === c.id ? '#F5E642' : '#1e3a5f', color: active === c.id ? '#0A1628' : '#94a3b8',
               }}
             >
               {c.label}
@@ -94,7 +94,7 @@ export default function DFWFoundationResourceHub2026() {
           ))}
         </div>
 
-        <div style={{ background: '#1e3a5f', borderRadius: 16, padding: 28, textAlign: 'center', border: '2px solid #F5E642′ }}>
+        <div style={{ background: '#1e3a5f', borderRadius: 16, padding: 28, textAlign: 'center', border: '2px solid #F5E642' }}>
           <div style={{ fontSize: 32, marginBottom: 8 }}>🏗️</div>
           <h2 style={{ fontSize: 22, fontWeight: 800, color: '#F5E642', margin: '0 0 8px' }}>Get a Foundation Evaluation Today</h2>
           <p style={{ color: '#94a3b8', marginBottom: 16 }}>ProLnk connects DFW homeowners with certified structural engineers and foundation specialists.</p>

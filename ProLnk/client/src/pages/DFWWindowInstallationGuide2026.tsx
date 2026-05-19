@@ -47,11 +47,11 @@ export default function DFWWindowInstallationGuide2026() {
           </div>
           <div style={{ marginBottom: 16 }}>
             <label style={{ color: '#94a3b8', fontSize: 13, display: 'block', marginBottom: 6 }}>Number of Windows: {windowCount}</label>
-            <input type="range" min={1} max={20} value={windowCount} onChange={(e) => setWindowCount(Number(e.target.value))} style={{ width: '100%', accentColor: '#F5E642′ }} />
+            <input type="range" min={1} max={20} value={windowCount} onChange={(e) => setWindowCount(Number(e.target.value))} style={{ width: '100%', accentColor: '#F5E642' }} />
           </div>
           <button onClick={() => setShowGuide(true)} style={{ background: '#F5E642', color: '#0A1628', border: 'none', borderRadius: 6, padding: '10px 24px', fontWeight: 700, cursor: 'pointer' }}>Generate Guide →</button>
           {showGuide && (
-            <div style={{ marginTop: 16, padding: 16, background: '#0A1628', borderRadius: 8, borderLeft: '3px solid #F5E642′ }}>
+            <div style={{ marginTop: 16, padding: 16, background: '#0A1628', borderRadius: 8, borderLeft: '3px solid #F5E642' }}>
               <div style={{ color: '#F5E642', fontWeight: 700, marginBottom: 8 }}>{selected.label} — {windowCount} Windows</div>
               <div style={{ color: '#94a3b8', fontSize: 13, lineHeight: 1.7 }}>
                 <div>⏱ Estimated Time: <span style={{ color: '#fff' }}>{totalHours}–{totalHours * 1.5} hours total</span></div>

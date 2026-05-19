@@ -44,7 +44,7 @@ export default function DFWHVACNewTechGuide2026() {
             { icon: '📡', title: 'Communicating Stats', desc: 'Trane ComfortLink II and Carrier Infinity exchange real-time data with every component for self-optimization.' },
             { icon: '🤖', title: 'AI Predictive Maintenance', desc: 'Sensors detect refrigerant drift, coil fouling, and bearing wear weeks before failure. DFW contractors alerted instantly.' },
           ].map((item) => (
-            <div key={item.title} style={{ background: '#1e2d45', borderRadius: 12, padding: 20, borderLeft: '3px solid #F5E642′ }}>
+            <div key={item.title} style={{ background: '#1e2d45', borderRadius: 12, padding: 20, borderLeft: '3px solid #F5E642' }}>
               <div style={{ fontSize: 28, marginBottom: 8 }}>{item.icon}</div>
               <div style={{ fontWeight: 700, color: '#F5E642', marginBottom: 6 }}>{item.title}</div>
               <div style={{ color: '#94a3b8', fontSize: 14 }}>{item.desc}</div>
@@ -57,7 +57,7 @@ export default function DFWHVACNewTechGuide2026() {
           <div style={{ display: 'grid', gap: 16, marginBottom: 20 }}>
             <div>
               <label style={{ color: '#94a3b8', display: 'block', marginBottom: 8 }}>Current System Age</label>
-              <select value={systemAge} onChange={(e) => setSystemAge(e.target.value)} style={{ width: '100%', padding: 12, borderRadius: 8, background: '#0A1628', color: '#fff', border: '1px solid #334155′ }}>
+              <select value={systemAge} onChange={(e) => setSystemAge(e.target.value)} style={{ width: '100%', padding: 12, borderRadius: 8, background: '#0A1628', color: '#fff', border: '1px solid #334155' }}>
                 <option value=''>Select age...</option>
                 <option value='0-5'>0–5 years (newer system)</option>
                 <option value='6-15'>6–15 years (mid-life)</option>
@@ -66,7 +66,7 @@ export default function DFWHVACNewTechGuide2026() {
             </div>
             <div>
               <label style={{ color: '#94a3b8', display: 'block', marginBottom: 8 }}>Home Size</label>
-              <select value={homeSize} onChange={(e) => setHomeSize(e.target.value)} style={{ width: '100%', padding: 12, borderRadius: 8, background: '#0A1628', color: '#fff', border: '1px solid #334155′ }}>
+              <select value={homeSize} onChange={(e) => setHomeSize(e.target.value)} style={{ width: '100%', padding: 12, borderRadius: 8, background: '#0A1628', color: '#fff', border: '1px solid #334155' }}>
                 <option value=''>Select size...</option>
                 <option value='small'>Under 2,000 sq ft</option>
                 <option value='medium'>2,000–3,500 sq ft</option>
@@ -75,7 +75,7 @@ export default function DFWHVACNewTechGuide2026() {
             </div>
           </div>
           <button onClick={generate} style={{ background: '#F5E642', color: '#0A1628', border: 'none', borderRadius: 8, padding: '12px 28px', fontWeight: 700, fontSize: 15, cursor: 'pointer' }}>Get My Tech Upgrade Path ⚡</button>
-          {result && <div style={{ marginTop: 20, background: '#0A1628', borderRadius: 10, padding: 20, color: '#e2e8f0', lineHeight: 1.7, borderLeft: '3px solid #F5E642′ }}>{result}</div>}
+          {result && <div style={{ marginTop: 20, background: '#0A1628', borderRadius: 10, padding: 20, color: '#e2e8f0', lineHeight: 1.7, borderLeft: '3px solid #F5E642' }}>{result}</div>}
         </div>
 
         <div style={{ textAlign: 'center', background: '#1e2d45', borderRadius: 12, padding: 24 }}>

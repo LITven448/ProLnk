@@ -33,7 +33,7 @@ export default function DFWGardenBedGuide2026() {
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(160px, 1fr))', gap: 14, marginBottom: 32 }}>
           {goals.map(g => (
             <button key={g.goal} onClick={() => setSelected(g.goal === selected ? null : g.goal)}
-              style={{ background: selected === g.goal ? '#F5E642′ : '#1a2a42', border: '2px solid', borderColor: selected === g.goal ? '#F5E642' : '#2a3a55', borderRadius: 10, padding: '18px 10px', cursor: ’pointer', color: selected === g.goal ? '#0A1628′ : '#fff', fontWeight: 700, fontSize: 14, transition: ’all .2s' }}>
+              style={{ background: selected === g.goal ? '#F5E642' : '#1a2a42', border: '2px solid', borderColor: selected === g.goal ? '#F5E642' : '#2a3a55', borderRadius: 10, padding: '18px 10px', cursor: 'pointer', color: selected === g.goal ? '#0A1628' : '#fff', fontWeight: 700, fontSize: 14, transition: 'all .2s' }}>
               <div style={{ fontSize: 28, marginBottom: 6 }}>{g.icon}</div>
               {g.goal}
               <div style={{ fontSize: 11, marginTop: 6, opacity: 0.8 }}>{g.space}</div>
@@ -42,7 +42,7 @@ export default function DFWGardenBedGuide2026() {
         </div>
 
         {active && (
-          <div style={{ background: '#1a2a42', borderRadius: 12, padding: 28, borderLeft: '4px solid #F5E642′ }}>
+          <div style={{ background: '#1a2a42', borderRadius: 12, padding: 28, borderLeft: '4px solid #F5E642' }}>
             <h2 style={{ color: '#F5E642', marginTop: 0 }}>{active.icon} {active.goal} — DFW Planting Guide</h2>
             <ul style={{ paddingLeft: 20, lineHeight: 2 }}>
               {active.tips.map((t, i) => <li key={i} style={{ color: '#dde' }}>{t}</li>)}

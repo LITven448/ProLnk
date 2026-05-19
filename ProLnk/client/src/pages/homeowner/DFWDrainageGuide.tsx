@@ -76,14 +76,14 @@ export default function DFWDrainageGuide() {
               <p style={{ color: '#CBD5E1', margin: 0, lineHeight: 1.7, fontSize: 15 }}>
                 DFW sits on expansive clay soil — the kind that swells when wet and shrinks when dry. 
                 This creates a seasonal "breathing" effect under your foundation: 
-                <strong style={{ color: '#F1F5F9′ }}> up to 4 inches of vertical movement per year</strong> in poorly drained areas.
+                <strong style={{ color: '#F1F5F9' }}> up to 4 inches of vertical movement per year</strong> in poorly drained areas.
               </p>
             </div>
             <div>
               <p style={{ color: '#CBD5E1', margin: 0, lineHeight: 1.7, fontSize: 15 }}>
                 Water that pools near your foundation doesn't just cause flooding — it causes the soil to swell, 
                 then dry, then crack. Each cycle chips away at your slab's structural integrity. 
-                Foundation repairs in DFW average <strong style={{ color: '#EF4444′ }}>$10,000–$50,000</strong> for damage caused by preventable drainage issues.
+                Foundation repairs in DFW average <strong style={{ color: '#EF4444' }}>$10,000–$50,000</strong> for damage caused by preventable drainage issues.
               </p>
             </div>
           </div>
@@ -104,7 +104,7 @@ export default function DFWDrainageGuide() {
                   {checked[item.id] ? '✓' : ''}
                 </div>
                 <div>
-                  <div style={{ fontWeight: 700, fontSize: 15, marginBottom: 4, color: checked[item.id] ? '#86EFAC' : '#F1F5F9′ }}>{item.label}</div>
+                  <div style={{ fontWeight: 700, fontSize: 15, marginBottom: 4, color: checked[item.id] ? '#86EFAC' : '#F1F5F9' }}>{item.label}</div>
                   <div style={{ color: '#94A3B8', fontSize: 13, lineHeight: 1.6 }}>{item.description}</div>
                 </div>
               </div>
@@ -149,7 +149,7 @@ export default function DFWDrainageGuide() {
             Many DFW homeowners add foundation watering systems to prevent drought shrinkage — this is valid in dry summers. 
             However, if you also have a drainage problem, adding water near your foundation creates the worst of both worlds: 
             soil that swells unevenly because moisture levels vary around the perimeter. 
-            <strong style={{ color: '#F1F5F9′ }}> Fix drainage first, then add foundation watering only in dry zones.</strong>
+            <strong style={{ color: '#F1F5F9' }}> Fix drainage first, then add foundation watering only in dry zones.</strong>
           </p>
         </div>
 

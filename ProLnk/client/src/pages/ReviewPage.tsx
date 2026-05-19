@@ -39,10 +39,10 @@ function AnimatedStarRating({
   size?: "sm" | "lg";
 }) {
   const [hovered, setHovered] = useState(0);
-  const starSizeClass = size === "lg" ? "w-10 h-10″ : "w-6 h-6";
+  const starSizeClass = size === "lg" ? "w-10 h-10" : "w-6 h-6";
 
   return (
-    <div className="flex gap-1″>
+    <div className="flex gap-1">
       {[1, 2, 3, 4, 5].map(star => {
         const active = star <= (hovered || value);
         return (
@@ -57,7 +57,7 @@ function AnimatedStarRating({
           >
             <Star
               className={`${starSizeClass} transition-colors duration-150 ${
-                active ? "fill-amber-400 text-amber-400″ : "text-gray-300 fill-transparent"
+                active ? "fill-amber-400 text-amber-400" : "text-gray-300 fill-transparent"
               }`}
             />
           </button>
@@ -77,15 +77,15 @@ function CategoryRating({
   onChange: (v: number) => void;
 }) {
   return (
-    <div className="space-y-1.5″>
+    <div className="space-y-1.5">
       <div>
-        <div className="text-sm font-medium text-gray-200″>{category}</div>
-        <div className="text-xs text-gray-500″>{CATEGORY_DESCRIPTIONS[category]}</div>
+        <div className="text-sm font-medium text-gray-200">{category}</div>
+        <div className="text-xs text-gray-500">{CATEGORY_DESCRIPTIONS[category]}</div>
       </div>
-      <div className="flex items-center gap-3″>
+      <div className="flex items-center gap-3">
         <AnimatedStarRating value={value} onChange={onChange} size="sm" />
         {value > 0 && (
-          <span className="text-xs font-medium text-amber-400″>{RATING_LABELS[value]}</span>
+          <span className="text-xs font-medium text-amber-400">{RATING_LABELS[value]}</span>
         )}
       </div>
     </div>
@@ -102,9 +102,9 @@ function RecommendButton({
   onClick: () => void;
 }) {
   const config = {
-    yes: { icon: <ThumbsUp className="w-4 h-4″ />, label: "Yes", color: selected ? "bg-teal-600 border-teal-500 text-white" : "border-gray-600 text-gray-400 hover:border-teal-500 hover:text-teal-400" },
-    no: { icon: <ThumbsDown className="w-4 h-4″ />, label: "No", color: selected ? "bg-red-600 border-red-500 text-white" : "border-gray-600 text-gray-400 hover:border-red-500 hover:text-red-400" },
-    maybe: { icon: <Minus className="w-4 h-4″ />, label: "Maybe", color: selected ? "bg-amber-600 border-amber-500 text-white" : "border-gray-600 text-gray-400 hover:border-amber-500 hover:text-amber-400" },
+    yes: { icon: <ThumbsUp className="w-4 h-4" />, label: "Yes", color: selected ? "bg-teal-600 border-teal-500 text-white" : "border-gray-600 text-gray-400 hover:border-teal-500 hover:text-teal-400" },
+    no: { icon: <ThumbsDown className="w-4 h-4" />, label: "No", color: selected ? "bg-red-600 border-red-500 text-white" : "border-gray-600 text-gray-400 hover:border-red-500 hover:text-red-400" },
+    maybe: { icon: <Minus className="w-4 h-4" />, label: "Maybe", color: selected ? "bg-amber-600 border-amber-500 text-white" : "border-gray-600 text-gray-400 hover:border-amber-500 hover:text-amber-400" },
   }[type];
 
   return (
@@ -170,8 +170,8 @@ export default function ReviewPage() {
   if (isLoading) {
     return (
       <div className="min-h-screen bg-[#0A1628] flex items-center justify-center">
-        <div className="flex flex-col items-center gap-3″>
-          <Loader2 className="w-8 h-8 animate-spin text-teal-400″ />
+        <div className="flex flex-col items-center gap-3">
+          <Loader2 className="w-8 h-8 animate-spin text-teal-400" />
           <p className="text-gray-400 text-sm">Loading review form...</p>
         </div>
       </div>
@@ -180,8 +180,8 @@ export default function ReviewPage() {
 
   if (!request || error) {
     return (
-      <div className="min-h-screen bg-[#0A1628] flex items-center justify-center p-4″>
-        <div className="max-w-md w-full text-center bg-[#0d1f3c] border border-gray-700 rounded-2xl p-10 space-y-4″>
+      <div className="min-h-screen bg-[#0A1628] flex items-center justify-center p-4">
+        <div className="max-w-md w-full text-center bg-[#0d1f3c] border border-gray-700 rounded-2xl p-10 space-y-4">
           <AlertCircle className="w-12 h-12 text-red-400 mx-auto" />
           <h2 className="text-xl font-bold text-white">Review Link Not Found</h2>
           <p className="text-gray-400 text-sm">
@@ -194,29 +194,29 @@ export default function ReviewPage() {
 
   if (submitted) {
     return (
-      <div className="min-h-screen bg-[#0A1628] flex items-center justify-center p-4″>
-        <div className="max-w-md w-full text-center bg-[#0d1f3c] border border-gray-700 rounded-2xl p-10 space-y-5″>
+      <div className="min-h-screen bg-[#0A1628] flex items-center justify-center p-4">
+        <div className="max-w-md w-full text-center bg-[#0d1f3c] border border-gray-700 rounded-2xl p-10 space-y-5">
           <div className="w-16 h-16 rounded-full bg-teal-500/20 flex items-center justify-center mx-auto">
-            <CheckCircle className="w-8 h-8 text-teal-400″ />
+            <CheckCircle className="w-8 h-8 text-teal-400" />
           </div>
           <h2 className="text-2xl font-bold text-white">Thank You!</h2>
           <p className="text-gray-400 text-sm leading-relaxed">
             Your review for <strong className="text-white">{request.businessName}</strong> has been submitted.
             It helps other homeowners find great service providers.
           </p>
-          <div className="flex justify-center gap-1″>
+          <div className="flex justify-center gap-1">
             {[1, 2, 3, 4, 5].map(s => (
               <Star key={s} className={`w-7 h-7 transition-all ${s <= rating ? "fill-amber-400 text-amber-400" : "text-gray-700 fill-gray-700"}`} />
             ))}
           </div>
           {rating >= 4 && (
             <div className="bg-[#0d2b1f] border border-teal-500/30 rounded-xl p-4 text-sm text-gray-300 text-left">
-              <div className="font-semibold text-teal-300 mb-1″>Love the service? Share it!</div>
+              <div className="font-semibold text-teal-300 mb-1">Love the service? Share it!</div>
               <p className="text-gray-400 text-xs">Consider leaving a Google review to help {request.businessName} reach more homeowners.</p>
             </div>
           )}
           <Button
-            className="w-full bg-[#1e3a5f] text-gray-300 hover:text-white hover:bg-[#243f6a] border border-gray-600″
+            className="w-full bg-[#1e3a5f] text-gray-300 hover:text-white hover:bg-[#243f6a] border border-gray-600"
             variant="outline"
             onClick={() => {
               const text = `I just left a review for ${request.businessName} on ProLnk! Great service. ⭐`.repeat(1);
@@ -224,7 +224,7 @@ export default function ReviewPage() {
               toast.success("Review text copied — share it!");
             }}
           >
-            <Share2 className="w-4 h-4 mr-2″ />
+            <Share2 className="w-4 h-4 mr-2" />
             Share Your Review
           </Button>
         </div>
@@ -234,43 +234,43 @@ export default function ReviewPage() {
 
   if (previewing) {
     return (
-      <div className="min-h-screen bg-[#0A1628] py-10 px-4″>
-        <div className="max-w-lg mx-auto space-y-5″>
-          <div className="text-center space-y-2″>
+      <div className="min-h-screen bg-[#0A1628] py-10 px-4">
+        <div className="max-w-lg mx-auto space-y-5">
+          <div className="text-center space-y-2">
             <ProLnkLogo height={32} variant="light" className="mx-auto" />
           </div>
 
-          <div className="bg-[#0d1f3c] border border-teal-500/40 rounded-2xl p-5 space-y-4″>
+          <div className="bg-[#0d1f3c] border border-teal-500/40 rounded-2xl p-5 space-y-4">
             <div className="flex items-center gap-2 text-teal-400 text-sm font-semibold">
-              <Eye className="w-4 h-4″ />
+              <Eye className="w-4 h-4" />
               Preview Your Review
             </div>
 
             <div className="flex items-center justify-between">
               <div className="text-sm font-semibold text-white">{request.businessName}</div>
-              <div className="flex gap-0.5″>
+              <div className="flex gap-0.5">
                 {[1, 2, 3, 4, 5].map(s => (
                   <Star key={s} className={`w-4 h-4 ${s <= rating ? "fill-amber-400 text-amber-400" : "text-gray-600"}`} />
                 ))}
               </div>
             </div>
 
-            {homeownerName && <div className="text-xs text-gray-400″>By {homeownerName}</div>}
+            {homeownerName && <div className="text-xs text-gray-400">By {homeownerName}</div>}
 
             {reviewText && (
               <p className="text-sm text-gray-300 border-l-2 border-teal-500/40 pl-3 italic">"{reviewText}"</p>
             )}
 
-            <div className="grid grid-cols-2 gap-2″>
+            <div className="grid grid-cols-2 gap-2">
               {[
                 { label: "Quality", value: ratingQuality },
                 { label: "Timeliness", value: ratingTimeliness },
                 { label: "Value", value: ratingValue },
                 { label: "Communication", value: ratingCommunication },
               ].filter(c => c.value > 0).map(({ label, value }) => (
-                <div key={label} className="bg-[#0a1628] rounded-lg p-2″>
-                  <div className="text-xs text-gray-500″>{label}</div>
-                  <div className="flex gap-0.5 mt-1″>
+                <div key={label} className="bg-[#0a1628] rounded-lg p-2">
+                  <div className="text-xs text-gray-500">{label}</div>
+                  <div className="flex gap-0.5 mt-1">
                     {[1, 2, 3, 4, 5].map(s => (
                       <Star key={s} className={`w-3 h-3 ${s <= value ? "fill-amber-400 text-amber-400" : "text-gray-700"}`} />
                     ))}
@@ -280,13 +280,13 @@ export default function ReviewPage() {
             </div>
 
             {recommend && (
-              <div className="text-xs text-gray-400″>
+              <div className="text-xs text-gray-400">
                 Would recommend: <span className={`font-medium ${recommend === "yes" ? "text-teal-400" : recommend === "no" ? "text-red-400" : "text-amber-400"}`}>{recommend.charAt(0).toUpperCase() + recommend.slice(1)}</span>
               </div>
             )}
           </div>
 
-          <div className="flex gap-3″>
+          <div className="flex gap-3">
             <Button
               variant="outline"
               className="flex-1 border-gray-600 text-gray-400 hover:text-white bg-transparent"
@@ -306,7 +306,7 @@ export default function ReviewPage() {
                 </>
               ) : (
                 <>
-                  <CheckCircle className="w-4 h-4 mr-2″ />
+                  <CheckCircle className="w-4 h-4 mr-2" />
                   Confirm & Submit
                 </>
               )}
@@ -318,50 +318,50 @@ export default function ReviewPage() {
   }
 
   return (
-    <div className="min-h-screen bg-[#0A1628] py-10 px-4″>
-      <div className="max-w-lg mx-auto space-y-5″>
+    <div className="min-h-screen bg-[#0A1628] py-10 px-4">
+      <div className="max-w-lg mx-auto space-y-5">
 
         {/* Header */}
-        <div className="text-center space-y-2″>
+        <div className="text-center space-y-2">
           <ProLnkLogo height={32} variant="light" className="shrink-0 mx-auto" />
-          <p className="text-xs text-gray-500″>Powered by ProLnk Partner Network</p>
+          <p className="text-xs text-gray-500">Powered by ProLnk Partner Network</p>
         </div>
 
         {/* Partner card */}
-        <div className="bg-[#0d1f3c] rounded-2xl border border-gray-700 p-5″>
-          <div className="flex items-start gap-4″>
-            <div className="w-12 h-12 rounded-xl bg-teal-500/10 flex items-center justify-center flex-shrink-0″>
-              <Building2 className="w-6 h-6 text-teal-400″ />
+        <div className="bg-[#0d1f3c] rounded-2xl border border-gray-700 p-5">
+          <div className="flex items-start gap-4">
+            <div className="w-12 h-12 rounded-xl bg-teal-500/10 flex items-center justify-center flex-shrink-0">
+              <Building2 className="w-6 h-6 text-teal-400" />
             </div>
             <div>
               <h2 className="text-lg font-bold text-white">{request.businessName}</h2>
-              <p className="text-sm text-gray-400″>{request.businessType}</p>
+              <p className="text-sm text-gray-400">{request.businessType}</p>
               {request.serviceArea && (
-                <div className="flex items-center gap-1 mt-1 text-xs text-gray-500″>
-                  <MapPin className="w-3 h-3″ />
+                <div className="flex items-center gap-1 mt-1 text-xs text-gray-500">
+                  <MapPin className="w-3 h-3" />
                   <span>{request.serviceArea}</span>
                 </div>
               )}
               {request.serviceAddress && (
-                <p className="text-xs text-gray-500 mt-0.5″>Job: {request.serviceAddress}</p>
+                <p className="text-xs text-gray-500 mt-0.5">Job: {request.serviceAddress}</p>
               )}
             </div>
           </div>
         </div>
 
         {/* Review form */}
-        <div className="bg-[#0d1f3c] rounded-2xl border border-gray-700 p-5 space-y-6″>
+        <div className="bg-[#0d1f3c] rounded-2xl border border-gray-700 p-5 space-y-6">
 
           {/* Overall rating */}
-          <div className="space-y-3″>
+          <div className="space-y-3">
             <div className="text-sm font-semibold text-white">
-              Overall Rating <span className="text-red-400″>*</span>
+              Overall Rating <span className="text-red-400">*</span>
             </div>
             <AnimatedStarRating value={rating} onChange={setRating} size="lg" />
             {rating > 0 && (
-              <div className="flex items-center gap-2″>
-                <span className="text-base font-bold text-amber-400″>{RATING_LABELS[rating]}</span>
-                <div className="flex gap-0.5″>
+              <div className="flex items-center gap-2">
+                <span className="text-base font-bold text-amber-400">{RATING_LABELS[rating]}</span>
+                <div className="flex gap-0.5">
                   {[1, 2, 3, 4, 5].map(s => (
                     <Star key={s} className={`w-3 h-3 ${s <= rating ? "fill-amber-400 text-amber-400" : "text-gray-700"}`} />
                   ))}
@@ -371,9 +371,9 @@ export default function ReviewPage() {
           </div>
 
           {/* Category ratings */}
-          <div className="space-y-4 pt-1 border-t border-gray-700″>
+          <div className="space-y-4 pt-1 border-t border-gray-700">
             <div className="text-xs font-medium text-gray-500 uppercase tracking-wide">Category Ratings (optional)</div>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-5″>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
               <CategoryRating category="Quality" value={ratingQuality} onChange={setRatingQuality} />
               <CategoryRating category="Timeliness" value={ratingTimeliness} onChange={setRatingTimeliness} />
               <CategoryRating category="Value" value={ratingValue} onChange={setRatingValue} />
@@ -382,7 +382,7 @@ export default function ReviewPage() {
           </div>
 
           {/* Review text */}
-          <div className="space-y-1.5 pt-1 border-t border-gray-700″>
+          <div className="space-y-1.5 pt-1 border-t border-gray-700">
             <label className="text-sm font-medium text-white">Write a Review <span className="text-gray-500 font-normal">(optional)</span></label>
             <Textarea
               placeholder="Tell others about your experience — what went well, what stood out..."
@@ -396,9 +396,9 @@ export default function ReviewPage() {
           </div>
 
           {/* Recommend */}
-          <div className="space-y-2 pt-1 border-t border-gray-700″>
+          <div className="space-y-2 pt-1 border-t border-gray-700">
             <label className="text-sm font-medium text-white">Would you recommend this pro? <span className="text-gray-500 font-normal">(optional)</span></label>
-            <div className="flex gap-2″>
+            <div className="flex gap-2">
               {(["yes", "no", "maybe"] as Recommend[]).map(r => (
                 <RecommendButton
                   key={r}
@@ -411,7 +411,7 @@ export default function ReviewPage() {
           </div>
 
           {/* Photo upload placeholder */}
-          <div className="space-y-1.5 pt-1 border-t border-gray-700″>
+          <div className="space-y-1.5 pt-1 border-t border-gray-700">
             <label className="text-sm font-medium text-white">Add Photos <span className="text-gray-500 font-normal">(optional)</span></label>
             <button
               type="button"
@@ -419,25 +419,25 @@ export default function ReviewPage() {
               className="w-full border-2 border-dashed border-gray-700 rounded-xl p-5 text-center hover:border-teal-500/50 hover:bg-teal-500/5 transition-all group"
             >
               <Camera className="w-8 h-8 text-gray-600 group-hover:text-teal-500 mx-auto mb-2 transition-colors" />
-              <div className="text-sm text-gray-500 group-hover:text-gray-400″>Tap to add photos of the work</div>
-              <div className="text-xs text-gray-600 mt-0.5″>Supports JPG, PNG up to 5MB each</div>
+              <div className="text-sm text-gray-500 group-hover:text-gray-400">Tap to add photos of the work</div>
+              <div className="text-xs text-gray-600 mt-0.5">Supports JPG, PNG up to 5MB each</div>
             </button>
           </div>
 
           {/* Name */}
-          <div className="space-y-1.5 pt-1 border-t border-gray-700″>
+          <div className="space-y-1.5 pt-1 border-t border-gray-700">
             <label className="text-sm font-medium text-white">Your Name <span className="text-gray-500 font-normal">(optional)</span></label>
             <Input
               placeholder="e.g. Sarah M."
               value={homeownerName}
               onChange={(e) => setHomeownerName(e.target.value)}
               maxLength={100}
-              className="bg-[#0a1628] border-gray-600 text-white placeholder:text-gray-600″
+              className="bg-[#0a1628] border-gray-600 text-white placeholder:text-gray-600"
             />
           </div>
 
           {/* Action buttons */}
-          <div className="flex gap-3 pt-1″>
+          <div className="flex gap-3 pt-1">
             <Button
               variant="outline"
               className="flex-1 border-gray-600 text-gray-400 hover:text-white bg-transparent"
@@ -446,7 +446,7 @@ export default function ReviewPage() {
                 setPreviewing(true);
               }}
             >
-              <Eye className="w-4 h-4 mr-2″ />
+              <Eye className="w-4 h-4 mr-2" />
               Preview
             </Button>
             <Button
@@ -463,13 +463,13 @@ export default function ReviewPage() {
               ) : (
                 <>
                   Submit Review
-                  <ChevronRight className="w-4 h-4 ml-1″ />
+                  <ChevronRight className="w-4 h-4 ml-1" />
                 </>
               )}
             </Button>
           </div>
 
-          <p className="text-xs text-center text-gray-600″>
+          <p className="text-xs text-center text-gray-600">
             Your review will be visible on the partner's public profile. Thank you for your feedback!
           </p>
         </div>

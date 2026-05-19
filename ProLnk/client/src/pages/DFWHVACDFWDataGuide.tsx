@@ -58,7 +58,7 @@ export default function DFWHVACDFWDataGuide() {
               key={d.decision}
               onClick={() => setSelected(selected === d.decision ? null : d.decision)}
               style={{
-                background: selected === d.decision ? '#132040′ : '#0F1E35',
+                background: selected === d.decision ? '#132040' : '#0F1E35',
                 border: `1.5px solid ${selected === d.decision ? '#F5E642' : '#1E2D45'}`,
                 borderRadius: 10,
                 padding: '16px 20px',
@@ -89,7 +89,7 @@ export default function DFWHVACDFWDataGuide() {
           </div>
         )}
 
-        <div style={{ marginTop: 40, background: '#0F1E35', borderRadius: 10, padding: '18px 22px', border: '1px solid #1E2D45′ }}>
+        <div style={{ marginTop: 40, background: '#0F1E35', borderRadius: 10, padding: '18px 22px', border: '1px solid #1E2D45' }}>
           <div style={{ color: '#F5E642', fontWeight: 700, marginBottom: 6 }}>📋 Quick Reference</div>
           <div style={{ color: '#9AA3B2', fontSize: 13, lineHeight: 1.7 }}>
             Design Temp: 100°F · Wet Bulb: 74°F · CDD: 2,900 · HDD: 1,100 · Summer RH: ~50%

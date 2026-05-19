@@ -103,7 +103,7 @@ export default function DFWRoofingMaterialsCompared() {
         <div style={{ background: '#1a1020', borderRadius: 12, padding: 16, marginBottom: 24, display: 'flex', alignItems: 'center', gap: 12 }}>
           <span style={{ fontSize: 24 }}>⛈️</span>
           <div>
-            <div style={{ fontWeight: 600, color: '#F5E642′ }}>DFW Hail Reality</div>
+            <div style={{ fontWeight: 600, color: '#F5E642' }}>DFW Hail Reality</div>
             <div style={{ color: '#94a3b8', fontSize: 13 }}>DFW averages 5–8 hail events per year with $1B+ in annual hail damage in North Texas. Class 4 impact-resistant materials can save you $500–$1,500/yr in insurance premiums.</div>
           </div>
         </div>
@@ -138,7 +138,7 @@ export default function DFWRoofingMaterialsCompared() {
                 <div style={{ color: '#94a3b8', fontSize: 13 }}>Class 4 rating = 20–35% insurance savings in DFW</div>
               </div>
               <button onClick={() => setInsurancePriority(!insurancePriority)}
-                style={{ background: insurancePriority ? '#F5E642′ : '#334', color: insurancePriority ? '#0A1628' : '#fff', border: ’none', borderRadius: 20, padding: '8px 16px', fontWeight: 600, cursor: 'pointer' }}>
+                style={{ background: insurancePriority ? '#F5E642' : '#334', color: insurancePriority ? '#0A1628' : '#fff', border: 'none', borderRadius: 20, padding: '8px 16px', fontWeight: 600, cursor: 'pointer' }}>
                 {insurancePriority ? '✅ Yes' : 'No'}
               </button>
             </div>
@@ -157,7 +157,7 @@ export default function DFWRoofingMaterialsCompared() {
         <div style={{ display: 'grid', gap: 12 }}>
           {materials.map(m => (
             <div key={m.id} onClick={() => setSelected(selected === m.id ? null : m.id)}
-              style={{ background: selected === m.id ? '#0f2040′ : '#0f1e35', border: `1px solid ${m.id === rec ? '#F5E642' : '#1e3a5f'}`, borderRadius: 12, padding: 20, cursor: ’pointer' }}>
+              style={{ background: selected === m.id ? '#0f2040' : '#0f1e35', border: `1px solid ${m.id === rec ? '#F5E642' : '#1e3a5f'}`, borderRadius: 12, padding: 20, cursor: 'pointer' }}>
               <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
                 <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
                   <span style={{ fontSize: 24 }}>{m.emoji}</span>
@@ -167,7 +167,7 @@ export default function DFWRoofingMaterialsCompared() {
                   </div>
                 </div>
                 <div style={{ textAlign: 'right' }}>
-                  <div style={{ color: m.insuranceDiscount !== 'None' && m.insuranceDiscount !== 'None (often surcharge)' ? '#4ade80′ : '#64748b', fontSize: 12, fontWeight: 600 }}>{m.insuranceDiscount}</div>
+                  <div style={{ color: m.insuranceDiscount !== 'None' && m.insuranceDiscount !== 'None (often surcharge)' ? '#4ade80' : '#64748b', fontSize: 12, fontWeight: 600 }}>{m.insuranceDiscount}</div>
                   <div style={{ color: '#64748b', fontSize: 11 }}>ins. discount</div>
                 </div>
               </div>

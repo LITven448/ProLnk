@@ -39,23 +39,23 @@ export default function DFWHVACOutdoorAmbientGuide2026() {
           <div style={{ fontWeight: 700, color: '#F5E642', marginBottom: 16 }}>🌡️ Performance Estimator</div>
           <div style={{ marginBottom: 16 }}>
             <label style={{ color: '#94a3b8', fontSize: 13, display: 'block', marginBottom: 6 }}>
-              Outdoor Temperature (°F): <strong style={{ color: '#F5E642′ }}>{temp}°F</strong>
+              Outdoor Temperature (°F): <strong style={{ color: '#F5E642' }}>{temp}°F</strong>
             </label>
-            <input type="range" min={85} max={120} value={temp} onChange={e => setTemp(Number(e.target.value))} style={{ width: '100%', accentColor: '#F5E642′ }} />
+            <input type="range" min={85} max={120} value={temp} onChange={e => setTemp(Number(e.target.value))} style={{ width: '100%', accentColor: '#F5E642' }} />
             <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: 11, color: '#64748b' }}>
               <span>85°F</span><span>120°F</span>
             </div>
           </div>
           <div style={{ marginBottom: 20 }}>
             <label style={{ color: '#94a3b8', fontSize: 13, display: 'block', marginBottom: 6 }}>
-              System Age (years): <strong style={{ color: '#F5E642′ }}>{age} yrs</strong>
+              System Age (years): <strong style={{ color: '#F5E642' }}>{age} yrs</strong>
             </label>
-            <input type="range" min={1} max={20} value={age} onChange={e => setAge(Number(e.target.value))} style={{ width: '100%', accentColor: '#F5E642′ }} />
+            <input type="range" min={1} max={20} value={age} onChange={e => setAge(Number(e.target.value))} style={{ width: '100%', accentColor: '#F5E642' }} />
             <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: 11, color: '#64748b' }}>
               <span>1 yr</span><span>20 yrs</span>
             </div>
           </div>
-          <div style={{ background: '#0A1628', borderRadius: 8, padding: 16, borderLeft: '3px solid #F5E642′ }}>
+          <div style={{ background: '#0A1628', borderRadius: 8, padding: 16, borderLeft: '3px solid #F5E642' }}>
             <div style={{ fontWeight: 700, marginBottom: 6 }}>{exp.label}</div>
             <div style={{ color: '#cbd5e1', fontSize: 13, lineHeight: 1.6 }}>{exp.detail}</div>
           </div>

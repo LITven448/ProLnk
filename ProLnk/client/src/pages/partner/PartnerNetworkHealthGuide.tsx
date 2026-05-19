@@ -29,7 +29,7 @@ export default function PartnerNetworkHealthGuide() {
   };
 
   const score = getHealthScore();
-  const scoreColor = score >= 75 ? '#22C55E' : score >= 50 ? '#EAB308′ : '#EF4444';
+  const scoreColor = score >= 75 ? '#22C55E' : score >= 50 ? '#EAB308' : '#EF4444';
   const scoreLabel = score >= 75 ? 'Healthy' : score >= 50 ? 'Needs Attention' : 'At Risk';
 
   const getActions = () => {
@@ -53,7 +53,7 @@ export default function PartnerNetworkHealthGuide() {
   ];
 
   return (
-    <div style={{ backgroundColor: '#F9FAFB', minHeight: '100vh', fontFamily: 'system-ui, sans-serif', color: '#0A1628′ }}>
+    <div style={{ backgroundColor: '#F9FAFB', minHeight: '100vh', fontFamily: 'system-ui, sans-serif', color: '#0A1628' }}>
       <div style={{ maxWidth: 800, margin: '0 auto', padding: '40px 20px' }}>
         <div style={{ marginBottom: 32 }}>
           <div style={{ fontSize: 36, marginBottom: 8 }}>📊</div>
@@ -72,8 +72,8 @@ export default function PartnerNetworkHealthGuide() {
             ['Level 4 Partner', 'All L3 criteria PLUS running regular team calls and developing sub-leaders'],
           ].map(([level, def]) => (
             <div key={level} style={{ display: 'flex', gap: 12, padding: 12, marginBottom: 8, backgroundColor: '#F9FAFB', borderRadius: 8 }}>
-              <div style={{ minWidth: 130, fontSize: 13, fontWeight: 700, color: '#0369A1′ }}>{level}</div>
-              <div style={{ fontSize: 13, color: '#374151′ }}>{def}</div>
+              <div style={{ minWidth: 130, fontSize: 13, fontWeight: 700, color: '#0369A1' }}>{level}</div>
+              <div style={{ fontSize: 13, color: '#374151' }}>{def}</div>
             </div>
           ))}
         </div>
@@ -82,9 +82,9 @@ export default function PartnerNetworkHealthGuide() {
           <h2 style={{ fontSize: 18, fontWeight: 700, marginBottom: 16 }}>⚠️ Warning Signs of Disengagement</h2>
           <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
             {warningSignsData.map(w => (
-              <div key={w.sign} style={{ padding: 14, backgroundColor: '#FEF9C3', borderRadius: 8, borderLeft: '3px solid #EAB308′ }}>
-                <p style={{ fontWeight: 700, fontSize: 13, color: '#0A1628', margin: '0 0 4px 0′ }}>🚨 {w.sign}</p>
-                <p style={{ fontSize: 12, color: '#6B7280', margin: '0 0 4px 0′ }}>Means: {w.meaning}</p>
+              <div key={w.sign} style={{ padding: 14, backgroundColor: '#FEF9C3', borderRadius: 8, borderLeft: '3px solid #EAB308' }}>
+                <p style={{ fontWeight: 700, fontSize: 13, color: '#0A1628', margin: '0 0 4px 0' }}>🚨 {w.sign}</p>
+                <p style={{ fontSize: 12, color: '#6B7280', margin: '0 0 4px 0' }}>Means: {w.meaning}</p>
                 <p style={{ fontSize: 12, color: '#374151', margin: 0 }}>Action: {w.action}</p>
               </div>
             ))}
@@ -95,10 +95,10 @@ export default function PartnerNetworkHealthGuide() {
           <h2 style={{ fontSize: 18, fontWeight: 700, marginBottom: 16 }}>🩺 Network Health Calculator</h2>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12, marginBottom: 16 }}>
             {[
-              { label: 'Total Partners', value: totalPartners, setter: setTotalPartners, placeholder: 'e.g. 30′ },
-              { label: 'Active Partners (last 30 days)', value: activePartners, setter: setActivePartners, placeholder: 'e.g. 18′ },
-              { label: 'Homes Registered (all time)', value: homesRegistered, setter: setHomesRegistered, placeholder: 'e.g. 85′ },
-              { label: 'New Recruits Last Month', value: lastMonthRecruits, setter: setLastMonthRecruits, placeholder: 'e.g. 4′ },
+              { label: 'Total Partners', value: totalPartners, setter: setTotalPartners, placeholder: 'e.g. 30' },
+              { label: 'Active Partners (last 30 days)', value: activePartners, setter: setActivePartners, placeholder: 'e.g. 18' },
+              { label: 'Homes Registered (all time)', value: homesRegistered, setter: setHomesRegistered, placeholder: 'e.g. 85' },
+              { label: 'New Recruits Last Month', value: lastMonthRecruits, setter: setLastMonthRecruits, placeholder: 'e.g. 4' },
             ].map(field => (
               <div key={field.label}>
                 <p style={{ fontSize: 12, fontWeight: 700, color: '#374151', marginBottom: 4 }}>{field.label}</p>
@@ -120,22 +120,22 @@ export default function PartnerNetworkHealthGuide() {
             <div style={{ marginTop: 20 }}>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: 12, marginBottom: 16 }}>
                 <div style={{ padding: 16, backgroundColor: '#F9FAFB', borderRadius: 10, textAlign: 'center' }}>
-                  <p style={{ fontSize: 24, fontWeight: 800, color: scoreColor, margin: '0 0 4px 0′ }}>{score}</p>
+                  <p style={{ fontSize: 24, fontWeight: 800, color: scoreColor, margin: '0 0 4px 0' }}>{score}</p>
                   <p style={{ fontSize: 11, color: '#6B7280', margin: 0 }}>Health Score (100)</p>
-                  <p style={{ fontSize: 12, fontWeight: 700, color: scoreColor, margin: '4px 0 0 0′ }}>{scoreLabel}</p>
+                  <p style={{ fontSize: 12, fontWeight: 700, color: scoreColor, margin: '4px 0 0 0' }}>{scoreLabel}</p>
                 </div>
                 <div style={{ padding: 16, backgroundColor: '#F9FAFB', borderRadius: 10, textAlign: 'center' }}>
-                  <p style={{ fontSize: 24, fontWeight: 800, color: '#0A1628', margin: '0 0 4px 0′ }}>{activeRate}%</p>
+                  <p style={{ fontSize: 24, fontWeight: 800, color: '#0A1628', margin: '0 0 4px 0' }}>{activeRate}%</p>
                   <p style={{ fontSize: 11, color: '#6B7280', margin: 0 }}>Active Rate</p>
                 </div>
                 <div style={{ padding: 16, backgroundColor: '#F9FAFB', borderRadius: 10, textAlign: 'center' }}>
-                  <p style={{ fontSize: 24, fontWeight: 800, color: '#0A1628', margin: '0 0 4px 0′ }}>{homesPerPartner}</p>
+                  <p style={{ fontSize: 24, fontWeight: 800, color: '#0A1628', margin: '0 0 4px 0' }}>{homesPerPartner}</p>
                   <p style={{ fontSize: 11, color: '#6B7280', margin: 0 }}>Homes/Partner</p>
                 </div>
               </div>
               <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
                 {getActions().map((action, i) => (
-                  <div key={i} style={{ padding: 14, borderRadius: 8, borderLeft: '3px solid', borderColor: action.severity === 'high' ? '#EF4444′ : action.severity === ’medium' ? '#EAB308′ : '#22C55E', backgroundColor: action.severity === ’high' ? '#FEF2F2′ : action.severity === ’medium' ? '#FEF9C3′ : '#F0FDF4' }}>
+                  <div key={i} style={{ padding: 14, borderRadius: 8, borderLeft: '3px solid', borderColor: action.severity === 'high' ? '#EF4444' : action.severity === 'medium' ? '#EAB308' : '#22C55E', backgroundColor: action.severity === 'high' ? '#FEF2F2' : action.severity === 'medium' ? '#FEF9C3' : '#F0FDF4' }}>
                     <p style={{ fontSize: 13, color: '#374151', margin: 0 }}>{action.text}</p>
                   </div>
                 ))}

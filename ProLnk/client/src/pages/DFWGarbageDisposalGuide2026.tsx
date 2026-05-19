@@ -50,7 +50,7 @@ export default function DFWGarbageDisposalGuide2026() {
           <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap', marginBottom: '1rem' }}>
             <div>
               <label style={{ color: '#a0aec0', fontSize: '0.85rem' }}>Disposal Age (years)</label><br />
-              <input value={age} onChange={(e) => setAge(e.target.value)} type="number" min="0″ max="25"
+              <input value={age} onChange={(e) => setAge(e.target.value)} type="number" min="0" max="25"
                 style={{ background: '#0A1628', border: '1px solid #F5E642', color: '#fff', padding: '0.5rem', borderRadius: 6, width: 120, marginTop: 4 }} />
             </div>
             <div>
@@ -76,7 +76,7 @@ export default function DFWGarbageDisposalGuide2026() {
           <h2 style={{ color: '#F5E642', marginBottom: '0.75rem' }}>🚫 Never Put These In</h2>
           {['Grease or cooking oil — solidifies and clogs DFW drains fast','Fibrous foods — celery, artichokes, corn husks wrap around blades','Eggshells — membrane wraps blades; shells create fine paste that clogs','Coffee grounds — accumulate in drain traps','Pasta, rice, potatoes — expand with water and clog pipes'].map((t, i) => (
             <div key={i} style={{ display: 'flex', gap: '0.5rem', marginBottom: '0.4rem', color: '#a0aec0', fontSize: '0.9rem' }}>
-              <span style={{ color: '#F5E642′ }}>✕</span>{t}
+              <span style={{ color: '#F5E642' }}>✕</span>{t}
             </div>
           ))}
         </div>

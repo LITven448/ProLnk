@@ -57,10 +57,10 @@ export default function DFWLandlordFirstPropertyGuide() {
           🔑 First Rental Property in DFW
         </h1>
         <p style={{ fontSize: 16, color: '#444', marginBottom: 32, lineHeight: 1.6 }}>
-          Texas is a landlord-friendly state — but that doesn't mean it’s simple. Here’s exactly what to do before your first tenant moves in, what it actually costs, and what could go wrong.
+          Texas is a landlord-friendly state — but that doesn't mean it's simple. Here's exactly what to do before your first tenant moves in, what it actually costs, and what could go wrong.
         </p>
 
-        <div style={{ background: '#fff', borderRadius: 12, padding: 24, marginBottom: 24, border: '1px solid #e0ddd5′ }}>
+        <div style={{ background: '#fff', borderRadius: 12, padding: 24, marginBottom: 24, border: '1px solid #e0ddd5' }}>
           <h2 style={{ fontSize: 18, fontWeight: 700, marginBottom: 16 }}>📜 Texas Landlord Basics</h2>
           <ul style={{ lineHeight: 2, paddingLeft: 20, color: '#333', fontSize: 14 }}>
             <li><strong>No rent control</strong> in Texas — you set market rate</li>
@@ -71,7 +71,7 @@ export default function DFWLandlordFirstPropertyGuide() {
           </ul>
         </div>
 
-        <div style={{ background: '#fff', borderRadius: 12, padding: 24, marginBottom: 24, border: '1px solid #e0ddd5′ }}>
+        <div style={{ background: '#fff', borderRadius: 12, padding: 24, marginBottom: 24, border: '1px solid #e0ddd5' }}>
           <h2 style={{ fontSize: 18, fontWeight: 700, marginBottom: 20 }}>🏠 Your Property</h2>
           <div style={{ marginBottom: 20 }}>
             <label style={{ display: 'block', fontWeight: 600, marginBottom: 8 }}>Property type</label>
@@ -99,11 +99,11 @@ export default function DFWLandlordFirstPropertyGuide() {
 
         {result && (
           <div>
-            <div style={{ background: '#fff', borderRadius: 12, padding: 24, marginBottom: 16, border: '1px solid #e0ddd5′ }}>
+            <div style={{ background: '#fff', borderRadius: 12, padding: 24, marginBottom: 16, border: '1px solid #e0ddd5' }}>
               <h3 style={{ fontSize: 18, fontWeight: 700, marginBottom: 16 }}>✅ Before Your First Tenant</h3>
               {result.checklist.map((c, i) => <div key={i} style={{ marginBottom: 8, fontSize: 14, lineHeight: 1.6 }}>{c}</div>)}
             </div>
-            <div style={{ background: '#fff', borderRadius: 12, padding: 24, marginBottom: 16, border: '1px solid #e0ddd5′ }}>
+            <div style={{ background: '#fff', borderRadius: 12, padding: 24, marginBottom: 16, border: '1px solid #e0ddd5' }}>
               <h3 style={{ fontSize: 18, fontWeight: 700, marginBottom: 16 }}>💰 Estimated Monthly Operating Costs</h3>
               {result.costs.map((c, i) => (
                 <div key={i} style={{ display: 'flex', gap: 10, marginBottom: 8, alignItems: 'flex-start' }}>
@@ -119,7 +119,7 @@ export default function DFWLandlordFirstPropertyGuide() {
           </div>
         )}
 
-        <div style={{ marginTop: 24, background: '#fff', borderRadius: 12, padding: 24, border: '1px solid #e0ddd5′ }}>
+        <div style={{ marginTop: 24, background: '#fff', borderRadius: 12, padding: 24, border: '1px solid #e0ddd5' }}>
           <h2 style={{ fontSize: 18, fontWeight: 700, marginBottom: 12 }}>🛠️ ProLnk for Landlords</h2>
           <p style={{ color: '#555', lineHeight: 1.7, fontSize: 14 }}>Tenant calls at 9pm about AC. Plumbing backup on a Saturday. ProLnk gives DFW landlords access to vetted, licensed contractors with verified pricing — so you're not panicking on Yelp when things break.</p>
         </div>

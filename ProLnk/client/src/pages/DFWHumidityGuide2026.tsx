@@ -20,7 +20,7 @@ export default function DFWHumidityGuide2026() {
   const active = selected !== null ? levels[selected] : null;
 
   return (
-    <div style={{ background: '#0A1628', minHeight: '100vh', padding: '32px 24px', fontFamily: 'system-ui, sans-serif', color: '#E8EDF5′ }}>
+    <div style={{ background: '#0A1628', minHeight: '100vh', padding: '32px 24px', fontFamily: 'system-ui, sans-serif', color: '#E8EDF5' }}>
       <div style={{ maxWidth: 720, margin: '0 auto' }}>
         <div style={{ background: '#F5E642', color: '#0A1628', borderRadius: 8, padding: '6px 14px', display: 'inline-block', fontSize: 12, fontWeight: 700, marginBottom: 16 }}>DFW HOME HEALTH 2026</div>
         <h1 style={{ fontSize: 28, fontWeight: 800, marginBottom: 8 }}>💧 DFW Home Humidity Guide</h1>
@@ -37,14 +37,14 @@ export default function DFWHumidityGuide2026() {
         </div>
 
         <div style={{ background: '#111E35', borderRadius: 10, padding: 24, marginBottom: 32 }}>
-          <h2 style={{ fontSize: 18, fontWeight: 700, marginBottom: 16, color: '#F5E642′ }}>📊 My Humidity Reading → Action Plan</h2>
+          <h2 style={{ fontSize: 18, fontWeight: 700, marginBottom: 16, color: '#F5E642' }}>📊 My Humidity Reading → Action Plan</h2>
           <div style={{ display: 'flex', flexDirection: 'column', gap: 10, marginBottom: 20 }}>
             {levels.map((l, i) => (
               <button key={i} onClick={() => setSelected(i === selected ? null : i)}
                 style={{ background: selected === i ? '#1C2E4A' : '#0A1628', border: `2px solid ${selected === i ? l.color : '#1C2E4A'}`, borderRadius: 8, padding: '12px 16px', cursor: 'pointer', display: 'flex', alignItems: 'center', gap: 12, textAlign: 'left' }}>
                 <span style={{ fontSize: 24 }}>{l.icon}</span>
                 <span style={{ fontWeight: 700, color: l.color }}>{l.range}</span>
-                <span style={{ color: '#E8EDF5′ }}>{l.label}</span>
+                <span style={{ color: '#E8EDF5' }}>{l.label}</span>
               </button>
             ))}
           </div>

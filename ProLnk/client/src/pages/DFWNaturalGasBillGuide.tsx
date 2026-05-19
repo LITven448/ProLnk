@@ -56,7 +56,7 @@ export default function DFWNaturalGasBillGuide() {
           <div style={{ display: 'flex', alignItems: 'flex-end', gap: 4, height: 100 }}>
             {bills.map((b, i) => (
               <div key={i} style={{ flex: 1, display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 2 }}>
-                <div style={{ background: b === maxBill ? '#F5E642′ : '#1E3A5F', borderRadius: 4, width: '100%', height: `${Math.round((b / maxBill) * 88)}px` }} />
+                <div style={{ background: b === maxBill ? '#F5E642' : '#1E3A5F', borderRadius: 4, width: '100%', height: `${Math.round((b / maxBill) * 88)}px` }} />
                 <span style={{ color: '#94A3B8', fontSize: '0.65rem' }}>{months[i]}</span>
               </div>
             ))}
@@ -82,13 +82,13 @@ export default function DFWNaturalGasBillGuide() {
         </div>
 
         {result && (
-          <div style={{ background: '#111D35', borderRadius: 12, padding: '1.5rem', border: '1px solid #F5E642′ }}>
+          <div style={{ background: '#111D35', borderRadius: 12, padding: '1.5rem', border: '1px solid #F5E642' }}>
             <h2 style={{ color: '#F5E642', fontSize: '1.1rem', fontWeight: 700, marginTop: 0 }}>📊 Your Estimated Gas Costs</h2>
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '1rem', marginBottom: '1rem' }}>
               {[
-                { label: 'Peak Winter Month', value: `$${result.winter}`, color: '#FF9F43′ },
-                { label: 'Summer Month', value: `$${result.summer}`, color: '#34D399′ },
-                { label: 'Annual Total', value: `$${result.annual}`, color: '#F5E642′ },
+                { label: 'Peak Winter Month', value: `$${result.winter}`, color: '#FF9F43' },
+                { label: 'Summer Month', value: `$${result.summer}`, color: '#34D399' },
+                { label: 'Annual Total', value: `$${result.annual}`, color: '#F5E642' },
               ].map((item, i) => (
                 <div key={i} style={{ textAlign: 'center', padding: '1rem', background: '#0A1628', borderRadius: 10 }}>
                   <div style={{ fontSize: '1.75rem', fontWeight: 700, color: item.color }}>{item.value}</div>
@@ -97,13 +97,13 @@ export default function DFWNaturalGasBillGuide() {
               ))}
             </div>
             <div style={{ padding: '0.75rem', background: '#0A1628', borderRadius: 8, fontSize: '0.9rem' }}>
-              💡 Efficiency upgrades (insulation, smart thermostat, high-efficiency furnace) could save <strong style={{ color: '#F5E642′ }}>${result.efficiencySavings}/year</strong>
+              💡 Efficiency upgrades (insulation, smart thermostat, high-efficiency furnace) could save <strong style={{ color: '#F5E642' }}>${result.efficiencySavings}/year</strong>
             </div>
           </div>
         )}
 
         <div style={{ marginTop: '1.5rem', padding: '1rem', background: '#111D35', borderRadius: 10, border: '1px solid #1E3A5F', color: '#94A3B8', fontSize: '0.85rem' }}>
-          💰 Atmos Energy offers <strong style={{ color: '#F5E642′ }}>Budget Billing</strong> — pay a flat monthly amount year-round to avoid the January spike. Enroll at atmosenergy.com.
+          💰 Atmos Energy offers <strong style={{ color: '#F5E642' }}>Budget Billing</strong> — pay a flat monthly amount year-round to avoid the January spike. Enroll at atmosenergy.com.
         </div>
       </div>
     </div>

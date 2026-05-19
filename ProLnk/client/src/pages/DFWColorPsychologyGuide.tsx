@@ -63,7 +63,7 @@ export default function DFWColorPsychologyGuide() {
             <div style={{ fontSize: 11, color: '#F5E642', fontWeight: 700, textTransform: 'uppercase', letterSpacing: 1, marginBottom: 12 }}>🏠 Room Function</div>
             <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
               {roomFunctions.map(r => (
-                <button key={r.id} onClick={() => setRoom(r.id)} style={{ padding: '10px 14px', borderRadius: 8, border: 'none', cursor: 'pointer', fontWeight: 600, fontSize: 14, textAlign: 'left', background: room === r.id ? '#F5E642′ : ’rgba(255,255,255,0.08)', color: room === r.id ? '#0A1628′ : '#ccc', transition: ’all 0.2s' }}>
+                <button key={r.id} onClick={() => setRoom(r.id)} style={{ padding: '10px 14px', borderRadius: 8, border: 'none', cursor: 'pointer', fontWeight: 600, fontSize: 14, textAlign: 'left', background: room === r.id ? '#F5E642' : 'rgba(255,255,255,0.08)', color: room === r.id ? '#0A1628' : '#ccc', transition: 'all 0.2s' }}>
                   {r.icon} {r.label}
                 </button>
               ))}
@@ -73,7 +73,7 @@ export default function DFWColorPsychologyGuide() {
             <div style={{ fontSize: 11, color: '#F5E642', fontWeight: 700, textTransform: 'uppercase', letterSpacing: 1, marginBottom: 12 }}>☀️ Light Exposure</div>
             <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
               {lightDirections.map(l => (
-                <button key={l.id} onClick={() => setLight(l.id)} style={{ padding: '10px 14px', borderRadius: 8, border: 'none', cursor: 'pointer', fontWeight: 600, fontSize: 14, textAlign: 'left', background: light === l.id ? '#F5E642′ : ’rgba(255,255,255,0.08)', color: light === l.id ? '#0A1628′ : '#ccc', transition: ’all 0.2s' }}>
+                <button key={l.id} onClick={() => setLight(l.id)} style={{ padding: '10px 14px', borderRadius: 8, border: 'none', cursor: 'pointer', fontWeight: 600, fontSize: 14, textAlign: 'left', background: light === l.id ? '#F5E642' : 'rgba(255,255,255,0.08)', color: light === l.id ? '#0A1628' : '#ccc', transition: 'all 0.2s' }}>
                   {l.label}
                 </button>
               ))}
@@ -92,11 +92,11 @@ export default function DFWColorPsychologyGuide() {
               </div>
             ))}
           </div>
-          <div style={{ padding: '14px 18px', background: 'rgba(255,80,80,0.1)', borderRadius: 10, marginBottom: 12, borderLeft: '3px solid #ff6666′ }}>
+          <div style={{ padding: '14px 18px', background: 'rgba(255,80,80,0.1)', borderRadius: 10, marginBottom: 12, borderLeft: '3px solid #ff6666' }}>
             <span style={{ fontSize: 12, color: '#ff9999', fontWeight: 700 }}>❌ AVOID: </span>
             <span style={{ fontSize: 14, color: '#ffcccc' }}>{rec.avoid}</span>
           </div>
-          <div style={{ padding: '14px 18px', background: 'rgba(245,230,66,0.08)', borderRadius: 10, borderLeft: '3px solid #F5E642′ }}>
+          <div style={{ padding: '14px 18px', background: 'rgba(245,230,66,0.08)', borderRadius: 10, borderLeft: '3px solid #F5E642' }}>
             <span style={{ fontSize: 12, color: '#F5E642', fontWeight: 700 }}>💡 DFW TIP: </span>
             <span style={{ fontSize: 14, color: '#ddd' }}>{rec.tip}</span>
           </div>

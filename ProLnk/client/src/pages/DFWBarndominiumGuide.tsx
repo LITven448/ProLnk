@@ -53,7 +53,7 @@ export default function DFWBarndominiumGuide() {
             { icon: '🏦', title: 'Financing Challenge', desc: 'Most big banks won\’t lend. Ag lenders and community banks specialize in barndo loans.' },
             { icon: '☀️', title: 'Insulation Critical', desc: 'DFW summers destroy uninsulated metal. Spray foam closed-cell is the only viable option.' },
           ].map(card => (
-            <div key={card.title} style={{ background: '#112240', borderRadius: 12, padding: 22, borderLeft: '4px solid #F5E642′ }}>
+            <div key={card.title} style={{ background: '#112240', borderRadius: 12, padding: 22, borderLeft: '4px solid #F5E642' }}>
               <div style={{ fontSize: 28, marginBottom: 8 }}>{card.icon}</div>
               <h3 style={{ color: '#F5E642', margin: '0 0 6px', fontSize: 15 }}>{card.title}</h3>
               <p style={{ color: '#94A3B8', margin: 0, fontSize: 13, lineHeight: 1.5 }}>{card.desc}</p>
@@ -85,11 +85,11 @@ export default function DFWBarndominiumGuide() {
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))', gap: 16, marginBottom: 24 }}>
             <div>
               <label style={{ color: '#94A3B8', fontSize: 13, display: 'block', marginBottom: 6 }}>Square Footage: {sqft.toLocaleString()} sq ft</label>
-              <input type="range" min={1000} max={5000} step={200} value={sqft} onChange={e => { setSqft(+e.target.value); setShowResults(false); }} style={{ width: '100%', accentColor: '#F5E642′ }} />
+              <input type="range" min={1000} max={5000} step={200} value={sqft} onChange={e => { setSqft(+e.target.value); setShowResults(false); }} style={{ width: '100%', accentColor: '#F5E642' }} />
             </div>
             <div>
               <label style={{ color: '#94A3B8', fontSize: 13, display: 'block', marginBottom: 6 }}>Acreage: {acreage} acres</label>
-              <input type="range" min={1} max={50} step={1} value={acreage} onChange={e => { setAcreage(+e.target.value); setShowResults(false); }} style={{ width: '100%', accentColor: '#F5E642′ }} />
+              <input type="range" min={1} max={50} step={1} value={acreage} onChange={e => { setAcreage(+e.target.value); setShowResults(false); }} style={{ width: '100%', accentColor: '#F5E642' }} />
             </div>
             <div>
               <label style={{ color: '#94A3B8', fontSize: 13, display: 'block', marginBottom: 6 }}>DFW County</label>
@@ -122,9 +122,9 @@ export default function DFWBarndominiumGuide() {
                 <div style={{ background: '#F5E642', borderRadius: 10, padding: 16 }}><div style={{ color: '#0A1628', fontSize: 12, fontWeight: 600 }}>All-In Total</div><div style={{ color: '#0A1628', fontSize: 20, fontWeight: 700 }}>${total.toLocaleString()}</div></div>
               </div>
               <div style={{ background: '#0A1628', borderRadius: 10, padding: 18 }}>
-                <p style={{ color: '#94A3B8', margin: '0 0 8px', fontSize: 13 }}><strong style={{ color: '#F5E642′ }}>Permits:</strong> {info.permit}</p>
-                <p style={{ color: '#94A3B8', margin: '0 0 8px', fontSize: 13 }}><strong style={{ color: '#F5E642′ }}>County Notes:</strong> {info.notes}</p>
-                <p style={{ color: '#94A3B8', margin: 0, fontSize: 13 }}><strong style={{ color: '#F5E642′ }}>Financing:</strong> {info.financing}</p>
+                <p style={{ color: '#94A3B8', margin: '0 0 8px', fontSize: 13 }}><strong style={{ color: '#F5E642' }}>Permits:</strong> {info.permit}</p>
+                <p style={{ color: '#94A3B8', margin: '0 0 8px', fontSize: 13 }}><strong style={{ color: '#F5E642' }}>County Notes:</strong> {info.notes}</p>
+                <p style={{ color: '#94A3B8', margin: 0, fontSize: 13 }}><strong style={{ color: '#F5E642' }}>Financing:</strong> {info.financing}</p>
               </div>
             </div>
           )}

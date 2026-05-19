@@ -11,13 +11,13 @@ const DFW_DOC_CATEGORIES = [
 const SYSTEMS: Record<string, { name: string; items: string[]; cost: string; tip: string }> = {
   small: {
     name: 'Compact Corner Setup',
-    items: ['Standing desk (48″) + monitor arm', 'Under-desk file cabinet (2 drawer)', 'Cable management tray', 'Desktop organizer tray x2', 'Wireless charging pad'],
+    items: ['Standing desk (48") + monitor arm', 'Under-desk file cabinet (2 drawer)', 'Cable management tray', 'Desktop organizer tray x2', 'Wireless charging pad'],
     cost: '$600–$1,200',
     tip: 'Use vertical space — floating shelves add 40% more storage in small rooms.',
   },
   medium: {
     name: 'Dedicated Room System',
-    items: ['L-desk (60″x60″) with drawers', 'Lateral 4-drawer file cabinet', 'Bookcase with doors for documents', 'Cable raceway along walls', 'Dual monitor setup'],
+    items: ['L-desk (60"x60") with drawers', 'Lateral 4-drawer file cabinet', 'Bookcase with doors for documents', 'Cable raceway along walls', 'Dual monitor setup'],
     cost: '$1,200–$2,800',
     tip: 'Dedicate one drawer per DFW document category. Label externally.',
   },
@@ -74,7 +74,7 @@ export default function DFWHomeOfficeOrganization() {
                 <span style={{ fontWeight: 700, fontSize: 15 }}>{c.cat}</span>
               </div>
               <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8 }}>
-                {c.docs.map(d => <span key={d} style={{ background: '#F1F5F9', borderRadius: 20, padding: '3px 12px', fontSize: 12, color: '#475569′ }}>{d}</span>)}
+                {c.docs.map(d => <span key={d} style={{ background: '#F1F5F9', borderRadius: 20, padding: '3px 12px', fontSize: 12, color: '#475569' }}>{d}</span>)}
               </div>
             </div>
           ))}
@@ -106,7 +106,7 @@ export default function DFWHomeOfficeOrganization() {
             <div style={{ marginTop: 24, padding: 20, background: '#F9FAFB', borderRadius: 10 }}>
               <div style={{ fontWeight: 700, fontSize: 18, marginBottom: 4 }}>{result.name}</div>
               <div style={{ color: '#16a34a', fontWeight: 600, marginBottom: 14 }}>{result.cost}</div>
-              {result.items.map(i => <div key={i} style={{ padding: '5px 0', color: '#475569′ }}>✓ {i}</div>)}
+              {result.items.map(i => <div key={i} style={{ padding: '5px 0', color: '#475569' }}>✓ {i}</div>)}
               <div style={{ marginTop: 16, padding: 14, background: '#F5E642', borderRadius: 8, fontSize: 14, color: '#0A1628', fontWeight: 600 }}>💡 {result.tip}</div>
             </div>
           )}

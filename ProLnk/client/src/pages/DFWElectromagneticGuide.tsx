@@ -48,11 +48,11 @@ export default function DFWElectromagneticGuide() {
         <div style={{ marginBottom: '2rem' }}>
           <span style={{ color: '#F5E642', fontSize: '0.85rem', fontWeight: 700, letterSpacing: 2, textTransform: 'uppercase' }}>DFW Home Health</span>
           <h1 style={{ fontSize: '2.2rem', fontWeight: 800, margin: '0.5rem 0', lineHeight: 1.2 }}>📡 EMF & Electromagnetic Field Guide for DFW Homes</h1>
-          <p style={{ color: '#94a3b8', fontSize: '1.05rem' }}>DFW's dense electrical infrastructure and rapid smart home adoption raise EMF questions. Here’s what the science actually says and when testing is warranted.</p>
+          <p style={{ color: '#94a3b8', fontSize: '1.05rem' }}>DFW's dense electrical infrastructure and rapid smart home adoption raise EMF questions. Here's what the science actually says and when testing is warranted.</p>
         </div>
 
         <div style={{ background: '#0f2340', borderRadius: 10, padding: '1rem 1.25rem', border: '1px solid #F5E642', marginBottom: '2rem', fontSize: '0.9rem' }}>
-          <strong style={{ color: '#F5E642′ }}>Scientific Consensus:</strong> <span style={{ color: '#e2e8f0' }}>The FCC, WHO, EPA, and major health agencies agree that non-ionizing EMFs at residential exposures do not cause cancer or other documented health effects. This guide covers measurement and mitigation for those who want to take precautionary steps.</span>
+          <strong style={{ color: '#F5E642' }}>Scientific Consensus:</strong> <span style={{ color: '#e2e8f0' }}>The FCC, WHO, EPA, and major health agencies agree that non-ionizing EMFs at residential exposures do not cause cancer or other documented health effects. This guide covers measurement and mitigation for those who want to take precautionary steps.</span>
         </div>
 
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(240px, 1fr))', gap: '1rem', marginBottom: '2.5rem' }}>
@@ -70,7 +70,7 @@ export default function DFWElectromagneticGuide() {
         <div style={{ overflowX: 'auto', marginBottom: '2.5rem' }}>
           <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: '0.875rem' }}>
             <thead>
-              <tr style={{ background: '#0f2340′ }}>
+              <tr style={{ background: '#0f2340' }}>
                 {['Tool', 'Cost', 'Measures', 'Limitation'].map(h => (
                   <th key={h} style={{ padding: '0.75rem 1rem', textAlign: 'left', color: '#F5E642', borderBottom: '1px solid #1e3a5f' }}>{h}</th>
                 ))}
@@ -80,9 +80,9 @@ export default function DFWElectromagneticGuide() {
               {measuringOptions.map((m, i) => (
                 <tr key={i} style={{ borderBottom: '1px solid #1e3a5f' }}>
                   <td style={{ padding: '0.75rem 1rem', fontWeight: 600 }}>{m.tool}</td>
-                  <td style={{ padding: '0.75rem 1rem', color: '#4ade80′ }}>{m.cost}</td>
-                  <td style={{ padding: '0.75rem 1rem', color: '#94a3b8′ }}>{m.measures}</td>
-                  <td style={{ padding: '0.75rem 1rem', color: '#94a3b8′ }}>{m.limitation}</td>
+                  <td style={{ padding: '0.75rem 1rem', color: '#4ade80' }}>{m.cost}</td>
+                  <td style={{ padding: '0.75rem 1rem', color: '#94a3b8' }}>{m.measures}</td>
+                  <td style={{ padding: '0.75rem 1rem', color: '#94a3b8' }}>{m.limitation}</td>
                 </tr>
               ))}
             </tbody>
@@ -119,7 +119,7 @@ export default function DFWElectromagneticGuide() {
               {getAssessment().map((item, i) => (
                 <div key={i} style={{ background: '#0A1628', borderRadius: 8, padding: '1rem', border: '1px solid #1e3a5f' }}>
                   <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: 4 }}>
-                    <span style={{ fontWeight: 700, color: '#e2e8f0′ }}>{item.label}</span>
+                    <span style={{ fontWeight: 700, color: '#e2e8f0' }}>{item.label}</span>
                     <span style={{ fontSize: '0.85rem' }}>{item.level}</span>
                   </div>
                   <div style={{ color: '#94a3b8', fontSize: '0.875rem' }}>{item.action}</div>

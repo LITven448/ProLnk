@@ -54,7 +54,7 @@ export default function DFWCarbonDioxideGuide2026() {
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12 }}>
             {homeSizes.map(h => (
               <button key={h.id} onClick={() => setSize(h.id === size ? null : h.id)}
-                style={{ background: size === h.id ? '#F5E642′ : '#1e3a5f', color: size === h.id ? '#0A1628' : '#fff', border: ’none', borderRadius: 10, padding: '14px 16px', cursor: 'pointer', fontWeight: 600, fontSize: 14, textAlign: 'left' }}>
+                style={{ background: size === h.id ? '#F5E642' : '#1e3a5f', color: size === h.id ? '#0A1628' : '#fff', border: 'none', borderRadius: 10, padding: '14px 16px', cursor: 'pointer', fontWeight: 600, fontSize: 14, textAlign: 'left' }}>
                 {h.label}
               </button>
             ))}

@@ -43,13 +43,13 @@ export default function DFWRentVsBuyGuide2026() {
             <div>
               <label style={{ color: '#94A3B8', fontSize: 13, display: 'block', marginBottom: 8 }}>Current/Expected Rent/mo</label>
               <input type="range" min={1000} max={4000} step={50} value={rent} onChange={e => setRent(+e.target.value)}
-                style={{ width: '100%', accentColor: '#F5E642′ }} />
+                style={{ width: '100%', accentColor: '#F5E642' }} />
               <div style={{ color: '#F5E642', fontWeight: 700, fontSize: 20 }}>${rent.toLocaleString()}/mo</div>
             </div>
             <div>
               <label style={{ color: '#94A3B8', fontSize: 13, display: 'block', marginBottom: 8 }}>Home Purchase Budget</label>
               <input type="range" min={200000} max={700000} step={5000} value={budget} onChange={e => setBudget(+e.target.value)}
-                style={{ width: '100%', accentColor: '#F5E642′ }} />
+                style={{ width: '100%', accentColor: '#F5E642' }} />
               <div style={{ color: '#F5E642', fontWeight: 700, fontSize: 20 }}>${(budget / 1000).toFixed(0)}K</div>
             </div>
           </div>
@@ -63,7 +63,7 @@ export default function DFWRentVsBuyGuide2026() {
           </div>
           <div style={{ background: recommendation === 'BUY' ? '#064E3B' : '#1E1B4B', border: `2px solid ${recommendation === 'BUY' ? '#34D399' : '#818CF8'}`, borderRadius: 10, padding: 20, textAlign: 'center' }}>
             <div style={{ fontSize: 28 }}>{recommendation === 'BUY' ? '🏡' : '🏢'}</div>
-            <div style={{ fontWeight: 800, fontSize: 20, color: recommendation === 'BUY' ? '#34D399′ : '#818CF8' }}>
+            <div style={{ fontWeight: 800, fontSize: 20, color: recommendation === 'BUY' ? '#34D399' : '#818CF8' }}>
               Lean: {recommendation === 'BUY' ? 'BUYING MAKES SENSE' : 'RENTING FOR NOW'}
             </div>
             <div style={{ color: '#94A3B8', fontSize: 13, marginTop: 6 }}>
@@ -76,7 +76,7 @@ export default function DFWRentVsBuyGuide2026() {
           <h2 style={{ fontSize: 16, fontWeight: 700, color: '#F5E642', marginBottom: 16 }}>💡 DFW Buying Advantages</h2>
           {['No state income tax in Texas — your housing dollar goes further', 'DFW population growth driving consistent 5%+ annual appreciation', 'Strong rental market means buying now = future passive income', 'Building equity beats paying landlord\’s mortgage long-term'].map(tip => (
             <div key={tip} style={{ display: 'flex', gap: 10, marginBottom: 10, color: '#CBD5E1', fontSize: 14 }}>
-              <span style={{ color: '#F5E642′ }}>→</span> {tip}
+              <span style={{ color: '#F5E642' }}>→</span> {tip}
             </div>
           ))}
         </div>

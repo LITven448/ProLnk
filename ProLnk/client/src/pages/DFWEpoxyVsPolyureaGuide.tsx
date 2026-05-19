@@ -57,7 +57,7 @@ export default function DFWEpoxyVsPolyureaGuide() {
         </p>
 
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1.5rem' }}>
-          <div style={{ background: '#0f1f3d', borderRadius: 10, padding: '1.25rem', border: '1px solid #334′ }}>
+          <div style={{ background: '#0f1f3d', borderRadius: 10, padding: '1.25rem', border: '1px solid #334' }}>
             <div style={{ color: '#F5E642', fontWeight: 700, marginBottom: '0.75rem' }}>🧪 Epoxy</div>
             {[
               ['Cost', '$1.50–$5/sq ft'],
@@ -72,7 +72,7 @@ export default function DFWEpoxyVsPolyureaGuide() {
               </div>
             ))}
           </div>
-          <div style={{ background: '#0f1f3d', borderRadius: 10, padding: '1.25rem', border: '1px solid #F5E642′ }}>
+          <div style={{ background: '#0f1f3d', borderRadius: 10, padding: '1.25rem', border: '1px solid #F5E642' }}>
             <div style={{ color: '#F5E642', fontWeight: 700, marginBottom: '0.75rem' }}>🛡️ Polyurea</div>
             {[
               ['Cost', '$5–$9/sq ft installed'],
@@ -99,7 +99,7 @@ export default function DFWEpoxyVsPolyureaGuide() {
             <div key={label} style={{ marginBottom: '1rem' }}>
               <label style={{ display: 'block', color: '#aac', marginBottom: '0.4rem', fontSize: '0.9rem' }}>{label}</label>
               <select value={value} onChange={e => setter(e.target.value)}
-                style={{ width: '100%', padding: '0.6rem', borderRadius: 8, background: '#1a2a4a', color: '#fff', border: '1px solid #334′ }}>
+                style={{ width: '100%', padding: '0.6rem', borderRadius: 8, background: '#1a2a4a', color: '#fff', border: '1px solid #334' }}>
                 <option value=''>{placeholder}</option>
                 {options.map(o => <option key={o} value={o}>{o}</option>)}
               </select>
@@ -112,11 +112,11 @@ export default function DFWEpoxyVsPolyureaGuide() {
             <h3 style={{ color: '#F5E642', marginBottom: '1rem' }}>✅ DFW Coating Recommendation</h3>
             <div style={{ display: 'grid', gap: '0.75rem' }}>
               <div><span style={{ color: '#aac' }}>Recommended Coating: </span><strong>{result.coating}</strong></div>
-              <div><span style={{ color: '#aac' }}>Cost Estimate: </span><strong style={{ color: '#F5E642′ }}>{result.cost}</strong></div>
+              <div><span style={{ color: '#aac' }}>Cost Estimate: </span><strong style={{ color: '#F5E642' }}>{result.cost}</strong></div>
               <div><span style={{ color: '#aac' }}>Cure Time: </span><strong>{result.cureTime}</strong></div>
               <div><span style={{ color: '#aac' }}>DFW Lifespan: </span><strong>{result.lifespan}</strong></div>
               <div style={{ background: '#1a2a4a', borderRadius: 8, padding: '0.75rem', fontSize: '0.88rem' }}>
-                <span style={{ color: '#F5E642′ }}>⚠️ DFW Note: </span>{result.dfwWarning}
+                <span style={{ color: '#F5E642' }}>⚠️ DFW Note: </span>{result.dfwWarning}
               </div>
               <div style={{ background: '#0A1628', borderRadius: 8, padding: '0.75rem', color: '#cce', fontSize: '0.9rem' }}>
                 🏆 {result.verdict}

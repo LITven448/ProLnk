@@ -66,7 +66,7 @@ export default function DFWHomeGlossaryGuide() {
               <button
                 key={l}
                 onClick={() => setActiveLetter(l)}
-                style={{ padding: '6px 14px', borderRadius: 6, border: 'none', cursor: 'pointer', fontWeight: 700, fontSize: 14, background: activeLetter === l ? '#F5E642′ : '#1E3A5F', color: activeLetter === l ? '#0A1628' : '#fff' }}
+                style={{ padding: '6px 14px', borderRadius: 6, border: 'none', cursor: 'pointer', fontWeight: 700, fontSize: 14, background: activeLetter === l ? '#F5E642' : '#1E3A5F', color: activeLetter === l ? '#0A1628' : '#fff' }}
               >
                 {l}
               </button>

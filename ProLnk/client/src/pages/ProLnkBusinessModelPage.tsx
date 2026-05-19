@@ -69,8 +69,8 @@ export default function ProLnkBusinessModelPage() {
               key={i}
               onClick={() => setSelected(i)}
               style={{
-                background: selected === i ? '#0A1628′ : '#fff',
-                color: selected === i ? '#F5E642′ : '#0A1628',
+                background: selected === i ? '#0A1628' : '#fff',
+                color: selected === i ? '#F5E642' : '#0A1628',
                 border: '1px solid #d1dde8',
                 borderRadius: 10,
                 padding: '14px 24px',

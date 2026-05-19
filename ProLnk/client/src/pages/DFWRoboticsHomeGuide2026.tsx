@@ -27,7 +27,7 @@ export default function DFWRoboticsHomeGuide2026() {
           <p style={{ color: '#94a3b8', fontSize: 15 }}>Robots that actually make sense for DFW homes right now</p>
         </div>
 
-        <div style={{ background: '#112240', borderRadius: 12, padding: 20, marginBottom: 28, borderLeft: '4px solid #F5E642′ }}>
+        <div style={{ background: '#112240', borderRadius: 12, padding: 20, marginBottom: 28, borderLeft: '4px solid #F5E642' }}>
           <h2 style={{ color: '#F5E642', margin: '0 0 8px', fontSize: 16 }}>🌱 DFW Bermuda Grass + Robotics</h2>
           <p style={{ color: '#cbd5e1', fontSize: 14, margin: 0 }}>Bermuda grass in DFW grows fast from April–October. Robotic mowers like the Automower cut a little every day — producing denser, healthier turf than weekly blade cuts. 60% of DFW lawn pros now recommend robotic mowing for premium lawns.</p>
         </div>
@@ -51,7 +51,7 @@ export default function DFWRoboticsHomeGuide2026() {
         <div style={{ display: 'flex', flexWrap: 'wrap', gap: 10, marginBottom: 20 }}>
           {features.map(f => (
             <button key={f.label} onClick={() => setSelected(f.label)}
-              style={{ background: selected === f.label ? '#F5E642′ : '#1e3a5f', color: selected === f.label ? '#0A1628' : '#fff', border: ’none', borderRadius: 8, padding: '10px 18px', cursor: 'pointer', fontWeight: 600, fontSize: 13 }}>
+              style={{ background: selected === f.label ? '#F5E642' : '#1e3a5f', color: selected === f.label ? '#0A1628' : '#fff', border: 'none', borderRadius: 8, padding: '10px 18px', cursor: 'pointer', fontWeight: 600, fontSize: 13 }}>
               {f.label}
             </button>
           ))}

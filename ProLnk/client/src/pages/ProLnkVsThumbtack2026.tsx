@@ -48,9 +48,9 @@ export default function ProLnkVsThumbtack2026() {
             { label: 'Thumbtack Lead Exclusivity', value: 'None', sub: 'same lead, 3-5 contractors', warn: true },
             { label: 'ProLnk Match Exclusivity', value: '100%', sub: 'one match per homeowner', warn: false },
           ].map((s) => (
-            <div key={s.label} style={{ background: '#111c2e', borderRadius: 12, padding: '20px 24px', border: s.warn ? '1px solid #4a1010′ : '1px solid #1e3a1e' }}>
+            <div key={s.label} style={{ background: '#111c2e', borderRadius: 12, padding: '20px 24px', border: s.warn ? '1px solid #4a1010' : '1px solid #1e3a1e' }}>
               <div style={{ fontSize: 12, color: '#64748b', marginBottom: 6 }}>{s.label}</div>
-              <div style={{ fontSize: 28, fontWeight: 800, color: s.warn ? '#f87171′ : '#4ade80' }}>{s.value}</div>
+              <div style={{ fontSize: 28, fontWeight: 800, color: s.warn ? '#f87171' : '#4ade80' }}>{s.value}</div>
               <div style={{ fontSize: 12, color: '#64748b', marginTop: 4 }}>{s.sub}</div>
             </div>
           ))}
@@ -64,13 +64,13 @@ export default function ProLnkVsThumbtack2026() {
                 key={c.id}
                 onClick={() => setActive(c)}
                 style={{ padding: '8px 18px', borderRadius: 8, border: 'none', cursor: 'pointer', fontWeight: 600, fontSize: 13,
-                  background: active.id === c.id ? '#F5E642′ : '#1e2d45', color: active.id === c.id ? '#0A1628' : '#94a3b8' }}>
+                  background: active.id === c.id ? '#F5E642' : '#1e2d45', color: active.id === c.id ? '#0A1628' : '#94a3b8' }}>
                 {c.label}
               </button>
             ))}
           </div>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 20 }}>
-            <div style={{ background: '#1a0a0a', borderRadius: 10, padding: 20, border: '1px solid #4a1010′ }}>
+            <div style={{ background: '#1a0a0a', borderRadius: 10, padding: 20, border: '1px solid #4a1010' }}>
               <div style={{ fontSize: 12, color: '#f87171', marginBottom: 10, fontWeight: 700 }}>🔴 THUMBTACK</div>
               <p style={{ margin: 0, color: '#cbd5e1', lineHeight: 1.6 }}>{active.thumbtack}</p>
             </div>

@@ -63,7 +63,7 @@ export default function DFWAirHandlerDrainPanGuide() {
             <label style={{ fontSize: 13, color: '#94A3B8', display: 'block', marginBottom: 8 }}>Air Handler Location</label>
             <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap' }}>
               {LOCATIONS.map(l => (
-                <button key={l} onClick={() => { setLocation(l); setShowResult(false); }} style={{ padding: '8px 16px', borderRadius: 8, border: '1.5px solid', borderColor: location === l ? '#F5E642′ : '#1E3A5F', background: location === l ? '#F5E64220' : ’transparent', color: location === l ? '#F5E642′ : '#94A3B8', cursor: ’pointer', fontSize: 13, fontWeight: 600 }}>{l}</button>
+                <button key={l} onClick={() => { setLocation(l); setShowResult(false); }} style={{ padding: '8px 16px', borderRadius: 8, border: '1.5px solid', borderColor: location === l ? '#F5E642' : '#1E3A5F', background: location === l ? '#F5E64220' : 'transparent', color: location === l ? '#F5E642' : '#94A3B8', cursor: 'pointer', fontSize: 13, fontWeight: 600 }}>{l}</button>
               ))}
             </div>
           </div>
@@ -71,11 +71,11 @@ export default function DFWAirHandlerDrainPanGuide() {
             <label style={{ fontSize: 13, color: '#94A3B8', display: 'block', marginBottom: 8 }}>Primary Drain Pan Condition</label>
             <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap' }}>
               {PAN_CONDITIONS.map(({ key, label }) => (
-                <button key={key} onClick={() => { setPanCond(key); setShowResult(false); }} style={{ padding: '8px 16px', borderRadius: 8, border: '1.5px solid', borderColor: panCond === key ? '#F5E642′ : '#1E3A5F', background: panCond === key ? '#F5E64220' : ’transparent', color: panCond === key ? '#F5E642′ : '#94A3B8', cursor: ’pointer', fontSize: 13, fontWeight: 600 }}>{label}</button>
+                <button key={key} onClick={() => { setPanCond(key); setShowResult(false); }} style={{ padding: '8px 16px', borderRadius: 8, border: '1.5px solid', borderColor: panCond === key ? '#F5E642' : '#1E3A5F', background: panCond === key ? '#F5E64220' : 'transparent', color: panCond === key ? '#F5E642' : '#94A3B8', cursor: 'pointer', fontSize: 13, fontWeight: 600 }}>{label}</button>
               ))}
             </div>
           </div>
-          <button onClick={() => setShowResult(true)} disabled={!location || !panCond} style={{ background: location && panCond ? '#F5E642′ : '#1E3A5F', color: location && panCond ? '#0A1628' : '#4A6080', border: ’none', borderRadius: 8, padding: '12px 24px', fontWeight: 700, fontSize: 14, cursor: location && panCond ? 'pointer' : 'not-allowed', width: '100%' }}>
+          <button onClick={() => setShowResult(true)} disabled={!location || !panCond} style={{ background: location && panCond ? '#F5E642' : '#1E3A5F', color: location && panCond ? '#0A1628' : '#4A6080', border: 'none', borderRadius: 8, padding: '12px 24px', fontWeight: 700, fontSize: 14, cursor: location && panCond ? 'pointer' : 'not-allowed', width: '100%' }}>
             Get My Pan Assessment
           </button>
         </div>
@@ -86,7 +86,7 @@ export default function DFWAirHandlerDrainPanGuide() {
             <p style={{ color: '#94A3B8', fontSize: 14, marginBottom: 12 }}>{urgency.detail}</p>
             <div style={{ fontWeight: 600, marginBottom: 8, fontSize: 14 }}>Recommended Actions:</div>
             {['Inspect the primary drain pan — look for rust, standing water, or cracks.', isAttic ? 'Confirm secondary pan and secondary drain line are present and unobstructed.' : 'Check drain line is clear and flowing.', 'Drop 2 pan tablets in the pan to prevent algae.', 'Install or verify float switch is wired to cut system power on overflow.', 'Schedule biannual HVAC service to include pan inspection.'].map((s, i) => (
-              <div key={i} style={{ fontSize: 13, color: '#94A3B8', marginBottom: 6, display: 'flex', gap: 8 }}><span style={{ color: '#F5E642′ }}>{i + 1}.</span>{s}</div>
+              <div key={i} style={{ fontSize: 13, color: '#94A3B8', marginBottom: 6, display: 'flex', gap: 8 }}><span style={{ color: '#F5E642' }}>{i + 1}.</span>{s}</div>
             ))}
           </div>
         )}

@@ -49,11 +49,11 @@ export default function DFWSolarScreenGuide2026() {
           </div>
           <div style={{ marginBottom: 16 }}>
             <label style={{ color: '#94a3b8', fontSize: 13, display: 'block', marginBottom: 6 }}>Total Window Area (sqft): {sqft}</label>
-            <input type="range" min={50} max={600} step={10} value={sqft} onChange={(e) => setSqft(Number(e.target.value))} style={{ width: '100%', accentColor: '#F5E642′ }} />
+            <input type="range" min={50} max={600} step={10} value={sqft} onChange={(e) => setSqft(Number(e.target.value))} style={{ width: '100%', accentColor: '#F5E642' }} />
           </div>
           <button onClick={() => setShowROI(true)} style={{ background: '#F5E642', color: '#0A1628', border: 'none', borderRadius: 6, padding: '10px 24px', fontWeight: 700, cursor: 'pointer' }}>Calculate ROI →</button>
           {showROI && (
-            <div style={{ marginTop: 16, padding: 16, background: '#0A1628', borderRadius: 8, borderLeft: '3px solid #F5E642′ }}>
+            <div style={{ marginTop: 16, padding: 16, background: '#0A1628', borderRadius: 8, borderLeft: '3px solid #F5E642' }}>
               <div style={{ color: '#F5E642', fontWeight: 700, marginBottom: 8 }}>{sel.label} — {sqft} sqft</div>
               <div style={{ color: '#94a3b8', fontSize: 13, lineHeight: 1.8 }}>
                 <div>🔥 Heat Block Rate: <span style={{ color: '#fff' }}>{sel.heatGain}%</span></div>

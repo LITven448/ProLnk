@@ -51,7 +51,7 @@ export default function DFWTexasLandscapingPlants() {
 
         <div style={{ background: '#1e3a2a', borderRadius: '12px', padding: '16px', marginBottom: '24px', border: '1px solid #2d5a3d' }}>
           <div style={{ color: '#4ade80', fontWeight: 700, marginBottom: '4px' }}>💚 Why Native Plants Win in DFW</div>
-          <div style={{ fontSize: '0.9rem', color: '#94a3b8′ }}>Native plants evolved in North Texas conditions — they handle DFW’s clay soil, summer heat above 100°F, drought, and occasional freezes. Once established, most need zero supplemental water. They also support local pollinators and songbirds.</div>
+          <div style={{ fontSize: '0.9rem', color: '#94a3b8' }}>Native plants evolved in North Texas conditions — they handle DFW's clay soil, summer heat above 100°F, drought, and occasional freezes. Once established, most need zero supplemental water. They also support local pollinators and songbirds.</div>
         </div>
 
         <div style={{ background: '#1e2d45', borderRadius: '12px', padding: '20px', marginBottom: '24px', border: '1px solid #2d3f5e' }}>
@@ -97,20 +97,20 @@ export default function DFWTexasLandscapingPlants() {
               </select>
             </div>
           </div>
-          <button onClick={() => setShowRecs(true)} disabled={!zone || !sun} style={{ background: zone && sun ? '#F5E642′ : '#2d3f5e', color: zone && sun ? '#0A1628' : '#64748b', border: ’none', borderRadius: '8px', padding: '12px 24px', fontWeight: 700, cursor: zone && sun ? 'pointer' : 'not-allowed' }}>
+          <button onClick={() => setShowRecs(true)} disabled={!zone || !sun} style={{ background: zone && sun ? '#F5E642' : '#2d3f5e', color: zone && sun ? '#0A1628' : '#64748b', border: 'none', borderRadius: '8px', padding: '12px 24px', fontWeight: 700, cursor: zone && sun ? 'pointer' : 'not-allowed' }}>
             Show My Plant Recommendations
           </button>
           {showRecs && (
-            <div style={{ marginTop: '16px', background: '#0A1628', borderRadius: '8px', padding: '16px', border: '1px solid #F5E642′ }}>
+            <div style={{ marginTop: '16px', background: '#0A1628', borderRadius: '8px', padding: '16px', border: '1px solid #F5E642' }}>
               <div style={{ color: '#F5E642', fontWeight: 700, marginBottom: '12px' }}>🌿 Top Picks for Your {zone}</div>
               {getRecommendations().map(p => (
-                <div key={p.name} style={{ padding: '10px 0', borderBottom: '1px solid #1e2d45′ }}>
+                <div key={p.name} style={{ padding: '10px 0', borderBottom: '1px solid #1e2d45' }}>
                   <div style={{ fontWeight: 700, marginBottom: '2px' }}>{p.name} <span style={{ fontSize: '0.8rem', color: '#64748b' }}>({p.type})</span></div>
-                  <div style={{ fontSize: '0.85rem', color: '#94a3b8′ }}>💧 {p.water} water · ☀️ {p.sun} · 📏 {p.height} · 🌸 {p.bloom}</div>
+                  <div style={{ fontSize: '0.85rem', color: '#94a3b8' }}>💧 {p.water} water · ☀️ {p.sun} · 📏 {p.height} · 🌸 {p.bloom}</div>
                   <div style={{ fontSize: '0.8rem', color: '#64748b', marginTop: '2px' }}>{p.notes}</div>
                 </div>
               ))}
-              {getRecommendations().length === 0 && <div style={{ color: '#94a3b8′ }}>Try different filters — all 15 plants work in DFW with the right placement.</div>}
+              {getRecommendations().length === 0 && <div style={{ color: '#94a3b8' }}>Try different filters — all 15 plants work in DFW with the right placement.</div>}
             </div>
           )}
         </div>

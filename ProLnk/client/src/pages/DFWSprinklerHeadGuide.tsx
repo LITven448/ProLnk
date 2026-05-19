@@ -102,14 +102,14 @@ export default function DFWSprinklerHeadGuide() {
         </div>
 
         {result && (
-          <div style={{ background: '#111F3A', borderRadius: 12, padding: 24, marginBottom: 32, border: '2px solid #F5E642′ }}>
+          <div style={{ background: '#111F3A', borderRadius: 12, padding: 24, marginBottom: 32, border: '2px solid #F5E642' }}>
             <div style={{ color: '#F5E642', fontWeight: 700, marginBottom: 4 }}>✅ Best Head for Your DFW Zone</div>
             <h3 style={{ fontSize: 20, fontWeight: 800, marginBottom: 8 }}>{result.name}</h3>
             <p style={{ color: '#94A3B8', marginBottom: 12 }}>{result.description}</p>
             <div style={{ background: '#0A1628', borderRadius: 8, padding: 12, marginBottom: 12, fontSize: 14 }}>{result.dfwNote}</div>
             <div style={{ marginBottom: 8 }}><strong>📐 Spacing:</strong> {result.spacing}</div>
             <div style={{ marginBottom: 8 }}><strong>💨 Pressure Needed:</strong> {result.pressureNeeded}</div>
-            <div style={{ color: '#F5E642′ }}><strong>💰 Replacement Cost:</strong> {result.replacementCost}</div>
+            <div style={{ color: '#F5E642' }}><strong>💰 Replacement Cost:</strong> {result.replacementCost}</div>
           </div>
         )}
 

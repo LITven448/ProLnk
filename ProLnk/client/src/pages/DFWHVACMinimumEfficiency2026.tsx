@@ -20,8 +20,8 @@ export default function DFWHVACMinimumEfficiency2026() {
   return (
     <div style={{ backgroundColor: '#0A1628', minHeight: '100vh', color: '#ffffff', fontFamily: 'system-ui, sans-serif', padding: '24px' }}>
       <div style={{ maxWidth: '800px', margin: '0 auto' }}>
-        <div style={{ marginBottom: '8px', color: '#F5E642', fontSize: '14px', fontWeight: '600′ }}>⚡ DFW HVAC CODE GUIDE 2026</div>
-        <h1 style={{ fontSize: '32px', fontWeight: '800', marginBottom: '12px', lineHeight: '1.2′ }}>DFW HVAC Minimum Efficiency Requirements 2026</h1>
+        <div style={{ marginBottom: '8px', color: '#F5E642', fontSize: '14px', fontWeight: '600' }}>⚡ DFW HVAC CODE GUIDE 2026</div>
+        <h1 style={{ fontSize: '32px', fontWeight: '800', marginBottom: '12px', lineHeight: '1.2' }}>DFW HVAC Minimum Efficiency Requirements 2026</h1>
         <p style={{ color: '#94a3b8', fontSize: '16px', marginBottom: '32px' }}>New federal efficiency standards changed in January 2023. DFW is in Climate Zone 3 — here's exactly what the code requires.</p>
 
         <div style={{ backgroundColor: '#1e3a5f', borderRadius: '12px', padding: '24px', marginBottom: '24px' }}>
@@ -39,7 +39,7 @@ export default function DFWHVACMinimumEfficiency2026() {
           <h2 style={{ color: '#F5E642', fontSize: '20px', fontWeight: '700', marginBottom: '16px' }}>🔑 What Changed with SEER2</h2>
           {[['New Test Method','SEER2 uses a more realistic external static pressure test — 0.5 in. w.g. vs 0.1 in. w.g. for SEER'],['Numbers Are Lower','A 15 SEER2 unit ≈ 15.8 SEER under old testing — similar real-world efficiency, different number'],['Not Backward Compatible','Old SEER ratings cannot be directly compared to new SEER2 ratings'],['Effective Date','January 1, 2023 for new equipment manufactured — existing inventory could be installed post-date']].map(([title, desc]) => (
             <div key={title} style={{ backgroundColor: '#0A1628', borderRadius: '8px', padding: '14px', marginBottom: '10px' }}>
-              <div style={{ fontWeight: '700', marginBottom: '6px', fontSize: '14px', color: '#F5E642′ }}>{title}</div>
+              <div style={{ fontWeight: '700', marginBottom: '6px', fontSize: '14px', color: '#F5E642' }}>{title}</div>
               <div style={{ color: '#94a3b8', fontSize: '13px' }}>{desc}</div>
             </div>
           ))}
@@ -61,7 +61,7 @@ export default function DFWHVACMinimumEfficiency2026() {
             style={{ backgroundColor: '#F5E642', color: '#0A1628', border: 'none', borderRadius: '8px', padding: '12px 24px', fontSize: '15px', fontWeight: '700', cursor: 'pointer', width: '100%' }}>
             Get Code Requirement →
           </button>
-          {result && <div style={{ marginTop: '16px', backgroundColor: '#0A1628', borderRadius: '8px', padding: '16px', color: '#cbd5e1', fontSize: '15px', lineHeight: '1.7′ }}>{result}</div>}
+          {result && <div style={{ marginTop: '16px', backgroundColor: '#0A1628', borderRadius: '8px', padding: '16px', color: '#cbd5e1', fontSize: '15px', lineHeight: '1.7' }}>{result}</div>}
         </div>
 
         <div style={{ backgroundColor: '#1e3a5f', borderRadius: '12px', padding: '20px' }}>

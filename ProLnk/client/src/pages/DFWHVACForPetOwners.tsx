@@ -94,10 +94,10 @@ export default function DFWHVACForPetOwners() {
           </p>
         </div>
 
-        <div style={{ backgroundColor: '#0f2040', borderRadius: 12, padding: '24px', marginBottom: 24, borderLeft: '4px solid #F5E642′ }}>
+        <div style={{ backgroundColor: '#0f2040', borderRadius: 12, padding: '24px', marginBottom: 24, borderLeft: '4px solid #F5E642' }}>
           <h2 style={{ color: '#F5E642', fontSize: 18, fontWeight: 700, margin: '0 0 12px' }}>⚠️ AC Failure with Pets in DFW Summer</h2>
           <p style={{ color: '#cbd5e1', lineHeight: 1.7, margin: 0 }}>
-            When DFW outdoor temps hit 105°F, an unair-conditioned home reaches dangerous temperatures for pets in under 2 hours. Dogs and cats cannot sweat — they rely entirely on your HVAC. <strong style={{ color: '#F5E642′ }}>AC failure is a pet emergency, not just an inconvenience.</strong>
+            When DFW outdoor temps hit 105°F, an unair-conditioned home reaches dangerous temperatures for pets in under 2 hours. Dogs and cats cannot sweat — they rely entirely on your HVAC. <strong style={{ color: '#F5E642' }}>AC failure is a pet emergency, not just an inconvenience.</strong>
           </p>
         </div>
 
@@ -139,8 +139,8 @@ export default function DFWHVACForPetOwners() {
               <select value={petCount} onChange={e => { setPetCount(e.target.value); setSubmitted(false); }}
                 style={{ width: '100%', padding: '10px 14px', backgroundColor: '#0A1628', color: '#fff', border: '1px solid #334155', borderRadius: 8, fontSize: 15 }}>
                 <option value="">Select count...</option>
-                <option value="1″>1 pet</option>
-                <option value="2-3″>2–3 pets</option>
+                <option value="1">1 pet</option>
+                <option value="2-3">2–3 pets</option>
                 <option value="4+">4 or more pets</option>
               </select>
             </div>

@@ -22,7 +22,7 @@ export default function DFWPoolInspectionGuide2026() {
           <p style={{ color: '#94a3b8', fontSize: 15 }}>Buying a DFW home with a pool? Don't skip the specialist inspection</p>
         </div>
 
-        <div style={{ background: '#112240', borderRadius: 12, padding: 20, marginBottom: 20, borderLeft: '4px solid #F5E642′ }}>
+        <div style={{ background: '#112240', borderRadius: 12, padding: 20, marginBottom: 20, borderLeft: '4px solid #F5E642' }}>
           <h2 style={{ color: '#F5E642', fontSize: 16, margin: '0 0 10px' }}>💡 Pool Inspection = Separate from General Inspection</h2>
           <p style={{ color: '#cbd5e1', fontSize: 14, margin: 0 }}>General inspectors are not pool specialists. A pool inspection covers equipment, plaster/shell, electrical bonding, safety compliance, and leak risk. Expect to pay $200–350 separately — worth every dollar on a $40,000+ asset.</p>
         </div>
@@ -43,8 +43,8 @@ export default function DFWPoolInspectionGuide2026() {
             {Object.keys(features).map(f => (
               <button key={f} onClick={() => setSelected(f)}
                 style={{ padding: '8px 14px', borderRadius: 8, border: '1px solid', cursor: 'pointer', fontSize: 13,
-                  borderColor: selected === f ? '#F5E642′ : '#334155', background: selected === f ? '#F5E642' : ’transparent',
-                  color: selected === f ? '#0A1628′ : '#94a3b8', fontWeight: selected === f ? 700 : 400 }}>
+                  borderColor: selected === f ? '#F5E642' : '#334155', background: selected === f ? '#F5E642' : 'transparent',
+                  color: selected === f ? '#0A1628' : '#94a3b8', fontWeight: selected === f ? 700 : 400 }}>
                 {f}
               </button>
             ))}

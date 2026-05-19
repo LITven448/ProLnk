@@ -57,7 +57,7 @@ export default function DFWSmartLockGuide2026() {
             <div key={c.type} style={{ padding: '10px 0', borderBottom: '1px solid #1e3a5f' }}>
               <div style={{ fontWeight: 700, marginBottom: 4 }}>{c.type}</div>
               <div style={{ fontSize: 12, color: '#22c55e' }}>✅ {c.pro}</div>
-              <div style={{ fontSize: 12, color: '#ef4444′ }}>❌ {c.con}</div>
+              <div style={{ fontSize: 12, color: '#ef4444' }}>❌ {c.con}</div>
             </div>
           ))}
         </div>
@@ -84,7 +84,7 @@ export default function DFWSmartLockGuide2026() {
               </select>
             </div>
           </div>
-          {rec && <div style={{ backgroundColor: '#0A1628', padding: 16, borderRadius: 8, fontSize: 14, borderLeft: '3px solid #F5E642′ }}>{rec}</div>}
+          {rec && <div style={{ backgroundColor: '#0A1628', padding: 16, borderRadius: 8, fontSize: 14, borderLeft: '3px solid #F5E642' }}>{rec}</div>}
         </div>
 
         <div style={{ textAlign: 'center', padding: 16, backgroundColor: '#112240', borderRadius: 12 }}>

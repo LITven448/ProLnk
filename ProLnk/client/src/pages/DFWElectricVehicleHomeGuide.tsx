@@ -47,7 +47,7 @@ export default function DFWElectricVehicleHomeGuide() {
       </div>
 
       <div style={{ maxWidth: 1100, margin: '0 auto', padding: '0 24px' }}>
-        <div style={{ background: 'linear-gradient(135deg,#1a2d1a,#0f1f0f)', border: '1px solid #2d5a2d', borderRadius: 16, padding: 24, margin: '40px 0 0′ }}>
+        <div style={{ background: 'linear-gradient(135deg,#1a2d1a,#0f1f0f)', border: '1px solid #2d5a2d', borderRadius: 16, padding: 24, margin: '40px 0 0' }}>
           <h2 style={{ color: '#4ADE80', fontSize: 20, fontWeight: 700, margin: '0 0 8px' }}>⚡ Install Conduit Now: $500 Today vs $2,000+ Later</h2>
           <p style={{ color: '#86EFAC', margin: 0 }}>The single most cost-effective EV home upgrade for non-EV owners: have an electrician run empty conduit from your electrical panel to the garage. When you add an EV charger, the wire pull is 30 minutes instead of a full excavation job.</p>
         </div>
@@ -106,7 +106,7 @@ export default function DFWElectricVehicleHomeGuide() {
             <option value="yes">Yes, I have solar</option>
           </select>
           <label style={{ color: '#94A3B8', fontSize: 14, display: 'block', marginBottom: 6 }}>Average daily miles driven</label>
-          <input type="number" value={dailyMiles} onChange={e => setDailyMiles(e.target.value)} placeholder="e.g. 35″
+          <input type="number" value={dailyMiles} onChange={e => setDailyMiles(e.target.value)} placeholder="e.g. 35"
             style={{ width: '100%', background: '#0A1628', border: '1px solid #2A3F5C', borderRadius: 8, padding: '10px 14px', color: '#E8EDF5', fontSize: 16, marginBottom: 16, boxSizing: 'border-box' }} />
           <button onClick={calculate} style={{ background: '#F5E642', color: '#0A1628', border: 'none', borderRadius: 10, padding: '12px 28px', fontWeight: 700, fontSize: 16, cursor: 'pointer', width: '100%' }}>
             Calculate My EV Charging Cost

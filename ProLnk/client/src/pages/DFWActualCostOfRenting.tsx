@@ -1,9 +1,9 @@
 import { useState } from 'react';
 
 const dfwRentData = [
-  { type: 'Studio', avgRent: 1340, notes: 'DFW urban core avg 2026′ },
+  { type: 'Studio', avgRent: 1340, notes: 'DFW urban core avg 2026' },
   { type: '1 Bedroom', avgRent: 1580, notes: 'Most common renter unit' },
-  { type: '2 Bedroom', avgRent: 1850, notes: 'DFW metro avg 2026′ },
+  { type: '2 Bedroom', avgRent: 1850, notes: 'DFW metro avg 2026' },
   { type: '3 Bedroom', avgRent: 2280, notes: 'Near SF home mortgage territory' },
 ];
 
@@ -42,7 +42,7 @@ export default function DFWActualCostOfRenting() {
           <div style={{ fontSize: 13, color: '#F5E642', marginBottom: 8, letterSpacing: 1 }}>DFW REAL ESTATE GUIDE</div>
           <h1 style={{ color: '#fff', fontSize: 28, margin: 0 }}>The True Cost of Renting in DFW</h1>
           <p style={{ color: '#94a3b8', marginTop: 10, fontSize: 15 }}>
-            DFW renters paid an average of $1,850/mo for a 2BR in 2026. Here's what they didn’t pay: equity.
+            DFW renters paid an average of $1,850/mo for a 2BR in 2026. Here's what they didn't pay: equity.
           </p>
         </div>
 
@@ -67,13 +67,13 @@ export default function DFWActualCostOfRenting() {
               <thead>
                 <tr style={{ background: '#f8fafc' }}>
                   {['Started Renting', 'DFW Home Value Then', 'Value in 2026', 'Appreciation Missed'].map(h => (
-                    <th key={h} style={{ padding: '10px 12px', textAlign: 'left', borderBottom: '2px solid #e2e8f0′ }}>{h}</th>
+                    <th key={h} style={{ padding: '10px 12px', textAlign: 'left', borderBottom: '2px solid #e2e8f0' }}>{h}</th>
                   ))}
                 </tr>
               </thead>
               <tbody>
                 {appreciationLoss.map(r => (
-                  <tr key={r.year} style={{ borderBottom: '1px solid #f1f5f9′ }}>
+                  <tr key={r.year} style={{ borderBottom: '1px solid #f1f5f9' }}>
                     <td style={{ padding: '10px 12px', fontWeight: 600 }}>{r.year}</td>
                     <td style={{ padding: '10px 12px' }}>${r.dfwHomeValue.toLocaleString()}</td>
                     <td style={{ padding: '10px 12px' }}>${r.todayValue.toLocaleString()}</td>
@@ -85,24 +85,24 @@ export default function DFWActualCostOfRenting() {
           </div>
         </div>
 
-        <div style={{ background: '#fff', borderRadius: 10, padding: 24, border: '2px solid #F5E642′ }}>
+        <div style={{ background: '#fff', borderRadius: 10, padding: 24, border: '2px solid #F5E642' }}>
           <h2 style={{ fontSize: 18, margin: '0 0 6px' }}>🧮 Opportunity Cost of Renting Calculator</h2>
           <p style={{ fontSize: 13, color: '#64748b', marginTop: 0, marginBottom: 16 }}>See how much renting has cost you vs owning in DFW.</p>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12, marginBottom: 12 }}>
             <div>
               <label style={{ fontSize: 13, fontWeight: 600 }}>Your monthly rent</label>
-              <input type="text" placeholder="$1,850″ value={rent} onChange={e => setRent(e.target.value)}
+              <input type="text" placeholder="$1,850" value={rent} onChange={e => setRent(e.target.value)}
                 style={{ display: 'block', width: '100%', marginTop: 6, padding: '10px 12px', borderRadius: 8, border: '1px solid #cbd5e1', fontSize: 14, boxSizing: 'border-box' }} />
             </div>
             <div>
               <label style={{ fontSize: 13, fontWeight: 600 }}>Years renting</label>
-              <input type="number" placeholder="5″ value={years} onChange={e => setYears(e.target.value)}
+              <input type="number" placeholder="5" value={years} onChange={e => setYears(e.target.value)}
                 style={{ display: 'block', width: '100%', marginTop: 6, padding: '10px 12px', borderRadius: 8, border: '1px solid #cbd5e1', fontSize: 14, boxSizing: 'border-box' }} />
             </div>
           </div>
           <div style={{ marginBottom: 16 }}>
             <label style={{ fontSize: 13, fontWeight: 600 }}>Target DFW home price</label>
-            <input type="text" placeholder="$380,000″ value={homePrice} onChange={e => setHomePrice(e.target.value)}
+            <input type="text" placeholder="$380,000" value={homePrice} onChange={e => setHomePrice(e.target.value)}
               style={{ display: 'block', width: '100%', marginTop: 6, padding: '10px 12px', borderRadius: 8, border: '1px solid #cbd5e1', fontSize: 14, boxSizing: 'border-box' }} />
           </div>
           <button onClick={calculate}
@@ -114,18 +114,18 @@ export default function DFWActualCostOfRenting() {
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12 }}>
                 <div>
                   <div style={{ fontSize: 12, color: '#64748b' }}>Total rent paid</div>
-                  <div style={{ fontSize: 22, fontWeight: 800, color: '#dc2626′ }}>${result.totalRent.toLocaleString()}</div>
+                  <div style={{ fontSize: 22, fontWeight: 800, color: '#dc2626' }}>${result.totalRent.toLocaleString()}</div>
                 </div>
                 <div>
                   <div style={{ fontSize: 12, color: '#64748b' }}>Equity appreciation missed</div>
-                  <div style={{ fontSize: 22, fontWeight: 800, color: '#dc2626′ }}>${result.equityMissed.toLocaleString()}</div>
+                  <div style={{ fontSize: 22, fontWeight: 800, color: '#dc2626' }}>${result.equityMissed.toLocaleString()}</div>
                 </div>
               </div>
               <div style={{ marginTop: 12, padding: 12, background: '#fef2f2', borderRadius: 8, textAlign: 'center' }}>
                 <div style={{ fontSize: 13, color: '#64748b' }}>Total opportunity cost of renting</div>
-                <div style={{ fontSize: 28, fontWeight: 900, color: '#dc2626′ }}>${result.opportunityCost.toLocaleString()}</div>
+                <div style={{ fontSize: 28, fontWeight: 900, color: '#dc2626' }}>${result.opportunityCost.toLocaleString()}</div>
               </div>
-              <div style={{ marginTop: 10, fontSize: 13, color: '#475569′ }}>
+              <div style={{ marginTop: 10, fontSize: 13, color: '#475569' }}>
                 You only needed ${result.downPayment.toLocaleString()} (5%) to start building equity. The rest went to your landlord.
               </div>
             </div>

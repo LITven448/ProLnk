@@ -19,7 +19,7 @@ function getPostRenovationPlan(reno: string, size: string) {
   ];
 
   const hvacSchedule = [
-    '📅 Immediately: Replace 1″ filters, check 4″ media filters',
+    '📅 Immediately: Replace 1" filters, check 4" media filters',
     dusty ? '📅 Week 1: Inspect again — drywall dust clogs filters in 5–7 days' : '📅 Week 2: First follow-up filter check',
     '📅 Month 1: Full filter replacement regardless of appearance',
     '📅 Month 3: Schedule professional duct cleaning if renovation was extensive',
@@ -47,7 +47,7 @@ export default function DFWPostRenovationCleanGuide() {
     <div style={{ background: '#0F1F3D', borderRadius: 12, padding: 20, border: '1px solid #1E3A5F', marginBottom: 14 }}>
       <div style={{ color: '#F5E642', fontWeight: 700, marginBottom: 10 }}>{title}</div>
       <ul style={{ margin: 0, padding: 0, listStyle: 'none', display: 'grid', gap: 8 }}>
-        {items.map(item => <li key={item} style={{ color: '#CBD5E1′ }}>{item}</li>)}
+        {items.map(item => <li key={item} style={{ color: '#CBD5E1' }}>{item}</li>)}
       </ul>
     </div>
   );

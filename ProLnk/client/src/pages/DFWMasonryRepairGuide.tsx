@@ -131,11 +131,11 @@ export default function DFWMasonryRepairGuide() {
               </div>
               <div>
                 <div style={{ color: '#94a3b8', fontSize: '0.75rem' }}>Urgency</div>
-                <div style={{ color: result.urgency === 'Critical' ? '#f87171′ : result.urgency === ’High' ? '#fb923c' : result.urgency === 'Medium' ? '#facc15′ : '#4ade80', fontSize: '1rem', fontWeight: 700 }}>{result.urgency}</div>
+                <div style={{ color: result.urgency === 'Critical' ? '#f87171' : result.urgency === 'High' ? '#fb923c' : result.urgency === 'Medium' ? '#facc15' : '#4ade80', fontSize: '1rem', fontWeight: 700 }}>{result.urgency}</div>
               </div>
               <div>
                 <div style={{ color: '#94a3b8', fontSize: '0.75rem' }}>DIY?</div>
-                <div style={{ color: result.diy ? '#4ade80′ : '#f87171', fontSize: '1rem', fontWeight: 700 }}>{result.diy ? ’Possible' : 'Hire Pro'}</div>
+                <div style={{ color: result.diy ? '#4ade80' : '#f87171', fontSize: '1rem', fontWeight: 700 }}>{result.diy ? 'Possible' : 'Hire Pro'}</div>
               </div>
             </div>
           )}

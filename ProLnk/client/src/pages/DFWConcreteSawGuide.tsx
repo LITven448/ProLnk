@@ -3,8 +3,8 @@ import { useState } from 'react';
 const sawTypes = [
   { project: 'Expansion Joint Cutting', slab: 'Standard', saw: 'Walk-Behind Concrete Saw', postTension: false, rec: 'Rent' },
   { project: 'Expansion Joint Cutting', slab: 'Post-Tension', saw: 'Walk-Behind Concrete Saw', postTension: true, rec: 'Hire Professional' },
-  { project: 'Slab Repair Access', slab: 'Standard', saw: 'Cut-Off Saw (14″)', postTension: false, rec: 'Rent' },
-  { project: 'Slab Repair Access', slab: 'Post-Tension', saw: 'Cut-Off Saw (14″)', postTension: true, rec: 'Hire Professional' },
+  { project: 'Slab Repair Access', slab: 'Standard', saw: 'Cut-Off Saw (14")', postTension: false, rec: 'Rent' },
+  { project: 'Slab Repair Access', slab: 'Post-Tension', saw: 'Cut-Off Saw (14")', postTension: true, rec: 'Hire Professional' },
   { project: 'Patio Modification', slab: 'Standard', saw: 'Walk-Behind Concrete Saw', postTension: false, rec: 'Rent' },
   { project: 'Patio Modification', slab: 'Post-Tension', saw: 'Walk-Behind Concrete Saw', postTension: true, rec: 'Hire Professional' },
 ];
@@ -62,9 +62,9 @@ export default function DFWConcreteSawGuide() {
         <div style={{ background: '#1e2d45', borderRadius: 12, padding: 24, marginBottom: 24 }}>
           <h2 style={{ color: '#F5E642', fontSize: 18, marginBottom: 16 }}>📋 DFW Saw Types Reference</h2>
           {[
-            { icon: '🚶', name: 'Walk-Behind Concrete Saw', use: 'Long straight cuts, expansion joints, driveway repair', depth: 'Up to 13″' },
-            { icon: '✂️', 'name': 'Cut-Off Saw (14″)', use: 'Spot cuts, tight areas, slab access points', depth: 'Up to 5″' },
-            { icon: '💧', name: 'Handheld Angle Grinder', use: 'Small patches, tile removal, edge work', depth: 'Up to 2″' },
+            { icon: '🚶', name: 'Walk-Behind Concrete Saw', use: 'Long straight cuts, expansion joints, driveway repair', depth: 'Up to 13"' },
+            { icon: '✂️', 'name': 'Cut-Off Saw (14")', use: 'Spot cuts, tight areas, slab access points', depth: 'Up to 5"' },
+            { icon: '💧', name: 'Handheld Angle Grinder', use: 'Small patches, tile removal, edge work', depth: 'Up to 2"' },
           ].map((item, i) => (
             <div key={i} style={{ background: '#0A1628', borderRadius: 8, padding: 16, marginBottom: 12 }}>
               <div style={{ fontWeight: 700, marginBottom: 4 }}>{item.icon} {item.name}</div>

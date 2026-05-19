@@ -20,7 +20,7 @@ export default function DFWFacebookMarketplaceVsProLnkGuide2026() {
       <div style={{ maxWidth: 860, margin: '0 auto' }}>
         <div style={{ textAlign: 'center', marginBottom: '2rem' }}>
           <span style={{ fontSize: '2.5rem' }}>🚨</span>
-          <h1 style={{ color: '#F5E642', fontSize: '1.8rem', margin: '0.5rem 0′ }}>ProLnk vs Facebook Marketplace — DFW Contractor Scam Data 2026</h1>
+          <h1 style={{ color: '#F5E642', fontSize: '1.8rem', margin: '0.5rem 0' }}>ProLnk vs Facebook Marketplace — DFW Contractor Scam Data 2026</h1>
           <p style={{ color: '#94a3b8', maxWidth: 580, margin: '0 auto' }}>
             Facebook contractors have zero licensing requirements. Here&apos;s the DFW scam landscape by trade.
           </p>
@@ -28,7 +28,7 @@ export default function DFWFacebookMarketplaceVsProLnkGuide2026() {
 
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '1rem', marginBottom: '2rem' }}>
           {[['🏠', '2,400+', 'DFW Contractor Scams (2025)'], ['💸', '$3,100', 'Average Loss Per Victim'], ['📱', '67%', 'Found via Facebook/Craigslist']].map(([icon, val, label]) => (
-            <div key={String(label)} style={{ background: '#1e293b', borderRadius: 10, padding: '1.2rem', textAlign: 'center', border: '1px solid #ef4444′ }}>
+            <div key={String(label)} style={{ background: '#1e293b', borderRadius: 10, padding: '1.2rem', textAlign: 'center', border: '1px solid #ef4444' }}>
               <div style={{ fontSize: '1.6rem' }}>{icon}</div>
               <div style={{ color: '#ef4444', fontSize: '1.5rem', fontWeight: 700 }}>{val}</div>
               <div style={{ color: '#94a3b8', fontSize: '0.8rem' }}>{label}</div>
@@ -41,7 +41,7 @@ export default function DFWFacebookMarketplaceVsProLnkGuide2026() {
           <div style={{ display: 'flex', gap: '0.5rem', flexWrap: 'wrap', marginBottom: '1.5rem' }}>
             {services.map((s) => (
               <button key={s} onClick={() => setService(s)}
-                style={{ background: service === s ? '#F5E642′ : '#0f172a', color: service === s ? '#0A1628' : '#f1f5f9', border: '1px solid #334155', borderRadius: 8, padding: '0.4rem 0.9rem', cursor: ’pointer', fontWeight: 600, fontSize: '0.85rem' }}>{s}</button>
+                style={{ background: service === s ? '#F5E642' : '#0f172a', color: service === s ? '#0A1628' : '#f1f5f9', border: '1px solid #334155', borderRadius: 8, padding: '0.4rem 0.9rem', cursor: 'pointer', fontWeight: 600, fontSize: '0.85rem' }}>{s}</button>
             ))}
           </div>
 
@@ -59,7 +59,7 @@ export default function DFWFacebookMarketplaceVsProLnkGuide2026() {
           <div style={{ background: '#0f172a', borderRadius: 8, padding: '1rem', marginBottom: '1rem' }}>
             <p style={{ color: '#f87171', fontWeight: 700, margin: '0 0 0.5rem' }}>🚩 Red Flags to Watch For:</p>
             {d.redFlags.map((f) => (
-              <div key={f} style={{ color: '#f1f5f9', fontSize: '0.9rem', padding: '0.3rem 0′ }}>• {f}</div>
+              <div key={f} style={{ color: '#f1f5f9', fontSize: '0.9rem', padding: '0.3rem 0' }}>• {f}</div>
             ))}
           </div>
 

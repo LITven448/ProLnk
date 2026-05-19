@@ -79,7 +79,7 @@ export default function DFWRoofingMaterialsGuide2026() {
   const savingsHigh = Math.round(annualPremium * discountHigh / 100);
 
   return (
-    <div style={{ background: '#0A1628', minHeight: '100vh', color: '#E8EAF0', fontFamily: 'system-ui, sans-serif', padding: '0′ }}>
+    <div style={{ background: '#0A1628', minHeight: '100vh', color: '#E8EAF0', fontFamily: 'system-ui, sans-serif', padding: '0' }}>
       <div style={{ maxWidth: 900, margin: '0 auto', padding: '40px 20px' }}>
         <div style={{ marginBottom: 8, fontSize: 13, color: '#F5E642', fontWeight: 600, letterSpacing: 1 }}>DFW ROOFING GUIDE 2026</div>
         <h1 style={{ fontSize: 32, fontWeight: 800, color: '#fff', marginBottom: 8, lineHeight: 1.2 }}>
@@ -97,9 +97,9 @@ export default function DFWRoofingMaterialsGuide2026() {
               style={{
                 padding: '10px 16px',
                 borderRadius: 8,
-                border: selected === m.id ? '2px solid #F5E642′ : '2px solid #1E2D45',
-                background: selected === m.id ? '#F5E642′ : '#111E33',
-                color: selected === m.id ? '#0A1628′ : '#9AA3B4',
+                border: selected === m.id ? '2px solid #F5E642' : '2px solid #1E2D45',
+                background: selected === m.id ? '#F5E642' : '#111E33',
+                color: selected === m.id ? '#0A1628' : '#9AA3B4',
                 fontWeight: 700,
                 fontSize: 13,
                 cursor: 'pointer',
@@ -141,14 +141,14 @@ export default function DFWRoofingMaterialsGuide2026() {
             ].map(({ label, value }) => (
               <div key={label} style={{ background: '#0A1628', borderRadius: 10, padding: '14px 16px' }}>
                 <div style={{ fontSize: 12, color: '#6B7A99', marginBottom: 4 }}>{label}</div>
-                <div style={{ fontSize: 22, fontWeight: 800, color: '#F5E642′ }}>{value}</div>
+                <div style={{ fontSize: 22, fontWeight: 800, color: '#F5E642' }}>{value}</div>
               </div>
             ))}
           </div>
           {savingsHigh > 0 && (
             <div style={{ background: '#0D2A1A', border: '1px solid #1A5C35', borderRadius: 10, padding: '14px 18px' }}>
               <span style={{ color: '#4ADE80', fontWeight: 700 }}>💚 Insurance Savings: </span>
-              <span style={{ color: '#C5CAD8′ }}>
+              <span style={{ color: '#C5CAD8' }}>
                 {savingsLow === savingsHigh
                   ? `~$${savingsHigh}/year`
                   : `$${savingsLow}–$${savingsHigh}/year`} off your premium
@@ -157,8 +157,8 @@ export default function DFWRoofingMaterialsGuide2026() {
           )}
         </div>
 
-        <div style={{ marginTop: 28, padding: '16px 20px', background: '#111E33', borderRadius: 12, borderLeft: '4px solid #F5E642′ }}>
-          <strong style={{ color: '#F5E642′ }}>Pro Tip:</strong>
+        <div style={{ marginTop: 28, padding: '16px 20px', background: '#111E33', borderRadius: 12, borderLeft: '4px solid #F5E642' }}>
+          <strong style={{ color: '#F5E642' }}>Pro Tip:</strong>
           <span style={{ color: '#9AA3B4', marginLeft: 8 }}>
             DFW homeowners filing hail claims save most by upgrading to Class 4 impact-resistant shingles at replacement time — insurers often cover the upgrade cost difference.
           </span>

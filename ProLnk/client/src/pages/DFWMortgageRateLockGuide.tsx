@@ -53,15 +53,15 @@ export default function DFWMortgageRateLockGuide() {
           <p style={{ color: '#CBD5E1', fontSize: 15, margin: 0 }}>Protect your rate while closing — timing matters in DFW.</p>
         </div>
 
-        <div style={{ background: '#fff', borderRadius: 12, padding: 24, marginBottom: 24, border: '1px solid #E2E8F0′ }}>
+        <div style={{ background: '#fff', borderRadius: 12, padding: 24, marginBottom: 24, border: '1px solid #E2E8F0' }}>
           <h2 style={{ color: '#0A1628', fontSize: 18, fontWeight: 700, marginBottom: 12 }}>📋 What Is a Rate Lock?</h2>
           <p style={{ color: '#374151', fontSize: 14, lineHeight: 1.6 }}>A rate lock guarantees your interest rate for a specified period while your loan processes. If rates rise after you lock, your rate stays fixed. If rates fall, you are locked in — unless you added a float-down option.</p>
         </div>
 
-        <div style={{ background: '#fff', borderRadius: 12, padding: 24, marginBottom: 24, border: '1px solid #E2E8F0′ }}>
+        <div style={{ background: '#fff', borderRadius: 12, padding: 24, marginBottom: 24, border: '1px solid #E2E8F0' }}>
           <h2 style={{ color: '#0A1628', fontSize: 18, fontWeight: 700, marginBottom: 16 }}>🗓️ DFW Rate Lock Options</h2>
           {lockOptions.map(opt => (
-            <div key={opt.period} style={{ background: '#F9FAFB', borderRadius: 8, padding: 14, marginBottom: 10, border: '1px solid #E2E8F0′ }}>
+            <div key={opt.period} style={{ background: '#F9FAFB', borderRadius: 8, padding: 14, marginBottom: 10, border: '1px solid #E2E8F0' }}>
               <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 6 }}>
                 <span style={{ color: '#0A1628', fontWeight: 700, fontSize: 15 }}>{opt.period}</span>
                 <span style={{ background: '#0A1628', color: '#F5E642', borderRadius: 6, padding: '3px 10px', fontSize: 12 }}>{opt.cost}</span>
@@ -72,7 +72,7 @@ export default function DFWMortgageRateLockGuide() {
           ))}
         </div>
 
-        <div style={{ background: '#fff', borderRadius: 12, padding: 24, marginBottom: 24, border: '1px solid #E2E8F0′ }}>
+        <div style={{ background: '#fff', borderRadius: 12, padding: 24, marginBottom: 24, border: '1px solid #E2E8F0' }}>
           <h2 style={{ color: '#0A1628', fontSize: 18, fontWeight: 700, marginBottom: 8 }}>⚠️ What Happens If Closing Is Delayed?</h2>
           <p style={{ color: '#374151', fontSize: 14, lineHeight: 1.6 }}>In DFW, closing delays are common — title issues, HOA docs, repair negotiations. Rate lock extensions typically cost 0.125–0.25% of the loan amount per week. A 30-day extension on a $500K loan can cost $1,250–$2,500. Build buffer into your lock period.</p>
         </div>
@@ -82,7 +82,7 @@ export default function DFWMortgageRateLockGuide() {
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12, marginBottom: 12 }}>
             <div>
               <label style={{ color: '#CBD5E1', fontSize: 13, display: 'block', marginBottom: 4 }}>Days until expected closing</label>
-              <input type="number" value={closingDays} onChange={e => setClosingDays(e.target.value)} placeholder="e.g. 35″ style={{ width: '100%', padding: '10px', borderRadius: 8, border: 'none', fontSize: 14, boxSizing: 'border-box' }} />
+              <input type="number" value={closingDays} onChange={e => setClosingDays(e.target.value)} placeholder="e.g. 35" style={{ width: '100%', padding: '10px', borderRadius: 8, border: 'none', fontSize: 14, boxSizing: 'border-box' }} />
             </div>
             <div>
               <label style={{ color: '#CBD5E1', fontSize: 13, display: 'block', marginBottom: 4 }}>Rate trend expectation</label>

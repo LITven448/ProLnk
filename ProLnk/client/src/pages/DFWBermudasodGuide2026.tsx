@@ -56,13 +56,13 @@ export default function DFWBermudasodGuide2026() {
         <p style={{ color: '#F5E642', fontWeight: 700, marginBottom: 12 }}>Find your Bermuda variety:</p>
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: 10, marginBottom: 16 }}>
           {[['🏠 Residential', 'residential'], ['🏟️ Sports/Active', 'sports'], ['🌲 Shady Areas', 'shady']].map(([label, val]) => (
-            <button key={val} onClick={() => setUseCase(val)} style={{ padding: '12px', border: useCase === val ? '2px solid #F5E642′ : '1px solid #1e3a5f', borderRadius: 8, background: useCase === val ? '#1e3a5f' : '#0d1f3c', color: '#fff', cursor: ’pointer', fontSize: 13 }}>{label}</button>
+            <button key={val} onClick={() => setUseCase(val)} style={{ padding: '12px', border: useCase === val ? '2px solid #F5E642' : '1px solid #1e3a5f', borderRadius: 8, background: useCase === val ? '#1e3a5f' : '#0d1f3c', color: '#fff', cursor: 'pointer', fontSize: 13 }}>{label}</button>
           ))}
         </div>
 
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: 10, marginBottom: 20 }}>
           {[['💚 Budget', 'low'], ['💛 Mid-Range', 'mid'], ['💎 Premium', 'high']].map(([label, val]) => (
-            <button key={val} onClick={() => setBudget(val)} style={{ padding: '12px', border: budget === val ? '2px solid #F5E642′ : '1px solid #1e3a5f', borderRadius: 8, background: budget === val ? '#1e3a5f' : '#0d1f3c', color: '#fff', cursor: ’pointer', fontSize: 13 }}>{label}</button>
+            <button key={val} onClick={() => setBudget(val)} style={{ padding: '12px', border: budget === val ? '2px solid #F5E642' : '1px solid #1e3a5f', borderRadius: 8, background: budget === val ? '#1e3a5f' : '#0d1f3c', color: '#fff', cursor: 'pointer', fontSize: 13 }}>{label}</button>
           ))}
         </div>
 

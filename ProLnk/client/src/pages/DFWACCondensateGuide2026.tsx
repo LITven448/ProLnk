@@ -46,7 +46,7 @@ export default function DFWACCondensateGuide2026() {
               {[{id: 'central', label: '🏠 Central AC'}, {id: 'minisplit', label: '💨 Mini-Split'}].map(t => (
                 <button key={t.id} onClick={() => { setAcType(t.id); setSymptom('none'); }}
                   style={{ flex: 1, padding: '10px', borderRadius: 8, border: 'none', cursor: 'pointer', fontWeight: 600,
-                    backgroundColor: acType === t.id ? '#F5E642′ : '#0A1628', color: acType === t.id ? '#0A1628' : '#fff' }}>
+                    backgroundColor: acType === t.id ? '#F5E642' : '#0A1628', color: acType === t.id ? '#0A1628' : '#fff' }}>
                   {t.label}
                 </button>
               ))}
@@ -64,7 +64,7 @@ export default function DFWACCondensateGuide2026() {
                 ].map(s => (
                   <button key={s.id} onClick={() => setSymptom(s.id)}
                     style={{ padding: '10px', borderRadius: 8, border: 'none', cursor: 'pointer', fontWeight: 600,
-                      backgroundColor: symptom === s.id ? '#F5E642′ : '#0A1628', color: symptom === s.id ? '#0A1628' : '#fff' }}>
+                      backgroundColor: symptom === s.id ? '#F5E642' : '#0A1628', color: symptom === s.id ? '#0A1628' : '#fff' }}>
                     {s.label}
                   </button>
                 ))}
@@ -74,7 +74,7 @@ export default function DFWACCondensateGuide2026() {
           <div style={{ backgroundColor: dx.color, borderRadius: 8, padding: 20 }}>
             <div style={{ display: 'flex', alignItems: 'flex-start', gap: 12 }}>
               <div style={{ fontSize: 32 }}>{dx.icon}</div>
-              <div><div style={{ fontWeight: 700, fontSize: 18, marginBottom: 4 }}>{dx.title}</div><div style={{ fontSize: 14, color: '#e2e8f0′ }}>{dx.detail}</div></div>
+              <div><div style={{ fontWeight: 700, fontSize: 18, marginBottom: 4 }}>{dx.title}</div><div style={{ fontSize: 14, color: '#e2e8f0' }}>{dx.detail}</div></div>
             </div>
           </div>
         </div>

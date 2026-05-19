@@ -44,10 +44,10 @@ export default function DFWAgriculturalExemptionGuide2026() {
         <div style={{ backgroundColor: '#111d35', borderRadius: 12, padding: 24, marginBottom: 24 }}>
           <h2 style={{ fontSize: 18, fontWeight: 700, marginBottom: 16 }}>✅ Eligibility Check</h2>
           <label style={{ display: 'block', marginBottom: 8, color: '#94a3b8', fontSize: 14 }}>Enter your acreage:</label>
-          <input type="number" value={acres} onChange={e => setAcres(e.target.value)} placeholder="e.g. 12″ style={{ backgroundColor: '#0A1628', color: '#fff', border: '1px solid #1e2d4a', borderRadius: 8, padding: '10px 14px', fontSize: 15, width: 160, marginBottom: 20 }} />
+          <input type="number" value={acres} onChange={e => setAcres(e.target.value)} placeholder="e.g. 12" style={{ backgroundColor: '#0A1628', color: '#fff', border: '1px solid #1e2d4a', borderRadius: 8, padding: '10px 14px', fontSize: 15, width: 160, marginBottom: 20 }} />
           <div style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
             {QUALIFYING_USES.map(u => (
-              <button key={u.id} onClick={() => setSelectedUse(u.id)} style={{ padding: '12px 16px', borderRadius: 8, border: 'none', cursor: 'pointer', fontWeight: 600, textAlign: 'left', backgroundColor: selectedUse === u.id ? '#F5E642′ : '#1e2d4a', color: selectedUse === u.id ? '#0A1628' : '#fff' }}>
+              <button key={u.id} onClick={() => setSelectedUse(u.id)} style={{ padding: '12px 16px', borderRadius: 8, border: 'none', cursor: 'pointer', fontWeight: 600, textAlign: 'left', backgroundColor: selectedUse === u.id ? '#F5E642' : '#1e2d4a', color: selectedUse === u.id ? '#0A1628' : '#fff' }}>
                 {u.label} — Min {u.min} acres
               </button>
             ))}
@@ -69,7 +69,7 @@ export default function DFWAgriculturalExemptionGuide2026() {
         <div style={{ backgroundColor: '#111d35', borderRadius: 12, padding: 24, marginBottom: 24 }}>
           <h2 style={{ fontSize: 18, fontWeight: 700, marginBottom: 16 }}>📋 How to Apply</h2>
           {STEPS.map((s, i) => (
-            <div key={i} style={{ padding: '10px 0', borderBottom: '1px solid #1e2d4a', fontSize: 14, color: '#cbd5e1′ }}>
+            <div key={i} style={{ padding: '10px 0', borderBottom: '1px solid #1e2d4a', fontSize: 14, color: '#cbd5e1' }}>
               <span style={{ color: '#F5E642', fontWeight: 700, marginRight: 8 }}>{i + 1}.</span>{s}
             </div>
           ))}

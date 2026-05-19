@@ -13,11 +13,11 @@ const ages = ['Pre-1970', '1970–1990', '1990–2010', '2010–present'];
 
 function getLoad(addition: string, age: string) {
   const engineerRequired = ['Second story addition', 'Swimming pool (inground)', 'Heavy spa or hot tub on slab'].includes(addition);
-  const highRisk = age === 'Pre-1970′ || age === '1970–1990';
+  const highRisk = age === 'Pre-1970' || age === '1970–1990';
   const considerations: Record<string, string> = {
     'Room addition (standard framing)': 'Adds 10–15 PSF dead load. Requires new continuous footings tied to existing slab. Permit required in all DFW cities.',
     'Second story addition': 'Doubles effective live load on existing slab. Most DFW slabs 1970+ can support with beam/column reinforcement. Engineer must certify.',
-    'Garage conversion to living space': 'Minimal new load but changes moisture dynamics — garage slabs often thinner (3.5″). HVAC addition matters for slab temp.',
+    'Garage conversion to living space': 'Minimal new load but changes moisture dynamics — garage slabs often thinner (3.5"). HVAC addition matters for slab temp.',
     'Swimming pool (inground)': 'Pool shell weight + water = 100,000+ lbs. Must be designed away from foundation bearing zone. Hydrostatic pressure a concern.',
     'Large stone/tile flooring': 'Stone tile adds 15–25 PSF. Distributed load manageable on most post-tension DFW slabs. Check for deflection allowance.',
     'Heavy spa or hot tub on slab': 'Hot tub + water can exceed 5,000 lbs in 50 sq ft. Concentrated point load — engineer review required to avoid punching shear.',

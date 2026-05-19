@@ -33,7 +33,7 @@ export default function DFWAugustHomeGuide() {
         </p>
 
         <div style={{ background: '#7F1D1D30', border: '1px solid #EF4444', borderRadius: 8, padding: '1rem', marginBottom: '1.5rem' }}>
-          <strong style={{ color: '#EF4444′ }}>🔴 Highest Risk This Month in DFW</strong>
+          <strong style={{ color: '#EF4444' }}>🔴 Highest Risk This Month in DFW</strong>
           <ul style={{ margin: '0.5rem 0 0', paddingLeft: '1.25rem', color: '#CBD5E1', fontSize: '0.9rem' }}>
             {risks.map(r => <li key={r}>{r}</li>)}
           </ul>
@@ -44,9 +44,9 @@ export default function DFWAugustHomeGuide() {
           {Object.entries(TASKS).map(([key, val]) => (
             <button key={key} onClick={() => toggle(key)} style={{
               padding: '0.5rem 1rem', borderRadius: 20, border: '1px solid',
-              borderColor: selected.includes(key) ? '#F5E642′ : '#334155',
-              background: selected.includes(key) ? '#F5E64220′ : ’transparent',
-              color: selected.includes(key) ? '#F5E642′ : '#94A3B8',
+              borderColor: selected.includes(key) ? '#F5E642' : '#334155',
+              background: selected.includes(key) ? '#F5E64220' : 'transparent',
+              color: selected.includes(key) ? '#F5E642' : '#94A3B8',
               cursor: 'pointer', fontSize: '0.85rem', fontWeight: 600,
             }}>{val.label}</button>
           ))}
@@ -60,10 +60,10 @@ export default function DFWAugustHomeGuide() {
                 display: 'flex', alignItems: 'flex-start', gap: '0.75rem',
                 padding: '0.75rem 1rem', marginBottom: '0.5rem', borderRadius: 8,
                 background: done[task] ? '#0F2A1A' : '#0F1C2E', cursor: 'pointer',
-                border: '1px solid', borderColor: done[task] ? '#22C55E40′ : '#1E3A5F',
+                border: '1px solid', borderColor: done[task] ? '#22C55E40' : '#1E3A5F',
               }}>
                 <span style={{ fontSize: '1rem', marginTop: 2 }}>{done[task] ? '✅' : '⬜'}</span>
-                <span style={{ color: done[task] ? '#4ADE80′ : '#CBD5E1', textDecoration: done[task] ? ’line-through' : 'none', fontSize: '0.9rem' }}>{task}</span>
+                <span style={{ color: done[task] ? '#4ADE80' : '#CBD5E1', textDecoration: done[task] ? 'line-through' : 'none', fontSize: '0.9rem' }}>{task}</span>
               </div>
             ))}
             <div style={{ marginTop: '1rem', padding: '0.75rem 1rem', background: '#0F1C2E', borderRadius: 8, color: '#64748B', fontSize: '0.8rem' }}>

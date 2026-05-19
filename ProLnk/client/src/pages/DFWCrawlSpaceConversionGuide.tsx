@@ -72,7 +72,7 @@ export default function DFWCrawlSpaceConversionGuide() {
               <div style={{ fontSize: 32, marginBottom: 8 }}>{o.icon}</div>
               <div style={{ fontWeight: 700, marginBottom: 4 }}>{o.label}</div>
               <div style={{ color: '#F5E642', fontSize: 14, fontWeight: 700, marginBottom: 6 }}>{o.cost}</div>
-              <div style={{ fontSize: 12, color: '#94a3b8′ }}>{o.desc}</div>
+              <div style={{ fontSize: 12, color: '#94a3b8' }}>{o.desc}</div>
             </div>
           ))}
         </div>
@@ -102,7 +102,7 @@ export default function DFWCrawlSpaceConversionGuide() {
             <div style={{ marginTop: 16 }}>
               <div style={{ padding: 16, background: '#0A1628', borderRadius: 8, borderLeft: '3px solid #F5E642', marginBottom: 12 }}>
                 <div style={{ color: '#F5E642', fontWeight: 700, marginBottom: 4 }}>✅ Recommended: {result.recommended}</div>
-                <p style={{ fontSize: 14, lineHeight: 1.6, margin: '8px 0 0 0', color: '#cbd5e1′ }}>{result.notes}</p>
+                <p style={{ fontSize: 14, lineHeight: 1.6, margin: '8px 0 0 0', color: '#cbd5e1' }}>{result.notes}</p>
               </div>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: 10, marginBottom: 12 }}>
                 {[
@@ -110,7 +110,7 @@ export default function DFWCrawlSpaceConversionGuide() {
                   { label: '📋 Permit Required', value: result.permit },
                   { label: '⏱️ Timeline', value: result.timeline },
                 ].map(({ label, value }) => (
-                  <div key={label} style={{ padding: 12, background: '#0A1628', borderRadius: 8, borderTop: '2px solid #F5E642′ }}>
+                  <div key={label} style={{ padding: 12, background: '#0A1628', borderRadius: 8, borderTop: '2px solid #F5E642' }}>
                     <div style={{ fontSize: 12, color: '#F5E642', marginBottom: 4 }}>{label}</div>
                     <div style={{ fontSize: 13 }}>{value}</div>
                   </div>
@@ -131,9 +131,9 @@ export default function DFWCrawlSpaceConversionGuide() {
         </div>
 
         <div style={{ background: '#112240', borderRadius: 12, padding: 20 }}>
-          <div style={{ fontWeight: 700, marginBottom: 12, color: '#F5E642′ }}>📍 DFW Crawl Space Facts</div>
+          <div style={{ fontWeight: 700, marginBottom: 12, color: '#F5E642' }}>📍 DFW Crawl Space Facts</div>
           {['Crawl spaces are rare in DFW — most pre-1960 older neighborhoods', 'DFW clay soil creates hydrostatic pressure on crawl space walls — sealing is critical', 'Encapsulated crawl spaces in DFW can reduce HVAC loads by 15–20%', 'Slab conversion requires structural engineer + city permit in all DFW cities'].map(f => (
-            <div key={f} style={{ fontSize: 13, marginBottom: 8, color: '#cbd5e1′ }}>• {f}</div>
+            <div key={f} style={{ fontSize: 13, marginBottom: 8, color: '#cbd5e1' }}>• {f}</div>
           ))}
         </div>
       </div>

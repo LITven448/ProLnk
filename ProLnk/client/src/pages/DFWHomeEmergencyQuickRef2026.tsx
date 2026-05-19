@@ -45,7 +45,7 @@ export default function DFWHomeEmergencyQuickRef2026() {
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '12px', marginBottom: '24px' }}>
           {emergencies.map((e, i) => (
             <button key={i} onClick={() => setSelected(selected === i ? null : i)}
-              style={{ backgroundColor: selected === i ? '#1a2f4a' : '#0f2035', border: selected === i ? '2px solid #F5E642′ : '2px solid #1e3a5f', borderRadius: '12px', padding: '20px', cursor: ’pointer', textAlign: 'left', transition: 'all 0.2s' }}>
+              style={{ backgroundColor: selected === i ? '#1a2f4a' : '#0f2035', border: selected === i ? '2px solid #F5E642' : '2px solid #1e3a5f', borderRadius: '12px', padding: '20px', cursor: 'pointer', textAlign: 'left', transition: 'all 0.2s' }}>
               <div style={{ fontSize: '28px', marginBottom: '8px' }}>{e.icon}</div>
               <div style={{ color: '#F5E642', fontWeight: '700', fontSize: '15px' }}>{e.type}</div>
             </button>
@@ -57,7 +57,7 @@ export default function DFWHomeEmergencyQuickRef2026() {
               <span style={{ fontSize: '32px' }}>{emergencies[selected].icon}</span>
               <h2 style={{ color: '#F5E642', fontSize: '20px', margin: 0 }}>{emergencies[selected].type}</h2>
             </div>
-            <p style={{ color: '#e2e8f0', fontSize: '15px', marginBottom: '16px', lineHeight: '1.6′ }}>{emergencies[selected].action}</p>
+            <p style={{ color: '#e2e8f0', fontSize: '15px', marginBottom: '16px', lineHeight: '1.6' }}>{emergencies[selected].action}</p>
             <div style={{ backgroundColor: '#0A1628', borderRadius: '8px', padding: '12px', marginBottom: '16px' }}>
               <div style={{ color: '#F5E642', fontSize: '12px', fontWeight: '700', marginBottom: '4px' }}>📞 CONTACT</div>
               <div style={{ color: '#94a3b8', fontSize: '13px' }}>{emergencies[selected].contact}</div>

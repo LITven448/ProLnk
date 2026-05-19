@@ -13,7 +13,7 @@ const TRADE_ITEMS: Record<string, string[]> = {
     '🔷 No hollow spots — tap each tile, should sound solid',
     '🧹 Grout haze cleaned from tile faces',
     '🔗 Transitions installed at all thresholds — no exposed edges',
-    '📐 Floor level — no lippage >1/32″ between adjacent tiles',
+    '📐 Floor level — no lippage >1/32" between adjacent tiles',
     '🚿 Caulk (not grout) at tub/floor and tub/wall intersections',
   ],
   'Plumbing': [
@@ -84,8 +84,8 @@ export default function DFWPunchListGuide() {
         {project && (
           <>
             <div style={{ background: '#111E35', borderRadius: 12, padding: '1rem 1.5rem', marginBottom: '1.5rem', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-              <span style={{ color: '#9BA3B4′ }}>Punch list progress</span>
-              <span style={{ color: pct === 100 ? '#4CAF50′ : '#F5E642', fontWeight: 700, fontSize: '1.2rem' }}>{checkedCount}/{allItems.length} — {pct}%</span>
+              <span style={{ color: '#9BA3B4' }}>Punch list progress</span>
+              <span style={{ color: pct === 100 ? '#4CAF50' : '#F5E642', fontWeight: 700, fontSize: '1.2rem' }}>{checkedCount}/{allItems.length} — {pct}%</span>
             </div>
 
             {trades.map(trade => (
@@ -97,7 +97,7 @@ export default function DFWPunchListGuide() {
                     <label key={key} style={{ display: 'flex', alignItems: 'flex-start', gap: '0.75rem', padding: '0.5rem 0', borderBottom: '1px solid #1E2E45', cursor: 'pointer' }}>
                       <input type="checkbox" checked={!!checked[key]} onChange={() => toggle(key)}
                         style={{ marginTop: 3, accentColor: '#F5E642', width: 16, height: 16 }} />
-                      <span style={{ color: checked[key] ? '#4CAF50′ : '#C8D0DC' }}>{item}</span>
+                      <span style={{ color: checked[key] ? '#4CAF50' : '#C8D0DC' }}>{item}</span>
                     </label>
                   );
                 })}
@@ -108,7 +108,7 @@ export default function DFWPunchListGuide() {
               <div style={{ background: '#1A2A20', border: '1px solid #2A4A30', borderRadius: 12, padding: '1.5rem', textAlign: 'center' }}>
                 <div style={{ fontSize: '2rem', marginBottom: '0.5rem' }}>🎉</div>
                 <div style={{ color: '#4CAF50', fontWeight: 700, fontSize: '1.2rem', marginBottom: '0.5rem' }}>Punch List Complete</div>
-                <div style={{ color: '#9BA3B4′ }}>Collect signed lien waivers from contractor and all subcontractors before releasing final payment.</div>
+                <div style={{ color: '#9BA3B4' }}>Collect signed lien waivers from contractor and all subcontractors before releasing final payment.</div>
               </div>
             )}
           </>

@@ -57,7 +57,7 @@ export default function DFWPowerToolSafetyDFW() {
         <h1 style={{ fontSize: 32, fontWeight: 800, marginBottom: 8 }}>⚡ Power Tool Safety in DFW</h1>
         <p style={{ color: '#94A3B8', marginBottom: 28, lineHeight: 1.6 }}>DFW-specific hazards: extreme heat, rapid storms, and fire-risk conditions change how you use power tools.</p>
 
-        <div style={{ background: '#F87171′ + '22', border: '1px solid #F87171' + '55', borderRadius: 10, padding: 16, marginBottom: 32, fontSize: 14, color: '#F87171' }}>
+        <div style={{ background: '#F87171' + '22', border: '1px solid #F87171' + '55', borderRadius: 10, padding: 16, marginBottom: 32, fontSize: 14, color: '#F87171' }}>
           🚨 DFW summer temps regularly hit 105°F. Power tool motors overheat, batteries fail, and operator fatigue creates serious injury risk. Plan your work early morning.
         </div>
 
@@ -75,17 +75,17 @@ export default function DFWPowerToolSafetyDFW() {
             </button>
           </div>
           {result && (
-            <div style={{ marginTop: 20, background: '#0A1628', borderRadius: 10, padding: 20, borderLeft: '4px solid #F87171′ }}>
+            <div style={{ marginTop: 20, background: '#0A1628', borderRadius: 10, padding: 20, borderLeft: '4px solid #F87171' }}>
               <div style={{ fontWeight: 700, fontSize: 18, marginBottom: 4 }}>{result.tool}</div>
               <div style={{ color: '#94A3B8', fontSize: 13, marginBottom: 12 }}>Season: {result.season}</div>
               <div style={{ marginBottom: 10 }}>
-                <span style={{ fontWeight: 600, color: '#F87171′ }}>DFW Risks:</span>
+                <span style={{ fontWeight: 600, color: '#F87171' }}>DFW Risks:</span>
                 <ul style={{ margin: '6px 0 0 18px', color: '#F87171', lineHeight: 1.8, fontSize: 13 }}>
                   {result.risks.map((r, i) => <li key={i}>{r}</li>)}
                 </ul>
               </div>
               <div style={{ marginBottom: 10 }}>
-                <span style={{ fontWeight: 600, color: '#34D399′ }}>Safety Checklist:</span>
+                <span style={{ fontWeight: 600, color: '#34D399' }}>Safety Checklist:</span>
                 <ul style={{ margin: '6px 0 0 18px', color: '#34D399', lineHeight: 1.8, fontSize: 13 }}>
                   {result.checklist.map((c, i) => <li key={i}>{c}</li>)}
                 </ul>
@@ -104,7 +104,7 @@ export default function DFWPowerToolSafetyDFW() {
             <div key={i} style={{ background: '#111C2E', borderRadius: 10, padding: 18 }}>
               <div style={{ display: 'flex', justifyContent: 'space-between', flexWrap: 'wrap', gap: 8, marginBottom: 8 }}>
                 <span style={{ fontWeight: 700, fontSize: 16 }}>{s.tool}</span>
-                <span style={{ background: '#F87171′ + '22', color: '#F87171', borderRadius: 6, padding: '2px 10px', fontSize: 13 }}>{s.season}</span>
+                <span style={{ background: '#F87171' + '22', color: '#F87171', borderRadius: 6, padding: '2px 10px', fontSize: 13 }}>{s.season}</span>
               </div>
               <div style={{ color: '#F87171', fontSize: 13, marginBottom: 6 }}>⚠️ {s.risks.join(' · ')}</div>
               <div style={{ color: '#34D399', fontSize: 13, marginBottom: 4 }}>✅ {s.checklist.slice(0, 2).join(' · ')}</div>

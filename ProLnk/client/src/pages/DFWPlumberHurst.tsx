@@ -99,8 +99,8 @@ export default function DFWPlumberHurst() {
                 onClick={() => setSelected(s.id)}
                 style={{
                   padding: '16px 12px',
-                  backgroundColor: selected === s.id ? '#F5E642′ : '#0A1628',
-                  color: selected === s.id ? '#0A1628′ : '#fff',
+                  backgroundColor: selected === s.id ? '#F5E642' : '#0A1628',
+                  color: selected === s.id ? '#0A1628' : '#fff',
                   border: `1px solid ${selected === s.id ? '#F5E642' : '#1e3a5f'}`,
                   borderRadius: 10,
                   cursor: 'pointer',
@@ -146,10 +146,10 @@ export default function DFWPlumberHurst() {
 
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: 16, marginBottom: 40 }}>
           {[
-            { icon: '🔩', label: 'Full House Repipe', price: 'From $7,500′ },
-            { icon: '🚿', label: 'Water Heater Replace', price: 'From $950′ },
-            { icon: '🌀', label: 'Hydro-Jet Cleaning', price: 'From $450′ },
-            { icon: '🔍', label: 'Camera Inspection', price: 'From $225′ },
+            { icon: '🔩', label: 'Full House Repipe', price: 'From $7,500' },
+            { icon: '🚿', label: 'Water Heater Replace', price: 'From $950' },
+            { icon: '🌀', label: 'Hydro-Jet Cleaning', price: 'From $450' },
+            { icon: '🔍', label: 'Camera Inspection', price: 'From $225' },
           ].map((svc) => (
             <div key={svc.label} style={{ backgroundColor: '#111f35', border: '1px solid #1e3a5f', borderRadius: 12, padding: 24 }}>
               <div style={{ fontSize: 32, marginBottom: 12 }}>{svc.icon}</div>

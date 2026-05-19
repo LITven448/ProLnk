@@ -45,8 +45,8 @@ export default function TexasHomeInsuranceGuide() {
         <div style={{ background: '#1E0A0A', border: '1px solid #7F1D1D', borderRadius: 12, padding: 28, marginBottom: 48 }}>
           <div style={{ display: 'flex', gap: 24, alignItems: 'center', flexWrap: 'wrap' }}>
             <div style={{ textAlign: 'center' }}>
-              <div style={{ fontSize: 40, fontWeight: 900, color: '#EF4444′ }}>$3,240</div>
-              <div style={{ fontSize: 14, color: '#FCA5A5′ }}>DFW Average Premium/Year</div>
+              <div style={{ fontSize: 40, fontWeight: 900, color: '#EF4444' }}>$3,240</div>
+              <div style={{ fontSize: 14, color: '#FCA5A5' }}>DFW Average Premium/Year</div>
             </div>
             <div style={{ fontSize: 28, color: '#64748B' }}>vs</div>
             <div style={{ textAlign: 'center' }}>
@@ -55,7 +55,7 @@ export default function TexasHomeInsuranceGuide() {
             </div>
             <div style={{ flex: 1, minWidth: 200 }}>
               <div style={{ background: '#EF444420', borderRadius: 8, padding: 14 }}>
-                <div style={{ fontSize: 22, fontWeight: 800, color: '#EF4444′ }}>91% above average</div>
+                <div style={{ fontSize: 22, fontWeight: 800, color: '#EF4444' }}>91% above average</div>
                 <div style={{ fontSize: 14, color: '#FCA5A5', marginTop: 4 }}>DFW homeowners pay nearly twice the national average due to concentrated weather risk</div>
               </div>
             </div>

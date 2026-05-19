@@ -68,7 +68,7 @@ export default function HVACLifespanGuide() {
               </thead>
               <tbody>
                 {lifespans.map((row, i) => (
-                  <tr key={row.system} style={{ background: i % 2 === 0 ? '#111E33′ : '#0A1628', borderBottom: '1px solid #1E3A5F' }}>
+                  <tr key={row.system} style={{ background: i % 2 === 0 ? '#111E33' : '#0A1628', borderBottom: '1px solid #1E3A5F' }}>
                     <td style={{ padding: '14px 16px', color: '#E8EDF5', fontWeight: 500 }}>{row.system}</td>
                     <td style={{ padding: '14px 16px', textAlign: 'center', color: '#F59E0B', fontWeight: 700 }}>{row.dfwYrs}</td>
                     <td style={{ padding: '14px 16px', textAlign: 'center', color: '#4ADE80', fontWeight: 700 }}>{row.natYrs}</td>
@@ -88,7 +88,7 @@ export default function HVACLifespanGuide() {
               If repair cost {">"} 50% of replacement AND unit is over 10 years → Replace
             </div>
             <p style={{ color: '#94A3B8', margin: 0, lineHeight: 1.7 }}>
-              This rule holds in most cases. A new 3-ton central AC in DFW runs $5,500–8,500 installed. If you're looking at a $3,000+ repair on a 12-year-old unit, you’re throwing money at a system that has 2–3 years left.
+              This rule holds in most cases. A new 3-ton central AC in DFW runs $5,500–8,500 installed. If you're looking at a $3,000+ repair on a 12-year-old unit, you're throwing money at a system that has 2–3 years left.
             </p>
           </div>
         </section>
@@ -96,9 +96,9 @@ export default function HVACLifespanGuide() {
         {/* SEER2 Note */}
         <section style={{ marginBottom: 48 }}>
           <h2 style={{ fontSize: 22, fontWeight: 700, color: '#FFFFFF', marginBottom: 16 }}>SEER2 Efficiency Standards</h2>
-          <div style={{ background: '#1B2E4A', borderRadius: 12, padding: 24, borderLeft: '4px solid #1D6FE8′ }}>
+          <div style={{ background: '#1B2E4A', borderRadius: 12, padding: 24, borderLeft: '4px solid #1D6FE8' }}>
             <p style={{ color: '#CBD5E1', margin: 0, lineHeight: 1.8 }}>
-              As of 2023, all new AC units sold in Texas must meet <strong style={{ color: '#64B5F6′ }}>SEER2 15 minimum</strong> (Climate Zone 4). A 10-year-old unit running SEER 13–14 is about <strong style={{ color: '#4ADE80' }}>20% less efficient</strong> than a new unit. In DFW, where cooling bills run $200–500/mo in summer, that efficiency difference can save <strong style={{ color: '#4ADE80' }}>$40–100/mo</strong> — $480–1,200/year — helping offset replacement cost.
+              As of 2023, all new AC units sold in Texas must meet <strong style={{ color: '#64B5F6' }}>SEER2 15 minimum</strong> (Climate Zone 4). A 10-year-old unit running SEER 13–14 is about <strong style={{ color: '#4ADE80' }}>20% less efficient</strong> than a new unit. In DFW, where cooling bills run $200–500/mo in summer, that efficiency difference can save <strong style={{ color: '#4ADE80' }}>$40–100/mo</strong> — $480–1,200/year — helping offset replacement cost.
             </p>
           </div>
         </section>
@@ -111,20 +111,20 @@ export default function HVACLifespanGuide() {
               <div>
                 <label style={{ display: 'block', fontSize: 13, color: '#94A3B8', marginBottom: 6 }}>Unit Age (years)</label>
                 <input
-                  type="number" min="0″ max="30"
+                  type="number" min="0" max="30"
                   value={unitAge}
                   onChange={e => setUnitAge(e.target.value)}
-                  placeholder="e.g. 11″
+                  placeholder="e.g. 11"
                   style={{ width: '100%', background: '#0A1628', border: '1px solid #2D4A6B', borderRadius: 8, padding: '10px 14px', color: '#FFFFFF', fontSize: 15, boxSizing: 'border-box' }}
                 />
               </div>
               <div>
                 <label style={{ display: 'block', fontSize: 13, color: '#94A3B8', marginBottom: 6 }}>Repair Quote ($)</label>
                 <input
-                  type="number" min="0″
+                  type="number" min="0"
                   value={repairCost}
                   onChange={e => setRepairCost(e.target.value)}
-                  placeholder="e.g. 2800″
+                  placeholder="e.g. 2800"
                   style={{ width: '100%', background: '#0A1628', border: '1px solid #2D4A6B', borderRadius: 8, padding: '10px 14px', color: '#FFFFFF', fontSize: 15, boxSizing: 'border-box' }}
                 />
               </div>

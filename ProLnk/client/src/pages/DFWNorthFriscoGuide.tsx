@@ -29,7 +29,7 @@ export default function DFWNorthFriscoGuide() {
           <div style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
             {buildYearRanges.map(r => (
               <button key={r.value} onClick={() => setSelected(r.value)}
-                style={{ background: selected === r.value ? '#F5E642′ : '#1E2D45', color: selected === r.value ? '#0A1628' : '#fff', border: ’none', borderRadius: 8, padding: '12px 16px', textAlign: 'left', cursor: 'pointer', fontWeight: 600, fontSize: 14 }}>
+                style={{ background: selected === r.value ? '#F5E642' : '#1E2D45', color: selected === r.value ? '#0A1628' : '#fff', border: 'none', borderRadius: 8, padding: '12px 16px', textAlign: 'left', cursor: 'pointer', fontWeight: 600, fontSize: 14 }}>
                 {r.label}
               </button>
             ))}
@@ -40,7 +40,7 @@ export default function DFWNorthFriscoGuide() {
           <div style={{ display: 'flex', flexDirection: 'column', gap: 16 }}>
             <div style={{ background: '#111D30', borderRadius: 12, padding: 20 }}>
               <div style={{ color: '#F5E642', fontWeight: 700, marginBottom: 10 }}>🛡️ Active Warranty Items</div>
-              {active.warranty.map((w, i) => <div key={i} style={{ color: '#CBD5E1', marginBottom: 6, paddingLeft: 16, borderLeft: '3px solid #F5E642′ }}>{w}</div>)}
+              {active.warranty.map((w, i) => <div key={i} style={{ color: '#CBD5E1', marginBottom: 6, paddingLeft: 16, borderLeft: '3px solid #F5E642' }}>{w}</div>)}
             </div>
             <div style={{ background: '#111D30', borderRadius: 12, padding: 20 }}>
               <div style={{ color: '#F5E642', fontWeight: 700, marginBottom: 10 }}>🔧 First Maintenance Priorities</div>

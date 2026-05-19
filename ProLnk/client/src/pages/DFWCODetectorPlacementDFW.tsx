@@ -25,7 +25,7 @@ export default function DFWCODetectorPlacementDFW() {
           <h1 style={{ color: '#F5E642', fontSize: '2rem', fontWeight: 700, marginBottom: '0.5rem' }}>
             DFW CO Detector Placement Guide
           </h1>
-          <p style={{ color: '#94a3b8′ }}>
+          <p style={{ color: '#94a3b8' }}>
             DFW homes with gas appliances need CO detectors. Select your appliances for placement recommendations and unit count.
           </p>
         </div>
@@ -38,14 +38,14 @@ export default function DFWCODetectorPlacementDFW() {
                 key={a.name}
                 onClick={() => toggle(a.name)}
                 style={{
-                  background: selected.includes(a.name) ? '#F5E642′ : '#1e3a5f',
-                  color: selected.includes(a.name) ? '#0A1628′ : '#fff',
+                  background: selected.includes(a.name) ? '#F5E642' : '#1e3a5f',
+                  color: selected.includes(a.name) ? '#0A1628' : '#fff',
                   border: 'none', borderRadius: 8, padding: '0.75rem',
                   cursor: 'pointer', fontWeight: 600, fontSize: '0.82rem', transition: 'all 0.2s',
                   position: 'relative'
                 }}
               >
-                {a.required && <span style={{ position: 'absolute', top: 4, right: 6, fontSize: '0.65rem', color: selected.includes(a.name) ? '#0A1628′ : '#F5E642' }}>REQUIRED</span>}
+                {a.required && <span style={{ position: 'absolute', top: 4, right: 6, fontSize: '0.65rem', color: selected.includes(a.name) ? '#0A1628' : '#F5E642' }}>REQUIRED</span>}
                 {a.name}
               </button>
             ))}
@@ -63,7 +63,7 @@ export default function DFWCODetectorPlacementDFW() {
                 <div key={r.name} style={{ background: '#0A1628', borderRadius: 8, padding: '1rem', borderLeft: `4px solid ${r.required ? '#ef4444' : '#F5E642'}` }}>
                   <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '0.5rem' }}>
                     <span style={{ color: '#fff', fontWeight: 700 }}>{r.name}</span>
-                    <span style={{ color: r.required ? '#ef4444′ : '#94a3b8', fontSize: '0.8rem', fontWeight: 600 }}>{r.required ? ’Required by code' : 'Recommended'}</span>
+                    <span style={{ color: r.required ? '#ef4444' : '#94a3b8', fontSize: '0.8rem', fontWeight: 600 }}>{r.required ? 'Required by code' : 'Recommended'}</span>
                   </div>
                   <div style={{ color: '#94a3b8', fontSize: '0.85rem', marginBottom: '0.25rem' }}>📍 {r.placement}</div>
                   <div style={{ color: '#94a3b8', fontSize: '0.85rem' }}>🔧 {r.type}</div>

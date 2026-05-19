@@ -73,8 +73,8 @@ export default function DFWThermalBridgingGuide2026() {
             'Texas energy code (IECC 2021) now requires continuous insulation in climate zone 3 (DFW area).',
           ].map((fact, i) => (
             <div key={i} style={{ display: 'flex', gap: '0.75rem', marginBottom: '0.75rem' }}>
-              <span style={{ color: '#F5E642′ }}>▸</span>
-              <span style={{ color: '#cbd5e1′ }}>{fact}</span>
+              <span style={{ color: '#F5E642' }}>▸</span>
+              <span style={{ color: '#cbd5e1' }}>{fact}</span>
             </div>
           ))}
         </div>
@@ -84,7 +84,7 @@ export default function DFWThermalBridgingGuide2026() {
           <div style={{ display: 'flex', gap: '0.75rem', flexWrap: 'wrap', marginBottom: '1.5rem' }}>
             {Object.entries({ 'standard-stud': '🪵 2x4 Stud', '2x6-stud': '🪵 2x6 Stud', 'metal-stud': '🔩 Metal Stud', 'icf': '🏗️ ICF Wall' }).map(([k, v]) => (
               <button key={k} onClick={() => setWallType(k)}
-                style={{ padding: '0.5rem 1rem', borderRadius: '20px', border: 'none', cursor: 'pointer', background: wallType === k ? '#F5E642′ : '#1e3a5f', color: wallType === k ? '#0A1628' : '#94a3b8', fontWeight: 600 }}>
+                style={{ padding: '0.5rem 1rem', borderRadius: '20px', border: 'none', cursor: 'pointer', background: wallType === k ? '#F5E642' : '#1e3a5f', color: wallType === k ? '#0A1628' : '#94a3b8', fontWeight: 600 }}>
                 {v}
               </button>
             ))}

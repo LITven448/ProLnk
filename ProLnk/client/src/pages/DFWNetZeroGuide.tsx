@@ -48,7 +48,7 @@ export default function DFWNetZeroGuide() {
       </div>
 
       <div style={{ maxWidth: 1100, margin: '0 auto', padding: '0 24px' }}>
-        <div style={{ background: 'linear-gradient(135deg,#1a2a1a,#0f1f0f)', border: '1px solid #2d5a2d', borderRadius: 16, padding: 24, margin: '40px 0 0′ }}>
+        <div style={{ background: 'linear-gradient(135deg,#1a2a1a,#0f1f0f)', border: '1px solid #2d5a2d', borderRadius: 16, padding: 24, margin: '40px 0 0' }}>
           <h2 style={{ color: '#4ADE80', fontSize: 20, fontWeight: 700, margin: '0 0 8px' }}>What Net-Zero Actually Means</h2>
           <p style={{ color: '#86EFAC', margin: 0 }}>A net-zero energy home produces as much energy as it consumes over a full year, measured at the utility meter. In DFW, with 229+ sunny days/year and Oncor net metering, net-zero is achievable for most homes for $25,000–$60,000 total investment — and pays back in 8–14 years.</p>
         </div>
@@ -88,10 +88,10 @@ export default function DFWNetZeroGuide() {
         <p style={{ color: '#94A3B8', marginBottom: 20 }}>Enter your current monthly electric bill and home size to get a DFW net-zero roadmap.</p>
         <div style={{ background: '#1E2D45', borderRadius: 16, padding: 28, border: '1px solid #2A3F5C', maxWidth: 520 }}>
           <label style={{ color: '#94A3B8', fontSize: 14, display: 'block', marginBottom: 6 }}>Current Monthly Electric Bill ($)</label>
-          <input type="number" value={bill} onChange={e => setBill(e.target.value)} placeholder="e.g. 280″
+          <input type="number" value={bill} onChange={e => setBill(e.target.value)} placeholder="e.g. 280"
             style={{ width: '100%', background: '#0A1628', border: '1px solid #2A3F5C', borderRadius: 8, padding: '10px 14px', color: '#E8EDF5', fontSize: 16, marginBottom: 16, boxSizing: 'border-box' }} />
           <label style={{ color: '#94A3B8', fontSize: 14, display: 'block', marginBottom: 6 }}>Home Size (sq ft)</label>
-          <input type="number" value={sqFt} onChange={e => setSqFt(e.target.value)} placeholder="e.g. 2500″
+          <input type="number" value={sqFt} onChange={e => setSqFt(e.target.value)} placeholder="e.g. 2500"
             style={{ width: '100%', background: '#0A1628', border: '1px solid #2A3F5C', borderRadius: 8, padding: '10px 14px', color: '#E8EDF5', fontSize: 16, marginBottom: 16, boxSizing: 'border-box' }} />
           <button onClick={calculate} style={{ background: '#F5E642', color: '#0A1628', border: 'none', borderRadius: 10, padding: '12px 28px', fontWeight: 700, fontSize: 16, cursor: 'pointer', width: '100%' }}>
             Build My Net-Zero Plan

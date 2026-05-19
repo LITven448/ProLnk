@@ -58,7 +58,7 @@ export default function DFWTitleCompanyProLnkGuide() {
 
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))', gap: 16, marginBottom: 32 }}>
           {opportunities.map((o) => (
-            <div key={o.title} style={{ background: '#fff', borderRadius: 12, padding: 20, boxShadow: '0 2px 12px rgba(0,0,0,0.06)', borderTop: '3px solid #F5E642′ }}>
+            <div key={o.title} style={{ background: '#fff', borderRadius: 12, padding: 20, boxShadow: '0 2px 12px rgba(0,0,0,0.06)', borderTop: '3px solid #F5E642' }}>
               <div style={{ fontSize: 28, marginBottom: 8 }}>{o.icon}</div>
               <div style={{ fontWeight: 700, fontSize: 15, marginBottom: 6 }}>{o.title}</div>
               <div style={{ color: '#64748b', fontSize: 13, lineHeight: 1.5 }}>{o.desc}</div>
@@ -82,14 +82,14 @@ export default function DFWTitleCompanyProLnkGuide() {
           <h2 style={{ fontSize: 20, fontWeight: 700, marginBottom: 16 }}>🏆 Partnership Tiers</h2>
           <div style={{ display: 'grid', gap: 12 }}>
             {tiers.map((t) => (
-              <div key={t.name} style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '16px 20px', borderRadius: 12, background: t.name === tier.name ? '#0A1628′ : '#f8f9fb', color: t.name === tier.name ? '#fff' : '#1a2233', border: t.name === tier.name ? '2px solid #F5E642' : '2px solid transparent' }}>
+              <div key={t.name} style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '16px 20px', borderRadius: 12, background: t.name === tier.name ? '#0A1628' : '#f8f9fb', color: t.name === tier.name ? '#fff' : '#1a2233', border: t.name === tier.name ? '2px solid #F5E642' : '2px solid transparent' }}>
                 <div>
                   <div style={{ fontWeight: 700, fontSize: 15 }}>{t.name} {t.name === tier.name ? '← Your Tier' : ''}</div>
-                  <div style={{ fontSize: 13, color: t.name === tier.name ? '#94a3b8′ : '#64748b' }}>{t.closings} closings/mo · {t.welcome}</div>
+                  <div style={{ fontSize: 13, color: t.name === tier.name ? '#94a3b8' : '#64748b' }}>{t.closings} closings/mo · {t.welcome}</div>
                 </div>
                 <div style={{ textAlign: 'right' }}>
-                  <div style={{ fontSize: 20, fontWeight: 800, color: t.name === tier.name ? '#F5E642′ : '#0A1628' }}>{t.perClosing}</div>
-                  <div style={{ fontSize: 11, color: t.name === tier.name ? '#94a3b8′ : '#64748b' }}>est. per closing</div>
+                  <div style={{ fontSize: 20, fontWeight: 800, color: t.name === tier.name ? '#F5E642' : '#0A1628' }}>{t.perClosing}</div>
+                  <div style={{ fontSize: 11, color: t.name === tier.name ? '#94a3b8' : '#64748b' }}>est. per closing</div>
                 </div>
               </div>
             ))}
@@ -101,7 +101,7 @@ export default function DFWTitleCompanyProLnkGuide() {
           <div style={{ marginBottom: 24 }}>
             <label style={{ fontWeight: 600, fontSize: 14, display: 'block', marginBottom: 6 }}>Monthly Closings</label>
             <input type="range" min={5} max={200} step={5} value={monthlyClosings} onChange={(e) => setMonthlyClosings(Number(e.target.value))}
-              style={{ width: '100%', accentColor: '#F5E642′ }} />
+              style={{ width: '100%', accentColor: '#F5E642' }} />
             <div style={{ textAlign: 'center', fontWeight: 700, color: '#0A1628', fontSize: 22 }}>{monthlyClosings} closings/month ({annualClosings}/year)</div>
           </div>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 14 }}>
@@ -112,8 +112,8 @@ export default function DFWTitleCompanyProLnkGuide() {
             ].map((item) => (
               <div key={item.label} style={{ background: '#f8f9fb', borderRadius: 10, padding: 16, textAlign: 'center' }}>
                 <div style={{ fontSize: 13, color: '#64748b', marginBottom: 4 }}>{item.label}</div>
-                <div style={{ fontSize: 22, fontWeight: 800, color: '#0A1628′ }}>{item.value}</div>
-                <div style={{ fontSize: 12, color: '#94a3b8′ }}>{item.sub}</div>
+                <div style={{ fontSize: 22, fontWeight: 800, color: '#0A1628' }}>{item.value}</div>
+                <div style={{ fontSize: 12, color: '#94a3b8' }}>{item.sub}</div>
               </div>
             ))}
           </div>

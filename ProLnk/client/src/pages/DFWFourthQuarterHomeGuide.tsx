@@ -29,7 +29,7 @@ export default function DFWFourthQuarterHomeGuide() {
         <div style={{ fontSize: 13, color: '#F5E642', letterSpacing: 2, textTransform: 'uppercase', marginBottom: 12 }}>ProLnk DFW Series</div>
         <h1 style={{ fontSize: 32, fontWeight: 800, marginBottom: 8, lineHeight: 1.2 }}>🍂 Q4 DFW Home Guide</h1>
         <p style={{ color: '#8899AA', fontSize: 15, marginBottom: 32, lineHeight: 1.6 }}>
-          October through December — DFW's best weather window for outdoor projects, final maintenance, and setting up a strong 2026. Property taxes are due, year-end decisions matter. Here’s your playbook.
+          October through December — DFW's best weather window for outdoor projects, final maintenance, and setting up a strong 2026. Property taxes are due, year-end decisions matter. Here's your playbook.
         </p>
 
         <div style={{ background: '#F5E64215', border: '1px solid #F5E64230', borderRadius: 10, padding: 20, marginBottom: 32 }}>
@@ -46,8 +46,8 @@ export default function DFWFourthQuarterHomeGuide() {
               key={t.feature}
               onClick={() => setSelected(t.feature)}
               style={{
-                background: selected === t.feature ? '#F5E642′ : '#0D1F38',
-                color: selected === t.feature ? '#0A1628′ : '#fff',
+                background: selected === t.feature ? '#F5E642' : '#0D1F38',
+                color: selected === t.feature ? '#0A1628' : '#fff',
                 border: '1px solid #1E3A5F',
                 borderRadius: 8,
                 padding: '12px 8px',
@@ -63,7 +63,7 @@ export default function DFWFourthQuarterHomeGuide() {
 
         {active && (
           <div style={{ background: '#0D1F38', border: '1px solid #1E3A5F', borderRadius: 12, padding: 24, marginBottom: 28 }}>
-            <div style={{ fontSize: 20, fontWeight: 800, marginBottom: 10, color: '#F5E642′ }}>🎯 {active.feature} — Q4 Action</div>
+            <div style={{ fontSize: 20, fontWeight: 800, marginBottom: 10, color: '#F5E642' }}>🎯 {active.feature} — Q4 Action</div>
             <p style={{ fontSize: 15, lineHeight: 1.7, marginBottom: 16 }}>{active.q4}</p>
             <button
               onClick={() => setShowFinancial(!showFinancial)}

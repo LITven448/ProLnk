@@ -11,10 +11,10 @@ import {
 // ─── Design tokens ────────────────────────────────────────────────────────────
 
 const D = {
-  bg: "#0D0F14″, surface: "#13161E", card: "#1A1E2A", border: "#252A3A",
-  text: "#F0F2FF", muted: "#8B91A8″, dim: "#555B72",
-  cyan: "#00D4FF", green: "#00E676″, amber: "#FFB300",
-  red: "#FF4444″, purple: "#A855F7", blue: "#3B82F6",
+  bg: "#0D0F14", surface: "#13161E", card: "#1A1E2A", border: "#252A3A",
+  text: "#F0F2FF", muted: "#8B91A8", dim: "#555B72",
+  cyan: "#00D4FF", green: "#00E676", amber: "#FFB300",
+  red: "#FF4444", purple: "#A855F7", blue: "#3B82F6",
 };
 
 // ─── Mock data ────────────────────────────────────────────────────────────────
@@ -53,16 +53,16 @@ const LOW_PARTNERS = [
 ];
 
 const DISTRIBUTION = [
-  { band: "0–10″,  count: 3  },
-  { band: "11–20″, count: 7  },
-  { band: "21–30″, count: 11 },
-  { band: "31–40″, count: 18 },
-  { band: "41–50″, count: 24 },
-  { band: "51–60″, count: 31 },
-  { band: "61–70″, count: 47 },
-  { band: "71–80″, count: 62 },
-  { band: "81–90″, count: 55 },
-  { band: "91–100″,count: 38 },
+  { band: "0–10",  count: 3  },
+  { band: "11–20", count: 7  },
+  { band: "21–30", count: 11 },
+  { band: "31–40", count: 18 },
+  { band: "41–50", count: 24 },
+  { band: "51–60", count: 31 },
+  { band: "61–70", count: 47 },
+  { band: "71–80", count: 62 },
+  { band: "81–90", count: 55 },
+  { band: "91–100",count: 38 },
 ];
 
 const FORMULA = [
@@ -152,7 +152,7 @@ export default function PartnerEngagementScore() {
             style={{
               display: "flex", alignItems: "center", gap: 8,
               padding: "10px 18px", borderRadius: 10, cursor: "pointer",
-              background: D.cyan + "22″, border: `1px solid ${D.cyan}44`,
+              background: D.cyan + "22", border: `1px solid ${D.cyan}44`,
               color: D.cyan, fontSize: 13, fontWeight: 600,
               opacity: recalculating ? 0.6 : 1,
             }}
@@ -216,12 +216,12 @@ export default function PartnerEngagementScore() {
           <h2 style={{ fontSize: 16, fontWeight: 600, margin: "0 0 20px" }}>Score Distribution</h2>
           <ResponsiveContainer width="100%" height={220}>
             <BarChart data={DISTRIBUTION} margin={{ top: 4, right: 0, left: -20, bottom: 0 }}>
-              <CartesianGrid strokeDasharray="3 3″ stroke={D.border} vertical={false} />
+              <CartesianGrid strokeDasharray="3 3" stroke={D.border} vertical={false} />
               <XAxis dataKey="band" tick={{ fill: D.muted, fontSize: 11 }} axisLine={false} tickLine={false} />
               <YAxis tick={{ fill: D.muted, fontSize: 11 }} axisLine={false} tickLine={false} />
               <Tooltip
                 contentStyle={{ background: D.card, border: `1px solid ${D.border}`, borderRadius: 8, fontSize: 12 }}
-                cursor={{ fill: D.cyan + "15″ }}
+                cursor={{ fill: D.cyan + "15" }}
               />
               <Bar dataKey="count" fill={D.cyan} radius={[4, 4, 0, 0]} name="Partners" />
             </BarChart>
@@ -250,7 +250,7 @@ export default function PartnerEngagementScore() {
                 {TOP_PARTNERS.map((p, i) => (
                   <tr key={p.name} style={{
                     borderBottom: `1px solid ${D.border}`,
-                    background: i % 2 === 0 ? "transparent" : D.card + "55″,
+                    background: i % 2 === 0 ? "transparent" : D.card + "55",
                   }}>
                     <td style={{ padding: "12px 12px", fontSize: 13, fontWeight: 600 }}>{p.name}</td>
                     <td style={{ padding: "12px 12px", fontSize: 12, color: D.muted }}>{p.trade}</td>
@@ -290,7 +290,7 @@ export default function PartnerEngagementScore() {
             <h2 style={{ fontSize: 16, fontWeight: 600, margin: 0 }}>Low Performers at Risk</h2>
             <span style={{
               marginLeft: 8, fontSize: 11, fontWeight: 700,
-              background: D.red + "22″, color: D.red,
+              background: D.red + "22", color: D.red,
               padding: "2px 8px", borderRadius: 99,
             }}>PPS &lt; 40</span>
           </div>
@@ -323,7 +323,7 @@ export default function PartnerEngagementScore() {
                     style={{
                       display: "flex", alignItems: "center", gap: 6,
                       padding: "8px 14px", borderRadius: 8, cursor: sent ? "default" : "pointer",
-                      background: sent ? D.green + "22″ : D.amber + "22",
+                      background: sent ? D.green + "22" : D.amber + "22",
                       border: `1px solid ${sent ? D.green : D.amber}44`,
                       color: sent ? D.green : D.amber,
                       fontSize: 12, fontWeight: 600,

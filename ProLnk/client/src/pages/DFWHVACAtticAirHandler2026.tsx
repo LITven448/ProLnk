@@ -44,8 +44,8 @@ export default function DFWHVACAtticAirHandler2026() {
                 key={s.id}
                 onClick={() => setSelected(s.id)}
                 style={{
-                  backgroundColor: selected === s.id ? '#F5E642′ : '#0A1628',
-                  color: selected === s.id ? '#0A1628′ : '#fff',
+                  backgroundColor: selected === s.id ? '#F5E642' : '#0A1628',
+                  color: selected === s.id ? '#0A1628' : '#fff',
                   border: '1px solid #334155',
                   borderRadius: '8px',
                   padding: '0.75rem 1rem',
@@ -58,7 +58,7 @@ export default function DFWHVACAtticAirHandler2026() {
             ))}
           </div>
           {match && (
-            <div style={{ marginTop: '1.2rem', backgroundColor: '#0f172a', borderRadius: '8px', padding: '1rem', borderLeft: '4px solid #F5E642′ }}>
+            <div style={{ marginTop: '1.2rem', backgroundColor: '#0f172a', borderRadius: '8px', padding: '1rem', borderLeft: '4px solid #F5E642' }}>
               <p style={{ margin: 0, lineHeight: '1.6', fontSize: '0.95rem' }}>{match.guide}</p>
             </div>
           )}

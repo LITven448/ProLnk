@@ -59,8 +59,8 @@ export default function DFWEarnestMoneyGuide() {
         </div>
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 20, marginBottom: 28 }}>
           <div style={{ background: '#e8f5e9', border: '1px solid #a5d6a7', borderRadius: 12, padding: 24 }}>
-            <h3 style={{ fontSize: 17, fontWeight: 700, marginBottom: 12, color: '#1b5e20′ }}>✅ When You Keep It</h3>
-            <ul style={{ paddingLeft: 18, lineHeight: 1.9, fontSize: 14, color: '#2e7d32′ }}>
+            <h3 style={{ fontSize: 17, fontWeight: 700, marginBottom: 12, color: '#1b5e20' }}>✅ When You Keep It</h3>
+            <ul style={{ paddingLeft: 18, lineHeight: 1.9, fontSize: 14, color: '#2e7d32' }}>
               <li>Terminate during option period</li>
               <li>Financing falls through with financing contingency intact</li>
               <li>Seller fails to close per contract terms</li>
@@ -69,7 +69,7 @@ export default function DFWEarnestMoneyGuide() {
           </div>
           <div style={{ background: '#ffebee', border: '1px solid #ef9a9a', borderRadius: 12, padding: 24 }}>
             <h3 style={{ fontSize: 17, fontWeight: 700, marginBottom: 12, color: '#b71c1c' }}>❌ When You Lose It</h3>
-            <ul style={{ paddingLeft: 18, lineHeight: 1.9, fontSize: 14, color: '#c62828′ }}>
+            <ul style={{ paddingLeft: 18, lineHeight: 1.9, fontSize: 14, color: '#c62828' }}>
               <li>Terminate after option period with no valid contingency</li>
               <li>Breach of contract terms</li>
               <li>Waived financing contingency and financing falls through</li>
@@ -87,14 +87,14 @@ export default function DFWEarnestMoneyGuide() {
           </div>
         </div>
         <div style={{ background: '#0A1628', borderRadius: 12, padding: 28, marginBottom: 28, color: '#fff' }}>
-          <h2 style={{ fontSize: 20, fontWeight: 700, marginBottom: 16, color: '#F5E642′ }}>🧮 Earnest Money Recommendation</h2>
+          <h2 style={{ fontSize: 20, fontWeight: 700, marginBottom: 16, color: '#F5E642' }}>🧮 Earnest Money Recommendation</h2>
           <p style={{ color: '#ccc', marginBottom: 20 }}>Home price plus market competitiveness → recommended amount and risk assessment</p>
           <div style={{ marginBottom: 20 }}>
             <label style={{ display: 'block', fontWeight: 600, marginBottom: 10 }}>Home Purchase Price</label>
             <div style={{ display: 'flex', flexWrap: 'wrap', gap: 10 }}>
               {prices.map(p => (
                 <button key={p.id} onClick={() => { setPrice(p.id); setShowResult(false); }}
-                  style={{ padding: '8px 16px', borderRadius: 8, border: '2px solid', borderColor: price === p.id ? '#F5E642′ : '#444', background: price === p.id ? '#F5E642' : ’transparent', color: price === p.id ? '#0A1628′ : '#fff', fontWeight: 600, cursor: ’pointer' }}>
+                  style={{ padding: '8px 16px', borderRadius: 8, border: '2px solid', borderColor: price === p.id ? '#F5E642' : '#444', background: price === p.id ? '#F5E642' : 'transparent', color: price === p.id ? '#0A1628' : '#fff', fontWeight: 600, cursor: 'pointer' }}>
                   {p.label}
                 </button>
               ))}
@@ -105,14 +105,14 @@ export default function DFWEarnestMoneyGuide() {
             <div style={{ display: 'flex', flexWrap: 'wrap', gap: 10 }}>
               {markets.map(m => (
                 <button key={m.id} onClick={() => { setMarket(m.id); setShowResult(false); }}
-                  style={{ padding: '8px 16px', borderRadius: 8, border: '2px solid', borderColor: market === m.id ? '#F5E642′ : '#444', background: market === m.id ? '#F5E642' : ’transparent', color: market === m.id ? '#0A1628′ : '#fff', fontWeight: 600, cursor: ’pointer' }}>
+                  style={{ padding: '8px 16px', borderRadius: 8, border: '2px solid', borderColor: market === m.id ? '#F5E642' : '#444', background: market === m.id ? '#F5E642' : 'transparent', color: market === m.id ? '#0A1628' : '#fff', fontWeight: 600, cursor: 'pointer' }}>
                   {m.label}
                 </button>
               ))}
             </div>
           </div>
           <button onClick={() => setShowResult(true)} disabled={!price || !market}
-            style={{ background: price && market ? '#F5E642′ : '#333', color: '#0A1628', border: ’none', borderRadius: 8, padding: '12px 28px', fontWeight: 700, cursor: price && market ? 'pointer' : 'not-allowed', fontSize: 16 }}>
+            style={{ background: price && market ? '#F5E642' : '#333', color: '#0A1628', border: 'none', borderRadius: 8, padding: '12px 28px', fontWeight: 700, cursor: price && market ? 'pointer' : 'not-allowed', fontSize: 16 }}>
             Get Recommendation →
           </button>
           {showResult && result && (
@@ -125,7 +125,7 @@ export default function DFWEarnestMoneyGuide() {
         </div>
         <div style={{ background: '#fff', border: '1px solid #ddd', borderRadius: 12, padding: 28 }}>
           <h2 style={{ fontSize: 18, fontWeight: 700, marginBottom: 12 }}>📌 How to Get Earnest Money Back If Deal Falls Through</h2>
-          <ol style={{ paddingLeft: 20, lineHeight: 2, color: '#444′ }}>
+          <ol style={{ paddingLeft: 20, lineHeight: 2, color: '#444' }}>
             <li>Both buyer and seller sign a release form (called a Release of Earnest Money)</li>
             <li>Title company releases funds once both parties sign</li>
             <li>If seller refuses to sign, dispute goes to escrow arbitration</li>

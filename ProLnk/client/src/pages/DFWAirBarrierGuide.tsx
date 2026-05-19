@@ -53,7 +53,7 @@ export default function DFWAirBarrierGuide() {
           <div style={{ color: '#cbd5e1', lineHeight: 2 }}>
             <div>🌬️ <strong>Air barrier:</strong> Stops air movement (wind, stack effect, mechanical pressure). Installed on exterior (housewrap, rigid foam, closed-cell spray foam).</div>
             <div>💧 <strong>Vapor barrier:</strong> Slows moisture diffusion through materials. In DFW (mixed-humid climate), vapor barriers are less critical than air barriers.</div>
-            <div style={{ marginTop: 8, color: '#F5E642′ }}>In DFW climate zone 3: air sealing is the priority. Vapor barriers should NOT be installed on the interior — DFW sometimes needs walls to dry to the inside.</div>
+            <div style={{ marginTop: 8, color: '#F5E642' }}>In DFW climate zone 3: air sealing is the priority. Vapor barriers should NOT be installed on the interior — DFW sometimes needs walls to dry to the inside.</div>
           </div>
         </div>
 
@@ -72,7 +72,7 @@ export default function DFWAirBarrierGuide() {
         </div>
 
         {result && (
-          <div style={{ background: '#132035', borderRadius: 12, padding: 20, borderLeft: '4px solid #F5E642′ }}>
+          <div style={{ background: '#132035', borderRadius: 12, padding: 20, borderLeft: '4px solid #F5E642' }}>
             <p style={{ color: '#cbd5e1', lineHeight: 1.7, marginBottom: 12 }}>{result.airBarrierStatus}</p>
             <p style={{ color: '#cbd5e1', lineHeight: 1.7, marginBottom: 12 }}><strong>Retrofit Approach:</strong> {result.retrofitApproach}</p>
             <div style={{ color: '#F5E642', fontWeight: 600 }}>💰 {result.cost}</div>

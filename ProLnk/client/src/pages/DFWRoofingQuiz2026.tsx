@@ -40,7 +40,7 @@ export default function DFWRoofingQuiz2026() {
                 <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
                   {q.options.map((opt, i) => (
                     <button key={i} onClick={() => setAnswers(prev => ({ ...prev, [q.id]: q.scores[i] }))}
-                      style={{ background: answers[q.id] === q.scores[i] ? '#F5E642′ : '#1e3a5f', color: answers[q.id] === q.scores[i] ? '#0A1628' : '#fff', border: ’none', borderRadius: 8, padding: '10px 16px', cursor: 'pointer', textAlign: 'left', fontWeight: 500, fontSize: 14 }}>
+                      style={{ background: answers[q.id] === q.scores[i] ? '#F5E642' : '#1e3a5f', color: answers[q.id] === q.scores[i] ? '#0A1628' : '#fff', border: 'none', borderRadius: 8, padding: '10px 16px', cursor: 'pointer', textAlign: 'left', fontWeight: 500, fontSize: 14 }}>
                       {opt}
                     </button>
                   ))}
@@ -48,7 +48,7 @@ export default function DFWRoofingQuiz2026() {
               </div>
             ))}
             <button onClick={() => setSubmitted(true)} disabled={answered < 5}
-              style={{ width: '100%', background: answered < 5 ? '#334155′ : '#F5E642', color: '#0A1628', border: ’none', borderRadius: 10, padding: '14px 0', fontWeight: 700, fontSize: 16, cursor: answered < 5 ? 'not-allowed' : 'pointer', marginTop: 8 }}>
+              style={{ width: '100%', background: answered < 5 ? '#334155' : '#F5E642', color: '#0A1628', border: 'none', borderRadius: 10, padding: '14px 0', fontWeight: 700, fontSize: 16, cursor: answered < 5 ? 'not-allowed' : 'pointer', marginTop: 8 }}>
               {answered < 5 ? `Answer all 5 questions (${answered}/5)` : 'Get My Roofing Score →'}
             </button>
           </>
@@ -56,7 +56,7 @@ export default function DFWRoofingQuiz2026() {
           <div style={{ background: '#0f2040', borderRadius: 16, padding: 28, textAlign: 'center' }}>
             <div style={{ fontSize: 56, marginBottom: 8 }}>🏆</div>
             <div style={{ fontSize: 36, fontWeight: 800, color: result.color }}>{score}/15</div>
-            <div style={{ fontSize: 22, fontWeight: 700, color: '#F5E642', margin: '8px 0′ }}>{result.label}</div>
+            <div style={{ fontSize: 22, fontWeight: 700, color: '#F5E642', margin: '8px 0' }}>{result.label}</div>
             <p style={{ color: '#cbd5e1', lineHeight: 1.6, marginBottom: 20 }}>{result.tip}</p>
             <div style={{ background: '#1e3a5f', borderRadius: 10, padding: 16, textAlign: 'left', marginBottom: 20 }}>
               <p style={{ color: '#F5E642', fontWeight: 700, marginBottom: 8 }}>📋 Your DFW Roofing Action Plan</p>

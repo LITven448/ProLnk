@@ -40,12 +40,12 @@ export default function DFWWaterTestingGuide2026() {
           <div style={{ color: '#F5E642', fontWeight: 700, marginBottom: '1rem' }}>🔍 Concern → Testing Recommendation</div>
           <div style={{ marginBottom: '1rem' }}>
             <div style={{ color: '#8899AA', fontSize: '0.85rem', marginBottom: '0.4rem' }}>Primary Concern</div>
-            <select value={concern} onChange={(e) => setConcern(e.target.value)} style={{ background: '#0A1628', border: '1px solid #2A3A55', borderRadius: '8px', padding: '0.5rem 1rem', color: '#E8EDF5′ }}>
+            <select value={concern} onChange={(e) => setConcern(e.target.value)} style={{ background: '#0A1628', border: '1px solid #2A3A55', borderRadius: '8px', padding: '0.5rem 1rem', color: '#E8EDF5' }}>
               {concerns.map((c) => <option key={c}>{c}</option>)}
             </select>
           </div>
           {rec && (
-            <div style={{ background: '#0A1628', borderRadius: '8px', padding: '1rem', borderLeft: '4px solid #F5E642′ }}>
+            <div style={{ background: '#0A1628', borderRadius: '8px', padding: '1rem', borderLeft: '4px solid #F5E642' }}>
               <div style={{ fontWeight: 700, color: '#F5E642', marginBottom: '0.25rem' }}>{rec.kit} — {rec.cost}</div>
               <div style={{ color: '#E8EDF5', fontSize: '0.95rem' }}>{rec.note}</div>
             </div>

@@ -56,7 +56,7 @@ export default function DFWContractorCommunicationGuide() {
               ['payment_dispute', '💳 Disputing an invoice'],
             ].map(([val, label]) => (
               <label key={val} style={{ display: 'flex', alignItems: 'center', gap: 12, cursor: 'pointer', padding: '0.75rem 1rem', borderRadius: 8, background: scenario === val ? '#1e3a5f' : '#162035', border: `2px solid ${scenario === val ? '#F5E642' : '#334155'}` }}>
-                <input type="radio" name="scenario" value={val} checked={scenario === val} onChange={() => setScenario(val)} style={{ accentColor: '#F5E642′ }} />
+                <input type="radio" name="scenario" value={val} checked={scenario === val} onChange={() => setScenario(val)} style={{ accentColor: '#F5E642' }} />
                 <span style={{ fontWeight: scenario === val ? 700 : 400 }}>{label}</span>
               </label>
             ))}
@@ -69,24 +69,24 @@ export default function DFWContractorCommunicationGuide() {
 
         {submitted && result && (
           <div>
-            <div style={{ background: '#0f2044', borderRadius: 12, padding: '1.25rem', marginBottom: 14, borderLeft: '4px solid #F5E642′ }}>
+            <div style={{ background: '#0f2044', borderRadius: 12, padding: '1.25rem', marginBottom: 14, borderLeft: '4px solid #F5E642' }}>
               <div style={{ color: '#F5E642', fontWeight: 700, fontSize: 14, marginBottom: 8 }}>✅ Recommended Approach</div>
               <div style={{ fontSize: 14, color: '#e2e8f0', lineHeight: 1.6 }}>{result.approach}</div>
             </div>
-            <div style={{ background: '#0f2044', borderRadius: 12, padding: '1.25rem', marginBottom: 14, borderLeft: '4px solid #4ade80′ }}>
+            <div style={{ background: '#0f2044', borderRadius: 12, padding: '1.25rem', marginBottom: 14, borderLeft: '4px solid #4ade80' }}>
               <div style={{ color: '#4ade80', fontWeight: 700, fontSize: 14, marginBottom: 8 }}>📱 Template Message</div>
               <div style={{ fontSize: 13, color: '#e2e8f0', fontStyle: 'italic', lineHeight: 1.7, background: '#0A1628', borderRadius: 8, padding: '0.75rem' }}>
                 "{result.template}"
               </div>
             </div>
-            <div style={{ background: '#0f2044', borderRadius: 12, padding: '1.25rem', borderLeft: '4px solid #ef4444′ }}>
+            <div style={{ background: '#0f2044', borderRadius: 12, padding: '1.25rem', borderLeft: '4px solid #ef4444' }}>
               <div style={{ color: '#ef4444', fontWeight: 700, fontSize: 14, marginBottom: 8 }}>🚫 What to Avoid</div>
               <div style={{ fontSize: 14, color: '#94a3b8', lineHeight: 1.6 }}>{result.avoid}</div>
             </div>
           </div>
         )}
 
-        <div style={{ marginTop: 24, background: '#0f2044', borderRadius: 10, padding: '1rem', fontSize: 13, color: '#94a3b8′ }}>
+        <div style={{ marginTop: 24, background: '#0f2044', borderRadius: 10, padding: '1rem', fontSize: 13, color: '#94a3b8' }}>
           <span style={{ color: '#F5E642', fontWeight: 700 }}>💡 DFW Pro Tip: </span>
           Text is preferred by 80% of DFW contractors. Call only when urgent. Email for documentation. Never rely on verbal agreements for scope or price.
         </div>

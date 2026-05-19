@@ -38,7 +38,7 @@ export default function DFWFoundationElevationSurvey2026B() {
         <div style={{ background: '#112240', borderRadius: 12, padding: 20, marginBottom: 16 }}>
           <h2 style={{ color: '#F5E642', fontSize: 16, marginBottom: 12 }}>📊 DFW Elevation Reading Basics</h2>
           {['Normal DFW movement: 1 inch per 20 feet of span — anything greater warrants review','High point (hump) = upheaval — often caused by moisture under slab from trees or plumbing','Low point (settlement) = soil compression — typical DFW perimeter desiccation issue','Piers go at the lowest readings, not the high points — they lift, not push down','Always compare to a baseline survey — one reading alone has no context'].map((f, i) => (
-            <div key={i} style={{ display: 'flex', gap: 10, marginBottom: 8, color: '#c8d8ec', fontSize: 14 }}><span style={{ color: '#F5E642′ }}>📏</span>{f}</div>
+            <div key={i} style={{ display: 'flex', gap: 10, marginBottom: 8, color: '#c8d8ec', fontSize: 14 }}><span style={{ color: '#F5E642' }}>📏</span>{f}</div>
           ))}
         </div>
 
@@ -59,7 +59,7 @@ export default function DFWFoundationElevationSurvey2026B() {
             <option value="high">Over 1.5 inches</option>
           </select>
           <button onClick={interpret} style={{ background: '#F5E642', color: '#0A1628', fontWeight: 700, border: 'none', borderRadius: 8, padding: '11px 24px', cursor: 'pointer', fontSize: 15 }}>Interpret Report 📐</button>
-          {result && <div style={{ marginTop: 16, background: '#0A1628', borderRadius: 8, padding: 16, color: '#c8d8ec', fontSize: 14, lineHeight: 1.6, borderLeft: '3px solid #F5E642′ }}>{result}</div>}
+          {result && <div style={{ marginTop: 16, background: '#0A1628', borderRadius: 8, padding: 16, color: '#c8d8ec', fontSize: 14, lineHeight: 1.6, borderLeft: '3px solid #F5E642' }}>{result}</div>}
         </div>
 
         <div style={{ textAlign: 'center', color: '#4a6080', fontSize: 12, marginTop: 24 }}>ProLnk DFW Home Intelligence · Foundation Elevation Guide Part 2 · 2026</div>

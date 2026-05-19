@@ -72,7 +72,7 @@ export default function DFWTransportationGuide2026() {
           <h2 style={{ color: '#F5E642', fontSize: 18, marginBottom: 16 }}>📍 Where Are You Commuting To?</h2>
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: 10, marginBottom: 20 }}>
             {Object.keys(destinations).map(d => (
-              <button key={d} onClick={() => setSelected(d)} style={{ padding: '10px 16px', borderRadius: 8, border: 'none', cursor: 'pointer', background: selected === d ? '#F5E642′ : '#1A2E48', color: selected === d ? '#0A1628' : '#E8EAF0', fontWeight: 600, fontSize: 13 }}>{d}</button>
+              <button key={d} onClick={() => setSelected(d)} style={{ padding: '10px 16px', borderRadius: 8, border: 'none', cursor: 'pointer', background: selected === d ? '#F5E642' : '#1A2E48', color: selected === d ? '#0A1628' : '#E8EAF0', fontWeight: 600, fontSize: 13 }}>{d}</button>
             ))}
           </div>
           {result && (
@@ -81,11 +81,11 @@ export default function DFWTransportationGuide2026() {
                 <div key={opt.mode} style={{ background: '#0A1628', borderRadius: 10, padding: 16, marginBottom: 10, border: '1px solid #1A2E48', display: 'grid', gridTemplateColumns: 'auto 90px 70px 1fr', gap: 12, alignItems: 'center' }}>
                   <div style={{ fontWeight: 600, fontSize: 14 }}>{opt.mode}</div>
                   <div style={{ color: '#F5E642', fontSize: 13 }}>{opt.time}</div>
-                  <div style={{ color: opt.rating === 'Best' ? '#4ADE80′ : opt.rating === ’Good' ? '#60A5FA' : opt.rating === 'Fair' ? '#F5E642′ : '#F87171', fontSize: 13, fontWeight: 600 }}>{opt.rating}</div>
+                  <div style={{ color: opt.rating === 'Best' ? '#4ADE80' : opt.rating === 'Good' ? '#60A5FA' : opt.rating === 'Fair' ? '#F5E642' : '#F87171', fontSize: 13, fontWeight: 600 }}>{opt.rating}</div>
                   <div style={{ color: '#9BA3B2', fontSize: 13 }}>{opt.notes}</div>
                 </div>
               ))}
-              <div style={{ padding: '14px 16px', background: '#1A2E48', borderRadius: 8, marginTop: 8, borderLeft: '3px solid #F5E642', fontSize: 14, color: '#E8EAF0′ }}>{result.verdict}</div>
+              <div style={{ padding: '14px 16px', background: '#1A2E48', borderRadius: 8, marginTop: 8, borderLeft: '3px solid #F5E642', fontSize: 14, color: '#E8EAF0' }}>{result.verdict}</div>
             </div>
           )}
         </div>

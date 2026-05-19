@@ -34,7 +34,7 @@ export default function DFWInteriorDoorGuide2026() {
           <div style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
             {needs.map((n) => (
               <button key={n.value} onClick={() => setSelected(n.value)}
-                style={{ background: selected === n.value ? '#F5E642′ : '#162035', color: selected === n.value ? '#0A1628' : '#fff', border: '1px solid #F5E642', borderRadius: 8, padding: '14px 20px', cursor: ’pointer', fontWeight: 600, textAlign: 'left', fontSize: 15 }}>
+                style={{ background: selected === n.value ? '#F5E642' : '#162035', color: selected === n.value ? '#0A1628' : '#fff', border: '1px solid #F5E642', borderRadius: 8, padding: '14px 20px', cursor: 'pointer', fontWeight: 600, textAlign: 'left', fontSize: 15 }}>
                 {n.label}
               </button>
             ))}
@@ -52,7 +52,7 @@ export default function DFWInteriorDoorGuide2026() {
             </div>
           </div>
         ) : (
-          <div style={{ background: '#162035', borderRadius: 12, padding: 24, textAlign: 'center', color: '#888′ }}>
+          <div style={{ background: '#162035', borderRadius: 12, padding: 24, textAlign: 'center', color: '#888' }}>
             Select a door need above to get a DFW-specific recommendation.
           </div>
         )}

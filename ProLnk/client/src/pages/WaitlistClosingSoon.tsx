@@ -26,7 +26,7 @@ export default function WaitlistClosingSoon() {
   };
 
   return (
-    <div style={{ minHeight: '100vh', background: '#0a0f1e', color: '#fff', fontFamily: 'system-ui, sans-serif', padding: '0′ }}>
+    <div style={{ minHeight: '100vh', background: '#0a0f1e', color: '#fff', fontFamily: 'system-ui, sans-serif', padding: '0' }}>
       <div style={{ background: '#f59e0b', color: '#0a0f1e', textAlign: 'center', padding: '10px', fontWeight: 700, fontSize: '14px' }}>
         ⚠️ WAITLIST CLOSING SOON — {remaining} SPOTS REMAINING OUT OF {TOTAL_SLOTS}
       </div>

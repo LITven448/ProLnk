@@ -29,7 +29,7 @@ const ROOM_CODES: Record<string, { codes: string[]; violations: string[] }> = {
     codes: [
       'Smoke detector required inside each bedroom',
       'AFCI breaker required on bedroom circuits (new construction)',
-      'Egress window required — minimum 5.7 sqft clear opening, max 44″ sill height',
+      'Egress window required — minimum 5.7 sqft clear opening, max 44" sill height',
       'CO detector required within 15ft if gas appliances or attached garage present',
     ],
     violations: [
@@ -113,7 +113,7 @@ export default function DFWHomeSafetyCodeGuide() {
         <div style={{ background: '#1e293b', borderRadius: 16, padding: 32, marginBottom: 32, borderLeft: '4px solid #f59e0b' }}>
           <h2 style={{ fontSize: 22, fontWeight: 700, color: '#f8fafc', margin: '0 0 16px' }}>⚠️ Why Safety Codes Matter</h2>
           <p style={{ color: '#cbd5e1', lineHeight: 1.75, margin: 0, fontSize: 16 }}>
-            Code violations found during inspection or when selling can <strong style={{ color: '#fbbf24′ }}>delay or kill deals</strong>. 
+            Code violations found during inspection or when selling can <strong style={{ color: '#fbbf24' }}>delay or kill deals</strong>. 
             Unpermitted work that fails code creates major liability — you may be required to bring the entire system up to current code, 
             not just the specific violation. In DFW's competitive market, savvy buyers use code violations as negotiating leverage.
           </p>
@@ -125,12 +125,12 @@ export default function DFWHomeSafetyCodeGuide() {
           {[
             { icon: '🔊', title: 'Smoke Detectors', body: 'Required in each bedroom, outside each sleeping area, and on each floor. Must be interconnected in new construction — when one sounds, all sound.' },
             { icon: '💨', title: 'CO Detectors', body: 'Required within 15ft of sleeping areas if gas appliances are present OR if there is an attached garage. Battery backup required.' },
-            { icon: '🪜', title: 'Stair Safety', body: 'Handrails required when more than 2 risers. Max 8.25″ riser height, 9″ minimum tread depth. Graspable rail on at least one side.' },
+            { icon: '🪜', title: 'Stair Safety', body: 'Handrails required when more than 2 risers. Max 8.25" riser height, 9" minimum tread depth. Graspable rail on at least one side.' },
             { icon: '🔌', title: 'GFCI Outlets', body: 'Required in bathrooms, kitchens within 6ft of sink, garages, all exterior locations, and crawl spaces. Protects against electrocution near water.' },
             { icon: '⚡', title: 'AFCI Breakers', body: 'Required on all bedroom circuits in new construction. Arc-fault protection prevents electrical fires from wiring damage.' },
             { icon: '🚰', title: 'Water Heater', body: 'Must have pressure relief valve, drain pan underneath, and proper venting to exterior. Gas units need combustion air supply.' },
             { icon: '🌬️', title: 'Bathroom Ventilation', body: 'Must vent to exterior — not into attic. Many DFW homes vent into attic, creating mold and moisture damage. This is a code violation.' },
-            { icon: '🪟', title: 'Egress Windows', body: 'All bedrooms must have a window openable to minimum 5.7 sqft clear area. Max sill height 44″. Life-safety requirement for emergency exit.' },
+            { icon: '🪟', title: 'Egress Windows', body: 'All bedrooms must have a window openable to minimum 5.7 sqft clear area. Max sill height 44". Life-safety requirement for emergency exit.' },
           ].map(item => (
             <div key={item.title} style={{ background: '#1e293b', borderRadius: 12, padding: 24 }}>
               <div style={{ fontSize: 28, marginBottom: 10 }}>{item.icon}</div>
@@ -172,7 +172,7 @@ export default function DFWHomeSafetyCodeGuide() {
                 onClick={() => setSelectedRoom(r.id)}
                 style={{
                   padding: '10px 18px', borderRadius: 8, border: 'none', cursor: 'pointer', fontSize: 14, fontWeight: 600,
-                  background: selectedRoom === r.id ? '#3b82f6′ : '#0f172a',
+                  background: selectedRoom === r.id ? '#3b82f6' : '#0f172a',
                   color: selectedRoom === r.id ? '#fff' : '#94a3b8',
                   transition: 'all 0.15s',
                 }}

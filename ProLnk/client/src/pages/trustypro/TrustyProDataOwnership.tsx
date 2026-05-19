@@ -56,7 +56,7 @@ export default function TrustyProDataOwnership() {
             { emoji: '📤', title: 'Right to Export', desc: 'Full data export in JSON and PDF. Take your home history anywhere.' },
             { emoji: '🚫', title: 'Right to Restrict', desc: 'Opt out of AI training use, anonymized analytics, or contractor visibility at any level.' },
           ].map(card => (
-            <div key={card.title} style={{ background: '#fff', borderRadius: 12, padding: 24, boxShadow: '0 1px 4px rgba(0,0,0,0.08)', borderTop: '4px solid #4F46E5′ }}>
+            <div key={card.title} style={{ background: '#fff', borderRadius: 12, padding: 24, boxShadow: '0 1px 4px rgba(0,0,0,0.08)', borderTop: '4px solid #4F46E5' }}>
               <div style={{ fontSize: 28, marginBottom: 10 }}>{card.emoji}</div>
               <h3 style={{ fontWeight: 700, marginBottom: 8, fontSize: 15, color: '#1e293b' }}>{card.title}</h3>
               <p style={{ color: '#64748b', fontSize: 14, lineHeight: 1.6 }}>{card.desc}</p>
@@ -68,7 +68,7 @@ export default function TrustyProDataOwnership() {
           <h2 style={{ fontSize: 22, fontWeight: 700, marginBottom: 20, color: '#1e293b' }}>Select a Data Type</h2>
           <div style={{ display: 'flex', gap: 10, flexWrap: 'wrap', marginBottom: 28 }}>
             {dataTypes.map(d => (
-              <button key={d.id} onClick={() => setSelected(d)} style={{ padding: '10px 18px', borderRadius: 8, border: 'none', cursor: 'pointer', fontSize: 14, fontWeight: 600, background: selected.id === d.id ? '#4F46E5′ : '#e2e8f0', color: selected.id === d.id ? '#fff' : '#1e293b' }}>
+              <button key={d.id} onClick={() => setSelected(d)} style={{ padding: '10px 18px', borderRadius: 8, border: 'none', cursor: 'pointer', fontSize: 14, fontWeight: 600, background: selected.id === d.id ? '#4F46E5' : '#e2e8f0', color: selected.id === d.id ? '#fff' : '#1e293b' }}>
                 {d.emoji} {d.label}
               </button>
             ))}

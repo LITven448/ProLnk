@@ -4,7 +4,7 @@ const saws = [
   {
     type: 'Circular Saw',
     projects: ['Plywood decking', 'Fence boards', 'Subfloor replacement', 'Deck boards'],
-    blade: '7-1/4″ carbide-tipped 24T for framing, 60T for finish cuts',
+    blade: '7-1/4" carbide-tipped 24T for framing, 60T for finish cuts',
     dfwApp: 'Ideal for cedar fence replacement — very common in DFW',
     rentVsBuy: 'Buy — used on nearly every project. $80–140 at Home Depot',
     cuts: 'Straight cuts in sheet goods and dimensional lumber',
@@ -20,7 +20,7 @@ const saws = [
   {
     type: 'Reciprocating Saw',
     projects: ['Demolition', 'Root cutting', 'Old pipe removal', 'Window frame removal'],
-    blade: 'Demo blade (9″) for general demo; pruning blade for roots',
+    blade: 'Demo blade (9") for general demo; pruning blade for roots',
     dfwApp: 'Tree root encroachment into structures is common in DFW — pruning blade removes roots',
     rentVsBuy: 'Buy if doing any demo — $80–120. Rent for one-time demo job ($25/day)',
     cuts: 'Rough, aggressive cuts — demo work only',
@@ -28,7 +28,7 @@ const saws = [
   {
     type: 'Miter Saw',
     projects: ['Baseboard installation', 'Crown molding', 'Door casing', 'Deck framing', 'Fence post trimming'],
-    blade: '10″ or 12″ 60–80T for trim, 24T for framing',
+    blade: '10" or 12" 60–80T for trim, 24T for framing',
     dfwApp: 'Baseboard and door casing replacement after foundation repair is extremely common in DFW',
     rentVsBuy: 'Rent for single projects ($40/day). Buy ($300–500) if doing full house trim work',
     cuts: 'Precise cross-cuts and angle cuts in trim and framing lumber',
@@ -36,7 +36,7 @@ const saws = [
   {
     type: 'Table Saw',
     projects: ['Ripping lumber', 'Cabinet builds', 'Custom shelving', 'Deck board ripping to width'],
-    blade: '10″ 40T combo blade standard; 80T for fine woodworking',
+    blade: '10" 40T combo blade standard; 80T for fine woodworking',
     dfwApp: 'Custom garage shelving and storage — popular DFW project with large garages',
     rentVsBuy: 'Rent for single ripping jobs ($60/day). Buy ($400–800) for ongoing woodworking',
     cuts: 'Long rip cuts parallel to grain; requires stationary setup',
@@ -71,7 +71,7 @@ export default function DFWSawTypeGuide() {
         <h1 style={{ fontSize: 32, fontWeight: 800, marginBottom: 8 }}>🪚 Saw Type Guide for DFW Projects</h1>
         <p style={{ color: '#94A3B8', marginBottom: 28, lineHeight: 1.6 }}>Which saw for which project — plus blade selection, DFW application, and rent vs. buy guidance.</p>
 
-        <div style={{ background: '#F5E64215', border: '1px solid #F5E64240', borderRadius: 10, padding: 16, marginBottom: 32, fontSize: 14, color: '#F5E642′ }}>
+        <div style={{ background: '#F5E64215', border: '1px solid #F5E64240', borderRadius: 10, padding: 16, marginBottom: 32, fontSize: 14, color: '#F5E642' }}>
           🔑 DFW's most common projects: cedar fence replacement, baseboard repair after foundation work, and garage shelving. Know which saw before you start.
         </div>
 
@@ -89,7 +89,7 @@ export default function DFWSawTypeGuide() {
             </button>
           </div>
           {result && (
-            <div style={{ marginTop: 20, background: '#0A1628', borderRadius: 10, padding: 20, borderLeft: '4px solid #F5E642′ }}>
+            <div style={{ marginTop: 20, background: '#0A1628', borderRadius: 10, padding: 20, borderLeft: '4px solid #F5E642' }}>
               <div style={{ fontWeight: 700, fontSize: 20, marginBottom: 4 }}>{result.type}</div>
               <div style={{ color: '#94A3B8', fontSize: 13, marginBottom: 10 }}>Cuts: {result.cuts}</div>
               <div style={{ color: '#CBD5E1', fontSize: 13, marginBottom: 6 }}>🪚 Blade: {result.blade}</div>

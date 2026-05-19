@@ -38,7 +38,7 @@ export default function DFWSunroomEnclosureGuide() {
         <div style={{ maxWidth: 860, margin: '0 auto' }}>
           <div style={{ fontSize: 13, color: '#F5E642', fontWeight: 700, letterSpacing: 2, marginBottom: 12 }}>DFW HOME IMPROVEMENT GUIDE 2026</div>
           <h1 style={{ fontSize: 36, fontWeight: 800, margin: '0 0 12px', lineHeight: 1.2 }}>Sunroom & Patio Enclosure Guide — DFW</h1>
-          <p style={{ color: '#A0AABE', fontSize: 16, margin: 0, maxWidth: 620 }}>Screen room, 3-season, or 4-season? Here's why DFW’s climate makes this decision critical — and what each option really costs.</p>
+          <p style={{ color: '#A0AABE', fontSize: 16, margin: 0, maxWidth: 620 }}>Screen room, 3-season, or 4-season? Here's why DFW's climate makes this decision critical — and what each option really costs.</p>
         </div>
       </div>
 
@@ -133,7 +133,7 @@ export default function DFWSunroomEnclosureGuide() {
             </div>
             <div style={{ backgroundColor: '#162840', borderRadius: 12, padding: 20, textAlign: 'center' }}>
               <div style={{ color: '#A0AABE', fontSize: 12, fontWeight: 600, marginBottom: 6 }}>ENERGY IMPACT</div>
-              <div style={{ color: selected.insulated ? '#4CAF50′ : '#F56565', fontSize: 13, fontWeight: 700 }}>{energyImpact}</div>
+              <div style={{ color: selected.insulated ? '#4CAF50' : '#F56565', fontSize: 13, fontWeight: 700 }}>{energyImpact}</div>
             </div>
           </div>
         </section>

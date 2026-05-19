@@ -29,7 +29,7 @@ export default function DFWShowerDoorGuide2026() {
         <h1 style={{ fontSize: '2rem', fontWeight: 800, marginBottom: '0.5rem' }}>🚿 DFW Shower Door Guide</h1>
         <p style={{ color: '#94a3b8', marginBottom: '2rem' }}>DFW hard water leaves calcium deposits on glass fast — choose and maintain your shower door the right way.</p>
 
-        <div style={{ background: '#1e3a5f', borderRadius: 10, padding: '1rem', marginBottom: '1.5rem', borderLeft: '3px solid #F5E642′ }}>
+        <div style={{ background: '#1e3a5f', borderRadius: 10, padding: '1rem', marginBottom: '1.5rem', borderLeft: '3px solid #F5E642' }}>
           <div style={{ fontWeight: 700, color: '#F5E642', marginBottom: 4 }}>⚠️ DFW Hard Water Alert</div>
           <div style={{ color: '#94a3b8', fontSize: '0.9rem' }}>DFW water hardness averages 200-300 ppm. Calcium builds on untreated glass within 2 weeks. Frameless doors with less metal are the #1 recommended choice.</div>
         </div>
@@ -72,7 +72,7 @@ export default function DFWShowerDoorGuide2026() {
           <div>
             <h3 style={{ color: '#F5E642', marginBottom: '1rem' }}>✅ Recommended Doors</h3>
             {result.map(r => (
-              <div key={r.id} style={{ background: '#132035', borderRadius: 10, padding: '1rem', marginBottom: '0.75rem', borderLeft: '3px solid #F5E642′ }}>
+              <div key={r.id} style={{ background: '#132035', borderRadius: 10, padding: '1rem', marginBottom: '0.75rem', borderLeft: '3px solid #F5E642' }}>
                 <div style={{ fontWeight: 700, marginBottom: 4 }}>{r.label}</div>
                 <div style={{ color: '#94a3b8', fontSize: '0.9rem' }}>{r.desc}</div>
               </div>
@@ -84,7 +84,7 @@ export default function DFWShowerDoorGuide2026() {
           <h3 style={{ color: '#F5E642', marginBottom: '0.75rem' }}>🧹 DFW Maintenance Routine</h3>
           {[['After every shower', 'Squeegee all glass surfaces'],['Weekly', 'Daily Shower Spray to prevent calcium buildup'],['Monthly', 'Vinegar solution soak on door seals'],['Annually', 'Professional glass restoration if etching occurs']].map(([k,v]) => (
             <div key={k} style={{ display: 'flex', justifyContent: 'space-between', padding: '0.5rem 0', borderBottom: '1px solid #1e3a5f', fontSize: '0.9rem' }}>
-              <span style={{ color: '#94a3b8′ }}>{k}</span><span style={{ color: '#F5E642' }}>{v}</span>
+              <span style={{ color: '#94a3b8' }}>{k}</span><span style={{ color: '#F5E642' }}>{v}</span>
             </div>
           ))}
         </div>

@@ -85,7 +85,7 @@ export default function DFWHomeAutoGuide() {
         <div style={{ background: '#1E2D45', borderRadius: 12, padding: 24 }}>
           <h3 style={{ color: '#F5E642', marginBottom: 16 }}>🌡️ DFW Smart Home Survival Rules</h3>
           {['Use UPS battery backups — DFW storms cause frequent brownouts that brick smart devices', 'Install surge protectors on every smart hub outlet', 'Use lithium batteries outdoors — alkaline dies in 60 days in summer heat', 'Choose IP65+ rated outdoor devices — DFW hail and rain are brutal', 'Keep hub/router in conditioned interior space only'].map((tip, i) => (
-            <div key={i} style={{ color: '#CBD5E1', marginBottom: 10, paddingLeft: 16, borderLeft: '2px solid #F5E642′ }}>{tip}</div>
+            <div key={i} style={{ color: '#CBD5E1', marginBottom: 10, paddingLeft: 16, borderLeft: '2px solid #F5E642' }}>{tip}</div>
           ))}
         </div>
       </div>

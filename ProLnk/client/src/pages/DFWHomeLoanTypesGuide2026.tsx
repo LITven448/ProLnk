@@ -53,7 +53,7 @@ export default function DFWHomeLoanTypesGuide2026() {
             { label: '🏰 Buying Luxury ($766K+)', val: luxury, set: setLuxury },
           ].map(opt => (
             <label key={opt.label} style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', marginBottom: '0.75rem', cursor: 'pointer' }}>
-              <input type='checkbox' checked={opt.val} onChange={e => opt.set(e.target.checked)} style={{ width: 18, height: 18, accentColor: '#F5E642′ }} />
+              <input type='checkbox' checked={opt.val} onChange={e => opt.set(e.target.checked)} style={{ width: 18, height: 18, accentColor: '#F5E642' }} />
               <span style={{ fontSize: '1rem' }}>{opt.label}</span>
             </label>
           ))}

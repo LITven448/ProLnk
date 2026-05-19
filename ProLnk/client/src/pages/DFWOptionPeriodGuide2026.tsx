@@ -54,7 +54,7 @@ export default function DFWOptionPeriodGuide2026() {
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12, marginBottom: 20 }}>
           {[
             { icon: '⏱️', label: 'Standard Duration', value: '7–10 Days' },
-            { icon: '💵', label: 'Option Fee (Non-Refundable)', value: '$100–500′ },
+            { icon: '💵', label: 'Option Fee (Non-Refundable)', value: '$100–500' },
             { icon: '🚪', label: 'Cancel Right', value: 'Unrestricted' },
             { icon: '📋', label: 'Amendment Deadline', value: 'Before Option Expires' },
           ].map((stat, i) => (
@@ -76,7 +76,7 @@ export default function DFWOptionPeriodGuide2026() {
           <h2 style={{ color: '#ef4444', fontSize: 16, margin: '14px 0 10px' }}>❌ What You CANNOT Do</h2>
           {['Recover option fee if you cancel (it is non-refundable to seller)', 'Extend option period unilaterally — requires seller agreement', 'Make repairs yourself without seller written consent'].map((item, i) => (
             <div key={i} style={{ display: 'flex', gap: 8, padding: '6px 0', borderBottom: '1px solid #1e3a5f', color: '#cbd5e1', fontSize: 13 }}>
-              <span style={{ color: '#ef4444′ }}>✗</span><span>{item}</span>
+              <span style={{ color: '#ef4444' }}>✗</span><span>{item}</span>
             </div>
           ))}
         </div>
@@ -87,8 +87,8 @@ export default function DFWOptionPeriodGuide2026() {
             {Object.keys(strategies).map(f => (
               <button key={f} onClick={() => setFinding(f)}
                 style={{ padding: '8px 12px', borderRadius: 8, border: '1px solid', cursor: 'pointer', fontSize: 12,
-                  borderColor: finding === f ? '#F5E642′ : '#334155', background: finding === f ? '#F5E642' : ’transparent',
-                  color: finding === f ? '#0A1628′ : '#94a3b8', fontWeight: finding === f ? 700 : 400 }}>
+                  borderColor: finding === f ? '#F5E642' : '#334155', background: finding === f ? '#F5E642' : 'transparent',
+                  color: finding === f ? '#0A1628' : '#94a3b8', fontWeight: finding === f ? 700 : 400 }}>
                 {f}
               </button>
             ))}

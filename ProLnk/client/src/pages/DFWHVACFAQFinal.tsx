@@ -44,7 +44,7 @@ export default function DFWHVACFAQFinal() {
           {categories.map(cat => (
             <button key={cat} onClick={() => { setActiveCategory(cat); setOpenIndex(null); }}
               style={{ padding: '8px 18px', borderRadius: 20, border: 'none', cursor: 'pointer', fontWeight: 600, fontSize: 14,
-                background: activeCategory === cat ? '#F5E642′ : '#1e2d45', color: activeCategory === cat ? '#0A1628' : '#94a3b8' }}>
+                background: activeCategory === cat ? '#F5E642' : '#1e2d45', color: activeCategory === cat ? '#0A1628' : '#94a3b8' }}>
               {cat}
             </button>
           ))}
@@ -52,7 +52,7 @@ export default function DFWHVACFAQFinal() {
 
         <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
           {filtered.map((faq, i) => (
-            <div key={i} style={{ background: '#1e2d45', borderRadius: 12, overflow: 'hidden', border: openIndex === i ? '1px solid #F5E642′ : '1px solid #2a3f5f' }}>
+            <div key={i} style={{ background: '#1e2d45', borderRadius: 12, overflow: 'hidden', border: openIndex === i ? '1px solid #F5E642' : '1px solid #2a3f5f' }}>
               <button onClick={() => setOpenIndex(openIndex === i ? null : i)}
                 style={{ width: '100%', padding: '18px 20px', background: 'none', border: 'none', cursor: 'pointer', display: 'flex', justifyContent: 'space-between', alignItems: 'center', gap: 12 }}>
                 <span style={{ color: '#fff', fontWeight: 600, fontSize: 15, textAlign: 'left' }}>{faq.q}</span>

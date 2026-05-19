@@ -27,7 +27,7 @@ function getAssessment(ev: string, panel: string) {
   }
 
   const oncorNote = 'Oncor EV TOU rates: charge midnight-6am at 7¢/kWh vs 14¢/kWh peak. Annual savings: $400-800 for most DFW drivers.';
-  const totalCost = needsUpgrade ? '$3,500-6,500′ : '$900-2,000';
+  const totalCost = needsUpgrade ? '$3,500-6,500' : '$900-2,000';
 
   return { charger, upgrades, oncorNote, totalCost, panelStatus: panelOk ? 'Ready' : needsUpgrade ? 'Upgrade Required' : 'Assessment Recommended' };
 }
@@ -89,7 +89,7 @@ export default function DFWElectricCarHomeGuide() {
             <div style={{ background: '#1E2D45', borderRadius: 12, padding: 24, marginBottom: 16 }}>
               <h3 style={{ color: '#F5E642', marginBottom: 16 }}>Required Upgrades</h3>
               {result.upgrades.map((u, i) => (
-                <div key={i} style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: 12, paddingBottom: 12, borderBottom: i < result.upgrades.length - 1 ? '1px solid #334155′ : ’none' }}>
+                <div key={i} style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: 12, paddingBottom: 12, borderBottom: i < result.upgrades.length - 1 ? '1px solid #334155' : 'none' }}>
                   <div>
                     <div style={{ color: '#fff', fontWeight: 600 }}>{u.item}</div>
                     <div style={{ color: '#94A3B8', fontSize: 13 }}>{u.priority}</div>

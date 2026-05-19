@@ -106,7 +106,7 @@ export default function RoofInspectionGuide() {
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 12 }}>
             {[
               { label: 'Annual hail events', value: '15–20', color: '#F59E0B' },
-              { label: 'Avg claim value', value: '$12,000', color: '#F87171′ },
+              { label: 'Avg claim value', value: '$12,000', color: '#F87171' },
               { label: 'Shingle lifespan (DFW)', value: '15–20 yrs', color: '#60A5FA' },
             ].map(stat => (
               <div key={stat.label} style={{ background: '#0A1628', borderRadius: 8, padding: '16px', textAlign: 'center' }}>
@@ -169,7 +169,7 @@ export default function RoofInspectionGuide() {
                 <span style={{ fontSize: 32 }}>{result.emoji}</span>
                 <div>
                   <p style={{ color: result.color, fontWeight: 800, fontSize: 20, margin: 0 }}>{result.label}</p>
-                  <p style={{ color: '#8BA3C0', fontSize: 13, margin: '2px 0 0′ }}>Score: {totalScore} / {quizQuestions.length * 3}</p>
+                  <p style={{ color: '#8BA3C0', fontSize: 13, margin: '2px 0 0' }}>Score: {totalScore} / {quizQuestions.length * 3}</p>
                 </div>
               </div>
               <p style={{ color: '#CBD5E1', lineHeight: 1.7, margin: 0 }}>{result.desc}</p>

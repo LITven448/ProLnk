@@ -55,13 +55,13 @@ export default function DFWAnnualMaintenanceCost2026() {
                 </div>
                 <input type="range" min={min as number} max={max as number} step={step as number} value={val as number}
                   onChange={e => (setter as (v: number) => void)(+e.target.value)}
-                  style={{ width: '100%', accentColor: '#F5E642′ }} />
+                  style={{ width: '100%', accentColor: '#F5E642' }} />
               </div>
             ))}
           </div>
           <div style={{ marginTop: 16 }}>
             <button onClick={() => setHasPool(!hasPool)}
-              style={{ padding: '10px 20px', background: hasPool ? '#F5E642′ : '#1A2A45', color: hasPool ? '#0A1628' : '#fff',
+              style={{ padding: '10px 20px', background: hasPool ? '#F5E642' : '#1A2A45', color: hasPool ? '#0A1628' : '#fff',
                 border: 'none', borderRadius: 8, cursor: 'pointer', fontWeight: 700 }}>
               🏊 Pool: {hasPool ? 'Yes' : 'No'}
             </button>
@@ -70,7 +70,7 @@ export default function DFWAnnualMaintenanceCost2026() {
 
         <div style={{ background: '#0D1F3C', border: '2px solid #F5E642', borderRadius: 12, padding: 24, textAlign: 'center', marginBottom: 24 }}>
           <div style={{ color: '#8899BB', fontSize: 13 }}>ESTIMATED ANNUAL DFW MAINTENANCE BUDGET</div>
-          <div style={{ fontSize: 42, fontWeight: 900, color: '#F5E642', margin: '8px 0′ }}>${fmt(total)}</div>
+          <div style={{ fontSize: 42, fontWeight: 900, color: '#F5E642', margin: '8px 0' }}>${fmt(total)}</div>
           <div style={{ color: '#8899BB', fontSize: 13 }}>~${fmt(total / 12)}/month to set aside</div>
         </div>
 

@@ -5,7 +5,7 @@ const craftTypes: Record<string, { lighting: string; storage: string; humidity: 
     lighting: '5000K daylight LED (90+ CRI) — color-accurate for fabric matching; task lighting over machine + cutting table',
     storage: 'Wall-mounted thread organization + rolling fabric bolt storage + drawer inserts for notions',
     humidity: 'DFW summer humidity warps fabric — dehumidifier or AC vent directed into room keeps 45–55% RH',
-    layout: 'L-shaped: cutting table (36″ height) + sewing station + ironing board zone — minimum 150 sq ft recommended',
+    layout: 'L-shaped: cutting table (36" height) + sewing station + ironing board zone — minimum 150 sq ft recommended',
   },
   painting: {
     lighting: '6500K natural daylight LEDs + north-facing window if possible — DFW south/west windows create harsh glare',
@@ -23,14 +23,14 @@ const craftTypes: Record<string, { lighting: string; storage: string; humidity: 
     lighting: '5000K daylight LED + dimmable — paper crafts need accurate color; adjustable brightness for detail work',
     storage: 'Stamp and die storage drawers + paper vertical sorters + Cricut/Silhouette dedicated station',
     humidity: 'DFW humidity curls paper — sealed storage bins and dehumidifier for paper supply storage',
-    layout: 'Large flat work surface (48″x96″ minimum) + vertical storage walls + light table station',
+    layout: 'Large flat work surface (48"x96" minimum) + vertical storage walls + light table station',
   },
 };
 
 const spaceCosts: Record<string, Record<string, string>> = {
-  small: { economy: '$3,000–$6,000', mid: '$6,000–$12,000', luxury: '$12,000–$22,000′ },
-  medium: { economy: '$5,000–$9,000', mid: '$9,000–$18,000', luxury: '$18,000–$35,000′ },
-  large: { economy: '$8,000–$14,000', mid: '$14,000–$26,000', luxury: '$26,000–$50,000′ },
+  small: { economy: '$3,000–$6,000', mid: '$6,000–$12,000', luxury: '$12,000–$22,000' },
+  medium: { economy: '$5,000–$9,000', mid: '$9,000–$18,000', luxury: '$18,000–$35,000' },
+  large: { economy: '$8,000–$14,000', mid: '$14,000–$26,000', luxury: '$26,000–$50,000' },
 };
 
 export default function DFWCraftRoomGuide() {
@@ -75,7 +75,7 @@ export default function DFWCraftRoomGuide() {
             <div style={{ display: 'flex', gap: 10, flexWrap: 'wrap' }}>
               {[['sewing','🧵 Sewing / Quilting'],['painting','🖌️ Painting / Art'],['woodworking','🪚 Woodworking'],['paper','✂️ Paper / Scrapbooking']].map(([key, label]) => (
                 <button key={key} onClick={() => setCraftType(key)}
-                  style={{ padding: '8px 16px', borderRadius: 8, border: '2px solid', borderColor: craftType === key ? '#F5E642′ : '#1E3A5F', backgroundColor: craftType === key ? '#F5E6421A' : ’transparent', color: craftType === key ? '#F5E642′ : '#9AA5B4', cursor: ’pointer', fontSize: 13 }}>
+                  style={{ padding: '8px 16px', borderRadius: 8, border: '2px solid', borderColor: craftType === key ? '#F5E642' : '#1E3A5F', backgroundColor: craftType === key ? '#F5E6421A' : 'transparent', color: craftType === key ? '#F5E642' : '#9AA5B4', cursor: 'pointer', fontSize: 13 }}>
                   {label}
                 </button>
               ))}
@@ -87,7 +87,7 @@ export default function DFWCraftRoomGuide() {
             <div style={{ display: 'flex', gap: 10, flexWrap: 'wrap' }}>
               {[['small','📦 Small (under 120 sq ft)'],['medium','🏠 Medium (120–200 sq ft)'],['large','🏢 Large (200+ sq ft)']].map(([key, label]) => (
                 <button key={key} onClick={() => setSpaceSize(key)}
-                  style={{ padding: '8px 16px', borderRadius: 8, border: '2px solid', borderColor: spaceSize === key ? '#F5E642′ : '#1E3A5F', backgroundColor: spaceSize === key ? '#F5E6421A' : ’transparent', color: spaceSize === key ? '#F5E642′ : '#9AA5B4', cursor: ’pointer', fontSize: 13 }}>
+                  style={{ padding: '8px 16px', borderRadius: 8, border: '2px solid', borderColor: spaceSize === key ? '#F5E642' : '#1E3A5F', backgroundColor: spaceSize === key ? '#F5E6421A' : 'transparent', color: spaceSize === key ? '#F5E642' : '#9AA5B4', cursor: 'pointer', fontSize: 13 }}>
                   {label}
                 </button>
               ))}
@@ -99,7 +99,7 @@ export default function DFWCraftRoomGuide() {
             <div style={{ display: 'flex', gap: 10, flexWrap: 'wrap' }}>
               {[['economy','💰 Economy'],['mid','💎 Mid-Range'],['luxury','👑 Luxury']].map(([key, label]) => (
                 <button key={key} onClick={() => setBudget(key)}
-                  style={{ padding: '8px 16px', borderRadius: 8, border: '2px solid', borderColor: budget === key ? '#F5E642′ : '#1E3A5F', backgroundColor: budget === key ? '#F5E6421A' : ’transparent', color: budget === key ? '#F5E642′ : '#9AA5B4', cursor: ’pointer', fontSize: 13 }}>
+                  style={{ padding: '8px 16px', borderRadius: 8, border: '2px solid', borderColor: budget === key ? '#F5E642' : '#1E3A5F', backgroundColor: budget === key ? '#F5E6421A' : 'transparent', color: budget === key ? '#F5E642' : '#9AA5B4', cursor: 'pointer', fontSize: 13 }}>
                   {label}
                 </button>
               ))}
@@ -113,7 +113,7 @@ export default function DFWCraftRoomGuide() {
         </div>
 
         {result && (
-          <div style={{ backgroundColor: '#1E3A5F', borderRadius: 12, padding: 24, border: '2px solid #F5E642′ }}>
+          <div style={{ backgroundColor: '#1E3A5F', borderRadius: 12, padding: 24, border: '2px solid #F5E642' }}>
             <h3 style={{ color: '#F5E642', marginBottom: 16 }}>🎨 Your DFW Craft Room Plan</h3>
             {[['💡 Lighting Plan', result.lighting],['🗄️ Storage System', result.storage],['💧 DFW Humidity Control', result.humidity],['📐 Layout Recommendation', result.layout],['💵 Estimated DFW Cost', result.cost]].map(([label, value]) => (
               <div key={label as string} style={{ marginBottom: 14 }}>

@@ -99,12 +99,12 @@ export default function ProLnkVsGoingAlone() {
           </div>
 
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 20, marginBottom: 24 }}>
-            <div style={{ background: '#F8FAFC', borderRadius: 12, padding: 24, border: '1px solid #E2E8F0′ }}>
+            <div style={{ background: '#F8FAFC', borderRadius: 12, padding: 24, border: '1px solid #E2E8F0' }}>
               <p style={{ color: '#64748B', fontWeight: 600, margin: '0 0 8px', fontSize: 14, textTransform: 'uppercase', letterSpacing: 1 }}>Going Alone (Monthly)</p>
               <p style={{ fontSize: 36, fontWeight: 800, color: '#1e3a5f', margin: 0 }}>
                 ${aloneMonthly.toLocaleString()}
               </p>
-              <p style={{ color: '#94A3B8', fontSize: 13, margin: '4px 0 0′ }}>Labor income only</p>
+              <p style={{ color: '#94A3B8', fontSize: 13, margin: '4px 0 0' }}>Labor income only</p>
             </div>
             <div style={{ background: '#EFF6FF', borderRadius: 12, padding: 24, border: '2px solid #2563EB' }}>
               <p style={{ color: '#2563EB', fontWeight: 600, margin: '0 0 8px', fontSize: 14, textTransform: 'uppercase', letterSpacing: 1 }}>ProLnk Partner (Monthly)</p>
@@ -124,7 +124,7 @@ export default function ProLnkVsGoingAlone() {
                 { label: 'Your labor revenue', amount: aloneMonthly, color: '#64748B' },
                 { label: 'Direct commission (Tier 2: 20%)', amount: directEarnings, color: '#2563EB' },
                 { label: `Network override (${prosReferred} pros × 1%)`, amount: networkEarnings, color: '#7C3AED' },
-                { label: `Subscription override (${prosReferred} × $149 × 10%)`, amount: subscriptionEarnings, color: '#059669′ },
+                { label: `Subscription override (${prosReferred} × $149 × 10%)`, amount: subscriptionEarnings, color: '#059669' },
               ].map(row => (
                 <div key={row.label} style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
                   <span style={{ color: '#4B5563', fontSize: 14 }}>{row.label}</span>
@@ -146,17 +146,17 @@ export default function ProLnkVsGoingAlone() {
         <div style={{ borderRadius: 12, overflow: 'hidden', border: '1px solid #E2E8F0', marginBottom: 48 }}>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', background: '#1e3a5f' }}>
             <div style={{ padding: '14px 20px', color: '#93C5FD', fontWeight: 700, fontSize: 14 }}>Category</div>
-            <div style={{ padding: '14px 20px', color: '#FFFFFF', fontWeight: 700, fontSize: 14, borderLeft: '1px solid #2d4f73′ }}>Going Alone</div>
-            <div style={{ padding: '14px 20px', color: '#60A5FA', fontWeight: 700, fontSize: 14, borderLeft: '1px solid #2d4f73′ }}>ProLnk Partner ✓</div>
+            <div style={{ padding: '14px 20px', color: '#FFFFFF', fontWeight: 700, fontSize: 14, borderLeft: '1px solid #2d4f73' }}>Going Alone</div>
+            <div style={{ padding: '14px 20px', color: '#60A5FA', fontWeight: 700, fontSize: 14, borderLeft: '1px solid #2d4f73' }}>ProLnk Partner ✓</div>
           </div>
           {comparisonRows.map((row, i) => (
             <div
               key={row.category}
-              style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', background: i % 2 === 0 ? '#F8FAFC' : '#FFFFFF', borderTop: '1px solid #E2E8F0′ }}
+              style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', background: i % 2 === 0 ? '#F8FAFC' : '#FFFFFF', borderTop: '1px solid #E2E8F0' }}
             >
               <div style={{ padding: '14px 20px', color: '#374151', fontWeight: 600, fontSize: 14 }}>{row.category}</div>
-              <div style={{ padding: '14px 20px', color: '#6B7280', fontSize: 14, borderLeft: '1px solid #E2E8F0′ }}>{row.alone}</div>
-              <div style={{ padding: '14px 20px', color: '#1D4ED8', fontSize: 14, fontWeight: 500, borderLeft: '1px solid #E2E8F0′ }}>{row.prolnk}</div>
+              <div style={{ padding: '14px 20px', color: '#6B7280', fontSize: 14, borderLeft: '1px solid #E2E8F0' }}>{row.alone}</div>
+              <div style={{ padding: '14px 20px', color: '#1D4ED8', fontSize: 14, fontWeight: 500, borderLeft: '1px solid #E2E8F0' }}>{row.prolnk}</div>
             </div>
           ))}
         </div>
@@ -170,9 +170,9 @@ export default function ProLnkVsGoingAlone() {
             {[
               { n: '1', title: 'Direct Commission', desc: '12–70% of match value based on your tier (hits 50% at 100 matches)', color: '#2563EB' },
               { n: '2', title: 'Pro Network Override', desc: 'Earn 1% on every job your recruited pros complete — 4 levels deep', color: '#7C3AED' },
-              { n: '3', title: 'Subscription Override', desc: '10% recurring on every pro that signs up through your referral link', color: '#059669′ },
-              { n: '4', title: 'Homeowner Override', desc: '$25–100 per qualified homeowner you bring onto the platform', color: '#D97706′ },
-              { n: '5', title: 'Home Origination Rights', desc: 'Permanent revenue share on every home you help add to the Vault', color: '#DC2626′ },
+              { n: '3', title: 'Subscription Override', desc: '10% recurring on every pro that signs up through your referral link', color: '#059669' },
+              { n: '4', title: 'Homeowner Override', desc: '$25–100 per qualified homeowner you bring onto the platform', color: '#D97706' },
+              { n: '5', title: 'Home Origination Rights', desc: 'Permanent revenue share on every home you help add to the Vault', color: '#DC2626' },
             ].map(stream => (
               <div key={stream.n} style={{ display: 'flex', gap: 16, padding: '16px 20px', background: '#FFFFFF', borderRadius: 10, border: '1px solid #BFDBFE', alignItems: 'flex-start' }}>
                 <div style={{ width: 36, height: 36, borderRadius: '50%', background: stream.color, display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#FFFFFF', fontWeight: 800, fontSize: 16, flexShrink: 0 }}>

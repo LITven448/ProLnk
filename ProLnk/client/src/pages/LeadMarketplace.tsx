@@ -34,21 +34,21 @@ interface MarketplaceLead {
 }
 
 const TRADE_COLORS: Record<string, string> = {
-  "Lawn Care": "#10B981″, "HVAC": "#3B82F6", "Plumbing": "#14B8A6",
-  "Pest Control": "#F59E0B", "Fence & Deck": "#6366F1″, "Roofing": "#F97316",
-  "Electrical": "#EAB308″, "Cleaning": "#EC4899", "Pool Service": "#06B6D4", "Painting": "#8B5CF6",
-  "General": "#6B7280″,
+  "Lawn Care": "#10B981", "HVAC": "#3B82F6", "Plumbing": "#14B8A6",
+  "Pest Control": "#F59E0B", "Fence & Deck": "#6366F1", "Roofing": "#F97316",
+  "Electrical": "#EAB308", "Cleaning": "#EC4899", "Pool Service": "#06B6D4", "Painting": "#8B5CF6",
+  "General": "#6B7280",
 };
 
 const TRADE_BG_COLORS: Record<string, string> = {
-  "Lawn Care": "#ECFDF5″, "HVAC": "#EFF6FF", "Plumbing": "#F0FDFA",
+  "Lawn Care": "#ECFDF5", "HVAC": "#EFF6FF", "Plumbing": "#F0FDFA",
   "Pest Control": "#FFFBEB", "Fence & Deck": "#EEF2FF", "Roofing": "#FFF7ED",
-  "Electrical": "#FEFCE8″, "Cleaning": "#FDF2F8", "Pool Service": "#ECFEFF",
+  "Electrical": "#FEFCE8", "Cleaning": "#FDF2F8", "Pool Service": "#ECFEFF",
   "Painting": "#F5F3FF", "General": "#F9FAFB",
 };
 
 function TradeIconSmall({ trade }: { trade: string }) {
-  const color = TRADE_COLORS[trade] ?? "#6B7280″;
+  const color = TRADE_COLORS[trade] ?? "#6B7280";
   const bg = TRADE_BG_COLORS[trade] ?? "#F9FAFB";
   let Icon = Wrench;
   if (trade === "HVAC") Icon = Wind;
@@ -57,21 +57,21 @@ function TradeIconSmall({ trade }: { trade: string }) {
   else if (trade === "Roofing") Icon = Home;
   else if (trade === "Painting") Icon = Paintbrush;
   return (
-    <div className="w-9 h-9 rounded-lg flex items-center justify-center flex-shrink-0″ style={{ backgroundColor: bg }}>
+    <div className="w-9 h-9 rounded-lg flex items-center justify-center flex-shrink-0" style={{ backgroundColor: bg }}>
       <Icon size={16} color={color} />
     </div>
   );
 }
 
 function AiScoreCircle({ score }: { score: number }) {
-  const color = score >= 85 ? "#14B8A6″ : score >= 65 ? "#3B82F6" : "#F59E0B";
+  const color = score >= 85 ? "#14B8A6" : score >= 65 ? "#3B82F6" : "#F59E0B";
   const circumference = 2 * Math.PI * 14;
   const offset = circumference - (score / 100) * circumference;
   return (
-    <div className="relative w-10 h-10 flex-shrink-0″>
-      <svg className="w-10 h-10 -rotate-90″ viewBox="0 0 32 32">
-        <circle cx="16″ cy="16" r="14" fill="none" stroke="#E5E7EB" strokeWidth="3" />
-        <circle cx="16″ cy="16" r="14" fill="none" strokeWidth="3" stroke={color}
+    <div className="relative w-10 h-10 flex-shrink-0">
+      <svg className="w-10 h-10 -rotate-90" viewBox="0 0 32 32">
+        <circle cx="16" cy="16" r="14" fill="none" stroke="#E5E7EB" strokeWidth="3" />
+        <circle cx="16" cy="16" r="14" fill="none" strokeWidth="3" stroke={color}
           strokeDasharray={circumference} strokeDashoffset={offset} strokeLinecap="round" />
       </svg>
       <div className="absolute inset-0 flex items-center justify-center">
@@ -180,25 +180,25 @@ export default function LeadMarketplace() {
 
   return (
     <PartnerLayout>
-      <div className="max-w-3xl mx-auto px-4 py-8 space-y-6″>
+      <div className="max-w-3xl mx-auto px-4 py-8 space-y-6">
 
         {/* Page header */}
-        <div className="flex items-start justify-between gap-4″>
+        <div className="flex items-start justify-between gap-4">
           <div>
-            <h1 className="text-2xl font-heading font-bold text-gray-900 flex items-center gap-3″>
+            <h1 className="text-2xl font-heading font-bold text-gray-900 flex items-center gap-3">
               <TrendingUp className="w-6 h-6 text-[#0A1628]" />Lead Marketplace
             </h1>
-            <p className="text-sm text-gray-500 mt-1″>Browse and claim available leads in your service area</p>
+            <p className="text-sm text-gray-500 mt-1">Browse and claim available leads in your service area</p>
           </div>
-          <Badge className="bg-teal-100 text-teal-700 border-teal-200 text-sm px-3 py-1″>
+          <Badge className="bg-teal-100 text-teal-700 border-teal-200 text-sm px-3 py-1">
             {filtered.length} available
           </Badge>
         </div>
 
         {/* Map placeholder */}
-        <Card className="overflow-hidden border border-gray-200″>
-          <div className="relative bg-gradient-to-br from-blue-50 to-teal-50 h-44″>
-            <div className="absolute inset-0 p-4″>
+        <Card className="overflow-hidden border border-gray-200">
+          <div className="relative bg-gradient-to-br from-blue-50 to-teal-50 h-44">
+            <div className="absolute inset-0 p-4">
               {MAP_CITIES.map((city) => (
                 <div
                   key={city.name}
@@ -213,13 +213,13 @@ export default function LeadMarketplace() {
                   </span>
                 </div>
               ))}
-              <div className="absolute bottom-3 left-3 text-xs text-gray-500 bg-white/80 rounded px-2 py-1″>
-                <MapPin className="w-3 h-3 inline mr-1 text-teal-500″ />Your location (center)
+              <div className="absolute bottom-3 left-3 text-xs text-gray-500 bg-white/80 rounded px-2 py-1">
+                <MapPin className="w-3 h-3 inline mr-1 text-teal-500" />Your location (center)
               </div>
-              <div className="absolute bottom-3 right-3 flex items-center gap-3 text-[10px] text-gray-500 bg-white/80 rounded px-2 py-1″>
-                <span className="flex items-center gap-1″><span className="w-3 h-3 rounded-full bg-teal-600 inline-block" />4+ leads</span>
-                <span className="flex items-center gap-1″><span className="w-3 h-3 rounded-full bg-blue-500 inline-block" />2–3 leads</span>
-                <span className="flex items-center gap-1″><span className="w-3 h-3 rounded-full bg-gray-400 inline-block" />1 lead</span>
+              <div className="absolute bottom-3 right-3 flex items-center gap-3 text-[10px] text-gray-500 bg-white/80 rounded px-2 py-1">
+                <span className="flex items-center gap-1"><span className="w-3 h-3 rounded-full bg-teal-600 inline-block" />4+ leads</span>
+                <span className="flex items-center gap-1"><span className="w-3 h-3 rounded-full bg-blue-500 inline-block" />2–3 leads</span>
+                <span className="flex items-center gap-1"><span className="w-3 h-3 rounded-full bg-gray-400 inline-block" />1 lead</span>
               </div>
             </div>
           </div>
@@ -227,7 +227,7 @@ export default function LeadMarketplace() {
 
         {/* Sort + Filter bar */}
         <div className="flex items-center gap-2 flex-wrap">
-          <div className="flex items-center gap-1 bg-gray-100 rounded-lg p-1″>
+          <div className="flex items-center gap-1 bg-gray-100 rounded-lg p-1">
             {(["best_match", "newest", "closest", "highest_value"] as SortKey[]).map((k) => {
               const labels: Record<SortKey, string> = {
                 best_match: "Best Match", newest: "Newest",
@@ -248,7 +248,7 @@ export default function LeadMarketplace() {
             onClick={() => setShowFilters(!showFilters)}
             className={`ml-auto flex items-center gap-1.5 text-xs font-semibold px-3 py-2 rounded-lg border transition-colors ${showFilters ? "bg-[#0A1628] text-white border-[#0A1628]" : "bg-white text-gray-700 border-gray-200 hover:border-gray-300"}`}
           >
-            <Filter className="w-3.5 h-3.5″ />Filters
+            <Filter className="w-3.5 h-3.5" />Filters
             {(serviceFilter !== "All" || maxDistance < 25 || minJobValue > 0) && (
               <span className="w-4 h-4 rounded-full bg-teal-500 text-white text-[10px] flex items-center justify-center">
                 {[serviceFilter !== "All", maxDistance < 25, minJobValue > 0].filter(Boolean).length}
@@ -259,11 +259,11 @@ export default function LeadMarketplace() {
 
         {/* Filters panel */}
         {showFilters && (
-          <Card className="border border-gray-200″>
-            <CardContent className="p-4 space-y-4″>
+          <Card className="border border-gray-200">
+            <CardContent className="p-4 space-y-4">
               <div>
-                <p className="text-xs font-bold text-gray-600 uppercase tracking-wide mb-2″>Service Type</p>
-                <div className="flex flex-wrap gap-1.5″>
+                <p className="text-xs font-bold text-gray-600 uppercase tracking-wide mb-2">Service Type</p>
+                <div className="flex flex-wrap gap-1.5">
                   {SERVICE_TYPES.map((t) => (
                     <button
                       key={t}
@@ -275,34 +275,34 @@ export default function LeadMarketplace() {
                   ))}
                 </div>
               </div>
-              <div className="grid grid-cols-2 gap-4″>
+              <div className="grid grid-cols-2 gap-4">
                 <div>
-                  <p className="text-xs font-bold text-gray-600 uppercase tracking-wide mb-2″>
-                    Max Distance: <span className="text-teal-600″>{maxDistance} mi</span>
+                  <p className="text-xs font-bold text-gray-600 uppercase tracking-wide mb-2">
+                    Max Distance: <span className="text-teal-600">{maxDistance} mi</span>
                   </p>
                   <input
                     type="range" min={5} max={50} step={5} value={maxDistance}
                     onChange={(e) => setMaxDistance(Number(e.target.value))}
-                    className="w-full accent-teal-500″
+                    className="w-full accent-teal-500"
                   />
                 </div>
                 <div>
-                  <p className="text-xs font-bold text-gray-600 uppercase tracking-wide mb-2″>
-                    Min Job Value: <span className="text-teal-600″>${minJobValue.toLocaleString()}</span>
+                  <p className="text-xs font-bold text-gray-600 uppercase tracking-wide mb-2">
+                    Min Job Value: <span className="text-teal-600">${minJobValue.toLocaleString()}</span>
                   </p>
                   <input
                     type="range" min={0} max={5000} step={500} value={minJobValue}
                     onChange={(e) => setMinJobValue(Number(e.target.value))}
-                    className="w-full accent-teal-500″
+                    className="w-full accent-teal-500"
                   />
                 </div>
               </div>
               {(serviceFilter !== "All" || maxDistance < 25 || minJobValue > 0) && (
                 <button
                   onClick={() => { setServiceFilter("All"); setMaxDistance(25); setMinJobValue(0); }}
-                  className="text-xs text-red-500 hover:text-red-700 flex items-center gap-1″
+                  className="text-xs text-red-500 hover:text-red-700 flex items-center gap-1"
                 >
-                  <X className="w-3 h-3″ />Clear all filters
+                  <X className="w-3 h-3" />Clear all filters
                 </button>
               )}
             </CardContent>
@@ -311,15 +311,15 @@ export default function LeadMarketplace() {
 
         {/* Lead cards */}
         {filtered.length === 0 ? (
-          <div className="text-center py-16 text-gray-400″>
-            <Search className="w-10 h-10 mx-auto mb-3 opacity-30″ />
-            <p className="font-medium text-gray-600″>No leads match your filters</p>
-            <p className="text-sm mt-1″>Try widening your distance or service type</p>
+          <div className="text-center py-16 text-gray-400">
+            <Search className="w-10 h-10 mx-auto mb-3 opacity-30" />
+            <p className="font-medium text-gray-600">No leads match your filters</p>
+            <p className="text-sm mt-1">Try widening your distance or service type</p>
           </div>
         ) : (
-          <div className="space-y-3″>
+          <div className="space-y-3">
             {filtered.map((lead) => {
-              const tradeColor = TRADE_COLORS[lead.serviceType] ?? "#6B7280″;
+              const tradeColor = TRADE_COLORS[lead.serviceType] ?? "#6B7280";
               const isClaimed = claimedIds.has(lead.id);
               return (
                 <Card
@@ -327,22 +327,22 @@ export default function LeadMarketplace() {
                   className={`border-2 transition-all cursor-pointer hover:shadow-md ${isClaimed ? "opacity-60 border-gray-100" : lead.isUrgent ? "border-amber-200 hover:border-amber-300" : "border-gray-200 hover:border-teal-300"}`}
                   onClick={() => !isClaimed && setSelectedLead(lead)}
                 >
-                  <CardContent className="p-4″>
-                    <div className="flex items-start gap-3″>
+                  <CardContent className="p-4">
+                    <div className="flex items-start gap-3">
                       <AiScoreCircle score={lead.matchScore} />
-                      <div className="flex-1 min-w-0″>
+                      <div className="flex-1 min-w-0">
                         <div className="flex items-center gap-1.5 mb-1 flex-wrap">
                           <span className="text-xs font-bold px-2 py-0.5 rounded-full text-white" style={{ backgroundColor: tradeColor }}>
                             {lead.serviceType}
                           </span>
                           {lead.isHighValue && (
-                            <span className="inline-flex items-center gap-1 text-xs font-bold px-2 py-0.5 rounded-full bg-yellow-100 text-yellow-700 border border-yellow-200″>
-                              <Star className="w-3 h-3 fill-yellow-500 text-yellow-500″ />High Value
+                            <span className="inline-flex items-center gap-1 text-xs font-bold px-2 py-0.5 rounded-full bg-yellow-100 text-yellow-700 border border-yellow-200">
+                              <Star className="w-3 h-3 fill-yellow-500 text-yellow-500" />High Value
                             </span>
                           )}
                           {lead.isUrgent && (
-                            <span className="inline-flex items-center gap-1 text-xs font-bold px-2 py-0.5 rounded-full bg-red-100 text-red-700 border border-red-200″>
-                              <Flame className="w-3 h-3″ />Urgent
+                            <span className="inline-flex items-center gap-1 text-xs font-bold px-2 py-0.5 rounded-full bg-red-100 text-red-700 border border-red-200">
+                              <Flame className="w-3 h-3" />Urgent
                             </span>
                           )}
                           {isClaimed && (
@@ -353,40 +353,40 @@ export default function LeadMarketplace() {
                           {lead.serviceType} job — {lead.city}, {lead.state}
                         </p>
                         <div className="flex items-center gap-3 mt-1 text-xs text-gray-400 flex-wrap">
-                          <span className="flex items-center gap-1″>
-                            <MapPin className="w-3 h-3″ />{lead.distanceMiles} mi away
+                          <span className="flex items-center gap-1">
+                            <MapPin className="w-3 h-3" />{lead.distanceMiles} mi away
                           </span>
-                          <span className="flex items-center gap-1″>
-                            <Clock className="w-3 h-3″ />{relativeAge(lead.ageMinutes)}
+                          <span className="flex items-center gap-1">
+                            <Clock className="w-3 h-3" />{relativeAge(lead.ageMinutes)}
                           </span>
-                          <span className="flex items-center gap-1″>
-                            <Users className="w-3 h-3″ />{lead.bidCount} bid{lead.bidCount !== 1 ? "s" : ""}
+                          <span className="flex items-center gap-1">
+                            <Users className="w-3 h-3" />{lead.bidCount} bid{lead.bidCount !== 1 ? "s" : ""}
                           </span>
                           {lead.photos > 0 && (
-                            <span className="flex items-center gap-1″>
-                              <Image className="w-3 h-3″ />{lead.photos} photo{lead.photos !== 1 ? "s" : ""}
+                            <span className="flex items-center gap-1">
+                              <Image className="w-3 h-3" />{lead.photos} photo{lead.photos !== 1 ? "s" : ""}
                             </span>
                           )}
                         </div>
                       </div>
-                      <div className="text-right flex-shrink-0 ml-1″>
+                      <div className="text-right flex-shrink-0 ml-1">
                         <div className="text-xl font-heading font-bold text-gray-900 leading-none">
                           ${lead.jobSizeEstimate.toLocaleString()}
                         </div>
-                        <div className="text-xs text-gray-400 mt-0.5″>est. value</div>
+                        <div className="text-xs text-gray-400 mt-0.5">est. value</div>
                       </div>
                     </div>
-                    <div className="mt-3 flex items-center justify-between gap-2″>
+                    <div className="mt-3 flex items-center justify-between gap-2">
                       <span className={`text-xs font-semibold px-2 py-0.5 rounded-full ${lead.isFreeForEarlyUsers ? "bg-green-100 text-green-700" : "bg-gray-100 text-gray-600"}`}>
                         {lead.isFreeForEarlyUsers ? "Free — early access" : `${lead.creditCost} credit${lead.creditCost !== 1 ? "s" : ""}`}
                       </span>
                       {!isClaimed && (
                         <Button
                           size="sm"
-                          className="bg-teal-600 hover:bg-teal-700 text-white text-xs px-4″
+                          className="bg-teal-600 hover:bg-teal-700 text-white text-xs px-4"
                           onClick={(e) => { e.stopPropagation(); handleClaim(lead); }}
                         >
-                          <Zap className="w-3 h-3 mr-1.5″ />Claim This Lead
+                          <Zap className="w-3 h-3 mr-1.5" />Claim This Lead
                         </Button>
                       )}
                     </div>
@@ -404,69 +404,69 @@ export default function LeadMarketplace() {
           {selectedLead && (
             <>
               <DialogHeader>
-                <DialogTitle className="flex items-center gap-2″>
+                <DialogTitle className="flex items-center gap-2">
                   <TradeIconSmall trade={selectedLead.serviceType} />
                   <span>{selectedLead.serviceType} — {selectedLead.city}, {selectedLead.state}</span>
                 </DialogTitle>
               </DialogHeader>
-              <div className="space-y-4 py-2″>
+              <div className="space-y-4 py-2">
                 <div className="flex items-center gap-3 flex-wrap">
                   <AiScoreCircle score={selectedLead.matchScore} />
                   <div>
                     <p className="text-xs text-gray-500 font-semibold uppercase tracking-wide">AI Match Score</p>
-                    <p className="text-sm font-bold text-gray-800″>
+                    <p className="text-sm font-bold text-gray-800">
                       {selectedLead.matchScore >= 85 ? "Excellent fit" : selectedLead.matchScore >= 65 ? "Good fit" : "Fair fit"}
                     </p>
                   </div>
                   {selectedLead.isHighValue && (
-                    <span className="inline-flex items-center gap-1 text-xs font-bold px-2 py-0.5 rounded-full bg-yellow-100 text-yellow-700 border border-yellow-200″>
-                      <Star className="w-3 h-3 fill-yellow-500 text-yellow-500″ />High Value
+                    <span className="inline-flex items-center gap-1 text-xs font-bold px-2 py-0.5 rounded-full bg-yellow-100 text-yellow-700 border border-yellow-200">
+                      <Star className="w-3 h-3 fill-yellow-500 text-yellow-500" />High Value
                     </span>
                   )}
                   {selectedLead.isUrgent && (
-                    <span className="inline-flex items-center gap-1 text-xs font-bold px-2 py-0.5 rounded-full bg-red-100 text-red-700 border border-red-200″>
-                      <Flame className="w-3 h-3″ />Urgent
+                    <span className="inline-flex items-center gap-1 text-xs font-bold px-2 py-0.5 rounded-full bg-red-100 text-red-700 border border-red-200">
+                      <Flame className="w-3 h-3" />Urgent
                     </span>
                   )}
                 </div>
 
-                <div className="grid grid-cols-3 gap-2″>
+                <div className="grid grid-cols-3 gap-2">
                   <div className="bg-gray-50 rounded-lg p-2.5 text-center">
-                    <p className="text-xs text-gray-500″>Est. Value</p>
-                    <p className="font-bold text-gray-900″>${selectedLead.jobSizeEstimate.toLocaleString()}</p>
+                    <p className="text-xs text-gray-500">Est. Value</p>
+                    <p className="font-bold text-gray-900">${selectedLead.jobSizeEstimate.toLocaleString()}</p>
                   </div>
                   <div className="bg-gray-50 rounded-lg p-2.5 text-center">
-                    <p className="text-xs text-gray-500″>Distance</p>
-                    <p className="font-bold text-gray-900″>{selectedLead.distanceMiles} mi</p>
+                    <p className="text-xs text-gray-500">Distance</p>
+                    <p className="font-bold text-gray-900">{selectedLead.distanceMiles} mi</p>
                   </div>
                   <div className="bg-gray-50 rounded-lg p-2.5 text-center">
-                    <p className="text-xs text-gray-500″>Bids</p>
-                    <p className="font-bold text-gray-900″>{selectedLead.bidCount}</p>
+                    <p className="text-xs text-gray-500">Bids</p>
+                    <p className="font-bold text-gray-900">{selectedLead.bidCount}</p>
                   </div>
                 </div>
 
                 <div>
-                  <p className="text-xs font-bold text-gray-600 uppercase tracking-wide mb-1.5″>Job Description</p>
+                  <p className="text-xs font-bold text-gray-600 uppercase tracking-wide mb-1.5">Job Description</p>
                   <p className="text-sm text-gray-700 leading-relaxed">{selectedLead.description}</p>
                 </div>
 
-                <div className="flex items-start gap-2″>
-                  <MapPin className="w-4 h-4 text-gray-400 mt-0.5 flex-shrink-0″ />
+                <div className="flex items-start gap-2">
+                  <MapPin className="w-4 h-4 text-gray-400 mt-0.5 flex-shrink-0" />
                   <div>
-                    <p className="text-xs font-bold text-gray-600 uppercase tracking-wide mb-0.5″>Neighborhood</p>
-                    <p className="text-sm text-gray-700″>{selectedLead.neighborhood}</p>
-                    <p className="text-xs text-gray-400 mt-0.5″>
+                    <p className="text-xs font-bold text-gray-600 uppercase tracking-wide mb-0.5">Neighborhood</p>
+                    <p className="text-sm text-gray-700">{selectedLead.neighborhood}</p>
+                    <p className="text-xs text-gray-400 mt-0.5">
                       Full address unlocked after claiming
                     </p>
                   </div>
                 </div>
 
                 {selectedLead.photos > 0 && (
-                  <div className="bg-blue-50 rounded-lg p-3 border border-blue-100″>
-                    <p className="text-xs font-bold text-blue-700 flex items-center gap-1.5″>
-                      <Image className="w-3.5 h-3.5″ />{selectedLead.photos} photo{selectedLead.photos !== 1 ? "s" : ""} attached
+                  <div className="bg-blue-50 rounded-lg p-3 border border-blue-100">
+                    <p className="text-xs font-bold text-blue-700 flex items-center gap-1.5">
+                      <Image className="w-3.5 h-3.5" />{selectedLead.photos} photo{selectedLead.photos !== 1 ? "s" : ""} attached
                     </p>
-                    <p className="text-xs text-blue-600 mt-0.5″>Photos visible after claiming</p>
+                    <p className="text-xs text-blue-600 mt-0.5">Photos visible after claiming</p>
                   </div>
                 )}
 
@@ -485,7 +485,7 @@ export default function LeadMarketplace() {
                   className="w-full bg-teal-600 hover:bg-teal-700 text-white font-semibold"
                   onClick={() => handleClaim(selectedLead)}
                 >
-                  <Zap className="w-4 h-4 mr-2″ />Claim This Lead
+                  <Zap className="w-4 h-4 mr-2" />Claim This Lead
                 </Button>
               </div>
             </>

@@ -33,7 +33,7 @@ export default function DFWSpringFoundationCheck2026() {
 
   const guide = age && foundation ? getGuide({ age, foundation }) : null;
 
-  const urgencyColor: Record<string, string> = { High: '#F5E642', Medium: '#FFA500', Low: '#4CAF50′ };
+  const urgencyColor: Record<string, string> = { High: '#F5E642', Medium: '#FFA500', Low: '#4CAF50' };
 
   return (
     <div style={{ background: '#0A1628', minHeight: '100vh', color: '#fff', fontFamily: 'sans-serif', padding: '32px 24px' }}>
@@ -45,10 +45,10 @@ export default function DFWSpringFoundationCheck2026() {
         <div style={{ background: '#112240', borderRadius: 12, padding: 20, marginBottom: 28, border: '1px solid #1e3a5f' }}>
           <h2 style={{ color: '#F5E642', fontSize: 16, marginBottom: 12 }}>⚠️ Why Spring Matters for DFW Foundations</h2>
           <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: 8 }}>
-            <li style={{ color: '#cbd5e1′ }}>🧱 DFW expansive clay soil moves with moisture — spring rains re-hydrate it</li>
-            <li style={{ color: '#cbd5e1′ }}>☀️ Summer drought will shrink soil again — assess now while stable</li>
-            <li style={{ color: '#cbd5e1′ }}>🚪 Sticking doors or windows = first warning sign of shift</li>
-            <li style={{ color: '#cbd5e1′ }}>👷 Engineer inspection ≠ repair company — get independent assessment first</li>
+            <li style={{ color: '#cbd5e1' }}>🧱 DFW expansive clay soil moves with moisture — spring rains re-hydrate it</li>
+            <li style={{ color: '#cbd5e1' }}>☀️ Summer drought will shrink soil again — assess now while stable</li>
+            <li style={{ color: '#cbd5e1' }}>🚪 Sticking doors or windows = first warning sign of shift</li>
+            <li style={{ color: '#cbd5e1' }}>👷 Engineer inspection ≠ repair company — get independent assessment first</li>
           </ul>
         </div>
 
@@ -60,9 +60,9 @@ export default function DFWSpringFoundationCheck2026() {
             {ages.map(a => (
               <button key={a} onClick={() => setAge(a)}
                 style={{ padding: '9px 18px', borderRadius: 8, border: '2px solid',
-                  borderColor: age === a ? '#F5E642′ : '#1e3a5f',
-                  background: age === a ? '#F5E642′ : '#112240',
-                  color: age === a ? '#0A1628′ : '#fff', fontWeight: 600, cursor: ’pointer' }}>
+                  borderColor: age === a ? '#F5E642' : '#1e3a5f',
+                  background: age === a ? '#F5E642' : '#112240',
+                  color: age === a ? '#0A1628' : '#fff', fontWeight: 600, cursor: 'pointer' }}>
                 {a}
               </button>
             ))}
@@ -75,9 +75,9 @@ export default function DFWSpringFoundationCheck2026() {
             {foundations.map(f => (
               <button key={f} onClick={() => setFoundation(f)}
                 style={{ padding: '9px 18px', borderRadius: 8, border: '2px solid',
-                  borderColor: foundation === f ? '#F5E642′ : '#1e3a5f',
-                  background: foundation === f ? '#F5E642′ : '#112240',
-                  color: foundation === f ? '#0A1628′ : '#fff', fontWeight: 600, cursor: ’pointer' }}>
+                  borderColor: foundation === f ? '#F5E642' : '#1e3a5f',
+                  background: foundation === f ? '#F5E642' : '#112240',
+                  color: foundation === f ? '#0A1628' : '#fff', fontWeight: 600, cursor: 'pointer' }}>
                 {f}
               </button>
             ))}
@@ -90,14 +90,14 @@ export default function DFWSpringFoundationCheck2026() {
               <div key={i} style={{ background: '#112240', borderRadius: 10, padding: '14px 18px',
                 display: 'flex', alignItems: 'center', gap: 14, border: '1px solid #1e3a5f' }}>
                 <span style={{ fontSize: 24 }}>{item.icon}</span>
-                <span style={{ flex: 1, color: '#e2e8f0′ }}>{item.task}</span>
+                <span style={{ flex: 1, color: '#e2e8f0' }}>{item.task}</span>
                 <span style={{ fontSize: 12, fontWeight: 700, color: urgencyColor[item.urgency] }}>{item.urgency}</span>
               </div>
             ))}
           </div>
         )}
 
-        <div style={{ marginTop: 40, padding: 20, background: '#112240', borderRadius: 12, border: '1px solid #F5E642′ }}>
+        <div style={{ marginTop: 40, padding: 20, background: '#112240', borderRadius: 12, border: '1px solid #F5E642' }}>
           <p style={{ color: '#F5E642', fontWeight: 700, marginBottom: 6 }}>🏠 ProLnk connects you with vetted DFW foundation pros</p>
           <p style={{ color: '#94a3b8', fontSize: 14 }}>Licensed structural engineers, foundation repair specialists, and drainage contractors across DFW.</p>
         </div>

@@ -72,7 +72,7 @@ export default function DFWProLnkSessionFinalPage() {
           {milestones.map(m => (
             <div key={m.label} style={{ background: '#0f2236', borderRadius: 12, padding: 20, textAlign: 'center' }}>
               <div style={{ fontSize: 28, marginBottom: 6 }}>{m.icon}</div>
-              <div style={{ fontSize: 24, fontWeight: 800, color: '#F5E642′ }}>{m.value}</div>
+              <div style={{ fontSize: 24, fontWeight: 800, color: '#F5E642' }}>{m.value}</div>
               <div style={{ color: '#94a3b8', fontSize: 13 }}>{m.label}</div>
             </div>
           ))}
@@ -83,7 +83,7 @@ export default function DFWProLnkSessionFinalPage() {
           {deploySteps.map(s => (
             <div key={s.step} style={{ display: 'flex', gap: 12, marginBottom: 12, alignItems: 'flex-start' }}>
               <span style={{ background: '#F5E642', color: '#0A1628', borderRadius: '50%', width: 24, height: 24, display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 12, fontWeight: 800, flexShrink: 0 }}>{s.step}</span>
-              <span style={{ color: '#cbd5e1′ }}>{s.icon} {s.action}</span>
+              <span style={{ color: '#cbd5e1' }}>{s.icon} {s.action}</span>
             </div>
           ))}
         </div>
@@ -92,7 +92,7 @@ export default function DFWProLnkSessionFinalPage() {
           <div style={{ fontSize: 14, color: '#94a3b8', marginBottom: 12 }}>Who are you? Get your personalized final message from ProLnk:</div>
           <div style={{ display: 'flex', gap: 10, flexWrap: 'wrap' }}>
             {(Object.entries(messages) as [Role, RoleMessage][]).map(([k, v]) => (
-              <button key={k} onClick={() => setRole(k)} style={{ padding: '8px 14px', borderRadius: 8, border: `2px solid ${role === k ? '#F5E642' : '#1e3a5f'}`, background: role === k ? '#F5E642′ : ’transparent', color: role === k ? '#0A1628′ : '#fff', cursor: ’pointer', fontWeight: 600, fontSize: 13 }}>{v.label}</button>
+              <button key={k} onClick={() => setRole(k)} style={{ padding: '8px 14px', borderRadius: 8, border: `2px solid ${role === k ? '#F5E642' : '#1e3a5f'}`, background: role === k ? '#F5E642' : 'transparent', color: role === k ? '#0A1628' : '#fff', cursor: 'pointer', fontWeight: 600, fontSize: 13 }}>{v.label}</button>
             ))}
           </div>
         </div>

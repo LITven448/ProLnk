@@ -81,7 +81,7 @@ export default function TrustyProMcKinney() {
           <h2 style={{ textAlign: 'center', fontSize: 28, fontWeight: 700, marginBottom: 48 }}>McKinney by the Numbers</h2>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: 24 }}>
             {[
-              { label: 'Avg Home Value',        value: '$465K', sub: 'McKinney metro 2025′ },
+              { label: 'Avg Home Value',        value: '$465K', sub: 'McKinney metro 2025' },
               { label: 'New Homes Since 2018',  value: '23,000', sub: 'across McKinney ZIPs' },
               { label: 'Avg New Build Age',     value: '6 yrs', sub: 'entering warranty window' },
               { label: 'Irrigation Failures',   value: '#2',   sub: 'most common scan finding' },

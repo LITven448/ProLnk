@@ -30,12 +30,12 @@ interface Season {
 }
 
 const CHECKLIST: CheckItem[] = [
-  { id: "1″, label: "Consistent perimeter watering (every 2–3 days in summer)", status: "ok" },
-  { id: "2″, label: "Maintain 4–6\" of soil moisture around foundation", status: "warn" },
-  { id: "3″, label: "No large trees within 15 feet of foundation", status: "ok" },
-  { id: "4″, label: "Gutters directing water away from foundation", status: "ok" },
-  { id: "5″, label: "No pooling water after rain", status: "fail" },
-  { id: "6″, label: "French drain if yard slopes toward house", status: "fail" },
+  { id: "1", label: "Consistent perimeter watering (every 2–3 days in summer)", status: "ok" },
+  { id: "2", label: "Maintain 4–6\" of soil moisture around foundation", status: "warn" },
+  { id: "3", label: "No large trees within 15 feet of foundation", status: "ok" },
+  { id: "4", label: "Gutters directing water away from foundation", status: "ok" },
+  { id: "5", label: "No pooling water after rain", status: "fail" },
+  { id: "6", label: "French drain if yard slopes toward house", status: "fail" },
 ];
 
 const WARNING_SIGNS: WarningSign[] = [
@@ -111,7 +111,7 @@ const SEASONS: Season[] = [
 ];
 
 const SEVERITY_COLORS: Record<string, string> = {
-  high: "#EF4444″,
+  high: "#EF4444",
   medium: "#F59E0B",
   low: "#22C55E",
 };
@@ -119,12 +119,12 @@ const SEVERITY_COLORS: Record<string, string> = {
 function StatusIcon({ status }: { status: "ok" | "warn" | "fail" }) {
   if (status === "ok") return <CheckCircle size={20} color="#22C55E" />;
   if (status === "warn") return <AlertTriangle size={20} color="#F59E0B" />;
-  return <XCircle size={20} color="#EF4444″ />;
+  return <XCircle size={20} color="#EF4444" />;
 }
 
 export default function FoundationCareGuide() {
   const [expanded, setExpanded] = useState<string | null>(null);
-  const [checked, setChecked] = useState<Set<string>>(new Set(["1″, "3", "4"]));
+  const [checked, setChecked] = useState<Set<string>>(new Set(["1", "3", "4"]));
 
   function toggleExpand(id: string) {
     setExpanded(prev => prev === id ? null : id);
@@ -169,11 +169,11 @@ export default function FoundationCareGuide() {
         <div style={{
           background: "linear-gradient(135deg, #78350F, #92400E)",
           borderRadius: 16, padding: "18px 22px", marginBottom: 20,
-          border: "1px solid #B45309″,
+          border: "1px solid #B45309",
         }}>
           <div style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: 10 }}>
             <AlertTriangle size={18} color="#FDE68A" />
-            <span style={{ fontSize: 16, fontWeight: 700, color: "#FEF3C7″ }}>
+            <span style={{ fontSize: 16, fontWeight: 700, color: "#FEF3C7" }}>
               DFW Homeowners: You face elevated risk
             </span>
           </div>
@@ -185,7 +185,7 @@ export default function FoundationCareGuide() {
         </div>
 
         {/* Your Foundation Status */}
-        <Card style={{ marginBottom: 20, border: "1px solid #D1FAE5″, background: "#F0FDF4" }}>
+        <Card style={{ marginBottom: 20, border: "1px solid #D1FAE5", background: "#F0FDF4" }}>
           <CardContent style={{ padding: "16px 20px" }}>
             <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap: "wrap", gap: 12 }}>
               <div>
@@ -194,19 +194,19 @@ export default function FoundationCareGuide() {
                   <span style={{ fontWeight: 700, color: "#15803D", fontSize: 16 }}>Foundation Status: Good</span>
                 </div>
                 <div style={{ display: "flex", gap: 24, flexWrap: "wrap" }}>
-                  <span style={{ fontSize: 13, color: "#374151″ }}>
+                  <span style={{ fontSize: 13, color: "#374151" }}>
                     <strong>Last inspection:</strong> September 2025
                   </span>
-                  <span style={{ fontSize: 13, color: "#374151″ }}>
+                  <span style={{ fontSize: 13, color: "#374151" }}>
                     <strong>Next recommended:</strong> September 2026
                   </span>
                 </div>
-                <p style={{ fontSize: 13, color: "#4B5563″, margin: "6px 0 0" }}>
+                <p style={{ fontSize: 13, color: "#4B5563", margin: "6px 0 0" }}>
                   No issues detected during last inspection. Stay on top of your prevention checklist to keep it that way.
                 </p>
               </div>
               <div style={{
-                background: "#DCFCE7″, border: "1px solid #86EFAC",
+                background: "#DCFCE7", border: "1px solid #86EFAC",
                 borderRadius: 12, padding: "10px 16px", textAlign: "center", minWidth: 90,
               }}>
                 <div style={{ fontSize: 22, fontWeight: 800, color: "#15803D" }}>A</div>
@@ -223,8 +223,8 @@ export default function FoundationCareGuide() {
               Prevention Checklist
             </h2>
             <span style={{
-              fontSize: 13, fontWeight: 600, color: doneCount >= 4 ? "#16A34A" : "#D97706″,
-              background: doneCount >= 4 ? "#DCFCE7″ : "#FEF3C7",
+              fontSize: 13, fontWeight: 600, color: doneCount >= 4 ? "#16A34A" : "#D97706",
+              background: doneCount >= 4 ? "#DCFCE7" : "#FEF3C7",
               border: `1px solid ${doneCount >= 4 ? "#86EFAC" : "#FCD34D"}`,
               borderRadius: 20, padding: "3px 12px",
             }}>
@@ -238,7 +238,7 @@ export default function FoundationCareGuide() {
                 onClick={() => toggleCheck(item.id)}
                 style={{
                   display: "flex", alignItems: "center", gap: 12,
-                  background: "#fff", border: "1px solid #E2E8F0″,
+                  background: "#fff", border: "1px solid #E2E8F0",
                   borderRadius: 10, padding: "12px 16px", cursor: "pointer",
                   opacity: checked.has(item.id) ? 0.7 : 1,
                   transition: "opacity 0.15s",
@@ -255,21 +255,21 @@ export default function FoundationCareGuide() {
                 {!checked.has(item.id) && item.status === "fail" && (
                   <span style={{
                     marginLeft: "auto", fontSize: 11, fontWeight: 700,
-                    color: "#DC2626″, background: "#FEE2E2",
+                    color: "#DC2626", background: "#FEE2E2",
                     border: "1px solid #FECACA", borderRadius: 20, padding: "2px 8px",
                   }}>Action needed</span>
                 )}
                 {!checked.has(item.id) && item.status === "warn" && (
                   <span style={{
                     marginLeft: "auto", fontSize: 11, fontWeight: 700,
-                    color: "#D97706″, background: "#FEF3C7",
+                    color: "#D97706", background: "#FEF3C7",
                     border: "1px solid #FCD34D", borderRadius: 20, padding: "2px 8px",
                   }}>Monitor</span>
                 )}
               </div>
             ))}
           </div>
-          <p style={{ fontSize: 12, color: "#94A3B8″, marginTop: 8 }}>Tap any item to mark complete</p>
+          <p style={{ fontSize: 12, color: "#94A3B8", marginTop: 8 }}>Tap any item to mark complete</p>
         </div>
 
         {/* Warning Signs — accordion */}
@@ -283,7 +283,7 @@ export default function FoundationCareGuide() {
               const isOpen = expanded === sign.id;
               const color = SEVERITY_COLORS[sign.severity];
               return (
-                <div key={sign.id} style={{ border: "1px solid #E2E8F0″, borderRadius: 12, overflow: "hidden" }}>
+                <div key={sign.id} style={{ border: "1px solid #E2E8F0", borderRadius: 12, overflow: "hidden" }}>
                   <button
                     onClick={() => toggleExpand(sign.id)}
                     style={{
@@ -310,11 +310,11 @@ export default function FoundationCareGuide() {
                         {sign.severity} priority
                       </span>
                     </div>
-                    {isOpen ? <ChevronUp size={16} color="#94A3B8″ /> : <ChevronDown size={16} color="#94A3B8" />}
+                    {isOpen ? <ChevronUp size={16} color="#94A3B8" /> : <ChevronDown size={16} color="#94A3B8" />}
                   </button>
                   {isOpen && (
                     <div style={{ padding: "0 16px 14px", background: "#F8FAFC" }}>
-                      <p style={{ fontSize: 14, color: "#475569″, margin: 0, lineHeight: 1.6 }}>
+                      <p style={{ fontSize: 14, color: "#475569", margin: 0, lineHeight: 1.6 }}>
                         {sign.detail}
                       </p>
                     </div>
@@ -335,7 +335,7 @@ export default function FoundationCareGuide() {
               const Icon = s.icon;
               return (
                 <div key={s.name} style={{
-                  background: "#fff", border: "1px solid #E2E8F0″,
+                  background: "#fff", border: "1px solid #E2E8F0",
                   borderRadius: 12, padding: "14px 16px",
                 }}>
                   <div style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: 8 }}>
@@ -348,7 +348,7 @@ export default function FoundationCareGuide() {
                     </div>
                     <span style={{ fontSize: 14, fontWeight: 700, color: s.color }}>{s.name}</span>
                   </div>
-                  <p style={{ fontSize: 13, color: "#475569″, margin: 0, lineHeight: 1.5 }}>{s.tip}</p>
+                  <p style={{ fontSize: 13, color: "#475569", margin: 0, lineHeight: 1.5 }}>{s.tip}</p>
                 </div>
               );
             })}
@@ -372,7 +372,7 @@ export default function FoundationCareGuide() {
               </div>
               <div style={{ fontSize: 30, fontWeight: 900, color: "#15803D", marginBottom: 4 }}>$200</div>
               <div style={{ fontSize: 12, color: "#16A34A" }}>per year</div>
-              <div style={{ fontSize: 11, color: "#4B5563″, marginTop: 8 }}>
+              <div style={{ fontSize: 11, color: "#4B5563", marginTop: 8 }}>
                 Soaker hose system + inspections
               </div>
             </div>
@@ -382,12 +382,12 @@ export default function FoundationCareGuide() {
               textAlign: "center",
             }}>
               <div style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: 6, marginBottom: 8 }}>
-                <Hammer size={18} color="#B45309″ />
+                <Hammer size={18} color="#B45309" />
                 <span style={{ fontSize: 13, fontWeight: 700, color: "#92400E" }}>Foundation Repair</span>
               </div>
-              <div style={{ fontSize: 30, fontWeight: 900, color: "#B45309″, marginBottom: 4 }}>$8K–40K</div>
-              <div style={{ fontSize: 12, color: "#D97706″ }}>average DFW repair</div>
-              <div style={{ fontSize: 11, color: "#4B5563″, marginTop: 8 }}>
+              <div style={{ fontSize: 30, fontWeight: 900, color: "#B45309", marginBottom: 4 }}>$8K–40K</div>
+              <div style={{ fontSize: 12, color: "#D97706" }}>average DFW repair</div>
+              <div style={{ fontSize: 11, color: "#4B5563", marginTop: 8 }}>
                 Piers, drainage, mudjacking, structural
               </div>
             </div>
@@ -398,17 +398,17 @@ export default function FoundationCareGuide() {
             display: "flex", alignItems: "center", gap: 10,
           }}>
             <TrendingDown size={18} color="#2563EB" />
-            <span style={{ fontSize: 13, color: "#1D4ED8″ }}>
+            <span style={{ fontSize: 13, color: "#1D4ED8" }}>
               <strong>ROI:</strong> Every $200 spent on prevention saves an expected $4,000–$8,000 in repair costs over a 10-year home ownership period.
             </span>
           </div>
         </div>
 
         {/* Trees Warning */}
-        <Card style={{ marginBottom: 24, border: "1px solid #FEE2E2″, background: "#FFF5F5" }}>
+        <Card style={{ marginBottom: 24, border: "1px solid #FEE2E2", background: "#FFF5F5" }}>
           <CardContent style={{ padding: "14px 18px" }}>
             <div style={{ display: "flex", alignItems: "flex-start", gap: 10 }}>
-              <TreeDeciduous size={20} color="#DC2626″ style={{ flexShrink: 0, marginTop: 2 }} />
+              <TreeDeciduous size={20} color="#DC2626" style={{ flexShrink: 0, marginTop: 2 }} />
               <div>
                 <div style={{ fontWeight: 700, color: "#991B1B", fontSize: 14, marginBottom: 4 }}>
                   Tree Root Risk
@@ -436,7 +436,7 @@ export default function FoundationCareGuide() {
             Book a certified foundation inspector through ProLnk. Verified pros, transparent pricing, and a written report — typically $250–$400.
           </p>
           <Button style={{
-            background: "#3B82F6″, color: "#fff", fontWeight: 700,
+            background: "#3B82F6", color: "#fff", fontWeight: 700,
             fontSize: 15, padding: "12px 32px", borderRadius: 10,
             border: "none", cursor: "pointer",
           }}>

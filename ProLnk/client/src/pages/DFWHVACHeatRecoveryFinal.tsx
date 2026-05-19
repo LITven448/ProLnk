@@ -24,7 +24,7 @@ export default function DFWHVACHeatRecoveryFinal() {
       <div style={{ maxWidth: 720, margin: '0 auto' }}>
         <div style={{ color: '#F5E642', fontSize: 13, marginBottom: 8 }}>🏠 DFW HVAC GUIDE</div>
         <h1 style={{ fontSize: 28, fontWeight: 700, marginBottom: 8 }}>Heat Recovery Ventilator (HRV/ERV) Guide for DFW</h1>
-        <p style={{ color: '#94a3b8', marginBottom: 32 }}>DFW's tight new construction traps stale air. Learn when your home needs an HRV or ERV — and which one fits DFW’s climate.</p>
+        <p style={{ color: '#94a3b8', marginBottom: 32 }}>DFW's tight new construction traps stale air. Learn when your home needs an HRV or ERV — and which one fits DFW's climate.</p>
 
         <div style={{ background: '#0f2040', borderRadius: 12, padding: 24, marginBottom: 24 }}>
           <h2 style={{ color: '#F5E642', fontSize: 18, marginBottom: 16 }}>🌬️ Why DFW Homes Need Mechanical Ventilation</h2>
@@ -69,12 +69,12 @@ export default function DFWHVACHeatRecoveryFinal() {
             </select>
           </div>
           {rec && (
-            <div style={{ background: '#0A1628', borderRadius: 10, padding: 20, borderLeft: '4px solid #F5E642′ }}>
+            <div style={{ background: '#0A1628', borderRadius: 10, padding: 20, borderLeft: '4px solid #F5E642' }}>
               <div style={{ color: '#F5E642', fontWeight: 700, fontSize: 18, marginBottom: 8 }}>Recommendation: {rec.type}</div>
               <div style={{ color: '#94a3b8', marginBottom: 12 }}>{rec.reason}</div>
               <div style={{ display: 'flex', gap: 16, flexWrap: 'wrap' }}>
-                <div><span style={{ color: '#F5E642′ }}>📐 Sizing:</span> <span style={{ color: '#e2e8f0' }}>{rec.sizing}</span></div>
-                <div><span style={{ color: '#F5E642′ }}>💰 Cost:</span> <span style={{ color: '#e2e8f0' }}>{rec.cost}</span></div>
+                <div><span style={{ color: '#F5E642' }}>📐 Sizing:</span> <span style={{ color: '#e2e8f0' }}>{rec.sizing}</span></div>
+                <div><span style={{ color: '#F5E642' }}>💰 Cost:</span> <span style={{ color: '#e2e8f0' }}>{rec.cost}</span></div>
               </div>
             </div>
           )}

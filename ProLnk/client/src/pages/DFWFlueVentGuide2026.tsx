@@ -23,7 +23,7 @@ export default function DFWFlueVentGuide2026() {
         </p>
 
         <div style={{ background: '#111e35', borderRadius: 12, padding: 24, marginBottom: 24 }}>
-          <h2 style={{ fontSize: 18, fontWeight: 700, marginBottom: 16, color: '#F5E642′ }}>⚠️ Never Combine These</h2>
+          <h2 style={{ fontSize: 18, fontWeight: 700, marginBottom: 16, color: '#F5E642' }}>⚠️ Never Combine These</h2>
           <div style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
             {[
               'High-efficiency furnace (PVC) + water heater (B-vent) — incompatible' ,
@@ -38,15 +38,15 @@ export default function DFWFlueVentGuide2026() {
         </div>
 
         <div style={{ background: '#111e35', borderRadius: 12, padding: 24, marginBottom: 24 }}>
-          <h2 style={{ fontSize: 18, fontWeight: 700, marginBottom: 16, color: '#F5E642′ }}>🔍 Appliance → Venting Requirement</h2>
+          <h2 style={{ fontSize: 18, fontWeight: 700, marginBottom: 16, color: '#F5E642' }}>🔍 Appliance → Venting Requirement</h2>
           <div style={{ display: 'flex', flexDirection: 'column', gap: 10, marginBottom: 16 }}>
             {applianceGuide.map(a => (
               <button
                 key={a.id}
                 onClick={() => setSelected(a.id === selected ? null : a.id)}
                 style={{
-                  background: selected === a.id ? '#F5E642′ : '#0A1628',
-                  color: selected === a.id ? '#0A1628′ : '#fff',
+                  background: selected === a.id ? '#F5E642' : '#0A1628',
+                  color: selected === a.id ? '#0A1628' : '#fff',
                   border: '1px solid #F5E642',
                   borderRadius: 8,
                   padding: '12px 16px',
@@ -63,13 +63,13 @@ export default function DFWFlueVentGuide2026() {
           {match && (
             <div style={{ background: '#0A1628', border: '1px solid #F5E642', borderRadius: 8, padding: 16 }}>
               <div style={{ color: '#F5E642', fontWeight: 700, marginBottom: 4 }}>Venting Requirement:</div>
-              <div style={{ color: '#e2e8f0′ }}>{match.venting}</div>
+              <div style={{ color: '#e2e8f0' }}>{match.venting}</div>
             </div>
           )}
         </div>
 
         <div style={{ background: '#111e35', borderRadius: 12, padding: 20, marginBottom: 24 }}>
-          <h2 style={{ fontSize: 16, fontWeight: 700, marginBottom: 8, color: '#F5E642′ }}>🏠 DFW-Specific Notes</h2>
+          <h2 style={{ fontSize: 16, fontWeight: 700, marginBottom: 8, color: '#F5E642' }}>🏠 DFW-Specific Notes</h2>
           <ul style={{ color: '#94a3b8', fontSize: 14, paddingLeft: 20, lineHeight: 1.8 }}>
             <li>Many DFW slab-on-grade homes have attic-mounted furnaces — B-vent routing through attic is common but requires proper clearances</li>
             <li>High-efficiency furnaces installed post-2010 in DFW mostly use sidewall PVC — check for white plastic pipes near foundation</li>

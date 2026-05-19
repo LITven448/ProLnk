@@ -100,7 +100,7 @@ export default function DFWSpaceHeaterSafety() {
           DFW homes built before 1980 are especially vulnerable due to older wiring and smaller electrical panels.
         </p>
         <div style={{ background: '#162844', borderRadius: 10, padding: '14px 18px', marginBottom: 28 }}>
-          <strong style={{ color: '#F5E642′ }}>DFW-Specific Context:</strong>
+          <strong style={{ color: '#F5E642' }}>DFW-Specific Context:</strong>
           <ul style={{ color: '#8FA3BF', marginTop: 8, paddingLeft: 20, lineHeight: 1.8 }}>
             <li>Many 1950s-1970s DFW homes still have 60-amp electrical panels — space heaters stress these systems.</li>
             <li>DFW's occasional ice storms cause brief but intense cold snaps that drive improper heater use.</li>
@@ -138,7 +138,7 @@ export default function DFWSpaceHeaterSafety() {
           ].map(item => (
             <div key={item.title} style={{ display: 'flex', gap: 14, marginBottom: 16 }}>
               <span style={{ fontSize: 22, flexShrink: 0 }}>{item.icon}</span>
-              <div><strong style={{ color: '#E8EDF5′ }}>{item.title}:</strong> <span style={{ color: '#8FA3BF' }}>{item.body}</span></div>
+              <div><strong style={{ color: '#E8EDF5' }}>{item.title}:</strong> <span style={{ color: '#8FA3BF' }}>{item.body}</span></div>
             </div>
           ))}
         </div>

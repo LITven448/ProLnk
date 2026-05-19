@@ -80,7 +80,7 @@ export default function DFWHVACDFWPartner() {
           </h1>
           <p style={{ fontSize: 16, color: '#94a3b8', lineHeight: 1.7 }}>
             The difference between a contractor and a partner is thousands of dollars and years of
-            peace of mind. Here's how to build the right relationship for DFW’s brutal climate.
+            peace of mind. Here's how to build the right relationship for DFW's brutal climate.
           </p>
         </div>
 
@@ -109,10 +109,10 @@ export default function DFWHVACDFWPartner() {
                 key={i}
                 onClick={() => setSelected(i)}
                 style={{
-                  backgroundColor: selected === i ? '#F5E642′ : '#0f172a',
-                  color: selected === i ? '#0A1628′ : '#fff',
+                  backgroundColor: selected === i ? '#F5E642' : '#0f172a',
+                  color: selected === i ? '#0A1628' : '#fff',
                   border: '2px solid',
-                  borderColor: selected === i ? '#F5E642′ : '#334155',
+                  borderColor: selected === i ? '#F5E642' : '#334155',
                   borderRadius: 10,
                   padding: '14px 18px',
                   textAlign: 'left',
@@ -145,7 +145,7 @@ export default function DFWHVACDFWPartner() {
 
         <div style={{ backgroundColor: '#F5E642', borderRadius: 16, padding: 28, textAlign: 'center' }}>
           <div style={{ fontSize: 28 }}>🔗</div>
-          <h3 style={{ color: '#0A1628', fontSize: 20, fontWeight: 800, margin: '8px 0′ }}>
+          <h3 style={{ color: '#0A1628', fontSize: 20, fontWeight: 800, margin: '8px 0' }}>
             ProLnk helps you find the right HVAC partner in DFW
           </h3>
           <p style={{ color: '#1e293b', fontSize: 14, lineHeight: 1.6 }}>

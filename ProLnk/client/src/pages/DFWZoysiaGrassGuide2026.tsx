@@ -49,10 +49,10 @@ export default function DFWZoysiaGrassGuide2026() {
               {['Trait', 'Bermuda', 'Zoysia'].map(h => <th key={h} style={{ padding: '8px 12px', textAlign: 'left', color: '#F5E642', borderBottom: '1px solid #1e3a5f' }}>{h}</th>)}
             </tr></thead>
             <tbody>{comparisons.map((r, i) => (
-              <tr key={r.trait} style={{ background: i % 2 === 0 ? '#0d1f3c' : '#0A1628′ }}>
-                <td style={{ padding: '8px 12px', color: '#94a3b8′ }}>{r.trait}</td>
+              <tr key={r.trait} style={{ background: i % 2 === 0 ? '#0d1f3c' : '#0A1628' }}>
+                <td style={{ padding: '8px 12px', color: '#94a3b8' }}>{r.trait}</td>
                 <td style={{ padding: '8px 12px' }}>{r.bermuda}</td>
-                <td style={{ padding: '8px 12px', color: '#F5E642′ }}>{r.zoysia}</td>
+                <td style={{ padding: '8px 12px', color: '#F5E642' }}>{r.zoysia}</td>
               </tr>
             ))}</tbody>
           </table>
@@ -61,12 +61,12 @@ export default function DFWZoysiaGrassGuide2026() {
         <p style={{ color: '#F5E642', fontWeight: 700, marginBottom: 12 }}>What matters most to you?</p>
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: 10, marginBottom: 16 }}>
           {[['🏡 Curb Appeal', 'aesthetic'], ['🛋️ Low Maintenance', 'lowmaintenance'], ['🌳 Shade Tolerance', 'shadytolerant']].map(([label, val]) => (
-            <button key={val} onClick={() => setYardUse(val)} style={{ padding: '12px', border: yardUse === val ? '2px solid #F5E642′ : '1px solid #1e3a5f', borderRadius: 8, background: yardUse === val ? '#1e3a5f' : '#0d1f3c', color: '#fff', cursor: ’pointer', fontSize: 13 }}>{label}</button>
+            <button key={val} onClick={() => setYardUse(val)} style={{ padding: '12px', border: yardUse === val ? '2px solid #F5E642' : '1px solid #1e3a5f', borderRadius: 8, background: yardUse === val ? '#1e3a5f' : '#0d1f3c', color: '#fff', cursor: 'pointer', fontSize: 13 }}>{label}</button>
           ))}
         </div>
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: 10, marginBottom: 20 }}>
           {[['💚 Budget', 'low'], ['💛 Mid-Range', 'mid'], ['💎 Premium', 'high']].map(([label, val]) => (
-            <button key={val} onClick={() => setBudget(val)} style={{ padding: '12px', border: budget === val ? '2px solid #F5E642′ : '1px solid #1e3a5f', borderRadius: 8, background: budget === val ? '#1e3a5f' : '#0d1f3c', color: '#fff', cursor: ’pointer', fontSize: 13 }}>{label}</button>
+            <button key={val} onClick={() => setBudget(val)} style={{ padding: '12px', border: budget === val ? '2px solid #F5E642' : '1px solid #1e3a5f', borderRadius: 8, background: budget === val ? '#1e3a5f' : '#0d1f3c', color: '#fff', cursor: 'pointer', fontSize: 13 }}>{label}</button>
           ))}
         </div>
 

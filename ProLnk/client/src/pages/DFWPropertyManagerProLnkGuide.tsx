@@ -76,13 +76,13 @@ export default function DFWPropertyManagerProLnkGuide() {
             <div>
               <label style={{ fontWeight: 600, fontSize: 14, display: 'block', marginBottom: 6 }}>Units Under Management</label>
               <input type="range" min={10} max={500} step={5} value={units} onChange={(e) => setUnits(Number(e.target.value))}
-                style={{ width: '100%', accentColor: '#F5E642′ }} />
+                style={{ width: '100%', accentColor: '#F5E642' }} />
               <div style={{ textAlign: 'center', fontWeight: 700, color: '#0A1628', fontSize: 20 }}>{units} units</div>
             </div>
             <div>
               <label style={{ fontWeight: 600, fontSize: 14, display: 'block', marginBottom: 6 }}>Avg Service Calls/Unit/Year</label>
               <input type="range" min={2} max={15} value={avgJobsPerUnit} onChange={(e) => setAvgJobsPerUnit(Number(e.target.value))}
-                style={{ width: '100%', accentColor: '#F5E642′ }} />
+                style={{ width: '100%', accentColor: '#F5E642' }} />
               <div style={{ textAlign: 'center', fontWeight: 700, color: '#0A1628', fontSize: 20 }}>{avgJobsPerUnit} calls</div>
             </div>
           </div>
@@ -95,8 +95,8 @@ export default function DFWPropertyManagerProLnkGuide() {
             ].map((item) => (
               <div key={item.label} style={{ background: '#f8f9fb', borderRadius: 10, padding: 16, textAlign: 'center' }}>
                 <div style={{ fontSize: 12, color: '#64748b', marginBottom: 4 }}>{item.label}</div>
-                <div style={{ fontSize: 20, fontWeight: 800, color: '#0A1628′ }}>{item.value}</div>
-                <div style={{ fontSize: 11, color: '#94a3b8′ }}>{item.sub}</div>
+                <div style={{ fontSize: 20, fontWeight: 800, color: '#0A1628' }}>{item.value}</div>
+                <div style={{ fontSize: 11, color: '#94a3b8' }}>{item.sub}</div>
               </div>
             ))}
           </div>

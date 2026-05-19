@@ -10,7 +10,7 @@ const getSchedule = (history: string, homeType: string): TreatmentItem[] => {
     { pest: '🐜 General pest (roaches, ants, spiders)', frequency: 'Quarterly', season: 'Year-round', note: 'DFW heat drives insects indoors — quarterly is the minimum for effective control.' },
     { pest: '🦟 Mosquito barrier spray', frequency: 'Monthly', season: 'April through October', note: 'DFW mosquito season peaks May-September. Bi-weekly during heavy rain periods.' },
     { pest: '🐜 Fire ant treatment', frequency: 'Twice yearly', season: 'Spring (March-April) + Fall (Sept-Oct)', note: 'Treat when soil temp is 60-85°F — fire ants are most active and near surface.' },
-    { pest: '🏠 Rodent exclusion check', frequency: 'Annual', season: 'Fall (October)', note: 'Mice seek warmth in fall — seal all gaps over 1/4″ before temps drop.' },
+    { pest: '🏠 Rodent exclusion check', frequency: 'Annual', season: 'Fall (October)', note: 'Mice seek warmth in fall — seal all gaps over 1/4" before temps drop.' },
   ];
 
   const historyAdd: Record<string, TreatmentItem[]> = {
@@ -65,7 +65,7 @@ export default function DFWPestControlFrequency2026() {
           <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
             {pestHistories.map((h) => (
               <button key={h} onClick={() => setHistory(h)}
-                style={{ padding: '11px 16px', borderRadius: 8, border: history === h ? '2px solid #F5E642′ : '2px solid #2d3f5a', backgroundColor: history === h ? '#F5E642' : '#0d1f36', color: history === h ? '#0A1628' : '#cbd5e1', fontWeight: 700, fontSize: 15, cursor: ’pointer', textAlign: 'left' }}>
+                style={{ padding: '11px 16px', borderRadius: 8, border: history === h ? '2px solid #F5E642' : '2px solid #2d3f5a', backgroundColor: history === h ? '#F5E642' : '#0d1f36', color: history === h ? '#0A1628' : '#cbd5e1', fontWeight: 700, fontSize: 15, cursor: 'pointer', textAlign: 'left' }}>
                 {h}
               </button>
             ))}
@@ -77,7 +77,7 @@ export default function DFWPestControlFrequency2026() {
           <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
             {homeTypes.map((t) => (
               <button key={t} onClick={() => setHomeType(t)}
-                style={{ padding: '11px 16px', borderRadius: 8, border: homeType === t ? '2px solid #F5E642′ : '2px solid #2d3f5a', backgroundColor: homeType === t ? '#F5E642' : '#0d1f36', color: homeType === t ? '#0A1628' : '#cbd5e1', fontWeight: 700, fontSize: 15, cursor: ’pointer', textAlign: 'left' }}>
+                style={{ padding: '11px 16px', borderRadius: 8, border: homeType === t ? '2px solid #F5E642' : '2px solid #2d3f5a', backgroundColor: homeType === t ? '#F5E642' : '#0d1f36', color: homeType === t ? '#0A1628' : '#cbd5e1', fontWeight: 700, fontSize: 15, cursor: 'pointer', textAlign: 'left' }}>
                 {t}
               </button>
             ))}
@@ -103,9 +103,9 @@ export default function DFWPestControlFrequency2026() {
         <div style={{ backgroundColor: '#1e2d47', borderRadius: 12, padding: 20 }}>
           <h3 style={{ color: '#F5E642', fontSize: 15, marginBottom: 10 }}>🌡️ DFW Pest Season Overview</h3>
           <div style={{ color: '#94a3b8', fontSize: 14, lineHeight: 1.7 }}>
-            DFW pest pressure never truly stops — it shifts. <strong style={{ color: '#e2e8f0′ }}>Winter</strong>: rodents and roaches seek warmth.
-            <strong style={{ color: '#e2e8f0′ }}> Spring</strong>: termite swarm season, fire ant peak. <strong style={{ color: '#e2e8f0' }}>Summer</strong>: mosquitoes, scorpions, wasps.
-            <strong style={{ color: '#F5E642′ }}> Year-round quarterly service</strong> is the DFW standard — not a luxury.
+            DFW pest pressure never truly stops — it shifts. <strong style={{ color: '#e2e8f0' }}>Winter</strong>: rodents and roaches seek warmth.
+            <strong style={{ color: '#e2e8f0' }}> Spring</strong>: termite swarm season, fire ant peak. <strong style={{ color: '#e2e8f0' }}>Summer</strong>: mosquitoes, scorpions, wasps.
+            <strong style={{ color: '#F5E642' }}> Year-round quarterly service</strong> is the DFW standard — not a luxury.
           </div>
         </div>
       </div>

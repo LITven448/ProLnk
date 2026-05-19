@@ -45,20 +45,20 @@ export default function ProLnkCharterTierGuide() {
         </div>
 
         <div style={{ background: '#111d2e', borderRadius: 12, padding: 28, marginBottom: 24 }}>
-          <h2 style={{ fontSize: 20, fontWeight: 700, marginBottom: 20, color: '#F5E642′ }}>📊 Your Charter Income Estimate</h2>
+          <h2 style={{ fontSize: 20, fontWeight: 700, marginBottom: 20, color: '#F5E642' }}>📊 Your Charter Income Estimate</h2>
           <div style={{ marginBottom: 16 }}>
             <label style={{ display: 'block', marginBottom: 6, color: '#94a3b8', fontSize: 14 }}>Pros you recruit: {recruits}</label>
             <input type="range" min={1} max={25} value={recruits} onChange={e => setRecruits(+e.target.value)}
-              style={{ width: '100%', accentColor: '#F5E642′ }} />
+              style={{ width: '100%', accentColor: '#F5E642' }} />
           </div>
           <div style={{ marginBottom: 20 }}>
             <label style={{ display: 'block', marginBottom: 6, color: '#94a3b8', fontSize: 14 }}>Avg jobs/mo per recruit: {jobsPerMonth}</label>
             <input type="range" min={2} max={20} value={jobsPerMonth} onChange={e => setJobsPerMonth(+e.target.value)}
-              style={{ width: '100%', accentColor: '#F5E642′ }} />
+              style={{ width: '100%', accentColor: '#F5E642' }} />
           </div>
           <div style={{ background: '#0A1628', borderRadius: 8, padding: 20, textAlign: 'center' }}>
             <div style={{ color: '#94a3b8', fontSize: 14 }}>Estimated Monthly Network Income</div>
-            <div style={{ fontSize: 48, fontWeight: 900, color: '#F5E642′ }}>${total.toLocaleString()}</div>
+            <div style={{ fontSize: 48, fontWeight: 900, color: '#F5E642' }}>${total.toLocaleString()}</div>
             <div style={{ color: '#64748b', fontSize: 12 }}>subscription overrides + job overrides</div>
           </div>
         </div>

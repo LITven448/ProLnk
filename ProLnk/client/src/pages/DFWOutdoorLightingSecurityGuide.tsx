@@ -77,7 +77,7 @@ export default function DFWOutdoorLightingSecurityGuide() {
             <div style={{ color: '#94a3b8', fontSize: '0.85rem', fontWeight: 600, marginBottom: '0.5rem' }}>PROPERTY PERIMETER</div>
             <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5rem' }}>
               {PERIMETER_OPTIONS.map(p => (
-                <button key={p} onClick={() => { setPerimeter(p); setResult(null); }} style={{ padding: '0.45rem 1rem', borderRadius: '20px', border: '1.5px solid', borderColor: perimeter === p ? '#F5E642′ : '#1e3a5f', backgroundColor: perimeter === p ? '#F5E642' : ’transparent', color: perimeter === p ? '#0A1628′ : '#94a3b8', fontWeight: 600, fontSize: '0.82rem', cursor: ’pointer' }}>{p}</button>
+                <button key={p} onClick={() => { setPerimeter(p); setResult(null); }} style={{ padding: '0.45rem 1rem', borderRadius: '20px', border: '1.5px solid', borderColor: perimeter === p ? '#F5E642' : '#1e3a5f', backgroundColor: perimeter === p ? '#F5E642' : 'transparent', color: perimeter === p ? '#0A1628' : '#94a3b8', fontWeight: 600, fontSize: '0.82rem', cursor: 'pointer' }}>{p}</button>
               ))}
             </div>
           </div>
@@ -86,7 +86,7 @@ export default function DFWOutdoorLightingSecurityGuide() {
             <div style={{ color: '#94a3b8', fontSize: '0.85rem', fontWeight: 600, marginBottom: '0.5rem' }}>NUMBER OF DARK ZONES (areas with no light coverage)</div>
             <div style={{ display: 'flex', gap: '0.4rem', flexWrap: 'wrap' }}>
               {DARK_ZONE_OPTIONS.map(n => (
-                <button key={n} onClick={() => { setDarkZones(n); setResult(null); }} style={{ padding: '0.4rem 0.8rem', borderRadius: '8px', border: '1.5px solid', borderColor: darkZones === n ? '#F5E642′ : '#1e3a5f', backgroundColor: darkZones === n ? '#F5E642' : ’transparent', color: darkZones === n ? '#0A1628′ : '#94a3b8', fontWeight: 700, cursor: ’pointer' }}>{n}</button>
+                <button key={n} onClick={() => { setDarkZones(n); setResult(null); }} style={{ padding: '0.4rem 0.8rem', borderRadius: '8px', border: '1.5px solid', borderColor: darkZones === n ? '#F5E642' : '#1e3a5f', backgroundColor: darkZones === n ? '#F5E642' : 'transparent', color: darkZones === n ? '#0A1628' : '#94a3b8', fontWeight: 700, cursor: 'pointer' }}>{n}</button>
               ))}
             </div>
           </div>

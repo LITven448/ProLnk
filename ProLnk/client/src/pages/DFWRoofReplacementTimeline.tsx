@@ -72,7 +72,7 @@ export default function DFWRoofReplacementTimeline() {
           What to Expect: DFW Roof Replacement Timeline
         </h1>
         <p style={{ color: '#9AA3B4', fontSize: 16, marginBottom: 32 }}>
-          A week-by-week breakdown of the full replacement process — from first call to final inspection. Know what's coming so you aren’t surprised.
+          A week-by-week breakdown of the full replacement process — from first call to final inspection. Know what's coming so you aren't surprised.
         </p>
 
         <div style={{ background: '#111E33', borderRadius: 16, padding: 24, marginBottom: 28 }}>
@@ -101,7 +101,7 @@ export default function DFWRoofReplacementTimeline() {
             <button key={i} onClick={() => setActivePhase(i)} style={{
               padding: '8px 14px', borderRadius: 8, border: `2px solid ${activePhase === i ? p.color : '#1E2D45'}`,
               background: activePhase === i ? p.color : '#111E33',
-              color: activePhase === i ? '#0A1628′ : '#9AA3B4', fontWeight: 700, fontSize: 13, cursor: ’pointer',
+              color: activePhase === i ? '#0A1628' : '#9AA3B4', fontWeight: 700, fontSize: 13, cursor: 'pointer',
             }}>{p.days}</button>
           ))}
         </div>
@@ -130,8 +130,8 @@ export default function DFWRoofReplacementTimeline() {
           </div>
         </div>
 
-        <div style={{ marginTop: 28, padding: '16px 20px', background: '#111E33', borderRadius: 12, borderLeft: '4px solid #F5E642′ }}>
-          <strong style={{ color: '#F5E642′ }}>DFW Reality Check:</strong>
+        <div style={{ marginTop: 28, padding: '16px 20px', background: '#111E33', borderRadius: 12, borderLeft: '4px solid #F5E642' }}>
+          <strong style={{ color: '#F5E642' }}>DFW Reality Check:</strong>
           <span style={{ color: '#9AA3B4', marginLeft: 8 }}>After a major hailstorm, DFW roofers book out 4–8 weeks. Start the process immediately while maintaining the right to review any contractor you choose.
           </span>
         </div>

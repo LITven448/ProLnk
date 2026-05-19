@@ -17,24 +17,24 @@ export default function DFWEnergyAuditGuide2026() {
   return (
     <div style={{ minHeight: '100vh', backgroundColor: '#0A1628', color: '#e2e8f0', fontFamily: 'sans-serif', padding: '2rem' }}>
       <div style={{ maxWidth: '720px', margin: '0 auto' }}>
-        <div style={{ marginBottom: '0.5rem', fontSize: '0.85rem', color: '#F5E642′ }}>🔍 Energy Audits · DFW 2026</div>
+        <div style={{ marginBottom: '0.5rem', fontSize: '0.85rem', color: '#F5E642' }}>🔍 Energy Audits · DFW 2026</div>
         <h1 style={{ fontSize: '2rem', fontWeight: 700, color: '#F5E642', marginBottom: '0.5rem' }}>DFW Home Energy Audit Guide 2026</h1>
         <p style={{ color: '#94a3b8', marginBottom: '2rem' }}>Find out which energy audit is right for your home. Answer two questions to get a personalized recommendation.</p>
 
         <div style={{ backgroundColor: '#0f2340', borderRadius: '12px', padding: '1.5rem', marginBottom: '1.5rem' }}>
           <div style={{ marginBottom: '1.25rem' }}>
-            <div style={{ fontWeight: 600, marginBottom: '0.6rem', color: '#F5E642′ }}>🏠 When was your home built?</div>
+            <div style={{ fontWeight: 600, marginBottom: '0.6rem', color: '#F5E642' }}>🏠 When was your home built?</div>
             <div style={{ display: 'flex', gap: '0.5rem' }}>
               {[{v:'pre1980',l:'Before 1980'},{v:'1980-2000',l:'1980–2000'},{v:'post2000',l:'After 2000'}].map(o => (
-                <button key={o.v} onClick={() => setAge(o.v)} style={{ flex: 1, padding: '0.6rem', borderRadius: '8px', border: 'none', cursor: 'pointer', backgroundColor: age === o.v ? '#F5E642′ : '#1e3a5f', color: age === o.v ? '#0A1628' : '#e2e8f0', fontWeight: 600 }}>{o.l}</button>
+                <button key={o.v} onClick={() => setAge(o.v)} style={{ flex: 1, padding: '0.6rem', borderRadius: '8px', border: 'none', cursor: 'pointer', backgroundColor: age === o.v ? '#F5E642' : '#1e3a5f', color: age === o.v ? '#0A1628' : '#e2e8f0', fontWeight: 600 }}>{o.l}</button>
               ))}
             </div>
           </div>
           <div>
-            <div style={{ fontWeight: 600, marginBottom: '0.6rem', color: '#F5E642′ }}>💡 What is your average monthly electric bill?</div>
+            <div style={{ fontWeight: 600, marginBottom: '0.6rem', color: '#F5E642' }}>💡 What is your average monthly electric bill?</div>
             <div style={{ display: 'flex', gap: '0.5rem' }}>
               {[{v:'low',l:'Under $150'},{v:'high',l:'Over $150'}].map(o => (
-                <button key={o.v} onClick={() => setBill(o.v)} style={{ flex: 1, padding: '0.6rem', borderRadius: '8px', border: 'none', cursor: 'pointer', backgroundColor: bill === o.v ? '#F5E642′ : '#1e3a5f', color: bill === o.v ? '#0A1628' : '#e2e8f0', fontWeight: 600 }}>{o.l}</button>
+                <button key={o.v} onClick={() => setBill(o.v)} style={{ flex: 1, padding: '0.6rem', borderRadius: '8px', border: 'none', cursor: 'pointer', backgroundColor: bill === o.v ? '#F5E642' : '#1e3a5f', color: bill === o.v ? '#0A1628' : '#e2e8f0', fontWeight: 600 }}>{o.l}</button>
               ))}
             </div>
           </div>

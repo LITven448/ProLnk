@@ -70,23 +70,23 @@ export default function DFWHOADocumentsGuide2026() {
   ];
 
   return (
-    <div style={{ background: "#0A1628″, minHeight: "100vh", color: "#fff", fontFamily: "sans-serif", padding: "32px 20px" }}>
+    <div style={{ background: "#0A1628", minHeight: "100vh", color: "#fff", fontFamily: "sans-serif", padding: "32px 20px" }}>
       <div style={{ maxWidth: 800, margin: "0 auto" }}>
         <div style={{ textAlign: "center", marginBottom: 32 }}>
           <div style={{ fontSize: 48 }}>📄</div>
-          <h1 style={{ color: "#F5E642″, fontSize: 28, margin: "8px 0" }}>DFW HOA Documents Guide 2026</h1>
-          <p style={{ color: "#94a3b8″, fontSize: 15 }}>Know what you're agreeing to before you buy</p>
+          <h1 style={{ color: "#F5E642", fontSize: 28, margin: "8px 0" }}>DFW HOA Documents Guide 2026</h1>
+          <p style={{ color: "#94a3b8", fontSize: 15 }}>Know what you're agreeing to before you buy</p>
         </div>
 
-        <div style={{ background: "#F5E642″, borderRadius: 8, padding: "12px 20px", marginBottom: 28, color: "#0A1628", fontWeight: 600 }}>
+        <div style={{ background: "#F5E642", borderRadius: 8, padding: "12px 20px", marginBottom: 28, color: "#0A1628", fontWeight: 600 }}>
           ⚠️ Texas law requires sellers to disclose HOA documents before closing — always request them during your option period.
         </div>
 
-        <h2 style={{ color: "#F5E642″, marginBottom: 16 }}>Select a Document Type</h2>
+        <h2 style={{ color: "#F5E642", marginBottom: 16 }}>Select a Document Type</h2>
         <div style={{ display: "grid", gridTemplateColumns: "repeat(2, 1fr)", gap: 12, marginBottom: 28 }}>
           {documents.map(doc => (
             <button key={doc.type} onClick={() => setSelected(selected === doc.type ? null : doc.type)}
-              style={{ background: selected === doc.type ? "#F5E642″ : "#1e2d45", border: "none", borderRadius: 8, padding: "16px", cursor: "pointer", color: selected === doc.type ? "#0A1628" : "#fff", textAlign: "left", transition: "all 0.2s" }}>
+              style={{ background: selected === doc.type ? "#F5E642" : "#1e2d45", border: "none", borderRadius: 8, padding: "16px", cursor: "pointer", color: selected === doc.type ? "#0A1628" : "#fff", textAlign: "left", transition: "all 0.2s" }}>
               <div style={{ fontSize: 28 }}>{doc.icon}</div>
               <div style={{ fontWeight: 700, marginTop: 6 }}>{doc.type}</div>
               <div style={{ fontSize: 12, opacity: 0.8 }}>{doc.title}</div>
@@ -97,25 +97,25 @@ export default function DFWHOADocumentsGuide2026() {
         {selected && (() => {
           const doc = documents.find(d => d.type === selected)!;
           return (
-            <div style={{ background: "#1e2d45″, borderRadius: 10, padding: 24, marginBottom: 28, borderLeft: "4px solid #F5E642" }}>
-              <h3 style={{ color: "#F5E642″, margin: "0 0 8px" }}>{doc.icon} {doc.title}</h3>
-              <p style={{ color: "#94a3b8″, marginBottom: 16 }}>{doc.desc}</p>
+            <div style={{ background: "#1e2d45", borderRadius: 10, padding: 24, marginBottom: 28, borderLeft: "4px solid #F5E642" }}>
+              <h3 style={{ color: "#F5E642", margin: "0 0 8px" }}>{doc.icon} {doc.title}</h3>
+              <p style={{ color: "#94a3b8", marginBottom: 16 }}>{doc.desc}</p>
               <h4 style={{ color: "#fff", marginBottom: 10 }}>What to Look For:</h4>
               <ul style={{ paddingLeft: 20, margin: 0 }}>
                 {doc.lookFor.map((item, i) => (
-                  <li key={i} style={{ color: "#cbd5e1″, marginBottom: 6 }}>{item}</li>
+                  <li key={i} style={{ color: "#cbd5e1", marginBottom: 6 }}>{item}</li>
                 ))}
               </ul>
             </div>
           );
         })()}
 
-        <h2 style={{ color: "#F5E642″, marginBottom: 16 }}>When to Request Documents</h2>
+        <h2 style={{ color: "#F5E642", marginBottom: 16 }}>When to Request Documents</h2>
         <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
           {timing.map((t, i) => (
-            <div key={i} style={{ background: "#1e2d45″, borderRadius: 8, padding: "14px 18px", display: "flex", gap: 16 }}>
-              <span style={{ color: "#F5E642″, fontWeight: 700, minWidth: 160 }}>{t.phase}</span>
-              <span style={{ color: "#94a3b8″ }}>{t.tip}</span>
+            <div key={i} style={{ background: "#1e2d45", borderRadius: 8, padding: "14px 18px", display: "flex", gap: 16 }}>
+              <span style={{ color: "#F5E642", fontWeight: 700, minWidth: 160 }}>{t.phase}</span>
+              <span style={{ color: "#94a3b8" }}>{t.tip}</span>
             </div>
           ))}
         </div>

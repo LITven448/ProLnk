@@ -54,20 +54,20 @@ export default function DFWSpringHVACChecklistPro2026() {
   const [type, setType] = useState<string>(types[0]);
 
   return (
-    <div style={{ background: "#0A1628″, minHeight: "100vh", color: "#fff", fontFamily: "system-ui, sans-serif", padding: "32px 16px" }}>
+    <div style={{ background: "#0A1628", minHeight: "100vh", color: "#fff", fontFamily: "system-ui, sans-serif", padding: "32px 16px" }}>
       <div style={{ maxWidth: 760, margin: "0 auto" }}>
         <div style={{ textAlign: "center", marginBottom: 40 }}>
           <span style={{ fontSize: 48 }}>🌿</span>
-          <h1 style={{ fontSize: 28, fontWeight: 800, color: "#F5E642″, margin: "12px 0 8px" }}>
+          <h1 style={{ fontSize: 28, fontWeight: 800, color: "#F5E642", margin: "12px 0 8px" }}>
             DFW Spring HVAC Pre-Season Checklist for Pros 2026
           </h1>
-          <p style={{ color: "#94a3b8″, fontSize: 15, maxWidth: 580, margin: "0 auto" }}>
+          <p style={{ color: "#94a3b8", fontSize: 15, maxWidth: 580, margin: "0 auto" }}>
             DFW spring startup is your window to find problems before the 100°F days hit. Charter pros complete this full checklist on every spring visit.
           </p>
         </div>
 
         <div style={{ background: "#0f1f3d", borderRadius: 12, padding: 24, marginBottom: 32 }}>
-          <h2 style={{ color: "#F5E642″, fontSize: 16, marginBottom: 16 }}>Select System Type → Spring Startup Checklist</h2>
+          <h2 style={{ color: "#F5E642", fontSize: 16, marginBottom: 16 }}>Select System Type → Spring Startup Checklist</h2>
           <div style={{ display: "flex", gap: 10, flexWrap: "wrap", marginBottom: 24 }}>
             {types.map(t => (
               <button
@@ -78,8 +78,8 @@ export default function DFWSpringHVACChecklistPro2026() {
                   borderRadius: 8,
                   border: "none",
                   cursor: "pointer",
-                  background: type === t ? "#F5E642″ : "#1a2f55",
-                  color: type === t ? "#0A1628″ : "#e2e8f0",
+                  background: type === t ? "#F5E642" : "#1a2f55",
+                  color: type === t ? "#0A1628" : "#e2e8f0",
                   fontWeight: 700,
                   fontSize: 13,
                 }}
@@ -90,7 +90,7 @@ export default function DFWSpringHVACChecklistPro2026() {
           </div>
           <div style={{ display: "flex", flexDirection: "column", gap: 8 }}>
             {systemTypes[type].map((item, i) => (
-              <div key={i} style={{ background: "#0A1628″, borderRadius: 8, padding: "12px 16px", fontSize: 14, color: "#e2e8f0", border: "1px solid #1e3a5f" }}>
+              <div key={i} style={{ background: "#0A1628", borderRadius: 8, padding: "12px 16px", fontSize: 14, color: "#e2e8f0", border: "1px solid #1e3a5f" }}>
                 {item}
               </div>
             ))}
@@ -98,15 +98,15 @@ export default function DFWSpringHVACChecklistPro2026() {
         </div>
 
         <div style={{ background: "#0f1f3d", borderRadius: 12, padding: 24, marginBottom: 32 }}>
-          <h2 style={{ color: "#F5E642″, fontSize: 16, marginBottom: 12 }}>📋 Spring Scheduling Tip for DFW Pros</h2>
-          <p style={{ color: "#94a3b8″, fontSize: 14, margin: 0 }}>
+          <h2 style={{ color: "#F5E642", fontSize: 16, marginBottom: 12 }}>📋 Spring Scheduling Tip for DFW Pros</h2>
+          <p style={{ color: "#94a3b8", fontSize: 14, margin: 0 }}>
             March–April is your high-volume window. ProLnk Charter pros get priority match routing during pre-season demand spikes. Block your calendar in 2-hour windows and set availability in the app to capture the surge.
           </p>
         </div>
 
-        <div style={{ background: "#F5E642″, borderRadius: 12, padding: "24px", textAlign: "center" }}>
-          <p style={{ color: "#0A1628″, fontWeight: 800, fontSize: 18, margin: "0 0 8px" }}>Join ProLnk Charter — DFW HVAC Pros</p>
-          <p style={{ color: "#1a2f55″, fontSize: 14, margin: 0 }}>Founding slots available at prolnk.io — waitlist closes at 500 Charter members</p>
+        <div style={{ background: "#F5E642", borderRadius: 12, padding: "24px", textAlign: "center" }}>
+          <p style={{ color: "#0A1628", fontWeight: 800, fontSize: 18, margin: "0 0 8px" }}>Join ProLnk Charter — DFW HVAC Pros</p>
+          <p style={{ color: "#1a2f55", fontSize: 14, margin: 0 }}>Founding slots available at prolnk.io — waitlist closes at 500 Charter members</p>
         </div>
       </div>
     </div>

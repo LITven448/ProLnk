@@ -118,15 +118,15 @@ export default function FallHomeChecklist() {
 
       <div className="min-h-screen bg-[#0A1628] text-white">
         {/* Hero */}
-        <div className="bg-gradient-to-br from-slate-900 via-orange-950/20 to-slate-900 border-b border-slate-800″>
-          <div className="max-w-4xl mx-auto px-6 py-12″>
-            <div className="inline-flex items-center gap-2 bg-orange-500/10 border border-orange-500/20 rounded-full px-4 py-1.5 mb-4″>
+        <div className="bg-gradient-to-br from-slate-900 via-orange-950/20 to-slate-900 border-b border-slate-800">
+          <div className="max-w-4xl mx-auto px-6 py-12">
+            <div className="inline-flex items-center gap-2 bg-orange-500/10 border border-orange-500/20 rounded-full px-4 py-1.5 mb-4">
               <span className="text-orange-400 text-sm font-medium">🍂 Fall Edition — October through November</span>
             </div>
-            <h1 className="text-3xl sm:text-4xl font-bold text-white mb-3″>
+            <h1 className="text-3xl sm:text-4xl font-bold text-white mb-3">
               DFW Fall Home Checklist
             </h1>
-            <p className="text-slate-400 text-lg mb-2″>
+            <p className="text-slate-400 text-lg mb-2">
               Preparing for Texas Winter — before Uri 2021 repeats itself.
             </p>
             <p className="text-slate-500 text-sm">
@@ -135,16 +135,16 @@ export default function FallHomeChecklist() {
           </div>
         </div>
 
-        <div className="max-w-4xl mx-auto px-6 py-8″>
+        <div className="max-w-4xl mx-auto px-6 py-8">
           {/* Progress ring */}
-          <div className="flex items-center gap-6 bg-slate-800/60 border border-slate-700 rounded-2xl p-6 mb-8″>
-            <div className="relative w-24 h-24 shrink-0″>
-              <svg className="w-24 h-24 -rotate-90″ viewBox="0 0 100 100">
-                <circle cx="50″ cy="50" r="40" fill="none" stroke="#1e293b" strokeWidth="10" />
+          <div className="flex items-center gap-6 bg-slate-800/60 border border-slate-700 rounded-2xl p-6 mb-8">
+            <div className="relative w-24 h-24 shrink-0">
+              <svg className="w-24 h-24 -rotate-90" viewBox="0 0 100 100">
+                <circle cx="50" cy="50" r="40" fill="none" stroke="#1e293b" strokeWidth="10" />
                 <circle
-                  cx="50″ cy="50" r="40" fill="none"
+                  cx="50" cy="50" r="40" fill="none"
                   stroke={pct === 100 ? '#22c55e' : '#f97316'}
-                  strokeWidth="10″
+                  strokeWidth="10"
                   strokeDasharray={circumference}
                   strokeDashoffset={offset}
                   strokeLinecap="round"
@@ -157,7 +157,7 @@ export default function FallHomeChecklist() {
             </div>
             <div>
               <p className="text-white font-semibold text-lg">{done} of {total} items complete</p>
-              <p className="text-slate-400 text-sm mt-1″>
+              <p className="text-slate-400 text-sm mt-1">
                 {pct < 25 && 'Start now — the first cold front can arrive with 48 hours notice.'}
                 {pct >= 25 && pct < 50 && 'Good progress. Don\’t stop — the Uri items are still ahead.'}
                 {pct >= 50 && pct < 75 && 'More than halfway. Finish the emergency section before anything else.'}
@@ -175,26 +175,26 @@ export default function FallHomeChecklist() {
           </div>
 
           {/* Warning banner */}
-          <div className="bg-red-950/40 border border-red-700/40 rounded-xl px-5 py-4 mb-6″>
+          <div className="bg-red-950/40 border border-red-700/40 rounded-xl px-5 py-4 mb-6">
             <p className="text-red-300 text-sm font-medium">⚠️ Uri 2021 reminder: 246 Texans died during that freeze event. The Uri section at the bottom of this checklist contains items specific to preventing that outcome.</p>
           </div>
 
           {/* Categories */}
-          <div className="space-y-6″>
+          <div className="space-y-6">
             {CATEGORIES.map((cat) => {
               const catDone = cat.items.filter((i) => checked.has(i.id)).length;
               const catPct = Math.round((catDone / cat.items.length) * 100);
               return (
                 <div key={cat.id} className={`rounded-2xl border bg-gradient-to-br ${cat.color} overflow-hidden`}>
                   <div className="px-5 py-4 border-b border-white/10 flex items-center justify-between">
-                    <div className="flex items-center gap-3″>
+                    <div className="flex items-center gap-3">
                       <span className="text-2xl">{cat.icon}</span>
                       <div>
                         <h2 className="text-white font-bold">{cat.title}</h2>
                         <p className="text-slate-400 text-xs">{catDone}/{cat.items.length} complete</p>
                       </div>
                     </div>
-                    <div className="flex items-center gap-2″>
+                    <div className="flex items-center gap-2">
                       <div className="w-20 h-2 bg-slate-700 rounded-full overflow-hidden">
                         <div
                           className="h-full bg-orange-500 rounded-full transition-all"
@@ -204,7 +204,7 @@ export default function FallHomeChecklist() {
                       <span className="text-slate-400 text-xs w-8 text-right">{catPct}%</span>
                     </div>
                   </div>
-                  <div className="divide-y divide-white/5″>
+                  <div className="divide-y divide-white/5">
                     {cat.items.map((item) => {
                       const isChecked = checked.has(item.id);
                       return (
@@ -212,21 +212,21 @@ export default function FallHomeChecklist() {
                           key={item.id}
                           className={`flex gap-4 px-5 py-4 cursor-pointer transition-colors ${isChecked ? 'bg-orange-500/10' : 'hover:bg-white/5'}`}
                         >
-                          <div className="mt-0.5 shrink-0″>
+                          <div className="mt-0.5 shrink-0">
                             <div
                               onClick={() => toggle(item.id)}
                               className={`w-5 h-5 rounded border-2 flex items-center justify-center transition-all ${
-                                isChecked ? 'bg-orange-500 border-orange-500′ : ’border-slate-600'
+                                isChecked ? 'bg-orange-500 border-orange-500' : 'border-slate-600'
                               }`}
                             >
                               {isChecked && (
-                                <svg className="w-3 h-3 text-white" viewBox="0 0 12 12″ fill="none">
-                                  <path d="M2 6l3 3 5-5″ stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                                <svg className="w-3 h-3 text-white" viewBox="0 0 12 12" fill="none">
+                                  <path d="M2 6l3 3 5-5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                                 </svg>
                               )}
                             </div>
                           </div>
-                          <div className="flex-1 min-w-0″>
+                          <div className="flex-1 min-w-0">
                             <p className={`text-sm font-medium leading-snug ${isChecked ? 'text-slate-400 line-through' : 'text-white'}`}>
                               {item.label}
                             </p>
@@ -243,8 +243,8 @@ export default function FallHomeChecklist() {
 
           {/* CTA */}
           <div className="mt-10 bg-gradient-to-br from-orange-900/40 to-slate-800/60 border border-orange-700/30 rounded-2xl p-8 text-center">
-            <p className="text-2xl font-bold text-white mb-2″>Need help winterizing your home?</p>
-            <p className="text-slate-400 mb-5″>ProLnk connects DFW homeowners with licensed contractors for HVAC, plumbing, insulation, roofing, and more. Get matched in minutes.</p>
+            <p className="text-2xl font-bold text-white mb-2">Need help winterizing your home?</p>
+            <p className="text-slate-400 mb-5">ProLnk connects DFW homeowners with licensed contractors for HVAC, plumbing, insulation, roofing, and more. Get matched in minutes.</p>
             <Link href="/request-quote">
               <button className="inline-flex items-center gap-2 px-6 py-3 bg-orange-600 hover:bg-orange-700 rounded-xl text-white font-semibold transition-colors">
                 Find a Winter-Ready Contractor →

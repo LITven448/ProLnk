@@ -68,7 +68,7 @@ export default function ProLnkProTestimonials() {
 
         <div style={{ display: 'flex', gap: 10, justifyContent: 'center', marginBottom: 36, flexWrap: 'wrap' }}>
           {(Object.keys(proStories) as TradeKey[]).map(k => (
-            <button key={k} onClick={() => setActive(k)} style={{ padding: '10px 20px', borderRadius: 8, border: 'none', cursor: 'pointer', fontWeight: 600, fontSize: 14, background: active === k ? '#F5E642′ : '#1e2d4a', color: active === k ? '#0A1628' : '#94a3b8' }}>
+            <button key={k} onClick={() => setActive(k)} style={{ padding: '10px 20px', borderRadius: 8, border: 'none', cursor: 'pointer', fontWeight: 600, fontSize: 14, background: active === k ? '#F5E642' : '#1e2d4a', color: active === k ? '#0A1628' : '#94a3b8' }}>
               {proStories[k].icon} {proStories[k].trade}
             </button>
           ))}
@@ -88,13 +88,13 @@ export default function ProLnkProTestimonials() {
             </div>
           </div>
           <p style={{ color: '#cbd5e1', lineHeight: 1.7, fontSize: 16, marginBottom: 20 }}>{p.story}</p>
-          <div style={{ background: '#0A1628', borderRadius: 10, padding: 16, borderLeft: '4px solid #F5E642′ }}>
+          <div style={{ background: '#0A1628', borderRadius: 10, padding: 16, borderLeft: '4px solid #F5E642' }}>
             <div style={{ color: '#F5E642', fontWeight: 700, fontSize: 13, marginBottom: 6 }}>✅ RESULT</div>
             <div style={{ color: '#94a3b8', fontSize: 15 }}>{p.outcome}</div>
           </div>
         </div>
 
-        <div style={{ background: '#1e2d4a', borderRadius: 12, padding: 24, marginTop: 28, textAlign: 'center', border: '1px solid #F5E642′ }}>
+        <div style={{ background: '#1e2d4a', borderRadius: 12, padding: 24, marginTop: 28, textAlign: 'center', border: '1px solid #F5E642' }}>
           <div style={{ color: '#F5E642', fontSize: 18, fontWeight: 700, marginBottom: 8 }}>💼 Become a ProLnk Partner Pro</div>
           <div style={{ color: '#94a3b8', fontSize: 15 }}>Join 500+ DFW professionals already growing with the ProLnk network. Charter spots close when we hit 500 applications.</div>
         </div>

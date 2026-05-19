@@ -49,7 +49,7 @@ export default function TrustyProPricing() {
           <div style={{ color: '#166534', fontSize: 16 }}>No subscriptions, no per-lead fees, no hidden charges — ever.</div>
         </div>
 
-        <div style={{ backgroundColor: '#fff', borderRadius: 12, padding: 28, marginBottom: 32, boxShadow: '0 1px 3px rgba(0,0,0,0.08)', border: '1px solid #e2e8f0′ }}>
+        <div style={{ backgroundColor: '#fff', borderRadius: 12, padding: 28, marginBottom: 32, boxShadow: '0 1px 3px rgba(0,0,0,0.08)', border: '1px solid #e2e8f0' }}>
           <h2 style={{ fontSize: 20, fontWeight: 700, marginBottom: 20, color: '#0f172a' }}>✅ What Homeowners Get for Free</h2>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12 }}>
             {[
@@ -60,7 +60,7 @@ export default function TrustyProPricing() {
               ['🔗', 'Contractor Matching', 'Get matched with vetted, background-checked local professionals'],
               ['💰', 'Group Deal Access', 'Bulk pricing from local contractors — only available through TrustyPro'],
             ].map(([icon, title, desc]) => (
-              <div key={String(title)} style={{ display: 'flex', gap: 12, padding: 16, backgroundColor: '#f8fafc', borderRadius: 8, border: '1px solid #e2e8f0′ }}>
+              <div key={String(title)} style={{ display: 'flex', gap: 12, padding: 16, backgroundColor: '#f8fafc', borderRadius: 8, border: '1px solid #e2e8f0' }}>
                 <div style={{ fontSize: 22, flexShrink: 0 }}>{icon}</div>
                 <div>
                   <div style={{ fontWeight: 700, color: '#0f172a', fontSize: 14, marginBottom: 2 }}>{title}</div>
@@ -71,7 +71,7 @@ export default function TrustyProPricing() {
           </div>
         </div>
 
-        <div style={{ backgroundColor: '#fff', borderRadius: 12, padding: 28, marginBottom: 32, boxShadow: '0 1px 3px rgba(0,0,0,0.08)', border: '1px solid #e2e8f0′ }}>
+        <div style={{ backgroundColor: '#fff', borderRadius: 12, padding: 28, marginBottom: 32, boxShadow: '0 1px 3px rgba(0,0,0,0.08)', border: '1px solid #e2e8f0' }}>
           <h2 style={{ fontSize: 20, fontWeight: 700, marginBottom: 16, color: '#0f172a' }}>🏗️ How TrustyPro Makes Money</h2>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 20, marginBottom: 20 }}>
             <div style={{ backgroundColor: '#fef3c7', borderRadius: 10, padding: 20, border: '1px solid #fcd34d' }}>
@@ -82,7 +82,7 @@ export default function TrustyProPricing() {
             <div style={{ backgroundColor: '#f0fdf4', borderRadius: 10, padding: 20, border: '1px solid #86efac' }}>
               <div style={{ fontWeight: 700, color: '#166534', fontSize: 15, marginBottom: 8 }}>Commission on Closed Jobs</div>
               <div style={{ fontSize: 28, fontWeight: 800, color: '#15803d', marginBottom: 4 }}>% of job</div>
-              <div style={{ fontSize: 13, color: '#166534′ }}>Only when a job is won — zero if no work is awarded</div>
+              <div style={{ fontSize: 13, color: '#166534' }}>Only when a job is won — zero if no work is awarded</div>
             </div>
           </div>
           <div style={{ backgroundColor: '#f0f9ff', borderRadius: 8, padding: 16, border: '1px solid #bae6fd' }}>
@@ -93,12 +93,12 @@ export default function TrustyProPricing() {
           </div>
         </div>
 
-        <div style={{ backgroundColor: '#fff', borderRadius: 12, padding: 28, marginBottom: 32, boxShadow: '0 1px 3px rgba(0,0,0,0.08)', border: '1px solid #e2e8f0′ }}>
+        <div style={{ backgroundColor: '#fff', borderRadius: 12, padding: 28, marginBottom: 32, boxShadow: '0 1px 3px rgba(0,0,0,0.08)', border: '1px solid #e2e8f0' }}>
           <h2 style={{ fontSize: 20, fontWeight: 700, marginBottom: 16, color: '#0f172a' }}>📊 How We Compare</h2>
           <div style={{ overflowX: 'auto' }}>
             <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: 14 }}>
               <thead>
-                <tr style={{ backgroundColor: '#f1f5f9′ }}>
+                <tr style={{ backgroundColor: '#f1f5f9' }}>
                   <th style={{ textAlign: 'left', padding: '10px 14px', color: '#64748b', fontWeight: 600 }}>Platform</th>
                   <th style={{ textAlign: 'left', padding: '10px 14px', color: '#64748b', fontWeight: 600 }}>Homeowner Cost</th>
                   <th style={{ textAlign: 'left', padding: '10px 14px', color: '#64748b', fontWeight: 600 }}>Contractor Cost</th>
@@ -112,10 +112,10 @@ export default function TrustyProPricing() {
                   ['HomeAdvisor', 'Free basic', '$15–100/lead regardless of win', 'Pay per lead'],
                   ['Thumbtack', 'Free', '$3–50/quote sent', 'Pay per contact'],
                 ].map(([name, hcost, ccost, model], i) => (
-                  <tr key={name} style={{ backgroundColor: i === 0 ? '#f0fdf4′ : i % 2 === 0 ? '#f8fafc' : '#fff', borderBottom: '1px solid #e2e8f0' }}>
+                  <tr key={name} style={{ backgroundColor: i === 0 ? '#f0fdf4' : i % 2 === 0 ? '#f8fafc' : '#fff', borderBottom: '1px solid #e2e8f0' }}>
                     <td style={{ padding: '10px 14px', fontWeight: i === 0 ? 700 : 400, color: i === 0 ? '#15803d' : '#0f172a' }}>{name}</td>
                     <td style={{ padding: '10px 14px', color: i === 0 ? '#15803d' : '#0f172a', fontWeight: i === 0 ? 700 : 400 }}>{hcost}</td>
-                    <td style={{ padding: '10px 14px', color: '#475569′ }}>{ccost}</td>
+                    <td style={{ padding: '10px 14px', color: '#475569' }}>{ccost}</td>
                     <td style={{ padding: '10px 14px', color: '#64748b' }}>{model}</td>
                   </tr>
                 ))}
@@ -124,7 +124,7 @@ export default function TrustyProPricing() {
           </div>
         </div>
 
-        <div style={{ backgroundColor: '#fff', borderRadius: 12, padding: 28, marginBottom: 32, boxShadow: '0 1px 3px rgba(0,0,0,0.08)', border: '1px solid #e2e8f0′ }}>
+        <div style={{ backgroundColor: '#fff', borderRadius: 12, padding: 28, marginBottom: 32, boxShadow: '0 1px 3px rgba(0,0,0,0.08)', border: '1px solid #e2e8f0' }}>
           <h2 style={{ fontSize: 20, fontWeight: 700, marginBottom: 16, color: '#0f172a' }}>❓ Frequently Asked Questions</h2>
           <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
             {FAQ_ITEMS.map((item, i) => (

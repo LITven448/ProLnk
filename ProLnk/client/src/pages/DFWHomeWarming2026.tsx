@@ -2,9 +2,9 @@ import { useState } from 'react';
 
 const homeAges = [
   { id: 'new', label: '🏗️ Built 2010+' },
-  { id: 'mid', label: '🏠 1990-2009′ },
-  { id: 'older', label: '🏚️ 1970-1989′ },
-  { id: 'vintage', label: '🏛️ Pre-1970′ },
+  { id: 'mid', label: '🏠 1990-2009' },
+  { id: 'older', label: '🏚️ 1970-1989' },
+  { id: 'vintage', label: '🏛️ Pre-1970' },
 ];
 
 const setups: Record<string, string[]> = {
@@ -94,7 +94,7 @@ export default function DFWHomeWarming2026() {
               <button
                 key={a.id}
                 onClick={() => setSelected(a.id)}
-                style={{ padding: '8px 16px', borderRadius: 20, border: 'none', cursor: 'pointer', fontSize: 13, background: selected === a.id ? '#F5E642′ : '#1a2d4a', color: selected === a.id ? '#0A1628' : '#ccc', fontWeight: selected === a.id ? 700 : 400 }}
+                style={{ padding: '8px 16px', borderRadius: 20, border: 'none', cursor: 'pointer', fontSize: 13, background: selected === a.id ? '#F5E642' : '#1a2d4a', color: selected === a.id ? '#0A1628' : '#ccc', fontWeight: selected === a.id ? 700 : 400 }}
               >
                 {a.label}
               </button>

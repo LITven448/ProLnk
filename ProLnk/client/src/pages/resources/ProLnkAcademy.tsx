@@ -17,7 +17,7 @@ interface Module {
 }
 
 const FORMAT_ICON = { video: Video, article: FileText, quiz: HelpCircle };
-const FORMAT_COLOR = { video: "#3B82F6″, article: "#22C55E", quiz: "#A855F7" };
+const FORMAT_COLOR = { video: "#3B82F6", article: "#22C55E", quiz: "#A855F7" };
 
 const MODULES: Module[] = [
   {
@@ -39,7 +39,7 @@ const MODULES: Module[] = [
     id: "building-network",
     title: "Building Your Network",
     description: "Understand the 4-level override system and learn proven strategies for recruiting trade colleagues, former coworkers, and supply house contacts.",
-    duration: "55 min", lessonCount: 7, color: "#3b82f6″, accent: "rgba(59,130,246,0.1)",
+    duration: "55 min", lessonCount: 7, color: "#3b82f6", accent: "rgba(59,130,246,0.1)",
     icon: Users, badge: "Network Growth", track: "Network Building", xpTotal: 490,
     lessons: [
       { title: "The 5-Stream Income System — Full Walkthrough", duration: "10 min", format: "video", xp: 80 },
@@ -70,7 +70,7 @@ const MODULES: Module[] = [
     id: "trustypro",
     title: "TrustyPro for Pros",
     description: "TrustyPro is your second income channel — a direct-to-homeowner platform where your verified profile and work history generate inbound requests independently.",
-    duration: "35 min", lessonCount: 5, color: "#a855f7″, accent: "rgba(168,85,247,0.1)",
+    duration: "35 min", lessonCount: 5, color: "#a855f7", accent: "rgba(168,85,247,0.1)",
     icon: Star, badge: "Platform Mastery", track: "Getting Started", xpTotal: 330,
     lessons: [
       { title: "What TrustyPro Is and How It Differs from ProLnk", duration: "7 min", format: "video", xp: 65 },
@@ -98,7 +98,7 @@ const MODULES: Module[] = [
     id: "home-origination",
     title: "Home Origination Rights",
     description: "Stream 5: The permanent income engine. Every home you originate pays you forever. Learn how to log homes efficiently and build a 100-home portfolio.",
-    duration: "45 min", lessonCount: 6, color: "#ec4899″, accent: "rgba(236,72,153,0.1)",
+    duration: "45 min", lessonCount: 6, color: "#ec4899", accent: "rgba(236,72,153,0.1)",
     icon: Zap, badge: "Permanent Income", track: "Advanced Earnings", xpTotal: 420,
     lessons: [
       { title: "What Are Origination Rights — Full Legal Explanation", duration: "8 min", format: "article", xp: 70 },
@@ -129,14 +129,14 @@ const MODULES: Module[] = [
     id: "chartering-to-founding",
     title: "Charter to Founding Tier",
     description: "The path from 25 recruits (Charter) to 100 recruits (Founding) — the milestone that doubles your override rates and unlocks origination rights at scale.",
-    duration: "50 min", lessonCount: 6, color: "#3b82f6″, accent: "rgba(59,130,246,0.1)",
+    duration: "50 min", lessonCount: 6, color: "#3b82f6", accent: "rgba(59,130,246,0.1)",
     icon: Award, badge: "Tier Advancement", track: "Network Building", xpTotal: 430,
     lessons: [
       { title: "Understanding Tier Economics: What Changes at 100 Recruits", duration: "8 min", format: "video", xp: 75 },
       { title: "Sprint Planning: 75 More Recruits in 6 Months", duration: "9 min", format: "article", xp: 80 },
       { title: "The L1 Activation Sequence", duration: "8 min", format: "video", xp: 75 },
       { title: "Retention: Keeping Your Network Active", duration: "9 min", format: "article", xp: 75 },
-      { title: "What Founding Tier Looks Like in Year 2″, duration: "9 min", format: "video", xp: 80 },
+      { title: "What Founding Tier Looks Like in Year 2", duration: "9 min", format: "video", xp: 80 },
       { title: "Tier Advancement Quiz", duration: "7 min", format: "quiz", xp: 45 },
     ],
   },
@@ -158,7 +158,7 @@ const MODULES: Module[] = [
     id: "ai-matching",
     title: "How the AI Matching System Works",
     description: "Inside the algorithm: how ProLnk's AI scores leads, routes them to the right pro, and how you can optimize your profile to be first in line.",
-    duration: "30 min", lessonCount: 4, color: "#a855f7″, accent: "rgba(168,85,247,0.1)",
+    duration: "30 min", lessonCount: 4, color: "#a855f7", accent: "rgba(168,85,247,0.1)",
     icon: Zap, badge: "Platform Deep Dive", track: "Getting Started", xpTotal: 260,
     lessons: [
       { title: "AI Match Score Explained: What 87 vs 42 Means", duration: "8 min", format: "video", xp: 70 },
@@ -185,7 +185,7 @@ const MODULES: Module[] = [
     id: "compliance-and-legal",
     title: "Compliance, Licensing, and Legal",
     description: "Everything you need to stay compliant: license requirements, TCPA/CCPA rules for outreach, 1099 reporting thresholds, and how origination rights are legally protected.",
-    duration: "40 min", lessonCount: 5, color: "#6b7280″, accent: "rgba(107,114,128,0.1)",
+    duration: "40 min", lessonCount: 5, color: "#6b7280", accent: "rgba(107,114,128,0.1)",
     icon: FileText, badge: "Compliance", track: "Advanced Earnings", xpTotal: 330,
     lessons: [
       { title: "Licensing Requirements by Trade and State", duration: "8 min", format: "article", xp: 70 },
@@ -199,7 +199,7 @@ const MODULES: Module[] = [
 
 const TRACKS = [
   { name: "Getting Started", color: "#22c55e", desc: "Platform fundamentals + first income", modules: 4 },
-  { name: "Network Building", color: "#3b82f6″, desc: "Recruit, grow, and manage your override team", modules: 3 },
+  { name: "Network Building", color: "#3b82f6", desc: "Recruit, grow, and manage your override team", modules: 3 },
   { name: "Advanced Earnings", color: "#f59e0b", desc: "Maximize all 5 income streams", modules: 4 },
 ];
 
@@ -210,7 +210,7 @@ const WEBINARS = [
   { title: "Q&A: Home Origination Rights Deep Dive", date: "Monthly — 3rd Thursday", time: "6 PM CST", host: "ProLnk Legal & Product", spots: 100, attending: 67 },
 ];
 
-const STORAGE_KEY = "prolnk_academy_progress_v2″;
+const STORAGE_KEY = "prolnk_academy_progress_v2";
 
 function getProgress(): Record<string, boolean> {
   try { return JSON.parse(localStorage.getItem(STORAGE_KEY) || "{}"); } catch { return {}; }
@@ -239,7 +239,7 @@ function ModuleCard({ mod, onToggle }: { mod: Module; onToggle: () => void }) {
 
   return (
     <div style={{
-      background: "#1a1d27″,
+      background: "#1a1d27",
       border: `1px solid ${completed ? mod.color + "50" : "#1e2330"}`,
       borderRadius: 16, overflow: "hidden", transition: "border-color 0.2s",
     }}>
@@ -259,7 +259,7 @@ function ModuleCard({ mod, onToggle }: { mod: Module; onToggle: () => void }) {
                   <span style={{ fontSize: 10, fontWeight: 700, color: mod.color, background: mod.accent, borderRadius: 6, padding: "2px 8px", letterSpacing: "0.04em" }}>
                     {mod.badge}
                   </span>
-                  <span style={{ fontSize: 10, color: "#4b5563″, background: "#141720", borderRadius: 6, padding: "2px 8px" }}>
+                  <span style={{ fontSize: 10, color: "#4b5563", background: "#141720", borderRadius: 6, padding: "2px 8px" }}>
                     {mod.track}
                   </span>
                   {completed && (
@@ -271,7 +271,7 @@ function ModuleCard({ mod, onToggle }: { mod: Module; onToggle: () => void }) {
                 <h3 style={{ fontSize: 16, fontWeight: 700, color: "#fff", margin: 0 }}>{mod.title}</h3>
               </div>
               <div style={{ textAlign: "right", flexShrink: 0 }}>
-                <div style={{ color: "#6b7280″, fontSize: 11 }}>{mod.lessonCount} lessons · {mod.duration}</div>
+                <div style={{ color: "#6b7280", fontSize: 11 }}>{mod.lessonCount} lessons · {mod.duration}</div>
                 <div style={{ color: "#f59e0b", fontSize: 11, fontWeight: 700 }}>+{mod.xpTotal} XP</div>
               </div>
             </div>
@@ -289,7 +289,7 @@ function ModuleCard({ mod, onToggle }: { mod: Module; onToggle: () => void }) {
               </button>
               <button onClick={() => setExpanded(e => !e)} style={{
                 padding: "8px 16px", borderRadius: 9, background: "transparent",
-                color: "#6b7280″, border: "1px solid #1e2330", fontWeight: 600,
+                color: "#6b7280", border: "1px solid #1e2330", fontWeight: 600,
                 fontSize: 12, cursor: "pointer", display: "flex", alignItems: "center", gap: 6,
               }}>
                 {expanded ? "Hide lessons" : "View lessons"}
@@ -300,17 +300,17 @@ function ModuleCard({ mod, onToggle }: { mod: Module; onToggle: () => void }) {
         </div>
       </div>
       {expanded && (
-        <div style={{ borderTop: "1px solid #1e2330″, padding: "14px 24px 18px" }}>
+        <div style={{ borderTop: "1px solid #1e2330", padding: "14px 24px 18px" }}>
           {mod.lessons.map((lesson, i) => (
             <div key={i} style={{
-              display: "flex", alignItems: "center", gap: 10, padding: "9px 0″,
-              borderBottom: i < mod.lessons.length - 1 ? "1px solid #1e2330″ : "none",
+              display: "flex", alignItems: "center", gap: 10, padding: "9px 0",
+              borderBottom: i < mod.lessons.length - 1 ? "1px solid #1e2330" : "none",
             }}>
               <div style={{
                 width: 26, height: 26, borderRadius: "50%",
-                background: "rgba(255,255,255,0.04)", border: "1px solid #1e2330″,
+                background: "rgba(255,255,255,0.04)", border: "1px solid #1e2330",
                 display: "flex", alignItems: "center", justifyContent: "center",
-                flexShrink: 0, fontSize: 10, color: "#4b5563″, fontWeight: 600,
+                flexShrink: 0, fontSize: 10, color: "#4b5563", fontWeight: 600,
               }}>{i + 1}</div>
               <span style={{ flex: 1, fontSize: 12, color: "#d1d5db" }}>{lesson.title}</span>
               <div style={{ display: "flex", alignItems: "center", gap: 8, flexShrink: 0 }}>
@@ -319,7 +319,7 @@ function ModuleCard({ mod, onToggle }: { mod: Module; onToggle: () => void }) {
                   <span style={{ fontSize: 10, color: FORMAT_COLOR[lesson.format], fontWeight: 600 }}>{lesson.format}</span>
                 </div>
                 <span style={{ fontSize: 10, color: "#f59e0b" }}>+{lesson.xp} XP</span>
-                <span style={{ fontSize: 10, color: "#4b5563″, display: "flex", alignItems: "center", gap: 3 }}>
+                <span style={{ fontSize: 10, color: "#4b5563", display: "flex", alignItems: "center", gap: 3 }}>
                   <Clock size={10} /> {lesson.duration}
                 </span>
               </div>
@@ -358,13 +358,13 @@ export default function ProLnkAcademy() {
         <meta name="description" content="The complete ProLnk partner training hub. 12 modules, 4 hours, 3 learning tracks. Master all 5 income streams and earn your Certified Partner badge." />
       </Helmet>
 
-      <div style={{ minHeight: "100vh", background: "#0f1117″, color: "#e5e7eb", fontFamily: "sans-serif" }}>
+      <div style={{ minHeight: "100vh", background: "#0f1117", color: "#e5e7eb", fontFamily: "sans-serif" }}>
         <div style={{ maxWidth: 900, margin: "0 auto", padding: "32px 20px 64px" }}>
 
           {/* Breadcrumb */}
           <div style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: 12 }}>
-            <Link href="/resources" style={{ color: "#6b7280″, fontSize: 13, textDecoration: "none" }}>Resources</Link>
-            <span style={{ color: "#374151″ }}>›</span>
+            <Link href="/resources" style={{ color: "#6b7280", fontSize: 13, textDecoration: "none" }}>Resources</Link>
+            <span style={{ color: "#374151" }}>›</span>
             <span style={{ color: "#e5e7eb", fontSize: 13 }}>Academy</span>
           </div>
 
@@ -385,7 +385,7 @@ export default function ProLnkAcademy() {
             </p>
 
             {/* XP + progress */}
-            <div style={{ background: "#1a1d27″, borderRadius: 14, border: "1px solid #1e2330", padding: "16px 20px" }}>
+            <div style={{ background: "#1a1d27", borderRadius: 14, border: "1px solid #1e2330", padding: "16px 20px" }}>
               <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: 10, flexWrap: "wrap", gap: 8 }}>
                 <div>
                   <span style={{ color: "#d1d5db", fontSize: 13, fontWeight: 600 }}>
@@ -397,7 +397,7 @@ export default function ProLnkAcademy() {
                 </div>
                 <span style={{ color: "#22c55e", fontSize: 13, fontWeight: 700 }}>{progressPct}%</span>
               </div>
-              <div style={{ height: 8, background: "#1e2330″, borderRadius: 4, overflow: "hidden" }}>
+              <div style={{ height: 8, background: "#1e2330", borderRadius: 4, overflow: "hidden" }}>
                 <div style={{
                   height: "100%", borderRadius: 4, width: `${progressPct}%`,
                   background: allComplete ? "linear-gradient(90deg,#22c55e,#3b82f6)" : "#22c55e",
@@ -417,16 +417,16 @@ export default function ProLnkAcademy() {
           <section style={{ marginBottom: 36 }}>
             <h2 style={{ fontSize: 16, fontWeight: 700, color: "#fff", marginBottom: 14 }}>Learning Tracks</h2>
             <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(200px,1fr))", gap: 10 }}>
-              {[{ name: "All", color: "#6b7280″, desc: "All 12 modules", modules: MODULES.length }, ...TRACKS].map((t, i) => (
+              {[{ name: "All", color: "#6b7280", desc: "All 12 modules", modules: MODULES.length }, ...TRACKS].map((t, i) => (
                 <button key={i} onClick={() => setActiveTrack(t.name)} style={{
-                  background: activeTrack === t.name ? `${t.color}18` : "#1a1d27″,
+                  background: activeTrack === t.name ? `${t.color}18` : "#1a1d27",
                   border: `1.5px solid ${activeTrack === t.name ? t.color : "#1e2330"}`,
                   borderRadius: 12, padding: "12px 16px", cursor: "pointer",
                   textAlign: "left", transition: "all 0.15s",
                 }}>
                   <div style={{ color: t.color, fontSize: 12, fontWeight: 700, marginBottom: 3 }}>{t.name}</div>
                   <div style={{ color: "#9ca3af", fontSize: 11 }}>{"desc" in t ? t.desc : ""}</div>
-                  <div style={{ color: "#4b5563″, fontSize: 10, marginTop: 4 }}>{t.modules} modules</div>
+                  <div style={{ color: "#4b5563", fontSize: 10, marginTop: 4 }}>{t.modules} modules</div>
                 </button>
               ))}
             </div>
@@ -455,7 +455,7 @@ export default function ProLnkAcademy() {
               </div>
               <div style={{ textAlign: "right", flexShrink: 0 }}>
                 <div style={{ color: "#f59e0b", fontSize: 22, fontWeight: 900 }}>+{CERT_MODULE.xpTotal} XP</div>
-                <div style={{ color: "#6b7280″, fontSize: 11 }}>{CERT_MODULE.duration} capstone</div>
+                <div style={{ color: "#6b7280", fontSize: 11 }}>{CERT_MODULE.duration} capstone</div>
               </div>
             </div>
           </section>
@@ -480,7 +480,7 @@ export default function ProLnkAcademy() {
                 You've completed all 12 academy modules. Your partner profile now displays the Certified badge, increasing homeowner trust and match priority.
               </p>
               <button style={{
-                background: "#f59e0b", color: "#0f1117″, border: "none", borderRadius: 10,
+                background: "#f59e0b", color: "#0f1117", border: "none", borderRadius: 10,
                 padding: "13px 28px", fontSize: 14, fontWeight: 700, cursor: "pointer",
               }}>
                 Download Your Certificate
@@ -491,26 +491,26 @@ export default function ProLnkAcademy() {
           {/* Live Training */}
           <section style={{ marginBottom: 48 }}>
             <div style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: 18 }}>
-              <Radio size={16} color="#ec4899″ />
+              <Radio size={16} color="#ec4899" />
               <h2 style={{ fontSize: 18, fontWeight: 700, color: "#fff", margin: 0 }}>Live Training</h2>
-              <span style={{ background: "rgba(236,72,153,0.15)", border: "1px solid rgba(236,72,153,0.3)", borderRadius: 6, padding: "1px 8px", fontSize: 10, color: "#ec4899″, fontWeight: 700 }}>
+              <span style={{ background: "rgba(236,72,153,0.15)", border: "1px solid rgba(236,72,153,0.3)", borderRadius: 6, padding: "1px 8px", fontSize: 10, color: "#ec4899", fontWeight: 700 }}>
                 LIVE
               </span>
             </div>
             <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
               {WEBINARS.map((w, i) => (
-                <div key={i} style={{ background: "#1a1d27″, border: "1px solid #1e2330", borderRadius: 14, padding: "18px 22px" }}>
+                <div key={i} style={{ background: "#1a1d27", border: "1px solid #1e2330", borderRadius: 14, padding: "18px 22px" }}>
                   <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", gap: 12, flexWrap: "wrap" }}>
                     <div style={{ flex: 1, minWidth: 220 }}>
                       <h3 style={{ color: "#fff", fontSize: 14, fontWeight: 700, margin: "0 0 6px" }}>{w.title}</h3>
                       <div style={{ display: "flex", gap: 12, flexWrap: "wrap" }}>
-                        <div style={{ display: "flex", alignItems: "center", gap: 4, color: "#6b7280″, fontSize: 12 }}>
+                        <div style={{ display: "flex", alignItems: "center", gap: 4, color: "#6b7280", fontSize: 12 }}>
                           <Calendar size={11} /> {w.date}
                         </div>
-                        <div style={{ display: "flex", alignItems: "center", gap: 4, color: "#6b7280″, fontSize: 12 }}>
+                        <div style={{ display: "flex", alignItems: "center", gap: 4, color: "#6b7280", fontSize: 12 }}>
                           <Clock size={11} /> {w.time}
                         </div>
-                        <span style={{ color: "#6b7280″, fontSize: 12 }}>Host: {w.host}</span>
+                        <span style={{ color: "#6b7280", fontSize: 12 }}>Host: {w.host}</span>
                       </div>
                     </div>
                     <div style={{ textAlign: "right", flexShrink: 0 }}>
@@ -534,10 +534,10 @@ export default function ProLnkAcademy() {
               <Trophy size={16} color="#f59e0b" />
               <h2 style={{ fontSize: 18, fontWeight: 700, color: "#fff", margin: 0 }}>Certificates Earned</h2>
             </div>
-            <div style={{ background: "#1a1d27″, border: "1px solid #1e2330", borderRadius: 14, padding: "24px 24px" }}>
+            <div style={{ background: "#1a1d27", border: "1px solid #1e2330", borderRadius: 14, padding: "24px 24px" }}>
               {completedCount === 0 ? (
-                <div style={{ textAlign: "center", color: "#4b5563″, padding: "16px 0" }}>
-                  <Award size={32} color="#1e2330″ style={{ marginBottom: 10 }} />
+                <div style={{ textAlign: "center", color: "#4b5563", padding: "16px 0" }}>
+                  <Award size={32} color="#1e2330" style={{ marginBottom: 10 }} />
                   <div style={{ fontSize: 14 }}>Complete modules to earn certificates</div>
                   <div style={{ fontSize: 12, marginTop: 4 }}>Your first certificate unlocks after completing any learning track</div>
                 </div>
@@ -574,22 +574,22 @@ export default function ProLnkAcademy() {
             <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(200px,1fr))", gap: 10 }}>
               {[
                 { label: "Network Income System", href: "/network-income-system", desc: "All 5 streams explained visually", color: "#22c55e" },
-                { label: "Success Stories", href: "/resources/success-stories", desc: "How top partners built their income", color: "#3b82f6″ },
-                { label: "Competitive Advantage", href: "/resources/competitive", desc: "Why ProLnk beats Angi and HomeAdvisor", color: "#a855f7″ },
+                { label: "Success Stories", href: "/resources/success-stories", desc: "How top partners built their income", color: "#3b82f6" },
+                { label: "Competitive Advantage", href: "/resources/competitive", desc: "Why ProLnk beats Angi and HomeAdvisor", color: "#a855f7" },
                 { label: "Partner FAQ", href: "/resources/faq", desc: "Answers to the most common questions", color: "#f59e0b" },
               ].map((link, i) => (
                 <Link key={i} href={link.href}>
                   <div style={{
-                    background: "#1a1d27″, borderRadius: 12, border: "1px solid #1e2330",
+                    background: "#1a1d27", borderRadius: 12, border: "1px solid #1e2330",
                     padding: 16, cursor: "pointer",
                     display: "flex", alignItems: "center", gap: 12,
                   }}>
                     <div style={{ width: 8, height: 8, borderRadius: "50%", background: link.color, flexShrink: 0 }} />
                     <div>
                       <div style={{ fontSize: 13, fontWeight: 700, color: "#fff", marginBottom: 2 }}>{link.label}</div>
-                      <div style={{ fontSize: 11, color: "#6b7280″ }}>{link.desc}</div>
+                      <div style={{ fontSize: 11, color: "#6b7280" }}>{link.desc}</div>
                     </div>
-                    <ChevronRight size={13} color="#374151″ style={{ marginLeft: "auto", flexShrink: 0 }} />
+                    <ChevronRight size={13} color="#374151" style={{ marginLeft: "auto", flexShrink: 0 }} />
                   </div>
                 </Link>
               ))}

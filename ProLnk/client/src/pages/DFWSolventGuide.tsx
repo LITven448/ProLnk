@@ -28,7 +28,7 @@ export default function DFWSolventGuide() {
         <h1 style={{ fontSize: 32, fontWeight: 800, marginBottom: 8 }}>🧪 Solvent & Chemical Guide</h1>
         <p style={{ color: '#94A3B8', marginBottom: 28, lineHeight: 1.6 }}>Right solvent for every DFW project. Safety warnings and ventilation requirements included.</p>
 
-        <div style={{ background: '#F5E64215', border: '1px solid #F5E64240', borderRadius: 10, padding: 16, marginBottom: 32, fontSize: 14, color: '#F5E642′ }}>
+        <div style={{ background: '#F5E64215', border: '1px solid #F5E64240', borderRadius: 10, padding: 16, marginBottom: 32, fontSize: 14, color: '#F5E642' }}>
           ⚠️ {dfwNote}
         </div>
 
@@ -46,11 +46,11 @@ export default function DFWSolventGuide() {
             </button>
           </div>
           {result && (
-            <div style={{ marginTop: 20, background: '#0A1628', borderRadius: 10, padding: 20, borderLeft: '4px solid #F5E642′ }}>
+            <div style={{ marginTop: 20, background: '#0A1628', borderRadius: 10, padding: 20, borderLeft: '4px solid #F5E642' }}>
               <div style={{ fontWeight: 700, fontSize: 18, marginBottom: 8 }}>{result.solvent}</div>
               <div style={{ color: '#94A3B8', marginBottom: 6 }}>Application: {result.app}</div>
               <div style={{ color: '#F87171', marginBottom: 6 }}>⚠️ {result.warning}</div>
-              <div style={{ color: '#34D399′ }}>🌬️ Ventilation: {result.ventilation}</div>
+              <div style={{ color: '#34D399' }}>🌬️ Ventilation: {result.ventilation}</div>
             </div>
           )}
           {residue && !result && (

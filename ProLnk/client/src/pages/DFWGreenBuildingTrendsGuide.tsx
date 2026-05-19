@@ -64,10 +64,10 @@ export default function DFWGreenBuildingTrendsGuide() {
 
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: 16, marginBottom: 48 }}>
           {[
-            { icon: '🌡️', label: 'Heat Pump Adoption', value: '+180%', sub: 'DFW installs 2023-2026′ },
-            { icon: '☀️', label: 'Solar Installations', value: '+240%', sub: 'DFW residential since 2022′ },
+            { icon: '🌡️', label: 'Heat Pump Adoption', value: '+180%', sub: 'DFW installs 2023-2026' },
+            { icon: '☀️', label: 'Solar Installations', value: '+240%', sub: 'DFW residential since 2022' },
             { icon: '⚡', label: 'EV-Ready Homes', value: 'Required', sub: 'New builds in Plano, Frisco' },
-            { icon: '🏆', label: 'LEED Commercial', value: '62 new', sub: 'DFW LEED projects in 2025′ },
+            { icon: '🏆', label: 'LEED Commercial', value: '62 new', sub: 'DFW LEED projects in 2025' },
           ].map(card => (
             <div key={card.label} style={{ backgroundColor: '#111f3a', borderRadius: 12, padding: '20px 18px', border: '1px solid #1e3a5f' }}>
               <div style={{ fontSize: 28, marginBottom: 8 }}>{card.icon}</div>
@@ -124,7 +124,7 @@ export default function DFWGreenBuildingTrendsGuide() {
           </button>
           {result && (
             <div style={{ display: 'grid', gap: 12 }}>
-              <div style={{ backgroundColor: '#0d1b30', borderRadius: 10, padding: '18px', border: '1px solid #F5E642′ }}>
+              <div style={{ backgroundColor: '#0d1b30', borderRadius: 10, padding: '18px', border: '1px solid #F5E642' }}>
                 <div style={{ color: '#F5E642', fontWeight: 700, fontSize: 18, marginBottom: 8 }}>{result.trend}</div>
                 <div style={{ color: '#94a3b8', fontSize: 15, lineHeight: 1.6 }}>{result.detail}</div>
               </div>

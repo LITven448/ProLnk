@@ -99,13 +99,13 @@ export default function DFWHVACTotalCostOwnership() {
           <h2 style={{ color: '#F5E642', fontSize: 16, marginBottom: 16 }}>🏡 Select Your DFW Home Size</h2>
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: 10, marginBottom: 20 }}>
             {homeTypes.map(h => (
-              <button key={h.id} onClick={() => setHome(h.id as HomeKey)} style={{ background: home === h.id ? '#F5E642′ : '#1e3a5f', color: home === h.id ? '#0A1628' : '#fff', border: ’none', borderRadius: 8, padding: '10px 16px', cursor: 'pointer', fontWeight: 600, fontSize: 13 }}>{h.label}</button>
+              <button key={h.id} onClick={() => setHome(h.id as HomeKey)} style={{ background: home === h.id ? '#F5E642' : '#1e3a5f', color: home === h.id ? '#0A1628' : '#fff', border: 'none', borderRadius: 8, padding: '10px 16px', cursor: 'pointer', fontWeight: 600, fontSize: 13 }}>{h.label}</button>
             ))}
           </div>
           <div style={{ color: '#94a3b8', fontSize: 13, marginBottom: 10 }}>Compare Systems (select to filter, or see all):</div>
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8 }}>
             {systems.map(s => (
-              <button key={s.id} onClick={() => toggle(s.id)} style={{ background: selected.includes(s.id) ? '#1e3a5f' : 'transparent', color: selected.includes(s.id) ? '#F5E642′ : '#64748b', border: `1px solid ${selected.includes(s.id) ? '#F5E642' : '#1e3a5f'}`, borderRadius: 8, padding: '7px 12px', cursor: ’pointer', fontSize: 12 }}>{s.icon} {s.name}</button>
+              <button key={s.id} onClick={() => toggle(s.id)} style={{ background: selected.includes(s.id) ? '#1e3a5f' : 'transparent', color: selected.includes(s.id) ? '#F5E642' : '#64748b', border: `1px solid ${selected.includes(s.id) ? '#F5E642' : '#1e3a5f'}`, borderRadius: 8, padding: '7px 12px', cursor: 'pointer', fontSize: 12 }}>{s.icon} {s.name}</button>
             ))}
           </div>
         </div>
@@ -115,8 +115,8 @@ export default function DFWHVACTotalCostOwnership() {
             {cheapest && (
               <div style={{ background: '#1a3a20', border: '2px solid #4ade80', borderRadius: 12, padding: 18, marginBottom: 20 }}>
                 <div style={{ color: '#4ade80', fontWeight: 700, marginBottom: 4 }}>🏆 Lowest 15-Year TCO for Your DFW Home</div>
-                <div style={{ fontSize: 22, fontWeight: 800, color: '#F5E642′ }}>{cheapest.icon} {cheapest.name}</div>
-                <div style={{ fontSize: 18, fontWeight: 700, color: '#4ade80′ }}>${cheapest.tco.total.toLocaleString()} total over 15 years</div>
+                <div style={{ fontSize: 22, fontWeight: 800, color: '#F5E642' }}>{cheapest.icon} {cheapest.name}</div>
+                <div style={{ fontSize: 18, fontWeight: 700, color: '#4ade80' }}>${cheapest.tco.total.toLocaleString()} total over 15 years</div>
               </div>
             )}
             <div style={{ display: 'flex', flexDirection: 'column', gap: 14 }}>
@@ -124,16 +124,16 @@ export default function DFWHVACTotalCostOwnership() {
                 <div key={sys.id} style={{ background: '#111f3a', border: `2px solid ${i === 0 ? '#F5E642' : '#1e3a5f'}`, borderRadius: 12, padding: 20 }}>
                   <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', flexWrap: 'wrap', gap: 12, marginBottom: 14 }}>
                     <div>
-                      <div style={{ fontSize: 16, fontWeight: 700, color: i === 0 ? '#F5E642′ : '#fff' }}>{sys.icon} {sys.name}</div>
+                      <div style={{ fontSize: 16, fontWeight: 700, color: i === 0 ? '#F5E642' : '#fff' }}>{sys.icon} {sys.name}</div>
                       {i === 0 && <div style={{ fontSize: 12, color: '#4ade80', marginTop: 4 }}>✅ Best value for DFW</div>}
                     </div>
-                    <div style={{ fontSize: 22, fontWeight: 800, color: colors[i] || '#94a3b8′ }}>${sys.tco.total.toLocaleString()}</div>
+                    <div style={{ fontSize: 22, fontWeight: 800, color: colors[i] || '#94a3b8' }}>${sys.tco.total.toLocaleString()}</div>
                   </div>
                   <div style={{ display: 'grid', gridTemplateColumns: 'repeat(5, 1fr)', gap: 8 }}>
                     {[{ label: 'Equipment', value: sys.tco.purchase }, { label: 'Install', value: sys.tco.install }, { label: '15yr Energy', value: sys.tco.energy }, { label: '15yr Maint', value: sys.tco.maint }, { label: '15yr Repairs', value: sys.tco.repairs }].map(item => (
                       <div key={item.label} style={{ textAlign: 'center', background: '#0A1628', borderRadius: 8, padding: 10 }}>
-                        <div style={{ fontSize: 14, fontWeight: 700, color: '#94a3b8′ }}>${item.value.toLocaleString()}</div>
-                        <div style={{ fontSize: 10, color: '#475569′ }}>{item.label}</div>
+                        <div style={{ fontSize: 14, fontWeight: 700, color: '#94a3b8' }}>${item.value.toLocaleString()}</div>
+                        <div style={{ fontSize: 10, color: '#475569' }}>{item.label}</div>
                       </div>
                     ))}
                   </div>
@@ -144,7 +144,7 @@ export default function DFWHVACTotalCostOwnership() {
         )}
 
         {!home && (
-          <div style={{ background: '#111f3a', borderRadius: 12, padding: 32, textAlign: 'center', color: '#475569′ }}>
+          <div style={{ background: '#111f3a', borderRadius: 12, padding: 32, textAlign: 'center', color: '#475569' }}>
             Select your DFW home size above to calculate 15-year TCO for each system
           </div>
         )}

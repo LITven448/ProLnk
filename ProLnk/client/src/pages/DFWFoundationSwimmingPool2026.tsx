@@ -54,12 +54,12 @@ export default function DFWFoundationSwimmingPool2026() {
         {active && (
           <div style={{ background: '#112240', borderRadius: 12, padding: 20, marginBottom: 24, border: `2px solid ${active.riskColor}` }}>
             <div style={{ fontSize: 32 }}>{active.emoji}</div>
-            <h3 style={{ color: '#F5E642', margin: '8px 0′ }}>{active.label}</h3>
+            <h3 style={{ color: '#F5E642', margin: '8px 0' }}>{active.label}</h3>
             <p style={{ color: '#CBD5E1', fontSize: 14, lineHeight: 1.7, margin: 0 }}>{active.note}</p>
           </div>
         )}
 
-        <div style={{ background: '#112240', borderRadius: 12, padding: 18, marginBottom: 24, borderLeft: '4px solid #F5E642′ }}>
+        <div style={{ background: '#112240', borderRadius: 12, padding: 18, marginBottom: 24, borderLeft: '4px solid #F5E642' }}>
           <h3 style={{ color: '#F5E642', fontSize: 14, margin: '0 0 8px' }}>✅ Key Drainage Rule for All DFW Pool Homes</h3>
           <p style={{ color: '#CBD5E1', fontSize: 13, lineHeight: 1.7, margin: 0 }}>
             Grade must slope at least 6 inches over 10 feet away from the foundation on all sides — including pool side. If pool is uphill from home, install a French drain between pool and foundation perimeter.

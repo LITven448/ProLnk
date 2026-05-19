@@ -37,7 +37,7 @@ export default function DFWContractorFinancingGuide() {
     <div style={{ background: '#F9FAFB', minHeight: '100vh', fontFamily: 'system-ui, sans-serif', color: '#0A1628', padding: '2rem' }}>
       <div style={{ maxWidth: 780, margin: '0 auto' }}>
         <div style={{ background: '#0A1628', borderRadius: 12, padding: '1.5rem 2rem', marginBottom: '2rem' }}>
-          <div style={{ fontSize: 28, fontWeight: 800, color: '#F5E642′ }}>🔨 Contractor Financing Guide</div>
+          <div style={{ fontSize: 28, fontWeight: 800, color: '#F5E642' }}>🔨 Contractor Financing Guide</div>
           <div style={{ color: '#CBD5E1', marginTop: 6 }}>DFW Homeowners — Know Before You Sign</div>
         </div>
         <div style={{ background: '#FEF2F2', borderRadius: 10, padding: '1.25rem', marginBottom: '1.5rem', border: '1px solid #FECACA' }}>
@@ -54,12 +54,12 @@ export default function DFWContractorFinancingGuide() {
                 <div style={{ fontWeight: 700, fontSize: 14 }}>{p.name}</div>
                 <div style={{ fontSize: 13, color: '#64748B' }}>{p.type}</div>
                 <div style={{ fontSize: 13, color: '#0A1628', fontWeight: 600 }}>{p.rate}</div>
-                <div style={{ fontSize: 12, color: '#DC2626′ }}>⚠ {p.risk}</div>
+                <div style={{ fontSize: 12, color: '#DC2626' }}>⚠ {p.risk}</div>
               </div>
             ))}
           </div>
         </div>
-        <div style={{ background: '#fff', borderRadius: 10, padding: '1.5rem', marginBottom: '1.5rem', border: '1px solid #E2E8F0′ }}>
+        <div style={{ background: '#fff', borderRadius: 10, padding: '1.5rem', marginBottom: '1.5rem', border: '1px solid #E2E8F0' }}>
           <div style={{ fontWeight: 700, fontSize: 16, marginBottom: 14 }}>🔢 True Cost Calculator</div>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
             {[
@@ -68,14 +68,14 @@ export default function DFWContractorFinancingGuide() {
               { label: 'Loan Term (months)', value: termMonths, set: setTermMonths, min: 12, max: 120, step: 12 },
             ].map(f => (
               <div key={f.label}>
-                <div style={{ fontSize: 13, fontWeight: 600, marginBottom: 4 }}>{f.label}: <span style={{ color: '#6366F1′ }}>{f.value}</span></div>
+                <div style={{ fontSize: 13, fontWeight: 600, marginBottom: 4 }}>{f.label}: <span style={{ color: '#6366F1' }}>{f.value}</span></div>
                 <input type="range" min={f.min} max={f.max} step={f.step} value={f.value} onChange={e => f.set(Number(e.target.value))} style={{ width: '100%' }} />
               </div>
             ))}
           </div>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: '1rem' }}>
             {[
-              { label: '🔨 Contractor Financing', data: contractor, color: '#DC2626′ },
+              { label: '🔨 Contractor Financing', data: contractor, color: '#DC2626' },
               { label: '🏠 Your HELOC', data: heloc, color: '#16A34A' },
               { label: '💳 Personal Loan', data: personal, color: '#2563EB' },
             ].map(opt => (

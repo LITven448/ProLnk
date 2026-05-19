@@ -83,7 +83,7 @@ export default function DFWRoofingProtectiveOverlay2026() {
             'Energy Star certified coatings may qualify for federal tax credits in 2026',
           ].map((tip, i) => (
             <div key={i} style={{ display: 'flex', gap: 10, marginBottom: 8 }}>
-              <span style={{ color: '#F5E642′ }}>✓</span>
+              <span style={{ color: '#F5E642' }}>✓</span>
               <span style={{ color: '#cbd5e1', fontSize: 14 }}>{tip}</span>
             </div>
           ))}

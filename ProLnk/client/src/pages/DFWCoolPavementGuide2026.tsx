@@ -54,7 +54,7 @@ export default function DFWCoolPavementGuide2026() {
             <div style={{ fontSize: 13, color: '#94a3b8', marginBottom: 8 }}>Your pavement type:</div>
             <div style={{ display: 'flex', flexDirection: 'column', gap: 6 }}>
               {pavTypes.map(p => (
-                <button key={p} onClick={() => setPavType(p)} style={{ padding: '8px 14px', borderRadius: 8, border: 'none', cursor: 'pointer', background: pavType === p ? '#F5E642′ : '#0A1628', color: pavType === p ? '#0A1628' : '#fff', fontSize: 13, textAlign: ’left' }}>{p}</button>
+                <button key={p} onClick={() => setPavType(p)} style={{ padding: '8px 14px', borderRadius: 8, border: 'none', cursor: 'pointer', background: pavType === p ? '#F5E642' : '#0A1628', color: pavType === p ? '#0A1628' : '#fff', fontSize: 13, textAlign: 'left' }}>{p}</button>
               ))}
             </div>
           </div>

@@ -76,7 +76,7 @@ export default function DFWHVACDFWSpecific() {
         </div>
         {selected && (
           <div style={{ background: '#0f1f35', border: '2px solid #F5E642', borderRadius: 12, padding: '1.5rem' }}>
-            <h2 style={{ fontSize: 18, fontWeight: 700, marginBottom: '1rem', color: '#F5E642′ }}>{selected.label}</h2>
+            <h2 style={{ fontSize: 18, fontWeight: 700, marginBottom: '1rem', color: '#F5E642' }}>{selected.label}</h2>
             <p style={{ color: '#e2e8f0', lineHeight: 1.7, fontSize: 15 }}>{selected.detail}</p>
           </div>
         )}

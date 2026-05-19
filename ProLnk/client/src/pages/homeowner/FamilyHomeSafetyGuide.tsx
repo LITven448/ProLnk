@@ -180,7 +180,7 @@ export default function FamilyHomeSafetyGuide() {
                 onClick={() => toggleResident(r.id)}
                 style={{
                   padding: '10px 18px', borderRadius: 8, border: 'none', cursor: 'pointer', fontSize: 14, fontWeight: 600,
-                  background: selected.includes(r.id) ? '#3b82f6′ : '#0f172a',
+                  background: selected.includes(r.id) ? '#3b82f6' : '#0f172a',
                   color: selected.includes(r.id) ? '#fff' : '#94a3b8',
                 }}
               >
@@ -193,7 +193,7 @@ export default function FamilyHomeSafetyGuide() {
             <>
               <div style={{ marginBottom: 20 }}>
                 <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: 8 }}>
-                  <span style={{ fontSize: 13, color: '#94a3b8′ }}>{completedCount} of {allItems.length} items addressed</span>
+                  <span style={{ fontSize: 13, color: '#94a3b8' }}>{completedCount} of {allItems.length} items addressed</span>
                   <span style={{ fontSize: 13, fontWeight: 700, color: completedCount === allItems.length ? '#22c55e' : '#60a5fa' }}>
                     {Math.round((completedCount / allItems.length) * 100)}%
                   </span>
@@ -228,7 +228,7 @@ export default function FamilyHomeSafetyGuide() {
                     </div>
                     <div style={{ flex: 1 }}>
                       <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 4, flexWrap: 'wrap' }}>
-                        <span style={{ fontSize: 14, fontWeight: 600, color: checked[item.key] ? '#4ade80′ : '#f8fafc' }}>{item.label}</span>
+                        <span style={{ fontSize: 14, fontWeight: 600, color: checked[item.key] ? '#4ade80' : '#f8fafc' }}>{item.label}</span>
                         <span style={{ fontSize: 11, fontWeight: 700, color: PRIORITY_COLORS[item.priority], letterSpacing: 0.5 }}>{PRIORITY_LABELS[item.priority]}</span>
                       </div>
                       <div style={{ fontSize: 12, color: '#64748b', lineHeight: 1.55 }}>{item.action}</div>
@@ -240,7 +240,7 @@ export default function FamilyHomeSafetyGuide() {
           )}
 
           {selected.length === 0 && (
-            <div style={{ textAlign: 'center', padding: '32px 0', color: '#475569′ }}>
+            <div style={{ textAlign: 'center', padding: '32px 0', color: '#475569' }}>
               Select who lives in your home above to generate your personalized checklist.
             </div>
           )}

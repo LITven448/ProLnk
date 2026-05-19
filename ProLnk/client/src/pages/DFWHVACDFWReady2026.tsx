@@ -35,7 +35,7 @@ export default function DFWHVACDFWReady2026() {
 
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: 12, marginBottom: 36 }}>
           {situations.map(s => (
-            <button key={s.id} onClick={() => setSelected(s.id)} style={{ padding: '16px 20px', borderRadius: 10, border: '2px solid', textAlign: 'left', borderColor: selected === s.id ? '#F5E642′ : '#1E3A5F', backgroundColor: selected === s.id ? '#F5E642' : '#0F2340', color: selected === s.id ? '#0A1628' : '#CBD5E1', fontWeight: 600, cursor: ’pointer', fontSize: 15 }}>{s.label}</button>
+            <button key={s.id} onClick={() => setSelected(s.id)} style={{ padding: '16px 20px', borderRadius: 10, border: '2px solid', textAlign: 'left', borderColor: selected === s.id ? '#F5E642' : '#1E3A5F', backgroundColor: selected === s.id ? '#F5E642' : '#0F2340', color: selected === s.id ? '#0A1628' : '#CBD5E1', fontWeight: 600, cursor: 'pointer', fontSize: 15 }}>{s.label}</button>
           ))}
         </div>
 
@@ -43,9 +43,9 @@ export default function DFWHVACDFWReady2026() {
           <div style={{ backgroundColor: '#0F2340', borderRadius: 16, padding: 36, border: '1px solid #1E3A5F' }}>
             <div style={{ display: 'flex', alignItems: 'center', gap: 20, marginBottom: 28 }}>
               <div style={{ position: 'relative', width: 90, height: 90 }}>
-                <svg viewBox="0 0 90 90″ style={{ width: 90, height: 90 }}>
-                  <circle cx="45″ cy="45" r="38" fill="none" stroke="#1E3A5F" strokeWidth="10" />
-                  <circle cx="45″ cy="45" r="38" fill="none" stroke={result.color} strokeWidth="10" strokeDasharray={`${2.38 * result.score} 238`} strokeLinecap="round" transform="rotate(-90 45 45)" />
+                <svg viewBox="0 0 90 90" style={{ width: 90, height: 90 }}>
+                  <circle cx="45" cy="45" r="38" fill="none" stroke="#1E3A5F" strokeWidth="10" />
+                  <circle cx="45" cy="45" r="38" fill="none" stroke={result.color} strokeWidth="10" strokeDasharray={`${2.38 * result.score} 238`} strokeLinecap="round" transform="rotate(-90 45 45)" />
                 </svg>
                 <div style={{ position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%,-50%)', fontWeight: 800, fontSize: 20, color: result.color }}>{result.score}</div>
               </div>
@@ -69,7 +69,7 @@ export default function DFWHVACDFWReady2026() {
           </div>
         )}
 
-        <div style={{ marginTop: 40, textAlign: 'center', backgroundColor: '#0F2340', borderRadius: 12, padding: 28, border: '1px solid #F5E642′ }}>
+        <div style={{ marginTop: 40, textAlign: 'center', backgroundColor: '#0F2340', borderRadius: 12, padding: 28, border: '1px solid #F5E642' }}>
           <div style={{ fontSize: 20, fontWeight: 700, marginBottom: 10 }}>Get Ready Before Summer Hits</div>
           <p style={{ color: '#94A3B8', marginBottom: 20 }}>ProLnk matches you with vetted DFW HVAC pros who can get your home summer-ready.</p>
           <a href="https://prolnk.io" style={{ backgroundColor: '#F5E642', color: '#0A1628', padding: '14px 32px', borderRadius: 8, fontWeight: 700, textDecoration: 'none', fontSize: 16 }}>Get My HVAC Match</a>

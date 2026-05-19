@@ -37,7 +37,7 @@ export default function DFWHomeEnergyDataGuide() {
               <div style={{ fontSize: 24, marginBottom: 6 }}>{d.icon}</div>
               <div style={{ fontWeight: 700, color: '#0A1628', fontSize: '0.9rem', marginBottom: 4 }}>{d.label}</div>
               <div style={{ color: '#64748b', fontSize: '0.78rem', lineHeight: 1.5, marginBottom: 6 }}>{d.how}</div>
-              <div style={{ background: '#f1f5f9', borderRadius: 6, padding: '0.4rem 0.6rem', fontSize: '0.76rem', color: '#334155′ }}>
+              <div style={{ background: '#f1f5f9', borderRadius: 6, padding: '0.4rem 0.6rem', fontSize: '0.76rem', color: '#334155' }}>
                 Reveals: {d.reveals}
               </div>
             </div>
@@ -53,9 +53,9 @@ export default function DFWHomeEnergyDataGuide() {
                 onClick={() => { setSelected(k); setShowResult(false); }}
                 style={{
                   padding: '0.8rem 1rem', borderRadius: 8, cursor: 'pointer',
-                  background: selected === k ? '#0A1628′ : '#f8fafc',
-                  border: selected === k ? '1px solid #0A1628′ : '1px solid #e2e8f0',
-                  color: selected === k ? '#F5E642′ : '#334155',
+                  background: selected === k ? '#0A1628' : '#f8fafc',
+                  border: selected === k ? '1px solid #0A1628' : '1px solid #e2e8f0',
+                  color: selected === k ? '#F5E642' : '#334155',
                   fontWeight: selected === k ? 600 : 400, fontSize: '0.9rem',
                 }}
               >
@@ -81,17 +81,17 @@ export default function DFWHomeEnergyDataGuide() {
               {result.data.map(id => {
                 const src = dataSources.find(d => d.id === id);
                 return src ? (
-                  <span key={id} style={{ background: '#f1f5f9', border: '1px solid #cbd5e1', borderRadius: 8, padding: '0.3rem 0.7rem', fontSize: '0.82rem', color: '#0A1628′ }}>
+                  <span key={id} style={{ background: '#f1f5f9', border: '1px solid #cbd5e1', borderRadius: 8, padding: '0.3rem 0.7rem', fontSize: '0.82rem', color: '#0A1628' }}>
                     {src.icon} {src.label}
                   </span>
                 ) : null;
               })}
             </div>
-            <div style={{ background: '#f8fafc', borderRadius: 8, padding: '1rem', marginBottom: '1rem', borderLeft: '3px solid #0A1628′ }}>
+            <div style={{ background: '#f8fafc', borderRadius: 8, padding: '1rem', marginBottom: '1rem', borderLeft: '3px solid #0A1628' }}>
               <div style={{ fontWeight: 600, color: '#0A1628', marginBottom: 4, fontSize: '0.85rem' }}>What it reveals:</div>
               <p style={{ color: '#475569', fontSize: '0.85rem', margin: 0, lineHeight: 1.6 }}>{result.reveals}</p>
             </div>
-            <div style={{ background: '#fefce8', borderRadius: 8, padding: '1rem', borderLeft: '3px solid #F5E642′ }}>
+            <div style={{ background: '#fefce8', borderRadius: 8, padding: '1rem', borderLeft: '3px solid #F5E642' }}>
               <div style={{ fontWeight: 600, color: '#0A1628', marginBottom: 4, fontSize: '0.85rem' }}>⚡ Immediate next step:</div>
               <p style={{ color: '#475569', fontSize: '0.85rem', margin: 0, lineHeight: 1.6 }}>{result.next}</p>
             </div>

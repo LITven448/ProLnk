@@ -27,7 +27,7 @@ export default function HomeRepairScamGuide() {
   const flags = behaviors.filter(b => checked[b.id]);
 
   const riskLevel = score === 0 ? null : score <= 3 ? 'low' : score <= 7 ? 'medium' : 'high';
-  const riskColors: Record<string, string> = { low: '#4ade80', medium: '#facc15', high: '#f87171′ };
+  const riskColors: Record<string, string> = { low: '#4ade80', medium: '#facc15', high: '#f87171' };
   const riskLabels: Record<string, string> = {
     low: '🟡 Low Risk — Proceed with caution and verify license',
     medium: '🟠 Medium Risk — Multiple red flags present. Verify all credentials before proceeding.',
@@ -98,7 +98,7 @@ export default function HomeRepairScamGuide() {
             ['Secretary of State', 'Verify the company is a legitimate Texas entity at mycpa.cpa.state.tx.us. No registration = no accountability.', 'mycpa.cpa.state.tx.us'],
             ['Insurance Certificate', 'Request a Certificate of Insurance directly from their insurer, not from the contractor. The certificate should name you as an additional insured for the duration of the project.', ''],
           ].map(([step, detail, url]) => (
-            <div key={step as string} style={{ display: 'flex', gap: 16, padding: '16px 0', borderBottom: '1px solid #1E2D45′ }}>
+            <div key={step as string} style={{ display: 'flex', gap: 16, padding: '16px 0', borderBottom: '1px solid #1E2D45' }}>
               <div style={{ color: '#F5E642', fontSize: 20, flexShrink: 0, marginTop: 2 }}>✓</div>
               <div>
                 <div style={{ color: '#FFFFFF', fontWeight: 700, marginBottom: 4 }}>{step}</div>
@@ -131,7 +131,7 @@ export default function HomeRepairScamGuide() {
 
           <div style={{ marginBottom: 24 }}>
             {behaviors.map(b => (
-              <label key={b.id} style={{ display: 'flex', alignItems: 'center', gap: 12, padding: '10px 0', cursor: 'pointer', borderBottom: '1px solid #1E2D45′ }}>
+              <label key={b.id} style={{ display: 'flex', alignItems: 'center', gap: 12, padding: '10px 0', cursor: 'pointer', borderBottom: '1px solid #1E2D45' }}>
                 <input
                   type="checkbox"
                   checked={!!checked[b.id]}
@@ -166,8 +166,8 @@ export default function HomeRepairScamGuide() {
                 <div>
                   <div style={{ color: '#64748B', fontSize: 13, fontWeight: 700, marginBottom: 10 }}>RED FLAGS IDENTIFIED:</div>
                   {flags.map(f => (
-                    <div key={f.id} style={{ display: 'flex', gap: 10, padding: '8px 0', borderBottom: '1px solid #1E2D45′ }}>
-                      <span style={{ color: '#f87171′ }}>⚠️</span>
+                    <div key={f.id} style={{ display: 'flex', gap: 10, padding: '8px 0', borderBottom: '1px solid #1E2D45' }}>
+                      <span style={{ color: '#f87171' }}>⚠️</span>
                       <span style={{ color: '#CBD5E1', fontSize: 14 }}>{f.label}</span>
                     </div>
                   ))}

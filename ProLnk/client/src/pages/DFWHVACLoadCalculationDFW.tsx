@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-type HomeSize = '1000-1500′ | '1500-2000' | '2000-2500' | '2500-3000' | '3000+';
+type HomeSize = '1000-1500' | '1500-2000' | '2000-2500' | '2500-3000' | '3000+';
 type InsulationLevel = 'Poor (pre-1990)' | 'Standard (R-13/R-30)' | 'Good (R-19/R-38)' | 'Excellent (R-21+/R-49+)';
 type WindowArea = 'Low (<15% floor area)' | 'Average (15-20%)' | 'High (20-30%)' | 'Very High (30%+)';
 
@@ -63,20 +63,20 @@ export default function DFWHVACLoadCalculationDFW() {
           </p>
         </div>
 
-        <div style={{ background: '#0f1f3d', borderRadius: '12px', padding: '1.5rem', marginBottom: '1.5rem', borderLeft: '4px solid #F5E642′ }}>
+        <div style={{ background: '#0f1f3d', borderRadius: '12px', padding: '1.5rem', marginBottom: '1.5rem', borderLeft: '4px solid #F5E642' }}>
           <div style={{ fontWeight: 'bold', color: '#F5E642', marginBottom: '0.75rem' }}>🌡️ DFW Design Conditions (ASHRAE)</div>
           <ul style={{ color: '#94a3b8', paddingLeft: '1.5rem' }}>
-            <li style={{ marginBottom: '0.4rem' }}>Summer design temp: <strong style={{ color: '#e2e8f0′ }}>100°F DB / 74°F WB</strong> (Collin/Denton County) or 99°F (Dallas proper)</li>
-            <li style={{ marginBottom: '0.4rem' }}>Winter design temp: <strong style={{ color: '#e2e8f0′ }}>19°F</strong> (1% design condition)</li>
+            <li style={{ marginBottom: '0.4rem' }}>Summer design temp: <strong style={{ color: '#e2e8f0' }}>100°F DB / 74°F WB</strong> (Collin/Denton County) or 99°F (Dallas proper)</li>
+            <li style={{ marginBottom: '0.4rem' }}>Winter design temp: <strong style={{ color: '#e2e8f0' }}>19°F</strong> (1% design condition)</li>
             <li style={{ marginBottom: '0.4rem' }}>These are peak conditions that equipment must handle — not averages</li>
             <li style={{ marginBottom: '0.4rem' }}>South and west orientation add significant cooling load in DFW</li>
             <li>Every square foot of west-facing glass adds ~2× the cooling load of north-facing glass</li>
           </ul>
         </div>
 
-        <div style={{ background: '#0f1f3d', borderRadius: '12px', padding: '1.5rem', marginBottom: '1.5rem', borderLeft: '4px solid #ef4444′ }}>
+        <div style={{ background: '#0f1f3d', borderRadius: '12px', padding: '1.5rem', marginBottom: '1.5rem', borderLeft: '4px solid #ef4444' }}>
           <div style={{ fontWeight: 'bold', color: '#ef4444', marginBottom: '0.75rem' }}>❌ Why Rule-of-Thumb Fails in DFW</div>
-          <p style={{ color: '#94a3b8′ }}>
+          <p style={{ color: '#94a3b8' }}>
             The old "1 ton per 500 sq ft" rule was developed for mild climates. In DFW's 100°F design temp with high solar gain, two identical 2,000 sq ft homes can require anywhere from 3 to 5+ tons depending on insulation, orientation, and windows. Oversized equipment short-cycles and fails to dehumidify; undersized equipment runs constantly and never achieves setpoint during heat waves.
           </p>
         </div>
@@ -94,7 +94,7 @@ export default function DFWHVACLoadCalculationDFW() {
               <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5rem' }}>
                 {items.map(item => (
                   <button key={item} onClick={() => set(item as never)}
-                    style={{ padding: '0.5rem 1rem', borderRadius: '8px', border: 'none', cursor: 'pointer', background: state === item ? '#F5E642′ : '#1e3a5f', color: state === item ? '#0A1628' : '#e2e8f0', fontWeight: state === item ? ’bold' : 'normal' }}>
+                    style={{ padding: '0.5rem 1rem', borderRadius: '8px', border: 'none', cursor: 'pointer', background: state === item ? '#F5E642' : '#1e3a5f', color: state === item ? '#0A1628' : '#e2e8f0', fontWeight: state === item ? 'bold' : 'normal' }}>
                     {item}
                   </button>
                 ))}
@@ -119,7 +119,7 @@ export default function DFWHVACLoadCalculationDFW() {
               </div>
             </div>
             {result.diff >= 0.5 && (
-              <div style={{ background: '#1a0a0a', borderRadius: '8px', padding: '1rem', borderLeft: '3px solid #ef4444′ }}>
+              <div style={{ background: '#1a0a0a', borderRadius: '8px', padding: '1rem', borderLeft: '3px solid #ef4444' }}>
                 <p style={{ color: '#ef4444', fontWeight: 'bold', marginBottom: '0.25rem' }}>⚠️ {result.diff.toFixed(1)} ton difference!</p>
                 <p style={{ color: '#94a3b8', fontSize: '0.875rem' }}>Rule-of-thumb sizing would result in {''}
                   {parseFloat(result.thumbTons) > parseFloat(result.propTons) ? 'an oversized system that short-cycles and fails to dehumidify' : 'an undersized system that cannot maintain setpoint on hot DFW days'}.

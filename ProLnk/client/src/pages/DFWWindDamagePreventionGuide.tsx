@@ -105,13 +105,13 @@ export default function DFWWindDamagePreventionGuide() {
         {result && (
           <div style={{ background: '#0f2040', borderRadius: 8, padding: '1.5rem', border: `1px solid ${result.riskColor}` }}>
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1rem', flexWrap: 'wrap', gap: '0.5rem' }}>
-              <div style={{ fontWeight: 700, color: '#F5E642′ }}>🎯 Wind Damage Risk Assessment</div>
+              <div style={{ fontWeight: 700, color: '#F5E642' }}>🎯 Wind Damage Risk Assessment</div>
               <div style={{ fontWeight: 800, color: result.riskColor, fontSize: '1.1rem' }}>⚠️ {result.risk} Risk</div>
             </div>
             {result.measures.map((m, i) => (
               <div key={i} style={{ display: 'flex', gap: '0.5rem', marginBottom: '0.5rem' }}>
-                <span style={{ color: '#F5E642′ }}>▸</span>
-                <span style={{ color: '#e2e8f0′ }}>{m}</span>
+                <span style={{ color: '#F5E642' }}>▸</span>
+                <span style={{ color: '#e2e8f0' }}>{m}</span>
               </div>
             ))}
             <div style={{ marginTop: '1rem', display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>

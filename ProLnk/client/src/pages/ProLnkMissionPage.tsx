@@ -46,7 +46,7 @@ export default function ProLnkMissionPage() {
             {[['Feature','Angi / Thumbtack','ProLnk'],['Lead Quality','Sold to 10+ pros','Pre-qualified, 1:1 match'],['Pro Vetting','Self-reported','License + background verified'],['Pricing','Opaque','Transparent upfront'],['Job Records','None','Home Health Vault forever'],['Income Streams','One','Five']].map((row, i) => (
               <div key={i} style={{ display: 'contents' }}>
                 {row.map((cell, j) => (
-                  <div key={j} style={{ background: i === 0 ? '#0A1628′ : (j === 2 ? '#1a2d4a' : ’transparent'), border: '1px solid #1e3a5f', padding: '10px 14px', fontSize: 13, color: i === 0 ? '#F5E642′ : (j === 2 ? '#F5E642' : '#cbd5e1'), fontWeight: i === 0 ? 700 : 400 }}>{cell}</div>
+                  <div key={j} style={{ background: i === 0 ? '#0A1628' : (j === 2 ? '#1a2d4a' : 'transparent'), border: '1px solid #1e3a5f', padding: '10px 14px', fontSize: 13, color: i === 0 ? '#F5E642' : (j === 2 ? '#F5E642' : '#cbd5e1'), fontWeight: i === 0 ? 700 : 400 }}>{cell}</div>
                 ))}
               </div>
             ))}
@@ -56,7 +56,7 @@ export default function ProLnkMissionPage() {
         <h2 style={{ fontSize: 20, fontWeight: 700, color: '#F5E642', marginBottom: 16 }}>What frustrates you most?</h2>
         <div style={{ display: 'flex', gap: 10, flexWrap: 'wrap', marginBottom: 24 }}>
           {frustrations.map((f, i) => (
-            <button key={i} onClick={() => setSelected(i)} style={{ background: selected === i ? '#F5E642′ : '#132040', color: selected === i ? '#0A1628' : '#fff', border: '1px solid #F5E642', borderRadius: 8, padding: '8px 14px', cursor: ’pointer', fontWeight: 600, fontSize: 13 }}>{f.label}</button>
+            <button key={i} onClick={() => setSelected(i)} style={{ background: selected === i ? '#F5E642' : '#132040', color: selected === i ? '#0A1628' : '#fff', border: '1px solid #F5E642', borderRadius: 8, padding: '8px 14px', cursor: 'pointer', fontWeight: 600, fontSize: 13 }}>{f.label}</button>
           ))}
         </div>
         {selected !== null && (

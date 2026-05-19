@@ -39,7 +39,7 @@ export default function DFWHomeBeeKeepingGuide2026() {
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(130px, 1fr))', gap: 12, marginBottom: 32 }}>
           {cities.map(c => (
             <button key={c.city} onClick={() => setSel(c.city === sel ? null : c.city)}
-              style={{ background: sel === c.city ? '#F5E642′ : '#1a2a42', border: '2px solid', borderColor: sel === c.city ? '#F5E642' : '#2a3a55', borderRadius: 10, padding: '16px 8px', cursor: ’pointer', color: sel === c.city ? '#0A1628′ : '#fff', fontWeight: 700, fontSize: 13, transition: ’all .2s' }}>
+              style={{ background: sel === c.city ? '#F5E642' : '#1a2a42', border: '2px solid', borderColor: sel === c.city ? '#F5E642' : '#2a3a55', borderRadius: 10, padding: '16px 8px', cursor: 'pointer', color: sel === c.city ? '#0A1628' : '#fff', fontWeight: 700, fontSize: 13, transition: 'all .2s' }}>
               <div style={{ fontSize: 24, marginBottom: 5 }}>{c.icon}</div>
               {c.city}
             </button>

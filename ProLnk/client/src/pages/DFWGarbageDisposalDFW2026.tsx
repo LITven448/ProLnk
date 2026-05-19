@@ -32,7 +32,7 @@ export default function DFWGarbageDisposalDFW2026() {
             ['🔴', 'Know Your Reset Button', 'Red/black button on bottom of unit under sink. Always try reset first before calling a plumber. Keep a 1/4-inch hex key nearby for jams.'],
             ['⚙️', 'Brand Comparison', 'Insinkerator = most common in DFW, easy parts. Waste King = stainless grind components resist DFW hard water better. Both solid choices for DFW.'],
           ] as [string, string, string][]).map(([icon, title, desc]) => (
-            <div key={title} style={{ background: '#0f2040', borderRadius: 10, padding: 18, borderLeft: '3px solid #F5E642′ }}>
+            <div key={title} style={{ background: '#0f2040', borderRadius: 10, padding: 18, borderLeft: '3px solid #F5E642' }}>
               <div style={{ fontSize: 24, marginBottom: 8 }}>{icon}</div>
               <div style={{ fontWeight: 700, marginBottom: 6 }}>{title}</div>
               <div style={{ color: '#94a3b8', fontSize: 14 }}>{desc}</div>
@@ -73,7 +73,7 @@ export default function DFWGarbageDisposalDFW2026() {
           </div>
         </div>
 
-        <div style={{ background: '#0f2040', borderRadius: 10, padding: 18, borderLeft: '3px solid #F5E642′ }}>
+        <div style={{ background: '#0f2040', borderRadius: 10, padding: 18, borderLeft: '3px solid #F5E642' }}>
           <div style={{ fontWeight: 700, marginBottom: 6 }}>🏠 Need a DFW Plumber?</div>
           <div style={{ color: '#94a3b8', fontSize: 14, marginBottom: 10 }}>ProLnk connects you with vetted DFW plumbers for disposal installation and repair — average install is $150-250 including parts.</div>
           <a href="/" style={{ color: '#F5E642', fontWeight: 700, textDecoration: 'none', fontSize: 15 }}>Get Free Quotes →</a>

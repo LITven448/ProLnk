@@ -55,7 +55,7 @@ export default function ProLnkNewsletterPage() {
       <div style={{ maxWidth: 820, margin: '0 auto' }}>
         <div style={{ textAlign: 'center', marginBottom: 48 }}>
           <div style={{ fontSize: 13, color: '#2563eb', letterSpacing: 2, textTransform: 'uppercase', marginBottom: 12, fontWeight: 700 }}>Weekly Newsletter</div>
-          <h1 style={{ fontSize: 36, fontWeight: 800, margin: '0 0 16px', color: '#0A1628′ }}>The ProLnk Weekly</h1>
+          <h1 style={{ fontSize: 36, fontWeight: 800, margin: '0 0 16px', color: '#0A1628' }}>The ProLnk Weekly</h1>
           <p style={{ color: '#475569', fontSize: 17, maxWidth: 540, margin: '0 auto' }}>
             Every Friday. DFW housing data, partner income tips, homeowner guides, and platform news. No fluff.
           </p>
@@ -69,7 +69,7 @@ export default function ProLnkNewsletterPage() {
           ].map((s) => (
             <div key={s.label} style={{ background: '#fff', borderRadius: 12, padding: '20px', textAlign: 'center', border: '1px solid #e2e8f0', boxShadow: '0 1px 3px rgba(0,0,0,0.06)' }}>
               <div style={{ fontSize: 28, marginBottom: 8 }}>{s.emoji}</div>
-              <div style={{ fontSize: 22, fontWeight: 800, color: '#0A1628′ }}>{s.value}</div>
+              <div style={{ fontSize: 22, fontWeight: 800, color: '#0A1628' }}>{s.value}</div>
               <div style={{ fontSize: 12, color: '#64748b', marginTop: 4 }}>{s.label}</div>
             </div>
           ))}
@@ -83,16 +83,16 @@ export default function ProLnkNewsletterPage() {
                 key={i.id}
                 onClick={() => setActive(i)}
                 style={{ padding: '8px 18px', borderRadius: 8, border: 'none', cursor: 'pointer', fontWeight: 600, fontSize: 13,
-                  background: active.id === i.id ? '#0A1628′ : '#f1f5f9', color: active.id === i.id ? '#F5E642' : '#475569' }}>
+                  background: active.id === i.id ? '#0A1628' : '#f1f5f9', color: active.id === i.id ? '#F5E642' : '#475569' }}>
                 {i.label}
               </button>
             ))}
           </div>
           <ul style={{ margin: '0 0 20px', padding: 0, listStyle: 'none' }}>
             {active.topics.map((t, idx) => (
-              <li key={idx} style={{ display: 'flex', gap: 10, padding: '10px 0', borderBottom: idx < active.topics.length - 1 ? '1px solid #f1f5f9′ : ’none' }}>
+              <li key={idx} style={{ display: 'flex', gap: 10, padding: '10px 0', borderBottom: idx < active.topics.length - 1 ? '1px solid #f1f5f9' : 'none' }}>
                 <span style={{ color: '#2563eb' }}>→</span>
-                <span style={{ color: '#334155′ }}>{t}</span>
+                <span style={{ color: '#334155' }}>{t}</span>
               </li>
             ))}
           </ul>
@@ -101,10 +101,10 @@ export default function ProLnkNewsletterPage() {
           </div>
         </div>
 
-        <div style={{ background: '#fff', borderRadius: 14, padding: 28, marginBottom: 32, border: '1px solid #e2e8f0′ }}>
+        <div style={{ background: '#fff', borderRadius: 14, padding: 28, marginBottom: 32, border: '1px solid #e2e8f0' }}>
           <div style={{ fontSize: 16, fontWeight: 700, color: '#0A1628', marginBottom: 16 }}>Recent Issues</div>
           {recent.map((r, i) => (
-            <div key={i} style={{ padding: '12px 0', borderBottom: i < recent.length - 1 ? '1px solid #f1f5f9′ : ’none', color: '#334155', fontSize: 14 }}>
+            <div key={i} style={{ padding: '12px 0', borderBottom: i < recent.length - 1 ? '1px solid #f1f5f9' : 'none', color: '#334155', fontSize: 14 }}>
               📄 {r}
             </div>
           ))}

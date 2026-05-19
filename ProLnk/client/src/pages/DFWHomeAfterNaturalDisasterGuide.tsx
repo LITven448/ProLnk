@@ -77,8 +77,8 @@ export default function DFWHomeAfterNaturalDisasterGuide() {
           DFW gets hail, floods, and ice storms. Storm chasers flood neighborhoods within hours of damage. This guide tells you exactly what to do — and exactly who to avoid.
         </p>
 
-        <div style={{ background: 'rgba(245,230,66,0.08)', borderRadius: 12, padding: 20, marginBottom: 24, borderLeft: '3px solid #F5E642′ }}>
-          <h2 style={{ fontSize: 17, fontWeight: 700, marginBottom: 12, color: '#F5E642′ }}>⚡ First 24 Hours — Universal</h2>
+        <div style={{ background: 'rgba(245,230,66,0.08)', borderRadius: 12, padding: 20, marginBottom: 24, borderLeft: '3px solid #F5E642' }}>
+          <h2 style={{ fontSize: 17, fontWeight: 700, marginBottom: 12, color: '#F5E642' }}>⚡ First 24 Hours — Universal</h2>
           <ol style={{ lineHeight: 2.2, paddingLeft: 20, fontSize: 14, color: '#ddd' }}>
             <li>Ensure everyone is safe and out of danger</li>
             <li>Document damage with photos and video before anything is moved or dried</li>
@@ -91,7 +91,7 @@ export default function DFWHomeAfterNaturalDisasterGuide() {
         <div style={{ background: 'rgba(255,255,255,0.06)', borderRadius: 12, padding: 24, marginBottom: 24, border: '1px solid rgba(255,255,255,0.1)' }}>
           <h2 style={{ fontSize: 18, fontWeight: 700, marginBottom: 20 }}>📋 Get Your Recovery Plan</h2>
           <div style={{ marginBottom: 20 }}>
-            <label style={{ display: 'block', fontWeight: 600, marginBottom: 8, color: '#aab4c8′ }}>Disaster type</label>
+            <label style={{ display: 'block', fontWeight: 600, marginBottom: 8, color: '#aab4c8' }}>Disaster type</label>
             {[{ v: 'hail', l: '🌨️ Hail storm / wind damage' }, { v: 'flood', l: '🌊 Flood or water event' }, { v: 'ice', l: '🧊 Ice storm / freeze damage' }].map(opt => (
               <label key={opt.v} style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 8, cursor: 'pointer' }}>
                 <input type="radio" name="disaster" value={opt.v} checked={disasterType === opt.v} onChange={() => setDisasterType(opt.v)} />
@@ -100,7 +100,7 @@ export default function DFWHomeAfterNaturalDisasterGuide() {
             ))}
           </div>
           <div style={{ marginBottom: 20 }}>
-            <label style={{ display: 'block', fontWeight: 600, marginBottom: 8, color: '#aab4c8′ }}>Damage level</label>
+            <label style={{ display: 'block', fontWeight: 600, marginBottom: 8, color: '#aab4c8' }}>Damage level</label>
             {[{ v: 'minor', l: '🟡 Minor — cosmetic or small repairs' }, { v: 'moderate', l: '🟠 Moderate — significant but livable' }, { v: 'major', l: '🔴 Major — uninhabitable or structural' }].map(opt => (
               <label key={opt.v} style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 8, cursor: 'pointer' }}>
                 <input type="radio" name="damage" value={opt.v} checked={damageLevel === opt.v} onChange={() => setDamageLevel(opt.v)} />
@@ -143,7 +143,7 @@ export default function DFWHomeAfterNaturalDisasterGuide() {
         )}
 
         <div style={{ marginTop: 24, background: 'rgba(255,255,255,0.06)', borderRadius: 12, padding: 24, border: '1px solid rgba(255,255,255,0.1)' }}>
-          <h2 style={{ fontSize: 18, fontWeight: 700, marginBottom: 12, color: '#F5E642′ }}>🛡️ ProLnk After a Disaster</h2>
+          <h2 style={{ fontSize: 18, fontWeight: 700, marginBottom: 12, color: '#F5E642' }}>🛡️ ProLnk After a Disaster</h2>
           <p style={{ color: '#aab4c8', lineHeight: 1.7, fontSize: 14 }}>Every contractor in ProLnk is pre-vetted with a verified license, insurance, and no storm-chaser flag. After a DFW hail event, when every unlicensed roofer in Texas shows up at your door, ProLnk is where you go to find someone you can actually trust.</p>
         </div>
       </div>

@@ -28,13 +28,13 @@ export default function DFWSummerHomeGuide() {
 
   return (
     <div style={{ background: '#0A1628', minHeight: '100vh', color: '#fff', fontFamily: 'system-ui, sans-serif', padding: '0 0 60px' }}>
-      <div style={{ background: 'linear-gradient(135deg, #0A1628 0%, #1a2d4a 100%)', padding: '48px 24px 40px', textAlign: 'center', borderBottom: '2px solid #F5E642′ }}>
+      <div style={{ background: 'linear-gradient(135deg, #0A1628 0%, #1a2d4a 100%)', padding: '48px 24px 40px', textAlign: 'center', borderBottom: '2px solid #F5E642' }}>
         <div style={{ fontSize: 48, marginBottom: 12 }}>☀️</div>
         <h1 style={{ fontSize: 32, fontWeight: 800, color: '#F5E642', margin: '0 0 8px' }}>DFW Summer Home Guide</h1>
         <p style={{ color: '#94a3b8', fontSize: 16, margin: 0 }}>June – August Preparation Checklist</p>
       </div>
 
-      <div style={{ maxWidth: 720, margin: '0 auto', padding: '32px 24px 0′ }}>
+      <div style={{ maxWidth: 720, margin: '0 auto', padding: '32px 24px 0' }}>
         <div style={{ background: '#F5E642', color: '#0A1628', borderRadius: 10, padding: '14px 20px', marginBottom: 28, fontWeight: 700, fontSize: 15 }}>
           ⚠️ DFW ALERT: Temperatures regularly exceed 105°F from late June through August. Prepare your AC and attic BEFORE Memorial Day.
         </div>
@@ -45,7 +45,7 @@ export default function DFWSummerHomeGuide() {
           { month: 'June', tasks: ['Open pool, balance chemicals, inspect pump', 'Install attic fan or check ridge vent airflow', 'Start monthly pest inspections'] },
           { month: 'July–August', tasks: ['Monitor AC refrigerant (call if not cooling to setpoint)', 'Adjust irrigation to avoid DFW water restrictions', 'Inspect trees for bark damage from heat stress'] },
         ].map(({ month, tasks: t }) => (
-          <div key={month} style={{ background: '#111f35', borderRadius: 10, padding: '16px 20px', marginBottom: 16, borderLeft: '3px solid #F5E642′ }}>
+          <div key={month} style={{ background: '#111f35', borderRadius: 10, padding: '16px 20px', marginBottom: 16, borderLeft: '3px solid #F5E642' }}>
             <div style={{ fontWeight: 700, color: '#F5E642', marginBottom: 8 }}>{month}</div>
             {t.map((task, i) => <div key={i} style={{ color: '#cbd5e1', fontSize: 14, marginBottom: 4 }}>• {task}</div>)}
           </div>
@@ -80,10 +80,10 @@ export default function DFWSummerHomeGuide() {
         </button>
 
         {showResults && (
-          <div style={{ background: '#111f35', borderRadius: 12, padding: '24px', border: '2px solid #F5E642′ }}>
+          <div style={{ background: '#111f35', borderRadius: 12, padding: '24px', border: '2px solid #F5E642' }}>
             <h3 style={{ color: '#F5E642', fontSize: 18, marginBottom: 16, margin: '0 0 16px' }}>Your Prioritized Summer Tasks</h3>
             {tasks.length === 0 ? (
-              <p style={{ color: '#94a3b8′ }}>Select home features above to generate your list.</p>
+              <p style={{ color: '#94a3b8' }}>Select home features above to generate your list.</p>
             ) : (
               <>
                 {tasks.map((t, i) => (
@@ -94,7 +94,7 @@ export default function DFWSummerHomeGuide() {
                 ))}
                 <div style={{ marginTop: 16, paddingTop: 16, borderTop: '2px solid #F5E642', display: 'flex', justifyContent: 'space-between', fontWeight: 700, fontSize: 16 }}>
                   <span>Estimated Total</span>
-                  <span style={{ color: '#F5E642′ }}>${totalCost.toLocaleString()}</span>
+                  <span style={{ color: '#F5E642' }}>${totalCost.toLocaleString()}</span>
                 </div>
               </>
             )}

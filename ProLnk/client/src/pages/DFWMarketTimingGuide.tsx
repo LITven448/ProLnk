@@ -39,7 +39,7 @@ export default function DFWMarketTimingGuide() {
   const listToSale2026 = 99.4;
 
   return (
-    <div style={{ background: '#0A1628', minHeight: '100vh', fontFamily: 'system-ui, sans-serif', color: '#e8e8e8′ }}>
+    <div style={{ background: '#0A1628', minHeight: '100vh', fontFamily: 'system-ui, sans-serif', color: '#e8e8e8' }}>
       <div style={{ maxWidth: 880, margin: '0 auto', padding: '48px 24px' }}>
 
         <div style={{ marginBottom: 40 }}>
@@ -52,12 +52,12 @@ export default function DFWMarketTimingGuide() {
           {[
             { label: '2026 Months of Supply', value: supply2026.toString(), note: 'Balanced = 4–6 months' },
             { label: 'Avg List-to-Sale Ratio', value: listToSale2026 + '%', note: 'Above 100% = multiple offers' },
-            { label: 'YoY Price Appreciation', value: '+5.2%', note: 'DFW metro average 2026′ },
+            { label: 'YoY Price Appreciation', value: '+5.2%', note: 'DFW metro average 2026' },
           ].map(stat => (
             <div key={stat.label} style={{ background: 'rgba(255,255,255,0.07)', border: '1px solid rgba(245,230,66,0.3)', borderRadius: 12, padding: 20, textAlign: 'center' }}>
               <div style={{ fontSize: 32, fontWeight: 800, color: '#F5E642', marginBottom: 6 }}>{stat.value}</div>
               <div style={{ fontWeight: 700, marginBottom: 4, fontSize: 15 }}>{stat.label}</div>
-              <div style={{ fontSize: 13, color: '#778′ }}>{stat.note}</div>
+              <div style={{ fontSize: 13, color: '#778' }}>{stat.note}</div>
             </div>
           ))}
         </section>
@@ -66,8 +66,8 @@ export default function DFWMarketTimingGuide() {
           <h2 style={{ fontSize: 22, fontWeight: 700, marginBottom: 16, color: '#fff' }}>📅 DFW Seasonality at a Glance</h2>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 10 }}>
             {MONTHS.map(m => {
-              const heat = m.supply < 2.2 ? '#F5E642′ : m.supply < 2.8 ? '#f5a642' : '#6bb5f5';
-              const textColor = m.supply < 2.2 ? '#0A1628′ : '#fff';
+              const heat = m.supply < 2.2 ? '#F5E642' : m.supply < 2.8 ? '#f5a642' : '#6bb5f5';
+              const textColor = m.supply < 2.2 ? '#0A1628' : '#fff';
               return (
                 <div key={m.month} style={{ background: heat, borderRadius: 10, padding: '14px 12px' }}>
                   <div style={{ fontWeight: 800, fontSize: 14, color: textColor }}>{m.month}</div>
@@ -111,7 +111,7 @@ export default function DFWMarketTimingGuide() {
               <label style={{ fontWeight: 600, fontSize: 14, display: 'block', marginBottom: 6 }}>I am a:</label>
               <div style={{ display: 'flex', gap: 10 }}>
                 {(['buyer', 'seller'] as const).map(r => (
-                  <button key={r} onClick={() => setRole(r)} style={{ padding: '9px 22px', borderRadius: 8, border: '2px solid', borderColor: role === r ? '#F5E642′ : ’rgba(255,255,255,0.2)', background: role === r ? '#F5E642′ : ’transparent', color: role === r ? '#0A1628′ : '#fff', fontWeight: 700, cursor: ’pointer', textTransform: 'capitalize', fontSize: 15 }}>{r}</button>
+                  <button key={r} onClick={() => setRole(r)} style={{ padding: '9px 22px', borderRadius: 8, border: '2px solid', borderColor: role === r ? '#F5E642' : 'rgba(255,255,255,0.2)', background: role === r ? '#F5E642' : 'transparent', color: role === r ? '#0A1628' : '#fff', fontWeight: 700, cursor: 'pointer', textTransform: 'capitalize', fontSize: 15 }}>{r}</button>
                 ))}
               </div>
             </div>
@@ -123,7 +123,7 @@ export default function DFWMarketTimingGuide() {
             </div>
           </div>
           <div style={{ background: 'rgba(0,0,0,0.3)', borderRadius: 10, padding: 20 }}>
-            <div style={{ fontWeight: 700, marginBottom: 8, color: '#F5E642′ }}>Strategy for {role === ’buyer' ? 'Buyers' : 'Sellers'} in {quarter}:</div>
+            <div style={{ fontWeight: 700, marginBottom: 8, color: '#F5E642' }}>Strategy for {role === 'buyer' ? 'Buyers' : 'Sellers'} in {quarter}:</div>
             <div style={{ lineHeight: 1.8, color: '#ccd' }}>{advice}</div>
           </div>
         </section>

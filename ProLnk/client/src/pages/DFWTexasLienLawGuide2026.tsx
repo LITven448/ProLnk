@@ -32,22 +32,22 @@ export default function DFWTexasLienLawGuide2026() {
   const matched = situations.find(s => s.situation === selectedSituation);
 
   return (
-    <div style={{ backgroundColor: "#0A1628″, minHeight: "100vh", color: "#fff", fontFamily: "sans-serif", padding: "24px" }}>
+    <div style={{ backgroundColor: "#0A1628", minHeight: "100vh", color: "#fff", fontFamily: "sans-serif", padding: "24px" }}>
       <div style={{ maxWidth: 900, margin: "0 auto" }}>
         <div style={{ textAlign: "center", marginBottom: 32 }}>
           <div style={{ fontSize: 48 }}>🔒</div>
-          <h1 style={{ color: "#F5E642″, fontSize: 28, fontWeight: 700, margin: "8px 0 4px" }}>DFW Texas Mechanic's Lien Law Guide 2026</h1>
-          <p style={{ color: "#94a3b8″, fontSize: 14 }}>Protecting yourself from contractor liens in DFW — Texas lien law is pro-contractor, be prepared</p>
+          <h1 style={{ color: "#F5E642", fontSize: 28, fontWeight: 700, margin: "8px 0 4px" }}>DFW Texas Mechanic's Lien Law Guide 2026</h1>
+          <p style={{ color: "#94a3b8", fontSize: 14 }}>Protecting yourself from contractor liens in DFW — Texas lien law is pro-contractor, be prepared</p>
         </div>
 
-        <div style={{ backgroundColor: "#7f1d1d", borderRadius: 10, padding: 14, marginBottom: 24, borderLeft: "4px solid #f87171″ }}>
-          <div style={{ color: "#fca5a5″, fontWeight: 700, fontSize: 13 }}>⚠️ Critical Warning</div>
-          <p style={{ color: "#fca5a5″, fontSize: 13, margin: "4px 0 0" }}>Texas mechanic's lien law is among the most contractor-friendly in the US. Even if you pay your general contractor in full, subcontractors can file liens against YOUR property if the GC fails to pay them.</p>
+        <div style={{ backgroundColor: "#7f1d1d", borderRadius: 10, padding: 14, marginBottom: 24, borderLeft: "4px solid #f87171" }}>
+          <div style={{ color: "#fca5a5", fontWeight: 700, fontSize: 13 }}>⚠️ Critical Warning</div>
+          <p style={{ color: "#fca5a5", fontSize: 13, margin: "4px 0 0" }}>Texas mechanic's lien law is among the most contractor-friendly in the US. Even if you pay your general contractor in full, subcontractors can file liens against YOUR property if the GC fails to pay them.</p>
         </div>
 
         <div style={{ display: "flex", gap: 8, marginBottom: 24, justifyContent: "center" }}>
           {["stages", "protections", "lookup"].map(tab => (
-            <button key={tab} onClick={() => setActiveTab(tab)} style={{ padding: "8px 18px", borderRadius: 8, border: "none", cursor: "pointer", fontWeight: 600, fontSize: 13, backgroundColor: activeTab === tab ? "#F5E642″ : "#1e2d45", color: activeTab === tab ? "#0A1628" : "#94a3b8" }}>
+            <button key={tab} onClick={() => setActiveTab(tab)} style={{ padding: "8px 18px", borderRadius: 8, border: "none", cursor: "pointer", fontWeight: 600, fontSize: 13, backgroundColor: activeTab === tab ? "#F5E642" : "#1e2d45", color: activeTab === tab ? "#0A1628" : "#94a3b8" }}>
               {tab === "stages" ? "📅 Project Stages" : tab === "protections" ? "🛡️ Protections" : "🔍 Situation Lookup"}
             </button>
           ))}
@@ -56,13 +56,13 @@ export default function DFWTexasLienLawGuide2026() {
         {activeTab === "stages" && (
           <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
             {lienStages.map((s, i) => (
-              <div key={i} style={{ backgroundColor: "#1e2d45″, borderRadius: 10, padding: 16, borderLeft: `4px solid ${s.risk === "Critical" ? "#f87171" : s.risk === "High" ? "#fb923c" : s.risk === "Medium" ? "#fbbf24" : "#4ade80"}` }}>
+              <div key={i} style={{ backgroundColor: "#1e2d45", borderRadius: 10, padding: 16, borderLeft: `4px solid ${s.risk === "Critical" ? "#f87171" : s.risk === "High" ? "#fb923c" : s.risk === "Medium" ? "#fbbf24" : "#4ade80"}` }}>
                 <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 8 }}>
                   <div style={{ display: "flex", alignItems: "center", gap: 8 }}><span style={{ fontSize: 20 }}>{s.emoji}</span><span style={{ color: "#fff", fontWeight: 700, fontSize: 14 }}>{s.stage}</span></div>
-                  <span style={{ padding: "2px 10px", borderRadius: 6, fontSize: 11, fontWeight: 700, backgroundColor: s.risk === "Critical" ? "#7f1d1d" : s.risk === "High" ? "#7c2d12″ : s.risk === "Medium" ? "#78350f" : "#14532d", color: s.risk === "Critical" ? "#fca5a5" : s.risk === "High" ? "#fdba74" : s.risk === "Medium" ? "#fde68a" : "#86efac" }}>{s.risk} Risk</span>
+                  <span style={{ padding: "2px 10px", borderRadius: 6, fontSize: 11, fontWeight: 700, backgroundColor: s.risk === "Critical" ? "#7f1d1d" : s.risk === "High" ? "#7c2d12" : s.risk === "Medium" ? "#78350f" : "#14532d", color: s.risk === "Critical" ? "#fca5a5" : s.risk === "High" ? "#fdba74" : s.risk === "Medium" ? "#fde68a" : "#86efac" }}>{s.risk} Risk</span>
                 </div>
-                <p style={{ color: "#cbd5e1″, fontSize: 13, margin: "0 0 8px" }}>{s.action}</p>
-                <div style={{ backgroundColor: "#0A1628″, borderRadius: 6, padding: 8 }}><span style={{ color: "#F5E642", fontSize: 12 }}>💡 {s.tip}</span></div>
+                <p style={{ color: "#cbd5e1", fontSize: 13, margin: "0 0 8px" }}>{s.action}</p>
+                <div style={{ backgroundColor: "#0A1628", borderRadius: 6, padding: 8 }}><span style={{ color: "#F5E642", fontSize: 12 }}>💡 {s.tip}</span></div>
               </div>
             ))}
           </div>
@@ -71,32 +71,32 @@ export default function DFWTexasLienLawGuide2026() {
         {activeTab === "protections" && (
           <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 12 }}>
             {protections.map((p, i) => (
-              <div key={i} style={{ backgroundColor: "#1e2d45″, borderRadius: 10, padding: 16 }}>
+              <div key={i} style={{ backgroundColor: "#1e2d45", borderRadius: 10, padding: 16 }}>
                 <div style={{ fontSize: 28, marginBottom: 8 }}>{p.icon}</div>
-                <div style={{ color: "#F5E642″, fontWeight: 700, fontSize: 14, marginBottom: 8 }}>{p.title}</div>
-                <p style={{ color: "#cbd5e1″, fontSize: 13, margin: 0 }}>{p.description}</p>
+                <div style={{ color: "#F5E642", fontWeight: 700, fontSize: 14, marginBottom: 8 }}>{p.title}</div>
+                <p style={{ color: "#cbd5e1", fontSize: 13, margin: 0 }}>{p.description}</p>
               </div>
             ))}
           </div>
         )}
 
         {activeTab === "lookup" && (
-          <div style={{ backgroundColor: "#1e2d45″, borderRadius: 12, padding: 24 }}>
-            <h3 style={{ color: "#F5E642″, marginTop: 0, fontSize: 15 }}>🔍 Find Your Lien Situation</h3>
-            <select value={selectedSituation} onChange={e => setSelectedSituation(e.target.value)} style={{ width: "100%", padding: 12, borderRadius: 8, border: "1px solid #334155″, backgroundColor: "#0A1628", color: "#fff", fontSize: 13, marginBottom: 16 }}>
+          <div style={{ backgroundColor: "#1e2d45", borderRadius: 12, padding: 24 }}>
+            <h3 style={{ color: "#F5E642", marginTop: 0, fontSize: 15 }}>🔍 Find Your Lien Situation</h3>
+            <select value={selectedSituation} onChange={e => setSelectedSituation(e.target.value)} style={{ width: "100%", padding: 12, borderRadius: 8, border: "1px solid #334155", backgroundColor: "#0A1628", color: "#fff", fontSize: 13, marginBottom: 16 }}>
               <option value="">Select your situation...</option>
               {situations.map(s => <option key={s.situation} value={s.situation}>{s.situation}</option>)}
             </select>
             {matched && (
-              <div style={{ backgroundColor: "#0A1628″, borderRadius: 10, padding: 16, borderLeft: "4px solid #F5E642" }}>
-                <div style={{ color: "#F5E642″, fontWeight: 700, fontSize: 13, marginBottom: 8 }}>📋 Guidance</div>
-                <p style={{ color: "#cbd5e1″, fontSize: 13, margin: 0 }}>{matched.guide}</p>
+              <div style={{ backgroundColor: "#0A1628", borderRadius: 10, padding: 16, borderLeft: "4px solid #F5E642" }}>
+                <div style={{ color: "#F5E642", fontWeight: 700, fontSize: 13, marginBottom: 8 }}>📋 Guidance</div>
+                <p style={{ color: "#cbd5e1", fontSize: 13, margin: 0 }}>{matched.guide}</p>
               </div>
             )}
           </div>
         )}
 
-        <div style={{ textAlign: "center", marginTop: 32, color: "#475569″, fontSize: 11 }}>ProLnk DFW · Mechanic's Lien Law Guide · 2026</div>
+        <div style={{ textAlign: "center", marginTop: 32, color: "#475569", fontSize: 11 }}>ProLnk DFW · Mechanic's Lien Law Guide · 2026</div>
       </div>
     </div>
   );

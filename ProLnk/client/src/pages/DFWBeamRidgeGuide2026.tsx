@@ -38,7 +38,7 @@ export default function DFWBeamRidgeGuide2026() {
         <div style={{ background: '#112240', borderRadius: 12, padding: '1.5rem', marginBottom: '1.5rem' }}>
           <div style={{ color: '#F5E642', fontWeight: 600, marginBottom: '1rem' }}>⚠️ The Truss Rule in DFW</div>
           {['85%+ of DFW homes built since 1985 use engineered truss systems','Trusses are designed as a complete system — cutting any member weakens the whole','Common mistake: homeowners cut bottom chord for storage — dangerous','Truss repair requires a licensed truss manufacturer and structural engineer','Attic conversions in truss homes require full roof replacement with rafters'].map((tip, i) => (
-            <div key={i} style={{ display: 'flex', gap: '0.5rem', marginBottom: '0.5rem', color: '#cbd5e1′ }}><span style={{ color: '#F5E642' }}>▶</span>{tip}</div>
+            <div key={i} style={{ display: 'flex', gap: '0.5rem', marginBottom: '0.5rem', color: '#cbd5e1' }}><span style={{ color: '#F5E642' }}>▶</span>{tip}</div>
           ))}
         </div>
 
@@ -55,7 +55,7 @@ export default function DFWBeamRidgeGuide2026() {
             </select>
             <button onClick={assess} style={{ background: '#F5E642', color: '#0A1628', border: 'none', borderRadius: 8, padding: '0.5rem 1.2rem', fontWeight: 700, cursor: 'pointer' }}>Get Assessment</button>
           </div>
-          {result && <div style={{ background: '#0f2744', borderRadius: 8, padding: '1rem', color: '#e2e8f0′ }}>{result}</div>}
+          {result && <div style={{ background: '#0f2744', borderRadius: 8, padding: '1rem', color: '#e2e8f0' }}>{result}</div>}
         </div>
 
         <div style={{ background: '#F5E642', borderRadius: 12, padding: '1rem 1.5rem', color: '#0A1628', fontWeight: 600 }}>

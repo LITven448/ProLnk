@@ -115,7 +115,7 @@ export default function DFWProLnkDataMoatGuide() {
           <h2 style={{ color: '#F5E642', fontSize: 16, fontWeight: 700, marginBottom: 12 }}>🔍 What describes you best?</h2>
           <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
             {HOME_FEATURES.map((f) => (
-              <button key={f.key} onClick={() => setSelected(f.key === selected ? null : f.key)} style={{ textAlign: 'left', padding: '12px 16px', borderRadius: 8, border: `2px solid ${selected === f.key ? '#F5E642' : '#0A1628'}`, background: selected === f.key ? '#0A1628′ : '#0d1f38', color: selected === f.key ? '#F5E642' : '#e2e8f0', cursor: ’pointer', fontWeight: selected === f.key ? 700 : 400, fontSize: 14 }}>
+              <button key={f.key} onClick={() => setSelected(f.key === selected ? null : f.key)} style={{ textAlign: 'left', padding: '12px 16px', borderRadius: 8, border: `2px solid ${selected === f.key ? '#F5E642' : '#0A1628'}`, background: selected === f.key ? '#0A1628' : '#0d1f38', color: selected === f.key ? '#F5E642' : '#e2e8f0', cursor: 'pointer', fontWeight: selected === f.key ? 700 : 400, fontSize: 14 }}>
                 {f.label}
               </button>
             ))}

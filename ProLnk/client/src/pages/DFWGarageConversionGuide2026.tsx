@@ -26,7 +26,7 @@ export default function DFWGarageConversionGuide2026() {
   };
 
   const result = feasibility[garageType]?.[useCase];
-  const scoreColor: Record<string, string> = { 'Very High': '#22c55e', 'High': '#84cc16', 'Medium': '#F5E642', 'Low': '#f97316', 'Very Low': '#ef4444′ };
+  const scoreColor: Record<string, string> = { 'Very High': '#22c55e', 'High': '#84cc16', 'Medium': '#F5E642', 'Low': '#f97316', 'Very Low': '#ef4444' };
 
   return (
     <div style={{ background: '#0A1628', minHeight: '100vh', color: '#fff', fontFamily: 'sans-serif', padding: '32px 16px' }}>

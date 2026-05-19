@@ -44,7 +44,7 @@ export default function DFWHVACGuestGuide() {
         <div style={{ fontSize: 12, color: '#F5E642', letterSpacing: 2, marginBottom: 8 }}>DFW HVAC GUIDE</div>
         <h1 style={{ fontSize: 32, fontWeight: 700, marginBottom: 8 }}>👥 Guests & Your DFW HVAC</h1>
         <p style={{ color: '#8899AA', marginBottom: 12 }}>
-          Every person in your DFW home adds 300-400 BTUs of body heat per hour. More people = more showers = more cooking = an AC that's fighting for its life in DFW’s climate.
+          Every person in your DFW home adds 300-400 BTUs of body heat per hour. More people = more showers = more cooking = an AC that's fighting for its life in DFW's climate.
         </p>
         <div style={{ background: '#F5E642', color: '#0A1628', borderRadius: 8, padding: '10px 16px', marginBottom: 28, fontWeight: 600, fontSize: 14 }}>
           ⚡ DFW's ambient summer temps of 95-107°F mean your AC is already working near max capacity before guests arrive.
@@ -55,7 +55,7 @@ export default function DFWHVACGuestGuide() {
           <div style={{ display: 'grid', gap: 10 }}>
             {guestSituations.map(s => (
               <button key={s.id} onClick={() => setSituation(s.id)}
-                style={{ background: situation === s.id ? '#F5E642′ : '#1A2D4A', color: situation === s.id ? '#0A1628' : '#fff', border: ’none', borderRadius: 8, padding: '12px 16px', cursor: 'pointer', textAlign: 'left', fontWeight: 600 }}>
+                style={{ background: situation === s.id ? '#F5E642' : '#1A2D4A', color: situation === s.id ? '#0A1628' : '#fff', border: 'none', borderRadius: 8, padding: '12px 16px', cursor: 'pointer', textAlign: 'left', fontWeight: 600 }}>
                 {s.label}
                 <span style={{ display: 'block', fontWeight: 400, fontSize: 12, marginTop: 2, opacity: 0.8 }}>Severity: {s.severity}</span>
               </button>
@@ -68,7 +68,7 @@ export default function DFWHVACGuestGuide() {
           <div style={{ display: 'grid', gap: 10 }}>
             {dfwHomes.map(h => (
               <button key={h.id} onClick={() => setHome(h.id)}
-                style={{ background: home === h.id ? '#F5E642′ : '#1A2D4A', color: home === h.id ? '#0A1628' : '#fff', border: ’none', borderRadius: 8, padding: '12px 16px', cursor: 'pointer', fontWeight: 600 }}>
+                style={{ background: home === h.id ? '#F5E642' : '#1A2D4A', color: home === h.id ? '#0A1628' : '#fff', border: 'none', borderRadius: 8, padding: '12px 16px', cursor: 'pointer', fontWeight: 600 }}>
                 {h.label}
               </button>
             ))}

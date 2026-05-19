@@ -1,30 +1,30 @@
 import { Link } from "wouter";
 import { ArrowLeft, Cookie } from "lucide-react";
 
-const LAST_UPDATED = "March 29, 2026″;
+const LAST_UPDATED = "March 29, 2026";
 const EMAIL = "privacy@prolnk.com";
 
 export default function CookiePolicy() {
   return (
-    <div className="min-h-screen bg-gray-50″ style={{ fontFamily: "'Inter', sans-serif" }}>
-      <div className="bg-white border-b border-gray-200 sticky top-0 z-10″>
+    <div className="min-h-screen bg-gray-50" style={{ fontFamily: "'Inter', sans-serif" }}>
+      <div className="bg-white border-b border-gray-200 sticky top-0 z-10">
         <div className="max-w-3xl mx-auto px-4 py-4 flex items-center justify-between">
           <Link href="/">
             <button className="flex items-center gap-2 text-sm text-gray-500 hover:text-gray-800 transition-colors">
-              <ArrowLeft className="w-4 h-4″ /> Back to Home
+              <ArrowLeft className="w-4 h-4" /> Back to Home
             </button>
           </Link>
-          <div className="flex items-center gap-2 text-sm text-gray-400″>
-            <Cookie className="w-4 h-4″ />
+          <div className="flex items-center gap-2 text-sm text-gray-400">
+            <Cookie className="w-4 h-4" />
             Last updated: {LAST_UPDATED}
           </div>
         </div>
       </div>
 
-      <div className="max-w-3xl mx-auto px-4 py-12 space-y-10″>
+      <div className="max-w-3xl mx-auto px-4 py-12 space-y-10">
         <div>
-          <h1 className="text-3xl font-black text-gray-900 mb-2″>Cookie Policy</h1>
-          <p className="text-gray-500″>
+          <h1 className="text-3xl font-black text-gray-900 mb-2">Cookie Policy</h1>
+          <p className="text-gray-500">
             This Cookie Policy explains how ProLnk Technologies, LLC uses cookies and similar technologies on the ProLnk and TrustyPro platforms.
           </p>
         </div>
@@ -55,13 +55,13 @@ export default function CookiePolicy() {
             body: `For questions about our use of cookies, contact us at ${EMAIL}.`,
           },
         ].map(({ title, body }) => (
-          <section key={title} className="space-y-3″>
-            <h2 className="text-lg font-bold text-gray-900″>{title}</h2>
+          <section key={title} className="space-y-3">
+            <h2 className="text-lg font-bold text-gray-900">{title}</h2>
             <p className="text-gray-600 leading-relaxed text-sm">{body}</p>
           </section>
         ))}
 
-        <div className="border-t border-gray-200 pt-8 flex flex-wrap gap-4 text-sm text-indigo-600″>
+        <div className="border-t border-gray-200 pt-8 flex flex-wrap gap-4 text-sm text-indigo-600">
           <Link href="/terms"><span className="hover:underline cursor-pointer">Terms of Service</span></Link>
           <Link href="/privacy"><span className="hover:underline cursor-pointer">Privacy Policy</span></Link>
           <Link href="/ccpa"><span className="hover:underline cursor-pointer">CCPA Data Rights</span></Link>

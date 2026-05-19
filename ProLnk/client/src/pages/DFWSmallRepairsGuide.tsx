@@ -10,7 +10,7 @@ const repairs = [
     steps: [
       '🔪 Score and peel out all old caulk with a utility knife — get every piece',
       '🧼 Clean the joint with rubbing alcohol and let dry completely (30 min minimum)',
-      '🎨 Apply painters tape 1/8″ on each side of the joint for a clean line',
+      '🎨 Apply painters tape 1/8" on each side of the joint for a clean line',
       '🔧 Load caulk gun, cut tip at 45° angle to match joint width',
       '💧 Run a smooth bead along the full joint without stopping',
       '🫦 Wet your finger and smooth the bead in one continuous pass',
@@ -36,7 +36,7 @@ const repairs = [
   },
   {
     id: 'drywall',
-    name: 'Patch Small Drywall Hole (<3″)',
+    name: 'Patch Small Drywall Hole (<3")',
     savings: '$200',
     time: '3 hrs (includes dry time)',
     tools: ['Drywall patch kit or mesh tape', 'Joint compound', 'Putty knife', 'Sandpaper (120 + 220 grit)', 'Primer + matching paint'],
@@ -61,7 +61,7 @@ const repairs = [
       '💧 Turn on faucet to confirm low flow or spray — aerator is likely clogged',
       '🔧 Wrap pliers jaw with cloth to protect chrome finish',
       '↩️ Turn aerator counterclockwise (lefty loosey) — they hand-tighten usually',
-      '🔍 Note the aerator size (standard 15/16″ or junior 13/16″)',
+      '🔍 Note the aerator size (standard 15/16" or junior 13/16")',
       '🛍️ Buy matching replacement — bring the old one to the hardware store',
       '🔩 Hand-thread new aerator clockwise until snug, then 1/4 turn with pliers',
       '💦 Run water and check for leaks around threads',
@@ -80,7 +80,7 @@ const repairs = [
       '🚿 Flush to empty tank',
       '↩️ Unhook flapper ears from flush valve pegs and detach chain from handle arm',
       '🛍️ Buy matching flapper — bring old one or note toilet brand (Kohler, American Standard)',
-      '🔗 Hook new flapper ears on pegs, attach chain with 1/2″ of slack',
+      '🔗 Hook new flapper ears on pegs, attach chain with 1/2" of slack',
       '💧 Turn water back on, let tank fill, flush and confirm no running',
     ],
   },
@@ -102,7 +102,7 @@ export default function DFWSmallRepairsGuide() {
 
         <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap', marginBottom: 24 }}>
           {repairs.map(r => (
-            <button key={r.id} onClick={() => setSelected(r.id)} style={{ padding: '9px 16px', borderRadius: 8, border: 'none', cursor: 'pointer', fontWeight: 600, fontSize: 13, background: selected === r.id ? '#F5E642′ : '#111E35', color: selected === r.id ? '#0A1628' : '#8B9BB4' }}>{r.name}</button>
+            <button key={r.id} onClick={() => setSelected(r.id)} style={{ padding: '9px 16px', borderRadius: 8, border: 'none', cursor: 'pointer', fontWeight: 600, fontSize: 13, background: selected === r.id ? '#F5E642' : '#111E35', color: selected === r.id ? '#0A1628' : '#8B9BB4' }}>{r.name}</button>
           ))}
         </div>
 

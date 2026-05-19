@@ -50,10 +50,10 @@ export default function DFWPoolChemistryDFWGuide() {
 
   const levels = [
     { name: 'Free Chlorine', summer: '3–5 ppm', spring: '2–3 ppm', fall: '1–3 ppm', winter: '1–2 ppm' },
-    { name: 'pH', summer: '7.2–7.4', spring: '7.4–7.6', fall: '7.4–7.6', winter: '7.4–7.6′ },
-    { name: 'Total Alkalinity', summer: '100–120', spring: '100–120', fall: '100–130', winter: '100–130′ },
+    { name: 'pH', summer: '7.2–7.4', spring: '7.4–7.6', fall: '7.4–7.6', winter: '7.4–7.6' },
+    { name: 'Total Alkalinity', summer: '100–120', spring: '100–120', fall: '100–130', winter: '100–130' },
     { name: 'Cyanuric Acid (CYA)', summer: '50–80 ppm', spring: '30–50 ppm', fall: '30–50 ppm', winter: '0–30 ppm' },
-    { name: 'Calcium Hardness', summer: '200–400', spring: '200–400', fall: '200–400', winter: '200–400′ },
+    { name: 'Calcium Hardness', summer: '200–400', spring: '200–400', fall: '200–400', winter: '200–400' },
   ];
 
   return (
@@ -63,13 +63,13 @@ export default function DFWPoolChemistryDFWGuide() {
           <span style={{ fontSize: 32 }}>🧪</span>
           <h1 style={{ fontSize: 28, fontWeight: 700, color: '#F5E642', margin: 0 }}>DFW Pool Chemistry Guide</h1>
         </div>
-        <p style={{ color: '#9BAEC8', marginBottom: 28 }}>DFW's extreme heat creates unique pool chemistry challenges — here’s how to manage them.</p>
+        <p style={{ color: '#9BAEC8', marginBottom: 28 }}>DFW's extreme heat creates unique pool chemistry challenges — here's how to manage them.</p>
         <div style={{ background: '#0F2040', borderRadius: 12, padding: 24, marginBottom: 24 }}>
           <h2 style={{ color: '#F5E642', fontSize: 18, marginBottom: 16 }}>🌡️ DFW Chemistry Targets by Season</h2>
           <div style={{ overflowX: 'auto' }}>
             <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: 13 }}>
               <thead>
-                <tr style={{ borderBottom: '1px solid #1A3055′ }}>
+                <tr style={{ borderBottom: '1px solid #1A3055' }}>
                   {['Parameter', 'Summer', 'Spring', 'Fall', 'Winter'].map(h => (
                     <th key={h} style={{ textAlign: 'left', padding: '8px 10px', color: '#F5E642', whiteSpace: 'nowrap' }}>{h}</th>
                   ))}
@@ -77,12 +77,12 @@ export default function DFWPoolChemistryDFWGuide() {
               </thead>
               <tbody>
                 {levels.map(row => (
-                  <tr key={row.name} style={{ borderBottom: '1px solid #0A1628′ }}>
+                  <tr key={row.name} style={{ borderBottom: '1px solid #0A1628' }}>
                     <td style={{ padding: '9px 10px', color: '#E8EDF5', fontWeight: 600 }}>{row.name}</td>
-                    <td style={{ padding: '9px 10px', color: '#F5A642′ }}>{row.summer}</td>
-                    <td style={{ padding: '9px 10px', color: '#9BAEC8′ }}>{row.spring}</td>
-                    <td style={{ padding: '9px 10px', color: '#9BAEC8′ }}>{row.fall}</td>
-                    <td style={{ padding: '9px 10px', color: '#9BAEC8′ }}>{row.winter}</td>
+                    <td style={{ padding: '9px 10px', color: '#F5A642' }}>{row.summer}</td>
+                    <td style={{ padding: '9px 10px', color: '#9BAEC8' }}>{row.spring}</td>
+                    <td style={{ padding: '9px 10px', color: '#9BAEC8' }}>{row.fall}</td>
+                    <td style={{ padding: '9px 10px', color: '#9BAEC8' }}>{row.winter}</td>
                   </tr>
                 ))}
               </tbody>
@@ -119,7 +119,7 @@ export default function DFWPoolChemistryDFWGuide() {
             </button>
           </div>
           {result && (
-            <div style={{ marginTop: 24, background: '#0A1628', borderRadius: 10, padding: 20, borderLeft: '3px solid #F5E642′ }}>
+            <div style={{ marginTop: 24, background: '#0A1628', borderRadius: 10, padding: 20, borderLeft: '3px solid #F5E642' }}>
               <div style={{ display: 'grid', gap: 12 }}>
                 <div><span style={{ color: '#9BAEC8', fontSize: 13 }}>Free Chlorine Target</span><div style={{ color: '#F5E642', fontWeight: 700, marginTop: 2 }}>{result.chlorine}</div></div>
                 <div><span style={{ color: '#9BAEC8', fontSize: 13 }}>pH Range</span><div style={{ color: '#E8EDF5', fontWeight: 600, marginTop: 2 }}>{result.ph}</div></div>

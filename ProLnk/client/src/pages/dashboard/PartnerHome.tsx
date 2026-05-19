@@ -14,7 +14,7 @@ import {
 } from "lucide-react";
 import OnboardingTour from "@/components/OnboardingTour";
 
-const ONBOARDING_STORAGE_KEY = "prolnk_onboarding_v2″;
+const ONBOARDING_STORAGE_KEY = "prolnk_onboarding_v2";
 const TOTAL_SETUP_STEPS = 7;
 
 function loadSetupProgress(): number {
@@ -65,45 +65,45 @@ function OnboardingBanner() {
 
   return (
     <div
-      className="rounded-2xl p-5″
+      className="rounded-2xl p-5"
       style={{
         background: "linear-gradient(135deg, rgba(245,230,66,0.1), rgba(10,22,40,0))",
         border: "1px solid rgba(245,230,66,0.28)",
       }}
     >
-      <div className="flex items-start gap-4″>
+      <div className="flex items-start gap-4">
         <div
-          className="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0 mt-0.5″
+          className="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0 mt-0.5"
           style={{ background: "rgba(245,230,66,0.15)" }}
         >
-          <Rocket size={20} style={{ color: "#F5E642″ }} />
+          <Rocket size={20} style={{ color: "#F5E642" }} />
         </div>
-        <div className="flex-1 min-w-0″>
-          <div className="flex items-center justify-between gap-2 mb-1″>
+        <div className="flex-1 min-w-0">
+          <div className="flex items-center justify-between gap-2 mb-1">
             <p className="text-sm font-bold text-white">
               Quick Setup — {completedCount} of {TOTAL_SETUP_STEPS} steps complete
             </p>
             <button
               onClick={handleDismiss}
-              className="w-7 h-7 rounded-lg flex items-center justify-center transition-all hover:bg-white/10 flex-shrink-0″
+              className="w-7 h-7 rounded-lg flex items-center justify-center transition-all hover:bg-white/10 flex-shrink-0"
               aria-label="Dismiss"
             >
-              <X size={13} className="text-gray-500″ />
+              <X size={13} className="text-gray-500" />
             </button>
           </div>
-          <div className="w-full h-1.5 rounded-full overflow-hidden mb-3″ style={{ background: "rgba(255,255,255,0.08)" }}>
+          <div className="w-full h-1.5 rounded-full overflow-hidden mb-3" style={{ background: "rgba(255,255,255,0.08)" }}>
             <div
-              className="h-full rounded-full transition-all duration-500″
+              className="h-full rounded-full transition-all duration-500"
               style={{ width: `${progressPct}%`, background: "linear-gradient(90deg, #F5E642, #d4af00)" }}
             />
           </div>
-          <p className="text-xs text-gray-400 mb-3″>
+          <p className="text-xs text-gray-400 mb-3">
             Verify your license, set up payouts, complete your profile, and share your referral link to unlock full earnings.
           </p>
           <Link href="/dashboard/onboarding">
             <span
-              className="inline-flex items-center gap-1.5 px-4 py-2 rounded-lg text-xs font-bold transition-all hover:opacity-90″
-              style={{ background: "#F5E642″, color: "#0A1628" }}
+              className="inline-flex items-center gap-1.5 px-4 py-2 rounded-lg text-xs font-bold transition-all hover:opacity-90"
+              style={{ background: "#F5E642", color: "#0A1628" }}
             >
               Complete Setup <ChevronRight size={12} />
             </span>
@@ -125,16 +125,16 @@ const TIER_CONFIG: Record<string, {
     color: "#22c55e",
     bg: "rgba(34,197,94,0.12)",
     border: "rgba(34,197,94,0.35)",
-    accentText: "text-green-400″,
+    accentText: "text-green-400",
     nextTier: null,
     nextThreshold: 0,
   },
   founding: {
     label: "Founding Member",
-    color: "#3b82f6″,
+    color: "#3b82f6",
     bg: "rgba(59,130,246,0.12)",
     border: "rgba(59,130,246,0.35)",
-    accentText: "text-blue-400″,
+    accentText: "text-blue-400",
     nextTier: "Charter",
     nextThreshold: 25,
   },
@@ -143,26 +143,26 @@ const TIER_CONFIG: Record<string, {
     color: "#f59e0b",
     bg: "rgba(245,158,11,0.12)",
     border: "rgba(245,158,11,0.35)",
-    accentText: "text-amber-400″,
+    accentText: "text-amber-400",
     nextTier: "Founding",
     nextThreshold: 125,
   },
   level4: {
     label: "Level 4 Partner",
-    color: "#8b5cf6″,
+    color: "#8b5cf6",
     bg: "rgba(139,92,246,0.12)",
     border: "rgba(139,92,246,0.35)",
-    accentText: "text-purple-400″,
-    nextTier: "Level 3″,
+    accentText: "text-purple-400",
+    nextTier: "Level 3",
     nextThreshold: 525,
   },
   waitlist: {
     label: "Waitlist",
-    color: "#6b7280″,
+    color: "#6b7280",
     bg: "rgba(107,114,128,0.12)",
     border: "rgba(107,114,128,0.25)",
-    accentText: "text-gray-400″,
-    nextTier: "Level 4″,
+    accentText: "text-gray-400",
+    nextTier: "Level 4",
     nextThreshold: 2125,
   },
 };
@@ -197,10 +197,10 @@ function CopyButton({ text }: { text: string }) {
   return (
     <button
       onClick={handleCopy}
-      className="flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-semibold transition-all shrink-0″
+      className="flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-semibold transition-all shrink-0"
       style={{
         background: copied ? "rgba(245,230,66,0.15)" : "rgba(245,230,66,0.1)",
-        color: copied ? "#F5E642″ : "#F5E642",
+        color: copied ? "#F5E642" : "#F5E642",
         border: `1px solid ${copied ? "rgba(245,230,66,0.5)" : "rgba(245,230,66,0.25)"}`,
       }}
     >
@@ -218,17 +218,17 @@ function MetricCard({
 }) {
   return (
     <div
-      className="rounded-2xl p-5 flex flex-col gap-2″
+      className="rounded-2xl p-5 flex flex-col gap-2"
       style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)" }}
     >
       <div className="flex items-center justify-between">
-        <p className="text-xs font-semibold uppercase tracking-wider text-gray-400″>{label}</p>
+        <p className="text-xs font-semibold uppercase tracking-wider text-gray-400">{label}</p>
         <div className="w-8 h-8 rounded-xl flex items-center justify-center" style={{ backgroundColor: `${color}20` }}>
           <Icon size={15} style={{ color }} />
         </div>
       </div>
       <p className="text-3xl font-bold text-white">{value}</p>
-      <p className="text-xs text-gray-500″>{sub}</p>
+      <p className="text-xs text-gray-500">{sub}</p>
     </div>
   );
 }
@@ -271,33 +271,33 @@ function EarningsCalculator({ tier }: { tier: string }) {
 
   return (
     <div
-      className="rounded-2xl p-6″
+      className="rounded-2xl p-6"
       style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)" }}
     >
-      <div className="flex items-center gap-3 mb-5″>
+      <div className="flex items-center gap-3 mb-5">
         <div className="w-9 h-9 rounded-xl flex items-center justify-center" style={{ background: "rgba(245,230,66,0.12)" }}>
-          <BarChart3 size={18} style={{ color: "#F5E642″ }} />
+          <BarChart3 size={18} style={{ color: "#F5E642" }} />
         </div>
         <div>
           <h3 className="font-bold text-white text-sm">Earnings Calculator</h3>
-          <p className="text-xs text-gray-400″>Projected monthly from your network</p>
+          <p className="text-xs text-gray-400">Projected monthly from your network</p>
         </div>
       </div>
 
       {!isFoundingNetwork ? (
-        <div className="text-center py-6″>
-          <p className="text-gray-400 text-sm mb-3″>Join the founding network to unlock override earnings.</p>
+        <div className="text-center py-6">
+          <p className="text-gray-400 text-sm mb-3">Join the founding network to unlock override earnings.</p>
           <Link href="/join">
-            <span className="text-sm font-semibold" style={{ color: "#F5E642″ }}>
+            <span className="text-sm font-semibold" style={{ color: "#F5E642" }}>
               Get your founding spot →
             </span>
           </Link>
         </div>
       ) : (
         <>
-          <div className="mb-5″>
-            <div className="flex items-center justify-between mb-2″>
-              <label className="text-xs text-gray-400″>Direct referrals you recruit</label>
+          <div className="mb-5">
+            <div className="flex items-center justify-between mb-2">
+              <label className="text-xs text-gray-400">Direct referrals you recruit</label>
               <span className="text-sm font-bold text-white">{extraReferrals} pros</span>
             </div>
             <input
@@ -306,9 +306,9 @@ function EarningsCalculator({ tier }: { tier: string }) {
               max={50}
               value={extraReferrals}
               onChange={(e) => setExtraReferrals(Number(e.target.value))}
-              className="w-full max-w-full accent-yellow-400″
+              className="w-full max-w-full accent-yellow-400"
             />
-            <div className="flex justify-between text-xs text-gray-600 mt-1″>
+            <div className="flex justify-between text-xs text-gray-600 mt-1">
               <span>1</span>
               <span>50</span>
             </div>
@@ -316,11 +316,11 @@ function EarningsCalculator({ tier }: { tier: string }) {
 
           {monthlyEarnings && (
             <>
-              <div className="space-y-2 mb-4″>
+              <div className="space-y-2 mb-4">
                 <div className="flex justify-between items-center py-2 px-3 rounded-xl" style={{ background: "rgba(255,255,255,0.04)" }}>
                   <div>
-                    <p className="text-xs text-gray-400″>Job overrides ({FOUNDING_RATES.networkJob.l1 * 100}% of platform fee/job)</p>
-                    <p className="text-[10px] text-gray-600″>
+                    <p className="text-xs text-gray-400">Job overrides ({FOUNDING_RATES.networkJob.l1 * 100}% of platform fee/job)</p>
+                    <p className="text-[10px] text-gray-600">
                       {monthlyEarnings.network.l1}L1 + {monthlyEarnings.network.l2}L2 + {monthlyEarnings.network.l3}L3 + {monthlyEarnings.network.l4}L4 pros
                     </p>
                   </div>
@@ -328,8 +328,8 @@ function EarningsCalculator({ tier }: { tier: string }) {
                 </div>
                 <div className="flex justify-between items-center py-2 px-3 rounded-xl" style={{ background: "rgba(255,255,255,0.04)" }}>
                   <div>
-                    <p className="text-xs text-gray-400″>Subscription overrides ({FOUNDING_RATES.networkSubs.l1 * 100}% of $149/mo)</p>
-                    <p className="text-[10px] text-gray-600″>Recurring monthly from network subscriptions</p>
+                    <p className="text-xs text-gray-400">Subscription overrides ({FOUNDING_RATES.networkSubs.l1 * 100}% of $149/mo)</p>
+                    <p className="text-[10px] text-gray-600">Recurring monthly from network subscriptions</p>
                   </div>
                   <span className="text-sm font-bold text-white">${monthlyEarnings.subOverrides.toLocaleString()}</span>
                 </div>
@@ -340,10 +340,10 @@ function EarningsCalculator({ tier }: { tier: string }) {
                 style={{ background: "rgba(245,230,66,0.1)", border: "1px solid rgba(245,230,66,0.25)" }}
               >
                 <div>
-                  <p className="text-xs font-semibold" style={{ color: "#F5E642″ }}>Projected Monthly</p>
-                  <p className="text-[10px] text-gray-500″>Based on avg $800 job, 8 jobs/mo/pro</p>
+                  <p className="text-xs font-semibold" style={{ color: "#F5E642" }}>Projected Monthly</p>
+                  <p className="text-[10px] text-gray-500">Based on avg $800 job, 8 jobs/mo/pro</p>
                 </div>
-                <p className="text-2xl font-bold" style={{ color: "#F5E642″ }}>
+                <p className="text-2xl font-bold" style={{ color: "#F5E642" }}>
                   ${monthlyEarnings.total.toLocaleString()}
                 </p>
               </div>
@@ -364,23 +364,23 @@ function TrialBanner({ joinedAt }: { joinedAt?: string | null }) {
 
   return (
     <div
-      className="rounded-2xl px-5 py-4 flex items-center gap-4″
+      className="rounded-2xl px-5 py-4 flex items-center gap-4"
       style={{
         background: "linear-gradient(135deg, rgba(59,130,246,0.12), rgba(59,130,246,0.05))",
         border: "1px solid rgba(59,130,246,0.3)",
       }}
     >
       <div
-        className="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0″
+        className="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0"
         style={{ background: "rgba(59,130,246,0.15)" }}
       >
-        <Clock size={18} style={{ color: "#3b82f6″ }} />
+        <Clock size={18} style={{ color: "#3b82f6" }} />
       </div>
-      <div className="flex-1 min-w-0″>
+      <div className="flex-1 min-w-0">
         <p className="text-sm font-bold text-white">
           Your 90-day free trial — {daysLeft} days remaining
         </p>
-        <p className="text-xs text-gray-400 mt-0.5″>
+        <p className="text-xs text-gray-400 mt-0.5">
           No credit card required until your trial ends. You won't be charged automatically.
         </p>
       </div>
@@ -388,7 +388,7 @@ function TrialBanner({ joinedAt }: { joinedAt?: string | null }) {
         className="flex-shrink-0 text-right"
         style={{ minWidth: 48 }}
       >
-        <p className="text-2xl font-bold" style={{ color: "#3b82f6″ }}>{daysLeft}</p>
+        <p className="text-2xl font-bold" style={{ color: "#3b82f6" }}>{daysLeft}</p>
         <p className="text-[10px] text-gray-500 uppercase tracking-wider">days left</p>
       </div>
     </div>
@@ -398,37 +398,37 @@ function TrialBanner({ joinedAt }: { joinedAt?: string | null }) {
 function EarningsSummaryCard() {
   return (
     <div
-      className="rounded-2xl p-6″
+      className="rounded-2xl p-6"
       style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)" }}
     >
-      <div className="flex items-center justify-between mb-5″>
-        <div className="flex items-center gap-3″>
+      <div className="flex items-center justify-between mb-5">
+        <div className="flex items-center gap-3">
           <div className="w-9 h-9 rounded-xl flex items-center justify-center" style={{ background: "rgba(34,197,94,0.12)" }}>
             <DollarSign size={18} style={{ color: "#22c55e" }} />
           </div>
           <div>
             <h3 className="font-bold text-white text-sm">Your Earnings This Month</h3>
-            <p className="text-xs text-gray-400″>May 2026 — trial period</p>
+            <p className="text-xs text-gray-400">May 2026 — trial period</p>
           </div>
         </div>
         <span className="text-xs px-2.5 py-1 rounded-full font-semibold" style={{ background: "rgba(34,197,94,0.1)", color: "#22c55e", border: "1px solid rgba(34,197,94,0.25)" }}>
           Getting Started
         </span>
       </div>
-      <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-4″>
+      <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-4">
         {[
-          { label: "Jobs Completed", value: "$0″, sub: "Log your first job →" },
-          { label: "Commissions Earned", value: "$0″, sub: "Earned per job logged" },
-          { label: "Network Earnings", value: "$0″, sub: "From your downline" },
+          { label: "Jobs Completed", value: "$0", sub: "Log your first job →" },
+          { label: "Commissions Earned", value: "$0", sub: "Earned per job logged" },
+          { label: "Network Earnings", value: "$0", sub: "From your downline" },
         ].map(({ label, value, sub }) => (
           <div
             key={label}
             className="rounded-xl p-4 text-center"
             style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.06)" }}
           >
-            <p className="text-2xl font-bold text-white mb-1″>{value}</p>
-            <p className="text-[10px] font-semibold uppercase tracking-wider text-gray-400 mb-1″>{label}</p>
-            <p className="text-[10px] text-gray-600″>{sub}</p>
+            <p className="text-2xl font-bold text-white mb-1">{value}</p>
+            <p className="text-[10px] font-semibold uppercase tracking-wider text-gray-400 mb-1">{label}</p>
+            <p className="text-[10px] text-gray-600">{sub}</p>
           </div>
         ))}
       </div>
@@ -441,14 +441,14 @@ function EarningsSummaryCard() {
 
 function QuickActionCards() {
   const actions = [
-    { label: "Log a Job", description: "Record completed work", icon: Briefcase, href: "/job-log", color: "#F5E642″, bg: "rgba(245,230,66,0.12)", border: "rgba(245,230,66,0.3)" },
-    { label: "Upload Photo", description: "Add job photos", icon: Camera, href: "/photo-upload", color: "#3b82f6″, bg: "rgba(59,130,246,0.12)", border: "rgba(59,130,246,0.3)" },
+    { label: "Log a Job", description: "Record completed work", icon: Briefcase, href: "/job-log", color: "#F5E642", bg: "rgba(245,230,66,0.12)", border: "rgba(245,230,66,0.3)" },
+    { label: "Upload Photo", description: "Add job photos", icon: Camera, href: "/photo-upload", color: "#3b82f6", bg: "rgba(59,130,246,0.12)", border: "rgba(59,130,246,0.3)" },
     { label: "Invite a Pro", description: "Earn override income", icon: UserPlus, href: "/dashboard/referral", color: "#22c55e", bg: "rgba(34,197,94,0.12)", border: "rgba(34,197,94,0.3)" },
-    { label: "View Network", description: "See your downline", icon: Network, href: "/network-tree", color: "#8b5cf6″, bg: "rgba(139,92,246,0.12)", border: "rgba(139,92,246,0.3)" },
+    { label: "View Network", description: "See your downline", icon: Network, href: "/network-tree", color: "#8b5cf6", bg: "rgba(139,92,246,0.12)", border: "rgba(139,92,246,0.3)" },
   ];
 
   return (
-    <div className="grid grid-cols-2 sm:grid-cols-4 gap-4″>
+    <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
       {actions.map(({ label, description, icon: Icon, href, color, bg, border }) => (
         <Link key={label} href={href}>
           <div
@@ -463,7 +463,7 @@ function QuickActionCards() {
             </div>
             <div>
               <p className="text-sm font-bold text-white">{label}</p>
-              <p className="text-xs text-gray-400 mt-0.5″>{description}</p>
+              <p className="text-xs text-gray-400 mt-0.5">{description}</p>
             </div>
             <ChevronRight size={14} style={{ color }} className="self-end" />
           </div>
@@ -474,7 +474,7 @@ function QuickActionCards() {
 }
 
 function GettingStartedChecklist() {
-  const STORAGE_KEY = "prolnk_checklist_v1″;
+  const STORAGE_KEY = "prolnk_checklist_v1";
 
   const [checked, setChecked] = useState<Set<string>>(() => {
     try {
@@ -505,20 +505,20 @@ function GettingStartedChecklist() {
 
   return (
     <div
-      className="rounded-2xl p-6″
+      className="rounded-2xl p-6"
       style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)" }}
     >
-      <div className="flex items-center justify-between mb-5″>
-        <div className="flex items-center gap-3″>
+      <div className="flex items-center justify-between mb-5">
+        <div className="flex items-center gap-3">
           <div className="w-9 h-9 rounded-xl flex items-center justify-center" style={{ background: "rgba(245,230,66,0.12)" }}>
-            <CheckSquare size={18} style={{ color: "#F5E642″ }} />
+            <CheckSquare size={18} style={{ color: "#F5E642" }} />
           </div>
           <div>
             <h3 className="font-bold text-white text-sm">Getting Started</h3>
-            <p className="text-xs text-gray-400″>{completedCount} of {items.length} complete</p>
+            <p className="text-xs text-gray-400">{completedCount} of {items.length} complete</p>
           </div>
         </div>
-        <div className="flex gap-1″>
+        <div className="flex gap-1">
           {items.map((item) => (
             <div
               key={item.key}
@@ -531,12 +531,12 @@ function GettingStartedChecklist() {
 
       <div className="w-full h-1.5 rounded-full mb-5 overflow-hidden" style={{ background: "rgba(255,255,255,0.08)" }}>
         <div
-          className="h-full rounded-full transition-all duration-500″
+          className="h-full rounded-full transition-all duration-500"
           style={{ width: `${(completedCount / items.length) * 100}%`, background: "linear-gradient(90deg, #22c55e, #16a34a)" }}
         />
       </div>
 
-      <div className="space-y-2″>
+      <div className="space-y-2">
         {items.map(({ key, label, href }) => {
           const done = checked.has(key);
           return (
@@ -548,19 +548,19 @@ function GettingStartedChecklist() {
               <button onClick={() => toggle(key)} className="flex-shrink-0 transition-all">
                 {done
                   ? <CheckSquare size={18} style={{ color: "#22c55e" }} />
-                  : <Square size={18} className="text-gray-500″ />}
+                  : <Square size={18} className="text-gray-500" />}
               </button>
               <p className={`flex-1 text-sm font-medium ${done ? "line-through text-gray-500" : "text-white"}`}>
                 {label}
               </p>
               {!done && (
                 <Link href={href}>
-                  <span className="text-xs font-semibold flex items-center gap-1″ style={{ color: "#F5E642" }}>
+                  <span className="text-xs font-semibold flex items-center gap-1" style={{ color: "#F5E642" }}>
                     Go <ChevronRight size={11} />
                   </span>
                 </Link>
               )}
-              {done && <Check size={14} style={{ color: "#22c55e" }} className="flex-shrink-0″ />}
+              {done && <Check size={14} style={{ color: "#22c55e" }} className="flex-shrink-0" />}
             </div>
           );
         })}
@@ -586,7 +586,7 @@ const SPOTLIGHT_TIPS: SpotlightTip[] = [
     title: "Did you know? Referrals compound 4 levels deep",
     body: "When your L1 referral recruits someone, you earn 4% on that person's jobs — and it cascades further. 10 direct referrals can easily become 120+ pros in your network.",
     icon: Network,
-    color: "#3b82f6″,
+    color: "#3b82f6",
     bg: "rgba(59,130,246,0.1)",
     href: "/dashboard/referral",
     cta: "Grow your network",
@@ -613,7 +613,7 @@ const SPOTLIGHT_TIPS: SpotlightTip[] = [
     title: "Did you know? Photo uploads add credibility points",
     body: "Partners who upload before/after job photos rank higher in the homeowner-facing directory and receive preferential lead routing.",
     icon: Camera,
-    color: "#8b5cf6″,
+    color: "#8b5cf6",
     bg: "rgba(139,92,246,0.1)",
     href: "/photo-upload",
     cta: "Upload photos",
@@ -622,7 +622,7 @@ const SPOTLIGHT_TIPS: SpotlightTip[] = [
     title: "Did you know? The Exchange lets pros trade work",
     body: "The ProLnk Exchange is a peer-to-peer marketplace where pros can post jobs they need help with or pick up extra work in their trade area.",
     icon: Map,
-    color: "#F5E642″,
+    color: "#F5E642",
     bg: "rgba(245,230,66,0.1)",
     href: "/exchange/home",
     cta: "Explore the Exchange",
@@ -631,7 +631,7 @@ const SPOTLIGHT_TIPS: SpotlightTip[] = [
     title: "Did you know? Training Academy boosts your score",
     body: "Complete courses in the Training Academy to earn certifications that increase your trust score with homeowners and improve algorithm ranking.",
     icon: BookOpen,
-    color: "#3b82f6″,
+    color: "#3b82f6",
     bg: "rgba(59,130,246,0.1)",
     href: "/dashboard/academy",
     cta: "Start learning",
@@ -665,33 +665,33 @@ function FeatureSpotlight() {
 
   return (
     <div
-      className="rounded-2xl p-6″
+      className="rounded-2xl p-6"
       style={{ background: bg, border: `1px solid ${color}33` }}
     >
-      <div className="flex items-start gap-4″>
+      <div className="flex items-start gap-4">
         <div
-          className="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0 mt-0.5″
+          className="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0 mt-0.5"
           style={{ background: "rgba(255,255,255,0.08)" }}
         >
           <Icon size={20} style={{ color }} />
         </div>
-        <div className="flex-1 min-w-0″>
-          <div className="flex items-center justify-between gap-2 mb-2″>
+        <div className="flex-1 min-w-0">
+          <div className="flex items-center justify-between gap-2 mb-2">
             <p className="text-xs font-semibold uppercase tracking-wider" style={{ color }}>
               Feature Spotlight
             </p>
             <button
               onClick={rotate}
-              className="text-xs text-gray-500 hover:text-gray-300 transition-colors flex items-center gap-1″
+              className="text-xs text-gray-500 hover:text-gray-300 transition-colors flex items-center gap-1"
             >
               Next tip <ArrowRight size={10} />
             </button>
           </div>
-          <p className="text-sm font-bold text-white mb-1.5″>{title}</p>
-          <p className="text-xs text-gray-400 leading-relaxed mb-4″>{body}</p>
+          <p className="text-sm font-bold text-white mb-1.5">{title}</p>
+          <p className="text-xs text-gray-400 leading-relaxed mb-4">{body}</p>
           <Link href={href}>
             <span
-              className="inline-flex items-center gap-1.5 text-xs font-semibold transition-all hover:opacity-80″
+              className="inline-flex items-center gap-1.5 text-xs font-semibold transition-all hover:opacity-80"
               style={{ color }}
             >
               {cta} <ChevronRight size={12} />
@@ -731,10 +731,10 @@ type NotifRecord = {
 
 const NOTIF_TYPE_META: Record<string, { icon: React.ReactNode; color: string; bg: string }> = {
   new_lead:        { icon: <Zap size={14} />,      color: "#f59e0b", bg: "rgba(245,158,11,0.15)" },
-  lead_expired:    { icon: <Info size={14} />,      color: "#ef4444″, bg: "rgba(239,68,68,0.15)" },
+  lead_expired:    { icon: <Info size={14} />,      color: "#ef4444", bg: "rgba(239,68,68,0.15)" },
   commission_paid: { icon: <DollarSign size={14} />, color: "#22c55e", bg: "rgba(34,197,94,0.15)" },
   commission:      { icon: <DollarSign size={14} />, color: "#22c55e", bg: "rgba(34,197,94,0.15)" },
-  network:         { icon: <Network size={14} />,   color: "#3b82f6″, bg: "rgba(59,130,246,0.15)" },
+  network:         { icon: <Network size={14} />,   color: "#3b82f6", bg: "rgba(59,130,246,0.15)" },
   tips:            { icon: <Lightbulb size={14} />, color: "#f59e0b", bg: "rgba(245,158,11,0.15)" },
   system:          { icon: <Info size={14} />,      color: "#9ca3af", bg: "rgba(156,163,175,0.15)" },
 };
@@ -784,11 +784,11 @@ function NotificationPopover() {
         style={{ background: open ? "rgba(245,230,66,0.15)" : "rgba(255,255,255,0.06)", border: "1px solid rgba(255,255,255,0.1)" }}
         aria-label="Notifications"
       >
-        <Bell size={17} style={{ color: open ? "#F5E642″ : "#9ca3af" }} />
+        <Bell size={17} style={{ color: open ? "#F5E642" : "#9ca3af" }} />
         {unreadCount > 0 && (
           <span
             className="absolute -top-1 -right-1 min-w-[16px] h-4 px-0.5 text-white text-[10px] font-bold rounded-full flex items-center justify-center leading-none"
-            style={{ background: "#ef4444″ }}
+            style={{ background: "#ef4444" }}
           >
             {unreadCount > 9 ? "9+" : unreadCount}
           </span>
@@ -798,20 +798,20 @@ function NotificationPopover() {
       {open && (
         <div
           className="absolute right-0 top-11 w-80 rounded-2xl shadow-2xl z-50 overflow-hidden"
-          style={{ background: "#0f1e35″, border: "1px solid rgba(255,255,255,0.1)" }}
+          style={{ background: "#0f1e35", border: "1px solid rgba(255,255,255,0.1)" }}
         >
           {/* Header */}
-          <div className="flex items-center justify-between px-4 py-3″ style={{ borderBottom: "1px solid rgba(255,255,255,0.08)" }}>
-            <div className="flex items-center gap-2″>
-              <Bell size={14} style={{ color: "#F5E642″ }} />
+          <div className="flex items-center justify-between px-4 py-3" style={{ borderBottom: "1px solid rgba(255,255,255,0.08)" }}>
+            <div className="flex items-center gap-2">
+              <Bell size={14} style={{ color: "#F5E642" }} />
               <span className="text-sm font-semibold text-white">Notifications</span>
               {unreadCount > 0 && (
-                <span className="px-1.5 py-0.5 rounded-full text-[10px] font-bold" style={{ background: "#ef4444″, color: "#fff" }}>
+                <span className="px-1.5 py-0.5 rounded-full text-[10px] font-bold" style={{ background: "#ef4444", color: "#fff" }}>
                   {unreadCount}
                 </span>
               )}
             </div>
-            <div className="flex items-center gap-2″>
+            <div className="flex items-center gap-2">
               {unreadCount > 0 && (
                 <button
                   onClick={() => markAllRead.mutate()}
@@ -831,7 +831,7 @@ function NotificationPopover() {
             {notifications.length === 0 ? (
               <div className="py-8 text-center">
                 <Bell size={28} className="mx-auto mb-2 opacity-20 text-white" />
-                <p className="text-sm text-gray-500″>No notifications yet</p>
+                <p className="text-sm text-gray-500">No notifications yet</p>
               </div>
             ) : (
               notifications.map((n) => {
@@ -840,19 +840,19 @@ function NotificationPopover() {
                 return (
                   <div
                     key={n.id}
-                    className="group relative flex gap-3 px-4 py-3 transition-colors hover:bg-white/5″
+                    className="group relative flex gap-3 px-4 py-3 transition-colors hover:bg-white/5"
                     style={{
                       borderBottom: "1px solid rgba(255,255,255,0.05)",
                       background: isUnread ? "rgba(245,158,11,0.04)" : "transparent",
                     }}
                   >
                     <div
-                      className="w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0 mt-0.5″
+                      className="w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0 mt-0.5"
                       style={{ background: meta.bg, color: meta.color }}
                     >
                       {meta.icon}
                     </div>
-                    <div className="flex-1 min-w-0 pr-7″>
+                    <div className="flex-1 min-w-0 pr-7">
                       <p className={`text-sm font-medium truncate ${isUnread ? "text-white" : "text-gray-400"}`}>
                         {n.title}
                         {isUnread && (
@@ -860,8 +860,8 @@ function NotificationPopover() {
                         )}
                       </p>
                       <p className="text-xs text-gray-500 line-clamp-2 mt-0.5 leading-relaxed">{n.message}</p>
-                      <div className="flex items-center justify-between mt-1.5″>
-                        <span className="text-[10px] text-gray-600 flex items-center gap-0.5″>
+                      <div className="flex items-center justify-between mt-1.5">
+                        <span className="text-[10px] text-gray-600 flex items-center gap-0.5">
                           <Clock size={10} /> {(() => {
                             if (!n.createdAt) return "";
                             const diff = Math.floor((Date.now() - new Date(n.createdAt).getTime()) / 1000);
@@ -874,7 +874,7 @@ function NotificationPopover() {
                         {n.actionUrl && (
                           <Link href={n.actionUrl}>
                             <span
-                              className="text-[10px] font-semibold flex items-center gap-0.5 hover:opacity-80″
+                              className="text-[10px] font-semibold flex items-center gap-0.5 hover:opacity-80"
                               style={{ color: meta.color }}
                               onClick={() => setOpen(false)}
                             >
@@ -888,7 +888,7 @@ function NotificationPopover() {
                       <button
                         onClick={(e) => { e.stopPropagation(); markRead.mutate({ ids: [n.id] }); }}
                         title="Mark as read"
-                        className="absolute top-3 right-3 opacity-0 group-hover:opacity-100 transition-opacity p-1 rounded-md hover:bg-white/10″
+                        className="absolute top-3 right-3 opacity-0 group-hover:opacity-100 transition-opacity p-1 rounded-md hover:bg-white/10"
                       >
                         <Check size={12} style={{ color: "#f59e0b" }} />
                       </button>
@@ -907,7 +907,7 @@ function NotificationPopover() {
             <Link href="/dashboard/notifications">
               <span
                 className="text-xs font-semibold flex items-center gap-1 hover:opacity-80 transition-opacity"
-                style={{ color: "#F5E642″ }}
+                style={{ color: "#F5E642" }}
                 onClick={() => setOpen(false)}
               >
                 View all <ArrowRight size={11} />
@@ -950,42 +950,42 @@ function StormOpportunityAlert() {
 
       <button
         onClick={() => setDismissed(true)}
-        className="absolute top-3 right-3 w-6 h-6 rounded-lg flex items-center justify-center transition-colors hover:bg-white/10″
+        className="absolute top-3 right-3 w-6 h-6 rounded-lg flex items-center justify-center transition-colors hover:bg-white/10"
       >
-        <X size={13} className="text-gray-400″ />
+        <X size={13} className="text-gray-400" />
       </button>
 
-      <div className="flex items-start gap-4 pr-6″>
+      <div className="flex items-start gap-4 pr-6">
         <div
-          className="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0″
+          className="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0"
           style={{ background: "rgba(220,38,38,0.2)" }}
         >
-          <CloudLightning size={20} style={{ color: "#ef4444″ }} />
+          <CloudLightning size={20} style={{ color: "#ef4444" }} />
         </div>
-        <div className="flex-1 min-w-0″>
-          <div className="flex items-center gap-2 mb-1″>
+        <div className="flex-1 min-w-0">
+          <div className="flex items-center gap-2 mb-1">
             <span
               className="text-[10px] font-bold px-2 py-0.5 rounded-full uppercase tracking-wider"
-              style={{ background: "rgba(220,38,38,0.2)", color: "#ef4444″, border: "1px solid rgba(220,38,38,0.3)" }}
+              style={{ background: "rgba(220,38,38,0.2)", color: "#ef4444", border: "1px solid rgba(220,38,38,0.3)" }}
             >
               Storm Alert
             </span>
-            <span className="text-[10px] text-gray-500 flex items-center gap-1″>
+            <span className="text-[10px] text-gray-500 flex items-center gap-1">
               <span className="w-1.5 h-1.5 rounded-full bg-red-500 animate-pulse inline-block" />
               Active now
             </span>
           </div>
-          <p className="text-sm font-bold text-white mb-0.5″>
+          <p className="text-sm font-bold text-white mb-0.5">
             Hail alert for Frisco / Allen ZIP 75034 — 3 active leads available NOW
           </p>
-          <p className="text-xs text-gray-400 mb-3″>
+          <p className="text-xs text-gray-400 mb-3">
             Quarter-sized hail reported. Roofing, siding, and gutter jobs are surging in your service area.
             Homeowners are requesting estimates right now.
           </p>
           <Link href="/inbound-leads">
             <span
               className="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl text-xs font-bold transition-all"
-              style={{ background: "#ef4444″, color: "#fff" }}
+              style={{ background: "#ef4444", color: "#fff" }}
             >
               <AlertTriangle size={12} />
               View Active Leads <ChevronRight size={12} />
@@ -1001,27 +1001,27 @@ function StormOpportunityAlert() {
 
 function WeeklyGoalProgress() {
   const goals = [
-    { label: "Jobs", current: 2, target: 5, color: "#14b8a6″ },
-    { label: "Earnings", current: 780, target: 1500, color: "#14b8a6″, prefix: "$", format: (v: number) => `$${v.toLocaleString()}` },
-    { label: "Referrals", current: 1, target: 3, color: "#14b8a6″ },
+    { label: "Jobs", current: 2, target: 5, color: "#14b8a6" },
+    { label: "Earnings", current: 780, target: 1500, color: "#14b8a6", prefix: "$", format: (v: number) => `$${v.toLocaleString()}` },
+    { label: "Referrals", current: 1, target: 3, color: "#14b8a6" },
   ];
 
   return (
     <div
-      className="rounded-2xl p-5″
+      className="rounded-2xl p-5"
       style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)" }}
     >
-      <div className="flex items-center justify-between mb-4″>
-        <div className="flex items-center gap-2.5″>
+      <div className="flex items-center justify-between mb-4">
+        <div className="flex items-center gap-2.5">
           <div
             className="w-8 h-8 rounded-xl flex items-center justify-center"
             style={{ background: "rgba(20,184,166,0.12)" }}
           >
-            <Target size={16} style={{ color: "#14b8a6″ }} />
+            <Target size={16} style={{ color: "#14b8a6" }} />
           </div>
           <div>
             <h3 className="text-sm font-bold text-white leading-none">This Week's Goals</h3>
-            <p className="text-[11px] text-gray-500 mt-0.5″>Resets every Monday</p>
+            <p className="text-[11px] text-gray-500 mt-0.5">Resets every Monday</p>
           </div>
         </div>
         <Link href="/job-log">
@@ -1031,23 +1031,23 @@ function WeeklyGoalProgress() {
         </Link>
       </div>
 
-      <div className="space-y-3″>
+      <div className="space-y-3">
         {goals.map((g) => {
           const pct = Math.min(100, Math.round((g.current / g.target) * 100));
           const display = g.format ? g.format(g.current) : g.current;
           const targetDisplay = g.format ? g.format(g.target) : g.target;
           return (
             <div key={g.label}>
-              <div className="flex items-center justify-between mb-1″>
-                <span className="text-xs text-gray-400″>{g.label}</span>
+              <div className="flex items-center justify-between mb-1">
+                <span className="text-xs text-gray-400">{g.label}</span>
                 <span className="text-xs font-semibold text-white">
                   {display}
-                  <span className="text-gray-600″> / {targetDisplay}</span>
+                  <span className="text-gray-600"> / {targetDisplay}</span>
                 </span>
               </div>
               <div className="h-1.5 rounded-full overflow-hidden" style={{ background: "rgba(255,255,255,0.08)" }}>
                 <div
-                  className="h-full rounded-full transition-all duration-700″
+                  className="h-full rounded-full transition-all duration-700"
                   style={{
                     width: `${pct}%`,
                     background: `linear-gradient(90deg, ${g.color}, ${g.color}99)`,
@@ -1077,10 +1077,10 @@ export default function PartnerHome() {
 
   if (statusLoading) {
     return (
-      <div className="flex items-center justify-center min-h-[60vh]" style={{ background: "#0A1628″ }}>
-        <div className="flex flex-col items-center gap-3″>
-          <Loader2 className="w-8 h-8 animate-spin" style={{ color: "#F5E642″ }} />
-          <p className="text-sm text-gray-400″>Loading your dashboard...</p>
+      <div className="flex items-center justify-center min-h-[60vh]" style={{ background: "#0A1628" }}>
+        <div className="flex flex-col items-center gap-3">
+          <Loader2 className="w-8 h-8 animate-spin" style={{ color: "#F5E642" }} />
+          <p className="text-sm text-gray-400">Loading your dashboard...</p>
         </div>
       </div>
     );
@@ -1089,20 +1089,20 @@ export default function PartnerHome() {
   if (!status) {
     return (
       <div
-        className="flex flex-col items-center justify-center min-h-[60vh] text-center px-6″
-        style={{ background: "#0A1628″ }}
+        className="flex flex-col items-center justify-center min-h-[60vh] text-center px-6"
+        style={{ background: "#0A1628" }}
       >
-        <div className="w-16 h-16 rounded-2xl flex items-center justify-center mb-5″ style={{ background: "rgba(245,230,66,0.1)" }}>
-          <Zap size={28} style={{ color: "#F5E642″ }} />
+        <div className="w-16 h-16 rounded-2xl flex items-center justify-center mb-5" style={{ background: "rgba(245,230,66,0.1)" }}>
+          <Zap size={28} style={{ color: "#F5E642" }} />
         </div>
-        <h2 className="text-2xl font-bold text-white mb-2″>Not on the waitlist yet</h2>
+        <h2 className="text-2xl font-bold text-white mb-2">Not on the waitlist yet</h2>
         <p className="text-gray-400 mb-6 max-w-sm text-sm">
           Reserve your founding partner spot to unlock this dashboard and start building your network.
         </p>
         <Link href="/join">
           <span
             className="inline-flex items-center gap-2 px-6 py-3 rounded-xl text-sm font-bold transition-all"
-            style={{ background: "#F5E642″, color: "#0A1628" }}
+            style={{ background: "#F5E642", color: "#0A1628" }}
           >
             Claim Your Spot <ChevronRight size={16} />
           </span>
@@ -1128,9 +1128,9 @@ export default function PartnerHome() {
   const leaderRows = Array.isArray(leaderboard) ? leaderboard : [];
 
   return (
-    <div className="min-h-screen" style={{ background: "#0A1628″ }}>
+    <div className="min-h-screen" style={{ background: "#0A1628" }}>
       <OnboardingTour />
-      <div className="max-w-6xl mx-auto px-4 py-8 space-y-6″>
+      <div className="max-w-6xl mx-auto px-4 py-8 space-y-6">
 
         {/* ── Onboarding Banner ──────────────────────────────────────────── */}
         <OnboardingBanner />
@@ -1142,16 +1142,16 @@ export default function PartnerHome() {
         <StormOpportunityAlert />
 
         {/* ── Header ─────────────────────────────────────────────────────── */}
-        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4″>
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
           <div>
             <h1 className="text-2xl font-bold text-white">
               Welcome back, {status.firstName}
             </h1>
-            <p className="text-gray-400 text-sm mt-0.5″>
+            <p className="text-gray-400 text-sm mt-0.5">
               {status.businessType || "Home Service Professional"} · {status.primaryCity}, {status.primaryState}
             </p>
           </div>
-          <div className="flex items-center gap-2″>
+          <div className="flex items-center gap-2">
             <span
               className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-sm font-bold"
               style={{ background: tierCfg.bg, color: tierCfg.color, border: `1px solid ${tierCfg.border}` }}
@@ -1160,7 +1160,7 @@ export default function PartnerHome() {
               {tierCfg.label}
             </span>
             {isFoundingNetwork && (
-              <span className="inline-flex items-center gap-1 px-3 py-1.5 rounded-full text-xs font-semibold bg-green-500/10 text-green-400 border border-green-500/20″>
+              <span className="inline-flex items-center gap-1 px-3 py-1.5 rounded-full text-xs font-semibold bg-green-500/10 text-green-400 border border-green-500/20">
                 <span className="w-1.5 h-1.5 rounded-full bg-green-400 animate-pulse" />
                 Active
               </span>
@@ -1170,20 +1170,20 @@ export default function PartnerHome() {
         </div>
 
         {/* ── Key Metrics ─────────────────────────────────────────────────── */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4″>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
           <MetricCard
             label="Waitlist Position"
             value={`#${status.position ?? "–"}`}
             sub="Lower = earlier access"
             icon={Trophy}
-            color="#F5E642″
+            color="#F5E642"
           />
           <MetricCard
             label="Referrals"
             value={status.referrals?.length ?? 0}
             sub="Pros you've referred"
             icon={Users}
-            color="#3b82f6″
+            color="#3b82f6"
           />
           <MetricCard
             label="Override Levels"
@@ -1212,16 +1212,16 @@ export default function PartnerHome() {
 
         {/* ── Referral Link Card ──────────────────────────────────────────── */}
         <div
-          className="rounded-2xl p-6″
+          className="rounded-2xl p-6"
           style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)" }}
         >
-          <div className="flex items-center gap-3 mb-4″>
+          <div className="flex items-center gap-3 mb-4">
             <div className="w-9 h-9 rounded-xl flex items-center justify-center" style={{ background: "rgba(245,230,66,0.12)" }}>
-              <Share2 size={18} style={{ color: "#F5E642″ }} />
+              <Share2 size={18} style={{ color: "#F5E642" }} />
             </div>
             <div>
               <h3 className="font-bold text-white text-sm">Your Referral Link</h3>
-              <p className="text-xs text-gray-400″>Share to recruit pros and earn network overrides</p>
+              <p className="text-xs text-gray-400">Share to recruit pros and earn network overrides</p>
             </div>
           </div>
 
@@ -1229,31 +1229,31 @@ export default function PartnerHome() {
             className="flex items-center gap-3 p-3 rounded-xl mb-4 overflow-hidden"
             style={{ background: "rgba(255,255,255,0.05)", border: "1px solid rgba(255,255,255,0.08)" }}
           >
-            <p className="flex-1 text-sm text-gray-300 truncate font-mono min-w-0″>{referralLink}</p>
+            <p className="flex-1 text-sm text-gray-300 truncate font-mono min-w-0">{referralLink}</p>
             <CopyButton text={referralLink} />
           </div>
 
-          <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 sm:gap-3″>
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 sm:gap-3">
             {[
               { label: "Referral Code", value: status.referralCode },
               { label: "L1 Job Override", value: `${FOUNDING_RATES.networkJob.l1 * 100}%` },
               { label: "L1 Sub Override", value: `${FOUNDING_RATES.networkSubs.l1 * 100}%` },
               { label: "Override Depth", value: overrideLevels > 0 ? `${overrideLevels} levels` : "—" },
             ].map(({ label, value }) => (
-              <div key={label} className="rounded-xl px-3 py-2.5″ style={{ background: "rgba(255,255,255,0.04)" }}>
-                <p className="text-[10px] text-gray-500 uppercase tracking-wider mb-1″>{label}</p>
+              <div key={label} className="rounded-xl px-3 py-2.5" style={{ background: "rgba(255,255,255,0.04)" }}>
+                <p className="text-[10px] text-gray-500 uppercase tracking-wider mb-1">{label}</p>
                 <p className="text-sm font-bold text-white">{value}</p>
               </div>
             ))}
           </div>
 
-          <div className="mt-4 flex flex-wrap gap-2″>
+          <div className="mt-4 flex flex-wrap gap-2">
             <a
               href={`https://twitter.com/intent/tweet?text=Just+joined+the+ProLnk+founding+network+%E2%80%94+real+recurring+income+for+home+service+pros.+Grab+your+spot%3A+${encodeURIComponent(referralLink)}`}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 px-4 py-2 rounded-lg text-xs font-semibold transition-all"
-              style={{ background: "rgba(29,161,242,0.12)", color: "#1da1f2″, border: "1px solid rgba(29,161,242,0.25)" }}
+              style={{ background: "rgba(29,161,242,0.12)", color: "#1da1f2", border: "1px solid rgba(29,161,242,0.25)" }}
             >
               Share on X <ArrowUpRight size={12} />
             </a>
@@ -1268,29 +1268,29 @@ export default function PartnerHome() {
         </div>
 
         {/* ── Earnings Calculator + My Referrals ─────────────────────────── */}
-        <div className="grid lg:grid-cols-2 gap-6″>
+        <div className="grid lg:grid-cols-2 gap-6">
           <EarningsCalculator tier={tier} />
 
           {/* My Referrals */}
           <div
-            className="rounded-2xl p-6″
+            className="rounded-2xl p-6"
             style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)" }}
           >
-            <div className="flex items-center gap-3 mb-5″>
+            <div className="flex items-center gap-3 mb-5">
               <div className="w-9 h-9 rounded-xl flex items-center justify-center" style={{ background: "rgba(59,130,246,0.12)" }}>
-                <Users size={18} style={{ color: "#3b82f6″ }} />
+                <Users size={18} style={{ color: "#3b82f6" }} />
               </div>
               <div>
                 <h3 className="font-bold text-white text-sm">My Referrals</h3>
-                <p className="text-xs text-gray-400″>Pros you've brought into your network</p>
+                <p className="text-xs text-gray-400">Pros you've brought into your network</p>
               </div>
             </div>
 
-            <div className="mb-4″>
+            <div className="mb-4">
               <Link href="/network-tree">
                 <span
                   className="inline-flex items-center gap-2 px-4 py-2 rounded-lg text-xs font-semibold transition-all"
-                  style={{ background: "rgba(245,230,66,0.1)", color: "#F5E642″, border: "1px solid rgba(245,230,66,0.25)" }}
+                  style={{ background: "rgba(245,230,66,0.1)", color: "#F5E642", border: "1px solid rgba(245,230,66,0.25)" }}
                 >
                   <Users size={13} />
                   View Network Tree
@@ -1301,36 +1301,36 @@ export default function PartnerHome() {
 
             {(!status.referrals || status.referrals.length === 0) ? (
               <div className="flex flex-col items-center justify-center py-8 text-center">
-                <div className="w-12 h-12 rounded-2xl flex items-center justify-center mb-3″ style={{ background: "rgba(255,255,255,0.05)" }}>
-                  <Gift size={22} className="text-gray-600″ />
+                <div className="w-12 h-12 rounded-2xl flex items-center justify-center mb-3" style={{ background: "rgba(255,255,255,0.05)" }}>
+                  <Gift size={22} className="text-gray-600" />
                 </div>
-                <p className="text-sm text-gray-400 mb-1″>No referrals yet</p>
+                <p className="text-sm text-gray-400 mb-1">No referrals yet</p>
                 <p className="text-xs text-gray-600 max-w-xs">
                   Share your link above. Every pro you recruit earns you a 7% override on their job commissions — forever.
                 </p>
               </div>
             ) : (
-              <div className="space-y-2″>
+              <div className="space-y-2">
                 {status.referrals.map((ref: { firstName: string; businessType: string; joinedAt?: string }, i: number) => (
                   <div
                     key={i}
                     className="flex items-center justify-between px-3 py-2.5 rounded-xl"
                     style={{ background: "rgba(255,255,255,0.04)" }}
                   >
-                    <div className="flex items-center gap-3″>
-                      <div className="w-8 h-8 rounded-full flex items-center justify-center text-xs font-bold" style={{ background: "rgba(59,130,246,0.15)", color: "#3b82f6″ }}>
+                    <div className="flex items-center gap-3">
+                      <div className="w-8 h-8 rounded-full flex items-center justify-center text-xs font-bold" style={{ background: "rgba(59,130,246,0.15)", color: "#3b82f6" }}>
                         {ref.firstName?.charAt(0)?.toUpperCase() ?? "?"}
                       </div>
                       <div>
                         <p className="text-sm font-semibold text-white">{ref.firstName}</p>
-                        <p className="text-xs text-gray-500″>{ref.businessType}</p>
+                        <p className="text-xs text-gray-500">{ref.businessType}</p>
                       </div>
                     </div>
                     <span className="text-xs text-green-400 font-medium">+7% override</span>
                   </div>
                 ))}
                 {status.referrals.length >= 5 && (
-                  <p className="text-xs text-center text-gray-600 pt-1″>Showing top 5</p>
+                  <p className="text-xs text-center text-gray-600 pt-1">Showing top 5</p>
                 )}
               </div>
             )}
@@ -1338,20 +1338,20 @@ export default function PartnerHome() {
         </div>
 
         {/* ── Tier Progress + Leaderboard ─────────────────────────────────── */}
-        <div className="grid lg:grid-cols-2 gap-6″>
+        <div className="grid lg:grid-cols-2 gap-6">
 
           {/* Tier Progress */}
           <div
-            className="rounded-2xl p-6″
+            className="rounded-2xl p-6"
             style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)" }}
           >
-            <div className="flex items-center gap-3 mb-5″>
+            <div className="flex items-center gap-3 mb-5">
               <div className="w-9 h-9 rounded-xl flex items-center justify-center" style={{ background: `${tierCfg.bg}` }}>
                 <Award size={18} style={{ color: tierCfg.color }} />
               </div>
               <div>
                 <h3 className="font-bold text-white text-sm">Tier Progress</h3>
-                <p className="text-xs text-gray-400″>Your founding network status</p>
+                <p className="text-xs text-gray-400">Your founding network status</p>
               </div>
             </div>
 
@@ -1360,7 +1360,7 @@ export default function PartnerHome() {
               style={{ background: tierCfg.bg, border: `1px solid ${tierCfg.border}` }}
             >
               <div>
-                <p className="text-xs text-gray-400 mb-0.5″>Current tier</p>
+                <p className="text-xs text-gray-400 mb-0.5">Current tier</p>
                 <p className="text-lg font-bold" style={{ color: tierCfg.color }}>{tierCfg.label}</p>
               </div>
               <Crown size={28} style={{ color: tierCfg.color, opacity: 0.5 }} />
@@ -1368,42 +1368,42 @@ export default function PartnerHome() {
 
             {tierCfg.nextTier ? (
               <>
-                <div className="flex justify-between text-xs text-gray-400 mb-2″>
+                <div className="flex justify-between text-xs text-gray-400 mb-2">
                   <span>{tierCfg.label}</span>
                   <span>{tierCfg.nextTier} (pos #{tierCfg.nextThreshold})</span>
                 </div>
-                <div className="h-2.5 rounded-full overflow-hidden mb-3″ style={{ background: "rgba(255,255,255,0.08)" }}>
+                <div className="h-2.5 rounded-full overflow-hidden mb-3" style={{ background: "rgba(255,255,255,0.08)" }}>
                   <div
-                    className="h-full rounded-full transition-all duration-700″
+                    className="h-full rounded-full transition-all duration-700"
                     style={{ width: `${tierProgressPct}%`, background: `linear-gradient(90deg, ${tierCfg.color}, ${tierCfg.color}88)` }}
                   />
                 </div>
-                <p className="text-xs text-gray-500″>
+                <p className="text-xs text-gray-500">
                   You are position <span className="text-white font-semibold">#{status.position}</span>.{" "}
                   {spotsToNext > 0
                     ? `Move up ${spotsToNext} positions to reach ${tierCfg.nextTier}.`
                     : `You have reached ${tierCfg.nextTier} threshold.`}
                 </p>
-                <p className="text-xs text-gray-600 mt-1″>
+                <p className="text-xs text-gray-600 mt-1">
                   Share your link — each referral moves you up the list faster.
                 </p>
               </>
             ) : (
-              <div className="text-center py-4″>
-                <Star size={24} style={{ color: tierCfg.color }} className="mx-auto mb-2″ />
+              <div className="text-center py-4">
+                <Star size={24} style={{ color: tierCfg.color }} className="mx-auto mb-2" />
                 <p className="text-sm font-bold" style={{ color: tierCfg.color }}>
                   You are at the Charter tier — the highest founding network rank.
                 </p>
-                <p className="text-xs text-gray-500 mt-1″>Maximum override depth (4 levels). Subscription locked at $149/mo.</p>
+                <p className="text-xs text-gray-500 mt-1">Maximum override depth (4 levels). Subscription locked at $149/mo.</p>
               </div>
             )}
 
-            <div className="mt-5 space-y-2″>
+            <div className="mt-5 space-y-2">
               {[
                 { label: "Charter", threshold: 25, emoji: "👑" },
                 { label: "Founding", threshold: 125, emoji: "⭐" },
-                { label: "Level 3″, threshold: 525, emoji: "🔷" },
-                { label: "Level 4″, threshold: 2125, emoji: "🟣" },
+                { label: "Level 3", threshold: 525, emoji: "🔷" },
+                { label: "Level 4", threshold: 2125, emoji: "🟣" },
               ].map(({ label, threshold, emoji }) => {
                 const pos = status.position ?? 99999;
                 const achieved = pos <= threshold;
@@ -1413,13 +1413,13 @@ export default function PartnerHome() {
                     className="flex items-center justify-between px-3 py-2 rounded-lg"
                     style={{ background: achieved ? "rgba(34,197,94,0.08)" : "rgba(255,255,255,0.03)" }}
                   >
-                    <div className="flex items-center gap-2″>
+                    <div className="flex items-center gap-2">
                       <span className="text-sm">{emoji}</span>
-                      <span className="text-xs font-medium" style={{ color: achieved ? "#22c55e" : "#6b7280″ }}>
+                      <span className="text-xs font-medium" style={{ color: achieved ? "#22c55e" : "#6b7280" }}>
                         {label}
                       </span>
                     </div>
-                    <span className="text-xs" style={{ color: achieved ? "#22c55e" : "#4b5563″ }}>
+                    <span className="text-xs" style={{ color: achieved ? "#22c55e" : "#4b5563" }}>
                       {achieved ? "Achieved" : `Top ${threshold} spots`}
                     </span>
                   </div>
@@ -1430,37 +1430,37 @@ export default function PartnerHome() {
 
           {/* Leaderboard */}
           <div
-            className="rounded-2xl p-6″
+            className="rounded-2xl p-6"
             style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)" }}
           >
-            <div className="flex items-center justify-between mb-5″>
-              <div className="flex items-center gap-3″>
+            <div className="flex items-center justify-between mb-5">
+              <div className="flex items-center gap-3">
                 <div className="w-9 h-9 rounded-xl flex items-center justify-center" style={{ background: "rgba(245,230,66,0.12)" }}>
-                  <Trophy size={18} style={{ color: "#F5E642″ }} />
+                  <Trophy size={18} style={{ color: "#F5E642" }} />
                 </div>
                 <div>
                   <h3 className="font-bold text-white text-sm">Network Leaderboard</h3>
-                  <p className="text-xs text-gray-400″>Top referrers in the ProLnk network</p>
+                  <p className="text-xs text-gray-400">Top referrers in the ProLnk network</p>
                 </div>
               </div>
               <Link href="/leaderboard">
-                <span className="text-xs font-semibold flex items-center gap-1″ style={{ color: "#F5E642" }}>
+                <span className="text-xs font-semibold flex items-center gap-1" style={{ color: "#F5E642" }}>
                   Full list <ChevronRight size={12} />
                 </span>
               </Link>
             </div>
 
             {lbLoading ? (
-              <div className="flex justify-center py-8″>
-                <Loader2 className="w-5 h-5 animate-spin text-gray-500″ />
+              <div className="flex justify-center py-8">
+                <Loader2 className="w-5 h-5 animate-spin text-gray-500" />
               </div>
             ) : leaderRows.length === 0 ? (
-              <div className="text-center py-8″>
-                <p className="text-sm text-gray-500″>No referrals tracked yet.</p>
-                <p className="text-xs text-gray-600 mt-1″>Be the first — share your link now.</p>
+              <div className="text-center py-8">
+                <p className="text-sm text-gray-500">No referrals tracked yet.</p>
+                <p className="text-xs text-gray-600 mt-1">Be the first — share your link now.</p>
               </div>
             ) : (
-              <div className="space-y-2″>
+              <div className="space-y-2">
                 {leaderRows.slice(0, 10).map((leader: any, i: number) => {
                   const isMe = leader.name?.startsWith(status.firstName ?? "___NOMATCH___");
                   return (
@@ -1473,26 +1473,26 @@ export default function PartnerHome() {
                       }}
                     >
                       <div
-                        className="w-7 h-7 rounded-full flex items-center justify-center text-xs font-bold shrink-0″
+                        className="w-7 h-7 rounded-full flex items-center justify-center text-xs font-bold shrink-0"
                         style={{
                           background: i === 0 ? "rgba(245,230,66,0.2)" : i === 1 ? "rgba(192,192,192,0.15)" : i === 2 ? "rgba(205,127,50,0.15)" : "rgba(255,255,255,0.06)",
-                          color: i === 0 ? "#F5E642″ : i === 1 ? "#d1d5db" : i === 2 ? "#cd7f32" : "#6b7280",
+                          color: i === 0 ? "#F5E642" : i === 1 ? "#d1d5db" : i === 2 ? "#cd7f32" : "#6b7280",
                         }}
                       >
                         {i + 1}
                       </div>
-                      <div className="flex-1 min-w-0″>
+                      <div className="flex-1 min-w-0">
                         <p className="text-sm font-semibold text-white truncate">
                           {leader.name}
-                          {isMe && <span className="ml-1 text-xs font-normal" style={{ color: "#F5E642″ }}>(you)</span>}
+                          {isMe && <span className="ml-1 text-xs font-normal" style={{ color: "#F5E642" }}>(you)</span>}
                         </p>
                         <p className="text-xs text-gray-500 truncate">
                           {leader.trade} · {leader.city}, {leader.state}
                         </p>
                       </div>
-                      <div className="text-right shrink-0″>
+                      <div className="text-right shrink-0">
                         <p className="text-sm font-bold text-white">{leader.referralCount}</p>
-                        <p className="text-[10px] text-gray-600″>referrals</p>
+                        <p className="text-[10px] text-gray-600">referrals</p>
                       </div>
                     </div>
                   );
@@ -1514,15 +1514,15 @@ export default function PartnerHome() {
             className="rounded-2xl p-6 text-center"
             style={{ background: "linear-gradient(135deg, rgba(245,230,66,0.08), rgba(10,22,40,0))", border: "1px solid rgba(245,230,66,0.2)" }}
           >
-            <Zap size={28} style={{ color: "#F5E642″ }} className="mx-auto mb-3" />
-            <h3 className="text-lg font-bold text-white mb-2″>Upgrade to the Founding Network</h3>
+            <Zap size={28} style={{ color: "#F5E642" }} className="mx-auto mb-3" />
+            <h3 className="text-lg font-bold text-white mb-2">Upgrade to the Founding Network</h3>
             <p className="text-sm text-gray-400 mb-4 max-w-md mx-auto">
               Lock in $149/mo, earn 4-level overrides on every pro in your network, and secure your position before the 2,125 founding spots fill up.
             </p>
             <Link href="/join">
               <span
                 className="inline-flex items-center gap-2 px-6 py-3 rounded-xl text-sm font-bold"
-                style={{ background: "#F5E642″, color: "#0A1628" }}
+                style={{ background: "#F5E642", color: "#0A1628" }}
               >
                 Claim Founding Spot <ChevronRight size={16} />
               </span>

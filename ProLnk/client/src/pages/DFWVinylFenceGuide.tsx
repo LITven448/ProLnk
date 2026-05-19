@@ -58,7 +58,7 @@ export default function DFWVinylFenceGuide() {
             <div>
               <label style={{ color: '#94A3B8', fontSize: 13, display: 'block', marginBottom: 6 }}>Linear Feet</label>
               <input type="range" min={50} max={500} value={linearFeet} onChange={e => setLinearFeet(+e.target.value)}
-                style={{ width: '100%', accentColor: '#F5E642′ }} />
+                style={{ width: '100%', accentColor: '#F5E642' }} />
               <span style={{ color: '#F5E642', fontSize: 15, fontWeight: 700 }}>{linearFeet} ft</span>
             </div>
             <div>
@@ -78,7 +78,7 @@ export default function DFWVinylFenceGuide() {
           </div>
 
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16, marginBottom: 16 }}>
-            <div style={{ background: '#0A1628', borderRadius: 12, padding: 20, border: '2px solid #F5E642′ }}>
+            <div style={{ background: '#0A1628', borderRadius: 12, padding: 20, border: '2px solid #F5E642' }}>
               <div style={{ color: '#F5E642', fontSize: 13, fontWeight: 700, marginBottom: 8 }}>VINYL — 10 Year Total</div>
               <div style={{ color: '#fff', fontSize: 24, fontWeight: 800 }}>${yr10VinylLifetime.toLocaleString()}</div>
               <div style={{ color: '#64748B', fontSize: 12, marginTop: 4 }}>Install: ${vinylTotal.toLocaleString()} + $0 maint</div>
@@ -99,8 +99,8 @@ export default function DFWVinylFenceGuide() {
         <div style={{ background: '#0D1F3C', borderRadius: 12, padding: 24, marginTop: 20, border: '1px solid #1E3A5F' }}>
           <h3 style={{ color: '#F5E642', fontSize: 16, fontWeight: 700, margin: '0 0 12px' }}>⚠️ DFW Vinyl Watch-Outs</h3>
           {[
-            'Expansion gaps (1/8″) are mandatory in DFW — vinyl expands significantly in summer heat. Installers who skip this cause buckling.',
-            'Avoid thin-wall vinyl (under 0.12″ wall thickness) — it cracks in DFW hail storms. Ask for Grade 5 or commercial-grade panels.',
+            'Expansion gaps (1/8") are mandatory in DFW — vinyl expands significantly in summer heat. Installers who skip this cause buckling.',
+            'Avoid thin-wall vinyl (under 0.12" wall thickness) — it cracks in DFW hail storms. Ask for Grade 5 or commercial-grade panels.',
             'Vinyl can\’t be cut easily after install — measure and plan gate locations carefully before ordering.',
           ].map((tip, i) => (
             <div key={i} style={{ display: 'flex', gap: 10, marginBottom: 8, alignItems: 'flex-start' }}>

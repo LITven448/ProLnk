@@ -103,7 +103,7 @@ export default function SpringCleaningGuide() {
 
       <div style={{ maxWidth: 900, margin: '0 auto', padding: '0 24px' }}>
         {/* DFW Context */}
-        <div style={{ background: '#1a2a1a', border: '1px solid #2a4a2a', borderRadius: 16, padding: 28, margin: '40px 0′ }}>
+        <div style={{ background: '#1a2a1a', border: '1px solid #2a4a2a', borderRadius: 16, padding: 28, margin: '40px 0' }}>
           <h2 style={{ fontSize: 20, fontWeight: 700, color: '#4ade80', margin: '0 0 12px' }}>Why DFW Spring Cleaning is Different</h2>
           <p style={{ color: '#ccc', lineHeight: 1.8, margin: 0 }}>
             DFW spring cleaning must account for <strong style={{ color: '#fff' }}>cedar fever season (January–March)</strong>, high winds, and the impending AC season. Skip the HVAC prep and you'll pay for it in July.
@@ -129,9 +129,9 @@ export default function SpringCleaningGuide() {
               key={r.id}
               onClick={() => setActiveRoom(r.id)}
               style={{
-                background: activeRoom === r.id ? '#4ade80′ : '#1a1a2e',
-                color: activeRoom === r.id ? '#000′ : '#ccc',
-                border: '1px solid ' + (activeRoom === r.id ? '#4ade80′ : '#2a2a4e'),
+                background: activeRoom === r.id ? '#4ade80' : '#1a1a2e',
+                color: activeRoom === r.id ? '#000' : '#ccc',
+                border: '1px solid ' + (activeRoom === r.id ? '#4ade80' : '#2a2a4e'),
                 borderRadius: 8,
                 padding: '8px 14px',
                 fontSize: 13,
@@ -152,7 +152,7 @@ export default function SpringCleaningGuide() {
               onClick={() => toggle(t.task)}
               style={{
                 background: checked[t.task] ? '#0f1a0f' : '#1a1a2e',
-                border: '1px solid ' + (checked[t.task] ? '#4ade80′ : '#2a2a4e'),
+                border: '1px solid ' + (checked[t.task] ? '#4ade80' : '#2a2a4e'),
                 borderRadius: 12,
                 padding: 20,
                 cursor: 'pointer',
@@ -164,7 +164,7 @@ export default function SpringCleaningGuide() {
             >
               <div style={{ fontSize: 20, marginTop: 2 }}>{checked[t.task] ? '✅' : '⬜'}</div>
               <div style={{ flex: 1 }}>
-                <div style={{ fontWeight: 600, color: checked[t.task] ? '#4ade80′ : '#fff', marginBottom: 4, textDecoration: checked[t.task] ? ’line-through' : 'none' }}>
+                <div style={{ fontWeight: 600, color: checked[t.task] ? '#4ade80' : '#fff', marginBottom: 4, textDecoration: checked[t.task] ? 'line-through' : 'none' }}>
                   {t.task}
                 </div>
                 <div style={{ fontSize: 13, color: '#aaa', lineHeight: 1.5 }}>{t.detail}</div>
@@ -175,7 +175,7 @@ export default function SpringCleaningGuide() {
         </div>
 
         {/* Pollen Tips */}
-        <div style={{ background: '#2a1a0a', border: '1px solid #4a2a0a', borderRadius: 16, padding: 28, margin: '40px 0′ }}>
+        <div style={{ background: '#2a1a0a', border: '1px solid #4a2a0a', borderRadius: 16, padding: 28, margin: '40px 0' }}>
           <h2 style={{ fontSize: 20, fontWeight: 700, color: '#fbbf24', margin: '0 0 12px' }}>🌾 DFW Pollen Season Tips</h2>
           <p style={{ color: '#ccc', lineHeight: 1.8, margin: 0 }}>
             Keep windows closed March–May. Run HVAC on recirculate. A HEPA air purifier helps significantly — especially for cedar and oak pollen which peak in DFW.

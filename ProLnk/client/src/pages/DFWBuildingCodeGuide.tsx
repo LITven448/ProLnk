@@ -88,10 +88,10 @@ export default function DFWBuildingCodeGuide() {
 
         {codeInfo && (
           <div style={{ display: 'grid', gap: 16, marginBottom: 20 }}>
-            <div style={{ backgroundColor: '#162033', borderRadius: 12, padding: 24, border: '1px solid #2D3E55′ }}>
+            <div style={{ backgroundColor: '#162033', borderRadius: 12, padding: 24, border: '1px solid #2D3E55' }}>
               <div style={{ fontSize: 16, fontWeight: 700, color: '#F5E642', marginBottom: 12 }}>📚 Applicable Codes</div>
               <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8 }}>
-                {codeInfo.codes.map(c => <span key={c} style={{ backgroundColor: '#0A1628', padding: '4px 12px', borderRadius: 20, fontSize: 13, border: '1px solid #2D3E55′ }}>{c}</span>)}
+                {codeInfo.codes.map(c => <span key={c} style={{ backgroundColor: '#0A1628', padding: '4px 12px', borderRadius: 20, fontSize: 13, border: '1px solid #2D3E55' }}>{c}</span>)}
               </div>
             </div>
             <div style={{ backgroundColor: '#1a0a0a', borderRadius: 12, padding: 24, border: '1px solid #7f1d1d' }}>
@@ -100,7 +100,7 @@ export default function DFWBuildingCodeGuide() {
                 {codeInfo.violations.map(v => <li key={v}>{v}</li>)}
               </ul>
             </div>
-            <div style={{ backgroundColor: '#162033', borderRadius: 12, padding: 24, border: '1px solid #2D3E55′ }}>
+            <div style={{ backgroundColor: '#162033', borderRadius: 12, padding: 24, border: '1px solid #2D3E55' }}>
               <div style={{ fontSize: 16, fontWeight: 700, color: '#F5E642', marginBottom: 12 }}>🔍 What the Inspector Will Check</div>
               <ul style={{ paddingLeft: 20, margin: 0, color: '#94A3B8', fontSize: 14, lineHeight: 1.9 }}>
                 {codeInfo.inspectorChecks.map(i => <li key={i}>{i}</li>)}

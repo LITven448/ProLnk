@@ -33,22 +33,22 @@ export default function PartnerDFWGrowthOpportunityGuide() {
 
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 14, marginBottom: 28 }}>
           {stats.map((s, i) => (
-            <div key={i} style={{ background: '#fff', borderRadius: 10, padding: '18px', border: '1px solid #E2E8F0′ }}>
+            <div key={i} style={{ background: '#fff', borderRadius: 10, padding: '18px', border: '1px solid #E2E8F0' }}>
               <div style={{ fontSize: 24, marginBottom: 6 }}>{s.icon}</div>
               <div style={{ color: '#94A3B8', fontSize: 12, fontWeight: 600, textTransform: 'uppercase', letterSpacing: 1 }}>{s.label}</div>
-              <div style={{ color: '#0A1628', fontWeight: 800, fontSize: 20, margin: '4px 0′ }}>{s.value}</div>
+              <div style={{ color: '#0A1628', fontWeight: 800, fontSize: 20, margin: '4px 0' }}>{s.value}</div>
               <div style={{ color: '#64748B', fontSize: 13 }}>{s.sub}</div>
             </div>
           ))}
         </div>
 
-        <div style={{ background: '#fff', borderRadius: 12, padding: 24, border: '1px solid #E2E8F0′ }}>
+        <div style={{ background: '#fff', borderRadius: 12, padding: 24, border: '1px solid #E2E8F0' }}>
           <h3 style={{ color: '#0A1628', margin: '0 0 14px' }}>🎯 Your Addressable Market</h3>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 14, marginBottom: 16 }}>
             <div>
               <label style={{ display: 'block', color: '#374151', fontWeight: 600, marginBottom: 6, fontSize: 14 }}>Trade Specialty</label>
               <select value={trade} onChange={e => setTrade(e.target.value)}
-                style={{ width: '100%', padding: '10px 14px', borderRadius: 8, border: '1px solid #CBD5E1', fontSize: 15, color: '#0A1628′ }}>
+                style={{ width: '100%', padding: '10px 14px', borderRadius: 8, border: '1px solid #CBD5E1', fontSize: 15, color: '#0A1628' }}>
                 <option value=''>Select trade...</option>
                 <option value='plumber'>Plumbing</option>
                 <option value='electrician'>Electrical</option>
@@ -60,7 +60,7 @@ export default function PartnerDFWGrowthOpportunityGuide() {
             <div>
               <label style={{ display: 'block', color: '#374151', fontWeight: 600, marginBottom: 6, fontSize: 14 }}>Starting Zone</label>
               <select value={zone} onChange={e => setZone(e.target.value)}
-                style={{ width: '100%', padding: '10px 14px', borderRadius: 8, border: '1px solid #CBD5E1', fontSize: 15, color: '#0A1628′ }}>
+                style={{ width: '100%', padding: '10px 14px', borderRadius: 8, border: '1px solid #CBD5E1', fontSize: 15, color: '#0A1628' }}>
                 <option value=''>Select zone...</option>
                 {zones.map((z, i) => <option key={i} value={z}>{z}</option>)}
               </select>

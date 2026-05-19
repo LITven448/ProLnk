@@ -44,7 +44,7 @@ export default function DFWThermalMassGuide() {
   return (
     <div style={{ background: '#0A1628', minHeight: '100vh', color: '#E2E8F0', fontFamily: 'system-ui, sans-serif', padding: '2rem' }}>
       <div style={{ maxWidth: 800, margin: '0 auto' }}>
-        <div style={{ marginBottom: '0.5rem', fontSize: '0.875rem', color: '#94A3B8′ }}>🏠 DFW Building Science</div>
+        <div style={{ marginBottom: '0.5rem', fontSize: '0.875rem', color: '#94A3B8' }}>🏠 DFW Building Science</div>
         <h1 style={{ fontSize: '2rem', fontWeight: 700, color: '#F5E642', marginBottom: '0.5rem' }}>
           Thermal Mass Guide for DFW Homes
         </h1>
@@ -57,8 +57,8 @@ export default function DFWThermalMassGuide() {
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0.75rem', marginBottom: '1.25rem' }}>
             {constructionTypes.map(opt => (
               <button key={opt.value} onClick={() => setConstruction(opt.value)} style={{
-                background: construction === opt.value ? '#F5E642′ : '#1E3A5F',
-                color: construction === opt.value ? '#0A1628′ : '#E2E8F0',
+                background: construction === opt.value ? '#F5E642' : '#1E3A5F',
+                color: construction === opt.value ? '#0A1628' : '#E2E8F0',
                 border: 'none', borderRadius: 8, padding: '0.75rem', cursor: 'pointer', fontWeight: 600, fontSize: '0.8rem', textAlign: 'left',
               }}>{opt.label}</button>
             ))}
@@ -67,8 +67,8 @@ export default function DFWThermalMassGuide() {
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: '0.75rem' }}>
             {orientations.map(opt => (
               <button key={opt.value} onClick={() => setOrientation(opt.value)} style={{
-                background: orientation === opt.value ? '#F5E642′ : '#1E3A5F',
-                color: orientation === opt.value ? '#0A1628′ : '#E2E8F0',
+                background: orientation === opt.value ? '#F5E642' : '#1E3A5F',
+                color: orientation === opt.value ? '#0A1628' : '#E2E8F0',
                 border: 'none', borderRadius: 8, padding: '0.75rem', cursor: 'pointer', fontWeight: 600, fontSize: '0.8rem', textAlign: 'left',
               }}>{opt.label}</button>
             ))}
@@ -78,18 +78,18 @@ export default function DFWThermalMassGuide() {
         <div style={{ background: '#0F2040', borderRadius: 12, padding: '1.5rem', marginBottom: '1.5rem', border: '1px solid #1E3A5F' }}>
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1rem' }}>
             <h2 style={{ color: '#F5E642', fontSize: '1.1rem', margin: 0 }}>📊 Thermal Mass Opportunity</h2>
-            <span style={{ background: data.opportunity.includes('Very') ? '#065F46′ : data.opportunity === ’High' ? '#1E3A5F' : '#374151', color: data.opportunity.includes('Very') ? '#6EE7B7′ : data.opportunity === ’High' ? '#F5E642′ : '#9CA3AF', borderRadius: 6, padding: '0.25rem 0.75rem', fontSize: '0.85rem', fontWeight: 700 }}>{data.opportunity}</span>
+            <span style={{ background: data.opportunity.includes('Very') ? '#065F46' : data.opportunity === 'High' ? '#1E3A5F' : '#374151', color: data.opportunity.includes('Very') ? '#6EE7B7' : data.opportunity === 'High' ? '#F5E642' : '#9CA3AF', borderRadius: 6, padding: '0.25rem 0.75rem', fontSize: '0.85rem', fontWeight: 700 }}>{data.opportunity}</span>
           </div>
           <p style={{ color: '#CBD5E1', lineHeight: 1.7, marginBottom: '1rem', fontSize: '0.95rem' }}>{data.note}</p>
           <h3 style={{ color: '#F5E642', fontSize: '0.95rem', marginBottom: '0.75rem' }}>✅ Recommended Actions</h3>
           <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
             {data.actions.map((a, i) => (
-              <div key={i} style={{ background: '#1E3A5F', borderRadius: 8, padding: '0.75rem', fontSize: '0.9rem', color: '#E2E8F0′ }}>🔧 {a}</div>
+              <div key={i} style={{ background: '#1E3A5F', borderRadius: 8, padding: '0.75rem', fontSize: '0.9rem', color: '#E2E8F0' }}>🔧 {a}</div>
             ))}
           </div>
         </div>
 
-        <div style={{ background: '#F5E642', borderRadius: 12, padding: '1.25rem', color: '#0A1628′ }}>
+        <div style={{ background: '#F5E642', borderRadius: 12, padding: '1.25rem', color: '#0A1628' }}>
           <div style={{ fontWeight: 700, marginBottom: '0.25rem' }}>☀️ DFW Rule of Thumb</div>
           <div style={{ fontSize: '0.9rem', lineHeight: 1.6 }}>Thermal mass only helps when shaded from direct sun. A tiled floor with an unshaded west window becomes a radiant heater after 3pm. Shade first, then maximize mass -- in that order.</div>
         </div>

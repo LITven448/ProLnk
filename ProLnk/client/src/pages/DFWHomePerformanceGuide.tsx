@@ -44,7 +44,7 @@ export default function DFWHomePerformanceGuide() {
           {systems.map(s => (
             <div key={s.id} style={{ background: 'rgba(245,230,66,0.08)', border: '1px solid rgba(245,230,66,0.3)', borderRadius: 10, padding: '0.6rem 1rem', textAlign: 'center', minWidth: 120 }}>
               <div style={{ fontSize: 24 }}>{s.icon}</div>
-              <div style={{ fontWeight: 600, fontSize: '0.85rem', color: '#F5E642′ }}>{s.label}</div>
+              <div style={{ fontWeight: 600, fontSize: '0.85rem', color: '#F5E642' }}>{s.label}</div>
               <div style={{ color: '#64748b', fontSize: '0.75rem' }}>{s.desc}</div>
             </div>
           ))}
@@ -59,7 +59,7 @@ export default function DFWHomePerformanceGuide() {
               onClick={() => { setSelectedProblem(p.id); setShowResult(false); }}
               style={{
                 background: selectedProblem === p.id ? 'rgba(245,230,66,0.12)' : 'rgba(255,255,255,0.05)',
-                border: selectedProblem === p.id ? '1px solid #F5E642′ : '1px solid rgba(255,255,255,0.1)',
+                border: selectedProblem === p.id ? '1px solid #F5E642' : '1px solid rgba(255,255,255,0.1)',
                 borderRadius: 10, padding: '0.85rem 1rem', cursor: 'pointer', display: 'flex', alignItems: 'center', gap: '0.75rem',
               }}
             >

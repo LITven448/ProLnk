@@ -12,7 +12,7 @@ const stats = [
   { icon: '📄', label: 'Pages Built', value: '5,000+' },
   { icon: '🏗️', label: 'Platform Status', value: 'Live' },
   { icon: '⭐', label: 'Charter Slots', value: '25 total' },
-  { icon: '📅', label: 'Report Date', value: 'May 17, 2026′ },
+  { icon: '📅', label: 'Report Date', value: 'May 17, 2026' },
 ];
 
 export default function DFWProLnkMorningReport2026() {
@@ -57,7 +57,7 @@ export default function DFWProLnkMorningReport2026() {
           <div style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
             {roles.map(r => (
               <button key={r.id} onClick={() => setSelected(r.id)}
-                style={{ background: selected === r.id ? '#F5E642′ : '#1A2F50', color: selected === r.id ? '#0A1628' : '#fff', border: ’none', borderRadius: 8, padding: '12px 16px', cursor: 'pointer', textAlign: 'left', fontWeight: 600, fontSize: 14 }}>
+                style={{ background: selected === r.id ? '#F5E642' : '#1A2F50', color: selected === r.id ? '#0A1628' : '#fff', border: 'none', borderRadius: 8, padding: '12px 16px', cursor: 'pointer', textAlign: 'left', fontWeight: 600, fontSize: 14 }}>
                 {r.label}
               </button>
             ))}

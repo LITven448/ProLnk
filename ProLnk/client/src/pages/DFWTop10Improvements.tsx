@@ -41,12 +41,12 @@ export default function DFWTop10Improvements() {
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16 }}>
             <div>
               <label style={{ fontSize: 13, color: '#8899AA', display: 'block', marginBottom: 6 }}>Home Value (estimated)</label>
-              <input type="range" min={150} max={1000} step={25} value={homeValue} onChange={e => setHomeValue(Number(e.target.value))} style={{ width: '100%', accentColor: '#F5E642′ }} />
+              <input type="range" min={150} max={1000} step={25} value={homeValue} onChange={e => setHomeValue(Number(e.target.value))} style={{ width: '100%', accentColor: '#F5E642' }} />
               <div style={{ color: '#F5E642', fontWeight: 700 }}>${homeValue}K</div>
             </div>
             <div>
               <label style={{ fontSize: 13, color: '#8899AA', display: 'block', marginBottom: 6 }}>Budget Available</label>
-              <input type="range" min={2} max={100} step={2} value={budget} onChange={e => setBudget(Number(e.target.value))} style={{ width: '100%', accentColor: '#F5E642′ }} />
+              <input type="range" min={2} max={100} step={2} value={budget} onChange={e => setBudget(Number(e.target.value))} style={{ width: '100%', accentColor: '#F5E642' }} />
               <div style={{ color: '#F5E642', fontWeight: 700 }}>${budget}K</div>
             </div>
           </div>
@@ -60,7 +60,7 @@ export default function DFWTop10Improvements() {
 
         {showPicks && (
           <div style={{ background: '#F5E64212', border: '1px solid #F5E64240', borderRadius: 12, padding: 20, marginBottom: 28 }}>
-            <div style={{ fontWeight: 700, marginBottom: 14, fontSize: 16, color: '#F5E642′ }}>Your Top 3 for ${budget}K Budget on a ${homeValue}K DFW Home</div>
+            <div style={{ fontWeight: 700, marginBottom: 14, fontSize: 16, color: '#F5E642' }}>Your Top 3 for ${budget}K Budget on a ${homeValue}K DFW Home</div>
             {top3.map((imp, i) => (
               <div key={imp.rank} style={{ background: '#0A1628', borderRadius: 8, padding: '12px 16px', marginBottom: 10 }}>
                 <div style={{ fontWeight: 700, fontSize: 15, marginBottom: 4 }}>#{i + 1} {imp.name} — {imp.roi}% ROI</div>

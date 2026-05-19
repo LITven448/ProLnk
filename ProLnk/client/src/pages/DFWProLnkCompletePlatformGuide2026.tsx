@@ -80,8 +80,8 @@ export default function DFWProLnkCompletePlatformGuide2026() {
                 key={r.id}
                 onClick={() => setSelected(r.id)}
                 style={{
-                  background: selected === r.id ? '#F5E642′ : '#1e3a5f',
-                  color: selected === r.id ? '#0A1628′ : '#fff',
+                  background: selected === r.id ? '#F5E642' : '#1e3a5f',
+                  color: selected === r.id ? '#0A1628' : '#fff',
                   border: 'none', borderRadius: '8px', padding: '0.75rem',
                   fontWeight: 700, cursor: 'pointer', fontSize: '0.95rem',
                 }}
@@ -97,7 +97,7 @@ export default function DFWProLnkCompletePlatformGuide2026() {
             <h3 style={{ color: '#F5E642', fontWeight: 800, marginBottom: '1rem' }}>{GUIDES[selected].title}</h3>
             <ul style={{ listStyle: 'none', padding: 0, margin: 0 }}>
               {GUIDES[selected].items.map((item, i) => (
-                <li key={i} style={{ padding: '0.75rem', borderBottom: '1px solid #1e3a5f', lineHeight: 1.5, color: '#cbd5e1′ }}>
+                <li key={i} style={{ padding: '0.75rem', borderBottom: '1px solid #1e3a5f', lineHeight: 1.5, color: '#cbd5e1' }}>
                   {item}
                 </li>
               ))}
@@ -110,7 +110,7 @@ export default function DFWProLnkCompletePlatformGuide2026() {
             <div style={{ color: '#0A1628', fontWeight: 800, fontSize: '0.9rem' }}>For Homeowners</div>
             <div style={{ color: '#1e3a5f', fontSize: '0.8rem', marginTop: '0.25rem' }}>Get matched with Charter Pros</div>
           </div>
-          <div style={{ background: '#1e3a5f', borderRadius: '12px', padding: '1rem', textAlign: 'center', border: '2px solid #F5E642′ }}>
+          <div style={{ background: '#1e3a5f', borderRadius: '12px', padding: '1rem', textAlign: 'center', border: '2px solid #F5E642' }}>
             <div style={{ color: '#F5E642', fontWeight: 800, fontSize: '0.9rem' }}>For Pros</div>
             <div style={{ color: '#94a3b8', fontSize: '0.8rem', marginTop: '0.25rem' }}>Apply for Charter tier — 500 spots</div>
           </div>

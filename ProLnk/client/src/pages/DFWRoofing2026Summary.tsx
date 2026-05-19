@@ -35,7 +35,7 @@ export default function DFWRoofing2026Summary() {
             { icon: '🔍', title: 'Vetting Contractors', body: 'Require: TX contractor license, general liability ($1M+), workers\’ comp, local references, no door-to-door solicitation. Avoid storm chasers — use established DFW companies.' },
             { icon: '📅', title: 'When to Replace', body: 'Replace at 20–25 years for 3-tab, 25–30 for architectural. Immediate replacement: granule loss, curling edges, daylight in attic, multiple leaks, storm damage >30% of surface.' },
           ].map(c => (
-            <div key={c.title} style={{ background: '#111d35', borderRadius: 12, padding: 20, borderLeft: '3px solid #F5E642′ }}>
+            <div key={c.title} style={{ background: '#111d35', borderRadius: 12, padding: 20, borderLeft: '3px solid #F5E642' }}>
               <div style={{ fontSize: 24, marginBottom: 8 }}>{c.icon}</div>
               <div style={{ fontWeight: 700, marginBottom: 6 }}>{c.title}</div>
               <div style={{ color: '#94a3b8', fontSize: 14, lineHeight: 1.6 }}>{c.body}</div>
@@ -48,7 +48,7 @@ export default function DFWRoofing2026Summary() {
           <p style={{ color: '#94a3b8', marginBottom: 20, fontSize: 14 }}>Select your situation to get a personalized plan:</p>
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: 10, marginBottom: 24 }}>
             {situations.map(s => (
-              <button key={s.id} onClick={() => setSelected(s.id)} style={{ padding: '10px 18px', borderRadius: 8, border: `2px solid ${selected === s.id ? '#F5E642' : '#1e3a5f'}`, background: selected === s.id ? '#F5E642′ : ’transparent', color: selected === s.id ? '#0A1628′ : '#fff', cursor: ’pointer', fontWeight: 600, fontSize: 14 }}>{s.label}</button>
+              <button key={s.id} onClick={() => setSelected(s.id)} style={{ padding: '10px 18px', borderRadius: 8, border: `2px solid ${selected === s.id ? '#F5E642' : '#1e3a5f'}`, background: selected === s.id ? '#F5E642' : 'transparent', color: selected === s.id ? '#0A1628' : '#fff', cursor: 'pointer', fontWeight: 600, fontSize: 14 }}>{s.label}</button>
             ))}
           </div>
           {selected && (

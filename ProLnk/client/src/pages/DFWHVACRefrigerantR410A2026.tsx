@@ -35,9 +35,9 @@ export default function DFWHVACRefrigerantR410A2026() {
 
         <div style={{ background: '#0f2444', borderRadius: 12, padding: 24, border: '1px solid #F5E642', marginBottom: 24 }}>
           <h2 style={{ color: '#F5E642', fontWeight: 700, marginBottom: 16 }}>🔍 Refrigerant Impact Assessment</h2>
-          <label style={{ display: 'block', marginBottom: 8, color: '#94a3b8′ }}>Your AC system age: <strong style={{ color: '#F5E642' }}>{acAge} years</strong></label>
+          <label style={{ display: 'block', marginBottom: 8, color: '#94a3b8' }}>Your AC system age: <strong style={{ color: '#F5E642' }}>{acAge} years</strong></label>
           <input type="range" min={1} max={25} value={acAge} onChange={(e) => setAcAge(Number(e.target.value))}
-            style={{ width: '100%', marginBottom: 16, accentColor: '#F5E642′ }} />
+            style={{ width: '100%', marginBottom: 16, accentColor: '#F5E642' }} />
           <button onClick={assess} style={{ background: '#F5E642', color: '#0A1628', border: 'none', borderRadius: 8, padding: '10px 24px', fontWeight: 700, cursor: 'pointer', fontSize: 15 }}>
             Assess My System
           </button>

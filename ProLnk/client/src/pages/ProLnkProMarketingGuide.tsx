@@ -49,7 +49,7 @@ export default function ProLnkProMarketingGuide() {
             <div style={{ background: status.color, height: '100%', width: `${profileLevel}%`, transition: 'width 0.3s' }} />
           </div>
           <input type="range" min={0} max={100} value={profileLevel}
-            onChange={e => setProfileLevel(+e.target.value)} style={{ width: '100%', accentColor: '#F5E642′ }} />
+            onChange={e => setProfileLevel(+e.target.value)} style={{ width: '100%', accentColor: '#F5E642' }} />
           <div style={{ background: '#1A2E4A', borderRadius: 8, padding: '10px 14px', marginTop: 12 }}>
             <span style={{ color: '#F5E642', fontSize: 13 }}>Next: {status.next}</span>
           </div>

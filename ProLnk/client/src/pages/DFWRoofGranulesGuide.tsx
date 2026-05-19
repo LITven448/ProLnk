@@ -75,7 +75,7 @@ export default function DFWRoofGranulesGuide() {
             <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px' }}>
               {granuleLevels.map(g => (
                 <button key={g} onClick={() => setGranules(g)} style={{
-                  background: granules === g ? '#F5E642′ : '#162035', color: granules === g ? '#0A1628' : '#CBD5E1',
+                  background: granules === g ? '#F5E642' : '#162035', color: granules === g ? '#0A1628' : '#CBD5E1',
                   border: 'none', borderRadius: '6px', padding: '8px 14px', fontSize: '13px', cursor: 'pointer', fontWeight: granules === g ? 700 : 400
                 }}>{g}</button>
               ))}
@@ -86,7 +86,7 @@ export default function DFWRoofGranulesGuide() {
             <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px' }}>
               {exposureLevels.map(e => (
                 <button key={e} onClick={() => setExposure(e)} style={{
-                  background: exposure === e ? '#F5E642′ : '#162035', color: exposure === e ? '#0A1628' : '#CBD5E1',
+                  background: exposure === e ? '#F5E642' : '#162035', color: exposure === e ? '#0A1628' : '#CBD5E1',
                   border: 'none', borderRadius: '6px', padding: '8px 14px', fontSize: '13px', cursor: 'pointer', fontWeight: exposure === e ? 700 : 400
                 }}>{e}</button>
               ))}

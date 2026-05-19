@@ -29,7 +29,7 @@ export default function WhyChooseProLnk() {
         <div style={{ textAlign: 'center', marginBottom: 48 }}>
           <div style={{ fontSize: 40, marginBottom: 12 }}>🏠</div>
           <h1 style={{ fontSize: 34, fontWeight: 800, color: '#0A1628', marginBottom: 12 }}>Why ProLnk?</h1>
-          <p style={{ fontSize: 18, color: '#4B5563′ }}>7 Reasons DFW Homeowners Choose Us Over Everyone Else</p>
+          <p style={{ fontSize: 18, color: '#4B5563' }}>7 Reasons DFW Homeowners Choose Us Over Everyone Else</p>
         </div>
 
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: 20, marginBottom: 56 }}>
@@ -48,13 +48,13 @@ export default function WhyChooseProLnk() {
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: 10, marginBottom: 28 }}>
             {CONCERNS.map((c, i) => (
               <button key={i} onClick={() => setSelectedConcern(i)}
-                style={{ padding: '8px 16px', borderRadius: 8, border: '2px solid', borderColor: selectedConcern === i ? '#F5E642′ : '#E5E7EB',
-                  backgroundColor: selectedConcern === i ? '#F5E642′ : '#fff', color: '#0A1628', fontWeight: 600, fontSize: 13, cursor: ’pointer' }}>
+                style={{ padding: '8px 16px', borderRadius: 8, border: '2px solid', borderColor: selectedConcern === i ? '#F5E642' : '#E5E7EB',
+                  backgroundColor: selectedConcern === i ? '#F5E642' : '#fff', color: '#0A1628', fontWeight: 600, fontSize: 13, cursor: 'pointer' }}>
                 {c.label}
               </button>
             ))}
           </div>
-          <div style={{ backgroundColor: '#F9FAFB', borderRadius: 10, padding: 20, borderLeft: '4px solid #F5E642′ }}>
+          <div style={{ backgroundColor: '#F9FAFB', borderRadius: 10, padding: 20, borderLeft: '4px solid #F5E642' }}>
             <p style={{ fontSize: 15, color: '#0A1628', lineHeight: 1.7, margin: 0 }}>{CONCERNS[selectedConcern].benefit}</p>
           </div>
         </div>

@@ -16,7 +16,7 @@ export default function DFWCableManagementGuide2026() {
   const approach = getApproach();
 
   return (
-    <div style={{ background: '#0A1628', minHeight: '100vh', padding: '32px 24px', fontFamily: 'system-ui, sans-serif', color: '#e2e8f0′ }}>
+    <div style={{ background: '#0A1628', minHeight: '100vh', padding: '32px 24px', fontFamily: 'system-ui, sans-serif', color: '#e2e8f0' }}>
       <div style={{ maxWidth: 720, margin: '0 auto' }}>
         <div style={{ textAlign: 'center', marginBottom: 32 }}>
           <div style={{ fontSize: 48, marginBottom: 12 }}>🔌</div>
@@ -69,7 +69,7 @@ export default function DFWCableManagementGuide2026() {
         </div>
 
         <div style={{ background: '#112240', borderRadius: 12, padding: 20, textAlign: 'center' }}>
-          <p style={{ color: '#94a3b8', fontSize: 13, margin: 0 }}>Need a DFW pro for in-wall cable runs or AV closet setup? <span style={{ color: '#F5E642′ }}>ProLnk connects you with vetted local techs.</span></p>
+          <p style={{ color: '#94a3b8', fontSize: 13, margin: 0 }}>Need a DFW pro for in-wall cable runs or AV closet setup? <span style={{ color: '#F5E642' }}>ProLnk connects you with vetted local techs.</span></p>
         </div>
       </div>
     </div>

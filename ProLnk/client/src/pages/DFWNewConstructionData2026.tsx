@@ -43,7 +43,7 @@ export default function DFWNewConstructionData2026() {
             { label: 'Active Communities', value: '380+', icon: '🏘' },
             { label: 'Avg New Home Price', value: '$428K', icon: '💰' },
           ].map(s => (
-            <div key={s.label} style={{ background: '#132040', borderRadius: 12, padding: 20, border: '1px solid #1E3060′ }}>
+            <div key={s.label} style={{ background: '#132040', borderRadius: 12, padding: 20, border: '1px solid #1E3060' }}>
               <div style={{ fontSize: 28 }}>{s.icon}</div>
               <div style={{ fontSize: 24, fontWeight: 800, color: '#F5E642', margin: '8px 0 4px' }}>{s.value}</div>
               <div style={{ color: '#8899BB', fontSize: 13 }}>{s.label}</div>
@@ -52,7 +52,7 @@ export default function DFWNewConstructionData2026() {
         </div>
 
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16, marginBottom: 24 }}>
-          <div style={{ background: '#132040', borderRadius: 12, padding: 20, border: '1px solid #1E3060′ }}>
+          <div style={{ background: '#132040', borderRadius: 12, padding: 20, border: '1px solid #1E3060' }}>
             <h2 style={{ fontSize: 18, fontWeight: 700, marginBottom: 12 }}>🏆 Top Builders by Volume</h2>
             {builders.map(b => (
               <div key={b.name} style={{ marginBottom: 10 }}>
@@ -64,7 +64,7 @@ export default function DFWNewConstructionData2026() {
               </div>
             ))}
           </div>
-          <div style={{ background: '#132040', borderRadius: 12, padding: 20, border: '1px solid #1E3060′ }}>
+          <div style={{ background: '#132040', borderRadius: 12, padding: 20, border: '1px solid #1E3060' }}>
             <h2 style={{ fontSize: 18, fontWeight: 700, marginBottom: 12 }}>🚀 Top Growth Cities</h2>
             {cities.map(c => (
               <div key={c.name} style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 10 }}>
@@ -76,15 +76,15 @@ export default function DFWNewConstructionData2026() {
           </div>
         </div>
 
-        <div style={{ background: '#132040', borderRadius: 12, padding: 24, border: '1px solid #F5E642′ }}>
+        <div style={{ background: '#132040', borderRadius: 12, padding: 24, border: '1px solid #F5E642' }}>
           <h2 style={{ fontSize: 20, fontWeight: 700, marginBottom: 16 }}>🔍 New vs Resale Advisor</h2>
           <div style={{ marginBottom: 12 }}>
             <label style={{ color: '#8899BB', fontSize: 13, display: 'block', marginBottom: 4 }}>Budget: ${(budget/1000).toFixed(0)}K</label>
-            <input type="range" min={200000} max={800000} step={25000} value={budget} onChange={e=>setBudget(Number(e.target.value))} style={{ width: '100%', accentColor: '#F5E642′ }}/>
+            <input type="range" min={200000} max={800000} step={25000} value={budget} onChange={e=>setBudget(Number(e.target.value))} style={{ width: '100%', accentColor: '#F5E642' }}/>
           </div>
           <div style={{ display: 'flex', gap: 8, marginBottom: 16 }}>
             {(['now','6mo','12mo'] as const).map(t => (
-              <button key={t} onClick={()=>setTimeline(t)} style={{ padding: '8px 16px', borderRadius: 8, border: 'none', cursor: 'pointer', background: timeline===t ? '#F5E642′ : '#1E3060', color: timeline===t ? '#0A1628' : '#fff', fontWeight: 700 }}>{t===’now'?'Buy Now':t==='6mo'?'6 Months':'12 Months'}</button>
+              <button key={t} onClick={()=>setTimeline(t)} style={{ padding: '8px 16px', borderRadius: 8, border: 'none', cursor: 'pointer', background: timeline===t ? '#F5E642' : '#1E3060', color: timeline===t ? '#0A1628' : '#fff', fontWeight: 700 }}>{t==='now'?'Buy Now':t==='6mo'?'6 Months':'12 Months'}</button>
             ))}
           </div>
           <div style={{ background: '#0A1628', borderRadius: 8, padding: 16 }}>

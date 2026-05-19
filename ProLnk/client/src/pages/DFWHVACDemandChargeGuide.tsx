@@ -39,7 +39,7 @@ export default function DFWHVACDemandChargeGuide() {
         </p>
 
         <div style={{ background: '#111D35', borderRadius: 16, padding: 28, marginBottom: 24 }}>
-          <h2 style={{ fontSize: 18, fontWeight: 700, marginBottom: 20, color: '#F5E642′ }}>
+          <h2 style={{ fontSize: 18, fontWeight: 700, marginBottom: 20, color: '#F5E642' }}>
             🔢 DFW Demand Reduction Calculator
           </h2>
           <div style={{ marginBottom: 20 }}>
@@ -68,13 +68,13 @@ export default function DFWHVACDemandChargeGuide() {
           </div>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16 }}>
             <div style={{ background: '#0A1628', borderRadius: 12, padding: 20, textAlign: 'center' }}>
-              <div style={{ fontSize: 38, fontWeight: 900, color: data.hasDemand ? '#f87171′ : '#4ade80' }}>
+              <div style={{ fontSize: 38, fontWeight: 900, color: data.hasDemand ? '#f87171' : '#4ade80' }}>
                 {data.hasDemand ? `$${adjustedCharge}` : 'None'}
               </div>
               <div style={{ fontSize: 13, color: '#94A3B8', marginTop: 4 }}>Est. Monthly Demand Charge</div>
             </div>
             <div style={{ background: '#0A1628', borderRadius: 12, padding: 20, textAlign: 'center' }}>
-              <div style={{ fontSize: 38, fontWeight: 900, color: '#4ade80′ }}>
+              <div style={{ fontSize: 38, fontWeight: 900, color: '#4ade80' }}>
                 {data.hasDemand ? `$${adjustedSavings}` : '—'}
               </div>
               <div style={{ fontSize: 13, color: '#94A3B8', marginTop: 4 }}>Est. Monthly Reduction</div>

@@ -15,7 +15,7 @@ export default function DFWPoolEquipmentPad2026() {
       <div style={{ maxWidth: 820, margin: '0 auto' }}>
         <div style={{ textAlign: 'center', marginBottom: '2rem' }}>
           <div style={{ fontSize: '3rem' }}>🏗️</div>
-          <h1 style={{ color: '#F5E642', fontSize: '2rem', margin: '0.5rem 0′ }}>DFW Pool Equipment Pad Guide 2026</h1>
+          <h1 style={{ color: '#F5E642', fontSize: '2rem', margin: '0.5rem 0' }}>DFW Pool Equipment Pad Guide 2026</h1>
           <p style={{ color: '#94a3b8', maxWidth: 600, margin: '0 auto' }}>
             Your equipment pad is the engine room of your pool. In DFW, summer heat and rare freeze events
             create unique demands on pumps, filters, heaters, and salt cells.
@@ -26,7 +26,7 @@ export default function DFWPoolEquipmentPad2026() {
           {[
             { icon: '☀️', label: 'Shade = +20-30% Life', desc: 'Equipment running in 100°F+ DFW sun degrades significantly faster' },
             { icon: '🔇', label: 'Noise Reduction', desc: 'Anti-vibration pads under VS pumps make a big difference on concrete' },
-            { icon: '📏', label: 'NFPA 70 Clearance', desc: '36″ in front, 12″ sides minimum — required for inspection and service' },
+            { icon: '📏', label: 'NFPA 70 Clearance', desc: '36" in front, 12" sides minimum — required for inspection and service' },
             { icon: '🏷️', label: 'Label Everything', desc: 'DFW freeze events require fast manual action — label valves and breakers' },
           ].map(c => (
             <div key={c.label} style={{ background: '#1e3a5f', borderRadius: 10, padding: '1.25rem', border: '1px solid #2d4a7a' }}>
@@ -39,7 +39,7 @@ export default function DFWPoolEquipmentPad2026() {
 
         <div style={{ background: '#1e3a5f', borderRadius: 12, padding: '1.5rem', marginBottom: '2rem', border: '1px solid #2d4a7a' }}>
           <h2 style={{ color: '#F5E642', marginTop: 0 }}>🌡️ DFW Heat Impact on Equipment</h2>
-          <p style={{ color: '#94a3b8′ }}>DFW summers regularly push 105°F+ ambient temps. Equipment pads in direct sun can exceed 130°F surface temperature, which stresses pump motor windings, degrades capacitors, and accelerates seal wear. A simple shade structure — sail shade, corrugated metal roof, or wooden pergola — can extend equipment life by 20-30% and is one of the best investments a DFW pool owner can make.</p>
+          <p style={{ color: '#94a3b8' }}>DFW summers regularly push 105°F+ ambient temps. Equipment pads in direct sun can exceed 130°F surface temperature, which stresses pump motor windings, degrades capacitors, and accelerates seal wear. A simple shade structure — sail shade, corrugated metal roof, or wooden pergola — can extend equipment life by 20-30% and is one of the best investments a DFW pool owner can make.</p>
         </div>
 
         <div style={{ background: '#1e3a5f', borderRadius: 12, padding: '1.5rem', border: '1px solid #2d4a7a' }}>
@@ -47,7 +47,7 @@ export default function DFWPoolEquipmentPad2026() {
           <div style={{ display: 'flex', gap: '0.75rem', flexWrap: 'wrap', marginBottom: '1rem' }}>
             {configs.map(c => (
               <button key={c.id} onClick={() => setSelected(c.id === selected ? null : c.id)}
-                style={{ padding: '0.5rem 1rem', borderRadius: 8, border: '2px solid', borderColor: selected === c.id ? '#F5E642′ : '#2d4a7a', background: selected === c.id ? '#F5E642' : '#0A1628', color: selected === c.id ? '#0A1628' : '#fff', cursor: ’pointer', fontWeight: 600 }}>
+                style={{ padding: '0.5rem 1rem', borderRadius: 8, border: '2px solid', borderColor: selected === c.id ? '#F5E642' : '#2d4a7a', background: selected === c.id ? '#F5E642' : '#0A1628', color: selected === c.id ? '#0A1628' : '#fff', cursor: 'pointer', fontWeight: 600 }}>
                 {c.label}
               </button>
             ))}
@@ -57,7 +57,7 @@ export default function DFWPoolEquipmentPad2026() {
               {guide.map(g => <li key={g} style={{ color: '#e2e8f0', marginBottom: '0.5rem' }}>{g}</li>)}
             </ul>
           )}
-          {!selected && <p style={{ color: '#94a3b8′ }}>Select your equipment pad setup above to see your DFW optimization guide.</p>}
+          {!selected && <p style={{ color: '#94a3b8' }}>Select your equipment pad setup above to see your DFW optimization guide.</p>}
         </div>
       </div>
     </div>

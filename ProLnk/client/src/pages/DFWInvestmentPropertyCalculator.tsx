@@ -63,7 +63,7 @@ export default function DFWInvestmentPropertyCalculator() {
               <div style={{ fontSize: 20, fontWeight: 700, color: '#F5E642', background: '#0A1628', borderRadius: 8, padding: '8px 12px', marginBottom: 8 }}>
                 {prefix}{typeof value === 'number' && value % 1 !== 0 ? value.toFixed(1) : value.toLocaleString()}{suffix}
               </div>
-              <input type="range" min={min} max={max} step={step} value={value} onChange={e => set(Number(e.target.value))} style={{ width: '100%', accentColor: '#F5E642′ }} />
+              <input type="range" min={min} max={max} step={step} value={value} onChange={e => set(Number(e.target.value))} style={{ width: '100%', accentColor: '#F5E642' }} />
             </div>
           ))}
         </div>
@@ -71,7 +71,7 @@ export default function DFWInvestmentPropertyCalculator() {
         <div style={{ background: '#0A1628', borderRadius: 16, padding: 24, marginBottom: 24 }}>
           <div style={{ textAlign: 'center', marginBottom: 20 }}>
             <div style={{ fontSize: 14, color: '#94a3b8', marginBottom: 6 }}>Monthly Cash Flow</div>
-            <div style={{ fontSize: 40, fontWeight: 700, color: positive ? '#4ade80′ : '#f87171' }}>
+            <div style={{ fontSize: 40, fontWeight: 700, color: positive ? '#4ade80' : '#f87171' }}>
               {positive ? '+' : '-'}{fmt(monthlyCashFlow)}/mo
             </div>
           </div>
@@ -116,7 +116,7 @@ export default function DFWInvestmentPropertyCalculator() {
           </div>
         </div>
 
-        <div style={{ background: '#fefce8', border: '1px solid #fde047', borderRadius: 12, padding: 16, fontSize: 13, color: '#713f12′ }}>
+        <div style={{ background: '#fefce8', border: '1px solid #fde047', borderRadius: 12, padding: 16, fontSize: 13, color: '#713f12' }}>
           💡 <strong>DFW Investor Tip:</strong> DFW's {appreciationRate}% avg appreciation + population growth makes appreciation often larger than cash flow. Many DFW investors accept minimal cash flow to capture equity upside in high-growth corridors like Frisco, McKinney, and Prosper.
         </div>
       </div>

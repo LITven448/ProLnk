@@ -55,7 +55,7 @@ export default function DFWUsDALoanGuide2026() {
           <div style={{ background: '#0f2040', border: '1px solid #1e3a5f', borderRadius: 10, padding: '1.2rem' }}>
             <h3 style={{ color: '#ff6b6b', marginBottom: '0.75rem' }}>❌ Ineligible (Urban Core)</h3>
             {ineligibleCounties.map(c => <div key={c} style={{ color: '#94a3b8', padding: '0.3rem 0', fontSize: '0.9rem' }}>🏙️ {c}</div>)}
-            <div style={{ marginTop: '1rem', background: '#0A1628', borderRadius: 8, padding: '0.75rem', fontSize: '0.83rem', color: '#cbd5e1′ }}>
+            <div style={{ marginTop: '1rem', background: '#0A1628', borderRadius: 8, padding: '0.75rem', fontSize: '0.83rem', color: '#cbd5e1' }}>
               <strong>2026 Income Limits:</strong><br/>
               1-4 person: $110,650<br/>
               5-8 person: $146,050
@@ -74,7 +74,7 @@ export default function DFWUsDALoanGuide2026() {
           </div>
           <div style={{ marginBottom: '1.2rem' }}>
             <label style={{ color: '#94a3b8', display: 'block', marginBottom: '0.3rem' }}>Household Income: <strong style={{ color: '#fff' }}>${income.toLocaleString()}</strong></label>
-            <input type='range' min={30000} max={200000} step={2500} value={income} onChange={e => setIncome(+e.target.value)} style={{ width: '100%', accentColor: '#F5E642′ }} />
+            <input type='range' min={30000} max={200000} step={2500} value={income} onChange={e => setIncome(+e.target.value)} style={{ width: '100%', accentColor: '#F5E642' }} />
           </div>
           <button onClick={check} style={{ background: '#F5E642', color: '#0A1628', fontWeight: 700, padding: '0.75rem 2rem', border: 'none', borderRadius: 8, cursor: 'pointer', fontSize: '1rem' }}>Check Eligibility</button>
           {result && <div style={{ marginTop: '1rem', background: '#0A1628', borderRadius: 8, padding: '1rem', color: '#e2e8f0', lineHeight: 1.6 }}>{result}</div>}

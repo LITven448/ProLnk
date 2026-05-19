@@ -11,7 +11,7 @@ const TIPS: Record<string, { title: string; items: string[] }> = {
   'central-ac': {
     title: 'Central A/C Tech Tips',
     items: [
-      '📐 Static pressure test — most techs skip this; should be 0.5″ WC or less',
+      '📐 Static pressure test — most techs skip this; should be 0.5" WC or less',
       '🌡️ Check superheat (target 10-20°F) AND subcooling (target 8-12°F) — not just pressures',
       '🌀 Blower wheel cleaning — dirty wheels cut airflow 30-40%',
       '🔌 Capacitor test under load — not just resting voltage',
@@ -76,8 +76,8 @@ export default function DFWHVACTechTipsGuide2026() {
                 key={t.id}
                 onClick={() => setSelected(t.id)}
                 style={{
-                  background: selected === t.id ? '#F5E642′ : '#1e3a5f',
-                  color: selected === t.id ? '#0A1628′ : '#fff',
+                  background: selected === t.id ? '#F5E642' : '#1e3a5f',
+                  color: selected === t.id ? '#0A1628' : '#fff',
                   border: 'none', borderRadius: '8px', padding: '0.75rem',
                   fontWeight: 700, cursor: 'pointer', fontSize: '0.95rem',
                 }}
@@ -93,7 +93,7 @@ export default function DFWHVACTechTipsGuide2026() {
             <h3 style={{ color: '#F5E642', fontWeight: 800, marginBottom: '1rem' }}>{TIPS[selected].title}</h3>
             <ul style={{ listStyle: 'none', padding: 0, margin: 0 }}>
               {TIPS[selected].items.map((item, i) => (
-                <li key={i} style={{ padding: '0.75rem', borderBottom: '1px solid #1e3a5f', lineHeight: 1.5, color: '#cbd5e1′ }}>
+                <li key={i} style={{ padding: '0.75rem', borderBottom: '1px solid #1e3a5f', lineHeight: 1.5, color: '#cbd5e1' }}>
                   {item}
                 </li>
               ))}

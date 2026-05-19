@@ -99,31 +99,31 @@ export default function DFWSchoolDistrictGuide2026() {
                       border: `2px solid ${d.rating === 10 ? '#22C55E' : d.tier === 'excellent' ? '#84CC16' : '#EAB308'}`,
                       display: 'flex', alignItems: 'center', justifyContent: 'center',
                       fontSize: 16, fontWeight: 800,
-                      color: d.rating === 10 ? '#22C55E' : d.tier === 'excellent' ? '#84CC16′ : '#EAB308',
+                      color: d.rating === 10 ? '#22C55E' : d.tier === 'excellent' ? '#84CC16' : '#EAB308',
                     }}>
                       {d.rating}
                     </div>
                     <div>
                       <div style={{ fontSize: 16, fontWeight: 700, color: '#FFFFFF' }}>{d.name}</div>
-                      <div style={{ fontSize: 12, color: '#8FB0D4′ }}>{d.cities}</div>
+                      <div style={{ fontSize: 12, color: '#8FB0D4' }}>{d.cities}</div>
                     </div>
                   </div>
                   <div style={{ display: 'flex', gap: 20, flexWrap: 'wrap' }}>
                     <div style={{ textAlign: 'center' }}>
-                      <div style={{ fontSize: 15, fontWeight: 700, color: '#4ADE80′ }}>{d.premium}</div>
-                      <div style={{ fontSize: 11, color: '#8FB0D4′ }}>Price Premium</div>
+                      <div style={{ fontSize: 15, fontWeight: 700, color: '#4ADE80' }}>{d.premium}</div>
+                      <div style={{ fontSize: 11, color: '#8FB0D4' }}>Price Premium</div>
                     </div>
                     <div style={{ textAlign: 'center' }}>
                       <div style={{ fontSize: 15, fontWeight: 700, color: '#60A5FA' }}>{d.gradRate}</div>
-                      <div style={{ fontSize: 11, color: '#8FB0D4′ }}>Grad Rate</div>
+                      <div style={{ fontSize: 11, color: '#8FB0D4' }}>Grad Rate</div>
                     </div>
                     <div style={{ textAlign: 'center' }}>
                       <div style={{ fontSize: 15, fontWeight: 700, color: '#A78BFA' }}>{d.satAvg}</div>
-                      <div style={{ fontSize: 11, color: '#8FB0D4′ }}>Avg SAT</div>
+                      <div style={{ fontSize: 11, color: '#8FB0D4' }}>Avg SAT</div>
                     </div>
                     <div style={{ textAlign: 'center' }}>
                       <div style={{ fontSize: 15, fontWeight: 700, color: '#FCD34D' }}>{d.enrollment}</div>
-                      <div style={{ fontSize: 11, color: '#8FB0D4′ }}>Enrollment</div>
+                      <div style={{ fontSize: 11, color: '#8FB0D4' }}>Enrollment</div>
                     </div>
                   </div>
                   {isSelected && <div style={{ color: '#3B82F6', fontSize: 20, fontWeight: 700 }}>✓</div>}
@@ -157,7 +157,7 @@ export default function DFWSchoolDistrictGuide2026() {
                       { label: 'Average SAT Score', key: 'satAvg' as const },
                       { label: 'Enrollment', key: 'enrollment' as const },
                     ].map((row, i) => (
-                      <tr key={row.label} style={{ background: i % 2 === 0 ? '#0A1628′ : '#0D2144' }}>
+                      <tr key={row.label} style={{ background: i % 2 === 0 ? '#0A1628' : '#0D2144' }}>
                         <td style={{ padding: '12px 20px', color: '#A8C4E0', fontWeight: 600, borderBottom: '1px solid #1E3A5F' }}>{row.label}</td>
                         {comparisonDistricts.map(d => (
                           <td key={d.name} style={{ padding: '12px 20px', textAlign: 'center', color: '#FFFFFF', fontWeight: 500, borderBottom: '1px solid #1E3A5F' }}>

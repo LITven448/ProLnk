@@ -64,7 +64,7 @@ export default function DFWHVACHouseTypeComparison() {
       <div style={{ maxWidth: 760, margin: '0 auto' }}>
         <div style={{ textAlign: 'center', marginBottom: '2rem' }}>
           <div style={{ fontSize: '2.5rem' }}>🏠</div>
-          <h1 style={{ color: '#F5E642', fontSize: '1.8rem', margin: '0.5rem 0′ }}>DFW HVAC by House Type</h1>
+          <h1 style={{ color: '#F5E642', fontSize: '1.8rem', margin: '0.5rem 0' }}>DFW HVAC by House Type</h1>
           <p style={{ color: '#9BB0CC', margin: 0 }}>Select your DFW home style for a complete HVAC profile</p>
         </div>
 
@@ -75,9 +75,9 @@ export default function DFWHVACHouseTypeComparison() {
               onClick={() => setSelected(h.id)}
               style={{
                 padding: '0.6rem 1.2rem', borderRadius: 8, border: '2px solid',
-                borderColor: selected === h.id ? '#F5E642′ : '#1E3A5F',
-                background: selected === h.id ? '#F5E642′ : '#112240',
-                color: selected === h.id ? '#0A1628′ : '#fff',
+                borderColor: selected === h.id ? '#F5E642' : '#1E3A5F',
+                background: selected === h.id ? '#F5E642' : '#112240',
+                color: selected === h.id ? '#0A1628' : '#fff',
                 fontWeight: 700, cursor: 'pointer', fontSize: '0.95rem',
               }}
             >{h.emoji} {h.label}</button>
@@ -105,7 +105,7 @@ export default function DFWHVACHouseTypeComparison() {
         <div>
           <h3 style={{ color: '#F5E642', marginBottom: '1rem' }}>⚠️ Top 3 DFW Issues + Solutions</h3>
           {profile.commonProblems.map((p, i) => (
-            <div key={i} style={{ background: '#112240', borderRadius: 10, padding: '1rem 1.25rem', marginBottom: '0.75rem', borderLeft: '4px solid #F5E642′ }}>
+            <div key={i} style={{ background: '#112240', borderRadius: 10, padding: '1rem 1.25rem', marginBottom: '0.75rem', borderLeft: '4px solid #F5E642' }}>
               <div style={{ color: '#F5E642', fontWeight: 700, marginBottom: 4 }}>#{i + 1} {p.issue}</div>
               <div style={{ color: '#CBD5E1', lineHeight: 1.6 }}>✅ {p.solution}</div>
             </div>

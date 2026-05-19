@@ -30,7 +30,7 @@ export default function ElectricalPanelUpgradeGuide() {
   const pct = Math.round((score / maxScore) * 100);
 
   const risk = pct >= 65 ? 'High' : pct >= 35 ? 'Moderate' : 'Low';
-  const riskColor = pct >= 65 ? '#ef4444′ : pct >= 35 ? '#f59e0b' : '#22c55e';
+  const riskColor = pct >= 65 ? '#ef4444' : pct >= 35 ? '#f59e0b' : '#22c55e';
   const rec = pct >= 65
     ? 'Upgrade is strongly recommended. Contact a licensed DFW electrician immediately.'
     : pct >= 35
@@ -42,7 +42,7 @@ export default function ElectricalPanelUpgradeGuide() {
   };
 
   return (
-    <div style={{ minHeight: '100vh', background: '#0A1628', color: '#fff', fontFamily: 'system-ui, sans-serif', padding: '0 0 60px 0′ }}>
+    <div style={{ minHeight: '100vh', background: '#0A1628', color: '#fff', fontFamily: 'system-ui, sans-serif', padding: '0 0 60px 0' }}>
       <div style={{ background: 'linear-gradient(135deg, #0A1628 0%, #1a2a45 100%)', borderBottom: '2px solid #F5E642', padding: '48px 24px 36px' }}>
         <div style={{ maxWidth: 860, margin: '0 auto' }}>
           <div style={{ color: '#F5E642', fontSize: 13, fontWeight: 700, letterSpacing: 2, textTransform: 'uppercase', marginBottom: 12 }}>⚡ DFW Homeowner Guide</div>
@@ -53,7 +53,7 @@ export default function ElectricalPanelUpgradeGuide() {
         </div>
       </div>
 
-      <div style={{ maxWidth: 860, margin: '0 auto', padding: '40px 24px 0′ }}>
+      <div style={{ maxWidth: 860, margin: '0 auto', padding: '40px 24px 0' }}>
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: 20, marginBottom: 40 }}>
           {[
             { icon: '🔌', title: '60A Panels', body: 'Found in pre-1970 homes. Dangerously undersized by modern standards. Cannot support modern appliances safely.' },
@@ -74,7 +74,7 @@ export default function ElectricalPanelUpgradeGuide() {
           <div style={{ overflowX: 'auto' }}>
             <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: 14 }}>
               <thead>
-                <tr style={{ borderBottom: '1px solid #1E2D45′ }}>
+                <tr style={{ borderBottom: '1px solid #1E2D45' }}>
                   <th style={{ padding: '10px 14px', textAlign: 'left', color: '#F5E642', fontWeight: 700 }}>Service</th>
                   <th style={{ padding: '10px 14px', textAlign: 'right', color: '#F5E642', fontWeight: 700 }}>Low</th>
                   <th style={{ padding: '10px 14px', textAlign: 'right', color: '#F5E642', fontWeight: 700 }}>High</th>
@@ -82,10 +82,10 @@ export default function ElectricalPanelUpgradeGuide() {
               </thead>
               <tbody>
                 {costItems.map((c, i) => (
-                  <tr key={c.item} style={{ background: i % 2 === 0 ? 'transparent' : '#0A1628′ }}>
-                    <td style={{ padding: '10px 14px', color: '#e2e8f0′ }}>{c.item}</td>
-                    <td style={{ padding: '10px 14px', textAlign: 'right', color: '#94a3b8′ }}>${c.low.toLocaleString()}</td>
-                    <td style={{ padding: '10px 14px', textAlign: 'right', color: '#94a3b8′ }}>${c.high.toLocaleString()}</td>
+                  <tr key={c.item} style={{ background: i % 2 === 0 ? 'transparent' : '#0A1628' }}>
+                    <td style={{ padding: '10px 14px', color: '#e2e8f0' }}>{c.item}</td>
+                    <td style={{ padding: '10px 14px', textAlign: 'right', color: '#94a3b8' }}>${c.low.toLocaleString()}</td>
+                    <td style={{ padding: '10px 14px', textAlign: 'right', color: '#94a3b8' }}>${c.high.toLocaleString()}</td>
                   </tr>
                 ))}
               </tbody>
@@ -104,21 +104,21 @@ export default function ElectricalPanelUpgradeGuide() {
                 onClick={() => toggle(q.id)}
                 style={{
                   display: 'flex', alignItems: 'center', gap: 14, padding: '14px 18px',
-                  background: answers[q.id] ? '#1a2a45′ : '#0A1628',
+                  background: answers[q.id] ? '#1a2a45' : '#0A1628',
                   border: `1px solid ${answers[q.id] ? '#F5E642' : '#1E2D45'}`,
                   borderRadius: 10, cursor: 'pointer', transition: 'all 0.15s',
                 }}
               >
                 <div style={{
                   width: 22, height: 22, borderRadius: 4, flexShrink: 0,
-                  background: answers[q.id] ? '#F5E642′ : ’transparent',
+                  background: answers[q.id] ? '#F5E642' : 'transparent',
                   border: `2px solid ${answers[q.id] ? '#F5E642' : '#475569'}`,
                   display: 'flex', alignItems: 'center', justifyContent: 'center',
                   color: '#0A1628', fontWeight: 800, fontSize: 14,
                 }}>
                   {answers[q.id] ? '✓' : ''}
                 </div>
-                <span style={{ fontSize: 14, color: '#e2e8f0′ }}><strong style={{ color: '#94a3b8' }}>{i + 1}.</strong> {q.text}</span>
+                <span style={{ fontSize: 14, color: '#e2e8f0' }}><strong style={{ color: '#94a3b8' }}>{i + 1}.</strong> {q.text}</span>
               </div>
             ))}
           </div>

@@ -90,7 +90,7 @@ export default function DFWHVACMaintenanceLoop() {
               style={{
                 flex: 1,
                 background: selected === f.id ? f.color : '#0F2040',
-                color: selected === f.id ? '#0A1628′ : '#fff',
+                color: selected === f.id ? '#0A1628' : '#fff',
                 border: '1px solid',
                 borderColor: selected === f.id ? f.color : '#1E3A5F',
                 borderRadius: 10,

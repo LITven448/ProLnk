@@ -59,9 +59,9 @@ ${capacity}`);
               <label style={{ color: '#a0aec0', fontSize: '0.85rem' }}>Amperage</label><br />
               <select value={amps} onChange={(e) => setAmps(e.target.value)}
                 style={{ background: '#0A1628', border: '1px solid #F5E642', color: '#fff', padding: '0.5rem', borderRadius: 6, marginTop: 4 }}>
-                <option value="60″>60A</option>
-                <option value="100″>100A</option>
-                <option value="200″>200A</option>
+                <option value="60">60A</option>
+                <option value="100">100A</option>
+                <option value="200">200A</option>
               </select>
             </div>
           </div>
@@ -78,7 +78,7 @@ ${capacity}`);
 
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
           {[
-            { icon: '💵', label: 'Panel Upgrade Cost', val: '$3,000–$5,000′ },
+            { icon: '💵', label: 'Panel Upgrade Cost', val: '$3,000–$5,000' },
             { icon: '📋', label: 'Permit Required', val: 'Yes — always' },
             { icon: '🚗', label: '200A Needed For', val: 'EV + HVAC + home' },
             { icon: '⏱️', label: 'Install Time', val: '1 day typical' },

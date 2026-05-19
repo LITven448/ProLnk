@@ -26,7 +26,7 @@ export default function DFWContractorContractGuide2026() {
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12, marginBottom: 24 }}>
           {elements.map(el => (
             <button key={el.id} onClick={() => setSelected(selected === el.id ? null : el.id)}
-              style={{ background: selected === el.id ? '#F5E642′ : '#0f2340', border: '2px solid', borderColor: selected === el.id ? '#F5E642' : '#1e3a5f', borderRadius: 12, padding: '16px', cursor: ’pointer', color: selected === el.id ? '#0A1628′ : '#fff', textAlign: ’left', display: 'flex', alignItems: 'center', gap: 10 }}>
+              style={{ background: selected === el.id ? '#F5E642' : '#0f2340', border: '2px solid', borderColor: selected === el.id ? '#F5E642' : '#1e3a5f', borderRadius: 12, padding: '16px', cursor: 'pointer', color: selected === el.id ? '#0A1628' : '#fff', textAlign: 'left', display: 'flex', alignItems: 'center', gap: 10 }}>
               <span style={{ fontSize: 24 }}>{el.icon}</span>
               <span style={{ fontWeight: 700, fontSize: 14 }}>{el.label}</span>
             </button>

@@ -82,7 +82,7 @@ export default function DFWTexasCultureHomeGuide() {
               ))}
             </div>
             <div style={{ background: '#112240', borderRadius: 12, padding: 24 }}>
-              <div style={{ color: '#F5E642', fontWeight: 700, fontSize: 18, marginBottom: 16 }}>🔄 What's Different From Where You’re From</div>
+              <div style={{ color: '#F5E642', fontWeight: 700, fontSize: 18, marginBottom: 16 }}>🔄 What's Different From Where You're From</div>
               {result.differences.map((d, i) => (
                 <div key={i} style={{ display: 'flex', alignItems: 'flex-start', gap: 12, marginBottom: 12 }}>
                   <span style={{ fontSize: 18 }}>⚡</span>

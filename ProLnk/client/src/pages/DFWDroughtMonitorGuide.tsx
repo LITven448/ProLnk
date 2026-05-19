@@ -25,7 +25,7 @@ export default function DFWDroughtMonitorGuide() {
         <div style={{ background: '#0f2240', borderRadius: 12, padding: 20, marginBottom: 28 }}>
           <div style={{ fontSize: 13, color: '#94a3b8', marginBottom: 12 }}>📍 How to Check DFW Drought Status</div>
           <ol style={{ paddingLeft: 20, lineHeight: 2, color: '#cbd5e1', margin: 0 }}>
-            <li>Visit <span style={{ color: '#F5E642′ }}>droughtmonitor.unl.edu</span> or <span style={{ color: '#F5E642' }}>texasdrought.tamu.edu</span></li>
+            <li>Visit <span style={{ color: '#F5E642' }}>droughtmonitor.unl.edu</span> or <span style={{ color: '#F5E642' }}>texasdrought.tamu.edu</span></li>
             <li>Select Texas → Dallas-Fort Worth region</li>
             <li>Check weekly update (published every Thursday)</li>
             <li>Note your county: Dallas, Tarrant, Collin, Denton, or surrounding</li>
@@ -40,7 +40,7 @@ export default function DFWDroughtMonitorGuide() {
               onClick={() => setSelected(d.code)}
               style={{
                 background: selected === d.code ? d.color : '#0f2240',
-                color: selected === d.code ? '#0A1628′ : '#fff',
+                color: selected === d.code ? '#0A1628' : '#fff',
                 border: `2px solid ${d.color}`,
                 borderRadius: 8,
                 padding: '10px 18px',
@@ -60,11 +60,11 @@ export default function DFWDroughtMonitorGuide() {
             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16, marginTop: 16 }}>
               <div style={{ background: '#0A1628', borderRadius: 8, padding: 16 }}>
                 <div style={{ fontSize: 12, color: '#94a3b8', marginBottom: 6 }}>🏗️ FOUNDATION URGENCY</div>
-                <div style={{ fontSize: 18, fontWeight: 700, color: '#F5E642′ }}>{detail.foundationUrgency}</div>
+                <div style={{ fontSize: 18, fontWeight: 700, color: '#F5E642' }}>{detail.foundationUrgency}</div>
               </div>
               <div style={{ background: '#0A1628', borderRadius: 8, padding: 16 }}>
                 <div style={{ fontSize: 12, color: '#94a3b8', marginBottom: 6 }}>💧 WATER RESTRICTIONS</div>
-                <div style={{ fontSize: 14, fontWeight: 600, color: '#cbd5e1′ }}>{detail.restrictions}</div>
+                <div style={{ fontSize: 14, fontWeight: 600, color: '#cbd5e1' }}>{detail.restrictions}</div>
               </div>
             </div>
             <div style={{ background: '#0A1628', borderRadius: 8, padding: 16, marginTop: 16 }}>

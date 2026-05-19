@@ -58,7 +58,7 @@ export default function TrustyProVsZillow() {
         </p>
 
         {/* Key insight */}
-        <div style={{ background: '#fff', border: '1px solid #e2e8f0', borderRadius: 16, padding: 28, marginBottom: 40, boxShadow: '0 1px 4px rgba(0,0,0,.06)', borderLeft: '4px solid #6366f1′ }}>
+        <div style={{ background: '#fff', border: '1px solid #e2e8f0', borderRadius: 16, padding: 28, marginBottom: 40, boxShadow: '0 1px 4px rgba(0,0,0,.06)', borderLeft: '4px solid #6366f1' }}>
           <div style={{ fontWeight: 700, color: '#6366f1', marginBottom: 8 }}>💡 The Key Insight</div>
           <p style={{ margin: 0, color: '#1e293b', lineHeight: 1.7, fontSize: 16 }}>
             "Zillow is for market research and property search. TrustyPro is for home health intelligence. They solve completely different problems."
@@ -67,7 +67,7 @@ export default function TrustyProVsZillow() {
 
         {/* Comparison table */}
         <div style={{ background: '#fff', border: '1px solid #e2e8f0', borderRadius: 16, overflow: 'hidden', marginBottom: 40, boxShadow: '0 1px 4px rgba(0,0,0,.06)' }}>
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', background: '#f8fafc', borderBottom: '1px solid #e2e8f0′ }}>
+          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', background: '#f8fafc', borderBottom: '1px solid #e2e8f0' }}>
             <div style={{ padding: '16px 20px', fontWeight: 700, color: '#475569', fontSize: 13, textTransform: 'uppercase' }}>Feature</div>
             <div style={{ padding: '16px 20px', fontWeight: 700, color: '#006AFF', fontSize: 13, textAlign: 'center' }}>🏘️ Zillow</div>
             <div style={{ padding: '16px 20px', fontWeight: 700, color: '#6366f1', fontSize: 13, textAlign: 'center' }}>🔍 TrustyPro</div>
@@ -78,7 +78,7 @@ export default function TrustyProVsZillow() {
               onClick={() => setActiveRow(activeRow === i ? null : i)}
               style={{
                 display: 'grid', gridTemplateColumns: '1fr 1fr 1fr',
-                borderBottom: i < COMPARISON.length - 1 ? '1px solid #f1f5f9′ : ’none',
+                borderBottom: i < COMPARISON.length - 1 ? '1px solid #f1f5f9' : 'none',
                 background: activeRow === i ? '#faf5ff' : i % 2 === 0 ? '#fff' : '#fafafa',
                 cursor: 'pointer',
                 transition: 'background 0.15s',

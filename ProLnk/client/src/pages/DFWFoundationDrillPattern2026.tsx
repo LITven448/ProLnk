@@ -20,60 +20,60 @@ export default function DFWFoundationDrillPattern2026() {
   const [selected, setSelected] = useState<number | null>(null);
 
   return (
-    <div style={{ backgroundColor: "#0A1628″, minHeight: "100vh", padding: "32px 16px", fontFamily: "system-ui, sans-serif" }}>
+    <div style={{ backgroundColor: "#0A1628", minHeight: "100vh", padding: "32px 16px", fontFamily: "system-ui, sans-serif" }}>
       <div style={{ maxWidth: 720, margin: "0 auto" }}>
         <div style={{ textAlign: "center", marginBottom: 36 }}>
           <div style={{ fontSize: 48, marginBottom: 12 }}>🗺️</div>
-          <h1 style={{ color: "#F5E642″, fontSize: 26, fontWeight: 800, margin: "0 0 8px" }}>
+          <h1 style={{ color: "#F5E642", fontSize: 26, fontWeight: 800, margin: "0 0 8px" }}>
             DFW Foundation Pier Drilling Pattern Guide 2026
           </h1>
-          <p style={{ color: "#94a3b8″, fontSize: 15 }}>
+          <p style={{ color: "#94a3b8", fontSize: 15 }}>
             How DFW engineers determine where piers go — elevation surveys, load paths, soil data
           </p>
         </div>
 
         <div style={{ display: "flex", flexDirection: "column", gap: 14, marginBottom: 32 }}>
           {patternRules.map((r, i) => (
-            <div key={i} style={{ backgroundColor: "#112240″, borderRadius: 12, padding: 18, border: "1px solid #1e3a5f", display: "flex", gap: 14 }}>
+            <div key={i} style={{ backgroundColor: "#112240", borderRadius: 12, padding: 18, border: "1px solid #1e3a5f", display: "flex", gap: 14 }}>
               <div style={{ fontSize: 28, flexShrink: 0 }}>{r.icon}</div>
               <div>
-                <div style={{ color: "#F5E642″, fontWeight: 700, fontSize: 14, marginBottom: 6 }}>{r.title}</div>
-                <div style={{ color: "#94a3b8″, fontSize: 13, lineHeight: 1.6 }}>{r.desc}</div>
+                <div style={{ color: "#F5E642", fontWeight: 700, fontSize: 14, marginBottom: 6 }}>{r.title}</div>
+                <div style={{ color: "#94a3b8", fontSize: 13, lineHeight: 1.6 }}>{r.desc}</div>
               </div>
             </div>
           ))}
         </div>
 
-        <div style={{ backgroundColor: "#112240″, borderRadius: 12, padding: 24, border: "1px solid #1e3a5f", marginBottom: 24 }}>
-          <h2 style={{ color: "#F5E642″, fontSize: 17, fontWeight: 700, marginBottom: 16 }}>🔍 Your DFW Repair Situation</h2>
+        <div style={{ backgroundColor: "#112240", borderRadius: 12, padding: 24, border: "1px solid #1e3a5f", marginBottom: 24 }}>
+          <h2 style={{ color: "#F5E642", fontSize: 17, fontWeight: 700, marginBottom: 16 }}>🔍 Your DFW Repair Situation</h2>
           <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
             {situations.map((s, i) => (
               <button key={i} onClick={() => setSelected(i)}
                 style={{
-                  backgroundColor: selected === i ? "#F5E642″ : "#0A1628",
-                  color: selected === i ? "#0A1628″ : "#e2e8f0",
-                  border: "1px solid " + (selected === i ? "#F5E642″ : "#1e3a5f"),
+                  backgroundColor: selected === i ? "#F5E642" : "#0A1628",
+                  color: selected === i ? "#0A1628" : "#e2e8f0",
+                  border: "1px solid " + (selected === i ? "#F5E642" : "#1e3a5f"),
                   borderRadius: 8, padding: "12px 16px", cursor: "pointer",
                   textAlign: "left", fontSize: 14, fontWeight: selected === i ? 700 : 400,
                 }}>{s.label}</button>
             ))}
           </div>
           {selected !== null && (
-            <div style={{ marginTop: 20, backgroundColor: "#0A1628″, borderRadius: 10, padding: 18, border: "1px solid #F5E642" }}>
-              <div style={{ color: "#F5E642″, fontWeight: 800, fontSize: 15, marginBottom: 6 }}>✅ {situations[selected].recommendation}</div>
-              <div style={{ color: "#94a3b8″, fontSize: 14 }}>{situations[selected].detail}</div>
+            <div style={{ marginTop: 20, backgroundColor: "#0A1628", borderRadius: 10, padding: 18, border: "1px solid #F5E642" }}>
+              <div style={{ color: "#F5E642", fontWeight: 800, fontSize: 15, marginBottom: 6 }}>✅ {situations[selected].recommendation}</div>
+              <div style={{ color: "#94a3b8", fontSize: 14 }}>{situations[selected].detail}</div>
             </div>
           )}
         </div>
 
-        <div style={{ backgroundColor: "#112240″, borderRadius: 12, padding: 18, border: "1px solid #1e3a5f" }}>
-          <h3 style={{ color: "#F5E642″, fontSize: 14, fontWeight: 700, marginBottom: 10 }}>📋 What to Ask Your DFW Foundation Company</h3>
+        <div style={{ backgroundColor: "#112240", borderRadius: 12, padding: 18, border: "1px solid #1e3a5f" }}>
+          <h3 style={{ color: "#F5E642", fontSize: 14, fontWeight: 700, marginBottom: 10 }}>📋 What to Ask Your DFW Foundation Company</h3>
           {["Will you provide an elevation map showing current drop measurements?", "How many piers are proposed and at what spacing?", "What is the target depth to stable clay stratum?", "Is this pattern based on the elevation survey or a standard quote?"].map((q, i) => (
-            <div key={i} style={{ color: "#94a3b8″, fontSize: 13, marginBottom: 8 }}>• {q}</div>
+            <div key={i} style={{ color: "#94a3b8", fontSize: 13, marginBottom: 8 }}>• {q}</div>
           ))}
         </div>
 
-        <div style={{ textAlign: "center", marginTop: 28, color: "#475569″, fontSize: 12 }}>
+        <div style={{ textAlign: "center", marginTop: 28, color: "#475569", fontSize: 12 }}>
           ProLnk DFW Foundation Guide 2026 — Free Resource for Homeowners
         </div>
       </div>

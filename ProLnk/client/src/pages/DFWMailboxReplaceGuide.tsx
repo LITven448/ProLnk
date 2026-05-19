@@ -7,17 +7,17 @@ const mailboxTypes = ['Standard post-mount (curbside)', 'Locking / anti-theft ma
 type MailboxRec = { type: string; uspsNote: string; cost: string; material: string; heatNote: string };
 
 const recommendations: Record<string, MailboxRec> = {
-  'No HOA-Standard post-mount (curbside)': { type: 'Steel or Aluminum Post-Mount', uspsNote: 'USPS requires 41–45″ height to bottom of box, 6–8″ back from curb face, minimum 3″×5″ opening.', cost: '$80–$400 installed', material: 'Powder-coated steel or aluminum — avoid plastic in DFW (UV degrades in 2–3 seasons)', heatNote: 'Black mailboxes in DFW direct sun can reach 150°F+ — affects mail and locking mechanisms.' },
+  'No HOA-Standard post-mount (curbside)': { type: 'Steel or Aluminum Post-Mount', uspsNote: 'USPS requires 41–45" height to bottom of box, 6–8" back from curb face, minimum 3"×5" opening.', cost: '$80–$400 installed', material: 'Powder-coated steel or aluminum — avoid plastic in DFW (UV degrades in 2–3 seasons)', heatNote: 'Black mailboxes in DFW direct sun can reach 150°F+ — affects mail and locking mechanisms.' },
   'No HOA-Locking / anti-theft mailbox': { type: 'Heavy-Gauge Locking Mailbox', uspsNote: 'USPS Package Mail requires parcel slot. Confirm carrier approval — some locking designs require separate carrier access.', cost: '$150–$600 installed', material: 'Cast aluminum or heavy steel — Mail Boss and Architectural Mailboxes are DFW-popular brands', heatNote: 'Ensure locking mechanism is rated for 130°F+ — cheap locks seize in DFW summers.' },
   'HOA with mailbox style requirements-Standard post-mount (curbside)': { type: 'HOA-Approved Style (Verify Exact Model)', uspsNote: 'USPS compliance required regardless of HOA style — confirm both.', cost: '$120–$500 installed', material: 'Match HOA spec exactly — color, post height, and number plate style are often specified', heatNote: 'HOAs in DFW typically specify powder-coated finishes that handle heat well.' },
   'HOA requires matching neighborhood mailbox-Standard post-mount (curbside)': { type: 'Matched Neighborhood Unit — Buy from HOA Source', uspsNote: 'USPS compliance is the HOA supplier\’s responsibility — confirm before purchase.', cost: '$200–$800 through HOA', material: 'Order through HOA preferred vendor — mismatched units get violation notices within days in active DFW HOAs', heatNote: 'Standard HOA units are typically rated for DFW conditions.' },
 };
 
 const uspsRequirements = [
-  { rule: 'Height', spec: '41″–45″ from road surface to bottom of mailbox' },
-  { rule: 'Distance from curb', spec: '6″–8″ back from curb face (or as directed by postmaster)' },
-  { rule: 'Opening size', spec: 'Minimum 3″×5″ opening for standard mail' },
-  { rule: 'Address numbers', spec: 'Required on mailbox — minimum 1″ high, contrasting color' },
+  { rule: 'Height', spec: '41"–45" from road surface to bottom of mailbox' },
+  { rule: 'Distance from curb', spec: '6"–8" back from curb face (or as directed by postmaster)' },
+  { rule: 'Opening size', spec: 'Minimum 3"×5" opening for standard mail' },
+  { rule: 'Address numbers', spec: 'Required on mailbox — minimum 1" high, contrasting color' },
   { rule: 'Secure post', spec: 'Post must be able to withstand mail carrier pulling on door' },
 ];
 
@@ -37,9 +37,9 @@ export default function DFWMailboxReplaceGuide() {
   return (
     <div style={{ backgroundColor: '#0A1628', minHeight: '100vh', color: '#E2E8F0', fontFamily: 'system-ui, sans-serif', padding: '32px 20px' }}>
       <div style={{ maxWidth: '760px', margin: '0 auto' }}>
-        <div style={{ marginBottom: '8px', fontSize: '14px', color: '#F5E642′ }}>📬 DFW Exterior Guides</div>
+        <div style={{ marginBottom: '8px', fontSize: '14px', color: '#F5E642' }}>📬 DFW Exterior Guides</div>
         <h1 style={{ fontSize: '28px', fontWeight: '700', color: '#FFFFFF', marginBottom: '8px' }}>Mailbox Replacement Guide — DFW</h1>
-        <p style={{ color: '#94A3B8', marginBottom: '32px', lineHeight: '1.6′ }}>Package theft in DFW suburbs is up 40% since 2022. A proper mailbox choice involves USPS specs, HOA rules, and DFW heat tolerance — all at once.</p>
+        <p style={{ color: '#94A3B8', marginBottom: '32px', lineHeight: '1.6' }}>Package theft in DFW suburbs is up 40% since 2022. A proper mailbox choice involves USPS specs, HOA rules, and DFW heat tolerance — all at once.</p>
 
         <div style={{ backgroundColor: '#0F2040', borderRadius: '12px', padding: '24px', marginBottom: '24px' }}>
           <h2 style={{ color: '#F5E642', fontSize: '18px', marginBottom: '16px' }}>📏 USPS Compliance Requirements</h2>
@@ -93,9 +93,9 @@ export default function DFWMailboxReplaceGuide() {
             <h2 style={{ color: '#F5E642', fontSize: '18px', marginBottom: '12px' }}>✅ Recommendation: {result.type}</h2>
             <div style={{ display: 'grid', gap: '12px' }}>
               {[
-                { label: 'Estimated Cost', value: result.cost, color: '#F5E642′ },
-                { label: 'Best Material for DFW', value: result.material, color: '#CBD5E1′ },
-                { label: 'USPS Compliance Note', value: result.uspsNote, color: '#CBD5E1′ },
+                { label: 'Estimated Cost', value: result.cost, color: '#F5E642' },
+                { label: 'Best Material for DFW', value: result.material, color: '#CBD5E1' },
+                { label: 'USPS Compliance Note', value: result.uspsNote, color: '#CBD5E1' },
                 { label: '🌡️ DFW Heat Note', value: result.heatNote, color: '#FCD34D' },
               ].map(item => (
                 <div key={item.label} style={{ backgroundColor: '#1E3A5F', borderRadius: '8px', padding: '14px' }}>

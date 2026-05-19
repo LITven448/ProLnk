@@ -40,7 +40,7 @@ export default function HomeMaintenanceBudgetGuide() {
           <h1 style={{ fontSize: '2rem', fontWeight: 700, color: '#F5E642', marginBottom: '0.5rem' }}>
             How Much to Budget for Home Maintenance
           </h1>
-          <p style={{ color: '#94a3b8′ }}>DFW-specific cost projections — the real numbers, not national averages</p>
+          <p style={{ color: '#94a3b8' }}>DFW-specific cost projections — the real numbers, not national averages</p>
         </div>
 
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '2rem' }}>
@@ -78,7 +78,7 @@ export default function HomeMaintenanceBudgetGuide() {
               <div style={{ display: 'flex', gap: '0.4rem', marginTop: 4 }}>
                 {(['1pct', '2pct'] as const).map(r => (
                   <button key={r} onClick={() => setRule(r)}
-                    style={{ background: rule === r ? '#F5E642′ : '#1e3a5f', color: rule === r ? '#0A1628' : '#fff', border: ’none', borderRadius: 8, padding: '0.5rem 0.75rem', cursor: 'pointer', fontWeight: 600, fontSize: '0.875rem' }}>
+                    style={{ background: rule === r ? '#F5E642' : '#1e3a5f', color: rule === r ? '#0A1628' : '#fff', border: 'none', borderRadius: 8, padding: '0.5rem 0.75rem', cursor: 'pointer', fontWeight: 600, fontSize: '0.875rem' }}>
                     {r === '1pct' ? '1%' : '2%'}
                   </button>
                 ))}
@@ -89,7 +89,7 @@ export default function HomeMaintenanceBudgetGuide() {
               <div style={{ display: 'flex', gap: '0.4rem', marginTop: 4 }}>
                 {[true, false].map(v => (
                   <button key={String(v)} onClick={() => setHasPool(v)}
-                    style={{ background: hasPool === v ? '#F5E642′ : '#1e3a5f', color: hasPool === v ? '#0A1628' : '#fff', border: ’none', borderRadius: 8, padding: '0.5rem 0.75rem', cursor: 'pointer', fontWeight: 600, fontSize: '0.875rem' }}>
+                    style={{ background: hasPool === v ? '#F5E642' : '#1e3a5f', color: hasPool === v ? '#0A1628' : '#fff', border: 'none', borderRadius: 8, padding: '0.5rem 0.75rem', cursor: 'pointer', fontWeight: 600, fontSize: '0.875rem' }}>
                     {v ? 'Yes' : 'No'}
                   </button>
                 ))}
@@ -99,22 +99,22 @@ export default function HomeMaintenanceBudgetGuide() {
 
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '1rem', marginBottom: '1.25rem' }}>
             <div style={{ background: '#0A1628', borderRadius: 10, padding: '1rem', textAlign: 'center' }}>
-              <div style={{ fontSize: '1.5rem', fontWeight: 700, color: '#F5E642′ }}>${totalMonthly.toLocaleString()}/mo</div>
+              <div style={{ fontSize: '1.5rem', fontWeight: 700, color: '#F5E642' }}>${totalMonthly.toLocaleString()}/mo</div>
               <div style={{ color: '#94a3b8', fontSize: '0.75rem', marginTop: '0.25rem' }}>Monthly Budget</div>
             </div>
             <div style={{ background: '#0A1628', borderRadius: 10, padding: '1rem', textAlign: 'center' }}>
-              <div style={{ fontSize: '1.5rem', fontWeight: 700, color: '#F5E642′ }}>${totalAnnual.toLocaleString()}/yr</div>
+              <div style={{ fontSize: '1.5rem', fontWeight: 700, color: '#F5E642' }}>${totalAnnual.toLocaleString()}/yr</div>
               <div style={{ color: '#94a3b8', fontSize: '0.75rem', marginTop: '0.25rem' }}>Annual Budget</div>
             </div>
             <div style={{ background: '#0A1628', borderRadius: 10, padding: '1rem', textAlign: 'center' }}>
-              <div style={{ fontSize: '1.5rem', fontWeight: 700, color: '#ef4444′ }}>${(tenYearCapex + totalAnnual * 10).toLocaleString()}</div>
+              <div style={{ fontSize: '1.5rem', fontWeight: 700, color: '#ef4444' }}>${(tenYearCapex + totalAnnual * 10).toLocaleString()}</div>
               <div style={{ color: '#94a3b8', fontSize: '0.75rem', marginTop: '0.25rem' }}>10-Year Total Forecast</div>
             </div>
           </div>
 
           {hasPool && (
             <div style={{ background: '#1e3a5f', borderRadius: 10, padding: '0.875rem', marginBottom: '1rem', fontSize: '0.875rem' }}>
-              <strong style={{ color: '#F5E642′ }}>Pool Note:</strong> <span style={{ color: '#94a3b8' }}>Added $200/mo ($2,400/yr) for DFW pool maintenance — chemicals, cleaning, equipment. Major resurfacing every 10 yrs: ~$12,000.</span>
+              <strong style={{ color: '#F5E642' }}>Pool Note:</strong> <span style={{ color: '#94a3b8' }}>Added $200/mo ($2,400/yr) for DFW pool maintenance — chemicals, cleaning, equipment. Major resurfacing every 10 yrs: ~$12,000.</span>
             </div>
           )}
         </div>

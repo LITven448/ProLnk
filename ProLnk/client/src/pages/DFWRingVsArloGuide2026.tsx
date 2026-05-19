@@ -15,7 +15,7 @@ export default function DFWRingVsArloGuide2026() {
   }
 
   const btnStyle = (active: boolean) => ({
-    padding: '.65rem 1.25rem', borderRadius: '8px', border: active ? '2px solid #F5E642′ : '2px solid #1e3a5f',
+    padding: '.65rem 1.25rem', borderRadius: '8px', border: active ? '2px solid #F5E642' : '2px solid #1e3a5f',
     backgroundColor: active ? '#1a2f4e' : '#0d1f35', color: '#fff', cursor: 'pointer', fontSize: '.9rem'
   });
 
@@ -24,12 +24,12 @@ export default function DFWRingVsArloGuide2026() {
       <div style={{ maxWidth: '860px', margin: '0 auto' }}>
         <div style={{ textAlign: 'center', marginBottom: '2rem' }}>
           <div style={{ fontSize: '3rem' }}>📷</div>
-          <h1 style={{ color: '#F5E642', fontSize: '2rem', margin: '.5rem 0′ }}>Ring vs Arlo for DFW Home Security 2026</h1>
-          <p style={{ color: '#94a3b8′ }}>Which outdoor camera system handles North Texas weather and protects your home best?</p>
+          <h1 style={{ color: '#F5E642', fontSize: '2rem', margin: '.5rem 0' }}>Ring vs Arlo for DFW Home Security 2026</h1>
+          <p style={{ color: '#94a3b8' }}>Which outdoor camera system handles North Texas weather and protects your home best?</p>
         </div>
 
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1.5rem', marginBottom: '2rem' }}>
-          <div style={{ backgroundColor: '#112240', borderRadius: '12px', padding: '1.5rem', border: '2px solid #1c7ed6′ }}>
+          <div style={{ backgroundColor: '#112240', borderRadius: '12px', padding: '1.5rem', border: '2px solid #1c7ed6' }}>
             <div style={{ fontSize: '2rem', marginBottom: '.5rem' }}>💍 Ring</div>
             <ul style={{ color: '#cbd5e1', lineHeight: '1.8', paddingLeft: '1.2rem' }}>
               <li>Amazon ecosystem (Alexa native)</li>
@@ -71,12 +71,12 @@ export default function DFWRingVsArloGuide2026() {
           <button onClick={recommend} style={{ backgroundColor: '#F5E642', color: '#0A1628', border: 'none', borderRadius: '8px', padding: '.75rem 2rem', fontWeight: 'bold', cursor: 'pointer', fontSize: '1rem' }}>
             Get My Recommendation →
           </button>
-          {result && <div style={{ marginTop: '1rem', padding: '1rem', backgroundColor: '#0d1f35', borderRadius: '8px', color: '#F5E642′ }}>{result}</div>}
+          {result && <div style={{ marginTop: '1rem', padding: '1rem', backgroundColor: '#0d1f35', borderRadius: '8px', color: '#F5E642' }}>{result}</div>}
         </div>
 
         <div style={{ backgroundColor: '#112240', borderRadius: '12px', padding: '1.5rem' }}>
           <h3 style={{ color: '#F5E642', marginBottom: '.5rem' }}>⛈️ DFW Weather Note</h3>
-          <p style={{ color: '#cbd5e1', lineHeight: '1.7′ }}>Both Ring and Arlo are rated for outdoor DFW use, but Arlo’s IP65 rating handles the extreme heat (110°F+), hail, and flash flooding better. If your cameras face west in Frisco, McKinney, or Plano — direct afternoon sun — choose Arlo for superior thermal tolerance.</p>
+          <p style={{ color: '#cbd5e1', lineHeight: '1.7' }}>Both Ring and Arlo are rated for outdoor DFW use, but Arlo's IP65 rating handles the extreme heat (110°F+), hail, and flash flooding better. If your cameras face west in Frisco, McKinney, or Plano — direct afternoon sun — choose Arlo for superior thermal tolerance.</p>
         </div>
       </div>
     </div>

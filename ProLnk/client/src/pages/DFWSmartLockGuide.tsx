@@ -39,7 +39,7 @@ const BRANDS = [
   },
 ];
 
-const DOOR_TYPES = ['Standard wood door', 'Steel exterior door', 'Fiberglass door', 'Door with narrow stile (under 3″)'];
+const DOOR_TYPES = ['Standard wood door', 'Steel exterior door', 'Fiberglass door', 'Door with narrow stile (under 3")'];
 const ECOSYSTEMS = ['No smart home', 'Amazon Alexa', 'Google Home', 'Apple HomeKit', 'SmartThings / Z-Wave'];
 const PRIORITIES = ['Maximum security', 'Convenience / auto-unlock', 'Budget-friendly', 'Easy DIY install'];
 
@@ -52,7 +52,7 @@ const RECS: Record<string, { lock: string; model: string; cost: string; install:
   'Standard wood door-Amazon Alexa-Convenience / auto-unlock': { lock: 'Yale', model: 'Assure Lock 2 + Connect', cost: '$240–$300', install: 'DIY (60 min)', note: 'August auto-unlock engine inside Yale hardware — best of both worlds. Alexa and Google native.' },
   'Steel exterior door-Maximum security-No smart home': { lock: 'Schlage', model: 'B60N Deadbolt + B52 Handleset', cost: '$200–$260', install: 'Pro recommended', note: 'Steel doors require precise drilling — hire a locksmith for a pro install (~$80–$120). Grade 1 set.' },
   'Steel exterior door-Amazon Alexa-Maximum security': { lock: 'Schlage', model: 'Encode Plus', cost: '$280–$340 + install', install: 'Pro recommended ($80)', note: 'Grade 1 + WiFi + Alexa. Steel door alignment critical — pro install ensures bolt operates smoothly.' },
-  'Door with narrow stile (under 3″)-Apple HomeKit-Maximum security': { lock: 'Yale', model: 'Assure Lock 2 Mini', cost: '$200–$250', install: 'DIY possible, tight', note: 'Only major brand with narrow stile option. Common in DFW townhomes in Uptown and Knox-Henderson.' },
+  'Door with narrow stile (under 3")-Apple HomeKit-Maximum security': { lock: 'Yale', model: 'Assure Lock 2 Mini', cost: '$200–$250', install: 'DIY possible, tight', note: 'Only major brand with narrow stile option. Common in DFW townhomes in Uptown and Knox-Henderson.' },
 };
 
 export default function DFWSmartLockGuide() {
@@ -83,7 +83,7 @@ export default function DFWSmartLockGuide() {
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: 12 }}>
             {[
               { icon: '🔋', title: 'Battery Drain', desc: 'Heat doubles battery self-discharge. AA lithium batteries outperform alkaline in DFW — they tolerate 100°F+ without leaking.' },
-              { icon: '📐', title: 'Door Expansion', desc: 'Wood doors expand up to 3/8″ in DFW humidity swings. Choose a lock with a bolt tolerance range, not a friction fit.' },
+              { icon: '📐', title: 'Door Expansion', desc: 'Wood doors expand up to 3/8" in DFW humidity swings. Choose a lock with a bolt tolerance range, not a friction fit.' },
               { icon: '💻', title: 'Electronics', desc: 'Fingerprint readers slow or fail above 95°F. If your door gets direct afternoon sun, avoid biometric-primary locks.' },
             ].map(c => (
               <div key={c.title} style={{ backgroundColor: '#0A1628', borderRadius: 8, padding: 14 }}>
@@ -106,7 +106,7 @@ export default function DFWSmartLockGuide() {
                 </div>
                 <div style={{ textAlign: 'right' }}>
                   <div style={{ color: '#F5E642', fontWeight: 700 }}>{b.priceRange}</div>
-                  <div style={{ fontSize: 12, color: '#94A3B8′ }}>DFW: {b.dfwRating} · Heat: {b.heatRating}</div>
+                  <div style={{ fontSize: 12, color: '#94A3B8' }}>DFW: {b.dfwRating} · Heat: {b.heatRating}</div>
                 </div>
               </div>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 10 }}>
@@ -135,14 +135,14 @@ export default function DFWSmartLockGuide() {
           </div>
           <button onClick={evaluate} style={{ backgroundColor: '#F5E642', color: '#0A1628', border: 'none', borderRadius: 8, padding: '12px 28px', fontSize: 15, fontWeight: 700, cursor: 'pointer' }}>Get Recommendation →</button>
           {result && result !== 'fallback' && (
-            <div style={{ marginTop: 20, backgroundColor: '#0A1628', borderRadius: 10, padding: 20, borderLeft: '4px solid #F5E642′ }}>
+            <div style={{ marginTop: 20, backgroundColor: '#0A1628', borderRadius: 10, padding: 20, borderLeft: '4px solid #F5E642' }}>
               <div style={{ fontSize: 17, fontWeight: 800, marginBottom: 4 }}>{result.lock} — {result.model}</div>
               <div style={{ color: '#94A3B8', fontSize: 13, marginBottom: 8 }}>Cost: <span style={{ color: '#F5E642', fontWeight: 700 }}>{result.cost}</span> · Install: <span style={{ color: '#F5E642', fontWeight: 700 }}>{result.install}</span></div>
               <p style={{ color: '#CBD5E1', margin: 0, lineHeight: 1.7, fontSize: 14 }}>{result.note}</p>
             </div>
           )}
           {result === 'fallback' && (
-            <div style={{ marginTop: 20, backgroundColor: '#0A1628', borderRadius: 10, padding: 20, borderLeft: '4px solid #F5E642′ }}>
+            <div style={{ marginTop: 20, backgroundColor: '#0A1628', borderRadius: 10, padding: 20, borderLeft: '4px solid #F5E642' }}>
               <div style={{ fontSize: 17, fontWeight: 800, marginBottom: 8 }}>Schlage Encode Plus — Best All-Around for DFW</div>
               <p style={{ color: '#CBD5E1', margin: 0, lineHeight: 1.7, fontSize: 14 }}>For most DFW home configurations, the Schlage Encode Plus ($280–$320 installed) offers Grade 1 security, built-in WiFi for Alexa/Google/HomeKit, and a weatherized keypad designed for Texas summers. No hub required. Rekeying costs $50–$100 from a DFW locksmith if needed.</p>
             </div>
@@ -152,7 +152,7 @@ export default function DFWSmartLockGuide() {
         <div style={{ backgroundColor: '#0D1E3A', border: '1px solid #1E3A5F', borderRadius: 12, padding: 22 }}>
           <h2 style={{ color: '#F5E642', fontSize: 17, margin: '0 0 12px' }}>🔑 Rekey vs. Replace — DFW Moving In</h2>
           <p style={{ color: '#CBD5E1', margin: '0 0 10px', fontSize: 14, lineHeight: 1.7 }}>When you move into a DFW home, rekeying existing locks costs <span style={{ color: '#F5E642', fontWeight: 700 }}>$25–$50 per lock</span> from a local locksmith (Frisco/Plano/McKinney have many). Replacing with a smart lock costs <span style={{ color: '#F5E642', fontWeight: 700 }}>$150–$400 installed</span>. If the existing hardware is Grade 1 Schlage, rekey first — then decide if smart features are worth the upgrade cost.</p>
-          <div style={{ backgroundColor: '#0A1628', borderRadius: 8, padding: '10px 14px', fontSize: 13, color: '#94A3B8′ }}>💡 Pro tip: Many DFW locksmiths offer free rekey with a smart lock purchase and installation — ask before booking separately.</div>
+          <div style={{ backgroundColor: '#0A1628', borderRadius: 8, padding: '10px 14px', fontSize: 13, color: '#94A3B8' }}>💡 Pro tip: Many DFW locksmiths offer free rekey with a smart lock purchase and installation — ask before booking separately.</div>
         </div>
       </div>
     </div>

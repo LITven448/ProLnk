@@ -82,31 +82,31 @@ function DashboardMockup({ glowing = false }: { glowing?: boolean }) {
       }}
     >
       {/* Browser bar */}
-      <div className="flex items-center gap-2 px-4 py-3″ style={{ background: "#0d1424", borderBottom: "1px solid rgba(255,255,255,0.05)" }}>
-        <div className="flex gap-1.5″>
-          {["#ff5f57″,"#febc2e","#28c840"].map(c => <div key={c} className="w-3 h-3 rounded-full" style={{ backgroundColor: c, opacity: 0.7 }} />)}
+      <div className="flex items-center gap-2 px-4 py-3" style={{ background: "#0d1424", borderBottom: "1px solid rgba(255,255,255,0.05)" }}>
+        <div className="flex gap-1.5">
+          {["#ff5f57","#febc2e","#28c840"].map(c => <div key={c} className="w-3 h-3 rounded-full" style={{ backgroundColor: c, opacity: 0.7 }} />)}
         </div>
-        <div className="flex-1 mx-3 rounded-md px-3 py-1 text-xs text-gray-600″ style={{ background: "rgba(255,255,255,0.04)" }}>
+        <div className="flex-1 mx-3 rounded-md px-3 py-1 text-xs text-gray-600" style={{ background: "rgba(255,255,255,0.04)" }}>
           app.trustypro.io/my-home
         </div>
       </div>
 
       {/* Dashboard body */}
-      <div className="p-5″>
+      <div className="p-5">
         {/* Top nav */}
-        <div className="flex items-center justify-between mb-5″>
-          <div className="h-2.5 w-20 rounded-full bg-white/10″ />
-          <div className="flex gap-2″>
-            {[1,2].map(i => <div key={i} className="h-2.5 w-12 rounded-full bg-white/6″ />)}
+        <div className="flex items-center justify-between mb-5">
+          <div className="h-2.5 w-20 rounded-full bg-white/10" />
+          <div className="flex gap-2">
+            {[1,2].map(i => <div key={i} className="h-2.5 w-12 rounded-full bg-white/6" />)}
           </div>
         </div>
 
         {/* KPI row */}
-        <div className="grid grid-cols-3 gap-2 mb-4″>
-          {["bg-indigo-500/10″,"bg-teal-500/10","bg-amber-500/10"].map((bg, i) => (
+        <div className="grid grid-cols-3 gap-2 mb-4">
+          {["bg-indigo-500/10","bg-teal-500/10","bg-amber-500/10"].map((bg, i) => (
             <div key={i} className={`rounded-xl p-3 ${bg}`}>
-              <div className="h-1.5 w-10 rounded-full bg-white/15 mb-2″ />
-              <div className="h-4 w-8 rounded-full bg-white/25″ />
+              <div className="h-1.5 w-10 rounded-full bg-white/15 mb-2" />
+              <div className="h-4 w-8 rounded-full bg-white/25" />
             </div>
           ))}
         </div>
@@ -127,9 +127,9 @@ function DashboardMockup({ glowing = false }: { glowing?: boolean }) {
             borderColor: "rgba(245,197,24,0.2)",
           }}
         >
-          <div className="flex items-center justify-between mb-2.5″>
-            <div className="text-[9px] font-bold uppercase tracking-widest text-[#F5C518] flex items-center gap-1″>
-              <Zap className="w-2.5 h-2.5″ /> Featured Partner
+          <div className="flex items-center justify-between mb-2.5">
+            <div className="text-[9px] font-bold uppercase tracking-widest text-[#F5C518] flex items-center gap-1">
+              <Zap className="w-2.5 h-2.5" /> Featured Partner
             </div>
             <motion.div
               animate={{ opacity: [0.5, 1, 0.5] }}
@@ -137,12 +137,12 @@ function DashboardMockup({ glowing = false }: { glowing?: boolean }) {
               className="h-1.5 w-1.5 rounded-full bg-[#F5C518]"
             />
           </div>
-          <div className="flex items-center gap-3″>
+          <div className="flex items-center gap-3">
             <div className="w-10 h-10 rounded-xl flex items-center justify-center text-xs font-black text-[#050810]"
               style={{ background: "linear-gradient(135deg, #F5C518, #e6a800)" }}>AC</div>
-            <div className="flex-1″>
-              <div className="h-2.5 w-24 rounded-full bg-white/30 mb-1.5″ />
-              <div className="h-1.5 w-16 rounded-full bg-white/15″ />
+            <div className="flex-1">
+              <div className="h-2.5 w-24 rounded-full bg-white/30 mb-1.5" />
+              <div className="h-1.5 w-16 rounded-full bg-white/15" />
             </div>
             <div className="text-[9px] font-bold text-[#F5C518] bg-[#F5C518]/15 px-2.5 py-1.5 rounded-full">
               Book Now →
@@ -152,13 +152,13 @@ function DashboardMockup({ glowing = false }: { glowing?: boolean }) {
 
         {/* Other rows */}
         {[1,2,3].map(i => (
-          <div key={i} className="flex items-center gap-3 py-2.5 border-b border-white/4 last:border-0″>
-            <div className="w-7 h-7 rounded-lg bg-white/6 flex-shrink-0″ />
-            <div className="flex-1″>
-              <div className="h-2 w-28 rounded-full bg-white/10 mb-1″ />
-              <div className="h-1.5 w-20 rounded-full bg-white/6″ />
+          <div key={i} className="flex items-center gap-3 py-2.5 border-b border-white/4 last:border-0">
+            <div className="w-7 h-7 rounded-lg bg-white/6 flex-shrink-0" />
+            <div className="flex-1">
+              <div className="h-2 w-28 rounded-full bg-white/10 mb-1" />
+              <div className="h-1.5 w-20 rounded-full bg-white/6" />
             </div>
-            <div className="h-2 w-10 rounded-full bg-white/8″ />
+            <div className="h-2 w-10 rounded-full bg-white/8" />
           </div>
         ))}
       </div>
@@ -169,12 +169,12 @@ function DashboardMockup({ glowing = false }: { glowing?: boolean }) {
 // ─── Comparison row ────────────────────────────────────────────────────────────
 function ComparisonRow({ platform, cpl, cold, pay }: { platform: string; cpl: string; cold: boolean; pay: string }) {
   return (
-    <div className="flex items-center gap-4 py-3 border-b border-white/5 last:border-0″>
-      <span className="text-sm text-gray-400 w-36 shrink-0″>{platform}</span>
-      <span className="text-sm font-bold w-20 shrink-0″ style={{ color: cold ? "#EF4444" : "#22c55e" }}>{cpl}</span>
-      <div className="flex items-center gap-1.5″>
+    <div className="flex items-center gap-4 py-3 border-b border-white/5 last:border-0">
+      <span className="text-sm text-gray-400 w-36 shrink-0">{platform}</span>
+      <span className="text-sm font-bold w-20 shrink-0" style={{ color: cold ? "#EF4444" : "#22c55e" }}>{cpl}</span>
+      <div className="flex items-center gap-1.5">
         <div className={`w-2 h-2 rounded-full ${cold ? "bg-red-500" : "bg-green-500"}`} />
-        <span className="text-xs text-gray-500″>{pay}</span>
+        <span className="text-xs text-gray-500">{pay}</span>
       </div>
     </div>
   );
@@ -183,17 +183,17 @@ function ComparisonRow({ platform, cpl, cold, pay }: { platform: string; cpl: st
 // ─── Tier card ────────────────────────────────────────────────────────────────
 const TIERS = [
   {
-    name: "Connect", price: 199, color: "#6366F1″,
+    name: "Connect", price: 199, color: "#6366F1",
     tagline: "Start local. Build fast.",
     features: ["Profile on homeowner dashboard", "3 zip codes", "Impression analytics", "Monthly report", "Cancel anytime"],
   },
   {
-    name: "Preferred", price: 349, color: "#00B5B8″, popular: true,
+    name: "Preferred", price: 349, color: "#00B5B8", popular: true,
     tagline: "The platform's most-booked tier.",
     features: ["Dashboard + AI scan results", "8 zip codes", "Priority placement rotation", "Bi-weekly reports", "Territory exclusivity option", "Cancel anytime"],
   },
   {
-    name: "Exclusive", price: 799, color: "#F5C518″,
+    name: "Exclusive", price: 799, color: "#F5C518",
     tagline: "Own your market. Lock out competitors.",
     features: ["Zero competitor ads in your territory", "20 zip codes", "Top-of-scan placement", "Dedicated account manager", "Custom creative assets", "Weekly strategy call"],
   },
@@ -229,21 +229,21 @@ export default function AdvertiseWithUs() {
       contactEmail: email.trim(),
       contactPhone: phone.trim() || undefined,
       category: "Home Services",
-      zipCodes: ["75001″],
+      zipCodes: ["75001"],
       selectedTier: tier as "spotlight" | "featured" | "exclusive",
     });
   };
 
   return (
-    <div className="bg-[#050810] text-white selection:bg-[#F5C518]/30″ style={{ fontFamily: "'Inter', system-ui, sans-serif" }}>
+    <div className="bg-[#050810] text-white selection:bg-[#F5C518]/30" style={{ fontFamily: "'Inter', system-ui, sans-serif" }}>
 
       {/* ─── Sticky Nav ─────────────────────────────────────────────────────── */}
       <nav className="fixed top-0 inset-x-0 z-50 flex items-center justify-between px-6 py-4 transition-all"
         style={{ background: "linear-gradient(to bottom, rgba(5,8,16,0.95) 0%, rgba(5,8,16,0) 100%)" }}>
         <ProLnkLogo height={26} variant="dark" />
-        <div className="hidden md:flex items-center gap-8″>
+        <div className="hidden md:flex items-center gap-8">
           {[["#reach","Reach"],["#placements","Placements"],["#compare","Why Us"],["#pricing","Pricing"]].map(([href, label]) => (
-            <a key={href} href={href} className="text-sm text-gray-400 hover:text-white transition-colors duration-200″>{label}</a>
+            <a key={href} href={href} className="text-sm text-gray-400 hover:text-white transition-colors duration-200">{label}</a>
           ))}
         </div>
         <motion.button
@@ -251,7 +251,7 @@ export default function AdvertiseWithUs() {
           whileHover={{ scale: 1.04 }}
           whileTap={{ scale: 0.97 }}
           className="text-sm font-bold px-5 py-2.5 rounded-full"
-          style={{ background: "linear-gradient(135deg,#F5C518,#e6a800)", color: "#050810″, boxShadow: "0 4px 20px rgba(245,197,24,0.3)" }}
+          style={{ background: "linear-gradient(135deg,#F5C518,#e6a800)", color: "#050810", boxShadow: "0 4px 20px rgba(245,197,24,0.3)" }}
         >
           Get Started
         </motion.button>
@@ -267,11 +267,11 @@ export default function AdvertiseWithUs() {
 
         {/* Radial gradient overlays */}
         <motion.div style={{ y: heroY, scale: heroScale }} className="absolute inset-0 pointer-events-none">
-          <div className="absolute inset-0″ style={{ background: "radial-gradient(ellipse 90% 70% at 50% 40%, rgba(245,197,24,0.05) 0%, transparent 65%)" }} />
-          <div className="absolute inset-0″ style={{ background: "radial-gradient(ellipse 60% 50% at 20% 70%, rgba(99,102,241,0.06) 0%, transparent 60%)" }} />
-          <div className="absolute inset-0″ style={{ background: "radial-gradient(ellipse 50% 40% at 80% 20%, rgba(0,181,184,0.05) 0%, transparent 60%)" }} />
+          <div className="absolute inset-0" style={{ background: "radial-gradient(ellipse 90% 70% at 50% 40%, rgba(245,197,24,0.05) 0%, transparent 65%)" }} />
+          <div className="absolute inset-0" style={{ background: "radial-gradient(ellipse 60% 50% at 20% 70%, rgba(99,102,241,0.06) 0%, transparent 60%)" }} />
+          <div className="absolute inset-0" style={{ background: "radial-gradient(ellipse 50% 40% at 80% 20%, rgba(0,181,184,0.05) 0%, transparent 60%)" }} />
           {/* Bottom fade */}
-          <div className="absolute bottom-0 inset-x-0 h-64″ style={{ background: "linear-gradient(to top, #050810, transparent)" }} />
+          <div className="absolute bottom-0 inset-x-0 h-64" style={{ background: "linear-gradient(to top, #050810, transparent)" }} />
         </motion.div>
 
         {/* Hero content */}
@@ -281,7 +281,7 @@ export default function AdvertiseWithUs() {
             initial={{ opacity: 0, y: 24, scale: 0.95 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
             transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
-            className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full border mb-8″
+            className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full border mb-8"
             style={{ borderColor: "rgba(245,197,24,0.3)", background: "rgba(245,197,24,0.05)" }}
           >
             <Sparkles className="w-3.5 h-3.5 text-[#F5C518]" />
@@ -292,7 +292,7 @@ export default function AdvertiseWithUs() {
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.08, ease: [0.16, 1, 0.3, 1] }}
-            className="font-black leading-[0.92] tracking-tight mb-8″
+            className="font-black leading-[0.92] tracking-tight mb-8"
             style={{ fontSize: "clamp(3.5rem, 10vw, 7.5rem)" }}
           >
             Your Brand.<br />
@@ -316,7 +316,7 @@ export default function AdvertiseWithUs() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.35, ease: [0.16, 1, 0.3, 1] }}
-            className="flex flex-wrap items-center justify-center gap-4″
+            className="flex flex-wrap items-center justify-center gap-4"
           >
             <motion.button
               onClick={() => setFormOpen(true)}
@@ -325,7 +325,7 @@ export default function AdvertiseWithUs() {
               className="group flex items-center gap-3 px-9 py-4.5 rounded-full text-base font-bold"
               style={{
                 background: "linear-gradient(135deg, #F5C518, #e6a800)",
-                color: "#050810″,
+                color: "#050810",
                 boxShadow: "0 0 0 0 rgba(245,197,24,0.4)",
                 padding: "1.1rem 2.2rem",
               }}
@@ -348,18 +348,18 @@ export default function AdvertiseWithUs() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 1.4 }}
-          className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2″
+          className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2"
         >
-          <span className="text-[10px] font-bold uppercase tracking-[0.25em] text-gray-600″>Scroll</span>
+          <span className="text-[10px] font-bold uppercase tracking-[0.25em] text-gray-600">Scroll</span>
           <motion.div animate={{ y: [0, 7, 0] }} transition={{ duration: 1.6, repeat: Infinity, ease: "easeInOut" }}>
-            <ChevronDown className="w-4 h-4 text-gray-600″ />
+            <ChevronDown className="w-4 h-4 text-gray-600" />
           </motion.div>
         </motion.div>
       </div>
 
       {/* ─── STATS — Animated counters ──────────────────────────────────────── */}
       <section className="py-28 px-6 border-y" style={{ borderColor: "rgba(255,255,255,0.05)", background: "linear-gradient(to bottom, #050810, #080d1a)" }}>
-        <div className="max-w-5xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-10″>
+        <div className="max-w-5xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-10">
           {[
             { to: 14200, suffix: "+", label: "Verified Homeowners" },
             { to: 890,   suffix: "+", label: "Active Partner Pros" },
@@ -377,7 +377,7 @@ export default function AdvertiseWithUs() {
                 transition={{ duration: 0.7, delay: i * 0.1, ease: [0.16, 1, 0.3, 1] }}
                 className="text-center"
               >
-                <div className="text-5xl md:text-6xl font-black text-white tabular-nums mb-2″>
+                <div className="text-5xl md:text-6xl font-black text-white tabular-nums mb-2">
                   <Counter to={s.to} suffix={s.suffix} />
                 </div>
                 <div className="text-xs text-gray-500 uppercase tracking-widest font-semibold">{s.label}</div>
@@ -388,35 +388,35 @@ export default function AdvertiseWithUs() {
       </section>
 
       {/* ─── REACH — The problem section ────────────────────────────────────── */}
-      <section className="py-36 px-6″ id="reach">
+      <section className="py-36 px-6" id="reach">
         <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-20 items-center">
           <div>
             <Reveal delay={0}>
-              <div className="text-xs font-bold uppercase tracking-[0.2em] text-[#F5C518] mb-5″>The Problem With Every Other Ad Platform</div>
+              <div className="text-xs font-bold uppercase tracking-[0.2em] text-[#F5C518] mb-5">The Problem With Every Other Ad Platform</div>
             </Reveal>
             <Reveal delay={0.08}>
-              <h2 className="font-black leading-[0.95] mb-7″ style={{ fontSize: "clamp(2.2rem,5vw,3.5rem)" }}>
+              <h2 className="font-black leading-[0.95] mb-7" style={{ fontSize: "clamp(2.2rem,5vw,3.5rem)" }}>
                 You're paying to{" "}
                 <span className="relative inline-block">
-                  <span className="text-gray-600″>interrupt</span>
+                  <span className="text-gray-600">interrupt</span>
                   <motion.div
                     initial={{ scaleX: 0 }}
                     whileInView={{ scaleX: 1 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.5, delay: 0.3 }}
                     className="absolute top-1/2 inset-x-0 h-[3px] origin-left"
-                    style={{ background: "#EF4444″, transform: "translateY(-50%)" }}
+                    style={{ background: "#EF4444", transform: "translateY(-50%)" }}
                   />
                 </span>{" "}
                 people.
               </h2>
             </Reveal>
             <Reveal delay={0.15}>
-              <p className="text-lg leading-relaxed mb-6″ style={{ color: "rgba(255,255,255,0.45)" }}>
+              <p className="text-lg leading-relaxed mb-6" style={{ color: "rgba(255,255,255,0.45)" }}>
                 Angi, Thumbtack, Google LSA — they all put your business in front of people who weren't thinking about you yet.
                 You pay hundreds of dollars per lead hoping for a conversion.
               </p>
-              <p className="text-lg leading-relaxed mb-10″ style={{ color: "rgba(255,255,255,0.45)" }}>
+              <p className="text-lg leading-relaxed mb-10" style={{ color: "rgba(255,255,255,0.45)" }}>
                 <span className="text-white font-semibold">ProLnk Media is built differently.</span>{" "}
                 Our AI scans a homeowner's property photos and detects what services they need —{" "}
                 <span style={goldText} className="font-bold">then</span> your business appears.
@@ -424,17 +424,17 @@ export default function AdvertiseWithUs() {
               </p>
             </Reveal>
             <Reveal delay={0.22}>
-              <div className="space-y-3″>
+              <div className="space-y-3">
                 {[
-                  { label: "Angi avg cost per booked job", value: "$542″, bad: true },
-                  { label: "Thumbtack avg cost per booked job", value: "$250″, bad: true },
-                  { label: "Google LSA avg cost per booked job", value: "$168″, bad: true },
-                  { label: "ProLnk Media — flat monthly rate", value: "from $199″, bad: false },
+                  { label: "Angi avg cost per booked job", value: "$542", bad: true },
+                  { label: "Thumbtack avg cost per booked job", value: "$250", bad: true },
+                  { label: "Google LSA avg cost per booked job", value: "$168", bad: true },
+                  { label: "ProLnk Media — flat monthly rate", value: "from $199", bad: false },
                 ].map(row => (
-                  <div key={row.label} className="flex items-center gap-3″>
+                  <div key={row.label} className="flex items-center gap-3">
                     <div className={`w-8 h-px ${row.bad ? "bg-gray-700" : "bg-[#F5C518]"}`} />
-                    <span className="text-sm text-gray-500 flex-1″>{row.label}</span>
-                    <span className="text-sm font-bold" style={{ color: row.bad ? "#EF4444″ : "#F5C518" }}>{row.value}</span>
+                    <span className="text-sm text-gray-500 flex-1">{row.label}</span>
+                    <span className="text-sm font-bold" style={{ color: row.bad ? "#EF4444" : "#F5C518" }}>{row.value}</span>
                   </div>
                 ))}
               </div>
@@ -444,16 +444,16 @@ export default function AdvertiseWithUs() {
           <Reveal delay={0.15} x={60}>
             <div className="relative">
               {/* Glow */}
-              <div className="absolute -inset-8 rounded-3xl blur-2xl opacity-20″ style={{ background: "radial-gradient(ellipse at center, #F5C518, transparent 70%)" }} />
+              <div className="absolute -inset-8 rounded-3xl blur-2xl opacity-20" style={{ background: "radial-gradient(ellipse at center, #F5C518, transparent 70%)" }} />
               <DashboardMockup glowing />
               {/* Floating badge */}
               <motion.div
                 animate={{ y: [-4, 4, -4] }}
                 transition={{ duration: 3.5, repeat: Infinity, ease: "easeInOut" }}
-                className="absolute -bottom-5 -right-5 rounded-2xl px-4 py-3 text-xs font-bold shadow-2xl flex items-center gap-2″
-                style={{ background: "linear-gradient(135deg,#F5C518,#e6a800)", color: "#050810″ }}
+                className="absolute -bottom-5 -right-5 rounded-2xl px-4 py-3 text-xs font-bold shadow-2xl flex items-center gap-2"
+                style={{ background: "linear-gradient(135deg,#F5C518,#e6a800)", color: "#050810" }}
               >
-                <Eye className="w-3.5 h-3.5″ />
+                <Eye className="w-3.5 h-3.5" />
                 Seen at the perfect moment
               </motion.div>
             </div>
@@ -475,7 +475,7 @@ export default function AdvertiseWithUs() {
             "AI-powered matching", "Verified homeowners only", "Flat monthly rate",
           ]).flat().map((t, i) => (
             <span key={i} className="flex items-center gap-3 text-sm text-gray-600 font-medium">
-              <span className="text-[#F5C518] opacity-50″>✦</span>
+              <span className="text-[#F5C518] opacity-50">✦</span>
               {t}
             </span>
           ))}
@@ -483,12 +483,12 @@ export default function AdvertiseWithUs() {
       </div>
 
       {/* ─── PLACEMENTS ─────────────────────────────────────────────────────── */}
-      <section className="py-36 px-6″ id="placements" style={{ background: "linear-gradient(to bottom, #080d1a, #050810)" }}>
+      <section className="py-36 px-6" id="placements" style={{ background: "linear-gradient(to bottom, #080d1a, #050810)" }}>
         <div className="max-w-6xl mx-auto">
           <Reveal>
-            <div className="text-center mb-20″>
-              <div className="text-xs font-bold uppercase tracking-[0.2em] text-[#F5C518] mb-4″>Three moments. All high intent.</div>
-              <h2 className="font-black mb-5″ style={{ fontSize: "clamp(2rem,5vw,3.5rem)" }}>
+            <div className="text-center mb-20">
+              <div className="text-xs font-bold uppercase tracking-[0.2em] text-[#F5C518] mb-4">Three moments. All high intent.</div>
+              <h2 className="font-black mb-5" style={{ fontSize: "clamp(2rem,5vw,3.5rem)" }}>
                 Where you show up.
               </h2>
               <p className="text-lg max-w-xl mx-auto" style={{ color: "rgba(255,255,255,0.4)" }}>
@@ -497,22 +497,22 @@ export default function AdvertiseWithUs() {
             </div>
           </Reveal>
 
-          <div className="grid md:grid-cols-3 gap-6″>
+          <div className="grid md:grid-cols-3 gap-6">
             {[
               {
                 icon: Eye, title: "Homeowner Dashboard",
                 desc: "Featured on the main home screen every homeowner sees when they log in. High visibility, high dwell time. ~4.2 min avg session.",
-                color: "#6366F1″, stat: "~4.2 min avg session",
+                color: "#6366F1", stat: "~4.2 min avg session",
               },
               {
                 icon: Zap, title: "AI Scan Results",
                 desc: "Your ad appears immediately after the AI detects a need in your trade category. The highest-intent moment in the industry.",
-                color: "#F5C518″, stat: "Matched to your exact trade", featured: true,
+                color: "#F5C518", stat: "Matched to your exact trade", featured: true,
               },
               {
                 icon: MapPin, title: "Pro Directory",
                 desc: "Priority placement when homeowners search for pros in their area. Filtered to your exact zip codes.",
-                color: "#00B5B8″, stat: "Filtered to your territory",
+                color: "#00B5B8", stat: "Filtered to your territory",
               },
             ].map((p, i) => (
               <Reveal key={p.title} delay={i * 0.12}>
@@ -533,12 +533,12 @@ export default function AdvertiseWithUs() {
                       </div>
                     </>
                   )}
-                  <div className="w-11 h-11 rounded-xl flex items-center justify-center mb-5 flex-shrink-0″
+                  <div className="w-11 h-11 rounded-xl flex items-center justify-center mb-5 flex-shrink-0"
                     style={{ background: `${p.color}15`, color: p.color }}>
-                    <p.icon className="w-5 h-5″ />
+                    <p.icon className="w-5 h-5" />
                   </div>
-                  <h3 className="text-lg font-bold text-white mb-3″>{p.title}</h3>
-                  <p className="text-sm leading-relaxed flex-1 mb-5″ style={{ color: "rgba(255,255,255,0.4)" }}>{p.desc}</p>
+                  <h3 className="text-lg font-bold text-white mb-3">{p.title}</h3>
+                  <p className="text-sm leading-relaxed flex-1 mb-5" style={{ color: "rgba(255,255,255,0.4)" }}>{p.desc}</p>
                   <div className="text-xs font-bold py-1.5 px-3 rounded-full inline-block"
                     style={{ color: p.color, background: `${p.color}12` }}>
                     {p.stat}
@@ -551,11 +551,11 @@ export default function AdvertiseWithUs() {
       </section>
 
       {/* ─── COMPARISON TABLE ───────────────────────────────────────────────── */}
-      <section className="py-36 px-6″ id="compare">
+      <section className="py-36 px-6" id="compare">
         <div className="max-w-4xl mx-auto">
           <Reveal>
-            <div className="text-center mb-16″>
-              <div className="text-xs font-bold uppercase tracking-[0.2em] text-[#F5C518] mb-4″>Why ProLnk Wins</div>
+            <div className="text-center mb-16">
+              <div className="text-xs font-bold uppercase tracking-[0.2em] text-[#F5C518] mb-4">Why ProLnk Wins</div>
               <h2 className="font-black" style={{ fontSize: "clamp(2rem,5vw,3.5rem)" }}>
                 See the difference.
               </h2>
@@ -563,16 +563,16 @@ export default function AdvertiseWithUs() {
           </Reveal>
           <Reveal delay={0.1}>
             <div className="rounded-2xl overflow-hidden border" style={{ background: "rgba(255,255,255,0.02)", borderColor: "rgba(255,255,255,0.06)" }}>
-              <div className="flex gap-4 px-6 py-3 border-b text-xs font-bold uppercase tracking-widest text-gray-600″
+              <div className="flex gap-4 px-6 py-3 border-b text-xs font-bold uppercase tracking-widest text-gray-600"
                 style={{ borderColor: "rgba(255,255,255,0.05)" }}>
-                <span className="w-36″>Platform</span>
-                <span className="w-20″>Avg CPL</span>
+                <span className="w-36">Platform</span>
+                <span className="w-20">Avg CPL</span>
                 <span>Model</span>
               </div>
-              <div className="px-6″>
-                <ComparisonRow platform="Angi / HomeAdvisor" cpl="$542″ cold pay="Pay per lead, whether it closes or not" />
-                <ComparisonRow platform="Thumbtack" cpl="$250″ cold pay="Pay per lead, cold intent" />
-                <ComparisonRow platform="Google LSA" cpl="$168″ cold pay="Pay per click, anyone browsing" />
+              <div className="px-6">
+                <ComparisonRow platform="Angi / HomeAdvisor" cpl="$542" cold pay="Pay per lead, whether it closes or not" />
+                <ComparisonRow platform="Thumbtack" cpl="$250" cold pay="Pay per lead, cold intent" />
+                <ComparisonRow platform="Google LSA" cpl="$168" cold pay="Pay per click, anyone browsing" />
                 <ComparisonRow platform="ProLnk Media" cpl="from $199/mo" cold={false} pay="Flat rate, intent-matched, only when AI confirms need" />
               </div>
             </div>
@@ -581,12 +581,12 @@ export default function AdvertiseWithUs() {
       </section>
 
       {/* ─── PRICING ────────────────────────────────────────────────────────── */}
-      <section className="py-36 px-6″ id="pricing" style={{ background: "linear-gradient(to bottom, #050810, #080d1a)" }}>
+      <section className="py-36 px-6" id="pricing" style={{ background: "linear-gradient(to bottom, #050810, #080d1a)" }}>
         <div className="max-w-6xl mx-auto">
           <Reveal>
-            <div className="text-center mb-20″>
-              <div className="text-xs font-bold uppercase tracking-[0.2em] text-[#F5C518] mb-4″>Pricing</div>
-              <h2 className="font-black mb-4″ style={{ fontSize: "clamp(2rem,5vw,3.5rem)" }}>
+            <div className="text-center mb-20">
+              <div className="text-xs font-bold uppercase tracking-[0.2em] text-[#F5C518] mb-4">Pricing</div>
+              <h2 className="font-black mb-4" style={{ fontSize: "clamp(2rem,5vw,3.5rem)" }}>
                 One flat rate. No surprises.
               </h2>
               <p className="text-lg max-w-lg mx-auto" style={{ color: "rgba(255,255,255,0.4)" }}>
@@ -595,7 +595,7 @@ export default function AdvertiseWithUs() {
             </div>
           </Reveal>
 
-          <div className="grid md:grid-cols-3 gap-6″>
+          <div className="grid md:grid-cols-3 gap-6">
             {TIERS.map((tier, i) => (
               <Reveal key={tier.name} delay={i * 0.1}>
                 <motion.div
@@ -610,18 +610,18 @@ export default function AdvertiseWithUs() {
                   }}
                 >
                   {tier.popular && (
-                    <div className="absolute top-0 inset-x-0 h-0.5″ style={{ background: "linear-gradient(90deg, transparent, #00B5B8, transparent)" }} />
+                    <div className="absolute top-0 inset-x-0 h-0.5" style={{ background: "linear-gradient(90deg, transparent, #00B5B8, transparent)" }} />
                   )}
-                  <div className="text-xs font-bold uppercase tracking-[0.2em] mb-3″ style={{ color: tier.color }}>{tier.name}</div>
-                  <div className="flex items-end gap-1 mb-2″>
+                  <div className="text-xs font-bold uppercase tracking-[0.2em] mb-3" style={{ color: tier.color }}>{tier.name}</div>
+                  <div className="flex items-end gap-1 mb-2">
                     <span className="text-5xl font-black text-white">${tier.price}</span>
-                    <span className="text-gray-600 text-sm mb-1.5″>/mo</span>
+                    <span className="text-gray-600 text-sm mb-1.5">/mo</span>
                   </div>
-                  <p className="text-sm mb-7″ style={{ color: "rgba(255,255,255,0.35)" }}>{tier.tagline}</p>
-                  <ul className="space-y-3 flex-1 mb-8″>
+                  <p className="text-sm mb-7" style={{ color: "rgba(255,255,255,0.35)" }}>{tier.tagline}</p>
+                  <ul className="space-y-3 flex-1 mb-8">
                     {tier.features.map(f => (
                       <li key={f} className="flex items-start gap-2.5 text-sm" style={{ color: "rgba(255,255,255,0.6)" }}>
-                        <CheckCircle className="w-4 h-4 mt-0.5 flex-shrink-0″ style={{ color: tier.color }} />
+                        <CheckCircle className="w-4 h-4 mt-0.5 flex-shrink-0" style={{ color: tier.color }} />
                         {f}
                       </li>
                     ))}
@@ -644,25 +644,25 @@ export default function AdvertiseWithUs() {
             ))}
           </div>
           <Reveal delay={0.3}>
-            <p className="text-center text-gray-700 text-sm mt-10″>30-day free trial on all plans · No credit card required to apply</p>
+            <p className="text-center text-gray-700 text-sm mt-10">30-day free trial on all plans · No credit card required to apply</p>
           </Reveal>
         </div>
       </section>
 
       {/* ─── TRUST SIGNALS ──────────────────────────────────────────────────── */}
       <section className="py-28 px-6 border-t" style={{ borderColor: "rgba(255,255,255,0.04)" }}>
-        <div className="max-w-5xl mx-auto grid md:grid-cols-3 gap-8″>
+        <div className="max-w-5xl mx-auto grid md:grid-cols-3 gap-8">
           {[
-            { icon: Shield, title: "Verified Audience", color: "#6366F1″, desc: "Every homeowner completed a full home profile. You know exactly who sees your ad." },
-            { icon: BarChart3, title: "Transparent Analytics", color: "#00B5B8″, desc: "Real-time impressions, clicks, and conversions. No black box — you see exactly what you paid for." },
-            { icon: MapPin, title: "Hyper-Local Targeting", color: "#F5C518″, desc: "Zip-code precision targeting. Your ad only reaches homeowners in your actual service territory." },
+            { icon: Shield, title: "Verified Audience", color: "#6366F1", desc: "Every homeowner completed a full home profile. You know exactly who sees your ad." },
+            { icon: BarChart3, title: "Transparent Analytics", color: "#00B5B8", desc: "Real-time impressions, clicks, and conversions. No black box — you see exactly what you paid for." },
+            { icon: MapPin, title: "Hyper-Local Targeting", color: "#F5C518", desc: "Zip-code precision targeting. Your ad only reaches homeowners in your actual service territory." },
           ].map((item, i) => (
             <Reveal key={item.title} delay={i * 0.1}>
               <div className="p-6 rounded-2xl border" style={{ background: "rgba(255,255,255,0.015)", borderColor: "rgba(255,255,255,0.05)" }}>
-                <div className="w-11 h-11 rounded-xl flex items-center justify-center mb-4″ style={{ background: `${item.color}12`, color: item.color }}>
-                  <item.icon className="w-5 h-5″ />
+                <div className="w-11 h-11 rounded-xl flex items-center justify-center mb-4" style={{ background: `${item.color}12`, color: item.color }}>
+                  <item.icon className="w-5 h-5" />
                 </div>
-                <h3 className="font-bold text-white mb-2″>{item.title}</h3>
+                <h3 className="font-bold text-white mb-2">{item.title}</h3>
                 <p className="text-sm leading-relaxed" style={{ color: "rgba(255,255,255,0.38)" }}>{item.desc}</p>
               </div>
             </Reveal>
@@ -672,7 +672,7 @@ export default function AdvertiseWithUs() {
 
       {/* ─── FINAL CTA ──────────────────────────────────────────────────────── */}
       <section className="py-48 px-6 text-center relative overflow-hidden">
-        <div className="absolute inset-0″ style={{ background: "radial-gradient(ellipse 80% 60% at 50% 50%, rgba(245,197,24,0.05) 0%, transparent 70%)" }} />
+        <div className="absolute inset-0" style={{ background: "radial-gradient(ellipse 80% 60% at 50% 50%, rgba(245,197,24,0.05) 0%, transparent 70%)" }} />
         {/* Animated ring */}
         <motion.div
           animate={{ scale: [1, 1.15, 1], opacity: [0.05, 0.12, 0.05] }}
@@ -691,8 +691,8 @@ export default function AdvertiseWithUs() {
 
         <Reveal>
           <div className="relative z-10 max-w-3xl mx-auto">
-            <div className="text-xs font-bold uppercase tracking-[0.25em] text-[#F5C518] mb-7″>DFW Launch · Limited Territories</div>
-            <h2 className="font-black leading-[0.92] mb-7″ style={{ fontSize: "clamp(3rem,8vw,6rem)" }}>
+            <div className="text-xs font-bold uppercase tracking-[0.25em] text-[#F5C518] mb-7">DFW Launch · Limited Territories</div>
+            <h2 className="font-black leading-[0.92] mb-7" style={{ fontSize: "clamp(3rem,8vw,6rem)" }}>
               Be first.<br />
               <span style={goldText}>Own your market.</span>
             </h2>
@@ -706,23 +706,23 @@ export default function AdvertiseWithUs() {
               className="inline-flex items-center gap-3 rounded-full font-bold text-base"
               style={{
                 background: "linear-gradient(135deg, #F5C518, #e6a800)",
-                color: "#050810″,
+                color: "#050810",
                 padding: "1.2rem 2.8rem",
                 boxShadow: "0 0 80px rgba(245,197,24,0.18), 0 8px 32px rgba(245,197,24,0.2)",
               }}
             >
               Reserve Your Territory
-              <ArrowRight className="w-5 h-5″ />
+              <ArrowRight className="w-5 h-5" />
             </motion.button>
           </div>
         </Reveal>
       </section>
 
       {/* ─── Footer ──────────────────────────────────────────────────────────── */}
-      <footer className="border-t py-10 px-6″ style={{ borderColor: "rgba(255,255,255,0.05)" }}>
-        <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4″>
+      <footer className="border-t py-10 px-6" style={{ borderColor: "rgba(255,255,255,0.05)" }}>
+        <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
           <ProLnkLogo height={22} variant="dark" />
-          <div className="flex gap-6 text-sm text-gray-700″>
+          <div className="flex gap-6 text-sm text-gray-700">
             {[["/"," ProLnk"],[ "/trustypro","TrustyPro"],["/privacy","Privacy"],["/terms","Terms"]].map(([href, label]) => (
               <Link key={href} href={href} className="hover:text-gray-400 transition-colors">{label}</Link>
             ))}
@@ -739,7 +739,7 @@ export default function AdvertiseWithUs() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.2 }}
-            className="fixed inset-0 z-[100] flex items-center justify-center p-4″
+            className="fixed inset-0 z-[100] flex items-center justify-center p-4"
             style={{ background: "rgba(5,8,16,0.88)", backdropFilter: "blur(16px)" }}
             onClick={e => { if (e.target === e.currentTarget) setFormOpen(false); }}
           >
@@ -759,22 +759,22 @@ export default function AdvertiseWithUs() {
                 onClick={() => setFormOpen(false)}
                 className="absolute top-4 right-4 w-8 h-8 rounded-full flex items-center justify-center text-gray-600 hover:text-gray-400 hover:bg-white/5 transition-all"
               >
-                <X className="w-4 h-4″ />
+                <X className="w-4 h-4" />
               </button>
 
               {submitted ? (
-                <div className="text-center py-8″>
+                <div className="text-center py-8">
                   <motion.div
                     initial={{ scale: 0 }}
                     animate={{ scale: 1 }}
                     transition={{ type: "spring", stiffness: 200, damping: 15 }}
-                    className="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-5″
+                    className="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-5"
                     style={{ background: "rgba(245,197,24,0.1)" }}
                   >
                     <CheckCircle className="w-8 h-8 text-[#F5C518]" />
                   </motion.div>
-                  <h3 className="text-2xl font-black text-white mb-2″>You're on the list.</h3>
-                  <p className="text-sm mb-8″ style={{ color: "rgba(255,255,255,0.4)" }}>
+                  <h3 className="text-2xl font-black text-white mb-2">You're on the list.</h3>
+                  <p className="text-sm mb-8" style={{ color: "rgba(255,255,255,0.4)" }}>
                     We'll reach out within 24 hours to discuss your territory and get your placement live.
                   </p>
                   <button onClick={() => setFormOpen(false)} className="text-sm text-gray-600 hover:text-gray-400 underline">
@@ -783,19 +783,19 @@ export default function AdvertiseWithUs() {
                 </div>
               ) : (
                 <>
-                  <div className="mb-7″>
-                    <div className="text-xs font-bold uppercase tracking-[0.2em] text-[#F5C518] mb-2″>Reserve Your Spot</div>
+                  <div className="mb-7">
+                    <div className="text-xs font-bold uppercase tracking-[0.2em] text-[#F5C518] mb-2">Reserve Your Spot</div>
                     <h3 className="text-2xl font-black text-white">Claim your territory before it fills.</h3>
                   </div>
 
-                  <div className="space-y-4″>
+                  <div className="space-y-4">
                     {[
                       { label: "Business Name *", value: company, set: setCompany, placeholder: "Acme HVAC Services" },
                       { label: "Work Email *", value: email, set: setEmail, placeholder: "you@yourbusiness.com", type: "email" },
-                      { label: "Phone (optional)", value: phone, set: setPhone, placeholder: "(214) 555-0100″, type: "tel" },
+                      { label: "Phone (optional)", value: phone, set: setPhone, placeholder: "(214) 555-0100", type: "tel" },
                     ].map(field => (
                       <div key={field.label}>
-                        <label className="block text-xs font-semibold uppercase tracking-wider mb-1.5″ style={{ color: "rgba(255,255,255,0.35)" }}>
+                        <label className="block text-xs font-semibold uppercase tracking-wider mb-1.5" style={{ color: "rgba(255,255,255,0.35)" }}>
                           {field.label}
                         </label>
                         <input
@@ -811,11 +811,11 @@ export default function AdvertiseWithUs() {
 
                     {/* Tier selector */}
                     <div>
-                      <label className="block text-xs font-semibold uppercase tracking-wider mb-2″ style={{ color: "rgba(255,255,255,0.35)" }}>
+                      <label className="block text-xs font-semibold uppercase tracking-wider mb-2" style={{ color: "rgba(255,255,255,0.35)" }}>
                         Tier Interest
                       </label>
-                      <div className="grid grid-cols-3 gap-2″>
-                        {[["spotlight","Connect","$199″],["featured","Preferred","$349"],["exclusive","Exclusive","$799"]].map(([val, label, price]) => (
+                      <div className="grid grid-cols-3 gap-2">
+                        {[["spotlight","Connect","$199"],["featured","Preferred","$349"],["exclusive","Exclusive","$799"]].map(([val, label, price]) => (
                           <button
                             key={val}
                             onClick={() => setTier(val)}
@@ -823,7 +823,7 @@ export default function AdvertiseWithUs() {
                             style={{
                               background: tier === val ? "rgba(245,197,24,0.12)" : "rgba(255,255,255,0.04)",
                               borderColor: tier === val ? "rgba(245,197,24,0.4)" : "rgba(255,255,255,0.06)",
-                              color: tier === val ? "#F5C518″ : "rgba(255,255,255,0.4)",
+                              color: tier === val ? "#F5C518" : "rgba(255,255,255,0.4)",
                               border: `1px solid ${tier === val ? "rgba(245,197,24,0.4)" : "rgba(255,255,255,0.06)"}`,
                             }}
                           >
@@ -839,8 +839,8 @@ export default function AdvertiseWithUs() {
                       disabled={submitting}
                       whileHover={{ scale: 1.02 }}
                       whileTap={{ scale: 0.98 }}
-                      className="w-full py-4 rounded-xl text-sm font-bold disabled:opacity-50″
-                      style={{ background: "linear-gradient(135deg,#F5C518,#e6a800)", color: "#050810″ }}
+                      className="w-full py-4 rounded-xl text-sm font-bold disabled:opacity-50"
+                      style={{ background: "linear-gradient(135deg,#F5C518,#e6a800)", color: "#050810" }}
                     >
                       {submitting ? "Submitting…" : "Reserve My Territory →"}
                     </motion.button>

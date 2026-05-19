@@ -56,7 +56,7 @@ export default function DFWHistoricHomeGuide() {
               <div key={d.name} style={{ background: '#1a1d27', borderRadius: 10, padding: 20, border: '1px solid #2a2d3a', display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: 12 }}>
                 <div>
                   <p style={{ fontWeight: 600, color: '#ffffff', marginBottom: 4 }}>{d.name}</p>
-                  <p style={{ fontSize: 13, color: '#6b7280′ }}>{d.city} · {d.style}</p>
+                  <p style={{ fontSize: 13, color: '#6b7280' }}>{d.city} · {d.style}</p>
                 </div>
                 <span style={{ background: '#1e3a5f', color: '#93c5fd', padding: '4px 12px', borderRadius: 20, fontSize: 13 }}>{d.era}</span>
               </div>
@@ -115,7 +115,7 @@ export default function DFWHistoricHomeGuide() {
                 <label style={{ display: 'block', color: '#9ca3af', fontSize: 13, marginBottom: 6 }}>Year Built</label>
                 <input
                   type="number"
-                  placeholder="e.g. 1928″
+                  placeholder="e.g. 1928"
                   value={homeYear}
                   onChange={e => setHomeYear(e.target.value)}
                   style={{ width: '100%', background: '#111827', border: '1px solid #374151', borderRadius: 8, padding: '10px 14px', color: '#ffffff', fontSize: 15 }}
@@ -125,7 +125,7 @@ export default function DFWHistoricHomeGuide() {
                 <label style={{ display: 'block', color: '#9ca3af', fontSize: 13, marginBottom: 6 }}>Square Footage</label>
                 <input
                   type="number"
-                  placeholder="e.g. 2400″
+                  placeholder="e.g. 2400"
                   value={sqft}
                   onChange={e => setSqft(e.target.value)}
                   style={{ width: '100%', background: '#111827', border: '1px solid #374151', borderRadius: 8, padding: '10px 14px', color: '#ffffff', fontSize: 15 }}
@@ -139,7 +139,7 @@ export default function DFWHistoricHomeGuide() {
               Calculate Decade Cost
             </button>
             {budgetResult !== null && (
-              <div style={{ marginTop: 24, background: '#0f2544', borderRadius: 10, padding: 20, border: '1px solid #3b82f6′ }}>
+              <div style={{ marginTop: 24, background: '#0f2544', borderRadius: 10, padding: 20, border: '1px solid #3b82f6' }}>
                 <p style={{ color: '#93c5fd', fontSize: 13, marginBottom: 4 }}>Estimated additional maintenance per decade:</p>
                 <p style={{ color: '#ffffff', fontSize: 32, fontWeight: 700 }}>
                   ${budgetResult.toLocaleString()}
@@ -153,7 +153,7 @@ export default function DFWHistoricHomeGuide() {
         </section>
 
         <section>
-          <div style={{ background: 'linear-gradient(135deg, #1e3a5f, #0f2544)', borderRadius: 16, padding: 36, textAlign: 'center', border: '1px solid #3b82f6′ }}>
+          <div style={{ background: 'linear-gradient(135deg, #1e3a5f, #0f2544)', borderRadius: 16, padding: 36, textAlign: 'center', border: '1px solid #3b82f6' }}>
             <span style={{ fontSize: 36 }}>🤖</span>
             <h2 style={{ fontSize: 24, fontWeight: 700, color: '#ffffff', margin: '16px 0 12px' }}>TrustyPro AI Scanning for Historic Homes</h2>
             <p style={{ color: '#93c5fd', lineHeight: 1.7, marginBottom: 24, maxWidth: 540, margin: '0 auto 24px' }}>

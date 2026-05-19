@@ -41,8 +41,8 @@ export default function DFWERCOTGuide() {
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12 }}>
             {[['🏝️ Island Grid', 'ERCOT is isolated from national grids — cannot import power from neighboring states during emergencies'], ['❄️ Winter Vulnerability', 'Feb 2021 Uri caused 246 deaths and $195B in damages — ERCOT reforms underway but vulnerabilities remain'], ['🌡️ Summer Peaks', 'DFW summers push ERCOT to capacity — conservation notices (ERCOT Watch) can occur July–September'], ['💡 Deregulated Market', 'You choose your electricity provider — this means you can enroll in demand response for bill credits']].map(([t, d]) => (
               <div key={t as string} style={{ background: '#0A1628', borderRadius: 8, padding: 16 }}>
-                <div style={{ fontWeight: 600, marginBottom: 6, color: '#F5E642′ }}>{t}</div>
-                <div style={{ fontSize: 14, color: '#94a3b8′ }}>{d}</div>
+                <div style={{ fontWeight: 600, marginBottom: 6, color: '#F5E642' }}>{t}</div>
+                <div style={{ fontSize: 14, color: '#94a3b8' }}>{d}</div>
               </div>
             ))}
           </div>
@@ -53,7 +53,7 @@ export default function DFWERCOTGuide() {
           {[['Oncor Smart Thermostat Rebate', '$100 rebate + $1.25/event during summer peaks', '🏠'], ['Reliant Energy Saver', 'Credits for reducing usage 4–9 PM weekdays', '💰'], ['TXU Free Nights & Weekends', 'Free power nights 9 PM–6 AM and all weekend', '🌙'], ['Prepaid Electric Plans', 'Real-time pricing — save by shifting usage off-peak', '📊']].map(([name, detail, icon]) => (
             <div key={name as string} style={{ display: 'flex', gap: 14, padding: '12px 0', borderBottom: '1px solid #0A1628', alignItems: 'flex-start' }}>
               <span style={{ fontSize: 24 }}>{icon}</span>
-              <div><div style={{ fontWeight: 600, color: '#e2e8f0′ }}>{name}</div><div style={{ fontSize: 13, color: '#94a3b8', marginTop: 3 }}>{detail}</div></div>
+              <div><div style={{ fontWeight: 600, color: '#e2e8f0' }}>{name}</div><div style={{ fontSize: 13, color: '#94a3b8', marginTop: 3 }}>{detail}</div></div>
             </div>
           ))}
         </div>
@@ -61,7 +61,7 @@ export default function DFWERCOTGuide() {
         <div style={{ background: '#1e3a5f', borderRadius: 12, padding: 24, marginBottom: 24 }}>
           <h2 style={{ color: '#F5E642', fontSize: 20, marginBottom: 20 }}>🔧 Backup Power Recommendation</h2>
           <div style={{ marginBottom: 16 }}>
-            <label style={{ display: 'block', marginBottom: 8, color: '#94a3b8′ }}>Home Size</label>
+            <label style={{ display: 'block', marginBottom: 8, color: '#94a3b8' }}>Home Size</label>
             <select value={homeSize} onChange={e => setHomeSize(e.target.value)} style={{ width: '100%', padding: 12, borderRadius: 8, background: '#0A1628', color: '#e2e8f0', border: '1px solid #334155', fontSize: 15 }}>
               <option value="">Select size...</option>
               <option value="small">Small (under 1,500 sq ft)</option>
@@ -70,7 +70,7 @@ export default function DFWERCOTGuide() {
             </select>
           </div>
           <div style={{ marginBottom: 20 }}>
-            <label style={{ display: 'block', marginBottom: 8, color: '#94a3b8′ }}>Primary HVAC Type</label>
+            <label style={{ display: 'block', marginBottom: 8, color: '#94a3b8' }}>Primary HVAC Type</label>
             <select value={hvacType} onChange={e => setHvacType(e.target.value)} style={{ width: '100%', padding: 12, borderRadius: 8, background: '#0A1628', color: '#e2e8f0', border: '1px solid #334155', fontSize: 15 }}>
               <option value="">Select HVAC type...</option>
               <option value="central">Central Air (ducted)</option>
@@ -81,10 +81,10 @@ export default function DFWERCOTGuide() {
           <button onClick={calculate} style={{ width: '100%', padding: 14, background: '#F5E642', color: '#0A1628', borderRadius: 8, border: 'none', fontWeight: 700, fontSize: 16, cursor: 'pointer' }}>Get My Recommendation →</button>
 
           {result && (
-            <div style={{ marginTop: 24, background: '#0A1628', borderRadius: 10, padding: 20, borderLeft: '4px solid #F5E642′ }}>
+            <div style={{ marginTop: 24, background: '#0A1628', borderRadius: 10, padding: 20, borderLeft: '4px solid #F5E642' }}>
               <div style={{ fontSize: 18, fontWeight: 700, color: '#F5E642', marginBottom: 8 }}>⚡ {result.rec}</div>
               <div style={{ display: 'flex', gap: 12, marginBottom: 16 }}>
-                <span style={{ background: '#1e3a5f', borderRadius: 6, padding: '4px 10px', fontSize: 13, color: '#e2e8f0′ }}>💰 {result.cost}</span>
+                <span style={{ background: '#1e3a5f', borderRadius: 6, padding: '4px 10px', fontSize: 13, color: '#e2e8f0' }}>💰 {result.cost}</span>
                 <span style={{ background: '#1e3a5f', borderRadius: 6, padding: '4px 10px', fontSize: 13, color: '#22c55e' }}>📉 {result.savings}</span>
               </div>
               {result.notes.map((n, i) => <div key={i} style={{ padding: '6px 0', color: '#cbd5e1', borderBottom: '1px solid #1e3a5f', fontSize: 14 }}>• {n}</div>)}

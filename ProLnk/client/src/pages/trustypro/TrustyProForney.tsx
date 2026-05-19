@@ -1,26 +1,26 @@
 import { Link } from "wouter";
 
-const INDIGO = "#4F46E5″;
+const INDIGO = "#4F46E5";
 const AMBER  = "#F59E0B";
 const LIGHT  = "#F8FAFC";
 
 const stats = [
-  { label: "Homes Built 2010–2024″, value: "78%" },
+  { label: "Homes Built 2010–2024", value: "78%" },
   { label: "Population Growth (2010–2024)", value: "340%" },
-  { label: "Clay Soil Heave Risk (High)", value: "Level 4″ },
+  { label: "Clay Soil Heave Risk (High)", value: "Level 4" },
   { label: "Homes on Well Water (Est.)", value: "~22%" },
 ];
 
 const steps = [
-  { n: "01″, title: "Tell Us Your Situation", body: "New home on former farmland? Well water issues? Rural-to-suburban transition gaps? Describe it and we handle the matching." },
-  { n: "02″, title: "Meet Your Pro", body: "We surface Forney-area specialists who understand Trinity River delta clay soil, settlement patterns, and rural infrastructure crossovers." },
-  { n: "03″, title: "Fix It Right", body: "Get transparent quotes, approve the job, and track progress — no more chasing contractors who don't call back." },
+  { n: "01", title: "Tell Us Your Situation", body: "New home on former farmland? Well water issues? Rural-to-suburban transition gaps? Describe it and we handle the matching." },
+  { n: "02", title: "Meet Your Pro", body: "We surface Forney-area specialists who understand Trinity River delta clay soil, settlement patterns, and rural infrastructure crossovers." },
+  { n: "03", title: "Fix It Right", body: "Get transparent quotes, approve the job, and track progress — no more chasing contractors who don't call back." },
 ];
 
 const pros = [
-  { name: "Tyler B.", trade: "Foundation & Soil Settlement", rating: "4.9″, jobs: 198, note: "Expert in new-construction settlement on former farmland east of I-20." },
-  { name: "Aisha W.", trade: "Well Water & Plumbing", rating: "4.8″, jobs: 155, note: "Diagnoses well water quality and pressure issues common in rural Forney pockets." },
-  { name: "Carlos M.", trade: "Drainage & Grading", rating: "4.9″, jobs: 172, note: "Designs drainage solutions for clay-heavy Trinity delta lots." },
+  { name: "Tyler B.", trade: "Foundation & Soil Settlement", rating: "4.9", jobs: 198, note: "Expert in new-construction settlement on former farmland east of I-20." },
+  { name: "Aisha W.", trade: "Well Water & Plumbing", rating: "4.8", jobs: 155, note: "Diagnoses well water quality and pressure issues common in rural Forney pockets." },
+  { name: "Carlos M.", trade: "Drainage & Grading", rating: "4.9", jobs: 172, note: "Designs drainage solutions for clay-heavy Trinity delta lots." },
 ];
 
 const testimonials = [
@@ -66,10 +66,10 @@ export default function TrustyProForney() {
       </section>
 
       {/* Stats Bar */}
-      <section style={{ background: "#fff", borderBottom: "1px solid #E2E8F0″ }}>
+      <section style={{ background: "#fff", borderBottom: "1px solid #E2E8F0" }}>
         <div style={{ maxWidth: 900, margin: "0 auto", display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(180px, 1fr))", padding: "0 24px" }}>
           {stats.map(s => (
-            <div key={s.label} style={{ textAlign: "center", padding: "28px 16px", borderRight: "1px solid #E2E8F0″ }}>
+            <div key={s.label} style={{ textAlign: "center", padding: "28px 16px", borderRight: "1px solid #E2E8F0" }}>
               <div style={{ fontSize: 28, fontWeight: 800, color: INDIGO }}>{s.value}</div>
               <div style={{ fontSize: 12, color: "#64748B", marginTop: 4, lineHeight: 1.4 }}>{s.label}</div>
             </div>
@@ -85,7 +85,7 @@ export default function TrustyProForney() {
             <div key={s.n} style={{ background: "#fff", borderRadius: 16, padding: 32, boxShadow: "0 2px 12px rgba(0,0,0,0.06)" }}>
               <div style={{ fontSize: 40, fontWeight: 900, color: INDIGO, opacity: 0.15, lineHeight: 1 }}>{s.n}</div>
               <h3 style={{ fontSize: 18, fontWeight: 700, margin: "8px 0 10px" }}>{s.title}</h3>
-              <p style={{ fontSize: 14, color: "#475569″, lineHeight: 1.7, margin: 0 }}>{s.body}</p>
+              <p style={{ fontSize: 14, color: "#475569", lineHeight: 1.7, margin: 0 }}>{s.body}</p>
             </div>
           ))}
         </div>
@@ -110,7 +110,7 @@ export default function TrustyProForney() {
                   <span style={{ fontSize: 13, fontWeight: 600, color: AMBER }}>★ {p.rating}</span>
                   <span style={{ fontSize: 13, color: "#64748B" }}>{p.jobs} jobs</span>
                 </div>
-                <p style={{ fontSize: 13, color: "#475569″, lineHeight: 1.6, margin: 0 }}>{p.note}</p>
+                <p style={{ fontSize: 13, color: "#475569", lineHeight: 1.6, margin: 0 }}>{p.note}</p>
               </div>
             ))}
           </div>
@@ -124,7 +124,7 @@ export default function TrustyProForney() {
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))", gap: 24 }}>
             {testimonials.map(t => (
               <div key={t.name} style={{ background: "#fff", borderRadius: 16, padding: 28, boxShadow: "0 2px 12px rgba(0,0,0,0.06)", borderTop: `4px solid ${INDIGO}` }}>
-                <p style={{ fontSize: 15, fontStyle: "italic", lineHeight: 1.7, marginBottom: 16, color: "#334155″ }}>"{t.quote}"</p>
+                <p style={{ fontSize: 15, fontStyle: "italic", lineHeight: 1.7, marginBottom: 16, color: "#334155" }}>"{t.quote}"</p>
                 <div style={{ fontWeight: 700, fontSize: 14 }}>{t.name}</div>
                 <div style={{ fontSize: 12, color: "#64748B" }}>{t.area}</div>
               </div>
@@ -141,7 +141,7 @@ export default function TrustyProForney() {
             {faqs.map(f => (
               <div key={f.q} style={{ borderLeft: `4px solid ${INDIGO}`, paddingLeft: 20 }}>
                 <div style={{ fontWeight: 700, fontSize: 16, marginBottom: 6 }}>{f.q}</div>
-                <div style={{ fontSize: 14, color: "#475569″, lineHeight: 1.7 }}>{f.a}</div>
+                <div style={{ fontSize: 14, color: "#475569", lineHeight: 1.7 }}>{f.a}</div>
               </div>
             ))}
           </div>
@@ -151,7 +151,7 @@ export default function TrustyProForney() {
       {/* CTA */}
       <section style={{ background: `linear-gradient(135deg, ${INDIGO} 0%, #3730A3 100%)`, padding: "72px 24px", textAlign: "center", color: "#fff" }}>
         <h2 style={{ fontSize: 36, fontWeight: 800, marginBottom: 16 }}>Your Forney Home Deserves Thoughtful Care</h2>
-        <p style={{ fontSize: 18, opacity: 0.9, maxWidth: 500, margin: "0 auto 32px" }}>Don't let fast growth outpace your home maintenance. TrustyPro matches you with pros who understand Forney’s unique challenges.</p>
+        <p style={{ fontSize: 18, opacity: 0.9, maxWidth: 500, margin: "0 auto 32px" }}>Don't let fast growth outpace your home maintenance. TrustyPro matches you with pros who understand Forney's unique challenges.</p>
         <div style={{ display: "flex", gap: 14, justifyContent: "center", flexWrap: "wrap" }}>
           <Link href="/waitlist/homeowner">
             <a style={{ background: AMBER, color: "#1E293B", fontWeight: 700, padding: "16px 40px", borderRadius: 12, textDecoration: "none", fontSize: 17 }}>

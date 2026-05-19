@@ -1,10 +1,10 @@
 import { useState } from 'react';
 
 const absenceDurations = [
-  { id: 'month1', label: '📅 1 Month (30-45 days)', days: 37, tier: 'LEVEL1′ },
-  { id: 'month3', label: '🗓️ 3 Months (Snowbird Short)', days: 90, tier: 'LEVEL2′ },
-  { id: 'month6', label: '🌍 6 Months (Classic Snowbird)', days: 180, tier: 'LEVEL3′ },
-  { id: 'yearPlus', label: '🏠 Year+ (Long-Term Absence)', days: 365, tier: 'LEVEL4′ },
+  { id: 'month1', label: '📅 1 Month (30-45 days)', days: 37, tier: 'LEVEL1' },
+  { id: 'month3', label: '🗓️ 3 Months (Snowbird Short)', days: 90, tier: 'LEVEL2' },
+  { id: 'month6', label: '🌍 6 Months (Classic Snowbird)', days: 180, tier: 'LEVEL3' },
+  { id: 'yearPlus', label: '🏠 Year+ (Long-Term Absence)', days: 365, tier: 'LEVEL4' },
 ];
 
 const dfwSeasonsDeparture = [
@@ -17,7 +17,7 @@ const dfwSeasonsDeparture = [
 function buildExtendedPlan(duration: typeof absenceDurations[0], season: typeof dfwSeasonsDeparture[0]) {
   const tips: string[] = [];
   tips.push('📞 Hire a licensed DFW property manager or trusted caretaker for weekly walk-throughs');
-  if (duration.tier === 'LEVEL3′ || duration.tier === ’LEVEL4') tips.push('🔧 Schedule HVAC pro inspection before departure — do not leave on an unserviced system');
+  if (duration.tier === 'LEVEL3' || duration.tier === 'LEVEL4') tips.push('🔧 Schedule HVAC pro inspection before departure — do not leave on an unserviced system');
   if (season.concern === 'HEAT+HUMIDITY') {
     tips.push('🌡️ Set AC to 80°F — never off. DFW summer humidity + no AC = guaranteed mold in 30 days');
     tips.push('💧 Install a humidity sensor with WiFi alerts — set alarm at 65% humidity');
@@ -61,7 +61,7 @@ export default function DFWHVACExtendedAbsence() {
           <div style={{ display: 'grid', gap: 10 }}>
             {absenceDurations.map(d => (
               <button key={d.id} onClick={() => setDuration(d.id)}
-                style={{ background: duration === d.id ? '#F5E642′ : '#1A2D4A', color: duration === d.id ? '#0A1628' : '#fff', border: ’none', borderRadius: 8, padding: '12px 16px', cursor: 'pointer', textAlign: 'left', fontWeight: 600 }}>
+                style={{ background: duration === d.id ? '#F5E642' : '#1A2D4A', color: duration === d.id ? '#0A1628' : '#fff', border: 'none', borderRadius: 8, padding: '12px 16px', cursor: 'pointer', textAlign: 'left', fontWeight: 600 }}>
                 {d.label}
               </button>
             ))}
@@ -73,7 +73,7 @@ export default function DFWHVACExtendedAbsence() {
           <div style={{ display: 'grid', gap: 10 }}>
             {dfwSeasonsDeparture.map(s => (
               <button key={s.id} onClick={() => setSeason(s.id)}
-                style={{ background: season === s.id ? '#F5E642′ : '#1A2D4A', color: season === s.id ? '#0A1628' : '#fff', border: ’none', borderRadius: 8, padding: '12px 16px', cursor: 'pointer', textAlign: 'left', fontWeight: 600 }}>
+                style={{ background: season === s.id ? '#F5E642' : '#1A2D4A', color: season === s.id ? '#0A1628' : '#fff', border: 'none', borderRadius: 8, padding: '12px 16px', cursor: 'pointer', textAlign: 'left', fontWeight: 600 }}>
                 {s.label}
                 <span style={{ display: 'block', fontWeight: 400, fontSize: 12, marginTop: 2, opacity: 0.8 }}>Primary concern: {s.concern}</span>
               </button>

@@ -110,7 +110,7 @@ export default function DFWElectricPanelBrands() {
           {(['all', 'danger', 'caution', 'safe'] as const).map(f => (
             <button key={f} onClick={() => setFilter(f)}
               style={{ padding: '8px 16px', borderRadius: 8, border: 'none', cursor: 'pointer', fontWeight: 600, fontSize: 13,
-                background: filter === f ? '#F5E642′ : '#0F1F3D', color: filter === f ? '#0A1628' : '#94A3B8' }}>
+                background: filter === f ? '#F5E642' : '#0F1F3D', color: filter === f ? '#0A1628' : '#94A3B8' }}>
               {f === 'all' ? 'All Panels' : f === 'danger' ? '🔴 Hazardous' : f === 'caution' ? '🟡 Caution' : '✅ Safe'}
             </button>
           ))}

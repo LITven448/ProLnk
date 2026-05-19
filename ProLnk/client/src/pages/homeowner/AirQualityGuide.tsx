@@ -60,29 +60,29 @@ const CHECKLIST: ChecklistItem[] = [
 const FILTER_TYPES: FilterType[] = [
   {
     name: "Fiberglass (MERV 1-4)",
-    merv: "MERV 1–4″,
-    cost: "$1–4″,
+    merv: "MERV 1–4",
+    cost: "$1–4",
     pros: "Cheapest. Blocks large particles only.",
     recommended: false,
   },
   {
     name: "Pleated (MERV 8-10)",
-    merv: "MERV 8–10″,
-    cost: "$8–20″,
+    merv: "MERV 8–10",
+    cost: "$8–20",
     pros: "Good for dust and pet dander.",
     recommended: false,
   },
   {
     name: "High-Efficiency (MERV 11-13)",
-    merv: "MERV 11–13″,
-    cost: "$15–35″,
+    merv: "MERV 11–13",
+    cost: "$15–35",
     pros: "Catches pollen, mold spores, allergens. DFW recommended.",
     recommended: true,
   },
   {
     name: "HEPA / Hospital (MERV 14-16)",
-    merv: "MERV 14–16″,
-    cost: "$30–60″,
+    merv: "MERV 14–16",
+    cost: "$30–60",
     pros: "Maximum filtration. May restrict airflow — verify system compatibility.",
     recommended: false,
   },
@@ -91,26 +91,26 @@ const FILTER_TYPES: FilterType[] = [
 const PURIFIER_TIERS: PurifierTier[] = [
   {
     name: "Whole-Home",
-    priceRange: "$500–1,500″,
+    priceRange: "$500–1,500",
     coverage: "Entire home",
     icon: Home,
-    color: "text-teal-400″,
+    color: "text-teal-400",
     description: "Integrated into HVAC system. Best long-term solution for DFW allergy seasons.",
   },
   {
     name: "Room Unit",
-    priceRange: "$150–400″,
+    priceRange: "$150–400",
     coverage: "1–2 rooms",
     icon: Wind,
-    color: "text-blue-400″,
+    color: "text-blue-400",
     description: "Freestanding unit with HEPA filter. Great for bedrooms and home offices.",
   },
   {
     name: "HEPA Portable",
-    priceRange: "$80–200″,
+    priceRange: "$80–200",
     coverage: "Single room",
     icon: Leaf,
-    color: "text-green-400″,
+    color: "text-green-400",
     description: "Affordable entry point. Move room to room as needed.",
   },
 ];
@@ -119,8 +119,8 @@ const SEASONAL_TIPS: SeasonalTip[] = [
   {
     season: "spring",
     icon: Leaf,
-    color: "text-green-400″,
-    bgColor: "bg-green-900/20″,
+    color: "text-green-400",
+    bgColor: "bg-green-900/20",
     label: "Spring",
     headline: "Pollen Season",
     tips: [
@@ -133,8 +133,8 @@ const SEASONAL_TIPS: SeasonalTip[] = [
   {
     season: "summer",
     icon: Sun,
-    color: "text-amber-400″,
-    bgColor: "bg-amber-900/20″,
+    color: "text-amber-400",
+    bgColor: "bg-amber-900/20",
     label: "Summer",
     headline: "Ozone + Wildfire Smoke",
     tips: [
@@ -147,8 +147,8 @@ const SEASONAL_TIPS: SeasonalTip[] = [
   {
     season: "fall",
     icon: Droplets,
-    color: "text-orange-400″,
-    bgColor: "bg-orange-900/20″,
+    color: "text-orange-400",
+    bgColor: "bg-orange-900/20",
     label: "Fall",
     headline: "Mold Spores",
     tips: [
@@ -161,8 +161,8 @@ const SEASONAL_TIPS: SeasonalTip[] = [
   {
     season: "winter",
     icon: Snowflake,
-    color: "text-blue-400″,
-    bgColor: "bg-blue-900/20″,
+    color: "text-blue-400",
+    bgColor: "bg-blue-900/20",
     label: "Winter",
     headline: "Dry Air + Furnace Dust",
     tips: [
@@ -175,9 +175,9 @@ const SEASONAL_TIPS: SeasonalTip[] = [
 ];
 
 function StatusIcon({ status }: { status: "good" | "warning" | "bad" }) {
-  if (status === "good") return <CheckCircle className="w-5 h-5 text-green-400 flex-shrink-0″ />;
-  if (status === "warning") return <AlertTriangle className="w-5 h-5 text-amber-400 flex-shrink-0″ />;
-  return <XCircle className="w-5 h-5 text-red-400 flex-shrink-0″ />;
+  if (status === "good") return <CheckCircle className="w-5 h-5 text-green-400 flex-shrink-0" />;
+  if (status === "warning") return <AlertTriangle className="w-5 h-5 text-amber-400 flex-shrink-0" />;
+  return <XCircle className="w-5 h-5 text-red-400 flex-shrink-0" />;
 }
 
 function ScoreRing({ score }: { score: number }) {
@@ -186,24 +186,24 @@ function ScoreRing({ score }: { score: number }) {
   const offset = circumference - (score / 100) * circumference;
   return (
     <div className="relative w-36 h-36 flex items-center justify-center">
-      <svg className="absolute inset-0 -rotate-90″ width="144" height="144">
-        <circle cx="72″ cy="72" r={radius} stroke="#1e293b" strokeWidth="12" fill="none" />
+      <svg className="absolute inset-0 -rotate-90" width="144" height="144">
+        <circle cx="72" cy="72" r={radius} stroke="#1e293b" strokeWidth="12" fill="none" />
         <circle
-          cx="72″ cy="72" r={radius}
-          stroke="url(#airGrad)" strokeWidth="12″ fill="none"
+          cx="72" cy="72" r={radius}
+          stroke="url(#airGrad)" strokeWidth="12" fill="none"
           strokeDasharray={circumference} strokeDashoffset={offset}
           strokeLinecap="round"
         />
         <defs>
           <linearGradient id="airGrad" x1="0%" y1="0%" x2="100%" y2="0%">
-            <stop offset="0%" stopColor="#34d399″ />
+            <stop offset="0%" stopColor="#34d399" />
             <stop offset="100%" stopColor="#22d3ee" />
           </linearGradient>
         </defs>
       </svg>
-      <div className="text-center z-10″>
+      <div className="text-center z-10">
         <div className="text-3xl font-bold text-white">{score}</div>
-        <div className="text-xs text-slate-400″>/100</div>
+        <div className="text-xs text-slate-400">/100</div>
       </div>
     </div>
   );
@@ -221,13 +221,13 @@ export default function AirQualityGuide() {
 
   return (
     <HomeownerLayout>
-      <div className="max-w-4xl mx-auto space-y-8 pb-12″>
+      <div className="max-w-4xl mx-auto space-y-8 pb-12">
 
         {/* Header */}
-        <div className="bg-gradient-to-r from-teal-900/40 to-cyan-900/30 border border-teal-700/40 rounded-2xl p-8″>
-          <div className="flex items-center gap-3 mb-3″>
+        <div className="bg-gradient-to-r from-teal-900/40 to-cyan-900/30 border border-teal-700/40 rounded-2xl p-8">
+          <div className="flex items-center gap-3 mb-3">
             <div className="w-10 h-10 bg-teal-500/20 rounded-xl flex items-center justify-center">
-              <Wind className="w-5 h-5 text-teal-400″ />
+              <Wind className="w-5 h-5 text-teal-400" />
             </div>
             <div>
               <h1 className="text-2xl font-bold text-white">Air Quality Guide</h1>
@@ -237,18 +237,18 @@ export default function AirQualityGuide() {
           <p className="text-slate-300 text-sm mt-4 leading-relaxed">
             Dallas-Fort Worth ranks in the top 20 most polluted cities for ozone.
             Wildfire smoke from West Texas is increasing. Your indoor air quality directly
-            impacts your family's health — here’s how to protect it.
+            impacts your family's health — here's how to protect it.
           </p>
         </div>
 
         {/* Score + Factors */}
-        <div className="bg-[#0f1f38] border border-slate-700/50 rounded-2xl p-6″>
-          <h2 className="text-lg font-semibold text-white mb-6″>Your Indoor Air Quality Score</h2>
-          <div className="flex flex-col sm:flex-row items-center gap-8″>
+        <div className="bg-[#0f1f38] border border-slate-700/50 rounded-2xl p-6">
+          <h2 className="text-lg font-semibold text-white mb-6">Your Indoor Air Quality Score</h2>
+          <div className="flex flex-col sm:flex-row items-center gap-8">
             <ScoreRing score={82} />
             <div className="flex-1 grid grid-cols-1 sm:grid-cols-2 gap-4 w-full">
               {SCORE_FACTORS.map((f) => (
-                <div key={f.label} className="bg-slate-800/50 rounded-xl p-4 flex items-center gap-3″>
+                <div key={f.label} className="bg-slate-800/50 rounded-xl p-4 flex items-center gap-3">
                   <StatusIcon status={f.status} />
                   <div>
                     <div className="text-slate-400 text-xs">{f.label}</div>
@@ -263,10 +263,10 @@ export default function AirQualityGuide() {
         </div>
 
         {/* Checklist */}
-        <div className="bg-[#0f1f38] border border-slate-700/50 rounded-2xl p-6″>
-          <h2 className="text-lg font-semibold text-white mb-2″>Indoor Air Quality Checklist</h2>
-          <p className="text-slate-400 text-sm mb-5″>Check off what applies to your home</p>
-          <div className="space-y-3″>
+        <div className="bg-[#0f1f38] border border-slate-700/50 rounded-2xl p-6">
+          <h2 className="text-lg font-semibold text-white mb-2">Indoor Air Quality Checklist</h2>
+          <p className="text-slate-400 text-sm mb-5">Check off what applies to your home</p>
+          <div className="space-y-3">
             {CHECKLIST.map((item) => (
               <button
                 key={item.id}
@@ -275,10 +275,10 @@ export default function AirQualityGuide() {
               >
                 <div className={`w-5 h-5 rounded-full border-2 flex items-center justify-center flex-shrink-0 transition-colors ${
                   checklist[item.id]
-                    ? "border-green-500 bg-green-500″
+                    ? "border-green-500 bg-green-500"
                     : item.status === "warning"
-                    ? "border-amber-500″
-                    : "border-slate-600″
+                    ? "border-amber-500"
+                    : "border-slate-600"
                 }`}>
                   {checklist[item.id] && <CheckCircle className="w-3 h-3 text-white" />}
                 </div>
@@ -294,37 +294,37 @@ export default function AirQualityGuide() {
         </div>
 
         {/* Filter Guide */}
-        <div className="bg-[#0f1f38] border border-slate-700/50 rounded-2xl p-6″>
-          <div className="flex items-center gap-3 mb-2″>
-            <Filter className="w-5 h-5 text-blue-400″ />
+        <div className="bg-[#0f1f38] border border-slate-700/50 rounded-2xl p-6">
+          <div className="flex items-center gap-3 mb-2">
+            <Filter className="w-5 h-5 text-blue-400" />
             <h2 className="text-lg font-semibold text-white">HVAC Filter Guide</h2>
           </div>
-          <div className="bg-amber-900/20 border border-amber-700/40 rounded-xl p-4 mb-5 text-sm text-amber-300″>
+          <div className="bg-amber-900/20 border border-amber-700/40 rounded-xl p-4 mb-5 text-sm text-amber-300">
             For DFW allergies and pollen, MERV-11 or higher recommended.
             Change every 60 days May–September.
           </div>
-          <div className="space-y-3″>
+          <div className="space-y-3">
             {FILTER_TYPES.map((f) => (
               <div
                 key={f.merv}
                 className={`rounded-xl p-4 border flex items-start gap-4 ${
                   f.recommended
-                    ? "border-teal-600/60 bg-teal-900/20″
-                    : "border-slate-700/50 bg-slate-800/30″
+                    ? "border-teal-600/60 bg-teal-900/20"
+                    : "border-slate-700/50 bg-slate-800/30"
                 }`}
               >
-                <div className="flex-1″>
-                  <div className="flex items-center gap-2 mb-1″>
+                <div className="flex-1">
+                  <div className="flex items-center gap-2 mb-1">
                     <span className="text-sm font-medium text-white">{f.name}</span>
                     {f.recommended && (
                       <span className="text-xs bg-teal-700/60 text-teal-300 px-2 py-0.5 rounded-full">DFW Recommended</span>
                     )}
                   </div>
-                  <div className="text-xs text-slate-400 mb-1″>{f.pros}</div>
+                  <div className="text-xs text-slate-400 mb-1">{f.pros}</div>
                 </div>
-                <div className="text-right flex-shrink-0″>
+                <div className="text-right flex-shrink-0">
                   <div className="text-sm font-semibold text-white">{f.cost}</div>
-                  <div className="text-xs text-slate-500″>per filter</div>
+                  <div className="text-xs text-slate-500">per filter</div>
                 </div>
               </div>
             ))}
@@ -332,22 +332,22 @@ export default function AirQualityGuide() {
         </div>
 
         {/* Air Purifiers */}
-        <div className="bg-[#0f1f38] border border-slate-700/50 rounded-2xl p-6″>
-          <div className="flex items-center gap-3 mb-5″>
-            <ShieldCheck className="w-5 h-5 text-purple-400″ />
+        <div className="bg-[#0f1f38] border border-slate-700/50 rounded-2xl p-6">
+          <div className="flex items-center gap-3 mb-5">
+            <ShieldCheck className="w-5 h-5 text-purple-400" />
             <h2 className="text-lg font-semibold text-white">Air Purifiers</h2>
           </div>
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4″>
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
             {PURIFIER_TIERS.map((tier) => {
               const Icon = tier.icon;
               return (
-                <div key={tier.name} className="bg-slate-800/50 rounded-xl p-5″>
+                <div key={tier.name} className="bg-slate-800/50 rounded-xl p-5">
                   <div className={`w-10 h-10 rounded-xl bg-slate-700/50 flex items-center justify-center mb-3`}>
                     <Icon className={`w-5 h-5 ${tier.color}`} />
                   </div>
-                  <div className="font-medium text-white text-sm mb-1″>{tier.name}</div>
+                  <div className="font-medium text-white text-sm mb-1">{tier.name}</div>
                   <div className={`text-lg font-bold mb-1 ${tier.color}`}>{tier.priceRange}</div>
-                  <div className="text-xs text-slate-500 mb-2″>{tier.coverage}</div>
+                  <div className="text-xs text-slate-500 mb-2">{tier.coverage}</div>
                   <p className="text-xs text-slate-400 leading-relaxed">{tier.description}</p>
                 </div>
               );
@@ -356,9 +356,9 @@ export default function AirQualityGuide() {
         </div>
 
         {/* Seasonal Tips */}
-        <div className="bg-[#0f1f38] border border-slate-700/50 rounded-2xl p-6″>
-          <div className="flex items-center gap-3 mb-5″>
-            <Calendar className="w-5 h-5 text-cyan-400″ />
+        <div className="bg-[#0f1f38] border border-slate-700/50 rounded-2xl p-6">
+          <div className="flex items-center gap-3 mb-5">
+            <Calendar className="w-5 h-5 text-cyan-400" />
             <h2 className="text-lg font-semibold text-white">Seasonal Tips</h2>
           </div>
           <div className="flex gap-2 mb-6 flex-wrap">
@@ -371,10 +371,10 @@ export default function AirQualityGuide() {
                   className={`flex items-center gap-2 px-4 py-2 rounded-xl text-sm font-medium transition-colors ${
                     activeSeason === s.season
                       ? `${s.bgColor} ${s.color} border border-current/30`
-                      : "bg-slate-800/50 text-slate-400 hover:text-slate-300″
+                      : "bg-slate-800/50 text-slate-400 hover:text-slate-300"
                   }`}
                 >
-                  <Icon className="w-4 h-4″ />
+                  <Icon className="w-4 h-4" />
                   {s.label}
                 </button>
               );
@@ -385,10 +385,10 @@ export default function AirQualityGuide() {
               <div className={`text-xs font-semibold uppercase tracking-wider ${activeTip.color} mb-1`}>
                 {activeTip.label}
               </div>
-              <div className="text-white font-semibold text-base mb-4″>{activeTip.headline}</div>
-              <ul className="space-y-2″>
+              <div className="text-white font-semibold text-base mb-4">{activeTip.headline}</div>
+              <ul className="space-y-2">
                 {activeTip.tips.map((tip, i) => (
-                  <li key={i} className="flex items-start gap-2 text-sm text-slate-300″>
+                  <li key={i} className="flex items-start gap-2 text-sm text-slate-300">
                     <ChevronRight className={`w-4 h-4 flex-shrink-0 mt-0.5 ${activeTip.color}`} />
                     {tip}
                   </li>
@@ -400,8 +400,8 @@ export default function AirQualityGuide() {
 
         {/* CTA */}
         <div className="bg-gradient-to-r from-teal-900/40 to-blue-900/30 border border-teal-700/40 rounded-2xl p-8 text-center">
-          <Wind className="w-10 h-10 text-teal-400 mx-auto mb-4″ />
-          <h3 className="text-xl font-bold text-white mb-2″>Schedule HVAC Air Quality Service</h3>
+          <Wind className="w-10 h-10 text-teal-400 mx-auto mb-4" />
+          <h3 className="text-xl font-bold text-white mb-2">Schedule HVAC Air Quality Service</h3>
           <p className="text-slate-400 text-sm mb-6 max-w-md mx-auto">
             Get a certified HVAC technician to assess your system, recommend the right filter grade,
             and improve your home's air quality score.
@@ -414,8 +414,8 @@ export default function AirQualityGuide() {
               Get Free Quote
             </button>
           </div>
-          <div className="flex items-center justify-center gap-2 mt-4 text-xs text-slate-500″>
-            <Clock className="w-3 h-3″ />
+          <div className="flex items-center justify-center gap-2 mt-4 text-xs text-slate-500">
+            <Clock className="w-3 h-3" />
             <span>Typical response within 2 hours</span>
           </div>
         </div>

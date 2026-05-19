@@ -63,11 +63,11 @@ export default function DFWClosetOrganizationGuide() {
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))', gap: 16, marginBottom: 20 }}>
             <div>
               <label style={{ display: 'block', color: '#94a3b8', fontSize: 13, marginBottom: 6 }}>Closet width (ft)</label>
-              <input value={width} onChange={e => setWidth(e.target.value)} type="number" placeholder="e.g. 12″ style={{ width: '100%', background: '#0A1628', border: '1px solid #1e3a5f', borderRadius: 8, padding: '10px 14px', color: '#fff', fontSize: 15, boxSizing: 'border-box' }} />
+              <input value={width} onChange={e => setWidth(e.target.value)} type="number" placeholder="e.g. 12" style={{ width: '100%', background: '#0A1628', border: '1px solid #1e3a5f', borderRadius: 8, padding: '10px 14px', color: '#fff', fontSize: 15, boxSizing: 'border-box' }} />
             </div>
             <div>
               <label style={{ display: 'block', color: '#94a3b8', fontSize: 13, marginBottom: 6 }}>Closet depth (ft)</label>
-              <input value={depth} onChange={e => setDepth(e.target.value)} type="number" placeholder="e.g. 8″ style={{ width: '100%', background: '#0A1628', border: '1px solid #1e3a5f', borderRadius: 8, padding: '10px 14px', color: '#fff', fontSize: 15, boxSizing: 'border-box' }} />
+              <input value={depth} onChange={e => setDepth(e.target.value)} type="number" placeholder="e.g. 8" style={{ width: '100%', background: '#0A1628', border: '1px solid #1e3a5f', borderRadius: 8, padding: '10px 14px', color: '#fff', fontSize: 15, boxSizing: 'border-box' }} />
             </div>
             <div>
               <label style={{ display: 'block', color: '#94a3b8', fontSize: 13, marginBottom: 6 }}>Clothing volume</label>
@@ -79,12 +79,12 @@ export default function DFWClosetOrganizationGuide() {
             </div>
             <div>
               <label style={{ display: 'block', color: '#94a3b8', fontSize: 13, marginBottom: 6 }}>Budget ($)</label>
-              <input value={budget} onChange={e => setBudget(e.target.value)} type="number" placeholder="e.g. 3000″ style={{ width: '100%', background: '#0A1628', border: '1px solid #1e3a5f', borderRadius: 8, padding: '10px 14px', color: '#fff', fontSize: 15, boxSizing: 'border-box' }} />
+              <input value={budget} onChange={e => setBudget(e.target.value)} type="number" placeholder="e.g. 3000" style={{ width: '100%', background: '#0A1628', border: '1px solid #1e3a5f', borderRadius: 8, padding: '10px 14px', color: '#fff', fontSize: 15, boxSizing: 'border-box' }} />
             </div>
           </div>
           <button onClick={calculate} style={{ background: '#F5E642', color: '#0A1628', border: 'none', borderRadius: 8, padding: '12px 28px', fontSize: 15, fontWeight: 700, cursor: 'pointer' }}>Get Recommendation →</button>
           {result && (
-            <div style={{ marginTop: 24, background: '#0A1628', borderRadius: 12, padding: 20, border: '1px solid #F5E642′ }}>
+            <div style={{ marginTop: 24, background: '#0A1628', borderRadius: 12, padding: 20, border: '1px solid #F5E642' }}>
               <div style={{ color: '#F5E642', fontWeight: 700, fontSize: 18, marginBottom: 8 }}>✅ Recommended: {result.name}</div>
               <div style={{ color: '#94a3b8', fontSize: 14, marginBottom: 6 }}>{result.best}</div>
               <div style={{ color: '#fff', fontSize: 14 }}>Estimated cost: <strong>${result.minBudget.toLocaleString()}–${result.maxBudget.toLocaleString()}</strong> · ROI: <strong style={{ color: '#22c55e' }}>{result.roi}%</strong> · Install: {result.diy ? 'DIY or Pro' : 'Professional recommended'}</div>

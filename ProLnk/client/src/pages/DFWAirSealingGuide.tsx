@@ -89,7 +89,7 @@ export default function DFWAirSealingGuide() {
                 <div style={{ display: 'flex', flexWrap: 'wrap', gap: 6 }}>{result.locations.map(l => <span key={l} style={{ background: '#1E3A5F', borderRadius: 20, padding: '3px 10px', fontSize: 13 }}>📍 {l}</span>)}</div>
               </div>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12 }}>
-                <div><div style={{ color: '#94A3B8', fontSize: 12, marginBottom: 6 }}>DIY Opportunities</div>{result.diy.map(d => <div key={d} style={{ fontSize: 13, color: '#A7F3D0′ }}>✅ {d}</div>)}</div>
+                <div><div style={{ color: '#94A3B8', fontSize: 12, marginBottom: 6 }}>DIY Opportunities</div>{result.diy.map(d => <div key={d} style={{ fontSize: 13, color: '#A7F3D0' }}>✅ {d}</div>)}</div>
                 <div><div style={{ color: '#94A3B8', fontSize: 12, marginBottom: 6 }}>Professional Work</div>{result.pro.map(p => <div key={p} style={{ fontSize: 13, color: '#93C5FD' }}>🔧 {p}</div>)}</div>
               </div>
             </div>

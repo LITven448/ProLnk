@@ -76,7 +76,7 @@ export default function DFWConcurrentCloseGuide() {
           <p style={{ color: '#444', lineHeight: 1.6, margin: '0 0 12px' }}>
             Texas title companies are experienced coordinators. You sell your home, proceeds wire to the title company, and the funds are applied to your new purchase — often within hours on the same day.
           </p>
-          <div style={{ background: '#e8f5e9', borderRadius: 8, padding: 14, fontSize: 14, color: '#2e7d32′ }}>
+          <div style={{ background: '#e8f5e9', borderRadius: 8, padding: 14, fontSize: 14, color: '#2e7d32' }}>
             <strong>💡 Pro Tip:</strong> Using the same title company for both transactions dramatically reduces coordination risk and speeds up wire transfers.
           </div>
         </div>
@@ -86,7 +86,7 @@ export default function DFWConcurrentCloseGuide() {
           <div style={{ display: 'grid', gap: 12 }}>
             {scenarios.map(s => (
               <button key={s.value} onClick={() => setSelected(s.value)}
-                style={{ padding: '14px 18px', borderRadius: 8, border: selected === s.value ? '2px solid #1a3a5c' : '2px solid #e0e0e0', background: selected === s.value ? '#e8f0fb' : '#fff', cursor: 'pointer', textAlign: 'left', fontSize: 15, fontWeight: selected === s.value ? 600 : 400, color: '#333′ }}>
+                style={{ padding: '14px 18px', borderRadius: 8, border: selected === s.value ? '2px solid #1a3a5c' : '2px solid #e0e0e0', background: selected === s.value ? '#e8f0fb' : '#fff', cursor: 'pointer', textAlign: 'left', fontSize: 15, fontWeight: selected === s.value ? 600 : 400, color: '#333' }}>
                 {s.label}
               </button>
             ))}
@@ -104,14 +104,14 @@ export default function DFWConcurrentCloseGuide() {
               {result.steps.map((s, i) => <p key={i} style={{ margin: '0 0 8px', color: '#444', lineHeight: 1.5 }}>{s}</p>)}
             </div>
             <div style={{ background: '#fff3cd', borderRadius: 12, padding: 24 }}>
-              <h3 style={{ margin: '0 0 12px', color: '#856404′ }}>⚠️ Timing Risks</h3>
-              <ul style={{ margin: 0, paddingLeft: 20, color: '#555′ }}>
+              <h3 style={{ margin: '0 0 12px', color: '#856404' }}>⚠️ Timing Risks</h3>
+              <ul style={{ margin: 0, paddingLeft: 20, color: '#555' }}>
                 {result.risks.map((r, i) => <li key={i} style={{ marginBottom: 6 }}>{r}</li>)}
               </ul>
             </div>
             <div style={{ background: '#e8f5e9', borderRadius: 12, padding: 24 }}>
-              <h3 style={{ margin: '0 0 8px', color: '#2e7d32′ }}>🛡️ Backup Plan</h3>
-              <p style={{ margin: 0, color: '#444′ }}>{result.backup}</p>
+              <h3 style={{ margin: '0 0 8px', color: '#2e7d32' }}>🛡️ Backup Plan</h3>
+              <p style={{ margin: 0, color: '#444' }}>{result.backup}</p>
             </div>
           </div>
         )}

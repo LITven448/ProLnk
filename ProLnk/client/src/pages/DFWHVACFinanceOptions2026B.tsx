@@ -46,11 +46,11 @@ export default function DFWHVACFinanceOptions2026B() {
           <h2 style={{ color: '#F5E642', marginBottom: '1.2rem' }}>🔍 Find Your Financing Option</h2>
           <div style={{ marginBottom: '1rem' }}>
             <label style={{ display: 'block', color: '#94a3b8', marginBottom: '0.3rem' }}>Credit Score: <strong style={{ color: '#fff' }}>{creditScore}</strong></label>
-            <input type='range' min={500} max={850} value={creditScore} onChange={e => setCreditScore(+e.target.value)} style={{ width: '100%', accentColor: '#F5E642′ }} />
+            <input type='range' min={500} max={850} value={creditScore} onChange={e => setCreditScore(+e.target.value)} style={{ width: '100%', accentColor: '#F5E642' }} />
           </div>
           <div style={{ marginBottom: '1.2rem' }}>
             <label style={{ display: 'block', color: '#94a3b8', marginBottom: '0.3rem' }}>Loan Amount: <strong style={{ color: '#fff' }}>${loanAmount.toLocaleString()}</strong></label>
-            <input type='range' min={2000} max={30000} step={500} value={loanAmount} onChange={e => setLoanAmount(+e.target.value)} style={{ width: '100%', accentColor: '#F5E642′ }} />
+            <input type='range' min={2000} max={30000} step={500} value={loanAmount} onChange={e => setLoanAmount(+e.target.value)} style={{ width: '100%', accentColor: '#F5E642' }} />
           </div>
           <button onClick={getRecommendation} style={{ background: '#F5E642', color: '#0A1628', fontWeight: 700, padding: '0.75rem 2rem', border: 'none', borderRadius: 8, cursor: 'pointer', fontSize: '1rem' }}>Get Recommendation</button>
           {result && <div style={{ marginTop: '1rem', background: '#0A1628', borderRadius: 8, padding: '1rem', color: '#e2e8f0', lineHeight: 1.6 }}>{result}</div>}

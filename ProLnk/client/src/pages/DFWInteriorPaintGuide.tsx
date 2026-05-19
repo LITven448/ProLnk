@@ -88,9 +88,9 @@ export default function DFWInteriorPaintGuide() {
             <div>
               <label style={{ color: '#8A9BBE', fontSize: 13, display: 'block', marginBottom: 8 }}>Ceiling Height</label>
               <select value={ceilingHeight} onChange={e => setCeilingHeight(e.target.value)} style={{ backgroundColor: '#1E2D4A', color: '#FFFFFF', border: '1px solid #2A3D5E', borderRadius: 6, padding: '8px 12px', width: '100%' }}>
-                <option value="8″>8 ft (standard)</option>
-                <option value="9″>9 ft</option>
-                <option value="10″>10 ft</option>
+                <option value="8">8 ft (standard)</option>
+                <option value="9">9 ft</option>
+                <option value="10">10 ft</option>
                 <option value="vaulted">Vaulted / Cathedral</option>
               </select>
             </div>
@@ -109,10 +109,10 @@ export default function DFWInteriorPaintGuide() {
               { label: 'Total Estimate', value: `$${totalCost.toLocaleString()}`, sub: 'materials + labor', highlight: true },
               { label: 'Timeline', value: `${daysNeeded} days`, sub: 'professional crew' },
             ].map(stat => (
-              <div key={stat.label} style={{ backgroundColor: stat.highlight ? '#F5E642′ : '#0A1628', borderRadius: 10, padding: 16, textAlign: ’center' }}>
-                <div style={{ color: stat.highlight ? '#0A1628′ : '#8A9BBE', fontSize: 12, marginBottom: 4 }}>{stat.label}</div>
-                <div style={{ color: stat.highlight ? '#0A1628′ : '#FFFFFF', fontSize: 22, fontWeight: 800 }}>{stat.value}</div>
-                <div style={{ color: stat.highlight ? '#0A162880′ : '#4A5B7A', fontSize: 11 }}>{stat.sub}</div>
+              <div key={stat.label} style={{ backgroundColor: stat.highlight ? '#F5E642' : '#0A1628', borderRadius: 10, padding: 16, textAlign: 'center' }}>
+                <div style={{ color: stat.highlight ? '#0A1628' : '#8A9BBE', fontSize: 12, marginBottom: 4 }}>{stat.label}</div>
+                <div style={{ color: stat.highlight ? '#0A1628' : '#FFFFFF', fontSize: 22, fontWeight: 800 }}>{stat.value}</div>
+                <div style={{ color: stat.highlight ? '#0A162880' : '#4A5B7A', fontSize: 11 }}>{stat.sub}</div>
               </div>
             ))}
           </div>

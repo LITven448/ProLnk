@@ -22,7 +22,7 @@ export default function DFWHVACLifetimeCost2026() {
         <p style={{ color: '#8FA3BF', marginBottom: 32, fontSize: 15 }}>Total cost of HVAC ownership in DFW over 15 years — because the purchase price is the smallest number on this page.</p>
         <div style={{ display: 'flex', gap: 10, flexWrap: 'wrap', marginBottom: 28 }}>
           {systems.map(s => (
-            <button key={s.id} onClick={() => setActive(s.id)} style={{ background: active === s.id ? '#F5E642′ : '#132238', color: active === s.id ? '#0A1628' : '#E8EDF5', border: ’none', borderRadius: 8, padding: '10px 16px', cursor: 'pointer', fontWeight: 700, fontSize: 13 }}>
+            <button key={s.id} onClick={() => setActive(s.id)} style={{ background: active === s.id ? '#F5E642' : '#132238', color: active === s.id ? '#0A1628' : '#E8EDF5', border: 'none', borderRadius: 8, padding: '10px 16px', cursor: 'pointer', fontWeight: 700, fontSize: 13 }}>
               {s.label}
             </button>
           ))}
@@ -43,9 +43,9 @@ export default function DFWHVACLifetimeCost2026() {
               <div style={{ fontWeight: 800, fontSize: 18 }}>{fmt(row.val)}</div>
             </div>
           ))}
-          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '16px 0 0′ }}>
+          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '16px 0 0' }}>
             <div style={{ fontWeight: 800, fontSize: 17 }}>💰 Total 15-Year Cost</div>
-            <div style={{ fontWeight: 900, fontSize: 26, color: '#F5E642′ }}>{fmt(total)}</div>
+            <div style={{ fontWeight: 900, fontSize: 26, color: '#F5E642' }}>{fmt(total)}</div>
           </div>
         </div>
         <div style={{ background: '#132238', borderRadius: 10, padding: 20 }}>

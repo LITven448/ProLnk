@@ -1,7 +1,7 @@
 import { useState } from 'react';
 
 const MONTHS = [
-  { name: 'January', short: 'Jan', tasks: ['Schedule heating system inspection', 'Replace air filters (1″ monthly, 4″ every 3 months)', 'Test thermostat accuracy', 'Check blower motor and belts', 'Clear vents of furniture/blockages'], urgency: 'HIGH', context: 'DFW January lows avg 35°F — heating failures are costly emergencies.' },
+  { name: 'January', short: 'Jan', tasks: ['Schedule heating system inspection', 'Replace air filters (1" monthly, 4" every 3 months)', 'Test thermostat accuracy', 'Check blower motor and belts', 'Clear vents of furniture/blockages'], urgency: 'HIGH', context: 'DFW January lows avg 35°F — heating failures are costly emergencies.' },
   { name: 'February', short: 'Feb', tasks: ['Check heat pump defrost cycle', 'Inspect refrigerant lines for ice', 'Test carbon monoxide detectors near unit', 'Lubricate motor bearings if accessible'], urgency: 'MEDIUM', context: 'Freeze events possible. Ensure system handles rapid temp swings.' },
   { name: 'March', short: 'Mar', tasks: ['Schedule spring tune-up (book early — fills fast)', 'Inspect outdoor unit for winter debris', 'Test cooling mode before summer', 'Check electrical connections'], urgency: 'HIGH', context: 'DFW spring tune-up season — HVAC pros book out 4-6 weeks by April.' },
   { name: 'April', short: 'Apr', tasks: ['Complete spring tune-up', 'Clean evaporator and condenser coils', 'Check refrigerant levels', 'Test all cooling zones', 'Inspect ductwork for leaks'], urgency: 'HIGH', context: 'Last chance before summer heat. 90°F days start in May.' },
@@ -15,7 +15,7 @@ const MONTHS = [
   { name: 'December', short: 'Dec', tasks: ['Replace filter', 'Prepare freeze protocol — know how to shut off system', 'Keep backup space heater if system is aging', 'Schedule Jan inspection proactively'], urgency: 'MEDIUM', context: 'Holiday freeze events possible. 2021 Uri showed how unprepared DFW can be.' },
 ];
 
-const URGENCY_COLOR = { HIGH: '#F5E642', MEDIUM: '#60A5FA', LOW: '#34D399′ };
+const URGENCY_COLOR = { HIGH: '#F5E642', MEDIUM: '#60A5FA', LOW: '#34D399' };
 
 export default function DFWHVACSeasonalCalendar2026() {
   const [selected, setSelected] = useState(0);
@@ -33,15 +33,15 @@ export default function DFWHVACSeasonalCalendar2026() {
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(6, 1fr)', gap: 8, marginBottom: 32 }}>
           {MONTHS.map((m, i) => (
             <button key={i} onClick={() => setSelected(i)} style={{
-              background: selected === i ? '#F5E642′ : '#1E293B',
-              color: selected === i ? '#0A1628′ : '#94A3B8',
+              background: selected === i ? '#F5E642' : '#1E293B',
+              color: selected === i ? '#0A1628' : '#94A3B8',
               border: 'none', borderRadius: 8, padding: '10px 4px',
               fontWeight: 700, fontSize: 13, cursor: 'pointer', transition: 'all 0.15s'
             }}>{m.short}</button>
           ))}
         </div>
 
-        <div style={{ background: '#1E293B', borderRadius: 16, padding: 32, border: '1px solid #334155′ }}>
+        <div style={{ background: '#1E293B', borderRadius: 16, padding: 32, border: '1px solid #334155' }}>
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: 20 }}>
             <h2 style={{ fontSize: 24, fontWeight: 700, color: '#F1F5F9', margin: 0 }}>📅 {month.name} Tasks</h2>
             <span style={{
@@ -52,8 +52,8 @@ export default function DFWHVACSeasonalCalendar2026() {
             }}>{month.urgency} PRIORITY</span>
           </div>
 
-          <div style={{ background: '#0F172A', borderRadius: 10, padding: '14px 18px', marginBottom: 20, borderLeft: '3px solid #F5E642′ }}>
-            <p style={{ margin: 0, color: '#CBD5E1', fontSize: 14, lineHeight: 1.6 }}>🌤️ <strong style={{ color: '#F5E642′ }}>DFW Context:</strong> {month.context}</p>
+          <div style={{ background: '#0F172A', borderRadius: 10, padding: '14px 18px', marginBottom: 20, borderLeft: '3px solid #F5E642' }}>
+            <p style={{ margin: 0, color: '#CBD5E1', fontSize: 14, lineHeight: 1.6 }}>🌤️ <strong style={{ color: '#F5E642' }}>DFW Context:</strong> {month.context}</p>
           </div>
 
           <ul style={{ listStyle: 'none', padding: 0, margin: 0 }}>

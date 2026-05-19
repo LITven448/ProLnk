@@ -172,9 +172,9 @@ export default function PartnerScriptLibrary() {
               key={cat.category}
               onClick={() => { setOpenCategory(cat.category); setOpenScript(null); }}
               style={{
-                background: openCategory === cat.category ? '#0A1628′ : '#fff',
-                color: openCategory === cat.category ? '#F5E642′ : '#0A1628',
-                border: '2px solid ' + (openCategory === cat.category ? '#0A1628′ : '#E2E8F0'),
+                background: openCategory === cat.category ? '#0A1628' : '#fff',
+                color: openCategory === cat.category ? '#F5E642' : '#0A1628',
+                border: '2px solid ' + (openCategory === cat.category ? '#0A1628' : '#E2E8F0'),
                 borderRadius: 999,
                 padding: '8px 18px',
                 fontWeight: 700,
@@ -200,7 +200,7 @@ export default function PartnerScriptLibrary() {
                     borderRadius: 14,
                     marginBottom: 16,
                     boxShadow: '0 2px 8px rgba(0,0,0,0.06)',
-                    border: isOpen ? '2px solid #F5E642′ : '2px solid transparent',
+                    border: isOpen ? '2px solid #F5E642' : '2px solid transparent',
                     overflow: 'hidden',
                   }}
                 >
@@ -245,7 +245,7 @@ export default function PartnerScriptLibrary() {
                           <div style={{ fontSize: 11, fontWeight: 700, color: '#DC2626', marginBottom: 8 }}>❌ DON'T</div>
                           {script.donts.map((d, j) => (
                             <div key={j} style={{ fontSize: 13, color: '#334155', marginBottom: 6, display: 'flex', gap: 6 }}>
-                              <span style={{ color: '#EF4444′ }}>→</span> {d}
+                              <span style={{ color: '#EF4444' }}>→</span> {d}
                             </div>
                           ))}
                         </div>

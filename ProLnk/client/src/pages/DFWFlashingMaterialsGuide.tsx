@@ -56,7 +56,7 @@ export default function DFWFlashingMaterialsGuide() {
 
         {result && (
           <div style={{ background: '#1e2d45', border: '1px solid #F5E642', borderRadius: 12, padding: 24, marginBottom: 24 }}>
-            <div style={{ fontSize: 20, fontWeight: 800, marginBottom: 12, color: '#F5E642′ }}>🏚️ Recommended Flashing</div>
+            <div style={{ fontSize: 20, fontWeight: 800, marginBottom: 12, color: '#F5E642' }}>🏚️ Recommended Flashing</div>
             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12, marginBottom: 12 }}>
               {[
                 ['Material', result.material],
@@ -79,10 +79,10 @@ export default function DFWFlashingMaterialsGuide() {
         <div style={{ background: '#1e2d45', borderRadius: 12, padding: 24, marginBottom: 24 }}>
           <h2 style={{ color: '#F5E642', fontSize: 18, marginBottom: 16 }}>⚡ DFW Flashing Failure Causes</h2>
           {[
-            { icon: '⛈️', title: 'Hail Impact', desc: 'DFW averages 6–8 hail events per year. Galvanized and aluminum flashing dent and lose seal integrity after 1″ hail. Inspect after every hail storm.' },
+            { icon: '⛈️', title: 'Hail Impact', desc: 'DFW averages 6–8 hail events per year. Galvanized and aluminum flashing dent and lose seal integrity after 1" hail. Inspect after every hail storm.' },
             { icon: '☀️', title: 'UV Degradation', desc: 'DFW has 230+ sunny days/year. Caulk and rubber boots around flashing fail in 5–7 years (vs 10+ in northern climates). Budget for regular recaulking.' },
             { icon: '🌡️', title: 'Thermal Cycling', desc: '80°F daily swings in DFW summer cause metal expansion/contraction that loosens fasteners and breaks sealant bonds. Use thermal-break caulking.' },
-            { icon: '🌧️', title: 'Flash Flooding Rain', desc: 'DFW rain events commonly exceed 2″/hr. Flashing must be lapped correctly — no gaps. A 1/8″ gap at 3″/hr rainfall means interior water damage within minutes.' },
+            { icon: '🌧️', title: 'Flash Flooding Rain', desc: 'DFW rain events commonly exceed 2"/hr. Flashing must be lapped correctly — no gaps. A 1/8" gap at 3"/hr rainfall means interior water damage within minutes.' },
           ].map((item, i) => (
             <div key={i} style={{ background: '#0A1628', borderRadius: 8, padding: 16, marginBottom: 12 }}>
               <div style={{ fontWeight: 700, marginBottom: 4 }}>{item.icon} {item.title}</div>

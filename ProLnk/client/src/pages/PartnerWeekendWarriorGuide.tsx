@@ -64,7 +64,7 @@ export default function PartnerWeekendWarriorGuide() {
           Part-Time Contractor, Full-Time Income Potential
         </p>
 
-        <div style={{ background: '#e0f2fe', borderRadius: 12, padding: 24, marginBottom: 32, borderLeft: '4px solid #0284c7′ }}>
+        <div style={{ background: '#e0f2fe', borderRadius: 12, padding: 24, marginBottom: 32, borderLeft: '4px solid #0284c7' }}>
           <p style={{ fontSize: 16, color: '#0c4a6e', lineHeight: 1.7, margin: 0 }}>
             💡 <strong>The weekend warrior opportunity:</strong> 35% of ProLnk partners work their trade part-time (weekends, evenings, holidays). They earn $800-2,500/month extra — without quitting their day job. Here's exactly how to do it.
           </p>
@@ -92,7 +92,7 @@ export default function PartnerWeekendWarriorGuide() {
         <div style={{ background: 'white', borderRadius: 12, overflow: 'hidden', boxShadow: '0 1px 3px rgba(0,0,0,0.08)', marginBottom: 32 }}>
           <table style={{ width: '100%', borderCollapse: 'collapse' }}>
             <thead>
-              <tr style={{ background: '#f1f5f9′ }}>
+              <tr style={{ background: '#f1f5f9' }}>
                 {['Day Job', 'ProLnk Focus', 'Est. Extra Income'].map(h => (
                   <th key={h} style={{ padding: '14px 20px', textAlign: 'left', color: '#475569', fontSize: 13, fontWeight: 700 }}>{h}</th>
                 ))}
@@ -147,10 +147,10 @@ export default function PartnerWeekendWarriorGuide() {
                 type="number"
                 value={hours}
                 onChange={e => setHours(e.target.value)}
-                min="2″
-                max="30″
+                min="2"
+                max="30"
                 style={{ width: '100%', background: '#f8fafc', border: '1px solid #e2e8f0', borderRadius: 8, padding: '12px 16px', color: '#0f172a', fontSize: 16, boxSizing: 'border-box' }}
-                placeholder="8″
+                placeholder="8"
               />
             </div>
             <div>
@@ -174,8 +174,8 @@ export default function PartnerWeekendWarriorGuide() {
 
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(160px, 1fr))', gap: 16, marginBottom: 24 }}>
             {[
-              { label: 'Monthly Low Est.', value: `$${result.monthlyLow.toLocaleString()}`, color: '#0284c7′ },
-              { label: 'Monthly High Est.', value: `$${result.monthlyHigh.toLocaleString()}`, color: '#059669′ },
+              { label: 'Monthly Low Est.', value: `$${result.monthlyLow.toLocaleString()}`, color: '#0284c7' },
+              { label: 'Monthly High Est.', value: `$${result.monthlyHigh.toLocaleString()}`, color: '#059669' },
               { label: 'Jobs Per Week', value: `${result.weeklyJobs} jobs`, color: '#7c3aed' },
               { label: 'Months to Full-Time', value: `${result.monthsToFullTime} mo`, color: '#ea580c' },
             ].map(stat => (

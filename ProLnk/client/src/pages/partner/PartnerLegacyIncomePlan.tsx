@@ -53,15 +53,15 @@ export default function PartnerLegacyIncomePlan() {
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: 16 }}>
             <div>
               <label style={{ fontSize: 13, color: '#6B7280', display: 'block', marginBottom: 6 }}>Network Partners: {networkSize}</label>
-              <input type="range" min={1} max={200} value={networkSize} onChange={e => setNetworkSize(Number(e.target.value))} style={{ width: '100%', accentColor: '#F5E642′ }} />
+              <input type="range" min={1} max={200} value={networkSize} onChange={e => setNetworkSize(Number(e.target.value))} style={{ width: '100%', accentColor: '#F5E642' }} />
             </div>
             <div>
               <label style={{ fontSize: 13, color: '#6B7280', display: 'block', marginBottom: 6 }}>Homes in Vault: {originationHomes}</label>
-              <input type="range" min={0} max={300} value={originationHomes} onChange={e => setOriginationHomes(Number(e.target.value))} style={{ width: '100%', accentColor: '#F5E642′ }} />
+              <input type="range" min={0} max={300} value={originationHomes} onChange={e => setOriginationHomes(Number(e.target.value))} style={{ width: '100%', accentColor: '#F5E642' }} />
             </div>
             <div>
               <label style={{ fontSize: 13, color: '#6B7280', display: 'block', marginBottom: 6 }}>Years Active: {yearsBuilt}</label>
-              <input type="range" min={1} max={20} value={yearsBuilt} onChange={e => setYearsBuilt(Number(e.target.value))} style={{ width: '100%', accentColor: '#F5E642′ }} />
+              <input type="range" min={1} max={20} value={yearsBuilt} onChange={e => setYearsBuilt(Number(e.target.value))} style={{ width: '100%', accentColor: '#F5E642' }} />
             </div>
           </div>
         </div>
@@ -69,12 +69,12 @@ export default function PartnerLegacyIncomePlan() {
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16, marginBottom: 24 }}>
           <div style={{ background: '#0A1628', borderRadius: 12, padding: 24, color: 'white' }}>
             <div style={{ fontSize: 13, color: '#94A3B8', marginBottom: 6 }}>Current Annual Passive Income</div>
-            <div style={{ fontSize: 36, fontWeight: 800, color: '#F5E642′ }}>${totalAnnualIncome.toLocaleString()}</div>
+            <div style={{ fontSize: 36, fontWeight: 800, color: '#F5E642' }}>${totalAnnualIncome.toLocaleString()}</div>
             <div style={{ fontSize: 13, color: '#94A3B8', marginTop: 4 }}>${monthlyPassive.toLocaleString()}/mo passive</div>
           </div>
           <div style={{ background: 'white', borderRadius: 12, padding: 24, border: '1px solid #E5E7EB' }}>
             <div style={{ fontSize: 13, color: '#6B7280', marginBottom: 6 }}>Estimated Transferable Asset Value</div>
-            <div style={{ fontSize: 36, fontWeight: 800, color: '#059669′ }}>${transferableValue.toLocaleString()}</div>
+            <div style={{ fontSize: 36, fontWeight: 800, color: '#059669' }}>${transferableValue.toLocaleString()}</div>
             <div style={{ fontSize: 12, color: '#9CA3AF', marginTop: 4 }}>Based on 8x income multiple, 70% transferable</div>
           </div>
         </div>
@@ -96,9 +96,9 @@ export default function PartnerLegacyIncomePlan() {
                   <div style={{ fontSize: 11, color: '#9CA3AF' }}>per year</div>
                 </div>
               </div>
-              <div style={{ display: 'inline-flex', alignItems: 'center', gap: 6, padding: '4px 10px', borderRadius: 20, background: s.transferable ? '#D1FAE5′ : '#F3F4F6' }}>
+              <div style={{ display: 'inline-flex', alignItems: 'center', gap: 6, padding: '4px 10px', borderRadius: 20, background: s.transferable ? '#D1FAE5' : '#F3F4F6' }}>
                 <span style={{ fontSize: 12 }}>{s.transferable ? '✅' : '❌'}</span>
-                <span style={{ fontSize: 12, color: s.transferable ? '#065F46′ : '#6B7280', fontWeight: 600 }}>
+                <span style={{ fontSize: 12, color: s.transferable ? '#065F46' : '#6B7280', fontWeight: 600 }}>
                   {s.transferable ? 'Transferable to heirs' : 'Requires active participation'}
                 </span>
               </div>
@@ -115,7 +115,7 @@ export default function PartnerLegacyIncomePlan() {
               { icon: '⏱️', text: 'A 12-month transition period is allowed for heirs to meet partner requirements' },
               { icon: '💼', text: 'Network override income continues during transition as long as downline remains active' },
             ].map((item, i) => (
-              <div key={i} style={{ display: 'flex', gap: 10, padding: 12, background: '#F8FAFC', borderRadius: 8, border: '1px solid #E2E8F0′ }}>
+              <div key={i} style={{ display: 'flex', gap: 10, padding: 12, background: '#F8FAFC', borderRadius: 8, border: '1px solid #E2E8F0' }}>
                 <span style={{ fontSize: 20 }}>{item.icon}</span>
                 <span style={{ fontSize: 13, color: '#374151', lineHeight: 1.5 }}>{item.text}</span>
               </div>

@@ -55,7 +55,7 @@ export default function DFWAppraisalDisputeGuide() {
           <p style={{ color: '#CBD5E1', marginTop: 8 }}>Challenging low mortgage appraisals and high property tax assessments in DFW</p>
         </div>
 
-        <div style={{ background: '#fff', borderRadius: 12, padding: 28, marginBottom: 24, border: '1px solid #E2E8F0′ }}>
+        <div style={{ background: '#fff', borderRadius: 12, padding: 28, marginBottom: 24, border: '1px solid #E2E8F0' }}>
           <h2 style={{ color: '#0A1628', fontSize: 20, fontWeight: 700, marginBottom: 16 }}>📋 Two Types of Appraisals — Two Dispute Processes</h2>
           {[
             ['Mortgage Appraisal', 'Ordered by lender — dispute through Reconsideration of Value (ROV) process.'],
@@ -65,16 +65,16 @@ export default function DFWAppraisalDisputeGuide() {
           ].map(([title, desc]) => (
             <div key={title} style={{ display: 'flex', gap: 12, marginBottom: 14 }}>
               <span style={{ color: '#F5E642', fontSize: 20, flexShrink: 0 }}>✔</span>
-              <div><strong style={{ color: '#0A1628′ }}>{title}:</strong> <span style={{ color: '#475569' }}>{desc}</span></div>
+              <div><strong style={{ color: '#0A1628' }}>{title}:</strong> <span style={{ color: '#475569' }}>{desc}</span></div>
             </div>
           ))}
         </div>
 
-        <div style={{ background: '#fff', borderRadius: 12, padding: 28, marginBottom: 24, border: '1px solid #E2E8F0′ }}>
+        <div style={{ background: '#fff', borderRadius: 12, padding: 28, marginBottom: 24, border: '1px solid #E2E8F0' }}>
           <h2 style={{ color: '#0A1628', fontSize: 20, fontWeight: 700, marginBottom: 20 }}>🔍 Find Your Dispute Process</h2>
           <div style={{ marginBottom: 20 }}>
             <label style={{ color: '#0A1628', fontWeight: 600, display: 'block', marginBottom: 8 }}>Your Appraisal Situation</label>
-            <select value={situation} onChange={e => setSituation(e.target.value)} style={{ width: '100%', padding: '10px 14px', borderRadius: 8, border: '1px solid #CBD5E1', fontSize: 15, color: '#0A1628′ }}>
+            <select value={situation} onChange={e => setSituation(e.target.value)} style={{ width: '100%', padding: '10px 14px', borderRadius: 8, border: '1px solid #CBD5E1', fontSize: 15, color: '#0A1628' }}>
               <option value="">Select situation...</option>
               {situationOptions.map(s => <option key={s} value={s}>{s}</option>)}
             </select>
@@ -89,7 +89,7 @@ export default function DFWAppraisalDisputeGuide() {
               {result.process.map((step, i) => (
                 <div key={i} style={{ display: 'flex', alignItems: 'flex-start', gap: 12, marginBottom: 10 }}>
                   <span style={{ background: '#F5E642', color: '#0A1628', borderRadius: '50%', width: 24, height: 24, display: 'flex', alignItems: 'center', justifyContent: 'center', fontWeight: 700, fontSize: 12, flexShrink: 0 }}>{i + 1}</span>
-                  <span style={{ color: '#E2E8F0′ }}>{step}</span>
+                  <span style={{ color: '#E2E8F0' }}>{step}</span>
                 </div>
               ))}
             </div>
@@ -99,7 +99,7 @@ export default function DFWAppraisalDisputeGuide() {
             </div>
             <div style={{ background: '#1E293B', borderRadius: 8, padding: '16px 20px' }}>
               <div style={{ color: '#94A3B8', fontSize: 12, marginBottom: 4 }}>🎯 REALISTIC OUTCOME</div>
-              <div style={{ color: '#E2E8F0′ }}>{result.realistic}</div>
+              <div style={{ color: '#E2E8F0' }}>{result.realistic}</div>
             </div>
           </div>
         )}

@@ -50,15 +50,15 @@ export default function ProLnkMobileAppComingSoon() {
             {Object.keys(featureMap).map(f => (
               <button key={f} onClick={() => setFeature(f)}
                 style={{ padding: '10px 18px', borderRadius: 8, border: 'none', cursor: 'pointer', fontWeight: 700, fontSize: 13,
-                  background: feature === f ? '#F5E642′ : '#1e3a5f', color: feature === f ? '#0A1628' : '#fff' }}>
+                  background: feature === f ? '#F5E642' : '#1e3a5f', color: feature === f ? '#0A1628' : '#fff' }}>
                 {featureMap[f].icon} {f}
               </button>
             ))}
           </div>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: 12 }}>
             {featureMap[feature].items.map((item, i) => (
-              <div key={i} style={{ background: '#162033', borderRadius: 10, padding: 16, borderLeft: '3px solid #F5E642′ }}>
-                <span style={{ fontSize: 13, color: '#cbd5e1′ }}>✅ {item}</span>
+              <div key={i} style={{ background: '#162033', borderRadius: 10, padding: 16, borderLeft: '3px solid #F5E642' }}>
+                <span style={{ fontSize: 13, color: '#cbd5e1' }}>✅ {item}</span>
               </div>
             ))}
           </div>
@@ -71,7 +71,7 @@ export default function ProLnkMobileAppComingSoon() {
               <div key={i} style={{ background: '#162033', borderRadius: 10, padding: 16 }}>
                 <div style={{ fontSize: 11, color: '#F5E642', fontWeight: 700, marginBottom: 4 }}>{t.phase}</div>
                 <div style={{ fontWeight: 700, color: '#fff', marginBottom: 4 }}>{t.label}</div>
-                <div style={{ fontSize: 12, color: '#94a3b8′ }}>{t.desc}</div>
+                <div style={{ fontSize: 12, color: '#94a3b8' }}>{t.desc}</div>
               </div>
             ))}
           </div>

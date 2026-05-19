@@ -48,7 +48,7 @@ export default function DFWSewerscopeGuide() {
 
         <div style={{ backgroundColor: '#0D1F3C', borderRadius: 12, padding: 24, marginBottom: 24 }}>
           <h2 style={{ color: '#F5E642', fontSize: 18, fontWeight: 700, margin: '0 0 16px' }}>🎥 What Is a Sewer Scope?</h2>
-          <p style={{ color: '#CBD5E1', lineHeight: 1.7, margin: '0 0 12px' }}>A sewer scope sends a waterproof camera through the home's main sewer line — from a cleanout or toilet — to the city connection. The inspector records video and still images of the pipe’s condition and delivers a report of any issues found.</p>
+          <p style={{ color: '#CBD5E1', lineHeight: 1.7, margin: '0 0 12px' }}>A sewer scope sends a waterproof camera through the home's main sewer line — from a cleanout or toilet — to the city connection. The inspector records video and still images of the pipe's condition and delivers a report of any issues found.</p>
           <p style={{ color: '#CBD5E1', lineHeight: 1.7, margin: 0 }}>A standard TREC home inspection does not include sewer line inspection. It must be ordered separately from a plumber or dedicated scope company.</p>
         </div>
 
@@ -104,7 +104,7 @@ export default function DFWSewerscopeGuide() {
             {factors.map(f => (
               <label key={f.id} style={{ display: 'flex', alignItems: 'center', gap: 12, cursor: 'pointer', backgroundColor: selected.includes(f.id) ? '#1E3A5F' : '#132240', borderRadius: 8, padding: '12px 16px', border: `2px solid ${selected.includes(f.id) ? '#F5E642' : 'transparent'}`, transition: 'all 0.2s' }}>
                 <input type="checkbox" checked={selected.includes(f.id)} onChange={() => toggle(f.id)} style={{ display: 'none' }} />
-                <span style={{ width: 20, height: 20, borderRadius: 4, border: `2px solid ${selected.includes(f.id) ? '#F5E642' : '#4A5568'}`, backgroundColor: selected.includes(f.id) ? '#F5E642′ : ’transparent', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0, color: '#0A1628', fontWeight: 900, fontSize: 14 }}>{selected.includes(f.id) ? '✓' : ''}</span>
+                <span style={{ width: 20, height: 20, borderRadius: 4, border: `2px solid ${selected.includes(f.id) ? '#F5E642' : '#4A5568'}`, backgroundColor: selected.includes(f.id) ? '#F5E642' : 'transparent', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0, color: '#0A1628', fontWeight: 900, fontSize: 14 }}>{selected.includes(f.id) ? '✓' : ''}</span>
                 <span style={{ color: selected.includes(f.id) ? '#fff' : '#CBD5E1', fontSize: 15 }}>{f.label}</span>
               </label>
             ))}

@@ -63,8 +63,8 @@ export default function DFWNeighborhoodAssociationGuide() {
               key={type}
               onClick={() => setSelectedOrgType(selectedOrgType === type ? null : type)}
               style={{
-                backgroundColor: selectedOrgType === type ? '#F5E642′ : '#1e2d4a',
-                color: selectedOrgType === type ? '#0A1628′ : '#fff',
+                backgroundColor: selectedOrgType === type ? '#F5E642' : '#1e2d4a',
+                color: selectedOrgType === type ? '#0A1628' : '#fff',
                 borderRadius: '12px',
                 padding: '20px',
                 cursor: 'pointer',
@@ -96,7 +96,7 @@ export default function DFWNeighborhoodAssociationGuide() {
                 borderRadius: '12px',
                 padding: '20px',
                 cursor: 'pointer',
-                border: activeScenario === idx ? '2px solid #F5E642′ : '2px solid transparent',
+                border: activeScenario === idx ? '2px solid #F5E642' : '2px solid transparent',
               }}
             >
               <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start' }}>
@@ -105,7 +105,7 @@ export default function DFWNeighborhoodAssociationGuide() {
                   <div style={{ fontWeight: '600', fontSize: '15px', marginBottom: '6px' }}>"{s.issue}"</div>
                   <div style={{
                     display: 'inline-block',
-                    backgroundColor: s.canEnforce ? '#dc2626′ : '#16a34a',
+                    backgroundColor: s.canEnforce ? '#dc2626' : '#16a34a',
                     color: '#fff',
                     borderRadius: '4px',
                     padding: '2px 8px',
@@ -115,12 +115,12 @@ export default function DFWNeighborhoodAssociationGuide() {
                     {s.canEnforce ? 'CAN ENFORCE' : 'CANNOT ENFORCE'}
                   </div>
                 </div>
-                <span style={{ color: '#F5E642′ }}>{activeScenario === idx ? '▲' : '▼'}</span>
+                <span style={{ color: '#F5E642' }}>{activeScenario === idx ? '▲' : '▼'}</span>
               </div>
               {activeScenario === idx && (
                 <div style={{ marginTop: '16px', backgroundColor: '#0A1628', borderRadius: '8px', padding: '16px' }}>
                   <p style={{ color: '#cbd5e1', fontSize: '13px', lineHeight: '1.7', marginBottom: '12px' }}>{s.details}</p>
-                  <p style={{ color: '#94a3b8', fontSize: '12px' }}>⚡ <strong style={{ color: '#F5E642′ }}>Dispute path:</strong> {s.dispute}</p>
+                  <p style={{ color: '#94a3b8', fontSize: '12px' }}>⚡ <strong style={{ color: '#F5E642' }}>Dispute path:</strong> {s.dispute}</p>
                 </div>
               )}
             </div>

@@ -54,7 +54,7 @@ export default function DFWOutdoorStorageOrganization() {
         <div style={{ display: 'grid', gap: 10, marginBottom: 40 }}>
           {SHED_TYPES.map(s => (
             <div key={s.type} style={{ background: '#fff', borderRadius: 10, padding: '14px 18px', display: 'flex', gap: 14, alignItems: 'flex-start', boxShadow: '0 1px 3px rgba(0,0,0,0.07)' }}>
-              <span style={{ background: s.rating === 'Poor' ? '#fee2e2′ : s.rating === ’Good' ? '#dcfce7′ : s.rating === ’Very Good' ? '#dbeafe' : '#fef3c7', color: s.rating === 'Poor' ? '#dc2626′ : s.rating === ’Good' ? '#16a34a' : s.rating === 'Very Good' ? '#2563eb' : '#d97706', borderRadius: 6, padding: '2px 8px', fontSize: 11, fontWeight: 700, whiteSpace: 'nowrap', marginTop: 2 }}>{s.rating}</span>
+              <span style={{ background: s.rating === 'Poor' ? '#fee2e2' : s.rating === 'Good' ? '#dcfce7' : s.rating === 'Very Good' ? '#dbeafe' : '#fef3c7', color: s.rating === 'Poor' ? '#dc2626' : s.rating === 'Good' ? '#16a34a' : s.rating === 'Very Good' ? '#2563eb' : '#d97706', borderRadius: 6, padding: '2px 8px', fontSize: 11, fontWeight: 700, whiteSpace: 'nowrap', marginTop: 2 }}>{s.rating}</span>
               <div><div style={{ fontWeight: 700, marginBottom: 4 }}>{s.type}</div><div style={{ fontSize: 13, color: '#64748b', lineHeight: 1.5 }}>{s.note}</div></div>
             </div>
           ))}
@@ -73,7 +73,7 @@ export default function DFWOutdoorStorageOrganization() {
 
         <div style={{ background: '#fff3cd', border: '2px solid #F5E642', borderRadius: 12, padding: 20, marginBottom: 32 }}>
           <div style={{ fontWeight: 700, marginBottom: 10 }}>📋 DFW HOA Outdoor Storage Rules</div>
-          {HOA_RULES.map(r => <div key={r} style={{ fontSize: 13, color: '#475569', padding: '4px 0′ }}>• {r}</div>)}
+          {HOA_RULES.map(r => <div key={r} style={{ fontSize: 13, color: '#475569', padding: '4px 0' }}>• {r}</div>)}
         </div>
 
         <div style={{ background: '#fff', borderRadius: 16, padding: 32, boxShadow: '0 2px 8px rgba(0,0,0,0.08)' }}>
@@ -101,9 +101,9 @@ export default function DFWOutdoorStorageOrganization() {
             <div style={{ marginTop: 24, padding: 20, background: '#F9FAFB', borderRadius: 10 }}>
               <div style={{ fontWeight: 700, fontSize: 18, marginBottom: 4 }}>{result.name}</div>
               <div style={{ color: '#16a34a', fontWeight: 600, marginBottom: 14 }}>{result.cost}</div>
-              {result.items.map(i => <div key={i} style={{ padding: '5px 0', color: '#475569′ }}>✓ {i}</div>)}
+              {result.items.map(i => <div key={i} style={{ padding: '5px 0', color: '#475569' }}>✓ {i}</div>)}
               <div style={{ marginTop: 12, padding: 12, background: '#fef3c7', borderRadius: 8, fontSize: 13 }}>📋 HOA: {result.hoa}</div>
-              <div style={{ marginTop: 8, padding: 12, background: '#F5E642', borderRadius: 8, fontSize: 13, fontWeight: 600, color: '#0A1628′ }}>💡 {result.note}</div>
+              <div style={{ marginTop: 8, padding: 12, background: '#F5E642', borderRadius: 8, fontSize: 13, fontWeight: 600, color: '#0A1628' }}>💡 {result.note}</div>
             </div>
           )}
         </div>

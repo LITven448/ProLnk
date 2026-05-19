@@ -8,8 +8,8 @@ export default function DFWFoundationInspectionGuide2026() {
     if (!age || !area) return null;
     const isOld = age === '30+' || age === '20-30';
     const isHighRisk = area === 'Expansive Clay' || area === 'Near Creek/Lake';
-    if (isOld && isHighRisk) return { level: '🔴 CRITICAL', msg: 'Structural Engineer required — not optional. High probability of significant movement.', color: '#ef4444′ };
-    if (isOld || isHighRisk) return { level: '🟡 HIGH', msg: 'Dedicated foundation inspection strongly recommended before closing.', color: '#eab308′ };
+    if (isOld && isHighRisk) return { level: '🔴 CRITICAL', msg: 'Structural Engineer required — not optional. High probability of significant movement.', color: '#ef4444' };
+    if (isOld || isHighRisk) return { level: '🟡 HIGH', msg: 'Dedicated foundation inspection strongly recommended before closing.', color: '#eab308' };
     return { level: '🟢 MODERATE', msg: 'Still get foundation inspection — DFW soils move everywhere.', color: '#22c55e' };
   };
 
@@ -24,7 +24,7 @@ export default function DFWFoundationInspectionGuide2026() {
           <p style={{ color: '#94a3b8', fontSize: 15 }}>Why a separate foundation inspection is non-negotiable in DFW</p>
         </div>
 
-        <div style={{ background: '#112240', borderRadius: 12, padding: 20, marginBottom: 20, borderLeft: '4px solid #ef4444′ }}>
+        <div style={{ background: '#112240', borderRadius: 12, padding: 20, marginBottom: 20, borderLeft: '4px solid #ef4444' }}>
           <h2 style={{ color: '#ef4444', fontSize: 16, margin: '0 0 10px' }}>⚠️ General Inspectors Often Miss DFW Foundation Issues</h2>
           <p style={{ color: '#cbd5e1', fontSize: 14, margin: 0 }}>DFW sits on some of the most expansive clay soils in the country. General inspectors note visible cracks but rarely assess differential movement depth, pier failure, or soil saturation risk. You need a dedicated foundation specialist.</p>
         </div>
@@ -61,7 +61,7 @@ export default function DFWFoundationInspectionGuide2026() {
               {['Under 10 yrs', '10-20 yrs', '20-30 yrs', '30+'].map(opt => (
                 <button key={opt} onClick={() => setAge(opt)}
                   style={{ display: 'block', width: '100%', textAlign: 'left', padding: '8px 12px', marginBottom: 6, borderRadius: 8, cursor: 'pointer', border: '1px solid', fontSize: 13,
-                    borderColor: age === opt ? '#F5E642′ : '#334155', background: age === opt ? '#F5E642' : ’transparent', color: age === opt ? '#0A1628′ : '#94a3b8', fontWeight: age === opt ? 700 : 400 }}>
+                    borderColor: age === opt ? '#F5E642' : '#334155', background: age === opt ? '#F5E642' : 'transparent', color: age === opt ? '#0A1628' : '#94a3b8', fontWeight: age === opt ? 700 : 400 }}>
                   {opt}
                 </button>
               ))}
@@ -71,7 +71,7 @@ export default function DFWFoundationInspectionGuide2026() {
               {['Sandy/Stable', 'Expansive Clay', 'Near Creek/Lake', 'Unknown'].map(opt => (
                 <button key={opt} onClick={() => setArea(opt)}
                   style={{ display: 'block', width: '100%', textAlign: 'left', padding: '8px 12px', marginBottom: 6, borderRadius: 8, cursor: 'pointer', border: '1px solid', fontSize: 13,
-                    borderColor: area === opt ? '#F5E642′ : '#334155', background: area === opt ? '#F5E642' : ’transparent', color: area === opt ? '#0A1628′ : '#94a3b8', fontWeight: area === opt ? 700 : 400 }}>
+                    borderColor: area === opt ? '#F5E642' : '#334155', background: area === opt ? '#F5E642' : 'transparent', color: area === opt ? '#0A1628' : '#94a3b8', fontWeight: area === opt ? 700 : 400 }}>
                   {opt}
                 </button>
               ))}

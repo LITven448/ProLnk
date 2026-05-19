@@ -18,7 +18,7 @@ function getRiskScore(loc: string, veg: string, home: string): { score: number; 
   else if (home === 'Brick/stucco exterior') score += 5;
   else score += 2;
   const label = score >= 80 ? 'EXTREME' : score >= 60 ? 'HIGH' : score >= 35 ? 'MODERATE' : 'LOW';
-  const color = score >= 80 ? '#DC2626′ : score >= 60 ? '#EF4444' : score >= 35 ? '#F97316' : '#22C55E';
+  const color = score >= 80 ? '#DC2626' : score >= 60 ? '#EF4444' : score >= 35 ? '#F97316' : '#22C55E';
   return { score: Math.min(score, 100), label, color };
 }
 
@@ -77,7 +77,7 @@ export default function DFWWildFireGuide() {
           {risk && (
             <div>
               <div style={{ background: risk.color + '22', border: `2px solid ${risk.color}`, borderRadius: '8px', padding: '1rem', marginBottom: '1rem', textAlign: 'center' }}>
-                <div style={{ fontSize: '0.875rem', color: '#94A3B8′ }}>Wildfire Risk Score</div>
+                <div style={{ fontSize: '0.875rem', color: '#94A3B8' }}>Wildfire Risk Score</div>
                 <div style={{ fontSize: '2.5rem', fontWeight: 700, color: risk.color }}>{risk.score}/100</div>
                 <div style={{ fontSize: '1.2rem', fontWeight: 600, color: risk.color }}>{risk.label} RISK</div>
               </div>

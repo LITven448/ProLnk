@@ -35,7 +35,7 @@ export default function DFWRoofingQuickCheck2026() {
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '10px', marginBottom: '24px' }}>
           {findings.map(f => (
             <button key={f.id} onClick={() => setFinding(f.id)}
-              style={{ background: finding === f.id ? '#1e2d45′ : '#1e2d45', border: finding === f.id ? '2px solid #F5E642' : '2px solid transparent', borderRadius: '10px', padding: '14px', cursor: ’pointer', textAlign: 'left' }}>
+              style={{ background: finding === f.id ? '#1e2d45' : '#1e2d45', border: finding === f.id ? '2px solid #F5E642' : '2px solid transparent', borderRadius: '10px', padding: '14px', cursor: 'pointer', textAlign: 'left' }}>
               <span style={{ fontSize: '13px', fontWeight: 700, color: '#fff' }}>{f.label}</span>
             </button>
           ))}

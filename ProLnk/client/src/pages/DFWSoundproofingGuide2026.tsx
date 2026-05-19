@@ -47,7 +47,7 @@ export default function DFWSoundproofingGuide2026() {
           {solutions.map(s => (
             <button key={s.source} onClick={() => setActive(s.source)}
               style={{ padding: '9px 18px', borderRadius: 8, border: 'none', cursor: 'pointer', fontSize: 14, fontWeight: 600,
-                background: active === s.source ? '#F5E642′ : '#1e3a5f', color: active === s.source ? '#0A1628' : '#94a3b8' }}>
+                background: active === s.source ? '#F5E642' : '#1e3a5f', color: active === s.source ? '#0A1628' : '#94a3b8' }}>
               {s.emoji} {s.label}
             </button>
           ))}
@@ -55,7 +55,7 @@ export default function DFWSoundproofingGuide2026() {
 
         <div style={{ display: 'grid', gap: 12 }}>
           {sol.options.map((opt, i) => (
-            <div key={i} style={{ background: opt.best ? '#1a3a1a' : '#1e3a5f', borderRadius: 10, padding: 18, border: opt.best ? '1px solid #F5E642′ : ’none' }}>
+            <div key={i} style={{ background: opt.best ? '#1a3a1a' : '#1e3a5f', borderRadius: 10, padding: 18, border: opt.best ? '1px solid #F5E642' : 'none' }}>
               <div style={{ display: 'flex', justifyContent: 'space-between', flexWrap: 'wrap', gap: 8 }}>
                 <div>
                   {opt.best && <span style={{ background: '#F5E642', color: '#0A1628', fontSize: 11, fontWeight: 700, padding: '2px 8px', borderRadius: 4, marginRight: 8 }}>BEST VALUE</span>}

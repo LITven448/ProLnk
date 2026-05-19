@@ -67,7 +67,7 @@ export default function DFWRVStorageGuide() {
             <h3 style={{ color: '#F5E642', fontSize: 18, marginBottom: 16 }}>📦 Your Storage Recommendations</h3>
             <div style={{ marginBottom: 12 }}>
               <span style={{ color: '#8899AA', fontSize: 13 }}>Driveway Storage: </span>
-              <span style={{ color: '#CCD6E0′ }}>{result.driveway}</span>
+              <span style={{ color: '#CCD6E0' }}>{result.driveway}</span>
             </div>
             <div style={{ marginBottom: 12 }}>
               <div style={{ color: '#8899AA', fontSize: 13, marginBottom: 6 }}>Available Options:</div>
@@ -75,7 +75,7 @@ export default function DFWRVStorageGuide() {
             </div>
             <div style={{ background: '#0A1628', borderRadius: 8, padding: 12, marginTop: 12 }}>
               <span style={{ color: '#F5E642', fontWeight: 700 }}>💰 Estimated Cost: </span>
-              <span style={{ color: '#CCD6E0′ }}>{result.cost}</span>
+              <span style={{ color: '#CCD6E0' }}>{result.cost}</span>
             </div>
           </div>
         )}

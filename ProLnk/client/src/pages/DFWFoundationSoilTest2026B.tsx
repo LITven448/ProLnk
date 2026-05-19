@@ -51,7 +51,7 @@ export default function DFWFoundationSoilTest2026B() {
                   <div style={{ fontWeight: 700 }}>{r.range} — {r.label}</div>
                   <div style={{ color: '#94a3b8', fontSize: 13 }}>{r.pier}</div>
                 </div>
-                <div style={{ color: r.risk === 'Low' ? '#4ade80′ : r.risk === ’Medium' ? '#facc15′ : '#f87171', fontWeight: 700, fontSize: 13 }}>{r.risk}</div>
+                <div style={{ color: r.risk === 'Low' ? '#4ade80' : r.risk === 'Medium' ? '#facc15' : '#f87171', fontWeight: 700, fontSize: 13 }}>{r.risk}</div>
               </div>
             ))}
           </div>

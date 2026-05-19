@@ -50,7 +50,7 @@ export default function DFWHVACGroundVsRooftop() {
         </h1>
         <p style={{ color: '#94a3b8', marginBottom: 16, lineHeight: 1.6 }}>
           DFW's extreme summer heat — 100°F+ days are routine — means where your HVAC equipment sits matters more here than
-          almost anywhere in the US. Rooftop surfaces can hit 150°F in July. That's 20°F or more added to your condenser’s
+          almost anywhere in the US. Rooftop surfaces can hit 150°F in July. That's 20°F or more added to your condenser's
           operating environment. Ground-level installation is strongly preferred for DFW residential.
         </p>
 
@@ -76,7 +76,7 @@ export default function DFWHVACGroundVsRooftop() {
         <div style={{ display: 'grid', gap: 10, marginBottom: 24 }}>
           {options.map(o => (
             <button key={o.id} onClick={() => setSelected(o.id)}
-              style={{ background: selected === o.id ? '#F5E642′ : '#112240', color: selected === o.id ? '#0A1628' : '#fff', border: '2px solid ' + (selected === o.id ? '#F5E642' : '#1e3a5f'), borderRadius: 8, padding: '12px 16px', cursor: ’pointer', textAlign: 'left', fontWeight: 600, fontSize: 15 }}>
+              style={{ background: selected === o.id ? '#F5E642' : '#112240', color: selected === o.id ? '#0A1628' : '#fff', border: '2px solid ' + (selected === o.id ? '#F5E642' : '#1e3a5f'), borderRadius: 8, padding: '12px 16px', cursor: 'pointer', textAlign: 'left', fontWeight: 600, fontSize: 15 }}>
               {o.label}
             </button>
           ))}

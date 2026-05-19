@@ -80,7 +80,7 @@ export default function HowProLnkWorks() {
 
       <div style={{ maxWidth: 860, margin: '0 auto', padding: '60px 24px' }}>
         <section style={{ marginBottom: 64 }}>
-          <h2 style={{ fontSize: 30, fontWeight: 700, textAlign: 'center', marginBottom: 40, color: '#0A1628′ }}>4 Simple Steps</h2>
+          <h2 style={{ fontSize: 30, fontWeight: 700, textAlign: 'center', marginBottom: 40, color: '#0A1628' }}>4 Simple Steps</h2>
           <div style={{ display: 'flex', flexDirection: 'column', gap: 0 }}>
             {steps.map((step, i) => (
               <div key={i} style={{ display: 'flex', gap: 24, alignItems: 'flex-start', position: 'relative', paddingBottom: i < steps.length - 1 ? 0 : 0 }}>
@@ -88,7 +88,7 @@ export default function HowProLnkWorks() {
                   <div style={{ width: 64, height: 64, background: '#0A1628', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 28, flexShrink: 0, zIndex: 1 }}>
                     {step.emoji}
                   </div>
-                  {i < steps.length - 1 && <div style={{ width: 2, height: 40, background: '#dde3ed', margin: '4px 0′ }} />}
+                  {i < steps.length - 1 && <div style={{ width: 2, height: 40, background: '#dde3ed', margin: '4px 0' }} />}
                 </div>
                 <div style={{ background: '#fff', borderRadius: 12, padding: '20px 24px', flex: 1, marginBottom: i < steps.length - 1 ? 0 : 0, boxShadow: '0 2px 10px rgba(0,0,0,0.05)', marginBottom: 8 }}>
                   <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 8 }}>
@@ -113,7 +113,7 @@ export default function HowProLnkWorks() {
               { label: 'Satisfaction', value: '94%', sub: 'homeowner rating' },
             ].map((stat, i) => (
               <div key={i} style={{ padding: 20, background: '#f8f9fc', borderRadius: 10 }}>
-                <div style={{ fontSize: 32, fontWeight: 800, color: '#0A1628′ }}>{stat.value}</div>
+                <div style={{ fontSize: 32, fontWeight: 800, color: '#0A1628' }}>{stat.value}</div>
                 <div style={{ fontSize: 13, fontWeight: 700, color: '#333', marginTop: 4 }}>{stat.label}</div>
                 <div style={{ fontSize: 12, color: '#888', marginTop: 2 }}>{stat.sub}</div>
               </div>
@@ -129,11 +129,11 @@ export default function HowProLnkWorks() {
             <div>
               <div style={{ display: 'flex', gap: 4, marginBottom: 24 }}>
                 {quizQuestions.map((_, i) => (
-                  <div key={i} style={{ flex: 1, height: 4, borderRadius: 2, background: i <= quizStep ? '#0A1628′ : '#e0e6f0' }} />
+                  <div key={i} style={{ flex: 1, height: 4, borderRadius: 2, background: i <= quizStep ? '#0A1628' : '#e0e6f0' }} />
                 ))}
               </div>
               <p style={{ fontSize: 14, color: '#888', marginBottom: 8 }}>Question {quizStep + 1} of {quizQuestions.length}</p>
-              <h3 style={{ fontSize: 20, fontWeight: 700, marginBottom: 20, color: '#0A1628′ }}>{quizQuestions[quizStep].question}</h3>
+              <h3 style={{ fontSize: 20, fontWeight: 700, marginBottom: 20, color: '#0A1628' }}>{quizQuestions[quizStep].question}</h3>
               <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
                 {quizQuestions[quizStep].options.map((opt, i) => (
                   <button
@@ -151,7 +151,7 @@ export default function HowProLnkWorks() {
           ) : (
             <div style={{ textAlign: 'center' }}>
               <div style={{ fontSize: 48, marginBottom: 16 }}>🎉</div>
-              <h3 style={{ fontSize: 22, fontWeight: 700, marginBottom: 16, color: '#0A1628′ }}>Here’s What Happens Next</h3>
+              <h3 style={{ fontSize: 22, fontWeight: 700, marginBottom: 16, color: '#0A1628' }}>Here's What Happens Next</h3>
               <p style={{ fontSize: 17, lineHeight: 1.7, color: '#444', maxWidth: 480, margin: '0 auto 28px' }}>{getOutcome()}</p>
               <div style={{ display: 'flex', gap: 12, justifyContent: 'center', flexWrap: 'wrap' }}>
                 <button style={{ background: '#0A1628', color: '#F5E642', border: 'none', borderRadius: 8, padding: '14px 28px', fontSize: 15, fontWeight: 700, cursor: 'pointer' }}>Post My Need Now</button>

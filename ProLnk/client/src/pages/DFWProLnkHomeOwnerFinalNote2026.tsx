@@ -48,7 +48,7 @@ export default function DFWProLnkHomeOwnerFinalNote2026() {
         <p style={{ color: '#94a3b8', marginBottom: 32 }}>We built ProLnk for DFW specifically. Every page, every pro, every data point is calibrated for the Dallas-Fort Worth market — because generic platforms aren't enough for the most demanding climate in the US.</p>
 
         <div style={{ background: '#132035', borderRadius: 12, padding: 24, marginBottom: 24 }}>
-          <div style={{ fontWeight: 700, fontSize: 16, marginBottom: 16, color: '#F5E642′ }}>Who are you?</div>
+          <div style={{ fontWeight: 700, fontSize: 16, marginBottom: 16, color: '#F5E642' }}>Who are you?</div>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12 }}>
             {situations.map(s => (
               <button key={s.id} onClick={() => setSelected(s.id)} style={{ padding: '18px', borderRadius: 12, border: `2px solid ${selected === s.id ? '#F5E642' : 'transparent'}`, background: selected === s.id ? '#1e3a5f' : '#0A1628', cursor: 'pointer', textAlign: 'center' }}>
@@ -61,7 +61,7 @@ export default function DFWProLnkHomeOwnerFinalNote2026() {
 
         {situation && (
           <div style={{ background: '#132035', borderRadius: 12, padding: 24, marginBottom: 24 }}>
-            <div style={{ fontWeight: 700, fontSize: 16, marginBottom: 20, color: '#F5E642′ }}>{situation.icon} How ProLnk Helps {situation.label}s</div>
+            <div style={{ fontWeight: 700, fontSize: 16, marginBottom: 20, color: '#F5E642' }}>{situation.icon} How ProLnk Helps {situation.label}s</div>
             <div style={{ display: 'grid', gap: 16 }}>
               {situation.help.map(h => (
                 <div key={h.title} style={{ background: '#0A1628', borderRadius: 10, padding: 16 }}>
@@ -74,9 +74,9 @@ export default function DFWProLnkHomeOwnerFinalNote2026() {
         )}
 
         <div style={{ background: '#132035', borderRadius: 12, padding: 24, marginBottom: 24 }}>
-          <div style={{ fontWeight: 700, fontSize: 15, marginBottom: 16, color: '#F5E642′ }}>📊 The ProLnk Platform by the Numbers</div>
+          <div style={{ fontWeight: 700, fontSize: 15, marginBottom: 16, color: '#F5E642' }}>📊 The ProLnk Platform by the Numbers</div>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: 16 }}>
-            {[{ num: '4,500+', label: 'DFW-specific pages' }, { num: '47', label: 'AI agents working 24/7′ }, { num: '130+', label: ’Database tables' }, { num: '5', label: 'Income streams for pros' }, { num: '50M+', label: 'Homes in the Vault' }, { num: '2026', label: 'Launch year' }].map(s => (
+            {[{ num: '4,500+', label: 'DFW-specific pages' }, { num: '47', label: 'AI agents working 24/7' }, { num: '130+', label: 'Database tables' }, { num: '5', label: 'Income streams for pros' }, { num: '50M+', label: 'Homes in the Vault' }, { num: '2026', label: 'Launch year' }].map(s => (
               <div key={s.label} style={{ background: '#0A1628', borderRadius: 10, padding: 14, textAlign: 'center' }}>
                 <div style={{ color: '#F5E642', fontWeight: 700, fontSize: 22 }}>{s.num}</div>
                 <div style={{ color: '#94a3b8', fontSize: 12, marginTop: 4 }}>{s.label}</div>
@@ -85,7 +85,7 @@ export default function DFWProLnkHomeOwnerFinalNote2026() {
           </div>
         </div>
 
-        <div style={{ background: '#F5E642', borderRadius: 12, padding: 24, textAlign: 'center', color: '#0A1628′ }}>
+        <div style={{ background: '#F5E642', borderRadius: 12, padding: 24, textAlign: 'center', color: '#0A1628' }}>
           <div style={{ fontSize: 28, marginBottom: 12 }}>💛</div>
           <div style={{ fontWeight: 700, fontSize: 18, marginBottom: 8 }}>DFW Deserves Better. That's Why We Built ProLnk.</div>
           <div style={{ fontSize: 14, maxWidth: 480, margin: '0 auto' }}>Join the waitlist. Be part of the platform that finally understands your home, your climate, and your community.</div>

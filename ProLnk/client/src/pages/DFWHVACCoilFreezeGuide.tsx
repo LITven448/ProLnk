@@ -30,15 +30,15 @@ export default function DFWHVACCoilFreezeGuide() {
         <div style={{ background: '#0F2240', borderRadius: 12, padding: 24, marginBottom: 24 }}>
           <h2 style={{ color: '#F5E642', fontSize: 18, marginBottom: 16 }}>❄️ Why Coils Freeze in DFW Summer</h2>
           <ul style={{ color: '#C8D8E8', lineHeight: 2, paddingLeft: 20 }}>
-            <li><strong style={{ color: '#E8EFF8′ }}>Low refrigerant (most serious):</strong> Refrigerant pressure drops, coil temperature falls below 32°F</li>
-            <li><strong style={{ color: '#E8EFF8′ }}>Dirty air filter:</strong> Restricted airflow starves coil of warm return air</li>
-            <li><strong style={{ color: '#E8EFF8′ }}>Blocked vents:</strong> Closing too many vents creates same airflow restriction</li>
-            <li><strong style={{ color: '#E8EFF8′ }}>Dirty evaporator coil:</strong> Insulating layer of dust prevents heat transfer</li>
+            <li><strong style={{ color: '#E8EFF8' }}>Low refrigerant (most serious):</strong> Refrigerant pressure drops, coil temperature falls below 32°F</li>
+            <li><strong style={{ color: '#E8EFF8' }}>Dirty air filter:</strong> Restricted airflow starves coil of warm return air</li>
+            <li><strong style={{ color: '#E8EFF8' }}>Blocked vents:</strong> Closing too many vents creates same airflow restriction</li>
+            <li><strong style={{ color: '#E8EFF8' }}>Dirty evaporator coil:</strong> Insulating layer of dust prevents heat transfer</li>
             <li>DFW danger: heat outside makes indoor coil work harder — freeze is more catastrophic here than in mild climates</li>
           </ul>
         </div>
 
-        <div style={{ background: '#1A0A0A', borderRadius: 12, padding: 24, marginBottom: 24, border: '1px solid #8B0000′ }}>
+        <div style={{ background: '#1A0A0A', borderRadius: 12, padding: 24, marginBottom: 24, border: '1px solid #8B0000' }}>
           <h2 style={{ color: '#FF6B6B', fontSize: 18, marginBottom: 12 }}>🚨 DFW-Specific Warning</h2>
           <p style={{ color: '#C8D8E8', lineHeight: 1.7 }}>
             In DFW 100°F+ heat, running a frozen AC for even 30 minutes can cause liquid refrigerant to flood the compressor (slugging). Compressor replacement: $1,500–$3,500. Turn it off now and thaw first.
@@ -67,10 +67,10 @@ export default function DFWHVACCoilFreezeGuide() {
         </div>
 
         {result && (
-          <div style={{ background: '#0F2240', borderRadius: 12, padding: 24, borderLeft: '4px solid #F5E642′ }}>
+          <div style={{ background: '#0F2240', borderRadius: 12, padding: 24, borderLeft: '4px solid #F5E642' }}>
             <h3 style={{ color: '#F5E642', marginBottom: 16 }}>📋 Coil Freeze Action Plan</h3>
             <div style={{ marginBottom: 16 }}><span style={{ color: '#8BA0B8', fontSize: 13 }}>LIKELY CAUSE: </span><span style={{ color: '#E8EFF8', fontWeight: 700 }}>{result.cause}</span></div>
-            <div style={{ marginBottom: 8, color: '#8BA0B8', fontSize: 13 }}>URGENCY: <span style={{ color: '#E8EFF8′ }}>{result.urgency}</span></div>
+            <div style={{ marginBottom: 8, color: '#8BA0B8', fontSize: 13 }}>URGENCY: <span style={{ color: '#E8EFF8' }}>{result.urgency}</span></div>
             <div style={{ marginTop: 16 }}>
               <div style={{ color: '#F5E642', marginBottom: 8, fontWeight: 700 }}>✅ DO THIS NOW:</div>
               {result.immediateSteps.map(s => <div key={s} style={{ color: '#C8D8E8', marginBottom: 6, paddingLeft: 8 }}>{s}</div>)}

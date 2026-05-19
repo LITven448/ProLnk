@@ -38,12 +38,12 @@ export default function DFWSaintAugustineGuide2026() {
             </thead>
             <tbody>
               {varieties.map((v, i) => (
-                <tr key={v.name} style={{ background: i % 2 === 0 ? '#0d1f3c' : '#0A1628′ }}>
+                <tr key={v.name} style={{ background: i % 2 === 0 ? '#0d1f3c' : '#0A1628' }}>
                   <td style={{ padding: '10px 12px', fontWeight: 700 }}>{v.name}</td>
-                  <td style={{ padding: '10px 12px', color: '#94a3b8′ }}>{v.shade}</td>
-                  <td style={{ padding: '10px 12px', color: '#94a3b8′ }}>{v.chinch}</td>
-                  <td style={{ padding: '10px 12px', color: '#94a3b8′ }}>{v.water}</td>
-                  <td style={{ padding: '10px 12px', color: '#94a3b8′ }}>{v.notes}</td>
+                  <td style={{ padding: '10px 12px', color: '#94a3b8' }}>{v.shade}</td>
+                  <td style={{ padding: '10px 12px', color: '#94a3b8' }}>{v.chinch}</td>
+                  <td style={{ padding: '10px 12px', color: '#94a3b8' }}>{v.water}</td>
+                  <td style={{ padding: '10px 12px', color: '#94a3b8' }}>{v.notes}</td>
                 </tr>
               ))}
             </tbody>
@@ -53,7 +53,7 @@ export default function DFWSaintAugustineGuide2026() {
         <p style={{ color: '#F5E642', fontWeight: 700, marginBottom: 12 }}>Describe your DFW yard:</p>
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 10, marginBottom: 20 }}>
           {[['☀️ Full Sun (6+ hrs)', 'fullsun'], ['🌳 Significant Shade', 'shade'], ['🌤️ Mixed Sun/Shade', 'mixed'], ['🐛 Chinch Bug History', 'chinchbug'], ['💧 Drought / Water Limits', 'drought']].map(([label, val]) => (
-            <button key={val} onClick={() => setCondition(val)} style={{ padding: '12px', border: condition === val ? '2px solid #F5E642′ : '1px solid #1e3a5f', borderRadius: 8, background: condition === val ? '#1e3a5f' : '#0d1f3c', color: '#fff', cursor: ’pointer', fontSize: 13 }}>{label}</button>
+            <button key={val} onClick={() => setCondition(val)} style={{ padding: '12px', border: condition === val ? '2px solid #F5E642' : '1px solid #1e3a5f', borderRadius: 8, background: condition === val ? '#1e3a5f' : '#0d1f3c', color: '#fff', cursor: 'pointer', fontSize: 13 }}>{label}</button>
           ))}
         </div>
 

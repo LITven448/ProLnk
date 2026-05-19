@@ -50,7 +50,7 @@ export default function DFWSoilTestingGuide() {
         <div style={{ marginBottom: '2rem' }}>
           <span style={{ color: '#F5E642', fontSize: '0.85rem', fontWeight: 700, letterSpacing: 2, textTransform: 'uppercase' }}>DFW Home Health</span>
           <h1 style={{ fontSize: '2.2rem', fontWeight: 800, margin: '0.5rem 0', lineHeight: 1.2 }}>🌍 Soil Testing Guide for DFW Homeowners</h1>
-          <p style={{ color: '#94a3b8', fontSize: '1.05rem' }}>DFW's expansive Blackland Prairie clay is unlike most US soils. Know what you’re working with before landscaping, gardening, or assessing foundation risk.</p>
+          <p style={{ color: '#94a3b8', fontSize: '1.05rem' }}>DFW's expansive Blackland Prairie clay is unlike most US soils. Know what you're working with before landscaping, gardening, or assessing foundation risk.</p>
         </div>
 
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(240px, 1fr))', gap: '1rem', marginBottom: '2.5rem' }}>
@@ -67,7 +67,7 @@ export default function DFWSoilTestingGuide() {
         <div style={{ overflowX: 'auto', marginBottom: '2.5rem' }}>
           <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: '0.875rem' }}>
             <thead>
-              <tr style={{ background: '#0f2340′ }}>
+              <tr style={{ background: '#0f2340' }}>
                 {['Lab', 'Cost', 'Turnaround', 'Tests', 'Best For'].map(h => (
                   <th key={h} style={{ padding: '0.75rem 1rem', textAlign: 'left', color: '#F5E642', borderBottom: '1px solid #1e3a5f' }}>{h}</th>
                 ))}
@@ -77,10 +77,10 @@ export default function DFWSoilTestingGuide() {
               {labs.map((l, i) => (
                 <tr key={i} style={{ borderBottom: '1px solid #1e3a5f' }}>
                   <td style={{ padding: '0.75rem 1rem', fontWeight: 600 }}>{l.name}</td>
-                  <td style={{ padding: '0.75rem 1rem', color: '#4ade80′ }}>{l.cost}</td>
-                  <td style={{ padding: '0.75rem 1rem', color: '#94a3b8′ }}>{l.turnaround}</td>
-                  <td style={{ padding: '0.75rem 1rem', color: '#94a3b8′ }}>{l.tests}</td>
-                  <td style={{ padding: '0.75rem 1rem', color: '#94a3b8′ }}>{l.bestFor}</td>
+                  <td style={{ padding: '0.75rem 1rem', color: '#4ade80' }}>{l.cost}</td>
+                  <td style={{ padding: '0.75rem 1rem', color: '#94a3b8' }}>{l.turnaround}</td>
+                  <td style={{ padding: '0.75rem 1rem', color: '#94a3b8' }}>{l.tests}</td>
+                  <td style={{ padding: '0.75rem 1rem', color: '#94a3b8' }}>{l.bestFor}</td>
                 </tr>
               ))}
             </tbody>
@@ -93,7 +93,7 @@ export default function DFWSoilTestingGuide() {
             <label style={{ display: 'block', color: '#94a3b8', fontSize: '0.8rem', marginBottom: 8 }}>INTENDED USE (select all that apply)</label>
             <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8 }}>
               {useCases.map(u => (
-                <button key={u.id} onClick={() => toggleUse(u.id)} style={{ padding: '0.4rem 0.9rem', borderRadius: 20, border: '1px solid', borderColor: intendedUse.includes(u.id) ? '#F5E642′ : '#1e3a5f', background: intendedUse.includes(u.id) ? '#F5E642' : ’transparent', color: intendedUse.includes(u.id) ? '#0A1628′ : '#fff', cursor: ’pointer', fontSize: '0.85rem', fontWeight: 600 }}>
+                <button key={u.id} onClick={() => toggleUse(u.id)} style={{ padding: '0.4rem 0.9rem', borderRadius: 20, border: '1px solid', borderColor: intendedUse.includes(u.id) ? '#F5E642' : '#1e3a5f', background: intendedUse.includes(u.id) ? '#F5E642' : 'transparent', color: intendedUse.includes(u.id) ? '#0A1628' : '#fff', cursor: 'pointer', fontSize: '0.85rem', fontWeight: 600 }}>
                   {u.label}
                 </button>
               ))}
@@ -113,7 +113,7 @@ export default function DFWSoilTestingGuide() {
             Get Recommendation →
           </button>
           {showResults && (
-            <div style={{ marginTop: '1.25rem', background: '#0A1628', borderRadius: 8, padding: '1rem', border: '1px solid #F5E642′ }}>
+            <div style={{ marginTop: '1.25rem', background: '#0A1628', borderRadius: 8, padding: '1rem', border: '1px solid #F5E642' }}>
               <div style={{ fontWeight: 700, color: '#F5E642', marginBottom: 8 }}>Your Soil Testing Plan:</div>
               {getRecommendation().map((r, i) => <div key={i} style={{ color: '#e2e8f0', marginBottom: 6, fontSize: '0.95rem' }}>{r}</div>)}
             </div>

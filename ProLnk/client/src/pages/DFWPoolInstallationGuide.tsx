@@ -107,7 +107,7 @@ export default function DFWPoolInstallationGuide() {
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 8, marginBottom: 16 }}>
             {FEATURES.map(f => (
               <div key={f.id} onClick={() => toggleFeature(f.id)} style={{ background: selectedFeatures.includes(f.id) ? '#1e3a5f' : '#0A1628', border: `2px solid ${selectedFeatures.includes(f.id) ? '#F5E642' : '#334155'}`, borderRadius: 8, padding: 10, cursor: 'pointer', fontSize: 13 }}>
-                {f.label} <span style={{ color: '#F5E642′ }}>+${f.cost.toLocaleString()}</span>
+                {f.label} <span style={{ color: '#F5E642' }}>+${f.cost.toLocaleString()}</span>
               </div>
             ))}
           </div>
@@ -115,12 +115,12 @@ export default function DFWPoolInstallationGuide() {
             Calculate My Estimate
           </button>
           {showEstimate && (
-            <div style={{ background: '#0A1628', borderRadius: 10, padding: 16, marginTop: 14, border: '2px solid #F5E642′ }}>
+            <div style={{ background: '#0A1628', borderRadius: 10, padding: 16, marginTop: 14, border: '2px solid #F5E642' }}>
               <div style={{ fontWeight: 800, fontSize: 20, color: '#F5E642', marginBottom: 8 }}>
                 ${totalLow.toLocaleString()} – ${totalHigh.toLocaleString()}
               </div>
               <div style={{ color: '#94a3b8', fontSize: 13 }}>Includes pool shell, deck, equipment, permit (~$1,200). Excludes landscaping and fencing.</div>
-              <div style={{ color: '#cbd5e1', marginTop: 10, fontSize: 14 }}>Monthly operating cost: <strong style={{ color: '#F5E642′ }}>${monthlyOp}/mo</strong> (chemicals, electricity, service)</div>
+              <div style={{ color: '#cbd5e1', marginTop: 10, fontSize: 14 }}>Monthly operating cost: <strong style={{ color: '#F5E642' }}>${monthlyOp}/mo</strong> (chemicals, electricity, service)</div>
             </div>
           )}
         </div>

@@ -23,7 +23,7 @@ function getDIYAssessment(problemId, severity) {
 
 function getRepairMethod(problemId) {
   const methods = {
-    tuckpointing: 'Grind out deteriorated mortar 3/4″, repack with matching mortar. DFW humidity accelerates joint failure—use Type S mortar rated for high humidity.',
+    tuckpointing: 'Grind out deteriorated mortar 3/4", repack with matching mortar. DFW humidity accelerates joint failure—use Type S mortar rated for high humidity.',
     spalling: 'Replace spalled bricks individually. DFW freeze-thaw cycles (rare but damaging) and summer heat expansion cause spalling. Match brick age and color carefully.',
     efflorescence: 'Brush dry, apply efflorescence cleaner, seal with penetrating silane sealer. DFW humidity draws salts to surface continuously—sealing is essential.',
     lintel: 'Shore wall above opening, remove failed lintel, install new steel lintel, repoint courses above. Never skip shoring—wall collapse risk is real.',
@@ -76,7 +76,7 @@ export default function DFWBrickRepairGuide() {
         </div>
 
         <div style={{ background: '#112240', borderRadius: 12, padding: 24, border: '1px solid #1e3a5f', marginBottom: 24 }}>
-          <h2 style={{ fontSize: 20, fontWeight: 700, marginBottom: 20, color: '#F5E642′ }}>🧮 Repair Cost Estimator</h2>
+          <h2 style={{ fontSize: 20, fontWeight: 700, marginBottom: 20, color: '#F5E642' }}>🧮 Repair Cost Estimator</h2>
           <div style={{ display: 'grid', gap: 14 }}>
             <div>
               <label style={{ display: 'block', marginBottom: 6, fontWeight: 600, fontSize: 14 }}>Problem Type</label>
@@ -87,7 +87,7 @@ export default function DFWBrickRepairGuide() {
             </div>
             <div>
               <label style={{ display: 'block', marginBottom: 6, fontWeight: 600, fontSize: 14 }}>Affected Area (sq ft)</label>
-              <input type="number" value={area} onChange={e => setArea(e.target.value)} placeholder="e.g. 50″ style={{ width: '100%', padding: '10px 12px', background: '#0A1628', border: '1px solid #2d4a7a', borderRadius: 8, color: '#fff', fontSize: 14, boxSizing: 'border-box' }} />
+              <input type="number" value={area} onChange={e => setArea(e.target.value)} placeholder="e.g. 50" style={{ width: '100%', padding: '10px 12px', background: '#0A1628', border: '1px solid #2d4a7a', borderRadius: 8, color: '#fff', fontSize: 14, boxSizing: 'border-box' }} />
             </div>
             <div>
               <label style={{ display: 'block', marginBottom: 6, fontWeight: 600, fontSize: 14 }}>Severity</label>

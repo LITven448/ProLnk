@@ -56,11 +56,11 @@ export default function DFWHVACModulatingFurnaceGuide() {
           ❄️ DFW Bottom Line: <span style={{ fontWeight: 400 }}>Modulating furnaces are overkill for most DFW homes. Two-stage is the sweet spot — captures 80% of the efficiency/comfort benefits at a fraction of the premium. Single stage is fine for smaller homes.</span>
         </div>
 
-        <h2 style={{ fontSize: '1.1rem', fontWeight: 700, marginBottom: '1rem', color: '#F5E642′ }}>Furnace Stage Comparison</h2>
+        <h2 style={{ fontSize: '1.1rem', fontWeight: 700, marginBottom: '1rem', color: '#F5E642' }}>Furnace Stage Comparison</h2>
         <div style={{ display: 'grid', gap: '0.75rem', marginBottom: '2rem' }}>
           {stages.map((s, i) => (
             <div key={i} onClick={() => setStageOpen(stageOpen === i ? null : i)}
-              style={{ background: stageOpen === i ? '#162035′ : '#111D33', border: `1.5px solid ${stageOpen === i ? s.color : '#1E2D45'}`, borderRadius: 10, padding: '1rem 1.25rem', cursor: ’pointer' }}>
+              style={{ background: stageOpen === i ? '#162035' : '#111D33', border: `1.5px solid ${stageOpen === i ? s.color : '#1E2D45'}`, borderRadius: 10, padding: '1rem 1.25rem', cursor: 'pointer' }}>
               <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
                 <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
                   <span style={{ fontSize: '1.5rem' }}>{s.icon}</span>
@@ -90,18 +90,18 @@ export default function DFWHVACModulatingFurnaceGuide() {
           ))}
         </div>
 
-        <h2 style={{ fontSize: '1.1rem', fontWeight: 700, marginBottom: '1rem', color: '#F5E642′ }}>🏠 My DFW Home → Furnace Recommendation</h2>
+        <h2 style={{ fontSize: '1.1rem', fontWeight: 700, marginBottom: '1rem', color: '#F5E642' }}>🏠 My DFW Home → Furnace Recommendation</h2>
         <div style={{ display: 'grid', gap: '0.5rem' }}>
           {scenarios.map((s, i) => (
             <div key={i} onClick={() => setHomeSize(homeSize === i ? null : i)}
-              style={{ background: homeSize === i ? '#162035′ : '#111D33', border: `1.5px solid ${homeSize === i ? '#F5E642' : '#1E2D45'}`, borderRadius: 8, padding: '0.75rem 1rem', cursor: ’pointer' }}>
+              style={{ background: homeSize === i ? '#162035' : '#111D33', border: `1.5px solid ${homeSize === i ? '#F5E642' : '#1E2D45'}`, borderRadius: 8, padding: '0.75rem 1rem', cursor: 'pointer' }}>
               <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
                 <span style={{ fontWeight: 600 }}>{s.usage}</span>
                 <span style={{ color: '#F5E642', fontWeight: 800 }}>{s.rec}</span>
               </div>
               {homeSize === i && (
                 <div style={{ marginTop: '0.5rem', color: '#8A9BB5', fontSize: '0.9rem' }}>
-                  <div style={{ marginBottom: '0.25rem', color: '#8A9BB5′ }}>Avg DFW heating use: {s.months} months/year</div>
+                  <div style={{ marginBottom: '0.25rem', color: '#8A9BB5' }}>Avg DFW heating use: {s.months} months/year</div>
                   {s.reason}
                 </div>
               )}

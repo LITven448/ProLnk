@@ -25,13 +25,13 @@ export default function DFWRoofingRidgeVent2026() {
         </div>
 
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 14, marginBottom: 28 }}>
-          <div style={{ background: '#112240', borderRadius: 12, padding: 16, borderLeft: '4px solid #F5E642′ }}>
+          <div style={{ background: '#112240', borderRadius: 12, padding: 16, borderLeft: '4px solid #F5E642' }}>
             <h3 style={{ color: '#F5E642', fontSize: 14, margin: '0 0 8px' }}>🌡️ Why Ridge Vents Win in DFW</h3>
             <p style={{ color: '#CBD5E1', fontSize: 13, lineHeight: 1.7, margin: 0 }}>
               Hot air rises and exits at the peak — no mechanical parts, no electricity. In DFW where attics hit 160°F+ in summer, ridge vents drop temps 20–30°F and extend shingle life significantly.
             </p>
           </div>
-          <div style={{ background: '#112240', borderRadius: 12, padding: 16, borderLeft: '4px solid #F5E642′ }}>
+          <div style={{ background: '#112240', borderRadius: 12, padding: 16, borderLeft: '4px solid #F5E642' }}>
             <h3 style={{ color: '#F5E642', fontSize: 14, margin: '0 0 8px' }}>🔄 Shingle-Over vs Metal</h3>
             <p style={{ color: '#CBD5E1', fontSize: 13, lineHeight: 1.7, margin: 0 }}>
               Shingle-over ridge vent blends in but can be damaged by DFW hail. Metal ridge vent is exposed but nearly indestructible. Metal preferred for hail-prone areas in N. Texas.
@@ -39,7 +39,7 @@ export default function DFWRoofingRidgeVent2026() {
           </div>
         </div>
 
-        <div style={{ background: '#112240', borderRadius: 12, padding: 18, marginBottom: 24, borderLeft: '4px solid #FF4444′ }}>
+        <div style={{ background: '#112240', borderRadius: 12, padding: 18, marginBottom: 24, borderLeft: '4px solid #FF4444' }}>
           <h2 style={{ color: '#FF4444', fontSize: 14, margin: '0 0 8px' }}>❌ Most Common Mistake: Blocked by Insulation</h2>
           <p style={{ color: '#CBD5E1', fontSize: 13, lineHeight: 1.7, margin: 0 }}>
             Blown-in insulation contractors routinely block soffit vent baffles and sometimes ridge vents. A blocked ridge vent provides zero benefit. Every attic insulation job should verify airflow path is clear before completion.
@@ -58,9 +58,9 @@ export default function DFWRoofingRidgeVent2026() {
         </div>
 
         {active && (
-          <div style={{ background: '#112240', borderRadius: 12, padding: 20, marginBottom: 24, border: '2px solid #F5E642′ }}>
+          <div style={{ background: '#112240', borderRadius: 12, padding: 20, marginBottom: 24, border: '2px solid #F5E642' }}>
             <div style={{ fontSize: 32 }}>{active.emoji}</div>
-            <h3 style={{ color: '#F5E642', margin: '8px 0′ }}>{active.label}</h3>
+            <h3 style={{ color: '#F5E642', margin: '8px 0' }}>{active.label}</h3>
             <p style={{ color: '#CBD5E1', fontSize: 14, lineHeight: 1.7, margin: 0 }}>{active.guide}</p>
           </div>
         )}

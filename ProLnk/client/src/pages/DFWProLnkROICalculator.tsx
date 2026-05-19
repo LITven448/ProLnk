@@ -59,7 +59,7 @@ export default function DFWProLnkROICalculator() {
             <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap' }}>
               {HOME_SIZES.map(s => (
                 <button key={s} onClick={() => { setHomeSize(s); setCalculated(false); }}
-                  style={{ background: homeSize === s ? '#0A1628′ : '#f1f5f9', color: homeSize === s ? '#F5E642' : '#475569', border: '1px solid', borderColor: homeSize === s ? '#0A1628' : '#e2e8f0', borderRadius: 8, padding: '8px 14px', cursor: ’pointer', fontSize: 13, fontWeight: homeSize === s ? 700 : 400 }}>
+                  style={{ background: homeSize === s ? '#0A1628' : '#f1f5f9', color: homeSize === s ? '#F5E642' : '#475569', border: '1px solid', borderColor: homeSize === s ? '#0A1628' : '#e2e8f0', borderRadius: 8, padding: '8px 14px', cursor: 'pointer', fontSize: 13, fontWeight: homeSize === s ? 700 : 400 }}>
                   {s}
                 </button>
               ))}
@@ -70,7 +70,7 @@ export default function DFWProLnkROICalculator() {
             <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap' }}>
               {SERVICE_NEEDS.map(s => (
                 <button key={s} onClick={() => { setServiceNeeds(s); setCalculated(false); }}
-                  style={{ background: serviceNeeds === s ? '#0A1628′ : '#f1f5f9', color: serviceNeeds === s ? '#F5E642' : '#475569', border: '1px solid', borderColor: serviceNeeds === s ? '#0A1628' : '#e2e8f0', borderRadius: 8, padding: '8px 14px', cursor: ’pointer', fontSize: 13, fontWeight: serviceNeeds === s ? 700 : 400 }}>
+                  style={{ background: serviceNeeds === s ? '#0A1628' : '#f1f5f9', color: serviceNeeds === s ? '#F5E642' : '#475569', border: '1px solid', borderColor: serviceNeeds === s ? '#0A1628' : '#e2e8f0', borderRadius: 8, padding: '8px 14px', cursor: 'pointer', fontSize: 13, fontWeight: serviceNeeds === s ? 700 : 400 }}>
                   {s}
                 </button>
               ))}
@@ -83,14 +83,14 @@ export default function DFWProLnkROICalculator() {
         </div>
         {calculated && (
           <div style={{ background: '#fff', border: '1px solid #e2e8f0', borderRadius: 12, padding: 28, marginBottom: 24, boxShadow: '0 1px 4px rgba(0,0,0,0.06)' }}>
-            <div style={{ textAlign: 'center', marginBottom: 24, padding: 20, background: '#f0fdf4', borderRadius: 10, border: '1px solid #bbf7d0′ }}>
+            <div style={{ textAlign: 'center', marginBottom: 24, padding: 20, background: '#f0fdf4', borderRadius: 10, border: '1px solid #bbf7d0' }}>
               <div style={{ fontSize: 13, color: '#15803d', fontWeight: 600, marginBottom: 4 }}>Estimated Annual Value of ProLnk</div>
-              <div style={{ fontSize: 48, fontWeight: 900, color: '#0A1628′ }}>${totalValue.toLocaleString()}</div>
+              <div style={{ fontSize: 48, fontWeight: 900, color: '#0A1628' }}>${totalValue.toLocaleString()}</div>
               <div style={{ fontSize: 13, color: '#64748b' }}>ROI: {roiMultiple}x return • Free for homeowners</div>
             </div>
             <h3 style={{ color: '#0A1628', marginBottom: 16, fontSize: 15 }}>Value Breakdown</h3>
             {rows.map((row, i) => (
-              <div key={i} style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', padding: '12px 0', borderBottom: i < rows.length - 1 ? '1px solid #f1f5f9′ : ’none' }}>
+              <div key={i} style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', padding: '12px 0', borderBottom: i < rows.length - 1 ? '1px solid #f1f5f9' : 'none' }}>
                 <div style={{ flex: 1 }}>
                   <div style={{ fontWeight: 600, fontSize: 14, color: '#1e293b' }}>{row.label}</div>
                   <div style={{ fontSize: 12, color: '#94a3b8', marginTop: 2 }}>{row.desc}</div>

@@ -35,9 +35,9 @@ const noiseSources: Record<string, string> = {
 };
 
 const costEstimates: Record<string, Record<string, string>> = {
-  small: { basic: '$4,000–$8,000', mid: '$8,000–$16,000', premium: '$16,000–$30,000′ },
-  medium: { basic: '$6,000–$12,000', mid: '$12,000–$24,000', premium: '$24,000–$45,000′ },
-  large: { basic: '$9,000–$18,000', mid: '$18,000–$35,000', premium: '$35,000–$65,000′ },
+  small: { basic: '$4,000–$8,000', mid: '$8,000–$16,000', premium: '$16,000–$30,000' },
+  medium: { basic: '$6,000–$12,000', mid: '$12,000–$24,000', premium: '$24,000–$45,000' },
+  large: { basic: '$9,000–$18,000', mid: '$18,000–$35,000', premium: '$35,000–$65,000' },
 };
 
 export default function DFWPrivacyRoomGuide() {
@@ -84,7 +84,7 @@ export default function DFWPrivacyRoomGuide() {
             <div style={{ display: 'flex', gap: 10, flexWrap: 'wrap' }}>
               {[['reading','📚 Reading / Library'],['prayer','🕊️ Prayer / Meditation'],['music','🎵 Music Practice'],['office','💼 Private Office']].map(([key, label]) => (
                 <button key={key} onClick={() => setPurpose(key)}
-                  style={{ padding: '8px 16px', borderRadius: 8, border: '2px solid', borderColor: purpose === key ? '#F5E642′ : '#1E3A5F', backgroundColor: purpose === key ? '#F5E6421A' : ’transparent', color: purpose === key ? '#F5E642′ : '#9AA5B4', cursor: ’pointer', fontSize: 13 }}>
+                  style={{ padding: '8px 16px', borderRadius: 8, border: '2px solid', borderColor: purpose === key ? '#F5E642' : '#1E3A5F', backgroundColor: purpose === key ? '#F5E6421A' : 'transparent', color: purpose === key ? '#F5E642' : '#9AA5B4', cursor: 'pointer', fontSize: 13 }}>
                   {label}
                 </button>
               ))}
@@ -96,7 +96,7 @@ export default function DFWPrivacyRoomGuide() {
             <div style={{ display: 'flex', gap: 10, flexWrap: 'wrap' }}>
               {[['small','📦 Small (under 120 sq ft)'],['medium','🏠 Medium (120–200 sq ft)'],['large','🏢 Large (200+ sq ft)']].map(([key, label]) => (
                 <button key={key} onClick={() => setSpaceSize(key)}
-                  style={{ padding: '8px 16px', borderRadius: 8, border: '2px solid', borderColor: spaceSize === key ? '#F5E642′ : '#1E3A5F', backgroundColor: spaceSize === key ? '#F5E6421A' : ’transparent', color: spaceSize === key ? '#F5E642′ : '#9AA5B4', cursor: ’pointer', fontSize: 13 }}>
+                  style={{ padding: '8px 16px', borderRadius: 8, border: '2px solid', borderColor: spaceSize === key ? '#F5E642' : '#1E3A5F', backgroundColor: spaceSize === key ? '#F5E6421A' : 'transparent', color: spaceSize === key ? '#F5E642' : '#9AA5B4', cursor: 'pointer', fontSize: 13 }}>
                   {label}
                 </button>
               ))}
@@ -108,7 +108,7 @@ export default function DFWPrivacyRoomGuide() {
             <div style={{ display: 'flex', gap: 10, flexWrap: 'wrap' }}>
               {[['kitchen','🍳 Kitchen / Dining'],['living','🛋️ Living Room / TV'],['outside','🌳 Exterior / Street'],['garage','🚗 Garage']].map(([key, label]) => (
                 <button key={key} onClick={() => setNoiseSource(key)}
-                  style={{ padding: '8px 16px', borderRadius: 8, border: '2px solid', borderColor: noiseSource === key ? '#F5E642′ : '#1E3A5F', backgroundColor: noiseSource === key ? '#F5E6421A' : ’transparent', color: noiseSource === key ? '#F5E642′ : '#9AA5B4', cursor: ’pointer', fontSize: 13 }}>
+                  style={{ padding: '8px 16px', borderRadius: 8, border: '2px solid', borderColor: noiseSource === key ? '#F5E642' : '#1E3A5F', backgroundColor: noiseSource === key ? '#F5E6421A' : 'transparent', color: noiseSource === key ? '#F5E642' : '#9AA5B4', cursor: 'pointer', fontSize: 13 }}>
                   {label}
                 </button>
               ))}
@@ -120,7 +120,7 @@ export default function DFWPrivacyRoomGuide() {
             <div style={{ display: 'flex', gap: 10, flexWrap: 'wrap' }}>
               {[['basic','💰 Basic ($4K–$12K)'],['mid','💎 Mid-Range ($12K–$35K)'],['premium','👑 Premium ($35K+)']].map(([key, label]) => (
                 <button key={key} onClick={() => setBudget(key)}
-                  style={{ padding: '8px 16px', borderRadius: 8, border: '2px solid', borderColor: budget === key ? '#F5E642′ : '#1E3A5F', backgroundColor: budget === key ? '#F5E6421A' : ’transparent', color: budget === key ? '#F5E642′ : '#9AA5B4', cursor: ’pointer', fontSize: 13 }}>
+                  style={{ padding: '8px 16px', borderRadius: 8, border: '2px solid', borderColor: budget === key ? '#F5E642' : '#1E3A5F', backgroundColor: budget === key ? '#F5E6421A' : 'transparent', color: budget === key ? '#F5E642' : '#9AA5B4', cursor: 'pointer', fontSize: 13 }}>
                   {label}
                 </button>
               ))}
@@ -134,7 +134,7 @@ export default function DFWPrivacyRoomGuide() {
         </div>
 
         {result && (
-          <div style={{ backgroundColor: '#1E3A5F', borderRadius: 12, padding: 24, border: '2px solid #F5E642′ }}>
+          <div style={{ backgroundColor: '#1E3A5F', borderRadius: 12, padding: 24, border: '2px solid #F5E642' }}>
             <h3 style={{ color: '#F5E642', marginBottom: 16 }}>🧘 Your DFW Private Room Plan</h3>
             {[['🏠 Room Concept', result.description],['🔇 Acoustic Treatment Plan', result.acoustic],['🔊 Adjacent Noise Solution', result.noiseRec],['💡 Lighting Design', result.lighting],['🛋️ Furnishing Strategy', result.furnishing],['💵 Estimated DFW Cost', result.cost]].map(([label, value]) => (
               <div key={label as string} style={{ marginBottom: 14 }}>

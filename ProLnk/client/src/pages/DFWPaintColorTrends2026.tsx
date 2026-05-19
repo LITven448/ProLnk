@@ -31,8 +31,8 @@ export default function DFWPaintColorTrends2026() {
       <div style={{ maxWidth: 800, margin: '0 auto' }}>
         <div style={{ textAlign: 'center', marginBottom: '2.5rem' }}>
           <div style={{ fontSize: '3rem' }}>🎨</div>
-          <h1 style={{ color: '#F5E642', fontSize: '2rem', margin: '0.5rem 0′ }}>DFW Paint Color Trends 2026</h1>
-          <p style={{ color: '#94a3b8′ }}>What DFW homeowners are putting on their walls right now</p>
+          <h1 style={{ color: '#F5E642', fontSize: '2rem', margin: '0.5rem 0' }}>DFW Paint Color Trends 2026</h1>
+          <p style={{ color: '#94a3b8' }}>What DFW homeowners are putting on their walls right now</p>
         </div>
 
         <div style={{ background: '#0f2040', borderRadius: 12, padding: '1.5rem', marginBottom: '2rem' }}>
@@ -47,8 +47,8 @@ export default function DFWPaintColorTrends2026() {
             <div key={i} style={{ display: 'flex', gap: '1rem', alignItems: 'flex-start', marginBottom: '0.9rem' }}>
               <span style={{ fontSize: '1.4rem' }}>{icon}</span>
               <div>
-                <div style={{ fontWeight: 600, color: '#e2e8f0′ }}>{title}</div>
-                <div style={{ fontSize: '0.85rem', color: '#94a3b8′ }}>{sub}</div>
+                <div style={{ fontWeight: 600, color: '#e2e8f0' }}>{title}</div>
+                <div style={{ fontSize: '0.85rem', color: '#94a3b8' }}>{sub}</div>
               </div>
             </div>
           ))}
@@ -59,13 +59,13 @@ export default function DFWPaintColorTrends2026() {
           <div style={{ marginBottom: '1rem' }}>
             <div style={{ color: '#94a3b8', fontSize: '0.85rem', marginBottom: '0.5rem' }}>Room Size</div>
             <div style={{ display: 'flex', gap: '0.5rem' }}>
-              {['small', 'medium', 'large'].map(s => <button key={s} onClick={() => setSize(s)} style={{ background: size === s ? '#F5E642′ : '#1a3050', color: size === s ? '#0A1628' : '#e2e8f0', border: ’none', borderRadius: 6, padding: '0.5rem 0.9rem', cursor: 'pointer', fontSize: '0.85rem', fontWeight: 600, textTransform: 'capitalize' }}>{s}</button>)}
+              {['small', 'medium', 'large'].map(s => <button key={s} onClick={() => setSize(s)} style={{ background: size === s ? '#F5E642' : '#1a3050', color: size === s ? '#0A1628' : '#e2e8f0', border: 'none', borderRadius: 6, padding: '0.5rem 0.9rem', cursor: 'pointer', fontSize: '0.85rem', fontWeight: 600, textTransform: 'capitalize' }}>{s}</button>)}
             </div>
           </div>
           <div style={{ marginBottom: '1.25rem' }}>
             <div style={{ color: '#94a3b8', fontSize: '0.85rem', marginBottom: '0.5rem' }}>Style Preference</div>
             <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5rem' }}>
-              {['modern', 'traditional', 'farmhouse', 'bold'].map(s => <button key={s} onClick={() => setStyle(s)} style={{ background: style === s ? '#F5E642′ : '#1a3050', color: style === s ? '#0A1628' : '#e2e8f0', border: ’none', borderRadius: 6, padding: '0.5rem 0.9rem', cursor: 'pointer', fontSize: '0.85rem', fontWeight: 600, textTransform: 'capitalize' }}>{s}</button>)}
+              {['modern', 'traditional', 'farmhouse', 'bold'].map(s => <button key={s} onClick={() => setStyle(s)} style={{ background: style === s ? '#F5E642' : '#1a3050', color: style === s ? '#0A1628' : '#e2e8f0', border: 'none', borderRadius: 6, padding: '0.5rem 0.9rem', cursor: 'pointer', fontSize: '0.85rem', fontWeight: 600, textTransform: 'capitalize' }}>{s}</button>)}
             </div>
           </div>
           {rec && <div style={{ background: '#1a3050', borderRadius: 10, padding: '1.25rem', borderLeft: '4px solid #F5E642', color: '#cbd5e1', fontSize: '0.92rem' }}>🎨 {rec}</div>}

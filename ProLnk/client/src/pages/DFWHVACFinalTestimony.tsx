@@ -71,8 +71,8 @@ export default function DFWHVACFinalTestimony() {
                 key={s.id}
                 onClick={() => setSelected(s.id)}
                 style={{
-                  background: selected === s.id ? '#F5E642′ : '#1a2f55',
-                  color: selected === s.id ? '#0A1628′ : '#fff',
+                  background: selected === s.id ? '#F5E642' : '#1a2f55',
+                  color: selected === s.id ? '#0A1628' : '#fff',
                   border: 'none', borderRadius: 8, padding: '1rem', cursor: 'pointer',
                   fontWeight: 600, textAlign: 'left',
                 }}
@@ -94,7 +94,7 @@ export default function DFWHVACFinalTestimony() {
                 <p key={i} style={{ color: '#cbd5e1', lineHeight: 1.7, fontSize: '0.97rem', margin: 0 }}>{para}</p>
               ))}
             </div>
-            <div style={{ marginTop: '1.5rem', padding: '1rem', background: '#1a2f55', borderRadius: 8, borderLeft: '3px solid #F5E642′ }}>
+            <div style={{ marginTop: '1.5rem', padding: '1rem', background: '#1a2f55', borderRadius: 8, borderLeft: '3px solid #F5E642' }}>
               <p style={{ color: '#F5E642', fontStyle: 'italic', margin: 0, lineHeight: 1.6, fontSize: '0.95rem' }}>{testimony.closing}</p>
             </div>
           </div>

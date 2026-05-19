@@ -46,22 +46,22 @@ export default function DFWHVACCompressorRatioGuide() {
           <div style={{ color: '#F5E642', fontWeight: 700, marginBottom: 16 }}>🌡️ DFW Ambient Temp</div>
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: 10 }}>
             {ambientTemps.map(t => (
-              <button key={t.value} onClick={() => setTemp(t)} style={{ padding: '10px 16px', borderRadius: 8, border: 'none', cursor: 'pointer', background: temp.value === t.value ? '#F5E642′ : '#1e3a5f', color: temp.value === t.value ? '#0A1628' : '#fff', fontWeight: 600 }}>{t.label}</button>
+              <button key={t.value} onClick={() => setTemp(t)} style={{ padding: '10px 16px', borderRadius: 8, border: 'none', cursor: 'pointer', background: temp.value === t.value ? '#F5E642' : '#1e3a5f', color: temp.value === t.value ? '#0A1628' : '#fff', fontWeight: 600 }}>{t.label}</button>
             ))}
           </div>
 
           <div style={{ color: '#F5E642', fontWeight: 700, marginBottom: 16, marginTop: 20 }}>🩺 Symptoms</div>
           <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
             {symptoms.map(s => (
-              <button key={s.label} onClick={() => setSymptom(s)} style={{ padding: '10px 16px', borderRadius: 8, border: 'none', cursor: 'pointer', textAlign: 'left', background: symptom.label === s.label ? '#F5E642′ : '#1e3a5f', color: symptom.label === s.label ? '#0A1628' : '#fff', fontWeight: 600 }}>{s.label}</button>
+              <button key={s.label} onClick={() => setSymptom(s)} style={{ padding: '10px 16px', borderRadius: 8, border: 'none', cursor: 'pointer', textAlign: 'left', background: symptom.label === s.label ? '#F5E642' : '#1e3a5f', color: symptom.label === s.label ? '#0A1628' : '#fff', fontWeight: 600 }}>{s.label}</button>
             ))}
           </div>
         </div>
 
-        <div style={{ background: '#111f3a', borderRadius: 12, padding: 24, marginBottom: 20, borderLeft: '4px solid #F5E642′ }}>
+        <div style={{ background: '#111f3a', borderRadius: 12, padding: 24, marginBottom: 20, borderLeft: '4px solid #F5E642' }}>
           <div style={{ fontWeight: 700, fontSize: 18, marginBottom: 8 }}>📊 Estimated Ratio: {ratio} : 1 &nbsp; {severity}</div>
           <div style={{ color: '#94a3b8', marginBottom: 6 }}>Estimated discharge pressure at {temp.value}°F: ~{pressure} psig</div>
-          <div style={{ color: '#cbd5e1′ }}>{symptom.meaning}</div>
+          <div style={{ color: '#cbd5e1' }}>{symptom.meaning}</div>
         </div>
 
         <div style={{ background: '#111f3a', borderRadius: 12, padding: 24, marginBottom: 20 }}>

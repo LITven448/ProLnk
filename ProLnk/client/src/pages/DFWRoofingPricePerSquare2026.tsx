@@ -78,8 +78,8 @@ export default function DFWRoofingPricePerSquare2026() {
             </div>
           ))}
           <div style={{ marginTop: 12, background: '#0A1628', borderRadius: 8, padding: '10px 14px' }}>
-            <div style={{ display: 'flex', justifyContent: 'space-between' }}><span style={{ color: '#94A3B8′ }}>Labor (per square)</span><span style={{ color: '#F5E642', fontWeight: 600 }}>$75–$125/sq</span></div>
-            <div style={{ display: 'flex', justifyContent: 'space-between', marginTop: 6 }}><span style={{ color: '#94A3B8′ }}>Tear-off (per square)</span><span style={{ color: '#F5E642', fontWeight: 600 }}>$50–$75/sq</span></div>
+            <div style={{ display: 'flex', justifyContent: 'space-between' }}><span style={{ color: '#94A3B8' }}>Labor (per square)</span><span style={{ color: '#F5E642', fontWeight: 600 }}>$75–$125/sq</span></div>
+            <div style={{ display: 'flex', justifyContent: 'space-between', marginTop: 6 }}><span style={{ color: '#94A3B8' }}>Tear-off (per square)</span><span style={{ color: '#F5E642', fontWeight: 600 }}>$50–$75/sq</span></div>
           </div>
         </div>
 
@@ -88,7 +88,7 @@ export default function DFWRoofingPricePerSquare2026() {
           <div style={{ display: 'flex', flexDirection: 'column', gap: 14 }}>
             <div>
               <label style={{ color: '#94A3B8', fontSize: 13, display: 'block', marginBottom: 6 }}>Home Size (heated sq ft)</label>
-              <input type="number" value={sqft} onChange={e => setSqft(e.target.value)} placeholder="e.g. 2200″
+              <input type="number" value={sqft} onChange={e => setSqft(e.target.value)} placeholder="e.g. 2200"
                 style={{ width: '100%', padding: '10px 14px', background: '#0A1628', border: '1px solid #1E3A5F', borderRadius: 8, color: '#E8EDF5', fontSize: 15, boxSizing: 'border-box' }} />
             </div>
             <div>
@@ -118,7 +118,7 @@ export default function DFWRoofingPricePerSquare2026() {
               </div>
               {[['Materials', result.matCost], ['Labor', result.laborCost], ['Tear-off', result.tearoff]].map(([label, val]) => (
                 <div key={label} style={{ display: 'flex', justifyContent: 'space-between', padding: '8px 0', borderBottom: '1px solid #1E3A5F' }}>
-                  <span style={{ color: '#94A3B8′ }}>{label}</span>
+                  <span style={{ color: '#94A3B8' }}>{label}</span>
                   <span style={{ color: '#E8EDF5', fontWeight: 600 }}>{val}</span>
                 </div>
               ))}

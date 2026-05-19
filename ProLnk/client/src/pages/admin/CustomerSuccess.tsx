@@ -80,7 +80,7 @@ export default function CustomerSuccess() {
       sub: `${cohorts.activated.length} of ${cohorts.approved.length} partners`,
       icon: Zap,
       color: "text-[#82D616]",
-      bg: "bg-[#82D616]/10″,
+      bg: "bg-[#82D616]/10",
       target: "Target: 60%",
       good: activationRate >= 60,
     },
@@ -90,7 +90,7 @@ export default function CustomerSuccess() {
       sub: `${cohorts.winBack.length} win-back candidates`,
       icon: RefreshCw,
       color: "text-[#17C1E8]",
-      bg: "bg-[#17C1E8]/10″,
+      bg: "bg-[#17C1E8]/10",
       target: "Target: 80%",
       good: retentionRate >= 80,
     },
@@ -99,9 +99,9 @@ export default function CustomerSuccess() {
       value: cohorts.onboardingIncomplete.length,
       sub: "Incomplete profiles",
       icon: UserCheck,
-      color: "text-amber-400″,
-      bg: "bg-amber-400/10″,
-      target: "Target: 0″,
+      color: "text-amber-400",
+      bg: "bg-amber-400/10",
+      target: "Target: 0",
       good: cohorts.onboardingIncomplete.length === 0,
     },
     {
@@ -109,8 +109,8 @@ export default function CustomerSuccess() {
       value: cohorts.champions.length,
       sub: "Score  80  High performers",
       icon: Award,
-      color: "text-purple-400″,
-      bg: "bg-purple-400/10″,
+      color: "text-purple-400",
+      bg: "bg-purple-400/10",
       target: "Grow this cohort",
       good: true,
     },
@@ -127,7 +127,7 @@ export default function CustomerSuccess() {
   if (isLoading) {
     return (
       <AdminLayout>
-        <div className="flex items-center justify-center h-64″>
+        <div className="flex items-center justify-center h-64">
           <RefreshCw className="w-6 h-6 animate-spin text-muted-foreground" />
         </div>
       </AdminLayout>
@@ -141,21 +141,21 @@ export default function CustomerSuccess() {
         <div className="flex items-center justify-between">
           <div>
             <h1 className="text-2xl font-bold text-foreground">Customer Success</h1>
-            <p className="text-muted-foreground text-sm mt-1″>
+            <p className="text-muted-foreground text-sm mt-1">
               Partner lifecycle health -- onboarding, activation, retention, and win-back
             </p>
           </div>
           <div className="flex items-center gap-2 text-xs text-muted-foreground bg-muted px-3 py-1.5 rounded-lg">
-            <Clock className="w-3.5 h-3.5″ />
+            <Clock className="w-3.5 h-3.5" />
             Dispute SLA: 72hr  Strike policy: 3 strikes  Payout threshold: $100
           </div>
         </div>
 
         {/* Metric cards */}
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4″>
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
           {metrics.map(m => (
-            <div key={m.label} className="bg-card border rounded-xl p-4″>
-              <div className="flex items-center justify-between mb-3″>
+            <div key={m.label} className="bg-card border rounded-xl p-4">
+              <div className="flex items-center justify-between mb-3">
                 <div className={`w-9 h-9 rounded-lg ${m.bg} flex items-center justify-center`}>
                   <m.icon className={`w-4.5 h-4.5 ${m.color}`} />
                 </div>
@@ -164,8 +164,8 @@ export default function CustomerSuccess() {
                 </span>
               </div>
               <p className="text-2xl font-black text-foreground">{m.value}</p>
-              <p className="text-muted-foreground text-xs mt-0.5″>{m.sub}</p>
-              <p className="text-xs font-medium mt-1 text-foreground/70″>{m.label}</p>
+              <p className="text-muted-foreground text-xs mt-0.5">{m.sub}</p>
+              <p className="text-xs font-medium mt-1 text-foreground/70">{m.label}</p>
             </div>
           ))}
         </div>
@@ -194,27 +194,27 @@ export default function CustomerSuccess() {
 
         {/* Tab content */}
         {activeTab === "overview" && (
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6″>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
             {/* Funnel */}
-            <div className="bg-card border rounded-xl p-5″>
-              <h3 className="font-bold text-foreground mb-4 flex items-center gap-2″>
+            <div className="bg-card border rounded-xl p-5">
+              <h3 className="font-bold text-foreground mb-4 flex items-center gap-2">
                 <Target className="w-4 h-4 text-primary" /> Partner Lifecycle Funnel
               </h3>
               {[
-                { label: "Applied", count: (allPartners as any[]).length, color: "bg-gray-400″ },
-                { label: "Approved", count: cohorts.approved.length, color: "bg-blue-500″ },
-                { label: "Onboarded (complete profile)", count: cohorts.approved.length - cohorts.onboardingIncomplete.length, color: "bg-indigo-500″ },
+                { label: "Applied", count: (allPartners as any[]).length, color: "bg-gray-400" },
+                { label: "Approved", count: cohorts.approved.length, color: "bg-blue-500" },
+                { label: "Onboarded (complete profile)", count: cohorts.approved.length - cohorts.onboardingIncomplete.length, color: "bg-indigo-500" },
                 { label: "Activated (1 job)", count: cohorts.activated.length, color: "bg-[#82D616]" },
-                { label: "Champions (score 80)", count: cohorts.champions.length, color: "bg-purple-500″ },
+                { label: "Champions (score 80)", count: cohorts.champions.length, color: "bg-purple-500" },
               ].map((stage, i, arr) => {
                 const pct = arr[0].count > 0 ? Math.round((stage.count / arr[0].count) * 100) : 0;
                 return (
-                  <div key={stage.label} className="mb-3″>
-                    <div className="flex items-center justify-between mb-1″>
-                      <span className="text-sm text-foreground/80″>{stage.label}</span>
+                  <div key={stage.label} className="mb-3">
+                    <div className="flex items-center justify-between mb-1">
+                      <span className="text-sm text-foreground/80">{stage.label}</span>
                       <span className="text-sm font-bold text-foreground">{stage.count} <span className="text-muted-foreground font-normal text-xs">({pct}%)</span></span>
                     </div>
-                    <div className="w-full bg-muted rounded-full h-2″>
+                    <div className="w-full bg-muted rounded-full h-2">
                       <div className={`h-2 rounded-full ${stage.color}`} style={{ width: `${pct}%` }} />
                     </div>
                   </div>
@@ -223,56 +223,56 @@ export default function CustomerSuccess() {
             </div>
 
             {/* Action items */}
-            <div className="bg-card border rounded-xl p-5″>
-              <h3 className="font-bold text-foreground mb-4 flex items-center gap-2″>
-                <AlertTriangle className="w-4 h-4 text-amber-500″ /> Action Items
+            <div className="bg-card border rounded-xl p-5">
+              <h3 className="font-bold text-foreground mb-4 flex items-center gap-2">
+                <AlertTriangle className="w-4 h-4 text-amber-500" /> Action Items
               </h3>
-              <div className="space-y-3″>
+              <div className="space-y-3">
                 {cohorts.onboardingIncomplete.length > 0 && (
                   <div className="flex items-center justify-between p-3 bg-amber-50 dark:bg-amber-950/20 border border-amber-200 dark:border-amber-800 rounded-lg">
-                    <div className="flex items-center gap-2″>
-                      <UserCheck className="w-4 h-4 text-amber-600″ />
+                    <div className="flex items-center gap-2">
+                      <UserCheck className="w-4 h-4 text-amber-600" />
                       <div>
-                        <p className="text-sm font-semibold text-amber-800 dark:text-amber-300″>{cohorts.onboardingIncomplete.length} incomplete profiles</p>
-                        <p className="text-xs text-amber-600″>Missing business info, phone, or service area</p>
+                        <p className="text-sm font-semibold text-amber-800 dark:text-amber-300">{cohorts.onboardingIncomplete.length} incomplete profiles</p>
+                        <p className="text-xs text-amber-600">Missing business info, phone, or service area</p>
                       </div>
                     </div>
                     <Button size="sm" variant="outline" className="text-xs" onClick={() => setActiveTab("onboarding")}>
-                      Review <ChevronRight className="w-3 h-3 ml-1″ />
+                      Review <ChevronRight className="w-3 h-3 ml-1" />
                     </Button>
                   </div>
                 )}
                 {cohorts.notActivated.length > 0 && (
                   <div className="flex items-center justify-between p-3 bg-red-50 dark:bg-red-950/20 border border-red-200 dark:border-red-800 rounded-lg">
-                    <div className="flex items-center gap-2″>
-                      <UserX className="w-4 h-4 text-red-600″ />
+                    <div className="flex items-center gap-2">
+                      <UserX className="w-4 h-4 text-red-600" />
                       <div>
-                        <p className="text-sm font-semibold text-red-800 dark:text-red-300″>{cohorts.notActivated.length} never activated</p>
-                        <p className="text-xs text-red-600″>Approved 30+ days ago, 0 jobs logged</p>
+                        <p className="text-sm font-semibold text-red-800 dark:text-red-300">{cohorts.notActivated.length} never activated</p>
+                        <p className="text-xs text-red-600">Approved 30+ days ago, 0 jobs logged</p>
                       </div>
                     </div>
                     <Button size="sm" variant="outline" className="text-xs" onClick={() => setActiveTab("activation")}>
-                      Review <ChevronRight className="w-3 h-3 ml-1″ />
+                      Review <ChevronRight className="w-3 h-3 ml-1" />
                     </Button>
                   </div>
                 )}
                 {cohorts.winBack.length > 0 && (
                   <div className="flex items-center justify-between p-3 bg-blue-50 dark:bg-blue-950/20 border border-blue-200 dark:border-blue-800 rounded-lg">
-                    <div className="flex items-center gap-2″>
-                      <RefreshCw className="w-4 h-4 text-blue-600″ />
+                    <div className="flex items-center gap-2">
+                      <RefreshCw className="w-4 h-4 text-blue-600" />
                       <div>
-                        <p className="text-sm font-semibold text-blue-800 dark:text-blue-300″>{cohorts.winBack.length} win-back candidates</p>
-                        <p className="text-xs text-blue-600″>Were active, silent for 45+ days</p>
+                        <p className="text-sm font-semibold text-blue-800 dark:text-blue-300">{cohorts.winBack.length} win-back candidates</p>
+                        <p className="text-xs text-blue-600">Were active, silent for 45+ days</p>
                       </div>
                     </div>
                     <Button size="sm" variant="outline" className="text-xs" onClick={() => setActiveTab("winback")}>
-                      Review <ChevronRight className="w-3 h-3 ml-1″ />
+                      Review <ChevronRight className="w-3 h-3 ml-1" />
                     </Button>
                   </div>
                 )}
                 {cohorts.onboardingIncomplete.length === 0 && cohorts.notActivated.length === 0 && cohorts.winBack.length === 0 && (
                   <div className="flex items-center gap-3 p-4 text-center justify-center text-muted-foreground">
-                    <CheckCircle className="w-5 h-5 text-green-500″ />
+                    <CheckCircle className="w-5 h-5 text-green-500" />
                     <span className="text-sm">No urgent action items -- great health!</span>
                   </div>
                 )}
@@ -282,7 +282,7 @@ export default function CustomerSuccess() {
         )}
 
         {activeTab === "onboarding" && (
-          <div className="space-y-4″>
+          <div className="space-y-4">
             {/* Per-step completion % tracker */}
             {(() => {
               const approved = cohorts.approved;
@@ -301,32 +301,32 @@ export default function CustomerSuccess() {
                 / (steps.length * total) * 100
               );
               return (
-                <div className="bg-white rounded-xl border border-gray-200 shadow-sm p-5″>
-                  <div className="flex items-center justify-between mb-4″>
+                <div className="bg-white rounded-xl border border-gray-200 shadow-sm p-5">
+                  <div className="flex items-center justify-between mb-4">
                     <div>
-                      <p className="text-sm font-semibold text-gray-800″>Onboarding Completion Tracker</p>
-                      <p className="text-xs text-gray-500″>{approved.length} approved partners · network average</p>
+                      <p className="text-sm font-semibold text-gray-800">Onboarding Completion Tracker</p>
+                      <p className="text-xs text-gray-500">{approved.length} approved partners · network average</p>
                     </div>
                     <div className="text-right">
-                      <p className="text-2xl font-black text-indigo-600″>{overallPct}%</p>
-                      <p className="text-xs text-gray-400″>overall complete</p>
+                      <p className="text-2xl font-black text-indigo-600">{overallPct}%</p>
+                      <p className="text-xs text-gray-400">overall complete</p>
                     </div>
                   </div>
                   {/* Overall bar */}
                   <div className="h-2 bg-gray-100 rounded-full mb-5 overflow-hidden">
-                    <div className="h-full bg-indigo-500 rounded-full transition-all duration-700″ style={{ width: `${overallPct}%` }} />
+                    <div className="h-full bg-indigo-500 rounded-full transition-all duration-700" style={{ width: `${overallPct}%` }} />
                   </div>
                   {/* Per-step bars */}
-                  <div className="space-y-3″>
+                  <div className="space-y-3">
                     {steps.map(s => {
                       const filled = approved.filter((p: any) => !!(p as any)[s.key]).length;
                       const pct = Math.round((filled / total) * 100);
-                      const color = pct >= 80 ? "bg-green-500″ : pct >= 50 ? "bg-amber-400" : "bg-red-400";
+                      const color = pct >= 80 ? "bg-green-500" : pct >= 50 ? "bg-amber-400" : "bg-red-400";
                       return (
                         <div key={s.key}>
-                          <div className="flex items-center justify-between mb-1″>
-                            <span className="text-xs text-gray-600″>{s.icon} {s.label}</span>
-                            <span className="text-xs font-semibold text-gray-700″>{pct}% <span className="text-gray-400 font-normal">({filled}/{approved.length})</span></span>
+                          <div className="flex items-center justify-between mb-1">
+                            <span className="text-xs text-gray-600">{s.icon} {s.label}</span>
+                            <span className="text-xs font-semibold text-gray-700">{pct}% <span className="text-gray-400 font-normal">({filled}/{approved.length})</span></span>
                           </div>
                           <div className="h-1.5 bg-gray-100 rounded-full overflow-hidden">
                             <div className={`h-full ${color} rounded-full transition-all duration-500`} style={{ width: `${pct}%` }} />
@@ -350,7 +350,7 @@ export default function CustomerSuccess() {
                 if (!p.businessType) missing.push("Trade");
                 return missing.join(", ");
               }}
-              badgeColor="bg-amber-100 text-amber-800″
+              badgeColor="bg-amber-100 text-amber-800"
             />
           </div>
         )}
@@ -363,7 +363,7 @@ export default function CustomerSuccess() {
               const days = Math.round((now - new Date(p.createdAt).getTime()) / 86400000);
               return `${days} days since approval`;
             }}
-            badgeColor="bg-red-100 text-red-800″
+            badgeColor="bg-red-100 text-red-800"
           />
         )}
 
@@ -372,7 +372,7 @@ export default function CustomerSuccess() {
             partners={cohorts.atRisk}
             emptyMessage="No at-risk partners detected"
             badge={(p: any) => `Score: ${p.partnerScore ?? 0}`}
-            badgeColor="bg-orange-100 text-orange-800″
+            badgeColor="bg-orange-100 text-orange-800"
           />
         )}
 
@@ -385,7 +385,7 @@ export default function CustomerSuccess() {
               const days = Math.round((now - lastActivity) / 86400000);
               return `Silent ${days} days`;
             }}
-            badgeColor="bg-blue-100 text-blue-800″
+            badgeColor="bg-blue-100 text-blue-800"
           />
         )}
       </div>
@@ -404,7 +404,7 @@ function PartnerList({
   if (partners.length === 0) {
     return (
       <div className="bg-card border rounded-xl p-8 text-center">
-        <CheckCircle className="w-8 h-8 text-green-500 mx-auto mb-2″ />
+        <CheckCircle className="w-8 h-8 text-green-500 mx-auto mb-2" />
         <p className="text-muted-foreground text-sm">{emptyMessage}</p>
       </div>
     );
@@ -424,14 +424,14 @@ function PartnerList({
         <tbody className="divide-y">
           {partners.map((p: any) => (
             <tr key={p.id} className="hover:bg-muted/30 transition-colors">
-              <td className="px-4 py-3″>
+              <td className="px-4 py-3">
                 <p className="font-medium text-foreground">{p.businessName || p.contactEmail}</p>
                 <p className="text-xs text-muted-foreground">{p.contactEmail}</p>
               </td>
               <td className="px-4 py-3 text-muted-foreground capitalize">{p.businessType || "--"}</td>
               <td className="px-4 py-3 font-mono text-foreground">{p.jobsLogged ?? 0}</td>
               <td className="px-4 py-3 font-mono text-foreground">{p.partnerScore ?? 0}</td>
-              <td className="px-4 py-3″>
+              <td className="px-4 py-3">
                 <span className={`text-[11px] font-semibold px-2 py-0.5 rounded-full ${badgeColor}`}>
                   {badge(p)}
                 </span>

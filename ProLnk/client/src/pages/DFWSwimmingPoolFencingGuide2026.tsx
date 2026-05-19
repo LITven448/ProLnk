@@ -10,7 +10,7 @@ export default function DFWSwimmingPoolFencingGuide2026() {
     const findings: string[] = [];
     if (fenceHeight === 'under4') findings.push('🚨 NON-COMPLIANT: Texas Pool Safety Act requires minimum 4-foot fence height around all swimming pools — upgrade immediately');
     if (fenceHeight === '4plus') findings.push('✅ Fence height meets minimum 4-foot requirement under Texas Health & Safety Code §757');
-    if (gateType === 'selfclose') findings.push('✅ Self-closing, self-latching gate is compliant — verify latch is on pool side of gate at 54″ or higher');
+    if (gateType === 'selfclose') findings.push('✅ Self-closing, self-latching gate is compliant — verify latch is on pool side of gate at 54" or higher');
     if (gateType === 'manual') findings.push('🚨 NON-COMPLIANT: Gate must be self-closing and self-latching per Texas Pool Safety Act — install compliant gate hardware');
     if (doorAlarm === 'yes') findings.push('✅ Door alarm installed on house-to-pool door — test monthly, battery backup recommended');
     if (doorAlarm === 'no') findings.push('⚠️ Door alarm required on any door in house that opens directly to pool area — pool cover does NOT substitute for this requirement');
@@ -53,7 +53,7 @@ export default function DFWSwimmingPoolFencingGuide2026() {
               <label style={{ color: '#9CA3AF', fontSize: 13, display: 'block', marginBottom: 6 }}>Current fence height</label>
               <select value={fenceHeight} onChange={e => setFenceHeight(e.target.value)} style={{ width: '100%', padding: '10px 12px', background: '#0A1628', color: '#E8EAF0', border: '1px solid #2D4A7A', borderRadius: 8, fontSize: 14 }}>
                 <option value="">Select...</option>
-                <option value="under4″>Under 4 feet</option>
+                <option value="under4">Under 4 feet</option>
                 <option value="4plus">4 feet or taller</option>
               </select>
             </div>
@@ -77,7 +77,7 @@ export default function DFWSwimmingPoolFencingGuide2026() {
           <button onClick={checkCompliance} style={{ background: '#F5E642', color: '#0A1628', border: 'none', borderRadius: 8, padding: '12px 28px', fontWeight: 700, fontSize: 15, cursor: 'pointer', width: '100%' }}>Check Compliance</button>
           {result.length > 0 && (
             <div style={{ marginTop: 20 }}>
-              {result.map((r, i) => <div key={i} style={{ background: '#0A1628', borderRadius: 8, padding: '10px 14px', marginBottom: 8, fontSize: 14, color: '#CBD5E1′ }}>{r}</div>)}
+              {result.map((r, i) => <div key={i} style={{ background: '#0A1628', borderRadius: 8, padding: '10px 14px', marginBottom: 8, fontSize: 14, color: '#CBD5E1' }}>{r}</div>)}
             </div>
           )}
         </div>

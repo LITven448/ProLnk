@@ -46,7 +46,7 @@ export default function DFWPatioDoorGuide2026() {
           </div>
           <button onClick={() => setShowGuide(true)} style={{ background: '#F5E642', color: '#0A1628', border: 'none', borderRadius: 6, padding: '10px 24px', fontWeight: 700, cursor: 'pointer' }}>Get Guide →</button>
           {showGuide && (
-            <div style={{ marginTop: 16, padding: 16, background: '#0A1628', borderRadius: 8, borderLeft: '3px solid #F5E642′ }}>
+            <div style={{ marginTop: 16, padding: 16, background: '#0A1628', borderRadius: 8, borderLeft: '3px solid #F5E642' }}>
               <div style={{ color: '#F5E642', fontWeight: 700, marginBottom: 8 }}>✅ {sel.doorType}</div>
               <div style={{ color: '#94a3b8', fontSize: 13, lineHeight: 1.8 }}>
                 <div>☀️ SHGC: <span style={{ color: '#fff' }}>{sel.shgcNote}</span></div>

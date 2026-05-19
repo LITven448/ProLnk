@@ -57,13 +57,13 @@ export default function ProLnkBetaWaitlistPage() {
 
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 14, marginBottom: 40 }}>
           {[
-            { emoji: '📅', label: 'Beta Duration', value: 'May – July 2026′ },
+            { emoji: '📅', label: 'Beta Duration', value: 'May – July 2026' },
             { emoji: '🔒', label: 'Partner Spots', value: '500 max' },
             { emoji: '🏠', label: 'Home Spots', value: '5,000 max' },
           ].map((s) => (
-            <div key={s.label} style={{ background: '#111c2e', borderRadius: 12, padding: '20px', textAlign: 'center', border: '1px solid #1e2d45′ }}>
+            <div key={s.label} style={{ background: '#111c2e', borderRadius: 12, padding: '20px', textAlign: 'center', border: '1px solid #1e2d45' }}>
               <div style={{ fontSize: 28, marginBottom: 8 }}>{s.emoji}</div>
-              <div style={{ fontSize: 22, fontWeight: 800, color: '#F5E642′ }}>{s.value}</div>
+              <div style={{ fontSize: 22, fontWeight: 800, color: '#F5E642' }}>{s.value}</div>
               <div style={{ fontSize: 12, color: '#64748b', marginTop: 4 }}>{s.label}</div>
             </div>
           ))}
@@ -77,25 +77,25 @@ export default function ProLnkBetaWaitlistPage() {
                 key={r.id}
                 onClick={() => setActive(r)}
                 style={{ padding: '9px 20px', borderRadius: 8, border: 'none', cursor: 'pointer', fontWeight: 600, fontSize: 13,
-                  background: active.id === r.id ? '#F5E642′ : '#1e2d45', color: active.id === r.id ? '#0A1628' : '#94a3b8' }}>
+                  background: active.id === r.id ? '#F5E642' : '#1e2d45', color: active.id === r.id ? '#0A1628' : '#94a3b8' }}>
                 {r.label}
               </button>
             ))}
           </div>
           <ul style={{ margin: 0, padding: 0, listStyle: 'none' }}>
             {active.benefits.map((b, i) => (
-              <li key={i} style={{ display: 'flex', alignItems: 'flex-start', gap: 12, padding: '12px 0', borderBottom: i < active.benefits.length - 1 ? '1px solid #1e2d45′ : ’none' }}>
+              <li key={i} style={{ display: 'flex', alignItems: 'flex-start', gap: 12, padding: '12px 0', borderBottom: i < active.benefits.length - 1 ? '1px solid #1e2d45' : 'none' }}>
                 <span style={{ color: '#F5E642', fontSize: 16, flexShrink: 0 }}>✓</span>
                 <span style={{ color: '#cbd5e1', lineHeight: 1.5 }}>{b}</span>
               </li>
             ))}
           </ul>
-          <div style={{ marginTop: 24, padding: 16, background: '#0A1628', borderRadius: 10, fontSize: 13, color: '#F5E642′ }}>
+          <div style={{ marginTop: 24, padding: 16, background: '#0A1628', borderRadius: 10, fontSize: 13, color: '#F5E642' }}>
             → {active.cta}
           </div>
         </div>
 
-        <div style={{ textAlign: 'center', background: '#111c2e', borderRadius: 12, padding: '28px 20px', border: '1px solid #1e2d45′ }}>
+        <div style={{ textAlign: 'center', background: '#111c2e', borderRadius: 12, padding: '28px 20px', border: '1px solid #1e2d45' }}>
           <div style={{ fontSize: 18, fontWeight: 700, marginBottom: 8 }}>What happens after beta?</div>
           <p style={{ color: '#94a3b8', margin: 0, lineHeight: 1.7 }}>
             At the end of beta, ProLnk opens to the public. Beta pricing freezes at your entry rate. The match algorithm goes live with real homeowner-contractor connections. Beta users get first priority in match routing.

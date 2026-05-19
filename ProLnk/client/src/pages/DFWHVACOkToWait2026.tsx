@@ -48,7 +48,7 @@ export default function DFWHVACOkToWait2026() {
                 style={{
                   textAlign: 'left', padding: '12px 16px', borderRadius: 8,
                   border: `2px solid ${selected === s.id ? '#F5E642' : '#1e3a5f'}`,
-                  background: selected === s.id ? '#0A1628′ : ’transparent', color: '#cbd5e1', cursor: 'pointer', fontSize: 15,
+                  background: selected === s.id ? '#0A1628' : 'transparent', color: '#cbd5e1', cursor: 'pointer', fontSize: 15,
                 }}
               >
                 {s.label}
@@ -74,7 +74,7 @@ export default function DFWHVACOkToWait2026() {
           ].map(([timing, desc]) => (
             <div key={timing} style={{ display: 'flex', gap: 12, padding: '8px 0', borderBottom: '1px solid #1e3a5f' }}>
               <span style={{ color: '#F5E642', fontWeight: 700, minWidth: 180 }}>{timing}</span>
-              <span style={{ color: '#94a3b8′ }}>{desc}</span>
+              <span style={{ color: '#94a3b8' }}>{desc}</span>
             </div>
           ))}
         </div>

@@ -52,16 +52,16 @@ export default function DFWProbateSaleGuide() {
   return (
     <div style={{ minHeight: '100vh', backgroundColor: '#0A1628', color: '#e5e7eb', fontFamily: 'system-ui, sans-serif', padding: '2rem' }}>
       <div style={{ maxWidth: '800px', margin: '0 auto' }}>
-        <h1 style={{ fontSize: '2rem', fontWeight: 800, marginBottom: '0.5rem', color: '#F5E642′ }}>Probate Sale Guide — DFW</h1>
+        <h1 style={{ fontSize: '2rem', fontWeight: 800, marginBottom: '0.5rem', color: '#F5E642' }}>Probate Sale Guide — DFW</h1>
         <p style={{ fontSize: '1.1rem', color: '#9ca3af', marginBottom: '2rem' }}>Selling an inherited home in Dallas-Fort Worth: timelines, process, and strategy</p>
         {sections.map((s, i) => (
           <div key={i} style={{ backgroundColor: '#0f2137', borderRadius: '12px', padding: '1.5rem', marginBottom: '1rem', border: '1px solid #1e3a5f' }}>
-            <h2 style={{ fontSize: '1.1rem', fontWeight: 700, marginBottom: '0.5rem', color: '#F5E642′ }}>{s.icon} {s.heading}</h2>
+            <h2 style={{ fontSize: '1.1rem', fontWeight: 700, marginBottom: '0.5rem', color: '#F5E642' }}>{s.icon} {s.heading}</h2>
             <p style={{ color: '#d1d5db', lineHeight: 1.7, whiteSpace: 'pre-line' }}>{s.body}</p>
           </div>
         ))}
         <div style={{ backgroundColor: '#0f2137', borderRadius: '12px', padding: '1.5rem', border: '1px solid #1e3a5f' }}>
-          <h2 style={{ fontSize: '1.2rem', fontWeight: 700, marginBottom: '1rem', color: '#F5E642′ }}>🧮 Probate Sale Approach Recommender</h2>
+          <h2 style={{ fontSize: '1.2rem', fontWeight: 700, marginBottom: '1rem', color: '#F5E642' }}>🧮 Probate Sale Approach Recommender</h2>
           <div style={{ display: 'grid', gap: '0.75rem', marginBottom: '1rem' }}>
             {[['Estate Type', estateType, setEstateType, Object.keys(approaches)], ['Property Condition', condition, setCondition, ['Good', 'Fair', 'Poor']], ['Sale Timeline Need', timeline, setTimeline, ['Flexible (6+ months)', 'Moderate (3–6 months)', 'Urgent (<3 months)']]].map(([label, val, setter, opts]: any) => (
               <div key={label}>
@@ -75,8 +75,8 @@ export default function DFWProbateSaleGuide() {
           </div>
           <button onClick={calculate} style={{ backgroundColor: '#F5E642', color: '#0A1628', border: 'none', padding: '0.75rem 1.5rem', borderRadius: '8px', fontWeight: 700, fontSize: '1rem', cursor: 'pointer' }}>Get Recommendation</button>
           {result && (
-            <div style={{ marginTop: '1rem', padding: '1rem', backgroundColor: '#1a2e4a', borderRadius: '8px', border: '1px solid #374151′ }}>
-              <p>Recommended Approach: <strong style={{ color: '#F5E642′ }}>{result.approach}</strong></p>
+            <div style={{ marginTop: '1rem', padding: '1rem', backgroundColor: '#1a2e4a', borderRadius: '8px', border: '1px solid #374151' }}>
+              <p>Recommended Approach: <strong style={{ color: '#F5E642' }}>{result.approach}</strong></p>
               <p>Estimated Timeline: <strong>{result.tl}</strong></p>
               <p style={{ color: '#9ca3af', marginTop: '0.25rem' }}>{result.notes}</p>
               <p style={{ marginTop: '0.5rem' }}>Suggested Pricing: <strong>{result.priceAdj}</strong></p>

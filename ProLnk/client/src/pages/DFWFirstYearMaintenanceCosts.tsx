@@ -4,7 +4,7 @@ const MONTHLY_TASKS: Record<string, string[]> = {
   Jan: ['Check weatherstripping', 'Test smoke detectors'],
   Feb: ['Inspect attic insulation', 'Clean dryer vent'],
   Mar: ['AC tune-up (book early)', 'Check foundation for cracks'],
-  Apr: ['Replace AC filters (1″=monthly, 4″=quarterly)', 'Pest control Q1'],
+  Apr: ['Replace AC filters (1"=monthly, 4"=quarterly)', 'Pest control Q1'],
   May: ['Gutter cleaning', 'Check sprinkler heads before heat'],
   Jun: ['AC filter check', 'Foundation watering system active'],
   Jul: ['AC filter (monthly in summer)', 'Watch for foundation shifting'],
@@ -56,13 +56,13 @@ export default function DFWFirstYearMaintenanceCosts() {
             <div>
               <label style={{ fontSize: 13, color: '#94a3b8', display: 'block', marginBottom: 6 }}>Home Age (years)</label>
               <input type="range" min={1} max={60} value={homeAge} onChange={e => setHomeAge(Number(e.target.value))}
-                style={{ width: '100%', accentColor: '#F5E642′ }} />
+                style={{ width: '100%', accentColor: '#F5E642' }} />
               <div style={{ color: '#F5E642', fontWeight: 700 }}>{homeAge} years</div>
             </div>
             <div>
               <label style={{ fontSize: 13, color: '#94a3b8', display: 'block', marginBottom: 6 }}>Square Footage</label>
               <input type="range" min={800} max={5000} step={100} value={sqFt} onChange={e => setSqFt(Number(e.target.value))}
-                style={{ width: '100%', accentColor: '#F5E642′ }} />
+                style={{ width: '100%', accentColor: '#F5E642' }} />
               <div style={{ color: '#F5E642', fontWeight: 700 }}>{sqFt.toLocaleString()} sq ft</div>
             </div>
             <label style={{ display: 'flex', alignItems: 'center', gap: 10, cursor: 'pointer' }}>
@@ -81,7 +81,7 @@ export default function DFWFirstYearMaintenanceCosts() {
           <div>
             <div style={{ background: '#0f2044', borderRadius: 12, padding: '1.5rem', marginBottom: 20, textAlign: 'center' }}>
               <div style={{ fontSize: 13, color: '#94a3b8', marginBottom: 6 }}>Estimated First Year Maintenance</div>
-              <div style={{ fontSize: 42, fontWeight: 800, color: '#F5E642′ }}>${calcTotal().toLocaleString()}</div>
+              <div style={{ fontSize: 42, fontWeight: 800, color: '#F5E642' }}>${calcTotal().toLocaleString()}</div>
               <div style={{ fontSize: 13, color: '#94a3b8', marginTop: 4 }}>${Math.round(calcTotal() / 12)}/month average</div>
             </div>
 
@@ -94,7 +94,7 @@ export default function DFWFirstYearMaintenanceCosts() {
               {Object.entries(MONTHLY_TASKS).map(([month, tasks]) => (
                 <div key={month} style={{ background: '#0f2044', borderRadius: 10, padding: '0.85rem 1rem' }}>
                   <div style={{ color: '#F5E642', fontWeight: 700, marginBottom: 6, fontSize: 14 }}>{month}</div>
-                  {tasks.map((t, i) => <div key={i} style={{ fontSize: 12, color: '#94a3b8′ }}>• {t}</div>)}
+                  {tasks.map((t, i) => <div key={i} style={{ fontSize: 12, color: '#94a3b8' }}>• {t}</div>)}
                 </div>
               ))}
             </div>

@@ -91,11 +91,11 @@ export default function DFWUpgradingNeighborhoodGuide() {
             </div>
             <div>
               <label style={{ fontSize: 13, color: '#aaa', display: 'block', marginBottom: 6 }}>Target Home Budget ($)</label>
-              <input value={budget} onChange={e => setBudget(e.target.value)} placeholder="e.g. 550000″ style={{ width: '100%', padding: '10px 12px', background: 'rgba(255,255,255,0.08)', border: '1px solid rgba(255,255,255,0.2)', borderRadius: 6, fontSize: 15, color: '#fff', boxSizing: 'border-box' }} />
+              <input value={budget} onChange={e => setBudget(e.target.value)} placeholder="e.g. 550000" style={{ width: '100%', padding: '10px 12px', background: 'rgba(255,255,255,0.08)', border: '1px solid rgba(255,255,255,0.2)', borderRadius: 6, fontSize: 15, color: '#fff', boxSizing: 'border-box' }} />
             </div>
             <div>
               <label style={{ fontSize: 13, color: '#aaa', display: 'block', marginBottom: 6 }}>Available Equity ($)</label>
-              <input value={equity} onChange={e => setEquity(e.target.value)} placeholder="e.g. 130000″ style={{ width: '100%', padding: '10px 12px', background: 'rgba(255,255,255,0.08)', border: '1px solid rgba(255,255,255,0.2)', borderRadius: 6, fontSize: 15, color: '#fff', boxSizing: 'border-box' }} />
+              <input value={equity} onChange={e => setEquity(e.target.value)} placeholder="e.g. 130000" style={{ width: '100%', padding: '10px 12px', background: 'rgba(255,255,255,0.08)', border: '1px solid rgba(255,255,255,0.2)', borderRadius: 6, fontSize: 15, color: '#fff', boxSizing: 'border-box' }} />
             </div>
           </div>
           <button onClick={analyze} style={{ background: '#F5E642', color: '#0A1628', border: 'none', padding: '12px 28px', borderRadius: 6, fontWeight: 700, fontSize: 16, cursor: 'pointer' }}>Find My Upgrade Path</button>

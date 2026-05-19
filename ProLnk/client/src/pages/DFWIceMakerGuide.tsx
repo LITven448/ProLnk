@@ -97,9 +97,9 @@ export default function DFWIceMakerGuide() {
               <label style={{ display: 'block', color: '#a0aebe', marginBottom: '6px', fontSize: '13px' }}>Household Size</label>
               <select style={selectStyle} value={householdSize} onChange={e => setHouseholdSize(e.target.value)}>
                 <option value="">Select...</option>
-                <option value="1″>1-2 people</option>
-                <option value="3″>3-4 people</option>
-                <option value="5″>5+ people</option>
+                <option value="1">1-2 people</option>
+                <option value="3">3-4 people</option>
+                <option value="5">5+ people</option>
               </select>
             </div>
             <div>
@@ -118,12 +118,12 @@ export default function DFWIceMakerGuide() {
             Get Ice Maker Recommendation
           </button>
           {recommendation && (
-            <div style={{ marginTop: '24px', background: '#0f1e38', borderRadius: '10px', padding: '20px', borderLeft: '4px solid #F5E642′ }}>
+            <div style={{ marginTop: '24px', background: '#0f1e38', borderRadius: '10px', padding: '20px', borderLeft: '4px solid #F5E642' }}>
               <h3 style={{ color: '#F5E642', marginTop: 0 }}>Your Recommendation</h3>
-              <p style={{ margin: '4px 0′ }}><strong>Unit Type:</strong> {recommendation.type}</p>
-              <p style={{ margin: '4px 0′ }}><strong>Production Capacity:</strong> {recommendation.capacity}</p>
-              <p style={{ margin: '4px 0′ }}><strong>Annual Filter Cost:</strong> {recommendation.filterCost}</p>
-              <p style={{ margin: '4px 0′ }}><strong>Annual Maintenance Cost:</strong> {recommendation.maintenanceCost}</p>
+              <p style={{ margin: '4px 0' }}><strong>Unit Type:</strong> {recommendation.type}</p>
+              <p style={{ margin: '4px 0' }}><strong>Production Capacity:</strong> {recommendation.capacity}</p>
+              <p style={{ margin: '4px 0' }}><strong>Annual Filter Cost:</strong> {recommendation.filterCost}</p>
+              <p style={{ margin: '4px 0' }}><strong>Annual Maintenance Cost:</strong> {recommendation.maintenanceCost}</p>
               <p style={{ margin: '8px 0 0', color: '#F5E642', fontSize: '13px' }}>⚠️ Always install an inline water filter — DFW hard water will damage any unit without one.</p>
             </div>
           )}

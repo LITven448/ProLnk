@@ -51,39 +51,39 @@ export default function DFWPaintBrandsGuide2026() {
   const result = scenarios.find(s => s.project === selected);
 
   return (
-    <div style={{ backgroundColor: "#0A1628″, minHeight: "100vh", padding: "32px 16px", fontFamily: "sans-serif", color: "#fff" }}>
+    <div style={{ backgroundColor: "#0A1628", minHeight: "100vh", padding: "32px 16px", fontFamily: "sans-serif", color: "#fff" }}>
       <div style={{ maxWidth: 720, margin: "0 auto" }}>
         <div style={{ textAlign: "center", marginBottom: 32 }}>
           <div style={{ fontSize: 48, marginBottom: 8 }}>🎨</div>
-          <h1 style={{ fontSize: 28, fontWeight: 800, color: "#F5E642″, margin: "0 0 8px" }}>DFW Paint Brand Guide 2026</h1>
-          <p style={{ color: "#94a3b8″, fontSize: 15 }}>Best paint brands for the Dallas-Fort Worth climate — UV, heat, and humidity rated</p>
+          <h1 style={{ fontSize: 28, fontWeight: 800, color: "#F5E642", margin: "0 0 8px" }}>DFW Paint Brand Guide 2026</h1>
+          <p style={{ color: "#94a3b8", fontSize: 15 }}>Best paint brands for the Dallas-Fort Worth climate — UV, heat, and humidity rated</p>
         </div>
 
         <div style={{ backgroundColor: "#111f3a", borderRadius: 12, padding: 16, marginBottom: 24, border: "1px solid #1e3a5f" }}>
-          <p style={{ color: "#F5E642″, fontWeight: 700, fontSize: 13, margin: "0 0 6px" }}>☀️ DFW Paint Challenge</p>
-          <p style={{ color: "#94a3b8″, fontSize: 13, margin: 0 }}>100°F+ summers with intense UV, humidity swings, and thermal expansion require paint with superior UV inhibitors and flexibility. Generic paint brands fade and crack within 3–4 years on DFW exteriors.</p>
+          <p style={{ color: "#F5E642", fontWeight: 700, fontSize: 13, margin: "0 0 6px" }}>☀️ DFW Paint Challenge</p>
+          <p style={{ color: "#94a3b8", fontSize: 13, margin: 0 }}>100°F+ summers with intense UV, humidity swings, and thermal expansion require paint with superior UV inhibitors and flexibility. Generic paint brands fade and crack within 3–4 years on DFW exteriors.</p>
         </div>
 
-        <h2 style={{ fontSize: 16, color: "#F5E642″, marginBottom: 12 }}>Select Project + Budget</h2>
+        <h2 style={{ fontSize: 16, color: "#F5E642", marginBottom: 12 }}>Select Project + Budget</h2>
         <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 10, marginBottom: 24 }}>
           {scenarios.map(s => (
             <button key={s.project} onClick={() => setSelected(s.project)}
-              style={{ backgroundColor: selected === s.project ? "#F5E642″ : "#111f3a", color: selected === s.project ? "#0A1628" : "#fff", border: "1px solid #1e3a5f", borderRadius: 10, padding: "12px 14px", cursor: "pointer", fontWeight: 600, fontSize: 13, textAlign: "left" }}>
+              style={{ backgroundColor: selected === s.project ? "#F5E642" : "#111f3a", color: selected === s.project ? "#0A1628" : "#fff", border: "1px solid #1e3a5f", borderRadius: 10, padding: "12px 14px", cursor: "pointer", fontWeight: 600, fontSize: 13, textAlign: "left" }}>
               {s.icon} {s.project}
             </button>
           ))}
         </div>
 
         {result && (
-          <div style={{ backgroundColor: "#111f3a", borderRadius: 12, padding: 24, border: "2px solid #F5E642″ }}>
-            <div style={{ fontSize: 13, color: "#94a3b8″, marginBottom: 4 }}>Best paint for {result.project}:</div>
-            <div style={{ fontSize: 22, fontWeight: 800, color: "#F5E642″, marginBottom: 12 }}>🏆 {result.brand}</div>
-            <p style={{ color: "#cbd5e1″, fontSize: 14, marginBottom: 12 }}>{result.why}</p>
+          <div style={{ backgroundColor: "#111f3a", borderRadius: 12, padding: 24, border: "2px solid #F5E642" }}>
+            <div style={{ fontSize: 13, color: "#94a3b8", marginBottom: 4 }}>Best paint for {result.project}:</div>
+            <div style={{ fontSize: 22, fontWeight: 800, color: "#F5E642", marginBottom: 12 }}>🏆 {result.brand}</div>
+            <p style={{ color: "#cbd5e1", fontSize: 14, marginBottom: 12 }}>{result.why}</p>
             <div style={{ display: "flex", gap: 12, flexWrap: "wrap" }}>
-              <div style={{ padding: "8px 14px", backgroundColor: "#0A1628″, borderRadius: 8, fontSize: 13 }}>
+              <div style={{ padding: "8px 14px", backgroundColor: "#0A1628", borderRadius: 8, fontSize: 13 }}>
                 ⏳ {result.lifespan}
               </div>
-              <div style={{ padding: "8px 14px", backgroundColor: "#0A1628″, borderRadius: 8, fontSize: 13, color: "#94a3b8" }}>
+              <div style={{ padding: "8px 14px", backgroundColor: "#0A1628", borderRadius: 8, fontSize: 13, color: "#94a3b8" }}>
                 📍 {result.where}
               </div>
             </div>

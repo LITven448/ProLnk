@@ -12,9 +12,9 @@ export default function DFWFoundationDrainPipe2026() {
   ];
 
   const guide: Record<string, string> = {
-    'Water pooling near foundation': 'French drain is the solution. Install 4″ perforated HDPE pipe at 18-24″ depth alongside foundation (DFW clay requires depth to get below shrink-swell zone). Slope 1/8″ per foot minimum toward outlet. Wrap pipe in filter fabric to prevent DFW clay intrusion. Cover with washed gravel then filter fabric then soil. Cost: $25-45/linear foot installed.',
-    'Downspouts dumping at foundation': 'Install solid 4″ PVC or corrugated HDPE downspout extension underground. Solid pipe (not perforated) carries roof water away — perforated near foundation defeats the purpose. Minimum 10-foot extension, 15-20 ft preferred in DFW. Slope 1/4″ per foot. Pop-up emitter at discharge end. Cost: $300-800 per downspout.',
-    'Yard drains to foundation from street': 'French drain across yard intercepts surface flow. Install 4″ perforated pipe perpendicular to flow direction, 12-18″ deep in DFW clay. Yard drains (catch basins) at low spots connect to solid drain pipe to street or detention area. DFW municipalities have rules about where you can discharge — check with city before installing.',
+    'Water pooling near foundation': 'French drain is the solution. Install 4" perforated HDPE pipe at 18-24" depth alongside foundation (DFW clay requires depth to get below shrink-swell zone). Slope 1/8" per foot minimum toward outlet. Wrap pipe in filter fabric to prevent DFW clay intrusion. Cover with washed gravel then filter fabric then soil. Cost: $25-45/linear foot installed.',
+    'Downspouts dumping at foundation': 'Install solid 4" PVC or corrugated HDPE downspout extension underground. Solid pipe (not perforated) carries roof water away — perforated near foundation defeats the purpose. Minimum 10-foot extension, 15-20 ft preferred in DFW. Slope 1/4" per foot. Pop-up emitter at discharge end. Cost: $300-800 per downspout.',
+    'Yard drains to foundation from street': 'French drain across yard intercepts surface flow. Install 4" perforated pipe perpendicular to flow direction, 12-18" deep in DFW clay. Yard drains (catch basins) at low spots connect to solid drain pipe to street or detention area. DFW municipalities have rules about where you can discharge — check with city before installing.',
     'Crawl space or under-slab moisture': 'Under-slab drainage requires excavation or injection. French drain around perimeter exterior is first step. For severe cases, interior drain tile under slab connected to sump pump. DFW clay moves significantly — ensure all pipes have flexible joints or use HDPE with bell ends. Foundation contractor required for under-slab work.',
   };
 
@@ -81,7 +81,7 @@ export default function DFWFoundationDrainPipe2026() {
             'Get a drainage survey before installing — water goes somewhere and you need to know where',
           ].map((tip, i) => (
             <div key={i} style={{ display: 'flex', gap: 10, marginBottom: 8 }}>
-              <span style={{ color: '#F5E642′ }}>✓</span>
+              <span style={{ color: '#F5E642' }}>✓</span>
               <span style={{ color: '#cbd5e1', fontSize: 14 }}>{tip}</span>
             </div>
           ))}

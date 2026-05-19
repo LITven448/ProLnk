@@ -63,7 +63,7 @@ export default function DFWHVACDuctMaterialGuide() {
         </div>
 
         {result && (
-          <div style={{ background: '#132035', borderRadius: 12, padding: 20, borderLeft: '4px solid #F5E642′ }}>
+          <div style={{ background: '#132035', borderRadius: 12, padding: 20, borderLeft: '4px solid #F5E642' }}>
             <div style={{ fontSize: 20, fontWeight: 700, marginBottom: 12 }}>{result.rating}</div>
             <p style={{ color: '#cbd5e1', lineHeight: 1.7, marginBottom: 12 }}>{result.notes}</p>
             <div style={{ color: '#F5E642', fontWeight: 600 }}>💰 Cost: {result.cost}</div>

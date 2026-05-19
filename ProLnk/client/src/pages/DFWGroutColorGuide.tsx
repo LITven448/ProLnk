@@ -37,8 +37,8 @@ const groutMatrix: Record<string, Record<string, { color: string; reason: string
 };
 
 const sandedInfo = {
-  sanded: 'Use for joints wider than 1/8″. Most DFW floor tile installations. Resists shrinkage during DFW summer heat.',
-  unsanded: 'Use for joints 1/16″-1/8″. Polished stone, glass tile, wall tile. Will shrink if used in wide joints in DFW heat.',
+  sanded: 'Use for joints wider than 1/8". Most DFW floor tile installations. Resists shrinkage during DFW summer heat.',
+  unsanded: 'Use for joints 1/16"-1/8". Polished stone, glass tile, wall tile. Will shrink if used in wide joints in DFW heat.',
 };
 
 export default function DFWGroutColorGuide() {
@@ -55,13 +55,13 @@ export default function DFWGroutColorGuide() {
           <div>
             <div style={{ color: '#F5E642', fontWeight: 700, marginBottom: '0.5rem', fontSize: '0.85rem', textTransform: 'uppercase', letterSpacing: 1 }}>Tile Color</div>
             {TILE_COLORS.map(t => (
-              <button key={t} onClick={() => setTile(t)} style={{ display: 'block', width: '100%', marginBottom: '0.5rem', padding: '0.6rem 1rem', background: tile === t ? '#F5E642′ : '#0D1E3A', color: tile === t ? '#0A1628' : '#CDD5E0', border: '1px solid', borderColor: tile === t ? '#F5E642' : '#1C2E4A', borderRadius: 8, cursor: ’pointer', textAlign: 'left', fontWeight: tile === t ? 700 : 400, transition: 'all 0.2s' }}>{t}</button>
+              <button key={t} onClick={() => setTile(t)} style={{ display: 'block', width: '100%', marginBottom: '0.5rem', padding: '0.6rem 1rem', background: tile === t ? '#F5E642' : '#0D1E3A', color: tile === t ? '#0A1628' : '#CDD5E0', border: '1px solid', borderColor: tile === t ? '#F5E642' : '#1C2E4A', borderRadius: 8, cursor: 'pointer', textAlign: 'left', fontWeight: tile === t ? 700 : 400, transition: 'all 0.2s' }}>{t}</button>
             ))}
           </div>
           <div>
             <div style={{ color: '#F5E642', fontWeight: 700, marginBottom: '0.5rem', fontSize: '0.85rem', textTransform: 'uppercase', letterSpacing: 1 }}>Primary DFW Concern</div>
             {LIFESTYLES.map(l => (
-              <button key={l} onClick={() => setLifestyle(l)} style={{ display: 'block', width: '100%', marginBottom: '0.5rem', padding: '0.6rem 1rem', background: lifestyle === l ? '#F5E642′ : '#0D1E3A', color: lifestyle === l ? '#0A1628' : '#CDD5E0', border: '1px solid', borderColor: lifestyle === l ? '#F5E642' : '#1C2E4A', borderRadius: 8, cursor: ’pointer', textAlign: 'left', fontWeight: lifestyle === l ? 700 : 400, transition: 'all 0.2s' }}>{l}</button>
+              <button key={l} onClick={() => setLifestyle(l)} style={{ display: 'block', width: '100%', marginBottom: '0.5rem', padding: '0.6rem 1rem', background: lifestyle === l ? '#F5E642' : '#0D1E3A', color: lifestyle === l ? '#0A1628' : '#CDD5E0', border: '1px solid', borderColor: lifestyle === l ? '#F5E642' : '#1C2E4A', borderRadius: 8, cursor: 'pointer', textAlign: 'left', fontWeight: lifestyle === l ? 700 : 400, transition: 'all 0.2s' }}>{l}</button>
             ))}
           </div>
         </div>
@@ -92,7 +92,7 @@ export default function DFWGroutColorGuide() {
         <div style={{ background: '#0D1E3A', borderRadius: 12, padding: '1.25rem', border: '1px solid #1C2E4A' }}>
           <div style={{ color: '#F5E642', fontWeight: 700, marginBottom: '0.75rem' }}>DFW-Specific Grout Tips</div>
           {['Use epoxy grout in DFW showers -- hard water cannot penetrate it.', 'Seal all cement grout within 72 hours of cure in DFW humidity.', 'Avoid white grout near exterior doors -- DFW red clay stains permanently.', 'Summer heat expands grout -- leave proper expansion joints at walls.'].map((tip, i) => (
-            <div key={i} style={{ color: '#8899BB', fontSize: '0.875rem', marginBottom: '0.4rem', paddingLeft: '0.5rem', borderLeft: '2px solid #F5E642′ }}>{tip}</div>
+            <div key={i} style={{ color: '#8899BB', fontSize: '0.875rem', marginBottom: '0.4rem', paddingLeft: '0.5rem', borderLeft: '2px solid #F5E642' }}>{tip}</div>
           ))}
         </div>
       </div>

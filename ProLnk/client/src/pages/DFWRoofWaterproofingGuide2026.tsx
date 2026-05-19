@@ -1,8 +1,8 @@
 import { useState } from 'react';
 
 const requirements = [
-  { location: 'Roof valleys', icon: '🏔️', requirement: 'Required by Code', detail: 'Ice and water shield required in all valleys — DFW municipalities follow IRC which mandates 36″ minimum self-adhered membrane in valleys. Extend 18″ each side from center. Some DFW cities require full valley coverage.' },
-  { location: 'Eaves (first 2 rows)', icon: '🏠', requirement: 'Code Required', detail: 'Self-adhered membrane at eaves required for DFW homes — protects against rare ice dam events and windblown rain. Extend to 12″ inside exterior wall line per IRC. Synthetic underlayment performs better than felt in DFW UV.' },
+  { location: 'Roof valleys', icon: '🏔️', requirement: 'Required by Code', detail: 'Ice and water shield required in all valleys — DFW municipalities follow IRC which mandates 36" minimum self-adhered membrane in valleys. Extend 18" each side from center. Some DFW cities require full valley coverage.' },
+  { location: 'Eaves (first 2 rows)', icon: '🏠', requirement: 'Code Required', detail: 'Self-adhered membrane at eaves required for DFW homes — protects against rare ice dam events and windblown rain. Extend to 12" inside exterior wall line per IRC. Synthetic underlayment performs better than felt in DFW UV.' },
   { location: 'Wall/roof intersections', icon: '🧱', requirement: 'Step Flashing Critical', detail: 'Step flashing at every course — individual L-shaped pieces, one per shingle, interleaved with shingles. Most DFW water intrusion occurs at wall intersections due to incorrect or missing step flashing. Never use continuous counter flashing only.' },
   { location: 'Ridge and hip', icon: '📐', requirement: 'Underlayment + Ventilation', detail: 'Synthetic underlayment performs better than 30# felt in DFW heat — felt dries out and becomes brittle. Ridge vent placement: continuous ridge vent with equal net free area to soffit vents. Common DFW error: ridge vent installed but soffits blocked.' },
   { location: 'Pipe/HVAC penetrations', icon: '🔧', requirement: 'Self-Adhered Membrane', detail: 'Self-adhered membrane collar around all penetrations before flashing installation — flashing alone is insufficient in DFW wind-driven rain. Use EPDM pipe boots rated for DFW UV exposure — plastic boots fail in 7-10 years.' },
@@ -55,7 +55,7 @@ export default function DFWRoofWaterproofingGuide2026() {
           </div>
           <button onClick={getRequirement} style={{ background: '#F5E642', color: '#0A1628', border: 'none', borderRadius: 8, padding: '12px 24px', fontWeight: 700, fontSize: 15, cursor: 'pointer', width: '100%' }}>Get Requirements →</button>
           {result && (
-            <div style={{ marginTop: 20, background: '#0A1628', borderRadius: 10, padding: 20, borderLeft: '4px solid #F5E642′ }}>
+            <div style={{ marginTop: 20, background: '#0A1628', borderRadius: 10, padding: 20, borderLeft: '4px solid #F5E642' }}>
               <div style={{ fontSize: 28, marginBottom: 8 }}>{result.icon}</div>
               <div style={{ color: '#F5E642', fontWeight: 700, fontSize: 16, marginBottom: 8 }}>{result.requirement}</div>
               <div style={{ color: '#e2e8f0', fontSize: 14, lineHeight: 1.6 }}>{result.detail}</div>

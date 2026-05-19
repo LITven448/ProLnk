@@ -52,7 +52,7 @@ export default function DFWProLnkStayConnected2026() {
             {Object.entries(guides).map(([key, g]) => (
               <button key={key} onClick={() => setStakeholder(stakeholder === key ? '' : key)}
                 style={{ padding: '10px 18px', borderRadius: 10, border: 'none', cursor: 'pointer', fontSize: 14, fontWeight: 600,
-                  backgroundColor: stakeholder === key ? '#F5E642′ : '#1a2d50', color: stakeholder === key ? '#0A1628' : '#94a3b8' }}>
+                  backgroundColor: stakeholder === key ? '#F5E642' : '#1a2d50', color: stakeholder === key ? '#0A1628' : '#94a3b8' }}>
                 {g.label}
               </button>
             ))}
@@ -62,7 +62,7 @@ export default function DFWProLnkStayConnected2026() {
         {active ? (
           <div style={{ display: 'flex', flexDirection: 'column', gap: 14, marginBottom: 32 }}>
             {active.steps.map((s, i) => (
-              <div key={i} style={{ backgroundColor: '#111d35', borderRadius: 12, padding: 20, borderLeft: '4px solid #F5E642′ }}>
+              <div key={i} style={{ backgroundColor: '#111d35', borderRadius: 12, padding: 20, borderLeft: '4px solid #F5E642' }}>
                 <div style={{ display: 'flex', gap: 12, alignItems: 'flex-start' }}>
                   <div style={{ fontSize: 28 }}>{s.emoji}</div>
                   <div>
@@ -79,7 +79,7 @@ export default function DFWProLnkStayConnected2026() {
           </div>
         )}
 
-        <div style={{ backgroundColor: '#1a2d50', borderRadius: 12, padding: 24, textAlign: 'center', border: '2px solid #F5E642′ }}>
+        <div style={{ backgroundColor: '#1a2d50', borderRadius: 12, padding: 24, textAlign: 'center', border: '2px solid #F5E642' }}>
           <div style={{ fontSize: 32 }}>🚀</div>
           <p style={{ fontSize: 17, fontWeight: 700, marginBottom: 8 }}>Join the ProLnk DFW Community Now</p>
           <p style={{ color: '#94a3b8', fontSize: 14, marginBottom: 16 }}>

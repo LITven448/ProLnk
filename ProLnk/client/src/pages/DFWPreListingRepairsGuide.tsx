@@ -48,7 +48,7 @@ export default function DFWPreListingRepairsGuide() {
         </div>
 
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 24, marginBottom: 48 }}>
-          <div style={{ backgroundColor: '#1a2a40', borderRadius: 16, padding: 28, border: '1px solid #2a3a50′ }}>
+          <div style={{ backgroundColor: '#1a2a40', borderRadius: 16, padding: 28, border: '1px solid #2a3a50' }}>
             <h2 style={{ color: '#4ade80', fontSize: 18, fontWeight: 700, marginBottom: 16 }}>✅ Do These First</h2>
             {['Fresh paint (neutral tones)', 'Deep clean + declutter', 'HVAC service + tune-up', 'Landscaping + mulch', 'Fix dripping faucets/leaks', 'Replace burned-out bulbs'].map(item => (
               <div key={item} style={{ display: 'flex', gap: 10, marginBottom: 10, alignItems: 'center' }}>
@@ -57,7 +57,7 @@ export default function DFWPreListingRepairsGuide() {
               </div>
             ))}
           </div>
-          <div style={{ backgroundColor: '#1a2a40', borderRadius: 16, padding: 28, border: '1px solid #2a3a50′ }}>
+          <div style={{ backgroundColor: '#1a2a40', borderRadius: 16, padding: 28, border: '1px solid #2a3a50' }}>
             <h2 style={{ color: '#f87171', fontSize: 18, fontWeight: 700, marginBottom: 16 }}>❌ Skip These</h2>
             {['Full kitchen remodel', 'Pool addition', 'Luxury bathroom upgrade', 'Converting garage to room', 'Adding a sunroom', 'High-end landscaping'].map(item => (
               <div key={item} style={{ display: 'flex', gap: 10, marginBottom: 10, alignItems: 'center' }}>
@@ -68,7 +68,7 @@ export default function DFWPreListingRepairsGuide() {
           </div>
         </div>
 
-        <div style={{ backgroundColor: '#1a2a40', borderRadius: 16, padding: 28, marginBottom: 48, border: '1px solid #F5E642′ }}>
+        <div style={{ backgroundColor: '#1a2a40', borderRadius: 16, padding: 28, marginBottom: 48, border: '1px solid #F5E642' }}>
           <h2 style={{ color: '#F5E642', fontSize: 20, fontWeight: 700, marginBottom: 16 }}>🏗️ DFW-Specific Buyer Expectations</h2>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16 }}>
             {[
@@ -80,14 +80,14 @@ export default function DFWPreListingRepairsGuide() {
               <div key={item.title} style={{ backgroundColor: '#0A1628', borderRadius: 12, padding: 20 }}>
                 <div style={{ fontSize: 28, marginBottom: 8 }}>{item.icon}</div>
                 <div style={{ fontWeight: 700, color: '#fff', marginBottom: 6 }}>{item.title}</div>
-                <div style={{ fontSize: 13, color: '#9aa5b4′ }}>{item.desc}</div>
+                <div style={{ fontSize: 13, color: '#9aa5b4' }}>{item.desc}</div>
               </div>
             ))}
           </div>
         </div>
 
-        <div style={{ backgroundColor: '#1a2a40', borderRadius: 16, padding: 32, marginBottom: 32, border: '1px solid #2a3a50′ }}>
-          <h2 style={{ fontSize: 22, fontWeight: 700, marginBottom: 20, color: '#F5E642′ }}>🧮 Repair vs Credit Calculator</h2>
+        <div style={{ backgroundColor: '#1a2a40', borderRadius: 16, padding: 32, marginBottom: 32, border: '1px solid #2a3a50' }}>
+          <h2 style={{ fontSize: 22, fontWeight: 700, marginBottom: 20, color: '#F5E642' }}>🧮 Repair vs Credit Calculator</h2>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 20, marginBottom: 20 }}>
             <div>
               <label style={{ display: 'block', marginBottom: 8, color: '#ccc', fontSize: 14 }}>Repair Type</label>
@@ -99,7 +99,7 @@ export default function DFWPreListingRepairsGuide() {
             </div>
             <div>
               <label style={{ display: 'block', marginBottom: 8, color: '#ccc', fontSize: 14 }}>Estimated Repair Cost ($)</label>
-              <input type="number" placeholder="e.g. 3500″ value={cost} onChange={e => { setCost(e.target.value); setShowResult(false); }}
+              <input type="number" placeholder="e.g. 3500" value={cost} onChange={e => { setCost(e.target.value); setShowResult(false); }}
                 style={{ width: '100%', padding: '10px 14px', borderRadius: 8, backgroundColor: '#0A1628', color: '#fff', border: '1px solid #2a3a50', fontSize: 14, boxSizing: 'border-box' }} />
             </div>
           </div>
@@ -125,16 +125,16 @@ export default function DFWPreListingRepairsGuide() {
                 </div>
               </div>
               <div style={{ padding: 16, backgroundColor: '#1a2a40', borderRadius: 8, marginBottom: 12 }}>
-                <strong style={{ color: '#F5E642′ }}>📋 Impact: </strong>
+                <strong style={{ color: '#F5E642' }}>📋 Impact: </strong>
                 <span style={{ color: '#ccc', fontSize: 14 }}>{result.impact}</span>
               </div>
               <div style={{ padding: 16, backgroundColor: '#1a2a40', borderRadius: 8, marginBottom: 12 }}>
-                <strong style={{ color: '#4ade80′ }}>💡 Recommendation: </strong>
+                <strong style={{ color: '#4ade80' }}>💡 Recommendation: </strong>
                 <span style={{ color: '#ccc', fontSize: 14 }}>{result.recommendation}</span>
               </div>
               {result.creditOk && (
-                <div style={{ padding: 16, backgroundColor: '#1a1a3a', borderRadius: 8, borderLeft: '4px solid #818cf8′ }}>
-                  <strong style={{ color: '#818cf8′ }}>💳 Credit to Buyer Option: </strong>
+                <div style={{ padding: 16, backgroundColor: '#1a1a3a', borderRadius: 8, borderLeft: '4px solid #818cf8' }}>
+                  <strong style={{ color: '#818cf8' }}>💳 Credit to Buyer Option: </strong>
                   <span style={{ color: '#ccc', fontSize: 14 }}>This repair type is commonly offered as a buyer credit in DFW. Some buyers prefer the cash to choose their own contractor.</span>
                 </div>
               )}

@@ -34,7 +34,7 @@ export default function DFWOncorServiceGuide2026() {
         <div style={{ display: 'flex', flexWrap: 'wrap', gap: 10, marginBottom: 20 }}>
           {needs.map(n => (
             <button key={n.id} onClick={() => setSelected(selected === n.id ? null : n.id)}
-              style={{ padding: '10px 16px', borderRadius: 8, border: `2px solid ${selected === n.id ? '#F5E642' : '#1e3a5f'}`, backgroundColor: selected === n.id ? '#F5E64220′ : '#0f2040', color: selected === n.id ? '#F5E642' : '#cbd5e1', cursor: ’pointer', fontSize: 13, fontWeight: 600 }}>
+              style={{ padding: '10px 16px', borderRadius: 8, border: `2px solid ${selected === n.id ? '#F5E642' : '#1e3a5f'}`, backgroundColor: selected === n.id ? '#F5E64220' : '#0f2040', color: selected === n.id ? '#F5E642' : '#cbd5e1', cursor: 'pointer', fontSize: 13, fontWeight: 600 }}>
               {n.label}
             </button>
           ))}

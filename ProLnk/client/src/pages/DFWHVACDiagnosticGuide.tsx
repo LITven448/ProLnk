@@ -50,15 +50,15 @@ function getDiagnosis(temp: string, humidity: string, noise: string, smell: stri
   if (temp === 'hot-rooms' && airflow === 'normal') return { title: 'Duct Imbalance or Room Heat Gain', priority: 'MEDIUM', cause: 'Normal airflow but some rooms hot = airflow distribution issue or specific room has high heat gain (west wall, above garage, etc.).', tellTech: ['Identify which specific rooms are hot', 'Note room characteristics: west-facing, above garage, bonus room?', 'Ask about duct balancing and airflow measurement per room', 'Discuss room-specific solutions (zoning, mini-split, attic insulation)'], estimatedCost: '$150–$5,000 depending on solution' };
   if (humidity === 'sticky' && temp === 'temp-ok') return { title: 'Humidity Control Issue', priority: 'MEDIUM', cause: 'Temperature OK but humid = AC is removing temperature but not humidity. Common with oversized systems that short-cycle in DFW.', tellTech: ['Report: house cools but feels sticky', 'Ask about system run-time — is it short-cycling?', 'Request humidity level check with hygrometer (should be 45–55%)', 'Ask about whole-home dehumidifier options'], estimatedCost: '$1,500–$3,000 for dehumidifier' };
   if (noise === 'clicking' && temp === 'whole-hot') return { title: 'Failed Capacitor', priority: 'HIGH', cause: 'Clicking + no cooling = capacitor likely failed. Capacitors start the compressor and fan motor. DFW #1 summer failure.', tellTech: ['Describe: clicking from outdoor unit but not cooling', 'Ask tech to test capacitor first — quick diagnosis', 'Capacitor replacement is typically same-day service', 'Ask about dual-run vs start capacitor'], estimatedCost: '$150–$300 for capacitor replacement' };
-  if (airflow === 'weak' && smell === 'no-smell' && noise === 'quiet') return { title: 'Dirty Filter or Return Air Restriction', priority: 'LOW', cause: 'Weak airflow without other symptoms = start with the filter. DFW filters clog fast in spring/summer.', tellTech: ['Change filter first — use MERV 8 minimum', 'Check all return air grilles for blockage', 'If filter change does not help, mention to tech', 'Ask about upgrading to better filter and media cabinet'], estimatedCost: '$0–$400′ };
+  if (airflow === 'weak' && smell === 'no-smell' && noise === 'quiet') return { title: 'Dirty Filter or Return Air Restriction', priority: 'LOW', cause: 'Weak airflow without other symptoms = start with the filter. DFW filters clog fast in spring/summer.', tellTech: ['Change filter first — use MERV 8 minimum', 'Check all return air grilles for blockage', 'If filter change does not help, mention to tech', 'Ask about upgrading to better filter and media cabinet'], estimatedCost: '$0–$400' };
   return { title: 'System Performing Within Normal Parameters', priority: 'LOW', cause: 'Based on selected symptoms, your DFW HVAC system appears to be functioning normally. Schedule annual maintenance to keep it that way.', tellTech: ['Schedule annual maintenance before each summer (March/April)', 'Ask for coil cleaning, filter replacement, refrigerant check, and capacitor test', 'DFW recommendation: clean coils and test capacitor every year', 'Ask about UV-C light and dehumidifier for proactive comfort'], estimatedCost: '$150–$350 for annual maintenance' };
 }
 
 const priorityStyle: Record<string, { bg: string; color: string }> = {
   'EMERGENCY': { bg: '#EF4444', color: '#fff' },
   'CRITICAL': { bg: '#F97316', color: '#fff' },
-  'HIGH': { bg: '#F5E642', color: '#0A1628′ },
-  'MEDIUM': { bg: '#60A5FA', color: '#0A1628′ },
+  'HIGH': { bg: '#F5E642', color: '#0A1628' },
+  'MEDIUM': { bg: '#60A5FA', color: '#0A1628' },
   'LOW': { bg: '#22C55E', color: '#fff' },
 };
 
@@ -93,7 +93,7 @@ export default function DFWHVACDiagnosticGuide() {
             <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8 }}>
               {group.options.map((opt: { id: string; label: string }) => (
                 <button key={opt.id} onClick={() => group.setValue(opt.id)}
-                  style={{ background: group.value === opt.id ? '#F5E642′ : '#1A3060', color: group.value === opt.id ? '#0A1628' : '#E2E8F0', border: ’none', borderRadius: 8, padding: '10px 16px', cursor: 'pointer', fontWeight: group.value === opt.id ? 700 : 400, fontSize: 14 }}>
+                  style={{ background: group.value === opt.id ? '#F5E642' : '#1A3060', color: group.value === opt.id ? '#0A1628' : '#E2E8F0', border: 'none', borderRadius: 8, padding: '10px 16px', cursor: 'pointer', fontWeight: group.value === opt.id ? 700 : 400, fontSize: 14 }}>
                   {opt.label}
                 </button>
               ))}
@@ -133,7 +133,7 @@ export default function DFWHVACDiagnosticGuide() {
             </div>
 
             <div style={{ background: '#0F2040', borderRadius: 12, padding: 20, display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-              <span style={{ color: '#94A3B8′ }}>Estimated Repair Cost</span>
+              <span style={{ color: '#94A3B8' }}>Estimated Repair Cost</span>
               <span style={{ color: '#F5E642', fontWeight: 700, fontSize: 18 }}>{result.estimatedCost}</span>
             </div>
           </div>

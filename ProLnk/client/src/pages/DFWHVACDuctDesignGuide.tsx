@@ -63,7 +63,7 @@ function getDuctDiagnosis(issue: string, layout: string) {
       problem: 'Duct design may not match room load or return placement is inadequate',
       solutions: [
         'Verify return air path is unobstructed',
-        'Check static pressure — should be under 0.5″ w.c.',
+        'Check static pressure — should be under 0.5" w.c.',
         'Ensure each room has return air relief (door undercut or transfer grille)',
         'Balance supply registers to actual room loads',
       ],
@@ -100,7 +100,7 @@ export default function DFWHVACDuctDesignGuide() {
           </p>
         </div>
 
-        <div style={{ background: '#0f1f3d', borderRadius: '12px', padding: '1.5rem', marginBottom: '1.5rem', borderLeft: '4px solid #F5E642′ }}>
+        <div style={{ background: '#0f1f3d', borderRadius: '12px', padding: '1.5rem', marginBottom: '1.5rem', borderLeft: '4px solid #F5E642' }}>
           <div style={{ fontWeight: 'bold', color: '#F5E642', marginBottom: '0.75rem' }}>📐 Manual D: The DFW Standard</div>
           <p style={{ color: '#94a3b8', marginBottom: '0.5rem' }}>Manual D calculates duct sizing based on actual room-by-room airflow requirements (CFM), static pressure limits, and duct geometry. In DFW:</p>
           <ul style={{ color: '#94a3b8', paddingLeft: '1.5rem' }}>
@@ -118,7 +118,7 @@ export default function DFWHVACDuctDesignGuide() {
             <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5rem' }}>
               {roomIssues.map(issue => (
                 <button key={issue} onClick={() => setSelectedIssue(issue)}
-                  style={{ padding: '0.5rem 1rem', borderRadius: '8px', border: 'none', cursor: 'pointer', background: selectedIssue === issue ? '#F5E642′ : '#1e3a5f', color: selectedIssue === issue ? '#0A1628' : '#e2e8f0', fontWeight: selectedIssue === issue ? ’bold' : 'normal' }}>
+                  style={{ padding: '0.5rem 1rem', borderRadius: '8px', border: 'none', cursor: 'pointer', background: selectedIssue === issue ? '#F5E642' : '#1e3a5f', color: selectedIssue === issue ? '#0A1628' : '#e2e8f0', fontWeight: selectedIssue === issue ? 'bold' : 'normal' }}>
                   {issue}
                 </button>
               ))}
@@ -129,7 +129,7 @@ export default function DFWHVACDuctDesignGuide() {
             <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5rem' }}>
               {layoutTypes.map(layout => (
                 <button key={layout} onClick={() => setSelectedLayout(layout)}
-                  style={{ padding: '0.5rem 1rem', borderRadius: '8px', border: 'none', cursor: 'pointer', background: selectedLayout === layout ? '#F5E642′ : '#1e3a5f', color: selectedLayout === layout ? '#0A1628' : '#e2e8f0', fontWeight: selectedLayout === layout ? ’bold' : 'normal' }}>
+                  style={{ padding: '0.5rem 1rem', borderRadius: '8px', border: 'none', cursor: 'pointer', background: selectedLayout === layout ? '#F5E642' : '#1e3a5f', color: selectedLayout === layout ? '#0A1628' : '#e2e8f0', fontWeight: selectedLayout === layout ? 'bold' : 'normal' }}>
                   {layout}
                 </button>
               ))}
@@ -140,7 +140,7 @@ export default function DFWHVACDuctDesignGuide() {
         {diagnosis && (
           <div style={{ background: '#0f1f3d', borderRadius: '12px', padding: '1.5rem', borderLeft: `4px solid ${diagnosis.color}` }}>
             <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '1rem' }}>
-              <span style={{ fontWeight: 'bold', color: '#e2e8f0′ }}>Duct Problem Likelihood:</span>
+              <span style={{ fontWeight: 'bold', color: '#e2e8f0' }}>Duct Problem Likelihood:</span>
               <span style={{ background: diagnosis.color, color: '#0A1628', padding: '0.25rem 0.75rem', borderRadius: '999px', fontWeight: 'bold', fontSize: '0.9rem' }}>{diagnosis.likelihood}</span>
             </div>
             <p style={{ color: '#94a3b8', marginBottom: '1rem' }}>⚠️ {diagnosis.problem}</p>

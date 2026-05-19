@@ -95,8 +95,8 @@ export default function DFWHVACMonitoringGuide() {
               {HOME_SIZES.map(s => (
                 <button key={s.value} onClick={() => setHomeSize(s.value)}
                   style={{ padding: '8px 14px', borderRadius: 8, border: 'none', cursor: 'pointer',
-                    background: homeSize === s.value ? '#F5E642′ : '#0A1628',
-                    color: homeSize === s.value ? '#0A1628′ : '#E8EDF5', fontWeight: 600, fontSize: 13 }}>
+                    background: homeSize === s.value ? '#F5E642' : '#0A1628',
+                    color: homeSize === s.value ? '#0A1628' : '#E8EDF5', fontWeight: 600, fontSize: 13 }}>
                   {s.label}
                 </button>
               ))}
@@ -108,15 +108,15 @@ export default function DFWHVACMonitoringGuide() {
               {HVAC_AGES.map(a => (
                 <button key={a.value} onClick={() => setHvacAge(a.value)}
                   style={{ padding: '8px 14px', borderRadius: 8, border: 'none', cursor: 'pointer',
-                    background: hvacAge === a.value ? '#F5E642′ : '#0A1628',
-                    color: hvacAge === a.value ? '#0A1628′ : '#E8EDF5', fontWeight: 600, fontSize: 13 }}>
+                    background: hvacAge === a.value ? '#F5E642' : '#0A1628',
+                    color: hvacAge === a.value ? '#0A1628' : '#E8EDF5', fontWeight: 600, fontSize: 13 }}>
                   {a.label}
                 </button>
               ))}
             </div>
           </div>
           {rec && (
-            <div style={{ background: '#0A1628', borderRadius: 10, padding: 20, borderLeft: '4px solid #F5E642′ }}>
+            <div style={{ background: '#0A1628', borderRadius: 10, padding: 20, borderLeft: '4px solid #F5E642' }}>
               <div style={{ fontWeight: 700, fontSize: 17, marginBottom: 6 }}>Recommended: {rec.system}</div>
               <div style={{ color: '#F5E642', fontWeight: 600, marginBottom: 12 }}>Estimated Cost: {rec.cost}</div>
               <div style={{ fontSize: 13, color: '#8899AA', marginBottom: 6 }}>What this would catch:</div>

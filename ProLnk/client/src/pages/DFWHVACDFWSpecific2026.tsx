@@ -87,9 +87,9 @@ export default function DFWHVACDFWSpecific2026() {
               onClick={() => setActive(c.id)}
               style={{
                 padding: '10px 16px', borderRadius: 8, border: '2px solid',
-                borderColor: active === c.id ? '#F5E642′ : '#1e3a5f',
-                background: active === c.id ? '#F5E642′ : '#0f2240',
-                color: active === c.id ? '#0A1628′ : '#cbd5e1',
+                borderColor: active === c.id ? '#F5E642' : '#1e3a5f',
+                background: active === c.id ? '#F5E642' : '#0f2240',
+                color: active === c.id ? '#0A1628' : '#cbd5e1',
                 fontWeight: 700, cursor: 'pointer', fontSize: 13,
               }}
             >

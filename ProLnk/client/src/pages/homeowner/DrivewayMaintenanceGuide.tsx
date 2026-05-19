@@ -64,9 +64,9 @@ export default function DrivewayMaintenanceGuide() {
           Protect Your Concrete and Asphalt
         </p>
 
-        <div style={{ background: '#1e293b', borderRadius: 12, padding: 24, marginBottom: 32, borderLeft: '4px solid #38bdf8′ }}>
+        <div style={{ background: '#1e293b', borderRadius: 12, padding: 24, marginBottom: 32, borderLeft: '4px solid #38bdf8' }}>
           <p style={{ fontSize: 16, color: '#cbd5e1', lineHeight: 1.7, margin: 0 }}>
-            🌡️ <strong style={{ color: '#f1f5f9′ }}>DFW driveway challenge:</strong> DFW’s extreme temperature swings (10°F to 110°F), clay soil movement, and heavy rains stress driveways more than most US climates. Most driveways fail prematurely due to neglect, not age.
+            🌡️ <strong style={{ color: '#f1f5f9' }}>DFW driveway challenge:</strong> DFW's extreme temperature swings (10°F to 110°F), clay soil movement, and heavy rains stress driveways more than most US climates. Most driveways fail prematurely due to neglect, not age.
           </p>
         </div>
 
@@ -75,7 +75,7 @@ export default function DrivewayMaintenanceGuide() {
           {[
             { icon: '🔒', title: 'Seal Every 3-5 Years', body: 'Use penetrating sealer, not topical. Penetrating sealers bond with the concrete and last longer in DFW heat. Topical sealers peel and trap moisture.' },
             { icon: '🧂', title: 'Avoid Deicers', body: 'Salt and chemical deicers damage concrete. Use sand for traction instead. DFW rarely needs deicers, but the occasional ice storm tempts homeowners — resist it.' },
-            { icon: '🔍', title: 'Crack Repair Guide', body: 'Hairline cracks (<1/8″ wide) are cosmetic — monitor annually. Cracks >1/4″ wide need professional repair ($200-800). Heaving or drainage issues require full section replacement.' },
+            { icon: '🔍', title: 'Crack Repair Guide', body: 'Hairline cracks (<1/8" wide) are cosmetic — monitor annually. Cracks >1/4" wide need professional repair ($200-800). Heaving or drainage issues require full section replacement.' },
             { icon: '🔄', title: 'When to Replace', body: 'Replace when >30% of surface is cracked, heaving is present, or drainage fails. Average DFW driveway replacement: $3,500-8,000.' },
           ].map(item => (
             <div key={item.title} style={{ background: '#1e293b', borderRadius: 10, padding: 20, display: 'flex', gap: 16 }}>
@@ -137,10 +137,10 @@ export default function DrivewayMaintenanceGuide() {
                 ['Resurfacing', 'Not recommended DIY', '$2-5/sqft'],
                 ['Full Replacement', 'Not recommended DIY', '$6-15/sqft'],
               ].map(([service, diy, pro], i) => (
-                <tr key={service} style={{ borderTop: '1px solid #334155', background: i % 2 === 0 ? 'transparent' : '#162032′ }}>
+                <tr key={service} style={{ borderTop: '1px solid #334155', background: i % 2 === 0 ? 'transparent' : '#162032' }}>
                   <td style={{ padding: '14px 20px', color: '#f1f5f9', fontWeight: 600 }}>{service}</td>
-                  <td style={{ padding: '14px 20px', color: '#94a3b8′ }}>{diy}</td>
-                  <td style={{ padding: '14px 20px', color: '#94a3b8′ }}>{pro}</td>
+                  <td style={{ padding: '14px 20px', color: '#94a3b8' }}>{diy}</td>
+                  <td style={{ padding: '14px 20px', color: '#94a3b8' }}>{pro}</td>
                 </tr>
               ))}
             </tbody>
@@ -159,7 +159,7 @@ export default function DrivewayMaintenanceGuide() {
                 value={sqft}
                 onChange={e => setSqft(e.target.value)}
                 style={{ width: '100%', background: '#0f172a', border: '1px solid #334155', borderRadius: 8, padding: '12px 16px', color: '#f1f5f9', fontSize: 16, boxSizing: 'border-box' }}
-                placeholder="600″
+                placeholder="600"
               />
             </div>
             <div>
@@ -180,7 +180,7 @@ export default function DrivewayMaintenanceGuide() {
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: 16, marginBottom: 24 }}>
             {[
               { label: 'DIY Sealing (10yr)', value: `$${result.sealingDIY.toLocaleString()}`, color: '#22c55e' },
-              { label: 'Pro Sealing (10yr)', value: `$${result.sealingPro.toLocaleString()}`, color: '#38bdf8′ },
+              { label: 'Pro Sealing (10yr)', value: `$${result.sealingPro.toLocaleString()}`, color: '#38bdf8' },
               { label: 'Est. Crack Repairs', value: `$${result.estimatedCrackRepair.toLocaleString()}`, color: '#f59e0b' },
               { label: '10-Year Total (DIY)', value: `$${result.tenYearLowDIY.toLocaleString()}`, color: '#a78bfa' },
             ].map(stat => (

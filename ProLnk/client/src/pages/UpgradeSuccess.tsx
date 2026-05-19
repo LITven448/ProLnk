@@ -15,9 +15,9 @@ const TIER_CONFIG: Record<string, {
 }> = {
   pro: {
     name: "Pro",
-    color: "text-blue-400″,
-    bg: "bg-blue-500/10″,
-    border: "border-blue-500/30″,
+    color: "text-blue-400",
+    bg: "bg-blue-500/10",
+    border: "border-blue-500/30",
     icon: Zap,
     keepRate: 55,
     headline: "You're officially a Pro partner.",
@@ -30,9 +30,9 @@ const TIER_CONFIG: Record<string, {
   },
   crew: {
     name: "Crew",
-    color: "text-purple-400″,
-    bg: "bg-purple-500/10″,
-    border: "border-purple-500/30″,
+    color: "text-purple-400",
+    bg: "bg-purple-500/10",
+    border: "border-purple-500/30",
     icon: Star,
     keepRate: 65,
     headline: "Welcome to the Crew tier.",
@@ -45,9 +45,9 @@ const TIER_CONFIG: Record<string, {
   },
   company: {
     name: "Company",
-    color: "text-amber-400″,
-    bg: "bg-amber-500/10″,
-    border: "border-amber-500/30″,
+    color: "text-amber-400",
+    bg: "bg-amber-500/10",
+    border: "border-amber-500/30",
     icon: Award,
     keepRate: 72,
     headline: "Company tier -- built for scale.",
@@ -61,8 +61,8 @@ const TIER_CONFIG: Record<string, {
   enterprise: {
     name: "Enterprise",
     color: "text-[#82D616]",
-    bg: "bg-[#82D616]/10″,
-    border: "border-[#82D616]/30″,
+    bg: "bg-[#82D616]/10",
+    border: "border-[#82D616]/30",
     icon: Crown,
     keepRate: 78,
     headline: "Enterprise. The top of the network.",
@@ -94,12 +94,12 @@ export default function UpgradeSuccess() {
   const Icon = cfg.icon;
 
   return (
-    <div className="min-h-screen bg-[#0A1628] flex items-center justify-center p-6″>
+    <div className="min-h-screen bg-[#0A1628] flex items-center justify-center p-6">
       <div
         className={`max-w-md w-full transition-all duration-700 ${animIn ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}
       >
         {/* Success icon */}
-        <div className="text-center mb-8″>
+        <div className="text-center mb-8">
           <div className={`w-20 h-20 rounded-full ${cfg.bg} border-2 ${cfg.border} flex items-center justify-center mx-auto mb-4 relative`}>
             <Icon className={`w-9 h-9 ${cfg.color}`} />
             <div className="absolute -top-1 -right-1 w-6 h-6 bg-green-500 rounded-full flex items-center justify-center">
@@ -110,7 +110,7 @@ export default function UpgradeSuccess() {
             <Sparkles className={`w-3.5 h-3.5 ${cfg.color}`} />
             <span className={`text-xs font-bold ${cfg.color} uppercase tracking-wider`}>{cfg.name} Tier Activated</span>
           </div>
-          <h1 className="text-2xl font-black text-white mb-2″>{cfg.headline}</h1>
+          <h1 className="text-2xl font-black text-white mb-2">{cfg.headline}</h1>
           <p className="text-white/60 text-sm">
             Your account has been upgraded. All new features are active immediately.
           </p>
@@ -118,10 +118,10 @@ export default function UpgradeSuccess() {
 
         {/* Perks card */}
         <div className={`bg-white/5 border ${cfg.border} rounded-2xl p-5 mb-6`}>
-          <p className="text-white/50 text-xs font-semibold uppercase tracking-wider mb-3″>What you unlocked</p>
-          <div className="space-y-2.5″>
+          <p className="text-white/50 text-xs font-semibold uppercase tracking-wider mb-3">What you unlocked</p>
+          <div className="space-y-2.5">
             {cfg.perks.map(perk => (
-              <div key={perk} className="flex items-center gap-3″>
+              <div key={perk} className="flex items-center gap-3">
                 <div className={`w-5 h-5 rounded-full ${cfg.bg} border ${cfg.border} flex items-center justify-center flex-shrink-0`}>
                   <CheckCircle className={`w-3 h-3 ${cfg.color}`} />
                 </div>
@@ -136,23 +136,23 @@ export default function UpgradeSuccess() {
         </div>
 
         {/* Actions */}
-        <div className="space-y-3″>
+        <div className="space-y-3">
           <Button
             className="w-full bg-[#82D616] hover:bg-[#6ab810] text-[#0A1628] font-bold h-12 text-base"
             onClick={() => navigate("/field-os")}
           >
-            Open Field OS <ChevronRight className="w-4 h-4 ml-1″ />
+            Open Field OS <ChevronRight className="w-4 h-4 ml-1" />
           </Button>
           <Button
             variant="outline"
-            className="w-full border-white/20 text-white/70 hover:text-white hover:bg-white/5 h-11″
+            className="w-full border-white/20 text-white/70 hover:text-white hover:bg-white/5 h-11"
             onClick={() => navigate("/dashboard")}
           >
             Go to Dashboard
           </Button>
         </div>
 
-        <p className="text-center text-white/30 text-xs mt-6″>
+        <p className="text-center text-white/30 text-xs mt-6">
           Questions? Contact support from your dashboard settings.
         </p>
       </div>

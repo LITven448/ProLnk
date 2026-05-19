@@ -102,10 +102,10 @@ export default function DFWHVACFinalWord() {
           </div>
         </div>
 
-        <div style={{ background: '#112240', borderRadius: 12, padding: '24px', marginBottom: 32, borderLeft: '4px solid #F5E642′ }}>
+        <div style={{ background: '#112240', borderRadius: 12, padding: '24px', marginBottom: 32, borderLeft: '4px solid #F5E642' }}>
           <div style={{ color: '#F5E642', fontWeight: 700, fontSize: 14, marginBottom: 10 }}>THE PROLNK PROMISE FOR DFW HVAC</div>
           <p style={{ color: '#CBD5E1', fontSize: 15, lineHeight: 1.7, margin: 0 }}>
-            ProLnk exists because finding a trustworthy HVAC pro in DFW has always been harder than it should be. We pre-vet every contractor. We bring you 3 honest quotes, not one upsell. We're here for the $89 filter change and the $11,000 system replacement. Our mission is simple: no DFW homeowner should suffer through a Texas summer because they couldn’t find a pro they trust.
+            ProLnk exists because finding a trustworthy HVAC pro in DFW has always been harder than it should be. We pre-vet every contractor. We bring you 3 honest quotes, not one upsell. We're here for the $89 filter change and the $11,000 system replacement. Our mission is simple: no DFW homeowner should suffer through a Texas summer because they couldn't find a pro they trust.
           </p>
         </div>
 
@@ -114,7 +114,7 @@ export default function DFWHVACFinalWord() {
         <div style={{ display: 'grid', gap: 10, marginBottom: 24 }}>
           {stages.map((s) => (
             <button key={s.id} onClick={() => setStage(s.id)} style={{
-              background: stage === s.id ? '#F5E642′ : '#1E3A5F', color: stage === s.id ? '#0A1628' : '#fff',
+              background: stage === s.id ? '#F5E642' : '#1E3A5F', color: stage === s.id ? '#0A1628' : '#fff',
               border: 'none', borderRadius: 8, padding: '14px 18px', textAlign: 'left', cursor: 'pointer', fontSize: 14, fontWeight: 600,
             }}>{s.label}</button>
           ))}
@@ -130,7 +130,7 @@ export default function DFWHVACFinalWord() {
                 <div key={i} style={{ fontSize: 13, color: '#CBD5E1', lineHeight: 1.6, marginBottom: 6 }}>{a}</div>
               ))}
             </div>
-            <div style={{ background: '#0A1628', borderRadius: 8, padding: '12px 16px', borderLeft: '3px solid #F5E642′ }}>
+            <div style={{ background: '#0A1628', borderRadius: 8, padding: '12px 16px', borderLeft: '3px solid #F5E642' }}>
               <div style={{ fontSize: 13, color: '#94A3B8', fontStyle: 'italic' }}>{result.promise}</div>
             </div>
           </div>

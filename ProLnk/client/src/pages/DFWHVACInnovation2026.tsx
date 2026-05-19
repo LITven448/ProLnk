@@ -24,14 +24,14 @@ export default function DFWHVACInnovation2026() {
           <h2 style={{ color: '#F5E642', marginBottom: '1rem', fontSize: '1.1rem' }}>⚡ What's Your Situation?</h2>
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5rem', marginBottom: '1rem' }}>
             {innovations.map(i => (
-              <button key={i.key} onClick={() => setSelected(i.key)} style={{ background: selected === i.key ? '#F5E642′ : '#1a3a5c', color: selected === i.key ? '#0A1628' : '#fff', border: ’none', borderRadius: 8, padding: '0.5rem 1rem', cursor: 'pointer', fontWeight: 600, fontSize: '0.9rem' }}>{i.label}</button>
+              <button key={i.key} onClick={() => setSelected(i.key)} style={{ background: selected === i.key ? '#F5E642' : '#1a3a5c', color: selected === i.key ? '#0A1628' : '#fff', border: 'none', borderRadius: 8, padding: '0.5rem 1rem', cursor: 'pointer', fontWeight: 600, fontSize: '0.9rem' }}>{i.label}</button>
             ))}
           </div>
           {match && (
-            <div style={{ background: '#0A1628', borderRadius: 10, padding: '1.25rem', borderLeft: '4px solid #F5E642′ }}>
+            <div style={{ background: '#0A1628', borderRadius: 10, padding: '1.25rem', borderLeft: '4px solid #F5E642' }}>
               <div style={{ color: '#F5E642', fontWeight: 700, fontSize: '1.05rem', marginBottom: '0.5rem' }}>🔬 {match.title}</div>
               <div style={{ color: '#e2e8f0', marginBottom: '0.75rem', lineHeight: 1.6 }}>{match.desc}</div>
-              <div style={{ color: '#94a3b8', fontSize: '0.9rem' }}>✅ Fit for you: <span style={{ color: '#F5E642′ }}>{match.fit}</span></div>
+              <div style={{ color: '#94a3b8', fontSize: '0.9rem' }}>✅ Fit for you: <span style={{ color: '#F5E642' }}>{match.fit}</span></div>
             </div>
           )}
         </div>

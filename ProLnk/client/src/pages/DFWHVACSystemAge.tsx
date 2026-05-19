@@ -20,7 +20,7 @@ export default function DFWHVACSystemAge() {
     const age = 2026 - year;
     const dfwLife = Math.round(sys.nationalLife * sys.dfwMultiplier);
     const remaining = Math.max(0, dfwLife - age);
-    const replaceCost = systemType.includes('Mini') ? '$3,500-6,000′ : systemType.includes(’Heat Pump') ? '$5,000-9,000′ : '$4,000-8,000';
+    const replaceCost = systemType.includes('Mini') ? '$3,500-6,000' : systemType.includes('Heat Pump') ? '$5,000-9,000' : '$4,000-8,000';
     let urgency = '';
     if (remaining === 0) urgency = '🚨 Past DFW-adjusted lifespan — budget for replacement now';
     else if (remaining <= 3) urgency = '⚠️ Plan replacement within 1-3 years — start budgeting';
@@ -30,7 +30,7 @@ export default function DFWHVACSystemAge() {
   }
 
   return (
-    <div style={{ background: '#0A1628', minHeight: '100vh', padding: '32px 16px', fontFamily: 'sans-serif', color: '#E8EDF5′ }}>
+    <div style={{ background: '#0A1628', minHeight: '100vh', padding: '32px 16px', fontFamily: 'sans-serif', color: '#E8EDF5' }}>
       <div style={{ maxWidth: 760, margin: '0 auto' }}>
         <div style={{ fontSize: 36, marginBottom: 8 }}>📅</div>
         <h1 style={{ color: '#F5E642', fontSize: 28, fontWeight: 700, marginBottom: 8 }}>
@@ -39,7 +39,7 @@ export default function DFWHVACSystemAge() {
         <p style={{ color: '#9AAFC4', marginBottom: 16 }}>
           Know your system's true DFW-adjusted remaining life. National averages overestimate lifespan for DFW homes — our extreme summers accelerate wear significantly.
         </p>
-        <div style={{ background: '#1A2B45', borderRadius: 8, padding: '10px 16px', marginBottom: 28, fontSize: 14, color: '#F5E642′ }}>
+        <div style={{ background: '#1A2B45', borderRadius: 8, padding: '10px 16px', marginBottom: 28, fontSize: 14, color: '#F5E642' }}>
           🌡️ DFW systems log 3,000-4,000 hours annually vs the 1,000-1,200 national average — that's 2-3x the wear.
         </div>
         <h2 style={{ color: '#F5E642', fontSize: 18, marginBottom: 12 }}>DFW-Adjusted Lifespan by System Type</h2>
@@ -59,13 +59,13 @@ export default function DFWHVACSystemAge() {
         <h2 style={{ color: '#F5E642', fontSize: 18, marginBottom: 16 }}>Calculate Your System's Age</h2>
         <div style={{ background: '#1A2B45', borderRadius: 8, padding: 24, marginBottom: 24 }}>
           <label style={{ display: 'block', marginBottom: 16 }}>
-            <div style={{ marginBottom: 6, fontSize: 14, color: '#9AAFC4′ }}>Year HVAC was installed (check data plate on unit)</div>
+            <div style={{ marginBottom: 6, fontSize: 14, color: '#9AAFC4' }}>Year HVAC was installed (check data plate on unit)</div>
             <input type="number" value={installYear} onChange={e => setInstallYear(e.target.value)}
-              placeholder="e.g. 2014″ min="1980" max="2026"
+              placeholder="e.g. 2014" min="1980" max="2026"
               style={{ width: '100%', padding: '10px', borderRadius: 6, background: '#0A1628', color: '#E8EDF5', border: '1px solid #2A4A6B', fontSize: 16, boxSizing: 'border-box' }} />
           </label>
           <label style={{ display: 'block', marginBottom: 20 }}>
-            <div style={{ marginBottom: 6, fontSize: 14, color: '#9AAFC4′ }}>System type</div>
+            <div style={{ marginBottom: 6, fontSize: 14, color: '#9AAFC4' }}>System type</div>
             <select value={systemType} onChange={e => setSystemType(e.target.value)}
               style={{ width: '100%', padding: '10px', borderRadius: 6, background: '#0A1628', color: '#E8EDF5', border: '1px solid #2A4A6B' }}>
               <option value="">Select system type</option>
@@ -89,7 +89,7 @@ export default function DFWHVACSystemAge() {
                 </div>
               </div>
               <div style={{ background: '#1A2B45', borderRadius: 8, padding: 12, marginBottom: 12, fontSize: 14 }}>
-                💰 Replacement budget range: <strong style={{ color: '#F5E642′ }}>{result.budget}</strong>
+                💰 Replacement budget range: <strong style={{ color: '#F5E642' }}>{result.budget}</strong>
               </div>
               <div style={{ lineHeight: 1.6 }}>{result.urgency}</div>
             </div>

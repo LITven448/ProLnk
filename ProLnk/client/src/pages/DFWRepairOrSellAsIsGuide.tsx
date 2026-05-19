@@ -9,11 +9,11 @@ const requiredInDFW = [
 
 const repairMatrix = [
   { repair: 'Foundation crack documentation', fix: 'Always required', asIs: '❌ Cannot skip', cost: '$300–$800 report' },
-  { repair: 'Roof over 15 years old', fix: 'Helps significantly', asIs: 'Price $8–15K lower', cost: '$9,000–$18,000′ },
-  { repair: 'HVAC non-functional', fix: 'Essential in DFW', asIs: 'Price $6–10K lower', cost: '$4,000–$12,000′ },
+  { repair: 'Roof over 15 years old', fix: 'Helps significantly', asIs: 'Price $8–15K lower', cost: '$9,000–$18,000' },
+  { repair: 'HVAC non-functional', fix: 'Essential in DFW', asIs: 'Price $6–10K lower', cost: '$4,000–$12,000' },
   { repair: 'Outdated kitchen', fix: 'Optional', asIs: 'Minimal discount', cost: '$15,000–$40,000+' },
-  { repair: 'Old carpet throughout', fix: 'Low cost, high impact', asIs: 'Price $3–5K lower', cost: '$2,000–$6,000′ },
-  { repair: 'Pool equipment issues', fix: 'Helpful', asIs: 'Price $2–5K lower', cost: '$1,500–$8,000′ },
+  { repair: 'Old carpet throughout', fix: 'Low cost, high impact', asIs: 'Price $3–5K lower', cost: '$2,000–$6,000' },
+  { repair: 'Pool equipment issues', fix: 'Helpful', asIs: 'Price $2–5K lower', cost: '$1,500–$8,000' },
 ];
 
 export default function DFWRepairOrSellAsIsGuide() {
@@ -66,7 +66,7 @@ export default function DFWRepairOrSellAsIsGuide() {
         <div style={{ background: '#132036', borderRadius: 16, padding: 32, marginBottom: 32 }}>
           <h2 style={{ fontSize: 20, fontWeight: 700, color: '#F5E642', marginBottom: 20 }}>⚠️ DFW Non-Negotiables</h2>
           {requiredInDFW.map((r, i) => (
-            <div key={i} style={{ padding: '14px 0', borderBottom: i < requiredInDFW.length - 1 ? '1px solid #1e3050′ : ’none' }}>
+            <div key={i} style={{ padding: '14px 0', borderBottom: i < requiredInDFW.length - 1 ? '1px solid #1e3050' : 'none' }}>
               <div style={{ fontWeight: 700, fontSize: 15, color: '#fff', marginBottom: 4 }}>{r.item}</div>
               <div style={{ fontSize: 14, color: '#aaa' }}>{r.reason}</div>
             </div>
@@ -79,16 +79,16 @@ export default function DFWRepairOrSellAsIsGuide() {
             <table style={{ width: '100%', borderCollapse: 'collapse', minWidth: 500 }}>
               <thead>
                 <tr>
-                  {['Issue', 'If You Fix', 'If As-Is', 'Fix Cost'].map(h => <th key={h} style={{ padding: '10px 14px', textAlign: 'left', fontSize: 12, color: '#888', fontWeight: 600, borderBottom: '1px solid #1e3050′ }}>{h}</th>)}
+                  {['Issue', 'If You Fix', 'If As-Is', 'Fix Cost'].map(h => <th key={h} style={{ padding: '10px 14px', textAlign: 'left', fontSize: 12, color: '#888', fontWeight: 600, borderBottom: '1px solid #1e3050' }}>{h}</th>)}
                 </tr>
               </thead>
               <tbody>
                 {repairMatrix.map((r, i) => (
-                  <tr key={i} style={{ borderBottom: '1px solid #1e3050′ }}>
+                  <tr key={i} style={{ borderBottom: '1px solid #1e3050' }}>
                     <td style={{ padding: '12px 14px', fontSize: 14, color: '#fff', fontWeight: 600 }}>{r.repair}</td>
-                    <td style={{ padding: '12px 14px', fontSize: 14, color: '#4ade80′ }}>{r.fix}</td>
-                    <td style={{ padding: '12px 14px', fontSize: 14, color: '#f87171′ }}>{r.asIs}</td>
-                    <td style={{ padding: '12px 14px', fontSize: 14, color: '#F5E642′ }}>{r.cost}</td>
+                    <td style={{ padding: '12px 14px', fontSize: 14, color: '#4ade80' }}>{r.fix}</td>
+                    <td style={{ padding: '12px 14px', fontSize: 14, color: '#f87171' }}>{r.asIs}</td>
+                    <td style={{ padding: '12px 14px', fontSize: 14, color: '#F5E642' }}>{r.cost}</td>
                   </tr>
                 ))}
               </tbody>

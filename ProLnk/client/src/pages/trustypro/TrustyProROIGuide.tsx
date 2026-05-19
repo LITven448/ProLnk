@@ -61,7 +61,7 @@ export default function TrustyProROIGuide() {
                 padding: '12px 8px',
                 borderRadius: '10px',
                 border: `2px solid ${selected === i ? '#4F46E5' : '#1e2d45'}`,
-                backgroundColor: selected === i ? '#4F46E5′ : '#0d1f35',
+                backgroundColor: selected === i ? '#4F46E5' : '#0d1f35',
                 color: '#fff',
                 cursor: 'pointer',
                 fontSize: '0.85rem',
@@ -82,7 +82,7 @@ export default function TrustyProROIGuide() {
             </div>
             <div style={{ textAlign: 'right' }}>
               <div style={{ color: '#4F46E5', fontSize: '0.8rem', marginBottom: '4px' }}>TYPICAL ROI</div>
-              <div style={{ fontSize: '1.3rem', fontWeight: 800, color: '#FACC15′ }}>{scenario.roi}</div>
+              <div style={{ fontSize: '1.3rem', fontWeight: 800, color: '#FACC15' }}>{scenario.roi}</div>
             </div>
           </div>
           <p style={{ color: '#cbd5e1', lineHeight: 1.7, marginBottom: '20px' }}>{scenario.description}</p>
@@ -94,10 +94,10 @@ export default function TrustyProROIGuide() {
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '20px', marginBottom: '48px' }}>
           {[
             { icon: '🏠', label: 'Avg DFW Home Value', value: '$385K' },
-            { icon: '💰', label: 'Avg Savings Per Scan', value: '$6,200′ },
-            { icon: '📅', label: 'DFW Beta Access', value: 'Summer 2026′ },
+            { icon: '💰', label: 'Avg Savings Per Scan', value: '$6,200' },
+            { icon: '📅', label: 'DFW Beta Access', value: 'Summer 2026' },
           ].map((stat, i) => (
-            <div key={i} style={{ backgroundColor: '#0d1f35', borderRadius: '12px', padding: '20px', textAlign: 'center', border: '1px solid #1e2d45′ }}>
+            <div key={i} style={{ backgroundColor: '#0d1f35', borderRadius: '12px', padding: '20px', textAlign: 'center', border: '1px solid #1e2d45' }}>
               <div style={{ fontSize: '28px', marginBottom: '8px' }}>{stat.icon}</div>
               <div style={{ fontSize: '1.4rem', fontWeight: 800, color: '#FACC15', marginBottom: '4px' }}>{stat.value}</div>
               <div style={{ color: '#64748b', fontSize: '0.8rem' }}>{stat.label}</div>

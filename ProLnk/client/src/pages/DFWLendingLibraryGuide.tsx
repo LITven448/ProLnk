@@ -95,7 +95,7 @@ export default function DFWLendingLibraryGuide() {
             </div>
             <div style={{ background: '#FFFBEB', border: '1px solid #FDE68A', borderRadius: 12, padding: 20 }}>
               <div style={{ fontWeight: 700, marginBottom: 8 }}>🎁 What to Offer in Return</div>
-              <div style={{ fontSize: 14, color: '#374151′ }}>{data.offer}</div>
+              <div style={{ fontSize: 14, color: '#374151' }}>{data.offer}</div>
             </div>
           </div>
         )}

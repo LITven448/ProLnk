@@ -89,7 +89,7 @@ export default function DFWProLnkSummaryGuide() {
           <div style={{ display: 'flex', gap: '0.5rem', marginBottom: '1.25rem', flexWrap: 'wrap' }}>
             {[['homeowner', '🏡 Homeowner'], ['partner', '🤝 Partner'], ['pro', '🔧 Pro/Contractor']].map(([val, label]) => (
               <button key={val} onClick={() => setUserType(val)}
-                style={{ padding: '0.5rem 1rem', borderRadius: 8, border: '2px solid', borderColor: userType === val ? '#F5E642′ : '#1e3a5f', background: userType === val ? '#F5E642' : ’transparent', color: userType === val ? '#0A1628′ : '#e2e8f0', fontWeight: 700, cursor: ’pointer', fontSize: '0.875rem' }}>
+                style={{ padding: '0.5rem 1rem', borderRadius: 8, border: '2px solid', borderColor: userType === val ? '#F5E642' : '#1e3a5f', background: userType === val ? '#F5E642' : 'transparent', color: userType === val ? '#0A1628' : '#e2e8f0', fontWeight: 700, cursor: 'pointer', fontSize: '0.875rem' }}>
                 {label}
               </button>
             ))}
@@ -98,7 +98,7 @@ export default function DFWProLnkSummaryGuide() {
             <div style={{ background: '#0d1f3c', borderRadius: 12, padding: '1.25rem' }}>
               {USER_SUMMARIES[userType].summary.map((point, i) => (
                 <div key={i} style={{ display: 'flex', gap: '0.5rem', padding: '0.45rem 0', fontSize: '0.875rem', borderBottom: i < USER_SUMMARIES[userType].summary.length - 1 ? '1px solid #1e3a5f' : 'none' }}>
-                  <span>✅</span><span style={{ color: '#e2e8f0′ }}>{point}</span>
+                  <span>✅</span><span style={{ color: '#e2e8f0' }}>{point}</span>
                 </div>
               ))}
               <div style={{ marginTop: '1rem', padding: '0.75rem', background: '#F5E642', borderRadius: 8, textAlign: 'center' }}>

@@ -2,7 +2,7 @@ import { useState } from 'react';
 
 const homeSize = ['Under 1,500 sq ft', '1,500–2,500 sq ft', '2,500–4,000 sq ft', '4,000+ sq ft'];
 const treeCoverage = ['Minimal — few or no trees', 'Moderate — some trees within 30 ft', 'Heavy — multiple live oaks or elms overhead'];
-const gutterType = ['Standard 5″ K-Style Aluminum', 'Larger 6″ K-Style', 'Half-Round Aluminum', 'Copper', 'Vinyl'];
+const gutterType = ['Standard 5" K-Style Aluminum', 'Larger 6" K-Style', 'Half-Round Aluminum', 'Copper', 'Vinyl'];
 
 export default function DFWGutterMaintenanceGuide() {
   const [size, setSize] = useState('');
@@ -48,7 +48,7 @@ export default function DFWGutterMaintenanceGuide() {
           {[
             { icon: '🌳', title: 'Live Oaks Drop Year-Round in DFW', body: 'DFW live oaks and elms drop pollen Feb–April, acorns and seeds May–June, and old leaves in spring (they\’re semi-evergreen). Homeowners with live oaks overhead need gutters cleaned 3–4 times per year minimum, not the 2x national standard.' },
             { icon: '⛈️', title: 'Storm Season Deposits and Debris', body: 'DFW averages 50+ inches of rain per year with heavy spring concentration. Flash storms dump leaves, twigs, and debris into gutters in hours. Inspect gutters within a week after any storm exceeding 2 inches. Clogged gutters during heavy rain overflow against foundation.' },
-            { icon: '📐', title: 'Proper Gutter Slope for Flash Rains', body: 'DFW rain often comes at 2–3 inches/hour in severe events. Gutters must slope 1/4″ per 10 feet toward downspouts. Flat or low-slope gutters overflow before water drains. Check slope annually — DFW clay soil movement shifts fascia boards over time.' },
+            { icon: '📐', title: 'Proper Gutter Slope for Flash Rains', body: 'DFW rain often comes at 2–3 inches/hour in severe events. Gutters must slope 1/4" per 10 feet toward downspouts. Flat or low-slope gutters overflow before water drains. Check slope annually — DFW clay soil movement shifts fascia boards over time.' },
             { icon: '💧', title: 'Downspout Extensions Protect Foundations', body: 'The #1 gutter-related mistake in DFW: downspouts terminating within 3 feet of foundation. DFW clay soil absorbs and holds water against foundation. Extend downspouts 6–10 feet minimum, or add underground drain pipes. This single change prevents most DFW foundation movement.' },
           ].map(card => (
             <div key={card.title} style={{ backgroundColor: '#111F3A', borderRadius: 12, padding: 20 }}>
@@ -60,7 +60,7 @@ export default function DFWGutterMaintenanceGuide() {
         </div>
 
         <div style={{ backgroundColor: '#111F3A', borderRadius: 16, padding: 28 }}>
-          <h2 style={{ fontSize: 20, fontWeight: 700, marginBottom: 20, color: '#F5E642′ }}>🧮 Gutter Cleaning Calculator</h2>
+          <h2 style={{ fontSize: 20, fontWeight: 700, marginBottom: 20, color: '#F5E642' }}>🧮 Gutter Cleaning Calculator</h2>
           <div style={{ display: 'grid', gap: 16, marginBottom: 20 }}>
             {[
               { label: 'Home Size', state: size, set: setSize, opts: homeSize },
@@ -88,7 +88,7 @@ export default function DFWGutterMaintenanceGuide() {
               ].map(r => (
                 <div key={r.label} style={{ backgroundColor: '#0A1628', borderRadius: 10, padding: 16 }}>
                   <div style={{ color: '#F5E642', fontSize: 12, fontWeight: 700, marginBottom: 4 }}>{r.label}</div>
-                  <div style={{ fontSize: 14, color: '#E2E8F0′ }}>{r.value}</div>
+                  <div style={{ fontSize: 14, color: '#E2E8F0' }}>{r.value}</div>
                 </div>
               ))}
             </div>
